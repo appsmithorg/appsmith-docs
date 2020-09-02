@@ -39,7 +39,6 @@ curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/ins
 2. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
 
 ```bash
-sudo su # skip sudo for Mac OS installations
 chmod +x install.sh
 ```
 
