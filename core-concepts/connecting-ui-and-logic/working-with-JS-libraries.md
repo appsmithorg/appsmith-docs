@@ -18,9 +18,9 @@ The following JS libraries are supported in the Appsmith platform.
 ## Using JS libraries
 
 The utility functions provided by the included libraies can be used when transforming data.
-An example of lodash's `_.map` utility, in use.
 
-**Transformation Code**
+### Example: lodash
+An example of lodash's `_.map` utility, in use.
 
 ```javascript
 {{
@@ -32,3 +32,17 @@ An example of lodash's `_.map` utility, in use.
 // fetchFruits is the name of the API / Query
 ```
 
+### Example: moment
+An example of moment's `format` utility, in use in a Table's data property.
+
+```javascript
+{{
+  _.map(getTickets.data, (ticket) => ({
+      label: ticket.name,
+      description: ticket.desc,
+      displayDate: moment(ticket.created_date).format("L")  // user friendly display date
+    }))
+}}
+
+// getTickets is the name of the API / Query
+```
