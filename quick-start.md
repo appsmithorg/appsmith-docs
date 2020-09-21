@@ -36,20 +36,20 @@ If you're installing appsmith on Mac, you must have [docker desktop](https://doc
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-2. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
+1. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
 
 ```bash
 sudo su # skip sudo for Mac OS installations
 chmod +x install.sh
 ```
 
-3. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-4. Check if all containers are running correctly
+1. Check if all containers are running correctly
 
 ```bash
 docker ps
