@@ -11,7 +11,7 @@ You can begin using appsmith via our cloud instance or by deploying appsmith you
 
 ## Appsmith Cloud
 
-The fastest way to get started with appsmith is using our cloud hosted version. It's as easy as
+The fastest way to get started with appsmith is using our cloud version. It's as easy as
 
 1. [Create an Account](https://app.appsmith.com/user/signup)
 2. [Start Building](core-concepts/building-the-ui/)
