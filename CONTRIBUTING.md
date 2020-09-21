@@ -11,7 +11,7 @@ Feel free to propose changes to this document in a pull request.
 
 Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing
 
-## Git Workflow
+## Pull request guidelines
 
 Pull requests are the best way to propose changes to the codebase and get them reviewed by maintainers.
 The branches in this repository are named after the releases in the [Appsmith](https://github.com/appsmithorg/appsmith) repository.
