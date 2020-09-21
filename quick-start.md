@@ -11,7 +11,7 @@ You can begin using appsmith via our cloud instance or by deploying appsmith you
 
 ## Appsmith Cloud
 
-The fastest way to get started with appsmith is using our cloud version. It's as easy as
+The fastest way to get started with appsmith is using our cloud hosted version. It's as easy as
 
 1. [Create an Account](https://app.appsmith.com/user/signup)
 2. [Start Building](core-concepts/building-the-ui/)
@@ -36,20 +36,20 @@ If you're installing appsmith on Mac, you must have [docker desktop](https://doc
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-2. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
+1. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
 
 ```bash
 sudo su # skip sudo for Mac OS installations
 chmod +x install.sh
 ```
 
-3. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-4. Check if all containers are running correctly
+1. Check if all containers are running correctly
 
 ```bash
 docker ps
