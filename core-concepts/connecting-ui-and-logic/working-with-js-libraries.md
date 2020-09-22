@@ -1,6 +1,7 @@
 ---
 description: >-
-  The Appsmith platform includes Javascript utility libraries, which can be used to work with data within `{{ }}` bindings.
+  The Appsmith platform includes Javascript utility libraries, which can be used
+  to work with data within `{{ }}` bindings.
 ---
 
 # Working with JS libraries
@@ -14,11 +15,9 @@ The following JS libraries are supported in the Appsmith platform.
 * [btoa](https://github.com/dankogai/js-base64#readme)
 * [atob](https://github.com/dankogai/js-base64#readme)
 
-
 ## Using JS libraries
 
-The utility functions provided by the included libraies can be used when transforming data.
-An example of lodash's `_.map` utility, in use.
+The utility functions provided by the included libraies can be used when transforming data. An example of lodash's `_.map` utility, in use.
 
 **Transformation Code**
 
