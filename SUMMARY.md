@@ -20,7 +20,7 @@
   * [Taking Inputs from Widgets](core-concepts/apis/taking-inputs-from-widgets.md)
   * [Running APIs on Page Load](core-concepts/apis/running-apis-on-page-load.md)
 * [Connecting UI & Logic](core-concepts/connecting-ui-and-logic/README.md)
-  * [Working with JS libraries](core-concepts/connecting-ui-and-logic/working-with-JS-libraries.md)
+  * [Working with JS libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Tutorials

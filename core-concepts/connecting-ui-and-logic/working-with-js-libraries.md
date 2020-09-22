@@ -1,6 +1,7 @@
 ---
 description: >-
-  The Appsmith platform includes Javascript utility libraries, which can be used to work with data within `{{ }}` bindings.
+  The Appsmith platform includes Javascript utility libraries, which can be used
+  to work with data within `{{ }}` bindings.
 ---
 
 # Working with JS libraries
@@ -13,7 +14,6 @@ The following JS libraries are supported in the Appsmith platform.
 * [moment](https://momentjs.com/docs/)
 * [btoa](https://github.com/dankogai/js-base64#readme)
 * [atob](https://github.com/dankogai/js-base64#readme)
-
 
 ## Using JS libraries
 

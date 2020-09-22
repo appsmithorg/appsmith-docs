@@ -22,7 +22,7 @@ Similarly Logic can be added to this example to display something if no row is s
 {{usersTable.selectedRow ? "Hello " + Table1.selectedRow.name : "Select a user" }}
 ```
 
-Read More about [talking to other widgets](building-the-ui/talking-to-other-widgets.md)
+Read More about [talking to other widgets](../building-the-ui/talking-to-other-widgets.md)
 
 ### APIs
 
@@ -35,7 +35,7 @@ Similar to the above example, the params, body & headers of an API can be substi
 }
 ```
 
-Read More about[ taking inputs from widgets](apis/taking-inputs-from-widgets.md)
+Read More about[ taking inputs from widgets](../apis/taking-inputs-from-widgets.md)
 
 ### Queries
 
@@ -45,7 +45,7 @@ Values can be passed to a query by using the substitution syntax inside the quer
 select * from users where name ilike '%{{searchInput.text}}%'
 ```
 
-API / Query data can also be displayed inside widgets using the **{{ queryName.data }}** substituted inside the widget property. Sometimes there is a mismatch in the data format of the response data and the format that the widget requires. You can overcome this by [transforming the data ](building-the-ui/displaying-api-data.md#transforming-api-query-data)inside the widget property using javascript
+API / Query data can also be displayed inside widgets using the **{{ queryName.data }}** substituted inside the widget property. Sometimes there is a mismatch in the data format of the response data and the format that the widget requires. You can overcome this by [transforming the data ](../building-the-ui/displaying-api-data.md#transforming-api-query-data)inside the widget property using javascript
 
 
 
