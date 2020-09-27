@@ -6,7 +6,7 @@ description: >-
 
 # Connecting UI & Logic
 
-Javascript can be used almost anywhere in appsmith inside **`{{ }}.`** The value evaluated inside the mustache is substituted in the field it is written in. This allows you to creatively configure different parts of your application.
+Javascript can be used almost anywhere in Appsmith inside **`{{ }}.`** The value evaluated inside the mustache is substituted in the field it is written in. This allows you to creatively configure different parts of your application.
 
 ### Widget Properties
 
@@ -16,7 +16,7 @@ Hello {{usersTable.selectedRow.name}}
 
 Adding the above text to a text widget will display "Hello John Doe" if **usersTable** has a row selected with a column where the name is John Doe.
 
-Similarly Logic can be added to this example to display something if no row is selected
+Similarly, Logic can be added to this example to display something if no row is selected
 
 ```javascript
 {{usersTable.selectedRow ? "Hello " + Table1.selectedRow.name : "Select a user" }}

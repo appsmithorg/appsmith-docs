@@ -1,6 +1,6 @@
 ---
 description: >-
-  External users cannot access applications built on appsmith unless they are
+  External users cannot access applications built on Appsmith unless they are
   invited to the organisation
 ---
 

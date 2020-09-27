@@ -37,7 +37,7 @@ Widget names are important when adding logic so name your widgets well!
 
 ## Editing widget properties 
 
-Widget properties can be editing via the property pane which can be toggled next to the delete icon. Widget properties can affect data, style and action to take. 
+Widget properties can be edited via the property pane which can be toggled next to the delete icon. Widget properties can affect data, style, and action to take. 
 
 ![](../../.gitbook/assets/input-property-pane.png)
 

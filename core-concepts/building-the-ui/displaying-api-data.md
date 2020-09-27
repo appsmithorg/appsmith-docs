@@ -37,7 +37,7 @@ Sometimes your API / Query response format might not match the format that your 
 
 You can use Javascript inside the `{{ }}` to transform API / Query data when binding it to a property. ****An example of this would be an API / Query which returns an array of values that are needed to populate a dropdown.
 
-A dropdown needs an Array&lt;label, value&gt; in it's option field, so in order to connect this data to a dropdown, we need to transform the data in the dropdown options property
+A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect this data to a dropdown, we need to transform the data in the dropdown options property
 
 ```javascript
 // API / Query Response

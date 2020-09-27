@@ -22,7 +22,7 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 
 **Supported Operating Systems**
 
-* MacOS
+* macOS
 * Ubuntu
 
 {% hint style="warning" %}
@@ -36,7 +36,7 @@ If you're installing appsmith on Mac, you must have [docker desktop](https://doc
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-1. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
+1. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than macOS**
 
 ```bash
 sudo su # skip sudo for Mac OS installations
@@ -64,7 +64,7 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 ```
 
 {% hint style="success" %}
-* Ensure your security groups are configured to allow traffic to port 80 & 443 on your installation instance. 
+* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance. 
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
 * You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start
 {% endhint %}
