@@ -20,6 +20,7 @@ The following JS libraries are supported in the Appsmith platform.
 The utility functions provided by the included libraies can be used when transforming data.
 
 ### Example: lodash
+
 An example of lodash's `_.map` utility, in use.
 
 ```javascript
@@ -33,6 +34,7 @@ An example of lodash's `_.map` utility, in use.
 ```
 
 ### Example: moment
+
 An example of moment's `format` utility, in use in a Table's data property.
 
 ```javascript
@@ -46,3 +48,4 @@ An example of moment's `format` utility, in use in a Table's data property.
 
 // getTickets is the name of the API / Query
 ```
+
