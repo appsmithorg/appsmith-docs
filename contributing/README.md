@@ -26,7 +26,7 @@ We use [Github Flow](https://guides.github.com/introduction/flow/index.html), so
 
 Pull requests are the best way to propose changes to the codebase and get them reviewed by maintainers.
 
-1. Fork the repo and create your branch from `master`.
+1. Fork the repo and create your branch from the current base.
 2. Create an issue referencing the pull request if its not already there. This ensures that we can track the bug being fixed or feature being added easily.
 
 
