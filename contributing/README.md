@@ -1,20 +1,11 @@
 ---
 description: >-
-  APIs can be imported, configured and tested via the API tab on the left-hand
-  side of the editor. APIs allow you to connect your widgets to your backend
-  data in a secure manner.
+  Thank you for your interest in Appsmith and taking the time to contribute on this project. 🙌 
+  Appsmith is a project by developers for developers and there are a lot of ways you can contribute. 
+  Feel free to propose changes to this document in a pull request.
 ---
 
 # Contributing to docs
-
----
-description: >-
-  Please go through this doc for contributing effectively.
----
-
-Thank you for your interest in Appsmith and taking the time to contribute on this project. 🙌 
-Appsmith is a project by developers for developers and there are a lot of ways you can contribute. 
-Feel free to propose changes to this document in a pull request.
 
 Appsmith uses Gitbook for docs. Docs from [appsmith-docs](https://github.com/appsmithorg/appsmith-docs) will be synced to Gitbook.
 
@@ -43,7 +34,7 @@ Any *.md file inside this repository has to start with the following markdown.
 ```
 ---
 description: >-
-  A widget for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
+  Description of the doc page
 ---
 ```
 ## Contributing to widget docs
