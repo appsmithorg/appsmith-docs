@@ -38,12 +38,12 @@ description: >-
 ---
 ```
 ## Contributing to widget docs
-Read our [widget.md](https://github.com/appsmithorg/appsmith-docs/blob/master/contributing/widget.md) for contributing
+Read our [widget.md](./widget.md) for contributing
 
 
 ## Contributing to action docs
-Read our [action.md](https://github.com/appsmithorg/appsmith-docs/blob/master/contributing/action.md) for contributing
+Read our [action.md](./action.md) for contributing
 
 
 ## Contributing to database integration docs
-Read our [db-integration.md](https://github.com/appsmithorg/appsmith-docs/blob/master/contributing/db-integration.md) for contributing
+Read our [db-integration.md](./db-integration.md) for contributing

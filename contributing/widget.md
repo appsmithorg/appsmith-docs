@@ -5,7 +5,7 @@ description: >-
 
 # Widget docs
 Create a appsmith-docs/widget-reference/<widget>.md file.
-Follow the [asset-upload](https://github.com/appsmithorg/appsmith-docs/blob/master/contributing/asset-upload.md) guidelines to upload and use an asset in docs.
+Follow the [asset-upload](./asset-upload.md) guidelines to upload and use an asset in docs.
 
 ## Widget docs template
 Copy paste this template 
