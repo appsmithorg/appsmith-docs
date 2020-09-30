@@ -1,6 +1,6 @@
-# Contributing to Appsmith
+# Contributing to Appsmith Documentation
 
-Thank you for your interest in Appsmith documentation and taking the time to contribute to this repository. 🙌 
+Thank you for your interest in Appsmith and taking the time out to contribute to our documentation. 🙌 
 Feel free to propose changes to this document in a pull request.
 
 ### Table of contents
