@@ -15,6 +15,7 @@ Appsmith uses Gitbook for docs. Docs from [appsmith-docs](https://github.com/app
 - Contributing to widget docs
 - Contributing to action docs
 - Contributing to database integration docs
+- Uploading assets for the docs
 
 ## Code of conduct
 
@@ -47,3 +48,6 @@ Read our [action.md](./action.md) for contributing
 
 ## Contributing to database integration docs
 Read our [db-integration.md](./db-integration.md) for contributing
+
+## Uploading assets for the docs
+Read our [asset-upload.md](./asset-upload.md) for uploading assets
