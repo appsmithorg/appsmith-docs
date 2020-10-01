@@ -15,6 +15,7 @@ showAlert(message, style) -> void
 #### Arguments
 
 | Argument Name | Description |
+| :--- | :--- |
 | message | string |
 | style | string |
 
