@@ -44,9 +44,9 @@
 * [Image](widget-reference/image.md)
 * [Container](widget-reference/container.md)
 
-## Action Reference
+## Function Reference
 
-* [Show Modal](action-reference/show-modal.md)
+* [Show Modal](function-reference/show-modal.md)
 
 ## Third Party Services
 

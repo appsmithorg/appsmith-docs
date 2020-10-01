@@ -8,7 +8,7 @@ description: >-
 
 ## Functions
 
-* [Show Modal](../../action-reference/show-modal.md)
+* [Show Modal](../../function-reference/show-modal.md)
 * Close Modal
 * Store Value
 * Download
