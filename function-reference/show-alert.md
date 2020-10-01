@@ -1,6 +1,6 @@
 ---
 description: >-
-Show a temporary notification style alert message to the user
+  Show a temporary notification style alert message to the user
 ---
 
 # showAlert
@@ -14,7 +14,8 @@ showAlert(message, style) -> void
 
 #### Arguments
 
+| Argument Name | Description |
 | message | string |
 | style | string |
 
-## Image / gif of the function being used
+![Click to expand](../.gitbook/assets/showAlert.gif)
