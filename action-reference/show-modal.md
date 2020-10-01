@@ -12,7 +12,7 @@ description: >-
 showModal('Modal1')
 ```
 
-#### Parameters
+#### Arguments
 
 | Argument Name | Description |
 | :--- | :--- |
