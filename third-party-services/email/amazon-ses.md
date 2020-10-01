@@ -8,7 +8,7 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 **1. Navigate to the SES section & SMTP setting page**
 
-![Click to expand](../../.gitbook/assets/aws-ses.png)
+![Click to expand](/.gitbook/assets/aws-ses.png)
 
 **2. Copy the SMTP configuration & Create new SMTP Credentials**
 
