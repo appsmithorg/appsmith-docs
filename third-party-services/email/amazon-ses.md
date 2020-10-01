@@ -8,7 +8,7 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 **1. Navigate to the SES section & SMTP setting page**
 
-![Click to expand](/.gitbook/assets/aws-ses.png)
+![Click to expand](../../.gitbook/assets/aws-ses.png)
 
 **2. Copy the SMTP configuration & Create new SMTP Credentials**
 
@@ -26,7 +26,6 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 ![](../../.gitbook/assets/aws-verify-email.png)
 
-  
 **6. Update the docker.env file in your appsmith deployment folder**
 
 {% hint style="danger" %}
@@ -51,13 +50,13 @@ APPSMITH_MAIL_SMTP_AUTH=true
 **7. Restart docker & nginx**
 
 ```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
 Your email service should now be configured correctly. Read more about [setting up email with SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-set-up.html)
 
 {% hint style="warning" %}
-If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids.   
+If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids.  
 Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)
 {% endhint %}
 

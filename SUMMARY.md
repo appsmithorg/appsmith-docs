@@ -43,6 +43,10 @@
 * [Image](widget-reference/image.md)
 * [Container](widget-reference/container.md)
 
+## Action Reference
+
+* [Show Modal](action-reference/show-modal.md)
+
 ## Third Party Services
 
 * [Email](third-party-services/email/README.md)
