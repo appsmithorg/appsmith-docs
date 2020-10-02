@@ -14,9 +14,9 @@ showAlert(message, style) -> void
 
 #### Arguments
 
-| Argument Name | Description |
+| **Argument Name** | **Description** |
 | :--- | :--- |
-| message | string |
-| style | string |
+| **Message** | string |
+| **Style** | string |
 
 ![Click to expand](../.gitbook/assets/showAlert.gif)
