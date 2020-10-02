@@ -32,16 +32,16 @@ Appsmith has a collection of widgets that can be used to build the UI. Widgets c
 Widgets have default names generated for them. You can rename a widget by clicking on its name in the property pane.
 
 {% hint style="success" %}
-Widget names are important when adding logic so name your widgets well!
+Widget names are important while adding logic, so name your widgets well!
 {% endhint %}
 
 ## Editing widget properties 
 
-Widget properties can be editing via the property pane which can be toggled next to the delete icon. Widget properties can affect data, style and action to take. 
+Widget properties can be edited via the property pane which could be opened using top-right icon (Edit Widget Properties). Widget properties can affect the widget data, styling and actions.
 
 ![](../../.gitbook/assets/input-property-pane.png)
 
-**Widget properties don't have to be static!** Connect a widget property to an API by typing **`{{ }}`** inside the property and binding the property using an API name or Widget name. You can learn more about working with widgets and APIs here
+**Widget properties don't have to be static!** To make it dynamic, type **`{{ }}`** inside the widget property and bind it to an API name or Widget name. You can learn more about working with widgets and APIs here
 
 * [Displaying API / Query Data](displaying-api-data.md)
 * [Talking to other widgets](talking-to-other-widgets.md)
