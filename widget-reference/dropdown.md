@@ -5,6 +5,7 @@ description: >-
 ---
 
 # Dropdown
+![](../.gitbook/assets/dropdown.gif)
 
 ## Filtering Data
 
