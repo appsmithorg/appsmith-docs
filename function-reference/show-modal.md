@@ -1,6 +1,6 @@
 ---
 description: >-
-  This action is used to open a modal when triggered. Create a new modal before
+  This function is used to open a modal when triggered. Create a new modal before
   calling this action
 ---
 
