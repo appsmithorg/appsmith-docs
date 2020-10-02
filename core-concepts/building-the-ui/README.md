@@ -37,11 +37,11 @@ Widget names are important while adding logic, so name your widgets well!
 
 ## Editing widget properties 
 
-Widget properties can be edited via the property pane which could be opened using top-right icon (Edit Widget Properties). Widget properties can affect the widget data, styling and actions.
+Widget properties can be edited via the property pane which is opened using top-right icon (Edit Widget Properties). Widget properties can affect the widget data, styling and actions.
 
 ![](../../.gitbook/assets/input-property-pane.png)
 
-**Widget properties don't have to be static!** To make it dynamic, type **`{{ }}`** inside the widget property and bind it to an API name or Widget name. You can learn more about working with widgets and APIs here
+**Widget properties don't have to be static!** To make it dynamic, type **`{{ }}`** inside the widget property and bind it to an API/Query/Widget. You can learn more about working with widgets and APIs here
 
 * [Displaying API / Query Data](displaying-api-data.md)
 * [Talking to other widgets](talking-to-other-widgets.md)
