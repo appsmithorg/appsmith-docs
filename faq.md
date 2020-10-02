@@ -22,7 +22,7 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 
 ## What if I get stuck building an app on Appsmith?
 
-We sincerely hope this never happens to anyone but we acknowledge that there can be road blocks. At this juncture, we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if an absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [discord server](https://discord.com/invite/rBTTVJp) 
+We sincerely hope this never happens to anyone but we acknowledge that there can be road blocks. At this juncture, we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if the absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [discord server](https://discord.com/invite/rBTTVJp) 
 
 ## What can't I do on Appsmith?
 

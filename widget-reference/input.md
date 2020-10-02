@@ -11,7 +11,7 @@ description: >-
 
 Input widgets can be used to allow users to search through records. The text of the input can be accessed in an API by referencing the text property **`{{ InputName.text }}`**
 
-Same can be used to filter data on the client-side by writing a filter function using the text property
+The same can be used to filter data on the client-side by writing a filter function using the text property
 
 ```javascript
 {{ apiName.data.filter((row) => { 

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Datepicker is used to capture the date and time of a user. It can be used to
-  filter database on the input date range as well as to capture personal
+  Datepicker is used to capture the date and time input by a user. It can be used to
+  filter data based on the input date range as well as to capture personal
   information such as date of birth.
 ---
 
