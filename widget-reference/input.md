@@ -7,6 +7,9 @@ description: >-
 
 # Input
 
+![compressed](https://user-images.githubusercontent.com/44445191/94912021-a7c8fc00-04c4-11eb-84c9-32a6f2390296.gif)
+
+
 ## Searching data
 
 Input widgets can be used to allow users to search through records. The text of the input can be accessed in an API by referencing the text property **`{{ InputName.text }}`**
