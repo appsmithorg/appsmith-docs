@@ -47,6 +47,8 @@
 ## Function Reference
 
 * [Show Modal](function-reference/show-modal.md)
+* [Close Modal](function-reference/close-modal.md)
+* [Download](function-reference/download.md)
 
 ## Third Party Services
 
