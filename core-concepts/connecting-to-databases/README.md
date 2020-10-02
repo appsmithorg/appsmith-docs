@@ -14,7 +14,7 @@ Connections to databases can be created in the datasource pane. Contact your dat
 Whitelist ****[18.223.74.85](https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#ElasticIpDetails:PublicIp=18.223.74.85) to connect to your database from our cloud hosted version
 {% endhint %}
 
-![Click to expand](../../.gitbook/assets/datasource-connection1.png)
+![Click to expand](../../.gitbook/assets/datasource-connection.png)
 
 ## Querying a database
 
