@@ -1,6 +1,6 @@
 ---
 description: >-
-  Download anything as a file
+  This action is used to download a file when triggered
 ---
 
 # Download 
