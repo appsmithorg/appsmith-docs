@@ -15,7 +15,7 @@ showAlert(message, style) -> void
 
 | **Argument Name** | **Description** |
 | :--- | :--- |
-| **Message** | string |
-| **Style** | string |
+| **Message** | string: The message you want to show to user ex:"form submitted"|
+| **Style** | string: defines the style of alert message. Style can be info,success,error,warning |
 
 ![Click to expand](../.gitbook/assets/showAlert.gif)
