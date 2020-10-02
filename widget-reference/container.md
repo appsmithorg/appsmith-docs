@@ -1,6 +1,6 @@
 ---
 description: >-
-  Containers are used to group widgets together to form logical higher order
+  Containers are used to group widgets together to form logical higher-order
   widgets. Containers let you organize your page better and move all the widgets
   inside them together.
 ---

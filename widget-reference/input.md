@@ -1,6 +1,6 @@
 ---
 description: >-
-  An input text field is used to capture a users textual input such as their
+  An input text field is used to capture a user's textual input such as their
   names, numbers, emails etc. Inputs can be used in a form and can have custom
   validations.
 ---
@@ -11,7 +11,7 @@ description: >-
 
 Input widgets can be used to allow users to search through records. The text of the input can be accessed in an API by referencing the text property **`{{ InputName.text }}`**
 
-The same can be used to filter data on the client side by writing a filter function using the text property
+Same can be used to filter data on the client-side by writing a filter function using the text property
 
 ```javascript
 {{ apiName.data.filter((row) => { 

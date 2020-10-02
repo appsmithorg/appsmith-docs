@@ -1,5 +1,5 @@
 ---
-description: The appsmith uses the database command syntax to query MongoDb
+description: Appsmith uses the database command syntax to query MongoDB
 ---
 
 # Mongo Query Syntax
