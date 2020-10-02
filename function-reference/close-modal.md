@@ -4,7 +4,7 @@ description: >-
   calling this action
 ---
 
-# Show Modal
+# Close Modal
 
 ## Signature
 
