@@ -9,7 +9,6 @@ description: >-
 
 ```text
 showAlert(message, style) -> void
-    
 ```
 
 #### Arguments
