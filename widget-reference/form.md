@@ -51,3 +51,4 @@ The form button is provided by default to every form. It is used for form submis
 | :--- | :--- |
 | **onClick** | Sets the action to be run when user clicks a button. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
 
+![](../.gitbook/assets/Form.gif)
