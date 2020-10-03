@@ -7,7 +7,7 @@ description: >-
 
 # Input
 
-![compressed](https://user-images.githubusercontent.com/44445191/94912021-a7c8fc00-04c4-11eb-84c9-32a6f2390296.gif)
+![](/.gitbook/assets/input-widget.png)
 
 ## Searching data
 
