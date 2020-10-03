@@ -8,5 +8,3 @@ description: >-
 
 #### Check out the [Live App](https://bit.ly/cs-dashboard-appsmith)
 
-{% embed url="https://youtu.be/-O\_6OLREEzo" %}
-
