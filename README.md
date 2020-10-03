@@ -25,5 +25,5 @@ Appsmith makes building internal tools as easy as
 
 Check out our demo video to see how easy it is!
 
-{% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" %}
+[![click the image for the video](https://img.youtube.com/vi/mzqK0QIZRLs/0.jpg)](https://www.youtube.com/watch?v=mzqK0QIZRLs)
 
