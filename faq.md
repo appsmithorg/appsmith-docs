@@ -11,6 +11,7 @@ You can use Appsmith to build custom forms, dashboards & workflows. Tools like c
 ## How is Appsmith different from other app builders?
 
 Appsmith is the first open source visual framework for building internal tools. Appsmith makes building internal tool building easy, by giving you building blocks (widgets, APIs, Queries) which you can configure and connect together while the framework does most of the heavy lifting.
+Appsmith is the first open-source visual framework for building internal tools. We make building internal tool building easy by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting
 
 ## Can I write code in Appsmith?
 
@@ -22,11 +23,12 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 
 ## What if I get stuck while building an app on Appsmith?
 
-We sincerely hope this never happens to anyone but we acknowledge that there can be road blocks. At this juncture we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [discord server](https://discord.com/invite/rBTTVJp) 
+We sincerely hope this never happens to anyone but we acknowledge that there can be road blocks. At this juncture, we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if the absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [discord server](https://discord.com/invite/rBTTVJp) 
 
 ## Like with every GOD particle, Appsmith also has its own limitations?
 
 Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer facing websites. It works great for tools, internal to your team or organization (didn’t get it after this)but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we'd recommend you try [Wix](www.wix.com), [Squarespace](www.squarespace.com) or [Webflow](www.webflow.com). You can also perform some simple data visualisation & charting on Appsmith but for more in-depth business intelligence & analytics, we'd recommend [Tableau](https://www.tableau.com/), [Looker](https://looker.com/) or [Redash](https://redash.io/).
+Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer-facing websites. It works great for tools internal to your team or organization but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we'd recommend you try [Wix](www.wix.com), [Squarespace](www.squarespace.com), or [Webflow](www.webflow.com). You can also perform some simple data visualization & charting on Appsmith but for more in-depth business intelligence & analytics, we'd recommend [Tableau](https://www.tableau.com/), [Looker](https://looker.com/), or [Redash](https://redash.io/).
 
 
 
