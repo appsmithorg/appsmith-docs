@@ -11,7 +11,7 @@ description: >-
 
 The API pane is a REST interface that allows you to create and modify your existing APIs. All REST HTTP methods are supported and API values can be configured in the headers, params and body fields
 
-![](../../.gitbook/assets/create-api2.gif)
+![](../../.gitbook/assets/create-api3.png)
 
 ## Reading values from widgets
 
