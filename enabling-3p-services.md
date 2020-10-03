@@ -1,20 +1,19 @@
 ---
 description: >-
-  Appsmith ships with third party services that improve the app building
-  experience. All third party services are entirely optional
+  Appsmith ships with third party services that improves the app building experience. All third party services are entirely optional.
 ---
 
 # Enabling Third Party Services
 
 {% hint style="success" %}
-All third party services are enabled by default in our [cloud hosted](https://appsmith.com) version
+All third party services are enabled by default in our [cloud hosted](https://appsmith.com) version.
 {% endhint %}
 
 ## Enabling Services for Self Hosting
 
 Our self hosted version allows you to configure your own keys to enable third party services such as Google OAuth. To enable a service, simply open the folder of your appsmith installation and edit the **docker.env** file.
 
-You may need root access to modify the docker.env file
+You may need root access to modify the docker.env file.
 
 Restart docker and nginx using the following command
 
