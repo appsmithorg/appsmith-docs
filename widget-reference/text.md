@@ -21,6 +21,6 @@ description: >-
 The text widget by default provides some basic options for styling but developers are not limited to those. The text widget will render HTML tags as well so any custom styling can be done in HTML and rendered on the text widget.
 
 {% hint style="info" %}
-The text widget also renders objects as JSOn by default
+The text widget also renders objects as JSON by default
 {% endhint %}
 

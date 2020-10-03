@@ -52,7 +52,7 @@ You can upload files by creating a post API and referring to the base64 version 
 | **Allowed File Types** | Enables you to set constraints on the type of file a user can upload - images, videos, audios, text files, etc.  |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
-| **Uploaded File URLs** | This property specifies the urls of the uploaded files that the file upload API returned. You can bind it to the API using {{ apiName.data.fileUrl }} |
+| **Uploaded File URLs** | This property specifies the URLs of the uploaded files that the file upload API returned. You can bind it to the API using {{ apiName.data.fileUrl }} |
 
 | Action | Description |
 | :--- | :--- |

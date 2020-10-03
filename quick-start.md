@@ -18,11 +18,11 @@ The fastest way to get started with appsmith is using our cloud hosted version. 
 
 ## Docker
 
-Appsmith can be deployed locally or on your private instance using docker. To simplify installation, appsmith comes with an installation script that will download all of the necessary dependencies and help you configure appsmith.
+Appsmith can be deployed locally or on your private instance using docker. To simplify installation, appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
 
-* MacOS
+* macOS
 * Ubuntu
 
 {% hint style="warning" %}
@@ -63,9 +63,9 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 ```
 
 {% hint style="success" %}
-* Ensure your security groups are configured to allow traffic to port 80 & 443 on your installation instance. 
+* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance. 
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
-* You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start
+* You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start.
 {% endhint %}
 
 ### Custom Domains
@@ -82,7 +82,7 @@ To host Appsmith on a custom domain, you can contact your domain registrar and u
 
 If at any time you encounter an error during the installation process, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
 
-If you know the error and would like to reinstall appsmith, simply delete the installation folder and the templates folder and execute the script again
+If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
 
 ## Updating to the latest release
 
