@@ -16,6 +16,14 @@ Appsmith is the first open source visual framework for building internal tools. 
 
 Yes, absolutely. You can write JS code anywhere inside the product within `{{ }}`. We know how complex and intricate business logic can be and trying to build it without code can get excruciating. Appsmith bridges mundane API and UI configurations with powerful code expressions to let you build apps the way you see fit.
 
+## Do I need to learn coding to make an app in Appsmith?
+
+## Will Appsmith charge me for using their services?
+
+## What is the minimum requirement of a platform for Appsmith to work?
+
+## Does Appsmith work online on a browser?
+
 ## Is my data safe?
 
 Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is open source and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
