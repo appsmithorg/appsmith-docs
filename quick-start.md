@@ -36,19 +36,19 @@ If you're installing appsmith on Mac, you must have [docker desktop](https://doc
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-    2. Make the script executable
+2. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-    3. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+3. Run the script. **Make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-    4. Check if all containers are running correctly
+4. Check if all containers are running correctly
 
 ```bash
 docker ps
