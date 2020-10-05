@@ -7,6 +7,8 @@ description: >-
 
 # Input
 
+![](/.gitbook/assets/input-widget.gif)
+
 ## Searching data
 
 Input widgets can be used to allow users to search through records. The text of the input can be accessed in an API by referencing the text property **`{{ InputName.text }}`**
@@ -60,7 +62,7 @@ Read more about submitting Input data to an API below
 
 | Action | Description |
 | :--- | :--- |
-| **onTextChanged** | Sets the action to be run when user updates the text in the input  |
+| **onTextChanged** | Sets the action to be run when user updates the text in the input.  |
 
 
 
