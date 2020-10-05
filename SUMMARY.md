@@ -43,12 +43,15 @@
 * [Text](widget-reference/text.md)
 * [Image](widget-reference/image.md)
 * [Container](widget-reference/container.md)
+* [Video](widget-reference/video.md)
 
 ## Function Reference
 
 * [Show Modal](function-reference/show-modal.md)
 * [Close Modal](function-reference/close-modal.md)
 * [Download](function-reference/download.md)
+* [Show Alert](function-reference/show-alert.md)
+* [Navigate Page](function-reference/navigateTo.md)
 
 ## Third Party Services
 
