@@ -62,7 +62,7 @@ Read more about submitting Input data to an API below
 
 | Action | Description |
 | :--- | :--- |
-| **onTextChanged** | Sets the action to be run when user updates the text in the input  |
+| **onTextChanged** | Sets the action to be run when user updates the text in the input.  |
 
 
 
