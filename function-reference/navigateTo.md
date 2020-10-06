@@ -15,7 +15,8 @@ navigateTo(pageName: string) -> void
 
 | **Argument Name** | **Description** |
 | :--- | :--- |
-| **pageName** |  Page name to which we would like to be transported. It's case sensitive. |
+| **pageNameOrUrl** |  Page name or URL to which we would like to be transported. PageName is case sensitive. |
+| **params** |  Query params, to share information with destination. |
 
 ![Click to expand](../.gitbook/assets/navigateTo.gif)
 
