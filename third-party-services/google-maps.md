@@ -37,7 +37,7 @@ APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 # ********************************
 ```
 
-**5. Restart docker & nginx**
+**6. Restart docker & nginx**
 
 ```text
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
