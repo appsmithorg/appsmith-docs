@@ -13,6 +13,7 @@
   * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
   * [Triggering APIs / Queries from Widgets](core-concepts/building-the-ui/calling-apis-from-widgets.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
+  * [Whitelisting database IP on AWS](core-concepts/connecting-to-databases/aws-whitelist.md)
   * [Querying Postgres](core-concepts/connecting-to-databases/querying-postgres.md)
   * [Querying MongoDB](core-concepts/connecting-to-databases/querying-mongodb/README.md)
     * [Mongo Query Syntax](core-concepts/connecting-to-databases/querying-mongodb/mongo-syntax.md)
@@ -58,4 +59,3 @@
 * [Google OAuth](third-party-services/google-login.md)
 * [Github OAuth](third-party-services/github-login.md)
 * [Google Maps](third-party-services/google-maps.md)
-

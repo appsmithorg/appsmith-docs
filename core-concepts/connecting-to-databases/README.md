@@ -8,10 +8,10 @@ description: >-
 
 ## Database Connections
 
-Connections to databases can be created in the datasource pane. Contact your database admin for the connection credentials and configure them in the data source section. If you are hosting appsmith, you must whitelist the ip address of the appsmith deployment
+Connections to databases can be created in the datasource pane. Contact your database admin for the connection credentials and configure them in the data source section. If you are hosting appsmith, you must whitelist the IP address of the appsmith deployment
 
 {% hint style="success" %}
-Whitelist ****[18.223.74.85](https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#ElasticIpDetails:PublicIp=18.223.74.85) to connect to your database from our cloud hosted version
+Whitelist ****[18.223.74.85](https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#ElasticIpDetails:PublicIp=18.223.74.85) to connect to your database from our cloud hosted version. Step-by-step guide available [here](aws-whitelist.md)
 {% endhint %}
 
 ![Click to expand](../../.gitbook/assets/datasource-connection.png)
@@ -22,4 +22,3 @@ Data can be fetched and updated using queries. Appsmith provides a query interfa
 
 * [Querying Postgres](querying-postgres.md)
 * [Querying MongoDB](querying-mongodb/)
-
