@@ -63,3 +63,4 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **onRowSelected** | Sets the action to be run when user selects a row in the table. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
 | **onPageChange** | Sets the action to be run when a table page is changed. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
 
+![](../.gitbook/assets/Table.gif)
