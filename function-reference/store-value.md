@@ -8,7 +8,7 @@ description: >-
 ## Signature
 
 ```text
-storeValue(key: string, value: any) -> void"
+storeValue(key: string, value: any) -> void
 ```
 
 #### Arguments
