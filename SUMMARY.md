@@ -30,19 +30,19 @@
 
 ## Widget Reference
 
-* [Table](widget-reference/table.md)
-* [Form](widget-reference/form.md)
-* [Input](widget-reference/input.md)
-* [Dropdown](widget-reference/dropdown.md)
-* [Datepicker](widget-reference/datepicker.md)
-* [Filepicker](widget-reference/filepicker.md)
-* [Radio](widget-reference/radio.md)
-* [Checkbox](widget-reference/checkbox.md)
 * [Button](widget-reference/button.md)
 * [Chart](widget-reference/chart.md)
-* [Text](widget-reference/text.md)
-* [Image](widget-reference/image.md)
+* [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)
+* [Datepicker](widget-reference/datepicker.md)
+* [Dropdown](widget-reference/dropdown.md)
+* [Filepicker](widget-reference/filepicker.md)
+* [Form](widget-reference/form.md)
+* [Image](widget-reference/image.md)
+* [Input](widget-reference/input.md)
+* [Radio](widget-reference/radio.md)
+* [Table](widget-reference/table.md)
+* [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
 
 ## Function Reference
