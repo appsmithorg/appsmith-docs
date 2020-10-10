@@ -22,7 +22,7 @@
 * [Connecting UI & Logic](core-concepts/connecting-ui-and-logic/README.md)
   * [Working with JS libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
   * [Internal Functions](core-concepts/connecting-ui-and-logic/internal-functions.md)
-  * [Data Sharing Across Pages](core-concepts/connecting-ui-and-logic/sharing-data-across-pages.md)
+  * [Sharing Data Across Pages](core-concepts/connecting-ui-and-logic/sharing-data-across-pages.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Tutorials
