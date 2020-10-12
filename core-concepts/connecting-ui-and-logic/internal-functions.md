@@ -14,4 +14,3 @@ description: >-
 * [Show Alert](../../function-reference/show-alert.md)
 * [Navigate Page](../../function-reference/navigateTo.md)
 * [Store Value](../../function-reference/store-value.md)
-* Show Message
