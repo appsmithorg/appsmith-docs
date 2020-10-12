@@ -8,7 +8,7 @@ description: >-
 ## Signature
 
 ```text
-navigateTo(pageName: string) -> void
+navigateTo(pageName: string, params?: {}) -> void
 ```
 
 #### Arguments
@@ -16,6 +16,6 @@ navigateTo(pageName: string) -> void
 | **Argument Name** | **Description** |
 | :--- | :--- |
 | **pageNameOrUrl** |  Page name or URL to which we would like to be transported. PageName is case sensitive. |
-| **params** |  Query parameters passed via the URL. Used to share information with destination page. |
+| **params** (optional) |  Query parameters passed via the URL. Used to share information with destination page. |
 
 ![Click to expand](../.gitbook/assets/navigateTo.gif)
