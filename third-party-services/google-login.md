@@ -41,8 +41,8 @@ APPSMITH_OAUTH2_ALLOWED_DOMAINS=YOUR_DOMAIN_NAME
 ```
 
 * replace `YOUR_CLIENT_ID` and `YOUR_CLIENT_SECRET` with the client ID and client secret generated in the step above
-* replace `YOUR_DOMAIN_NAME` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in
-    * **Note**: to allow more than one domain name, use a comma-separated list
+* replace `YOUR_DOMAIN_NAME` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**
+    * **Note**: you can provide several domain names using a comma-separated list
 
 **6. Restart docker & nginx**
 
