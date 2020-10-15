@@ -31,8 +31,9 @@ You can upload files by creating a post API and referring to the base64 or binar
       <td style="text-align:left"><b>files</b>
       </td>
       <td style="text-align:left">
-        <p>This is the array of files selected in the file picker. The base64 version
-          of each file is also present in each array object and can be accessed as</p>
+        <p>This is the array of files selected in the file picker. The base64 and
+          binary versions of each file are present in each array object and can be
+          accessed as</p>
         <p><b>{{ Filepicker1.files[0].base64 }}</b>
         </p>
         <p><b>{{ Filepicker1.files[0].raw }}</b>
