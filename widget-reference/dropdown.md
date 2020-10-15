@@ -5,6 +5,7 @@ description: >-
 ---
 
 # Dropdown
+
 ![](../.gitbook/assets/dropdown.gif)
 
 ## Filtering Data
@@ -13,7 +14,7 @@ A Dropdown can be used to filter a dataset based on users input. The selected op
 
 ## **Form Submission**
 
-Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, status. 
+Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, status.
 
 {% hint style="success" %}
 Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
@@ -44,8 +45,8 @@ Read more about submitting Input data to an API below
 | **Selection Type** | Lets you control whether you want the dropdown to be a Single Select or a Multi-Select dropdown. Single Select allows users to choose only one value from the list of options whereas Multi-Select allows for selection of more than one value by the user. |
 | **Options** | Lets you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
 | **Default Option** | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value string for a Multi-Select dropdown. |
-| **Required** | When turned on, it makes a user input required and disables any form submission until an input is made.  |
-| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
+| **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
+| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
 | Action | Description |
 | :--- | :--- |

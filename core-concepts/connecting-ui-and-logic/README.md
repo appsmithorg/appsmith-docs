@@ -8,7 +8,7 @@ description: >-
 
 Javascript can be used almost anywhere in Appsmith inside **`{{ }}.`** The value evaluated inside the mustache is substituted in the field it is written in. This allows you to creatively configure different parts of your application.
 
-### Widget Properties
+## Widget Properties
 
 ```javascript
 Hello {{usersTable.selectedRow.name}}
@@ -24,7 +24,7 @@ Similarly, Logic can be added to this example to display something if no row is 
 
 Read More about [talking to other widgets](../building-the-ui/talking-to-other-widgets.md)
 
-### APIs
+## APIs
 
 Similar to the above example, the params, body & headers of an API can be substituted with a value from a widget or another part of the application. You can also choose to only substitute a part of the post body so that it's easy to configure the structure of your API. **The resulting post body must still be a valid JSON so the substitution must be surrounded by quotes**
 
@@ -37,7 +37,7 @@ Similar to the above example, the params, body & headers of an API can be substi
 
 Read More about[ taking inputs from widgets](../apis/taking-inputs-from-widgets.md)
 
-### Queries
+## Queries
 
 Values can be passed to a query by using the substitution syntax inside the query
 
@@ -45,7 +45,5 @@ Values can be passed to a query by using the substitution syntax inside the quer
 select * from users where name ilike '%{{searchInput.text}}%'
 ```
 
-API / Query data can also be displayed inside widgets using the **{{ queryName.data }}** substituted inside the widget property. Sometimes there is a mismatch in the data format of the response data and the format that the widget requires. You can overcome this by [transforming the data ](../building-the-ui/displaying-api-data.md#transforming-api-query-data)inside the widget property using javascript
-
-
+API / Query data can also be displayed inside widgets using the  substituted inside the widget property. Sometimes there is a mismatch in the data format of the response data and the format that the widget requires. You can overcome this by [transforming the data ](../building-the-ui/displaying-api-data.md#transforming-api-query-data)inside the widget property using javascript
 

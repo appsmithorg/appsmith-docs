@@ -6,7 +6,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ## Find Query
 
-#### Syntax
+### Syntax
 
 ```text
 {
@@ -19,9 +19,9 @@ description: Appsmith uses the database command syntax to query MongoDB
   }
 ```
 
-#### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/find/)
+### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/find/)
 
-#### Example
+### Example
 
 ```text
 {
@@ -35,7 +35,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ## Update Query
 
-#### **Syntax**
+### **Syntax**
 
 ```text
 {
@@ -51,7 +51,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 \*\*\*\*[**Complete list of fields**](https://docs.mongodb.com/manual/reference/command/update/#dbcmd.update)\*\*\*\*
 
-#### Example
+### Example
 
 ```text
 {
@@ -68,7 +68,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ## Insert Query
 
-#### Syntax
+### Syntax
 
 ```text
 {
@@ -78,9 +78,9 @@ description: Appsmith uses the database command syntax to query MongoDB
 }
 ```
 
-#### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/insert/)
+### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/insert/)
 
-#### Example
+### Example
 
 ```text
 {
@@ -93,7 +93,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ## Delete Query
 
-#### Syntax
+### Syntax
 
 ```text
 {
@@ -107,9 +107,9 @@ description: Appsmith uses the database command syntax to query MongoDB
 }
 ```
 
-#### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/delete/)
+### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/delete/)
 
-#### Example
+### Example
 
 ```text
 {

@@ -1,7 +1,7 @@
 ---
 description: >-
-  This function is used to open a modal when triggered. Create a new modal before
-  calling this action
+  This function is used to open a modal when triggered. Create a new modal
+  before calling this action
 ---
 
 # Show Modal
@@ -12,11 +12,11 @@ description: >-
 showModal('Modal1')
 ```
 
-#### Arguments
+### Arguments
 
 | Argument Name | Description |
 | :--- | :--- |
-| **Modal Name** |  Name of the modal to be displayed |
+| **Modal Name** | Name of the modal to be displayed |
 
 ![Click to expand](../.gitbook/assets/showmodal.gif)
 

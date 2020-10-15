@@ -11,7 +11,7 @@ description: >-
 
 A table takes data in the form of an array of objects. Adding an array of objects to the table data will display each object as a row of data with each key of the object as a column in the table.
 
-You can also display data from an API in a table by binding it in the table data using 
+You can also display data from an API in a table by binding it in the table data using
 
 ```javascript
 {{ queryName.data }}
@@ -53,14 +53,15 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 
 | Widget Property | Description |
 | :--- | :--- |
-| **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax {{ apiName.data }} |
-| **Server Side Pagination**  | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is being bound to an API / Query.  |
-| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published    |
+| **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax  |
+| **Server Side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is being bound to an API / Query. |
+| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
 | Action | Description |
 | :--- | :--- |
-| **Column Action** | Adds a new column to the table with a button against each row. The button can be configured to trigger an action on the corresponding data row.  |
+| **Column Action** | Adds a new column to the table with a button against each row. The button can be configured to trigger an action on the corresponding data row. |
 | **onRowSelected** | Sets the action to be run when user selects a row in the table. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
 | **onPageChange** | Sets the action to be run when a table page is changed. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
 
 ![](../.gitbook/assets/Table.gif)
+

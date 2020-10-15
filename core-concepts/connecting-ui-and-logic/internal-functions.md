@@ -12,5 +12,6 @@ description: >-
 * [Close Modal](../../function-reference/close-modal.md)
 * [Download](../../function-reference/download.md)
 * [Show Alert](../../function-reference/show-alert.md)
-* [Navigate Page](../../function-reference/navigateTo.md)
+* [Navigate Page](../../function-reference/navigateto.md)
 * [Store Value](../../function-reference/store-value.md)
+

@@ -19,7 +19,7 @@ You may need root access to modify the docker.env file.
 Restart docker and nginx using the following command
 
 ```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
 ## Configuring Third Party Services

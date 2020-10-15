@@ -6,7 +6,7 @@ description: >-
 
 # Customer Support Dashboard
 
-#### Check out the [Live App](https://bit.ly/cs-dashboard-appsmith)
+## Check out the [Live App](https://bit.ly/cs-dashboard-appsmith)
 
-{% embed url="https://youtu.be/-O\_6OLREEzo" %}
+{% embed url="https://youtu.be/-O\_6OLREEzo" caption="" %}
 

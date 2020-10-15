@@ -40,7 +40,7 @@ APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 **6. Restart docker & nginx**
 
 ```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
 The maps widget should now be enabled on your installation. Read more about [Obtaining a google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)

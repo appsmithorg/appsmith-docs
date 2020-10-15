@@ -9,7 +9,7 @@ description: >-
 
 ## Adding UI Elements
 
-Appsmith has a collection of widgets that can be used to build the UI. Widgets can be dragged from the widget pane and be positioned on the canvas. They can also be resized to fit the data they need to display. 
+Appsmith has a collection of widgets that can be used to build the UI. Widgets can be dragged from the widget pane and be positioned on the canvas. They can also be resized to fit the data they need to display.
 
 ![Click to expand](../../.gitbook/assets/drag-and-drop.gif)
 
@@ -35,9 +35,9 @@ Widgets have default names generated for them. You can rename a widget by clicki
 Widget names are important while adding logic, so name your widgets well!
 {% endhint %}
 
-## Editing widget properties 
+## Editing widget properties
 
-Widget properties can be edited via the property pane which is opened using top-right icon (Edit Widget Properties). Widget properties can affect the widget data, styling and actions.
+Widget properties can be edited via the property pane which is opened using top-right icon \(Edit Widget Properties\). Widget properties can affect the widget data, styling and actions.
 
 ![](../../.gitbook/assets/input-property-pane.png)
 

@@ -7,7 +7,7 @@ description: >-
 
 # Input
 
-![](/.gitbook/assets/input-widget.gif)
+![](../.gitbook/assets/input-widget.gif)
 
 ## Searching data
 
@@ -46,23 +46,21 @@ Read more about submitting Input data to an API below
 
 | Internal property | Description |
 | :--- | :--- |
-| **text** | This is the value of the text that is currently displayed on the widget. It changes when the default value changes or the user inputs a new value  |
+| **text** | This is the value of the text that is currently displayed on the widget. It changes when the default value changes or the user inputs a new value |
 
 | Property | Description |
 | :--- | :--- |
-| **Label** | Sets the label for input. It can be left empty if you don't want any label.  |
+| **Label** | Sets the label for input. It can be left empty if you don't want any label. |
 | **Data Type** | Sets the type of data you want to capture in the user input. Selecting a data type will add the associated data validation on the user input. |
-| **Placeholder** | Sets a placeholder text inside the input. It is generally used to display an expected input or hint to the user.  |
+| **Placeholder** | Sets a placeholder text inside the input. It is generally used to display an expected input or hint to the user. |
 | **Default Input** | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record |
 | **Regex** | Used to add custom validations you want to perform on user input. |
 | **Error Message** | Sets the text of the error message to display if Regex validation fails. |
-| **Required** | When turned on, it makes a user input required and disables any form submission until an input is made.  |
-| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
-| **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed.  |
+| **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
+| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
+| **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed. |
 
 | Action | Description |
 | :--- | :--- |
-| **onTextChanged** | Sets the action to be run when user updates the text in the input.  |
-
-
+| **onTextChanged** | Sets the action to be run when user updates the text in the input. |
 

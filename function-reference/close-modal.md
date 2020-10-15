@@ -1,7 +1,7 @@
 ---
 description: >-
-  This action is used to close a modal when triggered. Create a new modal and open it before
-  calling this action
+  This action is used to close a modal when triggered. Create a new modal and
+  open it before calling this action
 ---
 
 # Close Modal
@@ -12,11 +12,11 @@ description: >-
 closeModal(modalName: string) -> void
 ```
 
-#### Arguments
+### Arguments
 
 | **Argument Name** | **Description** |
 | :--- | :--- |
-| **Modal Name** |  Name of the modal to be closed |
+| **Modal Name** | Name of the modal to be closed |
 
 ![Click to expand](../.gitbook/assets/closemodal.gif)
 

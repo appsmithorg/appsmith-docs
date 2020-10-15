@@ -36,19 +36,19 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-2. Make the script executable
+1. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-3. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-4. Check if all the containers are running correctly.
+1. Check if all the containers are running correctly.
 
 ```bash
 docker ps
