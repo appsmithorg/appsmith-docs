@@ -49,7 +49,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 }
 ```
 
-\*\*\*\*[**Complete list of fields**](https://docs.mongodb.com/manual/reference/command/update/#dbcmd.update)\*\*\*\*
+### [Complete list of fields](https://docs.mongodb.com/manual/reference/command/update/#dbcmd.update)
 
 ### Example
 
