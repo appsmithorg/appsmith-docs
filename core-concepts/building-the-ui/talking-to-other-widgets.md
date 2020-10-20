@@ -12,7 +12,7 @@ Let us take an example of a table displaying a list of products. When a user sel
 
 ![Click to expand](../../.gitbook/assets/table-form.gif)
 
-In order to achieve this, we can connect the data in the table to the properties of each of the widgets in the form. We can references the Tables selectedRow property inside the Input and Dropdown widgets to connect them to the Table data. We can reference the table using it's name inside the **`{{ }}`**
+In order to achieve this, we can connect the data in the table to the properties of each of the widgets in the form. We can references the Tables **`selectedRow`** property inside the Input and Dropdown widgets to connect them to the Table data. We can reference the table using it's name inside the **`{{ }}`**
 
 ```text
 {{ Table1.selectedRow.productName }} // Default Text property
