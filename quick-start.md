@@ -4,21 +4,21 @@ description: Appsmith stands for speed and getting started with Appsmith is just
 
 # Getting started
 
-You can begin using appsmith via our cloud instance or by deploying appsmith yourself
+You can begin using Appsmith via our cloud instance or by deploying Appsmith yourself
 
 * [Using Appsmith Cloud](quick-start.md#appsmith-cloud) **\(recommended\):** Create a new application with just one click
 * [Using Docker](quick-start.md#docker): Deploy anywhere using docker
 
 ## Appsmith Cloud
 
-The fastest way to get started with appsmith is using our cloud-hosted version. It's as easy as
+The fastest way to get started with Appsmith is using our cloud-hosted version. It's as easy as
 
 1. [Create an Account](https://app.appsmith.com/user/signup)
 2. [Start Building](core-concepts/building-the-ui/)
 
 ## Docker
 
-Appsmith can be deployed locally or on your private instance using docker. To simplify installation, appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
+Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
 
@@ -29,7 +29,7 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
-1. Fetch the **install.sh** script on the system you want to deploy appsmith
+1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
 # Downloads install.sh

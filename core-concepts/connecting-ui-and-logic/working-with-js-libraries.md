@@ -17,7 +17,7 @@ The following JS libraries are supported in the Appsmith platform.
 
 ## Using JS libraries
 
-The utility functions provided by the included libraies can be used when transforming data.
+The utility functions provided by the included libraries can be used when transforming data.
 
 ### Example: lodash
 
