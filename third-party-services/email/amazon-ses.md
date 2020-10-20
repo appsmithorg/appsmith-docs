@@ -1,5 +1,5 @@
 ---
-description: Configure Amazon SES to invite users to your appsmith installation
+description: Configure Amazon SES to invite users to your Appsmith installation
 ---
 
 # Amazon SES
@@ -22,11 +22,11 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 ![Click to expand](../../.gitbook/assets/aws-smtp-creds.png)
 
-**5. Verify the email address via which appsmith should send and receive emails**
+**5. Verify the email address via which Appsmith should send and receive emails**
 
 ![](../../.gitbook/assets/aws-verify-email.png)
 
-**6. Update the docker.env file in your appsmith deployment folder**
+**6. Update the docker.env file in your Appsmith deployment folder**
 
 {% hint style="danger" %}
 Do not use **port** **465** listed on the SES page because it is TLS enabled by default

@@ -1,20 +1,20 @@
 ---
 description: >-
   Configure an email provider of your choice to send and receive email
-  notifications in appsmith
+  notifications in Appsmith
 ---
 
 # Email
 
-Email is used to communicate with users on your installation of appsmith. Emails are sent out to
+Email is used to communicate with users on your installation of Appsmith. Emails are sent out to
 
 * Verify new user signups
-* Invite users to your organisation in appsmith
+* Invite users to your organisation in Appsmith
 * Notify admins of important events & approvals requests
 
 ## Enabling Email
 
-1. To enable email, open the docker.env file of your appsmith installation and uncomment the following block
+1. To enable email, open the docker.env file of your Appsmith installation and uncomment the following block
 
 ```text
 # ***** Email **********

@@ -1,5 +1,5 @@
 ---
-description: Configure Sendgrid to invite users to your appsmith installation
+description: Configure Sendgrid to invite users to your Appsmith installation
 ---
 
 # Sendgrid
@@ -26,7 +26,7 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![Click to expand](../../.gitbook/assets/sendgrid-create-sender.png)
 
-**6. Update the docker.env file in your appsmith deployment folder**
+**6. Update the docker.env file in your Appsmith deployment folder**
 
 ```text
 # ***** Email **********

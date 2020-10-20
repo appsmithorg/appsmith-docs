@@ -12,7 +12,7 @@ All third party services are enabled by default in our [cloud hosted](https://ap
 
 ## Enabling Services for Self Hosting
 
-Our self-hosted version allows you to configure your own keys to enable third party services such as Google OAuth. To enable a service, simply open the folder of your appsmith installation and edit the **docker.env** file.
+Our self-hosted version allows you to configure your own keys to enable third party services such as Google OAuth. To enable a service, simply open the folder of your Appsmith installation and edit the **docker.env** file.
 
 You may need root access to modify the docker.env file.
 
