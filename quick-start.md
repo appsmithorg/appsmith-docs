@@ -11,14 +11,14 @@ You can begin using appsmith via our cloud instance or by deploying appsmith you
 
 ## Appsmith Cloud
 
-The fastest way to get started with appsmith is using our cloud-hosted version. It's as easy as
+The fastest way to get started with Appsmith is using our cloud-hosted version. It's as easy as
 
 1. [Create an Account](https://app.appsmith.com/user/signup)
 2. [Start Building](core-concepts/building-the-ui/)
 
 ## Docker
 
-Appsmith can be deployed locally or on your private instance using docker. To simplify installation, appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
+Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
 
@@ -29,26 +29,26 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
-1. Fetch the **install.sh** script on the system you want to deploy appsmith
+1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
 # Downloads install.sh
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-1. Make the script executable
+2. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-1. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+3. Run the script. **Make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-1. Check if all the containers are running correctly.
+4. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -80,9 +80,9 @@ To host Appsmith on a custom domain, you can contact your domain registrar and u
 
 ## Troubleshooting
 
-If at any time you encounter an error during the installation process, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
+If at any time you encounter an error during the installation process, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp).
 
-If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
+If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again.
 
 ## Updating to the latest release
 
