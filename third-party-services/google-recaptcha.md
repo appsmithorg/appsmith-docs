@@ -24,6 +24,8 @@ description: Configure your Google reCAPTCHA to ensure only humans can submit fo
 
 > The exact steps will depend on your backend - see [Google's reference](https://developers.google.com/recaptcha/docs/verify) for detailed instructions.
 
+The user's reCAPTCHA response can be obtained in the API Pane with the `recaptchaToken` key.
+
 Make a `POST` request to `https://www.google.com/recaptcha/api/siteverify` with the `secret` (secret key) and `response` (user response) parameters to retrieve the score in a JSON format:
 
 ```js
@@ -36,3 +38,6 @@ Make a `POST` request to `https://www.google.com/recaptcha/api/siteverify` with 
   "error-codes": [...]        // optional
 }
 ```
+
+### Validation Example
+![click to expand](../.gitbook/assets/button-recaptcha-api.png)
