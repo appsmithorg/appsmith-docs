@@ -65,3 +65,5 @@ You can upload files by creating a post API and referring to the base64 or binar
 
 ![](../.gitbook/assets/filepicker.gif)
 
+## Upload to Amazon S3 
+Files from Appsmith can be directly uploaded to Amazon S3. As Amazon S3 supports [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html), a Put API can be configured to upload the image directly to S3 bucket, in which the bucket has to be configured to allow all public access. The url would be: <bucketname>.s3.<region>.amazonaws.com/<filename>, eg: https://myAmazonBucket.s3.eu-west-2.amazonaws.com/image.jpg. 
