@@ -17,7 +17,7 @@ Appsmith has a collection of widgets that can be used to build the UI. Widgets c
 * [Input](../../widget-reference/input.md)
 * [Dropdown](../../widget-reference/dropdown.md)
 * [Datepicker](../../widget-reference/datepicker.md)
-* [Button](../../widget-reference/button.md)
+* [Button](../../widget-reference/button/)
 * [Filepicker](../../widget-reference/filepicker.md)
 * [Checkbox](../../widget-reference/checkbox.md)
 * [Radio](../../widget-reference/radio.md)

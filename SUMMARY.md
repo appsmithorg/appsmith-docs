@@ -32,8 +32,8 @@
 
 ## Widget Reference
 
-* [Button](widget-reference/button.md)
-  * [Re-Captcha](widget-reference/google-recaptcha.md)
+* [Button](widget-reference/button/README.md)
+  * [Re-Captcha](widget-reference/button/google-recaptcha.md)
 * [Chart](widget-reference/chart.md)
 * [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)

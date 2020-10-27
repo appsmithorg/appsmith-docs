@@ -8,7 +8,6 @@ description: >-
 
 ![](../.gitbook/assets/github-login.png)
 
-  
 To enable Github Sign in, login to your [Github Account](https://github.com)
 
 **1. Navigate to the** [**Organizations section**](https://github.com/settings/organizations) **of your profile and the settings of the organization under which you want to create an OAuth App**
@@ -43,7 +42,7 @@ APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET                  
 **6. Restart docker & nginx**
 
 ```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
 Github Login should now be enabled for your Appsmith installation

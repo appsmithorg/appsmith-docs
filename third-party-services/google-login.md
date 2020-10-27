@@ -42,12 +42,12 @@ APPSMITH_OAUTH2_ALLOWED_DOMAINS=YOUR_DOMAIN_NAME
 
 * replace `YOUR_CLIENT_ID` and `YOUR_CLIENT_SECRET` with the client ID and client secret generated in the step above
 * replace `YOUR_DOMAIN_NAME` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**
-    * **Note**: you can provide several domain names using a comma-separated list
+  * **Note**: you can provide several domain names using a comma-separated list
 
 **6. Restart docker & nginx**
 
 ```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
 Google Login should now be enabled for your Appsmith installation

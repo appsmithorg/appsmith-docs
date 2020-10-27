@@ -1,11 +1,12 @@
 ---
 description: Whitelist your database IP on AWS
 ---
-# Whitelist DB IP on AWS
+
+# Whitelisting database IP on AWS
 
 To connect the database to your virtual machine, whitelist the database IP address with the following steps:
 
-**1. Log in to the AWS [console](https://aws.amazon.com/console/)**
+**1. Log in to the AWS** [**console**](https://aws.amazon.com/console/)
 
 **2. Navigate to the RDS Console**
 
@@ -13,7 +14,7 @@ To connect the database to your virtual machine, whitelist the database IP addre
 
 ![Click to expand](../../.gitbook/assets/chose_rds.png)
 
-**4. Select the security group linked to your RDS(Make sure RDS instance is publically accessible)**
+**4. Select the security group linked to your RDS\(Make sure RDS instance is publically accessible\)**
 
 ![Click to expand](../../.gitbook/assets/chose_sg.png)
 
@@ -25,8 +26,9 @@ To connect the database to your virtual machine, whitelist the database IP addre
 
 ![Click to expand](../../.gitbook/assets/edit_inbound.png)
 
-**7. Set _Source_ to _Custom_ and enter the database IP address 18.223.74.85/32**
+**7. Set** _**Source**_ **to** _**Custom**_ **and enter the database IP address 18.223.74.85/32**
 
-**8. Click _Save_**
+**8. Click** _**Save**_
 
 Your database should now be accessible from your EC2 instance. Read more about [security group rules](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html).
+
