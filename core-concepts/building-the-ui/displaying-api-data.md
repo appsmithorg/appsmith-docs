@@ -35,9 +35,11 @@ Sometimes your API / Query response format might not match the format that your 
 
 ## Transforming API / Query Data
 
-You can use Javascript inside the `{{ }}` to transform API / Query data when binding it to a property. _\*\*_An example of this would be an API / Query which returns an array of values that are needed to populate a dropdown.
+You can use Javascript inside the `{{ }}` to transform API / Query data when binding it to a property. An example of this would be an API / Query which returns an array of values that are needed to populate a dropdown.
 
 A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect this data to a dropdown, we need to transform the data in the dropdown options property.
+
+**API / Query Data**
 
 ```javascript
 // API / Query Response
@@ -73,12 +75,13 @@ A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect
 
 ```javascript
 {{
-  fetchFruits.data.map((fruit) => { 
-    return { label: fruit.name, value: fruit.id } 
+  API.data.map((row) => { 
+    return { label: row.name, value: row.id } 
     })
 }}
 
-// fetchFruits is the name of the API / Query
+// The above example iterates over a data set and returns data
+// in an Array<label, value> format 
 ```
 
 {% hint style="info" %}
