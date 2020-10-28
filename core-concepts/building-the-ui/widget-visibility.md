@@ -39,6 +39,6 @@ The condition below is used in object B
 
 Dynamic form views are one such use case where another widget controls the visibility of the form flow.
 
-![Click to expand](../../.gitbook/assets/dynamic_form.mp4)
+![Click to expand](../../.gitbook/assets/dynamic_form.gif)
 
 In the above example the tab widget is used to switch between the Login and Register screen. 
