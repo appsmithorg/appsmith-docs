@@ -8,6 +8,18 @@ description: >-
 
 ![](../.gitbook/assets/dropdown.gif)
 
+## Displaying Data
+
+A Dropdown's **options** can be populated from a data source like an API / Query by transforming the API / Query data to an array of \(label, value\). The transformation can be performed using javascript so if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map) function.
+
+```javascript
+// Query1.data is assumed to be an array here
+{{ Query1.data.map((row) => { 
+      return { label: row.name, value: row.id } 
+   }) 
+}}
+```
+
 ## Filtering Data
 
 A Dropdown can be used to filter a dataset based on users input. The selected option value can be passed to an API using**`{{ dropdownName.selectedOptionValue }}`** for Single Select Dropdowns and **`{{ dropdownName.selectedOptionValueArr }}`** for Multi-Select Dropdowns.
