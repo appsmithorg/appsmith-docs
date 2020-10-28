@@ -24,6 +24,9 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 
 * macOS
 * Ubuntu
+* OpenSuse
+* Debian
+* CentOS
 
 {% hint style="warning" %}
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
@@ -36,19 +39,19 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-1. Make the script executable
+2. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-1. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+3. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-1. Check if all the containers are running correctly.
+4. Check if all the containers are running correctly.
 
 ```bash
 docker ps
