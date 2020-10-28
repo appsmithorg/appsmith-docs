@@ -9,7 +9,7 @@ description: >-
 
 ## Selecting The Right Widget
 
-Appsmith provides the following widgets to visualise data from an API / Query.
+Appsmith provides the following widgets to visualize data from an API / Query.
 
 | **Widget** | **Property** | **Data Type** |
 | :--- | :--- | :--- |
@@ -17,6 +17,7 @@ Appsmith provides the following widgets to visualise data from an API / Query.
 | **Chart** | Chart Data | Array of \(x,y\) |
 | **Text** | Text | String |
 | **Image** | Image | URL / Base64 |
+| **Dropdown** | Options | Array of \(label, value\) |
 
 ## Displaying the data
 
