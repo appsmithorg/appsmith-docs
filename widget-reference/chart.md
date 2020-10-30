@@ -61,6 +61,12 @@ description: >-
       <td style="text-align:left">Controls widget&apos;s visibility on the page. When turned off, the widget
         will not be visible when the app is published</td>
     </tr>
+    <thead>
   </tbody>
 </table>
+
+## Add chart
+![](../.gitbook/assets/chart_addchart.gif)
+
+Multiple charts can be added for one widget. By clicking this button, you can enter the data and it will be displayed as a separate chart.
 
