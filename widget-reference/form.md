@@ -11,12 +11,12 @@ description: >-
 
 Form widgets are a class of widgets that are typically used to capture user information. These widgets may be used outside a form such as form filtering data but their primary use is to capture user input. These are the form widgets Appsmith supports
 
-* \*\*\*\*[**Input**](input.md) _\*\*_
-* \*\*\*\*[**Dropdown**](dropdown.md)\*\*\*\*
-* \*\*\*\*[**Datepicker**](datepicker.md)\*\*\*\*
-* \*\*\*\*[**Filepicker**](filepicker.md)\*\*\*\*
-* \*\*\*\*[**RadioGroup**](radio.md)\*\*\*\*
-* \*\*\*\*[**Checkbox**](checkbox.md)\*\*\*\*
+* [Input](input.md)
+* [Dropdown](dropdown.md)
+* [Datepicker](datepicker.md)
+* [Filepicker](filepicker.md)
+* [RadioGroup](radio.md)
+* [Checkbox](checkbox.md)
 
 ## Sending Form data to an API
 
