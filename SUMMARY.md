@@ -12,6 +12,7 @@
   * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
   * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
   * [Triggering APIs / Queries from Widgets](core-concepts/building-the-ui/calling-apis-from-widgets.md)
+  * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
   * [Whitelisting database IP on AWS](core-concepts/connecting-to-databases/aws-whitelist.md)
   * [Querying Postgres](core-concepts/connecting-to-databases/querying-postgres.md)
