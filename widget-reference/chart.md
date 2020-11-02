@@ -61,7 +61,6 @@ description: >-
       <td style="text-align:left">Controls widget&apos;s visibility on the page. When turned off, the widget
         will not be visible when the app is published</td>
     </tr>
-    <thead>
   </tbody>
 </table>
 
