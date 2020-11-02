@@ -1,0 +1,2 @@
+This section should be a one-stop place for all info on JS. Goal - if a user has any question on JS, this section should be able to answer it. Talk about - which widgets accept JS, where to write JS in widgets, what type of JS snippets can be written, etc. For eg. Ternary operators for evaluating to Bool but no lengthy if-elses; call in-built JS functions but not use it to alter font-color, Which JS libraries can be used and how. Why others can't be used. How to go about using them. Give examples. 
+

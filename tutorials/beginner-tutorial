@@ -1,0 +1,7 @@
+Build dashboard to display products information (Create and connect to a query that fetches this info)
+- Add filters to search products (Add dropdown filter category, input-search-text filter for name. This requires setting up above query to accept dynamic where clauses)
+- Using form for adding a product (Add a button ‘Add SKU’. On-click opens a form in another page that allows filling details of product, and on submit creates a new SKU by calling an API)
+- Create charts to analyze product orders (Add button ‘Analyze’ next to a product in the table. On-click navigate to a product page that lists product details, product image, another table listing its past orders, and a chart showing its orders over time)
+- Deploying the dashboard
+- Sharing the dashboard
+

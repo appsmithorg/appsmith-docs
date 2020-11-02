@@ -1,0 +1,1 @@
+Lists all widgets, explains in detail each of their properties, existing functionalities like download button in Table, available events, etc. This is a one-stop place to find out everything about a widget.

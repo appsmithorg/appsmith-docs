@@ -1,29 +1,10 @@
----
-description: Appsmith is the fastest way to build internal apps over any database or API
----
+Introduction
+A few sentences summarising - what Appsmith is & what the documentation is going to talk about
 
-# Introduction
+- Audience: Describes who is the tutorial aimed at
 
-## Why Appsmith?
+- Prerequisites: Lists concepts the reader should be familiar with prior to starting, as well as any software or hardware requirements. Add external links to resources.
+Technologies - JS
+	- Concepts - REST API, DBMS
 
-Today when we need an internal app, our choices are limited to
-
-* Investing weeks building it from scratch and fighting with HTML/CSS
-* Getting started with an admin panel and invest even more time customizing it
-
-Appsmith bridges the gap between [getting started](quick-start.md) super quickly and making customizations super easy! The best part?
-
-### _No HTML / CSS!_
-
-## How fast is it?
-
-Appsmith makes building internal tools as easy as
-
-* Drag and configure the UI \(No HTML / CSS!\)
-* Connect APIs / Databases
-* Write snippets of business logic
-
-Check out our demo video to see how easy it is!
-
-{% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
-
+- Exclusions Talks about what this document doesn’t include - out of scope things. Share links to the not included information, if possible.
