@@ -28,7 +28,8 @@ description: >-
       </td>
       <td style="text-align:left">
         <p>Displays a chart based on an array of objects with X and Y values. You
-          can transform the data from an API using a map. Note: Multiple series of data can be displayed in a single chart widget using the Add series button</p>
+          can transform the data from an API using a map. Note: Multiple series of
+          data can be displayed in a single chart widget using the Add series button</p>
         <p><b>{{ apiName.data.map((value) =&gt; { return { x: value.date, y: value.count } }) }}</b>
         </p>
       </td>
@@ -63,9 +64,4 @@ description: >-
     </tr>
   </tbody>
 </table>
-
-
-
-
-
 
