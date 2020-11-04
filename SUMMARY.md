@@ -67,3 +67,7 @@
 * [Github OAuth](third-party-services/github-login.md)
 * [Google Maps](third-party-services/google-maps.md)
 
+## Telemetry
+
+* [Telemetry](telemetry/telemetry.md)
+
