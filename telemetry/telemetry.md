@@ -127,3 +127,37 @@ You must restart docker and nginx for the changes to take effect
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
+## Disable Telemetry for existing installations
+
+Existing installations need to make an extra change to their Nginx configuration files. 
+
+Please confirm that the line (as shown in the example below) is set in the file `data/nginx/app.conf.template`. This should be set in both the HTTP & HTTPS sections of the Nginx configuration.
+
+Sample Configuration:
+```
+location / {
+        try_files \$uri /index.html =404;
+
+        sub_filter __APPSMITH_SENTRY_DSN__ '\${APPSMITH_SENTRY_DSN}';
+        sub_filter __APPSMITH_SMART_LOOK_ID__ '\${APPSMITH_SMART_LOOK_ID}';
+        sub_filter __APPSMITH_OAUTH2_GOOGLE_CLIENT_ID__ '\${APPSMITH_OAUTH2_GOOGLE_CLIENT_ID}';
+        sub_filter __APPSMITH_OAUTH2_GITHUB_CLIENT_ID__ '\${APPSMITH_OAUTH2_GITHUB_CLIENT_ID}';
+        sub_filter __APPSMITH_MARKETPLACE_ENABLED__ '\${APPSMITH_MARKETPLACE_ENABLED}';
+        sub_filter __APPSMITH_SEGMENT_KEY__ '\${APPSMITH_SEGMENT_KEY}';
+        sub_filter __APPSMITH_OPTIMIZELY_KEY__ '\${APPSMITH_OPTIMIZELY_KEY}';
+        sub_filter __APPSMITH_ALGOLIA_API_ID__ '\${APPSMITH_ALGOLIA_API_ID}';
+        sub_filter __APPSMITH_ALGOLIA_SEARCH_INDEX_NAME__ '\${APPSMITH_ALGOLIA_SEARCH_INDEX_NAME}';
+        sub_filter __APPSMITH_ALGOLIA_API_KEY__ '\${APPSMITH_ALGOLIA_API_KEY}';
+        sub_filter __APPSMITH_CLIENT_LOG_LEVEL__ '\${APPSMITH_CLIENT_LOG_LEVEL}';
+        sub_filter __APPSMITH_GOOGLE_MAPS_API_KEY__ '\${APPSMITH_GOOGLE_MAPS_API_KEY}';
+        sub_filter __APPSMITH_TNC_PP__ '\${APPSMITH_TNC_PP}';
+        sub_filter __APPSMITH_VERSION_ID__ '\${APPSMITH_VERSION_ID}';
+        sub_filter __APPSMITH_VERSION_RELEASE_DATE__ '\${APPSMITH_VERSION_RELEASE_DATE}';
+        sub_filter __APPSMITH_INTERCOM_APP_ID__ '\${APPSMITH_INTERCOM_APP_ID}';
+        sub_filter __APPSMITH_MAIL_ENABLED__ '\${APPSMITH_MAIL_ENABLED}';
+
+        ### Set this line to disable telemetry
+        sub_filter __APPSMITH_DISABLE_TELEMETRY__ '${APPSMITH_DISABLE_TELEMETRY}';
+    }
+```
+
