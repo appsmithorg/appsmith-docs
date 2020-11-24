@@ -67,6 +67,12 @@
 * [Github OAuth](third-party-services/github-login.md)
 * [Google Maps](third-party-services/google-maps.md)
 
+## Integrations
+* [Postgres](integrations/postgres.md)
+* [MySQL](integrations/mysql.md)
+* [MongoDB](integrations/mongodb/README.md)
+  * [Mongo Query Syntax](integrations/mongodb/mongo-syntax.md)
+
 ## Telemetry
 
 * [Telemetry](telemetry/telemetry.md)

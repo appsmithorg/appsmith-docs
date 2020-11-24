@@ -18,8 +18,4 @@ Whitelist 18.223.74.85 to connect to your database from our cloud hosted version
 
 ## Querying a database
 
-Data can be fetched and updated using queries. Appsmith provides a query interface for each database type. All queries return an array of objects where each object is a row returned by the query and each property in the object is a column. You can read more about querying your specific database below
-
-* [Querying Postgres](querying-postgres.md)
-* [Querying MongoDB](querying-mongodb/)
-
+Data can be fetched and updated using queries. Appsmith provides a query interface for each database type. All queries return an array of objects where each object is a row returned by the query and each property in the object is a column. You can read more about querying your specific database in our [integration documentation](../../integrations/README.md)
