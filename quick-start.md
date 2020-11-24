@@ -144,12 +144,12 @@ Quickly set up Appsmith to explore product functionality using Heroku.
 ### Custom domain
 To create your custom domain with your app, please follow these steps below:
 - Go to your app's settings tab
-![App setting](./images/app-settings.png)
+![App setting](.gitbook/assets/heroku-app-settings.png)
 - Click `Add domain` button in Domains section
-![Add domain button](./images/add-domain-button.png)
+![Add domain button](.gitbook/assets/heroku-add-domain-button.png)
 - Input your domain name & click `Next`. Heroku will provide you a DNS Target that you can map your domain with  
-![Add domain form](./images/add-domain-form.png)  
-![Finish](./images/finish.png)
+![Add domain form](.gitbook/assets/heroku-add-domain-form.png)  
+![Finish](.gitbook/assets/heroku-finish.png)
 
 - Make sure that your DNS Record is update so that your custom domain will map to `DNS Target`
 
