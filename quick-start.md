@@ -8,6 +8,8 @@ You can begin using Appsmith via our cloud instance or by deploying Appsmith you
 
 * [Using Appsmith Cloud](quick-start.md#appsmith-cloud) **\(recommended\):** Create a new application with just one click
 * [Using Docker](quick-start.md#docker): Deploy anywhere using docker
+* [Deploy to Heroku](quick-start.md#heroku): Deploy Appsmith on Heroku with a single click
+* [Using Kubernetes](quick-start.md#kubernetes): Deploy to your Kubernetes cluster
 
 ## Appsmith Cloud
 
@@ -104,4 +106,197 @@ Appsmith Installations can be updated by running the following command in the in
 sudo su
 docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && docker-compose up -d
 ```
+
+## Heroku 
+
+Quickly set up Appsmith to explore product functionality using Heroku.
+
+### Heroku Installation
+- Sign up for a free account on Heroku
+- Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/appsmithorg/appsmith/tree/master)
+- Fill in the required `Config Variables`  including:
+  - `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database
+  - `APPSMITH_ENCRYPTION_SALT`: Encryption salt used to encrypt all credentials in the database
+  - `APPSMITH_MONGODB_URI`: Your Mongo Database URI
+- (Optional) Customize the default settings in Heroku
+  - `App Name`: Optionally select a name for your application (this will be used in the app URL)
+  - `Runtime Selection`: Select which region your app should run in (United States or Europe)
+  - `Config Variables`:
+    - Email Configuration:
+      - `APPSMITH_MAIL_ENABLED`: Set this value to true to enable email sending (value should be `true/false` only)
+      - `APPSMITH_MAIL_FROM`: Email ID using which emails will be sent from your installation
+      - `APPSMITH_REPLY_TO`: Email ID to which all email replies will be sent to
+      - `APPSMITH_MAIL_HOST`: The host endpoint for the SMTP server
+      - `APPSMITH_MAIL_SMTP_TLS_ENABLED`: Set this value to enable TLS for your SMTP server (value should be `true/false` only)
+      - `APPSMITH_MAIL_USERNAME`: SMTP username
+      - `APPSMITH_MAIL_PASSWORD`: SMTP password
+    - Oauth Configuration:
+      - Google Oauth:
+        - `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`: Client ID provided by Google for OAuth2 login
+        - `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET`: Client secret provided by Google for OAuth2 login
+      - Github Oauth:
+        - `APPSMITH_OAUTH2_GITHUB_CLIENT_ID`: Client ID provided by Github for OAuth2 login
+        - `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`: Client secret provided by Github for OAuth2 login
+    - `APPSMITH_GOOGLE_MAPS_API_KEY`: Google Maps API key which is required if you wish to leverage Google Maps widget. Read more at: https://docs.appsmith.com/third-party-services/google-maps
+    - `APPSMITH_DISABLE_TELEMETRY`: We want to be transparent and request that you share anonymous usage data with us. This data is purely statistical in nature and helps us understand your needs & provide better support to your self-hosted instance. You can read more about what information is collected in our documentation https://docs.appsmith.com/telemetry/telemetry
+
+    After Heroku finishes setting up the app, click “View” and your Appsmith should be up and running. You will be taken to the account creation page, where you can enter credentials to create an account and get started.
+
+
+{% hint style="warning" %}
+- We use Heroku Redis addon for caching which required your account to have billing information, but we use the free plan of this addon so it will charge you nothing. Please make sure your account already finish providing billing information.
+- You may need to wait 2 - 3 minutes before accessing the application.
+{% endhint %}
+
+### Custom domain
+To create your custom domain with your app, please follow these steps below:
+- Go to your app's settings tab
+![App setting](.gitbook/assets/heroku-app-settings.png)
+- Click `Add domain` button in Domains section
+![Add domain button](.gitbook/assets/heroku-add-domain-button.png)
+- Input your domain name & click `Next`. Heroku will provide you a DNS Target that you can map your domain with  
+![Add domain form](.gitbook/assets/heroku-add-domain-form.png)  
+![Finish](.gitbook/assets/heroku-finish.png)
+
+- Make sure that your DNS Record is update so that your custom domain will map to `DNS Target`
+
+- Once you finish, now you can access Appsmith from your custom domain
+
+{% hint style="warning" %}
+- Once you use a custom domain, You might want to setup SSL for your dyno. Please check the official document of Heroku [how to configure SSL](https://devcenter.heroku.com/articles/ssl)
+- Your dyno will need to be upgrade to at least `hobby` type to use this feature of heroku
+
+{% endhint %}
+
+### Re-Deploy your App using Heroku CLI
+To re-deploy your app (re-build & re-run), make sure you have Docker & Heroku CLI setup locally then follow steps below:
+- Pull the appsmith repository & move to `heroku` folder:
+    ```
+    git clone --branch master https://github.com/appsmithorg/appsmith
+    cd ./appsmith/deploy/heroku
+    ```
+- Login to Heroku CLI
+    ```
+    heroku login
+    ```
+- Login to Container Registry
+    ```
+    heroku container:login
+    ```
+- Get your application name
+    ```
+    heroku apps
+    ```
+- Push your Docker-based app
+    ```
+    heroku container:push web -a <Your App Name>
+    ```
+- Deploy the changes
+    ```
+    heroku container:release web -a <Your App Name>
+    ```
+
+## Kubernetes
+
+We provide an installation script that will help you configure Appsmith & deploy your app on a Kubernetes cluster.
+### Prerequisites
+* Ensure `kubectl` is installed and configured to connect to your cluster
+    * Install kubeclt: [kubernetes.io/vi/docs/tasks/tools/install-kubectl/](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/)
+    * Minikube: [Setup Kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
+    * Google Cloud Kubernetes: [Configuring cluster access for kubectl
+](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
+    * Aws EKS: [Create a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
+    
+    * Microk8s: [Working with kubectl](https://microk8s.io/docs/working-with-kubectl)
+* Kubernetes NGINX Ingress Controller must be enable on your cluster by default. Please make sure that you install the right version for your cluster
+    * Minikube: [Set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
+    * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/)
+    * AWS EKS: [Install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb)
+    * Microk8s: [Add on: Ingress](https://microk8s.io/docs/addon-ingress)
+* Script tested on Minikube with Kubernetes v1.18.0
+
+### Deployment Steps
+
+1. Fetch the **install.k8s.sh** script on the system you want to deploy appsmith
+
+```bash
+# Downloads install.sh
+curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/k8s/install.k8s.sh
+```
+
+2. Make the script executable
+
+```bash
+chmod +x install.k8s.sh
+```
+
+3. Run the script.
+
+```bash
+./install.k8s.sh
+```
+
+4. Check if all the pods are running correctly.
+
+```bash
+kubectl get pods
+
+#Output should look like this
+NAME                                        READY   STATUS      RESTARTS    AGE
+appsmith-editor-cbf5956c4-2zxlz             1/1     Running     0           4m26s
+appsmith-internal-server-d5d555dbc-qddmb.   1/1     Running     2           4m22s
+imago-1602817200-g28b2                      1/1     Running     0           4m39s
+mongo-statefulset-0                         1/1     Running     0           4m13s
+redis-statefulset-0                         1/1     Running     0           4m00s
+```
+
+5. Custom Appsmith's Configuration
+  * After you successfully run the script, all the configuration files have been downloaded and & stored into `<Installation Path>`
+  * If you want to update your app settings (ex: database host). Go to the `<Installation Path>/config-template`, update the corresponding value in the configmap file, then restart the pods.
+  * Below steps will help you update database hostname of your application:
+    * Open file `appsmith-configmap.yaml` in `<Installation Path>/config-template` folder
+    * Update the value of variable `APPSMITH_MONGODB_URI` to your database host name
+    * Run commands:
+```
+kubectl apply -f appsmith-configmap.yaml
+kubectl scale deployment appsmith-internal-server --replicas=0
+kubectl scale deployment appsmith-internal-server --replicas=1
+```
+
+{% hint style="success" %}
+* You can access the running application on the **Ingress Endpoint** if you not chose to provide custom domain for your application .
+```
+kubectl get ingress
+NAME               CLASS    HOSTS   ADDRESS          PORTS   AGE
+appsmith-ingress   <none>   *       XXX.XXX.XX.XXX   80      2m
+```
+* You may need to wait 2-3 minutes before accessing the application to allow application start (depends on your cluster).
+{% endhint %}
+
+### Custom Domains
+
+To host Appsmith on a custom domain, you can contact your domain registrar and update your DNS records. Most domain registrars have documentation on how you can do this yourself.
+
+* [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080)
+* [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/)
+* [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/)
+* [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
+* [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
+
+{% hint style="warning" %}
+* During the setup of Ingress Controller on your cloud. You will need to map your custom domain with the External IP of the controller before running the installation script
+* Below is an example how to achieve the External IP of NGINX Ingress Controller
+```
+➜ kubectl get svc -n ingress-nginx
+NAME                                 TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)                      AGE
+ingress-nginx-controller             LoadBalancer   XX.XXX.X.XX   XX.XX.XX.XXX   80:XXXXX/TCP,443:XXXXX/TCP   17h
+ingress-nginx-controller-admission   ClusterIP      XX.XXX.X.XX   <none>         443/TCP                      17h
+```
+{% endhint %}
+
+## Troubleshooting
+
+If at any time you encounter an error while installation Appsmith on any platform, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
+
+If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
 
