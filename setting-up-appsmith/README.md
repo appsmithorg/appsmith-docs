@@ -2,13 +2,13 @@
 description: Appsmith stands for speed and getting started with Appsmith is just as fast.
 ---
 
-# Getting started
+# Setting up Appsmith
 
 You can begin using Appsmith via our cloud instance or by deploying Appsmith yourself
 
-* [Using Appsmith Cloud](./setting-up-appsmith/appsmith-cloud.md) **\(recommended\):** Create a new application with just one click
-* [Using Docker](./setting-up-appsmith/docker.md): Deploy anywhere using docker
-* [Heroku](./setting-up-appsmith/heroku.md)
+* [Using Appsmith Cloud](./appsmith-cloud.md) **\(recommended\):** Create a new application with just one click
+* [Using Docker](./docker.md): Deploy anywhere using docker
+* [Heroku](./heroku.md)
 
 ## Troubleshooting
 
