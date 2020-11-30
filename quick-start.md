@@ -13,7 +13,7 @@ You can begin using Appsmith via our cloud instance or by deploying Appsmith you
 
 ## Troubleshooting
 
-If at any time you encounter an error while installation Appsmith on any platform, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
+If at any time you encounter an error while installing Appsmith on any platform, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
 
 If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
 
