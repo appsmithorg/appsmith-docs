@@ -15,21 +15,21 @@ Here are the steps you’ll follow in this tutorial:
 
 The next sections will walk you through these steps in detail.
 
-# Step 1: Register With Amazon Web Services
+## Step 1: Register With Amazon Web Services
 ```
 At the end of this step, you will have signed up for the Amazon Web Services free tier. If you already have an Amazon Web Services account, you may skip this step.
 ```
 
 Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) in order to create an account on AWS. 
 
-# Step 2: Generate an SSH key pair
+## Step 2: Generate an SSH key pair
 ```
 At the end of this step, you will have generated an SSH key pair to access your EC2 instances. If you already have an SSH key pair for the AWS region you are operating in, you can skip this step.
 ```
 
 Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key-pair. You need this key to SSH into your AWS EC2 instance.
 
-# Step 3: Create an AWS Security Group
+## Step 3: Create an AWS Security Group
 ```
 At the end of this step, you will have created an AWS security group for your cloud server. If you already have an existed security group with ports 80, 443 and 22 open, you can skip this step.
 ```
@@ -38,7 +38,7 @@ Appsmith is a web application that requires ports 80 and 443 for HTTP access. It
 
 While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443 and 22 accessible from anywhere.
 
-# Step 4: Deploy Appsmith On AWS Cloud
+## Step 4: Deploy Appsmith On AWS Cloud
 ```
 At the end of this step, your Appsmith stack will be running on an AWS cloud server.
 ```
@@ -154,6 +154,6 @@ The default application credentials are stored in a standalone file. To obtain t
     sudo cat /home/ubuntu/appsmith/credential
     ```
 
-### Step 8: Updating your Appsmith installation
+## Step 8: Updating your Appsmith installation
 
 Your Appsmith installation will auto-update itself whenever there is a new release by the Appsmith team. You don't need to change anything in order to access the latest version of Appsmith.
