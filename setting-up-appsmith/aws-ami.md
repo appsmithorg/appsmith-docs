@@ -46,13 +46,16 @@ At the end of this step, your Appsmith stack will be running on an AWS cloud ser
 The next step is to launch a cloud server with the Appsmith Amazon Machine Image (AMI) running on it. The AWS Console lets you do this in just a couple of clicks. Follow these steps:
 
 - From the Amazon EC2 dashboard, select the “AMIs” option in the “Images” menu.  
+
   ![AMI](../.gitbook/assets/aws-AMI.png)
 - Search for the Appsmith Stack by entering the search term `appsmith` in the search bar at the top.
+
   ![Search AMI](../.gitbook/assets/aws-search-ami.png)
 
 - Select the image in the list of search results and click the “Launch” button.
 
 - On the resulting detail page, review the available server sizes. Select the server size you wish to use and click “Review and Launch” to proceed.
+
   ![Instance Preview](../.gitbook/assets/aws-preview.png)
 
 - On the review page, click the “Edit security groups” link.
@@ -64,6 +67,7 @@ The next step is to launch a cloud server with the Appsmith Amazon Machine Image
 - Confirm your selection by hitting the “Launch Instances” button.
 
 The AWS Console will now begin spinning up the new server.
+
 ![Launch](../.gitbook/assets/aws-launch.png)
 
 The process usually takes a few minutes. Use the EC2 Dashboard to check the status of the server. Once the server has launched, you will be able to obtain its public IP address from the EC2 Dashboard, as shown below: 
@@ -71,6 +75,7 @@ The process usually takes a few minutes. Use the EC2 Dashboard to check the stat
 ![EC2 Detail](../.gitbook/assets/aws-ec2-detail.png)
 
 At this point, you should be able to browse to the cloud server, by entering the cloud server IP address or DNS name directly into your browser’s address bar. You should now see your web app home page as shown below:
+
 ![Login Page](../.gitbook/assets/aws-login-page.png)
 
 
@@ -82,9 +87,11 @@ At the end of this you will have Appsmith running on your AWS server for you to 
 To log in to the Appsmith dashboard, follow these steps:
 
 - Go to the Sign Up page, fill in your user's email & password, then click Sign Up
+
   ![Appsmith Signup Page](../.gitbook/assets/aws-appsmith_signup.png)
 
 Once you completed the registration, you will be moved to the Personal Organization page. Now you can begin to create your custom app. 
+
 ![Appsmith Dashboard Page](../.gitbook/assets/aws-appsmith_dashboard.png)
 
 For tutorials on how to create your custom app on Appsmith, please take a look at [https://docs.appsmith.com/tutorials/](https://docs.appsmith.com/tutorials/)
@@ -110,9 +117,11 @@ The next step is to configure your app so that it can be accessed by your custom
     ![Custom Domain](../.gitbook/assets/aws-custom-domain.png)
 
 - There will be an option for you to configure SSL for your domain
+  
   ![SSL](../.gitbook/assets/aws-ssl.png)
 
 At this point, you should be able to browse to the cloud server, by entering your custom domain directly into your browser’s address bar. You should be able to see your web app home page now
+
 ![Login Page](../.gitbook/assets/aws-login-page.png)
 
 ## Step 7: Find Application Credentials
@@ -127,9 +136,11 @@ IMPORTANT: The application password is only available in the system log for the 
 - Go to your EC2 instances dashboard on AWS
 - Select the instance
 - From the “Actions” drop-down menu, select the “Get System Log” menu item.
+
 ![Select System Log](../.gitbook/assets/aws-select-system-log.png)
 
-- Review the system log until you find the application password. You will also find the default username.
+- Review the system log until you find the application password. You will also find the default username printed in the logs.
+
 ![View System log](../.gitbook/assets/aws-system-log.png)
 
 
