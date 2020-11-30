@@ -5,13 +5,13 @@ This section will walk you through the steps of setting up Appsmith on AWS.
 
 Here are the steps you’ll follow in this tutorial:
 - [Register with Amazon Web Services (AWS)](#step-1-register-with-amazon-web-services)
-- [Generate an SSH key pair](#Step-2-Generate-an-SSH-key-pair)
-- [Create an AWS Security Group](#Step-3-Create-an-AWS-Security-Group)
-- [Deploy Appsmith on an AWS cloud server](#Step-4-Deploy-Appsmith-on-AWS-cloud)
-- [Log in and start using Appsmith](#Step-5-Log-in-and-start-using-Appsmith)
-- [Configure custom domain for your app](#Step-6-Configure-custom-domain-for-your-app)
-- [Find Application Credentials](#Step-7-Find-Application-Credentials)
-- [Updating your Appsmith installation](#Step-8-Updating-your-Appsmith-installation)
+- [Generate an SSH key pair](#step-2-generate-an-ssh-key-pair)
+- [Create an AWS Security Group](#step-3-create-an-aws-security-group)
+- [Deploy Appsmith on an AWS cloud server](#step-4-deploy-appsmith-on-aws-cloud)
+- [Log in and start using Appsmith](#step-5-login-and-start-using-appsmith)
+- [Configure custom domain for your app](#step-6-configure-custom-domain-for-your-app)
+- [Find Application Credentials](#step-7-find-application-credentials)
+- [Updating your Appsmith installation](#step-8-updating-your-appsmith-installation)
 
 The next sections will walk you through these steps in detail.
 
@@ -116,7 +116,7 @@ At this point, you should be able to browse to the cloud server, by entering you
 ![Login Page](../.gitbook/assets/aws-login-page.png)
 
 ## Step 7: Find Application Credentials
-By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. There are two options for obtaining these credentials.
+By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. The default username is: `appsmith@example.com`. There are two options for obtaining the password.
 
 ### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console (EC2)
 
