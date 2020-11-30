@@ -9,6 +9,7 @@ You can begin using Appsmith via our cloud instance or by deploying Appsmith you
 * [Using Appsmith Cloud](./appsmith-cloud.md) **\(recommended\):** Create a new application with just one click
 * [Using Docker](./docker.md): Deploy anywhere using docker
 * [Heroku](./heroku.md)
+* [AWS AMI](./setting-up-appsmith/aws-ami.md)
 
 ## Troubleshooting
 

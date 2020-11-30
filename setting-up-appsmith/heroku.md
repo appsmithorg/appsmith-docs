@@ -43,12 +43,12 @@ Quickly set up Appsmith to explore product functionality using Heroku.
 If you wish to link a custom domain (Eg: https://appsmith.yourcompany.com)to your Appsmith installation, please follow these steps below:
 
 - Go to the `Settings` tab in your Heroku app
-![App setting](.gitbook/assets/heroku-app-settings.png)
+![App setting](../.gitbook/assets/heroku-app-settings.png)
 - Click the `Add domain` button in the `Domains` section
-![Add domain button](.gitbook/assets/heroku-add-domain-button.png)
+![Add domain button](../.gitbook/assets/heroku-add-domain-button.png)
 - Input your domain name & click `Next`. Heroku will provide you a DNS target that you can map your domain with  
-![Add domain form](.gitbook/assets/heroku-add-domain-form.png)  
-![Finish](.gitbook/assets/heroku-finish.png)
+![Add domain form](../.gitbook/assets/heroku-add-domain-form.png)  
+![Finish](../.gitbook/assets/heroku-finish.png)
 
 - Go to your DNS provider and make sure that your custom DNS Record (Eg appsmith.yourcompany.com) is updated to map to the `DNS Target`
 

@@ -5,6 +5,7 @@
   * [Appsmith Cloud](setting-up-appsmith/appsmith-cloud.md)
   * [Docker](setting-up-appsmith/docker.md)
   * [Heroku](setting-up-appsmith/heroku.md)
+  * [AWS AMI](setting-up-appsmith/aws-ami.md)
 * [Getting started](quick-start.md)
 * [FAQs](faq.md)
 * [Enabling Third Party Services](enabling-3p-services.md)
