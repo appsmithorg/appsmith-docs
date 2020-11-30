@@ -4,7 +4,7 @@ This section will walk you through the steps of setting up Appsmith on AWS.
 # Overview
 
 Here are the steps you’ll follow in this tutorial:
-- [Register with Amazon Web Services (AWS)](#step-1-register-with-amazon-web-services-(AWS))
+- [Register with Amazon Web Services (AWS)](#step-1-register-with-amazon-web-services)
 - [Generate an SSH key pair](#Step-2-Generate-an-SSH-key-pair)
 - [Create an AWS Security Group](#Step-3-Create-an-AWS-Security-Group)
 - [Deploy Appsmith on an AWS cloud server](#Step-4-Deploy-Appsmith-on-AWS-cloud)
@@ -15,7 +15,7 @@ Here are the steps you’ll follow in this tutorial:
 
 The next sections will walk you through these steps in detail.
 
-# Step 1: Register With Amazon Web Services (AWS)
+# Step 1: Register With Amazon Web Services
 ```
 At the end of this step, you will have signed up for the Amazon Web Services free tier. If you already have an Amazon Web Services account, you may skip this step.
 ```
