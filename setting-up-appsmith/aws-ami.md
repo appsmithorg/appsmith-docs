@@ -127,9 +127,11 @@ IMPORTANT: The application password is only available in the system log for the 
 - Go to your EC2 instances dashboard on AWS
 - Select the instance
 - From the “Actions” drop-down menu, select the “Get System Log” menu item.
+
 ![Select System Log](../.gitbook/assets/aws-select-system-log.png)
 
-- Review the system log until you find the application password. You will also find the default username.
+- Review the system log until you find the application password. You will also find the default username printed in the logs.
+
 ![View System log](../.gitbook/assets/aws-system-log.png)
 
 
