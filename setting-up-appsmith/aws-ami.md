@@ -1,15 +1,17 @@
 # Introduction
-This tutorial will walk you through the process of using the AWS Console to create and provision a new AWS cloud server. Since AWS offers a Free Tier valid for 12 months, you will be able to give Appsmith a whirl without worrying about being billed for usage.
+This section will walk you through the steps of setting up Appsmith on AWS.
 
 # Overview
 
 Here are the steps you’ll follow in this tutorial:
-- Register with Amazon Web Services (AWS) 
-- Generate an SSH key pair
-- Create an AWS Security Group
-- Deploy Appsmith on an AWS cloud server
-- Log in and start using Appsmith
-- Configure a custom domain for your app
+- [Register with Amazon Web Services (AWS)](#step-1-register-with-amazon-web-services-(AWS))
+- [Generate an SSH key pair](#Step-2-Generate-an-SSH-key-pair)
+- [Create an AWS Security Group](#Step-3-Create-an-AWS-Security-Group)
+- [Deploy Appsmith on an AWS cloud server](#Step-4-Deploy-Appsmith-on-AWS-cloud)
+- [Log in and start using Appsmith](#Step-5-Log-in-and-start-using-Appsmith)
+- [Configure custom domain for your app](#Step-6-Configure-custom-domain-for-your-app)
+- [Find Application Credentials](#Step-7-Find-Application-Credentials)
+- [Updating your Appsmith installation](#Step-8-Updating-your-Appsmith-installation)
 
 The next sections will walk you through these steps in detail.
 
@@ -18,61 +20,25 @@ The next sections will walk you through these steps in detail.
 At the end of this step, you will have signed up for the Amazon Web Services free tier. If you already have an Amazon Web Services account, you may skip this step.
 ```
 
-You will need an existing Amazon account to log in and sign up. To create it, follow these steps:
-  - Browse to [http://aws.amazon.com](http://aws.amazon.com) and click the “Create an AWS account” button at the top of the page.
-  - On the resulting page, enter an email address, a password, and an AWS account name. Then, click “Continue” to start the registration process.
-  ![Aws Register Page](../.gitbook/assets/aws-account-info.png)
-  - Once you’ve signed in to Amazon, sign up for AWS by selecting the account type and providing some basic contact information and your mobile phone number. 
-  ![Aws Register Page](../.gitbook/assets/aws-account-info-2.png)
-  - Once that’s done, proceed to the next stage by entering your credit card information. Click the “Secure Submit” button to continue with the account creation.
-  ![Aws Payment](../.gitbook/assets/aws-payment.png)
-  - Amazon will now verify your identity, by making an automated call to your mobile phone number and prompting you to enter the PIN displayed on the screen.
-  - Once your identity is verified, choose the “Basic” support plan (also free) and confirm your account.
-  - The AWS account registration machine will churn away for a minute or so, and you will then be redirected to a welcome page, which includes a link to the AWS management console. You should also receive an account confirmation email, which tells you that your account is good to go. 
+Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) in order to create an account on AWS. 
 
 # Step 2: Generate an SSH key pair
 ```
 At the end of this step, you will have generated an SSH key pair to access your EC2 instances. If you already have an SSH key pair for the AWS region you are operating in, you can skip this step.
 ```
 
-To generate an SSH key pair, which you will need to log in to your EC2 instances, follow the steps below:
-
-- Log in to the AWS Console.
-
-- Select the EC2 service from the Amazon Web Services menu.
-    ![AWS Services](../.gitbook/assets/aws-services.png)
-
-- If required, use the region selector in the top right corner to switch to the region where your instance will be launched.
-
-- From the Amazon EC2 dashboard, select the “Key Pairs” option in the “Network & Security” menu.
-    ![Key pairs](../.gitbook/assets/aws-key-pairs.png)
-
-- Click the “Create Key Pair” button. Then enter a name for the new key pair in the open dialog and click the “Create” button.
-    ![Create key pairs](../.gitbook/assets/aws-create-key-pairs.png)
-
-- A new key pair, consisting of an SSH public and private key, will be generated. You will be prompted to download the private SSH key to your computer.
+Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key-pair. You need this key to SSH into your AWS EC2 instance.
 
 # Step 3: Create an AWS Security Group
 ```
-At the end of this step, you will have created an AWS security group for your cloud server.
+At the end of this step, you will have created an AWS security group for your cloud server. If you already have an existed security group with ports 80, 443 and 22 open, you can skip this step.
 ```
 
-By default, AWS cloud servers have their ports closed to secure them against external attacks. Since Appsmith is a Web application, it is necessary to open ports 80 and 443 for HTTP access, and port 22 for SSH access. To do this:
+Appsmith is a web application that requires ports 80 and 443 for HTTP access. It also requires port 22 to be accessible for HTTP access. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
-- From the Amazon Web Services menu, select the EC2 service.
-  ![AWS Services](../.gitbook/assets/aws-services.png)
-- From the Amazon EC2 dashboard, select the “Security Groups” option in the “Network & Security” menu.<image>
-  ![AWS Security Group](../.gitbook/assets/aws-security-group.png)
-- Click the “Create Security Group” button.
-- On the Create Security Group page, enter a name and description for the new security group.
-  ![AWS Security Group Page](../.gitbook/assets/aws-security-group-page.png)
-- Click the “Add Rule” button in the "Inbound Rule" section and add new rules for HTTP, HTTPS, and SSH access using the following guidelines:
-  - Type: Use the pre-defined types “HTTP”, “HTTPS”, and “SSH”.
-  - Source: Use “Anywhere” to allow access from anywhere, or use “Custom IP” and specify an IP address range.
-  ![Inbound Rules](../.gitbook/assets/aws-inbound-rules.png)
-- Click the “Create” button to save your changes.
+While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443 and 22 accessible from anywhere.
 
-# Step 4: Deploy Appsmith On An AWS Cloud Server
+# Step 4: Deploy Appsmith On AWS Cloud
 ```
 At the end of this step, your Appsmith stack will be running on an AWS cloud server.
 ```
@@ -89,7 +55,7 @@ The next step is to launch a cloud server with the Appsmith Amazon Machine Image
 - On the resulting detail page, review the available server sizes. Select the server size you wish to use and click “Review and Launch” to proceed.
   ![Instance Preview](../.gitbook/assets/aws-preview.png)
 
-- On the review page, click the “Edit security groups” link
+- On the review page, click the “Edit security groups” link.
 
 - On the “Configure Security Group” page, choose the option to “Select an existing security group”. Find the security group you created in Step 3 and select it. Click the “Review and Launch” button to proceed.
 
@@ -110,18 +76,18 @@ At this point, you should be able to browse to the cloud server, by entering the
 
 ## Step 5: Login & start using Appsmith
 ```
-At the end of this step, you will have logged in to Appsmith and build your internal tools
+At the end of this you will have Appsmith running on your AWS server for you to start building your custom apps.
 ```
 
 To log in to the Appsmith dashboard, follow these steps:
-- You will need to register an account to log in
-  - Go to the Sign Up page, fill in your user's email & password, then click Sign Up
+
+- Go to the Sign Up page, fill in your user's email & password, then click Sign Up
   ![Appsmith Signup Page](../.gitbook/assets/aws-appsmith_signup.png)
 
 Once you completed the registration, you will be moved to the Personal Organization page. Now you can begin to create your custom app. 
 ![Appsmith Dashboard Page](../.gitbook/assets/aws-appsmith_dashboard.png)
 
-For more tutorials on how to create your custom app by Appsmith, please take a look at [https://docs.appsmith.com/](https://docs.appsmith.com/)
+For tutorials on how to create your custom app on Appsmith, please take a look at [https://docs.appsmith.com/tutorials/](https://docs.appsmith.com/tutorials/)
 
 
 ## Step 6: Configure custom domain for your app
@@ -150,7 +116,7 @@ At this point, you should be able to browse to the cloud server, by entering you
 ![Login Page](../.gitbook/assets/aws-login-page.png)
 
 ## Step 7: Find Application Credentials
-There are two options for obtaining your application credentials:
+By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. There are two options for obtaining these credentials.
 
 ### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console (EC2)
 
@@ -177,9 +143,6 @@ The default application credentials are stored in a standalone file. To obtain t
     sudo cat /home/ubuntu/appsmith/credential
     ```
 
+### Step 8: Updating your Appsmith installation
 
-
-
-
-
-
+Your Appsmith installation will auto-update itself whenever there is a new release by the Appsmith team. You don't need to change anything in order to access the latest version of Appsmith.
