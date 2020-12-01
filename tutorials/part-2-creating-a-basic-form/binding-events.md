@@ -2,13 +2,13 @@
 
 You’ll see that you don't have a way to tell whether the product got added after submitting. Let’s fix it by adding success and error messages:
 
-1. Open the properties of SubmitButton
-2. Navigate to onClick → onSuccess 
-3. Choose Show Message
-4. Type Yay, product creation successful!
-5. Navigate to onClick → onError
-6. Choose Show Message
-7. Type Nay, product creation failed!
+1. Open the properties of **SubmitButton**
+2. Navigate to **onClick → onSuccess** 
+3. Choose **Show Message**
+4. Type **Yay, product creation successful!**
+5. Navigate to **onClick → onError**
+6. Choose **Show Message**
+7. Type **Nay, product creation failed!**
 8. Deploy the app
 
 Try filling the form again with some valid and invalid values to verify that it works as expected.  

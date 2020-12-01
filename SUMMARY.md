@@ -30,22 +30,22 @@
 ## Tutorials
 
 * [Part 1: Displaying Dynamic Data](tutorials/part-1-displaying-dynamic-data/README.md)
-  * [Displaying query results](tutorials/part-1-displaying-dynamic-data/displaying-query-results.md)
-  * [Query setup](tutorials/part-1-displaying-dynamic-data/query-setup.md)
   * [Initial setup](tutorials/part-1-displaying-dynamic-data/initial-setup.md)
   * [Creating a new app](tutorials/part-1-displaying-dynamic-data/creating-a-new-app.md)
   * [Creating your first table](tutorials/part-1-displaying-dynamic-data/creating-your-first-table.md)
+  * [Query setup](tutorials/part-1-displaying-dynamic-data/query-setup.md)
+  * [Displaying query results](tutorials/part-1-displaying-dynamic-data/displaying-query-results.md)
 * [Part 2: Creating a Basic Form](tutorials/part-2-creating-a-basic-form/README.md)
-  * [Binding events](tutorials/part-2-creating-a-basic-form/binding-events.md)
-  * [Submitting the form](tutorials/part-2-creating-a-basic-form/submitting-the-form.md)
-  * [Adding regex validations](tutorials/part-2-creating-a-basic-form/adding-regex-validations.md)
-  * [Adding form widgets](tutorials/part-2-creating-a-basic-form/adding-form-widgets.md)
   * [Creating a form](tutorials/part-2-creating-a-basic-form/creating-a-form.md)
+  * [Adding form widgets](tutorials/part-2-creating-a-basic-form/adding-form-widgets.md)
+  * [Adding regex validations](tutorials/part-2-creating-a-basic-form/adding-regex-validations.md)
+  * [Submitting the form](tutorials/part-2-creating-a-basic-form/submitting-the-form.md)
+  * [Binding events](tutorials/part-2-creating-a-basic-form/binding-events.md)
 * [Part 3: Widget Interaction](tutorials/part-3-widget-interaction/README.md)
-  * [Sharing the app](tutorials/part-3-widget-interaction/sharing-the-app.md)
-  * [Running multiple actions on submit](tutorials/part-3-widget-interaction/running-multiple-actions-on-submit.md)
-  * [Configuring default values](tutorials/part-3-widget-interaction/configuring-default-values.md)
   * [Adding Edit button](tutorials/part-3-widget-interaction/adding-edit-button.md)
+  * [Configuring default values](tutorials/part-3-widget-interaction/configuring-default-values.md)
+  * [Running multiple actions on submit](tutorials/part-3-widget-interaction/running-multiple-actions-on-submit.md)
+  * [Sharing the app](tutorials/part-3-widget-interaction/sharing-the-app.md)
 
 ## Widget Reference
 
