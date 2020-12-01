@@ -4,52 +4,54 @@ description: Appsmith stands for speed and getting started with Appsmith is just
 
 # Getting started
 
-You can begin using appsmith via our cloud instance or by deploying appsmith yourself
+You can begin using Appsmith via our cloud instance or by deploying Appsmith yourself
 
 * [Using Appsmith Cloud](quick-start.md#appsmith-cloud) **\(recommended\):** Create a new application with just one click
 * [Using Docker](quick-start.md#docker): Deploy anywhere using docker
 
 ## Appsmith Cloud
 
-The fastest way to get started with appsmith is using our cloud hosted version. It's as easy as
+The fastest way to get started with Appsmith is using our cloud-hosted version. It's as easy as
 
 1. [Create an Account](https://app.appsmith.com/user/signup)
 2. [Start Building](core-concepts/building-the-ui/)
 
 ## Docker
 
-Appsmith can be deployed locally or on your private instance using docker. To simplify installation, appsmith comes with an installation script that will download all of the necessary dependencies and help you configure appsmith.
+Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
 
-* MacOS
+* macOS
 * Ubuntu
+* OpenSuse
+* Debian
+* CentOS
 
 {% hint style="warning" %}
-If you're installing appsmith on Mac, you must have [docker desktop](https://docs.docker.com/docker-for-mac/install/) installed. Docker is installed automatically by the script on other operating systems.
+For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
-1. Fetch the **install.sh** script on the system you want to deploy appsmith
+1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
 # Downloads install.sh
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-1. Enable execute & root permissions. The script requires root permissions to install relevant packages on systems **other than Mac OS**
+2. Make the script executable
 
 ```bash
-sudo su # skip sudo for Mac OS installations
 chmod +x install.sh
 ```
 
-1. Run the script. **Make sure no other processes are running on ports 80 & 443**.
+3. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-1. Check if all containers are running correctly
+4. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -64,9 +66,17 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 ```
 
 {% hint style="success" %}
-* Ensure your security groups are configured to allow traffic to port 80 & 443 on your installation instance. 
+* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance. 
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
-* You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start
+* You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start.
+{% endhint %}
+
+{% hint style="warning" %}
+\(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
+
+The fix is to keep the /data/db mounted directory out of mounted volumes \(like downloads, user etc.\) or to create a volume with docker volume create.
+
+**Reference:** [https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/](https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/)
 {% endhint %}
 
 ### Custom Domains
@@ -83,7 +93,7 @@ To host Appsmith on a custom domain, you can contact your domain registrar and u
 
 If at any time you encounter an error during the installation process, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
 
-If you know the error and would like to reinstall appsmith, simply delete the installation folder and the templates folder and execute the script again
+If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
 
 ## Updating to the latest release
 

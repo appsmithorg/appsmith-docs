@@ -1,5 +1,5 @@
 ---
-description: Configure Amazon SES to invite users to your appsmith installation
+description: Configure Amazon SES to invite users to your Appsmith installation
 ---
 
 # Amazon SES
@@ -22,12 +22,11 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 ![Click to expand](../../.gitbook/assets/aws-smtp-creds.png)
 
-**5. Verify the email address via which appsmith should send and receive emails**
+**5. Verify the email address via which Appsmith should send and receive emails**
 
 ![](../../.gitbook/assets/aws-verify-email.png)
 
-  
-**6. Update the docker.env file in your appsmith deployment folder**
+**6. Update the docker.env file in your Appsmith deployment folder**
 
 {% hint style="danger" %}
 Do not use **port** **465** listed on the SES page because it is TLS enabled by default
@@ -51,13 +50,13 @@ APPSMITH_MAIL_SMTP_AUTH=true
 **7. Restart docker & nginx**
 
 ```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d 
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
 Your email service should now be configured correctly. Read more about [setting up email with SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-set-up.html)
 
 {% hint style="warning" %}
-If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids.   
+If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids.  
 Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)
 {% endhint %}
 
