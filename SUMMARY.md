@@ -42,6 +42,7 @@
   * [Adding form widgets](tutorials/part-2-creating-a-basic-form/adding-form-widgets.md)
   * [Creating a form](tutorials/part-2-creating-a-basic-form/creating-a-form.md)
 * [Part 3: Widget Interaction](tutorials/part-3-widget-interaction/README.md)
+  * [Sharing the app](tutorials/part-3-widget-interaction/sharing-the-app.md)
   * [Running multiple actions on submit](tutorials/part-3-widget-interaction/running-multiple-actions-on-submit.md)
   * [Configuring default values](tutorials/part-3-widget-interaction/configuring-default-values.md)
   * [Adding Edit button](tutorials/part-3-widget-interaction/adding-edit-button.md)

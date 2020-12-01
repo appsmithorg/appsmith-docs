@@ -12,8 +12,10 @@ You have created the fields for the edit form. Now you will configure its Confir
 
 ```text
 UPDATE "products"
-set "productName" = '{{ProductNameInput.text}}', "category" = '{{CategoryDropdown.selectedOptionValue}}', "mrp" = '{{MrpInput.text}}'
-where "productId" = {{Products_Table.selectedRow.productId}};
+SET "productName" = '{{ProductNameInput.text}}', 
+    "category" = '{{CategoryDropdown.selectedOptionValue}}', 
+    "mrp" = '{{MrpInput.text}}'
+WHERE "productId" = {{Products_Table.selectedRow.productId}};
 ```
 
 Verify that the query runs successfully. Let’s wire the Confirm button with the Update query:
@@ -51,8 +53,8 @@ Try to edit a product, and click confirm. You'll see that the form-modal remains
 }}
 ```
 
-**The button's onClick event is configured Just like we saw in Tutorial 2 Similar to how, in JavaScript, you configure a button’s event to run multiple functions, you configured UpdateProductQuery’s successful run to do two things - first, execute the ProductQuery, and second, close the modal. On error, you show the alert message, but do not trigger the closing of the form-modal.**
+Similar to how, in JavaScript, you configure a button’s event to run multiple functions, you configured UpdateProductQuery’s successful run to do two things - first, execute the ProductQuery, and second, close the modal. On error, you show the alert message, but do not trigger the closing of the form-modal.
 
-**Try to edit a product again. The form-modal closes on successful submit, and you see the table with the updated product. Check for the error case as well. The modal doesn’t close, and you see an error message.**  
+Try to edit a product again. The form-modal closes on successful submit, and you see the table with the updated product. Check for the error case as well. The modal doesn’t close, and you see an error message.  
 
 
