@@ -6,7 +6,7 @@ description: Appsmith is open source and is very easy to deploy
 
 You can start using appsmith on 
 
-[Appsmith Cloud](https://app.appsmith.com) **\(Recommended\)**
+[Appsmith Cloud](appsmith-cloud.md) **\(Recommended\)**
 
 or ****deploy it on your own servers via
 
