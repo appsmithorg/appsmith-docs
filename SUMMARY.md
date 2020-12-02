@@ -6,7 +6,6 @@
   * [Docker](quick-start/docker.md)
   * [Heroku](quick-start/heroku.md)
   * [AWS AMI](quick-start/aws-ami.md)
-  * [Enabling Third Party Services](quick-start/enabling-3p-services.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 
