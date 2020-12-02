@@ -33,7 +33,7 @@
 * [Part 1: Displaying Dynamic Data](tutorial/part-1-displaying-dynamic-data/README.md)
   * [The Appsmith environment](tutorial/part-1-displaying-dynamic-data/creating-a-new-app.md)
   * [Creating your first page](tutorial/part-1-displaying-dynamic-data/creating-your-first-table.md)
-* [Part 2: Creating a Form](tutorial/part-2-creating-a-basic-form/README.md)
+* [Part 2: Forms](tutorial/part-2-creating-a-basic-form/README.md)
   * [Creating your first form](tutorial/part-2-creating-a-basic-form/creating-a-form.md)
   * [Binding events](tutorial/part-2-creating-a-basic-form/submitting-the-form.md)
 * [Part 3: Building an interactive page](tutorial/part-3-widget-interaction/README.md)
