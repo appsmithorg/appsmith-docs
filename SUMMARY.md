@@ -1,12 +1,11 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Setting up Appsmith](setting-up-appsmith/README.md)
-  * [Appsmith Cloud](setting-up-appsmith/appsmith-cloud.md)
-  * [Docker](setting-up-appsmith/docker.md)
-  * [Heroku](setting-up-appsmith/heroku.md)
-  * [AWS AMI](setting-up-appsmith/aws-ami.md)
-* [Getting started](quick-start.md)
+* [Setting up Appsmith](quick-start/README.md)
+  * [Appsmith Cloud](quick-start/appsmith-cloud.md)
+  * [Docker](quick-start/docker.md)
+  * [Heroku](quick-start/heroku.md)
+  * [AWS AMI](quick-start/aws-ami.md)
 * [FAQs](faq.md)
 * [Enabling Third Party Services](enabling-3p-services.md)
 * [Changelog](changelog.md)

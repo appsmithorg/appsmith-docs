@@ -1,11 +1,11 @@
-# Getting started
+# Setting up Appsmith
 
 You can begin using Appsmith via our cloud instance or by deploying Appsmith yourself
 
-* [Appsmith Cloud](./setting-up-appsmith/appsmith-cloud.md) **\(recommended\):** Create a new application with just one click
-* [Docker](./setting-up-appsmith/docker.md)
-* [Heroku](./setting-up-appsmith/heroku.md)
-* [AWS AMI](./setting-up-appsmith/aws-ami.md)
+* [Using Appsmith Cloud](appsmith-cloud.md)
+* [Using Docker](docker.md)
+* [Heroku](heroku.md)
+* [AWS AMI](https://github.com/appsmithorg/appsmith-docs/tree/59aba8f49d764fa83b0af607119f5fce7d129575/setting-up-appsmith/setting-up-appsmith/aws-ami.md)
 
 ## Troubleshooting
 

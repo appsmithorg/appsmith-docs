@@ -1,3 +1,5 @@
+# Docker
+
 ## Docker
 
 Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
@@ -21,19 +23,19 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-2. Make the script executable
+1. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-3. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-4. Check if all the containers are running correctly.
+1. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -86,3 +88,4 @@ docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && 
 If at any time you encounter an error while installing Appsmith on any platform, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
 
 If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
+

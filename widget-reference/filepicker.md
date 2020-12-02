@@ -57,7 +57,7 @@ You can upload files by creating a post API and referring to the base64 or binar
 | **Allowed File Types** | Enables you to set constraints on the type of file a user can upload - images, videos, audios, text files, etc. |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
-| **Uploaded File URLs** | This property specifies the URLs of the uploaded files that the file upload API returned. You can bind it to the API using  |
+| **Uploaded File URLs** | This property specifies the URLs of the uploaded files that the file upload API returned. You can bind it to the API using |
 
 | Action | Description |
 | :--- | :--- |
@@ -65,7 +65,9 @@ You can upload files by creating a post API and referring to the base64 or binar
 
 ![](../.gitbook/assets/filepicker.gif)
 
-## Upload to Amazon S3 
-Files from Appsmith can be directly uploaded to Amazon S3 by selecting 'Call An API' on OnFilesSelected option. As Amazon S3 supports [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html), a Put API can be configured to upload the image directly to S3 bucket, in which the bucket has to be configured to allow all public access. This API rewrites an existing file or creates a new file if one does not exist in the bucket. 
+## Upload to Amazon S3
+
+Files from Appsmith can be directly uploaded to Amazon S3 by selecting 'Call An API' on OnFilesSelected option. As Amazon S3 supports [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html), a Put API can be configured to upload the image directly to S3 bucket, in which the bucket has to be configured to allow all public access. This API rewrites an existing file or creates a new file if one does not exist in the bucket.
 
 ![](../.gitbook/assets/UploadtoAWS.gif)
+
