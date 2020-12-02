@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Setting up Appsmith](quick-start/README.md)
+  * [Appsmith Cloud](quick-start/appsmith-cloud.md)
   * [Docker](quick-start/docker.md)
   * [Heroku](quick-start/heroku.md)
   * [AWS AMI](quick-start/aws-ami.md)
