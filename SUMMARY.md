@@ -6,8 +6,8 @@
   * [Docker](quick-start/docker.md)
   * [Heroku](quick-start/heroku.md)
   * [AWS AMI](quick-start/aws-ami.md)
+  * [Enabling Third Party Services](quick-start/enabling-3p-services.md)
 * [FAQs](faq.md)
-* [Enabling Third Party Services](enabling-3p-services.md)
 * [Changelog](changelog.md)
 
 ## Core Concepts

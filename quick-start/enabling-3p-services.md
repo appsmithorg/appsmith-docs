@@ -26,8 +26,8 @@ sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compos
 
 Each service requires a specific key or configuration to be enabled. Configure the service of your choice using the following guides
 
-* [Email](third-party-services/email/)
-* [Google OAuth](third-party-services/google-login.md)
-* [Github OAuth](third-party-services/github-login.md)
-* [Google Maps](third-party-services/google-maps.md)
+* [Email](../third-party-services/email/)
+* [Google OAuth](../third-party-services/google-login.md)
+* [Github OAuth](../third-party-services/github-login.md)
+* [Google Maps](../third-party-services/google-maps.md)
 
