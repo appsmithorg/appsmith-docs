@@ -2,8 +2,8 @@
 
 Your form is now both more user-friendly, and less error-prone. Let's configure it to trigger the addition of a new product. It will involve two steps:
 
-1. Setting up an **insert** query that adds a new product in the table
-2. Wiring the Submit button of the form to run the **insert** query
+1. **Setting up an insert query** that adds a new product to the table
+2. Wiring the Submit button of the form to **run the insert query**
 
 ## Using JavaScript in queries
 
@@ -23,13 +23,12 @@ INSERT INTO table_name
  (col1, col2, col3, … colN)
 VALUES
  (val1, val2, val3, … valN)
-
 ```
 
 The only difference is that you’re using the mustache template to write JavaScript within the insert query:
 
-* To get the value input by the user in **ProductNameInput**, you called **.text** method on it
-* To get the value of the selected option of **CategoryDropdown**, you called **.selectedOptionValue** on it 
+* To get the value filled by the user in **ProductNameInput**, you called the method `text` on it
+* To get the value of the selected option of **CategoryDropdown**, you called the method `selectedOptionValue` on it 
 
 Your query is now set up to insert dynamic user input from the form. 
 
@@ -43,7 +42,13 @@ Think of widgets as variables. Similar to variables:
 
 ## Binding events using GUI
 
-Try submitting the form with some valid values. You’ll see that you don't have a way to tell whether the product got added after submitting. Let’s fix it by adding success and error messages:
+Let's bind the Submit button of the for to invoke this AddProductQuery. 
+
+1. Open the properties of **SubmitButton**
+2. Go to **Action → onClick**
+3. Choose **Execute DB Query → AddProductQuery**
+
+Try creating a new product using the form. You’ll notice that you don't have a way to tell whether the product got added after submitting, or not. It's because you haven't set up a success or an error message. Let's do that:
 
 1. Open the properties of **SubmitButton**
 2. Navigate to **onClick → onSuccess** 
@@ -58,7 +63,7 @@ Try filling the form again with some valid and invalid values to verify that it 
 
 ## Binding events using JavaScript
 
-In the previous section, you used the properties' GUI to defined **onSuccess** and **onError** events for the **Submit** button. You can do the same, and much more using JavaScript in Appsmith. Let's see how.
+In the previous section, you used the properties GUI to defined **onSuccess** and **onError** events for the **Submit** button. You can do the same using JavaScript. Let's see how.
 
 Click on the **JS** icon next to **onClick**. You’ll see that the long hierarchical GUI that represents **onClick → onSuccess** and **onClick → onError,** converts to JavaScript code like below:
 
@@ -66,13 +71,14 @@ Click on the **JS** icon next to **onClick**. You’ll see that the long hierarc
 {{AddProductQuery.run(() => showAlert('yay'), () => showAlert('nay'))}}
 ```
 
-Clicking on **JS** enables the JavaScript editor in a property's field, that is it allows you to write JavaScript in it. You can modify this JavaScript code to further customize the **onClick** event. 
+Clicking on **JS** enables two things:
 
-In Appsmith, you can configure a widget’s properties by either using the GUI, or by writing JavaScript code. Most widget-properties can be customized using JavaScript.
+* If the field is blank, it allows you to write JavaScript. That' is, instead of using the GUI, you could have written the JavaScript to configure the **onSuccess** and **onError** events.
+* If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior. 
 
 ## Connecting multiple pages
 
-You've created a form that allows users to add new products. Let's wire the opening of this form with a button on ProductListPage that the user can click to begin product-addition.
+You've created a new page **AddProductPage** with a form that allows users to add new products. You want to open this page when the user clicks on an **"Add new product"** button from the **ProductListPage**. Let's set this up:
 
 1. Navigate to **Pages** **→ ProductListPage**
 2. Drag-drop the [button widget ](https://docs.appsmith.com/widget-reference/button)at the bottom right of the table
@@ -83,5 +89,9 @@ You've created a form that allows users to add new products. Let's wire the open
 
 Let's test this. Click on the Add New Product button on the ProductListPage. You'll see that the AddProductForm page opens up, ready for you to fill the form. 
 
-Let's see how you built it. By selecting the [Navigate To](https://docs.appsmith.com/function-reference/navigateto) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user to. 
+But what's happening here? By selecting the [Navigate To](https://docs.appsmith.com/function-reference/navigateto) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user to. 
+
+## What's next?
+
+When you’re comfortable with the basics of building a form, writing JavaScript in queries, and binding events using both GUI & JavaScript, read [part 3 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to take and process user input.
 

@@ -139,5 +139,7 @@ Application Hosting your application:
 By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith, 
 {% endhint %}
 
+## What's next?
+
 When you’re comfortable with the basics of using a display-widget, setting up a DB query, and connecting the widget to display query results, read [part 2 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to use widgets that enable you to take and process user input.
 
