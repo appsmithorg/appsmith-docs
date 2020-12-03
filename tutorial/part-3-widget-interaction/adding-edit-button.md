@@ -1,4 +1,4 @@
-# ?
+# Interaction between widgets
 
 Your **ProductListPage** is a dashboard that lists products in a table. Let's add an **Edit** button in each row of the table. The button on click will open a form modal that allows users to edit the product in that row.
 
@@ -20,8 +20,6 @@ After doing this, **EditProductModal** will look like below:
 
 ![](https://lh4.googleusercontent.com/YcO2UY_zzOZoqz94uEZ23C8UlaLlGkg3Ty0NHHU7aOWGd1aZYJaUPJ3T14kxamGoUk2i2yv3q7q9sd45-D4uvFHTwsZn8Nu1DE_eoWtIhXP-jKPIcBMBbYP0QyzjUd1qV9-xwTFM)
 
-## Setting default values in widgets
-
 All the form-fields in EditProductModal are empty. However, to edit a product, you'll want them to be pre-filled with the selected product's existing values:
 
 * **ProductNameInput** will show value of column **productName** of the product in the selected row
@@ -30,29 +28,39 @@ All the form-fields in EditProductModal are empty. However, to edit a product, y
 
 Let's configure all the above.
 
-Set default value in **ProductNameInput**: 
+## 
+
+To set default value in ProductNameInput:
 
 1. Open properties of **ProductNameInput**
 2. Set **Default** **Text** to `{{Products_Table.selectedRow.productName}}`
 3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
 
-Note that you just wrote JavaScript to set the **Default Text**. Here `Products_Table.selectedRow` ****has all the column values of the selected row. By calling `productName` ****on it, you're accessing the value of productName column. By setting **Default** **Text** to this, you’re pre-filling the form with this value. 
+Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` ****has all the column values of the selected row. By calling `productName` ****on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value. 
+
+\[to write tomorrow \] You accessed data of a widget in another widget.etc. 
 
 {% hint style="info" %}
-When you place your cursor in the Default Text field, you again see the modal with **Expected Value** and **Evaluated Value**. Here the **Exptected Value** is **String**. This means that you can write anything 
+**Expected Data Type & Evaluated Value:**
+
+When you place your cursor in the Default Text field, you again see the modal with **Expected Data Type** and **Evaluated Value**. Here the **Exptected Data Type** is **String**. Thus, you can set it to anything that either is a **String** or evaluates to **String**. This means that you can set it to a static String as well. 
+
+Equivalently, you can set any property of any widget to a value whose type is either that of **Expected** **Data Type**, or evaluates ****to the **Expected Data Type**. 
 {% endhint %}
 
-Set default value in **MrpInput**: 
+## Set default value in **MrpInput**: 
 
 1. Open properties of **MrpInput**
 2. Set **Default** **Text** to `{{Products_Table.selectedRow.mrp}}`
 3. Verify that the **Evaluated Value** of the property is as per the value in the selected row
 
-Set default value in **CategoryDropdown**:
+## Set default value in **CategoryDropdown**:
 
 1. Open **CategoryDropdown**'s properties
 2. Set **Default** **Option** to `{{Products_Table.selectedRow.category}}`
 3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
+
+When you click on the Edit button of a row, your form will get populated with the selected row's values. Try it.
 
 
 

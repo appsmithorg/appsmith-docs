@@ -36,10 +36,9 @@
 * [Part 2: Using forms](tutorial/part-2-using-forms/README.md)
   * [Creating your first form](tutorial/part-2-using-forms/creating-a-form.md)
   * [Binding events](tutorial/part-2-using-forms/submitting-the-form.md)
-* [Part 3: Interactive pages](tutorial/part-3-widget-interaction/README.md)
-  * [?](tutorial/part-3-widget-interaction/adding-edit-button.md)
+* [Part 3: &lt;to be decided&gt;](tutorial/part-3-widget-interaction/README.md)
+  * [Interaction between widgets](tutorial/part-3-widget-interaction/adding-edit-button.md)
   * [Running multiple actions on submit](tutorial/part-3-widget-interaction/running-multiple-actions-on-submit.md)
-  * [Sharing the app](tutorial/part-3-widget-interaction/sharing-the-app.md)
 
 ## Widget Reference
 
