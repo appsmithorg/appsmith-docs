@@ -30,15 +30,14 @@
 ## Tutorial
 
 * [Overview](tutorial/overview.md)
-* [Part 1: Displaying Dynamic Data](tutorial/part-1-displaying-dynamic-data/README.md)
-  * [The Appsmith environment](tutorial/part-1-displaying-dynamic-data/creating-a-new-app.md)
-  * [Creating your first page](tutorial/part-1-displaying-dynamic-data/creating-your-first-table.md)
-* [Part 2: Forms](tutorial/part-2-creating-a-basic-form/README.md)
-  * [Creating your first form](tutorial/part-2-creating-a-basic-form/creating-a-form.md)
-  * [Binding events](tutorial/part-2-creating-a-basic-form/submitting-the-form.md)
-* [Part 3: Building an interactive page](tutorial/part-3-widget-interaction/README.md)
-  * [Adding Edit button](tutorial/part-3-widget-interaction/adding-edit-button.md)
-  * [Configuring default values](tutorial/part-3-widget-interaction/configuring-default-values.md)
+* [Part 1: Creating views](tutorial/part-1-creating-views/README.md)
+  * [The Appsmith environment](tutorial/part-1-creating-views/creating-a-new-app.md)
+  * [Creating your first page](tutorial/part-1-creating-views/creating-your-first-table.md)
+* [Part 2: Using forms](tutorial/part-2-using-forms/README.md)
+  * [Creating your first form](tutorial/part-2-using-forms/creating-a-form.md)
+  * [Binding events](tutorial/part-2-using-forms/submitting-the-form.md)
+* [Part 3: Interactive pages](tutorial/part-3-widget-interaction/README.md)
+  * [?](tutorial/part-3-widget-interaction/adding-edit-button.md)
   * [Running multiple actions on submit](tutorial/part-3-widget-interaction/running-multiple-actions-on-submit.md)
   * [Sharing the app](tutorial/part-3-widget-interaction/sharing-the-app.md)
 
