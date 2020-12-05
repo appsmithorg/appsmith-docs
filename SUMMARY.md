@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Getting started](quick-start.md)
+* [Getting started](getting-started.md)
 * [FAQs](faq.md)
 * [Enabling Third Party Services](enabling-3p-services.md)
 * [Changelog](changelog.md)

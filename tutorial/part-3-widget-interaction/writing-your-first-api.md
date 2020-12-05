@@ -1,7 +1,5 @@
 # Writing your first API
 
-
-
 Your edit form is ready to take user-input. Now you will configure its Confirm button to trigger the update of the product via an API. It involves two steps:
 
 1. Setting up the required API
@@ -31,6 +29,6 @@ By using the mustache template in the URL, you're passing the ID of the product 
 {% hint style="info" %}
 **A word on sharing widget state:** 
 
-Here, you are accessing widgets' state in an API. This is in line with you learned in the previous section, you can access a widget's state from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's state from, the method of access remains the same, i.e. it follows the syntax_`{{<widgetname>.<method_name>}}`._
+Here, you are accessing widgets' state in an API. This is in line with what you learned in the previous sections - that you can access a widget's state from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's state from, the method of access remains the same, i.e. it follows the syntax_`{{<widgetname>.<method_name>}}`._
 {% endhint %}
 

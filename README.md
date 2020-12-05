@@ -11,7 +11,7 @@ Today when we need an internal app, our choices are limited to
 * Investing weeks building it from scratch and fighting with HTML/CSS
 * Getting started with an admin panel and invest even more time customizing it
 
-Appsmith bridges the gap between [getting started](quick-start.md) super quickly and making customizations super easy! The best part?
+Appsmith bridges the gap between [getting started](getting-started.md) super quickly and making customizations super easy! The best part?
 
 ### _No HTML / CSS!_
 

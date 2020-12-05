@@ -39,9 +39,9 @@ To bind multiple actions to a button event, let's write some JavaScript:
 }}
 ```
 
-This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. 
+This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. Note that since these actions run asynchronously, they all run in parallel. For example, in this case, **ProductsQuery** and **closeModal\(\)** are executed in parallel.
 
-You can trigger as many actions onSuccess and onError as required. \[TODO: Talk about whether multiple actions run sequentially, or in parallel\]
+You can trigger as many actions onSuccess and onError as required. 
 
 {% hint style="info" %}
 GUI vs JavaScript:
@@ -53,6 +53,6 @@ Try to edit a product again, and verify that the form-submit works as expected.
 
 **What's next?**
 
-The beginner tutorial ends here. At this point, you should know enough to start a project of your own and start fooling around. As you need to learn new tricks, come back to the documentation.  
+The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. As you need to learn new tricks, come back to the documentation.  
 
 

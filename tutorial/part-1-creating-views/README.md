@@ -14,5 +14,5 @@ We recommend that you use [Appsmith on Cloud](https://docs.appsmith.com/quick-st
 
 If Appsmith is installed, you should be able to sign up and log in. This tutorial works well on all versions of Appsmith, and is agnostic to the operating system you run it on.
 
-The first part of the tutorial begins with an introduction to the Appsmith's environment and then walks you through creating a simple web-page that displays products fetched from a database in a table.
+The tutorial is organized in three parts and must be done in the same sequence. ****The first part of the tutorial begins with an introduction to the Appsmith's environment and then walks you through creating a simple web-page that displays products fetched from a database in a table.
 
