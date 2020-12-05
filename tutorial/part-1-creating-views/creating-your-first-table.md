@@ -79,7 +79,7 @@ The table on your page shows static data right now. For your app to display prod
 4. Click on **New Query**
 5. You’ll see a query created with the name **Query1**
 6. Rename the query to **ProductsQuery**
-7. Copy-paste the query shown below in the **Query** tab `SELECT "productId", "productName", "category", "mrp" FROM products ORDER BY "productId" LIMIT 100;`
+7. Copy-paste the query shown below in the **Query** tab `SELECT "productId", "productName", "category", "mrp" FROM products ORDER BY "productId";`
 8. Click on **Run**
 9. Note the pop-up informing that the query ran successfully
 
