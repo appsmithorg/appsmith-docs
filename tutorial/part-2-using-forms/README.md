@@ -4,6 +4,7 @@ This tutorial begins where [Tutorial 1](https://docs.google.com/document/d/1MF52
 
 1. Create a new page having a form to accept the new product's details from a user
 2. Add validations to the form fields
-3. Bind the form's submit button to trigger the addition of a new product
-4. Finally, add a button on the **ProductListPage** that opens this form 
+3. Access widget's state in queries to insert dynamic input
+4. Bind the form's submit button to trigger the addition of a new product
+5. Finally, add a button on the **ProductListPage** that opens this form 
 
