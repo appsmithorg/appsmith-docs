@@ -1,6 +1,6 @@
 # Creating your first form
 
-Let's create a new page that will have a form to accept product-details from users:
+Let's first create a new page that will have a form to accept product-details from users:
 
 1. Click on **+** next to **Pages** to add a new page
 2. Rename the page from **Page1** to **NewProductPage**
@@ -12,7 +12,7 @@ Let's create a new page that will have a form to accept product-details from use
 Note that when you create a new page, the base directory structure of Widgets, APIs, and DB Queries automatically gets created.
 {% endhint %}
 
-## Adding an input widget
+## Using an input widget
 
 The [form widget](https://docs.appsmith.com/widget-reference/form) ****creates an empty form with a **Submit** and a **Reset** button. Let’s add some fields to it to take user input:
 
@@ -36,9 +36,9 @@ Let’s tinker with **ProductNameInput**:
 2. Set **Data Type** to **Text** 
 3. Toggle **Required** field to Green
 
-The **Data Type** property sets the allowed data-type of input. When set to **Text**, it allows only **Text** input. The **Required** field makes the input to the field mandatory. You can toggle between true and false.
+The **Data Type** property sets the allowed data-type of input. When set to **Text**, it allows only **Text** input. The **Required** field makes the input to the field mandatory. You can toggle between true and false. The input widget has [many other properties available](https://docs.appsmith.com/widget-reference/input#properties).
 
-## Adding a dropdown widget
+## Using a dropdown widget
 
 Let’s add other fields to the form. To enable users to choose a Category:
 
@@ -87,15 +87,25 @@ The **CategoryDropdown** is now a required field. Click on the **Options** field
 * **Expected Data Type** tells you the acceptable input data format/type for this field.
 * **Evaluated Value** shows the evaluated value of the field's input in real-time. You can use it to verify against your expected value. This specifically comes in handy when you write JavaScript code in it.
 
+## Writing your first transformation
+
 Notice that to set CategoryDropdown's options, you had to carefully copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
 
 1. Open **CategoryDropdown**’s properties
 2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**
 
-It worked!  But, what happened here? You used Lodash’s \_.map method to transform an array of strings to the format understandable by the dropdown widget, instead of manually formatting and typing it down.
+It worked!  But, what happened here? You used the `_.map` method of **Logdash**, and `toUpperCase()` method of JavaScript to transform an array of strings to the format required by the dropdown widget, instead of manually formatting it. 
 
-## Adding other form fields
+{% hint style="info" %}
+**Data Transformation:**
+
+A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. In Appsmith, you can use plain JavaScript, or one of the [supported libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data however you need. 
+{% endhint %}
+
+
+
+## Adding other fields
 
 Let's add a field to accept input for Mrp:
 
@@ -111,7 +121,7 @@ The **AddProductForm** now looks like: \(TODO: Put correct image\)
 
 ![](https://lh6.googleusercontent.com/uxUuQhYPkdQQSl0XQRDBR55bmbeJk5cQCVrbD0tuMYwYjQQkY3ARN1OLb5YIUMDIn7NYWYNyGhc8Axqb4OINo2Rrnri0j1VoXMjYozyAN_MX7k2qA-BoktjGbkC4sjSSNigAL8ob)
 
-## Adding regex validations
+## Writing regex validations
 
 Your form now has all the required widgets in place with some basic properties configured. Let’s add some regex validations to reject bad input from users.
 
@@ -138,6 +148,6 @@ Now, let’s configure MrpInput to accept only decimal values greater than or eq
 Verify that the regex validates the input as expected, and throws the error message in case of a mismatch.
 
 {% hint style="info" %}
-Note that since Appsmith editor reflects change in the app in real-time, you are able to test the changes while building without having to deploy every time.
+Note that since Appsmith editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
 {% endhint %}
 

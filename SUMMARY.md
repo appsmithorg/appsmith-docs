@@ -29,16 +29,16 @@
 
 ## Tutorial
 
-* [Overview](tutorial/overview.md)
-* [Part 1: Creating views](tutorial/part-1-creating-views/README.md)
+* [Part 1: Creating a basic view](tutorial/part-1-creating-views/README.md)
   * [The Appsmith environment](tutorial/part-1-creating-views/creating-a-new-app.md)
   * [Creating your first page](tutorial/part-1-creating-views/creating-your-first-table.md)
 * [Part 2: Using forms](tutorial/part-2-using-forms/README.md)
   * [Creating your first form](tutorial/part-2-using-forms/creating-a-form.md)
   * [Binding events](tutorial/part-2-using-forms/submitting-the-form.md)
-* [Part 3: &lt;to be decided&gt;](tutorial/part-3-widget-interaction/README.md)
-  * [Interaction between widgets](tutorial/part-3-widget-interaction/adding-edit-button.md)
-  * [Running multiple actions on submit](tutorial/part-3-widget-interaction/running-multiple-actions-on-submit.md)
+* [Part 3: Creating interactive views](tutorial/part-3-widget-interaction/README.md)
+  * [Sharing widget state](tutorial/part-3-widget-interaction/adding-edit-button.md)
+  * [Writing your first API](tutorial/part-3-widget-interaction/writing-your-first-api.md)
+  * [Binding multiple actions to events](tutorial/part-3-widget-interaction/running-multiple-actions-on-submit.md)
 
 ## Widget Reference
 

@@ -1,27 +1,11 @@
-# Running multiple actions on submit
+# Binding multiple actions to events
 
-Your edit form is ready to take user-input. Now you will configure its Confirm button to trigger the update of the product. It involves two steps:
-
-1. Setting up the required update query
-2. Wiring the form-submit to trigger the update query
-
-Let's write the query. 
-
-1. Navigate to **ProductListPage → DB Queries**
-2. Click **+**
-3. Navigate to **Mock** **Database**
-4. Click on **New** **Query**
-5. Rename query to **UpdateProductQuery**
-6. Set the query to `UPDATE "products" SET "productName" = '{{ProductNameInput.text}}', "category" = '{{CategoryDropdown.selectedOptionValue}}', "mrp" = '{{MrpInput.text}}' WHERE "productId" = {{Products_Table.selectedRow.productId}};` ****
-7. Run the query
-8. Verify that the query runs successfully
-
-. Let’s wire the **Confirm** button with the **UpdateProductQuery**:
+The API to update a product is ready. In this section, you'll bind the **Confirm** button of **EditProductModal** to run **UpdateProductApi**.
 
 1. Open **EditProductForm**'s properties
 2. Rename **label** to **Update**
-3. Go to **Actions → Execute DB Query**
-4. Choose **UpdateProductQuery**
+3. Go to **Actions → Call an API**
+4. Choose **UpdateProductApi**
 5. Go to **onSuccess**
 6. Choose **Execute DB Query → ProductQuery**
 7. Go to **onError**
@@ -31,13 +15,15 @@ Let's write the query.
 
 Let’s see what you did there:
 
-* You configured the **Confirm** button to run **UpdateProductQuery** on click
-* You set the **onSuccess** of the button to execute **ProductQuery**, i.e. if the **UpdateProductQuery** runs successfully, **ProductQuery** will be executed. This ensures that  **Products\_Table**, whose **Table Data** property is set to `ProductQuery.data`, shows updated results. 
-* You set the **onError** of the button to show an alert message, i.e. if **UpdateProductQuery** returns an error, an alert message will be shown. 
+* You configured the **Confirm** button to run **UpdateProductApi**.
+* You set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. This ensures the data displayed in **Products\_Table**, whose **Table Data** property is set to `ProductQuery.data`, shows updated results. 
+* You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
+
+Try to edit a product, and click confirm to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits. 
 
 ## Binding multiple actions to an event
 
-Try to edit a product, and click confirm. You'll see that the form-modal remains open after submitting. However, if the product update is successful, we'd like to close the form-modal, in addition to running the ProductQuery.
+To bind multiple actions to a button event, let's write some JavaScript:
 
 1. Click on **JS** of **onClick** on **EditConfirmButton**
 2. The **onClick** field converts to JS
@@ -53,7 +39,9 @@ Try to edit a product, and click confirm. You'll see that the form-modal remains
 }}
 ```
 
-This is in line with what you learned in part 2 about using JavaScript to define widget behavior. Wherease there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. 
+This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. 
+
+You can trigger as many actions onSuccess and onError as required. \[TODO: Talk about whether multiple actions run sequentially, or in parallel\]
 
 {% hint style="info" %}
 GUI vs JavaScript:

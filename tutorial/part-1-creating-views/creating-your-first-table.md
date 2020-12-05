@@ -64,20 +64,16 @@ Open the application's URL in your web-browser. You can see the table like below
 
 ![](https://lh4.googleusercontent.com/7e6zxV5LcEpGFtwTzunX7yy5xa8X20rsFqaLeIiOwYjOYmgorL2uPRFQqE64VxHh9Qfbs1BGHYlTUbM88XZ69bwNufya028cuasyvmZe2423hgc6fsLho4kfApo3TrqFjHoRUNmH)
 
-|  |
-| :--- |
-
-
 {% hint style="info" %}
-Auto-save:
+**Auto-save:**
 
-Appsmith auto-saves changes in real-time so you never lose your work. However, the changes reflect in the application only after you deploy.
+Appsmith auto-saves changes you make in the configuration of your app in real-time, so you never lose your work. However, the changes reflect in the application only after you deploy.
 {% endhint %}
 
 The table on your page shows static data right now. For your app to display product data from the database:
 
 1. The first step is to set up the database query that fetches this data.
-2. The second step is to configure the table to show the query's results
+2. The second step is to configure the table to show the query's results.
 
 ## Writing your first query
 
@@ -89,24 +85,24 @@ The table on your page shows static data right now. For your app to display prod
 6. Rename the query to **ProductsQuery**
 7. Copy-paste the query shown below in the **Query** tab `SELECT "productId", "productName", "category", "mrp" FROM products ORDER BY "productId" LIMIT 100;`
 8. Click on **Run**
-9. Note the pop-up informing that the query ran successfully \[TODO: Figure how to move the query near point 7.\]
+9. Note the pop-up informing that the query ran successfully
 
 {% hint style="info" %}
-Mock Database
+**Mock Database:**
 
 Your Personal Organization comes with a pre-configured mock PostgreSQL Database called Mock Database. However, when you build your own app, you’ll connect to your own database. If you’re new to Appsmith, read [this](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
 {% endhint %}
 
-## Displaying query results in a table
+## Accessing query results from a widget
 
-The next step is to display the query results in the table:
+The next step is to display the query results in the **Products\_Table** :
 
 1. Navigate to **ProductListPage → Widgets → Products\_Table**
 2. Open **Product\_Table’**s properties
 3. Type the following in the Table Data property: `{{ProductsQuery.data}}`
 4. Your table now displays ProductsQuery’s results
-5. Click the Deploy button on top right. 
-6. Click on the down arrow button next to the deploy button to get the URL of your app.
+5. Click the Deploy button on top right
+6. Click on the down arrow button next to the deploy button to get the URL of your app
 
 Visit the app URL with your web browser. You'll see a page displaying your query results in a table like below:  
 
@@ -120,7 +116,17 @@ Let’s see how this works:
 3. By calling the data function on **ProductsQuery**, you’re accessing its results. 
 4. By setting the **Table Data** to `{{ ProductsQuery.data }}`, you’re telling **Products\_Table** to display the results of **ProductsQuery**.
 
-Now let’s see what Appsmith is doing behind the scenes. To ensure that widgets always display the latest data, Appsmith runs the code within mustaches every time the page loads; and it runs it in the following sequence:
+Note that you are accessing a query's result in a widget by calling a method on the query's name. As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can be accessed by a query. Furthermore, all the building blocks of an appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names. 
+
+{% hint style="info" %}
+Think of widgets, APIs and DB Queries in Appsmith as variables in your programming language. Similar to variables:
+
+* They represent an object, be it a widget, an API object, or a query object
+* They support a set of methods
+* They have a scope; they can be accessed from only within their parent page
+{% endhint %}
+
+\[TODO: Update this as per Hetu's explanation [`here`](https://www.notion.so/How-does-Appsmith-evaluation-work-2935e1a5282b44c597c1274c6b5ef83c)\] Now let’s see what Appsmith is doing behind the scenes. To ensure that widgets always display the latest data, Appsmith runs the code within mustaches every time the page loads; and it runs it in the following sequence:
 
 1. It looks for the query **ProductsQuery** within its parent page 
 2. It runs query **ProductsQuery** 
@@ -128,15 +134,15 @@ Now let’s see what Appsmith is doing behind the scenes. To ensure that widgets
 4. Render results of `ProductsQuery.data` in  **Products\_Table**
 
 {% hint style="info" %}
-Names & Scope:
+**Names & Scope:**
 
-All names within a page must be unique - be it widget names, query names, or API names. Any name is like a variable name of any programming language—it is a unique identifier, and it has a scope. Names in Appsmith are accessible from only within the page they're defined in.  
+All names within a page must be unique - be it widget names, query names, or API names. 
 {% endhint %}
 
 {% hint style="info" %}
-Application Hosting your application:
+**Application Hosting your application:**
 
-By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith, 
+By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
 {% endhint %}
 
 ## What's next?

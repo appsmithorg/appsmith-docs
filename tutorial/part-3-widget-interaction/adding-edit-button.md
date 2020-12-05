@@ -1,17 +1,22 @@
-# Interaction between widgets
+# Sharing widget state
 
-Your **ProductListPage** is a dashboard that lists products in a table. Let's add an **Edit** button in each row of the table. The button on click will open a form modal that allows users to edit the product in that row.
+You've built a page to view all products, and another page to add a new product. We now move on to the third functionality of enabling a user to edit a product. Let's add an **Edit** button in each row of the table. On clicking the Edit button, a form modal will open which will allow users to edit the product in the corresponding row.
 
 1. Open **Products\_Table**’s properties
 2. Click on **New** **Button** under **Actions → Row Button**
 3. Rename the button to **Edit**
-4. Choose the action **Open Modal** from the **Actions** dropdown
-5. Choose **New Modal**
-6. Rename the new modal to **EditProductModal** using its properties 
-7. Choose **Modal Type** as **Form Modal**
-8. Rename the modal’s title to **Edit Product**
 
-You will see that **EditProductModal** has an empty form. Let’s populate the form with widgets such that:
+You'll see an Edit button in the last column of each row. A Row Button adds a button action for each row. Each row can have as many as X **\[TODO: Find the limit\]** row buttons. Let's configure the Edit button.
+
+1. Open **Products\_Table**’s properties
+2. Go to **Actions → Row Button → Edit**
+3. Choose the action **Open Modal** from the **Actions** dropdown
+4. Choose **New Modal**
+5. Rename the new modal to **EditProductModal** using its properties 
+6. Choose **Modal Type** as **Form Modal**
+7. Rename the modal’s title to **Edit Product**
+
+You will see **EditProductModal** is an empty form. Let’s populate the form with widgets such that:
 
 * It looks exactly like the **AddProductForm** 
 * Its properties are configured in the same way as that of **AddProductForm**
@@ -20,17 +25,17 @@ After doing this, **EditProductModal** will look like below:
 
 ![](https://lh4.googleusercontent.com/YcO2UY_zzOZoqz94uEZ23C8UlaLlGkg3Ty0NHHU7aOWGd1aZYJaUPJ3T14kxamGoUk2i2yv3q7q9sd45-D4uvFHTwsZn8Nu1DE_eoWtIhXP-jKPIcBMBbYP0QyzjUd1qV9-xwTFM)
 
-All the form-fields in EditProductModal are empty. However, to edit a product, you'll want them to be pre-filled with the selected product's existing values:
+Notice, that like **AddProductForm**, all the form-fields in **EditProductModal** are empty. However, to edit a product, you'll want them to be pre-filled with the values of the product that you want to update. This means that:
 
-* **ProductNameInput** will show value of column **productName** of the product in the selected row
-* **MrpInput** will show value of column **mrp** of the product in the selected row
-*  **CategoryDropdown** will show the selected option as the value of column **category** of the product in the selected row
+* **ProductNameInput** should show the value of column **productName** of the product in the selected row
+* **MrpInput** should show the value of column **mrp** of the product in the selected row
+*  **CategoryDropdown** should show the selected option as the value of column **category** of the product in the selected row
 
 Let's configure all the above.
 
 ## 
 
-To set default value in ProductNameInput:
+To set a default value of **ProductNameInput**:
 
 1. Open properties of **ProductNameInput**
 2. Set **Default** **Text** to `{{Products_Table.selectedRow.productName}}`
@@ -38,7 +43,25 @@ To set default value in ProductNameInput:
 
 Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` ****has all the column values of the selected row. By calling `productName` ****on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value. 
 
-\[to write tomorrow \] You accessed data of a widget in another widget.etc. 
+What you did above was that you accessed table widget's state - selected row's column values, in form widget. Appsmith allows you to access the state of one widet in another widget using a set of methods exposed on every widget. For example, table widget exposes `selectedRow` method. For a widget, check the methods to access its state under the Internal Properties section in its Widgets Reference guide.
+
+Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query or API of **AddProductPage**. The reason for this is that the 
+
+
+
+Let's now set a default value of **MrpInput**:
+
+1. Open properties of **MrpInput**
+2. Set **Default** **Text** to `{{Products_Table.selectedRow.mrp}}`
+3. Verify that the **Evaluated Value** of the property is as per the value in the selected row
+
+To set a default value of CategoryDropdown:
+
+1. Open **CategoryDropdown**'s properties
+2. Set **Default** **Option** to `{{Products_Table.selectedRow.category}}`
+3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
+
+Verify that when you click on the Edit button of a row, your form will get populated with the selected row's values. 
 
 {% hint style="info" %}
 **Expected Data Type & Evaluated Value:**
@@ -47,22 +70,6 @@ When you place your cursor in the Default Text field, you again see the modal wi
 
 Equivalently, you can set any property of any widget to a value whose type is either that of **Expected** **Data Type**, or evaluates ****to the **Expected Data Type**. 
 {% endhint %}
-
-## Set default value in **MrpInput**: 
-
-1. Open properties of **MrpInput**
-2. Set **Default** **Text** to `{{Products_Table.selectedRow.mrp}}`
-3. Verify that the **Evaluated Value** of the property is as per the value in the selected row
-
-## Set default value in **CategoryDropdown**:
-
-1. Open **CategoryDropdown**'s properties
-2. Set **Default** **Option** to `{{Products_Table.selectedRow.category}}`
-3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
-
-When you click on the Edit button of a row, your form will get populated with the selected row's values. Try it.
-
-
 
 
 
