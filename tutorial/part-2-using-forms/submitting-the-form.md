@@ -80,6 +80,10 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 5. Go to **Action → onClick → Navigate To** 
 6. Type **AddProductPage** in **Page Name** field
 
+Your **ProductListPage** now looks like: 
+
+![ProductListPage: Note the &quot;Add new product&quot; button](../../.gitbook/assets/image%20%283%29.png)
+
 Let's test this. Click on the "**Add New Product"** button on the ProductListPage. You'll see that the **AddProductForm** page opens up, ready for you to fill the form. 
 
 But what's happening here? By selecting the [Navigate To](https://docs.appsmith.com/function-reference/navigateto) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user to. 

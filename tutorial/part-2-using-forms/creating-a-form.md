@@ -117,9 +117,9 @@ Let's add a field to accept input for Mrp:
 
 The title of the form is a text widget. Let's rename the title from **Form**. to **Add a Product**:
 
-The **AddProductForm** now looks like: \(TODO: Put correct image\)
+The **AddProductForm** now looks like: 
 
-![](https://lh6.googleusercontent.com/uxUuQhYPkdQQSl0XQRDBR55bmbeJk5cQCVrbD0tuMYwYjQQkY3ARN1OLb5YIUMDIn7NYWYNyGhc8Axqb4OINo2Rrnri0j1VoXMjYozyAN_MX7k2qA-BoktjGbkC4sjSSNigAL8ob)
+![AddProductForm: Form to add a new product](../../.gitbook/assets/image%20%281%29.png)
 
 ## Writing regex validations
 

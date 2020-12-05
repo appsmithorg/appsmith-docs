@@ -48,10 +48,6 @@ To rename a widget:
 4. Press Enter
 {% endhint %}
 
-|  |
-| :--- |
-
-
 Let’s play with **Table Data** to get a hang of how it affects the data displayed in the table:
 
 1. Go to **Table Data** property of **Products\_Table**.
