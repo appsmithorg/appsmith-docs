@@ -5,9 +5,9 @@ Your form is now both more user-friendly, and less error-prone. Let's configure 
 1. **Setting up an insert query** that adds a new product to the table
 2. Wiring the Submit button of the form to **run the insert query**
 
-## Using JavaScript in queries
+## Accessing widget state in queries
 
-Let’s set up the query first:
+Your form will have the value filled in by the user. You want to insert those values via your query. Let’s set up the query first:
 
 1. Navigate to **Pages → NewProductPage → DB Queries → +**
 2. Navigate to **Mock Database → New Query**
