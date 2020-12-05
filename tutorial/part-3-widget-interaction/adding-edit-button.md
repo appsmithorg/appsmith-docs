@@ -55,7 +55,7 @@ Note that you just wrote JavaScript to set the **Default Text**. Here, `Products
 
 What you did above was that you accessed table widget's state - selected row's column values, in form widget. Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the table widget exposes`selectedRow`method. For a widget, check the methods to access its state under the Internal Properties section in its Widgets Reference guide.
 
-Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query or API of **AddProductPage**. 
+Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**. 
 
 {% hint style="info" %}
 **Accessing state/data across pages:**
