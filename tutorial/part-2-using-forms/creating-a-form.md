@@ -9,7 +9,9 @@ Let's first create a new page that will have a form to accept product-details fr
 5. Rename the form to **AddProductForm**
 
 {% hint style="info" %}
-Note that when you create a new page, the base directory structure of Widgets, APIs, and DB Queries automatically gets created.
+**App structure:**
+
+When you create a new page, the base directory structure having Widgets, APIs, and DB Queries automatically gets created.
 {% endhint %}
 
 ## Using an input widget
@@ -148,6 +150,8 @@ Now, let’s configure MrpInput to accept only decimal values greater than or eq
 Verify that the regex validates the input as expected, and throws the error message in case of a mismatch.
 
 {% hint style="info" %}
-Note that since Appsmith editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
+**Real-time app changes:**
+
+Since Appsmith editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
 {% endhint %}
 

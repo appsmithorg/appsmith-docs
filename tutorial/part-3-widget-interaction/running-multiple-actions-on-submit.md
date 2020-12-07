@@ -45,7 +45,7 @@ This is in line with what you learned in [part 2](https://app.gitbook.com/@appsm
 You can trigger as many actions onSuccess and onError as required. 
 
 {% hint style="info" %}
-GUI vs JavaScript:
+**GUI vs JavaScript:**
 
 By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. We recommend that you spend some time fiddling with JavaScript on Appsmith.
 {% endhint %}
