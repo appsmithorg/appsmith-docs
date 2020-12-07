@@ -1,4 +1,4 @@
-# Accessing state between widgets
+# Accessing states between widgets
 
 You've built a page to view all products, and another page to add a new product. We now move on to the third functionality of enabling a user to edit a product. Let's add an **Edit** button in each row of the table. On clicking the **Edit** button, a form modal will open which will allow users to edit the product in the corresponding row.
 
@@ -6,7 +6,7 @@ You've built a page to view all products, and another page to add a new product.
 2. Click on **New** **Button** under **Actions → Row Button**
 3. Rename the button to **Edit**
 
-You'll see an Edit button in the last column of each row. A Row Button adds a button action for each row. Each row can have as many as X **\[TODO: Find the limit\]** row buttons. Let's configure the Edit button.
+You'll see an Edit button in the last column of each row. A Row Button adds a button action for each row. Let's configure the Edit button.
 
 1. Open **Products\_Table**’s properties
 2. Go to **Actions → Row Button → Edit**

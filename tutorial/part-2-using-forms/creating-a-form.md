@@ -119,7 +119,7 @@ The title of the form is a text widget. Let's rename the title from **Form**. to
 
 The **AddProductForm** now looks like: 
 
-![AddProductForm: Form to add a new product](../../.gitbook/assets/image%20%281%29.png)
+![AddProductForm: Form to add a new product](../../.gitbook/assets/image%20%281%29%20%281%29.png)
 
 ## Writing regex validations
 

@@ -97,7 +97,7 @@ The next step is to display the query results in the **Products\_Table** :
 2. Open **Product\_Table’**s properties
 3. Type the following in the Table Data property: `{{ProductsQuery.data}}`
 4. Your table now displays ProductsQuery’s results
-5. Click the Deploy button on top right
+5. Click the Deploy button on the top right
 6. Click on the down arrow button next to the deploy button to get the URL of your app
 
 Visit the app URL with your web browser. You'll see a page displaying your query results in a table like below:  
@@ -112,22 +112,16 @@ Let’s see how this works:
 3. By calling the data function on **ProductsQuery**, you’re accessing its results. 
 4. By setting the **Table Data** to `{{ ProductsQuery.data }}`, you’re telling **Products\_Table** to display the results of **ProductsQuery**.
 
-Note that you are accessing a query's result in a widget by calling a method on the query's name. As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can be accessed by a query. Furthermore, all the building blocks of an appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names. 
+Note that you are accessing a query's result in a widget by calling a method on the query's name. As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can also be accessed by a query. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names. 
 
 {% hint style="info" %}
 Think of widgets, APIs and DB Queries in Appsmith as variables in your programming language. Similar to variables:
 
+* They are identified by a name
 * They represent an object, be it a widget, an API object, or a query object
 * They support a set of methods
 * They have a scope; they can be accessed from only within their parent page
 {% endhint %}
-
-\[TODO: Update this as per Hetu's explanation [`here`](https://www.notion.so/How-does-Appsmith-evaluation-work-2935e1a5282b44c597c1274c6b5ef83c)\] Now let’s see what Appsmith is doing behind the scenes. To ensure that widgets always display the latest data, Appsmith runs the code within mustaches every time the page loads; and it runs it in the following sequence:
-
-1. It looks for the query **ProductsQuery** within its parent page 
-2. It runs query **ProductsQuery** 
-3. Run code `ProductsQuery.data`
-4. Render results of `ProductsQuery.data` in  **Products\_Table**
 
 {% hint style="info" %}
 **Names & Scope:**

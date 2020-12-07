@@ -33,9 +33,10 @@ To bind multiple actions to a button event, let's write some JavaScript:
 {{
   UpdateProductQuery.run(
   () => { 
-          ProductsQuery.run(); closeModal('EditProductModal')
-       },
- () => showAlert('Product update failed!'))
+          ProductsQuery.run(); 
+          closeModal('EditProductModal')
+        },
+  () => showAlert('Product update failed!'))
 }}
 ```
 
@@ -50,6 +51,17 @@ By extension, understand that you can write any JavaScript to customize widget b
 {% endhint %}
 
 Try to edit a product again, and verify that the form-submit works as expected.
+
+## Sharing your app
+
+Let's deploy your app for the final time. Once deployed, you can share your deployed application with both internal and external users: 
+
+1. Click on the **"Share"** button on the top right
+2. Invite a user using their email ID
+3. Select an appropriate role for the user 
+4. Share the application’s URL with the user
+
+You can also make the application public, in which case, anyone with the URL to the application can view the application without having to sign in. You can read more about [access control here](https://docs.appsmith.com/core-concepts/access-control).
 
 **What's next?**
 
