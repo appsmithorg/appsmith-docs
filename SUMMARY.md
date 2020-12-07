@@ -1,11 +1,12 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Setting up Appsmith](quick-start/README.md)
-  * [Appsmith Cloud](quick-start/appsmith-cloud.md)
-  * [Docker](quick-start/docker.md)
-  * [Heroku](quick-start/heroku.md)
-  * [AWS AMI](quick-start/aws-ami.md)
+* [Getting Started](getting-started.md)
+* [Setting up Appsmith](setting-up/README.md)
+  * [Appsmith Cloud](setting-up/appsmith-cloud.md)
+  * [Docker](setting-up/docker.md)
+  * [Heroku](setting-up/heroku.md)
+  * [AWS AMI](setting-up/aws-ami.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 
@@ -32,16 +33,16 @@
 
 ## Tutorial
 
-* [Part 1: Creating a basic view](tutorial/part-1-creating-views/README.md)
-  * [The Appsmith environment](tutorial/part-1-creating-views/creating-a-new-app.md)
-  * [Creating your first page](tutorial/part-1-creating-views/creating-your-first-table.md)
+* [Part 1: Creating a simple view](tutorial/part-1-creating-a-simple-view/README.md)
+  * [The Appsmith environment](tutorial/part-1-creating-a-simple-view/creating-a-new-app.md)
+  * [Creating your first page](tutorial/part-1-creating-a-simple-view/creating-your-first-table.md)
 * [Part 2: Using forms](tutorial/part-2-using-forms/README.md)
   * [Creating your first form](tutorial/part-2-using-forms/creating-a-form.md)
   * [Binding events](tutorial/part-2-using-forms/submitting-the-form.md)
-* [Part 3: Creating interactive views](tutorial/part-3-widget-interaction/README.md)
-  * [Accessing states between widgets](tutorial/part-3-widget-interaction/adding-edit-button.md)
-  * [Writing your first API](tutorial/part-3-widget-interaction/writing-your-first-api.md)
-  * [Binding multiple actions to events](tutorial/part-3-widget-interaction/running-multiple-actions-on-submit.md)
+* [Part 3: Creating interactive views](tutorial/part-3-creating-interactive-views/README.md)
+  * [Accessing states between widgets](tutorial/part-3-creating-interactive-views/adding-edit-button.md)
+  * [Writing your first API](tutorial/part-3-creating-interactive-views/writing-your-first-api.md)
+  * [Binding multiple actions to events](tutorial/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
 
 ## Widget Reference
 
