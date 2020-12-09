@@ -6,9 +6,9 @@ If this is your first time using Appsmith, you’ll need to get acquainted with 
 Ensure that you use the auto-generated organization for the tutorial. It includes a mock database that you will need to follow the tutorial.
 {% endhint %}
 
-An app on Appsmith is a standalone software-application solving a specific use-case. An app can consist of one or more web-pages. Let’s create a new app Catalogue Dashboard in **Your Personal Organization**.
+An app on Appsmith is a standalone software-application solving a specific use-case. An app can consist of one or more web-pages. Let’s create a new app Catalogue Dashboard in **Yourname apps**.
 
-1. Click on **Create New** under **Your Personal Organization**.
+1. Click on **Create New** under **Yourname apps**.
 2. You’ll be redirected to the configuration page of the new app.
 3. Note that the new app is created with default name **Untitled Application 1**.
 4. Rename it to **Catalog Dashboard**.
