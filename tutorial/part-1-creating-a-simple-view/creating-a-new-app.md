@@ -1,9 +1,9 @@
 # The Appsmith environment
 
-If this is your first time using Appsmith, you’ll need to get acquainted with some initial setup. When you log in, you'll be redirected to your Appsmith home-page. The home-page has an auto-generated organization called **Your Personal Organization** that consists of multiple templates. In this tutorial, we'll create our Catalog app in the same organization.
+If this is your first time using Appsmith, you’ll need to get acquainted with some initial setup. When you log in, you'll be redirected to your Appsmith home-page. The home-page has an auto-generated organization called **Yourname apps** that consists of multiple templates. In this tutorial, we'll create our Catalog app in the same organization.
 
 {% hint style="info" %}
-Ensure that you use the auto-generate organization for the tutorial. It has a mock database set up that you will need to follow the tutorial.
+Ensure that you use the auto-generated organization for the tutorial. It includes a mock database that you will need to follow the tutorial.
 {% endhint %}
 
 An app on Appsmith is a standalone software-application solving a specific use-case. An app can consist of one or more web-pages. Let’s create a new app Catalogue Dashboard in **Your Personal Organization**.
