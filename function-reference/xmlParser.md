@@ -11,6 +11,11 @@ This uses the [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser
 xmlParser.parse(xml: string, options?: object) -> object
 ```
 
+## Usage
+```javascript
+{{ xmlParser.parse("<message><heading>Reminder</heading><body>Don't forget me this weekend!</body></message>") }}
+```
+
 ### Arguments
 
 | **Argument Name** | **Description** |
