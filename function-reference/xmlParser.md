@@ -1,5 +1,5 @@
 ---
-description: Convert xml string to json string
+description: Convert xml string to json object
 ---
 
 # xmlParser
