@@ -17,7 +17,6 @@ The new app comes with auto-generated folders that establish an Appsmith app.
 
 ![Figure 1. App folder structure](https://lh5.googleusercontent.com/OHzUIwJXYhimFYhK_Po6Ezwe-rMtSptxrUW5ZDVDc9Mba2u3_GZilQ7t3aSXD9I64DZnim8Tc3eKAFUKzdVD313t654QT_AAZe8zKTuujOujppM4QoRx-WzuWwQKF_TrraifXt4r)
 
-  
 These folders are:
 
 * The outer **Pages** root directory is a container for all the web-pages of your app, and the web-pages’ configuration. The name **Pages** is fixed, and can’t be changed.
@@ -26,9 +25,4 @@ These folders are:
 * **Pages/Page1/APIs** directory is a container for all APIs that Page1 connects to. The directory doesn’t have any pre-configured APIs. The name of the directory APIs is fixed, and can't be changed.
 * **Pages/Page1/DB Queries** directory is a container for both databases, and their queries used by Page1 to read and write data. The directory doesn’t have any pre-configured databases or queries. The name of the directory DB Queries is fixed, and can't be changed.
 * The outer **Dependencies** directory lists the [JS libraries supported by Appsmith](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries).
-
-
-
-  
-
 
