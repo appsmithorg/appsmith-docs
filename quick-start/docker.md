@@ -60,7 +60,7 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 {% endhint %}
 
 {% hint style="warning" %}
-### Mongo Instance Crashing on Mac / Windows
+### Mongo Container crashing on Mac / Windows
 
 \(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory-mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
 
@@ -70,7 +70,7 @@ The fix is to keep the /data/db mounted directory out of mounted volumes \(like 
 {% endhint %}
 
 {% hint style="success" %}
-### Run appsmith on a different port
+### Runing appsmith on a different port
 
 1. Comment out the line: [https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh\#L463](https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh#L463) from the install.sh script and run it. This will ensure that the script does not check for port availability of 80/443.
 2. Once the docker-compose file is installed, the script will try to start the containers and fail because of port conflicts.
