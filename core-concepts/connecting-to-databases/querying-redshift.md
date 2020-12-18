@@ -1,8 +1,6 @@
-# Querying AWS Redshift
+# Querying Redshift
 
-Redshift databases can be queried using the standard [SQL syntax](https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_SQLCommandRef.html). All 
-Redshift queries return an array of objects where each object is a row returned by the query and each property in the 
-object is a column. Appsmith provides template queries to help with the syntax
+Redshift databases can be queried using the standard [SQL syntax](https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_SQLCommandRef.html). All Redshift queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Appsmith provides template queries to help with the syntax
 
 ![Click to expand](../../.gitbook/assets/redshift_select_query.gif)
 
