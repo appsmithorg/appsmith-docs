@@ -12,8 +12,9 @@
 
 ## Tutorial
 
+* [Overview](tutorial/overview.md)
 * [Part 1: Creating a simple view](tutorial/part-1-creating-a-simple-view/README.md)
-  * [The Appsmith environment](tutorial/part-1-creating-a-simple-view/creating-a-new-app.md)
+  * [The Appsmith environment](tutorial/part-1-creating-a-simple-view/the-appsmith-environment.md)
   * [Creating your first page](tutorial/part-1-creating-a-simple-view/creating-your-first-table.md)
 * [Part 2: Using forms](tutorial/part-2-using-forms/README.md)
   * [Creating your first form](tutorial/part-2-using-forms/creating-a-form.md)
