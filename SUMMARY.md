@@ -19,6 +19,7 @@
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
   * [Whitelisting database IP on AWS](core-concepts/connecting-to-databases/aws-whitelist.md)
   * [Querying Postgres](core-concepts/connecting-to-databases/querying-postgres.md)
+  * [Querying Redshift](core-concepts/connecting-to-databases/querying-redshift.md)  
   * [Querying MongoDB](core-concepts/connecting-to-databases/querying-mongodb/README.md)
     * [Mongo Query Syntax](core-concepts/connecting-to-databases/querying-mongodb/mongo-syntax.md)
 * [Connecting to APIs](core-concepts/apis/README.md)
