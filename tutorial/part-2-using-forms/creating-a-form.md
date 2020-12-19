@@ -95,15 +95,17 @@ Notice that to set **CategoryDropdown**'s options, you had to copy-paste the val
 2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
 
-You used the `_.map` method of **Logdash**, and `toUpperCase()` method of JavaScript to transform an array of strings to the format required by the dropdown widget, instead of manually formatting it. 
+You used the `_.map` method of **Logdash**, and `toUpperCase()` method of JavaScript to transform  **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
+
+By extension, you can transform any data into the desired format and type. For example, your input array can be values returned by a query, that you then transform to **Array&lt;{ label: string, value: string }&gt;ho** so the drodown can show it.
 
 {% hint style="info" %}
 **Data Transformation:**
 
-A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. In Appsmith, you can use plain JavaScript, or one of the [supported libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data however you need.
+A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or a DB Query.
 {% endhint %}
 
-Above, you transformed **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;**. By extension, you can transform any input into the desired format and type. For example, your input array can be values returned by a query, that you then transform to **Array&lt;{ label: string, value: string }&gt;.**
+
 
 ## Adding other fields
 
