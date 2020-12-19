@@ -24,7 +24,7 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 9. Run the API
 10. Verify that the API runs successfully
 
-By using the mustache template in the URL, you're passing the ID of the product to be updated. To build the request body, you're again writing JavaScript within mustaches to pass the new values. 
+By using the mustache template in the URL, you're passing the ID of the product to be updated. To build the request body, you're writing JavaScript within mustaches to pass the new values. 
 
 {% hint style="info" %}
 **A word on sharing widget state:** 

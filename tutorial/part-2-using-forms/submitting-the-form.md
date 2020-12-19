@@ -30,7 +30,7 @@ The only difference is that you’re using the mustache template to write JavaSc
 * To get the value filled by the user in **ProductNameInput**, you called the method `text` on it
 * To get the value of the selected option of **CategoryDropdown**, you called the method `selectedOptionValue` on it 
 
-What you did here is that you accessed widgets' state in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's state/data by calling the appropriate method on their respective names.
+What you did here is that you accessed the widgets' state in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in the **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's state/data by calling the appropriate method on their respective names.
 
 ## Binding events using GUI
 
@@ -64,8 +64,8 @@ Click on the **JS** icon next to **onClick**. You’ll see that the long hierarc
 
 Clicking on **JS** enables two things:
 
-* If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.
-* If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior. 
+1. If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.
+2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior. 
 
 Note that you bound one action each with the success and error events. In [part 3](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNo2nMKgdMWZ9VCFlcr/v/v1.3/tutorial/part-3-widget-interaction/running-multiple-actions-on-submit), you'll learn to bind more than one action with each of the events. 
 

@@ -16,7 +16,7 @@ You'll see an Edit button in the last column of each row. A Row Button adds a bu
 6. Choose **Modal Type** as **Form Modal**
 7. Rename the modal’s title to **Edit Product**
 
-The **Product\_Table** now looks like:
+The **Product\_Table** now looks like this:
 
 ![ProductListPage: Note the addition of the Actions column in right having the Edit buttons](../../.gitbook/assets/image%20%285%29.png)
 
@@ -28,7 +28,7 @@ Click on the **Edit** button of any row. You will see that **EditProductModal** 
 {% hint style="info" %}
 **Naming:**
 
-The names of widgets inside your EditProductModal are the same as that of the names of widgets inside AddProductForm. This is valid because they both belong to different parent pages. Names must be unique only within the page - across widgets, APIs, and DB queries, that is, a widget and an API within the same parent page also can't be assigned the same name. 
+The names of widgets inside your **EditProductModal** are the same as that of the names of widgets inside **AddProductForm**. This is valid because they both belong to different parent pages. Names must be unique only within the page - across widgets, APIs, and DB queries, that is, a widget and an API within the same parent page also can't be assigned the same name. 
 {% endhint %}
 
 After doing this, **EditProductModal** will look like below:
@@ -53,7 +53,7 @@ To set a default value of **ProductNameInput**:
 
 Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` ****has all the column values of the selected row. By calling `productName` ****on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value. 
 
-What you did above was that you accessed table widget's state - selected row's column values, in form widget. Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the table widget exposes`selectedRow`method. For a widget, check the methods to access its state under the Internal Properties section in its Widgets Reference guide.
+What you did above was that you accessed the table widget's state - selected row's column values, in form widget. Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the table widget exposes the `selectedRow` method. For a widget, check the methods to access its state under the **Internal Properties** section in its **Widgets Reference** guide.
 
 Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**. 
 
@@ -78,13 +78,5 @@ To set a default value of CategoryDropdown:
 2. Set **Default** **Option** to `{{Products_Table.selectedRow.category}}`
 3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
 
-Verify that when you click on the Edit button of a row, your form will get populated with the selected row's values. 
-
-{% hint style="info" %}
-**Expected Data Type & Evaluated Value:**
-
-When you place your cursor in the Default Text field, you again see the modal with **Expected Data Type** and **Evaluated Value**. Here the **Expected Data Type** is **String**. Thus, you can set it to anything that either is a **String** or evaluates to **String**. This means that you can set it to a static String as well. 
-
-Equivalently, you can set any property of any widget to a value whose type is either that of **Expected** **Data Type**, or evaluates ****to the **Expected Data Type**.   
-{% endhint %}
+Verify that when you click on the Edit button of a row, your form will get populated with the selected row's values.
 

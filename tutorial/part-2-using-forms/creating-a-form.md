@@ -16,10 +16,10 @@ When you create a new page, the base directory structure having Widgets, APIs, a
 
 ## Using an input widget
 
-The [form widget](https://docs.appsmith.com/widget-reference/form) ****creates an empty form with a **Submit** and a **Reset** button. Let’s add some fields to it to take user input:
+You'll first drag and drop the [form widget](https://docs.appsmith.com/widget-reference/form) ****to ****create an empty form on your page. Now, let’s add some fields in the form to take user input:
 
 1. Drag and drop the [input widget](https://docs.appsmith.com/widget-reference/input) into the form
-2. Rename the input widget to ProductNameInput
+2. Rename the **input widget** to **ProductNameInput**
 
 Your form will look like below:
 
@@ -54,10 +54,13 @@ By setting the **Selection Type** to **Single Select**, you allow the user to se
 
 Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-Vegetarian, and Vegan. These are its default options. Let’s change them to what's relevant to Oakry, that is - Vegetables, Bakery, Fruits, Beverages, and Dairy.
 
-1. Open **CategoryDropdown**’s properties modal
-2. Set the **Options** field to that shown below
-3. Set the **Default Option** to blank
-4. Toggle the **Required** field to true
+1. Open **CategoryDropdown**’s properties modal.
+2. Place your cursor on its **Options** field. The value in this field is used to specify the options of the dropdown.
+3. Note the floating window show up when you place the cursor in **Options** field.
+4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**   . You'll need to specify the options in the same format. 
+5. Set the **Options** field to that shown below.
+6. Set the **Default Option** to blank. This will keep the default selected option to blank.
+7. Toggle the **Required** field to true. This makes the input to the dropdown a required field.
 
 ```text
 [
@@ -84,28 +87,23 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 ]
 ```
 
-The **CategoryDropdown** is now a required field. Click on the **Options** field again. Note that when you put the cursor in the **Options** field, another modal opens up. It has two sections:
-
-* **Expected Data Type** tells you the acceptable input data format/type for this field.
-* **Evaluated Value** shows the evaluated value of the field's input in real-time. You can use it to verify against your expected value. This specifically comes in handy when you write JavaScript code in it.
-
 ## Writing your first transformation
 
-Notice that to set CategoryDropdown's options, you had to carefully copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
+Notice that to set **CategoryDropdown**'s options, you had to copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
 
 1. Open **CategoryDropdown**’s properties
 2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
-3. Check the **Evaluated Value**
+3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
 
-It worked!  But, what happened here? You used the `_.map` method of **Logdash**, and `toUpperCase()` method of JavaScript to transform an array of strings to the format required by the dropdown widget, instead of manually formatting it. 
+You used the `_.map` method of **Logdash**, and `toUpperCase()` method of JavaScript to transform an array of strings to the format required by the dropdown widget, instead of manually formatting it. 
 
 {% hint style="info" %}
 **Data Transformation:**
 
-A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. In Appsmith, you can use plain JavaScript, or one of the [supported libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data however you need. 
+A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. In Appsmith, you can use plain JavaScript, or one of the [supported libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data however you need.
 {% endhint %}
 
-
+Above, you transformed **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;**. By extension, you can transform any input into the desired format and type. For example, your input array can be values returned by a query, that you then transform to **Array&lt;{ label: string, value: string }&gt;.**
 
 ## Adding other fields
 
@@ -119,7 +117,7 @@ Let's add a field to accept input for Mrp:
 
 The title of the form is a text widget. Let's rename the title from **Form**. to **Add a Product**:
 
-The **AddProductForm** now looks like: 
+The **AddProductForm** now looks like this: 
 
 ![AddProductForm: Form to add a new product](../../.gitbook/assets/image%20%281%29%20%281%29.png)
 

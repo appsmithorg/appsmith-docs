@@ -16,10 +16,10 @@ The API to update a product is ready. In this section, you'll bind the **Confirm
 Let’s see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* You set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. This ensures the data displayed in **Products\_Table**, whose **Table Data** property is set to `ProductQuery.data`, shows updated results. 
+* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Note that you wanted to reload **Products\_Table** with the latest data, and the way you did it was by rerunning **ProductQuery**. Why? Because, there's no way to explicitly reload a widget in Appsmith, i.e. `Products_Table.run()` is not supported. Instead, the way to achieve this is to leverage [Appsmith's reactive programming paradigm](../part-1-creating-a-simple-view/creating-your-first-table.md#reactive-programming) by calling `ProductsQuery.run()`.
 * You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
 
-Try to edit a product, and click confirm to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits. 
+Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits. 
 
 ## Binding multiple actions to an event
 
@@ -42,7 +42,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. Note that since these actions run asynchronously, they all run in parallel. For example, in this case, **ProductsQuery** and **closeModal\(\)** are executed in parallel.
 
-You can trigger as many actions onSuccess and onError as required. 
+You can trigger as many actions onSuccess and onError as required. Try to edit a product again, and verify that the form-submit works as expected.
 
 {% hint style="info" %}
 **GUI vs JavaScript:**
@@ -50,7 +50,7 @@ You can trigger as many actions onSuccess and onError as required.
 By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. We recommend that you spend some time fiddling with JavaScript on Appsmith.
 {% endhint %}
 
-Try to edit a product again, and verify that the form-submit works as expected.
+
 
 ## Sharing your app
 

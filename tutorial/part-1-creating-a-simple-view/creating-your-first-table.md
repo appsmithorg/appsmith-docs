@@ -69,10 +69,10 @@ Open the application's URL in your web browser. You can see the table in Figure 
 By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
 {% endhint %}
 
-Let's go back to the Table Data field. When you place your cursor in the Table Data field, you  see a floating window having headings: 
+Let's go back to the **Table Data** field. When you place your cursor in the Table Data field, you  see a floating window having headings: 
 
-1. **Expected Data Type**: Specifies the data type expected by the property field. You can set the property to a value whose type is either that of **Expected Data Type** or evaluates to the **Expected Data Type**. For the table widget, the **Expected Data Type** is **Array&lt;Object&gt;**. This tells you that Table Data can be set to anything that either is an **Array&lt;Object&gt;** or that evaluates to **Array&lt;Object&gt;**.
-2. **Evaluated Value**: Shows in real-time what the input to the field evaluates to. 
+1. **Expected Data Type**: Specifies the data type expected by the property field. You can set the property to a value whose type is either that of **Expected Data Type** or evaluates to the **Expected Data Type**. For the table widget, the **Expected Data Type** is **Array&lt;Object&gt;**. This tells you that **Table Data** can be set to anything that either is an **Array&lt;Object&gt;** or that evaluates to **Array&lt;Object&gt;**.
+2. **Evaluated Value**: Shows in real-time what the input to the field evaluates to. This comes in handy when you write JavaScript code in the field, and you want to check whether it evaluates as expected.
 
 By now, you have successfully displayed static data in your table. For your app to display product data from the database, you need to do the following:
 
@@ -120,23 +120,40 @@ The next step is to display the query results in the **Products\_Table** :
 
 Let’s see how this works:
 
-1. By using mustaches, you’re asking Appsmith to resolve anything within it as JavaScript code.
+1. By using mustaches `{{ }}`, you’re asking Appsmith to resolve what is within it as JavaScript code. You can write JavaScript anywhere in Appsmith within mustaches.
 2. By using the query’s name within mustaches `{{ ProductsQuery }}`, you’re accessing the entire query object of **ProductsQuery**.
 3. By accessing the data key of the **ProductsQuery** object, you’re accessing its results. 
-4. By setting the **Table Data** to `{{ ProductsQuery.data }}`, you’re telling **Products\_Table** to display the results of **ProductsQuery**. This also ensures that whenever **ProductListPage** loads, **ProductsQuery** runs automatically. You can, although, change this default behavior by toggling the field "**Run query on page load**" on the **Setting** tab of **ProductsQuery**.
-5. Finally, note that you are accessing a query's result in a widget by calling a method on the query's name. As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can also be accessed by a query. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names. 
+4. By setting the **Table Data** to `{{ ProductsQuery.data }}`, you’re telling **Products\_Table** to display the results of **ProductsQuery**
+5. Setting **Table Data** to `{{ ProductsQuery.data }}`
 
-{% hint style="info" %}
-**Appsmith variables:**
+   also ensures that whenever **ProductListPage** loads, **ProductsQuery** runs automatically. You can, although, change this default behavior by toggling the field "**Run query on page load**" on the **Setting** tab of **ProductsQuery**.
 
-Think of widgets, APIs and DB Queries in Appsmith as variables in your programming language. Similar to variables:
+## Reactive Programming
 
-* They are identified by a name
-* They represent an object, be it a widget, an API object, or a query object
-* They support a set of methods
-* They have a scope; they can be accessed from only within their parent page
-* All names within a page must be unique - be it widget names, query name, or API names.
-{% endhint %}
+Appsmith follows the [Reactive Programming paradigm](https://en.wikipedia.org/wiki/Reactive_programming).
+
+In reactive programming, when you set `a := b + c`, the value of `a` is automatically updated whenever the values of `b` or `c` change, without the program having to re-execute the statement to determine the presently assigned value of `a`.
+
+As against imperative programming, where after `a` is assigned the result of `b + c` in the instant the expression is evaluated, later the values of `b` and `c` can change with no effect on the value of `a`.
+
+Let's extend this to what you did in the previous section by setting:
+
+`Table Data of Products_Table := {{ ProductsQuery.data }}`
+
+The data displayed on **Products\_Table** will be updated automatically,  whenever **ProductsQuery** is run, i.e. without you having to write explicit code to re-evaluate **TableData** of **Products\_Table**. 
+
+So, in Appsmith, whenever you bind a field to a dynamic variable, the field's value will be automatically updated when the value of the dynamic variable changes.
+
+## Variables and Names
+
+In the previous sections, we've used names to access widgets, and queries. For example, you accessed a query's result by accessing a property on the query's name. In that sense, think of widgets, APIs and DB Queries in Appsmith as variables having a name. Similar to variables in other programming languages:
+
+1. They represent an object, be it a widget, an API object, or a query object
+2. They support a set of methods
+3. They have a scope; they can be accessed from only within their parent page
+4. All names within a page must be unique - be it widget names, query name, or API names.
+
+As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can also be accessed by a query. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names. 
 
 ## What's next?
 
