@@ -1,7 +1,11 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Quickstart](quick-start.md)
+* [Setting up Appsmith](quick-start/README.md)
+  * [Appsmith Cloud](quick-start/appsmith-cloud.md)
+  * [Docker](quick-start/docker.md)
+  * [Heroku](quick-start/heroku.md)
+  * [AWS AMI](quick-start/aws-ami.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 
@@ -11,12 +15,22 @@
   * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
   * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
   * [Triggering APIs / Queries from Widgets](core-concepts/building-the-ui/calling-apis-from-widgets.md)
+  * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
+  * [Whitelisting database IP on AWS](core-concepts/connecting-to-databases/aws-whitelist.md)
   * [Querying Postgres](core-concepts/connecting-to-databases/querying-postgres.md)
-  * [Querying MongoDB](core-concepts/connecting-to-databases/querying-mongodb.md)
+  * [Querying MongoDB](core-concepts/connecting-to-databases/querying-mongodb/README.md)
+    * [Mongo Query Syntax](core-concepts/connecting-to-databases/querying-mongodb/mongo-syntax.md)
+  * [Querying Redshift](core-concepts/connecting-to-databases/querying-redshift.md)
+  * [Querying MySQL](core-concepts/connecting-to-databases/querying-mysql.md)
 * [Connecting to APIs](core-concepts/apis/README.md)
   * [Taking Inputs from Widgets](core-concepts/apis/taking-inputs-from-widgets.md)
   * [Running APIs on Page Load](core-concepts/apis/running-apis-on-page-load.md)
+* [Connecting UI & Logic](core-concepts/connecting-ui-and-logic/README.md)
+  * [Working with JS libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
+  * [Internal Functions](core-concepts/connecting-ui-and-logic/internal-functions.md)
+  * [Sharing Data Across Pages](core-concepts/connecting-ui-and-logic/sharing-data-across-pages.md)
+* [Access Control](core-concepts/access-control.md)
 
 ## Tutorials
 
@@ -24,17 +38,41 @@
 
 ## Widget Reference
 
-* [Table](widget-reference/table.md)
-* [Form](widget-reference/form.md)
-* [Input](widget-reference/input.md)
-* [Dropdown](widget-reference/dropdown.md)
-* [Datepicker](widget-reference/datepicker.md)
-* [Filepicker](widget-reference/filepicker.md)
-* [Radio](widget-reference/radio.md)
-* [Checkbox](widget-reference/checkbox.md)
-* [Button](widget-reference/button.md)
+* [Button](widget-reference/button/README.md)
+  * [Re-Captcha](widget-reference/button/google-recaptcha.md)
 * [Chart](widget-reference/chart.md)
-* [Text](widget-reference/text.md)
-* [Image](widget-reference/image.md)
+* [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)
+* [Datepicker](widget-reference/datepicker.md)
+* [Dropdown](widget-reference/dropdown.md)
+* [Filepicker](widget-reference/filepicker.md)
+* [Form](widget-reference/form.md)
+* [Image](widget-reference/image.md)
+* [Input](widget-reference/input.md)
+* [Radio](widget-reference/radio.md)
+* [Table](widget-reference/table.md)
+* [Text](widget-reference/text.md)
+* [Video](widget-reference/video.md)
+
+## Function Reference
+
+* [Show Modal](function-reference/show-modal.md)
+* [Close Modal](function-reference/close-modal.md)
+* [Download](function-reference/download.md)
+* [Show Alert](function-reference/show-alert.md)
+* [Navigate Page](function-reference/navigateto.md)
+* [Store Value](function-reference/store-value.md)
+
+## Third Party Services
+
+* [Email](third-party-services/email/README.md)
+  * [Sendgrid](third-party-services/email/sendgrid.md)
+  * [Amazon SES](third-party-services/email/amazon-ses.md)
+* [Google OAuth](third-party-services/google-login.md)
+* [Github OAuth](third-party-services/github-login.md)
+* [Google Maps](third-party-services/google-maps.md)
+
+## Telemetry
+
+* [Telemetry](telemetry/telemetry.md)
 

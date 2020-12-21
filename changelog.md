@@ -6,6 +6,10 @@ description: >-
 
 # Changelog
 
+## New Change Log
+
+Our Change Log has moved to our [Github Release Page](https://github.com/appsmithorg/appsmith/releases)
+
 ## 8th June, 2020
 
 * Dropdown test case fixed

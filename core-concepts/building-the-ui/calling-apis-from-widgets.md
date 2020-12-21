@@ -20,3 +20,13 @@ The action section also allows us to configure the action to take once an API  /
 
 ![](../../.gitbook/assets/success.gif)
 
+## Sending data to APIs / Queries
+
+The data of a widget can be sent to an API / Query by binding the property of the widget inside the query / API. You can use **`{{ widgetName.property }}`** inside the params, post body or the query itself. The {{ }} acts as a substitution syntax and the value of the widgets property will be substituted accordingly.
+
+```sql
+select * from users where id = '{{Table1.selectedRow.id}}'
+```
+
+In the above query, the id field is substituted by the value of the table's selected row. Read more about [Taking inputs from widgets in APIs](../apis/taking-inputs-from-widgets.md)
+

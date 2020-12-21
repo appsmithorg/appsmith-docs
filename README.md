@@ -8,10 +8,10 @@ description: Appsmith is the fastest way to build internal apps over any databas
 
 Today when we need an internal app, our choices are limited to
 
-* Invest weeks of time building it from scratch and fighting with HTML/CSS
-* Getting started with an admin panel and invest even more time customising it
+* Investing weeks building it from scratch and fighting with HTML/CSS
+* Getting started with an admin panel and invest even more time customizing it
 
-Appsmith bridges the gap between [getting started](quick-start.md) super quickly and making customisations super easy! The best part?
+Appsmith bridges the gap between [getting started](quick-start/) super quickly and making customizations super easy! The best part?
 
 ### _No HTML / CSS!_
 
@@ -25,5 +25,5 @@ Appsmith makes building internal tools as easy as
 
 Check out our demo video to see how easy it is!
 
-{% embed url="https://youtu.be/-O\_6OLREEzo" caption="Turn on your speakers" %}
+{% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
 

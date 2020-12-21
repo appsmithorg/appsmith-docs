@@ -11,15 +11,15 @@ Most APIs require query params to filter data and sometimes these filters need t
 ![Click to expand](../../.gitbook/assets/query2.gif)
 
 {% hint style="info" %}
-In the above example statusDropdown is the name of the widget and can be edited in the property pane by clicking on it
+In the above example, statusDropdown is the name of the widget and can be edited in the property pane by clicking on it
 {% endhint %}
 
 ## Passing Inputs to the POST body
 
-APIs that create or modify data usually require user inputs from a form. These inputs can be sent in the body of an API as a JSON. We can Input the JSON structure with the static values and replace all the values we need from a widget using **`{{ widgetName.property }}`** 
+APIs that create or modify data usually require user inputs from a form. These inputs can be sent in the body of an API as a JSON. We can Input the JSON structure with the static values and replace all the values we need from a widget using **`{{ widgetName.property }}`**
 
 {% hint style="warning" %}
-The binding must be added inside quotes for it to be a valid JSON in the post body. See example below
+The binding must be added inside quotes for it to be a valid JSON in the post body. See an example below
 {% endhint %}
 
 ![Click to expand](../../.gitbook/assets/post-body-mov.gif)
