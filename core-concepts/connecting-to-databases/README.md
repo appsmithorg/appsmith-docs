@@ -103,15 +103,13 @@ To set up a query:
 4. Click on **New Query**.
 5. You will be taken to the query editor to write the query.
 6. Note that the query is created with a default name. It’s recommended that you rename it for readability.
-7. Write your query in the syntax that is valid for your datasource type. 
+7. Write your query in the syntax that is valid for your datasource type. For example, if your datasource is a MySQL database, your query needs to be a valid MySQL query.
 
-### **Taking input from a widget in a query**
+### **Using JavaScript in a query**
 
-To take input from a widget, use the mustache syntax inside the query, such as {{ searchInput.text }} where searchInput is the name of the widget and text is the property of the widget.  
+In addition to allowing you to write a valid query for your datasource, Appsmith allows you to write JavaScript in your query. This comes in handy when you want to take an input\(s\) from a widget. For example, you can use JavaScript in your query to return data of a specific user that is [selected](https://docs.appsmith.com/widget-reference/dropdown#properties) in your [dropdown widget](https://docs.appsmith.com/widget-reference/dropdown).
 
-
-A query can take input from as many widgets as required.  
-****
+To write JavaScript in the query, enclose your code within the mustache template `{{ }}`. 
 
 ### **Saving a query**
 
