@@ -30,7 +30,7 @@ Each saved database connection is referred to as a Datasource in Appsmith. You c
 
 Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection. This ensures that at run-time your queries are executed fast.
 
-In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on first query execution.
+In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on the first query execution.
 
 For certain plugins like PostgreSQL, and MySQL, Appsmith creates and maintains a connection pool because multiple queries cannot be executed against a single connection.
 
@@ -49,7 +49,7 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 #### Steps to set up a datasource
 
 1. Go to the page in your app that will connect to this datasource   .
-2. Go to **DB Queries** of that page.
+2. Go to **DB Queries** on that page.
 3. Click on **+** next to **DB Queries**   .
 4. You’ll see a list of existing Datasources that this page can connect to   .
 5. Click on **+ New Datasource   .**
@@ -61,7 +61,7 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 {% hint style="success" %}
 If you are hosting Appsmith, you must whitelist the IP address of the Appsmith deployment. Whitelist 18.223.74.85 to connect to your database from our cloud-hosted version. 
 
-A step-by-step guide to do this on AWS is available [here](aws-whitelist.md).
+A step-by-step guide to doing this on AWS is available [here](aws-whitelist.md).
 {% endhint %}
 
 ![Click to expand](../../.gitbook/assets/datasource-connection.png)
@@ -91,13 +91,13 @@ You can delete a datasource only if no queries have been set up on it.
 6. Look for the Datasource that you want to delete.
 7. Click on **Edit Datasource**.
 8. You’ll see a page to edit the datasource’s configuration.
-9. Click on **Delete** button at the bottom of the page   .
+9. Click on the **Delete** button at the bottom of the page   .
 
 
 
 ## Querying a database
 
-You can write queries to fetch from and update data  of a datasource using the query editor interface provided by Appsmith for each database type. 
+You can write queries to fetch from and update data of a datasource using the query editor interface provided by Appsmith for each database type. 
 
 ### **Setting up a query**
 
@@ -188,20 +188,5 @@ All queries return an array of objects where each object is a row returned by th
 
 #### Scope of query results
 
-A query’s results can be accessed only from a widget belonging to the same parent page as that of the query, but can’t be accessed from any widget belonging to another page. The results also can’t be accessed from other queries, or APIs belonging to the same parent page as that of the query.  
-  
- 
-
-
-
-
-
-
-
-
-
-You can read more about querying your specific database below
-
-* [Querying Postgres](querying-postgres.md)
-* [Querying MongoDB](querying-mongodb/)
+A query’s results can be accessed only from a widget belonging to the same parent page as that of the query, but can’t be accessed from any widget belonging to another page. The results also can’t be accessed from other queries, or APIs belonging to the same parent page as that of the query.
 

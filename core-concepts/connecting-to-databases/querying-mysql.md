@@ -19,7 +19,7 @@ All required fields are suffixed with an asterisk \(\*\).
 
 ### **Connection**
 
-You need to fill the following parameters:
+You need to fill in the following parameters:
 
 * **Connection Mode\*:** You must choose one of the following two modes:
   * **Read Only:** Choosing this mode gives Appsmith only read permission on the datasource. This allows you to write only select queries. 
@@ -29,14 +29,14 @@ You need to fill the following parameters:
 
 ### **Authentication**
 
-You need to fill the following parameters:
+You need to fill in the following parameters:
 
 * **Username\*:** Fill username required for authenticating connection requests to your database.
 * **Password\*:** Fill password required for authenticating connection requests for the given username to the database. 
 
 ### **SSL** 
 
-You need to fill the following parameters:
+You need to fill in the following parameters:
 
 * **SSL Mode:** Choose your SSL model from the dropdown. 
 * **Key File:** Upload your SSL key file from here.
