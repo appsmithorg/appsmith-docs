@@ -24,15 +24,21 @@ Appsmith supports the following databases:
 
 Each saved database connection is referred to as a Datasource in Appsmith. You can connect to one or more datasources from your app. 
 
-### Connection management
+### Connections
 
-\[Appsmith to fill this - Only sample info ahead\] Appsmith app opens a connection to a datasource when it first makes a query. It keeps this connection open, and re-uses in subsequent requests. &lt;More details on how the request is made, when a connection is closed, maximum connections - idle + active, what happens when requests lead to an error\]
+#### Connection management
 
-### Encoding
+Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection. This ensures that at run-time your queries are executed fast.
 
-\[Appsmith to fill this - Expected encoding of databases?\]
+In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on first query execution.
 
-### Security
+For certain plugins like PostgreSQL, and MySQL, Appsmith creates and maintains a connection pool because multiple queries cannot be executed against a single connection.
+
+#### Concurrent queries
+
+Appsmith limits maximum queries that can run concurrently on a database to be 5. If the application attempts to make more queries concurrently, you'll see an error saying `Connection not available`.
+
+## Security
 
 Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can deploy it on-premise, and audit it to ensure none of your data leaves your VPC.
 
@@ -138,6 +144,22 @@ Since the scope of a query is its parent page, all queries within a page must ha
 ### **Testing your query**
 
 Click on the Run button to see if query execution succeeds. If the query execution succeeds then a success message will pop up on the screen in the top right corner.
+
+## **Query Settings**
+
+You can specify the following settings in the **Query Settings** tab on the Appsmith Query Editor:
+
+#### Run query on page load
+
+This allows you to configure whether the query should load on every page load. By default, it is turned off. You can use this setting to tune the performance of your page as per your requirements.
+
+#### Request confirmation before running query
+
+This enables you to set up a confirmation pop-up modal before a query is run in an application. This setting comes in handy when a query deletes data from a datasource.
+
+#### Query timeout \(in milliseconds\)
+
+It’s the time till which Appsmith server waits for the query to execute before closing the connection. By default, it is set to 10000 ms. If your query takes longer than this to return results, Appsmith will throw a timeout error.
 
 ### **Running a query**
 
