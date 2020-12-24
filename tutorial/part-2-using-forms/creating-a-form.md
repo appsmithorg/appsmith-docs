@@ -36,9 +36,9 @@ Let’s tinker with **ProductNameInput**:
 
 1. Open its properties
 2. Set **Data Type** to **Text** 
-3. Toggle **Required** field to Green
+3. Enable **Required** field
 
-The **Data Type** property sets the allowed data-type of input. When set to **Text**, it allows only **Text** input. The **Required** field makes the input to the field mandatory. You can toggle between true and false. The input widget has [many other properties available](https://docs.appsmith.com/widget-reference/input#properties).
+The **Data Type** property sets the allowed data-type of input. When set to **Text**, it allows only **Text** input. The **Required** field makes the input to the field mandatory. It also disables the form-submit button if no input is provided in a mandatory field. The input widget has [many other properties available](https://docs.appsmith.com/widget-reference/input#properties).
 
 ## Using a dropdown widget
 
@@ -55,7 +55,7 @@ By setting the **Selection Type** to **Single Select**, you allow the user to se
 Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-Vegetarian, and Vegan. These are its default options. Let’s change them to what's relevant to Oakry, that is - Vegetables, Bakery, Fruits, Beverages, and Dairy.
 
 1. Open **CategoryDropdown**’s properties modal.
-2. Place your cursor on its **Options** field. The value in this field is used to specify the options of the dropdown.
+2. Click on the **Options** field. The value in this field is used to specify the options of the dropdown.
 3. Note the floating window show up when you place the cursor in **Options** field.
 4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**   . You'll need to specify the options in the same format. 
 5. Set the **Options** field to that shown below.
@@ -95,7 +95,7 @@ Notice that to set **CategoryDropdown**'s options, you had to copy-paste the val
 2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
 
-You used the `_.map` method of **Logdash**, and `toUpperCase()` method of JavaScript to transform  **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
+You used the `_.map` method of **Lodash**, and `toUpperCase()` method of JavaScript to transform  **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
 
 By extension, you can transform any data into the desired format and type. For example, your input array can be values returned by a query, that you then transform to **Array&lt;{ label: string, value: string }&gt;ho** so the drodown can show it.
 

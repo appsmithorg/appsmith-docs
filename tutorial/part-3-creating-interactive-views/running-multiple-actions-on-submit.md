@@ -1,4 +1,4 @@
-# Binding multiple actions to events
+# Configuring multiple actions on UI events
 
 The API to update a product is ready. In this section, you'll bind the **Confirm** button of **EditProductModal** to run **UpdateProductApi**.
 
@@ -42,12 +42,14 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. Note that since these actions run asynchronously, they all run in parallel. For example, in this case, **ProductsQuery** and **closeModal\(\)** are executed in parallel.
 
-You can trigger as many actions onSuccess and onError as required. Try to edit a product again, and verify that the form-submit works as expected.
+You can trigger as many actions **onSuccess** and **onError** as required. Try to edit a product again, and verify that the form-submit works as expected.
 
 {% hint style="info" %}
-**GUI vs JavaScript:**
+**GUI vs JavaScript: What to use when?**
 
-By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. We recommend that you spend some time fiddling with JavaScript on Appsmith.
+By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. For example, configuring multiple actions to be run onSuccess is possible only via JS. 
+
+We recommend that you spend some time fiddling with JavaScript on Appsmith.
 {% endhint %}
 
 

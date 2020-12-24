@@ -22,7 +22,7 @@
 * [Part 3: Creating interactive views](tutorial/part-3-creating-interactive-views/README.md)
   * [Accessing states between widgets](tutorial/part-3-creating-interactive-views/adding-edit-button.md)
   * [Writing your first API](tutorial/part-3-creating-interactive-views/writing-your-first-api.md)
-  * [Binding multiple actions to events](tutorial/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
+  * [Configuring multiple actions on UI events](tutorial/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
 
 ## Core Concepts
 

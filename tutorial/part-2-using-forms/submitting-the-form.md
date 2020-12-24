@@ -27,12 +27,12 @@ VALUES
 
 The only difference is that you’re using the mustache template to write JavaScript within the insert query:
 
-* To get the value filled by the user in **ProductNameInput**, you called the method `text` on it
-* To get the value of the selected option of **CategoryDropdown**, you called the method `selectedOptionValue` on it 
+* To get the value filled by the user in **ProductNameInput**, you accessed its `text` property.
+* To get the value of the selected option of **CategoryDropdown**, you called the method `selectedOptionValue` on it.
 
 What you did here is that you accessed the widgets' state in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in the **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's state/data by calling the appropriate method on their respective names.
 
-## Binding events using GUI
+## Triggering action on UI events
 
 Your query **AddProductQuery** is now set up to insert dynamic user input from the form. Let's bind the Submit button of the form to invoke **AddProductQuery**:
 
@@ -52,7 +52,7 @@ Try creating a new product using the form. You’ll notice that you don't have a
 
 Try filling the form again with some valid and invalid values to verify that it works as expected.
 
-## Binding events using JavaScript
+## Configuting actions using JavaScript
 
 In the previous section, you used the properties GUI to define **onSuccess** and **onError** events for the **Submit** button. You can do the same using JavaScript. Let's see how.
 
