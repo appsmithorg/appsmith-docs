@@ -1,4 +1,4 @@
-# Binding events
+# Submitting the form
 
 Your form is now both more user-friendly, and less error-prone. Let's configure it to trigger the addition of a new product. It will involve two steps:
 
@@ -68,6 +68,17 @@ Clicking on **JS** enables two things:
 2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior. 
 
 Note that you bound one action each with the success and error events. In [part 3](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNo2nMKgdMWZ9VCFlcr/v/v1.3/tutorial/part-3-widget-interaction/running-multiple-actions-on-submit), you'll learn to bind more than one action with each of the events. 
+
+{% hint style="info" %}
+**JavaScript in Appsmith:**
+
+You can write JavaScript almost anywhere in Appsmith.
+
+Appsmith currently supports two forms of JavaScript code:
+
+1. Single line code or functions, such as ternary conditions
+2. Immediately Invoked Function Expressions \(IIFE\)
+{% endhint %}
 
 ## Connecting multiple pages
 

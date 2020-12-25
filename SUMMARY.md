@@ -13,7 +13,7 @@
       * [Creating your first page](getting-started/tutorial-1/part-1-creating-a-simple-view/creating-your-first-table.md)
     * [Part 2: Using forms](getting-started/tutorial-1/part-2-using-forms/README.md)
       * [Creating your first form](getting-started/tutorial-1/part-2-using-forms/creating-a-form.md)
-      * [Binding events](getting-started/tutorial-1/part-2-using-forms/submitting-the-form.md)
+      * [Submitting the form](getting-started/tutorial-1/part-2-using-forms/submitting-the-form.md)
     * [Part 3: Creating interactive views](getting-started/tutorial-1/part-3-creating-interactive-views/README.md)
       * [Accessing states between widgets](getting-started/tutorial-1/part-3-creating-interactive-views/adding-edit-button.md)
       * [Writing your first API](getting-started/tutorial-1/part-3-creating-interactive-views/writing-your-first-api.md)
