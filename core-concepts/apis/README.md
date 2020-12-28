@@ -23,3 +23,9 @@ Any input field in the REST interface can read a value from a widget by entering
 APIs are created for a single page and cannot be accessed from another page.
 {% endhint %}
 
+## Using URL Encoded Form
+
+Encoding type can be selected via the `Body` dropdown on the API widget page. If it is chosen as `application/x-www-form-urlencoded` then the raw values provided in the form are auto encoded.
+
+![Click to expand](../../.gitbook/assets/rest_api_url_encode.gif)
+
