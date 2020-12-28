@@ -4,7 +4,13 @@
 * [Getting Started](getting-started/README.md)
   * [Setup](getting-started/setting-up/README.md)
     * [Appsmith Cloud](getting-started/setting-up/appsmith-cloud.md)
-    * [Docker](getting-started/setting-up/docker.md)
+    * [Docker](getting-started/setting-up/docker/README.md)
+      * [Email](getting-started/setting-up/docker/email/README.md)
+        * [Sendgrid](getting-started/setting-up/docker/email/sendgrid.md)
+        * [Amazon SES](getting-started/setting-up/docker/email/amazon-ses.md)
+      * [Google OAuth](getting-started/setting-up/docker/google-login.md)
+      * [Github OAuth](getting-started/setting-up/docker/github-login.md)
+      * [Google Maps](getting-started/setting-up/docker/google-maps.md)
     * [Heroku](getting-started/setting-up/heroku.md)
     * [AWS AMI](getting-started/setting-up/aws-ami.md)
   * [Tutorial](getting-started/tutorial-1/README.md)
@@ -69,15 +75,6 @@
 * [Show Alert](function-reference/show-alert.md)
 * [Navigate Page](function-reference/navigateto.md)
 * [Store Value](function-reference/store-value.md)
-
-## Third Party Services
-
-* [Email](third-party-services/email/README.md)
-  * [Sendgrid](third-party-services/email/sendgrid.md)
-  * [Amazon SES](third-party-services/email/amazon-ses.md)
-* [Google OAuth](third-party-services/google-login.md)
-* [Github OAuth](third-party-services/github-login.md)
-* [Google Maps](third-party-services/google-maps.md)
 
 ## Telemetry
 

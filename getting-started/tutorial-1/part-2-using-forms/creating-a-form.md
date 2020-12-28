@@ -16,7 +16,7 @@ When you create a new page, the base directory structure having Widgets, APIs, a
 
 ## Using an input widget
 
-You'll first drag and drop the [form widget](https://docs.appsmith.com/widget-reference/form) ****to ****create an empty form on your page. Now, let’s add some fields in the form to take user input:
+You'll first drag and drop the [form widget](https://docs.appsmith.com/widget-reference/form) **to** create an empty form on your page. Now, let’s add some fields in the form to take user input:
 
 1. Drag and drop the [input widget](https://docs.appsmith.com/widget-reference/input) into the form
 2. Rename the **input widget** to **ProductNameInput**
@@ -57,7 +57,10 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 1. Open **CategoryDropdown**’s properties modal.
 2. Click on the **Options** field. The value in this field is used to specify the options of the dropdown.
 3. Note the floating window show up when you place the cursor in **Options** field.
-4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**   . You'll need to specify the options in the same format. 
+4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**
+
+   . You'll need to specify the options in the same format. 
+
 5. Set the **Options** field to that shown below.
 6. Set the **Default Option** to blank. This will keep the default selected option to blank.
 7. Toggle the **Required** field to true. This makes the input to the dropdown a required field.
@@ -76,7 +79,7 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
     "label": "FRUITS",
     "value": "FRUITS"
   },
-	{
+    {
     "label": "BEVERAGES",
     "value": "BEVERAGES"
   },
@@ -95,7 +98,7 @@ Notice that to set **CategoryDropdown**'s options, you had to copy-paste the val
 2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
 
-You used the `_.map` method of **Lodash**, and `toUpperCase()` method of JavaScript to transform  **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
+You used the `_.map` method of **Lodash**, and `toUpperCase()` method of JavaScript to transform **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
 
 By extension, you can transform any data into the desired format and type. For example, your input array can be values returned by a query, that you then transform to **Array&lt;{ label: string, value: string }&gt;ho** so the drodown can show it.
 
@@ -104,8 +107,6 @@ By extension, you can transform any data into the desired format and type. For e
 
 A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or a DB Query.
 {% endhint %}
-
-
 
 ## Adding other fields
 
@@ -119,7 +120,7 @@ Let's add a field to accept input for Mrp:
 
 The title of the form is a text widget. Let's rename the title from **Form**. to **Add a Product**:
 
-The **AddProductForm** now looks like this: 
+The **AddProductForm** now looks like this:
 
 ![AddProductForm: Form to add a new product](../../../.gitbook/assets/image%20%281%29%20%281%29.png)
 
@@ -140,7 +141,7 @@ Let’s see what you did there:
   * You ensured that the length of the product name will at least be 3 and at most be 50
 * By setting the **Error Message**, you specified the error users will see when regex validation on their input fails
 
-Try filling in both valid and invalid values in **ProductNameInput** to verify that it works. 
+Try filling in both valid and invalid values in **ProductNameInput** to verify that it works.
 
 Now, let’s configure MrpInput to accept only decimal values greater than or equal to $1.00
 

@@ -28,7 +28,7 @@ Click on the **Edit** button of any row. You will see that **EditProductModal** 
 {% hint style="info" %}
 **Naming:**
 
-The names of widgets inside your **EditProductModal** are the same as that of the names of widgets inside **AddProductForm**. This is valid because they both belong to different parent pages. Names must be unique only within the page - across widgets, APIs, and DB queries, that is, a widget and an API within the same parent page also can't be assigned the same name. 
+The names of widgets inside your **EditProductModal** are the same as that of the names of widgets inside **AddProductForm**. This is valid because they both belong to different parent pages. Names must be unique only within the page - across widgets, APIs, and DB queries, that is, a widget and an API within the same parent page also can't be assigned the same name.
 {% endhint %}
 
 After doing this, **EditProductModal** will look like below:
@@ -39,11 +39,9 @@ Notice, that like **AddProductForm**, all the form-fields in **EditProductModal*
 
 * **ProductNameInput** should show the value of column **productName** of the product in the selected row
 * **MrpInput** should show the value of column **mrp** of the product in the selected row
-*  **CategoryDropdown** should show the selected option as the value of column **category** of the product in the selected row
+* **CategoryDropdown** should show the selected option as the value of column **category** of the product in the selected row
 
 Let's configure all the above.
-
-## 
 
 To set a default value of **ProductNameInput**:
 
@@ -51,11 +49,11 @@ To set a default value of **ProductNameInput**:
 2. Set **Default** **Text** to `{{Products_Table.selectedRow.productName}}`
 3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
 
-Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` ****has all the column values of the selected row. By calling `productName` ****on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value. 
+Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` **has all the column values of the selected row. By calling `productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
 
 What you did above was that you accessed the table widget's state - selected row's column values, in form widget. Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the table widget exposes the `selectedRow` method. For a widget, check the methods to access its state under the **Internal Properties** section in its **Widgets Reference** guide.
 
-Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**. 
+Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
 {% hint style="info" %}
 **Accessing state/data across pages:**

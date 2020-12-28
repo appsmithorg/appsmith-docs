@@ -1,8 +1,8 @@
 # Creating your first page
 
-Now that your environment – an “app” – is set up, you’re ready to start doing work. 
+Now that your environment – an “app” – is set up, you’re ready to start doing work.
 
-Each application that you build in Appsmith, comprises of one or more pages. A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view. 
+Each application that you build in Appsmith, comprises of one or more pages. A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
 
 The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Rename the page to **ProductListPage** by double clicking on **Page1.**
 
@@ -15,7 +15,7 @@ The **ProductListPage** is blank. Let’s add a table-widget to it.
 3. Choose the **table widget** 
 4. Drag and drop the table widget to the canvas on the right
 
-This will create a new table. 
+This will create a new table.
 
 ![](https://lh4.googleusercontent.com/p6VRCgNSNPxyq1IdSgVbU7oHE8fkTDmayGM-YPIuOBKHCzEhE2qYYaTyDQ6XyCG7xmQ6CoNlUCBTO6iat52sZqs8Ig8GzOLFpDF2_3GEXgGcSgwMmOuba5Pekv1ZY3roaOgr5EI0)
 
@@ -34,7 +34,7 @@ Let’s take a look at what you now see on screen:
 {% endhint %}
 
 {% hint style="info" %}
-**To rename a widget:** 
+**To rename a widget:**
 
 1. Open its property-pane
 2. You’ll see the widget’s current name at the top 
@@ -42,7 +42,7 @@ Let’s take a look at what you now see on screen:
 4. Press Enter
 {% endhint %}
 
-Take a minute to check how the Array in Table Data maps to the the table's columns and their values. 
+Take a minute to check how the Array in Table Data maps to the the table's columns and their values.
 
 Let’s now play with **Table Data** to get a hang of how it affects the data displayed in the table:
 
@@ -61,15 +61,13 @@ Open the application's URL in your web browser. You can see the table in Figure 
 
 ![Figure 4.](../../../.gitbook/assets/image.png)
 
- 
-
 {% hint style="info" %}
 **Application hosting:**
 
-By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
+By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain, read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
 {% endhint %}
 
-Let's go back to the **Table Data** field. When you place your cursor in the Table Data field, you  see a floating window having headings: 
+Let's go back to the **Table Data** field. When you place your cursor in the Table Data field, you see a floating window having headings:
 
 1. **Expected Data Type**: Specifies the data type expected by the property field. You can set the property to a value whose type is either that of **Expected Data Type** or evaluates to the **Expected Data Type**. For the table widget, the **Expected Data Type** is **Array&lt;Object&gt;**. This tells you that **Table Data** can be set to anything that either is an **Array&lt;Object&gt;** or that evaluates to **Array&lt;Object&gt;**.
 2. **Evaluated Value**: Shows in real-time what the input to the field evaluates to. This comes in handy when you write JavaScript code in the field, and you want to check whether it evaluates as expected.
@@ -97,7 +95,7 @@ We'll jump to the second step of writing a query.
 9. Note the pop-up informing that the query ran successfully
 
 {% hint style="info" %}
-**Auto-save:** 
+**Auto-save:**
 
 The query is saved as soon as it's created, without you having to explicitly save it. The same would be the case with any API, widgets, and any changes you make you any entity of your app.
 
@@ -140,7 +138,7 @@ Let's extend this to what you did in the previous section by setting:
 
 `Table Data of Products_Table := {{ ProductsQuery.data }}`
 
-The data displayed on **Products\_Table** will be updated automatically,  whenever **ProductsQuery** is run, i.e. without you having to write explicit code to re-evaluate **TableData** of **Products\_Table**. 
+The data displayed on **Products\_Table** will be updated automatically, whenever **ProductsQuery** is run, i.e. without you having to write explicit code to re-evaluate **TableData** of **Products\_Table**.
 
 So, in Appsmith, whenever you bind a field to a dynamic variable, the field's value will be automatically updated when the value of the dynamic variable changes.
 
@@ -153,7 +151,7 @@ In the previous sections, we've used names to access widgets, and queries. For e
 3. They have a scope; they can be accessed from only within their parent page
 4. All names within a page must be unique - be it widget names, query name, or API names.
 
-As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can also be accessed by a query. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names. 
+As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can also be accessed by a query. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names.
 
 ## What's next?
 

@@ -19,7 +19,7 @@ Let’s see what you did there:
 * Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Note that you wanted to reload **Products\_Table** with the latest data, and the way you did it was by rerunning **ProductQuery**. Why? Because, there's no way to explicitly reload a widget in Appsmith, i.e. `Products_Table.run()` is not supported. Instead, the way to achieve this is to leverage [Appsmith's reactive programming paradigm](../part-1-creating-a-simple-view/creating-your-first-table.md#reactive-programming) by calling `ProductsQuery.run()`.
 * You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
 
-Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits. 
+Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits.
 
 ## Binding multiple actions to an event
 
@@ -47,16 +47,14 @@ You can trigger as many actions **onSuccess** and **onError** as required. Try t
 {% hint style="info" %}
 **GUI vs JavaScript: What to use when?**
 
-By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. For example, configuring multiple actions to be run onSuccess is possible only via JS. 
+By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. For example, configuring multiple actions to be run onSuccess is possible only via JS.
 
 We recommend that you spend some time fiddling with JavaScript on Appsmith.
 {% endhint %}
 
-
-
 ## Sharing your app
 
-Let's deploy your app for the final time. Once deployed, you can share your deployed application with both internal and external users: 
+Let's deploy your app for the final time. Once deployed, you can share your deployed application with both internal and external users:
 
 1. Click on the **"Share"** button on the top right
 2. Invite a user using their email ID
@@ -67,6 +65,5 @@ You can also make the application public, in which case, anyone with the URL to 
 
 **What's next?**
 
-The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. As you need to learn new tricks, come back to the documentation.  
-
+The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. As you need to learn new tricks, come back to the documentation.
 

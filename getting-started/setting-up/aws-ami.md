@@ -1,8 +1,8 @@
+---
+description: Deploy Appsmith on AWS with an AMI on the marketplace
+---
+
 # AWS AMI
-
-## Introduction
-
-This section will walk you through the steps of setting up Appsmith on AWS.
 
 ## Overview
 
@@ -99,13 +99,7 @@ Once you completed the registration, you will be moved to the Personal Organizat
 
 ![Appsmith Dashboard Page](../../.gitbook/assets/aws-appsmith_dashboard.png)
 
-For tutorials on how to create your custom app on Appsmith, please take a look at [https://docs.appsmith.com/tutorials/](https://docs.appsmith.com/tutorials/)
-
-### Step 6: Configure custom domain for your app
-
-```text
-At the end of this step, you should be able to access your web app by your custom domain
-```
+## Custom Domain
 
 The next step is to configure your app so that it can be accessed by your custom domain. Follow these steps:
 
@@ -129,7 +123,7 @@ At this point, you should be able to browse to the cloud server, by entering you
 
 ![Login Page](../../.gitbook/assets/aws-login-page.png)
 
-### Step 7: Find Application Credentials
+## Find Application Credentials
 
 By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. The default username is: `appsmith@example.com`. There are two options for obtaining the password.
 
@@ -160,7 +154,9 @@ The default application credentials are stored in a standalone file. To obtain t
     sudo cat /home/ubuntu/appsmith/credential
   ```
 
-### Step 8: Updating your Appsmith installation
+## Updating your Appsmith installation
 
 Your Appsmith installation will auto-update itself whenever there is a new release by the Appsmith team. You don't need to change anything in order to access the latest version of Appsmith.
+
+{% page-ref page="../tutorial-1/" %}
 
