@@ -52,7 +52,7 @@ You can upload files by creating a post API and referring to the base64 or binar
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the Filepicker. |
-| **Maximum  No. of files** | Enables you to set the maximum number of files allowed to be uploaded by a user. |
+| **Maximum No. of files** | Enables you to set the maximum number of files allowed to be uploaded by a user. |
 | **Maximum File Size** | Enables you to set the maximum allowed size of each file that a user can upload. |
 | **Allowed File Types** | Enables you to set constraints on the type of file a user can upload - images, videos, audios, text files, etc. |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |

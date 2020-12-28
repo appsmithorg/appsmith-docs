@@ -8,7 +8,7 @@ You can start using appsmith on
 
 [Appsmith Cloud](appsmith-cloud.md) **\(Recommended\)**
 
-or _\*\*_deploy it on your own servers via
+or deploy it on your own servers via
 
 * [Docker](docker.md)
 * [Heroku](heroku.md)
