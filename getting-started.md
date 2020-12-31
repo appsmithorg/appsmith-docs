@@ -1,5 +1,7 @@
 # Getting Started
 
+Appsmith is an open source web framework for building internal tools, admin panels, dashboards, and workflows.
+
 ## First steps
 
 Are you new to Appsmith? This is the place to start!
