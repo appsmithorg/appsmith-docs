@@ -4,7 +4,7 @@
 
 Are you new to Appsmith? This is the place to start!
 
-1. **From scratch:** [Overview ](https://docs.appsmith.com/#why-appsmith)\| [Setup](https://docs.appsmith.com/setting-up)\*\*\*\*
+1. **From scratch:** [Overview ](https://docs.appsmith.com/#why-appsmith)\| [Setup](https://docs.appsmith.com/setting-up)
 2. **Tutorial:** 
    1. [Part 1: Creating a simple view](https://docs.appsmith.com/part-1-creating-a-simple-view)
    2. [Part 2: Using forms](https://docs.appsmith.com/part-2-using-forms)
