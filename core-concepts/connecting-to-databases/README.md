@@ -30,7 +30,8 @@ Each saved database connection is referred to as a Datasource in Appsmith. You c
 
 Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection. This ensures that at run-time your queries are executed fast.
 
-In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on the first query execution.
+
+In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on the first query execution.
 
 For certain plugins like PostgreSQL, and MySQL, Appsmith creates and maintains a connection pool because multiple queries cannot be executed against a single connection.
 
@@ -48,15 +49,22 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 
 #### Steps to set up a datasource
 
-1. Go to the page in your app that will connect to this datasource   .
+1. Go to the page in your app that will connect to this datasource
+   .
 2. Go to **DB Queries** on that page.
-3. Click on **+** next to **DB Queries**   .
-4. You’ll see a list of existing Datasources that this page can connect to   .
-5. Click on **+ New Datasource   .**
-6. Choose a Datasource type from the list of supported types   .
+3. Click on **+** next to **DB Queries**
+   .
+4. You’ll see a list of existing Datasources that this page can connect to
+   .
+5. Click on **+ New Datasource
+   .**
+6. Choose a Datasource type from the list of supported types
+   .
 7. Provide the required configuration details of your database. You might need to contact your database admin for the connection credentials that are required to configure the database. 
-8. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you   .
-9. **Save** your datasource   .
+8. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you
+   .
+9. **Save** your datasource
+   .
 
 {% hint style="success" %}
 If you are hosting Appsmith, you must whitelist the IP address of the Appsmith deployment. Whitelist 18.223.74.85 to connect to your database from our cloud-hosted version. 
@@ -81,17 +89,22 @@ Each datasource must be given a name. Since the scope of the datasource is that 
 
 You can delete a datasource only if no queries have been set up on it. 
 
-To delete a datasource:
 
-1. Go to any app that has access to the datasource   .
-2. Go to any page within the app   .
+To delete a datasource:
+
+1. Go to any app that has access to the datasource
+   .
+2. Go to any page within the app
+   .
 3. Go to **DB Queries** within that page.
-4. Click on **+** next to DB Queries   .
+4. Click on **+** next to DB Queries
+   .
 5. You’ll see a list of Datasources. 
 6. Look for the Datasource that you want to delete.
 7. Click on **Edit Datasource**.
 8. You’ll see a page to edit the datasource’s configuration.
-9. Click on the **Delete** button at the bottom of the page   .
+9. Click on the **Delete** button at the bottom of the page
+   .
 
 
 

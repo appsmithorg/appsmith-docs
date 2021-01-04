@@ -16,26 +16,26 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
-* Fetch the **install.sh** script on the system you want to deploy Appsmith
+1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
 # Downloads install.sh
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-* Make the script executable
+1. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-* Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-* Check if all the containers are running correctly.
+1. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -49,32 +49,18 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 90833ba6d75a        certbot/certbot                   "/bin/sh -c 'trap ex…"   17 minutes ago      Up 17 minutes       80/tcp, 443/tcp                            appsmith_certbot_1
 ```
 
-## Common Issues
-
 {% hint style="success" %}
-### Unable to access appsmith installation
 
-* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance. 
+* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
 * You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start.
 
 {% hint style="warning" %}
-### Mongo Container crashing on Mac / Windows
-
-\(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory-mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
+\(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
 
 The fix is to keep the /data/db mounted directory out of mounted volumes \(like downloads, user etc.\) or to create a volume with docker volume create.
 
 **Reference:** [https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/](https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/)
-{% endhint %}
-
-{% hint style="success" %}
-### Runing appsmith on a different port
-
-1. Comment out the line: [https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh\#L463](https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh#L463) from the install.sh script and run it. This will ensure that the script does not check for port availability of 80/443.
-2. Once the docker-compose file is installed, the script will try to start the containers and fail because of port conflicts.
-3. In the file `docker-compose.yml` , change the ports for the nginx container to a custom port
-4. Run `docker-compose up -d`
 {% endhint %}
 
 ### Custom Domains
@@ -97,6 +83,7 @@ sudo su
 docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && docker-compose up -d
 ```
 
+> > > > > > > 3f049914ad3f435dae1e9263fec2d6613006eee4:quick-start/docker.md
 
 ## Troubleshooting
 

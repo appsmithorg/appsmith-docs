@@ -1,8 +1,10 @@
 # Querying Redshift
 
+
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](./). If not, please go over them before reading further. 
 {% endhint %}
+
 
 Redshift databases can be queried using the standard [SQL syntax](https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_SQLCommandRef.html). All Redshift queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Appsmith provides template queries to help with the syntax
 

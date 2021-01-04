@@ -1,7 +1,5 @@
 # Docker
 
-## Docker
-
 Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
@@ -16,26 +14,26 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
-* Fetch the **install.sh** script on the system you want to deploy Appsmith
+1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
 # Downloads install.sh
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-* Make the script executable
+1. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-* Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-* Check if all the containers are running correctly.
+1. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -57,6 +55,7 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 * Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance. 
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
 * You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start.
+{% endhint %}
 
 {% hint style="warning" %}
 ### Mongo Container crashing on Mac / Windows
@@ -69,23 +68,13 @@ The fix is to keep the /data/db mounted directory out of mounted volumes \(like 
 {% endhint %}
 
 {% hint style="success" %}
-### Runing appsmith on a different port
+### Running appsmith on a different port
 
 1. Comment out the line: [https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh\#L463](https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh#L463) from the install.sh script and run it. This will ensure that the script does not check for port availability of 80/443.
 2. Once the docker-compose file is installed, the script will try to start the containers and fail because of port conflicts.
 3. In the file `docker-compose.yml` , change the ports for the nginx container to a custom port
 4. Run `docker-compose up -d`
 {% endhint %}
-
-### Custom Domains
-
-To host Appsmith on a custom domain, you can contact your domain registrar and update your DNS records. Most domain registrars have documentation on how you can do this yourself.
-
-* [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080)
-* [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/)
-* [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/)
-* [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
-* [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
 
 ### Updating to the latest release
 
@@ -97,10 +86,30 @@ sudo su
 docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && docker-compose up -d
 ```
 
+## Enabling Services for Self Hosting
 
-## Troubleshooting
+Appsmith ships with third-party services that improve the app building experience. All third party services are entirely optional.
 
-If at any time you encounter an error while installing Appsmith on any platform, reach out to **support@appsmith.com** or join our [Discord Server](https://discord.com/invite/rBTTVJp)
+{% hint style="success" %}
+All third party services are enabled by default in our [cloud-hosted](https://appsmith.com) version.
+{% endhint %}
 
-If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
+Our self-hosted version allows you to configure your own keys to enable third party services such as Google OAuth. To enable a service, simply open the folder of your Appsmith installation and edit the **docker.env** file.
+
+Each service requires a specific key or configuration to be enabled. Configure the service of your choice using the following guides
+
+* [Email](email/)
+* [Google OAuth](google-login.md)
+* [Github OAuth](github-login.md)
+* [Google Maps](google-maps.md)
+
+You may need root access to modify the docker.env file.
+
+Restart docker and Nginx using the following command
+
+```text
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
+```
+
+{% page-ref page="../../tutorial-1/" %}
 

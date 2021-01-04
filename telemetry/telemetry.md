@@ -119,7 +119,7 @@ The client captures anonymous behavioral data around navigation and clicks. No d
 
 ## Disable Telemetry
 
-You can disable telemetry by setting `APPSMITH_DISABLE_TELEMETRY=true` in the **docker.env** file. This file can be found in your appsmith deployment folder. 
+You can disable telemetry by setting `APPSMITH_DISABLE_TELEMETRY=true` in the **docker.env** file. This file can be found in your appsmith deployment folder.
 
 You must restart docker and nginx for the changes to take effect
 
