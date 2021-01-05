@@ -10,13 +10,26 @@ The Firestore plugin requires three pieces of information to connect to Firestor
 
 These three details are available from the Firebase Console. Let's fetch them in turn.
 
-Go to "Project Settings" in your Firebase console and ensure you're in the "General" tab. Here, you'll find a "Project ID" entry with a value. Copy this value into the "Project ID" field in the datasource configuration.
+For Project ID,
 
-Now open in the "Service Accounts" tab in the same page. Here, you should see a NodeJS code snippet with a `databaseURL` object field. Copy the URL in this value (**without the https:// part**) and paste it in the "Database URL" field of the datasource configuration.
+1. Go to "Project Settings" in your Firebase console and ensure you're in the "General" tab.
+1. Here, you'll find a "Project ID" entry with a value.
+1. Copy this value into the "Project ID" field in the datasource configuration.
 
-Just below this code snippet, there is a "Generate new private key" button. Clicking this button will generate a new private key with access to this Firestore instance. This key will be in the form of a JSON file which will be downloaded when you click this button. Copy the **contents** of this file and paste it into the "Service Account Credentials" field.
+For the Database URL,
 
-Now click on the "Test" button to verify our configuration and then click on "Save".
+1. Now open in the "Service Accounts" tab in the same page.
+1. Here, you should see a NodeJS code snippet with a `databaseURL` object field.
+1. Copy the URL in this value (**without the https:// part**) and paste it in the "Database URL" field of the datasource configuration.
+
+For the Service Account Credentials,
+
+1. Just below this code snippet, there is a "Generate new private key" button.
+1. Clicking this button will generate a new private key with access to this Firestore instance.
+1. This key will be in the form of a JSON file which will be downloaded when you click this button.
+1. Copy the **contents** of this file and paste it into the "Service Account Credentials" field.
+
+After filling up the three fields as described above, click on the "Test" button to verify our configuration and then click on "Save".
 
 ## Fetching Data
 
