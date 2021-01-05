@@ -5,7 +5,7 @@ Appsmith collects anonymous telemetry data that helps the appsmith team better u
 Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user. Access to the collected data is limited to the appsmith team and not shared with any third parties.
 
 {% hint style="success" %}
-Appsmith is a lightweight proxy and **will** **never capture** any data returned by your APIs, databases, or third-party tools.
+Appsmith is a lightweight proxy and **will** **never capture** any data returned by your APIs, databases, or third-party tools. 
 {% endhint %}
 
 If you are uncomfortable with sending usage stats data, you can disable telemetry [here](telemetry.md#disable-telemetry)
@@ -77,7 +77,7 @@ The appsmith server sends a keep-alive ping every 6 hours to indicate that it is
 }
 ```
 
-No other data is captured by the server
+No other data is captured by the server 
 
 ### Appsmith Client
 

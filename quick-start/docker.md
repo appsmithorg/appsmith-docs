@@ -97,7 +97,6 @@ sudo su
 docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && docker-compose up -d
 ```
 
-> > > > > > > 3f049914ad3f435dae1e9263fec2d6613006eee4:quick-start/docker.md
 
 ## Troubleshooting
 

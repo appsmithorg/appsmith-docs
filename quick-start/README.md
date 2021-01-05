@@ -46,4 +46,3 @@ Each service requires a specific key or configuration to be enabled. Configure t
 * [Google OAuth](../third-party-services/google-login.md)
 * [Github OAuth](../third-party-services/github-login.md)
 * [Google Maps](../third-party-services/google-maps.md)
-
