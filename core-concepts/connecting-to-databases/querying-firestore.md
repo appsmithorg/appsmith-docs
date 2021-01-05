@@ -24,6 +24,10 @@ There's two methods for fetching data from Firestore. One for fetching a single 
 
 ### Fetching Single Document
 
+Select the method "Get Single Document" in the Method dropdown and set the path to the full path of the document you want to load. The path should be provided **without** any leading or trailing `/` characters.
+
+For example, setting the path to `users/sherlock@gmail.com` will get the document with ID `sherlock@gmail.com` inside the collection `users`.
+
 ### Fetching Multiple Documents
 
 Select the method "Get Documents in Collection" in the Method dropdown and set the path to the collection from which we want to fetch the documents. The path should be provided **without** any leading or trailing `/` characters.
