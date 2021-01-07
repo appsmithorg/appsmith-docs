@@ -14,11 +14,11 @@ Appsmith supports the following databases:
 *  [MongoDB](querying-mongodb/)
 * [Redshift](querying-redshift.md)
 * [MySQL](querying-mysql.md)
+* [Firestore](querying-firestore.md)
 * ElasticSearch
 * DynamoDB
 * Redis
-* Ms SQL 
-* Firestore
+* Ms SQL
 
 ## General Notes
 
