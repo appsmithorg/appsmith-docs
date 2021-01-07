@@ -41,6 +41,7 @@
     * [Mongo Query Syntax](core-concepts/connecting-to-databases/querying-mongodb/mongo-syntax.md)
   * [Querying Redshift](core-concepts/connecting-to-databases/querying-redshift.md)
   * [Querying MySQL](core-concepts/connecting-to-databases/querying-mysql.md)
+  * [Querying Firestore](core-concepts/connecting-to-databases/querying-firestore.md)
 * [Connecting to APIs](core-concepts/apis/README.md)
   * [Taking Inputs from Widgets](core-concepts/apis/taking-inputs-from-widgets.md)
   * [Running APIs on Page Load](core-concepts/apis/running-apis-on-page-load.md)
