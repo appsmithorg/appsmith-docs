@@ -1,14 +1,14 @@
 # Querying MongoDB
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../). If not, please go over them before reading further. 
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../). If not, please go over them before reading further.
 {% endhint %}
 
 {% hint style="warning" %}
 The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/)
 {% endhint %}
 
-All mongo queries return an array of objects where each object is a mongo document and properties of the object are the keys of the document. 
+All mongo queries return an array of objects where each object is a mongo document and properties of the object are the keys of the document.
 
 Appsmith provides template queries to help with the syntax
 

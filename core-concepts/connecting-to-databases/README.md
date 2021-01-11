@@ -11,7 +11,7 @@ description: >-
 Appsmith supports the following databases:
 
 * [PostgreSQL](querying-postgres.md) 
-*  [MongoDB](querying-mongodb/)
+* [MongoDB](querying-mongodb/)
 * [Redshift](querying-redshift.md)
 * [MySQL](querying-mysql.md)
 * [Firestore](querying-firestore.md)
@@ -22,14 +22,13 @@ Appsmith supports the following databases:
 
 ## General Notes
 
-Each saved database connection is referred to as a Datasource in Appsmith. You can connect to one or more datasources from your app. 
+Each saved database connection is referred to as a Datasource in Appsmith. You can connect to one or more datasources from your app.
 
 ### Connections
 
 #### Connection management
 
 Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection. This ensures that at run-time your queries are executed fast.
-
 
 In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on the first query execution.
 
@@ -43,31 +42,42 @@ Appsmith limits maximum queries that can run concurrently on a database to be 5.
 
 Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can deploy it on-premise, and audit it to ensure none of your data leaves your VPC.
 
-
-
 ## Setting up a Datasource
 
 #### Steps to set up a datasource
 
 1. Go to the page in your app that will connect to this datasource
+
    .
+
 2. Go to **DB Queries** on that page.
 3. Click on **+** next to **DB Queries**
+
    .
+
 4. You’ll see a list of existing Datasources that this page can connect to
+
    .
-5. Click on **+ New Datasource
-   .**
+
+5. Click on \*\*+ New Datasource
+
+   .\*\*
+
 6. Choose a Datasource type from the list of supported types
+
    .
+
 7. Provide the required configuration details of your database. You might need to contact your database admin for the connection credentials that are required to configure the database. 
 8. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you
+
    .
+
 9. **Save** your datasource
+
    .
 
 {% hint style="success" %}
-If you are hosting Appsmith, you must whitelist the IP address of the Appsmith deployment. Whitelist 18.223.74.85 to connect to your database from our cloud-hosted version. 
+If you are hosting Appsmith, you must whitelist the IP address of the Appsmith deployment. Whitelist 18.223.74.85 to connect to your database from our cloud-hosted version.
 
 A step-by-step guide to doing this on AWS is available [here](aws-whitelist.md).
 {% endhint %}
@@ -83,34 +93,38 @@ Datasources configured within one page of an app can be accessed from:
 
 ### Naming a datasource
 
-Each datasource must be given a name. Since the scope of the datasource is that of its parent organization, the name of a datasource must be unique within its parent organization. Names are case sensitive. 
+Each datasource must be given a name. Since the scope of the datasource is that of its parent organization, the name of a datasource must be unique within its parent organization. Names are case sensitive.
 
 ## Deleting a datasource
 
-You can delete a datasource only if no queries have been set up on it. 
-
+You can delete a datasource only if no queries have been set up on it.
 
 To delete a datasource:
 
 1. Go to any app that has access to the datasource
+
    .
+
 2. Go to any page within the app
+
    .
+
 3. Go to **DB Queries** within that page.
 4. Click on **+** next to DB Queries
+
    .
+
 5. You’ll see a list of Datasources. 
 6. Look for the Datasource that you want to delete.
 7. Click on **Edit Datasource**.
 8. You’ll see a page to edit the datasource’s configuration.
 9. Click on the **Delete** button at the bottom of the page
+
    .
-
-
 
 ## Querying a database
 
-You can write queries to fetch from and update data of a datasource using the query editor interface provided by Appsmith for each database type. 
+You can write queries to fetch from and update data of a datasource using the query editor interface provided by Appsmith for each database type.
 
 ### **Setting up a query**
 
@@ -128,7 +142,7 @@ To set up a query:
 
 In addition to allowing you to write a valid query for your datasource, Appsmith allows you to write JavaScript in your query. This comes in handy when you want to take an input\(s\) from a widget. For example, you can use JavaScript in your query to return data of a specific user that is [selected](https://docs.appsmith.com/widget-reference/dropdown#properties) in your [dropdown widget](https://docs.appsmith.com/widget-reference/dropdown).
 
-To write JavaScript in the query, enclose your code within the mustache template `{{ }}`. 
+To write JavaScript in the query, enclose your code within the mustache template `{{ }}`.
 
 ### **Saving a query**
 
@@ -143,16 +157,13 @@ Though changes to a query are saved in real-time, these changes will be reflecte
 
 ### **Scope of a query**
 
-A query and its results can be accessed from only within widgets of the page that it is part of. That is, its scope is limited to its parent page.  
-****
+A query and its results can be accessed from only within widgets of the page that it is part of. That is, its scope is limited to its parent page.
 
 ### **Naming a query**
 
-A query must have a name. The name is its unique identifier. It is used to access the query results. In that sense, a query’s name is like a variable’s name in your programming language. You can access the various properties of the query results object using the query’s name.  
+A query must have a name. The name is its unique identifier. It is used to access the query results. In that sense, a query’s name is like a variable’s name in your programming language. You can access the various properties of the query results object using the query’s name.
 
-
-Since the scope of a query is its parent page, all queries within a page must have unique names. Query names are case-sensitive.  
-****
+Since the scope of a query is its parent page, all queries within a page must have unique names. Query names are case-sensitive.
 
 ### **Testing your query**
 
@@ -183,7 +194,6 @@ Manually running a query only helps you test the query. Whereas, when you build 
   2. Choose the option **Execute DB Query** from the dropdown that lists actions
   3. Choose the name of the query that you want to run
 * Using JavaScript
-
   1. Click on the **JS** icon next to the event name to enable JavaScript in the specific event of the widget to which you want to bind the query
   2. Type `{{ queryName.run() }}`
 
@@ -193,11 +203,11 @@ If you are an Appsmith beginner, we recommend that you use GUI instead of JavaSc
 
 ### **Accessing query results**
 
-A query’s results are stored in an object that is identified by the query’s name. You can access the query’s results in the data property of the object. For example, if the query’s name is `sampleQuery`, to access its results you’ll write `{{ sampleQuery.data }}`. 
+A query’s results are stored in an object that is identified by the query’s name. You can access the query’s results in the data property of the object. For example, if the query’s name is `sampleQuery`, to access its results you’ll write `{{ sampleQuery.data }}`.
 
 #### Query results object
 
-All queries return an array of objects where each object is a row returned by the query and each property in the object is a column. This object is immutable. So, any transformation you run on the query’s results will not change the data the transformation runs on, but only return new data. 
+All queries return an array of objects where each object is a row returned by the query and each property in the object is a column. This object is immutable. So, any transformation you run on the query’s results will not change the data the transformation runs on, but only return new data.
 
 #### Scope of query results
 

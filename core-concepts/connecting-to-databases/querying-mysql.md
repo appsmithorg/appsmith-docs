@@ -1,17 +1,16 @@
 # Querying MySQL
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](./). If not, please go over them before reading further. 
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](./). If not, please go over them before reading further.
 {% endhint %}
 
 ## **Supported versions**
 
 Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
-## Database connection settings 
+## Database connection settings
 
-Appsmith needs the following parameters for connecting to a MySQL database:  
-****
+Appsmith needs the following parameters for connecting to a MySQL database:
 
 {% hint style="info" %}
 All required fields are suffixed with an asterisk \(\*\).
@@ -34,7 +33,7 @@ You need to fill in the following parameters:
 * **Username\*:** Fill username required for authenticating connection requests to your database.
 * **Password\*:** Fill password required for authenticating connection requests for the given username to the database. 
 
-### **SSL** 
+### **SSL**
 
 You need to fill in the following parameters:
 

@@ -16,6 +16,8 @@ description: Deploy appsmith on Heroku with our one click deploy option
    * `App Name`: Optionally select a name for your application \(this will be used in the app URL\)
    * `Runtime Selection`: Select which region your app should run in \(the United States or Europe\)
    * `Config Variables`:
+     * **Sign Up**
+       * `APPSMITH_SIGNUP_DISABLED` : Set this value to true to disable allowing users to signup on your appsmith instance. Users can only signup if they are invited by an organization administrator.
      * **Email Configuration:**
        * `APPSMITH_MAIL_ENABLED`: Set this value to true to enable email sending \(value should be `true/false` only\)
        * `APPSMITH_MAIL_FROM`: Email ID using which emails will be sent from your installation

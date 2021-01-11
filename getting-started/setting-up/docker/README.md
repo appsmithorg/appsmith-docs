@@ -21,19 +21,19 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-1. Make the script executable
+2. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-1. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+3. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-1. Check if all the containers are running correctly.
+4. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -85,6 +85,22 @@ Appsmith Installations can be updated by running the following command in the in
 sudo su
 docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && docker-compose up -d
 ```
+
+## Disable Signup
+
+To disable users from signing up on your self hosted instance, set the below env variable in your docker.env file
+
+```text
+APPSMITH_SIGNUP_DISABLED=true
+```
+
+Restart docker and Nginx using the following command
+
+```text
+sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
+```
+
+This will disable allowing users to signup on your appsmith instance. Users can only signup if they are invited by an organization administrator.
 
 ## Enabling Services for Self Hosting
 
