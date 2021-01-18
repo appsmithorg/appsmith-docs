@@ -16,6 +16,10 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
+{%hint style="warning" %}
+Appsmith does not officially support Windows (or WSL). Please try out one of our [pre-built images](https://docs.appsmith.com/getting-started/setting-up) if your production operating system is not on the list above.
+{% endhint %}
+
 1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
