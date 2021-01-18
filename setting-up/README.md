@@ -12,7 +12,7 @@ or deploy it on your own servers via
 
 * [Docker](docker.md)
 * [Heroku](heroku.md)
-* [AWS AMI](https://github.com/appsmithorg/appsmith-docs/tree/59aba8f49d764fa83b0af607119f5fce7d129575/setting-up-appsmith/setting-up-appsmith/aws-ami.md)
+* [AWS AMI](aws-ami.md)
 
 ## Troubleshooting
 
