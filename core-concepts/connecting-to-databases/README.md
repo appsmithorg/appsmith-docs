@@ -18,7 +18,7 @@ Appsmith supports the following databases:
 * ElasticSearch
 * DynamoDB
 * Redis
-* Ms SQL
+* MS SQL
 
 ## General Notes
 
