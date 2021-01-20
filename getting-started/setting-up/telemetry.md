@@ -1,3 +1,9 @@
+---
+description: >-
+  Telemetry on appsmith is entirely opt in and only collected with your consent
+  during the installation process
+---
+
 # Telemetry Opt-In
 
 Appsmith collects anonymous telemetry data that helps the appsmith team better understand how the product is being used. This is only enabled if you opt-in during the installation process.
@@ -9,7 +15,7 @@ Appsmith is a lightweight proxy and **will** **never capture** any data returned
 {% endhint %}
 
 {% hint style="warning" %}
-The docker appsmith instance is not air gapped and does ping a third party service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your appsmith deployment. If you would like a fully air gapped deployment, please write to support@appsmith.com
+The docker appsmith instance is not air-gapped and does ping a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
 {% endhint %}
 
 ## What data is collected?
@@ -123,7 +129,7 @@ The client captures anonymous behavioral data around navigation and clicks. No d
 
 If you accidentally opted In and want to disable telemetry, you can set`APPSMITH_DISABLE_TELEMETRY=true` in the **docker.env** file found in your appsmith deployment folder.
 
-You must restart docker and nginx with the following command for the changes to take effect.
+You must restart docker and Nginx with the following command for the changes to take effect.
 
 ```text
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
