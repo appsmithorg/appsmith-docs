@@ -11,8 +11,9 @@
       * [Google OAuth](getting-started/setting-up/docker/google-login.md)
       * [Github OAuth](getting-started/setting-up/docker/github-login.md)
       * [Google Maps](getting-started/setting-up/docker/google-maps.md)
-    * [Heroku](getting-started/setting-up/heroku.md)
     * [AWS AMI](getting-started/setting-up/aws-ami.md)
+    * [Heroku](getting-started/setting-up/heroku.md)
+    * [Telemetry Opt-In](getting-started/setting-up/telemetry.md)
   * [Tutorial](getting-started/tutorial-1/README.md)
     * [Part 1: Creating a simple view](getting-started/tutorial-1/part-1-creating-a-simple-view/README.md)
       * [The Appsmith environment](getting-started/tutorial-1/part-1-creating-a-simple-view/the-appsmith-environment.md)
@@ -77,8 +78,4 @@
 * [Show Alert](function-reference/show-alert.md)
 * [Navigate Page](function-reference/navigateto.md)
 * [Store Value](function-reference/store-value.md)
-
-## Telemetry
-
-* [Telemetry Opt-In](telemetry/telemetry.md)
 
