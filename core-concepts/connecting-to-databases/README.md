@@ -67,7 +67,7 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 
    .
 
-7. Provide the required configuration details of your database. You might need to contact your database admin for the connection credentials that are required to configure the database. 
+7. Provide the required configuration details of your database. You might need to contact your database admin for the connection credentials that are required to configure the database.
 8. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you
 
    .
@@ -114,7 +114,7 @@ To delete a datasource:
 
    .
 
-5. You’ll see a list of Datasources. 
+5. You’ll see a list of Datasources.
 6. Look for the Datasource that you want to delete.
 7. Click on **Edit Datasource**.
 8. You’ll see a page to edit the datasource’s configuration.

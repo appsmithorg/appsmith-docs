@@ -80,5 +80,5 @@
 
 ## Telemetry
 
-* [Telemetry](telemetry/telemetry.md)
+* [Telemetry Opt-In](telemetry/telemetry.md)
 

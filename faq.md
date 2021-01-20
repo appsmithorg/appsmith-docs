@@ -29,5 +29,6 @@ We sincerely hope this never happens to anyone but we acknowledge that there can
 Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer-facing websites. It works great for tools internal to your team or organization but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we'd recommend you try [Wix](https://www.wix.com), [Squarespace](https://www.squarespace.com), or [Webflow](https://www.webflow.com). You can also perform some simple data visualization & charting on Appsmith but for more in-depth business intelligence & analytics, we'd recommend [Tableau](https://www.tableau.com/), [Looker](https://looker.com/), or [Redash](https://redash.io/).
 
 ## Does Appsmith support multi user editing?
-Appsmith currently is built for a single user editor experience. If you try to update the same page/widget/action from two different places, it will overwrite each other and will lead to loss of work. We recommend that at a given time, only one user is editing a page in a single open tab. 
+
+Appsmith currently is built for a single user editor experience. If you try to update the same page/widget/action from two different places, it will overwrite each other and will lead to loss of work. We recommend that at a given time, only one user is editing a page in a single open tab.
 
