@@ -55,7 +55,7 @@ Let’s now play with **Table Data** to get a hang of how it affects the data di
 7. Verify that column **one** of the first row of the table now shows **i.**
 8. Click on the **Deploy** button on the top right.
 
-![Figure 3.](../../../.gitbook/assets/image%20%287%29%20%281%29%20%283%29%20%281%29.png)
+![Figure 3.](../../../.gitbook/assets/image%20%287%29%20%281%29%20%283%29%20%284%29%20%281%29.png)
 
 Open the application's URL in your web browser. You can see the table in Figure 4.
 

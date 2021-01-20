@@ -15,7 +15,7 @@ Appsmith is a lightweight proxy and **will** **never capture** any data returned
 {% endhint %}
 
 {% hint style="warning" %}
-The docker appsmith instance is not air-gapped and does ping a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
+The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
 {% endhint %}
 
 ## What data is collected?
