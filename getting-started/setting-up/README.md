@@ -30,3 +30,9 @@ If at any time you encounter an error while installing Appsmith on any platform,
 
 If you know the error and would like to reinstall Appsmith, simply delete the installation folder and the templates folder and execute the script again
 
+## Telemetry Opt-In
+
+During the installation process, we ask that you share anonymous usage statistics to help make the product better. You can read more about the data we collect below
+
+{% page-ref page="telemetry.md" %}
+
