@@ -90,7 +90,7 @@ The **CategoryDropdown** is now a required field. Click on the **Options** field
 Notice that to set CategoryDropdown's options, you had to carefully copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
 
 1. Open **CategoryDropdown**’s properties
-2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
+2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverages', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**
 
 It worked!  But, what happened here? You used Lodash’s \_.map method to transform an array of strings to the format understandable by the dropdown widget, instead of manually formatting and typing it down.
