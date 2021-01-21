@@ -57,7 +57,8 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 1. Open **CategoryDropdown**’s properties modal.
 2. Click on the **Options** field. The value in this field is used to specify the options of the dropdown.
 3. Note the floating window show up when you place the cursor in **Options** field.
-4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**   . You'll need to specify the options in the same format. 
+4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**
+   . You'll need to specify the options in the same format. 
 5. Set the **Options** field to that shown below.
 6. Set the **Default Option** to blank. This will keep the default selected option to blank.
 7. Toggle the **Required** field to true. This makes the input to the dropdown a required field.
@@ -92,7 +93,7 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 Notice that to set **CategoryDropdown**'s options, you had to copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
 
 1. Open **CategoryDropdown**’s properties
-2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
+2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverages', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
 
 You used the `_.map` method of **Lodash**, and `toUpperCase()` method of JavaScript to transform  **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
