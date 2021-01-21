@@ -95,7 +95,7 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 Notice that to set **CategoryDropdown**'s options, you had to copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
 
 1. Open **CategoryDropdown**’s properties
-2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverates', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
+2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverages', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
 3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
 
 You used the `_.map` method of **Lodash**, and `toUpperCase()` method of JavaScript to transform **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
