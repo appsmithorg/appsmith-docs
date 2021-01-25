@@ -8,6 +8,14 @@ description: >-
 
 ![](../.gitbook/assets/tabs.gif)
 
+## Creating Dynamic Views
+
+You can create separate UIs in each tab container and dynamically switch between the containers by controlling the Default Tab property. The below code snippet demonstrates how you can control the selected tab based on the value the user sets in a dropdown 
+
+```text
+{{ Dropdown1.selectedOption === "1" ? "Tab1" : "Tab2" }}
+```
+
 ## Properties
 
 | Internal Property | Description |
