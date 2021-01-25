@@ -59,7 +59,7 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 3. Note the floating window show up when you place the cursor in **Options** field.
 4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**
 
-   . You'll need to specify the options in the same format. 
+   . You'll need to specify the options in the same format.
 
 5. Set the **Options** field to that shown below.
 6. Set the **Default Option** to blank. This will keep the default selected option to blank.
@@ -122,7 +122,7 @@ The title of the form is a text widget. Let's rename the title from **Form**. to
 
 The **AddProductForm** now looks like this:
 
-![AddProductForm: Form to add a new product](../../../.gitbook/assets/image%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29.png)
+![AddProductForm: Form to add a new product](../../../.gitbook/assets/image%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 ## Writing regex validations
 

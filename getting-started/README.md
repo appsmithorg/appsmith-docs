@@ -1,14 +1,22 @@
+---
+description: You can get up and running with appsmith in just a few minutes
+---
+
 # Getting Started
 
-## First steps
+## **Deploy Appsmith** 
 
-Are you new to Appsmith? This is the place to start!
+Create an account on [Appsmith Cloud](https://app.appsmith.com) **\(Recommended\)** 
 
-1. **Setup:** [Setup](setting-up/)
-2. **Tutorial:** 
-   1. [Part 1: Creating a simple view](tutorial-1/part-1-creating-a-simple-view/)
-   2. [Part 2: Using forms](tutorial-1/part-2-using-forms/)
-   3. [Part 3: Creating interactive views](tutorial-1/part-3-creating-interactive-views/) 
+or
+
+[Deploy Appsmith](setting-up/) on your own machine
+
+## **Beginners Tutorial**
+
+1. [Part 1: Creating a simple view](tutorial-1/part-1-creating-a-simple-view/)
+2. [Part 2: Using forms](tutorial-1/part-2-using-forms/)
+3. [Part 3: Creating interactive views](tutorial-1/part-3-creating-interactive-views/) 
 
 We strongly recommend that you go over the documentation in the same sequence as specified above.
 
