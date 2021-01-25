@@ -22,7 +22,7 @@ description: >-
 
 ![click to expand](../../.gitbook/assets/button-recaptcha-config.png)
 
-**5. Configure the server side integration on your backend**
+**5. Configure the server-side integration on your backend**
 
 > The exact steps will depend on your backend - see [Google's reference](https://developers.google.com/recaptcha/docs/verify) for detailed instructions.
 

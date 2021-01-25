@@ -37,8 +37,8 @@ description: >-
     <tr>
       <td style="text-align:left"><b>Chart Type</b>
       </td>
-      <td style="text-align:left">Lets you select what type of chart you want to use. Currently available
-        options are: Line chart, Bar chart, Pie Chart, Column Chart and Area Chart.</td>
+      <td style="text-align:left">Changes the type of chart displayed for the chart data. Available options
+        are: Line chart, Bar chart, Pie Chart, Column Chart, and Area Chart.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>x-axis Label</b>

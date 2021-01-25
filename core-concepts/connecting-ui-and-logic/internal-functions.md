@@ -14,4 +14,5 @@ description: >-
 * [Show Alert](../../function-reference/show-alert.md)
 * [Navigate Page](../../function-reference/navigateto.md)
 * [Store Value](../../function-reference/store-value.md)
+* [Copy To Clipboard](../../function-reference/copytoclipboard.md)
 

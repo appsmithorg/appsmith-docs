@@ -41,7 +41,7 @@ Widget properties can be edited via the property pane which is opened using top-
 
 ![](../../.gitbook/assets/input-property-pane.png)
 
-**Widget properties don't have to be static!** To make it dynamic, type **`{{ }}`** inside the widget property and bind it to an API/Query/Widget. You can learn more about working with widgets and APIs here
+**Widget properties don't have to be static!** To make it dynamic, type**`{{ }}`**inside the widget property and bind it to an API/Query/Widget. You can learn more about working with widgets and APIs here
 
 * [Displaying API / Query Data](displaying-api-data.md)
 * [Talking to other widgets](talking-to-other-widgets.md)
