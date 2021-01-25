@@ -79,3 +79,8 @@
 * [Store Value](function-reference/store-value.md)
 * [Copy To Clipboard](function-reference/copytoclipboard.md)
 
+## How To
+
+* [Untitled](how-to/untitled.md)
+* [Widgets](how-to/widgets.md)
+

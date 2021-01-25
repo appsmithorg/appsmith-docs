@@ -7,6 +7,8 @@ description: >-
 
 # Table
 
+
+
 ## Displaying Data in a table
 
 A table takes data in the form of an array of objects. Adding an array of objects to the table data will display each object as a row of data with each key of the object as a column in the table.
@@ -62,6 +64,4 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **Column Action** | Adds a new column to the table with a button against each row. The button can be configured to trigger an action on the corresponding data row. |
 | **onRowSelected** | Sets the action to be run when user selects a row in the table. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
 | **onPageChange** | Sets the action to be run when a table page is changed. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
-
-![](../.gitbook/assets/Table.gif)
 

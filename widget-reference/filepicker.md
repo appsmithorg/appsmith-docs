@@ -7,6 +7,8 @@ description: >-
 
 # Filepicker
 
+![Click to expand](../.gitbook/assets/filepicker%20%281%29.gif)
+
 ## Upload File
 
 You can upload files by creating a post API and referring to the base64 or binary version of the file in the post body.
@@ -62,8 +64,6 @@ You can upload files by creating a post API and referring to the base64 or binar
 | Action | Description |
 | :--- | :--- |
 | **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md). You can immediately call an API to upload the base64 of the file to your cloud storage |
-
-![](../.gitbook/assets/filepicker.gif)
 
 ## Upload to Amazon S3
 

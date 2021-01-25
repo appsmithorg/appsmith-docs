@@ -19,5 +19,3 @@ description: >-
 | **onPause** | Sets the action to be run when video pauses. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal or Show Message. |
 | **onEnd** | Sets the action to be run when video ends. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal or Show Message. |
 
-![](../.gitbook/assets/video.gif)
-

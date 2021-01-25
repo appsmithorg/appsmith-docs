@@ -6,7 +6,7 @@ description: >-
 
 # Radio
 
-![Click to expand](../.gitbook/assets/radio_v10.gif)
+![](../.gitbook/assets/radio.gif)
 
 ## Displaying Data
 

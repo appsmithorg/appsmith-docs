@@ -7,7 +7,7 @@ description: >-
 
 # Input
 
-![](../.gitbook/assets/input-widget.gif)
+![](../.gitbook/assets/input.gif)
 
 ## Searching data
 
