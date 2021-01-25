@@ -1,12 +1,14 @@
 ---
-description: Appsmith is the fastest way to build internal apps over any database or API
+description: >-
+  Appsmith is an open source javascript based development platform to build
+  internal tools
 ---
 
 # Introduction
 
 ## Why Appsmith?
 
-Today when we need an internal app, our choices are limited to
+Today when we need an internal tool, our choices are limited to
 
 * Investing weeks building it from scratch and fighting with HTML/CSS
 * Getting started with an admin panel and invest even more time customizing it
