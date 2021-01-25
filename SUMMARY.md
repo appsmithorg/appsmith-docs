@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Getting Started](getting-started/README.md)
-  * [Setup](getting-started/setting-up/README.md)
+  * [Setup Appsmith](getting-started/setting-up/README.md)
     * [Docker](getting-started/setting-up/docker/README.md)
       * [Email](getting-started/setting-up/docker/email/README.md)
         * [Sendgrid](getting-started/setting-up/docker/email/sendgrid.md)

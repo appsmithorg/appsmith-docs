@@ -2,7 +2,7 @@
 description: Appsmith is open source and very easy to deploy on your own machine
 ---
 
-# Setup
+# Setup Appsmith
 
 You can follow one of our guides to deploy appsmith via the technology you prefer
 
