@@ -6,7 +6,7 @@ description: >-
 
 # Tabs
 
-
+![](../.gitbook/assets/tabs.gif)
 
 ## Properties
 
