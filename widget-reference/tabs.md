@@ -32,7 +32,5 @@ You can create separate UIs in each tab container and dynamically switch between
 
 | Action | Description |
 | :--- | :--- |
-| **Column Action** | Adds a new column to the table with a button against each row. The button can be configured to trigger an action on the corresponding data row. |
-| **onRowSelected** | Sets the action to be run when user selects a row in the table. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
-| **onPageChange** | Sets the action to be run when a table page is changed. Default supported actions are: Call API, Execute DB Query, Navigate to Page, Show Alert, Open / Close popup |
+| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
 

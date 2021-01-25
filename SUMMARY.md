@@ -64,6 +64,7 @@
 * [Form](widget-reference/form.md)
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
+* [Maps](widget-reference/maps.md)
 * [Radio](widget-reference/radio.md)
 * [Tabs](widget-reference/tabs.md)
 * [Table](widget-reference/table.md)
