@@ -7,6 +7,8 @@ description: >-
 
 # Navigate Page
 
+![](../.gitbook/assets/nav.gif)
+
 ## Signature
 
 ```text

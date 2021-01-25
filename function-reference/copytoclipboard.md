@@ -7,7 +7,7 @@ description: This function is used to copy text to the clipboard
 ## Signature
 
 ```text
-copyToClipboard(data: string, options: object) -> void
+copyToClipboard(data: string, options: object): void
 ```
 
 ### Arguments
