@@ -1,20 +1,22 @@
 ---
-description: Whitelist your database IP on AWS
+description: >-
+  Whitelist the IP of the appsmith instance in your AWS database to access it
+  from within your applications
 ---
 
-# Whitelisting database IP on AWS
+# Whitelisting Appsmith to access Databases
 
-To connect the database to your virtual machine, whitelist the database IP address with the following steps:
+Whitelist the appsmith IP address with the following steps:
 
 **1. Log in to the AWS** [**console**](https://aws.amazon.com/console/)
 
 **2. Navigate to the RDS Console**
 
-**3. Choose RDS database from the list of instances**
+**3. Choose the RDS database from the list of instances**
 
 ![Click to expand](../../.gitbook/assets/chose_rds.png)
 
-**4. Select the security group linked to your RDS\(Make sure RDS instance is publically accessible\)**
+**4. Select the security group linked to your RDS\(Make sure the RDS instance is publically accessible\)**
 
 ![Click to expand](../../.gitbook/assets/chose_sg.png)
 
@@ -26,7 +28,7 @@ To connect the database to your virtual machine, whitelist the database IP addre
 
 ![Click to expand](../../.gitbook/assets/edit_inbound.png)
 
-**7. Set** _**Source**_ **to** _**Custom**_ **and enter the database IP address 18.223.74.85/32**
+**7. Set** _**Source**_ **to** _**Custom**_ **and enter the Appsmith IP address 18.223.74.85/32**
 
 **8. Click** _**Save**_
 

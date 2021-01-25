@@ -32,16 +32,12 @@
 * [Building The UI](core-concepts/building-the-ui/README.md)
   * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
   * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
-  * [Triggering APIs / Queries from Widgets](core-concepts/building-the-ui/calling-apis-from-widgets.md)
   * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
+  * [Triggering actions & workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
-  * [Whitelisting database IP on AWS](core-concepts/connecting-to-databases/aws-whitelist.md)
-  * [Querying Postgres](core-concepts/connecting-to-databases/querying-postgres.md)
-  * [Querying MongoDB](core-concepts/connecting-to-databases/querying-mongodb/README.md)
-    * [Mongo Query Syntax](core-concepts/connecting-to-databases/querying-mongodb/mongo-syntax.md)
-  * [Querying Redshift](core-concepts/connecting-to-databases/querying-redshift.md)
-  * [Querying MySQL](core-concepts/connecting-to-databases/querying-mysql.md)
-  * [Querying Firestore](core-concepts/connecting-to-databases/querying-firestore.md)
+  * [Whitelisting Appsmith to access Databases](core-concepts/connecting-to-databases/aws-whitelist.md)
+  * [Querying a Database](core-concepts/connecting-to-databases/querying-a-database.md)
+  * [Query Settings](core-concepts/connecting-to-databases/query-settings.md)
 * [Connecting to APIs](core-concepts/apis/README.md)
   * [Taking Inputs from Widgets](core-concepts/apis/taking-inputs-from-widgets.md)
   * [Running APIs on Page Load](core-concepts/apis/running-apis-on-page-load.md)
@@ -50,6 +46,15 @@
   * [Internal Functions](core-concepts/connecting-ui-and-logic/internal-functions.md)
   * [Sharing Data Across Pages](core-concepts/connecting-ui-and-logic/sharing-data-across-pages.md)
 * [Access Control](core-concepts/access-control.md)
+
+## Database Reference <a id="datasource-reference"></a>
+
+* [Postgres](datasource-reference/querying-postgres.md)
+* [MongoDB](datasource-reference/querying-mongodb/README.md)
+  * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
+* [Redshift](datasource-reference/querying-redshift.md)
+* [MySQL](datasource-reference/querying-mysql.md)
+* [Firestore](datasource-reference/querying-firestore.md)
 
 ## Widget Reference
 
@@ -74,6 +79,7 @@
 
 ## Function Reference
 
+* [Run](function-reference/run.md)
 * [Show Modal](function-reference/show-modal.md)
 * [Close Modal](function-reference/close-modal.md)
 * [Download](function-reference/download.md)
