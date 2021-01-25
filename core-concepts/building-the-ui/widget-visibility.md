@@ -4,45 +4,33 @@ description: The visibility of widgets can be controlled using javascript.
 
 # Controlling Widget Visibility
 
-The visibility property is usually a switch in the property pane of every widget. This property can be made dynamic by clicking the JS button next to the property which converts it to a text field. Inside the text, the value of the visiblity can be dynamically set using javascript.
+The visibility property is usually a switch in the property pane of every widget. This property can be made dynamic by clicking the JS button next to the property which converts it to a text field. Inside the text, the value of the visibility can be conditionally set using javascript.
 
-## Controlling widget visibility from another widget
+## Visibility conditions with other Widget Properties
 
-The condition for visibility of a particular widget can be set by clicking on the JS mode for the Visible option. The option takes in a boolean object to determine the visibility of that widget.
-
-In the example below the radio buttons have true and false as their values for the labels "Visible" and "Invisible" respectively. The target widget is a Text widget whose visible option's JS field looks like this.
+In the example below the visibility of the table is a conditional value based on the selected value of the RadioGroup
 
 ```text
-{{RadioGroup1.selectedOptionValue}}
+{{RadioGroup1.selectedOptionValue === "Visible"}}
 ```
 
-![Click to expand](../../.gitbook/assets/widget-visibility.gif)
+![](../../.gitbook/assets/radio-visible.gif)
 
-## Controlling widget visibility with an API/Query
+## Visibility conditions with API/Query responses
 
-We can use the value obtained from an API/Query to dynamically set the visibility of a widget using the JS mode for the visible option.
-
-![Click to expand](../../.gitbook/assets/widget-visibility-api.gif)
-
-In the example shown above the value of the radio buttons is sent as a parameter to the API named "getObject". The API response is then used to dynamically change the visibility of a widget using a condition.
-
-The condition below is used in object A
+Similar to the above example, we can tie the visibility of a widget to the response of an API/Query.
 
 ```text
-{{getObject.value == "A"}}
-```
-
-The condition below is used in object B
-
-```text
-{{getObject.value == "B"}}
+{{ API1.data.value === "trueValue" }}
 ```
 
 ## Dynamic Forms
 
-Dynamic form views are one such use case where another widget controls the visibility of the form flow.
+There are some cases that require form fields to dynamically change based on the user input. This can be achieved using a Tab widget inside the form and conditionally updating the selected tab value based on the inputs of the form
 
-![Click to expand](../../.gitbook/assets/dynamic_form.gif)
+![](../../.gitbook/assets/dynamic-form.gif)
 
-In the above example the tab widget is used to switch between the Login and Register screen.
+{% hint style="success" %}
+Hide the tabs in the tab widget to make it look like the views are changing in place
+{% endhint %}
 
