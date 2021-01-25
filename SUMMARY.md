@@ -60,8 +60,7 @@
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Dropdown](widget-reference/dropdown.md)
-* [Filepicker](widget-reference/filepicker/README.md)
-  * [Uploading a File to S3](widget-reference/filepicker/uploading-a-file-to-s3.md)
+* [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
@@ -79,4 +78,8 @@
 * [Navigate Page](function-reference/navigateto.md)
 * [Store Value](function-reference/store-value.md)
 * [Copy To Clipboard](function-reference/copytoclipboard.md)
+
+## How To
+
+* [How to upload to S3](how-to/how-to-upload-to-s3.md)
 

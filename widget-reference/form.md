@@ -14,7 +14,7 @@ Form widgets are a class of widgets that are typically used to capture user info
 * [**Input**](input.md)
 * [**Dropdown**](dropdown.md)
 * [**Datepicker**](datepicker.md)
-* [**Filepicker**](filepicker/)
+* [**Filepicker**](filepicker.md)
 * [**RadioGroup**](radio.md)
 * [**Checkbox**](checkbox.md)
 

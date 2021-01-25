@@ -7,7 +7,7 @@ description: >-
 
 # Table
 
-
+![Click to expand](../.gitbook/assets/table.gif)
 
 ## Displaying Data in a table
 
@@ -52,6 +52,7 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | :--- | :--- |
 | **selectedRow** | Contains the data of the row selected by the user. Will be undefined if no row is selected |
 | **pageNo** | Contains the current page number that the user is on. Can be used by APIs for pagination |
+| **selectedRows** | Contains an array of rows selected by the user when multi-select is enabled |
 
 | Widget Property | Description |
 | :--- | :--- |
