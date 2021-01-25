@@ -14,9 +14,9 @@ or
 
 ## **Beginners Tutorial**
 
-1. [Part 1: Creating a simple view](tutorial-1/part-1-creating-a-simple-view/)
-2. [Part 2: Using forms](tutorial-1/part-2-using-forms/)
-3. [Part 3: Creating interactive views](tutorial-1/part-3-creating-interactive-views/) 
+1. [Part 1: Creating a simple view](../tutorial-1/part-1-creating-a-simple-view/)
+2. [Part 2: Using forms](../tutorial-1/part-2-using-forms/)
+3. [Part 3: Creating interactive views](../tutorial-1/part-3-creating-interactive-views/) 
 
 We strongly recommend that you go over the documentation in the same sequence as specified above.
 
