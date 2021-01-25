@@ -1,15 +1,19 @@
 ---
-description: >-
-  This function is used to open a modal when triggered. Create a new modal
-  before calling this action
+description: This function is used to open a modal when triggered.
 ---
 
 # Show Modal
 
+![Click to expand](../.gitbook/assets/showmodal.gif)
+
+{% hint style="success" %}
+Remember to create a new modal before calling this action
+{% endhint %}
+
 ## Signature
 
 ```text
-showModal('Modal1')
+showModal(modalName: string): void
 ```
 
 ### Arguments
@@ -17,6 +21,4 @@ showModal('Modal1')
 | Argument Name | Description |
 | :--- | :--- |
 | **Modal Name** | Name of the modal to be displayed |
-
-![Click to expand](../.gitbook/assets/showmodal.gif)
 

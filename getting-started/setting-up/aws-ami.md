@@ -158,5 +158,5 @@ The default application credentials are stored in a standalone file. To obtain t
 
 Your Appsmith installation will auto-update itself whenever there is a new release by the Appsmith team. You don't need to change anything in order to access the latest version of Appsmith.
 
-{% page-ref page="../../tutorial-1/" %}
+{% page-ref page="../tutorial-1/" %}
 

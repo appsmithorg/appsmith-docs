@@ -6,10 +6,12 @@ description: >-
 
 # Close Modal
 
+![Click to expand](../.gitbook/assets/closemodal.gif)
+
 ## Signature
 
 ```text
-closeModal(modalName: string) -> void
+closeModal(modalName: string): void
 ```
 
 ### Arguments
@@ -17,6 +19,4 @@ closeModal(modalName: string) -> void
 | **Argument Name** | **Description** |
 | :--- | :--- |
 | **Modal Name** | Name of the modal to be closed |
-
-![Click to expand](../.gitbook/assets/closemodal.gif)
 

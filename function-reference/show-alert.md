@@ -4,18 +4,18 @@ description: Show a temporary notification style alert message to the user
 
 # Show Alert
 
+![](../.gitbook/assets/alert.gif)
+
 ## Signature
 
 ```text
-showAlert(message, style) -> void
+showAlert(message: string, style: string) -> void
 ```
 
 ### Arguments
 
 | **Argument Name** | **Description** |
 | :--- | :--- |
-| **Message** | string: The message you want to show to user ex:"form submitted" |
-| **Style** | string: defines the style of alert message. Style can be info,success,error,warning |
-
-![Click to expand](../.gitbook/assets/showAlert.gif)
+| **Message** | The message you want to show to the user |
+| **Style** | The style of alert message. Can be one of info, success, error, warning |
 
