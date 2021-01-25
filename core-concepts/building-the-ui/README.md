@@ -11,21 +11,27 @@ description: >-
 
 Appsmith has a collection of widgets that can be used to build the UI. Widgets can be dragged from the widget pane and be positioned on the canvas. They can also be resized to fit the data they need to display.
 
-![Click to expand](../../.gitbook/assets/drag-and-drop.gif)
+![](../../.gitbook/assets/adding-ui.gif)
 
-* [Form](../../widget-reference/form.md)
-* [Input](../../widget-reference/input.md)
-* [Dropdown](../../widget-reference/dropdown.md)
-* [Datepicker](../../widget-reference/datepicker.md)
+### Widgets List
+
 * [Button](../../widget-reference/button/)
-* [Filepicker](../../widget-reference/filepicker.md)
+* [Chart](../../widget-reference/chart.md)
 * [Checkbox](../../widget-reference/checkbox.md)
+* [Container](../../widget-reference/container.md)
+* [Datepicker](../../widget-reference/datepicker.md)
+* [Dropdown](../../widget-reference/dropdown.md)
+* [Filepicker](../../widget-reference/filepicker.md)
+* [Form](../../widget-reference/form.md)
+* [Image](../../widget-reference/image.md)
+* [Input](../../widget-reference/input.md)
+* [Maps](../../widget-reference/maps.md)
 * [Radio](../../widget-reference/radio.md)
+* [Rich Text Editor](../../widget-reference/rich-text-editor.md)
+* [Tabs](../../widget-reference/tabs.md)
 * [Table](../../widget-reference/table.md)
 * [Text](../../widget-reference/text.md)
-* [Image](../../widget-reference/image.md)
-* [Chart](../../widget-reference/chart.md)
-* [Container](../../widget-reference/container.md)
+* [Video](../../widget-reference/video.md)
 
 ## Naming Widgets
 
