@@ -61,7 +61,7 @@ You can upload files by creating a post API and referring to the base64 or binar
 
 | Action | Description |
 | :--- | :--- |
-| **onFilesSelected** | Sets the action to be run when a user selects the files. You can immediately call an API to upload the base64 of the file to your cloud storage |
+| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md). You can immediately call an API to upload the base64 of the file to your cloud storage |
 
 ![](../.gitbook/assets/filepicker.gif)
 

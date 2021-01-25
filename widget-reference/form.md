@@ -49,7 +49,7 @@ The form button is provided by default to every form. It is used for form submis
 
 | Action | Description |
 | :--- | :--- |
-| **onClick** | Sets the action to be run when user clicks a button. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
+| **onClick** | Sets the action to be run when the user clicks the form button. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
 
 ![](../.gitbook/assets/Form.gif)
 

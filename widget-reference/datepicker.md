@@ -7,7 +7,7 @@ description: >-
 
 # Datepicker
 
-![](../.gitbook/assets/datepicker.gif)
+![](../.gitbook/assets/date-picker.gif)
 
 ## Properties
 
@@ -26,5 +26,5 @@ description: >-
 
 | Action. | Description |
 | :--- | :--- |
-| **onDateSelected** | Sets the action to be run when a user make_s_ a date selection on the widget. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
+| **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
 

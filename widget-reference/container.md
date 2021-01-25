@@ -7,7 +7,7 @@ description: >-
 
 # Container
 
-
+![](../.gitbook/assets/container.gif)
 
 | Property | Description |
 | :--- | :--- |

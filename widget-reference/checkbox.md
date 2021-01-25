@@ -18,5 +18,5 @@ description: >-
 
 | Action | Description |
 | :--- | :--- |
-| **onCheckChange** | Sets the action to be run when a user changes the choice on the checkbox. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
+| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
 

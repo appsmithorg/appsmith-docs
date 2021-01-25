@@ -6,7 +6,9 @@ description: >-
 
 # Dropdown
 
-![](../.gitbook/assets/dropdown.gif)
+
+
+![Click to expand](../.gitbook/assets/dropdown%20%281%29.gif)
 
 ## Displaying Data
 
@@ -62,5 +64,5 @@ Read more about submitting Input data to an API below
 
 | Action | Description |
 | :--- | :--- |
-| **onOptionChange** | Sets the action to be run when a user changes an option. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
 
