@@ -76,7 +76,7 @@ The fix is to keep the /data/db mounted directory out of mounted volumes \(like 
 4. Run `docker-compose up -d`
 {% endhint %}
 
-### Updating to the latest release
+## Updating to the latest release
 
 Appsmith Installations can be updated by running the following command in the installation directory
 
