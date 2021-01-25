@@ -1,10 +1,10 @@
 ---
-description: >-
-  The visibility of widgets can be controlled dynamically through another widget
-  or through an API/Query.
+description: The visibility of widgets can be controlled using javascript.
 ---
 
 # Controlling Widget Visibility
+
+The visibility property is usually a switch in the property pane of every widget. This property can be made dynamic by clicking the JS button next to the property which converts it to a text field. Inside the text, the value of the visiblity can be dynamically set using javascript.
 
 ## Controlling widget visibility from another widget
 

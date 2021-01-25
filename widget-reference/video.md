@@ -7,6 +7,8 @@ description: >-
 
 # Video
 
+![](../.gitbook/assets/video%20%281%29.gif)
+
 | Property | Description |
 | :--- | :--- |
 | **URL** | Renders the video from the URL |
@@ -15,7 +17,7 @@ description: >-
 
 | Action | Description |
 | :--- | :--- |
-| **onPlay** | Sets the action to be run when video plays. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal or Show Message. |
-| **onPause** | Sets the action to be run when video pauses. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal or Show Message. |
-| **onEnd** | Sets the action to be run when video ends. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal or Show Message. |
+| **onPlay** | Sets the action to be run when the video plays. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message. |
+| **onPause** | Sets the action to be run when the video pauses. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message. |
+| **onEnd** | Sets the action to be run when the video ends. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message. |
 
