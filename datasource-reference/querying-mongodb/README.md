@@ -17,7 +17,7 @@ Appsmith provides template queries to help with the syntax
 * [Update Query](mongo-syntax.md#update-query)
 * [Delete Query](mongo-syntax.md#delete-query)
 
-![Click to expand](../../.gitbook/assets/mongo-query.gif)
+
 
 ## Taking Inputs from Widgets
 
