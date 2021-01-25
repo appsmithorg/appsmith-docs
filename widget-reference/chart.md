@@ -6,7 +6,7 @@ description: >-
 
 # Chart
 
-![](../.gitbook/assets/chart.gif)
+![Click to expand](../.gitbook/assets/chart%20%281%29.gif)
 
 ## Properties
 
