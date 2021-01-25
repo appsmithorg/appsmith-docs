@@ -18,7 +18,10 @@ A Radio Button's **options** can be populated from a data source like an API / Q
       return { label: row.name, value: row.id } 
    }) 
 }}
+
 ```
+
+## Properties
 
 | Property | Description |
 | :--- | :--- |
