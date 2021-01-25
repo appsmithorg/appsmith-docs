@@ -1,8 +1,7 @@
 # Querying Postgres
 
-
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](./). If not, please go over them before reading further. 
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](./). If not, please go over them before reading further.
 {% endhint %}
 
 PostgreSQL databases can be queried using the standard [SQL syntax](https://www.postgresql.org/docs/12/index.html). All postgres queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Appsmith provides template queries to help with the syntax

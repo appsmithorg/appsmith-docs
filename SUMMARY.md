@@ -50,7 +50,6 @@
   * [Sharing Data Across Pages](core-concepts/connecting-ui-and-logic/sharing-data-across-pages.md)
 * [Access Control](core-concepts/access-control.md)
 
-
 ## Widget Reference
 
 * [Button](widget-reference/button/README.md)

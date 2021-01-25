@@ -33,8 +33,8 @@ APPSMITH_MAIL_ENABLED=false
 
 1. Update the **APPSMITH\_MAIL\_ENABLED** field to true
 2. Fetch the remaining configuration fields from your email service. The following is a guide to fetch configurations from a few common email service providers
-3. [Sendgrid](sendgrid.md)
-4. [Amazon SES](amazon-ses.md)
+3. [Sendgrid]()
+4. [Amazon SES]()
 
 {% hint style="info" %}
 Having trouble integrating? Reach out to us on [discord](https://discord.com/invite/rBTTVJp) or write to us at support@appsmith.com

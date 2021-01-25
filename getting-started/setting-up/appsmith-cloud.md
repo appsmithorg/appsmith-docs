@@ -17,5 +17,3 @@ description: The fastest way to get started with appsmith is using the cloud ver
 
 {% page-ref page="../tutorial-1/" %}
 
-
-
