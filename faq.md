@@ -22,13 +22,13 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 
 ## What if I get stuck while building an app on Appsmith?
 
-We sincerely hope this never happens to anyone but we acknowledge that there can be road blocks. At this juncture, we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if the absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [Discord server](https://discord.com/invite/rBTTVJp)
+We sincerely hope this never happens to anyone but we acknowledge that there can be roadblocks. At this juncture, we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if the absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [Discord server](https://discord.com/invite/rBTTVJp)
 
 ## What can't I do on Appsmith?
 
 Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer-facing websites. It works great for tools internal to your team or organization but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we'd recommend you try [Wix](https://www.wix.com), [Squarespace](https://www.squarespace.com), or [Webflow](https://www.webflow.com). You can also perform some simple data visualization & charting on Appsmith but for more in-depth business intelligence & analytics, we'd recommend [Tableau](https://www.tableau.com/), [Looker](https://looker.com/), or [Redash](https://redash.io/).
 
-## Does Appsmith support multi user editing?
+## Does Appsmith support multi-user editing?
 
-Appsmith currently is built for a single user editor experience. If you try to update the same page/widget/action from two different places, it will overwrite each other and will lead to loss of work. We recommend that at a given time, only one user is editing a page in a single open tab.
+Appsmith currently is built for a single user editor experience. If you try to update the same page/widget/action from two different places, it will overwrite each other and will lead to a loss of work. We recommend that at a given time, only one user is editing a page in a single open tab.
 
