@@ -5,7 +5,7 @@ Your form is now both more user-friendly, and less error-prone. Let's configure 
 1. **Setting up an insert query** that adds a new product to the table
 2. Wiring the Submit button of the form to **run the insert query**
 
-## Accessing widget state in queries
+## Accessing widget properties in queries
 
 Your form will have the value filled in by the user. You want to insert those values via your query. Let’s see how to do that:
 
@@ -28,9 +28,9 @@ VALUES
 The only difference is that you’re using the mustache template to write JavaScript within the insert query:
 
 * To get the value filled by the user in **ProductNameInput**, you accessed its `text` property.
-* To get the value of the selected option of **CategoryDropdown**, you called the method `selectedOptionValue` on it.
+* To get the value of the selected option of **CategoryDropdown**, you called the property `selectedOptionValue` on it.
 
-What you did here is that you accessed the widgets' state in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in the **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's state/data by calling the appropriate method on their respective names.
+What you did here is that you accessed the widgets' property in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in the **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's property/data by referencing the appropriate property on their respective names.
 
 ## Triggering action on UI events
 
@@ -61,6 +61,14 @@ Click on the **JS** icon next to **onClick**. You’ll see that the long hierarc
 ```text
 {{AddProductQuery.run(() => showAlert('yay'), () => showAlert('nay'))}}
 ```
+
+What you see above is the **`run()`** method defined by Appsmith. You can call the method on any DB Query, or an API. This method has the following signature:
+
+```text
+run(onSuccess: function, onError: function, params: object): void
+```
+
+
 
 Clicking on **JS** enables two things:
 
@@ -101,5 +109,5 @@ But what's happening here? By selecting the [Navigate To](https://docs.appsmith.
 
 ## What's next?
 
-When you’re comfortable with the basics of building a form, accessing widget's state in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to take and process user input.
+When you’re comfortable with the basics of building a form, accessing widget's p roperty in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to take and process user input.
 

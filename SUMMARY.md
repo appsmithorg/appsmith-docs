@@ -21,7 +21,7 @@
     * [Creating your first form](tutorial-1/part-2-using-forms/creating-a-form.md)
     * [Submitting the form](tutorial-1/part-2-using-forms/submitting-the-form.md)
   * [Part 3: Creating interactive views](tutorial-1/part-3-creating-interactive-views/README.md)
-    * [Accessing states between widgets](tutorial-1/part-3-creating-interactive-views/adding-edit-button.md)
+    * [Accessing properties between widgets](tutorial-1/part-3-creating-interactive-views/adding-edit-button.md)
     * [Writing your first API](tutorial-1/part-3-creating-interactive-views/writing-your-first-api.md)
     * [Configuring multiple actions on UI events](tutorial-1/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
 * [FAQs](faq.md)

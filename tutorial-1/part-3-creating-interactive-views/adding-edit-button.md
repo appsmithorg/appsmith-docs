@@ -1,4 +1,4 @@
-# Accessing states between widgets
+# Accessing properties between widgets
 
 You've built a page to view all products, and another page to add a new product. We now move on to the third functionality of enabling a user to edit a product. Let's add an **Edit** button in each row of the table. On clicking the **Edit** button, a form modal will open which will allow users to edit the product in the corresponding row.
 
@@ -37,9 +37,9 @@ After doing this, **EditProductModal** will look like below:
 
 Notice, that like **AddProductForm**, all the form-fields in **EditProductModal** are empty. However, to edit a product, you'll want them to be pre-filled with the values of the product that you want to update. This means that:
 
-* **ProductNameInput** should show the value of column **productName** of the product in the selected row
-* **MrpInput** should show the value of column **mrp** of the product in the selected row
-* **CategoryDropdown** should show the selected option as the value of column **category** of the product in the selected row
+* **ProductNameInput** should show the value of column **productName** of the selected row
+* **MrpInput** should show the value of column **mrp** of the selected row
+* **CategoryDropdown** should show the value of column **category** of the selected row
 
 Let's configure all the above.
 
@@ -49,28 +49,28 @@ To set a default value of **ProductNameInput**:
 2. Set **Default** **Text** to `{{Products_Table.selectedRow.productName}}`
 3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
 
-Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` **has all the column values of the selected row. By calling `productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
+Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
 
-What you did above was that you accessed the table widget's state - selected row's column values, in form widget. Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the table widget exposes the `selectedRow` method. For a widget, check the methods to access its state under the **Internal Properties** section in its **Widgets Reference** guide.
+What you did above was that you accessed the [table widget's](https://docs.appsmith.com/widget-reference/table) property [selectedRow's](https://docs.appsmith.com/widget-reference/table#selected-row) column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the property of one widget in another widget using a set of properties exposed by every widget. For example, here you used the [table widget's ](https://docs.appsmith.com/widget-reference/table) [`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row)property. For a widget, check its exposed properties under the **Internal Properties** section in its **Widgets Reference** guide.
 
-Note that since the scope of a widget is limited to its parent page, a widget shares its state only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
+Note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
 {% hint style="info" %}
-**Accessing state/data across pages:**
+**Accessing data across pages:**
 
-To access a widget's state, or an APIs/DB Query's results on another page, there are two ways:
+To access a widget's properties or an APIs/DB Query's results on another page, there are two ways:
 
 1. Store the data in your browser cache using the [storeValue function](https://docs.appsmith.com/function-reference/store-value), so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo function](https://docs.appsmith.com/function-reference/navigateto).
 {% endhint %}
 
-Let's now set a default value of **MrpInput**:
+Let's now set a default value for **MrpInput**:
 
 1. Open properties of **MrpInput**
 2. Set **Default** **Text** to `{{Products_Table.selectedRow.mrp}}`
 3. Verify that the **Evaluated Value** of the property is as per the value in the selected row
 
-To set a default value of CategoryDropdown:
+To set a default value for CategoryDropdown:
 
 1. Open **CategoryDropdown**'s properties
 2. Set **Default** **Option** to `{{Products_Table.selectedRow.category}}`

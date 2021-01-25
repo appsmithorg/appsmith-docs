@@ -16,12 +16,12 @@ The API to update a product is ready. In this section, you'll bind the **Confirm
 Let’s see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Note that you wanted to reload **Products\_Table** with the latest data, and the way you did it was by rerunning **ProductQuery**. Why? Because, there's no way to explicitly reload a widget in Appsmith, i.e. `Products_Table.run()` is not supported. Instead, the way to achieve this is to leverage [Appsmith's reactive programming paradigm](../part-1-creating-a-simple-view/creating-your-first-table.md#reactive-programming) by calling `ProductsQuery.run()`.
+* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the [reactive programming paradigm](../part-1-creating-a-simple-view/creating-your-first-table.md#reactive-programming) of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table**  by calling `ProductsQuery.run()` .
 * You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
 
 Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits.
 
-## Binding multiple actions to an event
+## Triggering multiple actions on a UI event
 
 To bind multiple actions to a button event, let's write some JavaScript:
 
@@ -40,14 +40,23 @@ To bind multiple actions to a button event, let's write some JavaScript:
 }}
 ```
 
-This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action onClick, here your JavaScript configures the onClick event to trigger two actions - execute the **ProductQuery**, and close the modal. Note that since these actions run asynchronously, they all run in parallel. For example, in this case, **ProductsQuery** and **closeModal\(\)** are executed in parallel.
+This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action **onSuccess** of **onClick**, here you're configuring two actions. The first argument to the `run()` method is a JavaScript anonymous function that triggers two actions **onSuccess** of **onClick** - 
 
-You can trigger as many actions **onSuccess** and **onError** as required. Try to edit a product again, and verify that the form-submit works as expected.
+* Execute the **ProductQuery** 
+* Close the modal
+
+Note that since these actions run asynchronously, they all run in parallel. You can trigger as many actions **onSuccess** and **onError** as required by wrapping them within an anonymous JavaScript function. 
+
+Try to edit a product again, and verify that the form-submit works as expected.
 
 {% hint style="info" %}
 **GUI vs JavaScript: What to use when?**
 
-By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. For example, configuring multiple actions to be run onSuccess is possible only via JS.
+By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to customize more by writing JavaScript, than by using the GUI. 
+
+For example, configuring multiple actions to be run **onSuccess** is supported only via JavaScript because it's easier to write code for it than to configure it using the GUI.
+
+Similarly, to configure conditional behavior, writing ternary conditions in JavaScript is easier, and more extendible; and hence GUI doesn't provide for it.
 
 We recommend that you spend some time fiddling with JavaScript on Appsmith.
 {% endhint %}
@@ -65,5 +74,9 @@ You can also make the application public, in which case, anyone with the URL to 
 
 **What's next?**
 
-The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. As you need to learn new tricks, come back to the documentation.
+The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. The following resources will come in handy as you need to learn new tricks:
+
+* [Core Concepts](https://docs.appsmith.com/core-concepts/)
+* [Widget Reference](https://docs.appsmith.com/widget-reference)
+* [Function Reference](https://docs.appsmith.com/function-reference/)
 
