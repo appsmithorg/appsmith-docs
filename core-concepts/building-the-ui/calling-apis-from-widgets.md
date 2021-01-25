@@ -4,7 +4,7 @@ description: >-
   user interacts with a widget
 ---
 
-# Triggering actions & workflows
+# Triggering Actions & Workflows
 
 ## Configuring the trigger
 

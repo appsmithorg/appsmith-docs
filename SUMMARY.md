@@ -33,7 +33,7 @@
   * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
   * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
   * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
-  * [Triggering actions & workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
+  * [Triggering Actions & Workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
   * [Whitelisting Appsmith to access Databases](core-concepts/connecting-to-databases/aws-whitelist.md)
   * [Querying a Database](core-concepts/connecting-to-databases/querying-a-database.md)
