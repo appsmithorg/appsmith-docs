@@ -37,6 +37,9 @@ After doing this, **EditProductModal** will look like below:
 
 Notice, that like **AddProductForm**, all the form-fields in **EditProductModal** are empty. However, to edit a product, you'll want them to be pre-filled with the values of the product that you want to update. This means that:
 
+* **ProductNameInput** should show the **productName** value of the selected row
+* **MrpInput** should show **mrp** value of the selected row
+* **CategoryDropdown** should show **category** value of the selected row
 * **ProductNameInput** should show the value of column **productName** of the selected row
 * **MrpInput** should show the value of column **mrp** of the selected row
 * **CategoryDropdown** should show the value of column **category** of the selected row
@@ -50,6 +53,10 @@ To set a default value of **ProductNameInput**:
 3. Verify that the **Evaluated** **Value** of the property is as per the value in the selected row
 
 Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
+
+Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
+
+What you did above was that you accessed the [table widget](https://docs.appsmith.com/widget-reference/table)'s property - selected row's column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the [table widget ](https://docs.appsmith.com/widget-reference/table)exposes the [`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row) property.
 
 What you did above was that you accessed the [table widget's](https://docs.appsmith.com/widget-reference/table) property [selectedRow's](https://docs.appsmith.com/widget-reference/table#selected-row) column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the property of one widget in another widget using a set of properties exposed by every widget. For example, here you used the [table widget's ](https://docs.appsmith.com/widget-reference/table) [`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row)property. For a widget, check its exposed properties under the **Internal Properties** section in its **Widgets Reference** guide.
 

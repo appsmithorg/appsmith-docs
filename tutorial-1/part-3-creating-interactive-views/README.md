@@ -4,5 +4,5 @@ This tutorial begins where [Tutorial 2](https://docs.google.com/document/d/1MF52
 
 1. Access one widget's state from another
 2. Set up an API to update a product
-3. Bind multiple actions on a single event
+3. Execute multiple actions on a single event
 
