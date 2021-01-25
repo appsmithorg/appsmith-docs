@@ -1,7 +1,7 @@
 ---
 description: >-
   The table is used to display rows of data. You can display data from an API in
-  a table, trigger an action when a user selects a row and even work with large
+  a table, trigger an action when a user selects a row, and even work with large
   paginated data sets
 ---
 
@@ -30,7 +30,7 @@ If the API / Query response is not an array, you can transform the response or a
 
 Large datasets are paginated by default on the client in a table to ensure only limited information is displayed on the UI. To display large datasets that are paginated on the server we can
 
-* Enable the server side pagination property in the table
+* Enable the server-side pagination property in the table
 * Call the API / Query on page change in the table
 * Bind the pageNo property in the API / Query **`{{ Table1.pageNo }}`**
 
@@ -40,7 +40,7 @@ Table1 in the above example is the name of the table which is editable in the pr
 
 ## Selected Row
 
-Tables are useful to view large lists of data. To drill down into the data of a single row, the selected row property of a table can be used. Simply create UI that represents a row of a table and bind each widget to the selected row of the table. This code snipper illustrates binding an image column of the selected row to an Image widget.
+Tables are useful to view large lists of data. To drill down into the data of a single row, the selected row property of a table can be used. Simply create UI that represents a row of a table and bind each widget to the selected row of the table. This code snippet illustrates binding an image column of the selected row to an Image widget.
 
 ```text
 {{ Table1.selectedRow.imageUrl }}

@@ -24,7 +24,7 @@ A Dropdown's **options** can be populated from a data source like an API / Query
 
 ## Filtering Data
 
-A Dropdown can be used to filter a dataset based on users input. The selected option value can be passed to an API using**`{{ dropdownName.selectedOptionValue }}`** for Single Select Dropdowns and **`{{ dropdownName.selectedOptionValueArr }}`** for Multi-Select Dropdowns.
+A Dropdown can be used to filter a dataset based on the user's input. The selected option value can be passed to an API using**`{{ dropdownName.selectedOptionValue }}`** for Single Select Dropdowns and **`{{ dropdownName.selectedOptionValueArr }}`** for Multi-Select Dropdowns.
 
 ## **Form Submission**
 

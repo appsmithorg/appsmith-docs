@@ -7,9 +7,11 @@ description: >-
 
 # Form
 
+![](../.gitbook/assets/form.gif)
+
 ## Form Widgets
 
-Form widgets are a class of widgets that are typically used to capture user information. These widgets may be used outside a form such as form filtering data but their primary use is to capture user input. These are the form widgets Appsmith supports
+Form widgets are a class of widgets that are typically used to capture user information. These widgets may be used outside a form such as for filtering data but their primary use is to capture user input. These are the form widgets Appsmith supports
 
 * [**Input**](input.md)
 * [**Dropdown**](dropdown.md)
@@ -50,6 +52,4 @@ The form button is provided by default to every form. It is used for form submis
 | Action | Description |
 | :--- | :--- |
 | **onClick** | Sets the action to be run when the user clicks the form button. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
-
-![](../.gitbook/assets/Form.gif)
 
