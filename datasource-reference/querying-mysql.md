@@ -8,11 +8,11 @@ The following document assumes that you understand the [basics of connecting to 
 
 Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
-## Database connection settings
+## Connection Settings
 
 Appsmith needs the following parameters for connecting to a MySQL database:
 
-{% hint style="info" %}
+{% hint style="success" %}
 All required fields are suffixed with an asterisk \(\*\).
 {% endhint %}
 
