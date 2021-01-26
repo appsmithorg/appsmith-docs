@@ -1,6 +1,6 @@
 ---
 description: >-
-  Appsmith is an open source javascript based development platform to build
+  Appsmith is an open-source javascript based development platform to build
   internal tools
 ---
 
