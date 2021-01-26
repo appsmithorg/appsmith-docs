@@ -7,7 +7,7 @@ description: Appsmith is open source and very easy to deploy on your own machine
 You can follow one of our guides to deploy appsmith via the technology you prefer
 
 * [Docker Guide](docker/) **\(Recommended\)**  
-* [AWS AMI Guide](https://github.com/appsmithorg/appsmith-docs/tree/59aba8f49d764fa83b0af607119f5fce7d129575/setting-up-appsmith/setting-up-appsmith/aws-ami.md)
+* [AWS AMI Guide](aws-ami.md)
 * [Heroku Guide](heroku.md)
 
 ## Custom Domains
