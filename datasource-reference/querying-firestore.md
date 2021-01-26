@@ -4,9 +4,7 @@
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
-The Firestore plugin can connect to Firestore and execute the set of officially supported methods of querying. This document describes how to connect to a Firestore instance and query it.
-
-## Configuring a Firestore Connection
+## Connection Settings
 
 The Firestore plugin requires three pieces of information to connect to Firestore.
 
