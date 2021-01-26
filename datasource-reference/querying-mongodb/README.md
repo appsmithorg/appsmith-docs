@@ -58,6 +58,8 @@ Appsmith provides template queries to help with the syntax
 * [Update Query](mongo-syntax.md#update-query)
 * [Delete Query](mongo-syntax.md#delete-query)
 
+![](../../.gitbook/assets/mongo.gif)
+
 ## Taking Inputs from Widgets
 
 Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
@@ -75,8 +77,6 @@ You may need to wrap your string mustache bindings in quotes to make your query 
   "limit": 10
 }
 ```
-
-![Click to expand](../../.gitbook/assets/mongo-query-binding.gif)
 
 {% page-ref page="../../core-concepts/connecting-to-databases/querying-a-database.md" %}
 
