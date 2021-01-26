@@ -14,6 +14,10 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
+{% hint style="info" %}
+Appsmith does not officially support Windows \(or WSL\). Please try out one of our [pre-built images](../) if your production operating system is not on the list above.
+{% endhint %}
+
 1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
@@ -60,7 +64,7 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 {% hint style="warning" %}
 ### Mongo Container crashing on Mac / Windows
 
-\(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory-mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
+\(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
 
 The fix is to keep the /data/db mounted directory out of mounted volumes \(like downloads, user etc.\) or to create a volume with docker volume create.
 
