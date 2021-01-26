@@ -52,9 +52,9 @@
 * [Postgres](datasource-reference/querying-postgres.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
-* [Redshift](datasource-reference/querying-redshift.md)
-* [MySQL](datasource-reference/querying-mysql.md)
 * [Firestore](datasource-reference/querying-firestore.md)
+* [MySQL](datasource-reference/querying-mysql.md)
+* [Redshift](datasource-reference/querying-redshift.md)
 
 ## Widget Reference
 

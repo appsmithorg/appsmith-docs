@@ -21,9 +21,9 @@ Appsmith provides template queries to help with the syntax
 
 ## Taking Inputs from Widgets
 
-Queries can take inputs from widgets using the mustache syntax inside the query **`{{ searchInput.text }}`** where **searchInput** is the name of the widget and **text** is the property of the widget.
+Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 You may need to wrap your string mustache bindings in quotes to make your query a valid JSON
 {% endhint %}
 

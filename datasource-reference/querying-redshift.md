@@ -10,10 +10,10 @@ Redshift databases can be queried using the standard [SQL syntax](https://docs.a
 
 ## Taking Inputs from Widgets
 
-Queries can take inputs from widgets using the mustache syntax inside the query **`{{ searchInput.text }}`** where **searchInput** is the name of the widget and **text** is the property of the widget.
+Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
 
 {% hint style="warning" %}
-Don't forget to wrap your params with single quotes
+You may need to wrap your string mustache bindings in single quotes to pass string values to Redshift
 {% endhint %}
 
 ```sql
@@ -22,13 +22,5 @@ select * from users where username like '%{{Text1.text}}%'
 
 ![Click to expand](../.gitbook/assets/redshift_query_widget_input.gif)
 
-## Displaying Query Data
-
-Query data can be displayed in a table or chart using the mustache syntax **`{{ queryName.data }}` .** You can read more about displaying query data below
-
-{% hint style="info" %}
-The widgets are automatically refreshed when the data is changed
-{% endhint %}
-
-{% page-ref page="../core-concepts/building-the-ui/displaying-api-data.md" %}
+{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
 
