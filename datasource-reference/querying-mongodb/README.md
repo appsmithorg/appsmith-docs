@@ -40,8 +40,6 @@ You need to fill in the following parameters:
 
 * **Authentication Mechanism:** Choose the SSL method of authentication or select No SSL if none is required. 
 * **CA Certificate:** Upload your CA certificate here.
-* **PEM Certificate:** Upload your PEM certificate here.
-* **PEM Passphrase:** Fill in your PEM passphrase here
 
 ## Querying Mongo
 
