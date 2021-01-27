@@ -92,10 +92,11 @@ docker-compose pull && docker-compose rm -fsv appsmith-internal-server nginx && 
 
 ## Disable Signup
 
-To disable users from signing up on your self hosted instance, set the below env variable in your docker.env file
+To disable users from signing up on your self hosted instance, set the below env variables in your docker.env file
 
 ```text
 APPSMITH_SIGNUP_DISABLED=true
+APPSMITH_ADMIN_EMAILS=YOUR_ADMIN_EMAIL
 ```
 
 Restart docker and Nginx using the following command
@@ -104,10 +105,10 @@ Restart docker and Nginx using the following command
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
-This will disable allowing users to signup on your appsmith instance. Users can only signup if they are invited by an organization administrator. 
+This will disable allowing users other than those specified in the APPSMITH\_ADMIN\_EMAILS field from signing up on your appsmith instance. Other users can only signup once they are invited by an organization administrator.
 
 {% hint style="success" %}
-The signup page will continue to show up but trying to signup will throw an error.
+The signup page will continue to show up but will throw an error when a user tries to sign up
 {% endhint %}
 
 ## Enabling Services for Self Hosting
