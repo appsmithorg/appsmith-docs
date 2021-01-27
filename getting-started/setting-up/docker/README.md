@@ -82,7 +82,7 @@ The fix is to keep the /data/db mounted directory out of mounted volumes \(like 
 
 ## Updating to the latest release
 
-Appsmith Installations can be updated by running the following command in the installation directory
+Appsmith auto-updates using Watchtower so you do not need to manually update your appsmith installation. In the odd event that you do, you can run the following command in the installation directory.
 
 ```text
 #!/bin/sh

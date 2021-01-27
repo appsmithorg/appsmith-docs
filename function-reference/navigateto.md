@@ -21,7 +21,7 @@ navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") 
 | :--- | :--- |
 | **pageNameOrUrl** | Page name or URL to which we would like to be transported. PageName is case sensitive. |
 | **params** \(optional\) | Query parameters passed via the URL. Used to share information with destination page. |
-| **target** \(optional\) | Option to configure where to open the url. Default: "SAME_WINDOW" |
+| **target** \(optional\) | Option to configure where to open the url. Default: "SAME\_WINDOW" |
 
 ![Click to expand](../.gitbook/assets/navigateTo.gif)
 
