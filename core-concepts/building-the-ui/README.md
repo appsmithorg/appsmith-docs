@@ -1,7 +1,7 @@
 ---
 description: >-
   Widgets are the UI building blocks of Appsmith. Widgets empower you to
-  visualise, capture and organise data with simple configuration and zero
+  visualize, capture and organize data with simple configuration and zero
   HTML/CSS.
 ---
 
@@ -13,7 +13,7 @@ Appsmith has a collection of widgets that can be used to build the UI. Widgets c
 
 ![](../../.gitbook/assets/adding-ui.gif)
 
-### Widgets List
+## Widgets List
 
 * [Button](../../widget-reference/button/)
 * [Chart](../../widget-reference/chart.md)
@@ -43,7 +43,7 @@ Widget names are important while adding logic, so name your widgets well!
 
 ## Editing widget properties
 
-Widget properties can be edited via the property pane which is opened using top-right icon \(Edit Widget Properties\). Widget properties can affect the widget data, styling and actions.
+Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Widget properties can affect the widget data, styling, and actions.
 
 ![](../../.gitbook/assets/input-property-pane.png)
 
