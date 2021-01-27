@@ -104,7 +104,11 @@ Restart docker and Nginx using the following command
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
-This will disable allowing users to signup on your appsmith instance. Users can only signup if they are invited by an organization administrator.
+This will disable allowing users to signup on your appsmith instance. Users can only signup if they are invited by an organization administrator. 
+
+{% hint style="success" %}
+The signup page will continue to show up but trying to signup will throw an error.
+{% endhint %}
 
 ## Enabling Services for Self Hosting
 
