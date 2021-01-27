@@ -30,8 +30,8 @@
 ## Core Concepts
 
 * [Building The UI](core-concepts/building-the-ui/README.md)
-  * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
   * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
+  * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
   * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
   * [Triggering Actions & Workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)

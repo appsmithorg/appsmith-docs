@@ -1,6 +1,6 @@
 # Querying a Database
 
-You can write queries to fetch from and update data of a database using the query editor interface provided by Appsmith for each database type. This article assumes you have already [connected to your database](./).
+You can write queries to fetch and update data from a database using the query editor interface provided by Appsmith for each database type. This article assumes you have already [connected to your database](./).
 
 ## **Setting up a Query**
 
