@@ -29,11 +29,6 @@
 
 ## Core Concepts
 
-* [Building The UI](core-concepts/building-the-ui/README.md)
-  * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
-  * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
-  * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
-  * [Triggering Actions & Workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
 * [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
   * [Whitelisting Appsmith to access Databases](core-concepts/connecting-to-databases/aws-whitelist.md)
   * [Querying a Database](core-concepts/connecting-to-databases/querying-a-database.md)
@@ -41,6 +36,11 @@
 * [Connecting to APIs](core-concepts/apis/README.md)
   * [Taking Inputs from Widgets](core-concepts/apis/taking-inputs-from-widgets.md)
   * [Running APIs on Page Load](core-concepts/apis/running-apis-on-page-load.md)
+* [Building The UI](core-concepts/building-the-ui/README.md)
+  * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
+  * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
+  * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
+  * [Triggering Actions & Workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
 * [Connecting UI & Logic](core-concepts/connecting-ui-and-logic/README.md)
   * [Working with JS libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
   * [Internal Functions](core-concepts/connecting-ui-and-logic/internal-functions.md)

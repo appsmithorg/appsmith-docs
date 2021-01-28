@@ -51,13 +51,11 @@ Databases configured within one page of an app can be accessed by developers any
 
 ## General Notes
 
-Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection. This ensures that at run-time your queries are executed quickly.
-
-In the event of a server restart/update, all connections to your database server are closed. In this case, Appsmith opens a new connection when your application executes its first query. This connection is then maintained for future use. If the connection has been idle for a long time, your database server may close the connection. Again, in this case, Appsmith will open a new connection on the first query execution.
+Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection to ensure that at run-time your queries are executed quickly. In the case that an idle connection is closed by the database server, Appsmith creates a new connection while executing the next query.
 
 For certain plugins like PostgreSQL, and MySQL, Appsmith creates and maintains a connection pool because multiple queries cannot be executed against a single connection.
 
-#### Concurrent queries
+### Concurrent queries
 
 Appsmith limits maximum queries that can run concurrently on a database to be 5. If the application attempts to make more queries concurrently, you'll see an error saying `Connection not available`.
 
