@@ -59,7 +59,6 @@
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Redis](datasource-reference/querying-redis.md)
 * [MsSQL](datasource-reference/querying-mssql.md)
-* [
 
 ## Widget Reference
 
