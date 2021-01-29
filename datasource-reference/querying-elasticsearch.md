@@ -24,7 +24,7 @@ You need to fill in the following parameters:
 
 * **Username\*:** Fill username required for authenticating connection requests to your database.
 * **Password\*:** Fill password required for authenticating connection requests for the given username to the database.
-* **Auhorization Header:** In case the username and password is not set, you can use a fixed value for the authorization header instead.
+* **Auhorization Header:** In case the username and password is not set, you can use a fixed value for the authorization header instead. This field is only considered if the previous two fields are empty.
 
 ## Querying Elasticsearch
 

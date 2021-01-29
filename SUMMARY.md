@@ -52,9 +52,14 @@
 * [Postgres](datasource-reference/querying-postgres.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
-* [Firestore](datasource-reference/querying-firestore.md)
-* [MySQL](datasource-reference/querying-mysql.md)
 * [Redshift](datasource-reference/querying-redshift.md)
+* [MySQL](datasource-reference/querying-mysql.md)
+* [Firestore](datasource-reference/querying-firestore.md)
+* [ElasticSearch](datasource-reference/querying-elasticsearch.md)
+* [DynamoDB](datasource-reference/querying-dynamodb.md)
+* [Redis](datasource-reference/querying-redis.md)
+* [MsSQL](datasource-reference/querying-mssql.md)
+* [
 
 ## Widget Reference
 

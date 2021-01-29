@@ -13,10 +13,10 @@ description: >-
 * [Redshift](../../datasource-reference/querying-redshift.md)
 * [MySQL](../../datasource-reference/querying-mysql.md)
 * [Firestore](../../datasource-reference/querying-firestore.md)
-* ElasticSearch
-* DynamoDB
-* Redis
-* MS SQL
+* [ElasticSearch](../../datasource-reference/querying-elasticsearch.md)
+* [DynamoDB](../../datasource-reference/querying-dynamodb.md)
+* [Redis](../../datasource-reference/querying-redis.md)
+* [MS SQL](../../datasource-reference/querying-mssql.md)
 
 ## Security
 
