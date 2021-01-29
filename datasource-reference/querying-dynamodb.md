@@ -12,7 +12,7 @@ Appsmith needs the following parameters for connecting to a DynamoDB instance:
 All required fields are suffixed with an asterisk \(\*\).
 {% endhint %}
 
-### **Details**
+### **Connection**
 
 You need to fill in the following parameters:
 
