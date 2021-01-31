@@ -1,7 +1,7 @@
 ---
 description: >-
-  Appsmith is an open-source javascript based development platform to build
-  internal tools
+  Appsmith is an open-source javascript based development platform to build any internal application. Developers build admin panels, dashboards, workflows, or CRUD apps.
+  
 ---
 
 # Introduction
@@ -13,9 +13,9 @@ Today when we need an internal tool, our choices are limited to
 * Investing weeks building it from scratch and fighting with HTML/CSS
 * Getting started with an admin panel and invest even more time customizing it
 
-Appsmith bridges the gap between [getting started](getting-started/) super quickly and making customizations super easy! The best part?
+Appsmith bridges the gap between [getting started] super quickly and making customizations super easy! 
 
-### _No HTML / CSS!_
+
 
 ## How fast is it?
 
