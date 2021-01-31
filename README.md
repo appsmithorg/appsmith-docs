@@ -8,24 +8,23 @@ description: >-
 
 ## Why Appsmith?
 
-Today when we need an internal tool, our choices are limited to
+Today when we need an internal app, our choices are limited to:
 
-* Investing weeks building it from scratch and fighting with HTML/CSS
-* Getting started with an admin panel and invest even more time customizing it
+* Investing weeks or months to build something from scratch
+* Getting started with an admin panel framework and struggling to customize it when your needs change
 
-Appsmith bridges the gap between [getting started] super quickly and making customizations super easy! 
-
+We built Appsmith to help developers build internal apps quickly without dealing with repetitive work.
 
 
 ## How fast is it?
 
-Appsmith makes building internal tools as easy as
+With Appsmith you:
 
-* Drag and configure the UI \(No HTML / CSS!\)
+* Drag and configure the UI \(No dealing with HTML or CSS\)
 * Connect APIs / Databases
-* Write snippets of business logic
+* Write snippets of business logic in JS
 
-Check out our demo video to see how easy it is!
+Check out our video to see how it works:
 
 {% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
 
