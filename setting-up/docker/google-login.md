@@ -6,21 +6,21 @@ description: >-
 
 # Google OAuth
 
-![Click to expand](../../../.gitbook/assets/google-login.png)
+![Click to expand](../../.gitbook/assets/google-login.png)
 
 To enable Google Sign in, login to your [google cloud console](https://console.cloud.google.com/)
 
 **1. Navigate to the** [**OAuth consent section**](https://console.cloud.google.com/apis/credentials/consent) **under APIs & Services**
 
-![Click to expand](../../../.gitbook/assets/google-oauth-consent-1.png)
+![Click to expand](../../.gitbook/assets/google-oauth-consent-1.png)
 
 **2. Configure the consent screen with the domain on which you want to host Appsmith**
 
-![Click to expand](../../../.gitbook/assets/google-oauth-consent.png)
+![Click to expand](../../.gitbook/assets/google-oauth-consent.png)
 
 **3. Navigate to the** [**credentials section**](https://console.cloud.google.com/apis/credentials) **and create new OAuth Credentials**
 
-![Click to expand](../../../.gitbook/assets/google-oauth-creds.png)
+![Click to expand](../../.gitbook/assets/google-oauth-creds.png)
 
 **4. Configure the OAuth Credentials for a web application**
 
@@ -28,7 +28,7 @@ To enable Google Sign in, login to your [google cloud console](https://console.c
 
 **Redirect URIs:** Append **/login/oauth2/code/google** to your Javascript origins **`(ex: https://app.appsmith.com/login/oauth2/code/google)`**
 
-![Click to expand](../../../.gitbook/assets/google-oauth-creds-2.png)
+![Click to expand](../../.gitbook/assets/google-oauth-creds-2.png)
 
 **5. Update the docker.env file in your Appsmith deployment folder**
 

@@ -101,7 +101,7 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 
 Your **ProductListPage** now looks like:
 
-![ProductListPage: Note the &quot;Add new product&quot; button](../../../.gitbook/assets/image%20%283%29.png)
+![ProductListPage: Note the &quot;Add new product&quot; button](../../.gitbook/assets/image%20%283%29.png)
 
 Let's test this. Click on the "**Add New Product"** button on the ProductListPage. You'll see that the **AddProductForm** page opens up, ready for you to fill the form.
 

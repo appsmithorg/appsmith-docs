@@ -4,21 +4,21 @@ description: Configure your google maps API key to enable the maps widget on App
 
 # Google Maps
 
-![](../../../.gitbook/assets/screenshot-2020-07-17-at-5.02.29-pm.png)
+![](../../.gitbook/assets/screenshot-2020-07-17-at-5.02.29-pm.png)
 
 To enable the maps widget, login to your [google cloud console](https://console.cloud.google.com/)
 
 **1. Navigate to the** [**credentials section**](https://console.cloud.google.com/apis/credentials) **under APIs & Services**
 
-![Click to expand](../../../.gitbook/assets/maps-credentials.png)
+![Click to expand](../../.gitbook/assets/maps-credentials.png)
 
 **2. Create a new API Key Credential**
 
-![Click to expand](../../../.gitbook/assets/maps-api-key.png)
+![Click to expand](../../.gitbook/assets/maps-api-key.png)
 
 **3. Restrict the API Key**
 
-![click to expand](../../../.gitbook/assets/maps-api-restrict%20%281%29.png)
+![click to expand](../../.gitbook/assets/maps-api-restrict%20%281%29.png)
 
 **4. Enable the following APIs**
 
@@ -27,7 +27,7 @@ To enable the maps widget, login to your [google cloud console](https://console.
 * Places API
 * Geolocation API
 
-![Click to expand](../../../.gitbook/assets/maps-apis.png)
+![Click to expand](../../.gitbook/assets/maps-apis.png)
 
 **5. Update the docker.env file in your Appsmith deployment folder**
 

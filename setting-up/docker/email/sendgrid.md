@@ -8,23 +8,23 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 **1. Navigate to the** [**integration section**](https://app.sendgrid.com/guide/integrate)\*\*\*\*
 
-![click to expand](../../../../.gitbook/assets/sendgrid-welcome.png)
+![click to expand](../../../.gitbook/assets/sendgrid-welcome.png)
 
 **2. Select the SMTP Relay integration option**
 
-![click to expand](../../../../.gitbook/assets/sendgrid-smtp.png)
+![click to expand](../../../.gitbook/assets/sendgrid-smtp.png)
 
 **3. Create a new API key and copy all the fields**
 
-![](../../../../.gitbook/assets/sendgrid-apikey%20%281%29.png)
+![](../../../.gitbook/assets/sendgrid-apikey%20%281%29.png)
 
 **4. Navigate to Sendgrids** [**Senders section**](https://app.sendgrid.com/settings/sender_auth/senders)
 
-![Click to expand](../../../../.gitbook/assets/sendgrid-senders.png)
+![Click to expand](../../../.gitbook/assets/sendgrid-senders.png)
 
 **5. Create a new sender identity from which emails will be sent**
 
-![Click to expand](../../../../.gitbook/assets/sendgrid-create-sender.png)
+![Click to expand](../../../.gitbook/assets/sendgrid-create-sender.png)
 
 **6. Update the docker.env file in your Appsmith deployment folder**
 

@@ -6,21 +6,21 @@ description: >-
 
 # Github OAuth
 
-![](../../../.gitbook/assets/github-login.png)
+![](../../.gitbook/assets/github-login.png)
 
 To enable Github Sign in, login to your [Github Account](https://github.com)
 
 **1. Navigate to the** [**Organizations section**](https://github.com/settings/organizations) **of your profile and the settings of the organization under which you want to create an OAuth App**
 
-![Click to expand](../../../.gitbook/assets/github-orgs.png)
+![Click to expand](../../.gitbook/assets/github-orgs.png)
 
 **2. Navigate to the OAuth Apps section of the organization settings page**
 
-![Click to expand](../../../.gitbook/assets/github-oauth-apps.png)
+![Click to expand](../../.gitbook/assets/github-oauth-apps.png)
 
 **3. Create a new OAuth App**
 
-![Click to expand](../../../.gitbook/assets/github-reg-app.png)
+![Click to expand](../../.gitbook/assets/github-reg-app.png)
 
 **4. Configure the OAuth Credentials for a web application**
 
@@ -28,7 +28,7 @@ To enable Github Sign in, login to your [Github Account](https://github.com)
 
 **Authorization Callback URL:** Append **/login/oauth2/code/github** to the Homepage URL **`(ex: https://app.appsmith.com/login/oauth2/code/github)`**
 
-![Click to expand](../../../.gitbook/assets/github-app-config.png)
+![Click to expand](../../.gitbook/assets/github-app-config.png)
 
 **5. Update the docker.env file in your Appsmith deployment folder**
 

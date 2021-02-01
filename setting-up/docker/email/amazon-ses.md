@@ -8,23 +8,23 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 **1. Navigate to the SES section & SMTP setting page**
 
-![Click to expand](../../../../.gitbook/assets/aws-ses.png)
+![Click to expand](../../../.gitbook/assets/aws-ses.png)
 
 **2. Copy the SMTP configuration & Create new SMTP Credentials**
 
-![Click to expand](../../../../.gitbook/assets/aws-smtp-config.png)
+![Click to expand](../../../.gitbook/assets/aws-smtp-config.png)
 
 **3. Create an IAM user**
 
-![Click to expand](../../../../.gitbook/assets/aws-ses-iam.png)
+![Click to expand](../../../.gitbook/assets/aws-ses-iam.png)
 
 **4. Copy the generated username & password**
 
-![Click to expand](../../../../.gitbook/assets/aws-smtp-creds.png)
+![Click to expand](../../../.gitbook/assets/aws-smtp-creds.png)
 
 **5. Verify the email address via which Appsmith should send and receive emails**
 
-![](../../../../.gitbook/assets/aws-verify-email.png)
+![](../../../.gitbook/assets/aws-verify-email.png)
 
 **6. Update the docker.env file in your Appsmith deployment folder**
 
