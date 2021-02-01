@@ -25,10 +25,10 @@ New to Appsmith? You can quickly create an account on our cloud environment whic
 The documentation is organized into the following sections to help familiarise you with building an application
 
 * [The Tutorial](tutorial-1/) - For users who want to build their first application with our mock data
-* [Core Concepts](core-concepts/connecting-to-data-sources/) - For users who want to connect their own data source and build their own application
+* [Core Concepts](core-concepts/connecting-to-data-sources/) - For users who want to build an app with their own data
 * [How to Guides](how-to-guides/) - For users who are familiar with the basics and need help with a use case
 
-We also have the following references for power users who are looking for exact information on how a widget, data source, or framework utility works
+We also have the following references for users looking for exact information on how a widget, data source, or framework utility works
 
 * [Datasource Reference](core-concepts/connecting-to-data-sources/connecting-to-databases/#supported-databases)
 * [Framework Reference](core-concepts/connecting-ui-and-logic/internal-functions.md)
