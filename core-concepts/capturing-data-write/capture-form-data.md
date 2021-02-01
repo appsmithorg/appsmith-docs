@@ -37,5 +37,3 @@ The Property Pane UI supports a single onSuccess Callback but multiple callbacks
 
 The encoding type can be selected via the **Body** dropdown on the API editor. Selecting the value `application/x-www-form-urlencoded` will auto encoded the value sent in the body field.
 
-
-
