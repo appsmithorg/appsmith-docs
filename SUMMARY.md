@@ -24,6 +24,9 @@
       * [Accessing properties between widgets](getting-started/tutorial-1/part-3-creating-interactive-views/adding-edit-button.md)
       * [Writing your first API](getting-started/tutorial-1/part-3-creating-interactive-views/writing-your-first-api.md)
       * [Configuring multiple actions on UI events](getting-started/tutorial-1/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
+* [How To Guides](how-to-guides/README.md)
+  * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
+  * [Upload files to S3](how-to-guides/how-to-upload-to-s3.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 
@@ -90,9 +93,4 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
-
-## How To
-
-* [Upload files to S3](how-to/how-to-upload-to-s3.md)
-* [Share data across pages](how-to/sharing-data-across-pages.md)
 
