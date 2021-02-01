@@ -18,7 +18,7 @@ Don't want to read our documentation? Watch this 5-minute video on how to build 
 New to Appsmith? You can quickly create an account on our cloud environment which comes with mock data for you to play around with. Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide) If you want to connect your own data and are uncomfortable with our cloud version, you can deploy appsmith on your local machine or private server instance.
 
 * [Create an account on Appsmith Cloud](https://app.appsmith.com) **\(Recommended\)** 
-* [Deploy Appsmith on my machine](setting-up/) 
+* [Deploy Appsmith on my machine](setup/) 
 
 ## Getting Started
 

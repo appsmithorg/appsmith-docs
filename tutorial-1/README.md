@@ -12,7 +12,7 @@ Through this tutorial, we’ll walk you through the creation of a Grocery Catalo
 
 The tutorial is organized into three parts & we recommend you follow them in order. 
 
-You must have an account on either [Appsmith Cloud](https://docs.appsmith.com/quick-start#appsmith-cloud) or your own[ private instance](../setting-up/) before getting started.
+You must have an account on either [Appsmith Cloud](https://docs.appsmith.com/quick-start#appsmith-cloud) or your own[ private instance](../setup/) before getting started.
 
 {% page-ref page="part-1-creating-a-simple-view/" %}
 
