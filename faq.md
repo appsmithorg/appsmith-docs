@@ -24,13 +24,13 @@ We take all community feature requests very seriously and the best way to reques
 
 We provide support via our active discord community and GitHub issues. We're also happy to get on a call and help you build your apps! Read our [Getting Help Section](./#getting-help)
 
-## What can't I do on Appsmith?
-
-Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer-facing websites. It works great for tools & workflows internal to your team or organization but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we'd recommend you try [Wix](https://www.wix.com), [Squarespace](https://www.squarespace.com), or [Webflow](https://www.webflow.com).
-
 ## How is Appsmith different from other app builders?
 
 Appsmith is the first **open-source** visual framework for building internal tools. Appsmith makes building internal tool building easy, by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting. Appsmith is the first open-source visual framework for building internal tools. We make building internal tool building easy by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting
+
+## What can't I do on Appsmith?
+
+Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer-facing websites. It works great for tools & workflows internal to your team or organization but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we'd recommend you try [Wix](https://www.wix.com), [Squarespace](https://www.squarespace.com), or [Webflow](https://www.webflow.com).
 
 ## Does Appsmith support multi-user editing?
 
