@@ -29,8 +29,9 @@ Query form has four fields:
 Appsmith supports the following actions on any AWS S3 instance:
 1. List all files in a bucket.
 2. Create a new file.
-3. Read file.
-4. Delete file.
+3. Upload file.   
+4. Read file.
+5. Delete file.
 
 ### List all files in a bucket
 1. set the 'Action' field to 'List all files in a bucket'
@@ -38,14 +39,13 @@ Appsmith supports the following actions on any AWS S3 instance:
 ![Click to expand](../../.gitbook/assets/s3_list_query.png)
 
 ### Create a new file
-#### Provide file content by writing into the 'Content' field
 1. Set the 'Action' field to 'Create a new file'.
 2. Set the 'Bucket Name' field to the name of the bucket where you want to add the new file.
 3. Set the 'File Path' field to the path of the new file relative to the bucket.
 4. Set the 'Content' field to the content that you want to write into the file.
 ![Click to expand](../../.gitbook/assets/s3_create_query.png)
    
-#### Upload file
+### Upload file
 1. Set the 'Action' field to 'Create a new file'.
 2. Set the 'Bucket Name' field to the name of the bucket where you want to add the new file.
 3. Set the 'File Path' field to the path of the new file relative to the bucket.
