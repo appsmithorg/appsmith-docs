@@ -1,7 +1,8 @@
 ---
 description: >-
-  Appsmith is a JavaScript-based visual development platform to build and launch internal apps quickly. Use pre-built UI widgets, connect them to your APIs and databases to build complex workflows. 
-  
+  Appsmith is a JavaScript-based visual development platform to build and launch
+  internal apps quickly. Use pre-built UI widgets, connect them to your APIs and
+  databases to build complex workflows.
 ---
 
 # Introduction
@@ -14,7 +15,6 @@ Today when we need an internal app, our choices are limited to:
 * Getting started with an admin panel framework and struggling to customize it when your needs change
 
 We built Appsmith to help developers build internal apps quickly without dealing with repetitive work.
-
 
 ## How fast is it?
 

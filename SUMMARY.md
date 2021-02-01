@@ -29,22 +29,24 @@
 
 ## Core Concepts
 
-* [Connecting to Databases](core-concepts/connecting-to-databases/README.md)
-  * [Whitelisting Appsmith to access Databases](core-concepts/connecting-to-databases/aws-whitelist.md)
-  * [Querying a Database](core-concepts/connecting-to-databases/querying-a-database.md)
-  * [Query Settings](core-concepts/connecting-to-databases/query-settings.md)
-* [Connecting to APIs](core-concepts/apis/README.md)
-  * [Taking Inputs from Widgets](core-concepts/apis/taking-inputs-from-widgets.md)
-  * [Running APIs on Page Load](core-concepts/apis/running-apis-on-page-load.md)
-* [Building The UI](core-concepts/building-the-ui/README.md)
-  * [Talking to other Widgets](core-concepts/building-the-ui/talking-to-other-widgets.md)
-  * [Displaying API / Query Data](core-concepts/building-the-ui/displaying-api-data.md)
+* [Connecting to Data Sources](core-concepts/connecting-to-data-sources/README.md)
+  * [Connect to Databases](core-concepts/connecting-to-data-sources/connecting-to-databases/README.md)
+    * [Whitelist Appsmith](core-concepts/connecting-to-data-sources/connecting-to-databases/aws-whitelist.md)
+    * [Execute Queries](core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md)
+    * [Query Settings](core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings.md)
+  * [Connect to APIs](core-concepts/connecting-to-data-sources/connect-to-apis/README.md)
+    * [Execute APIs](core-concepts/connecting-to-data-sources/connect-to-apis/execute-apis.md)
+    * [API Settings](core-concepts/connecting-to-data-sources/connect-to-apis/api-settings.md)
+* [Displaying Data \(Read\)](core-concepts/displaying-data-read/README.md)
+  * [Display Data in Tables](core-concepts/displaying-data-read/display-data-in-charts.md)
+* [Capturing Data \(Write\)](core-concepts/capturing-data-write/README.md)
+  * [Capture Form Data](core-concepts/capturing-data-write/capture-form-data.md)
+* [Writing Code](core-concepts/connecting-ui-and-logic/README.md)
+  * [Creating Workflows](core-concepts/connecting-ui-and-logic/calling-apis-from-widgets.md)
+  * [Appsmith Framework](core-concepts/connecting-ui-and-logic/internal-functions.md)
+  * [External libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
+* [Building Dynamic UI](core-concepts/building-the-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
-  * [Triggering Actions & Workflows](core-concepts/building-the-ui/calling-apis-from-widgets.md)
-* [Connecting UI & Logic](core-concepts/connecting-ui-and-logic/README.md)
-  * [Working with JS libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
-  * [Internal Functions](core-concepts/connecting-ui-and-logic/internal-functions.md)
-  * [Sharing Data Across Pages](core-concepts/connecting-ui-and-logic/sharing-data-across-pages.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Database Reference <a id="datasource-reference"></a>
@@ -77,18 +79,20 @@
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
 
-## Function Reference
+## Framework Reference
 
-* [Run](function-reference/run.md)
-* [Show Modal](function-reference/show-modal.md)
-* [Close Modal](function-reference/close-modal.md)
-* [Download](function-reference/download.md)
-* [Show Alert](function-reference/show-alert.md)
-* [Navigate Page](function-reference/navigateto.md)
-* [Store Value](function-reference/store-value.md)
-* [Copy To Clipboard](function-reference/copytoclipboard.md)
+* [appsmith](framework-reference/appsmith.md)
+* [Action](framework-reference/run.md)
+* [Show Modal](framework-reference/show-modal.md)
+* [Close Modal](framework-reference/close-modal.md)
+* [Download](framework-reference/download.md)
+* [Show Alert](framework-reference/show-alert.md)
+* [Navigate To](framework-reference/navigateto.md)
+* [Store Value](framework-reference/store-value.md)
+* [Copy To Clipboard](framework-reference/copytoclipboard.md)
 
 ## How To
 
-* [How to upload to S3](how-to/how-to-upload-to-s3.md)
+* [Upload files to S3](how-to/how-to-upload-to-s3.md)
+* [Share data across pages](how-to/sharing-data-across-pages.md)
 

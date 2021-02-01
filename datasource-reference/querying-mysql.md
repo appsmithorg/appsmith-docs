@@ -1,7 +1,7 @@
 # MySQL
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## **Supported versions**
@@ -64,5 +64,5 @@ select * from users where id = '{{ Table1.selectedRow.id }}'
 
 
 
-{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
+{% page-ref page="../core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md" %}
 

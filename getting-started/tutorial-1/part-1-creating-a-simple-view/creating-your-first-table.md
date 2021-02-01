@@ -4,7 +4,7 @@ Now that your environment – an “app” – is set up, you’re ready to star
 
 Each application that you build in Appsmith, comprises of one or more pages. A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
 
-The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Rename the page to **ProductListPage** by double clicking on **Page1.**
+The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Rename the page to **ProductListPage** by double-clicking on **Page1.**
 
 ## Adding your first widget
 
