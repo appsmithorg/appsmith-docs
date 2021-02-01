@@ -58,23 +58,10 @@ Appsmith provides template queries to help with the syntax
 
 ![](../../.gitbook/assets/mongo.gif)
 
-## Taking Inputs from Widgets
+## Using Queries in applications
 
-Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
+Once you have successfully run a Query, you can use it in your application to
 
-{% hint style="info" %}
-You may need to wrap your string mustache bindings in quotes to make your query a valid JSON
-{% endhint %}
-
-```javascript
-{
-  "find": "users",
-  "filter": {
-    "role": "{{statusDropdown.selectedOptionValue}}"
-  },
-  "limit": 10
-}
-```
-
-{% page-ref page="../../core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md" %}
+* [Display Data](../../core-concepts/displaying-data-read/)
+* [Capture Data](../../core-concepts/capturing-data-write/)
 
