@@ -13,7 +13,7 @@ Don't want to read our documentation? Watch this 5-minute video on how to build 
 
 {% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
 
-## Creating an account
+## Creating an Account
 
 New to Appsmith? You can quickly create an account on our cloud environment which comes with mock data for you to play around with. Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide) If you want to connect your own data and are uncomfortable with our cloud version, you can deploy appsmith on your local machine or private server instance.
 
@@ -34,7 +34,7 @@ We also have the following references for users looking for exact information on
 * [Framework Reference](core-concepts/connecting-ui-and-logic/internal-functions.md)
 * [Widget Reference](core-concepts/displaying-data-read/#widgets)
 
-## Getting help
+## Getting Help
 
 Having trouble? We’d like to help!
 
