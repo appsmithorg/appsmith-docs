@@ -58,6 +58,18 @@
 * [MySQL](datasource-reference/querying-mysql.md)
 * [Redshift](datasource-reference/querying-redshift.md)
 
+## Framework Reference
+
+* [appsmith](framework-reference/appsmith.md)
+* [Action](framework-reference/run.md)
+* [Show Modal](framework-reference/show-modal.md)
+* [Close Modal](framework-reference/close-modal.md)
+* [Download](framework-reference/download.md)
+* [Show Alert](framework-reference/show-alert.md)
+* [Navigate To](framework-reference/navigateto.md)
+* [Store Value](framework-reference/store-value.md)
+* [Copy To Clipboard](framework-reference/copytoclipboard.md)
+
 ## Widget Reference
 
 * [Button](widget-reference/button/README.md)
@@ -78,18 +90,6 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
-
-## Framework Reference
-
-* [appsmith](framework-reference/appsmith.md)
-* [Action](framework-reference/run.md)
-* [Show Modal](framework-reference/show-modal.md)
-* [Close Modal](framework-reference/close-modal.md)
-* [Download](framework-reference/download.md)
-* [Show Alert](framework-reference/show-alert.md)
-* [Navigate To](framework-reference/navigateto.md)
-* [Store Value](framework-reference/store-value.md)
-* [Copy To Clipboard](framework-reference/copytoclipboard.md)
 
 ## How To
 
