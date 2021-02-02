@@ -6,7 +6,7 @@ Appsmith. In order to do so, you need to
 
 ## Create an S3 datasource
 In order to connect to an AWS S3 instance, you need to fill out the following datasource configuration form:
-![Click to expand](../../.gitbook/assets/s3_create_datasource.png)
+![Click to expand](../.gitbook/assets/s3_create_datasource.png)
 
 There are three mandatory fields that are required to be filled: 
 1. AWS Access Key
@@ -36,14 +36,14 @@ Appsmith supports the following actions on any AWS S3 instance:
 ### List all files in a bucket
 1. set the 'Action' field to 'List all files in a bucket'
 2. set the 'Bucket Name' field to the name of the bucket whose files you want to list.
-![Click to expand](../../.gitbook/assets/s3_list_query.png)
+![Click to expand](../.gitbook/assets/s3_list_query.png)
 
 ### Create a new file
 1. Set the 'Action' field to 'Create a new file'.
 2. Set the 'Bucket Name' field to the name of the bucket where you want to add the new file.
 3. Set the 'File Path' field to the path of the new file relative to the bucket.
 4. Set the 'Content' field to the content that you want to write into the file.
-![Click to expand](../../.gitbook/assets/s3_create_query.png)
+![Click to expand](../.gitbook/assets/s3_create_query.png)
    
 ### Upload file
 1. Set the 'Action' field to 'Create a new file'.
@@ -55,19 +55,19 @@ Appsmith supports the following actions on any AWS S3 instance:
    uploaded via 
    the [Filepicker 
    widget](https://docs.appsmith.com/widget-reference/filepicker)
-![Click to expand](../../.gitbook/assets/s3_upload_query_using_filepicker.png) 
+![Click to expand](../.gitbook/assets/s3_upload_query_using_filepicker.png) 
    
 ### Read file
 1. Set the 'Action' field to 'Read file'.
 2. Set the 'Bucket Name' field to the name of the bucket where the file is located.
 3. Set the 'File Path' field to the path of the file relative to the bucket name.
-![Click to expand](../../.gitbook/assets/s3_read_query.png)
+![Click to expand](../.gitbook/assets/s3_read_query.png)
    
 ### Delete file
 1. Set the 'Action' field to 'Delete file'.
 2. Set the 'Bucket Name' field to the name of the bucket where the file is located.
 3. Set the 'File Path' field to the path of the file relative to the bucket name.
-![Click to expand](../../.gitbook/assets/s3_delete_query.png)
+![Click to expand](../.gitbook/assets/s3_delete_query.png)
 
 ## Taking Inputs from Widgets
 
