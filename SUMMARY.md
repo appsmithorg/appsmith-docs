@@ -53,11 +53,12 @@
 
 ## Datasource Reference
 
-* [Postgres](datasource-reference/querying-postgres.md)
+* [Amazon S3](datasource-reference/querying-amazon-s3.md)
+* [Firestore](datasource-reference/querying-firestore.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
-* [Firestore](datasource-reference/querying-firestore.md)
 * [MySQL](datasource-reference/querying-mysql.md)
+* [Postgres](datasource-reference/querying-postgres.md)
 * [Redshift](datasource-reference/querying-redshift.md)
 
 ## Framework Reference
