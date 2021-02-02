@@ -79,7 +79,7 @@ Remember to wrap your params with double quotes to produce valid JSON.
 
 ```javascript
 {
-    "File content": "{{ FilePicker1.files[0].raw }}"
+    "File content": "{{FilePicker1.files[0].raw}}"
 }
 ```
 
