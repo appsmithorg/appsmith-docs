@@ -1,21 +1,18 @@
 ---
-description: >-
-  Appsmith is a JavaScript-based visual development platform to build and launch
-  internal apps quickly. Use pre-built UI widgets, connect them to your APIs and
-  databases to build complex workflows.
 ---
 
 # Introduction
 
-Appsmith is a JavaScript-based visual development platform to build and launch internal tools quickly. 
+Appsmith is a JavaScript-based visual development platform to build and launch internal tools quickly. Use pre-built UI widgets, connect them to your APIs and
+  databases to build dynamic apps and complex workflows.
 
-Don't want to read our documentation? Watch this 5-minute video on how to build an internal tool!
+Watch this 5-minute video on how to use Appsmith.
 
 {% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
 
 ## Creating an Account
 
-New to Appsmith? You can quickly create an account on our cloud environment which comes with mock data for you to play around with. Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide) If you want to connect your own data and are uncomfortable with our cloud version, you can deploy appsmith on your local machine or private server instance.
+Try Appsmith by creating an account on our cloud environment which comes with mock data for you to play with. Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide) You can also deploy appsmith on your local machine or private server instance.
 
 * [Create an account on Appsmith Cloud](https://app.appsmith.com) **\(Recommended\)** 
 * [Deploy Appsmith on my machine](setup/) 
