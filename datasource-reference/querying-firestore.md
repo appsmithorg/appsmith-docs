@@ -1,7 +1,7 @@
 # Firestore
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -109,19 +109,10 @@ The "**Delete Document**" method deletes the document at the given path.
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
 {% endhint %}
 
-## Taking Inputs from Widgets
+## Using Queries in applications
 
-Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
+Once you have successfully run a Query, you can use it in your application to
 
-{% hint style="info" %}
-You need to wrap your mustache bindings in double quotes to ensure it is valid JSON
-{% endhint %}
-
-```javascript
-{
-    "name": "{{ nameInput.text }}"
-}
-```
-
-{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
 

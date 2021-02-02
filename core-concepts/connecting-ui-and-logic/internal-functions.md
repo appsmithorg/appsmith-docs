@@ -1,18 +1,23 @@
 ---
 description: >-
-  Appsmith provides framework level functions which can be used to perform
-  certain actions on the platform
+  The Appsmith framework provides utility functions and objects which can be
+  used to build applications quickly
 ---
 
-# Internal Functions
+# Appsmith Framework
+
+## Objects
+
+* [appsmith](../../framework-reference/appsmith.md)
+* [Action](../../framework-reference/run.md)
 
 ## Functions
 
-* [Show Modal](../../function-reference/show-modal.md)
-* [Close Modal](../../function-reference/close-modal.md)
-* [Download](../../function-reference/download.md)
-* [Show Alert](../../function-reference/show-alert.md)
-* [Navigate Page](../../function-reference/navigateto.md)
-* [Store Value](../../function-reference/store-value.md)
-* [Copy To Clipboard](../../function-reference/copytoclipboard.md)
+* [Show Modal](../../framework-reference/show-modal.md)
+* [Close Modal](../../framework-reference/close-modal.md)
+* [Download](../../framework-reference/download.md)
+* [Show Alert](../../framework-reference/show-alert.md)
+* [Navigate To](../../framework-reference/navigateto.md)
+* [Store Value](../../framework-reference/store-value.md)
+* [Copy To Clipboard](../../framework-reference/copytoclipboard.md)
 

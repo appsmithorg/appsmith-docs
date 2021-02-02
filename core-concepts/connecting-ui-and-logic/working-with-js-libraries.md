@@ -4,24 +4,23 @@ description: >-
   to work with data within `{{ }}` bindings.
 ---
 
-# Working with JS libraries
+# External libraries
 
-## Included JS libraries
-
-The following JS libraries are supported in the Appsmith platform.
+## JS Library Reference
 
 * [lodash](https://lodash.com/docs/4.17.15)
 * [moment](https://momentjs.com/docs/)
 * [btoa](https://github.com/dankogai/js-base64#readme)
 * [atob](https://github.com/dankogai/js-base64#readme)
+* [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
 
 ## Using JS libraries
 
-The utility functions provided by the included libraries can be used when transforming data.
+The external libraries can be used anywhere inside `{{ }}` just as javascript is used in the rest of the application. The signature of the JS libraries are exactly the same as mentioned in their documentation
 
-### Example: lodash
+### Example: Lodash
 
-An example of lodash's `_.map` utility, in use.
+An example of the Lodash `_.map` utility, in use.
 
 ```javascript
 {{
@@ -35,17 +34,10 @@ An example of lodash's `_.map` utility, in use.
 
 ### Example: moment
 
-An example of moment's `format` utility, in use in a Table's data property.
+An example of the moment.js `format` utility, in use in a query.
 
-```javascript
-{{
-  _.map(getTickets.data, (ticket) => ({
-      label: ticket.name,
-      description: ticket.desc,
-      displayDate: moment(ticket.created_date).format("L")  // user friendly display date
-    }))
-}}
-
-// getTickets is the name of the API / Query
+```sql
+insert into users (name, email, createdDate) values 
+('John', 'john@appsmith.com', '{{moment().format("YYYY-MM-DD")}}')
 ```
 

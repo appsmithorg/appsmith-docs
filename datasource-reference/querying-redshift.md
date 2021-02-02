@@ -1,7 +1,7 @@
 # Redshift
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -46,17 +46,10 @@ Redshift databases can be queried using the standard [SQL syntax](https://docs.a
 
 ![Click to expand](../.gitbook/assets/redshift_query_widget_input.gif)
 
-## Taking Inputs from Widgets
+## Using Queries in applications
 
-Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
+Once you have successfully run a Query, you can use it in your application to
 
-{% hint style="warning" %}
-You may need to wrap your string mustache bindings in single quotes to pass string values to Redshift
-{% endhint %}
-
-```sql
-select * from users where username like '%{{Text1.text}}%'
-```
-
-{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
 
