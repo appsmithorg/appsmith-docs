@@ -53,7 +53,7 @@
 
 ## Datasource Reference
 
-* [Amazon S3](datasource-reference/querying-amazons3.md)
+* [Amazon S3](datasource-reference/querying-amazon-s3.md)
 * [Firestore](datasource-reference/querying-firestore.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
