@@ -51,7 +51,7 @@ Appsmith supports the following actions on any AWS S3 instance:
 3. Set the 'File Path' field to the path of the new file relative to the bucket.
 4. Use the [Filepicker widget](https://docs.appsmith.com/widget-reference/filepicker) to upload a file into Appsmith's 
    context.
-5. Use [moustache expression](#taking-inputs-from-widgets) inside the 'Content' field to get the contents of the file 
+5. Use [mustache expression](#taking-inputs-from-widgets) inside the 'Content' field to get the contents of the file 
    uploaded via 
    the [Filepicker 
    widget](https://docs.appsmith.com/widget-reference/filepicker)
