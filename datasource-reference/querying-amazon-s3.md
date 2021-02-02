@@ -1,4 +1,4 @@
-# [Beta] Querying Amazon S3
+# Querying Amazon S3 [Coming Soon]
 The Amazon S3 plugin can connect to an Amazon S3 instance and execute a set of [actions](#supported-actions) 
 supported by Appsmith. In order to do so, you need to
 1. Create an Amazon S3 datasource to connect to your Amazon S3 instance.
