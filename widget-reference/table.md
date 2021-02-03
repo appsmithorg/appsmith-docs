@@ -40,7 +40,7 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | Action | Description |
 | :--- | :--- |
 | **Column Action** | Adds a new column to the table with a button against each row. The button can be configured to trigger an action on the corresponding data row. |
-| **onRowSelected** | Sets the action to be run when the user selects a row. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
-| **onPageChange** | Sets the action to be run when the table's page changes. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
-| **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
+| **onRowSelected** | Sets the action to be run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onPageChange** | Sets the action to be run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

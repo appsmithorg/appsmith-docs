@@ -62,5 +62,5 @@ Read more about submitting Input data to an API below
 
 | Action | Description |
 | :--- | :--- |
-| **onTextChanged** | Sets the action to be run when the user inputs text. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md). |
+| **onTextChanged** | Sets the action to be run when the user inputs text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 

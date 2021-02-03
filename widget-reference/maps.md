@@ -26,6 +26,6 @@ description: >-
 
 | Action | Description |
 | :--- | :--- |
-| **onMarkerClick** | Sets the action to be run when the user clicks a marker on the map. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md). |
-| **onMarkerCreated** | Sets the action to be run when the user creates a new marker on the map. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
+| **onMarkerClick** | Sets the action to be run when the user clicks a marker on the map. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
+| **onMarkerCreated** | Sets the action to be run when the user creates a new marker on the map. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

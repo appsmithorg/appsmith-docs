@@ -32,5 +32,5 @@ You can create separate UIs in each tab container and dynamically switch between
 
 | Action | Description |
 | :--- | :--- |
-| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
+| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

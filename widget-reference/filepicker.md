@@ -67,5 +67,5 @@ See our guides on
 
 | Action | Description |
 | :--- | :--- |
-| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md). You can immediately call an API to upload the base64 of the file to your cloud storage |
+| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). You can immediately call an API to upload the base64 of the file to your cloud storage |
 

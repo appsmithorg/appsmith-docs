@@ -30,7 +30,7 @@ Once the API / Query updates the data, the widgets on the screen need to be upda
 ![](../../.gitbook/assets/refetch-data.gif)
 
 {% hint style="warning" %}
-The Property Pane UI supports a single onSuccess Callback but multiple callbacks and conditions can be configured by clicking the JS button next to the property. Learn more about [Creating Workflows](../connecting-ui-and-logic/calling-apis-from-widgets.md)
+The Property Pane UI supports a single onSuccess Callback but multiple callbacks and conditions can be configured by clicking the JS button next to the property. Learn more about [Creating Workflows](../writing-code/workflows.md)
 {% endhint %}
 
 ## Posting URL Encoded Form Data

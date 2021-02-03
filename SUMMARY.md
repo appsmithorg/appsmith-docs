@@ -26,7 +26,8 @@
 * [How To Guides](how-to-guides/README.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
   * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
-* [Troubleshooting Guide](troubleshooting-guide.md)
+* [Debugging Errors](troubleshooting-guide/README.md)
+  * [Widget Errors](troubleshooting-guide/widget-errors.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 
@@ -44,12 +45,12 @@
   * [Display Data in Tables](core-concepts/displaying-data-read/display-data-in-charts.md)
 * [Capturing Data \(Write\)](core-concepts/capturing-data-write/README.md)
   * [Capture Form Data](core-concepts/capturing-data-write/capture-form-data.md)
-* [Writing Code](core-concepts/connecting-ui-and-logic/README.md)
-  * [Creating Workflows](core-concepts/connecting-ui-and-logic/calling-apis-from-widgets.md)
-  * [Appsmith Framework](core-concepts/connecting-ui-and-logic/internal-functions.md)
-  * [External libraries](core-concepts/connecting-ui-and-logic/working-with-js-libraries.md)
-* [Building Dynamic UI](core-concepts/building-the-ui/README.md)
-  * [Controlling Widget Visibility](core-concepts/building-the-ui/widget-visibility.md)
+* [Writing Code](core-concepts/writing-code/README.md)
+  * [Creating Workflows](core-concepts/writing-code/workflows.md)
+  * [Appsmith Framework](core-concepts/writing-code/appsmith-framework.md)
+  * [External libraries](core-concepts/writing-code/ext-libraries.md)
+* [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
+  * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Datasource Reference

@@ -24,7 +24,7 @@ The documentation is organized into the following sections to help familiarise y
 We also have the following references for users looking for exact information on how a widget, data source, or framework utility works
 
 * [Datasource Reference](core-concepts/connecting-to-data-sources/connecting-to-databases/#supported-databases)
-* [Framework Reference](core-concepts/connecting-ui-and-logic/internal-functions.md)
+* [Framework Reference](core-concepts/writing-code/appsmith-framework.md)
 * [Widget Reference](core-concepts/displaying-data-read/#widgets)
 
 ## Getting Help

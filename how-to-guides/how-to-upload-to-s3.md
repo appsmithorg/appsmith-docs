@@ -9,7 +9,7 @@ To upload a file
 1. Drag a [Filepicker widget](../widget-reference/filepicker.md) onto the canvas
 2. Create a new S3 query named upload\_file to be run onFileSelected
 
-
+![](../.gitbook/assets/file-upload%20%282%29.gif)
 
 1. Select the [Create File Action](../datasource-reference/querying-amazon-s3.md#create-file) option for the query.
 2. The action should be configured with the bucket name and relative path of the location you want to store the file. `ex. images/`any intermediate folders not existing will be automatically created.
