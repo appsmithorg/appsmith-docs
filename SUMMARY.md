@@ -42,7 +42,7 @@
     * [Execute APIs](core-concepts/connecting-to-data-sources/connect-to-apis/execute-apis.md)
     * [API Settings](core-concepts/connecting-to-data-sources/connect-to-apis/api-settings.md)
 * [Displaying Data \(Read\)](core-concepts/displaying-data-read/README.md)
-  * [Display Data in Tables](core-concepts/displaying-data-read/display-data-in-charts.md)
+  * [Display Data in Tables](core-concepts/displaying-data-read/display-data-tables.md)
 * [Capturing Data \(Write\)](core-concepts/capturing-data-write/README.md)
   * [Capture Form Data](core-concepts/capturing-data-write/capture-form-data.md)
 * [Writing Code](core-concepts/writing-code/README.md)
