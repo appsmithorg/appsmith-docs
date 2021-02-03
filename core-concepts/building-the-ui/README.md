@@ -1,54 +1,40 @@
 ---
 description: >-
   Widgets are the UI building blocks of Appsmith. Widgets empower you to
-  visualize, capture and organize data with simple configuration and zero
+  visualise, capture and organise data with simple configuration and zero
   HTML/CSS.
 ---
 
-# Building The UI
+# Building Dynamic UI
 
-## Adding UI Elements
+This document presumes you understand the basics of [Displaying Data](../displaying-data-read/) & [Capturing Data](../capturing-data-write/) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
-Appsmith has a collection of widgets that can be used to build the UI. Widgets can be dragged from the widget pane and be positioned on the canvas. They can also be resized to fit the data they need to display.
+## Dynamic Properties
 
-![](../../.gitbook/assets/adding-ui.gif)
+Every property of a widget can be described dynamically using javascript inside handlebars `{{}}` . The properties which do not have an input to write javascript can be made dynamic by clicking the JS button next to them. This transforms the property into an input field that can be used to write code.
 
-## Widgets List
+![](../../.gitbook/assets/convert-js.gif)
 
-* [Button](../../widget-reference/button/)
-* [Chart](../../widget-reference/chart.md)
-* [Checkbox](../../widget-reference/checkbox.md)
-* [Container](../../widget-reference/container.md)
-* [Datepicker](../../widget-reference/datepicker.md)
-* [Dropdown](../../widget-reference/dropdown.md)
-* [Filepicker](../../widget-reference/filepicker.md)
-* [Form](../../widget-reference/form.md)
-* [Image](../../widget-reference/image.md)
-* [Input](../../widget-reference/input.md)
-* [Maps](../../widget-reference/maps.md)
-* [Radio](../../widget-reference/radio.md)
-* [Rich Text Editor](../../widget-reference/rich-text-editor.md)
-* [Tabs](../../widget-reference/tabs.md)
-* [Table](../../widget-reference/table.md)
-* [Text](../../widget-reference/text.md)
-* [Video](../../widget-reference/video.md)
+## Updating Widget Data
 
-## Naming Widgets
+Let us take an example of a table displaying a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
 
-Widgets have default names generated for them. You can rename a widget by clicking on its name in the property pane.
+![Click to expand](../../.gitbook/assets/table-form.gif)
 
-{% hint style="success" %}
-Widget names are important while adding logic, so name your widgets well!
-{% endhint %}
+In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the Tables selectedRow property using its name inside the **`{{ }}`**
 
-## Editing widget properties
+```text
+Product Name Input
+{{ Table1.selectedRow.productName }} // Default Text property
 
-Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Widget properties can affect the widget data, styling, and actions.
+MRP Input
+{{ Table1.selectedRow.mrp }} // Default Text property
 
-![](../../.gitbook/assets/input-property-pane.png)
+Category Dropdown
+{{ Table1.selectedRow.category }} // Default Option property
 
-**Widget properties don't have to be static!** To make it dynamic, type**`{{ }}`**inside the widget property and bind it to an API/Query/Widget. You can learn more about working with widgets and APIs here
+// Table1 is the name of the widget
+```
 
-* [Displaying API / Query Data](displaying-api-data.md)
-* [Talking to other widgets](talking-to-other-widgets.md)
+![Click to expand](../../.gitbook/assets/form-table.gif)
 

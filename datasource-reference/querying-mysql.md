@@ -1,7 +1,7 @@
 # MySQL
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## **Supported versions**
@@ -50,19 +50,10 @@ MySQL databases can be queried using the standard [SQL syntax](https://dev.mysql
 
 ![](../.gitbook/assets/postgres.gif)
 
-## Taking Inputs from Widgets
+## Using Queries in applications
 
-Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
+Once you have successfully run a Query, you can use it in your application to
 
-{% hint style="info" %}
-You may need to wrap your string mustache bindings in single quotes to pass string values to MySQL
-{% endhint %}
-
-```javascript
-select * from users where id = '{{ Table1.selectedRow.id }}'
-```
-
-
-
-{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
 
