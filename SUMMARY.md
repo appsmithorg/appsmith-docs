@@ -26,6 +26,7 @@
 * [How To Guides](how-to-guides/README.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
   * [Upload files to S3](how-to-guides/how-to-upload-to-s3.md)
+* [Troubleshooting Guide](troubleshooting-guide.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 
