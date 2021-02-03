@@ -25,7 +25,7 @@
     * [Configuring multiple actions on UI events](tutorial-1/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
 * [How To Guides](how-to-guides/README.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
-  * [Upload files to S3](how-to-guides/how-to-upload-to-s3.md)
+  * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
 * [Troubleshooting Guide](troubleshooting-guide.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
@@ -54,7 +54,7 @@
 
 ## Datasource Reference
 
-* [Amazon S3](datasource-reference/querying-amazon-s3.md)
+* [Amazon S3 \(Coming Soon\)](datasource-reference/querying-amazon-s3.md)
 * [Firestore](datasource-reference/querying-firestore.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
