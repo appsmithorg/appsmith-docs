@@ -14,11 +14,9 @@ The Amazon S3 Datasource requires the following information to establish a conne
 
 1. Amazon Access Key ID
 2. Amazon Secret Key
-3. Region: This is the region of your AWS instance.
+3. Region: [AWS service region](https://docs.aws.amazon.com/general/latest/gr/rande.html).
 
-The Access Key & Secret can be fetched following the guide: 
-
-[Generate AWS access key and secret key](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+The Access Key & Secret can be fetched using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
 
 ## List Files
 
