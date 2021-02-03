@@ -21,8 +21,8 @@ All required fields are suffixed with an asterisk \(\*\).
 
 All the above three details can be fetched from your AWS account:
 
-1. [How to get AWS access key ?](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/)
-2. [How to get AWS secret key ?](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/#:~:text=Secret%20access%20keys%20are%E2%80%94as,key%20after%20its%20initial%20creation.)
+1. [How to get AWS access key?](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/)
+2. [How to get AWS secret key?](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/#:~:text=Secret%20access%20keys%20are%E2%80%94as,key%20after%20its%20initial%20creation.)
 3. [AWS DynamoDB regions/endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)
 
 ## Querying DynamoDB
@@ -37,7 +37,8 @@ The [ListTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/
 
 The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html) command returns metadata about the table that is queried using the JSON body. A sample request might have the following body:
 
-```{
+```
+{
     "TableName" : "four"
 }
 ```
@@ -46,7 +47,8 @@ The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReferen
 
 The [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html) command retrieves a single item on the basis of its primary key. This primary key can be configured in any of DynamoDB's supported [types](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html) for attribute values. The request would use this specified type in the JSON body. In the following example, the primary key is called "pkey" and is of type `String` or `S` and hase a value of `a`.
 
-```{
+```
+{
     "TableName" : "four",
     "Key": {
         "pkey" : {
@@ -60,7 +62,8 @@ The [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API
 
 The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html) command is used to insert or replace an entire item object. This request can be configured to return with the inserted/updated item using the `ReturnValues` parameter. Here, we use the PutItem command for a simple insert.
 
-```{
+```
+{
     "TableName" : "four",
     "Item" : {
         "pkey" : {
@@ -80,7 +83,8 @@ The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API
 
 The [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html) can be used for conditionally updating parts of an item. This request also supports `ReturnValues` as well as new inserts.
 
-```{
+```
+{
     "TableName" : "four",
     "Key" : {
         "pkey" : {
