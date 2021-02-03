@@ -16,7 +16,7 @@ To configure the API / Query we want to call when a button is clicked, we can se
 
 ## Handling Success / Error
 
-The action section also allows us to configure the action to take once an API  / Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API  / Query. We can decide to display a success or an error message by using the **Show Alert action**.
+The action section also allows us to configure the action to take once an API / Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API / Query. We can decide to display a success or an error message by using the **Show Alert action**.
 
 ![](../../.gitbook/assets/success.gif)
 

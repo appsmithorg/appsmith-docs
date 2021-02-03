@@ -25,7 +25,7 @@ A query and its results can be accessed from only the page that it is part of. T
 A query must have a unique name that acts as an identifier. It is used to access the query results. In that sense, a name is like a variable in a programming language. You can access the various properties of the query results object using the query’s name.
 
 ```text
-{{ query1.data }} 
+{{ query1.data }}
 ```
 
 Since the scope of a query is its parent page, all queries within a page must have unique names.
@@ -44,7 +44,7 @@ select * from users where gender = '{{genderDropdown.selectedOptionValue}}'
 
 ## **Triggering a query from the UI**
 
-When you build an application, you’ll need the app to trigger the query to run when the user performs an action. Appsmith allows you to trigger this on a widget’s events.  Read more about [triggering a query from the UI](../building-the-ui/calling-apis-from-widgets.md)
+When you build an application, you’ll need the app to trigger the query to run when the user performs an action. Appsmith allows you to trigger this on a widget’s events. Read more about [triggering a query from the UI](../building-the-ui/calling-apis-from-widgets.md)
 
 ## **Accessing query results**
 

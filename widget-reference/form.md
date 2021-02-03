@@ -32,7 +32,7 @@ User inputs in a form can be sent to an API by binding the individual widgets in
 
 Read more about submitting form data to an API below
 
-[Sending widget data in post body]()
+[Sending widget data in post body](../core-concepts/apis/taking-inputs-from-widgets.md#passing-inputs-to-the-post-body)
 
 ## Form Button
 

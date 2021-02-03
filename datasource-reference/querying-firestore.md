@@ -1,7 +1,7 @@
 # Firestore
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -53,7 +53,7 @@ Select the method "Get Documents in Collection" in the Method dropdown and set t
 
 **Limit Documents**: This field is a number that specifies the maximum number of documents fetched by the query. Setting this to a _very_ high number may impact the performance of your application, but the impact and how high will depend on the size of the documents being fetched.
 
-**Where Condition**: This is a set of three fields that allow you to apply a filter on the documents being fetched. The first field **Field Path** is the path of a nested field on which to apply the filter. Example values are `name` or `name.first` if the documents look like `{"name": {"first": "Sherlock", "last": "Holmes"}}`. 
+**Where Condition**: This is a set of three fields that allow you to apply a filter on the documents being fetched. The first field **Field Path** is the path of a nested field on which to apply the filter. Example values are `name` or `name.first` if the documents look like `{"name": {"first": "Sherlock", "last": "Holmes"}}`.
 
 The second field is the operator and the third is the value to apply the filter with. For array operators like in, the value can be set to a valid JSON-serialized array. For example, the field path can be `name`, the operator can be `in` and the value can be `["Sherlock", "Mycroft"]`. This will filter all documents with a `name` field set to either `"Sherlock"` or `"Mycroft"`.
 
@@ -103,16 +103,25 @@ Note that this method can only update a single document at once. Firestore doesn
 
 ## Deleting Document
 
-The "**Delete Document**" method deletes the document at the given path. 
+The "**Delete Document**" method deletes the document at the given path.
 
 {% hint style="warning" %}
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
 {% endhint %}
 
-## Using Queries in applications
+## Taking Inputs from Widgets
 
-Once you have successfully run a Query, you can use it in your application to
+Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
 
-* [Display Data](../core-concepts/displaying-data-read/)
-* [Capture Data](../core-concepts/capturing-data-write/)
+{% hint style="info" %}
+You need to wrap your mustache bindings in double quotes to ensure it is valid JSON
+{% endhint %}
+
+```javascript
+{
+    "name": "{{ nameInput.text }}"
+}
+```
+
+{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
 

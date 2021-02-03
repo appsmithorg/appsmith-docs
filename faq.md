@@ -6,7 +6,11 @@ description: You may have these questions and we would like to answer them.
 
 ## What kind of apps can be built on Appsmith?
 
-You can use Appsmith to build custom forms, dashboards & workflows. Tools like Customer Support Dashboards, Offer Management Consoles & Product Cataloging Systems are all prime use cases for Appsmith. You can also use it as a clean UI layer over manually triggered scripts, confusing deployment pipelines & basic database CRUD operations. There's very little preventing you from using Appsmith to bring any idea to life but we've optimized the product to make building internal tools a hassle-free experience.
+You can use Appsmith to build custom forms, dashboards & workflows. Tools like customer support dashboards, offer management consoles & product cataloging systems are all prime use cases for Appsmith. You can also use it as a clean UI layer over manually triggered scripts, confusing deployment pipelines & basic database CRUD operations. There's very little preventing you from using Appsmith to bring any idea to life but we've optimized the product to make building internal tools a hassle free experience.
+
+## How is Appsmith different from other app builders?
+
+Appsmith is the first **open-source** visual framework for building internal tools. Appsmith makes building internal tool building easy, by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting. Appsmith is the first open-source visual framework for building internal tools. We make building internal tool building easy by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting
 
 ## Can I write code in Appsmith?
 
@@ -16,17 +20,9 @@ Yes, absolutely. You can write JS code anywhere inside the product within `{{ }}
 
 Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open-source framework and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
 
-## What if there is a missing feature that I need?
+## What if I get stuck while building an app on Appsmith?
 
-We take all community feature requests very seriously and the best way to request for a missing feature is by raising a [Github Issue](https://github.com/appsmithorg/appsmith/issues/new/choose). Alternatively, we welcome external contributions and would be happy to help you unblock yourself with a feature on the platform. This is our [Contribution Guide](https://github.com/appsmithorg/appsmith/blob/release/contributions/CodeContributionsGuidelines.md).
-
-## How do I get help building an app?
-
-We provide support via our active discord community and GitHub issues. We're also happy to get on a call and help you build your apps! Read our [Getting Help Section](./#getting-help)
-
-## How is Appsmith different from other app builders?
-
-Appsmith is the first **open-source** visual framework for building internal tools. Appsmith makes building internal tool building easy, by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting. Appsmith is the first open-source visual framework for building internal tools. We make building internal tool building easy by giving you building blocks \(widgets, APIs, Queries\) which you can configure and connect together while the framework does most of the heavy lifting
+We sincerely hope this never happens to anyone but we acknowledge that there can be roadblocks. At this juncture, we're working on a way for you to be able to write custom react components and plugins to unblock you from any platform limitations. In the meantime, if the absence of any feature is limiting you, you can write to [support@appsmith.com](mailto:%20support@appsmith.com) or reach out to us on our [Discord server](https://discord.com/invite/rBTTVJp)
 
 ## What can't I do on Appsmith?
 

@@ -1,37 +1,30 @@
+---
+description: >-
+  Appsmith is a JavaScript-based visual development platform to build and launch
+  internal apps quickly. Use pre-built UI widgets, connect them to your APIs and
+  databases to build complex workflows.
+---
+
 # Introduction
 
-Appsmith is a JavaScript-based visual development platform to build and launch internal tools quickly. Use pre-built UI widgets, connect them to your APIs and databases to build dynamic apps and complex workflows.
+## Why Appsmith?
 
-Watch this 5-minute video on how to use Appsmith.
+Today when we need an internal app, our choices are limited to:
+
+* Investing weeks or months to build something from scratch
+* Getting started with an admin panel framework and struggling to customize it when your needs change
+
+We built Appsmith to help developers build internal apps quickly without dealing with repetitive work.
+
+## How fast is it?
+
+With Appsmith you:
+
+* Drag and configure the UI \(No dealing with HTML or CSS\)
+* Connect APIs / Databases
+* Write snippets of business logic in JS
+
+Check out our video to see how it works:
 
 {% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
-
-## Creating an Account
-
-Try Appsmith by creating an account on our cloud environment which comes with mock data for you to play with. Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide) You can also deploy appsmith on your local machine or private server instance.
-
-* [Create an account on Appsmith Cloud](https://app.appsmith.com) **\(Recommended\)** 
-* [Deploy Appsmith on my machine](setup/) 
-
-## Getting Started
-
-The documentation is organized into the following sections to help familiarise you with building an application
-
-* [The Tutorial](tutorial-1/) - For users who want to build their first application with our mock data
-* [Core Concepts](core-concepts/connecting-to-data-sources/) - For users who want to build an app with their own data
-* [How to Guides](how-to-guides/) - For users who are familiar with the basics and need help with a use case
-
-We also have the following references for users looking for exact information on how a widget, data source, or framework utility works
-
-* [Datasource Reference](core-concepts/connecting-to-data-sources/connecting-to-databases/#supported-databases)
-* [Framework Reference](core-concepts/connecting-ui-and-logic/internal-functions.md)
-* [Widget Reference](core-concepts/displaying-data-read/#widgets)
-
-## Getting Help
-
-Having trouble? We’d like to help!
-
-* Looking for specific information? Try the [Widget Reference](https://docs.appsmith.com/widget-reference) or [Framework Reference](https://docs.appsmith.com/function-reference)
-* Not found anything? Reach out to us on [Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions to the community.
-* Report bugs with Appsmith through [Github issues](https://github.com/appsmithorg/appsmith/issues).
 

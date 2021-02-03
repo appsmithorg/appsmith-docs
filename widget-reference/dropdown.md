@@ -6,8 +6,6 @@ description: >-
 
 # Dropdown
 
-
-
 ![Click to expand](../.gitbook/assets/dropdown%20%281%29.gif)
 
 ## Displaying Data
@@ -44,7 +42,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below
 
-[Sending widget data in post body]()
+[Sending widget data in post body](../core-concepts/apis/taking-inputs-from-widgets.md#passing-inputs-to-the-post-body)
 
 ## Properties
 

@@ -82,7 +82,7 @@ A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect
 }}
 
 // The above example iterates over a data set and returns data
-// in an Array<label, value> format 
+// in an Array<label, value> format
 ```
 
 {% hint style="info" %}

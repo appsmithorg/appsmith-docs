@@ -1,7 +1,7 @@
 # MongoDB
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -58,10 +58,23 @@ Appsmith provides template queries to help with the syntax
 
 ![](../../.gitbook/assets/mongo.gif)
 
-## Using Queries in applications
+## Taking Inputs from Widgets
 
-Once you have successfully run a Query, you can use it in your application to
+Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
 
-* [Display Data](../../core-concepts/displaying-data-read/)
-* [Capture Data](../../core-concepts/capturing-data-write/)
+{% hint style="info" %}
+You may need to wrap your string mustache bindings in quotes to make your query a valid JSON
+{% endhint %}
+
+```javascript
+{
+  "find": "users",
+  "filter": {
+    "role": "{{statusDropdown.selectedOptionValue}}"
+  },
+  "limit": 10
+}
+```
+
+{% page-ref page="../../core-concepts/connecting-to-databases/querying-a-database.md" %}
 

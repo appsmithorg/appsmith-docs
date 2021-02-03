@@ -12,15 +12,15 @@ description: >-
 
 | Internal Property | Description |
 | :--- | :--- |
-| **selectedMarker** | This contains the marker object selected by the user  |
-| **markers** | This contains the list of markers on the map  |
+| **selectedMarker** | This contains the marker object selected by the user |
+| **markers** | This contains the list of markers on the map |
 
 | Widget Property | Description |
 | :--- | :--- |
-| **Initial location** | This property sets the default location that the map should focus on.  |
+| **Initial location** | This property sets the default location that the map should focus on. |
 | **Enable search location** | This property enables a search bar on the map which users can use to navigate |
 | **Enable pick location** | This property allows users to select a location on the map and moves the map marker to this location. The selectedMarker field is populated with this marker. |
-| **Create new marker** | This property enables scrolling within the contents of each tab  |
+| **Create new marker** | This property enables scrolling within the contents of each tab |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Zoom Level** | Sets the default zoom level of the map |
 

@@ -6,7 +6,7 @@ description: The visibility of widgets can be controlled using javascript.
 
 The visibility property is usually a switch in the property pane of every widget. This property can be made dynamic by clicking the JS button next to the property which converts it to a text field. Inside the text, the value of the visibility can be conditionally set using javascript.
 
-## Control Visibility with other widgets
+## Visibility conditions with other Widget Properties
 
 In the example below the visibility of the table is a conditional value based on the selected value of the RadioGroup
 
@@ -14,13 +14,9 @@ In the example below the visibility of the table is a conditional value based on
 {{RadioGroup1.selectedOptionValue === "Visible"}}
 ```
 
-{% hint style="warning" %}
-The Visible property expects the expression to evaluate to a boolean value
-{% endhint %}
-
 ![](../../.gitbook/assets/radio-visible.gif)
 
-## Control Visibility with API/Query responses
+## Visibility conditions with API/Query responses
 
 Similar to the above example, we can tie the visibility of a widget to the response of an API/Query.
 

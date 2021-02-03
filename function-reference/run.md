@@ -24,7 +24,7 @@ run(onSuccess: Function, onError: Function, params: Object): void
 
 ## Passing Params to Run
 
-Most API/Queries read values directly from entities as global variables. In some cases such as running an action inside a loop, parameters may need to be passed to the action with values contextual to the execution. This can be achieved using the params argument of the run signature. Params sent to an action can be accessed as 
+Most API/Queries read values directly from entities as global variables. In some cases such as running an action inside a loop, parameters may need to be passed to the action with values contextual to the execution. This can be achieved using the params argument of the run signature. Params sent to an action can be accessed as
 
 ```text
 {{ this.params.key }}

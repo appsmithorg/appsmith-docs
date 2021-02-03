@@ -18,7 +18,6 @@ A Radio Button's **options** can be populated from a data source like an API / Q
       return { label: row.name, value: row.id } 
    }) 
 }}
-
 ```
 
 ## Properties
@@ -29,7 +28,7 @@ A Radio Button's **options** can be populated from a data source like an API / Q
 | **Options** | Lets you set labels and values for different options in the options list of the Radio widget. |
 | **Default Selected Value** | Sets a default value that will be captured as user input unless it is changed by the user. |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
-| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
+| **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
 | Action | Description |
 | :--- | :--- |
