@@ -25,5 +25,3 @@ In cases like these, you can use javascript to transform the data to the correct
 
 This error occurs when there is invalid javascript inside the handlebars `{{ }}`
 
-\`\`
-

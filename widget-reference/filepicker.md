@@ -60,7 +60,7 @@ See our guides on
 | **Label** | Sets the label of the Filepicker. |
 | **Maximum No. of files** | Enables you to set the maximum number of files allowed to be uploaded by a user. |
 | **Maximum File Size** | Enables you to set the maximum allowed size of each file that a user can upload. |
-| **Allowed File Types** | Enables you to set constraints on the type of file a user can upload - images, videos, audios, text files, etc. |
+| **Allowed File Types** | Enables you to set constraints on the type of file a user can upload. Accepts an _array_ of wildcards`image/*`, exact mime types `image/jpeg`, or file extensions `.jpg`:`['image/*', '.jpg', '.jpeg', '.png', '.gif']` |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Uploaded File URLs** | This property specifies the URLs of the uploaded files that the file upload API returned. You can bind it to the API using |
