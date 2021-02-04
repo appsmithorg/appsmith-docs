@@ -4,46 +4,81 @@ description: >-
   logic
 ---
 
-# Connecting UI & Logic
+# Writing Code
 
-Javascript can be used almost anywhere in Appsmith inside **`{{ }}.`** The value evaluated inside the mustache is substituted in the field it is written in. This allows you to creatively configure different parts of your application.
+Javascript can be used inside `{{ }}` anywhere in Appsmith. Every entity in appsmith can be referenced as a javascript variable and all javascript functions and operations can be performed on them. This means that all Widgets, APIs, Queries, and their associated data and properties can be referenced anywhere in an application inside handlebars `{{ }}`.
 
-## Widget Properties
+## Reactive
+
+Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in appsmith is declarative in nature and describes the eventual states of a property.
+
+In order to update the property of a widget, unlike in imperative programming where a programmer would write a statement as
 
 ```javascript
-Hello {{usersTable.selectedRow.name}}
+// Imperative Style incompatible with appsmith
+if (Dropdown1.selectedOption === "John") nameInput.setText("John Doe");
 ```
 
-Adding the above text to a text widget will display "Hello John Doe" if **usersTable** has a row selected with a column where the name is John Doe.
-
-Similarly, Logic can be added to this example to display something if no row is selected
+In appsmith, programmers declare the states of the text property in the property pane as below and the properties of the widget are updated reactively whenever the values of Dropdown1 change
 
 ```javascript
-{{usersTable.selectedRow ? "Hello " + Table1.selectedRow.name : "Select a user" }}
-```
-
-Read More about [talking to other widgets](../building-the-ui/talking-to-other-widgets.md)
-
-## APIs
-
-Similar to the above example, the params, body & headers of an API can be substituted with a value from a widget or another part of the application. You can also choose to only substitute a part of the post body so that it's easy to configure the structure of your API. **The resulting post body must still be a valid JSON so the substitution must be surrounded by quotes**
-
-```javascript
-// Post Body
 {
-  "name": "{{nameInp.text}}"
+  {
+    Dropdown1.selectedOption === "John" ? "John Doe" : "";
+  }
 }
 ```
 
-Read More about[ taking inputs from widgets](../apis/taking-inputs-from-widgets.md)
+## Single Line JS
 
-## Queries
+Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the javascript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
 
-Values can be passed to a query by using the substitution syntax inside the query
+#### Valid JS
 
-```javascript
-select * from users where name ilike '%{{searchInput.text}}%'
+```text
+{{ QueryName.data.map((row) => row).filter((row) => row.id > 5 ) }}
 ```
 
-API / Query data can also be displayed inside widgets using the substituted inside the widget property. Sometimes there is a mismatch in the data format of the response data and the format that the widget requires. You can overcome this by [transforming the data ](../building-the-ui/displaying-api-data.md#transforming-api-query-data)inside the widget property using javascript
+```text
+{{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}
+```
 
+**Invalid JS**
+
+```text
+{{ const array = QueryName.data.map((row) => row);
+   const filterArray = array.filter((row) => row.id > 5);
+}}
+```
+
+```text
+{{ if (Dropdown.selectedOptionValue === "1") {
+        return "Option 1";
+    } else {
+      return "Option 2";
+    }
+  }}
+```
+
+## Multi-Line JS
+
+Appsmith does support multi-line JS if wrapped inside a function. The above invalid examples are valid if used as below
+
+```javascript
+{{ function() {
+      const array = QueryName.data.map((row) => row);
+      const filterArray = array.filter((row) => row.id > 5);
+   }()
+}}
+```
+
+```javascript
+{{ function() {
+      if (Dropdown.selectedOptionValue === "1") {
+        return "Option 1";
+      } else {
+        return "Option 2";
+      }
+   }()
+}}
+```

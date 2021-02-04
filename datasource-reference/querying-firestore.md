@@ -1,7 +1,7 @@
 # Firestore
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -61,9 +61,9 @@ The second field is the operator and the third is the value to apply the filter 
 
 There are three methods that can be used to add documents to a collection, depending on the behavior needed.
 
-1. "**Set Document**" method: This method will _set_ the given document at the given _document path_. If a document already exists at the given path, it will be **overridden**. If a document doesn't already exist at this path, the path will be created and this document will be set.
-2. "**Create Document**" method: This method will _set_ the given document at the given _document path_. If a document already exists at the given path, this method will **fail** and the given document is **not saved**. If a document doesn't already exist at this path, the path will be created and this document will be set.
-3. "**Add Document to Collection**" method: This method will _add_ the given document with an auto-generated document-id, into the given _collection path_. Note that in this method, the given path must point to a collection. If the collection doesn't exist at the given path, it will be created.
+1. **Set Document**: This method will _set_ the given document at the given _document path_. If a document already exists at the given path, it will be **overridden**. If a document doesn't already exist at this path, the path will be created and this document will be set.
+2. **Create Document**: This method will _set_ the given document at the given _document path_. If a document already exists at the given path, this method will **fail** and the given document is **not saved**. If a document doesn't already exist at this path, the path will be created and this document will be set.
+3. **Add Document to Collection**: This method will _add_ the given document with an auto-generated document-id, into the given _collection path_. Note that in this method, the given path must point to a collection. If the collection doesn't exist at the given path, it will be created.
 
 All three methods above take a path and a body as inputs. The path is interpreted as described above and the body is expected to contain a valid JSON-serialized object which will make up the document to be used in the operation \(as described above\).
 
@@ -109,19 +109,10 @@ The "**Delete Document**" method deletes the document at the given path.
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
 {% endhint %}
 
-## Taking Inputs from Widgets
+## Using Queries in applications
 
-Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
+Once you have successfully run a Query, you can use it in your application to
 
-{% hint style="info" %}
-You need to wrap your mustache bindings in double quotes to ensure it is valid JSON
-{% endhint %}
-
-```javascript
-{
-    "name": "{{ nameInput.text }}"
-}
-```
-
-{% page-ref page="../core-concepts/connecting-to-databases/querying-a-database.md" %}
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
 

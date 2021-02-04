@@ -42,7 +42,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below
 
-[Sending widget data in post body](../core-concepts/apis/taking-inputs-from-widgets.md#passing-inputs-to-the-post-body)
+[Sending widget data in post body]()
 
 ## Properties
 
@@ -62,5 +62,5 @@ Read more about submitting Input data to an API below
 
 | Action | Description |
 | :--- | :--- |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

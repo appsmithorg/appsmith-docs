@@ -17,5 +17,5 @@ description: >-
 
 | Action | Description |
 | :--- | :--- |
-| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md). |
+| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 

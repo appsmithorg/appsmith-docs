@@ -121,5 +121,5 @@ description: Appsmith uses the database command syntax to query MongoDB
    }
 ```
 
-{% page-ref page="../../core-concepts/connecting-to-databases/querying-a-database.md" %}
+{% page-ref page="../../core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md" %}
 

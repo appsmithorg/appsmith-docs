@@ -18,5 +18,5 @@ description: >-
 
 | Action | Description |
 | :--- | :--- |
-| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
+| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

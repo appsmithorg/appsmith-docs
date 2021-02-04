@@ -26,5 +26,5 @@ description: >-
 
 | Action. | Description |
 | :--- | :--- |
-| **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../core-concepts/connecting-ui-and-logic/internal-functions.md) |
+| **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
