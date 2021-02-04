@@ -23,7 +23,9 @@ In cases like these, you can use javascript to transform the data to the correct
 
 ## Syntax Error
 
-This error occurs when there is invalid javascript inside the handlebars `{{ }}`
+This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../core-concepts/writing-code/#multi-line-js). 
 
-\`\`
+In the example below, fetch is not defined anywhere in the application
+
+![](../.gitbook/assets/syntax-error.png)
 

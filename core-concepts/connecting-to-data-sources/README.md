@@ -5,6 +5,14 @@ Rich applications require real data to build intuitive UI, perform data transfor
 * [Query your database directly](./)
 * [Hit a REST API](connect-to-apis/)
 
+{% hint style="warning" %}
+Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
+
+18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted
+
+Follow the step-by-step guide to [whitelist appsmith on AWS.](aws-whitelist.md)
+{% endhint %}
+
 ## Security
 
 Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../setup/), and audit it to ensure none of your data leaves your VPC.
