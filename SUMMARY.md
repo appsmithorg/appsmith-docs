@@ -36,8 +36,8 @@
 ## Core Concepts
 
 * [Connecting to Data Sources](core-concepts/connecting-to-data-sources/README.md)
+  * [Whitelist Appsmith](core-concepts/connecting-to-data-sources/aws-whitelist.md)
   * [Connect to Databases](core-concepts/connecting-to-data-sources/connecting-to-databases/README.md)
-    * [Whitelist Appsmith](core-concepts/connecting-to-data-sources/connecting-to-databases/aws-whitelist.md)
     * [Execute Queries](core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md)
     * [Query Settings](core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings.md)
   * [Connect to APIs](core-concepts/connecting-to-data-sources/connect-to-apis/README.md)
