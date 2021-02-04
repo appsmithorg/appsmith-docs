@@ -8,15 +8,15 @@ description: >-
 
 ## Supported Databases
 
-- [PostgreSQL](../../../datasource-reference/querying-postgres.md)
-- [MongoDB](../../../datasource-reference/querying-mongodb/)
-- [Redshift](../../../datasource-reference/querying-redshift.md)
-- [MySQL](../../../datasource-reference/querying-mysql.md)
-- [Firestore](../../../datasource-reference/querying-firestore.md)
-- [ElasticSearch](../../datasource-reference/querying-elasticsearch.md)
-- [DynamoDB](../../datasource-reference/querying-dynamodb.md)
-- Redis
-- MS SQL
+* [PostgreSQL](../../../datasource-reference/querying-postgres.md)
+* [MongoDB](../../../datasource-reference/querying-mongodb/)
+* [Redshift](../../../datasource-reference/querying-redshift.md)
+* [MySQL](../../../datasource-reference/querying-mysql.md)
+* [Firestore](../../../datasource-reference/querying-firestore.md)
+* [ElasticSearch](../../datasource-reference/querying-elasticsearch.md)
+* [DynamoDB](../../datasource-reference/querying-dynamodb.md)
+* Redis
+* MS SQL
 
 ## Security
 
