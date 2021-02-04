@@ -1,6 +1,6 @@
 # Debugging Errors
 
-This document aims to help debug common errors on the Appsmith platform. Errors are classified as
+This document aims to help debug common errors on the Appsmith platform.
 
 * [JS Errors](widget-errors.md)
 * [Action Errors](action-errors.md)
@@ -8,5 +8,5 @@ This document aims to help debug common errors on the Appsmith platform. Errors 
 
 ## Getting Help
 
-If you are unable to debug an error, please reach out to us on our [discord server](https://discord.com/invite/rBTTVJp) or write to us at support@appsmith.com
+If you are unable to debug an error, please reach out to us on our [Discord Server](https://discord.com/invite/rBTTVJp) or write to us at support@appsmith.com
 
