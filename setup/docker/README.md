@@ -53,32 +53,9 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 
 ## Common Issues
 
-{% hint style="success" %}
-### Unable to access appsmith installation
+You can debug common errors faced during deployment at the link below
 
-* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance. 
-* You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
-* You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start.
-{% endhint %}
-
-{% hint style="warning" %}
-### Mongo Container crashing on Mac / Windows
-
-\(Windows & OS X\): The default Docker setup on Windows and OS X uses a VirtualBox VM to host the Docker daemon. Unfortunately, the mechanism VirtualBox uses to share folders between the host system and the Docker container is not compatible with the memory mapped files used by MongoDB. This means that it is not possible to run a MongoDB container with the data directory mapped to the host.
-
-The fix is to keep the /data/db mounted directory out of mounted volumes \(like downloads, user etc.\) or to create a volume with docker volume create.
-
-**Reference:** [https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/](https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/)
-{% endhint %}
-
-{% hint style="success" %}
-### Running appsmith on a different port
-
-1. Comment out the line: [https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh\#L463](https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh#L463) from the install.sh script and run it. This will ensure that the script does not check for port availability of 80/443.
-2. Once the docker-compose file is installed, the script will try to start the containers and fail because of port conflicts.
-3. In the file `docker-compose.yml` , change the ports for the nginx container to a custom port
-4. Run `docker-compose up -d`
-{% endhint %}
+{% page-ref page="../../troubleshooting-guide/deployment-errors.md" %}
 
 ## Updating to the latest release
 
