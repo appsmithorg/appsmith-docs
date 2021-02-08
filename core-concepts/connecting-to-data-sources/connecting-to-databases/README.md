@@ -13,8 +13,8 @@ description: >-
 * [Redshift](../../../datasource-reference/querying-redshift.md)
 * [MySQL](../../../datasource-reference/querying-mysql.md)
 * [Firestore](../../../datasource-reference/querying-firestore.md)
-* ElasticSearch
-* DynamoDB
+* [ElasticSearch](../../datasource-reference/querying-elasticsearch.md)
+* [DynamoDB](../../datasource-reference/querying-dynamodb.md)
 * Redis
 * MS SQL
 
@@ -50,4 +50,3 @@ For certain plugins like PostgreSQL, and MySQL, Appsmith creates and maintains a
 ### Concurrent queries
 
 Appsmith limits maximum queries that can run concurrently on a database to be 5. If the application attempts to make more queries concurrently, you'll see an error saying `Connection not available`.
-

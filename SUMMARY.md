@@ -64,6 +64,8 @@
 * [MySQL](datasource-reference/querying-mysql.md)
 * [Postgres](datasource-reference/querying-postgres.md)
 * [Redshift](datasource-reference/querying-redshift.md)
+* [DynamoDB](datasource-reference/querying-dynamodb.md)
+* [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 
 ## Framework Reference
 
@@ -97,4 +99,3 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
-
