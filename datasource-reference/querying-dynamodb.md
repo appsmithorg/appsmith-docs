@@ -1,7 +1,7 @@
 # DynamoDB
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/6fa43542f2b4d68916c05db37bba4a9d504c65a1/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -14,10 +14,10 @@ Appsmith needs the following parameters for connecting to a DynamoDB instance:
 All required fields are suffixed with an asterisk \(\*\).
 {% endhint %}
 
-- **Region\*:** Select the region where your DynamoDB instance exists
-- **Host Address / Port\*:** Fill in the database host’s address and port. You only need to fill these fields in case you wish to override the default endpoint chosen by AWS
-- **AWS Access Key Id\*:** The identifier for your AWS Access key that is configured to have access to this database
-- **AWS Secret Access Key\*:** The secret key for this identifier
+* **Region\*:** Select the region where your DynamoDB instance exists
+* **Host Address / Port\*:** Fill in the database host’s address and port. You only need to fill these fields in case you wish to override the default endpoint chosen by AWS
+* **AWS Access Key Id\*:** The identifier for your AWS Access key that is configured to have access to this database
+* **AWS Secret Access Key\*:** The secret key for this identifier
 
 All the above three details can be fetched from your AWS account:
 
@@ -37,7 +37,7 @@ The [ListTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/
 
 The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html) command returns metadata about the table that is queried using the JSON body. A sample request might have the following body:
 
-```
+```text
 {
     "TableName" : "four"
 }
@@ -47,7 +47,7 @@ The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReferen
 
 The [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html) command retrieves a single item on the basis of its primary key. This primary key can be configured in any of DynamoDB's supported [types](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html) for attribute values. The request would use this specified type in the JSON body. In the following example, the primary key is called "pkey" and is of type `String` or `S` and hase a value of `a`.
 
-```
+```text
 {
     "TableName" : "four",
     "Key": {
@@ -62,7 +62,7 @@ The [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API
 
 The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html) command is used to insert or replace an entire item object. This request can be configured to return with the inserted/updated item using the `ReturnValues` parameter. Here, we use the PutItem command for a simple insert.
 
-```
+```text
 {
     "TableName" : "four",
     "Item" : {
@@ -83,7 +83,7 @@ The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API
 
 The [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html) can be used for conditionally updating parts of an item. This request also supports `ReturnValues` as well as new inserts.
 
-```
+```text
 {
     "TableName" : "four",
     "Key" : {
@@ -105,5 +105,6 @@ The [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/
 
 Once you have successfully run a Query, you can use it in your application to
 
-- [Display Data](../core-concepts/displaying-data-read/)
-- [Capture Data](../core-concepts/capturing-data-write/)
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
+

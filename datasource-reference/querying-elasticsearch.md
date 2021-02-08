@@ -1,7 +1,7 @@
 # Elasticsearch
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/6fa43542f2b4d68916c05db37bba4a9d504c65a1/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -10,9 +10,9 @@ The Elasticsearch plugin requires two pieces of information to establish a conne
 
 ![Click to expand](../.gitbook/assets/elasticsearch-datasource-form.png)
 
-- **Host Address / Port\*:** Fill in the elasticsearch instance's address and port. This field supports multiple endpoints if that be the need.
-- **Username / Password:** The authentication detail for the elastic search instance. The password for your datasource is encrypted when it is stored within the Appsmith database.
-- **Authorization Header:** In case you choose to connect to your instance with another mechanism, you can use the `Authorization Header` field. This field is only considered when the `Username` and `Password` fields are empty.
+* **Host Address / Port\*:** Fill in the elasticsearch instance's address and port. This field supports multiple endpoints if that be the need.
+* **Username / Password:** The authentication detail for the elastic search instance. The password for your datasource is encrypted when it is stored within the Appsmith database.
+* **Authorization Header:** In case you choose to connect to your instance with another mechanism, you can use the `Authorization Header` field. This field is only considered when the `Username` and `Password` fields are empty.
 
 After filling up the fields as described above, click on the "Test" button to verify the configuration and click "Save".
 
@@ -28,7 +28,7 @@ While Elasticsearch has a comprehensive reference list for its APIs, please make
 
 As part of the Document API, you can create a single new document by using the POST URI `/{index}/_doc/{id}` with a JSON body that represents the document. For instance, the following request will create a document in the `movies` index with an `id` of 1.
 
-```
+```text
 Path: /movies/_doc/1
 Body:
 {
@@ -44,7 +44,7 @@ Body:
 
 Bulk additions can be done using the POST endpoint `/_bulk`, with a request body that specifies the index for each document separately as shown below. The following request will add 4 more documents in addition to the single indexed document we added in the previous request.
 
-```
+```text
 Path: /_bulk
 Body:
 {"index": {"_index": "movies", "_id": "2"}}
@@ -55,14 +55,13 @@ Body:
 {"title": "Kiki's Delivery Service", "director": "Hayao Miyazaki", "producer": "Hayao Miyazaki", "release_date": "1989", "rt_score": "96"}
 {"index": {"_index": "movies", "_id": "5"}}
 {"title": "Only Yesterday", "director": "Isao Takahata", "producer": "Toshio Suzuki", "release_date": "1991", "rt_score": "100"}
-
 ```
 
 ### Retrieving a single document
 
 A single document can be accessed using it `id` within an index using a GET request that has the following path:
 
-```
+```text
 Path: /movies/_doc/2
 ```
 
@@ -70,7 +69,7 @@ Path: /movies/_doc/2
 
 Queries run on top of indexed documents can be configured using the GET method, without a JSON body. The following search query scans through the `movies` index created previously to return documents that match the query string.
 
-```
+```text
 Path: /movies/_search?q=Hayao%20Miyazaki
 ```
 
@@ -78,7 +77,7 @@ Path: /movies/_search?q=Hayao%20Miyazaki
 
 Deleting documents only requires a reference to the relevant `id` field that is sent across in a DELETE request. The request below will return with the deleted resource if it exists.
 
-```
+```text
 Path: /movies/_doc/5
 ```
 
@@ -86,5 +85,6 @@ Path: /movies/_doc/5
 
 Once you have successfully run a Query, you can use it in your application to
 
-- [Display Data](../core-concepts/displaying-data-read/)
-- [Capture Data](../core-concepts/capturing-data-write/)
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
+
