@@ -58,14 +58,16 @@
 ## Datasource Reference
 
 * [Amazon S3 \(Coming Soon\)](datasource-reference/querying-amazon-s3.md)
+* [DynamoDB](datasource-reference/querying-dynamodb.md)
+* [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
+* [MS SQL](datasource-reference/querying-mssql.md)
 * [MySQL](datasource-reference/querying-mysql.md)
 * [Postgres](datasource-reference/querying-postgres.md)
+* [Redis](datasource-reference/querying-redis.md)
 * [Redshift](datasource-reference/querying-redshift.md)
-* [DynamoDB](datasource-reference/querying-dynamodb.md)
-* [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 
 ## Framework Reference
 
