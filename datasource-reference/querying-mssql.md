@@ -44,10 +44,6 @@ You need to fill in the following parameters:
 
 MsSQL databases can be queried using the standard [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/lesson-1-creating-database-objects?view=sql-server-ver15). All MsSQL queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Appsmith provides template queries to help with the syntax
 
-## Taking Inputs from Widgets
-
-Queries can take inputs from widgets using javascript inside the query and referencing the widget property. Open `{{ }}` inside the query to write javascript and access other entities on the page using their names.
-
 ## Using Queries in applications
 
 Once you have successfully run a Query, you can use it in your application to
