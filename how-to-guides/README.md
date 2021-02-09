@@ -1,6 +1,6 @@
 # How To Guides
 
-This document presumes you are familiar with the [core concepts](../core-concepts/connecting-to-data-sources/) of appsmith and expands upon using appsmith in real-world scenarios.
+This document presumes you are familiar with the [core concepts](../core-concepts/connecting-to-data-sources/) of Appsmith and expands upon using appsmith in real-world scenarios.
 
 ## Guide Reference
 
