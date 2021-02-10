@@ -26,6 +26,7 @@
 * [How To Guides](how-to-guides/README.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
   * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
+  * [Migrate between instances](how-to-guides/backup-restore.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
