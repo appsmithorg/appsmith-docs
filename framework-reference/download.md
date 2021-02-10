@@ -18,5 +18,5 @@ download(data: any, fileName: string, fileType?: string): void
 | :--- | :--- |
 | **data** | Data that would be downloaded |
 | **fileName** | Name of the file to be downloaded |
-| **fileType** | Type of the file to be downloaded |
+| **fileType** | The mime type of the file to be downloaded |
 

@@ -1,7 +1,7 @@
-# MsSql
+# MS SQL
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/2974d21a1cd2f008630320dd13f2136d10c2249b/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings

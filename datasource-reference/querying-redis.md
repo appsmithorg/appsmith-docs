@@ -20,7 +20,7 @@ The Redis query pane can be used to run any of the commands supported by Redis. 
 
 The connection to a Redis instance can be verified using a simple `PING` command.
 
-```
+```text
 PING
 ```
 
@@ -28,7 +28,7 @@ PING
 
 A new key value pair can be inserted into the cache using the `SET` command as follows.
 
-```
+```text
 SET key_name new_value
 ```
 
@@ -36,7 +36,7 @@ SET key_name new_value
 
 Stored key value pairs can be retrieved using the `GET` command.
 
-```
+```text
 GET key_name
 ```
 
