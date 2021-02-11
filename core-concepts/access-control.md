@@ -30,6 +30,7 @@ Appsmith implements **RBAC** by assigning a set of permissions to different user
   * Invite Users
 * **App Viewer**
   * View App
+  * Invite Users as App Viewers only
 
 ## Permissions
 
