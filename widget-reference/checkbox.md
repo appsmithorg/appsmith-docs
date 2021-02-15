@@ -8,6 +8,12 @@ description: >-
 
 ![Click to expand](../.gitbook/assets/checkbox.gif)
 
+| Internal Property | Description |
+| :--- | :--- |
+| **isChecked** | This value is a boolean that is set to true if the checkbox is checked.  |
+| **isDisabled** | This value is a boolean that is set to true if the checkbox is disabled.  |
+| **isVisible** | This value is a boolean that is set to true if the checkbox is set as visbile.  |
+
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the checkbox. |
@@ -16,7 +22,6 @@ description: >-
 | **Required** | When turned on, it disables any form submission until input is made.  |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but user input will not be allowed.  |
-| **isChecked** | This value is a boolean that is set to true if the checkbox is checked.  |
 
 
 | Action | Description |
