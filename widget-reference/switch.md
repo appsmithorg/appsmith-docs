@@ -15,6 +15,7 @@ description: >-
 | **Default Selected** | Sets a default option that will be captured as user input unless it is changed by the user. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but user input will not be allowed.  |
+| **isSwitchedOn** | This value is a boolean that is set to true if the switch is turned on.  |
 
 | Action | Description |
 | :--- | :--- |
