@@ -13,6 +13,8 @@ This document presumes you have successfully [connected to a data source](../con
 * [Maps](../../widget-reference/maps.md)
 * [Radio](../../widget-reference/radio.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
+* [Switch](../../widget-reference/switch.md)
+
 
 Each of these widgets stores its user input in an internal property which can be referenced inside an API/Query using javascript.
 
