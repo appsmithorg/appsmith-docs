@@ -19,10 +19,3 @@ The API pane is a REST interface that allows you to create and modify your exist
 Appsmith makes it easy to import your APIs into your application using CURL commands.
 
 ![](../../../.gitbook/assets/import-curl.gif)
-
-## Authentication
-
-In case the APIs that you wish to connect to are protected by an authentication mechanism, you can set up the requisite configuration at the data source level. Appsmith currently supports the following authentication mechanisms:
-
-- [Basic](basic-authentication.md)
-- [OAuth 2.0](oauth2-authentication.md)
