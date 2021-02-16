@@ -4,6 +4,10 @@ description: "Completely disable signing up of new users on Appsmith or restrict
 
 # Restricting Sign-up
 
+The following section describe ways to restrict signing up of new accounts in Appsmith. This configuration is done using
+environment variables. If you've setup Appsmith use our `install.sh` script, these environment variables can be set in
+the `docker.env` file located in your installation directory.
+
 ## Disable sign-up
 
 The environment variable `APPSMITH_SIGNUP_DISABLED` should be set to `true` to disable signing up of new users. When
