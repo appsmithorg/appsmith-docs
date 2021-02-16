@@ -19,6 +19,7 @@ Appsmith has a collection of widgets that can be used to build the UI.
 * [Maps](../../widget-reference/maps.md)
 * [Radio](../../widget-reference/radio.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
+* [Switch](../../widget-reference/switch.md)
 * [Tabs](../../widget-reference/tabs.md)
 * [Table](../../widget-reference/table.md)
 * [Text](../../widget-reference/text.md)
