@@ -27,7 +27,7 @@
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
   * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
   * [Migrate apps to a new instance](how-to-guides/backup-restore.md)
-  * [Restricting signup](how-to-guides/restricting-signup.md)
+  * [Restricting Sign-up](how-to-guides/restricting-signup.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)

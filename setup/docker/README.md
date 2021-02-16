@@ -25,19 +25,19 @@ Appsmith does not officially support Windows \(or WSL\). Please try out one of o
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-2. Make the script executable
+1. Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-3. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+1. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-4. Check if all the containers are running correctly.
+1. Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -89,8 +89,7 @@ The signup page will continue to show up but will throw an error when a user tri
 {% endhint %}
 
 {% hint style="info" %}
-Learn about more options to restrict signup, including allowing emails with specific domains to signup at the page on
-[Restricting Sign-up](../../how-to-guides/restricting-signup.md).
+Learn about more options to restrict signup, including allowing emails with specific domains to signup at the page on [Restricting Sign-up](../../how-to-guides/restricting-signup.md).
 {% endhint %}
 
 ## Enabling Services for Self Hosting
