@@ -39,7 +39,7 @@ When this environment variable is set to one or more domains, the following fact
    not\*\* have a domain in the environment variable.
 
 {% hint style="success" %}
-This environment variable's value does not affect the _login_ behaviour of existing users
+This environment variable's value does not affect the _login_ behavior of existing users
 {% endhint %}
 
 {% hint style="danger" %}

@@ -1,6 +1,6 @@
 # Displaying Data \(Read\)
 
-This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have an API / DB Query that fetches data. 
+This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have an API / DB Query that fetches data.
 
 ## Widgets
 
@@ -39,13 +39,13 @@ A widget must have a unique name that acts as an identifier on the page. It is u
 
 ## Displaying Data in a widget
 
-Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from an API/Query can be set in a widget property by referencing the name \(unique identifier\) of the API/Query. 
+Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from an API/Query can be set in a widget property by referencing the name \(unique identifier\) of the API/Query.
 
 {% hint style="success" %}
-Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the API / Query changes 
+Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the API / Query changes
 {% endhint %}
 
-```
+```text
 {{ fetch_users.data.users }} // results of the API
 ```
 
@@ -111,6 +111,6 @@ A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect
 }}
 
 // The above example iterates over a data set and returns data
-// in an Array<label, value> format 
+// in an Array<label, value> format
 ```
 

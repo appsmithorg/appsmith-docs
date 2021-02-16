@@ -2,7 +2,7 @@
 
 This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have an API / DB Query that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
 
- The following widgets can be used to capture user inputs in an application
+The following widgets can be used to capture user inputs in an application
 
 * [Checkbox](../../widget-reference/checkbox.md)
 * [Datepicker](../../widget-reference/datepicker.md)
@@ -15,10 +15,9 @@ This document presumes you have successfully [connected to a data source](../con
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)
 
-
 Each of these widgets stores its user input in an internal property which can be referenced inside an API/Query using javascript.
 
-#### Example SQL
+### Example SQL
 
 ```sql
 INSERT INTO users ("name", "createdAt", "gender")
