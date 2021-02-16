@@ -17,7 +17,7 @@ description: >-
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the checkbox. |
-| **Swap Label** | Swaps the position of checkbox's label to right or left. |
+| **Alignment** | Sets the alignment of the widget. |
 | **Default Selected** | Sets a default option that will be captured as user input unless it is changed by the user. |
 | **Required** | When turned on, it disables any form submission until input is made.  |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published  |
