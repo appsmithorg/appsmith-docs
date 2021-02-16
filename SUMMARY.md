@@ -42,8 +42,7 @@
     * [Execute Queries](core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md)
     * [Query Settings](core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings.md)
   * [Connect to APIs](core-concepts/connecting-to-data-sources/connect-to-apis/README.md)
-    * [Authentication](core-concepts/connecting-to-data-sources/connect-to-apis/authentication/README.md)
-      * [Basic](core-concepts/connecting-to-data-sources/connect-to-apis/authentication/basic-authentication.md)
+    * [API Authentication](core-concepts/connecting-to-data-sources/connect-to-apis/authentication/README.md)
       * [OAuth 2.0](core-concepts/connecting-to-data-sources/connect-to-apis/authentication/oauth2-authentication.md)
     * [Execute APIs](core-concepts/connecting-to-data-sources/connect-to-apis/execute-apis.md)
     * [API Settings](core-concepts/connecting-to-data-sources/connect-to-apis/api-settings.md)
@@ -105,3 +104,4 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
+

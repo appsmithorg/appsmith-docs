@@ -19,3 +19,4 @@ The API pane is a REST interface that allows you to create and modify your exist
 Appsmith makes it easy to import your APIs into your application using CURL commands.
 
 ![](../../../.gitbook/assets/import-curl.gif)
+
