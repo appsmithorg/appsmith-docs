@@ -3,7 +3,7 @@
 Appsmith supports the OAuth 2.0 specification with the following grant types: 
 
 * [Authorization code](https://tools.ietf.org/html/rfc6749#section-1.3.1) 
-* [Client credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4).
+* [Client credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4)
 
 ## Authorization Code
 
@@ -35,12 +35,12 @@ The client credentials grant is typically used for server-to-server communicatio
 
 The fields relevant to this grant type are as follows:
 
-* **Add Access Token To:** This field describes how the acess token information will be sent in the API request, as a query parameter in the URL or as an `Authorization` Header in the request. In case of the latter, the Header Prefix to be used is configured as `Bearer` by default.
-* **Header Prefix:** In case of sending the access token as an Authorization header, you can configure the prefix to be used using this field. If left empty, the default of `Bearer` will be used.
-* **Access Token URL:** This should be a `POST` endpoint on the authorization server that Appsmith can hit to retrieve the Access Token using the client credentials information for this data source.
-* **Client ID:** The identifier for the credentials you have configured at the authorization server
-* **Client Secret:** The secret associated to this set of crecentials. Once configured, this field will be encrypted and stored in the Appsmith database. To avoid any security threats over the network, Appsmith does not allow users to view the client secret after they have configured it \(hence the blank field in the video above\).
-* **Scope\(s\):** Some authorization servers allows users to configure a confined set of resources that a set of credentials grant access to. In case you wish to set this field, make sure you separate individual scopes with commas.
+* **Add Access Token To:** This field configures the field in which the access token information will be sent in the API request. \(Query parameter or Header\).
+* **Header Prefix:** In case of sending the access token as an Authorization header, you can configure the prefix to be used using this field.
+* **Access Token URL:** This is the endpoint on the authentication server that Appsmith should hit to exchange the authorization code for an Access Token.
+* **Client ID:** The client identifier issued to the client during the application registration process
+* **Client Secret:** The client secret issued to the client during the application registration process. This field is encrypted and stored in the Appsmith database. To avoid any security threats over the network, Appsmith does not allow users to view the client secret after the data source is saved.
+* **Scope\(s\):** The scope of the access request. It may have multiple comma-separated values.
 
 {% hint style="warning" %}
 In case you feel like there may have been a data breach in your infrastructure, you can simply invalidate your client credentials at the authorization server to immediately revoke Appsmith's access to your resources.
