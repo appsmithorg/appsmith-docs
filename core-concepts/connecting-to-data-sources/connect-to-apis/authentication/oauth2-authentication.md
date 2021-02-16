@@ -10,7 +10,7 @@ In case you feel like there may have been a data breach in your infrastructure, 
 
 The authorization code grant is used for 3 legged authentication flows where the resource owner grants consent to share their credentials with the authorization server. In Appsmith, since most APIs will need to run in the background, we enforce the authorization process before the datasource can be used in an API. Once the authorization process is complete, the Appsmith server takes care of re-authentication for expired tokens.
 
-![](../../../.gitbook/assets/authorization_code.gif)
+![](../../../../.gitbook/assets/authorization_code.gif)
 
 You need to fill in the following details to use the authorization code flow:
 
@@ -44,11 +44,13 @@ The authorization server _must_ return the access token request with a `refresh_
 
 The client credentials grant is typically used for server-to-server communication. This means that this type of datasource will not require intervention from the user once configured. Appsmith safely encrypts your credentials and reuses these credentials for all the API requests made using this data source.
 
-![](../../../.gitbook/assets/client-credentials.gif)
+![](../../../../.gitbook/assets/client-credentials.gif)
 
 The fields relevant to this grant type are as follows:
 
 - **Add Access Token To:** This field describes how the acess token information will be sent in the API request, as a query parameter in the URL or as an `Authorization` Header in the request. In case of the latter, the Header Prefix to be used is configured as `Bearer` by default.
+
+- **Header Prefix:** In case of sending the access token as an Authorization header, you can configure the prefix to be used using this field. If left empty, the default of `Bearer` will be used.
 
 - **Access Token URL:** This should be a `POST` endpoint on the authorization server that Appsmith can hit to retrieve the Access Token using the client credentials information for this data source.
 
