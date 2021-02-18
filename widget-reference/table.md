@@ -45,4 +45,4 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
 ## How to display data and handle pagination inside a table?
-[Read this guide](../core-concepts/displaying-data-read/display-data-tables#pagination)
+[Read this guide](../core-concepts/displaying-data-read/display-data-tables.md#pagination)
