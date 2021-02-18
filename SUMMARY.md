@@ -34,6 +34,7 @@
   * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
+* [Security](security.md)
 
 ## Core Concepts
 
@@ -106,4 +107,3 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
-
