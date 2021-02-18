@@ -34,6 +34,7 @@
   * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
+* [Security](security.md)
 
 ## Core Concepts
 
