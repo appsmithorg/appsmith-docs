@@ -9,11 +9,11 @@ description: Deploy appsmith on Heroku with our one click deploy option
 1. Sign up for a free account on Heroku
 2. Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/appsmithorg/appsmith/tree/master)
 3. Fill in the required `Config Variables`  including:
-   * `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database
-   * `APPSMITH_ENCRYPTION_SALT`: Encryption salt used to encrypt all credentials in the database
-   * `APPSMITH_MONGODB_URI`: Your Mongo Database URI
+   * `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database. You can use any random string (Eg. abcd). The more random, the better.
+   * `APPSMITH_ENCRYPTION_SALT`: Encryption salt used to encrypt all credentials in the database. You can use any random string (Eg. abcd). The more random, the better.
+   * `APPSMITH_MONGODB_URI`: Your Mongo Database URI. Since Heroku doesn't support a managed MongoDB instance, you'll have to create a Mongo DB instance on another service such as [https://cloud.mongodb.com](https://cloud.mongodb.com). Check out [this link](https://docs.atlas.mongodb.com/getting-started/) for steps on creating a free account with MongoDB Atlas and setting up your first cluster.
 4. \(Optional\) Customize the default settings in Heroku
-   * `App Name`: Optionally select a name for your application \(this will be used in the app URL\)
+   * `App Name`: Optionally select a name for your application \(this will be used in the application URL\)
    * `Runtime Selection`: Select which region your app should run in \(the United States or Europe\)
    * `Config Variables`:
      * **Sign Up**
