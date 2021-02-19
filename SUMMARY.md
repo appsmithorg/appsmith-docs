@@ -48,6 +48,7 @@
       * [OAuth 2.0](core-concepts/connecting-to-data-sources/connect-to-apis/authentication/oauth2-authentication.md)
     * [Execute APIs](core-concepts/connecting-to-data-sources/connect-to-apis/execute-apis.md)
     * [API Settings](core-concepts/connecting-to-data-sources/connect-to-apis/api-settings.md)
+    * [Signature Header](core-concepts/connecting-to-data-sources/connect-to-apis/signature-header-in-api-actions.md)
 * [Displaying Data \(Read\)](core-concepts/displaying-data-read/README.md)
   * [Display Data in Tables](core-concepts/displaying-data-read/display-data-tables.md)
 * [Capturing Data \(Write\)](core-concepts/capturing-data-write/README.md)
