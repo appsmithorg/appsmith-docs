@@ -101,7 +101,7 @@
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
 * [Maps](widget-reference/maps.md)
-* [Modal](../../widget-reference/modal.md)
+* [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
 * [Switch](widget-reference/switch.md)
