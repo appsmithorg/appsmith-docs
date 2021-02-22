@@ -17,3 +17,7 @@ description: >-
 Selecting the created modal listed in the Entity Explorer will open it in Edit mode.
 
 ![Click to expand](../.gitbook/assets/open-created-modal.gif)
+
+### Opening Modals via Widgets
+
+To open the Modals via other widgets please refer to [Show Modal](../framework-reference/show-modal.md) function.
