@@ -103,11 +103,28 @@ Note that this method can only update a single document at once. Firestore doesn
 
 ## Deleting Document
 
-The "**Delete Document**" method deletes the document at the given path. 
+The "**Delete Document**" method deletes the document at the given path.
 
 {% hint style="warning" %}
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
 {% endhint %}
+
+## Server-side Pagination
+
+Firestore supports server-side pagination with the Table widget. There's four fields in the query configuration that influence how this pagination works.
+
+1. **Order By**: This is required to make pagination order predictable. It should be a JSON list of fields to use for ordering. *E.g.*, `["field1"]`.
+1. **Limit Documents**: This will be the number of documents in each page, *i.e.*, the page size. A good value for this might be 10 or 15.
+1. **Start After**: This should be set to the *document* that marks the *end* of the current page. Usually set to `{{queryName.data[queryName.data.length - 1]}}`.
+1. **End Before**: This should be set to the *document* that marks the *start* of the current page. Usually set to `{{queryName.data[0]}}`.
+
+Once you have your Firestore query configured with these details, ensure the following three steps on your Table widget and the pagination should be ready:
+
+1. The *Table Data* should be set to `{{queryName.data}}` (or something loosely similar).
+1. *"Server side pagination"* should be turned on, in the Table widget.
+1. The `onPageChange` should be set to run this Firestore query.
+
+Now try clicking the next and previous page buttons on this Table widget and the data should refresh.
 
 ## Using Queries in applications
 
