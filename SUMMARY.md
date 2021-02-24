@@ -59,6 +59,7 @@
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
+  * [Selecting Application Layout](core-concepts/dynamic-ui/application-layout.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Datasource Reference
