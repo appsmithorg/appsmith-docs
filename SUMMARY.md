@@ -1,3 +1,4 @@
+
 # Table of contents
 
 * [Introduction](README.md)
@@ -63,7 +64,7 @@
 
 ## Datasource Reference
 
-* [Amazon S3 \(Coming Soon\)](datasource-reference/querying-amazon-s3.md)
+* [Amazon S3](datasource-reference/querying-amazon-s3.md)
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
