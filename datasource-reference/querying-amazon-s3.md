@@ -59,7 +59,8 @@ selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
 
 {% hint style="warning" %}
 When reading multimedia file or formatted text, please encode the file data using the Base64 Encode dropdown 
-field. Once the data has been received, it can be decoded using the atob() method in javascript %}
+field. Once the data has been received, it can be decoded using the atob() method in javascript.
+{% endhint %}
 
 ![Click to expand](../.gitbook/assets/amazon_s3_read_query.png)
 
