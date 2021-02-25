@@ -52,9 +52,9 @@ Missing hostname
 No endpoint(s) configured
 ```
 
-This message indicates that the Host address field in the datasource creation form has been left empty. 
+This message indicates that the `Host address` field in the datasource creation form has been left empty. 
 
-To fix this error please edit the datasource creation form and type in the host address for the datasource. 
+This error can be fixed by editing the datasource creation form and typing in the host address for the datasource. 
 
 ### Invalid Host Error
 
@@ -62,19 +62,44 @@ To fix this error please edit the datasource creation form and type in the host 
 Invalid host provided. It should be of the form http(s)://your-es-url.com
 ```
 
+This message indicates that the provided URL format is not correct. 
+
+This error can be fixed by editing the datasource creation form and providing the correct host url in the correct 
+format. 
+
 ### Missing Port Error
 
 ```
 Missing port for endpoint
 ```
 
-### Authentication Error
+This message indicates that the `Port` field in the datasource creation form has been left empty.
+
+This error can be fixed by editing the datasource creation form and typing in the port address for the datasource.
+
+
+### Missing Username Error
 
 ```
 Missing username for authentication 
 ```
-This message means that you have forgotten to configure the Username field in the datasource creation form. The 
-username field is usually nested inside the Authentication sub section.
+
+This message indicates that the `Username` field in the datasource creation form has been left empty. The 
+`Username` field is usually nested inside the `Authentication` sub section.
+
+This error can be fixed by by editing the `Username` field in the datasource creation form.
+
+### Missing Password Error
+
+``` 
+Missing password for authentication
+```
+
+This message indicates that the `Password` field in the datasource creation form has been left empty. The
+`Password` field is usually nested inside the `Authentication` sub section.
+
+This error can be fixed by by editing the `Password` field in the datasource creation form.
+
 
 ### Mandatory Parameter / Field Empty Error
 
@@ -86,6 +111,10 @@ Mandatory parameter 'Access Key' is empty.
 At least one of the mandatory fields in plugin's datasource creation form is empty
 ```
 
+This message indicates that one of the mandatory fields, for example `Access Key`, has been left empty in the 
+datasource creation form.
+
+This error can be fixed by filling the mentioned mandatory field(s) in the datasource creation form.
 
 ### Cannot Delete Datasource Error
 
