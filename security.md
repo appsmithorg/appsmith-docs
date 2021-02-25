@@ -2,11 +2,11 @@
 
 ## Does Appsmith store my data?
 
-No, Appsmith does not store any data returned from your API endpoints or DB queries. Appsmith only acts as a proxy layer. Hence, as a user, when you query your database/API endpoint, the Appsmith server only appends sensitive credentials before forwarding the request to your backend. The Appsmith server doesn't expose sensitive credentials to the browser because that can lead to security breaches. Such a routing ensures security of your systems and data.
+No, Appsmith does not store any data returned from your API endpoints or DB queries. Appsmith only acts as a proxy layer. When you query your database/API endpoint, the Appsmith server only appends sensitive credentials before forwarding the request to your backend. The Appsmith server doesn't expose sensitive credentials to the browser because that can lead to security breaches. Such a routing ensures security of your systems and data.
 
 ## Security measures within Appsmith
 
-At Appsmith, we believe in building applications that are secure-by-default. Security measures implemented for Appsmith installations are:
+Appsmith applications are secure-by-default. The security measures implemented for Appsmith installations are:
 
 * On Appsmith Cloud, all connections are encrypted with TLS. For self-hosted instances, we offer the capability to setup SSL certificates via LetsEncrypt during the installation process.
 * Encrypt all sensitive credentials such as database credentials with AES-256 encryption. Each self-hosted Appsmith instance is configured with unique salt and password values ensuring data-at-rest security.
