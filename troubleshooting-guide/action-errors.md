@@ -229,6 +229,10 @@ This error can be fixed by editing the query form and passing a valid JSON strin
 DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: \n[Missing URL.]
 ```
 
+This message indicates that the REST API's URL field has been left empty. 
+
+This error can be fixed by editing the REST API form and providing a URL. 
+
 ### OAuth Errors
 
 #### Missing Client Secret Error
@@ -288,14 +292,13 @@ This error can be fixed by either using a different email to signup or doing `lo
 
 ### Reset Password Error
 
-#### No Email Configured Error
-
-``` 
-You haven’t setup any email service yet. Please configure your email service to receive a reset link
-```
-
 #### No User Error
 
 ``` 
 Unable to find user <email>
 ```
+
+This error indicates that the email provided to the reset password form is not registered with Appsmith. 
+
+This error can be fixed by providing an email that has been used to register with Appsmith before. Alternatively, 
+any new un-registered email can be used to create a new account using sign up option.  
