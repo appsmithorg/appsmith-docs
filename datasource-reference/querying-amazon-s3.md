@@ -80,4 +80,6 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../core-concepts/displaying-data-read/)
 * [Capture Data](../core-concepts/capturing-data-write/)
+* [Upload files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3)
+* [Download files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3#downloading-files)
 
