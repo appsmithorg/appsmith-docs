@@ -39,7 +39,7 @@ To download a file
 6. Configure the onSuccess of the Row Action in the Table to download the file.
 7. Configure the download function with
    1. **Data to Download:** `{{fetch_file.data}}`
-   2. File name with extension:`{{S3_Files.selectedRow.file.substring(S3_Files.selectedRow.file.lastIndexOf("/")) }}`
+   2. File name with extension:`{{S3_Files.selectedRow.fileName.split('/').pop()}}`
 8. Click the download button to download any file in your S3 bucket
 
 ## 
