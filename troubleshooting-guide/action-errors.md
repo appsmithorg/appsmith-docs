@@ -5,20 +5,23 @@
 ### Missing URL Error
 
 ```
-Missing URL
+DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: \n[Missing URL.]
 ```
 
-### Secret Key Error
+### OAuth Errors
+
+#### Missing Client Secret Error
+
+``` 
+DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: \n[Missing Client Secret]
+```
+
+#### Secret Key Error
 
 ``` 
 Secret key is required when sending session details is switched on,
 ```
 
-### JSON Parse Error
-
-```
-Malformed JSON 
-```
 
 ## Datasource Errors
 
@@ -92,6 +95,14 @@ Cannot delete datasource since it has 1 action(s) using it.
 
 
 ## Query Execution Errors
+
+### Configuration Error
+
+``` 
+getUsers failed to execute. Please check it's configuration
+```
+
+This message indicates an error in the configuration of the action. You can navigate to the API / Query in this state and see the error it encountered. If the error occurred intermittently, it is likely due to a value in the configuration not being available at the time that the API / Query was run.
 
 ### Timeout Error
 
