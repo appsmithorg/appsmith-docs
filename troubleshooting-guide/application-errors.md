@@ -65,6 +65,5 @@ This message indicates one of the following:
 
 - The page URL is invalid. This error can be fixed by getting the correct page URL from admin / developer.
 - User does not have [permission](https://docs.appsmith.com/core-concepts/access-control) to access the page. This error can be fixed by requesting page access permission
-  from
-  the admin / developer.
+  from the admin / developer.
   
