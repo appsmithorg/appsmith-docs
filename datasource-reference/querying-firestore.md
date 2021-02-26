@@ -111,7 +111,7 @@ Deleting a document by giving a non-existing path is **NOT** treated as an error
 
 ## Server-side Pagination
 
-Firestore supports server-side pagination with the Table widget. There's four fields in the query configuration that influence how this pagination works.
+Firestore supports server-side pagination with the Table widget. There are four fields in the query configuration that influence how this pagination works.
 
 1. **Order By**: This is required to make pagination order predictable. It should be a JSON list of fields to use for ordering. *E.g.*, `["field1"]`.
 1. **Limit Documents**: This will be the number of documents in each page, *i.e.*, the page size. A good value for this might be 10 or 15.
