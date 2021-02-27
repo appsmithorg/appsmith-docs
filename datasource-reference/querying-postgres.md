@@ -49,6 +49,7 @@ PostgreSQL databases can be queried using the standard [SQL syntax](https://www.
 ## Using Prepared Statement (Beta)
 
 Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up a possibility of SQL injection by merging untrusted user input to trusted data for execution. Prepared Statement is one strategy of mitigating this risk. 
+
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
 Lets look at a sample user query :
@@ -63,8 +64,14 @@ When using Prepared Statement, the above query is converted automatically to the
 SELECT * FROM users WHERE id = ? AND name = ?;
 ```
 
-When executing the same query, Appsmith sets Input1.text's evaluated value in the first parameter and Input2.text's evaluated value in the second parameter after sanitizing each. 
+When executing the same query, Appsmith sets `Input1.text`'s evaluated value in the first parameter and `Input2.text`'s evaluated value in the second parameter after sanitizing each. 
 
+
+### Enable Prepared Statement
+
+To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta]Use Prepared Statement`. 
+
+![](../.gitbook/assets/prepared-statement-setting.png)
 
 ## Using Queries in applications
 
