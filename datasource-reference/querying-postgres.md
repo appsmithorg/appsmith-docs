@@ -69,7 +69,7 @@ When executing the same query, Appsmith sets `Input1.text`'s evaluated value in 
 
 ### Enable Prepared Statement
 
-To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta]Use Prepared Statement`. 
+To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta]Use Prepared Statement`. Existing postgres queries which use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box. 
 
 ![](../.gitbook/assets/prepared-statement-setting.png)
 
