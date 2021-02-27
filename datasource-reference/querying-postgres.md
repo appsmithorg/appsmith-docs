@@ -64,12 +64,12 @@ When using Prepared Statement, the above query is converted automatically to the
 SELECT * FROM users WHERE id = ? AND name = ?;
 ```
 
-When executing the same query, Appsmith sets `Input1.text`'s evaluated value in the first parameter and `Input2.text`'s evaluated value in the second parameter after sanitizing each. 
+When executing the same query, Appsmith first sanitizes each input to ensure that protect against SQL injection. It then sets `Input1.text`'s sanitized evaluated value as the first parameter and `Input2.text`'s sanitized evaluated value as the second parameter. 
 
 
 ### Enable Prepared Statement
 
-To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta]Use Prepared Statement`. Existing postgres queries which use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box. 
+To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta] Use Prepared Statement`. Existing postgres queries which use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box. 
 
 ![](../.gitbook/assets/prepared-statement-setting.png)
 
