@@ -1,58 +1,45 @@
 # Submitting the form
 
-Your form is now both more user-friendly, and less error-prone. Let's configure it to trigger the addition of a new product. It will involve two steps:
+Now that the form is ready with all the validations, let's configure it to trigger the addition of a new product when new inputs are submitted. This involves two steps:
 
-1. **Setting up an insert query** that adds a new product to the table
-2. Wiring the Submit button of the form to **run the insert query**
+1. _**Setting up an Insert Query**_ that adds a new product to the table.
+2. Adding logic to _**Submit Button**_ of the form to run the insert query.
 
-## Accessing widget properties in queries
+## Accessing Widget Properties in Queries
 
-Your form will have the value filled in by the user. You want to insert those values via your query. Let’s see how to do that:
+To configure an insert query for a widget, you'll have to first write the Query under DB Queries directory and then attach it to the required widget. Let’s follow the below steps to achieve the same:
 
-1. Navigate to **Pages → NewProductPage → DB Queries → +**
-2. Navigate to **Mock Database → New Query**
-3. Rename the query to **AddProductQuery**
-4. Copy the following in the Query tab  `INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')` 
-5. Run the query
-6. You’ll see the notification for a successful query run
+1. First, navigate to `NewProductPage` and select DB Queries directory.
+2. Next, create a _New Query_ named `AddProductQuery` under **Mock Database**
+3. Copy the following in the Query Tab
 
-Let’s see the query. The main query syntax is the same as that of PostgreSQL, following the format:
-
-```text
-INSERT INTO table_name
- (col1, col2, col3, … colN)
-VALUES
- (val1, val2, val3, … valN)
+```SQL
+INSERT INTO products
+("productName", "category", "mrp") VALUES
+("{{ProductNameInput.text}}", "{{CategoryDropdown.selectedOptionValue}}", "{{MrpInput.text}}")
 ```
 
-The only difference is that you’re using the mustache template to write JavaScript within the insert query:
+4. Run the query, and you should see a successful query response
 
-* To get the value filled by the user in **ProductNameInput**, you accessed its `text` property.
-* To get the value of the selected option of **CategoryDropdown**, you called the property `selectedOptionValue` on it.
+The syntax of the query used here is same as the PostgresSQL, the only difference is we'll be using multiple flower brackets to write javascript and access variables from the page.
 
-What you did here is that you accessed the widgets' property in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in the **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's property/data by referencing the appropriate property on their respective names.
+To access the value filled by user in `ProductNameInput` widget, we'll use the `text` property. Similarly, to access the selected option from `CategoryDropdown`, you'll be using the `selectedOptionValue`.
 
-## Triggering action on UI events
+What you did here is that you accessed the widgets' property in your query. This is the inverse of what you did in part one, where you accessed **ProductsQuery**'s results in the **Products_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's property/data by referencing the appropriate property on their respective names.
 
-Your query **AddProductQuery** is now set up to insert dynamic user input from the form. Let's bind the Submit button of the form to invoke **AddProductQuery**:
+## Triggering Action on UI Events
 
-1. Open the properties of **SubmitButton**
+In the previous section, we've created a query that add's items from Form to the products catalog. Now, let's use the the `AddProductQuery` query and trigger it to insert dynamic user input from the `AddProductForm` form. To do this, you'll have to bind the _Submit_ button of the form to invoke **AddProductQuery**:
+
+1. Navigate to `AddProductForm`, and open the settings of the _Submit_ button.
 2. Go to **Action → onClick**
-3. Choose **Execute DB Query → AddProductQuery**
+3. Choose **Execute DB Query** and select the `AddProductQuery`
+4. Set `onSuccess` message as `Product creation successful!`
+5. Set `onError` message as `Product creation Failed!`
 
-Try creating a new product using the form. You’ll notice that you don't have a way to tell whether the product got added after submitting, or not. It's because you haven't set up a success or an error message. Let's do that:
+Try creating a new product using the form now, you'll also see the success and error messages after the form is submitted as you've configured the `onSuccess` and `onError` properties as well.
 
-1. Open the properties of **SubmitButton**
-2. Navigate to **onClick → onSuccess** 
-3. Choose **Show Message**
-4. Type **Yay, product creation successful!**
-5. Navigate to **onClick → onError**
-6. Choose **Show Message**
-7. Type **Nay, product creation failed!**
-
-Try filling the form again with some valid and invalid values to verify that it works as expected.
-
-## Configuring actions using JavaScript
+## Configuring Actions using JavaScript
 
 In the previous section, you used the properties GUI to define **onSuccess** and **onError** events for the **Submit** button. You can do the same using JavaScript. Let's see how.
 
@@ -68,12 +55,10 @@ What you see above is the **`run()`** method defined by Appsmith. You can call t
 run(onSuccess: function, onError: function, params: object): void
 ```
 
-
-
 Clicking on **JS** enables two things:
 
 1. If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.
-2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior. 
+2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior.
 
 Note that you bound one action each with the success and error events. In [part 3](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNo2nMKgdMWZ9VCFlcr/v/v1.3/tutorial/part-3-widget-interaction/running-multiple-actions-on-submit), you'll learn to bind more than one action with each of the events.
 
@@ -86,9 +71,9 @@ Appsmith currently supports two forms of JavaScript code:
 
 1. Single line code or functions, such as ternary conditions
 2. Immediately Invoked Function Expressions \(IIFE\)
-{% endhint %}
+   {% endhint %}
 
-## Connecting multiple pages
+## Connecting Multiple Pages
 
 You've created a new page **AddProductPage** with a form that allows users to add new products. Now, you want to open this page when the user clicks on an **"Add new product"** button from the **ProductListPage**. Let's set this up:
 
@@ -96,12 +81,12 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 2. Drag-drop the [button widget ](https://docs.appsmith.com/widget-reference/button)at the bottom right of the table
 3. Rename widget to **AddProductButton**
 4. Change button label to **Add New Product**
-5. Go to **Action → onClick → Navigate To** 
+5. Go to **Action → onClick → Navigate To**
 6. Type **AddProductPage** in **Page Name** field
 
 Your **ProductListPage** now looks like:
 
-![ProductListPage: Note the &quot;Add new product&quot; button](../../.gitbook/assets/image%20%283%29.png)
+![ProductListPage: Note the "Add new product" button](../../.gitbook/assets/image%20%283%29.png)
 
 Let's test this. Click on the "**Add New Product"** button on the ProductListPage. You'll see that the **AddProductForm** page opens up, ready for you to fill the form.
 
@@ -110,4 +95,3 @@ But what's happening here? By selecting the [Navigate To](https://docs.appsmith.
 ## What's next?
 
 When you’re comfortable with the basics of building a form, accessing widget's p roperty in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to take and process user input.
-
