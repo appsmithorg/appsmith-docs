@@ -1,12 +1,18 @@
 ---
-description: The Application layout can be selected to match the application size to the device it is intended for.
+description: Appsmith supports a variety of screens sizes to build UI.
 ---
 
 # Application Layout
 
-## Selecting Application Layout
+The Application layout can be selected to match the Application size to the device it is intended for. Desktop layout is set by default for an application.
 
-Default Device layout is set by default for an application. To change it, click on the Layout control present on the top of the canvas and select a layout to use.
+# How it works
+
+For application layout that has a maximum width limit, The application fills the browser's width untill the browser width is not gretaer than the maxium width of the layout chosen.
+When it exceeds the maximum width of the layout, the additional width is filled by whitespaces.
+In case of `Fluid`, The application fills the browser's width.
+
+At any point of time to change the application layout, click on the Layout control present on the top of the canvas and select a layout to use.
 
 ![](../../.gitbook/assets/application-layout.gif)
 
@@ -14,7 +20,7 @@ Default Device layout is set by default for an application. To change it, click 
 
 **Supported Layouts**
 
-* Default Device (Application fills upto 1224px or Browser Width whichever is less)
-* Tablet (Application fills upto 800px or Browser Width whichever is less)
-* Mobile (Application fills upto 480px or Browser Width whichever is less)
+* Desktop (Application fills upto 1224px or Browser Width whichever is less)
+* Tablet (Application fills upto 1024px or Browser Width whichever is less)
+* Mobile Device (Application fills upto 720px or Browser Width whichever is less)
 * Fluid (Application fills upto the Browser Width)
