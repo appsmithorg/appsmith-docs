@@ -60,6 +60,8 @@ This document contains a list of handy JS snippets that are used across applicat
 {{ moment().add(-1, "days") }}
 ```
 
+## Actions
+
 ### Navigate To another Page
 
 ```javascript
