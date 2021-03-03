@@ -6,12 +6,12 @@ This document contains a list of handy JS snippets that are used across applicat
 
 ### Table Data
 
-```text
+```javascript
 // Access an inner array object
 {{ fetch_users.data.users }}
 ```
 
-```text
+```javascript
 // Transform an array of data to a cleaner format
 {{ fetch_users.data.map((user) => { 
       return {
@@ -25,7 +25,7 @@ This document contains a list of handy JS snippets that are used across applicat
 
 ### Chart Data
 
-```text
+```javascript
 // Transforming aggregate data
 {{
  fetch_user_stats.data.map((stat) => {
@@ -37,7 +37,7 @@ This document contains a list of handy JS snippets that are used across applicat
 }}
 ```
 
-```text
+```javascript
 // Aggregating data where the x values are fixed
 [{
   "x": "Approved Users",
@@ -55,20 +55,49 @@ This document contains a list of handy JS snippets that are used across applicat
 
 ### Default Date
 
-```text
+```javascript
 // Setting the default date to yesterday
 {{ moment().add(-1, "days") }}
 ```
 
 ### Navigate To another Page
 
-```text
+```javascript
 // Sending data via query params
 {{ navigateTo("Page1", { id: Table1.selectedRow.id }) }}
 ```
 
-```text
+```javascript
 // Opening External Web Pages
 {{ navigateTo("https://appsmith.com") }}
+```
+
+### Chaining Actions
+
+```javascript
+// Running Queries on success and showing errors on failure
+{{
+  Query1.run(() => {
+    Query2.run();
+  }, () => {
+     showAlert("Query Failed")
+  })
+}}
+```
+
+### Running APIs/Queries in a loop
+
+```javascript
+// Fetching all the details of every user in the table and storing it
+{{
+   function() {
+     for(let i = 0; i < userTable.tableData.length; i++) {
+        fetch_user_details.run((response, params) => {
+           storeValue(params.userId, response);
+        }, () => {
+        }, { userId: userTable.tableData[i].id })
+     }
+   }()
+}}
 ```
 
