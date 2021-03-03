@@ -87,6 +87,7 @@
 * [Navigate To](framework-reference/navigateto.md)
 * [Store Value](framework-reference/store-value.md)
 * [Copy To Clipboard](framework-reference/copytoclipboard.md)
+* [Reset Widget](framework-reference/resetWidget.md)
 
 ## Widget Reference
 
