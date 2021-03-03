@@ -20,46 +20,36 @@ The Access Key & Secret can be fetched using the following guide: [Generate AWS 
 
 ## List Files
 
-This action lists all the files in a bucket. The bucket name is the bucket from which all the files are fetched. 
-This action returns an array of file paths relative to the bucket. **ex.** `/dir/fileName.txt`. 
+This action lists all the files in a bucket. The bucket name is the bucket from which all the files are fetched. This action returns an array of file paths relative to the bucket. **ex.** `/dir/fileName.txt`.
 
-You can also choose to generate a signed URL for each listed file by selecting `Yes` in the `Generate Signed URL` 
-dropdown. An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` 
-field.
-In this case, the output returns 
-two other fields:
+You can also choose to generate a signed URL for each listed file by selecting `Yes` in the `Generate Signed URL` dropdown. An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field. In this case, the output returns two other fields:
 
-- `signedUrl`: It contains the signed url for the file.
-- `urlExpiryDate`: It contains the timestmap at which the signed url will expire. 
+* `signedUrl`: It contains the signed url for the file.
+* `urlExpiryDate`: It contains the timestmap at which the signed url will expire. 
 
 ![Click to expand](../.gitbook/assets/amazon_s3_list_query.png)
 
 ## Create File
 
-This action creates a new file at the location specified by the file path \(including file name\). The action 
-returns the following two fields:
+This action creates a new file at the location specified by the file path \(including file name\). The action returns the following two fields:
 
-- `signedUrl`: It contains the signed url for the file.
-- `urlExpiryDate`: It contains the timestmap at which the signed url will expire.
+* `signedUrl`: It contains the signed url for the file.
+* `urlExpiryDate`: It contains the timestmap at which the signed url will expire.
 
-An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL`
-field.
+An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field.
 
 {% hint style="warning" %}
-If a file already exists on the file path, it will be replaced with the new file. 
+If a file already exists on the file path, it will be replaced with the new file.
 {% endhint %}
 
 ![](../.gitbook/assets/create-file.png)
 
 ## Read File
 
-This action fetches a file in the Bucket Name specified with a file path relative to the bucket. By default, the raw 
-content of the file is returned in the `fileData` field of response. File content can also be Base64 encoded by 
-selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
+This action fetches a file in the Bucket Name specified with a file path relative to the bucket. By default, the raw content of the file is returned in the `fileData` field of response. File content can also be Base64 encoded by selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
 
 {% hint style="warning" %}
-When reading multimedia file or formatted text, please encode the file data using the Base64 Encode dropdown 
-field. Once the data has been received, it can be decoded using the atob() method in javascript.
+When reading multimedia file or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded using the atob\(\) method in javascript.
 {% endhint %}
 
 ![Click to expand](../.gitbook/assets/amazon_s3_read_query.png)

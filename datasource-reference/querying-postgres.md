@@ -46,9 +46,9 @@ PostgreSQL databases can be queried using the standard [SQL syntax](https://www.
 
 ![](../.gitbook/assets/postgres.gif)
 
-## Using Prepared Statement (Beta)
+## Using Prepared Statement \(Beta\)
 
-Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up a possibility of SQL injection by merging untrusted user input to trusted data for execution. Prepared Statement is one strategy of mitigating this risk. 
+Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up a possibility of SQL injection by merging untrusted user input to trusted data for execution. Prepared Statement is one strategy of mitigating this risk.
 
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
@@ -64,12 +64,11 @@ When using Prepared Statement, the above query is converted automatically to the
 SELECT * FROM users WHERE id = ? AND name = ?;
 ```
 
-When executing the same query, Appsmith first sanitizes each input to ensure that protect against SQL injection. It then sets `Input1.text`'s sanitized evaluated value as the first parameter and `Input2.text`'s sanitized evaluated value as the second parameter. 
-
+When executing the same query, Appsmith first sanitizes each input to ensure that protect against SQL injection. It then sets `Input1.text`'s sanitized evaluated value as the first parameter and `Input2.text`'s sanitized evaluated value as the second parameter.
 
 ### Enable Prepared Statement
 
-To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta] Use Prepared Statement`. Existing postgres queries which use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box. 
+To enable Prepared Statement, go to Settings tab and turn the toggle on for `[Beta] Use Prepared Statement`. Existing postgres queries which use Javascript bindings to provide content of parameters \(and not construct SQL command itself\) would run as a Prepared Statement out of the box.
 
 ![](../.gitbook/assets/prepared-statement-setting.png)
 

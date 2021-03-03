@@ -53,7 +53,7 @@ Select the method "Get Documents in Collection" in the Method dropdown and set t
 
 **Limit Documents**: This field is a number that specifies the maximum number of documents fetched by the query. Setting this to a _very_ high number may impact the performance of your application, but the impact and how high will depend on the size of the documents being fetched.
 
-**Where Condition**: This is a set of three fields that allow you to apply a filter on the documents being fetched. The first field **Field Path** is the path of a nested field on which to apply the filter. Example values are `name` or `name.first` if the documents look like `{"name": {"first": "Sherlock", "last": "Holmes"}}`. 
+**Where Condition**: This is a set of three fields that allow you to apply a filter on the documents being fetched. The first field **Field Path** is the path of a nested field on which to apply the filter. Example values are `name` or `name.first` if the documents look like `{"name": {"first": "Sherlock", "last": "Holmes"}}`.
 
 The second field is the operator and the third is the value to apply the filter with. For array operators like in, the value can be set to a valid JSON-serialized array. For example, the field path can be `name`, the operator can be `in` and the value can be `["Sherlock", "Mycroft"]`. This will filter all documents with a `name` field set to either `"Sherlock"` or `"Mycroft"`.
 
@@ -113,16 +113,16 @@ Deleting a document by giving a non-existing path is **NOT** treated as an error
 
 Firestore supports server-side pagination with the Table widget. There are four fields in the query configuration that influence how this pagination works.
 
-1. **Order By**: This is required to make pagination order predictable. It should be a JSON list of fields to use for ordering. *E.g.*, `["field1"]`.
-1. **Limit Documents**: This will be the number of documents in each page, *i.e.*, the page size. A good value for this might be 10 or 15.
-1. **Start After**: This should be set to the *document* that marks the *end* of the current page. Usually set to `{{queryName.data[queryName.data.length - 1]}}`.
-1. **End Before**: This should be set to the *document* that marks the *start* of the current page. Usually set to `{{queryName.data[0]}}`.
+1. **Order By**: This is required to make pagination order predictable. It should be a JSON list of fields to use for ordering. _E.g._, `["field1"]`.
+2. **Limit Documents**: This will be the number of documents in each page, _i.e._, the page size. A good value for this might be 10 or 15.
+3. **Start After**: This should be set to the _document_ that marks the _end_ of the current page. Usually set to `{{queryName.data[queryName.data.length - 1]}}`.
+4. **End Before**: This should be set to the _document_ that marks the _start_ of the current page. Usually set to `{{queryName.data[0]}}`.
 
 Once you have your Firestore query configured with these details, ensure the following three steps on your Table widget and the pagination should be ready:
 
-1. The *Table Data* should be set to `{{queryName.data}}` (or something loosely similar).
-1. *"Server side pagination"* should be turned on, in the Table widget.
-1. The `onPageChange` should be set to run this Firestore query.
+1. The _Table Data_ should be set to `{{queryName.data}}` \(or something loosely similar\).
+2. _"Server side pagination"_ should be turned on, in the Table widget.
+3. The `onPageChange` should be set to run this Firestore query.
 
 Now try clicking the next and previous page buttons on this Table widget and the data should refresh.
 

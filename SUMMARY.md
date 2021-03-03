@@ -9,6 +9,7 @@
     * [Google OAuth](setup/docker/google-login.md)
     * [Github OAuth](setup/docker/github-login.md)
     * [Google Maps](setup/docker/google-maps.md)
+  * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
   * [Telemetry Opt-In](setup/telemetry.md)
@@ -30,9 +31,9 @@
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
-  * [Application Errors](troubleshooting-guide/application-errors.md)
-  * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
+  * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
+  * [Application Errors](troubleshooting-guide/application-errors.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 * [Security](security.md)
@@ -79,6 +80,7 @@
 
 ## Framework Reference
 
+* [Cheat Sheet](framework-reference/cheat-sheet.md)
 * [appsmith](framework-reference/appsmith.md)
 * [Action](framework-reference/run.md)
 * [Show Modal](framework-reference/show-modal.md)
@@ -111,3 +113,4 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
+

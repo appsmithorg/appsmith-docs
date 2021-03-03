@@ -32,7 +32,7 @@ You need to fill in the following parameters:
 * **Database Name:** Fill in the name of the database against which you want to authenticate. This is typically admin for most MongoDB instances.
 * **Authentication Type\*:** Choose the authentication mechanism with which to connect to your database. This can be one of `SCRAM-SHA-1`, `SCRAM-SHA-256`, `MONGO-CR`.
 * **Username:** Fill username required for authenticating connection requests to your database. Set this to empty if you won't want to specify a username to authenticate with.
-* **Password:** Fill password required for authenticating connection requests for the given username to the database. Set this to *empty* if you want to login without a password (please ensure your database accepts such connections).
+* **Password:** Fill password required for authenticating connection requests for the given username to the database. Set this to _empty_ if you want to login without a password \(please ensure your database accepts such connections\).
 
 ### **SSL**
 
