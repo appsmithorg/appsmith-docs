@@ -49,7 +49,7 @@ Select the method "Get Documents in Collection" in the Method dropdown and set t
 
 ![Click to expand](../.gitbook/assets/firestore-get-documents-in-collection.png)
 
-**Order By**: Set this to a field name by which the documents should be sorted. For example, if in the given collection, you have a collection as `{"name": "Sherlock", "role": "Detective"}` and `{"name": "Watson", "role": "Doctor"}`, then specifying `name` in the Order By input will return the documents ordered by the name field in each document.
+**Order By**: Set this to a JSON array of field names or field paths by which the documents should be sorted. For example, if in the given collection, you have the document `{"name": "Sherlock", "role": "Detective"}` and `{"name": "Watson", "role": "Doctor"}`, then specifying `["name"]` in the Order By input will return the documents ordered by the name field in each document. Additionally, any field or path can be prefixed with a `-` to order that field in descending order. So specifying `["name", "-role"]` would sort by `name` field in ascending order and by `role` field in descending order.
 
 **Limit Documents**: This field is a number that specifies the maximum number of documents fetched by the query. Setting this to a _very_ high number may impact the performance of your application, but the impact and how high will depend on the size of the documents being fetched.
 
