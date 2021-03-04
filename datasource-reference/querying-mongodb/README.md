@@ -31,9 +31,12 @@ You need to fill in the following parameters:
 * Set `Connection Type` field to `Replica set`.
 * An [SRV URL](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format) is of 
   the format `mongodb+srv://<your_username>:<your_password>@<connection_url>/<defaultDbName>?
-  authSource=<authDbName>…` . Please extract and copy `<connection_url>` to the `Host Address` field,
-`<defaultDbName>` to the `Default Database Name` field, `<your_username>` to the `Username` field, `<your_password>` 
-  to the `Password` field and `<authDbName>` to the `Database Name` field under the `Authentication` sub-section.
+  authSource=<authDbName>…` . Please extract and copy the fields as below:
+    * `<connection_url>` to the `Host Address` field
+    * `<defaultDbName>` to the `Default Database Name` field
+    * `<your_username>` to the `Username` field
+    * `<your_password>` to the `Password` field
+    * `<authDbName>` to the `Database Name` field under the `Authentication` sub-section.
 
 ### **Authentication**
 
@@ -76,4 +79,3 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../../core-concepts/displaying-data-read/)
 * [Capture Data](../../core-concepts/capturing-data-write/)
-
