@@ -23,20 +23,27 @@ You need to fill in the following parameters:
   * **Direct Connection**: Choose this connection type to connect directly to a mongo instance
   * **Replicate Set**: Choose this connection type to connect to a set of mongo instances.
 * **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith 
+
   will try to connect to port 27017. You can specify multiple host addresses for a replicate set. In case you have 
-  an [SRV URL](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format) please follow [these](#connect-using-srv-url) steps to connect to your mongodb instance.
+
+  an [SRV URL](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format) please follow [these](./#connect-using-srv-url) steps to connect to your mongodb instance.
+
 * **Default** **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name in your mongo server.
 
 #### Connect using SRV URL
+
 * Set `Connection Type` field to `Replica set`.
 * An [SRV URL](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format) is of 
-  the format `mongodb+srv://<your_username>:<your_password>@<connection_url>/<defaultDbName>?
-  authSource=<authDbName>…` . Please extract and copy the fields as below:
-    * `<connection_url>` to the `Host Address` field
-    * `<defaultDbName>` to the `Default Database Name` field
-    * `<your_username>` to the `Username` field
-    * `<your_password>` to the `Password` field
-    * `<authDbName>` to the `Database Name` field under the `Authentication` sub-section.
+
+  the format \`mongodb+srv://:&lt;your\_password&gt;@/?
+
+  authSource=…\` . Please extract and copy the fields as below:
+
+  * `<connection_url>` to the `Host Address` field
+  * `<defaultDbName>` to the `Default Database Name` field
+  * `<your_username>` to the `Username` field
+  * `<your_password>` to the `Password` field
+  * `<authDbName>` to the `Database Name` field under the `Authentication` sub-section.
 
 ### **Authentication**
 
@@ -79,3 +86,4 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../../core-concepts/displaying-data-read/)
 * [Capture Data](../../core-concepts/capturing-data-write/)
+
