@@ -6,7 +6,7 @@ description: >-
 
 # Chart
 
-![Click to expand](../.gitbook/assets/chart%20%281%29.gif)
+{% embed url="https://www.youtube.com/watch?v=xRUJN_0lzRU&feature=youtu.be" caption="" %}
 
 ## Properties
 
