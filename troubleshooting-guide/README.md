@@ -5,6 +5,7 @@ This document aims to help debug common errors on the Appsmith platform.
 * [JS Errors](widget-errors.md)
 * [Action Errors](action-errors.md)
 * [Deployment Errors](deployment-errors.md)
+* [Application Errors](application-errors.md)
 
 ## Getting Help
 

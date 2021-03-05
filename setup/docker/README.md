@@ -18,26 +18,26 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 Appsmith does not officially support Windows \(or WSL\). Please try out one of our [pre-built images](../) if your production operating system is not on the list above.
 {% endhint %}
 
-1. Fetch the **install.sh** script on the system you want to deploy Appsmith
+Fetch the **install.sh** script on the system you want to deploy Appsmith
 
 ```bash
 # Downloads install.sh
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 
-1. Make the script executable
+Make the script executable
 
 ```bash
 chmod +x install.sh
 ```
 
-1. Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
 
 ```bash
 ./install.sh
 ```
 
-1. Check if all the containers are running correctly.
+Check if all the containers are running correctly.
 
 ```bash
 docker ps
@@ -94,7 +94,7 @@ Learn about more options to restrict signup, including allowing emails with spec
 
 ## Enabling Services for Self Hosting
 
-Appsmith ships with third-party services that improve the app building experience. All third party services are entirely optional.
+Appsmith ships with third-party services that improve the app building experience. All third-party services are entirely optional.
 
 {% hint style="success" %}
 All third party services are enabled by default in our [cloud-hosted](https://appsmith.com) version.

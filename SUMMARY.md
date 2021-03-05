@@ -9,6 +9,7 @@
     * [Google OAuth](setup/docker/google-login.md)
     * [Github OAuth](setup/docker/github-login.md)
     * [Google Maps](setup/docker/google-maps.md)
+  * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
   * [Telemetry Opt-In](setup/telemetry.md)
@@ -29,11 +30,13 @@
   * [Migrate apps to a new instance](how-to-guides/backup-restore.md)
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
-  * [JS Errors](troubleshooting-guide/widget-errors.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
+  * [JS Errors](troubleshooting-guide/widget-errors.md)
   * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
+  * [Application Errors](troubleshooting-guide/application-errors.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
+* [Security](security.md)
 
 ## Core Concepts
 
@@ -47,6 +50,7 @@
       * [OAuth 2.0](core-concepts/connecting-to-data-sources/connect-to-apis/authentication/oauth2-authentication.md)
     * [Execute APIs](core-concepts/connecting-to-data-sources/connect-to-apis/execute-apis.md)
     * [API Settings](core-concepts/connecting-to-data-sources/connect-to-apis/api-settings.md)
+    * [Signature Header](core-concepts/connecting-to-data-sources/connect-to-apis/signature-header-in-api-actions.md)
 * [Displaying Data \(Read\)](core-concepts/displaying-data-read/README.md)
   * [Display Data in Tables](core-concepts/displaying-data-read/display-data-tables.md)
 * [Capturing Data \(Write\)](core-concepts/capturing-data-write/README.md)
@@ -56,12 +60,13 @@
   * [Appsmith Framework](core-concepts/writing-code/appsmith-framework.md)
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
+  * [Application Layout](core-concepts/dynamic-ui/application-layout.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Datasource Reference
 
-* [Amazon S3 \(Coming Soon\)](datasource-reference/querying-amazon-s3.md)
+* [Amazon S3](datasource-reference/querying-amazon-s3.md)
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
@@ -75,6 +80,7 @@
 
 ## Framework Reference
 
+* [Cheat Sheet](framework-reference/cheat-sheet.md)
 * [appsmith](framework-reference/appsmith.md)
 * [Action](framework-reference/run.md)
 * [Show Modal](framework-reference/show-modal.md)
@@ -84,6 +90,7 @@
 * [Navigate To](framework-reference/navigateto.md)
 * [Store Value](framework-reference/store-value.md)
 * [Copy To Clipboard](framework-reference/copytoclipboard.md)
+* [Reset Widget](framework-reference/resetwidget.md)
 
 ## Widget Reference
 
@@ -99,6 +106,7 @@
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
 * [Maps](widget-reference/maps.md)
+* [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
 * [Switch](widget-reference/switch.md)

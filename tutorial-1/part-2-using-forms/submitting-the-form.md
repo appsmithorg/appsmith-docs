@@ -52,7 +52,7 @@ Try creating a new product using the form. You’ll notice that you don't have a
 
 Try filling the form again with some valid and invalid values to verify that it works as expected.
 
-## Configuting actions using JavaScript
+## Configuring actions using JavaScript
 
 In the previous section, you used the properties GUI to define **onSuccess** and **onError** events for the **Submit** button. You can do the same using JavaScript. Let's see how.
 
@@ -67,8 +67,6 @@ What you see above is the **`run()`** method defined by Appsmith. You can call t
 ```text
 run(onSuccess: function, onError: function, params: object): void
 ```
-
-
 
 Clicking on **JS** enables two things:
 

@@ -22,17 +22,37 @@ You need to fill in the following parameters:
 * **Connection Type\*:** You must choose one of the following connection types:
   * **Direct Connection**: Choose this connection type to connect directly to a mongo instance
   * **Replicate Set**: Choose this connection type to connect to a set of mongo instances.
-* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port 27017. You can specify multiple host addresses for a replicate set.
+* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith 
+
+  will try to connect to port 27017. You can specify multiple host addresses for a replicate set. In case you have 
+
+  an [SRV URL](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format) please follow [these](./#connect-using-srv-url) steps to connect to your mongodb instance.
+
 * **Default** **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name in your mongo server.
+
+#### Connect using SRV URL
+
+* Set `Connection Type` field to `Replica set`.
+* An [SRV URL](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format) is of 
+
+  the format \`mongodb+srv://:&lt;your\_password&gt;@/?
+
+  authSource=…\` . Please extract and copy the fields as below:
+
+  * `<connection_url>` to the `Host Address` field
+  * `<defaultDbName>` to the `Default Database Name` field
+  * `<your_username>` to the `Username` field
+  * `<your_password>` to the `Password` field
+  * `<authDbName>` to the `Database Name` field under the `Authentication` sub-section.
 
 ### **Authentication**
 
 You need to fill in the following parameters:
 
 * **Database Name:** Fill in the name of the database against which you want to authenticate. This is typically admin for most MongoDB instances.
-* **Authentication Type\*:** Choose the authentication mechanism with which to connect to your database. This can be one of SCRAM-SHA-1, SCRAM-SHA-256, MONGO-CR
-* **Username\*:** Fill username required for authenticating connection requests to your database.
-* **Password\*:** Fill password required for authenticating connection requests for the given username to the database. 
+* **Authentication Type\*:** Choose the authentication mechanism with which to connect to your database. This can be one of `SCRAM-SHA-1`, `SCRAM-SHA-256`, `MONGO-CR`.
+* **Username:** Fill username required for authenticating connection requests to your database. Set this to empty if you won't want to specify a username to authenticate with.
+* **Password:** Fill password required for authenticating connection requests for the given username to the database. Set this to _empty_ if you want to login without a password \(please ensure your database accepts such connections\).
 
 ### **SSL**
 

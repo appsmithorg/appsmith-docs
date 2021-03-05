@@ -28,19 +28,14 @@ To download a file
 3. Configure the [List Files](../datasource-reference/querying-amazon-s3.md#list-files-in-bucket) action for the query
 4. Set the bucket name from where to fetch the files and run the query
 5. Bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`
-
-
-
-1. Add a row action to the table named Download
-2. Create a new S3 query for the row action named **fetch\_file**
-3. Configure the **fetch\_file** query with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file) action.
-4. Configure the bucket name in the query
-5. Pass the file path selected in the table to the query using javascript `{{S3_Files.selectedRow.file}}`
-6. Configure the onSuccess of the Row Action in the Table to download the file.
-7. Configure the download function with
-   1. **Data to Download:** `{{fetch_file.data}}`
-   2. File name with extension:`{{S3_Files.selectedRow.file.substring(S3_Files.selectedRow.file.lastIndexOf("/")) }}`
-8. Click the download button to download any file in your S3 bucket
-
-## 
+6. Add a row action to the table named Download
+7. Create a new S3 query for the row action named **fetch\_file**
+8. Configure the **fetch\_file** query with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file) action.
+9. Configure the bucket name in the query
+10. Pass the file path selected in the table to the query using javascript `{{S3_Files.selectedRow.file}}`
+11. Configure the onSuccess of the Row Action in the Table to download the file.
+12. Configure the download function with
+    1. **Data to Download:** `{{fetch_file.data}}`
+    2. File name with extension:`{{S3_Files.selectedRow.fileName.split('/').pop()}}`
+13. Click the download button to download any file in your S3 bucket
 

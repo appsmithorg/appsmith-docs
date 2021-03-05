@@ -7,8 +7,6 @@ description: >-
 
 # Table
 
-
-
 ![Click to expand](../.gitbook/assets/table.gif)
 
 ## Selected Row
@@ -31,7 +29,7 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 
 | Widget Property | Description |
 | :--- | :--- |
-| **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax  |
+| **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax |
 | **Server Side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is being bound to an API / Query. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Default Search Text** | Sets the default search text of the table |
@@ -45,4 +43,6 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
 ## How to display data and handle pagination inside a table?
-[Read this guide](../core-concepts/displaying-data-read/display-data-tables#pagination)
+
+[Read this guide](../core-concepts/displaying-data-read/display-data-tables.md#pagination)
+
