@@ -4,7 +4,7 @@ Now that your environment – an "**app**" – is set up, you’re ready to star
 
 > A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
 
-The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Rename the page to **ProductListPage** by double-clicking on **Page1**.
+The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Now, rename the page to **ProductListPage** by double-clicking on **Page1**.
 
 ## Adding your First Widget
 
@@ -20,8 +20,6 @@ This will create a new table on `ProductListPage`.
 ![Drag and Drop Table onto Canvas](https://lh4.googleusercontent.com/p6VRCgNSNPxyq1IdSgVbU7oHE8fkTDmayGM-YPIuOBKHCzEhE2qYYaTyDQ6XyCG7xmQ6CoNlUCBTO6iat52sZqs8Ig8GzOLFpDF2_3GEXgGcSgwMmOuba5Pekv1ZY3roaOgr5EI0)
 
 Let's discuss what has happened now:
-
-You can see that the table is populated with some default static data.
 
 * As soon as you add a new `Table` widget, you should see some pre-populated data.
 * A floating window, titled **`Table1`**, open's up on the right of the table. This is the widget's property-pane; here, you can configure the widget's properties.
@@ -63,9 +61,9 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use-case, you’ll connect to your own database. Check out the [docs here](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
+However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
 
-## Writing your first query
+## Writing your First Query
 
 Now, let's utilise the mock database to display all the catalogue items for the **Oakry** app by following the below steps:
 
@@ -73,7 +71,7 @@ Now, let's utilise the mock database to display all the catalogue items for the 
 2. Choose **Mock Database**, also you can see that this is a PostgreSQL database.
 3. Next, click on the _**New Query**_ button, you’ll see a query created with the name **Query1**
 4. Rename the query to **ProductsQuery**, by double-clicking on the existing one.
-5. Copy-paste the query shown below in the **Query** tab
+5. Next, click on create option and replace the query shown below in the **Query** tab
 6. Click on the **Run** button, this will execute your query and prints out all the results below
 
    ```sql
@@ -81,6 +79,10 @@ Now, let's utilise the mock database to display all the catalogue items for the 
    ```
 
 The query is saved as soon as it's created, without you having to explicitly save it. The same would be the case with any API, widgets, and any changes you make you any entity of your app.
+
+Below is a screenshot of how Appsmith renders the outputs of SQL Query.
+
+![Reading Data from Mock Database on Appsmith using DB Queries](../../.gitbook/assets/image%20%288%29.png)
 
 {% hint style="info" %}
 
@@ -103,7 +105,7 @@ Setting **Table Data** to `{{ ProductsQuery.data }}` also ensures that whenever 
 
 Now, you should see your table displays the `ProductsQuery` results. You can also deploy this and share it to display the product catalogue for the Oakry app.
 
-Below is a screenshot:
+Below is the screenshot:
 
 ![](https://lh5.googleusercontent.com/wjbhU2Nsq_tfEFoAsI4qEn60jo6E8dkySMMUqoV9h1IdfBJ9Ug48_EkI-LZVaRK3VB4ebTi0OTbYFczticODH13A-XWJi-qhE12Lhz8OSXnCvRDB6uqceArq3wDVZA5xOaQlAogK)
 
