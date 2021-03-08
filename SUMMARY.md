@@ -18,7 +18,7 @@
     * [The Appsmith Environment](tutorial-1/part-1-creating-a-simple-view/the-appsmith-environment.md)
     * [Creating your First Page](tutorial-1/part-1-creating-a-simple-view/creating-your-first-table.md)
   * [Part 2: Using forms](tutorial-1/part-2-using-forms/README.md)
-    * [Creating your first form](tutorial-1/part-2-using-forms/creating-a-form.md)
+    * [Creating your First Form](tutorial-1/part-2-using-forms/creating-a-form.md)
     * [Submitting the form](tutorial-1/part-2-using-forms/submitting-the-form.md)
   * [Part 3: Creating interactive views](tutorial-1/part-3-creating-interactive-views/README.md)
     * [Accessing properties between widgets](tutorial-1/part-3-creating-interactive-views/adding-edit-button.md)

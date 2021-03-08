@@ -1,71 +1,57 @@
-# Creating your first form
+# Creating your First Form
 
-Let's first create a new page that will have a form to accept product-details from users:
+Now to add new products to the catalogue, you'll have a create a new form widget. To keep things more organised, do this on a new page to not affect the catalogue page. Follow the below steps:
 
-1. Click on **+** next to **Pages** to add a new page
-2. Rename the page from **Page1** to **NewProductPage**
-3. Click on **+** next to **Widgets**
-4. Drag and drop the **Form** **Widget** from the left pane to **NewProductPage**
-5. Rename the form to **AddProductForm**
+1. Create a new _**Page**_ by clicking on the "+" icon next to the **Pages** directory.
+2. Rename the page to **`NewProductPage`**
+3. Find and add a new **Form** widget by clicking on the "+" icon under the Widget directory to the page.
+4. Rename the form to **`AddProductForm`**
 
 {% hint style="info" %}
-**App structure:**
-
 When you create a new page, the base directory structure having Widgets, APIs, and DB Queries automatically gets created.
 {% endhint %}
 
-## Using an input widget
+## Adding Input Widgets to Form
 
-You'll first drag and drop the [form widget](https://docs.appsmith.com/widget-reference/form) **to** create an empty form on your page. Now, let’s add some fields in the form to take user input:
+The created form does not have any input fields. Now, add a new [input widget](https://docs.appsmith.com/widget-reference/input) onto the empty form \(_AddProductForm_\) by simply selecting it and dropping it on to canvas. Rename, the input widget to `ProductNameInput`.
 
-1. Drag and drop the [input widget](https://docs.appsmith.com/widget-reference/input) into the form
-2. Rename the **input widget** to **ProductNameInput**
+Below is a screenshot of how your form should look like: 
 
-Your form will look like below:
+![Input Widget on Form Widget](https://lh3.googleusercontent.com/Tk7BK67XSWBJrxRbDT96FOdenI_3cIYAh-tqxDDURALgEwXM8xWCE2FbGK0nFXTA8rO67RW-SeZQx5Fl5pXjO-gGQbnlRS3xhXIfxgQnZQDer3P24M5GkuKL2I2BaeqhOfzidQ3_)
 
-![](https://lh3.googleusercontent.com/Tk7BK67XSWBJrxRbDT96FOdenI_3cIYAh-tqxDDURALgEwXM8xWCE2FbGK0nFXTA8rO67RW-SeZQx5Fl5pXjO-gGQbnlRS3xhXIfxgQnZQDer3P24M5GkuKL2I2BaeqhOfzidQ3_)
+This looks incomplete without a text label. Let’s fix that by adding a [text widget](https://docs.appsmith.com/widget-reference/text) next to the left of **ProductNameInput**. Also, update the **Text** property from its properties modal to **`Product Name`:** to change the display text.
 
-This looks incomplete without a text label on its left. Let’s fix that:
+## **Configuring Input Widgets**
 
-1. Drag and drop the [text widget](https://docs.appsmith.com/widget-reference/text) next to the left of **ProductNameInput**
-2. Update the **Text** property from its properties modal to **Product Name:** to change the display text
+You can also configure input fields on Appsmith. For example, you can set data-types, placeholders, custom error messages and many more. Now, open the `ProductNameInput` properties and set the following:
 
-![](https://lh4.googleusercontent.com/juoeTjj_IRV360wboG0iCuTIME0WgGhwhDHQ3RC6GwfKValSwb8oeYymHabyfO67wQKgyQ3o4gj-XOW3XVxN8P-N1_s5659GvUwVm60v66odwusqC9wBnuU3YANT9ZH4bdwY8JW-)
+1. Modify **Data Type** to `Text`
+2. Enable **Required** field by clicking on the toggle button
 
-Let’s tinker with **ProductNameInput**:
+The Data Type property sets the allowed data-type of input, in this case, you can only enter text inputs. However, based on your use-cases you can change it to number, password or an email. The **Required** field makes the input to the field mandatory.
 
-1. Open its properties
-2. Set **Data Type** to **Text** 
-3. Enable **Required** field
+> It also disables the form-submit button if no input is provided in a mandatory field. To check out more properties and configuration do check out the docs [here](https://docs.appsmith.com/widget-reference/input#properties).
 
-The **Data Type** property sets the allowed data-type of input. When set to **Text**, it allows only **Text** input. The **Required** field makes the input to the field mandatory. It also disables the form-submit button if no input is provided in a mandatory field. The input widget has [many other properties available](https://docs.appsmith.com/widget-reference/input#properties).
+## Adding Dropdown Widget to Form
 
-## Using a dropdown widget
+Now, let's add one more field to the **`AddProductForm`** that enables users to choose the product category. For this, you'll have to drag and drop a [dropdown widget](https://docs.appsmith.com/widget-reference/dropdown) and rename it to **`CategoryDropdown`**. Also, to keep the form clean, add a text widget next to **`CategoryDropdown`**. Lastly, set its **Text** property to **Category**.
 
-Let’s add other fields to the form. To enable users to choose a Category:
+Below is a screenshot of how your form should look like:
 
-1. Drag-drop a [dropdown widget](https://docs.appsmith.com/widget-reference/dropdown)
-2. Rename it to **CategoryDropdown**
-3. Set its **Select** **Type** to **Single Select**
-4. Add a [text widget](https://docs.appsmith.com/widget-reference/text) next to **CategoryDropdown** 
-5. Set its **Text** property to **Category:**
+![](../../.gitbook/assets/image%20%287%29.png)
 
-By setting the **Selection Type** to **Single Select**, you allow the user to select only one value from the dropdown. You can alternatively configure a multi-select dropdown by choosing Multi Select from Selection Type. However, to do this tutorial, choose **Single Select** only.
+Now, open the dropdown settings and set the **Selection Type** property to **`Single Select`**, this will allow the user to select only one value from the dropdown.
 
-Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-Vegetarian, and Vegan. These are its default options. Let’s change them to what's relevant to Oakry, that is - Vegetables, Bakery, Fruits, Beverages, and Dairy.
+{% hint style="info" %}
 
-1. Open **CategoryDropdown**’s properties modal.
+Now, if you look at the `CategoryDropdown` widget, you'll see some default options already added to it. Below are the steps for updating these according to the items relevant to Oakry: _Vegetables_, _Bakery_, _Fruits_, _Beverages_, and _Dairy_.
+
+1. Open **CategoryDropdown** properties settings.
 2. Click on the **Options** field. The value in this field is used to specify the options of the dropdown.
-3. Note the floating window show up when you place the cursor in **Options** field.
-4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**
+3. See that the **Expected Data Type** is `Array<{ label: string, value: string }>`
+4. Now update the options, by coping the below snippet to the `Options` field.
 
-   . You'll need to specify the options in the same format.
-
-5. Set the **Options** field to that shown below.
-6. Set the **Default Option** to blank. This will keep the default selected option to blank.
-7. Toggle the **Required** field to true. This makes the input to the dropdown a required field.
-
-```text
+```javascript
 [
   {
     "label": "VEGETABLES",
@@ -79,7 +65,7 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
     "label": "FRUITS",
     "value": "FRUITS"
   },
-    {
+  {
     "label": "BEVERAGES",
     "value": "BEVERAGES"
   },
@@ -90,39 +76,46 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 ]
 ```
 
-## Writing your first transformation
+Also, set the **Default Option** to `blank` and toggle the **Required** field to `true`.
 
-Notice that to set **CategoryDropdown**'s options, you had to copy-paste the values in a text editor. It was cumbersome. You can use JavaScript to simplify that:
+## Writing your First Transformation
 
-1. Open **CategoryDropdown**’s properties
-2. Copy-paste the following in its **Options** field: `{ { _.map(['vegetables', 'bakery', 'fruits', 'beverages', 'dairy'], function (category) { return { label: category.toUpperCase(), value: category.toUpperCase() } }) } }`
-3. Check the **Evaluated Value**. Verify that it matches the **Expected Data Type**.
+Notice that to set **CategoryDropdown**'s options, you had to copy-paste the values in a text editor. It was cumbersome. You can use JavaScript transformation to simplify that:
 
-You used the `_.map` method of **Lodash**, and `toUpperCase()` method of JavaScript to transform **Array&lt;Strings&gt;** into **Array&lt;{ label: string, value: string }&gt;** a format understood by the dropdown widget, instead of manually formatting it.
+Open `CategoryDropdown` properties and add the following snippet to the `Options` field:
 
-By extension, you can transform any data into the desired format and type. For example, your input array can be values returned by a query, that you then transform to **Array&lt;{ label: string, value: string }&gt;ho** so the drodown can show it.
+```javascript
+{{
+    _.map(
+      ["vegetables", "bakery", "fruits", "beverages", "dairy"],
+      function (category) {
+        return { label: category.toUpperCase(), value: category.toUpperCase() };
+      }
+    );
+}}
+```
+
+> To see it it's working, you can check the **Evaluated Value** and verify that it matches the **Expected Data Type**.
+
+In the above code snippet, a simple `_.map` method from **lodash**, and a `toUpperCase()` method from JavaScript to transform `Array<Strings>` into `Array<{ label: string, value: string }>`.
+
+By extension, you can transform any data into the desired format and type. For example, your input array can be values returned by a query that you can transform to `Array<{ label: string, value: string }>`.
 
 {% hint style="info" %}
 **Data Transformation:**
 
-A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or a DB Query.
+Using JavaScript transformation, you specify a JavaScript function that applies the transformations that you want. You can include methods to check whether input records match a particular condition, and you can either drop or forward records on the basis of the results.
+
+Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or DB Query.
 {% endhint %}
 
-## Adding other fields
+## Wrapping up the Form
 
-Let's add a field to accept input for Mrp:
+So far, the form has can accept a name and the category of the product. Now, add a new [input widget](https://docs.appsmith.com/widget-reference/input) and rename it to `MrpInput`. This will be taking the number as an input, hence change the `Data Type` to `Number.` Lastly, add a [text widget](https://docs.appsmith.com/widget-reference/text) next to `MrpInput` and set it's `Text` property to MRP\($\).
 
-1. Add an [input widget](https://docs.appsmith.com/widget-reference/input)
-2. Rename it **MrpInput**
-3. Change its **Data Type** to **Number**
-4. Add a [text widget](https://docs.appsmith.com/widget-reference/text) next to **MrpInput** 
-5. Set its **Text** property to MRP\($\):
+The current title of the form is also a text widget with default title mentioned as **Form**. Let's rename the title to **Add a Product \(Oakry\)**. Below is a screenshot of how the Page looks like:
 
-The title of the form is a text widget. Let's rename the title from **Form**. to **Add a Product**:
-
-The **AddProductForm** now looks like this:
-
-![AddProductForm: Form to add a new product](../../.gitbook/assets/image%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%283%29%20%283%29%20%283%29%20%284%29%20%281%29.png)
+![AddProductForm with all input fields](../../.gitbook/assets/image%20%286%29.png)
 
 ## Writing regex validations
 
