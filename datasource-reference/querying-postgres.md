@@ -54,18 +54,34 @@ Appsmith converts the user query into a parameterized one by replacing the bindi
 
 Lets look at a sample user query :
 
-```javascript
-SELECT * FROM users WHERE id = {{Input1.text}} AND name = {{Input2.text}};
+```SQL
+SELECT * FROM users WHERE id = `{{Input1.text}}` AND name = `{{Input2.text}}`;
 ```
 
 When using Prepared Statement, the above query is converted automatically to the following by Appsmith :
 
-```javascript
+```SQL
 SELECT * FROM users WHERE id = ? AND name = ?;
 ```
 
-When executing the same query, Appsmith first sanitizes each input to ensure that protect against SQL injection. It then sets `Input1.text`'s sanitized evaluated value as the first parameter and `Input2.text`'s sanitized evaluated value as the second parameter. 
+When executing the same query, Appsmith first sanitizes each input to ensure protection against SQL injection. It then sets `Input1.text`'s sanitized value as the first parameter and `Input2.text`'s sanitized value as the second parameter. 
 
+
+## Using Arrays in Prepared Statement
+
+SQL `IN` construct is not supported out of the box in Prepared Statement. Use `ANY` instead.
+
+For example for the following initial query :
+
+```SQL
+SELECT * FROM users where id in ('{{getUsers.data.map((user) => { return user.id }).join("','")}}')
+```
+
+Using ANY would require the query to be the following :
+
+```SQL
+SELECT * FROM users where id = ANY ( {{ getUsers.data.map((user) => { return user.id }) }} )
+```
 
 ### Enable Prepared Statement
 
