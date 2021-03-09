@@ -68,8 +68,6 @@ What you see above is the **`run()`** method defined by Appsmith. You can call t
 run(onSuccess: function, onError: function, params: object): void
 ```
 
-
-
 Clicking on **JS** enables two things:
 
 1. If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.

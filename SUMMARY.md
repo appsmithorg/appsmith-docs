@@ -9,15 +9,16 @@
     * [Google OAuth](setup/docker/google-login.md)
     * [Github OAuth](setup/docker/github-login.md)
     * [Google Maps](setup/docker/google-maps.md)
+  * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
   * [Telemetry Opt-In](setup/telemetry.md)
 * [Tutorial](tutorial-1/README.md)
-  * [Part 1: Creating a simple view](tutorial-1/part-1-creating-a-simple-view/README.md)
-    * [The Appsmith environment](tutorial-1/part-1-creating-a-simple-view/the-appsmith-environment.md)
-    * [Creating your first page](tutorial-1/part-1-creating-a-simple-view/creating-your-first-table.md)
+  * [Part 1: Creating a Simple View](tutorial-1/part-1-creating-a-simple-view/README.md)
+    * [The Appsmith Environment](tutorial-1/part-1-creating-a-simple-view/the-appsmith-environment.md)
+    * [Creating your First Page](tutorial-1/part-1-creating-a-simple-view/creating-your-first-table.md)
   * [Part 2: Using forms](tutorial-1/part-2-using-forms/README.md)
-    * [Creating your first form](tutorial-1/part-2-using-forms/creating-a-form.md)
+    * [Creating your First Form](tutorial-1/part-2-using-forms/creating-a-form.md)
     * [Submitting the form](tutorial-1/part-2-using-forms/submitting-the-form.md)
   * [Part 3: Creating interactive views](tutorial-1/part-3-creating-interactive-views/README.md)
     * [Accessing properties between widgets](tutorial-1/part-3-creating-interactive-views/adding-edit-button.md)
@@ -30,9 +31,9 @@
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
-  * [Application Errors](troubleshooting-guide/application-errors.md)
-  * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
+  * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
+  * [Application Errors](troubleshooting-guide/application-errors.md)
 * [FAQs](faq.md)
 * [Changelog](changelog.md)
 * [Security](security.md)
@@ -59,6 +60,7 @@
   * [Appsmith Framework](core-concepts/writing-code/appsmith-framework.md)
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
+  * [Application Layout](core-concepts/dynamic-ui/application-layout.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)
 
@@ -78,6 +80,7 @@
 
 ## Framework Reference
 
+* [Cheat Sheet](framework-reference/cheat-sheet.md)
 * [appsmith](framework-reference/appsmith.md)
 * [Action](framework-reference/run.md)
 * [Show Modal](framework-reference/show-modal.md)
@@ -87,6 +90,7 @@
 * [Navigate To](framework-reference/navigateto.md)
 * [Store Value](framework-reference/store-value.md)
 * [Copy To Clipboard](framework-reference/copytoclipboard.md)
+* [Reset Widget](framework-reference/resetwidget.md)
 
 ## Widget Reference
 
@@ -110,3 +114,4 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
+

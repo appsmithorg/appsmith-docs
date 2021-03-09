@@ -17,7 +17,7 @@ Appsmith has a collection of widgets that can be used to build the UI.
 * [Image](../../widget-reference/image.md)
 * [Input](../../widget-reference/input.md)
 * [Maps](../../widget-reference/maps.md)
-* [Modal](../../widget-reference/modal.md)
+* [Modal](https://github.com/appsmithorg/appsmith-docs/tree/d58d956f9746b569623ebbb578fccef4852763f0/widget-reference/modal.md)
 * [Radio](../../widget-reference/radio.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)

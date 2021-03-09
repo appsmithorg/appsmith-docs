@@ -1,130 +1,113 @@
-# Creating your first page
+# Creating your First Page
 
-Now that your environment – an “app” – is set up, you’re ready to start doing work.
+Now that your environment – an "**app**" – is set up, you’re ready to start doing work.
 
-Each application that you build in Appsmith, comprises of one or more pages. A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
+> A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
 
-The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Rename the page to **ProductListPage** by double-clicking on **Page1.**
+The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Now, rename the page to **ProductListPage** by double-clicking on **Page1**.
 
-## Adding your first widget
+## Adding your First Widget
 
-The **ProductListPage** is blank. Let’s add a table-widget to it.
+As discussed in the previous sections, Widgets are simple UI Components that can be added to our Apps. Now, let's add a table-widget under the **`ProductListPage`** by following the below steps:
 
-1. Navigate to **Product List → Widgets**
-2. Click on **+**
-3. Choose the **table widget** 
-4. Drag and drop the table widget to the canvas on the right
+1. Navigate to **Widgets Directory** under `ProductListPage`
+2. Click on `+`
+3. Find the `Table` widget
+4. Drag and drop it to the canvas on the right
 
-This will create a new table.
+This will create a new table on `ProductListPage`.
 
-![](https://lh4.googleusercontent.com/p6VRCgNSNPxyq1IdSgVbU7oHE8fkTDmayGM-YPIuOBKHCzEhE2qYYaTyDQ6XyCG7xmQ6CoNlUCBTO6iat52sZqs8Ig8GzOLFpDF2_3GEXgGcSgwMmOuba5Pekv1ZY3roaOgr5EI0)
+![Drag and Drop Table onto Canvas](https://lh4.googleusercontent.com/p6VRCgNSNPxyq1IdSgVbU7oHE8fkTDmayGM-YPIuOBKHCzEhE2qYYaTyDQ6XyCG7xmQ6CoNlUCBTO6iat52sZqs8Ig8GzOLFpDF2_3GEXgGcSgwMmOuba5Pekv1ZY3roaOgr5EI0)
 
-Let’s take a look at what you now see on screen:
+Let's discuss what has happened now:
 
-* You can see that the table is populated with some default static data.
-* You see a floating window, titled **Table1**, open up on the right of the table. This is the widget's property-pane; this is where you configure the widget’s properties. 
-* The name **Table1** is the name of the table that we just created. It can be renamed to anything you like. Click on it to rename it to **Products\_Table**. The name property of a widget is its identifier. It is used to access its properties. Read about table-widget properties [here](https://docs.appsmith.com/widget-reference/table#properties). 
-* The **Table Data** property in the pane defines what data will be displayed on the table. You can read more about the table-widget's properties in the [Table widget reference](https://docs.appsmith.com/widget-reference/table).
-
-{% hint style="info" %}
-**To open a widget’s property-pane:**
-
-1. Hover over it
-2. Click on its name on the top right
-{% endhint %}
+* As soon as you add a new `Table` widget, you should see some pre-populated data.
+* A floating window, titled **`Table1`**, open's up on the right of the table. This is the widget's property-pane; here, you can configure the widget's properties.
+* The `Table Data` property in the pane defines what data will be displayed on the table. You can read more about the table widget's properties in the [Table widget reference](https://docs.appsmith.com/widget-reference/table).
+* By default, the name of the table is set to **Table1**. It can be renamed to anything you like by simply double-clicking it. Let's now change it to **`Products_Table`**.
 
 {% hint style="info" %}
-**To rename a widget:**
 
-1. Open its property-pane
-2. You’ll see the widget’s current name at the top 
-3. Click on the name Type the new name 
-4. Press Enter
-{% endhint %}
+### Understanding the Table Widget
 
-Take a minute to check how the Array in Table Data maps to the the table's columns and their values.
+Let's now take a minute to check how the array in `Table Data` maps to the table's columns and their values.
 
-Let’s now play with **Table Data** to get a hang of how it affects the data displayed in the table:
+Here are steps to play with **Table Data** to get a hang of how it affects the data displayed in the table:
 
-1. Go to **Table Data** property of **Products\_Table**.
-2. Copy-paste the following in it: `[ { "one" : "1", "two" : "2" }, {"one" : "I", "two" : "II"} ]`
-3. You'll see the table as shown in Figure 3. 
-4. Check how the **Array** in **Table Data** maps to the table's columns
-5. Go to the first object of the array.
-6. Change the value of the key **“one”** from **“1”** to **“i”**.
-7. Verify that column **one** of the first row of the table now shows **i.**
-8. Click on the **Deploy** button on the top right.
+1. First, go to **Table Data** property of **`Products_Table`**.
+2. Copy-paste the below JSON data. 
+3. The above step will update the existing pre-populated data. You'll see the updated table.
+4. You can always change the values, to test it quickly, go to the first object of the array and update the value of the key `one` from `1` to `i`.
+5. Verify that column **one** of the first row of the table now shows `i`.
+6. Click on the **Deploy** button on the top right.
 
-![Figure 3.](../../.gitbook/assets/image%20%287%29%20%281%29%20%283%29%20%284%29%20%282%29%20%282%29.png)
+```text
+[
+  { "one": "1", "two": "2" },
+  { "one": "I", "two": "II" }
+]
+```
 
-Open the application's URL in your web browser. You can see the table in Figure 4.
+Open the application's URL in your web browser. You should see the values of your table like the below screenshot:
 
-![Figure 4.](../../.gitbook/assets/image.png)
+![Updated Table](../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
-**Application hosting:**
 
-By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain, read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
-{% endhint %}
+Let's go back to the `Table Data` field. When you place your cursor in the Table Data field, you see a floating window consisting of two properties:
 
-Let's go back to the **Table Data** field. When you place your cursor in the Table Data field, you see a floating window having headings:
+1. `Expected Data Type`: This field specifies the data-type expected by the property field. For the table widget, the **Expected Data Type** is `Array<Object>`. Meaning the values can be set to anything that either is or evaluates to Table Object.
+2. `Evaluated Value`: This field shows in real-time what the input to the field evaluates to. This comes in handy when you write JavaScript code in the field, and you want to check whether it evaluates as expected.
 
-1. **Expected Data Type**: Specifies the data type expected by the property field. You can set the property to a value whose type is either that of **Expected Data Type** or evaluates to the **Expected Data Type**. For the table widget, the **Expected Data Type** is **Array&lt;Object&gt;**. This tells you that **Table Data** can be set to anything that either is an **Array&lt;Object&gt;** or that evaluates to **Array&lt;Object&gt;**.
-2. **Evaluated Value**: Shows in real-time what the input to the field evaluates to. This comes in handy when you write JavaScript code in the field, and you want to check whether it evaluates as expected.
+By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-By now, you have successfully displayed static data in your table. For your app to display product data from the database, you need to do the following:
+However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
 
-1. Connect to your database 
-2. Write a query to fetch the required data
-3. Configure the table to show the query's results
+## Writing your First Query
 
-Since your Personal Organization comes with a pre-configured mock PostgreSQL Database called **Mock Database**, the first step of connecting to a database is already done. However, when you build your own app, you’ll connect to your own database. If you’re new to Appsmith, read [this](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
+Now, let's utilise the mock database to display all the catalogue items for the **Oakry** app by following the below steps:
 
-We'll jump to the second step of writing a query.
+1. First, let's create a new **DB Query** by clicking on the **"+"** icon next to **DB Queries** directory.
+2. Choose **Mock Database**, also you can see that this is a PostgreSQL database.
+3. Next, click on the _**New Query**_ button, you’ll see a query created with the name **Query1**
+4. Rename the query to **ProductsQuery**, by double-clicking on the existing one.
+5. Next, click on create option and replace the query shown below in the **Query** tab
+6. Click on the **Run** button, this will execute your query and prints out all the results below
 
-## Writing your first query
-
-1. Click on **+** next to **DB Queries**
-2. Choose **Mock Database**
-3. Note that the **Mock Database** is a PostgreSQL database
-4. Click on **New Query**
-5. You’ll see a query created with the name **Query1**
-6. Rename the query to **ProductsQuery**
-7. Copy-paste the query shown below in the **Query** tab `SELECT "id", "productName", "category", "mrp" FROM products ORDER BY "id";`
-8. Click on **Run**
-9. Note the pop-up informing that the query ran successfully
-
-{% hint style="info" %}
-**Auto-save:**
+   ```sql
+   SELECT "id", "productName", "category", "mrp" FROM products ORDER BY "id";
+   ```
 
 The query is saved as soon as it's created, without you having to explicitly save it. The same would be the case with any API, widgets, and any changes you make you any entity of your app.
 
-Appsmith auto-saves all the changes you make in the configuration of your app in real-time, so you never lose your work. However, these changes reflect in the live application only after you deploy.
-{% endhint %}
+Below is a screenshot of how Appsmith renders the outputs of SQL Query.
 
-## Accessing query results from a widget
+![Reading Data from Mock Database on Appsmith using DB Queries](../../.gitbook/assets/image%20%288%29.png)
 
-The next step is to display the query results in the **Products\_Table** :
+{% hint style="info" %}
 
-1. Navigate to **ProductListPage → Widgets → Products\_Table**
-2. Open **Product\_Table’**s properties
-3. Copy the following in the **Table Data** property: `{{ProductsQuery.data}}`
-4. Your table now displays **ProductsQuery**’s results
-5. Click the **Deploy** button on the top right
-6. Click on the **View Application** button on the modal that shows up
-7. You'll see a page displaying your query results in a table like below: 
+## Accessing Query Results to a Widget
+
+The next step is to display the query results in the `Products_Table`, follow the below steps to do the same:
+
+1. Navigate back to _Widgets_ under `ProductListPage` and select the `Products_Table`
+2. Open `Product_Table` properties, and copy the following property to `Table Data`
+
+```text
+{{ProductsQuery.data}}
+```
+
+Here, we are accessing the entire query object by using the query name: `ProductsQuery`, the `.data` method allows us to attach data.
+
+> Using the flower brackets `{{ }}` you’re asking Appsmith to resolve what is within it as JavaScript code. You can write JavaScript anywhere in Appsmith using `{{ }}`.
+
+Setting **Table Data** to `{{ ProductsQuery.data }}` also ensures that whenever **ProductListPage** loads, **ProductsQuery** runs automatically. You can, although, change this default behaviour by toggling the field "**Run query on page load**" on the **Setting** tab of **ProductsQuery**.
+
+Now, you should see your table displays the `ProductsQuery` results. You can also deploy this and share it to display the product catalogue for the Oakry app.
+
+Below is the screenshot:
 
 ![](https://lh5.googleusercontent.com/wjbhU2Nsq_tfEFoAsI4qEn60jo6E8dkySMMUqoV9h1IdfBJ9Ug48_EkI-LZVaRK3VB4ebTi0OTbYFczticODH13A-XWJi-qhE12Lhz8OSXnCvRDB6uqceArq3wDVZA5xOaQlAogK)
-
-Let’s see how this works:
-
-1. By using mustaches `{{ }}`, you’re asking Appsmith to resolve what is within it as JavaScript code. You can write JavaScript anywhere in Appsmith within mustaches.
-2. By using the query’s name within mustaches `{{ ProductsQuery }}`, you’re accessing the entire query object of **ProductsQuery**.
-3. By accessing the data key of the **ProductsQuery** object, you’re accessing its results. 
-4. By setting the **Table Data** to `{{ ProductsQuery.data }}`, you’re telling **Products\_Table** to display the results of **ProductsQuery**
-5. Setting **Table Data** to `{{ ProductsQuery.data }}`
-
-   also ensures that whenever **ProductListPage** loads, **ProductsQuery** runs automatically. You can, although, change this default behavior by toggling the field "**Run query on page load**" on the **Setting** tab of **ProductsQuery**.
 
 ## Reactive Programming
 
@@ -136,7 +119,9 @@ As against imperative programming, where after `a` is assigned the result of `b 
 
 Let's extend this to what you did in the previous section by setting:
 
-`Table Data of Products_Table := {{ ProductsQuery.data }}`
+```text
+Table Data of Products_Table := {{ ProductsQuery.data }}
+```
 
 The data displayed on **Products\_Table** will be updated automatically, whenever **ProductsQuery** is run, i.e. without you having to write explicit code to re-evaluate **TableData** of **Products\_Table**.
 
@@ -144,7 +129,7 @@ So, in Appsmith, whenever you bind a field to a dynamic variable, the field's va
 
 ## Variables and Names
 
-In the previous sections, we've used names to access widgets, and queries. For example, you accessed a query's result by accessing a property on the query's name. In that sense, think of widgets, APIs and DB Queries in Appsmith as variables having a name. Similar to variables in other programming languages:
+In the previous sections, we've used names to access widgets and queries. For example, you accessed a query's result by accessing a property on the query's name. In that sense, think of widgets, APIs and DB Queries in Appsmith as variables having a name. Similar to variables in other programming languages:
 
 1. They represent an object, be it a widget, an API object, or a query object
 2. They support a set of methods
