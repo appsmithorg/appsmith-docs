@@ -12,3 +12,11 @@ Whitelist the appsmith IP address with the following steps:
 **2. Navigate to the Network Access screen**
 
 ![Click to expand](../../.gitbook/assets/choose_network_access.png)
+
+**3. Choose the IP Access List tab**
+
+![Click to expand](../../.gitbook/assets/choose_ip_access_list.png)
+
+**4. Click the Add IP Address button**
+
+![Click to expand](../../.gitbook/assets/choose_add_ip_address.png)
