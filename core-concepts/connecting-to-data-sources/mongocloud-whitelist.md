@@ -20,3 +20,11 @@ Whitelist the appsmith IP address with the following steps:
 **4. Click the Add IP Address button**
 
 ![Click to expand](../../.gitbook/assets/choose_add_ip_address.png)
+
+**5. Enter the appropriate IP address**
+
+![Click to expand](../../.gitbook/assets/enter_ip_address.png)
+
+**6. Click the Confirm button**
+
+![Click to expand](../../.gitbook/assets/click_confirm.png)
