@@ -44,33 +44,31 @@ You need to fill in the following parameters:
 
 MsSQL databases can be queried using the standard [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/lesson-1-creating-database-objects?view=sql-server-ver15). All MsSQL queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Appsmith provides template queries to help with the syntax
 
-## Using Prepared Statement (Beta)
+## Using Prepared Statement \(Beta\)
 
-Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up a possibility of SQL injection by merging untrusted user input to trusted data for execution. Using Prepared Statement is one strategy of mitigating this risk. 
+Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up a possibility of SQL injection by merging untrusted user input to trusted data for execution. Using Prepared Statement is one strategy of mitigating this risk.
 
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
 Let's look at a sample user query :
 
-```SQL
+```sql
 SELECT * FROM users WHERE id = `{{Input1.text}}` AND name = `{{Input2.text}}`;
 ```
 
 When using Prepared Statement, the above query is converted automatically to the following by Appsmith :
 
-```SQL
+```sql
 SELECT * FROM users WHERE id = ? AND name = ?;
 ```
 
-When executing this query, Appsmith first sanitizes each input to ensure protection against SQL injection. It then sets `Input1.text`'s sanitized value as the first parameter and `Input2.text`'s sanitized value as the second parameter. 
-
+When executing this query, Appsmith first sanitizes each input to ensure protection against SQL injection. It then sets `Input1.text`'s sanitized value as the first parameter and `Input2.text`'s sanitized value as the second parameter.
 
 ### Enable Prepared Statement
 
-To enable Prepared Statement, go to the Settings tab and turn the toggle on for `[Beta] Use Prepared Statement`. Existing MS-SQL queries that use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box. 
+To enable Prepared Statement, go to the Settings tab and turn the toggle on for `[Beta] Use Prepared Statement`. Existing MS-SQL queries that use Javascript bindings to provide content of parameters \(and not construct SQL command itself\) would run as a Prepared Statement out of the box.
 
 ![](../.gitbook/assets/prepared-statement-setting.png)
-
 
 ## Using Queries in applications
 

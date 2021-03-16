@@ -23,7 +23,7 @@ In cases like these, you can use javascript to transform the data to the correct
 
 ## Syntax Error
 
-This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../core-concepts/writing-code/#multi-line-js). 
+This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../core-concepts/writing-code/#multi-line-js).
 
 In the example below, fetch is not defined anywhere in the application
 
@@ -31,16 +31,20 @@ In the example below, fetch is not defined anywhere in the application
 
 ## Cyclic Dependency Error
 
-An app gets a cyclic dependency error when a node is directly or indirectly dependent on itself. 
+An app gets a cyclic dependency error when a node is directly or indirectly dependent on itself.
 
-#### Reactivity and Dependeny Map
+### Reactivity and Dependeny Map
+
 In Appsmith, we define all user editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's tableData field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
-```
+
+```text
 // Table1.tableData depends on Api1.data
 Api1.data -> Table1.tableData
 ```
+
 In a similar way, all parent nodes are imlicitly dependant on the child nodes to ensure updates are propogated up an entity object. A simpler way to understand this is, if a child node updates, the parent node and all it's dependencies should also be updates.
-```
+
+```text
 // Implicit. Parent depends on children
 Api1.data -> Api1
 Table1.tableData -> Table1
@@ -50,8 +54,10 @@ Api1.data -> Table1.tableData
 ```
 
 The most common sceanrio when a cycle occuers is when you would try to bind a node to it's parent node. Since it is impossible to evalute an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved
-```
+
+```text
 // A cycle is formed
 Table1 -> Table1.tableData
 Table1.isVisible -> Table1
 ```
+
