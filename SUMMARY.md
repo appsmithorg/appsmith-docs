@@ -25,6 +25,7 @@
     * [Writing your first API](tutorial-1/part-3-creating-interactive-views/writing-your-first-api.md)
     * [Configuring multiple actions on UI events](tutorial-1/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
 * [How To Guides](how-to-guides/README.md)
+  * [OAuth2 Authorization for Google Sheets](how-to-guides/oauth2-authorization-for-google-sheets.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
   * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
   * [Migrate apps to a new instance](how-to-guides/backup-restore.md)
