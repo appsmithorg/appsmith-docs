@@ -7,7 +7,7 @@ description: >-
 
 # Table
 
-![Click to expand](../.gitbook/assets/table.gif)
+![Click to expand](../.gitbook/assets/Table%20%281%29.gif)
 
 ## Displaying Data in a table
 
