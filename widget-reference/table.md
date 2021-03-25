@@ -7,7 +7,7 @@ description: >-
 
 # Table
 
-![Click to expand](../.gitbook/assets/Table%20%281%29.gif)
+{% embed url="https://www.youtube.com/watch?v=sgd-DMJsAHs&feature=youtu.be" caption="" %}
 
 ## Selected Row
 
