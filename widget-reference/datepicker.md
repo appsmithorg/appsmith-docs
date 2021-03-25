@@ -7,7 +7,7 @@ description: >-
 
 # Datepicker
 
-![](../.gitbook/assets/date-picker.gif)
+{% embed url="https://www.youtube.com/watch?v=MFflGf3K324&feature=youtu.be" caption="" %}
 
 ## Properties
 
