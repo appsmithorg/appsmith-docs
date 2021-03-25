@@ -7,7 +7,7 @@ description: >-
 
 # Form
 
-![](../.gitbook/assets/form.gif)
+{% embed url="https://www.youtube.com/watch?v=HtoWzzje-Vs&feature=youtu.be" caption="" %}
 
 ## Form Widgets
 
