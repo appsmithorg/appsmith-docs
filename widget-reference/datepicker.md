@@ -13,16 +13,17 @@ description: >-
 
 | Internal Property | Description |
 | :--- | :--- |
-| **selectedDate** | This is the date value that is displayed on the date widget. This value changes if the default value is updated or the user inputs a value. |
+| **selectedDate** | This is the ISO date string selected in the date widget. This value changes if the default value is updated or the user inputs a value. |
+| **formattedDate** | This is the date value displayed to the user in the date widget. This value changes if the default value is updated or the user inputs a value.  |
 
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the Datepicker. |
-| **Default Date** | Sets a default date that will be captured as user input unless it is changed by the user. |
+| **Default Date** | Sets a default date that will be captured as user input unless it is changed by the user. The default date must be an ISO string and can be populated using a moment object **{{ moment\(\) }}** |
 | **Date Format** | The format of the date selected by the date picker |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
-| **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed. |
+| **Disabled** | Disables input to the widget. The widget will remain visible to the user but user input will not be allowed. |
 
 | Action. | Description |
 | :--- | :--- |

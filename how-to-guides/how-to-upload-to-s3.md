@@ -14,7 +14,7 @@ To upload a file
 1. Select the [Create File Action](../datasource-reference/querying-amazon-s3.md#create-file) option for the query.
 2. The action should be configured with the bucket name and relative path of the location you want to store the file. `ex. images/`any intermediate folders not existing will be automatically created.
 3. The name of the file should be configured in the file path field. This value can be picked from the Filepicker using javascript`images/{{ Filepicker1.files[0].name }}`
-4. The content can be configured using the raw property of the Filepicker. `{{Filepicker1.files[0].raw}}`
+4. The content can be configured using the raw property of the Filepicker. `{{Filepicker1.files[0].data}}`
 5. Select a file from the file picker and hit upload
 
 ![Click to expand](../.gitbook/assets/amazon_s3_upload_query_using_filepicker.png)
