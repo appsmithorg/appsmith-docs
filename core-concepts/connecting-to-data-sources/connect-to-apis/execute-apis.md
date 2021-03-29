@@ -23,17 +23,24 @@ An API and its response can be accessed from only the page that it is a part of.
 An API must have a unique name that acts as an identifier. It is used to access the API response. In that sense, a name is like a variable in a programming language. You can access the various properties of the API response object using its name.
 
 ```text
-{{ API1.data }} 
+{{ API1.data }}
 ```
 
 ### **Running an API**
 
 Click on the Run button to execute an API. If the API execution succeeds, a success message will pop up on the screen in the top right corner along with the response.
 
+### **Working with larger payloads**
+
+Appsmith cloud limits the maximum size of request and response bodies to 10MB. On-prem installations are configured with a default limit of 100MB. You can change this default value by setting the following variable (in MB) in your `docker.env`.
+
+```
+APPSMITH_CODEC_SIZE=20
+```
+
 ## Using APIs in applications
 
 Once you have successfully run an API, you can use it in your application to
 
-* [Display Data](../../displaying-data-read/) **\(Recommended\)**
-* [Capture Data](../../capturing-data-write/)
-
+- [Display Data](../../displaying-data-read/) **\(Recommended\)**
+- [Capture Data](../../capturing-data-write/)
