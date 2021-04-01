@@ -21,7 +21,8 @@ unique name.
 You may not be able to access your localhost if Appsmith is running inside a docker container or on the cloud. To enable access to your localhost you may use ngrok to expose your local endpoint to the internet. Please check out Appsmith's documentation to understand more.
 ```
 
-This message indicates that the datasource has been configured with the endpoint URL set to `localhost`. Please note 
+This message indicates that the datasource or REST API query has been configured with the endpoint URL set to 
+`localhost`. Please note 
 that Appsmith application will not be able to access your `localhost` endpoint when:
 
 - the application is hosted on a cloud and you are accessing it remotely.
