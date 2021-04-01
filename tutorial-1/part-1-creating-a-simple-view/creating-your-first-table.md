@@ -61,7 +61,7 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
+However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](../../core-concepts/connecting-to-data-sources/) to learn to configure a database of your choice.
 
 ## Writing your First Query
 
