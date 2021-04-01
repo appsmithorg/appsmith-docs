@@ -7,7 +7,7 @@ description: >-
 
 # Form
 
-![](../.gitbook/assets/form.gif)
+![](../.gitbook/assets/form%20%283%29.gif)
 
 ## Form Widgets
 

@@ -32,9 +32,9 @@ Click on the Run button to execute an API. If the API execution succeeds, a succ
 
 ### **Working with larger payloads**
 
-Appsmith cloud limits the maximum size of request and response bodies to 10MB. On-prem installations are configured with a default limit of 100MB. You can change this default value by setting the following variable (in MB) in your `docker.env`.
+Appsmith cloud limits the maximum size of request and response bodies to 10MB. On-prem installations are configured with a default limit of 100MB. You can change this default value by setting the following variable \(in MB\) in your `docker.env`.
 
-```
+```text
 APPSMITH_CODEC_SIZE=20
 ```
 
@@ -42,5 +42,6 @@ APPSMITH_CODEC_SIZE=20
 
 Once you have successfully run an API, you can use it in your application to
 
-- [Display Data](../../displaying-data-read/) **\(Recommended\)**
-- [Capture Data](../../capturing-data-write/)
+* [Display Data](../../displaying-data-read/) **\(Recommended\)**
+* [Capture Data](../../capturing-data-write/)
+

@@ -60,6 +60,29 @@ This document contains a list of handy JS snippets that are used across applicat
 {{ moment().add(-1, "days") }}
 ```
 
+## File picker
+
+The below code converts a CSV file uploaded to an array of objects
+
+```javascript
+{{
+function() {
+	const csvRows = FilePicker1.files[0].data.split("\\n");
+	const objArr = [];
+	const headers = csvRows[0].split(',');
+		for(let i = 1; i < csvRows.length; i++) {
+			const rowObj = {};
+			objArr.push(rowObj);
+			const rowArr = csvRows[i].split(',');
+			rowArr.forEach((val, index) => {
+				rowObj[headers[index]] = val;
+			});
+		}
+	return objArr;
+}()
+}}
+```
+
 ## Actions
 
 ### Navigate To another Page
