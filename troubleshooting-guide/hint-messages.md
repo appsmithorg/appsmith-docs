@@ -11,7 +11,8 @@ This message indicates that the executed SQL query returned a table with one or 
 names. When table columns have identical names, only one of the columns get displayed and other columns with the 
 matching names are omitted.
 
-This issue can be resolved by using the SQL keyword [AS](https://www.w3schools.com/sql/sql_ref_as.asp) to rename columns in the SQL query so that each column has a 
+This issue can be resolved by using the SQL keyword '[as](https://www.w3schools.com/sql/sql_ref_as.asp)' to rename 
+columns in the SQL query so that each column has a 
 unique name. 
 
 ## Using localhost as Endpoint URL
@@ -30,4 +31,4 @@ This issue can be resolved by doing one or more of the following steps:
 
 - expose the `localhost` endpoint to the public internet via [ngrok](https://ngrok.com/) as shown [here](https://ngrok.com/docs).
 - in case the Appsmith application is running inside a docker container, you may use `host.docker.internal` as the 
-  endpoint URL as explained [here](https://docs.docker.com/docker-for-windows/networking/).
+  endpoint URL as explained [here](https://docs.docker.com/docker-for-mac/networking/).
