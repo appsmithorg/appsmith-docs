@@ -22,7 +22,7 @@ You may not be able to access your localhost if Appsmith is running inside a doc
 ```
 
 This message indicates that the datasource or REST API query has been configured with the endpoint URL set to 
-`localhost`. Please note that Appsmith application will not be able to access your `localhost` endpoint when:
+`localhost`. Please note that Appsmith application may not be able to access your `localhost` endpoint when:
 
 - the application is hosted on a cloud and you are accessing it remotely.
 - the application is running inside a docker container.
