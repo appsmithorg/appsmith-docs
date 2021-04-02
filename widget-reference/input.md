@@ -7,7 +7,7 @@ description: >-
 
 # Input
 
-![](../.gitbook/assets/input.gif)
+{% embed url="https://youtu.be/4BUbbZsxrus" caption="" %}
 
 ## Searching data
 
