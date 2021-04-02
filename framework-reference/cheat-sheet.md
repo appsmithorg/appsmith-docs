@@ -2,9 +2,7 @@
 
 This document contains a list of handy JS snippets that are used across applications. The snippets are not meant to be plug and play but indicative of the way code can be written to achieve the desired outcome
 
-## Widget Transformations
-
-### Table Data
+## Table Data
 
 ```javascript
 // Access an inner array object
@@ -23,7 +21,7 @@ This document contains a list of handy JS snippets that are used across applicat
 }}
 ```
 
-### Chart Data
+## Chart Data
 
 ```javascript
 // Transforming aggregate data
@@ -53,16 +51,37 @@ This document contains a list of handy JS snippets that are used across applicat
 }]
 ```
 
-### Default Date
+## Default Date
 
 ```javascript
 // Setting the default date to yesterday
 {{ moment().add(-1, "days") }}
 ```
 
-## Actions
+## Filepicker
 
-### Navigate To another Page
+The below code converts a CSV file uploaded to an array of objects
+
+```javascript
+{{
+function() {
+	const csvRows = FilePicker1.files[0].data.split("\\n");
+	const objArr = [];
+	const headers = csvRows[0].split(',');
+		for(let i = 1; i < csvRows.length; i++) {
+			const rowObj = {};
+			objArr.push(rowObj);
+			const rowArr = csvRows[i].split(',');
+			rowArr.forEach((val, index) => {
+				rowObj[headers[index]] = val;
+			});
+		}
+	return objArr;
+}()
+}}
+```
+
+## Navigation
 
 ```javascript
 // Sending data via query params
@@ -74,7 +93,7 @@ This document contains a list of handy JS snippets that are used across applicat
 {{ navigateTo("https://appsmith.com") }}
 ```
 
-### Chaining Actions
+## Chaining Actions
 
 ```javascript
 // Running Queries on success and showing errors on failure
@@ -87,7 +106,7 @@ This document contains a list of handy JS snippets that are used across applicat
 }}
 ```
 
-### Running APIs/Queries in a loop
+## Running APIs/Queries in a loop
 
 ```javascript
 // Fetching all the details of every user in the table and storing it
