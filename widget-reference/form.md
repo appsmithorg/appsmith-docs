@@ -7,7 +7,7 @@ description: >-
 
 # Form
 
-![](../.gitbook/assets/form%20%283%29.gif)
+![](../.gitbook/assets/form%20%283%29%20%281%29.gif)
 
 ## Form Widgets
 
@@ -32,7 +32,7 @@ User inputs in a form can be sent to an API by binding the individual widgets in
 
 Read more about submitting form data to an API below
 
-[Sending widget data in post body]()
+[Sending widget data in post body](../core-concepts/capturing-data-write/capture-form-data.md)
 
 ## Form Button
 
