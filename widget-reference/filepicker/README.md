@@ -7,7 +7,7 @@ description: >-
 
 # Filepicker
 
-![Click to expand](../../.gitbook/assets/filepicker%20%281%29.gif)
+{% embed url="https://youtu.be/Sl0zN2CSJaY" caption="" %}
 
 ## Upload File
 
