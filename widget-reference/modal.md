@@ -6,7 +6,7 @@ description: >-
 
 # Modal
 
-![Click to expand](../.gitbook/assets/modal.gif)
+{% embed url="https://youtu.be/s8cHVkhj3ec" caption="" %}
 
 | Property | Description |
 | :--- | :--- |
