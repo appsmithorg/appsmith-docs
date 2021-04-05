@@ -38,7 +38,9 @@ description: >-
       <td style="text-align:left"><b>Chart Type</b>
       </td>
       <td style="text-align:left">Changes the type of chart displayed for the chart data. Available options
-        are: Line chart, Bar chart, Pie Chart, Column Chart, and Area Chart.</td>
+        are: Line chart, Bar chart, Pie Chart, Column Chart, and Area Chart,
+        <a
+        href="chart.md#custom-chart">Custom Chart</a><code>(new)</code>.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>x-axis Label</b>
@@ -64,4 +66,15 @@ description: >-
     </tr>
   </tbody>
 </table>
+
+## Custom Chart
+
+In case your use case is not covered in the offered chart types, this option will let you extend all the functionalities offered by the underlying package \([fusioncharts](https://www.fusioncharts.com/)\). The new custom configuration requires an object with `type:string` and `datasource:object` attributes
+
+![Custom charts in Appsmith chart widget](../.gitbook/assets/chart-custom-gif.gif)
+
+| Property | Description |
+| :--- | :--- |
+| Type | All available charts under the fusion chart library. Find all type\(s\) [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) |
+| Datasource | Object consists of customization options and the data to be mapped. The object has 2 properties `{"chart": object, "data": array}`. The `chart` object has options which are used to customize the chart; caption, x/y axis label etc. Find all chart properties [here ](https://www.fusioncharts.com/dev/chart-attributes/area2d)based on the `type: string` you selected. The `data` property is a collection of object as `[{"label": string, "value": string}, ... ]`  |
 

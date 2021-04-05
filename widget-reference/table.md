@@ -29,7 +29,8 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 
 | Widget Property | Description |
 | :--- | :--- |
-| **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax |
+| **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax `{{callMyApi.data}}` |
+| **Columns** | Auto populated from the Table data. This lets you edit the label, show/hide each column \(the eye icon\) and also customize the [column settings](https://docs.appsmith.com/widget-reference/table#column-settings) |
 | **Server Side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is being bound to an API / Query. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Default Search Text** | Sets the default search text of the table |
@@ -37,10 +38,41 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 
 | Action | Description |
 | :--- | :--- |
-| **Column Action** | Adds a new column to the table with a button against each row. The button can be configured to trigger an action on the corresponding data row. |
 | **onRowSelected** | Sets the action to be run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onPageChange** | Sets the action to be run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+
+### Column settings
+
+Each column can now be customized through a set of properties.
+
+![click the gear icon next to the column name to see all settings](../.gitbook/assets/table-column-settings.gif)
+
+You now have a Column type which allows you to perform different actions on each column.
+
+![Manage column types](../.gitbook/assets/table-column-type.gif)
+
+A great property introduced here is the `Computed value` and the `currentRow` internal property. This allows you the manipulate the value using JS expressions; ex you want to show the datetime stamp in the carbon format \(human readable\), You can now do that by just using the js/lodash function. You can now also access each row's column values with `currentRow` property. This can be helpful if you wish to merge multiple value/properties under a single column.
+
+![](../.gitbook/assets/table-computedvalues-currentrow.gif)
+
+In the ex. above we rename `email` column to `contact` and then use the computed value attribute inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
+
+Depending on the column type you have some control over styling as well now. 
+
+![Edit styles per column](../.gitbook/assets/table-styling-column.gif)
+
+Additionally compared to the functionality before the actions can now be set on every column with customization over style and click events 
+
+![Change column to type \`button\` and open a modal on click](../.gitbook/assets/table-column-actions.gif)
+
+| Properties | Description |
+| :--- | :--- |
+| **Column Type** | Select a column type from the dropdown and get relevant actions to perform |
+| **Computed Value** | internal property `currentRow` is introduced to access each row data. You can utilize this property to manipulate the column data using JS expressions |
+| **Styles** | Based on the Column Type, there are various style properties available to change the look and feel of each column |
+| **Original/Display Date format** | In case of type `date` we can set the original/display date format to our choice |
+| **Button Properties** | In case of column type `button` we can use these properties to change the label/color or create a onClick action  |
 
 ## How to display data and handle pagination inside a table?
 
