@@ -8,7 +8,7 @@ The first page you create will list all the products at Oakry. Let's use the def
 
 ## Adding your First Widget
 
-As discussed in the previous sections, Widgets are simple UI Components that can be added to our Apps. Now, let's add a table-widget under the **`ProductListPage`** by following the below steps:
+As discussed in the previous sections, Widgets are simple UI Components that can be added to our Apps. Now, let's add a table widget under the **`ProductListPage`** by following the below steps:
 
 1. Navigate to **Widgets Directory** under `ProductListPage`
 2. Click on `+`

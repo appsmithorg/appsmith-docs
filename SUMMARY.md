@@ -14,7 +14,7 @@
   * [Heroku](setup/heroku.md)
   * [Telemetry Opt-In](setup/telemetry.md)
 * [Tutorial](tutorial-1/README.md)
-  * [Part 1: Creating a Simple View](tutorial-1/part-1-creating-a-simple-view/README.md)
+  * [Part 1: Building a Simple UI](tutorial-1/part-1-creating-a-simple-view/README.md)
     * [The Appsmith Environment](tutorial-1/part-1-creating-a-simple-view/the-appsmith-environment.md)
     * [Creating your First Page](tutorial-1/part-1-creating-a-simple-view/creating-your-first-table.md)
   * [Part 2: Using forms](tutorial-1/part-2-using-forms/README.md)
