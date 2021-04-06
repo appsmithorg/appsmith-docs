@@ -69,12 +69,126 @@ description: >-
 
 ## Custom Chart
 
-In case your use case is not covered in the offered chart types, this option will let you extend all the functionalities offered by the underlying package \([fusioncharts](https://www.fusioncharts.com/)\). The new custom configuration requires an object with `type:string` and `datasource:object` attributes
+In case if your use-case is not covered in the offered chart types, custom chart option will let you extend all the functionalities offered by the underlying package Fusion Charts. To use this on the chart widget, you'll have to select `Custom Chart` type in the Chart Type property. Now, you'll find a `Custom Fusion Chart Configuration`  property where you'll have to set the configuration of the fusion chart. 
 
-![Custom charts in Appsmith chart widget](../.gitbook/assets/chart-custom-gif.gif)
+The new custom configuration requires an object with two keys, `type` and `dataSource`.
 
-| Property | Description |
-| :--- | :--- |
-| Type | All available charts under the fusion chart library. Find all type\(s\) [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) |
-| Datasource | Object consists of customization options and the data to be mapped. The object has 2 properties `{"chart": object, "data": array}`. The `chart` object has options which are used to customize the chart; caption, x/y axis label etc. Find all chart properties [here ](https://www.fusioncharts.com/dev/chart-attributes/area2d)based on the `type: string` you selected. The `data` property is a collection of object as `[{"label": string, "value": string}, ... ]`  |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Property</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">type</td>
+      <td style="text-align:left">The type property takes in the type of fusion chart, you can find all
+        the supported types <a href="https://www.fusioncharts.com/dev/chart-guide/list-of-charts">here</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">dataSource</td>
+      <td style="text-align:left">
+        <p><b>dataSource</b> consists of customization options and the data to be
+          mapped for your chart. It essentially has two properties <code>chart</code> and <code>type.</code>
+        </p>
+        <p></p>
+        <p>The <code>chart</code> object has options that are used to customize the
+          chart for example, caption, x/y axis label etc. The <code>data</code> object
+          is an array that you want to visualise, here&apos;s an example of how the
+          data looks like : <code> [{&quot;label&quot;: string, &quot;value&quot;: string},.. ] </code>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Here's how the entire config should look like in the `Custom Fusion Chart Configuration`  property:
+
+```text
+{{
+    {
+    type:"",
+    dataSource:{
+        "chart": {},
+        "data": [],
+        }
+    }
+}}
+```
+
+Here's a quick example to create a custom Fusion Chart on Appsmith:
+
+![Building a custom Fusion Chart on Appsmith](../.gitbook/assets/screen-recording-2021-04-06-at-7.29.03-pm.gif)
+
+1. First, drag and drop a chart widget on to the canvas.
+2. Open the Chart's property pane by clicking on the cog icon.
+3. Next, choose `Custom Chart` option under Chart Type Property. You'll now find a new property named "Custom Fusion Chart Configuration"
+4. Now inside the `Custom Fusion Chart Configuration` use the moustache syntax to configure your fusion chart and add the required properties.
+5. In this case, we'll be building a **column2d** chart, hence, let's use the fusion chart properties inside the config.
+
+```text
+{{
+{
+type:"column2d",
+dataSource:{
+    "chart": {},
+    "data": [],
+    }
+}
+}}
+```
+
+Next, add the following config to chart and the data config:
+
+```text
+{{{
+type:"column2d",
+dataSource:{
+    "chart": {
+        "caption": "Monthly revenue for last year",
+        "subCaption": "Harry's SuperMart",
+        "xAxisName": "Month",
+        "yAxisName": "Revenues (In USD)",
+        "numberPrefix": "$",
+        "theme": "fusion"
+    },
+    "data": [
+        {
+            "label": "Jan",
+            "value": "420000"
+        },
+        {
+            "label": "Feb",
+            "value": "810000"
+        },
+        {
+            "label": "Mar",
+            "value": "720000"
+        },
+        {
+            "label": "Apr",
+            "value": "550000"
+        },
+        {
+            "label": "May",
+            "value": "910000"
+        },
+    ],
+    "trendlines": [
+        {
+            "line": [
+                {
+                    "startvalue": "700000",
+                    "valueOnRight": "1",
+                    "displayvalue": "Monthly Target"
+                }
+            ]
+        }
+    ]
+}
+}}}
+```
+
+
 
