@@ -108,10 +108,10 @@ Here's how the entire config should look like in the `Custom Fusion Chart Config
 ```text
 {{
     {
-    type:"",
-    dataSource:{
-        "chart": {},
-        "data": [],
+        "type": "",
+        "dataSource": {
+            "chart": {},
+            "data": []
         }
     }
 }}
@@ -129,66 +129,70 @@ Here's a quick example to create a custom Fusion Chart on Appsmith:
 
 ```text
 {{
-{
-type:"column2d",
-dataSource:{
-    "chart": {},
-    "data": [],
+    {
+      "type":"column2d",
+      "dataSource":{
+          "chart":{
+            
+          },
+          "data":[
+            
+          ]
+      }
     }
-}
 }}
 ```
 
-Next, add the following config to chart and the data config:
+Next, add the following config to the chart and the data config:
 
 ```text
-{{{
-type:"column2d",
-dataSource:{
-    "chart": {
-        "caption": "Monthly revenue for last year",
-        "subCaption": "Harry's SuperMart",
-        "xAxisName": "Month",
-        "yAxisName": "Revenues (In USD)",
-        "numberPrefix": "$",
-        "theme": "fusion"
-    },
-    "data": [
-        {
-            "label": "Jan",
-            "value": "420000"
-        },
-        {
-            "label": "Feb",
-            "value": "810000"
-        },
-        {
-            "label": "Mar",
-            "value": "720000"
-        },
-        {
-            "label": "Apr",
-            "value": "550000"
-        },
-        {
-            "label": "May",
-            "value": "910000"
-        },
-    ],
-    "trendlines": [
-        {
-            "line": [
-                {
-                    "startvalue": "700000",
-                    "valueOnRight": "1",
-                    "displayvalue": "Monthly Target"
-                }
-            ]
-        }
-    ]
-}
-}}}
+{{
+    {
+      "type":"column2d",
+      "dataSource":{
+          "chart":{
+            "caption":"Monthly revenue for last year",
+            "subCaption":"Harry's SuperMart",
+            "xAxisName":"Month",
+            "yAxisName":"Revenues (In USD)",
+            "numberPrefix":"$",
+            "theme":"fusion"
+          },
+          "data":[
+            {
+                "label":"Jan",
+                "value":"420000"
+            },
+            {
+                "label":"Feb",
+                "value":"810000"
+            },
+            {
+                "label":"Mar",
+                "value":"720000"
+            },
+            {
+                "label":"Apr",
+                "value":"550000"
+            },
+            {
+                "label":"May",
+                "value":"910000"
+            }
+          ],
+          "trendlines":[
+            {
+                "line":[
+                  {
+                      "startvalue":"700000",
+                      "valueOnRight":"1",
+                      "displayvalue":"Monthly Target"
+                  }
+                ]
+            }
+          ]
+      }
+    }
+}}
 ```
-
-
 
