@@ -92,22 +92,6 @@ The signup page will continue to show up but will throw an error when a user tri
 Learn about more options to restrict signup, including allowing emails with specific domains to signup at the page on [Restricting Sign-up](../../how-to-guides/restricting-signup.md).
 {% endhint %}
 
-## Configuring Nginx behind an ELB
-
-In the file **`data/nginx/nginx.app.conf.template`** modify the line:
-
-```text
-proxy_set_header X-Forwarded-Proto $scheme;
-```
-
-with
-
-```text
-proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
-```
-
-This will ensure that the redirect URLs are correct during OAuth2 logins. This works even if the ELB is configured to run on a custom port.
-
 ## Enabling Services for Self Hosting
 
 Appsmith ships with third-party services that improve the app building experience. All third-party services are entirely optional.

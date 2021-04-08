@@ -37,3 +37,19 @@ Restart the installation process with valid values for the above
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
 * You may need to wait 2 - 3 minutes before accessing the application to allow Nginx to start.
 
+## OAuth Sign Up not working
+
+If your deployment is behind an ELB / Proxy, you must update the nginx configuration of the deployment. In the file**`data/nginx/nginx.app.conf.template`** modify the line:
+
+```text
+proxy_set_header X-Forwarded-Proto $scheme;
+```
+
+with
+
+```text
+proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+```
+
+This will ensure that the redirect URLs are correct during OAuth2 logins. This works even if the ELB is configured to run on a custom port.
+
