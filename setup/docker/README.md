@@ -31,7 +31,7 @@ Make the script executable
 chmod +x install.sh
 ```
 
-Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**. If you must run appsmith on another port [read this guide](../../troubleshooting-guide/deployment-errors.md#ports-unavailable)
 
 ```bash
 ./install.sh
