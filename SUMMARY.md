@@ -30,6 +30,7 @@
   * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
   * [Migrate apps to a new instance](how-to-guides/backup-restore.md)
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
+  * [Writing JavaScript in Appsmith](how-to-guides/writing-javascript-in-appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
