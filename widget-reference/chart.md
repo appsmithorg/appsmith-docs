@@ -71,7 +71,11 @@ description: >-
 
 In case if your use-case is not covered in the offered chart types, custom chart option will let you extend all the functionalities offered by the underlying package Fusion Charts. To use this on the chart widget, you'll have to select `Custom Chart` type in the Chart Type property. Now, you'll find a `Custom Fusion Chart Configuration`  property where you'll have to set the configuration of the fusion chart. 
 
-The new custom configuration requires an object with two keys, `type` and `dataSource`.
+{% hint style="info" %}
+There are almost 100+ variants of Fusion Chart Configuration, learn more from the official docs [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/). 
+{% endhint %}
+
+> The new custom configuration requires an object with two keys, `type` and `dataSource`.
 
 <table>
   <thead>
@@ -195,4 +199,20 @@ Next, add the following config to the chart and the data config:
     }
 }}
 ```
+
+Below are some of the screenshots of Charts using customised Charts on Appsmith:
+
+### Example Paerto3D Chart:
+
+![](../.gitbook/assets/image%20%2811%29.png)
+
+### Example Pie 3D Chart:
+
+![](../.gitbook/assets/image%20%2813%29.png)
+
+### Example Stacked **Column** 3D Chart: 
+
+![](../.gitbook/assets/image%20%2810%29.png)
+
+
 
