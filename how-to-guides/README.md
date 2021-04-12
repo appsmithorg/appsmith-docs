@@ -10,4 +10,5 @@ This document presumes you are familiar with the [core concepts](../core-concept
 4. [Migrate apps to a new instance](backup-restore.md)
 5. [Restricting Sign-up](restricting-signup.md)
 6. [Writing JavaScript in Appsmith](writing-javascript-in-appsmith.md)
+7. [Embed Appsmith Application into Existing Application](embed-appsmith-into-existing-application.md)
 
