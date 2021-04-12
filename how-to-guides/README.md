@@ -7,7 +7,7 @@ This document presumes you are familiar with the [core concepts](../core-concept
 1. [OAuth2 Authorization for Google Sheets](./)
 2. [Sharing data across page](sharing-data-across-pages.md)
 3. [Uploading a file to S3](how-to-upload-to-s3.md)
-4. Migrate apps to a new instance
-5. Restricting Sign-up
-6. Writing JavaScript in Appsmith
+4. [Migrate apps to a new instance](backup-restore.md)
+5. [Restricting Sign-up](restricting-signup.md)
+6. [Writing JavaScript in Appsmith](writing-javascript-in-appsmith.md)
 
