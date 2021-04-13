@@ -32,6 +32,7 @@
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
   * [Writing JavaScript in Appsmith](how-to-guides/writing-javascript-in-appsmith.md)
   * [Embed Appsmith into Existing Application](how-to-guides/embed-appsmith-into-existing-application.md)
+  * [How to work with Local APIs on Appsmith](how-to-guides/how-to-work-with-local-apis-on-appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
