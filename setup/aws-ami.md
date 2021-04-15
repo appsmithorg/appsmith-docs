@@ -14,7 +14,7 @@ Here are the steps you’ll follow in this tutorial:
 * [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
 * [Log in and start using Appsmith](aws-ami.md#step-5-login-and-start-using-appsmith)
 * [Configure custom domain for your app](aws-ami.md#custom-domain)
-* [Find Application Credentials](aws-ami.md#sfind-application-credentials)
+* [Find Application Credentials](aws-ami.md#find-application-credentials)
 * [Updating your Appsmith installation](aws-ami.md#updating-your-appsmith-installation)
 
 The next sections will walk you through these steps in detail.
