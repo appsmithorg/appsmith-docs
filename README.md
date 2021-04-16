@@ -2,6 +2,17 @@
 
 Appsmith is a JavaScript-based visual development platform to build and launch internal tools quickly. Use pre-built UI widgets, connect them to your APIs and databases to build dynamic apps and complex workflows.
 
+## How does Appsmith work?
+
+You need to understand five principles to build apps.
+1. Create your page by using UI components
+2. Connect Appsmith to your datasources like REST APIs, MySQL, Postgres, MongoDB, and other databases.
+3. Write your queries and business logic in the SQL or JS editor
+4. Bind UI to your query responses or business logic
+5. Deploy your app with a click and invite users
+
+Using these steps you can create simple CRUD apps to complicated multi-step workflows. Appsmith makes it really easy to build UI that talks to any datasource. You can customize the app by writing JS everywhere including inside your DB queries.
+
 Watch this 5-minute video on how to use Appsmith.
 
 {% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
