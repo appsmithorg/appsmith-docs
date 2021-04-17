@@ -44,27 +44,27 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 
 ### Column settings
 
-Each column can now be customized through a set of properties.
+Each column can now be customized through a set of properties by clicking on the gear icon.
 
-![click the gear icon next to the column name to see all settings](../.gitbook/assets/table-column-settings.gif)
+![click the gear icon next to the column name to see all settings](../.gitbook/assets/table-column-settings-1.gif)
 
-You now have a Column type which allows you to perform different actions on each column.
+After clicking on the gear icon you see the Column type property which allows you to perform different actions on each column.
 
-![Manage column types](../.gitbook/assets/table-column-type.gif)
+![Manage column types](../.gitbook/assets/manage-column-types-2.gif)
 
 A great property introduced here is the `Computed value` and the `currentRow` internal property. This allows you the manipulate the value using JS expressions; ex you want to show the datetime stamp in the carbon format \(human readable\), You can now do that by just using the js/lodash function. You can now also access each row's column values with `currentRow` property. This can be helpful if you wish to merge multiple value/properties under a single column.
 
-![](../.gitbook/assets/table-computedvalues-currentrow.gif)
+![](../.gitbook/assets/current-row-show-hide-3.gif)
 
-In the ex. above we rename `email` column to `contact` and then use the computed value attribute inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
+In the ex. above we rename `email` column to `contact` and then use the computed value property inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
 
 Depending on the column type you have some control over styling as well now. 
 
-![Edit styles per column](../.gitbook/assets/table-styling-column.gif)
+![Changing column styling; font, alignment, color.](../.gitbook/assets/edit-column-styles-4.gif)
 
 Additionally compared to the functionality before the actions can now be set on every column with customization over style and click events 
 
-![Change column to type \`button\` and open a modal on click](../.gitbook/assets/table-column-actions.gif)
+![Set column actions](../.gitbook/assets/column-action-uttons-5.gif)
 
 | Properties | Description |
 | :--- | :--- |
