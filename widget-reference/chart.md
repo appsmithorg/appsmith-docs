@@ -204,7 +204,7 @@ Below are some of the screenshots of Charts using customised Charts on Appsmith:
 
 ### Example Paerto3D Chart:
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
 ### Example Pie 3D Chart:
 
