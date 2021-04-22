@@ -41,7 +41,7 @@ description: >-
           <li>YYYY-MM-DD HH:mm</li>
           <li>ISO 8601 as mentioned in the <a href="https://momentjs.com/docs/#/parsing/string/">moment documentation</a>
           </li>
-          <li>and others following the ISO 8601 standard.</li>
+          <li>Others following the ISO 8601 standard.</li>
         </ul>
         <p>This can also be populated using a moment object <b>{{ moment() }} </b>as
           well.</p>
