@@ -27,7 +27,7 @@
 * [How To Guides](how-to-guides/README.md)
   * [OAuth2 Authorization for Google Sheets](how-to-guides/oauth2-authorization-for-google-sheets.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
-  * [Upload / Download Files from S3](how-to-guides/how-to-upload-to-s3.md)
+  * [Upload / Download Files from S3](how-to-guides/how-to-upload-and-download-with-s3.md)
   * [Migrate apps to a new instance](how-to-guides/backup-restore.md)
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
   * [Writing JavaScript in Appsmith](how-to-guides/writing-javascript-in-appsmith.md)

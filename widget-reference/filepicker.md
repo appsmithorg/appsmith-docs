@@ -19,7 +19,7 @@ You can upload files by creating a post API and referring to the base64 or binar
 
 See our guides on
 
-* [Uploading a File to S3](../how-to-guides/how-to-upload-to-s3.md)
+* [Uploading a File to S3](../how-to-guides/how-to-upload-and-download-with-s3.md)
 
 ## Properties
 
