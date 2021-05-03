@@ -65,7 +65,7 @@ Appsmith does support multi-line JS if wrapped inside a function. The above inva
 {{ function() {
       const array = QueryName.data.map((row) => row);
       const filterArray = array.filter((row) => row.id > 5);
-   }()
+   }
 }}
 ```
 
