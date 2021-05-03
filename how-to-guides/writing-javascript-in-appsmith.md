@@ -89,7 +89,7 @@ In our `Table1`, where we are binding all our products data, we’ve simply used
 ```javascript
 {{ 
 function(){
-    Const data = get_products.data.map(item => ({
+    const data = get_products.data.map(item => ({
         name: item.productName,
         price : item.mrp
         }))
