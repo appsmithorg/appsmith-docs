@@ -1,6 +1,12 @@
+---
+description: >-
+  Appsmith Google Sheet Integration (Beta) lets us build powerful applications
+  by connecting to any Google Sheet as a data source.
+---
+
 # Google Sheets Integration
 
-**Appsmith Google Sheet Integrations** lets us build powerful applications by connecting to any Google Sheet as a data source. This integration is present under API sections with Appsmith applications. Using this, one can achieve all the basic operations \(CRUD\) with a custom UI on Appsmith by minimal configuration within multiple sheets \(sub-sheets\) on a Google Sheet.
+This integration is present under API sections with Appsmith applications. Using this, one can achieve all the basic operations \(CRUD\) with a custom UI on Appsmith by minimal configuration within multiple sheets \(sub-sheets\) on a Google Sheet.
 
 ![](../.gitbook/assets/screenshot-2021-05-04-at-4.48.19-pm.png)
 
