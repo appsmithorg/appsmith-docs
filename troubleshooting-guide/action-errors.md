@@ -254,3 +254,22 @@ This message indicates that `Send Appsmith signature header` field has been mark
 
 This error can be resolved by filling in the `Session Details Signature Key` field or by disabling the `Send Appsmith signature header` field by selecting `No`.
 
+## Plugin Specific Errors
+
+### MySQL Plugin Errors
+
+```text
+dev.miku.r2dbc.mysql.client.MySqlConnectionException
+```
+
+```text
+dev.miku.r2dbc.mysql.client.MySqlConnectionClosedException: Connection unexpectedly closed
+```
+
+```text 
+Error was received while reading the incoming data. The connection will be closed.
+```
+
+This error message indicates that the MySQL server that you are trying to connect to does not support SSL. 
+
+This error can be resolved by editing the SSL field in the datasource configuration form and setting it to `Disabled`. 
