@@ -10,7 +10,7 @@ JavaScript can be used inside `{{ }}` anywhere in Appsmith. Every entity in Apps
 
 ## Reactive
 
-Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property. 
+Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property.
 
 In order to update the property of a widget, unlike in imperative programming where a programmer would write a statement as
 
@@ -30,7 +30,7 @@ In Appsmith, programmers declare the states of the text property in the property
 
 Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the javascript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
 
-#### Valid JS
+### Valid JS
 
 ```text
 {{ QueryName.data.map((row) => row).filter((row) => row.id > 5 ) }}
