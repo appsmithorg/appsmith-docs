@@ -10,8 +10,8 @@ Appsmith is a low-code tool that lets us build tools and user interfaces. We’l
 
 The Moustache syntax helps us write JavaScript anywhere in Appsmith. For example, say if you want to render the data onto a table from API, on Appsmith, you can drag and drop the table widget, open the property pane and inside the table data, use moustache syntax to call the API. 
 
-```text
-{{ //code goes here }}
+```javascript
+{{ myApiEndpoint.data.field1 }}
 ```
 
 ### **Binding Data**
@@ -92,7 +92,8 @@ function(){
     const data = get_products.data.map(item => ({
         name: item.productName,
         price : item.mrp
-        }))
+        }));
+     return data;
     }
 }}
 ```
