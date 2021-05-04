@@ -74,7 +74,7 @@
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
-* [Google Sheets Integration](datasource-reference/google-sheets-integration.md)
+* [Google Sheets Integration](datasource-reference/querying-google-sheets.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
 * [MS SQL](datasource-reference/querying-mssql.md)
