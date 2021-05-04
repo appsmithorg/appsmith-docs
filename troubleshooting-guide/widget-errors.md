@@ -13,12 +13,18 @@ The Evaluated Value below indicates the current value of the field and in the im
 In cases like these, you can use javascript to transform the data to the correct data type or access the correct data inside the object. The below code reduces the fetch\_orders.data array to aggregate orders based on the date into an array &lt;x, y&gt; where x is the date of the order and y is the order amount
 
 ```javascript
-{{_.values(fetch_orders.data.reduce((accumulator, order) => { 
-    accumulator[order.date] ? accumulator[order.date].y += order.orderAmount : 
-        accumulator[order.date] = { x:order.date, y: order.orderAmount  }; 
-      return acc 
+{{
+    _.values(fetch_orders.data.reduce((accumulator, order) => {
+        if(accumulator[order.date]) {
+            accumulator[order.date].y += order.orderAmount
+        } else {
+            accumulator[order.date] = { x:order.date, y: order.orderAmount  }; 
+        }
+        return acc;
     }, {}))
 }}
+
+
 ```
 
 ## Syntax Error

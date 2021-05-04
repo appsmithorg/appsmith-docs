@@ -12,7 +12,7 @@ Remember to create a new modal before calling this action
 
 ## Signature
 
-```text
+```javascript
 showModal(modalName: string): void
 ```
 

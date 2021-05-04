@@ -8,7 +8,7 @@ description: Show a temporary notification style alert message to the user
 
 ## Signature
 
-```text
+```javascript
 showAlert(message: string, style: string) -> void
 ```
 

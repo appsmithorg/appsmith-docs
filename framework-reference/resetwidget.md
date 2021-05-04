@@ -9,7 +9,7 @@ description: >-
 
 ## Signature
 
-```text
+```javascript
 resetWidget(widgetName: string, resetChildren?: boolean) -> void
 ```
 

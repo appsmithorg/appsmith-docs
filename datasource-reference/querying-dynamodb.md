@@ -37,7 +37,7 @@ The [ListTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/
 
 The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html) command returns metadata about the table that is queried using the JSON body. A sample request might have the following body:
 
-```text
+```json
 {
     "TableName" : "four"
 }
@@ -47,7 +47,7 @@ The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReferen
 
 The [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html) command retrieves a single item on the basis of its primary key. This primary key can be configured in any of DynamoDB's supported [types](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html) for attribute values. The request would use this specified type in the JSON body. In the following example, the primary key is called "pkey" and is of type `String` or `S` and hase a value of `a`.
 
-```text
+```json
 {
     "TableName" : "four",
     "Key": {
@@ -62,7 +62,7 @@ The [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API
 
 The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html) command is used to insert or replace an entire item object. This request can be configured to return with the inserted/updated item using the `ReturnValues` parameter. Here, we use the PutItem command for a simple insert.
 
-```text
+```json
 {
     "TableName" : "four",
     "Item" : {
@@ -83,7 +83,7 @@ The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API
 
 The [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html) can be used for conditionally updating parts of an item. This request also supports `ReturnValues` as well as new inserts.
 
-```text
+```json
 {
     "TableName" : "four",
     "Key" : {

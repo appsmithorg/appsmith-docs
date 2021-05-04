@@ -10,7 +10,7 @@ The visibility property is usually a switch in the property pane of every widget
 
 In the example below the visibility of the table is a conditional value based on the selected value of the RadioGroup
 
-```text
+```javascript
 {{RadioGroup1.selectedOptionValue === "Visible"}}
 ```
 
@@ -24,7 +24,7 @@ The Visible property expects the expression to evaluate to a boolean value
 
 Similar to the above example, we can tie the visibility of a widget to the response of an API/Query.
 
-```text
+```javascript
 {{ API1.data.value === "trueValue" }}
 ```
 

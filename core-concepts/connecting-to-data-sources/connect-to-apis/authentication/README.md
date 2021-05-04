@@ -8,7 +8,7 @@ In case the APIs that you wish to connect to are protected by an authentication 
 You can Base64 encode credentials using the bota function. You can either hardcode the username & password or reference them from fields in the UI using javascript.
 {% endhint %}
 
-```text
+```javascript
 {{ btoa('username:password') }}
 {{ btoa(userNameInput.text, passwordInput.text) }}
 ```

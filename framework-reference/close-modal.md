@@ -10,7 +10,7 @@ description: >-
 
 ## Signature
 
-```text
+```javascript
 closeModal(modalName: string): void
 ```
 

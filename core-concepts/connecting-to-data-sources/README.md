@@ -8,7 +8,7 @@ Rich applications require real data to build intuitive UI, perform data transfor
 {% hint style="warning" %}
 Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
 
-18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted
+**18.223.74.85** and **.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 
 Follow the step-by-step guide to [whitelist appsmith on AWS.](aws-whitelist.md)
 {% endhint %}
@@ -23,7 +23,7 @@ If you would like to play around with the platform before connecting your data, 
 
 ### Mock DB
 
-Every personal organization comes with a Mock database for you to query. The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
+Every personal organization comes with a mock database for you to query. The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
 
 ![](../../.gitbook/assets/mock-db.gif)
 

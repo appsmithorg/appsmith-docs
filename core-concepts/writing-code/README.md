@@ -8,6 +8,36 @@ description: >-
 
 JavaScript can be used inside `{{ }}` anywhere in Appsmith. Every entity in Appsmith can be referenced as a JavaScript variable and all JavaScript functions and operations can be performed on them. This means that all Widgets, APIs, Queries, and their associated data and properties can be referenced anywhere in an application inside handlebars `{{ }}`.
 
+Appsmith currently supports two forms of JavaScript code for dynamically evaluated property values:
+
+1. Single line code or functions, such as ternary conditions
+
+```javascript
+{{ QueryName.data.filter((row) => row.id > 5 ) }}
+```
+
+2. Immediately Invoked Function Expressions [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+```javascript
+{{ 
+  function() {
+      const array = QueryName.data;
+      const filterArray = array.filter((row) => row.id > 5);
+      return filterArray;
+   }()
+}}
+```
+
+You can also write JavaScript code for event listners. For JavaScript code inside an event listener, you can write multi-line JavaScript as below.
+
+```javascript
+{{
+  storeValue("userID", 42);  
+  console.log(appsmith.store.userID); 
+  showAlert("userID saved");
+}}
+```
+
 ## Reactive
 
 Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property. 
@@ -26,45 +56,53 @@ In Appsmith, programmers declare the states of the text property in the property
 {{ Dropdown1.selectedOption === "John" ? "John Doe" : "" }}
 ```
 
-## Single Line JS
+## Single Line JavaScript
 
-Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the javascript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
+Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the JavaScript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
 
-#### Valid JS
+#### Valid JavaScript
 
-```text
-{{ QueryName.data.map((row) => row).filter((row) => row.id > 5 ) }}
+Following are valid examples of JavaScript for property values.
+
+```javascript
+{{ QueryName.data.filter((row) => row.id > 5 ) }}
 ```
 
-```text
+```javascript
 {{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}
 ```
 
-**Invalid JS**
+**Invalid JavaScript**
 
-```text
-{{ const array = QueryName.data.map((row) => row);
+Following are invalid examples of JavaScript for property values. Here we should be using Immediately Invoked Function Expressions [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+```javascript
+{{ 
+   const array = QueryName.data;
    const filterArray = array.filter((row) => row.id > 5);
    return filterArray;
 }}
 ```
 
-```text
-{{ if (Dropdown.selectedOptionValue === "1") {
-        return "Option 1";
-    } else {
+```javascript
+{{ 
+  if (Dropdown.selectedOptionValue === "1") {
+      return "Option 1";
+  } else {
       return "Option 2";
-    }
-  }}
+  }
+}}
 ```
 
-## Multi-Line JS
+## Multi-Line JavaScript 
 
-Appsmith does support multi-line JS if wrapped inside a function. The above invalid examples are valid if used as below
+
+Appsmith does support multi-line JS if it is [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). The above invalid examples become valid if used as below.
 
 ```javascript
-{{ function() {
-      const array = QueryName.data.map((row) => row);
+{{ 
+  function() {
+      const array = QueryName.data;
       const filterArray = array.filter((row) => row.id > 5);
       return filterArray;
    }()
@@ -72,7 +110,8 @@ Appsmith does support multi-line JS if wrapped inside a function. The above inva
 ```
 
 ```javascript
-{{ function() {
+{{ 
+  function() {
       if (Dropdown.selectedOptionValue === "1") {
         return "Option 1";
       } else {
@@ -81,4 +120,8 @@ Appsmith does support multi-line JS if wrapped inside a function. The above inva
    }()
 }}
 ```
+{% hint style="warning" %}
+**Writing comments inside {{ }}:**
 
+Note that you can write comments inside {{ }} using JavaScript's multi-line comment syntax `/* */`, but single line comments `//` are not supported inside {{ }}.
+{% endhint %}

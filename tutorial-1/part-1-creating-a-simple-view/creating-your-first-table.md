@@ -41,7 +41,7 @@ Here are steps to play with **Table Data** to get a hang of how it affects the d
 5. Verify that column **one** of the first row of the table now shows `i`.
 6. Click on the **Deploy** button on the top right.
 
-```text
+```json
 [
   { "one": "1", "two": "2" },
   { "one": "I", "two": "II" }
@@ -93,7 +93,7 @@ The next step is to display the query results in the `Products_Table`, follow th
 1. Navigate back to _Widgets_ under `ProductListPage` and select the `Products_Table`
 2. Open `Product_Table` properties, and copy the following property to `Table Data`
 
-```text
+```javascript
 {{ProductsQuery.data}}
 ```
 

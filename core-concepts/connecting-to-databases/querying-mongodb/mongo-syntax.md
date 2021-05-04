@@ -8,7 +8,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Syntax
 
-```text
+```json
 {
       "find": <string>,
       "filter": <document>,
@@ -23,7 +23,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Example
 
-```text
+```json
 {
      "find": "restaurants",
      "filter": { "rating": { "$gte": 9 }, "cuisine": "italian" },
@@ -37,7 +37,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### **Syntax**
 
-```text
+```json
 {
       "update": <collection>,
       "updates": [
@@ -53,7 +53,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Example
 
-```text
+```json
 {
       "update": "members",
       "updates": [
@@ -70,7 +70,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Syntax
 
-```text
+```json
 {
    "insert": <collection>,
    "documents": [ <document>, <document>, ... ],
@@ -82,7 +82,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Example
 
-```text
+```json
 {
       "insert": "users",
       "documents": [ 
@@ -95,7 +95,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Syntax
 
-```text
+```json
 {
    "delete": <collection>,
    "deletes": [
@@ -111,7 +111,7 @@ description: Appsmith uses the database command syntax to query MongoDB
 
 ### Example
 
-```text
+```json
 {
       "delete": "orders",
       "deletes": [ { 

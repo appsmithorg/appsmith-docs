@@ -31,7 +31,7 @@ During installation, we collect some basic stats around which installations were
 
 **Sample event**
 
-```text
+```json
 {
   "anonymousId": "anonymoustId",
   "context": {
@@ -63,7 +63,7 @@ The appsmith server sends a keep-alive ping every 6 hours to indicate that it is
 
 **Sample event**
 
-```text
+```json
 {
   "context": {
     "ip": "203.192.213.46",
@@ -93,7 +93,7 @@ The client captures anonymous behavioral data around navigation and clicks. No d
 
 **Sample data**
 
-```text
+```json
 {
   "anonymousId": "0b62ab60-02ad-4f69-a181-d9c5eb2f97fa",
   "context": {
@@ -131,7 +131,7 @@ If you accidentally opted In and want to disable telemetry, you can set`APPSMITH
 
 You must restart docker and Nginx with the following command for the changes to take effect.
 
-```text
+```shell
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 

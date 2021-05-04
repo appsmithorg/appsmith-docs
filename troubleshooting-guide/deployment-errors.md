@@ -26,7 +26,7 @@ If you chose to initialize a new database and are seeing this error, it could be
 
 If you are trying to connect to an existing MongoDB and the containers failed to start it may be due to one of the following reasons:
 
-1. Incorrect MongoDb credentials
+1. Incorrect MongoDB credentials
 2. Empty Salt / Password for encryption  
 
 Restart the installation process with valid values for the above

@@ -30,20 +30,25 @@ Once you have configured actions using the GUI, you can click on the JS icon nex
 
 Every API / Query object contains a run method that is used to execute it. The run method is asynchronous and multiple actions can be executed in parallel as below
 
-```sql
+```javascript
 {{ API1.run(); Query2.run(); API2.run(); }}
 ```
 
 or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](../../framework-reference/run.md)
 
-```sql
+```javascript
 {{ 
-    updateUsers.run(() => { 
-        fetchUsers.run(() => { 
-            showAlert('User Updated'); 
-            closeModal('Modal1'); 
-        }, () => showAlert("Fetch Users Failed"));
-    }, () => showAlert("Update User Failed", "error")) 
+    updateUsers.run(
+        () => { 
+            fetchUsers.run(
+                () => { 
+                    showAlert('User Updated'); 
+                    closeModal('Modal1'); 
+                }, 
+                () => showAlert("Fetch Users Failed"));
+        }, 
+        () => showAlert("Update User Failed", "error")
+    ) 
 }}
 ```
 
@@ -51,14 +56,13 @@ or chained to be called onSuccess / onError using the callback arguments in the 
 
 Actions can also be chained to execute conditionally based on the value of a widget or the response of an API
 
-```sql
+```javascript
 {{ 
-    statusDropdown.selectedOptionValue === "Pending" ?  
+  statusDropdown.selectedOptionValue === "Pending" ?
       fetchPendingUsers.run(() => {
-        fetchPendingUsers.data.length === 0 ? 
-          showAlert("No Users Pending Approval", "info") : 
-          showAlert("Fetched Users", "success")
-      }) : fetchApprovedUsers.run() 
+          fetchPendingUsers.data.length === 0 ? showAlert("No Users Pending Approval", "info") : showAlert("Fetched Users", "success");
+      }) :
+      fetchApprovedUsers.run();
 }}
 ```
 

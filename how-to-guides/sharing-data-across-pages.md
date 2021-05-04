@@ -10,7 +10,7 @@ description: >-
 
 Query params can be passed by adding the query params object to [NavigateTo action](../framework-reference/navigateto.md). To do this click on the JS mode for Action and update it as follows.
 
-```text
+```javascript
 {{navigateTo("PageName", {"param": "value"})}}
 ```
 

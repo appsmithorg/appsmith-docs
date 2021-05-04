@@ -20,7 +20,14 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 5. Rename the API to **UpdateQueryApi**
 6. Choose method as **POST**
 7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{Products_Table.selectedRow.id}}`
-8. Copy-paste the below in **Body** `{  "productName" : "{{productNameInput.text}}",  "mrp" : "{{mrpInput.text}}",  "category" : "{{categoryDropdown.selectedOptionValue}}"  }` ****
+8. Copy-paste the below in **Body** 
+```json
+{
+  "productName": "{{productNameInput.text}}",
+  "mrp": "{{mrpInput.text}}",
+  "category": "{{categoryDropdown.selectedOptionValue}}"
+}
+```
 9. Run the API
 10. Verify that the API runs successfully
 

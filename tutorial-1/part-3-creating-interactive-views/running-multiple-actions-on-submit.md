@@ -29,7 +29,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 2. The **onClick** field converts to JS
 3. Set it to 
 
-```text
+```javascript
 {{
   UpdateProductQuery.run(
   () => { 

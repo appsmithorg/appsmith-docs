@@ -11,7 +11,7 @@ description: >-
 
 ## Signature
 
-```text
+```javascript
 navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") -> void
 ```
 
