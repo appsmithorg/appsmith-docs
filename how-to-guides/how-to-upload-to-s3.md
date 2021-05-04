@@ -31,29 +31,32 @@ To download a file
 
 ![Click to expand](../.gitbook/assets/bind-list-files-to-table.png)
 
-6. Create a new S3 query for the `onRowSelected` action named **read\_file**
+1. Create a new S3 query for the `onRowSelected` action named **read\_file**
 
 ![](../.gitbook/assets/create-action-on-row-selected.gif)
 
-7. Configure the **read\_file** query with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file) 
+1. Configure the **read\_file** query with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file) 
+
    action.
-8. Configure the bucket name in the query
-9. Pass the file path selected in the table to the query using the [javascript expression](./writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.file}}`
+
+2. Configure the bucket name in the query
+3. Pass the file path selected in the table to the query using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.file}}`
 
 ![Click to expand](../.gitbook/assets/s3-read-file-query.png)
 
-10. Configure the `onSuccess` action of the `onRowSelected` Action in the Table to `Download`.
-11. Configure the download function with
-    1. **Data to Download:** `{{atob(read_file.data.fileData)}}`
-    2. File name with extension:`{{s3_files.selectedRow.fileName.split("/").pop()}}`
+1. Configure the `onSuccess` action of the `onRowSelected` Action in the Table to `Download`.
+2. Configure the download function with
+   1. **Data to Download:** `{{atob(read_file.data.fileData)}}`
+   2. File name with extension:`{{s3_files.selectedRow.fileName.split("/").pop()}}`
 
-![Click to expand](../.gitbook/assets/configure-download-on-success.png)    
+![Click to expand](../.gitbook/assets/configure-download-on-success.png)
 
-12. Alternatively, for steps 7-11, you can click on the `JS` button next to `onRowSelectedAction` and write the 
-    following javascript query:
-```text
-    {{read_file.run(
-    ()=>{download(atob(read_file.data.fileData),s3_files.selectedRow.fileName.split("/").pop())})}}
-```
+1. Alternatively, for steps 7-11, you can click on the `JS` button next to `onRowSelectedAction` and write the following javascript query:
 
-13. Click any row in table `s3_files` to download the corresponding file from your S3 bucket.
+   ```text
+   {{read_file.run(
+   ()=>{download(atob(read_file.data.fileData),s3_files.selectedRow.fileName.split("/").pop())})}}
+   ```
+
+2. Click any row in table `s3_files` to download the corresponding file from your S3 bucket.
+

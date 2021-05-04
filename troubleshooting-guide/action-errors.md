@@ -106,15 +106,15 @@ This error can be fixed by deleting any queries dependent on this datasource bef
 
 If your API / DB Query times out, it could be due to one of the following reasons
 
-* Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by 
+* Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by
 
   [whitelisting the appsmith instance](../core-concepts/connecting-to-data-sources/) in your database or VPC.
 
-* Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using 
+* Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using
 
-  \[server-side 
+  \[server-side
 
-  pagination\]\(../core-concepts/displaying-data-read/display-data-tables.md\#pagination\) or increasing the timeout of 
+  pagination\]\(../core-concepts/displaying-data-read/display-data-tables.md\#pagination\) or increasing the timeout of
 
   the API / Query in the [settings section](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings).
 
@@ -266,10 +266,11 @@ dev.miku.r2dbc.mysql.client.MySqlConnectionException
 dev.miku.r2dbc.mysql.client.MySqlConnectionClosedException: Connection unexpectedly closed
 ```
 
-```text 
+```text
 Error was received while reading the incoming data. The connection will be closed.
 ```
 
-This error message indicates that the MySQL server that you are trying to connect to does not support SSL. 
+This error message indicates that the MySQL server that you are trying to connect to does not support SSL.
 
-This error can be resolved by editing the SSL field in the datasource configuration form and setting it to `Disabled`. 
+This error can be resolved by editing the SSL field in the datasource configuration form and setting it to `Disabled`.
+

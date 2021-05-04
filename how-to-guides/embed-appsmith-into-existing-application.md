@@ -46,6 +46,8 @@ Awsome, by opening the HTML page in a web browser, you should see your applicati
 
 ![Sceenshot of Appsmith Embed](https://lh5.googleusercontent.com/cky5Ayi-RETeeZ10cPZOo0b73dIfBi_z9f1dwvhfj1-FOOfpkcdprLZvf2Dm_j8POy5AOAnd_SK4SKEbWz67BK78vUY57EbB0Dh9Nby2MmNPjcHyRwpKqaxWPYs8cYM9D8A0twiY)
 
+### Remove Appsmith Top Bar
+
 Additionally, you can also see the Appsmith toolbar on the top, you can remove this by adding **`?embed=true`** to the share URL. Update the code to the following:
 
 ```markup
