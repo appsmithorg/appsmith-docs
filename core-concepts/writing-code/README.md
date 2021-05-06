@@ -26,6 +26,8 @@ In Appsmith, programmers declare the states of the text property in the property
 {{ Dropdown1.selectedOption === "John" ? "John Doe" : "" }}
 ```
 
+This means that widgets are automatically updated whenever their underlying data changes or an API / Query returns with data.
+
 ## Single Line JS
 
 Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the javascript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
