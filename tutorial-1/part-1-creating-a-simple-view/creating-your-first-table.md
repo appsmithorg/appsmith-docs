@@ -97,35 +97,17 @@ The next step is to display the query results in the `Products_Table`, follow th
 {{ProductsQuery.data}}
 ```
 
-Here, we are accessing the entire query object by using the query name: `ProductsQuery`, the `.data` method allows us to attach data.
+Here, we are accessing the entire query object by using the query name: `ProductsQuery`, the `.data` property allows us to attach data.
 
 > Using the flower brackets `{{ }}` you’re asking Appsmith to resolve what is within it as JavaScript code. You can write JavaScript anywhere in Appsmith using `{{ }}`.
 
-Setting **Table Data** to `{{ ProductsQuery.data }}` also ensures that whenever **ProductListPage** loads, **ProductsQuery** runs automatically. You can, although, change this default behaviour by toggling the field "**Run query on page load**" on the **Setting** tab of **ProductsQuery**.
+Setting **Table Data** to `{{ ProductsQuery.data }}` also ensures that whenever **ProductListPage** loads, **ProductsQuery** runs automatically. You can, although, change this default behavior by toggling the field "**Run query on page load**" on the **Setting** tab of **ProductsQuery**.
 
-Now, you should see your table displays the `ProductsQuery` results. You can also deploy this and share it to display the product catalogue for the Oakry app.
+Now, you should see your table displays the `ProductsQuery` results. You can also deploy this and share it to display the product catalog for the Oakry app.
 
 Below is the screenshot:
 
 ![](https://lh5.googleusercontent.com/wjbhU2Nsq_tfEFoAsI4qEn60jo6E8dkySMMUqoV9h1IdfBJ9Ug48_EkI-LZVaRK3VB4ebTi0OTbYFczticODH13A-XWJi-qhE12Lhz8OSXnCvRDB6uqceArq3wDVZA5xOaQlAogK)
-
-## Reactive Programming
-
-Appsmith follows the [Reactive Programming paradigm](https://en.wikipedia.org/wiki/Reactive_programming).
-
-In reactive programming, when you set `a := b + c`, the value of `a` is automatically updated whenever the values of `b` or `c` change, without the program having to re-execute the statement to determine the presently assigned value of `a`.
-
-As against imperative programming, where after `a` is assigned the result of `b + c` in the instant the expression is evaluated, later the values of `b` and `c` can change with no effect on the value of `a`.
-
-Let's extend this to what you did in the previous section by setting:
-
-```text
-Table Data of Products_Table := {{ ProductsQuery.data }}
-```
-
-The data displayed on **Products\_Table** will be updated automatically, whenever **ProductsQuery** is run, i.e. without you having to write explicit code to re-evaluate **TableData** of **Products\_Table**.
-
-So, in Appsmith, whenever you bind a field to a dynamic variable, the field's value will be automatically updated when the value of the dynamic variable changes.
 
 ## Variables and Names
 
@@ -134,7 +116,7 @@ In the previous sections, we've used names to access widgets and queries. For ex
 1. They represent an object, be it a widget, an API object, or a query object
 2. They support a set of methods
 3. They have a scope; they can be accessed from only within their parent page
-4. All names within a page must be unique - be it widget names, query name, or API names.
+4. All names within a page must be unique - be it widget names, query names, or API names.
 
 As you'll see in the next section, the inverse of this is also possible, i.e a widget's state can also be accessed by a query. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names.
 

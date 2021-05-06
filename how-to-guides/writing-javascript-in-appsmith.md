@@ -6,17 +6,17 @@ description: JavaScript guide for building apps on Appsmith
 
 Appsmith is a low-code tool that lets us build tools and user interfaces. We’ll be using JavaScript to interact with the UI Widgets, APIs, and Database Queries during this process of building applications. In this guide, we’ll be looking at some of the basic operations with JavaScript to help us understand how easy and fun building apps on Appsmith is!
 
-### **Moustache Syntax**
+## **Moustache Syntax**
 
-The Moustache syntax helps us write JavaScript anywhere in Appsmith. For example, say if you want to render the data onto a table from API, on Appsmith, you can drag and drop the table widget, open the property pane and inside the table data, use moustache syntax to call the API. 
+The Moustache syntax helps us write JavaScript anywhere in Appsmith. For example, say if you want to render the data onto a table from API, on Appsmith, you can drag and drop the table widget, open the property pane and inside the table data, use moustache syntax to call the API.
 
 ```javascript
 {{ myApiEndpoint.data.field1 }}
 ```
 
-### **Binding Data**
+## **Binding Data**
 
-Binding data into UI is one of the most common and frequently used operations when building User Interfaces. Now, you’ll look at how you can bind data into charts/table widgets inside Appsmith. For this, we’ll be using a sample query to fetch data from the mock database and then bind it to the widget. 
+Binding data into UI is one of the most common and frequently used operations when building User Interfaces. Now, you’ll look at how you can bind data into charts/table widgets inside Appsmith. For this, we’ll be using a sample query to fetch data from the mock database and then bind it to the widget.
 
 Now create an application under your personal organisation and create a new DB Query by clicking the `+` icon next to it. Rename the query to `get_products`.
 
@@ -42,11 +42,11 @@ There you go! You should see all your products inside the table. If you want to 
 {{ get_products.data.map(item =>({name:item.productName, price:item.mrp})) }}
 ```
 
-### **Accessing Widget Property / State**
+## **Accessing Widget Property / State**
 
 While building UI you might often need to access the state of the different properties for different things. For example, say you want to display the details of a particular row in a table, you’ll need to write some code. Now, look at how you can utilise JS in Appsmith and access the state and properties of the widget.
 
-For this, let’s use the same table and display all the details of the product when clicked on a row by accessing the state. 
+For this, let’s use the same table and display all the details of the product when clicked on a row by accessing the state.
 
 First, drag and drop the required text widgets. Now inside the text widget property pane, under the Text property add the following JS snippet:
 
@@ -56,7 +56,7 @@ First, drag and drop the required text widgets. Now inside the text widget prope
 
 Now, when you click on the random row’s in the table, you can see the text automatically changes its state to the product name. In this way, you can access and manipulate the state inside the widgets. Similarly, you can also, add images and many more for your applications.
 
-### **Performing Actions**
+## **Performing Actions**
 
 Appsmith loves JavaScript! Whenever you want to write custom logic for certain action calls or API calls, you can customise with simple JS. For example, say, you want to show an alert whenever you’re searching through tables. You can select the row and can add logic to the **`onSeachTextChanged`** property.
 
@@ -68,9 +68,9 @@ With this, whenever you’re searching for anything on the tables, you’ll see 
 
 ![Configuring Actions on Appsmith](https://lh5.googleusercontent.com/PB37xpaK7u6063ANpW8tnyTQyM16w9XugIt_PSQy2O_Hoy-A-FyP4Dhaq1HR8NUfyCvoVF0CKpx2Q3FMNO3JMifebaORF0MSfXIm3HSsVmyXQ2OWEaa5bGgKVDhpWNB27MNwF4j8)
 
-### **Manually triggering APIs/Query**
+## **Manually triggering APIs/Query**
 
-You might often want to invoke your API Queries on certain actions. For example, say you’re APIs or DB Queries are updating from time to time and wanted to add a refresh button, you can simply do it with JS in Appsmith. 
+You might often want to invoke your API Queries on certain actions. For example, say you’re APIs or DB Queries are updating from time to time and wanted to add a refresh button, you can simply do it with JS in Appsmith.
 
 Now, let’s quickly add a button that will execute the Query when clicked. Next, open the button’s property pane; you’ll find the onclick property under the actions section. Now add a new action and choose to execute a DB Query option; you’ll find all the already defined queries in the application. Select the `get_produts` query you’ll see JS already added to the onclick action.
 
@@ -80,7 +80,7 @@ Now, let’s quickly add a button that will execute the Query when clicked. Next
 
 In this way, you can customise all the actions on Appsmith for different widgets.
 
-### Multiline JavaScript
+## Multiline JavaScript
 
 So far, we’ve seen simple JS operations, but say if you’re working on some API integrations or some different data sources, you might need to write some huge JS code. With Appsmith, you can do that within the same moustache syntax. Here’s a simple example of using multi-line code in Appsmith.
 

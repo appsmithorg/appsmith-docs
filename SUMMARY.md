@@ -32,6 +32,7 @@
   * [Restricting Sign-up](how-to-guides/restricting-signup.md)
   * [Writing JavaScript in Appsmith](how-to-guides/writing-javascript-in-appsmith.md)
   * [Embed Appsmith into Existing Application](how-to-guides/embed-appsmith-into-existing-application.md)
+  * [Whitelist Appsmith on AWS](how-to-guides/aws-whitelist.md)
   * [How to work with Local APIs on Appsmith](how-to-guides/how-to-work-with-local-apis-on-appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
@@ -45,7 +46,6 @@
 ## Core Concepts
 
 * [Connecting to Data Sources](core-concepts/connecting-to-data-sources/README.md)
-  * [Whitelist Appsmith](core-concepts/connecting-to-data-sources/aws-whitelist.md)
   * [Connect to Databases](core-concepts/connecting-to-data-sources/connecting-to-databases/README.md)
     * [Execute Queries](core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database.md)
     * [Query Settings](core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings.md)
