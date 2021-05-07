@@ -12,14 +12,14 @@ Tables are generally required to display large data sets from Queries and APIs y
 2. Call the API/Query onPageChange
 3. Configure pagination in the API/Query
 
-### Offset based Pagination
+### Offset Based Pagination
 
 This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the Table and is used in both APIs and Queries.
 
 The pageNo and pageSize can be used in the Query/API by referencing them inside `{{ }}`
 
-```text
-Select * from users limit {{ Table1.pageSize }} offset {{ (Table1.pageNo - 1) * Table1.pageSize }}
+```sql
+select * from users limit {{ Table1.pageSize }} offset {{ (Table1.pageNo - 1) * Table1.pageSize }}
 ```
 
 ```text
@@ -41,7 +41,7 @@ Tables come with client-side searching, and filtering out of the box. To perform
 1. Call the API / Query onSearchTextChange from the Table
 2. Pass the value of the Table's searchText to the API / Query
 
-```text
+```sql
 select * from users where name ilike '%{{Table1.searchText}}%'
 ```
 
@@ -57,7 +57,7 @@ Server-side filtering requires us to use another widget like a dropdown which ca
 2. Call the API / Query onOptionChange from the Table
 3. Pass the value of the Dropdown's selectedOptionValue to the API / Query
 
-```text
+```sql
 select * from users where gender = '{{genderDropdown.selectedOptionValue}}'
 ```
 
@@ -82,14 +82,16 @@ Binding this APIs response directly to a table would be unreadable like the imag
 To format this data, we can simply write a map function over the API response and return an array of objects with only the fields we want to display. We can also format these fields how we'd like using javasript 
 
 ```javascript
-{{ fetch_issues.data.map((issue) => { 
-		return { 
-			user: issue.user.login, 
-			assignees: issue.assignees.map((assignee) => assignee.login).join(','),
-			title: issue.title, 
-			number: "#"+issue.number  
-			} 
-		})
+{{ 
+	fetch_issues.data.map((issue) => {
+    return {
+        user: issue.user.login,
+        assignees: issue.assignees.map((assignee) => assignee.login).join(","),
+        title: issue.title,
+        number: "#" + issue.number,
+    };
+	});
+
 }}
 ```
 

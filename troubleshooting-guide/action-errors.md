@@ -112,11 +112,7 @@ If your API / DB Query times out, it could be due to one of the following reason
 
 * Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using
 
-  \[server-side
-
-  pagination\]\(../core-concepts/displaying-data-read/display-data-tables.md\#pagination\) or increasing the timeout of
-
-  the API / Query in the [settings section](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings).
+[server-side pagination](../core-concepts/displaying-data-read/display-data-tables.md#pagination) or increasing the timeout of the API / Query in the [settings section](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings).
 
 ### Configuration Error
 

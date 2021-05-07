@@ -108,7 +108,7 @@ https://sheets.googleapis.com/v4/spreadsheets/<sheet-id>/values/Sheet1:append?va
 
 Now, you’ll have to pass the values that are being sent from the modal to this API, hence update the body parameter with the following JSON:
 
-```text
+```json
 {
   "range": "Sheet1",
   "majorDimension": "ROWS",

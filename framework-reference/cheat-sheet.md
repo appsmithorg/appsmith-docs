@@ -4,14 +4,15 @@ This document contains a list of handy JS snippets that are used across applicat
 
 ## Table Data
 
+Access an inner array object
 ```javascript
-// Access an inner array object
 {{ fetch_users.data.users }}
 ```
 
+Transform an array of data to a cleaner format
 ```javascript
-// Transform an array of data to a cleaner format
-{{ fetch_users.data.map((user) => { 
+{{ 
+  fetch_users.data.map((user) => { 
       return {
          name: user.name,
          age: user.age,
@@ -23,8 +24,8 @@ This document contains a list of handy JS snippets that are used across applicat
 
 ## Chart Data
 
+Transforming aggregate data
 ```javascript
-// Transforming aggregate data
 {{
  fetch_user_stats.data.map((stat) => {
    return {
@@ -35,8 +36,8 @@ This document contains a list of handy JS snippets that are used across applicat
 }}
 ```
 
+Aggregating data where the x values are fixed
 ```javascript
-// Aggregating data where the x values are fixed
 [{
   "x": "Approved Users",
   "y": fetch_users.data.reduce((acc, user) => { 
@@ -53,15 +54,14 @@ This document contains a list of handy JS snippets that are used across applicat
 
 ## Default Date
 
+Setting the default date to yesterday
 ```javascript
-// Setting the default date to yesterday
 {{ moment().add(-1, "days") }}
 ```
 
 ## Filepicker
 
 The below code converts a CSV file uploaded to an array of objects
-
 ```javascript
 {{
 function() {
@@ -83,20 +83,20 @@ function() {
 
 ## Navigation
 
+Sending data via query params
 ```javascript
-// Sending data via query params
 {{ navigateTo("Page1", { id: Table1.selectedRow.id }) }}
 ```
 
+Opening External Web Pages
 ```javascript
-// Opening External Web Pages
 {{ navigateTo("https://appsmith.com") }}
 ```
 
 ## Chaining Actions
 
+Running Queries on success and showing errors on failure
 ```javascript
-// Running Queries on success and showing errors on failure
 {{
   Query1.run(() => {
     Query2.run();
@@ -108,8 +108,8 @@ function() {
 
 ## Running APIs/Queries in a loop
 
+Fetching all the details of every user in the table and storing it
 ```javascript
-// Fetching all the details of every user in the table and storing it
 {{
    function() {
      for(let i = 0; i < userTable.tableData.length; i++) {

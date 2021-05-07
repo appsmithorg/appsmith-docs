@@ -60,7 +60,7 @@ Now, when you click on the random row’s in the table, you can see the text aut
 
 Appsmith loves JavaScript! Whenever you want to write custom logic for certain action calls or API calls, you can customise with simple JS. For example, say, you want to show an alert whenever you’re searching through tables. You can select the row and can add logic to the **`onSeachTextChanged`** property.
 
-```text
+```javascript
 {{ showAlert(Table1.searchText) }}
 ```
 
@@ -98,5 +98,5 @@ function(){
 }}
 ```
 
-In this way, you can also write multi-line code within Appsmith!
+In this way, you can also write multi-line code within Appsmith! For more information on writing code in Appsmith, please refer to this page [Writing Code](../core-concepts/writing-code).
 

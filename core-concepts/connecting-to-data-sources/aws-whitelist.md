@@ -6,7 +6,7 @@ description: >-
 
 # Whitelist Appsmith
 
-Whitelist the appsmith IP address with the following steps:
+Whitelist the Appsmith IP address with the following steps:
 
 **1. Log in to the AWS** [**console**](https://aws.amazon.com/console/)
 

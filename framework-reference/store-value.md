@@ -10,7 +10,7 @@ description: >-
 
 ## Signature
 
-```text
+```javascript
 storeValue(key: string, value: any, persist? = true): void
 ```
 
@@ -26,7 +26,7 @@ storeValue(key: string, value: any, persist? = true): void
 
 You can read values from the store by referencing the key inside the appsmith.store object
 
-```text
+```javascript
 {{ appsmith.store.key }}
 ```
 
@@ -35,12 +35,12 @@ You can read values from the store by referencing the key inside the appsmith.st
 * Persisted state is cleared out when a user logs out
 * Transient state \(persist=false\) is only available till the user exits the app or refreshes a page
 * If a same key is available in transient and persisted state, the transient value gets preference
-* Store value is sync. Unlike other appsmith functions, you can read the effect of store value in the next line itself
+* Store value is sync. Unlike other Appsmith functions, you can read the effect of store value in the next line itself
 
-  ```text
+  ```javascript
   {{
-  storeValue("userID", 42);  
-  console.log(appsmith.store.userID); /* 42 */
+    storeValue("userID", 42);  
+    console.log(appsmith.store.userID); /* this will print 42 in the console */
   }}
   ```
 

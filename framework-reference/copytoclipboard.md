@@ -6,7 +6,7 @@ description: This function is used to copy text to the clipboard
 
 ## Signature
 
-```text
+```javascript
 copyToClipboard(data: string, options: object): void
 ```
 
