@@ -39,7 +39,7 @@ In the example below, fetch is not defined anywhere in the application
 
 An app gets a cyclic dependency error when a node is directly or indirectly dependent on itself.
 
-### Reactivity and Dependeny Map
+### Reactivity and Dependency Map
 
 In Appsmith, we define all user editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's tableData field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
 

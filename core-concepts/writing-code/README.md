@@ -40,7 +40,7 @@ You can also write JavaScript code for event listners. For JavaScript code insid
 
 ## Reactive
 
-Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property. 
+Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property.
 
 In order to update the property of a widget, unlike in imperative programming where a programmer would write a statement as
 
@@ -57,6 +57,7 @@ In Appsmith, programmers declare the states of the text property in the property
 ```
 
 ## Single Line JavaScript
+This means that widgets are automatically updated whenever their underlying data changes or an API / Query returns with data.
 
 Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the JavaScript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
 
