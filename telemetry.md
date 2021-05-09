@@ -5,7 +5,7 @@ description: >-
   installation process. Read on to understand
 ---
 
-# Telemetry Opt-In
+# Telemetry
 
 {% hint style="warning" %}
 The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your Appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
