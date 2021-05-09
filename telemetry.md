@@ -1,28 +1,27 @@
 ---
 description: >-
-  Telemetry on appsmith is entirely opt in and only collected with your consent
-  during the installation process
+  We collect telemetry data during the installation process to identify errors.
+  In addition we ask you to opt-in to send us regular usage telemetry during the
+  installation process. Read on to understand
 ---
 
-# Telemetry
-
-Appsmith collects anonymous telemetry data that helps the appsmith team better understand how the product is being used. This is only enabled if you opt-in during the installation process.
-
-Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user. Access to the collected data is limited to the appsmith team and not shared with any third parties.
-
-{% hint style="success" %}
-Appsmith is a lightweight proxy and **will** **never capture** any data returned by your APIs, databases, or third-party tools.
-{% endhint %}
+# Telemetry Opt-In
 
 {% hint style="warning" %}
-The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
+The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your Appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
+{% endhint %}
+
+Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user.
+
+{% hint style="success" %}
+Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools.
 {% endhint %}
 
 ## What data is collected?
 
 ### Docker Installation
 
-During installation, we collect some basic stats around which installations were successful and which need our help.
+During the installation process, we collect stats of which installations were successful, which were unsuccessful and need our help. This is used to analyze the
 
 * **Installation Started**
 * **Installation Success**
@@ -54,12 +53,12 @@ During installation, we collect some basic stats around which installations were
 ```
 
 {% hint style="warning" %}
-The email is only captured when you request for support and explicitly enter it in the installation script
+Your email id is captured when you request for support and explicitly enter it in the installation script
 {% endhint %}
 
 ### Appsmith Server
 
-The appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors. This is the **only** event it sends.
+The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors. This is the **only** event it sends.
 
 **Sample event**
 
@@ -86,6 +85,10 @@ The appsmith server sends a keep-alive ping every 6 hours to indicate that it is
 ```
 
 No other data is captured by the server
+
+## Opt-in Telemetry \#\#
+
+The following data is opt-in only and you can say no during the installation process.
 
 ### Appsmith Client
 
@@ -127,7 +130,7 @@ The client captures anonymous behavioral data around navigation and clicks. No d
 
 ## Disable Telemetry
 
-If you accidentally opted In and want to disable telemetry, you can set`APPSMITH_DISABLE_TELEMETRY=true` in the **docker.env** file found in your appsmith deployment folder.
+If you accidentally opted In and want to disable telemetry, you can set`APPSMITH_DISABLE_TELEMETRY=true` in the **docker.env** file found in your Appsmith deployment folder.
 
 You must restart docker and Nginx with the following command for the changes to take effect.
 

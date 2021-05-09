@@ -39,7 +39,7 @@
   * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
   * [Application Errors](troubleshooting-guide/application-errors.md)
 * [FAQs](faq.md)
-* [Telemetry](telemetry.md)
+* [Telemetry Opt-In](telemetry.md)
 * [Security](security.md)
 
 ## Core Concepts
