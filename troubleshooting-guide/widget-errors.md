@@ -23,8 +23,6 @@ In cases like these, you can use javascript to transform the data to the correct
         return acc;
     }, {}))
 }}
-
-
 ```
 
 ## Syntax Error

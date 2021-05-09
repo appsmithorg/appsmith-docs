@@ -5,11 +5,13 @@ This document contains a list of handy JS snippets that are used across applicat
 ## Table Data
 
 Access an inner array object
+
 ```javascript
 {{ fetch_users.data.users }}
 ```
 
 Transform an array of data to a cleaner format
+
 ```javascript
 {{ 
   fetch_users.data.map((user) => { 
@@ -25,6 +27,7 @@ Transform an array of data to a cleaner format
 ## Chart Data
 
 Transforming aggregate data
+
 ```javascript
 {{
  fetch_user_stats.data.map((stat) => {
@@ -37,6 +40,7 @@ Transforming aggregate data
 ```
 
 Aggregating data where the x values are fixed
+
 ```javascript
 [{
   "x": "Approved Users",
@@ -55,6 +59,7 @@ Aggregating data where the x values are fixed
 ## Default Date
 
 Setting the default date to yesterday
+
 ```javascript
 {{ moment().add(-1, "days") }}
 ```
@@ -62,21 +67,22 @@ Setting the default date to yesterday
 ## Filepicker
 
 The below code converts a CSV file uploaded to an array of objects
+
 ```javascript
 {{
 function() {
-	const csvRows = FilePicker1.files[0].data.split("\\n");
-	const objArr = [];
-	const headers = csvRows[0].split(',');
-		for(let i = 1; i < csvRows.length; i++) {
-			const rowObj = {};
-			objArr.push(rowObj);
-			const rowArr = csvRows[i].split(',');
-			rowArr.forEach((val, index) => {
-				rowObj[headers[index]] = val;
-			});
-		}
-	return objArr;
+    const csvRows = FilePicker1.files[0].data.split("\\n");
+    const objArr = [];
+    const headers = csvRows[0].split(',');
+        for(let i = 1; i < csvRows.length; i++) {
+            const rowObj = {};
+            objArr.push(rowObj);
+            const rowArr = csvRows[i].split(',');
+            rowArr.forEach((val, index) => {
+                rowObj[headers[index]] = val;
+            });
+        }
+    return objArr;
 }()
 }}
 ```
@@ -84,11 +90,13 @@ function() {
 ## Navigation
 
 Sending data via query params
+
 ```javascript
 {{ navigateTo("Page1", { id: Table1.selectedRow.id }) }}
 ```
 
 Opening External Web Pages
+
 ```javascript
 {{ navigateTo("https://appsmith.com") }}
 ```
@@ -96,6 +104,7 @@ Opening External Web Pages
 ## Chaining Actions
 
 Running Queries on success and showing errors on failure
+
 ```javascript
 {{
   Query1.run(() => {
@@ -109,6 +118,7 @@ Running Queries on success and showing errors on failure
 ## Running APIs/Queries in a loop
 
 Fetching all the details of every user in the table and storing it
+
 ```javascript
 {{
    function() {

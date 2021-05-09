@@ -41,7 +41,7 @@ Here are steps to play with **Table Data** to get a hang of how it affects the d
 5. Verify that column **one** of the first row of the table now shows `i`.
 6. Click on the **Deploy** button on the top right.
 
-```json
+```javascript
 [
   { "one": "1", "two": "2" },
   { "one": "I", "two": "II" }

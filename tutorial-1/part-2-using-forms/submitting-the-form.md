@@ -13,9 +13,11 @@ Your form will have the value filled in by the user. You want to insert those va
 2. Navigate to **Mock Database → New Query**
 3. Rename the query to **AddProductQuery**
 4. Copy the following in the Query tab  
-```sql
-INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')
-```
+
+   ```sql
+   INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')
+   ```
+
 5. Run the query
 6. You’ll see the notification for a successful query run
 
@@ -83,11 +85,8 @@ Clicking on **JS** enables two things:
 
 Note that you bound one action each with the success and error events. In [part 3](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNo2nMKgdMWZ9VCFlcr/v/v1.3/tutorial/part-3-widget-interaction/running-multiple-actions-on-submit), you'll learn to bind more than one action with each of the events.
 
-
 {% hint style="info" %}
-
 For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](https://docs.appsmith.com/how-to-guides/writing-javascript-in-appsmith)
-
 {% endhint %}
 
 ## Connecting multiple pages

@@ -34,7 +34,7 @@ Most API/Queries read values directly from entities as global variables. In some
 
 ## Data
 
-Each action stores the data from its latest run inside its **data** property. This property is populated only if the action successfully executes and can be accessed as 
+Each action stores the data from its latest run inside its **data** property. This property is populated only if the action successfully executes and can be accessed as
 
 ```javascript
 {{ Query1.data }}

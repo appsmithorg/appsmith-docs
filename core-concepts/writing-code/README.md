@@ -16,7 +16,7 @@ Appsmith currently supports two forms of JavaScript code for dynamically evaluat
 {{ QueryName.data.filter((row) => row.id > 5 ) }}
 ```
 
-2. Immediately Invoked Function Expressions [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+1. Immediately Invoked Function Expressions [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
 
 ```javascript
 {{ 
@@ -57,11 +57,12 @@ In Appsmith, programmers declare the states of the text property in the property
 ```
 
 ## Single Line JavaScript
+
 This means that widgets are automatically updated whenever their underlying data changes or an API / Query returns with data.
 
 Appsmith primarily supports writing single line javascript between `{{ }}` because the value of the JavaScript expression is substituted in the field. This requires us to chain multiple operations in a single line to achieve a result.
 
-#### Valid JavaScript
+### Valid JavaScript
 
 Following are valid examples of JavaScript for property values.
 
@@ -95,8 +96,7 @@ Following are invalid examples of JavaScript for property values. Here we should
 }}
 ```
 
-## Multi-Line JavaScript 
-
+## Multi-Line JavaScript
 
 Appsmith does support multi-line JS if it is [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). The above invalid examples become valid if used as below.
 
@@ -121,8 +121,10 @@ Appsmith does support multi-line JS if it is [IIFE](https://developer.mozilla.or
    }()
 }}
 ```
-{% hint style="warning" %}
-**Writing comments inside {{ }}:**
 
-Note that you can write comments inside {{ }} using JavaScript's multi-line comment syntax `/* */`, but single line comments `//` are not supported inside {{ }}.
+{% hint style="warning" %}
+**Writing comments inside :**
+
+Note that you can write comments inside  using JavaScript's multi-line comment syntax `/* */`, but single line comments `//` are not supported inside .
 {% endhint %}
+

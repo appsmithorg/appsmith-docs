@@ -19,7 +19,7 @@ The appsmith context object contains the following properties
 }
 ```
 
-### Store 
+### Store
 
 This object contains the key-value pairs of the local storage of the application. Values to the store can be updated using the [storeValue function](store-value.md). Values from the store can be accessed using their key
 

@@ -40,19 +40,19 @@ To bind multiple actions to a button event, let's write some JavaScript:
 }}
 ```
 
-This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action **onSuccess** of **onClick**, here you're configuring two actions. The first argument to the `run()` method is a JavaScript anonymous function that triggers two actions **onSuccess** of **onClick** - 
+This is in line with what you learned in [part 2](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNhV_5Yq8kOObHz_DLu/v/v1.3/tutorial/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action **onSuccess** of **onClick**, here you're configuring two actions. The first argument to the `run()` method is a JavaScript anonymous function that triggers two actions **onSuccess** of **onClick** -
 
 * Execute the **ProductQuery** 
 * Close the modal
 
-Note that since these actions run asynchronously, they all run in parallel. You can trigger as many actions **onSuccess** and **onError** as required by wrapping them within an anonymous JavaScript function. 
+Note that since these actions run asynchronously, they all run in parallel. You can trigger as many actions **onSuccess** and **onError** as required by wrapping them within an anonymous JavaScript function.
 
 Try to edit a product again, and verify that the form-submit works as expected.
 
 {% hint style="info" %}
 **GUI vs JavaScript: What to use when?**
 
-By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to customize more by writing JavaScript, than by using the GUI. 
+By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to customize more by writing JavaScript, than by using the GUI.
 
 For example, configuring multiple actions to be run **onSuccess** is supported only via JavaScript because it's easier to write code for it than to configure it using the GUI.
 

@@ -43,7 +43,7 @@ curl --location --request GET 'https://mock-api.appsmith.com/users?page=1'
 curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-	"status" : "Approved"
+    "status" : "Approved"
 }'
 ```
 

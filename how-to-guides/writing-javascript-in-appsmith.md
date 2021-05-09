@@ -98,5 +98,42 @@ function(){
 }}
 ```
 
-In this way, you can also write multi-line code within Appsmith! For more information on writing code in Appsmith, please refer to this page [Writing Code](../core-concepts/writing-code).
+In this way, you can also write multi-line code within Appsmith! For more information on writing code in Appsmith, please refer to this page [Writing Code](../core-concepts/writing-code/).
+
+## Making Table Columns Dynamic in Appsmith
+
+In Appsmith, suppose you want to implement dynamic columns in a table that updates automatically depending on a particular query, you could simply use a Dropdown widget and map it over its columns using simple JS. In this way, you can show columns dynamically by selecting them in a dropdown. Below is the code snippet that can be used in the Dropdown Widget data:
+
+```javascript
+{{
+[
+  {
+    "step": "#1",
+    "task": "Drag a Table",
+    "status": ":white_check_mark:",
+    "action": ""
+  },
+  {
+    "step": "#2",
+    "task": "Create a Query fetch_users with the Mock DB",
+    "status": "--",
+    "action": ""
+  },
+  {
+    "step": "#3",
+    "task": "Bind the query to the table",
+    "status": "--",
+    "action": ""
+  }
+].map((row) => {
+const obj = {};
+Dropdown1.selectedOptionValues.map((val) => { obj[val] = row[val]  });
+return obj;
+ })
+}}
+```
+
+You could check the live example in this app [here](https://app.appsmith.com/applications/6063307b034ece74b148125a/pages/6063307b034ece74b148125c). 
+
+
 

@@ -6,7 +6,7 @@ The [Table Widget](../../widget-reference/table.md) helps us visualize rows of i
 
 ## Pagination
 
-Tables are generally required to display large data sets from Queries and APIs yet browsers cannot load all the data present in our database. To paginate this data, we can 
+Tables are generally required to display large data sets from Queries and APIs yet browsers cannot load all the data present in our database. To paginate this data, we can
 
 1. Enable the serverside pagination property in the table
 2. Call the API/Query onPageChange
@@ -79,18 +79,18 @@ Binding this APIs response directly to a table would be unreadable like the imag
 
 ![](../../.gitbook/assets/github-table.gif)
 
-To format this data, we can simply write a map function over the API response and return an array of objects with only the fields we want to display. We can also format these fields how we'd like using javasript 
+To format this data, we can simply write a map function over the API response and return an array of objects with only the fields we want to display. We can also format these fields how we'd like using javasript
 
 ```javascript
 {{ 
-	fetch_issues.data.map((issue) => {
+    fetch_issues.data.map((issue) => {
     return {
         user: issue.user.login,
         assignees: issue.assignees.map((assignee) => assignee.login).join(","),
         title: issue.title,
         number: "#" + issue.number,
     };
-	});
+    });
 
 }}
 ```

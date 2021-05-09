@@ -47,6 +47,7 @@ Appsmith is **Reactive** so the widgets are automatically updated whenever the d
 {% endhint %}
 
 For example, you can bind the results of the API as below
+
 ```javascript
 {{ fetch_users.data.users }}
 ```
@@ -113,5 +114,5 @@ The following example iterates over a data set and returns data in an `Array<lab
       return { label: row.name, value: row.id };
   });
 }}
-
 ```
+

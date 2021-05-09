@@ -10,7 +10,7 @@ This document presumes you are familiar with [triggering actions](../capturing-d
 
 ## Handling Success / Error
 
-The property pane allows us to configure the action to take once an API  / Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API  / Query. 
+The property pane allows us to configure the action to take once an API / Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API / Query.
 
 We can decide to display a success or an error message by using the **Show Alert action**.
 
