@@ -65,7 +65,7 @@ https://sheets.googleapis.com/v4/spreadsheets/<spreadsheet-id>/values/Sheet1
 * Make sure the URL you’re requesting it from the data source. 
 * You can find the spreadsheet-id on the Google Sheet URL, for example, say your Google Sheet URL is: 
 
-[https://docs.google.com/spreadsheets/d/1H0fbiVzi0r-WbgPZvc2YwYmiICnu6xW6SJY4DlDu0/edit\#gid=0](https://docs.google.com/spreadsheets/d/1H0fbiVzi0r-WbgPZvc2YwYmiICnu6xW6SJY4DlDu0/edit#gid=0)
+`https://docs.google.com/spreadsheets/d/1H0fbiVzi0r-WbgPZvc2YwYmiICnu6xW6SJY4DlDu0/edit#gid=0`
 
 The ID will be : _`1H0fbiVzi0r-WbgPZvc2YwYmiICnu6xW6SJY4DlDu0`_
 
