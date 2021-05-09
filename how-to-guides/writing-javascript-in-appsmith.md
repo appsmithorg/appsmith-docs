@@ -102,7 +102,57 @@ In this way, you can also write multi-line code within Appsmith! For more inform
 
 ## Making Table Columns Dynamic in Appsmith
 
-In Appsmith, suppose you want to implement dynamic columns in a table that updates automatically depending on a particular query, you could simply use a Dropdown widget and map it over its columns using simple JS. In this way, you can show columns dynamically by selecting them in a dropdown. Below is the code snippet:
+In Appsmith, suppose you want to implement dynamic columns \(show only necessary columns based on selection\) in a table, you could write simple JavaScript inside the `Table Data` property. With this, you could show only columns that are selected from a dropdown.
+
+![](../.gitbook/assets/dynamic-table.gif)
+
+For example, say your table has the following in the Table Data:
+
+```text
+[
+  {
+    "step": "#1",
+    "task": "Drag a Table",
+    "status": ":white_check_mark:",
+    "action": ""
+  },
+  {
+    "step": "#2",
+    "task": "Create a Query fetch_users with the Mock DB",
+    "status": "--",
+    "action": ""
+  },
+  {
+    "step": "#3",
+    "task": "Bind the query to the table",
+    "status": "--",
+    "action": ""
+  }
+]
+```
+
+Now you wanted to show columns based on the selection in a dropdown, let's add a dropdown with values that are the same as columns in the table. 
+
+Drag and drop a Dropdown widget onto the canvas and add the following to the `Options` List and make it a Multi-Select dropdown in the `Selection Type` property. 
+
+```text
+[
+  {
+    "label": "task",
+    "value": "task"
+  },
+  {
+    "label": "status",
+    "value": "status"
+  },
+  {
+    "label": "action",
+    "value": "action"
+  }
+]
+```
+
+Lastly, update the code in the table widget, map the data in the `Table Data` property using a moustache syntax and only return the data that's selected from the dropdown widget: 
 
 ```javascript
 {{
