@@ -102,7 +102,7 @@ In this way, you can also write multi-line code within Appsmith! For more inform
 
 ## Making Table Columns Dynamic in Appsmith
 
-In Appsmith, suppose you want to implement dynamic columns in a table that updates automatically depending on a particular query, you could simply use a Dropdown widget and map it over its columns using simple JS. In this way, you can show columns dynamically by selecting them in a dropdown. Below is the code snippet that can be used in the Dropdown Widget data:
+In Appsmith, suppose you want to implement dynamic columns in a table that updates automatically depending on a particular query, you could simply use a Dropdown widget and map it over its columns using simple JS. In this way, you can show columns dynamically by selecting them in a dropdown. Below is the code snippet:
 
 ```javascript
 {{
