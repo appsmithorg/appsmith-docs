@@ -7,7 +7,7 @@ description: >-
 
 # Table
 
-![Click to expand](../.gitbook/assets/Table%20%281%29%20%281%29.gif)
+![Appsmith Table Widget](../.gitbook/assets/table.gif)
 
 ## Selected Row
 
@@ -46,13 +46,13 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 
 Each column can now be customized through a set of properties by clicking on the gear icon.
 
-![click the gear icon next to the column name to see all settings](../.gitbook/assets/table-column-settings-1.gif)
+![](../.gitbook/assets/table-click-cog.gif)
 
 After clicking on the gear icon you see the Column type property which allows you to perform different actions on each column.
 
-![Manage column types](../.gitbook/assets/manage-column-types-2.gif)
+![](../.gitbook/assets/table-gif2.gif)
 
-A great property introduced here is the `Computed value` and the `currentRow` internal property. This allows you the manipulate the value using JS expressions; ex you want to show the datetime stamp in the carbon format \(human readable\), You can now do that by just using the js/lodash function. You can now also access each row's column values with `currentRow` property. This can be helpful if you wish to merge multiple value/properties under a single column.
+A great property introduced here is the `Computed value` and the `currentRow` internal property. This allows you the manipulate the value using JS expressions; ex you want to show the datetime stamp in the carbon format \(human-readable\), You can now do that by just using the js/lodash function. You can now also access each row's column values with `currentRow` property. This can be helpful if you wish to merge multiple value/properties under a single column.
 
 ![](../.gitbook/assets/current-row-show-hide-3.gif)
 
