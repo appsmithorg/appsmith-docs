@@ -12,7 +12,6 @@
   * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
-  * [Telemetry Opt-In](setup/telemetry.md)
 * [Tutorial](tutorial-1/README.md)
   * [Part 1: Building a Simple UI](tutorial-1/part-1-creating-a-simple-view/README.md)
     * [The Appsmith Environment](tutorial-1/part-1-creating-a-simple-view/the-appsmith-environment.md)
@@ -40,7 +39,7 @@
   * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
   * [Application Errors](troubleshooting-guide/application-errors.md)
 * [FAQs](faq.md)
-* [Changelog](changelog.md)
+* [Telemetry](telemetry.md)
 * [Security](security.md)
 
 ## Core Concepts
