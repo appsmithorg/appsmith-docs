@@ -10,7 +10,7 @@ description: >-
 List widget is in beta right now. It can only render widgets for display purposes in the template as of now. This is a platform limitation that will be solved in future. You won't be able to use any widget that has any default value \( Input, Switch, Checkbox, Select etc \)   
 {% endhint %}
 
-![](../.gitbook/assets/list2.gif)
+{% embed url="https://youtu.be/0ePiZlWmp7Q" caption="" %}
 
 ## Current Item
 
