@@ -58,11 +58,11 @@ A great property introduced here is the `Computed value` and the `currentRow` in
 
 In the ex. above we rename `email` column to `contact` and then use the computed value property inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
 
-Depending on the column type you have some control over styling as well now. 
+Depending on the column type you have some control over styling as well now.
 
 ![Changing column styling; font, alignment, color.](../.gitbook/assets/edit-column-styles-4.gif)
 
-Additionally compared to the functionality before the actions can now be set on every column with customization over style and click events 
+Additionally compared to the functionality before the actions can now be set on every column with customization over style and click events
 
 ![Set column actions](../.gitbook/assets/column-action-uttons-5.gif)
 
@@ -72,7 +72,7 @@ Additionally compared to the functionality before the actions can now be set on 
 | **Computed Value** | internal property `currentRow` is introduced to access each row data. You can utilize this property to manipulate the column data using JS expressions |
 | **Styles** | Based on the Column Type, there are various style properties available to change the look and feel of each column |
 | **Original/Display Date format** | In case of type `date` we can set the original/display date format to our choice |
-| **Button Properties** | In case of column type `button` we can use these properties to change the label/color or create a onClick action  |
+| **Button Properties** | In case of column type `button` we can use these properties to change the label/color or create a onClick action |
 
 ## How to display data and handle pagination inside a table?
 

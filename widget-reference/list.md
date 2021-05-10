@@ -7,7 +7,7 @@ description: >-
 # List
 
 {% hint style="info" %}
-List widget is in beta right now. It can only render widgets for display purposes in the template as of now. This is a platform limitation that will be solved in future. You won't be able to use any widget that has any default value \( Input, Switch, Checkbox, Select etc \)   
+List widget is in beta right now. It can only render widgets for display purposes in the template as of now. This is a platform limitation that will be solved in future. You won't be able to use any widget that has any default value \( Input, Switch, Checkbox, Select etc \)
 {% endhint %}
 
 {% embed url="https://youtu.be/0ePiZlWmp7Q" caption="" %}
@@ -23,7 +23,7 @@ List widget is used to repeat a template based on the large data \(collection on
 ```
 
 {% hint style="info" %}
-Note: currentItem is only available in the autocomplete of controls, in the property pane of list widget template's children.   
+Note: currentItem is only available in the autocomplete of controls, in the property pane of list widget template's children.
 {% endhint %}
 
 | Widget Property | Description |

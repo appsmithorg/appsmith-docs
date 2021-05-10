@@ -9,6 +9,8 @@ Appsmith supports the OAuth 2.0 specification with the following grant types:
 
 The authorization code grant is used for 3 legged authentication flows where the resource owner grants consent to share their credentials with the authorization server. In Appsmith, since most APIs will need to run in the background, we enforce the authorization process before the data source can be used in an API. Once the authorization process is complete, the Appsmith server takes care of re-authentication for expired tokens.
 
+Now to set up an API with OAuth 2.0 authorization, click on the `+` icon next to the API section
+
 ![](../../../../.gitbook/assets/authorization_code.gif)
 
 You need to fill in the following details to use the authorization code flow:
