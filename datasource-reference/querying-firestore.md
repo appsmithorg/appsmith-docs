@@ -20,9 +20,7 @@ The above details are available from the Firebase Console. Let's fetch them in t
 
 #### Fetching Database URL
 
-1. Now open the "Service Accounts" tab on the same page.
-2. Here you should see a NodeJS code snippet with a `databaseURL` object field.
-3. Copy the URL in this value \(**without https://**\) and paste it in the "Database URL" field of the Firestore configuration.
+1. The Database URL need to be formed using the Firebase _project ID_ you found above in the following manner `your-project-id.firebaseio.com`
 
 #### Fetching Service Account Credentials
 
