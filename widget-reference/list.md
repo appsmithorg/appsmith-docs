@@ -23,7 +23,7 @@ List widget is used to repeat a template based on the large data \(collection on
 ```
 
 {% hint style="info" %}
-Note: \`currentItem\` is only available in the autocomplete of controls, in the property pane of list widget template's children.   
+Note: currentItem is only available in the autocomplete of controls, in the property pane of list widget template's children.   
 {% endhint %}
 
 | Widget Property | Description |
