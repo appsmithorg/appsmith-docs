@@ -1,12 +1,70 @@
 # JS Errors
 
-## Data Type Mismatch
+### Data Type Mismatch
 
 This error occurs when the value in the property of the widget does not match the data type required by the property.
 
-![](../.gitbook/assets/chart-error.png)
+**Common Scenarios:**  
 
-The image shows that there is an error in the Chart Data field of the Chart. To the left of the field, we can see a message which indicates that the value does not evaluate to type `Array<x: string, y: number>`
+* **Working with Tables**
+
+While working with tables, we see this error often, as the Table Data property expects an Array data type and we might bind JSON objects from APIs directly without transformation. In this case, we should see the error as `This value does not evaluate to type "Array"`. The solution for this is to make sure the data sent into Table Data property is of array data type. By default we should see the following config in the Table Data property when a table widget is dropped on the canvas:
+
+```text
+[
+  {
+    "step": "#1",
+    "task": "Drag a Table",
+    "status": "✅",
+    "action": ""
+  },
+  {
+    "step": "#2",
+    "task": "Create a Query fetch_users with the Mock DB",
+    "status": "--",
+    "action": ""
+  },
+  {
+    "step": "#3",
+    "task": "Bind the query to the table {{fetch_users.data}}",
+    "status": "--",
+    "action": ""
+  }
+]
+```
+
+While binding data from any APIs or DB Queries, use the moustache operator to render the data onto the table widgets. For example, you can use the mock database to query the list of users and display it onto the table using the following syntax in the Table Data property:
+
+```text
+{{ fetch_users.data }}
+```
+
+* **Working with Dropdowns**
+
+While adding options for single select or multi-select dropdowns, we might face a data mismatch error, usually, errors such as **This value does not evaluate to type "Array&lt;{ label: string, value: string }&gt;".** In such cases, make sure the options in objects containing a label and a value in an array. For example, this is how the options are added to dropdown widgets in the `Options` property.
+
+```text
+[
+  {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  },
+  {
+    "label": "Red",
+    "value": "RED"
+  }
+]
+```
+
+* **Working with Charts**
+
+The below image shows that there is an error in the Chart Data field of the Chart. To the left of the field, we can see a message which indicates that **The** **value does not evaluate to type Array&lt;x: string, y: number&gt;**
+
+![](../.gitbook/assets/chart-error.png)
 
 The Evaluated Value below indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
 
