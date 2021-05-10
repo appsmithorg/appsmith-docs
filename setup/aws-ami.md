@@ -13,9 +13,9 @@ Here are the steps you’ll follow in this tutorial:
 * [Create an AWS Security Group](aws-ami.md#step-3-create-an-aws-security-group)
 * [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
 * [Log in and start using Appsmith](aws-ami.md#step-5-login-and-start-using-appsmith)
-* [Configure custom domain for your app](aws-ami.md#step-6-configure-custom-domain-for-your-app)
-* [Find Application Credentials](aws-ami.md#step-7-find-application-credentials)
-* [Updating your Appsmith installation](aws-ami.md#step-8-updating-your-appsmith-installation)
+* [Configure custom domain for your app](aws-ami.md#custom-domain)
+* [Find Application Credentials](aws-ami.md#find-application-credentials)
+* [Updating your Appsmith installation](aws-ami.md#updating-your-appsmith-installation)
 
 The next sections will walk you through these steps in detail.
 

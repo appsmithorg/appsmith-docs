@@ -10,7 +10,7 @@ description: >-
 
 The appsmith context object contains the following properties
 
-```text
+```javascript
 {
    store: object,
    URL: object,
@@ -19,11 +19,11 @@ The appsmith context object contains the following properties
 }
 ```
 
-### Store 
+### Store
 
 This object contains the key-value pairs of the local storage of the application. Values to the store can be updated using the [storeValue function](store-value.md). Values from the store can be accessed using their key
 
-```text
+```javascript
 {{ appsmith.store.key }}
 ```
 
@@ -31,7 +31,7 @@ This object contains the key-value pairs of the local storage of the application
 
 This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](navigateto.md)
 
-```text
+```javascript
 {
   host: string,
   hostName: string,
@@ -48,7 +48,7 @@ This object contains all the values associated with the current URL that the use
 
 This object contains the data of the currently authenticated user.
 
-```text
+```javascript
 {
   email: string
 }

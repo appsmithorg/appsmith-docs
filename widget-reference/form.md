@@ -9,6 +9,7 @@ description: >-
 
 {% embed url="https://www.youtube.com/watch?v=HtoWzzje-Vs&feature=youtu.be" caption="" %}
 
+
 ## Form Widgets
 
 Form widgets are a class of widgets that are typically used to capture user information. These widgets may be used outside a form such as for filtering data but their primary use is to capture user input. These are the form widgets Appsmith supports
@@ -32,7 +33,7 @@ User inputs in a form can be sent to an API by binding the individual widgets in
 
 Read more about submitting form data to an API below
 
-[Sending widget data in post body]()
+[Sending widget data in post body](../core-concepts/capturing-data-write/capture-form-data.md)
 
 ## Form Button
 

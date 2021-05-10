@@ -1,12 +1,12 @@
 ---
 description: >-
-  The Appsmith platform includes Javascript utility libraries, which can be used
+  The Appsmith platform includes JavaScript utility libraries, which can be used
   to work with data within `{{ }}` bindings.
 ---
 
 # External libraries
 
-## JS Library Reference
+## JavaScript Library Reference
 
 * [lodash](https://lodash.com/docs/4.17.15)
 * [moment](https://momentjs.com/docs/)
@@ -14,13 +14,13 @@ description: >-
 * [atob](https://github.com/dankogai/js-base64#readme)
 * [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
 
-## Using JS libraries
+## Using JavaScript libraries
 
-The external libraries can be used anywhere inside `{{ }}` just as javascript is used in the rest of the application. The signature of the JS libraries are exactly the same as mentioned in their documentation
+The external libraries can be used anywhere inside `{{ }}` just as JavaScript is used in the rest of the application. The signature of the JavaScript libraries are exactly the same as mentioned in their documentation
 
 ### Example: Lodash
 
-An example of the Lodash `_.map` utility, in use.
+Following is an example of the Lodash `_.map` utility, in use. fetchFruits is the name of the API / Query
 
 ```javascript
 {{
@@ -28,8 +28,6 @@ An example of the Lodash `_.map` utility, in use.
     return { label: fruit.name, value: fruit.id } 
     })
 }}
-
-// fetchFruits is the name of the API / Query
 ```
 
 ### Example: moment

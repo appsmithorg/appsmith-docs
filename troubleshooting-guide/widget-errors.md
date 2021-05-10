@@ -13,10 +13,14 @@ The Evaluated Value below indicates the current value of the field and in the im
 In cases like these, you can use javascript to transform the data to the correct data type or access the correct data inside the object. The below code reduces the fetch\_orders.data array to aggregate orders based on the date into an array &lt;x, y&gt; where x is the date of the order and y is the order amount
 
 ```javascript
-{{_.values(fetch_orders.data.reduce((accumulator, order) => { 
-    accumulator[order.date] ? accumulator[order.date].y += order.orderAmount : 
-        accumulator[order.date] = { x:order.date, y: order.orderAmount  }; 
-      return acc 
+{{
+    _.values(fetch_orders.data.reduce((accumulator, order) => {
+        if(accumulator[order.date]) {
+            accumulator[order.date].y += order.orderAmount
+        } else {
+            accumulator[order.date] = { x:order.date, y: order.orderAmount  }; 
+        }
+        return acc;
     }, {}))
 }}
 ```
@@ -33,7 +37,7 @@ In the example below, fetch is not defined anywhere in the application
 
 An app gets a cyclic dependency error when a node is directly or indirectly dependent on itself.
 
-### Reactivity and Dependeny Map
+### Reactivity and Dependency Map
 
 In Appsmith, we define all user editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's tableData field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
 

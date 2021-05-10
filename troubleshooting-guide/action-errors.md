@@ -106,17 +106,13 @@ This error can be fixed by deleting any queries dependent on this datasource bef
 
 If your API / DB Query times out, it could be due to one of the following reasons
 
-* Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by 
+* Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by
 
   [whitelisting the appsmith instance](../core-concepts/connecting-to-data-sources/) in your database or VPC.
 
-* Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using 
+* Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using
 
-  \[server-side 
-
-  pagination\]\(../core-concepts/displaying-data-read/display-data-tables.md\#pagination\) or increasing the timeout of 
-
-  the API / Query in the [settings section](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings).
+[server-side pagination](../core-concepts/displaying-data-read/display-data-tables.md#pagination) or increasing the timeout of the API / Query in the [settings section](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings).
 
 ### Configuration Error
 
@@ -253,4 +249,24 @@ Secret key is required when sending session details is switched on, and should b
 This message indicates that `Send Appsmith signature header` field has been marked as `Yes` but the `Session Details Signature Key` field is left empty.
 
 This error can be resolved by filling in the `Session Details Signature Key` field or by disabling the `Send Appsmith signature header` field by selecting `No`.
+
+## Plugin Specific Errors
+
+### MySQL Plugin Errors
+
+```text
+dev.miku.r2dbc.mysql.client.MySqlConnectionException
+```
+
+```text
+dev.miku.r2dbc.mysql.client.MySqlConnectionClosedException: Connection unexpectedly closed
+```
+
+```text
+Error was received while reading the incoming data. The connection will be closed.
+```
+
+This error message indicates that the MySQL server that you are trying to connect to does not support SSL.
+
+This error can be resolved by editing the SSL field in the datasource configuration form and setting it to `Disabled`.
 

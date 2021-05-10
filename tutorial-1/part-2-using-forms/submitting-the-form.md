@@ -12,15 +12,20 @@ Your form will have the value filled in by the user. You want to insert those va
 1. Navigate to **Pages → NewProductPage → DB Queries → +**
 2. Navigate to **Mock Database → New Query**
 3. Rename the query to **AddProductQuery**
-4. Copy the following in the Query tab  `INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')` 
+4. Copy the following in the Query tab  
+
+   ```sql
+   INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')
+   ```
+
 5. Run the query
 6. You’ll see the notification for a successful query run
 
 Let’s see the query. The main query syntax is the same as that of PostgreSQL, following the format:
 
-```text
+```sql
 INSERT INTO table_name
- (col1, col2, col3, … colN)
+ (col1, col2, col3,  colN)
 VALUES
  (val1, val2, val3, … valN)
 ```
@@ -58,13 +63,18 @@ In the previous section, you used the properties GUI to define **onSuccess** and
 
 Click on the **JS** icon next to **onClick**. You’ll see that the long hierarchical GUI that represents **onClick → onSuccess** and **onClick → onError,** converts to JavaScript code like below:
 
-```text
-{{AddProductQuery.run(() => showAlert('yay'), () => showAlert('nay'))}}
+```javascript
+{{
+    AddProductQuery.run(
+        () => showAlert('yay'), 
+        () => showAlert('nay')
+    )
+}}
 ```
 
 What you see above is the **`run()`** method defined by Appsmith. You can call the method on any DB Query, or an API. This method has the following signature:
 
-```text
+```javascript
 run(onSuccess: function, onError: function, params: object): void
 ```
 
@@ -76,14 +86,7 @@ Clicking on **JS** enables two things:
 Note that you bound one action each with the success and error events. In [part 3](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNo2nMKgdMWZ9VCFlcr/v/v1.3/tutorial/part-3-widget-interaction/running-multiple-actions-on-submit), you'll learn to bind more than one action with each of the events.
 
 {% hint style="info" %}
-**JavaScript in Appsmith:**
-
-You can write JavaScript almost anywhere in Appsmith.
-
-Appsmith currently supports two forms of JavaScript code:
-
-1. Single line code or functions, such as ternary conditions
-2. Immediately Invoked Function Expressions \(IIFE\)
+For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](https://docs.appsmith.com/how-to-guides/writing-javascript-in-appsmith)
 {% endhint %}
 
 ## Connecting multiple pages

@@ -52,3 +52,9 @@ sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compos
 
 Google Login should now be enabled for your Appsmith installation
 
+{% hint style="success" %}
+If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
+{% endhint %}
+
+##  
+

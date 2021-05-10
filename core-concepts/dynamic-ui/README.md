@@ -23,18 +23,25 @@ Let us take an example of a table displaying a list of products. When a user sel
 
 In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the Tables selectedRow property using its name inside the **`{{ }}`**
 
-```text
-Product Name Input
-{{ Table1.selectedRow.productName }} // Default Text property
+Get Product Name Input \(Default Text property\)
 
-MRP Input
-{{ Table1.selectedRow.mrp }} // Default Text property
-
-Category Dropdown
-{{ Table1.selectedRow.category }} // Default Option property
-
-// Table1 is the name of the widget
+```javascript
+{{ Table1.selectedRow.productName }}
 ```
+
+Get MRP Input \(Default Text property\)
+
+```javascript
+{{ Table1.selectedRow.mrp }}
+```
+
+Get Category Dropdown \(Default Option property\)
+
+```javascript
+{{ Table1.selectedRow.category }}
+```
+
+Here Table1 is the name of the widget
 
 ![Click to expand](../../.gitbook/assets/form-table.gif)
 

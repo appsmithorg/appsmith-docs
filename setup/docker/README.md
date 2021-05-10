@@ -14,6 +14,10 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
 {% endhint %}
 
+{% hint style="warning" %}
+For Mac on M1, we've seen problems with Docker getting into a corrupt state and throwing errors like `error creating overlay mount`. Please follow [Docker's troubleshooting guide](https://docs.docker.com/docker-for-mac/troubleshoot/) to resolve and then proceed with the installation.
+{% endhint %}
+
 {% hint style="info" %}
 Appsmith does not officially support Windows \(or WSL\). Please try out one of our [pre-built images](../) if your production operating system is not on the list above.
 {% endhint %}
@@ -31,7 +35,7 @@ Make the script executable
 chmod +x install.sh
 ```
 
-Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**.
+Run the script. **Do not run as sudo & make sure no other processes are running on ports 80 & 443**. If you must run appsmith on another port [read this guide](../../troubleshooting-guide/deployment-errors.md#ports-unavailable)
 
 ```bash
 ./install.sh

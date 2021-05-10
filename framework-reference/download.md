@@ -8,7 +8,7 @@ description: This action is used to download any data as a file
 
 ## Signature
 
-```text
+```javascript
 download(data: any, fileName: string, fileType?: string): void
 ```
 

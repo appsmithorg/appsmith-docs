@@ -7,7 +7,7 @@ description: >-
 
 # Input
 
-![](../.gitbook/assets/input.gif)
+{% embed url="https://youtu.be/4BUbbZsxrus" caption="" %}
 
 ## Searching data
 
@@ -40,7 +40,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below
 
-[Sending widget data in post body]()
+[Sending widget data in post body](input.md)
 
 ## Properties
 

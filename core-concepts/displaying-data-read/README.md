@@ -34,7 +34,7 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 
 A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language. You can access the various properties of the widget using the widget's name.
 
-```text
+```javascript
 {{ Table1.selectedRow.id }}
 ```
 
@@ -46,8 +46,10 @@ Widget properties can be edited via the property pane which is opened using the 
 Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the API / Query changes
 {% endhint %}
 
-```text
-{{ fetch_users.data.users }} // results of the API
+For example, you can bind the results of the API as below
+
+```javascript
+{{ fetch_users.data.users }}
 ```
 
 ![](../../.gitbook/assets/bind-table.gif)
@@ -104,14 +106,13 @@ A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect
 
 **Transformation Code**
 
+The following example iterates over a data set and returns data in an `Array<label, value>` format
+
 ```javascript
 {{
-  QueryName.data.map((row) => { 
-    return { label: row.name, value: row.id } 
-    })
+  QueryName.data.map((row) => {
+      return { label: row.name, value: row.id };
+  });
 }}
-
-// The above example iterates over a data set and returns data
-// in an Array<label, value> format
 ```
 
