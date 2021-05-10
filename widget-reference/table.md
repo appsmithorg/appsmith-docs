@@ -7,7 +7,7 @@ description: >-
 
 # Table
 
-![Appsmith Table Widget](../.gitbook/assets/table.gif)
+{% embed url="https://www.youtube.com/watch?v=sgd-DMJsAHs&feature=youtu.be" caption="" %}
 
 ## Selected Row
 
