@@ -97,14 +97,14 @@ An app gets a cyclic dependency error when a node is directly or indirectly depe
 
 ### Reactivity and Dependency Map
 
-In Appsmith, we define all user editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's tableData field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
+In Appsmith, we define all user editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
 
 ```text
 // Table1.tableData depends on Api1.data
 Api1.data -> Table1.tableData
 ```
 
-In a similar way, all parent nodes are imlicitly dependant on the child nodes to ensure updates are propogated up an entity object. A simpler way to understand this is, if a child node updates, the parent node and all it's dependencies should also be updates.
+Similarly, all parent nodes are implicitly dependant on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node and its dependencies should also be updated.
 
 ```text
 // Implicit. Parent depends on children
@@ -115,7 +115,7 @@ Table1.tableData -> Table1
 Api1.data -> Table1.tableData
 ```
 
-The most common sceanrio when a cycle occuers is when you would try to bind a node to it's parent node. Since it is impossible to evalute an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved
+The most common scenario when a cycle occurs is when you would try to bind a node to it's parent node. Since it is impossible to evaluate an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved.
 
 ```text
 // A cycle is formed
