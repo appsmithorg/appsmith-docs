@@ -1,24 +1,25 @@
 # OAuth 2.0
 
-Appsmith supports the OAuth 2.0 specification with the following grant types: 
+### Setting up a Datasource
 
-* [Authorization code](https://tools.ietf.org/html/rfc6749#section-1.3.1) 
-* [Client credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4)
-
-## Authorization Code
-
-The authorization code grant is used for 3 legged authentication flows where the resource owner grants consent to share their credentials with the authorization server. In Appsmith, since most APIs will need to run in the background, we enforce the authorization process before the data source can be used in an API. Once the authorization process is complete, the Appsmith server takes care of re-authentication for expired tokens.
-
-Now to set up an API with OAuth 2.0 authorization, click on the `+` the icon next to the API section and add the URL. Click on `Save as DataSource` next to the URL. 
+To set up an API with OAuth 2.0 authorization first you'll have to create a new data source. For this, click on the `+` icon next to the API section and add the URL. Click on `Save as DataSource` next to the URL as shown in the below image. 
 
 ![Click on Save As Datasource to Setup OAuth 2.0 Authorization](../../../../.gitbook/assets/image%20%2817%29.png)
 
-This option will save the URL as a new Data Source. Now, navigate to the Data source and set the following configuration:
+
+
+This option will save the URL as a new Data Source. Now, navigate to the Data source and set the required configuration:
 
 1. `Authentication Type`: `Oauth 2.0`
-2. `Grant Type`: `Authorization Code`
+2. `Grant Type`: [`Authorization Code`](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1) `/` [`Client Credentials`](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4)\`\`
 
 ![](../../../../.gitbook/assets/oauth2-auth.gif)
+
+Following are the configuration details for the two different grant types:
+
+### Authorization Code
+
+The authorization code grant is used for 3 legged authentication flows where the resource owner grants consent to share their credentials with the authorization server. In Appsmith, since most APIs will need to run in the background, we enforce the authorization process before the data source can be used in an API. Once the authorization process is complete, the Appsmith server takes care of re-authentication for expired tokens.
 
 You need to fill in the following details to use the authorization code flow:
 
