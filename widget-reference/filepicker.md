@@ -26,7 +26,6 @@ See our guides on
 | Internal Property | Description |
 | :--- | :--- |
 | **files** | This is the array of files selected in the file picker. The data of each file are present in each array object and can be accessed using  |
-| **uploadedFileUrls** | This is the data that was bound in the Uploaded File URLs property for access to be uploaded in an API. |
 
 | Property | Description |
 | :--- | :--- |
