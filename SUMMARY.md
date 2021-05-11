@@ -33,6 +33,7 @@
   * [Embed Appsmith into Existing Application](how-to-guides/embed-appsmith-into-existing-application.md)
   * [Whitelist Appsmith on AWS](how-to-guides/aws-whitelist.md)
   * [How to work with Local APIs on Appsmith](how-to-guides/how-to-work-with-local-apis-on-appsmith.md)
+  * [How to work with Google Sheets on Appsmith](how-to-guides/how-to-work-with-google-sheets-on-appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
