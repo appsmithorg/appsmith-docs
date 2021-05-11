@@ -109,6 +109,7 @@
 * [Form](widget-reference/form.md)
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
+* [List](widget-reference/list.md)
 * [Maps](widget-reference/maps.md)
 * [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
@@ -118,5 +119,4 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
-* [List](widget-reference/list.md)
 
