@@ -23,5 +23,27 @@ To edit these you're `Row Object` should be set to the following:
 
 As we see for the `Edit Sheet Row` query we must pass an `rowIndex`, else it throws a **Missing required field row index** error. 
 
+### Plugin failed to parse JSON Error
+
+While creating or editing the data on Google Sheets from Appsmith, we should pass the object that needs to edit in the Row Object property. Here, we might face errors while parsing the data into the JSON object. Below is an example as a reference to edit/create new row objects on Google Sheets from Appsmith.
+
+Here, our goal is to create a new row on Google Sheets, for this we'll be using the `Insert sheet row` query. In this example, we'll be using the following row object:
+
+```text
+{
+  "Investment Fund": "{{addFund.text}}",
+  "Location": "{{addLocation.text}}",
+  "Name of Investor": "{{addInvestorInput.text}}",
+  "Designation": "{{addDesignation.text}}",
+  "Interesting Portfolio Companies": "{{addPortifolio.text}}"
+}
+```
+
+Here, the keys are usually the column names in the Google Sheets, and the corresponding values are the values evaluated from the input widgets using the moustache operator.
+
+{% hint style="info" %}
+Make sure to remove unncessary commas at the end of JSON, else we might encounter the same **Plugin** **failed to parse JSON error**.
+{% endhint %}
+
 
 
