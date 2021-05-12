@@ -83,6 +83,12 @@ In cases like these, you can use javascript to transform the data to the correct
 }}
 ```
 
+* **Working with DatePicker Widget**
+
+Appsmith Datepicker gives a wide range of date formats. However, you can set the default date using JS from an API or a query. While doing this, we might often encounter an error saying **Value does not match ISO 8601 standard date string**. This is because the selected date format does not match with the default date or the data range \(Min Date/Max Date\). 
+
+For example, if the Date Format property is set to `YYYY-MM-DD HH:mm`, the default date, min/max date should be of the same format. You can also use the moment library to convert the date into a selected format. 
+
 ## Syntax Error
 
 This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../core-concepts/writing-code/#multi-line-js).
@@ -97,7 +103,7 @@ An app gets a cyclic dependency error when a node is directly or indirectly depe
 
 ### Reactivity and Dependency Map
 
-In Appsmith, we define all user editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
+In Appsmith, we define all user-editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
 
 ```text
 // Table1.tableData depends on Api1.data
