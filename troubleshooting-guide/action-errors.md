@@ -4,35 +4,16 @@
 
 ![Click to expand](../.gitbook/assets/missing-endpoint-error.png)
 
-### Missing Endpoint / Host Error
+Following are the list of errors we often see while creating new Datasources:
 
-```text
-Missing endpoint
-```
+* Missing endpoint
+* Missing endpoint\(s\)
+* Missing host for endpoint
+* Missing endpoint and URL
+*  Missing hostname
+* No endpoint\(s\) configured
 
-```text
-Missing endpoint(s)
-```
-
-```text
-Missing host for endpoint
-```
-
-```text
-Missing endpoint and url
-```
-
-```text
-Missing hostname
-```
-
-```text
-No endpoint(s) configured
-```
-
-These messages indicate that the `Host address` field in the [datasource creation form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases) has been left empty.
-
-This error can be fixed by editing the [datasource creation form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases) and typing in the host address for the datasource.
+These messages indicate that the `Host address` field in the [datasource creation form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases) has been left empty. This error can be fixed by editing the [datasource creation form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases) and typing in the host address for the datasource.
 
 ### Invalid Host Error
 
@@ -40,9 +21,7 @@ This error can be fixed by editing the [datasource creation form](https://docs.a
 Invalid host provided. It should be of the form http(s)://your-es-url.com
 ```
 
-This message indicates that the provided URL format is not correct.
-
-This error can be fixed by editing the [datasource creation form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases) and providing the host URL in the correct format.
+This message indicates that the provided URL format is not correct. This error can be fixed by editing the [datasource creation form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases) and providing the host URL in the correct format.
 
 ### Missing Port Error
 
@@ -268,5 +247,5 @@ Error was received while reading the incoming data. The connection will be close
 
 This error message indicates that the MySQL server that you are trying to connect to does not support SSL.
 
-This error can be resolved by editing the SSL field in the datasource configuration form and setting it to `Disabled`.
+This error can be resolved by editing the SSL field in the data source configuration form and setting it to `Disabled`.
 
