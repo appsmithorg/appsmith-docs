@@ -36,6 +36,7 @@
   * [How to work with Google Sheets on Appsmith](how-to-guides/how-to-work-with-google-sheets-on-appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors.md)
+  * [Google Sheets Plugin Errors](troubleshooting-guide/google-sheets-plugin-errors.md)
   * [JS Errors](troubleshooting-guide/widget-errors.md)
   * [Deployment Errors](troubleshooting-guide/deployment-errors.md)
   * [Application Errors](troubleshooting-guide/application-errors.md)
