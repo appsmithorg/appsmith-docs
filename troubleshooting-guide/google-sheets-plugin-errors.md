@@ -42,7 +42,7 @@ Here, our goal is to create a new row on Google Sheets, for this we'll be using 
 Here, the keys are usually the column names in the Google Sheets, and the corresponding values are the values evaluated from the input widgets using the moustache operator.
 
 {% hint style="info" %}
-Make sure to remove unncessary commas at the end of JSON, else we might encounter the same **Plugin** **failed to parse JSON error**.
+Make sure to remove unnecessary commas at the end of JSON, else we might encounter the same **Plugin** **failed to parse JSON error**.
 {% endhint %}
 
 
