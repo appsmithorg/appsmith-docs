@@ -3,14 +3,16 @@
 You've built a page to view all products, and another page to add a new product. We now move on to the third functionality of enabling a user to edit a product. Let's add an **Edit** button in each row of the table. On clicking the **Edit** button, a form modal will open which will allow users to edit the product in the corresponding row.
 
 1. Open **Products\_Table**’s properties
-2. Click on **New** **Button** under **Actions → Row Button**
-3. Rename the button to **Edit**
+2. Click on **ADD A NEW** **COLUMN** under **Columns**
+3. Click the ⚙️ icon to access column settings
+4. Change the column type to **Button**
+5. Label the button as **Edit** under button properties
 
 You'll see an Edit button in the last column of each row. A Row Button adds a button action for each row. Let's configure the Edit button.
 
 1. Open **Products\_Table**’s properties
-2. Go to **Actions → Row Button → Edit**
-3. Choose the action **Open Modal** from the **Actions** dropdown
+2. Go to **Button column's** settings by clicking the ⚙️ icon
+3. Choose the action **Open Modal** from the **onClick** dropdown
 4. Choose **New Modal**
 5. Rename the new modal to **EditProductModal** using its properties 
 6. Choose **Modal Type** as **Form Modal**
