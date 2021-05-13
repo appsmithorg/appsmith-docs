@@ -46,12 +46,6 @@ See our guides on
         </p>
       </td>
     </tr>
-    <tr>
-      <td style="text-align:left"><b>uploadedFileUrls</b>
-      </td>
-      <td style="text-align:left">This is the data that was bound in the Uploaded File URLs property for
-        access to be uploaded in an API.</td>
-    </tr>
   </tbody>
 </table>
 
