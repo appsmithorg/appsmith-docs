@@ -42,11 +42,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below
 
-<<<<<<< HEAD
-[Sending widget data in post body]()
-=======
 [Sending widget data in post body](dropdown.md)
->>>>>>> v1.2.1
 
 ## Properties
 
