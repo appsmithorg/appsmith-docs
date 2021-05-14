@@ -7,7 +7,7 @@ description: >-
 
 # Video
 
-![](../.gitbook/assets/video%20%281%29.gif)
+{% embed url="https://youtu.be/KvIWaTOmZPo" caption="" %}
 
 | Property | Description |
 | :--- | :--- |
