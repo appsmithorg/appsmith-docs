@@ -14,7 +14,7 @@ description: >-
 | Internal Property | Description |
 | :--- | :--- |
 | **selectedDate** | This is the ISO date string selected in the date widget. This value changes if the default value is updated or the user inputs a value. |
-| **formattedDate** | This is the date value displayed to the user in the date widget. This value changes if the default value is updated or the user inputs a value.  |
+| **formattedDate** | This is the date value displayed to the user in the date widget. This value changes if the default value is updated or the user inputs a value. |
 
 <table>
   <thead>
@@ -43,7 +43,7 @@ description: >-
           </li>
           <li>Others following the ISO 8601 standard.</li>
         </ul>
-        <p>This can also be populated using a moment object <b>{{ moment() }} </b>as
+        <p>This can also be populated using a moment object <b>{{ moment() }}</b> as
           well.</p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
       </td>
@@ -77,6 +77,4 @@ description: >-
 | Action. | Description |
 | :--- | :--- |
 | **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-
-
 
