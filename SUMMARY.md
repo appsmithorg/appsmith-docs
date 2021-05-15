@@ -78,6 +78,7 @@
 * [Google Sheets Integration](datasource-reference/querying-google-sheets.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
+  * [Whitelist MongoDB Cloud](datasource-reference/querying-mongodb/whitelist-mongodb-cloud.md)
 * [MS SQL](datasource-reference/querying-mssql.md)
 * [MySQL](datasource-reference/querying-mysql.md)
 * [Postgres](datasource-reference/querying-postgres.md)
