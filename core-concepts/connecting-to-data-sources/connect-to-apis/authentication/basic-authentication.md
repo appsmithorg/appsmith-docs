@@ -1,9 +1,8 @@
 # Basic Authentication
 
-If your backend has a standard set of headers or parameters that need to be sent with every request, you can save these as a common data source. Simply click the save as data source option at the end of the URL and add the common parameters.
+To share basic authentication details across multiple APIs, you can choose to use the `Basic` authentication mechanism within datasources. To do this, click on the `+` icon next to the API section and add the URL. Click on `Save as Datasource` next to the URL, and then under `Authentication` choose basic.
 
-![](../../../../.gitbook/assets/api-datasource.gif)
+Here, you may enter your username and password. The Appsmith server will generate the corresponding header for all request that use this datasource.
 
-This mechanism can be used to _Base64 encode_ your credentials right when you save the header parameters using Javascript functions in combination with a static or dynamic binding reference to your username and password.
+![](../../../../.gitbook/assets/basic-authentication.gif)
 
-![](../../../../.gitbook/assets/basic-authentication.png)
