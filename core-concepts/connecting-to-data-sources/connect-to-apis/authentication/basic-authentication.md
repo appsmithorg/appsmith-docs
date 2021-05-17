@@ -4,5 +4,5 @@ To share basic authentication details across multiple APIs, you can choose to us
 
 Here, you may enter your username and password. The Appsmith server will generate the corresponding header for all request that use this datasource.
 
-![](../../../../.gitbook/assets/basic_authentication.gif)
+![](../../../../.gitbook/assets/basic-authentication.gif)
 
