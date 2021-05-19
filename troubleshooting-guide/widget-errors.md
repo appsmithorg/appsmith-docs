@@ -118,6 +118,14 @@ The date picker expects its default date in the standard ISO format. If the date
 {{ moment("2021-07-26", "YYYY-MM-DD") }}
 ```
 
+### This value does not evaluate to type "boolean"
+
+This error typically occurs in the isVisible and isDisabled properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
+
+```text
+{{ Dropdown1.selectedOptionValue === "RED" }}
+```
+
 ## Syntax Error
 
 This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../core-concepts/writing-code/#multi-line-js).
