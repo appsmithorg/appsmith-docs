@@ -1,7 +1,5 @@
 # Action Errors
 
-## Action Execution Errors
-
 ![Click to expand](../../.gitbook/assets/timeout-error.png)
 
 ### Timeout Error
