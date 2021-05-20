@@ -1,68 +1,89 @@
 # JS Errors
 
-### Data Type Mismatch
+## Data Type Mismatch
 
 This error occurs when the value in the property of the widget does not match the data type required by the property.
 
-**Common Scenarios:**  
+### This value does not evaluate to type "Array&lt;Object&gt;"
 
-* **Working with Tables**
+While working with tables, we see this error often, as the Table Data property expects an Array of objects and we might bind JSON objects from APIs directly without transformation. The solution to this is to find the array in the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
 
-While working with tables, we see this error often, as the Table Data property expects an Array data type and we might bind JSON objects from APIs directly without transformation. In this case, we should see the error as `This value does not evaluate to type "Array"`. The solution for this is to make sure the data sent into Table Data property is of array data type. By default we should see the following config in the Table Data property when a table widget is dropped on the canvas:
+```javascript
+{
+  "next": "https://mock-api.appsmith.com/users?page=2&pageSize=10",
+  "previous": null,
+  "users": [
+    {
+      "id": 1,
+      "name": "Barty Crouch",
+      "status": "APPROVED",
+      "gender": "",
+      "avatar": "https://robohash.org/sednecessitatibuset.png?size=100x100&set=set1",
+      "email": "barty.crouch@gmail.com",
+      "address": "St Petersberg #911 4th main",
+      "createdAt": "2020-03-16T18:00:05.000Z",
+      "updatedAt": "2020-08-12T17:29:31.980Z"
+    },
+    {
+      "id": 2,
+      "name": "Jenelle Kibbys",
+      "status": "APPROVED",
+      "gender": "Female",
+      "avatar": "https://robohash.org/quiaasperiorespariatur.bmp?size=100x100&set=set1",
+      "email": "jkibby1@hp.com",
+      "address": "85 Tennessee Plaza",
+      "createdAt": "2019-10-04T03:22:23.000Z",
+      "updatedAt": "2019-09-11T20:18:38.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Tobin Shellibeer",
+      "status": "APPROVED",
+      "gender": "Male",
+      "avatar": "https://robohash.org/odioeumdolores.png?size=100x100&set=set1",
+      "email": "tshellibeer9@ihg.com",
+      "address": "4 Ridgeway Lane",
+      "createdAt": "2019-11-27T06:09:41.000Z",
+      "updatedAt": "2019-09-07T16:35:48.000Z"
+    }
+  ]
+}
+```
 
-```text
+To overcome this, we can bind the users array of the response instead of the entire response object using javascript
+
+```javascript
+{{ fetch_users.data.users }}
+```
+
+### **This value does not evaluate to type "Array&lt;{ label: string, value: string }&gt;"**
+
+While adding options to single select or multi-select dropdowns, we might face a data mismatch error**.** In such cases, make sure the options property is an array of objects containing a label and value as strings. In case the response does not contain label and value keys as below, we can map over the response to transform it using javascript
+
+```javascript
+// invalid response of fetchColors API
 [
-  {
-    "step": "#1",
-    "task": "Drag a Table",
-    "status": "✅",
-    "action": ""
-  },
-  {
-    "step": "#2",
-    "task": "Create a Query fetch_users with the Mock DB",
-    "status": "--",
-    "action": ""
-  },
-  {
-    "step": "#3",
-    "task": "Bind the query to the table {{fetch_users.data}}",
-    "status": "--",
-    "action": ""
-  }
+  'Blue',
+  'Green',
+  'Red'
 ]
 ```
 
-While binding data from any APIs or DB Queries, use the moustache operator to render the data onto the table widgets. For example, you can use the mock database to query the list of users and display it onto the table using the following syntax in the Table Data property:
-
-```text
-{{ fetch_users.data }}
+```javascript
+// Transform Response
+{{ 
+    fetchColors.data.map((color) =>{
+        return {
+            label: color,
+            value: color
+        }
+    })
+}}
 ```
 
-* **Working with Dropdowns**
+### **The** **value does not evaluate to type Array&lt;x: string, y: number&gt;**
 
-While adding options for single select or multi-select dropdowns, we might face a data mismatch error, usually, errors such as **This value does not evaluate to type "Array&lt;{ label: string, value: string }&gt;".** In such cases, make sure the options in objects containing a label and a value in an array. For example, this is how the options are added to dropdown widgets in the `Options` property.
-
-```text
-[
-  {
-    "label": "Blue",
-    "value": "BLUE"
-  },
-  {
-    "label": "Green",
-    "value": "GREEN"
-  },
-  {
-    "label": "Red",
-    "value": "RED"
-  }
-]
-```
-
-* **Working with Charts**
-
-The below image shows that there is an error in the Chart Data field of the Chart. To the left of the field, we can see a message which indicates that **The** **value does not evaluate to type Array&lt;x: string, y: number&gt;**
+The below image shows that there is an error in the Chart Data field of the Chart. 
 
 ![](../.gitbook/assets/chart-error.png)
 
@@ -83,11 +104,27 @@ In cases like these, you can use javascript to transform the data to the correct
 }}
 ```
 
-* **Working with DatePicker Widget**
+### **Value does not match ISO 8601 standard date string**
 
-Appsmith Datepicker gives a wide range of date formats. However, you can set the default date using JS from an API or a query. While doing this, we might often encounter an error saying **Value does not match ISO 8601 standard date string**. This is because the selected date format does not match with the default date or the data range \(Min Date/Max Date\). 
+The date picker expects its default date in the standard ISO format. If the date you provided does not match this, you can transform the date string using moment.js.
 
-For example, if the Date Format property is set to `YYYY-MM-DD HH:mm`, the default date, min/max date should be of the same format. You can also use the moment library to convert the date into a selected format. 
+```text
+// Moment can be used to set the default date to the current date
+{{moment()}}
+```
+
+```text
+// Moment can parse your date format
+{{ moment("2021-07-26", "YYYY-MM-DD") }}
+```
+
+### This value does not evaluate to type "boolean"
+
+This error typically occurs in the isVisible and isDisabled properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
+
+```text
+{{ Dropdown1.selectedOptionValue === "RED" }}
+```
 
 ## Syntax Error
 
@@ -103,7 +140,7 @@ An app gets a cyclic dependency error when a node is directly or indirectly depe
 
 ### Reactivity and Dependency Map
 
-In Appsmith, we define all user-editable fields as nodes and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
+In Appsmith, we define all user-editable fields as nodes, and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
 
 ```text
 // Table1.tableData depends on Api1.data
@@ -121,7 +158,7 @@ Table1.tableData -> Table1
 Api1.data -> Table1.tableData
 ```
 
-The most common scenario when a cycle occurs is when you would try to bind a node to it's parent node. Since it is impossible to evaluate an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved.
+The most common scenario that a cycle occurs is when you would try to bind a node to its parent node. Since it is impossible to evaluate an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved.
 
 ```text
 // A cycle is formed

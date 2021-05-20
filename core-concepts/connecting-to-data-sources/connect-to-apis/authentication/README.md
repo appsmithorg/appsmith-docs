@@ -5,7 +5,7 @@ In case the APIs that you wish to connect to are protected by an authentication 
 ![](../../../../.gitbook/assets/api-datasource.gif)
 
 {% hint style="success" %}
-You can Base64 encode credentials using the bota function. You can either hardcode the username & password or reference them from fields in the UI using javascript.
+You can Base64 encode credentials using the btoa function. You can either hardcode the username & password or reference them from fields in the UI using javascript.
 {% endhint %}
 
 ```javascript
