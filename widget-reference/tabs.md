@@ -6,7 +6,7 @@ description: >-
 
 # Tabs
 
-![](../.gitbook/assets/tabs.gif)
+{% embed url="https://youtu.be/NLe0To_fB7E" caption="" %}
 
 ## Creating Dynamic Views
 
