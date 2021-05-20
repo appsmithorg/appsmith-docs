@@ -6,6 +6,8 @@ description: >-
 
 # Button
 
+{% embed url="https://youtu.be/u9osKR-krBA" caption="" %}
+
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the button. |
@@ -15,7 +17,5 @@ description: >-
 
 | Action | Description |
 | :--- | :--- |
-| **onClick** | Sets the action to be run when user clicks a button. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
-
-![](../.gitbook/assets/button_v10.gif)
+| **onClick** | Sets the action to be run when user clicks a button. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. 
 
