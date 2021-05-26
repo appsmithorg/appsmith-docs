@@ -4,7 +4,7 @@ Appsmith is a JavaScript-based visual development platform to build and launch i
 
 ## How does Appsmith work?
 
-You need to understand five principles to build apps. 
+You need to understand five principles to build apps.
 
 * Create your page by using UI components
 * Connect Appsmith to your data-sources like REST APIs, MySQL, Postgres, MongoDB, and other databases.
