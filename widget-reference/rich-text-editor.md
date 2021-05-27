@@ -6,7 +6,7 @@ description: >-
 
 # Rich Text Editor
 
-![](../.gitbook/assets/rich-text.gif)
+{% embed url="https://youtu.be/_KrxFScQJys" caption="" %}
 
 ## Properties
 

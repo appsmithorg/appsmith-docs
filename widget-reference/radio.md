@@ -6,7 +6,7 @@ description: >-
 
 # Radio
 
-![](../.gitbook/assets/radio.gif)
+{% embed url="https://youtu.be/y7P_ZoSH8Ic" caption="" %}
 
 ## Displaying Data
 
