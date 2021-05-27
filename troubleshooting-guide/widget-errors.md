@@ -6,7 +6,7 @@ This error occurs when the value in the property of the widget does not match th
 
 ### This value does not evaluate to type "Array&lt;Object&gt;"
 
-While working with tables, we see this error often, as the Table Data property expects an Array of objects and we might bind JSON objects from APIs directly without transformation. The solution to this is to find the array in the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
+While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response. The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
 
 ```javascript
 {
