@@ -37,7 +37,7 @@ To download a file
    - configure it with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file)
    action.
    - set the bucket name from where to fetch the file
-   - set `path` to the file path selected in the table using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.file}}`
+   - set `path` to the file path selected in the table using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.fileName}}`
    
 ![Click to expand](../.gitbook/assets/s3-read-file-query.png)
 
