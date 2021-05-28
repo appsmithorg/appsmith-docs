@@ -24,12 +24,38 @@ To upload a file
 To download a file
 
 1. Drag a Table onto the canvas and name it **s3\_files**
-2. Create a new S3 query named **fetch\_files** to fetch all the files in your bucket
-3. Configure the [List Files](../datasource-reference/querying-amazon-s3.md#list-files-in-bucket) action for the query
-4. Set the bucket name from where to fetch the files and run the query
-5. Bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`
+2. Create a new S3 query named **fetch\_files** to fetch all the files in your bucket. 
+   - configure it with the [List 
+   Files](../datasource-reference/querying-amazon-s3.md#list-files-in-bucket) action. 
+   - set the bucket name from where to fetch the files and run the query
+   - bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`. 
+     Now your table should list all the files present in your S3 bucket.
 
 ![Click to expand](../.gitbook/assets/bind-list-files-to-table.png)
+
+3. Create a new S3 query named **read\_file** to read file data from S3 bucket.
+   - configure it with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file)
+   action.
+   - set the bucket name from where to fetch the file
+   - set `path` to the file path selected in the table using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.file}}`
+   
+![Click to expand](../.gitbook/assets/s3-read-file-query.png)
+
+4. To download the file selected in the table
+   - click on the `JS` button next to `onRowSelected` Action and write the 
+   following javascript query:
+
+   ```text
+   {{read_file.run(
+   ()=>{download(atob(read_file.data.fileData),s3_files.selectedRow.fileName.split("/").pop())})}}
+   ```
+   
+   - Click any row in table `s3_files` to download the corresponding file from your S3 bucket.
+
+![](../.gitbook/assets/s3-download-using-js.gif)
+
+<!---
+Commenting out the below lines till https://github.com/appsmithorg/appsmith/issues/4262 is closed
 
 1. Create a new S3 query for the `onRowSelected` action named **read\_file**
 
@@ -51,12 +77,5 @@ To download a file
 
 ![Click to expand](../.gitbook/assets/configure-download-on-success.png)
 
-1. Alternatively, for steps 7-11, you can click on the `JS` button next to `onRowSelectedAction` and write the following javascript query:
-
-   ```text
-   {{read_file.run(
-   ()=>{download(atob(read_file.data.fileData),s3_files.selectedRow.fileName.split("/").pop())})}}
-   ```
-
-2. Click any row in table `s3_files` to download the corresponding file from your S3 bucket.
+-->
 
