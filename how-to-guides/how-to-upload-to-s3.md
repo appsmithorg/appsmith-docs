@@ -25,24 +25,23 @@ To download a file
 
 1. Drag a Table onto the canvas and name it **s3\_files**
 2. Create a new S3 query named **fetch\_files** to fetch all the files in your bucket. 
-   - configure it with the [List 
-   Files](../datasource-reference/querying-amazon-s3.md#list-files-in-bucket) action. 
-   - set the bucket name from where to fetch the files and run the query
-   - bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`. 
+   - Configure it with the [List Files](../datasource-reference/querying-amazon-s3.md#list-files-in-bucket) action. 
+   - Set the bucket name from where to fetch the files and run the query
+   - Bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`. 
      Now your table should list all the files present in your S3 bucket.
 
 ![Click to expand](../.gitbook/assets/bind-list-files-to-table.png)
 
 3. Create a new S3 query named **read\_file** to read file data from S3 bucket.
-   - configure it with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file)
+   - Configure it with the [Read File](../datasource-reference/querying-amazon-s3.md#read-file)
    action.
-   - set the bucket name from where to fetch the file
-   - set `path` to the file path selected in the table using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.fileName}}`
+   - Set the bucket name from where to fetch the file
+   - Set `path` to the file path selected in the table using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.fileName}}`
    
 ![Click to expand](../.gitbook/assets/s3-read-file-query.png)
 
 4. To download the file selected in the table
-   - click on the `JS` button next to `onRowSelected` Action and write the 
+   - Click on the `JS` button next to `onRowSelected` Action and write the 
    following javascript query:
 
    ```text
