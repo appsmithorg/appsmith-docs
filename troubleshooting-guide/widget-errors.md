@@ -4,7 +4,7 @@
 
 This error occurs when the value in the property of the widget does not match the data type required by the property.
 
-### This value does not evaluate to type "Array&lt;Object&gt;"
+### This value does not evaluate to type Array&lt;Object&gt;
 
 While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response. The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
 
@@ -56,7 +56,7 @@ To overcome this, we can bind the users array of the response instead of the ent
 {{ fetch_users.data.users }}
 ```
 
-### **This value does not evaluate to type "Array&lt;{ label: string, value: string }&gt;"**
+### **This value does not evaluate to type Array&lt;{ label: string, value: string }&gt;**
 
 While adding options to single select or multi-select dropdowns, we might face a data mismatch error**.** In such cases, make sure the options property is an array of objects containing a label and value as strings. In case the response does not contain label and value keys as below, we can map over the response to transform it using javascript
 
@@ -118,7 +118,7 @@ The date picker expects its default date in the standard ISO format. If the date
 {{ moment("2021-07-26", "YYYY-MM-DD") }}
 ```
 
-### This value does not evaluate to type "boolean"
+### This value does not evaluate to type boolean
 
 This error typically occurs in the isVisible and isDisabled properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
 
