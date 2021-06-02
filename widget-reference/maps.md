@@ -6,7 +6,7 @@ description: >-
 
 # Maps
 
-![](../.gitbook/assets/map.gif)
+{% embed url="https://youtu.be/xCTiPNlBKLU" caption="" %}
 
 ## Properties
 

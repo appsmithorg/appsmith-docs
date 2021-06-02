@@ -6,7 +6,7 @@ description: >-
 
 # Switch
 
-![Click to expand](../.gitbook/assets/switch.gif)
+{% embed url="https://youtu.be/5kNWJ9mtlOw" caption="" %}
 
 | Internal Property | Description |
 | :--- | :--- |
