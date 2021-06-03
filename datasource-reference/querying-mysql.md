@@ -35,14 +35,14 @@ You need to fill in the following parameters:
 
 ### **SSL**
 
-You need to fill in the following parameters:
+The SSL Mode can be set to one of the following values:
 
-* **SSL Mode:** Choose your SSL model from the dropdown. 
-* **Key File:** Upload your SSL key file from here.
-* **Certificate:** Upload your SSL certificate here**.**
-* **CA Certificate:** Upload your CA certificate here.
-* **PEM Certificate:** Upload your PEM certificate here.
-* **PEM Passphrase:** Fill in your PEM passphrase here.
+* **`Default`**: Same as `Preferred`.
+* **`Preferred`**: Use SSL, if the server _supports_ it.
+* **`Required`**: Reject connection, if SSL is not available.
+* **`Disabled`**: Connect without SSL, use a plain unencrypted connection.
+
+More information available at [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode).
 
 ## Querying MySQL
 

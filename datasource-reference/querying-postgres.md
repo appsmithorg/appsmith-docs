@@ -31,14 +31,15 @@ You need to fill in the following parameters:
 
 ### **SSL**
 
-You need to fill in the following parameters:
+The SSL Mode can be set to one of the following values:
 
-* **SSL Mode:** Choose your SSL model from the dropdown. 
-* **Key File:** Upload your SSL key file from here.
-* **Certificate:** Upload your SSL certificate here**.**
-* **CA Certificate:** Upload your CA certificate here.
-* **PEM Certificate:** Upload your PEM certificate here.
-* **PEM Passphrase:** Fill in your PEM passphrase here.
+* **`Default`**: Same as `Prefer`.
+* **`Allow`**: Use SSL, only if the server _insists_ on it.
+* **`Prefer`**: Use SSL, if the server _supports_ it.
+* **`Require`**: Reject connection, if SSL is not available.
+* **`Disable`**: Connect without SSL, use a plain unencrypted connection.
+
+More information available at [PostgreSQL documentation](https://jdbc.postgresql.org/documentation/head/ssl-client.html).
 
 ## Querying Postgres
 
