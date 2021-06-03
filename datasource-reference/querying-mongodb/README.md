@@ -56,10 +56,13 @@ You need to fill in the following parameters:
 
 ### **SSL**
 
-You need to fill in the following parameters:
+The SSL Mode can be set to one of the following values:
 
-* **Authentication Mechanism:** Choose the SSL method of authentication or select No SSL if none is required. 
-* **CA Certificate:** Upload your CA certificate here.
+* **`Default`**: Depends on Connection Type. If using `Replica set`, this is `Enabled`. If using `Direct connection`, this is `Disabled`.
+* **`Enabled`**: Reject connection, if SSL is not available.
+* **`Disabled`**: Connect without SSL, use a plain unencrypted connection.
+
+More information available at [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
 
 ## Querying Mongo
 

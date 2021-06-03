@@ -35,9 +35,11 @@ The SSL Mode can be set to one of the following values:
 
 * **`Default`**: Same as `Prefer`.
 * **`Allow`**: Use SSL, only if the server _insists_ on it.
-* **`Prefer`**: User SSL, if the server _supports_ it.
+* **`Prefer`**: Use SSL, if the server _supports_ it.
 * **`Require`**: Reject connection, if SSL is not available.
 * **`Disable`**: Connect without SSL, use a plain unencrypted connection.
+
+More information available at [PostgreSQL documentation](https://jdbc.postgresql.org/documentation/head/ssl-client.html).
 
 ## Querying Postgres
 
