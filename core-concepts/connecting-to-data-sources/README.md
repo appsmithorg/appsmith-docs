@@ -8,7 +8,7 @@ Rich applications require real data to build intuitive UI, perform data transfor
 {% hint style="warning" %}
 Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
 
-**18.223.74.85** and **.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
+**18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 
 This is a guide on how to [whitelist appsmith on AWS.](../../how-to-guides/aws-whitelist.md)
 {% endhint %}
