@@ -13,6 +13,7 @@ This document presumes you are familiar with the [core concepts](../core-concept
 7. [Embed Appsmith application into existing application](embed-appsmith-into-existing-application.md)
 8. [Work with local APIs on Appsmith](how-to-work-with-local-apis-on-appsmith.md)
 9. [How to work with Google Sheets on Appsmith](how-to-work-with-google-sheets-on-appsmith.md)
+10. How to implement custom authentication on Appsmith
 
 
 

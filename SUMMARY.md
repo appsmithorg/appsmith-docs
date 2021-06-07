@@ -33,6 +33,7 @@
   * [Writing JavaScript in Appsmith](how-to-guides/writing-javascript-in-appsmith.md)
   * [Embed Appsmith into Existing Application](how-to-guides/embed-appsmith-into-existing-application.md)
   * [Whitelist Appsmith on AWS](how-to-guides/aws-whitelist.md)
+  * [How to implement custom authentication on Appsmith](how-to-guides/how-to-implement-custom-authentication-on-appsmith.md)
   * [How to work with Local APIs on Appsmith](how-to-guides/how-to-work-with-local-apis-on-appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)
