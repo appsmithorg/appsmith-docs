@@ -64,7 +64,146 @@ The SSL Mode can be set to one of the following values:
 
 More information available at [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
 
-## Querying Mongo
+## Querying Mongo (Form Input)
+
+For an easy to use interface to query your mongo database, choose `Form input`.
+
+As part of Form Input, Appsmith supports queries like `Find one or more documents`, `Insert a document`, `Update one`, `Count` etc.
+
+All mongo queries return an array of objects where each object is a mongo document and properties of the object are the keys of the document.
+
+### Find one or more documents
+
+This command selects documents in a collection or view. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The name of the collection or view to query. The input is expected in a string format like the following :
+```text
+restaurants
+```
+
+`Query` : The query predicate. If unspecified, then all documents in the collection will match the predicate. The input is expected in JSON/BSON format like the following :
+```text
+{
+     rating: { $gte: 9 }, 
+     cuisine: "italian" 
+}
+```
+
+`Sort` : (Optional) The sort specification for the ordering of the results. The input is expected in JSON/BSON format like the following :
+```text
+{ name: 1 }
+```
+
+`Projection` : (Optional) The projection specification to determine which fields to include in the returned documents. The input is expected in JSON/BSON format like the following :
+```text
+{ name: 1, rating: 1, address: 1 }
+```
+
+`Limit` : (Optional) The maximum number of documents to return. If unspecified, then defaults to 10 documents. The input is expected in number format :
+```text
+10
+```
+
+`Skip` : (Optional) Number of documents to skip. Defaults to 0. The input is expected in number format :
+```
+0
+```
+
+### Insert one or more documents
+
+This command inserts one or more documents and returns a document containing the status of all inserts.  Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The name of the target collection. The input is expected in a string format like the following :
+```text
+users
+```
+
+`Documents` : An array of one or more documents to insert into the named collection. The input is expected in a JSON/BSON Array format like the following :
+```text
+[ { _id: 1, user: "abc123", status: "A" } ]
+```
+
+### Update one document
+
+This command modifies and returns a single document. The returned document includes the modifications made on the update if the query returns a match. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The collection against which to run the command. The input is expected in a string format like the following :
+```text
+people
+```
+
+`Query` : The selection criteria for the modification. Although the query may match multiple documents, this command will only select one document to modify. The input is expected in JSON/BSON format like the following :
+```text
+{ name: "Andy" }
+```
+
+`Sort` : (Optional) Determines which document the operation modifies if the query selects multiple documents. This command modifies the first document in the sort order specified by this argument. 
+{% hint style="warning" %} When sorting on a field which contains duplicate values, documents containing those values may be returned in any order.  If consistent sort order is desired, include at least one field in your sort that contains unique values. The easiest way to guarantee this is to include the _id field in your sort query.
+
+The input is expected in JSON/BSON format like the following :
+```text
+{ name: 1 }
+```
+
+`Update` : Performs the specified modification of the selected document. The input is expected in JSON/BSON format like the following :
+```text
+{ $inc: { score: 1 } }
+```
+
+### Update one or more documents
+
+This command modifies multiple documents in a collection. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The collection against which to run the command. The input is expected in a string format like the following :
+```text
+people
+```
+
+`Query` : The query that matches documents to update. The input is expected in JSON/BSON format like the following :
+```text
+{ name: "Andy" }
+```
+
+`Update` : The modifications to apply. The input is expected in JSON/BSON format like the following :
+```text
+{ $inc: { score: 1 } }
+```
+
+### Delete one or more documents
+
+This command removes documents from a collection. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The target collection against which to run the command. The input is expected in a string format like the following :
+```text
+orders
+```
+
+`Query` : The query that matches document(s) to delete. The input is expected in JSON/BSON format like the following :
+```text
+{ status: "D" }
+```
+
+`Limit` : The dropdown is used to configure if this delete command should act upon a single document or if this command should delete all the matching documents according to the query.
+
+### Count
+
+This command counts the number of documents in a collection or a view. Returns a document that contains this count. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The name of the collection or view to count. The input is expected in a string format like the following :
+```text
+orders
+```
+
+`Query` : A query that selects which documents to count in the collection or view. The input is expected in JSON/BSON format like the following :
+```text
+{ ord_dt: { $gt: new Date('01/01/2021') }
+```
+
+
+
+## Querying Mongo (Advanced)
+
+For unlocking the power of mongo commands, query your mongo database using the RAW command. For the same, choose `Raw Input`
 
 {% hint style="warning" %}
 The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/)
