@@ -72,6 +72,8 @@ As part of Form Input, Appsmith supports queries like `Find one or more document
 
 All mongo queries return an array of objects where each object is a mongo document and properties of the object are the keys of the document.
 
+![](../../.gitbook/assets/mongo-form.gif)
+
 ### Find one or more documents
 
 This command selects documents in a collection or view. Following fields are supported in Appsmith for this command :
@@ -199,6 +201,43 @@ orders
 { ord_dt: { $gt: new Date('01/01/2021') }
 ```
 
+### Distinct
+
+This command finds the distinct values for a specified field across a single collection. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The name of the collection to query for distinct values. The input is expected in a string format like the following :
+```text
+inventory
+```
+
+`Query` : A query that specifies the documents from which to retrieve the distinct values. The input is expected in JSON/BSON format like the following :
+```text
+{ dept: "A"} }
+```
+
+`Key/Field` : The field for which to return distinct values. The input is expected in a string format like the following :
+```text
+item.sku
+```
+
+### Aggregate
+
+This command performs aggregation operation using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. Following fields are supported in Appsmith for this command :
+
+`Collection Name` : The name of the collection or view that acts as the input for the aggregation pipeline.  The input is expected in a string format like the following :
+```text
+articles
+```
+
+`Array of Pipelines` : An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline.  The input is expected in JSON/BSON array format like the following :
+```text
+[
+      { $project: { tags: 1 } },
+      { $unwind: "$tags" },
+      { $group: { _id: "$tags", count: { $sum : 1 } } }
+]
+```
+The above example performs an aggregate operation on the articles collection to calculate the count of each distinct element in the tags array that appears in the collection.
 
 
 ## Querying Mongo (Advanced)
