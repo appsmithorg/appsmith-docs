@@ -18,7 +18,7 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 For Mac on M1, we've seen problems with Docker getting into a corrupt state and throwing errors like `error creating overlay mount`. Please follow [Docker's troubleshooting guide](https://docs.docker.com/docker-for-mac/troubleshoot/) to resolve and then proceed with the installation.
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Appsmith does not officially support Windows \(or WSL\). Please try out one of our [pre-built images](../) if your production operating system is not on the list above.
 {% endhint %}
 
