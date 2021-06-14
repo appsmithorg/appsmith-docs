@@ -6,7 +6,13 @@ This error occurs when the value in the property of the widget does not match th
 
 ### This value does not evaluate to type Array\[Object\]
 
-While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response. The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
+**Why do you see this error?**
+
+While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response. 
+
+**Solution:**
+
+The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
 
 ```javascript
 {
@@ -17,40 +23,21 @@ While working with Tables or Lists, you may encounter this error, as the data pr
       "id": 1,
       "name": "Barty Crouch",
       "status": "APPROVED",
-      "gender": "",
       "avatar": "https://robohash.org/sednecessitatibuset.png?size=100x100&set=set1",
       "email": "barty.crouch@gmail.com",
-      "address": "St Petersberg #911 4th main",
-      "createdAt": "2020-03-16T18:00:05.000Z",
-      "updatedAt": "2020-08-12T17:29:31.980Z"
     },
     {
       "id": 2,
       "name": "Jenelle Kibbys",
       "status": "APPROVED",
-      "gender": "Female",
       "avatar": "https://robohash.org/quiaasperiorespariatur.bmp?size=100x100&set=set1",
       "email": "jkibby1@hp.com",
-      "address": "85 Tennessee Plaza",
-      "createdAt": "2019-10-04T03:22:23.000Z",
-      "updatedAt": "2019-09-11T20:18:38.000Z"
-    },
-    {
-      "id": 10,
-      "name": "Tobin Shellibeer",
-      "status": "APPROVED",
-      "gender": "Male",
-      "avatar": "https://robohash.org/odioeumdolores.png?size=100x100&set=set1",
-      "email": "tshellibeer9@ihg.com",
-      "address": "4 Ridgeway Lane",
-      "createdAt": "2019-11-27T06:09:41.000Z",
-      "updatedAt": "2019-09-07T16:35:48.000Z"
     }
   ]
 }
 ```
 
-To overcome this, we can bind the users array of the response instead of the entire response object using javascript
+To overcome this, we can bind the user's array of the response instead of the entire response object using javascript:
 
 ```javascript
 {{ fetch_users.data.users }}
@@ -58,7 +45,13 @@ To overcome this, we can bind the users array of the response instead of the ent
 
 ### **This value does not evaluate to type Array\[{ label: string, value: string }\]**
 
-While adding options to single select or multi-select dropdowns, we might face a data mismatch error**.** In such cases, make sure the options property is an array of objects containing a label and value as strings. In case the response does not contain label and value keys as below, we can map over the response to transform it using javascript
+**Why do you see this error?**
+
+While adding options to single select or multi-select dropdowns, we might face a data mismatch error**.** In such cases, make sure the options property is an array of objects containing a label and value as strings.
+
+**Solution:**
+
+ In case the response does not contain label and value keys as below, we can map over the response to transforming it using javascript
 
 ```javascript
 // invalid response of fetchColors API
@@ -83,11 +76,13 @@ While adding options to single select or multi-select dropdowns, we might face a
 
 ### **The** **value does not evaluate to type Array\[{x: string, y: number}\]**
 
-The below image shows that there is an error in the Chart Data field of the Chart. 
+**Why do you see this error?**
+
+The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. ****The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
 
 ![](../.gitbook/assets/chart-error.png)
 
-The Evaluated Value below indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
+**Solution:**
 
 In cases like these, you can use javascript to transform the data to the correct data type or access the correct data inside the object. The below code reduces the fetch\_orders.data array to aggregate orders based on the date into an array &lt;x, y&gt; where x is the date of the order and y is the order amount
 
@@ -106,7 +101,13 @@ In cases like these, you can use javascript to transform the data to the correct
 
 ### **Value does not match ISO 8601 standard date string**
 
-The date picker expects its default date in the standard ISO format. If the date you provided does not match this, you can transform the date string using moment.js.
+**Why do you see this error?**
+
+The date picker expects its default date in the standard ISO format. If the date you provided does not match this, you'll see this error. 
+
+**Solution:**
+
+To resolve this, you can transform the date string using moment.js.
 
 ```text
 // Moment can be used to set the default date to the current date
@@ -120,7 +121,7 @@ The date picker expects its default date in the standard ISO format. If the date
 
 ### This value does not evaluate to type boolean
 
-This error typically occurs in the isVisible and isDisabled properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
+This error typically occurs in the isVisible and `isDisabled` properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
 
 ```text
 {{ Dropdown1.selectedOptionValue === "RED" }}
