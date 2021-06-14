@@ -19,4 +19,4 @@ description: >-
 | Action      | Description         |
 | :---------- | :------------------ |
 | **onURLChanged** | Sets the action to be run when the source url is changed. |
-| **onMessageReceived** | Sets the action to be run when a message event is received from the embedded page. |
+| **onMessageReceived** | Sets the action to be run when a postMessage event is received from the embedded page. |
