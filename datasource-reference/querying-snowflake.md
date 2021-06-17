@@ -32,7 +32,7 @@ You need to fill in the following parameters:
 
 Snowflake databases can be queried using the SQL syntax provided in their [command reference documentation](https://docs.snowflake.com/en/sql-reference-commands.html). All Snowflake queries return an array of objects where each object is a row returned by the query and each property in the object is a column.
 
-![](/Users/nidhi/Workspace/Work/appsmith-docs/.gitbook/assets/snowflake.gif)
+![](../.gitbook/assets/snowflake.gif)
 
 ## Using Queries in applications
 
