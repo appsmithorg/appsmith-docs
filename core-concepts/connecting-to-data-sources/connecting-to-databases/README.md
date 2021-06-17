@@ -17,6 +17,7 @@ description: >-
 * [PostgreSQL](../../../datasource-reference/querying-postgres.md)
 * [Redis](../../../datasource-reference/querying-redis.md)
 * [Redshift](../../../datasource-reference/querying-redshift.md)
+* [Snowflake](datasource-reference/querying-snowflake.md)
 
 ## Security
 
