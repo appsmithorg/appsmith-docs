@@ -74,7 +74,7 @@ All mongo queries return an array of objects where each object is a mongo docume
 
 ![](../../.gitbook/assets/mongo-form.gif)
 
-### 1. Find one or more documents
+### 1. Find Document(s)
 
 This command selects documents in a collection or view. Following fields are supported in Appsmith for this command :
 
@@ -111,7 +111,7 @@ restaurants
 0
 ```
 
-### 2. Insert one or more documents
+### 2. Insert Document(s)
 
 This command inserts one or more documents and returns a document containing the status of all inserts.  Following fields are supported in Appsmith for this command :
 
@@ -125,34 +125,7 @@ users
 [ { _id: 1, user: "abc123", status: "A" } ]
 ```
 
-### 3. Update one document
-
-This command modifies and returns a single document. The returned document includes the modifications made on the update if the query returns a match. Following fields are supported in Appsmith for this command :
-
-`Collection Name` : The collection against which to run the command. The input is expected in a string format like the following :
-```text
-people
-```
-
-`Query` : The selection criteria for the modification. Although the query may match multiple documents, this command will only select one document to modify. The input is expected in JSON/BSON format like the following :
-```text
-{ name: "Andy" }
-```
-
-`Sort` : (Optional) Determines which document the operation modifies if the query selects multiple documents. This command modifies the first document in the sort order specified by this argument. 
-{% hint style="warning" %} When sorting on a field which contains duplicate values, documents containing those values may be returned in any order.  If consistent sort order is desired, include at least one field in your sort that contains unique values. The easiest way to guarantee this is to include the _id field in your sort query.
-
-The input is expected in JSON/BSON format like the following :
-```text
-{ name: 1 }
-```
-
-`Update` : Performs the specified modification of the selected document. The input is expected in JSON/BSON format like the following :
-```text
-{ $inc: { score: 1 } }
-```
-
-### 4. Update one or more documents
+### 3. Update Document(s)
 
 This command modifies multiple documents in a collection. Following fields are supported in Appsmith for this command :
 
@@ -171,7 +144,10 @@ people
 { $inc: { score: 1 } }
 ```
 
-### 5. Delete one or more documents
+`Limit` : The dropdown is used to configure if this delete command should act upon a single document or if this command should delete all the matching documents according to the query.
+
+
+### 4. Delete Document(s)
 
 This command removes documents from a collection. Following fields are supported in Appsmith for this command :
 
@@ -187,7 +163,7 @@ orders
 
 `Limit` : The dropdown is used to configure if this delete command should act upon a single document or if this command should delete all the matching documents according to the query.
 
-### 6. Count
+### 5. Count
 
 This command counts the number of documents in a collection or a view. Returns a document that contains this count. Following fields are supported in Appsmith for this command :
 
@@ -201,7 +177,7 @@ orders
 { ord_dt: { $gt: new Date('01/01/2021') }
 ```
 
-### 7. Distinct
+### 6. Distinct
 
 This command finds the distinct values for a specified field across a single collection. Following fields are supported in Appsmith for this command :
 
@@ -220,7 +196,7 @@ inventory
 item.sku
 ```
 
-### 8. Aggregate
+### 7. Aggregate
 
 This command performs aggregation operation using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. Following fields are supported in Appsmith for this command :
 
