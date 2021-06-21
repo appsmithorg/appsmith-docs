@@ -29,3 +29,5 @@ Using this feature, you can now import or export desired application onto differ
 1. Exporting Appsmith application from source: There is an option to export the application \(from source instance\), in the overflow menu from the application icon on the homepage. 
 2. Import Appsmith application to the destination: To import the application to the destination instance, find the `import application` option on the overflow menu on the homepage beside the organization name.
 
+![](../.gitbook/assets/import-export.gif)
+
