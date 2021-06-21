@@ -113,6 +113,7 @@
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Dropdown](widget-reference/dropdown.md)
+* [Divider](widget-reference/divider.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
 * [Image](widget-reference/image.md)
