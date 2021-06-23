@@ -6,7 +6,7 @@ description: >-
 
 # appsmith
 
-{% embed url="https://youtu.be/5Z65l_PssEQ" caption="" %}
+{% embed url="https://youtu.be/5Z65l\_PssEQ" caption="" %}
 
 ## Properties
 
