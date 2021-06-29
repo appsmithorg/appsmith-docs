@@ -113,7 +113,7 @@
 * [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
-* [Dropdown](widget-reference/dropdown.md)
+* [Select](widget-reference/dropdown.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
 * [Image](widget-reference/image.md)

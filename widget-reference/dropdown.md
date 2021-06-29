@@ -1,10 +1,11 @@
 ---
 description: >-
-  ‌Dropdown is used to capture user input/s from a specified list of permitted
-  inputs. A Dropdown can capture a single choice as well as multiple choices
+  ‌Select / Dropdown widget is used to capture user input/s from a specified
+  list of permitted inputs. A Dropdown can capture a single choice as well as
+  multiple choices
 ---
 
-# Dropdown
+# Select
 
 {% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
 

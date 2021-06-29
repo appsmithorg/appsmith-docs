@@ -64,7 +64,7 @@ The SSL Mode can be set to one of the following values:
 
 More information available at [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
 
-## Querying Mongo (Form Input)
+## Querying Mongo \(Form Input\)
 
 For an easy to use interface to query your mongo database, choose `Form input`.
 
@@ -74,16 +74,18 @@ All mongo queries return an array of objects where each object is a mongo docume
 
 ![](../../.gitbook/assets/mongo-form.gif)
 
-### 1. Find Document(s)
+### 1. Find Document\(s\)
 
 This command selects documents in a collection or view. Following fields are supported in Appsmith for this command :
 
 `Collection Name` : The name of the collection or view to query. The input is expected in a string format like the following :
+
 ```text
 restaurants
 ```
 
 `Query` : The query predicate. If unspecified, then all documents in the collection will match the predicate. The input is expected in JSON/BSON format like the following :
+
 ```text
 {
      rating: { $gte: 9 }, 
@@ -91,72 +93,82 @@ restaurants
 }
 ```
 
-`Sort` : (Optional) The sort specification for the ordering of the results. The input is expected in JSON/BSON format like the following :
+`Sort` : \(Optional\) The sort specification for the ordering of the results. The input is expected in JSON/BSON format like the following :
+
 ```text
 { name: 1 }
 ```
 
-`Projection` : (Optional) The projection specification to determine which fields to include in the returned documents. The input is expected in JSON/BSON format like the following :
+`Projection` : \(Optional\) The projection specification to determine which fields to include in the returned documents. The input is expected in JSON/BSON format like the following :
+
 ```text
 { name: 1, rating: 1, address: 1 }
 ```
 
-`Limit` : (Optional) The maximum number of documents to return. If unspecified, then defaults to 10 documents. The input is expected in number format :
+`Limit` : \(Optional\) The maximum number of documents to return. If unspecified, then defaults to 10 documents. The input is expected in number format :
+
 ```text
 10
 ```
 
-`Skip` : (Optional) Number of documents to skip. Defaults to 0. The input is expected in number format :
-```
+`Skip` : \(Optional\) Number of documents to skip. Defaults to 0. The input is expected in number format :
+
+```text
 0
 ```
 
-### 2. Insert Document(s)
+### 2. Insert Document\(s\)
 
-This command inserts one or more documents and returns a document containing the status of all inserts.  Following fields are supported in Appsmith for this command :
+This command inserts one or more documents and returns a document containing the status of all inserts. Following fields are supported in Appsmith for this command :
 
 `Collection Name` : The name of the target collection. The input is expected in a string format like the following :
+
 ```text
 users
 ```
 
 `Documents` : An array of one or more documents to insert into the named collection. The input is expected in a JSON/BSON Array format like the following :
+
 ```text
 [ { _id: 1, user: "abc123", status: "A" } ]
 ```
 
-### 3. Update Document(s)
+### 3. Update Document\(s\)
 
 This command modifies multiple documents in a collection. Following fields are supported in Appsmith for this command :
 
 `Collection Name` : The collection against which to run the command. The input is expected in a string format like the following :
+
 ```text
 people
 ```
 
 `Query` : The query that matches documents to update. The input is expected in JSON/BSON format like the following :
+
 ```text
 { name: "Andy" }
 ```
 
 `Update` : The modifications to apply. The input is expected in JSON/BSON format like the following :
+
 ```text
 { $inc: { score: 1 } }
 ```
 
 `Limit` : The dropdown is used to configure if this delete command should act upon a single document or if this command should delete all the matching documents according to the query.
 
-
-### 4. Delete Document(s)
+### 4. Delete Document\(s\)
 
 This command removes documents from a collection. Following fields are supported in Appsmith for this command :
 
 `Collection Name` : The target collection against which to run the command. The input is expected in a string format like the following :
+
 ```text
 orders
 ```
 
-`Query` : The query that matches document(s) to delete. The input is expected in JSON/BSON format like the following :
+`Query` : The query that matches document\(s\) to delete. The input is expected in JSON/BSON format like the following :
+
 ```text
 { status: "D" }
 ```
@@ -168,11 +180,13 @@ orders
 This command counts the number of documents in a collection or a view. Returns a document that contains this count. Following fields are supported in Appsmith for this command :
 
 `Collection Name` : The name of the collection or view to count. The input is expected in a string format like the following :
+
 ```text
 orders
 ```
 
 `Query` : A query that selects which documents to count in the collection or view. The input is expected in JSON/BSON format like the following :
+
 ```text
 { ord_dt: { $gt: new Date('01/01/2021') }
 ```
@@ -182,16 +196,19 @@ orders
 This command finds the distinct values for a specified field across a single collection. Following fields are supported in Appsmith for this command :
 
 `Collection Name` : The name of the collection to query for distinct values. The input is expected in a string format like the following :
+
 ```text
 inventory
 ```
 
 `Query` : A query that specifies the documents from which to retrieve the distinct values. The input is expected in JSON/BSON format like the following :
+
 ```text
 { dept: "A"} }
 ```
 
 `Key/Field` : The field for which to return distinct values. The input is expected in a string format like the following :
+
 ```text
 item.sku
 ```
@@ -200,12 +217,14 @@ item.sku
 
 This command performs aggregation operation using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. Following fields are supported in Appsmith for this command :
 
-`Collection Name` : The name of the collection or view that acts as the input for the aggregation pipeline.  The input is expected in a string format like the following :
+`Collection Name` : The name of the collection or view that acts as the input for the aggregation pipeline. The input is expected in a string format like the following :
+
 ```text
 articles
 ```
 
-`Array of Pipelines` : An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline.  The input is expected in JSON/BSON array format like the following :
+`Array of Pipelines` : An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. The input is expected in JSON/BSON array format like the following :
+
 ```text
 [
       { $project: { tags: 1 } },
@@ -213,10 +232,10 @@ articles
       { $group: { _id: "$tags", count: { $sum : 1 } } }
 ]
 ```
+
 The above example performs an aggregate operation on the articles collection to calculate the count of each distinct element in the tags array that appears in the collection.
 
-
-## Querying Mongo (Advanced)
+## Querying Mongo \(Advanced\)
 
 For unlocking the power of mongo commands, query your mongo database using the RAW command. For the same, choose `Raw Input`
 
