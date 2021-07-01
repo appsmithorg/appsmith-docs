@@ -29,7 +29,7 @@ Try Appsmith by creating an account on our cloud environment which comes with mo
 
 The documentation is organized into the following sections to help familiarize you with building an application
 
-* [The Tutorial](tutorial-1/) - For users who want to build their first application with our mock data
+* [The Tutorial](tutorials/) - For users who want to build their first application with our mock data
 * [Core Concepts](core-concepts/connecting-to-data-sources/) - For users who want to build an app with their own data
 * [How to Guides](how-to-guides/) - For users who are familiar with the basics and need help with a use case
 

@@ -121,5 +121,5 @@ Restart docker and Nginx using the following command
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
-{% page-ref page="../../tutorial-1/" %}
+{% page-ref page="../../tutorials/" %}
 

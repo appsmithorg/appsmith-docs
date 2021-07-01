@@ -50,7 +50,7 @@ Here are steps to play with **Table Data** to get a hang of how it affects the d
 
 Open the application's URL in your web browser. You should see the values of your table like the below screenshot:
 
-![Updated Table](../../.gitbook/assets/image.png)
+![Updated Table](../../../.gitbook/assets/image.png)
 
 {% hint style="info" %}
 
@@ -61,7 +61,7 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](../../core-concepts/connecting-to-data-sources/) to learn to configure a database of your choice.
+However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](../../../core-concepts/connecting-to-data-sources/) to learn to configure a database of your choice.
 
 ## Writing your First Query
 
@@ -82,7 +82,7 @@ The query is saved as soon as it's created, without you having to explicitly sav
 
 Below is a screenshot of how Appsmith renders the outputs of SQL Query.
 
-![Reading Data from Mock Database on Appsmith using DB Queries](../../.gitbook/assets/image%20%288%29.png)
+![Reading Data from Mock Database on Appsmith using DB Queries](../../../.gitbook/assets/image%20%288%29.png)
 
 {% hint style="info" %}
 

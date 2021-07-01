@@ -20,7 +20,7 @@ You'll see an Edit button in the last column of each row. A Row Button adds a bu
 
 The **Product\_Table** now looks like this:
 
-![ProductListPage: Note the addition of the Actions column in right having the Edit buttons](../../.gitbook/assets/image%20%285%29.png)
+![ProductListPage: Note the addition of the Actions column in right having the Edit buttons](../../../.gitbook/assets/image%20%285%29.png)
 
 Click on the **Edit** button of any row. You will see that **EditProductModal** is an empty form. Let’s populate the form with widgets such that:
 

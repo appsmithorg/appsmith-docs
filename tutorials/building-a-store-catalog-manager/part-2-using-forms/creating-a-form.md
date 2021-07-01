@@ -38,7 +38,7 @@ Now, let's add one more field to the **`AddProductForm`** that enables users to 
 
 Below is a screenshot of how your form should look like:
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../../.gitbook/assets/image%20%287%29.png)
 
 Now, open the dropdown settings and set the **Selection Type** property to **`Single Select`**, this will allow the user to select only one value from the dropdown.
 
@@ -115,7 +115,7 @@ So far, the form has can accept a name and the category of the product. Now, add
 
 The current title of the form is also a text widget with default title mentioned as **Form**. Let's rename the title to **Add a Product \(Oakry\)**. Below is a screenshot of how the Page looks like:
 
-![AddProductForm with all input fields](../../.gitbook/assets/image%20%286%29.png)
+![AddProductForm with all input fields](../../../.gitbook/assets/image%20%286%29.png)
 
 ## Writing regex validations
 

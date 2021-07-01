@@ -17,7 +17,7 @@ Here are steps to create an app on Appsmith Dashboard:
 
 The new app comes with auto-generated directories that establish an Appsmith app. Below is a screenshot of the directory structure. 
 
-![Entity Explorer on Appsmith Application](../../.gitbook/assets/image%20%281%29.png)
+![Entity Explorer on Appsmith Application](../../../.gitbook/assets/image%20%281%29.png)
 
 {% hint style="danger" %}
 

@@ -1,4 +1,4 @@
-# Part 1: Building a Simple UI
+# Building a Simple UI
 
 In the first part of the tutorial, we will walk through the initial steps of Appsmith to familiarize you with the key concepts of the _**Appsmith Environment**_. Next, we will walk you through creating a simple web-page that displays products fetched from a database in a table for the **Oakry** store.
 

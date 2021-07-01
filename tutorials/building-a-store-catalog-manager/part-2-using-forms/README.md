@@ -1,4 +1,4 @@
-# Part 2: Using forms
+# Using forms
 
 In the first part of this tutorial, you've created a single page app to view products for **Oakry**. In this part, you'll extend the app to a multi-page app, where you'll be creating a new page that allows users to add a new product to:
 
