@@ -42,9 +42,24 @@ Next, create an `iframe` tag and add the sharable link from share options to the
 
 ```
 
-Awsome, by opening the HTML page in a web browser, you should see your application embedded into your HTML page. Below is a screenshot of the same:
+Awesome, by opening the HTML page in a web browser, you should see your application embedded into your HTML page. Below is a screenshot of the same:
 
 ![Sceenshot of Appsmith Embed](https://lh5.googleusercontent.com/cky5Ayi-RETeeZ10cPZOo0b73dIfBi_z9f1dwvhfj1-FOOfpkcdprLZvf2Dm_j8POy5AOAnd_SK4SKEbWz67BK78vUY57EbB0Dh9Nby2MmNPjcHyRwpKqaxWPYs8cYM9D8A0twiY)
+
+If you want to get your app to use the whole page in your browser, you can still change your height and width parameters like so:
+
+```markup
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <iframe src="https://app.appsmith.com/applications/5f2aeb2580ca1f6faaed4e4a/pages/5f2d61b580ca1f6faaed4e79"frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+</body>
+</html>
+
+```
 
 ### Remove Appsmith Top Bar
 
