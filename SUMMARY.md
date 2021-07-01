@@ -121,6 +121,7 @@
 * [Input](widget-reference/input.md)
 * [List](widget-reference/list.md)
 * [Maps](widget-reference/maps.md)
+* [Menu](widget-reference/menu.md)
 * [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
