@@ -4,21 +4,22 @@ We provide an installation script that will help you configure Appsmith & deploy
 
 ## Prerequisites
 
-* Ensure `kubectl` is installed and configured to connect to your cluster
-  * Install kubeclt: [kubernetes.io/vi/docs/tasks/tools/install-kubectl/](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/)
-  * Minikube: [Setup Kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
-  * Google Cloud Kubernetes: \[Configuring cluster access for kubectl
+* Kubernetes version v1.18.0+
+* Ensure `kubectl` is installed. [Install kubectl](https://kubernetes.io/docs/tasks/tools/)
+* Configure kubectl to connect to your k8s clusters
+  * [Configuring Minikube](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
+  * [Configuring Google Cloud](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
+  * [Configuring Aws EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
+  * [Configuring Microk8s](https://microk8s.io/docs/working-with-kubectl)
+* Setup NGINX Ingress Controller on your cluster
+  * [Minikube Setup](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
+  * [Google Cloud Setup](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
+  * [AWS EKS Setup](https://kubernetes.github.io/ingress-nginx/deploy/#aws)
+  * [Microk8s Setup](https://microk8s.io/docs/addon-ingress)
 
-    \]\([https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)\)
-
-  * Aws EKS: [Create a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
-  * Microk8s: [Working with kubectl](https://microk8s.io/docs/working-with-kubectl)
-* Kubernetes NGINX Ingress Controller must be enable on your cluster by default. Please make sure that you install the right version for your cluster
-  * Minikube: [Set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
-  * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/)
-  * AWS EKS: [Install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb)
-  * Microk8s: [Add on: Ingress](https://microk8s.io/docs/addon-ingress)
-* Script tested on Minikube with Kubernetes v1.18.0
+{% hint style="success" %}
+Script tested on Minikube with Kubernetes v1.18.0
+{% endhint %}
 
 ## Deployment Steps
 
