@@ -13,10 +13,13 @@ On Appsmith, you can migrate all Appsmith data from one instance to another or j
 3. Open the file `encryption.env` and note the values in this file. The values here are important for Appsmith to be able to read sensitive information in the new installation.
 
 ## **Restore the backup on the new VM:** 
+{% hint style="warning" %}
+The restore would end up deleting all the existing data in the mongo database of the newly installed appsmith instance
+{% endhint %}
 
 1. Install Appsmith via the install.sh script. 
 
-2. Restore the dump on the newly created mongo container via the command: `mongorestore /tmp/appsmith-mongo-dump -d appsmith --uri=mongodb://<rootUsername>:<rootPassword>@localhost/appsmith` 
+2. Restore the dump on the newly created mongo container via the command: `mongorestore --drop /tmp/appsmith-mongo-dump -d appsmith --uri=mongodb://<rootUsername>:<rootPassword>@localhost/appsmith` 
 
 3. Open the file `encryption.env` and change the variables `APPSMITH_ENCRYPTION_PASSWORD` & `APPSMITH_ENCRYPTION_SALT` to the same ones as the old VM. This is important because sensitive data in Mongo is encrypted using these credentials. Without this, you risk corrupting any passwords you've saved. 
 
