@@ -1,6 +1,7 @@
 ---
-description: This action is used to download any data as a file
+description: This action is used to download any data as a file.
 ---
+We use [downloadjs](https://github.com/rndme/download) for this functionality
 
 # Download
 
