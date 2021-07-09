@@ -76,5 +76,5 @@ Additionally, you can also see the Appsmith toolbar on the top, you can remove t
 
 Awesome! Now you can see the app without any toolbar! Below is a screenshot:
 
-![Appsmith Embed with ?embed=True property](https://lh6.googleusercontent.com/_-JxziLtFfJXfpxLURSBGuRTrdYRsYnMBcyK7eZoJzaKyFcts81swlqHK1dwGk6c90Otl2x5PCVmeTHDq2RwmGp6b0WA85zw2LHapvhtlhNWKesMIM7BsyM9QcdPUe-F3nrmLMuQ)
+![Appsmith Embed with ?embed=true property](https://lh6.googleusercontent.com/_-JxziLtFfJXfpxLURSBGuRTrdYRsYnMBcyK7eZoJzaKyFcts81swlqHK1dwGk6c90Otl2x5PCVmeTHDq2RwmGp6b0WA85zw2LHapvhtlhNWKesMIM7BsyM9QcdPUe-F3nrmLMuQ)
 
