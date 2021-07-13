@@ -1,5 +1,7 @@
 # Docker
 
+{% embed url="https://youtu.be/5uYqQzvdElY" caption="" %}
+
 Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
