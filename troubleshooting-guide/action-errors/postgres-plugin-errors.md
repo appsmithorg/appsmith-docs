@@ -1,4 +1,4 @@
-# Postgres Errors
+# PostgreSQL Errors
 
 
 ### Error determining data type of parameter in Prepared Statement
