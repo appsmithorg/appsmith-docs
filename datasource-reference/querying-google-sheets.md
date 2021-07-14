@@ -10,7 +10,7 @@ This integration is present under API sections with Appsmith applications. Using
 
 ![](../.gitbook/assets/screenshot-2021-05-04-at-4.48.19-pm.png)
 
-### Connection Settings 
+### Connection Settings
 
 To use this plugin, select the Google Sheets option on API creation page and then click on the `Create Datasource`. This will redirect to the config page, where scopes can be configured. You can create a Google Sheets data source with one of either of the two permission scopes listed below:
 

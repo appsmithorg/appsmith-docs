@@ -20,11 +20,11 @@ Appsmith currently supports two forms of JavaScript code for dynamically evaluat
 
 ```javascript
 {{ 
-  function() {
+  (function() {
       const array = QueryName.data;
       const filterArray = array.filter((row) => row.id > 5);
       return filterArray;
-   }()
+   })()
 }}
 ```
 

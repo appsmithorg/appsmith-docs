@@ -1,19 +1,22 @@
 ---
 description: This action is used to download any data as a file.
 ---
-We use [downloadjs](https://github.com/rndme/download) for this functionality
 
 # Download
 
+We use [downloadjs](https://github.com/rndme/download) for this functionality
+
+## Download
+
 ![Click to expand](../.gitbook/assets/download.gif)
 
-## Signature
+### Signature
 
 ```javascript
 download(data: any, fileName: string, fileType?: string): void
 ```
 
-### Arguments
+#### Arguments
 
 | **Argument Name** | **Description** |
 | :--- | :--- |
