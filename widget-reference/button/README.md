@@ -6,6 +6,8 @@ description: >-
 
 # Button
 
+
+
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the button. |

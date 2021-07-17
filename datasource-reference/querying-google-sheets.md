@@ -10,7 +10,7 @@ This integration is present under API sections with Appsmith applications. Using
 
 ![](../.gitbook/assets/screenshot-2021-05-04-at-4.48.19-pm.png)
 
-### Connection Settings 
+### Connection Settings
 
 To use this plugin, select the Google Sheets option on API creation page and then click on the `Create Datasource`. This will redirect to the config page, where scopes can be configured. You can create a Google Sheets data source with one of either of the two permission scopes listed below:
 
@@ -27,13 +27,13 @@ Creating and authorizing a Google Sheets data source will store your own persona
 
 | Query Name | Description |
 | :--- | :--- |
-| Fetch Row Sheets | Fetches rows of a google sheet with a row limit |
+| Fetch Sheet Rows | Fetches rows of a google sheet with a row limit |
 | Insert Sheet Row | Inserts a new row with provided data in the first found an empty row |
 | Update Sheet Row | Updates row data of the provided rowIndex |
 | Delete Row | Deletes row data of the provided rowIndex |
 | List Sheets | Lists the total number of Sheets present in Google Sheet |
 | Fetch Sheet | Fetches row data of a particular sheet in a Google Sheet |
-| Create new spreadsheet | Create a new spreadsheet in a Google Sheet |
+| Create new Spreadsheet | Create a new spreadsheet in a Google Sheet |
 | Delete Sheet | Delete a given spreadsheet in a Google Sheet |
 | Bulk Insert Rows | Insert multiple rows based on given data |
 | Bulk Update Rows | Update multiple rows based on given data |
@@ -42,7 +42,7 @@ Creating and authorizing a Google Sheets data source will store your own persona
 
 This section describes each of the parameters expected while creating new query methods using the Google Sheets plugin.
 
-### 1. Fetch Row Sheets
+### 1. Fetch Sheet Rows
 
 | Property Name | Description |
 | :--- | :--- |
@@ -56,7 +56,7 @@ This section describes each of the parameters expected while creating new query 
 
 **Response Format:**
 
-```text
+```javascript
 [
   {
     "rowIndex": NUMERIC_STRING,
@@ -76,7 +76,7 @@ This section describes each of the parameters expected while creating new query 
 
 **Request Format:**
 
-```text
+```javascript
 {
   "rowIndex": NUMERIC_STRING,
   "column_heading1": "column_value1",
@@ -98,7 +98,7 @@ Use moustache syntax to dynamically pass values from widgets to the request form
 
 Request Format:
 
-```text
+```javascript
 {
   "rowIndex": NUMERIC_STRING,
   "column_heading1": "column_value1",
@@ -121,7 +121,7 @@ This method lists all the Sheets that are present in your drive it does not requ
 
 Response Format:
 
-```text
+```javascript
 [
   {
     "name": <File_Name>,
@@ -140,7 +140,7 @@ This method uses an additional Spreadsheet Url input. This method returns a few 
 
 **Response Format:**
 
-```text
+```javascript
 {
   "id": <Spreadsheet_Id>,
   "name": <File_Name>,
@@ -164,7 +164,7 @@ This method uses an additional Spreadsheet Url input. This method returns a few 
 
 Request Format \(Optional\):
 
-```text
+```javascript
 [
   {
     "rowIndex": NUMERIC_STRING,
@@ -193,7 +193,7 @@ Request Format \(Optional\):
 
 Request Format:
 
-```text
+```javascript
 [
   {
     "rowIndex": NUMERIC_STRING,
@@ -214,7 +214,7 @@ Request Format:
 
 Request Format:
 
-```text
+```javascript
 [
   {
     "rowIndex": NUMERIC_STRING,

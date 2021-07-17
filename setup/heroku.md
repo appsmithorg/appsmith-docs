@@ -4,6 +4,8 @@ description: Deploy appsmith on Heroku with our one click deploy option
 
 # Heroku
 
+{% embed url="https://youtu.be/Bclt\_VmDMpo" caption="" %}
+
 ## Deployment Steps
 
 1. Sign up for a free account on Heroku

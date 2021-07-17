@@ -1,5 +1,7 @@
 # Docker
 
+{% embed url="https://youtu.be/5uYqQzvdElY" caption="" %}
+
 Appsmith can be deployed locally or on your private instance using docker. To simplify installation, Appsmith comes with an installation script that will download all of the necessary dependencies and help you configure Appsmith.
 
 **Supported Operating Systems**
@@ -18,7 +20,7 @@ For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is re
 For Mac on M1, we've seen problems with Docker getting into a corrupt state and throwing errors like `error creating overlay mount`. Please follow [Docker's troubleshooting guide](https://docs.docker.com/docker-for-mac/troubleshoot/) to resolve and then proceed with the installation.
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Appsmith does not officially support Windows \(or WSL\). Please try out one of our [pre-built images](../) if your production operating system is not on the list above.
 {% endhint %}
 
@@ -121,5 +123,5 @@ Restart docker and Nginx using the following command
 sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
 ```
 
-{% page-ref page="../../tutorial-1/" %}
+{% page-ref page="../../tutorials/" %}
 

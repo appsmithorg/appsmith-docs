@@ -6,6 +6,8 @@ description: >-
 
 # appsmith
 
+{% embed url="https://youtu.be/5Z65l\_PssEQ" caption="" %}
+
 ## Properties
 
 The appsmith context object contains the following properties
