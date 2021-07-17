@@ -116,7 +116,7 @@
 * [Datepicker](widget-reference/datepicker.md)
 * [Dropdown](widget-reference/dropdown.md)
 * [Divider](widget-reference/divider.md)
-* [Select](widget-reference/dropdown.md)
+* [Select](widget-reference/dropdown-1.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
 * [Iframe](widget-reference/iframe.md)

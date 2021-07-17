@@ -5,7 +5,7 @@ description: >-
   multiple choices
 ---
 
-# Dropdown
+# Select
 
 {% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
 
@@ -43,7 +43,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below
 
-[Sending widget data in post body](dropdown.md)
+[Sending widget data in post body](dropdown-1.md)
 
 ## Properties
 
