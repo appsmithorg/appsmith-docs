@@ -1,4 +1,4 @@
-# Hint Messages (Coming Soon)
+# Hint Messages
 
 ## Identical column names in SQL query result
 
@@ -32,3 +32,17 @@ This issue can be resolved by doing one or more of the following steps:
 - expose the `localhost` endpoint to the public internet via [ngrok](https://ngrok.com/) as shown [here](https://ngrok.com/docs).
 - in case the Appsmith application is running inside a docker container, you may use `host.docker.internal` as the 
   endpoint URL as explained [here](https://docs.docker.com/docker-for-mac/networking/).
+  
+## API response is not a valid JSON
+
+```text
+The response returned by this API is not a valid JSON. Please be careful when using the API response anywhere a valid JSON is required. You may resolve this issue either by modifying the 'Content-Type' Header to indicate a non-JSON response or by modifying the API response to return a valid JSON.
+```
+
+This message indicates that the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) header in your REST API query is set to [application/json](https://www.iana.org/assignments/media-types/media-types.xhtml) indicating 
+that the response is expected to be a valid JSON, however the actual response is NOT a valid JSON. 
+
+This warning can be resolved by doing one of the following:
+
+- Change `Content-Type` header in the REST API query to anything other than `application/json`.
+- Modify the REST API endpoint such that the response returned is a valid JSON. 
