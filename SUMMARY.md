@@ -77,7 +77,8 @@
 
 ## Datasource Reference
 
-* [Amazon S3](datasource-reference/querying-amazon-s3.md)
+* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](datasource-reference/querying-amazon-s3.md)
+* [ArangoDB](datasource-reference/querying-arango-db.md)
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
