@@ -8,7 +8,7 @@ how to assign server timestamp and delete key in firestore
 To assign Firestore server's timestamp value to any field the `Timestamp Value Path` field in the Firestore plugin's 
 query editor form can be used.
 
-The `Timestamp Value Path` needs to be filled with an array to paths to which the 
+The `Timestamp Value Path` needs to be filled with an array of key paths to which the 
 timestamp values need to be assigned. Each path in the array must follow the `dot` notation as described via the 
 example below:
 
@@ -41,7 +41,7 @@ array of paths:
 
 To delete any key the `Delete Key Value Pair Path` field in the Firestore plugin's query editor form can be used.
 
-The `Delete Key Value Pair Path` field needs be filled with an array of keys that need to be deleted. Each path in 
+The `Delete Key Value Pair Path` field needs be filled with an array of key paths that need to be deleted. Each path in 
 the array must follow the `dot` notation as described via the example below:
 
 ```text
