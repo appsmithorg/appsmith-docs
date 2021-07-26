@@ -1,4 +1,4 @@
-# Amazon S3
+# Amazon S3 \(also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects\)
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.

@@ -1,15 +1,15 @@
 ---
-description: >-
-  Menu buttons are used to represent a set of actions in a group.
+description: Menu buttons are used to represent a set of actions in a group.
 ---
 
-# Menu
+# Menu Button
 
-## Image/gif of the widget on the canvas with the icon of the widget in the sidebar
+![](../.gitbook/assets/cleanshot-2021-07-26-at-11.12.35.gif)
 
 ## Properties
-| Property      | Description           |
-| :------------ | :-------------------- |
+
+| Property | Description |
+| :--- | :--- |
 | **label** | Sets the label of a menu. |
 | **backgroundColor** | Sets the background color of the widget. |
 | **textColor** | Sets the text color of the widget. |
@@ -25,8 +25,8 @@ description: >-
 
 Each menu item can now be customized through a set of properties by clicking on the gear icon.
 
-| Property      | Description           |
-| :------------ | :-------------------- |
+| Property | Description |
+| :--- | :--- |
 | **label** | Sets the label of a menu item. |
 | **backgroundColor** | Sets the background color of a menu item. |
 | **textColor** | Sets the text color of a menu item. |
@@ -36,6 +36,7 @@ Each menu item can now be customized through a set of properties by clicking on 
 | **iconColor** | Sets the icon color of the selected icon. |
 | **iconAlign** | Sets the alignment of the selected icon . |
 
-| Action      | Description         |
-| :---------- | :------------------ |
+| Action | Description |
+| :--- | :--- |
 | **onClick** | Sets the action to be run when the a menu item is clicked. |
+
