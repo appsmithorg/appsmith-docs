@@ -90,7 +90,7 @@ Now we’ll be passing this `jwt` variable in the header with an Authorization m
 * Now add you’re secure API, or you can use the following example API:
 
 ```text
-https://appsmith-example.herokuapp.com//logistic-informations
+https://appsmith-example.herokuapp.com/logistic-informations
 ```
 
 * This API requires authorization, lets now add a new header with key and value as:
