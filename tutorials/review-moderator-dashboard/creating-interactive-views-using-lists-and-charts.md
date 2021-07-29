@@ -149,4 +149,34 @@ Now follow the below steps to create a chart for visualising the ratings of the 
 
 1. Drag and drop a chart widget onto the canvas
 2. Open the chart widget property pane and set the chart type to Line chart. 
+3. Next, set the title as Star Ratings of Business and use the following code snippet to pass co-ordinated of chart data.
+
+```text
+{{filterBusinessReviews.data.map((item, index)=>{return {x:moment(item.date).format("L"), y:item.stars}})}}
+```
+
+Awesome! With this, you should be able to see all the data plotted on the chart widget. Similarly we can plot the other ratings by clicking on `ADD SERIES` option.
+
+Below is the live link to the fully configured app.
+
+{% embed url="https://app.appsmith.com/applications/60caeaa2d79dbb613bcb7761/pages/60caeaa2d79dbb613bcb7763" %}
+
+### Sharing your Application
+
+Let's deploy your app for the final time. Once deployed, you can share your deployed application with both internal and external users:
+
+1. Click on the **"Share"** button on the top right
+2. Invite a user using their email ID
+3. Select an appropriate role for the user 
+4. Share the application’s URL with the user
+
+You can also make the application public, in which case, anyone with the URL to the application can view the application without having to sign in. You can read more about [access control here](https://docs.appsmith.com/core-concepts/access-control).
+
+**What's next?**
+
+The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. The following resources will come in handy as you need to learn new tricks:
+
+* [Core Concepts](https://docs.appsmith.com/core-concepts/)
+* [Widget Reference](https://docs.appsmith.com/widget-reference)
+* [Function Reference](https://docs.appsmith.com/function-reference/)
 
