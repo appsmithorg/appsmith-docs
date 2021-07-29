@@ -86,5 +86,3 @@ Categories Rating: `{{businessTable.selectedRow.categories}}`
 
 In the next part, you'll learn how to write JS function inside the widget to create interactive views. You'll also be using the list and chart widgets to analyse the reviews from the reviews table based on the selected business.
 
-
-
