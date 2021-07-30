@@ -56,10 +56,6 @@ To set a default value of **ProductNameInput**:
 
 Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
 
-Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
-
-What you did above was that you accessed the [table widget](https://docs.appsmith.com/widget-reference/table)'s property - selected row's column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the state of one widget in another widget using a set of methods exposed on every widget. For example, the [table widget ](https://docs.appsmith.com/widget-reference/table)exposes the [`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row) property.
-
 What you did above was that you accessed the [table widget's](https://docs.appsmith.com/widget-reference/table) property [selectedRow's](https://docs.appsmith.com/widget-reference/table#selected-row) column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the property of one widget in another widget using a set of properties exposed by every widget. For example, here you used the [table widget's ](https://docs.appsmith.com/widget-reference/table) [`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row)property. For a widget, check its exposed properties under the **Internal Properties** section in its **Widgets Reference** guide.
 
 Note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
@@ -69,8 +65,8 @@ Note that since the scope of a widget is limited to its parent page, a widget sh
 
 To access a widget's properties or an APIs/DB Query's results on another page, there are two ways:
 
-1. Store the data in your browser cache using the [storeValue function](https://docs.appsmith.com/function-reference/store-value), so that it's available for accessing even when the user moves to another page in your app.
-2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo function](https://docs.appsmith.com/function-reference/navigateto).
+1. Store the data in your browser cache using the [storeValue](../../../framework-reference/store-value.md) function, so that it's available for accessing even when the user moves to another page in your app.
+2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../../framework-reference/navigateto.md) function.
 {% endhint %}
 
 Let's now set a default value for **MrpInput**:
