@@ -1,5 +1,7 @@
 # Migrate apps to a new instance
 
+{% embed url="https://youtu.be/2JuJ0v56ztw" caption="" %}
+
 On Appsmith, you can migrate all Appsmith data from one instance to another or just migrate necessary applications.
 
 ### **Steps to Migrate entire Appsmith Data onto instances:**
