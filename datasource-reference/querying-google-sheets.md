@@ -4,7 +4,7 @@ description: >-
   by connecting to any Google Sheet as a data source.
 ---
 
-# Google Sheets Integration
+# Google Sheets
 
 This integration is present under API sections with Appsmith applications. Using this, one can achieve all the basic operations \(CRUD\) with a custom UI on Appsmith by minimal configuration within multiple sheets \(sub-sheets\) on a Google Sheet.
 

@@ -86,7 +86,7 @@
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
-* [Google Sheets Integration](datasource-reference/querying-google-sheets.md)
+* [Google Sheets](datasource-reference/querying-google-sheets.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
   * [Whitelist MongoDB Cloud](datasource-reference/querying-mongodb/whitelist-mongodb-cloud.md)

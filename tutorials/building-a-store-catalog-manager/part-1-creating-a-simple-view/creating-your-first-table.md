@@ -122,5 +122,5 @@ As you'll see in the next section, the inverse of this is also possible, i.e a w
 
 ## What's next?
 
-When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read [part 2 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to use widgets that enable you to accept and process user input.
+When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read [part 2 ](../part-2-using-forms/)of the tutorial to learn to use widgets that enable you to accept and process user input.
 
