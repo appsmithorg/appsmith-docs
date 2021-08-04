@@ -6,6 +6,8 @@ description: >-
 
 # How to implement custom authentication on Appsmith
 
+{% embed url="https://youtu.be/5oPcF9dXZyU" caption="" %}
+
 A lot of applications use Authentication APIs to secure their information. You can use those API's on Appsmith to build UI or tools using a custom authentication mode. In this guide, you'll learn how to implement this custom Auth using JWTs by chaining multiple steps.
 
 ### **Building UI for Login Form**
