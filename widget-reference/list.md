@@ -51,6 +51,11 @@ You can access the value of any children widget for the current row with the com
 {{ List1.items[currentIndex].Input1.text }}
 ```
 
+{% hint style="info" %}
+Note: currentItem and currentIndex is only available in the autocomplete of controls, in the property pane of list widget template's children.
+{% endhint %}
+
+
 | Widget Property | Description |
 | :--- | :--- |
 | **Items** | This property lets you edit the items in the list. You can either write an array of objects to display as list items or you can bind data from an API using the mustache syntax |
