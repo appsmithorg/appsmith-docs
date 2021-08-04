@@ -4,6 +4,8 @@ description: The Rating widget is used to perform a quick rating operation on so
 
 # Rating
 
+{% embed url="https://youtu.be/ssm7TYCQtfo" caption="" %}
+
 Use the Rate component to rate any sort of information from the connected data source. It's customisable and features rich.
 
 ### Properties
