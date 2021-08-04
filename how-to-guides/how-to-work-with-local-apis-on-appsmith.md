@@ -4,6 +4,8 @@ description: This guide helps you to connect your Local APIs with Appsmith using
 
 # How to work with Local APIs on Appsmith
 
+{% embed url="https://youtu.be/IUX2rXmS17E" caption="" %}
+
 Appsmith allows you to work with local APIs using the help of **`ngrok`**. In this guide, let’s look at how we can build an Appsmith application utilising the local APIs running on our machine
 
 ### Building a Simple Local API
