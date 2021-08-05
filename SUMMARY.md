@@ -117,6 +117,7 @@
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
 * [Chart](widget-reference/chart.md)
 * [Checkbox](widget-reference/checkbox.md)
+* [CheckboxGroup](widget-reference/checkbox-group.md)
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Dropdown](widget-reference/dropdown.md)
