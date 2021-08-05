@@ -9,12 +9,13 @@ We provide an installation script that will help you configure Appsmith & deploy
 * Configure kubectl to connect to your k8s clusters
   * [Configuring Minikube](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
   * [Configuring Google Cloud](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
-  * [Configuring Aws EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
+  * [Configuring AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
   * [Configuring Microk8s](https://microk8s.io/docs/working-with-kubectl)
-* Setup NGINX Ingress Controller on your cluster
+* Setup NGINX Ingress Controller on your cluster. **This is important for your cluster to be accesible and get a public IP**
   * [Minikube Setup](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
   * [Google Cloud Setup](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
   * [AWS EKS Setup](https://kubernetes.github.io/ingress-nginx/deploy/#aws)
+  * [Azure AKS Setup](https://kubernetes.github.io/ingress-nginx/deploy/#azure)
   * [Microk8s Setup](https://microk8s.io/docs/addon-ingress)
 
 {% hint style="success" %}
