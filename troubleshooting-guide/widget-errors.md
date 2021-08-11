@@ -1,14 +1,16 @@
 # JS Errors
 
-## Data Type Mismatch
+## JS Errors
+
+### Data Type Mismatch
 
 This error occurs when the value in the property of the widget does not match the data type required by the property.
 
-### This value does not evaluate to type Array\[Object\]
+#### This value does not evaluate to type Array\[Object\]
 
 **Why do you see this error?**
 
-While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response. 
+While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response.
 
 **Solution:**
 
@@ -43,7 +45,7 @@ To overcome this, we can bind the user's array of the response instead of the en
 {{ fetch_users.data.users }}
 ```
 
-### **This value does not evaluate to type Array\[{ label: string, value: string }\]**
+#### **This value does not evaluate to type Array\[{ label: string, value: string }\]**
 
 **Why do you see this error?**
 
@@ -51,7 +53,7 @@ While adding options to single select or multi-select dropdowns, we might face a
 
 **Solution:**
 
- In case the response does not contain label and value keys as below, we can map over the response to transforming it using javascript
+In case the response does not contain label and value keys as below, we can map over the response to transforming it using javascript
 
 ```javascript
 // invalid response of fetchColors API
@@ -74,11 +76,11 @@ While adding options to single select or multi-select dropdowns, we might face a
 }}
 ```
 
-### **The** **value does not evaluate to type Array\[{x: string, y: number}\]**
+#### **The** **value does not evaluate to type Array\[{x: string, y: number}\]**
 
 **Why do you see this error?**
 
-The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. ****The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
+The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. _\*\*_The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
 
 ![](../.gitbook/assets/chart-error.png)
 
@@ -99,11 +101,11 @@ In cases like these, you can use javascript to transform the data to the correct
 }}
 ```
 
-### **Value does not match ISO 8601 standard date string**
+#### **Value does not match ISO 8601 standard date string**
 
 **Why do you see this error?**
 
-The date picker expects its default date in the standard ISO format. If the date you provided does not match this, you'll see this error. 
+The date picker expects its default date in the standard ISO format. If the date you provided does not match this, you'll see this error.
 
 **Solution:**
 
@@ -119,7 +121,7 @@ To resolve this, you can transform the date string using moment.js.
 {{ moment("2021-07-26", "YYYY-MM-DD") }}
 ```
 
-### This value does not evaluate to type boolean
+#### This value does not evaluate to type boolean
 
 This error typically occurs in the isVisible and `isDisabled` properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
 
@@ -127,7 +129,7 @@ This error typically occurs in the isVisible and `isDisabled` properties and ind
 {{ Dropdown1.selectedOptionValue === "RED" }}
 ```
 
-## Syntax Error
+### Syntax Error
 
 This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../core-concepts/writing-code/#multi-line-js).
 
@@ -135,11 +137,11 @@ In the example below, fetch is not defined anywhere in the application
 
 ![](../.gitbook/assets/syntax-error.png)
 
-## Cyclic Dependency Error
+### Cyclic Dependency Error
 
 An app gets a cyclic dependency error when a node is directly or indirectly dependent on itself.
 
-### Reactivity and Dependency Map
+#### Reactivity and Dependency Map
 
 In Appsmith, we define all user-editable fields as nodes, and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
 
@@ -167,25 +169,25 @@ Table1 -> Table1.tableData
 Table1.isVisible -> Table1
 ```
 
-#Debugging
+## Debugging
 
 For debugging JS logic inside widget actions, you can use `debugger` statement.
 
-##Description
+### Description
 
 The debugger statement invokes any available debugging functionality, such as setting a breakpoint. If no debugging functionality is available, this statement has no effect.
 
-##Syntax
+### Syntax
 
 ```text
 debugger;
 ```
 
-##Examples
+### Examples
 
-###Using the debugger statement
+#### Using the debugger statement
 
-The following example shows code where a debugger statement has been inserted, to invoke a debugger (if one exists) when the function is called.
+The following example shows code where a debugger statement has been inserted, to invoke a debugger \(if one exists\) when the function is called.
 
 ```text
 function potentiallyBuggyCode() {
@@ -194,7 +196,7 @@ debugger;
 }
 ```
 
-When the debugger is invoked, execution is paused at the debugger statement. It is like a breakpoint in the script source. 
+When the debugger is invoked, execution is paused at the debugger statement. It is like a breakpoint in the script source.
 
 **Note:** You need to have browser console open to make the debugger work.
 

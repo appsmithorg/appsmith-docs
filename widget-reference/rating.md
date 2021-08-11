@@ -8,9 +8,9 @@ description: The Rating widget is used to perform a quick rating operation on so
 
 Use the Rate component to rate any sort of information from the connected data source. It's customisable and features rich.
 
-### Properties
+## Properties
 
-The rating widget comes with the following settings: 
+The rating widget comes with the following settings:
 
 <table>
   <thead>

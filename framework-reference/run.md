@@ -32,6 +32,22 @@ Most API/Queries read values directly from entities as global variables. In some
 {{ this.params.key }}
 ```
 
+## onSuccess
+
+The onSuccess Function is run when an action is run successfully. The function returns the response of the action and the params passed to it in the callback arguments.
+
+```javascript
+onSuccess(response, params): void
+```
+
+## onError
+
+The onError Function is run when an action execution fails. The function returns the response of the action and the params passed to it.
+
+```javascript
+onError(response, params): void
+```
+
 ## Data
 
 Each action stores the data from its latest run inside its **data** property. This property is populated only if the action successfully executes and can be accessed as

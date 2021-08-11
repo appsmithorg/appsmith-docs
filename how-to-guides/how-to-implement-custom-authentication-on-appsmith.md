@@ -10,7 +10,7 @@ description: >-
 
 A lot of applications use Authentication APIs to secure their information. You can use those API's on Appsmith to build UI or tools using a custom authentication mode. In this guide, you'll learn how to implement this custom Auth using JWTs by chaining multiple steps.
 
-### **Building UI for Login Form**
+## **Building UI for Login Form**
 
 The auth APIs require a login form. Hence let’s build one on Appsmith. Follow the below steps:
 
@@ -18,9 +18,8 @@ The auth APIs require a login form. Hence let’s build one on Appsmith. Follow 
 2. Now create a new application by clicking on the \`Create New\` button on the dashboard.
 3. Next, click on the `+` icon next to widgets from the side navigation and drag and drop a form widget onto the canvas.
 4. Now let’s add two **text** **widgets** and **input widgets** to create our login form. Rename the input widgets to following:
-
-* Username Input Widget: `userName`
-* Password Input: `password`
+5. Username Input Widget: `userName`
+6. Password Input: `password`
 
 This is a screenshot of how the login form looks like:
 
@@ -75,8 +74,7 @@ Identifier: appsmith_user
 Password: appsmith_password
 ```
 
-Awesome, now we’ll need to save the JWT token generated after the API is run. Appsmith has a store where you can save all the variables; for this, we’ll need to use the moustache syntax after the API is successfully run. Below are the steps.  
-
+Awesome, now we’ll need to save the JWT token generated after the API is run. Appsmith has a store where you can save all the variables; for this, we’ll need to use the moustache syntax after the API is successfully run. Below are the steps.
 
 1. Firstly, open the Submit button property pane and set the `onClick` property to `Call an API` and choose `call_an_api`
 2. Next, set the `onSuccess` property to \`Store a value\` and name the key as jwt and value as `{{login_api.data.jwt}}`
