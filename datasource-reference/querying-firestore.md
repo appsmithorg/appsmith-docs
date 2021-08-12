@@ -113,7 +113,7 @@ Firestore supports server-side pagination with the Table widget. There are four 
 
 1. **Order By**: This is required to make pagination order predictable. It should be a JSON list of fields to use for ordering. _E.g._, `["field1"]`.
 2. **Limit Documents**: This will be the number of documents in each page, _i.e._, the page size. A good value for this might be 10 or 15.
-3. **Start After**: This should be set to the _document_ that marks the _end_ of the current page. Usually set to `{{queryName.data[queryName.data.length - 1]}}`.
+3. **Start After**: This should be set to the _document_ that marks the _end_ of the current page. Usually set to `{{queryName.data[queryName.data.length - 1]}}`. The order by field should be unique for this to work in pagination.
 4. **End Before**: This should be set to the _document_ that marks the _start_ of the current page. Usually set to `{{queryName.data[0]}}`.
 
 Once you have your Firestore query configured with these details, ensure the following three steps on your Table widget and the pagination should be ready:
