@@ -133,6 +133,7 @@
 * [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
 * [Rating](widget-reference/rating.md)
+* [Recorder](widget-reference/recorder.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
 * [Switch](widget-reference/switch.md)
 * [Tabs](widget-reference/tabs.md)
