@@ -95,7 +95,7 @@
 * [Postgres](datasource-reference/querying-postgres.md)
 * [Redis](datasource-reference/querying-redis.md)
 * [Redshift](datasource-reference/querying-redshift.md)
-* [Snowflake](datasource-reference/querying-snowflake.md)
+* [Snowflake](datasource-reference/querying-snowflake-db.md)
 
 ## Framework Reference
 
