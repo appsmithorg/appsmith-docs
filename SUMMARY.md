@@ -115,6 +115,7 @@
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Select](widget-reference/dropdown.md)
+* [MultiSelect](widget-reference/multiselect.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
 * [Iframe](widget-reference/iframe.md)

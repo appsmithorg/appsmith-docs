@@ -1,8 +1,7 @@
 ---
 description: >-
   ‌Select / Dropdown widget is used to capture user input/s from a specified
-  list of permitted inputs. A Dropdown can capture a single choice as well as
-  multiple choices
+  list of permitted inputs.
 ---
 
 # Select
@@ -23,9 +22,7 @@ A Dropdown's **options** can be populated from a data source like an API / Query
 
 ## Filtering Data
 
-A Dropdown can be used to filter a dataset based on the user's input. The selected option value can be passed to an API using**`{{ dropdownName.selectedOptionValue }}`** for Single Select Dropdowns and **`{{ dropdownName.selectedOptionValues }}`** for Multi-Select Dropdowns.
-
-Server Side Filtering can also be enabled on both Single Select and Multi-Select Dropdowns by enabling Server Side Filtering property.
+A Dropdown can be used to filter a dataset based on the user's input. The selected option value can be passed to an API using**`{{ dropdownName.selectedOptionValue }}` .
 
 ## **Form Submission**
 
@@ -52,23 +49,23 @@ Read more about submitting Input data to an API below
 | Internal Property | Description |
 | :--- | :--- |
 | **selectedOptionValue** | This is the value of the option that is displayed in a Single Select dropdown. This value changes if the default value of the dropdown changes or the user selects an option |
-| **selectedOptionValues** | This is an array of values of the options that are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
 | **filterText** | The filter text for Server side filtering |
+
 
 | Property | Description |
 | :--- | :--- |
-| **Placeholder** | Sets the Placeholder of the dropdown. |
+| **Placeholder** | Sets the Placeholder of the dropdown widget. |
 | **Options** | Lets you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
-| **Default Option** | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value string for a Multi-Select dropdown. |
+| **Default Option** | Sets a default option that will be captured as user input unless it is changed by the user. |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled** | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
 | **Server Side Filtering** | Enables server side filtering of the  via an API / Query request. Use this property when your Select option data is being bound to an API / Query. |
 
 
-
 | Action | Description |
 | :--- | :--- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onFilterUpdate** | Trigger an action on change of `filterText`. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+
 
