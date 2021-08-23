@@ -13,6 +13,10 @@
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
 * [Tutorials](tutorials/README.md)
+  * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
+    * [Connecting to Data Source and Binding Queries](tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries.md)
+    * [Building UI and Accessing Widget Properties](tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties.md)
+    * [Creating Interactive Views, Using Lists and Charts](tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts.md)
   * [Building a Store Catalog Manager](tutorials/building-a-store-catalog-manager/README.md)
     * [Building a Simple UI](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view/README.md)
       * [The Appsmith Environment](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view/the-appsmith-environment.md)
@@ -77,11 +81,12 @@
 
 ## Datasource Reference
 
-* [Amazon S3](datasource-reference/querying-amazon-s3.md)
+* [Amazon / Generic S3](datasource-reference/querying-amazon-s3.md)
+* [ArangoDB](datasource-reference/querying-arango-db.md)
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
 * [Elasticsearch](datasource-reference/querying-elasticsearch.md)
 * [Firestore](datasource-reference/querying-firestore.md)
-* [Google Sheets Integration](datasource-reference/querying-google-sheets.md)
+* [Google Sheets](datasource-reference/querying-google-sheets.md)
 * [MongoDB](datasource-reference/querying-mongodb/README.md)
   * [Mongo Query Syntax](datasource-reference/querying-mongodb/mongo-syntax.md)
   * [Whitelist MongoDB Cloud](datasource-reference/querying-mongodb/whitelist-mongodb-cloud.md)
@@ -90,7 +95,7 @@
 * [Postgres](datasource-reference/querying-postgres.md)
 * [Redis](datasource-reference/querying-redis.md)
 * [Redshift](datasource-reference/querying-redshift.md)
-* [Snowflake](datasource-reference/querying-snowflake.md)
+* [Snowflake](datasource-reference/querying-snowflake-db.md)
 
 ## Framework Reference
 
@@ -114,6 +119,8 @@
 * [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
+* [Dropdown](widget-reference/dropdown.md)
+* [Divider](widget-reference/divider.md)
 * [Select](widget-reference/dropdown.md)
 * [MultiSelect](widget-reference/multiselect.md)
 * [Filepicker](widget-reference/filepicker.md)
@@ -123,8 +130,10 @@
 * [Input](widget-reference/input.md)
 * [List](widget-reference/list.md)
 * [Maps](widget-reference/maps.md)
+* [Menu Button](widget-reference/menu-button.md)
 * [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
+* [Rating](widget-reference/rating.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
 * [Switch](widget-reference/switch.md)
 * [Tabs](widget-reference/tabs.md)

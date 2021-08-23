@@ -8,6 +8,8 @@ description: >-
 
 ## Supported Databases
 
+* [Amazon S3 \(also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects\)](https://github.com/appsmithorg/appsmith-docs/tree/1c569dd23afe623df82082123f226f85881224e1/core-concepts/connecting-to-data-sources/connecting-to-databases/datasource-reference/querying-amazon-s3.md)
+* [ArangoDB](https://github.com/appsmithorg/appsmith-docs/tree/1c569dd23afe623df82082123f226f85881224e1/core-concepts/connecting-to-data-sources/connecting-to-databases/datasource-reference/querying-arango-db.md)
 * [DynamoDB](../../../datasource-reference/querying-dynamodb.md)
 * [ElasticSearch](../../../datasource-reference/querying-elasticsearch.md)
 * [Firestore](../../../datasource-reference/querying-firestore.md)
@@ -17,7 +19,7 @@ description: >-
 * [PostgreSQL](../../../datasource-reference/querying-postgres.md)
 * [Redis](../../../datasource-reference/querying-redis.md)
 * [Redshift](../../../datasource-reference/querying-redshift.md)
-* [Snowflake](../../../datasource-reference/querying-snowflake.md)
+* [Snowflake](../../../datasource-reference/querying-snowflake-db.md)
 
 ## Security
 

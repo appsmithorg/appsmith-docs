@@ -4,7 +4,7 @@ description: >-
   list of permitted inputs.
 ---
 
-# Select
+# Dropdown
 
 {% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
 

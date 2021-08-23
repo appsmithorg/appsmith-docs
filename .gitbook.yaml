@@ -1,0 +1,2 @@
+redirects:
+  datasource-reference/querying-snowflake: ./datasource-reference/querying-snowflake-db

@@ -4,9 +4,11 @@ description: This guide helps you to connect your Local APIs with Appsmith using
 
 # How to work with Local APIs on Appsmith
 
+{% embed url="https://youtu.be/IUX2rXmS17E" caption="" %}
+
 Appsmith allows you to work with local APIs using the help of **`ngrok`**. In this guide, let’s look at how we can build an Appsmith application utilising the local APIs running on our machine
 
-### Building a Simple Local API
+## Building a Simple Local API
 
 If you have your local APIs ready, you can skip to the next section. Here, as an example, we’ll use a Python FastAPI server for serving a simple local API. Let’s install the necessary packages using pip:
 
@@ -18,9 +20,9 @@ Now let’s write a script that’ll serve as a simple API request, below is the
 
 ```python
 from fastapi import FastAPI
- 
+
 app = FastAPI()
- 
+
 items = [{     
        "name": "Counter-Strike",
        "appid": 10,
@@ -35,12 +37,11 @@ items = [{
        "genres": "Action",
        "price": 3.99
      }]
- 
- 
+
+
 @app.get("/")
 async def root():
    return items
-
 ```
 
 Here, we imported the FastAPI library, initiated an app using the `FastAPI` class. Next, we define a simple list consisting of details of steam games as objects
@@ -59,7 +60,7 @@ $ uvicorn main:app --reload
 
 Awesome, with this we should see our API running at [http://127.0.0.1:8000](http://127.0.0.1:8000!) !
 
-### Setting ngrok
+## Setting ngrok
 
 Now that we have our local APIs, let’s use `ngrok` to serve them on production. For this, we’ll have to signup at [ngrok](https://dashboard.ngrok.com/get-started/setup) \(it’s free!\), and follow the instructions to connect your account.
 
@@ -80,7 +81,7 @@ Awesome, we can now see that the local APIs are now being forwarded to a differe
 
 ![](https://lh5.googleusercontent.com/5Qdqw3U5EYtDk5EhpWrTrrUw5EcKPqZGE8xX2W7NjazBd_cdSQZNUgVkUzkQXjG0NqCusqQW4ftUp3GAOg794gsWCZpXrDi1lmtBF7ZplJ5lAAcdsc_hfKOFr93KebVE4nZ1JKp9)
 
-### Testing APIs on Appsmith
+## Testing APIs on Appsmith
 
 Now that we have API, up and running, let’s test these out on Appsmith.
 
