@@ -8,10 +8,8 @@ description: >-
 # Telemetry
 
 {% hint style="warning" %}
-The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your Appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
-{% endhint %}
-
 Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user.
+{% endhint %}
 
 {% hint style="success" %}
 Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools.
