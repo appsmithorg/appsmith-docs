@@ -57,7 +57,7 @@ Now, let’s create an API that’ll return the JWT using the login API. Follow 
 
 > To test this out, we’ve created a test Auth API; use the following if you don’t have any Auth APIs.
 
-* In this example, let’s use `https://appsmith-example.herokuapp.com/auth/local`, set the request type to `POST`.
+* In this example, let’s use `https://secret-headland-14607.herokuapp.com/auth/local`, set the request type to `POST`.
 * Next, in the body, add the following JSON to send username and password to the API. IN this case, we’re taking the inputs from the form using the moustache syntax.
 
 ```text
@@ -90,7 +90,7 @@ Now we’ll be passing this `jwt` variable in the header with an Authorization m
 * Now add you’re secure API, or you can use the following example API:
 
 ```text
-https://appsmith-example.herokuapp.com/logistic-informations
+https://secret-headland-14607.herokuapp.com/logistic-informations
 ```
 
 * This API requires authorization, lets now add a new header with key and value as:
