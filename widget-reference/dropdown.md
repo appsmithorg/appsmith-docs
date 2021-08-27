@@ -1,10 +1,10 @@
----
-description: >-
+
+# Description
   ‌Select / Dropdown widget is used to capture user input/s from a specified
   list of permitted inputs.
----
 
-# Select
+
+# Select / Dropdown
 
 {% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
 

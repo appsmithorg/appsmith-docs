@@ -1,8 +1,8 @@
----
-description: >-
+
+# Description
   Multiselect widget is used to capture user inputs from a specified
   list of permitted options. This widget captures multiple choices.
----
+
 
 # MultiSelect
 
