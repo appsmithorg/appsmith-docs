@@ -128,6 +128,7 @@
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
 * [List](widget-reference/list.md)
+* [Map Chart](widget-reference/map-chart.md)
 * [Maps](widget-reference/maps.md)
 * [Menu Button](widget-reference/menu-button.md)
 * [Modal](widget-reference/modal.md)
