@@ -92,7 +92,7 @@
   * [Whitelist MongoDB Cloud](datasource-reference/querying-mongodb/whitelist-mongodb-cloud.md)
 * [MS SQL](datasource-reference/querying-mssql.md)
 * [MySQL](datasource-reference/querying-mysql.md)
-* [Postgres](datasource-reference/querying-postgres.md)
+* [PostgreSQL](datasource-reference/querying-postgres.md)
 * [Redis](datasource-reference/querying-redis.md)
 * [Redshift](datasource-reference/querying-redshift.md)
 * [Snowflake](datasource-reference/querying-snowflake-db.md)
