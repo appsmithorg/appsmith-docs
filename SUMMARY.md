@@ -124,6 +124,7 @@
 * [Select](widget-reference/dropdown-1.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
+* [Icon Button](widget-reference/icon-button.md)
 * [Iframe](widget-reference/iframe.md)
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
