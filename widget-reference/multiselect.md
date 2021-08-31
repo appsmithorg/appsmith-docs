@@ -10,7 +10,7 @@
 
 ## Displaying Data
 
-MultiSelect's **options** can be populated from a data source like an API / Query by transforming the API / Query data to an array of \(label, value\). The transformation can be performed using javascript so if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map) function.
+MultiSelect's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \(label, value\). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here
@@ -22,7 +22,7 @@ MultiSelect's **options** can be populated from a data source like an API / Quer
 
 ## Filtering Data
 
-A MultiSelect widget can be used to filter a dataset based on the user's input. The selected option value can be passed to an API using**`{{ multiselect1.selectedOptionValues }}`** .
+A MultiSelect widget can be used to filter a dataset based on the user's input. The selected value can be passed to an API using**`{{ multiselect1.selectedOptionValues }}`** .
 
 Server Side Filtering can also be enabled on the widget by enabling Server Side Filtering property.
 
@@ -42,7 +42,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 */
 ```
 
-Read more about submitting Input data to an API below
+Read more about submitting Input data to an API below.
 
 [Sending widget data in post body](multiselect.md)
 
@@ -50,8 +50,8 @@ Read more about submitting Input data to an API below
 
 | Internal Property | Description |
 | :--- | :--- |
-| **selectedOptionValues** | This is an array of values of the options that are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
-| **selectedOptionLabels** | This is an array of Labels of the options that are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
+| **selectedOptionValues** |  An array of values of the options that are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
+| **selectedOptionLabels** |  An array of Labels of the options that are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
 | **filterText** | The filter text for Server side filtering |
 
 | Property | Description |
