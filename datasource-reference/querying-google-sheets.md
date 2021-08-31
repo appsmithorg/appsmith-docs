@@ -48,7 +48,7 @@ This section describes each of the parameters expected while creating new query 
 | :--- | :--- |
 | Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Google Sheet that has the table headings. Row numbers star from 1. |
+| Table Heading Row Index | Row number in Google Sheet that has the table headings. Row numbers start from 1. |
 | Query Format | You can query your rows based on row index or row range |
 | Row Offset | Relative row from Table Heading Row Number |
 | Row Limit | Number of rows you want to query |
@@ -72,7 +72,7 @@ This section describes each of the parameters expected while creating new query 
 | :--- | :--- |
 | Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Google Sheet that has the table headings. Row numbers star from 1. |
+| Table Heading Row Index | Row number in Google Sheet that has the table headings. Row numbers start from 1. |
 
 **Request Format:**
 
@@ -94,7 +94,7 @@ Use mustache syntax to dynamically pass values from widgets to the request forma
 | :--- | :--- |
 | Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers star from 1. |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 
 Request Format:
 
@@ -112,7 +112,7 @@ Request Format:
 | :--- | :--- |
 | Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers star from 1. |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 | Row Index | Relative row from Table Heading Row Number |
 
 ### 5. List Sheets
@@ -188,7 +188,7 @@ Request Format \(Optional\):
 | :--- | :--- |
 | Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of the Sheet to bulk insert |
-| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers star from 1. |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 | Row Objects | Request Format of the Data |
 
 Request Format:
@@ -209,7 +209,7 @@ Request Format:
 | :--- | :--- |
 | Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of the Sheet to bulk insert |
-| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers star from 1. |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 | Row Objects | Request Format of the Data |
 
 Request Format:
