@@ -202,7 +202,7 @@ Next, add the following config to the chart and the data config:
 
 Below are some of the screenshots of Charts using customised Charts on Appsmith:
 
-### Example Paerto3D Chart:
+### Example Pareto 3D Chart:
 
 ![](../.gitbook/assets/image%20%2812%29.png)
 
