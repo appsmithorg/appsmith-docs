@@ -1,7 +1,6 @@
----
-description: >-
+
+# Description
   Checkbox group widget allows users to easily configure multiple checkboxes together.
----
 
 # Checkbox Group
 
