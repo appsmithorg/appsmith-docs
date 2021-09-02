@@ -1,9 +1,9 @@
 ---
 description: >-
-  Recorder widget allows users to record using their microphone, listen to its playback and export the data to a datasource.
+  Audio recorder widget allows users to record using their microphone, listen to its playback and export the data to a datasource.
 ---
 
-# Recorder
+# Audio Recorder
 
 ## Image/gif of the widget on the canvas with the icon of the widget in the sidebar
 
