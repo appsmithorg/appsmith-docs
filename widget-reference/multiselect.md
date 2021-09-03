@@ -1,12 +1,10 @@
 ---
 description: >-
-  Multiselect widget is used to capture user inputs from a specified
-  list of permitted options. This widget captures multiple choices.
+  Multiselect widget is used to capture user inputs from a specified list of
+  permitted options. This widget captures multiple choices.
 ---
 
 # MultiSelect
-
-## Image/gif of the widget on the canvas with the icon of the widget in the sidebar
 
 ## Displaying Data
 
@@ -50,8 +48,8 @@ Read more about submitting Input data to an API below.
 
 | Internal Property | Description |
 | :--- | :--- |
-| **selectedOptionValues** |  An array of values of the options that are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
-| **selectedOptionLabels** |  An array of Labels of the options that are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
+| **selectedOptionValues** | An array of values of the options that are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
+| **selectedOptionLabels** | An array of Labels of the options that are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
 | **filterText** | The filter text for Server side filtering |
 
 | Property | Description |
@@ -63,8 +61,6 @@ Read more about submitting Input data to an API below.
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled** | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
 | **Server Side Filtering** | Enables server side filtering of the  via an API / Query request. Use this property when your Select option data is being bound to an API / Query. |
-
-
 
 | Action | Description |
 | :--- | :--- |

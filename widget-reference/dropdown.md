@@ -4,7 +4,8 @@ description: >-
   list of permitted inputs.
 ---
 
-# Select
+# Dropdown
+
 {% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
 
 ## Displaying Data
@@ -21,7 +22,7 @@ A Dropdown's **options** can be populated from a data source like an API / Query
 
 ## Filtering Data
 
-A Dropdown can be used to filter a dataset based on the user's input. The selected value can be passed to an API using**`{{ dropdownName.selectedOptionValue }}` .
+A Dropdown can be used to filter a dataset based on the user's input. The selected value can be passed to an API using\*\*`{{ dropdownName.selectedOptionValue }}` .
 
 ## **Form Submission**
 
@@ -41,7 +42,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below.
 
-[Sending widget data in post body](dropdown.md)
+[Sending widget data in post body](dropdown-1.md)
 
 ## Properties
 
@@ -49,7 +50,6 @@ Read more about submitting Input data to an API below.
 | :--- | :--- |
 | **selectedOptionValue** | This is the value of the option that is displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option |
 | **filterText** | The filter text for Server side filtering |
-
 
 | Property | Description |
 | :--- | :--- |
@@ -61,10 +61,8 @@ Read more about submitting Input data to an API below.
 | **Disabled** | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
 | **Server Side Filtering** | Enables server side filtering of the  via an API / Query request. Use this property when your Select option data is being bound to an API / Query. |
 
-
 | Action | Description |
 | :--- | :--- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onFilterUpdate** | Trigger an action on change of `filterText`. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-
 
