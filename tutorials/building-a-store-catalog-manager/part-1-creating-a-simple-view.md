@@ -1,4 +1,50 @@
-# Creating your First Page
+# Building a Simple UI
+
+In the first part of the tutorial, we will walk through the initial steps of Appsmith to familiarize you with the key concepts of the _**Appsmith Environment**_. Next, we will walk you through creating a simple web-page that displays products fetched from a database in a table for the **Oakry** store.
+
+By the end of part 1, you'll be familiar with:
+
+* Creating Widgets on Appsmith
+* Connect Database and writing SQL query on Appsmith
+* Configuring widgets to render the results of the query
+
+## The Appsmith Environment
+
+If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This home-page has an auto-generated organization called **`<Your first-name> apps`** \(referred to as your personal organization from now on\) consisting of multiple templates. In this tutorial, we'll create our Catalog app under the same organization. 
+
+{% hint style="warning" %}
+
+Let's now create a new app named _Catalogue Dashboard_ under the personal organization.
+
+> An app on Appsmith is a standalone software-application solving a specific use-case. It can consist of one or more web-pages.
+
+Here are steps to create an app on Appsmith Dashboard:
+
+1. Click on the _Create New_ button under your personal organization.
+2. You’ll be redirected to the configuration page of the newly created app.
+3. Note that the new app is created with the default name **Untitled Application 1**.
+4. Rename it to **Catalog Dashboard** by double-clicking on the existing one.
+
+The new app comes with auto-generated directories that establish an Appsmith app. Below is a screenshot of the directory structure. 
+
+![Entity Explorer on Appsmith Application](../../.gitbook/assets/image%20%281%29.png)
+
+{% hint style="danger" %}
+
+Let's see what each of these directories is:
+
+* **`Pages`** : This directory is a container for all the web-pages and their configuration of your app. Under this directory, you can create and organize different pages based on the tool or application you're building.
+* The **`Page1`** directory contains all entities required to render the corresponding web-page.
+
+{% hint style="info" %}
+
+* **`Widgets`**: This directory is a container for all the widgets that will be part of the web-page `Page1`. You can think of Widgets as simple UI Components for your web-page, for example, a data-picker or a form. By default, this directory doesn’t have any pre-configured widgets.
+* **`APIs`**: The API's directory is a container consisting of all API's that Page1 connects to.
+* **`DB Queries`**: This directory is a container for both databases and their queries used by `Page1` to read and write data. You can organize all your data operations under this directory.
+
+Lastly, you can also see all the [JS libraries supported by Appsmith](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) under _**JS libraries you can use**_ section below the `Page` directory. These libraries are already imported into your app's environment, ready to be used.
+
+## Creating your First Page
 
 Now that your environment – an "**app**" – is set up, you’re ready to start doing work.
 
@@ -26,8 +72,6 @@ Let's discuss what has happened now:
 * The `Table Data` property in the pane defines what data will be displayed on the table. You can read more about the table widget's properties in the [Table widget reference](https://docs.appsmith.com/widget-reference/table).
 * By default, the name of the table is set to **Table1**. It can be renamed to anything you like by simply double-clicking it. Let's now change it to **`Products_Table`**.
 
-{% hint style="info" %}
-
 ### Understanding the Table Widget
 
 Let's now take a minute to check how the array in `Table Data` maps to the table's columns and their values.
@@ -50,9 +94,7 @@ Here are steps to play with **Table Data** to get a hang of how it affects the d
 
 Open the application's URL in your web browser. You should see the values of your table like the below screenshot:
 
-![Updated Table](../../../.gitbook/assets/image.png)
-
-{% hint style="info" %}
+![Updated Table](../../.gitbook/assets/image.png)
 
 Let's go back to the `Table Data` field. When you place your cursor in the Table Data field, you see a floating window consisting of two properties:
 
@@ -61,7 +103,7 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](../../../core-concepts/connecting-to-data-sources/) to learn to configure a database of your choice.
+However, when you are building an app for a different use-case, you can connect to your own database. Check out the [docs here](../../core-concepts/connecting-to-data-sources/) to learn to configure a database of your choice.
 
 ## Writing your First Query
 
@@ -82,9 +124,7 @@ The query is saved as soon as it's created, without you having to explicitly sav
 
 Below is a screenshot of how Appsmith renders the outputs of SQL Query.
 
-![Reading Data from Mock Database on Appsmith using DB Queries](../../../.gitbook/assets/image%20%288%29.png)
-
-{% hint style="info" %}
+![Reading Data from Mock Database on Appsmith using DB Queries](../../.gitbook/assets/image%20%288%29.png)
 
 ## Accessing Query Results to a Widget
 
@@ -122,5 +162,7 @@ As you'll see in the next section, the inverse of this is also possible, i.e a w
 
 ## What's next?
 
-When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read [part 2 ](../part-2-using-forms/)of the tutorial to learn to use widgets that enable you to accept and process user input.
+When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read [part 2 ](part-2-using-forms.md)of the tutorial to learn to use widgets that enable you to accept and process user input.
+
+
 

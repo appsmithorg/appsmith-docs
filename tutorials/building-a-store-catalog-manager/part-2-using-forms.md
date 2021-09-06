@@ -1,4 +1,15 @@
-# Creating your First Form
+# Using forms
+
+In the first part of this tutorial, you've created a single page app to view products for **Oakry**. In this part, you'll extend the app to a multi-page app, where you'll be creating a new page that allows users to add a new product to:
+
+* Create a new page having a form to accept the new product's details from a user
+* Add validations to the form fields
+* Access widgets state in queries to insert dynamic input
+* Bind the form's submit button to trigger the addition of a new product
+
+We'll also add a button on the **ProductListPage** that opens this form. Let's get started!
+
+## Creating your first form!
 
 Now to add new products to the catalogue, you'll have a create a new form widget. To keep things more organised, do this on a new page to not affect the catalogue page. Follow the below steps:
 
@@ -38,7 +49,7 @@ Now, let's add one more field to the **`AddProductForm`** that enables users to 
 
 Below is a screenshot of how your form should look like:
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 Now, open the dropdown settings and set the **Selection Type** property to **`Single Select`**, this will allow the user to select only one value from the dropdown.
 
@@ -115,7 +126,7 @@ So far, the form has can accept a name and the category of the product. Now, add
 
 The current title of the form is also a text widget with default title mentioned as **Form**. Let's rename the title to **Add a Product \(Oakry\)**. Below is a screenshot of how the Page looks like:
 
-![AddProductForm with all input fields](../../../.gitbook/assets/image%20%286%29.png)
+![AddProductForm with all input fields](../../.gitbook/assets/image%20%286%29.png)
 
 ## Writing regex validations
 
@@ -148,4 +159,118 @@ Verify that the regex validates the input as expected, and throws the error mess
 
 Since Appsmith editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
 {% endhint %}
+
+## Submitting the form
+
+Your form is now both more user-friendly, and less error-prone. Let's configure it to trigger the addition of a new product. It will involve two steps:
+
+1. **Setting up an insert query** that adds a new product to the table
+2. Wiring the Submit button of the form to **run the insert query**
+
+## Accessing widget properties in queries
+
+Your form will have the value filled in by the user. You want to insert those values via your query. Let’s see how to do that:
+
+1. Navigate to **Pages → NewProductPage → DB Queries → +**
+2. Navigate to **Mock Database → New Query**
+3. Rename the query to **AddProductQuery**
+4. Copy the following in the Query tab  
+
+   ```sql
+   INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')
+   ```
+
+5. Run the query
+6. You’ll see the notification for a successful query run
+
+Let’s see the query. The main query syntax is the same as that of PostgreSQL, following the format:
+
+```sql
+INSERT INTO table_name
+ (col1, col2, col3,  colN)
+VALUES
+ (val1, val2, val3, … valN)
+```
+
+The only difference is that you’re using the mustache template to write JavaScript within the insert query:
+
+* To get the value filled by the user in **ProductNameInput**, you accessed its `text` property.
+* To get the value of the selected option of **CategoryDropdown**, you called the property `selectedOptionValue` on it.
+
+What you did here is that you accessed the widgets' property in your query. This is the inverse of what you did in part 1 where you accessed **ProductsQuery**'s results in the **Products\_Table** widget. To reiterate, widgets, APIs, and DB Queries belonging to the same parent page can access each other's property/data by referencing the appropriate property on their respective names.
+
+## Triggering action on UI events
+
+Your query **AddProductQuery** is now set up to insert dynamic user input from the form. Let's bind the Submit button of the form to invoke **AddProductQuery**:
+
+1. Open the properties of **SubmitButton**
+2. Go to **Action → onClick**
+3. Choose **Execute DB Query → AddProductQuery**
+
+Try creating a new product using the form. You’ll notice that you don't have a way to tell whether the product got added after submitting, or not. It's because you haven't set up a success or an error message. Let's do that:
+
+1. Open the properties of **SubmitButton**
+2. Navigate to **onClick → onSuccess** 
+3. Choose **Show Message**
+4. Type **Yay, product creation successful!**
+5. Navigate to **onClick → onError**
+6. Choose **Show Message**
+7. Type **Nay, product creation failed!**
+
+Try filling the form again with some valid and invalid values to verify that it works as expected.
+
+## Configuring actions using JavaScript
+
+In the previous section, you used the properties GUI to define **onSuccess** and **onError** events for the **Submit** button. You can do the same using JavaScript. Let's see how.
+
+Click on the **JS** icon next to **onClick**. You’ll see that the long hierarchical GUI that represents **onClick → onSuccess** and **onClick → onError,** converts to JavaScript code like below:
+
+```javascript
+{{
+    AddProductQuery.run(
+        () => showAlert('yay'), 
+        () => showAlert('nay')
+    )
+}}
+```
+
+What you see above is the **`run()`** method defined by Appsmith. You can call the method on any DB Query, or an API. This method has the following signature:
+
+```javascript
+run(onSuccess: function, onError: function, params: object): void
+```
+
+Clicking on **JS** enables two things:
+
+1. If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.
+2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. Like it did above. You can modify this JavaScript to further customize the behavior. 
+
+Note that you bound one action each with the success and error events. In [part 3](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNo2nMKgdMWZ9VCFlcr/v/v1.3/tutorial/part-3-widget-interaction/running-multiple-actions-on-submit), you'll learn to bind more than one action with each of the events.
+
+{% hint style="info" %}
+For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](https://docs.appsmith.com/how-to-guides/writing-javascript-in-appsmith)
+{% endhint %}
+
+## Connecting multiple pages
+
+You've created a new page **AddProductPage** with a form that allows users to add new products. Now, you want to open this page when the user clicks on an **"Add new product"** button from the **ProductListPage**. Let's set this up:
+
+1. Navigate to **Pages** **→ ProductListPage**
+2. Drag-drop the [button widget ](https://docs.appsmith.com/widget-reference/button)at the bottom right of the table
+3. Rename widget to **AddProductButton**
+4. Change button label to **Add New Product**
+5. Go to **Action → onClick → Navigate To** 
+6. Type **AddProductPage** in **Page Name** field
+
+Your **ProductListPage** now looks like:
+
+![ProductListPage: Note the &quot;Add new product&quot; button](../../.gitbook/assets/image%20%283%29.png)
+
+Let's test this. Click on the "**Add New Product"** button on the ProductListPage. You'll see that the **AddProductForm** page opens up, ready for you to fill the form.
+
+But what's happening here? By selecting the [Navigate To](https://docs.appsmith.com/function-reference/navigateto) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user to.
+
+## What's next?
+
+When you’re comfortable with the basics of building a form, accessing widget's p roperty in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](https://app.gitbook.com/@appsmith/s/appsmith/~/drafts/-MNXsPmxVacsRbqB7S_f/v/v1.3/tutorial/part-2-creating-a-basic-form)of the tutorial to learn to take and process user input.
 
