@@ -32,6 +32,7 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax `{{callMyApi.data}}` |
 | **Columns** | Auto populated from the Table data. This lets you edit the label, show/hide each column \(the eye icon\) and also customize the [column settings](https://docs.appsmith.com/widget-reference/table#column-settings) |
 | **Server Side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is being bound to an API / Query. |
+| **Total Record Count** | Allow you to control the number of results fetched per API / Query request. This field can only be used when server side pagination is enabled. To use this property bind `{{table.pageSize}}` and `{{table.pageNo}}` in your API / Query. You also need to bind your API  / Query in onPageChange action |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Default Search Text** | Sets the default search text of the table |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field |
