@@ -12,6 +12,7 @@
   * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
+  * [DigitalOcean](setup/digitalocean.md)
 * [Tutorials](tutorials/README.md)
   * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
     * [Connecting to Data Source and Binding Queries](tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries.md)
