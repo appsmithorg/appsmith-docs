@@ -73,6 +73,8 @@ Additionally compared to the functionality before the actions can now be set on 
 | **Styles** | Based on the Column Type, there are various style properties available to change the look and feel of each column |
 | **Original/Display Date format** | In case of type `date` we can set the original/display date format to our choice |
 | **Button Properties** | In case of column type `button` we can use these properties to change the label/color or create a onClick action |
+| **Label** | In case of column type `switch` sets the label of the switch |
+| **Default Selected** | In case of column type `switch` sets a default option that will be captured as user input unless it is changed by the user |
 
 ## How to display data and handle pagination inside a table?
 
