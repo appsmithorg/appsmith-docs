@@ -1,56 +1,12 @@
 # Building a Simple UI
 
-In the first part of the tutorial, we will walk through the initial steps of Appsmith to familiarize you with the key concepts of the _**Appsmith Environment**_. Next, we will walk you through creating a simple web-page that displays products fetched from a database in a table for the **Oakry** store.
+In this section, you will walk through creating a simple web-page that displays products fetched from a database in a table for the **Oakry** store.
 
 By the end of part 1, you'll be familiar with:
 
 * Creating Widgets on Appsmith
 * Connect Database and writing SQL query on Appsmith
 * Configuring widgets to render the results of the query
-
-## The Appsmith Environment
-
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This home-page has an auto-generated organization called **`<Your first-name> apps`** \(referred to as your personal organization from now on\) consisting of multiple templates. In this tutorial, we'll create our Catalog app under the same organization. 
-
-{% hint style="warning" %}
-
-Let's now create a new app named _Catalogue Dashboard_ under the personal organization.
-
-> An app on Appsmith is a standalone software-application solving a specific use-case. It can consist of one or more web-pages.
-
-Here are steps to create an app on Appsmith Dashboard:
-
-1. Click on the _Create New_ button under your personal organization.
-2. You’ll be redirected to the configuration page of the newly created app.
-3. Note that the new app is created with the default name **Untitled Application 1**.
-4. Rename it to **Catalog Dashboard** by double-clicking on the existing one.
-
-The new app comes with auto-generated directories that establish an Appsmith app. Below is a screenshot of the directory structure. 
-
-![Entity Explorer on Appsmith Application](../../.gitbook/assets/image%20%281%29.png)
-
-{% hint style="danger" %}
-
-Let's see what each of these directories is:
-
-* **`Pages`** : This directory is a container for all the web-pages and their configuration of your app. Under this directory, you can create and organize different pages based on the tool or application you're building.
-* The **`Page1`** directory contains all entities required to render the corresponding web-page.
-
-{% hint style="info" %}
-
-* **`Widgets`**: This directory is a container for all the widgets that will be part of the web-page `Page1`. You can think of Widgets as simple UI Components for your web-page, for example, a data-picker or a form. By default, this directory doesn’t have any pre-configured widgets.
-* **`APIs`**: The API's directory is a container consisting of all API's that Page1 connects to.
-* **`DB Queries`**: This directory is a container for both databases and their queries used by `Page1` to read and write data. You can organize all your data operations under this directory.
-
-Lastly, you can also see all the [JS libraries supported by Appsmith](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) under _**JS libraries you can use**_ section below the `Page` directory. These libraries are already imported into your app's environment, ready to be used.
-
-## Creating your First Page
-
-Now that your environment – an "**app**" – is set up, you’re ready to start doing work.
-
-> A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
-
-The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Now, rename the page to **ProductListPage** by double-clicking on **Page1**.
 
 ## Adding your First Widget
 
@@ -63,7 +19,7 @@ As discussed in the previous sections, Widgets are simple UI Components that can
 
 This will create a new table on `ProductListPage`.
 
-![Drag and Drop Table onto Canvas](https://lh4.googleusercontent.com/p6VRCgNSNPxyq1IdSgVbU7oHE8fkTDmayGM-YPIuOBKHCzEhE2qYYaTyDQ6XyCG7xmQ6CoNlUCBTO6iat52sZqs8Ig8GzOLFpDF2_3GEXgGcSgwMmOuba5Pekv1ZY3roaOgr5EI0)
+![](../../.gitbook/assets/cleanshot-2021-09-15-at-15.09.02.gif)
 
 Let's discuss what has happened now:
 
@@ -94,7 +50,7 @@ Here are steps to play with **Table Data** to get a hang of how it affects the d
 
 Open the application's URL in your web browser. You should see the values of your table like the below screenshot:
 
-![Updated Table](../../.gitbook/assets/image.png)
+![](../../.gitbook/assets/cleanshot-2021-09-15-at-15.10.39-2x.png)
 
 Let's go back to the `Table Data` field. When you place your cursor in the Table Data field, you see a floating window consisting of two properties:
 
