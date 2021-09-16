@@ -28,7 +28,7 @@ The created form does not have any input fields. Now, add a new [input widget](h
 
 Below is a screenshot of how your form should look like: 
 
-![Input Widget on Form Widget](https://lh3.googleusercontent.com/Tk7BK67XSWBJrxRbDT96FOdenI_3cIYAh-tqxDDURALgEwXM8xWCE2FbGK0nFXTA8rO67RW-SeZQx5Fl5pXjO-gGQbnlRS3xhXIfxgQnZQDer3P24M5GkuKL2I2BaeqhOfzidQ3_)
+![](../../.gitbook/assets/cleanshot-2021-09-16-at-12.45.27-2x.png)
 
 This looks incomplete without a text label. Let’s fix that by adding a [text widget](https://docs.appsmith.com/widget-reference/text) next to the left of **ProductNameInput**. Also, update the **Text** property from its properties modal to **`Product Name`:** to change the display text.
 
@@ -171,7 +171,7 @@ Your form is now both more user-friendly, and less error-prone. Let's configure 
 
 Your form will have the value filled in by the user. You want to insert those values via your query. Let’s see how to do that:
 
-1. Navigate to **Pages → NewProductPage → DB Queries → +**
+1. Navigate to **Pages → NewProductPage → Datasources → +**
 2. Navigate to **Mock Database → New Query**
 3. Rename the query to **AddProductQuery**
 4. Copy the following in the Query tab  
@@ -264,7 +264,7 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 
 Your **ProductListPage** now looks like:
 
-![ProductListPage: Note the &quot;Add new product&quot; button](../../.gitbook/assets/image%20%283%29.png)
+![ProductListPage: Note the &quot;Add new product&quot; button](../../.gitbook/assets/cleanshot-2021-09-16-at-13.12.14-2x.png)
 
 Let's test this. Click on the "**Add New Product"** button on the ProductListPage. You'll see that the **AddProductForm** page opens up, ready for you to fill the form.
 

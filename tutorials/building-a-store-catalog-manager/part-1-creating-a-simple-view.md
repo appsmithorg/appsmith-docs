@@ -76,6 +76,7 @@ Password: LimitedAccess123#
 Database: fakeapi
 ```
 
+* Rename the Datasource to Mock Database
 * Next, click on the _**New Query**_ button, you’ll see a query created with the name **Query1**
 * Rename the query to **ProductsQuery**, by double-clicking on the existing one.
 * Next, click on create option and replace the query shown below in the **Query** tab
