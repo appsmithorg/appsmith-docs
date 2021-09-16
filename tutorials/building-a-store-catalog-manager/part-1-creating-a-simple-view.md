@@ -65,22 +65,31 @@ However, when you are building an app for a different use-case, you can connect 
 
 Now, let's utilise the mock database to display all the catalogue items for the **Oakry** app by following the below steps:
 
-1. First, let's create a new **DB Query** by clicking on the **"+"** icon next to **DB Queries** directory.
-2. Choose **Mock Database**, also you can see that this is a PostgreSQL database.
-3. Next, click on the _**New Query**_ button, you’ll see a query created with the name **Query1**
-4. Rename the query to **ProductsQuery**, by double-clicking on the existing one.
-5. Next, click on create option and replace the query shown below in the **Query** tab
-6. Click on the **Run** button, this will execute your query and prints out all the results below
+1. First, let's create a new **Datasource** by clicking on the **"+"** icon next to **Datasource** directory.
+2. Select `Create New` and choose Postgres as Database. Now use the following details and hit **Save** button.
 
-   ```sql
-   SELECT "id", "productName", "category", "mrp" FROM products ORDER BY "id";
-   ```
+```text
+Host: fake-api.cvuydmurdlas.us-east-1.rds.amazonaws.com
+Port: 5432
+User: fakeapi
+Password: LimitedAccess123#
+Database: fakeapi
+```
+
+* Next, click on the _**New Query**_ button, you’ll see a query created with the name **Query1**
+* Rename the query to **ProductsQuery**, by double-clicking on the existing one.
+* Next, click on create option and replace the query shown below in the **Query** tab
+* Click on the **Run** button, this will execute your query and prints out all the results below
+
+```sql
+SELECT "id", "productName", "category", "mrp" FROM products ORDER BY "id";
+```
 
 The query is saved as soon as it's created, without you having to explicitly save it. The same would be the case with any API, widgets, and any changes you make you any entity of your app.
 
 Below is a screenshot of how Appsmith renders the outputs of SQL Query.
 
-![Reading Data from Mock Database on Appsmith using DB Queries](../../.gitbook/assets/image%20%288%29.png)
+![Reading Data from Mock Database on Appsmith using DB Queries](../../.gitbook/assets/cleanshot-2021-09-16-at-11.58.21-2x.png)
 
 ## Accessing Query Results to a Widget
 
@@ -103,7 +112,7 @@ Now, you should see your table displays the `ProductsQuery` results. You can als
 
 Below is the screenshot:
 
-![](https://lh5.googleusercontent.com/wjbhU2Nsq_tfEFoAsI4qEn60jo6E8dkySMMUqoV9h1IdfBJ9Ug48_EkI-LZVaRK3VB4ebTi0OTbYFczticODH13A-XWJi-qhE12Lhz8OSXnCvRDB6uqceArq3wDVZA5xOaQlAogK)
+![](../../.gitbook/assets/cleanshot-2021-09-16-at-12.41.58-2x.png)
 
 ## Variables and Names
 
@@ -118,7 +127,7 @@ As you'll see in the next section, the inverse of this is also possible, i.e a w
 
 ## What's next?
 
-When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read [part 2 ](part-2-using-forms.md)of the tutorial to learn to use widgets that enable you to accept and process user input.
+When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read part 2 of the tutorial to learn to use widgets that enable you to accept and process user input.
 
 
 
