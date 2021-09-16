@@ -1,6 +1,6 @@
 # Creating interactive views
 
-This tutorial begins where [Tutorial 2](https://docs.google.com/document/d/1MF52io4nymFJoeAoKQnOlovHMtwh5qbk0kRb9rNU1fI/edit#heading=h.40i6tula7jnz) left off. By now, you've built a multi-page tool that allows you to view all products, and add a new product. The following tutorial walks you through building the functionality to edit a product. During this, you'll learn to:
+By now, you've built a multi-page tool that allows you to view all products, and add a new product. The following tutorial walks you through building the functionality to edit a product. During this, you'll learn to:
 
 1. Access one widget's state from another
 2. Set up an API to update a product
@@ -28,7 +28,7 @@ You'll see an Edit button in the last column of each row. A Row Button adds a bu
 
 The **Product\_Table** now looks like this:
 
-![ProductListPage: Note the addition of the Actions column in right having the Edit buttons](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/cleanshot-2021-09-16-at-13.34.41-2x.png)
 
 Click on the **Edit** button of any row. You will see that **EditProductModal** is an empty form. Let’s populate the form with widgets such that:
 
@@ -91,11 +91,7 @@ To set a default value for CategoryDropdown:
 
 Verify that when you click on the Edit button of a row, your form will get populated with the selected row's values.
 
-
-
 ## Writing your first API
-
-
 
 Your edit form is ready to take user input. Now you will configure its Confirm button to trigger the update of the product via an API. It involves two steps:
 
@@ -110,16 +106,24 @@ You'll use the below API to update a product:
 
 It is a mock API exposed by Appsmith to help you learn API basics. It doesn't require any Auth. It accepts JSON input, and gives JSON output. Let's set it up on your app:
 
-1. Navigate to **ProductListPage → APIs**
-2. Click **+**
-3. Choose **Create New**
+1. Navigate to **ProductListPage → Datasources**
+2. Click **+ Create New**
+3.  Choose Create new API
 4. You'll see a Postman-like interface
 5. Rename the API to **UpdateQueryApi**
 6. Choose method as **POST**
 7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{Products_Table.selectedRow.id}}`
-8. Copy-paste the below in **Body** `{  "productName" : "{{productNameInput.text}}",  "mrp" : "{{mrpInput.text}}",  "category" : "{{categoryDropdown.selectedOptionValue}}"  }` _\*\*_
+8. Copy-paste the below in **Body** 
 9. Run the API
 10. Verify that the API runs successfully
+
+```text
+{
+	"productName" : "{{ProductNameInput.text}}",
+	"mrp" : "{{MrpInput.text}}",
+	"category" : "{{CategoryDropdown.selectedOptionValue}}"
+}
+```
 
 By using the mustache template in the URL, you're passing the ID of the product to be updated. To build the request body, you're writing JavaScript within mustaches to pass the new values.
 
@@ -149,7 +153,7 @@ The API to update a product is ready. In this section, you'll bind the **Confirm
 Let’s see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the [reactive programming paradigm]() of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table**  by calling `ProductsQuery.run()` .
+* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the reactive programming paradigm of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table**  by calling `ProductsQuery.run()` .
 * You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
 
 Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits.
@@ -164,7 +168,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 ```javascript
 {{
-  UpdateProductQuery.run(
+  UpdateQueryApi.run(
   () => { 
           ProductsQuery.run(); 
           closeModal('EditProductModal')
