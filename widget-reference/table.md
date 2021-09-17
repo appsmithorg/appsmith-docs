@@ -35,14 +35,14 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Default Search Text** | Sets the default search text of the table |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field |
-| **Enable inline row editing selection** | Allows inline editing of in each row of a table. The updated row data is populated in the selectedRow field |
+| **Enable inline row editing selection** | Allows inline editing in each row of a table. The updated data in a row is populated in the selectedRow field |
 
 | Action | Description |
 | :--- | :--- |
-| **onRowSelected** | Sets the action to be run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-| **onRowUpdate** | Sets the action to be run when the user edits a row in case of inline row editing. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-| **onPageChange** | Sets the action to be run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-| **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onRowSelected** | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onRowUpdate** | Sets the action to run when the user edits a row (inline row editing). See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onPageChange** | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
 ### Column settings
 
@@ -58,7 +58,7 @@ A great property introduced here is the `Computed value` and the `currentRow` in
 
 ![](../.gitbook/assets/current-row-show-hide-3.gif)
 
-In the ex. above we rename `email` column to `contact` and then use the computed value property inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
+In the example above, we rename `email` column to `contact` and then use the computed value property inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
 
 Depending on the column type you have some control over styling as well now.
 
@@ -68,7 +68,7 @@ Additionally compared to the functionality before the actions can now be set on 
 
 ![Set column actions](../.gitbook/assets/column-action-uttons-5.gif)
 
-Here introducing new feature "Inline row editing". This allows you to edit each row of table. Additionally, triggers an action when row data is updated. 
+Introducing the new feature "Inline row editing". This allows you to edit each row of table. Additionally, triggers an action when row data is updated. 
 
 ![Inline row editing](../.gitbook/assets/table-inline-editing.gif)
 
