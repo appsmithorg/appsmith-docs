@@ -1,6 +1,6 @@
 ---
 description: >-
-    Statbox widget is a simple widget to show and highlight important statistics related to the application. Widget comes pre built with default layout which can be changed as per application requirements.
+    Statbox widget shows and highlight important statistics related to the application. Widget comes pre built with default layout which can be changed as per application requirements.
 ---
 
 
