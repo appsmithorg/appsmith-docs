@@ -6,6 +6,8 @@ description: >-
 
 # DigitalOcean
 
+{% embed url="https://youtu.be/6fitHGX2G4E" caption="" %}
+
 You can deploy Appsmith on DigitalOcean using the Appsmith droplet from Digital Ocean’s 1-Click Apps Marketplace and host it on our custom domain.  
 
 
