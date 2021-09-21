@@ -8,12 +8,11 @@ description: >-
 
 {% embed url="https://youtu.be/6fitHGX2G4E" caption="" %}
 
-You can deploy Appsmith on DigitalOcean using the Appsmith droplet from Digital Ocean’s 1-Click Apps Marketplace and host it on our custom domain.  
-
+You can deploy Appsmith on DigitalOcean using the Appsmith droplet from Digital Ocean’s 1-Click Apps Marketplace and host it on our custom domain.
 
 Login to your DigitalOcean account to get started. If you are a new user, use this[ link](https://marketplace.digitalocean.com/apps/appsmith?refcode=469c9f1431e4) and get a $25 credit on DigitalOcean!
 
-### Setting up Appsmith on DigitalOcean
+## Setting up Appsmith on DigitalOcean
 
 Once logged in, follow the steps listed below:
 
@@ -46,11 +45,11 @@ To use Appsmith, copy the IPv4 address from the settings and open it in a new ta
 
 ![](../.gitbook/assets/signup_appsmoith.gif)
 
-#### Hosting on a Custom Domain
+### Hosting on a Custom Domain
 
 To host the Appsmith DigitalOcean droplet on a custom domain, you’ll need to select the Add a domain option from the dashboard.
 
 ![](../.gitbook/assets/custom_domain.jpeg)
 
-It redirects you to a new page. Add your domain name there. Once that’s done, it’ll give you records of the name servers. Copy the details of the NS \(name servers\).  Use the custom name server’s configuration on your domain provider. Sometimes, it might take up to 24-48 hours for this to go live!
+It redirects you to a new page. Add your domain name there. Once that’s done, it’ll give you records of the name servers. Copy the details of the NS \(name servers\). Use the custom name server’s configuration on your domain provider. Sometimes, it might take up to 24-48 hours for this to go live!
 

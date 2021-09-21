@@ -135,5 +135,5 @@
 * [Tabs](widget-reference/tabs.md)
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
-* [Video](widget-reference/video.md)
+* [Video](widget-reference/video-1.md)
 

@@ -40,7 +40,7 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | Action | Description |
 | :--- | :--- |
 | **onRowSelected** | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-| **onRowUpdate** | Sets the action to run when the user edits a row (inline row editing). See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onRowUpdate** | Sets the action to run when the user edits a row \(inline row editing\). See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onPageChange** | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
@@ -68,7 +68,7 @@ Additionally compared to the functionality before the actions can now be set on 
 
 ![Set column actions](../.gitbook/assets/column-action-uttons-5.gif)
 
-Introducing the new feature "Inline row editing". This allows you to edit each row of table. Additionally, triggers an action when row data is updated. 
+Introducing the new feature "Inline row editing". This allows you to edit each row of table. Additionally, triggers an action when row data is updated.
 
 ![Inline row editing](../.gitbook/assets/table-inline-editing.gif)
 
