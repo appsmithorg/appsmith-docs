@@ -1,8 +1,8 @@
 # Basic
 
-To share basic authentication details across multiple APIs, you can choose to use the `Basic` authentication mechanism within datasources. To do this, click on the `+` icon next to the API section and add the URL. Click on `Save as Datasource` next to the URL, and then under `Authentication` choose basic.
+To share basic authentication details across multiple APIs, you can use the `Basic` authentication mechanism within datasources. To do this, click on the `+` icon next to the datasources section and add an Authenticated API. Enter the Base URL of the API \(ex. **https://airtable.com**\) and select the authentication type as **Basic**. 
 
-Here, you may enter your username and password. The Appsmith server will generate the corresponding header for all request that use this datasource.
+The username and password can now be configured under the authentication section and will add the base64 version of the username:password to the header of all APIs added under this datasource. Save this datasource and add a new API
 
-![](../../../../.gitbook/assets/basic-authentication.gif)
+![](../../../../.gitbook/assets/auth-api.gif)
 

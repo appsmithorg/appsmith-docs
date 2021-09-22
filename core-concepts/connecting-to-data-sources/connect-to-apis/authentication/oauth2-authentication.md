@@ -1,19 +1,13 @@
 # OAuth 2.0
 
-### Setting up a Datasource
+To connect to an OAuth API, click on the `+` icon next to the datasources section and add an Authenticated API. Enter the Base URL of the API \(ex. **https://airtable.com**\) and select the authentication type as **OAuth 2.0**. 
 
-To set up an API with OAuth 2.0 authorization first you'll have to create a new data source. For this, click on the `+` icon next to the API section and add the URL. Click on `Save as DataSource` next to the URL as shown in the below image. 
+![](../../../../.gitbook/assets/auth-api.gif)
 
-![Click on Save As Datasource to Setup OAuth 2.0 Authorization](../../../../.gitbook/assets/image%20%2817%29.png)
-
-
-
-This option will save the URL as a new Data Source. Now, navigate to the Data source and set the required configuration:
+## Configuring an OAuth Datasource
 
 1. `Authentication Type`: `Oauth 2.0`
 2. `Grant Type`: [`Authorization Code`](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1) `/` [`Client Credentials`](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4)\`\`
-
-![](../../../../.gitbook/assets/oauth2-auth.gif)
 
 Following are the configuration details for the two different grant types:
 

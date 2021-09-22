@@ -25,7 +25,7 @@ If you would like to play around with the platform before connecting your data, 
 
 Every personal organization comes with a mock database for you to query. The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
 
-![](../../.gitbook/assets/mock-db.gif)
+![](../../.gitbook/assets/add-mock-db%20%283%29.gif)
 
 ### Mock API
 

@@ -6,7 +6,7 @@ You can write queries to fetch and update data from a database using the query e
 
 Go to the page that needs to run this query.
 
-1. Go to **DB** **Queries → +**.
+1. Go to **Datasources → +**.
 2. Choose the connected database and click +New Query
 3. You will be taken to the query editor to write the query.
 4. Note that the query is created with a default name. It’s recommended that you rename it for readability and access.

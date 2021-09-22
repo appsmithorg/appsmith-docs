@@ -4,8 +4,8 @@
 
 Go to the page that needs to run this API.
 
-1. Go to **APIs → +**.
-2. Create a blank query or select CURL if you have a CURL command
+1. Go to **Datasources → +**.
+2. Create a new API or select CURL if you have a CURL command or setup an authenticated API
 3. You will be taken to the API editor to write the API.
 4. Note that the API is created with a default name. It’s recommended that you rename it for readability and access.
 5. Configure your API as you would in any REST client such as Postman.
