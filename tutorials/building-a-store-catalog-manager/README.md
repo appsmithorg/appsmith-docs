@@ -1,6 +1,6 @@
 # Building a Store Catalog Manager
 
-This tutorial shows you how to build a feature-complete **Grocery Catalog** application for an online grocery store called Oakry using [Appsmith](https://app.appsmith.com/). The application we will be building is a multi-page dashboard used by Oakry’s Catalog Managers to:
+This tutorial shows you how to build a feature-complete **Grocery Catalog** application for an online grocery store  using [Appsmith](https://app.appsmith.com/). The application we will be building is a multi-page dashboard used by Oakry’s Catalog Managers to:
 
 * Browse the product catalogue
 * Add new products to the catalogue
@@ -52,7 +52,7 @@ Now that your environment – an "**app**" – is set up, you’re ready to star
 
 > A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
 
-The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Now, rename the page to **ProductListPage** by double-clicking on **Page1**.
+The first page you create will list all the products. Let's use the default page **Page1** that was created when you created this app. Now, rename the page to **ProductListPage** by double-clicking on **Page1**.
 
 In the next section, let's build a simple UI for our store manager.
 
