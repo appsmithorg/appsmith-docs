@@ -21,17 +21,17 @@ Each of these widgets stores its user input in an internal property which can be
 
 ```sql
 INSERT INTO users ("name", "createdAt", "gender")
-  VALUES ('{{nameInput.text}}', '{{moment().format("YYYY-MM-DD")}}', 
-  '{{genderDropdown.selectedOptionValue}}');
+  VALUES ({{nameInput.text}}, {{moment().format("YYYY-MM-DD")}}, 
+  {{genderDropdown.selectedOptionValue}});
 ```
 
 **Example Post Body**
 
 ```sql
 {
-  "name": "{{nameInput.text}}",
-  "createdDate": "{{moment().format('YYYY-MM-DD')}}",
-  "gender": "genderDropdown.selectedOptionValue"
+  "name": {{nameInput.text}},
+  "createdDate": {{moment().format('YYYY-MM-DD')}},
+  "gender": {{genderDropdown.selectedOptionValue}}
 }
 ```
 
@@ -39,11 +39,11 @@ In the examples above, **`text`** is the internal property of the **`nameInput`*
 
 ## Triggering Updates
 
-Since write operations are more expensive, the API/Query should be triggered once all the user data is captured. To do this we can make use of a [Button](../../widget-reference/button/) widget and configure the API/Query to run in the onClick of the button.
+Since write operations are more expensive, the API / Query should be triggered once all the user data is captured. To do this we can make use of a [Button](../../widget-reference/button/) widget and configure the API / Query to run in the onClick of the button.
 
 The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
 
 To configure the API / Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](../../.gitbook/assets/button-action.gif)
+![](../../.gitbook/assets/button-onclick.gif)
 

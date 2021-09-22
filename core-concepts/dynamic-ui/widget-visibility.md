@@ -18,11 +18,11 @@ In the example below the visibility of the table is a conditional value based on
 The Visible property expects the expression to evaluate to a boolean value
 {% endhint %}
 
-![](../../.gitbook/assets/radio-visible.gif)
+![](../../.gitbook/assets/control-visibility.gif)
 
-## Control Visibility with API/Query responses
+## Control Visibility with Query responses
 
-Similar to the above example, we can tie the visibility of a widget to the response of an API/Query.
+Similar to the above example, we can tie the visibility of a widget to the response of a Query.
 
 ```javascript
 {{ API1.data.value === "trueValue" }}
@@ -32,7 +32,7 @@ Similar to the above example, we can tie the visibility of a widget to the respo
 
 There are some cases that require form fields to dynamically change based on the user input. This can be achieved using a Tab widget inside the form and conditionally updating the selected tab value based on the inputs of the form
 
-![](../../.gitbook/assets/dynamic-form.gif)
+![](../../.gitbook/assets/dynamic-forms.gif)
 
 {% hint style="success" %}
 Hide the tabs in the tab widget to make it look like the views are changing in place

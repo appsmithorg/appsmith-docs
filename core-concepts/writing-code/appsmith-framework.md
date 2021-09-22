@@ -9,7 +9,7 @@ description: >-
 ## Objects
 
 * [appsmith](../../framework-reference/appsmith.md)
-* [Action](../../framework-reference/run.md)
+* [Query](../../framework-reference/run.md)
 
 ## Functions
 
@@ -19,5 +19,6 @@ description: >-
 * [Show Alert](../../framework-reference/show-alert.md)
 * [Navigate To](../../framework-reference/navigateto.md)
 * [Store Value](../../framework-reference/store-value.md)
+* [Reset Widget](../../framework-reference/resetwidget.md)
 * [Copy To Clipboard](../../framework-reference/copytoclipboard.md)
 

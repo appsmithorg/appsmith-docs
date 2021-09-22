@@ -1,6 +1,6 @@
 # Displaying Data \(Read\)
 
-This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have an API / DB Query that fetches data.
+This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have a Query that fetches data.
 
 ## Widgets
 
@@ -24,7 +24,7 @@ Appsmith has a collection of widgets that can be used to build the UI.
 * [Tabs](../../widget-reference/tabs.md)
 * [Table](../../widget-reference/table.md)
 * [Text](../../widget-reference/text.md)
-* [Video]()
+* [Video](../../widget-reference/video.md)
 
 Widgets can be dragged from the widget pane, positioned on the canvas, and resized to fit the data they need to display. They also come with properties that can be visually edited to set their data, change their styles, and trigger actions from them.
 
@@ -40,13 +40,13 @@ A widget must have a unique name that acts as an identifier on the page. It is u
 
 ## Displaying Data in a widget
 
-Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from an API/Query can be set in a widget property by referencing the name \(unique identifier\) of the API/Query.
+Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from a Query can be set in a widget property by referencing the name \(unique identifier\) of the Query.
 
 {% hint style="success" %}
-Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the API / Query changes
+Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
 {% endhint %}
 
-For example, you can bind the results of the API as below
+For example, you can bind the results of the Query as below
 
 ```javascript
 {{ fetch_users.data.users }}
@@ -60,11 +60,11 @@ Each widget property has a specific data type that it validates its value agains
 
 ## Transforming Data
 
-You can use Javascript inside to transform API / Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a dropdown. Directly binding the data will lead to an error as shown below
+You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a dropdown. Directly binding the data will lead to an error as shown below
 
 A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect this data to a dropdown, we need to transform the data in the dropdown options property.
 
-**Example API / Query Data**
+**Example Query Data**
 
 ```javascript
 [

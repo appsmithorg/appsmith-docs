@@ -9,14 +9,14 @@ The [Table Widget](../../widget-reference/table.md) helps us visualize rows of i
 Tables are generally required to display large data sets from Queries and APIs yet browsers cannot load all the data present in our database. To paginate this data, we can:
 
 1. Enable the server-side pagination property in the table
-2. Call the API/Query onPageChange
-3. Configure pagination in the API/Query
+2. Call the API / Query onPageChange
+3. Configure pagination in the API / Query
 
 ### Offset Based Pagination
 
 This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the Table and is used in both APIs and Queries.
 
-The pageNo and pageSize can be used in the Query/API by referencing them inside `{{ }}`
+The pageNo and pageSize can be used in the API / Query by referencing them inside `{{ }}`
 
 ```sql
 select * from users limit {{ Table1.pageSize }} offset {{ (Table1.pageNo - 1) * Table1.pageSize }}
@@ -30,7 +30,7 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute onPageChange.
 
-![](../../.gitbook/assets/api-pagination%20%281%29.gif)
+![](../../.gitbook/assets/pagination.gif)
 
 ## Server-Side Searching / Filtering
 
@@ -42,7 +42,7 @@ Tables come with client-side searching, and filtering out of the box. To perform
 2. Pass the value of the Table's searchText to the API / Query
 
 ```sql
-select * from users where name ilike '%{{Table1.searchText}}%'
+select * from users where name ilike {{"%" + Table1.searchText + "%"}}
 ```
 
 ```text
@@ -58,7 +58,7 @@ Server-side filtering requires us to use another widget like a dropdown which ca
 3. Pass the value of the Dropdown's selectedOptionValue to the API / Query
 
 ```sql
-select * from users where gender = '{{genderDropdown.selectedOptionValue}}'
+select * from users where gender = {{genderDropdown.selectedOptionValue}}
 ```
 
 ```text

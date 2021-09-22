@@ -42,7 +42,7 @@ Once the appsmith instance has been [whitelisted](../../how-to-guides/aws-whitel
 5. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you
 6. **Save** your **Datasources**
 
-![](../../.gitbook/assets/db-connect.gif)
+![](../../.gitbook/assets/create-ds.gif)
 
 {% hint style="success" %}
 Databases configured within one page of an app can be accessed by developers anywhere within the organization

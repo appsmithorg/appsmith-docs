@@ -67,8 +67,8 @@
   * [Appsmith Framework](core-concepts/writing-code/appsmith-framework.md)
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
-  * [Application Layout](core-concepts/dynamic-ui/application-layout.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
+* [Application Layout](core-concepts/application-layout.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Datasource Reference
@@ -93,7 +93,7 @@
 
 * [Cheat Sheet](framework-reference/cheat-sheet.md)
 * [appsmith](framework-reference/appsmith.md)
-* [Action](framework-reference/run.md)
+* [Query](framework-reference/run.md)
 * [Show Modal](framework-reference/show-modal.md)
 * [Close Modal](framework-reference/close-modal.md)
 * [Download](framework-reference/download.md)

@@ -36,6 +36,6 @@ An example of the moment.js `format` utility, in use in a query.
 
 ```sql
 insert into users (name, email, createdDate) values 
-('John', 'john@appsmith.com', '{{moment().format("YYYY-MM-DD")}}')
+('John', 'john@appsmith.com', {{moment().format("YYYY-MM-DD")}})
 ```
 
