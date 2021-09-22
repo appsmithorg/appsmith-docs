@@ -2,8 +2,6 @@
 
 The [Table Widget](../../widget-reference/table.md) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
-![](../../.gitbook/assets/bind-table.gif)
-
 ## Pagination
 
 Tables are generally required to display large data sets from Queries and APIs yet browsers cannot load all the data present in our database. To paginate this data, we can:
