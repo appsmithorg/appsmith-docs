@@ -4,7 +4,7 @@ The [Form widget](../../widget-reference/form.md) is a special type of container
 
 The form button is disabled if 
 
-* Any of the required fields inside the form are not filled
+* Any of the **required fields** inside the form are not filled
 * The form contains an input whose value does not match the regex configured
 
 ![](../../.gitbook/assets/form%20%282%29.gif)

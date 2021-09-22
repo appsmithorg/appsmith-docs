@@ -1,6 +1,6 @@
 # Capturing Data \(Write\)
 
-This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have an API / DB Query that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
+This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have a Query that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
 
 The following widgets can be used to capture user inputs in an application
 
@@ -15,7 +15,7 @@ The following widgets can be used to capture user inputs in an application
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)
 
-Each of these widgets stores its user input in an internal property which can be referenced inside an API/Query using javascript.
+Widgets store their user input in an internal property that can be referenced using javascript.
 
 ### Example SQL
 
@@ -39,11 +39,11 @@ In the examples above, **`text`** is the internal property of the **`nameInput`*
 
 ## Triggering Updates
 
-Since write operations are more expensive, the API / Query should be triggered once all the user data is captured. To do this we can make use of a [Button](../../widget-reference/button/) widget and configure the API / Query to run in the onClick of the button.
+Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](../../widget-reference/button/) widget and configure the Query to run in the onClick of the button.
 
 The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
 
-To configure the API / Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
+To configure the Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](../../.gitbook/assets/button-onclick.gif)
+![](../../.gitbook/assets/button-onclick%20%281%29.gif)
 
