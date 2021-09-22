@@ -2,8 +2,8 @@
 
 Rich applications require real data to build intuitive UI, perform data transformations & write business correct logic. Appsmith can talk to your data in the following ways
 
-* [Query your database directly](connecting-to-databases/)
-* [Hit a REST API](connect-to-apis/)
+* [Query your database directly](connecting-to-databases.md)
+* [Hit a REST API](querying-a-database/connect-to-apis.md)
 
 {% hint style="warning" %}
 Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
@@ -17,17 +17,22 @@ This is a guide on how to [whitelist appsmith on AWS.](../../how-to-guides/aws-w
 
 Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../setup/), and audit it to ensure none of your data leaves your VPC.
 
-## Mock Data
+## Sample Data
 
 If you would like to play around with the platform before connecting your data, we provide mock data sources that you can use.
 
-### Mock DB
+### Sample DB
 
-Every personal organization comes with a mock database for you to query. The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
+You can connect to 2 sample datasets
+
+1. Movies: This is a sample mongoDb database with a collection called movies
+2. Users: This is a sample PostgreSQL database with a table called users
+
+The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
 
 ![](../../.gitbook/assets/add-mock-db%20%283%29.gif)
 
-### Mock API
+### Sample API
 
 You can import the below CURL commands to execute these APIs
 

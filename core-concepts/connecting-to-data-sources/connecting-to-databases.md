@@ -10,20 +10,20 @@ description: >-
 
 * [Amazon S3 \(also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects\)](https://github.com/appsmithorg/appsmith-docs/tree/1c569dd23afe623df82082123f226f85881224e1/core-concepts/connecting-to-data-sources/connecting-to-databases/datasource-reference/querying-amazon-s3.md)
 * [ArangoDB](https://github.com/appsmithorg/appsmith-docs/tree/1c569dd23afe623df82082123f226f85881224e1/core-concepts/connecting-to-data-sources/connecting-to-databases/datasource-reference/querying-arango-db.md)
-* [DynamoDB](../../../datasource-reference/querying-dynamodb.md)
-* [ElasticSearch](../../../datasource-reference/querying-elasticsearch.md)
-* [Firestore](../../../datasource-reference/querying-firestore.md)
-* [MongoDB](../../../datasource-reference/querying-mongodb/)
-* [MS SQL](../../../datasource-reference/querying-mssql.md)
-* [MySQL](../../../datasource-reference/querying-mysql.md)
-* [PostgreSQL](../../../datasource-reference/querying-postgres.md)
-* [Redis](../../../datasource-reference/querying-redis.md)
-* [Redshift](../../../datasource-reference/querying-redshift.md)
-* [Snowflake](../../../datasource-reference/querying-snowflake-db.md)
+* [DynamoDB](../../datasource-reference/querying-dynamodb.md)
+* [ElasticSearch](../../datasource-reference/querying-elasticsearch.md)
+* [Firestore](../../datasource-reference/querying-firestore.md)
+* [MongoDB](../../datasource-reference/querying-mongodb/)
+* [MS SQL](../../datasource-reference/querying-mssql.md)
+* [MySQL](../../datasource-reference/querying-mysql.md)
+* [PostgreSQL](../../datasource-reference/querying-postgres.md)
+* [Redis](../../datasource-reference/querying-redis.md)
+* [Redshift](../../datasource-reference/querying-redshift.md)
+* [Snowflake](../../datasource-reference/querying-snowflake-db.md)
 
 ## Security
 
-Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../../setup/), and audit it to ensure none of your data leaves your VPC.
+Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../setup/), and audit it to ensure none of your data leaves your VPC.
 
 ## Connecting to a Database
 
@@ -33,18 +33,16 @@ Before connecting to a data source, you may need to whitelist the IP address of 
 **18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
 {% endhint %}
 
-Once the appsmith instance has been [whitelisted](../../../how-to-guides/aws-whitelist.md):
+Once the appsmith instance has been [whitelisted](../../how-to-guides/aws-whitelist.md):
 
-1. Go to **DB Queries** on that page.
-2. Click on **+** next to **DB Queries**
-3. You’ll see a list of existing Datasources that this page can connect to
-4. Click on **+** **New Datasource**
-5. Choose a Database from the [supported list](./#supported-databases)
-6. Provide the configuration details required to connect to your database. You may need to contact your database admin.
-7. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you
-8. **Save** your connection
+1. Click on **+** next to **Datasources**
+2. You’ll see a list of Datasources that Appsmith can connect to
+3. Choose a Database from the [supported list](connecting-to-databases.md#supported-databases)
+4. Provide the configuration details required to connect to your database. You may need to contact your database admin to [whitelist appsmith cloud](../../how-to-guides/aws-whitelist.md)
+5. Click on **Test** to verify that Appsmith is able to connect to your database using the details provided by you
+6. **Save** your **Datasources**
 
-![](../../../.gitbook/assets/db-connect.gif)
+![](../../.gitbook/assets/db-connect.gif)
 
 {% hint style="success" %}
 Databases configured within one page of an app can be accessed by developers anywhere within the organization

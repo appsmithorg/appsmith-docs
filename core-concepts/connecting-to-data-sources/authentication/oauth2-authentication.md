@@ -2,7 +2,7 @@
 
 To connect to an OAuth API, click on the `+` icon next to the datasources section and add an Authenticated API. Enter the Base URL of the API \(ex. **https://airtable.com**\) and select the authentication type as **OAuth 2.0**. 
 
-![](../../../../.gitbook/assets/auth-api.gif)
+![](../../../.gitbook/assets/auth-api.gif)
 
 ## Configuring an OAuth Datasource
 
@@ -47,13 +47,13 @@ The prompt is set to `consent`, this provides access to your Google Account. The
 Add the Appsmith callback URL to your list of allowed`Redirect URIs`in the authentication application. This URL of the form `https://<your-domain-origin-or-ip>/api/v1/datasources/authorize`To allow Appsmith cloud allow`https://app.appsmith.com/api/v1/datasources/authorize`
 {% endhint %}
 
-If you want to see this in action, check out our tutorial on "How to add OAuth2 Authorization for Integrating Google Sheets into Appsmith" [here](../../../../how-to-guides/oauth2-authorization-for-google-sheets.md). 
+If you want to see this in action, check out our tutorial on "How to add OAuth2 Authorization for Integrating Google Sheets into Appsmith" [here](../../../how-to-guides/oauth2-authorization-for-google-sheets.md). 
 
 ## Client Credentials
 
 The client credentials grant is typically used for server-to-server communication. This means that this type of data source will not require intervention from the user once configured. Appsmith safely encrypts your credentials and reuses these credentials for all the API requests made using this data source.
 
-![](../../../../.gitbook/assets/client-credentials.gif)
+![](../../../.gitbook/assets/client-credentials.gif)
 
 The fields relevant to this grant type are as follows:
 

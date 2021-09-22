@@ -4,5 +4,5 @@ To share basic authentication details across multiple APIs, you can use the `Bas
 
 The username and password can now be configured under the authentication section and will add the base64 version of the username:password to the header of all APIs added under this datasource. Save this datasource and add a new API
 
-![](../../../../.gitbook/assets/auth-api.gif)
+![](../../../.gitbook/assets/auth-api.gif)
 

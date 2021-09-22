@@ -1,7 +1,7 @@
 # Amazon / Generic S3
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases/). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
 {% endhint %}
 
 The S3 plugin can connect to an Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects and any other provider that supports S3 to execute a set of [actions](querying-amazon-s3.md#supported-actions) supported by Appsmith.
