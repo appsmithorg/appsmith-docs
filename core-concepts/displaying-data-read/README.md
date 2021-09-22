@@ -24,7 +24,7 @@ Appsmith has a collection of widgets that can be used to build the UI.
 * [Tabs](../../widget-reference/tabs.md)
 * [Table](../../widget-reference/table.md)
 * [Text](../../widget-reference/text.md)
-* [Video](../../widget-reference/video.md)
+* [Video]()
 
 Widgets can be dragged from the widget pane, positioned on the canvas, and resized to fit the data they need to display. They also come with properties that can be visually edited to set their data, change their styles, and trigger actions from them.
 
