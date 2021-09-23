@@ -14,6 +14,8 @@ Invite the user's email you wish to share the application with and select an app
 
 ![](../.gitbook/assets/invite-modal.png)
 
+Alternatively, you can copy and share the link of the app with other users. Note that if the the application is not public, this link will only work for the users who have been invited.
+
 ## Roles
 
 Appsmith implements **RBAC** by assigning a set of permissions to different user roles. These permissions determine the actions users can take on the platform. Below is the permission mapping for each role
@@ -47,4 +49,6 @@ Applications can be made public and shared with external users not part of your 
 {% hint style="success" %}
 Only Administrators can make applications public.
 {% endhint %}
+
+
 
