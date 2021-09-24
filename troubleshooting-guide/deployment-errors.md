@@ -2,14 +2,10 @@
 
 ## Ports Unavailable
 
-![](../.gitbook/assets/ports-open.png)
-
 If you encounter the error that ports 80 & 443 are not open, we recommend that you kill all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port.
 
-1. Comment out the line: [check\_ports\_occupied line](https://github.com/appsmithorg/appsmith/blob/0051c3f78fe8a22a48afd17d0785cda0dbe855eb/deploy/install.sh#L475) in the install.sh script and run it again. This will ensure that the script does not check for port availability of **80/443**.
-2. Once the docker-compose file is installed, the script will try to start the containers and fail because of port conflicts.
-3. In the file `docker-compose.yml` , change the ports for the Nginx container to a custom port
-4. Run `docker-compose up -d`
+1. In the file `docker-compose.yml` , change the ports for the Nginx container to a custom port
+2. Run `docker-compose up -d`
 
 {% hint style="success" %}
 To kill a previous version of appsmith running on these ports, run the following:
@@ -19,8 +15,6 @@ To kill a previous version of appsmith running on these ports, run the following
 {% endhint %}
 
 ## Containers Failed to Start
-
-![](../.gitbook/assets/container2.png)
 
 If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work in most cases. If it does not, please reach out to us on [discord](https://discord.com/invite/rBTTVJp)
 
