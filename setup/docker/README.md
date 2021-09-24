@@ -10,13 +10,13 @@ For Mac on M1, we've seen problems with Docker getting into a corrupt state and 
 
 To quickly get a taste of this, run the following command on your machine:
 
-```sh
+```bash
 docker run -d --name appsmith -p 80:80 -p 9001:9001 appsmith/appsmith-ce
 ```
 
 This will download the image and start Appsmith. Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
 
-```sh
+```bash
 docker logs -f appsmith
 ```
 
@@ -28,7 +28,7 @@ The Appsmith Docker image is built with all the components required for it to ru
 
 Ensure you have `docker` and `docker-compose` installed with at least the following versions:
 
-```sh
+```bash
 $ docker --version
 Docker version 20.10.7, build f0df350
 $ docker-compose --version
@@ -67,15 +67,15 @@ In this configuration, we run an Appsmith instance, and a watchtower instance to
 
 Now, `cd` to the folder where this file was saved to, and run:
 
-```sh
+```bash
 docker-compose up -d
 ```
 
 This command will download the Docker images, if not already locally available, and start the services. You can see the status with `docker-compose ps`, and view the logs with `docker-compose logs -f appsmith`.
 
-After the server is up, your Appsmith instance should be accessible at <http://localhost>.
+After the server is up, your Appsmith instance should be accessible at [http://localhost](http://localhost).
 
-To manage the various processes inside the Appsmith container, we can use the Supervisord web UI. This is available at port 9001, and should be accessible at <http://localhost:9001>. More on this discussed further below.
+To manage the various processes inside the Appsmith container, we can use the Supervisord web UI. This is available at port 9001, and should be accessible at [http://localhost:9001](http://localhost:9001). More on this discussed further below.
 
 ## Custom Domain
 
@@ -93,11 +93,11 @@ Appsmith comes with an `appsmithctl` command to help with the management and mai
 
 ### Export database
 
-The following command can be used to take a backup dump of Appsmith's database. This can be restored onto another instance using the import command (discussed below) to restore all data.
+The following command can be used to take a backup dump of Appsmith's database. This can be restored onto another instance using the import command \(discussed below\) to restore all data.
 
 Before running this, ensure you are in the directory where `docker-compose.yml` is located.
 
-```sh
+```bash
 docker-compose exec appsmith appsmithctl export_db
 ```
 
@@ -105,13 +105,13 @@ The output file will be stored in the container directory `/appsmith-stacks/data
 
 If your volume configuration is different or unavailable, you can use the following command to copy the archive file to your host disk:
 
-```sh
+```bash
 docker-compose cp appsmith:/appsmith-stacks/data/backup/appsmith-data.archive .
 ```
 
 Note that you may want to save the `docker.env` file in addition to this archive file, if you intend to be able to reproduce this environment elsewhere, or in case of a disaster. This file can be copied out of the container with the following command:
 
-```sh
+```bash
 docker-compose cp appsmith:/appsmith-stacks/configuration/docker.env .
 ```
 
@@ -119,29 +119,29 @@ docker-compose cp appsmith:/appsmith-stacks/configuration/docker.env .
 
 ### Import database
 
-The following command can restore backup archive, that was produced by the export command (discussed above).
+The following command can restore backup archive, that was produced by the export command \(discussed above\).
 
 First, copy the archive file into the container using the following command:
 
-```sh
+```bash
 docker-compose cp ./appsmith-data.archive appsmith:/appsmith-stacks/data/restore/
 ```
 
 Second, run the following command to import data from this file:
 
-```sh
+```bash
 docker-compose exec appsmith appsmithctl import_db
 ```
 
-Note that when you restore, you may also want to copy a `docker.env` from the original instance into this one. You can use the following command to do this (assuming you are in the installation folder and `docker.env` exists in the same folder):
+Note that when you restore, you may also want to copy a `docker.env` from the original instance into this one. You can use the following command to do this \(assuming you are in the installation folder and `docker.env` exists in the same folder\):
 
-```sh
+```bash
 docker-compose cp ./docker.env appsmith:/appsmith-stacks/configuration/
 ```
 
 This will need a restart of the Appsmith server, which can be done using the following command:
 
-```sh
+```bash
 docker-compose exec appsmith supervisorctl restart backend
 ```
 
@@ -149,23 +149,21 @@ docker-compose exec appsmith supervisorctl restart backend
 
 The container runs multiple processes, including the Appsmith server, Nginx, MongoDB etc., inside a single Docker container. These processes are started and managed by [supervisord](http://supervisord.org/).
 
-Supervisord comes with a web interface for managing the various processes, available at <http://localhost:9001>, as well as a command line interface towards the same goal.
+Supervisord comes with a web interface for managing the various processes, available at [http://localhost:9001](http://localhost:9001), as well as a command line interface towards the same goal.
 
 Here's a screenshot of the web interface listing all the processes managed:
 
-<p>
-  <img src="https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith_supervisord_ui.png" width="80%">
-</p>
+![](https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith_supervisord_ui.png)
 
-The command line interface can also be used to perform operations like restarting the Appsmith server, or restarting Nginx etc. For example, the following command (run in the installation folder) can be used to get a status of all running processes:
+The command line interface can also be used to perform operations like restarting the Appsmith server, or restarting Nginx etc. For example, the following command \(run in the installation folder\) can be used to get a status of all running processes:
 
-```sh
+```bash
 docker-compose exec appsmith supervisorctl status
 ```
 
 Or to view the last few lines of stderr output of one of the processes:
 
-```sh
+```bash
 docker-compose exec appsmith supervisorctl tail backend stderr
 ```
 
@@ -173,14 +171,7 @@ To learn more, please refer to [Supervisor's documentation](http://supervisord.o
 
 ## Troubleshooting
 
-If you encounter any errors during this process, please reach out to [**support@appsmith.com**](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) and reach out on the #support channel.
-Fetch the **install.sh** script on the system you want to deploy Appsmith. The following command will download the `install.sh` script:
-
-
-
-
-
-
+If you encounter any errors during this process, please reach out to [**support@appsmith.com**](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) and reach out on the \#support channel. Fetch the **install.sh** script on the system you want to deploy Appsmith. The following command will download the `install.sh` script:
 
 ## Common Issues
 
@@ -192,7 +183,7 @@ You can debug common errors faced during deployment at the link below
 
 Appsmith auto-updates using Watchtower so you do not need to manually update your appsmith installation. In the odd event that you do, you can run the following command in the installation directory.
 
-```sh
+```bash
 docker-compose pull && docker-compose up -d --force-recreate appsmith
 ```
 
@@ -200,14 +191,14 @@ docker-compose pull && docker-compose up -d --force-recreate appsmith
 
 To disable users from signing up on your self hosted instance, set the below env variables in your docker.env file
 
-```sh
+```bash
 APPSMITH_SIGNUP_DISABLED=true
 APPSMITH_ADMIN_EMAILS=YOUR_ADMIN_EMAIL
 ```
 
 Restart docker and Nginx using the following command
 
-```sh
+```bash
 sudo docker-compose exec supervisorctl restart editor backend
 ```
 
@@ -242,8 +233,9 @@ You may need root access to modify the `docker.env` file.
 
 After making any changes, remember to restart editor and backend for the changes to take affect.
 
-```sh
+```bash
 sudo docker-compose exec supervisorctl restart editor backend
 ```
 
 {% page-ref page="../../tutorials/" %}
+
