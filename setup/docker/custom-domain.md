@@ -8,5 +8,22 @@ You can easily make Appsmith available on a custom domain by updating your domai
 * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
 * [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
 
-You should also configure SSL so your applications are available over https.
+## HTTPS
 
+After configuring your custom domain as above, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you're on.
+
+In the folder where you created `docker-compose.yml` file, look for `stacks/configuration/docker.env` file. Open it in an editor like nano or vim, and change the value of the variable `APPSMITH_CUSTOM_DOMAIN` to the custom domain you are using.
+
+For example, if you are using `appsmith.mydomain.com` as your custom domain for Appsmith, then set this variable like this:
+
+```bash
+APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
+```
+
+Save this file and restart the appsmith container:
+
+```bash
+docker-compose restart appsmith
+```
+
+Now your Appsmith should be available at https://appsmith.mydomain.com, with automatic certificate provisioning and renewals.
