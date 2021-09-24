@@ -7,7 +7,7 @@ description: >-
 
 # Input
 
-![](../.gitbook/assets/input-widget.gif)
+{% embed url="https://youtu.be/4BUbbZsxrus" caption="" %}
 
 ## Searching data
 
@@ -40,7 +40,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below
 
-[Sending widget data in post body](../core-concepts/apis/taking-inputs-from-widgets.md#passing-inputs-to-the-post-body)
+[Sending widget data in post body](input.md)
 
 ## Properties
 
@@ -62,5 +62,5 @@ Read more about submitting Input data to an API below
 
 | Action | Description |
 | :--- | :--- |
-| **onTextChanged** | Sets the action to be run when user updates the text in the input. |
+| **onTextChanged** | Sets the action to be run when the user inputs text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 

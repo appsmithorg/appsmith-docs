@@ -7,67 +7,36 @@ description: >-
 
 # Filepicker
 
+{% embed url="https://youtu.be/Sl0zN2CSJaY" caption="" %}
+
 ## Upload File
 
-You can upload files by creating a post API and referring to the base64 or binary version of the file in the post body.
+You can upload files by creating a post API and referring to the base64 or binary version of the file in the post body. The data format is determined by the Data Type property in the property pane
 
 ```text
-{{ Filepicker1.files[0].base64 }}
-
-{{ Filepicker1.files[0].raw }}
+{{ Filepicker1.files[0].data }}
 ```
+
+See our guides on
+
+* [Uploading a File to S3](../how-to-guides/how-to-upload-to-s3.md)
 
 ## Properties
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Internal Property</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><b>files</b>
-      </td>
-      <td style="text-align:left">
-        <p>This is the array of files selected in the file picker. The base64 and
-          binary versions of each file are present in each array object and can be
-          accessed as</p>
-        <p><b>{{ Filepicker1.files[0].base64 }}</b>
-        </p>
-        <p><b>{{ Filepicker1.files[0].raw }}</b>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>uploadedFileUrls</b>
-      </td>
-      <td style="text-align:left">This is the data that was bound in the Uploaded File URLs property for
-        access to be uploaded in an API.</td>
-    </tr>
-  </tbody>
-</table>
+| Internal Property | Description |
+| :--- | :--- |
+| **files** | This is the array of files selected in the file picker. The data of each file are present in each array object and can be accessed using |
 
 | Property | Description |
 | :--- | :--- |
 | **Label** | Sets the label of the Filepicker. |
 | **Maximum No. of files** | Enables you to set the maximum number of files allowed to be uploaded by a user. |
 | **Maximum File Size** | Enables you to set the maximum allowed size of each file that a user can upload. |
-| **Allowed File Types** | Enables you to set constraints on the type of file a user can upload - images, videos, audios, text files, etc. |
+| **Data Type** | This determines the data format of the files uploaded. This can be referenced using |
+| **Allowed File Types** | Enables you to set constraints on the type of file a user can upload. Accepts an _array_ of wildcards`image/*`, exact mime types `image/jpeg`, or file extensions `.jpg`:`['image/*', '.jpg', '.jpeg', '.png', '.gif']` |
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
-| **Uploaded File URLs** | This property specifies the URLs of the uploaded files that the file upload API returned. You can bind it to the API using |
-
 | Action | Description |
 | :--- | :--- |
-| **onFilesSelected** | Sets the action to be run when a user selects the files. You can immediately call an API to upload the base64 of the file to your cloud storage |
-
-![](../.gitbook/assets/filepicker.gif)
-
-## Upload to Amazon S3
-
-Files from Appsmith can be directly uploaded to Amazon S3 by selecting 'Call An API' on OnFilesSelected option. As Amazon S3 supports [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html), a Put API can be configured to upload the image directly to S3 bucket, in which the bucket has to be configured to allow all public access. This API rewrites an existing file or creates a new file if one does not exist in the bucket.
-
-![](../.gitbook/assets/UploadtoAWS.gif)
+| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). You can immediately call an API or the S3 plugin to upload the base64 of the file to your cloud storage |
 

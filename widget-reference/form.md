@@ -7,16 +7,18 @@ description: >-
 
 # Form
 
+{% embed url="https://www.youtube.com/watch?v=HtoWzzje-Vs&feature=youtu.be" caption="" %}
+
 ## Form Widgets
 
-Form widgets are a class of widgets that are typically used to capture user information. These widgets may be used outside a form such as form filtering data but their primary use is to capture user input. These are the form widgets Appsmith supports
+Form widgets are a class of widgets that are typically used to capture user information. These widgets may be used outside a form such as for filtering data but their primary use is to capture user input. These are the form widgets Appsmith supports
 
-* \*\*\*\*[**Input**](input.md) _\*\*_
-* \*\*\*\*[**Dropdown**](dropdown.md)\*\*\*\*
-* \*\*\*\*[**Datepicker**](datepicker.md)\*\*\*\*
-* \*\*\*\*[**Filepicker**](filepicker.md)\*\*\*\*
-* \*\*\*\*[**RadioGroup**](radio.md)\*\*\*\*
-* \*\*\*\*[**Checkbox**](checkbox.md)\*\*\*\*
+* [**Input**](input.md)
+* [**Dropdown**](dropdown.md)
+* [**Datepicker**](datepicker.md)
+* [**Filepicker**](filepicker.md)
+* [**RadioGroup**](radio.md)
+* [**Checkbox**](checkbox.md)
 
 ## Sending Form data to an API
 
@@ -30,7 +32,7 @@ User inputs in a form can be sent to an API by binding the individual widgets in
 
 Read more about submitting form data to an API below
 
-[Sending widget data in post body](../core-concepts/apis/taking-inputs-from-widgets.md#passing-inputs-to-the-post-body)
+[Sending widget data in post body](../core-concepts/capturing-data-write/capture-form-data.md)
 
 ## Form Button
 
@@ -49,7 +51,5 @@ The form button is provided by default to every form. It is used for form submis
 
 | Action | Description |
 | :--- | :--- |
-| **onClick** | Sets the action to be run when user clicks a button. Default supported actions are: Call API, Navigate to Page, Navigate to URL or Show Alert. |
-
-![](../.gitbook/assets/Form.gif)
+| **onClick** | Sets the action to be run when the user clicks the form button. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
