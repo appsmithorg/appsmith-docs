@@ -26,4 +26,5 @@ Save this file and restart the appsmith container:
 docker-compose restart appsmith
 ```
 
-Now your Appsmith should be available at https://appsmith.mydomain.com, with automatic certificate provisioning and renewals.
+Now your Appsmith should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com), with automatic certificate provisioning and renewals.
+
