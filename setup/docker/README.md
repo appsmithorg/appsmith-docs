@@ -73,6 +73,26 @@ This command will download the Docker images, if not already locally available, 
 
 Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
 
+## Custom domain and HTTPS
+
+If you have a custom domain, already pointing to the server where you are running Appsmith, it's super easy to get HTTPS. Just tell Appsmith about the custom domain and you're on.
+
+In the folder where you created `docker-compose.yml` file, look for `stacks/configuration/docker.env` file. Open it in an editor like nano or vim, and change the value of the variable `APPSMITH_CUSTOM_DOMAIN` to the custom domain you are using.
+
+For example, if you are using `appsmith.mydomain.com` as your custom domain for Appsmith, then set this variable like this:
+
+```bash
+APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
+```
+
+Save this file and restart the appsmith container:
+
+```bash
+docker-compose restart appsmith
+```
+
+Now your Appsmith should be available at https://appsmith.mydomain.com, with automatic certificate provisioning and renewals.
+
 ## Troubleshooting
 
 If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
