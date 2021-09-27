@@ -10,7 +10,7 @@ APPSMITH_ADMIN_EMAILS=YOUR_ADMIN_EMAIL
 Restart docker and Nginx using the following command
 
 ```bash
-sudo docker-compose exec supervisorctl restart editor backend
+sudo docker-compose exec appsmith supervisorctl restart editor backend
 ```
 
 This will disable allowing users other than those specified in the `APPSMITH_ADMIN_EMAILS` field from signing up on your appsmith instance. Other users can only signup once they have been invited by an existing user.
