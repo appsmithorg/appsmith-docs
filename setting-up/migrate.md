@@ -69,7 +69,7 @@ cat $OLD_APPLICATION_DIR/docker.env $OLD_APPLICATION_DIR/encryption.env >> $NEW_
 * We also introduce a new application stack in Appsmith system - `Realtime Service (RTS)`. Please run the below command to configure the backend URL for `RTS`
 ```
 # Add backend URL configuration
-echo APPSMITH_API_BASE_URL=http://localhost:8080 >> $NEW_APPLICATION_DIR/configuration/docker.env
+echo APPSMITH_API_BASE_URL=http://localhost:8080 >> $NEW_APPLICATION_DIR/stacks/configuration/docker.env
 ```
 
 *Note: In our new image, we have used Redis and MongoDB service inside the container as default services. Therefore, if you do not use external services for Redis and MongoDB, you will need to change 2 environment variables in the `docker.env` file (Replace `<MONGO_USERNAME>` and `<MONGO_PASSWORD>` with existing `MONGO_INITDB_ROOT_USERNAME`  and `MONGO_INITDB_ROOT_PASSWORD`  in the `docker.env` file)*
