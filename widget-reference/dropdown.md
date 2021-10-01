@@ -6,8 +6,11 @@ description: >-
 
 # Dropdown
 
-{% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
+## [Appsmith Dropdown](https://docs.appsmith.com/widget-reference/dropdown)
 
+## [Youtube](https://youtu.be/jnCU9MS2uoY)
+
+<iframe width="900" height="506" src="https://www.youtube.com/embed/jnCU9MS2uoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ## Displaying Data
 
 A Dropdown's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \(label, value\). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map) function.
