@@ -45,6 +45,8 @@ We’ve also put together a detailed reference system. In case you’re looking 
 
 We are working hard to keep our documentation up to date and expansive. However, we might not be able to cover everything. If you think we need to include something here, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com), and we’ll get working on it!   
 
+Join our Beta users program and give us feedback <a href = "https://www.notion.so/Betasmith-Join-the-Appsmith-Beta-Community-5c288dfd57bd4c4781c3bf02ddf9aa8a">Betasmith Community</a>. Be a part of the community that will help shape the future of Appsmith.
+
 
 ## Help Center
 
