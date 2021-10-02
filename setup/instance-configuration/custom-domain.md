@@ -15,7 +15,7 @@ After configuring your custom domain as above, getting HTTPS support is super ea
 Configure the `APPSMITH_CUSTOM_DOMAIN field` in your [instance configuration](./) with your custom domain
 
 ```bash
-// Docker Example 
+# Example Docker Configuration
 APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
 ```
 

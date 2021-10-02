@@ -31,7 +31,8 @@ To enable the maps widget, login to your [google cloud console](https://console.
 
 **5. Update the** [**instance configuration**](./) **with the below fields**
 
-```text
+```bash
+# Example Docker Configuration
 # ******** Google Maps ***********
 APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 # ********************************

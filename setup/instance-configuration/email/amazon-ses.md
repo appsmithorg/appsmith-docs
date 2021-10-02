@@ -26,13 +26,14 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 ![](../../../.gitbook/assets/aws-verify-email.png)
 
-**6. Update the values in your** [**instance configuration**](../)\*\*\*\*
+**6. Update the values in your** [**Instance Configuration**](../)\*\*\*\*
 
 {% hint style="danger" %}
 Do not use **port** **465** listed on the SES page because it is TLS enabled by default
 {% endhint %}
 
-```text
+```bash
+# Example docker configuration
 # ***** Email **********
 APPSMITH_MAIL_ENABLED=true
 APPSMITH_MAIL_FROM=YOUR_VERIFIED_EMAIL_ID
@@ -47,7 +48,7 @@ APPSMITH_MAIL_SMTP_AUTH=true
 # ******************************
 ```
 
-**7.** [**Restart the Appsmith instance**](../)
+**7.** [**Restart the Appsmith Instance**](../)
 
 {% hint style="success" %}
 Your email service should now be configured correctly. Read more about setting up email with SES

@@ -32,10 +32,11 @@ To enable Github Sign in, login to your [Github Account](https://github.com)
 
 **5. Update the** [**instance configuration**](./) **with the below fields**
 
-```text
+```bash
+# Example Docker Configuration 
 # ********* Github OAUth **********
-APPSMITH_OAUTH2_GITHUB_CLIENT_ID
-APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET                                                                                                                          18,61         28%
+APPSMITH_OAUTH2_GITHUB_CLIENT_ID=YOUR_GITHUB_CLIENT_ID
+APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET                                                                                                                          18,61         28%
 # ******************************
 ```
 
