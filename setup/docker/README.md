@@ -1,15 +1,13 @@
 # Docker
 
-Appsmith can be deployed locally or on your private instance using Docker.Just ensure you have `docker` and `docker-compose` installed on your system and you're ready to go!
-
-{% hint style="warning" %}
-Machines like M1 laptops that require a docker ARM image are not currently supported
-{% endhint %}
+Appsmith can be deployed locally or on your private instance using Docker
 
 ## Prerequisites
 
 * [Docker](https://docs.docker.com/get-docker/) \(version 20.10.7 or later\)
 * [Docker-Compose](https://docs.docker.com/compose/install/) \(version 1.29.2 or later\)
+
+Create a folder called `appsmith`, where you would like your Appsmith installation, and data to live in
 
 ## Quick Start \(without docker-compose\)
 
@@ -31,7 +29,7 @@ The Appsmith Docker image is built with all the components required for it to ru
 
 ### Docker compose configuration
 
-Create a folder called `appsmith`, where you would like your Appsmith installation, and data to live in. Download the below `docker-compose.yml` file into the folder
+Download the below `docker-compose.yml` file into the appsmith installation folder
 
 {% file src="../../.gitbook/assets/docker-compose.yml" caption="docker-compose.yml" %}
 
@@ -63,7 +61,7 @@ services:
 
 This configuration runs an Appsmith instance, and a Watchtower instance to keep Appsmith automatically up-to-date.
 
-Now, `cd` to the folder where this file was saved to, and run:
+Now, `cd` to the appsmith installation folder with this docker-compose.yml file and run:
 
 ```bash
 docker-compose up -d
@@ -71,7 +69,9 @@ docker-compose up -d
 
 This command will download the Docker images, if not already locally available, and start the services. You can see the status with `docker-compose ps`, and view the logs with `docker-compose logs -f appsmith`.
 
+{% hint style="success" %}
 Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
+{% endhint %}
 
 ## Troubleshooting
 
@@ -87,9 +87,9 @@ If you encounter any errors during this process, check out our guide on [debuggi
 
 Environment variables can be used to configure various aspects of your Appsmith instance. To edit these variables, please edit the `stacks/configuration/docker.env` file, and after saving the file, Appsmith needs to be restarted.
 
-If you are running with `docker run` as described in [quick-start](#quick-start-without-docker-compose), then you need `docker restart appsmith` to restart your container.
+If you are running with `docker run` as described in [quick-start](./#quick-start-without-docker-compose), then you need `docker restart appsmith` to restart your container.
 
-If you are running with `docker-compose up -d` as described in [long-start](#long-start-with-docker-compose), then you need `docker-compose up -d` again to restart after making any changes.
+If you are running with `docker-compose up -d` as described in [long-start](./#long-start-with-docker-compose), then you need `docker-compose up -d` again to restart after making any changes.
 
 ## Enabling Services for Self Hosting
 
