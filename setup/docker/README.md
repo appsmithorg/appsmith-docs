@@ -85,13 +85,11 @@ If you encounter any errors during this process, check out our guide on [debuggi
 
 ## Editing environment variables
 
-Environment variables can be used to configure various aspects of your Appsmith instance. To edit these variables, please edit the `stacks/configuration/docker.env` file, and after saving the file, run the following command to have the changes take effect.
+Environment variables can be used to configure various aspects of your Appsmith instance. To edit these variables, please edit the `stacks/configuration/docker.env` file, and after saving the file, Appsmith needs to be restarted.
 
-```bash
-docker-compose up -d
-```
+If you are running with `docker run` as described in [quick-start](#quick-start-without-docker-compose), then you need `docker restart appsmith` to restart your container.
 
-This will restart Appsmith with the updated environment variable configuration.
+If you are running with `docker-compose up -d` as described in [long-start](#long-start-with-docker-compose), then you need `docker-compose up -d` again to restart after making any changes.
 
 ## Enabling Services for Self Hosting
 
