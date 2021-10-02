@@ -60,7 +60,7 @@ If you want to get your app to use the whole page in your browser, you can still
 
 ## Remove Appsmith Top Bar
 
-Additionally, you can also see the Appsmith toolbar on the top, you can remove this by adding **`?embed=true`** to the share URL. Update the code to the following:
+Additionally, you can also see the Appsmith toolbar on the top, and you can remove this by adding **`?embed=true`** to the share URL. Update the code to the following:
 
 ```markup
 <!DOCTYPE html>
