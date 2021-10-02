@@ -4,7 +4,7 @@ description: Control the users who can sign up on your appsmith instance.
 
 # Restricting Sign-up
 
-This document describes ways to restrict users from signing up on your self-hosted Appsmith instance. This configuration is done using environment variables in your installation folder. If you've setup Appsmith use the `install.sh` script, these environment variables can be set in the `docker.env` file located in your installation directory.
+This document describes ways to restrict users from signing up on your self-hosted Appsmith instance. This configuration is done by editing the [**docker.env file**](../setup/docker/#configuring-self-hosted-instances) your installation folder.
 
 ## Disable Sign-up
 
