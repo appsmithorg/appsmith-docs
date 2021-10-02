@@ -6,7 +6,7 @@ description: >-
 
 # Instance Configuration
 
-## Docker Installations
+## Configuring Docker Installations
 
 To configure a docker installation, simply open the folder of your installation and edit the **`stacks/configuration/docker.env`** file with the environment variables for the service.
 
@@ -27,7 +27,7 @@ docker restart appsmith
 docker-compose restart appsmith
 ```
 
-## Kubernetes Installations
+## Configuring Kubernetes Installations
 
 To configure a k8s installation, simply open the folder of your installation and edit the **`config-template/appsmith-configmap.yaml`** file.
 

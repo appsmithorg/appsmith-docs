@@ -32,11 +32,12 @@ To enable Google Sign in, login to your [google cloud console](https://console.c
 
 **5. Update the**[ **instance configuration**](./) **with the following fields** 
 
-```text
+```bash
+# Example docker configuration
 # ******** Google OAuth ********
-APPSMITH_OAUTH2_GOOGLE_CLIENT_ID
-APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET
-APPSMITH_OAUTH2_ALLOWED_DOMAINS
+APPSMITH_OAUTH2_GOOGLE_CLIENT_ID=YOUR_CLIENT_ID
+APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET=YOUR_CLIENT_SECRET
+APPSMITH_OAUTH2_ALLOWED_DOMAINS=exampledomain.com
 # ******************************
 ```
 
