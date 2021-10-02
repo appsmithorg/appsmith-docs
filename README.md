@@ -35,7 +35,7 @@ Our documentation takes you on a journey that starts from the basics of Appsmith
 
 * [The Tutorial](tutorials/) - With our step-by-step and detailed explanations, you can create a sample app using our mock data. ****
 * [Core Concepts](core-concepts/connecting-to-data-sources/) - Find everything you need to know about building an app on Appsmith by getting your fundamentals right! See all about connecting, displaying, reading, and binding data here.
-* [How to Guides](how-to-guides/) -  ****Here, we help you DIY! For those already familiar with the basics of Appsmith, you can find short guides to help you DIY. 
+* [How to Guides](how-to-guides/) -  **Here, we help you DIY!** For those already familiar with the basics of Appsmith, you can find short guides to help you DIY. 
 
 We’ve also put together a detailed reference system. In case you’re looking for information about widgets, data sources, or Framework, refer to the following docs:
 
