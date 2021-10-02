@@ -83,6 +83,16 @@ If you encounter any errors during this process, check out our guide on [debuggi
 * [Managing the Appsmith instance](instance-management.md)
 * [Tutorials](../../tutorials/)
 
+## Editing environment variables
+
+Environment variables can be used to configure various aspects of your Appsmith instance. To edit these variables, please edit the `stacks/configuration/docker.env` file, and after saving the file, run the following command to have the changes take effect.
+
+```bash
+docker-compose up -d
+```
+
+This will restart Appsmith with the updated environment variable configuration.
+
 ## Enabling Services for Self Hosting
 
 Appsmith ships with third-party services that improve the app building experience. All third-party services are entirely optional.
