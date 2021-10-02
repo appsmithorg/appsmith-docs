@@ -1,17 +1,13 @@
 # Disable User Signup
 
-To disable users from signing up on your self hosted instance, set the below env variables in your docker.env file
+To disable users from signing up on your self hosted instance, set the below env variables in your [**docker.env file**](./#configuring-self-hosted-instances)\*\*\*\*
 
 ```bash
 APPSMITH_SIGNUP_DISABLED=true
 APPSMITH_ADMIN_EMAILS=YOUR_ADMIN_EMAIL
 ```
 
-Restart docker and Nginx using the following command
-
-```bash
-sudo docker-compose exec appsmith supervisorctl restart editor backend
-```
+[**Restart the Appsmith instance**](./#configuring-self-hosted-instances)\*\*\*\*
 
 This will disable allowing users other than those specified in the `APPSMITH_ADMIN_EMAILS` field from signing up on your appsmith instance. Other users can only signup once they have been invited by an existing user.
 

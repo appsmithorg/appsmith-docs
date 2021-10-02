@@ -1,6 +1,8 @@
-# Docker
+---
+description: Appsmith can be deployed locally or on your private instance using Docker
+---
 
-Appsmith can be deployed locally or on your private instance using Docker
+# Docker
 
 ## Prerequisites
 
@@ -11,7 +13,7 @@ Create a folder called `appsmith`, where you would like your Appsmith installati
 
 ## Quick Start \(without docker-compose\)
 
-To quickly get a taste of this, run the following command on your machine:
+To quickly get Appsmith up and running, run the following command on your machine:
 
 ```bash
 docker run -d --name appsmith -p 80:80 -p 9001:9001 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
@@ -79,43 +81,33 @@ If you encounter any errors during this process, check out our guide on [debuggi
 
 ### Further Reading
 
-* [Enabling Services for Self Hosting](./#enabling-services-for-self-hosting)
+* [Configuring Self Hosted Instances](./#configuring-self-hosted-instances)
 * [Managing the Appsmith instance](instance-management.md)
 * [Tutorials](../../tutorials/)
 
-## Editing environment variables
+## Configuring Self Hosted Instances
 
-Environment variables can be used to configure various aspects of your Appsmith instance. To edit these variables, please edit the `stacks/configuration/docker.env` file, and after saving the file, Appsmith needs to be restarted.
+Appsmith ships with third-party services & configurations that improve the app building experience. All services & configurations are entirely optional.
 
-If you are running with `docker run` as described in [quick-start](./#quick-start-without-docker-compose), then you need `docker restart appsmith` to restart your container.
+To configure a service, simply open the folder of your Appsmith installation and edit the `stacks/configuration/docker.env`
 
-If you are running with `docker-compose up -d` as described in [long-start](./#long-start-with-docker-compose), then you need `docker-compose up -d` again to restart after making any changes.
-
-## Enabling Services for Self Hosting
-
-Appsmith ships with third-party services that improve the app building experience. All third-party services are entirely optional.
-
-{% hint style="success" %}
-All third party services are enabled by default in our [cloud-hosted](https://app.appsmith.com) version.
-{% endhint %}
-
-Our self-hosted version allows you to configure your own keys to enable third party services such as Google OAuth. To enable a service, simply open the folder of your Appsmith installation and edit the `docker.env` file.
-
-Each service requires a specific key or configuration to be enabled. Configure the service of your choice using the following guides
+Configure the service of your choice using the following guides
 
 * [Email](email/)
 * [Google OAuth](google-login.md)
 * [GitHub OAuth](github-login.md)
-* [Google Maps](google-maps.md)
 * [Disable Signups](disable-user-signup.md)
+* [Google Maps](google-maps.md)
 * [Custom Domain](custom-domain.md)
 
-You may need root access to modify the `docker.env` file.
-
-After making any changes, remember to restart editor and backend for the changes to take affect.
+After making any changes, remember to restart the docker containers for the changes to take affect.
 
 ```bash
-sudo docker-compose exec supervisorctl restart editor backend
+// To restart Appsmith using docker
+docker restart appsmith
+
+// To restart Appsmith using docker compose
+docker-compose restart appsmith
 ```
 
 {% page-ref page="../../tutorials/" %}

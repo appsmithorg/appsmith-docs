@@ -14,7 +14,7 @@ Email is used to communicate with users on your installation of Appsmith. Emails
 
 ## Enabling Email
 
-1. To enable email, open the docker.env file of your Appsmith installation and uncomment the following block
+Configure the following information in the [docker.env file ](../#configuring-self-hosted-instances)in your installation folder
 
 ```text
 # ***** Email **********
@@ -32,9 +32,13 @@ APPSMITH_MAIL_ENABLED=false
 ```
 
 1. Update the **APPSMITH\_MAIL\_ENABLED** field to true
-2. Fetch the remaining configuration fields from your email service. The following is a guide to fetch configurations from a few common email service providers
-3. [Sendgrid](sendgrid.md)
-4. [Amazon SES](amazon-ses.md)
+2. Fetch the remaining configuration fields from your email service. 
+3. [Restart the Appsmith instance](../#configuring-self-hosted-instances)
+
+The following is a guide to fetch configurations from a few common email service providers
+
+1. [Sendgrid](sendgrid.md)
+2. [Amazon SES](amazon-ses.md)
 
 {% hint style="info" %}
 Having trouble integrating? Reach out to us on [discord](https://discord.com/invite/rBTTVJp) or write to us at support@appsmith.com
