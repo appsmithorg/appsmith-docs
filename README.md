@@ -2,7 +2,8 @@
 
 Appsmith is a low code, open-source framework to build internal applications.
 
-With our JavaScript-based visual development platform, build CRUD apps, Dashboards, Admin Panels, and many more 10x faster.   
+With our JavaScript-based visual development platform, build CRUD apps, Dashboards, Admin Panels, and many more 10x faster.
+
 You can use our pre-built UI widgets, connect them to your APIs and databases to build dynamic apps and complex workflows. And the best part? Deploy these apps on the technology you prefer! \(self-host for free!\).
 
 ## How does Appsmith work?
@@ -23,8 +24,7 @@ Watch this 5-minute video on how to use Appsmith.
 
 ## Creating an Account
 
-Try Appsmith by creating an account in our cloud environment \(Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide)\). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:  
-
+Try Appsmith by creating an account in our cloud environment \(Read about our [data security](faq.md#what-type-of-data-security-does-appsmith-provide)\). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:  
 
 * [Create an account on Appsmith Cloud](https://app.appsmith.com)  \(Recommended as it comes with a mock database\);
 * [Deploy Appsmith on my machine](setup/) 
@@ -49,10 +49,10 @@ We are working hard to keep our documentation up to date and expansive. However,
 ## Help Center
 
 * Have a look at our [FAQs](https://docs.appsmith.com/faq), and you might find your questions answered there;
-* Looking for specific information? Try the[ Widget Reference](https://docs.appsmith.com/widget-reference), [Framework Reference](https://docs.appsmith.com/function-reference) or [Datasource Reference](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#supported-databases)  ;
-* See our guides and tutorials on[ YouTube](https://www.youtube.com/appsmith);
-* Report bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
+* Looking for specific information? Try the [Widget Reference](https://docs.appsmith.com/widget-reference), [Framework Reference](https://docs.appsmith.com/function-reference) or [Datasource Reference](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#supported-databases)  ;
+* See our guides and tutorials on [YouTube](https://www.youtube.com/appsmith);
+* Report bugs with Appsmith through [GitHub issues](https://github.com/appsmithorg/appsmith/issues).
 
-Still, having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions on our [community forum](https://community.appsmith.com/).  
+Still, having trouble? We want to help! Reach out to us on [Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions on our [community forum](https://community.appsmith.com/).  
 
 
