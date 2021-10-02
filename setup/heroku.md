@@ -23,7 +23,7 @@ description: Deploy appsmith on Heroku with our one click deploy option
 1. **App Name**: Optionally select a name for your application \(this will be used in the application URL\)
 2. **Runtime Selection**: Select which region your app should run in \(the United States or Europe\)
 
-The other optional fields can be used to [configure various services](instance-configuration/) in the appsmith instance.
+The other optional fields can be used to [configure various services](instance-configuration/#available-configurations) in the appsmith instance.
 
 {% hint style="success" %}
 After Heroku finishes setting up the app, click “View” and your Appsmith should be up and running. You will be taken to the account creation page, where you can enter credentials to create an account and get started.
