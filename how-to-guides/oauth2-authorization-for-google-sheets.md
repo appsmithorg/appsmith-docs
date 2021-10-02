@@ -14,7 +14,7 @@ Google Cloud Platform allows us to authorise third-party applications to access 
 2. You’ll then be redirected to a console, where you’ll have to create a New Project.
 3. Now, you’ll have to generate OAuth 2.0 Client IDs; you can do this by navigating to the APIs and Services - Credentials section. 
 4. Next, create a new app under the OAuth 2.0 Client ID section and give it a name.
-5. You’ll now find two keys, Client ID and Client Secret; you’ll need these authorize appsmith to access your drive.
+5. You’ll now find two keys, Client ID and Client Secret; you’ll need these to authorize appsmith to access your drive.
 6. Now add the following  URIs under Authorised Redirect URIs**:** [https://app.appsmith.com/api/v1/datasources/authorize](https://app.appsmith.com/api/v1/datasources/authorize)
 7. Lastly, you’ll have to enable API’s to communicate with different services. For example, if you’re integrating google sheets, you’ll have to search for Google Sheets using the top search bar and enable API.
 
@@ -22,11 +22,11 @@ Google Cloud Platform allows us to authorise third-party applications to access 
 
 ## **Integrating Google Sheets with Appsmith**
 
-In this guide, you’ll learn how to build an Appsmith dashboard that performs read, write and delete operations on a Google Sheet. Eventually, you can scale this dashboard to create CRMs or workflows that can communicate with necessary google sheets. Below are the steps to authorise appsmith to access your Google Sheet:
+In this guide, you’ll learn how to build an Appsmith dashboard that performs read, write and delete operations on a Google Sheet. Eventually, you can scale this dashboard to create CRMs or workflows that can communicate with necessary google sheets. Below are the steps to authorize appsmith to access your Google Sheet:
 
 1. First, you’ll have to create a new application on [Appsmith](https://app.appsmith.com/applications).
 2. A new application opens up an application titled `Untitled Application 1`; you can rename it by double-clicking on the existing one. 
-3. Next, you’ll have to create a new data-source to interact with Google Sheets: To do this create a new API by clicking on the `+` icon on the left navigation. 
+3. Next, you’ll have to create a new data-source to interact with Google Sheets: To do this, create a new API by clicking on the `+` icon on the left navigation. 
 4. Add a new API and save it as a data source with the following URL: [https://sheets.googleapis.com](https://sheets.googleapis.com).
 5. You can also set the name of the data source; in this case, we’ll call it Gsheets.
 6. Now, navigate to the Gsheets data source and set the following configuration:
