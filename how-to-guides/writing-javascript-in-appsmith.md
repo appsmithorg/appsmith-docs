@@ -33,7 +33,7 @@ Execute the query by clicking on the Run button, you should see all the products
 Next, add the response; let’s bind this query to the table widget; you can now go to a page and drag and drop a table widget. You can access the table’s property pane by clicking on the cog icon on the top-right of the widget. Now let’s write JS in the Table Data section to access the query. For this, you should be using the Moustache syntax:
 
 ```javascript
-{{ get_products.data() }}
+{{ get_products.data }}
 ```
 
 There you go! You should see all your products inside the table. If you want to display only specific products, you can implement a map function and return the necessary items. For example, the below JS code only shows the product name and the price in the table.

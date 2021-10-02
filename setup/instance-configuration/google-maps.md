@@ -29,9 +29,7 @@ To enable the maps widget, login to your [google cloud console](https://console.
 
 ![Click to expand](../../.gitbook/assets/maps-apis.png)
 
-**5. Update the** [**docker.env**](./#configuring-self-hosted-instances) **file in your Appsmith deployment folder**
-
-Please ensure the line doesn't start with a `#` character, otherwise it is treated as a comment and is ignored.
+**5. Update the** [**instance configuration**](./) **with the below fields**
 
 ```text
 # ******** Google Maps ***********
@@ -39,7 +37,7 @@ APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 # ********************************
 ```
 
-**6.** [**Restart the Appsmith Instance**](./#configuring-self-hosted-instances)\*\*\*\*
+**6.** [**Restart the Appsmith Instance**](./)\*\*\*\*
 
 {% hint style="success" %}
 The maps widget should now be enabled on your installation. Read more about [Obtaining a google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)

@@ -30,16 +30,16 @@ To enable Github Sign in, login to your [Github Account](https://github.com)
 
 ![Click to expand](../../.gitbook/assets/github-app-config.png)
 
-**5. Update the** [**docker.env file**](./#configuring-self-hosted-instances) **in your Appsmith deployment folder**
+**5. Update the** [**instance configuration**](./) **with the below fields**
 
 ```text
 # ********* Github OAUth **********
-APPSMITH_OAUTH2_GITHUB_CLIENT_ID=YOUR_GITHUB_CLIENT_ID
-APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET                                                                                                                          18,61         28%
+APPSMITH_OAUTH2_GITHUB_CLIENT_ID
+APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET                                                                                                                          18,61         28%
 # ******************************
 ```
 
-**6.** [**Restart the Appsmith instance**](./#configuring-self-hosted-instances)
+**6.** [**Restart the Appsmith instance**](./)
 
 {% hint style="success" %}
 Github Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)

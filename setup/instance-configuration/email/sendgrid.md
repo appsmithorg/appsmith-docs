@@ -26,7 +26,7 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![Click to expand](../../../.gitbook/assets/sendgrid-create-sender.png)
 
-**6. Update the** [**docker.env file**](../#configuring-self-hosted-instances) **in your Appsmith deployment folder**
+**6. Update the values in your** [**instance configuration**](../)\*\*\*\*
 
 ```text
 # ***** Email **********
@@ -43,7 +43,7 @@ APPSMITH_MAIL_SMTP_AUTH=true
 # ******************************
 ```
 
-**5.** [**Restart the appsmith instance**](../#configuring-self-hosted-instances)\*\*\*\*
+**5.** [**Restart the appsmith instance**](../)\*\*\*\*
 
 {% hint style="success" %}
 Once you've verified your sender identity, your email service should be configured correctly

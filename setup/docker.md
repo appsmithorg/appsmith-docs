@@ -9,7 +9,9 @@ description: Appsmith can be deployed locally or on your private instance using 
 * [Docker](https://docs.docker.com/get-docker/) \(version 20.10.7 or later\)
 * [Docker-Compose](https://docs.docker.com/compose/install/) \(version 1.29.2 or later\)
 
-Create a folder called `appsmith`, where you would like your Appsmith installation, and data to live in
+Create an installation folder called `appsmith`, where you would like your Appsmith installation, and data to live in. 
+
+`cd` into the installation folder.
 
 ## Quick Start \(without docker-compose\)
 
@@ -33,7 +35,7 @@ The Appsmith Docker image is built with all the components required for it to ru
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="../../.gitbook/assets/docker-compose.yml" caption="docker-compose.yml" %}
+{% file src="../.gitbook/assets/docker-compose.yml" caption="docker-compose.yml" %}
 
 {% code title="docker-compose.yml" %}
 ```yaml
@@ -63,7 +65,7 @@ services:
 
 This configuration runs an Appsmith instance, and a Watchtower instance to keep Appsmith automatically up-to-date.
 
-Now, `cd` to the appsmith installation folder with this docker-compose.yml file and run:
+Now, `cd` to the appsmith installation folder with this **docker-compose.yml** file and run:
 
 ```bash
 docker-compose up -d
@@ -77,38 +79,11 @@ Congratulations! Your Appsmith server should be up and running now. You can acce
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
 
-### Further Reading
+## Further Reading
 
-* [Configuring Self Hosted Instances](./#configuring-self-hosted-instances)
+* [Configuring Self Hosted Instances](instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](instance-management.md)
-* [Tutorials](../../tutorials/)
-
-## Configuring Self Hosted Instances
-
-Appsmith ships with third-party services & configurations that improve the app building experience. All services & configurations are entirely optional.
-
-To configure a service, simply open the folder of your Appsmith installation and edit the `stacks/configuration/docker.env`
-
-Configure the service of your choice using the following guides
-
-* [Email](email/)
-* [Google OAuth](google-login.md)
-* [GitHub OAuth](github-login.md)
-* [Disable Signups](disable-user-signup.md)
-* [Google Maps](google-maps.md)
-* [Custom Domain](custom-domain.md)
-
-After making any changes, remember to restart the docker containers for the changes to take affect.
-
-```bash
-// To restart Appsmith using docker
-docker restart appsmith
-
-// To restart Appsmith using docker compose
-docker-compose restart appsmith
-```
-
-{% page-ref page="../../tutorials/" %}
+* [Tutorials](../tutorials/)
 
