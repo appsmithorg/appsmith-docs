@@ -45,7 +45,6 @@ description: >-
         </ul>
         <p>This can also be populated using a moment object <b>{{ moment() }}</b> as
           well.</p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
       </td>
     </tr>
     <tr>
