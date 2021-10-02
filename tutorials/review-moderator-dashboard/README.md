@@ -21,7 +21,7 @@ The tutorial is organized into three parts & we recommend you to follow them in 
 Note: To set up Appsmith locally using Docker, you can follow the instructions provided [here](https://docs.appsmith.com/setup/docker).
 {% endhint %}
 
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This has an auto-generated organization called `<Your first-name>` apps \(referred to as your personal organization from now on\). However, you can create multiple organisations and organise your apps based on your preferences.
+If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This has an auto-generated organization called `<Your first-name>` apps \(referred to as your personal organization from now on\). However, you can create multiple organizations and organize your apps based on your preferences.
 
 In this tutorial, you'll create our Review Moderator application under the same organization. To do this, follow the below steps:
 
