@@ -19,11 +19,11 @@ With these simple steps, you can create simple CRUD apps to complicated multi-st
 
 Watch this 5-minute video on how to use Appsmith.
 
-{% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" caption="" %}
+[![How to use Appsmith](https://img.youtube.com/vi/mzqK0QIZRLs/0.jpg)](https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be)
 
 ## Creating an Account
 
-Try Appsmith by creating an account in our cloud environment \(Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide)\). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:  
+Try Appsmith by creating an account in our cloud environment \(Read about our [data security](faq.md#what-type-of-data-security-does-appsmith-provide)\). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:  
 
 
 * [Create an account on Appsmith Cloud](https://app.appsmith.com)  \(Recommended as it comes with a mock database\);
@@ -33,9 +33,9 @@ Try Appsmith by creating an account in our cloud environment \(Read about our [d
 
 Our documentation takes you on a journey that starts from the basics of Appsmith to solving a specific problem. Here’s how we’ve structured the different parts of our docs: 
 
-* [The Tutorial](tutorials/) - With our step-by-step and detailed explanations, you can create a sample app using our mock data. ****
+* [The Tutorial](tutorials/) - With our step-by-step and detailed explanations, you can create a sample app using our mock data.
 * [Core Concepts](core-concepts/connecting-to-data-sources/) - Find everything you need to know about building an app on Appsmith by getting your fundamentals right! See all about connecting, displaying, reading, and binding data here.
-* [How to Guides](how-to-guides/) -  ****Here, we help you DIY! For those already familiar with the basics of Appsmith, you can find short guides to help you DIY. 
+* [How to Guides](how-to-guides/) -  Here, we help you DIY! For those already familiar with the basics of Appsmith, you can find short guides to help you DIY. 
 
 We’ve also put together a detailed reference system. In case you’re looking for information about widgets, data sources, or Framework, refer to the following docs:
 
@@ -53,6 +53,4 @@ We are working hard to keep our documentation up to date and expansive. However,
 * See our guides and tutorials on[ YouTube](https://www.youtube.com/appsmith);
 * Report bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
 
-Still, having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions on our [community forum](https://community.appsmith.com/).  
-
-
+Still, having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions on our [community forum](https://community.appsmith.com/).
