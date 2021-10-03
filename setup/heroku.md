@@ -47,7 +47,7 @@ After Heroku finishes setting up the app, click “View” and your Appsmith sho
 
 ## Custom Domain
 
-If you wish to link a custom domain \(Eg: [https://appsmith.yourcompany.com\)to](https://appsmith.yourcompany.com%29to) your Appsmith installation, please follow these steps below:
+If you wish to link a custom domain \(Eg: [https://appsmith.yourcompany.com\)](https://appsmith.yourcompany.com)to your Appsmith installation, please follow these steps below:
 
 * Go to the `Settings` tab in your Heroku app
 
