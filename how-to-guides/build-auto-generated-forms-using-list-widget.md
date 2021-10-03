@@ -79,7 +79,7 @@ I added two more items to this and made it this:
     "name": "Venusaur",
     "img": "http://www.serebii.net/pokemongo/pokemon/003.png"
   },
-	{
+  {
     "id": "004",
     "name": "Charmandar",
     "img": "https://www.serebii.net/pokemongo/pokemon/004.png"
