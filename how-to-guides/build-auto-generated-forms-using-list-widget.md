@@ -4,6 +4,7 @@ description: >-
 ---
 
 # Build auto-generated forms using the list widget
+This how-to guide assumes you know how to use [forms](https://docs.appsmith.com/widget-reference/form) and basic knowledge around [building simple applications with Appsmith](https://docs.appsmith.com/).
 
 ## List widget
 The List widget is used to display a paginated list of similarly structured data. Basically it's used to repeat a template based on the large data (or a collection of objects). The template is just a container widget that repeats itself.
@@ -94,6 +95,8 @@ I added two more items to this and made it this:
 And what did the application look like? Here's how:
 ![Screenshot 2021-10-04 at 2 50 42 AM](https://user-images.githubusercontent.com/41565823/135771919-97a88a1e-ac18-42c9-a3d9-b6033f93d765.png)
 
-After this all you need to do is add what you want to do on the submitting of the form. You can do that the same way you did in the Form widget, by updating the action events. I am assuming you know it better and if you need a refresher, here's a good resource.
+After this all you need to do is add what you want to do on the submitting of the form. You can do that the same way you did in the Form widget, by updating the action events. I am assuming you know it better and if you need a refresher, [here's a good resource](https://docs.appsmith.com/widget-reference/form).
 
-You can also check out the application that I built here. And now you know how to reduce your labor when building multiple forms on Appsmith :)
+You can also check out the application that I built [here](https://app.appsmith.com/applications/615a14b33a5bfe535012a5cf/pages/615a14b33a5bfe535012a5d1). 
+
+And now you know how to reduce your labor when building multiple forms on Appsmith :)
