@@ -2,9 +2,14 @@
 description: Deploy appsmith on Heroku with our one click deploy option
 ---
 
-# Heroku
+# [Heroku](https://docs.appsmith.com/setup/heroku)
+Deploy appsmith on Heroku with our one click deploy option
 
-{% embed url="https://youtu.be/Bclt\_VmDMpo" caption="" %}
+---
+
+<iframe width="750" height="422" src="https://www.youtube.com/embed/Bclt_VmDMpo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
 
 ## Deployment Steps
 
