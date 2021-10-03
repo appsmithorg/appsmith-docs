@@ -23,9 +23,9 @@ description: >-
 
 * Click on the `Filters` option on the Table widget. A filters popup opens.
 * Select the various filters you want to use on the Table widget.
-&emsp;* Select the `Attribute` filter from the dropdown, which is the column from the table you want to filter.
-&emsp;* Select the conditions you want to add to the filter, from the dropdown.
-&emsp;* Enter the value.
+  * Select the `Attribute` filter from the dropdown, which is the column from the table you want to filter.
+  * Select the conditions you want to add to the filter, from the dropdown.
+  * Enter the value.
 * Click on the `Apply` button to apply the filter.
 * You can now see the filtered data in the Table widget.
 
