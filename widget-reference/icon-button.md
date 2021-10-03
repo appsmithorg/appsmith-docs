@@ -4,7 +4,7 @@ description: 'Icon button widget is just an icon, along with all other button pr
 
 # Icon Button
 
-## Image/gif of the widget on the canvas with the icon of the widget in the sidebar
+![](../.gitbook/assets/icon-button.gif)
 
 ## Properties
 
