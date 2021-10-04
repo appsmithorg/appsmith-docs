@@ -110,4 +110,3 @@ Then follow the steps below:
   ```
 
 Wait for a couple of minutes to let Heroku re-deploy Appsmith with the latest changes. You can check if Appsmith is running properly by visiting your Heroku URL \(or custom domain if you've set one up\)
-

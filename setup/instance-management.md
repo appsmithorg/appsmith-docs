@@ -7,6 +7,10 @@ Appsmith comes with an `appsmithctl` command to help with the management and mai
 Appsmith auto-updates using Watchtower so you do not need to manually update your appsmith installation. In the odd event that you do, you can run the following command in the installation directory.
 
 ```bash
+// To restart appsmith without docker compose
+docker pull appsmith/appsmith-ce && docker restart appsmith
+
+// To restart appsmith with docker compose
 docker-compose pull && docker-compose up -d --force-recreate appsmith
 ```
 
