@@ -28,9 +28,8 @@ A Dropdown can be used to filter a dataset based on the user's input. The select
 
 Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, status.
 
-{% hint style="success" %}
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
-{% endhint %}
+> Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
+
 
 ```text
 {{ Table1.selectedRow.gender }}

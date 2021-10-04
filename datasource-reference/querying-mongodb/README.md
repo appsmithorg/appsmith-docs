@@ -2,15 +2,14 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 ## Connection Settings
 
 Appsmith needs the following parameters for connecting to a Mongo database:
 
-{% hint style="success" %}
-All required fields are suffixed with an asterisk \(\*\).
-{% endhint %}
+> All required fields are suffixed with an asterisk \(\*\).
+
 
 ### **Connection**
 
@@ -243,7 +242,7 @@ For unlocking the power of mongo commands, query your mongo database using the R
 The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/)
 
 Mongo by default returns only 101 records due to its default [batchSize](https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/). This can be updated by setting the limit and batchSize fields to higher values in your query
-{% endhint %}
+
 
 All mongo queries return an array of objects where each object is a mongo document and properties of the object are the keys of the document.
 

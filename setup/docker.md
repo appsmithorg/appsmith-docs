@@ -73,9 +73,8 @@ docker-compose up -d
 
 This command will download the Docker images, if not already locally available, and start the services. You can see the status with `docker-compose ps`, and view the logs with `docker-compose logs -f appsmith`.
 
-{% hint style="success" %}
-Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
-{% endhint %}
+> Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
+
 
 ## Troubleshooting
 

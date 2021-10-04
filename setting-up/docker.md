@@ -14,7 +14,7 @@ Appsmith can be deployed locally or on your private instance using docker. To si
 
 {% hint style="warning" %}
 For Mac, [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) is required. For other operating systems, Docker will be installed automatically by the script.
-{% endhint %}
+
 
 1. Fetch the **install.sh** script on the system you want to deploy Appsmith
 
@@ -49,8 +49,7 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 90833ba6d75a        certbot/certbot                   "/bin/sh -c 'trap ex…"   17 minutes ago      Up 17 minutes       80/tcp, 443/tcp                            appsmith_certbot_1
 ```
 
-{% hint style="success" %}
-
+> 
 * Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
 * You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
 * You may need to wait 2 - 3 minutes before accessing the application to allow nginx to start.
@@ -61,7 +60,7 @@ f5a365aada1c        appsmith/appsmith-server:latest   "/bin/sh -c /entrypo…"  
 The fix is to keep the /data/db mounted directory out of mounted volumes \(like downloads, user etc.\) or to create a volume with docker volume create.
 
 **Reference:** [https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/](https://iainhunter.wordpress.com/2016/01/12/avoiding-pitfalls-running-mongo-3-2-in-docker-on-osx/)
-{% endhint %}
+
 
 ### Custom Domains
 

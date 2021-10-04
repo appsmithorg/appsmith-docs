@@ -9,9 +9,8 @@ The environment variable `APPSMITH_SIGNUP_DISABLED` should be set to `true` to d
 1. **New, uninvited users** cannot signup using the signup form or the OAuth buttons. Both modes of signing up are disallowed.
 2. **New, invited users** can still signup using either the form or the OAuth buttons.
 
-{% hint style="success" %}
-The signup page will continue to show up but will throw an error when a user tries to sign up. This environment variable's value does not affect the **login** **behavior** of existing users.
-{% endhint %}
+> The signup page will continue to show up but will throw an error when a user tries to sign up. This environment variable's value does not affect the **login** **behavior** of existing users.
+
 
 ## Email domains white-list
 
@@ -26,13 +25,12 @@ When this environment variable is set to one or more domains, the following fact
 1. **New, uninvited users** cannot signup using the signup form or the OAuth buttons unless the email they use has a domain that's present in this environment variable.
 2. **New, but invited users** can still signup using the signup form or the OAuth buttons, even if their email \*\***does not**\*\* have a domain in the environment variable.
 
-{% hint style="success" %}
-This environment variable's value does not affect the **login behavior** of existing users
-{% endhint %}
+> This environment variable's value does not affect the **login behavior** of existing users
+
 
 {% hint style="danger" %}
 Accounts created via form signup are not validated via an email
-{% endhint %}
+
 
 ## Administrator emails
 

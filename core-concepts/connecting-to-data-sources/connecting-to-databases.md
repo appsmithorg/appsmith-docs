@@ -31,7 +31,7 @@ Appsmith safely encrypts all your database credentials and stores them securely.
 Before connecting to a data source, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC.
 
 **18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
-{% endhint %}
+
 
 Once the appsmith instance has been [whitelisted](../../how-to-guides/aws-whitelist.md):
 
@@ -44,9 +44,8 @@ Once the appsmith instance has been [whitelisted](../../how-to-guides/aws-whitel
 
 ![](../../.gitbook/assets/create-ds.gif)
 
-{% hint style="success" %}
-Databases configured within one page of an app can be accessed by developers anywhere within the organization
-{% endhint %}
+> Databases configured within one page of an app can be accessed by developers anywhere within the organization
+
 
 ## General Notes
 

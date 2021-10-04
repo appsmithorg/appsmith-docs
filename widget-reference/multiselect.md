@@ -28,9 +28,8 @@ Server Side Filtering can also be enabled on the widget by enabling Server Side 
 
 MultiSelect widgets can be used to capture from a fixed set of options inside a form such as gender, role, status.
 
-{% hint style="success" %}
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
-{% endhint %}
+> Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
+
 
 ```text
 {{ Table1.selectedRow.gender }}

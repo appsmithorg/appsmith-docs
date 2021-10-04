@@ -25,17 +25,16 @@ description: Deploy appsmith on Heroku with our one click deploy option
 
 The other optional fields can be used to [configure various services](instance-configuration/#available-configurations) in the appsmith instance.
 
-{% hint style="success" %}
-After Heroku finishes setting up the app, click “View” and your Appsmith should be up and running. You will be taken to the account creation page, where you can enter credentials to create an account and get started.
-{% endhint %}
+> After Heroku finishes setting up the app, click “View” and your Appsmith should be up and running. You will be taken to the account creation page, where you can enter credentials to create an account and get started.
+
 
 {% hint style="warning" %}
 We use the **Heroku Redis Addon** for caching which requires your account to have billing information, but we use the free plan of this addon so it will charge you nothing. Please ensure your account already has billing information.
-{% endhint %}
+
 
 {% hint style="warning" %}
 You may need to wait 2 - 3 minutes before accessing the application. This is because Heroku may take a while to spin up the dyno and start the Appsmith application.
-{% endhint %}
+
 
 ## Re-Deploy your App using Heroku CLI
 

@@ -6,9 +6,8 @@ description: This function is used to open a modal when triggered.
 
 ![Click to expand](../.gitbook/assets/showmodal.gif)
 
-{% hint style="success" %}
-Remember to create a new modal before calling this action
-{% endhint %}
+> Remember to create a new modal before calling this action
+
 
 ## Signature
 

@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 ## Connection Settings
 
@@ -105,7 +105,7 @@ The "**Delete Document**" method deletes the document at the given path.
 
 {% hint style="warning" %}
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
-{% endhint %}
+
 
 ## Server-side Pagination
 

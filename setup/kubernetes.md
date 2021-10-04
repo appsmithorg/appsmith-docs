@@ -22,9 +22,8 @@ description: >-
   * [Azure AKS Setup](https://kubernetes.github.io/ingress-nginx/deploy/#azure)
   * [Microk8s Setup](https://microk8s.io/docs/addon-ingress)
 
-{% hint style="success" %}
-Script tested on Minikube with Kubernetes v1.18.0
-{% endhint %}
+> Script tested on Minikube with Kubernetes v1.18.0
+
 
 ## Deployment Steps
 
@@ -61,8 +60,7 @@ mongo-statefulset-0                         1/1     Running     0           4m13
 redis-statefulset-0                         1/1     Running     0           4m00s
 ```
 
-{% hint style="success" %}
-You can access the running application on the **Ingress Endpoint** if you did not choose to provide a custom domain for your application.
+> You can access the running application on the **Ingress Endpoint** if you did not choose to provide a custom domain for your application.
 
 ```text
 kubectl get ingress
@@ -71,7 +69,7 @@ appsmith-ingress   <none>   *       XXX.XXX.XX.XXX   80      2m
 ```
 
 You may need to wait 2-3 minutes before accessing the application to allow the server to come up
-{% endhint %}
+
 
 ## Troubleshooting
 

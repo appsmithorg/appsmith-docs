@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 ## **Supported versions**
 
@@ -12,9 +12,8 @@ Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
 Appsmith needs the following parameters for connecting to a MySQL database:
 
-{% hint style="success" %}
-All required fields are suffixed with an asterisk \(\*\).
-{% endhint %}
+> All required fields are suffixed with an asterisk \(\*\).
+
 
 ### **Connection**
 

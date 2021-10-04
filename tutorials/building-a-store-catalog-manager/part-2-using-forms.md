@@ -20,7 +20,7 @@ Now to add new products to the catalogue, you'll have a create a new form widget
 
 {% hint style="info" %}
 When you create a new page, the base directory structure having Widgets, APIs, and DB Queries automatically gets created.
-{% endhint %}
+
 
 ## Adding Input Widgets to Form
 
@@ -118,7 +118,7 @@ By extension, you can transform any data into the desired format and type. For e
 Using JavaScript transformation, you specify a JavaScript function that applies the transformations that you want. You can include methods to check whether input records match a particular condition, and you can either drop or forward records on the basis of the results.
 
 Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or DB Query.
-{% endhint %}
+
 
 ## Wrapping up the Form
 
@@ -158,7 +158,7 @@ Verify that the regex validates the input as expected, and throws the error mess
 **Real-time app changes:**
 
 Since Appsmith editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
-{% endhint %}
+
 
 ## Submitting the form
 
@@ -249,7 +249,7 @@ Note that you bound one action each with the success and error events. In [part 
 
 {% hint style="info" %}
 For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](https://docs.appsmith.com/how-to-guides/writing-javascript-in-appsmith)
-{% endhint %}
+
 
 ## Connecting multiple pages
 

@@ -38,5 +38,5 @@ APPSMITH_MAIL_ENABLED=false
 
 {% hint style="info" %}
 Having trouble integrating? Reach out to us on [discord](https://discord.com/invite/rBTTVJp) or write to us at support@appsmith.com
-{% endhint %}
+
 

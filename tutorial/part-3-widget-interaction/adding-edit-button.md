@@ -29,7 +29,7 @@ Click on the **Edit** button of any row. You will see that **EditProductModal** 
 **Naming:**
 
 The names of widgets inside your EditProductModal are the same as that of the names of widgets inside AddProductForm. This is valid because they both belong to different parent pages. Names must be unique only within the page - across widgets, APIs, and DB queries, that is, a widget and an API within the same parent page also can't be assigned the same name. 
-{% endhint %}
+
 
 After doing this, **EditProductModal** will look like below:
 
@@ -64,7 +64,7 @@ To access a widget's state, or an APIs/DB Query's results on another page, there
 
 1. Store the data in your browser cache using the [storeValue function](https://docs.appsmith.com/function-reference/store-value), so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo function](https://docs.appsmith.com/function-reference/navigateto).
-{% endhint %}
+
 
 Let's now set a default value of **MrpInput**:
 
@@ -86,5 +86,5 @@ Verify that when you click on the Edit button of a row, your form will get popul
 When you place your cursor in the Default Text field, you again see the modal with **Expected Data Type** and **Evaluated Value**. Here the **Expected Data Type** is **String**. Thus, you can set it to anything that either is a **String** or evaluates to **String**. This means that you can set it to a static String as well. 
 
 Equivalently, you can set any property of any widget to a value whose type is either that of **Expected** **Data Type**, or evaluates ****to the **Expected Data Type**.   
-{% endhint %}
+
 

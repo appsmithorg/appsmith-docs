@@ -126,5 +126,5 @@ Appsmith does support multi-line JS if it is [IIFE](https://developer.mozilla.or
 **Writing comments inside :**
 
 Note that you can write comments inside  using JavaScript's multi-line comment syntax `/* */`, but single line comments `//` are not supported inside .
-{% endhint %}
+
 

@@ -10,7 +10,7 @@ Let's create a new page that will have a form to accept product-details from use
 
 {% hint style="info" %}
 Note that when you create a new page, the base directory structure of Widgets, APIs, and DB Queries automatically gets created.
-{% endhint %}
+
 
 ## Adding an input widget
 
@@ -139,5 +139,5 @@ Verify that the regex validates the input as expected, and throws the error mess
 
 {% hint style="info" %}
 Note that since Appsmith editor reflects change in the app in real-time, you are able to test the changes while building without having to deploy every time.
-{% endhint %}
+
 

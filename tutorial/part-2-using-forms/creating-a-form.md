@@ -12,7 +12,7 @@ Let's first create a new page that will have a form to accept product-details fr
 **App structure:**
 
 When you create a new page, the base directory structure having Widgets, APIs, and DB Queries automatically gets created.
-{% endhint %}
+
 
 ## Using an input widget
 
@@ -57,7 +57,8 @@ Note the **Categorydropdown**. It’s showing the options as - Vegetarian, Non-V
 1. Open **CategoryDropdown**’s properties modal.
 2. Click on the **Options** field. The value in this field is used to specify the options of the dropdown.
 3. Note the floating window show up when you place the cursor in **Options** field.
-4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**   . You'll need to specify the options in the same format. 
+4. See that the **Expected Data Type** is **Array&lt;{ label: string, value: string }&gt;**
+   . You'll need to specify the options in the same format. 
 5. Set the **Options** field to that shown below.
 6. Set the **Default Option** to blank. This will keep the default selected option to blank.
 7. Toggle the **Required** field to true. This makes the input to the dropdown a required field.
@@ -102,7 +103,7 @@ By extension, you can transform any data into the desired format and type. For e
 {% hint style="info" %}
 **Data Transformation:**
 
-A transformation is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or a DB Query.
+ion is nothing but JavaScript running on a base object to generate another object with the desired values, and in the desired format. Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or a DB Query.
 {% endhint %}
 
 
@@ -152,6 +153,6 @@ Verify that the regex validates the input as expected, and throws the error mess
 {% hint style="info" %}
 **Real-time app changes:**
 
-Since Appsmith editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
+h editor reflects changes in the app in real-time. So you will be able to test the changes while building, and without having to deploy every time.
 {% endhint %}
 

@@ -58,9 +58,8 @@ Now, let’s add a Map Widget and display the location of the business on the le
 
 Here, you’re using the moustache syntax and binding the values from the table and configuring the map widget.
 
-{% hint style="success" %}
-You can use the `selectedRow` property for the Table widget to access the data of a particular row when selected.
-{% endhint %}
+> You can use the `selectedRow` property for the Table widget to access the data of a particular row when selected.
+
 
 Now select any row from the table, the map automatically updates with the business location mentioned. Below is the GIF showing the same:
 

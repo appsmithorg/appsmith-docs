@@ -31,7 +31,7 @@ Let’s take a look at what you now see on screen:
 
 1. Hover over it
 2. Click on its name on the top right
-{% endhint %}
+
 
 {% hint style="info" %}
 **To rename a widget:** 
@@ -40,7 +40,7 @@ Let’s take a look at what you now see on screen:
 2. You’ll see the widget’s current name at the top 
 3. Click on the name Type the new name 
 4. Press Enter
-{% endhint %}
+
 
 Take a minute to check how the Array in Table Data maps to the the table's columns and their values. 
 
@@ -67,7 +67,7 @@ Open the application's URL in your web browser. You can see the table in Figure 
 **Application hosting:**
 
 By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
-{% endhint %}
+
 
 Let's go back to the **Table Data** field. When you place your cursor in the Table Data field, you  see a floating window having headings: 
 
@@ -102,7 +102,7 @@ We'll jump to the second step of writing a query.
 The query is saved as soon as it's created, without you having to explicitly save it. The same would be the case with any API, widgets, and any changes you make you any entity of your app.
 
 Appsmith auto-saves all the changes you make in the configuration of your app in real-time, so you never lose your work. However, these changes reflect in the live application only after you deploy.
-{% endhint %}
+
 
 ## Accessing query results from a widget
 

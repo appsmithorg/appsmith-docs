@@ -22,9 +22,8 @@ The GUI is limited to a single onSuccess / onError callback while the underlying
 
 ![](../../.gitbook/assets/conditional-query.gif)
 
-{% hint style="success" %}
-Once you have configured actions using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
-{% endhint %}
+> Once you have configured actions using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
+
 
 ### Executing Queries in Parallel / Serial
 
@@ -66,7 +65,6 @@ Queries can also be chained to execute conditionally based on the value of a wid
 }}
 ```
 
-{% hint style="success" %}
-Make use of the [Appsmith Framework](appsmith-framework.md) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
-{% endhint %}
+> Make use of the [Appsmith Framework](appsmith-framework.md) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
+
 

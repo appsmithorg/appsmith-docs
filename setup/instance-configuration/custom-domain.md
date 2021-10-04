@@ -51,7 +51,7 @@ At this point, you should be able to browse to the cloud server, by entering you
 {% hint style="warning" %}
 * Once you use a custom domain, You might want to set up SSL for your dyno. Please check the official document of Heroku [how to configure SSL](https://devcenter.heroku.com/articles/ssl)
 * Your dyno will need to be upgraded to at least "**Hobby"** type to use this feature of Heroku
-{% endhint %}
+
 
 ## DigitalOcean
 
@@ -61,7 +61,6 @@ To host the Appsmith DigitalOcean droplet on a custom domain, you’ll need to s
 
 It redirects you to a new page. Add your domain name there. Once that’s done, it’ll give you records of the name servers. Copy the details of the NS \(name servers\). Use the custom name server’s configuration on your domain provider. Sometimes, it might take up to 24-48 hours for this to go live!
 
-{% hint style="success" %}
-Your Appsmith instance should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com) with automatic certificate provisioning and renewals
-{% endhint %}
+> Your Appsmith instance should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com) with automatic certificate provisioning and renewals
+
 

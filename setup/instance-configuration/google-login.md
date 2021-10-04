@@ -47,7 +47,6 @@ APPSMITH_OAUTH2_ALLOWED_DOMAINS=exampledomain.com
 
 **6.** [**Restart the Appsmith instance**](./)
 
-{% hint style="success" %}
-Google Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
-{% endhint %}
+> Google Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
+
 

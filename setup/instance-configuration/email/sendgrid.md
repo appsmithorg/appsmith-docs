@@ -46,7 +46,6 @@ APPSMITH_MAIL_SMTP_AUTH=true
 
 **5.** [**Restart the appsmith instance**](../)\*\*\*\*
 
-{% hint style="success" %}
-Once you've verified your sender identity, your email service should be configured correctly
-{% endhint %}
+> Once you've verified your sender identity, your email service should be configured correctly
+
 

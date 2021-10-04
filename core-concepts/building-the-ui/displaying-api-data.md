@@ -32,7 +32,7 @@ Once your API / Query has been created, you can display its data inside your wid
 
 {% hint style="warning" %}
 Sometimes your API / Query response format might not match the format that your widget requires. How you can transform your data is described below
-{% endhint %}
+
 
 ## Transforming API / Query Data
 
@@ -87,5 +87,5 @@ A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect
 
 {% hint style="info" %}
 Widgets are automatically refreshed when the API / Query response is updated
-{% endhint %}
+
 

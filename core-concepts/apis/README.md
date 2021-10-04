@@ -21,7 +21,7 @@ Any input field in the REST interface can read a value from a widget by entering
 
 {% hint style="info" %}
 APIs are created for a single page and cannot be accessed from another page.
-{% endhint %}
+
 
 ## Using URL Encoded Form
 

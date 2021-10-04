@@ -4,9 +4,8 @@ Appsmith collects anonymous telemetry data that helps the appsmith team better u
 
 Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user. Access to the collected data is limited to the appsmith team and not shared with any third parties.
 
-{% hint style="success" %}
-Appsmith is a lightweight proxy and **will** **never capture** any data returned by your APIs, databases, or third-party tools.
-{% endhint %}
+> Appsmith is a lightweight proxy and **will** **never capture** any data returned by your APIs, databases, or third-party tools.
+
 
 If you are uncomfortable with sending usage stats data, you can disable telemetry [here](telemetry.md#disable-telemetry)
 
@@ -47,7 +46,7 @@ During installation, we collect some basic stats around which installations were
 
 {% hint style="warning" %}
 The email is only captured when you request for support and explicitly enter it in the installation script
-{% endhint %}
+
 
 ### Appsmith Server
 

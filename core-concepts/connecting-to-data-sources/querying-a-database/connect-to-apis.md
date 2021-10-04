@@ -4,9 +4,8 @@ description: You can hit any REST endpoint available on the public internet
 
 # Configuring APIs
 
-{% hint style="success" %}
-If your API is not available on the public internet, you must expose it via a service such as [https://ngrok.com/](https://ngrok.com/)
-{% endhint %}
+> If your API is not available on the public internet, you must expose it via a service such as [https://ngrok.com/](https://ngrok.com/)
+
 
 ## API Editor
 

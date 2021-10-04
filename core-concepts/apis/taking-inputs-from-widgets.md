@@ -12,7 +12,7 @@ Most APIs require query params to filter data and sometimes these filters need t
 
 {% hint style="info" %}
 In the above example, statusDropdown is the name of the widget and can be edited in the property pane by clicking on it
-{% endhint %}
+
 
 ## Passing Inputs to the POST body
 
@@ -20,7 +20,7 @@ APIs that create or modify data usually require user inputs from a form. These i
 
 {% hint style="warning" %}
 The binding must be added inside quotes for it to be a valid JSON in the post body. See an example below
-{% endhint %}
+
 
 ![Click to expand](../../.gitbook/assets/post-body-mov.gif)
 

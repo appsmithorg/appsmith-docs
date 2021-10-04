@@ -22,5 +22,5 @@ The text widget by default provides some basic options for styling but developer
 
 {% hint style="info" %}
 The text widget also renders objects as JSON by default
-{% endhint %}
+
 

@@ -10,7 +10,7 @@ Queries can take inputs from widgets using the mustache syntax inside the query 
 
 {% hint style="warning" %}
 Don't forget to wrap your params with single quotes
-{% endhint %}
+
 
 ```sql
 select * from users where name = '{{nameInput.text}}'
@@ -24,7 +24,7 @@ Query data can be displayed in a table or chart using the mustache syntax **`{{ 
 
 {% hint style="info" %}
 The widgets are automatically refreshed when the data is changed
-{% endhint %}
+
 
 {% page-ref page="../building-the-ui/displaying-api-data.md" %}
 

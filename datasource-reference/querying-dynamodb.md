@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/6fa43542f2b4d68916c05db37bba4a9d504c65a1/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 ## Connection Settings
 
@@ -10,9 +10,8 @@ Appsmith needs the following parameters for connecting to a DynamoDB instance:
 
 ![Click to expand](../.gitbook/assets/dynamodb-datasource-form.png)
 
-{% hint style="success" %}
-All required fields are suffixed with an asterisk \(\*\).
-{% endhint %}
+> All required fields are suffixed with an asterisk \(\*\).
+
 
 * **Region\*:** Select the region where your DynamoDB instance exists
 * **Host Address / Port\*:** Fill in the database host’s address and port. You only need to fill these fields in case you wish to override the default endpoint chosen by AWS

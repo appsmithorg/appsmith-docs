@@ -6,7 +6,8 @@ description: >-
 
 # Chart
 
-{% embed url="https://www.youtube.com/watch?v=xRUJN\_0lzRU&feature=youtu.be" caption="" %}
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/xRUJN\_0lzRU/0.jpg)](http://www.youtube.com/watch?v=xRUJN\_0lzRU "Video Title")
+
 
 ## Properties
 
@@ -73,7 +74,7 @@ In case if your use-case is not covered in the offered chart types, custom chart
 
 {% hint style="info" %}
 There are almost 100+ variants of Fusion Chart Configuration, learn more from the official docs [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
-{% endhint %}
+
 
 > The new custom configuration requires an object with two keys, `type` and `dataSource`.
 

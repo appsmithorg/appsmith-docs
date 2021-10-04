@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/6fa43542f2b4d68916c05db37bba4a9d504c65a1/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 ## Connection Settings
 
@@ -22,7 +22,7 @@ Elasticsearch support a rich set of [REST APIs](https://www.elastic.co/guide/en/
 
 {% hint style="warning" %}
 While Elasticsearch has a comprehensive reference list for its APIs, please make sure that you refer to specific documentation by your provider for requests that may or may not be applicable.
-{% endhint %}
+
 
 ### Creating a single document
 

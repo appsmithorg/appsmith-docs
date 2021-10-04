@@ -6,9 +6,9 @@ description: >-
 
 # Enabling Third Party Services
 
-{% hint style="success" %}
+> 
 All third party services are enabled by default in our [cloud hosted](https://appsmith.com) version.
-{% endhint %}
+
 
 ## Enabling Services for Self Hosting
 

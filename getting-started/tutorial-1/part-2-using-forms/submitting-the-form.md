@@ -78,7 +78,7 @@ Appsmith currently supports two forms of JavaScript code:
 
 1. Single line code or functions, such as ternary conditions
 2. Immediately Invoked Function Expressions \(IIFE\)
-{% endhint %}
+
 
 ## Connecting multiple pages
 

@@ -59,7 +59,7 @@ When working with large data on Google Sheets Sheets from APIs, browsers cannot 
 1. Enable the server-side pagination property in the table
 2. Call the API/Query `onPageChange`
 3. Toggle pagination in the API under Pagination Tab
-{% endhint %}
+
 
 ### Insert Data/Rows to Google Sheet from Appsmith
 

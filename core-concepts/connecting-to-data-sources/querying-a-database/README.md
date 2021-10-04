@@ -2,7 +2,7 @@
 
 {% hint style="info" %}
 APIs, Database Queries and Integrations that fetch / update data from third-party services are **collectively termed as Queries in Appsmith**
-{% endhint %}
+
 
 You can create queries to fetch and update data from a datasource using the Appsmith query editor for each datasource type. This article assumes you have already connected to a database or API  
 [Connect to a Database](../connecting-to-databases.md)  
@@ -19,13 +19,12 @@ Go to the page that needs to run this query.
 5. Write your query in the syntax that is valid for your [database type](../connecting-to-databases.md#supported-databases).
 6. APIs can be configured using a [REST interface](connect-to-apis.md)
 
-{% hint style="success" %}
-Queries are auto-saved so you never lose your work. These changes will be reflected in your published application only after you deploy.
-{% endhint %}
+> Queries are auto-saved so you never lose your work. These changes will be reflected in your published application only after you deploy.
+
 
 {% hint style="warning" %}
 A query and its results can be accessed from only the page that it is a part of. To use a query on another page, click the context menu next to the query name and clone it.
-{% endhint %}
+
 
 ### **Naming a Query**
 

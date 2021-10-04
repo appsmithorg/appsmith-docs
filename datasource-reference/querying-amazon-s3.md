@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 The S3 plugin can connect to an Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects and any other provider that supports S3 to execute a set of [actions](querying-amazon-s3.md#supported-actions) supported by Appsmith.
 
@@ -40,7 +40,7 @@ An expiry duration can be set for the generated signed URLs by editing the `Expi
 
 {% hint style="warning" %}
 If a file already exists on the file path, it will be replaced with the new file.
-{% endhint %}
+
 
 ![](../.gitbook/assets/create-file.png)
 
@@ -50,7 +50,7 @@ This action fetches a file in the Bucket Name specified with a file path relativ
 
 {% hint style="warning" %}
 When reading multimedia file or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded using the atob\(\) method in javascript.
-{% endhint %}
+
 
 ![Click to expand](../.gitbook/assets/amazon_s3_read_query.png)
 
@@ -58,9 +58,8 @@ When reading multimedia file or formatted text, please encode the file data usin
 
 This action deletes a file at the file path relative to the Bucket Name specified. Files deleted cannot be restored so ensure your files have been backed up.
 
-{% hint style="success" %}
-Enable the confirmation setting in this query to avoid accidental file deletes
-{% endhint %}
+> Enable the confirmation setting in this query to avoid accidental file deletes
+
 
 ![Click to expand](../.gitbook/assets/amazon_s3_delete_query.png)
 

@@ -81,9 +81,8 @@ These are the two fundamental properties that are needed for the table widget. H
 
 Now, in the `Table Data` property, let’s bind the response from the DB Query. To do this, you’ll have to use the Moustache Operator.
 
-{% hint style="success" %}
-In Appsmith, the moustache operator `{{ /* This is JavaScript */ }}` can be used anywhere to write JavaScript. For example, when binding data onto widget’s, sending params to APIs, sharing data across pages and many more.
-{% endhint %}
+> In Appsmith, the moustache operator `{{ /* This is JavaScript */ }}` can be used anywhere to write JavaScript. For example, when binding data onto widget’s, sending params to APIs, sharing data across pages and many more.
+
 
 Now copy the following onto the `Table Data` property:
 

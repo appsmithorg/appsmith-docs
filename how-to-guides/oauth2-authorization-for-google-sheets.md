@@ -44,7 +44,7 @@ In this guide, you’ll learn how to build an Appsmith dashboard that performs r
 
 {% hint style="info" %}
 The Scope in OAuth 2.0 helps us to limit an application's access to a user's account, while the Authorization URL requests authorization from the user.
-{% endhint %}
+
 
 ## **Writing APIs to Interact with Google Sheets and Building UI**
 

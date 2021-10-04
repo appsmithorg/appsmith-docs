@@ -31,9 +31,8 @@ Appsmith has a collection of widgets that can be used to build the UI. Widgets c
 
 Widgets have default names generated for them. You can rename a widget by clicking on its name in the property pane.
 
-{% hint style="success" %}
-Widget names are important while adding logic, so name your widgets well!
-{% endhint %}
+> Widget names are important while adding logic, so name your widgets well!
+
 
 ## Editing widget properties
 

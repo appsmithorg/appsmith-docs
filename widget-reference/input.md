@@ -26,9 +26,8 @@ The same can be used to filter data on the client-side by writing a filter funct
 
 Input widgets can be used to capture information inside a form such as name, email, phone number. We can add the respective validation using the regex property and even mark it as a required field.
 
-{% hint style="success" %}
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
-{% endhint %}
+> Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
+
 
 ```text
 {{ Table1.selectedRow.name }}

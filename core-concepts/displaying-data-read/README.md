@@ -42,9 +42,8 @@ A widget must have a unique name that acts as an identifier on the page. It is u
 
 Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from a Query can be set in a widget property by referencing the name \(unique identifier\) of the Query.
 
-{% hint style="success" %}
-Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
-{% endhint %}
+> Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
+
 
 For example, you can bind the results of the Query as below
 
@@ -56,7 +55,7 @@ For example, you can bind the results of the Query as below
 
 {% hint style="warning" %}
 Each widget property has a specific data type that it validates its value against. If the data type mismatches, it will throw an error. This can be fixed using javascript to transform the value of the property
-{% endhint %}
+
 
 ## Transforming Data
 

@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/)
-{% endhint %}
+
 
 All mongo queries return an array of objects where each object is a mongo document and properties of the object are the keys of the document. 
 
@@ -21,7 +21,7 @@ Queries can take inputs from widgets using the mustache syntax inside the query 
 
 {% hint style="warning" %}
 You may need to wrap your string mustache bindings in quotes to make your query a valid JSON
-{% endhint %}
+
 
 ```javascript
 {
@@ -41,7 +41,7 @@ Query data can be displayed in a table or chart using the mustache syntax **`{{ 
 
 {% hint style="info" %}
 The widgets are automatically refreshed when the data is changed
-{% endhint %}
+
 
 {% page-ref page="../../building-the-ui/displaying-api-data.md" %}
 

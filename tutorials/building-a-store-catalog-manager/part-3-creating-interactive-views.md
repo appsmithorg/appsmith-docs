@@ -39,7 +39,7 @@ Click on the **Edit** button of any row. You will see that **EditProductModal** 
 **Naming:**
 
 The names of widgets inside your **EditProductModal** are the same as that of the names of widgets inside **AddProductForm**. This is valid because they both belong to different parent pages. Names must be unique only within the page - across widgets, APIs, and DB queries, that is, a widget and an API within the same parent page also can't be assigned the same name.
-{% endhint %}
+
 
 After doing this, **EditProductModal** will look like below:
 
@@ -75,7 +75,7 @@ To access a widget's properties or an APIs/DB Query's results on another page, t
 
 1. Store the data in your browser cache using the [storeValue](../../framework-reference/store-value.md) function, so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../framework-reference/navigateto.md) function.
-{% endhint %}
+
 
 Let's now set a default value for **MrpInput**:
 
@@ -131,7 +131,7 @@ By using the mustache template in the URL, you're passing the ID of the product 
 **A word on sharing widget properties:**
 
 Here, you are accessing widgets' properties in an API. This is in line with what you learned in the previous sections - that you can access a widget's properties from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's properties from, the method of access remains the same, i.e. it follows the syntax_`{{<widgetname>.<property_name>}}`._
-{% endhint %}
+
 
 
 
@@ -196,7 +196,7 @@ For example, configuring multiple actions to be run **onSuccess** is supported o
 Similarly, to configure conditional behavior, writing ternary conditions in JavaScript is easier, and more extendible; and hence GUI doesn't provide for it.
 
 We recommend that you spend some time fiddling with JavaScript on Appsmith.
-{% endhint %}
+
 
 ## Sharing your app
 

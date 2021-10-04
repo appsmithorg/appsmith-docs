@@ -37,7 +37,7 @@ To open a widget’s properties:
 
 1. Hover over it
 2. Click on its name on the top right
-{% endhint %}
+
 
 {% hint style="info" %}
 To rename a widget: 
@@ -46,7 +46,7 @@ To rename a widget:
 2. You’ll see the widget’s current name at the top 
 3. Click on the name Type the new name 
 4. Press Enter
-{% endhint %}
+
 
 Let’s play with **Table Data** to get a hang of how it affects the data displayed in the table:
 
@@ -64,7 +64,7 @@ Open the application's URL in your web-browser. You can see the table like below
 **Auto-save:**
 
 Appsmith auto-saves changes you make in the configuration of your app in real-time, so you never lose your work. However, the changes reflect in the application only after you deploy.
-{% endhint %}
+
 
 The table on your page shows static data right now. For your app to display product data from the database:
 
@@ -87,7 +87,7 @@ The table on your page shows static data right now. For your app to display prod
 **Mock Database:**
 
 Your Personal Organization comes with a pre-configured mock PostgreSQL Database called Mock Database. However, when you build your own app, you’ll connect to your own database. If you’re new to Appsmith, read [this](https://docs.appsmith.com/core-concepts/connecting-to-databases) to learn to configure a database of your choice.
-{% endhint %}
+
 
 ## Accessing query results from a widget
 
@@ -121,19 +121,19 @@ Think of widgets, APIs and DB Queries in Appsmith as variables in your programmi
 * They represent an object, be it a widget, an API object, or a query object
 * They support a set of methods
 * They have a scope; they can be accessed from only within their parent page
-{% endhint %}
+
 
 {% hint style="info" %}
 **Names & Scope:**
 
 All names within a page must be unique - be it widget names, query names, or API names. 
-{% endhint %}
+
 
 {% hint style="info" %}
 **Application Hosting your application:**
 
 By default, the deployed app is hosted on Appsmith's domain, i.e. app.appsmith.com. To host your app on your custom domain,  read the detailed steps [here](https://docs.appsmith.com/quick-start), depending on where you've set up Appsmith.
-{% endhint %}
+
 
 ## What's next?
 

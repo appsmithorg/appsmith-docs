@@ -24,9 +24,8 @@ If you know the error and would like to reinstall Appsmith, simply delete the in
 
 Appsmith ships with third-party services that improve the app building experience. All third party services are entirely optional.
 
-{% hint style="success" %}
-All third party services are enabled by default in our [cloud hosted](https://appsmith.com) version.
-{% endhint %}
+> All third party services are enabled by default in our [cloud hosted](https://appsmith.com) version.
+
 
 Our self-hosted version allows you to configure your own keys to enable third party services such as Google OAuth. To enable a service, simply open the folder of your Appsmith installation and edit the **docker.env** file.
 

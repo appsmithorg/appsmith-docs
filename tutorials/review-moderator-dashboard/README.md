@@ -13,13 +13,13 @@ In this tutorial, you’ll learn to build a feature-complete internal tool on to
 * Binding Data onto different UI Widgets
 * Writing JS on Appsmith for Complex Views
 * Deploy and Manage your Applications
-{% endhint %}
+
 
 The tutorial is organized into three parts & we recommend you to follow them in order. Now before getting started, let’s set up Appsmith. You could either choose to use the self-hosted version using Docker or Appsmith cloud and follow along. 
 
 {% hint style="warning" %}
 Note: To set up Appsmith locally using Docker, you can follow the instructions provided [here](https://docs.appsmith.com/setup/docker).
-{% endhint %}
+
 
 If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This has an auto-generated organization called `<Your first-name>` apps \(referred to as your personal organization from now on\). However, you can create multiple organisations and organise your apps based on your preferences.
 
@@ -30,9 +30,8 @@ In this tutorial, you'll create our Review Moderator application under the same 
 3. Note that the app is created with the default name **Untitled Application 1**.
 4. Rename it to `Review Moderator` ****by double-clicking on the existing one.
 
-{% hint style="success" %}
-Tip: On Appsmith, you can rename organisation names, widget names, query names and many more by double-clicking on the existing one.
-{% endhint %}
+> Tip: On Appsmith, you can rename organisation names, widget names, query names and many more by double-clicking on the existing one.
+
 
 ![Creating and Renaming Appsmith Application](https://lh3.googleusercontent.com/uTBER5l7d5mpWZ_PlFZMfnezoyS2B7mS3eQE91SuxhQKAE1zngWSlXQZIBtKV536Hr3lHM0j7E9ohmDOFq4EIILhrndO178PFeGgw0zplCEiXewAzrQQO5Lyt4NpZMAdlI0TngaW)
 

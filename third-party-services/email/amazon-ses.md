@@ -30,7 +30,7 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 {% hint style="danger" %}
 Do not use **port** **465** listed on the SES page because it is TLS enabled by default
-{% endhint %}
+
 
 ```text
 # ***** Email **********
@@ -58,5 +58,5 @@ Your email service should now be configured correctly. Read more about [setting 
 {% hint style="warning" %}
 If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids.  
 Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)
-{% endhint %}
+
 

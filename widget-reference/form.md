@@ -7,7 +7,8 @@ description: >-
 
 # Form
 
-{% embed url="https://www.youtube.com/watch?v=HtoWzzje-Vs&feature=youtu.be" caption="" %}
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/HtoWzzje-Vs/0.jpg)](http://www.youtube.com/watch?v=HtoWzzje-Vs "Video Title")
+
 
 ## Form Widgets
 

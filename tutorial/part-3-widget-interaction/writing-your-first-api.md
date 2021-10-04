@@ -30,5 +30,5 @@ By using the mustache template in the URL, you're passing the ID of the product 
 **A word on sharing widget state:** 
 
 Here, you are accessing widgets' state in an API. This is in line with what you learned in the previous sections - that you can access a widget's state from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's state from, the method of access remains the same, i.e. it follows the syntax_`{{<widgetname>.<method_name>}}`._
-{% endhint %}
+
 

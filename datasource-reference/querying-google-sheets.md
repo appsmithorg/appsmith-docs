@@ -21,7 +21,7 @@ On completing authorization, you will be redirected back to the data source page
 
 {% hint style="warning" %}
 Creating and authorizing a Google Sheets data source will store your own personal credentials within the Appsmith servers. When you share your application with more developer or administrators, your Google sheets account will be accessible to them.
-{% endhint %}
+
 
 ## Query Methods
 
@@ -86,7 +86,7 @@ This section describes each of the parameters expected while creating new query 
 
 {% hint style="info" %}
 Use mustache syntax to dynamically pass values from widgets to the request format.
-{% endhint %}
+
 
 ### 3. Update Sheet Row
 

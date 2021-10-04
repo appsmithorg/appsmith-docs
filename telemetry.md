@@ -9,11 +9,10 @@ description: >-
 
 {% hint style="warning" %}
 Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user.
-{% endhint %}
 
-{% hint style="success" %}
-Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools.
-{% endhint %}
+
+> Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools.
+
 
 ## What data is collected?
 
@@ -52,7 +51,7 @@ During the installation process, we collect stats of which installations were su
 
 {% hint style="warning" %}
 Your email id is captured when you request for support and explicitly enter it in the installation script
-{% endhint %}
+
 
 ### Appsmith Server
 

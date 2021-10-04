@@ -4,7 +4,7 @@ If this is your first time using Appsmith, you’ll need to get acquainted with 
 
 {% hint style="info" %}
 Ensure that you use the auto-generate organization for the tutorial. It has a mock database set up that you will need to follow the tutorial.
-{% endhint %}
+
 
 An app on Appsmith is a standalone software-application solving a specific use-case. An app can consist of one or more web-pages. Let’s create a new app Catalogue Dashboard in **Your Personal Organization**.
 

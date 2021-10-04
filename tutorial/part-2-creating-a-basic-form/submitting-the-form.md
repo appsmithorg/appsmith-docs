@@ -38,7 +38,7 @@ Think of widgets as variables. Similar to variables:
 * They have a type.
 * They support a set of methods that are invoked via the widget’s name.
 * They have a scope. A widget's data and properties can be accessed from only within its parent page. 
-{% endhint %}
+
 
 ## Binding events using GUI
 

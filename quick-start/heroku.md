@@ -38,7 +38,7 @@ Quickly set up Appsmith to explore product functionality using Heroku.
 {% hint style="warning" %}
 * We use the Heroku Redis addon for caching which required your account to have billing information, but we use the free plan of this addon so it will charge you nothing. Please make sure your account already finish providing billing information.
 * You may need to wait 2 - 3 minutes before accessing the application. This is because Heroku may take a while to spin up the dyno and start the Appsmith application.
-{% endhint %}
+
 
 ## Custom domain
 
@@ -59,7 +59,7 @@ If you wish to link a custom domain \(Eg: [https://appsmith.yourcompany.com\)to]
 {% hint style="warning" %}
 * Once you use a custom domain, You might want to set up SSL for your dyno. Please check the official document of Heroku [how to configure SSL](https://devcenter.heroku.com/articles/ssl)
 * Your dyno will need to be upgraded to at least `hobby` type to use this feature of Heroku
-{% endhint %}
+
 
 ## Re-Deploy your App using Heroku CLI
 

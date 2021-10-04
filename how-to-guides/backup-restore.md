@@ -16,7 +16,7 @@ On Appsmith, you can migrate all Appsmith data from one instance to another or j
 
 {% hint style="warning" %}
 The restore would end up deleting all the existing data in the mongo database of the newly installed appsmith instance
-{% endhint %}
+
 
 1. Install Appsmith via the install.sh script.
 2. Restore the dump on the newly created mongo container via the command: `mongorestore --drop /tmp/appsmith-mongo-dump -d appsmith --uri=mongodb://<rootUsername>:<rootPassword>@localhost/appsmith`

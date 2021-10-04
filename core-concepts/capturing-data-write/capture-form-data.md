@@ -21,7 +21,7 @@ Form data can be submitted using a PUT / POST API or an Insert / Update Query. T
 
 {% hint style="warning" %}
 Widgets inside a form are automatically reset to their default values when the Form Button onClick succeeds. This can be disabled in the button properties
-{% endhint %}
+
 
 ## Displaying Submitted Data
 
@@ -31,7 +31,7 @@ Once the API / Query updates the data, the widgets on the screen need to be upda
 
 {% hint style="warning" %}
 The Property Pane UI supports a single onSuccess Callback but multiple callbacks and conditions can be configured by clicking the JS button next to the property. Learn more about [Creating Workflows](../writing-code/workflows.md)
-{% endhint %}
+
 
 ## Posting URL Encoded Form Data
 

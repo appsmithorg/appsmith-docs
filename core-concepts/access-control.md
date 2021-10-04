@@ -44,7 +44,6 @@ Appsmith implements **RBAC** by assigning a set of permissions to different user
 
 Applications can be made public and shared with external users not part of your organization as well. These applications will not require users to authenticate to use them. An app can be made public by clicking the share button from within the application and turning the public application switch on. To share the application, copy the link shown in the modal and share it with your users!
 
-{% hint style="success" %}
-Only Administrators can make applications public.
-{% endhint %}
+> Only Administrators can make applications public.
+
 

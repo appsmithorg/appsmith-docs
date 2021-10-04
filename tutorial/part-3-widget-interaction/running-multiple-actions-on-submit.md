@@ -48,7 +48,7 @@ You can trigger as many actions onSuccess and onError as required.
 **GUI vs JavaScript:**
 
 By extension, understand that you can write any JavaScript to customize widget behavior. Often, in Appsmith, you'll be able to do customize more by writing JavaScript, than by using the GUI. We recommend that you spend some time fiddling with JavaScript on Appsmith.
-{% endhint %}
+
 
 Try to edit a product again, and verify that the form-submit works as expected.
 

@@ -7,12 +7,11 @@ If you encounter the error that ports 80 & 443 are not open, we recommend that y
 1. In the file `docker-compose.yml` , change the ports for the Nginx container to a custom port
 2. Run `docker-compose up -d`
 
-{% hint style="success" %}
-To kill a previous version of appsmith running on these ports, run the following:
+> To kill a previous version of appsmith running on these ports, run the following:
 
 * sudo su
 * docker container kill $\(docker ps -q\) 
-{% endhint %}
+
 
 ## Containers Failed to Start
 

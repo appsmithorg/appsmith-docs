@@ -27,7 +27,7 @@ To access widget's properties or an APIs/DB Query's results on another page, the
 
 1. Store the data in your browser cache using the[ storeValue function](https://docs.appsmith.com/function-reference/store-value) so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the[ navigateTo function](https://docs.appsmith.com/function-reference/navigateto).
-{% endhint %}
+
 
 ![Storing Value and Redirecting to a Page](https://lh6.googleusercontent.com/fhRvo5jcgs7LOYIsmytxmhj0F2x9TnKiPUYB5_ElSCIA_qMlChit2Hr_BL9m8_i0fj8e1kbeGZ0CHP5KVMj5XC_8GS4ZV0r9TtfA4nKhFV1qbn_3AWPN9NFe2futv7wKrAItVxVA)
 
@@ -50,7 +50,7 @@ Here, we’re selecting all the rows from the `yelp_review` table and filtering 
 
 {% hint style="info" %}
 Tip: You can also run queries or APIs using `CMD + return` or `CTRL + enter` shortcuts on Appsmith!
-{% endhint %}
+
 
 By running the query, we can see all the reviews based on the selected business\_id, also, in the query properties tab, make sure you toggle the `Run query on page load` option.
 
@@ -143,7 +143,7 @@ The chart widget on Appsmith is used to view the graphical representation of you
 
 {% hint style="info" %}
 There are almost 100+ variants of Fusion Chart Configuration, learn more from the official docs[ here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
-{% endhint %}
+
 
 Now follow the below steps to create a chart for visualising the ratings of the business based on reviews.
 

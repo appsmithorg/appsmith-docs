@@ -7,7 +7,8 @@ description: >-
 
 # Table
 
-{% embed url="https://www.youtube.com/watch?v=sgd-DMJsAHs&feature=youtu.be" caption="" %}
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/sgd-DMJsAHs/0.jpg)](http://www.youtube.com/watch?v=sgd-DMJsAHs "Video Title")
+
 
 ## Selected Row
 

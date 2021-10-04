@@ -16,7 +16,7 @@ In the example below the visibility of the table is a conditional value based on
 
 {% hint style="warning" %}
 The Visible property expects the expression to evaluate to a boolean value
-{% endhint %}
+
 
 ![](../../.gitbook/assets/control-visibility.gif)
 
@@ -34,7 +34,6 @@ There are some cases that require form fields to dynamically change based on the
 
 ![](../../.gitbook/assets/dynamic-forms.gif)
 
-{% hint style="success" %}
-Hide the tabs in the tab widget to make it look like the views are changing in place
-{% endhint %}
+> Hide the tabs in the tab widget to make it look like the views are changing in place
+
 

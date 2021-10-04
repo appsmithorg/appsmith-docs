@@ -28,7 +28,7 @@ You need to fill in the following details to use the authorization code flow:
 
 {% hint style="info" %}
 Appsmith does not allow users to view the client secret after the data source is saved.
-{% endhint %}
+
 
 * `Scope(s):` The scope of the access request. It may have multiple comma-separated values.
 * **`Authorization URL`:** This is the endpoint on the Authorization Server that Appsmith will redirect you to retrieve an authorization code. This URL must expect query parameters according to the authorization code request [specification](https://tools.ietf.org/html/rfc6749#section-4.1.1) and respond with the corresponding [response](https://tools.ietf.org/html/rfc6749#section-4.1.2) for success and error states.
@@ -45,7 +45,7 @@ The prompt is set to `consent`, this provides access to your Google Account. The
 
 {% hint style="warning" %}
 Add the Appsmith callback URL to your list of allowed`Redirect URIs`in the authentication application. This URL of the form `https://<your-domain-origin-or-ip>/api/v1/datasources/authorize`To allow Appsmith cloud allow`https://app.appsmith.com/api/v1/datasources/authorize`
-{% endhint %}
+
 
 If you want to see this in action, check out our tutorial on "How to add OAuth2 Authorization for Integrating Google Sheets into Appsmith" [here](../../../how-to-guides/oauth2-authorization-for-google-sheets.md). 
 
@@ -66,5 +66,5 @@ The fields relevant to this grant type are as follows:
 
 {% hint style="warning" %}
 In case you feel like there may have been a data breach in your infrastructure, you can simply invalidate your client credentials at the authorization server to immediately revoke Appsmith's access to your resources.
-{% endhint %}
+
 

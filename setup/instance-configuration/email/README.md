@@ -30,7 +30,6 @@ Appsmith requires the following variables to be configured following the [Instan
 1. [Sendgrid](sendgrid.md)
 2. [Amazon SES](amazon-ses.md)
 
-{% hint style="success" %}
-[Restart the Appsmith instance](../) once it your variables are configured
-{% endhint %}
+> [Restart the Appsmith instance](../) once it your variables are configured
+
 

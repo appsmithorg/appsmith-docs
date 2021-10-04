@@ -7,7 +7,8 @@ description: >-
 
 # Datepicker
 
-{% embed url="https://www.youtube.com/watch?v=MFflGf3K324&feature=youtu.be" caption="" %}
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/MFflGf3K324/0.jpg)](http://www.youtube.com/watch?v=MFflGf3K324 "Video Title")
+
 
 ## Properties
 

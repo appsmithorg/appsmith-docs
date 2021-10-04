@@ -2,15 +2,14 @@
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/2974d21a1cd2f008630320dd13f2136d10c2249b/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
-{% endhint %}
+
 
 ## Connection Settings
 
 Appsmith needs the following parameters for connecting to a MsSql database:
 
-{% hint style="success" %}
-All required fields are suffixed with an asterisk \(\*\).
-{% endhint %}
+> All required fields are suffixed with an asterisk \(\*\).
+
 
 ### **Connection**
 
