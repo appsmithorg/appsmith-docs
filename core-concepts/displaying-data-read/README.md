@@ -38,6 +38,13 @@ A widget must have a unique name that acts as an identifier on the page. It is u
 {{ Table1.selectedRow.id }}
 ```
 
+### Grouping Widgets
+
+Widgets can be grouped together by selecting multiple widgets with Ctrl + Left Click. Once selected, click on the dotted square icon or press Ctrl + G. 
+Once grouped, the widgets are put in a container and can move together.
+
+![](../../.gitbook/assets/group-widgets.gif)
+
 ## Displaying Data in a widget
 
 Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from a Query can be set in a widget property by referencing the name \(unique identifier\) of the Query.
