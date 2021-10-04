@@ -30,31 +30,24 @@ To enable Google Sign in, login to your [google cloud console](https://console.c
 
 ![Click to expand](../../.gitbook/assets/google-oauth-creds-2.png)
 
-**5. Update the docker.env file in your Appsmith deployment folder**
+**5. Update the**[ **instance configuration**](./) **with the following fields** 
 
-```text
+```bash
+# Example docker configuration
 # ******** Google OAuth ********
 APPSMITH_OAUTH2_GOOGLE_CLIENT_ID=YOUR_CLIENT_ID
 APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET=YOUR_CLIENT_SECRET
-APPSMITH_OAUTH2_ALLOWED_DOMAINS=YOUR_DOMAIN_NAME
+APPSMITH_OAUTH2_ALLOWED_DOMAINS=exampledomain.com
 # ******************************
 ```
 
-* replace `YOUR_CLIENT_ID` and `YOUR_CLIENT_SECRET` with the client ID and client secret generated in the step above
-* replace `YOUR_DOMAIN_NAME` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**
+* Configure the `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID` and `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET` fields with the client ID and client secret generated in the step above
+* Configre `APPSMITH_OAUTH2_ALLOWED_DOMAINS` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**
   * **Note**: you can provide several domain names using a comma-separated list
 
-**6. Restart docker & nginx**
-
-```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
-```
-
-Google Login should now be enabled for your Appsmith installation
+**6.** [**Restart the Appsmith instance**](./)
 
 {% hint style="success" %}
-If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
+Google Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
 {% endhint %}
-
-##  
 

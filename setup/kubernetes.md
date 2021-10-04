@@ -1,6 +1,10 @@
-# Kubernetes
+---
+description: >-
+  We provide an installation script that will help you configure Appsmith &
+  deploy your app on a Kubernetes cluster
+---
 
-We provide an installation script that will help you configure Appsmith & deploy your app on a Kubernetes cluster.
+# Kubernetes
 
 ## Prerequisites
 
@@ -57,22 +61,6 @@ mongo-statefulset-0                         1/1     Running     0           4m13
 redis-statefulset-0                         1/1     Running     0           4m00s
 ```
 
-## Customize Appsmith Configuration
-
-After you successfully run the script, all the configuration files have been downloaded and & stored into `<Installation Path>`. If you want to update your app settings \(ex: database host\). Go to the`<Installation Path>/config-template`, update the corresponding value in the configmap file, then restart the pods.
-
-The below steps will help you update the database hostname of your application:
-
-* Open file `appsmith-configmap.yaml` in `<Installation Path>/config-template` folder
-* Update the value of the variable `APPSMITH_MONGODB_URI` to your database hostname
-* Run commands:
-
-  ```text
-  kubectl apply -f appsmith-configmap.yaml
-  kubectl scale deployment appsmith-internal-server --replicas=0
-  kubectl scale deployment appsmith-internal-server --replicas=1
-  ```
-
 {% hint style="success" %}
 You can access the running application on the **Ingress Endpoint** if you did not choose to provide a custom domain for your application.
 
@@ -85,9 +73,13 @@ appsmith-ingress   <none>   *       XXX.XXX.XX.XXX   80      2m
 You may need to wait 2-3 minutes before accessing the application to allow the server to come up
 {% endhint %}
 
-## Common Issues
+## Troubleshooting
 
-You can debug common errors faced during deployment at the link below
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
 
-{% page-ref page="../troubleshooting-guide/deployment-errors.md" %}
+## Further Reading
+
+* [Configuring Self Hosted Instances](instance-configuration/#configuring-docker-installations)
+* [Managing the Appsmith instance](instance-management.md)
+* [Tutorials](../tutorials/)
 

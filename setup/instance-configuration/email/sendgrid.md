@@ -6,7 +6,7 @@ description: Configure Sendgrid to invite users to your Appsmith installation
 
 To configure Sendgrid as your SMTP server, [create an account](https://signup.sendgrid.com/) & login to Sendgrid.
 
-**1. Navigate to the** [**integration section**](https://app.sendgrid.com/guide/integrate)\*\*\*\*
+**1. Navigate to the** [**Integration Section**](https://app.sendgrid.com/guide/integrate)
 
 ![click to expand](../../../.gitbook/assets/sendgrid-welcome.png)
 
@@ -18,7 +18,7 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![](../../../.gitbook/assets/sendgrid-apikey%20%281%29.png)
 
-**4. Navigate to Sendgrids** [**Senders section**](https://app.sendgrid.com/settings/sender_auth/senders)
+**4. Navigate to the** [**Sendgrid Senders Section**](https://app.sendgrid.com/settings/sender_auth/senders)
 
 ![Click to expand](../../../.gitbook/assets/sendgrid-senders.png)
 
@@ -26,9 +26,10 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![Click to expand](../../../.gitbook/assets/sendgrid-create-sender.png)
 
-**6. Update the docker.env file in your Appsmith deployment folder**
+**6. Update the values in your** [**instance configuration**](../)\*\*\*\*
 
-```text
+```bash
+# Example docker configuration
 # ***** Email **********
 APPSMITH_MAIL_ENABLED=true
 APPSMITH_MAIL_FROM=YOUR_SENDER_IDENTITY_EMAIL_ID
@@ -43,11 +44,9 @@ APPSMITH_MAIL_SMTP_AUTH=true
 # ******************************
 ```
 
-**5. Restart docker & nginx**
+**5.** [**Restart the appsmith instance**](../)\*\*\*\*
 
-```text
-sudo docker-compose rm -fsv appsmith-internal-server nginx && sudo docker-compose up -d
-```
-
+{% hint style="success" %}
 Once you've verified your sender identity, your email service should be configured correctly
+{% endhint %}
 
