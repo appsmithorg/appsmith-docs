@@ -11,7 +11,7 @@ description: Appsmith can be deployed locally or on your private instance using 
 
 Create an installation folder called `appsmith`, where you would like your Appsmith installation, and data to live in.
 
-`cd` into the installation folder.
+**`cd` into the installation folder.**
 
 ## Quick Start \(with docker-compose\)
 
@@ -23,35 +23,15 @@ Download the below `docker-compose.yml` file into the appsmith installation fold
 
 {% file src="../.gitbook/assets/docker-compose.yml" caption="docker-compose.yml" %}
 
-{% code title="docker-compose.yml" %}
-```yaml
-version: "3"
+**or** run the following curl if you're on a remote machine
 
-services:
-  appsmith:
-    image: index.docker.io/appsmith/appsmith-ce
-    container_name: appsmith
-    ports:
-      - "80:80"
-      - "443:443"
-      - "9001:9001"
-    volumes:
-      - ./stacks:/appsmith-stacks
-    labels:
-      com.centurylinklabs.watchtower.enable: "true"
-
-  auto_update:
-    image: containrrr/watchtower:latest-dev
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    # Update check interval in seconds.
-    command: --interval 300 --label-enable --cleanup
+```bash
+curl -o docker-compose.yml https://bit.ly/2WMPFPy
 ```
-{% endcode %}
 
 This configuration runs an Appsmith instance, and a Watchtower instance to keep Appsmith automatically up-to-date.
 
-Now, `cd` to the appsmith installation folder with this **docker-compose.yml** file and run:
+Bring the docker container up by running the following command. \(You may need to run as sudo if docker and docker-compose are not accessible by your user\)
 
 ```bash
 docker-compose up -d
