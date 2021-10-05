@@ -20,7 +20,7 @@ Entity name: <name> is already being used
 
 This error indicates that the name being assigned to the entity has been used before.
 
-This error can be fixed by assigning a new unique name to the entity.
+This error can be fixed by assigning a new unique name to the entity. [JavaScript keywords](https://www.w3schools.com/js/js_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj_window.asp) are not valid as entity names.
 
 ## Login / Signup Errors
 
