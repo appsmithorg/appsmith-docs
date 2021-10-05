@@ -65,6 +65,19 @@ docker logs -f appsmith
 
 You should see a message `Appsmith is Running!` once the container is ready
 
+## Restarting Containers
+
+In the event that your containers are failing to restart, you can execute the below script to bring them up
+
+{% file src="../.gitbook/assets/restart-container.sh" caption="restart-containers.sh" %}
+
+copy the script to your installation folder and make it executable
+
+```bash
+chmod +x restart-containers.sh
+./restart-containers.sh
+```
+
 ## Troubleshooting
 
 If you encounter any errors during this process, check out our guide on [debugging deployment errors](../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
