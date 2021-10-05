@@ -43,7 +43,7 @@ A widget must have a unique name that acts as an identifier on the page. It is u
 Widgets can be grouped together by selecting multiple widgets with Ctrl + Left Click. Once selected, click on the dotted square icon or press Ctrl + G. 
 Once grouped, the widgets are put in a container and can move together.
 
-![](../../.gitbook/assets/group-widgets.gif)
+![](../../.gitbook/assets/group-widgets-2.gif)
 
 ## Displaying Data in a widget
 
