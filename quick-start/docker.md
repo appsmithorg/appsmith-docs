@@ -69,7 +69,7 @@ The fix is to keep the /data/db mounted directory out of mounted volumes \(like 
 {% endhint %}
 
 {% hint style="success" %}
-### Runing appsmith on a different port
+### Running appsmith on a different port
 
 1. Comment out the line: [https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh\#L463](https://github.com/appsmithorg/appsmith/blob/release/deploy/install.sh#L463) from the install.sh script and run it. This will ensure that the script does not check for port availability of 80/443.
 2. Once the docker-compose file is installed, the script will try to start the containers and fail because of port conflicts.

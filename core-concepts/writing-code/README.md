@@ -28,7 +28,7 @@ Appsmith currently supports two forms of JavaScript code for dynamically evaluat
 }}
 ```
 
-You can also write JavaScript code for event listners. For JavaScript code inside an event listener, you can write multi-line JavaScript as below.
+You can also write JavaScript code for event listeners. For JavaScript code inside an event listener, you can write multi-line JavaScript as below.
 
 ```javascript
 {{

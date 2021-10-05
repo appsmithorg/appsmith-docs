@@ -16,7 +16,7 @@ Whitelist the appsmith IP address with the following steps:
 
 ![Click to expand](../.gitbook/assets/chose_rds.png)
 
-**4. Select the security group linked to your RDS\(Make sure the RDS instance is publically accessible\)**
+**4. Select the security group linked to your RDS\(Make sure the RDS instance is publicly accessible\)**
 
 ![Click to expand](../.gitbook/assets/chose_sg.png)
 

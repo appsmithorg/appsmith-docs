@@ -127,7 +127,7 @@ Here, you’ve used the names of your widgets to reference the input forms in th
 
 Next, you’ll have to set the onclick property to the **Submit Entry** button on the modal. To do this, open the buttons property pane, select onclick and choose the Call an API option. You should see the available APIs on your page. Now select the `postNewEntry` API. To update the table with new entries, you can set the onsuccess property to call an API and use the getSheetData API. Below is a screenshot of the buttons property pane:
 
-![Configuring Button Propery and Setting Properties](https://lh5.googleusercontent.com/DIFB_MdK0ccGrPHxE7ZihO_rUB7C1-W-8WafT3B95s6JUDsiY4ruOEL-ulkjGgaKu2cxhBXjbRlxGru8YUN6VnFGqZDJnaX5a4rdykCpsqawUXGR2_Y8nZS5GtV4pSZLqZHTErHR)
+![Configuring Button Properly and Setting Properties](https://lh5.googleusercontent.com/DIFB_MdK0ccGrPHxE7ZihO_rUB7C1-W-8WafT3B95s6JUDsiY4ruOEL-ulkjGgaKu2cxhBXjbRlxGru8YUN6VnFGqZDJnaX5a4rdykCpsqawUXGR2_Y8nZS5GtV4pSZLqZHTErHR)
 
 With this, you can POST new entries to your google sheet from Appsmith Dashboard with customised UI! Similarly, you could have a new Delete API to delete entries on google sheet from the Appsmith dashboard.
 
