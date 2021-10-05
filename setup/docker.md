@@ -26,7 +26,7 @@ Download the below `docker-compose.yml` file into the appsmith installation fold
 **or** run the following curl if you're on a remote machine
 
 ```bash
-curl -o docker-compose.yml https://bit.ly/2WMPFPy
+curl -L https://bit.ly/2WMPFPy -o $PWD/docker-compose.yml
 ```
 
 This configuration runs an Appsmith instance, and a Watchtower instance to keep Appsmith automatically up-to-date.
