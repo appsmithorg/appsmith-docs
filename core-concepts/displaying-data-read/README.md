@@ -32,7 +32,13 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 
 ### Naming a Widget
 
-A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language. You can access the various properties of the widget using the widget's name.
+A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
+
+{% hint style="warning" %}
+Note that [JavaScript keywords](https://www.w3schools.com/js/js_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj_window.asp) are not valid as widget names.
+{% endhint %}
+
+You can access the various properties of the widget using the widget's name.
 
 ```javascript
 {{ Table1.selectedRow.id }}
