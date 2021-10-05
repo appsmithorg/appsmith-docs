@@ -39,7 +39,7 @@ Note that [JavaScript keywords](https://www.w3schools.com/js/js_reserved.asp) an
 
 Click on the Run button or hit `cmd + enter` to execute a query. If the query execution succeeds, a success message will pop up on the screen in the top right corner along with the results below the query.
 
-All query results are stored in the data property of the query object. This object is immutable and cannot be changed. They can be accessed using javascript 
+All query results are stored in the data property of the query object. This object is immutable and cannot be changed. They can be accessed using javascript
 
 ```text
 {{ Query1.data }}

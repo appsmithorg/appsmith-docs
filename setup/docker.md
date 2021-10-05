@@ -6,8 +6,8 @@ description: Appsmith can be deployed locally or on your private instance using 
 
 ## Prerequisites
 
-- [Docker](https://docs.docker.com/get-docker/) \(version 20.10.7 or later\)
-- [Docker-Compose](https://docs.docker.com/compose/install/) \(version 1.29.2 or later\)
+* [Docker](https://docs.docker.com/get-docker/) \(version 20.10.7 or later\)
+* [Docker-Compose](https://docs.docker.com/compose/install/) \(version 1.29.2 or later\)
 
 Create an installation folder called `appsmith`, where you would like your Appsmith installation, and data to live in.
 
@@ -24,7 +24,6 @@ Download the below `docker-compose.yml` file into the appsmith installation fold
 {% file src="../.gitbook/assets/docker-compose.yml" caption="docker-compose.yml" %}
 
 {% code title="docker-compose.yml" %}
-
 ```yaml
 version: "3"
 
@@ -48,7 +47,6 @@ services:
     # Update check interval in seconds.
     command: --interval 300 --label-enable --cleanup
 ```
-
 {% endcode %}
 
 This configuration runs an Appsmith instance, and a Watchtower instance to keep Appsmith automatically up-to-date.
@@ -59,13 +57,19 @@ Now, `cd` to the appsmith installation folder with this **docker-compose.yml** f
 docker-compose up -d
 ```
 
-This command will download the Docker images, if not already locally available, and start the services. You can see the status with `docker-compose ps`, and view the logs with `docker-compose logs -f appsmith`.
+This command will download the Docker images, if not already locally available, and start the services. You can follow the logs with the following command:
+
+```bash
+docker logs -f appsmith
+```
+
+You should see a message `Appsmith is Running!` once the container is ready
 
 {% hint style="success" %}
 Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
 {% endhint %}
 
-## Just Exploring \(without docker-compose\)
+## Explore Appsmith \(without docker-compose\)
 
 To quickly get Appsmith up and running, run the following command on your machine:
 
@@ -79,12 +83,15 @@ This will download the image and start Appsmith. Once the download is complete, 
 docker logs -f appsmith
 ```
 
+You should see a message `Appsmith is Running!` once the container is ready
+
 ## Troubleshooting
 
 If you encounter any errors during this process, check out our guide on [debugging deployment errors](../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
 
 ## Further Reading
 
-- [Configuring Self Hosted Instances](instance-configuration/#configuring-docker-installations)
-- [Managing the Appsmith instance](instance-management.md)
-- [Tutorials](../tutorials/)
+* [Configuring Self Hosted Instances](instance-configuration/#configuring-docker-installations)
+* [Managing the Appsmith instance](instance-management.md)
+* [Tutorials](../tutorials/)
+
