@@ -31,6 +31,10 @@ A query and its results can be accessed from only the page that it is a part of.
 
 A query must have a unique name that acts as an identifier. It is used to access the query results. In that sense, a name is like a variable in a programming language. You can access the various properties of the query and it's data using the query name.
 
+{% hint style="warning" %}
+Note that [JavaScript keywords](https://www.w3schools.com/js/js_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj_window.asp) are not valid as query names.
+{% endhint %}
+
 ### **Running a Query**
 
 Click on the Run button or hit `cmd + enter` to execute a query. If the query execution succeeds, a success message will pop up on the screen in the top right corner along with the results below the query.
