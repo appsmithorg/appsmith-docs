@@ -2,7 +2,7 @@
 You can quickly set up Appsmith with Heroku to check your product functionality.
 ## Heroku Installation
 
-* Sign up for a free account on Heroku
+* Sign up for a free account on Heroku 
 * Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/appsmithorg/appsmith/tree/master)
 * Fill in the following required `Config Variables`:
   * `APPSMITH_ENCRYPTION_PASSWORD`: The password used to encrypt all credentials in the database
