@@ -117,7 +117,7 @@ By extension, you can transform any data into the desired format and type. For e
 
 Using JavaScript transformation, you specify a JavaScript function that applies the transformations that you want. You can include methods to check whether input records match a particular condition, and you can either drop or forward records on the basis of the results.
 
-Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or DB Query.
+Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/writing-code/ext-libraries) to transform data in any widget, API, or DB Query.
 {% endhint %}
 
 ## Wrapping up the Form

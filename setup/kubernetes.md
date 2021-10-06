@@ -15,7 +15,7 @@ description: >-
   * [Configuring Google Cloud](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
   * [Configuring AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
   * [Configuring Microk8s](https://microk8s.io/docs/working-with-kubectl)
-* Setup NGINX Ingress Controller on your cluster. **This is important for your cluster to be accesible and get a public IP**
+* Setup NGINX Ingress Controller on your cluster. **This is important for your cluster to be accessible and get a public IP**
   * [Minikube Setup](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
   * [Google Cloud Setup](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
   * [AWS EKS Setup](https://kubernetes.github.io/ingress-nginx/deploy/#aws)

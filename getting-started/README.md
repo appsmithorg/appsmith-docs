@@ -6,9 +6,9 @@ Are you new to Appsmith? This is the place to start!
 
 1. **From scratch:** [Overview ](https://docs.appsmith.com/#why-appsmith)\| [Setup](https://docs.appsmith.com/setting-up)\*\*\*\*
 2. **Tutorial:** 
-   1. [Part 1: Creating a simple view](https://docs.appsmith.com/part-1-creating-a-simple-view)
-   2. [Part 2: Using forms](https://docs.appsmith.com/part-2-using-forms)
-   3. [Part 3: Creating interactive views](https://docs.appsmith.com/part-3-creating-interactive-views) 
+   1. [Part 1: Creating a simple view](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view)
+   2. [Part 2: Using forms](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-2-using-forms)
+   3. [Part 3: Creating interactive views](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views) 
 
 We strongly recommend that you go over the documentation in the same sequence as specified above. 
 

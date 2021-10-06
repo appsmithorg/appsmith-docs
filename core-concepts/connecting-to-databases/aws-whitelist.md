@@ -14,7 +14,7 @@ To connect the database to your virtual machine, whitelist the database IP addre
 
 ![Click to expand](../../.gitbook/assets/chose_rds.png)
 
-**4. Select the security group linked to your RDS\(Make sure RDS instance is publically accessible\)**
+**4. Select the security group linked to your RDS\(Make sure RDS instance is publicly accessible\)**
 
 ![Click to expand](../../.gitbook/assets/chose_sg.png)
 

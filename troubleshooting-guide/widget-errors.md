@@ -150,7 +150,7 @@ In Appsmith, we define all user-editable fields as nodes, and to provide reactiv
 Api1.data -> Table1.tableData
 ```
 
-Similarly, all parent nodes are implicitly dependant on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node and its dependencies should also be updated.
+Similarly, all parent nodes are implicitly dependent on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node and its dependencies should also be updated.
 
 ```text
 // Implicit. Parent depends on children
