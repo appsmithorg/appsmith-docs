@@ -44,7 +44,7 @@ In the above example, List1 is the name of the list widget and Input1 is the nam
 
 ## Use cases
 
-### 1. Getting the value of chidren widgets
+### 1. Getting the value of children widgets
 
 Let's say you have input widget and a button widget inside the list widget and you want send the value of input on click of the button to some api. You can access the value of any children widget for the current row with the combination of `currentIndex` and `items`
 

@@ -25,7 +25,7 @@ This action lists all the files in a bucket. The bucket name is the bucket from 
 You can also choose to generate a signed URL for each listed file by selecting `Yes` in the `Generate Signed URL` dropdown. An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field. In this case, the output returns two other fields:
 
 * `signedUrl`: It contains the signed url for the file.
-* `urlExpiryDate`: It contains the timestmap at which the signed url will expire. 
+* `urlExpiryDate`: It contains the timestamp at which the signed url will expire. 
 
 ![Click to expand](../.gitbook/assets/amazon_s3_list_query.png)
 
@@ -34,7 +34,7 @@ You can also choose to generate a signed URL for each listed file by selecting `
 This action creates a new file at the location specified by the file path \(including file name\). The action returns the following two fields:
 
 * `signedUrl`: It contains the signed url for the file.
-* `urlExpiryDate`: It contains the timestmap at which the signed url will expire.
+* `urlExpiryDate`: It contains the timestamp at which the signed url will expire.
 
 An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field.
 

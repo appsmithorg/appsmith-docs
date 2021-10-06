@@ -80,7 +80,7 @@ In case the response does not contain label and value keys as below, we can map 
 
 **Why do you see this error?**
 
-The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. _\*\*_The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
+The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. \_\*\*\_The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
 
 ![](../.gitbook/assets/chart-error.png)
 
@@ -150,7 +150,7 @@ In Appsmith, we define all user-editable fields as nodes, and to provide reactiv
 Api1.data -> Table1.tableData
 ```
 
-Similarly, all parent nodes are implicitly dependant on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node and its dependencies should also be updated.
+Similarly, all parent nodes are implicitly dependent on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node and its dependencies should also be updated.
 
 ```text
 // Implicit. Parent depends on children

@@ -12,6 +12,7 @@
       * [Sendgrid](setup/instance-configuration/email/sendgrid.md)
       * [Amazon SES](setup/instance-configuration/email/amazon-ses.md)
     * [Custom Domain](setup/instance-configuration/custom-domain.md)
+    * [Custom MongoDB & Redis](setup/instance-configuration/custom-mongodb-redis.md)
     * [Signup Restriction](setup/instance-configuration/disable-user-signup.md)
     * [Google OAuth](setup/instance-configuration/google-login.md)
     * [Github OAuth](setup/instance-configuration/github-login.md)

@@ -26,7 +26,7 @@ When you create a new page, the base directory structure having Widgets, APIs, a
 
 The created form does not have any input fields. Now, add a new [input widget](https://docs.appsmith.com/widget-reference/input) onto the empty form \(_AddProductForm_\) by simply selecting it and dropping it on to canvas. Rename, the input widget to `ProductNameInput`.
 
-Below is a screenshot of how your form should look like: 
+Below is a screenshot of how your form should look like:
 
 ![](../../.gitbook/assets/cleanshot-2021-09-16-at-12.45.27-2x.png)
 
@@ -117,7 +117,7 @@ By extension, you can transform any data into the desired format and type. For e
 
 Using JavaScript transformation, you specify a JavaScript function that applies the transformations that you want. You can include methods to check whether input records match a particular condition, and you can either drop or forward records on the basis of the results.
 
-Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) to transform data in any widget, API, or DB Query.
+Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](https://docs.appsmith.com/core-concepts/writing-code/ext-libraries) to transform data in any widget, API, or DB Query.
 {% endhint %}
 
 ## Wrapping up the Form
@@ -174,7 +174,7 @@ Your form will have the value filled in by the user. You want to insert those va
 1. Navigate to **Pages → NewProductPage → Datasources → +**
 2. Navigate to **Mock Database → New Query**
 3. Rename the query to **AddProductQuery**
-4. Copy the following in the Query tab  
+4. Copy the following in the Query tab
 
    ```sql
    INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')
