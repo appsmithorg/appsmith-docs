@@ -1,5 +1,5 @@
 ---
-description: Appsmith is open source and is very easy to deploy
+description: Appsmith is open source and easy to deploy
 ---
 
 # Setting up Appsmith
