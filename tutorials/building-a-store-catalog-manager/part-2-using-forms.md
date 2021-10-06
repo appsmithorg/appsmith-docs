@@ -26,7 +26,7 @@ When you create a new page, the base directory structure having Widgets, APIs, a
 
 The created form does not have any input fields. Now, add a new [input widget](https://docs.appsmith.com/widget-reference/input) onto the empty form \(_AddProductForm_\) by simply selecting it and dropping it on to canvas. Rename, the input widget to `ProductNameInput`.
 
-Below is a screenshot of how your form should look like: 
+Below is a screenshot of how your form should look like:
 
 ![](../../.gitbook/assets/cleanshot-2021-09-16-at-12.45.27-2x.png)
 
@@ -174,7 +174,7 @@ Your form will have the value filled in by the user. You want to insert those va
 1. Navigate to **Pages → NewProductPage → Datasources → +**
 2. Navigate to **Mock Database → New Query**
 3. Rename the query to **AddProductQuery**
-4. Copy the following in the Query tab  
+4. Copy the following in the Query tab
 
    ```sql
    INSERT INTO products ("productName", "category", "mrp") VALUES ('{{ProductNameInput.text}}', '{{CategoryDropdown.selectedOptionValue}}', '{{MrpInput.text}}')
