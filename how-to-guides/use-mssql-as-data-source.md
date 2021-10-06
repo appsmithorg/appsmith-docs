@@ -4,14 +4,15 @@ description: >-
 ---
 
 # Use MsSQL as a data source on Appsmith
+This guide assumes you have basic familiarity with [Appsmith](https://www.appsmith.com/). If you don't have much familiarity, I would suggest creating an account and trying it out. I assure you that it is very simple to get aquainted with quickly.
 
 ## MsSQL
 MsSQL or Microsoft SQL Server is a relational database management system developed by Microsoft. It is a database server developed by Microsoft which provides all the pimary functionalities of the SQL version you might have used. MsSQL databases can be queried using the standard T-SQL syntax.
 
-In this guide, you will learn how you can use MsSQL as a data source for your Appsmith application. You can check out the full application from this guide [here](https://app.appsmith.com/applications/615cb29fea18372f05103b73/pages/615cb29fea18372f05103b75).
+In this guide, you will learn how you can use MsSQL as a data source for your Appsmith application. 
 
 ## What to build
-Since everybody likes Pokémons, let's build a simple application which will show you a few Pokémons with their images, names and types. It's simple enough for our tutorial, and should be helpful in exploring all the required things to learn here.
+Since everybody likes Pokémons, let's build a simple application which will show you a few Pokémons with their images, names and types. It's simple enough for our tutorial, and should be helpful in exploring all the required things to learn here. You can check out the complete application from this guide [here](https://app.appsmith.com/applications/615cb29fea18372f05103b73/pages/615cb29fea18372f05103b75).
 
 Let's start with setting up an MsSQL server.
 
@@ -86,3 +87,45 @@ Once this is done, after a bit of styling (adding colours to text), you will hav
 Oh, also since this all data is fetched from your database, naturally, adding more data will automatically show more data in your application. Like this:
 
 ![Screenshot 2021-10-06 at 2 40 48 PM](https://user-images.githubusercontent.com/41565823/136174231-df373bfc-380e-40ef-a2c7-ef0408060905.png)
+
+## Writing data
+Now that you know how to read data from your MsSQL database and display relevant data in your Appsmith application, let's now focus on writing to your database. For this, let's update our application by adding two new buttons which update a new `boolean` column named `Valid` in our database. 
+
+This is basically to allow the user to tell if the data is correct or not and send this information to database. This is a bit straightforward thing to demonstrate how you can write/update data in your database from your Appsmith application.
+
+So, first let's drag and drop two buttons for sending `true` and `false` to our database. Our app now looks like this:
+
+![Screenshot 2021-10-06 at 3 53 54 PM](https://user-images.githubusercontent.com/41565823/136185556-bccf6dfe-03e0-40a2-961b-ff2c854b8adb.png)
+
+Now, let's write queries for actually updating the stuff. Go to `Datasources` from your left hand side menu and click on `New Query` like before. This time we would be choosing `Update` in the next step.
+
+Now our updating queries will be this in our case:
+For `true`:
+```
+UPDATE pokemon
+  SET Valid = 'TRUE'
+  WHERE Name = {{ List1.selectedItem.Name }};
+```
+For `false`:
+```
+UPDATE pokemon
+  SET Valid = 'FALSE'
+  WHERE Name = {{ List1.selectedItem.Name }};
+```
+
+Please note that I am using `Name` as a primary key in my database. The `List1` is the List widget in our application. `List1.selectedItem.Name` refers to the `Name` of `selectedItem` from the List widget.
+
+I named these queries `update_true` and `update_false` respectively in our case here.
+
+Now head back to your page and click on the settings icon of the buttons you added. Click on `onClick` and choose `Run Query` option and choose the query that you want to run when the button is clicked.
+
+In our case here, I am running `update_true` from the green button click and `update_false` from the red button click.
+
+![Screenshot 2021-10-06 at 4 00 36 PM](https://user-images.githubusercontent.com/41565823/136186500-6bae9dfe-36b1-4501-9121-fa3b0a664a76.png)
+
+To display the value of `Valid` column, I also have added a switch to be `on` if `Valid` is `true` otherwise `false`. And the full application now looks like this:
+
+![Screenshot 2021-10-06 at 4 05 11 PM](https://user-images.githubusercontent.com/41565823/136187179-10622603-0544-44b1-a994-efd8151360e0.png)
+
+Now, if you click the green confirm button, the switch will be set to on, and on clicking the red button, the switch will be set to off. You can go ahead and check out the full application [here](https://app.appsmith.com/applications/615cb29fea18372f05103b73/pages/615cb29fea18372f05103b75).
+
