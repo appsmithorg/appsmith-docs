@@ -21,13 +21,13 @@ Let's quickly first see how you can integrate MsSQL in Appsmith. There's really 
 
 So, just click on the `New` button to create a new application. Then click on `Generate from a Data table` option. Now you should be prompted with a screen that would ask you to connect the database of your choice. It should look something like this:
 
-![Screenshot 2021-10-06 at 1 49 56 AM](https://user-images.githubusercontent.com/41565823/136096664-acd862fd-a1dd-4e52-be82-620d655108b6.png)
+![Screenshot 2021-10-06 at 1 49 56 AM](/.gitbook/assets/mssql-appsmith-1.png)
 
 Now you can click on `Connect new Datasource` and find `MsSQL` from all the available database options.
 
 Now you will be greeted with a page to fill your credentials for your MsSQL server. You should fill in the host/port along with your database name and login credentials. The unfilled screen for this would look something like this:
 
-![Screenshot 2021-10-06 at 12 54 20 PM](https://user-images.githubusercontent.com/41565823/136158268-82e5c3a4-9ddb-4f3c-9bac-8a8d179175d9.png)
+![Screenshot 2021-10-06 at 12 54 20 PM](/.gitbook/assets/mssql-appsmith-2.png)
 
 Once you fill in all the details, you can click `Test` from the options below to test your connection. It will let you know if Appsmith is successfully able to connect to your database or not. If you're have some difficulties here's a good resource to know more.
 
@@ -36,7 +36,7 @@ If you're able to successfully test your connection using the `Test` button, you
 ## Querying the database
 So, now that you're done with setting up connection to your database server, you should be able to see a screen like this:
 
-![Screenshot 2021-10-06 at 1 03 09 PM](https://user-images.githubusercontent.com/41565823/136159487-facbb3a5-92f0-46de-8d04-ae7373a4e0d3.png)
+![Screenshot 2021-10-06 at 1 03 09 PM](/.gitbook/assets/mssql-appsmith-3.png)
 
 From here, let's try writing a query for our application. For our database I have already created a table `pokemon` which already has the data that we need to query.
 
@@ -49,13 +49,13 @@ SELECT * FROM pokemon;
 ```
 You can put your query in the Query box and a screen which should be looking like this:
 
-![Screenshot 2021-10-06 at 1 09 33 PM](https://user-images.githubusercontent.com/41565823/136160322-46f558bc-c1e5-473f-bf00-0e3bcf0ece6c.png)
+![Screenshot 2021-10-06 at 1 09 33 PM](/.gitbook/assets/mssql-appsmith-4.png)
 
 From here, you can run your query, name your query something to remember and test it. If you need more information regarding querying MsSQL in Appsmith, you can refer this [great piece of article](https://docs.appsmith.com/datasource-reference/querying-mssql#querying-mssql).
 
 Once you write your query, it will be saved in the left hand side menu with the identifier name of your choice and would look something like this:
 
-![Screenshot 2021-10-06 at 1 11 51 PM](https://user-images.githubusercontent.com/41565823/136160638-ec91d65c-0d2e-4dfe-8d09-7743070565c7.png)
+![Screenshot 2021-10-06 at 1 11 51 PM](/.gitbook/assets/mssql-appsmith-5.png)
 
 ## Displaying the data
 Now that we have connected our query and our database to our Appsmith application, it's time to actually display the data. Let's start with a very simple way to go on to this.
@@ -66,7 +66,7 @@ What would be the easiest way to see that in our application? Yep, using a table
 So let's try displaying our query data in a single table. For that go to the page in Appsmith and drag and drop a Table widget. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case the identifer of my query is `main_query` so I will just put `main_query.data` inside `{{}}`.
 
 It looks something like this:
-![Screenshot 2021-10-06 at 2 12 53 PM](https://user-images.githubusercontent.com/41565823/136169715-a957c2ae-bdad-4031-b9db-16819499a990.png)
+![Screenshot 2021-10-06 at 2 12 53 PM](/.gitbook/assets/mssql-appsmith-6.png)
 
 And when you reload your page, voila, your query data will be there in a table!!!
 
@@ -82,20 +82,22 @@ Please note that these are the columns in my database table that I get from the 
 
 Once this is done, after a bit of styling (adding colours to text), you will have something that looks like this:
 
-![Screenshot 2021-10-06 at 2 35 39 PM](https://user-images.githubusercontent.com/41565823/136173371-bcc796ec-32d6-4d28-89e5-92257624286e.png)
+![Screenshot 2021-10-06 at 2 35 39 PM](/.gitbook/assets/mssql-appsmith-7.png)
 
 Oh, also since this all data is fetched from your database, naturally, adding more data will automatically show more data in your application. Like this:
 
-![Screenshot 2021-10-06 at 2 40 48 PM](https://user-images.githubusercontent.com/41565823/136174231-df373bfc-380e-40ef-a2c7-ef0408060905.png)
+![Screenshot 2021-10-06 at 2 40 48 PM](/.gitbook/assets/mssql-appsmith-8.png)
 
 ## Writing data
-Now that you know how to read data from your MsSQL database and display relevant data in your Appsmith application, let's now focus on writing to your database. For this, let's update our application by adding two new buttons which update a new `boolean` column named `Valid` in our database. 
+Now that you know how to read data from your MsSQL database and display relevant data in your Appsmith application, let's now focus on writing to your database. First of all, if you have chosen `Read only` for your database connection in Appsmith as you can see in one of the images below, you should choose `Read/Write`.
+
+For this, let's update our application by adding two new buttons which update a new `boolean` column named `Valid` in our database. 
 
 This is basically to allow the user to tell if the data is correct or not and send this information to database. This is a bit straightforward thing to demonstrate how you can write/update data in your database from your Appsmith application.
 
 So, first let's drag and drop two buttons for sending `true` and `false` to our database. Our app now looks like this:
 
-![Screenshot 2021-10-06 at 3 53 54 PM](https://user-images.githubusercontent.com/41565823/136185556-bccf6dfe-03e0-40a2-961b-ff2c854b8adb.png)
+![Screenshot 2021-10-06 at 3 53 54 PM](/.gitbook/assets/mssql-appsmith-9.png)
 
 Now, let's write queries for actually updating the stuff. Go to `Datasources` from your left hand side menu and click on `New Query` like before. This time we would be choosing `Update` in the next step.
 
@@ -121,11 +123,12 @@ Now head back to your page and click on the settings icon of the buttons you add
 
 In our case here, I am running `update_true` from the green button click and `update_false` from the red button click.
 
-![Screenshot 2021-10-06 at 4 00 36 PM](https://user-images.githubusercontent.com/41565823/136186500-6bae9dfe-36b1-4501-9121-fa3b0a664a76.png)
+![Screenshot 2021-10-06 at 4 00 36 PM](/.gitbook/assets/mssql-appsmith-10.png)
 
 To display the value of `Valid` column, I also have added a switch to be `on` if `Valid` is `true` otherwise `false`. And the full application now looks like this:
 
-![Screenshot 2021-10-06 at 4 05 11 PM](https://user-images.githubusercontent.com/41565823/136187179-10622603-0544-44b1-a994-efd8151360e0.png)
+![Screenshot 2021-10-06 at 4 05 11 PM](/.gitbook/assets/mssql-appsmith-11.png)
 
 Now, if you click the green confirm button, the switch will be set to on, and on clicking the red button, the switch will be set to off. You can go ahead and check out the full application [here](https://app.appsmith.com/applications/615cb29fea18372f05103b73/pages/615cb29fea18372f05103b75).
 
+And, now you know how to use MsSQL as data source for your Appsmith application :)
