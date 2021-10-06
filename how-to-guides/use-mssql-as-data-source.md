@@ -8,7 +8,7 @@ description: >-
 ## MsSQL
 MsSQL or Microsoft SQL Server is a relational database management system developed by Microsoft. It is a database server developed by Microsoft which provides all the pimary functionalities of the SQL version you might have used. MsSQL databases can be queried using the standard T-SQL syntax.
 
-In this guide, you will learn how you can use MsSQL as a data source for your Appsmith application.
+In this guide, you will learn how you can use MsSQL as a data source for your Appsmith application. You can check out the full application from this guide [here](https://app.appsmith.com/applications/615cb29fea18372f05103b73/pages/615cb29fea18372f05103b75).
 
 ## What to build
 Since everybody likes Pokémons, let's build a simple application which will show you a few Pokémons with their images, names and types. It's simple enough for our tutorial, and should be helpful in exploring all the required things to learn here.
@@ -52,7 +52,37 @@ You can put your query in the Query box and a screen which should be looking lik
 
 From here, you can run your query, name your query something to remember and test it. If you need more information regarding querying MsSQL in Appsmith, you can refer this [great piece of article](https://docs.appsmith.com/datasource-reference/querying-mssql#querying-mssql).
 
-Once you write your query, it will be saved in the left hand side menu with the name of your choice and would look something like this:
+Once you write your query, it will be saved in the left hand side menu with the identifier name of your choice and would look something like this:
 
 ![Screenshot 2021-10-06 at 1 11 51 PM](https://user-images.githubusercontent.com/41565823/136160638-ec91d65c-0d2e-4dfe-8d09-7743070565c7.png)
 
+## Displaying the data
+Now that we have connected our query and our database to our Appsmith application, it's time to actually display the data. Let's start with a very simple way to go on to this.
+
+How is the data stored in MsSQL datbases? Tables.
+What would be the easiest way to see that in our application? Yep, using a table.
+
+So let's try displaying our query data in a single table. For that go to the page in Appsmith and drag and drop a Table widget. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case the identifer of my query is `main_query` so I will just put `main_query.data` inside `{{}}`.
+
+It looks something like this:
+![Screenshot 2021-10-06 at 2 12 53 PM](https://user-images.githubusercontent.com/41565823/136169715-a957c2ae-bdad-4031-b9db-16819499a990.png)
+
+And when you reload your page, voila, your query data will be there in a table!!!
+
+Easy, right?
+
+So, let's now try to display the data in a bit more good looking way, like in a List.
+
+For that, first of all let's drag and drop a List widget in our UI. Now that we have the UI, let's setup the data. Again, simple click on the settings icon of the List widget and replace the `Items` value with `{{your_query_identifier.Data}}`, in my case that will be `{{main_query.Data}}`.
+
+But the only thing more that you have to do this time is setup the image and text widgets inside the List widget to the values they are expected to show. So in my case since the image should render `URL` part of each individual item, we set it to `{{currentItem.URL}}` in the settings of the Image1 in the List. Similary, the text widgets will be updated to `{{currentItem.Name}}` and `{{currentItem.Type}}`.
+
+Please note that these are the columns in my database table that I get from the query, they might differ in your case depending on your data. All we want is the List items to show the data that it is getting from the query data that we setup earlier.
+
+Once this is done, after a bit of styling (adding colours to text), you will have something that looks like this:
+
+![Screenshot 2021-10-06 at 2 35 39 PM](https://user-images.githubusercontent.com/41565823/136173371-bcc796ec-32d6-4d28-89e5-92257624286e.png)
+
+Oh, also since this all data is fetched from your database, naturally, adding more data will automatically show more data in your application. Like this:
+
+![Screenshot 2021-10-06 at 2 40 48 PM](https://user-images.githubusercontent.com/41565823/136174231-df373bfc-380e-40ef-a2c7-ef0408060905.png)
