@@ -26,7 +26,7 @@ You’ll also have to make sure that your app is public to embed into other appl
 
 ![Making the Application Public on Appsmith](https://lh3.googleusercontent.com/qpfBY24qpHXf_21sq52dNAXR52axc260x_ZFClh2fb8zUuEeM3Cd9fbKeLslK4jUXb4KTYucJXB92AxAOkHwKpj0ke15OJ5EH8EXHoN2bmtz5loZHmQ9ofvcCGEdsYyDVJQ04SUg)
 
-Next, create an `iframe` tag and add the sharable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively:
+Next, create an `iframe` tag and add the shareable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively:
 
 ```markup
 <!DOCTYPE html>
