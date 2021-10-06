@@ -1,5 +1,5 @@
 # Heroku
-You can quickly set up Appsmith with Heroku to explore product functionality.
+You can quickly set up Appsmith with Heroku to check your product functionality.
 ## Heroku Installation
 
 * Sign up for a free account on Heroku
@@ -66,41 +66,41 @@ To re-deploy your app \(re-build & re-run\), make sure you have Docker & Heroku 
 
 After that, follow the steps below:
 
-* Pull the Appsmith repository from Github & move to the `heroku` folder:
+* Pull the Appsmith repo from GitHub & move to the `heroku` folder:
 
   ```text
     git clone --branch master https://github.com/appsmithorg/appsmith
     cd ./appsmith/deploy/heroku
   ```
 
-* Then, log in to the Heroku CLI
+* Then, log in to the Heroku CLI with
 
   ```text
     heroku login
   ```
 
-* After that, log in to the Container Registry
+* After that, log in to the Container Registry with
 
   ```text
     heroku container:login
   ```
 
-* Get your application name
+* Get your application name by entering
 
   ```text
     heroku apps
   ```
 
-* Push your Docker-based app
+* Push your Docker-based app with
 
   ```text
     heroku container:push web -a <Your App Name>
   ```
 
-* And finally, Deploy the changes
+* And finally, Deploy the changes with
 
   ```text
-    heroku container:release web -a <Your App Name>
+    heroku container:release web -a Your-App-Name
   ```
 
 Wait for a couple minutes to let Heroku re-deploy Appsmith with the latest changes. You can check if Appsmith is running properly by visiting your Heroku URL \(or custom domain if you've set one up.\)
