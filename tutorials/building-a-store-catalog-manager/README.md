@@ -8,7 +8,7 @@ This tutorial shows you how to build a feature-complete **Grocery Catalog** appl
 
 The tutorial is organized into three parts & we recommend you follow them in order.
 
-You must have an account on either [Appsmith Cloud](https://docs.appsmith.com/quick-start#appsmith-cloud) \(it's free\) or your own[ private instance](../setup/) before getting started. Before diving in, let's talk a bit about the Appsmith environment.
+You must have an account on either [Appsmith Cloud](https://app.appsmith.com/user/signup) \(it's free\) or your own[ private instance](../setup/) before getting started. Before diving in, let's talk a bit about the Appsmith environment.
 
 ## The Appsmith Environment
 
