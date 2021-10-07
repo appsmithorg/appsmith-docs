@@ -7,7 +7,7 @@ In this tutorial, you’ll learn to build a feature-complete internal tool on to
 
 ⭐ **Level**: Beginner  
 ⏱️ **Time**: ~20 minutes  
-🙌 **Goals**: 
+🙌 **Goals**:
 
 * Connecting to Data Sources on Appsmith \(APIs/DB Queries\)
 * Binding Data onto different UI Widgets
@@ -15,7 +15,7 @@ In this tutorial, you’ll learn to build a feature-complete internal tool on to
 * Deploy and Manage your Applications
 {% endhint %}
 
-The tutorial is organized into three parts & we recommend you to follow them in order. Now before getting started, let’s set up Appsmith. You could either choose to use the self-hosted version using Docker or Appsmith cloud and follow along. 
+The tutorial is organized into three parts & we recommend you to follow them in order. Now before getting started, let’s set up Appsmith. You could either choose to use the self-hosted version using Docker or Appsmith cloud and follow along.
 
 {% hint style="warning" %}
 Note: To set up Appsmith locally using Docker, you can follow the instructions provided [here](https://docs.appsmith.com/setup/docker).
@@ -28,7 +28,7 @@ In this tutorial, you'll create our Review Moderator application under the same 
 1. Click on the `Create New` under your organisation.
 2. This will redirect to the configuration page of the newly created app.
 3. Note that the app is created with the default name **Untitled Application 1**.
-4. Rename it to `Review Moderator` ****by double-clicking on the existing one.
+4. Rename it to `Review Moderator` _\*\*_by double-clicking on the existing one.
 
 {% hint style="success" %}
 Tip: On Appsmith, you can rename organisation names, widget names, query names and many more by double-clicking on the existing one.
@@ -47,6 +47,4 @@ Now, let’s rename the page from `Page1` to `Business Details`; you can do this
 Awesome, you have now have set up the application. Next, let’s jump into the first part, here you’ll connect to a data source and write your first DB Query on Appsmith!
 
 {% page-ref page="connecting-to-data-source-and-binding-queries.md" %}
-
-
 

@@ -30,7 +30,7 @@ To enable Google Sign in, login to your [google cloud console](https://console.c
 
 ![Click to expand](../../.gitbook/assets/google-oauth-creds-2.png)
 
-**5. Update the**[ **instance configuration**](./) **with the following fields** 
+**5. Update the**[ **instance configuration**](./) **with the following fields**
 
 ```bash
 # Example docker configuration

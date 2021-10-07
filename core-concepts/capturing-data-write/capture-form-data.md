@@ -1,8 +1,8 @@
 # Capture Form Data
 
-The [Form widget](../../widget-reference/form.md) is a special type of container used to build validated forms. Multiple widgets can be dragged inside the form widget to capture data. The form widget comes with a form button pre-configured. 
+The [Form widget](../../widget-reference/form.md) is a special type of container used to build validated forms. Multiple widgets can be dragged inside the form widget to capture data. The form widget comes with a form button pre-configured.
 
-The form button is disabled if 
+The form button is disabled if
 
 * Any of the **required fields** inside the form are not filled
 * The form contains an input whose value does not match the regex configured
@@ -11,7 +11,7 @@ The form button is disabled if
 
 ## Submitting Form Data
 
-Form data can be submitted using a PUT / POST API or an Insert / Update Query. To submit form data,  
+Form data can be submitted using a PUT / POST API or an Insert / Update Query. To submit form data,
 
 1. Bind the onClick of the form button to call the API / Query
 2. Configure onSuccess to Display a success message

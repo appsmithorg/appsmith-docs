@@ -17,7 +17,7 @@ The signup page will continue to show up but will throw an error when a user tri
 
 The environment variable `APPSMITH_SIGNUP_ALLOWED_DOMAINS` can be used to restrict signups to emails belonging to only a specific set of domains. This field takes a comma-separated set of values.
 
-Setting `APPSMITH_SIGNUP_ALLOWED_DOMAINS=appsmith.com` will allow `homer@appsmith.com` to sign up, but not `bart@gmail.com`. 
+Setting `APPSMITH_SIGNUP_ALLOWED_DOMAINS=appsmith.com` will allow `homer@appsmith.com` to sign up, but not `bart@gmail.com`.
 
 Setting `APPSMITH_SIGNUP_ALLOWED_DOMAINS=appsmith.com,gmail.com` will allow both `homer@appsmith.com` and `bart@gmail.com` to sign up, but not `lisa@outlook.com`.
 

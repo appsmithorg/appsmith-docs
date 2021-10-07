@@ -131,9 +131,9 @@ For example, say your table has the following in the Table Data:
 ]
 ```
 
-Now you wanted to show columns based on the selection in a dropdown, let's add a dropdown with values that are the same as columns in the table. 
+Now you wanted to show columns based on the selection in a dropdown, let's add a dropdown with values that are the same as columns in the table.
 
-Drag and drop a Dropdown widget onto the canvas and add the following to the `Options` List and make it a Multi-Select dropdown in the `Selection Type` property. 
+Drag and drop a Dropdown widget onto the canvas and add the following to the `Options` List and make it a Multi-Select dropdown in the `Selection Type` property.
 
 ```text
 [
@@ -152,7 +152,7 @@ Drag and drop a Dropdown widget onto the canvas and add the following to the `Op
 ]
 ```
 
-Lastly, update the code in the table widget, map the data in the `Table Data` property using a moustache syntax and only return the data that's selected from the dropdown widget: 
+Lastly, update the code in the table widget, map the data in the `Table Data` property using a moustache syntax and only return the data that's selected from the dropdown widget:
 
 ```javascript
 {{
@@ -183,7 +183,5 @@ return obj;
 }}
 ```
 
-You could check the live example in this app [here](https://app.appsmith.com/applications/6063307b034ece74b148125a/pages/6063307b034ece74b148125c). 
-
-
+You could check the live example in this app [here](https://app.appsmith.com/applications/6063307b034ece74b148125a/pages/6063307b034ece74b148125c).
 

@@ -24,10 +24,10 @@ To upload a file
 To download a file
 
 1. Drag a Table onto the canvas and name it **s3\_files**
-2. Create a new S3 query named **fetch\_files** to fetch all the files in your bucket. 
+2. Create a new S3 query named **fetch\_files** to fetch all the files in your bucket.
    * Configure it with the [List Files](../datasource-reference/querying-amazon-s3.md#list-files-in-bucket) action. 
    * Set the bucket name from where to fetch the files and run the query
-   * Bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`. 
+   * Bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`.
 
      Now your table should list all the files present in your S3 bucket.
 
@@ -45,7 +45,7 @@ To download a file
 
 1. To download the file selected in the table
 
-   * Click on the `JS` button next to `onRowSelected` Action and write the 
+   * Click on the `JS` button next to `onRowSelected` Action and write the
 
      following javascript query:
 
