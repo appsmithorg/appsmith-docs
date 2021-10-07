@@ -15,4 +15,5 @@ This document presumes you are familiar with the [core concepts](../core-concept
 9. [How to implement custom authentication on Appsmith](how-to-implement-custom-authentication-on-appsmith.md)
 10. [How to use MsSQL as a data source on Appsmith](use-mssql-as-data-source.md)
 11. [How to use filters on Appsmith's table widget](how-to-use-filters-on-appsmith-table-widget.md)
+12. [How to build auto-generated forms using List widget](build-auto-generated-forms-using-list-widget.md)
 

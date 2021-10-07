@@ -45,5 +45,5 @@ The property pane has an action section where all the interactions that a user c
 
 To configure the Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](../../.gitbook/assets/button-onclick%20%282%29%20%282%29.gif)
+![](../../.gitbook/assets/button-onclick%20%282%29%20%284%29%20%282%29.gif)
 

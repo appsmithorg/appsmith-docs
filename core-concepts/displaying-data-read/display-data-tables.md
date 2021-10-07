@@ -2,7 +2,7 @@
 
 The [Table Widget](../../widget-reference/table.md) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
-![](../../.gitbook/assets/bind-table%20%282%29%20%284%29.gif)
+![](../../.gitbook/assets/bind-table%20%282%29%20%284%29%20%288%29.gif)
 
 ## Pagination
 
@@ -30,7 +30,7 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute onPageChange.
 
-![](../../.gitbook/assets/pagination%20%282%29%20%282%29.gif)
+![](../../.gitbook/assets/pagination%20%282%29%20%282%29%20%282%29.gif)
 
 ## Server-Side Searching / Filtering
 
