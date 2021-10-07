@@ -39,7 +39,7 @@
   * [How to implement custom authentication on Appsmith](how-to-guides/how-to-implement-custom-authentication-on-appsmith.md)
   * [How to work with Local APIs on Appsmith](how-to-guides/how-to-work-with-local-apis-on-appsmith.md)
   * [How to use filters on Appsmith table widget](how-to-guides/how-to-use-filters-on-appsmith-table-widget.md)
-  * [How to use MsSQL as a data source on Appsmith](how-to-guides/use-mssql-as-data-source.md)
+  * [How to use MS SQL as a data source on Appsmith](how-to-guides/use-mssql-as-data-source.md)
   * [How to build auto-generated forms using List widget](how-to-guides/build-auto-generated-forms-using-list-widget.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)

@@ -13,7 +13,7 @@ This document presumes you are familiar with the [core concepts](../core-concept
 7. [Work with local APIs on Appsmith](how-to-work-with-local-apis-on-appsmith.md)
 8. [How to work with Google Sheets on Appsmith](how-to-work-with-google-sheets-on-appsmith.md)
 9. [How to implement custom authentication on Appsmith](how-to-implement-custom-authentication-on-appsmith.md)
-10. [How to use MsSQL as a data source on Appsmith](use-mssql-as-data-source.md)
+10. [How to use MS SQL as a data source on Appsmith](use-mssql-as-data-source.md)
 11. [How to use filters on Appsmith's table widget](how-to-use-filters-on-appsmith-table-widget.md)
 12. [How to build auto-generated forms using List widget](build-auto-generated-forms-using-list-widget.md)
 
