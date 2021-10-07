@@ -130,5 +130,3 @@ As you'll see in the next section, the inverse of this is also possible, i.e a w
 
 When you’re comfortable with the basics of using the table-widget, setting up a DB query, and connecting the widget to display query results, read part 2 of the tutorial to learn to use widgets that enable you to accept and process user input.
 
-
-

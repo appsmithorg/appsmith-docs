@@ -1,4 +1,4 @@
-# Custom MongoDB and Redis
+# Custom MongoDB & Redis
 
 Appsmith runs it's own instances of MongoDB database for storing all application data, and Redis for storing session information. It's easy to switch to externally running instances of these services, by just changing the relavent environment variables.
 
@@ -23,3 +23,4 @@ APPSMITH_REDIS_URL=redis://hostname:6379
 ## Applying Changes
 
 Please remember to [**restart the Appsmith instance**](./) to apply the changes.
+

@@ -4,11 +4,9 @@ description: Iframe widget is used to display iframes in your app.
 
 # Iframe
 
-
-
 ![](../.gitbook/assets/cleanshot-2021-07-04-at-23.03.52%20%281%29.gif)
 
-### Properties
+## Properties
 
 | Property | Description |
 | :--- | :--- |

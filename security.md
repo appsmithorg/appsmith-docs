@@ -12,9 +12,9 @@ Appsmith applications are secure-by-default. The security measures implemented f
 * Encrypt all sensitive credentials such as database credentials with AES-256 encryption. Each self-hosted Appsmith instance is configured with unique salt and password values ensuring data-at-rest security.
 * Appsmith Cloud will only connect to your databases/API endpoints through whitelisted IPs: **18.223.74.85** & **3.131.104.27**. This ensures that you only have to expose database access to specific IPs when using our cloud offering.
 * Appsmith Cloud is hosted in AWS data centers on servers that are SOC 1 and SOC 2 compliant. We also maintain data redundancy on our cloud instances via regular backups.
-* Internal access to Appsmith Cloud is controlled through 2-factor authentication system along with audit logs 
+* Internal access to Appsmith Cloud is controlled through 2-factor authentication system along with audit logs
 
-  \(audit logs here is in reference to Appsmith cloud hosted instance only and should not be confused with audit logs 
+  \(audit logs here is in reference to Appsmith cloud hosted instance only and should not be confused with audit logs
 
   feature\) .
 

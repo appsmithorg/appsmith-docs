@@ -4,7 +4,7 @@ description: Part Two of Review Moderator Tutorial
 
 # Building UI and Accessing Widget Properties
 
-### Customising the Table Widget
+## Customising the Table Widget
 
 The table widget now has a lot of data from the query, but say you might want to show only a few columns and hide the rest of them for better clarity, and you can simply open the property pane, find the columns and toggle the `eye` icon. This will hide the columns from the table. Now open the tables property pane, and only display the following columns:
 
@@ -24,7 +24,7 @@ Below is the GIF to build the UI:
 
 Well, that’s impressive, just like that you’re able to update the UI. So next, let’s add some additional components that will display the information whenever a particular business is selected on the table row. For this, let’s first rename the Table widget from `Table1` to `businessTable.`
 
-### Adding a Map Widget
+## Adding a Map Widget
 
 Now, let’s add a Map Widget and display the location of the business on the left-hand side of the container by following the below steps:
 
@@ -66,7 +66,7 @@ Now select any row from the table, the map automatically updates with the busine
 
 ![](https://lh4.googleusercontent.com/I5woXYW_T37FpytigD2VnlsoWfAWqzWThiqV8LW5ed5rRDxelKlcpIXjoBZQpvOc5QVd4nsDL65uOwuArgVlpW21VnQvv9xwljZ5GgCKT6xwX4cyL2k5NrYyc-NbIe7XA6Ug76vp)
 
-### Adding Text Widgets and Binding Data
+## Adding Text Widgets and Binding Data
 
 Alright, next let’s add a few text widgets and bind all the business information under the map. To do this, you can drop and drop text widgets onto the canvas and add their associated names and values like:
 

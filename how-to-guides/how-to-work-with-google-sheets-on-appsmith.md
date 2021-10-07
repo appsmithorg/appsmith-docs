@@ -2,9 +2,9 @@
 
 With Appsmith's inbuilt Google Sheet Integration Plugin, you can use any Google Sheet as a data source or a backend to build powerful applications. In this tutorial, we'll build a CRUD app that allows us to store and update investor contact information on top of Google Sheet with Appsmith.
 
-### Setting Up Google Sheets and Appsmith
+## Setting Up Google Sheets and Appsmith
 
- Follow the below steps to use Google Sheets with Appsmith:
+Follow the below steps to use Google Sheets with Appsmith:
 
 * Create a new account on [Appsmith](https://www.appsmith.com/?utm_source=blog&utm_medium=direct&utm_content=google_sheets_crm&utm_campaign=weeklyblog&utm_term=google_sheets_crm) \(it’s free!\), if you are already an existing login to your Appsmith account.
 * Create a new application by clicking on the `Create New` button under the Appsmith dashboard.
@@ -28,7 +28,7 @@ Following are the fields we’ll be considering:
 
 To make this more precise, we’ve made a sample Google Sheet with some mock data [here](https://docs.google.com/spreadsheets/d/1f5lw-SO2NOCUhFKmDFPcXgI7qhA_VIwJXhOm8JmhEBA/edit?usp=sharing). We’ll be using the same Sheet throughout this guide, and you can either follow with this or create your own based on our requirements.
 
-### Fetch Data from Google Sheet to Appsmith
+## Fetch Data from Google Sheet to Appsmith
 
 Now that we are connected to our Google Sheets data source, let’s connect to our Google Sheet and query all the data onto a table widget in Appsmith. To do this, navigate to the created data source under the APIs section and click on the `New API` button on the top right. Next, follow the below steps:
 
@@ -52,7 +52,7 @@ Awesome, now that we have our data from the Google Sheet, let’s put this in a 
 ```
 
 {% hint style="info" %}
-#### Pagination when Working with Large Data
+### Pagination when Working with Large Data
 
 When working with large data on Google Sheets Sheets from APIs, browsers cannot load all the data present in our sheets. For such cases, you can enable server-side pagination, on API calls. To paginate the data, follow the below steps:
 
@@ -61,7 +61,7 @@ When working with large data on Google Sheets Sheets from APIs, browsers cannot 
 3. Toggle pagination in the API under Pagination Tab
 {% endhint %}
 
-### Insert Data/Rows to Google Sheet from Appsmith
+## Insert Data/Rows to Google Sheet from Appsmith
 
 Let’s start by adding a button and showing a modal that has a form to add all the details of the new investors. Follow the below steps:
 
@@ -108,9 +108,9 @@ Now that we have our form ready, let's write the logic to push the values from t
 
 Here, the key's are the column names in the Google Sheet, and the values associated with them are the names of the input widgets. The `.text` method is used to pick the text that's written in the input widgets.
 
-Lastly, in the form below for the submit button, set the on click property to `Call an API` and call the `addNewInvestor` API from the options. With this, we should be able to add new rows to Google Sheet from Appsmith. 
+Lastly, in the form below for the submit button, set the on click property to `Call an API` and call the `addNewInvestor` API from the options. With this, we should be able to add new rows to Google Sheet from Appsmith.
 
-### Updating Data on Google Sheet from Appsmith
+## Updating Data on Google Sheet from Appsmith
 
 Let's add a feature to display this data and able to update them using the input widget. Drag and drop a container and add necessary input widgets to display the Investor Details. In this case, we’ll be adding the following:
 
@@ -124,8 +124,6 @@ Let's add a feature to display this data and able to update them using the input
 The left side text will be the default text in the text widget of the form, and on the right, we have the names of the input widgets corresponding to them. Below is a screenshot of how the form looks like:
 
 ![](../.gitbook/assets/image%20%2818%29.png)
-
-
 
 Set the following to the Default text of input widgets in the investor details container:
 
@@ -158,9 +156,9 @@ Now, whenever we made changes in the input widgets and hit update details, the a
 
 Lastly, for the Update Details button, set the `onclick` property to Call an API and call the `editInvestorDetail` API. We should now be able to update the investor details by editing the necessary input widgets and clicking on the update button.
 
-### Delete Data on Google Sheets from Appsmith
+## Delete Data on Google Sheets from Appsmith
 
-For the delete option, let's add a new column in the table and set the column to a button. Update the label as `Delete` so that we see a new delete button on each row in the table. Now let's go ahead and create a new Delete API on the Google Sheets data source. 
+For the delete option, let's add a new column in the table and set the column to a button. Update the label as `Delete` so that we see a new delete button on each row in the table. Now let's go ahead and create a new Delete API on the Google Sheets data source.
 
 * Create a new API from the existing Google Sheets data source and set the query method to `Delete Row`. This query method helps us delete row data in the Google Sheet from Appsmith.
 * Name the API to `deleteInvestorDetail`
@@ -173,7 +171,7 @@ For the delete option, let's add a new column in the table and set the column to
 {{Table1.selectedRow.rowIndex}}
 ```
 
-The `Delete row` method only takes in the `rowIndex`, hence we're passing this via the Table1 widget using the `selectedRow` property. 
+The `Delete row` method only takes in the `rowIndex`, hence we're passing this via the Table1 widget using the `selectedRow` property.
 
-With this, we were able to perform CRUD operations on Google Sheet using Appsmith. Do refer to the [docs](../datasource-reference/querying-google-sheets.md) for other query methods in the Google Sheets plugin. 
+With this, we were able to perform CRUD operations on Google Sheet using Appsmith. Do refer to the [docs](../datasource-reference/querying-google-sheets.md) for other query methods in the Google Sheets plugin.
 

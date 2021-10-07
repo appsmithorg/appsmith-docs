@@ -2,22 +2,22 @@
 
 Working with Google Sheets Plugin on Appsmith is the handiest way to use Google Sheets as a data source for building apps. But sometimes, we often run into minor errors while specific queries while editing and deleting data on Google Sheets. In this guide, we'll look at some of the frequent errors one faces while using Google Sheets.
 
-### Expected a row object
+## Expected a row object
 
 This error occurs when an invalid format is passed to the insert or update sheet operations. The request body must be an object with keys matching the headers of the Google Sheet. The header row is determined by the index of the google sheet. Below is a sample row object
 
 ```text
 {
-	"rowIndex":{{Table1.selectedRow.rowIndex}},
-	"Name Input": "{{editFund.text}}",
-	"Designation": "{{editDesignation.text}}",
-	"Location": "{{editLocation.text}}"
+    "rowIndex":{{Table1.selectedRow.rowIndex}},
+    "Name Input": "{{editFund.text}}",
+    "Designation": "{{editDesignation.text}}",
+    "Location": "{{editLocation.text}}"
 }
 ```
 
-### **Missing required field row index**
+## **Missing required field row index**
 
-**Editing Data on Google Sheets**: To edit data on Google Sheets we'll have to use the **Edit Sheet Row** query from the plugin. While doing this, we might encounter a **Missing required field row index** error**.** This occurs when we miss a `rowIndex` key in the **Row Object** property. 
+**Editing Data on Google Sheets**: To edit data on Google Sheets we'll have to use the **Edit Sheet Row** query from the plugin. While doing this, we might encounter a **Missing required field row index** error**.** This occurs when we miss a `rowIndex` key in the **Row Object** property.
 
 For example, you're editing three fields using Input Widgets from a table \(`Table1`\) with the following names:
 
@@ -29,16 +29,16 @@ To edit these you're `Row Object` should be set to the following:
 
 ```text
 {
-	"rowIndex":{{Table1.selectedRow.rowIndex}},
-	"Name Input": "{{editFund.text}}",
-	"Designation": "{{editDesignation.text}}",
-	"Location": "{{editLocation.text}}"
+    "rowIndex":{{Table1.selectedRow.rowIndex}},
+    "Name Input": "{{editFund.text}}",
+    "Designation": "{{editDesignation.text}}",
+    "Location": "{{editLocation.text}}"
 }
 ```
 
-As we see for the `Edit Sheet Row` query we must pass an `rowIndex`, else it throws a **Missing required field row index** error. 
+As we see for the `Edit Sheet Row` query we must pass an `rowIndex`, else it throws a **Missing required field row index** error.
 
-### Plugin failed to parse JSON Error
+## Plugin failed to parse JSON Error
 
 While creating or editing the data on Google Sheets from Appsmith, we should pass the object that needs to edit in the Row Object property. Here, we might face errors while parsing the data into the JSON object. Below is an example as a reference to edit/create new row objects on Google Sheets from Appsmith.
 

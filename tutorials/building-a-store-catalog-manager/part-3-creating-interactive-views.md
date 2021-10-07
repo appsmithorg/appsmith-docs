@@ -108,7 +108,7 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 
 1. Navigate to **ProductListPage → Datasources**
 2. Click **+ Create New**
-3.  Choose Create new API
+3. Choose Create new API
 4. You'll see a Postman-like interface
 5. Rename the API to **UpdateQueryApi**
 6. Choose method as **POST**
@@ -119,9 +119,9 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 
 ```text
 {
-	"productName" : "{{ProductNameInput.text}}",
-	"mrp" : "{{MrpInput.text}}",
-	"category" : "{{CategoryDropdown.selectedOptionValue}}"
+    "productName" : "{{ProductNameInput.text}}",
+    "mrp" : "{{MrpInput.text}}",
+    "category" : "{{CategoryDropdown.selectedOptionValue}}"
 }
 ```
 
@@ -132,8 +132,6 @@ By using the mustache template in the URL, you're passing the ID of the product 
 
 Here, you are accessing widgets' properties in an API. This is in line with what you learned in the previous sections - that you can access a widget's properties from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's properties from, the method of access remains the same, i.e. it follows the syntax_`{{<widgetname>.<property_name>}}`._
 {% endhint %}
-
-
 
 ## Configuring multiple actions on UI events
 
