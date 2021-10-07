@@ -4,7 +4,7 @@ description: Part Three of Review Moderator Tutorial
 
 # Creating Interactive Views, Using Lists and Charts
 
-### Storing Data in Appsmith Context Object
+## Storing Data in Appsmith Context Object
 
 You are now almost ready with your super cool dashboard. Next, let's add a button that'll redirect to a new page. Also, on the new page, you would require the `business_id` to filter the reviews from the review table. Hence now store the value in Appsmith Context Object and use it as a reference. Follow the below steps:
 
@@ -33,7 +33,7 @@ To access widget's properties or an APIs/DB Query's results on another page, the
 
 As you can see here, as soon as view click the button, it now navigates to a new Page! Also, we have the `business_id` saved from the selected row.
 
-### Using Store Value in DB Queries
+## Using Store Value in DB Queries
 
 Now, let’s write one more DB query to filter the reviews from the reviews table based on the selected `business_id` by following the below steps:
 
@@ -80,7 +80,7 @@ Found {{filterBusinessReviews.data.length}} Reviews for {{getBusinessDetails.dat
 
 ![](https://lh4.googleusercontent.com/azCYvUSRkqHgu7wChBeh7CspMfcQZoyxVV903H1MG2qD1FZB7EvCAlkjpWINkt6MCvTkaU4UGlwosULyF2xrecLmIX9g2ZE18I0ojMLU1E8pPX4unLC2ZnAhsvJilpwuGNs9TZHF)
 
-### **Using List Widget to display the Reviews**
+## **Using List Widget to display the Reviews**
 
 Now, lets us a List Widget to display all the reviews from the `filterBusinessReviews` query. Follow the below steps:
 
@@ -103,7 +103,7 @@ Below is the GIF showing how you can bind data into the List widget:
 
 Excellent, now you can try displaying the rest of the data onto the list widget using the `currentItem` property.
 
-### **Displaying Date**
+## **Displaying Date**
 
 Drag and drop a text widget onto the table, and add the following code snippet in the `Text` property from its property pane:
 
@@ -117,7 +117,7 @@ Here, if you notice, the date isn’t in a readable way. You can use \`moment.js
 
 The date automatically formats based on the type we give in the `.format()` method.
 
-### **Displaying Ratings**
+## **Displaying Ratings**
 
 After adding the date, we can bind the review text in one more text widget using the following `Text` value in the text widget inside the list widget.
 
@@ -125,19 +125,19 @@ After adding the date, we can bind the review text in one more text widget using
 
 Next, add the reviews from the query by settings the following in the text widgets:
 
-Stars Ratings: **``{{ `Stars:  ${currentItem.stars}` }}``**
+Stars Ratings: **``{{ `Stars: ${currentItem.stars}` }}``**
 
-Funny Ratings: **``{{ `Funny:  ${currentItem.funny}` }}``**
+Funny Ratings: **``{{ `Funny: ${currentItem.funny}` }}``**
 
-Useful Ratings: **``{{ `Useful:  ${currentItem.useful}` }}``**
+Useful Ratings: **``{{ `Useful: ${currentItem.useful}` }}``**
 
-Cool Ratings: **``{{ `Cool:  ${currentItem.cool}` }}``**
+Cool Ratings: **``{{ `Cool: ${currentItem.cool}` }}``**
 
 After finishing this, you can also customise the text widget, find the background-colour property in the text widget property pane, and add any background colours. Now, finally, this is how the app looks like:
 
 ![Customising the List Widget](https://lh3.googleusercontent.com/CFG4g63CO47naltKSacaa7DEDMXWShccKnsjK6CtZ0z1w5YthoFqeMX6U1YK5ipkg8SGIIBqrlUzkwgUQXnSkVp2wkhaAm2m_1wp3SxSFoZ2IDBQKm5Klayz4Bkc-pTJHmNrifaz)
 
-### Adding Chart Widget
+## Adding Chart Widget
 
 The chart widget on Appsmith is used to view the graphical representation of your data. It’s available in multiple configurations, however, if you want to do advanced visualisation, you can choose the custom configuration and use `Custom Fusion Chart Configuration`
 
@@ -159,9 +159,9 @@ Awesome! With this, you should be able to see all the data plotted on the chart 
 
 Below is the live link to the fully configured app.
 
-{% embed url="https://app.appsmith.com/applications/60caeaa2d79dbb613bcb7761/pages/60caeaa2d79dbb613bcb7763" %}
+{% embed url="https://app.appsmith.com/applications/60caeaa2d79dbb613bcb7761/pages/60caeaa2d79dbb613bcb7763" caption="" %}
 
-### Sharing your Application
+## Sharing your Application
 
 Let's deploy your app for the final time. Once deployed, you can share your deployed application with both internal and external users:
 

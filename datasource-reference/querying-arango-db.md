@@ -16,11 +16,11 @@ All required fields are suffixed with an asterisk \(\*\).
 
 You need to fill in the following parameters:
 
-* **Host Address\* / Port:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith 
+* **Host Address\* / Port:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith
 
   will try to connect to port 8529.
 
-* **Database Name\*:**  Fill in the name of the database that you want to connect to. This is your database’s name.
+* **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
 
 ### **Authentication**
 

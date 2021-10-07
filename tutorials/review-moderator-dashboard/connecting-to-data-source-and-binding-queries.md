@@ -4,7 +4,7 @@ description: Part One of Review Moderator Tutorial
 
 # Connecting to Data Source and Binding Queries
 
-### **Connecting to Postgres Mock DB**
+## **Connecting to Postgres Mock DB**
 
 Appsmith supports various data sources and lets you write queries on them to perform different actions from the application. In this tutorial, you'll connect to a Postgres data source that has the following tables:
 
@@ -35,7 +35,7 @@ Below is the GIF showing how you can connect to the data source:
 
 ![Testing the Datasource on Appsmith](https://lh3.googleusercontent.com/6dd0e0oudKxsfS5yFuj4pBlDI0RUSBRj1V5KxBTeZYScZ_GRyV4cR7SZ_nb7MbbjW2mfRi_Yq973wDdVLPGyzXEdpk9vh2wk61eVpjo9hJolbLCl60Xbr14F5oO8xHKxVvO6totY)
 
-### **Writing your First Query**
+## **Writing your First Query**
 
 The data source is successfully connected; now, let’s write a simple DB query to fetch all the business from the business table. Follow the below steps to do so:
 
@@ -59,7 +59,7 @@ Below is a GIF showing the same:
 
 Let’s bind this data onto the powerful table widget of Appsmith!
 
-### Binding Queries onto Widgets
+## Binding Queries onto Widgets
 
 In the previous section, you’ve created a DB query named `getBusinessData`; let’s bind the query onto a table widget by following the below steps:
 
@@ -101,7 +101,7 @@ Here, we are accessing the entire query object using the query name `getBusiness
 
 Setting Table Data to `{{ getBusinessData.data }}` also ensures that whenever `Busines Page` loads, `getBusinessData` runs automatically. You can, although, change this default behaviour by toggling the field "Run query on page load" on the Setting tab of `getBusinessData`.
 
-### Variables and Names
+## Variables and Names
 
 In the previous sections, we've used names to access widgets and queries. For example, you accessed a query's result by accessing a property on the query's name. In that sense, think of widgets, APIs and DB Query in Appsmith as variables having a name. Similar to variables in other programming languages:
 
@@ -111,7 +111,4 @@ In the previous sections, we've used names to access widgets and queries. For ex
 4. All names within a page must be unique, including widget names, query names, or API names.
 
 As you'll see in the next section, the inverse of this is also possible, and a query can also access i.e. a widget’s state. Furthermore, all the building blocks of an Appsmith page - Widgets, DB Queries, and APIs can access each other's data and/or state using their names.
-
-  
-
 

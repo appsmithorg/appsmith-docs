@@ -80,7 +80,7 @@ In case the response does not contain label and value keys as below, we can map 
 
 **Why do you see this error?**
 
-The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. _\*\*_The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
+The below image shows that there is an error in the Chart Data field of the Chart**,** giving us the same error. \_\*\*\_The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array&lt;x, y&gt;.
 
 ![](../.gitbook/assets/chart-error.png)
 

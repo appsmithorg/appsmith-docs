@@ -8,11 +8,11 @@ This tutorial shows you how to build a feature-complete **Grocery Catalog** appl
 
 The tutorial is organized into three parts & we recommend you follow them in order.
 
-You must have an account on either [Appsmith Cloud](https://docs.appsmith.com/quick-start#appsmith-cloud) \(it's free\) or your own[ private instance](../setup/) before getting started. Before diving in, let's talk a bit about the Appsmith environment.
+You must have an account on either [Appsmith Cloud](https://docs.appsmith.com/quick-start#appsmith-cloud) \(it's free\) or your own[ private instance](https://github.com/appsmithorg/appsmith-docs/tree/31120b863977a1f6e4f4a25c6723a93c3834f5a2/tutorials/setup/README.md) before getting started. Before diving in, let's talk a bit about the Appsmith environment.
 
 ## The Appsmith Environment
 
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This home-page has an auto-generated organization called **`<Your first-name> apps`** \(referred to as your personal organization from now on\) consisting of multiple templates. In this tutorial, we'll create our Catalog app under the same organization. 
+If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This home-page has an auto-generated organization called **`<Your first-name> apps`** \(referred to as your personal organization from now on\) consisting of multiple templates. In this tutorial, we'll create our Catalog app under the same organization.
 
 Let's now create a new app named _Catalogue Dashboard_ under the personal organization.
 

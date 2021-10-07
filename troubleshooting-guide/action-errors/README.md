@@ -2,7 +2,7 @@
 
 ![Click to expand](../../.gitbook/assets/timeout-error.png)
 
-### Timeout Error
+## Timeout Error
 
 If your API / DB Query times out, it could be due to one of the following reasons
 
@@ -14,7 +14,7 @@ If your API / DB Query times out, it could be due to one of the following reason
 
 [server-side pagination](../../core-concepts/displaying-data-read/display-data-tables.md#pagination) or increasing the timeout of the API / Query in the [settings section](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings).
 
-### Configuration Error
+## Configuration Error
 
 ```text
 getUsers failed to execute. Please check it's configuration
@@ -22,7 +22,7 @@ getUsers failed to execute. Please check it's configuration
 
 This message indicates an error in the configuration of the action. You can navigate to the [API](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connect-to-apis/execute-apis) / [Query](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database) in this state and see the error it encountered. If the error occurred intermittently, it is likely due to a value in the configuration not being available at the time that the API / Query was run.
 
-### Mandatory Parameter Empty Error
+## Mandatory Parameter Empty Error
 
 ```text
 Mandatory parameters 'Action' and 'Bucket Name' are missing
@@ -48,7 +48,7 @@ A message of this type means that at least one of the mandatory / required field
 
 This error can be fixed by editing the [query editor form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database) and providing the parameter mentioned in the error message.
 
-### Missing Query Error
+## Missing Query Error
 
 ```text
 Missing required parameter: Query
@@ -66,7 +66,7 @@ Any one of these messages indicated that the body of the query has been left emp
 
 This error can be fixed by editing the [query form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database) and providing a query body.
 
-### Invalid Query Error
+## Invalid Query Error
 
 ```text
 Not a valid Redis command
@@ -80,7 +80,7 @@ A message of this type indicates that the syntax of the query body is invalid.
 
 This error can be fixed by providing a valid syntax in the [query editor form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database).
 
-### Encoding Error
+## Encoding Error
 
 ```text
 File content is not base64 encoded
@@ -90,7 +90,7 @@ This message indicates that the query was expecting a [base64 encoded](https://e
 
 This error can be fixed by passing a base64 encoded value as file content parameter in the query.
 
-### Invalid Number Error
+## Invalid Number Error
 
 ```text
 Parameter 'Expiry Duration of Signed URL' is NOT a number
@@ -100,7 +100,7 @@ This message indicates that the query parameter mentioned in the message expects
 
 This error can be fixed by editing the [query form](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database) and providing a valid number as input for the mentioned parameter.
 
-### JSON Parsing Error
+## JSON Parsing Error
 
 ```text
 Error parsing the JSON body

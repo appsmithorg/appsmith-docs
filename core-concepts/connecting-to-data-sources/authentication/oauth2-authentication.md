@@ -1,6 +1,6 @@
 # OAuth 2.0
 
-To connect to an OAuth API, click on the `+` icon next to the datasources section and add an Authenticated API. Enter the Base URL of the API \(ex. **https://airtable.com**\) and select the authentication type as **OAuth 2.0**. 
+To connect to an OAuth API, click on the `+` icon next to the datasources section and add an Authenticated API. Enter the Base URL of the API \(ex. [https://airtable.com](https://airtable.com)\) and select the authentication type as **OAuth 2.0**.
 
 ![](../../../.gitbook/assets/auth-api.gif)
 
@@ -39,7 +39,7 @@ If you're working with a Google Provider, it expects 2 additional parameters:
 1. `prompt`: `consent`
 2. `access_type`: `offline`
 
-The prompt is set to `consent`, this provides access to your Google Account. The `access_type` is set to `offline`, so that you need not re-authorise your token often.  
+The prompt is set to `consent`, this provides access to your Google Account. The `access_type` is set to `offline`, so that you need not re-authorise your token often.
 
 * **`Client Authentication`:** This configures the field in the request where the credentials should be sent in order to exchange for an access token. The request can be sent as a JSON object in the body or as a Base64 Encoded string in the headers
 
@@ -47,7 +47,7 @@ The prompt is set to `consent`, this provides access to your Google Account. The
 Add the Appsmith callback URL to your list of allowed`Redirect URIs`in the authentication application. This URL of the form `https://<your-domain-origin-or-ip>/api/v1/datasources/authorize`To allow Appsmith cloud allow`https://app.appsmith.com/api/v1/datasources/authorize`
 {% endhint %}
 
-If you want to see this in action, check out our tutorial on "How to add OAuth2 Authorization for Integrating Google Sheets into Appsmith" [here](../../../how-to-guides/oauth2-authorization-for-google-sheets.md). 
+If you want to see this in action, check out our tutorial on "How to add OAuth2 Authorization for Integrating Google Sheets into Appsmith" [here](../../../how-to-guides/oauth2-authorization-for-google-sheets.md).
 
 ## Client Credentials
 

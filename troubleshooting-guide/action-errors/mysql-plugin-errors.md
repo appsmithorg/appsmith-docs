@@ -1,6 +1,6 @@
 # MySQL Errors
 
-```
+```text
 dev.miku.r2dbc.mysql.client.MySqlConnectionException
 ```
 
