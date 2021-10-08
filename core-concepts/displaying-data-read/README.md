@@ -40,8 +40,9 @@ A widget must have a unique name that acts as an identifier on the page. It is u
 
 ### Grouping Widgets
 
-Widgets can be grouped together by selecting multiple widgets with Ctrl + Left Click. Once selected, click on the dotted square icon or press Ctrl + G. 
-Once grouped, the widgets are put in a container and can move together.
+Appsmith supports grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
+* Select multiple widgets with Ctrl + Left Click
+* Now click on the dotted square icon or press Ctrl + G
 
 ![](../../.gitbook/assets/group-widgets-2.gif)
 
