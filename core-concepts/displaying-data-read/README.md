@@ -44,6 +44,14 @@ You can access the various properties of the widget using the widget's name.
 {{ Table1.selectedRow.id }}
 ```
 
+### Grouping Widgets
+
+Appsmith supports grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
+* Select multiple widgets with Ctrl + Left Click
+* Now click on the dotted square icon or press Ctrl + G
+
+![](../../.gitbook/assets/group-widgets-2.gif)
+
 ## Displaying Data in a widget
 
 Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from a Query can be set in a widget property by referencing the name \(unique identifier\) of the Query.
