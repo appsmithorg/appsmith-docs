@@ -30,7 +30,7 @@ Here are some preview screenshots from the application we would be building towa
 
 ![Anime list page](https://user-images.githubusercontent.com/41565823/136691179-56c79743-c237-432a-b450-0fc199a9063d.png)
 
-## Building main page
+## Building main page UI
 Let's first start with the main page of our application. This page should give a user the ability to search and find anime from a list. Based on the user's choice, the user should be able to see the name, some info and wallpaper for the anime.
 
 First things first, let's first build the UI for our application.
@@ -67,3 +67,17 @@ Okay, now that I think about it, we should also have two widgets two show the nu
 The page should look something like this now:
 
 ![Anime main page 4](https://user-images.githubusercontent.com/41565823/136691802-9b6056c4-b5d8-4634-b3de-b91fc431d632.png)
+
+So far so good, right?
+
+## Connecting data
+
+We don't have any data integrated to it, yet. So, let's work on that. 
+
+I am going to be using my own data sources in this case. One is a public API which I have named [AniPi](https://anipi.herokuapp.com/) and other one is a MsSQL table that I have hosted on [Somee.com](https://somee.com).
+
+[AniPi](https://anipi.herokuapp.com/) is public and free to use. It is still a work in progress from my side but I will be making the repo public soon!
+
+So, I am going to be using the wallpaper and titles part of AniPi in this case. The MsSQL table will be used to store the Likes, Dislikes and some other info.
+
+
