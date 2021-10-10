@@ -26,9 +26,9 @@ You can check the complete application from the tutorial [here](https://app.apps
 
 Here are some preview screenshots from the application we would be building towards:
 
-![Anime main page](https://user-images.githubusercontent.com/41565823/136691163-d3d70feb-1e1d-4535-bdad-d76972ab996b.png)
+![Anime main page](../../.gitbook/assets/anime-demo-1.png)
 
-![Anime list page](https://user-images.githubusercontent.com/41565823/136691179-56c79743-c237-432a-b450-0fc199a9063d.png)
+![Anime list page](../../.gitbook/assets/anime-demo-2.png)
 
 ## Building main page UI
 Let's first start with the main page of our application. This page should give a user the ability to search and find anime from a list. Based on the user's choice, the user should be able to see the name, some info and wallpaper for the anime.
@@ -39,11 +39,11 @@ Now, since we talked about giving user the choice to search and choose an anime 
 
 Let's drag and drop that to our application. It should look something like this:
 
-![Anime main page 1](https://user-images.githubusercontent.com/41565823/136691318-25e422cb-2269-49fe-8a33-8fd6ce9629c9.png)
+![Anime main page 1](../../.gitbook/assets/anime-main-1.png)
 
 Now, I am also thinking of adding a wallpaper image for the anime that the user chooses. So, of course we arrive at the `Image` widget. So, let's drag and drop the Image widget now. The page should look like this now:
 
-![Anime main page 2](https://user-images.githubusercontent.com/41565823/136691408-c7a66e93-f3aa-4f44-83d5-8bf216606b2b.png)
+![Anime main page 2](../../.gitbook/assets/anime-main-2.png)
 
 Now, what we need to have are the Like / Dislike buttons and the Name or Source of the anime material. So, of course we will add a... 
 `Container` widget.
@@ -58,7 +58,7 @@ After this, let's drag and drop two `Text` widgets for Name and Source. Also let
 
 After dropping all of these in the pages, the application would look something like this:
 
-![Anime main page 3](https://user-images.githubusercontent.com/41565823/136691735-04fa3420-6816-4667-a0a1-99d4128ec3ed.png)
+![Anime main page 3](../../.gitbook/assets/anime-main-3.png)
 
 If your styling looks a bit different, don't worry, try fiddling with the settings of the `IconButton` and the other widgets. You might find a lot of ways to make the overall look better.
 
@@ -66,7 +66,7 @@ Okay, now that I think about it, we should also have two widgets two show the nu
 
 The page should look something like this now:
 
-![Anime main page 4](https://user-images.githubusercontent.com/41565823/136691802-9b6056c4-b5d8-4634-b3de-b91fc431d632.png)
+![Anime main page 4](../../.gitbook/assets/anime-main-4.png)
 
 So far so good, right?
 
@@ -85,19 +85,19 @@ Let's first see how to connect an MsSQL database with Appsmith.
 ### MsSQL connection
 At the left hand side menu, you can see `Datasources` and there's a `+` sign beside it. It looks something like this:
 
-![Anime main page 5](https://user-images.githubusercontent.com/41565823/136695648-83c79073-3b75-402f-8d70-2d1285267bcf.png)
+![Anime main page 5](../../.gitbook/assets/anime-main-5.png)
 
 If you click on it, you can see the active connections and there's also a tab that says `Create New`. On clicking it, you will find a screen like this which will show you all the options of database that you can setup for your Appsmith application. It looks something like this:
 
-![Anime main page 6](https://user-images.githubusercontent.com/41565823/136695755-2e88b262-035b-4b53-aedd-980152485635.png)
+![Anime main page 6](../../.gitbook/assets/anime-main-6.png)
 
 For connecting an MsSQL database, click on the MsSQL option and you will be greeted with a screen like this:
 
-![Anime main page 7](https://user-images.githubusercontent.com/41565823/136695783-825cf541-3dec-43de-a79c-bbcdcd1484a6.png)
+![Anime main page 7](../../.gitbook/assets/anime-main-7.png)
 
 Here you can fill up the connection credentials, and click on Test to check your connection. And when you're done you can click on Save to save your connection. Now you can see your connection on the Datasources page like this:
 
-![Anime main page 8](https://user-images.githubusercontent.com/41565823/136695864-bf350a40-3c37-448f-bb74-bc27537d6fa3.png)
+![Anime main page 8](../../.gitbook/assets/anime-main-8.png)
 
 Now that we've also setup the connection, let's quickly write a query for getting the information from the table. Click on the `New query` button next to your database connection. Don't forget to name it to something that makes sense to find easily what each query does later on.
 
@@ -122,15 +122,15 @@ From AniPi, I am going to be using all titles and wallpapers API. So, let's see 
 
 When you get to this screen like before, you have to choose `Create new API`:
 
-![Anime main page 6](https://user-images.githubusercontent.com/41565823/136695755-2e88b262-035b-4b53-aedd-980152485635.png)
+![Anime main page 6](../../.gitbook/assets/anime-main-6.png)
 
 After that you will be greeted with a page like this:
 
-![Anime main page 9](https://user-images.githubusercontent.com/41565823/136696365-27984f63-aaaa-48df-bc5e-57a7e8b9798d.png)
+![Anime main page 9](../../.gitbook/assets/anime-main-10.png)
 
 From the [Anipi docs](https://anipi.herokuapp.com/), the URL for the endpoint is `https://anipi.herokuapp.com/api/titles/all`. Let's fill up the details for the API in the screen above. After filling the details up, the screen would look something like this:
 
-![Anime main page 10](https://user-images.githubusercontent.com/41565823/136696501-6804ce21-0c21-4054-a74f-58212c9dbe53.png)
+![Anime main page 10](../../.gitbook/assets/anime-main-11.png)
 
 You can also click on `Run` to check if the connection to the API works.
 
@@ -140,7 +140,7 @@ Let's also quickly setup the wallpaper API.
 
 For that, again setup everything like before. The only change here is that wallpaper API needs the `Id` of the anime. So, the endpoint setup in Appsmith will look something like this:
 
-![Anime main page 11](https://user-images.githubusercontent.com/41565823/136696614-f0434d53-9cae-4679-9afd-6e6803a4324a.png)
+![Anime main page 11](../../.gitbook/assets/anime-main-12.png)
 
 I will get to the whole `{{SingleSelectTree1.selectedOptionValue}}` from previous and this page in next section.
 
@@ -171,7 +171,7 @@ Also, we have to increment the likes and dislikes for an anime in our database o
 
 Click on `onClick` JS for the Like button. Choose the option `Execute a query` from the list, and then click on the query of your choice. It would look something like this:
 
-![Anime main page 12](https://user-images.githubusercontent.com/41565823/136697457-c0d5b8fd-9457-4573-97ba-4f4f0f71db56.png)
+![Anime main page 12](../../.gitbook/assets/anime-main-13.png)
 
 Similarly for the dislike button.
 
@@ -183,7 +183,7 @@ Oh, yes, forgot to tell that you have to setup this. Click on the settings icon 
 
 This will ensure the dynamic changing of data when you choose the anime from the dropdown. It would look something like this:
 
-![Anime main page 13](https://user-images.githubusercontent.com/41565823/136697575-350844ca-6056-4c12-82c7-3a0beba55412.png)
+![Anime main page 13](../../.gitbook/assets/anime-main-14.png)
 
 Oh, also AniPi gives you different wallpapers for each anime from a list of wallpapers, so you will have a page with dynamically changing anime wallpaper.
 
@@ -196,15 +196,15 @@ On the left hand side menu, click on plus icon next to `Pages` on the top, and c
 
 Since, we will be showing a whole list of anime, what would be the best widget? `List`, right? Cool, so let's drag and drop a List widget. The page would look something like this now:
 
-![Anime list page 1](https://user-images.githubusercontent.com/41565823/136697768-490b1a4e-763f-417e-bfb0-145705313886.png)
+![Anime list page 1](../../.gitbook/assets/anime-list-1.png)
 
 Also, for the UI purposes, I am making each list item very large, so for that just pull the first item from the list to the end of the list. It would look something like this:
 
-![Anime list page 2](https://user-images.githubusercontent.com/41565823/136697849-4bcf5e1b-9d32-45aa-ad6b-7eabacdad482.png)
+![Anime list page 2](../../.gitbook/assets/anime-list-2.png)
 
 You will also have to setup the data source for your list. In my case, I already have the data in the `AnimeLike` table, so my query looks like this:
 
-![Anime list page 3](https://user-images.githubusercontent.com/41565823/136697955-cd27f16a-f2ee-43a9-9d01-d99cd50b263b.png)
+![Anime list page 3](../../.gitbook/assets/anime-list-3.png)
 
 So, now, let's connect the data to the widgets. It's similar to how we did before.
 
@@ -214,11 +214,11 @@ You can also add two other text widgets inside the first item of the list and se
 
 Remember that the List widget in Appsmith duplicates all the styling and editing of the first item to all others. So, you're almost done now! It would look something like this after styling a bit:
 
-![Anime list page 4](https://user-images.githubusercontent.com/41565823/136698375-91dc1a28-0cf1-43e8-a553-65dcc6fe96ab.png)
+![Anime list page 4](../../.gitbook/assets/anime-list-4.png)
 
 Also, let's not forget to update stuff `onListItemClick` like this:
 
-![Anime list page 5](https://user-images.githubusercontent.com/41565823/136698437-697d5048-c6f5-46b3-8e5e-d6c62ece5f59.png)
+![Anime list page 5](../../.gitbook/assets/anime-list-5.png)
 
 And that's it, deploy and show off!
 
