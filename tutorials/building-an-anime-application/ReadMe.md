@@ -167,4 +167,55 @@ Let's now also setup the URL for the image. Click on the settings icon of your i
 
 And the title of the anime value to `{{AnimeLike_get.data[0].Name}}`. The likes and dislikes value text widget to `{{AnimeLike_get.data[0].Likes}}` and `{{AnimeLike_get.data[0].Disikes}}` respectively. Here, `AnimeLike_get` is the query for getting the data from the MsSQL database.
 
-Also, we have to increment the likes and dislikes for an anime in our database on the button clicks.
+Also, we have to increment the likes and dislikes for an anime in our database on the button clicks. We already have written the queries for it above, let's connect them to the IconButtons that we added for liking and disliking.
+
+Click on `onClick` JS for the Like button. Choose the option `Execute a query` from the list, and then click on the query of your choice. It would look something like this:
+
+![Anime main page 12](https://user-images.githubusercontent.com/41565823/136697457-c0d5b8fd-9457-4573-97ba-4f4f0f71db56.png)
+
+Similarly for the dislike button.
+
+And we're all done for our anime main page for searching. Also, don't bother about saving, Appsmith auto saves everything for you. Click on the deploy button on the right top corner and see your page in action.
+
+What? The wallpaper and details are not changing on choosing the anime from your dropdown?
+
+Oh, yes, forgot to tell that you have to setup this. Click on the settings icon of the `SingleSelectTree1` and setup queries to execute `onOptionChange`. Choose the wallpaper and MsSQL queries, i.e. `AniPi_wallpaper.run()` and `AnimeLike_get.run()`.
+
+This will ensure the dynamic changing of data when you choose the anime from the dropdown. It would look something like this:
+
+![Anime main page 13](https://user-images.githubusercontent.com/41565823/136697575-350844ca-6056-4c12-82c7-3a0beba55412.png)
+
+Oh, also AniPi gives you different wallpapers for each anime from a list of wallpapers, so you will have a page with dynamically changing anime wallpaper.
+
+Looks cool, right?
+
+## Building list page UI
+Now that we're done with the main page, let's build the UI for the list page for our application. This page will show anime in the order of the likes that were given to the anime in the page we built above.
+
+On the left hand side menu, click on plus icon next to `Pages` on the top, and create a new page.
+
+Since, we will be showing a whole list of anime, what would be the best widget? `List`, right? Cool, so let's drag and drop a List widget. The page would look something like this now:
+
+![Anime list page 1](https://user-images.githubusercontent.com/41565823/136697768-490b1a4e-763f-417e-bfb0-145705313886.png)
+
+Also, for the UI purposes, I am making each list item very large, so for that just pull the first item from the list to the end of the list. It would look something like this:
+
+![Anime list page 2](https://user-images.githubusercontent.com/41565823/136697849-4bcf5e1b-9d32-45aa-ad6b-7eabacdad482.png)
+
+You will also have to setup the data source for your list. In my case, I already have the data in the `AnimeLike` table, so my query looks like this:
+
+![Anime list page 3](https://user-images.githubusercontent.com/41565823/136697955-cd27f16a-f2ee-43a9-9d01-d99cd50b263b.png)
+
+So, now, let's connect the data to the widgets. It's similar to how we did before.
+
+Click on the settings icon of the List widget and set the value to `{{AnimeLike_get_like_order.data}}`. Now go to the image widget's settings and set the value to `{{currentItem.Image}}` and the text widget's value to `{{currentItem.Name}}`.
+
+You can also add two other text widgets inside the first item of the list and set the values to `{{currentItem.Likes}}` and `{{currentItem.Dislikes}}` respectively to show the number of likes and dislikes for the anime.
+
+Remember that the List widget in Appsmith duplicates all the styling and editing of the first item to all others. So, you're literally done now!
+
+Just style a bit according to your preferences and you're done. Deploy and show off!
+
+You can visit the application we built [here](https://app.appsmith.com/applications/615f5becea18372f05104dc1/pages/615f5becea18372f05104dc3).
+
+I hope you learnt something useful here :)
