@@ -4,7 +4,7 @@ description: >-
 ---
 
 # Build an anime application
-This tutorial assumes you have basic familiarity with [Appsmith](https://appsmith.com). If not, please create an account to get started. It is very easy to get started with it. Here are some good resources.
+This tutorial assumes you have basic familiarity with [Appsmith](https://appsmith.com). If not, please create an account to get started. It is very easy to get started with it. Here are some [good resources](https://docs.appsmith.com/).
 
 ## Main features
 - Page 1:
@@ -157,7 +157,7 @@ AniPi_all_titles.data.map((row) => {
 }}
 ```
 
-If you're familiar with `map()` function in JavaScript, this would be very easy to understand but if you want a quick refresher, here's a good resource to check out.
+If you're familiar with `map()` function in JavaScript, this would be very easy to understand but if you want a quick refresher, here's a [good resource](https://docs.appsmith.com/core-concepts/displaying-data-read) to check out.
 
 Here, `AniPi_all_titles` is the query that gets all the titles from AniPi. Once you do this, your dropdown will now show the titles of the anime and you can also find them by typing and searching.
 
