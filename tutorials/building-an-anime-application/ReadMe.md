@@ -222,6 +222,4 @@ Also, let's not forget to update stuff `onListItemClick` like this:
 
 And that's it, deploy and show off!
 
-You can visit the application we built [here](https://app.appsmith.com/applications/615f5becea18372f05104dc1/pages/615f5becea18372f05104dc3).
-
-I hope you learnt something useful here :)
+You can visit the application we built [here](https://app.appsmith.com/applications/615f5becea18372f05104dc1/pages/615f5becea18372f05104dc3) and I hope you learnt something useful here :)
