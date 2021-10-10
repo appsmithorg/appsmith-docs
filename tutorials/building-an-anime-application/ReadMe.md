@@ -212,9 +212,15 @@ Click on the settings icon of the List widget and set the value to `{{AnimeLike_
 
 You can also add two other text widgets inside the first item of the list and set the values to `{{currentItem.Likes}}` and `{{currentItem.Dislikes}}` respectively to show the number of likes and dislikes for the anime.
 
-Remember that the List widget in Appsmith duplicates all the styling and editing of the first item to all others. So, you're literally done now! It would look something like this after styling a bit:
+Remember that the List widget in Appsmith duplicates all the styling and editing of the first item to all others. So, you're almost done now! It would look something like this after styling a bit:
 
 ![Anime list page 4](https://user-images.githubusercontent.com/41565823/136698375-91dc1a28-0cf1-43e8-a553-65dcc6fe96ab.png)
+
+Also, let's not forget to update stuff `onListItemClick` like this:
+
+![Anime list page 5](https://user-images.githubusercontent.com/41565823/136698437-697d5048-c6f5-46b3-8e5e-d6c62ece5f59.png)
+
+And that's it, deploy and show off!
 
 You can visit the application we built [here](https://app.appsmith.com/applications/615f5becea18372f05104dc1/pages/615f5becea18372f05104dc3).
 
