@@ -12,22 +12,16 @@
   * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
   * [Heroku](setup/heroku.md)
+  * [DigitalOcean](setup/digitalocean.md)
 * [Tutorials](tutorials/README.md)
   * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
     * [Connecting to Data Source and Binding Queries](tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries.md)
     * [Building UI and Accessing Widget Properties](tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties.md)
     * [Creating Interactive Views, Using Lists and Charts](tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts.md)
   * [Building a Store Catalog Manager](tutorials/building-a-store-catalog-manager/README.md)
-    * [Building a Simple UI](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view/README.md)
-      * [The Appsmith Environment](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view/the-appsmith-environment.md)
-      * [Creating your First Page](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view/creating-your-first-table.md)
-    * [Using forms](tutorials/building-a-store-catalog-manager/part-2-using-forms/README.md)
-      * [Creating your First Form](tutorials/building-a-store-catalog-manager/part-2-using-forms/creating-a-form.md)
-      * [Submitting the form](tutorials/building-a-store-catalog-manager/part-2-using-forms/submitting-the-form.md)
-    * [Creating interactive views](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views/README.md)
-      * [Accessing properties between widgets](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views/adding-edit-button.md)
-      * [Writing your first API](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views/writing-your-first-api.md)
-      * [Configuring multiple actions on UI events](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views/running-multiple-actions-on-submit.md)
+    * [Building a Simple UI](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view.md)
+    * [Using forms](tutorials/building-a-store-catalog-manager/part-2-using-forms.md)
+    * [Creating interactive views](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views.md)
 * [How To Guides](how-to-guides/README.md)
   * [How to work with Google Sheets on Appsmith](how-to-guides/how-to-work-with-google-sheets-on-appsmith.md)
   * [OAuth2 Authorization for Google Sheets](how-to-guides/oauth2-authorization-for-google-sheets.md)
@@ -92,10 +86,10 @@
   * [Whitelist MongoDB Cloud](datasource-reference/querying-mongodb/whitelist-mongodb-cloud.md)
 * [MS SQL](datasource-reference/querying-mssql.md)
 * [MySQL](datasource-reference/querying-mysql.md)
-* [Postgres](datasource-reference/querying-postgres.md)
+* [PostgreSQL](datasource-reference/querying-postgres.md)
 * [Redis](datasource-reference/querying-redis.md)
 * [Redshift](datasource-reference/querying-redshift.md)
-* [Snowflake](datasource-reference/querying-snowflake.md)
+* [Snowflake](datasource-reference/querying-snowflake-db.md)
 
 ## Framework Reference
 
@@ -113,6 +107,7 @@
 
 ## Widget Reference
 
+
 * [Audio Recorder](widget-reference/audio-recorder.md)
 * [Button](widget-reference/button/README.md)
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
@@ -123,8 +118,10 @@
 * [Dropdown](widget-reference/dropdown.md)
 * [Divider](widget-reference/divider.md)
 * [Select](widget-reference/dropdown-1.md)
+* [MultiSelect](widget-reference/multiselect.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
+* [Icon Button](widget-reference/icon-button.md)
 * [Iframe](widget-reference/iframe.md)
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
@@ -139,5 +136,5 @@
 * [Tabs](widget-reference/tabs.md)
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
-* [Video](widget-reference/video.md)
+* [Video](widget-reference/video-1.md)
 

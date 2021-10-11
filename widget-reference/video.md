@@ -5,7 +5,7 @@ description: >-
   DailyMotion.
 ---
 
-# Video
+# Audio
 
 {% embed url="https://youtu.be/KvIWaTOmZPo" caption="" %}
 

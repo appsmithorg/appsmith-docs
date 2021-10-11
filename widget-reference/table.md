@@ -32,15 +32,18 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **Table Data** | This property lets you edit the data in the table. You can either write an array of objects to display as table rows or you can bind data from an API using the mustache syntax `{{callMyApi.data}}` |
 | **Columns** | Auto populated from the Table data. This lets you edit the label, show/hide each column \(the eye icon\) and also customize the [column settings](https://docs.appsmith.com/widget-reference/table#column-settings) |
 | **Server Side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is being bound to an API / Query. |
+| **Total Record Count** | Allows you to control the number of results fetched per API / Query request. This field can only be used when server side pagination is enabled. To use this property bind `{{table.pageSize}}` and `{{table.pageNo}}` in your API / Query. You also need to bind your API  / Query in onPageChange action |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Default Search Text** | Sets the default search text of the table |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field |
+| **Enable inline row editing selection** | Allows inline editing in each row of a table. The updated data in a row is populated in the selectedRow field |
 
 | Action | Description |
 | :--- | :--- |
-| **onRowSelected** | Sets the action to be run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-| **onPageChange** | Sets the action to be run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
-| **onSearchTextChange** | Sets the action to be run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onRowSelected** | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onRowUpdate** | Sets the action to run when the user edits a row \(inline row editing\). See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onPageChange** | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
 ### Column settings
 
@@ -56,7 +59,7 @@ A great property introduced here is the `Computed value` and the `currentRow` in
 
 ![](../.gitbook/assets/current-row-show-hide-3.gif)
 
-In the ex. above we rename `email` column to `contact` and then use the computed value property inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
+In the example above, we rename `email` column to `contact` and then use the computed value property inside the column setting to merge `userName` and `email` in one column. We later hide the `userName` column.
 
 Depending on the column type you have some control over styling as well now.
 
@@ -65,6 +68,10 @@ Depending on the column type you have some control over styling as well now.
 Additionally compared to the functionality before the actions can now be set on every column with customization over style and click events
 
 ![Set column actions](../.gitbook/assets/column-action-uttons-5.gif)
+
+Introducing the new feature "Inline row editing". This allows you to edit each row of table. Additionally, triggers an action when row data is updated.
+
+![Inline row editing](../.gitbook/assets/table-inline-editing.gif)
 
 | Properties | Description |
 | :--- | :--- |

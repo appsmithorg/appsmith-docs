@@ -52,8 +52,6 @@ For example, you can bind the results of the API as below
 {{ fetch_users.data.users }}
 ```
 
-![](../../.gitbook/assets/bind-table.gif)
-
 {% hint style="warning" %}
 Each widget property has a specific data type that it validates its value against. If the data type mismatches, it will throw an error. This can be fixed using javascript to transform the value of the property
 {% endhint %}

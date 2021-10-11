@@ -10,6 +10,11 @@ You can follow one of our guides to deploy appsmith via the technology you prefe
 * [Kubernetes](kubernetes.md)  
 * [AWS AMI Guide](aws-ami.md)
 * [Heroku Guide](heroku.md)
+* [DigitalOcean](digitalocean.md)
+
+{% hint style="warning" %}
+The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your Appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
+{% endhint %}
 
 ## Custom Domains
 

@@ -53,6 +53,13 @@ This object contains the data of the currently authenticated user.
 ```javascript
 {
   email: string
+  username: string
+  name: string
+  isEnabled: boolean
+  accountNonExpired: boolean
+  accountNonLocked: boolean
+  credentialsNonExpired: boolean
+  isAnonymous: boolean
 }
 ```
 

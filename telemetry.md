@@ -8,10 +8,8 @@ description: >-
 # Telemetry
 
 {% hint style="warning" %}
-The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. This helps you stay up to date with the latest changes to your Appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
-{% endhint %}
-
 Data collected is strictly **anonymous** in nature and cannot be used to uniquely identify a user.
+{% endhint %}
 
 {% hint style="success" %}
 Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools.
@@ -58,7 +56,7 @@ Your email id is captured when you request for support and explicitly enter it i
 
 ### Appsmith Server
 
-The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors. This is the **only** event it sends.
+The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors.
 
 **Sample event**
 
@@ -84,7 +82,48 @@ The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is
 }
 ```
 
-No other data is captured by the server
+The server also captures anonymous usage data around which plugins are being used. No data from data sources is capture by appsmith.
+
+```javascript
+{
+  "context": {
+    "library": {
+      "name": "analytics-java",
+      "version": "2.1.1"
+    }
+  },
+  "event": "execute_ACTION_TRIGGERED",
+  "integrations": {},
+  "messageId": "0f6b07ee-0717-413-808c-c25b09c0468",
+  "originalTimestamp": "2021-08-24T07:23:35.610Z",
+  "properties": {
+    "appId": "612465f87b2230debedfc6",
+    "appMode": "edit",
+    "appName": "APP1",
+    "datasource": {
+      "name": "Test App"
+    },
+    "instanceId": "612460418944011a10fa5b",
+    "isExampleApp": false,
+    "isSuccessfulExecution": true,
+    "name": "Test",
+    "orgId": "612464f7f230debedfc4",
+    "originService": "appsmith-server",
+    "pageId": "612465802230debedfc8",
+    "pageName": "Page1",
+    "pluginName": "PostgreSQL",
+    "statusCode": "",
+    "timeElapsed": 8,
+    "type": "DB",
+    "username": "70280e5d07e61e5e915e5d26ac8704bbd68d3f75ebad67ba439f4c354d7"
+  },
+  "receivedAt": "2021-08-24T07:23:39.996Z",
+  "sentAt": "2021-08-24T07:23:39.885Z",
+  "timestamp": "2021-08-24T07:23:35.721Z",
+  "type": "track",
+  "userId": "70280e5dd9e61e5e91526ac8704bbd68d3f75ebad67ba439f4c354d7",
+}
+```
 
 ## Opt-in Telemetry \#\#
 
@@ -92,7 +131,7 @@ The following data is opt-in only and you can say no during the installation pro
 
 ### Appsmith Client
 
-The client captures anonymous behavioral data around navigation and clicks. No data from data sources is capture by appsmith.
+The client captures anonymous behavioural data around navigation and clicks. No data from data sources is capture by appsmith.
 
 **Sample data**
 
