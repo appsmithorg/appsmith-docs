@@ -127,4 +127,4 @@ and
  {{currentItem.imbdratings.rich_text[0].text.content}}
 ```
 
-These were some basic operations that can be performed by using Notion as a Database on Appsmith. 
+These were some basic operations that can be performed by using Notion as a Database on Appsmith. You can definitely try out more features by playing around with the interface.
