@@ -16,4 +16,5 @@ This document presumes you are familiar with the [core concepts](../core-concept
 10. [How to use MS SQL as a data source on Appsmith](use-mssql-as-data-source.md)
 11. [How to use filters on Appsmith's table widget](how-to-use-filters-on-appsmith-table-widget.md)
 12. [How to build auto-generated forms using List widget](build-auto-generated-forms-using-list-widget.md)
+13. [How to use Redis as a data source on Appsmith](how-to-use-redis-as-a-data-source-on-apppsmith.md)
 
