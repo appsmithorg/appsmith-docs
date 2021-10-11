@@ -5,7 +5,7 @@ description: >-
 
 # How to use Notion as a Database on Appsmith
 
-The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com/) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the core concepts(../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try applying implementing them.
+The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com/) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try applying implementing them.
 
 ## Notion
 
