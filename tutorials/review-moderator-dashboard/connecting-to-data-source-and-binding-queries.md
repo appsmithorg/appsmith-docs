@@ -8,7 +8,7 @@ description: Part One of Review Moderator Tutorial
 
 Appsmith supports various data sources and lets you write queries on them to perform different actions from the application. In this tutorial, you'll connect to a Postgres data source that has the following tables:
 
-1. **Business Table**: This contains detailed information about a few businesses that were filtered from the Yelp Data.
+1. **Businesss Table**: This contains detailed information about a few businesses that were filtered from the Yelp Data.
 2. **Review Table**: This table has reviews associated with the businesses listed in the business table.
 
 Now, let's utilise this mock data source to fetch all the businesses items for the Review Moderator app by following the below steps:
