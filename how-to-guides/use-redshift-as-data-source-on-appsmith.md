@@ -51,7 +51,7 @@ In the Cluster configuration section, specify values for Cluster identifier, Nod
 
 ![Screenshot five](../.gitbook/assets/redshift-appsmith-5.png)
 
-Then for Database configurations select a username and password for 'Admin user' and remember them(do keep in mind the constratints mentioned in the instructions below while creating assigning username and password).
+Then for Database configurations select a username and password for 'Admin user' and remember them(do keep in mind the constratints mentioned in the instructions below while creating and assigning username and password).
 
 ![Screenshot six](../.gitbook/assets/redshift-appsmith-6.png)
 
@@ -65,7 +65,7 @@ In the Database configurations sections you can see the database name: dev and d
 
 ![Screenshot eight](../.gitbook/assets/redshift-appsmith-8.png)
 
-Then click on the `Actions` button again and under 'Manage cluster' select `Manage publicly accessible settings`. By default public accessibility is disabled enable it to access it from the Appsmith application. Once this is done the next step is to insert data into the database.
+Then click on the `Actions` button again and under 'Manage cluster' select `Manage publicly accessible settings`. By default public accessibility is disabled, enable it to access it from the Appsmith application. Once this is done the next step is to insert data into the database.
 
 
 ## Inserting Data In The Database
@@ -136,7 +136,7 @@ One last thing to do before hoping on to Appsmith to build our application is to
 ![Screenshot seventeen](../.gitbook/assets/redshift-appsmith-17.png)
 
 
- Add inbound rules for type Redshift one for custom: Anywhere IPv4 and one for custom: My IP then click on `Save rules`. **Remember to delete the new inbound rules after you have completed your task for a long term use prefer creating a new security group.**
+ Add inbound rules for type Redshift one for custom: Anywhere IPv4 and one for custom: My IP then click on `Save rules`. **Remember to delete the new inbound rules after you have completed your task, for a long term use prefer creating a new security group.**
 
 
 ![Screenshot eighteen](../.gitbook/assets/redshift-appsmith-18.png)
@@ -144,11 +144,11 @@ One last thing to do before hoping on to Appsmith to build our application is to
 
 ## Building The Application On Appsmith
 
-Login to your Appsmith account or Sign up for a new account, if you don't already have one. The next step is to create a new application under an organisation by clicking on the `+ NEW` button on the top right corner. 
+Login to your Appsmith account or Sign up for a new account, if you don't already have one. The next step is to create a new application under an organization by clicking on the `+ NEW` button on the top right corner. 
 
 ![Screenshot nineteen](../.gitbook/assets/redshift-appsmith-19.png)
 
-Then change the default name to a name of your choice.For Instance, I am using the name, 'Appsmith Library'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these compomnents in our application. We will add Redshift as our data source, by clicking on the `+` sign next to Datasources and scrolling to Databases under the '+ Create New' section. Then select `Redshift`.
+Then change the default name to a name of your choice.For Instance, I am using the name, 'Appsmith Library'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these components in our application. We will add Redshift as our data source, by clicking on the `+` sign next to Datasources and scrolling to Databases under the '+ Create New' section. Then select `Redshift`.
 
 
 ![Screenshot twenty](../.gitbook/assets/redshift-appsmith-20.png)
@@ -196,4 +196,4 @@ appsmith_library_db.map(
 * [Capture Data](../core-concepts/capturing-data-write/)
 
 
-These were some basic operations that can be performed by using Notion as a Database on Appsmith. You can definitely try out more features by playing around with the interface.
+These were some basic operations that can be performed by using Redshift as a Data Source on Appsmith. You can definitely try out more features by playing around with the interface.
