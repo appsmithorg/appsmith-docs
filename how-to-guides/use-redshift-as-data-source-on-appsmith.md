@@ -5,7 +5,7 @@ description: >-
 
 # How to use Redshift as a Data Source on Appsmith
 
-The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com/) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try applying implementing them.
+The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com/) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Redshift
 
@@ -22,7 +22,7 @@ Let us begin with configuring Redshift database.
 
 ## Creating A Redshift Database And Loading Data
 
-First we need to set up an IAM role to help us in quaring data from the database. For that you need to login to your AWS account or Sign up for a new account, if you don't already have one. And select `IAM` from the services panel. 
+First we need to set up an IAM role to help us in quering data from the database. For that you need to login to your AWS account or Sign up for a new account, if you don't already have one. And select `IAM` from the services panel. 
 
 ![Screenshot one ](../.gitbook/assets/redshift-appsmith-1.png)
 
@@ -51,7 +51,7 @@ In the Cluster configuration section, specify values for Cluster identifier, Nod
 
 ![Screenshot five](../.gitbook/assets/redshift-appsmith-5.png)
 
-Then for Database configurations select a username and password for 'Admin user' and remember them(do keep in mind the constratints mentioned in the instructions below while creating and assigning username and password).
+Then for Database configurations select a username and password for 'Admin user' and remember them(do keep in mind the constraints mentioned in the instructions below while creating and assigning username and password).
 
 ![Screenshot six](../.gitbook/assets/redshift-appsmith-6.png)
 
@@ -172,12 +172,12 @@ Now that you have succesfully connected to the database successfully, you can qu
 
 ## Formatting The Fetched Data
 
-Now we need to display the data that we have fetched in a presentable format. And this can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the Notion API contaning data into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our aaplication's UI. Select the 'Table' widget then drag and drop that onto the canvas. 
+Now we need to display the data that we have fetched in a presentable format. And this can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the data fetched from Redshift database into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our aaplication's UI. Select the 'Table' widget then drag and drop that onto the canvas. 
 Something like this is visible:
 
 ![Screenshot twenty three](../.gitbook/assets/redshift-appsmith-23.png)
 
-To include response from the API in this table use the moustache syntax to write JS in Appsmith.
+To include response in this table use the moustache syntax to write JS in Appsmith.
 
 ```Javascript
 {{
