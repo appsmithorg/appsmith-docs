@@ -51,7 +51,7 @@ In the Cluster configuration section, specify values for Cluster identifier, Nod
 
 ![Screenshot five](../.gitbook/assets/redshift-appsmith-5.png)
 
-Then for Database configurations select a username and password for 'Admin user' and remember them(do f=keep in mind the constratints mentioned in the instructions below while creating assigning username and password).
+Then for Database configurations select a username and password for 'Admin user' and remember them(do keep in mind the constratints mentioned in the instructions below while creating assigning username and password).
 
 ![Screenshot six](../.gitbook/assets/redshift-appsmith-6.png)
 
@@ -75,7 +75,7 @@ To create an IAM user we need to select `IAM` from the 'services' panel. Then ch
 
 ![Screenshot nine](../.gitbook/assets/redshift-appsmith-9.png)
 
-In the Add users screen give a the User a name, for instance, 'appsmith_user-1'. Then check both the AWS credential type: Access key and Password. Assign a custom passwrod for the console. Then click on `Next: Permissions`. 
+In the Add users screen give a the User a name, for instance, 'appsmith_user-1'. Then check both the AWS credential type: Access key and Password. Assign a custom password for the console. Then click on `Next: Permissions`. 
 
 ![Screenshot ten](../.gitbook/assets/redshift-appsmith-10.png)
 
