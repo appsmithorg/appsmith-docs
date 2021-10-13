@@ -131,5 +131,69 @@ To display the data you can use
 You can definitely try out inserting more values and playing with more SQL queries. For now we will more ahead with using this database as a data source in our appsmith application.
 
 
+One last thing to do before hoping on to Appsmith to build our application is to configure security groups to enable connection from Appsmith by Inbound rules of security group associated to the VPC in which the our Redshift database exists. Select VPC from the services panel and scroll down to 'Security Groups'. By default the dafault VPC and default security group was attached to the Redshift database at the time of creation. Select the default security group and click on `Edit inbound rules`.
+
+![Screenshot seventeen](../.gitbook/assets/redshift-appsmith-17.png)
 
 
+ Add inbound rules for type Redshift one for custom: Anywhere IPv4 and one for custom: My IP then click on `Save rules`. **Remember to delete the new inbound rules after you have completed your task for a long term use prefer creating a new security group.**
+
+
+![Screenshot eighteen](../.gitbook/assets/redshift-appsmith-18.png)
+
+
+## Building The Application On Appsmith
+
+Login to your Appsmith account or Sign up for a new account, if you don't already have one. The next step is to create a new application under an organisation by clicking on the `+ NEW` button on the top right corner. 
+
+![Screenshot nineteen](../.gitbook/assets/redshift-appsmith-19.png)
+
+Then change the default name to a name of your choice.For Instance, I am using the name, 'Appsmith Library'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these compomnents in our application. We will add Redshift as our data source, by clicking on the `+` sign next to Datasources and scrolling to Databases under the '+ Create New' section. Then select `Redshift`.
+
+
+![Screenshot twenty](../.gitbook/assets/redshift-appsmith-20.png)
+
+## Connecting To The Redshift Database
+
+Firstly, give the database a name, for this tutorial I have used the name, 'appsmith_library_db'. Next under connection choose a connection mode, here we will choose `Read/Write`. Then we will mention the host address and port number, if we do not mention a port number by default Appsmith will try to connect to port 5439. The host address can be fetched from the Redshift cluster's 'General information' panel. Copy the `Endpoint` value and paste it in the Host address section of the Appsmith application(you have to trim the database name and port number from the Endpoint address). And then fill the database name you want to connect to =, in our case it is 'dev'. For Authentication we will provide the username and password on the adminuser of our database in Redshift. We can skip the SSL by selecting `No SSL` from the 'SSL Mode' dropdown list. Click on `Save`.
+
+![Screenshot twenty one](../.gitbook/assets/redshift-appsmith-21.png)
+
+## Capturing And Displaying The Data
+
+Now that you have succesfully connected to the database successfully, you can query data from it by running simple SQL queries.
+
+```SQL
+ Select * from library; 
+```
+
+![Screenshot twenty two](../.gitbook/assets/redshift-appsmith-22.png)
+
+
+## Formatting The Fetched Data
+
+Now we need to display the data that we have fetched in a presentable format. And this can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the Notion API contaning data into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our aaplication's UI. Select the 'Table' widget then drag and drop that onto the canvas. 
+Something like this is visible:
+
+![Screenshot twenty three](../.gitbook/assets/redshift-appsmith-23.png)
+
+To include response from the API in this table use the moustache syntax to write JS in Appsmith.
+
+```Javascript
+{{
+
+appsmith_library_db.map(
+    (item) => {
+        return (item.properties)
+    })
+
+}}
+```
+
+ Now that we have received data in the table, we can add more widgets for each attribute of the data records from the UI widgets list. You can add text widgets for all the fields in this example. To set the property of the widgets, next to the widget options add code snippets to fetch values of respective attributes from the array of data fetched refer to the guides linked below
+
+* [Display Data](../core-concepts/displaying-data-read/)
+* [Capture Data](../core-concepts/capturing-data-write/)
+
+
+These were some basic operations that can be performed by using Notion as a Database on Appsmith. You can definitely try out more features by playing around with the interface.
