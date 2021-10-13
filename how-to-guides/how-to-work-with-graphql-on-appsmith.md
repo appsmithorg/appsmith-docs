@@ -10,11 +10,11 @@ Appsmith is opensource framework that helps us build CRUD apps, Dashboards, Admi
 
 ## Building A Demo Application
 
-In this how-to guide we will learn to integrate Appsmith with Graphql and also build our demo application. I've created a book database, hosted it on Hasura and exported it as GraphQL API. Below is an image showing some of the attributes of the dataset.
+In this how-to guide we will learn to integrate Appsmith with GraphQL and also build our demo application. I've created a book database, hosted it on Hasura and exported it as GraphQL API. Below is an image showing some of the attributes of the dataset.
 
 ![fetchbook query response](../.gitbook/assets/graphql-book-hasura-console.png)
 
-In the above screenshot we can see I have executed a Graphql query in the Hasura console and the response consists of a list of books in a JSON format. Next, we’ll use Appsmith to utilise this database and build a Book Search App by writing different GraphQL queries.
+In the above screenshot we can see I have executed a GraphQL query in the Hasura console and the response consists of a list of books in a JSON format. Next, we’ll use Appsmith to utilise this database and build a Book Search App by writing different GraphQL queries.
 
 ## Building a simple UI
 
@@ -67,14 +67,14 @@ this will display our data in the form of a list.
 
 ![Books displayed](../.gitbook/assets/graphql-book-list.png)
 
-We now have our list of books fetched from Graphql endpoint and displayed on our UI. Next, we’ll create a form where we can add new books to the database.
+We now have our list of books fetched from GraphQL endpoint and displayed on our UI. Next, we’ll create a form where we can add new books to the database.
 
 ## Inserting new book to database from Appsmith
 
 In this section, we'll see how we can insert a new book from our UI to the database. For this we'll create a simple form on Appsmith.
 
 1. Drag and drop a form widget on to the canvas. In this form widget, we'll add input widgets that accept necessary fields to add new book.
-2. Open property pane of input widgets and name the input fields so we can reference them in our Graphql query. Also select Data type for each input field according to the type of data to be stored in database. Below is how we’ll have to name the input widgets.
+2. Open property pane of input widgets and name the input fields so we can reference them in our GraphQL query. Also select Data type for each input field according to the type of data to be stored in database. Below is how we’ll have to name the input widgets.
    - Name - nameInput
    - Author - authorInput
    - Image - imageInput
@@ -88,7 +88,7 @@ So now we have are UI ready; lets create API to add new book to database.
 
 1. Click on the **Create new api** and rename api to **InsertBook**.
 2. Copy the same **content-type** and **x-hasura-admin-secret** headers to access the database on Hasura from the previous FetchBook API.
-3. Paste the below code snippet in the request body of Graphql query
+3. Paste the below code snippet in the request body of GraphQL query
 
 ```
 {{
@@ -115,7 +115,7 @@ JSON.stringify({
 }}
 ```
 
-4. Here we have an object with query key that holds the Graphql query and a variable key with all the variables that need to be posted to the database.
+4. Here we have an object with query key that holds the GraphQL query and a variable key with all the variables that need to be posted to the database.
 5. To fetch the values from the input widgets, use the names of the input widgets and the **.text** method is used to pick the text that's written in the input widgets. (e.g. nameInput.text)
 6. The insert_book_list_one in the mutation lets us add one book to the database.
 7. Now that our api is ready, lets connect this to our UI so that whenever the Submit button on form is clicked we can add a book.
@@ -155,7 +155,7 @@ Now, whenever we made changes in the input widgets and hit update details button
 1. Click on + icon next to API, this will create a new API and rename it as **EditBook**.
 2. Next, we'll be creating POST request and add the link to our database hosted on Hasura.
 3. Copy the same **content-type** and **x-hasura-admin-secret** headers to access the database on Hasura from the previous FetchBook API.
-4. Paste the below code snippet in the request body of Graphql query
+4. Paste the below code snippet in the request body of GraphQL query
 
 ```
 {{
@@ -231,4 +231,4 @@ And we done with our application. Below is the image of the final appliaction.
 
 ## Conclusion
 
-So now you have seen how easy it is to create applications on Appsmith. In this how-to guide we have learned to create an application and connect it with Graphql, also to create, read, update, delete data. We have also seen how to work with widgets. I hope you enjoyed this how-to guide. For more such tutorials you can refer to [Appsmith docs](https://docs.appsmith.com/).
+So now you have seen how easy it is to create applications on Appsmith. In this how-to guide we have learned to create an application and connect it with GraphQL, also learned to create, read, update, delete data. We have also seen how to work with widgets. I hope you enjoyed this how-to guide. For more such tutorials you can refer to [Appsmith docs](https://docs.appsmith.com/).
