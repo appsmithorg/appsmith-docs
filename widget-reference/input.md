@@ -52,6 +52,7 @@ Read more about submitting Input data to an API below
 | :--- | :--- |
 | **Label** | Sets the label for input. It can be left empty if you don't want any label. |
 | **Data Type** | Sets the type of data you want to capture in the user input. Selecting a data type will add the associated data validation on the user input. |
+| **Spellcheck** | Defines whether the text input may be checked for spelling errors. |
 | **Placeholder** | Sets a placeholder text inside the input. It is generally used to display an expected input or hint to the user. |
 | **Default Input** | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record |
 | **Regex** | Used to add custom validations you want to perform on user input. |
