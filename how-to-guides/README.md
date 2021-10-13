@@ -18,4 +18,3 @@ This document presumes you are familiar with the [core concepts](../core-concept
 12. [How to build auto-generated forms using List widget](build-auto-generated-forms-using-list-widget.md)
 13. [How to use Notion as a Database on Appsmith](use-notion-as-database-on-appsmith.md)
 14. [How to use Redshift as a Data Source on Appsmith](use-redshift-as-data-source-on-appsmith.md)
-
