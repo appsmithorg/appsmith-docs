@@ -60,8 +60,11 @@ In the body we will write our query.
   }
 }
 ```
+It will look something like this 
 
-Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple, and that will be:
+![Screenshot from 2021-10-13 12-08-50](https://user-images.githubusercontent.com/67036708/137080521-a0ab5adb-f335-4982-acf6-9a02bb3458a5.png)
+
+Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple.                                                                                                                      
 
 ## Displaying the data
 Now that we have connected our query and database to our Appsmith application, it's time to display the data. Let's start with a simple way to go on to this.
