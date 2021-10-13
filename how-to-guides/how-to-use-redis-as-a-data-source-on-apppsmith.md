@@ -1,5 +1,5 @@
 ---
-description: This guide helps you to connect your Redis database
+description: This guide helps you to connect your Redis database to Appsmith
 ---
 
 ## Integrating the Redis datasource into Appsmith
@@ -11,14 +11,14 @@ To connect your Redis Database instance to Appsmith as a datasources
 3. (Optional) Now click on **+ Create New**, if you already have connected a Datasource previously.
 4. Under **Databases**, Select **Redis** 
 5. Enter a name to your Redis datasource (e.g. *My Redis Database*)
-6. Enter your Redis Database Configuration used the *Connection* section.
-   * Enter "0" as *Database Number*, if connecting to the database for the first time.
+6. Enter your Redis Database configurations inside the *Connection* section.
+   * Enter "0" as *Database Number*, if you are connecting to the database for the first time.
 
     ![Click to expand](../.gitbook/assets/redis-datasource-form.png)
 
 7. Enter your username and password to your Redis Database under *Authentication* section.
 8. Once done, click on **Save** and then click on **Test**.
-9. If the Pop up notifies you that *My Redis Database datasource is valid*, that means your Redis Database's configuration is correct and your *Appsmith Application* to ready to connect to it. If it Pop up notifies you about any other error, please check your Redis configuration.
+9. If the Pop up notifies you that *My Redis Database datasource is valid*, that means your Redis Database's configuration is correct and is to ready to connect to your *Appsmith Application*. If it Pop up notifies you about any other error, please check your Redis configuration.
 
 > Refer to [Redis Datasource](../datasource-reference/querying-redis.md) documentation for more information.
 
@@ -26,7 +26,7 @@ To connect your Redis Database instance to Appsmith as a datasources
 
 ### Create keys
 
-Lets create some keys in your Redis Database ...
+Lets create some keys in your Redis Database.
 
 1. After you have added your Datasource, click on **New Query +**.
 
@@ -51,7 +51,7 @@ Lets create some keys in your Redis Database ...
 
 ### Fetching Keys
 
-To fetech keys from Redis Database, lets run Querys ...
+To fetch keys from Redis Database, lets run queries.
 
 1. Again create a new query, and name it as **GetKeys**
 2. From the *Query* field, lets fetch our existing keys.
@@ -71,15 +71,15 @@ To fetech keys from Redis Database, lets run Querys ...
     ```
     Response : Thursday, 7 October, 2021
 
-3. Once you fetched all keys successfully, you all ready to proceed further.
+3. Once you fetch all keys successfully,then you are ready to proceed further.
 
 ### Binding the data to a widget
 
-1. After run each query, select your desired **Widget** Type, and click to *Add to canvas*
+1. After running each query, select your desired **Widget** Type, and click to *Add to canvas*
 
 ![Create Widget](../.gitbook/assets/redis-create-widget.png)
 
-2. Now, change you widget name, and its attributes, according to your needs. 
+2. Now, change the widget name, and its attributes, according to your needs. 
 
 ![Edit Widget](../.gitbook/assets/redis-edit-widget.png)
 
