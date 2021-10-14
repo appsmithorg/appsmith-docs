@@ -65,7 +65,7 @@ When working with large data on Google Sheets Sheets from APIs, browsers cannot 
 
 Let’s start by adding a button and showing a modal that has a form to add all the details of the new investors. Follow the below steps:
 
-* Drag and drop a button widget on to the canvas and next open the property pane of the button by clicking on the cog icon on the top right of the button when selected.
+* Drag and drop a button widget onto the canvas and next open the property pane of the button by clicking on the cog icon on the top right of the button when selected.
 * Open the `onClick` property and select the `Open Modal` option and click on `New Modal`, this should open a new modal.
 * Now add the necessary form fields by dragging the Input widgets onto the Modal. In our case of Investor CRM, we will add the following fields:
   * Investment Fund
@@ -106,7 +106,7 @@ Now that we have our form ready, let's write the logic to push the values from t
 }
 ```
 
-Here, the key's are the column names in the Google Sheet, and the values associated with them are the names of the input widgets. The `.text` method is used to pick the text that's written in the input widgets.
+Here, the keys are the column names in the Google Sheet, and the values associated with them are the names of the input widgets. The `.text` method is used to pick the text that's written in the input widgets.
 
 Lastly, in the form below for the submit button, set the on click property to `Call an API` and call the `addNewInvestor` API from the options. With this, we should be able to add new rows to Google Sheet from Appsmith. 
 
