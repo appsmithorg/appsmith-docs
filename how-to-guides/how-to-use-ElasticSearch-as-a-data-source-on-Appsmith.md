@@ -22,13 +22,17 @@ Let's quickly first see how you can integrate Elasticsearch in Appsmith. There a
 
 So,  click on the `New` button to create a new application. Then click on `Generate from a Data table` option. You should be prompted with a screen that would ask you to connect the database of your choice. It should look something like this:
 
+
 ![Screenshot from 2021-10-13 10-38-38](https://user-images.githubusercontent.com/67036708/137070965-6a3bbe4f-844b-47e9-b458-0b7bd2d54f1f.png)
+
 
 Now you can click on `Connect new Datasource` and find `ElasticSearch` from all the available database options.
 
 Now you will be greeted with a page to fill in your credentials of your ElasticSearch server. You should fill in the host/port login credentials. The unfilled screen for this would look something like this:
 
+
 ![Screenshot from 2021-10-13 10-45-58](https://user-images.githubusercontent.com/67036708/137071755-ce5f3137-e011-4aee-a819-dbca747911bc.png)
+
 
 If you are hosting Elasticsearch on a local server, consider using ngrok to expose the public address.
 
@@ -39,7 +43,9 @@ If you're able to test your connection successfully using the Test button, you'r
 ## Querying the database
 So, now that you're done with setting up a connection to your database server, you should be able to see a screen like this:
 
+
 ![Screenshot from 2021-10-13 10-51-27](https://user-images.githubusercontent.com/67036708/137072021-c84a0d04-97e1-48ce-85fc-2744217925f8.png)
+
 
 From here, let's try writing a query for our application. For our database, I have already added the accouts.json datafile.
 
@@ -62,7 +68,9 @@ In the body we will write our query.
 ```
 It will look something like this 
 
+
 ![Screenshot from 2021-10-13 12-08-50](https://user-images.githubusercontent.com/67036708/137080521-a0ab5adb-f335-4982-acf6-9a02bb3458a5.png)
+
 
 Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple.                                                                                                                      
 
@@ -71,7 +79,20 @@ Now that we have connected our query and database to our Appsmith application, i
 
 Data is stored as a JSON format in Elasticsearch and we will use a table to display it.
 
-So let's try displaying our query data in a single table. For that, go to the page in Appsmith and drag and drop a Table widget. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case, the identifier of my query is Query1 so I will just put `Query1.data["hits"]["hits"]` inside {{}}.
+Click on the `Widgets` ribbon and select the `Table` widget.
+
+
+![Table](https://user-images.githubusercontent.com/67036708/137368349-e7df11a3-b15a-4ad5-a1fd-17003afd03de.png)
+
+
+Drag and drop it on the Editor.
+It should like this.
+
+
+![Screenshot from 2021-10-14 23-11-07](https://user-images.githubusercontent.com/67036708/137368727-4a486da2-7a26-4974-94ac-e12c42e2ea7c.png)
+
+
+So let's try displaying our query data in the table. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case, the identifier of my query is Query1 so I will just put `Query1.data["hits"]["hits"]` inside {{}}.
 
 Now we will hide unwanted columns like _index, _type _score and _soruce. 
 
@@ -85,10 +106,19 @@ Similarly we will fill the data for all the columns. i.e. Just change the value 
 
 Finally you can see your table looking like this.
 
+
+![Screenshot from 2021-10-14 23-17-58](https://user-images.githubusercontent.com/67036708/137369695-78a81164-de4a-4b1b-98e6-3eb04dddfff3.png)
+
+
 You can also use the filter command in the table widget. Let's say you want to find the people who have balance less than 10000 and are in critical red zone. You can simply click the filter tag and fill the fields with the objectve in mind
 For this instance, We can select
 Where -> Balance -> is less than or equal to -> 10000
-It's very self explanatory and easy to use.
+
+
+![Screenshot from 2021-10-14 23-19-57](https://user-images.githubusercontent.com/67036708/137370192-61f01a56-de55-4464-b031-242cb61fbf9e.png)
+
+
+It's very self explanatory and easy to use. Also remember to change the type of balance coloumn by going into column settings and selecting the type in Column type.
 
 And now you know how to use Elasticsearch with Appsmith. 
 
