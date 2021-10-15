@@ -2,7 +2,7 @@
 description: Guide on how to use ElasticSearch as a data source on Appsmith
 ---
 
-# How to use MS SQL as a data source on Appsmith
+# How to use ElasticSearch as a data source on Appsmith
 
 This guide assumes you have basic familiarity with [Appsmith](https://www.appsmith.com/). If you don't have much understanding, I would suggest creating an account and trying it out. I assure you that it is straightforward to get acquainted with quickly.
 
