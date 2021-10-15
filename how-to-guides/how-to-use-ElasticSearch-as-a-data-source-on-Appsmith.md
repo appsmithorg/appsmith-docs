@@ -118,7 +118,7 @@ Where -> Balance -> is less than or equal to -> 10000
 ![Screenshot from 2021-10-14 23-19-57](https://user-images.githubusercontent.com/67036708/137370192-61f01a56-de55-4464-b031-242cb61fbf9e.png)
 
 
-It's very self explanatory and easy to use. Also remember to change the type of balance coloumn by going into column settings and selecting the type in Column type.
+It's very self explanatory and easy to use. Also remember to change the type of balance coloumn to Number by going into column settings and selecting the type in Column type.
 
 And now you know how to use Elasticsearch with Appsmith. 
 
