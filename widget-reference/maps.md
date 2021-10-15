@@ -18,6 +18,7 @@ description: >-
 | Widget Property | Description |
 | :--- | :--- |
 | **Initial location** | This property sets the default location that the map should focus on. |
+| **Center marker when clicked** | This property Controls whether the clicked marker is centered on the map. |
 | **Enable search location** | This property enables a search bar on the map which users can use to navigate |
 | **Enable pick location** | This property allows users to select a location on the map and moves the map marker to this location. The selectedMarker field is populated with this marker. |
 | **Create new marker** | This property enables scrolling within the contents of each tab |
