@@ -89,4 +89,4 @@ To fetch keys from Redis Database, lets run queries.
 
 ![Demo](../.gitbook/assets/redis-comp-demo-canvas.png)
 
-Thats all, now you know how to use Redis as a data source for your Appsmith application. GG!
+Thats all, now you know how to use Redis as a data source for your Appsmith application.
