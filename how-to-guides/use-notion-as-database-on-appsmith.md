@@ -21,7 +21,7 @@ Let us begin with configuring the Notion API.
 
 ## Setting Up A Notion Integration
 
-First sign up for a Notion account(if you already have one, log into your account). Choose a Workspace to work with or create a new one specifically for this application. In the left navigation bar click on the `Settings & Members` when a new settings modal appears select `Integrations` under Workspace. 
+First sign up for a Notion account(if you already have one, log into your account) [here](https://www.notion.so/login). Choose a Workspace to work with or create a new one specifically for this application. In the left navigation bar click on the `Settings & Members` when a new settings modal appears select `Integrations` under Workspace. 
 
 ![Screenshot one ](../.gitbook/assets/notion-appsmith-1.png)
 
