@@ -56,9 +56,9 @@ First, drag and drop the required text widgets. Now inside the text widget prope
 
 Now, when you click on the random row’s in the table, you can see the text automatically changes its state to the product name. In this way, you can access and manipulate the state inside the widgets. Similarly, you can also, add images and many more for your applications.
 
-## **Performing Actions**
+## **Handling Events**
 
-Appsmith loves JavaScript! Whenever you want to write custom logic for certain action calls or API calls, you can customise with simple JS. For example, say, you want to show an alert whenever you’re searching through tables. You can select the row and can add logic to the **`onSeachTextChanged`** property.
+Appsmith loves JavaScript! Whenever you want to write custom logic for certain events, you can do that by writing JavaScript. For example, say, you want to show an alert whenever you’re searching through tables. You can select the row and can add logic to the **`onSeachTextChanged`** event.
 
 ```javascript
 {{ showAlert(Table1.searchText) }}
@@ -66,19 +66,19 @@ Appsmith loves JavaScript! Whenever you want to write custom logic for certain a
 
 With this, whenever you’re searching for anything on the tables, you’ll see an alert with the value you’ve entered in the search input.
 
-![Configuring Actions on Appsmith](https://lh5.googleusercontent.com/PB37xpaK7u6063ANpW8tnyTQyM16w9XugIt_PSQy2O_Hoy-A-FyP4Dhaq1HR8NUfyCvoVF0CKpx2Q3FMNO3JMifebaORF0MSfXIm3HSsVmyXQ2OWEaa5bGgKVDhpWNB27MNwF4j8)
+![Configuring Events on Appsmith](https://lh5.googleusercontent.com/PB37xpaK7u6063ANpW8tnyTQyM16w9XugIt_PSQy2O_Hoy-A-FyP4Dhaq1HR8NUfyCvoVF0CKpx2Q3FMNO3JMifebaORF0MSfXIm3HSsVmyXQ2OWEaa5bGgKVDhpWNB27MNwF4j8)
 
 ## **Manually triggering APIs/Query**
 
-You might often want to invoke your API Queries on certain actions. For example, say you’re APIs or DB Queries are updating from time to time and wanted to add a refresh button, you can simply do it with JS in Appsmith.
+You might often want to invoke your API Queries when certain events occur. For example, say you’re APIs or DB Queries are updating from time to time and wanted to add a refresh button, you can simply do it with JS in Appsmith.
 
-Now, let’s quickly add a button that will execute the Query when clicked. Next, open the button’s property pane; you’ll find the onclick property under the actions section. Now add a new action and choose to execute a DB Query option; you’ll find all the already defined queries in the application. Select the `get_produts` query you’ll see JS already added to the onclick action.
+Now, let’s quickly add a button that will execute the Query when clicked. Next, open the button’s property pane; you’ll find the onclick property under the events section. Now add a new action and choose to execute a DB Query option; you’ll find all the already defined queries in the application. Select the `get_produts` query you’ll see JS already added to the onclick event.
 
 ```javascript
 {{get_products.run()}}
 ```
 
-In this way, you can customise all the actions on Appsmith for different widgets.
+In this way, you can customise all the events on Appsmith for different widgets.
 
 ## Multiline JavaScript
 

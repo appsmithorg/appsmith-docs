@@ -62,7 +62,7 @@ Read more about submitting Input data to an API below.
 | **Disabled** | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
 | **Server Side Filtering** | Enables server side filtering of the  via an API / Query request. Use this property when your Select option data is being bound to an API / Query. |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onFilterUpdate** | Trigger an action on change of `filterText`. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |

@@ -20,7 +20,7 @@ description: >-
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed. |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onTextChanged** | Sets the action to be run when the user inputs text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

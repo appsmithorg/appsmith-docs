@@ -36,7 +36,7 @@ Each menu item can now be customized through a set of properties by clicking on 
 | **iconColor** | Sets the icon color of the selected icon. |
 | **iconAlign** | Sets the alignment of the selected icon . |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onClick** | Sets the action to be run when the a menu item is clicked. |
 

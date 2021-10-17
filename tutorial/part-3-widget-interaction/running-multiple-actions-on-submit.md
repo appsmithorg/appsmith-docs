@@ -4,7 +4,7 @@ The API to update a product is ready. In this section, you'll bind the **Confirm
 
 1. Open **EditProductForm**'s properties
 2. Rename **label** to **Update**
-3. Go to **Actions → Call an API**
+3. Go to **Events → Call an API**
 4. Choose **UpdateProductApi**
 5. Go to **onSuccess**
 6. Choose **Execute DB Query → ProductQuery**

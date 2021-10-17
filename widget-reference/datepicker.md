@@ -74,7 +74,7 @@ description: >-
   </tbody>
 </table>
 
-| Action. | Description |
+| Events | Description |
 | :--- | :--- |
 | **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

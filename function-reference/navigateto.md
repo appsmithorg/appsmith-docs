@@ -1,7 +1,7 @@
 ---
 description: >-
   With navigateTo, we can navigate in between the internal pages of Appsmith. It
-  could be triggered on any widget action like Button onClick, Dropdown
+  could be triggered on any widget event like Button onClick, Dropdown
   onOptionChange etc. Create a new Page with a valid
 ---
 

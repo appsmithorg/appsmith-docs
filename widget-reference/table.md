@@ -37,7 +37,7 @@ Tables are useful to view large lists of data. To drill down into the data of a 
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field |
 | **Enable inline row editing selection** | Allows inline editing in each row of a table. The updated data in a row is populated in the selectedRow field |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onRowSelected** | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onRowUpdate** | Sets the action to run when the user edits a row \(inline row editing\). See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |

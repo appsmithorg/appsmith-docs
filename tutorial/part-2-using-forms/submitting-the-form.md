@@ -37,7 +37,7 @@ What you did here is that you accessed the widgets' state in your query. This is
 Your query **AddProductQuery** is now set up to insert dynamic user input from the form. Let's bind the Submit button of the form to invoke **AddProductQuery**:
 
 1. Open the properties of **SubmitButton**
-2. Go to **Action → onClick**
+2. Go to **Events → onClick**
 3. Choose **Execute DB Query → AddProductQuery**
 
 Try creating a new product using the form. You’ll notice that you don't have a way to tell whether the product got added after submitting, or not. It's because you haven't set up a success or an error message. Let's do that:
@@ -77,7 +77,7 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 2. Drag-drop the [button widget ](https://docs.appsmith.com/widget-reference/button)at the bottom right of the table
 3. Rename widget to **AddProductButton**
 4. Change button label to **Add New Product**
-5. Go to **Action → onClick → Navigate To** 
+5. Go to **Events → onClick → Navigate To** 
 6. Type **AddProductPage** in **Page Name** field
 
 Your **ProductListPage** now looks like: 

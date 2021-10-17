@@ -24,7 +24,7 @@ description: >-
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Zoom Level** | Sets the default zoom level of the map |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onMarkerClick** | Sets the action to be run when the user clicks a marker on the map. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 | **onMarkerCreated** | Sets the action to be run when the user creates a new marker on the map. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |

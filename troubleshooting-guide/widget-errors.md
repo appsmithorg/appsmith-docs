@@ -171,7 +171,7 @@ Table1.isVisible -> Table1
 
 ## Debugging
 
-For debugging JS logic inside widget actions, you can use `debugger` statement.
+For debugging JS logic inside widget events, you can use `debugger` statement.
 
 ### Description
 

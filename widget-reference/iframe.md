@@ -18,7 +18,7 @@ description: Iframe widget is used to display iframes in your app.
 | **borderOpacity** | Sets the color opacity of the border surrounding the page to embed. |
 | **borderWidth** | Sets the width of the border surrounding the page to embed. |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onURLChanged** | Sets the action to be run when the source url is changed. |
 | **onMessageReceived** | Sets the action to be run when a postMessage event is received from the embedded page. |

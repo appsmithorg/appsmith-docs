@@ -10,7 +10,7 @@ You are now almost ready with your super cool dashboard. Next, let's add a butto
 
 1. Drag and drop a button widget under business details
 2. Open the buttons property pane and change the label to `View Reviews`
-3. Under Actions, toggle the JS button and paste the following code:
+3. Under Events, toggle the JS button and paste the following code:
 
 ```javascript
 {{

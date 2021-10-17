@@ -30,7 +30,7 @@ You can create separate UIs in each tab container and dynamically switch between
 | **Scroll Contents** | This property enables scrolling within the contents of each tab |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

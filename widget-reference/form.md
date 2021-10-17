@@ -49,7 +49,7 @@ The form button is provided by default to every form. It is used for form submis
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed. |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onClick** | Sets the action to be run when the user clicks the form button. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 

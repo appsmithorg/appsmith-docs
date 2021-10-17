@@ -30,7 +30,7 @@ A Radio Button's **options** can be populated from a data source like an API / Q
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onSelectionChange** | Sets the action to be run when a user changes a selected option. Default supported actions are: Call API, Navigate to Page, Navigate to URL, or Show Alert. |
 

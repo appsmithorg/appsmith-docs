@@ -45,7 +45,7 @@ To download a file
 
 1. To download the file selected in the table
 
-   * Click on the `JS` button next to `onRowSelected` Action and write the 
+   * Click on the `JS` button next to `onRowSelected` Event and write the 
 
      following javascript query:
 

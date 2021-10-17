@@ -41,7 +41,7 @@ In the examples above, **`text`** is the internal property of the **`nameInput`*
 
 Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](../../widget-reference/button/) widget and configure the Query to run in the onClick of the button.
 
-The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
+The property pane has an events section where all the interactions that a user can perform with a widget are listed. We can configure an action to be taken when the interaction takes place in this section.
 
 To configure the Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
 

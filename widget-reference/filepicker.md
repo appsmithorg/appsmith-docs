@@ -37,7 +37,7 @@ See our guides on
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). You can immediately call an API or the S3 plugin to upload the base64 of the file to your cloud storage |
 

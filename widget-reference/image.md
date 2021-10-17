@@ -16,7 +16,7 @@ description: >-
 | **Max Zoom Level** | Sets the maximum allowable zoom level for the image view |
 | **Enable Rotation** | Controls if the image is allowed to rotate |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 

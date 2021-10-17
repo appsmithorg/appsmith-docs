@@ -16,7 +16,7 @@ description: >-
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but user input will not be allowed. |
 | **Google Recaptcha Key** | Adds a [Google ReCAPTCHA v3](https://www.google.com/recaptcha/) check to the button. The token will be accessible from the API pane with the `recaptchaToken` key \(see [Google reCAPTCHA](google-recaptcha.md)\). |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onClick** | Sets the action to be run when the user clicks a button. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
 

@@ -19,7 +19,7 @@ description: 'Icon button widget is just an icon, along with all other button pr
 | **isDisabled** | Disables input to the widget. |
 | **isVisible** | Controls the visibility of the widget. |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onClick** | Sets the action to be run when an icon button is clicked. |
 

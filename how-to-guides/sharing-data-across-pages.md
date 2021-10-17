@@ -8,7 +8,7 @@ description: >-
 
 ## Sharing data via query params
 
-Query params can be passed by adding the query params object to [NavigateTo action](../framework-reference/navigateto.md). To do this click on the JS mode for Action and update it as follows.
+Query params can be passed by adding the query params object to [NavigateTo action](../framework-reference/navigateto.md). To do this click on the JS mode for the event and update it as follows.
 
 ```javascript
 {{navigateTo("PageName", {"param": "value"})}}

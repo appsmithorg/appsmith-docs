@@ -15,7 +15,7 @@ description: >-
 | **AutoPlay** | Plays video automatically, without action from a user |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 
-| Action | Description |
+| Events | Description |
 | :--- | :--- |
 | **onPlay** | Sets the action to be run when the video plays. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message. |
 | **onPause** | Sets the action to be run when the video pauses. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message. |

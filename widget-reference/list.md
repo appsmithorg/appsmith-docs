@@ -63,7 +63,7 @@ Note: currentItem and currentIndex is only available in the autocomplete of cont
 | **Item Background** | sets the background color of list items |
 | **Grid Gap** | sets the margin between list items in pixels |
 
-| Actions | Description |
+| Events | Description |
 | :--- | :--- |
 | **onListItemClick** | Sets the action to be run when the user clicks on a list item. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
