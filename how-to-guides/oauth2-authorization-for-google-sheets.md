@@ -32,7 +32,7 @@ In this guide, you’ll learn how to build an Appsmith dashboard that performs r
 6. Now, navigate to the Gsheets data source and set the following configuration:
    1. Authentication Type: Oauth 2.0
    2. Grant Type: Authorization Code
-7. Add Authentication Token URL: [https://oauth2.googleapis.com/token](https://oauth2.googleapis.com/token); this token allows users to verify their identity, and in return, receive a unique access token in return. 
+7. Add Authentication Token URL: [https://oauth2.googleapis.com/token](https://oauth2.googleapis.com/token); this token allows users to verify their identity, and in return, receive a unique access token. 
 8. Add the Client ID and Client Secret from Google Cloud Platform
 9. Lastly, set the following config:
    1. Scope: [https://www.googleapis.com/auth/spreadsheets](https://www.googleapis.com/auth/spreadsheets)
@@ -48,7 +48,7 @@ The Scope in OAuth 2.0 helps us to limit an application's access to a user's acc
 
 ## **Writing APIs to Interact with Google Sheets and Building UI**
 
-The authorization part is now complete, now let’s write some APIs to perform some operation to access and manipulate the Google sheets.
+The authorization part is now complete, now let’s write some APIs to perform some operations to access and manipulate the Google sheets.
 
 ### Get Data from Google Sheet
 
@@ -62,7 +62,7 @@ First, let’s write a getSheetData API to show all the data in the sheet. Follo
 https://sheets.googleapis.com/v4/spreadsheets/<spreadsheet-id>/values/Sheet1
 ```
 
-* Make sure the URL you’re requesting it from the data source. 
+* Make sure the URL you’re requesting is from the data source. 
 * You can find the spreadsheet-id on the Google Sheet URL, for example, say your Google Sheet URL is: 
 
 `https://docs.google.com/spreadsheets/d/1H0fbiVzi0r-WbgPZvc2YwYmiICnu6xW6SJY4DlDu0/edit#gid=0`
@@ -71,7 +71,7 @@ The ID will be : _`1H0fbiVzi0r-WbgPZvc2YwYmiICnu6xW6SJY4DlDu0`_
 
 * Now hit **Run** on the top right, you’ll see the response in the response body below.
 
-Next, you can use this response and render it on to a table widget on Appsmith. Drag and drop a new table widget on to canvas by navigating to Widgets Pane.
+Next, you can use this response and render it onto a table widget on Appsmith. Drag and drop a new table widget onto canvas by navigating to Widgets Pane.
 
 Open the Table Settings and paste the following JS code in the Table Data property:
 
@@ -130,4 +130,3 @@ Next, you’ll have to set the onclick property to the **Submit Entry** button o
 ![Configuring Button Properly and Setting Properties](https://lh5.googleusercontent.com/DIFB_MdK0ccGrPHxE7ZihO_rUB7C1-W-8WafT3B95s6JUDsiY4ruOEL-ulkjGgaKu2cxhBXjbRlxGru8YUN6VnFGqZDJnaX5a4rdykCpsqawUXGR2_Y8nZS5GtV4pSZLqZHTErHR)
 
 With this, you can POST new entries to your google sheet from Appsmith Dashboard with customised UI! Similarly, you could have a new Delete API to delete entries on google sheet from the Appsmith dashboard.
-
