@@ -10,11 +10,11 @@ The Application layout can be selected to match the Application size to the devi
 
 ## How it works
 
-For application layout that has a Min-Max width limit, The application fills the browser's width until the browser width is not Greater than the maximum width of the layout chosen. When it exceeds the maximum width of the layout, the additional width is filled by whitespaces. The application will not squeeze below the minimum width of the layout chosen and would show scrolls if the browser width is less than minimum width of the layout chosen.
+For application layout that has a Min-Max width limit, The application fills the browser's width until the browser width is not Greater than the maximum width of the layout chosen. When it exceeds the maximum width of the layout, the additional width is filled by whitespaces. The application will not squeeze below the minimum width of the layout chosen and would show scrolls if the browser width is less than the minimum width of the layout chosen.
 
 In case of `Fluid`, The application fills the browser's width.
 
-At any point of time to change the application layout, click on the Layout control present on the top of the canvas and select a layout to use.
+At any point in time to change the application layout, click on the Layout control present on the top of the canvas and select a layout to use.
 
 ![](../.gitbook/assets/layout.gif)
 
@@ -27,4 +27,3 @@ At any point of time to change the application layout, click on the Layout contr
 * Tablet \(Application width would resize in between 800px - 650px\)
 * Mobile Device \(Application width would resize in between 450px - 350px\)
 * Fluid \(Application fills up to the Browser Width\)
-
