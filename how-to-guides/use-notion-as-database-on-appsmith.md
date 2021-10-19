@@ -5,7 +5,7 @@ description: >-
 
 # How to use Notion as a Database on Appsmith
 
-The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com/) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try applying implementing them.
+The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com/) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Notion
 
@@ -47,7 +47,7 @@ We will create a Database to store the records to be displayed on our applicatio
  link: Link Field
  Poster: Image Field
 ```
-Then add values to the table. This page will create a mock database that can ve accesses from our Appsmith application.
+Add values to the table. This page will create a mock database that can ve accesses from our Appsmith application.
 
 ![Screenshot Four](../.gitbook/assets/notion-appsmith-4.png)
 
@@ -57,7 +57,7 @@ Login to your Appsmith account or Sign up for a new account, if you don't alread
 
 ![Screenshot Five](../.gitbook/assets/notion-appsmith-5.png)
 
-Then change the default name to a name of your choice.For Instance, I am using the name, 'Movicon'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these compomnents in our application. We will create a Notion API.
+Change the default name to a name of your choice.For Instance, I am using the name, 'Movicon'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these compomnents in our application. We will create a Notion API.
 
 ![Screenshot six](../.gitbook/assets/notion-appsmith-6.png)
 
@@ -72,18 +72,18 @@ Replace the 'DB_ID' with the database id of your Notion Database. Which can be f
 https://www.notion.so/myworkspace/a8aec43384f447ed84390e8e42c2e089?v=...
                                   |--------- Database ID --------|
 ```
-Then add the following Key-value pairs in the Headers tab:
+Add the following Key-value pairs in the Headers tab:
 
 ```text
 Authorization: 'Your secret key'
 Notion-Version: 2021-05-13
 Content-type: application/json
 ```
-Then it should look something like this
+It should look something like this
 
 ![Screenshot seven](../.gitbook/assets/notion-appsmith-7.png)
 
-Then hit run to see all the data from your Notion Database in the Response Body panel.
+Hit run to see all the data from your Notion Database in the Response Body panel.
 
 ## Formatting The Fetched Data
 
