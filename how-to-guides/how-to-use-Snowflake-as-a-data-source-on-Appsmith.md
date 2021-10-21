@@ -22,11 +22,13 @@ Let's quickly first see how you can integrate Snowflake in Appsmith. There are n
 
 Step1- So,  click on the `New` button to create a new application. Then click on `Generate from a Data table` option. You should be prompted with a screen that would ask you to connect the database of your choice. It should look something like this:<br/>
 
-![AppSmith Img1](https://user-images.githubusercontent.com/64676594/137739311-c5fd9a79-1796-4c15-9e2a-7f6d37d48f51.png)
+<!-- ![AppSmith Img1](https://user-images.githubusercontent.com/64676594/137739311-c5fd9a79-1796-4c15-9e2a-7f6d37d48f51.png) -->
+![AppSmith Img1](../.gitbook/assets/Snowflake-Tutorial1.png)
 
 Step2- Click on the `Snowflake` option. Once you click it, a screen similar to image below will appear-: 
 
-![AppSmith Img2](https://user-images.githubusercontent.com/64676594/137739337-b3c43a09-fb0f-41f6-b4ea-80d7d6453075.png)
+<!-- ![AppSmith Img2](https://user-images.githubusercontent.com/64676594/137739337-b3c43a09-fb0f-41f6-b4ea-80d7d6453075.png) -->
+![AppSmith Img2](../.gitbook/assets/Snowflake-Tutorial2.png)
 
 Step3- Fill in the Required Details in Connection Section-:
 
@@ -48,7 +50,9 @@ Step4- Once the above entries are done, click on the down arrow beside Authentic
 ## Querying the database
 So, now that you're done with setting up a connection to your database server, you should be able to see a screen like this:
 
-![Connection Saved](https://user-images.githubusercontent.com/64676594/137741648-90994a49-f5a2-4f6c-98fa-7ad08a6973a9.png)
+<!-- ![Connection Saved](https://user-images.githubusercontent.com/64676594/137741648-90994a49-f5a2-4f6c-98fa-7ad08a6973a9.png) -->
+![Connection Saved](../.gitbook/assets/Snowflake-Tutorial3.png)
+
 
 Step1- Querying in Appsmith is very simple, click on the `New Query` button. It opens up a window with a Query Section. In the Query add SQL Query -:
 ```code 
@@ -56,7 +60,8 @@ SELECT * FROM TPCDS_SF100TCL.ITEM WHERE I_CATEGORY='Electronics' LIMIT 200;
 ```
 Click on the RUN button on the top right. You will get the results of Query in response section as shown below-:
 
-![Run Query 2](https://user-images.githubusercontent.com/64676594/137739603-cfb5ddae-2558-43e1-a06c-11348bacfac3.png)
+<!-- ![Run Query 2](https://user-images.githubusercontent.com/64676594/137739603-cfb5ddae-2558-43e1-a06c-11348bacfac3.png)-->
+![Run Query 2](../.gitbook/assets/Snowflake-Tutorial4.png)
 
 
 ## Displaying the data
@@ -66,13 +71,16 @@ Data is stored as a table format in Snowflake tables and we will use a table to 
 
 Step1- Click on the `Widgets` ribbon and select the `Table` widget.
 
-![Widget Section](https://user-images.githubusercontent.com/67036708/137368349-e7df11a3-b15a-4ad5-a1fd-17003afd03de.png)
+<!-- ![Widget Section](https://user-images.githubusercontent.com/67036708/137368349-e7df11a3-b15a-4ad5-a1fd-17003afd03de.png) -->
+![Widget Section](../.gitbook/assets/Snowflake-Tutorial5.png)
 
 
 Step2- Drag and drop it on the Editor.
 It should like this.
 
-![Table Widget](https://user-images.githubusercontent.com/64676594/137770031-11e69c7e-3032-44c9-92eb-da9931a9d193.png)
+<!-- ![Table Widget](https://user-images.githubusercontent.com/64676594/137770031-11e69c7e-3032-44c9-92eb-da9931a9d193.png) -->
+![Table Widget](../.gitbook/assets/Snowflake-Tutorial6.png)
+
 
 Step3- Now to Link the Data to the Table widget there are two ways-:
 
@@ -82,14 +90,17 @@ Step3- Now to Link the Data to the Table widget there are two ways-:
 
 Now the data of the Query response will be populated in Table widget. And we will can see that all items of Category as Electronics is shown in image below-:
 
-![Table Linked](https://user-images.githubusercontent.com/64676594/137740256-83e89804-8876-48b8-8e64-448321d7d8d5.png)
+<!-- ![Table Linked](https://user-images.githubusercontent.com/64676594/137740256-83e89804-8876-48b8-8e64-448321d7d8d5.png) -->
+![Table Linked](../.gitbook/assets/Snowflake-Tutorial7.png)
 
 Step4- Now we can play arounf with widget. Like we can click the eye icon beside column names, and the corresponding column is hidden. As shown in the image the `I_CATEGORY_ID` column is hidden and it was visible initially.
 
-![Hidden Column](https://user-images.githubusercontent.com/64676594/137740227-9e0b84d4-7bdb-4d21-a158-a624fa7e00da.png)
+<!-- ![Hidden Column](https://user-images.githubusercontent.com/64676594/137740227-9e0b84d4-7bdb-4d21-a158-a624fa7e00da.png) -->
+![Hidden Column](../.gitbook/assets/Snowflake-Tutorial8.png)
 
 Now you can play around with the widget, like you can click the filter section and set custom filter with different column and parameters and click apply to modify the data as shown below. It's very self explanatory and easy to use.
 
-![Filter in Table](https://user-images.githubusercontent.com/64676594/137771689-ce4bc5cf-1c1a-498d-86b0-8f8c0a6a7a1c.png)
+<!-- ![Filter in Table](https://user-images.githubusercontent.com/64676594/137771689-ce4bc5cf-1c1a-498d-86b0-8f8c0a6a7a1c.png) -->
+![Filter in Table](../.gitbook/assets/Snowflake-Tutorial9.png)
 
 This concludes the tutorial for using Snowflake as a data source in Appsmith.
