@@ -42,6 +42,7 @@
   * [How to use MS SQL as a data source on Appsmith](how-to-guides/use-mssql-as-data-source.md)
   * [How to build auto-generated forms using List widget](how-to-guides/build-auto-generated-forms-using-list-widget.md)
   * [How to use Notion as a Database on Appsmith](how-to-guides/use-notion-as-database-on-appsmith.md)
+  * [how to use Snowflake as a data source on Appsmith](how-to-guides/how-to-use-Snowflake-as-a-data-source-on-Appsmith.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)
     * [Datasource Errors](troubleshooting-guide/action-errors/datasource-errors.md)
