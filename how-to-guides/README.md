@@ -17,4 +17,5 @@ This document presumes you are familiar with the [core concepts](../core-concept
 11. [How to use filters on Appsmith's table widget](how-to-use-filters-on-appsmith-table-widget.md)
 12. [How to build auto-generated forms using List widget](build-auto-generated-forms-using-list-widget.md)
 13. [How to use Notion as a Database on Appsmith](use-notion-as-database-on-appsmith.md)
+14. [How to use Redis as a data source on Appsmith](how-to-use-redis-as-a-data-source-on-apppsmith.md)
 15. [How to use Snowflake as a data source on Appsmith](how-to-use-Snowflake-as-a-data-source-on-Appsmith.md)
