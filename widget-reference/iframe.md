@@ -13,6 +13,7 @@ description: Iframe widget is used to display iframes in your app.
 | Property | Description |
 | :--- | :--- |
 | **source** | Sets the URL of the page to embed. |
+| **srcDoc** | Sets the inline HTML to embed, overriding the src attribute. If a browser does not support the srcdoc attribute, it will fall back to the URL in the src attribute. |
 | **title** | Labels the content of the page to embed. |
 | **borderColor** | Sets the color of the border surrounding the page to embed. |
 | **borderOpacity** | Sets the color opacity of the border surrounding the page to embed. |
