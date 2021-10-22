@@ -52,7 +52,6 @@ Read more about submitting Input data to an API below
 | :--- | :--- |
 | **Label** | Sets the label for input. It can be left empty if you don't want any label. |
 | **Data Type** | Sets the type of data you want to capture in the user input. Selecting a data type will add the associated data validation on the user input. |
-| **Spellcheck** | Defines whether the text input may be checked for spelling errors. |
 | **Placeholder** | Sets a placeholder text inside the input. It is generally used to display an expected input or hint to the user. |
 | **Default Input** | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record |
 | **Regex** | Used to add custom validations you want to perform on user input. |
@@ -60,6 +59,7 @@ Read more about submitting Input data to an API below
 | **Required** | When turned on, it makes a user input required and disables any form submission until an input is made. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed. |
+| **Spellcheck** | Defines whether the text input may be checked for spelling errors. |
 
 | Action | Description |
 | :--- | :--- |
