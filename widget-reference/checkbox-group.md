@@ -13,6 +13,7 @@
 | **options** | Sets a list of options for a user to select. Values must be unique. |
 | **defaultSelectedValues** | Sets values of the options checked by default. |
 | **isInline** | Whether the checkbox buttons are to be displayed inline horizontally. |
+| **isSelectAll** | Controls the visibility of select all checkbox . |
 | **isRequired** | Makes input to the widget mandatory. |
 | **isVisible** | Controls the visibility of the widget. |
 | **isDisabled** | Disables input to this widget. |
