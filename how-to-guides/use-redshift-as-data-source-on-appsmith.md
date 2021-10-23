@@ -26,7 +26,7 @@ First we need to set up an IAM role to help us in quering data from the database
 
 ![Screenshot one ](../.gitbook/assets/redshift-appsmith-1.png)
 
-Choose `Roles` from the left navigation panel and click on `Create role`. In the AWS Service group, choose `Redshift`.  Under Select your use case, choose `Redshift - Customizable`, then choose Next: Permissions. On the Attach permissions policies page, choose `AmazonS3ReadOnlyAccess`. 
+Choose `Roles` from the left navigation panel and click on `Create role`. In the AWS Service group, choose `Redshift`.  Under Select your use case, choose `Redshift - Customizable`, then choose Next: Permissions. On the Attach permissions policies page, choose `AmazonS3FullAccess`. 
 
 ![Screenshot two](../.gitbook/assets/redshift-appsmith-2.png)
 
@@ -104,7 +104,7 @@ To create table enter the following code and hit run.
 create table library(
                 book_name varchar (30),
                 author varchar(30),
-                publisher varchar(30));
+                publisher varchar(30));           
 ```
  You can see the table library created in the left Resources section.
 
@@ -185,10 +185,95 @@ To include response in this table use the moustache syntax to write JS in Appsmi
 
 ```
 
+![Screenshot twenty four](../.gitbook/assets/redshift-appsmith-24.png)
+
  Now that we have received data in the table, we can add more widgets for each attribute of the data records from the UI widgets list. You can add text widgets for all the fields in this example. To set the property of the widgets, next to the widget options add code snippets to fetch values of respective attributes from the array of data fetched refer to the guides linked below
 
 * [Display Data](../core-concepts/displaying-data-read/)
 * [Capture Data](../core-concepts/capturing-data-write/)
+
+
+## Writing Data To The DataSource
+
+We can also write data to the database, let us add some features which can take inputs from users on Appsmith and send them to the database. First let us add two new columns to our table namely, `book_id` of datatype 'integer' and `read` of 'boolean' datatype.
+Now let us convert our table into a list. Drag and drop the list UI widget and add some text widgets for, one for each table column. Now you can include the response for the list similar to the above procedure for table. Now to fetch values for each column we can click on the book id text widget's settings and edit the text field 
+
+```Javascript
+ {{currentItem.book_id}}
+
+```
+![Screenshot twenty five](../.gitbook/assets/redshift-appsmith-25.png)
+
+
+The list will look something like this
+
+
+![Screenshot thirty three](../.gitbook/assets/redshift-appsmith-33.png)
+
+The same steps will be repeated for all the other columns except for the READ/UNREAD column which shall be represented by checkboxes in our case. Add two checkbuttons namely, READ and UNREAD and go to edit checkbox. In the 'Actions' section click on the dropdown under `onCheckChange` and select 'Execute a Query', click on `+ Create new Query`.
+
+![Screenshot twenty six](../.gitbook/assets/redshift-appsmith-26.png)
+
+
+![Screenshot twenty seven](../.gitbook/assets/redshift-appsmith-27.png)
+
+ Once the Query Editor appears change the query name to 'update_read' and 'update_unread' for the READ and UNREAD checkbox repsectively. 
+
+
+For update_read add the following SQL query
+
+```SQL
+
+UPDATE library
+  SET read = 'TRUE'
+  WHERE book_id = {{List1.selectedItem.book_id}};
+
+```
+![Screenshot twenty eight](../.gitbook/assets/redshift-appsmith-28.png)
+
+
+For update_unread add the following SQL query
+
+```SQL
+
+UPDATE library
+  SET read = 'FALSE'
+  WHERE book_id = {{ List1.selectedItem.book_id}};
+
+```
+
+![Screenshot twenty nine](../.gitbook/assets/redshift-appsmith-29.png)
+
+You can also add error and success messages by clicking on 'onSuccess' and selecting 'Show Message' from the dropdown.
+
+An instance of success message is
+
+```Text
+
+Added to list of books already read!!
+
+```
+
+An instance of success message is
+
+```Text
+
+Added to list of unread books!!
+
+```
+
+![Screenshot thirty](../.gitbook/assets/redshift-appsmith-30.png)
+
+Now if you check the 'READ' checkbox for a certain row then that will be updated on the Redshift database as such:
+
+![Screenshot thirty one](../.gitbook/assets/redshift-appsmith-31.png)
+
+
+
+![Screenshot thirty two](../.gitbook/assets/redshift-appsmith-32.png)
+
+
+Similarly for 'UNREAD' checkbox. We have successfully written data to the database.
 
 
 These were some basic operations that can be performed by using Redshift as a Data Source on Appsmith. You can definitely try out more features by playing around with the interface.
