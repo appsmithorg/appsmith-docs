@@ -43,6 +43,8 @@
   * [How to build auto-generated forms using List widget](how-to-guides/build-auto-generated-forms-using-list-widget.md)
   * [How to use Notion as a Database on Appsmith](how-to-guides/use-notion-as-database-on-appsmith.md)
   * [How to use Redis as a Datasource on Appsmith](how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith.md)
+  * [How to use Redshift as a Data Source on Appsmith](how-to-guides/use-redshift-as-data-source-on-appsmith.md)
+  
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)
     * [Datasource Errors](troubleshooting-guide/action-errors/datasource-errors.md)
