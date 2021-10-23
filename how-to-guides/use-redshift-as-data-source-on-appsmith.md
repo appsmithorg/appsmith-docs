@@ -172,7 +172,7 @@ Now that you have succesfully connected to the database successfully, you can qu
 
 ## Formatting The Fetched Data
 
-Now we need to display the fetched data in a presentable format. This can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the data fetched from Redshift database into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our aaplication's UI. Select the 'Table' widget then drag and drop that on the canvas. 
+Now we need to display the fetched data in a presentable format. This can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the data fetched from Redshift database into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our application's UI. Select the 'Table' widget then drag and drop that on the canvas. 
 Something like this is visible:
 
 ![Screenshot twenty three](../.gitbook/assets/redshift-appsmith-23.png)
@@ -180,14 +180,9 @@ Something like this is visible:
 To include response in this table use the moustache syntax to write JS in Appsmith.
 
 ```Javascript
-{{
 
-appsmith_library_db.map(
-    (item) => {
-        return (item.properties)
-    })
+{{Query1.data}}
 
-}}
 ```
 
  Now that we have received data in the table, we can add more widgets for each attribute of the data records from the UI widgets list. You can add text widgets for all the fields in this example. To set the property of the widgets, next to the widget options add code snippets to fetch values of respective attributes from the array of data fetched refer to the guides linked below
