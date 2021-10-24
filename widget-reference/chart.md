@@ -203,18 +203,13 @@ Below are some more examples of customised Charts you can create from Fusion on 
 
 ### Sample Pareto 3D Chart:
 
-![](../.gitbook/assets/pareto3d.gif)
+![Example of a Pareto 3D chart](../.gitbook/assets/pareto3d.gif)
 
-1. First, drag and drop a chart widget on to the canvas.
-2. Open the Chart's property panel by clicking on the cog icon.
-3. Next, choose the `Custom Chart` option under Chart Type Property. You'll now find a new property named "Custom Fusion Chart"
-4. Now inside the `Custom Fusion Chart` you will see preexisiting properties for a sample **column2d** chart.
-5. In this case, we'll be building a **pareto3d** chart, so we'll modify the provided properties to the Fusion chart properties below.
-
+A Pareto 3D chart offers a visualization of data that combines a line chart and column chart. To make one, you can edit the Custom Chart config below:
 ```text
 {{
     {
-      "type":"pareto3d",
+      "type":"",
       "dataSource":{
           "chart":{
 
@@ -226,22 +221,25 @@ Below are some more examples of customised Charts you can create from Fusion on 
     }
 }}
 ```
+1. Set the type to `pareto3d`.
+2. Inside the `"chart"` field you can add subfields of your choice. Some examples include `"caption"`, `"subcaption"`, and axis labels, such as `"xaxisname"` and `"yaxisname"`.
+3. Add your data inside the `"data"` field by using the subfields like `"label"` and `"value"`. 
 
-Next, add the following config for a **pareto3d** chart to the chart and the data config:
+Your **pareto3d** config should look something like this:
 
 ```text
 {
   "type": "pareto3d",
       "dataSource": {
         "chart": {
-        "caption": "Common Car Damages",
-        "subcaption": "PitStop Service Station",
-        "xaxisname": "Reported Cause",
-        "yaxisname": "No. of Occurences",
-        "theme": "fusion",
-        "plottooltext":
-          "$label accounted for <b>$datavalue</b> cars which came for repairs"
-      },
+	        "caption": "Common Car Damages",
+	        "subcaption": "PitStop Service Station",
+	        "xaxisname": "Reported Cause",
+	        "yaxisname": "No. of Occurences",
+	        "theme": "fusion",
+	        "plottooltext":
+	          "$label accounted for <b>$datavalue</b> cars which came for repairs"
+	      },
       "data": [
         {
           "label": "Burned out bulb",
@@ -274,18 +272,13 @@ Next, add the following config for a **pareto3d** chart to the chart and the dat
 *You can customize the config however you like to suit your own needs.*
 ### Sample Pie 3D Chart:
 
-![](../.gitbook/assets/pie3d.gif)
+![Example of a Pie 3D chart](../.gitbook/assets/pie3d.gif)
 
-1. First, drag and drop a chart widget on to the canvas.
-2. Open the Chart's property panel by clicking on the cog icon.
-3. Next, choose the `Custom Chart` option under Chart Type Property. You'll now find a new property named "Custom Fusion Chart"
-4. Now inside the `Custom Fusion Chart` you will see preexisiting properties for a sample **column2d** chart.
-5. In this case, we'll be building a **pie3d** chart, so we'll modify the provided properties to the Fusion chart properties below.
-
+A Pie 3D chart helps you visualize proportions of a dataset in the form of a pie. To make one, you can edit the Custom Chart config below:
 ```text
 {{
     {
-      "type":"pie3d",
+      "type":"",
       "dataSource":{
           "chart":{
 
@@ -297,43 +290,46 @@ Next, add the following config for a **pareto3d** chart to the chart and the dat
     }
 }}
 ```
+1. Set the type to `pie3d`.
+2. Inside the `"chart"` field you can add subfields of your choice. Some examples include `"caption"`, `"subcaption"`, and flags such as `"showvalues"`.
+3. Add your data inside the `"data"` field by using the subfields like `"label"` and `"value"`. 
 
-Next, add the following config for a **pie3d** chart to the chart and the data config:
+Your **pie3d** config should look something like this:
 
 ```text
 {
       "type":"pie3d",
       "dataSource":{
-				"chart": {
-				    "caption": "Recommended Portfolio Split",
-				    "subcaption": "For a net-worth of $1M",
-				    "showvalues": "1",
-				    "showpercentintooltip": "0",
-				    "numberprefix": "$",
-				    "enablemultislicing": "1",
-				    "theme": "fusion"
-				  },
-				"data": [
-				    {
-				      "label": "Equity",
-				      "value": "300000"
-				    },
-				    {
-				      "label": "Debt",
-				      "value": "230000"
-				    },
-				    {
-				      "label": "Bullion",
-				      "value": "180000"
-				    },
-				    {
-				      "label": "Real-estate",
-				      "value": "270000"
-				    },
-				    {
-				      "label": "Insurance",
-				      "value": "20000"
-				    }
+			"chart": {
+				"caption": "Recommended Portfolio Split",
+				"subcaption": "For a net-worth of $1M",
+				"showvalues": "1",
+				"showpercentintooltip": "0",
+				"numberprefix": "$",
+				"enablemultislicing": "1",
+				"theme": "fusion"
+			},
+		"data": [
+			{
+				"label": "Equity",
+				"value": "300000"
+			},
+			{
+				"label": "Debt",
+				"value": "230000"
+			},
+			{
+				"label": "Bullion",
+				"value": "180000"
+			},
+			{
+				"label": "Real-estate",
+				"value": "270000"
+			},
+			{
+				"label": "Insurance",
+				"value": "20000"
+			}
 		]
     }
 }
@@ -341,13 +337,27 @@ Next, add the following config for a **pie3d** chart to the chart and the data c
 *You can customize the config however you like to suit your own needs.*
 ### Sample Stacked Column 3D Chart:
 
-![](../.gitbook/assets/stackedcolumn3d.gif)
+![Example of Stacked Column 3D chart](../.gitbook/assets/stackedcolumn3d.gif)
 
-1. First, drag and drop a chart widget on to the canvas.
-2. Open the Chart's property panel by clicking on the cog icon.
-3. Next, choose the `Custom Chart` option under Chart Type Property. You'll now find a new property named "Custom Fusion Chart"
-4. Now inside the `Custom Fusion Chart` you will see preexisiting properties for a sample **column2d** chart.
-5. In this case, we'll be building a **stackedcolumn3d** chart, so we'll modify the provided properties to the Fusion chart properties below.
+A Stacked Column 3D chart helps you compare data and show the composition of such data in the form of a 3D column chart. To make one, you can edit the Custom Chart config below:
+```text
+{{
+    {
+      "type":"",
+      "dataSource":{
+          "chart":{
+
+          },
+          "data":[
+
+          ]
+      }
+    }
+}}
+```
+1. Set the type to `stackedcolumn3d`.
+2. Inside the `"chart"` field you can add subfields of your choice. Some examples include `"caption"`, `"subcaption"`, and axis labels such as `"xaxisname"` and `"yaxisname"`.
+3. Add your data inside the `"data"` field by using the subfields like `"label"` and `"value"`. 
 
 ```text
 {{
