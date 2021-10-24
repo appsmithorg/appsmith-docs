@@ -19,6 +19,7 @@ description: >-
 | **Default Text** | This property sets the default text of the Rich Text Editor. |
 | **Visible** | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled** | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed. |
+| **Hide toolbar** Controls the visibility of the toolbar|
 
 | Action | Description |
 | :--- | :--- |
