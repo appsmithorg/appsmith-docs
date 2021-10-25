@@ -30,7 +30,7 @@ Click on `Connect new Datasource` and find `ElasticSearch` from all the availabl
 Now you will be greeted with a page to fill in your credentials of your ElasticSearch server. You should fill in the host/port login credentials. The unfilled screen for this would look something like this:
 
 
-![Elastic-2]https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-2.png)
+![Elastic-2](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-2.png)
 
 
 If you are hosting Elasticsearch on a local server, consider using ngrok to expose the public address.
@@ -68,7 +68,7 @@ In the body we will write our query.
 It will look something like this 
 
 
-![Elastic-4](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-4.png
+![Elastic-4](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-4.png)
 
 
 Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple.                                                                                                                      
