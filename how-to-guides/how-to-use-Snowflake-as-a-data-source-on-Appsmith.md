@@ -10,7 +10,7 @@ This guide assumes you have basic familiarity with [Appsmith](https://www.appsmi
 
 Snowflake is a cloud-based Data Warehouse solution provided as a Saas (Software-as-a-Service) with full support for ANSI SQL. It also has a unique architecture that enables users to just create tables and start querying data with very less administration or DBA activities needed.
 
-In this guide, you will learn how you can use Elasticseach as a data source for your Appsmith application.
+In this guide, you will learn how you can use Snowflake as a data source for your Appsmith application.
 
 ## What to build
 
@@ -25,7 +25,7 @@ Step1- So,  click on the `New` button to create a new application. Then click on
 <!-- ![AppSmith Img1](https://user-images.githubusercontent.com/64676594/137739311-c5fd9a79-1796-4c15-9e2a-7f6d37d48f51.png) -->
 ![AppSmith Img1](../.gitbook/assets/Snowflake-Tutorial1.png)
 
-Step2- Click on the `Snowflake` option. Once you click it, a screen similar to image below will appear-: 
+Step2- Click on the `Snowflake` option. Once you click on it, a screen similar to image below will appear-: 
 
 <!-- ![AppSmith Img2](https://user-images.githubusercontent.com/64676594/137739337-b3c43a09-fb0f-41f6-b4ea-80d7d6453075.png) -->
 ![AppSmith Img2](../.gitbook/assets/Snowflake-Tutorial2.png)
@@ -84,7 +84,7 @@ It should like this.
 
 Step3- Now to Link the Data to the Table widget there are two ways-:
 
-(a) Click on the Explorer Section, and click on the query where you performed the Query. On the right side window there is an option to Connect Widget, select the `SELECT WIDGET` button. This directs you to widget page with Table we created in previous step present there. Click on the Table and on the top-left of table we will see a `Bind to Table` option, click on it.  
+(a) Click on the Explorer Section, and click on the query where you performed the Query. On the right side window there is an option to Connect Widget, select the `SELECT WIDGET` button. This directs you to the canvas with Table we created in previous step present there. Click on the Table and on the top-left of table we will see a `Bind to Table` option, click on it.  
 
 (b) Click on top right corner of the table to open up it's setting section and in Table Data Section Paste `{{<Name_of_the_Query>.data}}` as you can see in the image below.
 
@@ -93,7 +93,7 @@ Now the data of the Query response will be populated in Table widget. And we wil
 <!-- ![Table Linked](https://user-images.githubusercontent.com/64676594/137740256-83e89804-8876-48b8-8e64-448321d7d8d5.png) -->
 ![Table Linked](../.gitbook/assets/Snowflake-Tutorial7.png)
 
-Step4- Now we can play arounf with widget. Like we can click the eye icon beside column names, and the corresponding column is hidden. As shown in the image the `I_CATEGORY_ID` column is hidden and it was visible initially.
+Step4- Now we can play around with widget. Like we can click the eye icon beside column names, and the corresponding column is hidden. As shown in the image the `I_CATEGORY_ID` column is hidden and it was visible initially.
 
 <!-- ![Hidden Column](https://user-images.githubusercontent.com/64676594/137740227-9e0b84d4-7bdb-4d21-a158-a624fa7e00da.png) -->
 ![Hidden Column](../.gitbook/assets/Snowflake-Tutorial8.png)
