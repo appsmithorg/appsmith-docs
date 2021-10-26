@@ -23,17 +23,15 @@ Let's quickly first see how you can integrate Elasticsearch in Appsmith. Just he
 Click on the `New` button to create a new application. Then click on `Generate from a Data table` option. You should be prompted with a screen that would ask you to connect the database of your choice. It should look something like this:
 
 
-![Elastic-1](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-1.png)
-
 Click on `Connect new Datasource` and find `ElasticSearch` from all the available database options.
 
-Now you will be greeted with a page to fill in your credentials of your ElasticSearch server. You should fill in the host/port login credentials. The unfilled screen for this would look something like this:
+Now you will be greeted with a page to fill in the credentials of your ElasticSearch server. You should fill in the host/port login credentials. The unfilled screen for this would look something like this:
 
 
 ![Elastic-2](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-2.png)
 
 
-If you are hosting Elasticsearch on a local server, consider using ngrok to expose the public address.
+If you are hosting Elasticsearch on a local server, consider using ngrok to expose the public address. You can see how to use ngrok and other local APIs with appsmith here: https://docs.appsmith.com/how-to-guides/how-to-work-with-local-apis-on-appsmith
 
 Once you fill in all the details, you can click Test from the options below to test your connection. It will let you know if Appsmith is successfully able to connect to your database or not.
 
@@ -45,13 +43,14 @@ So, now that you're done with setting up a connection to your database server, y
 
 ![Elastic-3](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-3.png)
 
-
+You can change the name of Datasource by clicking on it. I will use the How To datasource here.
 From here, let's try writing a query for our application. For our database, I have already added the accouts.json datafile.
 
 Querying in Appsmith is very simple; click on the New Query button from above and select which kind of query operation you're going to have. For our use case, we're just trying to get data from our database, so I would go ahead and use the default GET method.
 
 Mention the Path in the next field. For our case we will write
-`/bank/_search`
+`/bank/_search/?size=50`
+This will take a the first 50 lists which satisfy the query. You can include more data by increasing the value of size. The default value is 10
 
 In the body we will write our query. 
 ```text
@@ -70,11 +69,11 @@ It will look something like this
 
 ![Elastic-4](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-4.png)
 
-
+I will name this query as Defaulter.
 Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple.                                                                                                                      
 
 ## Displaying the data
-Now that we have connected our query and database to our Appsmith application, it's time to display the data. Let's start with a simple way to go on to this.
+Now that we a query to fetch data from the database. It's time to display the data. Let's start with a simple way to go on to this.
 
 Data is stored as a JSON format in Elasticsearch and we will use a table to display it.
 
@@ -84,7 +83,7 @@ Click on the `Widgets` ribbon and select the `Table` widget.
 ![Elastic-5](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-5.png)
 
 
-Drag and drop it on the Editor.
+Drag and drop it on the canvas.
 It should like this.
 
 
