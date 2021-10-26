@@ -38,7 +38,7 @@ Our Change Log has moved to our [Github Release Page](https://github.com/appsmit
 * Service workers : Caching
 * Add api analytic events on the frontend
 * In scenarios with no service workers, remove the need to fetch all pages when appviewer loads
-* Create a seperate action for datasource generated from datasource pane
+* Create a separate action for datasource generated from datasource pane
 * Query pane fixes
 * fix: create new api - fix create new api button doesn't work sometimes
 * Navigate to datasource pane when there are no valid datasources
@@ -159,7 +159,7 @@ Our Change Log has moved to our [Github Release Page](https://github.com/appsmit
 * Data tree no longer has URL.
 * Classname for property control label added.
 * Form widget cypress test added.
-* Frontend Perfomance : Fast get eval added with a debounce
+* Frontend Performance : Fast get eval added with a debounce
 * Frontend Performance : Batched redux update
 * Validation added for isVisible in chart widget
 * 3rd Party APIs : Credential Steps fixed.
@@ -348,7 +348,7 @@ Our Change Log has moved to our [Github Release Page](https://github.com/appsmit
 * Increase max bottom row offset for main container from 2 to 5.
 * Fix padding and offsets for the widget border component, resize handles.
 * Addition of Form widget
-* Addtion of Marketplace repository with a CRUD for providers and templates with proper authentication
+* Addition of Marketplace repository with a CRUD for providers and templates with proper authentication
 * Addition of CI for Marketplace repository
 * Addition of more details to the invalid action error to pin point which action is invalid in the backend logs.
 * Addition of API to Add an Action \(Use in Page\) for a template in the current page
