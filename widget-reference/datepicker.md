@@ -30,6 +30,11 @@ description: >-
       <td style="text-align:left">Sets the label of the Datepicker.</td>
     </tr>
     <tr>
+      <td style="text-align:left"><b>Time Enable</b>
+      </td>
+      <td style="text-align:left">Enable or disable time input into the widget.</td>
+    </tr>
+    <tr>
       <td style="text-align:left"><b>Default Date</b>
       </td>
       <td style="text-align:left">
@@ -47,6 +52,11 @@ description: >-
           well.</p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Datetime Format</b>
+      </td>
+      <td style="text-align:left">The format of the datetime selected by the date picker</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Date Format</b>
