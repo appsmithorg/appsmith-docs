@@ -73,7 +73,7 @@ I will name this query as Defaulter.
 Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple.                                                                                                                      
 
 ## Displaying the data
-Now that we a query to fetch data from the database. It's time to display the data. Let's start with a simple way to go on to this.
+Now that we have a query to fetch data from the database. It's time to display the data. Let's start with a simple way to go on to this.
 
 Data is stored as a JSON format in Elasticsearch and we will use a table to display it.
 
@@ -90,7 +90,7 @@ It should like this.
 ![Elastic-6](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-6.jpg)
 
 
-So let's try displaying our query data in the table. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case, the identifier of my query is Query1 so I will just put `Query1.data["hits"]["hits"]` inside {{}}.
+So let's try displaying our query data in the table. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case, the identifier of my query is Query1 so I will just put `Defaulters.data.hits.hits` inside {{}}. Remember Defaulters is the name of the query.
 
 Now we will hide unwanted columns like _index, _type _score and _soruce. 
 
@@ -117,6 +117,25 @@ Where -> Balance -> is less than or equal to -> 10000
 
 
 It's very self explanatory and easy to use. Also remember to change the type of balance coloumn to Number by going into column settings and selecting the type in Column type.
+
+## Let's try to make a button and update data on ElasticSearch using Appsmith
+Now that we know how to read data via ElasticSearch, let's make a function which will ask you to add new value to the selected id's balance column. After that we will excecute a query to update the new balance to our accounts.json data.
+
+Create a new column next to balance by clickong on the table and selecting the `ADD A NEW COLUMN` button. I am going to name the column as Balance Update. Click the settings icon on the column name to modify it. In column type, select `Button` and you will see all the rows in the Update Balance column will have a button in it. I am going to name the button as Update. Your configuration should look like this. 
+
+!Elastic 9
+
+On clicking the button, we should get a prompt on the screen with a textboc to write our new balance and update it. To accomplish this we are going to use another widget call `Modal`. Click the `+` icon next to Widgets and drag the modal widget to the canvas.
+
+!Elastic 10
+
+Let's congigure our modal widget. I am going to name it New Balance and 2 more widgets into it, `Text` and `Input`.
+Write New Balance in the text and select the size of the text you desire. I am goinf to take Heading3 for this guide.
+Now it's time for the input widget. Select data type as currency and the type of currency as USD - US Dollar as our data also has amounts in Dollar. Leave all the settings as it is and come down. Check the Required button to ensure the userm have to write data into it if he wants to execute the query. Your configurations should look something like this 
+
+!Elastic 11  !Elastic 12
+
+Let's work on the Confirm Button now. Click on it to configure it. You should see a `onClick` section under the Actions tag. What we want here is after the user presses that button, two queries should excecute. The first query should update the data with new balance entered and the second query will re populate the table with the updated data. 
 
 And now you know how to use Elasticsearch with Appsmith. 
 
