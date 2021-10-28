@@ -22,13 +22,14 @@ Let's quickly first see how you can integrate Elasticsearch in Appsmith. Just he
 
 Click on the `New` button to create a new application. Then click on `Generate from a Data table` option. You should be prompted with a screen that would ask you to connect the database of your choice. It should look something like this:
 
+![Elastic-1](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%20-%201.png)
 
 Click on `Connect new Datasource` and find `ElasticSearch` from all the available database options.
 
 Now you will be greeted with a page to fill in the credentials of your ElasticSearch server. You should fill in the host/port login credentials. The unfilled screen for this would look something like this:
 
 
-![Elastic-2](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-2.png)
+![Elastic-2](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%20-%202.png)
 
 
 If you are hosting Elasticsearch on a local server, consider using ngrok to expose the public address. You can see how to use ngrok and other local APIs with appsmith here: https://docs.appsmith.com/how-to-guides/how-to-work-with-local-apis-on-appsmith
@@ -67,7 +68,7 @@ In the body we will write our query.
 It will look something like this 
 
 
-![Elastic-4](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-4.png)
+![Elastic-4](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%20-%204.png)
 
 I will name this query as Defaulter.
 Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be very simple.                                                                                                                      
@@ -87,7 +88,7 @@ Drag and drop it on the canvas.
 It should like this.
 
 
-![Elastic-6](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-6.jpg)
+![Elastic-6](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-6.png)
 
 
 So let's try displaying our query data in the table. Now click on the settings icon and all you have to do is replace the table data value with your query data. In this case, the identifier of my query is Query1 so I will just put `Defaulters.data.hits.hits` inside {{}}. Remember Defaulters is the name of the query.
@@ -105,7 +106,7 @@ Similarly we will fill the data for all the columns. i.e. Just change the value 
 Finally you can see your table looking like this.
 
 
-![Elastic-7](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-7.png)
+![Elastic-7](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%207.png)
 
 
 You can also use the filter command in the table widget. Let's say you want to find the people who have balance less than 10000 and are in critical red zone. You can simply click the filter tag and fill the fields with the objectve in mind
@@ -113,7 +114,7 @@ For this instance, We can select
 Where -> Balance -> is less than or equal to -> 10000
 
 
-![Elastic-8](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic-8.png)
+![Elastic-8](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%208.png)
 
 
 It's very self explanatory and easy to use. Also remember to change the type of balance coloumn to Number by going into column settings and selecting the type in Column type.
@@ -123,17 +124,17 @@ Now that we know how to read data via ElasticSearch, let's make a function which
 
 Create a new column next to balance by clickong on the table and selecting the `ADD A NEW COLUMN` button. I am going to name the column as Balance Update. Click the settings icon on the column name to modify it. In column type, select `Button` and you will see all the rows in the Update Balance column will have a button in it. I am going to name the button as Update. Your configuration should look like this. 
 
-!Elastic 9
+![Elastic-9](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%209.png)
 
 On clicking the button, we should get a prompt on the screen with a textboc to write our new balance and update it. To accomplish this we are going to use another widget call `Modal`. Click the `+` icon next to Widgets and drag the modal widget to the canvas.
 
-!Elastic 10
+![Elastic-10](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2010.png)
 
 Let's congigure our modal widget. I am going to name it New Balance and 2 more widgets into it, `Text` and `Input`.
 Write New Balance in the text and select the size of the text you desire. I am goinf to take Heading3 for this guide.
 Now it's time for the input widget. Select data type as currency and the type of currency as USD - US Dollar as our data also has amounts in Dollar. Leave all the settings as it is and come down. Check the Required button to ensure the userm have to write data into it if he wants to execute the query. Your configurations should look something like this 
 
-!Elastic 11  !Elastic 12
+![Elastic-11](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2011.png)  ![Elastic-12](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2012.png)
 
 Let's work on the Confirm Button now. Click on it to configure it. You should see a `onClick` section under the Actions tag. What we want here is after the user presses that button, two queries should excecute. The first query should update the data with new balance entered and the second query will re-populate the table with the updated data. 
 
@@ -150,7 +151,7 @@ In body use the following command to update the data
 new_balance is the input widget where the user writes the new balance.
 It should look like this 
 
-!Elastic 13
+![Elastic-13](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2013.png)
 
 Now go back to the modal widget and click on the settings of Confirm button 
 Go on onClick => Execute a query => Cleared_Query (the new query we just made)
@@ -162,19 +163,25 @@ We also need to close the modal after updating the balance. Click on the close b
 
 At the end your modal should look like this 
 
-!Elastic 14
+![Elastic-14](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2014.png)
 
 Our final step is to configure our Update button to set an onClick method which will open our modal
 Go to table => select Balance Update column settings => onClick => Open Modal => select the modal name Balance_Update
 
-!Elastic 1 gif
+![Elastic-1-gif](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%20-%201%20gif.gif)
+
+Your application is now ready and can be easily deployed by clicking the Deploy button on the top rifht corner. You can also share your application to others by clicking the share button. You can also invite others to this app via email and even assign roles to them.
+
+![Elastic-16](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2016.png)
 
 Lets try to update one of the value to check if our application is working properly
 
-!Elastic 2 gif
+![Elastic-2-gif](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%20-%202%20gif.gif)
 
-All the queries have executed properly. Lets check the value of id 6 if it's udated properly.
+All the queries have executed properly. Lets check the value of id 6 if it's udated properly. I'll use Kibana to check the value. 
 
-!Elastic 15
+![Elastic-15](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2015.png)
+
+We can see the new balance is now 78000. Our update query was successful. 
 
 Now you know how to update data using ElasticSearch as well.
