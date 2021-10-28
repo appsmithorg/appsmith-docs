@@ -135,7 +135,26 @@ Now it's time for the input widget. Select data type as currency and the type of
 
 !Elastic 11  !Elastic 12
 
-Let's work on the Confirm Button now. Click on it to configure it. You should see a `onClick` section under the Actions tag. What we want here is after the user presses that button, two queries should excecute. The first query should update the data with new balance entered and the second query will re populate the table with the updated data. 
+Let's work on the Confirm Button now. Click on it to configure it. You should see a `onClick` section under the Actions tag. What we want here is after the user presses that button, two queries should excecute. The first query should update the data with new balance entered and the second query will re-populate the table with the updated data. 
+
+After clicking on the `onClick` section, choose `Execute an Query` and then `+ Create New Query` 
+Click on the `New Query` button of the datasource you want to make query in. Name your query with a proper name for better understanding and write the query.
+For updating the data we will use `POST` Method.
+In path write `/bank/_update/{{Table1.selectedRow._id}}` Table1 is the table which we have populated before and .selectRow_id will take the id of the row fro where we pressed the button. 
+In body use the following command to update the data
+`
+  {
+    "script": "ctx._source.balance = {{new_balance.text}} " 
+  }
+`
+new_balance is the input widget where the user writes the new balance.
+It should look like this 
+
+!Elastic 13
+
+Now go back to the modal widget and click on the settings of Confirm button 
+Go on onClick => Execute a query => Cleared_Query (the update query we just made)
+
 
 And now you know how to use Elasticsearch with Appsmith. 
 
