@@ -153,9 +153,28 @@ It should look like this
 !Elastic 13
 
 Now go back to the modal widget and click on the settings of Confirm button 
-Go on onClick => Execute a query => Cleared_Query (the update query we just made)
+Go on onClick => Execute a query => Cleared_Query (the new query we just made)
+You can see that there's 2 more new options, onSuccess and onError. We will use this to re populate the table woth the updated data.
+In the onSuccess section select Execute a query => Defaulters (the previous query which we used to read data)
 
+Voila! You have now made a function to update the data.
+We also need to close the modal after updating the balance. Click on the close button settings and in it's onClick method, select `close modal` and in the Modal section select the `Balance_Modal` or the name of the modal you have given. 
 
-And now you know how to use Elasticsearch with Appsmith. 
+At the end your modal should look like this 
 
+!Elastic 14
 
+Our final step is to configure our Update button to set an onClick method which will open our modal
+Go to table => select Balance Update column settings => onClick => Open Modal => select the modal name Balance_Update
+
+!Elastic 1 gif
+
+Lets try to update one of the value to check if our application is working properly
+
+!Elastic 2 gif
+
+All the queries have executed properly. Lets check the value of id 6 if it's udated properly.
+
+!Elastic 15
+
+Now you know how to update data using ElasticSearch as well.
