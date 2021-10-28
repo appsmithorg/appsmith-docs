@@ -14,7 +14,7 @@ In this guide, you will learn how you can use Elasticseach as a data source for 
 
 ## What to build
 
-We are going to use accounts.json that has sample data of bank customers and their account balance. This guide will display all the defaulters (account balance less than 20000) with their account info.
+We are going to use accounts.json that has sample data of bank customers and their account balance. This guide will display all the defaulters (account balance less than 20000) with their account info. We will also make a button which will update the balance of the selected person.
 
 ## Initial setup
 
@@ -134,14 +134,17 @@ Let's congigure our modal widget. I am going to name it New Balance and 2 more w
 Write New Balance in the text and select the size of the text you desire. I am goinf to take Heading3 for this guide.
 Now it's time for the input widget. Select data type as currency and the type of currency as USD - US Dollar as our data also has amounts in Dollar. Leave all the settings as it is and come down. Check the Required button to ensure the userm have to write data into it if he wants to execute the query. Your configurations should look something like this 
 
-![Elastic-11](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2011.png)  ![Elastic-12](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2012.png)
+![Elastic-11](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2011.png)       ![Elastic-12](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2012.png)
 
 Let's work on the Confirm Button now. Click on it to configure it. You should see a `onClick` section under the Actions tag. What we want here is after the user presses that button, two queries should excecute. The first query should update the data with new balance entered and the second query will re-populate the table with the updated data. 
 
-After clicking on the `onClick` section, choose `Execute an Query` and then `+ Create New Query` 
+After clicking on the `onClick` section, choose `Execute an Query` and then `+ Create New Query`.
+
 Click on the `New Query` button of the datasource you want to make query in. Name your query with a proper name for better understanding and write the query.
 For updating the data we will use `POST` Method.
+
 In path write `/bank/_update/{{Table1.selectedRow._id}}` Table1 is the table which we have populated before and .selectRow_id will take the id of the row fro where we pressed the button. 
+
 In body use the following command to update the data
 `
   {
@@ -153,10 +156,12 @@ It should look like this
 
 ![Elastic-13](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2013.png)
 
-Now go back to the modal widget and click on the settings of Confirm button 
-Go on onClick => Execute a query => Cleared_Query (the new query we just made)
+Now go back to the modal widget and click on the settings of Confirm button. 
+
+Go on `onClick => Execute a query => Cleared_Query (the new query we just made)`
+
 You can see that there's 2 more new options, onSuccess and onError. We will use this to re populate the table woth the updated data.
-In the onSuccess section select Execute a query => Defaulters (the previous query which we used to read data)
+In the onSuccess section select `Execute a query => Defaulters (the previous query which we used to read data)`
 
 Voila! You have now made a function to update the data.
 We also need to close the modal after updating the balance. Click on the close button settings and in it's onClick method, select `close modal` and in the Modal section select the `Balance_Modal` or the name of the modal you have given. 
