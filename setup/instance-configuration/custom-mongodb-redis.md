@@ -1,6 +1,6 @@
 # Custom MongoDB & Redis
 
-Appsmith runs it's own instances of MongoDB database for storing all application data, and Redis for storing session information. It's easy to switch to externally running instances of these services, by just changing the relavent environment variables.
+Appsmith runs it's own instances of MongoDB database for storing all application data, and Redis for storing session information. It's easy to switch to externally running instances of these services, by just changing the relevant environment variables.
 
 ## Custom MongoDB
 
