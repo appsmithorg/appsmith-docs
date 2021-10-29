@@ -118,6 +118,7 @@
 
 * [Button](widget-reference/button/README.md)
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
+* [Button Group](widget-reference/buttonGroup.md)
 * [Chart](widget-reference/chart.md)
 * [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)
