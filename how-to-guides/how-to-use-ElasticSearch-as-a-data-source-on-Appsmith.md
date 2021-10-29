@@ -126,13 +126,13 @@ Create a new column next to balance by clickong on the table and selecting the `
 
 ![Elastic-9](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%209.png)
 
-On clicking the button, we should get a prompt on the screen with a textboc to write our new balance and update it. To accomplish this we are going to use another widget call `Modal`. Click the `+` icon next to Widgets and drag the modal widget to the canvas.
+On clicking the button, we should get a prompt on the screen with a textbox to write our new balance and update it. To accomplish this we are going to use another widget call `Modal`. Click the `+` icon next to Widgets and drag the modal widget to the canvas.
 
 ![Elastic-10](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2010.png)
 
 Let's congigure our modal widget. I am going to name it New Balance and 2 more widgets into it, `Text` and `Input`.
 Write New Balance in the text and select the size of the text you desire. I am goinf to take Heading3 for this guide.
-Now it's time for the input widget. Select data type as currency and the type of currency as USD - US Dollar as our data also has amounts in Dollar. Leave all the settings as it is and come down. Check the Required button to ensure the userm have to write data into it if he wants to execute the query. Your configurations should look something like this 
+Now it's time for the input widget. Select data type as currency and the type of currency as USD - US Dollar as our data also has amounts in Dollar. Leave all the settings as it is and come down. Check the Required button to ensure the user have to write data into it if he wants to execute the query. Your configurations should look something like this 
 
 ![Elastic-11](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2011.png)       ![Elastic-12](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2012.png)
 
@@ -175,7 +175,7 @@ Go to table => select Balance Update column settings => onClick => Open Modal =>
 
 ![Elastic-1-gif](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%20-%201%20gif.gif)
 
-Your application is now ready and can be easily deployed by clicking the Deploy button on the top rifht corner. You can also share your application to others by clicking the share button. You can also invite others to this app via email and even assign roles to them.
+Your application is now ready and can be easily deployed by clicking the Deploy button on the top right corner. You can also share your application to others by clicking the share button. You can also invite others to this app via email and even assign roles to them.
 
 ![Elastic-16](https://github.com/achintya-7/appsmith-docs/blob/v1.3/.gitbook/assets/Elastic%2016.png)
 
