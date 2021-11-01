@@ -19,4 +19,5 @@ This document presumes you are familiar with the [core concepts](../core-concept
 13. [How to use Notion as a Database on Appsmith](use-notion-as-database-on-appsmith.md)
 14. [How to use Redis as a data source on Appsmith](how-to-use-redis-as-a-data-source-on-apppsmith.md)
 15. [How to use Redshift as a Data Source on Appsmith](use-redshift-as-data-source-on-appsmith.md)
-16. [How to work with GraphQL on Appsmith: Countries App](how-to-integrate-graphql-countries-app.md)
+16. [How to use ElasticSearch as a data source on Appsmith](how-to-use-ElasticSearch-as-a-data-source-on-Appsmith.md)
+17. [How to work with GraphQL on Appsmith: Countries App](how-to-integrate-graphql-countries-app.md)

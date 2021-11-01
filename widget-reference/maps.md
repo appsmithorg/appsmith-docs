@@ -18,6 +18,7 @@ description: >-
 | Widget Property | Description |
 | :--- | :--- |
 | **Initial location** | This property sets the default location that the map should focus on. |
+| **Default markers** | This property sets an array of default markers. Every default marker will have the following format: `{lat: number, long: number, title?: string, color?: string}` |
 | **Enable search location** | This property enables a search bar on the map which users can use to navigate |
 | **Enable pick location** | This property allows users to select a location on the map and moves the map marker to this location. The selectedMarker field is populated with this marker. |
 | **Create new marker** | This property enables scrolling within the contents of each tab |
