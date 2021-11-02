@@ -44,7 +44,6 @@
   * [How to use Notion as a Database on Appsmith](how-to-guides/use-notion-as-database-on-appsmith.md)
   * [How to use Redis as a Datasource on Appsmith](how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith.md)
   * [How to use Redshift as a Data Source on Appsmith](how-to-guides/use-redshift-as-data-source-on-appsmith.md)
-  
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)
     * [Datasource Errors](troubleshooting-guide/action-errors/datasource-errors.md)
@@ -69,9 +68,9 @@
   * [Execute Queries](core-concepts/connecting-to-data-sources/querying-a-database/README.md)
     * [Configuring APIs](core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis.md)
   * [Query Settings](core-concepts/connecting-to-data-sources/query-settings.md)
-* [Displaying Data \(Read\)](core-concepts/displaying-data-read/README.md)
+* [Displaying Data (Read)](core-concepts/displaying-data-read/README.md)
   * [Display Data in Tables](core-concepts/displaying-data-read/display-data-tables.md)
-* [Capturing Data \(Write\)](core-concepts/capturing-data-write/README.md)
+* [Capturing Data (Write)](core-concepts/capturing-data-write/README.md)
   * [Capture Form Data](core-concepts/capturing-data-write/capture-form-data.md)
 * [Writing Code](core-concepts/writing-code/README.md)
   * [Creating Workflows](core-concepts/writing-code/workflows.md)
@@ -118,7 +117,6 @@
 
 * [Button](widget-reference/button/README.md)
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
-* [Button Group](widget-reference/buttonGroup.md)
 * [Chart](widget-reference/chart.md)
 * [Checkbox](widget-reference/checkbox.md)
 * [Container](widget-reference/container.md)
@@ -138,6 +136,7 @@
 * [Menu Button](widget-reference/menu-button.md)
 * [Modal](widget-reference/modal.md)
 * [Radio](widget-reference/radio.md)
+* [Radio Group](widget-reference/radio-group.md)
 * [Rating](widget-reference/rating.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
 * [Switch](widget-reference/switch.md)
@@ -145,4 +144,3 @@
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
 * [Video](widget-reference/video.md)
-
