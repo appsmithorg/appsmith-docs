@@ -24,22 +24,16 @@ APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
 ## AWS AMI
 
 * Once your instance is ready, connect to that instance \(via SSH\) using your key pair \(Create in step 2\) and the public IP of your instance \(Created in step 4\) via the terminal or any SSH Client that you have
-* Move to `/home/ubuntu/appsmith/scripts`
-* Run `configure-ssl.sh` script
+* Move to `/home/ubuntu/appsmith/stacks/configuration` folder
+* Edit the `docker.env` file here and change the value of `APPSMITH_CUSTOM_DOMAIN` variable to your custom domain. For example:
 
   ```text
-  ./configure-ssl.sh
+  APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
   ```
 
-* You will be asked to your input domain to proceed with the configuration\(Please make sure that you have mapped your domain with EC2 Instance's public IP\)
+* Now restart your instance using `docker-compose restart appsmith`. This will provision the SSL certificate automatically before starting the server.
 
-  ![Custom Domain](../../.gitbook/assets/aws-custom-domain.png)
-
-* There will be an option for you to configure SSL for your domain
-
-  ![SSL](../../.gitbook/assets/aws-ssl.png)
-
-At this point, you should be able to browse to the cloud server, by entering your custom domain directly into your browser’s address bar. You should be able to see your web app home page now
+At this point, you should be able to browse to the cloud server, by entering your custom domain directly into your browser’s address bar with HTTPS.
 
 ## Heroku
 
