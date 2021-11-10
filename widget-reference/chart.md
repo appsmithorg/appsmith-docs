@@ -199,17 +199,252 @@ Next, add the following config to the chart and the data config:
 }}
 ```
 
-Below are some of the screenshots of Charts using customised Charts on Appsmith:
+Below are some more examples of customised Charts you can create from Fusion on Appsmith:
 
-### Example Pareto 3D Chart:
+### Sample Pareto 3D Chart:
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![Example of a Pareto 3D chart](../.gitbook/assets/pareto3d.gif)
 
-### Example Pie 3D Chart:
+A Pareto 3D chart offers a visualization of data that combines a line chart and column chart. To make one, you can edit the Custom Chart config below:
+```text
+{{
+    {
+      "type":"",
+      "dataSource":{
+          "chart":{
 
-![](../.gitbook/assets/image%20%2813%29.png)
+          },
+          "data":[
 
-### Example Stacked **Column** 3D Chart:
+          ]
+      }
+    }
+}}
+```
+1. Set the type to `pareto3d`.
+2. Inside the `"chart"` field you can add subfields of your choice. Some examples include `"caption"`, `"subcaption"`, and axis labels, such as `"xaxisname"` and `"yaxisname"`.
+3. Add your data inside the `"data"` field by using the subfields like `"label"` and `"value"`. 
 
-![](../.gitbook/assets/image%20%2810%29.png)
+Your **pareto3d** config should look something like this:
 
+```text
+{
+  "type": "pareto3d",
+      "dataSource": {
+        "chart": {
+	        "caption": "Common Car Damages",
+	        "subcaption": "PitStop Service Station",
+	        "xaxisname": "Reported Cause",
+	        "yaxisname": "No. of Occurences",
+	        "theme": "fusion",
+	        "plottooltext":
+	          "$label accounted for <b>$datavalue</b> cars which came for repairs"
+	      },
+      "data": [
+        {
+          "label": "Burned out bulb",
+          "value": "41"
+        },
+        {
+          "label": "Discharged Battery",
+          "value": "20"
+        },
+        {
+          "label": "Blown fuse",
+          "value": "14"
+        },
+        {
+          "label": "Worn brake pads",
+          "value": "11"
+        },
+        {
+          "label": "Flat",
+          "value": "9"
+        },
+        {
+          "label": "Others",
+          "value": "5"
+        }
+      ]
+   }
+}
+```
+*You can customize the config however you like to suit your own needs.*
+### Sample Pie 3D Chart:
+
+![Example of a Pie 3D chart](../.gitbook/assets/pie3d.gif)
+
+A Pie 3D chart helps you visualize proportions of a dataset in the form of a pie. To make one, you can edit the Custom Chart config below:
+```text
+{{
+    {
+      "type":"",
+      "dataSource":{
+          "chart":{
+
+          },
+          "data":[
+
+          ]
+      }
+    }
+}}
+```
+1. Set the type to `pie3d`.
+2. Inside the `"chart"` field you can add subfields of your choice. Some examples include `"caption"`, `"subcaption"`, and flags such as `"showvalues"`.
+3. Add your data inside the `"data"` field by using the subfields like `"label"` and `"value"`. 
+
+Your **pie3d** config should look something like this:
+
+```text
+{
+      "type":"pie3d",
+      "dataSource":{
+			"chart": {
+				"caption": "Recommended Portfolio Split",
+				"subcaption": "For a net-worth of $1M",
+				"showvalues": "1",
+				"showpercentintooltip": "0",
+				"numberprefix": "$",
+				"enablemultislicing": "1",
+				"theme": "fusion"
+			},
+		"data": [
+			{
+				"label": "Equity",
+				"value": "300000"
+			},
+			{
+				"label": "Debt",
+				"value": "230000"
+			},
+			{
+				"label": "Bullion",
+				"value": "180000"
+			},
+			{
+				"label": "Real-estate",
+				"value": "270000"
+			},
+			{
+				"label": "Insurance",
+				"value": "20000"
+			}
+		]
+    }
+}
+```
+*You can customize the config however you like to suit your own needs.*
+### Sample Stacked Column 3D Chart:
+
+![Example of Stacked Column 3D chart](../.gitbook/assets/stackedcolumn3d.gif)
+
+A Stacked Column 3D chart helps you compare data and show the composition of such data in the form of a 3D column chart. To make one, you can edit the Custom Chart config below:
+```text
+{{
+    {
+      "type":"",
+      "dataSource":{
+          "chart":{
+
+          },
+          "data":[
+
+          ]
+      }
+    }
+}}
+```
+1. Set the type to `stackedcolumn3d`.
+2. Inside the `"chart"` field you can add subfields of your choice. Some examples include `"caption"`, `"subcaption"`, and axis labels such as `"xaxisname"` and `"yaxisname"`.
+3. Add your data inside the `"data"` field by using the subfields like `"label"` and `"value"`. 
+
+```text
+{{
+    {
+      "type":"stackedcolumn3d",
+      "dataSource":{
+          "chart":{
+
+          },
+          "data":[
+
+          ]
+      }
+    }
+}}
+```
+
+Next, add the following config for a **stackedcolumn3d** chart to the chart and the data config:
+
+```text
+{
+  "type": "stackedcolumn3d",
+      "dataSource": {
+        "chart": {
+        "caption": "Deaths reported because of insect bites in India",
+        "yaxisname": "Number of deaths reported",
+        "subcaption": "(As per government records)",
+        "plottooltext":
+          "<b>$dataValue</b> people died because of $seriesName in $label",
+        "showsum": "0",
+        "theme": "fusion"
+      },
+      "categories": [
+        {
+          "category": [
+            {
+              "label": "1994"
+            },
+            {
+              "label": "1995"
+            },
+            {
+              "label": "1996"
+            },
+            {
+              "label": "1997"
+            }
+          ]
+        }
+      ],
+      "dataset": [
+        {
+          "seriesname": "Hymenoptera",
+          "data": [
+            {
+              "value": "15622"
+            },
+            {
+              "value": "10612"
+            },
+            {
+              "value": "15820"
+            },
+            {
+              "value": "26723"
+            }
+          ]
+        },
+        {
+          "seriesname": "Diptera",
+          "data": [
+            {
+              "value": "3622"
+            },
+            {
+              "value": "2612"
+            },
+            {
+              "value": "5820"
+            },
+            {
+              "value": "6723"
+            }
+          ]
+        }
+      ]
+   }
+}
+```
+*You can customize the config however you like to suit your own needs.*

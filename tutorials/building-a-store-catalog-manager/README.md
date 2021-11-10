@@ -8,7 +8,7 @@ This tutorial shows you how to build a feature-complete **Grocery Catalog** appl
 
 The tutorial is organized into three parts & we recommend you follow them in order.
 
-You must have an account on either [Appsmith Cloud](https://docs.appsmith.com/quick-start#appsmith-cloud) \(it's free\) or your own[ private instance](../setup/) before getting started. Before diving in, let's talk a bit about the Appsmith environment.
+You must have an account on either [Appsmith Cloud](https://app.appsmith.com/user/signup) \(it's free\) or your own[ private instance](../setup/) before getting started. Before diving in, let's talk a bit about the Appsmith environment.
 
 ## The Appsmith Environment
 
@@ -44,7 +44,7 @@ Let's see what each of these directories is:
 
 * **`Widgets`**: This directory is a container for all the widgets that will be part of the web-page `Page1`. You can think of Widgets as simple UI Components for your web-page, for example, a data-picker or a form. By default, this directory doesn’t have any pre-configured widgets.
 * **`Datasources`**: The datasources directory is a container consisting of all API's and queries that Page1 connects to.
-* Lastly, you can also see all the [JS libraries supported by Appsmith](https://docs.appsmith.com/core-concepts/connecting-ui-and-logic/working-with-js-libraries#included-js-libraries) under _**JS libraries you can use**_ section below the `Page` directory. These libraries are already imported into your app's environment, ready to be used.
+* Lastly, you can also see all the [JS libraries supported by Appsmith](https://docs.appsmith.com/core-concepts/writing-code/ext-libraries) under the _**External libraries**_ section. These libraries are already imported into your app's environment, ready to be used.
 
 ## Creating your First Page
 
