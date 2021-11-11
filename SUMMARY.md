@@ -115,10 +115,12 @@
 
 ## Widget Reference
 
+* [Audio](widget-reference/audio.md)
 * [Button](widget-reference/button/README.md)
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
 * [Chart](widget-reference/chart.md)
 * [Checkbox](widget-reference/checkbox.md)
+* [Checkbox Group](widget-reference/checkbox-group.md)
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Dropdown](widget-reference/dropdown.md)
@@ -139,6 +141,7 @@
 * [Radio Group](widget-reference/radio-group.md)
 * [Rating](widget-reference/rating.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
+* [Stat Box](widget-reference/stat-box.md)
 * [Switch](widget-reference/switch.md)
 * [Tabs](widget-reference/tabs.md)
 * [Table](widget-reference/table.md)
