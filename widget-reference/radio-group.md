@@ -2,7 +2,7 @@
 
 The Radio group widget allows users to configure a group of radio buttons.
 
-![](../.gitbook/assets/Radio\_group.gif)
+![](<../.gitbook/assets/Radio\_group (1).gif>)
 
 ### Properties
 

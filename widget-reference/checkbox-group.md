@@ -4,7 +4,7 @@ Checkbox group widget allows users to configure multiple checkboxes together.
 
 {% embed url="https://youtu.be/-7cvZ2yCgtE" %}
 
-*   ### Properties
+*   #### Properties
 
     | Property                  | Description                                                           |
     | ------------------------- | --------------------------------------------------------------------- |
@@ -14,8 +14,6 @@ Checkbox group widget allows users to configure multiple checkboxes together.
     | **isRequired**            | Makes input to the widget mandatory.                                  |
     | **isVisible**             | Controls the visibility of the widget.                                |
     | **isDisabled**            | Disables input to this widget.                                        |
-
-
 
     | Action                | Description                                                |
     | --------------------- | ---------------------------------------------------------- |
