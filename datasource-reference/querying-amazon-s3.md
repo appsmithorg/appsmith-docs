@@ -4,13 +4,13 @@
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
 {% endhint %}
 
-The S3 plugin can connect to an Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects and any other provider that supports S3 to execute a set of [actions](querying-amazon-s3.md#supported-actions) supported by Appsmith.
+The S3 plugin can connect to an Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects ,and any other provider that supports S3 to execute a set of [actions](querying-amazon-s3.md#supported-actions) supported by Appsmith.
 
 ## Connection Settings
 
 The S3 Datasource requires the following information to establish a connection
 
-![Click to expand](../.gitbook/assets/amazon_s3_create_datasource.png)
+![Click to expand](../.gitbook/assets/amazon\_s3\_create\_datasource.png)
 
 1. Amazon Access Key ID
 2. Amazon Secret Key
@@ -24,17 +24,17 @@ This action lists all the files in a bucket. The bucket name is the bucket from 
 
 You can also choose to generate a signed URL for each listed file by selecting `Yes` in the `Generate Signed URL` dropdown. An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field. In this case, the output returns two other fields:
 
-* `signedUrl`: It contains the signed url for the file.
-* `urlExpiryDate`: It contains the timestamp at which the signed url will expire. 
+* `signedUrl`: It contains the signed URL for the file.
+* `urlExpiryDate`: It contains the timestamp at which the signed URL will expire.
 
-![Click to expand](../.gitbook/assets/amazon_s3_list_query.png)
+![Click to expand](../.gitbook/assets/amazon\_s3\_list\_query.png)
 
 ## Create File
 
-This action creates a new file at the location specified by the file path \(including file name\). The action returns the following two fields:
+This action creates a new file at the location specified by the file path (including file name). The action returns the following two fields:
 
-* `signedUrl`: It contains the signed url for the file.
-* `urlExpiryDate`: It contains the timestamp at which the signed url will expire.
+* `signedUrl`: It contains the signed URL for the file.
+* `urlExpiryDate`: It contains the timestamp at which the signed URL will expire.
 
 An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field.
 
@@ -42,17 +42,27 @@ An expiry duration can be set for the generated signed URLs by editing the `Expi
 If a file already exists on the file path, it will be replaced with the new file.
 {% endhint %}
 
-![](../.gitbook/assets/create-file.png)
+The content can be configured using the entire file object of the Filepicker. `{{Filepicker1.files[0]}}`\
+Or you can manually add data in form of an object format given below:
+
+```
+{
+  "data": "Text content",
+  "type": "text/plain"
+}
+```
+
+![](<../.gitbook/assets/amazon\_s3\_upload\_query\_using\_filepicker (1).png>)
 
 ## Read File
 
 This action fetches a file in the Bucket Name specified with a file path relative to the bucket. By default, the raw content of the file is returned in the `fileData` field of response. File content can also be Base64 encoded by selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
 
 {% hint style="warning" %}
-When reading multimedia file or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded using the atob\(\) method in javascript.
+When reading multimedia files or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded using the atob() method in javascript.
 {% endhint %}
 
-![Click to expand](../.gitbook/assets/amazon_s3_read_query.png)
+![Click to expand](../.gitbook/assets/amazon\_s3\_read\_query.png)
 
 ## Delete File
 
@@ -62,7 +72,7 @@ This action deletes a file at the file path relative to the Bucket Name specifie
 Enable the confirmation setting in this query to avoid accidental file deletes
 {% endhint %}
 
-![Click to expand](../.gitbook/assets/amazon_s3_delete_query.png)
+![Click to expand](../.gitbook/assets/amazon\_s3\_delete\_query.png)
 
 ## Using Queries in applications
 
@@ -72,4 +82,3 @@ Once you have successfully run a Query, you can use it in your application to
 * [Capture Data](../core-concepts/capturing-data-write/)
 * [Upload files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3)
 * [Download files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3#downloading-files)
-
