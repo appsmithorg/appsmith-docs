@@ -6,7 +6,7 @@ description: >-
 
 # Chart
 
-{% embed url="https://www.youtube.com/watch?v=xRUJN\_0lzRU&feature=youtu.be" caption="" %}
+{% embed url="https://www.youtube.com/embed/xRUJN_0lzRU" caption="" %}
 
 ## Properties
 
