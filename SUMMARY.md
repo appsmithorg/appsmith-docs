@@ -117,6 +117,7 @@
 ## Widget Reference
 
 * [Audio](widget-reference/audio.md)
+* [Audio Recorder](widget-reference/audio-recorder.md)
 * [Button](widget-reference/button/README.md)
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
 * [Chart](widget-reference/chart.md)
