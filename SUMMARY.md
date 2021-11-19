@@ -112,6 +112,7 @@
 * [Store Value](framework-reference/store-value.md)
 * [Copy To Clipboard](framework-reference/copytoclipboard.md)
 * [Reset Widget](framework-reference/resetwidget.md)
+* [JavaScript Editor (Beta)](framework-reference/javascript-editor-beta.md)
 
 ## Widget Reference
 
