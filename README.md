@@ -53,6 +53,6 @@ We are working hard to keep our documentation up to date and expansive. However,
 * See our guides and tutorials on[ YouTube](https://www.youtube.com/appsmith);
 * Report bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
 
-Still, having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions on our [community forum](https://community.appsmith.com/).  
+Still, having trouble? We are ready to help you ! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support and ask questions on our [community forum](https://community.appsmith.com/).  
 
 
