@@ -17,6 +17,7 @@ The appsmith context object contains the following properties
    store: object,
    URL: object,
    user: object,
+   geolocation: object,
    mode: enum
 }
 ```
@@ -62,6 +63,56 @@ This object contains the data of the currently authenticated user.
   isAnonymous: boolean
 }
 ```
+
+### Geolocation
+
+This object contains functions to request the current user location and also the coordinated recived from this request
+https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+
+```javascript
+{
+ canBeRequested: boolean,
+ getCurrentPosition: Function,
+ watchPosition: Function,
+ clearWatch: Function,
+ currentPosition: {
+   coords: {
+      accuracy: number,
+      altitude: number | null,
+      altitudeAccuracy: number | null,
+      heading: number | null,
+      latitude: number,
+      longitude: number,
+      speed: number | mull,
+   },
+   timestamp: number,
+ }
+}
+```
+
+##### getCurrentPosition
+Signature: 
+ ```javascript
+ (
+  onSuccessCallback?,
+  onErrorCallback?,
+  options?: { maximumAge?: number, timeout?: number, enableHighAccuracy?: boolean } 
+ ) -> void
+ ```
+Almost similar to the original browser API apart from the fact that you dont *need* to pass the success callback. On success, the location would 
+automatically be stored at `appsmith.geolocation.currentPosition.coords`. If onSuccessCallback is passed, it would be called with the location information recieved.
+
+##### watchPosition
+Signature: `(options?: { maximumAge?: number, timeout?: number, enableHighAccuracy?: boolean } ) -> void`
+
+Almost similar to the original browser API apart from the fact that you dont have to pass the success callback at all. On success, the location would 
+automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. No watchId is returned as well as the platform will only allow for a single `watchPosition`
+
+##### clearWatch
+Signature: `() -> void`
+
+Almost similar to the original browser API apart from the fact that you dont have to pass the watchId. If a watch is active, it would automatically clear it or throw an error if no watch is active.
+
 
 ### Mode
 
