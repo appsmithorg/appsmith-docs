@@ -17,6 +17,6 @@ description: >-
 | **data**       | Sets the data to be used to create entities for the map. |
 | **showLabels** | Sets whether entity labels will be shown or hidden.      |
 
-| Action            | Description                                                   |
-| :---------------- | :------------------------------------------------------------ |
-| **onEntityClick** | Sets the action triggered when an entity on a map is clicked. |
+| Action               | Description                                                   |
+| :------------------- | :------------------------------------------------------------ |
+| **onDataPointClick** | Sets the action triggered when an entity on a map is clicked. |
