@@ -6,7 +6,7 @@ description: >-
 
 # Divider
 
-![](../.gitbook/assets/cleanshot-2021-07-17-at-22.12.03.gif)
+{% embed url="https://youtu.be/rTJtDOusWmM" caption="" %}
 
 ## Properties
 

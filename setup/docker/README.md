@@ -24,10 +24,9 @@ For Mac on M1, we've seen problems with Docker getting into a corrupt state and 
 Appsmith does not officially support Windows \(or WSL\). Please try out one of our [pre-built images](../) if your production operating system is not on the list above.
 {% endhint %}
 
-Fetch the **install.sh** script on the system you want to deploy Appsmith
+Fetch the **install.sh** script on the system you want to deploy Appsmith. The following command will download the `install.sh` script:
 
 ```bash
-# Downloads install.sh
 curl -O https://raw.githubusercontent.com/appsmithorg/appsmith/master/deploy/install.sh
 ```
 

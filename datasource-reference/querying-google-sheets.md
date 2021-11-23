@@ -46,12 +46,12 @@ This section describes each of the parameters expected while creating new query 
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Google Sheet that has the table headings |
+| Table Heading Row Index | Row number in Google Sheet that has the table headings. Row numbers start from 1. |
 | Query Format | You can query your rows based on row index or row range |
 | Row Offset | Relative row from Table Heading Row Number |
-| Row limit | Number of rows you want to query |
+| Row Limit | Number of rows you want to query |
 | Range | A1 Notation of range to retrieve |
 
 **Response Format:**
@@ -70,9 +70,9 @@ This section describes each of the parameters expected while creating new query 
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Google Sheet that has the table headings |
+| Table Heading Row Index | Row number in Google Sheet that has the table headings. Row numbers start from 1. |
 
 **Request Format:**
 
@@ -85,16 +85,16 @@ This section describes each of the parameters expected while creating new query 
 ```
 
 {% hint style="info" %}
-Use moustache syntax to dynamically pass values from widgets to the request format.
+Use mustache syntax to dynamically pass values from widgets to the request format.
 {% endhint %}
 
 ### 3. Update Sheet Row
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Sheet that has the table headings |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 
 Request Format:
 
@@ -110,9 +110,9 @@ Request Format:
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of your Google Sheet \(Found at bottom-right on your Google sheet\) |
-| Table Heading Row Index | Row number in Sheet that has the table headings |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 | Row Index | Relative row from Table Heading Row Number |
 
 ### 5. List Sheets
@@ -134,9 +134,9 @@ Response Format:
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 
-This method uses an additional Spreadsheet Url input. This method returns a few more details about the spreadsheet.
+This method uses an additional Spreadsheet URL input. This method returns a few more details about the spreadsheet.
 
 **Response Format:**
 
@@ -178,7 +178,7 @@ Request Format \(Optional\):
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Select Entity | Select if you want to delete a specific sheet or entire Google Sheet |
 | Sheet Name | Sheet Name you want to delete |
 
@@ -186,9 +186,9 @@ Request Format \(Optional\):
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of the Sheet to bulk insert |
-| Table Heading Row Index | Row number in Sheet that has the table headings |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 | Row Objects | Request Format of the Data |
 
 Request Format:
@@ -207,9 +207,9 @@ Request Format:
 
 | Property Name | Description |
 | :--- | :--- |
-| Spreadsheet Url | Your Google Sheet URL |
+| Spreadsheet URL | Your Google Sheet URL |
 | Sheet Name | Name of the Sheet to bulk insert |
-| Table Heading Row Index | Row number in Sheet that has the table headings |
+| Table Heading Row Index | Row number in Sheet that has the table headings. Row numbers start from 1. |
 | Row Objects | Request Format of the Data |
 
 Request Format:

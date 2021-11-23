@@ -69,10 +69,10 @@ description: >-
 
 ## Custom Chart
 
-In case if your use-case is not covered in the offered chart types, custom chart option will let you extend all the functionalities offered by the underlying package Fusion Charts. To use this on the chart widget, you'll have to select `Custom Chart` type in the Chart Type property. Now, you'll find a `Custom Fusion Chart Configuration`  property where you'll have to set the configuration of the fusion chart. 
+In case if your use-case is not covered in the offered chart types, custom chart option will let you extend all the functionalities offered by the underlying package Fusion Charts. To use this on the chart widget, you'll have to select `Custom Chart` type in the Chart Type property. Now, you'll find a `Custom Fusion Chart Configuration` property where you'll have to set the configuration of the fusion chart.
 
 {% hint style="info" %}
-There are almost 100+ variants of Fusion Chart Configuration, learn more from the official docs [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/). 
+There are almost 100+ variants of Fusion Chart Configuration, learn more from the official docs [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
 {% endhint %}
 
 > The new custom configuration requires an object with two keys, `type` and `dataSource`.
@@ -96,18 +96,17 @@ There are almost 100+ variants of Fusion Chart Configuration, learn more from th
         <p><b>dataSource</b> consists of customization options and the data to be
           mapped for your chart. It essentially has two properties <code>chart</code> and <code>type.</code>
         </p>
-        <p></p>
         <p>The <code>chart</code> object has options that are used to customize the
           chart for example, caption, x/y axis label etc. The <code>data</code> object
           is an array that you want to visualise, here&apos;s an example of how the
-          data looks like : <code> [{&quot;label&quot;: string, &quot;value&quot;: string},.. ] </code>
+          data looks like : <code>[{&quot;label&quot;: string, &quot;value&quot;: string},.. ]</code>
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-Here's how the entire config should look like in the `Custom Fusion Chart Configuration`  property:
+Here's how the entire config should look like in the `Custom Fusion Chart Configuration` property:
 
 ```text
 {{
@@ -137,10 +136,10 @@ Here's a quick example to create a custom Fusion Chart on Appsmith:
       "type":"column2d",
       "dataSource":{
           "chart":{
-            
+
           },
           "data":[
-            
+
           ]
       }
     }
@@ -202,7 +201,7 @@ Next, add the following config to the chart and the data config:
 
 Below are some of the screenshots of Charts using customised Charts on Appsmith:
 
-### Example Paerto3D Chart:
+### Example Pareto 3D Chart:
 
 ![](../.gitbook/assets/image%20%2812%29.png)
 
@@ -210,9 +209,7 @@ Below are some of the screenshots of Charts using customised Charts on Appsmith:
 
 ![](../.gitbook/assets/image%20%2813%29.png)
 
-### Example Stacked **Column** 3D Chart: 
+### Example Stacked **Column** 3D Chart:
 
 ![](../.gitbook/assets/image%20%2810%29.png)
-
-
 

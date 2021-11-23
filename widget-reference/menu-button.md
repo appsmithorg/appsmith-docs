@@ -4,7 +4,7 @@ description: Menu buttons are used to represent a set of actions in a group.
 
 # Menu Button
 
-![](../.gitbook/assets/cleanshot-2021-07-26-at-11.12.35.gif)
+{% embed url="https://youtu.be/tDMAOxZTmxY" caption="" %}
 
 ## Properties
 

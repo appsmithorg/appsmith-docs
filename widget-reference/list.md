@@ -22,8 +22,38 @@ List widget is used to repeat a template based on the large data \(collection on
 // assuming avatar is a property in the array of objects in the items
 ```
 
+## Current Index
+
+You can access the current index of the row in the list with `currentIndex` property.
+
+```text
+{{ currentIndex }}
+
+// the above statement will give 0 for the first row.
+```
+
+## Items
+
+Items is a special property in list widget which contains the data of children's widgets for each row. This property becomes very useful when dealing of input widgets. For e.g - if you want to access the text value of input widget for the first row, You can simply do:
+
+```text
+{{ List1.items[0].Input1.text }}
+```
+
+In the above example, List1 is the name of the list widget and Input1 is the name of the input widget inside the template container of list widget.
+
+## Use cases
+
+### 1. Getting the value of chidren widgets
+
+Let's say you have input widget and a button widget inside the list widget and you want send the value of input on click of the button to some api. You can access the value of any children widget for the current row with the combination of `currentIndex` and `items`
+
+```text
+{{ List1.items[currentIndex].Input1.text }}
+```
+
 {% hint style="info" %}
-Note: currentItem is only available in the autocomplete of controls, in the property pane of list widget template's children.
+Note: currentItem and currentIndex is only available in the autocomplete of controls, in the property pane of list widget template's children.
 {% endhint %}
 
 | Widget Property | Description |
