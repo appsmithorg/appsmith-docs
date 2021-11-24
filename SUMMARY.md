@@ -120,6 +120,7 @@
 * [Audio Recorder](widget-reference/audio-recorder.md)
 * [Button](widget-reference/button/README.md)
   * [Re-Captcha](widget-reference/button/google-recaptcha.md)
+* [Button Group](widget-reference/button-group.md)
 * [Chart](widget-reference/chart.md)
 * [Checkbox](widget-reference/checkbox.md)
 * [Checkbox Group](widget-reference/checkbox-group.md)
