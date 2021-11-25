@@ -51,3 +51,7 @@ For the button of type "Menu," the user can add several menu items shown on this
 | Action      | Description                                           |
 | ----------- | ----------------------------------------------------- |
 | **onClick** | Sets the action to run when the menu item is clicked. |
+
+{% hint style="info" %}
+We currently use the icons from [Blueprint](https://blueprintjs.com) library. You can see the list of icons [here](https://blueprintjs.com/docs/#icons).
+{% endhint %}
