@@ -19,3 +19,7 @@ description: >-
 | Action      | Description                                                                                                                                        |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onClick** | Sets the action to be run when the user clicks a button. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
+
+{% hint style="info" %}
+We currently use the icons from [Blueprint](https://blueprintjs.com) library. You can see the list of icons [here](https://blueprintjs.com/docs/#icons).
+{% endhint %}
