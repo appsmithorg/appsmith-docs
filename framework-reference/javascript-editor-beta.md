@@ -76,7 +76,7 @@ As the outcome, you want to create a table that shows the valuable data from bot
 
 From the Entity Explorer tab, click on the plus icon next to the JS Objects section to create a new JS Object and open it in the JS Editor. Rename this JS Object to “_Utils_.”
 
-Let's write the “_getWeeklyTaskList_” function** **in _Utils_-
+Let's write the “_getWeeklyTaskList_” function **** in _Utils_-
 
 ```
 export default {

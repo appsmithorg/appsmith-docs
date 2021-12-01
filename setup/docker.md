@@ -11,7 +11,7 @@ description: Appsmith can be deployed locally or on your private instance using 
 
 Create an installation folder called `appsmith`where you would like your Appsmith installation and data storage.
 
-**`cd` **into the installation folder.
+**`cd` ** into the installation folder.
 
 ## Quick Start (with docker-compose)
 
@@ -21,7 +21,7 @@ The Appsmith Docker image is built with all the components required to run withi
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="../.gitbook/assets/docker-compose (1).yml" %}
+{% file src="../.gitbook/assets/docker-compose.yml" %}
 
 **or** run the following curl if you're on a remote machine
 
