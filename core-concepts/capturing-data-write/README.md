@@ -11,7 +11,7 @@ The following widgets can be used to capture user inputs in an application
 * [Form](../../widget-reference/form.md)
 * [Input](../../widget-reference/input.md)
 * [Maps](../../widget-reference/maps.md)
-* [Radio](../../widget-reference/radio.md)
+* [Radio Group](../../widget-reference/radio-group.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)
 

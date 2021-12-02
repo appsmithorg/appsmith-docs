@@ -138,7 +138,6 @@
 * [Maps](widget-reference/maps.md)
 * [Menu Button](widget-reference/menu-button.md)
 * [Modal](widget-reference/modal.md)
-* [Radio](widget-reference/radio.md)
 * [Radio Group](widget-reference/radio-group.md)
 * [Rating](widget-reference/rating.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
