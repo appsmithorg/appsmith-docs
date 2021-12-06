@@ -103,15 +103,22 @@ Almost similar to the original browser API apart from the fact that you dont *ne
 automatically be stored at `appsmith.geolocation.currentPosition.coords`. If onSuccessCallback is passed, it would be called with the location information recieved.
 
 ##### watchPosition
-Signature: `(options?: { maximumAge?: number, timeout?: number, enableHighAccuracy?: boolean } ) -> void`
+Signature: 
+```javascript
+(
+  onSuccessCallback?,
+  onErrorCallback?,
+  options?: { maximumAge?: number, timeout?: number, enableHighAccuracy?: boolean } 
+) -> void
+```
 
-Almost similar to the original browser API apart from the fact that you dont have to pass the success callback at all. On success, the location would 
-automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. No watchId is returned as well as the platform will only allow for a single `watchPosition`
+Almost similar to the original browser API apart from the fact that you dont  *need* to pass the success callback. On success, the location would 
+automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. The callbacks if provided will get executed automatically when the location has changed. No watchId is returned as well as the platform will only allow for a single `watchPosition`
 
 ##### clearWatch
 Signature: `() -> void`
 
-Almost similar to the original browser API apart from the fact that you dont have to pass the watchId. If a watch is active, it would automatically clear it or throw an error if no watch is active.
+Almost similar to the original browser API apart from the fact that you dont have to pass the watchId. If a watch is active, you would have to clear it before starting a new one.
 
 
 ### Mode
