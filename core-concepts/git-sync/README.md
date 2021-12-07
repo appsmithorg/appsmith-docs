@@ -61,3 +61,7 @@ With the upcoming import app via git feature, the following local development wo
 
 ## Bottom bar buttons
 (Commit, push, pull buttons)
+
+## CE limitations to number of private repos
+
+## Disconnect git flow
