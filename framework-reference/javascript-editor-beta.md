@@ -1,5 +1,7 @@
 # JavaScript Editor (Beta)
 
+{% embed url="https://youtu.be/tpbY5Jti9d4" caption="JavaScript Editor YouTube Video" %}
+
 JavaScript Editor is new functionality introduced in Appsmith which allows you to create a reusable set of JavaScript functions that you can call within JavaScript bindings across the Appsmith platform.
 
 ![](../.gitbook/assets/JS\_editor\_sample.png)
