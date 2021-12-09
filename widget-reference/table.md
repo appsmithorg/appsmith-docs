@@ -55,9 +55,7 @@ Let's bind the data from a mock database into a table widget.&#x20;
 
 Where \<query\_name> is the query's name created in Step 2.
 
-{% embed url="https://www.loom.com/share/93ea94a3970b45f18a9bf85dbd15b859" %}
-Binding data to tablw widget from a mock database
-{% endembed %}
+{% embed url="https://youtu.be/czxtgHJ1sUE" %}
 
 That's it! The table widget will get populated with the data coming from the query.
 
@@ -95,17 +93,14 @@ You can also access each row's column values with `currentRow` property. `curren
 
 For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
 
-{% embed url="https://www.loom.com/share/b73dc3759a2b46a8b8b0a57fb8408df4" %}
+{% embed url="https://youtu.be/tjc8HlzQ4xU" %}
 
-\
-**Styles**
+#### Styles
 
 Depending upon the column type, there are various style properties available to change the look and feel of each column. For example, for a text column, you can:&#x20;
 
 1. Change the alignment, size, or font style of the text.
 2. Change the color of the text or cell background.
-
-
 
 **Server-Side Pagination**
 
@@ -113,7 +108,7 @@ The data fetched from the Query/ API is sometimes too large to be displayed on o
 
 ### Binding Properties
 
-These properties allow you to bind your table widget with any other widget, in queries or JS objects.
+These properties allow you to bind your table widget with any other widget in queries or JS objects.
 
 | Binding Property   | Description                                                                                                                  | Snippet                               |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
@@ -176,7 +171,7 @@ Open the property pane of the text widget and add the following snippet to its l
 {{Table_1.selectedRow}}
 ```
 
-{% embed url="https://www.loom.com/share/96609ae0e48847918874195782e1bf8c" %}
+{% embed url="https://youtu.be/0Pl7p1sA1fY" %}
 
 The Text widget will then display the data of the row selected on the table.\
 \
@@ -200,7 +195,7 @@ __Using this snippet in `Table_1`, suppose you want to bind the task of the sele
 {{Table_1.selectedRow.task}}
 ```
 
-{% embed url="https://www.loom.com/share/ddfd2f4d826d49419e3b31e8a5969152" %}
+{% embed url="https://youtu.be/hHZ5IbtE-wo" %}
 
 #### selectedRows
 
@@ -214,11 +209,9 @@ To bind a widget to the multiple rows of the table, enter the snippet given belo
 
 Where `<table_name>` is the name of your table.
 
-&#x20;Let's bind a text widget to `Table_1` using selectedRrows.
+&#x20;Let's bind a text widget to `Table_1` using selectedRows.
 
-{% embed url="https://www.loom.com/share/ba81992dbff341cbbc694ac3c306c18b" %}
-
-
+{% embed url="https://youtu.be/K8F4oggpOk0" %}
 
 A null array '\[]' is returned If no row is selected in the table.
 
@@ -236,9 +229,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using triggeredRow.
 
-{% embed url="https://www.loom.com/share/9374a39d663548c5be83aded26e7228e" %}
-
-
+{% embed url="https://youtu.be/HUcQ8lf7cH4" %}
 
 **selectedRowIndex**
 
@@ -254,7 +245,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using seledRowIndex.
 
-{% embed url="https://www.loom.com/share/87cd5b828bb34265817736be38394cd5" %}
+{% embed url="https://youtu.be/KXYkdFzOKsQ" %}
 
 **selectedRowIndices**
 
@@ -270,7 +261,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using seledRowIndices.
 
-{% embed url="https://www.loom.com/share/8985e92fd2ab42ccb84fea940ac1d2a4" %}
+{% embed url="https://youtu.be/yLOYqrW2xaw" %}
 
 **filteredTableData**
 
@@ -286,7 +277,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using filteredTableData.
 
-{% embed url="https://www.loom.com/share/c3afc85a7cef409ea54f1fd53e921f7b" %}
+{% embed url="https://youtu.be/0tvZXEtSMp4" %}
 
 **pageNo**
 
@@ -302,7 +293,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using pageNo.
 
-{% embed url="https://www.loom.com/share/37374fb3ee604316ab4cf30fdf697dc9" %}
+{% embed url="https://youtu.be/DqKok2cCJk0" %}
 
 **pageSize**
 
@@ -318,7 +309,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using pageSize.
 
-{% embed url="https://www.loom.com/share/66ddaaae1e76400099f673ff945f8943" %}
+{% embed url="https://youtu.be/XkFJQh4vcCw" %}
 
 **searchText**
 
@@ -334,7 +325,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using searchText.
 
-{% embed url="https://www.loom.com/share/81c90b49812f4735946430a12bd4643b" %}
+{% embed url="https://youtu.be/vn6zx7zMeUs" %}
 
 ### Events
 
