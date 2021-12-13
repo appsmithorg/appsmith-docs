@@ -69,3 +69,10 @@ With the upcoming import app via git feature, the following local development wo
 ## Switching and creating branches caveats
 Creating branches: Uncommitted changes from the parent, would exist both on the parent branch and the child branch
 Switching branches: Switching with uncommitted changes won't carry along the changes to the switched branch
+
+## Forking a git connected app
+Forking a git connected app, just forks the default branch
+
+## Default branch
+This is set at the time of connecting to the git repo
+If we access the app link without the branch query param, we would be redirected to the default app
