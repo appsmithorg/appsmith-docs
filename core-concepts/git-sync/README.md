@@ -65,3 +65,7 @@ With the upcoming import app via git feature, the following local development wo
 ## CE limitations to number of private repos
 
 ## Disconnect git flow
+
+## Switching and creating branches caveats
+Creating branches: Uncommitted changes from the parent, would exist both on the parent branch and the child branch
+Switching branches: Switching with uncommitted changes won't carry along the changes to the switched branch
