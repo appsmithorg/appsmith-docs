@@ -28,6 +28,7 @@
     * [Using forms](tutorials/building-a-store-catalog-manager/part-2-using-forms.md)
     * [Creating interactive views](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views.md)
 * [How To Guides](how-to-guides/README.md)
+  * [Returning data from a stored procedure](how-to-guides/returning-data-from-a-stored-procedure.md)
   * [How to work with Google Sheets on Appsmith](how-to-guides/how-to-work-with-google-sheets-on-appsmith.md)
   * [OAuth2 Authorization for Google Sheets](how-to-guides/oauth2-authorization-for-google-sheets.md)
   * [Share data across pages](how-to-guides/sharing-data-across-pages.md)
