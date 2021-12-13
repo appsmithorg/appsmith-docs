@@ -153,7 +153,7 @@ export default {
 	updateUsersData () => {...}
 	adminsList: ["admin1@yourdomain.com", "admin2@yourdomain.com", "admin3@yourdomain.com"],
 	isAdmin: (email) => {
-		if (adminList.indexOf(email) > -1) {
+		if (this.adminList.indexOf(email) > -1) {
 			return true;
 		}
 		return false;
