@@ -35,6 +35,13 @@ Note:
 - Branch names should not start with `origin/` since this prefix is used to distinguish b/w local and remote versions of a branch.
 - Checking out a remote branch with a local counterpart already available would result in an error
 
+## Syncing local branches with the remote repo: ie. pruning local and fetching remote branches
+Steps:
+- Open the branch list popup from the bottom left
+- Click on the `refresh` button beside the popup title
+Any branches created on the repo should now be visible on the branch list
+Caution: this would prune any local branches that are deleted from the repository
+
 ## Conflicts
 (Separate section to show an example scenario)
 
