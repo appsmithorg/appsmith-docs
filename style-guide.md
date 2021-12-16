@@ -77,7 +77,6 @@ Get Appsmith integrated with third-party databases and applications. Be sure tha
 |           | Explanation  | Avoid                                     |
 | --------- | ------------ | ----------------------------------------- |
 | **Goal**  | Onboard      | In-depth explanation of internals and API |
-| **Level** | All Levels\* |                                           |
 | **Tone**  | To the point | Narrative explanation                           |
 
 \* Ensure it is easy enough for a beginner to use
@@ -89,7 +88,6 @@ Tutorials teach users the basics of Appsmith. It’s a mix of educational and pr
 |           | Explanation     | Avoid                                     |
 | --------- | --------------- | ----------------------------------------- |
 | **Goal**  | Convert/Onboard | In-depth explanation of internals and API |
-| **Level** | Beginner        | Jargon                             |
 | **Tone**  | Friendly        |                                           |
 
 
@@ -100,7 +98,6 @@ Shows users how to build a solution to their specific problem with Appsmith. If 
 |           | Explanation      | Avoid |
 | --------- | ---------------- | ----- |
 | **Goal**  | Engage/Transform | In-depth explanation of internals and API |
-| **Level** | Intermediate     |       |
 | **Tone**  | To the point     |       |
 
 
@@ -111,7 +108,6 @@ The “Getting Started” section tells users how they can quickly build an Apps
 |           | Explanation          | Avoid                                     |
 | --------- | -------------------- | ----------------------------------------- |
 | **Goal**  | Convert/Onboard      | In-depth explanation of internals and API |
-| **Level** | Beginner             |                                           |
 | **Tone**  | Friendly/Encouraging | Terse explanation                  |
 
 
@@ -130,7 +126,6 @@ This is a collection of how-to guides for users wanted to connect their Appsmith
 |           | Explanation          | Avoid |
 | --------- | -------------------- | ----- |
 | **Goal**  | Solve                | Background information of how Appsmith works |
-| **Level** | Intermediate/Advance | Foundational explanation of Appsmith     |
 | **Tone**  | To the point         | Narrative explanation      |
 
 
@@ -148,7 +143,6 @@ This is a collection of how-to guides for users wanted to connect their Appsmith
 |           | Explanation          | Avoid |
 | --------- | -------------------- | ----- |
 | **Goal**  | Solve                |       |
-| **Level** | Intermediate/Advance |       |
 | **Tone**  | To the point         |       |
 
 
@@ -169,7 +163,6 @@ Explanation of properties (using the sample data)
 |           | Explanation          | Avoid |
 | --------- | -------------------- | ----- |
 | **Goal**  | Solve                | Background information of how Appsmith works     |
-| **Level** | Intermediate/Advance | Foundational explanation of Appsmith |
 | **Tone**  | To the point         | Verbose and narrative explanations     |
 
 
