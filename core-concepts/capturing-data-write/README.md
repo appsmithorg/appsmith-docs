@@ -1,4 +1,4 @@
-# Capturing Data \(Write\)
+# Capturing Data (Write)
 
 This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have a Query that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
 
@@ -6,12 +6,12 @@ The following widgets can be used to capture user inputs in an application
 
 * [Checkbox](../../widget-reference/checkbox.md)
 * [Datepicker](../../widget-reference/datepicker.md)
-* [Dropdown](../../widget-reference/dropdown.md)
+* [Dropdown](broken-reference)
 * [Filepicker](../../widget-reference/filepicker.md)
 * [Form](../../widget-reference/form.md)
 * [Input](../../widget-reference/input.md)
 * [Maps](../../widget-reference/maps.md)
-* [Radio](../../widget-reference/radio.md)
+* [Radio Group](../../widget-reference/radio-group.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)
 
@@ -45,5 +45,4 @@ The property pane has an action section where all the interactions that a user c
 
 To configure the Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](../../.gitbook/assets/button-onclick%20%282%29%20%284%29%20%282%29.gif)
-
+![](<../../.gitbook/assets/button-onclick (2) (4) (2).gif>)

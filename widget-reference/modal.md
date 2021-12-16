@@ -11,7 +11,6 @@ description: >-
 | Property | Description |
 | :--- | :--- |
 | **Quick Dismiss** | Quickly dismisses or closes the Modal when the user taps outside the modal. |
-| **Modal Type** | Sets the type of the modal\(Alert or Form Modal\). |
 | **Scroll Contents** | This property enables scrolling within the contents of the modal |
 
 ## Reopening Created Modals

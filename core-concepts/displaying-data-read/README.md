@@ -1,4 +1,4 @@
-# Displaying Data \(Read\)
+# Displaying Data (Read)
 
 This document presumes you have successfully [connected to a data source](../connecting-to-data-sources/) and have a Query that fetches data.
 
@@ -11,14 +11,14 @@ Appsmith has a collection of widgets that can be used to build the UI.
 * [Checkbox](../../widget-reference/checkbox.md)
 * [Container](../../widget-reference/container.md)
 * [Datepicker](../../widget-reference/datepicker.md)
-* [Dropdown](../../widget-reference/dropdown.md)
+* [Dropdown](broken-reference)
 * [Filepicker](../../widget-reference/filepicker.md)
 * [Form](../../widget-reference/form.md)
 * [Image](../../widget-reference/image.md)
 * [Input](../../widget-reference/input.md)
 * [Maps](../../widget-reference/maps.md)
 * [Modal](https://github.com/appsmithorg/appsmith-docs/tree/d58d956f9746b569623ebbb578fccef4852763f0/widget-reference/modal.md)
-* [Radio](../../widget-reference/radio.md)
+* [Radio Group](../../widget-reference/radio-group.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)
 * [Tabs](../../widget-reference/tabs.md)
@@ -35,7 +35,7 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
 
 {% hint style="warning" %}
-Note that [JavaScript keywords](https://www.w3schools.com/js/js_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj_window.asp) are not valid as widget names.
+Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as widget names.
 {% endhint %}
 
 You can access the various properties of the widget using the widget's name.
@@ -47,6 +47,7 @@ You can access the various properties of the widget using the widget's name.
 ### Grouping Widgets
 
 Appsmith supports grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
+
 * Select multiple widgets with Ctrl + Left Click
 * Now click on the dotted square icon or press Ctrl + G
 
@@ -54,7 +55,7 @@ Appsmith supports grouping of widgets. When you group widgets, they are put in a
 
 ## Displaying Data in a widget
 
-Widget properties can be edited via the property pane which is opened using the top-right icon \(Edit Widget Properties\). Data from a Query can be set in a widget property by referencing the name \(unique identifier\) of the Query.
+Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a Query can be set in a widget property by referencing the name (unique identifier) of the Query.
 
 {% hint style="success" %}
 Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
@@ -66,7 +67,7 @@ For example, you can bind the results of the Query as below
 {{ fetch_users.data.users }}
 ```
 
-![](../../.gitbook/assets/bind-table%20%282%29%20%284%29%20%288%29%20%281%29.gif)
+![](<../../.gitbook/assets/bind-table (2) (4) (8) (1).gif>)
 
 {% hint style="warning" %}
 Each widget property has a specific data type that it validates its value against. If the data type mismatches, it will throw an error. This can be fixed using javascript to transform the value of the property
@@ -76,7 +77,7 @@ Each widget property has a specific data type that it validates its value agains
 
 You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a dropdown. Directly binding the data will lead to an error as shown below
 
-A dropdown needs an Array&lt;label, value&gt; in its option field, so to connect this data to a dropdown, we need to transform the data in the dropdown options property.
+A dropdown needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the dropdown options property.
 
 **Example Query Data**
 
@@ -129,4 +130,3 @@ The following example iterates over a data set and returns data in an `Array<lab
   });
 }}
 ```
-

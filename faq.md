@@ -26,7 +26,7 @@ We provide support via our active discord community and GitHub issues. We're als
 
 ## How is Appsmith different from other app builders?
 
-Appsmith is the first **open-source** visual framework for building internal tools. Appsmith gives you building blocks \(widgets, APIs, Queries\) that you can configure and connect together using javascript. This ensures that you never get blocked trying to create a custom workflow and you don't spend time building repetitive components!
+Appsmith is the first **open-source** visual framework for building internal tools. Appsmith gives you building blocks (widgets, APIs, Queries) that you can configure and connect together using javascript. This ensures that you never get blocked trying to create a custom workflow and you don't spend time building repetitive components!
 
 ## What can't I do on Appsmith?
 
@@ -34,5 +34,4 @@ Appsmith isn't built for complicated UI interactions that are common to e-commer
 
 ## Does Appsmith support multi-user editing?
 
-Appsmith currently is built for a single user editor experience. If you try to update the same page/widget/action from two different places, it will overwrite each other and will lead to a loss of work. We recommend that at a given time, only one user is editing a page in a single open tab.
-
+Appsmith currently is built for a single user editor experience. If you try to update the same page/widget/action from two different places, it will overwrite each other and will lead to a loss of work. We recommend that at a given time, only one user is editing a page in a single open tab. Multi-user editing is on our product roadmap for 2022.
