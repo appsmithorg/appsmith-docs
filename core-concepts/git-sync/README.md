@@ -69,6 +69,11 @@ With the upcoming import app via git feature, the following local development wo
 ## Bottom bar buttons
 (Commit, push, pull buttons)
 
+### Pull button
+Remote commits that are not fetched locally yet can be fetched by clicking on the pull button.
+Any uncommitted changes on the app would need to be committed before pulling remote changes.
+In case the remote changes and the app changes are conflicting, for example a button was renamed within the app to `Button1`, but another commit on the remote branch renamed the same button to `Button2`, pulling would lead to a conflict. In that case the conflicts would need to be resolved on the repo to make sure there are no conflicts between the app and the repo. 
+
 ## CE limitations to number of private repos
 
 ## Disconnect git flow
