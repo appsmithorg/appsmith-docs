@@ -2,7 +2,7 @@
 
 JavaScript Editor is new functionality introduced in Appsmith which allows you to create a reusable set of JavaScript functions that you can call within JavaScript bindings across the Appsmith platform.
 
-![](../.gitbook/assets/JS\_editor\_sample.png)
+{% embed url="https://www.youtube.com/watch?v=tpbY5Jti9d4" %}
 
 Previously, you had to write JavaScript in a smaller text box in the property pane. Although writing smaller snippets was convenient there, working on multi-line code became painful. To solve this problem, we have introduced a full-fledged code editor to write JavaScript code.
 
@@ -153,7 +153,7 @@ export default {
 	updateUsersData () => {...}
 	adminsList: ["admin1@yourdomain.com", "admin2@yourdomain.com", "admin3@yourdomain.com"],
 	isAdmin: (email) => {
-		if (adminList.indexOf(email) > -1) {
+		if (this.adminList.indexOf(email) > -1) {
 			return true;
 		}
 		return false;
