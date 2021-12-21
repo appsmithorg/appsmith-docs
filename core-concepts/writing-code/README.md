@@ -40,7 +40,7 @@ You can also write JavaScript code for event listeners. For JavaScript code insi
 
 ## Reactive
 
-Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property.
+Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive\_programming) so code in Appsmith is declarative in nature and describes the eventual states of a property.
 
 In order to update the property of a widget, unlike in imperative programming where a programmer would write a statement as
 
@@ -102,23 +102,23 @@ Appsmith does support multi-line JS if it is [IIFE](https://developer.mozilla.or
 
 ```javascript
 {{ 
-  function() {
+  (function() {
       const array = QueryName.data;
       const filterArray = array.filter((row) => row.id > 5);
       return filterArray;
-   }()
+   })()
 }}
 ```
 
 ```javascript
 {{ 
-  function() {
+  (function() {
       if (Dropdown.selectedOptionValue === "1") {
         return "Option 1";
       } else {
         return "Option 2";
       }
-   }()
+   })()
 }}
 ```
 
@@ -127,4 +127,3 @@ Appsmith does support multi-line JS if it is [IIFE](https://developer.mozilla.or
 
 Note that you can write comments inside using JavaScript's multi-line comment syntax `/* */`, but single line comments `//` are not supported inside .
 {% endhint %}
-
