@@ -21,12 +21,12 @@ The Appsmith Docker image is built with all the components required to run withi
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="../.gitbook/assets/docker-compose.yml" %}
+{% file src="../.gitbook/assets/docker-compose (1).yml" %}
 
 **or** run the following curl if you're on a remote machine
 
 ```bash
-curl -L https://bit.ly/2WMPFPy -o $PWD/docker-compose.yml
+curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
 ```
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date.
