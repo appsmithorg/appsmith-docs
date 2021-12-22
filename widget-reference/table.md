@@ -11,10 +11,6 @@ The table widget displays data in rows and columns. You can display data from an
 
 {% embed url="https://www.youtube.com/watch?v=sgd-DMJsAHs&feature=youtu.be" %}
 
-{% hint style="info" %}
-If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](../core-concepts/displaying-data-read/display-data-tables.md#pagination).
-{% endhint %}
-
 ## Properties
 
 Properties allow you to edit the table, connect it with other widgets and customize the user actions. Let's look into different types of properties.
@@ -357,3 +353,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 * Changing the style and size of the font;
 * &#x20;Text alignment;
 * &#x20;Playing around with the color of the text or cell background.
+
+## How to display data and handle pagination inside a table?
+
+[Read this guide](../core-concepts/displaying-data-read/display-data-tables.md#pagination)

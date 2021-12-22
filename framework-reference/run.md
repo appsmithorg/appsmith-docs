@@ -12,23 +12,35 @@ Each query object contains a run function that is used to execute the query. The
 
 ![](../.gitbook/assets/chaining.gif)
 
-## Signature
+### Signature
 
 ```javascript
 run(onSuccess: Function, onError: Function, params: Object): void
 ```
 
-### Arguments
+where **onSuccess** and **onError** are functions and **params** is a dictionary of key-value pairs.
 
-| Argument Name | Description |
-| :--- | :--- |
+#### Arguments
+
+| Argument Name | Description                                              |
+| ------------- | -------------------------------------------------------- |
 | **onSuccess** | The function to be executed when the run method succeeds |
-| **onError** | The function to be executed when the run method fails |
-| **params** | The additional params to be passed to the run method |
+| **onError**   | The function to be executed when the run method fails    |
+| **params**    | The additional params to be passed to the run method     |
 
-## Passing Params to Run
+### Passing Params to Run
 
-Most Queries read values directly from entities as global variables. In some cases such as running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution. This can be achieved using the params argument of the run signature. Params sent to a query can be accessed using the `this` keyword
+Most Queries read values directly from entities as global variables. In some cases such as running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution. This can be achieved using the params argument of the run signature. Please see the example below.
+
+```
+Api.run(
+() => { showAlert("Success"); }, 
+() => { showAlert("Error"); },
+{"key1": "value1", "key2": "value2"}
+);
+```
+
+Params sent to a query can be accessed using the `this` keyword
 
 ```javascript
 {{ this.params.key }}
@@ -59,4 +71,3 @@ Each query stores the data from its latest run inside its **data** property. Thi
 ```
 
 The data type of this property depends on the data
-
