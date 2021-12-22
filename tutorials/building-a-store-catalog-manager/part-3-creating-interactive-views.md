@@ -107,7 +107,7 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 3.  Choose Create new API
 4. You'll see a Postman-like interface
 5. Rename the API to **UpdateQueryApi**
-6. Choose method as **POST**
+6. Choose method as **PUT**
 7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{Products_Table.selectedRow.id}}`
 8. Copy-paste the below in **Body** 
 9. Run the API
