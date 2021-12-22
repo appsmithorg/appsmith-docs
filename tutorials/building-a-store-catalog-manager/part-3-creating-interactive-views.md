@@ -23,8 +23,7 @@ You'll see an Edit button in the last column of each row. A Row Button adds a bu
 3. Choose the action **Open Modal** from the **onClick** dropdown
 4. Choose **New Modal**
 5. Rename the new modal to **EditProductModal** using its properties 
-6. Choose **Modal Type** as **Form Modal**
-7. Rename the modal’s title to **Edit Product**
+6. Rename the modal’s title to **Edit Product**
 
 The **Product\_Table** now looks like this:
 
