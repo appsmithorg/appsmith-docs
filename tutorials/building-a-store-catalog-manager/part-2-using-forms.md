@@ -260,7 +260,7 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 3. Rename widget to **AddProductButton**
 4. Change button label to **Add New Product**
 5. Go to **Action → onClick → Navigate To** 
-6. Type **AddProductPage** in **Page Name** field
+6. Type **NewProductPage** in **Page Name** field
 
 Your **ProductListPage** now looks like:
 
