@@ -49,9 +49,6 @@ Notice, that like **AddProductForm**, all the form-fields in **EditProductModal*
 * **ProductNameInput** should show the **productName** value of the selected row
 * **MrpInput** should show **mrp** value of the selected row
 * **CategoryDropdown** should show **category** value of the selected row
-* **ProductNameInput** should show the value of column **productName** of the selected row
-* **MrpInput** should show the value of column **mrp** of the selected row
-* **CategoryDropdown** should show the value of column **category** of the selected row
 
 Let's configure all the above.
 
