@@ -42,7 +42,7 @@ services:
 After making the changes do a docker-compose restart to reflect the changes
 
 ```bash
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 <aside>
@@ -53,7 +53,7 @@ docker-compose up -d
 Check the logs and see the update check schedule
 
 ```bash
-docker-compose logs -f auto_update
+sudo docker-compose logs -f auto_update
 ```
 
 ## Example Schedule Configurations
