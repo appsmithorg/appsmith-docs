@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: appsmith-documentation-linter
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  pull_request:
+    types: [ open ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+      
+    - name: Vale
+      uses: errata-ai/vale-action@v1.4.2
+      with:
+        debug: true
+        styles: |
+          https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
+          https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
