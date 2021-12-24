@@ -45,11 +45,9 @@ In the `command` configuration, please remove the `--interval` argument and the 
 After making the changes restart the auto update container via the command below:
 
 ```bash
-# Use the container name as defined in your docker-compose.yml file
- docker-compose up --force-recreate auto_update
+# Use the container name as defined in your docker-compose.yml file. This command uses the name: auto_update
+sudo docker-compose pull && sudo docker-compose up --force-recreate auto_update
 ```
-
-> ℹ️ Depending on your setup, you may need a `sudo` in front of the `docker-compose` commands.
 
 Check the logs and see that the maintenance window is now in effect.
 
