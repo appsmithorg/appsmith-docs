@@ -47,7 +47,7 @@ proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
 
 This will ensure that the redirect URLs are correct during OAuth2 logins. This works even if the ELB is configured to run on a custom port.
 
-## Server not booting because of MongoException
+## Server not booting because of MongoCommandException
  
 In release `v1.6.4`, we upgraded our libraries & Spring framework. This caused a compatibility issue between the libraries used within Appsmith and the version of MongoDB that was shipped earlier. This didn't show up in our testing because all our testing happened against MongoDB clusters with replica sets, where the problem doesn't surface. We apologize for this breaking experience.
 
