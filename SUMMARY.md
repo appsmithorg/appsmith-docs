@@ -17,6 +17,7 @@
     * [Google OAuth](setup/instance-configuration/google-login.md)
     * [Github OAuth](setup/instance-configuration/github-login.md)
     * [Google Maps](setup/instance-configuration/google-maps.md)
+    * [Maintenance Window](setup/maintenance-window.md)
   * [Instance Management](setup/instance-management.md)
 * [Tutorials](tutorials/README.md)
   * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
