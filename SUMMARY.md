@@ -146,6 +146,7 @@
 * [Select](widget-reference/dropdown-1.md)
 * [Stat Box](widget-reference/stat-box.md)
 * [Switch](widget-reference/switch.md)
+* [Switch Group](widget-reference/switch-group.md)
 * [Tabs](widget-reference/tabs.md)
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
