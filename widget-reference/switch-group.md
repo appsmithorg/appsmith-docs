@@ -60,6 +60,6 @@ Read more about submitting Input data to an API below.
 
 **Events**
 
-|                       |                                                                                                                                                                      |
+|                       | Description                                                                                                                                                          |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |

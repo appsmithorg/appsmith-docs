@@ -22,7 +22,7 @@ A Multi-select widget can filter a dataset based on the user's input. The select
 
 ### **Form Submission**
 
-Multi-tree-select widget capture from a fixed set of options inside a form such as gender, role, status.
+Multi-tree-select widget can capture from a fixed set of options inside a form such as gender, role, status.
 
 {% hint style="success" %}
 Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this.
@@ -46,29 +46,29 @@ Read more about submitting Input data to an API below.
 
 
 
-| Property                  | Description                                                                                                                                                                                                             |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Placeholder**           | Sets the Placeholder of the multi select widget.                                                                                                                                                                        |
-| **Options**               | Lets you set labels and values for different items/options in the list of the multi select widget. Options must be specified as an array of objects with a label and value property and the optional children property. |
-| **Default Option**        | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value string for a Multi-Select dropdown.                             |
-| **Required**              | When turned on, it makes a user input required and disables any form submission until an input is made.                                                                                                                 |
-| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                                                    |
-| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                                                        |
-| **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS to be shown until all the widgets are rendered.                  |
-| **Clear all Selections**  | When turned on, it allows users to clear the selection which was default or the selection made by them.                                                                                                                 |
-| **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                            |
+| Property                  | Description                                                                                                                                                                                                                |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Placeholder**           | Sets the Placeholder of the multi-select widget.                                                                                                                                                                           |
+| **Options**               | It lets you set labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property and the optional children property. |
+| **Default Option**        | Sets a default option that will be captured as user input unless the user changes it. Multiple values can be provided as CSV or an array of value strings for a Multi-Select dropdown.                                     |
+| **Required**              | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                                                       |
+| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                                                       |
+| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                                                           |
+| **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                 |
+| **Clear all Selections**  | When turned on, it allows users to clear the selection which was default or the selection made by them.                                                                                                                    |
+| **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                               |
 
 #### Binding Properties
 
 
 
-| Property                 | Description                                                                                                                                                                                   |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **selectedOptionValues** | An array of values of the options that are displayed in a MultiTree-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection. |
-| **selectedOptionLabels** | An array of Labels of the options that are displayed in a MultiTree-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection. |
+| Property                 | Description                                                                                                                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **selectedOptionValues** | An array of values of the options are displayed in a MultiTree-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection. |
+| **selectedOptionLabels** | An array of Labels of the options are displayed in a MultiTree-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection. |
 
+#### Events
 
-
-| Action             | Description                                                                                                                                                  |
+| Event              | Description                                                                                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |

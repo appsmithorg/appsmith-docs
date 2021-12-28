@@ -152,4 +152,5 @@
 * [Tabs](widget-reference/tabs.md)
 * [Table](widget-reference/table.md)
 * [Text](widget-reference/text.md)
+* [Tree-select](widget-reference/tree-select.md)
 * [Video](widget-reference/video.md)
