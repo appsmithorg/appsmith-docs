@@ -129,6 +129,7 @@
 * [Container](widget-reference/container.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Divider](widget-reference/divider.md)
+* [Document Viewer](widget-reference/document-viewer.md)
 * [MultiSelect](widget-reference/multiselect.md)
 * [Filepicker](widget-reference/filepicker.md)
 * [Form](widget-reference/form.md)
