@@ -1,6 +1,6 @@
 # Switch Group
 
-Switch group widget is used to capture user inputs from a set of binary choices. This widget captures multiple choices.
+Switch group widget captures user inputs from a set of binary choices. This widget captures multiple choices.
 
 ### Displaying Data
 
@@ -20,9 +20,11 @@ A Switch Group widget can show a set of binary choices for users. The selected v
 
 ### **Form Submission**
 
-Switch group widgets can capture a fixed set of choices for the user like, showing and hiding or enabling and disabling
+Switch group widgets can capture a fixed set of choices for the user like, showing and hiding or enabling and disabling.
 
-{% hint style="success" %} Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this {% endhint %}
+{% hint style="success" %}
+Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this.
+{% endhint %}
 
 ```
 {{Table1.selectedRow.subscription_choices}}
