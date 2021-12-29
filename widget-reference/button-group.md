@@ -2,6 +2,8 @@
 
 The Button group widget represents a set of buttons in a group. Group can have simple buttons or menu buttons with drop-down items.
 
+{% embed url="https://youtu.be/oWGK1s5nGns" %}
+
 ### Properties
 
 | Property             | Description                                                                                                                  |
