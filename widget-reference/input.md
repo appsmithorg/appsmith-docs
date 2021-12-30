@@ -11,11 +11,11 @@ The input widget allows the user to enter or edit data such as text, number, ema
 
 {% embed url="https://youtu.be/4BUbbZsxrus" %}
 
-### Properties
+## Properties
 
 Properties allow you to edit the input widget, connect it with other widgets and customize the user actions.
 
-#### Widget Properties
+### Widget Properties
 
 These properties allow you to edit the input box. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -38,7 +38,7 @@ These properties allow you to edit the input box. All these properties are prese
 
 Let's understand the widget properties in detail.
 
-**Data Type**
+#### **Data Type**
 
 As the name suggests, data type allows the user to set the type of data you want in the input box, like- Text, Number, Email, Password.
 
@@ -46,7 +46,7 @@ The input box will show an error "invalid input" if the entered data does not ma
 
 {% embed url="https://youtu.be/Ehg74WJeCHo" %}
 
-**Label**
+#### **Label**
 
 It allows you to set the label of the input box. For example, if you want the user to enter a name in the input box, you can enter the label "Name." The `label` appears on the left side of the input box.
 
@@ -54,13 +54,13 @@ You can leave the label empty if you don't want any titles for your input widget
 
 {% embed url="https://youtu.be/g26bm8RkxzY" %}
 
-**Placeholder**
+#### **Placeholder**
 
 You can set a proxy text/value inside the input box using the `placeholder` property. It can be any message or hint for the expected input.
 
 {% embed url="https://youtu.be/576Bfo8htf0" %}
 
-**Default text**
+#### **Default text**
 
 This property lets you set a default value for the widget before the user has made any changes.
 
@@ -68,7 +68,7 @@ One good example of using this property is to bind it with a column of the selec
 
 {% embed url="https://youtu.be/8oZFBLHoWC8" %}
 
-**Regex**
+#### **Regex**
 
 Using `Regex` or Regular expression property, you can set specific constraints on the input you expect from the user.
 
@@ -82,13 +82,13 @@ If you enter a value other than an alphabet or space (number of special characte
 
 {% embed url="https://youtu.be/n6VUQN-wv9U" %}
 
-**Error Message**
+#### **Error Message**
 
 If a user enters an incorrect value, the input widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
 {% embed url="https://youtu.be/oeUHJhM4zyU" %}
 
-**Required**
+#### **Required**
 
 Entering a value in the input box is mandatory when the required property is enabled. You can also write a JS code to link this property to a user action. Click on `JS` next to the `Required` to write JavaScript code.
 
@@ -102,7 +102,7 @@ When you tick the checkbox, it will enable the Required property, and the input 
 
 {% embed url="https://youtu.be/2hqT02HCah8" %}
 
-**Visible**
+#### **Visible**
 
 `Visible` controls the widget's visibility on the app's page. The widget will not be visible on the published app if you turn off this property. You can also write a JS code to link Visible's functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
 
@@ -116,7 +116,7 @@ When you tick the checkbox, it will enable the Visible property, and the input b
 
 {% embed url="https://youtu.be/Jb5bNVhFoRE" %}
 
-**Disabled**
+#### **Disabled**
 
 It disables the user from entering values in the input widget. The widget will be visible (if Visible is enabled), but user input will not be allowed. You can also write a JS code to link Disabled's functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
 
@@ -130,24 +130,24 @@ When you tick the checkbox, it will enable the Disabled property and prevent a u
 
 {% embed url="https://youtu.be/JEARavnq0vQ" %}
 
-**Reset on Submit**
+#### **Reset on Submit**
 
 When `Reset on Submit` is enabled, the input widget resets or clears the entered input after the user submits it.\
 Let's use the event `onSubmit` to show a message when input is submitted. You'll see once the user submits and the message pops up, the input widget will reset itself to its original state.
 
 {% embed url="https://youtu.be/EtKbP85Z9-s" %}
 
-**Autofocus**
+#### **Autofocus**
 
 When you enable `Autofocus`, the cursor focuses on the input box whenever the widget is loaded.
 
 {% embed url="https://youtu.be/_asmaJ1TuxE" %}
 
-#### Binding Properties
+### Binding Properties
 
 These properties allow you to bind your input widget with any other widget in queries or JS objects.
 
-**Text**
+#### **Text**
 
 It fetches the value that the user enters in the input widget. It changes when the default value changes or the user enters a new value in the input field.
 
@@ -173,13 +173,13 @@ Property binding has other applications. For example, it helps in parsing the va
 
 {% embed url="https://youtu.be/713Zs2EFPcs" %}
 
-#### Events
+### Events
 
 | Event             | Description                                                                                                                                                                                                                                               |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onTextChanged** | This event is triggered when the user enters a value or when the existing value is changed. You can specify the actions to be performed when this event is fired. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 
-#### Label Styles
+### Label Styles
 
 You can modify the basic styling of the input widget label. Available options are listed below.
 
@@ -187,7 +187,7 @@ You can modify the basic styling of the input widget label. Available options ar
 * Text size;
 * Font Style (**Bold**, _Italic_).
 
-#### Icon Options
+### Icon Options
 
 You can add icons to your input widget, allowing users to recognize the expected input instantly.&#x20;
 
