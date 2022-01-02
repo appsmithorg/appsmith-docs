@@ -10,7 +10,7 @@ Multi-select widget is used to capture user inputs from a specified list of perm
 
 ## Displaying Data
 
-MultiSelect's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+Multi-select's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here
@@ -28,7 +28,7 @@ Server Side Filtering can also be enabled on the widget by enabling Server Side 
 
 ## **Form Submission**
 
-MultiSelect widgets can be used to capture from a fixed set of options inside a form such as gender, role, status.
+Multi-select widgets can be used to capture from a fixed set of options inside a form such as gender, role, status.
 
 {% hint style="success" %}
 Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this.

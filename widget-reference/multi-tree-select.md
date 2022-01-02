@@ -18,7 +18,7 @@ Multi-tree-select's options can be populated from a data source like an API / Qu
 
 ### Filtering Data
 
-A Multi-select widget can filter a dataset based on the user's input. The selected value can be passed to an API using `{{ MultiTreeSelect1.selectedOptionValues }}` .
+A Multi-tree-select widget can filter a dataset based on the user's input. The selected value can be passed to an API using `{{ MultiTreeSelect1.selectedOptionValues }}` .
 
 ### **Form Submission**
 
