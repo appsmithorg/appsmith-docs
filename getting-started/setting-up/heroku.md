@@ -2,6 +2,8 @@
 
 Quickly set up Appsmith to explore product functionality using Heroku.
 
+{% embed url="https://youtu.be/Bclt\_VmDMpo" %}
+
 ## Heroku Installation
 
 * Sign up for a free account on Heroku
