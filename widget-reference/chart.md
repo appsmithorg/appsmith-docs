@@ -68,6 +68,7 @@ description: >-
 </table>
 
 ## Custom Chart
+{% embed url="https://youtu.be/Rvlwb5123mE" %}
 
 In case if your use-case is not covered in the offered chart types, custom chart option will let you extend all the functionalities offered by the underlying package Fusion Charts. To use this on the chart widget, you'll have to select `Custom Chart` type in the Chart Type property. Now, you'll find a `Custom Fusion Chart Configuration` property where you'll have to set the configuration of the fusion chart.
 
