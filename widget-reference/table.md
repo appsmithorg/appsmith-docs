@@ -11,6 +11,10 @@ The table widget displays data in rows and columns. You can display data from an
 
 {% embed url="https://www.youtube.com/watch?v=sgd-DMJsAHs&feature=youtu.be" %}
 
+{% hint style="info" %}
+If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](../core-concepts/displaying-data-read/display-data-tables.md#pagination).
+{% endhint %}
+
 ## Properties
 
 Properties allow you to edit the table, connect it with other widgets and customize the user actions. Let's look into different types of properties.
@@ -329,13 +333,12 @@ Let's bind a text widget to `Table_1` using searchText.
 
 ### Events
 
-| Action                 | Description                                                                                                                                                    |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).                    |
-| **onRowUpdate**        | Sets the action to run when the user edits a row (inline row editing). See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md)                   |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).             |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).                   |
+| Action                 | Description                                                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).        |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md)       |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).       |
 
 ### Header Options
 
@@ -353,7 +356,3 @@ Style properties allow you to change the look and feel of the table. It has seve
 * Changing the style and size of the font;
 * &#x20;Text alignment;
 * &#x20;Playing around with the color of the text or cell background.
-
-## How to display data and handle pagination inside a table?
-
-[Read this guide](../core-concepts/displaying-data-read/display-data-tables.md#pagination)
