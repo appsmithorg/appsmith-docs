@@ -6,7 +6,7 @@ description: >-
 
 # appsmith
 
-{% embed url="https://youtu.be/5Z65l\_PssEQ" caption="" %}
+{% embed url="https://youtu.be/5Z65l_PssEQ" %}
 
 ## Properties
 
@@ -66,8 +66,7 @@ This object contains the data of the currently authenticated user.
 
 ### Geolocation
 
-This object contains functions to request the current user location and also the coordinated recived from this request
-https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+This object contains functions to request the current user location and also the coordinated recived from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation\_API
 
 ```javascript
 {
@@ -90,20 +89,24 @@ https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
 }
 ```
 
-##### getCurrentPosition
-Signature: 
- ```javascript
- (
-  onSuccessCallback?,
-  onErrorCallback?,
-  options?: { maximumAge?: number, timeout?: number, enableHighAccuracy?: boolean } 
- ) -> void
- ```
-Almost similar to the original browser API apart from the fact that you dont *need* to pass the success callback. On success, the location would 
-automatically be stored at `appsmith.geolocation.currentPosition.coords`. If onSuccessCallback is passed, it would be called with the location information recieved.
+**getCurrentPosition**
 
-##### watchPosition
-Signature: 
+Signature:
+
+```javascript
+(
+ onSuccessCallback?,
+ onErrorCallback?,
+ options?: { maximumAge?: number, timeout?: number, enableHighAccuracy?: boolean } 
+) -> void
+```
+
+Almost similar to the original browser API apart from the fact that you dont _need_ to pass the success callback. On success, the location would automatically be stored at `appsmith.geolocation.currentPosition.coords`. If onSuccessCallback is passed, it would be called with the location information recieved.
+
+**watchPosition**
+
+Signature:
+
 ```javascript
 (
   onSuccessCallback?,
@@ -112,16 +115,14 @@ Signature:
 ) -> void
 ```
 
-Almost similar to the original browser API apart from the fact that you dont  *need* to pass the success callback. On success, the location would 
-automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. The callbacks if provided will get executed automatically when the location has changed. No watchId is returned as well as the platform will only allow for a single `watchPosition`
+Almost similar to the original browser API apart from the fact that you dont _need_ to pass the success callback. On success, the location would automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. The callbacks if provided will get executed automatically when the location has changed. No watchId is returned as well as the platform will only allow for a single `watchPosition`
 
-##### clearWatch
+**clearWatch**
+
 Signature: `() -> void`
 
 Almost similar to the original browser API apart from the fact that you dont have to pass the watchId. If a watch is active, you would have to clear it before starting a new one.
 
-
 ### Mode
 
-This field is an enum that contains whether the application is currently running in view mode or edit mode. It takes the values VIEW\|EDIT
-
+This field is an enum that contains whether the application is currently running in view mode or edit mode. It takes the values VIEW|EDIT
