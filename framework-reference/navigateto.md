@@ -1,10 +1,10 @@
 ---
 description: >-
-  With navigateTo, we can navigate in between the internal pages of Appsmith. It
-  could be triggered on any widget action like Button onClick, Dropdown
-  onOptionChange etc. Create a new Page with a valid name or use a URL from an
-  external webpage. Then assign it to navigateTo to be redirected to it when the
-  widget that it is connected to is triggered.
+  navigateTo allows the user to navigate between the internal pages of the App or to an external URL.
+  It could be triggered on any widget action like Button onClick, Dropdown
+  onOptionChange etc. Enter the page name or the external URL in the navigateTo function
+  (under a triggerable action like onClick), enter the Query parameters if required, and
+  select the destination for the new page (a new window or same window).
 ---
 
 # Navigate To
