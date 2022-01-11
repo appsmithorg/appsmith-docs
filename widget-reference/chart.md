@@ -64,6 +64,11 @@ description: >-
       <td style="text-align:left">Controls widget&apos;s visibility on the page. When turned off, the widget
         will not be visible when the app is published</td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>Animate Loading</b>
+      </td>
+      <td style="text-align:left">Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.</td>
+    </tr>
   </tbody>
 </table>
 
