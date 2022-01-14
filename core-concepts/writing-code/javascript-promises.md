@@ -81,7 +81,7 @@ For example, refer to the code below:
 {{
 (function(){
     
-  Promise.any([
+  return Promise.any([
 		MockApi.run({ name: 1 }), // if name:1 finished early
 		MockApi.run({ name: 2 })
   ]).then((res) => {
@@ -103,7 +103,7 @@ Let's take an example to understand `Promise.race()`. Refer to the code below:
 {{
 (function(){
     
- 	Promise.race([
+ return	Promise.race([
 		MockApi.run({ name: 1 }),
 		MockApi.run({ name: 2 })
   ]).then((res) => {
@@ -138,7 +138,7 @@ For example, Refer to the code below:
   const calls = employeeNames.map(employeeName => MockApi.run({ name: employeeName }));
   
   // Wait for all to finish (or any to reject).
-  Promise.all(calls)
+  return Promise.all(calls)
 		.then(() => showAlert('Promise.all - All successful'))
 		.catch(() => showAlert('Promise.all - Something went wrong'))
 		.finally(() => showAlert('Promise.all - finished'))
@@ -168,7 +168,7 @@ For example, Refer to the code below:
   const calls = employeeNames.map(employeeName => MockApi.run({ name: employeeName }));
   
   // Wait for all to resolve / reject.
-  Promise.allSettled(calls)
+  return Promise.allSettled(calls)
 		.then(() => showAlert('Promise.allSettled - All successful'))
 		.catch(() => showAlert('Promise.allSettled - Something went wrong'))
 		.finally(() => showAlert('Promise.allSettled - finished'))
@@ -220,8 +220,8 @@ Here are some general guidelines for using Promises in Appsmith:
 ```
 {{
   (function() {
-	MockApi.run().then(showAlert(`Success`))	❌	
-	MockApi.run().then(() => showAlert(`Success`)) ✅
+	MockApi.run().then(showAlert(`Success`))❌	
+	return MockApi.run().then(() => showAlert(`Success`)) ✅
       
    })()
 }}
