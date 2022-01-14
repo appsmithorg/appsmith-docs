@@ -200,7 +200,7 @@ Here are some general guidelines for using Promises in Appsmith:
 }}
 ```
 
-* Params are no longer passed in the .then() argument of the action.run. Only the response is passed.
+* Params are no longer passed in the `.then()` argument of the `action.run`. Only the response is passed.
 
 ```
 {{
