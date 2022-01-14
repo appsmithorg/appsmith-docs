@@ -77,6 +77,7 @@
 * [Writing Code](core-concepts/writing-code/README.md)
   * [Creating Workflows](core-concepts/writing-code/workflows.md)
   * [Appsmith Framework](core-concepts/writing-code/appsmith-framework.md)
+  * [JavaScript Promises](core-concepts/writing-code/javascript-promises.md)
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
