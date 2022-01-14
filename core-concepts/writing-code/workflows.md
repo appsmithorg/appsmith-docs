@@ -38,17 +38,14 @@ or chained to be called onSuccess / onError using the callback arguments in the 
 
 ```javascript
 {{ 
-    updateUsers.run(
-        () => { 
-            fetchUsers.run(
-                () => { 
-                    showAlert('User Updated'); 
-                    closeModal('Modal1'); 
-                }, 
-                () => showAlert("Fetch Users Failed"));
-        }, 
-        () => showAlert("Update User Failed", "error")
-    ) 
+    updateUsers.run()
+	    .then(() => fetchUsers.run()
+	                .then(() => { 
+	                    showAlert('User Updated'); 
+	                    closeModal('Modal1'); 
+		                })
+				.catch(() => showAlert("Fetch Users Failed"))
+	    ).catch(() => showAlert("Update User Failed", "error")) 
 }}
 ```
 
@@ -69,4 +66,3 @@ Queries can also be chained to execute conditionally based on the value of a wid
 {% hint style="success" %}
 Make use of the [Appsmith Framework](appsmith-framework.md) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
 {% endhint %}
-
