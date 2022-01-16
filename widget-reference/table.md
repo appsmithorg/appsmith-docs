@@ -9,7 +9,7 @@ description: >-
 
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
 
-{% embed url="https://www.youtube.com/watch?v=sgd-DMJsAHs&feature=youtu.be" %}
+{% embed url="https://youtu.be/-rzePEV2QQ8" %}
 
 ## Properties
 
