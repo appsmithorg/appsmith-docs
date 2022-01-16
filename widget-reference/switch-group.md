@@ -2,6 +2,8 @@
 
 Switch group widget captures user inputs from a set of binary choices. This widget captures multiple choices.
 
+{% embed url="https://youtu.be/p--j-QyBlAY" %}
+
 ### Displaying Data
 
 Switch group’s **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(label, value\\). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
