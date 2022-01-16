@@ -14,6 +14,8 @@ description: >-
 * [atob](https://github.com/dankogai/js-base64#readme)
 * [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
 
+{% embed url="https://youtu.be/tqJna718tj4" %}
+
 ## Using JavaScript libraries
 
 The external libraries can be used anywhere inside `{{ }}` just as JavaScript is used in the rest of the application. The signature of the JavaScript libraries are exactly the same as mentioned in their documentation
