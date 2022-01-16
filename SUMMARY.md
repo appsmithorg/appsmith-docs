@@ -46,6 +46,8 @@
   * [How to use Notion as a Database on Appsmith](how-to-guides/use-notion-as-database-on-appsmith.md)
   * [How to use Redis as a Datasource on Appsmith](how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith.md)
   * [How to use Redshift as a Data Source on Appsmith](how-to-guides/use-redshift-as-data-source-on-appsmith.md)
+  * [How to use ElasticSearch as a data source on Appsmith](how-to-guides/how-to-use-ElasticSearch-as-a-data-source-on-Appsmith.md)
+  * [How to work with GraphQL on Appsmith](how-to-integrate-graphql-countries-app.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)
     * [Datasource Errors](troubleshooting-guide/action-errors/datasource-errors.md)
