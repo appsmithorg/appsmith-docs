@@ -2,7 +2,9 @@
 
 In this tutorial, you'll see how to integrate a GraphQL API with Appsmith. Basic familiarity with GraphQL API queries and Appsmith platform is assumed. You can learn more about GraphQL [here](https://graphql.org/learn/) and Appsmith [here](https://docs.appsmith.com/).
 
-The finished app will look like this:
+{% embed url="https://youtu.be/W0Pa7OJzk5E" %}
+
+After completing this guide, we'll build the finished app shown below:
 
 ![App Demo](../.gitbook/assets/00.graphql-countries-demo.gif)
 
