@@ -20,3 +20,8 @@ Appsmith makes it easy to import your APIs into your application using CURL comm
 
 ![](../../../.gitbook/assets/import-curl%20%281%29.gif)
 
+## Passing Data/Parameters To API Calls
+
+There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
+
+{% embed url="https://youtu.be/znaaDiQbAS8" %}
