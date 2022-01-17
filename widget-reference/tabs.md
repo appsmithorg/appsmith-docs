@@ -33,3 +33,9 @@ You can create separate UIs in each tab container and dynamically switch between
 | Action            | Description                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+
+## Tab Navigation
+
+By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](function-reference/store-value.md) and some JavaScript:
+
+{% embed url="https://youtu.be/dHeS5kPHlHE" %}
