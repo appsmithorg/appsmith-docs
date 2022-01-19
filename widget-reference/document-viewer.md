@@ -13,7 +13,12 @@ Document viewer widget is used to show documents on a page. The widget currently
 
 {% embed url="https://youtu.be/UuecSUqFOpQ" %}
 
-Documents can be populated from a data source like API or Query in which the incoming data points to the URL of the file.
+### Displaying Data
+
+Switch group’s **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(label, value\\). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+
+Documents can be populated from a datasource like API or Query in which the incoming data points to the URL of the file.\
+
 
 ### Properties
 
