@@ -81,9 +81,10 @@
   * [Appsmith Framework](core-concepts/writing-code/appsmith-framework.md)
   * [JavaScript Promises](core-concepts/writing-code/javascript-promises.md)
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
+* [Designing an Application](core-concepts/designing-an-application.md)
+* [Application Layout](core-concepts/application-layout.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
-* [Application Layout](core-concepts/application-layout.md)
 * [Access Control](core-concepts/access-control.md)
 
 ## Datasource Reference
