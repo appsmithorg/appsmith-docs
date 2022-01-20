@@ -147,6 +147,7 @@
 * [Modal](widget-reference/modal.md)
 * [Multi-select](widget-reference/multiselect.md)
 * [Multi-tree-select](widget-reference/multi-tree-select.md)
+* [Progress Bar](widget-reference/progress-bar.md)
 * [Radio Group](widget-reference/radio-group.md)
 * [Rating](widget-reference/rating.md)
 * [Rich Text Editor](widget-reference/rich-text-editor.md)
