@@ -23,8 +23,7 @@ You'll see an Edit button in the last column of each row. A Row Button adds a bu
 3. Choose the action **Open Modal** from the **onClick** dropdown
 4. Choose **New Modal**
 5. Rename the new modal to **EditProductModal** using its properties 
-6. Choose **Modal Type** as **Form Modal**
-7. Rename the modal’s title to **Edit Product**
+6. Rename the modal’s title to **Edit Product**
 
 The **Product\_Table** now looks like this:
 
@@ -50,9 +49,6 @@ Notice, that like **AddProductForm**, all the form-fields in **EditProductModal*
 * **ProductNameInput** should show the **productName** value of the selected row
 * **MrpInput** should show **mrp** value of the selected row
 * **CategoryDropdown** should show **category** value of the selected row
-* **ProductNameInput** should show the value of column **productName** of the selected row
-* **MrpInput** should show the value of column **mrp** of the selected row
-* **CategoryDropdown** should show the value of column **category** of the selected row
 
 Let's configure all the above.
 
@@ -111,7 +107,7 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 3.  Choose Create new API
 4. You'll see a Postman-like interface
 5. Rename the API to **UpdateQueryApi**
-6. Choose method as **POST**
+6. Choose method as **PUT**
 7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{Products_Table.selectedRow.id}}`
 8. Copy-paste the below in **Body** 
 9. Run the API
@@ -141,22 +137,22 @@ The API to update a product is ready. In this section, you'll bind the **Confirm
 
 1. Open **EditProductForm**'s properties
 2. Rename **label** to **Update**
-3. Go to **Actions → Call an API**
+3. Go to **Actions → Execute a query**
 4. Choose **UpdateProductApi**
 5. Go to **onSuccess**
 6. Choose **Execute DB Query → ProductQuery**
 7. Go to **onError**
-8. Choose **Show Alert**
+8. Choose **Show message**
 9. Set the **Message** to **Product update failed!**
 10. Set **Type** to **Error**
 
 Let’s see what you did there:
 
-* You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the reactive programming paradigm of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table**  by calling `ProductsQuery.run()` .
+* You configured the **Update** button to run **UpdateProductApi**.
+* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductsQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the reactive programming paradigm of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table**  by calling `ProductsQuery.run()` .
 * You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
 
-Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits.
+Try to edit a product, and click **Update** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits.
 
 ## Triggering multiple actions on a UI event
 
@@ -179,7 +175,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 This is in line with what you learned in [part 2](https://docs.appsmith.com/tutorial-1/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action **onSuccess** of **onClick**, here you're configuring two actions. The first argument to the `run()` method is a JavaScript anonymous function that triggers two actions **onSuccess** of **onClick** -
 
-* Execute the **ProductQuery** 
+* Execute the **ProductsQuery** 
 * Close the modal
 
 Note that since these actions run asynchronously, they all run in parallel. You can trigger as many actions **onSuccess** and **onError** as required by wrapping them within an anonymous JavaScript function.
