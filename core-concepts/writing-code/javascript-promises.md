@@ -17,8 +17,8 @@ Old Callback implementation looks like this:
 ```
 {{ 	 
 MockApi.run(() => {
- 	MockApi.run(() => {
- 		MockApi.run(() => {
+ 	MockApi1.run(() => {
+ 		MockApi2.run(() => {
  			showAlert('done') 
 			})
  	 }) 	 
@@ -31,8 +31,8 @@ However, using Promise for the same problem makes the implementation easier and 
 ```
 {{
  	MockApi.run()
- 		.then(() => MockApi.run())
- 		.then(() => MockApi.run())
+ 		.then(() => MockApi1.run())
+ 		.then(() => MockApi2.run())
  		.then(() => showAlert('done'))
  }}
 ```
