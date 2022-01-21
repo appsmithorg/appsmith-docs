@@ -144,6 +144,7 @@
 * [Input](widget-reference/input.md)
 * [List](widget-reference/list.md)
 * [Maps](widget-reference/maps.md)
+* [Map Chart](widget-reference/map-chart.md)
 * [Menu Button](widget-reference/menu-button.md)
 * [Modal](widget-reference/modal.md)
 * [Multi-select](widget-reference/multiselect.md)
