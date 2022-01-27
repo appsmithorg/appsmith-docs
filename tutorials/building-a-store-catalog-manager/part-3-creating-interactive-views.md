@@ -22,7 +22,7 @@ You'll see an Edit button in the last column of each row. A Row Button adds a bu
 2. Go to **Button column's** settings by clicking the ⚙️ icon
 3. Choose the action **Open Modal** from the **onClick** dropdown
 4. Choose **New Modal**
-5. Rename the new modal to **EditProductModal** using its properties 
+5. Rename the new modal to **EditProductModal** using its properties
 6. Choose **Modal Type** as **Form Modal**
 7. Rename the modal’s title to **Edit Product**
 
@@ -32,7 +32,7 @@ The **Product\_Table** now looks like this:
 
 Click on the **Edit** button of any row. You will see that **EditProductModal** is an empty form. Let’s populate the form with widgets such that:
 
-* It looks exactly like the **AddProductForm** 
+* It looks exactly like the **AddProductForm**
 * Its properties are configured in the same way as that of **AddProductForm**
 
 {% hint style="info" %}
@@ -43,7 +43,7 @@ The names of widgets inside your **EditProductModal** are the same as that of th
 
 After doing this, **EditProductModal** will look like below:
 
-![](https://lh4.googleusercontent.com/YcO2UY_zzOZoqz94uEZ23C8UlaLlGkg3Ty0NHHU7aOWGd1aZYJaUPJ3T14kxamGoUk2i2yv3q7q9sd45-D4uvFHTwsZn8Nu1DE_eoWtIhXP-jKPIcBMBbYP0QyzjUd1qV9-xwTFM)
+![](https://lh4.googleusercontent.com/YcO2UY\_zzOZoqz94uEZ23C8UlaLlGkg3Ty0NHHU7aOWGd1aZYJaUPJ3T14kxamGoUk2i2yv3q7q9sd45-D4uvFHTwsZn8Nu1DE\_eoWtIhXP-jKPIcBMBbYP0QyzjUd1qV9-xwTFM)
 
 Notice, that like **AddProductForm**, all the form-fields in **EditProductModal** are empty. However, to edit a product, you'll want them to be pre-filled with the values of the product that you want to update. This means that:
 
@@ -64,7 +64,7 @@ To set a default value of **ProductNameInput**:
 
 Note that you just wrote JavaScript to set the **Default Text**. Here, `Products_Table.selectedRow` has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default** **Text** to this, you’re pre-filling the form with this value.
 
-What you did above was that you accessed the [table widget's](https://docs.appsmith.com/widget-reference/table) property [selectedRow's](https://docs.appsmith.com/widget-reference/table#selected-row) column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the property of one widget in another widget using a set of properties exposed by every widget. For example, here you used the [table widget's ](https://docs.appsmith.com/widget-reference/table) [`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row)property. For a widget, check its exposed properties under the **Internal Properties** section in its **Widgets Reference** guide.
+What you did above was that you accessed the [table widget's](https://docs.appsmith.com/widget-reference/table) property [selectedRow's](https://docs.appsmith.com/widget-reference/table#selected-row) column values, in the [form widget](https://docs.appsmith.com/widget-reference/form). Appsmith allows you to access the property of one widget in another widget using a set of properties exposed by every widget. For example, here you used the [table widget's ](https://docs.appsmith.com/widget-reference/table)[`selectedRow`](https://docs.appsmith.com/widget-reference/table#selected-row)property. For a widget, check its exposed properties under the **Internal Properties** section in its **Widgets Reference** guide.
 
 Note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `Products_Table.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `Products_Table.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
@@ -108,16 +108,16 @@ It is a mock API exposed by Appsmith to help you learn API basics. It doesn't re
 
 1. Navigate to **ProductListPage → Datasources**
 2. Click **+ Create New**
-3.  Choose Create new API
+3. Choose Create new API
 4. You'll see a Postman-like interface
 5. Rename the API to **UpdateQueryApi**
-6. Choose method as **POST**
+6. Choose method as **PUT**
 7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{Products_Table.selectedRow.id}}`
-8. Copy-paste the below in **Body** 
+8. Copy-paste the below in **Body**
 9. Run the API
 10. Verify that the API runs successfully
 
-```text
+```
 {
 	"productName" : "{{ProductNameInput.text}}",
 	"mrp" : "{{MrpInput.text}}",
@@ -130,10 +130,8 @@ By using the mustache template in the URL, you're passing the ID of the product 
 {% hint style="info" %}
 **A word on sharing widget properties:**
 
-Here, you are accessing widgets' properties in an API. This is in line with what you learned in the previous sections - that you can access a widget's properties from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's properties from, the method of access remains the same, i.e. it follows the syntax_`{{<widgetname>.<property_name>}}`._
+Here, you are accessing widgets' properties in an API. This is in line with what you learned in the previous sections - that you can access a widget's properties from other widgets, APIs, and DB Queries. Irrespective of where you access a widget's properties from, the method of access remains the same, i.e. it follows the syntax\_`{{<widgetname>.<property_name>}}`.\_
 {% endhint %}
-
-
 
 ## Configuring multiple actions on UI events
 
@@ -153,7 +151,7 @@ The API to update a product is ready. In this section, you'll bind the **Confirm
 Let’s see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the reactive programming paradigm of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table**  by calling `ProductsQuery.run()` .
+* Now, you want the **Products\_Table** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**, i.e. if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the reactive programming paradigm of Appsmith, that is, you are triggering an auto-update of the data displayed by the **Products\_Table** by calling `ProductsQuery.run()` .
 * You set the **onError** event of the button to show an alert message, i.e. if **UpdateProductApi** returns an error, an alert message will be shown.
 
 Try to edit a product, and click **Confirm** to verify that it works. You'll see that you see success/error notifications on the top left, but the form-modal remains open after submitting. Let's configure it to close the form if the update is successful. On error, you'll keep the form open for making further edits.
@@ -164,7 +162,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 1. Click on **JS** of **onClick** on **EditConfirmButton**
 2. The **onClick** field converts to JS
-3. Set it to 
+3. Set it to
 
 ```javascript
 {{
@@ -179,7 +177,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 This is in line with what you learned in [part 2](https://docs.appsmith.com/tutorial-1/part-2-using-forms) about using JavaScript to define widget behavior. Whereas there you wrote JavaScript to trigger one action **onSuccess** of **onClick**, here you're configuring two actions. The first argument to the `run()` method is a JavaScript anonymous function that triggers two actions **onSuccess** of **onClick** -
 
-* Execute the **ProductQuery** 
+* Execute the **ProductQuery**
 * Close the modal
 
 Note that since these actions run asynchronously, they all run in parallel. You can trigger as many actions **onSuccess** and **onError** as required by wrapping them within an anonymous JavaScript function.
@@ -204,7 +202,7 @@ Let's deploy your app for the final time. Once deployed, you can share your depl
 
 1. Click on the **"Share"** button on the top right
 2. Invite a user using their email ID
-3. Select an appropriate role for the user 
+3. Select an appropriate role for the user
 4. Share the application’s URL with the user
 
 You can also make the application public, in which case, anyone with the URL to the application can view the application without having to sign in. You can read more about [access control here](https://docs.appsmith.com/core-concepts/access-control).
@@ -216,4 +214,3 @@ The basic Catalog Dashboard is now up and running. This also marks the end of th
 * [Core Concepts](https://docs.appsmith.com/core-concepts/)
 * [Widget Reference](https://docs.appsmith.com/widget-reference)
 * [Function Reference](https://docs.appsmith.com/function-reference/)
-
