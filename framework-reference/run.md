@@ -8,11 +8,19 @@ description: >-
 
 ## Run
 
-Each query object contains a run function that is used to execute the query. The run function is asynchronous by nature and can be chained using the callbacks in the function signature.
+Each query object contains a run function used to execute the query. The run function is asynchronous by nature and can be chained using the callbacks in the function signature.
 
 ![](../.gitbook/assets/chaining.gif)
 
 ### Signature
+
+You can now use [JavaScript Promises](../core-concepts/writing-code/javascript-promises.md) (recommended).
+
+```
+run(params: Object): Promise
+```
+
+&#x20;If you want to use <mark style="color:orange;">Callbacks</mark> (not recommended), copy the signature below:
 
 ```javascript
 run(onSuccess: Function, onError: Function, params: Object): void
@@ -20,24 +28,26 @@ run(onSuccess: Function, onError: Function, params: Object): void
 
 where **onSuccess** and **onError** are functions and **params** is a dictionary of key-value pairs.
 
+{% hint style="info" %}
+We suggest you use the JavaScript Promise signature as it makes the code easy and readable. Callbacks are an old way and will be deprecated soon.
+{% endhint %}
+
 #### Arguments
 
 | Argument Name | Description                                              |
 | ------------- | -------------------------------------------------------- |
+| **params**    | The additional params to be passed to the run method     |
 | **onSuccess** | The function to be executed when the run method succeeds |
 | **onError**   | The function to be executed when the run method fails    |
-| **params**    | The additional params to be passed to the run method     |
 
 ### Passing Params to Run
 
-Most Queries read values directly from entities as global variables. In some cases such as running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution. This can be achieved using the params argument of the run signature. Please see the example below.
+Most Queries read values directly from entities as global variables. In some cases, such as running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution. This can be achieved using the params argument of the run signature. Please see the example below.
 
 ```
-Api.run(
-() => { showAlert("Success"); }, 
-() => { showAlert("Error"); },
-{"key1": "value1", "key2": "value2"}
-);
+UsersApi.run({ org: "Appsmith" })
+    .then((response) => showAlert(response) )
+    .catch((error) => showAlert(error, 'error'))
 ```
 
 Params sent to a query can be accessed using the `this` keyword
@@ -46,17 +56,17 @@ Params sent to a query can be accessed using the `this` keyword
 {{ this.params.key }}
 ```
 
-## onSuccess
+### onSuccess
 
-The onSuccess Function is run when a query is run successfully. The function returns the response of the query and the params passed to it in the callback arguments.
+The onSuccess function is run when a query is run successfully. The function returns the response of the query and the params passed to it in the callback arguments.
 
 ```javascript
 onSuccess(response, params): void
 ```
 
-## onError
+### onError
 
-The onError Function is run when a query execution fails. The function returns the response of the query and the params passed to it.
+The onError function is run when a query execution fails. The function returns the response of the query and the params passed to it.
 
 ```javascript
 onError(response, params): void
@@ -70,4 +80,4 @@ Each query stores the data from its latest run inside its **data** property. Thi
 {{ Query1.data }}
 ```
 
-The data type of this property depends on the data
+The data type of this property depends on the data.

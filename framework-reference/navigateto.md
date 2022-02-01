@@ -12,7 +12,7 @@ description: >-
 ## Signature
 
 ```javascript
-navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") -> void
+navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") -> Promise
 ```
 
 ### Arguments

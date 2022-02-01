@@ -11,12 +11,11 @@ description: >-
 ## Signature
 
 ```javascript
-closeModal(modalName: string): void
+closeModal(modalName: string): Promise
 ```
 
 ### Arguments
 
-| **Argument Name** | **Description** |
-| :--- | :--- |
-| **Modal Name** | Name of the modal to be closed |
-
+| **Argument Name** | **Description**                |
+| ----------------- | ------------------------------ |
+| **Modal Name**    | Name of the modal to be closed |

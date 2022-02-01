@@ -10,15 +10,14 @@ description: >-
 ## Signature
 
 ```javascript
-resetWidget(widgetName: string, resetChildren?: boolean = true) -> void
+resetWidget(widgetName: string, resetChildren?: boolean = true) -> Promise
 ```
 
 ### Arguments
 
-| **Argument Name** | **Description** |
-| :--- | :--- |
-| **widgetName** | The name of the widget that needs to be reset |
-| **resetChildren** \(optional\) | Should all children be reset as well. Defaults to true |
+| **Argument Name**            | **Description**                                        |
+| ---------------------------- | ------------------------------------------------------ |
+| **widgetName**               | The name of the widget that needs to be reset          |
+| **resetChildren** (optional) | Should all children be reset as well. Defaults to true |
 
 ![Click to expand](../.gitbook/assets/resetWidget.gif)
-

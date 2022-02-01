@@ -10,7 +10,7 @@ description: >-
 
 ## Properties
 
-The appsmith context object contains the following properties
+The appsmith context object contains the following properties:
 
 ```javascript
 {
@@ -24,7 +24,7 @@ The appsmith context object contains the following properties
 
 ### Store
 
-This object contains the key-value pairs of the local storage of the application. Values to the store can be updated using the [storeValue function](store-value.md). Values from the store can be accessed using their key
+This object contains the key-value pairs of the local storage of the application. Values to the store can be updated using the [storeValue function](store-value.md). Values from the store can be accessed using their key.
 
 ```javascript
 {{ appsmith.store.key }}
@@ -32,7 +32,7 @@ This object contains the key-value pairs of the local storage of the application
 
 ### URL
 
-This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](navigateto.md)
+This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](navigateto.md).
 
 ```javascript
 {
@@ -66,7 +66,7 @@ This object contains the data of the currently authenticated user.
 
 ### Geolocation
 
-This object contains functions to request the current user location and also the coordinated recived from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation\_API
+This object contains functions to request the current user location and the coordinates received from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation\_API .
 
 ```javascript
 {
@@ -101,7 +101,7 @@ Signature:
 ) -> void
 ```
 
-Almost similar to the original browser API apart from the fact that you dont _need_ to pass the success callback. On success, the location would automatically be stored at `appsmith.geolocation.currentPosition.coords`. If onSuccessCallback is passed, it would be called with the location information recieved.
+Almost similar to the original browser API, apart from the fact that you don't need to pass the success callback. On success, the location would automatically be stored at `appsmith.geolocation.currentPosition.coords`. If onSuccessCallback is passed, it would be called with the location information received.
 
 **watchPosition**
 
@@ -115,13 +115,13 @@ Signature:
 ) -> void
 ```
 
-Almost similar to the original browser API apart from the fact that you dont _need_ to pass the success callback. On success, the location would automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. The callbacks if provided will get executed automatically when the location has changed. No watchId is returned as well as the platform will only allow for a single `watchPosition`
+Almost similar to the original browser API, apart from the fact that you don't need to pass the success callback. On success, the location would automatically be stored at `appsmith.geolocation.currentPosition.coords` with the `appsmith.geolocation.currentPosition.timestamp` updated whenever the position was last updated. The callbacks, if provided, will get executed automatically when the location has changed. No watchId is returned as well as the platform will only allow for a single `watchPosition`
 
 **clearWatch**
 
-Signature: `() -> void`
+Signature: `() -> Promise`
 
-Almost similar to the original browser API apart from the fact that you dont have to pass the watchId. If a watch is active, you would have to clear it before starting a new one.
+Almost similar to the original browser API, apart from the fact that you don't have to pass the watchId. If a watch is active, you must clear it before starting a new one.
 
 ### Mode
 

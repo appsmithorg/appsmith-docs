@@ -13,12 +13,11 @@ Remember to create a new modal before calling this action
 ## Signature
 
 ```javascript
-showModal(modalName: string): void
+showModal(modalName: string): Promise
 ```
 
 ### Arguments
 
-| Argument Name | Description |
-| :--- | :--- |
+| Argument Name  | Description                       |
+| -------------- | --------------------------------- |
 | **Modal Name** | Name of the modal to be displayed |
-
