@@ -12,10 +12,6 @@ You can follow one of our guides to deploy Appsmith via the technology you prefe
 * [DigitalOcean](digitalocean.md)
 * [Heroku Guide](heroku.md)
 
-{% hint style="info" %}
-**Minimum system requirements:** We recommend 4 GB RAM with 2 CPUs (t3.medium on AWS).
-{% endhint %}
-
 {% hint style="warning" %}
 The self-hosted version is not air-gapped and pings a cloud service to fetch release notes about our product updates. It helps you stay up to date with the latest changes to your Appsmith deployment. If you would like a fully air-gapped deployment, please write to support@appsmith.com
 {% endhint %}
