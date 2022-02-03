@@ -92,11 +92,11 @@ When you switch to another branch, the uncommitted changes in your current branc
 
 However, if you create a new branch, it will have the uncommitted changes of your parent branch.
 
-**Note:**
-
+{% hint style="info" %}
 * Branch names should **not** start with `origin/` since this prefix is used to distinguish between local and remote versions of a branch.
 * Checking out a remote branch with a local counterpart already available would result in an error.
 * If you create a new branch, it will have the uncommitted changes of your parent branch. When you switch to another branch, the uncommitted changes in your current branch won’t be carried over to the destination branch. In both cases, the current branch will retain the uncommitted changes.
+{% endhint %}
 
 #### Syncing Local with Remote Branch
 
@@ -109,10 +109,6 @@ Syncing the branches won’t merge any change you’ve made on the remote branch
 #### Pull from the Repository
 
 If your local branch is not in sync with the remote branch of the git repository, you pull the latest changes by clicking on the pull button at the bottom left corner.
-
-{% hint style="info" %}
-The Pull button will be disabled if there are no new changes in the remote branch (The local branch is already updated.)
-{% endhint %}
 
 **Conflicts**
 
