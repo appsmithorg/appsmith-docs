@@ -86,7 +86,7 @@
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)
-* [Git Sync (beta)](core-concepts/git-sync-beta.md)
+* [Git Sync](core-concepts/git-sync.md)
 
 ## Datasource Reference
 
@@ -134,6 +134,7 @@
 * [Checkbox](widget-reference/checkbox.md)
 * [Checkbox Group](widget-reference/checkbox-group.md)
 * [Container](widget-reference/container.md)
+* [Currency Input](widget-reference/currency-input.md)
 * [Datepicker](widget-reference/datepicker.md)
 * [Divider](widget-reference/divider.md)
 * [Document Viewer](widget-reference/document-viewer.md)
