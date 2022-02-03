@@ -71,6 +71,19 @@ In the example above:
 
 If you want only one action/promise to finish for further execution, you can use `Promise.any()` or `Promise.race()` methods.
 
+{% hint style="warning" %}
+&#x20;Please remember to always return the promise for <mark style="color:red;">`.then`</mark>`or`<mark style="color:red;">`.catch`</mark>`blocks` to work as expected.
+
+```
+{{
+  (function() {
+      ❌   MockApi.run().then(() => showAlert(`Success`))	
+      ✅   return MockApi.run().then(() => showAlert(`Success`)) 
+   })()
+}}
+```
+{% endhint %}
+
 #### Promise.any()
 
 It takes an iterable of Promise objects. As one of the promises fulfills, it returns a single promise that resolves with that Promise's value.
