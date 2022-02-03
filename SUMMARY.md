@@ -86,6 +86,7 @@
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)
+* [Git Sync (beta)](core-concepts/git-sync-beta.md)
 
 ## Datasource Reference
 
