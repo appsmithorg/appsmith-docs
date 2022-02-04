@@ -1,4 +1,4 @@
-# Custom Domain
+# SSL & Custom Domain
 
 You can easily make Appsmith available on a custom domain by updating your domain's DNS records to point to the instance running Appsmith. Most domain registrars / DNS providers have documentation on how you can do this yourself.
 
@@ -8,7 +8,7 @@ You can easily make Appsmith available on a custom domain by updating your domai
 * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
 * [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
 
-### Setting up SSL
+## Setting up SSL
 
 SSL will automatically set up for your instance once you configure a custom domain for your instance. All SSL certificates Appsmith creates are generated and kept up to date through [Let's Encrypt](https://letsencrypt.org).
 
