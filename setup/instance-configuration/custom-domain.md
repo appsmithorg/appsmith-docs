@@ -8,6 +8,10 @@ You can easily make Appsmith available on a custom domain by updating your domai
 * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
 * [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
 
+### Setting up SSL
+
+SSL will automatically set up for your instance once you configure a custom domain for your instance. All SSL certificates Appsmith creates are generated and kept up to date through [Let's Encrypt](https://letsencrypt.org).
+
 ## Docker/K8s
 
 After configuring your custom domain as above, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you are on.
