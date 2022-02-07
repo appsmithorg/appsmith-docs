@@ -10,8 +10,6 @@ Properties allow you to edit the camera widget, connect it with other widgets an
 
 These properties allow you to edit the camera widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-
-
 | Property     | Description                                                                                                                       |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | **Mode**     | Toggle between Image and Video modes                                                                                              |
@@ -34,10 +32,7 @@ These properties allow you to bind your camera widget with any other widget in q
 
 ### Events
 
-
-
-| Action               | Description                                                                                         |
-| -------------------- | --------------------------------------------------------------------------------------------------- |
-| **onImageCapture**   | Sets the action to be run when the user captures an Image. See a list of supported actions          |
-| **onRecordingStart** | Sets the action to be run when the user starts the video recording. See a list of supported actions |
-| **onRecordingStop**  | Sets the action to be run when the user stops the video recording.                                  |
+| Action          | Description                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------- |
+| **onImageSave** | Sets the action to be run when the user saves an Image. See a list of supported actions            |
+| **onVideoSave** | Sets the action to be run when the user saves the video recording. See a list of supported actions |
