@@ -115,6 +115,7 @@
 * [Show Modal](framework-reference/show-modal.md)
 * [Close Modal](framework-reference/close-modal.md)
 * [Download](framework-reference/download.md)
+* [Intervals (Time events)](framework-reference/intervals-time-events.md)
 * [Show Alert](framework-reference/show-alert.md)
 * [Navigate To](framework-reference/navigateto.md)
 * [Store Value](framework-reference/store-value.md)
