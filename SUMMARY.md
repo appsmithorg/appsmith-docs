@@ -8,6 +8,7 @@
   * [DigitalOcean](setup/digitalocean.md)
   * [Heroku](setup/heroku.md)
   * [Instance Configuration](setup/instance-configuration/README.md)
+    * [Admin Settings](setup/instance-configuration/admin-settings.md)
     * [Email](setup/instance-configuration/email/README.md)
       * [Sendgrid](setup/instance-configuration/email/sendgrid.md)
       * [Amazon SES](setup/instance-configuration/email/amazon-ses.md)
