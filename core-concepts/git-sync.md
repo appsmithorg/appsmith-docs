@@ -106,11 +106,11 @@ To sync the local with the remote branch (fetching or pruning), click on the bra
 
 Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
 
-#### Pull from the Repository
+### Pull from the Repository
 
 If your local branch is not in sync with the remote branch of the git repository, you pull the latest changes by clicking on the pull button at the bottom left corner.
 
-**Conflicts**
+#### **Conflicts**
 
 Consider a scenario where multiple users work on a single branch, say, the _feature/f1_ branch (we don’t recommend this approach), and update the same resources from 2 different Appsmith instances (e.g., cloud and self-hosted). Now whoever commits later will face the issue of a merge conflict as the user who tries to commit and push will have to pull the changes from remote first.
 
@@ -126,7 +126,7 @@ You can resolve it in the following way:
 * Delete branch _<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_ on the remote repository;
 * Run sync branch flow to remove _<mark style="color:orange;">feature/f1\_conflicted</mark>_ from the local repository.
 
-#### Merging
+### Merging
 
 When you want to merge your branch with the base branch -
 
@@ -137,7 +137,7 @@ When you want to merge your branch with the base branch -
    3. The `base` and the `head` branch shouldn't have any conflicting changes.
 3. Click on `Merge Changes` if the merge status check is successful.
 
-**Conflicts**
+#### **Conflicts**
 
 Consider a scenario where the **user1** wants to develop a new feature and have a single branch _<mark style="color:green;">main</mark>_**.** As a general practice user creates _<mark style="color:orange;">feature/f1</mark>_ from the main branch. At the same time, **user2** updates the _<mark style="color:green;">main</mark>_ branch with the same resources like page, query, or JSObject that **user1** modifies on the _<mark style="color:orange;">feature/f1</mark>_ branch. If **user1** tries to merge _<mark style="color:orange;">feature/f1</mark>_ to _<mark style="color:green;">main</mark>_**,** it leads to a merge conflict.
 
@@ -170,6 +170,10 @@ APPSMITH_GIT_ROOT=./path/to/repo/directory
 ```
 
 Please remember to restart the container to apply changes.
+
+{% hint style="info" %}
+
+{% endhint %}
 
 ## Disconnecting the Git Repository
 
