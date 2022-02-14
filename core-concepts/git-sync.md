@@ -54,7 +54,7 @@ To connect your app with git, follow the steps below:
 {% embed url="https://youtu.be/Z67SfBpKrnk" %}
 
 {% hint style="info" %}
-In the community edition, you can connect up to <mark style="color:green;">three</mark> private repositories in the Cloud version **** (**for each organization**) and self-hosted instances (**for each instance**). If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect unlimited public repositories.
+In the community edition, You can connect up to <mark style="color:green;">three</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon).  However, you can connect unlimited public repositories.
 {% endhint %}
 
 ## See Git In Action
