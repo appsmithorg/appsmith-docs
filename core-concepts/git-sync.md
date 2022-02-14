@@ -153,6 +153,24 @@ You can resolve it in the following way:
 * Delete branch _<mark style="color:orange;">origin/feature/f1</mark>_ on remote;
 * Sync branch with remote to remove _<mark style="color:orange;">feature/f1</mark>_ from the local repository.
 
+### Updating the File path for Git Repository
+
+Appsmith clones the git repositories in the local filesystem, attached to the persistent volume within the docker container. To maintain the git repositories, we will need a file path that will point to the volume within the docker container. We can quickly achieve this by just updating the relevant environment variable.
+
+{% hint style="info" %}
+If the file path is not present, git repositories will be cloned, but this will not be persistent, and Appsmith will try to clone the repositories in case they got deleted by docker restart, etc.&#x20;
+{% endhint %}
+
+#### &#x20;Custom Git Root&#x20;
+
+To point to a custom Git Root where the git repositories will be persisted, update the env variable called <mark style="color:orange;">APPSMITH\_GIT\_ROOT</mark> to point to your custom file path.
+
+```
+APPSMITH_GIT_ROOT=./path/to/repo/directory 
+```
+
+Please remember to restart the container to apply changes.
+
 ## Disconnecting the Git Repository
 
 If you want to disconnect your app from the Git repository, click Settings and hit the delete icon next to the remote URL. It will take you to the disconnection window, ensuring that you want to delete the connection.
