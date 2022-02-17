@@ -42,7 +42,7 @@ Text field can only render inline CSS. If you want to use external CSS, we sugge
 
 #### Truncate Text
 
-This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget.                                              &#x20;
+This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fix inside the given widget area.                                              &#x20;
 
 {% embed url="https://youtu.be/Pex6RAyeHso" %}
 
