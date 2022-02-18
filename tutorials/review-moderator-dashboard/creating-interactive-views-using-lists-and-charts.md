@@ -29,7 +29,7 @@ To access widget's properties or an APIs/DB Query's results on another page, the
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the[ navigateTo function](https://docs.appsmith.com/function-reference/navigateto).
 {% endhint %}
 
-![Storing Value and Redirecting to a Page](https://lh6.googleusercontent.com/fhRvo5jcgs7LOYIsmytxmhj0F2x9TnKiPUYB5_ElSCIA_qMlChit2Hr_BL9m8_i0fj8e1kbeGZ0CHP5KVMj5XC_8GS4ZV0r9TtfA4nKhFV1qbn_3AWPN9NFe2futv7wKrAItVxVA)
+![Storing Value and Redirecting to a Page](https://lh6.googleusercontent.com/fhRvo5jcgs7LOYIsmytxmhj0F2x9TnKiPUYB5\_ElSCIA\_qMlChit2Hr\_BL9m8\_i0fj8e1kbeGZ0CHP5KVMj5XC\_8GS4ZV0r9TtfA4nKhFV1qbn\_3AWPN9NFe2futv7wKrAItVxVA)
 
 As you can see here, as soon as view click the button, it now navigates to a new Page! Also, we have the `business_id` saved from the selected row.
 
@@ -43,7 +43,7 @@ Now, let’s write one more DB query to filter the reviews from the reviews tabl
 4. Now paste the following query on the query pane:
 
 ```sql
-select * from yelp_review where business_id = {{appsmith.store.business_id}}
+select * from yelp_reviews where business_id = {{appsmith.store.business_id}}
 ```
 
 Here, we’re selecting all the rows from the `yelp_review` table and filtering them by the `business_id` variable you’ve saved in the appsmith store while navigating to the new page. Hence, you’ve used it for the WHERE clause using the moustache syntax. Now hit RUN!
@@ -54,7 +54,7 @@ Tip: You can also run queries or APIs using `CMD + return` or `CTRL + enter` sho
 
 By running the query, we can see all the reviews based on the selected business\_id, also, in the query properties tab, make sure you toggle the `Run query on page load` option.
 
-![](https://lh5.googleusercontent.com/wqJ9SwtblDQw397mgyAv1ZzwFf6lUut_CHlx9QFhkVeTIbz2bhwD1mMNLN5bAkZQ207QIVXGz-IlwBZBDDoF5thWGTeVxSB2ovSJJFajtOH6d2LPt-MMvztGxiNHwayxU1ivG_sL)
+![](https://lh5.googleusercontent.com/wqJ9SwtblDQw397mgyAv1ZzwFf6lUut\_CHlx9QFhkVeTIbz2bhwD1mMNLN5bAkZQ207QIVXGz-IlwBZBDDoF5thWGTeVxSB2ovSJJFajtOH6d2LPt-MMvztGxiNHwayxU1ivG\_sL)
 
 Additionally, you’ll need to fetch `thebusiness` details again on this page, which makes it easier on dashboards to show complete details from a DB query. Follow the below steps:
 
@@ -88,7 +88,7 @@ Now, lets us a List Widget to display all the reviews from the `filterBusinessRe
 2. Bind the data from `filterBusinessReviews` onto the list widget.
 3. For this, open the list widget property pane and paste the following in the `Items` property:
 
-```text
+```
 {{filterBusinessReviews.data}}
 ```
 
@@ -99,7 +99,7 @@ Now, lets us a List Widget to display all the reviews from the `filterBusinessRe
 
 Below is the GIF showing how you can bind data into the List widget:
 
-![Using the List Widget](https://lh6.googleusercontent.com/9NYc90cu7lpMJAmyEHYY2uvvmdIkKfnn2NZlx4wMY_nN9WaQ2yNYeS3VLqY9HBzUa-4n2ZGNKKbaV1Hqoz0A-x2ERBGMpZ-kFIw6tr0wvLYBiJaSr567VSA4BusyM2SwE_HrurrN)
+![Using the List Widget](https://lh6.googleusercontent.com/9NYc90cu7lpMJAmyEHYY2uvvmdIkKfnn2NZlx4wMY\_nN9WaQ2yNYeS3VLqY9HBzUa-4n2ZGNKKbaV1Hqoz0A-x2ERBGMpZ-kFIw6tr0wvLYBiJaSr567VSA4BusyM2SwE\_HrurrN)
 
 Excellent, now you can try displaying the rest of the data onto the list widget using the `currentItem` property.
 
@@ -111,7 +111,7 @@ Drag and drop a text widget onto the table, and add the following code snippet i
 
 Here, if you notice, the date isn’t in a readable way. You can use \`moment.js\` to transform this, which is already configured on Appsmith’s environment. Now update the value to the following:
 
-```text
+```
 {{moment(currentItem.date).format("LL")}}
 ```
 
@@ -125,17 +125,17 @@ After adding the date, we can bind the review text in one more text widget using
 
 Next, add the reviews from the query by settings the following in the text widgets:
 
-Stars Ratings: **``{{ `Stars:  ${currentItem.stars}` }}``**
+Stars Ratings: **``{{ `Stars: ${currentItem.stars}` }}``**
 
-Funny Ratings: **``{{ `Funny:  ${currentItem.funny}` }}``**
+Funny Ratings: **``{{ `Funny: ${currentItem.funny}` }}``**
 
-Useful Ratings: **``{{ `Useful:  ${currentItem.useful}` }}``**
+Useful Ratings: **``{{ `Useful: ${currentItem.useful}` }}``**
 
-Cool Ratings: **``{{ `Cool:  ${currentItem.cool}` }}``**
+Cool Ratings: **``{{ `Cool: ${currentItem.cool}` }}``**
 
 After finishing this, you can also customise the text widget, find the background-colour property in the text widget property pane, and add any background colours. Now, finally, this is how the app looks like:
 
-![Customising the List Widget](https://lh3.googleusercontent.com/CFG4g63CO47naltKSacaa7DEDMXWShccKnsjK6CtZ0z1w5YthoFqeMX6U1YK5ipkg8SGIIBqrlUzkwgUQXnSkVp2wkhaAm2m_1wp3SxSFoZ2IDBQKm5Klayz4Bkc-pTJHmNrifaz)
+![Customising the List Widget](https://lh3.googleusercontent.com/CFG4g63CO47naltKSacaa7DEDMXWShccKnsjK6CtZ0z1w5YthoFqeMX6U1YK5ipkg8SGIIBqrlUzkwgUQXnSkVp2wkhaAm2m\_1wp3SxSFoZ2IDBQKm5Klayz4Bkc-pTJHmNrifaz)
 
 ### Adding Chart Widget
 
@@ -148,10 +148,10 @@ There are almost 100+ variants of Fusion Chart Configuration, learn more from th
 Now follow the below steps to create a chart for visualising the ratings of the business based on reviews.
 
 1. Drag and drop a chart widget onto the canvas
-2. Open the chart widget property pane and set the chart type to Line chart. 
+2. Open the chart widget property pane and set the chart type to Line chart.
 3. Next, set the title as Star Ratings of Business and use the following code snippet to pass co-ordinated of chart data.
 
-```text
+```
 {{filterBusinessReviews.data.map((item, index)=>{return {x:moment(item.date).format("L"), y:item.stars}})}}
 ```
 
@@ -167,7 +167,7 @@ Let's deploy your app for the final time. Once deployed, you can share your depl
 
 1. Click on the **"Share"** button on the top right
 2. Invite a user using their email ID
-3. Select an appropriate role for the user 
+3. Select an appropriate role for the user
 4. Share the application’s URL with the user
 
 You can also make the application public, in which case, anyone with the URL to the application can view the application without having to sign in. You can read more about [access control here](https://docs.appsmith.com/core-concepts/access-control).
@@ -179,4 +179,3 @@ The basic Catalog Dashboard is now up and running. This also marks the end of th
 * [Core Concepts](https://docs.appsmith.com/core-concepts/)
 * [Widget Reference](https://docs.appsmith.com/widget-reference)
 * [Function Reference](https://docs.appsmith.com/function-reference/)
-
