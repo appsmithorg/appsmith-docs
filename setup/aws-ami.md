@@ -30,7 +30,7 @@ Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/lates
 
 If you already have an existing security group with ports 80, 443 and 22 open, you can skip this step.
 
-Appsmith is a web application that requires ports 80 and 443 for HTTP access. It also requires port 22 to be accessible for HTTP access. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
+Appsmith is a web application that requires ports 80 and 443 for HTTP access. It also requires port 22 to be accessible for SSH access. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
 While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443 and 22 accessible from anywhere.
 
