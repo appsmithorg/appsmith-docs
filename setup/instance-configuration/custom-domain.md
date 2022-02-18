@@ -12,20 +12,6 @@ You can easily make Appsmith available on a custom domain by updating your domai
 
 SSL will automatically set up for your instance once you configure a custom domain for your instance. All SSL certificates Appsmith creates are generated and kept up to date through [Let's Encrypt](https://letsencrypt.org).
 
-## Custom SSL Certificate
-
-In our container, we support to generate a free SSL certificate If you have your owned certificate, please follow these steps to use it inside the container.
-
-* Firstly, please rename your certificate file as `fullchain.pem` and key file as `privkey.pem`
-* Copy these files into the sub-directory `<mounting-directory>/ssl/` (_Note: Please change `<mounting-directory>` by the mounting volume directory in the `docker-compose.yml`. Default is `./stacks`_)
-* Restart the container using `docker restart appsmith`
-
-The container will check the certificate files in the folder `<mounting-directory>/ssl` and use them if they exist.
-
-{% hint style="warning" %}
-_In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will be considered as missing custom certificate and auto-provisioning the certificate by Let's Encrypt_
-{% endhint %}
-
 ## Docker/K8s
 
 After configuring your custom domain as above, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you are on.
