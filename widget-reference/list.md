@@ -56,7 +56,7 @@ To add more widgets to your list, navigate to the left bar under **PAGES**, clic
 ![](<../.gitbook/assets/List-Widget-Add-widgets-to-first-item (1).png>)
 
 {% hint style="info" %}
-Note: Add the widgets only on the first item container in the list. The widgets will be replicated for the other items whenever the data renders automatically. We’ll learn more about how the embedded widgets replicate on a dataset in the subsequent section below.
+Add the widgets only on the first item container in the list. The widgets will be replicated for the other items whenever the data renders automatically. We’ll learn more about how the embedded widgets replicate on a dataset in the subsequent section below.
 {% endhint %}
 
 The next thing you would like to do is set up some data for the list widget. You can do that by configuring properties for the widget.
@@ -68,7 +68,7 @@ The widget properties allow you to modify the look and feel of the widget and de
 The properties structure generally follows the same conventions for the widgets available on the platform, with some variations to cater to specific properties depending on the type of widget that you would be using. In the case of a list widget, the properties pane is **available on the right bar** and has two subheads: General and Events.
 
 {% hint style="info" %}
-Tip: Ensure that you select the widget to access its properties on the right bar.
+Ensure that you select the widget to access its properties on the right bar.
 {% endhint %}
 
 | **Property**               | **Description**                                                                    | **Example**                                                                                                                                                                                     | **Code Snippet**             |
@@ -95,7 +95,7 @@ You can see a textbox available at the top of the Properties pane. List1 is the 
 {% embed url="https://youtu.be/WqSrZphpZv4" %}
 
 {% hint style="info" %}
-Tip: It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
+It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
 {% endhint %}
 
 ### Items
@@ -177,7 +177,7 @@ Let’s bind each JSON field to the widgets embedded in the list widget. You can
 Similarly, you can bind bookName, category, author, publishedDate, and price to the embedded widgets in the list widget. Once you link the data, you can see that the list widget will display the data for the JSON.
 
 {% hint style="info" %}
-Tip: If you are binding the dynamic response of your query or API to the list widget, remember to use the query columns or API response object’s attributes to map to the individual widget by using <mark style="color:orange;">`currentItem.<attribute_or_column_name>`</mark>.
+If you are binding the dynamic response of your query or API to the list widget, remember to use the query columns or API response object’s attributes to map to the individual widget by using <mark style="color:orange;">`currentItem.<attribute_or_column_name>`</mark>.
 {% endhint %}
 
 ### Format
@@ -216,10 +216,10 @@ There are two ways in which you can manipulate this property.
 * Write your own JS object and javascript code to link to any other widget and manage the show/hide.
 
 {% hint style="info" %}
-Tip: You can get the reference of visible property by using <mark style="color:orange;">`{{widget_name.isVisible}}`</mark> in your code.
+You can get the reference of visible property by using <mark style="color:orange;">`{{widget_name.isVisible}}`</mark> in your code.
 {% endhint %}
 
-For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind it to the `Visible` property of the list widget by enabling the JS label next to it, add the following JavaScript code in the `Visible` property of list widget.
+For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind it to the `Visible` property of the list widget by enabling the JS label next to it, add the following JavaScript code in the `Visible` property of the list widget.
 
 ```
 {{Checkbox1.isChecked}}
@@ -244,7 +244,7 @@ For a list widget, the event onListItemClick is fired whenever a user clicks or 
 For example, show a message whenever a user clicks on a list item.
 
 {% hint style="info" %}
-Note: An individual item on the list is defined as the entire row. A row includes the widgets embedded into it. You can get the values of embedded widgets for the selected or clicked item in your code to perform various operations.
+An individual item on the list is defined as the entire row. A row includes the widgets embedded into it. You can get the values of embedded widgets for the selected or clicked item in your code to perform various operations.
 {% endhint %}
 
 {% embed url="https://youtu.be/_h3hUjnGwSE" %}
