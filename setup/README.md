@@ -4,6 +4,8 @@ description: Appsmith is open source and very easy to deploy on your own machine
 
 # Setup Appsmith
 
+> 🔔 The only officially supported installs of Appsmith are [Docker](https://www.docker.io) based.
+
 You can follow one of our guides to deploy Appsmith via the technology you prefer
 
 * [Docker](docker.md) **(Recommended)**

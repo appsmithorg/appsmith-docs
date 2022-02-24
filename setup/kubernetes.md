@@ -43,7 +43,7 @@ helm repo update
 &#x20;2\. Install the chart with the <mark style="color:orange;">`appsmith`</mark> release.
 
 ```
-helm install stable-appsmith/appsmith --generate-name
+helm install appsmith/appsmith --generate-name
 ```
 
 The command deploys the Appsmith application on the Kubernetes cluster in the default configuration. The [Parameters](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#paramters) section lists the configurable parameters during installation.

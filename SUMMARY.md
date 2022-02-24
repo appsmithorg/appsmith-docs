@@ -61,12 +61,13 @@
 * [FAQs](faq.md)
 * [Telemetry](telemetry.md)
 * [Security](security.md)
+* [Sample Apps](sample-apps.md)
 
 ## Core Concepts
 
 * [Connecting to Data Sources](core-concepts/connecting-to-data-sources/README.md)
   * [Connect to Databases](core-concepts/connecting-to-data-sources/connecting-to-databases.md)
-  * [Connecting to APIs](core-concepts/connecting-to-data-sources/authentication/README.md)
+  * [Connecting to REST APIs](core-concepts/connecting-to-data-sources/authentication/README.md)
     * [Basic](core-concepts/connecting-to-data-sources/authentication/basic-authentication.md)
     * [OAuth 2.0](core-concepts/connecting-to-data-sources/authentication/oauth2-authentication.md)
     * [Signature Header](core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions.md)
