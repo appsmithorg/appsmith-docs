@@ -26,8 +26,8 @@ These properties allow you to edit the button widget. All these properties are p
 | **Visible**                   | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published but shows a translucent state in edit mode                                                   |
 | **Disabled**                  | It makes the button un-clickable or unusable. The widget will remain visible to the user but user input will not be allowed.                                                                                     |
 | **Animate loading**           | Controls widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                        |
-| **Disable for Invalid Forms** | Works only inside Form widget. Disables the button if any required widget in form is invalid.                                                                                                                    |
-| **Reset Form on Success**     | Works only inside Form widget. Resets the widgets in the form if the On Click event succeeds.                                                                                                                    |
+| **Disable for Invalid Forms** | Works within a Form widget. Disables the button if the Form values are invalid.                                                                                                                                  |
+| **Reset Form on Success**     | Works within a Form widget. Resets the widgets in the Form if the On Click event succeeds.                                                                                                                       |
 
 Let's understand the widget properties in detail.
 
