@@ -238,7 +238,7 @@ helm install \
 
 - If you have installed Appsmith Helm chart, please run the `helm upgrade` command to upgrade the existing installation
   ```
-  helm upgrade --set ingress.enabled=true appsmith/appsmith appsmith
+  helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
 
   # Or this command if you are using values.yaml file
   helm upgrade --values values.yaml appsmith/appsmith appsmith
