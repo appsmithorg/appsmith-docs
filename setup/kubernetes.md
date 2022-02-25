@@ -35,7 +35,7 @@ This chart bootstraps an [Appsmith](https://github.com/appsmithorg/appsmith) dep
 1. Add Appsmith into your repository using Helm.
 
 ```
-helm repo add appsmith https://appsmithorg.github.io/appsmith
+helm repo add appsmith https://helm.appsmith.com
 
 helm repo update
 ```
@@ -98,7 +98,7 @@ The command uninstalls the release and removes all Kubernetes resources associat
 | `podAnnotations`     | Annotations for Appsmith pods                      | `{}`            |
 | `podSecurityContext` | Appsmith pods security context                     | `{}`            |
 | `securityContext`    | Set security context                               | `{}`            |
-| `resources.limit`    | The resources limits for the Appsmith container    | `{}`            |
+| `resources.limits`    | The resources limits for the Appsmith container    | `{}`            |
 | `resources.requests` | The requested resources for the Appsmith container | `{}`            |
 | `nodeSelector`       | Node labels for pod assignment                     | `{}`            |
 | `tolerations`        | Tolerations for pod assignment                     | `[]`            |
@@ -183,11 +183,11 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 helm install -f values.yaml stable-appsmith/appsmith --generate-name
 ```
 
-_**Tip**: You can use the default_ [_values.yaml_](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/values.yaml)
+_**Tip**: You can use the default [values.yaml](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/values.yaml) as a starting point for configuring this way._
 
 #### Appsmith configuration
 
-To change Appsmith configurations, you can use configuration UI in the application or update the  values.yaml file(The available configurations are listed below).
+To change Appsmith configurations, you can update the `values.yaml` file (the available configurations are listed below).
 
 | Name                                                     | Value |
 | -------------------------------------------------------- | ----- |
