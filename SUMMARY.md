@@ -112,7 +112,7 @@
 ## Framework Reference
 
 * [Cheat Sheet](framework-reference/cheat-sheet.md)
-* [appsmith](framework-reference/appsmith.md)
+* [Appsmith Context Object](framework-reference/appsmith.md)
 * [Query](framework-reference/run.md)
 * [Show Modal](framework-reference/show-modal.md)
 * [Close Modal](framework-reference/close-modal.md)
@@ -154,6 +154,7 @@
 * [Modal](widget-reference/modal.md)
 * [Multi-select](widget-reference/multiselect.md)
 * [Multi-tree-select](widget-reference/multi-tree-select.md)
+* [Phone Input](widget-reference/phone-input.md)
 * [Progress Bar](widget-reference/progress-bar.md)
 * [Radio Group](widget-reference/radio-group.md)
 * [Rating](widget-reference/rating.md)

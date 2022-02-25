@@ -23,19 +23,19 @@ Properties allow you to edit the table, connect it with other widgets and custom
 
 These properties allow you to edit the table itself. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
 
-| **Widget Property**        | **Description**                                                                                                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Table Data                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.    |
-| Columns                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings.                           |
-| Server Side Pagination     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query. |
-| Visible                    | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                               |
-| Sortable                   | It enables or disables sorting. If turned off, the user will not be able to sort the data when the app is published.                                                      |
-| Default Search Text        | Sets the default search text of the table.                                                                                                                                |
-| Default Selected Row       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                |
-| Default Row Height         | Sets the height of the row in the table - Default, short or tall.                                                                                                         |
-| Enable multi-row selection | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                         |
+| **Widget Property**            | **Description**                                                                                                                                                           |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Table Data**                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.    |
+| **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings.                           |
+| **Server Side Pagination**     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query. |
+| **Visible**                    | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                               |
+| **Sortable**                   | It enables or disables sorting. If turned off, the user will not be able to sort the data when the app is published.                                                      |
+| **Default Search Text**        | Sets the default search text of the table.                                                                                                                                |
+| **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                |
+| **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                         |
+| **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                         |
 
-Let's understand the widget properties in detail**.**
+Let's understand the widget properties in detail\*\*.\*\*
 
 #### Table Data
 
@@ -43,12 +43,12 @@ The Table Data in the property pane allows a user to edit data in the table. You
 
 ![Property pane showing the Table data](../.gitbook/assets/table\_data.png)
 
-You can also bind your data from a database / API using the mustache syntax ( {{}} ).
+You can also bind your data from a database / API using the mustache syntax ( \{{\}} ).
 
-Let's bind the data from a mock database into a table widget.&#x20;
+Let's bind the data from a mock database into a table widget.
 
 1. Create an App and click on "data sources" under the explorer panel.
-2. Go to "+Create new" and select the "users" database from the Sample Databases.  The user database will now appear under the “Active" window.
+2. Go to "+Create new" and select the "users" database from the Sample Databases. The user database will now appear under the “Active" window.
 3. From the "Active" window, click on “New Query+" for the Users database and create a "select" [query](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/querying-a-database#setting-up-a-query) to fetch the data.
 4. Go back to the canvas and drag the table widget onto it.
 5. Open the property pane, clear the Table data window and enter the following snippet:
@@ -92,8 +92,7 @@ Column Control has the following properties:
 ![](../.gitbook/assets/computed\_value.jpg)
 
 \
-You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column. \
-
+You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column. \\
 
 For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
 
@@ -101,7 +100,7 @@ For example, in the video below, we renamed the 'email' column to 'Contact' and 
 
 #### Styles
 
-Depending upon the column type, there are various style properties available to change the look and feel of each column. For example, for a text column, you can:&#x20;
+Depending upon the column type, there are various style properties available to change the look and feel of each column. For example, for a text column, you can:
 
 1. Change the alignment, size, or font style of the text.
 2. Change the color of the text or cell background.
@@ -114,17 +113,17 @@ The data fetched from the Query/ API is sometimes too large to be displayed on o
 
 These properties allow you to bind your table widget with any other widget in queries or JS objects.
 
-| Binding Property   | Description                                                                                                                  | Snippet                               |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| selectedRow        | It contains the data of the row selected by the user. It will be an empty object if no row is selected                       | `{{<table_name>.selectedRow}}`        |
-| selectedRows       | It contains an array of rows selected by the user when multi-select is enabled. It will be \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`       |
-| triggeredRow       | When a user interacts with an actionable item (like button) in a row, triggerdRow fetches the data of that column.           | `{{<table_name>.triggeredRow}}`       |
-| selectedRowIndex   | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.                          | `{{<table_name>.selectedRowIndex}}`   |
-| selectedRowIndices | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is disabled.    | `{{<table_name>.selectedRowIndices`}} |
-| filteredTableData  | It contains the data of the rows that is the resultant of the filters applied, sorting or the data searched                  | `{{<table_name>.filteredTableData}}`  |
-| pageNo             | Contains the current page number that the user is on. APIs can use it for pagination                                         | `{{<table_name>.pageNo}}`             |
-| pageSize           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`           |
-| searchText         | Contains the search text entered by the user in the Table                                                                    | `{{<table_name>.searchText}}`         |
+| Binding Property       | Description                                                                                                                  | Snippet                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| **selectedRow**        | It contains the data of the row selected by the user. It will be an empty object if no row is selected                       | `{{<table_name>.selectedRow}}`         |
+| **selectedRows**       | It contains an array of rows selected by the user when multi-select is enabled. It will be \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
+| **triggeredRow**       | When a user interacts with an actionable item (like button) in a row, triggerdRow fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
+| **selectedRowIndex**   | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.                          | `{{<table_name>.selectedRowIndex}}`    |
+| **selectedRowIndices** | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is disabled.    | `{{<table_name>.selectedRowIndices`\}} |
+| **filteredTableData**  | It contains the data of the rows that is the resultant of the filters applied, sorting or the data searched                  | `{{<table_name>.filteredTableData}}`   |
+| **pageNo**             | Contains the current page number that the user is on. APIs can use it for pagination                                         | `{{<table_name>.pageNo}}`              |
+| **pageSize**           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`            |
+| **searchText**         | Contains the search text entered by the user in the Table                                                                    | `{{<table_name>.searchText}}`          |
 
 Consider a table `Table_1` with the table data given below:
 
@@ -160,7 +159,7 @@ And this is how the data looks in the table widget:
 A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.\
 selectedRow is an internal property that fetches the row's data selected by the user in the table. You can easily bind different widgets to each table row using this property.
 
-As you already know by now, you can write JS code anywhere in Appsmith inside {{}}., To bind the selected row of the table to another widget, open the property pane of it, and add the code snippet given below:
+As you already know by now, you can write JS code anywhere in Appsmith inside \{{\}}., To bind the selected row of the table to another widget, open the property pane of it, and add the code snippet given below:
 
 ```
 {{<table_name>.selectedRow}}
@@ -183,17 +182,15 @@ If no row is selected, selectedRow shows the column names with no data.
 
 ![](../.gitbook/assets/slectedRow\_default.png)
 
-
-
 **Displaying column value using selectedRow**
 
 If you want to fetch the data from a column in the row selected on the table, add the column's name after the selected row. You can refer to the code snippet below:
 
-{{\<table\_name>.selectedRow.\<column\_name>}}
+\{{\<table\_name>.selectedRow.\<column\_name>\}}
 
-It will result in the data at `<columnname>` __ of the row selected.\
-__\
-__Using this snippet in `Table_1`, suppose you want to bind the task of the selected row to the text widget. You will need to open the property pane of the text widget and add the following to its label:
+It will result in the data at `<columnname>` \_\_ of the row selected.\
+\_\_\
+\_\_Using this snippet in `Table_1`, suppose you want to bind the task of the selected row to the text widget. You will need to open the property pane of the text widget and add the following to its label:
 
 ```
 {{Table_1.selectedRow.task}}
@@ -213,7 +210,7 @@ To bind a widget to the multiple rows of the table, enter the snippet given belo
 
 Where `<table_name>` is the name of your table.
 
-&#x20;Let's bind a text widget to `Table_1` using selectedRows.
+Let's bind a text widget to `Table_1` using selectedRows.
 
 {% embed url="https://youtu.be/K8F4oggpOk0" %}
 
@@ -285,7 +282,7 @@ Let's bind a text widget to `Table_1` using filteredTableData.
 
 **pageNo**
 
-pageNo gets the page no. of the table that the user is currently viewing. This property can be used by APIs for pagination. \
+pageNo gets the page no. of the table that the user is currently viewing. This property can be used by APIs for pagination.\
 \
 To use this property in a widget, enter the code snippet given below:
 
@@ -319,7 +316,7 @@ Let's bind a text widget to `Table_1` using pageSize.
 
 searchText fetches the text entered in the search bar by the user.\
 \
-To bind widget using this property, enter the code snippet given below:&#x20;
+To bind widget using this property, enter the code snippet given below:
 
 ```
 {{<table_name>.searchText}}
@@ -354,5 +351,5 @@ These are the options that you can add to the table header. Currently, the follo
 Style properties allow you to change the look and feel of the table. It has several options such as -
 
 * Changing the style and size of the font;
-* &#x20;Text alignment;
-* &#x20;Playing around with the color of the text or cell background.
+* Text alignment;
+* Playing around with the color of the text or cell background.

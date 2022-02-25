@@ -4,13 +4,15 @@ description: >-
   the application
 ---
 
-# appsmith
+# Appsmith Context Object
+
+The Appsmith context object provides information around the current state of the application
 
 {% embed url="https://youtu.be/5Z65l_PssEQ" %}
 
 ## Properties
 
-The appsmith context object contains the following properties:
+The Appsmith context object contains the following properties:
 
 ```javascript
 {
