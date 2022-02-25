@@ -26,7 +26,7 @@ This chart bootstraps an [Appsmith](https://github.com/appsmithorg/appsmith) dep
   * Microk8s: [Enable storage](https://microk8s.io/docs/command-reference#heading--microk8s-enable)
 * Kubernetes NGINX Ingress Controller should be enabled on your cluster by default. Please make sure that you install the correct version for your cluster
   * Minikube: [Set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
-  * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/)
+  * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
   * AWS EKS: [Install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb)
   * Microk8s: [Add on: Ingress](https://microk8s.io/docs/addon-ingress)
 
@@ -224,7 +224,25 @@ helm install \
   stable-appsmith/appsmith --generate-name
 ```
 
+## Expose Appsmith
 
+- If you wish to publish your Appsmith to the world through the Internet, you will need to setup the Ingress controller firstly. Please refer to the section **Kubernetes NGINX Ingress Controller** in the [Prerequisites](#prerequisites).
+
+- In case of you have not install the Helm chart yet, you can run the below command to install it with exposing Appsmith:
+  ```
+  helm install appsmith/appsmith --generate-name \
+    --set ingress.enabled=true \
+    --set ingress.annotations."kubernetes\.io/ingress\.class"=nginx \
+    --set service.type=ClusterIP
+  ```
+
+- If you have installed Appsmith Helm chart, please run the `helm upgrade` command to upgrade the existing installation
+  ```
+  helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
+
+  # Or this command if you are using values.yaml file
+  helm upgrade --values values.yaml appsmith appsmith/appsmith
+  ```
 
 ## Installing Appsmith without Helm Charts
 
