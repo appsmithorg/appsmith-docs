@@ -226,7 +226,7 @@ helm install \
 
 ## Expose Appsmith
 
-- If you wish to publish your Appsmith to the world through the Internet, you will need to setup the Ingress controller firstly. Please refer to the section **Kubernetes NGINX Ingress Controller** in the [Prerequisites](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#prerequisites).
+- If you wish to publish your Appsmith to the world through the Internet, you will need to setup the Ingress controller firstly. Please refer to the section **Kubernetes NGINX Ingress Controller** in the [Prerequisites](#prerequisites).
 
 - In case of you have not install the Helm chart yet, you can run the below command to install it with exposing Appsmith:
   ```
