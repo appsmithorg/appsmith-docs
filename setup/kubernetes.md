@@ -26,7 +26,7 @@ This chart bootstraps an [Appsmith](https://github.com/appsmithorg/appsmith) dep
   * Microk8s: [Enable storage](https://microk8s.io/docs/command-reference#heading--microk8s-enable)
 * Kubernetes NGINX Ingress Controller should be enabled on your cluster by default. Please make sure that you install the correct version for your cluster
   * Minikube: [Set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
-  * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/)
+  * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
   * AWS EKS: [Install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb)
   * Microk8s: [Add on: Ingress](https://microk8s.io/docs/addon-ingress)
 
