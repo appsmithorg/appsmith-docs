@@ -26,7 +26,7 @@ Awesome, you've successfully written your first JS function on Appsmith. As you 
 To access widget's properties or an APIs/DB Query's results on another page, there are two ways:
 
 1. Store the data in your browser cache using the[ storeValue function](https://docs.appsmith.com/function-reference/store-value) so that it's available for accessing even when the user moves to another page in your app.
-2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the[ navigateTo function](https://docs.appsmith.com/function-reference/navigateto).
+2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the[ navigateTo function](https://docs.appsmith.com/framework-reference/navigateto).
 {% endhint %}
 
 ![Storing Value and Redirecting to a Page](https://lh6.googleusercontent.com/fhRvo5jcgs7LOYIsmytxmhj0F2x9TnKiPUYB5\_ElSCIA\_qMlChit2Hr\_BL9m8\_i0fj8e1kbeGZ0CHP5KVMj5XC\_8GS4ZV0r9TtfA4nKhFV1qbn\_3AWPN9NFe2futv7wKrAItVxVA)
