@@ -241,7 +241,7 @@ helm install \
   helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
 
   # Or this command if you are using values.yaml file
-  helm upgrade --values values.yaml appsmith/appsmith appsmith
+  helm upgrade --values values.yaml appsmith appsmith/appsmith
   ```
 
 ## Installing Appsmith without Helm Charts
