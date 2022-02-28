@@ -9,6 +9,8 @@ description: >-
 
 This document presumes you understand the basics of [Displaying Data](../displaying-data-read/) & [Capturing Data](../capturing-data-write/) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
+{% embed url="https://youtu.be/vlx8TEuep5I" %}
+
 ## Dynamic Properties
 
 Every property of a widget can be described dynamically using javascript inside handlebars `{{}}` . The properties which do not have an input to write javascript can be made dynamic by clicking the JS button next to them. This transforms the property into an input field that can be used to write code.
