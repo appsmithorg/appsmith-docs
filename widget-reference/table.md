@@ -353,3 +353,10 @@ Style properties allow you to change the look and feel of the table. It has seve
 * Changing the style and size of the font;
 * Text alignment;
 * Playing around with the color of the text or cell background.
+
+## Guides
+
+### Setup Server-Side Search
+A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform search on the server-side (API server or database) and have the results displayed on the table. A video guid on how to do this is shown below:
+
+{% embed url="https://youtu.be/3ayioaw5uj8" caption="How To Setup Server-Side Search For The Table Widget" %}
