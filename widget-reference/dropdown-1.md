@@ -6,7 +6,7 @@ description: >-
 
 # Select
 
-{% embed url="https://youtu.be/jnCU9MS2uoY" caption="" %}
+{% embed url="https://youtu.be/zNw1yMwg-aY" caption="How To Use The Select Widget" %}
 
 ## Displaying Data
 
