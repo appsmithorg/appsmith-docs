@@ -17,7 +17,7 @@ Form widget serves as a parent widget that can store different widgets like text
 
 To add a form widget to your canvas, drag a form widget from a widget pane available on the left navigation bar.
 
-Navigate to **PAGES** —> Select **Widget** Tab —> Write**Form** in the search bar —> **Drag** the widget on the **canvas**.
+Navigate to **PAGES** —> Select **Widget** Tab —> Write **Form** in the search bar —> **Drag** the widget on the **canvas**.
 
 {% embed url="https://youtu.be/o-9kl0L6m58" %}
 
@@ -120,7 +120,7 @@ Let’s deep dive into the properties available under this head.
 
 ### Name of Widget
 
-As soon as you select the widget, you can see an editable box available on top of the properties pane. You can use the default name supplied in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number. For example, `Form1`. The `number`**`{1}`** is a running sequence and increments if you add more widgets of the same type, provided you have not given a unique name to your widget. For example, if you add two more form widgets to the canvas, then the default names for these widgets would be `Form`**`1`**`, Form`**`2`**`, and Form`**`3`**.
+As soon as you select the widget, you can see an editable box available on top of the properties pane. You can use the default name supplied in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number. For example, `Form1`. The `number`**`{1}`** is a running sequence and increments if you add more widgets of the same type, provided you have not given a unique name to your widget. For example, if you add two more form widgets to the canvas, then the default names for these widgets would be `Form1`, `Form2`, and `Form3`.
 
 {% hint style="info" %}
 It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
@@ -143,7 +143,7 @@ There are two ways in which you can manipulate this property.
 You can get the reference of visible property by using `{{widget_name.isVisible}}` in your code.
 {% endhint %}
 
-For example, let’s drag a checkbox widget Checkbox1 onto the canvas. Rename the checkbox to **ShowHideForm** and bind it to the Visible property of the form widget by enabling the JS label next to it. Add the following JavaScript code in the Visible property.
+For example, let’s drag a checkbox widget `Checkbox1` onto the canvas. Rename the checkbox to `ShowHideForm` and bind it to the Visible property of the form widget by enabling the JS label next to it. Add the following JavaScript code in the Visible property.
 
 ```
 {{ShowHideForm.isChecked}}
