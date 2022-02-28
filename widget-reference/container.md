@@ -98,7 +98,9 @@ You can get the reference of visible property by using `{{widget_name.isVisible}
 
 For example, let’s drag a checkbox widget Checkbox1 onto the canvas. Rename the checkbox to **ShowHideParentContainer** and bind it to the Visible property of the container widget by enabling the JS label next to it. Add the following JavaScript code in the Visible property.
 
-`{{ShowHideParentContainer.isChecked}}`
+```
+{{ShowHideParentContainer.isChecked}}
+```
 
 When you check the checkbox, it will enable the Visible property and shows the container widget and all its child. Whereas the uncheck on the checkbox will hide the widget and its child.
 
