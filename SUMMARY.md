@@ -71,6 +71,7 @@
     * [Basic](core-concepts/connecting-to-data-sources/authentication/basic-authentication.md)
     * [OAuth 2.0](core-concepts/connecting-to-data-sources/authentication/oauth2-authentication.md)
     * [Signature Header](core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions.md)
+    * [Self-signed Certificates](core-concepts/connecting-to-data-sources/authentication/self-signed-certificates.md)
   * [Execute Queries](core-concepts/connecting-to-data-sources/querying-a-database/README.md)
     * [Configuring APIs](core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis.md)
   * [Query Settings](core-concepts/connecting-to-data-sources/query-settings.md)
