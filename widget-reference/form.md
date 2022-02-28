@@ -17,7 +17,7 @@ Form widget serves as a parent widget that can store different widgets like text
 
 To add a form widget to your canvas, drag a form widget from a widget pane available on the left navigation bar.
 
-Navigate to **PAGES** —> Select **Widget** Tab —> Write **Form** in the search bar —> **Drag** the widget on the **canvas**.
+Navigate to **PAGES** —> Select **Widget** Tab —> Write**Form** in the search bar —> **Drag** the widget on the **canvas**.
 
 {% embed url="https://youtu.be/o-9kl0L6m58" %}
 

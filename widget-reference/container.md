@@ -17,7 +17,7 @@ You can use a container widget to create rich UI by managing the design of each 
 
 To add a container widget to your canvas, drag a container widget from a widget pane available on the left navigation bar.
 
-Navigate to PAGES —> Select Widget Tab —> Write “**container”** in the search bar —> Drag the widget on the canvas.
+Navigate to **PAGES** —> Select **Widget** Tab —> Write "**container”** in the search bar —> Drag the widget on the canvas.
 
 {% hint style="info" %}
 You can move the container widget along with the widgets embedded into it and position it on the screen according to your convenience. A container widget ensures that the layout of child widgets is intact and not disrupted.
@@ -73,7 +73,7 @@ Let’s deep dive into the properties available under this head.
 
 ### Name of Widget
 
-As soon as you select the widget, you can see an editable box available on top of the properties pane. You can use the default name supplied in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number like Container1. The number**{1}** is a running sequence and increments if you add more widgets of the same type, provided you have not given a unique name to your widget. For example, if you add two more container widgets to the canvas, then the default names for these widgets would be Container**1**, Container**2**, and Container**3**.
+As soon as you select the widget, you can see an editable box available on top of the properties pane. You can use the default name supplied in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number like `Container1`. The `number`**`{1}`** is a running sequence and increments if you add more widgets of the same type, provided you have not given a unique name to your widget. For example, if you add two more container widgets to the canvas, then the default names for these widgets would be `Container`**`1`**`, Container`**`2`**`, and Container`**`3`**.
 
 {% hint style="info" %}
 It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
@@ -81,7 +81,7 @@ It’s advisable to rename the widget to give some meaningful name. It makes it 
 
 ### Visible
 
-You can use Visible to show or hide the widget. By default, visible is **on** that is enabled, so the widget is visible on page load. This property particularly comes in handy when you want to **hide/show** a widget programmatically or hide a widget on page load and then show it when a particular condition or data is available.
+You can use Visible to show or hide the widget. By default, visible is toggled **on** that is enabled, so the widget is visible on page load. This property particularly comes in handy when you want to **hide/show** a widget programmatically or hide a widget on page load and then show it when a particular condition or data is available.
 
 {% hint style="info" %}
 When you set the visible property of a container widget to false, it’ll hide the container widget and the child widgets embedded into the container. It is generally helpful to use the container widget’s visible property instead of iterating and hiding each widget in a container.
@@ -98,7 +98,7 @@ You can get the reference of visible property by using `{{widget_name.isVisible}
 
 For example, let’s drag a checkbox widget Checkbox1 onto the canvas. Rename the checkbox to **ShowHideParentContainer** and bind it to the Visible property of the container widget by enabling the JS label next to it. Add the following JavaScript code in the Visible property.
 
-\{{ShowHideParentContainer.isChecked\}}
+`{{ShowHideParentContainer.isChecked}}`
 
 When you check the checkbox, it will enable the Visible property and shows the container widget and all its child. Whereas the uncheck on the checkbox will hide the widget and its child.
 
