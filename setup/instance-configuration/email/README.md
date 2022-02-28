@@ -22,7 +22,7 @@ Appsmith requires the following variables to be configured following the [Instan
 5. **APPSMITH\_MAIL\_PORT**: This field is the SMTP port of the email service you are configuring
 6. **APPSMITH\_MAIL\_SMTP\_TLS\_ENABLED**: This field enables transport layer security if set to true
 7. **APPSMITH\_MAIL\_USERNAME**: This field is the username of the email service
-8. **APPSMITH\_MAIL\_PASSWORD:** This field is the password of the email service and may sometimes be the api key ****
+8. **APPSMITH\_MAIL\_PASSWORD:** This field is the password of the email service and may sometimes be the api key
 9. **APPSMITH\_MAIL\_SMTP\_AUTH**: 
 
 #### Guides to configure common email service providers:
