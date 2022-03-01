@@ -30,7 +30,9 @@ We suggest the following general process when migrating an existing application 
 6. [Verify migration](./migrate.md#6-verify-migration)
 
 ### 1. Export database
-
+#### 1.1 **Steps to take**
+- Export database from mongodb of old stack
+#### 1.2 **Detail**
 * To export data from running `MongoDB` container, we use `mongodump` command to export all data and compress them into a `gzip` file
 * The `gzip` file will be copied to the new image's mounting folder in the very next step to be imported into the new container's internal `MongoDB` service
 
@@ -45,7 +47,21 @@ docker exec appsmith_mongo_1 bash -c 'mongodump --uri=$APPSMITH_MONGODB_URI --ar
 *Note: The container name may be different in case you have made changes on the `docker-compose.yml` file. Please check and use the correct `MongoDB` container name*
 
 ### 2. Migrate Configuration
-* Firstly, we use `docker.env` file to store all environment variables (include variables from both `encryption.env` and current `docker.env` files)
+#### 2.1 **Steps to take**
+- Create a new `docker.env` file at `stacks/configuration/docker.env` of new stack by merging `docker.env` and `encryption.env` of old stack
+- Update `APPSMITH_REDIS_URL` & `APPSMITH_MONGODB_URI` to local server & remove query params from `APPSMITH_MONGODB_URI`
+```
+APPSMITH_MONGODB_URI=mongodb://<Your MongoDB User>:<Your MongoDB Password>@localhost/appsmith
+APPSMITH_REDIS_URL=redis://127.0.0.1:6379
+```
+- Add some new environment variables
+```
+APPSMITH_MONGODB_USER=<Your MongoDB User>
+APPSMITH_MONGODB_PASSWORD=<Your MongoDB Password>
+APPSMITH_API_BASE_URL=http://localhost:8080
+```
+#### 2.2 **Detail**
+* We use `docker.env` file to store all environment variables (include variables from both `encryption.env` and current `docker.env` files)
 * The below set of commands will help you to copy all current variables into a new `docker.env` file which will be stored in the mounting folder of the new Fat container image
 
 ```
@@ -66,19 +82,30 @@ mkdir -p $NEW_APPLICATION_DIR/stacks/configuration
 # Copy environment variable from docker.env & encryption.env 
 cat $OLD_APPLICATION_DIR/docker.env $OLD_APPLICATION_DIR/encryption.env >> $NEW_APPLICATION_DIR/stacks/configuration/docker.env
 ```
-* We also introduce a new application stack in Appsmith system - `Realtime Service (RTS)`. Please run the below command to configure the backend URL for `RTS`
+- Update `APPSMITH_REDIS_URL` & `APPSMITH_MONGODB_URI` to local server & remove query string from `APPSMITH_MONGODB_URI`:
 ```
-# Add backend URL configuration
-echo APPSMITH_API_BASE_URL=http://localhost:8080 >> $NEW_APPLICATION_DIR/stacks/configuration/docker.env
+APPSMITH_MONGODB_URI=mongodb://<Your MongoDB User>:<Your MongoDB Password>@localhost/appsmith
+APPSMITH_REDIS_URL=redis://127.0.0.1:6379
 ```
 
-*Note: In our new image, we have used Redis and MongoDB service inside the container as default services. Therefore, if you do not use external services for Redis and MongoDB, you will need to change 2 environment variables in the `docker.env` file (Replace `<MONGO_USERNAME>` and `<MONGO_PASSWORD>` with existing `MONGO_INITDB_ROOT_USERNAME`  and `MONGO_INITDB_ROOT_PASSWORD`  in the `docker.env` file)*
+* We also introduce a new application stack in Appsmith system - `Realtime Service (RTS)`. please add `APPSMITH_API_BASE_URL` and 2 new variables for MONGO_DB configuration into `docker.env`
+```
+# Add new variables to new `docker.env` file
+APPSMITH_API_BASE_URL=http://localhost:8080
+APPSMITH_MONGODB_USER=<Your MongoDB User>
+APPSMITH_MONGODB_PASSWORD=<Your MongoDB Password>
+```
+
+*Note: In our new image, we have used Redis and MongoDB service inside the container as default services. Therefore, if you do not use external services for Redis and MongoDB, you will need to change 2 environment variables in the `docker.env`*
 ```
 APPSMITH_MONGODB_URI=mongodb://<MONGO_USERNAME>:<MONGO_PASSWORD>@localhost/appsmith
 APPSMITH_REDIS_URL=redis://127.0.0.1:6379
 ```
 ### 3. Export https config & certificate (Optional)
-
+#### 3.1 **Steps to take**
+- Input your custom domain into  docker.env file of new stack
+- Copy certbot materials into new stack
+#### **3.2 Detail**
 * If you have deployed Appsmith with custom domain, you might want to move your certificate to the new container
 
 ```
@@ -93,16 +120,33 @@ sudo cp -rf $OLD_APPLICATION_DIR/data/certbot/conf/* $NEW_APPLICATION_DIR/stacks
 ```
 
 ### 4. Setup new Appsmith with Fat container
+#### **4.1 Steps to take**
+ - Shutdown old application
+ - Start new fat container application
+  - Download docker-compose into new application directory
+  - Start application: `docker-compose up`
+#### **4.2 Detail**
+* Shutdown old application:
 * Before you can start new appsmith docker, please shutdown current appsmith application first
 ```
 cd $OLD_APPLICATION_DIR
 docker-compose down
 ```
-* Now, you can start to set up Appsmith with new Docker image. Please follow this guideline to start up a new container: [https://github.com/appsmithorg/appsmith/blob/release/deploy/docker/README.md](https://github.com/appsmithorg/appsmith/blob/release/deploy/docker/README.md)
+
+* Start new fat container application:
+* Follow this guideline to start up a new container: [https://docs.appsmith.com/setup/docker](https://docs.appsmith.com/setup/docker)
 * Please note that you must create new docker-compose.yml in `appsmith-fat-container` folder
+```
+cd $NEW_APPLICATION_DIR
+curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
+docker-compose up -d
+```
 
 ### 5. Import database
-
+#### **5.1 Steps to take**
+ - Copy archive file to `stacks/data/restore/appsmith-data.archive`
+ - Run command import database
+#### **5.2 Detail**
 * After successfully starting up new container, you can import your previous data by exported file from the above step
 * By using `Appsmith CLI`, new feature we have nearly introduced in the new Docker image, you can import all data with only one command
 
@@ -114,7 +158,7 @@ mkdir -p $NEW_APPLICATION_DIR/stacks/data/restore
 sudo cp $OLD_APPLICATION_DIR/data/mongo/db/backup/appsmith-data.archive $NEW_APPLICATION_DIR/stacks/data/restore/appsmith-data.archive
 
 # Import data
-docker exec appsmith-ce appsmithctl import_db
+docker exec -it appsmith-ce appsmithctl import_db
 ```
 
 ### 6. Verify migration
