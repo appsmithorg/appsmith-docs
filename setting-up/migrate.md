@@ -3,7 +3,7 @@ This guide helps you to migrate all Appsmith data and configuration, which curre
 
 ## I. Before migration
 ### 1. Application directory
-* In this guide, we will guide you to migrate configuration and data:
+In this guide, we will guide you to migrate configuration and data:
   - From folder `appsmith-docker-stack/appsmith` which contain all resource of old Appsmith application that we need to migrate
   - To folder `appsmith-fat-container` which will be used for deploying new Appsmith using new appsmith container image
 
@@ -33,8 +33,8 @@ We suggest the following general process when migrating an existing application 
 #### 1.1 **Steps to take**
 - Export database from mongodb of old stack
 #### 1.2 **Detail**
-* To export data from running `MongoDB` container, we use `mongodump` command to export all data and compress them into a `gzip` file
-* The `gzip` file will be copied to the new image's mounting folder in the very next step to be imported into the new container's internal `MongoDB` service
+- To export data from running `MongoDB` container, we use `mongodump` command to export all data and compress them into a `gzip` file
+- The `gzip` file will be copied to the new image's mounting folder in the very next step to be imported into the new container's internal `MongoDB` service
 
 ```
 # Create backup folder to store dump file
@@ -61,8 +61,8 @@ APPSMITH_MONGODB_PASSWORD=<Your MongoDB Password>
 APPSMITH_API_BASE_URL=http://localhost:8080
 ```
 #### 2.2 **Detail**
-* We use `docker.env` file to store all environment variables (include variables from both `encryption.env` and current `docker.env` files)
-* The below set of commands will help you to copy all current variables into a new `docker.env` file which will be stored in the mounting folder of the new Fat container image
+- We use `docker.env` file to store all environment variables (include variables from both `encryption.env` and current `docker.env` files)
+- The below set of commands will help you to copy all current variables into a new `docker.env` file which will be stored in the mounting folder of the new Fat container image
 
 ```
 # You should run these commands in the parent folder of appsmith-docker-stack and appsmith-fat-container
@@ -88,7 +88,7 @@ APPSMITH_MONGODB_URI=mongodb://<Your MongoDB User>:<Your MongoDB Password>@local
 APPSMITH_REDIS_URL=redis://127.0.0.1:6379
 ```
 
-* We also introduce a new application stack in Appsmith system - `Realtime Service (RTS)`. please add `APPSMITH_API_BASE_URL` and 2 new variables for MONGO_DB configuration into `docker.env`
+- We also introduce a new application stack in Appsmith system - `Realtime Service (RTS)`. please add `APPSMITH_API_BASE_URL` and 2 new variables for MONGO_DB configuration into `docker.env`
 ```
 # Add new variables to new `docker.env` file
 APPSMITH_API_BASE_URL=http://localhost:8080
@@ -106,12 +106,14 @@ APPSMITH_REDIS_URL=redis://127.0.0.1:6379
 - Input your custom domain into  docker.env file of new stack
 - Copy certbot materials into new stack
 #### **3.2 Detail**
-* If you have deployed Appsmith with custom domain, you might want to move your certificate to the new container
-
+- If you have deployed Appsmith with custom domain, you might want to move your certificate to the new container
+- In case you have not configured the `APPSMITH_CUSTOM_DOMAIN` in your old `docker.env` file before, you will need to run below command to write this configuration into the new `docker.env` file
 ```
 # Add custom domain to configuration file
 echo APPSMITH_CUSTOM_DOMAIN=<YOUR-DOMAIN> >> $NEW_APPLICATION_DIR/stacks/configuration/docker.env
-
+```
+- You can also move your certificate to the new container by running following commands:
+```
 # Create Letsencrypt folder in Docker mounting point
 mkdir -p $NEW_APPLICATION_DIR/stacks/letsencrypt
 
@@ -126,15 +128,15 @@ sudo cp -rf $OLD_APPLICATION_DIR/data/certbot/conf/* $NEW_APPLICATION_DIR/stacks
   - Download docker-compose into new application directory
   - Start application: `docker-compose up`
 #### **4.2 Detail**
-* Shutdown old application:
-* Before you can start new appsmith docker, please shutdown current appsmith application first
+- Shutdown old application:
+- Before you can start new appsmith docker, please shutdown current appsmith application first
 ```
 cd $OLD_APPLICATION_DIR
 docker-compose down
 ```
 
-* Start new fat container application:
-* Follow this guideline to start up a new container: [https://docs.appsmith.com/setup/docker](https://docs.appsmith.com/setup/docker)
+- Start new fat container application:
+- Follow this guideline to start up a new container: [https://docs.appsmith.com/setup/docker#docker-compose-configuration](https://docs.appsmith.com/setup/docker#docker-compose-configuration)
 * Please note that you must create new docker-compose.yml in `appsmith-fat-container` folder
 ```
 cd $NEW_APPLICATION_DIR
@@ -147,8 +149,8 @@ docker-compose up -d
  - Copy archive file to `stacks/data/restore/appsmith-data.archive`
  - Run command import database
 #### **5.2 Detail**
-* After successfully starting up new container, you can import your previous data by exported file from the above step
-* By using `Appsmith CLI`, new feature we have nearly introduced in the new Docker image, you can import all data with only one command
+- After successfully starting up new container, you can import your previous data by exported file from the above step
+- By using `Appsmith CLI`, new feature we have nearly introduced in the new Docker image, you can import all data with only one command
 
 ```
 # Create folder restore
