@@ -157,7 +157,7 @@ docker-compose up -d
 mkdir -p $NEW_APPLICATION_DIR/stacks/data/restore
 
 # Copy exported file 
-sudo cp $OLD_APPLICATION_DIR/data/mongo/db/backup/appsmith-data.archive $NEW_APPLICATION_DIR/stacks/data/restore/appsmith-data.archive
+cp $OLD_APPLICATION_DIR/data/mongo/db/backup/appsmith-data.archive $NEW_APPLICATION_DIR/stacks/data/restore/appsmith-data.archive
 
 # Import data
 docker exec -it appsmith-ce appsmithctl import_db
