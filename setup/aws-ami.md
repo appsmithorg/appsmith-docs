@@ -6,7 +6,7 @@ description: Deploy Appsmith on AWS with an AMI on the marketplace
 
 ## Tutorial Steps:
 
-* [Register with Amazon Web Services \(AWS\)](aws-ami.md#step-1-register-with-amazon-web-services)
+* [Register with Amazon Web Services (AWS)](aws-ami.md#step-1-register-with-amazon-web-services)
 * [Generate an SSH key pair](aws-ami.md#step-2-generate-an-ssh-key-pair)
 * [Create an AWS Security Group](aws-ami.md#step-3-create-an-aws-security-group)
 * [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
@@ -36,7 +36,7 @@ While creating the the new security group, please follow the steps [detailed her
 
 ### Step 4: Deploy Appsmith On AWS Cloud
 
-The next step is to launch a cloud server with the Appsmith Amazon Machine Image \(AMI\) running on it. The AWS Console lets you do this in just a couple of clicks. Follow these steps:
+The next step is to launch a cloud server with the Appsmith Amazon Machine Image (AMI) running on it. The AWS Console lets you do this in just a couple of clicks. Follow these steps:
 
 1. Navigate to the "**Amazon** **EC2 dashboard"**, select the “**AMIs**” option in the “**Images**” menu.
 2. Search for the Appsmith Stack by entering the search term "**appsmith**" in the search bar at the top.
@@ -44,7 +44,7 @@ The next step is to launch a cloud server with the Appsmith Amazon Machine Image
 4. On the resulting detail page, review the available server sizes. Select the server size you wish to use and click “**Review and Launch**” to proceed.
 5. On the review page, click the “**Edit security groups**” link.
 6. On the “**Configure Security Group**” page, choose the option to “**Select an existing security group**”. Find the security group you created in Step 3 and select it. Click the “Review and Launch” button to proceed.
-7. Verify that the correct key pair \(created in [**Step 2**](aws-ami.md#step-2-generate-an-ssh-key-pair)\) will be used for the server.
+7. Verify that the correct key pair (created in [**Step 2**](aws-ami.md#step-2-generate-an-ssh-key-pair)) will be used for the server.
 8. Confirm your selection by hitting the “**Launch Instance**” button.
 
 The AWS Console will now begin spinning up the new server.
@@ -57,13 +57,13 @@ The process usually takes a few minutes. Use the EC2 Dashboard to check the stat
 
 At this point, you should be able to browse to the cloud server, by entering the cloud server IP address or DNS name directly into your browser’s address bar. You should now see your web app home page as shown below:
 
-![Login Page](../.gitbook/assets/aws-login-page.png)
+![Login Page](<../.gitbook/assets/aws-login-page (1).png>)
 
 ## Application Credentials
 
 By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. The default username is: `appsmith@example.com`. There are two options for obtaining the password.
 
-### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console \(EC2\)
+### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console (EC2)
 
 {% hint style="warning" %}
 IMPORTANT: The application password is only available in the system log for the first 24 hours after you first start the instance. We strongly recommend that you note it down immediately on the first boot and save it in a safe place, as you will be unable to access the instance console without it. We also recommend that you change it as soon as possible for security reasons.
@@ -84,11 +84,11 @@ IMPORTANT: The application password is only available in the system log for the 
 The default application credentials are stored in a standalone file. To obtain these credentials at any time, follow these instructions:
 
 * SSH into your server using your private key
-* Run the following command to see your application credentials:
+*   Run the following command to see your application credentials:
 
-  ```text
-    sudo cat /home/ubuntu/appsmith/credential
-  ```
+    ```
+      sudo cat /home/ubuntu/appsmith/credential
+    ```
 
 ## Troubleshooting
 
@@ -99,4 +99,3 @@ If you encounter any errors during this process, check out our guide on [debuggi
 * [Configuring Self Hosted Instances](instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](instance-management.md)
 * [Tutorials](../tutorials/)
-

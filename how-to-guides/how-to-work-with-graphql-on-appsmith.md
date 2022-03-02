@@ -19,7 +19,7 @@ We will be using a public GraphQL API from [here](https://countries.trevorblades
 * You will now see a new Appsmith app with an empty canvas and a sidebar with Widgets and Datasources.
 * Click on your application name and rename it to "World Explorer" in the top left.
 
-![](../.gitbook/assets/02.new-app-graphql.png)
+![](../.gitbook/assets/02.new-app.png)
 
 
 
@@ -30,7 +30,7 @@ Let's start creating our first page, which will show all continents in a table.
 * Click on the + icon next to the Datasources, then click on **Create New** button.
 * Since we want to add a new GraphQL API, click on **Create new API**.&#x20;
 
-![](../.gitbook/assets/03.a-create-api-graphql.png)
+![](../.gitbook/assets/03.a-create-api.png)
 
 
 
@@ -51,7 +51,7 @@ Let's start creating our first page, which will show all continents in a table.
 
 * You can **RUN** the API to see the response.&#x20;
 
-![](../.gitbook/assets/03.get-all-continents-graphql.png)
+![](../.gitbook/assets/03.get-all-continents.png)
 
 Now that we have set up the datasource for our first page, it's time to display the API response in a table.
 
@@ -64,7 +64,7 @@ Now that we have set up the datasource for our first page, it's time to display 
 
 * We don't need to display code columns to the user. It will just be used for our further GraphQL queries. To hide this column, click on the 👁 (eye) icon.&#x20;
 
-![](../.gitbook/assets/04.table1-data-graphql.png)
+![](../.gitbook/assets/04.table1-data.png)
 
 You can see all the continents in the API response in a table.
 
@@ -87,7 +87,7 @@ We want users to see all countries in a continent by clicking on the continent n
 
 The `storeValue()` function stores a value in localStorage. Here, we are storing the code of the selected country. `navigateTo()` function navigates to Page2.&#x20;
 
-![](../.gitbook/assets/05.table1-on-row-selected-graphql.png)
+![](../.gitbook/assets/05.table1-on-row-selected.png)
 
 * Click on any row of the table, and you should be redirected to an empty Page2.
 
@@ -95,7 +95,7 @@ Now, it's time to go back to Page2 and add a new datasource for fetching countri
 
 * Add a new POST API named `Get_All_Countries_In_Continent` with URL `https://countries.trevorblades.com`.
 
-![](../.gitbook/assets/06.get-all-countries-api-graphql.png)
+![](../.gitbook/assets/06.get-all-countries-api.png)
 
 
 
@@ -120,7 +120,7 @@ Here, we are passing the selected continent code stored in localStorage to the G
 
 * You can **RUN** the API to see the response.
 
-![](../.gitbook/assets/07.country-api-body-and-run-graphql.png)
+![](../.gitbook/assets/07.country-api-body-and-run.png)
 
 * Create a new table widget in Page2 and in **Table Data** property bind the response of `Get_All_Countries_In_Continent` like this:
 
@@ -128,7 +128,7 @@ Here, we are passing the selected continent code stored in localStorage to the G
 {{Get_All_Countries_In_Continent.data.data.continent.countries}}
 ```
 
-![](../.gitbook/assets/08.country-table-graphql.png)
+![](../.gitbook/assets/08.country-table.png)
 
 * Hide the code column by clicking on the 👁 (eye) icon.&#x20;
 * To know which country the user clicked on, we will store its code in localStorage. Add the following **JS** code to **onRowSelected**.
@@ -141,14 +141,14 @@ Here, we are passing the selected continent code stored in localStorage to the G
 }}
 ```
 
-![](../.gitbook/assets/09.country-table-on-row-selected-graphql.png)
+![](../.gitbook/assets/09.country-table-on-row-selected.png)
 
 
 
 * Let's add a Datasource to fetch more details like currency, phone, the language of the selected country.
 * Add a new POST API named `Get_Country_Details` with URL `https://countries.trevorblades.com`.
 
-![](../.gitbook/assets/10.country-details-api-graphql.png)
+![](../.gitbook/assets/10.country-details-api.png)
 
 
 
@@ -179,7 +179,7 @@ Here, we are passing the selected country code stored in localStorage to the Gra
 
 * You can **RUN** the API to see the response.&#x20;
 
-![](../.gitbook/assets/11.country-detail-body-graphql.png)
+![](../.gitbook/assets/11.country-detail-body.png)
 
 
 
@@ -194,13 +194,13 @@ Here, we are passing the selected country code stored in localStorage to the Gra
 }}
 ```
 
-![](../.gitbook/assets/12.call-country-details-graphql.png)
+![](../.gitbook/assets/12.call-country-details.png)
 
 #### Creating Country Details Modal
 
 We will show more details of the selected country when a user clicks on it. We will show these details in a **MODAL**.
 
-![](../.gitbook/assets/13.create-modal-graphql.png)
+![](../.gitbook/assets/13.create-modal.png)
 
 
 
@@ -212,7 +212,7 @@ We will show more details of the selected country when a user clicks on it. We w
 Country Details for {{Get_Country_Details.data.data.country.name}} :-
 ```
 
-![](../.gitbook/assets/14.modal-country-details-graphql.png)
+![](../.gitbook/assets/14.modal-country-details.png)
 
 Domestic Name Value
 
@@ -220,7 +220,7 @@ Domestic Name Value
 {{Get_Country_Details.data.data.country.native}}
 ```
 
-![](../.gitbook/assets/15.modal-domestic-name-graphql.png)
+![](../.gitbook/assets/15.modal-domestic-name.png)
 
 Currency Value
 
@@ -228,7 +228,7 @@ Currency Value
 {{Get_Country_Details.data.data.country.currency}}
 ```
 
-![](../.gitbook/assets/16.modal-currency-graphql.png)
+![](../.gitbook/assets/16.modal-currency.png)
 
 Country code Value
 
@@ -236,7 +236,7 @@ Country code Value
 {{Get_Country_Details.data.data.country.phone}}
 ```
 
-![](../.gitbook/assets/17.modal-country-code-graphql.png)
+![](../.gitbook/assets/17.modal-country-code.png)
 
 Language Value
 
@@ -256,7 +256,7 @@ function() {
 }}
 ```
 
-![](../.gitbook/assets/18.modal-languages-graphql.png)
+![](../.gitbook/assets/18.modal-languages.png)
 
 Our modal is ready, the only thing left is to show it.
 
@@ -272,6 +272,6 @@ Our modal is ready, the only thing left is to show it.
 }}
 ```
 
-![](../.gitbook/assets/20.show-modal-graphql.png)
+![](../.gitbook/assets/20.show-modal.png)
 
 Congratulations! You have successfully integrated a GraphQL API with Appsmith. Explore the app and learn something new about a country!

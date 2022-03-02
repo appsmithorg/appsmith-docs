@@ -66,7 +66,7 @@ Appsmith loves JavaScript! Whenever you want to write custom logic for certain a
 
 With this, whenever you’re searching for anything on the tables, you’ll see an alert with the value you’ve entered in the search input.
 
-![Configuring Actions on Appsmith](https://lh5.googleusercontent.com/PB37xpaK7u6063ANpW8tnyTQyM16w9XugIt_PSQy2O_Hoy-A-FyP4Dhaq1HR8NUfyCvoVF0CKpx2Q3FMNO3JMifebaORF0MSfXIm3HSsVmyXQ2OWEaa5bGgKVDhpWNB27MNwF4j8)
+![Configuring Actions on Appsmith](https://lh5.googleusercontent.com/PB37xpaK7u6063ANpW8tnyTQyM16w9XugIt\_PSQy2O\_Hoy-A-FyP4Dhaq1HR8NUfyCvoVF0CKpx2Q3FMNO3JMifebaORF0MSfXIm3HSsVmyXQ2OWEaa5bGgKVDhpWNB27MNwF4j8)
 
 ## **Manually triggering APIs/Query**
 
@@ -102,13 +102,13 @@ In this way, you can also write multi-line code within Appsmith! For more inform
 
 ## Making Table Columns Dynamic in Appsmith
 
-In Appsmith, suppose you want to implement dynamic columns \(show only necessary columns based on selection\) in a table, you could write simple JavaScript inside the `Table Data` property. With this, you could show only columns that are selected from a dropdown.
+In Appsmith, suppose you want to implement dynamic columns (show only necessary columns based on selection) in a table, you could write simple JavaScript inside the `Table Data` property. With this, you could show only columns that are selected from a dropdown.
 
-![](../.gitbook/assets/dynamic-table.gif)
+![](<../.gitbook/assets/dynamic-table (1).gif>)
 
 For example, say your table has the following in the Table Data:
 
-```text
+```
 [
   {
     "step": "#1",
@@ -131,11 +131,11 @@ For example, say your table has the following in the Table Data:
 ]
 ```
 
-Now you wanted to show columns based on the selection in a dropdown, let's add a dropdown with values that are the same as columns in the table. 
+Now you wanted to show columns based on the selection in a dropdown, let's add a dropdown with values that are the same as columns in the table.
 
-Drag and drop a Dropdown widget onto the canvas and add the following to the `Options` List and make it a Multi-Select dropdown in the `Selection Type` property. 
+Drag and drop a Dropdown widget onto the canvas and add the following to the `Options` List and make it a Multi-Select dropdown in the `Selection Type` property.
 
-```text
+```
 [
   {
     "label": "task",
@@ -152,7 +152,7 @@ Drag and drop a Dropdown widget onto the canvas and add the following to the `Op
 ]
 ```
 
-Lastly, update the code in the table widget, map the data in the `Table Data` property using a moustache syntax and only return the data that's selected from the dropdown widget: 
+Lastly, update the code in the table widget, map the data in the `Table Data` property using a moustache syntax and only return the data that's selected from the dropdown widget:
 
 ```javascript
 {{
@@ -183,7 +183,4 @@ return obj;
 }}
 ```
 
-You could check the live example in this app [here](https://app.appsmith.com/applications/6063307b034ece74b148125a/pages/6063307b034ece74b148125c). 
-
-
-
+You could check the live example in this app [here](https://app.appsmith.com/applications/6063307b034ece74b148125a/pages/6063307b034ece74b148125c).

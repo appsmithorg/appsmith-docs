@@ -2,7 +2,7 @@
 
 The [Table Widget](../../widget-reference/table.md) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
-![](../../.gitbook/assets/bind-table%20%282%29%20%284%29%20%288%29.gif)
+![](<../../.gitbook/assets/bind-table (2) (4) (8) (1).gif>)
 
 ## Pagination
 
@@ -22,7 +22,7 @@ The pageNo and pageSize can be used in the API / Query by referencing them insid
 select * from users limit {{ Table1.pageSize }} offset {{ (Table1.pageNo - 1) * Table1.pageSize }}
 ```
 
-```text
+```
 https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 ```
 
@@ -30,7 +30,7 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute onPageChange.
 
-![](../../.gitbook/assets/pagination%20%282%29%20%282%29%20%282%29.gif)
+![](<../../.gitbook/assets/pagination (2) (2) (1).gif>)
 
 ## Server-Side Searching / Filtering
 
@@ -45,7 +45,7 @@ Tables come with client-side searching, and filtering out of the box. To perform
 select * from users where name ilike {{"%" + Table1.searchText + "%"}}
 ```
 
-```text
+```
 https://mock-api.appsmith.com/users?name={{Table1.searchText}}
 ```
 
@@ -61,7 +61,7 @@ Server-side filtering requires us to use another widget like a dropdown which ca
 select * from users where gender = {{genderDropdown.selectedOptionValue}}
 ```
 
-```text
+```
 https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
 ```
 
@@ -71,7 +71,7 @@ Some API / Query responses might have nested, unnecessary, or poorly formatted f
 
 #### Example Github API
 
-```text
+```
 https://api.github.com/repos/appsmithorg/appsmith/issues
 ```
 
@@ -96,4 +96,3 @@ To format this data, we can simply write a map function over the API response an
 ```
 
 ![](../../.gitbook/assets/github-table-formatted.png)
-

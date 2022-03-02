@@ -158,12 +158,11 @@ Now that you have succesfully connected to the database successfully, you can qu
 
 Now we need to display the fetched data in a presentable format. This can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the data fetched from Redshift database into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our application's UI. Select the 'Table' widget then drag and drop that on the canvas. Something like this is visible:
 
-![Screenshot twenty three](../.gitbook/assets/redshift-appsmith-23.png)
+![Screenshot twenty three](../.gitbook/assets/notion-appsmith-8.png)
 
 To include response in this table use the moustache syntax to write JS in Appsmith.
 
 ```
-
 {{Query1.data}}
 ```
 
@@ -199,7 +198,6 @@ Once the Query Editor appears change the query name to 'update\_read' and 'updat
 For update\_read add the following SQL query
 
 ```
-
 UPDATE library
   SET read = 'TRUE'
   WHERE book_id = {{List1.selectedItem.book_id}};
@@ -210,7 +208,6 @@ UPDATE library
 For update\_unread add the following SQL query
 
 ```
-
 UPDATE library
   SET read = 'FALSE'
   WHERE book_id = {{ List1.selectedItem.book_id}};
@@ -223,14 +220,12 @@ You can also add error and success messages by clicking on 'onSuccess' and selec
 An instance of success message is
 
 ```
-
 Added to list of books already read!!
 ```
 
 An instance of success message is
 
 ```
-
 Added to list of unread books!!
 ```
 
