@@ -17,9 +17,17 @@ You can upload files by creating a post API and referring to the base64 or binar
 {{ Filepicker1.files[0].data }}
 ```
 
+{% hint style="info" %}
+When you try to log the data, it appears in the blob format. But, if the user uses it in an API/query, it’ll actually upload base64/binary data.
+{% endhint %}
+
 See our guides on
 
 * [Uploading a File to S3](../how-to-guides/how-to-upload-to-s3.md)
+
+{% hint style="info" %}
+if you are trying to upload large files, please increase the timeout in API configuration. Whenever the file is larger than 5mb it is stored as blob.
+{% endhint %}
 
 ## Properties
 
