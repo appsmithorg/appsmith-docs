@@ -26,12 +26,15 @@ You’ll also have to make sure that your app is public to embed into other appl
 
 ![Making the Application Public on Appsmith](https://lh3.googleusercontent.com/qpfBY24qpHXf_21sq52dNAXR52axc260x_ZFClh2fb8zUuEeM3Cd9fbKeLslK4jUXb4KTYucJXB92AxAOkHwKpj0ke15OJ5EH8EXHoN2bmtz5loZHmQ9ofvcCGEdsYyDVJQ04SUg)
 
-Next, create an `iframe` tag and add the shareable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively:
+Next, create an `iframe` tag and add the shareable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively.
+
+Include the meta tag in head to ensure that the embedded application renders responsively on different screen sizes:
 
 ```markup
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
     <title></title>
 </head>
 <body>
@@ -50,6 +53,7 @@ If you want to get your app to use the whole page in your browser, you can still
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
     <title></title>
 </head>
 <body>
@@ -66,6 +70,7 @@ Additionally, you can also see the Appsmith toolbar on the top, you can remove t
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
     <title></title>
 </head>
 <body>
