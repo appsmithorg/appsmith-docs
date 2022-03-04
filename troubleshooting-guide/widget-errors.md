@@ -200,3 +200,8 @@ When the debugger is invoked, execution is paused at the debugger statement. It 
 
 **Note:** You need to have browser console open to make the debugger work.
 
+### Debugging Errors With Console.log()
+
+Aside from using the `debugger`, it is also possible to use `console.log()` to inspect various parts of your code. The video below illustrates how to do this:
+
+{% embed url="https://youtu.be/YLnvb9_k96s" caption="How To Debug With Console.log()" %}
