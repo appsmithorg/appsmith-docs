@@ -2,6 +2,8 @@
 
 Progress bar widget indicates the progress of certain users performed or system triggered actions.
 
+{% embed url="https://youtu.be/Yg1Pfy7uc1s" caption="How To Use The Progress-Bar Widget" %}
+
 ## Properties
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
