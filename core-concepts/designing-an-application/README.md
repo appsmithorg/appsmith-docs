@@ -4,6 +4,8 @@ An app can be built using UI elements (widgets) by placing them on the canvas as
 
 Widgets are the elements that help the user in shaping their app. They can store data from a Database or an API call, trigger events, etc. You can add or arrange widgets on the canvas by a simple drag and drop action.
 
+{% embed url="https://youtu.be/NB8Btt0aw0g" caption="How To Use The New Drag & Drop Experience" %}
+
 ## Adding and Arranging Widgets
 
 To add a widget to the canvas, select the widget from the widget tab, drag it onto the canvas and drop it there!
