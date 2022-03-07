@@ -15,7 +15,9 @@ This is a guide on how to [whitelist appsmith on AWS.](../../how-to-guides/aws-w
 
 ## Security
 
-Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the execution of Queries. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../setup/), and audit it to ensure none of your data leaves your VPC. Read more about [Security](../../security.md)
+Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the execution of Queries. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../setup/), and audit it to ensure none of your data leaves your VPC.&#x20;
+
+Read more about [Security](../../security.md)
 
 ## Sample Data
 
