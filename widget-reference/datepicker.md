@@ -34,20 +34,7 @@ description: >-
 To select just a month rather than a particular date, you can convert the [**Select widget**](dropdown-1.md) into a month picker. Drag a select widget to the canvas and enter the following snippet:
 
 ```
-[
- { "label": "January", "value": "january" },
- { "label": "February", "value": "february" },
- { "label": "March", "value": "march" }, 
- { "label": "April", "value": "april" }, 
- { "label": "May", "value": "may" }, 
- { "label": "June", "value": "june" }, 
- { "label": "July", "value": "july" }, 
- { "label": "August", "value": "august" }, 
- { "label": "September", "value": "september" }, 
- { "label": "October", "value": "october" }, 
- { "label": "November", "value": "november" }, 
- { "label": "December", "value": "december" } 
-]
+{{moment.months().map((v) => { return {label: v, value: v.toLowerCase()}})}}
 ```
 
 ### Year Picker
