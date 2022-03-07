@@ -2,8 +2,8 @@
 
 Rich applications require real data to build intuitive UI, perform data transformations & write business correct logic. Appsmith can talk to your data in the following ways
 
-* [Query your database directly](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases)
-* [Hit a REST API](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication)
+* [Query your database directly](connecting-to-databases.md)
+* [Hit a REST API](authentication/)
 
 {% hint style="warning" %}
 Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
