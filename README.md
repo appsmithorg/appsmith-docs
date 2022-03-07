@@ -26,21 +26,21 @@ Watch this 5-minute video on how to use Appsmith.
 Try Appsmith by creating an account in our cloud environment (Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide)). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:
 
 * [Create an account on Appsmith Cloud](https://app.appsmith.com) (Recommended as it comes with a mock database);
-* [Deploy Appsmith on my machine](setup/)
+* [Deploy Appsmith on my machine](https://docs.appsmith.com/setup)
 
 ## Getting Started with Appsmith
 
 Our documentation takes you on a journey that starts from the basics of Appsmith to solving a specific problem. Here’s how we’ve structured the different parts of our docs:
 
-* [The Tutorial](tutorials/) - With our step-by-step and detailed explanations, you can create a sample app using our mock data.&#x20;
-* [Core Concepts](core-concepts/connecting-to-data-sources/) - Find everything you need to know about building an app on Appsmith by getting your fundamentals right! See all about connecting, displaying, reading, and binding data here.
-* [How to Guides](how-to-guides/) - Here, we help you DIY! For those already familiar with the basics of Appsmith, you can find short guides to help you DIY.
+* [The Tutorial](https://docs.appsmith.com/tutorials) - With our step-by-step and detailed explanations, you can create a sample app using our mock data.&#x20;
+* [Core Concepts](./#how-does-appsmith-work) - Find everything you need to know about building an app on Appsmith by getting your fundamentals right! See all about connecting, displaying, reading, and binding data here.
+* [How to Guides](https://docs.appsmith.com/how-to-guides) - Here, we help you DIY! For those already familiar with the basics of Appsmith, you can find short guides to help you DIY.
 
 We’ve also put together a detailed reference system. In case you’re looking for information about widgets, data sources, or Framework, refer to the following docs:
 
-* [Datasource Reference](core-concepts/connecting-to-data-sources/connecting-to-databases.md#supported-databases)
-* [Framework Reference](core-concepts/writing-code/appsmith-framework.md)
-* [Widget Reference](core-concepts/displaying-data-read/#widgets)
+* [Datasource Reference](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#supported-databases)
+* [Framework Reference](https://docs.appsmith.com/core-concepts/writing-code/appsmith-framework)
+* [Widget Reference](https://docs.appsmith.com/core-concepts/displaying-data-read#widgets)
 
 We are working hard to keep our documentation up to date and expansive. However, we might not be able to cover everything. If you think we need to include something here, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com), and we’ll get working on it!
 

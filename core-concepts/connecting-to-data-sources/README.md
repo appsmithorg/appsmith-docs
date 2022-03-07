@@ -2,8 +2,8 @@
 
 Rich applications require real data to build intuitive UI, perform data transformations & write business correct logic. Appsmith can talk to your data in the following ways
 
-* [Query your database directly](connecting-to-databases.md)
-* [Hit a REST API](querying-a-database/connect-to-apis.md)
+* [Query your database directly](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases)
+* [Hit a REST API](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication)
 
 {% hint style="warning" %}
 Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
@@ -30,7 +30,7 @@ You can connect to 2 sample datasets
 
 The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
 
-![](../../.gitbook/assets/add-mock-db%20%283%29.gif)
+![](<../../.gitbook/assets/add-mock-db (3).gif>)
 
 ### Sample API
 
@@ -51,4 +51,3 @@ curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
     "status" : "Approved"
 }'
 ```
-
