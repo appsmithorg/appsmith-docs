@@ -9,7 +9,7 @@ You can use our pre-built UI widgets, connect them to your APIs and databases to
 
 Here are five simple steps to create an app in Appsmith:
 
-* **Connect Any Datasource**: You can integrate any database with Appsmith, including REST APIs, MySQL, Postgres, MongoDB, Google Sheets, and others;
+* **Connect Any Datasource**: You can integrate any database with Appsmith, including REST APIs, MySQL, Postgres, MongoDB, Google Sheets, Elasticsearch and others;
 * **Build UI**: With pre-built widgets, you can create UI in seconds;
 * **Create and Execute Queries**: Write queries and business logic in the SQL or JS Editor and then bind responses;
 * **Customize with Ease**: Write JS everywhere, even inside your DB queries, to customize your app;
