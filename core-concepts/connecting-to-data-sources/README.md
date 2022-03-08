@@ -1,6 +1,6 @@
 # Connecting to Data Sources
 
-Rich applications require real data to build intuitive UI, perform data transformations & write business correct logic. Appsmith can talk to your data in the following ways
+Rich applications require real data to build intuitive UI, perform data transformations & write business-correct logic. Appsmith can talk to your data in the following ways
 
 * [Query your database directly](connecting-to-databases.md)
 * [Hit a REST API](authentication/)
