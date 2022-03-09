@@ -55,4 +55,5 @@ kubectl scale deployment appsmith-internal-server --replicas=1
 * [Google OAuth](google-login.md)
 * [GitHub OAuth](github-login.md)
 * [Google Maps](google-maps.md)
+* [Disable Intercom](disable-intercom.md)
 
