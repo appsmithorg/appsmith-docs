@@ -18,6 +18,7 @@
     * [Google OAuth](setup/instance-configuration/google-login.md)
     * [Github OAuth](setup/instance-configuration/github-login.md)
     * [Google Maps](setup/instance-configuration/google-maps.md)
+    * [Disable Intercom](setup/instance-configuration/disable-intercom.md)
     * [Maintenance Window](setup/maintenance-window.md)
   * [Instance Management](setup/instance-management.md)
 * [Tutorials](tutorials/README.md)
