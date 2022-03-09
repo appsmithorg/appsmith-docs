@@ -5,9 +5,9 @@ Appsmith is a low code, open-source framework to build internal applications.
 With our JavaScript-based visual development platform, build CRUD apps, Dashboards, Admin Panels, and many more 10x faster.\
 You can use our pre-built UI widgets, connect them to your APIs and databases to build dynamic apps and complex workflows. And the best part? Deploy these apps on the technology you prefer! (self-host for free!).
 
-## How does Appsmith work?
+## What can you do with Appsmith?
 
-Here are five simple steps to create an app in Appsmith:
+Here are the top five use cases for Appsmith:
 
 * **Connect Any Datasource**: You can integrate any database with Appsmith, including REST APIs, MySQL, Postgres, MongoDB, Google Sheets, and others;
 * **Build UI**: With pre-built widgets, you can create UI in seconds;
