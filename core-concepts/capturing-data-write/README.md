@@ -6,13 +6,13 @@ The following widgets can be used to capture user inputs in an application
 
 * [Checkbox](../../widget-reference/checkbox.md)
 * [Datepicker](../../widget-reference/datepicker.md)
-* [Dropdown](broken-reference)
 * [Filepicker](../../widget-reference/filepicker.md)
 * [Form](../../widget-reference/form.md)
 * [Input](../../widget-reference/input.md)
 * [Maps](../../widget-reference/maps.md)
 * [Radio Group](../../widget-reference/radio-group.md)
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
+* [Select](https://docs.appsmith.com/widget-reference/dropdown-1)
 * [Switch](../../widget-reference/switch.md)
 
 Widgets store their user input in an internal property that can be referenced using javascript.
@@ -45,4 +45,4 @@ The property pane has an action section where all the interactions that a user c
 
 To configure the Query we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](<../../.gitbook/assets/button-onclick (2) (4) (1) (1).gif>)
+![](<../../.gitbook/assets/button-onclick (2) (4) (1) (1) (1).gif>)
