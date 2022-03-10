@@ -21,6 +21,12 @@ description: >-
 
 [How to use values of queryParams in an API/query?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62025b3456d52d3fd7b71797?rows=6)
 
+[How to update store value?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62051be26b4b1e154a3980a9)
+
+[How to convert CSV to JSON?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/620b7d6c6b4b1e154a3c2596)
+
+[How to hide text using JS?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/6214df70da926877eb275728)
+
 ## Example Apps for Widgets
 
 ### Camera Widget
@@ -31,11 +37,21 @@ description: >-
 
 [How to post camera widget output to mongo?](https://app.appsmith.com/applications/61f10fb69d6d6a6720c9549b/pages/61f7dcff9d6d6a6720c9aeb5)
 
+### Chart Widget
+
+[How to use the chart widget?](https://app.appsmith.com/applications/620b668f6b4b1e154a3c2418/pages/620b668f6b4b1e154a3c241b)
+
+[How to use Custom Charts?](https://app.appsmith.com/applications/620b668f6b4b1e154a3c2418/pages/620b8bc56b4b1e154a3c2688)
+
 ### Datepicker Widget
 
 [How to use a date-time filter?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c)
 
 [How to set a max date limit for a date picker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af)
+
+[How to format dates with momentJs?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6228975df782567d61f15158)
+
+[How to manipulate selected date?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9)
 
 ### Filepicker Widget
 
@@ -59,11 +75,21 @@ description: >-
 
 [How to use selectedItem of list widget?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fbe3122cd3d95ca414b838)
 
+[How to paginate the list widget?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/620b90606b4b1e154a3c273d)
+
+### Progress Bar Widget
+
+[How to use the progress bar?](https://app.appsmith.com/applications/62148aabda926877eb2749c1/pages/62148aabda926877eb2749c4)
+
 ### Select Widget&#x20;
 
 [How to reset the select widget?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78)
 
 [How to use select widget value to change where clause?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808)
+
+[How to filter selection search query?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695)
+
+[How to dynamically set the value of the select widget?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215ffe32882606a1df5caaa)
 
 ### Switch Widget
 
@@ -76,6 +102,22 @@ description: >-
 [How to invoke an action on table row click?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91)
 
 [How to create custom ids for table data?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f641559d6d6a6720c99777)
+
+[How to read CSV files?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/620bdf566b4b1e154a3c2ea1)
+
+[How to paginate G-Sheet?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/620e03ea6b4b1e154a3e9eaa)
+
+[How to paginate Mongo Data?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/62038b3dfaf1b901c2bb5780)
+
+[How to conditionally change the table cell background color?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8)
+
+[How to conditionally show data from different queries in a single table?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61e11a42eb0501052b9fab41)
+
+### Tabs Widget
+
+[How to change tabs using JS?](https://app.appsmith.com/applications/62138e0bda926877eb273b34/pages/62138e0bda926877eb273b37)
+
+[How to hide tabs using JS?](https://app.appsmith.com/applications/62138e0bda926877eb273b34/pages/621c94e4445a8d746a061391)
 
 ### Text Widget
 
@@ -94,6 +136,8 @@ description: >-
 [How to use mongo bulk update in Appsmith?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61f8c5179d6d6a6720c9b8c6)
 
 [How to pass and use arguments passed with queries/APIs?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
+
+[How to use mongo RAW query to update a document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
 
 ## Example Apps around JS Promises/Async-Await
 
