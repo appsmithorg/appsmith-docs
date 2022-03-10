@@ -6,7 +6,7 @@ description: >-
 
 # Rich Text Editor
 
-{% embed url="https://youtu.be/\_KrxFScQJys" caption="" %}
+{% embed url="https://youtu.be/_KrxFScQJys" caption="How To Use The Rich-Text-Editor" %}
 
 ## Properties
 
