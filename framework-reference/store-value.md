@@ -42,3 +42,13 @@ You can read values from the store by referencing the key inside the appsmith.st
       storeValue("userID", 42);
     }}
     ```
+
+## Clear store value
+
+To clear the value in the store, you can set its value to **undefined**.
+
+```
+{{
+  storeValue("userID", undefined);
+}}
+```
