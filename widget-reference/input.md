@@ -1,10 +1,3 @@
----
-description: >-
-  An input text field is used to capture a user's textual input such as their
-  names, numbers, emails etc. Inputs can be used in a form and can have custom
-  validations.
----
-
 # Input
 
 The input widget allows the user to enter or edit data such as text, number, email, etc. It is helpful in a form widget with custom validations.

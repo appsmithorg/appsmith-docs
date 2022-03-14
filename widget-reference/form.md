@@ -1,10 +1,3 @@
----
-description: >-
-  Form is used to capture a set of data inputs from a user. Forms are used
-  specifically because they reset the data inputs when a form is submitted and
-  disable submission for invalid data inputs.
----
-
 # Form
 
 A **Form** is the most widely used way of capturing a user’s digital or handwritten information. Keeping this in mind, Appsmith provides a form widget that caters to all your needs to capture the user input and wire it to a database query or an API.

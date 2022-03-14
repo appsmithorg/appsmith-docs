@@ -113,7 +113,6 @@
 
 ## Framework Reference
 
-* [Cheat Sheet](framework-reference/cheat-sheet.md)
 * [Appsmith Context Object](framework-reference/appsmith.md)
 * [Query](framework-reference/run.md)
 * [Show Modal](framework-reference/show-modal.md)

@@ -1,10 +1,3 @@
----
-description: >-
-  ‌Text widget is used to display textual information. Whether you want to
-  display a paragraph or information or add a heading to a container, a text
-  widget makes it easy to style and display text.
----
-
 # Text
 
 A text widget displays textual information. Whether you want to add a paragraph or a heading to a container, a text widget makes it easy to style and display text.
@@ -33,8 +26,6 @@ Let's understand the widget properties in detail.
 `Text` field takes the input for the text widget. You can also add `HTML` code in the Text field manually or dynamically to render it in the widget.
 
 {% embed url="https://youtu.be/jIOajSSe6vI" %}
-&#x20;                                                 &#x20;
-{% endembed %}
 
 {% hint style="info" %}
 Text field can only render inline CSS. If you want to use external CSS, we suggest using the [iFrame widget.](iframe.md)
@@ -42,7 +33,7 @@ Text field can only render inline CSS. If you want to use external CSS, we sugge
 
 #### Truncate Text
 
-This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fix inside the given widget area.                                              &#x20;
+This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fix inside the given widget area.
 
 {% embed url="https://youtu.be/Pex6RAyeHso" %}
 

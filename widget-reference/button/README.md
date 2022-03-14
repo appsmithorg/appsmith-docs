@@ -1,9 +1,3 @@
----
-description: >-
-  Buttons are used to capture user intent and trigger actions based on that
-  intent.
----
-
 # Button
 
 The button widget is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly.

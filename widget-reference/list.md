@@ -1,9 +1,3 @@
----
-description: >-
-  The List widget is used to display a paginated list of similarly structured
-  data.
----
-
 # List
 
 You can use a list widget to display structured data collection. For example, You have a dataset of employees with each entity having properties like name, designation, department, etc. You can use a list widget to iterate over the employee collection and display the data one after the other. The list widget gives you the flexibility to supply this dataset and takes care of the iteration without writing any code.

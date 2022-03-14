@@ -1,10 +1,3 @@
----
-description: >-
-  Containers are used to group widgets together to form logical higher-order
-  widgets. Containers let you organize your page better and move all the widgets
-  inside them together.
----
-
 # Container
 
 When you organize your cupboard or home, you want to pack stuff in boxes and name them. Similarly, you can use a container widget to hold the widgets. A container widget serves as a logical group of related widgets. It gives your page a distinctive layout.
