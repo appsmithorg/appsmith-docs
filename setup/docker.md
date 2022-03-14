@@ -13,6 +13,8 @@ Create an installation folder called `appsmith`where you would like your Appsmit
 
 **`cd` ** into the installation folder.
 
+{% embed url="https://youtu.be/Tde7GqE6FQQ" %}
+
 ## Quick Start (with docker-compose)
 
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
