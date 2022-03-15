@@ -9,37 +9,27 @@ description: >-
 
 ## How to use Queries (Query/API)
 
-[How to bulk insert data with postgres?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fbca6a2cd3d95ca414b688)
-
-[How to create the table using with graphQL query?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/61f81d4f9d6d6a6720c9b4ca)
-
-[How to merge data from two different queries?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbc09e2cd3d95ca414b59c)
+[How to run queries/APIs in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf7722cd3d95ca414a948)
 
 [How to run multiple queries with onClick?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61e4fdb3eb0501052b9fc47d)
 
-[How to use mongo bulk update in Appsmith?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61f8c5179d6d6a6720c9b8c6)
-
 [How to pass and use arguments passed with queries/APIs?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
-
-[How to use mongo RAW query to update a document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
-
-## How to use the JS Framework
-
-[How to parse XML API response?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/61efeb7dbe698f35db551ff8)
-
-[How to delete a key from the Appsmith store?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7b1309d6d6a6720c9a494)
 
 [How to fetch data based on different queryParams?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f8c72f9d6d6a6720c9b90d)
 
 [How to use values of queryParams in an API/query?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62025b3456d52d3fd7b71797?rows=6)
 
-[How to update store value?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62051be26b4b1e154a3980a9)
+[How to bulk insert data with postgres?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fbca6a2cd3d95ca414b688)
 
-[How to convert CSV to JSON?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/620b7d6c6b4b1e154a3c2596)
+[How to create the table using with graphQL query?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/61f81d4f9d6d6a6720c9b4ca)
 
-[How to hide text using JS?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/6214df70da926877eb275728)
+[How to use mongo bulk update in Appsmith?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61f8c5179d6d6a6720c9b8c6)
 
-## How to use JS Promises/Async-Await
+[How to use mongo RAW query to update a document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
+
+## How to use the JS Framework
+
+[How to merge data from two different queries?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbc09e2cd3d95ca414b59c)
 
 [How to handle promises with callbacks?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61fae6cc2cd3d95ca414a850)
 
@@ -47,7 +37,15 @@ description: >-
 
 [How to use async-await functionality in Appsmith?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf6752cd3d95ca414a934)
 
-[How to run queries/APIs in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf7722cd3d95ca414a948)
+[How to hide text using JS?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/6214df70da926877eb275728)
+
+[How to store a value?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62051be26b4b1e154a3980a9)
+
+[How to delete a key from the Appsmith store?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7b1309d6d6a6720c9a494)
+
+[How to convert CSV to JSON?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/620b7d6c6b4b1e154a3c2596)
+
+[How to parse XML API response?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/61efeb7dbe698f35db551ff8)
 
 ## How to use Widgets
 
