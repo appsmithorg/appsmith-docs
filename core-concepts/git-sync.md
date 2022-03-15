@@ -126,6 +126,20 @@ You can resolve it in the following way:
 * Delete branch _<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_ on the remote repository;
 * Run sync branch flow to remove _<mark style="color:orange;">feature/f1\_conflicted</mark>_ from the local repository.
 
+### Discard and Pull Changes
+
+While developing an application in Appsmith, sometimes, you may end up in a situation where you want to discard the current changes and revert to the previous stable version. Now, with discard and pull functionality, you can remove the unwanted changes, and pull the changes present in the remote repository so that your application will always be in sync.
+
+Discarding changes will result in the following scenarios:&#x20;
+
+1. Any resources added after the last commit will be removed.&#x20;
+2. Any resources deleted after the last commit will be restored.&#x20;
+3. Changes made to any resource after the last commit will be removed.
+
+{% hint style="info" %}
+Resources refers to pages, JSObjects, queries, etc
+{% endhint %}
+
 ### Merging
 
 When you want to merge your branch with the base branch -
