@@ -86,7 +86,7 @@ Let’s use a line chart to visualize the data.
 How to plot a line chart on Appsmith?
 {% endembed %}
 
-As u can see in the video, we use the `Chart Series` property head to supply the data and details related to identifying the data points.
+As you can see in the video, we use the `Chart Series` property head to supply the data and details related to identifying the data points.
 
 * `Series Title` - the name of the series. In the example above, it is _**Total Bugs**_.
 * `Series Data` - stores the data points for the total bugs.
@@ -169,19 +169,19 @@ Like a line chart for an area chart also, you can add more categories and their 
 
 #### Custom Chart
 
-Appsmith integrates with[ Fusion Charts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) and provides a wide array of chart types that you can use as part of a custom chart.
+Appsmith integrates with[ FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) and provides a wide array of chart types that you can use as part of a custom chart.
 
-You can select **Custom Chart** from the **Chart Type** dropdown to initialize it. On selecting the Custom Chart type, you can see a property **Custom Fusion Chart** where you can define the configuration of the fusion chart.
+You can select **Custom Chart** from the **Chart Type** dropdown to initialize it. On selecting the Custom Chart type, you can see a property **Custom Fusion Chart** where you can define the configuration of the FusionCharts.
 
 {% hint style="info" %}
-Fusion Chart offers almost 100+ variants. You can learn more about them from the fusion chart official docs[ here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
+FusionCharts offers almost 100+ variants. You can learn more about the charts from the FusionCharts official docs[ here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
 {% endhint %}
 
 A custom chart configuration needs data in the form of two keys: type and dataSource.
 
 **type**
 
-The type is used to define the chart type recognized by the fusion chart. You can[ get a list of all the supported types available](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) on the fusion chart.
+The type is used to define the chart type recognized by the FusionCharts. You can[ get a list of all the supported types available](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) on FusionCharts.
 
 **dataSource**
 
@@ -203,7 +203,7 @@ Below is an example configuration for the Custom Fusion Chart property:
 }
 ```
 
-Let’s take an example to create a custom fusion chart.
+Let’s take an example to create custom Fusioncharts.
 
 {% embed url="https://youtu.be/lLrybSBTb9k" %}
 A two-dimensional column chart&#x20;
