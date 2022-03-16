@@ -7,7 +7,7 @@ Appsmith runs it's own instances of MongoDB database for storing all application
 To point to a custom MongoDB, update the env variable called `APPSMITH_MONGODB_URI` to point to your custom MongoDB server. For example, if you are using [MongoDB Cloud](https://www.mongodb.com/cloud), you can change this to something like the following:
 
 ```bash
-APPSMITH_MONGODB_URI=mongodb+src://mongo.host.name/databasename
+APPSMITH_MONGODB_URI=mongodb+srv://<username>:<password>@mongo.host.name/databasename
 ```
 
 The exact URI to be set here can be obtained from MongoDB Cloud's web interface.
