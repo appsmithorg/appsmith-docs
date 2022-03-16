@@ -5,6 +5,7 @@ The following document assumes that you understand the [basics of connecting to 
 {% endhint %}
 
 ## Connection Settings
+![Screenshot 2022-03-16 140710](https://user-images.githubusercontent.com/5852362/158571589-b2e2aaac-736b-480c-9ce6-4e4e5c14ab23.png)
 
 Appsmith needs the following parameters for connecting to a SSH server:
 
@@ -14,7 +15,7 @@ All required fields are suffixed with an asterisk \(\*\).
 
 ### **Connection**
 
-You need to fill in the following parameters:
+You need to fill in at least one _Host/Port_ at the list of host/ports:
 
 * **Host Address\*:** Fill in the database host’s address.
 * **Port\*:**  Fill the port witch the SSH server is listening to it.
