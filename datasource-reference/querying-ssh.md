@@ -33,3 +33,9 @@ You need to fill in the following parameters:
     * **Username\*:** Fill username required for authenticating connection requests to your SSH server.
     * **Upload private key\*:** Select and upload a private key required for the given username to the SSH server.
     * **Private key passphrase\:** Fill this if the private key is protected with a passphrase.
+
+## Running SSH Commands
+
+![Screenshot 2022-03-16 145317](https://user-images.githubusercontent.com/5852362/158579353-fb291b7e-ac36-49bc-a448-bb1644e1a649.png)
+
+For running SSH commands you just need to enter the command in the _Run command(s)_ text input. As response you have an object that contains _response_ (text output of following command) and _exitCode_ (commands exit code number).
