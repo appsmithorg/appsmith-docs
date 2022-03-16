@@ -1,10 +1,3 @@
----
-description: >-
-  The table is used to display rows of data. You can display data from an API in
-  a table, trigger an action when a user selects a row, and even work with large
-  paginated data sets
----
-
 # Table
 
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
