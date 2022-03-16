@@ -110,6 +110,7 @@
 * [Redshift](datasource-reference/querying-redshift.md)
 * [Snowflake](datasource-reference/querying-snowflake-db.md)
 * [SMTP](datasource-reference/using-smtp.md)
+* [SSH](datasource-reference/querying-ssh.md)
 
 ## Framework Reference
 
