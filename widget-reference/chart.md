@@ -4,6 +4,11 @@ When communicating with a larger audience, visual representation of data is bene
 
 A **Chart** widget is a visual representation of data. It allows you to visualize the bottlenecks in processes. With the root cause in hand, you can amend the methods to make calculated decisions.
 
+{% hint style="info" %}
+Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a **re-distribution license**. With our license, you can use FusionCharts on the Appsmith **cloud** and **on-premise** platform. The use of the license is permitted as long as what you are building on Appsmith is not used to compete with FusionCharts. \
+Please note that our license does **not** cover **Fusion Maps**, and you will have to acquire a license if you wish to use it.
+{% endhint %}
+
 {% embed url="https://www.youtube.com/embed/xRUJN_0lzRU" %}
 
 ## Add to Canvas
