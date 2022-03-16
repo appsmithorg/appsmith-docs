@@ -6,6 +6,7 @@ A **Chart** widget is a visual representation of data. It allows you to visualiz
 
 {% hint style="info" %}
 Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a **re-distribution license**. With our license, you can use FusionCharts on the Appsmith **cloud** and **on-premise** platform. The use of the license is permitted as long as what you are building on Appsmith is not used to compete with FusionCharts. \
+\
 Please note that our license does **not** cover **Fusion Maps**, and you will have to acquire a license if you wish to use it.
 {% endhint %}
 
