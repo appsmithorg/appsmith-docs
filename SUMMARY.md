@@ -7,6 +7,7 @@
   * [AWS AMI](setup/aws-ami.md)
   * [DigitalOcean](setup/digitalocean.md)
   * [Heroku](setup/heroku.md)
+  * [CloudJiffy](setup/cloudjiffy.md)
   * [Instance Configuration](setup/instance-configuration/README.md)
     * [Admin Settings](setup/instance-configuration/admin-settings.md)
     * [Email](setup/instance-configuration/email/README.md)
