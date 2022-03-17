@@ -1,94 +1,134 @@
 ---
-description: Deploy Appsmith on AWS with an AMI on the marketplace
+description: Deploy Appsmith on ECS cluster using EC2 instance.
 ---
 
-# AWS AMI
+# AWS ECS
 
-## Tutorial Steps:
-
-* [Register with Amazon Web Services (AWS)](aws-ami.md#step-1-register-with-amazon-web-services)
-* [Generate an SSH key pair](aws-ami.md#step-2-generate-an-ssh-key-pair)
-* [Create an AWS Security Group](aws-ami.md#step-3-create-an-aws-security-group)
-* [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
-* [Configure custom domain for your app](aws-ami.md#custom-domain)
-* [Find Application Credentials](aws-ami.md#find-application-credentials)
-* [Updating your Appsmith installation](aws-ami.md#updating-your-appsmith-installation)
-
-### Step 1: Register With Amazon Web Services
+## Prequisites
+### 1: Register With Amazon Web Services
 
 If you already have an Amazon Web Services account, you may skip this step.
 
 Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) in order to create an account on AWS.
 
-### Step 2: Generate an SSH key pair
+### 2: Generate an SSH key pair
 
 If you already have an SSH key pair for the AWS region you are operating in, you can skip this step.
 
 Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key-pair. You need this key to SSH into your AWS EC2 instance.
 
-### Step 3: Create an AWS Security Group
+### 3: Create an AWS Security Group
 
-If you already have an existing security group with ports 80, 443 and 22 open, you can skip this step.
+If you already have an existing security group with ports 80, 443 , 22 and 9001 open, you can skip this step.
 
-Appsmith is a web application that requires ports 80 and 443 for HTTP access. It also requires port 22 to be accessible for SSH access. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
+Appsmith is a web application that requires ports 80 and 443 for HTTP access, port 22 to be accessible for SSH access, it also requires 
+port 9001 to be accessible for the supervisord UI.
+Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
-While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443 and 22 accessible from anywhere.
+While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, 22 and 9001 accessible from anywhere.
 
-### Step 4: Deploy Appsmith On AWS Cloud
+---
+## ECS Overview
+![ECS_OVERVIEW](../.gitbook/assets/ecs-overview.png)
+## Steps to Deploy Appsmith on ECS (using EC2 Launch Type):
+1. [Create an ECS Cluster](aws-ecs.md#step-1-create-an-ecs-cluster)
+2. [Create Task and Container Definitions](aws-ecs.md#step-2-create-task-and-container-definitions)
+3. [Create and Run an ECS Service](aws-ecs.md#step-3-create-and-run-an-ecs-service)
 
-The next step is to launch a cloud server with the Appsmith Amazon Machine Image (AMI) running on it. The AWS Console lets you do this in just a couple of clicks. Follow these steps:
+> Note: Please switch to the old AWS console UI to follow the steps in this tutorial.
+### Step 1: Create an ECS Cluster
+Firstly, create an ECS cluster. It which is basically a grouping of container instances running tasks, or services that use the EC2 launch type. Follow these steps:
+1. Navigate to Amazon ECS and choose clusters on the side bar and select Create Cluster.
 
-1. Navigate to the "**Amazon** **EC2 dashboard"**, select the “**AMIs**” option in the “**Images**” menu.
-2. Search for the Appsmith Stack by entering the search term "**appsmith**" in the search bar at the top.
-3. Select the image in the list of search results and click the “**Launch**” button.
-4. On the resulting detail page, review the available server sizes. Select the server size you wish to use and click “**Review and Launch**” to proceed.
-5. On the review page, click the “**Edit security groups**” link.
-6. On the “**Configure Security Group**” page, choose the option to “**Select an existing security group**”. Find the security group you created in Step 3 and select it. Click the “Review and Launch” button to proceed.
-7. Verify that the correct key pair (created in [**Step 2**](aws-ami.md#step-2-generate-an-ssh-key-pair)) will be used for the server.
-8. Confirm your selection by hitting the “**Launch Instance**” button.
+    ![ECS_OVERVIEW](../.gitbook/assets/ecs-start-dash.png)
 
-The AWS Console will now begin spinning up the new server.
+2. Choose EC2 Linux + Networking, and select next step.
 
-![Launch](../.gitbook/assets/aws-launch.png)
+3. Enter your cluster name 
+4. Instance configuration:
+   - Select the provisioning model as On-Demand Instance.
+   - Select the server size you wish to use, and set the Number of instances as 1.
+   - Select the Amazon Linux2 AMI for the EC2 AMI ID dropdown, and enter the required EBS volume size.
+   - Select a Key pair. Please refer to [**Prequisite 2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
 
-The process usually takes a few minutes. Use the EC2 Dashboard to check the status of the server. Once the server has launched, you will be able to obtain its public IP address from the EC2 Dashboard, as shown below:
+    ![ECS_INSTANCE_CONFIG](../.gitbook/assets/ecs-cluster-instance-config.png)
 
-![EC2 Detail](../.gitbook/assets/aws-ec2-detail.png)
+5. Networking Section
+   - Select the default VPC followed by selecting the first first subnet from the drop-down.
+   - Select the security group created in [**Prequisite 3**](aws-ecs.md#3-create-an-aws-security-group).
 
-At this point, you should be able to browse to the cloud server, by entering the cloud server IP address or DNS name directly into your browser’s address bar. You should now see your web app home page as shown below:
+    ![ECS_CLUSTER_NW](../.gitbook/assets/ecs-cluster-networking.png)
 
-![Login Page](../.gitbook/assets/aws-login-page.png)
+6. Enable container insights (this gives CloudWatch monitoring and helps debugging).
+7. Leave the Container instance IAM role as default (ecsInstanceRole), if you do not have one aws will create it for you.
+8. Hit the Create button. It may take a minute for your cluster to be ready.
 
-## Application Credentials
+    ![ECS_CLUSTER_LAUNCH](../.gitbook/assets/ecs-cluster-launch.png)
 
-By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. The default username is: `appsmith@example.com`. There are two options for obtaining the password.
+### Step 2: Create Task and Container Definitions
+Once the cluster is created, you will need to create a task that will be run on the cluster created in Step 1. To create a task move to definitions, follow these steps:
+1. On the side bar, choose Task Definitions and select Create new Task Definition.
+2. Choose EC2 as the launch type, and proceed to the next step.
+3. Configure task and definition
+   - Enter the task definition name.
+   - Leave the Task role blank.
+   - Select the default Network mode
 
-### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console (EC2)
+    ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-task-def.png)
+4. Select the default Task execution IAM role(ecsTaskExecutionRole). AWS will create one for you if you do not have one.
+5. Set the required task size (memory & cpu)
+6. Go to the Volumes section and add a new volume. Enter the Name as DockerEndpoint, set Volume type as Bind Mount and set the Source path to /var/run/docker.sock.
+    ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-task-vol.png)
+7. Configure Appsmith container conrfiguration.
+  - Hit Add container button.
+  - Enter the container name, and set the Image to appsmith/appsmith-ce
+  - Add port mappings for the ports 80->80,443->443, 9001->9001
+  - Enable Auto-configure CloudWatch Logs for log configuration
+  - Hit Add
+  ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-task-appsmith.png)
+8. Configure Watchtower container configuration.
+  - Hit Add container again.
+  - Enter the container name, and set Image to containrrr/watchtower
+  ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-task-watchtower.png)
+  - Set the Monut poins to DockerEntrypoint (created in step 5) and set the Container path to /var/run/docker.sock
+  - Enable Auto-configure CloudWatch Logs for log configuration
+  ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-task-watchtower-storage.png)
+  - Hit Add
+  
+9. Finally, hit the Create button.
 
-{% hint style="warning" %}
-IMPORTANT: The application password is only available in the system log for the first 24 hours after you first start the instance. We strongly recommend that you note it down immediately on the first boot and save it in a safe place, as you will be unable to access the instance console without it. We also recommend that you change it as soon as possible for security reasons.
-{% endhint %}
 
-* Go to your EC2 instances dashboard on AWS
-* Select the instance
-* From the “Actions” drop-down menu, select the “Get System Log” menu item.
+### Step 3: Create and Run an ECS Service.
+1. Navigate to clusters dashboard and click on the ECS cluster created in step1.
+2. On the cluster details, under the tab Services hit the create button.
 
-![Select System Log](../.gitbook/assets/aws-select-system-log.png)
+   ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-cluster-service-creation.png)
+3. Configure Service
+  - Select EC2 as Launch Type
+  - Select the Task Definition created in [Step 2](aws-ecs.md#step-2-create-task-and-container-definitions) with the latest revision.
+  - Select the Cluster created in [Step 1](aws-ecs.md#step-1-create-an-ecs-cluster)
+  - Enter the service name
+  - Select the REPLICA Service type
+  - Set the Number of tasks to 1
+  - Leave the remaining fields and sections with the default values, and proceed to the next step.
+     ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-service-creation.png)
+4. Configure network - Proceed to the next step with the default configurations.
+     ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-service-lb.png)
+5. Set Auto Scaling - Proceed to the next setp with the default configurations.
+     ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-service-auto-scaling.png)
+4. Review the Service configurations and hit the Create Service button.
+     ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-service-review.png)
+5. The following screen will appear showing the launch status, click on View Service button.
+    ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-service-launch-status.png)
+6. You will be redirected to the service detail page. Your task listed under the Tasks tab on the cluster. refresh the table until the status is RUNNING.
+![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-service-task-status.png)
+7. Cick on the task to get the details of your running service.
+  ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-task-details.png)
+8. Finally, click on the EC2 instance id to navigate to the EC2 console with your ECS instance (which is basically an EC2 instance running the container service) listed.
+  ![ECS_CLUSTER_CONFIG](../.gitbook/assets/ecs-instance-ec2.png)
+9. Find the public IP address or DNS name and enter it on your browser to see Appsmith's welcome page.
+  ![ECS_CLUSTER_CONFIG](../.gitbook/assets/appsmith-welcome-page.png)
 
-* Review the system log until you find the application password. You will also find the default username printed in the logs.
-
-![View System log](../.gitbook/assets/aws-system-log.png)
-
-### Option 2: Find Credentials By Connecting To Your Application Through SSH
-
-The default application credentials are stored in a standalone file. To obtain these credentials at any time, follow these instructions:
-
-* SSH into your server using your private key
-*   Run the following command to see your application credentials:
-
-    ```
-      sudo cat /home/ubuntu/appsmith/credential
-    ```
 
 ## Troubleshooting
 
