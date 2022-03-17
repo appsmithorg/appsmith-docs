@@ -7,6 +7,14 @@ description: >-
 
 # Sample Apps
 
+## How do I do X on Appsmith?
+
+Live streams and apps of our community calls, where we discuss some of the frequently asked questions on our Discord, and Intercom.
+
+**Session #1**: [Video Link](https://www.youtube.com/watch?v=tfGXatrbi-M), [Template Link](sample-apps.md#undefined) | Topics Covered: Combining multiple queries, Dynamic queries, Switching between tabs, JS Promises, Dynamically adding widgets.
+
+**Session #2:** [Video Link](https://www.youtube.com/watch?v=ZjZyMHVfaQY), [Template Link](https://app.appsmith.com/applications/62307344f1c0af1ceded404f/pages/62307344f1c0af1ceded4052) | Topics Covered: Pagination, Bulk Uploads, Appsmith Framework
+
 ## How to use Queries (Query/API)
 
 [How to run queries/APIs in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf7722cd3d95ca414a948)
