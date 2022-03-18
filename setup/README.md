@@ -13,7 +13,7 @@ You can follow one of our guides to deploy Appsmith via the technology you prefe
 * [AWS AMI](aws-ami.md)
 * [DigitalOcean](digitalocean.md)
 * [Heroku Guide](heroku.md)
-* [AES_ECS](aws-ecs.md)
+* [AWS_ECS](aws-ecs.md)
 
 {% hint style="info" %}
 **Minimum system requirements:** We recommend 4 GB RAM with 2 CPUs (t3.medium on AWS).
