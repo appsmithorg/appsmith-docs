@@ -55,8 +55,9 @@ To configure a ECS installation, follow these steps:
  3. On the Task Definition config page click on the Appsmith **container definition** to edit it.
     In the **Environment Section**, enter the environment configuration as **key value pairs** as show below.
    ![ECS_TASK_ENV](/.gitbook/assets/ecs-task-env.png)
-    For sensitive information we recommend using **AWS Secrets**, please follow the steps [**detailed here**](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html) to create a secret. 
-   Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
+   
+  For sensitive information we recommend using **AWS Secrets**, please follow the steps [**detailed here**](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html) to create a secret. 
+  Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
 
  4. Hit the **Update** button, and hit **Create** to make a new task definition.
  5. Navigate back to the **ECS console** and select you cluster. Click on your service to open the **service details**.
