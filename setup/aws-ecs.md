@@ -51,13 +51,11 @@ While creating the the new security group, please follow the steps [detailed her
    - Select a **Key pair**. Please refer to [**Prequisite 2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
 
     ![ECS_INSTANCE_CONFIG](../.gitbook/assets/ecs-cluster-instance-config.png)
-
 5. Networking Section
    - Select the **default VPC** followed by selecting the **first subnet** from the drop-down.
    - Select the **security group** created in [**Prequisite 3**](aws-ecs.md#3-create-an-aws-security-group).
 
     ![ECS_CLUSTER_NW](../.gitbook/assets/ecs-cluster-networking.png)
-
 6. Enable container insights (this gives CloudWatch monitoring and helps debugging).
 7. Leave the Container instance IAM role as default (**ecsInstanceRole**), if you do not have one aws will create it for you.
 8. Hit the **Create button**. It may take a minute for your cluster to be ready.
@@ -86,7 +84,6 @@ Once the cluster is created, you will need to create a task that will be run on 
   - Hit **Add**
 
     ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
-
 8. Configure Watchtower container configuration.
   - Hit **Add container** again.
   - Enter the container name, and set Image to `containrrr/watchtower`
@@ -95,7 +92,6 @@ Once the cluster is created, you will need to create a task that will be run on 
   - Enable **Auto-configure CloudWatch Logs** for log configuration
 
   ![ECS_WATCH_STORAGE](../.gitbook/assets/ecs-task-watchtower-storage.png)
-
   - Hit **Add**
 
 9. Finally, hit the **Create** button.
