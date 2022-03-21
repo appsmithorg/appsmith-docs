@@ -84,6 +84,7 @@ Once the cluster is created, you will need to create a task that will be run on 
   - Add port mappings for the ports **80->80,443->443, 9001->9001**
   - Enable **Auto-configure CloudWatch Logs** for log configuration
   - Hit **Add**
+
     ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
 8. Configure Watchtower container configuration.
   - Hit **Add container** again.
