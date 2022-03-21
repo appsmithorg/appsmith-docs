@@ -159,6 +159,7 @@
 * [Multi-select](widget-reference/multiselect.md)
 * [Multi-tree-select](widget-reference/multi-tree-select.md)
 * [Phone Input](widget-reference/phone-input.md)
+* [Progress](widget-reference/progress.md)
 * [Progress Bar](widget-reference/progress-bar.md)
 * [Radio Group](widget-reference/radio-group.md)
 * [Rating](widget-reference/rating.md)
