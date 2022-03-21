@@ -8,6 +8,8 @@ Git Sync allows you to version control your apps by connecting them with a Git h
 Git Sync works with any Git hosting service that supports SSH protocol.
 {% endhint %}
 
+{% embed url="https://youtu.be/emdZaG-tzgw" caption="How To Add Version Control To Your Apps With Git" %}
+
 ## Connecting to Git Repository
 
 To connect your app with git, follow the steps below:
