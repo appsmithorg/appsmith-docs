@@ -5,6 +5,7 @@
   * [Docker](setup/docker.md)
   * [Kubernetes](setup/kubernetes.md)
   * [AWS AMI](setup/aws-ami.md)
+  * [AWS ECS](setup/aws-ecs.md)
   * [DigitalOcean](setup/digitalocean.md)
   * [Heroku](setup/heroku.md)
   * [CloudJiffy](setup/cloudjiffy.md)
