@@ -9,6 +9,7 @@
   * [DigitalOcean](setup/digitalocean.md)
   * [Heroku](setup/heroku.md)
   * [CloudJiffy](setup/cloudjiffy.md)
+  * [Ansible](setup/ansible.md)
   * [Instance Configuration](setup/instance-configuration/README.md)
     * [Admin Settings](setup/instance-configuration/admin-settings.md)
     * [Email](setup/instance-configuration/email/README.md)
