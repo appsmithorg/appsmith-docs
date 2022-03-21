@@ -64,6 +64,7 @@ To configure a ECS installation, follow these steps:
  6. Click on **Update**, and select the **latest revision** of the Task Definition.
  7. Hit **Skip** to **review** and then Update Service. A screen showing the status will show up.
    ![SERVICE_RESTART](/.gitbook/assets/ecs-service-restart.png)
+
    It may take a minute for the new ECS Task to start running.
 
 
