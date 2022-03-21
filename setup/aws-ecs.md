@@ -75,21 +75,21 @@ Once the cluster is created, you will need to create a task that will be run on 
 4. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
 5. Set the required **task size** (memory & cpu)
 6. Go to the **Volumes** section and add a new volume. Enter the Name as `Docker_Endpoint`, set Volume type as **Bind Mount** and set the **Source path** to `/var/run/docker.sock`.
-    ![ECS_TASK_VOL](../.gitbook/assets/ecs-task-vol.png)
+![ECS_TASK_VOL](../.gitbook/assets/ecs-task-vol.png)
 7. Configure **Appsmith container configuration**.
   - Hit **Add container** button.
   - Enter the container name, and set the Image to `appsmith/appsmith-ce`
   - Add port mappings for the ports **80->80,443->443, 9001->9001**
   - Enable **Auto-configure CloudWatch Logs** for log configuration
   - Hit **Add**
-    ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
+![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
 8. Configure Watchtower container configuration.
   - Hit **Add container** again.
   - Enter the container name, and set Image to `containrrr/watchtower`
   ![ECS_TASK_WATCH](../.gitbook/assets/ecs-task-watchtower.png)
   - Set the *Monut points Source volume* to `Docker_Entrypoint` and set the Container path to `/var/run/docker.sock`
   - Enable **Auto-configure CloudWatch Logs** for log configuration
-  ![ECS_WATCH_STORAGE](../.gitbook/assets/ecs-task-watchtower-storage.png)
+![ECS_WATCH_STORAGE](../.gitbook/assets/ecs-task-watchtower-storage.png)
   - Hit **Add**
 9. Finally, hit the **Create** button.
 
