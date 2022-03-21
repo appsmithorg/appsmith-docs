@@ -86,15 +86,18 @@ Once the cluster is created, you will need to create a task that will be run on 
   - Hit **Add**
 
     ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
+
 8. Configure Watchtower container configuration.
   - Hit **Add container** again.
   - Enter the container name, and set Image to `containrrr/watchtower`
   ![ECS_TASK_WATCH](../.gitbook/assets/ecs-task-watchtower.png)
   - Set the *Monut points Source volume* to `Docker_Entrypoint` and set the Container path to `/var/run/docker.sock`
   - Enable **Auto-configure CloudWatch Logs** for log configuration
+
   ![ECS_WATCH_STORAGE](../.gitbook/assets/ecs-task-watchtower-storage.png)
+
   - Hit **Add**
-  
+
 9. Finally, hit the **Create** button.
 
 
