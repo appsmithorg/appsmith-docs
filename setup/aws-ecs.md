@@ -120,13 +120,13 @@ Once the cluster is created, you will need to create a task that will be run on 
 5. The following screen will appear showing the **launch status**, click on **View Service** button.
     ![ECS_SERVICE_STATUS](../.gitbook/assets/ecs-service-launch-status.png)
 6. You will be directed to the **service detail** page. Your task listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
-![ECS_SERVICE_TASK_STATUS](../.gitbook/assets/ecs-service-task-status.png)
+    ![ECS_SERVICE_TASK_STATUS](../.gitbook/assets/ecs-service-task-status.png)
 7. Cick on the **task** to get the details of your running service.
   ![ECS_TASK_DETAIL](../.gitbook/assets/ecs-task-details.png)
 8. Finally, click on the **EC2 instance id** to navigate to the EC2 console with your ECS instance (which is basically an EC2 instance running the container service) listed.
   ![ECS_EC2_INSTANCE](../.gitbook/assets/ecs-instance-ec2.png)
 9. Find the **public IP address** or **DNS name** and enter it on your browser to see Appsmith's welcome page.
- ![APP_WELCOME](../.gitbook/assets/appsmith-welcome-page.png)
+    ![APP_WELCOME](../.gitbook/assets/appsmith-welcome-page.png)
 
 ## Troubleshooting
 
