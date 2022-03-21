@@ -11,6 +11,7 @@ You can follow one of our guides to deploy Appsmith via the technology you prefe
 * [Docker](docker.md) **(Recommended)**
 * [Kubernetes](kubernetes.md)
 * [AWS AMI](aws-ami.md)
+* [AWS ECS](aws-ecs.md)
 * [DigitalOcean](digitalocean.md)
 * [Heroku Guide](heroku.md)
 
