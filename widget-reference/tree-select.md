@@ -11,7 +11,7 @@ Tree-select options can be populated from a data source like an API / Query by t
 ```
 // Query1.data is assumed to be an array here
 {{ Query1.data.map((row) => {
-      return { label: row.name, value: row.id, children: {label: row.child.label, value: row.child.value}
+      return { label: row.name, value: row.id, children: {label: row.child.label, value: row.child.value}}
    })
 }}
 ```
