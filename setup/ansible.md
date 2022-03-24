@@ -67,7 +67,7 @@ There are some variables that will need input from you to get the application st
 You can run the ansible playbook with the following command:
 
 ```
-$ ansible-playbook -i inventory appsmith-playbook.yml --extra-var "@appsmith-vars.yml"
+$ ansible-playbook -i inventory appsmith-playbook.yml --extra-vars "@appsmith-vars.yml"
 ```
 
 The command above will use the host information from the `inventory` file & feed your configuration vars from `appsmith-vars.yml` before running the playbook
