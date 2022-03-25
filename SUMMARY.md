@@ -33,6 +33,7 @@
     * [Building a Simple UI](tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view.md)
     * [Using forms](tutorials/building-a-store-catalog-manager/part-2-using-forms.md)
     * [Creating interactive views](tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views.md)
+* [Sample Apps](sample-apps.md)
 * [How To Guides](how-to-guides/README.md)
   * [Returning data from a stored procedure](how-to-guides/returning-data-from-a-stored-procedure.md)
   * [How to work with Google Sheets on Appsmith](how-to-guides/how-to-work-with-google-sheets-on-appsmith.md)
@@ -65,7 +66,6 @@
 * [FAQs](faq.md)
 * [Telemetry](telemetry.md)
 * [Security](security.md)
-* [Sample Apps](sample-apps.md)
 
 ## Core Concepts
 
