@@ -127,4 +127,4 @@ Almost similar to the original browser API, apart from the fact that you don't h
 
 ### Mode
 
-This field is an enum that contains whether the application is currently running in view mode or edit mode. It takes the values VIEW|EDIT
+This field is an enum that contains whether the application is currently running in view mode or edit mode. It takes the values VIEW/EDIT
