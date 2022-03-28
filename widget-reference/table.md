@@ -329,7 +329,7 @@ Let's bind a text widget to `Table_1` using searchText.
 | **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md)       |
 | **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
 | **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).       |
-
+| **onFilterUpdate**             | Sets the action to run when the filters are changed. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).       |
 ### Header Options
 
 These are the options that you can add to the table header. Currently, the following features are available to add or remove from the table header -
