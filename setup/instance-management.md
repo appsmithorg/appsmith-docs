@@ -91,3 +91,15 @@ docker-compose exec appsmith supervisorctl tail backend stderr
 ```
 
 To learn more, please refer to [Supervisor's documentation](http://supervisord.org/running.html#supervisorctl-actions) on what actions are available to be performed by the command-line interface.
+
+## Turn auto-updates off
+
+In your `docker-compose.yml` file, the `auto_update` container is responsible for periodically checking for updates to Appsmith and applying those updates. If you wish to disable this auto-updating, please run the following command:
+
+```
+docker-compose down auto_update
+```
+
+This will bring down the `auto_update` container, and update checks are no-longer performed. Note that however, if you run `docker-compose up -d` later, for any reason, then this `auto_update` will be brought up again. You can use that to turn auto-updates on again in the future.
+
+To check if auto updates are turned on in your instance, please run `docker-compose ps` and see if there a server called `auto_update` listed in the output, and if it's status is `Up`. If not, then auto updates are turned off for your instance.
