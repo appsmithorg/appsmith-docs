@@ -1,0 +1,9 @@
+root: ./
+
+structure:  
+  readme: README.md  
+  summary: SUMMARY.md
+
+redirects:  
+  setup/instance-configuration/google-login: setup/instance-configuration/google-login.md
+  setup/instance-configuration/github-login: setup/instance-configuration/github-login.md
