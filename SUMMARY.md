@@ -18,11 +18,16 @@
     * [SSL & Custom Domain](setup/instance-configuration/custom-domain.md)
     * [Custom MongoDB & Redis](setup/instance-configuration/custom-mongodb-redis.md)
     * [Signup Restriction](setup/instance-configuration/disable-user-signup.md)
-    * [Google OAuth](setup/instance-configuration/google-login.md)
-    * [Github OAuth](setup/instance-configuration/github-login.md)
     * [Google Maps](setup/instance-configuration/google-maps.md)
     * [Disable Intercom](setup/instance-configuration/disable-intercom.md)
     * [Maintenance Window](setup/maintenance-window.md)
+    * [Single Sign-On(SSO)](setup/instance-configuration/single-sign-on-sso/README.md)
+      * [Github OAuth](setup/instance-configuration/single-sign-on-sso/github-login.md)
+      * [Google OAuth](setup/instance-configuration/single-sign-on-sso/google-login.md)
+      * [OpenID Connect(OIDC)](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/README.md)
+        * [Auth0](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/auth0.md)
+        * [Ping Identity](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/ping-identity.md)
+        * [Okta](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/okta.md)
   * [Instance Management](setup/instance-management.md)
 * [Tutorials](tutorials/README.md)
   * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
@@ -94,6 +99,7 @@
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)
 * [Git Sync](core-concepts/git-sync.md)
+* [JSON Web Tokens (JWT)](core-concepts/json-web-tokens-jwt.md)
 
 ## Datasource Reference
 
