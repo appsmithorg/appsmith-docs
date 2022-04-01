@@ -158,6 +158,7 @@
 * [Iframe](widget-reference/iframe.md)
 * [Image](widget-reference/image.md)
 * [Input](widget-reference/input.md)
+* [JSON Form](widget-reference/json-form.md)
 * [List](widget-reference/list.md)
 * [Maps](widget-reference/maps.md)
 * [Map Chart](widget-reference/map-chart.md)
