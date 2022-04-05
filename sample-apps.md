@@ -51,11 +51,21 @@ description: >-
 
 [How to bulk update data from Postgres?](https://app.appsmith.com/applications/623cd37b4d9aea1b062b3470/pages/623cd37b4d9aea1b062b347b)
 
-## UI Components
+## Queries/Apis
 
-[How to create a custom header & footer for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/61fb97982cd3d95ca414b20d)
+[How to pass arguments to APIs/Queries' `run()` method?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
 
-[How to create a sidebar for navigation for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/622afd7e6ec44f30294c3f48)
+[How to run APIs/Queries in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf7722cd3d95ca414a948)
+
+[How to run multiple queries on a click event?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61e4fdb3eb0501052b9fc47d)
+
+[How to use the params received by APIs/Queries?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
+
+[How to use values of queryParams in an API/Query?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62025b3456d52d3fd7b71797?rows=6)
+
+[How to create a GraphQL (Hasura) query to fetch table data?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/61f81d4f9d6d6a6720c9b4ca)
+
+[How to write a RAW MongoDB query to update the document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
 
 ## JS Object & Promises/Async-Await
 
@@ -72,8 +82,6 @@ description: >-
 [How to run an API/Query (action) from a JS function?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61f8f51a9d6d6a6720c9bbb8)
 
 [How to run multiple actions from a JS function?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7c0e39d6d6a6720c9a560)
-
-[How to run APIs/Queries in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf7722cd3d95ca414a948)
 
 ## Forms
 
@@ -95,7 +103,7 @@ description: >-
 
 [How to delete a property from the appsmith store?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7b1309d6d6a6720c9a494)
 
-[How to open a modal on button click -  `openModal()`?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407)
+[How to open a modal on button click - `openModal()`?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407)
 
 [How to close a modal on button click - `closeModal()`?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407)
 
@@ -108,20 +116,6 @@ description: >-
 [How to dynamically hide/show a widget?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/6214df70da926877eb275728)
 
 [How to dynamically change the value of a widget?](https://app.appsmith.com/applications/61fe22d62cd3d95ca414cd8b/pages/61fe22d62cd3d95ca414cd8e)
-
-## Queries/Apis
-
-[How to create a GraphQL (Hasura) query to fetch table data?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/61f81d4f9d6d6a6720c9b4ca)
-
-[How to pass arguments to APIs/Queries' `run()` method?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
-
-[How to use the params received by APIs/Queries?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
-
-[How to use values of queryParams in an API/Query?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62025b3456d52d3fd7b71797?rows=6)
-
-[How to run multiple queries on a click event?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61e4fdb3eb0501052b9fc47d)
-
-[How to write a RAW MongoDB query to update the document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
 
 ## Date-Time
 
@@ -137,7 +131,7 @@ description: >-
 
 ## Widgets
 
-[How to populate a list widget from query/API response data?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fa19d411f4c46e3dfd2253)&#x20;
+[How to populate a list widget from query/API response data?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fa19d411f4c46e3dfd2253)
 
 [How to trigger an action on list widget item selection?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fbe3122cd3d95ca414b838)
 
@@ -151,13 +145,19 @@ description: >-
 
 [How to upload a file to your app (using Filepicker Widget)?](https://app.appsmith.com/applications/6200a84f2cd3d95ca414dc0d/pages/6200a84f2cd3d95ca414dc10)
 
+## UI Components
+
+[How to create a custom header & footer for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/61fb97982cd3d95ca414b20d)
+
+[How to create a sidebar for navigation for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/622afd7e6ec44f30294c3f48)
+
 ## Utility
 
 [How to build a simple counter app?](https://app.appsmith.com/applications/61e14d22eb0501052b9fae0b/pages/61e14d22eb0501052b9fae0e)
 
 [How to build a simple calculator app?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbf8572cd3d95ca414b958)
 
-[How to embed HTML in the app (using Iframe Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684)
+[How to embed HTML in the app (using `iframe` Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684)
 
 [How to parse XML data (using JS Object)?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/61efeb7dbe698f35db551ff8)
 
