@@ -27,7 +27,7 @@ These properties allow you to edit the table itself. All these properties are pr
 | **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
 | **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                                                       |
-| **Table Row Count**            | The user has to input the total number of records returned as part of a query or API call, which will be displayed in a table. It is only visible when you choose to enable **server-side pagination**. |
+| **Table Record Count**         | The user has to input the total number of records returned as part of a query or API call, which will be displayed in a table. It is only visible when you choose to enable **server-side pagination**. |
 
 Let's understand the widget properties in detail.
 
