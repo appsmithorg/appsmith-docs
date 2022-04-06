@@ -85,9 +85,9 @@ description: >-
 
 ## Forms
 
-[How to do form field validation?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/62074c466b4b1e154a3bf01a)
+[How to do form field validation?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/6245b7264f1a665b23047e5f)
 
-[How to add dynamic input fields to a form?](https://app.appsmith.com/applications/623cd37b4d9aea1b062b3470/pages/623cd37b4d9aea1b062b347b)
+[How to add dynamic input fields to a form?](https://app.appsmith.com/input-widget/dynamic-inputs-624c647651a8863d6c402981)
 
 ## Charts
 
