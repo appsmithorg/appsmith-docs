@@ -6,6 +6,8 @@ The following document assumes that you understand the [basics of connecting to 
 
 The SMTP plugin can connect to an SMTP server to send the dynamic email(s) to a list of recipients.
 
+{% embed url="https://youtu.be/hAln7o1aUA4" %}
+
 ## Connection Settings
 
 The SMTP datasource requires the following information to establish a connection. All fields are mandatory.
