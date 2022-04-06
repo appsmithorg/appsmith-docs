@@ -2,6 +2,8 @@
 
 A text widget displays textual information. Whether you want to add a paragraph or a heading to a container, a text widget makes it easy to style and display text.
 
+{% embed url="https://youtu.be/-anmDHXDScQ" caption="How To Use The Text Widget" %}
+
 ## Properties
 
 Properties allow you to edit the text widget, connect it with other widgets and customize the user actions.
