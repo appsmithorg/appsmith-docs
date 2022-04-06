@@ -16,19 +16,20 @@ Properties allow you to edit the table, connect it with other widgets and custom
 
 These properties allow you to edit the table itself. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
 
-| **Widget Property**            | **Description**                                                                                                                                                           |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Table Data**                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.    |
-| **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings.                           |
-| **Server Side Pagination**     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query. |
-| **Visible**                    | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                               |
-| **Sortable**                   | It enables or disables sorting. If turned off, the user will not be able to sort the data when the app is published.                                                      |
-| **Default Search Text**        | Sets the default search text of the table.                                                                                                                                |
-| **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                |
-| **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                         |
-| **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                         |
+| **Widget Property**            | **Description**                                                                                                                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Table Data**                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.                                  |
+| **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings.                                                         |
+| **Server Side Pagination**     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
+| **Visible**                    | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                             |
+| **Sortable**                   | It enables or disables sorting. If turned off, the user will not be able to sort the data when the app is published.                                                                                    |
+| **Default Search Text**        | Sets the default search text of the table.                                                                                                                                                              |
+| **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
+| **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
+| **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                                                       |
+| **Table Row Count**            | The user has to input the total number of records returned as part of a query or API call, which will be displayed in a table. It is only visible when you choose to enable **server-side pagination**. |
 
-Let's understand the widget properties in detail\*\*.\*\*
+Let's understand the widget properties in detail.
 
 #### Table Data
 
@@ -40,9 +41,9 @@ You can also bind your data from a database / API using the mustache syntax ( \{
 
 Let's bind the data from a mock database into a table widget.
 
-1. Create an App and click on "data sources" under the explorer panel.
-2. Go to "+Create new" and select the "users" database from the Sample Databases. The user database will now appear under the “Active" window.
-3. From the "Active" window, click on “New Query+" for the Users database and create a "select" [query](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/querying-a-database#setting-up-a-query) to fetch the data.
+1. Create an App and click on `Datasources` under the explorer panel.
+2. Go to `+Create new` and select the `users` database from the Sample Databases. The user database will now appear under the <mark style="color:green;">Active</mark> window.
+3. From the "Active" window, click on <mark style="color:orange;">New Query+</mark> for the Users database and create a "select" [query](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/querying-a-database#setting-up-a-query) to fetch the data.
 4. Go back to the canvas and drag the table widget onto it.
 5. Open the property pane, clear the Table data window and enter the following snippet:
 
@@ -50,7 +51,7 @@ Let's bind the data from a mock database into a table widget.
 {{<query_name>.data}}
 ```
 
-Where \<query\_name> is the query's name created in Step 2.
+Where `<query_name>` is the query's name created in Step 2.
 
 {% embed url="https://youtu.be/czxtgHJ1sUE" %}
 
@@ -85,7 +86,7 @@ Column Control has the following properties:
 ![](../.gitbook/assets/computed\_value.jpg)
 
 \
-You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column. \\
+You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column.&#x20;
 
 For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
 
@@ -323,12 +324,13 @@ Let's bind a text widget to `Table_1` using searchText.
 
 ### Events
 
-| Action                 | Description                                                                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).        |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md)       |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).       |
+| Action                 | Description                                                                                                                                                                                                                                                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                                 |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md)                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                          |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                                |
 
 ### Header Options
 
