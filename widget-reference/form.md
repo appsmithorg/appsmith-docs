@@ -2,7 +2,7 @@
 
 A **Form** is the most widely used way of capturing a user’s digital or handwritten information. Keeping this in mind, Appsmith provides a form widget that caters to all your needs to capture the user input and wire it to a database query or an API.
 
-Form widget serves as a parent widget that can store different widgets like texts to display what information to capture, input box to capture the desired input from the user, dropdown to allow selection, and many more. From building a user registration to a complex checkout or payment app, you can easily design the forms that best suit your business requirement with all these widgets at your disposal.&#x20;
+Form widget serves as a parent widget that can store different widgets like texts to display what information to capture, an input box to capture the desired input from the user, a dropdown to allow selection, and many more. From building a user registration to a complex checkout or payment app, you can easily design the forms that best suit your business requirement with all these widgets at your disposal.
 
 {% embed url="https://www.youtube.com/watch?v=HtoWzzje-Vs&feature=youtu.be" %}
 
@@ -23,7 +23,7 @@ You can move the form widget along with the widgets embedded into it and positio
 A form widget stores one or more widgets to define a logical group for capturing information. Depending on the needs, the widget can store any number of widgets.
 
 {% hint style="info" %}
-You can create a hierarchy of forms and can have one or more form widgets embedded into it.
+You can create a hierarchy of forms and have one or more form widgets embedded into it.
 {% endhint %}
 
 Once you drag a form widget on the canvas, you can see a [text widget](https://docs.appsmith.com/widget-reference/text) and two [buttons](https://docs.appsmith.com/widget-reference/button) by default embedded into it. You can add more widgets based on your requirements.
@@ -44,7 +44,7 @@ To build this app, you can use a form widget to trigger the search with an input
 
 #### **Form Button**
 
-By default, the form widget provides two buttons: Reset and Submit, which help in resetting the form fields to their original values or saving the data by calling an API/Query, respectively. The form buttons have the same set of functionality as available for the [button widget](https://docs.appsmith.com/widget-reference/button). This section will focus on the specific attributes that the reset and submit buttons have as embedded widgets in the form.
+By default, the form widget provides two buttons: Reset and Submit, which help reset the form fields to their original values or save the data by calling an API/Query. The form buttons have the same set of functionality as available for the [button widget](https://docs.appsmith.com/widget-reference/button). This section will focus on the specific attributes that the reset and submit buttons have as embedded widgets in the form.
 
 #### **Reset Button**
 
@@ -68,18 +68,18 @@ If you have mandatory fields in your form, say the search term, you can see a gr
 
 **Reset Form on Success**
 
-The property is on for a submit form button, and it clears the fields after the successful execution of an onClick event. You can choose to turn it off if you would like to restore the values. For example, you would like to preserve the search term supplied by the user on the screen even after you fetch the search results. You can achieve this by turning off the property.
+The property is on for a submit form button, and it clears the fields after the successful execution of an onClick event. You can turn it off if you would like to restore the values. For example, you would like to preserve the search term supplied by the user on the screen even after you fetch the search results. You can achieve this by turning off the property.
 
 ## Display Search Results
 
-Now that the search is in place, you can use the table widget to bind the query's response and display the results as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](https://docs.appsmith.com/widget-reference/table).
+Now that the search is in place, you can use the table widget to bind the query's response and display the results, as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](https://docs.appsmith.com/widget-reference/table).
 
 {% embed url="https://youtu.be/Upn7LDy7UQQ" %}
 
 You saw that your form is a logical group of widgets that allows you to capture user-related information and perform an operation like a search.
 
 {% hint style="info" %}
-You can embed a lot of widgets into the form. Typically, all the widgets that can capture user input are eligible for embedding like input, checkbox, datepicker, select, and so on.
+You can embed a lot of widgets into the form. Typically, all the widgets that can capture user input are eligible for embedding like input, checkbox, datepicker, select, etc.
 {% endhint %}
 
 ## Properties
@@ -90,20 +90,22 @@ The widget properties allow you to enhance the look and feel of a form widget an
 Ensure that you select the widget to access its properties on the right bar.
 {% endhint %}
 
-The properties pane follows the same structure for almost all the widgets, in addition to including or excluding properties that are not specific to the selected widget.
+The properties pane follows the same structure for almost all the widgets and includes or excludes properties not specific to the selected widget.
 
-| **Property**         | **Description**                                              | **Example**                                                                                                                                                                                     | **Code Snippet**            |
-| -------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| **Name**             | Allows you to provide a unique name to the widget            | In the example above for capturing the Job applicant’s information app. We named a form widget **SearchTermForm**.                                                                              |                             |
-| **Visible**          | Allows you to show/hide a widget.                            | You can either use a toggle or code to turn it off/on.                                                                                                                                          | `{{widget_name.isVisible}}` |
-| **Animate Loading**  | Allows you to control a widget’s animation on the page load. | You can use a toggle to turn it on/off. When turned off, the widget will load without any skeletal animation. You can also turn it off/on using javascript by enabling the JS label next to it. |                             |
-| **Scroll Contents**  | Allows you to enable a scroll bar to scroll the contents.    | You can use a toggle to turn it on/off. Turning it on gives you the flexibility to embed more widgets in a small space.                                                                         |                             |
-| **Background Color** | Allows you to set the background color of the widget.        | You can select the color from the pallet or use an HTML Color Code.                                                                                                                             |                             |
-| **Border Color**     | Allows you to set a color for displaying the form's border.  | You can select the color from the pallet or use an HTML Color Code.                                                                                                                             |                             |
-| **Border Width**     | Allows you to define the thickness of the border.            | You can supply a higher number for a thick border.                                                                                                                                              |                             |
-| **Border Radius**    | Allows you to define curved corners.                         | You can supply a higher number for a profound curve.                                                                                                                                            |                             |
-| **Box Shadow**       | Allows you choose from the available shadow styles.          | You can choose one of the available shadow styles for the widget.                                                                                                                               |                             |
-| **Shadow Color**     | Allows you to set the color of the shadow.                   | You can choose the color from the pallet or supply an HTML Color Code.                                                                                                                          |                             |
+| **Property**         | **Description**                                                           | **Type**   | **Example**                                                                                                                                                                                     | **Code Snippet**             |
+| -------------------- | ------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| **Name**             | Allows you to provide a unique name to the widget                         | Formatting | In the example above for capturing the Job applicant’s information app. We named a form widget **SearchTermForm**.                                                                              |                              |
+| **Visible**          | Allows you to show/hide a widget.                                         | Binding    | You can either use a toggle or code to turn it off/on.                                                                                                                                          | `{{widget_name.isVisible}}`  |
+| **Animate Loading**  | Allows you to control a widget’s animation on the page load.              | Formatting | You can use a toggle to turn it on/off. When turned off, the widget will load without any skeletal animation. You can also turn it off/on using javascript by enabling the JS label next to it. |                              |
+| **Scroll Contents**  | Allows you to enable a scroll bar to scroll the contents.                 | Formatting | You can use a toggle to turn it on/off. Turning it on gives you the flexibility to embed more widgets in a small space.                                                                         |                              |
+| **Background Color** | Allows you to set the background color of the widget.                     | Formatting | You can select the color from the pallet or use an HTML Color Code.                                                                                                                             |                              |
+| **Border Color**     | Allows you to set a color for displaying the form's border.               | Formatting | You can select the color from the pallet or use an HTML Color Code.                                                                                                                             |                              |
+| **Border Width**     | Allows you to define the thickness of the border.                         | Formatting | You can supply a higher number for a thick border.                                                                                                                                              |                              |
+| **Border Radius**    | Allows you to define curved corners.                                      | Formatting | You can supply a higher number for a profound curve.                                                                                                                                            |                              |
+| **Box Shadow**       | Allows you to choose from the available shadow styles.                    | Formatting | You can choose one of the available shadow styles for the widget.                                                                                                                               |                              |
+| **Shadow Color**     | Allows you to set the color of the shadow.                                | Formatting | You can choose the color from the pallet or supply an HTML Color Code.                                                                                                                          |                              |
+| **hasChanges**       | It helps you to know if the form has been changed by the application user | Binding    | You can use the property to verify if any fields in the form have been changed.                                                                                                                 | `{{widget_name.hasChanges}}` |
+| **data**             | Allows you to access the data of embedded widgets.                        | Binding    | You can use the property to access the widget data.                                                                                                                                             | `{{widget_name.data}}`       |
 
 ## General
 
@@ -150,6 +152,40 @@ When you check the checkbox, it will enable the Visible property and show the fo
 
 You can enable scroll contents em on when you want to embed multiple widgets. The scroll contents property enables a scroll bar to scroll the contents within a form.
 
+### hasChanges
+
+Whenever the application is loaded the `hasChanges` property is set to **false.** Whenever the application user changes the values of the widgets embedded in the form, Appsmith sets the property `hasChanges` to **true**. You can use this property to verify if the fields are modified and can prompt the users with a confirmation message to save or discard the changes.
+
+{% embed url="https://youtu.be/UsZQ6q48sKw" %}
+How to use hasChanges property?
+{% endembed %}
+
+```
+export default {
+	checkDataChanges: () => {
+		//checks if the form has changed.
+		if (EmployeeForm.hasChanges) {
+		   showAlert("You have unsaved changes on the form. Please save to proceed.");
+		   return false;
+		}		
+	}
+}
+```
+
+You can see that the `hasChanges` value can be read into the code, and the user can be prompted to save the data.
+
+### data
+
+You can use the property **data** to access the values of embedded widgets in the form. For example, you have added an input widget with the name `FirstName` to form `EmployeeForm`. You can access the value provided by the user in the **FirstName** field by using the code snippet:
+
+```
+EmployeeForm.data.FirstName;
+```
+
+{% embed url="https://youtu.be/pKrOLPDYelc" %}
+How to use the data property of the form to read embedded widgets' values?
+{% endembed %}
+
 ## Styles
 
 Choose properties under this head to change the look and feel of the form. You can choose a background color, border color, width, and radius.
@@ -174,7 +210,7 @@ You can supply a higher number to have a thick border. However, a smaller number
 
 ### Border Radius
 
-To beautify the form widget, you might want to have rounded or curved corners. You can achieve this by setting a border-radius for the widget.
+To beautify the form widget, you might want rounded or curved corners. You can achieve this by setting a border-radius for the widget.
 
 {% hint style="info" %}
 The higher the number more profound are the curved corners.
@@ -189,4 +225,3 @@ You can use the box-shadow property to attach one or more shadows to the widget.
 You can choose from the popular color options to add a color effect to the widget shadow.
 
 Build your apps using the form widget and capture user information seamlessly.
-
