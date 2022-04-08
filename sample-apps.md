@@ -37,9 +37,11 @@ description: >-
 
 [How to do pagination with GraphQL?](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd)
 
-[How to add pagination to a table?](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd)
+[How to add pagination to a Table Widget?](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd)
 
-[How to add pagination to a list?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/620b90606b4b1e154a3c273d)
+[How to add pagination to a List Widget?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/620b90606b4b1e154a3c273d)
+
+[How to add pagination to a Select?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695)
 
 ## Bulk insert/update
 
