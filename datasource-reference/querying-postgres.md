@@ -51,6 +51,9 @@ PostgreSQL databases can be queried using the standard [SQL syntax](https://www.
 
 Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up a possibility of SQL injection by merging untrusted user input to trusted data for execution. Using Prepared Statement is one strategy of mitigating this risk.
 
+{% embed url="https://youtu.be/Q69wdQEQbbE" caption="How To Use Prepared Statements To Prevent SQL Injections" %}
+
+
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
 Let's look at a sample user query :
