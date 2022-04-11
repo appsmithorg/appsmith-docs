@@ -45,7 +45,7 @@ It allows you to set the label of the input box. For example, if you want the us
 
 You can leave the label empty if you don't want any titles for your input widget.
 
-{% embed url="https://youtu.be/g26bm8RkxzY" %}
+{% embed url="https://youtu.be/zNGwWO6OXlw" caption="How To Use The Input Widget" %}
 
 #### **Placeholder**
 
