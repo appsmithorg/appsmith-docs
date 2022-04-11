@@ -45,6 +45,10 @@ APPSMITH_OAUTH2_ALLOWED_DOMAINS=exampledomain.com
 * Configre `APPSMITH_OAUTH2_ALLOWED_DOMAINS` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**
   * **Note**: you can provide several domain names using a comma-separated list
 
+{% hint style="warning" %}
+The Client ID and Client Secret entered are not verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the Google authentication config setup, it may lead to the user getting stuck on the login screen if the Google config is incorrect. You’ll have to update the env variables manually to fix this, as you cannot update it via the Admin settings page since you won’t be logged in anymore
+{% endhint %}
+
 **6.** [**Restart the Appsmith instance**](../)
 
 {% hint style="success" %}

@@ -40,6 +40,10 @@ APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET                  
 # ******************************
 ```
 
+{% hint style="warning" %}
+The Client ID and Client Secret entered are not verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the Github authentication config setup, it may lead to the user getting stuck on the login screen if the Github config is invalid. To fix this, you’ll have to update the ENV variables manually by adding a valid Client ID and Client Secret or enabling the form login. You won’t be able to do this via the Admin settings page since you won’t be logged in anymore.
+{% endhint %}
+
 **6.** [**Restart the Appsmith instance**](../)
 
 {% hint style="success" %}
