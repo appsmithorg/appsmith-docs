@@ -97,7 +97,7 @@ To learn more, please refer to [Supervisor's documentation](http://supervisord.o
 In your `docker-compose.yml` file, the `auto_update` container is responsible for periodically checking for updates to Appsmith and applying those updates. If you wish to disable this auto-updating, please run the following command:
 
 ```
-docker-compose down auto_update
+docker-compose rm -s -v -f auto_update
 ```
 
 This will bring down the `auto_update` container, and update checks are no-longer performed. Note that however, if you run `docker-compose up -d` later, for any reason, then this `auto_update` will be brought up again. You can use that to turn auto-updates on again in the future.
