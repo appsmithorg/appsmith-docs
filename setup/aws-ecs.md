@@ -81,7 +81,7 @@ Once the cluster is created, you will need to create a task that will be run on 
   - Enter the container name, and set the Image to `appsmith/appsmith-ce`
   - Add port mappings for the ports **80->80,443->443, 9001->9001**
   - Set the *Mount points Source volume* to `appsmith_stack` and set the Container path to `/appsmith-stacks`
-  ![ECS_TASK_MOUNT](../.gitbook/assets/ecs-mount.png)
+  ![ECS_TASK_MOUNT](../.gitbook/assets/ecs_mount.png)
   - Enable **Auto-configure CloudWatch Logs** for log configuration
   - Hit **Add**
   ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
