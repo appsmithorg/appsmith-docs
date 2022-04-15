@@ -74,24 +74,20 @@ Once the cluster is created, you will need to create a task that will be run on 
     ![ECS_TASK_DEF](../.gitbook/assets/ecs-task-def.png)
 4. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
 5. Set the required **task size** (memory & cpu)
-6. Go to the **Volumes** section and add a new volume. Enter the Name as `Docker_Endpoint`, set Volume type as **Bind Mount** and set the **Source path** to `/var/run/docker.sock`.
-![ECS_TASK_VOL](../.gitbook/assets/ecs-task-vol.png)
+6. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount** and set the **Source path** to `/Appsmith/stacks`.
+![ECS_TASK_VOL](../.gitbook/assets/ecs-volume.png)
 7. Configure **Appsmith container configuration**.
   - Hit **Add container** button.
   - Enter the container name, and set the Image to `appsmith/appsmith-ce`
   - Add port mappings for the ports **80->80,443->443, 9001->9001**
+  - Set the *Mount points Source volume* to `appsmith_stack` and set the Container path to `/appsmith-stacks`
+  ![ECS_TASK_MOUNT](../.gitbook/assets/ecs-mount.png)
   - Enable **Auto-configure CloudWatch Logs** for log configuration
   - Hit **Add**
   ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
-8. Configure Watchtower container configuration.
-  - Hit **Add container** again.
-  - Enter the container name, and set Image to `containrrr/watchtower`
-  ![ECS_TASK_WATCH](../.gitbook/assets/ecs-task-watchtower.png)
-  - Set the *Mount points Source volume* to `Docker_Endpoint` and set the Container path to `/var/run/docker.sock`
-  - Enable **Auto-configure CloudWatch Logs** for log configuration
 ![ECS_WATCH_STORAGE](../.gitbook/assets/ecs-task-watchtower-storage.png)
   - Hit **Add**
-9. Finally, hit the **Create** button.
+8. Finally, hit the **Create** button.
 
 
 ### Step 3: Create and Run an ECS Service.
@@ -126,6 +122,9 @@ Once the cluster is created, you will need to create a task that will be run on 
 9. Find the **public IP address** or **DNS name** and enter it on your browser to see Appsmith's welcome page.
 
     ![APP_WELCOME](../.gitbook/assets/appsmith-welcome-page.png)
+
+>Note: In this guide the docker persistance is tied up with the EC2 instance lifecycle.
+> Auto update is not supported, please go to the service and force redeployment to get the latest image.
 
 ## Troubleshooting
 
