@@ -75,7 +75,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 4. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
 5. Set the required **task size** (memory & cpu)
 6. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount** and set the **Source path** to `/Appsmith/stacks`.
-![ECS_TASK_VOL](../.gitbook/assets/ecs-volume.png)
+![ECS_TASK_VOL](../.gitbook/assets/ecs_volume.png)
 7. Configure **Appsmith container configuration**.
   - Hit **Add container** button.
   - Enter the container name, and set the Image to `appsmith/appsmith-ce`
@@ -85,7 +85,6 @@ Once the cluster is created, you will need to create a task that will be run on 
   - Enable **Auto-configure CloudWatch Logs** for log configuration
   - Hit **Add**
   ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
-![ECS_WATCH_STORAGE](../.gitbook/assets/ecs-task-watchtower-storage.png)
   - Hit **Add**
 8. Finally, hit the **Create** button.
 
@@ -123,8 +122,9 @@ Once the cluster is created, you will need to create a task that will be run on 
 
     ![APP_WELCOME](../.gitbook/assets/appsmith-welcome-page.png)
 
->Note: In this guide the docker persistance is tied up with the EC2 instance lifecycle.
-> Auto update is not supported, please go to the service and force redeployment to get the latest image.
+>Note: - In this guide, If you are using the embeded mongodb, the container persistance is tied up with the EC2 instance lifecycle.
+>
+> -  Auto update is not supported, please go to the service and force redeployment to update your instance with the latest image.
 
 ## Troubleshooting
 
