@@ -15,3 +15,8 @@ If your APIs are protected by an authentication mechanism, that requires a stand
 
 Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../../setup/), and audit it to ensure none of your data leaves your VPC.
 
+## Smart JSON Substitution
+
+The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
+
+{% embed url="https://youtu.be/-Z3y-pdNhXc" caption="How To Use Smart JSON Substitution" %}
