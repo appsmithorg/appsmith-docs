@@ -1,6 +1,10 @@
 # Progress
 
-The Progress widget indicates the progress of certain user's performed or system triggered actions.
+The Progress widget indicates the progress of certain user performed or system triggered actions.
+
+{% embed url="https://www.youtube.com/watch?v=Yg1Pfy7uc1s" %}
+
+
 
 ## Properties
 

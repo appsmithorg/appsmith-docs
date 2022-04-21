@@ -20,18 +20,18 @@ Here, “myVar1”, “myVar2” are two variables, and “myFun1”, “myFun2�
 
 Once you have created functions and variables in a JS Object, you can call/refer to them at any place where you can write JavaScript across the Appsmith platform, as shown below.
 
-![Calling a JS Object](<../.gitbook/assets/call\_JS\_object (1).png>)
+![Calling a JS Object](../.gitbook/assets/call\_JS\_object.png)
 
 ### Working with JavaScript Editor
 
 JavaScript Editor provides additional functionalities other than the ability to write code using an extensive editor.
 
-JavaScript Editor has the following features:&#x20;
+JavaScript Editor has the following features:
 
 * Running each function manually during development and seeing the output in the Response tab;
-* Seeing the linting errors right in the editor;&#x20;
-* Seeing the syntax errors in the Errors tab;&#x20;
-* Seeing the function execution log in the Log tab;&#x20;
+* Seeing the linting errors right in the editor;
+* Seeing the syntax errors in the Errors tab;
+* Seeing the function execution log in the Log tab;
 * Inserting ready-to-use snippets.
 
 Let us consider the following simple example: Writing a Hello World example using a JS Object.
@@ -49,8 +49,6 @@ If you make a mistake in JavaScript syntax while writing your code, JavaScript E
 You can inspect the error in detail from the Errors tab, as shown below.
 
 ![Errors Tab](../.gitbook/assets/JS\_editor\_error\_detail.png)
-
-
 
 You can also see the history of each update and execution of your function in the Logs tab.
 
@@ -76,7 +74,7 @@ As the outcome, you want to create a table that shows the valuable data from bot
 
 From the Entity Explorer tab, click on the plus icon next to the JS Objects section to create a new JS Object and open it in the JS Editor. Rename this JS Object to “_Utils_.”
 
-Let's write the “_getWeeklyTaskList_” function **** in _Utils_-
+Let's write the “_getWeeklyTaskList_” function \*\*\*\* in _Utils_-
 
 ```
 export default {
@@ -141,9 +139,9 @@ We can call this function on the "_Confirm_" button with just one line - <mark s
 
 ![](../.gitbook/assets/JS\_editor\_confirm\_button.png)
 
-As you want only a select group of people to have admin access to this Dashboard, let’s create another function for access control of the app.&#x20;
+As you want only a select group of people to have admin access to this Dashboard, let’s create another function for access control of the app.
 
-As the dashboard contains confidential data, you might want to limit its accessibility, allowing only the selective members of your team to update this dashboard. Let’s create an access control function that contains a list of emails of the people who will have access to update data in the table.&#x20;
+As the dashboard contains confidential data, you might want to limit its accessibility, allowing only the selective members of your team to update this dashboard. Let’s create an access control function that contains a list of emails of the people who will have access to update data in the table.
 
 Add another function to “_Utils_” JS Object called “_isAdmin_” as shown below.
 
