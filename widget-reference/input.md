@@ -15,7 +15,7 @@ These properties allow you to edit the input box. All these properties are prese
 | Widget Property     | Description                                                                                                                                         |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type will add the associated validation to the user input.            |
-| **Label**           | It sets the label for input. It can be left empty if you don't want any label.                                                                      |
+| **Label**           | It is a group of properties that allows you to provide a name to the field and define the placement of the widget.                                  |
 | **Max Chars**       | It sets the maximum length allowed for input.                                                                                                       |
 | **Placeholder**     | It sets a placeholder text inside the input. It displays an expected input or hints to the user.                                                    |
 | **Tooltip**         | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                    |
@@ -39,15 +39,39 @@ The input box will show an error "invalid input" if the entered data does not ma
 
 {% embed url="https://youtu.be/Ehg74WJeCHo" %}
 
-#### **Label**
+**Label**
 
-It allows you to set the label of the input box. For example, if you want the user to enter a name in the input box, you can enter the label "Name." The `label` appears on the left side of the input box.
+The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-You can leave the label empty if you don't want any titles for your input widget.
+#### **Text**
 
-{% embed url="https://youtu.be/g26bm8RkxzY" %}
+It allows you to set the display name of the input box. For example, if you want the user to enter a name in the input box, you can enter the text as "Name."&#x20;
 
-#### **Placeholder**
+{% hint style="info" %}
+You can leave the text empty if you don't want any display name for your input widget.
+{% endhint %}
+
+#### **Position**
+
+It allows you to specify the placement of the label. You can select one of the available options:
+
+* Top - It allows you to align the text at the top of the input box.
+* Left - It aligns the text to the left of the input box. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
+  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the input box. You can choose:
+    * Left - It aligns the text to the widget's left boundary that is away from the input box.
+    * Right - It aligns the text closer to the input box.
+  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the input box.
+* Auto - It automatically adjusts the position of the text based on the input box's height.
+
+{% hint style="info" %}
+Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
+{% endhint %}
+
+{% embed url="https://youtu.be/7VFebef9JZg" %}
+**How to set label properties?**
+{% endembed %}
+
+**Placeholder**
 
 You can set a proxy text/value inside the input box using the `placeholder` property. It can be any message or hint for the expected input.
 
@@ -65,7 +89,7 @@ One good example of using this property is to bind it with a column of the selec
 
 Using `Regex` or Regular expression property, you can set specific constraints on the input you expect from the user.
 
-For example, let's add a regular expression for entering a name. The name will only have alphabets and space between the first and last name.
+For example, let's add a regular expression for entering a name. The name can contain only alphabets and space between the first and last name.
 
 ```
 /^[a-z -]+$/i
@@ -182,7 +206,7 @@ You can modify the basic styling of the input widget label. Available options ar
 
 ### Icon Options
 
-You can add icons to your input widget, allowing users to recognize the expected input instantly.&#x20;
+You can add icons to your input widget, allowing users to recognize the expected input instantly.
 
 Under Icon options, you can -
 
@@ -192,4 +216,3 @@ Under Icon options, you can -
 {% hint style="info" %}
 We currently use the icons from[ the Blueprint](https://blueprintjs.com) library. You can see the list of icons[ here](https://blueprintjs.com/docs/#icons).
 {% endhint %}
-

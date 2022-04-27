@@ -44,13 +44,12 @@ Read more about submitting Input data to an API below.
 
 #### Widget Properties
 
-
-
 | Property                  | Description                                                                                                                                                                                                                |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Placeholder**           | Sets the Placeholder of the multi-select widget.                                                                                                                                                                           |
 | **Options**               | It lets you set labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property and the optional children property. |
 | **Default Option**        | Sets a default option that will be captured as user input unless the user changes it. Multiple values can be provided as CSV or an array of value strings for a Multi-Select dropdown.                                     |
+| **Label**                 | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](multi-tree-select.md#label).                                                               |
 | **Required**              | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                                                       |
 | **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                                                       |
 | **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                                                           |
@@ -58,9 +57,39 @@ Read more about submitting Input data to an API below.
 | **Clear all Selections**  | When turned on, it allows users to clear the selection which was default or the selection made by them.                                                                                                                    |
 | **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                               |
 
+#### Label
+
+The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+#### **Text**
+
+It allows you to set the display name for the Multi-tree-select widget. For example, if you want the user to add multiple categories, you can enter the text as "Categories."&#x20;
+
+{% hint style="info" %}
+You can leave the text empty if you don't want any display name for your Multi-tree-select widget.
+{% endhint %}
+
+#### **Position**
+
+It allows you to specify the placement of the label. You can select one of the available options:
+
+* Top - It allows you to align the text at the top of the Multi-tree-select widget.
+* Left - It aligns the text to the left of the Multi-tree-select. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
+  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Multi-tree-select widget. You can choose:
+    * Left - It aligns the text to the widget's left boundary that is away from the Multi-tree-select widget.
+    * Right - It aligns the text closer to the Multi-tree-select widget.
+  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Multi-tree-select widget.
+* Auto - It automatically adjusts the position of the text based on the Multi-tree-select widget's height.
+
+{% hint style="info" %}
+Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
+{% endhint %}
+
+{% embed url="https://youtu.be/g6IIejdNmfU" %}
+How to set the label properties?
+{% endembed %}
+
 #### Binding Properties
-
-
 
 | Property                 | Description                                                                                                                                                                              |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

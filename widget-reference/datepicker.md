@@ -18,7 +18,7 @@ description: >-
 
 | Property         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Label**        | Sets the label of the Datepicker.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Label**        | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](datepicker.md#label).                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Default Date** | <p>Sets a default date that will be captured as user input unless it is changed by the user. The default date must be an <strong>ISO</strong> string using the following formats:</p><ul><li>YYYY-MM-DD</li><li>YYYY-MM-DD HH:mm</li><li>ISO 8601 as mentioned in the <a href="https://momentjs.com/docs/#/parsing/string/">moment documentation</a></li><li>Others following the ISO 8601 standard.</li></ul><p>This can also be populated using a moment object <strong>{{ moment() }}</strong> as well.</p><p>&#x3C;b>&#x3C;/b></p> |
 | **Date Format**  | The format of the date selected by the date picker                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Required**     | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -28,6 +28,38 @@ description: >-
 | Action.            | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+
+### Label
+
+The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+#### **Text**
+
+It allows you to set the display name for the Datepicker. For example, if you want the user to select a date of joining, you can enter the text as "Date of Joining."&#x20;
+
+{% hint style="info" %}
+You can leave the text empty if you don't want any display name for your Datepicker widget.
+{% endhint %}
+
+#### **Position**
+
+It allows you to specify the placement of the label. You can select one of the available options:
+
+* Top - It allows you to align the text at the top of the Datepicker.
+* Left - It aligns the text to the left of the Datepicker. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
+  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Datepicker. You can choose:
+    * Left - It aligns the text to the widget's left boundary that is away from the Datepicker.
+    * Right - It aligns the text closer to the Datepicker.
+  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Datepicker.
+* Auto - It automatically adjusts the position of the text based on the Datepicker's height.
+
+{% hint style="info" %}
+Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
+{% endhint %}
+
+{% embed url="https://youtu.be/y6LwyDgojoE" %}
+How to set the label properties?
+{% endembed %}
 
 ### Month Picker
 
@@ -56,4 +88,3 @@ To select just a year rather than a particular date or month, you can convert th
      }
  () }}
 ```
-

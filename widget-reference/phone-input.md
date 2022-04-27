@@ -14,7 +14,7 @@ These properties allow you to edit the input box. All these properties are prese
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Allow country code change** | It enables/disables the dial code dropdown next to the input. If you enable this property, the User will change the dial code from the dropdown.    |
 | **Default country code**      | It sets the default dial code of the widget                                                                                                         |
-| **Label**                     | It sets the label for input. It can be left empty if you don't want any label.                                                                      |
+| **Label**                     | It is a group of properties that allows you to provide a name to the field and define the placement of the widget.                                  |
 | **Placeholder**               | It sets a placeholder text inside the input. It displays an expected input or hints to the user.                                                    |
 | **Tooltip**                   | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                    |
 | **Default text**              | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record |
@@ -38,11 +38,35 @@ It enables/disables the dial code dropdown next to the input box. If you enable 
 
 #### Label
 
-It allows you to set the label of the input box. For example, if you want the user to enter a personal mobile on the input box, you can enter the label “Personal mobile.” The label appears on the left side of the input box.
+The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-{% embed url="https://youtu.be/WBUUHLCTDlg" %}
+#### **Text**
 
-You can leave the label field empty if you don’t want any labels.
+It allows you to set the label of the **** Phone Input box. For example, if you want the user to enter a work mobile number for the Phone Input box, you can enter the text as “Work.”&#x20;
+
+{% hint style="info" %}
+You can leave the text empty if you don't want any display name for your Phone Input widget.
+{% endhint %}
+
+#### **Position**
+
+It allows you to specify the placement of the label. You can select one of the available options:
+
+* Top - It allows you to align the text at the top of the phone input box.
+* Left - It aligns the text to the left of the Phone Input box. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
+  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Phone Input box. You can choose:
+    * Left - It aligns the text to the widget's left boundary that is away from the Phone Input box.
+    * Right - It aligns the text closer to the Phone Input box.
+  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Phone Input box.
+* Auto - It automatically adjusts the position of the text based on the Phone Input box's height.
+
+{% hint style="info" %}
+Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
+{% endhint %}
+
+{% embed url="https://youtu.be/l92dQO-d6rw" %}
+How to set the label properties?
+{% endembed %}
 
 #### Placeholder
 
@@ -198,8 +222,6 @@ For example, let's take an Input widget `Phoneinput1` and bind its dial code to 
 {{Phoneinput1.dialCode}}
 ```
 
-
-
 {% embed url="https://youtu.be/pFoQgQaBER0" %}
 
 #### countryCode
@@ -219,8 +241,6 @@ For example, let's take an Input widget `Phoneinput1` and bind the selected coun
 ```
 {{Phoneinput1.countryCode}}
 ```
-
-
 
 {% embed url="https://youtu.be/3E11ma5vGuM" %}
 
