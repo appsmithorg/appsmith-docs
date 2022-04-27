@@ -1,6 +1,6 @@
 # Git Sync
 
-Git Sync allows you to version control your apps by connecting them with a Git hosting provider (Github, GitLab, Bitbucket), making it easier to track changes, make rollbacks or collaborate using git branches.
+Git Sync allows you to version control your apps by connecting them with a Git hosting provider (Github, GitLab, Bitbucket), making it easier to track changes, create rollbacks or collaborate using git branches.
 
 **Note:**
 
@@ -12,52 +12,74 @@ Git Sync works with any Git hosting service that supports SSH protocol.
 
 To connect your app with git, follow the steps below:
 
+### Creating a new Repository&#x20;
+
 * Create a new repository on your git service and copy the `SSH` URL. The repository should be empty except `README.md`, `.gitignore`, and `LICENSE` files (These can be auto-created when you create a new repository.)
+
+### **Generating a Deploy key**
+
 * Open the app you want to connect to git and click on the `Connect GIT` button on the bottom bar.
 * In the Git connection window, paste your repository’s `SSH` URL and click on `Generate key` to generate an `SSH` key.
 
 {% embed url="https://youtu.be/oFfdIwhSPL8" %}
 
-*   Copy the generated deploy key and add it to your repository. Please note that you have to <mark style="color:red;">**enable write access**</mark> for pushing the changes to the remote repo from Appsmith.\
+### Adding the deploy key in the Repository
 
+* Copy the generated deploy key and add it to your repository. Please note that you have to <mark style="color:red;">**enable write access**</mark> for pushing the changes to the remote repo from Appsmith.
 
-    **For Github:**
+#### **For Github**
 
-    * Open the settings of the repository and go to deploy keys.
-    * Click on “_Add deploy key_.” Add a title for the key and paste the generated key in the key section.
-    * Check the “_Allow write access_” checkbox and add the key.
+* Open the settings of the repository and go to deploy keys.
+* Click on “_**Add deploy key**_.” Add a title for the key and paste the generated key into the key section.
+* Check the “_**Allow write access**_” checkbox and add the key.
 
 {% embed url="https://youtu.be/4xMHO4G2hEA" %}
 
-&#x20;**For Gitlab:**
+#### **For Gitlab**
 
 * Open the Settings> Repository and expand the deploy keys section.
-* Click on "_Add key"_, Add the title and paste the generated key in the key section.
-* Check the "_Grant write permissions" to this key <mark style="color:purple;"></mark>_ and add the key.
+* Click on "_**Add key**"_, Add the title and paste the generated key in the key section.
+* Check the "_**Grant write permissions**" to this key_ and add the key.
 
 {% embed url="https://youtu.be/9aaiE6OERW0" %}
 
-****\
-**For Bitbucket:**
+#### **For Bitbucket**
 
-* Open "_Personal settings_" from the bottom right corner and go to "_SSH keys"_.
-* Click on Add key, add the label and paste the generated key in the key section.
+* Open "_**Personal settings**_" from the bottom right corner and go to "_**SSH keys**"_.
+* Click on "_**Add key**_", add the label and paste the generated key in the key section.
 
 {% embed url="https://youtu.be/A8ZOvW1CVIk" %}
+
+### **User Configurations**
 
 * In user settings, define the user configurations. By default, the global user configurations are used. Click on the "_<mark style="color:red;">Edit</mark>_" button or directly open the profile section to change the global configurations. If you want to add a user configuration specific to the current app, you must uncheck the "_<mark style="color:red;">use default configuration</mark>_" checkbox and enter the author details below.
 
 {% embed url="https://youtu.be/d5R1MYKtpCM" %}
 
-* Click on _connect_, and if the connection is successful, your repository will have a `README.md` file. On the Git Sync window, you’ll move to the _Deploy_ section, where you can make an initial commit.
+Finally, click on _**connect**_, and if the connection is successful, your repository will have a `README.md` file. On the Git Sync window, you’ll move to the _<mark style="color:orange;">Deploy</mark>_ section, where you can make an initial commit.
 
 {% embed url="https://youtu.be/Z67SfBpKrnk" %}
 
 {% hint style="info" %}
-In the community edition, You can connect up to <mark style="color:green;">three</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon).  However, you can connect unlimited public repositories.
+In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
 {% endhint %}
 
-## See Git In Action
+## **Importing from a Repository**
+
+If you already have an Appsmith App in a Git repository, you can import it to a new organization or a different Appsmith account. Follow the steps given below:
+
+1. On the Appsmith organization home, click on desired organization’s Menu button and select Import.
+2. Choose the `Import from a Git repo` option on the import application pop-up. It will open and Import the Git window.
+3. Add your Repository’s SSH URL and click on [Generate key](git-sync.md#generating-a-deploy-key).
+4. Add the [Deploy key to your repository.](git-sync.md#adding-the-deploy-key-in-the-repository)
+5. Go back to the Git connection window and [configure the user settings](git-sync.md#user-configurations) and click on **Import.**
+6. Once the import is complete, you’ll see a data source configuration modal where you can configure the data sources used by the imported Application. We do not export any configuration values used for connecting a data source. So either you have to configure it in the data source configuration modal, or you can skip this and choose to configure it later.
+
+{% hint style="info" %}
+If the imported organization already has a data source with the same name but a different type, the import will fail due to name conflicts. For example, suppose a git-connected application has a MongoDB data source - "movies." You are importing it to an organization that has a Postgres data source also named "movies". In such a case, the import will fail.
+{% endhint %}
+
+## Git In Action
 
 Now that your app is connected to the Git repository let’s understand how to update the repository with changes made in the App.\
 The flow is similar to how you work on Git - Commit the changes, push them to the remote branch. You can create new branches from the app and pull the changes from the repository if your app is out of sync with the branch you are working on.
@@ -106,7 +128,7 @@ To sync the local with the remote branch (fetching or pruning), click on the bra
 
 Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
 
-### Pull from the Repository
+### Pull & Sync
 
 If your local branch is not in sync with the remote branch of the git repository, you pull the latest changes by clicking on the pull button at the bottom left corner.
 
@@ -120,25 +142,11 @@ You can resolve it in the following way:
 * Resolve the conflicts on the remote repository (Between _<mark style="color:green;">origin/feature/f1</mark>_ and _<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_) by creating a pull request with _<mark style="color:green;">origin/feature/f1</mark>_ as a base branch;
 * Once the conflicts are resolved merge this new branch (_<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_) into the old branch(_<mark style="color:green;">origin/feature/f1</mark>_);
 
-&#x20;        (<mark style="color:green;">origin/feature/f1</mark> <- <mark style="color:orange;">origin/feature/f1\_conflicted</mark>)
+(<mark style="color:green;">origin/feature/f1</mark> <- <mark style="color:orange;">origin/feature/f1\_conflicted</mark>)
 
 * Pull the branch (_<mark style="color:green;">feature/f1</mark>_) again in Appsmith’s local repository;
 * Delete branch _<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_ on the remote repository;
 * Run sync branch flow to remove _<mark style="color:orange;">feature/f1\_conflicted</mark>_ from the local repository.
-
-### Discard and Pull Changes
-
-While developing an application in Appsmith, sometimes, you may end up in a situation where you want to discard the current changes and revert to the previous stable version. Now, with discard and pull functionality, you can remove the unwanted changes, and pull the changes present in the remote repository so that your application will always be in sync.
-
-Discarding changes will result in the following scenarios:&#x20;
-
-1. Any resources added after the last commit will be removed.&#x20;
-2. Any resources deleted after the last commit will be restored.&#x20;
-3. Changes made to any resource after the last commit will be removed.
-
-{% hint style="info" %}
-Resources refers to pages, JSObjects, queries, etc
-{% endhint %}
 
 ### Merging
 
@@ -161,7 +169,7 @@ You can resolve it in the following way:
 * Resolve the conflicts on remote branches (Between _<mark style="color:orange;">origin/f1</mark>_ and _<mark style="color:green;">origin/main</mark>_);
 * Once the conflicts are resolved, merge this new branch(_<mark style="color:orange;">origin/f1</mark>_) into the old branch(_<mark style="color:green;">origin/main</mark>_);
 
-&#x20;           (_<mark style="color:green;">origin/main</mark>_ **<-** _<mark style="color:orange;">origin/f1</mark>_)
+(_<mark style="color:green;">origin/main</mark>_ **<-** _<mark style="color:orange;">origin/f1</mark>_)
 
 * Pull the main branch again in your app. Now you should have all the changes from the _<mark style="color:orange;">feature/f1</mark>_ branch;
 * Delete branch _<mark style="color:orange;">origin/feature/f1</mark>_ on remote;
@@ -172,10 +180,10 @@ You can resolve it in the following way:
 Appsmith clones the git repositories in the local filesystem, attached to the persistent volume within the docker container. To maintain the git repositories, we will need a file path that will point to the volume within the docker container. We can quickly achieve this by just updating the relevant environment variable.
 
 {% hint style="info" %}
-If the file path is not present, git repositories will be cloned, but this will not be persistent, and Appsmith will try to clone the repositories in case they got deleted by docker restart, etc.&#x20;
+If the file path is not present, git repositories will be cloned, but this will not be persistent, and Appsmith will try to clone the repositories in case they got deleted by docker restart, etc.
 {% endhint %}
 
-#### &#x20;Custom Git Root&#x20;
+#### Custom Git Root
 
 To point to a custom Git Root where the git repositories will be persisted, update the env variable called <mark style="color:orange;">APPSMITH\_GIT\_ROOT</mark> to point to your custom file path.
 
@@ -190,5 +198,6 @@ Please remember to restart the container to apply changes.
 If you want to disconnect your app from the Git repository, click Settings and hit the delete icon next to the remote URL. It will take you to the disconnection window, ensuring that you want to delete the connection.
 
 {% hint style="info" %}
-Once you disconnect with Git, all the local branches and their changes (except the default branch) will be deleted, and you cannot connect to the same remote repository again.
+Once you disconnect with Git, all the local branches from the Appsmith server and their changes (except the default branch) will be deleted, and you cannot connect to the same remote repository again. Please **note** that the **branches on the remote repository** will remain **untouched**.
 {% endhint %}
+
