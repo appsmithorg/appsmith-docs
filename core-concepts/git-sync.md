@@ -69,7 +69,7 @@ In the community edition, You can connect up to <mark style="color:green;">**thr
 If you already have an Appsmith App in a Git repository, you can import it to a new organization or a different Appsmith account. Follow the steps given below:
 
 1. On the Appsmith organization home, click on desired organization’s Menu button and select Import.
-2. Choose the `Import from a Git repo` option on the import application pop-up. It will open and Import the Git window.
+2. Choose the `Import from a Git repo` option on the import application pop-up. You'll be navigated to an `Import from the Git Repository` screen.
 3. Add your Repository’s SSH URL and click on [Generate key](git-sync.md#generating-a-deploy-key).
 4. Add the [Deploy key to your repository.](git-sync.md#adding-the-deploy-key-in-the-repository)
 5. Go back to the Git connection window and [configure the user settings](git-sync.md#user-configurations) and click on **Import.**
