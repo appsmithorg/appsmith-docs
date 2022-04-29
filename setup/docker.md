@@ -20,6 +20,7 @@ Create an installation folder called `appsmith`where you would like your Appsmit
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
 
 ### Docker-compose configuration
+>> Note: Currently auto-update is disabled on the docker-compose file. If you want to enable auto-update for Appsmith, please uncomment all the commented lines in the docker-compose file.
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
