@@ -10,9 +10,10 @@ services:
       - "9001:9001"
     volumes:
       - ./stacks:/appsmith-stacks
+    restart: unless-stopped
+#     # Uncomment the lines below to enable auto-update
 #     labels:
 #       com.centurylinklabs.watchtower.enable: "true"
-    restart: unless-stopped
 
 #   auto_update:
 #     image: containrrr/watchtower:latest-dev
