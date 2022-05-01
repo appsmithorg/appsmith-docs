@@ -20,7 +20,7 @@ The audit logs here are about Appsmith's cloud-hosted instance only and should n
 
 ## **Securely Executing Queries**
 
-The Appsmith**'**s backend system doesn't store any information related to the inputs made by users using an app or the responses of the queries. It acts as a pure proxy system. It ensures that any private/confidential data is never logged or stored in Appsmith's data stores. Appsmith stores the configuration of the queries so that the SQL query body or custom API URLs are never exposed to the client in "view" mode. Thus protecting the application as viewers cannot deduce the executed query.&#x20;
+The Appsmith's backend system doesn't store any information related to the inputs made by users using an app or the responses of the queries. It acts as a pure proxy system. It ensures that any private/confidential data is never logged or stored in Appsmith's data stores. Appsmith stores the configuration of the queries so that the SQL query body or custom API URLs are never exposed to the client in "view" mode. Thus protecting the application as viewers cannot deduce the executed query.&#x20;
 
 All SQL queries are also created with prepared statements switched on by default to prevent SQL injection from the client.
 
