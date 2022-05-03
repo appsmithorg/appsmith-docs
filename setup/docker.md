@@ -101,7 +101,7 @@ To update Appsmith manually, go to the root directory of your setup and run the 
 docker rmi appsmith/appsmith-ce -f
 docker pull appsmith/appsmith-ce
 docker rm -f appsmith
-docker run -d --name appsmith -p 80:80 -p 9001:9001 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
 ```
 
 ## Troubleshooting
