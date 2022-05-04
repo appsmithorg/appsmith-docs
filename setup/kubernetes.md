@@ -243,7 +243,7 @@ helm install \
   # Or this command if you are using values.yaml file
   helm upgrade --values values.yaml appsmith appsmith/appsmith
   ```
-## Updating Appsmith image
+## Updating Appsmith
 
 - In the default Appsmith helm installation the auto-update is disabled (Recommended). 
   You have the option to enable auto-update for your Appsmith helm deployment by either:
