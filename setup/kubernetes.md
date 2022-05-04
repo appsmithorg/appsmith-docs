@@ -243,6 +243,13 @@ helm install \
   # Or this command if you are using values.yaml file
   helm upgrade --values values.yaml appsmith appsmith/appsmith
   ```
+## Updating Appsmith image
+
+- In the default Appsmith helm installation the auto-update is disabled (Recommended). 
+  You have the option to enable auto-update for your Appsmith helm deployment by either:
+  - Setting `autoupdate.enabled` to `true` in the `values.yaml` file, if you are using the values file.
+  - By passing the argument `--set autoupdate.enabled=true` to the helm install/upgrade command.
+- In order to update the Appsmith container image manually, run the command: `kubectl rollout restart statefulset appsmith`
 
 ## Troubleshooting
 
