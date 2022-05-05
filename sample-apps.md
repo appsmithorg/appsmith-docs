@@ -111,7 +111,7 @@ description: >-
 
 [How to reset a widget - `resetWidget()`?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78)
 
-[How to navigate to another page/website - `navigateTo()`?](https://app.appsmith.com/app/framework/navigateto-62566b650d3d384069c05830)
+[How to navigate to another page/website - `navigateTo()`?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f8c72f9d6d6a6720c9b90d)
 
 [How to use queryParams - `{{appsmith.URL}}`?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f8c72f9d6d6a6720c9b90d)
 
@@ -161,7 +161,7 @@ description: >-
 
 [How to embed HTML in the app (using `iframe` Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684)
 
-[How to parse XML data (using JS Object)?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/61efeb7dbe698f35db551ff8)
+[How to parse XML data (using JS Object)?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/624dd2e751a8863d6c404b39)
 
 [How to read a CSV file?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/620bdf566b4b1e154a3c2ea1)
 
