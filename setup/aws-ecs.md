@@ -4,7 +4,8 @@ description: Deploy Appsmith on ECS cluster using EC2 instance.
 
 # AWS ECS
 
-## Prequisites
+## Prerequisites
+
 ### 1: Register With Amazon Web Services
 
 If you already have an Amazon Web Services account, you may skip this step.
@@ -15,122 +16,166 @@ Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/kn
 
 If you already have an SSH key pair for the AWS region you are operating in, you can skip this step.
 
-Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key-pair. You need this key to SSH into your AWS EC2 instance.
+Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key pair. You need this key to SSH into your AWS EC2 instance.
 
 ### 3: Create an AWS Security Group
 
-If you already have an existing security group with ports 80, 443 , 22 and 9001 open, you can skip this step.
+If you already have an existing security group with ports 80, 443, 22 and 9001 open, you can skip this step.
 
-Appsmith is a web application that requires ports 80 and 443 for HTTP access, port 22 to be accessible for SSH access, it also requires 
-port 9001 to be accessible for the supervisord UI.
-Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
+Appsmith is a web application that requires ports 80 and 443 for HTTP access, port 22 to be accessible for SSH access, it also requires port 9001 to be accessible for the supervisord UI. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
-While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, 22 and 9001 accessible from anywhere.
+While creating the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, 22 and 9001 accessible from anywhere.
 
----
+***
+
 ## ECS Overview
-![ECS_OVERVIEW](../.gitbook/assets/ecs-overview.png)
+
+![ECS OVERVIEW](../.gitbook/assets/ecs-overview.png)
+
 ## Steps to Deploy Appsmith on ECS (using EC2 Launch Type):
+
 1. [Create an ECS Cluster](aws-ecs.md#step-1-create-an-ecs-cluster)
 2. [Create Task and Container Definitions](aws-ecs.md#step-2-create-task-and-container-definitions)
 3. [Create and Run an ECS Service](aws-ecs.md#step-3-create-and-run-an-ecs-service)
 
 > Note: Please switch to the old AWS console UI to follow the steps in this tutorial.
+
 ### Step 1: Create an ECS Cluster
-1. Navigate to Amazon ECS and choose clusters on the side bar and select Create Cluster.
 
-    ![ECS_OVERVIEW](../.gitbook/assets/ecs-start-dash.png)
+1. Navigate to Amazon ECS and choose clusters on the side bar and select `Create Cluster`.
 
-2. Choose **EC2 Linux + Networking**, and select next step.
+![Creating Cluster in AWS ECS](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-217fcdb99846c6da6b6b5b374ec8ceb61ff5c221\_ecs-start-dash.png)
 
-3. Enter your cluster name 
-4. Instance configuration:
-   - Select the provisioning model as **On-Demand Instance**.
-   - Select the server size you wish to use, and set the **Number of instances** as **1**.
-   - Select the **Amazon Linux2 AMI** for the EC2 AMI ID dropdown, and enter the required EBS volume size.
-   - Select a **Key pair**. Please refer to [**Prequisite 2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
+2\. Choose **EC2 Linux + Networking**, and select the next step.
 
-    ![ECS_INSTANCE_CONFIG](../.gitbook/assets/ecs-cluster-instance-config.png)
-5. Networking Section
-   - Select the **default VPC** followed by selecting the **first subnet** from the drop-down.
-   - Select the **security group** created in [**Prequisite 3**](aws-ecs.md#3-create-an-aws-security-group).
+3\. Enter your cluster name
 
-    ![ECS_CLUSTER_NW](../.gitbook/assets/ecs-cluster-networking.png)
-6. Enable container insights (this gives CloudWatch monitoring and helps debugging).
-7. Leave the Container instance IAM role as default (**ecsInstanceRole**), if you do not have one aws will create it for you.
-8. Hit the **Create button**. It may take a minute for your cluster to be ready.
+4\.  I Instance configuration:
 
-    ![ECS_CLUSTER_LAUNCH](../.gitbook/assets/ecs-cluster-launch.png)
+* Select the provisioning model as **On-Demand Instance**.
+* Select the server size you wish to use, and set the **Number of instances** as **1**.
+* Select the **Amazon Linux2 AMI** for the EC2 AMI ID dropdown, and enter the required EBS volume size.
+* Select a **Key pair**. Please refer to [Prerequisite](aws-ecs.md#prequisites)[ **2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
+
+![Configuring the instance](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-9b572559c7d254290a9d0e928d54b07d4314d60e\_ecs-cluster-instance-config.png)
+
+5\. Networking Section
+
+* Select the **default VPC** followed by selecting the **first subnet** from the drop-down.
+* Select the **security group** created in [Prerequisite **** ](aws-ecs.md#prerequisites)**3.**
+
+![Configuring the Networking Section](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-57325bdf3b05774bf65b4496c6c3a3973a80ae52\_ecs-cluster-networking.png)
+
+6\. Enable container insights (this gives CloudWatch monitoring and helps to debug).
+
+7\. Leave the Container instance IAM role as default (**ecsInstanceRole**), if you do not have one AWS will create it for you.
+
+8\. Hit the **Create button**. It may take a minute for your cluster to be ready.
+
+![ECS Cluster Status ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-838febeb60a4267fe023333877400abfa9cdecbe\_ecs-cluster-launch.png)
 
 ### Step 2: Create Task and Container Definitions
-Once the cluster is created, you will need to create a task that will be run on the cluster created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster). 
-1. On the side bar, choose **Task Definitions** and select **Create new Task Definition**.
+
+Once the cluster is created, you will need to create a task that will be run on the cluster created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster).
+
+1. On the sidebar, choose **Task Definitions** and select **Create new Task Definition**.
 2. Choose **EC2** as the **launch type**, and proceed to the next step.
 3. Configure task and definition
-   - Enter the task definition name.
-   - Leave the Task role **blank**.
-   - Select the **default** Network mode
+   * Enter the task definition name.
+   * Leave the Task role **blank**.
+   * Select the **default** Network mode
 
-    ![ECS_TASK_DEF](../.gitbook/assets/ecs-task-def.png)
-4. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
-5. Set the required **task size** (memory & cpu)
-6. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount** and set the **Source path** to `/Appsmith/stacks`.
-![ECS_TASK_VOL](../.gitbook/assets/ecs_volume.png)
-7. Configure **Appsmith container configuration**.
-  - Hit **Add container** button.
-  - Enter the container name, and set the Image to `appsmith/appsmith-ce`
-  - Add port mappings for the ports **80->80,443->443, 9001->9001**
-  - Set the *Mount points Source volume* to `appsmith_stack` and set the Container path to `/appsmith-stacks`
-   ![ECS_TASK_MOUNT](../.gitbook/assets/ecs_mount.png)
-  - Enable **Auto-configure CloudWatch Logs** for log configuration
-  - Hit **Add**
-   ![ECS_TASK_APP](../.gitbook/assets/ecs-task-appsmith.png)
-8. Finally, hit the **Create** button.
+![Configuration of the Task](<../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-f509484bd9f35563a4d3acfdff13fb2981e142f1\_ecs-task-def (1).png>)
 
+
+
+4\. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
+
+5\. Set the required **task size** (memory & CPU)
+
+6\. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount,** and set the **Source path** to `/Appsmith/stacks`.&#x20;
+
+![Volume Configuration](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-fcdbde644358bbb69cc87cc7bf6937d4148c9b21\_ecs\_volume.png)
+
+7\. Configure **Appsmith container configuration**.
+
+* Hit **Add container** button.
+* Enter the container name, and set the Image to `appsmith/appsmith-ce`
+* Add port mappings for the ports **80->80,443->443, 9001->9001**
+* Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`
+
+![Storage Setting ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-8797d55c813d7a0ba5c69a4be8aa1fc4e4c0f84b\_ecs\_mount.png)
+
+* Enable **Auto-configure CloudWatch Logs** for log configuration.
+* Hit **Add.**&#x20;
+
+![Conainer Port Configuration ](<../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d78fe1a32910be3be88d4a38fe01a7145e2eeec3\_ecs-task-appsmith (1).png>)
+
+* Finally, hit the **Create** button.
 
 ### Step 3: Create and Run an ECS Service.
-1. Navigate to **clusters dashboard** and click on the ECS cluster created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster).
+
+1. Navigate to the **clusters dashboard** and click on the ECS cluster created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster).
 2. On the cluster details, under the **Services tab** hit the **create** button.
 
-   ![ECS_CLUSTER_SERVICE](../.gitbook/assets/ecs-cluster-service-creation.png)
-3. Configure Service
-  - Select **EC2** as Launch Type
-  - Select the **Task Definition** created in [**Step 2**](aws-ecs.md#step-2-create-task-and-container-definitions) with the latest revision.
-  - Select the **Cluster** created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster)
-  - Enter the service name
-  - Select the **REPLICA** Service type
-  - Set the **Number of tasks** to **1**
-  - Leave the remaining fields and sections with the **default values**, and proceed to the next step.
-     ![ECS_SERVICE_CREATE](../.gitbook/assets/ecs-service-creation.png)
-4. Configure network - Proceed to the next step with the **default** configurations.
-     ![ECS_SERVICE_LB](../.gitbook/assets/ecs-service-lb.png)
-5. Set Auto Scaling - Proceed to the next step with the **default** configuration.
-     ![ECS_SERVICE_AS](../.gitbook/assets/ecs-service-auto-scaling.png)
-4. Review the Service configurations and hit the **Create Service** button.
-     ![ECS_SERVICE_REVIEW](../.gitbook/assets/ecs-service-review.png)
-5. The following screen will appear showing the **launch status**, click on **View Service** button.
-    ![ECS_SERVICE_STATUS](../.gitbook/assets/ecs-service-launch-status.png)
-6. You will be directed to the **service detail** page. Your task listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
+![Cluster Dashboard ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-c1fd1e16c6893bcffd9e6cdf54ca579f314d17d3\_ecs-cluster-service-creation.png)
 
-    ![ECS_SERVICE_TASK_STATUS](../.gitbook/assets/ecs-service-task-status.png)
-7. Cick on the **task** to get the details of your running service.
-  ![ECS_TASK_DETAIL](../.gitbook/assets/ecs-task-details.png)
-8. Finally, click on the **EC2 instance id** to navigate to the EC2 console with your ECS instance (which is basically an EC2 instance running the container service) listed.
-  ![ECS_EC2_INSTANCE](../.gitbook/assets/ecs-instance-ec2.png)
-9. Find the **public IP address** or **DNS name** and enter it on your browser to see Appsmith's welcome page.
+3\. Configure Service
 
-    ![APP_WELCOME](../.gitbook/assets/appsmith-welcome-page.png)
+* Select **EC2** as Launch Type
+* Select the **Task Definition** created in [**Step 2**](aws-ecs.md#step-2-create-task-and-container-definitions) with the latest revision.
+* Select the **Cluster** created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster)
+* Enter the service name
+* Select the **REPLICA** Service type
+* Set the **Number of tasks** to **1**
+* Leave the remaining fields and sections with the **default values**, and proceed to the next step.&#x20;
 
->Note: - In this guide, If you are using the embeded mongodb, the container persistance is tied up with the EC2 instance lifecycle.
+![Configuring the service](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-20dc92b61eefda149b051105fc43932a4069a2a7\_ecs-service-creation.png)
+
+4\. Configure network - Proceed to the next step with the **default** configurations.&#x20;
+
+![](<../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-f2f1777872fb32c283ae6993a7013b941bde76f4\_ecs-service-lb (1).png>)
+
+5\. Set Auto Scaling - Proceed to the next step with the **default** configuration.&#x20;
+
+
+
+![Setting Up Auto Scaling ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-c530f8614a433bc339b500c3859d7332960ac0fc\_ecs-service-auto-scaling.png)
+
+6\. Review the Service configurations and hit the **Create Service** button.&#x20;
+
+![Review Section ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d41afa800108de88c398d00edf945db81077d4c0\_ecs-service-review.png)
+
+7\. The following screen will appear showing the **launch status**, click on the **View Service** button.&#x20;
+
+![Launch Status Dashboard ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-6e59de9348c02c19d5b8bf0871b056ebf8ec5a97\_ecs-service-launch-status.png)
+
+8\. You will be directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
+
+![Service Detail Page](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-82d7d7b0fbe30b0a0bcdc46641114ee49e62643c\_ecs-service-task-status.png)
+
+9\. Click on the **task** to get the details of your running service.&#x20;
+
+![Task Dashboard](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-0e04e6250702a263e7398969ee75be5b82a4f1f4\_ecs-task-details.png)
+
+10\. Finally, click on the **EC2 instance id** to navigate to the EC2 console with your ECS instance (which is basically an EC2 instance running the container service) listed.&#x20;
+
+![EC2 Console](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d598b204016d7ceb09c3e8f229d6b0efc0a9a71c\_ecs-instance-ec2.png)
+
+11\. Find the **public IP address** or **DNS name** and enter it on your browser to see Appsmith's welcome page.
+
+![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-b42232223f0151a5f3324137635656e4ab248312\_appsmith-welcome-page.png)
+
+> Note: - In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
 >
-> -  Auto update is not supported, please go to the service and force redeployment to update your instance with the latest image.
+> * Auto-update is not supported, please go to the service and force redeployment to update your instance with the latest image.
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](../troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
 
 ## Further Reading
 
-* [Configuring ECS Installations](instance-configuration#configuring-ecs-installations)
+* [Configuring ECS Installations](instance-configuration/#configuring-ecs-installations)
 * [Managing the Appsmith instance](instance-management.md)
 * [Tutorials](../tutorials/)
