@@ -248,7 +248,17 @@ helm install \
   - In the default Appsmith helm installation the auto-update is disabled (Recommended). 
     You have the option to enable auto-update for your Appsmith helm deployment by either:
     - Setting `autoupdate.enabled` to `true` in the `values.yaml` file, if you are using the values file.
+    ```
+     helm upgrade --values values.yaml appsmith appsmith/appsmith
+    ```
     - By passing the argument `--set autoupdate.enabled=true` to the helm install/upgrade command.
+    ```
+      helm install appsmith/appsmith --generate-name \
+        --set ingress.enabled=true \
+        --set ingress.annotations."kubernetes\.io/ingress\.class"=nginx \
+        --set service.type=ClusterIP \
+        --set autoupdate.enabled=true
+     ```
 ### Manual Update
 - To manually update the Appsmith container image to the latest release, run the command:
   `kubectl rollout restart statefulset appsmith`
