@@ -67,7 +67,7 @@ docker-compose up -d
 To quickly get Appsmith up and running, run the following command on your machine:
 
 ```bash
-docker run -d --name appsmith -p 80:80 -p 9001:9001 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
 ```
 
 This command will download the image and start Appsmith. Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
