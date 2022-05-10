@@ -2,6 +2,10 @@
 
 [Ping Identity](https://www.pingidentity.com/en/platform/capabilities/single-sign-on.html) (PingID) is a cloud-based authentication provider. To configure OpenID Connect(OIDC) within Appsmith using PingID as an OIDC provider, follow these steps:
 
+{% hint style="info" %}
+OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
+{% endhint %}
+
 ### Create Environment
 
 * Log into your [Ping one](https://www.pingidentity.com/en/resources/downloads/pingone.html) account (Please create a new account if you don’t have one). and:&#x20;

@@ -3,7 +3,7 @@
 OpenID Connect (OIDC) is an authentication protocol built on OAuth2.0 paradigm. You can use OIDC to securely sign-in users to your application.
 
 {% hint style="info" %}
-OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith organization** can set up **OIDC**.
+OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
 {% endhint %}
 
 ## Capture Redirect URL for OIDC Configuration
@@ -16,11 +16,11 @@ For OIDC configuration in Appsmith, follow the steps below (the below steps are 
 
 * On your Appsmith Application, go to **Profile > Admin Settings.**
 
-![Navigate to Profile and click on Admin settings ](../../../../.gitbook/assets/Appsmith-Admin-Settings.png)
+![Navigate to Profile and click on Admin settings ](<../../../../.gitbook/assets/Appsmith-Admin-Settings (1).png>)
 
 * Navigate to **Authentication** and open the types of authentication available on Appsmith.
 
-![Click on Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication.png>)
+![Click on Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication (1).png>)
 
 * Select OIDC, click on **Enable**
 

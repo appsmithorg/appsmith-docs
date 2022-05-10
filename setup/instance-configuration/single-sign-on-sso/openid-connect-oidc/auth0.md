@@ -2,15 +2,19 @@
 
 [Auth0](https://auth0.com) is an authentication and authorization as a service provider. To configure OpenID Connect(OIDC) within Appsmith using Auth0 as an OIDC provider, follow these steps:
 
+{% hint style="info" %}
+OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
+{% endhint %}
+
 ### Create Application
 
 * Log in to your [Auth0](https://auth0.com) account and go to **Applications**. (Please create an account if you don’t have one on [Auth0](https://auth0.com)).
 
 ![Navigate to Applications >> Applications >> click Create Application](../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication.png)
 
-* Click on **+Create Application** and pick **Single Page Web Application** from the given options. The default name of the application is **My App**. You can change it as per your requirements.
+* Click on **+Create Application** and pick **Regular Web Applications** from the given options. The default name of the application is **My App**. You can change it as per your requirements.
 
-![Create a new single-page web application for SSO Integration](../../../../.gitbook/assets/Auth0-New-Application.png)
+![](../../../../.gitbook/assets/Auth0-NewApplication-OIDC-RegularWebApp.png)
 
 * Open the newly created Auth0 App, go to the settings tab and -
   * Add the Redirect URL (Copied from [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)) in the following fields -
