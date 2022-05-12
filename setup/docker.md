@@ -11,7 +11,7 @@ description: Appsmith can be deployed locally or on your private instance using 
 
 Create an installation folder called `appsmith`where you would like your Appsmith installation and data storage.
 
-**`cd` ** into the installation folder.
+`cd`  into the installation folder.
 
 {% embed url="https://youtu.be/Tde7GqE6FQQ" %}
 
@@ -20,13 +20,16 @@ Create an installation folder called `appsmith`where you would like your Appsmit
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
 
 ### Docker-compose configuration
->> Note: Currently auto-update is disabled on the docker-compose file. If you want to enable auto-update for Appsmith, please uncomment all the commented lines in the docker-compose file.
+
+{% hint style="info" %}
+Currently, auto-update is disabled on the docker-compose file. If you want to enable auto-update for Appsmith, please uncomment all the commented lines in the docker-compose file.
+{% endhint %}
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
 {% file src="../.gitbook/assets/docker-compose (1).yml" %}
 
-**or** run the following curl if you're on a remote machine
+**or** run the following curl if you're on a remote machine:
 
 ```bash
 curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
@@ -34,13 +37,13 @@ curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date.
 
-Bring the docker container up by running the following command. (You may need to run as sudo if docker and docker-compose are not accessible by your user)
+Bring the docker container up by running the following command. (You may need to run as `sudo` if docker and docker-compose are not accessible by your user)
 
 ```bash
 docker-compose up -d
 ```
 
-IF not already locally available, this command will download the Docker images and start the services. You can follow the logs with the following command:
+If it is not available locally, the command above will download the Docker images and start the services. You can follow the logs with the following command:
 
 ```bash
 docker logs -f appsmith

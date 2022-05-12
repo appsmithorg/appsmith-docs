@@ -44,7 +44,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 1. Navigate to Amazon ECS and choose clusters on the side bar and select `Create Cluster`.
 
-![Creating Cluster in AWS ECS](<../.gitbook/assets/ecs-start-dash (1).png>)
+![Creating Cluster in AWS ECS](../.gitbook/assets/ecs-start-dash.png)
 
 2\. Choose **EC2 Linux + Networking**, and select the next step.
 
@@ -57,7 +57,7 @@ While creating the new security group, please follow the steps [detailed here](h
 * Select the **Amazon Linux2 AMI** for the EC2 AMI ID dropdown, and enter the required EBS volume size.
 * Select a **Key pair**. Please refer to [Prerequisite](aws-ecs.md#prequisites)[ **2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
 
-![Configuring the instance](<../.gitbook/assets/ecs-cluster-instance-config (1).png>)
+![Configuring the instance](../.gitbook/assets/ecs-cluster-instance-config.png)
 
 5\. Networking Section
 
@@ -72,7 +72,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 8\. Hit the **Create button**. It may take a minute for your cluster to be ready.
 
-![ECS Cluster Status ](<../.gitbook/assets/ecs-cluster-launch (1).png>)
+![ECS Cluster Status ](../.gitbook/assets/ecs-cluster-launch.png)
 
 ### Step 2: Create Task and Container Definitions
 
@@ -85,7 +85,7 @@ Once the cluster is created, you will need to create a task that will be run on 
    * Leave the Task role **blank**.
    * Select the **default** Network mode
 
-![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1) (1).png>)
+![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1).png>)
 
 
 
@@ -109,7 +109,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
 * Hit **Add.**&#x20;
 
-![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1) (1).png>)
+![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1).png>)
 
 * Finally, hit the **Create** button.
 
@@ -130,7 +130,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Set the **Number of tasks** to **1**
 * Leave the remaining fields and sections with the **default values**, and proceed to the next step.&#x20;
 
-![Configuring the service](<../.gitbook/assets/ecs-service-creation (1).png>)
+![Configuring the service](../.gitbook/assets/ecs-service-creation.png)
 
 4\. Configure network - Proceed to the next step with the **default** configurations.&#x20;
 
@@ -140,15 +140,15 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 
 
-![Setting Up Auto Scaling ](<../.gitbook/assets/ecs-service-auto-scaling (1).png>)
+![Setting Up Auto Scaling ](../.gitbook/assets/ecs-service-auto-scaling.png)
 
 6\. Review the Service configurations and hit the **Create Service** button.&#x20;
 
-![Review Section ](<../.gitbook/assets/ecs-service-review (1).png>)
+![Review Section ](../.gitbook/assets/ecs-service-review.png)
 
 7\. The following screen will appear showing the **launch status**, click on the **View Service** button.&#x20;
 
-![Launch Status Dashboard ](<../.gitbook/assets/ecs-service-launch-status (1).png>)
+![Launch Status Dashboard ](../.gitbook/assets/ecs-service-launch-status.png)
 
 8\. You will be directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
 
@@ -156,15 +156,15 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 9\. Click on the **task** to get the details of your running service.&#x20;
 
-![Task Dashboard](<../.gitbook/assets/ecs-task-details (1).png>)
+![Task Dashboard](../.gitbook/assets/ecs-task-details.png)
 
 10\. Finally, click on the **EC2 instance id** to navigate to the EC2 console with your ECS instance (which is basically an EC2 instance running the container service) listed.&#x20;
 
-![EC2 Console](<../.gitbook/assets/ecs-instance-ec2 (1).png>)
+![EC2 Console](../.gitbook/assets/ecs-instance-ec2.png)
 
 11\. Find the **public IP address** or **DNS name** and enter it on your browser to see Appsmith's welcome page.
 
-![](<../.gitbook/assets/appsmith-welcome-page (1).png>)
+![](../.gitbook/assets/appsmith-welcome-page.png)
 
 > Note: - In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
 >
