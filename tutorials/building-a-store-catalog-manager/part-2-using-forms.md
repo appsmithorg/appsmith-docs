@@ -135,8 +135,8 @@ Your form now has all the required widgets in place with some basic properties c
 Start with **ProductNameInput**:
 
 1. Open its properties modal 
-2. Set **Regex** to `^\s*[a-zA-Z]{3,50}\s*$`
-3. Set **Error Message** to **Must be alphanumeric having length between 3 and 50**
+2. Set **Regex** to `^[A-Za-z][A-Za-z -]{3,50}$`
+3. Set **Error Message** to **Must contain only letters, spaces, or dashes and have a length between 3 and 50**
 
 Let’s see what you did there:
 
@@ -260,7 +260,7 @@ You've created a new page **AddProductPage** with a form that allows users to ad
 3. Rename widget to **AddProductButton**
 4. Change button label to **Add New Product**
 5. Go to **Action → onClick → Navigate To** 
-6. Type **AddProductPage** in **Page Name** field
+6. Type **NewProductPage** in **Page Name** field
 
 Your **ProductListPage** now looks like:
 
