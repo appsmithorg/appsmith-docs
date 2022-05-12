@@ -2,6 +2,9 @@
 
 Templates are our ready-made apps that are easy to use, forkable, and are bound to give you a little nudge in the right direction. You can directly connect them to your datasource and customize them as you please!
 
+{% embed url="https://youtu.be/jOXb81Gsig8" caption="How To Use Templates" %}
+
+
 ### How to find the template you need
 
 We have a **Templates tab** which you can use to filter and search for templates based on Widgets and Datasources. You have to fork the template into your organization, and you can customize and use the app exactly as you like it.
