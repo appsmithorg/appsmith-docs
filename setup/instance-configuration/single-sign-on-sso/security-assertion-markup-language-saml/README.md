@@ -16,11 +16,11 @@ Follow the below steps to configure your SAML Provider’s settings. These steps
 
 * On Appsmith, navigate to **Profile** –->**Admin Settings.**
 
-![Admin Settings](../../../../.gitbook/assets/Appsmith-Admin-Settings.png)
+![Admin Settings](<../../../../.gitbook/assets/Appsmith-Admin-Settings (1).png>)
 
 * Navigate to **Authentication** and open the available options for authentication on Appsmith.
 
-![Navigate to Admin Settings >> Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication.png>)
+![Navigate to Admin Settings >> Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication (1).png>)
 
 * You’ll see several options available, select **SAML** and click **Enable**.
 

@@ -2,7 +2,7 @@
 
 The input widget allows the user to enter or edit data such as text, number, email, etc. It is helpful in a form widget with custom validations.
 
-{% embed url="https://youtu.be/4BUbbZsxrus" %}
+{% embed url="https://youtu.be/zNGwWO6OXlw" %}
 
 ## Properties
 

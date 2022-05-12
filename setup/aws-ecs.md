@@ -85,7 +85,7 @@ Once the cluster is created, you will need to create a task that will be run on 
    * Leave the Task role **blank**.
    * Select the **default** Network mode
 
-![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1).png>)
+![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1) (1).png>)
 
 
 
@@ -109,7 +109,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
 * Hit **Add.**&#x20;
 
-![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1).png>)
+![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1) (1).png>)
 
 * Finally, hit the **Create** button.
 
