@@ -6,6 +6,8 @@ The following document assumes that you understand the [basics of connecting to 
 
 The S3 plugin can connect to an Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects ,and any other provider that supports S3 to execute a set of [actions](../core-concepts/writing-code/appsmith-framework.md) supported by Appsmith.
 
+{% embed url="https://youtu.be/pmEmQcd9_KA" caption="How To Upload Files To S3 And Keep Your Database In Sync" %}
+
 ## Connection Settings
 
 The S3 Datasource requires the following information to establish a connection
