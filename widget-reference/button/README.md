@@ -2,7 +2,7 @@
 
 The button widget is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly.
 
-{% embed url="https://youtu.be/u9osKR-krBA" %}
+{% embed url="https://www.youtube.com/watch?v=8FOJ1CFRQcU" %}
 
 ## Properties
 
@@ -53,7 +53,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it will enable the Disabled property and prevent a user input on the button.&#x20;
+When you tick the checkbox, it will enable the Disabled property and prevent a user input on the button.
 
 {% embed url="https://youtu.be/iaubB0XGouU" %}
 
@@ -62,8 +62,6 @@ When you tick the checkbox, it will enable the Disabled property and prevent a u
 | Event       | Description                                                                                                                                        |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onClick** | Sets the action to be run when the user clicks a button. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
-
-
 
 ### Styles
 
@@ -75,7 +73,7 @@ Style properties allow you to modify the button widgets visually. It has several
 * **Box Shadow:** It casts a drop shadow around the frame of the widget.
 * **Shadow Color:** It lets you choose the color of the casted shadow.
 * **Icon:** It lets you add icons to your button to provide extra information about the functionality of that button.
-* **Placement:** This option lets you place the elements inside the button, like the label and icon. By default, there are three placement options  - Start, between, and center. You can create custom placements using JavaScript.
+* **Placement:** This option lets you place the elements inside the button, like the label and icon. By default, there are three placement options - Start, between, and center. You can create custom placements using JavaScript.
 * **Icon Alignment:** It helps align the icon inside the button with respect to the label.
 
 {% embed url="https://youtu.be/LOBPY1O4Wrc" %}
