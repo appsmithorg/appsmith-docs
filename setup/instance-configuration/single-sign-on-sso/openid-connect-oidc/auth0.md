@@ -10,7 +10,7 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 
 * Log in to your [Auth0](https://auth0.com/) account and go to **Applications**. (Please create an account if you don’t have one on [Auth0](https://auth0.com/)).
 
-![Navigate to Applications >> Applications >> click Create Application](<../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication (1).png>)
+![Navigate to Applications >> Applications >> click Create Application](../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication.png)
 
 * Click on **+Create Application** and pick **Regular Web Applications** from the given options. The default name of the application is **My App**. You can change it as per your requirements.
 

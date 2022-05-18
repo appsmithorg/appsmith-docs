@@ -44,7 +44,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 1. Navigate to Amazon ECS and choose clusters on the side bar and select `Create Cluster`.
 
-![Creating Cluster in AWS ECS](../.gitbook/assets/ecs-start-dash.png)
+![Creating Cluster in AWS ECS](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-217fcdb99846c6da6b6b5b374ec8ceb61ff5c221\_ecs-start-dash.png)
 
 2\. Choose **EC2 Linux + Networking**, and select the next step.
 
@@ -57,14 +57,14 @@ While creating the new security group, please follow the steps [detailed here](h
 * Select the **Amazon Linux2 AMI** for the EC2 AMI ID dropdown, and enter the required EBS volume size.
 * Select a **Key pair**. Please refer to [Prerequisite](aws-ecs.md#prequisites)[ **2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
 
-![Configuring the instance](../.gitbook/assets/ecs-cluster-instance-config.png)
+![Configuring the instance](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-9b572559c7d254290a9d0e928d54b07d4314d60e\_ecs-cluster-instance-config.png)
 
 5\. Networking Section
 
 * Select the **default VPC** followed by selecting the **first subnet** from the drop-down.
 * Select the **security group** created in [Prerequisite **** ](aws-ecs.md#prerequisites)**3.**
 
-![Configuring the Networking Section](../.gitbook/assets/ecs-cluster-networking.png)
+![Configuring the Networking Section](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-57325bdf3b05774bf65b4496c6c3a3973a80ae52\_ecs-cluster-networking.png)
 
 6\. Enable container insights (this gives CloudWatch monitoring and helps to debug).
 
@@ -72,7 +72,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 8\. Hit the **Create button**. It may take a minute for your cluster to be ready.
 
-![ECS Cluster Status ](../.gitbook/assets/ecs-cluster-launch.png)
+![ECS Cluster Status ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-838febeb60a4267fe023333877400abfa9cdecbe\_ecs-cluster-launch.png)
 
 ### Step 2: Create Task and Container Definitions
 
@@ -85,7 +85,7 @@ Once the cluster is created, you will need to create a task that will be run on 
    * Leave the Task role **blank**.
    * Select the **default** Network mode
 
-![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1) (1).png>)
+![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1).png>)
 
 
 
@@ -95,7 +95,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 6\. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount,** and set the **Source path** to `/Appsmith/stacks`.&#x20;
 
-![Volume Configuration](../.gitbook/assets/ecs\_volume.png)
+![Volume Configuration](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-fcdbde644358bbb69cc87cc7bf6937d4148c9b21\_ecs\_volume.png)
 
 7\. Configure **Appsmith container configuration**.
 
@@ -104,12 +104,12 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Add port mappings for the ports **80->80,443->443, 9001->9001**
 * Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`
 
-![Storage Setting ](../.gitbook/assets/ecs\_mount.png)
+![Storage Setting ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-8797d55c813d7a0ba5c69a4be8aa1fc4e4c0f84b\_ecs\_mount.png)
 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
 * Hit **Add.**&#x20;
 
-![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1) (1).png>)
+![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1).png>)
 
 * Finally, hit the **Create** button.
 
@@ -118,7 +118,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 1. Navigate to the **clusters dashboard** and click on the ECS cluster created in [**Step 1**](aws-ecs.md#step-1-create-an-ecs-cluster).
 2. On the cluster details, under the **Services tab** hit the **create** button.
 
-![Cluster Dashboard ](../.gitbook/assets/ecs-cluster-service-creation.png)
+![Cluster Dashboard ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-c1fd1e16c6893bcffd9e6cdf54ca579f314d17d3\_ecs-cluster-service-creation.png)
 
 3\. Configure Service
 
@@ -130,41 +130,41 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Set the **Number of tasks** to **1**
 * Leave the remaining fields and sections with the **default values**, and proceed to the next step.&#x20;
 
-![Configuring the service](../.gitbook/assets/ecs-service-creation.png)
+![Configuring the service](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-20dc92b61eefda149b051105fc43932a4069a2a7\_ecs-service-creation.png)
 
 4\. Configure network - Proceed to the next step with the **default** configurations.&#x20;
 
-![](<../.gitbook/assets/ecs-service-lb (1).png>)
+![](<../.gitbook/assets/ecs-service-lb (2).png>)
 
 5\. Set Auto Scaling - Proceed to the next step with the **default** configuration.&#x20;
 
 
 
-![Setting Up Auto Scaling ](../.gitbook/assets/ecs-service-auto-scaling.png)
+![Setting Up Auto Scaling ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-c530f8614a433bc339b500c3859d7332960ac0fc\_ecs-service-auto-scaling.png)
 
 6\. Review the Service configurations and hit the **Create Service** button.&#x20;
 
-![Review Section ](../.gitbook/assets/ecs-service-review.png)
+![Review Section ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d41afa800108de88c398d00edf945db81077d4c0\_ecs-service-review.png)
 
 7\. The following screen will appear showing the **launch status**, click on the **View Service** button.&#x20;
 
-![Launch Status Dashboard ](../.gitbook/assets/ecs-service-launch-status.png)
+![Launch Status Dashboard ](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-6e59de9348c02c19d5b8bf0871b056ebf8ec5a97\_ecs-service-launch-status.png)
 
 8\. You will be directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
 
-![Service Detail Page](../.gitbook/assets/ecs-service-task-status.png)
+![Service Detail Page](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-82d7d7b0fbe30b0a0bcdc46641114ee49e62643c\_ecs-service-task-status.png)
 
 9\. Click on the **task** to get the details of your running service.&#x20;
 
-![Task Dashboard](../.gitbook/assets/ecs-task-details.png)
+![Task Dashboard](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-0e04e6250702a263e7398969ee75be5b82a4f1f4\_ecs-task-details.png)
 
 10\. Finally, click on the **EC2 instance id** to navigate to the EC2 console with your ECS instance (which is basically an EC2 instance running the container service) listed.&#x20;
 
-![EC2 Console](../.gitbook/assets/ecs-instance-ec2.png)
+![EC2 Console](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d598b204016d7ceb09c3e8f229d6b0efc0a9a71c\_ecs-instance-ec2.png)
 
 11\. Find the **public IP address** or **DNS name** and enter it on your browser to see Appsmith's welcome page.
 
-![](../.gitbook/assets/appsmith-welcome-page.png)
+![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-b42232223f0151a5f3324137635656e4ab248312\_appsmith-welcome-page.png)
 
 > Note: - In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
 >
