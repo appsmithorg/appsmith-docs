@@ -101,6 +101,7 @@
   * [External libraries](core-concepts/writing-code/ext-libraries.md)
 * [Designing an Application](core-concepts/designing-an-application/README.md)
   * [Application Layout](core-concepts/designing-an-application/application-layout.md)
+  * [App Theming](core-concepts/designing-an-application/app-theming.md)
 * [Building Dynamic UI](core-concepts/dynamic-ui/README.md)
   * [Controlling Widget Visibility](core-concepts/dynamic-ui/widget-visibility.md)
 * [Access Control](core-concepts/access-control.md)

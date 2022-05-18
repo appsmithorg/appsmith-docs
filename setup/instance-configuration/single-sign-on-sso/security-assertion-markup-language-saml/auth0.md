@@ -8,7 +8,7 @@ Security Assertion Markup Language (SAML) is available only in the [enterprise e
 
 ## Create Application
 
-* Log in to your [Auth0](https://auth0.com/) account and go to **Applications -->** select the subhead **Applications -->** Click **Create Application**. (Please create an account if you don’t have one on [Auth0](https://auth0.com/)).
+* Log in to your [Auth0](https://auth0.com) account and go to **Applications -->** select the subhead **Applications -->** Click **Create Application**. (Please create an account if you don’t have one on [Auth0](https://auth0.com)).
 
 ![Navigate to Applications - to add a new application](../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication.png)
 

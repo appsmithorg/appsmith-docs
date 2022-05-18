@@ -79,7 +79,7 @@ The video below demonstrates how to query the Snowflake database.
 Querying Snowflake
 {% endembed %}
 
-You have your query; you can bind it to various widgets. You can take reference from [this ](https://appsmith.hashnode.dev/a-simple-front-end-for-your-snowflakedb-datasource)example and learn how to build a frontend that can connect to [SnowflakeDB](https://www.snowflake.com/) as a data source.
+You have your query; you can bind it to various widgets. You can take reference from [this ](https://appsmith.hashnode.dev/a-simple-front-end-for-your-snowflakedb-datasource)example and learn how to build a frontend that can connect to [SnowflakeDB](https://www.snowflake.com) as a data source.
 
 ## Using Queries in applications
 
