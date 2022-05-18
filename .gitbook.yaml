@@ -7,3 +7,4 @@ structure:
 redirects:  
   setup/instance-configuration/google-login: setup/instance-configuration/single-sign-on-sso/google-login.md
   setup/instance-configuration/github-login: setup/instance-configuration/single-sign-on-sso/github-login.md
+  tutorials/building-a-store-catalog-manager/part-2-using-forms: tutorials/building-a-store-catalog-manager/using-forms.md
