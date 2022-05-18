@@ -8,5 +8,5 @@ redirects:
   setup/instance-configuration/google-login: setup/instance-configuration/single-sign-on-sso/google-login.md
   setup/instance-configuration/github-login: setup/instance-configuration/single-sign-on-sso/github-login.md
   tutorials/building-a-store-catalog-manager/part-2-using-forms: tutorials/building-a-store-catalog-manager/using-forms.md
-  tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views : tutorials/building-a-store-catalog-manager/creating-interactive-views.md
+  tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views: tutorials/building-a-store-catalog-manager/creating-interactive-views.md
   
