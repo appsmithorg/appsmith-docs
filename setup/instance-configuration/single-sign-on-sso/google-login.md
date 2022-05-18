@@ -8,7 +8,7 @@ description: >-
 
 ![Click to expand](../../../.gitbook/assets/google-login.png)
 
-To enable Google Sign in, login to your [google cloud console](https://console.cloud.google.com)
+To enable Google Sign in, login to your [google cloud console](https://console.cloud.google.com/)
 
 **1. Navigate to the** [**OAuth consent section**](https://console.cloud.google.com/apis/credentials/consent) **under APIs & Services**
 

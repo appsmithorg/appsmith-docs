@@ -16,8 +16,8 @@ Learn to build a feature-complete internal application on top of a real business
 
 Learn to build a feature-complete **Grocery Catalog** application for an online grocery store called Oakry with Appsmith. The application we will be building is a multi-page dashboard used by catalog managers to browse through products, create and update them.
 
-{% content-ref url="building-a-store-catalog-manager/" %}
-[building-a-store-catalog-manager](building-a-store-catalog-manager/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 [See more tutorials](https://www.appsmith.com/blog-categories/tutorial)
