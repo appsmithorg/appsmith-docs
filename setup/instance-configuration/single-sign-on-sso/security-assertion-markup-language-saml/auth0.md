@@ -10,7 +10,7 @@ Security Assertion Markup Language (SAML) is available only in the [enterprise e
 
 * Log in to your [Auth0](https://auth0.com/) account and go to **Applications -->** select the subhead **Applications -->** Click **Create Application**. (Please create an account if you don’t have one on [Auth0](https://auth0.com/)).
 
-![Navigate to Applications - to add a new application](<../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication (1).png>)
+![Navigate to Applications - to add a new application](../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication.png)
 
 From the available options, select **Regular Web Applications**.
 
@@ -40,17 +40,17 @@ Appsmith provides the below options using which you can register the identity pr
 
 #### Metadata URL
 
-SAML metadata is an XML document that provides information that is required for interaction with a SAML-enabled identity or service provider. The Metadata URL is the URL metadata for SAML configuration hosted on a remote server.
+SAML metadata is an XML document that provides information required for interaction with a SAML-enabled identity or service provider. The Metadata URL is the URL metadata for SAML configuration hosted on a remote server.
 
 {% hint style="info" %}
 Metadata URL is the **quickest** and **most recommended way** to set up **SAML**.
 {% endhint %}
 
-* In order to obtain the **Metadata URL**, navigate to the **Settings** tab, scroll down and expand the **Advanced Settings.**
+* To obtain the **Metadata URL**, navigate to the **Settings** tab, scroll down and expand the **Advanced Settings.**
 
 ![Navigate to Advanced Settings](<../../../../.gitbook/assets/Auth0-SAML-Advanced Settings.png>)
 
-* Click on the **Endpoints** and scroll down to the **SAML** config fields, and copy the SAML Metadata URL.
+* Click on the **Endpoints**, scroll down to the **SAML** config fields, and copy the SAML Metadata URL.
 
 ![Copy the Metadata URL](../../../../.gitbook/assets/Auth0-SAML-Metadata-URL.png)
 
@@ -72,12 +72,12 @@ You can also configure SAML by providing the identity provider(IdP) data.
 
 If you have Identity provider’s data like `X509 Public Certificate`, `Email`, and more, you can choose this option to configure SAML.
 
-* Navigate to Appsmith, and click **IdP Data**. You can get the information from `Metadata XML` and add the details as per the below mapping table:
+* Navigate to Appsmith, and click **IdP Data**. You can get the information from `Metadata XML` and add the content of the tags as per the below mapping table:
 
 | **Appsmith Field Name** | **Metadata XML Tag**                                                                          |
 | ----------------------- | --------------------------------------------------------------------------------------------- |
 | Entity ID               | `<EntityDescriptor`` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                     |
-| Single Sign On URL      | `<SingleSignOnService/>`                                                                      |
+| Single Sign-On URL      | `<SingleSignOnService/>`                                                                      |
 | X509 Public Certificate | `<X509Certificate/>`                                                                          |
 | Email                   | `<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |
 
