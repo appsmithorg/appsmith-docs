@@ -4,75 +4,163 @@
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
 {% endhint %}
 
-The S3 plugin can connect to an Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects ,and any other provider that supports S3 to execute a set of [actions](../core-concepts/writing-code/appsmith-framework.md) supported by Appsmith.
+The Appsmith S3 Datasource can connect to Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, MinIO, and any other S3 provider! Below, you will see examples of connecting to your S3 provider and issuing [List](querying-amazon-s3.md#list-files), [Create](querying-amazon-s3.md#create-file), [Read](querying-amazon-s3.md#read-file), and [Delete](querying-amazon-s3.md#delete-file) actions.
+
+For our examples below, we will connect to an **Amazon S3** provider.
 
 ## Connection Settings
 
-The S3 Datasource requires the following information to establish a connection
-
-![Click to expand](../.gitbook/assets/amazon\_s3\_create\_datasource.png)
+The S3 Datasource requires the following information to establish a connection:
 
 1. Amazon Access Key ID
 2. Amazon Secret Key
-3. Region: [AWS service region](https://docs.aws.amazon.com/general/latest/gr/rande.html).
 
-The Access Key & Secret can be fetched using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+For Amazon S3, you can find your Access Key and Secret Key using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+
+![Provide the name of your S3 provider, your Access Key, Secret Key, and then click "Save".](<../.gitbook/assets/as\_s3\_1 (1).png>)
+
+## Signed and Un-signed URLs
+
+A **signed URL** allows the user to follow that link directly and immediately view the related resource. If you only have an **un-signed URL,** then that resource cannot be accessed directly; instead, you will need to use the Amazon API to query the resource along with appropriate authentication.
+
+Signed URLs are only valid for a certain amount of time: For Amazon S3, you can specify a length of time of up to 7 days (10,080 minutes). To configure this in the Appsmith platform, enter the desired length of time (in minutes) into the `Expiry Duration of Signed URL` field.
+
+{% hint style="info" %}
+In any of the S3 actions below that return file information, you can choose to generate a signed URL for each returned file by selecting "Yes" in the `Generate Signed URL` dropdown field in your query's configuration.
+{% endhint %}
+
+If you choose to generate a signed URL, the query response will include two additional fields:
+
+* `signedUrl`: The signed URL for the file.
+* `urlExpiryDate`: The timestamp at which the signed URL will expire.
+
+With the `Generate Un-signed URL` dropdown option, you may choose to request a regular URL that links to the resource. In that case, you would receive one additional field `url` which does not expire; however, as mentioned above, this URL cannot be used to access the resource directly, and instead must be used within a valid API request.
 
 ## List Files
 
-This action lists all the files in a bucket. The bucket name is the bucket from which all the files are fetched. This action returns an array of file paths relative to the bucket. **ex.** `/dir/fileName.txt`.
+This action lists/returns an array of objects which are contained within that bucket, each including at least a `fileName` property.
 
-You can also choose to generate a signed URL for each listed file by selecting `Yes` in the `Generate Signed URL` dropdown. An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field. In this case, the output returns two other fields:
+```json
+[
+  {
+    fileName: "myFile.pdf",
+    ...
+  },
+  ...
+]
+```
 
-* `signedUrl`: It contains the signed URL for the file.
-* `urlExpiryDate`: It contains the timestamp at which the signed URL will expire.
+Fill in the **Bucket Name** input with the name of the S3 bucket you'd like to query.
 
-![Click to expand](../.gitbook/assets/amazon\_s3\_list\_query.png)
+![Use the Prefix field to only query files whose names begin with the specified prefix.](<../.gitbook/assets/as\_s3\_list (1).png>)
+
+You can use the **Prefix** box to narrow your query to return only files that begin with your specified prefix. This is used to access S3 directories; files are stored in a flat structure instead of nested folders, but are grouped by adding common prefixes to the related items' filenames. This emulates the traditional directory tree structure. Take a look at the [Amazon S3 documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html) for more detail on how files are organized!
+
+```
+// directory tree structure
+root
+|__folderOne
+| |__itemOne.png
+|
+|__folderTwo
+  |__folderThree
+    |__ itemTwo.pdf
+    
+// S3 structure
+bucket
+|__ folderOne/itemOne.png
+|__ folderTwo/folderThree/itemTwo.pdf
+```
 
 ## Create File
 
-This action creates a new file at the location specified by the file path (including file name). The action returns the following two fields:
+This action creates a new file in the specified bucket, named according to the `File Path` field. Remember to include directories in the file name, e.g. `folderTwo/folderThree/itemTwo.png`.
 
-* `signedUrl`: It contains the signed URL for the file.
-* `urlExpiryDate`: It contains the timestamp at which the signed URL will expire.
+The action returns the following two fields:
 
-An expiry duration can be set for the generated signed URLs by editing the `Expiry Duration of Signed URL` field.
+* `signedUrl`: A signed URL for the file.
+* `urlExpiryDate`: A timestamp at which the signed URL will expire.
+
+You can set an expiry duration for the generated signed URLs by editing the `Expiry Duration of Signed URL` field.
+
+![Enter the file path, which is a string representing the complete path relative to the bucket.](../.gitbook/assets/as\_s3\_create.png)
 
 {% hint style="warning" %}
-If a file already exists on the file path, it will be replaced with the new file.
+If a file by the same name/path already exists within the bucket, the old file will be _overwritten_ by the new file!
+
+Enable the **"Request confirmation before running query"** setting to help avoid accidentally overwriting files!
 {% endhint %}
 
-The content can be configured using the entire file object of the Filepicker. `{{Filepicker1.files[0]}}`\
-Or you can manually add data in form of an object format given below:
+![Enable this setting to prevent accidental destructive actions!](../.gitbook/assets/as\_s3\_confirm.png)
+
+There are two ways to send content to the S3 bucket:
+
+1. A file can be selected and uploaded with the [Filepicker Widget](https://docs.appsmith.com/widget-reference/filepicker). To reference this file in your query (assuming that your Filepicker is named "FilePicker1"), use `{{Filepicker1.files[0]}}` in the `Content` field of your query.
+   * Be sure that the `File Data Type` field is set appropriately for the data you are uploading. For example, if your Filepicker's `Data Format` is set to `Base64`, your query should be set to `Base64` also.
+2. Alternatively, you can manually add data into the `Content` field by writing an object with a `text` and `data` property like below:
 
 ```
 {
-  "data": "Text content",
-  "type": "text/plain"
+  "type": "text/plain",
+  "data": "This is my text content!"
 }
 ```
 
-![](<../.gitbook/assets/amazon\_s3\_upload\_query\_using\_filepicker (1).png>)
+In this second case, you'll want to ensure that your `File Data Type` is set to `Text`.
+
+### Creating Multiple Files
+
+There are a couple of extra considerations to make when using the **Create multiple new files** operation:
+
+1. When using the Filepicker, be sure to set the widget's **Max No. Files** property to a value greater than the default "1"; otherwise, the user will not be able to upload multiple files for the query.
+2. Now when defining the query's Content, you'll pass in the entire \{{`Filepicker1.files}}` array, instead of \{{`FilePicker1.files[0]}}` as before.
+3. You can give all of the files a common path/prefix in your bucket by setting the **Common File Path** field in your query. This can be used to achieve a result such as:
+
+```
+// a single Create Multiple query with Common Path set to "commonPath/"
+commonPath/fileOne.png
+commonPath/fileTwo.png
+commonPath/fileThree.jpeg
+```
+
+**Remember**: The file paths are actually just file names that follow a pattern which looks like directories; this means that, in order to achieve a result like "commonPath/fileOne.png", you will need to explicitly include the "/" character in the **Common File Path** field (e.g. use `commonPath/`, not just `commonPath`).
 
 ## Read File
 
-This action fetches a file in the Bucket Name specified with a file path relative to the bucket. By default, the raw content of the file is returned in the `fileData` field of response. File content can also be Base64 encoded by selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
+This action fetches a file from the bucket (specified in the `Bucket Name` field) with a file name/path matching the contents of the `File Path` field. By default, the raw content of the file is returned on the `fileData` property of the response. File content can also be Base64 encoded by selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
+
+If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
 
 {% hint style="warning" %}
-When reading multimedia files or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded using the atob() method in javascript.
+When reading multimedia files or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded with `atob()` as noted above.
 {% endhint %}
 
-![Click to expand](../.gitbook/assets/amazon\_s3\_read\_query.png)
+![Access the contents of your file with queryName.data.fileData](../.gitbook/assets/as\_s3\_read.png)
 
 ## Delete File
 
-This action deletes a file at the file path relative to the Bucket Name specified. Files deleted cannot be restored so ensure your files have been backed up.
+This action deletes a file with the name/path matching the contents of the `File Path` field. Files deleted from the bucket cannot be restored; please ensure you have backed up your files!
 
-{% hint style="success" %}
-Enable the confirmation setting in this query to avoid accidental file deletes
+This action returns a message on the `status` property describing the outcome of your query.
+
+{% hint style="warning" %}
+Enable the **"Request confirmation before running query"** setting in your Delete Query to help avoid accidentally deleting files!
 {% endhint %}
 
-![Click to expand](../.gitbook/assets/amazon\_s3\_delete\_query.png)
+![Delete a file by supplying the Bucket name, and the file name to delete.](../.gitbook/assets/as\_s3\_delete.png)
+
+### Deleting Multiple Files
+
+The only difference from the single Delete operation is that you'll now be providing an array of file paths to delete in the **List of Files** field. For example:
+
+```
+{{
+  [
+    "folderOne/itemOne.png",
+    "folderTwo/folderThree/itemTwo.pdf"
+  ]
+}}
+```
 
 ## Using Queries in applications
 

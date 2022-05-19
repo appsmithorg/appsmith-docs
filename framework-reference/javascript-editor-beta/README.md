@@ -20,7 +20,7 @@ Here, “myVar1”, and “myVar2” are two variables, and “myFun1”, and �
 
 Once you have created functions and variables in a JS Object, you can call/refer to them at any place where you can write JavaScript across the Appsmith platform, as shown below.
 
-![Calling a JS Object](<../../.gitbook/assets/call\_JS\_object (1).png>)
+![Calling a JS Object](../../.gitbook/assets/call\_JS\_object.png)
 
 There could be any number of functions that you can add to a JS Object which could be **Synchronous** or **Asynchronous** in nature.
 
