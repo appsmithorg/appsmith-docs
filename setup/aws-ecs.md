@@ -85,7 +85,7 @@ Once the cluster is created, you will need to create a task that will be run on 
    * Leave the Task role **blank**.
    * Select the **default** Network mode
 
-![Configuration of the Task](<../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-f509484bd9f35563a4d3acfdff13fb2981e142f1\_ecs-task-def (1).png>)
+![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1).png>)
 
 
 
@@ -109,7 +109,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
 * Hit **Add.**&#x20;
 
-![Conainer Port Configuration ](<../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d78fe1a32910be3be88d4a38fe01a7145e2eeec3\_ecs-task-appsmith (1).png>)
+![Conainer Port Configuration ](<../.gitbook/assets/ecs-task-appsmith (1).png>)
 
 * Finally, hit the **Create** button.
 
@@ -134,7 +134,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 4\. Configure network - Proceed to the next step with the **default** configurations.&#x20;
 
-![](<../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-f2f1777872fb32c283ae6993a7013b941bde76f4\_ecs-service-lb (1).png>)
+![](<../.gitbook/assets/ecs-service-lb (2).png>)
 
 5\. Set Auto Scaling - Proceed to the next step with the **default** configuration.&#x20;
 

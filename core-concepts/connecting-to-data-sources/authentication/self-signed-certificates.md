@@ -16,4 +16,4 @@ To upload your self-signed certificate:
 
 This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format, as shown below. The certificate information is stored securely in an encrypted format in the database.
 
-![Example contents of a self-signed certificate in .PEM format.](<../../../.gitbook/assets/Self-signed certificate (1).png>)
+![Example contents of a self-signed certificate in .PEM format.](<../../../.gitbook/assets/Self-signed certificate.png>)

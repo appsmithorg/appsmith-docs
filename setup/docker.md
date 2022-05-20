@@ -4,20 +4,28 @@ description: Appsmith can be deployed locally or on your private instance using 
 
 # Docker
 
+Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.&#x20;
+
+{% embed url="https://www.youtube.com/watch?v=Tde7GqE6FQQ" %}
+
 ## Prerequisites
 
 * [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
 * [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later)
 
-Create an installation folder called `appsmith`where you would like your Appsmith installation and data storage.
+Create an installation folder called `appsmith` where you would like your Appsmith installation and data storage.
 
-`cd`  into the installation folder.
-
-{% embed url="https://youtu.be/Tde7GqE6FQQ" %}
+`cd`  into the installation folder.&#x20;
 
 ## Quick Start (with docker-compose)
 
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
+
+{% hint style="warning" %}
+You can expect one container running when using the `docker-compose ps` command. Something like:&#x20;
+
+_#Container appsmith                                 Running_
+{% endhint %}
 
 ### Docker-compose configuration
 
@@ -49,7 +57,9 @@ If it is not available locally, the command above will download the Docker image
 docker logs -f appsmith
 ```
 
-You should see a message `Appsmith is Running!` once the container is ready
+You should see a message `Appsmith is Running!` once the container is ready. If this is your first time using docker, you should expect a welcome page similar to the one below.&#x20;
+
+![Welcome Page](<../.gitbook/assets/image (1) (1).png>)
 
 {% hint style="success" %}
 Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
@@ -79,7 +89,7 @@ This command will download the image and start Appsmith. Once the download is co
 docker logs -f appsmith
 ```
 
-You should see a message `Appsmith is Running!` once the container is ready
+You should see the message `Appsmith is Running!` once the container is ready
 
 ## Restarting Containers
 
