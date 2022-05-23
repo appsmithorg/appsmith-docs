@@ -181,6 +181,11 @@ export default {
 }
 ```
 
+#### Using Data From Async Functions In Synchronous Fields
+THe video below explains how to read data from async functions in sync fields
+
+{% embed url="https://youtu.be/yn_8gs5w04g" caption="Using Data From Async Functions In Synchronous Fields" %}
+
 ### Current Limitations
 
 As we’ve currently released the beta version, the following are the current limitations of JavaScript Editor functionality:
