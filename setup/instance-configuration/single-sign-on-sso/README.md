@@ -17,3 +17,7 @@ Google OAuth integration is one of the most widely used custom authentication in
 ## OpenID Connect (OIDC)
 
 OpenID Connect(OIDC) is an authentication paradigm built on the OAuth 2.0 protocol. It allows you to verify the identity of users by authentication provider or your choice. Appsmith is integrated with several authentication providers that you can customize for your self-hosted instances. Follow the step-wise guide to [configure OpenID Connect (OIDC) for Single Sign-On](openid-connect-oidc/).
+
+## Security Assertion Markup Language (SAML)
+
+**Security Assertion Markup Language (SAML)** is an open standard for exchanging authentication and authorization data between parties- an Identity provider(IdP) and a service provider. Appsmith provides integration with SAML providers. You can customize them for your self-hosted instance. Follow the step-wise guide to [configure Security Assertion Markup Language (SAML) for Single Sign-On](security-assertion-markup-language-saml/).
