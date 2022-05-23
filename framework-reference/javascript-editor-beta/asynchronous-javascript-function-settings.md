@@ -109,7 +109,7 @@ As shown in the screenshot below, you can see that the `showData` function is ca
 
 ### CONFIRM BEFORE CALLING
 
-With this setting, you can generate a confirmation pop-up and take the user’s input for executing the function. For example, the JS object has the function `deletePermission` which calls an API that deletes the database’s permission. You would want to ensure that the user wants to delete permission, in which case, you would like to show a confirmation dialogue that provides the user wants to perform the delete action and can choose **Yes** or, if not, can decline the same by choosing **No**. Thus comes in handy to protect against users accidentally running destructive operations.
+With this setting, you can generate a confirmation pop-up and take the user’s input for executing the function. For example, the JS object has the function `deletePermission` which calls an API that deletes the database’s permission. You would want to ensure that the user wants to delete permission, in which case, you would like to show a confirmation dialogue. The confirmation dialog ensures that the user wants to perform a delete action. A user can choose **Yes** to delete or can decline the same by choosing **No**. Thus `Confirm Before Calling` comes in handy to protect against users accidentally running destructive operations.
 
 ![A confirmation dialog is shown to the user before execution on myFun2](<../../.gitbook/assets/Confirmation Dialog.png>)
 
