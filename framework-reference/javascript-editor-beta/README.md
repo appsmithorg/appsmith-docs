@@ -181,6 +181,11 @@ export default {
 }
 ```
 
+#### Executing JavaScript Functions On Page Load
+It is possible to run JavaScript functions on page load of your application. The video below shows you how to set it up
+
+{% embed url="https://youtu.be/yo2-XEt_EuU" caption="How To Run JavaScript Functions On Page Load" %}
+
 ### Current Limitations
 
 As we’ve currently released the beta version, the following are the current limitations of JavaScript Editor functionality:
