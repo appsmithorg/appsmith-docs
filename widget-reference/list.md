@@ -6,7 +6,7 @@ You can use a list widget to display structured data collection. For example, Yo
 List widget is in beta right now. It can only render widgets for display purposes like text, images, etc., in the template, but we plan to offer more features in the future.
 {% endhint %}
 
-{% embed url="https://youtu.be/0ePiZlWmp7Q" %}
+{% embed url="https://youtu.be/QyIO51Wzao8" caption="How To Use The List Widget" %}
 
 ## Usage
 
