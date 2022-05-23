@@ -28,6 +28,7 @@
         * [Auth0](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/auth0.md)
         * [Ping Identity](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/ping-identity.md)
         * [Okta](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/okta.md)
+        * [Active Directory](setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/active-directory.md)
       * [Security Assertion Markup Language (SAML)](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/README.md)
         * [Auth0](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/auth0.md)
         * [Ping Identity](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/ping-identity.md)

@@ -50,3 +50,6 @@ Appsmith provides some popular OIDC integrations that you can choose from. Click
 [okta.md](okta.md)
 {% endcontent-ref %}
 
+{% content-ref url="active-directory.md" %}
+[active-directory.md](active-directory.md)
+{% endcontent-ref %}
