@@ -34,6 +34,8 @@
         * [Ping Identity](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/ping-identity.md)
         * [Okta](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/okta.md)
   * [Instance Management](setup/instance-management.md)
+  * [Migrate from multi-container setup](setup/migrate.md)
+  * [Migrate from multi-container setup (k8s)](setup/migrate-k8s.md)
 * [Tutorials](tutorials/README.md)
   * [Review Moderator Dashboard](tutorials/review-moderator-dashboard/README.md)
     * [Setting up the App](tutorials/review-moderator-dashboard/setting-up-the-app.md)
