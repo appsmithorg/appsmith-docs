@@ -2,6 +2,8 @@
 
 The currency input widget gives you an input field to capture a user's currency input.
 
+{% embed url="https://youtu.be/I-FusTdnJeE" caption="How To Use The Currency Input Widget" %}
+
 ## Properties
 
 Properties allow you to edit the input box, connect it with other widgets and customize the user actions. Let's look into different types of properties.
