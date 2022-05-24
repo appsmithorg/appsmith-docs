@@ -57,11 +57,11 @@ If you wish to link a custom domain (Eg: [https://appsmith.yourcompany.com)](htt
 
 * Go to the `Settings` tab in your Heroku app.
 
-![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-5f4c70b01eb9c8289c9c9bc0e4ecdccd1fb955a2\_heroku-app-settings.png)
+![](../.gitbook/assets/heroku-app-settings.png)
 
 * Click the `Add domain` button in the `Domains` section.
 
-![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-6e0bf4f5663788696ec805307628b11ce54faeda\_heroku-add-domain-button.png)
+![](../.gitbook/assets/heroku-add-domain-button.png)
 
 * Input your domain name & click `Next`.&#x20;
 
