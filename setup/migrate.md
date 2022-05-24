@@ -1,6 +1,12 @@
-# Migrating to new deployment
+---
+description: >-
+  This guide will help you migrate your Appsmith instance running on the old
+  stack (multiple containers), to the new stack (single container).
+---
 
-This guide will help you migrate your Appsmith instance running on the old stack (multiple containers), to the new stack (single container).
+# Migrate from Multi-Container setup
+
+
 
 Let's say your current Appsmith instance is located in the folder `~/appsmith-old`, and you'd like the new setup be at `~/appsmith-new`. (This are just example folder names, please use what you prefer.)
 
@@ -56,10 +62,10 @@ Now let's go over the steps to be performed.
 
 🚨 Please ensure you are aware of the following facts before proceeding:
 
-- This whole migration should take under 25-30mins, usually less than that.
-- All users who are currently logged-in, will be logged out. They can just log back in, once the new instance is up and running just fine.
-- Depending on your configuration, any `docker-compose` and `docker` commands below might need to be run with a `sudo ` at the start.
-- Please check the output of commands to see if there's any errors, after running a command, and before proceeding to next steps.
+* This whole migration should take under 25-30mins, usually less than that.
+* All users who are currently logged-in, will be logged out. They can just log back in, once the new instance is up and running just fine.
+* Depending on your configuration, any `docker-compose` and `docker` commands below might need to be run with a `sudo` at the start.
+* Please check the output of commands to see if there's any errors, after running a command, and before proceeding to next steps.
 
 Let's first define a couple of variables that'll be useful during our migration. Please use the appropriate paths in place of `~/appsmith-old` and `~/appsmith-new`.
 
@@ -110,9 +116,8 @@ cat "$old_path"/docker.env "$old_path"/encryption.env >> "$new_path"/stacks/conf
 
 Now, in the file `"$new_path"/stacks/configuration/docker.env`:
 
-- Unless you are using an external MongoDB database, in `APPSMITH_MONGODB_URI`, please change the `@mongo` part to `@localhost`, and remove the query params (the `?` and everything after it). For example, if the current value is `mongodb://root:rootpass@mongo/appsmith?retryWrites=true&authSource=admin`, change it to be just `mongodb://root:rootpass@localhost/appsmith`.
-
-- Unless you are using an external Redis instance, in `APPSMITH_REDIS_URL`, please change `redis://redis:6379` to `redis://localhost:6379`. That is, change the host from `redis` to `localhost.`
+* Unless you are using an external MongoDB database, in `APPSMITH_MONGODB_URI`, please change the `@mongo` part to `@localhost`, and remove the query params (the `?` and everything after it). For example, if the current value is `mongodb://root:rootpass@mongo/appsmith?retryWrites=true&authSource=admin`, change it to be just `mongodb://root:rootpass@localhost/appsmith`.
+* Unless you are using an external Redis instance, in `APPSMITH_REDIS_URL`, please change `redis://redis:6379` to `redis://localhost:6379`. That is, change the host from `redis` to `localhost.`
 
 At the end of this `docker.env` file, let's add the following new environment variables:
 
@@ -149,7 +154,7 @@ Let's bring down the old instance in-full now:
 docker-compose --file "$old_path"/docker-compose.yml down
 ```
 
-Follow the official guide to start with a new Appsmith deployment at <https://docs.appsmith.com/setup/docker#docker-compose-configuration>, also shown here in brief for reference:
+Follow the official guide to start with a new Appsmith deployment at [https://docs.appsmith.com/setup/docker#docker-compose-configuration](https://docs.appsmith.com/setup/docker#docker-compose-configuration), also shown here in brief for reference:
 
 ```
 cd "$new_path"
@@ -161,7 +166,7 @@ _Please note that you must create a new `docker-compose.yml` in `"$new_path"` fo
 
 ## 6. Import database
 
-After your new deployment comes up (usually takes ~30 seconds), we will import the data that was exported from the old instance:
+After your new deployment comes up (usually takes \~30 seconds), we will import the data that was exported from the old instance:
 
 Create the folder to copy the archive file:
 
@@ -189,5 +194,4 @@ Once this is successful, we are ready to bring up our new instance!
 
 Navigate to your Appsmith instance, the same way you used to with your old instance, whether using IP address, or custom domain, and verify that your Appsmith instance is working well, and all your data is intact.
 
-After this, please designate a user as the superuser, to give them access to the Admin Settings page. You can follow the instructions at <https://docs.appsmith.com/setup/instance-configuration/admin-settings#configuring-a-superuser> to apply this change.
-diff --git a/setting-up/migrate.md b/setting-up/migrate.md
+After this, please designate a user as the superuser, to give them access to the Admin Settings page. You can follow the instructions at [https://docs.appsmith.com/setup/instance-configuration/admin-settings#configuring-a-superuser](https://docs.appsmith.com/setup/instance-configuration/admin-settings#configuring-a-superuser) to apply this change. diff --git a/setting-up/migrate.md b/setting-up/migrate.md
