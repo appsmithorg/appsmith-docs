@@ -26,7 +26,9 @@ In the community edition, You can connect up to <mark style="color:green;">**thr
 Once your app connects to the Git repository, you can further learn how version control works on Appsmith.\
 The flow is similar to how you work on Git -
 
-* [Commit and Push](commit-and-push.md)&#x20;
-* [Work with Branches](working-with-branches.md)&#x20;
+* [Commit and Push](commit-and-push.md)
+* [Work with Branches](working-with-branches.md)
 * [Pull and Sync](pull-and-sync.md)
 * [Merging Branches](merging-branches.md)
+* [Disconnect the Git repository](disconnect-the-git-repository.md)
+* [Update local file path](updating-local-file-path.md)

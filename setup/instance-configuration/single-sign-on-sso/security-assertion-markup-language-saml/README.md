@@ -16,7 +16,7 @@ Follow the below steps to configure your SAML Provider’s settings. These steps
 
 * On Appsmith, navigate to **Profile** –->**Admin Settings.**
 
-![Admin Settings](../../../../.gitbook/assets/Appsmith-Admin-Settings.png)
+![Admin Settings](<../../../../.gitbook/assets/Appsmith-Admin-Settings (1).png>)
 
 * Navigate to **Authentication** and open the available options for authentication on Appsmith.
 
@@ -33,7 +33,7 @@ Follow the below steps to configure your SAML Provider’s settings. These steps
 ![Copy Redirect URL](../../../../.gitbook/assets/Appsmith-Admin-Settings-Authentication-SAML-Redirect-URL.png)
 
 {% hint style="info" %}
-Save the **Redirect URL** as you’ll need it to configure these in the&#x20;
+Save the **Redirect URL** as you’ll need it to configure these in the
 
 **SAML provider’s settings**.
 {% endhint %}
@@ -74,13 +74,11 @@ You’ll need a **Redirect URL** and an **Entity URL** to configure **SAML** int
 
 * On Appsmith, navigate to **Profile** >> **Admin Settings.**
 
-![Navigate to Admin Settings](../../../../.gitbook/assets/Appsmith-Admin-Settings.png)
+![Navigate to Admin Settings](<../../../../.gitbook/assets/Appsmith-Admin-Settings (1).png>)
 
 * Navigate to Authentication, and open the available options for authentication on Appsmith.
 
 ![Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication (1) (1).png>)
-
-
 
 * You’ll see several options available, select **SAML** and click **Enable**.
 
@@ -121,8 +119,6 @@ The metadata XML document is usually hosted and available remotely to integrate 
 In case the Metadata URL is unavailable, but you have a raw SAML metadata XML locally available, you can click on the XML tab and add the raw Metadata XML into the Metadata XML field as shown in the below screenshot.
 
 ![Add IdP raw Metadata XML](../../../../.gitbook/assets/Appsmith-Admin-Settings-Authentication-SAML-XML.png)
-
-
 
 **IdP Data**
 

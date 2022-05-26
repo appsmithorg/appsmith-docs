@@ -4,7 +4,7 @@ description: Deploy appsmith on Heroku with our one click deploy option
 
 # Heroku
 
-__[_Heroku_ ](https://www.heroku.com/)is a platform that enables developers to build, run, and operate applications entirely in the cloud. Let's see how to self-host Appsmith on Heroku.&#x20;
+\_\_[_Heroku_ ](https://www.heroku.com/)is a platform that enables developers to build, run, and operate applications entirely in the cloud. Let's see how to self-host Appsmith on Heroku.
 
 {% embed url="https://www.youtube.com/watch?v=Bclt_VmDMpo" %}
 
@@ -57,13 +57,13 @@ If you wish to link a custom domain (Eg: [https://appsmith.yourcompany.com)](htt
 
 * Go to the `Settings` tab in your Heroku app.
 
-![](../.gitbook/assets/heroku-app-settings.png)
+![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-5f4c70b01eb9c8289c9c9bc0e4ecdccd1fb955a2\_heroku-app-settings.png)
 
 * Click the `Add domain` button in the `Domains` section.
 
-![](../.gitbook/assets/heroku-add-domain-button.png)
+![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-6e0bf4f5663788696ec805307628b11ce54faeda\_heroku-add-domain-button.png)
 
-* Input your domain name & click `Next`.&#x20;
+* Input your domain name & click `Next`.
 
 ![](../.gitbook/assets/kerolkuss.PNG)
 

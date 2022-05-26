@@ -10,7 +10,7 @@ Security Assertion Markup Language (SAML) is available only in the [enterprise e
 
 * Log in to your [Auth0](https://auth0.com/) account and go to **Applications -->** select the subhead **Applications -->** Click **Create Application**. (Please create an account if you don’t have one on [Auth0](https://auth0.com/)).
 
-![Navigate to Applications - to add a new application](../../../../.gitbook/assets/Auth0-NewApplication-SAML-Authentication-singlewebpage.png)
+![Navigate to Applications - to add a new application](../../../../.gitbook/assets/Auth0-NewApplication-OIDC-Authentication.png)
 
 From the available options, select **Regular Web Applications**.
 
@@ -24,7 +24,7 @@ The default name of the application is **My App**. You can change it to give a s
 
 ![Navigate to the Settings tab for configuration](../../../../.gitbook/assets/Auth0-SAML-Settings-Tab.png)
 
-* Scroll down to the **Application URIs** section**.** Add the **Redirect URL (**[Copied from Appsmith SAML Configuration Redirect URL Field](./#redirect-url)**)** to the **Allowed Callback URLs** field**.**
+* Scroll down to the **Application URIs** section. Add the **Redirect URL (**[Copied from Appsmith SAML Configuration Redirect URL Field](./#redirect-url)**)** to the **Allowed Callback URLs** field.
 
 ![Add the Redirect URL from Appsmith --> Admin Settings --> SAML](<../../../../.gitbook/assets/Auth0-SAML-Allowed CallbackURLs.png>)
 
@@ -76,7 +76,7 @@ If you have Identity provider’s data like `X509 Public Certificate`, `Email`, 
 
 | **Appsmith Field Name** | **Metadata XML Tag**                                                                          |
 | ----------------------- | --------------------------------------------------------------------------------------------- |
-| Entity ID               | `<EntityDescriptor`` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                     |
+| Entity ID               | ` <EntityDescriptor`` `` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                 |
 | Single Sign-On URL      | `<SingleSignOnService/>`                                                                      |
 | X509 Public Certificate | `<X509Certificate/>`                                                                          |
 | Email                   | `<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |

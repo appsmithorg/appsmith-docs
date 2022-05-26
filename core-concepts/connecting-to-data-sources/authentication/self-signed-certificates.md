@@ -2,7 +2,7 @@
 
 Self-signed certificates are sometimes used in testing or internal environments, as they provide incoming/outgoing data encryption and can be created quickly with no cost. This practice can carry significantly increased security risks, however, and should be carefully considered.
 
-In case you need to use a self-signed certificate to access your REST endpoint, the [**Authenticated API**](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication) **** Datasource allows you to upload your own self-signed certificate within the API's configuration page.
+In case you need to use a self-signed certificate to access your REST endpoint, the [**Authenticated API**](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication) \*\*\*\* Datasource allows you to upload your own self-signed certificate within the API's configuration page.
 
 To upload your self-signed certificate:
 
@@ -16,4 +16,4 @@ To upload your self-signed certificate:
 
 This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format, as shown below. The certificate information is stored securely in an encrypted format in the database.
 
-![Example contents of a self-signed certificate in .PEM format.](<../../../.gitbook/assets/Self-signed certificate (1).png>)
+![Example contents of a self-signed certificate in .PEM format.](<../../../.gitbook/assets/Self-signed certificate.png>)

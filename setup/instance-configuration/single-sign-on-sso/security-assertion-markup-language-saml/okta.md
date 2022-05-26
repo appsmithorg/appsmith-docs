@@ -1,6 +1,6 @@
 # Okta
 
-Okta, an Identity-as-a-Service (IDaaS) provider, supports authentication using Secure Assertion Markup Language (SAML). You can use SAML as an authentication type on Appsmith and configure the setup to use Okta as an identity provider.&#x20;
+Okta, an Identity-as-a-Service (IDaaS) provider, supports authentication using Secure Assertion Markup Language (SAML). You can use SAML as an authentication type on Appsmith and configure the setup to use Okta as an identity provider.
 
 {% hint style="info" %}
 Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
@@ -8,7 +8,7 @@ Security Assertion Markup Language (SAML) is available only in the [enterprise e
 
 ## Create App Integration
 
-Log in to your [Okta Developer Account](https://developer.okta.com/) and navigate to **Applications** >> **Applications**  >> Click **Create App Integration**.
+Log in to your [Okta Developer Account](https://developer.okta.com/) and navigate to **Applications** >> **Applications** >> Click **Create App Integration**.
 
 {% embed url="https://youtu.be/4Tj2OEV-r10" %}
 How to create an app integration?
@@ -36,8 +36,6 @@ How to create an app integration?
 | **Application Username**              | Email                             |
 
 You’ll see that the app integration is created on Okta. Navigate to Appsmith to configure the SAML fields and complete the configuration.
-
-
 
 ## Configure Okta SAML fields in Appsmith
 
@@ -77,7 +75,7 @@ You can also configure SAML by providing the identity provider(IdP) data. If you
 
 * Navigate to **Applications** >> **Applications** >> **Application Name (SAMLAppsmithIntegration)** >> Click on tab **Sign On** >> Scroll down to **SAML 2.0** >> Click **View Setup Instructions**
 
-![View IdP Data](../../../../.gitbook/assets/Okta-SAML-Register-Provider-IdpData.png)
+![View IdP Data](<../../../../.gitbook/assets/Okta-SAML-Register-Provider-IdpData (1).png>)
 
 * The Setup Instructions screen opens up in a new browser tab. Add the content of the tags as per the below mapping table on the Appsmith platform:
 
@@ -96,7 +94,7 @@ Once you have supplied the details, click the `SAVE & RESTART` button to save th
 
 Once the server restarts with new configurations, you will see a screen showing the message ‘Authentication Successful!’.
 
-![SAML Configuration success message - Authentication Successful ](../../../../.gitbook/assets/Appsmith-SAML-Authentication-Successful.png)
+![SAML Configuration success message - Authentication Successful](../../../../.gitbook/assets/Appsmith-SAML-Authentication-Successful.png)
 
 You’ll see a login screen with a button `SIGN IN WITH SAML SSO`.
 

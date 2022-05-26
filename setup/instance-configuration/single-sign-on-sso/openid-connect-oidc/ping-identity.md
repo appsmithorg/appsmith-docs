@@ -8,11 +8,11 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 
 ### Create Environment
 
-* Log into your [Ping one](https://www.pingidentity.com/en/resources/downloads/pingone.html) account (Please create a new account if you don’t have one). and:&#x20;
+* Log into your [Ping one](https://www.pingidentity.com/en/resources/downloads/pingone.html) account (Please create a new account if you don’t have one). and:
   * On the top left, click the Ping Identity logo.
-  * &#x20;Select **Home**. You’ll see the list of environments available. Click `Add Environment` available on the top right.
+  * Select **Home**. You’ll see the list of environments available. Click `Add Environment` available on the top right.
 
-![Create Environment](../../../../.gitbook/assets/PingIdentity-SAML-Add-Environment.png)
+![Create Environment](../../../../.gitbook/assets/PingID-Add-Environment.png)
 
 * Click on **Build your own solution** in the **Create Environment** window and choose `PingOne SSO` from the given options.
 

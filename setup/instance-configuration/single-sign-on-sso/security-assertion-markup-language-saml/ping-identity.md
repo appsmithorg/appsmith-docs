@@ -1,6 +1,6 @@
 # Ping Identity
 
-Ping Identity (PingID) is the identity as a security platform provider. It is a cloud-based authentication service provider and supports Security Assertion Markup Language (SAML). You can use Appsmith to integrate with Ping Identity using SAML configuration for authentication.&#x20;
+Ping Identity (PingID) is the identity as a security platform provider. It is a cloud-based authentication service provider and supports Security Assertion Markup Language (SAML). You can use Appsmith to integrate with Ping Identity using SAML configuration for authentication.
 
 {% hint style="info" %}
 Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
@@ -12,7 +12,7 @@ Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) ac
 
 * Click on the **Add Environment** button.
 
-![Add an Environment](../../../../.gitbook/assets/PingID-Add-Environment.png)
+![Add an Environment](../../../../.gitbook/assets/PingIdentity-SAML-Add-Environment.png)
 
 * Click on the **Build your own Solution,** select `PingOne SSO`, and click **Next**.
 
@@ -56,7 +56,7 @@ To complete the SAML setup, you’ll have to register PingID as a provider on th
 
 ### Register Identity Provider
 
-There are many ways to register the identity provider on Appsmith and complete the SAML Configuration.&#x20;
+There are many ways to register the identity provider on Appsmith and complete the SAML Configuration.
 
 Navigate to **Admin Settings** >> **Authentication** >> Click **Enable.** Choose the one that best suits you:
 
@@ -80,7 +80,7 @@ SAML metadata is an XML document that provides information required for interact
 
 If you don’t have a **Metadata URL** but have a **raw SAML Metadata XML** document, you can choose **XML** to configure SAML.
 
-* &#x20;Click **XML**, add the raw XML in the `Metadata XML` field, and click the `SAVE & RESTART` button to save the configuration.
+* Click **XML**, add the raw XML in the `Metadata XML` field, and click the `SAVE & RESTART` button to save the configuration.
 
 ![Add a raw Metadata XML](../../../../.gitbook/assets/Appsmith-Admin-Settings-Authentication-SAML-XML.png)
 
