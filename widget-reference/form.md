@@ -4,7 +4,7 @@ A **Form** is the most widely used way of capturing a user’s digital or handwr
 
 Form widget serves as a parent widget that can store different widgets like texts to display what information to capture, an input box to capture the desired input from the user, a dropdown to allow selection, and many more. From building a user registration to a complex checkout or payment app, you can easily design the forms that best suit your business requirement with all these widgets at your disposal.
 
-{% embed url="https://www.youtube.com/watch?v=HtoWzzje-Vs&feature=youtu.be" %}
+{% embed url="https://youtu.be/UgpQ0ZOnzdg" caption="How To Use The Form Widget" %}
 
 ## Add to Canvas
 
