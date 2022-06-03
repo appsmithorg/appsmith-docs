@@ -37,6 +37,7 @@
           * [Auth0](getting-started/setup/instance-configuration/authentication/single-sign-on-sso/security-assertion-markup-language-saml/auth0.md)
           * [Ping Identity](getting-started/setup/instance-configuration/authentication/single-sign-on-sso/security-assertion-markup-language-saml/ping-identity.md)
           * [Okta](getting-started/setup/instance-configuration/authentication/single-sign-on-sso/security-assertion-markup-language-saml/okta.md)
+          * [Active Directory](getting-started/setup/instance-configuration/authentication/single-sign-on-sso/security-assertion-markup-language-saml/active-directory.md)
       * [JSON Web Tokens (JWT)](getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt.md)
     * [SSL & Custom Domain](getting-started/setup/instance-configuration/custom-domain.md)
     * [Custom MongoDB & Redis](getting-started/setup/instance-configuration/custom-mongodb-redis.md)
