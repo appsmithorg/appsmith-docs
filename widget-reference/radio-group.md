@@ -11,6 +11,7 @@ The Radio group widget allows users to configure a group of radio buttons. It le
 | **Options**                | It sets a list of options for a user to select. Values must be unique.                                                                                 |
 | **Default Selected Value** | Sets a default value that is selected as user input unless it is changed by the user.                                                                  |
 | **Label**                  | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](radio-group.md#label). |
+| **Inline**                 | Whether the checkbox buttons are to be displayed inline horizontally.                                                                                  |
 | **Required**               | When turned on, it makes a user input required and disables any form submission until input is made.                                                   |
 | **Visible**                | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                   |
 | **Disabled**               | Disables input to this widget.                                                                                                                         |
@@ -21,7 +22,7 @@ The property hosts a group of configurations that you can use to associate a dis
 
 #### **Text**
 
-It allows you to set the display name for the Radio Group. For example, if you want the user to select a Gender Type, you can enter the text as "Gender."&#x20;
+It allows you to set the display name for the Radio Group. For example, if you want the user to select a Gender Type, you can enter the text as "Gender."
 
 {% hint style="info" %}
 You can leave the text empty if you don't want any display name for your Radio Group widget.
