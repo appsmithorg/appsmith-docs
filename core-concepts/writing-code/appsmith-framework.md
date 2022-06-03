@@ -8,16 +8,16 @@ description: >-
 
 ## Objects
 
-* [appsmith](../../framework-reference/appsmith.md)
-* [Query](../../framework-reference/run.md)
+* [appsmith](../../reference/appsmith-framework/appsmith.md)
+* [Query](../../reference/appsmith-framework/run.md)
 
 ## Functions
 
-* [Show Modal](../../framework-reference/show-modal.md)
-* [Close Modal](../../framework-reference/close-modal.md)
-* [Download](../../framework-reference/download.md)
-* [Show Alert](../../framework-reference/show-alert.md)
-* [Navigate To](../../framework-reference/navigateto.md)
-* [Store Value](../../framework-reference/store-value.md)
-* [Reset Widget](../../framework-reference/resetwidget.md)
-* [Copy To Clipboard](../../framework-reference/copytoclipboard.md)
+* [Show Modal](../../reference/appsmith-framework/widget-actions/show-modal.md)
+* [Close Modal](../../reference/appsmith-framework/widget-actions/close-modal.md)
+* [Download](../../reference/appsmith-framework/widget-actions/download.md)
+* [Show Alert](../../reference/appsmith-framework/widget-actions/show-alert.md)
+* [Navigate To](../../reference/appsmith-framework/widget-actions/navigateto.md)
+* [Store Value](../../reference/appsmith-framework/widget-actions/store-value.md)
+* [Reset Widget](../../reference/appsmith-framework/widget-actions/resetwidget.md)
+* [Copy To Clipboard](../../reference/appsmith-framework/widget-actions/copytoclipboard.md)

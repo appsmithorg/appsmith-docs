@@ -24,7 +24,7 @@ Watch this 5-minute video on how to use Appsmith.
 
 ## Creating an Account
 
-Try Appsmith by creating an account in our cloud environment (Read about our [data security.](faq.md#what-type-of-data-security-does-appsmith-provide)). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:
+Try Appsmith by creating an account in our cloud environment (Read about our [data security.](getting-started/faq.md#what-type-of-data-security-does-appsmith-provide)). Alternatively, you can also deploy Appsmith on your local machine or private server instance. Follow the links below for more information:
 
 * [Create an account on Appsmith Cloud](https://app.appsmith.com) (Recommended as it comes with a mock database);
 * [Deploy Appsmith on my machine](https://docs.appsmith.com/setup)

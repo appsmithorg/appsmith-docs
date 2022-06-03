@@ -6,13 +6,13 @@ description: >-
 
 # Creating Workflows
 
-This document presumes you are familiar with [triggering actions](../capturing-data-write/#triggering-updates) from widgets and expands on triggering more complex actions to create a workflow.
+This document presumes you are familiar with [triggering actions](../data-access-and-binding/capturing-data-write/#triggering-updates) from widgets and expands on triggering more complex actions to create a workflow.
 
 ## Handling Success / Error
 
 The property pane allows us to configure the action to take once a Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API / Query.
 
-We can decide to display a success or an error message by using the [**showAlert Action**](../../framework-reference/show-alert.md).
+We can decide to display a success or an error message by using the [**showAlert Action**](../../reference/appsmith-framework/widget-actions/show-alert.md).
 
 ![](<../../.gitbook/assets/error handling.gif>)
 
@@ -34,7 +34,7 @@ Every query object contains a run method that is used to execute it. The run met
 {{ API1.run(); Query2.run(); API2.run(); }}
 ```
 
-or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](../../framework-reference/run.md)
+or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](../../reference/appsmith-framework/run.md)
 
 ```javascript
 {{ 

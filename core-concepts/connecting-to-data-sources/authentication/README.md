@@ -1,4 +1,4 @@
-# Connecting to REST APIs
+# REST APIs
 
 If your APIs are protected by an authentication mechanism, that requires a standard set of headers or parameters that need to be sent with every request, you can save these in a common data source to be reused with every request known as Authenticated APIs.
 
@@ -50,17 +50,17 @@ The API authentication is a process of validating the consumer's identity who at
 
 Configure one of the below authentication modes and save it.
 
-{% content-ref url="basic-authentication.md" %}
-[basic-authentication.md](basic-authentication.md)
+{% content-ref url="authentication-type/basic-authentication.md" %}
+[basic-authentication.md](authentication-type/basic-authentication.md)
 {% endcontent-ref %}
 
-{% content-ref url="oauth2-authentication/" %}
-[oauth2-authentication](oauth2-authentication/)
+{% content-ref url="authentication-type/oauth2-authentication/" %}
+[oauth2-authentication](authentication-type/oauth2-authentication/)
 {% endcontent-ref %}
 
 ## Security
 
-Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../../setup/), and audit it to ensure none of your data leaves your VPC.
+Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](../../../getting-started/setup/), and audit it to ensure none of your data leaves your VPC.
 
 ## Smart JSON Substitution
 

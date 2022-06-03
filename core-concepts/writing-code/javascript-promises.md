@@ -6,7 +6,7 @@ New to JavaScript Promises? Check the basics of promises [here](https://javascri
 
 {% embed url="https://youtu.be/VuBycqPJVug" %}
 
-All Appsmith APIs like [`showAlert()`](../../framework-reference/show-alert.md), [`showModal()`](../../framework-reference/show-modal.md), [`storeValue()`](../../framework-reference/store-value.md), [`navigateTo()`](../../framework-reference/navigateto.md) etc., will return a promise, making asynchronous workflow's implementation easier and readable.
+All Appsmith APIs like [`showAlert()`](../../reference/appsmith-framework/widget-actions/show-alert.md), [`showModal()`](../../reference/appsmith-framework/widget-actions/show-modal.md), [`storeValue()`](../../reference/appsmith-framework/widget-actions/store-value.md), [`navigateTo()`](../../reference/appsmith-framework/widget-actions/navigateto.md) etc., will return a promise, making asynchronous workflow's implementation easier and readable.
 
 To understand the difference between callbacks and Promise implementation, let's try to implement the logic where we run three APIs each after the success of the previous one and finally show an alert with a message as "done."
 
