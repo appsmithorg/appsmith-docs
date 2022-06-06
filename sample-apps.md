@@ -155,19 +155,19 @@ description: >-
 
 ## Utility
 
-[How to build a simple counter app?](https://app.appsmith.com/applications/61e14d22eb0501052b9fae0b/pages/61e14d22eb0501052b9fae0e)
+[How to build a simple counter app?](https://app.appsmith.com/input-widget/input-counter-revamp-624b5f0651a8863d6c4012ad)
 
-[How to build a simple calculator app?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbf8572cd3d95ca414b958)
+[How to build a simple calculator app?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/624c8ea151a8863d6c402cbb)
 
-[How to embed HTML in the app (using `iframe` Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684)
+[How to embed HTML in the app (using `iframe` Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/624ca5cc51a8863d6c402e31)
 
 [How to parse XML data (using JS Object)?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/624dd2e751a8863d6c404b39)
 
-[How to read a CSV file?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/620bdf566b4b1e154a3c2ea1)
+[How to read a CSV file?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/62547025e52b06350af370e8)
 
 [How to convert a CSV file to JSON (using JS Object)?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/620b7d6c6b4b1e154a3c2596)
 
-[How to merge data from two different queries (using JS Object)?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbc09e2cd3d95ca414b59c)
+[How to merge data from two different queries (using JS Object)?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/62572b3f0d3d384069c09390)
 
 ## How do I do X on Appsmith?
 
