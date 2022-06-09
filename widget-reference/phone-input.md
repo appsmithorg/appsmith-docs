@@ -2,6 +2,8 @@
 
 The phone input widget gives you an input field to capture a phone number as an input.
 
+{% embed url="https://youtu.be/DuyMuOZm83g" caption="How To Use The Phone Input Widget" %}
+
 ## Properties
 
 Properties allow you to edit the input box, connect it with other widgets and customize the user actions. Let's look into different types of properties.
