@@ -163,8 +163,15 @@ Once the cluster is created, you will need to create a task that will be run on 
 ![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-b42232223f0151a5f3324137635656e4ab248312\_appsmith-welcome-page.png)
 
 > Note: - In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
->
-> * Auto-update is not supported, please go to the service and force redeployment to update your instance with the latest image.
+
+
+## Updating to the latest Appsmith release
+  1. Navigate to the ECS cluster from the ECS dashboard.
+  2. In the Services tab select the Appsmith service.
+  3. On the Service page, hit the Update button.
+  4. In the configure service page, set the Number of Tasks field to 0 with other configurations intact, and skip to review and launch.
+  5. Wait until the new service is deployed, once done again go to the Service page and hit Update button.
+  6. In the configure service page, set the Number of Tasks field to 1 and check the Force new deployment option (with other configurations intact), and skip to review and launch.
 
 ## Troubleshooting
 
