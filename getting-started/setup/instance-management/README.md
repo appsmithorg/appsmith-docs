@@ -4,7 +4,7 @@ Appsmith comes with an `appsmithctl` command to help with the management and mai
 
 ## Updating to the latest release
 
-Appsmith auto-updates using Watchtower so you do not need to manually update your appsmith installation. In the odd event that you do, you can run the following command in the installation directory.
+You can perform a manual update of your Appsmith instance by running the following commands in the Appsmith installation directory.
 
 ```bash
 // To restart appsmith without docker compose

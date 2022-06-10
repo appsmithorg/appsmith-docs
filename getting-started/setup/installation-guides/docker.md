@@ -70,11 +70,23 @@ Congratulations! Your Appsmith server should be up and running now. You can acce
 To update Appsmith (configured with docker-compose) manually, go to the root directory of your setup and run the following commands:
 
 ```
-docker-compose pull
-docker-compose rm -fsv appsmith
-docker-compose up -d
+docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
+### Enabling Appsmith Auto-updates (with docker-compose)
+
+If your Appsmith setup does not have auto-update enabled (i.e. it will not have Watchtower container running along with Appsmith in the host machine)
+You can enable auto-update by followin the following steps:
+ 1. Go the root directory of your Appsmith setup and run: 
+  ```
+  docker-compose stop -v
+  ```
+ 2. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (line 13-23).
+ 3. Run the command: 
+  ```
+  docker-compose up -d
+  ```
+  
 ## Explore Appsmith (without docker-compose)
 
 To quickly get Appsmith up and running, run the following command on your machine:
