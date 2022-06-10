@@ -4,6 +4,8 @@ The JSON form widget is useful for quickly generating forms from JSON fields. Yo
 
 JSON form abstracts away all the complexity in building the first draft of the forms. Your time is better spent building amazing apps than building long forms for CRUD workflows.
 
+{% embed url="https://youtu.be/Zk6df9mOtQA" caption="How To Use The JSON Form Widget" %}
+
 ## Add to Canvas
 
 To add a JSON form widget to your canvas, drag a JSON form widget from a widget pane available on the left navigation bar.
