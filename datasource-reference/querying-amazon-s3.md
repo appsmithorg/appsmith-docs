@@ -91,7 +91,7 @@ If a file by the same name/path already exists within the bucket, the old file w
 Enable the **"Request confirmation before running query"** setting to help avoid accidentally overwriting files!
 {% endhint %}
 
-![Enable this setting to prevent accidental destructive actions!](../.gitbook/assets/2)
+![Enable this setting to prevent accidental destructive actions!](../.gitbook/assets/as\_s3\_confirm.png)
 
 There are two ways to send content to the S3 bucket:
 
