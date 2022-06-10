@@ -6,6 +6,8 @@ The following document assumes that you understand the [basics of connecting to 
 
 The Appsmith S3 Datasource can connect to Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, MinIO, and any other S3 provider! Below, you will see examples of connecting to your S3 provider and issuing [List](querying-amazon-s3.md#list-files), [Create](querying-amazon-s3.md#create-file), [Read](querying-amazon-s3.md#read-file), and [Delete](querying-amazon-s3.md#delete-file) actions.
 
+{% embed url="https://youtu.be/pmEmQcd9_KA" %}
+
 For our examples below, we will connect to an **Amazon S3** provider.
 
 ## Connection Settings
@@ -91,7 +93,7 @@ If a file by the same name/path already exists within the bucket, the old file w
 Enable the **"Request confirmation before running query"** setting to help avoid accidentally overwriting files!
 {% endhint %}
 
-![Enable this setting to prevent accidental destructive actions!](../../.gitbook/assets/as\_s3\_confirm.png)
+![Enable this setting to prevent accidental destructive actions!](../../.gitbook/assets/2)
 
 There are two ways to send content to the S3 bucket:
 
