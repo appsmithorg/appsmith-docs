@@ -48,7 +48,7 @@ To use Appsmith, copy the IPv4 address from the settings and open it in a new ta
 ## Updating to latest Appsmith release
 SSH into your droplet and run the following command:
 ```
-cd appsmith && docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
+cd /root/appsmith && docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
 ## Troubleshooting
