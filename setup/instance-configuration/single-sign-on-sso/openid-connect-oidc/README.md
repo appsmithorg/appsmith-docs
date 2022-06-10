@@ -16,7 +16,7 @@ For OIDC configuration in Appsmith, follow the steps below (the below steps are 
 
 * On your Appsmith Application, go to **Profile > Admin Settings.**
 
-![Navigate to Profile and click on Admin settings](<../../../../.gitbook/assets/Appsmith-Admin-Settings (1).png>)
+![Navigate to Profile and click on Admin settings](../../../../.gitbook/assets/Appsmith-Admin-Settings.png)
 
 * Navigate to **Authentication** and open the types of authentication available on Appsmith.
 

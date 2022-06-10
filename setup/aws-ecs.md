@@ -85,7 +85,7 @@ Once the cluster is created, you will need to create a task that will be run on 
    * Leave the Task role **blank**.
    * Select the **default** Network mode
 
-![Configuration of the Task](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-f509484bd9f35563a4d3acfdff13fb2981e142f1\_ecs-task-def.png)
+![Configuration of the Task](<../.gitbook/assets/ecs-task-def (1) (1) (1) (1).png>)
 
 4\. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
 
@@ -107,7 +107,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
 * Hit **Add.**
 
-![Conainer Port Configuration](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d78fe1a32910be3be88d4a38fe01a7145e2eeec3\_ecs-task-appsmith.png)
+![Conainer Port Configuration](<../.gitbook/assets/ecs-task-appsmith (1) (1) (1) (1).png>)
 
 * Finally, hit the **Create** button.
 
@@ -132,7 +132,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 4\. Configure network - Proceed to the next step with the **default** configurations.
 
-![](../.gitbook/assets/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-f2f1777872fb32c283ae6993a7013b941bde76f4\_ecs-service-lb.png)
+![](<../.gitbook/assets/ecs-service-lb (1) (1) (1).png>)
 
 5\. Set Auto Scaling - Proceed to the next step with the **default** configuration.
 
@@ -164,14 +164,14 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 > Note: - In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
 
-
 ## Updating to the latest Appsmith release
-  1. Navigate to the ECS cluster from the ECS dashboard.
-  2. In the Services tab select the Appsmith service.
-  3. On the Service page, hit the Update button.
-  4. In the configure service page, set the Number of Tasks field to 0 with other configurations intact, and skip to review and launch.
-  5. Wait until the new service is deployed, once done again go to the Service page and hit Update button.
-  6. In the configure service page, set the Number of Tasks field to 1 and check the Force new deployment option (with other configurations intact), and skip to review and launch.
+
+1. Navigate to the ECS cluster from the ECS dashboard.
+2. In the Services tab select the Appsmith service.
+3. On the Service page, hit the Update button.
+4. In the configure service page, set the Number of Tasks field to 0 with other configurations intact, and skip to review and launch.
+5. Wait until the new service is deployed, once done again go to the Service page and hit Update button.
+6. In the configure service page, set the Number of Tasks field to 1 and check the Force new deployment option (with other configurations intact), and skip to review and launch.
 
 ## Troubleshooting
 
