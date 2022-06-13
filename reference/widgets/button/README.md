@@ -2,7 +2,7 @@
 
 The button widget is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly.
 
-{% embed url="https://www.youtube.com/watch?v=zNGwWO6OXlw" %}
+{% embed url="https://youtu.be/8FOJ1CFRQcU" %}
 
 ## Properties
 
