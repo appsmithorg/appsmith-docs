@@ -57,7 +57,7 @@ The process usually takes a few minutes. Use the EC2 Dashboard to check the stat
 
 At this point, you should be able to browse to the cloud server, by entering the cloud server IP address or DNS name directly into your browser’s address bar. You should now see your web app home page as shown below:
 
-![Login Page](../../../.gitbook/assets/aws-login-page.png)
+![Login Page](<../../../.gitbook/assets/aws-login-page (1).png>)
 
 ## Application Credentials
 

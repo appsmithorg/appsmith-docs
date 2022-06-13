@@ -2,6 +2,8 @@
 
 Files can be uploaded to Amazon S3 using the S3 plugin and FilePicker Widget. This document presumes you have successfully [connected to your S3 instance](../../reference/datasources/querying-amazon-s3.md)
 
+{% embed url="https://youtu.be/pmEmQcd9_KA" %}
+
 ## Uploading a File
 
 To upload a file
