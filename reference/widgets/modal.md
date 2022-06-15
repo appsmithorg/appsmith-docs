@@ -1,17 +1,48 @@
----
-description: >-
-  Modal is a simple UI widget you can use when you want to create Dialogs,
-  Popovers or Alerts.
----
-
 # Modal
+
+Modal is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
 
 {% embed url="https://youtu.be/s8cHVkhj3ec" %}
 
+## Properties
+
+Properties allow you to edit the Modal widget, connect it with other widgets and customize the user actions.
+
+### Widget Properties
+
+These properties allow you to edit the Modal widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+
 | Property            | Description                                                                 |
 | ------------------- | --------------------------------------------------------------------------- |
-| **Quick Dismiss**   | Quickly dismisses or closes the Modal when the user taps outside the modal. |
 | **Scroll Contents** | This property enables scrolling within the contents of the modal            |
+| **Quick Dismiss**   | Quickly dismisses or closes the Modal when the user taps outside the modal. |
+| **Animate Loading** | Allows you to control a widget’s animation on the page load.                |
+
+### Binding Properties
+
+These properties allow you to bind your Modal widget with any other widget in queries or JS objects.&#x20;
+
+| Property      | Description                                                   |   |
+| ------------- | ------------------------------------------------------------- | - |
+| **isOpen**    | This property indicates whether the modal is open or not.     |   |
+| **isVisible** | This property indicates whether the widget is visible or not. |   |
+
+### Events
+
+They are a set of actions that you can perform on the widget. The following table lists the actions:
+
+| Events      | Description                                             |   |
+| ----------- | ------------------------------------------------------- | - |
+| **onClose** | This event triggers an action when the modal is closed. |   |
+
+### Styles
+
+Style properties allow you to change the look and feel of the widget.
+
+| Styles               | Description                              |   |
+| -------------------- | ---------------------------------------- | - |
+| **Background color** | Sets the background color of the widget. |   |
+| **Border Radius**    | Allows you to define curved corners.     |   |
 
 ## Reopening Created Modals
 
