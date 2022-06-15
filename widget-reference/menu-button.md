@@ -4,8 +4,6 @@ description: Menu buttons are used to represent a set of actions in a group.
 
 # Menu Button
 
-sf
-
 {% embed url="https://youtu.be/tDMAOxZTmxY" %}
 
 ## Properties
