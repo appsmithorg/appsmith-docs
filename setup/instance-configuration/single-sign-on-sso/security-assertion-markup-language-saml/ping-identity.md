@@ -12,7 +12,7 @@ Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) ac
 
 * Click on the **Add Environment** button.
 
-![Add an Environment](../../../../.gitbook/assets/PingID-Add-Environment.png)
+![Add an Environment](../../../../.gitbook/assets/PingIdentity-SAML-Add-Environment.png)
 
 * Click on the **Build your own Solution,** select `PingOne SSO`, and click **Next**.
 

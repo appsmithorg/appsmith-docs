@@ -75,7 +75,7 @@ You can also configure SAML by providing the identity provider(IdP) data. If you
 
 * Navigate to **Applications** >> **Applications** >> **Application Name (SAMLAppsmithIntegration)** >> Click on tab **Sign On** >> Scroll down to **SAML 2.0** >> Click **View Setup Instructions**
 
-![View IdP Data](../../../../.gitbook/assets/Okta-SAML-Register-Provider-IdpData.png)
+![View IdP Data](<../../../../.gitbook/assets/Okta-SAML-Register-Provider-IdpData (1).png>)
 
 * The Setup Instructions screen opens up in a new browser tab. Add the content of the tags as per the below mapping table on the Appsmith platform:
 
