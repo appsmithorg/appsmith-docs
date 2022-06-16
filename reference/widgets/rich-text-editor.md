@@ -1,36 +1,58 @@
----
-description: >-
-  The Rich Text Editor is used to capture Rich Text input from a user. The input
-  is captured in HTML format.
----
-
 # Rich Text Editor
+
+The Rich Text Editor is used to capture Rich Text input from a user. The input is captured in HTML format.
 
 {% embed url="https://youtu.be/_KrxFScQJys" %}
 
-## Properties
+## Properties&#x20;
 
-Properties can be divided into the following groups:
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
 
-### Internal Property
+### Widget Properties
 
-| Property | Description                                             |
-| -------- | ------------------------------------------------------- |
-| **text** | This property contains the text of the Rich Text Editor |
+These properties allow you to edit the Rich text Editor widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-### Widget Property
+| Property            | Description                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Input Type**      | Sets the input type of the default text property in the widget.                                                     |
+| **Default Text**    | This property sets the default text of the Rich Text Editor.                                                        |
+| **Required**        | Makes input to the widget mandatory.                                                                                |
+| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
+| **Disable**         | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed.      |
+| **Animate Loading** | Controls the loading of the widget.                                                                                 |
+| **Hide toolbar**    | Controls the visibility of the toolbar                                                                              |
 
-| Widget Property                                         | Description                                                                                                                                                |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Default Text**                                        | This property sets the default text of the Rich Text Editor.                                                                                               |
-| **Label**                                               | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](rich-text-editor.md#label) |
-| **Visible**                                             | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                        |
-| **Disabled**                                            | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed.                                             |
-| **Hide toolbar** Controls the visibility of the toolbar |                                                                                                                                                            |
+### Binding Properties
+
+&#x20;These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+
+| Property       | Description                                                    | Code Snippet                     |
+| -------------- | -------------------------------------------------------------- | -------------------------------- |
+| **isDisabled** | This property indicates whether the widget is disabled or not. | `{{RichTextEditor1.isDisabled}}` |
+| **isVisible**  | This property indicates whether the widget is visible or not.  | `{{RichTextEditor1.isVisible}}`  |
+| **text**       | It fetches the value that the user has entered.                | `{{RichTextEditor1.text}}`       |
+
+### Events
+
+They are a set of actions that you can perform on the widget.&#x20;
+
+| Events           | Description                                                                                                                                    |   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| **onTextChange** | Sets the action to be run when the user inputs text. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |   |
 
 ### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+| Label                | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| **Text**             | Sets the label text of the widget.                           |
+| **Position**         | Sets the label position of the widget.                       |
+| **Alignment**        | Sets the label alignment of the widget.                      |
+| **Width**            | Sets the label width of the widget as the number of columns. |
+| **Label Text Color** | Allows you to set text color for the label.                  |
+| **Label Text Size**  | Allows you to set the size of the label.                     |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic.     |
 
 #### **Text**
 
@@ -60,10 +82,12 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-## Action
+### Styles&#x20;
 
-There are a set of actions that you can perform on the widget. The following table lists the actions:
+Style properties allow you to change the look and feel of the widget.
 
-| Action            | Description                                                                                                                                    |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onTextChanged** | Sets the action to be run when the user inputs text. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
+| Style             | Description                                            |   |
+| ----------------- | ------------------------------------------------------ | - |
+| **Border Radius** | Allows you to define curved corners.                   |   |
+| **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
+
