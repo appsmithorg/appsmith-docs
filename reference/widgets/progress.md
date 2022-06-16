@@ -14,19 +14,26 @@ These properties allow you to edit the Progress bar widget. All these properties
 
 | Property             | Description                                                                                                                                                                                                                                      |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Type**             | The progress bar can be of linear or circular type                                                                                                                                                                                               |
-| **Progress**         | Percentage of progress to be indicated to the user.                                                                                                                                                                                              |
 | **Infinite loading** | Control’s the widget to be in an infinite loading state, which is useful if the progress values are not determinable. This can be switched on for queries or API calls that take time to return data.                                            |
+| **Type**             | The progress bar can be of linear or circular type.                                                                                                                                                                                              |
+| **Progress**         | Percentage of progress to be indicated to the user.                                                                                                                                                                                              |
 | **Number of steps**  | Progress bar can be broken down into multiple parts called steps, each step contains a fixed percentage of progress. Number of steps can be configured to break down the progress bar for better communication. Only supports positive integers. |
 | **Show Result**      | Controls widget’s ability to show the current evaluated percentage as in number along with the progress.                                                                                                                                         |
 | **Visible**          | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                                                                             |
-| **Fill Color**       | Controls the color of the progress bar.                                                                                                                                                                                                          |
 
 ### Binding Properties
 
 These properties allow you to bind your Progress bar widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Internal Property | Description                                                      | Code Snippet                          |
-| ----------------- | ---------------------------------------------------------------- | ------------------------------------- |
-| **progress**      | It shows the current progress of the progress bar in percentage. | `{{<progress-widget_name>.progress}}` |
-| **visible**       | Visibility of the progress bar widget.                           | `{{<progress-widget_name>.visible}}`  |
+| Property     | Description                                                      | Code Snippet                          |
+| ------------ | ---------------------------------------------------------------- | ------------------------------------- |
+| **progress** | It shows the current progress of the progress bar in percentage. | `{{<progress-widget_name>.progress}}` |
+| **visible**  | Visibility of the progress bar widget.                           | `{{<progress-widget_name>.visible}}`  |
+
+### Styles&#x20;
+
+Style properties allow you to change the look and feel of the widget.
+
+| Styles         | Description                             |   |
+| -------------- | --------------------------------------- | - |
+| **Fill Color** | Controls the color of the progress bar. |   |
