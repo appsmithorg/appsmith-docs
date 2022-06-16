@@ -1,14 +1,10 @@
----
-description: >-
-  ‌Select / Dropdown widget is used to capture user input/s from a specified
-  list of permitted inputs.
----
-
 # Select
+
+‌Select / Dropdown widget is used to capture user input/s from a specified list of permitted inputs.
 
 {% embed url="https://youtu.be/zNw1yMwg-aY" %}
 
-## Displaying Data
+### Displaying Data
 
 A Dropdown's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
@@ -20,13 +16,13 @@ A Dropdown's **options** can be populated from a data source like an API / Query
 }}
 ```
 
-## Filtering Data
+### Filtering Data
 
 A Dropdown can be used to filter a dataset based on the user's input. The selected value can be passed to an API using\*\*`{{ dropdownName.selectedOptionValue }}` .
 
-## **Form Submission**
+### **Form Submission**
 
-Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, status.
+Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, and status.
 
 {% hint style="success" %}
 Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
@@ -42,29 +38,60 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below.
 
-[Sending widget data in post body](dropdown-1.md)
+[Sending widget data in the post body](dropdown-1.md)
 
-## Properties
+## Properties&#x20;
 
-| Internal Property       | Description                                                                                                                                                          |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **selectedOptionValue** | This is the value of the option that is displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option |
-| **filterText**          | The filter text for Server side filtering                                                                                                                            |
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
 
-| Property                  | Description                                                                                                                                                                      |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Placeholder**           | Sets the Placeholder of the dropdown widget.                                                                                                                                     |
-| **Options**               | Lets you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
-| **Default Option**        | Sets a default option that will be captured as user input unless it is changed by the user.                                                                                      |
-| **Label**                 | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](dropdown-1.md#label).                            |
-| **Required**              | When turned on, it makes a user input mandatory and disables any form submission until an input is made.                                                                         |
-| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                              |
-| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                 |
-| **Server Side Filtering** | Enables server side filtering of the via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                |
+### Widget Properties&#x20;
+
+These properties allow you to edit the Select widget. All these properties are present in the property pane of the widget.&#x20;
+
+| Property                  | Description                                                                                                                                                                       |   |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| **Options**               | Let's you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |   |
+| **Default Value**         | Sets a default option that will be captured as user input unless it is changed by the user.                                                                                       |   |
+| **Placeholder**           | Sets the Placeholder of the dropdown widget.                                                                                                                                      |   |
+| **Required**              | When turned on, it makes a user input mandatory and disables any form submission until input is made.                                                                             |   |
+| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                               |   |
+| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                  |   |
+| **Animate Loading**       | Allows you to control a widget’s animation on the page load.                                                                                                                      |   |
+| **Filterable**            | Makes the dropdown list filterable.                                                                                                                                               |   |
+| **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                        |   |
+
+### Binding Properties
+
+These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+
+| Property                | Description                                                                                                                                                          |                                       |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| **filterText**          | The filter text for Server side filtering                                                                                                                            | `{{widget_name.filterText}}`          |
+| **isDisabled**          | This property indicates whether the widget is disabled or not.                                                                                                       | `{{widget_name.isDisabled}}`          |
+| **isVisible**           | This property indicates whether the widget is visible or not.                                                                                                        | `{{widget_name.isVisible}}`           |
+| **selectedOptionValue** | This is the value of the option that is displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option | `{{widget_name.selectedOptionValue}}` |
+| **selectedOptionLabel** | This property indicates label of the selected option.                                                                                                                | `{{widget_name.selectedOptionLabel}}` |
+
+### Events&#x20;
+
+They are a set of actions that you can perform on the widget.&#x20;
+
+| Events             | Description                                                                                                                                                     |   |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md). |   |
 
 ### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+| Label         | Description                                                  |   |
+| ------------- | ------------------------------------------------------------ | - |
+| **Text**      | Sets the label of the widget.                                |   |
+| **Position**  | Sets the label position of the widget.                       |   |
+| **Alignment** | Sets the label alignment of the widget.                      |   |
+| **Width**     | Sets the label width of the widget as the number of columns. |   |
+
+Let's understand the label properties in detail:
 
 #### **Text**
 
@@ -94,9 +121,14 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-## Actions
+### Styles&#x20;
 
-| Action             | Description                                                                                                                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
-| **onFilterUpdate** | Trigger an action on change of `filterText`. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md)                         |
+Style properties allow you to change the look and feel of the widget.
+
+| Style                | Description                                              |   |
+| -------------------- | -------------------------------------------------------- | - |
+| **Label Text Color** | Allows you to set text color for the label.              |   |
+| **Label Text Size**  | Allows you to set the size of the label.                 |   |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| **Border Radius**    | Allows you to define curved corners.                     |   |
+| **Box Shadow**       | Allows you to choose from the available shadow styles.   |   |
