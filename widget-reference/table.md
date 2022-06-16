@@ -16,9 +16,8 @@ Properties allow you to edit the table, connect it with other widgets and custom
 
 These properties allow you to edit the table itself. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
 
-| **Widget Property**            | **Description**                                                                                                                                                                                         |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Table Data**                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.                                  |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings.                                                         |
 | **Server Side Pagination**     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
 | **Visible**                    | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                             |
@@ -86,7 +85,7 @@ Column Control has the following properties:
 ![](../.gitbook/assets/computed\_value.jpg)
 
 \
-You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column.&#x20;
+You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column.
 
 For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
 
@@ -112,6 +111,9 @@ These properties allow you to bind your table widget with any other widget in qu
 | **selectedRow**        | It contains the data of the row selected by the user. It will be an empty object if no row is selected                       | `{{<table_name>.selectedRow}}`         |
 | **selectedRows**       | It contains an array of rows selected by the user when multi-select is enabled. It will be \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
 | **triggeredRow**       | When a user interacts with an actionable item (like button) in a row, triggerdRow fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
+| **isVisible**          | This property indicates whether the widget is visible or not.                                                                | `{{<table_name>.isVisible}}`           |
+| **sortOrder**          | This property helps you sort values.                                                                                         | `{{<table_name>.sortOrder}}`           |
+| **tableData**          | This property gets all the table data in JSON format.                                                                        | `{{<table_name>.tableData}}`           |
 | **selectedRowIndex**   | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.                          | `{{<table_name>.selectedRowIndex}}`    |
 | **selectedRowIndices** | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is disabled.    | `{{<table_name>.selectedRowIndices`\}} |
 | **filteredTableData**  | It contains the data of the rows that is the resultant of the filters applied, sorting or the data searched                  | `{{<table_name>.filteredTableData}}`   |
@@ -119,7 +121,7 @@ These properties allow you to bind your table widget with any other widget in qu
 | **pageSize**           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`            |
 | **searchText**         | Contains the search text entered by the user in the Table                                                                    | `{{<table_name>.searchText}}`          |
 
-Consider a table `Table_1` with the table data given below:
+Let's understand the binding properties in detail. Consider a table `Table_1` with the table data given below:
 
 ```
 [
@@ -324,6 +326,8 @@ Let's bind a text widget to `Table_1` using searchText.
 
 ### Events
 
+They are a set of actions that you can perform on the widget. The following table lists the actions:
+
 | Action                 | Description                                                                                                                                                                                                                                                                                                                 |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                                 |
@@ -349,9 +353,21 @@ Style properties allow you to change the look and feel of the table. It has seve
 * Text alignment;
 * Playing around with the color of the text or cell background.
 
+| Style                     | Description                                              |   |
+| ------------------------- | -------------------------------------------------------- | - |
+| **Cell Background Color** | Allows you to set background color for the cells.        |   |
+| **Text Color**            | Allows you to set text color.                            |   |
+| **Text Size**             | Allows you to set the size of the text.                  |   |
+| **Font Style**            | Allows you to choose a font style, i.e., bold or italic. |   |
+| **Text Align**            | Sets the label alignment of the text.                    |   |
+| **Vertical Alignment**    | Sets the alignment of the widget.                        |   |
+| **Border Radius**         | Allows you to define curved corners.                     |   |
+| **Box Shadow**            | Allows you to choose from the available shadow styles.   |   |
+
 ## Guides
 
 ### Setup Server-Side Search
+
 A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform search on the server-side (API server or database) and have the results displayed on the table. A video guid on how to do this is shown below:
 
-{% embed url="https://youtu.be/3ayioaw5uj8" caption="How To Setup Server-Side Search For The Table Widget" %}
+{% embed url="https://youtu.be/3ayioaw5uj8" %}
