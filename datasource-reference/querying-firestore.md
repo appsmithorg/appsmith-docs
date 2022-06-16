@@ -261,7 +261,7 @@ The Update operation is quite similar to the create operation.
 * Now, copy-paste Modal1, rename it to Modal2 and set the onClick property of the Edit Task button to open Modal2.&#x20;
 * Here, in the form, we can also set the default value to show existing information, to display this, use the **`selectedRow`** property from the table widget.
 
-![](<../.gitbook/assets/HehUWab3Z (1).png>)
+![](<../.gitbook/assets/HehUWab3Z (1) (1).png>)
 
 Let’s write the Edit query:
 
