@@ -25,7 +25,7 @@ Let's understand the widget properties in detail.
 
 #### Text
 
-`Text` field takes the input for the text widget. You can also add `HTML` code in the Text field manually or dynamically to render it in the widget.
+The `Text` field takes the input for the text widget. You can also add `HTML` code in the Text field manually or dynamically to render it in the widget.
 
 {% embed url="https://youtu.be/jIOajSSe6vI" %}
 
@@ -35,7 +35,7 @@ Text field can only render inline CSS. If you want to use external CSS, we sugge
 
 #### Truncate Text
 
-This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fix inside the given widget area.
+This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fit inside the given widget area.
 
 {% embed url="https://youtu.be/Pex6RAyeHso" %}
 
@@ -55,7 +55,7 @@ When you tick the checkbox, it will enable the Visible property, and the text wi
 
 #### Disable link
 
-It prevents the input text from being parsed as a link. You can also write a `JS` code to link Disable link’s functionality to a user action. Click on `JS` next to the `Disable link` to write JavaScript code.
+It prevents the input text from being parsed as a link. You can also write a `JS` code to link Disable the link’s functionality to a user action. Click on `JS` next to the `Disable link` to write JavaScript code.
 
 For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Disable link` property. To enable the `Disable link` when the user checks the checkbox, add the following JavaScript code:
 
@@ -67,6 +67,15 @@ When you tick the checkbox, it will enable the Disable link property, and the in
 
 {% embed url="https://youtu.be/bmPk0arvZQM" %}
 
+### Binding Properties&#x20;
+
+These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+
+| Property      | Description                                                   | Code Snippet         |
+| ------------- | ------------------------------------------------------------- | -------------------- |
+| **isVisible** | This property indicates whether the widget is visible or not. | `{{Text.isVisible}}` |
+| **text**      | This property returns the widget's text value.                | `{{Text.text}}`      |
+
 ### Styles
 
 Style properties allow you to modify the text widget visually. It has several options, such as -
@@ -77,6 +86,7 @@ Style properties allow you to modify the text widget visually. It has several op
 * **Border width:** You can define the width of the border here. It takes input in px.
 * **Text size:** It gives you an option to specify the text size.
 * **Font style:** Using this property, you can modify your text visually.
+* **Font Family:** Using this property, you can select a thefont.
 * **Text Align:** This property focuses on the text alignment inside the text widget. It has three options - left, center, or right.
 
 {% embed url="https://youtu.be/kXkGfzGSxYA" %}
