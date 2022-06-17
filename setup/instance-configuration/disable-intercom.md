@@ -1,6 +1,6 @@
 # Disable Intercom
 
-To disable Intercom on your instance, please set the key `APPSMITH_INTERCOM_APP_ID` in your `docker.env` file to an empty string and restart your instance.
+To disable Intercom on your instance, please set the key `APPSMITH_DISABLE_INTERCOM` in your `docker.env` file to true and restart your instance.
 
 Example:
 
