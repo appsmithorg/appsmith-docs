@@ -174,8 +174,15 @@ appsmith.user.isAnonymous
 
 Suppose the user is **not** logged in, then `appsmith.user.isAnonymous` _returns `true`  **and redirects** the user to the `AnonymousUser` page and displays the message._
 
-> You are not authorized to view user data.
+{% hint style="info" %}
+You are not authorized to view user data.
+{% endhint %}
 
 If the user is **logged in** `appsmith.user.isAnonymous` returns `false` and the logic is executed to verify if the logged-in user is an Appsmith user. If the user is an Appsmith user, `GetUserList` API is called to fetch the user listing. The execution is completed, and the response is generated, displayed in the `UserListing` table.
+
+You can do authentication and authorization using the Async function settings. To get started;
+
+1. [View and fork the authentication application](https://app.appsmith.com/app/custom-auth-google-sso/login-62a99de284b91337251a7dd3);
+2. [View and fork the authorization application](https://app.appsmith.com/applications/62a069e0e56c5566a628df0a/pages/62a069e0e56c5566a628df0d).
 
 With the out-of-the-box settings provided for async functions, you can manage the execution of your asynchronous functions and create a better user experience.
