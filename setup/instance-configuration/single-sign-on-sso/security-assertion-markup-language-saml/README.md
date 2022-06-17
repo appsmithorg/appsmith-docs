@@ -64,6 +64,10 @@ Appsmith integrates with popular SAML providers that you can choose from. Click 
 [okta.md](okta.md)
 {% endcontent-ref %}
 
+{% content-ref url="active-directory.md" %}
+[active-directory.md](active-directory.md)
+{% endcontent-ref %}
+
 ### **Generic SAML Configuration**
 
 You can also use configurations available on Appsmith to configure your SAML providers, which are not listed here. You can follow the steps listed below to configure the details:

@@ -1,12 +1,51 @@
----
-description: >-
-  The tabs widget is a special widget that contains multiple containers. Tabs
-  can be used to contextually show UI to a user based on their choices.
----
-
 # Tabs
 
+The tabs widget is a special widget that contains multiple containers. Tabs can be used to contextually show UI to a user based on their choices.
+
 {% embed url="https://youtu.be/NLe0To_fB7E" %}
+
+## Properties
+
+&#x20;Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+
+### Widget Properties&#x20;
+
+These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+| Property            | Description                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Tabs**            | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names              |
+| **Default Tab**     | This property selects the tab which matches the corresponding name                                                       |
+| **Show Tabs**       | This property hides / shows the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI |
+| **Scroll Contents** | This property enables scrolling within the contents of each tab                                                          |
+| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published      |
+| **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                             |
+
+### Binding Properties&#x20;
+
+These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+
+| Widget Property | Description                                                   |
+| --------------- | ------------------------------------------------------------- |
+| **isVisible**   | This property indicates whether the widget is visible or not. |
+| **selectedTab** | Contains the id of the tab currently selecte                  |
+
+### Events&#x20;
+
+They are a set of actions that you can perform on the widget. The following table lists the actions:
+
+| Events            | Description                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
+
+### Styles&#x20;
+
+Style properties allow you to change the look and feel of the widget.
+
+| Styles            | Description                                            |   |
+| ----------------- | ------------------------------------------------------ | - |
+| **Border Radius** | Allows you to define curved corners.                   |   |
+| **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
 
 ## Creating Dynamic Views
 
@@ -15,24 +54,6 @@ You can create separate UIs in each tab container and dynamically switch between
 ```
 {{ Dropdown1.selectedOption === "1" ? "Tab1" : "Tab2" }}
 ```
-
-## Properties
-
-| Internal Property | Description                                   |
-| ----------------- | --------------------------------------------- |
-| **selectedTab**   | Contains the id of the tab currently selected |
-
-| Widget Property     | Description                                                                                                              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **Tabs**            | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names              |
-| **Default Tab**     | This property selects the tab which matches the corresponding name                                                       |
-| **Show Tabs**       | This property hides / shows the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI |
-| **Scroll Contents** | This property enables scrolling within the contents of each tab                                                          |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published      |
-
-| Action            | Description                                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 
 ## Tab Navigation
 

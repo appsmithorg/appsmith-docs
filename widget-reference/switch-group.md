@@ -50,6 +50,7 @@ Read more about submitting Input data to an API below.
 | **Options**         | It lets you set labels and values for different items/options in the list of the Switch group widget. Options must be specified as an array of objects with a label and value property.    |
 | **Default Option**  | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value string.                            |
 | **Label**           | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](switch-group.md#label).                                    |
+| **Inline**          | Whether the checkbox buttons are to be displayed inline horizontally.                                                                                                                      |
 | **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                        |
 | **Disabled**        | Disables input/selection to the widget. The widget will remain visible to the user, but user input/selection will not be allowed.                                                          |
 | **Animate Loading** | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
@@ -61,7 +62,7 @@ The property hosts a group of configurations that you can use to associate a dis
 
 #### **Text**
 
-It allows you to set the display name for the Switch Group. For example, if you want the user to select a payment option, you can enter the text as "Payment Options."&#x20;
+It allows you to set the display name for the Switch Group. For example, if you want the user to select a payment option, you can enter the text as "Payment Options."
 
 {% hint style="info" %}
 You can leave the text empty if you don't want any display name for your Switch Group widget.
