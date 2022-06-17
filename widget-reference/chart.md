@@ -5,7 +5,7 @@ When communicating with a larger audience, visual representation of data is bene
 A **Chart** widget is a visual representation of data. It allows you to visualize the bottlenecks in processes. With the root cause in hand, you can amend the methods to make calculated decisions.
 
 {% hint style="info" %}
-Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a **re-distribution license**. With our license, you can use FusionCharts on the Appsmith **cloud** and **on-premise** platform. The use of the license is permitted as long as what you are building on Appsmith is not used to compete with FusionCharts. \
+Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a **re-distribution license**. With our license, you can use FusionCharts on the Appsmith **cloud** and **on-premise** platform. The use of the license is permitted as long as what you are building on Appsmith is not used to compete with FusionCharts.\
 \
 Please note that our license does **not** cover **Fusion Maps**, and you will have to acquire a license if you wish to use it.
 {% endhint %}
@@ -59,7 +59,7 @@ Let’s deep dive into the properties available under this head.
 
 As soon as you select the widget, you can see an editable box available on top of the properties pane.
 
-You can use the default name in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number.&#x20;
+You can use the default name in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number.
 
 {% hint style="info" %}
 It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
@@ -82,7 +82,7 @@ Appsmith platform offers several quick and easy ways to represent your data. Wit
 
 #### **Line Chart**
 
-A line chart represents the data by connecting the individual data points to form a line. It showcases the relationship between two sets of values and where one depends on the other. It will show how the value changes over time or how the different values change over time relative to each other.&#x20;
+A line chart represents the data by connecting the individual data points to form a line. It showcases the relationship between two sets of values and where one depends on the other. It will show how the value changes over time or how the different values change over time relative to each other.
 
 For example, you are working on defect tracking for a project and want to express the data to visualize bugs raised, closed, and the active bugs that the team is working on for your sprint. You can group the defects raised in these categories and use a line chart to show bugs introduced for a 5-day window.
 
@@ -155,7 +155,7 @@ You can only use a single series of data to plot a pie chart.
 
 A column chart represents the change over time between different categories and represents the data points in the form of rectangles. In a column chart, groups are organized along the horizontal axis and values on the vertical axis.
 
-![A column chart ](../.gitbook/assets/ColumnChart.png)
+![A column chart](../.gitbook/assets/ColumnChart.png)
 
 {% hint style="info" %}
 The main difference between a bar chart and a column chart is how the data is represented on the axis. A bar chart represents data horizontally: the values on the x-axis and categories on the y-axis. In contrast, a column chart represents the values on the y-axis and categories on the x-axis.
@@ -175,7 +175,7 @@ Like a line chart for an area chart also, you can add more categories and their 
 
 #### Custom Chart
 
-Appsmith integrates with[ FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) and provides a wide array of chart types that you can use as part of a custom chart.
+Appsmith integrates with [FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) and provides a wide array of chart types that you can use as part of a custom chart.
 
 You can select **Custom Chart** from the **Chart Type** dropdown to initialize it. On selecting the Custom Chart type, you can see a property **Custom Fusion Chart** where you can define the configuration of the FusionCharts.
 
@@ -212,7 +212,7 @@ Below is an example configuration for the Custom Fusion Chart property:
 Let’s take an example to create custom Fusioncharts.
 
 {% embed url="https://youtu.be/lLrybSBTb9k" %}
-A two-dimensional column chart&#x20;
+A two-dimensional column chart
 {% endembed %}
 
 As you can see, you can choose the `Custom Chart` option from the `Chart Type` property. Once you select the custom chart type, you can see a new property `Custom Fusion Chart`.
@@ -311,7 +311,7 @@ Below are a few examples of custom charts that you can use as a starting point.
 
 **Pareto 3D Chart**
 
-A Pareto chart is a type of bar graph. It represents the frequency of change. The bar graphs follow a pattern from the longest bars on the left to the shortest on the right. Pareto charts are used to identify the areas of improvement.
+A Pareto chart is a type of bar graph. It represents the frequency of change. The bar graphs follow a pattern from the longest bars on the left to the shortest on the right. Pareto charts are used to identify the areas for improvement.
 
 Let’s take an example of a Pareto 3D chart to visualize the data by combining a line chart and column chart.
 
@@ -382,7 +382,7 @@ Take a quick look at the video to know-how.
 A three-dimensional Pie Chart
 {% endembed %}
 
-You can use the following sample code snippet to add to the custom fusion chart property and plot a pie chart in a 3-dimensional look and feel.
+You can use the following sample code snippet to add to the custom fusion chart property and plot a pie chart with a 3-dimensional look and feel.
 
 ```
 {
