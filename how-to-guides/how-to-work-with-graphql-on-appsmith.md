@@ -162,21 +162,26 @@ Here, we are passing the selected continent code stored in localStorage to the G
 
 ```
 {
-  "query": "{
-         country (code: {{(function() {return "\\\\"+`\"${appsmith.store.country}`+"\\\\" + `\"`})() }}) {
-      name 
-    capital
-     currency
-    phone
-    native
-    languages {
-      code
-      native
-      name
-      rtl
-    }
-  }
-  }"
+	query: '
+		query getCountryDetail($code: ID!) {
+			country (code: $code) {
+					name 
+					capital
+					currency
+					phone
+					native
+					languages {
+						code
+						native
+						name
+						rtl
+					}
+			}
+		}
+	',
+	variables: {
+		"code": {{appsmith.store.country}}
+	}
 }
 ```
 
