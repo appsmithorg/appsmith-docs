@@ -104,15 +104,20 @@ Now, it's time to go back to Page2 and add a new datasource for fetching countri
 
 ```
 {
-  "query": "{
-         continent (code: {{(function() {return "\\\\"+`\"${appsmith.store.code}`+"\\\\" + `\"`})() }}) {
-    countries {
-      name
-           capital
-           code
-    }
-  }
-  }"
+	query: '
+		query getCountriesInContinent($code: ID!) {
+			continent (code: $code) {
+				countries {
+					name
+					capital
+					code
+				}
+			}
+		}
+	',
+	variables: {
+		"code": {{appsmith.store.code}}
+	}
 }
 ```
 
