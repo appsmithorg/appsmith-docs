@@ -175,7 +175,7 @@ Like a line chart for an area chart also, you can add more categories and their 
 
 #### Custom Chart
 
-Appsmith integrates with[ FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) and provides a wide array of chart types that you can use as part of a custom chart.
+Appsmith integrates with [FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) and provides a wide array of chart types that you can use as part of a custom chart.
 
 You can select **Custom Chart** from the **Chart Type** dropdown to initialize it. On selecting the Custom Chart type, you can see a property **Custom Fusion Chart** where you can define the configuration of the FusionCharts.
 
@@ -311,7 +311,7 @@ Below are a few examples of custom charts that you can use as a starting point.
 
 **Pareto 3D Chart**
 
-A Pareto chart is a type of bar graph. It represents the frequency of change. The bar graphs follow a pattern from the longest bars on the left to the shortest on the right. Pareto charts are used to identify the areas of improvement.
+A Pareto chart is a type of bar graph. It represents the frequency of change. The bar graphs follow a pattern from the longest bars on the left to the shortest on the right. Pareto charts are used to identify the areas for improvement.
 
 Let’s take an example of a Pareto 3D chart to visualize the data by combining a line chart and column chart.
 
@@ -382,7 +382,7 @@ Take a quick look at the video to know-how.
 A three-dimensional Pie Chart
 {% endembed %}
 
-You can use the following sample code snippet to add to the custom fusion chart property and plot a pie chart in a 3-dimensional look and feel.
+You can use the following sample code snippet to add to the custom fusion chart property and plot a pie chart with a 3-dimensional look and feel.
 
 ```
 {
@@ -519,7 +519,7 @@ There are two ways in which you can manipulate this property.
 * Write your own JSObject and javascript code to link to any other widget and manage the show/hide.
 
 {% hint style="info" %}
-You can get the reference of visible property by using `{{widget_name.isVisible}}` in your code.
+You can get the reference of the visible property by using `{{widget_name.isVisible}}` in your code.
 {% endhint %}
 
 For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind it to the Visible property of the chart widget by enabling the `JS` label next to it. Add the following JavaScript code in the Visible property.
