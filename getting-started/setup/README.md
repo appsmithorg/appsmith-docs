@@ -8,12 +8,12 @@ description: Appsmith is open source and very easy to deploy on your own machine
 
 You can follow one of our guides to deploy Appsmith via the technology you prefer
 
-* [Docker](installation-guides/docker.md) **(Recommended)**
+* [Docker](installation-guides/docker/) **(Recommended)**
 * [Kubernetes](installation-guides/kubernetes/)
 * [AWS AMI](installation-guides/aws-ami.md)
 * [AWS ECS](installation-guides/aws-ecs.md)
 * [DigitalOcean](installation-guides/digitalocean.md)
-* [Heroku Guide](installation-guides/heroku.md)
+* [Heroku](installation-guides/heroku.md)
 * [Ansible](installation-guides/ansible.md)
 
 {% hint style="info" %}

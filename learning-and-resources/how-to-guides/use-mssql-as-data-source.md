@@ -56,7 +56,7 @@ You can put your query in the Query box and the screen should look like this:
 
 ![Screenshot 2021-10-06 at 1 09 33 PM](../../.gitbook/assets/mssql-appsmith-4.png)
 
-From here, you can run your query, name your query something to remember and test it. If you need more information regarding querying MsSQL in Appsmith, you can refer to this [great piece of article](https://docs.appsmith.com/datasource-reference/querying-mssql#querying-mssql).
+From here, you can run your query, name your query something to remember and test it. If you need more information regarding querying MsSQL in Appsmith, you can refer to this [great piece of article](../../reference/datasources/querying-mssql.md#querying-mssql).
 
 Once you write your query, it will be saved in the left-hand side menu with the identifier name of your choice and would look something like this:
 

@@ -23,7 +23,7 @@ To configure SAML within Appsmith using Active Directory as a SAML provider, fol
 
 ### Configure Appsmith URLs in Active Directory
 
-As mentioned in “[Capture Redirect & Entity URL](https://docs.appsmith.com/setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml#capture-redirect-and-entity-url),” you need to add these URLs to your SAML application. Go to your SAML application homepage and follow the steps below:
+As mentioned in [Capture Redirect & Entity URL](./#capture-redirect-and-entity-url), you need to add these URLs to your SAML application. Go to your SAML application homepage and follow the steps below:
 
 {% embed url="https://youtu.be/9EFlC0PaxD0" %}
 Adding Redirect and Entity URL&#x20;

@@ -11,7 +11,7 @@ description: Deploy Appsmith on AWS with an AMI on the marketplace
 * [Create an AWS Security Group](aws-ami.md#step-3-create-an-aws-security-group)
 * [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
 * [Configure custom domain for your app](aws-ami.md#custom-domain)
-* [Find Application Credentials](aws-ami.md#find-application-credentials)
+* [Find Application Credentials](aws-ami.md#application-credentials)
 * [Updating your Appsmith installation](aws-ami.md#updating-your-appsmith-installation)
 
 ### Step 1: Register With Amazon Web Services
@@ -92,7 +92,7 @@ The default application credentials are stored in a standalone file. To obtain t
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
 
 ## Further Reading
 

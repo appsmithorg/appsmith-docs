@@ -22,7 +22,7 @@ We take all community feature requests very seriously and the best way to reques
 
 ## How do I get help building an app?
 
-We provide support via our active discord community and GitHub issues. We're also happy to get on a call and help you build your apps! Read our [Getting Help Section](../#getting-help)
+We provide support via our active discord community and GitHub issues. We're also happy to get on a call and help you build your apps! Read our [Getting Help Section](../#help-center)
 
 ## How is Appsmith different from other app builders?
 

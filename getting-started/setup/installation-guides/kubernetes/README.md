@@ -276,6 +276,6 @@ If you encounter any errors during this process, check out our guide on [debuggi
 
 ## Further Reading
 
-* [Configuring Self Hosted Instances](../../instance-configuration/#configuring-docker-installations)
+* [Configuring Self Hosted Instances](../../instance-configuration/#configuring-kubernetes-installations)
 * [Managing the Appsmith instance](../../instance-management/)
 * [Tutorials](../../../../learning-and-resources/tutorials/)

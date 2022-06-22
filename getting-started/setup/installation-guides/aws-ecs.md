@@ -36,7 +36,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 1. [Create an ECS Cluster](aws-ecs.md#step-1-create-an-ecs-cluster)
 2. [Create Task and Container Definitions](aws-ecs.md#step-2-create-task-and-container-definitions)
-3. [Create and Run an ECS Service](aws-ecs.md#step-3-create-and-run-an-ecs-service)
+3. [Create and Run an ECS Service](aws-ecs.md#step-3-create-and-run-an-ecs-service.)
 
 > Note: Please switch to the old AWS console UI to follow the steps in this tutorial.
 
@@ -55,14 +55,14 @@ While creating the new security group, please follow the steps [detailed here](h
 * Select the provisioning model as **On-Demand Instance**.
 * Select the server size you wish to use, and set the **Number of instances** as **1**.
 * Select the **Amazon Linux2 AMI** for the EC2 AMI ID dropdown, and enter the required EBS volume size.
-* Select a **Key pair**. Please refer to [Prerequisite](aws-ecs.md#prequisites)[ **2**](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
+* Select a **Key pair**. Please refer to [Prerequisite 2](aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
 
 ![Configuring the instance](../../../.gitbook/assets/ecs-cluster-instance-config.png)
 
 5\. Networking Section
 
 * Select the **default VPC** followed by selecting the **first subnet** from the drop-down.
-* Select the **security group** created in [Prerequisite \*\*\*\* ](aws-ecs.md#prerequisites)**3.**
+* Select the **security group** created in [Prerequisite 3](aws-ecs.md#3-create-an-aws-security-group)**.**
 
 ![Configuring the Networking Section](<../../../.gitbook/assets/ecs-cluster-networking (1).png>)
 

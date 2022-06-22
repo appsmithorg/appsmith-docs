@@ -15,7 +15,7 @@ Version Control works with any Git hosting service that supports SSH protocol.
 To get started with Version control with Git in Appsmith -
 
 * [Connect to your Git Repository](connecting-to-git-repository.md)
-* [Import from a Git Repository](connecting-to-git-repository.md)
+* [Import from a Git Repository](connecting-to-git-repository.md#importing-from-a-repository)
 
 {% hint style="info" %}
 In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.

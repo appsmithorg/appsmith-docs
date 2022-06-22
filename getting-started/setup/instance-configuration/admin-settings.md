@@ -8,7 +8,7 @@ The admin settings page is a UI available only to superusers on all self-hosted 
 
 Once you log in as a superuser, you can find the Admin settings option in the profile dropdown.
 
-You can update all the instance configurations listed [here](https://docs.appsmith.com/setup/instance-configuration) in the Admin settings.
+You can update all the instance configurations listed [here](./) in the Admin settings.
 
 ![](../../../.gitbook/assets/Admin\_settings.png)
 

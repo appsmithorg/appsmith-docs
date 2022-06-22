@@ -4,7 +4,7 @@ description: Deploy appsmith on Heroku with our one click deploy option
 
 # Heroku
 
-\_\_[_Heroku_ ](https://www.heroku.com/)is a platform that enables developers to build, run, and operate applications entirely in the cloud. Let's see how to self-host Appsmith on Heroku.
+[_Heroku_ ](https://www.heroku.com/)is a platform that enables developers to build, run, and operate applications entirely in the cloud. Let's see how to self-host Appsmith on Heroku.
 
 {% embed url="https://www.youtube.com/watch?v=Bclt_VmDMpo" %}
 
@@ -25,7 +25,7 @@ The administrative privileges (Admin settings) are not available due to deployme
    * `Runtime Selection`: Select which region your app should run in (the United States or Europe)
    * `Config Variables`:
      * **Sign Up**
-       * `APPSMITH_SIGNUP_DISABLED`: Set this value to true to disable allowing users to signup on your appsmith instance. Users can only sign up if an organization administrator invites them.
+       * `APPSMITH_SIGNUP_DISABLED`: Set this value to true to disable allowing users to signup on your Appsmith instance. Users can only sign up if an organization administrator invites them.
      * **Email Configuration:**
        * `APPSMITH_MAIL_ENABLED`: Set this value to true to enable email sending (value should be `true/false` only).
        * `APPSMITH_MAIL_FROM`: Email ID using which emails will be sent from your installation.
@@ -41,8 +41,8 @@ The administrative privileges (Admin settings) are not available due to deployme
        * **Github OAuth2:**
          * `APPSMITH_OAUTH2_GITHUB_CLIENT_ID`: Client ID provided by Github for OAuth2 login.
          * `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`: Client secret provided by Github for OAuth2 login.
-     * `APPSMITH_GOOGLE_MAPS_API_KEY`: Google Maps API key that is required if you wish to leverage Google Maps widget. Read more at [https://docs.appsmith.com/third-party-services/google-maps](https://docs.appsmith.com/third-party-services/google-maps)
-     * `APPSMITH_DISABLE_TELEMETRY`: We want to be transparent and request that you share anonymous usage data with us. This data is purely statistical and helps us understand your needs & provide better support to your self-hosted instance. You can read more about what information is collected in our documentation [https://docs.appsmith.com/telemetry/telemetry](https://docs.appsmith.com/telemetry/telemetry)
+     * `APPSMITH_GOOGLE_MAPS_API_KEY`: Google Maps API key that is required if you wish to leverage Google Maps widget. Read more [here](../instance-configuration/google-maps.md).
+     * `APPSMITH_DISABLE_TELEMETRY`: We want to be transparent and request that you share anonymous usage data with us. This data is purely statistical and helps us understand your needs & provide better support to your self-hosted instance. You can read more about what information is collected in our documentation [here](../../../product/telemetry.md).&#x20;
 
 After Heroku finishes setting up the app, click "View," and your Appsmith should be up and running. It will take you to the account creation page, where you can enter credentials to create an account and get started.
 

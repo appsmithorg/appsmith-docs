@@ -46,14 +46,16 @@ To use Appsmith, copy the IPv4 address from the settings and open it in a new ta
 ![](../../../.gitbook/assets/signup\_appsmoith.gif)
 
 ## Updating to latest Appsmith release
+
 SSH into your droplet and run the following command:
+
 ```
 cd /root/appsmith && docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
 
 ## Further Reading
 

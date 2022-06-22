@@ -4,7 +4,7 @@ description: Guide on how to use Redshift as a Data Source on Appsmith
 
 # How to use Redshift as a Data Source on Appsmith
 
-The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try implementing them.
+The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](broken-reference) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Redshift
 
@@ -101,7 +101,7 @@ You can see the table library created in the left Resources section.
 
 ![Screenshot fifteen](../../.gitbook/assets/redshift-appsmith-15.png)
 
-To insert values into the table write the followirng code and hit run.
+To insert values into the table write the following code and hit run.
 
 ```sql
 insert into library values 
@@ -118,9 +118,9 @@ To display the data you can use
 
 ![Screenshot sixteen](../../.gitbook/assets/redshift-appsmith-16.png)
 
-You can definitely try out inserting more values and playing with more SQL queries. For now we will more ahead with using this database as a data source in our appsmith application.
+You can definitely try out inserting more values and playing with more SQL queries. For now we will move ahead with using this database as a data source in our Appsmith application.
 
-One last thing to do before hopping on to Appsmith for developing our application, is to configure security groups and enable connection from Appsmith by Inbound rules of security group associated to the VPC in which the our Redshift database exists. Select VPC from the services panel and scroll down to 'Security Groups'. By default the dafault VPC and default security group was attached to the Redshift database at the time of creation. Select the default security group and click on `Edit inbound rules`.
+One last thing to do before hopping on to Appsmith for developing our application, is to configure security groups and enable connection from Appsmith by Inbound rules of security group associated to the VPC in which our Redshift database exists. Select VPC from the services panel and scroll down to 'Security Groups'. By default the VPC and default security group was attached to the Redshift database at the time of creation. Select the default security group and click on `Edit inbound rules`.
 
 ![Screenshot seventeen](../../.gitbook/assets/redshift-appsmith-17.png)
 
@@ -134,7 +134,7 @@ Login to your Appsmith account or Sign up for a new account, if you don't alread
 
 ![Screenshot nineteen](../../.gitbook/assets/redshift-appsmith-19.png)
 
-Change the default name to a name of your choice.For Instance, I am using the name, 'Appsmith Library'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these components in our application. We will add Redshift as our data source, by clicking on the `+` sign next to Datasources and scrolling to Databases under the '+ Create New' section. Select `Redshift`.
+Change the default name to a name of your choice. For Instance, I am using the name, 'Appsmith Library'. You shall now see Widgets, Datasources and Pages on the left navigation bar. we can use these components in our application. We will add Redshift as our data source, by clicking on the `+` sign next to Datasources and scrolling to Databases under the '+ Create New' section. Select `Redshift`.
 
 ![Screenshot twenty](../../.gitbook/assets/redshift-appsmith-20.png)
 

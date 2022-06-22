@@ -4,7 +4,7 @@ description: Guide on how to use Notion as a Database on Appsmith
 
 # How to use Notion as a Database on Appsmith
 
-The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../../core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try implementing them.
+The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](broken-reference) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Notion
 
@@ -28,7 +28,7 @@ Then choose `Develop your own integrations` and you will be redirected to your i
 
 ![Screenshot two](../../.gitbook/assets/notion-appsmith-2.png)
 
-Click on `New Integration` and give your integration a name and logo(if you want to). Also mention the workspace that you want to associate with the integtation. Click on `Submit` and you will be receiving a secret key, make sure to copy the secret key and store it safely. We will be using the secret key to connet the integration with third-party applications.
+Click on `New Integration` and give your integration a name and logo(if you want to). Also mention the workspace that you want to associate with the integtation. Click on `Submit` and you will be receiving a secret key, make sure to copy the secret key and store it safely. We will be using the secret key to connect the integration with third-party applications.
 
 ![Screenshot three](../../.gitbook/assets/notion-appsmith-3.png)
 

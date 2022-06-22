@@ -152,7 +152,7 @@ Let's bring down the old instance in-full now:
 docker-compose --file "$old_path"/docker-compose.yml down
 ```
 
-Follow the official guide to start with a new Appsmith deployment at [https://docs.appsmith.com/setup/docker#docker-compose-configuration](https://docs.appsmith.com/setup/docker#docker-compose-configuration), also shown here in brief for reference:
+Follow the official guide to start with a new Appsmith deployment at [Docker  Compose Configuration](./#docker-compose-configuration), also shown here in brief for reference:
 
 ```
 cd "$new_path"
@@ -192,4 +192,4 @@ Once this is successful, we are ready to bring up our new instance!
 
 Navigate to your Appsmith instance, the same way you used to with your old instance, whether using IP address, or custom domain, and verify that your Appsmith instance is working well, and all your data is intact.
 
-After this, please designate a user as the superuser, to give them access to the Admin Settings page. You can follow the instructions at [https://docs.appsmith.com/setup/instance-configuration/admin-settings#configuring-a-superuser](https://docs.appsmith.com/setup/instance-configuration/admin-settings#configuring-a-superuser) to apply this change. diff --git a/setting-up/migrate.md b/setting-up/migrate.md
+After this, please designate a user as the superuser, to give them access to the Admin Settings page. You can follow the instructions at [Configuring a superuser](../../instance-configuration/admin-settings.md#configuring-a-superuser) to apply this change. diff --git a/setting-up/migrate.md b/setting-up/migrate.md

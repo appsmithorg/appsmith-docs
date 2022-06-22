@@ -27,7 +27,7 @@ To download a file
 
 1. Drag a Table onto the canvas and name it **s3\_files.**
 2. Create a new S3 query named **fetch\_files** to fetch all the files in your bucket.
-   * Configure it with the [List Files](../../reference/datasources/querying-amazon-s3.md#list-files-in-bucket) action.
+   * Configure it with the [List Files](../../reference/datasources/querying-amazon-s3.md#list-files) action.
    * Set the bucket name from where to fetch the files and run the query
    *   Bind the response of the query to the Table using javascript in the Table Data Property `{{fetch_files.data}}`.
 

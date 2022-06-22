@@ -48,7 +48,7 @@ There are two options for installing Ansible:
     ```
         $ touch inventory
     ```
-3.  To configure the `inventory` file, open it with your editor and add the the hostname or FQDN of the server(s) you want to deploy Appsmith, along with the ansible port and ansible\_user.
+3.  To configure the `inventory` file, open it with your editor and add the hostname or FQDN of the server(s) you want to deploy Appsmith, along with the ansible port and ansible\_user.
 
     The inventory file should follow the given format:
 
@@ -84,4 +84,4 @@ When it's all done, provided all went well and no parameters were changed, you s
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the appsmith team!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
