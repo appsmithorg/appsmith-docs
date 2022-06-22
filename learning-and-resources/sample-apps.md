@@ -27,6 +27,8 @@ description: >-
 
 [How to conditionally change a table cell color?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8)
 
+[How to reset a table widget using the `resetWidget()` method?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3)
+
 ## Server-side Pagination
 
 [How to do pagination with PostgreSQL?](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd)
@@ -90,6 +92,8 @@ description: >-
 [How to do form field validation?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/62074c466b4b1e154a3bf01a)
 
 [How to add dynamic input fields to a form?](https://app.appsmith.com/applications/623cd37b4d9aea1b062b3470/pages/623cd37b4d9aea1b062b347b)
+
+[How to generate a PDF file from a form using APITemplate.io?](https://app.appsmith.com/app/generatepdf/generatepdf-62a76c1284b913372519db81)
 
 ## Charts
 
