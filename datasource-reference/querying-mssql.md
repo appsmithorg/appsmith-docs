@@ -22,16 +22,16 @@ All required fields are marked with an asterisk (\*).
 
 #### **Connection**
 
-* **Connection Mode\*:**
+* **Connection Mode:**
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. It allows you to execute all CRUD queries.
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. It only allows you to fetch data and prevents making any changes.
-* **Host Address / Port\*:** Fill in the database host's address and port. If you don't specify a port, Appsmith will try to connect to port 5432 by default.
-* **Database Name\*:** Fill in the name of the database that you want to connect to.
+* **Host Address / Port:** Fill in the database host's address and port. If you don't specify a port, Appsmith will try to connect to port 5432 by default.
+* **Database Name:** Fill in the name of the database that you want to connect to.
 
 #### **Authentication**
 
-* **Username\*:** Fill in the username for the database user responsible for approving connection requests.
-* **Password\*:** Fill in the password required to log in with the provided username.
+* **Username:** Fill in the username for the database user responsible for approving connection requests.
+* **Password:** Fill in the password required to log in with the provided username.
 
 #### **SSL**
 
@@ -46,7 +46,7 @@ In this optional section, you may handle any SSL configuration required to conne
 
 ### Querying MsSQL
 
-You can query MsSQL databases using the standard [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15). When you create a new query, Appsmith can provide some template SQL to help understand the basic syntax:
+You can query MsSQL databases using the standard [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15). When you create a new query, Appsmith can provide some template SQL to help you understand the basic syntax:
 
 ![Appsmith can provide short SQL templates to guide your query](https://lh3.googleusercontent.com/m9\_HrrEv0zEMoWaK2csmD-2wYctKSFII33ShxnKeSlabGjRUg2oZQPlfRJPxaQPBkXdsmowGcp7N5r9xoLE5QSHTwaoDAE17kogI2YVr\_0tTAXwa6hJfhOUEWfAk77w3bjKPNGmJnW500BK6RQ)
 
@@ -68,28 +68,13 @@ For a more detailed walkthrough of using Appsmith to run queries against an MsSQ
 
 ### Using Prepared Statement (Beta)
 
-Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging untrusted user input with trusted data for execution. Using a Prepared Statement is one strategy for mitigating this risk.
+Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging untrusted user input with trusted data for execution. Using a prepared statement is one strategy for mitigating this risk.
 
-Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
+Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one, ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
-Let's look at a sample user query :
+Follow the guide on[ using prepared statements ](querying-mssql.md#using-prepared-statement-beta)for efficient and secured data transactions.
 
-"`sql SELECT * FROM users WHERE id =` \{{Input1.text\}}`AND name =`\{{Input2.text\}}\`;
-
-````
-When using Prepared Statement, the above query is converted automatically to the following by Appsmith :
-
-```sql
-SELECT * FROM users WHERE id = ? AND name = ?;
-````
-
-When executing this query, Appsmith first sanitizes each input to ensure protection against SQL injection. It then sets `Input1.text` 's sanitized value as the first parameter and `Input2.text` 's sanitized value as the second parameter.
-
-#### Enable Prepared Statement
-
-To enable Prepared Statement, go to the Settings tab and turn the toggle on for `Use Prepared Statement`. Existing MS-SQL queries that use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box.
-
-### Using Queries in applications
+## Using Queries in Applications
 
 Once you have successfully run a Query, you can use it in your application to
 

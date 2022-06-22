@@ -71,6 +71,7 @@
   * [How to use ElasticSearch as a data source on Appsmith](how-to-guides/how-to-use-ElasticSearch-as-a-data-source-on-Appsmith.md)
   * [How to work with GraphQL on Appsmith](how-to-guides/how-to-work-with-graphql-on-appsmith.md)
   * [How to use JS Object within Appsmith?](how-to-guides/how-to-use-js-object-within-appsmith.md)
+  * [How to Use Prepared Statements?](how-to-guides/how-to-use-prepared-statements.md)
 * [Debugging Errors](troubleshooting-guide/README.md)
   * [Action Errors](troubleshooting-guide/action-errors/README.md)
     * [Datasource Errors](troubleshooting-guide/action-errors/datasource-errors.md)
