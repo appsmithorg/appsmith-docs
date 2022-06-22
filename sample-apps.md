@@ -141,6 +141,8 @@ description: >-
 
 [How to set the date of the Date Picker on a button click?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6256e5e40d3d384069c07baa)
 
+[How to display the current date and time in real-time?](https://app.appsmith.com/app/framework/display-current-date-time-627cb8300b47255c2813c860)
+
 ## Widgets
 
 [How to populate a list widget from query/API response data?](https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fa19d411f4c46e3dfd2253)
@@ -190,6 +192,8 @@ description: >-
 [How to decode HTML entities?](https://app.appsmith.com/app/framework/decode-html-entities-62558d670d3d384069c02a36)
 
 [How to automatically update data on a table using setInterval() and clearInterval()?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6256ffb40d3d384069c08487)
+
+[How to merge the data of 2 CSV files by the ID column and display it in a Table widget?](https://app.appsmith.com/app/framework/merge-csv-files-626c64fff18dd4514ab55b1c)
 
 ## How do I do X on Appsmith?
 
