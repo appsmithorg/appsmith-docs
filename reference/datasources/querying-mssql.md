@@ -22,16 +22,16 @@ All required fields are marked with an asterisk (\*).
 
 #### **Connection**
 
-* **Connection Mode\*:**
+* **Connection Mode:**
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. It allows you to execute all CRUD queries.
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. It only allows you to fetch data and prevents making any changes.
-* **Host Address / Port\*:** Fill in the database host's address and port. If you don't specify a port, Appsmith will try to connect to port 5432 by default.
-* **Database Name\*:** Fill in the name of the database that you want to connect to.
+* **Host Address / Port:** Fill in the database host's address and port. If you don't specify a port, Appsmith will try to connect to port 5432 by default.
+* **Database Name:** Fill in the name of the database that you want to connect to.
 
 #### **Authentication**
 
-* **Username\*:** Fill in the username for the database user responsible for approving connection requests.
-* **Password\*:** Fill in the password required to log in with the provided username.
+* **Username:** Fill in the username for the database user responsible for approving connection requests.
+* **Password:** Fill in the password required to log in with the provided username.
 
 #### **SSL**
 
@@ -68,28 +68,13 @@ For a more detailed walkthrough of using Appsmith to run queries against an MsSQ
 
 ### Using Prepared Statement (Beta)
 
-Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging untrusted user input with trusted data for execution. Using a Prepared Statement is one strategy for mitigating this risk.
+Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging untrusted user input with trusted data for execution. Using a prepared statement is one strategy for mitigating this risk.
 
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
-Let's look at a sample user query :
+Follow the guide on [how to use prepared statements](../../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
 
-"`sql SELECT * FROM users WHERE id =` \{{Input1.text\}}`AND name =`\{{Input2.text\}}\`;
-
-````
-When using Prepared Statement, the above query is converted automatically to the following by Appsmith :
-
-```sql
-SELECT * FROM users WHERE id = ? AND name = ?;
-````
-
-When executing this query, Appsmith first sanitizes each input to ensure protection against SQL injection. It then sets `Input1.text` 's sanitized value as the first parameter and `Input2.text` 's sanitized value as the second parameter.
-
-#### Enable Prepared Statement
-
-To enable Prepared Statement, go to the Settings tab and turn the toggle on for `Use Prepared Statement`. Existing MS-SQL queries that use Javascript bindings to provide content of parameters (and not construct SQL command itself) would run as a Prepared Statement out of the box.
-
-### Using Queries in applications
+## Using Queries in Applications
 
 Once you have successfully run a Query, you can use it in your application to
 

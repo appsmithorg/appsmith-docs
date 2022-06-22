@@ -206,6 +206,7 @@
   * [How to use ElasticSearch as a data source on Appsmith](learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith.md)
   * [How to work with GraphQL on Appsmith](learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith.md)
   * [How to use JS Object within Appsmith?](learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md)
+  * [How to Use Prepared Statements?](learning-and-resources/how-to-guides/how-to-use-prepared-statements.md)
 * [Sample Apps](learning-and-resources/sample-apps.md)
 * [Integrations](learning-and-resources/integrations.md)
 * [Templates](learning-and-resources/templates.md)

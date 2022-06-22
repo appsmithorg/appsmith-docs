@@ -22,3 +22,4 @@ This document presumes you are familiar with the [core concepts](../../core-conc
 16. [How to use ElasticSearch as a data source on Appsmith](how-to-use-elasticsearch-as-a-data-source-on-appsmith.md)
 17. [How to work with GraphQL on Appsmith: Countries App](how-to-work-with-graphql-on-appsmith.md)
 18. [How to use JS objects within Appsmith?](how-to-use-js-object-within-appsmith.md)
+19. [How to Use Prepared Statements?](how-to-use-prepared-statements.md)
