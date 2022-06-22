@@ -1,10 +1,6 @@
----
-description: >-
-  This function is used to store key-value data to access later anywhere in the
-  app.
----
-
 # Store Value
+
+This function is used to store key-value data to access later anywhere in the app.
 
 ![](../.gitbook/assets/ezgif-5-a704414d25.gif)
 
