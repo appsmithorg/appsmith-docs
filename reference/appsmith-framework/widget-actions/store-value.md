@@ -2,7 +2,7 @@
 
 This function is used to store key-value data to access later anywhere in the app.
 
-![](broken-reference)
+![](../../../.gitbook/assets/Store\_value.gif)
 
 ## Signature
 
@@ -65,7 +65,7 @@ If you want to store value only for a session and have it cleared when you reloa
 
 The GIF below demonstrates how both functions work.
 
-![Persistent vs Session Store](broken-reference)
+![Persistent vs Session Store](../../../.gitbook/assets/Store\_value\_2.gif)
 
 {% hint style="info" %}
 * Session store (persist=false) is only available till the user exits the app or refreshes a page.
