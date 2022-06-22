@@ -143,10 +143,10 @@ You can use prepared statements whenever you want to perform a simple Create, Re
 For example, you want to create a user record into the `users` table for user registration, and capture the details from a registration form available on Appsmith for your user registration application. You can create a simple insert query to capture the user's input and store the record in the `users` table by enabling prepared statements.
 
 ```
-Insert into users (name, email) values({{userRegistrationForm.name}}, {{userRegistrationForm.email}});
+Insert into users (name, email) values({{userRegistrationForm.data.name}}, {{userRegistrationForm.data.email}});
 ```
 
-Here, `userRegistrationForm` is the name of the form widget, and `name` and `email` are the names of the input widget embedded into the form.
+Here, `userRegistrationForm` is the name of the [form](../widget-reference/form.md) widget, and `name` and `email` are the names of the [input](../widget-reference/input.md) widget embedded into the [form](../widget-reference/form.md).
 
 {% hint style="info" %}
 You can use **join queries** or **subqueries** to have **dynamic data binding** as long as the **query** is **static** and **only** **data** bindings are added to the **where** clause.&#x20;
@@ -163,9 +163,9 @@ The data supplied for latitude and longitude suggests that the column could have
 ```
 // you can see that **:: text** is used for latitude and 
 // longitude to type cast the column data
-Update users set latitude = {{userUpdateForm.latitude}} :: text, 
-longitude = {{userUpdateForm.longitude}} :: text
-where id = {{userUpdateForm.id}}
+Update users set latitude = {{userUpdateForm.data.latitude}} :: text, 
+longitude = {{userUpdateForm.data.longitude}} :: text
+where id = {{userUpdateForm.data.id}}
 ```
 
 **In Clause**
@@ -176,7 +176,7 @@ You have a search functionality allowing users to select different statuses to f
 SELECT * from users where status in ({{userStatus.selectedOptionValues}})
 ```
 
-Here, `userStatus` is a MultiSelect widget. There are two scenarios for the `in clause` queries; You don't know how many options the user will select, so you will supply a dynamic length of an array, or you know the data bindings and so supply a static length of the array to the in clause.
+Here, `userStatus` is a [MultiSelect](../widget-reference/multiselect.md) widget. There are two scenarios for the `in clause` queries; You don't know how many options the user will select, so you will supply a dynamic length of an array, or you know the data bindings and so supply a static length of the array to the in clause.
 
 **Dynamic Array Length**
 
@@ -202,7 +202,7 @@ When you know that the `in clause` will have a fixed number of data bindings you
 SELECT * from users where status in ({{userActiveStatus.text}} , {{userInActiveStatus.text}})
 ```
 
-Here, the `userActiveStatus` and `userInActiveStatus` are two different widgets that are **added as** data binding for in clause.
+Here, the `userActiveStatus` and `userInActiveStatus` are two different [text widgets](../widget-reference/text.md) that are **added as** data binding for in clause.
 
 ### When Not to Use Prepared Statements in Appsmith
 
