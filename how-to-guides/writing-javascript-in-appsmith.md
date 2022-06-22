@@ -104,7 +104,7 @@ In this way, you can also write multi-line code within Appsmith! For more inform
 
 In Appsmith, suppose you want to implement dynamic columns (show only necessary columns based on selection) in a table, you could write simple JavaScript inside the `Table Data` property. With this, you could show only columns that are selected from a dropdown.
 
-![](<../.gitbook/assets/dynamic-table (1).gif>)
+![](../.gitbook/assets/dynamic-table.gif)
 
 For example, say your table has the following in the Table Data:
 

@@ -19,7 +19,7 @@ What we need to make the connection are the endpoint, database name, and user cr
 
 * When you’re using ArangoDB cloud or a self-hosted instance, all these details can be found under the instance settings.
 
-![](../.gitbook/assets/Arango\_self\_hosted.jpeg)
+![](<../.gitbook/assets/Arango\_self\_hosted (1).jpeg>)
 
 ### Connection Settings
 

@@ -20,7 +20,7 @@ Follow the below steps to configure your SAML Provider’s settings. These steps
 
 * Navigate to **Authentication** and open the available options for authentication on Appsmith.
 
-![Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication.png>)
+![Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication (1) (1).png>)
 
 * You’ll see several options available, select **SAML** and click **Enable**.
 
@@ -82,7 +82,7 @@ You’ll need a **Redirect URL** and an **Entity URL** to configure **SAML** int
 
 * Navigate to Authentication, and open the available options for authentication on Appsmith.
 
-![Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication.png>)
+![Click Authentication](<../../../../.gitbook/assets/Appsmith-Admin Settings-Authentication (1) (1).png>)
 
 * You’ll see several options available, select **SAML** and click **Enable**.
 
