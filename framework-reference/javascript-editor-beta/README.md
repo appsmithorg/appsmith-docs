@@ -43,7 +43,7 @@ The support for the named [exports](https://developer.mozilla.org/en-US/docs/web
 
 You can call the functions defined in a JS Object by using the notation `{{ JS_OBJECT_NAME.Function_Name }}` embedded in a mustache sign as shown in the figure below:
 
-![How to call a function defined in a JS Object?](<../../.gitbook/assets/call\_JS\_object (1).png>)
+![How to call a function defined in a JS Object?](<../../.gitbook/assets/call\_JS\_object (1) (1).png>)
 
 {% hint style="info" %}
 The JS Objects defined are available across APIs, Queries, or other JS Objects defined for **a particular page,** i.e., the JS Objects have **page-level access** and are **not** accessible **across pages**.
@@ -434,6 +434,6 @@ As the JavaScript Editor is in its BETA, there are a few limitations:
 * At the moment, you cannot use `JS Objects` across pages. We are working to enable this functionality in the future. You can subscribe to[ the issue](https://github.com/appsmithorg/appsmith/issues/1751) and follow the progress.
 * You cannot define variables and functions outside of export default { }. In future iterations, we will allow you to write and export only selected variables/functions from a `JS Object`.
 
-![Async Function](<../../.gitbook/assets/JS\_editor\_async\_function (1).png>)
+![Async Function](../../.gitbook/assets/JS\_editor\_async\_function.png)
 
 * If a function is async, i.e., if it returns a promise, it cannot be called on the fields incompatible with the return type, such as the default text property of the [text](../../widget-reference/text.md) widget. For example, in the above screenshot `executeQuery` returns `Api1.run()` promise and hence is an [async function](./#asynchronous). You can call `executeQuery` or similar functions only from `trigger` or `event` properties such as `OnClick`.

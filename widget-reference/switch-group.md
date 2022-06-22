@@ -40,25 +40,53 @@ Read more about submitting Input data to an API below.
 
 [Sending widget data in the post body](../core-concepts/capturing-data-write/capture-form-data.md)
 
-### Properties
+## Properties&#x20;
 
-#### Widget Properties
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
 
-| Property            | Description                                                                                                                                                                                |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Placeholder**     | Sets the Placeholder of the multi-select widget.                                                                                                                                           |
-| **Options**         | It lets you set labels and values for different items/options in the list of the Switch group widget. Options must be specified as an array of objects with a label and value property.    |
-| **Default Option**  | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value string.                            |
-| **Label**           | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](switch-group.md#label).                                    |
-| **Inline**          | Whether the checkbox buttons are to be displayed inline horizontally.                                                                                                                      |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                        |
-| **Disabled**        | Disables input/selection to the widget. The widget will remain visible to the user, but user input/selection will not be allowed.                                                          |
-| **Animate Loading** | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
-| **Alignment**       | Controls the switch alignment on the page. Switches can be left or right-aligned.                                                                                                          |
+### Widget Properties&#x20;
 
-#### Label
+These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+| Property                    | Description                                                                                                                                                                                |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Placeholder**             | Sets the Placeholder of the multi-select widget.                                                                                                                                           |
+| **Default Selected Values** | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value strings.                           |
+| **Inline**                  | Whether the checkbox buttons are to be displayed inline horizontally.                                                                                                                      |
+| **Required**                | Makes input of the widget mandatory.                                                                                                                                                       |
+| **Visible**                 | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                        |
+| **Disabled**                | Disables input/selection to the widget. The widget will remain visible to the user, but user input/selection will not be allowed.                                                          |
+| **Animate Loading**         | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
+| **Alignment**               | Controls the switch alignment on the page. Switches can be left or right-aligned.                                                                                                          |
+
+### Binding Properties
+
+These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions
+
+| Property            | Description                                                                                                                                                              | Code Snippet                     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| **Selected Values** | An array of values of the options that are selected in a switch group. This value changes if the default values of the switch group change or the user changes a switch. | `{{widget_name.selectedValues}}` |
+
+### **Events**
+
+They are a set of actions that you can perform on the widget. The following table lists the actions:
+
+|                       | Description                                                                                                                                                          |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
+
+### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+| Label         | Description                                                  |   |
+| ------------- | ------------------------------------------------------------ | - |
+| **Text**      | Sets the label of the widget.                                |   |
+| **Position**  | Sets the label position of the widget.                       |   |
+| **Alignment** | Sets the label alignment of the widget.                      |   |
+| **Width**     | Sets the label width of the widget as the number of columns. |   |
+
+Let's understand the label properties in detail:
 
 #### **Text**
 
@@ -88,14 +116,13 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-#### **Binding Properties**
+### Styles&#x20;
 
-| Property            | Description                                                                                                                                                              |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Selected Values** | An array of values of the options that are selected in a switch group. This value changes if the default values of the switch group change or the user changes a switch. |
+Style properties allow you to change the look and feel of the widget.
 
-### **Events**
-
-|                       | Description                                                                                                                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md). |
+| Style                | Description                                              |   |
+| -------------------- | -------------------------------------------------------- | - |
+| **Label Text Color** | Allows you to set text color for the label.              |   |
+| **Label Text Size**  | Allows you to set the size of the label.                 |   |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| **Accent color**     | Sets the background color of the widget.                 |   |
