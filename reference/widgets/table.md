@@ -366,8 +366,34 @@ Style properties allow you to change the look and feel of the table. It has seve
 
 ## Guides
 
-### Setup Server-Side Search
+### Automatically Refresh Data on Tables&#x20;
 
-A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform search on the server-side (API server or database) and have the results displayed on the table. A video guid on how to do this is shown below:
+If you want to update data on Table without re-running the API / or using a refresh button, you can use the `setInterval` function.
+
+In this example, we’ll be using the switch widget (`Switch1`) to control this function and a table widget that uses the `getData` query.
+
+* Drag and Drop `Switch Wiget` into the canvas.
+* Next, go to `onChange` event and toggle the `JS` option.
+*   Now on `Switch` widget’s `onChange` property, paste the following code after making the necessary changes:
+
+    ```
+    {{
+    (() => {
+        if (Switch1.isSwitchedOn) {
+            setInterval(() => getData.run(), 2000, "autoupdate");
+        } else {
+            clearInterval("autoupdate");
+        }
+    })()
+    }}
+    ```
+
+Here, the `setInterval` function calls the `getData` query every 2 seconds when the switch widget is turned on, else, it removes the `autoupdate` (`id`) interval.
+
+![Auto-update table data](<../../.gitbook/assets/Refresh data in tables  table widget.gif>)
+
+### &#x20;Setup Server-Side Search
+
+A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform a search on the server-side (API server or database) and have the results displayed on the table. A video guide on how to do this is shown below:
 
 {% embed url="https://youtu.be/3ayioaw5uj8" %}
