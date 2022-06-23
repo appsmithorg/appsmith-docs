@@ -23,13 +23,6 @@ These properties allow you to edit the Radio Group widget. All these properties 
 | **Animate Loading**        | Allows you to control a widget’s animation on the page load.                                                         |
 | **Alignment**              | Sets alignment of the widget.                                                                                        |
 
-| Label         | Description                                                  |   |
-| ------------- | ------------------------------------------------------------ | - |
-| **Text**      | Sets the label text of the widget.                           |   |
-| **Position**  | Sets the label position of the widget.                       |   |
-| **Alignment** | Sets the label alignment of the widget.                      |   |
-| **Width**     | Sets the label width of the widget as the number of columns. |   |
-
 ### Binding Properties&#x20;
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
@@ -48,20 +41,18 @@ These properties help you share values between widgets and also allow you to eas
 | --------------------- | -------------------------------------------------------------- | - |
 | **onSelectionChange** | Sets the action to be run when the selection state is changed. |   |
 
-### Styles&#x20;
-
-Style properties allow you to change the look and feel of the widget.
-
-| Style                | Description                                              |   |
-| -------------------- | -------------------------------------------------------- | - |
-| **Label Text Color** | Allows you to set text color for the label.              |   |
-| **Label Text Size**  | Allows you to set the size of the label.                 |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
-| **Accent color**     | Sets the accent color of the widget.                     |   |
-
 ### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+| Label         | Description                                                  |   |
+| ------------- | ------------------------------------------------------------ | - |
+| **Text**      | Sets the label text of the widget.                           |   |
+| **Position**  | Sets the label position of the widget.                       |   |
+| **Alignment** | Sets the label alignment of the widget.                      |   |
+| **Width**     | Sets the label width of the widget as the number of columns. |   |
+
+Let's understand these properties in detail:
 
 #### **Text**
 
@@ -90,3 +81,14 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 {% embed url="https://youtu.be/yhsTdLgmi0c" %}
 How to set the label properties.
 {% endembed %}
+
+### Styles&#x20;
+
+Style properties allow you to change the look and feel of the widget.
+
+| Style                | Description                                              |   |
+| -------------------- | -------------------------------------------------------- | - |
+| **Label Text Color** | Allows you to set text color for the label.              |   |
+| **Label Text Size**  | Allows you to set the size of the label.                 |   |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| **Accent color**     | Sets the accent color of the widget.                     |   |

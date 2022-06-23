@@ -25,13 +25,6 @@ These properties allow you to edit the Muti-tree select widget. All these proper
 | **Clear All Selections**  | When turned on, it allows users to clear the selection which was the default or the selection made by them.                                                                                                                |
 | **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                               |
 
-| Label         | Description                                                                                                                                                                                          |   |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](https://docs.appsmith.com/widget-reference/multi-tree-select#label). |   |
-| **Position**  | Sets the label position of the widget.                                                                                                                                                               |   |
-| **Alignment** | Sets the label alignment of the widget.                                                                                                                                                              |   |
-| **Width**     | Sets the label width of the widget as the number of columns.                                                                                                                                         |   |
-
 ### Binding Properties
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
@@ -101,9 +94,18 @@ Read more about submitting Input data to an API below.
 
 [Sending widget data in the post body](../core-concepts/capturing-data-write/capture-form-data.md)
 
-#### Label
+### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+
+| Label         | Description                                                                                                                                                                                          |   |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](https://docs.appsmith.com/widget-reference/multi-tree-select#label). |   |
+| **Position**  | Sets the label position of the widget.                                                                                                                                                               |   |
+| **Alignment** | Sets the label alignment of the widget.                                                                                                                                                              |   |
+| **Width**     | Sets the label width of the widget as the number of columns.                                                                                                                                         |   |
+
+Let's understand these properties in detail:
 
 #### **Text**
 
