@@ -28,7 +28,7 @@ A Glimpse of the Review Moderator App
 The tutorial has four parts & we recommend you follow them in order. Now before getting started, let's set up Appsmith. You could either use the self-hosted version using Docker or Appsmith cloud and follow along.
 
 {% hint style="info" %}
-Note: To set up Appsmith locally using Docker, you can follow the instructions [here](https://docs.appsmith.com/setup/docker).
+Note: To set up Appsmith locally using Docker, you can follow the instructions [here](../../../getting-started/setup/installation-guides/docker/).
 {% endhint %}
 
 Let's get started with the tutorial, so first, let's **set up the app.**

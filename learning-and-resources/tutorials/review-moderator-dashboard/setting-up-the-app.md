@@ -6,7 +6,7 @@ description: >-
 
 # Setting up the App
 
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). You'll see an auto-generated organization called apps (your personal organization). However, you can create multiple organizations and organize your apps based on your preferences.
+If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). You'll see an auto-generated organization called apps (your organization). However, you can create multiple organizations and organize your apps based on your preferences.
 
 In this tutorial, you'll create a Review Moderator application under the same organization. To do this, follow the below steps:
 
@@ -26,7 +26,7 @@ The new app comes with auto-generated directories that establish an Appsmith app
 ![Application's dashboard](../../../.gitbook/assets/screenshot\_2022-05-04\_at\_7.19.09\_pm.png)
 
 {% hint style="info" %}
-Entity Explorer is where you can create and organize UI widgets, queries / JS objects and data sources. You can also find different libraries under dependencies that you can utilize under these sections.
+Entity Explorer is where you can create and organize UI widgets, queries / JS objects, and data sources. You can also find different libraries under dependencies that you can utilize under these sections.
 {% endhint %}
 
 Now, let's rename the page from **Page1** to **Business Details**; you can do this by double-clicking on the existing name.

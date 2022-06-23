@@ -36,7 +36,7 @@ Let's add some additional components that display the information whenever a par
 
 ### Adding a Map Widget
 
-To make the UI more intuitive, let's add the location of the business. To do this, we will add a [Map Widget](https://docs.appsmith.com/widget-reference/map-chart) and display the location of the business by following the below steps:
+To make the UI more intuitive, let's add the location of the business. To do this, we will add a [Map Widget](../../../reference/widgets/maps.md) and display the location of the business by following the below steps:
 
 {% embed url="https://youtu.be/J_xVn-TKPXY" %}
 Adding Map Widget

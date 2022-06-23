@@ -16,13 +16,13 @@ Appsmith supports various data sources and lets you write queries on them to per
 {% hint style="info" %}
 Appsmith supports various databases like:
 
-* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](https://docs.appsmith.com/datasource-reference/querying-amazon-s3)
-* [ArangoDB](https://docs.appsmith.com/datasource-reference/querying-arango-db)
+* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](../../../reference/datasources/querying-amazon-s3.md)
+* [ArangoDB](../../../reference/datasources/querying-arango-db.md)
 * [DynamoDB](../../../reference/datasources/querying-dynamodb.md)
 * [ElasticSearch](https://docs.appsmith.com/datasource-reference/querying-elasticsearch)
-* [Firestore](https://docs.appsmith.com/datasource-reference/querying-firestore)
-* [MongoDB](https://docs.appsmith.com/datasource-reference/querying-mongodb)
-* [MySQL](https://docs.appsmith.com/datasource-reference/querying-mysql), and a [lot more](connecting-to-data-source-and-binding-queries.md#connecting-to-postgres-mock-db).
+* [Firestore](../../../reference/datasources/querying-firestore.md)
+* [MongoDB](../../../reference/datasources/querying-mongodb/)
+* [MySQL](../../../reference/datasources/querying-mysql.md), and a [lot more](../../../reference/datasources/).
 {% endhint %}
 
 Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
@@ -73,7 +73,7 @@ To run this query, click on the **RUN** button in the top-right corner of the **
 
 Just like that, you should see the response from the DB Query in the Response Pane tab below.
 
-Next, let's bind this data onto the powerful [table widget](https://docs.appsmith.com/widget-reference/table) of Appsmith!
+Next, let's bind this data onto the powerful [table widget](../../../reference/widgets/table.md) of Appsmith!
 
 {% hint style="info" %}
 All names within a page must be unique, including widget names, query names, or API names.
@@ -100,7 +100,7 @@ Let's look at another method for adding a table widget to your canvas.
 3. Drag and drop an **`Table widget`** onto the canvas.
 
 {% hint style="info" %}
-Appsmith provides various widgets, like [tables](https://docs.appsmith.com/widget-reference/table), [lists](https://docs.appsmith.com/widget-reference/list), [buttons](https://docs.appsmith.com/widget-reference/button), [maps](https://docs.appsmith.com/widget-reference/maps), [audio](https://docs.appsmith.com/widget-reference/audio), [charts](https://docs.appsmith.com/widget-reference/chart), [forms](https://docs.appsmith.com/widget-reference/form), and more.
+Appsmith provides various widgets, like [tables](../../../reference/widgets/table.md), [lists](../../../reference/widgets/list.md), [buttons](../../../reference/widgets/button/), [maps](../../../reference/widgets/maps.md), [audio](../../../reference/widgets/audio.md), [charts](../../../reference/widgets/chart.md), [forms](../../../reference/widgets/form.md), and more.
 {% endhint %}
 
 You'll notice a property window on the right side of the program as soon as you drag the widget into the canvas; you can call it the **Widget Property Pane**. All of the table's configurations and customization properties can be found here. Here's a screenshot of the table widget and its property pane:
@@ -113,7 +113,7 @@ You can access the docked property pane of any widget, by simply clicking on the
 
 Let's look at the Table's Property Pane:
 
-**Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. Go through the detailed documentation [here](https://docs.appsmith.com/widget-reference/table) To learn more about the table widget.
+**Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. Go through the detailed documentation [here](../../../reference/widgets/table.md) To learn more about the table widget.
 
 **Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click on the cog icon and set the column data type individually.
 
@@ -121,7 +121,7 @@ Let's look at the Table's Property Pane:
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
 {% endhint %}
 
-These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](https://docs.appsmith.com/core-concepts/displaying-data-read/display-data-tables#pagination)
+These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)
 
 Now, in the **`Table Data`** property, let's bind the response from the DB Query. To do this, you'll have to use the Moustache Operator.
 

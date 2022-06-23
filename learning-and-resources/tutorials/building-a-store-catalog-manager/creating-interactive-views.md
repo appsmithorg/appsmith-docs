@@ -36,14 +36,16 @@ After those steps, your new modal should look like this:
 
 ![](../../../.gitbook/assets/as\_storeTutorial\_formModal.png)
 
-> If the modal window gets closed at any point, you can access it again in the editor by looking in the Explorer pane to the left of the screen, finding it in the Widgets tree, and clicking its name to open it back up.
+{% hint style="info" %}
+If the modal window gets closed at any point, you can access it again in the editor by looking in the Explorer pane to the left of the screen, finding it in the Widgets tree, and clicking its name to open it back up.
+{% endhint %}
 
 Click on the **Edit** button of any row to ensure that the **EditProductModal** opens as intended. After that is working, let's populate the form with widgets! It should be built such that:
 
 * It looks exactly like the **AddProductForm**
 * Its properties are configured in the same way as that of **AddProductForm**
 
-Click [here](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-2-using-forms#adding-input-widgets-to-form) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
+Click [here](using-forms.md) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
 
 {% hint style="info" %}
 **Naming:**
@@ -55,7 +57,7 @@ Like **AddProductForm**, all the form-fields in **EditProductModal** are empty. 
 
 * **ProductNameInput** should show the **productName** value of the selected row.
 * **MrpInput** should show **mrp** value of the selected row.
-* **CategorySelect** should show **category** value of the selected row.
+* **CategorySelect** should show the **category** value of the selected row.
 
 Let's configure those widgets!
 
@@ -67,7 +69,7 @@ To set a default value of **ProductNameInput**:
 
 Above, you just wrote JavaScript to set the value of **Default Text** using data from `ProductsTable.selectedRow`, which has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default Text** to this, you're pre-filling the form with this value.
 
-From within our form, we've accessed data from the selected row of our table via its `selectedRow` property. To see the exposed properties you can access for any given widget, check the **Internal Properties** section of its entry in the [**Widget Reference**](https://docs.appsmith.com/widget-reference) guide.
+From within our form, we've accessed data from the selected row of our table via its `selectedRow` property. To see the exposed properties you can access for any given widget, check the **Properties** section of its entry in the [**Widget** ](../../../reference/widgets/)documentation.
 
 Finally, note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `ProductsTable.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `ProductsTable.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
@@ -76,8 +78,8 @@ Finally, note that since the scope of a widget is limited to its parent page, a 
 
 There are two ways to access a widget's properties or an APIs/DB Query's results _from another page_:
 
-1. Store the data in your browser cache using the storeValue function so that it's available for accessing even when the user moves to another page in your app.
-2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo function](https://docs.appsmith.com/framework-reference/navigateto).
+1. Store the data in your browser cache using the [storeValue](../../../reference/appsmith-framework/widget-actions/store-value.md) function so that it's available for accessing even when the user moves to another page in your app.
+2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../../reference/appsmith-framework/widget-actions/navigateto.md) function.
 {% endhint %}
 
 Let's now set a default value for **MrpInput**:
@@ -105,13 +107,15 @@ In this section, we'll set up the API.
 
 You'll use the endpoint below to update a product:
 
-`PUT https://mock-api.appsmith.com/products/:id`
+```
+PUT https://mock-api.appsmith.com/products/:id
+```
 
-This is a mock API exposed by Appsmith to help you learn API basics. It doesn't require any authentication. It accepts JSON input, and responds with JSON output. Let's set it up on your app:
+This is a mock API exposed by Appsmith to help you learn API basics. It doesn't require any authentication. It accepts JSON input and responds with JSON output. Let's set it up on your app:
 
 1. Navigate to **ProductListPage → Datasources**.
 2. Click **+ Create New**.
-3. Choose \*\***Create new API**.
+3. Choose **Create new API**.
 4. You'll see a Postman-like interface.
 5. Rename the API to **UpdateProductApi**.
 6. Set the request method to **PUT**.
@@ -186,8 +190,8 @@ To bind multiple actions to a button event, let's write some JavaScript:
 
 This is similar to what you learned in [part 2](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-2-using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method above is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
 
-1. Execute the **ProductQuery**
-2. Close the modal
+1. Execute the **ProductQuery.**
+2. Close the modal.
 
 Note that since these actions happen asynchronously, they will all run in parallel. You can trigger as many actions as you want within **onSuccess** and **onError** by wrapping them within an anonymous function.
 
@@ -215,12 +219,12 @@ Once deployed, you can share your deployed application with both internal and ex
 2. Share the application's URL with the user, OR
 3. Invite a user by adding their email, selecting an appropriate role for them, and clicking **INVITE**.
 
-You can also make the application public, in which case anyone with the URL to the application can view it without needing to sign in. Read more on the topic in our [access-control docs](https://docs.appsmith.com/core-concepts/access-control).
+You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](../../../advanced-concepts/access-control.md).)&#x20;
 
 **What's next?**
 
 The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
 
 * [Core Concepts](https://docs.appsmith.com/core-concepts/)
-* [Widget Reference](https://docs.appsmith.com/widget-reference)
-* [Function Reference](https://docs.appsmith.com/framework-reference/show-modal)
+* [Widgets](../../../reference/widgets/)
+* [Appsmith Framework](../../../reference/appsmith-framework/)
