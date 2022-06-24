@@ -80,7 +80,7 @@ If your Appsmith setup does not have auto-update enabled (i.e. it will not have 
 You can enable auto-update by followin the following steps:
  1. Go the root directory of your Appsmith setup and run: 
   ```
-  docker-compose stop -v
+  docker-compose down
   ```
  2. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (line 13-23).
  3. Run the command: 
