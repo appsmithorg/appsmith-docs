@@ -80,9 +80,34 @@ If your Appsmith setup does not have auto-update enabled (i.e. it will not have 
 You can enable auto-update by followin the following steps:
  1. Go the root directory of your Appsmith setup and run: 
   ```
-  docker-compose stop -v
+  docker-compose down -v
   ```
- 2. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (line 13-23).
+ 2. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (line 13-23), the file final likes below:
+ ```
+ version: "3"
+
+ services:
+   appsmith:
+     image: index.docker.io/appsmith/appsmith-ce
+     container_name: appsmith
+     ports:
+       - "80:80"
+       - "443:443"
+     volumes:
+       - ./stacks:/appsmith-stacks
+     restart: unless-stopped
+     # Uncomment the lines below to enable auto-update
+     labels:
+       com.centurylinklabs.watchtower.enable: "true"
+
+   auto_update:
+     image: containrrr/watchtower:latest-dev
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     # Update check interval in seconds.
+     command: --schedule "0 0 * ? * *" --label-enable --cleanup
+     restart: unless-stopped
+ ```
  3. Run the command: 
   ```
   docker-compose up -d
@@ -116,8 +141,8 @@ restart-containers.sh
 copy the script to your installation folder and make it executable
 
 ```bash
-chmod +x restart-containers.sh
-./restart-containers.sh
+chmod +x restart-container.sh
+./restart-container.sh
 ```
 
 ### Updating Appsmith (without docker-compose)
