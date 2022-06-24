@@ -75,12 +75,12 @@ docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 
 ### Enabling Appsmith Auto-updates (with docker-compose)
 
-If your Appsmith setup does not have auto-update enabled (i.e. it will not have Watchtower container running along with Appsmith in the host machine) You can enable auto-update by followin the following steps:
+If your Appsmith setup does not have auto-update enabled (i.e. it will not have Watchtower container running along with Appsmith in the host machine) You can enable auto-update by following the following steps:
 
-1. Go the root directory of your Appsmith setup and run:
+1. Go to the root directory of your Appsmith setup and run:
 
 ```
-docker-compose stop -v
+docker-compose down
 ```
 
 1. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (line 13-23).
