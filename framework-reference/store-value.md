@@ -8,6 +8,8 @@ description: >-
 
 ![Click to expand](../.gitbook/assets/storeValue.gif)
 
+{% embed url="https://youtu.be/UUvJn8oWqNs" caption="How To Use The StoreValue Function" %}
+
 ## Signature
 
 ```javascript
