@@ -100,3 +100,8 @@ How to set the label properties?
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md) |
 | **onFilterUpdate** | Trigger an action on change of `filterText`. See a list of [supported actions](../core-concepts/writing-code/appsmith-framework.md)                         |
+
+## Server-side Filterting
+The Select widget has the option to configure server-side filtering, where search queries are sent to the backend, and responses are used to populate options on the Select widget. The video below explains how to configure this.
+
+{% embed url="https://youtu.be/QDmTwRaLzHg" caption="How To Setup Server-side Filtering For The Select Widget" %}
