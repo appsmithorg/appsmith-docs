@@ -175,6 +175,8 @@ Like a line chart for an area chart also, you can add more categories and their 
 
 #### Custom Chart
 
+{% embed url="https://youtu.be/Rvlwb5123mE" caption="How To Use Custom Charts With FusionCharts" %}
+
 Appsmith integrates with[ FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) and provides a wide array of chart types that you can use as part of a custom chart.
 
 You can select **Custom Chart** from the **Chart Type** dropdown to initialize it. On selecting the Custom Chart type, you can see a property **Custom Fusion Chart** where you can define the configuration of the FusionCharts.
