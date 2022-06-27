@@ -10,7 +10,7 @@ Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and
 Please note that our license does **not** cover **Fusion Maps**, and you will have to acquire a license if you wish to use it.
 {% endhint %}
 
-{% embed url="https://www.youtube.com/embed/xRUJN_0lzRU" %}
+{% embed url="https://youtu.be/MadSMf9SOaE" caption="How Use The Chart Widget Like A Pro Feat. Cube.dev" %}
 
 ## Add to Canvas
 
