@@ -2,7 +2,7 @@
 
 An authorization code is a temporary code authorized by an authorization server. You can get an access token in exchange for an authorization code. Once you get an access token, you can use it to access the resources or perform actions on behalf of the user.
 
-In Appsmith, you can achieve this by setting up an `Authenticated API` and configuring it to use the `Authorization Code` as the grant type.&#x20;
+In Appsmith, you can achieve this by setting up an `Authenticated API` and configuring it to use the `Authorization Code` as the grant type.
 
 {% embed url="https://youtu.be/YfdK3t2r5Co" %}
 How to select an authorization code?
@@ -24,25 +24,25 @@ Dropbox provides [details on headers or the content type](https://www.dropbox.co
 
 For uploading files configure `Authenticated API` as per below table:
 
-| **Appsmith**            | **Dropbox**                                                                                                                                                                                   | **Value**                                                                                                                                                                    |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **URL**                 | User Endpoint                                                                                                                                                                                 | `https://content.dropboxapi.com/`                                                                                                                                            |
-| **Headers**             | `Dropbox-API-Arg`                                                                                                                                                                             | `{"path": "/{{`**`<`**`pick the file path from widget like`` `**``**` ``FilePicker`**`>`**`}}","mode" : "add","autorename" : true, "mute" : false,"strict_conflict" :false}` |
-| **Headers**             | `Content-Type`                                                                                                                                                                                | `application/octet-stream`                                                                                                                                                   |
-| **Authentication Type** | NA                                                                                                                                                                                            | OAuth 2.0                                                                                                                                                                    |
-| **Grant Type**          | NA                                                                                                                                                                                            | Authorization Code                                                                                                                                                           |
-| **Access Token URL**    | Token Endpoint                                                                                                                                                                                | `https://api.dropboxapi.com/oauth2/token`                                                                                                                                    |
-| **Client ID**           | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App key**                              | Copy the App key and add in the Client ID field.                                                                                                                             |
-| **Client Secret**       | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App secret**                           | Copy the App secret and add in the Client secret field.                                                                                                                      |
-| **Scopes**              | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Permissions** tab >> select **Scope** `file.content.write` | Copy the scope  `files.content.write` and add it to the field.                                                                                                               |
-| **Authorization URL**   | Authorization Endpoint                                                                                                                                                                        | `https://www.dropbox.com/oauth2/authorize`                                                                                                                                   |
-| **Redirect URL**        | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **OAuth2** >> **Redirect URIs**          | Add the Redirect URL from Appsmith to the field and click add button.                                                                                                        |
+| **Appsmith**            | **Dropbox**                                                                                                                                                                                    | **Value**                                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **URL**                 | User Endpoint                                                                                                                                                                                  | `https://content.dropboxapi.com/`                                                                                                                                  |
+| **Headers**             | `Dropbox-API-Arg`                                                                                                                                                                              | {"path": "/\{{**`<`**`pick the file path from widget like`` `**`FilePicker`**`>`\}}","mode" : "add","autorename" : true, "mute" : false,"strict\_conflict" :false} |
+| **Headers**             | `Content-Type`                                                                                                                                                                                 | `application/octet-stream`                                                                                                                                         |
+| **Authentication Type** | NA                                                                                                                                                                                             | OAuth 2.0                                                                                                                                                          |
+| **Grant Type**          | NA                                                                                                                                                                                             | Authorization Code                                                                                                                                                 |
+| **Access Token URL**    | Token Endpoint                                                                                                                                                                                 | `https://api.dropboxapi.com/oauth2/token`                                                                                                                          |
+| **Client ID**           | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App key**                               | Copy the App key and add in the Client ID field.                                                                                                                   |
+| **Client Secret**       | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App secret**                            | Copy the App secret and add in the Client secret field.                                                                                                            |
+| **Scopes**              | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Permissions** tab >> select **Scope** `files.content.write` | Copy the scope `files.content.write` and add it to the field.                                                                                                      |
+| **Authorization URL**   | Authorization Endpoint                                                                                                                                                                         | `https://www.dropbox.com/oauth2/authorize`                                                                                                                         |
+| **Redirect URL**        | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **OAuth2** >> **Redirect URIs**           | Add the Redirect URL from Appsmith to the field and click add button.                                                                                              |
 
 {% hint style="info" %}
 To create an application you can also follow the[ OAuth guide ](https://developers.dropbox.com/oauth-guide)available at Dropbox.
 {% endhint %}
 
-Keep the rest of the settings and click the `Save and Authorize` button. You’ll be redirected to the datasource screen on Appsmith with the response status as success on successful authentication.&#x20;
+Keep the rest of the settings and click the `Save and Authorize` button. You’ll be redirected to the datasource screen on Appsmith with the response status as success on successful authentication.
 
 {% hint style="info" %}
 You can verify if your datasource verification has been successful by checking the `response_status` in the address bar of your browser.
@@ -203,18 +203,18 @@ If your APIs need client credentials to be sent along then you can use client au
 
 ![Select the option to send Client Authentication](<../../../../.gitbook/assets/OAuth 2.0  API Integration  Client Credentials.png>)
 
-* Basic authorization header by selecting **Send as Basic Auth Header**.&#x20;
+* Basic authorization header by selecting **Send as Basic Auth Header**.
 * Body in the form of client credentials by selecting **Send client credentials in body**.
 
 ## Advanced Settings
 
-There are some advance settings that you can configure as part of your Authenticated API.&#x20;
+There are some advance settings that you can configure as part of your Authenticated API.
 
 ### Send Scope with Refresh Token
 
 With this configuration you can choose to send the scope configured for the API along with a refresh token. By default, the setting is turned off. You can turn on the settings by selecting **Yes**.
 
-![Select 'Yes' to turn on the setting ](<../../../../.gitbook/assets/OAuth 2.0  API Integration  Advanced Settings  Send Scope with refresh token.png>)
+![Select 'Yes' to turn on the setting](<../../../../.gitbook/assets/OAuth 2.0  API Integration  Advanced Settings  Send Scope with refresh token.png>)
 
 ### Send Client Credentials with (on Refresh Token)
 
