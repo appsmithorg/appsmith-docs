@@ -10,9 +10,8 @@ description: Deploy Appsmith on AWS with an AMI on the marketplace
 * [Generate an SSH key pair](aws-ami.md#step-2-generate-an-ssh-key-pair)
 * [Create an AWS Security Group](aws-ami.md#step-3-create-an-aws-security-group)
 * [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
-* [Configure custom domain for your app](aws-ami.md#custom-domain)
-* [Find Application Credentials](aws-ami.md#find-application-credentials)
-* [Updating your Appsmith installation](aws-ami.md#updating-your-appsmith-installation)
+* [Find Application Credentials](aws-ami.md#application-credentials)
+* [Updating your Appsmith installation](aws-ami.md#updating-appsmith-installation)
 
 ### Step 1: Register With Amazon Web Services
 
@@ -24,21 +23,21 @@ Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/kn
 
 If you already have an SSH key pair for the AWS region you are operating in, you can skip this step.
 
-Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key-pair. You need this key to SSH into your AWS EC2 instance.
+Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) to generate a new key pair. You need this key to SSH into your AWS EC2 instance.
 
 ### Step 3: Create an AWS Security Group
 
-If you already have an existing security group with ports 80, 443 and 22 open, you can skip this step.
+If you already have an existing security group with ports 80, 443, and 22 open, you can skip this step.
 
 Appsmith is a web application that requires ports 80 and 443 for HTTP access. It also requires port 22 to be accessible for SSH access. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
-While creating the the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443 and 22 accessible from anywhere.
+While creating the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, and 22 accessible from anywhere.
 
 ### Step 4: Deploy Appsmith On AWS Cloud
 
 The next step is to launch a cloud server with the Appsmith Amazon Machine Image (AMI) running on it. The AWS Console lets you do this in just a couple of clicks. Follow these steps:
 
-1. Navigate to the "**Amazon** **EC2 dashboard"**, select the “**AMIs**” option in the “**Images**” menu.
+1. Navigate to the "**Amazon** **EC2 dashboard"**, and select the “**AMIs**” option in the “**Images**” menu.
 2. Search for the Appsmith Stack by entering the search term "**appsmith**" in the search bar at the top.
 3. Select the image in the list of search results and click the “**Launch**” button.
 4. On the resulting detail page, review the available server sizes. Select the server size you wish to use and click “**Review and Launch**” to proceed.
@@ -61,7 +60,7 @@ At this point, you should be able to browse to the cloud server, by entering the
 
 ## Application Credentials
 
-By default, Appsmith boots up with default user credentials that allow you to login without needing to sign up. The default username is: `appsmith@example.com`. There are two options for obtaining the password.
+By default, Appsmith boots up with default user credentials that allow you to log in without needing to sign up. The default username is `appsmith@example.com`. There are two options for obtaining the password.
 
 ### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console (EC2)
 
@@ -89,6 +88,41 @@ The default application credentials are stored in a standalone file. To obtain t
     ```
       sudo cat /home/ubuntu/appsmith/credential
     ```
+
+## Updating Your Appsmith Installation
+
+You can either choose to update the Appsmith installation manually or choose to enable auto-updates.
+
+### Update Installation Manually
+
+To update Appsmith manually, `ssh` into the `ec2` instance with the username `appsmith` and run the following command:
+
+```
+cd appsmith && sudo docker-compose pull && sudo docker-compose rm -fsv appsmith && sudo docker-compose up -d
+```
+
+### Enable Auto-Updates
+
+If your Appsmith setup does not have `auto-update` enabled that is the `Watchtower` container is not running along with `Appsmith` in the `host machine`. Follow the steps below to enable `auto-update:`
+
+* SSH into the `ec2` instance with username `appsmith`
+*  Change directory to `/appsmith`
+* Run the below command to stop and remove the container and its resources
+
+```
+ docker-compose down 
+```
+
+* Open the `docker-compose.yml` file with any text editor and uncomment the lines 13 to 23
+
+![Uncomment the lines from 13-23](<../.gitbook/assets/Docker-Compose-Yml-File-UnComment-for-AutoUpdates (1).png>)
+
+* Save the file
+* Run the below command
+
+```
+ docker-compose up -d
+```
 
 ## Troubleshooting
 
