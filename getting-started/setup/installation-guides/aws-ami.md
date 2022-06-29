@@ -10,7 +10,6 @@ description: Deploy Appsmith on AWS with an AMI on the marketplace
 * [Generate an SSH key pair](aws-ami.md#step-2-generate-an-ssh-key-pair)
 * [Create an AWS Security Group](aws-ami.md#step-3-create-an-aws-security-group)
 * [Deploy Appsmith on an AWS cloud server](aws-ami.md#step-4-deploy-appsmith-on-aws-cloud)
-* [Configure custom domain for your app](aws-ami.md#custom-domain)
 * [Find Application Credentials](aws-ami.md#application-credentials)
 * [Updating your Appsmith installation](aws-ami.md#updating-your-appsmith-installation)
 
@@ -89,6 +88,41 @@ The default application credentials are stored in a standalone file. To obtain t
     ```
       sudo cat /home/ubuntu/appsmith/credential
     ```
+
+## Updating Your Appsmith Installation
+
+You can either choose to update the Appsmith installation manually or choose to enable auto-updates.
+
+### Update Installation Manually
+
+To update Appsmith manually, `ssh` into the `ec2` instance with the username `appsmith` and run the following command:
+
+```
+cd appsmith && sudo docker-compose pull && sudo docker-compose rm -fsv appsmith && sudo docker-compose up -d
+```
+
+### Enable Auto-Updates
+
+If your Appsmith setup does not have `auto-update` enabled that is the `Watchtower` container is not running along with `Appsmith` in the `host machine`. Follow the steps below to enable `auto-update:`
+
+* SSH into the `ec2` instance with username `appsmith`
+*  Change directory to `/appsmith`
+* Run the below command to stop and remove the container and its resources
+
+```
+ docker-compose down 
+```
+
+* Open the `docker-compose.yml` file with any text editor and uncomment the lines 13 to 23
+
+![Uncomment the lines from 13 to 23](../../../.gitbook/assets/Docker-Compose-Yml-File-UnComment-for-AutoUpdates.png)
+
+* Save the file
+* Run the below command
+
+```
+ docker-compose up -d
+```
 
 ## Troubleshooting
 

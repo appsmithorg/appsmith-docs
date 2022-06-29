@@ -42,9 +42,9 @@ These properties allow you to bind your widget with any other widget in queries 
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events             | Description                                                                                                                                                                       |   |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](https://docs.appsmith.com/core-concepts/writing-code/appsmith-framework).  |   |
+| Events             | Description                                                                                                                      |   |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------- | - |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/).  |   |
 
 ### Label
 
@@ -131,4 +131,4 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below.
 
-[Sending widget data in the post body](multiselect.md)
+[Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)

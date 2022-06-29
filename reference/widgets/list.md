@@ -82,7 +82,7 @@ Ensure that you select the widget to access its properties on the right bar.
 | **Background Color**       | Allows you to choose the background color of the widget.                           | You can select the color from the color pallet or use an HTML color Code by enabling a JS label next to it.                                                                                     |                              |
 | **Item Background Color**  | Allows you to set an item background color.                                        | You can select the color from the color pallet or use an HTML color Code by enabling a JS label next to it.                                                                                     |                              |
 | **Item Spacing**           | Allows you to set the padding between the adjacent items.                          | You can supply padding in pixels(px) like 5px.                                                                                                                                                  |                              |
-| **Server-side Pagination** | Allows you to set pagination for large datasets returned as subsets to the client. | You can define the [pagination for the large datasets](https://docs.appsmith.com/core-concepts/displaying-data-read/display-data-tables#pagination).                                            |                              |
+| **Server-side Pagination** | Allows you to set pagination for large datasets returned as subsets to the client. | You can define the [pagination for the large datasets.](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)                                                |                              |
 | **Visible**                | Allows you to show/hide a widget.                                                  | You can either use a toggle or code to turn it off/on.                                                                                                                                          | \{{widget\_name.isVisible\}} |
 | **Animate Loading**        | Allows you to control a widget’s animation on the page load.                       | You can use a toggle to turn it on/off. When turned off, the widget will load without any skeletal animation. You can also turn it off/on using javascript by enabling the JS label next to it. |                              |
 
@@ -94,7 +94,7 @@ Let's deep dive into each property available under this head.
 
 ### Name of Widget
 
-You can see a textbox available at the top of the Properties pane. List1 is the default name given to a list widget added to the canvas. The number\*\*{1}\*\* in List1 is a running sequence. If you add more list widgets, the names of the subsequent list widgets could be like List2, List3, and more.
+You can see a textbox available at the top of the Properties pane. List1 is the default name given to a list widget added to the canvas. The number `{1}` in List1 is a running sequence. If you add more list widgets, the names of the subsequent list widgets could be like List2, List3, and more.
 
 {% embed url="https://youtu.be/WqSrZphpZv4" %}
 
@@ -112,7 +112,7 @@ To have a dynamic data binding for the list widget, you can use the **Connect Da
 
 #### Connect Data
 
-When you click on the **Connect Data** button, it navigates to the DataSources page, where you can either add new datasources or choose existing datasources. On the datasources page, once you have selected the datasource, you can either add queries or select available queries to bind the response to the list widget.[ Read more to add different datasources and create queries.](https://docs.appsmith.com/datasource-reference/querying-amazon-s3)
+When you click on the **Connect Data** button, it navigates to the DataSources page, where you can either add new datasources or choose existing datasources. On the datasources page, once you have selected the datasource, you can either add queries or select available queries to bind the response to the list widget.[ Read more to add different datasources and create queries.](../../core-concepts/connecting-to-data-sources/)
 
 #### Explorer Tab
 
@@ -208,7 +208,7 @@ You can use item spacing to add the padding to the list cells. Padding will ensu
 
 ### Server Side Pagination
 
-You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](https://docs.appsmith.com/core-concepts/displaying-data-read/display-data-tables#pagination).
+You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md).
 
 ### Visible
 
@@ -237,13 +237,13 @@ When you check the checkbox, it will enable the Visible property, and shows the 
 
 You use events to capture a user interaction and perform various operations.
 
-| **Event**       | **Description**                                              | **Example**                                                                                                                                   | **Code Snippet**                         |
-| --------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| onListItemClick | Allows you to capture the click event and trigger an action. | You can perform [various actions when the click event is triggered](https://docs.appsmith.com/core-concepts/writing-code/appsmith-framework). | `{{widget_name.selectedItem.item_name}}` |
+| **Event**       | **Description**                                              | **Example**                                                                                  | **Code Snippet**                         |
+| --------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| onListItemClick | Allows you to capture the click event and trigger an action. | You can perform [various actions when the click event is triggered](../appsmith-framework/). | `{{widget_name.selectedItem.item_name}}` |
 
 ### onListItemClick
 
-For a list widget, the event onListItemClick is fired whenever a user clicks or selects an item on the list. You can perform many[ supported actions](https://docs.appsmith.com/core-concepts/writing-code/appsmith-framework) on a list item click.
+For a list widget, the event onListItemClick is fired whenever a user clicks or selects an item on the list. You can perform many[ supported actions](../appsmith-framework/widget-actions/) on a list item click.
 
 For example, show a message whenever a user clicks on a list item.
 

@@ -155,9 +155,9 @@ For example, let's take a JSON Form widget `JSONform1` and bind the data in the 
 
 ### Events
 
-| **Event name** | **Description**                                                         |
-| -------------- | ----------------------------------------------------------------------- |
-| onSubmit       | Sets the action to run when a user clicks the submit button in the form |
+| **Event name** | **Description**                                                          |
+| -------------- | ------------------------------------------------------------------------ |
+| onSubmit       | Sets the action to run when a user clicks the submit button in the form. |
 
 ### Form Styles
 

@@ -1,7 +1,7 @@
 # Elasticsearch
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://github.com/appsmithorg/appsmith-docs/tree/6fa43542f2b4d68916c05db37bba4a9d504c65a1/core-concepts/connecting-to-databases/README.md). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings

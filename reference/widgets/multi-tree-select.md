@@ -86,12 +86,12 @@ They are a set of actions that you can perform on the widget. The following tabl
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-| Label         | Description                                                                                                                                                                                          |   |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. [Learn more](https://docs.appsmith.com/widget-reference/multi-tree-select#label). |   |
-| **Position**  | Sets the label position of the widget.                                                                                                                                                               |   |
-| **Alignment** | Sets the label alignment of the widget.                                                                                                                                                              |   |
-| **Width**     | Sets the label width of the widget as the number of columns.                                                                                                                                         |   |
+| Label         | Description                                                                                                        |   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ | - |
+| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. |   |
+| **Position**  | Sets the label position of the widget.                                                                             |   |
+| **Alignment** | Sets the label alignment of the widget.                                                                            |   |
+| **Width**     | Sets the label width of the widget as the number of columns.                                                       |   |
 
 Let's understand these properties in detail:
 

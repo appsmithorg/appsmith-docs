@@ -221,7 +221,7 @@ As you can see, you can choose the `Custom Chart` option from the `Chart Type` p
 You can embed the configuration into the custom fusion chart property or can add an API/query data by using a mustache syntax to add the required configuration.
 {% endhint %}
 
-To plot a column chart in a 2-dimensional look and feel, you can use the configuration as below:
+To plot a column chart with a 2-dimensional look and feel, you can use the configuration as below:
 
 ```
 {

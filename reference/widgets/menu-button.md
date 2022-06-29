@@ -12,14 +12,14 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 These properties allow you to edit the Menu Button widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Property            | Description                                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **label**           | Sets the label of a menu.                                                                                                                                                                              |
-| **menuItems**       | Array of menu items in the dropdown list. This lets you add/remove/edit a menu item and customize the [menu item settings](https://docs.appsmith.com/widget-reference/menu-button#menu-item-settings). |
-| **Disabled**        | Disables input to the widget.                                                                                                                                                                          |
-| **Visible**         | Controls the visibility of the widget.                                                                                                                                                                 |
-| **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                                                                                                           |
-| **Compact**         | Decides if the widget is in compact mode.                                                                                                                                                              |
+| Property            | Description                                                                                                                                                    |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **label**           | Sets the label of a menu.                                                                                                                                      |
+| **menuItems**       | Array of menu items in the dropdown list. This lets you add/remove/edit a menu item and customize the [menu item settings](menu-button.md#menu-item-settings). |
+| **Disabled**        | Disables input to the widget.                                                                                                                                  |
+| **Visible**         | Controls the visibility of the widget.                                                                                                                         |
+| **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                                                                   |
+| **Compact**         | Decides if the widget is in compact mode.                                                                                                                      |
 
 ### Binding Properties
 

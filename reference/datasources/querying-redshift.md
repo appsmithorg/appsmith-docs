@@ -1,7 +1,7 @@
 # Redshift
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -35,7 +35,7 @@ You need to fill in the following parameters:
 
 * **SSL Mode:** Choose your SSL model from the dropdown.
 * **Key File:** Upload your SSL key file from here.
-* **Certificate:** Upload your SSL certificate here\*\*.\*\*
+* **Certificate:** Upload your SSL certificate here.
 * **CA Certificate:** Upload your CA certificate here.
 * **PEM Certificate:** Upload your PEM certificate here.
 * **PEM Passphrase:** Fill in your PEM passphrase here.

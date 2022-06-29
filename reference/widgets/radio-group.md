@@ -1,10 +1,6 @@
 # Radio Group
 
-
-
-{% embed url="https://youtu.be/yhsTdLgmi0c" %}
-How to set the label properties.
-{% endembed %}
+The Radio group widget allows users to configure a group of radio buttons. It lets the user choose one option from a predefined set of options.
 
 {% embed url="https://youtu.be/ZQ3CKFx3cbM" %}
 

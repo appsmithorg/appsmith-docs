@@ -38,7 +38,7 @@ Some forms need to be pre-filled data from a table or API. We can bind the data 
 
 Read more about submitting Input data to an API below.
 
-[Sending widget data in the post body](dropdown-1.md)
+[Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
 
 ## Properties&#x20;
 

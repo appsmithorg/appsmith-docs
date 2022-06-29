@@ -57,6 +57,6 @@ You can create separate UIs in each tab container and dynamically switch between
 
 ## Tab Navigation
 
-By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](https://github.com/appsmithorg/appsmith-docs/blob/v1.3/widget-reference/function-reference/store-value.md) and some JavaScript:
+By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](../appsmith-framework/widget-actions/store-value.md) and some JavaScript:
 
 {% embed url="https://youtu.be/dHeS5kPHlHE" %}

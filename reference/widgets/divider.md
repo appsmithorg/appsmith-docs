@@ -1,10 +1,6 @@
----
-description: >-
-  The Divider widget is used to visually separate or compartmentalise different
-  parts of your application.
----
-
 # Divider
+
+The Divider widget is used to visually separate or compartmentalize different parts of your application.
 
 {% embed url="https://youtu.be/rTJtDOusWmM" %}
 

@@ -97,7 +97,7 @@ Enable the **"Request confirmation before running query"** setting to help avoid
 
 There are two ways to send content to the S3 bucket:
 
-1. A file can be selected and uploaded with the [Filepicker Widget](https://docs.appsmith.com/widget-reference/filepicker). To reference this file in your query (assuming that your Filepicker is named "FilePicker1"), use `{{Filepicker1.files[0]}}` in the `Content` field of your query.
+1. A file can be selected and uploaded with the [Filepicker Widget](../widgets/filepicker.md). To reference this file in your query (assuming that your Filepicker is named "FilePicker1"), use `{{Filepicker1.files[0]}}` in the `Content` field of your query.
    * Be sure that the `File Data Type` field is set appropriately for the data you are uploading. For example, if your Filepicker's `Data Format` is set to `Base64`, your query should be set to `Base64` also.
 2. Alternatively, you can manually add data into the `Content` field by writing an object with a `text` and `data` property like below:
 
@@ -170,5 +170,5 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
 * [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
-* [Upload files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3)
-* [Download files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3#downloading-files)
+* [Upload files](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
+* [Download files](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md#downloading-files)

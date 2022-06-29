@@ -3,7 +3,7 @@
 On Appsmith, it’s pretty straightforward to establish a connection with any data source, including SnowflakeDB, be it on the cloud, self-hosted version, or local environment.
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
 ## Connection Settings
@@ -29,8 +29,6 @@ Please fill in the following parameters:
 
 * **Username\*:** Fill in the _**username**_ required to authenticate your database connection request.
 * **Password\*:** Fill _**password**_ required for authenticating connection requests for the given username to the database.
-
-_Getting Started -_ [_Snowflake Documentation_](https://docs.snowflake.com/en/user-guide-getting-started.html)\_\_
 
 ## Connecting Snowflake on Appsmith <a href="#heading-getting-started-connecting-snowflake-on-appsmith" id="heading-getting-started-connecting-snowflake-on-appsmith"></a>
 
@@ -87,4 +85,4 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
 * [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
-* [Execute Queries](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/querying-a-database)
+* [Execute Queries](../../core-concepts/data-access-and-binding/querying-a-database/)

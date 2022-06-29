@@ -26,7 +26,7 @@ A form widget stores one or more widgets to define a logical group for capturing
 You can create a hierarchy of forms and have one or more form widgets embedded into it.
 {% endhint %}
 
-Once you drag a form widget on the canvas, you can see a [text widget](https://docs.appsmith.com/widget-reference/text) and two [buttons](https://docs.appsmith.com/widget-reference/button) by default embedded into it. You can add more widgets based on your requirements.
+Once you drag a form widget on the canvas, you can see a [text widget](text.md) and two [buttons](button/) by default embedded into it. You can add more widgets based on your requirements.
 
 ![When you drag a form widget, it has embedded widgets.](<../../.gitbook/assets/Widgets Form widget Default view.png>)
 
@@ -44,7 +44,7 @@ To build this app, you can use a form widget to trigger the search with an input
 
 #### **Form Button**
 
-By default, the form widget provides two buttons: Reset and Submit, which help reset the form fields to their original values or save the data by calling an API/Query. The form buttons have the same set of functionality as available for the [button widget](https://docs.appsmith.com/widget-reference/button). This section will focus on the specific attributes that the reset and submit buttons have as embedded widgets in the form.
+By default, the form widget provides two buttons: Reset and Submit, which help reset the form fields to their original values or save the data by calling an API/Query. The form buttons have the same set of functionality as available for the [button widget](button/). This section will focus on the specific attributes that the reset and submit buttons have as embedded widgets in the form.
 
 #### **Reset Button**
 
@@ -60,7 +60,7 @@ You can use the onClick property in conjunction with the reset form on success. 
 
 #### **Submit Button**
 
-The form button with the name “Submit” allows you to add an action to capture the inputs provided by the user and then process it to generate results. In our search app, rename it to **Search**, and it captures the search term provided by the user. You can then bind a [call to an API or a query to store/display the data](https://docs.appsmith.com/core-concepts/capturing-data-write/capture-form-data).
+The form button with the name “Submit” allows you to add an action to capture the inputs provided by the user and then process it to generate results. In our search app, rename it to **Search**, and it captures the search term provided by the user. You can then bind a [call to an API or a query to store/display the data](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md).
 
 **Disabled Invalid Forms**
 
@@ -72,7 +72,7 @@ The property is on for a submit form button, and it clears the fields after the 
 
 ## Display Search Results
 
-Now that the search is in place, you can use the table widget to bind the query's response and display the results, as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](https://docs.appsmith.com/widget-reference/table).
+Now that the search is in place, you can use the table widget to bind the query's response and display the results, as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](table.md).
 
 {% embed url="https://youtu.be/Upn7LDy7UQQ" %}
 

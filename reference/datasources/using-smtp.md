@@ -1,7 +1,7 @@
 # SMTP
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to a datasource on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to a datasource on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
 The SMTP plugin can connect to an SMTP server to send the dynamic email(s) to a list of recipients.
@@ -54,5 +54,5 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
 * [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
-* [Upload files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3)
-* [Download files](https://docs.appsmith.com/how-to-guides/how-to-upload-to-s3#downloading-files)
+* [Upload files](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md#uploading-a-file)
+* [Download files](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md#downloading-files)

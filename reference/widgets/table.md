@@ -42,7 +42,7 @@ Let's bind the data from a mock database into a table widget.
 
 1. Create an App and click on `Datasources` under the explorer panel.
 2. Go to `+Create new` and select the `users` database from the Sample Databases. The user database will now appear under the <mark style="color:green;">Active</mark> window.
-3. From the "Active" window, click on <mark style="color:orange;">New Query+</mark> for the Users database and create a "select" [query](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/querying-a-database#setting-up-a-query) to fetch the data.
+3. From the "Active" window, click on <mark style="color:orange;">New Query+</mark> for the Users database and create a "select" [query](../../core-concepts/data-access-and-binding/querying-a-database/) to fetch the data.
 4. Go back to the canvas and drag the table widget onto it.
 5. Open the property pane, clear the Table data window and enter the following snippet:
 

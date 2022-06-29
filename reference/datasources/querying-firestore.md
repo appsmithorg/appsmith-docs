@@ -1,11 +1,9 @@
 # Firestore
 
-
-
 On Appsmith, it's pretty straightforward to establish a connection with any datasource, including Firestore.
 
 {% hint style="warning" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
 [Firestore](https://firebase.google.com/docs/firestore) is a NoSQL document database built for automatic scaling, high performance, and ease of application development. While the Firestore interface has many features like traditional databases, as a NoSQL database, it differs from describing relationships between data objects.

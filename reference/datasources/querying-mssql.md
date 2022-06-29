@@ -1,7 +1,7 @@
 # MS SQL
 
 {% hint style="info" %}
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
 [Microsoft SQL Server](https://www.microsoft.com/en-in/sql-server/sql-server-downloads) is a relational database management system developed by Microsoft that supports a wide variety of transaction processing, business intelligence, and analytics applications in corporate IT environments.

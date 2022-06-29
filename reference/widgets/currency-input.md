@@ -242,9 +242,9 @@ Let's take a widget `currencyinput1` use this property to display the selected c
 
 ### Events
 
-| Event         | Description                                                                                         |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| onTextChanged | Sets the action to run when the user enters or changes its inputs. See a list of supported actions. |
+| Event         | Description                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| onTextChanged | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label Styles
 
