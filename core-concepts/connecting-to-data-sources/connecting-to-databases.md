@@ -13,6 +13,7 @@ description: >-
 * [DynamoDB](../../reference/datasources/querying-dynamodb.md)
 * [ElasticSearch](../../reference/datasources/querying-elasticsearch.md)
 * [Firestore](../../reference/datasources/querying-firestore.md)
+* [Google Sheets](../../reference/datasources/querying-google-sheets.md)
 * [MongoDB](../../reference/datasources/querying-mongodb/)
 * [MS SQL](../../reference/datasources/querying-mssql.md)
 * [MySQL](../../reference/datasources/querying-mysql.md)
@@ -20,6 +21,7 @@ description: >-
 * [Redis](../../reference/datasources/querying-redis.md)
 * [Redshift](../../reference/datasources/querying-redshift.md)
 * [Snowflake](../../reference/datasources/querying-snowflake-db.md)
+* [SMTP](../../reference/datasources/using-smtp.md)
 
 ## Security
 
@@ -52,8 +54,8 @@ Databases configured within one page of an app can be accessed by developers any
 
 Appsmith creates a new connection pool with the database server when you first connect the database server to your app. All subsequent queries executed by Appsmith against your database then re-use this connection to ensure that at run-time your queries are executed quickly. In the case that an idle connection is closed by the database server, Appsmith creates a new connection while executing the next query.
 
-For certain plugins like PostgreSQL, and MySQL, Appsmith creates and maintains a connection pool because multiple queries cannot be executed against a single connection.
+For certain plugins like [PostgreSQL](../../reference/datasources/querying-postgres.md), and [MySQL](../../reference/datasources/querying-mysql.md), Appsmith creates and maintains a connection pool because multiple queries cannot be executed against a single connection.
 
-### Concurrent queries
+### Concurrent Queries
 
 Appsmith limits maximum queries that can run concurrently on a database to be 5. If the application attempts to make more queries concurrently, you'll see an error saying `Connection not available`.

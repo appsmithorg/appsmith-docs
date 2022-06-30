@@ -10,7 +10,7 @@ If your API is not available on the public internet, you must expose it via a se
 
 ## API Editor
 
-The API pane is a REST interface that allows you to create and modify your existing APIs. All REST HTTP methods are supported and API values can be configured in the headers, params, and body fields
+The API pane is a REST interface that allows you to create and modify your existing APIs. All [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) are supported and API values can be configured in the headers, params, and body fields
 
 ![](<../../../.gitbook/assets/create api (1).gif>)
 

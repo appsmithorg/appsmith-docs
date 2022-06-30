@@ -20,7 +20,7 @@ Entity name: <name> is already being used
 
 This error indicates that the name being assigned to the entity has been used before.
 
-This error can be fixed by assigning a new unique name to the entity. [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as entity names.
+[JavaScript reserved keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) cannot be used as entity names. You can fix the error by assigning a new unique name to the entity.
 
 ## Login / Signup Errors
 
@@ -44,9 +44,9 @@ This error can be fixed by either using a different email to signup or doing `lo
 Unable to find user <email>
 ```
 
-This error indicates that the email provided to the reset password form is not registered with Appsmith.
+The error indicates that the email provided to reset the password is not registered with Appsmith.
 
-This error can be fixed by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
+You can fix the error by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
 
 ## Page Access Error
 
@@ -60,6 +60,4 @@ this page.
 This message indicates one of the following:
 
 * The page URL is invalid. This error can be fixed by getting the correct page URL from the admin/developer.
-*   The User does not have [permission](https://docs.appsmith.com/core-concepts/access-control) to access the page. This error can be fixed by requesting page access permission
-
-    from the admin/developer.
+* The User does not have [permission](../../advanced-concepts/access-control.md) to access the page. You can fix the error by requesting access permission for the page from the `admin/developer`.

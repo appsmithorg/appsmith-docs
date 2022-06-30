@@ -1,6 +1,6 @@
 # Authorization Code
 
-An authorization code is a temporary code authorized by an authorization server. You can get an access token in exchange for an authorization code. Once you get an access token, you can use it to access the resources or perform actions on behalf of the user.
+An [authorization code](https://oauth.net/2/grant-types/authorization-code/) is a temporary code authorized by an authorization server. You can get an [access token](https://oauth.net/2/access-tokens/) in exchange for an authorization code. Once you get an [access token](https://oauth.net/2/access-tokens/), you can use it to access the resources or perform actions on behalf of the user.
 
 In Appsmith, you can achieve this by setting up an `Authenticated API` and configuring it to use the `Authorization Code` as the grant type.
 
@@ -90,8 +90,8 @@ You can add headers to individual APIs when you add them to the platform. Here y
 
 Let’s add a filepicker widget to canvas and configure it to trigger the `Upload API` call.
 
-* Navigate to **Widgets** → search **FilePicker** in the search bar → Drag the widget onto the canvas.
-* Select the `FilePicker` Widget and navigate to the `onFilesSelected` event available on the properties pane.
+* Navigate to [**Widgets**](../../../../../reference/widgets/) → search **FilePicker** in the search bar → Drag the [widget](../../../../../reference/widgets/) onto the canvas.
+* Select the [`FilePicker`](../../../../../reference/widgets/filepicker.md) Widget and navigate to the `onFilesSelected` event available on the properties pane.
 * Enable JS available next to the event
 * Add the following code in the input box.
 
@@ -99,17 +99,17 @@ Let’s add a filepicker widget to canvas and configure it to trigger the `Uploa
 {{UploadFileToDropbox.run() }} 
 ```
 
-The above code snippet will trigger the API execution whenever a FilePicker widget selects a file and the user clicks on the Upload button available on the widget.
+The above code snippet will trigger the API execution whenever from a [FilePicker](../../../../../reference/widgets/filepicker.md) widget user selects a file and clicks on the Upload button available on the widget.
 
 {% hint style="info" %}
-At any given point in time, you can add data to your headers by using the mustache `{{}}` sign. For example, `FilePicker1.files[0].name` for filename.
+At any given point in time, you can add data to your headers by using the mustache **`{{}}`** sign. For example, `FilePicker1.files[0].name` for filename.
 {% endhint %}
 
 Once the API call is successful, you can navigate to the Dropbox interface and verify the file upload.
 
 ## Integrate with Google Docs
 
-Let’s look into some other integrations that you can do with Authenticated APIs. In this section, you’ll be able to configure your Google Docs integrations to your Appsmith apps.
+Let’s look into some other integrations that you can do with [Authenticated APIs](../../#create-authenticated-api). In this section, you’ll be able to configure your Google Docs integrations to your Appsmith apps.
 
 ### User Endpoint
 
@@ -149,7 +149,7 @@ You can also check out the How-To Guide- [How to add OAuth2 Authorization for In
 
 ## Integrate with Zoho Campaigns
 
-Let’s look into another integration that you can do with Authenticated APIs. In this section, you’ll be able to configure your Appsmith app to integrate with Zoho Campaigns.
+Let’s look into another integration that you can do with [Authenticated APIs](../../#create-authenticated-api). In this section, you’ll be able to configure your Appsmith app to integrate with Zoho Campaigns.
 
 ### User Endpoint
 
@@ -208,7 +208,7 @@ If your APIs need client credentials to be sent along then you can use client au
 
 ## Advanced Settings
 
-There are some advance settings that you can configure as part of your Authenticated API.
+There are some advance settings that you can configure as part of your [Authenticated API](../../#create-authenticated-api).
 
 ### Send Scope with Refresh Token
 
@@ -222,4 +222,4 @@ You can choose to send the client credentials along with refresh tokens by confi
 
 ![You can choose what best suits your business needs](<../../../../../.gitbook/assets/OAuth 2.0  API Integration  Send client credentials with.png>)
 
-With OAuth 2.0 integration, you can connect your APIs to Appsmith and build complex apps.
+With [OAuth 2.0](./) integration, you can connect your APIs to Appsmith and build complex apps.

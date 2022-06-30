@@ -18,17 +18,17 @@ We can decide to display a success or an error message by using the [**showAlert
 
 ## Complex Workflows
 
-The GUI is limited to a single onSuccess / onError callback while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
+The GUI is limited to a single [onSuccess](../../reference/appsmith-framework/run.md#onsuccess) / [onError](../../reference/appsmith-framework/run.md#onerror) callback while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
 
 ![](<../../.gitbook/assets/conditional query.gif>)
 
 {% hint style="success" %}
-Once you have configured actions using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
+Once you have configured [actions](../../reference/appsmith-framework/widget-actions/) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
 {% endhint %}
 
 ### Executing Queries in Parallel / Serial
 
-Every query object contains a run method that is used to execute it. The run method is asynchronous and multiple queries can be executed in parallel as below
+Every [query object](../../reference/appsmith-framework/run.md) contains a run method that is used to execute it. The [run](../../reference/appsmith-framework/run.md#run) method is asynchronous and multiple queries can be executed in parallel as below
 
 ```javascript
 {{ API1.run(); Query2.run(); API2.run(); }}
@@ -51,7 +51,7 @@ or chained to be called onSuccess / onError using the callback arguments in the 
 
 ### Conditional Execution
 
-Queries can also be chained to execute conditionally based on the value of a widget or the response of a Query
+[Queries](../data-access-and-binding/querying-a-database/) can also be chained to execute conditionally based on the value of a widget or the response of a Query
 
 ```javascript
 {{ 

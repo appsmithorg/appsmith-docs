@@ -1,12 +1,12 @@
 # Audio
 
-Audio widget allows you to play a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
+Audio [widget](./) allows you to play a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
 
 {% embed url="https://youtu.be/FhY6-yUixto" %}
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Properties allow you to edit the [widget](./), connect it with other [widgets](./) and customize the user actions.
 
 ### Widget Properties
 
@@ -35,8 +35,8 @@ These properties allow you to bind your Audio widget with any other widget in qu
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Action      | Description                                                                                                                                                         |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onPlay**  | Sets the action to run when the audio begins playing. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message. |
-| **onPause** | Sets the action to run when the audio is paused. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message.      |
-| **onEnd**   | Sets the action to run when the audio ends. Some default supported actions are: Call API, Navigate to Page, Navigate to URL, Open Modal, or Show Message.           |
+| Action      | Description                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **onPlay**  | Sets the action to run when the audio begins playing. Some default supported [actions](../appsmith-framework/widget-actions/) are: Call API, [Navigate to Page, Navigate to URL](../appsmith-framework/widget-actions/navigateto.md), [Open Modal](../appsmith-framework/widget-actions/show-modal.md), or [Show Message](../appsmith-framework/widget-actions/show-alert.md). |
+| **onPause** | Sets the action to run when the audio is paused. Some default supported [actions](../appsmith-framework/widget-actions/) are: Call API, [Navigate to Page, Navigate to URL](../appsmith-framework/widget-actions/navigateto.md), [Open Modal](../appsmith-framework/widget-actions/show-modal.md), or [Show Message](../appsmith-framework/widget-actions/show-alert.md).      |
+| **onEnd**   | Sets the action to run when the audio ends. Some default supported [actions](../appsmith-framework/widget-actions/) are: Call API, [Navigate to Page, Navigate to URL](../appsmith-framework/widget-actions/navigateto.md), [Open Modal](../appsmith-framework/widget-actions/show-modal.md), or [Show Message](../appsmith-framework/widget-actions/show-alert.md).           |

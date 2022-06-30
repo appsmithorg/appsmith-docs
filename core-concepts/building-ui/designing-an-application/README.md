@@ -1,8 +1,8 @@
 # Designing an Application
 
-An app can be built using UI elements (widgets) by placing them on the canvas as per your requirement.
+An app can be built using UI elements ([widgets](../../../reference/widgets/)) by placing them on the canvas as per your requirement.
 
-Widgets are the elements that help the user in shaping their app. They can store data from a Database or an API call, trigger events, etc. You can add or arrange widgets on the canvas by a simple drag and drop action.
+[Widgets](../../../reference/widgets/) are the elements that help the user in shaping their app. They can [store data](../../data-access-and-binding/displaying-data-read/) from a [Database](../../../reference/datasources/) or an[ API ](../../connecting-to-data-sources/authentication/connect-to-apis.md)call, [trigger events](../../../reference/appsmith-framework/widget-actions/), etc. You can add or arrange widgets on the canvas by a simple drag and drop action.
 
 {% embed url="https://youtu.be/NB8Btt0aw0g" %}
 
@@ -29,7 +29,7 @@ When the widget hits the boundary of its container, it starts resizing itself to
 A widget can move across containers. A container can be the canvas or a layout widget.
 
 {% hint style="info" %}
-Layout widgets are the ones that can contain other widgets, like - Container widget, List widget, Tabs Widget, etc.
+Layout widgets are the ones that can contain other widgets, like - [Container](../../../reference/widgets/container.md) widget, [List](../../../reference/widgets/list.md) widget, [Tabs](../../../reference/widgets/tabs.md) Widget, etc.
 {% endhint %}
 
 You can move a widget into a new container by dragging your cursor.

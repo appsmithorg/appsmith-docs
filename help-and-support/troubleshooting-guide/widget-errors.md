@@ -10,11 +10,11 @@ This error occurs when the value in the property of the widget does not match th
 
 **Why do you see this error?**
 
-While working with Tables or Lists, you may encounter this error, as the data property expects an Array of objects which might not match the data type of the API response.
+While working with [Tables](../../reference/widgets/table.md) or [Lists](../../reference/widgets/list.md), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](../../core-concepts/connecting-to-data-sources/authentication/) response.
 
 **Solution:**
 
-The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users API as below. Binding it to a table directly would lead to an error.
+The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users [API](../../core-concepts/connecting-to-data-sources/authentication/) as below. Binding it to a [table](../../reference/widgets/table.md) directly would lead to an error.
 
 ```javascript
 {
@@ -49,11 +49,11 @@ To overcome this, we can bind the user's array of the response instead of the en
 
 **Why do you see this error?**
 
-While adding options to single select or multi-select dropdowns, we might face a data mismatch error\*\*.\*\* In such cases, make sure the options property is an array of objects containing a label and value as strings.
+While adding options to single-select or multi-select dropdowns, we might face a **data mismatch error**. In such cases, make sure the options property is an array of objects containing a label and value as strings.
 
 **Solution:**
 
-In case the response does not contain label and value keys as below, we can map over the response to transforming it using javascript
+In case the response does not contain label and value keys as below, we can map over the response to transform it using javascript
 
 ```javascript
 // invalid response of fetchColors API
@@ -80,13 +80,13 @@ In case the response does not contain label and value keys as below, we can map 
 
 **Why do you see this error?**
 
-The below image shows that there is an error in the Chart Data field of the Chart\*\*,\*\* giving us the same error. \_\*\*\_The Evaluated Value here, indicates the current value of the field and in the image, we can see that the current value is an array while the error indicates that it must be an array\<x, y>.
+The below image shows that there is an error in the `Chart Data field` of the [Chart](../../reference/widgets/chart.md), giving us the same error. The Evaluated Value here indicates the current value of the field, and in the screenshot below, you can see that the current value is an array while the error indicates that it must be an array\<x, y>.
 
 ![](<../../.gitbook/assets/chart error.png>)
 
 **Solution:**
 
-In cases like these, you can use javascript to transform the data to the correct data type or access the correct data inside the object. The below code reduces the fetch\_orders.data array to aggregate orders based on the date into an array \<x, y> where x is the date of the order and y is the order amount
+In cases like these, you can use JavaScript to transform the data to the correct data type or access the correct data inside the object. The below code reduces the fetch\_orders.data array to aggregate orders based on the date into an array \<x, y> where x is the date of the order and y is the order amount
 
 ```javascript
 {{
@@ -105,7 +105,7 @@ In cases like these, you can use javascript to transform the data to the correct
 
 **Why do you see this error?**
 
-The date picker expects its default date in the standard ISO format. If the date you provided does not match this, you'll see this error.
+The date picker expects its default date in the standard[ ISO format](https://www.iso.org/iso-8601-date-and-time-format.html). If the date you provided does not match this, you'll see this error.
 
 **Solution:**
 
@@ -131,7 +131,7 @@ This error typically occurs in the isVisible and `isDisabled` properties and ind
 
 ### Syntax Error
 
-This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your JS as [multi-line code](../../core-concepts/writing-code/#multi-line-js).
+This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your [JS as multi-line ](../../core-concepts/writing-code/#multi-line-javascript)code.
 
 In the example below, fetch is not defined anywhere in the application
 
@@ -150,7 +150,7 @@ In Appsmith, we define all user-editable fields as nodes, and to provide reactiv
 Api1.data -> Table1.tableData
 ```
 
-Similarly, all parent nodes are implicitly dependent on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node and its dependencies should also be updated.
+Similarly, all parent nodes are implicitly dependent on the child nodes to ensure updates are propagated up an entity object. A more straightforward way to understand this is that if a child node updates, the parent node, and its dependencies should also be updated.
 
 ```
 // Implicit. Parent depends on children
@@ -161,7 +161,7 @@ Table1.tableData -> Table1
 Api1.data -> Table1.tableData
 ```
 
-The most common scenario that a cycle occurs is when you would try to bind a node to its parent node. Since it is impossible to evaluate an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved.
+The most common scenario where a cycle occurs is when you would try to bind a node to its parent node. Since it is impossible to evaluate an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved.
 
 ```
 // A cycle is formed
@@ -171,7 +171,7 @@ Table1.isVisible -> Table1
 
 ## Debugging
 
-For debugging JS logic inside widget actions, you can use `debugger` statement.
+For debugging JS logic inside widget actions, you can use a [`debugger`](../../core-concepts/writing-code/javascript-editor-beta/#debugger-statements) statement.
 
 ### Description
 
@@ -198,7 +198,9 @@ debugger;
 
 When the debugger is invoked, execution is paused at the debugger statement. It is like a breakpoint in the script source.
 
-**Note:** You need to have browser console open to make the debugger work.
+{% hint style="info" %}
+You need to have the browser console open to make the debugger work.
+{% endhint %}
 
 ### Debugging Errors With Console.log()
 

@@ -6,7 +6,7 @@ The Audio recorder widget allows users to record using their microphone, listen 
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Properties allow you to edit the [widget](./), connect it with other [widgets](./) and customize the user actions.
 
 ### Widget Properties
 

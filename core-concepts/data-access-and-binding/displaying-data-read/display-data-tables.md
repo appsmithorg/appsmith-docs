@@ -6,7 +6,7 @@ The [Table Widget](../../../reference/widgets/table.md) helps us visualize rows 
 
 ## Pagination
 
-Tables are generally required to display large data sets from Queries and APIs yet browsers cannot load all the data present in our database. To paginate this data, we can:
+Tables are generally required to display large data sets from [Queries](../querying-a-database/) and [APIs](../../connecting-to-data-sources/authentication/) yet browsers cannot load all the data present in our database. To paginate this data, we can:
 
 1. Enable the server-side pagination property in the table
 2. Call the API / Query onPageChange
@@ -14,7 +14,7 @@ Tables are generally required to display large data sets from Queries and APIs y
 
 ### Offset Based Pagination
 
-This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the Table and is used in both APIs and Queries.
+This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the [Table](../../../reference/widgets/table.md) and is used in both APIs and Queries.
 
 The pageNo and pageSize can be used in the API / Query by referencing them inside `{{ }}`
 
@@ -34,7 +34,7 @@ This method uses a value in the response of the API as the key to the next API c
 
 ## Server-Side Searching / Filtering
 
-Tables come with client-side searching, and filtering out of the box. To perform these operations server-side, we have to pass these values to the API / Query.
+[Tables](../../../reference/widgets/table.md) come with client-side searching, and filtering out of the box. To perform these operations [server-side](../../../reference/widgets/table.md#setup-server-side-search), we have to pass these values to the API / Query.
 
 #### Searching
 
@@ -51,7 +51,7 @@ https://mock-api.appsmith.com/users?name={{Table1.searchText}}
 
 #### Filtering
 
-Server-side filtering requires us to use another widget like a dropdown which can provide users a list of filters that our APIs support.
+[Server-side filtering](../../../learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget.md) requires us to use another widget like a dropdown which can provide users a list of filters that our APIs support.
 
 1. Drag a dropdown and populate it with filter values
 2. Call the API / Query onOptionChange from the Table

@@ -1,8 +1,8 @@
 # OAuth 2.0
 
-Open Authentication (OAuth) is an open-standard authorization protocol that allows you to share information between services without relieving or exchanging your password. It is a widely used standard by developers to exchange information securely and thus provides **secure designated access** to the applications. For example, you can tell GitHub to give access to Appsmith to merge or create pull requests on your behalf without sharing your password. Thus, giving you the flexibility to allow the interaction between applications without exposing your password.
+[Open Authentication (OAuth 2.0)](https://oauth.net/2/) is an open-standard authorization protocol that allows you to share information between services without relieving or exchanging your password. It is a widely used standard by developers to exchange information securely and thus provides **secure designated access** to the applications. For example, you can tell GitHub to give access to Appsmith to merge or create pull requests on your behalf without sharing your password. Thus, giving you the flexibility to allow the interaction between applications without exposing your password.
 
-By using OAuth, you minimize the security risk. It ensures that even if the associated application is breached, your password is safe as it was never exposed.
+By using OAuth 2.0, you minimize the security risk. It ensures that even if the associated application is breached, your password is safe as it was never exposed.
 
 ## How does OAuth 2.0 work?
 
@@ -13,7 +13,7 @@ There are four main participants in an OAuth 2.0 workflow: Resource Owner, Clien
 For example, John (**resource owner**) wants Notion (**client**) to post tweets on his behalf on Twitter. Twitter (**authorization and resource server**) generates a key and a secret for Notion to do the job. Notion uses the key and secret to create tokens and post the tweets on John’s behalf.
 
 {% hint style="info" %}
-OAuth 2.0 is not backward compatible. If your app is OAuth 1.0 or 1.1, you’ll not be able to use OAuth 2.0 for integration.
+[OAuth 2.0](https://oauth.net/2/) is **not** backward compatible. If your app is OAuth 1.0 or 1.1, you’ll **not** be able to use OAuth 2.0 for integration.
 {% endhint %}
 
 ## Authentication Type - OAuth 2.0

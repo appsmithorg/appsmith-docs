@@ -4,7 +4,7 @@
 
 If you encounter the error that ports 80 & 443 are not open, we recommend that you kill all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port.
 
-1.  In the file `docker-compose.yml`, change the ports for the Nginx container to a custom port as show in below example.
+1.  In the file `docker-compose.yml`, change the ports for the [Nginx](https://www.nginx.com) container to a custom port as shown in the below example.
 
     ```
         ports:
@@ -34,9 +34,9 @@ To kill a previous version of appsmith running on these ports, run the following
 
 If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work in most cases. If it does not, please reach out to us on [discord](https://discord.com/invite/rBTTVJp)
 
-If you are trying to connect to an existing MongoDB and the containers failed to start it may be due to one of the following reasons:
+If you are trying to connect to an existing [MongoDB](../../reference/datasources/querying-mongodb/) and the containers failed to start it may be due to one of the following reasons:
 
-1. Incorrect MongoDB credentials
+1. Incorrect [MongoDB](../../reference/datasources/querying-mongodb/) credentials
 2. Empty Salt / Password for encryption
 
 Restart the installation process with valid values for the above
@@ -44,12 +44,12 @@ Restart the installation process with valid values for the above
 ## Unable to access Appsmith
 
 * Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
-* You can access the running application on [**http://localhost**](http://localhost) in any browser or the **public IP** of your machine.
-* You may need to wait 2 - 3 minutes before accessing the application to allow Nginx to start.
+* You can access the running application on[ localhost](http://localhost) in any browser or the `public IP` of your machine.
+* You may need to wait 2 - 3 minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
 
 ## OAuth Sign Up not working
 
-If your deployment is behind an ELB / Proxy, you must update the nginx configuration of the deployment. In the file\*\*`data/nginx/nginx.app.conf.template`\*\* modify the line:
+If your deployment is behind an ELB / Proxy, you must update the [Nginx](https://www.nginx.com) configuration of the deployment. In the file `data/nginx/nginx.app.conf.template` modify the line:
 
 ```
 proxy_set_header X-Forwarded-Proto $scheme;
@@ -61,13 +61,13 @@ with
 proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
 ```
 
-This will ensure that the redirect URLs are correct during OAuth2 logins. This works even if the ELB is configured to run on a custom port.
+This will ensure that the redirect URLs are correct during [OAuth2](../../core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/) logins. This works even if the ELB is configured to run on a custom port.
 
 ## Server not booting because of MongoCommandException
 
-In release `v1.6.4`, we upgraded our libraries & Spring framework. This caused a compatibility issue between the libraries used within Appsmith and the version of MongoDB that was shipped earlier. This didn't show up in our testing because all our testing happened against MongoDB clusters with replica sets, where the problem doesn't surface. We apologize for this breaking experience.
+In release `v1.6.4`, we upgraded our libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](../../reference/datasources/querying-mongodb/) that was shipped earlier. This didn't show up in our testing because all our testing happened against [MongoDB](../../reference/datasources/querying-mongodb/) clusters with replica sets, where the problem doesn't surface. We apologize for this breaking experience.
 
-If you see an error like below, your instance is affected by the library upgrade we performed in `v1.6.4`.
+If you see an error like the below, your instance is affected by the library upgrade we performed in `v1.6.4`.
 
 ```
 Caused by: com.mongodb.MongoCommandException: Command failed with error 17 (ProtocolError): 'Attempt to switch database target during SASL authentication.' on server mongo:27017. The full response is {"ok": 0.0, "errmsg": "Attempt to switch database target during SASL authentication.", "code": 17, "codeName": "ProtocolError"}

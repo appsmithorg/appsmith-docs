@@ -28,7 +28,7 @@ It is advisable that you give a meaningful name to your Authenticated API dataso
 
 ### URL
 
-Use this field to add the API URL you would like to access. For example, I would like to access the mock API of Appsmith, and for that, I’ll supply the URL as \`\`\` [https://mock-api.appsmith.com](https://mock-api.appsmith.com) \`\`\`\`
+Use this field to add the API URL you would like to access. For example, I would like to access the mock API of Appsmith, and for that, I’ll supply the URL as  [`https://mock-api.appsmith.com`](https://mock-api.appsmith.com)``
 
 ### Headers
 
@@ -46,17 +46,7 @@ When you want to ensure that the incoming requests originate from Appsmith, you 
 
 ### Authentication Type
 
-The API authentication is a process of validating the consumer's identity who attempts to make a connection by using an authentication protocol. The authentication type defines the available authentication protocols that you can use on Appsmith to make a connection with your APIs.
-
-Configure one of the below authentication modes and save it.
-
-{% content-ref url="authentication-type/basic-authentication.md" %}
-[basic-authentication.md](authentication-type/basic-authentication.md)
-{% endcontent-ref %}
-
-{% content-ref url="authentication-type/oauth2-authentication/" %}
-[oauth2-authentication](authentication-type/oauth2-authentication/)
-{% endcontent-ref %}
+You can define an [authentication type](authentication-type/) for REST APIs by using the protocols available on Appsmith.
 
 ## Security
 

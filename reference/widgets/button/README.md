@@ -1,12 +1,12 @@
 # Button
 
-The button widget is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly.
+The button [widget](../) is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly.
 
 {% embed url="https://youtu.be/8FOJ1CFRQcU" %}
 
 ## Properties
 
-Properties allow you to edit the button widget, connect it with other widgets and customize the user actions.
+Properties allow you to edit the button [widget](../), connect it with other [widgets](../) and customize the user actions.
 
 ### Widget Properties
 
@@ -59,9 +59,9 @@ When you tick the checkbox, it will enable the Disabled property and prevent a u
 
 ### Events
 
-| Event       | Description                                                                                                                                           |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets the action to be run when the user clicks a button. See a list of [supported actions](../../../core-concepts/writing-code/appsmith-framework.md) |
+| Event       | Description                                                                                                                          |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **onClick** | Sets the action to be run when the user clicks a button. See a list of [supported actions](../../appsmith-framework/widget-actions/) |
 
 ### Styles
 

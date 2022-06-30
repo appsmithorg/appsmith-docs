@@ -27,16 +27,18 @@ If you would like to play around with the platform before connecting your data, 
 
 You can connect to 2 sample datasets
 
-1. Movies: This is a sample mongoDb database with a collection called movies
-2. Users: This is a sample PostgreSQL database with a table called users
+1. Movies: This is a sample [MongoDB](../../reference/datasources/querying-mongodb/) database with a collection called movies
+2. Users: This is a sample [PostgreSQL](../../reference/datasources/querying-postgres.md) database with a table called users
 
-The data in the mock database gets reset every 24 hours and is common for all users so it may contain some unexpected values.
+{% hint style="info" %}
+The **data** in the **mock database** gets **reset** every **24 hours** and is **common** for **all users** so it may contain **some unexpected values**.
+{% endhint %}
 
 ![](<../../.gitbook/assets/add mock db (3).gif>)
 
 ### Sample API
 
-You can import the below CURL commands to execute these APIs
+You can import the below CURL commands to execute these [APIs](authentication/)
 
 #### Fetch Users
 

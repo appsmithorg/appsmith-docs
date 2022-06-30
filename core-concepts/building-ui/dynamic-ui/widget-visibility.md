@@ -30,7 +30,7 @@ Similar to the above example, we can tie the visibility of a widget to the respo
 
 ## Dynamic Forms
 
-There are some cases that require form fields to dynamically change based on the user input. This can be achieved using a Tab widget inside the form and conditionally updating the selected tab value based on the inputs of the form
+There are some cases that require form fields to dynamically change based on the user input. This can be achieved using a [Tab](../../../reference/widgets/tabs.md) widget inside the form and conditionally updating the selected tab value based on the inputs of the [form](../../../reference/widgets/form.md)
 
 ![](<../../../.gitbook/assets/dynamic forms.gif>)
 

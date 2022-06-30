@@ -1,6 +1,6 @@
 # Query Settings
 
-You can specify the following settings in the **Query Settings** tab on the Appsmith Query Editor:
+You can specify the following settings in the **Settings** tab on the Appsmith Query Editor:
 
 ### Run query on page load
 

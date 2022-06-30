@@ -46,7 +46,7 @@ You can access the various properties of the widget using the widget's name.
 
 ### Grouping Widgets
 
-Appsmith supports grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
+Appsmith supports the grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
 
 * Select multiple widgets with Ctrl + Left Click
 * Now click on the dotted square icon or press Ctrl + G
@@ -55,7 +55,7 @@ Appsmith supports grouping of widgets. When you group widgets, they are put in a
 
 ## Displaying Data in a widget
 
-Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a Query can be set in a widget property by referencing the name (unique identifier) of the Query.
+Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a [Query](../querying-a-database/) can be set in a widget property by referencing the name (unique identifier) of the Query.
 
 {% hint style="success" %}
 Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
@@ -75,9 +75,9 @@ Each widget property has a specific data type that it validates its value agains
 
 ## Transforming Data
 
-You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a dropdown. Directly binding the data will lead to an error as shown below
+You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a [dropdown](../../../reference/widgets/dropdown-1.md). Directly binding the data will lead to an error as shown below
 
-A dropdown needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the dropdown options property.
+A [dropdown](../../../reference/widgets/dropdown-1.md) needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the [dropdown options property.](../../../reference/widgets/dropdown-1.md#widget-properties)
 
 **Example Query Data**
 

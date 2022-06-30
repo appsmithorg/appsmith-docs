@@ -1,6 +1,6 @@
 # App Theming
 
-App theming allows you to style your pages and widgets using global controls, making it easy to change the visual layout with a single click.
+App theming allows you to style your pages and [widgets](../../../reference/widgets/) using global controls, making it easy to change the visual layout with a single click.
 
 Themes are application-level styles that apply to all the widgets linked to the theme properties.
 
@@ -19,7 +19,7 @@ Each app has an applied theme that can be modified. There are two ways you can m
 
 ## **Changing the theme**
 
-You can browse the default themes or your saved themes by clicking the "Change Theme" button. Once you select the preferred theme, it is applied automatically. After the theme is applied, you can go back and customize it further.
+You can browse the default themes or your saved themes by clicking the **Change Theme** button. Once you select the preferred theme, it is applied automatically. After the theme is applied, you can go back and customize it further.
 
 You can choose to undo the applied theme if you don't like it.
 

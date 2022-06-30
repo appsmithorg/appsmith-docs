@@ -1,8 +1,6 @@
 # JavaScript Promises
 
-Previously, the only way to achieve asynchronous workflows in Appsmith was through callbacks, and dealing with callbacks was not easy. Appsmith now supports native JavaScript promises to make working with asynchronous workflows easier.
-
-New to JavaScript Promises? Check the basics of promises [here](https://javascript.info/promise-basics).
+Previously, the only way to achieve asynchronous workflows in Appsmith was through callbacks, and dealing with callbacks was not easy. Appsmith now supports native [JavaScript promises](https://javascript.info/promise-basics) to make working with asynchronous workflows easier.
 
 {% embed url="https://youtu.be/VuBycqPJVug" %}
 
@@ -41,7 +39,7 @@ However, using Promise for the same problem makes the implementation easier and 
 
 ### Async/Await
 
-The `async` and `await` keywords enable the asynchronous workflow to be written in a cleaner style, avoiding the need to configure promise chains explicitly.
+The `async` and `await` keywords enable the [asynchronous](javascript-editor-beta/#asynchronous) workflow to be written in a cleaner style, avoiding the need to configure promise chains explicitly.
 
 #### Async
 
@@ -88,7 +86,7 @@ Please remember to always return the promise for <mark style="color:red;">`.then
 
 #### Promise.any()
 
-It takes an iterable of Promise objects. As one of the promises fulfills, it returns a single promise that resolves with that Promise's value.
+It takes an iterable of Promise objects. Once one of the promises is fulfilled it returns a single promise that resolves with that Promise's value.
 
 For example, refer to the code below:
 
@@ -139,7 +137,7 @@ If you want all the actions to finish first, you can use `Promise.all()` or `Pro
 
 #### Promise.all()
 
-It \*\*\*\* takes an array of promises (technically any iterable but is usually an array) and returns a new Promise. The array of results of the Promises becomes the result of the new Promise. If any promises fail (reject state), the new Promise immediately rejects and returns the same error.
+It takes an array of promises (technically any iterable but is usually an array) and returns a new Promise. The array of results of the Promises becomes the result of the new Promise. If any promises fail (reject state), the new Promise immediately rejects and returns the same error.
 
 For example, Refer to the code below:
 
