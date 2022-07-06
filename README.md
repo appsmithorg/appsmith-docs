@@ -17,7 +17,7 @@ Here are the top five use cases for Appsmith:
 
 With these simple steps, you can create simple CRUD apps to complicated multi-step workflows. Appsmith makes it easy to build a UI that talks to any data source.
 
-Watch this 5-minute video on how to use Appsmith.
+Watch this 1.5-minute video on how to use Appsmith.
 
 {% embed url="https://youtu.be/Dxe_NzdGzL4" caption="Appsmith In 100 Seconds" %}
 
