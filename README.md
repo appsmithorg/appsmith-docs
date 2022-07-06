@@ -19,7 +19,7 @@ With these simple steps, you can create simple CRUD apps to complicated multi-st
 
 Watch this 5-minute video on how to use Appsmith.
 
-{% embed url="https://www.youtube.com/watch?v=mzqK0QIZRLs&feature=youtu.be" %}
+{% embed url="https://youtu.be/Dxe_NzdGzL4" caption="Appsmith In 100 Seconds" %}
 
 ## Creating an Account
 
