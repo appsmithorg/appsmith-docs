@@ -14,7 +14,7 @@ Firstly, let’s create an HTML page and call it \`cs\_dashboard.html\`. Now, ad
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Customer Support Dahboard </title>
+    <title> Customer Support Dashboard </title>
 </head>
 <body>
 
@@ -34,8 +34,8 @@ Include the meta tag in head to ensure that the embedded application renders res
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Customer Support Dashboard </title>
 </head>
 <body>
     <iframe src="https://app.appsmith.com/applications/5f2aeb2580ca1f6faaed4e4a/pages/5f2d61b580ca1f6faaed4e79" height="700" width="100%"></iframe>
@@ -53,8 +53,8 @@ If you want to get your app to use the whole page in your browser, you can still
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Customer Support Dashboard </title>
 </head>
 <body>
     <iframe src="https://app.appsmith.com/applications/5f2aeb2580ca1f6faaed4e4a/pages/5f2d61b580ca1f6faaed4e79"frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
@@ -70,8 +70,8 @@ Additionally, you can also see the Appsmith toolbar on the top, you can remove t
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Customer Support Dashboard </title>
 </head>
 <body>
     <iframe src="https://app.appsmith.com/applications/5f2aeb2580ca1f6faaed4e4a/pages/5f2d61b580ca1f6faaed4e79?embed=true" height="700" width="100%"></iframe>
