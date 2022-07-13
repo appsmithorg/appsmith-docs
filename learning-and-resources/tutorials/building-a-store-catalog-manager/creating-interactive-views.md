@@ -219,7 +219,7 @@ Once deployed, you can share your deployed application with both internal and ex
 2. Share the application's URL with the user, OR
 3. Invite a user by adding their email, selecting an appropriate role for them, and clicking **INVITE**.
 
-You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](../../../advanced-concepts/access-control.md).)&#x20;
+You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](../../../advanced-concepts/access-control.md).)
 
 **What's next?**
 
@@ -227,4 +227,4 @@ The basic Catalog Dashboard is now up and running. This also marks the end of th
 
 * [Core Concepts](https://docs.appsmith.com/core-concepts/)
 * [Widgets](../../../reference/widgets/)
-* [Appsmith Framework](../../../reference/appsmith-framework/)
+* [Appsmith Framework](broken-reference)

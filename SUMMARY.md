@@ -154,7 +154,6 @@
     * [Copy To Clipboard](reference/appsmith-framework/widget-actions/copytoclipboard.md)
     * [Reset Widget](reference/appsmith-framework/widget-actions/resetwidget.md)
     * [Intervals (Time events)](reference/appsmith-framework/widget-actions/intervals-time-events.md)
-* [Appsmith Framework](reference/appsmith-framework-1.md)
 
 ## Advanced Concepts
 

@@ -33,9 +33,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events       | Description                                                                                                               |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../appsmith-framework-1.md) |
+| Events       | Description                                                                                                           |
+| ------------ | --------------------------------------------------------------------------------------------------------------------- |
+| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../appsmith-framework/) |
 
 ### Label
 

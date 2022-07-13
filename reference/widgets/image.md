@@ -36,9 +36,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Event       | Description                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../appsmith-framework-1.md). |
+| Event       | Description                                                                                                          |
+| ----------- | -------------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../appsmith-framework/). |
 
 ### Styles
 

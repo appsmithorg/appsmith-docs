@@ -49,8 +49,8 @@ If you think we need to include something in this documentation, please fill out
 
 ## Help Center
 
-* Have a look at our [FAQs](getting-started/faq.md), and you might find your questions answered there;
-* See our guides and tutorials on[ YouTube](https://www.youtube.com/appsmith);
+* Have a look at our [FAQs](getting-started/faq.md) and [Troubleshooting](help-and-support/troubleshooting-guide/) section, and you might find your questions answered there;
+* View our [guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith);
 * Report bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
 
 Are you still having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com).

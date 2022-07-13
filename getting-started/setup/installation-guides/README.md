@@ -1,6 +1,6 @@
 # Installation Guides
 
-&#x20; [ ](kubernetes/)![Docker-logo](<../../../.gitbook/assets/docker-logo (1).png>)                                  [![Kubernetes-logo](<../../../.gitbook/assets/Kubernetes\_logo (1).png>)](kubernetes/)                                       [![AWS-AMI-logo](<../../../.gitbook/assets/AWS AMI.png>)](aws-ami.md)
+&#x20; [ ](kubernetes/)[![Docker-logo](<../../../.gitbook/assets/docker-logo (1).png>)](docker/)                                  [![Kubernetes-logo](<../../../.gitbook/assets/Kubernetes\_logo (1).png>)](kubernetes/)                                       [![AWS-AMI-logo](<../../../.gitbook/assets/AWS AMI.png>)](aws-ami.md)
 
 &#x20;               **Docker                                                              Kubernetes                                                     AWS AMI**  &#x20;
 
