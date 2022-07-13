@@ -28,26 +28,29 @@ You can move the chart widget and position it on the screen according to your co
 
 ## Properties
 
-The widget properties allow you to enhance the look and feel of a Chart widget and personalize the same as per your needs. You can find the properties pane on the right side of the canvas.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
 {% hint style="info" %}
-Ensure that you select the widget to access its properties on the right bar.
+Ensure that you select the widget to access its properties on the sidebar to the right.
 {% endhint %}
 
 The properties pane follows the same structure for almost all the widgets and includes or excludes properties not specific to the selected widget.
 
-| **Property**                 | **Description**                                                                                                                 | **Example**                                                                                                                                                                                     | **Code Snippet**            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| **Name**                     | Allows you to provide a unique name of the widget.                                                                              | You will want to name the chart as “SalesReportChart” if you are preparing data for Sales Report.                                                                                               |                             |
-| **Title**                    | Use the property to provide a heading.                                                                                          | As you work on Sales data, you can set the title as “Sales Report.”                                                                                                                             |                             |
-| **Chart Type**               | You can choose one of the charts from the available options or create your custom chart by selecting the “custom chart” option. | For example, you can represent the data in a line/bar/pie and many more options with custom chart type.                                                                                         |                             |
-| **Visible**                  | Allows you to show/hide a widget.                                                                                               | You can either use a toggle or code to turn it off/on.                                                                                                                                          | `{{widget_name.isVisible}}` |
-| **Animate Loading**          | With this property, you can control a widget’s animation on the page load.                                                      | You can use a toggle to turn it on/off. When turned off, the widget will load without any skeletal animation. You can also turn it off/on using javascript by enabling the JS label next to it. |                             |
-| **Allow Scroll**             | Allows you to enable a scroll bar to scroll the contents.                                                                       | You can use a toggle to turn it on/off.                                                                                                                                                         |                             |
-| **x-axis Label**             | You can use this property to provide a specific name to the x-axis.                                                             | For example, you can name the x-axis as **Cities** if your chart data represents data of cities.                                                                                                |                             |
-| **y-axis Label**             | You can provide a specific name to the y-axis by using this property.                                                           | For example, you can name the y-axis as **Temperature** if your chart data shows temperature changes for different cities.                                                                      |                             |
-| **x-axis Label Orientation** | You can define the orientation of the x-axis label by using this property.                                                      | There are four available options that you can use: auto, stagger, slant, and round.                                                                                                             |                             |
-| **Adaptive Axis**            | Allows you to either set the axis value to zero or allow the axis values to determine the values based on data.                 | For example, if you are working on data with yAxis values in the range of 1-10, then the adaptive axis will determine the minimum value is 1 for yAxis. And the data is plotted accordingly.    |                             |
+### Widget Properties
+
+These properties allow you to edit the Chart widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+| Property                     | Description                                                                                                                                                                                                                           |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Title**                    | Set the text that will appear at the top of the chart as a title.                                                                                                                                                                     |
+| **Chart Type**               | Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart ([available from FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts)).              |
+| **Visible**                  | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                        |
+| **Animate Loading**          | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                |
+| **Allow Scroll**             | Allows you to enable a scroll bar to scroll the contents of the chart.                                                                                                                                                                |
+| **x-axis Label**             | Sets the text which appears as a label for the x-axis.                                                                                                                                                                                |
+| **y-axis Label**             | Sets the text which appears as a label for the y-axis.                                                                                                                                                                                |
+| **x-axis Label Orientation** | Sets the size/rotation behavior for the x-axis label text. Chose from Auto, Slant, Rotate, or Stagger.                                                                                                                                |
+| **Adaptive Axis**            | Determines the scaling behavior of the y-axis. **OFF:** The y-axis begins at zero and spans to an upper limit based on the data points; **ON:** The y-axis starting and ending values are both determined based upon the data points. |
 
 ## General
 
@@ -534,12 +537,32 @@ How to use visible property to show/hide a widget?
 
 When you tick the checkbox, it will enable the Visible property, and the chart will be visible in the app.
 
-## Events
+### Binding Properties
+
+These properties allow you to bind your Chart widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+
+| Binding Property      | Description                                                                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **isVisible**         | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                          |
+| **selectedDataPoint** | Contains an object which represents the data point that the user has most recently clicked _(object containing: x, y, seriesTitle)._ Default _undefined._ |
+| **xAxisName**         | Contains the text of the Chart's **x-axis Label** setting _(string)._                                                                                     |
+| **yAxisName**         | Contains the text of the Chart's y**-axis Label** setting _(string)._                                                                                     |
+
+### Events
 
 You might want to fetch more data based on clicks on a chart. Events on the chart capture the user interaction.
 
-| **Event**        | **Description**                                              | **Example**                                                                                                                                   | **Code Snippet**                                                                                                                                                                             |
-| ---------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onDataPointClick | Allows you to capture the click event and trigger an action. | You can perform[ various actions when the click event is triggered](https://docs.appsmith.com/core-concepts/writing-code/appsmith-framework). | <p>You can refer to the values of the Chart widget -</p><p><code>{{widget_name.selectedDataPoint.x}}</code> for x-axis, and <code>{{widget_name.selectedDataPoint.y}}</code> for y-axis.</p> |
+| Event                | Description                                                                                                                                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onDataPointClick** | Sets an an action to take place when the user clicks on a data point. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
+
+### Styles
+
+| Style Property    | Description                                                                                                                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+
+
 
 With many out-of-the-box chart representations available on Appsmith, visualize and share your data across business functions.
