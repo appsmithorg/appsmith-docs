@@ -43,7 +43,7 @@
     * [Super Admin](getting-started/setup/instance-configuration/admin-settings.md)
   * [Instance Management](getting-started/setup/instance-management/README.md)
     * [Maintenance Window](getting-started/setup/instance-management/maintenance-window.md)
-* [FAQs](getting-started/faq.md)
+* [FAQ](getting-started/faq.md)
 
 ## Core Concepts
 
