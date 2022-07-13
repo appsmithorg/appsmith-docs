@@ -8,7 +8,7 @@ You can drag and drop pre-built [widgets](reference/widgets/) to build UI on a g
 
 Build CRUD apps, Dashboards, Admin Panels, Dynamic Forms, and much more 10x faster.
 
-## How Appmsith Works
+## How Appsmith Works
 
 * **Connect Datasource**: Integrate with a datasource such as a database or an API. Appsmith has plug-and-play support for many databases and the RESTful API interface to connect with most tools seamlessly.
 * **Build UI**: Use customizable built-in widgets to build an app layout quickly.
@@ -47,7 +47,7 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
 
 If you think we need to include something in this documentation, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com), and we’ll get working on it!
 
-## Help Center
+## Other Resources
 
 * Have a look at our [FAQ](getting-started/faq.md) and [Troubleshooting](help-and-support/troubleshooting-guide/) section, and you might find your questions answered there;
 * View our [guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith);
