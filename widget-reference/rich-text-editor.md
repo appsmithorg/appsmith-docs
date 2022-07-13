@@ -22,6 +22,47 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 | **Animate Loading** | Controls the loading of the widget.                                                                                 |
 | **Hide toolbar**    | Controls the visibility of the toolbar                                                                              |
 
+Let's understand the widget properties in detail:
+
+#### Input Type
+
+As the name suggests, input type allows you to set the type of text you want in the input box, HTML, or Markdown format. It sets the input type of the default text property in the widget.&#x20;
+
+The input box will show an error if the entered data does not match the input type. For example, If you select the input type as HTML, you won't be able to display Markdown text.&#x20;
+
+**Default text**
+
+This property lets you set a default value for the widget before the user has made any changes.
+
+Once you have selected an input type, you can add markdown/HTML text in the default text section. For example, if you want to use the markdown input type. You can either use the default text property or use an input widget to display the text. The video below demonstrates how to use the markdown input type.
+
+{% embed url="https://youtu.be/Ld8bxUvY0p0" %}
+
+```
+Markdown: 
+
+### Markdown 
+##### only works in Markdown RTE
+
+---
+HTML: 
+
+<h3> HTML
+<ul>
+<li>HTML works in both RTEs</li>
+</ul>
+
+<ul>
+  <li>Item 1
+    <ul>
+      <li>Sub-item 1</li>
+      <li>Sub-item 2</li>
+    </ul>
+  </li>
+```
+
+&#x20;
+
 ### Binding Properties
 
 &#x20;These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
@@ -84,7 +125,7 @@ How to set the label properties?
 
 ### Styles&#x20;
 
-Style properties allow you to change the look and feel of the widget.
+Style properties allow you to change the look and feel of the widget. &#x20;
 
 | Style             | Description                                            |   |
 | ----------------- | ------------------------------------------------------ | - |
