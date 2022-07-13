@@ -189,6 +189,7 @@
 * [How To Guides](learning-and-resources/how-to-guides/README.md)
   * [How to use JS Object within Appsmith?](learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md)
   * [Writing JavaScript in Appsmith](learning-and-resources/how-to-guides/writing-javascript-in-appsmith.md)
+  * [Embed Appsmith into Existing Application](learning-and-resources/how-to-guides/embed-appsmith-into-existing-application.md)
   * [How to use filters on Appsmith table widget](learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget.md)
   * [How to build auto-generated forms using List widget](learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget.md)
   * [Upload / Download Files from S3](learning-and-resources/how-to-guides/how-to-upload-to-s3.md)

@@ -4,9 +4,9 @@ The Rich Text Editor is used to capture Rich Text input from a user. The input i
 
 {% embed url="https://youtu.be/_KrxFScQJys" %}
 
-## Properties
+## Properties&#x20;
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
 
 ### Widget Properties
 
@@ -22,9 +22,50 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 | **Animate Loading** | Controls the loading of the widget.                                                                                 |
 | **Hide toolbar**    | Controls the visibility of the toolbar                                                                              |
 
+Let's understand the widget properties in detail:
+
+#### Input Type
+
+As the name suggests, input type allows you to set the type of text you want in the input box, HTML, or Markdown format. It sets the input type of the default text property in the widget.&#x20;
+
+The input box will show an error if the entered data does not match the input type. For example, If you select the input type as HTML, you won't be able to display Markdown text.&#x20;
+
+**Default text**
+
+This property lets you set a default value for the widget before the user has made any changes.
+
+Once you have selected an input type, you can add markdown/HTML text in the default text section. For example, if you want to use the markdown input type. You can either use the default text property or use an input widget to display the text. The video below demonstrates how to use the markdown input type.
+
+{% embed url="https://youtu.be/Ld8bxUvY0p0" %}
+
+```
+Markdown: 
+
+### Markdown 
+##### only works in Markdown RTE
+
+---
+HTML: 
+
+<h3> HTML
+<ul>
+<li>HTML works in both RTEs</li>
+</ul>
+
+<ul>
+  <li>Item 1
+    <ul>
+      <li>Sub-item 1</li>
+      <li>Sub-item 2</li>
+    </ul>
+  </li>
+```
+
+&#x20;
+
 ### Binding Properties
 
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+&#x20;These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
 | Property       | Description                                                    | Code Snippet                     |
 | -------------- | -------------------------------------------------------------- | -------------------------------- |
@@ -34,7 +75,7 @@ These properties help you share values between widgets and also allow you to eas
 
 ### Events
 
-They are a set of actions that you can perform on the widget.
+They are a set of actions that you can perform on the widget.&#x20;
 
 | Events           | Description                                                                                                    |   |
 | ---------------- | -------------------------------------------------------------------------------------------------------------- | - |
@@ -82,11 +123,12 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-### Styles
+### Styles&#x20;
 
-Style properties allow you to change the look and feel of the widget.
+Style properties allow you to change the look and feel of the widget. &#x20;
 
 | Style             | Description                                            |   |
 | ----------------- | ------------------------------------------------------ | - |
 | **Border Radius** | Allows you to define curved corners.                   |   |
 | **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
+
