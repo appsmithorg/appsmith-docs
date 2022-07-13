@@ -6,20 +6,21 @@ The button widget is a clickable entity that triggers any event attached to it. 
 
 ## Properties
 
-Properties allow you to edit the button widget, connect it with other widgets and customize the user actions.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
 ### Widget Properties
 
-These properties allow you to edit the button widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+These properties allow you to edit the Button widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Property                 | Description                                                                                                                                                                                                      |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Label**                | Sets the label of the button.                                                                                                                                                                                    |
-| **Tooltip**              | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                                                 |
-| **Google Recaptcha Key** | Adds a [Google ReCAPTCHA v3](https://www.google.com/recaptcha/) check to the button. The token will be accessible from the API pane with the `recaptchaToken` key (see [Google reCAPTCHA](google-recaptcha.md)). |
-| **Visible**              | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published but shows a translucent state in edit mode                                                   |
-| **Disabled**             | It makes the button un-clickable or unusable. The widget will remain visible to the user but user input will not be allowed.                                                                                     |
-| **Animate loading**      | Controls widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                        |
+| Property                     | Description                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Label**                    | Sets the text shown within the widget.                                                                                                                                                                                                                                                                                                                 |
+| **Tooltip**                  | Sets a tooltip that appears when the user hovers over the widget with the mouse. Use this to provide hints or extra information to the user.                                                                                                                                                                                                           |
+| **Google reCAPTCHA Key**     | Providing a Google reCAPTCHA [site key](https://cloud.google.com/recaptcha-enterprise/docs/create-key) here adds a [Google reCAPTCHA](https://www.google.com/recaptcha/about/) check to the button. The token is accessible from the API pane with the`recaptchaToken` key (see our [Google reCAPTCHA](https://www.google.com/recaptcha/about/) docs). |
+| **Google reCAPTCHA Version** | Sets the Google reCAPTCHA version to use for the button, either v2 or v3.                                                                                                                                                                                                                                                                              |
+| **Visible**                  | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                                                                                                                         |
+| **Disabled**                 | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                                                                                                                                                                                                        |
+| **Animate loading**          | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                                                                                                                 |
 
 Let's understand the widget properties in detail.
 
@@ -57,24 +58,38 @@ When you tick the checkbox, it will enable the Disabled property and prevent a u
 
 {% embed url="https://youtu.be/iaubB0XGouU" %}
 
+### Binding Properties
+
+These properties allow you to bind your Button widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+
+| Binding Property       | Description                                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------------------------------- |
+| **text**               | Reflects the **Label** property, contains the text that is shown in the button _(string)._           |
+| **googleRecaptchaKey** | Reflects the **Google reCAPTCHA Key** property, contains the button's reCAPTCHA site key _(string)._ |
+| **isVisible**          | Reflects the state of the widget's **Visible** setting _(bool)_.                                     |
+| **isDisabled**         | Reflects the state of the widget's **Disabled** setting _(bool)_.                                    |
+
 ### Events
 
-| Event       | Description                                                                                                                                        |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets the action to be run when the user clicks a button. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
+You can define functions that will be called when these events are triggered in the widget.
+
+| Event       | Description                                                                                                                                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **onClick** | Sets an an action to take place when the user clicks on this widget. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
 
 ### Styles
 
-Style properties allow you to modify the button widgets visually. It has several options such as -
+Style properties allow you to change the look and feel of the widget.
 
-* **Button Color:** You can change the color of the button here by entering the hex value of the color of your choice
-* **Button Variant:** It sets the type of the button based on its significance - Primary, secondary, or tertiary. You can write JavaScript code to change the button variant conditonally.
-* **Border Radius:** It gives an option to make the button's corners either curved or edged.
-* **Box Shadow:** It casts a drop shadow around the frame of the widget.
-* **Shadow Color:** It lets you choose the color of the casted shadow.
-* **Icon:** It lets you add icons to your button to provide extra information about the functionality of that button.
-* **Placement:** This option lets you place the elements inside the button, like the label and icon. By default, there are three placement options - Start, between, and center. You can create custom placements using JavaScript.
-* **Icon Alignment:** It helps align the icon inside the button with respect to the label.
+| Style Property     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Button Color**   | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                                                                                                                                                                                                                                                                          |
+| **Button Variant** | Sets the the button style type to represent its significance - Primary, Secondary, or Tertiary. You can use JavaScript to set this field by writing code that evaluates to the _string_ "PRIMARY", "SECONDARY", or "TERTIARY".                                                                                                                                                                                                              |
+| **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.                                                                                                                                                                                                                                                            |
+| **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.                                                                                                                                                                                                                                                               |
+| **Icon**           | Sets an icon to be included on the button.                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
+| **Placement**      | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the _string_ "START", "CENTER", or "BETWEEN". |
 
 {% embed url="https://youtu.be/LOBPY1O4Wrc" %}
 
