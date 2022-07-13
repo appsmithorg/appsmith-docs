@@ -1,14 +1,16 @@
 ---
 description: >-
-  Configure Github OAuth to enable Login via Github for the Appsmith
+  Configure GitHub OAuth to enable Login via GitHub for the Appsmith
   installation
 ---
 
-# Github OAuth
+# GitHub OAuth
+
+GitHub allows the integration of third-party applications using your GitHub Identity. Follow the below guide to configure GitHub OAuth.
 
 ![](<../../../../.gitbook/assets/github login.png>)
 
-To enable Github Sign in, login to your [Github Account](https://github.com)
+To enable GitHub Sign in, login to your [GitHub Account](https://github.com)
 
 **1. Navigate to the** [**Organizations section**](https://github.com/settings/organizations) **of your profile and the settings of the organization under which you want to create an OAuth App**
 
@@ -41,11 +43,11 @@ APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET                  
 ```
 
 {% hint style="warning" %}
-The Client ID and Client Secret entered are not verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the Github authentication config setup, it may lead to the user getting stuck on the login screen if the Github config is invalid. To fix this, you’ll have to update the ENV variables manually by adding a valid Client ID and Client Secret or enabling the form login. You won’t be able to do this via the Admin settings page since you won’t be logged in anymore.
+The Client ID and Client Secret entered are not verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the GitHub authentication config setup, it may lead to the user getting stuck on the login screen if the GitHub config is invalid. To fix this, you’ll have to update the ENV variables manually by adding a valid Client ID and Client Secret or enabling the form login. You won’t be able to do this via the Admin settings page since you won’t be logged in anymore.
 {% endhint %}
 
 **6.** [**Restart the Appsmith instance**](../)
 
 {% hint style="success" %}
-Github Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../../../help-and-support/troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
+GitHub Login should now be enabled for your Appsmith installation. If you are running Appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../../../help-and-support/troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
 {% endhint %}

@@ -2,8 +2,6 @@
 
 An app can be built using UI elements ([widgets](../../../reference/widgets/)) by placing them on the canvas as per your requirement.
 
-[Widgets](../../../reference/widgets/) are the elements that help the user in shaping their app. They can [store data](../../data-access-and-binding/displaying-data-read/) from a [Database](../../../reference/datasources/) or an[ API ](../../connecting-to-data-sources/authentication/connect-to-apis.md)call, [trigger events](../../../reference/appsmith-framework/widget-actions/), etc. You can add or arrange widgets on the canvas by a simple drag and drop action.
-
 {% embed url="https://youtu.be/NB8Btt0aw0g" %}
 
 ## Adding and Arranging Widgets

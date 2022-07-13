@@ -1,6 +1,6 @@
-# Admin Settings
+# Super Admin
 
-Admin settings is an alternative to updating <mark style="color:red;">`env`</mark> variables by editing the `env` file from the UI. This new UI makes it easy for the superuser to change instance configuration without moving away from the comfort of your instance UI.
+Admin settings menu option is an alternative to updating <mark style="color:red;">`env`</mark> variables by editing the `env` file from the UI. This new UI makes it easy for the superuser to change instance configuration without moving away from the comfort of your instance UI.
 
 The admin settings page is a UI available only to superusers on all self-hosted instances.
 

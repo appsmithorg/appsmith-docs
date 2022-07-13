@@ -1,2 +1,0 @@
-# Your first Appsmith app
-

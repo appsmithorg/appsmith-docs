@@ -3,7 +3,7 @@
 JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) for securely transmitting information between parties in the form of a JSON object.
 
 {% hint style="info" %}
-**JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](single-sign-on-sso/openid-connect-oidc/) available **only** in the \*\*\*\* [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
+**JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
 {% endhint %}
 
 ## When to Use JSON Web Tokens?
@@ -150,7 +150,7 @@ The key benefits of using a JWT are that it is more compact and thus smaller in 
 
 ## How to Use JSON Web Tokens in Appsmith?
 
-Let’s take an example. You have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](single-sign-on-sso/openid-connect-oidc/). You are using Appsmith to log in and your SSO provider to authenticate the request.
+Let’s take an example. You have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](openid-connect-oidc/). You are using Appsmith to log in and your SSO provider to authenticate the request.
 
 Let’s take a closer look at how this interaction happens from Appsmith.
 

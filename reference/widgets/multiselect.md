@@ -2,7 +2,7 @@
 
 Multi-select widget is used to capture user inputs from a specified list of permitted options. This widget captures multiple choices.
 
-![](../../.gitbook/assets/multiselect.png)
+![](<../../.gitbook/assets/multiselect (1).png>)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-|  Property                 | Description                                                                                                                                                                            |
+| Property                  | Description                                                                                                                                                                            |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Options**               | Let's you set labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property.  |
 | **Default Value**         | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of strings for a Multi-Select dropdown. |
@@ -29,7 +29,7 @@ These properties allow you to edit the widget. All these properties are present 
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-|  Property                | Description                                                                                                                                                                         |   |
+| Property                 | Description                                                                                                                                                                         |   |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
 | **filterText**           | The filter text for Server side filtering                                                                                                                                           |   |
 | **isVisible**            | This property indicates whether the widget is visible or not.                                                                                                                       |   |
@@ -42,9 +42,9 @@ These properties allow you to bind your widget with any other widget in queries 
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events             | Description                                                                                                                      |   |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/).  |   |
+| Events             | Description                                                                                                                     |   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- | - |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/). |   |
 
 ### Label
 
@@ -87,17 +87,17 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles               | Description                                               |   |
-| -------------------- | --------------------------------------------------------- | - |
-| **Label Text Color** | Allows you to set text color for the label.               |   |
-| **Label Text Size**  | Allows you to set the size of the label.                  |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic.  |   |
-| **Border Radius**    | Allows you to define curved corners.                      |   |
-| **Box Shadow**       | Allows you to choose from the available shadow styles.    |   |
+| Styles               | Description                                              |   |
+| -------------------- | -------------------------------------------------------- | - |
+| **Label Text Color** | Allows you to set text color for the label.              |   |
+| **Label Text Size**  | Allows you to set the size of the label.                 |   |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| **Border Radius**    | Allows you to define curved corners.                     |   |
+| **Box Shadow**       | Allows you to choose from the available shadow styles.   |   |
 
 ### Displaying Data
 
-Multi-select **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.&#x20;
+Multi-select **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here

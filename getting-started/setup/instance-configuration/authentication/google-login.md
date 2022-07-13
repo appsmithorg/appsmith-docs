@@ -6,6 +6,8 @@ description: >-
 
 # Google OAuth
 
+Google OAuth is one of the most widely used custom authentication integrations. Appsmith allows you to integrate with Google for authenticating users to your apps.
+
 ![Click to expand](<../../../../.gitbook/assets/Google Login.png>)
 
 To enable Google Sign in, login to your [google cloud console](https://console.cloud.google.com/)

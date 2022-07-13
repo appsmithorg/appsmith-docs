@@ -78,9 +78,9 @@ These properties allow you to bind your widget with any other widget in queries 
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events             | Description                                                                                                                                                     |   |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md). |   |
+| Events             | Description                                                                                                                         |   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | - |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework-1.md). |   |
 
 ### Label
 
@@ -125,10 +125,10 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles               | Description                                               |   |
-| -------------------- | --------------------------------------------------------- | - |
-| **Border Radius**    | Allows you to define curved corners.                      |   |
-| **Box Shadow**       | Allows you to choose from the available shadow styles.    |   |
-| **Label Text Color** | Allows you to set text color for the label.               |   |
-| **Label Text Size**  | Allows you to set the size of the label.                  |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic.  |   |
+| Styles               | Description                                              |   |
+| -------------------- | -------------------------------------------------------- | - |
+| **Border Radius**    | Allows you to define curved corners.                     |   |
+| **Box Shadow**       | Allows you to choose from the available shadow styles.   |   |
+| **Label Text Color** | Allows you to set text color for the label.              |   |
+| **Label Text Size**  | Allows you to set the size of the label.                 |   |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |

@@ -23,6 +23,6 @@ description: >-
 | **Visible**          | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
 | **Disabled**         | Disables input to the widget. The widget will remain visible to the user but user input will not be allowed.        |
 
-| Action            | Description                                                                                                                                                   |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
+| Action            | Description                                                                                                                       |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../appsmith-framework-1.md) |

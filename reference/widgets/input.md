@@ -192,9 +192,9 @@ Property binding has other applications. For example, it helps in parsing the va
 
 ### Events
 
-| Event             | Description                                                                                                                                                                                                                                                  |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onTextChanged** | This event is triggered when the user enters a value or when the existing value is changed. You can specify the actions to be performed when this event is fired. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md). |
+| Event             | Description                                                                                                                                                                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | This event is triggered when the user enters a value or when the existing value is changed. You can specify the actions to be performed when this event is fired. See a list of [supported actions](../appsmith-framework-1.md). |
 
 ### Label Styles
 

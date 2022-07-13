@@ -64,5 +64,5 @@ or chained to be called onSuccess / onError using the callback arguments in the 
 ```
 
 {% hint style="success" %}
-Make use of the [Appsmith Framework](appsmith-framework.md) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
+Make use of the [Appsmith Framework](../../reference/appsmith-framework-1.md) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
 {% endhint %}

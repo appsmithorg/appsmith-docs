@@ -4,9 +4,9 @@ The Rich Text Editor is used to capture Rich Text input from a user. The input i
 
 {% embed url="https://youtu.be/_KrxFScQJys" %}
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
 ### Widget Properties
 
@@ -24,7 +24,7 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 
 ### Binding Properties
 
-&#x20;These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
 | Property       | Description                                                    | Code Snippet                     |
 | -------------- | -------------------------------------------------------------- | -------------------------------- |
@@ -34,11 +34,11 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 
 ### Events
 
-They are a set of actions that you can perform on the widget.&#x20;
+They are a set of actions that you can perform on the widget.
 
-| Events           | Description                                                                                                                                    |   |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **onTextChange** | Sets the action to be run when the user inputs text. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |   |
+| Events           | Description                                                                                                        |   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------ | - |
+| **onTextChange** | Sets the action to be run when the user inputs text. See a list of [supported actions](../appsmith-framework-1.md) |   |
 
 ### Label
 
@@ -82,7 +82,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
@@ -90,4 +90,3 @@ Style properties allow you to change the look and feel of the widget.
 | ----------------- | ------------------------------------------------------ | - |
 | **Border Radius** | Allows you to define curved corners.                   |   |
 | **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
-

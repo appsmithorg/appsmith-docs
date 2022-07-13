@@ -6,9 +6,9 @@ The tabs widget is a special widget that contains multiple containers. Tabs can 
 
 ## Properties
 
-&#x20;Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -21,7 +21,7 @@ These properties allow you to edit the widget. All these properties are present 
 | **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published      |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                             |
 
-### Binding Properties&#x20;
+### Binding Properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -30,15 +30,15 @@ These properties help you share values between widgets and also allow you to eas
 | **isVisible**   | This property indicates whether the widget is visible or not. |
 | **selectedTab** | Contains the id of the tab currently selecte                  |
 
-### Events&#x20;
+### Events
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events            | Description                                                                                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
+| Events            | Description                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../appsmith-framework-1.md) |
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 

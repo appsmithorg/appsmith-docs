@@ -4,11 +4,11 @@ The Switch is a simple UI widget you can use when you want users to make a binar
 
 {% embed url="https://youtu.be/5kNWJ9mtlOw" %}
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -19,7 +19,7 @@ These properties allow you to edit the widget. All these properties are present 
 | **Disabled**         | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
 | **Animate Loading**  | Allows you to control a widget’s animation on the page load.                                                                     |
 
-### Binding Properties&#x20;
+### Binding Properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -29,13 +29,13 @@ These properties help you share values between widgets and also allow you to eas
 | **isSwitchedOn** | This value is a boolean that is set to true if the switch is turned on.      | `{{widget_name.isSwitchedOn}}` |
 | **isVisible**    | This value is a boolean that is set to true if the switch is set as visbile. | `{{widget_name.isVisible}}`    |
 
-### Events&#x20;
+### Events
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events       | Description                                                                                                                                           |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
+| Events       | Description                                                                                                               |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../appsmith-framework-1.md) |
 
 ### Label
 
@@ -53,10 +53,10 @@ The property hosts a group of configurations that you can use to associate a dis
 | **Text Size**        | Allows you to set the size of the label.                 |   |
 | **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style            |                                           |   |
-| ---------------- | ----------------------------------------- | - |
-| **Accent color** | Sets the background color of the widget.  |   |
+| Style            |                                          |   |
+| ---------------- | ---------------------------------------- | - |
+| **Accent color** | Sets the background color of the widget. |   |

@@ -67,8 +67,8 @@ It may take a minute for the new ECS Task to start running.
 ## Available Configurations
 
 * [Email](email/)
-* [Custom Domain](custom-domain/)
-* [Signup Restrictions](disable-user-signup.md)
+* [Custom Domain](custom-domain.md)
+* [Signup Restrictions](disable-user-signup/)
 * [Google Maps](google-maps.md)
 * [Disable Intercom](disable-intercom.md)
-* [Single Sign-On (SSO)](authentication/single-sign-on-sso/)
+* [Single Sign-On (SSO)](broken-reference)

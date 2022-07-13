@@ -2,57 +2,6 @@
 
 This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a Query that fetches data.
 
-## Widgets
-
-Appsmith has a collection of widgets that can be used to build the UI.
-
-* [Button](../../../reference/widgets/button/)
-* [Chart](../../../reference/widgets/chart.md)
-* [Checkbox](../../../reference/widgets/checkbox.md)
-* [Container](../../../reference/widgets/container.md)
-* [Datepicker](../../../reference/widgets/datepicker.md)
-* [Select](../../../reference/widgets/dropdown-1.md)
-* [Filepicker](../../../reference/widgets/filepicker.md)
-* [Form](../../../reference/widgets/form.md)
-* [Image](../../../reference/widgets/image.md)
-* [Input](../../../reference/widgets/input.md)
-* [Maps](../../../reference/widgets/maps.md)
-* [Modal](../../../reference/widgets/modal.md)
-* [Radio Group](../../../reference/widgets/radio-group.md)
-* [Rich Text Editor](../../../reference/widgets/rich-text-editor.md)
-* [Switch](../../../reference/widgets/switch.md)
-* [Tabs](../../../reference/widgets/tabs.md)
-* [Table](../../../reference/widgets/table.md)
-* [Text](../../../reference/widgets/text.md)
-* [Video](../../../reference/widgets/video.md)
-
-Widgets can be dragged from the widget pane, positioned on the canvas, and resized to fit the data they need to display. They also come with properties that can be visually edited to set their data, change their styles, and trigger actions from them.
-
-![](<../../../.gitbook/assets/drop widget.gif>)
-
-### Naming a Widget
-
-A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
-
-{% hint style="warning" %}
-Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as widget names.
-{% endhint %}
-
-You can access the various properties of the widget using the widget's name.
-
-```javascript
-{{ Table1.selectedRow.id }}
-```
-
-### Grouping Widgets
-
-Appsmith supports the grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
-
-* Select multiple widgets with Ctrl + Left Click
-* Now click on the dotted square icon or press Ctrl + G
-
-![](../../../.gitbook/assets/group-widgets-2.gif)
-
 ## Displaying Data in a widget
 
 Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a [Query](../querying-a-database/) can be set in a widget property by referencing the name (unique identifier) of the Query.
@@ -67,7 +16,7 @@ For example, you can bind the results of the Query as below
 {{ fetch_users.data.users }}
 ```
 
-![](<../../../.gitbook/assets/bind-table (2) (4) (8) (1).gif>)
+![](<../../../.gitbook/assets/bind-table (2) (4) (8) (1) (1).gif>)
 
 {% hint style="warning" %}
 Each widget property has a specific data type that it validates its value against. If the data type mismatches, it will throw an error. This can be fixed using javascript to transform the value of the property

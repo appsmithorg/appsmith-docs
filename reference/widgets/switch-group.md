@@ -40,11 +40,11 @@ Read more about submitting Input data to an API below.
 
 [Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -71,9 +71,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-|                       | Description                                                                                                                                                             |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md). |
+|                       | Description                                                                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../appsmith-framework-1.md). |
 
 ### Label
 
@@ -116,7 +116,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 

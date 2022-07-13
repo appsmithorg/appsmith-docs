@@ -4,11 +4,11 @@ The Image widget displays the images in your app. Images must be either a URL or
 
 {% embed url="https://youtu.be/jdDcydQ8Ho0" %}
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
 These properties allow you to edit the Image widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -23,7 +23,7 @@ These properties allow you to edit the Image widget. All these properties are pr
 | **Enable Rotation** | Controls if the image is allowed to rotate                                                                             |
 | **Enable Download** | Controls if the image is allowed to be downloaded.                                                                     |
 
-### Binding Properties&#x20;
+### Binding Properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -32,15 +32,15 @@ These properties help you share values between widgets and also allow you to eas
 | **image**     | This property displays the URL of the image.                  | `{{widget_name.image}}`     |
 | **isVisible** | This property indicates whether the widget is visible or not. | `{{widget_name.isVisible}}` |
 
-### Events&#x20;
+### Events
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Event       | Description                                                                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md). |
+| Event       | Description                                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../appsmith-framework-1.md). |
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
@@ -49,20 +49,20 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Radius** | Allows you to define curved corners.                   |   |
 | **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
 
-## Supported File Type&#x20;
+## Supported File Type
 
 Appsmith supports almost every primary image format, including:
 
-* JPG&#x20;
-* PNG&#x20;
+* JPG
+* PNG
 * SVG
-* WebP&#x20;
+* WebP
 * GIFs.
 
 You can use the same method to display different image formats. Let’s see how you can display:
 
-* Drag & Drop the Image widget into the canvas.&#x20;
-* Now in the image section, paste your image URL.&#x20;
+* Drag & Drop the Image widget into the canvas.
+* Now in the image section, paste your image URL.
 * For example,
 
 ```
@@ -80,14 +80,13 @@ https://www.gstatic.com/webp/gallery/4.sm.webp
 
 //svg:
 https://assets.codepen.io/3/kiwi.svg
-
 ```
 
 #### Inline SVG
 
 Inline SVG refers to SVG markup included in the markup of a webpage. To display inline SVG, follow the below steps:
 
-* Drag & Drop the Image widget into the canvas**.**&#x20;
+* Drag & Drop the Image widget into the canvas\*\*.\*\*
 * Now in the image section, paste the below mentioned URL with your SVG code:
 
 ```

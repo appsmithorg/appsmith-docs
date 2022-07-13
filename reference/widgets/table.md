@@ -328,13 +328,13 @@ Let's bind a text widget to `Table_1` using searchText.
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Action                 | Description                                                                                                                                                                                                                                                                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                                 |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md)                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md) |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                          |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md).                                                                                                                                                                                |
+| Action                 | Description                                                                                                                                                                                                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../appsmith-framework-1.md).                                                                                                                                                                                 |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../appsmith-framework-1.md)                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../appsmith-framework-1.md) |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../appsmith-framework-1.md).                                                                                                                                                                          |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../appsmith-framework-1.md).                                                                                                                                                                                |
 
 ### Header Options
 
@@ -366,7 +366,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 
 ## Guides
 
-### Automatically Refresh Data on Tables&#x20;
+### Automatically Refresh Data on Tables
 
 If you want to update data on Table without re-running the API / or using a refresh button, you can use the `setInterval` function.
 
@@ -392,7 +392,7 @@ Here, the `setInterval` function calls the `getData` query every 2 seconds when 
 
 ![Auto-update table data](<../../.gitbook/assets/Refresh data in tables  table widget.gif>)
 
-### &#x20;Setup Server-Side Search
+### Setup Server-Side Search
 
 A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform a search on the server-side (API server or database) and have the results displayed on the table. A video guide on how to do this is shown below:
 

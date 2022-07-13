@@ -4,7 +4,7 @@ description: Guide on how to use Redshift as a Data Source on Appsmith
 
 # How to use Redshift as a Data Source on Appsmith
 
-The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](broken-reference) of Appsmith, it is recommended to create an account and try implementing them.
+The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](broken-reference/) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Redshift
 
@@ -158,7 +158,7 @@ Now that you have succesfully connected to the database successfully, you can qu
 
 Now we need to display the fetched data in a presentable format. This can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the data fetched from Redshift database into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our application's UI. Select the 'Table' widget then drag and drop that on the canvas. Something like this is visible:
 
-![Screenshot twenty three](../../.gitbook/assets/notion-appsmith-8.png)
+![Screenshot twenty three](../../.gitbook/assets/redshift-appsmith-23.png)
 
 To include response in this table use the moustache syntax to write JS in Appsmith.
 

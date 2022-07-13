@@ -218,7 +218,7 @@ You can also make the application public. In that case, anyone with the URL to t
 
 The basic Review Moderator Dashboard is now up and running. It also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](broken-reference)
+* [Core Concepts](broken-reference/)
 * [Widgets](../../../reference/widgets/)
-* [Appsmith Framework](../../../core-concepts/writing-code/appsmith-framework.md)
+* [Appsmith Framework](../../../reference/appsmith-framework-1.md)
 * [JavaScript Editor](../../../core-concepts/writing-code/javascript-editor-beta/)

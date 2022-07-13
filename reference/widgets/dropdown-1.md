@@ -40,13 +40,13 @@ Read more about submitting Input data to an API below.
 
 [Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
-These properties allow you to edit the Select widget. All these properties are present in the property pane of the widget.&#x20;
+These properties allow you to edit the Select widget. All these properties are present in the property pane of the widget.
 
 | Property                  | Description                                                                                                                                                                       |   |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
@@ -72,13 +72,13 @@ These properties help you share values between widgets and also allow you to eas
 | **selectedOptionValue** | This is the value of the option that is displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option | `{{widget_name.selectedOptionValue}}` |
 | **selectedOptionLabel** | This property indicates label of the selected option.                                                                                                                | `{{widget_name.selectedOptionLabel}}` |
 
-### Events&#x20;
+### Events
 
-They are a set of actions that you can perform on the widget.&#x20;
+They are a set of actions that you can perform on the widget.
 
-| Events             | Description                                                                                                                                                     |   |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../../core-concepts/writing-code/appsmith-framework.md). |   |
+| Events             | Description                                                                                                                         |   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | - |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework-1.md). |   |
 
 ### Label
 
@@ -121,7 +121,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties?
 {% endembed %}
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 

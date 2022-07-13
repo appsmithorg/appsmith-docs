@@ -42,7 +42,7 @@ The administrative privileges (Admin settings) are not available due to deployme
          * `APPSMITH_OAUTH2_GITHUB_CLIENT_ID`: Client ID provided by Github for OAuth2 login.
          * `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`: Client secret provided by Github for OAuth2 login.
      * `APPSMITH_GOOGLE_MAPS_API_KEY`: Google Maps API key that is required if you wish to leverage Google Maps widget. Read more [here](../instance-configuration/google-maps.md).
-     * `APPSMITH_DISABLE_TELEMETRY`: We want to be transparent and request that you share anonymous usage data with us. This data is purely statistical and helps us understand your needs & provide better support to your self-hosted instance. You can read more about what information is collected in our documentation [here](../../../product/telemetry.md).&#x20;
+     * `APPSMITH_DISABLE_TELEMETRY`: We want to be transparent and request that you share anonymous usage data with us. This data is purely statistical and helps us understand your needs & provide better support to your self-hosted instance. You can read more about what information is collected in our documentation [here](../../../product/telemetry.md).
 
 After Heroku finishes setting up the app, click "View," and your Appsmith should be up and running. It will take you to the account creation page, where you can enter credentials to create an account and get started.
 
@@ -57,11 +57,11 @@ If you wish to link a custom domain (Eg: [https://appsmith.yourcompany.com)](htt
 
 * Go to the `Settings` tab in your Heroku app.
 
-![](<../../../.gitbook/assets/heroku-app-settings (1).png>)
+![](../../../.gitbook/assets/heroku-app-settings.png)
 
 * Click the `Add domain` button in the `Domains` section.
 
-![](<../../../.gitbook/assets/heroku-add-domain-button (1).png>)
+![](../../../.gitbook/assets/heroku-add-domain-button.png)
 
 * Input your domain name & click `Next`.
 
