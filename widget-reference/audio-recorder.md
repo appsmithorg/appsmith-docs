@@ -22,18 +22,12 @@ These properties allow you to edit the Audio Recorder widget. All of these prope
 
 These properties allow you to bind your Audio Recorder widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Binding Property   | Description                                                                                                                                                   |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **blobURL**        | Blob URL of the audio, used to store the audio for future use.                                                                                                |
-| **dataURL**        | Data URL format (Base64) of the audio, used to embed it inline within different applications.                                                                 |
-| **rawBinary**      | The audio file in binary format, used to store the audio for future use.                                                                                      |
-| **isVisible**      | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                              |
-| **isDisabled**     | Reflects the state of the widget's **Disabled** setting _(bool)_.                                                                                             |
-| **animateLoading** | Reflects the state of the widget's **Animate Loading** setting _(bool)_.                                                                                      |
-| **accentColor**    | Represents the widget's accent color as a hexadecimal color code _(string)_.                                                                                  |
-| **borderRadius**   | Represents the widget's **Border Radius** as a CSS-sytnax [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) value _(string)_. |
-| **boxShadow**      | Represents the widget's **Box Shadow** as a CSS-sytnax [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) value _(string)_.          |
-| **iconColor**      | Represents the widget's **Icon Color** as a CSS-sytnax [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)value _(string)_.                    |
+| Binding Property | Description                                                                                   |
+| ---------------- | --------------------------------------------------------------------------------------------- |
+| **blobURL**      | Blob URL of the audio, used to store the audio for future use.                                |
+| **dataURL**      | Data URL format (Base64) of the audio, used to embed it inline within different applications. |
+| **rawBinary**    | The audio file in binary format, used to store the audio for future use.                      |
+| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.                              |
 
 ### Events
 
