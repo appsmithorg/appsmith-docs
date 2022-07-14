@@ -23,13 +23,10 @@ These properties allow you to edit the Audio widget. All of these properties are
 
 These properties allow you to bind your Audio widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Binding Property   | Description                                                                                                                                        |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **url**            | Contains the **URL** of the widget's audio source _(string)_.                                                                                      |
-| **autoPlay**       | Reflects the state of the widget's **Auto Play** setting _(bool)_.                                                                                 |
-| **isVisible**      | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                   |
-| **animateLoading** | Reflects the state of the widget's **Animate Loading** setting _(bool)_.                                                                           |
-| **playState**      | Shows whether the Audio widget is currently playing sound. Represented by a _(string)_ with value "NOT\_STARTED", "PLAYING", "PAUSED", or "ENDED". |
+| Binding Property | Description                                                                                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **autoPlay**     | Reflects the state of the widget's **Auto Play** setting _(bool)_.                                                                                 |
+| **playState**    | Shows whether the Audio widget is currently playing sound. Represented by a _(string)_ with value "NOT\_STARTED", "PLAYING", "PAUSED", or "ENDED". |
 
 ### Events
 
