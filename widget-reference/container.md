@@ -2,7 +2,7 @@
 
 When you organize your cupboard or home, you want to pack stuff in boxes and name them. Similarly, you can use a container widget to hold the widgets. A container widget serves as a logical group of related widgets. It gives your page a distinctive layout.
 
-{% embed url="https://youtu.be/mfPGTUxr6SY" caption="How To Use The Container Widget" %}
+{% embed url="https://youtu.be/mfPGTUxr6SY" %}
 
 You can use a container widget to create rich UI by managing the design of each container differently. You can use different containers to segregate the components and define a logical separation.
 
@@ -37,32 +37,17 @@ You can create a hierarchy of containers and have one or more widgets embedded i
 
 ## Properties
 
-Properties pane on the right side provides you with the flexibility to change the look and feel of your widget, show and hide the widget, and set scroll for contents in a container.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-The properties follow the same structure across the platform, with some properties being common and some being specific to the widget you would have chosen. You can see that the properties of the container widget are categorized into two main categories: **General** and **Styles**.
+### Widget Properties
 
-{% hint style="info" %}
-Ensure that you select the widget to access its properties on the right bar.
-{% endhint %}
+These properties allow you to edit the Container widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| **Property**         | **Description**                                                  | **Example**                                                                                                                                                                                     | **Code Snippet**             |
-| -------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| **Name**             | Allows you to provide a unique name to the widget                | In the example above for the Movie Listing app. We named container widgets - Parent Container, MovieListingContainer, and SearchContainer.                                                      |                              |
-| **Visible**          | Allows you to show/hide a widget.                                | You can either use a toggle or code to turn it off/on.                                                                                                                                          | \{{widget\_name.isVisible\}} |
-| **Animate Loading**  | Allows you to control a widget’s animation on the page load.     | You can use a toggle to turn it on/off. When turned off, the widget will load without any skeletal animation. You can also turn it off/on using javascript by enabling the JS label next to it. |                              |
-| **Scroll Contents**  | Allows you to enable a scroll bar to scroll the contents.        | You can use a toggle to turn it on/off. Turning it on gives you the flexibility to embed more widgets in a small space.                                                                         |                              |
-| **Background Color** | Allows you to set the background color of the widget.            | You can select the color from the pallet or use an HTML Color Code.                                                                                                                             |                              |
-| **Border Color**     | Allows you to set a color for displaying the container's border. | You can select the color from the pallet or use an HTML Color Code.                                                                                                                             |                              |
-| **Border Width**     | Allows you to define the thickness of the border.                | You can supply a higher number for a thick border.                                                                                                                                              |                              |
-| **Border Radius**    | Allows you to define curved corners.                             | You can supply a higher number for a profound curve.                                                                                                                                            |                              |
-| **Box Shadow**       | Allows you choose from the available shadow styles.              | You can choose one of the available shadow styles for the widget.                                                                                                                               |                              |
-| **Shadow Color**     | Allows you to set the color of the shadow.                       | You can choose the color from the pallet or supply an HTML Color Code.                                                                                                                          |                              |
-
-## General
-
-You can choose the properties under this head to name, show/hide, enable scrolling or animate the loading of the widget.
-
-Let’s deep dive into the properties available under this head.
+| Property            | Description                                                                                                                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Visible**         | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                         |
+| **Animate Loading** | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
+| **Scroll Contents** | Enables scrolling in this widget when its contents are larger than its dimensions.                                                                                                                     |
 
 ### Name of Widget
 
@@ -103,38 +88,23 @@ When you check the checkbox, it will enable the Visible property and shows the c
 
 When you want to embed a container with multiple widgets and save space, you can enable scroll contents by toggling it on. The scroll contents property enables a scroll bar to scroll the contents within a container.
 
-## Styles
+### Binding Properties
 
-Choose properties under this head to change the look and feel of the container. You can choose a background color, border color, width, and radius.
+These properties allow you to bind your Container widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-Let’s deep dive into the properties to enhance the look of your container widget.
+| Binding Property    | Description                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **backgroundColor** | Represents the widget's **Background Color** setting as a CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)value _(string)_. |
+| **isVisible**       | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                  |
 
-### Background Color
+### Styles
 
-You can use the property background color to set the widget’s background. You can select the available colors from the color pallet to change the background color. You can also use HTML color codes to change the background.
+Style properties allow you to change the look and feel of the widget.
 
-### Border Color
-
-You can use the property border-color to set the widget’s border color. You can select the colors from the color pallet or supply HTML color codes to set the border color.
-
-### Border Width
-
-It’s often required to set a profound separation between UI elements, and then, you can use border width. Border width allows you to specify how thick or thin the border is.
-
-{% hint style="info" %}
-You can supply a higher number to have a thick border. However, a smaller number will result in a thin border.
-{% endhint %}
-
-### Border Radius
-
-To beautify the container widget, you might want to have rounded or curved corners. You can achieve this by setting a border-radius for the widget.
-
-{% hint style="info" %}
-The higher the number more profound are the curved corners.
-{% endhint %}
-
-### Box Shadow
-
-You can use the box-shadow property to attach one or more shadows to the widget. That is, it adds a shadow effect to your widget. You can select one out of the popular available options for a shadow effect.
-
-Use the container widget to organize your UI components and build unique and rich layouts.
+| Style Property       | Description                                                                                                                                                                      |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Background Color** | Sets the background color of the widget. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                  |
+| **Border Color**     | Sets the border color of the widget. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                      |
+| **Border Width**     | Sets the width of the widget's border. Accepts _number_ values only, in px.                                                                                                      |
+| **Border Radius**    | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**       | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
