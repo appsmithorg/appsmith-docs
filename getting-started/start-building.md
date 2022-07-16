@@ -9,7 +9,7 @@ In this Quickstart guide, you will learn to&#x20;
 * Bind data to widgets
 * Deploy and share the application
 
-## Get Appsmith
+## Prerequisites
 
 Before you begin, you'll need to create an account on [Appsmith Cloud](https://app.appsmith.com/), or you can [self-host Appsmith](setup/) locally or on a hosting platform of your choice.
 
