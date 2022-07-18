@@ -16,41 +16,41 @@ To understand how prepared statements work in Appsmith, let's first understand h
 
 ## How Do Prepared Statements Work?
 
-A prepared statement workflow consists of three stages: Prepare, Process, and Execute.&#x20;
+A prepared statement workflow consists of three stages: Prepare, Process, and Execute.
 
-### Prepare&#x20;
+### Prepare
 
 In the prepare stage, a statement template is sent to the database server. In this template, some values are left unspecified and called parameters labeled using a question mark (?) sign.
 
-For example, in the below statement, the text in the square bracket**`([])`** is the statement template, and question mark signs in curly braces **`({})`**are the parameters supplied at runtime.
+For example, in the below statement, the text in the square bracket\*\*`([])`\*\* is the statement template, and question mark signs in curly braces \*\*`({})`\*\*are the parameters supplied at runtime.
 
 ```
 [Insert into users(name, email) values ]{(?,?)};
 ```
 
-### Process&#x20;
+### Process
 
-The database server parses, compiles, optimizes, and stores the result without executing the statement template. The statement is optimized and ready to be executed whenever the parameters (labeled with question marks) are supplied.&#x20;
+The database server parses, compiles, optimizes, and stores the result without executing the statement template. The statement is optimized and ready to be executed whenever the parameters (labeled with question marks) are supplied.
 
-### Execute&#x20;
+### Execute
 
 Whenever the parameters are supplied for the given prepared statement, the database binds the values to the statement and executes it. The database can execute the statements as often as the application triggers by supplying the same or different parameters.
 
 ## **Why Should You Use Prepared Statements?**
 
-The benefits of using Prepared Statements are:&#x20;
+The benefits of using Prepared Statements are:
 
 ### **Efficiency**
 
 The prepared statement uses a pre-compiled SQL code, so the code is not compiled for every execution run. It speeds up the execution, thus enhancing efficiency.
 
-### **Security**&#x20;
+### **Security**
 
 The prepared statement is a parameterized and reusable block of code. It forces the user to write the SQL command and send the user inputs data separately. Thus, the data bindings defined in the prepared statements are sent to the server to execute the pre-compiled code block and generate the response accordingly. Due to this, a prepared statement provides a secured environment and avoids [SQL injection](https://en.wikipedia.org/wiki/SQL\_injection), that is the most common web hacking technique.
 
 ## **Prepared Statement in Appsmith**
 
-Appsmith supports using prepared statements by converting the user query into a parameterized query by replacing the bindings. That means the query created on the Appsmith will have bindings for reading the [widget](broken-reference) values selected by users. Appsmith internally replaces these [widget](broken-reference) bindings with question marks('?') and translates Appsmith queries into Prepared Statements.
+Appsmith supports using prepared statements by converting the user query into a parameterized query by replacing the bindings. That means the query created on the Appsmith will have bindings for reading the widget values selected by users. Appsmith internally replaces these widget bindings with question marks('?') and translates Appsmith queries into Prepared Statements.
 
 For example, the query created on Appsmith looks as below:
 
@@ -124,7 +124,7 @@ The [above datasources have some syntactic changes](how-to-use-prepared-statemen
 
 You can use prepared statements when doing dynamic data bindings in the `where` clause. Remember to keep the query before the `where` clause static and provide the column names used to filter the data. However, the data can be dynamically set based on the user's inputs.
 
-As shown in the code snippet below, you can dynamically add the data binding embedded in the mustache sign**`({{}})`** based on user input.
+As shown in the code snippet below, you can dynamically add the data binding embedded in the mustache sign\*\*`({{}})`\*\* based on user input.
 
 ```
  SELECT * FROM USERS WHERE ID = {{Table1.selectedRow.Id}}
@@ -136,7 +136,7 @@ You can **only** have **bindings** for the **data supplied** to the **columns** 
 
 Below are some of the example use cases showcasing when and how you can use prepared statements:
 
-#### Simple Prepared Statement&#x20;
+#### Simple Prepared Statement
 
 You can use prepared statements whenever you want to perform a simple Create, Read, Update or Delete (CRUD) operation, which manipulates database table data with the dynamic data bindings.
 
@@ -149,10 +149,10 @@ Insert into users (name, email) values({{userRegistrationForm.data.name}}, {{use
 Here, `userRegistrationForm` is the name of the [form](../../reference/widgets/form.md) widget, and `name` and `email` are the names of the input widget embedded into the [form](../../reference/widgets/form.md).
 
 {% hint style="info" %}
-You can use **join queries** or **subqueries** to have **dynamic data binding** as long as the **query** is **static** and **only** **data** bindings are added to the **where** clause.&#x20;
+You can use **join queries** or **subqueries** to have **dynamic data binding** as long as the **query** is **static** and **only** **data** bindings are added to the **where** clause.
 {% endhint %}
 
-**Data Type Cast**&#x20;
+**Data Type Cast**
 
 Appsmith out-of-the-box handles the data type casting based on the type of the data supplied for a column as a data binding.
 
@@ -206,23 +206,23 @@ Here, the `userActiveStatus` and `userInActiveStatus` are two different [text wi
 
 ### When Not to Use Prepared Statements in Appsmith
 
-You can choose to turn off the prepared statement use when your query falls under one of the below criteria:&#x20;
+You can choose to turn off the prepared statement use when your query falls under one of the below criteria:
 
-#### Dynamic Table Name&#x20;
+#### Dynamic Table Name
 
-You are generating a table name dynamically based on some criteria in your code logic and then supplying it as a binding to the query.&#x20;
+You are generating a table name dynamically based on some criteria in your code logic and then supplying it as a binding to the query.
 
 ```
 Select * from {{Generated_Table_Name.text}} 
 ```
 
-In this query, you read the table name from a [Text widget ](../../reference/widgets/text.md)**(Generated\_Table\_Name)**, and as the query does not have a static block that tells which table to refer to the prepared statements fail to execute the binding. In such cases, you can turn off the prepared statements and continue to use the query to generate responses.&#x20;
+In this query, you read the table name from a [Text widget ](../../reference/widgets/text.md)**(Generated\_Table\_Name)**, and as the query does not have a static block that tells which table to refer to the prepared statements fail to execute the binding. In such cases, you can turn off the prepared statements and continue to use the query to generate responses.
 
-#### Dynamic Queries &#x20;
+#### Dynamic Queries
 
-You generate the query on the fly based on some parameters and then execute it. For example, `{{Query_to_Execute.text}}` where the [Text Widget](../../reference/widgets/text.md) **(Query\_to\_Execute)** has the query that will be executed, which could be generated on the fly based on some logic in the code. As the static query that will be executed is not available for pre-compilation, the prepared statements fail to execute. For such scenarios, you can disable the prepared statements and continue to use the query to generate responses.&#x20;
+You generate the query on the fly based on some parameters and then execute it. For example, `{{Query_to_Execute.text}}` where the [Text Widget](../../reference/widgets/text.md) **(Query\_to\_Execute)** has the query that will be executed, which could be generated on the fly based on some logic in the code. As the static query that will be executed is not available for pre-compilation, the prepared statements fail to execute. For such scenarios, you can disable the prepared statements and continue to use the query to generate responses.
 
-#### Dynamic Where Clause&#x20;
+#### Dynamic Where Clause
 
 You want to generate a where clause based on some code logic. For example, you have a search feature where a user can select some parameters to filter the data. If the user selects particular criteria, you add that to the where clause to filter the records. The user may choose not to add the parameter, so the where clause will not have a column for filtering. It means you are dynamically generating the column name bindings and the data for the columns based on the user's input.
 
@@ -245,8 +245,8 @@ A **prepared statement** **requires** you to supply **a static part of the query
 A few quick tips to remember so that you can quickly steer it through when using prepared statements:
 
 * The commented code blocks in your queries should not have any bindings, as when you enable the prepared statement, it translates all the bindings. As the commented block has bindings, the translation will fail, and you will not be able to run the queries. To avoid this, remove the mustache **`{{}}`** sign around the binding whenever you are commenting code, and the prepared statement will work.
-* If you are using a dynamic array to supply the `in clause` and using [PostgreSQL](../../reference/datasources/querying-postgres.md), then you can use `= ANY`. However, turn off the prepared statements to run the query if you are on [MySQL](../../reference/datasources/querying-mysql.md).&#x20;
+* If you are using a dynamic array to supply the `in clause` and using [PostgreSQL](../../reference/datasources/querying-postgres.md), then you can use `= ANY`. However, turn off the prepared statements to run the query if you are on [MySQL](../../reference/datasources/querying-mysql.md).
 
-## Conclusion&#x20;
+## Conclusion
 
 Prepared statements bring [efficiency](how-to-use-prepared-statements.md#efficiency) and [security](how-to-use-prepared-statements.md#security) to the data manipulation for the apps built on Appsmith. With sanitization done out-of-the-box by Appsmith for prepared statements, you can seamlessly build complex apps that suit your requirements.
