@@ -4,7 +4,7 @@
 
 Appsmith is a low code, open-source developer tool to build internal applications quickly.
 
-You can drag and drop pre-built [widgets](reference/widgets/) to build UI on a grid-style canvas. Appsmith simplifies frontend and backend integration between the UI and the [datasource](reference/datasources/) to optimize building applications. Appsmith supports [JavaScript](core-concepts/writing-code/javascript-editor-beta/) inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
+You can drag and drop pre-built widgets to build UI on a grid-style canvas. Appsmith simplifies frontend and backend integration between the UI and the datasource to optimize building applications. Appsmith supports JavaScript inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
 
 Build CRUD apps, Dashboards, Admin Panels, Dynamic Forms, and much more 10x faster.
 
