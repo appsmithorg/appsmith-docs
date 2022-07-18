@@ -40,9 +40,9 @@ if you are trying to upload large files, please increase the timeout in API conf
 | **Required**             | When turned on, it makes a user input required and disables any form submission until an input is made.                                                                                                                 |
 | **Visible**              | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                                                     |
 
-| Action              | Description                                                                                                                                                                                                                              |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../appsmith-framework/). You can immediately call an API or the S3 plugin to upload the base64 of the file to your cloud storage |
+| Action              | Description                                                                                                                                                                                                                                             |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../appsmith-framework/widget-actions/). You can immediately call an API or the S3 plugin to upload the base64 of the file to your cloud storage |
 
 {% hint style="info" %}
 To learn how to upload or manage files on Cloudinary with the filepicker widget, [read this tutorial](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget).

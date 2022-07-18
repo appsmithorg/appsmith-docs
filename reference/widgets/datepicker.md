@@ -20,9 +20,9 @@ Datepicker is used to capture the date and time input by a user. It can be used 
 | **Visible**      | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Disabled**     | Disables input to the widget. The widget will remain visible to the user but user input will not be allowed.                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-| Action.            | Description                                                                                                       |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../appsmith-framework/) |
+| Action.            | Description                                                                                                                      |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| **onDateSelected** | Sets the action to be run when the user selects a date. See a list of [supported actions](../appsmith-framework/widget-actions/) |
 
 ### Label
 

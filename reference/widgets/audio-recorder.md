@@ -33,10 +33,10 @@ These properties allow you to bind your Audio Recorder widget with any other wid
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Event                   | Description                                          |
-| ----------------------- | ---------------------------------------------------- |
-| **onRecordingStart**    | Sets an action to be executed when recording starts. |
-| **onRecordingComplete** | Sets an action to be executed when recording ends.   |
+| Event                   | Description                                                                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **onRecordingStart**    | Sets an action to be executed when recording starts. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onRecordingComplete** | Sets an action to be executed when recording ends. See a list of [supported actions](../appsmith-framework/widget-actions/).   |
 
 ### Styles
 

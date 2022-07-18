@@ -328,13 +328,13 @@ Let's bind a text widget to `Table_1` using searchText.
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Action                 | Description                                                                                                                                                                                                                                                                                    |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../appsmith-framework/).                                                                                                                                                                                 |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../appsmith-framework/)                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../appsmith-framework/) |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../appsmith-framework/).                                                                                                                                                                          |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../appsmith-framework/).                                                                                                                                                                                |
+| Action                 | Description                                                                                                                                                                                                                                                                                                    |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                                  |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                           |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                                 |
 
 ### Header Options
 
@@ -353,16 +353,16 @@ Style properties allow you to change the look and feel of the table. It has seve
 * Text alignment;
 * Playing around with the color of the text or cell background.
 
-| Style                     | Description                                              |   |
-| ------------------------- | -------------------------------------------------------- | - |
-| **Cell Background Color** | Allows you to set background color for the cells.        |   |
-| **Text Color**            | Allows you to set text color.                            |   |
-| **Text Size**             | Allows you to set the size of the text.                  |   |
-| **Font Style**            | Allows you to choose a font style, i.e., bold or italic. |   |
-| **Text Align**            | Sets the label alignment of the text.                    |   |
-| **Vertical Alignment**    | Sets the alignment of the widget.                        |   |
-| **Border Radius**         | Allows you to define curved corners.                     |   |
-| **Box Shadow**            | Allows you to choose from the available shadow styles.   |   |
+| Style                     | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| **Cell Background Color** | Allows you to set background color for the cells.        |
+| **Text Color**            | Allows you to set text color.                            |
+| **Text Size**             | Allows you to set the size of the text.                  |
+| **Font Style**            | Allows you to choose a font style, i.e., bold or italic. |
+| **Text Align**            | Sets the label alignment of the text.                    |
+| **Vertical Alignment**    | Sets the alignment of the widget.                        |
+| **Border Radius**         | Allows you to define curved corners.                     |
+| **Box Shadow**            | Allows you to choose from the available shadow styles.   |
 
 ## Guides
 

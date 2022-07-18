@@ -11,21 +11,21 @@ Statbox widgets are a class of widgets used to show application information. Fol
 * [**Icon Button**](icon-button.md)
 * [**Text**](text.md)
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Property            | Description                                                  |   |
-| ------------------- | ------------------------------------------------------------ | - |
-| **Visible**         | Controls the visibility of the widget.                       |   |
-| **Animate Loading** | Allows you to control a widget’s animation on the page load. |   |
-| **Scroll Contents** | Enables scrolling for content inside the widget.             |   |
+| Property            | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| **Visible**         | Controls the visibility of the widget.                       |
+| **Animate Loading** | Allows you to control a widget’s animation on the page load. |
+| **Scroll Contents** | Enables scrolling for content inside the widget.             |
 
-### Binding Properties&#x20;
+### Binding Properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -33,7 +33,7 @@ These properties help you share values between widgets and also allow you to eas
 | ------------- | ------------------------------------------------------------- | ------------------------ |
 | **isVisible** | This property indicates whether the widget is visible or not. | `{{Statbox1.isVisible}}` |
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 

@@ -37,9 +37,9 @@ These properties allow you to bind your Checkbox widget with any other widget in
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Events            | Description                                                                                                                   |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../appsmith-framework/) |
+| Events            | Description                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Styles
 

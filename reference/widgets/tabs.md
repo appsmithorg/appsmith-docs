@@ -34,18 +34,18 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events            | Description                                                                                                      |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../appsmith-framework/) |
+| Events            | Description                                                                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles            | Description                                            |   |
-| ----------------- | ------------------------------------------------------ | - |
-| **Border Radius** | Allows you to define curved corners.                   |   |
-| **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
+| Styles            | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| **Border Radius** | Allows you to define curved corners.                   |
+| **Box Shadow**    | Allows you to choose from the available shadow styles. |
 
 ## Creating Dynamic Views
 

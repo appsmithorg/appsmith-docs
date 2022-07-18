@@ -33,9 +33,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events       | Description                                                                                                           |
-| ------------ | --------------------------------------------------------------------------------------------------------------------- |
-| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../appsmith-framework/) |
+| Events       | Description                                                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../appsmith-framework/widget-actions/) |
 
 ### Label
 
@@ -47,16 +47,16 @@ The property hosts a group of configurations that you can use to associate a dis
 | **Position**  | Sets the label position of the widget. |
 | **Alignment** | Sets the alignment of the widget.      |
 
-| Label Style          | Description                                              |   |
-| -------------------- | -------------------------------------------------------- | - |
-| **Text Color**       | Allows you to set text color for the label.              |   |
-| **Text Size**        | Allows you to set the size of the label.                 |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| Label Style          | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| **Text Color**       | Allows you to set text color for the label.              |
+| **Text Size**        | Allows you to set the size of the label.                 |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
 
 ### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style            |                                          |   |
-| ---------------- | ---------------------------------------- | - |
-| **Accent color** | Sets the background color of the widget. |   |
+| Style            |                                          |
+| ---------------- | ---------------------------------------- |
+| **Accent color** | Sets the background color of the widget. |

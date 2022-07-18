@@ -18,7 +18,7 @@ Switch group’s **options** can be populated from a data source like an API / Q
 
 ### Filtering Data
 
-A Switch Group widget can show a set of binary choices for users. The selected values can be passed to an API using \*\*\*\* `{{ SwitchGroup1.selectedValues }}` .
+A Switch Group widget can show a set of binary choices for users. The selected values can be passed to an API using  `{{ SwitchGroup1.selectedValues }}` .
 
 ### **Form Submission**
 
@@ -71,9 +71,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-|                       | Description                                                                                                                             |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../appsmith-framework/). |
+|                       | Description                                                                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 

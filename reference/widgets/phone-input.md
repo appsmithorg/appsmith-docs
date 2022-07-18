@@ -221,27 +221,27 @@ For example, let's take an Input widget `Phoneinput1` and bind the selected coun
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Event             | Description                                                                                                             |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](broken-reference). |
-| **onSubmit**      | Triggers an action on submit (when the enter key is pressed)                                                            |
+| Event             | Description                                                                                                                                  |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onSubmit**      | Triggers an action on submit (when the enter key is pressed). See a list of [supported actions](../appsmith-framework/widget-actions/).      |
 
 ### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-| Label         | Description                                                  |   |
-| ------------- | ------------------------------------------------------------ | - |
-| **Text**      | Sets the label text of the widget.                           |   |
-| **Position**  | Sets the label position of the widget.                       |   |
-| **Alignment** | Sets the label alignment of the widget.                      |   |
-| **Width**     | Sets the label width of the widget as the number of columns. |   |
+| Label         | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| **Text**      | Sets the label text of the widget.                           |
+| **Position**  | Sets the label position of the widget.                       |
+| **Alignment** | Sets the label alignment of the widget.                      |
+| **Width**     | Sets the label width of the widget as the number of columns. |
 
-| Label Styles         | Description                                              |   |
-| -------------------- | -------------------------------------------------------- | - |
-| **Text Color**       | Allows you to set the text color for the label.          |   |
-| **Text Size**        | Allows you to set the size of the label.                 |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| Label Styles         | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| **Text Color**       | Allows you to set the text color for the label.          |
+| **Text Size**        | Allows you to set the size of the label.                 |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
 
 #### **Text**
 
@@ -277,7 +277,7 @@ How to set the label properties?
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style             | Description                                                     |   |
-| ----------------- | --------------------------------------------------------------- | - |
-| **Border Radius** | Rounds the corner of the icon button's outer border edge.       |   |
-| **Box Shadow**    | Enables you to cast a drop shadow from the frame of the widget. |   |
+| Style             | Description                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| **Border Radius** | Rounds the corner of the icon button's outer border edge.       |
+| **Box Shadow**    | Enables you to cast a drop shadow from the frame of the widget. |

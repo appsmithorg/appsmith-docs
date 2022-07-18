@@ -237,9 +237,9 @@ When you check the checkbox, it will enable the Visible property, and shows the 
 
 You use events to capture a user interaction and perform various operations.
 
-| **Event**       | **Description**                                              | **Example**                                                                            | **Code Snippet**                         |
-| --------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------- | ---------------------------------------- |
-| onListItemClick | Allows you to capture the click event and trigger an action. | You can perform [various actions when the click event is triggered](broken-reference). | `{{widget_name.selectedItem.item_name}}` |
+| **Event**       | **Description**                                              | **Example**                                                                                                 | **Code Snippet**                         |
+| --------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| onListItemClick | Allows you to capture the click event and trigger an action. | You can perform [various actions when the click event is triggered](../appsmith-framework/widget-actions/). | `{{widget_name.selectedItem.item_name}}` |
 
 ### onListItemClick
 

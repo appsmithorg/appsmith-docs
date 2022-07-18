@@ -14,7 +14,7 @@ What we need to make the connection are the Database URL, Project Id, and Servic
 
 The Firestore plugin requires three pieces of information to connect to Firestore.
 
-* On your Appsmith application, click on the **`+`** icon next to **Datasources** on the left navigation bar under Page1.&#x20;
+* On your Appsmith application, click on the **`+`** icon next to **Datasources** on the left navigation bar under Page1.
 * Now, navigate to the Create New tab and choose **Firestore data source**; you'll see the following screenshot:
 
 ![Firestore Database Page](<../../.gitbook/assets/Connecting to firestore.png>)
@@ -23,9 +23,9 @@ The above details are available from the Firebase Console. Let's fetch each one 
 
 #### Fetching Project ID
 
-1. Next to the project overview option, click the **setting gear**.&#x20;
-2. In the **`Project Settings`** ensure you're in the "General" tab.&#x20;
-3. You'll find an `Project ID` entry with a value.&#x20;
+1. Next to the project overview option, click the **setting gear**.
+2. In the **`Project Settings`** ensure you're in the "General" tab.
+3. You'll find an `Project ID` entry with a value.
 4. Copy this value into the Project ID field in the Firestore configuration.
 
 #### Fetching Database URL
@@ -39,8 +39,8 @@ The above details are available from the Firebase Console. Let's fetch each one 
 1. Go to **`Project Settings`** and click on the **`Service Accounts Tab.`**
 2. On the service accounts tab, below the code snippet, there is a **Generate new private key** button.
 3. Clicking this button will generate a new private key with access to this Firestore instance.
-4. This key will be in the form of a JSON file which will be downloaded when you click this button.&#x20;
-5. Copy the **contents** of this file and paste them into the **Service Account Credentials** field in appsmith.&#x20;
+4. This key will be in the form of a JSON file which will be downloaded when you click this button.
+5. Copy the **contents** of this file and paste them into the **Service Account Credentials** field in appsmith.
 6. Next, click on the **`Test`** button at the bottom right of the screen. This will help you with understanding whether your configuration is valid or not. If it returns a successful message, hit the 'Save' button to establish a secure connection between Appsmith and Firestore.
 
 The video below explains how to connect to Firestore.
@@ -57,7 +57,7 @@ Now that we've successfully connected to Firestore, let's look at how to query t
 Note: All the commands function mentioned below can be found on the query page.Fetching Single Document
 {% endhint %}
 
-## Fetching Data&#x20;
+## Fetching Data
 
 First, let's read our data from the database and display it.
 
@@ -65,9 +65,9 @@ There are two methods for fetching data from Firestore: one for fetching a singl
 
 ### Fetching Single Document
 
-* Click on the **datasources** and choose the database you created.&#x20;
-* Rename the query.&#x20;
-* From the **`Commands`** drop-down, Select the method **`Get Single Document`**.&#x20;
+* Click on the **datasources** and choose the database you created.
+* Rename the query.
+* From the **`Commands`** drop-down, Select the method **`Get Single Document`**.
 * Next, set the path to the full path of the document you want to load. The path should be provided **without** any leading or trailing/characters.
 
 For example, setting the path to users/sherlock@gmail.com will get the document with ID sherlock@gmail.com inside the collection users.
@@ -80,10 +80,10 @@ Fetching Single Document
 
 ### Fetching Multiple Documents
 
-* Click on the `datasources` and choose the database you created.&#x20;
-* Rename the query.&#x20;
-* Set the query command to **`Get Documents`** in the Collection.&#x20;
-* Set the `Collection/Document Path *` to the collection name.&#x20;
+* Click on the `datasources` and choose the database you created.
+* Rename the query.
+* Set the query command to **`Get Documents`** in the Collection.
+* Set the `Collection/Document Path *` to the collection name.
 * This simple query returns all the task details in the sample data item. Hit the **RUN** button to view all the results.
 
 The video below shows how you can fetch multiple documents from the firestore. The example below fetches all the documents from a collection.
@@ -94,7 +94,7 @@ Fetching Multiple Document
 
 We now have our query; let's bind this onto the table widget; for this, follow the below steps:
 
-* Click **** on the `+` icon next to widgets on the sidebar, search for the **table widget**, and drag and drop it onto the canvas.&#x20;
+* Click \*\*\*\* on the `+` icon next to widgets on the sidebar, search for the **table widget**, and drag and drop it onto the canvas.
 * You can make any configurations to any widget via the property pane. Click on the table widget on the canvas; you will see the property pane docked to the sidebar on the right. Now, under the Table Data property, use the moustache syntax to bind the query:
 
 ```
@@ -115,7 +115,7 @@ The second field is the operator and the third is the value to apply the filter 
 
 There are three methods to add documents to a collection, depending on the behaviour required.
 
-### **Set Document**&#x20;
+### **Set Document**
 
 This method will set the given document at the given document path. If a document already exists at the given path, it will be overridden. It will create a path for the document if it does not exist at the given path.
 
@@ -123,10 +123,10 @@ The **set document** command can create or update an existing document. It requi
 
 Let’s look at an example to see how a `set document` works.
 
-* Click on the **datasources** and choose the database you created.&#x20;
-* Rename the query.&#x20;
-* Set the query command to “`Set Documents`” in the Collection.&#x20;
-* Now, add the collection and document details.&#x20;
+* Click on the **datasources** and choose the database you created.
+* Rename the query.
+* Set the query command to “`Set Documents`” in the Collection.
+* Now, add the collection and document details.
 * Here we will add **`tasks/newdoc`**. In the body section we will add something like:
 
 ```
@@ -149,20 +149,20 @@ This method will set the given document at the given document path. If a documen
 **Let's look at an example** to see how to create a new document. Let’s assume you have a table which displays data from firestore. Now let's add a modal, to update the value to the database.
 
 {% hint style="info" %}
-[Modal ](https://docs.appsmith.com/widget-reference/modal)is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
+[Modal ](../widgets/modal.md)is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
 {% endhint %}
 
-* Drag and drop a button widget onto the canvas. Open its property pane, set the onClick property to **Open a New Modal**, and choose to **Create New.**&#x20;
+* Drag and drop a button widget onto the canvas. Open its property pane, set the onClick property to **Open a New Modal**, and choose to **Create New.**
 * This will open up a new modal now; let's drag and drop a few widgets to create a form that we can use to add a new task to our database.
 
 Now that the modal’s UI is ready, let's connect it:
 
 * Click on the + icon next to the datasources and choose to Create New + from the Firestore datasource.
 * Rename the query to `createTask`.
-* Set the commands to **`Create Document.`**&#x20;
-* Set the **`Collection/Document Path *`**to `collection_name/{{Math.random().toString().substring()}}`
+* Set the commands to **`Create Document.`**
+* Set the \*\*`Collection/Document Path *`\*\*to `collection_name/{{Math.random().toString().substring()}}`
 
-&#x20;     For Example:- `tasks/{{Math.random().toString(36).substring(7)}}`&#x20;
+For Example:- `tasks/{{Math.random().toString(36).substring(7)}}`
 
 * Finally, set the body property.
 
@@ -185,19 +185,17 @@ Lastly, we’ll need to configure the submit button; for this, go back to the mo
 
 You can check out this [tutorial](https://appsmith.hashnode.dev/build-a-crud-app-with-a-firestore-database), to learn more about creating the document.
 
-
-
 ### Add Document to Collection
 
 This method will add the given document with an auto-generated document-id, into the given collection path. Note that the given path must point to a collection in this method. If the collection doesn't exist at the given path, it will be created.
 
 **Let’s look at an example** to see how `add the document to collection` works:
 
-* Click on the **datasources** and choose the database you created.&#x20;
-* Rename the query.&#x20;
-* Set the query command to “**Add Documents to Collection**” in the Collection.&#x20;
-* Now, just add your `collection-name`.&#x20;
-* Here we will add `tasks`.&#x20;
+* Click on the **datasources** and choose the database you created.
+* Rename the query.
+* Set the query command to “**Add Documents to Collection**” in the Collection.
+* Now, just add your `collection-name`.
+* Here we will add `tasks`.
 * Now in the body, add your details:
 
 ```
@@ -255,19 +253,19 @@ Let's look at an example to learn more about updating the document.
 
 The Update operation is quite similar to the create operation.
 
-* Let’s build UI by creating a new custom column on the table by clicking on **ADD A NEW COLUMN** under the columns property.&#x20;
-* Now, rename the column to **Edit**, and click on the cog icon next to it, to configure column settings.&#x20;
-* Under this, we’ll see column-type properties set to a Button type. A modal should open up the necessary fields to update the item when clicked.&#x20;
-* Now, copy-paste Modal1, rename it to Modal2 and set the onClick property of the Edit Task button to open Modal2.&#x20;
+* Let’s build UI by creating a new custom column on the table by clicking on **ADD A NEW COLUMN** under the columns property.
+* Now, rename the column to **Edit**, and click on the cog icon next to it, to configure column settings.
+* Under this, we’ll see column-type properties set to a Button type. A modal should open up the necessary fields to update the item when clicked.
+* Now, copy-paste Modal1, rename it to Modal2 and set the onClick property of the Edit Task button to open Modal2.
 * Here, in the form, we can also set the default value to show existing information, to display this, use the **`selectedRow`** property from the table widget.
 
 ![](../../.gitbook/assets/firestore\_update\_document.png)
 
 Let’s write the Edit query:
 
-* Click on the **`+`** icon next to the datasources and choose to Create New + from the Firestore datasource.&#x20;
-* Rename the query to **`editTask`**.&#x20;
-* Set the `Collection/Document Path*` to `tasks/{{Table1.selectedRow._ref}}.`&#x20;
+* Click on the **`+`** icon next to the datasources and choose to Create New + from the Firestore datasource.
+* Rename the query to **`editTask`**.
+* Set the `Collection/Document Path*` to `tasks/{{Table1.selectedRow._ref}}.`
 * Finally, set the body property to:
 
 ```
@@ -280,22 +278,20 @@ Let’s write the Edit query:
 ```
 
 {% hint style="info" %}
-&#x20;Note: The \{{ Table1.selectedRow.\_ref \}} snippet evaluates to the selected row’s \_ref which will be the row we want to edit.
+Note: The \{{ Table1.selectedRow.\_ref \}} snippet evaluates to the selected row’s \_ref which will be the row we want to edit.
 {% endhint %}
 
 Here, we have an edited query that collects all the data from the form widgets on Modal2. Note that we use the mustache syntax to bind the data from the widgets onto the query body. We’ll now need to configure the submit button; Go back to Modal2, set the button’s onClick property to execute a query, and choose _**editTask**_ under the events property.
 
 {% embed url="https://youtu.be/yW8m8kydNhQ" %}
-Updating Document&#x20;
+Updating Document
 {% endembed %}
-
-
 
 ## Deleting Document
 
 The **Delete Document** method deletes the document at the given path.
 
-* First, select `Delete Document` from the commands drop-down.&#x20;
+* First, select `Delete Document` from the commands drop-down.
 * Next, add your document path.
 
 For example, “tasks/issue\_id” and click run to delete that document.
@@ -304,13 +300,13 @@ For example, “tasks/issue\_id” and click run to delete that document.
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
 {% endhint %}
 
-* Create a new custom column on the table by clicking on Add a New Column under the columns property.&#x20;
+* Create a new custom column on the table by clicking on Add a New Column under the columns property.
 * Now, rename this column to ‘Delete Task,’ and click on the cog icon next to it, to configure column settings. Under this, we’ll see column-type properties set to a button type.
 
 Now, write the Delete query:
 
-* Click on the `+` icon next to the data sources and choose the Create New + from the Firestore datasource.&#x20;
-* Set the commands to Delete Document.&#x20;
+* Click on the `+` icon next to the data sources and choose the Create New + from the Firestore datasource.
+* Set the commands to Delete Document.
 * Set the `Collection/Document Path*` to:
 
 ```

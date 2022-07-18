@@ -30,10 +30,10 @@ These properties allow you to bind your Progress bar widget with any other widge
 | **progress** | It shows the current progress of the progress bar in percentage. | `{{<progress-widget_name>.progress}}` |
 | **visible**  | Visibility of the progress bar widget.                           | `{{<progress-widget_name>.visible}}`  |
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles         | Description                             |   |
-| -------------- | --------------------------------------- | - |
-| **Fill Color** | Controls the color of the progress bar. |   |
+| Styles         | Description                             |
+| -------------- | --------------------------------------- |
+| **Fill Color** | Controls the color of the progress bar. |

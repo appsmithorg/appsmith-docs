@@ -225,6 +225,6 @@ You can also make the application public, in which case, anyone with the URL to 
 
 The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](https://docs.appsmith.com/core-concepts/)
+* [Core Concepts](broken-reference)
 * [Widgets](../../../reference/widgets/)
-* [Appsmith Framework](broken-reference)
+* [Appsmith Framework](../../../reference/appsmith-framework/)

@@ -4,11 +4,11 @@ The Radio group widget allows users to configure a group of radio buttons. It le
 
 {% embed url="https://youtu.be/ZQ3CKFx3cbM" %}
 
-## Properties&#x20;
+## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.&#x20;
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties&#x20;
+### Widget Properties
 
 These properties allow you to edit the Radio Group widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -23,7 +23,7 @@ These properties allow you to edit the Radio Group widget. All these properties 
 | **Animate Loading**        | Allows you to control a widget’s animation on the page load.                                                         |
 | **Alignment**              | Sets alignment of the widget.                                                                                        |
 
-### Binding Properties&#x20;
+### Binding Properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -35,22 +35,22 @@ These properties help you share values between widgets and also allow you to eas
 
 ### Events
 
-&#x20;They are a set of actions that you can perform on the widget:
+They are a set of actions that you can perform on the widget:
 
-| Events                | Description                                                    |   |
-| --------------------- | -------------------------------------------------------------- | - |
-| **onSelectionChange** | Sets the action to be run when the selection state is changed. |   |
+| Events                | Description                                                                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **onSelectionChange** | Sets the action to be run when the selection state is changed. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-| Label         | Description                                                  |   |
-| ------------- | ------------------------------------------------------------ | - |
-| **Text**      | Sets the label text of the widget.                           |   |
-| **Position**  | Sets the label position of the widget.                       |   |
-| **Alignment** | Sets the label alignment of the widget.                      |   |
-| **Width**     | Sets the label width of the widget as the number of columns. |   |
+| Label         | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| **Text**      | Sets the label text of the widget.                           |
+| **Position**  | Sets the label position of the widget.                       |
+| **Alignment** | Sets the label alignment of the widget.                      |
+| **Width**     | Sets the label width of the widget as the number of columns. |
 
 Let's understand these properties in detail:
 
@@ -82,13 +82,13 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 How to set the label properties.
 {% endembed %}
 
-### Styles&#x20;
+### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style                | Description                                              |   |
-| -------------------- | -------------------------------------------------------- | - |
-| **Label Text Color** | Allows you to set text color for the label.              |   |
-| **Label Text Size**  | Allows you to set the size of the label.                 |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
-| **Accent color**     | Sets the accent color of the widget.                     |   |
+| Style                | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| **Label Text Color** | Allows you to set text color for the label.              |
+| **Label Text Size**  | Allows you to set the size of the label.                 |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Accent color**     | Sets the accent color of the widget.                     |
