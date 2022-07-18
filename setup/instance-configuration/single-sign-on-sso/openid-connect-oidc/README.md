@@ -34,6 +34,10 @@ For OIDC configuration in Appsmith, follow the steps below (the below steps are 
 Save the **`Redirect URL`** as you’ll need it to configure in OIDC Provider’s settings.
 {% endhint %}
 
+{% hint style="info" %}
+You can choose to integrate with any one of the following [OIDC providers](./#oidc-providers) by clicking on any of them below.
+{% endhint %}
+
 ## OIDC Providers
 
 Appsmith provides some popular OIDC integrations that you can choose from. Click on the available providers to follow the exhaustive guide for integrating with them:
