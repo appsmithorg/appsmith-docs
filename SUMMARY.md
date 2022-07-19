@@ -126,6 +126,7 @@
 
 ## Datasource Reference
 
+* [Airtable](datasource-reference/airtable.md)
 * [Amazon / Generic S3](datasource-reference/querying-amazon-s3.md)
 * [ArangoDB](datasource-reference/querying-arango-db.md)
 * [DynamoDB](datasource-reference/querying-dynamodb.md)
