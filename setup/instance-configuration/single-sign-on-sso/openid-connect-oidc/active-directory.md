@@ -1,6 +1,6 @@
 # Active Directory
 
-Azure Active Directory (Azure AD) is a cloud-based identity and access management service. This service helps your employees access external resources**,** such as **Microsoft 365,** the **Azure portal,** and thousands of other **SaaS** applications.
+Azure Active Directory (Azure AD) is a cloud-based identity and access management service. This service helps your employees access external resources, such as **Microsoft 365,** the **Azure portal,** and thousands of other **SaaS** applications.
 
 {% hint style="info" %}
 OpenID Connect is available only in the [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances,** and only the **Superuser** of your **Appsmith Instance** can set up OIDC.
@@ -16,20 +16,20 @@ Creating an application in Active Directory
 
 1. Log in to your [Azure](https://portal.azure.com/#allservices) account and click on **More services**.
 2. Click on Azure Active Directory and hit “**+Add**.” From the "+Add" dropdown, select “**App Registration**.”
-3. Under App Registration:&#x20;
-   1. **Name**: Give your App a meaningful name.&#x20;
+3. Under App Registration:
+   1. **Name**: Give your App a meaningful name.
    2. **Supported account types**: Select “Accounts in this organizational directory only (Default Directory only - Single tenant)."
-   3. **Redirect URL**: select the application type as Web for Platform and add the redirect URL (Copied from the [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)).&#x20;
+   3. **Redirect URL**: select the application type as Web for Platform and add the redirect URL (Copied from the [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)).
 4. Click on Register to create the application.
 
 ### Configure Active directory with Appsmith
 
-On the application homepage, go to the overview tab and perform the following actions under the essentials dropdown:&#x20;
+On the application homepage, go to the overview tab and perform the following actions under the essentials dropdown:
 
-* Copy the **Application (client) ID** and paste it under the **Client ID** in the OIDC configurations in Appsmith.&#x20;
-* For Client secret, click on “Client credentials: Add a certificate or secret.”&#x20;
-  * In the “Certificates and Secrets window,” go to the **Client secret** tab and click on “New client secret.”&#x20;
-  * Add the key's description and expiration time in the “**Add a client secret**” pop-up. Click on Save.&#x20;
+* Copy the **Application (client) ID** and paste it under the **Client ID** in the OIDC configurations in Appsmith.
+* For Client secret, click on “Client credentials: Add a certificate or secret.”
+  * In the “Certificates and Secrets window,” go to the **Client secret** tab and click on “New client secret.”
+  * Add the key's description and expiration time in the “**Add a client secret**” pop-up. Click on Save.
   * Copy the value of the new Client secret and add it under **Client secret** in the OIDC configurations in Appsmith.
 
 {% embed url="https://youtu.be/AcpfV0sQ26w" %}
@@ -40,7 +40,7 @@ Creating a new Client secret in Active Directory
 
 {% embed url="https://youtu.be/v6N09_Q5LoY" %}
 
-* Open the metadata URL in a browser window and copy the following configurations from the above link and add them to OIDC Configurations on Appsmith:
+* Copy the metadata URL; Remove `/v2.0` from the copied URL and then open it  in a browser window and copy the following configurations from the above link and add them to OIDC Configurations on Appsmith:
 
 | **Azure Active Directory Configuration** | **OIDC configuration field in Appsmith** |
 | ---------------------------------------- | ---------------------------------------- |
@@ -51,13 +51,13 @@ Creating a new Client secret in Active Directory
 
 ![Appsmith - OIDC Setup](../../../../.gitbook/assets/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
 
-### Configure Scopes&#x20;
+### Configure Scopes
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. You'll see the Scope field below the **JSON Web Key Set**:
 
 ![Configure Scope(s) at Appsmith](../../../../.gitbook/assets/Appsmith-Scope-Field.png)
 
-#### What does Appsmith need as part of Scopes?&#x20;
+#### What does Appsmith need as part of Scopes?
 
 Appsmith needs an **openId** as a mandatory scope. You can add more scopes if the need be. You can ensure that the same is available at Active Directory.
 
@@ -77,7 +77,7 @@ To configure scopes/permissions on Active Directory, follow the steps below:
       1. email
       2. openid
       3. Profile
-   2. Under **User** permissions- &#x20;
+   2. Under **User** permissions-
       1. User.Read
 5. Once complete, these scopes will get added to the Active Directory application.
 6. Click on **Grant admin consent for Default Directory** on the top of the table, next to Add a permission button.
