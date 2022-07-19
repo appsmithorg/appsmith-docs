@@ -6,7 +6,9 @@ Appsmith is a low code, open-source developer tool to build internal application
 
 You can drag and drop pre-built widgets to build UI on a grid-style canvas. Appsmith simplifies frontend and backend integration between the UI and the datasource to optimize building applications. Appsmith supports JavaScript inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
 
-Build CRUD apps, Dashboards, Admin Panels, Dynamic Forms, and much more 10x faster.
+{% hint style="info" %}
+Build **CRUD** apps, **Dashboards**, **Admin Panels**, **Dynamic Forms**, and much more **10x faster**.
+{% endhint %}
 
 ## How Appsmith Works
 
@@ -45,7 +47,9 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <p><br><img src=".gitbook/assets/code-icon.png" alt="Slack-logo" data-size="original"><mark style="color:orange;"><strong>JavaScript</strong></mark><br><strong></strong><br><strong></strong><a href="core-concepts/writing-code/workflows.md">Create Workflows</a><br><a href="core-concepts/writing-code/javascript-promises.md">JS Promises</a><br><a href="core-concepts/writing-code/ext-libraries.md">External Libraries</a><br></p>                                                   | <p><br><img src=".gitbook/assets/framework-icon.png" alt="Slack-logo" data-size="original"><mark style="color:orange;"><strong>Framework</strong></mark></p><p></p><p><a href="reference/appsmith-framework/appsmith.md">Context Object</a><br><a href="reference/appsmith-framework/run.md">Query Object</a><br><a href="reference/appsmith-framework/widget-actions/">Actions</a><br></p>                  | <p><br><img src=".gitbook/assets/resources-icon.png" alt="Slack-logo" data-size="original"><mark style="color:orange;"><strong>Resources</strong></mark><br><strong></strong><a href="learning-and-resources/tutorials/"><strong></strong><br><strong></strong>Tutorials</a><br><a href="learning-and-resources/sample-apps.md">Sample Apps</a></p><p><a href="https://www.appsmith.com/templates">Templates</a><br></p> |
 
+{% hint style="warning" %}
 If you think we need to include something in this documentation, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com), and we’ll get working on it!
+{% endhint %}
 
 ## Other Resources
 
@@ -53,4 +57,6 @@ If you think we need to include something in this documentation, please fill out
 * View our [guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith);
 * Report bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
 
+{% hint style="warning" %}
 Are you still having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com).
+{% endhint %}

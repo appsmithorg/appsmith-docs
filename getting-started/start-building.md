@@ -75,7 +75,9 @@ The `{{mustache}}` template is used to write JS inside widgets and queries.
 | DOB    | dobInput   | Default Date<mark style="color:orange;">\*</mark> | `{{usersTable.selectedRow.dob}}`   |
 | Phone  | phoneInput | Default Text                                      | `{{usersTable.selectedRow.phone}}` |
 
-_<mark style="color:orange;">\*Turn on the</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**JS**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">toggle to bind data for the</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**Default Date**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">property</mark>_
+{% hint style="warning" %}
+Turn on the **JS** toggle to bind data for the **Default Date** property
+{% endhint %}
 
 * Create another query on the '**users'** database and rename it to '**updateUsers**'. Use the below update command to write any modified data on the widgets back to the database.&#x20;
 
@@ -85,11 +87,11 @@ UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob
 
 * On the property pane of the **Update** button execute this query on the [**onClick**](../reference/widgets/button/#events) event. On the success of the update query, run the '**getusers'** query to populate the table with updated data.
 
-![](<../.gitbook/assets/Screenshot 2022-06-28 at 11.36.28 PM.png>)
+![Bind query execution to the button's  onClick event ](<../.gitbook/assets/Screenshot 2022-06-28 at 11.36.28 PM.png>)
 
 * Test the **'Update'** button by modifying the phone number of the user.
 
-You’ve completed your first app that can display information from the database and update data, all in just a few minutes.
+> You’ve completed your first app that can display information from the database and update data, all in just a few minutes.
 
 ## Deploy and Share
 
@@ -100,5 +102,9 @@ You’ve completed your first app that can display information from the database
     * Share the application's URL with the user
   * You can also make the application **public**. In this case, anyone with the application URL can view the application without signing in. You can read more about **access control** [**here**](../advanced-concepts/access-control.md).
 
-Congratulations, you have completed the Appsmith Quickstart tutorial. Now that you have created your first Appsmith application, you may be wondering what to learn next. The Quickstart covered only the basic concepts. There's so much more to explore, so head over to the [**next steps**](../#advanced-users).
+{% hint style="info" %}
+**Congratulations**, you have completed the Appsmith Quickstart tutorial.&#x20;
+{% endhint %}
+
+Now that you have created your first Appsmith application, you may be wondering what to learn next. The Quickstart covered only the basic concepts. There's so much more to explore, so head over to the [**next steps**](../#advanced-users).
 
