@@ -125,6 +125,7 @@
   * [Tree-select](reference/widgets/tree-select.md)
   * [Video](reference/widgets/video.md)
 * [Datasources](reference/datasources/README.md)
+  * [Airtable](reference/datasources/airtable.md)
   * [Amazon / Generic S3](reference/datasources/querying-amazon-s3.md)
   * [ArangoDB](reference/datasources/querying-arango-db.md)
   * [DynamoDB](reference/datasources/querying-dynamodb.md)
