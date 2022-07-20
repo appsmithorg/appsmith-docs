@@ -1,19 +1,6 @@
 # Installation Guides
 
-&#x20; [ ](kubernetes/)[![Docker-logo](<../../../.gitbook/assets/docker-logo (1).png>)](docker/)                                  [![Kubernetes-logo](<../../../.gitbook/assets/Kubernetes\_logo (1).png>)](kubernetes/)                                       [![AWS-AMI-logo](<../../../.gitbook/assets/AWS AMI.png>)](aws-ami.md)
-
-&#x20;               **Docker                                                              Kubernetes                                                     AWS AMI**  &#x20;
-
-****
-
-&#x20;         [![AWS-ECS-logo](../../../.gitbook/assets/AWS-ECS-Logo.png)](aws-ecs.md)                                         [![Digital-Ocean-logo](../../../.gitbook/assets/Digital-Ocean-Logo.png)](digitalocean.md)                                      [![Heroku-logo](../../../.gitbook/assets/heroku-logo.png)](heroku.md)           &#x20;
-
-&#x20;             **AWS ECS                                                      Digital Ocean                                                      Heroku**&#x20;
-
-****
-
-&#x20;   [![CloudJiffy-logo](https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo\_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3\&updatedAt=1657134035775)](cloudjiffy.md)                                      [![Ansible-logo](../../../.gitbook/assets/Ansible-logo.png)](ansible.md)
-
-&#x20;           **CloudJiffy                                                         Ansible**
-
-****
+|                                                 <p><a href="docker/"><strong></strong><br><strong></strong><img src="../../../.gitbook/assets/docker-logo (1).png" alt="Docker-logo"></a><br><br><strong>Docker</strong></p>                                                |                                      <p><br><img src="../../../.gitbook/assets/Kubernetes_logo.png" alt="Kubernetes-logo"><br><br><strong>Kubernetes</strong></p>                                     | <p><br><a href="https://docs.appsmith.com/setup/docker"><img src="../../../.gitbook/assets/AWS AMI.png" alt="AWS-AMI-logo"></a><strong></strong><br><strong></strong><br><strong>AWS AMI</strong></p> |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                  <p><br><a href="https://docs.appsmith.com/setup/docker"><img src="../../../.gitbook/assets/AWS-ECS-Logo.png" alt="AWS-ECS-logo"></a><strong></strong><br><strong></strong><br><strong>AWS ECS</strong></p>                                 | <p><br><a href="digitalocean.md"><img src="../../../.gitbook/assets/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"></a><strong></strong><br><strong></strong><br><strong>Digital Ocean</strong></p> |               <p><br><a href="heroku.md"><img src="../../../.gitbook/assets/heroku-logo.png" alt="Heroku-logo"></a><strong></strong><br><strong></strong><br><strong>Heroku</strong></p>              |
+| <p><strong></strong><br><strong></strong><a href="cloudjiffy.md"><img src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"></a><br><br><strong>CloudJiffy</strong></p> |             <p><br><a href="ansible.md"><img src="../../../.gitbook/assets/Ansible-logo.png" alt="Ansible-logo"></a><strong></strong><br><strong></strong><br><strong>Ansible</strong></p>            |                                                                                                                                                                                                       |

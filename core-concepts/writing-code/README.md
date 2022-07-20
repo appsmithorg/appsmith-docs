@@ -16,7 +16,7 @@ Appsmith currently supports two forms of JavaScript code for dynamically evaluat
 {{ QueryName.data.filter((row) => row.id > 5 ) }}
 ```
 
-1. Immediately-Invoked Function Expressions ([IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE))
+2\. Immediately-Invoked Function Expressions ([IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE))
 
 ```javascript
 {{ 

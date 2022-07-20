@@ -2,7 +2,7 @@
 description: You may have these questions and we would like to answer them.
 ---
 
-# FAQs
+# FAQ
 
 ## What kind of apps can be built on Appsmith?
 
@@ -14,7 +14,7 @@ Yes, absolutely. You can write JS code anywhere inside the product within `{{ }}
 
 ## What type of data security does appsmith provide?
 
-Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open-source framework and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
+Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open-source platform and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
 
 ## What if there is a missing feature that I need?
 
@@ -26,7 +26,7 @@ We provide support via our active discord community and GitHub issues. We're als
 
 ## How is Appsmith different from other app builders?
 
-Appsmith is the first **open-source** visual framework for building internal tools. Appsmith gives you building blocks (widgets, APIs, Queries) that you can configure and connect together using javascript. This ensures that you never get blocked trying to create a custom workflow and you don't spend time building repetitive components!
+Appsmith is the first **open-source** visual platform for building internal tools. Appsmith gives you building blocks (widgets, APIs, Queries) that you can configure and connect together using javascript. This ensures that you never get blocked trying to create a custom workflow and you don't spend time building repetitive components!
 
 ## What can't I do on Appsmith?
 
