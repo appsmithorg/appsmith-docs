@@ -116,6 +116,7 @@
 * [Access Control](core-concepts/access-control.md)
 * [Version Control with Git](core-concepts/version-control-with-git/README.md)
   * [Connecting to Git Repository](core-concepts/version-control-with-git/connecting-to-git-repository.md)
+  * [Import from Repository](core-concepts/version-control-with-git/import-from-repository.md)
   * [Commit and Push](core-concepts/version-control-with-git/commit-and-push.md)
   * [Working with Branches](core-concepts/version-control-with-git/working-with-branches.md)
   * [Pull & Sync](core-concepts/version-control-with-git/pull-and-sync.md)

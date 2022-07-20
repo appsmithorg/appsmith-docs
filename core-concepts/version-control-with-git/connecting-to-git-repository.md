@@ -2,7 +2,7 @@
 
 To connect your app with git, follow the steps below:
 
-### Creating a new Repository&#x20;
+### Creating a new Repository
 
 * Create a new repository on your git service and copy the `SSH` URL. The repository should be empty except `README.md`, `.gitignore`, and `LICENSE` files (These can be auto-created when you create a new repository.)
 
@@ -53,25 +53,3 @@ Finally, click on _**connect**_, and if the connection is successful, your repos
 {% hint style="info" %}
 In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
 {% endhint %}
-
-## **Importing from a Repository**
-
-If you already have an Appsmith App in a Git repository, you can import it to a new organization or a different Appsmith account. Follow the steps given below:
-
-* On the Appsmith organization home, click on desired organization’s Menu button and select Import.
-* Choose the `Import from a Git repo` option on the import application pop-up. You'll be navigated to an `Import from the Git Repository` screen.
-* Add your Repository’s SSH URL and click on [Generate key](connecting-to-git-repository.md#generating-a-deploy-key).
-
-{% embed url="https://youtu.be/zrxgcI3m2lc" %}
-
-
-
-* Add the [Deploy key to your repository.](connecting-to-git-repository.md#adding-the-deploy-key-in-the-repository)
-* Go back to the Git connection window and [configure the user settings](connecting-to-git-repository.md#user-configurations) and click on **Import.**
-* Once the import is complete, you’ll see a data source configuration modal where you can configure the data sources used by the imported Application. We do not export any configuration values used for connecting a data source. So either you have to configure it in the data source configuration modal, or you can skip this and choose to configure it later.
-
-{% hint style="info" %}
-If the imported organization already has a data source with the same name but a different type, the import will fail due to name conflicts. For example, suppose a git-connected application has a MongoDB data source - "movies." You are importing it to an organization that has a Postgres data source also named "movies". In such a case, the import will fail.
-{% endhint %}
-
-##
