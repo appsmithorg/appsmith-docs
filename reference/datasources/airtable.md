@@ -406,7 +406,7 @@ Recw3xxxxx - Record ID
 Use the [List Records command](airtable.md#list-records) to get the record ID for each record.
 {% endhint %}
 
-With Appsmith Airtable integration, it is possible to create apps that seamlessly connect to databases and provide additional flexibility for updating and analyzing data.
+With Appsmith Airtable integration, it is possible to create apps that seamlessly connect with the Airtable database and provide additional flexibility for updating and analyzing data.
 
 ## Using Queries in applications&#x20;
 
