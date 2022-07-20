@@ -164,6 +164,7 @@
 * [Access Control](advanced-concepts/access-control.md)
 * [Version Control With Git](advanced-concepts/version-control-with-git/README.md)
   * [Connecting to Git Repository](advanced-concepts/version-control-with-git/connecting-to-git-repository.md)
+  * [Import from Repository](advanced-concepts/version-control-with-git/import-from-repository.md)
   * [Commit and Push](advanced-concepts/version-control-with-git/commit-and-push.md)
   * [Working with Branches](advanced-concepts/version-control-with-git/working-with-branches.md)
   * [Pull & Sync](advanced-concepts/version-control-with-git/pull-and-sync.md)
