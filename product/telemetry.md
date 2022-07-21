@@ -176,4 +176,4 @@ sudo docker-compose rm -fsv appsmith && sudo docker-compose up -d
 
 * Once the container restarts, Appsmith is up and running.
 
-You can verify that the telemetry is turned off by navigating to [**Admin Settings**](telemetry.md#admin-settings) and checking the toggle for **Share anonymous usage** **data.**&#x20;
+You can verify that the telemetry is turned off by navigating to [**Admin Settings**](telemetry.md#admin-settings) and checking the toggle for **Share anonymous usage** **data.**

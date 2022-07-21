@@ -49,7 +49,7 @@ You'll have to provide **read and write access** to your **Google Sheets** and *
 Click on the `Save and Authorize` button once you have selected the scope. You'll be navigated to the **Google Login screen**. On successful login, you will be shown the permissions screen where you will authorize Google Sheets and Drive for a **read only** or a **read and write** access based on the **scope** you **selected** for datasource. On Successful authorization, you'll be redirected to the datasources page. You can choose to add a **New API** by clicking the **New API +** button.
 
 {% hint style="warning" %}
-Creating and authorizing a Google Sheets data source will [store your credentials](../../product/security.md#does-appsmith-store-my-data) within the Appsmith servers. When you share your application with more developers or administrators, your Google sheets account will be accessible to them.
+Creating and authorizing a Google Sheets data source will [store your credentials](broken-reference) within the Appsmith servers. When you share your application with more developers or administrators, your Google sheets account will be accessible to them.
 {% endhint %}
 
 ## **Create Queries**
@@ -342,7 +342,7 @@ How to Fetch data from the sheet?
 You can choose to add filters using range or `where` Clause.
 {% endhint %}
 
-You can display the data by binding it to a [widget](broken-reference). For example, you can display the spreadsheet data in a [table](../widgets/table.md) widget.
+You can display the data by binding it to a [widget](../widgets/). For example, you can display the spreadsheet data in a [table](../widgets/table.md) widget.
 
 {% hint style="info" %}
 Bind the data returned by the query to a [table](../widgets/table.md) widget - [TableData](../widgets/table.md#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.

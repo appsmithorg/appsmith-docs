@@ -43,6 +43,8 @@
     * [Super Admin](getting-started/setup/instance-configuration/admin-settings.md)
   * [Instance Management](getting-started/setup/instance-management/README.md)
     * [Maintenance Window](getting-started/setup/instance-management/maintenance-window.md)
+  * [Upgrade to Business Edition](getting-started/setup/upgrade-to-business-edition/README.md)
+    * [Docker](getting-started/setup/upgrade-to-business-edition/docker.md)
 * [FAQ](getting-started/faq.md)
 
 ## Core Concepts
@@ -223,6 +225,13 @@
 * [Discord](https://discord.com/invite/rBTTVJp)
 * [Community Forum](https://community.appsmith.com/)
 * [Contact Us](mailto:support@appsmith.com)
+
+## Enterprise
+
+* [Enterprise Edition](enterprise/enterprise-edition/README.md)
+  * [Upgrade to Enterprise](enterprise/enterprise-edition/upgrade-to-enterprise/README.md)
+    * [Docker Installation](enterprise/enterprise-edition/upgrade-to-enterprise/docker-installation.md)
+  * [License](enterprise/enterprise-edition/license.md)
 
 ## Product
 
