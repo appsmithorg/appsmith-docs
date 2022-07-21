@@ -99,3 +99,8 @@ Below is a GIF, following the same steps:
 
 ![](../.gitbook/assets/ngrok.gif)
 
+## Connecting to localhost or other Docker containers
+
+If you run Appsmith on-prem and need to connect to other services running on the host machine or as containers, the video below shows how to set things up.
+
+{% embed url="https://youtu.be/4XlgsVekzhI" caption="How To Connect To Services On Localhost Or Docker (Selfhosted Appsmith)" %}
