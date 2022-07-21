@@ -36,6 +36,7 @@
         * [Okta](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/okta.md)
         * [Active Directory](setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/active-directory.md)
     * [Custom CA Root Certificate](setup/instance-configuration/custom-ca-root-certificate.md)
+    * [Frame Ancestors](setup/instance-configuration/frame-ancestors.md)
   * [Instance Management](setup/instance-management.md)
   * [Migrate from Multi-Container setup](setup/migrate.md)
 * [Tutorials](tutorials/README.md)
