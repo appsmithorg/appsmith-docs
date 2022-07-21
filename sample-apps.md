@@ -29,6 +29,8 @@ description: >-
 
 [How to reset a table widget using the `resetWidget()` method?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3)
 
+[How to use the editable table?](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)
+
 ## Server-side Pagination
 
 [How to do pagination with PostgreSQL?](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd)
