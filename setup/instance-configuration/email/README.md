@@ -11,6 +11,8 @@ Email is used to communicate with users on your installation of Appsmith. Emails
 * Invite users to your organization in Appsmith
 * Notify admins of important events & approvals requests
 
+{% embed url="https://youtu.be/NOAofPbmJWw" caption="How To Setup Email Service On Selfhosted Appsmith" %}
+
 ## Configuration Variables
 
 Appsmith requires the following variables to be configured following the [Instance Configuration Guide](../) for your deployment
