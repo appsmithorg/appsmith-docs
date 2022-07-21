@@ -106,4 +106,4 @@ services:
 docker-compose up -d
 ```
 
-* Restore the [database backup](docker.md#database-backup) you had taken at the start of the upgrade process by following the [steps here](../instance-management.md#import-database).
+* Restore the [database backup](docker.md#step-1-database-backup) you had taken at the start of the upgrade process by following the [steps here](../instance-management.md#import-database).
