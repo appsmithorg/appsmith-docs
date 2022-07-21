@@ -1,8 +1,10 @@
 # Action Errors
 
-![Click to expand](../../.gitbook/assets/timeout-error.png)
+{% embed url="https://youtu.be/9YyHwmrkztE" caption="How To Setup Error Handling For APIs and DB Queries" %}
 
 ### Timeout Error
+
+![Click to expand](../../.gitbook/assets/timeout-error.png)
 
 If your API / DB Query times out, it could be due to one of the following reasons
 
