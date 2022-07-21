@@ -401,3 +401,9 @@ Here, the `setInterval` function calls the `getData` query every 2 seconds when 
 A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform a search on the server-side (API server or database) and have the results displayed on the table. A video guide on how to do this is shown below:
 
 {% embed url="https://youtu.be/3ayioaw5uj8" %}
+
+### &#x20;How To Use The Table Widget Total Record Count
+
+The table widget has a shiny new property that enhances the navigation experience for paginated tables. This is the total record count property, and the video below shows how to use it:
+
+{% embed url="https://youtu.be/p7mH00xp7Nc" caption="How To Use Total Record Count On The Table Widget" %}
