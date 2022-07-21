@@ -13,8 +13,6 @@ description: >-
 
 [How to populate a table from a JS Object?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364)
 
-[How to add columns dynamically to a Table widget?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/624bed6351a8863d6c401b91)
-
 [How to add a server-side search to a table?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/623ce9d84d9aea1b062b365f)
 
 [How to add a server-side filter to a table? (MongoDB)](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f7cb189d6d6a6720c9a9c9)
@@ -28,6 +26,8 @@ description: >-
 [How to trigger an action on row selection?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91)
 
 [How to conditionally change a table cell color?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8)
+
+[How to reset a table widget using the `resetWidget()` method?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3)
 
 ## Server-side Pagination
 
@@ -129,11 +129,11 @@ description: >-
 
 ## Date-Time
 
-[How to use date input (Datepicker Widget)?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c)
+[How to use date input (DatePicker Widget)?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c)
 
 [How to build a custom time picker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fce6582cd3d95ca414c02c)
 
-[How to set a max date limit for a date picker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af)
+[How to set a Min and Max date limit for a DatePicker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af)
 
 [How to manipulate the selected date?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9)
 
@@ -191,9 +191,15 @@ description: >-
 
 [How to decode HTML entities?](https://app.appsmith.com/app/framework/decode-html-entities-62558d670d3d384069c02a36)
 
+[How to create a basic HTML editor?](https://app.appsmith.com/applications/62138e0bda926877eb273b34/pages/62b082b940b36d1624787802)
+
 [How to automatically update data on a table using setInterval() and clearInterval()?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6256ffb40d3d384069c08487)
 
 [How to merge the data of 2 CSV files by the ID column and display it in a Table widget?](https://app.appsmith.com/app/framework/merge-csv-files-626c64fff18dd4514ab55b1c)
+
+[How to download a PDF File From a URL?](https://app.appsmith.com/app/pdf-files/downloadpdf-fromurl-62aa1e7584b91337251aa4a3)
+
+[How to generate and download a PDF from a Form widget using APITemplate.io?](https://app.appsmith.com/app/generatepdf/generatepdf-62a76c1284b913372519db81)
 
 ## How do I do X on Appsmith?
 
