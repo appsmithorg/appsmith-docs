@@ -8,6 +8,9 @@ Themes are application-level styles that apply to all the widgets linked to the 
 All apps support theming, but for older apps, changing the theme or customizing the theme may not update the app entirely. This is to prevent overriding any changes you have already done by styling your widgets. If you still want to use themes in your existing application, please reset your widget's styles.
 {% endhint %}
 
+{% embed url="https://youtu.be/v6Lc3p6lv7o" caption="How To Make Beautiful Apps With Theming" %}
+
+
 ## Applying a Theme
 
 Within apps, themes can be changed and customized using the "Theme properties" in the property pane when opening your app or when no widgets are selected.
