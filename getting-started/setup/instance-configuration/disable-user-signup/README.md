@@ -1,6 +1,6 @@
 # Signup Restriction
 
-This document describes ways to restrict users from signing up on your self-hosted Appsmith instance. This configuration is done by editing the [**Instance configuration**](./).
+This document describes ways to restrict users from signing up on your self-hosted Appsmith instance. This configuration is done by editing the [**Instance configuration**](../).
 
 ## Disable Sign-up
 
