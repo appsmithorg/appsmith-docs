@@ -29,6 +29,8 @@ description: >-
 
 [How to reset a table widget using the `resetWidget()` method?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3)
 
+[How to use the editable table?](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)
+
 ## Server-side Pagination
 
 [How to do pagination with PostgreSQL?](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd)
@@ -67,6 +69,8 @@ description: >-
 
 [How to use values of queryParams in an API/Query?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62025b3456d52d3fd7b71797?rows=6)
 
+[How to send dynamic header value to an API?](https://app.appsmith.com/applications/6200ac292cd3d95ca414dc4f/pages/624eda0551a8863d6c406760)
+
 [How to create a GraphQL (Hasura) query to fetch table data?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/61f81d4f9d6d6a6720c9b4ca)
 
 [How to write a RAW MongoDB query to update the document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
@@ -87,13 +91,13 @@ description: >-
 
 [How to run multiple actions from a JS function?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7c0e39d6d6a6720c9a560)
 
+[How to insert values from MultiSelect into Separate Rows in Google Sheets using async/await?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/62447342c99df2369931d23c)
+
 ## Forms
 
-[How to do form field validation?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/62074c466b4b1e154a3bf01a)
+[How to do form field validation?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/6245b7264f1a665b23047e5f)
 
-[How to add dynamic input fields to a form?](https://app.appsmith.com/applications/623cd37b4d9aea1b062b3470/pages/623cd37b4d9aea1b062b347b)
-
-[How to generate a PDF file from a form using APITemplate.io?](https://app.appsmith.com/app/generatepdf/generatepdf-62a76c1284b913372519db81)
+[How to add dynamic input fields to a form?](https://app.appsmith.com/input-widget/dynamic-inputs-624c647651a8863d6c402981)
 
 ## Charts
 
@@ -105,9 +109,11 @@ description: >-
 
 ## Appsmith Framework
 
-[How to use the appsmith store - `storeValue()`?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62051be26b4b1e154a3980a9)
+[How to use the Appsmith store - `storeValue()`?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62051be26b4b1e154a3980a9)
 
-[How to delete a property from the appsmith store?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7b1309d6d6a6720c9a494)
+[How to add or delete a property from the Appsmith store?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/61f7b1309d6d6a6720c9a494)
+
+[How to work with Persistent Store vs Session Store?](https://app.appsmith.com/app/appsmith-store/page1-627b8afe0b47255c28137dca)
 
 [How to open a modal on button click - `openModal()`?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407)
 
@@ -115,7 +121,7 @@ description: >-
 
 [How to reset a widget - `resetWidget()`?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78)
 
-[How to navigate to another page/website - `navigateTo()`?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f8c72f9d6d6a6720c9b90d)
+[How to navigate to another page/website - `navigateTo()`?](https://app.appsmith.com/app/framework/navigateto-62566b650d3d384069c05830)
 
 [How to use queryParams - `{{appsmith.URL}}`?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f8c72f9d6d6a6720c9b90d)
 
@@ -125,15 +131,19 @@ description: >-
 
 ## Date-Time
 
-[How to use date input (Datepicker Widget)?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c)
+[How to use date input (DatePicker Widget)?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c)
 
 [How to build a custom time picker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fce6582cd3d95ca414c02c)
 
-[How to set a max date limit for a date picker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af)
+[How to set a Min and Max date limit for a DatePicker?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af)
 
 [How to manipulate the selected date?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9)
 
 [How to format dates with the MomentJs library?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6228975df782567d61f15158)
+
+[How to set the date of the Date Picker on a button click?](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6256e5e40d3d384069c07baa)
+
+[How to display the current date and time in real-time?](https://app.appsmith.com/app/framework/display-current-date-time-627cb8300b47255c2813c860)
 
 ## Widgets
 
@@ -151,27 +161,47 @@ description: >-
 
 [How to upload a file to your app (using Filepicker Widget)?](https://app.appsmith.com/applications/6200a84f2cd3d95ca414dc0d/pages/6200a84f2cd3d95ca414dc10)
 
+[How to conditionally show an asset either in an Image or in a Video widget?](https://app.appsmith.com/applications/61f3ad999d6d6a6720c9830d/pages/62583bd30d3d384069c0e27b)
+
+[How to set selected values of a MultiSelect widget dynamically?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/62713b488a368d6f1ef5d3b0)
+
+[How to set custom markers on a map?](https://app.appsmith.com/app/map-widget/how-to-set-custom-markers-6287d04f7901344ba8d12a98)
+
 ## UI Components
 
 [How to create a custom header & footer for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/61fb97982cd3d95ca414b20d)
 
 [How to create a sidebar for navigation for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/622afd7e6ec44f30294c3f48)
 
+[How to create an Image Carousel?](https://app.appsmith.com/app/image-carousel/page1-624fca8f457aa64da9e028c3)
+
 ## Utility
 
-[How to build a simple counter app?](https://app.appsmith.com/applications/61e14d22eb0501052b9fae0b/pages/61e14d22eb0501052b9fae0e)
+[How to build a simple counter app?](https://app.appsmith.com/input-widget/input-counter-revamp-624b5f0651a8863d6c4012ad)
 
-[How to build a simple calculator app?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbf8572cd3d95ca414b958)
+[How to build a simple calculator app?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/624c8ea151a8863d6c402cbb)
 
-[How to embed HTML in the app (using `iframe` Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684)
+[How to embed HTML in the app (using `iframe` Widget property `srcDoc`)?](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/624ca5cc51a8863d6c402e31)
 
 [How to parse XML data (using JS Object)?](https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/624dd2e751a8863d6c404b39)
 
-[How to read a CSV file?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/620bdf566b4b1e154a3c2ea1)
+[How to read a CSV file?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/62547025e52b06350af370e8)
 
 [How to convert a CSV file to JSON (using JS Object)?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/620b7d6c6b4b1e154a3c2596)
 
-[How to merge data from two different queries (using JS Object)?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fbc09e2cd3d95ca414b59c)
+[How to merge data from two different queries (using JS Object)?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/62572b3f0d3d384069c09390)
+
+[How to decode HTML entities?](https://app.appsmith.com/app/framework/decode-html-entities-62558d670d3d384069c02a36)
+
+[How to create a basic HTML editor?](https://app.appsmith.com/applications/62138e0bda926877eb273b34/pages/62b082b940b36d1624787802)
+
+[How to automatically update data on a table using setInterval() and clearInterval()?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6256ffb40d3d384069c08487)
+
+[How to merge the data of 2 CSV files by the ID column and display it in a Table widget?](https://app.appsmith.com/app/framework/merge-csv-files-626c64fff18dd4514ab55b1c)
+
+[How to download a PDF File From a URL?](https://app.appsmith.com/app/pdf-files/downloadpdf-fromurl-62aa1e7584b91337251aa4a3)
+
+[How to generate and download a PDF from a Form widget using APITemplate.io?](https://app.appsmith.com/app/generatepdf/generatepdf-62a76c1284b913372519db81)
 
 ## How do I do X on Appsmith?
 
