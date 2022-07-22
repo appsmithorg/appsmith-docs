@@ -73,7 +73,7 @@ To run this query, click on the **RUN** button in the top-right corner of the **
 
 Just like that, you should see the response from the DB Query in the Response Pane tab below.
 
-Next, let's bind this data onto the powerful [table widget](../../../reference/widgets/table.md) of Appsmith!
+Next, let's bind this data onto the powerful [table widget](../../../reference/widgets/table/) of Appsmith!
 
 {% hint style="info" %}
 All names within a page must be unique, including widget names, query names, or API names.
@@ -100,7 +100,7 @@ Let's look at another method for adding a table widget to your canvas.
 3. Drag and drop an **`Table widget`** onto the canvas.
 
 {% hint style="info" %}
-Appsmith provides various widgets, like [tables](../../../reference/widgets/table.md), [lists](../../../reference/widgets/list.md), [buttons](../../../reference/widgets/button/), [maps](../../../reference/widgets/maps.md), [audio](../../../reference/widgets/audio.md), [charts](../../../reference/widgets/chart.md), [forms](../../../reference/widgets/form.md), and more.
+Appsmith provides various widgets, like [tables](../../../reference/widgets/table/), [lists](../../../reference/widgets/list.md), [buttons](../../../reference/widgets/button/), [maps](../../../reference/widgets/maps.md), [audio](../../../reference/widgets/audio.md), [charts](../../../reference/widgets/chart.md), [forms](../../../reference/widgets/form.md), and more.
 {% endhint %}
 
 You'll notice a property window on the right side of the program as soon as you drag the widget into the canvas; you can call it the **Widget Property Pane**. All of the table's configurations and customization properties can be found here. Here's a screenshot of the table widget and its property pane:
@@ -113,7 +113,7 @@ You can access the docked property pane of any widget, by simply clicking on the
 
 Let's look at the Table's Property Pane:
 
-**Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. Go through the detailed documentation [here](../../../reference/widgets/table.md) To learn more about the table widget.
+**Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. Go through the detailed documentation [here](../../../reference/widgets/table/) To learn more about the table widget.
 
 **Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click on the cog icon and set the column data type individually.
 

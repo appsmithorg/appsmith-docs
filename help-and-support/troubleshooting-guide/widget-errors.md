@@ -10,11 +10,11 @@ This error occurs when the value in the property of the widget does not match th
 
 **Why do you see this error?**
 
-While working with [Tables](../../reference/widgets/table.md) or [Lists](../../reference/widgets/list.md), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](../../core-concepts/connecting-to-data-sources/authentication/) response.
+While working with [Tables](../../reference/widgets/table/) or [Lists](../../reference/widgets/list.md), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](../../core-concepts/connecting-to-data-sources/authentication/) response.
 
 **Solution:**
 
-The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users [API](../../core-concepts/connecting-to-data-sources/authentication/) as below. Binding it to a [table](../../reference/widgets/table.md) directly would lead to an error.
+The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users [API](../../core-concepts/connecting-to-data-sources/authentication/) as below. Binding it to a [table](../../reference/widgets/table/) directly would lead to an error.
 
 ```javascript
 {

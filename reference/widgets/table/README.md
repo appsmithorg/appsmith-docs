@@ -5,7 +5,7 @@ The table widget displays data in rows and columns. You can display data from an
 {% embed url="https://youtu.be/-rzePEV2QQ8" %}
 
 {% hint style="info" %}
-If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
+If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 {% endhint %}
 
 ## Properties
@@ -34,7 +34,7 @@ Let's understand the widget properties in detail.
 
 The Table Data in the property pane allows a user to edit data in the table. You can write an array of objects to display it as table rows.
 
-![Property pane showing the Table data](../../.gitbook/assets/table\_data.png)
+![Property pane showing the Table data](../../../.gitbook/assets/table\_data.png)
 
 You can also bind your data from a database / API using the mustache syntax ( \{{\}} ).
 
@@ -42,7 +42,7 @@ Let's bind the data from a mock database into a table widget.
 
 1. Create an App and click on `Datasources` under the explorer panel.
 2. Go to `+Create new` and select the `users` database from the Sample Databases. The user database will now appear under the <mark style="color:green;">Active</mark> window.
-3. From the "Active" window, click on <mark style="color:orange;">New Query+</mark> for the Users database and create a "select" [query](../../core-concepts/data-access-and-binding/querying-a-database/) to fetch the data.
+3. From the "Active" window, click on <mark style="color:orange;">New Query+</mark> for the Users database and create a "select" [query](../../../core-concepts/data-access-and-binding/querying-a-database/) to fetch the data.
 4. Go back to the canvas and drag the table widget onto it.
 5. Open the property pane, clear the Table data window and enter the following snippet:
 
@@ -60,13 +60,13 @@ That's it! The table widget will get populated with the data coming from the que
 
 This property shows all the columns in the table, and it gets auto-populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the column settings.
 
-![](../../.gitbook/assets/columns\_tablewidget.png)
+![](../../../.gitbook/assets/columns\_tablewidget.png)
 
 **Column Settings**
 
 You can customize each table column through a set of properties by clicking on the gear icon.
 
-![Column Settings](../../.gitbook/assets/Column\_control.gif)
+![Column Settings](../../../.gitbook/assets/Column\_control.gif)
 
 \
 Clicking on the gear icon opens the column settings that give you major customization options - Column control and Styles.
@@ -77,12 +77,12 @@ Column Control has the following properties:
 
 **Column type:** This property allows you to select the type of data in the column.
 
-![](../../.gitbook/assets/column\_type.gif)
+![](../../../.gitbook/assets/column\_type.gif)
 
 \
 **Computed Value:** The computed value field is helpful to create custom table columns. For example, you can show a value calculated from the response of two different queries. This field also allows you to manipulate the value using JS expressions; For example, if you want to show the date time stamp in the human-readable format, you can use a Moment.JS function.
 
-![](../../.gitbook/assets/computed\_value.jpg)
+![](../../../.gitbook/assets/computed\_value.jpg)
 
 \
 You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column.
@@ -148,7 +148,7 @@ Let's understand the binding properties in detail. Consider a table `Table_1` wi
 
 And this is how the data looks in the table widget:
 
-![](../../.gitbook/assets/table\_sample\_data.png)
+![](../../../.gitbook/assets/table\_sample\_data.png)
 
 **selectedRow**
 
@@ -176,7 +176,7 @@ The Text widget will then display the data of the row selected on the table.\
 \
 If no row is selected, selectedRow shows the column names with no data.
 
-![](../../.gitbook/assets/slectedRow\_default.png)
+![](../../../.gitbook/assets/slectedRow\_default.png)
 
 **Displaying column value using selectedRow**
 
@@ -328,13 +328,13 @@ Let's bind a text widget to `Table_1` using searchText.
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Action                 | Description                                                                                                                                                                                                                                                                                                    |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                                  |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../appsmith-framework/widget-actions/). |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                           |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../appsmith-framework/widget-actions/).                                                                                                                                                                                 |
+| Action                 | Description                                                                                                                                                                                                                                                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                  |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../../appsmith-framework/widget-actions/). |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                           |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                 |
 
 ### Header Options
 
@@ -390,7 +390,7 @@ In this example, we’ll be using the switch widget (`Switch1`) to control this 
 
 Here, the `setInterval` function calls the `getData` query every 2 seconds when the switch widget is turned on, else, it removes the `autoupdate` (`id`) interval.
 
-![Auto-update table data](<../../.gitbook/assets/Refresh data in tables  table widget.gif>)
+![Auto-update table data](<../../../.gitbook/assets/Refresh data in tables  table widget.gif>)
 
 ### Setup Server-Side Search
 

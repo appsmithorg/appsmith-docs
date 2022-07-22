@@ -34,7 +34,7 @@ We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
 
 ## **Build UI**
 
-* Navigate to **PAGES** → **User Information**. Drag and drop a [**Table**](../reference/widgets/table.md) widget on the canvas. On the **Property Pane** to the right, rename the table to '**usersTable**'.
+* Navigate to **PAGES** → **User Information**. Drag and drop a [**Table**](../reference/widgets/table/) widget on the canvas. On the **Property Pane** to the right, rename the table to '**usersTable**'.
 * Drag and drop a [**Container**](../reference/widgets/container.md) widget to the right of the Table widget. Let's add a few widgets to display user details from the selected row on the table. Add a label titled '**User Details**'.
 * Add [**Input**](../reference/widgets/input.md) widgets for Name **** (nameInput), Email (emailInput) and Phone (phoneInput), a [**Datepicker**](../reference/widgets/datepicker.md) widget for DOB (dobInput), an Image widget for the Image and finally a [**Button**](../reference/widgets/button/) widget labelled '**Update**'.
 
@@ -57,7 +57,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ![Writing query to fetch data in the Query Editor](<../.gitbook/assets/Screenshot 2022-07-12 at 22.38.19.png>)
 
 * Click the **Run** button on the right of the Query Editor to confirm that the query returns data.
-* Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**](../reference/widgets/table.md#table-data) property write this JS snippet **`{{getUsers.data}}`** to display the results from the 'getUsers**'** query on the table.&#x20;
+* Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**](../reference/widgets/table/#table-data) property write this JS snippet **`{{getUsers.data}}`** to display the results from the 'getUsers**'** query on the table.&#x20;
 
 {% hint style="info" %}
 The `{{mustache}}` template is used to write JS inside widgets and queries.
