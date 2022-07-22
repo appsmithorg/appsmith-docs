@@ -22,7 +22,7 @@ Appsmith has a collection of widgets that can be used to build the UI.
 * [Rich Text Editor](../../widget-reference/rich-text-editor.md)
 * [Switch](../../widget-reference/switch.md)
 * [Tabs](../../widget-reference/tabs.md)
-* [Table](../../widget-reference/table.md)
+* [Table](../../widget-reference/table/)
 * [Text](../../widget-reference/text.md)
 * [Video](../../widget-reference/video.md)
 

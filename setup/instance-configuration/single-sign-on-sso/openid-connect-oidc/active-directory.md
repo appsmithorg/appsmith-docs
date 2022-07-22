@@ -40,7 +40,7 @@ Creating a new Client secret in Active Directory
 
 {% embed url="https://youtu.be/v6N09_Q5LoY" %}
 
-* Copy the metadata URL; Remove `/v2.0` from the copied URL and then open it  in a browser window and copy the following configurations from the above link and add them to OIDC Configurations on Appsmith:
+* Copy the metadata URL and open it in a browser window and copy the following configurations from the above link and add them to OIDC Configurations on Appsmith:
 
 | **Azure Active Directory Configuration** | **OIDC configuration field in Appsmith** |
 | ---------------------------------------- | ---------------------------------------- |
@@ -86,11 +86,11 @@ To configure scopes/permissions on Active Directory, follow the steps below:
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
-![Appsmith Username Attribute](../../../../.gitbook/assets/Appsmith-UsernameAttribute-Field.png)
+![Appsmith Username Attribute](<../../../../.gitbook/assets/OIDC \_ Active Directory \_ Username Attribute \_ sub.png>)
 
 #### What does Appsmith need as a Username Attribute?
 
-Appsmith considers **email** address as username. Please ensure that you have added it as an attribute in the Username Attribute field. Please provide email as the attribute name for configuring the username attribute for Active Directory.
+For Active Directory, Appsmith considers **"sub"** address as username. Please ensure that you have added "**sub**" as an attribute in the Username Attribute field.
 
 ### Complete OIDC Setup
 

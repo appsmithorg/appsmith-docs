@@ -342,10 +342,10 @@ How to Fetch data from the sheet?
 You can choose to add filters using range or `where` Clause.
 {% endhint %}
 
-You can display the data by binding it to a [widget](broken-reference). For example, you can display the spreadsheet data in a [table](../widget-reference/table.md) widget.
+You can display the data by binding it to a [widget](broken-reference). For example, you can display the spreadsheet data in a [table](../widget-reference/table/) widget.
 
 {% hint style="info" %}
-Bind the data returned by the query to a [table](../widget-reference/table.md) widget - [TableData](../widget-reference/table.md#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
+Bind the data returned by the query to a [table](../widget-reference/table/) widget - [TableData](../widget-reference/table/#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
 {% endhint %}
 
 ## **Insert Many**

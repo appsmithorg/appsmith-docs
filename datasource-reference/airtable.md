@@ -154,7 +154,7 @@ export default {
 {{GetAirtableRecordsData.readAirtableData()}}
 ```
 
-The [table widget](../widget-reference/table.md) will display all of your Airtable data.&#x20;
+The [table widget](../widget-reference/table/) will display all of your Airtable data.&#x20;
 
 ## Create Records&#x20;
 
