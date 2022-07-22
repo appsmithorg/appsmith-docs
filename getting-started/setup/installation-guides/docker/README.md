@@ -43,7 +43,15 @@ Download the below `docker-compose.yml` file into the appsmith installation fold
 curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
 ```
 
+{% hint style="warning" %}
+For the **Business Edition** - change the **image** name from `appsmith-ce` to `appsmith-ee` for the `image:` key in the `docker-compose.yml` file.
+{% endhint %}
+
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date.
+
+{% hint style="warning" %}
+For the **Business Edition** - add your **license key** (`APPSMITH_LICENSE_KEY`) to the `environment:` key in the `docker-compose.yml` file.
+{% endhint %}
 
 Bring the docker container up by running the following command. (You may need to run as `sudo` if docker and docker-compose are not accessible by your user)
 
@@ -67,7 +75,7 @@ Congratulations! Your Appsmith server should be up and running now. You can acce
 
 ### Updating Appsmith (with docker-compose)
 
-To update Appsmith (configured with docker-compose) manually, go to the root directory of your setup and run the following commands:
+To update Appsmith (configured with docker-compose) manually, go to the root directory of your setup and run the following command:
 
 ```
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
@@ -75,15 +83,15 @@ docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 
 ### Enabling Appsmith Auto-updates (with docker-compose)
 
-If your Appsmith setup does not have auto-update enabled (i.e. it will not have Watchtower container running along with Appsmith in the host machine) You can enable auto-update by following the following steps:
+If your Appsmith setup does not have auto-update enabled (i.e. it will not have the Watchtower container running along with Appsmith in the host machine). You can enable auto-update by following the following steps:
 
-1. Go to the root directory of your Appsmith setup and run:
+1. Go to the root directory of your Appsmith set up and run:
 
 ```
 docker-compose down
 ```
 
-1. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (line 13-23).
+1. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (lines 13-23).
 2. Run the command:
 
 ```
@@ -94,8 +102,16 @@ docker-compose up -d
 
 To quickly get Appsmith up and running, run the following command on your machine:
 
+### Community Edition
+
 ```bash
-docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" --pull always appsmith/appsmith-ce
+```
+
+### Business Edition
+
+```
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<Add_YOUR_LICENSE_KEY> --pull always appsmith/appsmith-ee
 ```
 
 This command will download the image and start Appsmith. Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
@@ -125,12 +141,27 @@ chmod +x restart-containers.sh
 
 To update Appsmith manually, go to the root directory of your setup and run the following commands:
 
+#### Community Edition
+
 ```
 docker rmi appsmith/appsmith-ce -f
 docker pull appsmith/appsmith-ce
 docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
 ```
+
+#### Business Edition
+
+```
+docker rmi appsmith/appsmith-ee -f
+docker pull appsmith/appsmith-ee
+docker rm -f appsmith
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> appsmith/appsmith-ee
+```
+
+{% hint style="info" %}
+Follow the instructions to [upgrade your existing installation](../../upgrade-to-business-edition/) to a Business Edition.
+{% endhint %}
 
 ## Troubleshooting
 
