@@ -1,4 +1,4 @@
-# How to Use JS Object Within Appsmith?
+# How to use JS Object within Appsmith?
 
 JavaScript(JS) is a programming language used on both the client and the server-side. It also supports the creation of an object known as JavaScript Object (JS Object). Javascript object is a collection of properties designated by a key-value pair. In this guide, you’ll learn how to use JavaScript(JS) objects within Appsmith.
 
@@ -179,7 +179,7 @@ Similar to `GetUserList` API, let’s add another API, `GetUserKycStatus,` that 
 
 **How to Display the Data?**
 
-Appsmith provides several different [widgets](../../core-concepts/data-access-and-binding/displaying-data-read/) that you can use to display data. We’ll use a [table widget](../../reference/widgets/table/) to display the data for our use case. Drag a table widget from the left navigation bar onto the canvas. It’s advisable to provide a unique name to the widget like `BeforeJSCall`. For a table widget to display data, it needs data collection. The API `GetUserList` returns a user array. To bind the API response data, you can use `{{ GetUserList.data.users }}` in the table data property. The table widget displays data as below:
+Appsmith provides several different [widgets](../../core-concepts/data-access-and-binding/displaying-data-read/) that you can use to display data. We’ll use a [table widget](../../reference/widgets/table.md) to display the data for our use case. Drag a table widget from the left navigation bar onto the canvas. It’s advisable to provide a unique name to the widget like `BeforeJSCall`. For a table widget to display data, it needs data collection. The API `GetUserList` returns a user array. To bind the API response data, you can use `{{ GetUserList.data.users }}` in the table data property. The table widget displays data as below:
 
 ![Display API response in table widget](<../../.gitbook/assets/JSObjects - Before JS Call.png>)
 

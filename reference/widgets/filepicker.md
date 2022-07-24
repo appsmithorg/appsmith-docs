@@ -26,52 +26,24 @@ if you are trying to upload large files, please increase the timeout in API conf
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+| Internal Property | Description                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **files**         | This is the array of files selected in the file picker. The data of each file are present in each array object and can be accessed using |
 
-### Widget Properties
+| Property                 | Description                                                                                                                                                                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Label**                | Sets the label of the Filepicker.                                                                                                                                                                                       |
+| **Maximum No. of files** | Enables you to set the maximum number of files allowed to be uploaded by a user.                                                                                                                                        |
+| **Maximum File Size**    | Enables you to set the maximum allowed size of each file that a user can upload.                                                                                                                                        |
+| **Data Type**            | This determines the data format of the files uploaded. This can be referenced using                                                                                                                                     |
+| **Allowed File Types**   | Enables you to set constraints on the type of file a user can upload. Accepts an _array_ of wildcards`image/*`, exact mime types `image/jpeg`, or file extensions `.jpg`:`['image/*', '.jpg', '.jpeg', '.png', '.gif']` |
+| **Required**             | When turned on, it makes a user input required and disables any form submission until an input is made.                                                                                                                 |
+| **Visible**              | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                                                     |
 
-These properties allow you to edit the Filepicker widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property                 | Description                                                                                                                                                                                                                                                                  |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Label**                | Sets the text shown within the widget.                                                                                                                                                                                                                                       |
-| **Maximum No. of files** | Sets the maximum number of files allowed to be uploaded by a user.                                                                                                                                                                                                           |
-| **Maximum File Size**    | Sets the maximum allowed size of each file that a user can upload.                                                                                                                                                                                                           |
-| **Allowed File Types**   | <p>Sets the allowed filetypes that a user can upload. Accepts an <em>array</em> of wildcards<code>image/*</code>, exact mime types <code>image/jpeg</code>, or file extensions <code>.jpg</code>.<br><br>e.g.: <code>['image/*', '.jpg', '.jpeg', '.png', '.gif']</code></p> |
-| **Data Format**          | Determines the data format of the files uploaded. Choose from Base64, Binary, or Text (plain).                                                                                                                                                                               |
-| **Required**             | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button will be automatically disabled until the Checkbox is checked.                                                                                           |
-| **Visible**              | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                                               |
-| **Disable**              | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                                                                                                                              |
-| **Animate Loading**      | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                                       |
-
-### Binding Properties
-
-These properties allow you to bind your Filepicker widget with any other widget in queries or JS objects. The following table lists all the binding properties.
-
-| Binding Properties | Description                                                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| **files**          | Contains an _array of file objects_ selected by the user. Each file object contains the file data on its `data` property. |
-| **isDisabled**     | Reflects the state of the widget's **Disabled** setting _(bool)_.                                                         |
-| **isVisible**      | Reflects the state of the widget's **Visible** setting _(bool)_.                                                          |
-
-### Events
-
-You can define functions that will be called when these events are triggered in the widget.
-
-| Event               | Description                                                                                                                                                                                                                            |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onFilesSelected** | Sets an an action to take place when the user selects a file. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
-
-### Styles
-
-Style properties allow you to change the look and feel of the widget.
-
-| Style Property    | Description                                                                                                                                                                      |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Button Color**  | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
-| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+| Action              | Description                                                                                                                                                                                                                                             |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onFilesSelected** | Sets the action to be run when the user selects files to be uploaded. See a list of [supported actions](../appsmith-framework/widget-actions/). You can immediately call an API or the S3 plugin to upload the base64 of the file to your cloud storage |
 
 {% hint style="info" %}
-To learn how to upload or manage files on Cloudinary with the Filepicker widget, [read this tutorial](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget).
+To learn how to upload or manage files on Cloudinary with the filepicker widget, [read this tutorial](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget).
 {% endhint %}
