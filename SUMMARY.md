@@ -203,7 +203,7 @@
 * [Switch](widget-reference/switch.md)
 * [Switch Group](widget-reference/switch-group.md)
 * [Tabs](widget-reference/tabs.md)
-* [Table](widget-reference/table/README.md)
+* [Table](widget-reference/table.md)
   * [Inline Editing](widget-reference/table/inline-editing.md)
 * [Text](widget-reference/text.md)
 * [Tree-select](widget-reference/tree-select.md)
