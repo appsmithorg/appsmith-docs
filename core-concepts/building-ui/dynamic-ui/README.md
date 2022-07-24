@@ -19,11 +19,11 @@ Every property of a widget can be described dynamically using javascript inside 
 
 ## Updating Widget Data
 
-Let us take an example of a [table displaying ](../../../reference/widgets/table/#table-data)a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
+Let us take an example of a [table displaying ](../../../reference/widgets/table.md#table-data)a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
 
 ![Click to expand](<../../../.gitbook/assets/table form.gif>)
 
-In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the [Tables](../../../reference/widgets/table/#binding-properties) [`selectedRow`](../../../reference/widgets/table/#selectedrows) property using its name inside the **`{{ }}`**
+In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the [Tables](../../../reference/widgets/table.md#binding-properties) [`selectedRow`](../../../reference/widgets/table.md#selectedrows) property using its name inside the **`{{ }}`**
 
 Get Product Name Input (Default Text property)
 

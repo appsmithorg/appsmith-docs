@@ -72,7 +72,7 @@ The property is on for a submit form button, and it clears the fields after the 
 
 ## Display Search Results
 
-Now that the search is in place, you can use the table widget to bind the query's response and display the results, as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](table/).
+Now that the search is in place, you can use the table widget to bind the query's response and display the results, as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](table.md).
 
 {% embed url="https://youtu.be/Upn7LDy7UQQ" %}
 
