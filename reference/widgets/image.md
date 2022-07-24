@@ -10,44 +10,44 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 ### Widget Properties
 
-These properties allow you to edit the Image widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+These properties allow you to edit the Image widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Property            | Description                                                                                                                                                                                                                                                   |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Image**           | Sets the source from which to render the image. Accepts an image URL, data URI, or base64 encoded image data.                                                                                                                                                 |
-| **Default Image**   | Sets a default image that will be displayed if no image is rendered via the **Image** property. Accepts an image URL, data URI, or base64 encoded image data.                                                                                                 |
-| **Object Fit**      | Sets how the image should be resized to fit its container. With JS enabled, accepts _string_ values "auto", "cover", or "contain". See CSS [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) docs for reference on these behaviors. |
-| **Max Zoom Level**  | Sets the maximum allowable zoom level for the image view. With JS enabled, accepts _number_ values.                                                                                                                                                           |
-| **Visible**         | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                                |
-| **Animate Loading** | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the `JS` label next to it.                                                      |
-| **Enable Rotation** | Toggles a control on the widget that allows the user to rotate the image.                                                                                                                                                                                     |
-| **Enable Download** | Toggles a control on the widget that allows the user to download the image.                                                                                                                                                                                   |
+| Property            | Description                                                                                                            |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Image**           | Renders the image from the URL or the Base64 that you set.                                                             |
+| **Default Image**   | Sets a default image, from a URL or a Base64, that will be displayed if no image is rendered via the "Image" property. |
+| **Object Fit**      | Sets how the image should be resized to fit its container.                                                             |
+| **Max Zoom Level**  | Sets the maximum allowable zoom level for the image view                                                               |
+| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published    |
+| **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                           |
+| **Enable Rotation** | Controls if the image is allowed to rotate                                                                             |
+| **Enable Download** | Controls if the image is allowed to be downloaded.                                                                     |
 
 ### Binding Properties
 
-These properties allow you to bind your Image widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
-| Binding Property | Description                                                      |
-| ---------------- | ---------------------------------------------------------------- |
-| **image**        | Contains the URL of the image source _(string)._                 |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_. |
+| Property      | Description                                                   | Code Snippet                |
+| ------------- | ------------------------------------------------------------- | --------------------------- |
+| **image**     | This property displays the URL of the image.                  | `{{widget_name.image}}`     |
+| **isVisible** | This property indicates whether the widget is visible or not. | `{{widget_name.isVisible}}` |
 
 ### Events
 
-You can define functions that will be called when these events are triggered in the widget.
+They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Event       | Description                                                                                                                                                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets an action to take place when the user clicks this widget. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JS function to call instead. |
+| Event       | Description                                                                                                                         |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets the action to be run when the user clicks the image. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style Property    | Description                                                                                                                                                                      |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+| Style             | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| **Border Radius** | Allows you to define curved corners.                   |
+| **Box Shadow**    | Allows you to choose from the available shadow styles. |
 
 ## Supported File Type
 
