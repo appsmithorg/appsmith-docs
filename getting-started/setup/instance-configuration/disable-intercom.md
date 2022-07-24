@@ -5,5 +5,5 @@ To disable Intercom on your instance, please set the key `APPSMITH_INTERCOM_APP_
 Example:
 
 ```
-APPSMITH_INTERCOM_APP_ID=
+APPSMITH_DISABLE_INTERCOM=true
 ```
