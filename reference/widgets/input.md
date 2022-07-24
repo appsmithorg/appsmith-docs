@@ -6,31 +6,28 @@ The input widget allows the user to enter or edit data such as text, number, ema
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Properties allow you to edit the input widget, connect it with other widgets and customize the user actions.
 
 ### Widget Properties
 
-These properties allow you to edit the Input widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+These properties allow you to edit the input box. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Widget Property     | Description                                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type will add the associated validation to the user input. Choose from Text, Number, Password, or Email.                 |
-| **Default text**    | Sets the widget's default value before the user has made any changes.                                                                                                                                  |
-| **Max Chars**       | Sets a maximum length allowed for user input. Only appears when **Data Type** is set to Text.                                                                                                          |
-| **Min**             | Sets a minimum value allowed for user input. Only appears when **Data Type** is set to Number.                                                                                                         |
-| **Max**             | Sets a maximum value allowed for user input. Only appears when **Data Type** is set to Number.                                                                                                         |
-| **Regex**           | Used to add custom regex validation to perform on user input. When the input does not match the regex expression, the input is considered invalid.                                                     |
-| **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget will show its **Error Message**.   |
-| **Error message**   | Sets the text of the error message to display if user input is considered invalid.                                                                                                                     |
-| **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                       |
-| **Tooltip**         | Sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                                          |
-| **Required**        | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button will be automatically disabled until the Checkbox is checked.                     |
-| **Visible**         | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                         |
-| **Disabled**        | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                                                        |
-| **Reset on Submit** | Clears the value entered by the user after form submission.                                                                                                                                            |
-| **Autofocus**       | When enabled, the user's cursor will be focused on the input box automatically on page load.                                                                                                           |
-| **Animate Loading** | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
-| **Spellcheck**      | When enabled, user input will be checked for spelling errors.                                                                                                                                          |
+| Widget Property     | Description                                                                                                                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type will add the associated validation to the user input.            |
+| **Label**           | It is a group of properties that allows you to provide a name to the field and define the placement of the widget.                                  |
+| **Max Chars**       | It sets the maximum length allowed for input.                                                                                                       |
+| **Placeholder**     | It sets a placeholder text inside the input. It displays an expected input or hints to the user.                                                    |
+| **Tooltip**         | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                    |
+| **Default text**    | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record |
+| **Regex**           | Used to add custom validations you want to perform on user input.                                                                                   |
+| **Error message**   | Sets the text of the error message to display if Regex validation fails.                                                                            |
+| **Required**        | When turned on, user input is required and disables any form submission until the user enters something in the input box.                           |
+| **Visible**         | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published                          |
+| **Disabled**        | It disables input to the widget. The widget will remain visible to the user, but user input will not be allowed.                                    |
+| **Reset on Submit** | It clears the value entered by the user after submit.                                                                                               |
+| **Autofocus**       | It focuses your cursor on the input box when it is loaded.                                                                                          |
+| **Spellcheck**      | It checks the spelling errors for text input.                                                                                                       |
 
 Let's understand the widget properties in detail.
 
@@ -167,13 +164,6 @@ When you enable `Autofocus`, the cursor focuses on the input box whenever the wi
 
 These properties allow you to bind your input widget with any other widget in queries or JS objects.
 
-| Binding Property | Description                                                                                                                  |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **isDisabled**   | Reflects the state of the widget's **Disabled** setting _(bool)_.                                                            |
-| **isValid**      | Reflects whether the widget's input is considered **Valid** _(bool)_.                                                        |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.                                                             |
-| **text**         | Contains the widget's text / user input, either as a _string_ or _number_. depending on the widget's **Data Type** property. |
-
 #### **Text**
 
 It fetches the value that the user enters in the input widget. It changes when the default value changes or the user enters a new value in the input field.
@@ -202,38 +192,26 @@ Property binding has other applications. For example, it helps in parsing the va
 
 ### Events
 
-| Event             | Description                                                                                                                                                                                                                                              |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onTextChanged** | Sets an an action to take place when the input's value is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead.              |
-| **onSubmit**      | Sets an an action to take place when the input is submitted with the ENTER key. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| Event             | Description                                                                                                                                                                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | This event is triggered when the user enters a value or when the existing value is changed. You can specify the actions to be performed when this event is fired. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
-### Label
+### Label Styles
 
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+You can modify the basic styling of the input widget label. Available options are listed below.
 
-| Label         | Description                                                                                          |   |
-| ------------- | ---------------------------------------------------------------------------------------------------- | - |
-| **Text**      | Sets the label text of the widget.                                                                   |   |
-| **Position**  | Sets where the label appears relative to the widget's input area. Choose between Left, Top, or Auto. |   |
-| **Alignment** | Sets whether the label is left- or right-aligned.                                                    |   |
-| **Width**     | Sets the width of the label. The number represents how many characters/columns wide the label is.    |   |
+* Text color;
+* Text size;
+* Font Style (**Bold**, _Italic_).
 
-| Label Styles         | Description                                                                                                                          |   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | - |
-| **Text Color**       | Sets the text color for the label. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.       |   |
-| **Text Size**        | Sets the size of the label font. Accepts valid CSS [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values. |   |
-| **Label Font Style** | Toggles font styles (**bold** or _italic)._                                                                                          |   |
+### Icon Options
 
-### **Styles**
+You can add icons to your input widget, allowing users to recognize the expected input instantly.
 
-Style properties allow you to change the look and feel of the widget.
+Under Icon options, you can -
 
-| Style Property     | Description                                                                                                                                                                      |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Icon**           | Sets an icon to be included in the input field.                                                                                                                                  |
-| **Icon Alignment** | Sets whether the icon appears on the left or right of the input field.                                                                                                           |
-| **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+* Pick a suitable icon for your input widget;
+* Align the icon in the input widget (left or right).
 
 {% hint style="info" %}
 We currently use the icons from[ the Blueprint](https://blueprintjs.com) library. You can see the list of icons[ here](https://blueprintjs.com/docs/#icons).
