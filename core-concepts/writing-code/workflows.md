@@ -34,6 +34,8 @@ For example, the properties like `OnTextChanged` and `OnSubmit` of an input widg
 
 ### **Use an Async Function Response in a Sync Field**
 
+{% embed url="https://youtu.be/yn_8gs5w04g" %}
+
 Let's look at some examples to understand how you can use async functions in sync fields.
 
 #### **Use case**
