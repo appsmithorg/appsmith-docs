@@ -25,3 +25,5 @@ Exiting application. Invalid license key.
 {% hint style="warning" %}
 Please get in touch with our support team either on [Discord](https://discord.com/invite/rBTTVJp) or by [email](mailto:support@appsmith.com) to renew your license.
 {% endhint %}
+
+Once you have a new license key, [replace the existing license key](docker.md#step3-add-or-replace-license-key) in the `docker-compose.yml` file.
