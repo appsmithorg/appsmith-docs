@@ -132,3 +132,9 @@ Style properties allow you to change the look and feel of the widget.
 | **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
 | **Border Radius**    | Allows you to define curved corners.                     |
 | **Box Shadow**       | Allows you to choose from the available shadow styles.   |
+
+### Server-side Filterting
+
+The Select widget has the option to configure server-side filtering, where search queries are sent to the backend, and responses are used to populate options on the Select widget. The video below explains how to configure this.
+
+{% embed url="https://youtu.be/QDmTwRaLzHg" %}
