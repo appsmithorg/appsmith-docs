@@ -1,6 +1,6 @@
 # Maintenance Window
 
-**Adding a configurable maintenance window for Appsmith’s auto-updates**
+## **Adding a configurable maintenance window for Appsmith’s auto-updates**
 
 Checking for updates can be configured to run during a pre-specific maintenance window by specifying a cron expression to the `--schedule` argument in the `auto_update` container’s command.
 

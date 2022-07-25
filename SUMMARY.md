@@ -42,6 +42,8 @@
       * [Custom CA Root Certificate](getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate.md)
     * [Super Admin](getting-started/setup/instance-configuration/admin-settings.md)
   * [Instance Management](getting-started/setup/instance-management/README.md)
+    * [Supervisor](getting-started/setup/instance-management/supervisor.md)
+    * [Appsmithctl](getting-started/setup/instance-management/appsmithctl.md)
     * [Maintenance Window](getting-started/setup/instance-management/maintenance-window.md)
   * [Upgrade to Business Edition](getting-started/setup/upgrade-to-business-edition/README.md)
     * [Docker](getting-started/setup/upgrade-to-business-edition/docker.md)

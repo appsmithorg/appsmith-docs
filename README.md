@@ -27,7 +27,7 @@ You can build anything from simple CRUD apps to complicated multi-step workflows
 
 There are two ways of using Appsmith:
 
-* [Appsmith Cloud](https://app.appsmith.com/): Try Appsmith in our cloud environment. (Read about our [data security](product/security.md)).&#x20;
+* [Appsmith Cloud](https://app.appsmith.com/): Try Appsmith in our cloud environment. (Read about our [data security](broken-reference)).&#x20;
 * [Self-Host Appsmith](getting-started/setup/): Deploy and manage Appsmith on your local machine or private server instance.&#x20;
 
 ## First Steps

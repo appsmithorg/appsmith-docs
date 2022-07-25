@@ -6,29 +6,29 @@ The currency input widget gives you an input field to capture a user's currency 
 
 ## Properties
 
-Properties allow you to edit the input box, connect it with other widgets and customize the user actions. Let's look into different types of properties.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
 ### Widget Properties
 
-These properties allow you to edit the input box. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
+These properties allow you to edit the Currency Input widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Widget Property           | Description                                                                                                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Allow currency change** | It enables/disables the currency dropdown next to the input. If you enable this property, the User will change the currency from the dropdown.                                             |
-| **Currency**              | It sets the currency type of the widget                                                                                                                                                    |
-| **Decimals**              | It sets the number of digits allowed after the decimal separator.                                                                                                                          |
-| **Label**                 | It is a group of properties that allows you to provide a name to the field and define the placement of the widget.                                                                         |
-| **Placeholder**           | It sets a placeholder text inside the input. It displays an expected input or hints to the user.                                                                                           |
-| **Tooltip**               | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                           |
-| **Default text**          | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record                                        |
-| **Regex**                 | It is used to add custom validations you want to perform on user input.                                                                                                                    |
-| **Error message**         | Sets the text of the error message to display if Regex validation fails.                                                                                                                   |
-| **Required**              | When turned on, user input is required and disables any form submission until the user enters something in the input box.                                                                  |
-| **Visible**               | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                 |
-| **Disabled**              | It disables input to the widget. The widget will remain visible to the user, but user input will not be allowed.                                                                           |
-| **Reset on Submit**       | It clears the value entered by the user after submission.                                                                                                                                  |
-| **Auto focus**            | It focuses your cursor on the input box when it is loaded.                                                                                                                                 |
-| **Animate loading**       | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
+| Property                  | Description                                                                                                                                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Allow currency change** | Enables/disables a currency dropdown next to the input which the user can use to change the selected currency.                                                                                         |
+| **Currency**              | Sets the currency type for the widget. When using JS, accepts _string_ [ISO 4217 ](https://www.iso.org/iso-4217-currency-codes.html)currency codes.                                                    |
+| **Decimals**              | Sets the number of digits allowed after the decimal separator (0, 1, or 2).                                                                                                                            |
+| **Default text**          | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's selectedRow to update a record                                                    |
+| **Regex**                 | It is used to add custom validations you want to perform on user input.                                                                                                                                |
+| **Valid**                 | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget will show its **Error Message**.   |
+| **Error message**         | Sets the text of the error message to display if the user's input is considered invalid.                                                                                                               |
+| **Placeholder**           | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                       |
+| **Tooltip**               | Sets a tooltip that appears when the user hovers over the widget with the mouse. Use this to provide hints or extra information to the user.                                                           |
+| **Required**              | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button will be automatically disabled until the Checkbox is checked.                     |
+| **Visible**               | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                         |
+| **Disabled**              | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                                                        |
+| **Reset on Submit**       | Clears the value entered by the user after form submission.                                                                                                                                            |
+| **Auto Focus**            | When enabled, the user's cursor will be focused on the input box automatically on page load.                                                                                                           |
+| **Animate loading**       | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 
 Let's understand the widget properties in detail.
 
@@ -38,41 +38,7 @@ It enables/disables the currency dropdown next to the input box. If you enable t
 
 {% embed url="https://youtu.be/Rvzi2nUqimc" %}
 
-**Label**
-
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
-
-**Text**
-
-It allows you to set the display name of the Currency Input. For example, if you want the user to enter an Item price on the currency input box, you can enter the text as “Item Price.”
-
-{% hint style="info" %}
-You can leave the text empty if you don't want any display name for your Currency Input widget.
-{% endhint %}
-
-**Position**
-
-It allows you to specify the placement of the label. You can select one of the available options:
-
-* Top - It allows you to align the text at the top of the Currency Input box.
-* Left - It aligns the text to the left of the Currency Input box. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
-  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Currency Input box. You can choose:
-    * Left - It aligns the text to the widget's left boundary that is away from the Currency Input box.
-    * Right - It aligns the text closer to the Currency Input box.
-  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Currency Input box.
-* Auto - It automatically adjusts the position of the text based on the Currency Input box's height.
-
-{% hint style="info" %}
-Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
-{% endhint %}
-
-You can leave the label empty if you don’t want any labels.
-
-{% embed url="https://youtu.be/zlEEwBXErd0" %}
-How to set the label properties?
-{% endembed %}
-
-**Placeholder**
+#### Placeholder
 
 You can set a proxy text/value inside the input box using the placeholder property. It can be any message or hint for the expected input.
 
@@ -164,12 +130,15 @@ When you enable `Auto focus`, the cursor focuses on the input box whenever the w
 These properties allow you to bind your currency input widget with any other widget in queries or JS objects.\
 These properties help you share values between widgets and allow you to access the widget property within Queries or JS functions easily.
 
-| Property         | Description                                                                  | Snippet                                 |
-| ---------------- | ---------------------------------------------------------------------------- | --------------------------------------- |
-| **Text**         | It fetches the data entered in the widget as a **string**                    | `{{currency_widget_name.text}}`         |
-| **Value**        | It fetches the data entered in the widget as a **number**                    | `{{currency_widget_name.value}}`        |
-| **countryCode**  | It fetches the country code of the selected currency                         | `{{currency_widget_name.Countrycode}}`  |
-| **currencyCode** | It gets the alphabetic code (based on ISO standard) of the selected currency | `{{currency_widget_name.Currencycode}}` |
+| Property         | Description                                                                                                 |                                         |
+| ---------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| **countryCode**  | Contains the country code of the selected currency _(string)._                                              | `{{currency_widget_name.Countrycode}}`  |
+| **currencyCode** | Contains the __ [ISO 4217 ](https://www.iso.org/iso-4217-currency-codes.html)code of the selected currency. | `{{currency_widget_name.Currencycode}}` |
+| **isDisabled**   | Reflects the state of the widget's **Disabled** setting _(bool)_.                                           | `{{currency_widget_name.isDisabled}}`   |
+| **isValid**      | Reflects whether the widget's input is considered **Valid** _(bool)_.                                       | `{{currency_widget_name.isValid}}`      |
+| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.                                            | `{{currency_widget_name.isVisible}}`    |
+| **text**         | Contains the value of the widget's input, represented as a _string._                                        | `{{currency_widget_name.text}}`         |
+| **value**        | Contains the value of the widget's input, represented as a _number._                                        | `{{currency_widget_name.value}}`        |
 
 **Text**
 
@@ -242,14 +211,63 @@ Let's take a widget `currencyinput1` use this property to display the selected c
 
 ### Events
 
-| Event         | Description                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| onTextChanged | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| Event             | Description                                                                                                                                                                                                                         |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | Sets an an action to take place when the input's value is changed. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead.              |
+| **onSubmit**      | Sets an an action to take place when the input is submitted with the ENTER key. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
 
-### Label Styles
+### Label
 
-Style properties allow you to modify the widget's label visually. It has several options:
+The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-* Text color;
-* Text size;
-* Font Style (Bold, _Italic_)
+| Label         | Description                                                                                          |   |
+| ------------- | ---------------------------------------------------------------------------------------------------- | - |
+| **Text**      | Sets the label text of the widget.                                                                   |   |
+| **Position**  | Sets where the label appears relative to the widget's input area. Choose between Left, Top, or Auto. |   |
+| **Alignment** | Sets whether the label is left- or right-aligned.                                                    |   |
+| **Width**     | Sets the width of the label. The number represents how many characters/columns wide the label is.    |   |
+
+**Text**
+
+It allows you to set the display name of the Currency Input. For example, if you want the user to enter an Item price on the currency input box, you can enter the text as “Item Price.”
+
+{% hint style="info" %}
+You can leave the text empty if you don't want any display name for your Currency Input widget.
+{% endhint %}
+
+**Position**
+
+It allows you to specify the placement of the label. You can select one of the available options:
+
+* Top - It allows you to align the text at the top of the Currency Input box.
+* Left - It aligns the text to the left of the Currency Input box. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
+  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Currency Input box. You can choose:
+    * Left - It aligns the text to the widget's left boundary that is away from the Currency Input box.
+    * Right - It aligns the text closer to the Currency Input box.
+  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Currency Input box.
+* Auto - It automatically adjusts the position of the text based on the Currency Input box's height.
+
+{% hint style="info" %}
+Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
+{% endhint %}
+
+You can leave the label empty if you don’t want any labels.
+
+{% embed url="https://youtu.be/zlEEwBXErd0" %}
+How to set the label properties?
+{% endembed %}
+
+| Label Styles         | Description                                                                                                                          |   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | - |
+| **Text Color**       | Sets the text color for the label. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.       |   |
+| **Text Size**        | Sets the size of the label font. Accepts valid CSS [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values. |   |
+| **Label Font Style** | Toggles font styles (**bold** or _italic)._                                                                                          |   |
+
+### Styles
+
+Style properties allow you to change the look and feel of the widget.
+
+| Style Property    | Description                                                                                                                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
