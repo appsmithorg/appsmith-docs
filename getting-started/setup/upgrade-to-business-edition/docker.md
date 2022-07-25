@@ -40,7 +40,11 @@ And save the file.
 
 ### **Step3: Add License Key**
 
-Navigate to the directory where the `docker-compose.yml` file is located. Add the Business Edition license key under the environment key and save the file.
+Navigate to the directory where the `docker-compose.yml` file is located. Add the Business Edition license key under the **environment** key and save the file.
+
+{% hint style="warning" %}
+Add the key **environment** to the `docker-compose.yml` file if **not** already present.
+{% endhint %}
 
 ```
 environment:
