@@ -1,6 +1,10 @@
 # Import from Repository
 
-​Write a caption​If you already have an Appsmith App in a Git repository, you can import it to a new organization or a different Appsmith account. Follow the steps given below:
+
+
+{% embed url="https://youtu.be/B4gR4XligTo" %}
+
+​If you already have an Appsmith App in a Git repository, you can import it to a new organization or a different Appsmith account. Follow the steps given below:
 
 * On the Appsmith organization home, click on desired organization’s Menu button and select Import.
 * Choose the `Import from a Git repo` option on the import application pop-up. You'll be navigated to an `Import from the Git Repository` screen.
