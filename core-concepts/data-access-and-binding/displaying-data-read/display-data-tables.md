@@ -1,6 +1,6 @@
 # Display Data in Tables
 
-The [Table Widget](../../../reference/widgets/table.md) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
+The [Table Widget](../../../reference/widgets/table/) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
 ![](<../../../.gitbook/assets/bind-table (2) (4) (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (9) (1).gif>)
 
@@ -14,7 +14,7 @@ Tables are generally required to display large data sets from [Queries](../query
 
 ### Offset Based Pagination
 
-This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the [Table](../../../reference/widgets/table.md) and is used in both APIs and Queries.
+This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the [Table](../../../reference/widgets/table/) and is used in both APIs and Queries.
 
 The pageNo and pageSize can be used in the API / Query by referencing them inside `{{ }}`
 
@@ -34,7 +34,7 @@ This method uses a value in the response of the API as the key to the next API c
 
 ## Server-Side Searching / Filtering
 
-[Tables](../../../reference/widgets/table.md) come with client-side searching, and filtering out of the box. To perform these operations [server-side](../../../reference/widgets/table.md#setup-server-side-search), we have to pass these values to the API / Query.
+[Tables](../../../reference/widgets/table/) come with client-side searching, and filtering out of the box. To perform these operations [server-side](../../../reference/widgets/table/#setup-server-side-search), we have to pass these values to the API / Query.
 
 #### Searching
 

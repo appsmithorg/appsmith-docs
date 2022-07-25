@@ -67,48 +67,42 @@ The next thing you would like to do is set up some data for the list widget. You
 
 ## Properties
 
-The widget properties allow you to modify the look and feel of the widget and define the data binding. You can also specify the operations you want to perform on the list widget in the properties pane.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-The properties structure generally follows the same conventions for the widgets available on the platform, with some variations to cater to specific properties depending on the type of widget that you would be using. In the case of a list widget, the properties pane is **available on the right bar** and has two subheads: General and Events.
+### Widget Properties
 
-{% hint style="info" %}
-Ensure that you select the widget to access its properties on the right bar.
-{% endhint %}
+These properties allow you to name, edit the List widget.&#x20;
 
-| **Property**               | **Description**                                                                    | **Example**                                                                                                                                                                                     | **Code Snippet**             |
-| -------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| **Name**                   | Allows you to provide a unique name to the widget                                  | Say you are using a list to display employees so that you can name the widget as - EmployeeList.                                                                                                |                              |
-| **Items**                  | Allows you to bind static or dynamic data collection to the widget.                | You can supply a static JSON or bind query/API response.                                                                                                                                        | \{{query\_name.data\}}       |
-| **Background Color**       | Allows you to choose the background color of the widget.                           | You can select the color from the color pallet or use an HTML color Code by enabling a JS label next to it.                                                                                     |                              |
-| **Item Background Color**  | Allows you to set an item background color.                                        | You can select the color from the color pallet or use an HTML color Code by enabling a JS label next to it.                                                                                     |                              |
-| **Item Spacing**           | Allows you to set the padding between the adjacent items.                          | You can supply padding in pixels(px) like 5px.                                                                                                                                                  |                              |
-| **Server-side Pagination** | Allows you to set pagination for large datasets returned as subsets to the client. | You can define the [pagination for the large datasets.](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)                                                |                              |
-| **Visible**                | Allows you to show/hide a widget.                                                  | You can either use a toggle or code to turn it off/on.                                                                                                                                          | \{{widget\_name.isVisible\}} |
-| **Animate Loading**        | Allows you to control a widget’s animation on the page load.                       | You can use a toggle to turn it on/off. When turned off, the widget will load without any skeletal animation. You can also turn it off/on using javascript by enabling the JS label next to it. |                              |
-
-## General
-
-You can use the properties under this subhead to modify the look and feel of the widget, like background color, item spacing, etc., and bind the dataset.
-
-Let's deep dive into each property available under this head.
-
-### Name of Widget
+#### Name of Widget
 
 You can see a textbox available at the top of the Properties pane. List1 is the default name given to a list widget added to the canvas. The number `{1}` in List1 is a running sequence. If you add more list widgets, the names of the subsequent list widgets could be like List2, List3, and more.
 
 {% embed url="https://youtu.be/WqSrZphpZv4" %}
+How to name a list widget?
+{% endembed %}
 
 {% hint style="info" %}
 It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
 {% endhint %}
 
-### Items
+All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+| Property                   | Description                                                                                                                                                                                                                                               |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Items**                  | Allows you to bind static or dynamic data collection to the widget.                                                                                                                                                                                       |
+| **Server-side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. [See here](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination) for more information on pagination. |
+| **Visible**                | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                            |
+| **Animate Loading**        | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
+
+#### Items
 
 Items are used to bind your dataset with the list widget. Either you want to iterate over static or dynamic data generated by executing a database Query/API call.
 
 To have a dynamic data binding for the list widget, you can use the **Connect Data** button on the right bar or choose the Queries/API/JS functions from the left navigation bar available under the **Explorer** tab.
 
 {% embed url="https://youtu.be/PPsqqkaq_7Q" %}
+How to add data to widget?
+{% endembed %}
 
 #### Connect Data
 
@@ -184,33 +178,11 @@ Similarly, you can bind bookName, category, author, publishedDate, and price to 
 If you are binding the dynamic response of your query or API to the list widget, remember to use the query columns or API response object’s attributes to map to the individual widget by using <mark style="color:orange;">`currentItem.<attribute_or_column_name>`</mark>.
 {% endhint %}
 
-### Format
-
-Now that the widget has data linked to it, let’s do some formatting changes to enhance the look and feel of the widget.
-
-#### Background Color
-
-You can use the property background color to change the widget’s background. You can select the available colors from the color pallet to change the background color.
-
-#### Item Background Color
-
-Like Background color, you can select the available colors from the pallet to change the item’s background color for your widget.
-
-![How to set background/item background color for a list widget?](../../.gitbook/assets/List-Widget-Background-Item-Background-Color.png)
-
-{% hint style="info" %}
-Tip: To change the background/item background color by using HTML Color codes, click the JS label next to Background Color/ Item Background Color label and supply the HTML Color code in the box below.
-{% endhint %}
-
-#### Item Spacing
-
-You can use item spacing to add the padding to the list cells. Padding will ensure that you have some space included between the adjacent cells of the widget. Item spacing uses Pixels(px) as a unit. You can supply a number like 5 to the item spacing that adds the padding of 5px to the list cells.
-
-### Server Side Pagination
+#### Server Side Pagination
 
 You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md).
 
-### Visible
+#### Visible
 
 You can use Visible to show or hide the widget. By default, visible is **on** that is enabled, so the widget is visible on page load. This property particularly comes in handy when you want to **hide/show** a widget programmatically or hide a widget on page load and then show it when a particular condition or data is available.
 
@@ -233,15 +205,30 @@ When you check the checkbox, it will enable the Visible property, and shows the 
 
 {% embed url="https://youtu.be/iJICPdtoUQc" %}
 
-## Events
+### Binding Properties
 
-You use events to capture a user interaction and perform various operations.
+These properties allow you to bind your List widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| **Event**       | **Description**                                              | **Example**                                                                                                 | **Code Snippet**                         |
-| --------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| onListItemClick | Allows you to capture the click event and trigger an action. | You can perform [various actions when the click event is triggered](../appsmith-framework/widget-actions/). | `{{widget_name.selectedItem.item_name}}` |
+| Binding Property    | Description                                                                                                                                                                                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **backgroundColor** | Represents the widget's **Background Color** setting as a CSS `color` value _(string)_.                                                                                                                                                   |
+| **gridGap**         | Reflects the widget's **Item Spacing** property _(number)_.                                                                                                                                                                               |
+| **isVisible**       | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                                                          |
+| **items**           | <p>Contains an <em>array</em> of <em>objects</em> that each represent a widget within the list items, and holds information about that widget's state.<br><br>e.g. <code>[ { "Text1": { "isVisible": true, ... }, ... }, ... ]</code></p> |
+| **listData**        | Contains an _array_ of _objects_ that each represent a list item and its data.                                                                                                                                                            |
+| **pageNo**          | Contains a _number_ representing which page of the list is currently being displayed.                                                                                                                                                     |
+| **pageSize**        | Contains a _number_ representing the number of list items that can fit on one page of the List widget.                                                                                                                                    |
+| **selectedItem**    | Contains an _object_ representing the data of the list item that is selected.                                                                                                                                                             |
 
-### onListItemClick
+### Events
+
+You can define functions that will be called when these events are triggered in the widget.
+
+| Event               | Description                                                                                                                                                                                                                                             |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onListItemClick** | Sets an an action to take place when the user clicks on one of the list items. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+
+#### onListItemClick
 
 For a list widget, the event onListItemClick is fired whenever a user clicks or selects an item on the list. You can perform many[ supported actions](../appsmith-framework/widget-actions/) on a list item click.
 
@@ -252,5 +239,43 @@ An individual item on the list is defined as the entire row. A row includes the 
 {% endhint %}
 
 {% embed url="https://youtu.be/_h3hUjnGwSE" %}
+
+### Styles
+
+You can do some formatting changes to enhance the look and feel of the widget by using styles.
+
+| Style Property            | Description                                                                                                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Background Color**      | Sets the background color of the widget. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                  |
+| **Item Background Color** | Sets the background color of the list item cards. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                         |
+| **Item Spacing**          | Sets the width in pixels of the gap between list item cards. Accepts _number_ values.                                                                                            |
+| **Border Radius**         | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**            | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+
+#### Background Color
+
+You can use the property background color to change the widget’s background. You can select the available colors from the color pallet to change the background color.
+
+#### Item Background Color
+
+Like Background color, you can select the available colors from the pallet to change the item’s background color for your widget.
+
+![How to set background/item background color for a list widget?](../../.gitbook/assets/List-Widget-Background-Item-Background-Color.png)
+
+{% hint style="info" %}
+Tip: To change the background/item background color by using HTML Color codes, click the JS label next to Background Color/ Item Background Color label and supply the HTML Color code in the box below.
+{% endhint %}
+
+#### Item Spacing
+
+You can use item spacing to add the padding to the list cells. Padding will ensure that you have some space included between the adjacent cells of the widget. Item spacing uses Pixels(px) as a unit. You can supply a number like 5 to the item spacing that adds the padding of 5px to the list cells.
+
+#### Border Radius
+
+You can use the border radius style to curve the edges of list widget. You can select one of the available option to choose the border radius.
+
+#### Box Shadow
+
+You can use the box shadow style to cast a drop shadow of list widget. You can select one of the available option to choose the box shadow.
 
 Take advantage of using the list widget to display your datasets and visualize your content in a better way.

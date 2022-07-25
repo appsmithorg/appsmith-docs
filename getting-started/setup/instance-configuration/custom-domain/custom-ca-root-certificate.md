@@ -2,7 +2,7 @@
 
 You can install custom CA root certificates in your Appsmith container. It is useful when:
 
-1. You interact with internal endpoints that use private [SSL certificates](./#custom-ssl-certificate) via Appsmith without disabling SSL verification.
+1. You interact with internal endpoints that use private [SSL certificates](../custom-domain.md#custom-ssl-certificate) via Appsmith without disabling SSL verification.
 2. If you have your Appsmith instance behind a firewall or a proxy, that requires SSL decryption.
 
 ### Setup Custom CA Root Folder

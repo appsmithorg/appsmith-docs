@@ -30,14 +30,14 @@ _In case the certificate files have a different name from `fullchain.pem` and `p
 
 After configuring your custom domain as above, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you are on.
 
-Configure the `APPSMITH_CUSTOM_DOMAIN field` in your [instance configuration](../) with your custom domain
+Configure the `APPSMITH_CUSTOM_DOMAIN field` in your [instance configuration](./) with your custom domain
 
 ```bash
 # Example Docker Configuration
 APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
 ```
 
-[Restart the appsmith container](../).
+[Restart the appsmith container](./).
 
 {% hint style="info" %}
 Please ensure port 80 on your server is open and accessible from the Internet for the HTTPS certificate to be provisioned.
@@ -76,7 +76,7 @@ Please ensure port 80 on your server is open and accessible from the Internet fo
 
 To host the Appsmith DigitalOcean droplet on a custom domain, you'll need to select the Add a domain option from the dashboard.
 
-![](../../../../.gitbook/assets/custom\_domain.jpeg)
+![](../../../.gitbook/assets/custom\_domain.jpeg)
 
 It redirects you to a new page. Add your domain name there. Once that's done, it'll give you records of the name servers. Copy the details of the NS (name servers). Use the custom name server's configuration on your domain provider. Sometimes, it might take up to 24-48 hours for this to go live!
 

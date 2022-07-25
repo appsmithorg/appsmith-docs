@@ -29,7 +29,7 @@ Let's discuss what has happened now:
 
 * As soon as you add a new `Table` widget, you should see some pre-populated data.
 * A floating window, titled **`Table1`**, open's up on the right of the table. This is the widget's property-pane; here, you can configure the widget's properties.
-* The `Table Data` property in the pane defines what data will be displayed on the table. You can read more about the table widget's properties [here](../../../reference/widgets/table.md).
+* The `Table Data` property in the pane defines what data will be displayed on the table. You can read more about the table widget's properties [here](../../../reference/widgets/table/).
 * By default, the name of the table is set to **Table1**. It can be renamed to anything you like by simply double-clicking it. Let's now change it to **`ProductsTable`**.
 
 ### Understanding the Table Widget
