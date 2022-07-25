@@ -6,7 +6,9 @@ This function is used to store key-value data to access later anywhere in the ap
 Appsmith <mark style="color:red;">`storeValue`</mark> works similar to the browser's localStorage method [setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem).
 {% endhint %}
 
-![](../../../.gitbook/assets/Store\_value.gif)
+
+
+{% embed url="https://youtu.be/UUvJn8oWqNs" %}
 
 ## Signature
 
@@ -32,7 +34,7 @@ You can read values from the store by referencing the key inside the appsmith.st
 
 ## Usage
 
-In Appsmith, there are two types of storeValue. The first is a persistent store, and the second is a session store.&#x20;
+In Appsmith, there are two types of storeValue. The first is a persistent store, and the second is a session store.
 
 {% hint style="info" %}
 The <mark style="color:red;">`storeValue`</mark> in Appsmith works similar to the browser's localStorage method [setItem.](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
@@ -44,7 +46,7 @@ If you store a value in the persistent store, it will remain in the store across
 
 You can set a persistent value by simply calling the store value with two parameters: one is the `property name` and the other is the `value of the text`. Let's see how it works:
 
-* Drag and drop the _**input widget**_ to the canvas.&#x20;
+* Drag and drop the _**input widget**_ to the canvas.
 * Now, go to the widget properties.
 * Next, in the `ontextchanged` action, toggle `JS` option.
 * Now copy and paste the code below, adjusting the value as needed.
@@ -54,7 +56,7 @@ You can set a persistent value by simply calling the store value with two parame
 ```
 
 {% hint style="info" %}
-* By default persist will be true, if you want to use session store you have to define persist=false.&#x20;
+* By default persist will be true, if you want to use session store you have to define persist=false.
 * The persisted state is cleared out when a user logs out.
 {% endhint %}
 
@@ -62,7 +64,7 @@ You can set a persistent value by simply calling the store value with two parame
 
 If you want to store value only for a session and have it cleared when you reload the page or close the window, you can use the session store. Let's see how it works:
 
-* Drag and drop another **input widget** to the canvas.&#x20;
+* Drag and drop another **input widget** to the canvas.
 * Now, go to the widget properties.
 * Next, in the `ontextchanged` action, toggle the `JS` option.
 * Now copy and paste the following code, adjusting the value as needed.
