@@ -47,8 +47,8 @@ redirects:
   setup/instance-configuration/custom-ca-root-certificate: getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate.md
   setup/instance-management: getting-started/setup/instance-management/README.md
   setup/migrate: getting-started/setup/installation-guides/docker/migrate.md
-  setup/upgrade-to-business-edition: getting-started/setup/upgrade-to-business-edition
-  setup/upgrade-to-business-edition/docker: getting-started/setup/upgrade-to-business-edition/docker
+  setup/upgrade-to-business-edition: getting-started/setup/upgrade-to-business-edition/README.md
+  setup/upgrade-to-business-edition/docker: getting-started/setup/upgrade-to-business-edition/docker.md
   tutorials/review-moderator-dashboard: learning-and-resources/tutorials/review-moderator-dashboard/README.md
   tutorials/review-moderator-dashboard/setting-up-the-app: learning-and-resources/tutorials/review-moderator-dashboard/setting-up-the-app.md
   tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries: learning-and-resources/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries.md
