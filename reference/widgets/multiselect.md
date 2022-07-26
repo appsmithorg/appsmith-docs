@@ -2,7 +2,7 @@
 
 Multi-select widget is used to capture user inputs from a specified list of permitted options. This widget captures multiple choices.
 
-![](<../../.gitbook/assets/multiselect (1).png>)
+![](../../.gitbook/assets/multiselect.png)
 
 ## Properties
 
@@ -29,22 +29,22 @@ These properties allow you to edit the widget. All these properties are present 
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Property                 | Description                                                                                                                                                                         |   |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **filterText**           | The filter text for Server side filtering                                                                                                                                           |   |
-| **isVisible**            | This property indicates whether the widget is visible or not.                                                                                                                       |   |
-| **isDisabled**           | This property indicates whether the widget is disabled or not.                                                                                                                      |   |
-| **options**              | This property shows the values of all the options.                                                                                                                                  |   |
-| **selectedOptionLabels** | An array of Labels of the options are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |   |
-| **selectedOptionValues** | An array of values of the options are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |   |
+| Property                 | Description                                                                                                                                                                         |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **filterText**           | The filter text for Server side filtering                                                                                                                                           |
+| **isVisible**            | This property indicates whether the widget is visible or not.                                                                                                                       |
+| **isDisabled**           | This property indicates whether the widget is disabled or not.                                                                                                                      |
+| **options**              | This property shows the values of all the options.                                                                                                                                  |
+| **selectedOptionLabels** | An array of Labels of the options are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
+| **selectedOptionValues** | An array of values of the options are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
 
 ### Events
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events             | Description                                                                                                               |   |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](broken-reference). |   |
+| Events             | Description                                                                                                                             |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/actions/). |
 
 ### Label
 
@@ -87,13 +87,13 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles               | Description                                              |   |
-| -------------------- | -------------------------------------------------------- | - |
-| **Label Text Color** | Allows you to set text color for the label.              |   |
-| **Label Text Size**  | Allows you to set the size of the label.                 |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
-| **Border Radius**    | Allows you to define curved corners.                     |   |
-| **Box Shadow**       | Allows you to choose from the available shadow styles.   |   |
+| Styles               | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| **Label Text Color** | Allows you to set text color for the label.              |
+| **Label Text Size**  | Allows you to set the size of the label.                 |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Border Radius**    | Allows you to define curved corners.                     |
+| **Box Shadow**       | Allows you to choose from the available shadow styles.   |
 
 ### Displaying Data
 

@@ -25,24 +25,24 @@ These properties allow you to edit the Menu Button widget. All these properties 
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Binding Properties | Description                                                   |   |
-| ------------------ | ------------------------------------------------------------- | - |
-| **label**          | This property gets the label value of the widget.             |   |
-| **isVisible**      | This property indicates whether the widget is visible or not. |   |
+| Binding Properties | Description                                                   |
+| ------------------ | ------------------------------------------------------------- |
+| **label**          | This property gets the label value of the widget.             |
+| **isVisible**      | This property indicates whether the widget is visible or not. |
 
 ### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles             | Description                                            |   |
-| ------------------ | ------------------------------------------------------ | - |
-| **Menu Color**     | Sets the background color of the widget.               |   |
-| **Menu Variant**   | Sets the variant of the menu button.                   |   |
-| **Border Radius**  | Allows you to define curved corners.                   |   |
-| **Box Shadow**     | Allows you to choose from the available shadow styles. |   |
-| **Icon**           | Sets the icon to be used for menu button.              |   |
-| **Placement**      | Sets the space between items.                          |   |
-| **Icon Alignment** | Sets the alignment of the selected icon.               |   |
+| Styles             | Description                                            |
+| ------------------ | ------------------------------------------------------ |
+| **Menu Color**     | Sets the background color of the widget.               |
+| **Menu Variant**   | Sets the variant of the menu button.                   |
+| **Border Radius**  | Allows you to define curved corners.                   |
+| **Box Shadow**     | Allows you to choose from the available shadow styles. |
+| **Icon**           | Sets the icon to be used for menu button.              |
+| **Placement**      | Sets the space between items.                          |
+| **Icon Alignment** | Sets the alignment of the selected icon.               |
 
 ### Menu Item Settings
 
@@ -61,9 +61,9 @@ Each menu item can now be customized through a set of properties by clicking on 
 | **Icon**           | Sets the icon to be used for menu button. |
 | **Icon alignment** | Sets the alignment of the selected icon.  |
 
-| Events      | Description                                                                                                   |
-| ----------- | ------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets the action to be run when the menu item is clicked. See a list of [supported actions](broken-reference). |
+| Events      | Description                                                                                                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets the action to be run when the menu item is clicked. See a list of [supported actions](../appsmith-framework/actions/). |
 
 | Styles               | Description                               |
 | -------------------- | ----------------------------------------- |

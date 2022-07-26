@@ -78,20 +78,20 @@ These properties allow you to bind your widget with any other widget in queries 
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events             | Description                                                                                                               |   |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](broken-reference). |   |
+| Events             | Description                                                                                                                             |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/actions/). |
 
 ### Label
 
 The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-| Label         | Description                                                                                                        |   |
-| ------------- | ------------------------------------------------------------------------------------------------------------------ | - |
-| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. |   |
-| **Position**  | Sets the label position of the widget.                                                                             |   |
-| **Alignment** | Sets the label alignment of the widget.                                                                            |   |
-| **Width**     | Sets the label width of the widget as the number of columns.                                                       |   |
+| Label         | Description                                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. |
+| **Position**  | Sets the label position of the widget.                                                                             |
+| **Alignment** | Sets the label alignment of the widget.                                                                            |
+| **Width**     | Sets the label width of the widget as the number of columns.                                                       |
 
 Let's understand these properties in detail:
 
@@ -125,10 +125,10 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles               | Description                                              |   |
-| -------------------- | -------------------------------------------------------- | - |
-| **Border Radius**    | Allows you to define curved corners.                     |   |
-| **Box Shadow**       | Allows you to choose from the available shadow styles.   |   |
-| **Label Text Color** | Allows you to set text color for the label.              |   |
-| **Label Text Size**  | Allows you to set the size of the label.                 |   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |   |
+| Styles               | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| **Border Radius**    | Allows you to define curved corners.                     |
+| **Box Shadow**       | Allows you to choose from the available shadow styles.   |
+| **Label Text Color** | Allows you to set text color for the label.              |
+| **Label Text Size**  | Allows you to set the size of the label.                 |
+| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |

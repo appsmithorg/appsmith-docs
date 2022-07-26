@@ -221,10 +221,10 @@ For example, let's take an Input widget `Phoneinput1` and bind the selected coun
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Event             | Description                                                                                                             |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](broken-reference). |
-| **onSubmit**      | Triggers an action on submit (when the enter key is pressed). See a list of [supported actions](broken-reference).      |
+| Event             | Description                                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/actions/). |
+| **onSubmit**      | Triggers an action on submit (when the enter key is pressed). See a list of [supported actions](../appsmith-framework/actions/).      |
 
 ### Label
 
@@ -270,8 +270,6 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 {% embed url="https://youtu.be/l92dQO-d6rw" %}
 How to set the label properties?
 {% endembed %}
-
-###
 
 ### Styles
 

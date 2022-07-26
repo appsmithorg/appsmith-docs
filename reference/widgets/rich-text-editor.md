@@ -77,9 +77,9 @@ HTML:
 
 They are a set of actions that you can perform on the widget.&#x20;
 
-| Events           | Description                                                                                              |   |
-| ---------------- | -------------------------------------------------------------------------------------------------------- | - |
-| **onTextChange** | Sets the action to be run when the user inputs text. See a list of [supported actions](broken-reference) |   |
+| Events           | Description                                                                                                            |   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------- | - |
+| **onTextChange** | Sets the action to be run when the user inputs text. See a list of [supported actions](../appsmith-framework/actions/) |   |
 
 ### Label
 

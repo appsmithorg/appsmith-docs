@@ -71,9 +71,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-|                       | Description                                                                                                                       |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](broken-reference). |
+|                       | Description                                                                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../appsmith-framework/actions/). |
 
 ### Label
 

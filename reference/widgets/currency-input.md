@@ -211,10 +211,10 @@ Let's take a widget `currencyinput1` use this property to display the selected c
 
 ### Events
 
-| Event             | Description                                                                                                                                                                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onTextChanged** | Sets an an action to take place when the input's value is changed. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead.              |
-| **onSubmit**      | Sets an an action to take place when the input is submitted with the ENTER key. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
+| Event             | Description                                                                                                                                                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | Sets an an action to take place when the input's value is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/actions/)), or you can define a custom JavaScript function to call instead.              |
+| **onSubmit**      | Sets an an action to take place when the input is submitted with the ENTER key. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/actions/)), or you can define a custom JavaScript function to call instead. |
 
 ### Label
 

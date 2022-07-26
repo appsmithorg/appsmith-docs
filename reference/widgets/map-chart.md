@@ -33,19 +33,19 @@ These properties allow you to bind your Map chart widget with any other widget i
 
 They are a set of actions that you can perform on the widget.
 
-| Event                | Description                                                                                                                        |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **onDataPointClick** | Sets the action to be run when the user selects a distinct region in the map. See a list of [supported actions](broken-reference). |
+| Event                | Description                                                                                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **onDataPointClick** | Sets the action to be run when the user selects a distinct region in the map. See a list of [supported actions](../appsmith-framework/actions/). |
 
 ### Styles
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles            |                                                                                                                                                                                                                                                                                                        |   |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | - |
-| **Color range**   | Controls the colour of a set of regions based on the range of values assigned. Accepts arrays of objects with the following keys: code (Color code to be applied), minValue (Minimum value for which this colour should be applied), maxValue (Maximum value for which this colour should be applied). |   |
-| **Border Radius** | Allows you to define curved corners.                                                                                                                                                                                                                                                                   |   |
-| **Box Shadow**    | Allows you to choose from the available shadow styles.                                                                                                                                                                                                                                                 |   |
+| Styles            |                                                                                                                                                                                                                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Color range**   | Controls the colour of a set of regions based on the range of values assigned. Accepts arrays of objects with the following keys: code (Color code to be applied), minValue (Minimum value for which this colour should be applied), maxValue (Maximum value for which this colour should be applied). |
+| **Border Radius** | Allows you to define curved corners.                                                                                                                                                                                                                                                                   |
+| **Box Shadow**    | Allows you to choose from the available shadow styles.                                                                                                                                                                                                                                                 |
 
 ## Displaying Data
 

@@ -147,7 +147,19 @@
   * [Redshift](reference/datasources/querying-redshift.md)
   * [Snowflake](reference/datasources/querying-snowflake-db.md)
   * [SMTP](reference/datasources/using-smtp.md)
-*
+* [Appsmith Framework](<reference/appsmith-framework/README (1).md>)
+  * [Context Object](reference/appsmith-framework/context-object.md)
+  * [Query Object](reference/appsmith-framework/query-object.md)
+  * [Actions](reference/appsmith-framework/actions/README.md)
+    * [Navigate To](reference/appsmith-framework/actions/navigate-to.md)
+    * [Show Alert](reference/appsmith-framework/actions/show-alert.md)
+    * [Show Modal](reference/appsmith-framework/actions/show-modal.md)
+    * [Close Modal](reference/appsmith-framework/actions/close-modal.md)
+    * [Store Value](reference/appsmith-framework/actions/store-value.md)
+    * [Download](reference/appsmith-framework/actions/download.md)
+    * [Copy to Clipboard](reference/appsmith-framework/actions/copy-to-clipboard.md)
+    * [Reset Widget](reference/appsmith-framework/actions/reset-widget.md)
+    * [Intervals (Time events)](reference/appsmith-framework/actions/intervals-time-events.md)
 
 ## Advanced Concepts
 

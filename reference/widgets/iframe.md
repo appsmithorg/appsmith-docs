@@ -4,7 +4,7 @@ description: Iframe widget is used to display iframes in your app.
 
 # Iframe
 
-![](<../../.gitbook/assets/cleanshot-2021-07-04-at-23.03.52 (1).gif>)
+![](<../../.gitbook/assets/cleanshot-2021-07-04-at-23.03.52 (1) (1).gif>)
 
 ## Properties
 
@@ -36,11 +36,11 @@ These properties allow you to bind your IFrame widget with any other widget in q
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Action                | Description                                                                                                                                                                                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onURLChanged**      | Sets an an action to take place when the widget's URL is changed. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead.                              |
-| **onSrcDocChanged**   | Sets an an action to take place when the widget's **srcDoc** property is changed. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead.              |
-| **onMessageReceived** | Sets an an action to take place when a `postMessage` event is received from the embedded page. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
+| Action                | Description                                                                                                                                                                                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onURLChanged**      | Sets an an action to take place when the widget's URL is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/actions/)), or you can define a custom JavaScript function to call instead.                              |
+| **onSrcDocChanged**   | Sets an an action to take place when the widget's **srcDoc** property is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/actions/)), or you can define a custom JavaScript function to call instead.              |
+| **onMessageReceived** | Sets an an action to take place when a `postMessage` event is received from the embedded page. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/actions/)), or you can define a custom JavaScript function to call instead. |
 
 ### Styles
 

@@ -51,6 +51,6 @@ How to set the label properties?
 
 ## Actions
 
-| Action                | Description                                                                                                     |
-| --------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **onSelectionChange** | Sets the action to be run when the check state is changed. See a list of [supported actions](broken-reference). |
+| Action                | Description                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **onSelectionChange** | Sets the action to be run when the check state is changed. See a list of [supported actions](../appsmith-framework/actions/). |
