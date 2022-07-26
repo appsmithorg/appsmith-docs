@@ -1,17 +1,18 @@
 # Appsmithctl
 
-Appsmith comes with an `appsmithctl` command to help with the management and maintenance of your instance.&#x20;
+Appsmith comes with an `appsmithctl` command to help with the management and maintenance of your instance.
 
 ### Appsmithctl Command-Line Options
 
-| --help                                         | Show help.                               |
-| ---------------------------------------------- | ---------------------------------------- |
-| [ex, export\_db](appsmithctl.md#ex-export\_db) | Export internal database.                |
-| [im, import\_db](appsmithctl.md#im-import\_db) | Import internal database                 |
-| mi, migrate                                    | Migrate to a new server.                 |
-| crs, check\__replica_\_set                     | Check Replica Set MongoDB.               |
-| [backup](appsmithctl.md#backup)                | Create a backup of Appsmith instance.    |
-| [restore](appsmithctl.md#restore)              | Restore Appsmith instance from a backup. |
+| Subcommand                                        | Description                              |
+| ------------------------------------------------- | ---------------------------------------- |
+| `--help`                                          | Show help.                               |
+| [`ex`, `export_db`](appsmithctl.md#ex-export\_db) | Export internal database.                |
+| [`im`, `import_db`](appsmithctl.md#im-import\_db) | Import internal database.                |
+| `mi`, `migrate`                                   | Migrate to a new server.                 |
+| `crs`, `check_replica_set`                        | Check Replica Set MongoDB.               |
+| [`backup`](appsmithctl.md#backup)                 | Create a backup of Appsmith instance.    |
+| [`restore`](appsmithctl.md#restore)               | Restore Appsmith instance from a backup. |
 
 ### Export Database
 
