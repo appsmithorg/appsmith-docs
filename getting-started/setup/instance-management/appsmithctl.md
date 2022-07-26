@@ -7,8 +7,8 @@ Appsmith comes with an `appsmithctl` command to help with the management and mai
 | Subcommand                                        | Description                              |
 | ------------------------------------------------- | ---------------------------------------- |
 | `--help`                                          | Show help.                               |
-| [`ex`, `export_db`](appsmithctl.md#ex-export\_db) | Export internal database.                |
-| [`im`, `import_db`](appsmithctl.md#im-import\_db) | Import internal database.                |
+| [`ex`, `export_db`](appsmithctl.md#ex-export_db)  | Export internal database.                |
+| [`im`, `import_db`](appsmithctl.md#im-import_db)  | Import internal database.                |
 | `mi`, `migrate`                                   | Migrate to a new server.                 |
 | `crs`, `check_replica_set`                        | Check Replica Set MongoDB.               |
 | [`backup`](appsmithctl.md#backup)                 | Create a backup of Appsmith instance.    |
@@ -18,7 +18,7 @@ Appsmith comes with an `appsmithctl` command to help with the management and mai
 
 The following command can be used to make a backup dump of Appsmith's database. This can be restored onto another instance using the import command (discussed below) to restore all data.
 
-#### ex,export\_db
+#### `ex`, `export_db`
 
 Before running this, ensure you are in the directory where `docker-compose.yml` is located.
 
@@ -50,7 +50,7 @@ docker cp appsmith:/appsmith-stacks/configuration/docker.env .
 
 The following command can restore the backup archive, that was produced by the export command (discussed above).
 
-#### im, import\_db
+#### `im`, `import_db`
 
 First, copy the archive file into the container using the following command:
 
@@ -76,9 +76,9 @@ This will need a restart of the Appsmith server, which can be done using the fol
 docker-compose exec appsmith supervisorctl restart backend
 ```
 
-### Backup Appsmith instance&#x20;
+### Backup Appsmith instance
 
-The following command can be used to create a backup archive of the Appsmith instance, which includes the database, docker.env data, and Git data.
+The following command can be used to create a backup archive of the Appsmith instance, which includes the database, `docker.env` data, and Git data.
 
 #### backup
 
@@ -93,22 +93,20 @@ docker-compose exec appsmith appsmithctl backup
 The archive file will be stored in the container directory <mark style="color:red;">`/appsmith-stacks/data/backup/`</mark>. Thanks to the volume configuration in the `docker-compose.yml` file, it should be available on your host machine at <mark style="color:red;">`./stacks/data/backup/`</mark>
 
 {% hint style="danger" %}
-Please save the **encryption env values** `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` from docker.env `because the backup archive`` `**`does not include`**` ``those values for security reasons.`
+Please save the **encryption env values**, `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` from docker.env because the backup archive **does not include** them for security reasons.
 {% endhint %}
-
-<mark style="color:red;">``</mark>
 
 ### Restore Appsmith instance
 
 The following command can be used to restore an Appsmith instance from a backup archive.&#x20;
 
-#### restore 
+#### `restore`
 
 ```
 docker-compose exec appsmith appsmithctl restore
 ```
 
-The command first lists all the backup archives in the directory <mark style="color:red;">`/appsmith-stacks/data/backup/`</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> in ascending/chronological with the most recent backup archive located at the bottom.
+The command first lists all the backup archives in the directory `/appsmith-stacks/data/backup/` in ascending/chronological with the most recent backup archive located at the bottom.
 
 {% hint style="warning" %}
 If you are restoring an instance with an **older Appsmith version**, then you may observe a **warning**. In this case, please follow the **instructions to update** the `docker-compose.yml` file with the correct Appsmith image corresponding to the **instance to be restored**.
