@@ -45,7 +45,7 @@ redirects:
   setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/okta: getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta.md
   setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/active-directory: getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory.md
   setup/instance-configuration/custom-ca-root-certificate: getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate.md
-  setup/instance-management: getting-started/setup/instance-management/README.md
+  setup/instance-management: getting-started/setup/upgrade-to-business-edition/README.md
   setup/migrate: getting-started/setup/installation-guides/docker/migrate.md
   setup/upgrade-to-business-edition: getting-started/setup/upgrade-to-business-edition/README.md
   setup/upgrade-to-business-edition/docker: getting-started/setup/upgrade-to-business-edition/docker.md
