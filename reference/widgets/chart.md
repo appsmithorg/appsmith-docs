@@ -554,9 +554,9 @@ These properties allow you to bind your Chart widget with any other widget in qu
 
 You might want to fetch more data based on clicks on a chart. Events on the chart capture the user interaction.
 
-| Event                | Description                                                                                                                                                                                                                                                       |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onDataPointClick** | Sets an an action to take place when the user clicks on a data point. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead. |
+| Event                | Description                                                                                                                                                                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onDataPointClick** | Sets an an action to take place when the user clicks on a data point. Can be set from the GUI list of common actions (See a list of [supported actions](broken-reference).), or you can define a custom JavaScript function to call instead. |
 
 ### Styles
 

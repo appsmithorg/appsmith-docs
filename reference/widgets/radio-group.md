@@ -37,9 +37,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget:
 
-| Events                | Description                                                                                                                              |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **onSelectionChange** | Sets the action to be run when the selection state is changed. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| Events                | Description                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **onSelectionChange** | Sets the action to be run when the selection state is changed. See a list of [supported actions](broken-reference). |
 
 ### Label
 

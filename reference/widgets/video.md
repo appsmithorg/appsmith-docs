@@ -32,11 +32,11 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events      | Description                                                                                                                |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **onPlay**  | Sets the action to be run when the video plays. See a list of [supported actions](../appsmith-framework/widget-actions/).  |
-| **onPause** | Sets the action to be run when the video pauses. See a list of [supported actions](../appsmith-framework/widget-actions/). |
-| **onEnd**   | Sets the action to be run when the video ends. See a list of [supported actions](../appsmith-framework/widget-actions/).   |
+| Events      | Description                                                                                           |
+| ----------- | ----------------------------------------------------------------------------------------------------- |
+| **onPlay**  | Sets the action to be run when the video plays. See a list of [supported actions](broken-reference).  |
+| **onPause** | Sets the action to be run when the video pauses. See a list of [supported actions](broken-reference). |
+| **onEnd**   | Sets the action to be run when the video ends. See a list of [supported actions](broken-reference).   |
 
 ### Styles
 

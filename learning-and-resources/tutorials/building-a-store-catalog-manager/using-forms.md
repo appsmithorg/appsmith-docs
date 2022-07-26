@@ -261,7 +261,7 @@ Your **ProductListPage** now looks like this:
 
 Let's test it out: Click on the "**Add New Product"** button on the **ProductListPage**. You'll see that the **AddProductForm** page opens up, ready for user input.
 
-By selecting the [Navigate To](../../../reference/appsmith-framework/widget-actions/navigateto.md) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
+By selecting the [Navigate To](broken-reference) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
 
 ## What's next?
 

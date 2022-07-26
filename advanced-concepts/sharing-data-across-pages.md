@@ -4,11 +4,11 @@ description: >-
   params & the browser's local storage.
 ---
 
-# Share data across pages
+# Share Data Across Pages
 
 ## Sharing data via query params
 
-Query params can be passed by adding the query params object to [NavigateTo action](../reference/appsmith-framework/widget-actions/navigateto.md). To do this click on the JS mode for Action and update it as follows.
+Query params can be passed by adding the query params object to [NavigateTo action](broken-reference). To do this click on the JS mode for Action and update it as follows.
 
 ```javascript
 {{navigateTo("PageName", {"param": "value"})}}
@@ -20,6 +20,6 @@ These can be consumed on the destination page with `appsmith.URL.queryParams.par
 
 ## Sharing data via local storage
 
-Key-value pairs can be stored within the local storage with the help of the [StoreValue action](../reference/appsmith-framework/widget-actions/store-value.md). To do so pick the StoreValue action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`
+Key-value pairs can be stored within the local storage with the help of the [StoreValue action](broken-reference). To do so pick the StoreValue action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`
 
 ![Click to expand](../.gitbook/assets/localStorage.gif)

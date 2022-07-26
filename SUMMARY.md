@@ -147,19 +147,7 @@
   * [Redshift](reference/datasources/querying-redshift.md)
   * [Snowflake](reference/datasources/querying-snowflake-db.md)
   * [SMTP](reference/datasources/using-smtp.md)
-* [Appsmith Framework](reference/appsmith-framework/README.md)
-  * [Context Object](reference/appsmith-framework/appsmith.md)
-  * [Query Object](reference/appsmith-framework/run.md)
-  * [Actions](reference/appsmith-framework/widget-actions/README.md)
-    * [Navigate To](reference/appsmith-framework/widget-actions/navigateto.md)
-    * [Show Alert](reference/appsmith-framework/widget-actions/show-alert.md)
-    * [Show Modal](reference/appsmith-framework/widget-actions/show-modal.md)
-    * [Close Modal](reference/appsmith-framework/widget-actions/close-modal.md)
-    * [Store Value](reference/appsmith-framework/widget-actions/store-value.md)
-    * [Download](reference/appsmith-framework/widget-actions/download.md)
-    * [Copy To Clipboard](reference/appsmith-framework/widget-actions/copytoclipboard.md)
-    * [Reset Widget](reference/appsmith-framework/widget-actions/resetwidget.md)
-    * [Intervals (Time events)](reference/appsmith-framework/widget-actions/intervals-time-events.md)
+*
 
 ## Advanced Concepts
 
@@ -228,13 +216,6 @@
 * [Discord](https://discord.com/invite/rBTTVJp)
 * [Community Forum](https://community.appsmith.com/)
 * [Contact Us](mailto:support@appsmith.com)
-
-## Enterprise
-
-* [Enterprise Edition](enterprise/enterprise-edition/README.md)
-  * [Upgrade to Enterprise](enterprise/enterprise-edition/upgrade-to-enterprise/README.md)
-    * [Docker Installation](enterprise/enterprise-edition/upgrade-to-enterprise/docker-installation.md)
-  * [License](enterprise/enterprise-edition/license.md)
 
 ## Product
 

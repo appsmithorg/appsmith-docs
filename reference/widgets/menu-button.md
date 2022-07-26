@@ -61,9 +61,9 @@ Each menu item can now be customized through a set of properties by clicking on 
 | **Icon**           | Sets the icon to be used for menu button. |
 | **Icon alignment** | Sets the alignment of the selected icon.  |
 
-| Events      | Description                                                                                                                        |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets the action to be run when the menu item is clicked. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| Events      | Description                                                                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets the action to be run when the menu item is clicked. See a list of [supported actions](broken-reference). |
 
 | Styles               | Description                               |
 | -------------------- | ----------------------------------------- |

@@ -32,8 +32,8 @@ These properties allow you to bind your Audio widget with any other widget in qu
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Action      | Description                                                                                                                      |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **onPlay**  | Sets the action to run when the audio begins playing. See a list of [supported actions](../appsmith-framework/widget-actions/).  |
-| **onPause** | Sets the action to run when the audio is paused. See a list of [supported actions](../appsmith-framework/widget-actions/).       |
-| **onEnd**   | Sets the action to run when the audio ends. See a list of [supported actions](../appsmith-framework/widget-actions/).            |
+| Action      | Description                                                                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------------------- |
+| **onPlay**  | Sets the action to run when the audio begins playing. See a list of [supported actions](broken-reference).  |
+| **onPause** | Sets the action to run when the audio is paused. See a list of [supported actions](broken-reference).       |
+| **onEnd**   | Sets the action to run when the audio ends. See a list of [supported actions](broken-reference).            |

@@ -2,7 +2,7 @@
 description: Guide on how to use ElasticSearch as a data source on Appsmith
 ---
 
-# How to use ElasticSearch as a data source on Appsmith
+# How to Use Elasticsearch as a Datasource on Appsmith
 
 This guide assumes you have basic familiarity with [Appsmith](https://www.appsmith.com). I suggest creating an account and trying it out If you don't. I assure you that it is straightforward to get acquainted with quickly.
 
@@ -162,7 +162,7 @@ Your application is now ready and can be easily deployed by clicking the Deploy 
 
 Let's update one of the values to check if our application is working.
 
-![Elastic-2-gif](<../../.gitbook/assets/Elastic - 2 gif (2).gif>)
+![Elastic-2-gif](<../../.gitbook/assets/Elastic - 2 gif (2) (1).gif>)
 
 All the queries have executed properly. Let's check the value of id 6 to see if it's appropriately updated. I'll use Kibana to check the value.
 

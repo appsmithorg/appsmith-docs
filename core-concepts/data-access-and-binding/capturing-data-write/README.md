@@ -1,6 +1,6 @@
 # Capturing Data (Write)
 
-This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a [Query](../../../reference/appsmith-framework/run.md) that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
+This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a [Query](broken-reference) that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
 
 The following widgets can be used to capture user inputs in an application
 
@@ -45,4 +45,4 @@ The property pane has an action section where all the interactions that a user c
 
 To [configure the Query](../querying-a-database/) we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](<../../../.gitbook/assets/button-onclick (2) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (5).gif>)
+![](<../../../.gitbook/assets/button-onclick (2) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (5) (2) (6).gif>)

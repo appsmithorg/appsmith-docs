@@ -124,29 +124,29 @@ Execute a global function from an async field
 
 The property pane allows us to configure the action to take once a Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API / Query.
 
-We can decide to display a success or an error message by using the [**showAlert Action**](../../reference/appsmith-framework/widget-actions/show-alert.md).
+We can decide to display a success or an error message by using the [**showAlert Action**](broken-reference).
 
 ![](<../../.gitbook/assets/error handling.gif>)
 
 ## Complex Workflows
 
-The GUI is limited to a single [onSuccess](../../reference/appsmith-framework/run.md#onsuccess) / [onError](../../reference/appsmith-framework/run.md#onerror) callback while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
+The GUI is limited to a single [onSuccess](broken-reference) / [onError](broken-reference) callback while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
 
 ![](<../../.gitbook/assets/conditional query.gif>)
 
 {% hint style="success" %}
-Once you have configured [actions](../../reference/appsmith-framework/widget-actions/) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
+Once you have configured [actions](broken-reference) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
 {% endhint %}
 
 ### Executing Queries in Parallel / Serial
 
-Every [query object](../../reference/appsmith-framework/run.md) contains a run method that is used to execute it. The [run](../../reference/appsmith-framework/run.md#run) method is asynchronous and multiple queries can be executed in parallel as below
+Every [query object](broken-reference) contains a run method that is used to execute it. The [run](broken-reference) method is asynchronous and multiple queries can be executed in parallel as below
 
 ```javascript
 {{ API1.run(); Query2.run(); API2.run(); }}
 ```
 
-or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](../../reference/appsmith-framework/run.md)
+or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](broken-reference)
 
 ```javascript
 {{ 

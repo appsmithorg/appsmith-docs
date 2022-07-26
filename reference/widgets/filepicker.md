@@ -58,9 +58,9 @@ These properties allow you to bind your Filepicker widget with any other widget 
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Event               | Description                                                                                                                                                                                                                            |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onFilesSelected** | Sets an an action to take place when the user selects a file. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| Event               | Description                                                                                                                                                                                                       |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onFilesSelected** | Sets an an action to take place when the user selects a file. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
 
 ### Styles
 

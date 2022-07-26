@@ -58,7 +58,7 @@ You can add queries to Google Sheets datasource by selecting the **New API +** b
 
 ### **Query**
 
-You use the [Query](../appsmith-framework/run.md) tab to define - the type of operation you want to perform and the entity on which the operation will be performed.
+You use the [Query](broken-reference) tab to define - the type of operation you want to perform and the entity on which the operation will be performed.
 
 {% hint style="info" %}
 Some **operations** are **not** available for some **entities**. If an **operation** is **not** available for an **entity,** the **entity** is grayed out, and the tooltip **`Action not supported`** will be displayed when you hover over it.

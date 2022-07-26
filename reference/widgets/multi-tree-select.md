@@ -78,9 +78,9 @@ These properties allow you to bind your widget with any other widget in queries 
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events             | Description                                                                                                                                    |   |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/widget-actions/). |   |
+| Events             | Description                                                                                                               |   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------- | - |
+| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](broken-reference). |   |
 
 ### Label
 

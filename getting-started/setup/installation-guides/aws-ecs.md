@@ -107,7 +107,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
 * Hit **Add.**
 
-![Conainer Port Configuration](../../../.gitbook/assets/ecs-task-appsmith.png)
+![Conainer Port Configuration](<../../../.gitbook/assets/ecs-task-appsmith (1).png>)
 
 * Finally, hit the **Create** button.
 
@@ -132,7 +132,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 4\. Configure network - Proceed to the next step with the **default** configurations.
 
-![](../../../.gitbook/assets/ecs-service-lb.png)
+![](<../../../.gitbook/assets/ecs-service-lb (2).png>)
 
 5\. Set Auto Scaling - Proceed to the next step with the **default** configuration.
 

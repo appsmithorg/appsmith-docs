@@ -224,13 +224,13 @@ These properties allow you to bind your List widget with any other widget in que
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Event               | Description                                                                                                                                                                                                                                             |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onListItemClick** | Sets an an action to take place when the user clicks on one of the list items. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| Event               | Description                                                                                                                                                                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onListItemClick** | Sets an an action to take place when the user clicks on one of the list items. Can be set from the GUI list of common actions ([examples here](broken-reference)), or you can define a custom JavaScript function to call instead. |
 
 #### onListItemClick
 
-For a list widget, the event onListItemClick is fired whenever a user clicks or selects an item on the list. You can perform many[ supported actions](../appsmith-framework/widget-actions/) on a list item click.
+For a list widget, the event onListItemClick is fired whenever a user clicks or selects an item on the list. You can perform many[ supported actions](broken-reference) on a list item click.
 
 For example, show a message whenever a user clicks on a list item.
 
