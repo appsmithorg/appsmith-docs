@@ -85,7 +85,7 @@ All query results are stored in the data property of the query object. This obje
 
 All **API Queries** return the exact API response of the endpoint
 
-To understand queries, read this [How to Use Prepared Statements](broken-reference) guide.
+To understand queries, read this [How to Use Prepared Statements](../../../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) guide.
 
 ## Using Queries in applications
 
