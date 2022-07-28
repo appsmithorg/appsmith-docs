@@ -9,7 +9,7 @@ description: >-
 When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
 
 {% hint style="info" %}
-To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](broken-reference) and expand on triggering more complex actions.
+To create workflows, you should be familiar with [triggering actions](<../../reference/appsmith-framework/README (1).md#functions>) from [widgets](broken-reference) and expand on triggering more complex actions.
 {% endhint %}
 
 ## **Fields**
@@ -30,7 +30,7 @@ The properties that can trigger an action or perform an operation are called Asy
 
 ![Input Widget - Async Fields](<../../.gitbook/assets/Writing Code  Creating Workflows  Async Fields  Input Widget.png>)
 
-For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](../../reference/appsmith-framework/#functions).
+For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](<../../reference/appsmith-framework/README (1).md#functions>).
 
 ### **Use an Async Function Response in a Sync Field**
 
@@ -176,5 +176,5 @@ or chained to be called onSuccess / onError using the callback arguments in the 
 ```
 
 {% hint style="success" %}
-Make use of the [Appsmith Framework](../../reference/appsmith-framework/) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
+Make use of the [Appsmith Framework](<../../reference/appsmith-framework/README (1).md>) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
 {% endhint %}
