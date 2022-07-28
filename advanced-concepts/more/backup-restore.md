@@ -1,4 +1,4 @@
-# Migrate applications
+# Migrate Applications
 
 {% embed url="https://youtu.be/2JuJ0v56ztw" %}
 
@@ -28,6 +28,6 @@ The restore would end up deleting all the existing data in the mongo database of
 Using this feature, you can now import or export desired application onto different Appsmith instances, follow the below steps:
 
 1. Exporting Appsmith application from source: There is an option to export the application (from source instance), in the overflow menu from the application icon on the homepage.
-2. Import Appsmith application to the destination: To import the application to the destination instance, find the `import application` option on the overflow menu on the homepage beside the organization name.
+2. Import Appsmith application to the destination: To import the application to the destination instance, find the `import application` option on the overflow menu on the homepage beside the workspace name.
 
 ![](../../.gitbook/assets/import-export.gif)

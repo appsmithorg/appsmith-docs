@@ -15,10 +15,10 @@ Before you begin, you'll need to create an account on [Appsmith Cloud](https://a
 
 ## **Create a New Application**
 
-* When creating a new [Appsmith account](https://app.appsmith.com/), an application titled '**My first application'** is automatically added under the default **Organization**. You can use this application to build your first app or create a new one by clicking on the **+ New** button under the Organization.
+* When creating a new [Appsmith account](https://app.appsmith.com/), an application titled '**My first application'** is automatically added under the default **Workspace**. You can use this application to build your first app or create a new one by clicking on the **+ New** button under the Workspace.
 * For this tutorial, we will use the default application. Hover over the '**My first application'** card and click the **Edit** button to open the application.
 
-![Creating a new application on Appsmith](<../.gitbook/assets/Screenshot 2022-07-12 at 23.04.43.png>)
+![Creating a new application on Appsmith](<../.gitbook/assets/Screenshot 2022-07-21 at 11.49.02 AM.png>)
 
 * You'll land on the Appsmith editor. Select the **Build with drag & drop** option to start from scratch and create your custom UI.&#x20;
 * **'Page 1'** is the default page on the application. To rename the page, click on the Kebab menu (three vertical dots) and select **Edit Name**. Label the page '**User Information**'.

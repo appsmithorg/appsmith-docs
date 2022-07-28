@@ -1,4 +1,4 @@
-# Version Control with Git
+# Version Control With Git
 
 Version Control with Git allows you to version control your apps by connecting them with a Git hosting provider (Github, GitLab, Bitbucket), making it easier to track changes, create rollbacks or collaborate using git branches.
 
@@ -18,7 +18,7 @@ To get started with Version control with Git in Appsmith -
 * [Import from a Git Repository](connecting-to-git-repository.md#importing-from-a-repository)
 
 {% hint style="info" %}
-In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
+In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in a workspace. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
 {% endhint %}
 
 ## Git In Action

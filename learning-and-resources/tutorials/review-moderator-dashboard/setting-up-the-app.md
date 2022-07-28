@@ -6,15 +6,15 @@ description: >-
 
 # Setting up the App
 
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). You'll see an auto-generated organization called apps (your organization). However, you can create multiple organizations and organize your apps based on your preferences.
+If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). You'll see an auto-generated workspace called apps (your workspace). However, you can create multiple workspaces and organize your apps based on your preferences.
 
-In this tutorial, you'll create a Review Moderator application under the same organization. To do this, follow the below steps:
+In this tutorial, you'll create a Review Moderator application under the same workspace. To do this, follow the below steps:
 
 {% embed url="https://youtu.be/rDq4203aRQw" %}
 Creating and Renaming Appsmith Application
 {% endembed %}
 
-1. Click on the **Create New** under your organization.
+1. Click on the **Create New** under your workspace.
 2. It will redirect to the configuration page of the newly created app.
 3. You will see two options, **Build with drag & drop** or **Generate from the data table**.
 4. For this tutorial, we will select **build with drag & drop**.

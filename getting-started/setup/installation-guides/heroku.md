@@ -25,7 +25,7 @@ The administrative privileges (Admin settings) are not available due to deployme
    * `Runtime Selection`: Select which region your app should run in (the United States or Europe)
    * `Config Variables`:
      * **Sign Up**
-       * `APPSMITH_SIGNUP_DISABLED`: Set this value to true to disable allowing users to signup on your Appsmith instance. Users can only sign up if an organization administrator invites them.
+       * `APPSMITH_SIGNUP_DISABLED`: Set this value to true to disable allowing users to signup on your Appsmith instance. Users can only sign up if a workspace administrator invites them.
      * **Email Configuration:**
        * `APPSMITH_MAIL_ENABLED`: Set this value to true to enable email sending (value should be `true/false` only).
        * `APPSMITH_MAIL_FROM`: Email ID using which emails will be sent from your installation.
@@ -57,11 +57,11 @@ If you wish to link a custom domain (Eg: [https://appsmith.yourcompany.com)](htt
 
 * Go to the `Settings` tab in your Heroku app.
 
-![](<../../../.gitbook/assets/heroku-app-settings (1).png>)
+![](../../../.gitbook/assets/heroku-app-settings.png)
 
 * Click the `Add domain` button in the `Domains` section.
 
-![](<../../../.gitbook/assets/heroku-add-domain-button (1).png>)
+![](../../../.gitbook/assets/heroku-add-domain-button.png)
 
 * Input your domain name & click `Next`.
 

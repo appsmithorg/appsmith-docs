@@ -12,15 +12,15 @@ You must have an account on either [Appsmith Cloud](https://app.appsmith.com/use
 
 ## The Appsmith Environment
 
-If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This home page has an auto-generated organization called **`<Your first-name>'s apps`** (referred to as your personal organization from now on) consisting of multiple templates. In this tutorial, we'll create our Catalog app under the same organization.
+If this is your first time using Appsmith, you'll need to get acquainted with some initial setup. When you log in, you'll be redirected to [Appsmith Dashboard](https://app.appsmith.com/applications). This home page has an auto-generated workspace called **`<Your first-name>'s apps`** (referred to as your personal workspace from now on) consisting of multiple templates. In this tutorial, we'll create our Catalog app under the same workspace.
 
-Let's now create a new app named _Catalog Dashboard_ under the personal organization.
+Let's now create a new app named _Catalog Dashboard_ under the personal workspace.
 
 > An app on Appsmith is a standalone software-application solving a specific use-case. It can consist of one or more web-pages.
 
 Here are steps to create an app from the Appsmith Dashboard:
 
-1. Click on the "+New"\_ button in the area near your organization's name on the dashboard.
+1. Click on the "+New"\_ button in the area near your workspace's name on the dashboard.
 2. You'll be redirected to the configuration page of the newly created app, which will be named **Untitled Application 1** by default.
 3. Rename your app to **Catalog Dashboard** by clicking on the existing name in the top-left of the screen, and selecting **Edit Name**.
 4. Click the **Build with drag & drop** button located on the center of the canvas.

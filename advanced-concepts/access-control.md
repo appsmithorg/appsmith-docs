@@ -1,18 +1,18 @@
 ---
 description: >-
   Allow external users to access applications built using Appsmith by inviting
-  them to the organization.
+  them to the workspace.
 ---
 
 # Access Control
 
-Invite users to your organization by clicking on the **share button** on the application home page or from inside the application
+Invite users to your workspace by clicking on the **share button** on the application home page or from inside the application
 
-![](<../.gitbook/assets/share app (1).png>)
+![](../.gitbook/assets/saveappsmith.png)
 
 Invite the user's email you wish to share the application with and select an appropriate role for them.
 
-![](<../.gitbook/assets/invite modal.png>)
+![](../.gitbook/assets/save2.PNG)
 
 ## Roles
 
@@ -34,15 +34,15 @@ Appsmith implements **RBAC** by assigning a set of permissions to different user
 
 ## Permissions
 
-* **Create/Edit App:** This permission allows users to create and edit applications within an organization.
-* **View App:** This permission allows users to view & use applications internal to the organization
-* **Make App Public:** This permission allows users to mark applications as accessible outside the organization.
+* **Create/Edit App:** This permission allows users to create and edit applications within a workspace.
+* **View App:** This permission allows users to view & use applications internal to the workspace
+* **Make App Public:** This permission allows users to mark applications as accessible outside the workspace.
 * **Invite Users:** This permission allows users to invite others with a role equal to or lower than theirs.
-* **Manage Users.** This permission allows users to delete users from an organization.
+* **Manage Users.** This permission allows users to delete users from a workspace.
 
 ## Public Apps
 
-Applications can be made public and shared with external users not part of your organization as well. These applications will not require users to authenticate to use them. An app can be made public by clicking the share button from within the application and turning the public application switch on. To share the application, copy the link shown in the modal and share it with your users!
+Applications can be made public and shared with external users not part of your workspace as well. These applications will not require users to authenticate to use them. An app can be made public by clicking the share button from within the application and turning the public application switch on. To share the application, copy the link shown in the modal and share it with your users!
 
 {% hint style="success" %}
 Only Administrators can make applications public.

@@ -51,5 +51,5 @@ Finally, click on _**connect**_, and if the connection is successful, your repos
 {% embed url="https://youtu.be/Z67SfBpKrnk" %}
 
 {% hint style="info" %}
-In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in an organization. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
+In the community edition, You can connect up to <mark style="color:green;">**three**</mark> private repositories in a workspace. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
 {% endhint %}

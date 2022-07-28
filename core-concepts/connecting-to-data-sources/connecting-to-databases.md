@@ -47,7 +47,7 @@ Once the appsmith instance has been [whitelisted](../../learning-and-resources/h
 ![](<../../.gitbook/assets/create ds.gif>)
 
 {% hint style="success" %}
-Databases configured within one page of an app can be accessed by developers anywhere within the organization
+Databases configured within one page of an app can be accessed by developers anywhere within the workspace.
 {% endhint %}
 
 ## General Notes

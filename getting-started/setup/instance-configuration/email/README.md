@@ -8,7 +8,7 @@ description: >-
 
 Email is used to communicate with users on your installation of Appsmith. Emails are sent out to
 
-* Invite users to your organization in Appsmith
+* Invite users to your workspace in Appsmith
 * Notify admins of important events & approvals requests
 
 ## Configuration Variables

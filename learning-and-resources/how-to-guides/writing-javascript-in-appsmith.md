@@ -18,7 +18,7 @@ The Moustache syntax helps us write JavaScript anywhere in Appsmith. For example
 
 Binding data into UI is one of the most common and frequently used operations when building User Interfaces. Now, you’ll look at how you can bind data into charts/table widgets inside Appsmith. For this, we’ll be using a sample query to fetch data from the mock database and then bind it to the widget.
 
-Now create an application under your personal organisation and create a new DB Query by clicking the `+` icon next to it. Rename the query to `get_products`.
+Now create an application under your personal workspace and create a new DB Query by clicking the `+` icon next to it. Rename the query to `get_products`.
 
 > You can rename any page name/widget name/query name by simply double-clicking on the existing one.
 
@@ -104,7 +104,7 @@ In this way, you can also write multi-line code within Appsmith! For more inform
 
 In Appsmith, suppose you want to implement dynamic columns (show only necessary columns based on selection) in a table, you could write simple JavaScript inside the `Table Data` property. With this, you could show only columns that are selected from a dropdown.
 
-![](../../.gitbook/assets/dynamic-table.gif)
+![](<../../.gitbook/assets/dynamic-table (1).gif>)
 
 For example, say your table has the following in the Table Data:
 

@@ -130,7 +130,7 @@ Add inbound rules for type Redshift one for custom: Anywhere IPv4 and one for cu
 
 ## Building The Application On Appsmith
 
-Login to your Appsmith account or Sign up for a new account, if you don't already have one [here](https://app.appsmith.com/user/login). The next step is to create a new application under an organization by clicking on the `+ NEW` button on the top right corner.
+Login to your Appsmith account or Sign up for a new account, if you don't already have one [here](https://app.appsmith.com/user/login). The next step is to create a new application under a workspace by clicking on the `+ NEW` button on the top right corner.
 
 ![Screenshot nineteen](../../.gitbook/assets/redshift-appsmith-19.png)
 
@@ -158,7 +158,7 @@ Now that you have succesfully connected to the database successfully, you can qu
 
 Now we need to display the fetched data in a presentable format. This can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the data fetched from Redshift database into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our application's UI. Select the 'Table' widget then drag and drop that on the canvas. Something like this is visible:
 
-![Screenshot twenty three](../../.gitbook/assets/notion-appsmith-8.png)
+![Screenshot twenty three](../../.gitbook/assets/redshift-appsmith-23.png)
 
 To include response in this table use the moustache syntax to write JS in Appsmith.
 
