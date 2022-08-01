@@ -41,6 +41,7 @@
     * [SSL & Custom Domain](getting-started/setup/instance-configuration/custom-domain/README.md)
       * [Custom CA Root Certificate](getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate.md)
     * [Super Admin](getting-started/setup/instance-configuration/admin-settings.md)
+    * [Frame Ancestors](getting-started/setup/instance-configuration/frame-ancestors.md)
   * [Instance Management](getting-started/setup/instance-management/README.md)
     * [Supervisor](getting-started/setup/instance-management/supervisor.md)
     * [Appsmithctl](getting-started/setup/instance-management/appsmithctl.md)
