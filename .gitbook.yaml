@@ -148,7 +148,7 @@ redirects:
   datasource-reference/querying-snowflake-db: reference/datasources/querying-snowflake-db.md
   datasource-reference/using-smtp: reference/datasources/using-smtp.md
   framework-reference/appsmith: reference/appsmith-framework/README.md
-  framework-reference/run: reference/appsmith-framework/run.md
+  framework-reference/run: reference/appsmith-framework/query-object.md
   framework-reference/show-modal: reference/appsmith-framework/widget-actions/show-modal.md
   framework-reference/close-modal: reference/appsmith-framework/widget-actions/close-modal.md
   framework-reference/download: reference/appsmith-framework/widget-actions/download.md
