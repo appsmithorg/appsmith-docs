@@ -13,6 +13,8 @@ description: >-
 
 [How to populate a table from a JS Object?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364)
 
+[How to implement a Search/Filter functionality in a table? (MongoDB)](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/62c81d4801213a676a34bd35)
+
 [How to add a server-side search to a table?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/623ce9d84d9aea1b062b365f)
 
 [How to add a server-side filter to a table? (MongoDB)](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f7cb189d6d6a6720c9a9c9)
