@@ -10,6 +10,6 @@ The Appsmith framework provides utility functions and objects to get information
 [query-object.md](query-object.md)
 {% endcontent-ref %}
 
-{% content-ref url="actions/" %}
-[actions](actions/)
+{% content-ref url="widget-actions/" %}
+[widget-actions](widget-actions/)
 {% endcontent-ref %}

@@ -1,8 +1,6 @@
----
-description: This function is used to open a modal when triggered.
----
-
 # Show Modal
+
+This function is used to open a modal when triggered.
 
 ![Click to expand](../../../.gitbook/assets/showModal.gif)
 

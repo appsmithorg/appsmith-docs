@@ -1,10 +1,6 @@
----
-description: >-
-  This action is used to close a modal when triggered. Create a new modal and
-  open it before calling this action
----
-
 # Close Modal
+
+This action is used to close a modal when triggered. Create a new modal and open it before calling this action
 
 ![Click to expand](../../../.gitbook/assets/closemodal.gif)
 

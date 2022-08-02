@@ -36,9 +36,9 @@ These properties allow you to bind your Image widget with any other widget in qu
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Event       | Description                                                                                                                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onClick** | Sets an action to take place when the user clicks this widget. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/actions/)), or you can define a custom JS function to call instead. |
+| Event       | Description                                                                                                                                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets an action to take place when the user clicks this widget. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JS function to call instead. |
 
 ### Styles
 

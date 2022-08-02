@@ -31,9 +31,9 @@ These properties allow you to bind your Modal widget with any other widget in qu
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events      | Description                                                                                                                |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **onClose** | This event triggers an action when the modal is closed. See a list of [supported actions](../appsmith-framework/actions/). |
+| Events      | Description                                                                                                                       |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **onClose** | This event triggers an action when the modal is closed. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Styles
 
@@ -52,4 +52,4 @@ Selecting the created modal listed in the Entity Explorer will open it in Edit m
 
 ## Opening Modals via Widgets
 
-To open the Modals via other widgets please refer to [Show Modal](../appsmith-framework/actions/show-modal.md) function.
+To open the Modals via other widgets please refer to [Show Modal](../appsmith-framework/widget-actions/show-modal.md) function.

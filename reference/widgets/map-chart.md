@@ -33,9 +33,9 @@ These properties allow you to bind your Map chart widget with any other widget i
 
 They are a set of actions that you can perform on the widget.
 
-| Event                | Description                                                                                                                                      |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onDataPointClick** | Sets the action to be run when the user selects a distinct region in the map. See a list of [supported actions](../appsmith-framework/actions/). |
+| Event                | Description                                                                                                                                             |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onDataPointClick** | Sets the action to be run when the user selects a distinct region in the map. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Styles
 

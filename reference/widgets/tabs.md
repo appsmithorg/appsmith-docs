@@ -34,9 +34,9 @@ These properties help you share values between widgets and also allow you to eas
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events            | Description                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../appsmith-framework/actions/). |
+| Events            | Description                                                                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **onTabSelected** | Sets the action to be run when the user selects a tab. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Styles
 
@@ -57,6 +57,6 @@ You can create separate UIs in each tab container and dynamically switch between
 
 ## Tab Navigation
 
-By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](../appsmith-framework/actions/store-value.md) and some JavaScript:
+By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](../appsmith-framework/widget-actions/store-value.md) and some JavaScript:
 
 {% embed url="https://youtu.be/dHeS5kPHlHE" %}

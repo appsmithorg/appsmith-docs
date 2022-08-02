@@ -32,7 +32,7 @@ These properties allow you to bind your camera widget with any other widget in q
 
 ### Events
 
-| Event           | Description                                                                                                                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onImageSave** | Sets an action to take place when the user saves an image. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/actions/).), or you can define a custom JavaScript function to call instead. |
-| **onVideoSave** | Sets an action to take place when the user saves a video. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/actions/).), or you can define a custom JavaScript function to call instead.  |
+| Event           | Description                                                                                                                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **onImageSave** | Sets an action to take place when the user saves an image. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead. |
+| **onVideoSave** | Sets an action to take place when the user saves a video. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead.  |

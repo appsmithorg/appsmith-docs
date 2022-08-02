@@ -38,10 +38,10 @@ These properties allow you to bind your Map widget with any other widget in quer
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Events              | Description                                                                                                                                |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onMarkerClick**   | Sets the action to be run when the user clicks a marker on the map. See a list of [supported actions](../appsmith-framework/actions/).     |
-| **onMarkerCreated** | Sets the action to be run when the user creates a new marker on the map. See a list of [supported actions](../appsmith-framework/actions/) |
+| Events              | Description                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onMarkerClick**   | Sets the action to be run when the user clicks a marker on the map. See a list of [supported actions](../appsmith-framework/widget-actions/).     |
+| **onMarkerCreated** | Sets the action to be run when the user creates a new marker on the map. See a list of [supported actions](../appsmith-framework/widget-actions/) |
 
 ### Styles
 

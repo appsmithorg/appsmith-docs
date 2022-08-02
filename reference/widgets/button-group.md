@@ -59,9 +59,9 @@ For the button of type "Menu," you can add several options to be shown in a drop
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Event       | Description                                                                                                                                                                                                                                               |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets an an action to take place when the user clicks on this widget. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/actions/).), or you can define a custom JavaScript function to call instead. |
+| Event       | Description                                                                                                                                                                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets an an action to take place when the user clicks on this widget. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead. |
 
 ### Styles
 

@@ -221,10 +221,10 @@ For example, let's take an Input widget `Phoneinput1` and bind the selected coun
 
 They are a set of actions that you can perform on the widget. The following table lists the actions:
 
-| Event             | Description                                                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/actions/). |
-| **onSubmit**      | Triggers an action on submit (when the enter key is pressed). See a list of [supported actions](../appsmith-framework/actions/).      |
+| Event             | Description                                                                                                                                  |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onSubmit**      | Triggers an action on submit (when the enter key is pressed). See a list of [supported actions](../appsmith-framework/widget-actions/).      |
 
 ### Label
 

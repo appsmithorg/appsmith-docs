@@ -30,7 +30,7 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute onPageChange.
 
-![](<../../../.gitbook/assets/pagination (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1).gif>)
+![](<../../../.gitbook/assets/pagination (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (4).gif>)
 
 ## Server-Side Searching / Filtering
 

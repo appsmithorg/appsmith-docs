@@ -1,8 +1,6 @@
----
-description: Show a temporary notification style alert message to the user
----
-
 # Show Alert
+
+It shows a temporary notification style alert message to the user
 
 ![](../../../.gitbook/assets/alert.gif)
 
