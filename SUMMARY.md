@@ -82,7 +82,7 @@
   * [Creating Workflows](core-concepts/writing-code/workflows.md)
   * [JavaScript Promises](core-concepts/writing-code/javascript-promises.md)
   * [External Libraries](core-concepts/writing-code/ext-libraries.md)
-  * [Appsmith Framework](reference/appsmith-framework/README.md)
+  * [Appsmith Framework](<reference/appsmith-framework/README (1).md>)
 
 ## Reference
 
@@ -148,7 +148,7 @@
   * [Redshift](reference/datasources/querying-redshift.md)
   * [Snowflake](reference/datasources/querying-snowflake-db.md)
   * [SMTP](reference/datasources/using-smtp.md)
-* [Appsmith Framework](<reference/appsmith-framework/README (1).md>)
+* [Appsmith Framework](reference/appsmith-framework/README.md)
   * [Context Object](reference/appsmith-framework/context-object.md)
   * [Query Object](reference/appsmith-framework/query-object.md)
   * [Actions](reference/appsmith-framework/actions/README.md)
