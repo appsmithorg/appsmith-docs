@@ -44,6 +44,24 @@ You can view these themes from the theme list and choose to apply them when you 
 When you apply a theme from the themes section and customize it, we create a copy and apply it to the app. It ensures that default themes are never overridden.
 {% endhint %}
 
+## ​Reset the theme of all widgets
+
+All apps support theming, but apps created before the new theme options might still be using the older styles, because we do not want to break any of the style settings you have made.
+
+To update your older apps to use theming, you will need to use the **Reset widget styles** button from the menu in the **Theme Properties** pane.
+
+{% embed url="https://youtu.be/6W-EIPKCNK8" %}
+
+1. Click an empty spot on the canvas so that no widgets are selected.
+2. Find the **Theme Properties** settings on the right of the page, and click the three dots (⋯) button.
+3. Click the **Reset widget styles** button.
+
+All of the widgets which previously did not support theming will now be ready for new styles.
+
+{% hint style="info" %}
+Widgets which are deprecated will not support theming**.**
+{% endhint %}
+
 ## **Impact of themes on a widget**
 
 Within each widget's style properties, there are some properties that the theme can control. When you drag a new widget to the canvas, it will automatically sync with the theme values.
