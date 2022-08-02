@@ -47,11 +47,11 @@ To continue with the OIDC setup on Appsmith, navigate to Auth0 configurations an
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details (after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-![Configure one or more scopes at Appsmith](../../../../../.gitbook/assets/Appsmith-Scope-Field.png)
+![Configure one or more scopes at Appsmith](<../../../../../.gitbook/assets/Appsmith-Scope-Field (1).png>)
 
 #### What does Appsmith need as part of Scopes?
 
-Appsmith needs an **openId** as a mandatory scope. You can add more scopes if the need be. You can ensure that the same is available at Auth0.
+Appsmith needs **openId** and **email** as mandatory scopes. You can add more scopes if the need be. You can ensure that the same is available at Auth0.
 
 #### Auth0 Scope
 

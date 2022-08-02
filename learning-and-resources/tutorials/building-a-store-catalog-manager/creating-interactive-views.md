@@ -78,8 +78,8 @@ Finally, note that since the scope of a widget is limited to its parent page, a 
 
 There are two ways to access a widget's properties or an APIs/DB Query's results _from another page_:
 
-1. Store the data in your browser cache using the [storeValue](broken-reference) function so that it's available for accessing even when the user moves to another page in your app.
-2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](broken-reference) function.
+1. Store the data in your browser cache using the [storeValue](broken-reference/) function so that it's available for accessing even when the user moves to another page in your app.
+2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](broken-reference/) function.
 {% endhint %}
 
 Let's now set a default value for **MrpInput**:
@@ -225,6 +225,6 @@ You can also make the application public, in which case, anyone with the URL to 
 
 The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](broken-reference)
+* [Core Concepts](broken-reference/)
 * [Widgets](../../../reference/widgets/)
-* [Appsmith Framework](../../../reference/appsmith-framework/)
+* [Appsmith Framework](<../../../reference/appsmith-framework/README (1).md>)

@@ -9,7 +9,7 @@ description: >-
 When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
 
 {% hint style="info" %}
-To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](broken-reference) and expand on triggering more complex actions.
+To create workflows, you should be familiar with [triggering actions](<../../reference/appsmith-framework/README (1).md#functions>) from [widgets](broken-reference/) and expand on triggering more complex actions.
 {% endhint %}
 
 ## **Fields**
@@ -30,7 +30,7 @@ The properties that can trigger an action or perform an operation are called Asy
 
 ![Input Widget - Async Fields](<../../.gitbook/assets/Writing Code  Creating Workflows  Async Fields  Input Widget.png>)
 
-For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](../../reference/appsmith-framework/#functions).
+For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](<../../reference/appsmith-framework/README (1).md#functions>).
 
 ### **Use an Async Function Response in a Sync Field**
 
@@ -42,11 +42,11 @@ Let's look at some examples to understand how you can use async functions in syn
 
 You are fetching all the users and displaying information like First Name, Last Name, Email, and more on a page. You have a table widget to display the data.
 
-**Using an API**&#x20;
+**Using an API**
 
 You have an API that fetches Users. You want to trigger the API execution, so you bind the API call to the widget, and the response generated will be shown in the table.
 
-To add a Table widget; Navigate to `Explorer` >> Click `Widgets` >> Search `table` >> Drag a table widget onto the canvas. ****&#x20;
+To add a Table widget; Navigate to `Explorer` >> Click `Widgets` >> Search `table` >> Drag a table widget onto the canvas. \*\*\*\*
 
 {% embed url="https://youtu.be/iYZV9DPnugY" %}
 How to call API in the Sync field?
@@ -124,29 +124,29 @@ Execute a global function from an async field
 
 The property pane allows us to configure the action to take once a Query returns with a success or an error. Success / Error is determined by the HTTP status code or the query response status returned by the API / Query.
 
-We can decide to display a success or an error message by using the [**showAlert Action**](broken-reference).
+We can decide to display a success or an error message by using the [**showAlert Action**](broken-reference/).
 
 ![](<../../.gitbook/assets/error handling.gif>)
 
 ## Complex Workflows
 
-The GUI is limited to a single [onSuccess](broken-reference) / [onError](broken-reference) callback while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
+The GUI is limited to a single [onSuccess](broken-reference/) / [onError](broken-reference/) callback while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
 
 ![](<../../.gitbook/assets/conditional query.gif>)
 
 {% hint style="success" %}
-Once you have configured [actions](broken-reference) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
+Once you have configured [actions](broken-reference/) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. This can help you learn to use JavaScript to configure workflows!
 {% endhint %}
 
 ### Executing Queries in Parallel / Serial
 
-Every [query object](broken-reference) contains a run method that is used to execute it. The [run](broken-reference) method is asynchronous and multiple queries can be executed in parallel as below
+Every [query object](broken-reference/) contains a run method that is used to execute it. The [run](broken-reference/) method is asynchronous and multiple queries can be executed in parallel as below
 
 ```javascript
 {{ API1.run(); Query2.run(); API2.run(); }}
 ```
 
-or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](broken-reference)
+or chained to be called onSuccess / onError using the callback arguments in the [Run Signature](broken-reference/)
 
 ```javascript
 {{ 
@@ -176,5 +176,5 @@ or chained to be called onSuccess / onError using the callback arguments in the 
 ```
 
 {% hint style="success" %}
-Make use of the [Appsmith Framework](../../reference/appsmith-framework/) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
+Make use of the [Appsmith Framework](<../../reference/appsmith-framework/README (1).md>) and [External Libraries](ext-libraries.md) to quickly build logic into your applications
 {% endhint %}
