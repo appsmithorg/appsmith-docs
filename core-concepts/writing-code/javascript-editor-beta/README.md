@@ -43,7 +43,7 @@ The support for the named [exports](https://developer.mozilla.org/en-US/docs/web
 
 You can call the functions defined in a JS Object by using the notation `{{ JS_OBJECT_NAME.Function_Name }}` embedded in a mustache sign as shown in the figure below:
 
-![How to call a function defined in a JS Object?](<../../../.gitbook/assets/call\_JS\_object (1) (1) (1) (1) (1) (2) (4).png>)
+![How to call a function defined in a JS Object?](<../../../.gitbook/assets/call\_JS\_object (1) (1) (1) (1) (1) (2) (2).png>)
 
 {% hint style="info" %}
 The JS Objects defined are available across APIs, Queries, or other JS Objects defined for **a particular page,** i.e., the JS Objects have **page-level access** and are **not** accessible **across pages**.

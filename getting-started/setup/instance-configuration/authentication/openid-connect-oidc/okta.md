@@ -77,7 +77,7 @@ The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize t
 
 #### What does Appsmith need as part of Scopes?
 
-Appsmith needs an **openId** as a mandatory scope. You can add more scopes if the need be. You can ensure that the same is available at Okta.
+Appsmith needs **openId** as a mandatory scope. You can add more scopes if the need be. You'll have to ensure that the same is available at Okta.
 
 #### Okta Scope
 

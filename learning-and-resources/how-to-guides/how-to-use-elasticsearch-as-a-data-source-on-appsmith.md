@@ -162,7 +162,7 @@ Your application is now ready and can be easily deployed by clicking the Deploy 
 
 Let's update one of the values to check if our application is working.
 
-![Elastic-2-gif](<../../.gitbook/assets/Elastic - 2 gif (1) (1) (1) (2) (3).gif>)
+![Elastic-2-gif](<../../.gitbook/assets/Elastic - 2 gif (1) (1) (1) (2).gif>)
 
 All the queries have executed properly. Let's check the value of id 6 to see if it's appropriately updated. I'll use Kibana to check the value.
 
