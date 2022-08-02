@@ -154,10 +154,10 @@ redirects:
   framework-reference/download: reference/appsmith-framework/widget-actions/download.md
   framework-reference/intervals-time-events: reference/appsmith-framework/widget-actions/intervals-time-events.md
   framework-reference/show-alert: reference/appsmith-framework/widget-actions/show-alert.md
-  framework-reference/navigateto: reference/appsmith-framework/widget-actions/navigateto.md
+  framework-reference/navigateto: reference/appsmith-framework/widget-actions/navigate-to.md
   framework-reference/store-value: reference/appsmith-framework/widget-actions/store-value.md
-  framework-reference/copytoclipboard: reference/appsmith-framework/widget-actions/copytoclipboard.md
-  framework-reference/resetwidget: reference/appsmith-framework/widget-actions/resetwidget.md
+  framework-reference/copytoclipboard: reference/appsmith-framework/widget-actions/copy-to-clipboard.md
+  framework-reference/resetwidget: reference/appsmith-framework/widget-actions/reset-widget.md
   framework-reference/javascript-editor-beta: core-concepts/writing-code/javascript-editor-beta/README.md
   framework-reference/javascript-editor-beta/asynchronous-javascript-function-settings: core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings.md
   widget-reference/audio: reference/widgets/audio.md
