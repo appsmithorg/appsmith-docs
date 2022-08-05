@@ -148,6 +148,7 @@
   * [Redshift](reference/datasources/querying-redshift.md)
   * [Snowflake](reference/datasources/querying-snowflake-db.md)
   * [SMTP](reference/datasources/using-smtp.md)
+  * [Twilio](reference/datasources/twilio.md)
 * [Appsmith Framework](reference/appsmith-framework/README.md)
   * [Context Object](reference/appsmith-framework/context-object.md)
   * [Query Object](reference/appsmith-framework/query-object.md)
