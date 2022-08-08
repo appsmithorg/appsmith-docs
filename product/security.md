@@ -2,37 +2,47 @@
 
 ## Does Appsmith store my data?
 
-No, Appsmith does not store any data returned from your API endpoints or DB queries. Appsmith only acts as a proxy layer. When you query your database/API endpoint, the Appsmith server only appends sensitive credentials before forwarding the request to your backend. The Appsmith server doesn't expose sensitive credentials to the browser because that can lead to security breaches. Such a routing ensures the security of your systems and data.
+Appsmith does not store any data returned from your API endpoints or DB queries. Appsmith only acts as a proxy layer. When you query your database/API endpoint, the Appsmith server only appends sensitive credentials before forwarding the request to your backend. It doesn’t expose sensitive credentials to the browser as it can lead to security breaches. The routing ensures the security of your systems and data.
 
 ## Security measures within Appsmith
 
 Appsmith applications are secure-by-default. The security measures implemented for Appsmith installations are:
 
-* On Appsmith Cloud, all connections are TLS encrypted. For self-hosted instances, we offer the capability to setup SSL certificates via LetsEncrypt during the installation process.
-* All sensitive credentials, such as database credentials, are encrypted with AES-256 encryption. Each self-hosted Appsmith instance configures unique salt and password values ensuring data-at-rest security.
-* Appsmith Cloud will only connect to your databases/API endpoints through whitelisted IPs: <mark style="color:green;">**18.223.74.85**</mark> & <mark style="color:green;">**3.131.104.27**</mark>, ensuring that you only expose database access to specific IPs when using our cloud offering.
-* Appsmith Cloud is hosted in AWS data centers on SOC 1 and SOC 2 compliant servers. We also maintain data redundancy on our cloud instances via regular backups.
-* Internal access to Appsmith Cloud is controlled through a 2-factor authentication system and audit logs.
+* All sensitive credentials, such as database credentials, are encrypted with [AES-256 encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard). Each self-hosted Appsmith instance ensures [data-at-rest](https://en.wikipedia.org/wiki/Data\_at\_rest) security by configuring unique salt and password values.
+* On Appsmith Cloud, all connections are [TLS](https://en.wikipedia.org/wiki/Public\_key\_certificate) encrypted. For self-hosted instances, we offer the capability to set up [SSL ](https://en.wikipedia.org/wiki/Public\_key\_certificate)certificates via [LetsEncrypt ](https://letsencrypt.org/)during installation.
+* Appsmith Cloud will **only** connect to your databases/API endpoints through whitelisted IPs: <mark style="color:green;">**18.223.74.85**</mark> & <mark style="color:green;">**3.131.104.27**</mark>, ensuring that you only expose database access to specific IPs when using our cloud offering.
+* Appsmith Cloud is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers. We also maintain data redundancy on our cloud instances via regular backups.
+* Internal access to Appsmith Cloud is controlled through a [Two-Factor Authentication System](https://en.wikipedia.org/wiki/Help:Two-factor\_authentication) and audit logs.
 
-{% hint style="info" %}
-The audit logs here are about Appsmith's cloud-hosted instance only and should not be confused with the audit logs feature.
+{% hint style="warning" %}
+The above reference to the **audit logs** pertains only to the **cloud-hosted instance** of Appsmith and does **not** refer to the **audit logs** **feature.**
 {% endhint %}
 
-## **Securely Executing Queries**
+## Securely Executing Queries & APIs
 
-The Appsmith's backend system doesn't store any information related to the inputs made by users using an app or the responses of the queries. It acts as a pure proxy system. It ensures that any private/confidential data is never logged or stored in Appsmith's data stores. Appsmith stores the configuration of the queries so that the SQL query body or custom API URLs are never exposed to the client in "view" mode. Thus protecting the application as viewers cannot deduce the executed query.
+Appsmith's backend system doesn't store any data when responding to API calls or executing any queries. The security measures implemented for Appsmith Executing Queries & APIs are:
 
-All SQL queries are also created with prepared statements switched on by default to prevent SQL injection from the client.
+* The Appsmith's backend system doesn't store any information about query responses or user inputs. Appsmith **only** acts as a proxy and never logs or stores the private/confidential data in Appsmith's data stores.
+* To protect the application so that users cannot infer the executed query - Appsmith stores the query configuration and ensures that the SQL query body or custom API URLs are never exposed to the client in `view` mode. &#x20;
+* To avoid SQL injections, all SQL queries have [prepared statements](../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) enabled by default.
 
 ## Securely Executing JavaScript
 
-All JS written within Appsmith is executed on the client only. We don't execute any code on the server. Like all JS codes on the browser, the user can inspect the site and view the code. Hence, please code accordingly.
+The JavaScript code written within Appsmith is executed on the client only, and a user can inspect the site and view the code in the browser. Hence, we recommend implementing the standard best practices when dealing with client-side code.
 
 The code is stored in the MongoDB database that Appsmith uses to store all other application configurations. To ensure that all data is secure, please read the following carefully:
 
-1. No API keys or sensitive keys are printed in plain text in the JS Code because the JS code is not stored in an encrypted format.
-2. When you connect an application to Git, the JS Code will be stored as a JS file in the repository. Hence, the security measures you take with your standard JS code should be taken with the Appsmith's JS code.
+* We recommend that you **do** **not** hard code the sensitive keys, credentials, or other sensitive information in the JavaScript objects in plain text.
+
+{% hint style="warning" %}
+You can add **secrets** to **APIs** or **datasource configurations** as they are **not** exposed in the **view mode**. You can update the **secrets** in **edit** **mode** but **cannot** view the existing **secrets** while **viewing** or **editing** the configurations.
+{% endhint %}
+
+* When you sync applications to git repositories, the JavaScript code is also synced and stored as a JavaScript file in the repository. As a result, we recommend following standard best practices when dealing with JavaScript code written on Appsmith.
+* We **do not** expose DOM APIs directly to the user while writing JavaScript code, but we support a few features via global actions like `setInterval()` and `clearInterval()` available on Appsmith.
+* Appsmith does not allow some actions like `Fetch`. You cannot call an external API directly from the JavaScript code. However, you can add an API on Appsmith and use it to request, read data, or manipulate the response from the external API.
+* You should not store sensitive information using a `storeValue` function because the data is stored in the browser's local storage and can be read.
 
 {% hint style="success" %}
-We maintain an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email [security@appsmith.com](mailto:security@appsmith.com), and we'll resolve them ASAP.
+We maintain an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email [security@appsmith.com](mailto:security@appsmith.com), and we'll resolve it ASAP.
 {% endhint %}
