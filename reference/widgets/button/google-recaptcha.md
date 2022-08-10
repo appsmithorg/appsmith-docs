@@ -6,7 +6,7 @@ description: >-
 
 # Re-Captcha
 
-[Google reCAPTCHA v3](https://www.google.com/recaptcha) is a service provided by Google that returns a user score without any interaction from the user. This can integrated with [buttons](./) to prevent bots from clicking the button on your website without a human present.
+[Google reCAPTCHA v3](https://www.google.com/recaptcha) is a service provided by Google that returns a user score without any interaction from the user. This can be integrated with [buttons](./) to prevent bots from clicking the button on your website without a human present.
 
 **1. Go to the reCAPTCHA** [**add site page**](https://www.google.com/recaptcha/admin/create)
 
@@ -16,15 +16,17 @@ description: >-
 
 **3. Copy the site and secret key**
 
-![click to expand](../../../.gitbook/assets/recaptcha-keys.png)
+![Click to expand](../../../.gitbook/assets/recaptcha-keys.png)
 
-**4. Paste the site key in the** [**button**](./) **reCAPTCHA field**
+**4. Paste the site key into the** [**button**](./) **reCAPTCHA field**
 
-![click to expand](../../../.gitbook/assets/button-recaptcha-config.png)
+![Click to expand](../../../.gitbook/assets/button-recaptcha-config.png)
 
 **5. Configure the server-side integration on your backend**
 
-> The exact steps will depend on your backend - see [Google's reference](https://developers.google.com/recaptcha/docs/verify) for detailed instructions.
+{% hint style="warning" %}
+The exact steps depend on your backend - see [Google's reference](https://developers.google.com/recaptcha/docs/verify) for detailed instructions.
+{% endhint %}
 
 The user's reCAPTCHA response can be obtained in the API Pane with the `recaptchaToken` key.
 
@@ -43,4 +45,41 @@ Make a `POST` request to `https://www.google.com/recaptcha/api/siteverify` with 
 
 ## Validation Example
 
-![click to expand](../../../.gitbook/assets/button-recaptcha-api.png)
+Now that you have registered the site with [Google Recaptcha](https://www.google.com/recaptcha/about/) let's validate that the recaptcha is working by using a [button widget](./) and adding an [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md#api-editor) on Appsmith. Follow these steps to validate the reCAPTCHA:
+
+* &#x20;Drag and drop a [button widget](./) onto the canvas
+* Add the **site key** to the [button's `Google reCAPTCHA Key` ](./#widget-properties)property
+
+{% hint style="info" %}
+Navigate to [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha/adminhttps://www.google.com/recaptcha/admin) >> Select **Settings** for your site>> expand **reCAPTCH Keys** section >> click **Copy Site Key**
+{% endhint %}
+
+* Navigate to **Explorer** >> Add **New Blank API** >> Add details as below:
+  * &#x20;Add **Header** `content-type` as `multipart/form-data`
+  * Select the HTTP Method as `POST`
+  * Add URL ``` `<mark style="color:red;">`https://www.google.com/recaptcha/api/siteverify`</mark>
+
+![Add header, HTTP Method, and URL to validate reCaptcha](<../../../.gitbook/assets/Widgets  Button  reCAPTCHA  Validate API  Content Type .png>)
+
+* Select **Body** tab >> Add details as below:
+  * Select `MULTIPART_FORM`_`_`_`DATA`
+  * Add key as **response** and bind the button's recaptchaToken property by using `{{<<BUTTON_NAME.recaptchaToken>>}}`
+  * Add key as **secret** and add your site's **Recaptcha secret key**
+
+{% hint style="info" %}
+Navigate to  [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha/adminhttps://www.google.com/recaptcha/admin) >> Select **Settings** for your site>> expand **reCAPTCH Keys** section >> click **Copy Secret Key**
+{% endhint %}
+
+![Add response and secret to Body - Multipart form data.](<../../../.gitbook/assets/Widgets  Button  reCAPTCHA  Validate API  Add reCaptchToken and Secret to Body .png>)
+
+Once the above API is set up, click the **button** to trigger the validation. On successful validation, you'll see the response generated as below in the API response tab:
+
+```
+{
+  "success": true,
+  "challenge_ts": "2022-08-09T12:55:40Z",
+  "hostname": "app.appsmith.com",
+  "score": 0.9,
+  "action": "submit"
+}
+```
