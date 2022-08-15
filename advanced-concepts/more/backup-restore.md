@@ -1,7 +1,5 @@
 # Migrate Applications
 
-{% embed url="https://youtu.be/2JuJ0v56ztw" %}
-
 On Appsmith, you can migrate all Appsmith data from one instance to another or just migrate necessary applications.
 
 ### **Steps to Migrate entire Appsmith Data onto instances:**
@@ -23,11 +21,59 @@ The restore would end up deleting all the existing data in the mongo database of
 3. Open the file `encryption.env` and change the variables `APPSMITH_ENCRYPTION_PASSWORD` & `APPSMITH_ENCRYPTION_SALT` to the same ones as the old VM. This is important because sensitive data in Mongo is encrypted using these credentials. Without this, you risk corrupting any passwords you've saved.
 4. Restart the Appsmith system using the command: `sudo docker-compose down && sudo docker-compose up -d`
 
-### Steps to migrate only particular applications onto instances:
+## Import/Export Applications
 
-Using this feature, you can now import or export desired application onto different Appsmith instances, follow the below steps:
+You can import or export the desired application to any workspace, either in the same or a different Appsmith instance.
 
-1. Exporting Appsmith application from source: There is an option to export the application (from source instance), in the overflow menu from the application icon on the homepage.
-2. Import Appsmith application to the destination: To import the application to the destination instance, find the `import application` option on the overflow menu on the homepage beside the workspace name.
+{% hint style="info" %}
+Applications are forward compatible from Appsmith version 1.6.9.&#x20;
 
-![](../../.gitbook/assets/import-export.gif)
+Applications built in an older version of an Appsmith instance will work when imported into a newer version of an Appsmith instance.
+{% endhint %}
+
+{% embed url="https://youtu.be/2JuJ0v56ztw" %}
+
+### Export Application
+
+You can [sync](../version-control-with-git/connecting-to-git-repository.md) your application to a [Git repository](../version-control-with-git/) or export your application as a JSON file to your system.
+
+Follow the steps below to export your application as a JSON file:
+
+1. Go to your workspace homepage and navigate to the app you want to export.
+2. Click on the menu button at the bottom of the Application card and select “**Export**.”
+
+{% embed url="https://youtu.be/lBMP9MQHdCQ" %}
+
+### Import Application
+
+You can choose one of the below ways to import an Appsmith application.-
+
+1. [Import from a Git Repository](backup-restore.md#import-from-a-git-repository) ;
+2. From an application JSON file.
+
+#### Import from an application JSON file
+
+If you have exported an application as a JSON file, you can import the same application to any workspace or Appsmith instance.
+
+Follow the steps below to import an exported (JSON file) application -
+
+1. Go to your workspace homepage and navigate to the menu button of the workspace.
+2. Click on the menu button (next to +NEW) and select the “**Import**” option.
+3. In the import pop-up window, click on import from file and pick the JSON file from your system’s memory.
+4. Once the file is imported, you will see a datasource configuration modal (if the imported app had a datasource connection) where you can configure the datasources used by the imported application.
+
+{% hint style="info" %}
+As a security measure, we do not export any config values used for the connecting datasource during the import operation. So either you have to configure it in the datasource configuration modal, or you can skip this and choose to configure it later
+{% endhint %}
+
+{% embed url="https://youtu.be/bhzGIdXq2Z4" %}
+:
+{% endembed %}
+
+{% hint style="success" %}
+When you import the application into the destination instance/ workspace, it's a new one, meaning source and destination applications are detached, and changes will not be synced.
+{% endhint %}
+
+### Import from a Git repository
+
+If you have an application connected to Git version control in Appsmith, you can import the Appsmith application from your Git repository into any workspace. For more information, check out [Import from Repository](backup-restore.md#import-from-a-git-repository).
