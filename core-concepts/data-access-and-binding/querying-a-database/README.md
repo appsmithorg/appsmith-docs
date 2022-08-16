@@ -1,61 +1,55 @@
 # Queries
 
-The information you want to present in any application is typically spread over numerous tables in a well-designed database. A query can collect data from different tables and pull it together for display. You can either request data from your database or act on the data, or both.&#x20;
+The information you want to present in any application is typically spread over numerous tables in a well-designed database. A query can collect data from different tables/ documents and pull it together for display. You can either request data from your database or manipulate the data, or both.&#x20;
 
 {% hint style="info" %}
 To write and execute queries, you should understand the basics of [connecting to a Database](../../connecting-to-data-sources/connecting-to-databases.md) or [Connecting to an API](../../connecting-to-data-sources/authentication/connect-to-apis.md).
 {% endhint %}
 
-A query can add, update, or remove data from a database, conduct calculations, integrate data from other databases, and much more. You can create either static queries or dynamic queries in Appsmith.
+A query can insert, update, or remove data from a database, conduct calculations, integrate data from other databases, and much more.&#x20;
 
 {% hint style="info" %}
-APIs, Database Queries, and Integrations that fetch / update data from third-party services are **collectively termed as Queries in Appsmith**
+**APIs**, **Database** **Queries**, and **Integrations** to perform <mark style="color:red;">`CRUD`</mark> operations on data are collectively termed **Queries** in Appsmith**.**
 {% endhint %}
 
-## **Static Query**
-
-When you need to execute the same query statements for each input row but wish to alter the data in the query, create a static query. **** When using the static query, the preprocessor decides how to access the database in advance and executes that decision, so the user cannot run queries during runtime. Static SQL is usually employed when data is distributed uniformly.
-
-The following static SQL query uses query parameters that bind to the Student\_ID and Class input fields:
-
-```
-SELECT * from users where status in ({{studentID.text}} , {{Class.text}})
-```
-
-## Dynamic Queries &#x20;
-
-The method you **** use to write SQL queries so that they are dynamically created alongside application operations is known as "dynamic SQL." A dynamic query is automatically refreshed each time it is used.
-
-You generate the query on the fly based on some parameters and then execute it. For example, `{{Query_to_Execute.text}}` where the [Text Widget](../../../reference/widgets/text.md) **(Query\_to\_Execute)** has the query that will be executed, which could be generated on the fly based on some logic in the code.
-
-Dynamic queries are required for various application types, such as those that show user's online status or applications that query a database where the data definitions of tables are constantly changing.
-
-For example, if you want to select users based on the status selected on the application you can use a query as below:
-
-```
-SELECT * from users where status in = ANY ({{userStatus.selectedOptionValues}})s
-```
+You can create queries to manipulate data from a datasource using the Appsmith query editor.&#x20;
 
 {% hint style="info" %}
-The sample query is for [PostgreSQL](../../../reference/datasources/querying-postgres.md), [MySQL](../../../reference/datasources/querying-mysql.md), or [MSSQL](../../../reference/datasources/querying-mssql.md) data sources.
+By default, the <mark style="color:red;">`prepared statement`</mark> is enabled for all queries. Prepared statements provide a secure way of executing your queries. You can read  [How to Use Prepared Statements](../../../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secure data transactions.
 {% endhint %}
-
-You can create queries to fetch and update data from a datasource using the Appsmith query editor for each datasource type.&#x20;
 
 ### **Setting up a Query**
 
-Go to the page that needs to run this query.
+Go to the page where you wish to run the query. Follow the below steps to set up a query using a query editor:
 
 {% hint style="success" %}
 Queries are **auto-saved**, so you never lose your work. These changes will be reflected in your **published** application only after you deploy.
 {% endhint %}
 
-1. Go to **Datasources → +**.
-2. Choose the connected datasource and click **+** New Query
-3. You will be taken to the query editor to configure the query.
-4. Note that the query is created with a default name. It’s recommended that you rename it for readability and access.
-5. Write your query in the syntax that is valid for your [database type](../../connecting-to-data-sources/connecting-to-databases.md#supported-databases).
-6. APIs can be configured using a [REST interface](../../connecting-to-data-sources/authentication/connect-to-apis.md)
+{% embed url="https://youtu.be/N6zRxIVSGfk" %}
+How to set up a Query?
+{% endembed %}
+
+* Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query.
+
+{% hint style="info" %}
+You can follow the steps detailed in [Datasources to add a new datasource](../../connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database).
+{% endhint %}
+
+* Choose the connected datasource and click <mark style="color:red;">**+ New Query.**</mark> You will be taken to the query editor to configure the query. You can also choose to add a new query by navigating to **Explorer** >> Scroll down to **Queries/JS** >> Click plus (**+**) sign >> Select the **name** `<DATASOURCE_NAME> Query` (users query)
+
+![Create a Query from QUERIES/JS Menu Item](<../../../.gitbook/assets/Core Concepts  Data Access and Binding  Setting up Query  Add Query.png>)
+
+{% hint style="info" %}
+You can configure your API(s) using a [REST interface](../../connecting-to-data-sources/authentication/connect-to-apis.md).
+{% endhint %}
+
+{% hint style="danger" %}
+The query is created with a **default name**. It’s **recommended** that you **rename** it for **readability** and **access**.
+{% endhint %}
+
+* Write your query in the syntax that is valid for your [database type](../../connecting-to-data-sources/connecting-to-databases.md#supported-databases).
+* Bind your query to the widget and carry out data manipulations.
 
 {% hint style="warning" %}
 A query and its results can be accessed from **only** the **page** it is a part of. To use a query on another page, click the context menu next to the query name and clone it.
@@ -63,7 +57,7 @@ A query and its results can be accessed from **only** the **page** it is a part 
 
 ### **Naming a Query**
 
-A query must have a unique name that acts as an identifier. It is used to access the query results. In that sense, a name is like a variable in a programming language. You can access the various properties of the query and its data using the query name.
+A query must have a **unique** and **meaningful name** that acts as an **identifier**. It is used to access the query results. In that sense, a name is like a variable in a programming language. You can access the various properties of the query and its data using the **query name**.
 
 {% hint style="warning" %}
 Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as query names.
@@ -71,21 +65,23 @@ Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) a
 
 ### **Running a Query**
 
-Click on the Run button or hit `cmd + enter` to execute a query. If the query succeeds, a success message will pop-up on the screen in the top right corner, along with the results below the query.
+Click on the <mark style="color:red;">`Run`</mark> button or hit <mark style="color:red;">`cmd + enter`</mark> to execute a query. You'll see the results in the Response tab if the query succeeds.
 
-All query results are stored in the data property of the query object. This object is immutable and cannot be changed. They can be accessed using javascript
+{% embed url="https://youtu.be/0xA7ChO7Rlk" %}
+How to run a query?
+{% endembed %}
 
-```
+All query results are stored in the [data](../../../reference/appsmith-framework/query-object.md#data) property of the [query object](../../../reference/appsmith-framework/query-object.md). It is immutable and cannot be changed. You can access it using JavaScript, as shown in the code snippet below:
+
+```javascript
 {{ Query1.data }}
 ```
 
 {% hint style="info" %}
-**DB Queries** fetch data in the form of an array of objects where each object is a row, and each key in the object is a column.
+**DB Queries** fetch data in the form of an array of objects where each **object** is a **row**, and each **key** in the **object** is a **column**.
 {% endhint %}
 
-All **API Queries** return the exact API response of the endpoint
-
-To understand queries, read this [How to Use Prepared Statements](../../../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) guide.
+All **API Queries** return the exact API response of the endpoint.
 
 ## Using Queries in applications
 
