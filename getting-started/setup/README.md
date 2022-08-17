@@ -25,7 +25,7 @@ The self-hosted version is not air-gapped and pings a cloud service to fetch rel
 {% endhint %}
 
 {% hint style="warning" %}
-Please note that Appsmith's Docker image does **not** run open OpenShift platform today.
+Please note that Appsmith's Docker image does **not** run on OpenShift platform today.
 {% endhint %}
 
 ## Troubleshooting
