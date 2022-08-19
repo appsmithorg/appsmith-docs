@@ -33,7 +33,9 @@ description: >-
 
 [How to show/hide a column of a Table widget at the click of a button?](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918)
 
-[How to use the editable table?](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)
+[How to use the editable table (Google Sheets)?](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)&#x20;
+
+[How to use the editable table to update all records in bulk (PostgreSQL)?](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)&#x20;
 
 ## Server-side Pagination
 
@@ -128,6 +130,10 @@ description: >-
 [How to close a modal on button click - `closeModal()`?](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407)
 
 [How to reset a widget - `resetWidget()`?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78)
+
+[How to reset multiple widgets at the click of a button using a Container widget?](https://app.appsmith.com/app/reset-widgets/reset-container-62fd050f84757e0c0554f7e7)
+
+[How to reset multiple widgets at the click of a button using a JS function?](https://app.appsmith.com/app/reset-widgets/reset-widgets-with-js-function-62fd10ae84757e0c0554fbad)
 
 [How to navigate to another page/website - `navigateTo()`?](https://app.appsmith.com/app/framework/navigateto-62566b650d3d384069c05830)
 
