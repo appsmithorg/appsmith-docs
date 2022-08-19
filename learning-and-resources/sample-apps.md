@@ -31,6 +31,8 @@ description: >-
 
 [How to reset a table widget using the `resetWidget()` method?](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3)
 
+[How to show/hide a column of a Table widget at the click of a button?](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918)
+
 [How to use the editable table?](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)
 
 ## Server-side Pagination
@@ -58,6 +60,8 @@ description: >-
 [How to bulk insert data into Postgres (Dynamic inputs)?](https://app.appsmith.com/applications/623cd37b4d9aea1b062b3470/pages/623cd37b4d9aea1b062b347b)
 
 [How to bulk update data from Postgres?](https://app.appsmith.com/applications/623cd37b4d9aea1b062b3470/pages/623cd37b4d9aea1b062b347b)
+
+[How to bulk insert data into a Snowflake database (Upload CSV)?](https://app.appsmith.com/app/snowflake/bulk-insert-snowflake-62c468dc8d0a3236bf39e79b)
 
 ## Queries/Apis
 
@@ -98,6 +102,8 @@ description: >-
 ## Forms
 
 [How to do form field validation?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/6245b7264f1a665b23047e5f)
+
+[How to validate a form only if the entered record does not yet exist in the datasource?](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/62f27ce774d6e95d0a53b2bc)
 
 [How to add dynamic input fields to a form?](https://app.appsmith.com/input-widget/dynamic-inputs-624c647651a8863d6c402981)
 
@@ -159,6 +165,8 @@ description: >-
 
 [How to upload camera widget output to a database (MongoDB)?](https://app.appsmith.com/applications/61f10fb69d6d6a6720c9549b/pages/61f7dcff9d6d6a6720c9aeb5)
 
+[How to upload an image to Cloudinary using the FilePicker widget (Cloudinary API)?](https://app.appsmith.com/app/cloudinary-api/upload-to-cloudinary-62cc56e901213a676a35ca2b)
+
 [How to use the progress bar widget?](https://app.appsmith.com/applications/62148aabda926877eb2749c1/pages/62148aabda926877eb2749c4)
 
 [How to upload a file to your app (using Filepicker Widget)?](https://app.appsmith.com/applications/6200a84f2cd3d95ca414dc0d/pages/6200a84f2cd3d95ca414dc10)
@@ -168,6 +176,10 @@ description: >-
 [How to set selected values of a MultiSelect widget dynamically?](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/62713b488a368d6f1ef5d3b0)
 
 [How to set custom markers on a map?](https://app.appsmith.com/app/map-widget/how-to-set-custom-markers-6287d04f7901344ba8d12a98)
+
+[How to use the value of a Checkbox widget (`isChecked`) inside a query?](https://app.appsmith.com/app/checkbox/checkbox-in-query-62dff41d1d816b5fddf3c29a)
+
+[How to programmatically play an Audio widget?](https://app.appsmith.com/app/audio-recorder/play-audio-62e93c334003a7259a30b0c4)
 
 ## UI Components
 
