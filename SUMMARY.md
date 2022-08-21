@@ -126,6 +126,7 @@
   * [Switch Group](reference/widgets/switch-group.md)
   * [Tabs](reference/widgets/tabs.md)
   * [Table](reference/widgets/table/README.md)
+    * [Column Settings](reference/widgets/table/column-settings.md)
     * [Inline Editing](reference/widgets/table/inline-editing.md)
   * [Text](reference/widgets/text.md)
   * [Tree-select](reference/widgets/tree-select.md)

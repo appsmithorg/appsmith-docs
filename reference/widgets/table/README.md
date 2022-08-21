@@ -56,51 +56,19 @@ Where `<query_name>` is the query's name created in Step 2.
 
 That's it! The table widget will get populated with the data coming from the query.
 
-**Column**
+**Columns**
 
-This property shows all the columns in the table, and it gets auto-populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the column settings.
+This property shows all the columns in the table, and it gets auto-populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the [column settings](column-settings.md).
 
 ![](../../../.gitbook/assets/columns\_tablewidget.png)
-
-**Column Settings**
-
-You can customize each table column through a set of properties by clicking on the gear icon.
-
-![Column Settings](../../../.gitbook/assets/Column\_control.gif)
-
-\
-Clicking on the gear icon opens the column settings that give you major customization options - Column control and Styles.
-
-**Column Control**
-
-Column Control has the following properties:
-
-**Column type:** This property allows you to select the type of data in the column.
-
-![](../../../.gitbook/assets/column\_type.gif)
-
-\
-**Computed Value:** The computed value field is helpful to create custom table columns. For example, you can show a value calculated from the response of two different queries. This field also allows you to manipulate the value using JS expressions; For example, if you want to show the date time stamp in the human-readable format, you can use a Moment.JS function.
-
-![](../../../.gitbook/assets/computed\_value.jpg)
-
-\
-You can also access each row's column values with `currentRow` property. `currentRow` property can only be accessed inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column.
-
-For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
-
-{% embed url="https://youtu.be/tjc8HlzQ4xU" %}
-
-#### Styles
-
-Depending upon the column type, there are various style properties available to change the look and feel of each column. For example, for a text column, you can:
-
-1. Change the alignment, size, or font style of the text.
-2. Change the color of the text or cell background.
 
 **Server-Side Pagination**
 
 The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](https://docs.appsmith.com/core-concepts/displaying-data-read/display-data-tables#pagination).
+
+#### Inline Editing
+
+Inline editing allows you to edit a cell contents in the table columns. It can be enabled for the whole column or at the cell level based on a condition. Read more about Inline editing [here](./#inline-editing).
 
 ### Binding Properties
 

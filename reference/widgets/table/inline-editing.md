@@ -117,12 +117,16 @@ This property contains the details of the row that triggered the action (`onSubm
 
 ### **Widget properties**
 
-| Property        | Definition                                                                                                                                                                                                                             |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Update Mode     | <p>Controls the save experience of an edited cell.<br>Row level - Cells can be saved using the Save/Discard column buttons<br>Custom - cells can be saved by using an onSubmit action of the column or through an external button.</p> |
-| Column settings |                                                                                                                                                                                                                                        |
-| Cell Wrapping   | <p>Controls how overflowing contents of the column are handled.<br>on - Contents get wrapped to the next line.<br>off - Contents get ellipsised.</p>                                                                                   |
-| Editable        | Controls whether cells of the column are editable                                                                                                                                                                                      |
-| onSubmit        | Action that gets triggered when the user moves away from editing a cell by pressing the enter key or clicking outside.                                                                                                                 |
-| onSave          | Action that gets triggered when the user clicks the save button.                                                                                                                                                                       |
-| onDiscard       | Action that gets triggered when user clicks discard button                                                                                                                                                                             |
+| Property      | Definition                                                                                                                                                                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Update Mode   | <p>Controls the save experience of an edited cell.<br><strong>Row level</strong> - Cells can be saved using the Save/Discard column buttons<br><strong>Custom</strong> - cells can be saved by using an onSubmit action of the column or through an external button.</p> |
+| Cell Wrapping | <p>Controls how overflowing contents of the column are handled.<br>on - Contents get wrapped to the next line.<br>off - Contents get ellipsised.</p>                                                                                                                     |
+| Editable      | Controls whether cells of the column are editable                                                                                                                                                                                                                        |
+
+### Events
+
+|           |                                                                                                                        |
+| --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| onSubmit  | Action that gets triggered when the user moves away from editing a cell by pressing the enter key or clicking outside. |
+| onSave    | Action that gets triggered when the user clicks the save button.                                                       |
+| onDiscard | Action that gets triggered when user clicks discard button                                                             |
