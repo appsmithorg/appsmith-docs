@@ -4,7 +4,7 @@ description: Iframe widget is used to display iframes in your app.
 
 # Iframe
 
-![](<../../.gitbook/assets/cleanshot-2021-07-04-at-23.03.52 (1) (1).gif>)
+![Use iframes to embed other webpages within your applications](../../.gitbook/assets/as\_iframe\_cover.png)
 
 ## Properties
 
@@ -25,22 +25,65 @@ These properties allow you to edit the IFrame widget. All of these properties ar
 
 These properties allow you to bind your IFrame widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Binding Property | Description                                                                                                                                                                                                                                 |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                                                            |
-| **message**      | Contains a message received from the embedded page via the JS [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method. May be of _any_ type. Before a message received, this property is _undefined_. |
-| **source**       | Contains the URL of the embedded page _(string)._ Does not reflect the content set in the widget's **srcDoc** property.                                                                                                                     |
-| **title**        | Contains the title of the iframe as set in the widget's **Title** property _(string)._                                                                                                                                                      |
+| Binding Property | Description                                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                                                                                                                                                                 |
+| **message**      | Contains a message received from the embedded page via the JS [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method. It may be of _any_ type. The property is <mark style="color:red;">`undefined`</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> before a message is received. |
+| **source**       | Contains the URL of the embedded page _(string)._ Does not reflect the content set in the <mark style="color:red;">`srcDoc`</mark>property.                                                                                                                                                                                                      |
+| **title**        | Contains the title of the iframe as set in the widget's **Title** property _(string)._                                                                                                                                                                                                                                                           |
+
+Let’s take a closer look at the **message** property.
+
+#### Message
+
+The iframe widget listens for messages sent from the page embedded within it. When this page sends data via the Javascript [`postmessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) function, Appsmith receives the message and exposes its content to the user on the iframe’s `message` property.
+
+The message content may be of any type; before any message is received, this property is undefined.
+
+You can try out the message property by following the steps below:
+
+{% embed url="https://youtu.be/kDJ56AMsXrM" %}
+Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!
+{% endembed %}
+
+1\. On a blank canvas, drag and drop a new iframe widget.
+
+2\. We need to embed a page that is able to send a message with `postMessage()`. In the iframe widget’s settings, copy and paste the following snippet into its **srcDoc** property:
+
+```html
+{{
+    `
+        <input id="messageinput" type="text"></input>
+        <input type="button" onclick="sendMyMessage()" value="SEND" />
+        <script>
+            function sendMyMessage() {
+                const msgText = document.getElementById("messageinput").value;
+                window.parent.postMessage(msgText, "*");
+            }
+        </script>
+    `
+}}
+```
+
+You’ve created a very simple HTML document in the iframe containing a text input, a button, and a script to handle sending the message.
+
+3\. Drag and drop a new [Text ](text.md)widget onto the canvas, and set its Text property to <mark style="color:red;">`{{Iframe1.message}}`</mark>.
+
+4\. Type a string into the iframe’s input box and click the "Send” button. You should see your [Text widget](text.md) update to contain the string that you sent from the iframe.
+
+{% hint style="info" %}
+When a message is received, Appsmith will also execute any code or actions set within the iframe’s [`onMessageReceived` ](iframe.md#events)event. Try it out – set an action within the <mark style="color:red;">`onMessageReceived`</mark> event, and send another message to watch the results!
+{% endhint %}
 
 ### Events
 
 You can define functions that will be called when these events are triggered in the widget.
 
-| Action                | Description                                                                                                                                                                                                                                                             |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onURLChanged**      | Sets an an action to take place when the widget's URL is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead.                              |
-| **onSrcDocChanged**   | Sets an an action to take place when the widget's **srcDoc** property is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead.              |
-| **onMessageReceived** | Sets an an action to take place when a `postMessage` event is received from the embedded page. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| Action                | Description                                                                                                                                                                                                                                                                     |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onURLChanged**      | Sets the action to take place when the widget's URL is changed. It can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead.                                     |
+| **onSrcDocChanged**   | Sets the action to take place when the <mark style="color:red;">`srcDoc`</mark>property is changed. It can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onMessageReceived** | Sets the action to take place when a `postMessage` event is received from the embedded page. It can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead.        |
 
 ### Styles
 
