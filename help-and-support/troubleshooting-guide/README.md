@@ -5,7 +5,7 @@ This document aims to help debug common errors on the Appsmith platform.
 * [Action Errors](action-errors/)
 * [Application Errors](application-errors.md)
 * [Deployment Errors](deployment-errors.md)
-* [JS Errors](widget-errors.md)
+* [JS Errors](js-errors.md)
 * [Hint Messages](https://github.com/appsmithorg/appsmith-docs/tree/9fe81bb98cdc29e7f6ba351c3620699e98ca891e/troubleshooting-guide/hint-messages.md) (Coming Soon)
 
 ## Using the Linter and Debugger
