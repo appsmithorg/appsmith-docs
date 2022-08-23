@@ -26,7 +26,11 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 ![](<../../../../.gitbook/assets/aws verify email.png>)
 
-**6. Update the values in your** [**Instance Configuration**](../)\*\*\*\*
+{% hint style="warning" %}
+You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
+{% endhint %}
+
+**6. Update the values in your** [**Instance Configuration**](../)
 
 {% hint style="danger" %}
 Do not use **port** **465** listed on the SES page because it is TLS enabled by default
@@ -48,13 +52,12 @@ APPSMITH_MAIL_SMTP_AUTH=true
 # ******************************
 ```
 
-**7.** [**Restart the Appsmith Instance**](../)
-
-{% hint style="success" %}
-Your email service should now be configured correctly. Read more about setting up email with SES
+{% hint style="info" %}
+Your email service should now be configured correctly. Read more about [setting up email with SES.](https://docs.aws.amazon.com/ses/latest/dg/setting-up.html)
 {% endhint %}
 
+**7.** [**Restart the Appsmith Instance**](../)
+
 {% hint style="warning" %}
-If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids.\
-Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)
+If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids. Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)
 {% endhint %}
