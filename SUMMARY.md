@@ -228,6 +228,7 @@
   * [JS Errors](help-and-support/troubleshooting-guide/widget-errors.md)
   * [Deployment Errors](help-and-support/troubleshooting-guide/deployment-errors.md)
   * [Application Errors](help-and-support/troubleshooting-guide/application-errors.md)
+  * [Widget Errors](help-and-support/troubleshooting-guide/widget-errors-1.md)
 * [Discord](https://discord.com/invite/rBTTVJp)
 * [Community Forum](https://community.appsmith.com/)
 * [Contact Us](mailto:support@appsmith.com)

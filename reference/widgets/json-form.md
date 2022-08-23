@@ -65,6 +65,15 @@ If your data is an array type, you can mention the index value to get the source
 
 * You can also provide static data directly in the form or use a JS object.
 
+> We recommend a few suggestions that will help you create user-friendly forms using JSON Form:
+>
+> * You can group the form manually into different sections. For such categorization, you can use a [tab widget](tabs.md). With a tab widget, you can split the form into multiple subforms and share it with your users.
+> * You can logically divide the items like arrays but cannot group the form manually. For such categorization, you can use the [list widget](list.md) to show all the arrays, and the details within an array can be shown in a JSON form.
+
+{% hint style="info" %}
+Check out our sample application demonstrating [how you can use the list widget with JSON form](https://app.appsmith.com/app/json-form/multiple-json-forms-62a9803984b91337251a6ebb).
+{% endhint %}
+
 Post binding, the form is automatically generated and ready to use. We optimize the generated form to use the closest possible input field for the data type in the source data.
 
 #### Auto-Generate Form
@@ -123,8 +132,7 @@ When you tick the checkbox, it will enable the Visible property, and the JSON Fo
 
 ### Binding Properties
 
-These properties allow you to bind your JSON form widget with any other widget in queries or JS objects. The following table lists all the binding properties.\
-
+These properties allow you to bind your JSON form widget with any other widget in queries or JS objects. The following table lists all the binding properties.\\
 
 | Binding Property | Description                                                                                                                                                                                                                                                                                                              | Code Snippet                   |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
@@ -169,7 +177,7 @@ Style properties allow you to change the look and feel of the widget.
 
 | Form Style           | Description                                                                                                                                                                      |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Background Color** | Sets the background color of the widget. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                  |
+| **Background Color** | Sets the background color of the widget. Accepts CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                   |
 | **Border Radius**    | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
 | **Border Width**     | Sets the width of the widget's border. Accepts _number_ values only, in px.                                                                                                      |
 | **Box Shadow**       | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
@@ -189,3 +197,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
 
 {% embed url="https://youtu.be/U0vko4TrFmo" %}
+
+{% hint style="info" %}
+Are you having trouble? Check out the [troubleshooting guide](../../help-and-support/troubleshooting-guide/widget-errors-1.md#json-form-errors) or reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com/).
+{% endhint %}
