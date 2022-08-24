@@ -2,6 +2,8 @@
 
 App theming allows you to style your pages and [widgets](../../../reference/widgets/) using global controls, making it easy to change the visual layout with a single click.
 
+{% embed url="https://youtu.be/v6Lc3p6lv7o" %}
+
 Themes are application-level styles that apply to all the widgets linked to the theme properties.
 
 {% hint style="warning" %}
