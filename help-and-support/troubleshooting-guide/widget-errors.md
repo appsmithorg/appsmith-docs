@@ -29,7 +29,9 @@ The problem can be caused when you are trying to bind:&#x20;
 To determine if the problem is caused due to:
 
 * &#x20;**A large array or a huge JSON object** - You can relook at the data and evaluate the need to display all the data on UI, as it would be painful for your users to navigate more than 50 fields.&#x20;
-* **The whole query response that you bound to the source data** - You recheck the source data field you are trying to bind and select either selected row / triggered row to bind.
+* **The whole query response that you bound to the source data** - You recheck the source data field you are trying to bind and select either selected row / triggered row to bind.&#x20;
+
+Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form.md#source-data) field to make changes.
 
 {% hint style="warning" %}
 If you still can't see a JSON form and need help debugging an error, please get in touch with us on our [Discord Server](https://discord.com/invite/rBTTVJp) or email us at support@appsmith.com.&#x20;

@@ -199,5 +199,5 @@ Style properties allow you to change the look and feel of the widget.
 {% embed url="https://youtu.be/U0vko4TrFmo" %}
 
 {% hint style="info" %}
-Are you having trouble? Check out the [troubleshooting guide](../../help-and-support/troubleshooting-guide/widget-errors.md#json-form-errors) or reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com/).
+Are you having trouble? Check out the [JSON Form troubleshooting guide](../../help-and-support/troubleshooting-guide/widget-errors.md#json-form-errors) or reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com/).
 {% endhint %}
