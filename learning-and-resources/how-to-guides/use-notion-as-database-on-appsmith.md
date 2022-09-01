@@ -4,7 +4,7 @@ description: Guide on how to use Notion as a Database on Appsmith
 
 # How to Use Notion as a Database on Appsmith
 
-The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](broken-reference) of Appsmith, it is recommended to create an account and try implementing them.
+The guide presumes that you are primarily familiar with [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](broken-reference/) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Notion
 
@@ -90,7 +90,7 @@ Hit run to see all the data from your Notion Database in the Response Body panel
 
 Now we need to display the data that we have fetched in a presentable format. And this can be done using the UI widgets provided by Appsmith. We need to follow some easy steps to bind the Notion API contaning data into a table. First, expand the Page1 dropdown menu and then click on the `+` icon beside `Widgets` option. It lists down different UI widgets that can be used to build our aaplication's UI. Select the 'Table' widget then drag and drop that onto the canvas. Something like this is visible:
 
-![Screenshot eight](../../.gitbook/assets/notion-appsmith-8.png)
+![Screenshot eight](../../.gitbook/assets/redshift-appsmith-23.png)
 
 To include response from the API in this table use the moustache syntax to write JS in Appsmith.
 

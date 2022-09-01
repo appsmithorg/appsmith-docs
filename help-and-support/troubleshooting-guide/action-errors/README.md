@@ -1,6 +1,6 @@
 # Action Errors
 
-![Click to expand](../../../.gitbook/assets/timeout-error.png)
+{% embed url="https://youtu.be/9YyHwmrkztE" %}
 
 ### Timeout Error
 

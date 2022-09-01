@@ -1,10 +1,10 @@
 # Widgets
 
-[Widgets](./) help the user in building the app layout. Users can [store data](../../core-concepts/data-access-and-binding/displaying-data-read/) from a [Database](../datasources/) or an[ API ](../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md)call, [trigger events](broken-reference), etc.
+[Widgets](./) help the user in building the app layout. Users can [store data](../../core-concepts/data-access-and-binding/displaying-data-read/) from a [Database](../datasources/) or an[ API ](../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md)call, [trigger events](broken-reference/), etc.
 
 Widgets can be dragged from the widget pane, positioned on the canvas, and resized to fit the data they need to display. They also come with properties that can be visually edited to set their data, change their styles, and trigger actions from them.
 
-![](<../../.gitbook/assets/spaces\_sRqv8vEmanRWzCklPZou\_uploads\_kpwSwyVV6AnRPtthUHmq\_drop widget.gif>)
+![](<../../.gitbook/assets/drop widget.gif>)
 
 ### Naming a Widget
 
@@ -27,4 +27,4 @@ Appsmith supports the grouping of widgets. When you group widgets, they are put 
 * Select multiple widgets with Ctrl + Left Click
 * Now click on the dotted square icon or press Ctrl + G
 
-![](../../.gitbook/assets/groupingwidget.gif)
+![](../../.gitbook/assets/group-widgets-2.gif)
