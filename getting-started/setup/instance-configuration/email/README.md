@@ -13,6 +13,8 @@ description: >-
 
 Appsmith allows you to configure email using environment variables or the [admin settings](../admin-settings.md#using-the-admin-settings-ui).
 
+{% embed url="https://youtu.be/NOAofPbmJWw" %}
+
 ## Configure using Environment Variables
 
 Appsmith requires the following environment variables to be configured:
