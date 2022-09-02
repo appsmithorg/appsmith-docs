@@ -1,10 +1,6 @@
----
-description: >-
-  The Appsmith platform includes JavaScript utility libraries, which can be used
-  to work with data within `{{ }}` bindings.
----
+# External Libraries
 
-# External libraries
+The Appsmith platform includes JavaScript utility libraries, which can be used to work with data within `{{ }}` bindings.
 
 ## JavaScript Library Reference
 
@@ -13,6 +9,7 @@ description: >-
 * [btoa](https://github.com/dankogai/js-base64#readme)
 * [atob](https://github.com/dankogai/js-base64#readme)
 * [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
+* [Forge](https://github.com/digitalbazaar/forge)
 
 {% embed url="https://youtu.be/tqJna718tj4" %}
 
