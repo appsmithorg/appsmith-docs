@@ -15,7 +15,7 @@ body:
   id: check-existing-issues
   attributes:
     label: Is there an existing issue for this?
-    description: Please search to see if an issue realated to this already exists.
+    description: Please search to see if an issue related to this already exists.
     options:
     - label: I have searched the existing issues
       required: true
