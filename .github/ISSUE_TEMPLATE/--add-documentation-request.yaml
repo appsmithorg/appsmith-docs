@@ -1,7 +1,7 @@
 name: 📖 Documentation Feature
 description: Add Documentation for New Feature
 title: "[Docs]: "
-labels: [Documentation][User Education Pod]
+labels: ["Documentation", "User Education Pod"]
 assignees:
 - Nikhil-Nandagopal
 - danciaclara
