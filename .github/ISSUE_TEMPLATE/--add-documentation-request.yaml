@@ -1,0 +1,77 @@
+name: 📖 Documentation Feature
+description: Add Documentation for New Feature
+title: "[Docs]: "
+labels: [Documentation]
+assignees:
+- Nikhil-Nandagopal
+- danciaclara
+- jnikhila
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this documentation request!
+- type: checkboxes
+  id: checkFeatureExistingIssues
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue related to this already exists.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: input
+  id: FirstDraftLink
+  attributes:
+    label: First Draft Link 
+    description: Add a link to the first draft created by engineers
+  validations:
+    required: true
+- type: input
+  id: loomVideoLink
+  attributes:
+    label: Add loom video link
+    description: Add a link to the loom video explaining the feature 
+  validations:
+    required: true
+- type: input
+  id: forumLink
+  attributes:
+    label: Discord/slack/intercom Link if needed
+    description: Add a link to the discussion 
+  validations:
+    required: false
+- type: input
+  id: engineeringTicketLink
+  attributes:
+    label: Add Engineering Ticket Link
+    description: Add a link to the engineering ticket 
+  validations:
+    required: true
+- type: input
+  id: featureReleaseDate
+  attributes:
+    label: Release Date
+    description: Add actual/tentative release date of the feature
+  validations:
+    required: true
+- type: input
+  id: PRD
+  attributes:
+    label: Link to PRD
+    description: Add a link to PRD if available
+  validations:
+    required: false
+- type: input
+  id: testplan
+  attributes:
+    label: Link to test plan/cases
+    description: Add a link to test plan/cases if available
+  validations:
+    required: false
+- type: textarea
+  id: userRequests
+  attributes:
+    label: Add User use cases summary or user requests summary 
+    description: Add use cases/user requests around which the doc can be built
+  validations:
+    required: false
