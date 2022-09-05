@@ -19,6 +19,10 @@ Create an installation folder called `appsmith` where you would like your Appsmi
 
 ## Quick Start (with docker-compose)
 
+{% hint style="warning" %}
+Appsmith [auto-update](./#enabling-appsmith-auto-updates-with-docker-compose) now also supports auto-backup feature. This backup can be used to roll back an update to a previous version of Appsmith, if the user wants to.
+{% endhint %}
+
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
 
 {% hint style="warning" %}
@@ -35,7 +39,7 @@ Currently, auto-update is disabled on the docker-compose file. If you want to en
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="../../../../.gitbook/assets/docker-compose (1).yml" %}
+{% file src="../../../../.gitbook/assets/docker-compose (3).yml" %}
 
 **or** run the following curl if you're on a remote machine:
 
