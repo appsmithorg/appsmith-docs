@@ -1,0 +1,56 @@
+name: 📖 Documentation Improvement
+description: Suggest improvements to our documentation
+title: "[Docs]: "
+labels: [Documentation]
+assignees:
+- Nikhil-Nandagopal
+- danciaclara
+- jnikhila
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this documentation improvement request!
+- type: checkboxes
+  id: check-existing-issues
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue related to this already exists.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: input
+  id: doc-link
+  attributes:
+    label: Documentation Link 
+    description: Add a link to the page which needs improvement (if relevant)
+  validations:
+    required: false
+- type: input
+  id: community-forum-link
+  attributes:
+    label: Discord/slack/intercom Link 
+    description: Add a link to the discussion 
+  validations:
+    required: false
+- type: textarea
+  id: what-happened?
+  attributes:
+    label: Describe the problem
+    description: Is the documentation missing? Or is it confusing? Why is it confusing?
+  validations:
+    required: true
+- type: textarea
+  id: what-to-improve?
+  attributes:
+    label: Describe the improvement
+    description: A clear and concise description of the improvement.  
+  validations:
+    required: true
+- type: textarea
+  id: why-change?
+  attributes:
+    label: Why do you think this change is needed?
+    description: Add use cases/user queries/resolutions
+  validations:
+    required: true
