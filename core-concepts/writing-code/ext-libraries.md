@@ -8,7 +8,7 @@ The Appsmith platform includes JavaScript utility libraries, which can be used t
 * [moment](https://momentjs.com/docs/)
 * [btoa](https://github.com/dankogai/js-base64#readme)
 * [atob](https://github.com/dankogai/js-base64#readme)
-* [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
+* [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/docs/v3/docs.md)
 * [Forge](https://github.com/digitalbazaar/forge)
 
 {% embed url="https://youtu.be/tqJna718tj4" %}
