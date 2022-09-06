@@ -39,12 +39,12 @@ Currently, auto-update is disabled on the docker-compose file. If you want to en
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="../../../../.gitbook/assets/docker-compose (3).yml" %}
+{% file src="../../../../.gitbook/assets/docker-compose.yml" %}
 
 **or** run the following curl if you're on a remote machine:
 
 ```bash
-curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
+curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
 ```
 
 {% hint style="warning" %}
