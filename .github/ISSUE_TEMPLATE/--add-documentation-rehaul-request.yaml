@@ -1,7 +1,7 @@
 name: 📖 Documentation Rehaul Improvement
 description: Add Rehaul documentation ticket 
 title: "[Docs]: "
-labels: [“Documentation”, “User Education Pod”, "Doc Rehaul"]
+labels: ["Documentation", "User Education Pod", "Doc Rehaul"]
 assignees:
 - Nikhil-Nandagopal
 - danciaclara
