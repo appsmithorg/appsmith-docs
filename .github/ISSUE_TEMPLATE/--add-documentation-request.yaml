@@ -39,14 +39,14 @@ body:
     label: First Draft 
     description: Add a link to the first draft created by engineers
   validations:
-    required: true
+    required: false
 - type: input
   id: loomVideoLink
   attributes:
     label: Loom video
     description: Add a link to the loom video explaining the feature 
   validations:
-    required: true
+    required: false
 - type: input
   id: forumLink
   attributes:
