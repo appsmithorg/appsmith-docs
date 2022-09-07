@@ -20,6 +20,20 @@ body:
     - label: I have searched the existing issues
       required: true
 - type: input
+  id: engineeringTicketLink
+  attributes:
+    label: Add Engineering Ticket Link
+    description: Add a link to the engineering ticket 
+  validations:
+    required: true
+- type: input
+  id: featureReleaseDate
+  attributes:
+    label: Release Date
+    description: Add actual/tentative release date of the feature
+  validations:
+    required: true
+- type: input
   id: FirstDraftLink
   attributes:
     label: First Draft Link 
@@ -40,20 +54,6 @@ body:
     description: Add a link to the discussion 
   validations:
     required: false
-- type: input
-  id: engineeringTicketLink
-  attributes:
-    label: Add Engineering Ticket Link
-    description: Add a link to the engineering ticket 
-  validations:
-    required: true
-- type: input
-  id: featureReleaseDate
-  attributes:
-    label: Release Date
-    description: Add actual/tentative release date of the feature
-  validations:
-    required: true
 - type: input
   id: PRD
   attributes:
