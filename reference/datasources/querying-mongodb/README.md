@@ -1,6 +1,6 @@
 # MongoDB
 
-[MongoDB](https://www.mongodb.com) is a document-oriented NoSQL database used for high-volume data storage. It doesn't store the data in the form of tables and rows as in traditional relational databases. Instead, it stores the data in collections and documents in a JSON format (using key-value pairs).
+[MongoDB](https://www.mongodb.com) is a document-oriented NoSQL database used for high-volume data storage. It doesn't store the data in the form of tables and rows as in traditional relational databases. Instead, it stores the data in collections and documents in JSON format (using key-value pairs).
 
 {% hint style="warning" %}
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
@@ -46,21 +46,117 @@ The SSL Mode can be set to one of the following values:
 
 ### Connect using SRV URI
 
-The [Service Record](https://en.wikipedia.org/wiki/SRV\_record) URI ([SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format)) comprises of following components. For example, the SRV URI can be represented as below:
+A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can create a MongoDB datasource on Appsmith using. [SRV URI Formats](https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format) - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
+
+#### Standard Connection String Format
+
+A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:
+
+{% code title="Standard connection string" overflow="wrap" %}
+```mongodb
+mongodb://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
+```
+{% endcode %}
+
+<figure><img src="../../../.gitbook/assets/Datasources  MongoDB  Connect using SRV  Standard Format.png" alt=""><figcaption><p>Prefix with <strong>mongodb://</strong> to add a Standard Connection String URI</p></figcaption></figure>
+
+Map the URI fields as below:
+
+* `mongodb://` - a prefix to identify that it's a standard connection format.
+* `@username` - the username of the MongoDB you wish to connect to.
+* `@password` - the password of the MongoDB you want to connect to.
 
 {% hint style="warning" %}
-`mongodb+srv://<your_username>:<your_password>@<host_name_or_connection_url>/<authDBName>`
+If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
 {% endhint %}
 
-The fields from the URI can be mapped as below:
+* `@host` - the host address of the MongoDB you wish to connect to.
+* `@port` - the port on which MongoDB is running.
 
-* `<connection_url>` to the `Host Address` field
-* `<defaultDbName>` to the `Default Database Name` field
-* `<your_username>` to the `Username` field
-* `<your_password>` to the `Password` field
-* `<authDbName>` to the `Database Name` field under the `Authentication` sub-section.
+{% hint style="info" %}
+You can add **multiple host** and **port** details separated by a **comma** in the connection string to connect using the same user.
+{% endhint %}
 
-Read more on [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
+* `@defaultauthdb` - the database you wish to connect to and would also authenticate the user credentials.
+
+{% hint style="info" %}
+The <mark style="color:red;">`defaultauthdb`</mark> is a <mark style="color:red;">**required**</mark> field in Appsmith as the queries would run against it.
+{% endhint %}
+
+* `@authDB` - the database that stores the authorization information and authenticates the credentials. If you wish to use any other database instead of defaultauthdb, you can add the auth database name using the authSource keyword.
+
+{% hint style="warning" %}
+If <mark style="color:red;">**`authSource`**</mark> is unspecified, Appsmith attempts to authenticate using the <mark style="color:red;">admin</mark> database.
+{% endhint %}
+
+**Example URIs**
+
+Some example URIs could be as follows:
+
+* The default database is <mark style="color:red;">`users,`</mark> and <mark style="color:red;">`authSource`</mark> is set as <mark style="color:red;">`authusers`</mark> which is used to authenticate the user(<mark style="color:red;">`dbuser`</mark>).
+
+{% code title="Standalone" overflow="wrap" %}
+```mongodb
+mongodb://dbuser:s@cur!ty/mongodb0.standalone.com:27017/users/?authSource=authusers
+```
+{% endcode %}
+
+* <mark style="color:red;">`authSource`</mark> is set as <mark style="color:red;">`admin`</mark><mark style="color:red;">,</mark> and <mark style="color:red;">`replicaSet`</mark> keyword point to set the name of the replica set (<mark style="color:red;">`mongoRepl`</mark>).
+
+{% code title="ReplicaSet" overflow="wrap" %}
+```mongodb
+mongodb://dbuser:s@cur!ty@mongodb0.replicaset.com:27017,mongodb2.replicaset.com:27017/?authSource=admin&replicaSet=mongoRepl
+
+```
+{% endcode %}
+
+* <mark style="color:red;">`authSource`</mark> keyword points to <mark style="color:red;">`admin`</mark><mark style="color:red;">.</mark> You can add multiple host and port combinations that points to the shared cluster.
+
+{% code title="SharedCluster" overflow="wrap" %}
+```mongodb
+mongodb://dbuser:s@cur!ty@mongos0.sharedcluster.com:27017,mongos1.sharedcluster.com:27017,mongos2.sharedcluster.com:27017/?authSource=admin
+```
+{% endcode %}
+
+#### **Domain name service seed list format**
+
+MongoDB also supports a Domain Name Service (DNS) Seed list for connecting with the standard format. To use the DNS seed list format, you’ll have to prefix the connection string with `mongodb+srv://`. The `+srv` indicates that the hostname corresponds to the DNS SRV. The DNS seed list format is represented as below:
+
+{% code title="Domain name service seed list" overflow="wrap" %}
+```mongodb
+mongodb+srv://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
+```
+{% endcode %}
+
+<figure><img src="../../../.gitbook/assets/Datasources  MongoDB  Connect using SRV  DNS Seed List Format.png" alt=""><figcaption><p>Prefix with <strong>mongodb+srv://</strong> to add a DNS seed list URI</p></figcaption></figure>
+
+Like [standard format](./#standard-connection-string-format), you can map the fields as below:
+
+* `mongodb+srv://` - a prefix to identify that it’s a DNS Seed List format.
+
+{% hint style="warning" %}
+Using the <mark style="color:red;">`+srv`</mark> automatically sets the TLS or SSL option to true. If you wish to turn off the TLS or SSL option, set <mark style="color:red;">`tls/ssl=false`</mark> in the query string.
+{% endhint %}
+
+* Like Standard format, you can add `username`, `password`, `host`, `port`, `default database,` and `authSource`.
+
+{% hint style="warning" %}
+If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
+{% endhint %}
+
+**Example URIs**
+
+An example URI could be as follows:
+
+{% code overflow="wrap" %}
+```mongodb
+mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSource=authusersb
+```
+{% endcode %}
+
+{% hint style="info" %}
+Read more about the [standard format ](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format)and [DNS seed list format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format) available on [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
+{% endhint %}
 
 ## Querying Mongo (Form Input)
 
@@ -149,7 +245,7 @@ people
 { name: "Andy" }
 ```
 
-`Update`: The modifications to apply. The input is expected in JSON/BSON format like the following :
+`Update`: The modifications are to apply. The input is expected in JSON/BSON format like the following :
 
 ```
 { $inc: { score: 1 } }
@@ -215,7 +311,7 @@ item.sku
 
 ### 7. Aggregate
 
-This command performs aggregation operation using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. The following fields are supported in Appsmith for this command :
+This command performs aggregation operations using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. The following fields are supported in Appsmith for this command :
 
 `Collection Name`: The name of the collection or view that acts as the input for the aggregation pipeline. The input is expected in a string format like the following :
 
