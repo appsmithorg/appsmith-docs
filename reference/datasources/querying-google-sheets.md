@@ -14,43 +14,59 @@ Appsmith integration with Google Sheets provides an easy way to manipulate, anal
 
 To add a **Google Sheets datasource**, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> Select **Google Sheets** under APIs.
 
-{% embed url="https://youtu.be/kUK5bGeNjPA" %}
-How to create Google Sheets Datasource?
+{% embed url="https://youtu.be/P222_GQTSDI" %}
+Creating a Google Sheets Datasource in Appsmith
 {% endembed %}
 
 ## Connection Settings
 
 Configure the Google Sheets Datasource as illustrated below:
 
-#### **Scope**
+### **Scope**
 
-As part of Scope, you define what type of access privilege you want to provide when creating the Google Sheets data source.
+Your datasource’s **scope** setting defines what type of access privileges your app will have when working with your Google Sheets. Use this option to allow only the necessary operations that your app requires. This will help avoid accidentally deleting or overwriting data.
 
-![Create a Google Sheets Datasource](<../../.gitbook/assets/Datasources  Google Sheets  Create Datasource.png>)
+<figure><img src="https://lh3.googleusercontent.com/8k8g5KL3QGjoIEzsNYgUuKOAjHVF75T8ovDGuQGcgPhXieU0qChsh1l6GnhCBOi8Q5Hv4n8BrQSzEUaUD9-v6K_TW-43sG5EHkeO2c6fwKlWxVNTEMH4dH2-Eihguuq2Jdf7Ymw_Wu2LE610IqHBUMtr792FReyMfwrNz0f8HZ_sIgCELdfsNz1AMw" alt=""><figcaption><p>Set your datasource's scope and permissions according to the types of queries you need to perform.</p></figcaption></figure>
 
-### **Read Only** <a href="#read-only" id="read-only"></a>
+### **Read Files** <a href="#read-only" id="read-only"></a>
 
-You can use the `Read Only` scope if you want to provide limited access that is restricted to only listing spreadsheets or reading data from Google Spreadsheets.
+You can use the **Read Files** scope if you’d like to provide limited access to Sheets, which is restricted to only listing existing spreadsheets or reading data from them.
 
-{% hint style="info" %}
-To use the `Read Only` scope, you'll have to provide **read access** to your **Google Sheets** and **Drive**.
-{% endhint %}
+The Read permission is required for the following query types:
 
-### **Read and Write**
+* [Fetch Details](querying-google-sheets.md#fetch-details)
+* [Fetch Many](querying-google-sheets.md#fetch-many)
 
-If you want to perform different operations like create, update, read and delete spreadsheets, then you can use the Read and Write scope to create your data source.
+### **Read, Edit, and Create Files**
 
-{% hint style="info" %}
-You'll have to provide **read and write access** to your **Google Sheets** and **Drive** for using **Read and Write** scope.
+If you want to perform additional operations like creating new spreadsheets or updating existing ones, you can use the **Read, Edit, and Create Files** scope to configure your datasource.
+
+The **Edit** and **Create** permissions are required for the following query types:
+
+* [Insert One](querying-google-sheets.md#insert-one)
+* [Insert Many](querying-google-sheets.md#insert-many)
+* [Update One ](querying-google-sheets.md#update-one)
+* [Update Many](querying-google-sheets.md#update-many)
+
+### **Read, Edit, Create, and Delete Files**
+
+In order to delete spreadsheets, you will be required to authorize the Read, Edit, Create, and Delete scope for your datasource.
+
+The **Delete** permission is required for the following query type:
+
+* [Delete One](querying-google-sheets.md#delete-one)
+
+{% hint style="warning" %}
+When configured with this scope, queries related to this datasource may be potentially destructive and should be used carefully to avoid accidentally deleting data!
+
+Consider enabling the [**Request confirmation before running query**](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
 {% endhint %}
 
 ### **Save and Authorize**
 
-Click on the `Save and Authorize` button once you have selected the scope. You'll be navigated to the **Google Login screen**. On successful login, you will be shown the permissions screen where you will authorize Google Sheets and Drive for a **read only** or a **read and write** access based on the **scope** you **selected** for datasource. On Successful authorization, you'll be redirected to the datasources page. You can choose to add a **New API** by clicking the **New API +** button.
+Click on the **Save and Authorize** button once you have selected your desired scope. You'll automatically be navigated to a Google Login screen, where you should select and log-in to the account whose spreadsheets you’d like to access.
 
-{% hint style="warning" %}
-Creating and authorizing a Google Sheets data source will [store your credentials](broken-reference) within the Appsmith servers. When you share your application with more developers or administrators, your Google sheets account will be accessible to them.
-{% endhint %}
+On successful login, you will be shown a screen where you will be asked to grant Appsmith certain permissions relating to managing your Google Sheets. Be sure to click Allow in order for Google Sheets to allow Appsmith to manage your spreadsheets.
 
 ## **Create Queries**
 
