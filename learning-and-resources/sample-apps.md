@@ -193,6 +193,8 @@ description: >-
 
 [How to create a sidebar for navigation for the app?](https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/622afd7e6ec44f30294c3f48)
 
+[How to hide pages and navigate from one page to another only at button clicks?](https://app.appsmith.com/app/navigation-with-hidden-pages/page1-6305d094bc158514a170ca48)
+
 [How to create an Image Carousel?](https://app.appsmith.com/app/image-carousel/page1-624fca8f457aa64da9e028c3)
 
 ## Utility
@@ -222,6 +224,8 @@ description: >-
 [How to download a PDF File From a URL?](https://app.appsmith.com/app/pdf-files/downloadpdf-fromurl-62aa1e7584b91337251aa4a3)
 
 [How to generate and download a PDF from a Form widget using APITemplate.io?](https://app.appsmith.com/app/generatepdf/generatepdf-62a76c1284b913372519db81)
+
+[How to download the content of a text widget in a txt file?](https://app.appsmith.com/applications/61fe22d62cd3d95ca414cd8b/pages/6307254a8666375564cf86d1)
 
 ## How do I do X on Appsmith?
 
