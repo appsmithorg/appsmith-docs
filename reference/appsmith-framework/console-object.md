@@ -1,8 +1,8 @@
 # Console Object
 
-The [console object ](https://developer.mozilla.org/en-US/docs/Web/API/Console\_API)provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs. By default, console output would appear in the browser's console tab, which you can view by invoking your browser's developer tools. The console tab shows network requests, debugging messages, warnings, and errors. The information printed in the console can help figure out the issue trigger point.
+The [console object ](https://developer.mozilla.org/en-US/docs/Web/API/Console\_API)provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs. By default, console output would appear in the browser's console tab, which you can view by invoking your browser's developer tools.
 
-The console is integral to any developer's toolkit since it logs messages, errors, and warnings and simplifies debugging. In addition to logging, informative messages to the console, errors, and warnings would make it easier to debug your code. Furthermore, it allows you to monitor what your program is doing as it happens.
+The console is integral to any developer's toolkit - it allows you to monitor what your program is doing by logging messages, errors, and warnings as they occur. These informative logs make it much easier to debug your code and locate the source of errors and unexpected behavior.
 
 Appsmith provides the global console object for logging information about your [API](../../core-concepts/connecting-to-data-sources/authentication/), [Queries](../../core-concepts/data-access-and-binding/querying-a-database/), and [Widgets properties](../widgets/) in your JavaScript code. Invoke a console object using the mustache sign `{{}}` in widget properties or [directly in your code](../../core-concepts/writing-code/javascript-editor-beta/#use-case).
 
