@@ -152,6 +152,7 @@
   * [Twilio](reference/datasources/twilio.md)
 * [Appsmith Framework](reference/appsmith-framework/README.md)
   * [Context Object](reference/appsmith-framework/context-object.md)
+  * [Console Object](reference/appsmith-framework/console-object.md)
   * [Query Object](reference/appsmith-framework/query-object.md)
   * [Actions](reference/appsmith-framework/widget-actions/README.md)
     * [Navigate To](reference/appsmith-framework/widget-actions/navigate-to.md)
