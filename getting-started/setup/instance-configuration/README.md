@@ -17,7 +17,7 @@ Remove # before the variables to ensure they are not commented
 APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 ```
 
-After making any changes, **remember to restart the docker containers** for the changes to take affect.
+After making any changes, **remember to restart the docker containers** for the changes to take effect.
 
 ```bash
 // To restart Appsmith using docker
@@ -38,7 +38,7 @@ Remove # before the variables to ensure they are not commented
 APPSMITH_GOOGLE_MAPS_API_KEY: "YOUR_API_KEY"
 ```
 
-After making any changes, **remember to restart the pods** for the changes to take affect
+After making any changes, **remember to restart the pods** for the changes to take effect
 
 ```
 // commands to restart k8s pods
@@ -49,18 +49,22 @@ kubectl scale deployment appsmith-internal-server --replicas=1
 
 ## Configuring ECS Installations
 
-To configure a ECS installation, follow these steps:
+To configure an ECS installation, follow these steps:
 
-1. Navigate to the **ECS console** and select **Task Definitions** on the side bar.
+1. Navigate to the **ECS console** and select **Task Definitions** on the sidebar.
 2. Click on the Task Definition used by your ECS instance, and hit **Create new revision**.
-3. On the Task Definition config page click on the Appsmith **container definition** to edit it. In the **Environment Section**, enter the environment configuration as **key value pairs** as show below. ![ECS\_TASK\_ENV](../../../.gitbook/assets/ecs-task-env.png)
+3. On the **Task Definition config** page, click on the Appsmith **container definition** to edit it. In the **Environment Section**, enter the environment configuration as **key-value pairs** as shown below.&#x20;
+
+<figure><img src="../../../.gitbook/assets/spaces_sRqv8vEmanRWzCklPZou_uploads_Pk8F2tEx36NrwJKIFH4I_ecs-task-env.png" alt=""><figcaption></figcaption></figure>
 
 For sensitive information we recommend using **AWS Secrets**, please follow the steps [**detailed here**](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage\_create-basic-secret.html) to create a secret. Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
 
 1. Hit the **Update** button, and hit **Create** to make a new task definition.
-2. Navigate back to the **ECS console** and select you cluster. Click on your service to open the **service details**.
+2. Navigate back to the **ECS console** and select your cluster. Click on your service to open the **service details**.
 3. Click on **Update**, and select the **latest revision** of the Task Definition.
-4. Hit **Skip** to **review** and then Update Service. A screen showing the status will show up. ![SERVICE\_RESTART](../../../.gitbook/assets/ecs-service-restart.png)
+4. Hit **Skip** to **review** and then Update Service. A screen showing the status will show up.&#x20;
+
+<figure><img src="../../../.gitbook/assets/spaces_sRqv8vEmanRWzCklPZou_uploads_6ayey8DBXj11RQwAsM4J_ecs-service-restart.png" alt=""><figcaption></figcaption></figure>
 
 It may take a minute for the new ECS Task to start running.
 
@@ -71,5 +75,5 @@ It may take a minute for the new ECS Task to start running.
 * [Signup Restrictions](disable-user-signup.md)
 * [Google Maps](google-maps.md)
 * [Disable Intercom](disable-intercom.md)
-* [Single Sign-On (SSO)](broken-reference)
+* [Single Sign-On (SSO)](broken-reference/)
 * [Frame Ancestors](frame-ancestors.md)
