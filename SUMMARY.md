@@ -34,6 +34,7 @@
     * [Email](getting-started/setup/instance-configuration/email/README.md)
       * [Sendgrid](getting-started/setup/instance-configuration/email/sendgrid.md)
       * [Amazon SES](getting-started/setup/instance-configuration/email/amazon-ses.md)
+      * [Gmail](getting-started/setup/instance-configuration/email/gmail.md)
     * [Custom MongoDB & Redis](getting-started/setup/instance-configuration/custom-mongodb-redis.md)
     * [Disable Intercom](getting-started/setup/instance-configuration/disable-intercom.md)
     * [Google Maps](getting-started/setup/instance-configuration/google-maps.md)

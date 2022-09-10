@@ -45,7 +45,7 @@ You can configure the email for your self-hosted instance using the [Admin Setti
 
 * Navigate to **profile** >> **Admin Settings** >> Select **Email.**
 
-![Add Configuration details](<../../../../.gitbook/assets/Instance Configuration  Email  Configure using Admin Settings.png>)
+![Add Configuration Details](<../../../../.gitbook/assets/Instance Configuration  Email  Configure using Admin Settings.png>)
 
 *   Add configuration details provided by your email service provider.
 
@@ -57,10 +57,10 @@ You can configure the email for your self-hosted instance using the [Admin Setti
     * **SMTP Password** - Add the password for your email service provider
 
 
-* Click the <mark style="color:red;">`SAVE & RESTART`</mark> button to save the configurations and restart the Appsmith instance.
+* Click the <mark style="color:red;">`SAVE & RESTART`</mark> button to save the configurations and restart the Appsmith instance with the updated settings.
 
 {% hint style="success" %}
-Once your instance is restarted, you can use the <mark style="color:red;">**`SEND TEST EMAIL`**</mark> button to send a test email.
+Once your instance is restarted, you can use the <mark style="color:red;">**`SEND TEST EMAIL`**</mark> button to send a test email. You should see a message at the top of the page telling you whether the test succeeded or failed. On success, you should also receive a test email in your email inbox.
 {% endhint %}
 
 ## Configuration Guides&#x20;
@@ -73,4 +73,8 @@ Follow the below guides to configure popular email service providers:
 
 {% content-ref url="amazon-ses.md" %}
 [amazon-ses.md](amazon-ses.md)
+{% endcontent-ref %}
+
+{% content-ref url="gmail.md" %}
+[gmail.md](gmail.md)
 {% endcontent-ref %}
