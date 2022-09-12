@@ -100,7 +100,7 @@ docker cp ./docker.env appsmith:/appsmith-stacks/configuration/
 docker-compose exec appsmith supervisorctl restart backend
 ```
 
-## Backup Appsmith `I`nstance
+## Backup Appsmith Instance
 
 Use the following command to create a backup archive of the Appsmith instance. The backup includes the database, `docker.env` data, and Git data.
 
