@@ -35,7 +35,7 @@ Doc team members to raise an outline request by following the below steps:
         * Cross-references, troubleshooting, and support links
 
 * Raise a PR
-    * Add the ```<#docId_outline>.md``` file to the #doc issue folder(12345)
+    * Add the ```<#docId_title_outline>.md``` file to the #doc issue folder(12345)
         * Write an outline in markdown
         * Reviews, feedback, and finalize the outline with the engineer/peers
         * Merge the PR to v1.4.
