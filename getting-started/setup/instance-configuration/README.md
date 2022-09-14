@@ -55,7 +55,7 @@ To configure an ECS installation, follow these steps:
 2. Click on the Task Definition used by your ECS instance, and hit **Create new revision**.
 3. On the **Task Definition config** page, click on the Appsmith **container definition** to edit it. In the **Environment Section**, enter the environment configuration as **key-value pairs** as shown below.&#x20;
 
-<figure><img src="../../../.gitbook/assets/spaces_sRqv8vEmanRWzCklPZou_uploads_Pk8F2tEx36NrwJKIFH4I_ecs-task-env.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ecs-task-env.png" alt=""><figcaption></figcaption></figure>
 
 For sensitive information we recommend using **AWS Secrets**, please follow the steps [**detailed here**](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage\_create-basic-secret.html) to create a secret. Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
 
@@ -64,7 +64,7 @@ For sensitive information we recommend using **AWS Secrets**, please follow the 
 3. Click on **Update**, and select the **latest revision** of the Task Definition.
 4. Hit **Skip** to **review** and then Update Service. A screen showing the status will show up.&#x20;
 
-<figure><img src="../../../.gitbook/assets/spaces_sRqv8vEmanRWzCklPZou_uploads_6ayey8DBXj11RQwAsM4J_ecs-service-restart.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ecs-service-restart (1).png" alt=""><figcaption></figcaption></figure>
 
 It may take a minute for the new ECS Task to start running.
 

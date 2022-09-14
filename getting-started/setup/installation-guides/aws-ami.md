@@ -56,7 +56,7 @@ The process usually takes a few minutes. Use the EC2 Dashboard to check the stat
 
 At this point, you should be able to browse to the cloud server, by entering the cloud server IP address or DNS name directly into your browser’s address bar. You should now see your web app home page as shown below:
 
-![Login Page](../../../.gitbook/assets/aws-login-page.png)
+![Login Page](<../../../.gitbook/assets/aws-login-page (1).png>)
 
 ## Application Credentials
 
@@ -115,7 +115,7 @@ If your Appsmith setup does not have `auto-update` enabled that is the `Watchtow
 
 * Open the `docker-compose.yml` file with any text editor and uncomment the lines 13 to 23
 
-![Uncomment the lines from 13 to 23](<../../../.gitbook/assets/Docker-Compose-Yml-File-UnComment-for-AutoUpdates (1).png>)
+![Uncomment the lines from 13 to 23](../../../.gitbook/assets/Docker-Compose-Yml-File-UnComment-for-AutoUpdates.png)
 
 * Save the file
 * Run the below command

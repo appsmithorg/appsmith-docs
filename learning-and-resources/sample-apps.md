@@ -67,19 +67,19 @@ description: >-
 
 ## Queries/Apis
 
-[How to pass arguments to APIs/Queries' `run()` method?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
+[How to pass arguments to APIs/Queries' `run()` method?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/628e64d47901344ba8d2a584)
 
-[How to run APIs/Queries in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61faf7722cd3d95ca414a948)
+[How to run APIs/Queries in sequence?](https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/628e83df7901344ba8d2ae6f)
 
-[How to run multiple queries on a click event?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61e4fdb3eb0501052b9fc47d)
+[How to run multiple queries on a click event?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/62ab7a7e84b91337251afd40)
 
-[How to use the params received by APIs/Queries?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/61fbc4a12cd3d95ca414b603)
+[How to use the params received by APIs/Queries?](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/628e64d47901344ba8d2a584)
 
-[How to use values of queryParams in an API/Query?](https://app.appsmith.com/applications/61f7b1309d6d6a6720c9a491/pages/62025b3456d52d3fd7b71797?rows=6)
+[How to use values of queryParams in an API/Query?](https://app.appsmith.com/app/framework/queryparam-in-query-revamp-62b49e7b20ae3225cef164c5)
 
 [How to send dynamic header value to an API?](https://app.appsmith.com/applications/6200ac292cd3d95ca414dc4f/pages/624eda0551a8863d6c406760)
 
-[How to create a GraphQL (Hasura) query to fetch table data?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/61f81d4f9d6d6a6720c9b4ca)
+[How to create a GraphQL (Hasura) query to fetch table data?](https://app.appsmith.com/applications/61f81d4f9d6d6a6720c9b4c7/pages/62bddc01612750023eaff6d3)
 
 [How to write a RAW MongoDB query to update the document?](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f)
 
