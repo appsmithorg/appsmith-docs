@@ -27,7 +27,7 @@ Documentation team members would be responsible for creating an outline, initial
 
 ### Raise an outline request 
 Doc team members to raise an outline request by following the below steps:
-* Create an outline file with title - ```<#docId_outline>.md```. 
+* Create an outline file with title - ```<#docId_title_outline>.md```. 
 * Write the outline in markdown
     * Your outline should describe:
         * A high-level structure of the document
@@ -57,7 +57,7 @@ Now that the content is reviewed and signed off, add the markdown to GitBook. Fo
 
 > **Please ensure that you have added the ``` doc issue id``` to the CR's subject.**
 
-* Add the markdown from ```drafts\doc_issue_id\title.md```
+* Add the markdown from ```drafts\doc_issue_id\#docId_title.md```
 * Resolve any formatting issue
 * Submit the CR for review
 * Finalize and merge the CR
