@@ -23,6 +23,8 @@ Engineering team members to raise a draft request by following the below steps:
 ## Documentation team member
 Documentation team members would be responsible for creating an outline, initial drafts, adding the finalized content to GitBook, resolving formatting issues (if any), and publishing the content.
 
+> **Please ensure you use the same #ticket folder to add the outline and initial draft.** 
+
 ### Raise an outline request 
 Doc team members to raise an outline request by following the below steps:
 * Create an outline file with title - ```<#docId_outline>.md```. 
@@ -31,7 +33,7 @@ Doc team members to raise an outline request by following the below steps:
         * A high-level structure of the document
         * Content that would be added under each head
         * Cross-references, troubleshooting, and support links
-> **Please ensure you use the same #ticket folder to add the outline and initial draft.** 
+
 * Raise a PR
     * Add the ```<#docId_outline>.md``` file to the #doc issue folder(12345)
         * Write an outline in markdown
