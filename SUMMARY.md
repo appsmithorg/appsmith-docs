@@ -140,6 +140,7 @@
   * [Elasticsearch](reference/datasources/querying-elasticsearch.md)
   * [Firestore](reference/datasources/querying-firestore.md)
   * [Google Sheets](reference/datasources/querying-google-sheets.md)
+  * [GraphQL](reference/datasources/graphql.md)
   * [MongoDB](reference/datasources/querying-mongodb/README.md)
     * [Mongo Query Syntax](reference/datasources/querying-mongodb/mongo-syntax.md)
     * [Whitelist MongoDB Cloud](reference/datasources/querying-mongodb/whitelist-mongodb-cloud.md)
