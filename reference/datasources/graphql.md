@@ -12,7 +12,7 @@ To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next 
 How to create GraphQL Datasource?
 {% endembed %}
 
-## Connection Settings&#x20;
+## Connection Settings
 
 Configure the GraphQL API as illustrated below:
 
@@ -22,7 +22,7 @@ Configure the GraphQL API as illustrated below:
 All required fields are suffixed with an asterisk (\*).
 {% endhint %}
 
-#### URL&#x20;
+#### URL
 
 Use this field to add the API URL you want to access. For instance, if you want to visit [GitHub GraphQL API](https://docs.github.com/en/graphql), enter [https://api.github.com/graphql ](https://api.github.com/graphql)in the URL field.
 
@@ -35,15 +35,15 @@ HTTP Headers are an important part of the API request and response, representing
 3. Response Caching;
 4. Response Cookies.
 
-#### Query Parameters&#x20;
+#### Query Parameters
 
 A parameter is a piece of information you provide to a query during its execution. In the query, parameters can be used independently or as a component of a larger expression to build a criterion. The API you integrate allows you to include one or more[ query parameters](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database) as part of the request.
 
-#### Send Appsmith signature header\*&#x20;
+#### Send Appsmith signature header\*
 
 You can enable [Send Appsmith Signature Header](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication#send-appsmith-signature-header) to ensure that the incoming requests originate from Appsmith.
 
-#### Authentication Type&#x20;
+#### Authentication Type
 
 GraphQL API[ authentication types](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication/authentication-type) can be defined using the protocols offered by Appsmith.
 
@@ -57,7 +57,7 @@ The GraphQL Datasource allows you to upload your own self-signed certificate wit
 This information needs to be provided in .PEM (Privacy Enhanced Mail) format, as shown [here](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
 {% endhint %}
 
-## Create Queries&#x20;
+## Create Queries
 
 You can add queries to the newly created GraphQL datasource in one of the below ways:
 
@@ -172,16 +172,15 @@ query GetRepositoryWithIssues {
     }
   }
 }
-
 ```
 
 In the preceding query, we obtained information on issues (totalCount), the most recent issues with their titles and creation dates (createdAt), as well as information on the issue author.
 
-You can use a table widget to display your data. You can follow this [document](../widgets/table/) to understand how the table widget works.&#x20;
+You can use a table widget to display your data. You can follow this [document](../widgets/table/) to understand how the table widget works.
 
 <figure><img src="../../.gitbook/assets/graphlql1.PNG" alt=""><figcaption><p>Display Data Using Table Widget</p></figcaption></figure>
 
-When you make requests to the  API, it returns many results. To make the responses more manageable, paginate the results. The benefit of this approach is that it doesn't require additional backend logic. Appsmith supports both [Limit/Offset Based Pagination ](graphql.md#pagination)and [Cursor-based Pagination.](graphql.md#cursor-based-pagination)
+When you make requests to the API, it returns many results. To make the responses more manageable, paginate the results. The benefit of this approach is that it doesn't require additional backend logic. Appsmith supports both [Limit/Offset Based Pagination ](graphql.md#pagination)and [Cursor-based Pagination.](graphql.md#cursor-based-pagination)
 
 ### **​Retrieve A Record​**
 
@@ -207,7 +206,6 @@ query {
     }
   }
 }
-
 ```
 
 * Now **run** the query.
@@ -244,17 +242,17 @@ In GraphQL, you **insert**, **update** or **delete** data with mutations. A **Mu
 
 ### **Insert Records​/Create Records**
 
-Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into **** a **database table** with **specified table values**.
+Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into \*\*\*\* a **database table** with **specified table values**.
 
 {% embed url="https://youtu.be/zy1wcfgyNjg" %}
-Create New Record&#x20;
+Create New Record
 {% endembed %}
 
 * Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query to **`create_user`**.
 * Next, add your code in the body section and run your query.
 
-To create a GitHub issue, you first require the **`id` ** of the target repository. Once you assign the repository ID, you can input the title and description of the issue.
+To create a GitHub issue, you first require the \*\*`id` \*\* of the target repository. Once you assign the repository ID, you can input the title and description of the issue.
 
 ```
 mutation CreateIssue {
@@ -266,7 +264,6 @@ mutation CreateIssue {
     }
   }
 }
-
 ```
 
 You can create a new issue using the [button ](https://docs.appsmith.com/reference/widgets/button)and [modal ](https://docs.appsmith.com/reference/widgets/modal)widget.
@@ -289,7 +286,6 @@ mutation updateIssueTest{
     }
   }
 }
-
 ```
 
 The above query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here we are calling `id`.
@@ -312,7 +308,6 @@ mutation deleteIssueTest{
     }
   }
 }
-
 ```
 
 The preceding code deletes the issue using your Issue ID.
@@ -327,7 +322,6 @@ mutation closeIssueTest{
     }
   }
 }
-
 ```
 
 {% hint style="info" %}
@@ -375,7 +369,7 @@ query GetAllUsers($limitz:Int, $offsetz:Int){
 ```
 
 * In the pagination section, select **Paginate via Limit and Offset.**
-* Set _**limitz** _ as 2, and _**offsetz** _ as 0.
+* Set \_**limitz** \_ as 2, and \_**offsetz** \_ as 0.
 * Now **run** the query.
 
 So, if you set **Limit Value** to 2, it returns two rows. For instance, if you set _**limitz**_ as 4, then the data of 4 users are returned (i.e., number of rows).
@@ -384,7 +378,7 @@ _**Offset**_ allows you to omit a specified number of rows before beginning the 
 
 #### **Cursor-Based Pagination**
 
-Cursor-based pagination (also known as keyset pagination) works by returning a pointer to a specific item in the dataset. It's a popular pagination technique that stays clear of many of the difficulties of "offset-limit" pagination. Perhaps the biggest advantage of cursor pagination is its ability to handle real-time data effectively. This is because cursors don't require the data to remain static.&#x20;
+Cursor-based pagination (also known as keyset pagination) works by returning a pointer to a specific item in the dataset. It's a popular pagination technique that stays clear of many of the difficulties of "offset-limit" pagination. Perhaps the biggest advantage of cursor pagination is its ability to handle real-time data effectively. This is because cursors don't require the data to remain static.
 
 {% hint style="info" %}
 Cursor-based pagination works efficiently for large datasets.
@@ -452,7 +446,6 @@ query nodesPagination($afterValue:String,$beforeValue:String,$firstValue:Int,$la
     }
   }
 }
-
 
 ```
 

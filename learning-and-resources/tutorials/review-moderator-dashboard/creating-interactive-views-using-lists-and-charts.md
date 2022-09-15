@@ -220,5 +220,5 @@ The basic Review Moderator Dashboard is now up and running. It also marks the en
 
 * [Core Concepts](broken-reference/)
 * [Widgets](../../../reference/widgets/)
-* [Appsmith Framework](<../../../reference/appsmith-framework/README (1).md>)
+* [Appsmith Framework](../../../reference/appsmith-framework/)
 * [JavaScript Editor](../../../core-concepts/writing-code/javascript-editor-beta/)

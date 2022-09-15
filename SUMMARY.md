@@ -214,7 +214,6 @@
   * [How to Use Redis as a Datasource on Appsmith](learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith.md)
   * [How to Use Redshift as a Datasource on Appsmith](learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith.md)
   * [How to Use Elasticsearch as a Datasource on Appsmith](learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith.md)
-  * [How to Work With GraphQL on Appsmith](learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith.md)
   * [How to Use Prepared Statements?](learning-and-resources/how-to-guides/how-to-use-prepared-statements.md)
 * [Sample Apps](learning-and-resources/sample-apps.md)
 * [Integrations](learning-and-resources/integrations.md)

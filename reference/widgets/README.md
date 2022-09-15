@@ -4,7 +4,7 @@
 
 Widgets can be dragged from the widget pane, positioned on the canvas, and resized to fit the data they need to display. They also come with properties that can be visually edited to set their data, change their styles, and trigger actions from them.
 
-![](<../../.gitbook/assets/drop widget.gif>)
+![](<../../.gitbook/assets/spaces\_sRqv8vEmanRWzCklPZou\_uploads\_kpwSwyVV6AnRPtthUHmq\_drop widget.gif>)
 
 ### Naming a Widget
 
@@ -27,4 +27,4 @@ Appsmith supports the grouping of widgets. When you group widgets, they are put 
 * Select multiple widgets with Ctrl + Left Click
 * Now click on the dotted square icon or press Ctrl + G
 
-![](../../.gitbook/assets/group-widgets-2.gif)
+![](../../.gitbook/assets/groupingwidget.gif)

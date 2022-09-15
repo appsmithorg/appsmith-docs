@@ -1,6 +1,6 @@
 # How To Guides
 
-This document presumes you are familiar with the [core concepts](broken-reference) of Appsmith and expands upon using Appsmith in real-world scenarios.
+This document presumes you are familiar with the [core concepts](broken-reference/) of Appsmith and expands upon using Appsmith in real-world scenarios.
 
 ## Guide Reference
 
@@ -15,5 +15,4 @@ This document presumes you are familiar with the [core concepts](broken-referenc
 9. [How to use Redis as a data source on Appsmith](how-to-use-redis-as-a-data-source-on-apppsmith.md)
 10. [How to use Redshift as a Data Source on Appsmith](use-redshift-as-data-source-on-appsmith.md)
 11. [How to use ElasticSearch as a data source on Appsmith](how-to-use-elasticsearch-as-a-data-source-on-appsmith.md)
-12. [How to work with GraphQL on Appsmith: Countries App](how-to-work-with-graphql-on-appsmith.md)
-13. [How to use JS objects within Appsmith?](how-to-use-js-object-within-appsmith.md)
+12. [How to use JS objects within Appsmith?](how-to-use-js-object-within-appsmith.md)
