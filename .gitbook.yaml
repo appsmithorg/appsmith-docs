@@ -203,3 +203,4 @@ redirects:
   widget-reference/text: reference/widgets/text.md
   widget-reference/tree-select: reference/widgets/tree-select.md
   widget-reference/video: reference/widgets/video.md
+  learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith: reference/datasources/graphql
