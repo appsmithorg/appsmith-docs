@@ -77,7 +77,7 @@ redirects:
   how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith: learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith.md
   how-to-guides/use-redshift-as-data-source-on-appsmith: learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith.md
   how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith: learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith.md
-  how-to-guides/how-to-work-with-graphql-on-appsmith: learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith.md
+  how-to-guides/how-to-work-with-graphql-on-appsmith: reference/datasources/graphql
   how-to-guides/how-to-use-js-object-within-appsmith: learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md
   how-to-guides/how-to-use-prepared-statements: learning-and-resources/how-to-guides/how-to-use-prepared-statements.md
   sample-apps: learning-and-resources/sample-apps.md
