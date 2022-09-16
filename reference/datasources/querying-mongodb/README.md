@@ -6,6 +6,8 @@
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 {% endhint %}
 
+{% embed url="https://youtu.be/F_By1KmJKrk" caption="How To Build An Admin Panel With MongoDB" %}
+
 ## Connection Settings
 
 Appsmith needs the following parameters for connecting to a Mongo database:
