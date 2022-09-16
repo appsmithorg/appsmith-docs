@@ -32,3 +32,7 @@ These properties allow you to edit the Document Viewer widget. All of these prop
 Generating reports or documents from a dataset is vital in many applications. The video below shows how to generate a PDF report on Appsmith.
 
 {% embed url="https://youtu.be/8j6Z9bZvLqA" %}
+
+You can also generate a PDF document using Carbone.io:
+
+{% embed url="https://youtu.be/xlthDth2S6Q" caption="How To Generate PDF Reports With Carbone.io" %}
