@@ -132,7 +132,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 4\. Configure network - Proceed to the next step with the **default** configurations.
 
-![](<../../../.gitbook/assets/ecs-service-lb (1) (1) (1) (2) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/ecs-service-lb (1) (1) (1) (2) (1) (1) (1) (3).png>)
 
 5\. Set Auto Scaling - Proceed to the next step with the **default** configuration.
 

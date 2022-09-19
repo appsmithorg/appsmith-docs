@@ -4,7 +4,7 @@ description: >-
   chaining multiple steps.
 ---
 
-# How to implement custom authentication on Appsmith
+# Custom Authentication
 
 {% embed url="https://youtu.be/5oPcF9dXZyU" %}
 
@@ -107,3 +107,7 @@ In this way, you can use a custom login on Appsmith. Additionally, you can custo
 It is possible to use third-party OAuth services like Google, Twitter, Github, etc, to authenticate users for your app. In this case, you'll need to connect with a service that integrates with the desired Oauth provider. Here's a quick video showing how to implement a custom Google login with Xano:
 
 {% embed url="https://youtu.be/n3XSAA7q--I" %}
+
+You can also setup custom Google authentication using Supabase:
+
+{% embed url="https://youtu.be/mfhHUDNCkoQ" %}
