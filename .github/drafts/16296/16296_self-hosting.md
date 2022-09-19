@@ -1,7 +1,7 @@
 # Self-hosting
-Self-hosting is hosting and managing service directly by the owner on your own server rather than relying on a third-party service provider. Some examples include web hosting, file hosting, and email hosting. Self-hosting is often seen as a more secure and private alternative to using third-party services, as the user has complete control over their data and how it's used.
+Self-hosting Appsmith means hosting and managing Appsmith directly on your server rather than relying on third-party service providers. Self-hosting is often seen as more secure and private, as you have complete control over your data and how it's used.
 
-Appsmith is a low-code, open source app development tool that offers a fast and easy way to develop apps. It provides a [cloud-hosted version](https://app.appsmith.com)[cloud-hosted] and the option to set up your own instance on some popular [platforms](# Deploy).
+Appsmith provides a [cloud-hosted version](https://app.appsmith.com)[cloud-hosted] and the option to set up your own instance on some popular [platforms](# Deploy).
 
 ## Cloud-hosted
 Cloud-hosted version is available over the internet, which makes it easy for users to sign up and start building apps. It's a perfect solution for users who don't have their own infrastructure setup. You can sign up on appsmith.com and follow the [Quick start guide](start-building) to get started.
