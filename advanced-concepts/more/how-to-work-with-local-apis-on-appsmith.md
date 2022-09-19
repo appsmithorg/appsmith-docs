@@ -1,16 +1,18 @@
 ---
-description: This guide helps you to connect your Local APIs with Appsmith using ngrok
+description: >-
+  This guide helps you to connect your APIs or databases running on localhost
+  with Appsmith using ngrok
 ---
 
 # Local DB and APIs
 
 {% embed url="https://youtu.be/IUX2rXmS17E" %}
 
-Appsmith allows you to work with local APIs using the help of **`ngrok`**. In this guide, let’s look at how we can build an Appsmith application utilising the local APIs running on our machine
+Appsmith allows you to work with APIs running on `localhost` using the help of **`ngrok`**. In this guide, let’s look at how you can build an Appsmith application utilizing the APIs running on your machine.
 
 ## Building a Simple Local API
 
-If you have your local APIs ready, you can skip to the next section. Here, as an example, we’ll use a Python FastAPI server for serving a simple local API. Let’s install the necessary packages using pip:
+If you have your local APIs ready, you can skip to the next section. Here, as an example, we’ll use a Python FastAPI server for serving a simple API on localhost. Let’s install the necessary packages using pip:
 
 ```bash
 $ pip install fastapi uvicorn
@@ -99,8 +101,8 @@ Below is a GIF, following the same steps:
 
 ![](../../.gitbook/assets/NGROK.gif)
 
-### Connecting to localhost or other Docker containers
+### Connecting to local DB or localhost or other docker containers
 
-If you run Appsmith on-prem and need to connect to other services running on the host machine or as containers, the video below shows how to set things up.
+If you run Appsmith on-prem and need to connect to other services running on the localhost machine or as containers, the video below shows how to set things up.
 
 {% embed url="https://youtu.be/4XlgsVekzhI" %}
