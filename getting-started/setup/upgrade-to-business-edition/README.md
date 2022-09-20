@@ -3,7 +3,7 @@
 Follow **** the below guides to **upgrade** your **Community Edition (CE)** to a **Business Edition (BE)** based on the type of your **Appsmith Installation:**
 
 {% hint style="warning" %}
-You'll need your **** [**Business Edition License Key**](https://www.appsmith.com/pricing) **** to complete the upgrade**.**
+You'll need your **Business Edition License Key** to complete the upgrade**.**
 {% endhint %}
 
 {% content-ref url="docker.md" %}

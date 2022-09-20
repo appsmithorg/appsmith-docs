@@ -183,7 +183,7 @@
   * [Disconnect the Git Repository](advanced-concepts/version-control-with-git/disconnect-the-git-repository.md)
   * [Updating Local File Path](advanced-concepts/version-control-with-git/updating-local-file-path.md)
 * [More](advanced-concepts/more/README.md)
-  * [Local DB and APIs](advanced-concepts/more/how-to-work-with-local-apis-on-appsmith.md)
+  * [Connect via localhost](advanced-concepts/more/how-to-work-with-local-apis-on-appsmith.md)
   * [Migrate Applications](advanced-concepts/more/backup-restore.md)
   * [Keyboard Shortcuts](advanced-concepts/more/keyboard-shortcuts.md)
 
