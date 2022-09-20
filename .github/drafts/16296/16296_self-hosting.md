@@ -19,19 +19,21 @@ You get to keep your data on-premise. It also ensures that your API keys or secu
 Appsmith provides a [secured environment](Link to security page) for cloud-hosted and self-hosted instances by encrypting sensitive information like database credentials using [AES 256 Encryption](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). For self-hosted instances, it also supports setting up [SSL certificates](Link to SSL & Custom Domain page - Setting up SSL section) via [LetsEncrypt](https://letsencrypt.org/) during installation.
 
 #### Internal database
-A self-hosted instance could allow you to integrate with an internal database and use it to build apps.
+A self-hosted instance could allow you to connect with a database running on the same machine/intranet and use it to build apps.
 
-> Using a cloud-hosted instance would require the ability to access the internal databases. You would be required to use tunneling services like [ngrok](Link to Ngrok doc on Appsmtih) to expose your internal database to the internet and build apps.
+> Using a cloud-hosted instance would require the ability to access the internal databases. For example, you would be required to use tunneling services like [ngrok](Link to Ngrok doc on Appsmtih) to expose your internal database to the internet or whitelist Appsmith cloud's external IP addresses to build apps.
 
-Appsmith uses MongoDB for storing app data and Redis for storing session information. You may wish to integrate with custom MongoDB or Redis servers hosted on your infrastructure. For this, you would have to [modify the configuration of environment variables and point them to the custom MongoDB/Redis] (Link to Custom MongoDB and Redis Page) instances.
+Appsmith uses MongoDB to store app data and Redis to store session information and non-critical caches. You may wish to integrate with custom MongoDB or Redis servers hosted on your infrastructure. For this, you would have to [modify the configuration of environment variables and point them to the custom MongoDB/Redis] (Link to Custom MongoDB and Redis Page) instances.
 
 #### Updates
 You can configure more flexible updates, schedules, and other maintenance activities for a self-hosted instance. You can follow the steps to configure [maintenance window and schedule auto updates](Link to Maintenance window page).
 
- > The self-hosted version isn't air-gapped and pings a cloud service to fetch release notes about the product updates. It helps you stay updated with the latest releases. If you would like a fully air-gapped deployment, please write to support@appsmith.com.
+ > The self-hosted version isn't air-gapped and reaches out to the Appsmith cloud. For example, to fetch release notes about product updates. It helps you stay updated with the latest releases. If you would like a fully air-gapped deployment, please write to support@appsmith.com.
 
 ### Deploy
 You can choose from various popular platforms to deploy Appsmith, like Docker, Kubernetes, AWS, Digital Ocean, and more.
+
+> Appsmith officially supports docker-based installations.
 
 #### Pre-setup checklist
 It's simple and quick to deploy Appsmith. Please ensure that your system has the following recommended configuration for optimal performance before moving forward with the deployment:
@@ -43,8 +45,6 @@ It's simple and quick to deploy Appsmith. Please ensure that your system has the
 
 #### Deployment options
 With a variety of [deployment options](Link to Installation Guides page), choose the one that best suits you:
-
-> Appsmith officially supports docker-based installations.
 
 * [Docker](Link to Docker Page)
 * [Kubernetes](Link to Kubernetes Page)
