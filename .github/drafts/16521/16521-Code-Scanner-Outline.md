@@ -15,7 +15,7 @@ Explain the functionality in brief and provide some use cases where this widget 
 * **Warehouse Example**- With the help of a code scanner widget, employees can easily keep track of their warehouse inventories. They can use a code scanner in their app to scan codes rather than manually entering them.
 * **Restaurant Example**- Exaplain use of QR codes in Restaurants
 
-# Properties 
+# Properties (cross-link)
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
@@ -29,18 +29,10 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | value           | Binding              | Fetches the value of scanned code                                                                                   | {{CodeScanner1.value}}      |
 |                 |                      |                                                                                                                     |                             |
 
+//cross-link common properties
 
-**//cross-link common properties** 
 
 ### Text
-
-### Visible
-
-### Disabled
-
- ### Animate Loading
-
-### Tooltip
 
 ### Value
 
@@ -68,6 +60,13 @@ Event Intro
 
 ## Conclusion
 ## Cross Reference Section
+ The following resources will come in handy as you need to learn new tricks:
+* Core Concepts
+* Widgets
+* Appsmith Framework
+* JavaScript Editor
+ 
+ ## Troubleshooting
 
 
 
