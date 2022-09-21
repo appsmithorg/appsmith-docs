@@ -111,7 +111,7 @@ Multi-select **options** can be populated from a data source like an API / Query
 
 A MultiSelect widget can be used to filter a dataset based on the user's input. The selected value can be passed to an API using\*\*`{{ multiselect1.selectedOptionValues }}`\*\* .
 
-Server Side Filtering can also be enabled on the widget by enabling Server Side Filtering property.
+Server Side Filtering can also be enabled on the widget by enabling Server Side Filtering property. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value is not present in the default options.
 
 ## **Form Submission**
 
