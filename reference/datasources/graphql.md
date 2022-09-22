@@ -65,7 +65,7 @@ You can add queries to the newly created GraphQL datasource in one of the below 
 
 You can add queries to GraphQL datasource by selecting the **New API +** button available on the datasource page.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-08-30 at 12.56.01 PM.png" alt=""><figcaption><p>GraphQL Datasource Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-08-30 at 12.56.01 PM (1).png" alt=""><figcaption><p>GraphQL Datasource Page</p></figcaption></figure>
 
 #### Query/JS page
 
@@ -446,7 +446,6 @@ query nodesPagination($afterValue:String,$beforeValue:String,$firstValue:Int,$la
     }
   }
 }
-
 ```
 
 * In the pagination section, select **“Paginate via Cursor based”**, and map the values as follows:
