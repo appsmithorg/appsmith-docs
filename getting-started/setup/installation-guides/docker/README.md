@@ -39,7 +39,7 @@ Currently, auto-update is disabled on the docker-compose file. If you want to en
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="../../../../.gitbook/assets/docker-compose.yml" %}
+{% file src="../../../../.gitbook/assets/docker-compose (3).yml" %}
 
 **or** run the following curl if you're on a remote machine:
 
@@ -69,7 +69,15 @@ If it is not available locally, the command above will download the Docker image
 docker logs -f appsmith
 ```
 
-You should see a message `Appsmith is Running!` once the container is ready. If this is your first time using docker, you should expect a welcome page similar to the one below.
+You should see a message `Appsmith is Running!` once the container is ready. The message is also logged and available in server logs(<mark style="color:red;">`stacks/logs/backend/backend.log`</mark>).&#x20;
+
+<figure><img src="../../../../.gitbook/assets/InstallationGuides  Docker  AppsmithRunningMessage.png" alt=""><figcaption><p>Appsmith is running message</p></figcaption></figure>
+
+{% hint style="warning" %}
+If you are **unable** to **locate** the message but can **access** Appsmith via **localhost** or a **custom domain** you have **created**, then Appsmith is up and running.
+{% endhint %}
+
+If this is your first time using docker, you should expect a welcome page similar to the one below.
 
 ![Welcome Page](<../../../../.gitbook/assets/image (1) (1).png>)
 
