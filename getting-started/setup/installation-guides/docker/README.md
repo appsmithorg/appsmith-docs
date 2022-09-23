@@ -132,7 +132,13 @@ This command will download the image and start Appsmith. Once the download is co
 docker logs -f appsmith
 ```
 
-You should see the message `Appsmith is Running!` once the container is ready
+You should see a message `Appsmith is Running!` once the container is ready. The message is also logged and available in server logs(<mark style="color:red;">`stacks/logs/backend/backend.log`</mark>).&#x20;
+
+<figure><img src="../../../../.gitbook/assets/InstallationGuides  Docker  AppsmithRunningMessage.png" alt=""><figcaption><p>Appsmith is running message</p></figcaption></figure>
+
+{% hint style="warning" %}
+If you are **unable** to **locate** the message but can **access** Appsmith via **localhost** or a **custom domain** you have **created**, then Appsmith is up and running.
+{% endhint %}
 
 ## Restarting Containers
 
