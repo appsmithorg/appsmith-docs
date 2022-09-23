@@ -25,7 +25,6 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | value           | Binding              | Fetches the value of scanned code                                                                                   | {{CodeScanner1.value}}      |
 |                 |                      |                                                                                                                     |                             |
 
-//cross-link common properties
 
 
 ### Text
