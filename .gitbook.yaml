@@ -14,6 +14,7 @@ redirects:
   setup/docker: getting-started/setup/installation-guides/docker/README.md
   setup/kubernetes: getting-started/setup/installation-guides/kubernetes/README.md
   setup/kubernetes/migrate-k8s: getting-started/setup/installation-guides/kubernetes/migrate-k8s.md
+  setting-up-appsmith/aws-ami: getting-started/setup/installation-guides/aws-ami.md
   setup/aws-ami: getting-started/setup/installation-guides/aws-ami.md
   setup/aws-ecs: getting-started/setup/installation-guides/aws-ecs.md
   setup/digitalocean: getting-started/setup/installation-guides/digitalocean.md
