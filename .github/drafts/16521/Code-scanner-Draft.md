@@ -45,8 +45,6 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 Text/Label is a widget property that lets you set the text inside the button, describing the function it performs. It's used to display static text on the button. For example, you can enter "Scan Menu" as the label for a button that scans the restaurant menu.
 
-![Watch the video](https://youtu.be/o80-IKcXAVQ)
-
 [Text Video](https://youtu.be/o80-IKcXAVQ)
 
 
