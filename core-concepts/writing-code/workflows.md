@@ -9,7 +9,7 @@ description: >-
 When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
 
 {% hint style="info" %}
-To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](broken-reference/) and expand on triggering more complex actions.
+To create workflows, you should be familiar with [triggering actions](<../../reference/appsmith-framework/README (1).md#functions>) from [widgets](broken-reference/) and expand on triggering more complex actions.
 {% endhint %}
 
 ## **Fields**
@@ -30,7 +30,7 @@ The properties that can trigger an action or perform an operation are called Asy
 
 ![Input Widget - Async Fields](<../../.gitbook/assets/Writing Code  Creating Workflows  Async Fields  Input Widget.png>)
 
-For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](../../reference/appsmith-framework/#functions).
+For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](<../../reference/appsmith-framework/README (1).md#functions>).
 
 ### **Use an Async Function Response in a Sync Field**
 
@@ -46,13 +46,13 @@ You are fetching all the users and displaying information like First Name, Last 
 
 You have an API that fetches Users. You want to trigger the API execution, so you bind the API call to the widget, and the response generated will be shown in the table.
 
-To add a Table widget; Navigate to `Explorer` >> Click on `Widgets` >> Search `table` >> Drag a table widget onto the canvas.&#x20;
+To add a Table widget; Navigate to `Explorer` >> Click on `Widgets` >> Search `table` >> Drag a table widget onto the canvas.
 
 {% embed url="https://youtu.be/iYZV9DPnugY" %}
 How to call API in the Sync field?
 {% endembed %}
 
-To read data by using an API: Create an API - `getAllUsers` on Appsmith by adding the `API` from `Explorer` >> Click `(+)` Query/JS  >> Select `New Blank API`  >> Rename to `getAllUsers` (or select an existing API) Add API call to the table data property of a table widget as shown in the code snippet below:
+To read data by using an API: Create an API - `getAllUsers` on Appsmith by adding the `API` from `Explorer` >> Click `(+)` Query/JS >> Select `New Blank API` >> Rename to `getAllUsers` (or select an existing API) Add API call to the table data property of a table widget as shown in the code snippet below:
 
 ```
  {{getAllUsers.data}}
@@ -88,7 +88,7 @@ export default {
 }
 ```
 
-A function call to the JSObject <mark style="color:red;">`getFilteredUsersList.userFilteredList()`</mark> will throw an error as table data is a sync field and cannot perform function execution. However, you can use the JSObject function response by adding <mark style="color:red;">`{{<JSOBJECTNAME.FUNCTIONAME.data>}}(`</mark> <mark style="color:red;"></mark><mark style="color:red;"></mark> <mark style="color:red;"></mark><mark style="color:red;">`{{getFilteredUsersList.userList.data}})`</mark>by reading the function's response. Appsmith handles the JSObject function execution **on page load**. You can modify the async function settings from the settings tab if you wish not to execute the function **on page load**.
+A function call to the JSObject <mark style="color:red;">`getFilteredUsersList.userFilteredList()`</mark> will throw an error as table data is a sync field and cannot perform function execution. However, you can use the JSObject function response by adding <mark style="color:red;">`{{<JSOBJECTNAME.FUNCTIONAME.data>}}(`</mark> <mark style="color:red;">`{{getFilteredUsersList.userList.data}})`</mark>by reading the function's response. Appsmith handles the JSObject function execution **on page load**. You can modify the async function settings from the settings tab if you wish not to execute the function **on page load**.
 
 **Using a Query**
 
@@ -98,7 +98,7 @@ You have a query that fetches Users’ information, returns the response, and bi
 How to trigger a query execution from a Sync field?
 {% endembed %}
 
-To read data by calling a query:&#x20;
+To read data by calling a query:
 
 * Click on the **+** icon next to the **queries/js** and create a new query.
 * Select `DatabaseName` for which you want to add Query.
@@ -172,7 +172,7 @@ or chained to be called <mark style="color:red;">`onSuccess / onError`</mark> us
 The following example shows how you can run two queries on a single click event:
 
 {% embed url="https://youtu.be/flCSSNTwWc4" %}
-Example | Executing Queries in Parallel&#x20;
+Example | Executing Queries in Parallel
 {% endembed %}
 
 You'll see that **Query 1** includes information about location, pin code, email address, and phone number, and **Query 2** includes information about name, gender, and ID.
@@ -188,7 +188,7 @@ To run both the queries:
 {{Query2.data}} // For Table 2
 ```
 
-* Add a [button widget](../../reference/widgets/button/) to call both queries simultaneously.&#x20;
+* Add a [button widget](../../reference/widgets/button/) to call both queries simultaneously.
 * In the button's **onClick** event, toggle the **JS** option and paste the below code:
 
 ```javascript
@@ -205,12 +205,12 @@ You can execute multiple queries simultaneously with this command.
   statusDropdown.selectedOptionValue === "Pending" ?
       fetchPendingUsers.run(() => {
 <strong>          fetchPendingUsers.data.length === 0 
-</strong><strong>          ? showAlert("No Users Pending Approval", "info") 
-</strong><strong>          : showAlert("Fetched Users", "success");
+</strong>          ? showAlert("No Users Pending Approval", "info") 
+<strong>          : showAlert("Fetched Users", "success");
 </strong>      }) 
       : fetchApprovedUsers.run();
 }}</code></pre>
 
 {% hint style="success" %}
-Use the [Appsmith Framework](../../reference/appsmith-framework/) and [External Libraries](ext-libraries.md) to build logic into your applications quickly.
+Use the [Appsmith Framework](<../../reference/appsmith-framework/README (1).md>) and [External Libraries](ext-libraries.md) to build logic into your applications quickly.
 {% endhint %}
