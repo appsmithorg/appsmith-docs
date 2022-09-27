@@ -7,7 +7,7 @@ The Code Scanner widget allows you to scan a variety of barcodes and QR codes. W
 
 # Usage
 
-QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminate manual entry of product information at receiving, meaning there are far fewer opportunities for error. Let's look at some use cases where code scanner can be helpful:
+QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminate manual entry of product information at receiving, meaning there are far fewer opportunities for error. Let's look at some scenarios where code scanner can be helpful:
 
 * **Warehouse**- Companies need to know not just their current inventory levels, but the location of those products, at all times. With the help of a code scanner widget, employees can easily keep track of their warehouse inventories. They can use a code scanner in their app to scan codes rather than manually entering them. 
 * **Asset Management**- The most widely used system for tracking the equipment, vehicles, and computers used by businesses to support their everyday operations is the usage of barcodes. With the code scanner widget, you can keep track of equipment and location of the assets and keep any pertinent records of maintenance and repair.
@@ -68,7 +68,7 @@ For example, let's take a Code Scanner widget(CodeScanner1) and bind its value t
 
 # Events
 
-They are a set of actions that you can perform on the widget. The following table lists the actions:
+You can define functions that will be called when these events are triggered in the widget. For example, you can navigate to another page, show alert messages, open and close modals, and store data in local storage.
 
 | Event          |  Description                                     |                                            
 |----------------|--------------------------------------------------|
@@ -112,9 +112,8 @@ As a result, you'll be able to enhance internal business operations and provide 
 ## Cross Reference Section
  The following resources will come in handy as you need to learn new tricks:
 * [Core Concepts](https://docs.appsmith.com/core-concepts/connecting-to-data-sources)
-* [Widgets](https://docs.appsmith.com/reference/widgets)
 * [Appsmith Framework](https://docs.appsmith.com/reference/appsmith-framework)
-* [Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
+
  
  ## Troubleshooting
 If you encounter any errors during this process, check out our guide on [debugging deployment errors](https://docs.appsmith.com/help-and-support/troubleshooting-guide/deployment-errors). If you are still facing any issues, please reach out to support@appsmith.com or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
