@@ -1,16 +1,38 @@
 ---
-description: This guide helps you to connect your Local APIs with Appsmith using ngrok
+description: >-
+  This guide helps you to connect your APIs or databases running on localhost
+  with Appsmith using host.docker.internal or ngrok.
 ---
 
-# Local DB and APIs
+# Connect via localhost
+
+## Connect to a localhost database/API
+
+With your on-premises Appsmith instance running on the same system, you may use [`host.docker.internal` ](how-to-work-with-local-apis-on-appsmith.md#using-docker-internal)or [ngrok](how-to-work-with-local-apis-on-appsmith.md#using-ngrok) to connect to databases, APIs, and services that are running on localhost or as other docker containers.
+
+## Using host.docker.internal
+
+You can use `` [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
+
+{% hint style="info" %}
+You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.&#x20;
+{% endhint %}
+
+{% embed url="https://youtu.be/4XlgsVekzhI" %}
+Connect to databases/APIs running on localhost
+{% endembed %}
+
+## Using ngrok
+
+Appsmith allows you to work with APIs running on `localhost` using the help of **`ngrok`**. Let’s look at how you can build an Appsmith application utilizing the APIs running on localhost.
 
 {% embed url="https://youtu.be/IUX2rXmS17E" %}
+Connect to localhost using ngrok
+{% endembed %}
 
-Appsmith allows you to work with local APIs using the help of **`ngrok`**. In this guide, let’s look at how we can build an Appsmith application utilising the local APIs running on our machine
+### Building a Simple Local API
 
-## Building a Simple Local API
-
-If you have your local APIs ready, you can skip to the next section. Here, as an example, we’ll use a Python FastAPI server for serving a simple local API. Let’s install the necessary packages using pip:
+Let's take an example, we’ll use a Python FastAPI server for serving a simple API on localhost. Let’s install the necessary packages using pip:
 
 ```bash
 $ pip install fastapi uvicorn
@@ -44,7 +66,7 @@ async def root():
    return items
 ```
 
-Here, we imported the FastAPI library, initiated an app using the `FastAPI` class. Next, we define a simple list consisting of details of steam games as objects
+Here, we imported the FastAPI library and initiated an app using the `FastAPI` class. Next, we define a simple list consisting of details of steam games as objects
 
 Lastly, we declare a route “/” at which the items variables (game objects) are being returned. We can get this server running by using the following command:
 
@@ -60,7 +82,7 @@ $ uvicorn main:app --reload
 
 Awesome, with this we should see our API running at [http://127.0.0.1:8000](https://github.com/appsmithorg/appsmith-docs/blob/v1.3/how-to-guides/http:/127.0.0.1:8000!) !
 
-## Setting ngrok
+### Setting ngrok
 
 Now that we have our local APIs, let’s use `ngrok` to serve them on production. For this, we’ll have to signup at [ngrok](https://dashboard.ngrok.com/get-started/setup) (it’s free!), and follow the instructions to connect your account.
 
@@ -79,16 +101,16 @@ $ ./ngrok http 8000
 
 Awesome, we can now see that the local APIs are now being forwarded to a different server on production using `ngrok`. Below is a screenshot,
 
-![](https://lh5.googleusercontent.com/5Qdqw3U5EYtDk5EhpWrTrrUw5EcKPqZGE8xX2W7NjazBd\_cdSQZNUgVkUzkQXjG0NqCusqQW4ftUp3GAOg794gsWCZpXrDi1lmtBF7ZplJ5lAAcdsc\_hfKOFr93KebVE4nZ1JKp9)
+![ngrok commands](https://lh5.googleusercontent.com/5Qdqw3U5EYtDk5EhpWrTrrUw5EcKPqZGE8xX2W7NjazBd\_cdSQZNUgVkUzkQXjG0NqCusqQW4ftUp3GAOg794gsWCZpXrDi1lmtBF7ZplJ5lAAcdsc\_hfKOFr93KebVE4nZ1JKp9)
 
-## Testing APIs on Appsmith
+### Testing APIs on Appsmith
 
 Now that we have API, up and running, let’s test these out on Appsmith.
 
 * Create an application on Appsmith
 * Create a New API by clicking on the `+` icon next to the APIs section on the left navigation and rename it to `getGames`
 * Add the forwarded API link and hit RUN, we’ll have to see the API response on the response pane.
-* Next, navigate to Pages, and drag and drop a Table Widget on to the canvas.
+* Next, navigate to Pages, and drag and drop a Table Widget onto the canvas.
 * Open the table property pane and add use the API to display data on to the table by adding the following code snippet under the Table Data property:
 
 ```javascript
@@ -97,10 +119,4 @@ Now that we have API, up and running, let’s test these out on Appsmith.
 
 Below is a GIF, following the same steps:
 
-![](../../.gitbook/assets/NGROK.gif)
-
-### Connecting to localhost or other Docker containers
-
-If you run Appsmith on-prem and need to connect to other services running on the host machine or as containers, the video below shows how to set things up.
-
-{% embed url="https://youtu.be/4XlgsVekzhI" %}
+![Test API](../../.gitbook/assets/NGROK.gif)

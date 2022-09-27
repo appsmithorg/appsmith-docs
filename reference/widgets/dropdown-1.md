@@ -133,8 +133,10 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Radius**    | Allows you to define curved corners.                     |
 | **Box Shadow**       | Allows you to choose from the available shadow styles.   |
 
-### Server-side Filterting
+### Server-side Filtering
 
-The Select widget has the option to configure server-side filtering, where search queries are sent to the backend, and responses are used to populate options on the Select widget. The video below explains how to configure this.
+The Select widget has the option to configure server-side filtering, where search queries are sent to the backend, and responses are used to populate options on the Select widget. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value is not present in the default options.
+
+The video below explains how to configure this.
 
 {% embed url="https://youtu.be/QDmTwRaLzHg" %}

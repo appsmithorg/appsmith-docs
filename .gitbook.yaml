@@ -14,6 +14,7 @@ redirects:
   setup/docker: getting-started/setup/installation-guides/docker/README.md
   setup/kubernetes: getting-started/setup/installation-guides/kubernetes/README.md
   setup/kubernetes/migrate-k8s: getting-started/setup/installation-guides/kubernetes/migrate-k8s.md
+  setting-up-appsmith/aws-ami: getting-started/setup/installation-guides/aws-ami.md
   setup/aws-ami: getting-started/setup/installation-guides/aws-ami.md
   setup/aws-ecs: getting-started/setup/installation-guides/aws-ecs.md
   setup/digitalocean: getting-started/setup/installation-guides/digitalocean.md
@@ -77,7 +78,7 @@ redirects:
   how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith: learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith.md
   how-to-guides/use-redshift-as-data-source-on-appsmith: learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith.md
   how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith: learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith.md
-  how-to-guides/how-to-work-with-graphql-on-appsmith: learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith.md
+  how-to-guides/how-to-work-with-graphql-on-appsmith: reference/datasources/graphql.md
   how-to-guides/how-to-use-js-object-within-appsmith: learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md
   how-to-guides/how-to-use-prepared-statements: learning-and-resources/how-to-guides/how-to-use-prepared-statements.md
   sample-apps: learning-and-resources/sample-apps.md
@@ -203,3 +204,4 @@ redirects:
   widget-reference/text: reference/widgets/text.md
   widget-reference/tree-select: reference/widgets/tree-select.md
   widget-reference/video: reference/widgets/video.md
+  learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith: reference/datasources/graphql.md
