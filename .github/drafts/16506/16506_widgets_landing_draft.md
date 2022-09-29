@@ -55,7 +55,7 @@ For example, add a regular expression for entering a name. The name can contain 
 /^[a-z -]+$/i
 ```
 
-If you enter a value other than an alphabet or space (number of special characters), the widget shows an error message "invalid input."
+If you enter a value other than an alphabetic or space (number of special characters), the widget shows an error message "invalid input."
 
 {% embed url="https://youtu.be/n6VUQN-wv9U" %}
 
