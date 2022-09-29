@@ -33,7 +33,7 @@ This property is a toggle that enables/disables the label markings along the bot
 
 {% embed url="https://youtu.be/-4DS16RBkeI" %}
 
-## value
+### value
 This binding property allows you to access the value that has been selected with the slider. For example, if the selected value is `"agree"`, then the `value` property would look like:
 
 ```
@@ -43,7 +43,7 @@ This binding property allows you to access the value that has been selected with
 
 {% embed url="https://youtu.be/AD89aGY2Kwc" %}
 
-## Events
+# Events
 
 Each variant of the Slider widget has events that are called when the user adjusts the widget's values:
 
@@ -51,5 +51,5 @@ Each variant of the Slider widget has events that are called when the user adjus
 |-----------|-----------------|-------------|------------------|
 | **onChange** | Sets an action to take place when the user changes the slider's value. Can be set from the GUI list of common actions (See a list of [supported actions](https://docs.appsmith.com/reference/appsmith-framework/widget-actions)), or you can define a custom JavaScript function to call instead. | Fetching a certain page or image from a range based upon user selection. |  |
 
-## Conclusion
+# Conclusion
 The Category Slider widget is great for collecting input that falls along a range of possible values. Consider using this widget when your users' responses are expected to fall along a fixed set of ascending data.

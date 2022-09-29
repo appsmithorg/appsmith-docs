@@ -52,7 +52,7 @@ When this property is enabled, the widget's tooltip is *always* visible, and sho
 
 {% embed url="https://youtu.be/mtlqTYBplqk" %}
 
-## value
+### value
 This binding property allows you to access the value that has been selected with the slider. For example, if the selected value is `50`, then the `value` property would look like:
 
 ```
@@ -62,7 +62,7 @@ This binding property allows you to access the value that has been selected with
 
 {% embed url="https://youtu.be/AD89aGY2Kwc" %}
 
-## Events
+# Events
 
 Each variant of the Slider widget has events that are called when the user adjusts the widget's values:
 
@@ -70,5 +70,5 @@ Each variant of the Slider widget has events that are called when the user adjus
 |-----------|-----------------|-------------|------------------|
 | **onChange** | Sets an action to take place when the user changes the slider's value. Can be set from the GUI list of common actions (See a list of [supported actions](https://docs.appsmith.com/reference/appsmith-framework/widget-actions)), or you can define a custom JavaScript function to call instead. | Fetching a certain page or image from a range based upon user selection. |  |
 
-## Conclusion
+# Conclusion
 Numerical sliders can be helpful when you want to add a visual component to a user's selection of a numerical value. This way, values can be selected at-a-glance for estimations; or even for watching incremental changes in a dataset as the slider value gradually increases or decreases.
