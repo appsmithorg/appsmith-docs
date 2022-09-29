@@ -1,16 +1,15 @@
 
 Barcodes and QR codes are now found on a wide range of goods, including health bands, rental cars, checked baggage, and clothing purchased from supermarkets or retail stores. They each identify a thing or a person and encode significant information.
 
-The Code Scanner widget allows you to scan a variety of barcodes and QR codes. With this, you'll be able to enhance internal business operations and provide excellent customer service.
-
+The Code Scanner widget allows you to scan a variety of barcodes and QR codes. Using this widget, you'll be able to enhance internal business operations and provide excellent customer service.
 
 
 # Usage
 
-QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminate manual entry of product information at receiving, meaning there are far fewer opportunities for error. Let's look at some scenarios where code scanner can be helpful:
+QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminates manual entry of product information at receiving, meaning there are far fewer opportunities for error. Let's look at some scenarios where a code scanner can be helpful:
 
 * **Warehouse**- Companies need to know not just their current inventory levels, but the location of those products, at all times. With the help of a code scanner widget, employees can easily keep track of their warehouse inventories. They can use a code scanner in their app to scan codes rather than manually entering them. 
-* **Asset Management**- The most widely used system for tracking the equipment, vehicles, and computers used by businesses to support their everyday operations is the usage of barcodes. With the code scanner widget, you can keep track of equipment and location of the assets and keep any pertinent records of maintenance and repair.
+* **Asset Management**- The most widely used system by businesses for tracking the equipment, vehicles, and computers to support their everyday operations is the usage of barcodes. With the code scanner widget, you can keep track of equipment and the location of the assets and keep any pertinent maintenance and repair records.
 * **Logistics and Transportation industries**- Effective track and trace methods offer logistics teams the ability to locate, track, and identify objects in real time, providing better business insight and quicker problem-solving. QR-based tracking eliminates paperwork, reduces errors and increases productivity.
 
 ### Supported QR/Barcode Formats
@@ -43,15 +42,14 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 ### Text
 
-Text/Label is a widget property that lets you set the text inside the button, describing the function it performs. It's used to display static text on the button. For example, you can enter "Scan Menu" as the label for a button that scans the restaurant menu.
+Text/Label is a widget property that lets you set the text inside the button, describing the function it performs. It displays static text on the button. For example, you can enter "Scan Menu" as the label for a button that scans the restaurant menu.
 
 [Text Video](https://youtu.be/o80-IKcXAVQ)
 
 
 ### Value
 
-Value is a binding property, it fetches the response from the scanned code. To bind the value of the code scanner widget to another widget, open the property pane of it, and add the code snippet given below:
-
+Value is a binding property that fetches the response from the scanned code. To bind the value of the code scanner widget to another widget, open the property pane, and add the code snippet given below:
 ```
 {{<your_widget>.value}}
 ```
@@ -82,7 +80,7 @@ The Appsmith framework allows triggering actions for widget events and inside JS
   
 In this example, we will use the [Modal widget](https://docs.appsmith.com/reference/widgets/modal) to display the code response.
 
-* First, set the onCodeDetected event to open a New Modal, and choose to Create New.
+* Set the onCodeDetected event to open a New Modal, and choose to Create New.
 * This will open up a new modal; let's drag the [text widget](https://docs.appsmith.com/reference/widgets/text) into the modal.
 * In the property section, add the following code:
   
@@ -90,8 +88,8 @@ In this example, we will use the [Modal widget](https://docs.appsmith.com/refere
 {{CodeScanner1.value}}
 ```
 
-With this, whenever a valid code is detected, a modal window displaying the code response will show up. The video below demonstrates how to achieve that.
-  
+Whenever a valid code is detected, a modal window displaying the code response will show up. The video below demonstrates how to achieve that.
+
 https://youtu.be/_2p1bMbdk6U
 
 
