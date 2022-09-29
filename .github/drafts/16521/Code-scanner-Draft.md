@@ -1,5 +1,5 @@
 
-Barcodes are now found on a wide range of goods, including health bands, rental cars, checked baggage, and clothing purchased from supermarkets or retail stores. They each identify a thing or a person and encode significant information.
+Barcodes and QR codes are now found on a wide range of goods, including health bands, rental cars, checked baggage, and clothing purchased from supermarkets or retail stores. They each identify a thing or a person and encode significant information.
 
 The Code Scanner widget allows you to scan a variety of barcodes and QR codes. With this, you'll be able to enhance internal business operations and provide excellent customer service.
 
@@ -34,10 +34,10 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | Text            | Formatting           | Sets the label text of the widget.                                                                                  | -                           |
 | [Visible](https://docs.appsmith.com/reference/widgets)          | Binding & Formatting | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published. Learn more about [Visible Property](https://docs.appsmith.com/reference/widgets)   | {{CodeScanner1.isVisible}}  |
 | [Disabled](https://docs.appsmith.com/reference/widgets)         | Binding & Formatting | Disables input to the widget. The widget will remain visible to the user but a user input won't be allowed. Learn more about [Disable Property](https://docs.appsmith.com/reference/widgets)      | {{CodeScanner1.isDisabled}} |
-| [Animate Loading](https://docs.appsmith.com/reference/widgets)  | Formatting           | Controls the loading of the widget. Learn more about [Tooltip](https://docs.appsmith.com/reference/widgets)                                                                                 | -                           |
-| [Animate Loading](https://docs.appsmith.com/reference/widgets)           | Formatting           | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. Learn more about [Tooltip](https://docs.appsmith.com/reference/widgets)    | -                           |
+| [Animate Loading](https://docs.appsmith.com/reference/widgets)  | Formatting           | Controls the loading of the widget. Learn more about [Animate Loading](https://docs.appsmith.com/reference/widgets)                                                                                 | -                           |
+| [Tooltip](https://docs.appsmith.com/reference/widgets)           | Formatting           | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. Learn more about [Tooltip](https://docs.appsmith.com/reference/widgets)    | -                           |
 | value           | Binding              | Fetches the value of scanned code                                                                                   | {{CodeScanner1.value}}      |
-|                 |                      |                                                                                                                     |                             |
+                                                                                                                                                                               
 
 
 
@@ -57,13 +57,13 @@ Value is a binding property, it fetches the response from the scanned code. To b
 ```
 
 
-For example, let's take a Code Scanner widget(CodeScanner1) and bind its value to a text widget. Drag a text widget onto the canvas and add the following code:
+For example, let's take a Code Scanner widget (CodeScanner1) and bind its value to a text widget. Drag a text widget onto the canvas and add the following code:
 
 ```
 {{CodeScanner1.value}}
 ```
 
-.https://youtu.be/zfkpIzaiTX0
+https://youtu.be/zfkpIzaiTX0
 
 
 # Events
@@ -106,8 +106,6 @@ https://youtu.be/_2p1bMbdk6U
 |  Border Radius | Allows you to define curved corners.                   |
 | Box Shadow     | Allows you to choose from the available shadow styles. |
 
-Code Scanner is a beneficial widget for your business. It is efficient, cost-effective, and time-effective.
-As a result, you'll be able to enhance internal business operations and provide excellent customer service.
   
 ## Cross Reference Section
  The following resources will come in handy as you need to learn new tricks:
