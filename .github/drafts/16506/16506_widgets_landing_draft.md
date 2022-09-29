@@ -2,7 +2,7 @@
 
 ## Common Properties
 
-The following properties are common across many of Appsmith's widgets. You can find them by selecting your widget and checking its properties pane, and use them to customize the details and behavior of your app.
+The following properties are common across many of Appsmith's widgets. You can find them by selecting your widget and checking its properties pane, and you can use them to customize the details and behavior of your app.
 
 | **Property** | **Description** |
 |--------------|-----------------|
@@ -19,37 +19,37 @@ The following properties are common across many of Appsmith's widgets. You can f
 ### Disabled
 It disables the user from entering values in the input widget. The widget is visible (if Visible is enabled), but user input won't be allowed. You can also write a JS code to link Disabled's functionality to a user action. Click on `JS` next to the `Disabled` to write JavaScript code.
 
-For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Disabled` property. To enable the `Disabled` when the user checks the checkbox, add the following JavaScript code:
+For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the `Disabled` property. To enable the `Disabled` when the user checks the checkbox, add the following JavaScript code:
 
 ```
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it enables the Disabled property and prevent a user input in the input box.
+When you tick the checkbox, it enables the Disabled property and prevents interaction with the input box.
 
-![](https://youtu.be/JEARavnq0vQ)
+{% embed url="https://youtu.be/JEARavnq0vQ" %}
 
 ### Error Message
 If a user enters an incorrect value, the input widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
-![](https://youtu.be/oeUHJhM4zyU)
+{% embed url="https://youtu.be/oeUHJhM4zyU" %}
 
 ### Tooltip
 Tooltips are often used to show the user extra information about an element on the page, or to give them extra hints on how to use something. They're usually hidden until a certain condition is met, such as the user's mouse cursor hovering over the element.
 
 The Tooltip property in Appsmith is used to set the text that appears within a floating box near the widget when the user mouses over it. In some cases (such as the Input widget), the tooltip is applied to a small question mark icon set within the widget, and appears when the user's cursor is placed over the icon.
 
-![](https://youtu.be/UZ3MBVfNSzk)
+{% embed url="https://youtu.be/UZ3MBVfNSzk" %}
 
 ### Placeholder
 You can set a proxy text/value inside the input box using the `placeholder` property. It can be any message or hint for the expected input.
 
-![](https://youtu.be/576Bfo8htf0)
+{% embed url="https://youtu.be/576Bfo8htf0" %}
 
 ### Regex
 Using `Regex` or Regular expression property, you can set specific constraints on the input you expect from the user.
 
-For example, add a regular expression for entering a name. The name can contain only alphabets and space between the first and last name.
+For example, add a regular expression for entering a name. The name can contain only alphabetic characters and spaces between the first and last name.
 
 ```
 /^[a-z -]+$/i
@@ -57,7 +57,7 @@ For example, add a regular expression for entering a name. The name can contain 
 
 If you enter a value other than an alphabet or space (number of special characters), the widget shows an error message "invalid input."
 
-![](https://youtu.be/n6VUQN-wv9U)
+{% embed url="https://youtu.be/n6VUQN-wv9U" %}
 
 ### Required
 Entering a value in the input box is mandatory when the required property is enabled. You can also write a JS code to link this property to a user action. Click on `JS` next to the `Required` to write JavaScript code.
@@ -70,10 +70,10 @@ For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to t
 
 When you tick the checkbox, it enables the Required property, and the input box shows an error message "This field is required" if you haven't entered any input.
 
-![](https://youtu.be/2hqT02HCah8)
+{% embed url="https://youtu.be/2hqT02HCah8" %}
 
 ### Valid
-The `Valid` property can be used to set a condition or expression that the user's input must meet in order for the widget to accept it. If  the given condition isn't met, the widget shows a tooltip that contains the text that has been set within its **Error Message** property (or "Invalid input" if the property isn't set). Forms can also be configured such that they're not able to be submitted if one of their child widgets have user input that's considered invalid.
+The `Valid` property can be used to set a condition or expression that the user's input must meet in order for the widget to accept it. If the given condition isn't met, the widget shows a tooltip that contains the text that has been set within its **Error Message** property (or "Invalid input" if the property isn't set). Forms can also be configured such that they're not able to be submitted if one of their child widgets has user input that's considered invalid.
 
 To see how the Valid property works, drag an Input widget onto the canvas and set the `Valid` property to the following:
 ```
@@ -82,7 +82,7 @@ To see how the Valid property works, drag an Input widget onto the canvas and se
 
 Now when the field has fewer than three characters entered, a tooltip appears with the widget's **Error Message**, or the text "Invalid input."
 
-![](https://youtu.be/rk3yzSoe6aw)
+{% embed url="https://youtu.be/rk3yzSoe6aw" %}
 
 ### Visible
 `Visible` controls the widget's visibility on the app's page. The widget won't be visible on the published app if you turn off this property. You can also write a JS code to link Visible's functionality to a user action. Click on `JS` next to the `Visible` to write JavaScript code.
@@ -95,4 +95,4 @@ For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to t
 
 When you tick the checkbox, it enables the Visible property, and the input box will be visible in the app.
 
-![](https://youtu.be/Jb5bNVhFoRE)
+{% embed url="https://youtu.be/Jb5bNVhFoRE" %}

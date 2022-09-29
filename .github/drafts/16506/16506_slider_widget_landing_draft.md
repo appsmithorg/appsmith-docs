@@ -12,37 +12,25 @@ Now that you have a slider widget added to the canvas, you can move it anywhere 
 ## Usage
 
 ### Category Slider
-The Category Slider widget can be useful for situations where users must provide feedback along a scale that isn't numerical. Surveys, for example, often have questions which ask respondents to rate how much they agree or disagree with certain statements (that is, Strongly agree/ agree/ disagree/ strongly disagree).
+The Category Slider widget can be useful for situations where users must provide feedback from a fixed set of ascending options. Surveys, for example, often have questions which ask respondents to rate how much they agree or disagree with certain statements (that is, Strongly agree/ agree/ disagree/ strongly disagree).
 
 ![](as_category.png)
 
 {% content-ref url="category_slider.md" %} category_slider.md {% endcontent-ref %}
 
 ### Number Slider
-Use the Number Slider when you want to allow the user to have visual feedback while selecting a numerical value. For example, imagine skimming for pages of a .pdf document, or a series of images in a slideshow. As a user, it can often be helpful to have a visual representation of what part of the media you are viewing.
+Use the Number Slider when you want to allow the user to select a numerical value from a set range of possible data. For example, it may be used to set a variable for some calculation while only allowing values within a reasonable range. 
 
 ![](as_number.png)
 
 {% content-ref url="number_slider.md" %} number_slider.md {% endcontent-ref %}
 
 ### Range Slider
-Range Sliders are great for allowing users to narrowing and filtering down large sets of data. They're often found in places such as online marketplaces, where an app might offer the ability to search for products based on a certain minimum and maximum price-range.
+Range Sliders are great for allowing users to narrow and filter down large sets of data. They're often found in places such as online marketplaces, where an app might offer the ability to search for products based on a certain minimum and maximum price range.
 
 ![](as_range.png)
 
 {% content-ref url="range_slider.md" %} range_slider.md {% endcontent-ref %}
-
----
-
-## Events
-
-Each variant of the Slider widget has events that are called when the user adjusts the widget's values:
-
-| **Event** | **Description** | **Example** | **Code Snippet** |
-|-----------|-----------------|-------------|------------------|
-| **onChange** | Sets an action to take place when the user changes the slider's value. Can be set from the GUI list of common actions (See a list of [supported actions](https://docs.appsmith.com/reference/appsmith-framework/widget-actions)), or you can define a custom JavaScript function to call instead. | Fetching a certain page or image from a range based upon user selection. |  |
-| **onStartValueChange** | (Range Slider) Sets an action to take place when the user changes the range's start value. Can be set from the GUI list of common actions (See a list of [supported actions](https://docs.appsmith.com/reference/appsmith-framework/widget-actions)), or you can define a custom JavaScript function to call instead. | Filtering a dataset according to user input. |  |
-| **onEndValueChange** | (Range Slider) Sets an action to take place when the user changes the range's end value. Can be set from the GUI list of common actions (See a list of [supported actions](https://docs.appsmith.com/reference/appsmith-framework/widget-actions)), or you can define a custom JavaScript function to call instead. | Filtering a dataset according to user input. |  |
 
 ## Styles
 
