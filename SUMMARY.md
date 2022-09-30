@@ -97,6 +97,7 @@
   * [Chart](reference/widgets/chart.md)
   * [Checkbox](reference/widgets/checkbox.md)
   * [Checkbox Group](reference/widgets/checkbox-group.md)
+  * [Code Scanner](reference/widgets/code-scanner.md)
   * [Container](reference/widgets/container.md)
   * [Currency Input](reference/widgets/currency-input.md)
   * [Datepicker](reference/widgets/datepicker.md)

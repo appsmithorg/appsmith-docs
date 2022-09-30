@@ -45,4 +45,4 @@ The property pane has an action section where all the interactions that a user c
 
 To [configure the Query](../querying-a-database/) we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
-![](<../../../.gitbook/assets/button-onclick (2) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (5) (1) (1) (1) (2) (1) (1) (1) (1) (1) (3) (3).gif>)
+![](<../../../.gitbook/assets/button-onclick (2) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (5) (1) (1) (1) (2) (1) (2) (1).gif>)
