@@ -200,7 +200,7 @@ redirects:
   widget-reference/switch-group: reference/widgets/switch-group.md
   widget-reference/tabs: reference/widgets/tabs.md
   widget-reference/table: reference/widgets/table.md
-  widget-reference/table/inline-editing: reference/widgets/table.md
+  widget-reference/table/inline-editing: reference/widgets/table/inline-editing.md
   widget-reference/text: reference/widgets/text.md
   widget-reference/tree-select: reference/widgets/tree-select.md
   widget-reference/video: reference/widgets/video.md
