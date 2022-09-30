@@ -64,7 +64,7 @@ For sensitive information we recommend using **AWS Secrets**, please follow the 
 3. Click on **Update**, and select the **latest revision** of the Task Definition.
 4. Hit **Skip** to **review** and then Update Service. A screen showing the status will show up.
 
-<figure><img src="../../../.gitbook/assets/ecs-service-restart (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ecs-service-restart (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 It may take a minute for the new ECS Task to start running.
 
