@@ -25,11 +25,6 @@ In this section, we will discuss how to configure docker-compose with a .yml fil
 * Business Edition (H3)
   * Configuration
 
-### Setting up the app/Getting Started  (H2)
-What users can do after container installation will be covered in this section. (Example: explanations on how to set up the first app, details on the admin settings page, etc.)
-* Set up (with video example)
-* Admin setting page info
-* Deploy
 
 ### Updating Appsmith (H2)
 
@@ -54,6 +49,8 @@ Here we will explain how user can quickly get Appsmith up and running
 ## Conclusion 
 
 ## Next Steps
+
+//add info on next steps
 
 * Authentication
 * SSL & Custom Domain
