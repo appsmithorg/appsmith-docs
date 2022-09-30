@@ -11,16 +11,14 @@ The versions and files required to install Docker will be covered in this sectio
 
 ### Steps to check the installed versions
 
-## Get started with Docker compose (H1)
+## With Docker compose (H1)
 In this section, we will discuss how to configure docker-compose with a .yml file and with the curl command. 
 ### Introduction 
 * Understanding docker-compose files
 
-### Docker-compose configuration (H2)
+### Build and Run Appsmith with Docker Compose (H2)
 * .yml file setup
 
-### Start your containers (H2)
-We will run the containers in this section and split it into two sections (CE and BE)
 * Community Edition (H3)
   * Configuration
 
@@ -37,7 +35,7 @@ What users can do after container installation will be covered in this section. 
 
 ## Enabling Appsmith Auto-updates (H1)
 
-### Explore Appsmith (without docker-compose)
+### With Docker run (without docker-compose)
 Here we will explain how user can quickly get Appsmith up and running
 * Introduction
 
@@ -57,8 +55,9 @@ Here we will explain how user can quickly get Appsmith up and running
 
 ## Next Steps
 
-* Display Data
-* Capture Data
+* Authentication
+* SSL & Custom Domain
+* Super Admin
 * Queries
 
 
