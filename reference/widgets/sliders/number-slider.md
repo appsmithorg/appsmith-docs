@@ -6,6 +6,10 @@ description: >-
 
 # Number Slider
 
+Use the Number Slider when you want to allow the user to select a numerical value from a set range of possible data. For example, it may be used to set a variable for some calculation while only allowing values within a reasonable range.
+
+<figure><img src="../../../.gitbook/assets/as_number.png" alt=""><figcaption><p>An example of the Number Sl</p></figcaption></figure>
+
 ## Properties
 
 Properties allow you to edit the Number Slider widget, connect it with other widgets and customize the user actions.

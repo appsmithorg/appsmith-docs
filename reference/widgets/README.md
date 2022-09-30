@@ -6,6 +6,10 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 
 ![](<../../.gitbook/assets/spaces\_sRqv8vEmanRWzCklPZou\_uploads\_kpwSwyVV6AnRPtthUHmq\_drop widget.gif>)
 
+## Add to Canvas
+
+In the left navigation pane, navigate to PAGES —> Select the "Widget" Tab —> Choose your desired widget, and drag it onto the canvas. You can move it anywhere on the canvas by simply dragging it around.
+
 ### Naming a Widget
 
 A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.

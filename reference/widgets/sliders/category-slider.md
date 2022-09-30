@@ -6,6 +6,10 @@ description: >-
 
 # Category Slider
 
+The Category Slider widget can be useful for situations where users must provide feedback from a fixed set of ascending options. Surveys, for example, often have questions that ask respondents to rate how much they agree or disagree with certain statements (that is, Strongly agree/ agree/ disagree/ strongly disagree).
+
+<figure><img src="../../../.gitbook/assets/as_category.png" alt=""><figcaption><p>An example of the Category Slider</p></figcaption></figure>
+
 ## Properties
 
 Properties allow you to edit the Category Slider widget, connect it with other widgets and customize the user actions.

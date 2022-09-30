@@ -6,6 +6,10 @@ description: >-
 
 # Range Slider
 
+Range Sliders are great for allowing users to narrow and filter down large sets of data. They're often found in places such as online marketplaces, where an app might offer the ability to search for products based on a certain minimum and maximum price range.
+
+<figure><img src="../../../.gitbook/assets/as_range.png" alt=""><figcaption><p>An example of the Range Slider</p></figcaption></figure>
+
 ## Properties
 
 Properties allow you to edit the Range Slider widget, connect it with other widgets and customize the user actions.
