@@ -210,6 +210,7 @@
   * [How to Use Filters on Appsmith Table Widget](learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget.md)
   * [How to Build Auto-Generated Forms Using List widget](learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget.md)
   * [Upload / Download Files from S3](learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
+  * [How to Use the Camera/Image Widget to Upload/Download Images?](learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images.md)
   * [How to Work With Google Sheets on Appsmith](learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith.md)
   * [OAuth2 Authorization for Google Sheets](learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets.md)
   * [Whitelist Appsmith on AWS](learning-and-resources/how-to-guides/aws-whitelist.md)
