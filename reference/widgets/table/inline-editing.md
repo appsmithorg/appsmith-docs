@@ -22,18 +22,22 @@ Once a column has been made editable, an edit icon appears on the column header 
 
 ![](<../../../.gitbook/assets/Edit icon on column header.png>)
 
-### How to edit a cell
+## How to edit a cell
 
-An edit icon appears on hovering an editable cell, which, when clicked, would make the cell editable.
+An edit icon appears on hovering an editable cell, which, when clicked, would make the cell editable.&#x20;
 
-![](<../../../.gitbook/assets/Edit a cell.gif>)
+{% hint style="info" %}
+Currently, **four column types** support inline editing: **Text, Number, Switch, and Checkbox.**
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif" alt=""><figcaption></figcaption></figure>
 
 Based on the Column type, cell content can be edited. Once done user can move away from the edit mode in two ways.
 
 1. Edited contents can be persisted on the Table cell by either pressing enter key or clicking anywhere outside the cell.
-2. Edited contents can be discarded by pressing the escape key.
+2. You can discard the Edited contents by pressing the escape key.
 
-### Update mode
+## Update mode
 
 Once a column is editable, a new property, `Update mode` , appears under the column list.
 
@@ -59,30 +63,30 @@ ONLY single row cells are editable in row-level update mode. Users should save o
 
 #### **Custom mode**
 
-In custom mode, users can opt to save data at the table level, i.e, users are free to choose when to save the edited rows.
+In custom mode, users can opt to save data at the table level, i.e., users are free to choose when to save the edited rows.
 
 1. onSubmit property of the editable column can be used to save that cell when it is edited.
 2. Users can trigger save when a button is clicked outside the table.
 
 {% hint style="info" %}
-Multiple rows can be edited in custom update mode.
+You can edit Multiple rows in custom update mode.
 {% endhint %}
 
 Table exposes two new properties `updatedRows` and `updatedRowIndices`. `updatedRows` has details of all the edited rows. This property can be used in a trigger action to save the edited cells of the table, which will get called with the click of a button widget outside the table.
 
-### Perform an action when a cell is edited
+## Perform an Action when a cell is edited
 
 When a column is made editable, `onSubmit` trigger property appears under the event section in the column settings.
 
 ![](../../../.gitbook/assets/OnSubmit\_editable\_enabled.png)
 
-Users can bind any trigger action on this property, and it will get called anytime a cell content is edited and persisted. `currentRow` can be used to access the corresponding row and `currentRow[”keyName”]` can be used to access the updated data.
+Users can bind any trigger action on this property, which will get called anytime cell content is edited and persisted. `currentRow` can be used to access the corresponding row and `currentRow[”keyName”]` can be used to access the updated data.
 
 {% hint style="info" %}
-currentRow can be used to access the corresponding row and currentRow\[”keyName”] can be used to access the updated data.
+currentRow can be used to access the corresponding row, and currentRow\[”keyName”] can be used to access the updated data.
 {% endhint %}
 
-### Binding properties
+## Binding properties
 
 #### **updatedRows**
 
@@ -115,7 +119,7 @@ This property contains an array of edited row indices.
 
 This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`)
 
-### **Widget properties**
+## **Widget properties**
 
 | Property      | Definition                                                                                                                                                                                                                                                               |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -123,7 +127,7 @@ This property contains the details of the row that triggered the action (`onSubm
 | Cell Wrapping | <p>Controls how overflowing contents of the column are handled.<br>on - Contents get wrapped to the next line.<br>off - Contents get ellipsised.</p>                                                                                                                     |
 | Editable      | Controls whether cells of the column are editable                                                                                                                                                                                                                        |
 
-### Events
+## Events
 
 |           |                                                                                                                        |
 | --------- | ---------------------------------------------------------------------------------------------------------------------- |
