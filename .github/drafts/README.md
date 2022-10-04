@@ -14,6 +14,9 @@ Engineering team members to raise a draft request by following the below steps:
 
 * Create a sub-folder with GitHub Doc Issue Id. For example, ```12345`` is the #doc issue. The folder hierarchy would be ```drafts >> 12345```
 * Create a ```<file-title>_First_Draft.md``` file and add the first draft in the markdown. For example, you are writing the first draft for console api. The file path and title would be ```drafts >> 12345 >> Console_First_Draft.md``` where ```Console_First_Draft.md``` would be the title of the file.
+
+> **You cannot create an empty folder. However, you can create a folder when creating the first file. You can do this by using the Add file option. Just make sure to add the ```/``` in the file path. For ```12345```, add ```12345/``` in the file name field to add it as a folder and then add the ```<file-title>_First_Draft.md``` to it.**
+
 * Raise a pull request against v1.4 and assign it to the concerned EM/PM/Peer to review.
 * Fix the review comments on the PR branch. Once finalized, merge the PR to v1.4.
 * Engineer to assign the ticket to the documentation team and add the label ```Ready for Doc team```, push the ticket to ```Backlog (Draft Ready)``` pipeline on Zenhub. 
