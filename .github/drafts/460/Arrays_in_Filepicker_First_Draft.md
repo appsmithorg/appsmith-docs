@@ -23,3 +23,5 @@ We have a new property called `Infer data types from csv`
 1. This only works for csv data for now, not xls or other formats
     1. When the file type is not csv we show an empty array `[]` when user has selected the data type to be arrays
 2. This will work until the size of data is less than 2MB, post which we will show it as blob file. For greater than 2MB the dev has to upload the data to a database because performance of the app might take a hit.
+
+
