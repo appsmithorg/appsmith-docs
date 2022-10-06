@@ -6,7 +6,11 @@ Appsmith provides an easy way to integrate with GraphQL, and enables you to perf
 
 ## Create GraphQL API
 
-To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **GraphQL API** under APIs.
+To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **Authenticated GraphQL API** under APIs.
+
+{% hint style="info" %}
+You can choose to create a one-off query by selecting [_**Create New GraphQL API**_](graphql.md#datasource-page)_**.**_
+{% endhint %}
 
 {% embed url="https://youtu.be/lIb2SGnQFm4" %}
 How to create GraphQL Datasource?
@@ -65,7 +69,7 @@ You can add queries to the newly created GraphQL datasource in one of the below 
 
 You can add queries to GraphQL datasource by selecting the **New API +** button available on the datasource page.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-08-30 at 12.56.01 PM.png" alt=""><figcaption><p>GraphQL Datasource Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-08-30 at 12.56.01 PM (1).png" alt=""><figcaption><p>GraphQL Datasource Page</p></figcaption></figure>
 
 #### Query/JS page
 
