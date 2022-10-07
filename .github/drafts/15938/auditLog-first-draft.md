@@ -8,7 +8,6 @@ The main log of events for audits and compliance that we’ll provide is around
 
 * **Application-specific activities** - when was a change made to a page, who configured a new datasource, who ran a query and when or who deleted an existing app
 * **Administrative configuration changes** - who changed an admin email, when was a new group added or role modified
-* **Sensitive information access** - who last accessed user information or billing information pages
 * **User sign-up and login activity** - when a new user signed up, when was an attempted login unsuccessful and so on
 
 <p style="color: red; font-weight: bold">screenshot or gif of the auditLog screen</p><a href="#gdcalert1">alert1</a>
@@ -19,10 +18,9 @@ The main log of events for audits and compliance that we’ll provide is around
 
 
 
-1. Users - Select the specific user to filter activities based on the user from the dropdown list
-2. Events - Filter events based on events. 
-3. ResourceId - Select the resource-id from the json to filter the 
-4. Date Range - Filter data by specific date range you wish to filter
+1. Users - To get a trace of activities performed by a user, filter by their email address.
+2. Event names - Filter events by their name, for example for logs for query executions can be accessed by filtering by the query.executed event 
+3. Resource ID - A resourceID identifies each entity on your Appsmith instance be it a workspace, application, page, datasource, query or JSObject.
 
 **Audit Log Properties:**
 
