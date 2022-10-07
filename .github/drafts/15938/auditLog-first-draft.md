@@ -10,7 +10,7 @@ The main log of events for audits and compliance that we’ll provide is around
 * **Administrative configuration changes** - who changed an admin email, when was a new group added or role modified
 * **User sign-up and login activity** - when a new user signed up, when was an attempted login unsuccessful and so on
 
-<p style="color: red; font-weight: bold">screenshot or gif of the auditLog screen</p><a href="#gdcalert1">alert1</a>
+<p style="color: red; font-weight: bold">screenshot or gif of the auditLog screen</p>
 
  
 
@@ -24,11 +24,7 @@ The main log of events for audits and compliance that we’ll provide is around
 
 **Audit Log Properties:**
 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-!<p style="color: red; font-weight: bold">screenshot of the auditLog json</p><a href="#gdcalert1">alert1</a>
+<p style="color: red; font-weight: bold">screenshot of the auditLog json</p>
 
 <table>
   <tr>
