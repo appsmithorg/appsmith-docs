@@ -76,4 +76,4 @@ When you import the application into the destination instance/ workspace, it's a
 
 ### Import from a Git repository
 
-If you have an application connected to Git version control in Appsmith, you can import the Appsmith application from your Git repository into any workspace. For more information, check out [Import from Repository](backup-restore.md#import-from-a-git-repository).
+If you have an application connected to Git version control in Appsmith, you can import the Appsmith application from your Git repository into any workspace. For more information, check out [Import from Repository](../version-control-with-git/import-from-repository.md).
