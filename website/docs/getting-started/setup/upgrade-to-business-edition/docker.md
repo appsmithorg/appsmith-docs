@@ -4,7 +4,7 @@
 
 Follow **** the steps listed below to **upgrade** your **Community Edition (CE)** to a **Business Edition (EE)** installed on **docker:**
 
-:::tip
+:::info
 These steps can be used to **upgrade** the **docker installations only**. You can also follow the steps below for **any docker-enabled instances**, including **** [**AWS AMI** ](../installation-guides/aws-ami.md)and [**Digital Ocean**](../installation-guides/digitalocean.md).
 :::
 
@@ -12,7 +12,7 @@ These steps can be used to **upgrade** the **docker installations only**. You ca
 
 The Community and Business editions use Mongo DB, so you don't have to migrate the database. However, backup your **Community Edition** Mongo DB by following the [steps here](../instance-management/#export-database).
 
-:::tip
+:::info
 The database backup should be taken with the docker instance **up** and **running**.
 :::
 
@@ -42,7 +42,7 @@ And save the file.
 
 Navigate to the directory where the `docker-compose.yml` file is located. Add/replace the Business Edition license key under the **environment** key and save the file.
 
-:::tip
+:::caution
 Add the key **environment** to the `docker-compose.yml` file if **not** already present.
 :::
 
