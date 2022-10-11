@@ -4,7 +4,7 @@ Amends the "Reactive" section of the "Writing Code" page of the docs, found [her
 Links to individual mentioned widget reference pages will be added when text is ported to GitBook.
 -->
 
-## Reactive
+## Configuring widgets with code
 
 When data changes within your app, your widgets need to update themselves to reflect these changes. To make this happen, Appsmith follows the reactive programming paradigm.
 
@@ -17,25 +17,28 @@ The button’s label could be set as a simple static value (like “Submit”) i
 
 When writing JavaScript to configure a widget’s property, your code should tell that widget where to look to find its data rather than explicitly setting a specific value. Consider the following example scenario:
 
-Imagine that you're creating an issue tracker, and you'd like to make certain questions available for the user depending on the type of issue they'd like to submit. To accomplish this, you might use a Tab widget to show the appropriate set of questions. To control which page of questions is displayed to the user, you use something like the Select widget.
+Imagine that you're creating a dashboard for viewing and editing product inventory information, and you'd like to implement an 'Edit' mode for changing values. Values should not be allowed to change when 'Edit' mode is off; they can only be updated after the user clicks the 'Edit' button, and then can be saved with a 'Save' button when they're finished. In total, there are a handful of Input widgets for handling the product data and two buttons for switching 'Edit' mode on and off.
 
-In an imperative style, something like this might be familiar:
+In an imperative style, you might expect the Input widgets to be toggled with this kind of control:
 ```javascript
-//When the user selects the "Bug" option
-BugScreen.show()
-
-//or,
-TabWidget.showPage("Bug")
-```
-But this won't work in Appsmith!
-
-To make this work using the reactive code style, you would add the appropriate options to the Select widget (Bug, Enhancement, etc.) and configure the Tab widget's **Default Tab** property to:
-```javascript
-// Our Select widget has the option labels
-// "Bug", "Feature Request", and "Enhancement"
-{{Select1.selectedOptionLabel}}
+Input1.disable()
+// or,
+Input1.enabled = false
 ```
 
-{% embed url="https://youtu.be/RL3HVzP0fMk" %}
+But this won't work in Appsmith! Instead, you might create and store a special value that represents whether 'Edit' mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the `storeValue()` function to make this possible, which you can read about [here]().
 
-Now when you choose an option with the Select widget, the Tab widget automatically updates to show the appropriate page of questions.
+```javascript
+// in the Disabled field of the Input widgets' properties
+{{!appsmith.store.editMode}}
+
+// in the onClick event field of the Edit button's properties
+{{storeValue('editMode', true)}}
+
+// in the onClick event field of the Save button's properties
+{{storeValue('editMode', false)}}
+```
+
+{% embed url="https://youtu.be/yKb6SRonfmQ" %}
+
+With this configuration, the Input widgets behave according to the current state of `editMode` in the Appsmith store. Anytime this value is toggled, the Input widgets are automatically updated.
