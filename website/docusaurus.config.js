@@ -9,7 +9,7 @@ const { EnvironmentCredentials } = require('aws-sdk');
 const config = {
   title: 'Appsmith',
   tagline: 'Open source, low code - Build, Ship and maintain Internal tools',
-  url: 'hhttps://github.com/appsmithorg.github.io',
+  url: 'https://appsmithorg.github.io',
   baseUrl: '/appsmith/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
@@ -75,7 +75,7 @@ const config = {
         //... other Algolia params
       }, 
       navbar: {
-        title: 'Appsmith',
+        title: '_appsmith',
         logo: {
           alt: 'Appsmith Logo',
           src: 'img/Appsmith-Logo.png',

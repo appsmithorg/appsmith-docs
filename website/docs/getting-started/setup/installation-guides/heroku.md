@@ -1,16 +1,17 @@
 ---
 description: Deploy appsmith on Heroku with our one click deploy option
+sidebar_position: 7
 ---
 
 # Heroku
 
 [_Heroku_ ](https://www.heroku.com/)is a platform that enables developers to build, run, and operate applications entirely in the cloud. Let's see how to self-host Appsmith on Heroku.
 
-{% embed url="https://www.youtube.com/watch?v=Bclt_VmDMpo" %}
+<object data="https://www.youtube.com/embed/Bclt_VmDMpo?autoplay=0" width='860px' height='515px'></object> 
 
-{% hint style="info" %}
+:::tip
 The administrative privileges (Admin settings) are not available due to deployment restrictions with the Heroku container (dynos).
-{% endhint %}
+:::
 
 ## Deployment Steps
 
@@ -46,10 +47,10 @@ The administrative privileges (Admin settings) are not available due to deployme
 
 After Heroku finishes setting up the app, click "View," and your Appsmith should be up and running. It will take you to the account creation page, where you can enter credentials to create an account and get started.
 
-{% hint style="warning" %}
+:::tip
 * We use the Heroku Redis add-on for caching, which requires your account to have billing information, but we use the free plan of this add-on so that it will charge you nothing. Please make sure your account has already finished providing billing information.
 * You may need to wait 2-3 minutes before accessing the application as Heroku may take a while to spin up the dyno and start the Appsmith application.
-{% endhint %}
+:::
 
 ## Custom Domain
 
@@ -83,10 +84,10 @@ TTL: 1 hour
 
 * Once you finish, now you can access Appsmith from your custom domain.
 
-{% hint style="warning" %}
+:::tip
 * Once you use a custom domain, You might want to set up SSL for your dyno. Please check the official document of Heroku on [how to configure SSL](https://devcenter.heroku.com/articles/ssl).
 * Your dyno will need to be upgraded to at least a `hobby` type to use this feature of Heroku.
-{% endhint %}
+:::
 
 ## Re-Deploy your App using Heroku CLI
 

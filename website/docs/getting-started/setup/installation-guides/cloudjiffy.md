@@ -1,3 +1,6 @@
+---
+sidebar_position: 8
+---
 # CloudJiffy
 
 [CloudJiffy](https://cloudjiffy.com) is a Platform-as-a-Service (PaaS) provider. It provides auto-scalable, instant, and fully redundant deployment for your application.

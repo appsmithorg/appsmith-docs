@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 id: start-building
 slug: /getting-started/start-building
 ---
@@ -59,7 +59,7 @@ We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
 SELECT * FROM users ORDER BY id LIMIT 10;
 ```
 
-![Writing query to fetch data in the Query Editor](/img/Screenshot 2022-07-12 at 22.38.19.png)
+![Writing query to fetch data in the Query Editor](/img/Screenshot_2022-07-12_at_22.38.19.png)
 
 * Click the **Run** button on the right of the Query Editor to confirm that the query returns data.
 * Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**] property write this JS snippet **`{{getUsers.data}}`** to display the results from the 'getUsers**'** query on the table.
@@ -68,7 +68,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 The `{{mustache}}` template is used to write JS inside widgets and queries.
 :::
 
-![Bind the data from the query to the table widget](/img/Screenshot 2022-07-12 at 22.40.59.png)
+![Bind the data from the query to the table widget](/img/Screenshot_2022-07-12_at_22.40.59.png)
 
 * Similarly, to display information from a selected row on the table, refer below to bind the corresponding data to the widgets inside the Container.
 
@@ -92,7 +92,7 @@ UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob
 
 * On the property pane of the **Update** button execute this query on the [**onClick**] event. On the success of the update query, run the '**getusers'** query to populate the table with updated data.
 
-![Bind query execution to the button's  onClick event ](/img/Screenshot 2022-06-28 at 11.36.28 PM.png)
+![Bind query execution to the button's  onClick event ](/img/Screenshot_2022-06-28_at_11.36.28_PM.png)
 
 * Test the **'Update'** button by modifying the phone number of the user.
 

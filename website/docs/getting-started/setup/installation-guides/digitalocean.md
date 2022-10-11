@@ -2,11 +2,14 @@
 description: >-
   DigitalOcean is a cloud computing vendor that offers an Infrastructure as a
   Service (IaaS) platform for software developers.
+sidebar_position: 6
 ---
 
 # DigitalOcean
 
-{% embed url="https://youtu.be/6fitHGX2G4E" %}
+<object data="https://www.youtube.com/embed/6fitHGX2G4E?autoplay=0" width='860px' height='515px'></object> 
+
+
 
 You can deploy Appsmith on DigitalOcean using the Appsmith droplet from Digital Ocean’s 1-Click Apps Marketplace and host it on our custom domain.
 

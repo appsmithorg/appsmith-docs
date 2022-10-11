@@ -122,7 +122,8 @@ Goal: Export all existing configurations from the `ConfigMap` in the running Kub
 
       * Manually copy values to `values.yaml` (put value in the quote `""` is highly recommend):
 
-      <img src="/img/helm-values-mapping.png" alt="" data-size="original"/>
+      ![](/img/helm-values-mapping.png)
+
 * Verify
   *   After manually migrating configuration, the `applicationConfig` section in the `values.yaml` should be same as below:
 
