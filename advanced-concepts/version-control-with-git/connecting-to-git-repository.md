@@ -33,14 +33,14 @@ To connect your app with git, follow the steps below:
 
 {% embed url="https://youtu.be/9aaiE6OERW0" %}
 
-#### **For Bitbucket**
+#### For Bitbucket
 
 * Open "_**Personal settings**_" from the bottom right corner and go to "_**SSH keys**"_.
 * Click on "_**Add key**_", add the label and paste the generated key in the key section.
 
 {% embed url="https://youtu.be/A8ZOvW1CVIk" %}
 
-### **User Configurations**
+### User Configurations
 
 * In user settings, define the user configurations. By default, the global user configurations are used. Click on the "_<mark style="color:red;">Edit</mark>_" button or directly open the profile section to change the global configurations. If you want to add a user configuration specific to the current app, you must uncheck the "_<mark style="color:red;">use default configuration</mark>_" checkbox and enter the author details below.
 
