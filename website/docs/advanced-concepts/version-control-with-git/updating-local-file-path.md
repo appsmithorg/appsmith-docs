@@ -1,10 +1,13 @@
+---
+sidebar_position: 8
+---
 # Updating Local File Path
 
 Appsmith clones the git repositories in the local filesystem, attached to the persistent volume within the docker container. To maintain the git repositories, we will need a file path that will point to the volume within the docker container. We can quickly achieve this by just updating the relevant environment variable.
 
-{% hint style="info" %}
+:::tip
 If the file path is not present, git repositories will be cloned, but this will not be persistent, and Appsmith will try to clone the repositories in case they got deleted by docker restart, etc.
-{% endhint %}
+:::
 
 #### Custom Git Root
 

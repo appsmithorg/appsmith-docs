@@ -1,3 +1,6 @@
+---
+sidebar_position: 5
+---
 # Pull & Sync
 
 If your local branch is not in sync with the remote branch of the git repository, you pull the latest changes by clicking on the pull button at the bottom left corner.
@@ -8,15 +11,15 @@ Consider a scenario where multiple users work on a single branch, say, the _feat
 
 You can resolve it in the following way:
 
-* Create a new branch in appsmith from the conflicted branch (_<mark style="color:orange;">feature/f1\_conflicted</mark>_);
-* Resolve the conflicts on the remote repository (Between _<mark style="color:green;">origin/feature/f1</mark>_ and _<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_) by creating a pull request with _<mark style="color:green;">origin/feature/f1</mark>_ as a base branch;
-* Once the conflicts are resolved merge this new branch (_<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_) into the old branch(_<mark style="color:green;">origin/feature/f1</mark>_);
+* Create a new branch in appsmith from the conflicted branch (feature/f1\_conflicted);
+* Resolve the conflicts on the remote repository (Between origin/feature/f1 and origin/feature/f1\_conflicted) by creating a pull request with origin/feature/f1 as a base branch;
+* Once the conflicts are resolved merge this new branch (origin/feature/f1\_conflicted) into the old branch(origin/feature/f1);
 
-(<mark style="color:green;">origin/feature/f1</mark> <- <mark style="color:orange;">origin/feature/f1\_conflicted</mark>)
+(origin/feature/f1 <- origin/feature/f1\_conflicted)
 
-* Pull the branch (_<mark style="color:green;">feature/f1</mark>_) again in Appsmith’s local repository;
-* Delete branch _<mark style="color:orange;">origin/feature/f1\_conflicted</mark>_ on the remote repository;
-* Run sync branch flow to remove _<mark style="color:orange;">feature/f1\_conflicted</mark>_ from the local repository.
+* Pull the branch (feature/f1) again in Appsmith’s local repository;
+* Delete branch origin/feature/f1\_conflicted on the remote repository;
+* Run sync branch flow to remove feature/f1\_conflicted< from the local repository.
 
 ## Discard and pull changes
 

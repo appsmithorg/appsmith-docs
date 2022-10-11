@@ -1,10 +1,13 @@
 ---
+sidebar_position: 3
 description: Guide on how to embed Appsmith into an existing application
 ---
 
 # Embed Apps
 
-{% embed url="https://www.youtube.com/watch?v=l7508s-5VwU" %}
+
+ <object data="https://www.youtube.com/embed/l7508s-5VwU" width='860px' height='515px'></object> 
+
 
 Tools and Dashboards are great as an app and on a website, and now, you can have it both in one go by embedding apps to your website! In this guide, you'll learn how to embed Appsmith Apps into any website.
 
@@ -28,9 +31,10 @@ Firstly, let's create an HTML page and call it \``cs_dashboard.html`\`. Now, add
 
 You'll also have to ensure your app is public to embed into other applications. You can do this by clicking on the Share option on the top toolbar and toggle the viewing option to **Public**. Here's a video example:
 
-{% embed url="https://youtu.be/gD0xV-Tt1_U" %}
-Follow these steps to make your application public
-{% endembed %}
+
+ <object data="https://www.youtube.com/embed/gD0xV-Tt1_U" width='860px' height='515px'></object> 
+
+
 
 Next, create an `iframe` tag and add the shareable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively.
 
@@ -51,9 +55,9 @@ Include the meta tag in the head to ensure that the embedded application renders
 
 ### Opening the HTML Page
 
-{% hint style="info" %}
+:::tip
 If you are opening the HTML page as a`file,`then the browser won't allow you to do that. The HTML file needs to come from a server.
-{% endhint %}
+:::
 
 After creating the HTML page, save it as `cs_dashboard.html` and have an HTTP server serve it. This can be done in several ways:
 
@@ -80,7 +84,7 @@ This will prompt a `running on 3000` message. Next, go to your browser and open 
 
 This will open your HTML file.
 
-![Sceenshot of Appsmith Embed](../.gitbook/assets/Appsmith\_embed.png)
+![Sceenshot of Appsmith Embed](/img/Appsmith\_embed.png)
 
 #### Running npx http-server
 
@@ -130,4 +134,4 @@ Additionally, you can also see the Appsmith toolbar on the top, you can remove t
 
 Awesome! Now you can see the app without any toolbar! Below is a screenshot:
 
-![Appsmith Embed with ?embed=true propert](../.gitbook/assets/embed=true.png)
+![Appsmith Embed with ?embed=true propert](/img/embed=true.png)

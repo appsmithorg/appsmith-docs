@@ -1,4 +1,6 @@
 ---
+sidebar_position: 1
+
 description: >-
   In this guide, you'll learn how to implement this custom Auth using JWTs by
   chaining multiple steps.
@@ -6,7 +8,8 @@ description: >-
 
 # Custom Authentication
 
-{% embed url="https://youtu.be/5oPcF9dXZyU" %}
+
+ <object data="https://www.youtube.com/embed/5oPcF9dXZyU" width='860px' height='515px'></object> 
 
 A lot of applications use Authentication APIs to secure their information. You can use those API's on Appsmith to build UI or tools using a custom authentication mode. In this guide, you'll learn how to implement this custom Auth using JWTs by chaining multiple steps.
 
@@ -106,8 +109,12 @@ In this way, you can use a custom login on Appsmith. Additionally, you can custo
 
 It is possible to use third-party OAuth services like Google, Twitter, Github, etc, to authenticate users for your app. In this case, you'll need to connect with a service that integrates with the desired Oauth provider. Here's a quick video showing how to implement a custom Google login with Xano:
 
-{% embed url="https://youtu.be/n3XSAA7q--I" %}
+
+
+ <object data="https://www.youtube.com/embed/n3XSAA7q--I" width='860px' height='515px'></object> 
 
 You can also setup custom Google authentication using Supabase:
 
-{% embed url="https://youtu.be/mfhHUDNCkoQ" %}
+
+
+ <object data="https://www.youtube.com/embed/mfhHUDNCkoQ" width='860px' height='515px'></object> 

@@ -1,12 +1,16 @@
+---
+sidebar_position: 3
+---
+
 # Commit and Push
 
 After developing your app further, you’d want to sync it with your repository. To sync the app and the repository, commit the changes using the deploy button at the top right or `+` icon at the bottom left corner.
 
 In the deploy window, enter your commit message and click on `Commit and Push` to update your repository with the latest changes.
 
-{% hint style="info" %}
+:::tip
 Once you commit and push changes, the changes are also published for the app viewers. Please note that the deployed version of one branch does not affect the other. For example, if you are working on a feature branch `f1` and you deploy the changes from `f1` branch, it will not affect the changes of the master branch
-{% endhint %}
+:::
 
 Let’s discuss some common errors you may face during the commit and push process.
 

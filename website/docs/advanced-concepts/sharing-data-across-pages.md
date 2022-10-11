@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 description: >-
   The Appsmith platform allows us to share data across pages using URL query
   params & the browser's local storage.
@@ -16,10 +17,10 @@ Query params can be passed by adding the query params object to [NavigateTo acti
 
 These can be consumed on the destination page with `appsmith.URL.queryParams.param`.
 
-![Click to expand](../.gitbook/assets/queryParams.gif)
+![Click to expand](/img/queryParams.gif)
 
 ## Sharing data via local storage
 
 Key-value pairs can be stored within the local storage with the help of the [StoreValue action](broken-reference). To do so pick the StoreValue action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`
 
-![Click to expand](../.gitbook/assets/localStorage.gif)
+![Click to expand](/img/localStorage.gif)

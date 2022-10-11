@@ -1,4 +1,7 @@
 ---
+
+sidebar_position: 1
+
 description: >-
   This guide helps you to connect your APIs or databases running on localhost
   with Appsmith using host.docker.internal or ngrok.
@@ -14,21 +17,23 @@ With your on-premises Appsmith instance running on the same system, you may use 
 
 You can use `` [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
 
-{% hint style="info" %}
+:::tip
 You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.&#x20;
-{% endhint %}
+:::
 
-{% embed url="https://youtu.be/4XlgsVekzhI" %}
-Connect to databases/APIs running on localhost
-{% endembed %}
+
+ <object data="https://www.youtube.com/embed/4XlgsVekzhI" width='860px' height='515px'></object> 
+
 
 ## Using ngrok
 
 Appsmith allows you to work with APIs running on `localhost` using the help of **`ngrok`**. Let’s look at how you can build an Appsmith application utilizing the APIs running on localhost.
 
-{% embed url="https://youtu.be/IUX2rXmS17E" %}
-Connect to localhost using ngrok
-{% endembed %}
+
+
+ <object data="https://www.youtube.com/embed/IUX2rXmS17E" width='860px' height='515px'></object> 
+
+
 
 ### Building a Simple Local API
 
@@ -119,4 +124,4 @@ Now that we have API, up and running, let’s test these out on Appsmith.
 
 Below is a GIF, following the same steps:
 
-![Test API](../../.gitbook/assets/NGROK.gif)
+![Test API](/img/NGROK.gif)
