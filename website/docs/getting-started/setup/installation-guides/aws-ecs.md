@@ -163,7 +163,9 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 ![](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-b42232223f0151a5f3324137635656e4ab248312\_appsmith-welcome-page.png)
 
-> Note: - In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
+:::note
+ In this guide, If you are using the embedded MongoDB, the container persistence is tied up with the EC2 instance lifecycle.
+ :::
 
 ## Updating to the latest Appsmith release
 

@@ -41,6 +41,6 @@ APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 
 **6.** [**Restart the Appsmith Instance**](./)
 
-{% hint style="success" %}
+:::tip
 The maps widget should now be enabled on your installation. Read more about [Obtaining a google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 :::

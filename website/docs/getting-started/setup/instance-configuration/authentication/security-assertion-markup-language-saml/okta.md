@@ -5,7 +5,7 @@ sidebar_position: 5.3
 
 Okta, an Identity-as-a-Service (IDaaS) provider, supports authentication using Secure Assertion Markup Language (SAML). You can use SAML as an authentication type on Appsmith and configure the setup to use Okta as an identity provider.
 
-:::tip
+:::info
 Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
@@ -53,7 +53,7 @@ There are several ways to register the identity provider on Appsmith and complet
 
 SAML metadata is an XML document that provides information required for interaction with a SAML-enabled identity or service provider. The Metadata URL is the URL metadata for SAML configuration hosted on a remote server.
 
-:::tip
+:::info
 **Metadata URL** is the quickest and most **recommended** way to set up **SAML**.
 :::
 

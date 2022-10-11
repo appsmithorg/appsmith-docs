@@ -5,7 +5,7 @@ sidebar_position: 5.1
 
 Auth0 is an authentication & authorization provider. It provides Security Assertion Markup Language (SAML) integration that you can use to integrate with Appsmith. Follow these steps to configure SAML integration:
 
-:::tip
+:::info
 Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
@@ -17,7 +17,7 @@ Security Assertion Markup Language (SAML) is available only in the [enterprise e
 
 From the available options, select **Regular Web Applications**.
 
-:::tip
+:::info
 The default name of the application is **My App**. You can change it to give a suitable name to the application.
 :::
 
@@ -45,7 +45,7 @@ Appsmith provides the below options using which you can register the identity pr
 
 SAML metadata is an XML document that provides information required for interaction with a SAML-enabled identity or service provider. The Metadata URL is the URL metadata for SAML configuration hosted on a remote server.
 
-:::tip
+:::info
 Metadata URL is the **quickest** and **most recommended way** to set up **SAML**.
 :::
 

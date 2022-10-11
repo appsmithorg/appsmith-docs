@@ -25,7 +25,7 @@ In our container, we support to generate a free SSL certificate If you have your
 
 The container will check the certificate files in the folder `<mounting-directory>/ssl` and use them if they exist.
 
-:::tip
+:::caution
 _In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will be considered as missing custom certificate and auto-provisioning the certificate by Let's Encrypt_
 :::
 
@@ -42,7 +42,7 @@ APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
 
 [Restart the appsmith container](../).
 
-:::tip
+:::info
 Please ensure port 80 on your server is open and accessible from the Internet for the HTTPS certificate to be provisioned.
 :::
 
@@ -59,7 +59,7 @@ Please ensure port 80 on your server is open and accessible from the Internet fo
 
 At this point, you should be able to browse to the cloud server by entering your custom domain directly into your browser's address bar with HTTPS.
 
-:::tip
+:::info
 Please ensure port 80 on your server is open and accessible from the Internet for the HTTPS certificate to be provisioned.
 :::
 
@@ -70,7 +70,7 @@ Please ensure port 80 on your server is open and accessible from the Internet fo
 3. Input your domain name & click `Next`. Heroku will provide you with a DNS target that you can map your domain with.
 4. Go to your DNS provider and make sure that your custom DNS Record (Ex. **appsmith.yourcompany.com**) is updated to map to the `DNS Target`
 
-:::tip
+:::caution
 * Once you use a custom domain, You might want to set up SSL for your dyno. Please check the official document of Heroku [how to configure SSL](https://devcenter.heroku.com/articles/ssl)
 * Your dyno will need to be upgraded to at least "**Hobby"** type to use this feature of Heroku
 :::
@@ -83,6 +83,6 @@ To host the Appsmith DigitalOcean droplet on a custom domain, you'll need to sel
 
 It redirects you to a new page. Add your domain name there. Once that's done, it'll give you records of the name servers. Copy the details of the NS (name servers). Use the custom name server's configuration on your domain provider. Sometimes, it might take up to 24-48 hours for this to go live!
 
-{% hint style="success" %}
+:::tip
 Your Appsmith instance should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com) with automatic certificate provisioning and renewals.
 :::

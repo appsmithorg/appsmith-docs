@@ -7,7 +7,7 @@ sidebar_position: 2.3
 
 To configure Gmail as your [SMTP server](https://developer.mozilla.org/en-US/docs/Glossary/SMTP) for Appsmith, begin by logging into your Gmail account. To start, you must set up an App Password within your Gmail account settings.
 
-:::tip
+:::info
 To use App Passwords, please enable 2-factor authentication for your Gmail account. For more information on App Passwords, see [this reference](https://support.google.com/accounts/answer/185833?hl=en).
 :::
 
@@ -27,7 +27,7 @@ To use App Passwords, please enable 2-factor authentication for your Gmail accou
 
 ![Generate App Password](/img/app\_pass\_generated\_edit.png)
 
-:::tip
+:::info
 You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings). Add `Gmail App Password` in the `SMTP Password` Field.
 :::
 

@@ -5,7 +5,7 @@ sidebar_position: 5
 
 JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) for securely transmitting information between parties in the form of a JSON object.
 
-:::tip
+:::info
 **JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
 :::
 
@@ -13,7 +13,7 @@ JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org
 
 Following are some common scenarios where JSON Web Tokens are used:
 
-:::tip
+:::info
 If you are aware of JSON Web Tokens, move directly to [How to Use JSON Web Tokens in Appsmith?](json-web-tokens-jwt.md#how-to-use-json-web-tokens-in-appsmith).
 :::
 
@@ -29,7 +29,7 @@ JSON Web Tokens are a secure way of transmitting information between different a
 
 For instance, you are authenticating a user. Your SSO Provider shares a JSON Web Token(JWT) on the successful authentication.
 
-:::tip
+:::info
 As a best practice, you should only store the token for the time it is needed.
 :::
 
@@ -41,7 +41,7 @@ Authorization: Bearer <followed by the token value>
 
 The server’s validation mechanism will verify the token in the `Authorization` header and grant access to the resources or allow the user to perform an action.
 
-:::tip
+:::info
 Sending a token as a part of the Authorization header eliminates the Cross-Origin Resource Sharing(CORS) usually faced while sharing through cookies.
 :::
 
@@ -79,7 +79,7 @@ The second part of the token, a payload, comprises claims. Claims are informatio
 
 If you create [public claims](https://datatracker.ietf.org/doc/html/rfc7519#section-4.2), you must define them in IANA JSON Web Token Registry or define them as a URI with a collision-resistant namespace.
 
-:::tip
+:::info
 The public claims should be validated and agreed upon by Issuer and Consumer.
 :::
 
@@ -87,7 +87,7 @@ The public claims should be validated and agreed upon by Issuer and Consumer.
 
 The parties communicating with each other might want to have some custom claims identified. You can define these custom claims under [private claims](https://datatracker.ietf.org/doc/html/rfc7519#section-4.3). These claims are neither registered nor public.
 
-:::tip
+:::info
 The public/private claims should not have similar names as reserved claims as it will break the interoperability between the systems exchanging information.
 :::
 
@@ -95,7 +95,7 @@ The public/private claims should not have similar names as reserved claims as it
 
 A set of pre-defined claims that are not mandatory but are deemed recommended are defined as [registered claims](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1). Such claims provide useful information like expiration time, issuer details, the intended audience, etc.
 
-:::tip
+:::info
 The claim names are only three characters long to ensure compact JWT.
 :::
 
@@ -143,7 +143,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9**.**eyJzdWIiOiJTU09Qcm92aWRlciIsImVtYWlsX3Z
 
 You can see that the three parts of the JWT are separated by a dot(.).
 
-:::tip
+:::info
 You can use the JWT Debugger to encode, decode, or verify the generated JWTs.
 :::
 
@@ -179,7 +179,7 @@ An ID token is a signed assurance of a user’s identity and contains basic info
 
 Once the SSO provider successfully authenticates a user, the ID token is available on the Appsmith platform.
 
-:::tip
+:::info
 Appsmith exposes the `idToken` parameter on the client-side. It thus is available to be embedded in any operation that you would like to perform either in JavaScript functions, APIs, or queries.
 :::
 
@@ -197,7 +197,7 @@ An access token is an object that stores information about an entity in the form
 
 After successful user authentication through an SSO Provider, you can use the access tokens on Appsmith. The access token is available as an environment variable.
 
-:::tip
+:::info
 The environment variable is not accessible on the client-side as per security norms.
 :::
 

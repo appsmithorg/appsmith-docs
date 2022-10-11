@@ -1,6 +1,6 @@
 ---
 description: Appsmith can be deployed locally or on your private instance using Docker
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Docker
@@ -20,9 +20,13 @@ Create an installation folder called `appsmith` where you would like your Appsmi
 
 ## Quick Start (with docker-compose)
 
+:::caution
+Appsmith [auto-update](./#enabling-appsmith-auto-updates-with-docker-compose) now also supports auto-backup feature. This backup can be used to roll back an update to a previous version of Appsmith, if the user wants to.
+:::
+
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
 
-:::tip
+:::caution
 You can expect one container running when using the `docker-compose ps` command. Something like:
 
 _#Container appsmith Running_
@@ -30,27 +34,27 @@ _#Container appsmith Running_
 
 ### Docker-compose configuration
 
-:::tip
+:::info
 Currently, auto-update is disabled on the docker-compose file. If you want to enable auto-update for Appsmith, please uncomment all the commented lines in the docker-compose file.
 :::
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="/img/docker-compose_(1).yml" %}
+{% file src="/img/docker-compose_(3).yml" %}
 
 **or** run the following curl if you're on a remote machine:
 
 ```bash
-curl -L https://bit.ly/32jBNin -o $PWD/docker-compose.yml
+curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
 ```
 
-:::tip
+:::caution
 For the **Business Edition** - change the **image** name from `appsmith-ce` to `appsmith-ee` for the `image:` key in the `docker-compose.yml` file.
 :::
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date.
 
-:::tip
+:::caution
 For the **Business Edition** - add your **license key** (`APPSMITH_LICENSE_KEY`) to the `environment:` key in the `docker-compose.yml` file.
 :::
 
@@ -66,11 +70,19 @@ If it is not available locally, the command above will download the Docker image
 docker logs -f appsmith
 ```
 
-You should see a message `Appsmith is Running!` once the container is ready. If this is your first time using docker, you should expect a welcome page similar to the one below.
+You should see a message `Appsmith is Running!` once the container is ready. The message is also logged and available in server logs(<mark>`stacks/logs/backend/backend.log`</mark>).&#x20;
+
+![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
+
+:::caution
+If you are **unable** to **locate** the message but can **access** Appsmith via **localhost** or a **custom domain** you have **created**, then Appsmith is up and running.
+:::
+
+If this is your first time using docker, you should expect a welcome page similar to the one below.
 
 ![Welcome Page](</img/image_(1)_(1).png>)
 
-{% hint style="success" %}
+:::tip
 Congratulations! Your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost).
 :::
 
@@ -121,7 +133,13 @@ This command will download the image and start Appsmith. Once the download is co
 docker logs -f appsmith
 ```
 
-You should see the message `Appsmith is Running!` once the container is ready
+You should see a message `Appsmith is Running!` once the container is ready. The message is also logged and available in server logs(<mark>`stacks/logs/backend/backend.log`</mark>).
+
+![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
+
+:::caution
+If you are **unable** to **locate** the message but can **access** Appsmith via **localhost** or a **custom domain** you have **created**, then Appsmith is up and running.
+:::
 
 ## Restarting Containers
 
@@ -160,7 +178,7 @@ docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> appsmith/appsmith-ee
 ```
 
-:::tip
+:::info
 Follow the instructions to [upgrade your existing installation](../../upgrade-to-business-edition/) to a Business Edition.
 :::
 

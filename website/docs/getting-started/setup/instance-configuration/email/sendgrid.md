@@ -27,7 +27,7 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![Click to expand](</img/sendgrid_create_sender.png>)
 
-:::tip
+:::caution
 You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
 :::
 
@@ -51,6 +51,6 @@ APPSMITH_MAIL_SMTP_AUTH=true
 
 **5.** [**Restart the appsmith instance**](../)
 
-{% hint style="success" %}
+:::tip
 Once you've verified your sender identity, your email service should be configured correctly
 :::

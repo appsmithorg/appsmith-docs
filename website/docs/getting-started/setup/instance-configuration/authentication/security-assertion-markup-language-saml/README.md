@@ -10,7 +10,7 @@ The identity provider(IdP) is responsible for authentication and shares the user
 
 Upon successful authentication by the identity provider, the service provider authorizes the user to access resources.
 
-:::tip
+:::info
 Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
@@ -36,7 +36,7 @@ Follow the below steps to configure your SAML Provider’s settings. These steps
 
 ![Copy Redirect URL](/img/Appsmith-Admin-Settings-Authentication-SAML-Redirect-URL.png)
 
-:::tip
+:::info
 Save the **Redirect URL** as you’ll need it to configure these in the
 
 **SAML provider’s settings**.
@@ -48,7 +48,7 @@ Save the **Redirect URL** as you’ll need it to configure these in the
 
 ![Copy Entity URL](/img/Appsmith-Admin-Settings-Authentication-SAML-Entity-URL.png)
 
-:::tip
+:::info
 Save the **Entity URL** as you’ll need it to configure these in the SAML provider’s settings.
 :::
 
@@ -98,7 +98,7 @@ You’ll need a **Redirect URL** and an **Entity URL** to configure **SAML** int
 
 ![Copy Redirect URL](/img/Appsmith-Admin-Settings-Authentication-SAML-Redirect-URL.png)
 
-:::tip
+:::info
 Add the **Redirect URL** to the SAML Configuration to fields like the Callback URL.
 :::
 
@@ -108,7 +108,7 @@ Add the **Redirect URL** to the SAML Configuration to fields like the Callback U
 
 ![Copy Entity URL](/img/Appsmith-Admin-Settings-Authentication-SAML-Entity-URL.png)
 
-:::tip
+:::info
 Add the **Entity URL** to the Entity URL available for the SAML settings.
 :::
 

@@ -43,14 +43,14 @@ We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
 * Drag and drop a [**Container**] widget to the right of the Table widget. Let's add a few widgets to display user details from the selected row on the table. Add a label titled '**User Details**'.
 * Add [**Input**] widgets for Name **** (nameInput), Email (emailInput) and Phone (phoneInput), a [**Datepicker**] widget for DOB (dobInput), an Image widget for the Image and finally a [**Button**] widget labelled '**Update**'.
 
-![Build UI by laying out widgets on the canvas](/img/Screenshot 2022-06-28 at 10.50.31 PM.png)
+![Build UI by laying out widgets on the canvas](/img/Screenshot_2022-06-28_at_10.50.31_PM.png)
 
 ## **Create Queries and Bind Data to Widgets**
 
 * On the **Explorer** tab, navigate to the database under **DATASOURCES** → **users**&#x20;
 * Click on the **New Query +** button next to the datasource.
 
-![Creating a new query on the datasource]
+![Creating a new query on the datasource](/img/New_Query_(1).png)
 
 * Rename the query to ‘**getUsers**’
 * Write the below query to pull ten records from the '**users'** table in the database.&#x20;
@@ -62,9 +62,9 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ![Writing query to fetch data in the Query Editor](/img/Screenshot_2022-07-12_at_22.38.19.png)
 
 * Click the **Run** button on the right of the Query Editor to confirm that the query returns data.
-* Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**] property write this JS snippet **`{{getUsers.data}}`** to display the results from the 'getUsers**'** query on the table.
+* Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**](../reference/widgets/table/#table-data) property write this JS snippet **`{{getUsers.data}}`** to display the results from the 'getUsers**'** query on the table.
 
-:::tip
+:::info
 The `{{mustache}}` template is used to write JS inside widgets and queries.
 :::
 
@@ -80,7 +80,7 @@ The `{{mustache}}` template is used to write JS inside widgets and queries.
 | DOB    | dobInput   | Default Date                                      | ```{{usersTable.selectedRow.dob}}``` |
 | Phone  | phoneInput | Default Text                                      | ```{{usersTable.selectedRow.phone}}``` |
 
-:::tip
+:::caution
 Turn on the **JS** toggle to bind data for the **Default Date** property
 :::
 
@@ -90,7 +90,7 @@ Turn on the **JS** toggle to bind data for the **Default Date** property
 UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob = '{{dobInput.selectedDate}}', phone = '{{phoneInput.text}}' WHERE id = {{usersTable.selectedRow.id}} 
 ```
 
-* On the property pane of the **Update** button execute this query on the [**onClick**] event. On the success of the update query, run the '**getusers'** query to populate the table with updated data.
+* On the property pane of the **Update** button execute this query on the [**onClick**](../reference/widgets/button/#events) event. On the success of the update query, run the '**getusers'** query to populate the table with updated data.
 
 ![Bind query execution to the button's  onClick event ](/img/Screenshot_2022-06-28_at_11.36.28_PM.png)
 
@@ -105,9 +105,10 @@ UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob
   * Invite specific users using their email ID
     * Select an appropriate role for the user
     * Share the application's URL with the user
-  * You can also make the application **public**. In this case, anyone with the application URL can view the application without signing in. You can read more about **access control** **here**.
+  * You can also make the application **public**. In this case, anyone with the application URL can view the application without signing in. You can read more about **access control** [**here**](../advanced-concepts/access-control.md).
 
-:::tip
+:::info
 **Congratulations**, you have completed the Appsmith Quickstart tutorial.
 :::
+Now that you have created your first Appsmith application, you may be wondering what to learn next. The Quickstart covered only the basic concepts. There's so much more to explore, so head over to the [**next steps**](../#advanced-users).
 

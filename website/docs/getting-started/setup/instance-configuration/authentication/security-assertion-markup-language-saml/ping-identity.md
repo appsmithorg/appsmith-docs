@@ -5,7 +5,7 @@ sidebar_position: 5.2
 
 Ping Identity (PingID) is the identity as a security platform provider. It is a cloud-based authentication service provider and supports Security Assertion Markup Language (SAML). You can use Appsmith to integrate with Ping Identity using SAML configuration for authentication.
 
-:::tip
+:::info
 Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
@@ -68,7 +68,7 @@ Navigate to **Admin Settings** >> **Authentication** >> Click **Enable.** Choose
 
 SAML metadata is an XML document that provides information required for interaction with a SAML-enabled identity or service provider. The Metadata URL is the URL metadata for SAML configuration hosted on a remote server.
 
-:::tip
+:::info
 **Metadata URL** is the quickest and most **recommended** way to set up **SAML**.
 :::
 

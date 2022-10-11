@@ -3,7 +3,7 @@ sidebar_position: 8
 ---
 # Super Admin
 
-Admin settings menu option is an alternative to updating <mark style="color:red;">`environment`</mark> variables by editing the `env` file from the UI. This new UI makes it easy for the superuser to change instance configuration without moving away from the comfort of your instance UI.
+Admin settings menu option is an alternative to updating <mark>`environment`</mark> variables by editing the `env` file from the UI. This new UI makes it easy for the superuser to change instance configuration without moving away from the comfort of your instance UI.
 
 The admin settings page is a UI available **only to superusers on all self-hosted instances**.
 
@@ -17,11 +17,11 @@ You can update all the instance configurations listed [here](./) in the Admin se
 
 ![Use Admin Settings to configure your instance.](/img/Profile-Admin-Settings-Setup-Info.png)
 
-:::tip
+:::info
 With the Admin Settings page, you can also configure [email](email/), [custom authentication](authentication/), [google maps](google-maps.md), and [more](./).
 :::
 
-The Admin settings are segregated based on the area they affect. Pick the desired category from the left panel. You can update any setting and click <mark style="color:red;">`save & restart`</mark> (The UI will show a restart modal while the instance restarts.) Once it restarts, your instance will have new settings.
+The Admin settings are segregated based on the area they affect. Pick the desired category from the left panel. You can update any setting and click <mark>`save & restart`</mark> (The UI will show a restart modal while the instance restarts.) Once it restarts, your instance will have new settings.
 
 ### Configuring a Super Admin
 

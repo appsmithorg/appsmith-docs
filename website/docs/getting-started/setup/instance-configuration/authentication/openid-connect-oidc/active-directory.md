@@ -5,7 +5,7 @@ sidebar_position: 4.4
 
 Azure Active Directory (Azure AD) is a cloud-based identity and access management service. This service helps your employees access external resources\*\*,\*\* such as **Microsoft 365,** the **Azure portal,** and thousands of other **SaaS** applications.
 
-:::tip
+:::info
 OpenID Connect is available only in the [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances,** and only the **Superuser** of your **Appsmith Instance** can set up OIDC.
 :::
 
