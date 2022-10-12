@@ -6,9 +6,9 @@ Follow the below guides to **upgrade** your **Community Edition (CE)** to a **Bu
 You'll need your **** [**Business Edition License Key**](https://www.appsmith.com/pricing) **** to complete the upgrade**.**
 :::
 
-{% content-ref url="docker.md" %}
-[docker.md](docker.md)
-{% endcontent-ref %}
+
+* [Docker](docker.md)
+
 
 :::caution
 For **non-docker Appsmith installations**, please get in touch with us via [discord](https://discord.com/invite/rBTTVJp) or [email](mailto:support@appsmith.com). We will help you upgrade your Appsmith instance.

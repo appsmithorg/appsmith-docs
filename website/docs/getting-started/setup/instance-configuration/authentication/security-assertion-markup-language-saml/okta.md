@@ -15,7 +15,7 @@ Log in to your [Okta Developer Account](https://developer.okta.com/) and navigat
 
 <figure>
   <object data="https://www.youtube.com/embed/4Tj2OEV-r10?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>How to create an app integration?</figcaption>
+   <figcaption align="center"><i>How to create an app integration?</i></figcaption>
 </figure>
 
 * Choose **SAML** as the Sign-in method and click **Next**.

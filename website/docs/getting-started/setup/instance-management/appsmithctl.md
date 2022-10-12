@@ -29,7 +29,7 @@ With **Business Edition,** you can also sync the backups to an AWS S3 bucket.
 
 ## Export Database
 
-Use the following command to backup Appsmith's database.&#x20;
+Use the following command to backup Appsmith's database.
 
 :::info
 You can restore the backups onto another instance using the [import](appsmithctl.md#im-import\_db) command to restore data.
@@ -84,7 +84,7 @@ docker-compose exec appsmith appsmithctl import_db
 ```
 
 :::info
-You may also want to copy the <mark >`docker.env`</mark> from the original instance into this one when you restore.&#x20;
+You may also want to copy the <mark >`docker.env`</mark> from the original instance into this one when you restore.
 :::
 
 * Copy the <mark>`docker.env`</mark> file using the below command:
@@ -135,7 +135,7 @@ Please save the **encryption env values**, `APPSMITH_ENCRYPTION_PASSWORD` and `A
 appsmithctl backup --upload-to-s3
 ```
 
-You can choose to sync backups to an AWS S3 bucket (**only for Business Edition**).&#x20;
+You can choose to sync backups to an AWS S3 bucket (**only for Business Edition**).
 
 * Add the below entries to the <mark >`docker.env`</mark> file to enable the sync:
 

@@ -29,7 +29,7 @@ The restore would end up deleting all the existing data in the mongo database of
 You can import or export the desired application to any workspace, either in the same or a different Appsmith instance.
 
 :::info
-Applications are forward compatible from Appsmith version 1.6.9.&#x20;
+Applications are forward compatible from Appsmith version 1.6.9.
 
 Applications built in an older version of an Appsmith instance will work when imported into a newer version of an Appsmith instance.
 :::

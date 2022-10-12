@@ -15,7 +15,7 @@ To configure OpenID Connect(OIDC) within Appsmith using Active Directory as an O
 
 <figure>
   <object data="https://www.youtube.com/embed/GDOVdeIe3VU?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Creating an application in Active Directory</figcaption>
+  <figcaption align="center"><i>Creating an application in Active Directory</i></figcaption>
 </figure>
 
 1. Log in to your [Azure](https://portal.azure.com/#allservices) account and click on **More services**.
@@ -38,7 +38,7 @@ On the application homepage, go to the overview tab and perform the following ac
 
 <figure>
   <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Creating a new Client secret in Active Directory</figcaption>
+   <figcaption align="center"><i>Creating a new Client secret in Active Directory</i></figcaption>
 </figure>
 
 * Click the **Endpoints** tab under App overview and copy the **OpenID Connect metadata document** URL.
@@ -71,7 +71,7 @@ Appsmith needs **openId** as a mandatory scope. You can add more scopes if the n
 
 <figure>
   <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Configuring scopes in Active Directory</figcaption>
+   <figcaption align="center"><i>Configuring scopes in Active Directory</i></figcaption>
 </figure>
 
 To configure scopes/permissions on Active Directory, follow the steps below:

@@ -37,7 +37,7 @@ Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) ac
 
 <figure>
   <object data="https://www.youtube.com/embed/iMAOqRo2KuI?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>How to Configure SAML For Ping Identity as IdP?</figcaption>
+   <figcaption align="center"><i>How to Configure SAML For Ping Identity as IdP?</i></figcaption>
 </figure>
 
 ### Configure SAML

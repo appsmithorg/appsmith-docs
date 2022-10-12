@@ -36,6 +36,6 @@ Now, let's rename the page from **Page1** to **Business Details**; you can do th
 
 You have now set up the application. Next, let's jump into the next section. Here, you'll **connect to a data source and write your first DB Query on Appsmith!**
 
-{% content-ref url="connecting-to-data-source-and-binding-queries.md" %}
-[connecting-to-data-source-and-binding-queries.md](connecting-to-data-source-and-binding-queries.md)
-{% endcontent-ref %}
+
+* [Connecting to datasource and binding queries](connecting-to-data-source-and-binding-queries.md)
+

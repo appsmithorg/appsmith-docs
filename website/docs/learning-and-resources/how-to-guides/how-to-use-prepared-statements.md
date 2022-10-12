@@ -84,17 +84,11 @@ The multiple bindings added to the Appsmith queries are translated into the numb
 
 You can use prepared statements for the below datasources on Appsmith:
 
-{% content-ref url="../../reference/datasources/querying-mssql.md" %}
-[querying-mssql.md](../../reference/datasources/querying-mssql.md)
-{% endcontent-ref %}
 
-{% content-ref url="../../reference/datasources/querying-mssql.md" %}
-[querying-mssql.md](../../reference/datasources/querying-mssql.md)
-{% endcontent-ref %}
+* [querying-mssql.md](reference/datasources/querying-mssql.md)
+* [querying-mssql.md](reference/datasources/querying-mssql.md)
+* [querying-postgres.md](reference/datasources/querying-postgres.md)
 
-{% content-ref url="../../reference/datasources/querying-postgres.md" %}
-[querying-postgres.md](../../reference/datasources/querying-postgres.md)
-{% endcontent-ref %}
 
 ### Enable Prepared Statement
 

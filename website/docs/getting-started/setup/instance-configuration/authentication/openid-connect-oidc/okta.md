@@ -59,7 +59,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 
 <figure>
   <object data="https://www.youtube.com/embed/dgDhBUXKA6s?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Get Okta Configurations</figcaption>
+   <figcaption align="center"><i>Get Okta Configurations</i></figcaption>
 </figure>
 
 * **Configuration at Appsmith** - Add all the configurations from the above URL in OIDC Configurations on Appsmith. Refer to the below table that shows field mapping:

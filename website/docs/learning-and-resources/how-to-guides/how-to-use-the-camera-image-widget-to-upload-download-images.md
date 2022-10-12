@@ -6,12 +6,12 @@ sidebar_position: 6
 
 [Amazon S3](https://aws.amazon.com/s3/?nc2=type\_a) (Simple Storage Service) provides object storage built for storing and recovering any amount of information or data from anywhere over the internet. It provides this storage through a web services interface.
 
-#### **What you'll learn**&#x20;
+#### **What you'll learn**
 
-In this guide, you would learn:&#x20;
+In this guide, you would learn:
 
-* How to connect and configure the S3 datasource.&#x20;
-* How to use the Image and Camera widget.&#x20;
+* How to connect and configure the S3 datasource.
+* How to use the Image and Camera widget.
 * How to upload/download images using S3.
 
 ## Create S3 Datasource
@@ -30,12 +30,12 @@ The camera widget powers you to capture images and videos from your applications
   <object data="https://www.youtube.com/embed/v43gTz_4Jck?autoplay=0" width='750px' height='400px'></object> 
 </figure>
 
-* Drag and drop the [Camera widget](https://docs.appsmith.com/reference/widgets/camera) onto the canvas.&#x20;
-* Click on the **+** icon next to the **queries/js** and choose your S3 datasource.&#x20;
-* Rename the query.&#x20;
+* Drag and drop the [Camera widget](https://docs.appsmith.com/reference/widgets/camera) onto the canvas.
+* Click on the **+** icon next to the **queries/js** and choose your S3 datasource.
+* Rename the query.
 * From the Commands drop-down, Select the method **Create a new file.**
 
-You can pass the below parameters to **Create a new file.**&#x20;
+You can pass the below parameters to **Create a new file.**
 
 * **Bucket Name:** The object key (or key name) uniquely identifies the object in an Amazon S3 bucket.
 * **File Path:** Path of the location you want to store the file. ex. images/any.
@@ -62,7 +62,7 @@ The maximum expiration time for a signed URL is one week from the time of creati
 Once you have added all the required parameters:
 
 * Open the Camera widget property pane.
-* In the **OnImageSave** event, choose your query from the "**execute a query**" option.&#x20;
+* In the **OnImageSave** event, choose your query from the "**execute a query**" option.
 
 When you capture and save the image, your **upload\_image** query is executed. You can visit the [S3 console](https://s3.console.aws.amazon.com/s3/home) to see the uploaded media.
 
@@ -71,16 +71,16 @@ When you capture and save the image, your **upload\_image** query is executed. Y
 The Image widget displays the images in your app. Images must have a valid base64 or a URL. You can follow similar steps to the image widget.
 
 * Drag and drop the [Image widget](https://docs.appsmith.com/reference/widgets/image) onto the canvas.
-* Now set the image URL in the Image property pane.&#x20;
-* Click on the **+** icon next to the **queries/js** and choose your **S3 datasource.**&#x20;
-* Rename the query.&#x20;
+* Now set the image URL in the Image property pane.
+* Click on the **+** icon next to the **queries/js** and choose your **S3 datasource.**
+* Rename the query.
 * From the Commands drop-down, Select the method **Create a new file.**
 
 :::info
 You should select **base64** as _File Data Type_ when uploading data from the image widget.
 :::
 
-<!-- <figure><img src="/img/uploads31.PNG" alt=""/><figcaption></figcaption></figure> -->
+<!-- <figure><img src="/img/uploads31.PNG" alt=""/> <figcaption align="center"><i></figcaption></figure> -->
 ![](/img/uploads31.PNG)
 
 
@@ -94,7 +94,7 @@ In the content body, add the following:
 
 Once you have added all the required parameters:
 
-* Now, set the Image Widget's **onClick** event to **execute a query**, and choose your query.&#x20;
+* Now, set the Image Widget's **onClick** event to **execute a query**, and choose your query.
 
 Your image will be stored in the S3 database once you run this query. Let's look at how to fetch an image from the S3 database.
 
@@ -110,7 +110,7 @@ Your image will be stored in the S3 database once you run this query. Let's look
 * Rename the query.
 * From the Commands drop-down, Select the method **Read file.**
 
-You can pass the below parameters to **Read a file.**&#x20;
+You can pass the below parameters to **Read a file.**
 
 * **Bucket Name:** Name of the bucket where the image is stored.
 * **File Path**: Path of the image you want to fetch. ex. images/name.
@@ -131,10 +131,10 @@ Once you have added all the required parameters:
   <object data="https://www.youtube.com/embed/UzV5LZ0kvDQ?autoplay=0" width='750px' height='400px'></object> 
 </figure>
 
-* Click on the + icon next to the **queries/js** and choose your **S3 datasource.**&#x20;
-* Rename the query.&#x20;
-* From the Commands drop-down, Select the method **List files** in the bucket.&#x20;
-* Add the **bucket name.**&#x20;
+* Click on the + icon next to the **queries/js** and choose your **S3 datasource.**
+* Rename the query.
+* From the Commands drop-down, Select the method **List files** in the bucket.
+* Add the **bucket name.**
 * Now, run the query.
 
 Now, open the query window and select the table option on the right-side property pane. It would automatically add a table widget to your canvas.
@@ -149,7 +149,7 @@ You can use an image widget to display images listed in the table widget. You ca
 
 #### Download Files
 
-* Open the image property pane.&#x20;
+* Open the image property pane.
 * Click on the **JS** button next to the **onClick** event and write the following JavaScript query:
 
 ```
@@ -159,12 +159,12 @@ You can use an image widget to display images listed in the table widget. You ca
 Now, your image will be downloaded when you click on the image widget.
 
 :::info
-You can check this [Guide ](how-to-upload-to-s3.md)to learn more about Upload/Download Files from S3.&#x20;
+You can check this [Guide ](how-to-upload-to-s3.md)to learn more about Upload/Download Files from S3.
 :::
 
 With Appsmith S3 integration, it is possible to create apps that seamlessly connect with the S3 database and provide additional flexibility for updating and analyzing data.
 
-## Using Queries in applications&#x20;
+## Using Queries in applications
 
 Once you have successfully run a Query, you can use it in your application to:
 

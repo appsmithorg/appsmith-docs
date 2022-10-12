@@ -21,14 +21,14 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 
 <figure>
   <object data="https://www.youtube.com/embed/B-Vsbqkkwqg?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Build your own Solution</figcaption>
+   <figcaption align="center"><i>Build your own Solution</i></figcaption>
 </figure>
 
 * Fill in the details about the environment and click on Next.
 
 <figure>
   <object data="https://www.youtube.com/embed/h8QqEhbpEPs?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Environment Configuration</figcaption>
+   <figcaption align="center"><i>Environment Configuration</i></figcaption>
 </figure>
 
 * Go to **Connections** from the sidebar and click on **Applications**. Create a new Application by clicking on the `+` button.
@@ -42,7 +42,7 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 
 <figure>
   <object data="https://www.youtube.com/embed/fRreXB6P0No?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Configure Environment and Scope</figcaption>
+   <figcaption align="center"><i>Configure Environment and Scope</i></figcaption>
 </figure>
 
 * Under the general section, you can see the basic information about your application. You can add multiple **Redirect URLs** by simply editing the general configurations. (Allows you to use this PingID application for multiple Appsmith applications.
