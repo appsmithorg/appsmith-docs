@@ -75,10 +75,10 @@ const config = {
         //... other Algolia params
       }, 
       navbar: {
-        title: 'appsmith_',
+        title: '',
         logo: {
           alt: 'Appsmith Logo',
-          src: 'img/Appsmith-Logo.png',
+          src: '/img/appsmith_logo_white.png',
         },
         items: [
           {
