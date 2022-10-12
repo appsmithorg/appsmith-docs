@@ -19,11 +19,10 @@ As discussed in the previous sections, Widgets are simple UI Components that can
 
 This will create a new table on `ProductListPage`.
 
-Drag-and-dropping your first widget onto the canvas
-
-{% embed url="https://youtu.be/O46_oPfurTc" %}
-Drag-and-dropping your first widget onto the canvas
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/O46_oPfurTc?autoplay=0" width='700px' height='385px'></object> 
+   <figcaption align="center"><i>Drag-and-dropping your first widget onto the canvas</i></figcaption>
+</figure>
 
 Let's discuss what has happened now:
 

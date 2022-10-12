@@ -96,9 +96,10 @@ You can use prepared statements for the below datasources on Appsmith:
 
 To use prepared statements for a datasource, you'll have to enable the prepared statement for query execution.
 
-{% embed url="https://youtu.be/PSw1iyyv6UM" %}
-How to enable a prepared statement?
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/PSw1iyyv6UM?autoplay=0" width='700px' height='385px'></object> 
+  <figcaption align="center"><i>How to enable a prepared statement</i></figcaption>
+</figure>
 
 :::info
 Whenever you **create a new query**, the **prepared statement setting** is **enabled**. You can **turn it off manually** if you wish to.

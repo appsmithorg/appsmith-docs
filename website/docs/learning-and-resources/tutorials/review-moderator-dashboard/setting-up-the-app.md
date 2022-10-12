@@ -10,9 +10,10 @@ If this is your first time using Appsmith, you'll need to get acquainted with so
 
 In this tutorial, you'll create a Review Moderator application under the same workspace. To do this, follow the below steps:
 
-{% embed url="https://youtu.be/rDq4203aRQw" %}
-Creating and Renaming Appsmith Application
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/rDq4203aRQw?autoplay=0" width='700px' height='385px'></object> 
+   <figcaption align="center"><i>Creating and Renaming Appsmith Application</i></figcaption>
+</figure>
 
 1. Click on the **Create New** under your workspace.
 2. It will redirect to the configuration page of the newly created app.

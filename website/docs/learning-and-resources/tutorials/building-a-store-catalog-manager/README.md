@@ -25,9 +25,11 @@ Here are steps to create an app from the Appsmith Dashboard:
 3. Rename your app to **Catalog Dashboard** by clicking on the existing name in the top-left of the screen, and selecting **Edit Name**.
 4. Click the **Build with drag & drop** button located on the center of the canvas.
 
-{% embed url="https://youtu.be/TaPgZbHpkQw" %}
-Creating and renaming a brand new application
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/TaPgZbHpkQw?autoplay=0" width='700px' height='385px'></object> 
+   <figcaption align="center"><i>Creating and renaming a brand new application
+</i></figcaption>
+</figure>
 
 The new app comes with auto-generated directories that establish an Appsmith app. Here is a look at the directory structure:
 

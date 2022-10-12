@@ -22,7 +22,9 @@ To upload your data to Amazon S3, you must first create an Amazon S3 bucket in o
 
 The camera widget powers you to capture images and videos from your applications and share the data for further use. In this section, you will learn how you can upload images/videos to Amazon S3.
 
-{% embed url="https://youtu.be/v43gTz_4Jck" %}
+<figure>
+  <object data="https://www.youtube.com/embed/v43gTz_4Jck?autoplay=0" width='700px' height='385px'></object> 
+</figure>
 
 * Drag and drop the [Camera widget](https://docs.appsmith.com/reference/widgets/camera) onto the canvas.&#x20;
 * Click on the **+** icon next to the **queries/js** and choose your S3 datasource.&#x20;
@@ -96,7 +98,9 @@ Your image will be stored in the S3 database once you run this query. Let's look
 
 #### Fetch Single File
 
-{% embed url="https://youtu.be/dVZEd8p0Y2c" %}
+<figure>
+  <object data="https://www.youtube.com/embed/dVZEd8p0Y2c?autoplay=0" width='700px' height='385px'></object> 
+</figure>
 
 * Click on the + icon next to the **queries/js** and choose your **S3 datasource.**
 * Rename the query.
@@ -119,7 +123,9 @@ Once you have added all the required parameters:
 
 #### Fetch All Files
 
-{% embed url="https://youtu.be/UzV5LZ0kvDQ" %}
+<figure>
+  <object data="https://www.youtube.com/embed/UzV5LZ0kvDQ?autoplay=0" width='700px' height='385px'></object> 
+</figure>
 
 * Click on the + icon next to the **queries/js** and choose your **S3 datasource.**&#x20;
 * Rename the query.&#x20;

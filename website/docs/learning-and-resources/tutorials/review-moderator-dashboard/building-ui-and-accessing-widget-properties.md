@@ -22,9 +22,11 @@ Now open the tables property pane, and only display the following columns:
 
 Below is the video to build the UI and edit table properties:
 
-{% embed url="https://youtu.be/4ET9wtFFIF0" %}
-Building the UI and Editing Table Properties
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/4ET9wtFFIF0?autoplay=0" width='700px' height='385px'></object> 
+   <figcaption align="center"><i>Building the UI and Editing Table Properties
+</i></figcaption>
+</figure>
 
 Additionally, let's make the UI more beautiful by using a Container widget. Using this, we can group multiple widgets on a minimal white-spaced background. To do this, follow the below steps:
 
@@ -38,9 +40,11 @@ Let's add some additional components that display the information whenever a par
 
 To make the UI more intuitive, let's add the location of the business. To do this, we will add a [Map Widget](../../../reference/widgets/maps.md) and display the location of the business by following the below steps:
 
-{% embed url="https://youtu.be/J_xVn-TKPXY" %}
-Adding Map Widget
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/J_xVn-TKPXY?autoplay=0" width='700px' height='385px'></object> 
+   <figcaption align="center"><i>Adding Map Widget
+</i></figcaption>
+</figure>
 
 1. Drag and drop a **Map widget** onto the canvas
 2. Open the Map widget property pane
@@ -84,9 +88,10 @@ The zoom level can be used to pinpoint the exact location.
 
 Next, let's add a few text widgets and bind all the business information under the map. You can drop text widgets onto the canvas and add their associated names and values like:
 
-{% embed url="https://youtu.be/jEhbeoc4sTE" %}
-Adding Text Widgets
-{% endembed %}
+<figure>
+  <object data="https://www.youtube.com/embed/jEhbeoc4sTE?autoplay=0" width='700px' height='385px'></object> 
+   <figcaption align="center"><i>Adding Text Widgets</i></figcaption>
+</figure>
 
 Drag the text widget onto the canvas and paste the query listed below into the text field.
 
