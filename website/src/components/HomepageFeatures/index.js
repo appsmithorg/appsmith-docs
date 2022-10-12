@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: <a href="/getting-started/start-building">Quick Start</a>,
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/getting-started.svg').default,
     description: (
       <>
         Designed to be completed in 15-30 mins. It provides you quick, hands on experience to build your first app on Appsmith.
@@ -13,8 +13,8 @@ const FeatureList = [
     ),
   },
   {
-    title: <a href="getting-started/setup">Deploy Appsmith</a>,
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: <a href="getting-started/setup">Deploy</a>,
+    Svg: require('@site/static/img/deploy-appsmith.svg').default,
     description: (
       <>
         Install Appsmith on your own infrastructure. Go
@@ -23,11 +23,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Advanced Concepts',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Core Concepts',
+    Svg: require('@site/static/img/core-concepts.svg').default,
     description: (
       <>
-        Create complex workflows with the help of advanced concepts like Custom Authentication, Access control, and more.
+        Everything you need to know about Appsmith fundamentals.
       </>
     ),
   },

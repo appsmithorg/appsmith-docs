@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/intro#how-appsmith-works">
-            Appsmith in - 100sec ⏱️
+            Get Started ⏱️
           </Link>
         </div>
       </div>

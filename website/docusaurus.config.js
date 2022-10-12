@@ -75,7 +75,7 @@ const config = {
         //... other Algolia params
       }, 
       navbar: {
-        title: '_appsmith',
+        title: 'appsmith_',
         logo: {
           alt: 'Appsmith Logo',
           src: 'img/Appsmith-Logo.png',
@@ -94,15 +94,10 @@ const config = {
           },*/
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/appsmithorg/appsmith',
-            label: 'GitHub',
-            position: 'right',
-          },
-          {
             href: 'https://app.appsmith.com',
-            label: 'Appsmith Cloud',
+            label: 'Get Appsmith',
             position: 'right',
-          },
+          }, 
           {
             href: 'https://www.appsmith.com/blog-categories/tutorial',
             label: 'Tutorials',
@@ -111,6 +106,11 @@ const config = {
           {
             href: 'https://community.appsmith.com/',
             label: 'Forum',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/appsmithorg/appsmith',
+            label: 'GitHub',
             position: 'right',
           },
         ],
@@ -122,12 +122,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentation',
-                to: '/intro',
+                label: 'Advanced Concepts',
+                to: '/advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
               },
               {
-                label: 'Tutorial',
-                to: 'https://www.appsmith.com/blog-categories/tutorial',
+                label: 'Reference',
+                to: '/',
+              },
+              {
+                label: 'Resources',
+                to: 'learning-and-resources/tutorials',
               },
             ],
           },
@@ -143,8 +147,8 @@ const config = {
                 href: 'https://discord.com/invite/rBTTVJp',
               },
               {
-                label: 'Support',
-                href: 'mailto:support@appsmith.com',
+                label: 'Twitter',
+                href: 'https://twitter.com/theappsmith?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
               },
             ],
           },
@@ -152,16 +156,16 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'FAQ',
-                to: '/getting-started/faq',
-              },
-              {
                 label: 'Blog',
                 to: 'https://www.appsmith.com/blog',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/appsmithorg/appsmith',
+              },
+              {
+                label: 'YoutTube',
+                to: 'https://www.youtube.com/c/Appsmith',
               },
             ],
           },
