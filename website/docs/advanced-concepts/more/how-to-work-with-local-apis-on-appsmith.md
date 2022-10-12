@@ -17,7 +17,7 @@ With your on-premises Appsmith instance running on the same system, you may use 
 
 You can use `` [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
 
-:::tip
+:::info
 You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.&#x20;
 :::
 

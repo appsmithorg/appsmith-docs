@@ -8,7 +8,7 @@ After developing your app further, you’d want to sync it with your repository.
 
 In the deploy window, enter your commit message and click on `Commit and Push` to update your repository with the latest changes.
 
-:::tip
+:::info
 Once you commit and push changes, the changes are also published for the app viewers. Please note that the deployed version of one branch does not affect the other. For example, if you are working on a feature branch `f1` and you deploy the changes from `f1` branch, it will not affect the changes of the master branch
 :::
 

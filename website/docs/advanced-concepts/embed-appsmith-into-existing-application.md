@@ -55,7 +55,7 @@ Include the meta tag in the head to ensure that the embedded application renders
 
 ### Opening the HTML Page
 
-:::tip
+:::info
 If you are opening the HTML page as a`file,`then the browser won't allow you to do that. The HTML file needs to come from a server.
 :::
 
@@ -65,7 +65,7 @@ After creating the HTML page, save it as `cs_dashboard.html` and have an HTTP se
 
 Once you have created your HTML file, create a new `app.js`` `**``** file. Paste the below-mentioned code and edit your HTML file name.
 
-```
+```markup
 const http = require('http');
 const fs = require('fs');
 

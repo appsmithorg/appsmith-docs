@@ -23,6 +23,6 @@ sidebar_position: 2
 * Go back to the Git connection window and [configure the user settings](connecting-to-git-repository.md#user-configurations) and click on **Import.**
 * Once the import is complete, you’ll see a data source configuration modal where you can configure the data sources used by the imported Application. We do not export any configuration values used for connecting a data source. So either you have to configure it in the data source configuration modal, or you can skip this and choose to configure it later.
 
-:::tip
+:::info
 If the imported workspace already has a data source with the same name but a different type, the import will fail due to name conflicts. For example, suppose a git-connected application has a MongoDB data source - "movies." You are importing it to a workspace that has a Postgres data source also named "movies". In such a case, the import will fail.
 :::
