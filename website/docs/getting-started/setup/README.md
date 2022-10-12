@@ -18,7 +18,7 @@ Cloud-hosted version is available over the internet, which makes it easy for use
 
 You can choose to deploy Appsmith on your own infrastructure. It's often useful when you want to plug it into existing infrastructure without the need to maintain a different setup. It enables you to take advantage of what your infrastructure has to offer and extend it to Appsmith.&#x20;
 
-:::tip
+:::caution
 Appsmith collects [usage data](../../product/telemetry.md) to serve you better. You can choose to [opt out](../../product/telemetry.md#disable-telemetry) at any time.
 :::
 
@@ -34,7 +34,7 @@ Appsmith provides a [secured environment](../../product/security.md) for cloud-h
 
 A self-hosted instance could allow you to connect with a database running on the same machine/intranet and use it to build apps.
 
-:::tip
+:::info
 Using a **cloud-hosted instance** would require the ability to access the **internal databases**. For example, you would be required to use tunneling services like [ngrok](../../advanced-concepts/more/how-to-work-with-local-apis-on-appsmith.md#using-ngrok) to expose your internal database to the internet or whitelist Appsmith cloud's external IP addresses to build apps.
 :::
 
@@ -44,7 +44,7 @@ Appsmith uses MongoDB to store app data and Redis to store session information a
 
 You can configure more flexible updates, schedules, and other maintenance activities for a self-hosted instance. You can follow the steps to configure \[maintenance window and schedule auto updates]\(Link to Maintenance window page).
 
-:::tip
+:::caution
 The self-hosted version isn't air-gapped and reaches out to the Appsmith cloud. For example, to fetch release notes about product updates. It helps you stay updated with the latest releases. If you would like a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
 :::
 
@@ -61,7 +61,7 @@ It's simple and quick to deploy Appsmith. Please ensure that your system has the
 * Two virtual CPUs \[vCPU]
 * A four GB of memory&#x20;
 
-:::tip
+:::info
 On Amazon Web Services(AWS), a [t3.medium](https://aws.amazon.com/ec2/instance-types/t3/) instance would be ideal for installing Appsmith.
 :::
 
@@ -93,7 +93,7 @@ With a variety of[ deployment options](installation-guides/), choose the one tha
 
 And [more](installation-guides/).
 
-:::tip
+:::info
 [DigitalOcean](https://marketplace.digitalocean.com/apps/appsmith) or [AWS](https://aws.amazon.com/marketplace/seller-profile?id=f12088a7-c7be-46e5-8c5d-9cd7a16c8c1e) offers a one-click deployment from their marketplaces.
 :::
 
@@ -113,6 +113,6 @@ You can also effectively [manage your self-hosted instance](instance-management/
 
 Deploying Appsmith as a self-hosted instance has its own perks - having your data and apps hosted on your infrastructure. It's also easier to manage things such as \[backups]\(Link to Appsmithctl page) and scaling that follow the rules across deployed instances. Get started by following the \[installation guides]\(link to the installation guide) that work for you.
 
-:::tip
+:::caution
 Are you having trouble deploying Appsmith? Check out the [deployment troubleshooting guide](../../help-and-support/troubleshooting-guide/deployment-errors.md) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you **know** the error and want to **reinstall**, **delete** the **installation** and **templates** folder, and **execute** the script **again**.
 :::
