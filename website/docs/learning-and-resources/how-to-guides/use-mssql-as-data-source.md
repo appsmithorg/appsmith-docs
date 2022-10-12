@@ -1,5 +1,6 @@
 ---
 description: Guide on how to use MsSQL as a data source on Appsmith
+sidebar_position: 11
 ---
 
 # How to use MS SQL as a data source on Appsmith

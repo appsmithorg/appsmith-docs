@@ -2,6 +2,8 @@
 description: >-
   This is the first part of the tutorial, in which you'll learn how to set up
   your appsmith app.
+sidebar_position: 1
+
 ---
 
 # Setting up the App

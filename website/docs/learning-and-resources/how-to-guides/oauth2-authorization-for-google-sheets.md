@@ -1,5 +1,6 @@
 ---
 description: How to add OAuth2 Authorization for Integrating Google Sheets into Appsmith
+sidebar_position: 8
 ---
 
 # OAuth2 Authorization for Google Sheets

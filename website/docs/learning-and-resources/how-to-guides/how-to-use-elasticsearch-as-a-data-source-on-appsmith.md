@@ -1,5 +1,6 @@
 ---
 description: Guide on how to use ElasticSearch as a data source on Appsmith
+sidebar_position: 15
 ---
 
 # How to Use Elasticsearch as a Datasource on Appsmith

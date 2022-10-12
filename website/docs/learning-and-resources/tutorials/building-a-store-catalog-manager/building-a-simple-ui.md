@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Building a Simple UI
 
 In this section, you will walk through creating a simple web page that displays products fetched from a database in a table for the **Oakry** store.

@@ -1,5 +1,6 @@
 ---
-description: JavaScript guide for building apps on Appsmith
+description: JavaScript guide for building apps on Appsmith,
+sidebar_position: 2
 ---
 
 # Writing JavaScript in Appsmith

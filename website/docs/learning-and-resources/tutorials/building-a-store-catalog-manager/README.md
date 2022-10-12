@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Building a Store Catalog Manager
 
 This tutorial shows you how to build a feature-complete **Grocery Catalog** application for an online grocery store called Oakry using [Appsmith](https://app.appsmith.com/). The application we will be building is a multi-page dashboard used by Oakry's Catalog Managers to:

@@ -1,3 +1,6 @@
+---
+sidebar_position: 7
+---
 # How to work with Google Sheets on Appsmith
 
 With Appsmith's inbuilt Google Sheet Integration Plugin, you can use any Google Sheet as a data source or a backend to build powerful applications. In this tutorial, we'll build a CRUD app that allows us to store and update investor contact information on top of Google Sheet with Appsmith.

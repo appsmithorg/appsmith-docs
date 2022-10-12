@@ -1,5 +1,6 @@
 ---
 description: Guide on how to use Redshift as a Data Source on Appsmith
+sidebar_position: 14
 ---
 
 # How to Use Redshift as a Datasource on Appsmith

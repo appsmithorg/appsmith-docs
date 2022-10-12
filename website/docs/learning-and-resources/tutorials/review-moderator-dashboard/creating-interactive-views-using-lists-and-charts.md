@@ -2,6 +2,8 @@
 description: >-
   In this final part of the tutorial, you'll learn how to build an interactive
   UI using widgets like buttons, lists, charts, and more.
+sidebar_position: 4
+
 ---
 
 # Creating Interactive Views
@@ -204,12 +206,12 @@ Awesome! You should see all the data plotted on the chart widget. Similarly, you
 With that, you have created an interactive and beautiful dashboard on Appsmith.
 
 Below is the live link to the fully configured app.
-
+<a  href="https://app.appsmith.com/applications/60caeaa2d79dbb613bcb7761/pages/60caeaa2d79dbb613bcb7763" target="_blank"><button name="button" style = {{color: '#ff6d2c'}}>View App in New Tab</button></a>
+<br/>
 <figure>
   <object data="https://app.appsmith.com/applications/60caeaa2d79dbb613bcb7761/pages/60caeaa2d79dbb613bcb7763" width='800px' height='480px'></object> 
    <figcaption align="center"><i>Dasbhboard on Appsmith</i></figcaption>
 </figure>
-
 
 ### Sharing your Application
 

@@ -2,6 +2,7 @@
 description: >-
   Whitelist the IP of the appsmith instance in your AWS database to access it
   from within your applications
+sidebar_position: 9
 ---
 
 # Whitelist Appsmith on AWS

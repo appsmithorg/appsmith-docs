@@ -2,6 +2,8 @@
 description: >-
   In this part of the tutorial, you'll learn how to build a UI and customize
   your widgets.
+sidebar_position: 3
+
 ---
 
 # Building UI and Accessing Widget Properties

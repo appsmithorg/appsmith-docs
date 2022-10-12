@@ -2,6 +2,8 @@
 description: >-
   In this part of the tutorial, you'll learn how to connect your app to a
   datasource and write a query.
+sidebar_position: 2
+
 ---
 
 # Connecting to Data Source

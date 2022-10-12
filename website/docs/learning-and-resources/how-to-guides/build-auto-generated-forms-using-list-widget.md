@@ -1,5 +1,6 @@
 ---
 description: Guide on how to build auto-generated forms using the list widget
+sidebar_position: 4
 ---
 
 # How to build auto-generated forms using List widget

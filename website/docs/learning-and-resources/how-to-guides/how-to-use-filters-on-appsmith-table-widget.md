@@ -1,5 +1,6 @@
 ---
 description: In this guide, you'll learn how to use filters on the Table widget.
+sidebar_position: 3
 ---
 
 # How to use filters on Appsmith table widget

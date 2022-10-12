@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Creating Interactive Views
 
 By now, you've built a multi-page tool that allows you to view all products and add new products to the catalog. The following tutorial walks you through building the functionality to edit a product. During this, you'll learn to:

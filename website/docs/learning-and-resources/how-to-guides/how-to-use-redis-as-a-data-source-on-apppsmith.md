@@ -1,5 +1,6 @@
 ---
 description: This guide helps you to connect your Redis database to Appsmith
+sidebar_position: 13
 ---
 
 # How to use Redis as a Datasource on Appsmith

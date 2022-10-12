@@ -1,5 +1,6 @@
 ---
 description: Guide on how to use Notion as a Database on Appsmith
+sidebar_position: 12
 ---
 
 # How to Use Notion as a Database on Appsmith

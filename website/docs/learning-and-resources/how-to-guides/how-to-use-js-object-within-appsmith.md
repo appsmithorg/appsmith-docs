@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # How to Use JS Object Within Appsmith?
 
 JavaScript(JS) is a programming language used on both the client and the server-side. It also supports the creation of an object known as JavaScript Object (JS Object). Javascript object is a collection of properties designated by a key-value pair. In this guide, you’ll learn how to use JavaScript(JS) objects within Appsmith.

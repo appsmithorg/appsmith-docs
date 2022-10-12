@@ -1,5 +1,6 @@
 ---
 description: Overview of the tutorial
+sidebar_position: 1
 ---
 
 # Review Moderator Dashboard
