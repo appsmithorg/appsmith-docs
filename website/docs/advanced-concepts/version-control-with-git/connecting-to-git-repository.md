@@ -58,6 +58,6 @@ Finally, click on _**connect**_, and if the connection is successful, your repos
 
  <object data="https://www.youtube.com/embed/Z67SfBpKrnk" width='860px' height='515px'></object> 
 
-:::tip
+:::info
 In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [Enterprise Edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
 :::

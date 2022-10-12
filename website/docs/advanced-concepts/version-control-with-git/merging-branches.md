@@ -22,7 +22,9 @@ You can resolve it in the following way:
 * Resolve the conflicts on remote branches (Between origin/f1  and  origin/main );
 * Once the conflicts are resolved, merge this new branch(origin/f1 ) into the old branch( origin/main );
 
+`
 ( origin/main  **<-** origin/f1 )
+`
 
 * Pull the main branch again in your app. Now you should have all the changes from the  feature/f1  branch;
 * Delete branch  origin/feature/f1  on remote;

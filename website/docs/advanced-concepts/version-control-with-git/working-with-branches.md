@@ -12,7 +12,7 @@ To create a new branch -
 
 However, if you create a new branch, it will have the uncommitted changes of your parent branch.
 
-:::tip
+:::info
 * Branch names should **not** start with `origin/` since this prefix is used to distinguish between local and remote versions of a branch.
 * Checking out a remote branch with a local counterpart already available would result in an error.
 * If you create a new branch, it will have the uncommitted changes of your parent branch. When you switch to another branch, the uncommitted changes in your current branch won’t be carried over to the destination branch. In both cases, the current branch will retain the uncommitted changes.
@@ -30,7 +30,7 @@ Syncing the branches won’t merge any change you’ve made on the remote branch
 
 Similar to the Git flow, you can delete a branch in Appsmith that is no longer needed.&#x20;
 
-:::tip
+:::info
 You can delete any branch other than the default branch. Please make sure that you are not editing the branch you want to delete.&#x20;
 :::
 

@@ -15,7 +15,7 @@ On Appsmith, you can migrate all Appsmith data from one instance to another or j
 
 ## **Restore the backup on the new VM:**
 
-:::tip
+:::caution
 The restore would end up deleting all the existing data in the mongo database of the newly installed appsmith instance
 :::
 
@@ -28,7 +28,7 @@ The restore would end up deleting all the existing data in the mongo database of
 
 You can import or export the desired application to any workspace, either in the same or a different Appsmith instance.
 
-:::tip
+:::info
 Applications are forward compatible from Appsmith version 1.6.9.&#x20;
 
 Applications built in an older version of an Appsmith instance will work when imported into a newer version of an Appsmith instance.
@@ -68,7 +68,7 @@ Follow the steps below to import an exported (JSON file) application -
 3. In the import pop-up window, click on import from file and pick the JSON file from your system’s memory.
 4. Once the file is imported, you will see a datasource configuration modal (if the imported app had a datasource connection) where you can configure the datasources used by the imported application.
 
-:::tip
+:::info
 As a security measure, we do not export any config values used for the connecting datasource during the import operation. So either you have to configure it in the datasource configuration modal, or you can skip this and choose to configure it later
 :::
 

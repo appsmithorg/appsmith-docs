@@ -7,8 +7,8 @@ Version Control with Git allows you to version control your apps by connecting t
 
 **Note:**
 
-:::tip
-Version Controlåå works with any Git hosting service that supports SSH protocol.
+:::info
+Version Control works with any Git hosting service that supports SSH protocol.
 :::
 
 
@@ -22,7 +22,7 @@ To get started with Version control with Git in Appsmith -
 * [Connect to your Git Repository](connecting-to-git-repository.md)
 * [Import from a Git Repository](connecting-to-git-repository.md#importing-from-a-repository)
 
-:::tip
+:::info
 In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
 :::
 
