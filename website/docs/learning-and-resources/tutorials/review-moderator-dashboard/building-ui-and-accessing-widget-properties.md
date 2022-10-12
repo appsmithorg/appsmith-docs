@@ -10,9 +10,9 @@ description: >-
 
 As you can see, the table widget has a lot of data from the query, but say you might want to show only a few columns and hide the rest of them for better clarity.
 
-{% hint style="info" %}
+:::info
 You can open the property pane, find the columns, and toggle the eye icon. It will hide the columns from the table.
-{% endhint %}
+:::
 
 Now open the tables property pane, and only display the following columns:
 
@@ -76,9 +76,9 @@ You can use the **`selectedRow`** property for the Table widget to access the da
 
 Now select any row from the table, and the map automatically updates with the business location mentioned.
 
-{% hint style="info" %}
+:::info
 The zoom level can be used to pinpoint the exact location.
-{% endhint %}
+:::
 
 ### Adding Text Widgets and Binding Data
 

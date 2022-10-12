@@ -56,9 +56,9 @@ export default {
 
 In Appsmith, you can use the inherent JavaScript way of accessing or creating JS objects in the functions only that are defined within a JS Object.
 
-{% hint style="info" %}
+:::info
 The point to remember is that Appsmith provides access to your JS objects across the Appsmith platform, and for this, we export the JS objects. Thus, the JS Object notation should start with **`export default`**.
-{% endhint %}
+:::
 
 If you do not start the notation with `export default`, the JS object will be invalid and can’t be defined as Appsmith does not recognize them and throws an error.
 

@@ -51,9 +51,9 @@ Writing a query for Business Reviews Page
 select * from yelp_reviews where business_id = {{appsmith.store.business_id}}
 ```
 
-{% hint style="info" %}
+:::info
 Make sure you perform this query for the "Business Reviews" page.
-{% endhint %}
+:::
 
 We're selecting all the rows from the **`yelp_review`** table and filtering them by the **`business_id`** variable you've saved in the appsmith store while navigating to the new page. Hence, you've used it for the WHERE clause using the mustache syntax. **Now hit RUN!**
 
@@ -92,9 +92,9 @@ To get name - {{getBusinessDetails.data[0].name}}
 To get business_id-{{getBusinessDetails.data[0].business_id}}
 ```
 
-{% hint style="info" %}
+:::info
 Tip: You can also run queries or APIs using `CMD + return` or `CTRL + enter` shortcuts on Appsmith!
-{% endhint %}
+:::
 
 ### **Using List Widget to display the Reviews**
 
@@ -164,9 +164,9 @@ After finishing this, you can customize the text widget, find the background-col
 
 The chart widget on Appsmith is used to view the graphical representation of your data. It's available in multiple configurations; however, if you want to do advanced visualization, you can choose the custom configuration and use `Custom Fusion Chart Configuration.`
 
-{% hint style="info" %}
+:::info
 There are almost 100+ variants of Fusion Chart Configuration; learn more from the official docs[ here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
-{% endhint %}
+:::
 
 Appsmith uses the Chart Series property head to supply the data and details related to identifying the data points.
 

@@ -13,7 +13,7 @@ Appsmith supports various data sources and lets you write queries on them to per
 1. **Business Table**: It contains detailed information about a few businesses filtered from the Yelp Data.
 2. **Review Table**: This table has reviews associated with the businesses listed in the business table.
 
-{% hint style="info" %}
+:::info
 Appsmith supports various databases like:
 
 * [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](../../../reference/datasources/querying-amazon-s3.md)
@@ -23,7 +23,7 @@ Appsmith supports various databases like:
 * [Firestore](../../../reference/datasources/querying-firestore.md)
 * [MongoDB](../../../reference/datasources/querying-mongodb/)
 * [MySQL](../../../reference/datasources/querying-mysql.md), and a [lot more](../../../reference/datasources/).
-{% endhint %}
+:::
 
 Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
 
@@ -45,9 +45,9 @@ User: yelp
 Password: that-annoying-yelper
 ```
 
-{% hint style="info" %}
+:::info
 To verify if this data source is valid or not, you can click on the `Test` button on your mid-bottom right. You should see a pop-up with the connection status.
-{% endhint %}
+:::
 
 Now, save your data source by clicking the **Save** button. You'll see a success pop-up on the top-right after successfully adding your DB.
 
@@ -75,9 +75,9 @@ Just like that, you should see the response from the DB Query in the Response Pa
 
 Next, let's bind this data onto the powerful [table widget](../../../reference/widgets/table/) of Appsmith!
 
-{% hint style="info" %}
+:::info
 All names within a page must be unique, including widget names, query names, or API names.
-{% endhint %}
+:::
 
 ### Binding Queries onto Widgets
 
@@ -89,9 +89,9 @@ The First and simple method is to open the query window and select the table opt
 Adding a table widget from the query window
 {% endembed %}
 
-{% hint style="info" %}
+:::info
 Note that the above method would also automatically bind the data from the query for you.
-{% endhint %}
+:::
 
 Let's look at another method for adding a table widget to your canvas.
 
@@ -99,17 +99,17 @@ Let's look at another method for adding a table widget to your canvas.
 2. You'll find a great set of UI widgets here that you can use to build the application.
 3. Drag and drop an **`Table widget`** onto the canvas.
 
-{% hint style="info" %}
+:::info
 Appsmith provides various widgets, like [tables](../../../reference/widgets/table/), [lists](../../../reference/widgets/list.md), [buttons](../../../reference/widgets/button/), [maps](../../../reference/widgets/maps.md), [audio](../../../reference/widgets/audio.md), [charts](../../../reference/widgets/chart.md), [forms](../../../reference/widgets/form.md), and more.
-{% endhint %}
+:::
 
 You'll notice a property window on the right side of the program as soon as you drag the widget into the canvas; you can call it the **Widget Property Pane**. All of the table's configurations and customization properties can be found here. Here's a screenshot of the table widget and its property pane:
 
 ![Appsmith Table Widget and Property Pane](/img/issue_12550_img3.png)
 
-{% hint style="info" %}
+:::info
 You can access the docked property pane of any widget, by simply clicking on the widget from the canvas.
-{% endhint %}
+:::
 
 Let's look at the Table's Property Pane:
 
@@ -117,17 +117,17 @@ Let's look at the Table's Property Pane:
 
 **Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click on the cog icon and set the column data type individually.
 
-{% hint style="info" %}
+:::info
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
-{% endhint %}
+:::
 
 These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)
 
 Now, in the **`Table Data`** property, let's bind the response from the DB Query. To do this, you'll have to use the Moustache Operator.
 
-{% hint style="info" %}
+:::info
 In Appsmith, the mustache operator **`{{ /* This is JavaScript */ }}`** can be used anywhere to write JavaScript. For example, when binding data onto widgets, sending params to APIs, sharing data across pages, etc.
-{% endhint %}
+:::
 
 Now copy the following onto the `Table Data` property:
 

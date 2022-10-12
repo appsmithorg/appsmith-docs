@@ -36,9 +36,9 @@ After those steps, your new modal should look like this:
 
 ![](/img/as_storeTutorial_formModal.png)
 
-{% hint style="info" %}
+:::info
 If the modal window gets closed at any point, you can access it again in the editor by looking in the Explorer pane to the left of the screen, finding it in the Widgets tree, and clicking its name to open it back up.
-{% endhint %}
+:::
 
 Click on the **Edit** button of any row to ensure that the **EditProductModal** opens as intended. After that is working, let's populate the form with widgets! It should be built such that:
 
@@ -47,11 +47,11 @@ Click on the **Edit** button of any row to ensure that the **EditProductModal** 
 
 Click [here](using-forms.md) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
 
-{% hint style="info" %}
+:::info
 **Naming:**
 
 The names of widgets inside your **EditProductModal** are the same as that of the names of widgets inside **AddProductForm**. This is valid because they both belong to different parent pages. Names only need to be unique within the page scope; a widget and an API within the same parent page can't share the same name.
-{% endhint %}
+:::
 
 Like **AddProductForm**, all the form-fields in **EditProductModal** are empty. However, to edit a product, you'll want them to be pre-filled with the values of the product that you want to update. This means that:
 
@@ -73,14 +73,14 @@ From within our form, we've accessed data from the selected row of our table via
 
 Finally, note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `ProductsTable.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `ProductsTable.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
-{% hint style="info" %}
+:::info
 **Accessing data across pages:**
 
 There are two ways to access a widget's properties or an APIs/DB Query's results _from another page_:
 
 1. Store the data in your browser cache using the [storeValue](broken-reference/) function so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](broken-reference/) function.
-{% endhint %}
+:::
 
 Let's now set a default value for **MrpInput**:
 
@@ -135,11 +135,11 @@ This is a mock API exposed by Appsmith to help you learn API basics. It doesn't 
 
 By using the mustache template in the URL (step 7), you're providing the ID of the product to be updated. To build the request body, you're writing JavaScript within mustaches to provide the new values for the product details.
 
-{% hint style="info" %}
+:::info
 **A word on sharing widget properties:**
 
 Here, you are accessing widgets' properties from within an API query. This is in line with what you learned in the previous sections - that you can access a widget's properties from other widgets, APIs, and DB Queries. Regardless of where you access a widget's properties from, you use the same naming syntax to refer to the objects. That is, you will access a value by its`{{<widgetname>.<property_name>}}` no matter where you are in the editor.
-{% endhint %}
+:::
 
 ## Configuring multiple actions on UI events
 
@@ -164,9 +164,9 @@ Let's see what you did there:
 
 Try to edit a product, and click **Confirm** to verify that it works - You should now see success/error notifications in the top right of the screen.
 
-{% hint style="info" %}
+:::info
 Due to the internal configuration of the mock database and API, you might not see the changes from your PUT request reflected in the table. However, if your app returns a success message, then don't worry - you did it correctly!
-{% endhint %}
+:::
 
 Currently, the form modal always stays open after submission; let's configure it to close the form if the update is successful. On error, we'll keep the form open for making further edits.
 
@@ -197,7 +197,7 @@ Note that since these actions happen asynchronously, they will all run in parall
 
 Try to edit a product again and verify that the form-submit works as expected.
 
-{% hint style="info" %}
+:::info
 **GUI vs JavaScript: What to use when?**
 
 You'll often be able to customize app behavior more finely by writing JavaScript, as compared to only using the GUI.
@@ -207,7 +207,7 @@ For example, configuring multiple actions to be run in **onSuccess** is supporte
 Similarly, to configure conditional behavior, writing ternary conditions in JavaScript is easier and more extensible; hence the GUI doesn't provide for it.
 
 We recommend that you spend some time fiddling with JavaScript on Appsmith!
-{% endhint %}
+:::
 
 ## Sharing your app
 

@@ -60,9 +60,9 @@ SELECT * FROM users where id = {{Table1.selectedRow.Id}};
 
 Appsmith internally replaces `{{Table1.selectedRow.Id}}` with a question mark `(?)`. The payload inserts params one by one, ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution. Thus, translating an Appsmith query into a prepared statement.
 
-{% hint style="info" %}
+:::info
 Appsmith first **sanitizes** each input so that the apps you build on Appsmith are **protected** against **SQL injection**.
-{% endhint %}
+:::
 
 For example, your query has multiple bindings as below:
 
@@ -72,9 +72,9 @@ SELECT * FROM users where id = {{Table1.selectedRow.Id}} and name = {{Table1.sel
 
 For the above query, the first binding for **Id** `{{Table1.selectedRow.Id}}` is set as the first parameter and second binding for **name** `{{Table1.selectedRow.name}}` as second parameter.
 
-{% hint style="info" %}
+:::info
 The multiple bindings added to the Appsmith queries are translated into the number of parameters that will be supplied to a prepared statement.
-{% endhint %}
+:::
 
 ### Prepared Statement Support
 
@@ -100,9 +100,9 @@ To use prepared statements for a datasource, you'll have to enable the prepared 
 How to enable a prepared statement?
 {% endembed %}
 
-{% hint style="info" %}
+:::info
 Whenever you **create a new query**, the **prepared statement setting** is **enabled**. You can **turn it off manually** if you wish to.
-{% endhint %}
+:::
 
 You can choose to enable or disable the prepared statement by using the `Use Prepared Statement` toggle available on the **Query** screen or navigate to the **Settings** tab where the same toggle `Use Prepared Statement` is available.
 
@@ -114,9 +114,9 @@ You can choose to enable or disable the prepared statement by using the `Use Pre
 
 ![Enable or Disable Prepared Statement from Settings Tab](</img/How-to-guide_Prepared_Statements__Enable_Prepared_Statement__Query__Settings_tab.png>)
 
-{% hint style="info" %}
+:::info
 Both the toggles `Use Prepared Statement`work in sync, and you can choose any to enable or disable the prepared statements.
-{% endhint %}
+:::
 
 The [above datasources have some syntactic changes](how-to-use-prepared-statements.md#prepared-statement-support) in query creation. However, you can enable or disable the prepared statements for almost every scenario, as illustrated below.
 
@@ -130,9 +130,9 @@ As shown in the code snippet below, you can dynamically add the data binding emb
  SELECT * FROM USERS WHERE ID = {{Table1.selectedRow.Id}}
 ```
 
-{% hint style="info" %}
+:::info
 You can **only** have **bindings** for the **data supplied** to the **columns** in the **where** clause while **using prepared statements**.
-{% endhint %}
+:::
 
 Below are some of the example use cases showcasing when and how you can use prepared statements:
 
@@ -148,9 +148,9 @@ Insert into users (name, email) values({{userRegistrationForm.data.name}}, {{use
 
 Here, `userRegistrationForm` is the name of the [form](../../reference/widgets/form.md) widget, and `name` and `email` are the names of the input widget embedded into the [form](../../reference/widgets/form.md).
 
-{% hint style="info" %}
+:::info
 You can use **join queries** or **subqueries** to have **dynamic data binding** as long as the **query** is **static** and **only** **data** bindings are added to the **where** clause.
-{% endhint %}
+:::
 
 **Data Type Cast**
 
@@ -190,9 +190,9 @@ SELECT * from users where status in = ANY ({{userStatus.selectedOptionValues}})
 
 The above query will bind the parameters and sanitize the values for your queries.
 
-{% hint style="info" %}
+:::info
 The **`= ANY`** combination is **supported** on [**PostgreSQL**](../../reference/datasources/querying-postgres.md), but [**MySQL**](../../reference/datasources/querying-mysql.md) **doesn’t** **support** it. For [**MySQL**](../../reference/datasources/querying-mysql.md), when you have a dynamic array binding, you'll have to use it by **disabling prepared statements**.
-{% endhint %}
+:::
 
 #### **Static Array Length**
 
@@ -236,9 +236,9 @@ SELECT * FROM users WHERE {{ !!Input1.text ? "name =" +  Input1.text : "name IS 
 
 For the above scenario, also turn off the prepared statement. The query can’t be pre-compiled and will be evaluated as a new query for every run, as the where clause is dynamically generated and evaluated at runtime.
 
-{% hint style="info" %}
+:::info
 A **prepared statement** **requires** you to supply **a static part of the query** to understand the **type of operation** (Create, Read, Update or Delete) performed on the database table (Table name) and the **columns** that will be used in the **where** clause to filter the data from the database table.
-{% endhint %}
+:::
 
 ## **Quick Tips**
 

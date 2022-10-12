@@ -25,9 +25,9 @@ The new app comes with auto-generated directories that establish an Appsmith app
 
 ![Application's dashboard](/img/screenshot_2022-05-04_at_7.19.09_pm.png)
 
-{% hint style="info" %}
+:::info
 Entity Explorer is where you can create and organize UI widgets, queries / JS objects, and data sources. You can also find different libraries under dependencies that you can utilize under these sections.
-{% endhint %}
+:::
 
 Now, let's rename the page from **Page1** to **Business Details**; you can do this by double-clicking on the existing name.
 

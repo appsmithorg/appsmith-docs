@@ -25,9 +25,9 @@ First, to add new products to the catalog, you'll need to create a new [form wid
 
 The created form does not have any input fields. Now, add a new [input widget](../../../reference/widgets/input.md) onto the empty form (_AddProductForm_) by simply selecting it and dropping it onto the canvas. Rename the input widget to **`ProductNameInput`**.
 
-{% hint style="info" %}
+:::info
 Having trouble dragging your Input widget onto your Form widget? Try dragging it more quickly! Widgets will automatically adjust their size and position to make room for any new widgets you drag onto the canvas. But if you drag them quickly, you can place things inside of certain widgets like the Form and Container. To learn more about how it works, take a look at this [demonstration](https://www.youtube.com/watch?v=NB8Btt0aw0g)!
-{% endhint %}
+:::
 
 Below is a screenshot of how your form should look:
 
@@ -46,9 +46,9 @@ You can also configure input fields on Appsmith. For example, you can set data t
 
 The data type property sets the allowed data-type of input -- in this case, the user may only provide text. However, based on your use cases you can change it to a number, password, or an email. The **Required** switch makes the field mandatory.
 
-{% hint style="info" %}
+:::info
 The form-submit button is automatically disabled if no input is provided for a mandatory field. To check out more properties and configurations, check out the docs [here](../../../reference/widgets/input.md#properties).
-{% endhint %}
+:::
 
 ## Adding a Select Widget to the Form
 
@@ -113,13 +113,13 @@ By extension, you can transform any data into the desired format and type. For e
 
 Now our **Options** field is easier to read, and much easier to update in the future if we need to add or remove values!
 
-{% hint style="info" %}
+:::info
 **Data Transformation:**
 
 You may wish to define a JavaScript function that modifies/transforms the shape or appearance of your data before it is rendered by a widget. For example, you could include methods to check whether input records match a particular condition, and include or filter out records based on the result.
 
 Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](../../../core-concepts/writing-code/ext-libraries.md) to transform data in any widget, API, or DB Query.
-{% endhint %}
+:::
 
 ## Wrapping up the Form
 
@@ -186,9 +186,9 @@ The only difference here is that you're using the **mustache template** to write
 
 To reiterate: Widgets, APIs, and DB Queries belonging to the same parent page can all access each other's properties and data, by referencing the desired property on that object's name.
 
-{% hint style="info" %}
+:::info
 From within our query, we've accessed the properties of our widgets! To see the various exposed properties you can access for any given widget, check the **Internal Properties** section in [widget](../../../reference/widgets/) documentation.
-{% endhint %}
+:::
 
 ## Triggering action on UI events
 
@@ -240,9 +240,9 @@ Clicking on **JS** enables two things:
 
 Note that you bound one action each with the success and error events. In [part 3](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views), you'll learn to bind more than one action with each of the events.
 
-{% hint style="info" %}
+:::info
 For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](../../how-to-guides/writing-javascript-in-appsmith.md).
-{% endhint %}
+:::
 
 ## Connecting multiple pages
 

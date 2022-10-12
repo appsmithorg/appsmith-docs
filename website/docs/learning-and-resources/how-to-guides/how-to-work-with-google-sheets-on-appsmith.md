@@ -51,7 +51,7 @@ Awesome, now that we have our data from the Google Sheet, let’s put this in a 
 {{ getInvestorDetails.data }}
 ```
 
-{% hint style="info" %}
+:::info
 **Pagination when Working with Large Data**
 
 When working with large data on Google Sheets Sheets from APIs, browsers cannot load all the data present in our sheets. For such cases, you can enable server-side pagination, on API calls. To paginate the data, follow the below steps:
@@ -59,7 +59,7 @@ When working with large data on Google Sheets Sheets from APIs, browsers cannot 
 1. Enable the server-side pagination property in the table
 2. Call the API/Query `onPageChange`
 3. Toggle pagination in the API under Pagination Tab
-{% endhint %}
+:::
 
 ### Insert Data/Rows to Google Sheet from Appsmith
 

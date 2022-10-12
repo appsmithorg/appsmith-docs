@@ -14,9 +14,9 @@ In this guide, you would learn:&#x20;
 
 To add an S3 datasource, navigate to **Explorer** >> Click plus sign (**+**) (next to S3)>> **Select S3 under Databases**. Once your S3 datasource has been created, follow these [instructions ](https://docs.appsmith.com/reference/datasources/querying-amazon-s3#connection-settings)to connect your app to the S3 database.
 
-{% hint style="info" %}
+:::info
 To upload your data to Amazon S3, you must first create an Amazon S3 bucket in one of the AWS Regions. [Create a new bucket.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
-{% endhint %}
+:::
 
 ## Upload Image Using Camera Widget
 
@@ -34,16 +34,16 @@ You can pass the below parameters to **Create a new file.**&#x20;
 * **Bucket Name:** The object key (or key name) uniquely identifies the object in an Amazon S3 bucket.
 * **File Path:** Path of the location you want to store the file. ex. images/any.
 
-{% hint style="info" %}
+:::info
 Intermediate folders not existing will be automatically created.
-{% endhint %}
+:::
 
 * **File Data Type:** You can choose between Base64 and text as your file data type. You should select base64 when uploading data from the camera widget.
 * **Expiry Duration of Signed URL (Minutes):** The timestamp at which the signed URL would expire.
 
-{% hint style="info" %}
+:::info
 The maximum expiration time for a signed URL is one week from the time of creation.
-{% endhint %}
+:::
 
 * **Content**: You can manually add data into the Content field by writing an object with a text and data property or you can fetch data from the camera widget like below:
 
@@ -70,9 +70,9 @@ The Image widget displays the images in your app. Images must have a valid base6
 * Rename the query.&#x20;
 * From the Commands drop-down, Select the method **Create a new file.**
 
-{% hint style="info" %}
+:::info
 You should select **base64** as _File Data Type_ when uploading data from the image widget.
-{% endhint %}
+:::
 
 <!-- <figure><img src="/img/uploads31.PNG" alt=""/><figcaption></figcaption></figure> -->
 ![](/img/uploads31.PNG)
@@ -129,9 +129,9 @@ Once you have added all the required parameters:
 
 Now, open the query window and select the table option on the right-side property pane. It would automatically add a table widget to your canvas.
 
-{% hint style="info" %}
+:::info
 Bind the query’s response to the Table using JavaScript in the Table Data Property **`{{list_files.data}}`**.
-{% endhint %}
+:::
 
 Now your table should list all the files present in your S3 bucket.
 
@@ -148,9 +148,9 @@ You can use an image widget to display images listed in the table widget. You ca
 
 Now, your image will be downloaded when you click on the image widget.
 
-{% hint style="info" %}
+:::info
 You can check this [Guide ](how-to-upload-to-s3.md)to learn more about Upload/Download Files from S3.&#x20;
-{% endhint %}
+:::
 
 With Appsmith S3 integration, it is possible to create apps that seamlessly connect with the S3 database and provide additional flexibility for updating and analyzing data.
 
