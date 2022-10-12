@@ -80,7 +80,7 @@ The Image widget displays the images in your app. Images must have a valid base6
 You should select **base64** as _File Data Type_ when uploading data from the image widget.
 :::
 
-<!-- <figure><img src="/img/uploads31.PNG" alt=""/><figcaption></figcaption></figure> -->
+<!-- <figure><img src="/img/uploads31.PNG" alt=""/> <figcaption align="center"><i></figcaption></figure> -->
 ![](/img/uploads31.PNG)
 
 

@@ -30,7 +30,7 @@ As mentioned in [Capture Redirect & Entity URL](./#capture-redirect-and-entity-u
 
 <figure>
   <object data="https://www.youtube.com/embed/9EFlC0PaxD0?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Adding Redirect and Entity URLs</figcaption>
+   <figcaption align="center"><i>Adding Redirect and Entity URLs</i></figcaption>
 </figure>
 
 
@@ -58,7 +58,7 @@ Metadata URL is the **quickest** and **most recommended way** to set up **SAML**
 
 <figure>
   <object data="https://www.youtube.com/embed/5YEXAhdPwOI?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Fetching the metadata URL</figcaption>
+   <figcaption align="center"><i>Fetching the metadata URL</i></figcaption>
 </figure>
 
 * To get the metadata URL, click on Single Sign-on from the sidebar and go to section 3, “**SAML Signing Certificate**.”
@@ -73,7 +73,7 @@ If you don’t have a Metadata URL but have a raw SAML metadata XML document, yo
 
 <figure>
   <object data="https://www.youtube.com/embed/nUt1__WQBOE?autoplay=0" width='860px' height='515px'></object> 
-  <figcaption>Metadata XML</figcaption>
+   <figcaption align="center"><i>Metadata XML</i></figcaption>
 </figure>
 
 * To get the metadata XML, click on Single Sign-on from the sidebar and go to section 3 “**SAML Signing Certificate**”.
