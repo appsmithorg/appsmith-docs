@@ -45,18 +45,9 @@ You can choose to integrate with any one of the following [OIDC providers](./#oi
 
 Appsmith provides some popular OIDC integrations that you can choose from. Click on the available providers to follow the exhaustive guide for integrating with them:
 
-{% content-ref url="auth0.md" %}
-[auth0.md](auth0.md)
-{% endcontent-ref %}
 
-{% content-ref url="ping-identity.md" %}
-[ping-identity.md](ping-identity.md)
-{% endcontent-ref %}
+* [Auth0](auth0.md)
+* [Ping Identity](ping-identity.md)
+* [Okta](okta.md)
+* [Active Directory](active-directory.md)
 
-{% content-ref url="okta.md" %}
-[okta.md](okta.md)
-{% endcontent-ref %}
-
-{% content-ref url="active-directory.md" %}
-[active-directory.md](active-directory.md)
-{% endcontent-ref %}

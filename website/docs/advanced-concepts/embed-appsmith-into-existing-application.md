@@ -69,7 +69,7 @@ If you are opening the HTML page as a`file,`then the browser won't allow you to 
 
 After creating the HTML page, save it as `cs_dashboard.html` and have an HTTP server serve it. This can be done in several ways:
 
-#### Serving an HTML file with Node.js&#x20;
+#### Serving an HTML file with Node.js
 
 Once you have created your HTML file, create a new `app.js`` `**``** file. Paste the below-mentioned code and edit your HTML file name.
 
@@ -88,7 +88,7 @@ http.createServer(function(req, res) {
 
 Now, in the terminal, run `node app.js`
 
-This will prompt a `running on 3000` message. Next, go to your browser and open [http://localhost:3000/](http://localhost:3000/)&#x20;
+This will prompt a `running on 3000` message. Next, go to your browser and open [http://localhost:3000/](http://localhost:3000/)
 
 This will open your HTML file.
 

@@ -16,7 +16,7 @@ Cloud-hosted version is available over the internet, which makes it easy for use
 
 ## Self-hosted
 
-You can choose to deploy Appsmith on your own infrastructure. It's often useful when you want to plug it into existing infrastructure without the need to maintain a different setup. It enables you to take advantage of what your infrastructure has to offer and extend it to Appsmith.&#x20;
+You can choose to deploy Appsmith on your own infrastructure. It's often useful when you want to plug it into existing infrastructure without the need to maintain a different setup. It enables you to take advantage of what your infrastructure has to offer and extend it to Appsmith.
 
 :::caution
 Appsmith collects [usage data](../../product/telemetry.md) to serve you better. You can choose to [opt out](../../product/telemetry.md#disable-telemetry) at any time.
@@ -59,7 +59,7 @@ You can choose from various popular platforms to deploy Appsmith, like Docker, K
 It's simple and quick to deploy Appsmith. Please ensure that your system has the following recommended configuration for optimal performance before moving forward with the deployment:
 
 * Two virtual CPUs \[vCPU]
-* A four GB of memory&#x20;
+* A four GB of memory
 
 :::info
 On Amazon Web Services(AWS), a [t3.medium](https://aws.amazon.com/ec2/instance-types/t3/) instance would be ideal for installing Appsmith.
@@ -69,27 +69,11 @@ On Amazon Web Services(AWS), a [t3.medium](https://aws.amazon.com/ec2/instance-t
 
 With a variety of[ deployment options](installation-guides/), choose the one that best suits you:
 
-
-
-{% content-ref url="installation-guides/docker/" %}
-[docker](installation-guides/docker/)
-{% endcontent-ref %}
-
-{% content-ref url="installation-guides/kubernetes/" %}
-[kubernetes](installation-guides/kubernetes/)
-{% endcontent-ref %}
-
-{% content-ref url="installation-guides/aws-ami.md" %}
-[aws-ami.md](installation-guides/aws-ami.md)
-{% endcontent-ref %}
-
-{% content-ref url="installation-guides/aws-ecs.md" %}
-[aws-ecs.md](installation-guides/aws-ecs.md)
-{% endcontent-ref %}
-
-{% content-ref url="installation-guides/digitalocean.md" %}
-[digitalocean.md](installation-guides/digitalocean.md)
-{% endcontent-ref %}
+* [Docker](docker.md)
+* [Kubernetes](kubernetes.md)
+* [AWS AMI](aws-ami.md)
+* [AWS ECS](aws-ecs.md)
+* [DigitalOcean](digitalocean.md)
 
 And [more](installation-guides/).
 
@@ -101,11 +85,11 @@ And [more](installation-guides/).
 
 You can configure and manage the self-hosted instance with the help of a [Super Admin](instance-configuration/admin-settings.md) user. There are out-of-the-box integrations like:
 
-* &#x20;[Custom authentication](instance-configuration/authentication/) to onboard your existing user base
-* [Email](instance-configuration/email/) to invite users and notify admins&#x20;
+* [Custom authentication](instance-configuration/authentication/) to onboard your existing user base
+* [Email](instance-configuration/email/) to invite users and notify admins
 * [Sign-up restriction](instance-configuration/disable-user-signup.md) to turn off signing up using the signup form or OAuth buttons, ensuring that only users you invite can signup
 
-And [more](instance-configuration/) that can be configured.&#x20;
+And [more](instance-configuration/) that can be configured.
 
 ### Manage
 

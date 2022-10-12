@@ -35,6 +35,6 @@ Note: To set up Appsmith locally using Docker, you can follow the instructions [
 
 Let's get started with the tutorial, so first, let's **set up the app.**
 
-{% content-ref url="setting-up-the-app.md" %}
-[setting-up-the-app.md](setting-up-the-app.md)
-{% endcontent-ref %}
+
+* [Setting up the app](setting-up-the-app.md)
+

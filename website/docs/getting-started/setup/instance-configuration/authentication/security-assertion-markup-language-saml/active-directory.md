@@ -35,9 +35,9 @@ As mentioned in [Capture Redirect & Entity URL](./#capture-redirect-and-entity-u
 
 
 
-1. Click on Single Sign-on from the sidebar and select **SAML**.&#x20;
+1. Click on Single Sign-on from the sidebar and select **SAML**.
 2. Go to section 1, “**Basic SAML Configuration**,” and click on edit on the Single Sign-on window.
-3. &#x20;Add the **Entity URL** (copied from the SAML configurations in Appsmith) under **Identifier (Entity ID)**.&#x20;
+3. Add the **Entity URL** (copied from the SAML configurations in Appsmith) under **Identifier (Entity ID)**.
 4. Add the **Redirect URL** (copied from the SAML configurations in Appsmith) under **Replay URL(Assertion Consumer Service URL).**
 
 ## Configure Active Directory SAML Fields in Appsmith

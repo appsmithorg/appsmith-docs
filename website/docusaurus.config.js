@@ -46,7 +46,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/appsmithorg/appsmith-docs/tree/v1.5',
+            'https://github.com/appsmithorg/appsmith-docs/blob/v1.5/website/',
         },
         blog: false,
         /*blog: {

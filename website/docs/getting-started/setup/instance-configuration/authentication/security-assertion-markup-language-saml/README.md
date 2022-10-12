@@ -56,21 +56,10 @@ Save the **Entity URL** as you’ll need it to configure these in the SAML provi
 
 Appsmith integrates with popular SAML providers that you can choose from. Click the below available providers and follow the instructions to configure them for SAML integration:
 
-{% content-ref url="auth0.md" %}
-[auth0.md](auth0.md)
-{% endcontent-ref %}
-
-{% content-ref url="ping-identity.md" %}
-[ping-identity.md](ping-identity.md)
-{% endcontent-ref %}
-
-{% content-ref url="okta.md" %}
-[okta.md](okta.md)
-{% endcontent-ref %}
-
-{% content-ref url="active-directory.md" %}
-[active-directory.md](active-directory.md)
-{% endcontent-ref %}
+* [Auth0](auth0.md)
+* [Ping Identity](ping-identity.md)
+* [Okta](okta.md)
+* [Active Directory](active-directory.md
 
 ### **Generic SAML Configuration**
 

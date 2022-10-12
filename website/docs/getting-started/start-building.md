@@ -25,7 +25,7 @@ Before you begin, you'll need to create an account on [Appsmith Cloud](https://a
 
 ![Creating a new application on Appsmith](/img/Screenshot_2022-07-21_at_11.49.02_AM.png)
 
-* You'll land on the Appsmith editor. Select the **Build with drag & drop** option to start from scratch and create your custom UI.&#x20;
+* You'll land on the Appsmith editor. Select the **Build with drag & drop** option to start from scratch and create your custom UI.
 * **'Page 1'** is the default page on the application. To rename the page, click on the Kebab menu (three vertical dots) and select **Edit Name**. Label the page '**User Information**'.
 
 ## **Connect Database**
@@ -47,13 +47,13 @@ We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
 
 ## **Create Queries and Bind Data to Widgets**
 
-* On the **Explorer** tab, navigate to the database under **DATASOURCES** → **users**&#x20;
+* On the **Explorer** tab, navigate to the database under **DATASOURCES** → **users**
 * Click on the **New Query +** button next to the datasource.
 
 ![Creating a new query on the datasource](/img/New_Query_(1).png)
 
 * Rename the query to ‘**getUsers**’
-* Write the below query to pull ten records from the '**users'** table in the database.&#x20;
+* Write the below query to pull ten records from the '**users'** table in the database.
 
 ```
 SELECT * FROM users ORDER BY id LIMIT 10;
@@ -100,7 +100,7 @@ UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob
 
 ## Deploy and Share
 
-* Click the **Deploy** button on the top right of the Appsmith editor to deploy the app and test it as an **App Viewer.**&#x20;
+* Click the **Deploy** button on the top right of the Appsmith editor to deploy the app and test it as an **App Viewer.**
 * Once deployed, you can share your application with users. Click the **Share** button on the top right of the Appsmith editor.
   * Invite specific users using their email ID
     * Select an appropriate role for the user

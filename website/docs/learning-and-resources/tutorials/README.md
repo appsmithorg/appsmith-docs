@@ -10,16 +10,16 @@ sidebar_position: 1
 
 Learn to build a feature-complete internal application on top of a real business dataset using Appsmith. The application is a multi-page dashboard that lets you browse through all the business information and moderate individual reviews provided by users.
 
-{% content-ref url="review-moderator-dashboard/" %}
-[review-moderator-dashboard](review-moderator-dashboard/)
-{% endcontent-ref %}
+
+* [Review Moderator Dashboard](review-moderator-dashboard/)
+
 
 ### Tutorial 2: Store Catalog Manager
 
 Learn to build a feature-complete **Grocery Catalog** application for an online grocery store called Oakry with Appsmith. The application we will be building is a multi-page dashboard used by catalog managers to browse through products, create, and update them.
 
-{% content-ref url="building-a-store-catalog-manager/" %}
-[building-a-store-catalog-manager](building-a-store-catalog-manager/)
-{% endcontent-ref %}
+
+* [Building a Store Catalog Manager](building-a-store-catalog-manager/)
+
 
 [See more tutorials](https://www.appsmith.com/blog-categories/tutorial)

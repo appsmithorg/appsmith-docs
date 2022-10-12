@@ -5,7 +5,7 @@ sidebar_position: 9
 
 Starting with **Appsmith v1.7.10**, you can control where your apps can be loaded in a frame.
 
-### Why should I control this?&#x20;
+### Why should I control this?
 
 Allowing your Appsmith apps to be embedded on any website makes them susceptible to clickjacking attacks. Controlling this is one of the simplest ways to avoid these attacks.
 
@@ -33,4 +33,4 @@ You can add multiple entries by separating them with spaces. For example:
 APPSMITH_ALLOWED_FRAME_ANCESTORS="'self' http://trusted-other.com http://*.mycompany.com"
 ```
 
-Under the covers, this feature uses a `Content-Security-Policy` header with the `frame-ancestors` directive. You can read more on the same [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors.).&#x20;
+Under the covers, this feature uses a `Content-Security-Policy` header with the `frame-ancestors` directive. You can read more on the same [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors.).

@@ -2,10 +2,10 @@
 
 
 
-Follow **** the steps listed below to **upgrade** your **Community Edition (CE)** to a **Business Edition (EE)** installed on **docker:**
+Follow the steps listed below to **upgrade** your **Community Edition (CE)** to a **Business Edition (EE)** installed on **docker:**
 
 :::info
-These steps can be used to **upgrade** the **docker installations only**. You can also follow the steps below for **any docker-enabled instances**, including **** [**AWS AMI** ](../installation-guides/aws-ami.md)and [**Digital Ocean**](../installation-guides/digitalocean.md).
+These steps can be used to **upgrade** the **docker installations only**. You can also follow the steps below for **any docker-enabled instances**, including [**AWS AMI** ](../installation-guides/aws-ami.md)and [**Digital Ocean**](../installation-guides/digitalocean.md).
 :::
 
 ### **Step 1: Database Backup**

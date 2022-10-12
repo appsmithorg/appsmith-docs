@@ -28,15 +28,15 @@ Syncing the branches won’t merge any change you’ve made on the remote branch
 
 ### Delete a Branch
 
-Similar to the Git flow, you can delete a branch in Appsmith that is no longer needed.&#x20;
+Similar to the Git flow, you can delete a branch in Appsmith that is no longer needed.
 
 :::info
-You can delete any branch other than the default branch. Please make sure that you are not editing the branch you want to delete.&#x20;
+You can delete any branch other than the default branch. Please make sure that you are not editing the branch you want to delete.
 :::
 
-If you want to delete a branch from Appsmith, follow the steps given below:&#x20;
+If you want to delete a branch from Appsmith, follow the steps given below:
 
-1. Click on the branch list at the bottom left corner.&#x20;
+1. Click on the branch list at the bottom left corner.
 2. Move the cursor to the branch you want to delete, hit the options button, and click on delete branch.
 
 

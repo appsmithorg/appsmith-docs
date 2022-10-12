@@ -66,18 +66,12 @@ You can configure the email for your self-hosted instance using the [Admin Setti
 Once your instance is restarted, you can use the **`SEND TEST EMAIL`** button to send a test email. You should see a message at the top of the page telling you whether the test succeeded or failed. On success, you should also receive a test email in your email inbox.
 :::
 
-## Configuration Guides&#x20;
+## Configuration Guides
 
 Follow the below guides to configure popular email service providers:
 
-{% content-ref url="sendgrid.md" %}
-[sendgrid.md](sendgrid.md)
-{% endcontent-ref %}
 
-{% content-ref url="amazon-ses.md" %}
-[amazon-ses.md](amazon-ses.md)
-{% endcontent-ref %}
+* [Sendgrid](sendgrid.md)
+* [Amazon-SES](amazon-ses.md)
+* [Gmail](gmail.md)
 
-{% content-ref url="gmail.md" %}
-[gmail.md](gmail.md)
-{% endcontent-ref %}

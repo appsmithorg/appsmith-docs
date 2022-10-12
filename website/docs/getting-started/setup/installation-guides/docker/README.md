@@ -70,7 +70,7 @@ If it is not available locally, the command above will download the Docker image
 docker logs -f appsmith
 ```
 
-You should see a message `Appsmith is Running!` once the container is ready. The message is also logged and available in server logs(<mark>`stacks/logs/backend/backend.log`</mark>).&#x20;
+You should see a message `Appsmith is Running!` once the container is ready. The message is also logged and available in server logs(<mark>`stacks/logs/backend/backend.log`</mark>).
 
 ![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
