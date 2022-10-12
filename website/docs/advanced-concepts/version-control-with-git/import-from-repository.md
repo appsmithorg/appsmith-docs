@@ -6,7 +6,12 @@ sidebar_position: 2
 
 
 
+
+   <figure>
  <object data="https://www.youtube.com/embed/B4gR4XligTo" width='860px' height='515px'></object> 
+<figcaption align = "center"><i>Import Apps from Git
+</i></figcaption>
+</figure>
 
 
 ​If you already have an Appsmith App in a Git repository, you can import it to a new workspace or a different Appsmith account. Follow the steps given below:
@@ -16,7 +21,13 @@ sidebar_position: 2
 * Add your Repository’s SSH URL and click on [Generate key](connecting-to-git-repository.md#generating-a-deploy-key).
 
 
+
+
+  <figure>
  <object data="https://www.youtube.com/embed/zrxgcI3m2lc" width='860px' height='515px'></object> 
+<figcaption align = "center"><i>Version Control with Git
+</i></figcaption>
+</figure>
 
 
 * Add the [Deploy key to your repository.](connecting-to-git-repository.md#adding-the-deploy-key-in-the-repository)​

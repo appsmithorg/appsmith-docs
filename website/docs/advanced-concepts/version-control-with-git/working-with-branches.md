@@ -40,4 +40,10 @@ If you want to delete a branch from Appsmith, follow the steps given below:&#x20
 2. Move the cursor to the branch you want to delete, hit the options button, and click on delete branch.
 
 
+
+
+ <figure>
  <object data="https://www.youtube.com/embed/Ww6cpZEkSqs" width='860px' height='515px'></object> 
+<figcaption align = "center"><i>Delete Branch 
+</i></figcaption>
+</figure>

@@ -8,8 +8,13 @@ description: >-
 
 # Custom Authentication
 
+<figure>
+<object data="https://www.youtube.com/embed/5oPcF9dXZyU" width='860px' height='515px'></object>)
+<figcaption align = "center"><i>How to Implement Custom Login/Authentication in Appsmith
+</i></figcaption>
+</figure>
 
- <object data="https://www.youtube.com/embed/5oPcF9dXZyU" width='860px' height='515px'></object> 
+
 
 A lot of applications use Authentication APIs to secure their information. You can use those API's on Appsmith to build UI or tools using a custom authentication mode. In this guide, you'll learn how to implement this custom Auth using JWTs by chaining multiple steps.
 
@@ -30,7 +35,7 @@ This is a screenshot of how the login form looks like:
 
 Let's use these values in an Auth API; usually, login API requires a username and a password. In this example, we'll be using the same, which will return a JWT token and the user details with his permission roles. Here’s how the output looks like after running the API:
 
-```
+```javascript
 {
   "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjIyNzE1MTU0LCJleHAiOjE2MjUzMDcxNTR9.rqkR0bVR5g0k8awGTYDEQ0vr15H7401zxkTxpWp9Mc4",
   "user": {
@@ -111,10 +116,23 @@ It is possible to use third-party OAuth services like Google, Twitter, Github, e
 
 
 
+
+
+
+ <figure>
  <object data="https://www.youtube.com/embed/n3XSAA7q--I" width='860px' height='515px'></object> 
+<figcaption align = "center"><i>Setting up Custom Login | Google
+</i></figcaption>
+</figure>
 
 You can also setup custom Google authentication using Supabase:
 
 
 
+
+ <figure>
+
  <object data="https://www.youtube.com/embed/mfhHUDNCkoQ" width='860px' height='515px'></object> 
+<figcaption align = "center"><i>Setting Up Custom Login | Supabase
+</i></figcaption>
+</figure>

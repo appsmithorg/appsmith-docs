@@ -5,8 +5,12 @@ description: Guide on how to embed Appsmith into an existing application
 
 # Embed Apps
 
-
+<figure>
  <object data="https://www.youtube.com/embed/l7508s-5VwU" width='860px' height='515px'></object> 
+<figcaption align = "center"><i>Embed Appsmith in your Website
+</i></figcaption>
+</figure>
+
 
 
 Tools and Dashboards are great as an app and on a website, and now, you can have it both in one go by embedding apps to your website! In this guide, you'll learn how to embed Appsmith Apps into any website.
@@ -32,9 +36,13 @@ Firstly, let's create an HTML page and call it \``cs_dashboard.html`\`. Now, add
 You'll also have to ensure your app is public to embed into other applications. You can do this by clicking on the Share option on the top toolbar and toggle the viewing option to **Public**. Here's a video example:
 
 
+
+
+<figure>
  <object data="https://www.youtube.com/embed/gD0xV-Tt1_U" width='860px' height='515px'></object> 
-
-
+<figcaption align = "center"><i>Follow these steps to make your application public
+</i></figcaption>
+</figure>
 
 Next, create an `iframe` tag and add the shareable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively.
 
