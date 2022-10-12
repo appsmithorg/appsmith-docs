@@ -33,7 +33,7 @@ Appsmith provides a [secured environment](../../product/security.md) for cloud-h
 A self-hosted instance could allow you to connect with a database running on the same machine/intranet and use it to build apps.
 
 {% hint style="info" %}
-Using a **cloud-hosted instance** would require the ability to access the **internal databases**. For example, you would be required to use tunneling services like [ngrok](../../advanced-concepts/more/how-to-work-with-local-apis-on-appsmith.md#using-ngrok) to expose your internal database to the internet or whitelist Appsmith cloud's external IP addresses to build apps.
+Using a **cloud-hosted instance** would require the ability to access the **internal databases**. For example, you would be required to use tunneling services like [ngrok](broken-reference) to expose your internal database to the internet or whitelist Appsmith cloud's external IP addresses to build apps.
 {% endhint %}
 
 Appsmith uses MongoDB to store app data and Redis to store session information and non-critical caches. You may wish to integrate with custom MongoDB or Redis servers hosted on your infrastructure. For this, you would have to [modify the configuration of environment variables and point them to the custom MongoDB/Redis](instance-configuration/custom-mongodb-redis.md) instances.

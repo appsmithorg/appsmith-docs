@@ -104,7 +104,7 @@ Style properties allow you to change the look and feel of the widget.
 The following resources will come in handy as you need to learn new tricks:
 
 * [Core Concepts](../../learning-and-resources/tutorials/review-moderator-dashboard/broken-reference/)
-* [Appsmith Framework](../appsmith-framework/)
+* [Appsmith Framework](<../appsmith-framework/README (1).md>)
 * [JavaScript Editor](../../core-concepts/writing-code/javascript-editor-beta/)
 
 ### Troubleshooting

@@ -246,5 +246,5 @@ This property contains the details of the row that triggered the action (`onSubm
 The following resources can come in handy as you need to learn new tricks:
 
 * [Core Concepts](../../../learning-and-resources/tutorials/review-moderator-dashboard/broken-reference/)
-* [Appsmith Framework](../../appsmith-framework/)
+* [Appsmith Framework](<../../appsmith-framework/README (1).md>)
 * [JavaScript Editor](../../../core-concepts/writing-code/javascript-editor-beta/)

@@ -38,29 +38,44 @@ You can also write JavaScript code for event listeners. For JavaScript code insi
 }}
 ```
 
-## Reactive
+## Configuring widgets with code&#x20;
 
-Appsmith is [Reactive](https://en.wikipedia.org/wiki/Reactive\_programming), not imperative, which means that code in Appsmith is declarative and describes the eventual state of a property.
+When data changes within your app, your widgets need to update themselves to reflect these changes. To make this happen, Appsmith follows the reactive programming paradigm.
 
-To update the property of a widget, a programmer using an imperative style would normally write a statement like this:
+Instead of managing widget properties and states with direct variable assignment in code (like `x = 5`), widgets in your applications are connected to each other and share data; when one value is updated in your app, any objects that depend on that changed value also update accordingly. Below is a quick example of using the reactive code style to update a [Button](../../reference/widgets/button/)'s label in real time by taking user input from an [Input](../../reference/widgets/input.md) widget. Take a look at the video below:
+
+{% embed url="https://youtu.be/YXo4PVrw1RQ" %}
+
+The button’s label could be set as a simple static value (like “Submit”) in its properties pane, but if you’d like that property to change at any point, it must be defined differently.
+
+When writing JavaScript to configure a widget’s property, your code should tell that widget where to look to find its data rather than explicitly setting a specific value. Consider the following example scenario:
+
+Imagine that you're creating a dashboard for viewing and editing product inventory information, and you'd like to implement an 'Edit' mode for changing values. Values shouldn't be allowed to change when 'Edit' mode is off; they can only be updated after the user clicks the 'Edit' button, and then can be saved with a 'Save' button when they're finished. In total, there are a handful of Input widgets for handling the product data and two buttons for switching 'Edit' mode on and off.
+
+In an imperative style, you might expect the Input widgets to be toggled with this kind of control:
 
 ```javascript
-// This imperative Style **incompatible** with appsmith
-if (Dropdown1.selectedOptionValue === "John") {
-    nameInput.text = "John Doe"; // this does not work in Appsmith
-}
+Input1.disable()
+// or,
+Input1.enabled = false
 ```
 
-Instead, we must write code in our widget's properties pane to define the property's value. To successfully set the nameInput widget's text value, we'll use the following snippet:
+But this won't work in Appsmith! Instead, you might create and store a special value that represents whether 'Edit' mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the [`storeValue()`](../../reference/appsmith-framework/widget-actions/store-value.md) function to make this possible, which you can read about [here](../../reference/appsmith-framework/widget-actions/store-value.md).
 
 ```javascript
-// In the "Text" property field of the nameInput widget
-{{ Dropdown1.selectedOptionValue === "John" ? "John Doe" : "" }}
+// in the Disabled field of the Input widgets' properties
+{{!appsmith.store.editMode}}
+
+// in the onClick event field of the Edit button's properties
+{{storeValue('editMode', true)}}
+
+// in the onClick event field of the Save button's properties
+{{storeValue('editMode', false)}}
 ```
 
-This way, the properties of the nameInput widget are updated reactively any time the values of Dropdown1 change. When a user changes the Dropdown1 value, the nameInput widget's text will automatically update according to our expression.
+{% embed url="https://youtu.be/yKb6SRonfmQ" %}
 
-In general, any given widget on the canvas is automatically updated whenever its underlying values change or an API / Query returns with new data.
+With this configuration, the Input widgets behave according to the current state of `editMode` in the Appsmith store. Anytime this value is toggled, the Input widgets are automatically updated.
 
 ## Single Line JavaScript
 
