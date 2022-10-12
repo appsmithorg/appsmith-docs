@@ -1,6 +1,9 @@
+---
+sidebar_position: 2
+---
 # REST API Errors
 
-![Click to expand](<../../../.gitbook/assets/api error.png>)
+![Click to expand](/img/api_error.png)
 
 ### Missing URL Error
 

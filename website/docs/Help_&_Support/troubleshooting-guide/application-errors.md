@@ -1,8 +1,11 @@
+---
+sidebar_position: 4
+---
 # Application Errors
 
 ## Invalid / Empty Name Error
 
-![Click to expand](../../.gitbook/assets/application-name-error.png)
+![Click to expand](/img/application-name-error.png)
 
 ```
 Application name can't be empty
@@ -24,7 +27,7 @@ This error indicates that the name being assigned to the entity has been used be
 
 ## Login / Signup Errors
 
-![Click to expand](../../.gitbook/assets/signup-error.png)
+![Click to expand](/img/signup-error.png)
 
 ### Account Already Registered Error
 
@@ -50,7 +53,7 @@ You can fix the error by providing an email that has been used to register with 
 
 ## Page Access Error
 
-![Click to expand](../../.gitbook/assets/page-not-found-error.png)
+![Click to expand](/img/page-not-found-error.png)
 
 ```
 Either this page doesn't exist, or you don't have access to

@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 # Deployment Errors
 
 ## Ports Unavailable
@@ -23,12 +26,12 @@ If you encounter the error that ports 80 & 443 are not open, we recommend that y
     ```
 2. Run `docker-compose up -d`
 
-{% hint style="success" %}
+:::tip
 To kill a previous version of appsmith running on these ports, run the following:
 
 * sudo su
 * docker container kill $(docker ps -q)
-{% endhint %}
+:::
 
 ## Containers Failed to Start
 

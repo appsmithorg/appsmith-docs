@@ -12,9 +12,9 @@ You see an error message **Source data exceeds 50 fields. Please update the sour
 
 **Error message:**
 
-> <mark style="color:red;">Source data exceeds 50 fields. Please update the source data.</mark>
+Source data exceeds 50 fields. Please update the source data.
 
-![When the data had more than 50 fields](<../../.gitbook/assets/Troubleshooting  Widget Errors  JSON Form Errors  Source Exceeds 50 Fields.png>)
+![When the data had more than 50 fields](</img/Troubleshooting__Widget_Errors__JSON_Form_Errors__Source_Exceeds_50_Fields.png>)
 
 ### Cause
 
@@ -33,6 +33,6 @@ To determine if the problem is caused due to:
 
 Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form.md#source-data) field to make changes.
 
-{% hint style="warning" %}
+:::caution
 If you still can't see a JSON form and need help debugging an error, please get in touch with us on our [Discord Server](https://discord.com/invite/rBTTVJp) or email us at support@appsmith.com.&#x20;
-{% endhint %}
+:::

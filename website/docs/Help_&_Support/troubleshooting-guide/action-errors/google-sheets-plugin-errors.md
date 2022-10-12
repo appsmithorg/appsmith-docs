@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Google Sheet Errors
 
 Working with [Google Sheets](https://www.google.com/sheets/about/) Plugin on Appsmith is the handiest way to use Google Sheets as a [datasource](../../../reference/datasources/) for building apps. But sometimes, we often run into minor errors while specific queries while editing and deleting data on Google Sheets. In this guide, we'll look at some of the frequent errors one faces while using Google Sheets.
@@ -56,6 +60,6 @@ Here, our goal is to create a new row on Google Sheets, for this we'll be using 
 
 Here, the keys are usually the column names in the Google Sheets, and the corresponding values are the values evaluated from the input [widgets](../../../reference/widgets/) using the mustache `{{}}` operator.
 
-{% hint style="success" %}
+:::tip
 Make sure to remove unnecessary commas at the end of [JSON](https://www.w3schools.com/whatis/whatis\_json.asp)
-{% endhint %}
+:::

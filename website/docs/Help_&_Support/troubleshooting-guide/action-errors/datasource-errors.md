@@ -1,6 +1,9 @@
+---
+sidebar_position: 1
+---
 # Datasource Errors
 
-![Click to expand](../../../.gitbook/assets/missing-endpoint-error.png)
+![Click to expand](/img/missing-endpoint-error.png)
 
 Following is the list of errors we often see while creating new Datasources:
 

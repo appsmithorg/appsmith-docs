@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # JS Errors
 
 ## JS Errors
@@ -82,7 +85,7 @@ In case the response does not contain label and value keys as below, we can map 
 
 The below image shows that there is an error in the `Chart Data field` of the [Chart](../../reference/widgets/chart.md), giving us the same error. The Evaluated Value here indicates the current value of the field, and in the screenshot below, you can see that the current value is an array while the error indicates that it must be an array\<x, y>.
 
-![](<../../.gitbook/assets/chart error.png>)
+![](/img/chart_error.png)
 
 **Solution:**
 
@@ -135,7 +138,7 @@ This error occurs when there is invalid javascript inside the handlebars `{{ }}`
 
 In the example below, fetch is not defined anywhere in the application
 
-![](<../../.gitbook/assets/syntax error.png>)
+![](/img/syntax_error.png)
 
 ### Cyclic Dependency Error
 
@@ -198,12 +201,18 @@ debugger;
 
 When the debugger is invoked, execution is paused at the debugger statement. It is like a breakpoint in the script source.
 
-{% hint style="info" %}
+:::info
 You need to have the browser console open to make the debugger work.
-{% endhint %}
+:::
 
 ### Debugging Errors With Console.log()
 
 Aside from using the `debugger`, it is also possible to use `console.log()` to inspect various parts of your code. The video below illustrates how to do this:
 
-{% embed url="https://youtu.be/YLnvb9_k96s" %}
+
+<figure>
+<object data="https://www.youtube.com/embed/YLnvb9_k96s" width='860px' height='515px'></object>)
+<figcaption align = "center"><i>How to Debug
+</i></figcaption>
+</figure>
+
