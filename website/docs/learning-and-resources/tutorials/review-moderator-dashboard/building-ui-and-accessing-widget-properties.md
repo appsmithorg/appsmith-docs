@@ -25,7 +25,7 @@ Now open the tables property pane, and only display the following columns:
 Below is the video to build the UI and edit table properties:
 
 <figure>
-  <object data="https://www.youtube.com/embed/4ET9wtFFIF0?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/4ET9wtFFIF0?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Building the UI and Editing Table Properties
 </i></figcaption>
 </figure>
@@ -43,7 +43,7 @@ Let's add some additional components that display the information whenever a par
 To make the UI more intuitive, let's add the location of the business. To do this, we will add a [Map Widget](../../../reference/widgets/maps.md) and display the location of the business by following the below steps:
 
 <figure>
-  <object data="https://www.youtube.com/embed/J_xVn-TKPXY?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/J_xVn-TKPXY?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Adding Map Widget
 </i></figcaption>
 </figure>
@@ -91,7 +91,7 @@ The zoom level can be used to pinpoint the exact location.
 Next, let's add a few text widgets and bind all the business information under the map. You can drop text widgets onto the canvas and add their associated names and values like:
 
 <figure>
-  <object data="https://www.youtube.com/embed/jEhbeoc4sTE?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/jEhbeoc4sTE?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Adding Text Widgets</i></figcaption>
 </figure>
 

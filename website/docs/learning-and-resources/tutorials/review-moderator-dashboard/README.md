@@ -10,9 +10,7 @@ In this tutorial, you'll learn to build a feature-complete internal tool on top 
 :::info
 ⭐ **Level**: Beginner\
 ⏱️ **Time**: \~40 minutes
-:::
 
-:::info
 🙌 **What you'll learn in this tutorial:**
 
 * Connecting to Data Sources on Appsmith (APIs/DB Queries)
@@ -23,14 +21,14 @@ In this tutorial, you'll learn to build a feature-complete internal tool on top 
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/QHOpLoSH7ws?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/QHOpLoSH7ws?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>A Glimpse of the Review Moderator App</i></figcaption>
 </figure>
 
 The tutorial has four parts & we recommend you follow them in order. Now before getting started, let's set up Appsmith. You could either use the self-hosted version using Docker or Appsmith cloud and follow along.
 
-:::info
-Note: To set up Appsmith locally using Docker, you can follow the instructions [here](../../../getting-started/setup/installation-guides/docker/).
+:::note
+To set up Appsmith locally using Docker, you can follow the instructions [here](../../../getting-started/setup/installation-guides/docker/).
 :::
 
 Let's get started with the tutorial, so first, let's **set up the app.**

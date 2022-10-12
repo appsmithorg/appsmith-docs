@@ -15,7 +15,7 @@ You are now almost ready with your super cool dashboard. To make your app more i
 Let's start by adding a button that'll redirect to a new page. Also, on the new page, you would require the **`business_id`** to filter the reviews from the review table. Hence, now store the value in the [Appsmith Context Object ](../../../reference/appsmith-framework/context-object.md)and use it as a reference. Follow the instructions below:
 
 <figure>
-  <object data="https://www.youtube.com/embed/7xQid95aHuM?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/7xQid95aHuM?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Storing Value and Redirecting to a Page</i></figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ As you can see here, as soon as the viewer clicks the button, it now navigates t
 Now, to fetch review data, we will write a query for the **Business Reviews Page**. Let's write one DB query to filter the reviews from the reviews table based on the selected business\_id by following the below steps:
 
 <figure>
-  <object data="https://www.youtube.com/embed/7hQqJ2Cfj5o?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/7hQqJ2Cfj5o?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Writing a query for Business Reviews Page</i></figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ If you run this, you'll only see one row that fetches all the business details f
 Now, let's build a dashboard that will show all the reviews fetched from the reviews table.
 
 <figure>
-  <object data="https://www.youtube.com/embed/dFcX2fs38ak?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/dFcX2fs38ak?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Creating a UI for the Business Reviews Page</i></figcaption>
 </figure>
 
@@ -124,7 +124,7 @@ Now, let's customize our list view according to our needs and remove the items w
 5. Now, in the overflow setting, change it to "scroll contents". So this will make the text view scrollable.
 
 <figure>
-  <object data="https://www.youtube.com/embed/e4f1QMq2zoA?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/e4f1QMq2zoA?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Using the List Widget</i></figcaption>
 </figure>
 
@@ -184,7 +184,7 @@ Appsmith uses the Chart Series property head to supply the data and details rela
 Now, follow the below steps to create a chart for visualizing the ratings of the business based on reviews.
 
 <figure>
-  <object data="https://www.youtube.com/embed/ujmjVmkSO9c?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/ujmjVmkSO9c?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Adding Chart Widget</i></figcaption>
 </figure>
 
@@ -199,7 +199,7 @@ Now, follow the below steps to create a chart for visualizing the ratings of the
 Awesome! You should see all the data plotted on the chart widget. Similarly, you can plot the other ratings by clicking on the **`ADD SERIES`** option. The video below demonstrates how to add series to your chart.
 
 <figure>
-  <object data="https://www.youtube.com/embed/fIBjUCBL6wA?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/fIBjUCBL6wA?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Customizing Chart Widget</i></figcaption>
 </figure>
 

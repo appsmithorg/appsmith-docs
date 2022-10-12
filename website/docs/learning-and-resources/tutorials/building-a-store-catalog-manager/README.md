@@ -30,7 +30,7 @@ Here are steps to create an app from the Appsmith Dashboard:
 4. Click the **Build with drag & drop** button located on the center of the canvas.
 
 <figure>
-  <object data="https://www.youtube.com/embed/TaPgZbHpkQw?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/TaPgZbHpkQw?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Creating and renaming a brand new application
 </i></figcaption>
 </figure>

@@ -30,7 +30,7 @@ Appsmith supports various databases like:
 Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
 
 <figure>
-  <object data="https://www.youtube.com/embed/ZOSYloiB8ZY?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/ZOSYloiB8ZY?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Connecting to a Datasource on Appsmith</i></figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ Now, save your data source by clicking the **Save** button. You'll see a success
 The data source is successfully connected; now, let's write a simple DB query to fetch all the business data from the business table. Follow the below steps to do so:
 
 <figure>
-  <object data="https://www.youtube.com/embed/QoyzrOEG5to?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/QoyzrOEG5to?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Running Queries on Appsmith</i></figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ In the previous section, you’ve created a DB query named **`getBusinessData`**
 The First and simple method is to open the query window and select the table option on the right-side property pane. It will automatically add a table widget to your canvas. The video below demonstrates adding a table widget from the query window.
 
 <figure>
-  <object data="https://www.youtube.com/embed/XgQ9AsRdLek?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/XgQ9AsRdLek?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Adding a table widget from the query window
 </i></figcaption>
 </figure>
@@ -144,7 +144,7 @@ Now copy the following onto the `Table Data` property:
 When you copy this onto the Table Data, you should see the data magically populated onto the table. Then, based on your preference, you can customize the column names and style your table widget with the other properties. The video below demonstrates how to add the table widget and fetch the data.
 
 <figure>
-  <object data="https://www.youtube.com/embed/Ys1zN2GjNGA?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/Ys1zN2GjNGA?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Adding a table widget to the canvas
 </i></figcaption>
 </figure>

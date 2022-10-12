@@ -13,7 +13,7 @@ If this is your first time using Appsmith, you'll need to get acquainted with so
 In this tutorial, you'll create a Review Moderator application under the same workspace. To do this, follow the below steps:
 
 <figure>
-  <object data="https://www.youtube.com/embed/rDq4203aRQw?autoplay=0" width='700px' height='385px'></object> 
+  <object data="https://www.youtube.com/embed/rDq4203aRQw?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Creating and Renaming Appsmith Application</i></figcaption>
 </figure>
 
