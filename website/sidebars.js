@@ -273,10 +273,10 @@ const sidebars = {
       collapsed: false,
       label: 'Reference',
       items: [
-       /* {
+        {
           type: 'category',
           label: 'Widgets',
-          link: {type: 'doc', id:  'reference/widgets/README.md'},
+          link: {type: 'doc', id:  'reference/widgets/README'},
           items: [
             'reference/widgets/audio',
             'reference/widgets/audio-recorder',
@@ -346,7 +346,7 @@ const sidebars = {
             'reference/widgets/tree-select',
             'reference/widgets/video'
           ]
-        },*/
+        },
         {
           type: 'category',
           label: 'Datasources',
