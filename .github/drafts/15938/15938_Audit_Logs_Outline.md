@@ -89,20 +89,10 @@ You can find audit logs by navigating to your Admin Settings page, and finding t
 
 There are a number of filters available to help you quickly search for a subset of your logs. You can filter your logs by:
 - User
-- Event type
+- Event
 - ResourceId
 - Date Range
 
 From the JSON area of any event, you may also click any of the values to search for other instances of that value.
 
-<!-- I believe the Audit Log Settings are being put off for now, I've gotta get confirmation on that. But if there *are* settings available, they go here. 
-
-## Audit logs settings
-
-Use these settings to configure your audit logs:
-
-| Setting | Description |
-|---------|-------------|
-|         |             |
-
--->
+## Conclusion
