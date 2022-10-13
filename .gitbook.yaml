@@ -135,8 +135,8 @@ redirects:
   datasource-reference/querying-amazon-s3: reference/datasources/querying-amazon-s3.md
   datasource-reference/querying-arango-db: reference/datasources/querying-arango-db.md
   datasource-reference/querying-dynamodb: reference/datasources/querying-dynamodb.md
-  datasource-reference/querying-elasticsearch: reference/datasources/querying-dynamodb.md
-  datasource-reference/querying-firestore: reference/datasources/querying-dynamodb.md
+  datasource-reference/querying-elasticsearch: reference/datasources/querying-elasticsearch.md
+  datasource-reference/querying-firestore: reference/datasources/querying-firestore.md
   datasource-reference/querying-google-sheets: reference/datasources/querying-google-sheets.md
   datasource-reference/querying-mongodb: reference/datasources/querying-mongodb/README.md
   datasource-reference/querying-mongodb/mongo-syntax: reference/datasources/querying-mongodb/mongo-syntax.md
