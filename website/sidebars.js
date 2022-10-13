@@ -511,23 +511,23 @@ const sidebars = {
       type: 'category',
       collapsed: false,
       label: 'Troubleshooting',
-      link: {type: 'doc', id:  'Help_&_Support/troubleshooting-guide/README'},
+      link: {type: 'doc', id:  'help-and-support/troubleshooting-guide/README'},
       items: [
         { // Help & Support start
           type: 'category',
           label: 'Action Errors',
-          link: {type: 'doc', id:  'Help_&_Support/troubleshooting-guide/action-errors/README'},
+          link: {type: 'doc', id:  'help-and-support/troubleshooting-guide/action-errors/README'},
           items: [
-            'Help_&_Support/troubleshooting-guide/action-errors/datasource-errors',
-            'Help_&_Support/troubleshooting-guide/action-errors/rest-api-errors',
-            'Help_&_Support/troubleshooting-guide/action-errors/mysql-plugin-errors',
-            'Help_&_Support/troubleshooting-guide/action-errors/google-sheets-plugin-errors'
+            'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
+            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
+            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
+            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors'
           ]
         },
-        'Help_&_Support/troubleshooting-guide/js-errors',
-        'Help_&_Support/troubleshooting-guide/deployment-errors',
-        'Help_&_Support/troubleshooting-guide/application-errors',
-        'Help_&_Support/troubleshooting-guide/widget-errors'
+        'help-and-support/troubleshooting-guide/js-errors',
+        'help-and-support/troubleshooting-guide/deployment-errors',
+        'help-and-support/troubleshooting-guide/application-errors',
+        'help-and-support/troubleshooting-guide/widget-errors'
       ],
     },// Help & Support end
     { // Product Start
