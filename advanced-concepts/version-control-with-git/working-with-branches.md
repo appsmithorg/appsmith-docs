@@ -19,21 +19,21 @@ However, if you create a new branch, it will have the uncommitted changes of you
 
 To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the “<mark style="color:purple;">Sync branches</mark>” button.
 
-![](<../../.gitbook/assets/Git\_sync\_syc branches.gif>)
+![](<../../.gitbook/assets/Git\_sync\_syc branches (1).gif>)
 
 Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
 
 ### Delete a Branch
 
-Similar to the Git flow, you can delete a branch in Appsmith that is no longer needed.&#x20;
+Similar to the Git flow, you can delete a branch in Appsmith that is no longer needed.
 
 {% hint style="info" %}
-You can delete any branch other than the default branch. Please make sure that you are not editing the branch you want to delete.&#x20;
+You can delete any branch other than the default branch. Please make sure that you are not editing the branch you want to delete.
 {% endhint %}
 
-If you want to delete a branch from Appsmith, follow the steps given below:&#x20;
+If you want to delete a branch from Appsmith, follow the steps given below:
 
-1. Click on the branch list at the bottom left corner.&#x20;
+1. Click on the branch list at the bottom left corner.
 2. Move the cursor to the branch you want to delete, hit the options button, and click on delete branch.
 
 {% embed url="https://youtu.be/Ww6cpZEkSqs" %}

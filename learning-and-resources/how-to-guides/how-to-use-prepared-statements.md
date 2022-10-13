@@ -84,8 +84,8 @@ You can use prepared statements for the below datasources on Appsmith:
 [querying-mssql.md](../../reference/datasources/querying-mssql.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../reference/datasources/querying-mssql.md" %}
-[querying-mssql.md](../../reference/datasources/querying-mssql.md)
+{% content-ref url="../../reference/datasources/querying-mysql.md" %}
+[querying-mysql.md](../../reference/datasources/querying-mysql.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../reference/datasources/querying-postgres.md" %}

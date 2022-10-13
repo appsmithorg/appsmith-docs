@@ -8,11 +8,11 @@ description: >-
 
 Invite users to your workspace by clicking on the **share button** on the application home page or from inside the application
 
-![](../.gitbook/assets/saveappsmith.png)
+![](<../.gitbook/assets/saveappsmith (1).png>)
 
 Invite the user's email you wish to share the application with and select an appropriate role for them.
 
-![](../.gitbook/assets/save2.PNG)
+![](<../.gitbook/assets/save2 (1).PNG>)
 
 ## Roles
 
