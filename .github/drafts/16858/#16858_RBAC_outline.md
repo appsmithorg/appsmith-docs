@@ -1,6 +1,6 @@
 # Role-based Access Control (RBAC)
-Introduction (Not a heading)
-	- Explain what access control means and how you can use it in your workflows.
+Role-based access control (RBAC) is a mechanism that restricts system access. It involves setting permissions and privileges to enable access to authorized users. Most large organizations use role-based access control to provide their employees with varying levels of access based on their roles and responsibilities.
+In Appsmith, you can invite users, create groups and further define roles that consists of certain accessibility rules to control access to specific apps, resources etc. 
 
 ## Access Control in Appsmith
 Explain the concepts around Access control in Appsmith.
