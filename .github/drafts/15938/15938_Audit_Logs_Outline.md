@@ -1,6 +1,6 @@
 # Audit logs
 
-Audit logs are a vital way to keep records of user activity related to app changes, platform settings, and sensitive data. With access to this information, you can ensure that you're able to easily follow up and address any unexpected or undesirable events.
+Audit logs are a vital way to keep records of user activity related to app changes and platform settings. With access to this information, you can ensure that you're able to easily follow up and address any unexpected or undesirable events.
 
 {Screenshot of audit logs page}
 
@@ -21,14 +21,6 @@ There are several types of events tracked in Appsmith's audit logs:
 - Admin settings changes
     - Who changed certain settings (`instance_setting.updated`)
     - Changes/new groups or roles (`group.updated`)
-
-- Sensitive information access
-    - Which users have accessed user data
-    - Which users have accessed billing data
-
-- User sign-up and logins
-    - New users
-    - Unsuccessful logins
 
 ## Event details
 
@@ -94,5 +86,3 @@ There are a number of filters available to help you quickly search for a subset 
 - Date Range
 
 From the JSON area of any event, you may also click any of the values to search for other instances of that value.
-
-## Conclusion
