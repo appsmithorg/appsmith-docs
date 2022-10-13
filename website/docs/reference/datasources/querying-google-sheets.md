@@ -9,7 +9,7 @@ sidebar_position: 7
 Spreadsheets are a common way of organizing, editing, and analyzing data and serve as a data source for many teams.
 
 :::info
-To integrate Google Sheets with Appsmith, you should understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/).
+To integrate Google Sheets with Appsmith, you should understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/).
 :::
 
 Appsmith integration with Google Sheets provides an easy way to manipulate, analyze and manage Spreadsheets. With this integration, you can perform different operations using a custom UI built on Appsmith, with minimal configurations.
@@ -64,7 +64,7 @@ The **Delete** permission is required for the following query type:
 :::caution
 When configured with this scope, queries related to this datasource may be potentially destructive and should be used carefully to avoid accidentally deleting data!
 
-Consider enabling the [**Request confirmation before running query**](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
+Consider enabling the [**Request confirmation before running query**](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
 :::
 
 ### **Save and Authorize**
@@ -198,14 +198,14 @@ You’ll have to add a query to insert the data by setting parameters as below:
 You can use the above JSON to test the Query execution.
 :::
 
-To capture the user input, you can create a [form](../widgets/form.md) as shown in the screenshot below and bind the query execution on the `onClick` event of a **Submit** button.
+To capture the user input, you can create a [form](/widgets/form.md) as shown in the screenshot below and bind the query execution on the `onClick` event of a **Submit** button.
 
 ![Bind query execution to Submit](</img/Datasources__Google_Sheets__Insert_One__Capture_Data_from_Form_Widget.png>)
 
-You can modify the **Row Objects JSON data** to capture the values from the [form](../widgets/form.md), as shown in the code snippet below:
+You can modify the **Row Objects JSON data** to capture the values from the [form](/widgets/form.md), as shown in the code snippet below:
 
 :::info
-You’ll have to add quotes to the string values if the [Smart JSON Substitution](../../core-concepts/connecting-to-data-sources/authentication/#smart-json-substitution) is turned off in the `settings` tab.
+You’ll have to add quotes to the string values if the [Smart JSON Substitution](/core-concepts/connecting-to-data-sources/authentication/#smart-json-substitution) is turned off in the `settings` tab.
 :::
 
 ```
@@ -372,10 +372,10 @@ To fetch spreadsheets data, you can choose the below parameters:
 You can choose to add filters using range or `where` Clause.
 :::
 
-You can display the data by binding it to a [widget](../widgets/). For example, you can display the spreadsheet data in a [table](../widgets/table/) widget.
+You can display the data by binding it to a [widget](/widgets/). For example, you can display the spreadsheet data in a [table](/widgets/table/) widget.
 
 :::info
-Bind the data returned by the query to a [table](../widgets/table/) widget - [TableData](../widgets/table/#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
+Bind the data returned by the query to a [table](/widgets/table/) widget - [TableData](/widgets/table/#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
 :::
 
 ## **Insert Many**
@@ -620,5 +620,5 @@ If you now want to fetch all employees with designation as **Junior Engineer** a
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)

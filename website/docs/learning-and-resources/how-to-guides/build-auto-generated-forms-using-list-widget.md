@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # How to build auto-generated forms using List widget
 
-This how-to guide assumes you know how to use [forms](../../reference/widgets/form.md) and basic knowledge around building [simple applications with Appsmith](https://docs.appsmith.com/).
+This how-to guide assumes you know how to use [forms](/reference/widgets/form.md) and basic knowledge around building [simple applications with Appsmith](https://docs.appsmith.com/).
 
 ## List widget
 
@@ -101,7 +101,7 @@ And Here's how the application looked like:
 
 ![List widget with five items](/img/build-list-form-4.png)
 
-After this, all you need to do is add what you want to do on submitting the form. You can do that the same way you did in the Form widget, by updating the action events. I assume you know it better, and if you need a refresher, [here's a good resource](../../reference/widgets/form.md).
+After this, all you need to do is add what you want to do on submitting the form. You can do that the same way you did in the Form widget, by updating the action events. I assume you know it better, and if you need a refresher, [here's a good resource](/reference/widgets/form.md).
 
 You can also check out the application that I built [here](https://app.appsmith.com/applications/615a14b33a5bfe535012a5cf/pages/615a14b33a5bfe535012a5d1).
 

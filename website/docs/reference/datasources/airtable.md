@@ -7,7 +7,7 @@ sidebar_position: 1
 [Airtable ](https://airtable.com/)is an easy-to-use online platform for creating and sharing relational databases. The user interface is simple, colorful, friendly, and allows anyone to spin up a database in minutes.&#x20;
 
 :::info
-To integrate Airtable with Appsmith, you should understand the [basics of connecting to databases](../../core-concepts/connecting-to-data-sources/) on Appsmith.
+To integrate Airtable with Appsmith, you should understand the [basics of connecting to databases](core-concepts/connecting-to-data-sources/) on Appsmith.
 :::
 
 On Appsmith, it's pretty straightforward to establish a connection with any datasource, including Airtable. With this integration, you can perform different operations using a custom UI built on Appsmith, with minimal configurations.
@@ -82,7 +82,7 @@ You can create queries to fetch, update and delete data from a datasource using 
 | ****[**Retrieve A Record**](airtable.md#retrieve-a-record)**** | Retrieve an existing record.                        |   |
 | ****[**Update Records**](airtable.md#update-records)****       | Update a few fields in a record.                    |   |
 
-You can check the [Query Settings Guide](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
+You can check the [Query Settings Guide](core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
 
 ## List Records
 
@@ -162,7 +162,7 @@ export default {
 {{GetAirtableRecordsData.readAirtableData()}}
 ```
 
-The [table widget](../widgets/table/) will display all of your Airtable data.&#x20;
+The [table widget](/widgets/table/) will display all of your Airtable data.&#x20;
 
 ## Create Records&#x20;
 
@@ -203,8 +203,8 @@ Let’s take an **example** to get a better understanding of how the create reco
 </figure>
 
 * Drag and drop a button widget into the canvas, and change the title to **“Create New Task”.**&#x20;
-* Now, set buttons **onClick** event to Open a New [Modal](../widgets/modal.md), and choose to Create New**.**
-* This will open up a new modal now; let's drag and drop a [JS Form widget](../widgets/json-form.md) into the modal.&#x20;
+* Now, set buttons **onClick** event to Open a New [Modal](/widgets/modal.md), and choose to Create New**.**
+* This will open up a new modal now; let's drag and drop a [JS Form widget](/widgets/json-form.md) into the modal.&#x20;
 * Next, in the source data section, connect your createTask query.
 
 ```
@@ -260,7 +260,7 @@ rec7HiLAy2TkPxxxx
 
 Let’s take an **example** to understand how the delete records command works.
 
-In this example, we will use the [Modal widget](../widgets/modal.md) to delete the selected records.
+In this example, we will use the [Modal widget](/widgets/modal.md) to delete the selected records.
 
 <figure>
   <object data="https://www.youtube.com/embed/WKfjTDp-p8k?autoplay=0" width='750px' height='400px'></object> 
@@ -434,6 +434,6 @@ With Appsmith Airtable integration, it is possible to create apps that seamlessl
 
 Once you have successfully run a Query, you can use it in your application to:
 
-* [Display Data ](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
-* [Execute Queries](../../core-concepts/data-access-and-binding/querying-a-database/)
+* [Display Data ](core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data ](core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+* [Execute Queries](core-concepts/data-access-and-binding/querying-a-database/)

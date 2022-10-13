@@ -171,8 +171,8 @@ To include response in this table use the moustache syntax to write JS in Appsmi
 
 Now that we have received data in the table, we can add more widgets for each attribute of the data records from the UI widgets list. You can add text widgets for all the fields in this example. To set the property of the widgets, next to the widget options add code snippets to fetch values of respective attributes from the array of data fetched refer to the guides linked below
 
-* [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
 
 ## Writing Data To The DataSource
 

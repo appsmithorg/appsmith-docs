@@ -73,7 +73,7 @@ To set a default value of **ProductNameInput**:
 
 Above, you just wrote JavaScript to set the value of **Default Text** using data from `ProductsTable.selectedRow`, which has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default Text** to this, you're pre-filling the form with this value.
 
-From within our form, we've accessed data from the selected row of our table via its `selectedRow` property. To see the exposed properties you can access for any given widget, check the **Properties** section of its entry in the [**Widget** ](../../../reference/widgets/)documentation.
+From within our form, we've accessed data from the selected row of our table via its `selectedRow` property. To see the exposed properties you can access for any given widget, check the **Properties** section of its entry in the [**Widget** ](/reference/widgets/)documentation.
 
 Finally, note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `ProductsTable.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `ProductsTable.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
@@ -192,7 +192,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 }}
 ```
 
-This is similar to what you learned in [part 2](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-2-using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method above is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
+This is similar to what you learned in [part 2](/tutorials/building-a-store-catalog-manager/part-2-using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method above is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
@@ -223,12 +223,12 @@ Once deployed, you can share your deployed application with both internal and ex
 2. Share the application's URL with the user, OR
 3. Invite a user by adding their email, selecting an appropriate role for them, and clicking **INVITE**.
 
-You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](../../../advanced-concepts/access-control.md).)
+You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](/advanced-concepts/access-control.md).)
 
 **What's next?**
 
 The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
 
 * [Core Concepts](broken-reference/)
-* [Widgets](../../../reference/widgets/)
-* [Appsmith Framework](../../../reference/appsmith-framework/)
+* [Widgets](/reference/widgets/)
+* [Appsmith Framework](/reference/appsmith-framework/)

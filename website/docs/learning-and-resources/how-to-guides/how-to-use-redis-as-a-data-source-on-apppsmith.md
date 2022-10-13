@@ -24,7 +24,7 @@ To connect your Redis Database instance to Appsmith as a datasources
 8. Once done, click on **Save** and then click on **Test**.
 9. If the Pop up notifies you that _My Redis Database datasource is valid_, that means your Redis Database's configuration is correct and is to ready to connect to your _Appsmith Application_. If it Pop up notifies you about any other error, please check your Redis configuration.
 
-> Refer to [Redis Datasource](../../reference/datasources/querying-redis.md) documentation for more information.
+> Refer to [Redis Datasource](/reference/datasources/querying-redis.md) documentation for more information.
 
 ### Using Redis as a Datasource
 

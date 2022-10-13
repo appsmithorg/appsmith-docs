@@ -6,7 +6,7 @@ sidebar_position: 4
 DynamoDB is a serverless, fully managed, key-value NoSQL database designed to handle high-performance applications of any size.&#x20;
 
 :::caution
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
 On Appsmith, it's pretty straightforward to establish a connection with any datasource, including DynamoDB. With this integration, you can perform different operations using a custom UI built on Appsmith, with minimal configurations.
@@ -74,7 +74,7 @@ You can create queries to fetch, update and delete data from a datasource using 
 | ****[**PutItem**](querying-dynamodb.md#putitem)****              | PutItem command is used to insert or replace an entire item object.                             |   |
 | [**UpdateItem**](querying-dynamodb.md#updateitem)****            | UpdateItem can be used for conditionally updating parts of an item.                             |   |
 
-You can check the [Query Settings Guide](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
+You can check the [Query Settings Guide](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
 
 ### ListTables
 
@@ -197,5 +197,5 @@ With DynamoDB integration, it is possible to create apps that seamlessly connect
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)

@@ -1,12 +1,12 @@
 ---
-sidebar_position: 16
+sidebar_position: 17
 ---
 # Twilio
 
 [Twilio](https://www.twilio.com/) is a customer engagement platform businesses use to build personalized customer experiences. Twilio provides APIs for voice, text, chat, video, and email integrations. By using these APIs, businesses build integrations that can provide updates to their customers in real-time.
 
 :::caution
-To integrate Twilio with Appsmith, you should understand the [basics of connecting to databases](../../core-concepts/connecting-to-data-sources/) on Appsmith.
+To integrate Twilio with Appsmith, you should understand the [basics of connecting to databases](/core-concepts/connecting-to-data-sources/) on Appsmith.
 :::
 
 Appsmith integration with Twilio provides an easy way to manage your customer-focused messaging. With these integrations, you can design a custom UI on Appsmith to support easy integrations for users.
@@ -114,10 +114,10 @@ You can get your **Twilio phone number** from the [account info](twilio.md#get-t
 
 * **Body** - Add the message text you want to send to this field.&#x20;
 
-> You can also read the [widget](../widgets/) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](../widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
+> You can also read the [widget](/widgets/) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](/widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
 
 :::caution
-You can change the [Query settings](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md) by clicking the **settings** tab.
+You can change the [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) by clicking the **settings** tab.
 :::
 
 ## **Schedule Message**
@@ -152,7 +152,7 @@ The destination phone number (**To**) should follow the [E.164 format](https://e
 &#x20;Please supply the date and timestamp for the `Send At` in the [UTC](https://en.wikipedia.org/wiki/Coordinated\_Universal\_Time).
 :::
 
-> You can also read the [widget](../widgets/) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](../widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
+> You can also read the [widget](/widgets/) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](/widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
 
 :::caution
 The schedule data and timestamp should follow the [**Time range limitations for scheduled messages**](https://support.twilio.com/hc/en-us/articles/4412165297947-Message-Scheduling-FAQs-and-Beta-Limitations) as defined on Twilio Site.
@@ -254,7 +254,7 @@ You can get the **Message SID** from [List Message](twilio.md#list-message) Comm
 * **Status - Only** select **canceled** status if you wish to **cancel** the delivery of a **scheduled** message
 
 :::caution
-You can change the [Query settings](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md) for all the queries by clicking the **settings** tab.
+You can change the [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) for all the queries by clicking the **settings** tab.
 :::
 
 ## **WhatsApp and Text Message Integration**

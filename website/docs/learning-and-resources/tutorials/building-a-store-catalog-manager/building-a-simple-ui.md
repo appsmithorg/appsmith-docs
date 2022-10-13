@@ -32,7 +32,7 @@ Let's discuss what has happened now:
 
 * As soon as you add a new `Table` widget, you should see some pre-populated data.
 * A floating window, titled **`Table1`**, open's up on the right of the table. This is the widget's property-pane; here, you can configure the widget's properties.
-* The `Table Data` property in the pane defines what data will be displayed on the table. You can read more about the table widget's properties [here](../../../reference/widgets/table/).
+* The `Table Data` property in the pane defines what data will be displayed on the table. You can read more about the table widget's properties [here](/reference/widgets/table/).
 * By default, the name of the table is set to **Table1**. It can be renamed to anything you like by simply double-clicking it. Let's now change it to **`ProductsTable`**.
 
 ### Understanding the Table Widget
@@ -65,7 +65,7 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use case, you can connect to your own [database](../../../core-concepts/connecting-to-data-sources/).
+However, when you are building an app for a different use case, you can connect to your own [database](/core-concepts/connecting-to-data-sources/).
 
 ## Writing your First Query
 

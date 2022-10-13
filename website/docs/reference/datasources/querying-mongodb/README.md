@@ -6,7 +6,7 @@ sidebar_position: 9
 [MongoDB](https://www.mongodb.com) is a document-oriented NoSQL database used for high-volume data storage. It doesn't store the data in the form of tables and rows as in traditional relational databases. Instead, it stores the data in collections and documents in JSON format (using key-value pairs).
 
 :::caution
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
 ## Connection Settings
@@ -420,5 +420,5 @@ Appsmith provides template queries to help with the syntax.
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)

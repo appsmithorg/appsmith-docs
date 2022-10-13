@@ -7,7 +7,7 @@ sidebar_position: 6
 On Appsmith, it's pretty straightforward to establish a connection with any datasource, including Firestore.
 
 :::caution
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
 [Firestore](https://firebase.google.com/docs/firestore) is a NoSQL document database built for automatic scaling, high performance, and ease of application development. While the Firestore interface has many features like traditional databases, as a NoSQL database, it differs from describing relationships between data objects.
@@ -157,7 +157,7 @@ This method will set the given document at the given document path. If a documen
 **Let's look at an example** to see how to create a new document. Let’s assume you have a table which displays data from firestore. Now let's add a modal, to update the value to the database.
 
 :::info
-[Modal ](../widgets/modal.md)is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
+[Modal ](/widgets/modal.md)is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
 :::
 
 * Drag and drop a button widget onto the canvas. Open its property pane, set the onClick property to **Open a New Modal**, and choose to **Create New.**
@@ -345,5 +345,5 @@ Now try clicking the next and previous page buttons on this Table widget and the
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)

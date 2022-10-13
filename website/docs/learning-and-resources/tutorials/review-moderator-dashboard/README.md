@@ -28,7 +28,7 @@ In this tutorial, you'll learn to build a feature-complete internal tool on top 
 The tutorial has four parts & we recommend you follow them in order. Now before getting started, let's set up Appsmith. You could either use the self-hosted version using Docker or Appsmith cloud and follow along.
 
 :::note
-To set up Appsmith locally using Docker, you can follow the instructions [here](../../../getting-started/setup/installation-guides/docker/).
+To set up Appsmith locally using Docker, you can follow the instructions [here](/getting-started/setup/installation-guides/docker/).
 :::
 
 Let's get started with the tutorial, so first, let's **set up the app.**

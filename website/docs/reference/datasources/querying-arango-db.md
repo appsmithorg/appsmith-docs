@@ -7,7 +7,7 @@ sidebar_position: 3
 [ArangoDB](https://www.arangodb.com) is a free and open-source native multi-model database system developed by ArangoDB GmbH. The database system supports three data models with one database core and a unified query language AQL
 
 :::caution
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
 ## Connecting ArangoDB with Appsmith
@@ -69,5 +69,5 @@ Next, click on the `Test` button at the bottom right of the screen. This will he
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)

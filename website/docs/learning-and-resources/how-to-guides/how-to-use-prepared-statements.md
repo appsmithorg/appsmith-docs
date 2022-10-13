@@ -85,9 +85,9 @@ The multiple bindings added to the Appsmith queries are translated into the numb
 You can use prepared statements for the below datasources on Appsmith:
 
 
-* [querying-mssql.md](reference/datasources/querying-mssql.md)
-* [querying-mssql.md](reference/datasources/querying-mssql.md)
-* [querying-postgres.md](reference/datasources/querying-postgres.md)
+* [MS SQL](/reference/datasources/querying-mssql.md)
+* [MySQL](/reference/datasources/querying-mysql.md)
+* [PostgreSQL](/reference/datasources/querying-postgres.md)
 
 
 ### Enable Prepared Statement
@@ -145,7 +145,7 @@ For example, you want to create a user record into the `users` table for user re
 Insert into users (name, email) values({{userRegistrationForm.data.name}}, {{userRegistrationForm.data.email}});
 ```
 
-Here, `userRegistrationForm` is the name of the [form](../../reference/widgets/form.md) widget, and `name` and `email` are the names of the input widget embedded into the [form](../../reference/widgets/form.md).
+Here, `userRegistrationForm` is the name of the [form](/reference/widgets/form.md) widget, and `name` and `email` are the names of the input widget embedded into the [form](/reference/widgets/form.md).
 
 :::info
 You can use **join queries** or **subqueries** to have **dynamic data binding** as long as the **query** is **static** and **only** **data** bindings are added to the **where** clause.
@@ -175,7 +175,7 @@ You have a search functionality allowing users to select different statuses to f
 SELECT * from users where status in ({{userStatus.selectedOptionValues}})
 ```
 
-Here, `userStatus` is a [MultiSelect](../../reference/widgets/multiselect.md) widget. There are two scenarios for the `in clause` queries; You don't know how many options the user will select, so you will supply a dynamic length of an array, or you know the data bindings and so supply a static length of the array to the in clause.
+Here, `userStatus` is a [MultiSelect](/reference/widgets/multiselect.md) widget. There are two scenarios for the `in clause` queries; You don't know how many options the user will select, so you will supply a dynamic length of an array, or you know the data bindings and so supply a static length of the array to the in clause.
 
 **Dynamic Array Length**
 
@@ -190,7 +190,7 @@ SELECT * from users where status in = ANY ({{userStatus.selectedOptionValues}})
 The above query will bind the parameters and sanitize the values for your queries.
 
 :::info
-The **`= ANY`** combination is **supported** on [**PostgreSQL**](../../reference/datasources/querying-postgres.md), but [**MySQL**](../../reference/datasources/querying-mysql.md) **doesn’t** **support** it. For [**MySQL**](../../reference/datasources/querying-mysql.md), when you have a dynamic array binding, you'll have to use it by **disabling prepared statements**.
+The **`= ANY`** combination is **supported** on [**PostgreSQL**](/reference/datasources/querying-postgres.md), but [**MySQL**](/reference/datasources/querying-mysql.md) **doesn’t** **support** it. For [**MySQL**](/reference/datasources/querying-mysql.md), when you have a dynamic array binding, you'll have to use it by **disabling prepared statements**.
 :::
 
 #### **Static Array Length**
@@ -201,7 +201,7 @@ When you know that the `in clause` will have a fixed number of data bindings you
 SELECT * from users where status in ({{userActiveStatus.text}} , {{userInActiveStatus.text}})
 ```
 
-Here, the `userActiveStatus` and `userInActiveStatus` are two different [text widgets](../../reference/widgets/text.md) that are **added as** data binding for in clause.
+Here, the `userActiveStatus` and `userInActiveStatus` are two different [text widgets](/reference/widgets/text.md) that are **added as** data binding for in clause.
 
 ### When Not to Use Prepared Statements in Appsmith
 
@@ -215,11 +215,11 @@ You are generating a table name dynamically based on some criteria in your code 
 Select * from {{Generated_Table_Name.text}} 
 ```
 
-In this query, you read the table name from a [Text widget ](../../reference/widgets/text.md)**(Generated\_Table\_Name)**, and as the query does not have a static block that tells which table to refer to the prepared statements fail to execute the binding. In such cases, you can turn off the prepared statements and continue to use the query to generate responses.
+In this query, you read the table name from a [Text widget ](/reference/widgets/text.md)**(Generated\_Table\_Name)**, and as the query does not have a static block that tells which table to refer to the prepared statements fail to execute the binding. In such cases, you can turn off the prepared statements and continue to use the query to generate responses.
 
 #### Dynamic Queries
 
-You generate the query on the fly based on some parameters and then execute it. For example, `{{Query_to_Execute.text}}` where the [Text Widget](../../reference/widgets/text.md) **(Query\_to\_Execute)** has the query that will be executed, which could be generated on the fly based on some logic in the code. As the static query that will be executed is not available for pre-compilation, the prepared statements fail to execute. For such scenarios, you can disable the prepared statements and continue to use the query to generate responses.
+You generate the query on the fly based on some parameters and then execute it. For example, `{{Query_to_Execute.text}}` where the [Text Widget](/reference/widgets/text.md) **(Query\_to\_Execute)** has the query that will be executed, which could be generated on the fly based on some logic in the code. As the static query that will be executed is not available for pre-compilation, the prepared statements fail to execute. For such scenarios, you can disable the prepared statements and continue to use the query to generate responses.
 
 #### Dynamic Where Clause
 
@@ -244,7 +244,7 @@ A **prepared statement** **requires** you to supply **a static part of the query
 A few quick tips to remember so that you can quickly steer it through when using prepared statements:
 
 * The commented code blocks in your queries should not have any bindings, as when you enable the prepared statement, it translates all the bindings. As the commented block has bindings, the translation will fail, and you will not be able to run the queries. To avoid this, remove the mustache **`{{}}`** sign around the binding whenever you are commenting code, and the prepared statement will work.
-* If you are using a dynamic array to supply the `in clause` and using [PostgreSQL](../../reference/datasources/querying-postgres.md), then you can use `= ANY`. However, turn off the prepared statements to run the query if you are on [MySQL](../../reference/datasources/querying-mysql.md).
+* If you are using a dynamic array to supply the `in clause` and using [PostgreSQL](/reference/datasources/querying-postgres.md), then you can use `= ANY`. However, turn off the prepared statements to run the query if you are on [MySQL](/reference/datasources/querying-mysql.md).
 
 ## Conclusion
 

@@ -16,7 +16,7 @@ In this guide, you would learn:
 
 ## Create S3 Datasource
 
-To add an S3 datasource, navigate to **Explorer** >> Click plus sign (**+**) (next to S3)>> **Select S3 under Databases**. Once your S3 datasource has been created, follow these [instructions ](https://docs.appsmith.com/reference/datasources/querying-amazon-s3#connection-settings)to connect your app to the S3 database.
+To add an S3 datasource, navigate to **Explorer** >> Click plus sign (**+**) (next to S3)>> **Select S3 under Databases**. Once your S3 datasource has been created, follow these [instructions ](/reference/datasources/querying-amazon-s3#connection-settings)to connect your app to the S3 database.
 
 :::info
 To upload your data to Amazon S3, you must first create an Amazon S3 bucket in one of the AWS Regions. [Create a new bucket.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
@@ -30,7 +30,7 @@ The camera widget powers you to capture images and videos from your applications
   <object data="https://www.youtube.com/embed/v43gTz_4Jck?autoplay=0" width='750px' height='400px'></object> 
 </figure>
 
-* Drag and drop the [Camera widget](https://docs.appsmith.com/reference/widgets/camera) onto the canvas.
+* Drag and drop the [Camera widget](/reference/widgets/camera) onto the canvas.
 * Click on the **+** icon next to the **queries/js** and choose your S3 datasource.
 * Rename the query.
 * From the Commands drop-down, Select the method **Create a new file.**
@@ -70,7 +70,7 @@ When you capture and save the image, your **upload\_image** query is executed. Y
 
 The Image widget displays the images in your app. Images must have a valid base64 or a URL. You can follow similar steps to the image widget.
 
-* Drag and drop the [Image widget](https://docs.appsmith.com/reference/widgets/image) onto the canvas.
+* Drag and drop the [Image widget](/reference/widgets/image) onto the canvas.
 * Now set the image URL in the Image property pane.
 * Click on the **+** icon next to the **queries/js** and choose your **S3 datasource.**
 * Rename the query.
@@ -118,7 +118,7 @@ You can pass the below parameters to **Read a file.**
 
 Once you have added all the required parameters:
 
-* Drag and drop the[ Image widget](https://docs.appsmith.com/reference/widgets/image) onto the canvas.
+* Drag and drop the[ Image widget](/reference/widgets/image) onto the canvas.
 * In the Image property pane, add:
 
 ```
@@ -145,7 +145,7 @@ Bind the query’s response to the Table using JavaScript in the Table Data Prop
 
 Now your table should list all the files present in your S3 bucket.
 
-You can use an image widget to display images listed in the table widget. You can follow this [guide ](https://docs.appsmith.com/learning-and-resources/how-to-guides/how-to-upload-to-s3)to learn more.
+You can use an image widget to display images listed in the table widget. You can follow this [guide ](/learning-and-resources/how-to-guides/how-to-upload-to-s3)to learn more.
 
 #### Download Files
 
@@ -168,6 +168,6 @@ With Appsmith S3 integration, it is possible to create apps that seamlessly conn
 
 Once you have successfully run a Query, you can use it in your application to:
 
-* [Display Data ](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
-* [Execute Queries](../../core-concepts/data-access-and-binding/querying-a-database/)
+* [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+* [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)

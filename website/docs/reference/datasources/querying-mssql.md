@@ -5,7 +5,7 @@ sidebar_position: 10
 # MS SQL
 
 :::info
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](../../core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
 [Microsoft SQL Server](https://www.microsoft.com/en-in/sql-server/sql-server-downloads) is a relational database management system developed by Microsoft that supports a wide variety of transaction processing, business intelligence, and analytics applications in corporate IT environments.
@@ -76,11 +76,11 @@ Normal query execution simply string concatenates the evaluated values of the ja
 
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
 
-Follow the guide on [how to use prepared statements](../../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
+Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
 
 ## Using Queries in Applications
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)

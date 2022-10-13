@@ -99,7 +99,7 @@ function(){
 }}
 ```
 
-In this way, you can also write multi-line code within Appsmith! For more information on writing code in Appsmith, please refer to this page [Writing Code](../../core-concepts/writing-code/).
+In this way, you can also write multi-line code within Appsmith! For more information on writing code in Appsmith, please refer to this page [Writing Code](/core-concepts/writing-code/).
 
 ## Making Table Columns Dynamic in Appsmith
 

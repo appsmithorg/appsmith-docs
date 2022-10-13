@@ -176,4 +176,4 @@ For the delete option, let's add a new column in the table and set the column to
 
 The `Delete row` method only takes in the `rowIndex`, hence we're passing this via the Table1 widget using the `selectedRow` property.
 
-With this, we were able to perform CRUD operations on Google Sheet using Appsmith. Do refer to the [docs](../../reference/datasources/querying-google-sheets.md) for other query methods in the Google Sheets plugin.
+With this, we were able to perform CRUD operations on Google Sheet using Appsmith. Do refer to the [docs](/reference/datasources/querying-google-sheets.md) for other query methods in the Google Sheets plugin.

@@ -45,24 +45,24 @@ HTTP Headers are an important part of the API request and response, representing
 
 #### Query Parameters
 
-A parameter is a piece of information you provide to a query during its execution. In the query, parameters can be used independently or as a component of a larger expression to build a criterion. The API you integrate allows you to include one or more[ query parameters](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database) as part of the request.
+A parameter is a piece of information you provide to a query during its execution. In the query, parameters can be used independently or as a component of a larger expression to build a criterion. The API you integrate allows you to include one or more[ query parameters](/core-concepts/data-access-and-binding/querying-a-database) as part of the request.
 
 #### Send Appsmith signature header\*
 
-You can enable [Send Appsmith Signature Header](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication#send-appsmith-signature-header) to ensure that the incoming requests originate from Appsmith.
+You can enable [Send Appsmith Signature Header](/core-concepts/connecting-to-data-sources/authentication#send-appsmith-signature-header) to ensure that the incoming requests originate from Appsmith.
 
 #### Authentication Type
 
-GraphQL API[ authentication types](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication/authentication-type) can be defined using the protocols offered by Appsmith.
+GraphQL API[ authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type) can be defined using the protocols offered by Appsmith.
 
 #### Use Self-signed certificate
 
 Self-signed certificates are sometimes used in testing or internal environments, as they provide incoming/outgoing data encryption and can be created at no cost.
 
-The GraphQL Datasource allows you to upload your own self-signed certificate within the API's configuration page. You can follow this [document ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates)to learn more about Self-signed certificates.
+The GraphQL Datasource allows you to upload your own self-signed certificate within the API's configuration page. You can follow this [document ](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates)to learn more about Self-signed certificates.
 
 :::info
-This information needs to be provided in .PEM (Privacy Enhanced Mail) format, as shown [here](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
+This information needs to be provided in .PEM (Privacy Enhanced Mail) format, as shown [here](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
 :::
 
 ## Create Queries
@@ -136,7 +136,7 @@ You can create queries to fetch, update and delete data from a datasource using 
 | [​Update Records​](graphql.md#update-records)               | Update a few fields in a record.        |
 
 :::info
-[GraphQL Queries ](https://graphql.org/learn/queries/)(Read operations like List, Retrieve, etc.) and [GraphQL Mutations](https://graphql.org/learn/queries/#mutations) (Write operations like insert, update, etc.) are collectively termed [Queries ](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)in Appsmith.
+[GraphQL Queries ](https://graphql.org/learn/queries/)(Read operations like List, Retrieve, etc.) and [GraphQL Mutations](https://graphql.org/learn/queries/#mutations) (Write operations like insert, update, etc.) are collectively termed [Queries ](/core-concepts/data-access-and-binding/querying-a-database)in Appsmith.
 :::
 
 ### **List Records**
@@ -187,7 +187,7 @@ query GetRepositoryWithIssues {
 
 In the preceding query, we obtained information on issues (totalCount), the most recent issues with their titles and creation dates (createdAt), as well as information on the issue author.
 
-You can use a table widget to display your data. You can follow this [document](../widgets/table/) to understand how the table widget works.
+You can use a table widget to display your data. You can follow this [document](/widgets/table/) to understand how the table widget works.
 
 ![CDisplay Data Using Table Widget](</img/graphlql1.PNG>)<figure><figcaption align="center"><i>Display Data Using Table Widget</i></figcaption></figure>
 
@@ -278,7 +278,7 @@ mutation CreateIssue {
 }
 ```
 
-You can create a new issue using the [button ](https://docs.appsmith.com/reference/widgets/button)and [modal ](https://docs.appsmith.com/reference/widgets/modal)widget.
+You can create a new issue using the [button ](/reference/widgets/button)and [modal ](/reference/widgets/modal)widget.
 
 ### **Update Records​**
 
@@ -305,7 +305,7 @@ mutation updateIssueTest{
 
 The above query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here we are calling `id`.
 
-You can use the [Modal ](https://docs.appsmith.com/reference/widgets/modal)widget or[ JSON form Widget ](https://docs.appsmith.com/reference/widgets/json-form)to update the GitHub issues.
+You can use the [Modal ](/reference/widgets/modal)widget or[ JSON form Widget ](/reference/widgets/json-form)to update the GitHub issues.
 
 ### **​Delete A Record​**
 
@@ -489,7 +489,7 @@ End Cursor Value: {{testapi.data.data.repository.issues.pageInfo.endCursor}}
 ```
 
 :::info
-You can check this [document](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md) to learn more about server-side pagination.
+You can check this [document](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md) to learn more about server-side pagination.
 :::
 
 With this, you can run a query on a page change event. The below video demonstrates how you can perform cursor-based pagination:
@@ -501,7 +501,7 @@ With this, you can run a query on a page change event. The below video demonstra
 
 ### **Query Settings**
 
-The Query Settings Pane provides access to properties for the query. You can specify the following [settings ](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings)in the **Settings** tab on the Appsmith Query Editor:
+The Query Settings Pane provides access to properties for the query. You can specify the following [settings ](/core-concepts/data-access-and-binding/querying-a-database/query-settings)in the **Settings** tab on the Appsmith Query Editor:
 
 With Appsmith GraphQL integration, it's possible to create apps that seamlessly connect with the database and provide additional flexibility for updating and analyzing data.
 
@@ -509,6 +509,6 @@ With Appsmith GraphQL integration, it's possible to create apps that seamlessly 
 
 Once you have successfully run a Query, you can use it in your application to:
 
-* [Display Data](https://docs.appsmith.com/core-concepts/data-access-and-binding/displaying-data-read)
-* [Capture Data](https://docs.appsmith.com/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data)
-* [Execute Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
+* [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+* [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)

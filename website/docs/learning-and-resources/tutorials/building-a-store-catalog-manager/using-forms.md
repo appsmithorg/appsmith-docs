@@ -15,7 +15,7 @@ We'll also add a button on the **ProductListPage** that takes us to our new page
 
 ## Creating your first form!
 
-First, to add new products to the catalog, you'll need to create a new [form widget](../../../reference/widgets/form.md). To keep things more organized, do this on a new page to avoid affecting the catalog page. Follow the below steps:
+First, to add new products to the catalog, you'll need to create a new [form widget](/reference/widgets/form.md). To keep things more organized, do this on a new page to avoid affecting the catalog page. Follow the below steps:
 
 1. Create a new _**Page**_ by clicking on the "+" icon next to the **Pages** directory.
 2. Rename the page to **`NewProductPage`**
@@ -27,7 +27,7 @@ First, to add new products to the catalog, you'll need to create a new [form wid
 
 ## Adding Input Widgets to the Form
 
-The created form does not have any input fields. Now, add a new [input widget](../../../reference/widgets/input.md) onto the empty form (_AddProductForm_) by simply selecting it and dropping it onto the canvas. Rename the input widget to **`ProductNameInput`**.
+The created form does not have any input fields. Now, add a new [input widget](/reference/widgets/input.md) onto the empty form (_AddProductForm_) by simply selecting it and dropping it onto the canvas. Rename the input widget to **`ProductNameInput`**.
 
 :::info
 Having trouble dragging your Input widget onto your Form widget? Try dragging it more quickly! Widgets will automatically adjust their size and position to make room for any new widgets you drag onto the canvas. But if you drag them quickly, you can place things inside of certain widgets like the Form and Container. To learn more about how it works, take a look at this [demonstration](https://www.youtube.com/watch?v=NB8Btt0aw0g)!
@@ -37,7 +37,7 @@ Below is a screenshot of how your form should look:
 
 ![](/img/as_storeTutorial_addForm.png)
 
-The input widget begins with a **Label** field, but we can also use a separate [text widget](../../../reference/widgets/text.md) to have a bit more control over its placement. Let's add a text widget to the left of **ProductNameInput**. Then, open the new text widget's properties and update its **Text** property to **`Product Name`:** to change the display text. You can remove the input widget's label by clearing out the **Label** field in its properties.
+The input widget begins with a **Label** field, but we can also use a separate [text widget](/reference/widgets/text.md) to have a bit more control over its placement. Let's add a text widget to the left of **ProductNameInput**. Then, open the new text widget's properties and update its **Text** property to **`Product Name`:** to change the display text. You can remove the input widget's label by clearing out the **Label** field in its properties.
 
 At the same time, let's go ahead and give the **`AddProductForm`** a proper title: Find its text widget label at the top of the form and set its **Text** property to **`Add A Product:`**.
 
@@ -51,12 +51,12 @@ You can also configure input fields on Appsmith. For example, you can set data t
 The data type property sets the allowed data-type of input -- in this case, the user may only provide text. However, based on your use cases you can change it to a number, password, or an email. The **Required** switch makes the field mandatory.
 
 :::info
-The form-submit button is automatically disabled if no input is provided for a mandatory field. To check out more properties and configurations, check out the docs [here](../../../reference/widgets/input.md#properties).
+The form-submit button is automatically disabled if no input is provided for a mandatory field. To check out more properties and configurations, check out the docs [here](/reference/widgets/input.md#properties).
 :::
 
 ## Adding a Select Widget to the Form
 
-Let's add another field to the **`AddProductForm`** that enables users to choose the product category. For this, you'll have to drag and drop a [Select widget](../../../reference/widgets/dropdown-1.md) and rename it to **`CategorySelect`**. Also, to keep the form clean, add a text widget to use as a label next to **`CategorySelect`**. Set the text widget's **Text** property to **`Category:`**.
+Let's add another field to the **`AddProductForm`** that enables users to choose the product category. For this, you'll have to drag and drop a [Select widget](/reference/widgets/dropdown-1.md) and rename it to **`CategorySelect`**. Also, to keep the form clean, add a text widget to use as a label next to **`CategorySelect`**. Set the text widget's **Text** property to **`Category:`**.
 
 As you look at the `CategorySelect` widget, you'll see some default options already added to it. Follow the steps below to set these options as necessary for our Oakry catalog:
 
@@ -122,12 +122,12 @@ Now our **Options** field is easier to read, and much easier to update in the fu
 
 You may wish to define a JavaScript function that modifies/transforms the shape or appearance of your data before it is rendered by a widget. For example, you could include methods to check whether input records match a particular condition, and include or filter out records based on the result.
 
-Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](../../../core-concepts/writing-code/ext-libraries.md) to transform data in any widget, API, or DB Query.
+Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](/core-concepts/writing-code/ext-libraries.md) to transform data in any widget, API, or DB Query.
 :::
 
 ## Wrapping up the Form
 
-So far, the form can accept a name and a category for the product. Now, we will add a field for the price. Drag a new [input widget](../../../reference/widgets/input.md) and rename it to `MrpInput`. This will be taking a numerical value, so we will change the `Data Type` to `Number.` Lastly, add a [text widget](../../../reference/widgets/text.md) next to `MrpInput` and set its **`Text`** property to **`MRP($)`**.
+So far, the form can accept a name and a category for the product. Now, we will add a field for the price. Drag a new [input widget](/reference/widgets/input.md) and rename it to `MrpInput`. This will be taking a numerical value, so we will change the `Data Type` to `Number.` Lastly, add a [text widget](/reference/widgets/text.md) next to `MrpInput` and set its **`Text`** property to **`MRP($)`**.
 
 ![](/img/as_storeTutorial_completeForm.png)
 
@@ -191,7 +191,7 @@ The only difference here is that you're using the **mustache template** to write
 To reiterate: Widgets, APIs, and DB Queries belonging to the same parent page can all access each other's properties and data, by referencing the desired property on that object's name.
 
 :::info
-From within our query, we've accessed the properties of our widgets! To see the various exposed properties you can access for any given widget, check the **Internal Properties** section in [widget](../../../reference/widgets/) documentation.
+From within our query, we've accessed the properties of our widgets! To see the various exposed properties you can access for any given widget, check the **Internal Properties** section in [widget](/reference/widgets/) documentation.
 :::
 
 ## Triggering action on UI events
@@ -242,10 +242,10 @@ Clicking on **JS** enables two things:
 1. If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.
 2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. You can modify this JavaScript to further customize the behavior.
 
-Note that you bound one action each with the success and error events. In [part 3](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views), you'll learn to bind more than one action with each of the events.
+Note that you bound one action each with the success and error events. In [part 3](/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views), you'll learn to bind more than one action with each of the events.
 
 :::info
-For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](../../how-to-guides/writing-javascript-in-appsmith.md).
+For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](/how-to-guides/writing-javascript-in-appsmith.md).
 :::
 
 ## Connecting multiple pages
@@ -253,7 +253,7 @@ For more information about writing JavaScript in Appsmith, please refer to this 
 You've created a new page **NewProductPage** with a form that allows users to add new products to the Oakry catalog. Now, we'd like to open this page when the user clicks on an **"Add new product"** button from the **ProductListPage**. Let's set this up:
 
 1. Navigate to **Pages** **→ ProductListPage**.
-2. Drag-drop a [button widget ](../../../reference/widgets/button/)to the bottom-right of the table.
+2. Drag-drop a [button widget ](/reference/widgets/button/)to the bottom-right of the table.
 3. Rename the new button to **AddProductButton**.
 4. Change the button label to **Add New Product**.
 5. Go to **Events → onClick → Navigate To**.
@@ -269,4 +269,4 @@ By selecting the [Navigate To](broken-reference) option, you set up the button t
 
 ## What's next?
 
-When you're comfortable with the basics of building a form, accessing widget's properties in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](https://docs.appsmith.com/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views)of the tutorial to learn to handle and process user input.
+When you're comfortable with the basics of building a form, accessing widget's properties in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views)of the tutorial to learn to handle and process user input.

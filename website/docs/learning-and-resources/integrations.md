@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Integrations
 
-Appsmith provides **native** integrations with many [databases](../reference/datasources/). Besides, Appsmith can also seamlessly connect with most other tools through the RESTful API plugin.
+Appsmith provides **native** integrations with many [databases](/reference/datasources/). Besides, Appsmith can also seamlessly connect with most other tools through the RESTful API plugin.
 
 ###                    
 

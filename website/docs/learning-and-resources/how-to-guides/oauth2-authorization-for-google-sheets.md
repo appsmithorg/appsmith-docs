@@ -16,7 +16,7 @@ Google Cloud Platform allows us to authorise third-party applications to access 
 3. Now, you’ll have to generate OAuth 2.0 Client IDs; you can do this by navigating to the APIs and Services - Credentials section.
 4. Next, create a new app under the OAuth 2.0 Client ID section and give it a name.
 5. You’ll now find two keys, Client ID and Client Secret; you’ll need these authorize appsmith to access your drive.
-6. Now add the following URIs under Authorised Redirect URIs\*\*:\*\* [https://app.appsmith.com/api/v1/datasources/authorize](https://app.appsmith.com/api/v1/datasources/authorize)
+6. Now add the following URIs under Authorised Redirect URIs **:** [https://app.appsmith.com/api/v1/datasources/authorize](https://app.appsmith.com/api/v1/datasources/authorize)
 7. Lastly, you’ll have to enable API’s to communicate with different services. For example, if you’re integrating google sheets, you’ll have to search for Google Sheets using the top search bar and enable API.
 
 ![Gathering OAuth Client ID from Google Cloud Platform](</img/image_(9).png>)
