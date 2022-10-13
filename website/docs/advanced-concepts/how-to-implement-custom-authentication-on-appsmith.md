@@ -136,3 +136,5 @@ You can also setup custom Google authentication using Supabase:
 <figcaption align = "center"><i>Setting Up Custom Login | Supabase
 </i></figcaption>
 </figure>
+
+
