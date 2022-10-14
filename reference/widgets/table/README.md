@@ -68,6 +68,8 @@ The data fetched from the Query/ API is sometimes too large to be displayed on o
 
 #### Inline Editing
 
+{% embed url="https://youtu.be/eIecDfvSOsU" %}
+
 Inline editing allows you to edit a cell contents in the table columns. It can be enabled for the whole column or at the cell level based on a condition. Read more about Inline editing [here](./#inline-editing).
 
 ### Binding Properties
