@@ -49,7 +49,7 @@ There are several types of events tracked in Appsmith's audit logs:
 | user.logged_out | Logged when a user logs out of the platform. |
 | user.invited | Logged when someone sends an invite to the platform. |
 | user.signed_up | Logged when a new user logs in for the first time. |
-| instance_setting.updated | Logged when a change is made to the instance's configuration. |
+| instance_setting.updated | Logged when a change is made to the platform instance's configuration. |
 
 ## Audit log format
 
@@ -57,7 +57,7 @@ Each logged item has a number of data points that describe that event, as well a
 
 | Data | Description | Details |
 |------|-------------|---------|
-| event | Each action performed on Appsmith app(edit or view mode) is classified as event |  |
+| event | Each action performed on Appsmith app (edit or view mode) is classified as event |  |
 | timestamp | Displays the date and time of a logged event. |  |
 | user | Displays the user who made performed this event | `id`, `email`, `name` |
 | resource | The type of resource on which this event was performed (Query, Datasource, etc.) | `id`, `type`, `name` |
@@ -105,9 +105,9 @@ Below is an example of a log item:
 {Video demo: exploration of logs and filtering}
 
 There are a number of filters available to help you quickly search for a subset of your logs. You can filter your logs by:
-- User
-- Event
-- ResourceId
-- Date Range
+- User: To get a trace of activities performed by a user, filter by their email address.
+- Event: Filter events by their name; for example, to find all logs related to query execution, filter by the `query.executed` event.
+- ResourceId: A resourceID identifies each entity on your Appsmith instance, be it a workspace, application, page, datasource, query or JSObject.
+- Date Range: Narrow down logs by searching for only a certain range of time.
 
 From the JSON area of any event, you may also click any of the values to search for other instances of that value.
