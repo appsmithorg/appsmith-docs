@@ -1,5 +1,7 @@
 # SSL & Custom Domain
 
+{% embed url="https://youtu.be/0llo1exi4IY" %}
+
 You can easily make Appsmith available on a custom domain by updating your domain's DNS records to point to the instance running Appsmith. Most domain registrars / DNS providers have documentation on how you can do this yourself.
 
 * [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080)
