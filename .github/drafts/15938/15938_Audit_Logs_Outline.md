@@ -1,6 +1,6 @@
 # Audit logs
 
-Audit logs are a vital way to keep records of user activity related to app changes and platform settings. With access to this information, you can ensure that you're able to easily follow up and address any unexpected or undesirable events.
+The audit log is a report of all activities that occur on an Appsmith instance. It will automatically capture and display events by recording who performed an activity, when it occurred, and where it was performed. With this information, you can ensure that you're able to easily follow up and address any unexpected or undesirable events.
 
 ---
 
@@ -20,6 +20,8 @@ There are several types of events tracked in Appsmith's audit logs:
 
 - Admin settings changes
     - Who changed certain settings
+
+- User sign-up and login activity
 
 | Event Name | Description |
 |------------|-------------|
