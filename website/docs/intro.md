@@ -40,7 +40,7 @@ There are two ways of using Appsmith:
 
 If you are new to Appsmith, this is the place to start:
 
-<div class="girdContainer">
+<div class="gridContainer">
    <div class="containerRow">
       <div class="containerCol">
          <div class="containerCol"><img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/quickstart_qZKI7b9na.png?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1657567806641" alt="quickstart" /></div>
@@ -51,7 +51,7 @@ If you are new to Appsmith, this is the place to start:
       </div>
    </div>
 </div>
-<div class="girdContainer">
+<div class="gridContainer">
    <div class="containerRow">
       <div class="containerCol">
          <div class="containerCol">
@@ -64,7 +64,7 @@ If you are new to Appsmith, this is the place to start:
       </div>
    </div>
 </div>
-<div class="girdContainer">
+<div class="gridContainer">
    <div class="containerRow">
       <div class="containerCol">
          <div class="containerCol">
