@@ -40,8 +40,43 @@ There are two ways of using Appsmith:
 
 If you are new to Appsmith, this is the place to start:
 
-| <p><img src="https://ik.imagekit.io/iyat1fg3juj/quickstart_qZKI7b9na.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657567806641" alt="quickstart"/><br/>  <br/><a href="getting-started/start-building.md"><mark ><strong>Quickstart Tutorial</strong></mark><br/><strong></strong></a>Build your first app using Appsmith<br/></p> | <p><img src="https://ik.imagekit.io/iyat1fg3juj/concepts_f_oFY_5zS.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657568503368" alt="concepts"/><br/>  <br/><a href="broken-reference"><mark ><strong>Core Concepts</strong></mark></a><strong></strong><br/><strong></strong>Everything you need to know about Appsmith fundamentals <br/></p> | <p><img src="https://ik.imagekit.io/iyat1fg3juj/support1_Fanv9b1dK.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657570424985" alt="support"/><br/><br/><a href="https://community.appsmith.com/"><mark ><strong>Support</strong></mark></a><strong></strong><br/><strong></strong>Reach out to us for any questions <br/></p> |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+<div class="girdContainer">
+   <div class="containerRow">
+      <div class="containerCol">
+         <div class="containerCol"><img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/quickstart_qZKI7b9na.png?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1657567806641" alt="quickstart" /></div>
+         <div class="containerCol"><a class="containerLink" href="/getting-started/start-building">Quickstart Tutorial</a></div>
+         <div class="containerCol">
+            <div class="containerDescription">Build your first app using Appsmith</div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="girdContainer">
+   <div class="containerRow">
+      <div class="containerCol">
+         <div class="containerCol">
+             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/concepts_f_oFY_5zS.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657568503368" alt="concepts"/>
+         </div>
+         <div class="containerCol"><a class="containerLink" href="core-concepts/connecting-to-data-sources">Core Concepts</a></div>
+         <div class="containerCol">
+            <div class="containerDescription">Everything you need to know about Appsmith fundamentals </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="girdContainer">
+   <div class="containerRow">
+      <div class="containerCol">
+         <div class="containerCol">
+             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/support1_Fanv9b1dK.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657570424985" alt="concepts"/>
+         </div>
+         <div class="containerCol"><a class="containerLink" href="https://community.appsmith.com/">Support</a></div>
+         <div class="containerCol">
+            <div class="containerDescription">Reach out to us for any questions</div>
+         </div>
+      </div>
+   </div>
+</div>
 
 #### Advanced Users
 

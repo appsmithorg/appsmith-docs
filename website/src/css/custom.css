@@ -43,3 +43,55 @@
   -webkit-padding-after: 1.5rem;
   padding-block-end: 1.5rem;
 }
+
+.girdContainer {
+  max-width: 75%!important;
+  box-sizing: border-box;
+  width: 280px;
+  height: 280px;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 50px;
+  margin: 10px;
+  float: left;
+}
+
+
+.containerRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1;
+}
+
+.containerCol {
+  --ifm-col-width: 100%;
+  flex: 1 0;
+  margin-left: 0;
+  max-width: 95%;
+  overflow: hidden;
+}
+
+.containerLink {
+  border: 1px solid;
+  border-radius:;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  vertical-align: left;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: grey;
+  cursor: pointer;
+}
+
+.containerDescription{
+  margin: 1px;
+  font-size: .8rem;
+}
+
+.containerImage {
+ margin: 1px;
+ font-weight: bold;
+ vertical-align: center;
+}
