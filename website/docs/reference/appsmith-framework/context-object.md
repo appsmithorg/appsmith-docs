@@ -41,7 +41,7 @@ This object contains the key-value pairs of the local storage of the application
 
 ### URL
 
-This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](widget-actions/navigateto.md).
+This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](widget-actions/navigate-to).
 
 ```javascript
 {

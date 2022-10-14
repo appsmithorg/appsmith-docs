@@ -13,7 +13,7 @@ This error occurs when the value in the property of the widget does not match th
 
 **Why do you see this error?**
 
-While working with [Tables](../../reference/widgets/table/) or [Lists](../../reference/widgets/list.md), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](../../core-concepts/connecting-to-data-sources/authentication/) response.
+While working with [Tables](../../reference/widgets/table/) or [Lists](../../reference/widgets/list), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](../../core-concepts/connecting-to-data-sources/authentication/) response.
 
 **Solution:**
 
@@ -83,7 +83,7 @@ In case the response does not contain label and value keys as below, we can map 
 
 **Why do you see this error?**
 
-The below image shows that there is an error in the `Chart Data field` of the [Chart](../../reference/widgets/chart.md), giving us the same error. The Evaluated Value here indicates the current value of the field, and in the screenshot below, you can see that the current value is an array while the error indicates that it must be an array\<x, y>.
+The below image shows that there is an error in the `Chart Data field` of the [Chart](../../reference/widgets/chart), giving us the same error. The Evaluated Value here indicates the current value of the field, and in the screenshot below, you can see that the current value is an array while the error indicates that it must be an array\<x, y>.
 
 ![](/img/chart_error.png)
 
