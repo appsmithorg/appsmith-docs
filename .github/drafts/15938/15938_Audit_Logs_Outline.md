@@ -53,7 +53,7 @@ There are several types of events tracked in Appsmith's audit logs:
 
 ## Audit log format
 
-Each logged item has a number of data points that describe that event, as well as any related apps, datasources, queries, and workspaces.
+Each logged item has a number of data points that describe that event, as well as any related apps, datasources, queries, and workspaces. This data is organized into JSON format.
 
 | Data | Description | Details |
 |------|-------------|---------|
