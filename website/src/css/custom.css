@@ -100,8 +100,8 @@
 
 .containerGrid {
   display: flex;
-  height: 200px;
-  padding: 30px ;
+  height: fit-content;
+  margin: 20px ;
 }
 
 .columnGrid {
@@ -109,11 +109,12 @@
   /* background: #f2f2f2; */
   /* border: 1px solid #e6e6e6; */
   box-sizing: border-box;
-  padding: 30px;
+  padding: 20px;
 }
 
 .column-one {
   order: 1;
+  
 }
 .column-two {
   order: 2;
