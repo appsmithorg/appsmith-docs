@@ -1,6 +1,76 @@
 # Installation Guides
 
-| <p><a href="docker"><strong></strong><br/><strong></strong><img src="/img/docker-logo(1).png" alt="Docker-logo"/></a><br/><br/><a href="docker/"><strong>Docker</strong></a><strong></strong></p>|<p><br/><a href="kubernetes/"><img src="img/Kubernetes_logo_(1).png" alt="Kubernetes-logo"/></a><br/><br/><a href="kubernetes/"><strong>Kubernetes</strong></a><strong></strong></p>|<p>	<br/><a href="../aws-ami">	<img src="/img/AWS_AMI.png" alt="AWS-AMI-logo"/></a><strong></strong><br/><strong></strong><br/><strong></strong><a href="../aws-ami"><strong>AWS AMI</strong></a><strong></strong></p>|
-|---|---|---|
-|<p><br/><a href="../aws-ecs"><img src="/img/AWS-ECS-Logo.png" alt="AWS-ECS-logo"/></a><strong></strong><br/><strong></strong><br/><strong></strong><a href="../aws-ecs"><strong>AWS ECS</strong></a><strong></strong></p>|<p><br/><a href="../digitalocean"><img src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/></a><strong></strong><br/><strong></strong><br/><strong></strong><a href="../digitalocean"><strong>Digital Ocean</strong></a><strong></strong></p>|<p><br/><a href="heroku.md"><img src="/img/heroku-logo.png" alt="Heroku-logo"/></a><strong></strong><br/><strong></strong><br/><strong></strong><a href="../heroku"><strong>Heroku</strong></a><strong></strong></p>|
-|<p><strong></strong><br/><strong></strong><a href="../cloudjiffy"><img src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"/></a><br/><br/><a href="cloudjiffy.md"><strong>CloudJiffy</strong></a><strong></strong></p>|<p><br/><a href="../ansible"><img src="/img/Ansible-logo.png" alt="Ansible-logo"/></a><strong></strong><br/><strong></strong><br/><strong></strong><a href="../ansible"><strong>Ansible</strong></a><strong></strong></p>|
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="docker/">
+            <img class="containerImage" src="/img/docker-logo_(1).png" alt="Docker-logo"/>
+            </a> 
+        </div> 
+        <b><a href="docker/">Docker</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="kubernetes/">
+            <img class="containerImage" src="img/Kubernetes_logo_(1).png" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="kubernetes/">Kubernetes</a></b>
+    </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="aws-ami/">
+            <img class="containerImage" src="/img/AWS_AMI.png" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="aws-ami/">AWS AMI</a></b>
+   </div>
+</div>
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="aws-ecs/">
+            <img class="containerImage" src="/img/AWS-ECS-Logo.png" alt="AWS-ECS-logo"/>
+            </a> 
+        </div> 
+        <b><a href="aws-ecs/">AWS ECS</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="digitalocean/">
+            <img class="containerImage" src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/>
+            </a>     
+        </div> 
+         <b><a href="digitalocean/">Digital Ocean</a></b>
+    </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="heroku/">
+            <img class="containerImage" src="/img/heroku-logo.png" alt="Heroku-logo"/>
+            </a>   
+        </div> 
+            <b><a href="heroku/">Heroku</a></b>
+   </div>
+</div>
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="cloudjiffy/">
+            <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"/>
+            </a> 
+        </div> 
+        <b><a href="cloudjiffy/">CloudJiffy</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="ansible/">
+            <img class="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
+            </a>     
+        </div> 
+         <b><a href="ansible/">Ansible</a></b>
+    </div>
+     <div class="columnGrid column-three" align="center">
+   </div>
+</div>
