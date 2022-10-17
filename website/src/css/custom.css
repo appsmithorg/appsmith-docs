@@ -101,6 +101,7 @@
 .containerGrid {
   display: flex;
   height: 200px;
+  padding: 30px ;
 }
 
 .columnGrid {
