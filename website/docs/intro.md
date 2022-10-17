@@ -92,8 +92,8 @@ If you think we need to include something in this documentation, please fill out
 
 ## Other Resources
 
-* Have a look at our [FAQ](getting-started/faq.md) and [Troubleshooting](help-and-support/troubleshooting-guide/) section, and you might find your questions answered there;
-* View our [Guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith);
+* Have a look at our [FAQ](getting-started/faq.md) and [Troubleshooting](help-and-support/troubleshooting-guide/) section, and you might find your questions answered there.
+* View our [Guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith).
 * Report Bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
 
 :::caution
