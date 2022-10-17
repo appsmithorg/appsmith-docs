@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: <a href="/getting-started/start-building">Quick Start</a>,
-    Svg: require('@site/static/img/getting-started.svg').default,
+    Svg: require('@site/static/img/gettingstarted.svg').default,
     description: (
       <>
         Designed to be completed in 15-30 mins. It provides you quick, hands on experience to build your first app on Appsmith.
@@ -24,7 +24,7 @@ const FeatureList = [
   },
   {
     title: 'Core Concepts',
-    Svg: require('@site/static/img/core-concepts.svg').default,
+    Svg: require('@site/static/img/coreconcepts.svg').default,
     description: (
       <>
         Everything you need to know about Appsmith fundamentals.
