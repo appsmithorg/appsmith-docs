@@ -33,7 +33,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Installation Guide',
+              label: 'Installation Guides',
               link: {type: 'doc', id:  'getting-started/setup/installation-guides/README'},
               items: [
                 {
