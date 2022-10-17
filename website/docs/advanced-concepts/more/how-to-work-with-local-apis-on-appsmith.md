@@ -15,7 +15,7 @@ With your on-premises Appsmith instance running on the same system, you may use 
 
 ## Using host.docker.internal
 
-You can use `` [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
+You can use [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
 
 :::info
 You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.
@@ -29,14 +29,30 @@ You can also visit docker docs to read the use cases and workarounds for the [ho
 </i></figcaption>
 </figure>
  
+For Linux systems, you would need to provide a run flag `add-host`. 
 
+```
+--add-host=host.docker.internal:host-gateway
+```
+:::note
+Only more recent versions of Docker support host-gateway, which is transformed to the Docker default bridge network IP (or virtual IP of the host).
+:::
+
+Run the below command to test it and make sure the IP address from the hosts file is displayed.
+
+```bash
+ run —-rm -—add-host=host.docker.internal:host-gateway
+ ```
+For Docker compose on Linux, you need to manually add it to the ```docker-compose.yaml``` file, use ```extra hosts``` to add the entry as shown below: 
+
+```yaml
+ extra_hosts:
+    - "host.docker.internal:host-gateway"
+```
 
 ## Using ngrok
 
 Appsmith allows you to work with APIs running on `localhost` using the help of **`ngrok`**. Let’s look at how you can build an Appsmith application utilizing the APIs running on localhost.
-
-
-
 
 
  <figure>
