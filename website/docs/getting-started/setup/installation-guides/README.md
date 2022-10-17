@@ -12,7 +12,7 @@
    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="kubernetes/">
-            <img class="containerImage" src="img/Kubernetes_logo_(1).png" alt="Kubernetes-logo"/>
+            <img class="containerImage" src="/img/Kubernetes_logo_(1).png" alt="Kubernetes-logo"/>
             </a>     
         </div> 
          <b><a href="kubernetes/">Kubernetes</a></b>
