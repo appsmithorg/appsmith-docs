@@ -47,14 +47,13 @@
 
 .gridContainer {
   max-width: 75%!important;
-  display: flow-root;
   box-sizing: border-box;
+  width: 28%;
   height: 280px;
-  width: 275px;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
   padding: 50px;
-  margin: 10px;
+  margin: 20px;
   float: left;
 }
 
