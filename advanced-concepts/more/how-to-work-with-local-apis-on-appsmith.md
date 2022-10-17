@@ -12,15 +12,38 @@ With your on-premises Appsmith instance running on the same system, you may use 
 
 ## Using host.docker.internal
 
-You can use `` [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
+You can use \`\` [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
 
 {% hint style="info" %}
-You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.&#x20;
+You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.
 {% endhint %}
 
 {% embed url="https://youtu.be/4XlgsVekzhI" %}
 Connect to databases/APIs running on localhost
 {% endembed %}
+
+For Linux systems, you would need to provide a run flag `--add-host`.&#x20;
+
+```
+--add-host=host.docker.internal:host-gateway
+```
+
+{% hint style="info" %}
+Only more recent versions of Docker support `host-gateway`, which is transformed to the Docker default bridge network IP (or virtual IP of the host).
+{% endhint %}
+
+Run the below command to test it and make sure the IP address from the hosts file is displayed.
+
+```bash
+ run --rm --add-host=host.docker.internal:host-gateway
+```
+
+For Docker compose on Linux, you need to manually add it to the `docker-compose.yaml` file, use extra hosts to add the entry as shown below:&#x20;
+
+```yaml
+ extra_hosts:
+    - "host.docker.internal:host-gateway"
+```
 
 ## Using ngrok
 
