@@ -10,7 +10,7 @@ const config = {
   title: 'Appsmith',
   tagline: 'Open source, low code - Build, Ship and maintain Internal tools',
   url: 'https://appsmithorg.github.io',
-  baseUrl: '/appsmith/',
+  baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/Appsmith-Logo.png',
