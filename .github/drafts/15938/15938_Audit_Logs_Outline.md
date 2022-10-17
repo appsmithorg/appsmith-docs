@@ -25,7 +25,7 @@ There are several types of events tracked in Appsmith's audit logs:
 
 For an exhaustive list of events, see [Tracked Events](#tracked-events) below.
 
-## Event contents
+## Log Contents
 
 Each logged item has a number of data points that describe that event, as well as any related apps, datasources, queries, and workspaces. This data is organized into JSON format.
 
