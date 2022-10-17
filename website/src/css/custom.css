@@ -96,3 +96,27 @@
  font-weight: bold;
  vertical-align: center;
 }
+
+
+.containerGrid {
+  display: flex;
+  height: 200px;
+}
+
+.columnGrid {
+  flex: 1;
+  /* background: #f2f2f2; */
+  /* border: 1px solid #e6e6e6; */
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.column-one {
+  order: 1;
+}
+.column-two {
+  order: 2;
+}
+.column-three {
+  order: 3;
+}
