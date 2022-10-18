@@ -51,11 +51,11 @@ Creating a new Client secret in Active Directory
 
 ![Appsmith - OIDC Setup](../../../../../.gitbook/assets/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
 
-### Configure Scopes
+### Configure Scopes <!-- updated for 17478 -->
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. You'll see the Scope field below the **JSON Web Key Set**:
 
-![Configure Scope(s) at Appsmith](./as_oidc_offline.png) <!-- updated for 17478 -->
+![Configure Scope(s) at Appsmith](./as_oidc_offline.png) 
 
 #### What does Appsmith need as part of Scopes?
 

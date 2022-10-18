@@ -77,7 +77,7 @@ The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize t
 
 ![Configure Scope(s) at Appsmith](./as_oidc_offline.png) <!-- updated for 17478 -->
 
-#### What does Appsmith need as part of Scopes?
+#### What does Appsmith need as part of Scopes? <!-- updated for 17478 -->
 
 Appsmith needs **openid** as a mandatory scope. It's also highly recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
 

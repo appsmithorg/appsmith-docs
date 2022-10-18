@@ -39,9 +39,10 @@ Environment Configuration
 Configure Environment and Scope
 {% endembed %}
 
+<!-- added for 17478 -->
 * In your app's settings pane, navigate to the **Configuration** tab. Click the pencil icon to begin editing the app's settings, and tick the **Refresh Token** box to enable Ping Identity to issue refresh tokens to Appsmith. Your app is now configured for use with Appsmith.
 
-{% embed url="https://youtu.be/y7f2kXY9zcw" %}
+{% embed url="https://youtu.be/y7f2kXY9zcw" %} <!-- added for 17478 -->
 Enable Refresh Tokens
 {% endembed %}
 
