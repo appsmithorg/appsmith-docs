@@ -19,7 +19,7 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 * In the **General settings** of the newly created App Integration:
   * Give your App integration a meaningful name (Optional.)
 
-![New App - General Settings](../../../../../.gitbook/assets/Okta-General-Settings.png)
+![New App - General Settings](./as_Okta_edited.png) <!-- replaced for 17478 -->
 
 * Under the **Grant Type > Client acting on behalf of a user** heading, tick the **Refresh Token** checkbox (Optional - Highly recommended).
 
@@ -75,7 +75,7 @@ Get Okta Configurations
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-![Configure Scope(s) at Appsmith](as_oidc_offline.png) <!-- updated for 17478 -->
+![Configure Scope(s) at Appsmith](./as_oidc_offline.png) <!-- updated for 17478 -->
 
 #### What does Appsmith need as part of Scopes?
 

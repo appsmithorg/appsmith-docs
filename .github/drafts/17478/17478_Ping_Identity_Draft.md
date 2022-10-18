@@ -33,10 +33,16 @@ Environment Configuration
 ![Redirect URL available at Appsmith >> Profile >> Admin Settings >> Authentication >> OIDC](../../../../../.gitbook/assets/Appsmith-Admin-Settings-Authentication-OIDC-RedirectURL.png)
 
 * Use the **Grant Access Resources** to filter the scopes by **openid** resource type. Move the desired scopes to **Scope Grants** to give access to the resources. Click on **Save and Continue**.
-* In the Attribute Mapping, add the OIDC attributes. Please note that only the values added in the `Scope Grant` will be valid here. Hit **Save and Close**, and your application is ready.
+* In the Attribute Mapping, add the OIDC attributes. Please note that only the values added in the `Scope Grant` will be valid here. Hit **Save and Close**.
 
 {% embed url="https://youtu.be/fRreXB6P0No" %}
 Configure Environment and Scope
+{% endembed %}
+
+* In your app's settings pane, navigate to the **Configuration** tab. Click the pencil icon to begin editing the app's settings, and tick the **Refresh Token** box to enable Ping Identity to issue refresh tokens to Appsmith. Your app is now configured for use with Appsmith.
+
+{% embed url="https://youtu.be/y7f2kXY9zcw" %}
+Enable Refresh Tokens
 {% endembed %}
 
 * Under the general section, you can see the basic information about your application. You can add multiple **Redirect URLs** by simply editing the general configurations. (Allows you to use this PingID application for multiple Appsmith applications.
@@ -64,7 +70,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Ping 
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-![Appsmith - configure scope(s)](as_oidc_offline.png) <!-- updated for 17478 -->
+![Appsmith - configure scope(s)](./as_oidc_offline.png) <!-- updated for 17478 -->
 
 #### What does Appsmith need as part of Scopes?
 
