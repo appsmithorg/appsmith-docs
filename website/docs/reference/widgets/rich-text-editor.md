@@ -136,8 +136,8 @@ How to set the label properties?
 
 Style properties allow you to change the look and feel of the widget. 
 
-| Style             | Description                                            |   |
-| ----------------- | ------------------------------------------------------ | - |
-| **Border Radius** | Allows you to define curved corners.                   |   |
-| **Box Shadow**    | Allows you to choose from the available shadow styles. |   |
+| Style             | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| **Border Radius** | Allows you to define curved corners.                   |
+| **Box Shadow**    | Allows you to choose from the available shadow styles. |
 

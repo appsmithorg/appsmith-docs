@@ -35,9 +35,9 @@ The `Text` field takes the input for the text widget. You can also add `HTML` co
   <figcaption align="center"><i>Text</i></figcaption>
 </figure>
 
-{% hint style="info" %}
+:::info
 Text field can only render inline CSS. If you want to use external CSS, we suggest using the [iFrame widget.](iframe.md)
-{% endhint %}
+:::
 
 #### Truncate Text
 

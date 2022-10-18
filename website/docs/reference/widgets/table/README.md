@@ -72,7 +72,7 @@ This property shows all the columns in the table, and it gets auto-populated fro
 
 **Server-Side Pagination**
 
-The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](https://docs.appsmith.com/core-concepts/displaying-data-read/display-data-tables#pagination).
+The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](./../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
 #### Inline Editing
 

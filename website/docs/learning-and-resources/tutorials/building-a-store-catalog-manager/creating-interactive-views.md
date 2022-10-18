@@ -82,8 +82,8 @@ Finally, note that since the scope of a widget is limited to its parent page, a 
 
 There are two ways to access a widget's properties or an APIs/DB Query's results _from another page_:
 
-1. Store the data in your browser cache using the [storeValue](broken-reference/) function so that it's available for accessing even when the user moves to another page in your app.
-2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](broken-reference/) function.
+1. Store the data in your browser cache using the [storeValue](../../../reference/appsmith-framework/widget-actions/store-value.md) function so that it's available for accessing even when the user moves to another page in your app.
+2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../../reference/appsmith-framework/widget-actions/navigate-to.md) function.
 :::
 
 Let's now set a default value for **MrpInput**:
@@ -192,7 +192,7 @@ To bind multiple actions to a button event, let's write some JavaScript:
 }}
 ```
 
-This is similar to what you learned in [part 2](/tutorials/building-a-store-catalog-manager/part-2-using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method above is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
+This is similar to what you learned in [part 2](./using-forms.md) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method above is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
@@ -229,6 +229,6 @@ You can also make the application public, in which case, anyone with the URL to 
 
 The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](broken-reference/)
+* [Core Concepts](../../../core-concepts/connecting-to-data-sources/README.md)
 * [Widgets](/reference/widgets/)
 * [Appsmith Framework](/reference/appsmith-framework/)

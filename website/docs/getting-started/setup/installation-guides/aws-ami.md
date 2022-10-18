@@ -7,12 +7,12 @@ sidebar_position: 4
 
 ## Tutorial Steps:
 
-* [Register with Amazon Web Services (AWS)](../aws-ami#step-1-register-with-amazon-web-services)
-* [Generate an SSH key pair](../aws-ami#step-2-generate-an-ssh-key-pair)
-* [Create an AWS Security Group](../aws-ami#step-3-create-an-aws-security-group)
-* [Deploy Appsmith on an AWS cloud server](../aws-ami#step-4-deploy-appsmith-on-aws-cloud)
-* [Find Application Credentials](../aws-ami#application-credentials)
-* [Updating your Appsmith installation](../aws-ami#updating-your-appsmith-installation)
+* [Register with Amazon Web Services (AWS)](./aws-ami.md#step-1-register-with-amazon-web-services)
+* [Generate an SSH key pair](./aws-ami.md#step-2-generate-an-ssh-key-pair)
+* [Create an AWS Security Group](./aws-ami.md#step-3-create-an-aws-security-group)
+* [Deploy Appsmith on an AWS cloud server](./aws-ami.md#step-3-create-an-aws-security-group)
+* [Find Application Credentials](./aws-ami.md#application-credentials)
+* [Updating your Appsmith installation](./aws-ami.md#updating-your-appsmith-installation)
 
 ### Step 1: Register With Amazon Web Services
 
@@ -44,7 +44,7 @@ The next step is to launch a cloud server with the Appsmith Amazon Machine Image
 4. On the resulting detail page, review the available server sizes. Select the server size you wish to use and click “**Review and Launch**” to proceed.
 5. On the review page, click the “**Edit security groups**” link.
 6. On the “**Configure Security Group**” page, choose the option to “**Select an existing security group**”. Find the security group you created in Step 3 and select it. Click the “Review and Launch” button to proceed.
-7. Verify that the correct key pair (created in [**Step 2**](../aws-ami#step-2-generate-an-ssh-key-pair)) will be used for the server.
+7. Verify that the correct key pair (created in [**Step 2**](./aws-ami#step-2-generate-an-ssh-key-pair)) will be used for the server.
 8. Confirm your selection by hitting the “**Launch Instance**” button.
 
 The AWS Console will now begin spinning up the new server.
@@ -107,11 +107,11 @@ cd appsmith && sudo docker-compose pull && sudo docker-compose rm -fsv appsmith 
 If your Appsmith setup does not have `auto-update` enabled that is the `Watchtower` container is not running along with `Appsmith` in the `host machine`. Follow the steps below to enable `auto-update:`
 
 * SSH into the `ec2` instance with username `appsmith`
-*  Change directory to `/appsmith`
+* Change directory to `/appsmith`
 * Run the below command to stop and remove the container and its resources
 
 ```
- docker-compose down 
+docker-compose down
 ```
 
 * Open the `docker-compose.yml` file with any text editor and uncomment the lines 13 to 23
@@ -122,7 +122,7 @@ If your Appsmith setup does not have `auto-update` enabled that is the `Watchtow
 * Run the below command
 
 ```
- docker-compose up -d
+docker-compose up -d
 ```
 
 ## Troubleshooting

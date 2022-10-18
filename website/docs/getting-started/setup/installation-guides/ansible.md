@@ -64,7 +64,7 @@ There are two options for installing Ansible:
 
 ## Step 3: Ansible configuration vars setup for Appsmith
 
-1. Open `appsmith-vars.yml` file with your editor.\
+1. Open `appsmith-vars.yml` file with your editor.<br/>
    There are some variables that will need input from you to get the application start correctly
    * `install_dir`: The absolute path of your app's installation folder on the server (required). Default value: `~/appsmith`
 

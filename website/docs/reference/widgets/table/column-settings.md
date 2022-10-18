@@ -38,7 +38,7 @@ The button type is a clickable entity that triggers any event attached to it. It
 
 A [checkbox ](../checkbox.md)is a component that enables the user to make a binary choice, i.e. a choice between one of two possible mutually exclusive options. Checkboxes typically use the boolean values **True** and **False** for checked and unchecked, respectively.
 
-The checkbox column type is not [editable](column-settings.md#editable) by default; however, you can change it in the property pane section. You can update or fetch the checkbox value using [**onCheckChange**](https://docs.appsmith.com/reference/widgets/checkbox?q=onCheckChange#events) after setting it to be editable.
+The checkbox column type is not [editable](column-settings.md#editable) by default; however, you can change it in the property pane section. You can update or fetch the checkbox value using [**onCheckChange**](./../checkbox.md#events) after setting it to be editable.
 
 #### Date
 
@@ -76,6 +76,28 @@ Data that complies with the universal patterns of URLs are of the URL data type.
 #### Video
 
 A [video ](../video.md)format is a format for storing digital video data on a table. It supports a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. You only need to insert the URL of your video and click the play button to play the video.[ ](https://docs.appsmith.com/reference/widgets/video)
+
+#### Switch
+
+The Switch is a UI component that allows users to make a binary decision. Switches toggle the state of a single item **on** or **off**. It employs the boolean values **True** and **False** for the **on** and **off** states, respectively, just like the [checkbox](column-settings.md#checkbox).
+
+The Switch is one of the few column types that supports inline editing; you can update or fetch the switch value using the **onChange event** after setting it to be editable. Read more about [Switch ](./../switch.md)in this guide.
+
+#### Select
+
+A [Select/Dropdown](../dropdown-1.md) component is a menu list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as gender, role, and status. Here is a code snippet for the **options** property:
+
+```
+[
+  {
+    "label": "abc",
+    "value": "abc"
+  }
+]
+```
+
+![Switch Column type available for table](/img/Switch_column_type.gif)
+
 
 ### Computed Value
 

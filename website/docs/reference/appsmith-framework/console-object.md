@@ -107,9 +107,9 @@ You can examine the task object and its attributes that are part of the response
 
 The `console.error()` method outputs an error message to the [logs tab](../../core-concepts/writing-code/javascript-editor-beta/#logs-tab). It can log a string, written as-is - with a custom error object, - or with a function that returns either a string or prints a custom object.
 
-{% hint style="warning" %}
+:::caution
 Console methods **don't** support **string substitutions.**
-{% endhint %}
+:::
 
 After reviewing the entry, parameters, and exit messages printed in the logs tab, you aren't sure what's breaking the code. To troubleshoot further, you should enclose the API call and the method logic within a `try-catch` block. You could have a custom function that evaluates all the types of errors the API can throw, outputs the appropriate message, and can use the console.error() method to print the returned message.
 

@@ -2,7 +2,6 @@
 
 Modal is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
 
-{% embed url="https://youtu.be/s8cHVkhj3ec" %}
 <figure>
   <object data="https://www.youtube.com/embed/s8cHVkhj3ec?autoplay=0" width='860px' height='515px'></object> 
   <figcaption align="center"><i>How to use Modal Widget</i></figcaption>

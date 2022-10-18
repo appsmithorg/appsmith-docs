@@ -70,13 +70,13 @@ You can define functions that will be called when these events are triggered in 
 
 | Event              | Description                                                                                                                                                 |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onCodeDetected** | Triggers an action when a valid code is detected. See a list of [supported actions](https://docs.appsmith.com/reference/appsmith-framework/widget-actions). |
+| **onCodeDetected** | Triggers an action when a valid code is detected. See a list of [supported actions](./../appsmith-framework/widget-actions/README.md). |
 
 #### onCodeDetected
 
 When a valid barcode or QR code is detected, this event triggers an action.  The Appsmith framework allows triggering actions for widget events and inside JS Objects. Let’s take an example to understand how the onCodeDetected event works.
 
-In this example, we will use the [Modal widget](https://docs.appsmith.com/reference/widgets/modal) to display the code response.
+In this example, we will use the [Modal widget](./modal.md) to display the code response.
 
 * Set the onCodeDetected event to open a New Modal, and choose to Create New.
 * This will open up a new modal; lets drag the [text widget](./text.md) into the modal.
@@ -110,8 +110,8 @@ Style properties allow you to change the look and feel of the widget.
 
 The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](../../learning-and-resources/tutorials/review-moderator-dashboard/broken-reference/)
-* [Appsmith Framework](../appsmith-framework/)
+* [Core Concepts](./../../core-concepts/connecting-to-data-sources/README.md)
+* [Appsmith Framework](./../appsmith-framework/README.md)
 * [JavaScript Editor](../../core-concepts/writing-code/javascript-editor-beta/)
 
 ### Troubleshooting

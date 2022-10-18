@@ -27,7 +27,7 @@ Configure the GraphQL API as illustrated below:
 ![Create GraphQL Datasource](</img/Screenshot_2022-09-07_at_11.43.59_AM.png>)<figure><figcaption align="center"><i>Create GraphQL Datasource</i></figcaption></figure>
 
 :::info
-All required fields are suffixed with an asterisk (\*).
+All required fields are suffixed with an asterisk.
 :::
 
 #### URL
@@ -129,11 +129,11 @@ You can create queries to fetch, update and delete data from a datasource using 
 
 | Query Name                                                  | Description                             |
 | ----------------------------------------------------------- | --------------------------------------- |
-| [​List Records​](graphql.md#list-records)                   | Fetches all the data from the database. |
-| [​Retrieve A Record​](graphql.md#retrieve-a-record)         | Retrieve a particular record.           |
-| [Insert Records​](graphql.md#insert-records-create-records) | Insert a new record in the database.    |
-| [​Delete A Record​](graphql.md#delete-a-record)             | Delete a specific record.               |
-| [​Update Records​](graphql.md#update-records)               | Update a few fields in a record.        |
+| [​List Records​](./graphql.md#list-records)                   | Fetches all the data from the database. |
+| [​Retrieve A Record​](./graphql.md#retrieve-a-record)         | Retrieve a particular record.           |
+| [Insert Records​](./graphql.md#insert-records​create-records) | Insert a new record in the database.    |
+| [​Delete A Record​](./graphql.md#delete-a-record)             | Delete a specific record.               |
+| [​Update Records​](./graphql.md#update-records)               | Update a few fields in a record.        |
 
 :::info
 [GraphQL Queries ](https://graphql.org/learn/queries/)(Read operations like List, Retrieve, etc.) and [GraphQL Mutations](https://graphql.org/learn/queries/#mutations) (Write operations like insert, update, etc.) are collectively termed [Queries ](/core-concepts/data-access-and-binding/querying-a-database)in Appsmith.
@@ -151,7 +151,7 @@ Once the parameters have been specified, click **Run**. The response section wil
 
 Let's take an example to understand how the list record command works.
 
-In this example, we will use [Github’s GraphQL API](https://docs.github.com/en/graphql) to **view** and **manage issues,** including **issue assignees, comments, labels,** and **milestones.**
+In this example, we will use [Github’s GraphQL API](https://docs.github.com/en/graphql) to **view** and **manage issues**, including **issue assignees, comments, labels,** and **milestones.**
 
 :::info
 Please understand key terms and concepts before using the [GitHub GraphQL API.](https://docs.github.com/en/graphql)
@@ -253,7 +253,7 @@ In GraphQL, you **insert**, **update** or **delete** data with mutations. A **Mu
 
 ### **Insert Records​/Create Records**
 
-Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into \*\*\*\* a **database table** with **specified table values**.
+Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into a **database table** with **specified table values**.
 
 <figure>
   <object data="https://www.youtube.com/embed/zy1wcfgyNjg?autoplay=0" width='750px' height='400px'></object> 
@@ -264,7 +264,7 @@ Insert is a widely used command in the Structured Query Language (SQL). The inse
 * Rename the query to **`create_user`**.
 * Next, add your code in the body section and run your query.
 
-To create a GitHub issue, you first require the \*\*`id` \*\* of the target repository. Once you assign the repository ID, you can input the title and description of the issue.
+To create a GitHub issue, you first require the **`id`** of the target repository. Once you assign the repository ID, you can input the title and description of the issue.
 
 ```
 mutation CreateIssue {
@@ -278,7 +278,7 @@ mutation CreateIssue {
 }
 ```
 
-You can create a new issue using the [button ](/reference/widgets/button)and [modal ](/reference/widgets/modal)widget.
+You can create a new issue using the [button ](./../widgets/button/README.md)and [modal ](./../widgets/modal.md)widget.
 
 ### **Update Records​**
 
@@ -305,7 +305,7 @@ mutation updateIssueTest{
 
 The above query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here we are calling `id`.
 
-You can use the [Modal ](/reference/widgets/modal)widget or[ JSON form Widget ](/reference/widgets/json-form)to update the GitHub issues.
+You can use the [Modal ](./../widgets/modal.md)widget or[ JSON form Widget ](./../widgets/json-form.md)to update the GitHub issues.
 
 ### **​Delete A Record​**
 
@@ -385,7 +385,7 @@ query GetAllUsers($limitz:Int, $offsetz:Int){
 ```
 
 * In the pagination section, select **Paginate via Limit and Offset.**
-* Set \_**limitz** \_ as 2, and \_**offsetz** \_ as 0.
+* Set _**limitz**_ as 2, and _**offsetz** _ as 0.
 * Now **run** the query.
 
 So, if you set **Limit Value** to 2, it returns two rows. For instance, if you set _**limitz**_ as 4, then the data of 4 users are returned (i.e., number of rows).
@@ -416,7 +416,7 @@ It uses "_**before**_" and "_**after**_" cursors to traverse through the data an
 * **Start Cursor Variable**: Select the variable which holds the _after_ cursor.
 * **Start Cursor Value**: Binding the widget action to the next page activity.
 
-Let’s take an example to understand better how Cursor Based Pagination works. In this example, let's display the _**GitHub repository’s issues**_ in a list widget using [GitHub’s GraphQL AP](https://docs.github.com/en/graphql)I.
+Let’s take an example to understand better how Cursor Based Pagination works. In this example, let's display the _**GitHub repository’s issues**_ in a list widget using [GitHub’s GraphQL API](https://docs.github.com/en/graphql).
 
 In this case, we declare the pagination variables that stand for **before**, **after**, **first**, and **last**. Then we can navigate through the data using the previous and next buttons highlighted in the screenshot below.
 

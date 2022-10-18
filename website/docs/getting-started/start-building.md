@@ -37,15 +37,15 @@ We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
 
 ![Creating a new datasource](/img/Add_Datasource.png)
 
-## **Build UI**
+## Build UI
 
 * Navigate to **PAGES** → **User Information**. Drag and drop a [**Table**] widget on the canvas. On the **Property Pane** to the right, rename the table to '**usersTable**'.
 * Drag and drop a [**Container**] widget to the right of the Table widget. Let's add a few widgets to display user details from the selected row on the table. Add a label titled '**User Details**'.
-* Add [**Input**] widgets for Name **** (nameInput), Email (emailInput) and Phone (phoneInput), a [**Datepicker**] widget for DOB (dobInput), an Image widget for the Image and finally a [**Button**] widget labelled '**Update**'.
+* Add [**Input**](../reference/widgets/input) widgets for Name (*nameInput*), Email (*emailInput*) and Phone (*phoneInput*), a [**Datepicker**](../reference/widgets/datepicker) widget for DOB (*dobInput*), an [**Image**](../reference/widgets/image) widget for the Image and finally a [**Button**](../reference/widgets/button/) widget labelled '**Update**'.
 
 ![Build UI by laying out widgets on the canvas](/img/Screenshot_2022-06-28_at_10.50.31_PM.png)
 
-## **Create Queries and Bind Data to Widgets**
+## Create Queries and Bind Data to Widgets
 
 * On the **Explorer** tab, navigate to the database under **DATASOURCES** → **users**
 * Click on the **New Query +** button next to the datasource.
@@ -105,7 +105,7 @@ UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob
   * Invite specific users using their email ID
     * Select an appropriate role for the user
     * Share the application's URL with the user
-  * You can also make the application **public**. In this case, anyone with the application URL can view the application without signing in. You can read more about **access control** [**here**](../advanced-concepts/access-control.md).
+  * You can also make the application **public**. In this case, anyone with the application URL can view the application without signing in. You can read more about **access control** [**here**](../advanced-concepts/access-control).
 
 :::info
 **Congratulations**, you have completed the Appsmith Quickstart tutorial.

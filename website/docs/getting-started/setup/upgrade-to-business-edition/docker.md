@@ -70,7 +70,7 @@ docker-compose up -d
 
 Once the container is up and running, you have successfully upgraded the docker instance to the Business Edition.
 
-You could verify that the business image (appsmith-ee) is in use with the help of the **** `docker ps` command.
+You could verify that the business image (appsmith-ee) is in use with the help of the **`docker ps`** command.
 
 ### **Rollback (Optional)**
 

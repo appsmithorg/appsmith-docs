@@ -31,40 +31,40 @@ Configure the Google Sheets Datasource as illustrated below:
 
 Your datasource’s **scope** setting defines what type of access privileges your app will have when working with your Google Sheets. Use this option to allow only the necessary operations that your app requires. This will help avoid accidentally deleting or overwriting data.
 
-![](https://lh3.googleusercontent.com/8k8g5KL3QGjoIEzsNYgUuKOAjHVF75T8ovDGuQGcgPhXieU0qChsh1l6GnhCBOi8Q5Hv4n8BrQSzEUaUD9-v6K_TW-43sG5EHkeO2c6fwKlWxVNTEMH4dH2-Eihguuq2Jdf7Ymw_Wu2LE610IqHBUMtr792FReyMfwrNz0f8HZ_sIgCELdfsNz1AMw)<figure><figcaption align="center"><i>Set your datasource's scope and permissions according to the types of queries you need to perform.</i></figcaption></figure>
+![](/img/google_sheets_scope.png)
 
-### **Read Files** <a href="#read-only" id="read-only"></a>
+### Read Files 
 
 You can use the **Read Files** scope if you’d like to provide limited access to Sheets, which is restricted to only listing existing spreadsheets or reading data from them.
 
 The Read permission is required for the following query types:
 
-* [Fetch Details](querying-google-sheets.md#fetch-details)
-* [Fetch Many](querying-google-sheets.md#fetch-many)
+* [Fetch Details](./querying-google-sheets.md#fetch-details)
+* [Fetch Many](./querying-google-sheets.md#fetch-many)
 
-### **Read, Edit, and Create Files**
+### Read, Edit, and Create Files
 
 If you want to perform additional operations like creating new spreadsheets or updating existing ones, you can use the **Read, Edit, and Create Files** scope to configure your datasource.
 
 The **Edit** and **Create** permissions are required for the following query types:
 
-* [Insert One](querying-google-sheets.md#insert-one)
-* [Insert Many](querying-google-sheets.md#insert-many)
-* [Update One ](querying-google-sheets.md#update-one)
-* [Update Many](querying-google-sheets.md#update-many)
+* [Insert One](./querying-google-sheets.md#insert-one)
+* [Insert Many](./querying-google-sheets.md#insert-many)
+* [Update One ](./querying-google-sheets.md#update-one)
+* [Update Many](./querying-google-sheets.md#update-many)
 
-### **Read, Edit, Create, and Delete Files**
+### Read, Edit, Create, and Delete Files
 
 In order to delete spreadsheets, you will be required to authorize the Read, Edit, Create, and Delete scope for your datasource.
 
 The **Delete** permission is required for the following query type:
 
-* [Delete One](querying-google-sheets.md#delete-one)
+* [Delete One](./querying-google-sheets.md#delete-one)
 
 :::caution
 When configured with this scope, queries related to this datasource may be potentially destructive and should be used carefully to avoid accidentally deleting data!
 
-Consider enabling the [**Request confirmation before running query**](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
+Consider enabling the [**Request confirmation before running query**](./../..//core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
 :::
 
 ### **Save and Authorize**
@@ -91,13 +91,13 @@ Operation lets you define the type of action you want to perform on Google Sheet
 
 | **Operation**                                                             | **Description**                                                                           | **Available on below Entity** |
 | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------- |
-| ****[**Fetch Details**](querying-google-sheets.md#fetch-details)****      | Use it to fetch details like the name of the spreadsheet, created date and time, and more | Spreadsheet                   |
-| ****[**Insert One**](querying-google-sheets.md#insert-one)****            | Use it to insert a single row in a sheet or add a new spreadsheet                         | Spreadsheet/Sheet Rows        |
-| ****[**Update One**](querying-google-sheets.md#update-one)****            | Use it to update rows in a given sheet in a spreadsheet                                   | Sheet Rows                    |
-| ****[**Delete One**](querying-google-sheets.md#delete-one)****            | Use it to delete a spreadsheet or a sheet or row in a sheet                               | Spreadsheet/Sheet/ Sheet Rows |
-| ****[**Fetch Many**](querying-google-sheets.md#fetch-many-sheet-rows)**** | Use it to fetch data from a sheet or all the spreadsheets available in your account.      | Spreadsheet/Sheet Rows        |
-| ****[**Insert Many**](querying-google-sheets.md#insert-many)****          | Use it to insert multiple rows in a given sheet                                           | Sheet Rows                    |
-| ****[**Update Many**](querying-google-sheets.md#update-many)****          | Use it to update multiple rows in a given sheet                                           | Sheet Rows                    |
+| [**Fetch Details**](./querying-google-sheets.md#fetch-details)      | Use it to fetch details like the name of the spreadsheet, created date and time, and more | Spreadsheet                   |
+| [**Insert One**](./querying-google-sheets.md#insert-one)            | Use it to insert a single row in a sheet or add a new spreadsheet                         | Spreadsheet/Sheet Rows        |
+| [**Update One**](./querying-google-sheets.md#update-one)            | Use it to update rows in a given sheet in a spreadsheet                                   | Sheet Rows                    |
+| [**Delete One**](./querying-google-sheets.md#delete-one)            | Use it to delete a spreadsheet or a sheet or row in a sheet                               | Spreadsheet/Sheet/ Sheet Rows |
+| [**Fetch Many**](./querying-google-sheets.md#fetch-many-sheet-rows) | Use it to fetch data from a sheet or all the spreadsheets available in your account.      | Spreadsheet/Sheet Rows        |
+| [**Insert Many**](./querying-google-sheets.md#insert-many)          | Use it to insert multiple rows in a given sheet                                           | Sheet Rows                    |
+| [**Update Many**](./querying-google-sheets.md#update-many)        | Use it to update multiple rows in a given sheet                                           | Sheet Rows                    |
 
 ## **Fetch Details**
 
@@ -110,9 +110,9 @@ The operation allows you to fetch the details of a given spreadsheet.
 
 You can set the parameter values as below:
 
-* Operation - Fetch details
-* [Entity](querying-google-sheets.md#entity) - Spreadsheet
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Either select the name of the spreadsheet from the available options, or you can enable the JS label and add the URL of the desired spreadsheet
+* [Operation](./querying-google-sheets.md#operation) - Fetch details
+* [Entity](./querying-google-sheets.md#entity) - Spreadsheet
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Either select the name of the spreadsheet from the available options, or you can enable the JS label and add the URL of the desired spreadsheet
 
 :::info
 The **Fetch Details** operation is only available to fetch the details of a spreadsheet.
@@ -133,9 +133,9 @@ When you select to add a new spreadsheet, the new spreadsheet is created and ava
 
 For creating a spreadsheet and adding data to it, you can set the parameter values as below:
 
-* Operation - Insert One
-* [Entity](querying-google-sheets.md#entity) - Spreadsheet
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Add the name you want to give to the spreadsheet. For example, `AppsmithEmployeeDirectory`
+* [Operation](./querying-google-sheets.md#operation) - Insert One
+* [Entity](./querying-google-sheets.md#entity) - Spreadsheet
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Add the name you want to give to the spreadsheet. For example, `AppsmithEmployeeDirectory`
 * Row Objects - For adding data to the spreadsheet, you’ll have to add the data in the form of a JSON Array. For example, you want to add the existing employee records to the sheet.
 
 :::info
@@ -166,7 +166,7 @@ The **first insert** to a **blank** sheet will also define the **Sheet Schema** 
 You’ll have to supply `rowIndex` when creating a new spreadsheet and adding data.
 :::
 
-### **Insert new row to Sheet**
+### Insert new row to Sheet
 
 You have a form that you use to capture the employee details. Whenever a new employee joins, you want to use that form and add the details to the existing spreadsheet `AppsmithEmployeeDirectory`.
 
@@ -177,11 +177,11 @@ You have a form that you use to capture the employee details. Whenever a new emp
 
 You’ll have to add a query to insert the data by setting parameters as below:
 
-* Operation - Insert One
-* [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`
-* [Sheet Name](querying-google-sheets.md#sheet-name) - Select the name of the Sheet `Sheet1`
-* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Operation](./querying-google-sheets.md#operation) - Insert One
+* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`
+* [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the name of the Sheet `Sheet1`
+* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
 * Row Objects - For adding data to the spreadsheet, you’ll have to add the data in JSON format as shown in the below code snippet:
 
 ```
@@ -198,14 +198,14 @@ You’ll have to add a query to insert the data by setting parameters as below:
 You can use the above JSON to test the Query execution.
 :::
 
-To capture the user input, you can create a [form](/widgets/form.md) as shown in the screenshot below and bind the query execution on the `onClick` event of a **Submit** button.
+To capture the user input, you can create a [form](./../widgets/form.md) as shown in the screenshot below and bind the query execution on the `onClick` event of a **Submit** button.
 
 ![Bind query execution to Submit](</img/Datasources__Google_Sheets__Insert_One__Capture_Data_from_Form_Widget.png>)
 
-You can modify the **Row Objects JSON data** to capture the values from the [form](/widgets/form.md), as shown in the code snippet below:
+You can modify the **Row Objects JSON data** to capture the values from the [form](./../widgets/form.md), as shown in the code snippet below:
 
 :::info
-You’ll have to add quotes to the string values if the [Smart JSON Substitution](/core-concepts/connecting-to-data-sources/authentication/#smart-json-substitution) is turned off in the `settings` tab.
+You’ll have to add quotes to the string values if the [Smart JSON Substitution](./../../core-concepts/connecting-to-data-sources/authentication/#smart-json-substitution) is turned off in the `settings` tab.
 :::
 
 ```
@@ -224,7 +224,7 @@ You can read the child widget data embedded in the form widget using `{{<FORM_NA
 
 When the user inputs an employee’s data, and clicks the `Submit` button, the query executes, and data is added to the existing sheet `Sheet1` of the `AppsmithEmployeeDirectory.`
 
-## **Update One**
+## Update One
 
 With Update One, you can choose to update a single record in an existing spreadsheet.
 
@@ -235,15 +235,15 @@ With Update One, you can choose to update a single record in an existing spreads
 
 You can capture the data you want to update and send it to the update one query. For example, you want to update the designation and experience of an employee. You can pass the below parameters to the **Update One** Query.
 
-* Operation - Update One
-* [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`
-* [Sheet Name](querying-google-sheets.md#sheet-name) - Select the name of the Sheet `Sheet1`
-* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Operation](./querying-google-sheets.md#operation) - Update One
+* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`
+* [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the name of the Sheet `Sheet1`
+* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
 * Row Objects - For updating data to the spreadsheet, you’ll have to add the data in JSON format as shown in the below code snippet:
 
 :::info
-You should supply the value of **rowIndex** when **updating** the data. You get the value of **rowIndex** when you **fetch the data** from a **sheet** by using[ **Fetch Many**](querying-google-sheets.md#fetch-many).
+You should supply the value of **rowIndex** when **updating** the data. You get the value of **rowIndex** when you **fetch the data** from a **sheet** by using[ **Fetch Many**](./querying-google-sheets.md#fetch-many).
 :::
 
 ```
@@ -262,11 +262,11 @@ The **row to be updated** is a calculated entity using the formula (`Row Index` 
 
 The calculated to be updated row index will be `(4 + 1 + 1) = 6`.
 
-## **Delete One**
+## Delete One
 
 You can perform the Delete One operation to delete a spreadsheet, a sheet within a spreadsheet, or a row from the sheet.
 
-### **Delete a Spreadsheet**
+### Delete a Spreadsheet
 
 To delete a spreadsheet, you can choose the below parameters:
 
@@ -275,11 +275,11 @@ To delete a spreadsheet, you can choose the below parameters:
   <figcaption align="center"><i>Delete a Spreadsheet</i></figcaption>
 </figure>
 
-* Operation - Delete One
-* [Entity](querying-google-sheets.md#entity) - Spreadsheet
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `TestDeletion`. You can also supply the URL for the spreadsheet by enabling the JS label.
+* [Operation](./querying-google-sheets.md#operation) - Delete One
+* [Entity](./querying-google-sheets.md#entity) - Spreadsheet
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `TestDeletion`. You can also supply the URL for the spreadsheet by enabling the JS label.
 
-### **Delete a Sheet**
+### Delete a Sheet
 
 You can choose to delete a sheet from the given spreadsheet. You can choose the below parameters:
 
@@ -288,16 +288,16 @@ You can choose to delete a sheet from the given spreadsheet. You can choose the 
   <figcaption align="center"><i>Delete a Sheet</i></figcaption>
 </figure>
 
-* Operation - Delete One
-* [Entity](querying-google-sheets.md#entity) - Sheet
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `TestSheetDeletion`. You can also supply the URL for the spreadsheet by enabling the JS label.
-* [Sheet Name ](querying-google-sheets.md#sheet-name)- Select the sheet name you want to delete from the spreadsheet `Sheet1`.
+* [Operation](./querying-google-sheets.md#operation) - Delete One
+* [Entity](./querying-google-sheets.md#entity) - Sheet
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `TestSheetDeletion`. You can also supply the URL for the spreadsheet by enabling the JS label.
+* [Sheet Name ](./querying-google-sheets.md#sheet-name)- Select the sheet name you want to delete from the spreadsheet `Sheet1`.
 
 :::info
 The `Delete One` operation for a Sheet only works when there is more than one sheet in the spreadsheet.
 :::
 
-### **Delete a Sheet Row**
+### Delete a Sheet Row
 
 You can choose to delete a row from the existing sheet from the given spreadsheet. You can choose the below parameters:
 
@@ -307,9 +307,9 @@ You can choose to delete a row from the existing sheet from the given spreadshee
 </figure>
 
 * Operation - Delete One
-* [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
-* [Sheet Name](querying-google-sheets.md#sheet-name) - Select the sheet name you want to delete from the spreadsheet `Sheet1`.
+* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
+* [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the sheet name you want to delete from the spreadsheet `Sheet1`.
 * Row Index - If you want to delete the row 5 data in the Google Sheet, you should supply the Row Index as 3.
 
 :::info
@@ -318,11 +318,11 @@ The row to be deleted is a calculated entity using the formula (`Row Index` + `T
 
 The calculated to be deleted row index will be `(3 + 1 + 1) = 5.`
 
-## **Fetch Many**
+## Fetch Many
 
 You can choose to fetch multiple records from a sheet or fetch spreadsheets available in your Google account by using Fetch Many.
 
-### **Fetch Many Spreadsheet**
+### Fetch Many Spreadsheet
 
 To fetch spreadsheets available in your account, you can choose the below parameters:
 
@@ -331,8 +331,8 @@ To fetch spreadsheets available in your account, you can choose the below parame
   <figcaption align="center"><i>Fetch all Spreadsheets</i></figcaption>
 </figure>
 
-* Operation - Fetch Many
-* [Entity](querying-google-sheets.md#entity) - Spreadsheet
+* [Operation](./querying-google-sheets.md#operation) - Fetch Many
+* [Entity](./querying-google-sheets.md#entity) - Spreadsheet
 
 You can display the data by binding it to a widget. For example, you want to display the spreadsheets in a select widget. For this, you’ll have to add a JS Object function in which you’ll traverse through the response generated by the query and create an array of objects with label and value as a key and a value pair, as shown below:
 
@@ -353,7 +353,7 @@ export default {
 Bind the data returned by the JS object to the select widget by using `{{<JS_OBJECT_NAME.FUNCTION_NAME()>}}` embedded in a mustache `{{}}` sign.
 :::
 
-### **Fetch Many Sheet Rows**
+### Fetch Many Sheet Rows
 
 To fetch spreadsheets data, you can choose the below parameters:
 
@@ -362,23 +362,23 @@ To fetch spreadsheets data, you can choose the below parameters:
   <figcaption align="center"><i>Fetch Data from Sheet</i></figcaption>
 </figure>
 
-* Operation - Fetch Many
-* [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
-* [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
-* [Sheet Name](querying-google-sheets.md#sheet-name) - Select the sheet name you want to delete from the spreadsheet `Sheet1`.
-* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Operation](./querying-google-sheets.md#operation) - Fetch Many
+* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
+* [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the sheet name you want to delete from the spreadsheet `Sheet1`.
+* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
 
 :::info
 You can choose to add filters using range or `where` Clause.
 :::
 
-You can display the data by binding it to a [widget](/widgets/). For example, you can display the spreadsheet data in a [table](/widgets/table/) widget.
+You can display the data by binding it to a [widget](./../widgets/README.md). For example, you can display the spreadsheet data in a [table](./../widgets/table/README.md) widget.
 
 :::info
-Bind the data returned by the query to a [table](/widgets/table/) widget - [TableData](/widgets/table/#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
+Bind the data returned by the query to a [table](./../widgets/table/README.md) widget - [TableData](/widgets/table/#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
 :::
 
-## **Insert Many**
+## Insert Many
 
 You can choose to insert multiple records in an existing sheet by using Insert Many.
 
@@ -388,7 +388,7 @@ You can choose to insert multiple records in an existing sheet by using Insert M
 </figure>
 
 
-* Operation - Insert Many
+* [Operation](./querying-google-sheets.md#operation) - Insert Many
 * [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
 * [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the `JS label`.
 * [Sheet Name](querying-google-sheets.md#sheet-name) - Select the sheet name you want to insert to the spreadsheet `Sheet1`.
@@ -432,7 +432,7 @@ You can choose to update multiple records in an existing sheet by using Update M
   <figcaption align="center"><i>Update Multiple Rows in Sheet</i></figcaption>
 </figure>
 
-* Operation - Update Many
+* [Operation](./querying-google-sheets.md#operation) - Update Many
 * [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
 * [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
 * [Sheet Name](querying-google-sheets.md#sheet-name) - Select the sheet name you want to update from the spreadsheet `Sheet1`.
@@ -620,5 +620,5 @@ If you now want to fetch all employees with designation as **Junior Engineer** a
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+* [Display Data](./../../core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](./../../core-concepts/data-access-and-binding/capturing-data-write/)
