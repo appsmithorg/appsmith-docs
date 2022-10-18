@@ -331,6 +331,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 | **Vertical Alignment**    | Sets the alignment of the widget.                        |
 | **Border Radius**         | Allows you to define curved corners.                     |
 | **Box Shadow**            | Allows you to choose from the available shadow styles.   |
+| **Cell Borders**            | Allows you to choose cell's borders style, i.e, no borders, horizontal borders only |
 
 ## Guides
 
