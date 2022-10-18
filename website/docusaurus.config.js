@@ -17,7 +17,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'jnikhila', // Usually your GitHub org/user name.
+  organizationName: 'appsmith', // Usually your GitHub org/user name.
   projectName: 'appsmith-docs', // Usually your repo name.
   deploymentBranch: "gh-pages",
   // Even if you don't use internalization, you can use this field to set useful
@@ -164,7 +164,7 @@ const config = {
                 href: 'https://github.com/appsmithorg/appsmith',
               },
               {
-                label: 'YoutTube',
+                label: 'YouTube',
                 to: 'https://www.youtube.com/c/Appsmith',
               },
             ],

@@ -215,7 +215,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Data Access and Binding',
-          link: {type: 'doc', id:  'core-concepts/connecting-to-data-sources/README'},
+          link: {type: 'doc', id:  'core-concepts/data-access-and-binding/README'},
           items: [
             {
               type: 'category',
