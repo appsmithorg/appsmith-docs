@@ -88,7 +88,7 @@
 
 .containerDescription{
   margin: 1px;
-  font-size: .8rem;
+  font-size: .9rem;
 }
 
 .containerImage {
@@ -97,6 +97,11 @@
  vertical-align: center;
 }
 
+.containerTutorialLink{
+  margin: 1px;
+  font-size: .9rem;
+  text-align: left;
+}
 
 .containerGrid {
   display: flex;
