@@ -24,7 +24,8 @@ These properties allow you to edit the Rating widget. All these properties are p
 | **Visible**          | <p>Controls widget's visibility on the page. When turned</p><p>off, the widget will not be visible when the app is published</p> |
 | **Disabled**         | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.
 |
-| **Read Only**         | Makes the widget non-interactive. |
+| **Read Only**         |  Makes the widget non-interactive
+|
 | **Animate Loading**  | Allows you to control a widget’s animation on the page load.                                                                     |
 
 ### Binding Properties
