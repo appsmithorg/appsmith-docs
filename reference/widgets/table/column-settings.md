@@ -54,18 +54,43 @@ The[ Image](../image.md) type displays the images in the table. Images must be e
 
 **Menu Button**
 
-[Menu buttons](../menu-button.md) represents a set of actions in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.&#x20;
+[Menu buttons](../menu-button.md) represent a set of actions in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.&#x20;
 
 #### **Number**
 
 Numbers are stored in database columns as numeric data types. Typically, these data kinds are categorized by:
 
 * Precise Numeric Types - values that must maintain precision and scale. INTEGER, BIGINT, DECIMAL, NUMERIC, NUMBER, and MONEY.&#x20;
-* Forms of Approximate Numbers - where the precision must be maintained and the scale may be floating. DOUBLE PRECISION, FLOAT, and REAL.
+* Forms of Approximate Numbers - where the precision must be maintained, and the scale may be floating. DOUBLE PRECISION, FLOAT, and REAL.
 
 #### **Plain Text**
 
-The Plain text refers to data (such as file contents) that contain readable characters without their graphical representation or other elements (floating-point numbers, images, etc.).
+Plain text refers to data (such as file contents) that contain readable characters without their graphical representation or other elements (floating-point numbers, images, etc.).
+
+#### Switch
+
+The Switch is a UI component that allows users to make a binary decision. Switches toggle the state of a single item **on** or **off**. It employs the boolean values **True** and **False** for the **on** and **off** states, respectively, just like the [checkbox](column-settings.md#checkbox).&#x20;
+
+The Switch is one of the few column types that supports inline editing; you can update or fetch the switch value using the **onChange event** after setting it to be editable. Read more about [Switch ](../switch.md)in this guide.&#x20;
+
+#### Select
+
+A [Select/Dropdown](../dropdown-1.md) component is a menu list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as gender, role, and status. Here is a code snippet for the **options** property:
+
+```
+[
+  {
+    "label": "abc",
+    "value": "abc"
+  }
+]
+```
+
+<figure><img src="../../../.gitbook/assets/ezgif-4-30a89fc076.gif" alt=""><figcaption></figcaption></figure>
+
+
+
+The select column type is not [editable](column-settings.md#editable) by default; however, you can change it in the property pane section. You can fetch the selected value using [onOptionChange **** ](https://docs.appsmith.com/reference/widgets/dropdown-1)after setting it to be editable.  You can check the [select widget](../dropdown-1.md) document to learn more about Filterable, Reset filter text on close, Server Side Filtering, and more.&#x20;
 
 #### **URL**
 
