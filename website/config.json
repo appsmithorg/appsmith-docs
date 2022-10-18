@@ -2,12 +2,12 @@
 	"index_name": "appsmithdocusaurusindex",
   "start_urls": [
     {
-      "url": "https://jnikhila.github.io/test-appsmith-docusaurus/",
+      "url": "https://docs.appsmith.com/",
       "selectors_key": "doc"
     }
   ],
 	"sitemap_urls": [
-		"https://jnikhila.github.io/test-appsmith-docusaurus/sitemap.xml"
+		"https://docs.appsmith.com/sitemap.xml"
 	],
 	"sitemap_alternate_links": true,
 	"stop_urls": [
