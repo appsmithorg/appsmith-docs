@@ -22,7 +22,7 @@ These messages indicate that the `Host address` field in the [datasource creatio
 Invalid host provided. It should be of the form http(s)://your-es-url.com
 ```
 
-This message indicates that the provided URL format is not correct. This error can be fixed by editing the d[atasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) and providing the host URL in the correct format.
+This message indicates that the provided URL format is not correct. This error can be fixed by editing the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) and providing the host URL in the correct format.
 
 ### Missing Port Error
 

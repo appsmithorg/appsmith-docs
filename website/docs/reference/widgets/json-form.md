@@ -155,7 +155,7 @@ When you tick the checkbox, it will enable the Visible property, and the JSON Fo
 
 ### Binding Properties
 
-These properties allow you to bind your JSON form widget with any other widget in queries or JS objects. The following table lists all the binding properties.\\
+These properties allow you to bind your JSON form widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
 | Binding Property | Description                                                                                                                                                                                                                                                                                                              | Code Snippet                   |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |

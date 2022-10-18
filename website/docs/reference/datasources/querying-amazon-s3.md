@@ -104,7 +104,7 @@ Enable the **"Request confirmation before running query"** setting to help avoid
 
 There are two ways to send content to the S3 bucket:
 
-1. A file can be selected and uploaded with the [Filepicker Widget](/widgets/filepicker.md). To reference this file in your query (assuming that your Filepicker is named "FilePicker1"), use `{{Filepicker1.files[0]}}` in the `Content` field of your query.
+1. A file can be selected and uploaded with the [Filepicker Widget](./../widgets/filepicker.md). To reference this file in your query (assuming that your Filepicker is named "FilePicker1"), use `{{Filepicker1.files[0]}}` in the `Content` field of your query.
    * Be sure that the `File Data Type` field is set appropriately for the data you are uploading. For example, if your Filepicker's `Data Format` is set to `Base64`, your query should be set to `Base64` also.
 2. Alternatively, you can manually add data into the `Content` field by writing an object with a `text` and `data` property like below:
 
@@ -122,8 +122,8 @@ In this second case, you'll want to ensure that your `File Data Type` is set to 
 There are a couple of extra considerations to make when using the **Create multiple new files** operation:
 
 1. When using the Filepicker, be sure to set the widget's **Max No. Files** property to a value greater than the default "1"; otherwise, the user will not be able to upload multiple files for the query.
-2. Now when defining the query's Content, you'll pass in the entire \{{`Filepicker1.files}}` array, instead of \{{`FilePicker1.files[0]}}` as before.
-3. You can give all of the files a common path/prefix in your bucket by setting the **Common File Path** field in your query. This can be used to achieve a result such as:
+2. Now when defining the query's Content, you'll pass in the entire `{{Filepicker1.files}}` array, instead of `{{FilePicker1.files[0]}}` as before.
+3. You can give all the files a common path/prefix in your bucket by setting the **Common File Path** field in your query. This can be used to achieve a result such as:
 
 ```
 // a single Create Multiple query with Common Path set to "commonPath/"
@@ -175,7 +175,7 @@ The only difference from the single Delete operation is that you'll now be provi
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
-* [Upload files](/learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
-* [Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3.md#downloading-files)
+* [Display Data](./../../core-concepts/data-access-and-binding/displaying-data-read/)
+* [Capture Data](./../../core-concepts/data-access-and-binding/capturing-data-write/)
+* [Upload files](./../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
+* [Download files](./../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md#downloading-files)

@@ -13,7 +13,7 @@ In the first part of this tutorial, you've created a single page app to view pro
 
 We'll also add a button on the **ProductListPage** that takes us to our new page and opens this form. Let's get started!
 
-## Creating your first form!
+## Creating your first form
 
 First, to add new products to the catalog, you'll need to create a new [form widget](/reference/widgets/form.md). To keep things more organized, do this on a new page to avoid affecting the catalog page. Follow the below steps:
 
@@ -56,7 +56,7 @@ The form-submit button is automatically disabled if no input is provided for a m
 
 ## Adding a Select Widget to the Form
 
-Let's add another field to the **`AddProductForm`** that enables users to choose the product category. For this, you'll have to drag and drop a [Select widget](/reference/widgets/dropdown-1.md) and rename it to **`CategorySelect`**. Also, to keep the form clean, add a text widget to use as a label next to **`CategorySelect`**. Set the text widget's **Text** property to **`Category:`**.
+Let's add another field to the **`AddProductForm`** that enables users to choose the product category. For this, you'll have to drag and drop a [Select widget](/reference/widgets/select.md) and rename it to **`CategorySelect`**. Also, to keep the form clean, add a text widget to use as a label next to **`CategorySelect`**. Set the text widget's **Text** property to **`Category:`**.
 
 As you look at the `CategorySelect` widget, you'll see some default options already added to it. Follow the steps below to set these options as necessary for our Oakry catalog:
 
@@ -242,10 +242,10 @@ Clicking on **JS** enables two things:
 1. If the field is blank, it allows you to write JavaScript. That is, instead of using the GUI, you could have written this JavaScript yourself to configure the **onSuccess** and **onError** events.
 2. If the field is already populated using the GUI, it converts the configured behavior to JavaScript code. You can modify this JavaScript to further customize the behavior.
 
-Note that you bound one action each with the success and error events. In [part 3](/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views), you'll learn to bind more than one action with each of the events.
+Note that you bound one action each with the success and error events. In [part 3](./creating-interactive-views.md), you'll learn to bind more than one action with each of the events.
 
 :::info
-For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](/how-to-guides/writing-javascript-in-appsmith.md).
+For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](./../../how-to-guides/writing-javascript-in-appsmith.md).
 :::
 
 ## Connecting multiple pages
@@ -265,8 +265,8 @@ Your **ProductListPage** now looks like this:
 
 Let's test it out: Click on the "**Add New Product"** button on the **ProductListPage**. You'll see that the **AddProductForm** page opens up, ready for user input.
 
-By selecting the [Navigate To](broken-reference) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
+By selecting the [Navigate To](../../../reference/appsmith-framework/widget-actions/navigate-to.md) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
 
 ## What's next?
 
-When you're comfortable with the basics of building a form, accessing widget's properties in DB queries, and binding events using both GUI & JavaScript, read [part 3 ](/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views)of the tutorial to learn to handle and process user input.
+When you're comfortable with the basics of building a form, accessing widget's properties in DB queries, and binding events using both GUI & JavaScript, read [part 3](./creating-interactive-views.md) of the tutorial to learn to handle and process user input.

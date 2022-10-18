@@ -14,28 +14,28 @@ The following document assumes that you understand the [basics of connecting to 
 Appsmith needs the following parameters for connecting to a Mongo database:
 
 :::tip
-All required fields are suffixed with an asterisk (\*).
+All required fields are suffixed with an asterisk (*).
 :::
 
 ### **Connection**
 
 To set up a connection, fill in the following parameters:
 
-* **Connection Mode\*:** You must choose one of the following two modes:
+* **Connection Mode:** You must choose one of the following two modes:
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This only allows you to fetch data from the database.
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Connection Type\*:** You must choose one of the following connection types:
+* **Connection Type:** You must choose one of the following connection types:
   * **Direct Connection**: Choose this connection type to connect directly to a mongo instance
   * **Replicate Set**: Choose this connection type to connect to a set of mongo instances.
-* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port `27017`. You can specify multiple host addresses for a replicate set. If you have an [SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format), please follow [these](./#connect-using-srv-uri) steps to connect to your MongoDB instance.
-* **Default** **Database Name\*:** Fill in the name of the database you want to connect to. This is your database’s name on your mongo server.
+* **Host Address / Port:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port `27017`. You can specify multiple host addresses for a replicate set. If you have an [SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format), please follow [these](./#connect-using-srv-uri) steps to connect to your MongoDB instance.
+* **Default** **Database Name:** Fill in the name of the database you want to connect to. This is your database’s name on your mongo server.
 
 ### **Authentication**
 
 For authentication, fill in the following parameters:
 
 * **Database Name:** Fill in the name of the database against which you want to authenticate. This is typically admin for most MongoDB instances.
-* **Authentication Type\*:** Choose the authentication mechanism to connect to your database. This can be one of `SCRAM-SHA-1`, `SCRAM-SHA-256`, or `MONGO-CR`.
+* **Authentication Type:** Choose the authentication mechanism to connect to your database. This can be one of `SCRAM-SHA-1`, `SCRAM-SHA-256`, or `MONGO-CR`.
 * **Username:** Fill in the username required for authenticating connection requests to your database. Set this to empty if you won't want to specify a username to authenticate with.
 * **Password:** Fill password required for authenticating connection requests for the given username to the database. Set this to _empty_ if you want to log in without a password (please ensure your database accepts such connections).
 
@@ -55,11 +55,10 @@ A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the 
 
 A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:
 
-{% code title="Standard connection string" overflow="wrap" %}
 ```mongodb
 mongodb://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
 ```
-{% endcode %}
+
 
 ![](</img/Datasources__MongoDB__Connect_using_SRV__Standard_Format.png>)<figure><figcaption align="center"><i>Prefix with <strong>mongodb://</strong> to add a Standard Connection String URI</i></figcaption></figure>
 
@@ -98,38 +97,30 @@ Some example URIs could be as follows:
 
 * The default database is <mark style={{color:'#d33d3f'}}>`users,`</mark> and <mark style={{color:'#d33d3f'}}>`authSource`</mark> is set as <mark style={{color:'#d33d3f'}}>`authusers`</mark> which is used to authenticate the user(<mark style={{color:'#d33d3f'}}>`dbuser`</mark>).
 
-{% code title="Standalone" overflow="wrap" %}
 ```mongodb
 mongodb://dbuser:s@cur!ty/mongodb0.standalone.com:27017/users/?authSource=authusers
 ```
-{% endcode %}
 
 * <mark style={{color:'#d33d3f'}}>`authSource`</mark> is set as <mark style={{color:'#d33d3f'}}>`admin`</mark><mark style={{color:'#d33d3f'}}>,</mark> and <mark style={{color:'#d33d3f'}}>`replicaSet`</mark> keyword point to set the name of the replica set (<mark style={{color:'#d33d3f'}}>`mongoRepl`</mark>).
 
-{% code title="ReplicaSet" overflow="wrap" %}
 ```mongodb
 mongodb://dbuser:s@cur!ty@mongodb0.replicaset.com:27017,mongodb2.replicaset.com:27017/?authSource=admin&replicaSet=mongoRepl
 
 ```
-{% endcode %}
 
 * <mark style={{color:'#d33d3f'}}>`authSource`</mark> keyword points to <mark style={{color:'#d33d3f'}}>`admin`</mark><mark style={{color:'#d33d3f'}}>.</mark> You can add multiple host and port combinations that points to the shared cluster.
 
-{% code title="SharedCluster" overflow="wrap" %}
 ```mongodb
 mongodb://dbuser:s@cur!ty@mongos0.sharedcluster.com:27017,mongos1.sharedcluster.com:27017,mongos2.sharedcluster.com:27017/?authSource=admin
 ```
-{% endcode %}
 
 #### **Domain name service seed list format**
 
 MongoDB also supports a Domain Name Service (DNS) Seed list for connecting with the standard format. To use the DNS seed list format, you’ll have to prefix the connection string with `mongodb+srv://`. The `+srv` indicates that the hostname corresponds to the DNS SRV. The DNS seed list format is represented as below:
 
-{% code title="Domain name service seed list" overflow="wrap" %}
 ```mongodb
 mongodb+srv://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
 ```
-{% endcode %}
 
 ![](</img/Datasources__MongoDB__Connect_using_SRV__DNS_Seed_List_Format.png>)<figure><figcaption align="center"><i>Prefix with <strong>mongodb+srv://</strong> to add a DNS seed list URI</i></figcaption></figure>
 
@@ -151,11 +142,9 @@ If the username or password includes (`: /? # [ ] @),` convert these characters 
 
 An example URI could be as follows:
 
-{% code overflow="wrap" %}
 ```mongodb
 mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSource=authusersb
 ```
-{% endcode %}
 
 :::info
 Read more about the [standard format ](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format)and [DNS seed list format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format) available on [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).

@@ -227,7 +227,7 @@ The text widget will then display the value present in the currency input widget
 
 #### currencyCode
 
-It fetches the currency code of the chosen currency. For example, if the user has selected an American dollar. It fetches the value `USD`.\
+It fetches the currency code of the chosen currency. For example, if the user has selected an American dollar. It fetches the value `USD`.
 Let's take a widget `currencyinput1` use this property to display the selected currency’s code in a text widget. Enter the code snippet given below:
 
 ```

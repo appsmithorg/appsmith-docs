@@ -78,7 +78,7 @@ There are two methods for fetching data from Firestore: one for fetching a singl
 
 For example, setting the path to users/sherlock@gmail.com will get the document with ID sherlock@gmail.com inside the collection users.
 
-Below is a video that shows how you can fetch a single document from the firestore. The below example fetches task details. Here the number represents the issue ID. As a result, **task/issue\_id** provides information about that specific issue.
+Below is a video that shows how you can fetch a single document from the firestore. The below example fetches task details. Here the number represents the issue ID. As a result, **task/issue_id** provides information about that specific issue.
 
 <figure>
   <object data="https://www.youtube.com/embed/RdieZyfXLfs?autoplay=0" width='750px' height='400px'></object> 
@@ -102,7 +102,7 @@ The video below shows how you can fetch multiple documents from the firestore. T
 
 We now have our query; let's bind this onto the table widget; for this, follow the below steps:
 
-* Click \*\*\*\* on the `+` icon next to widgets on the sidebar, search for the **table widget**, and drag and drop it onto the canvas.
+* Click on the `+` icon next to widgets on the sidebar, search for the **table widget**, and drag and drop it onto the canvas.
 * You can make any configurations to any widget via the property pane. Click on the table widget on the canvas; you will see the property pane docked to the sidebar on the right. Now, under the Table Data property, use the moustache syntax to bind the query:
 
 ```
@@ -168,7 +168,7 @@ Now that the modal’s UI is ready, let's connect it:
 * Click on the + icon next to the datasources and choose to Create New + from the Firestore datasource.
 * Rename the query to `createTask`.
 * Set the commands to **`Create Document.`**
-* Set the \*\*`Collection/Document Path *`\*\*to `collection_name/{{Math.random().toString().substring()}}`
+* Set the **`Collection/Document Path *`** to `collection_name/{{Math.random().toString().substring()}}`
 
 For Example:- `tasks/{{Math.random().toString(36).substring(7)}}`
 

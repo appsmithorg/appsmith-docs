@@ -75,5 +75,5 @@ It may take a minute for the new ECS Task to start running.
 * [Signup Restrictions](disable-user-signup.md)
 * [Google Maps](google-maps.md)
 * [Disable Intercom](disable-intercom.md)
-* [Single Sign-On (SSO)](broken-reference/)
+* [Single Sign-On (SSO)](./authentication/README.md)
 * [Frame Ancestors](frame-ancestors.md)

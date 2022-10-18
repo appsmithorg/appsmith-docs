@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 # DynamoDB
 
-DynamoDB is a serverless, fully managed, key-value NoSQL database designed to handle high-performance applications of any size.&#x20;
+DynamoDB is a serverless, fully managed, key-value NoSQL database designed to handle high-performance applications of any size
 
 :::caution
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
@@ -30,9 +30,9 @@ Appsmith needs the following parameters for connecting to a DynamoDB instance:
 All required fields are suffixed with an asterisk (\*).
 :::
 
-* **Region\*:** Select the region where your DynamoDB instance exists
-* **AWS Access Key Id\*:** AWS access key that enables a program, script, or developer to access the resources on my AWS account programmatically.&#x20;
-* **AWS Secret Access Key\*:** Secret Access keys are like your password. This value is accessible from your AWS security credentials page.
+* **Region:** Select the region where your DynamoDB instance exists
+* **AWS Access Key Id:** AWS access key that enables a program, script, or developer to access the resources on my AWS account programmatically.
+* **AWS Secret Access Key:** Secret Access keys are like your password. This value is accessible from your AWS security credentials page.
 
 You can get all the above details from your AWS account:
 
@@ -44,41 +44,41 @@ You can get all the above details from your AWS account:
 
 When working with DynamoDB, you should be familiar with the following fundamental concepts:
 
-****[**Tables**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html): Tables are a collection of items.&#x20;
+[**Tables**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html): Tables are a collection of items.
 
-****[**Items**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html): In a table, an item is a single data record. The table's defined primary key serves as a unique identifier for each item in the table.
+[**Items**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html): In a table, an item is a single data record. The table's defined primary key serves as a unique identifier for each item in the table.
 
-[**Attributes**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DeclarativeTagsList.html)**:** Attributes are pieces of data attached to a single item.
+[**Attributes**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DeclarativeTagsList.html): Attributes are pieces of data attached to a single item.
 
-****[**Partition key**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html): A simple primary key, composed of one attribute known as the partition key. Attributes in DynamoDB are similar in many ways to fields or columns in other database systems.
+[**Partition key**](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html): A simple primary key, composed of one attribute known as the partition key. Attributes in DynamoDB are similar in many ways to fields or columns in other database systems.
 
-****[**Composite primary key**](https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/)**:**  This is a combination of partition key, and sort key, this type of key is composed of two attributes. The first attribute is the partition key, and the second attribute is the sort key. DynamoDB uses the partition key value as input to an internal hash function.
+[**Composite primary key**](https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/):  This is a combination of partition key, and sort key, this type of key is composed of two attributes. The first attribute is the partition key, and the second attribute is the sort key. DynamoDB uses the partition key value as input to an internal hash function.
 
 :::info
 No matter what type of primary key you choose, the primary key must be unique for each item in the table. You can [read more](https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/) about it.
 :::
 
-## Create Queries&#x20;
+## Create Queries
 
 You can add queries to **DynamoDB** datasource by selecting the **New API +** button available on the datasource page or by navigating to **Explorer >>** Click plus sign **(+)** next to **Queries/JS >>** Select the **datasource name (DynamoDB)**. You can query **DynamoDB** databases using any of the [officially supported operations](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_Operations\_Amazon\_DynamoDB.html).
 
-### Query&#x20;
+### Query
 
 You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. Here we have listed some of the most basic operations to get started with using a DynamoDB API:
 
 | Query Name                                                       | Description                                                                                     |   |
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | - |
-| ****[**ListTables** ](querying-dynamodb.md#listtables)****       | ListTables command gets a list of all the tables that are currently accessible at the endpoint. |   |
-| ****[**DescribeTable** ](querying-dynamodb.md#describetable)**** | DescribeTable command returns metadata about the table that is queried using the JSON body.     |   |
-| ****[**GetItem**](querying-dynamodb.md#getitem)****              | GetItem command retrieves a single item on the basis of its primary key.                        |   |
-| ****[**PutItem**](querying-dynamodb.md#putitem)****              | PutItem command is used to insert or replace an entire item object.                             |   |
-| [**UpdateItem**](querying-dynamodb.md#updateitem)****            | UpdateItem can be used for conditionally updating parts of an item.                             |   |
+| [**ListTables**](./querying-dynamodb.md#listtables)       | ListTables command gets a list of all the tables that are currently accessible at the endpoint. |   |
+| [**DescribeTable**](./querying-dynamodb.md#describetable) | DescribeTable command returns metadata about the table that is queried using the JSON body.     |   |
+| [**GetItem**](./querying-dynamodb.md#getitem)              | GetItem command retrieves a single item on the basis of its primary key.                        |   |
+| [**PutItem**](./querying-dynamodb.md#putitem)              | PutItem command is used to insert or replace an entire item object.                             |   |
+| [**UpdateItem**](./querying-dynamodb.md#updateitem)            | UpdateItem can be used for conditionally updating parts of an item.                             |   |
 
 You can check the [Query Settings Guide](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
 
 ### ListTables
 
-The [ListTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_ListTables.html) command can be used to retrieve all the tables available at the current endpoint. This request can be carried out even without a body.&#x20;
+The [ListTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_ListTables.html) command can be used to retrieve all the tables available at the current endpoint. This request can be carried out even without a body.
 
 * Click on the **+** icon next to the **queries/js** and choose your DynamoDB datasource.
 * From the Commands drop-down, Select the method **`List Tables`**.
@@ -99,7 +99,7 @@ The output from `ListTables` is paginated, with each page returning a **maximum 
 
 ### DescribeTable
 
-The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_DescribeTable.html) command returns metadata about the table that is queried using the JSON body. It returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.&#x20;
+The [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_DescribeTable.html) command returns metadata about the table that is queried using the JSON body. It returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.
 
 * Click on the **+** icon next to the **queries/js** and choose your DynamoDB datasource.
 * From the Commands drop-down, Select the method **`Describe Tables`**.
@@ -115,7 +115,7 @@ A sample request will look like this:
 
 ### GetItem
 
-The [`GetItem` ](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_GetItem.html)operation returns a set of attributes for the item with the given primary key. If there is no matching item, `GetItem` does not return any data, and there will be no `Item` element in the response.&#x20;
+The [`GetItem` ](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_GetItem.html)operation returns a set of attributes for the item with the given primary key. If there is no matching item, `GetItem` does not return any data, and there will be no `Item` element in the response.
 
 * Click on the **+** icon next to the **queries/js** and choose your DynamoDB datasource.
 * From the Commands drop-down, Select the method **`GetItem`**.
@@ -134,7 +134,7 @@ The request would use this specified type in the JSON body. In the following exa
 
 ### PutItem
 
-The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_PutItem.html) command is used to insert or replace an entire item object. This request can be configured to return with the inserted/updated item using the `ReturnValues` parameter.&#x20;
+The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_PutItem.html) command is used to insert or replace an entire item object. This request can be configured to return with the inserted/updated item using the `ReturnValues` parameter.
 
 :::info
 If an item with the same primary key as the new item already exists in the specified table, the new item completely replaces the existing item.

@@ -17,9 +17,9 @@ Data collected is strictly **anonymous** in nature and **cannot** be used to **u
 
 The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors.
 
-{% hint style="success" %}
+:::info
 Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools.
-{% endhint %}
+:::
 
 **Sample event**
 

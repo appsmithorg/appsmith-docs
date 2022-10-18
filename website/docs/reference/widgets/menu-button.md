@@ -53,11 +53,11 @@ Each menu item can now be customized through a set of properties by clicking on 
 
 ![](/img/Menu_items.gif)
 
-| Property     | Description                             |
-| ------------ | --------------------------------------- |
-| **label**    | Sets the label of a menu item.          |
-| **Visible**  | Controls the visibility of a menu item. |
-| **Disabled** | Disables input to a menu item.          |
+| Property                           | Description                                                                     |
+| -----------------------------------| -------------------------------------------------------------------------------------------------------------|
+| **label**                          | Sets the label of a menu item.          |
+| **Visible**                        | Controls the visibility of a menu item. |
+| **Disabled**                       | Disables input to a menu item.          |
 
 | Icon Options       | Description                               |
 | ------------------ | ----------------------------------------- |

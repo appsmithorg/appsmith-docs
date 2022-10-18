@@ -43,7 +43,7 @@ Now that you have a list widget added to the canvas, you can move it anywhere on
 
 ## Components
 
-Typically, a list widget is a collection of other widgets that you can embed to display data. Once you drag the list widget on the canvas, you can see it has embedded widgets like an[ image](https://docs.appsmith.com/widget-reference/image) and two[ texts](https://docs.appsmith.com/widget-reference/text) available.
+Typically, a list widget is a collection of other widgets that you can embed to display data. Once you drag the list widget on the canvas, you can see it has embedded widgets like an[ image](./image.md) and two[ texts](./text.md) available.
 
 ![Child widgets embedded in a list widget](/img/List-Widget-Embedded-Widgets.png)
 
@@ -214,7 +214,6 @@ For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind
 
 When you check the checkbox, it will enable the Visible property, and shows the list widget. Whereas the uncheck on the checkbox will hide the widget.
 
-{% embed url="https://youtu.be/iJICPdtoUQc" %}
 <figure>
   <object data="https://www.youtube.com/embed/iJICPdtoUQc?autoplay=0" width='860px' height='515px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>

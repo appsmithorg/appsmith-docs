@@ -27,7 +27,7 @@ The default name of the application is **My App**. You can change it to give a s
 
 ![Navigate to the Settings tab for configuration](/img/Auth0-SAML-Settings-Tab.png)
 
-* Scroll down to the **Application URIs** section. Add the **Redirect URL (**[Copied from Appsmith SAML Configuration Redirect URL Field](./#redirect-url)**)** to the **Allowed Callback URLs** field.
+* Scroll down to the **Application URIs** section. Add the **Redirect URL** ([**Copied from Appsmith SAML Configuration Redirect URL Field**](./#redirect-url)) to the **Allowed Callback URLs** field.
 
 ![Add the Redirect URL from Appsmith --> Admin Settings --> SAML](</img/Auth0-SAML-Allowed_CallbackURLs.png>)
 

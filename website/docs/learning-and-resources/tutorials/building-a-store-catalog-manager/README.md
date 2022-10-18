@@ -20,7 +20,9 @@ If this is your first time using Appsmith, you'll need to get acquainted with so
 
 Let's now create a new app named _Catalog Dashboard_ under the personal workspace.
 
-> An app on Appsmith is a standalone software-application solving a specific use-case. It can consist of one or more web-pages.
+:::info
+ An app on Appsmith is a standalone software-application solving a specific use-case. It can consist of one or more web-pages.
+:::
 
 Here are steps to create an app from the Appsmith Dashboard:
 
@@ -39,7 +41,9 @@ The new app comes with auto-generated directories that establish an Appsmith app
 
 ![](/img/as_storeTutorial_dirs.png)
 
-> The Entity Explorer pane on the left side of the screen is a place where you can create and organize UI widgets and data sources. Additionally, you can also find different integrations that you can utilize under these sections.
+:::info
+The Entity Explorer pane on the left side of the screen is a place where you can create and organize UI widgets and data sources. Additionally, you can also find different integrations that you can utilize under these sections.
+:::
 
 Let's see what each of these directories is:
 
@@ -53,7 +57,9 @@ Let's see what each of these directories is:
 
 Now that your environment (referred to as an **app**) is set up, you're ready to start doing work.
 
-> A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
+:::info
+A page in Appsmith is where the three building blocks of your app - Widgets, APIs, and DB Queries come together to create a view.
+:::
 
 The first page you create will list all the products at Oakry. Let's use the default page **Page1** that was created when you created this app. Now, rename the page to **ProductListPage** by double-clicking on **Page1**.
 
