@@ -44,7 +44,7 @@ If you are new to Appsmith, this is the place to start:
 <div class="containerGridSampleApp">
    <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
-         <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/quickstart_qZKI7b9na.png?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1657567806641" alt="quickstart"/>
+         <img class="containerImage" src="/img/hosting1-icon.png" alt="quickstart"/>
       </div> 
       <b><a href="/getting-started/start-building">Quickstart Tutorial</a></b>
       <div class="containerDescription">Build your first app using Appsmith 
@@ -53,7 +53,7 @@ If you are new to Appsmith, this is the place to start:
 
    <div class=" containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
-         <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/concepts_f_oFY_5zS.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657568503368" alt="concepts"/>
+         <img class="containerImage" src="/img/widget-icon.png" alt="concepts"/>
       </div>
       <b><a href="core-concepts/connecting-to-data-sources">Core Concepts</a></b>
       <div class="containerDescription">Everything you need to know about Appsmith fundamentals 
@@ -63,7 +63,7 @@ If you are new to Appsmith, this is the place to start:
 
    <div class="containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
-         <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/support1_Fanv9b1dK.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657570424985" alt="support"/>
+         <img class="containerImage" src="/img/support.png" alt="support"/>
       </div>
       <b><a href="https://community.appsmith.com/">Support</a></b>
       <div class="containerDescription">Reach out to us for any questions 
@@ -104,14 +104,14 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
 <div class="containerGridSampleApp">
    <div class="containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
-         <img class="containerImage" src="/img/hosting1-icon.png" alt="javascript"/>
+         <img class="containerImage" src="/img/code-icon.png" alt="javascript"/>
       </div> 
    <p><strong>JavaScript</strong></p><p><a href="core-concepts/writing-code/workflows">Create Workflows</a><br/><a href="core-concepts/writing-code/javascript-promises">JS Promises</a><br/><a href="core-concepts/writing-code/ext-libraries">External Libraries</a><br/></p> 
    </div>
 
    <div class="containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
-         <img class="containerImage" src="/img/widget-icon.png" alt="framework"/>
+         <img class="containerImage" src="/img/framework-icon.png" alt="framework"/>
       </div> 
    <p><strong>Framework</strong></p><p><a href="reference/appsmith-framework/context-object">Context Object</a><br/><a href="reference/appsmith-framework/query-object">Query Object</a><br/><a href="reference/appsmith-framework/widget-actions/">Actions</a><br/></p>
    </div>
@@ -119,7 +119,7 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
 
    <div class="containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
-         <img class="containerImage" src="/img/database-icon.png" alt="resources"/>
+         <img class="containerImage" src="/img/resources-icon.png" alt="resources"/>
       </div> 
    <p><strong>Resources</strong></p><p><a href="learning-and-resources/tutorials/"><strong></strong><strong></strong>Tutorials</a><br/><a href="learning-and-resources/sample-apps">Sample Apps</a><br/><a href="https://www.appsmith.com/templates">Templates</a><br/></p>
    </div>
