@@ -35,7 +35,7 @@ These properties allow you to perform formatting changes or bind it to any other
 These properties represent the lower and upper bounds of values that can be selected with the slider. The **Min Value** determines the value at the far left end of the widget, and the **Max Value** determines the value at the far right end. Negative and or decimal values are allowed however, the Min Value must always be less than the Max Value.
 
 <figure>
-  <object data="https://www.youtube.com/embed/VphLW50YPKo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/VphLW50YPKo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Min Value/Max Value</i></figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ These properties represent the lower and upper bounds of values that can be sele
 The `Step Size` property determines the smallest increment by which the user may adjust the value selected by the slider. Smaller values for this property (can't be smaller than 0.1) result in finer control of the selection, whereas larger step sizes result in coarser control.
 
 <figure>
-  <object data="https://www.youtube.com/embed/mecwJ-D49gU?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/mecwJ-D49gU?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Step Size</i></figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ The `Step Size` property determines the smallest increment by which the user may
 Sets an initial number to be captured as user input unless it's changed by the user.
 
 <figure>
-  <object data="https://www.youtube.com/embed/GOQ0SguBbp0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/GOQ0SguBbp0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Default Value</i></figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ Sets an initial number to be captured as user input unless it's changed by the u
 Marks appear along the bottom of the widget as labels for the different values along the slider. Using the `Marks` property, which is an array of objects with keys `label` and `value`, you can define where these marks appear and how they're labeled. Each mark appears below the place where its `value` is located on the slider, and has the text from its corresponding `label`.
 
 <figure>
-  <object data="https://www.youtube.com/embed/9lkNIjJ8EFs?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/9lkNIjJ8EFs?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Marks</i></figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ Marks appear along the bottom of the widget as labels for the different values a
 This property is a toggle that enables/disables the marks along the bottom of the slider.
 
 <figure>
-  <object data="https://www.youtube.com/embed/-4DS16RBkeI?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/-4DS16RBkeI?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Show Marks</i></figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ This property is a toggle that enables/disables the marks along the bottom of th
 When this property is enabled, the widget's tooltip is _always_ visible, and shows the currently selected value on the slider. If this setting is turned off, the tooltip is only visible when the user hovers over the slider with their mouse cursor.
 
 <figure>
-  <object data="https://www.youtube.com/embed/mtlqTYBplqk?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/mtlqTYBplqk?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Tooltip Always On</i></figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ This binding property allows you to access the value that has been selected with
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/AD89aGY2Kwc?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/AD89aGY2Kwc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Value</i></figcaption>
 </figure>
 

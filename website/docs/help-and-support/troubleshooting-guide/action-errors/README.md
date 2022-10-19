@@ -7,7 +7,7 @@ sidebar_position: 1
 
 
 <figure>
-<object data="https://www.youtube.com/embed/9YyHwmrkztE" width='860px' height='515px'></object>)
+<object data="https://www.youtube.com/embed/9YyHwmrkztE" width='750px' height='400px'></object>)
 <figcaption align = "center"><i>Error Handling for APIs & Queries
 </i></figcaption>
 </figure>

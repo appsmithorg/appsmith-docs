@@ -8,7 +8,7 @@ sidebar_position: 2
 
 
    <figure>
- <object data="https://www.youtube.com/embed/B4gR4XligTo" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/B4gR4XligTo" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Import Apps from Git
 </i></figcaption>
 </figure>
@@ -24,7 +24,7 @@ sidebar_position: 2
 
 
   <figure>
- <object data="https://www.youtube.com/embed/zrxgcI3m2lc" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/zrxgcI3m2lc" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Version Control with Git
 </i></figcaption>
 </figure>

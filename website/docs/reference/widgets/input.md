@@ -3,7 +3,7 @@
 The input widget allows the user to enter or edit data such as text, number, email, etc. It is helpful in a form widget with custom validations.
 
 <figure>
-  <object data="https://www.youtube.com/embed/zNGwWO6OXlw?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/zNGwWO6OXlw?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Input Widget</i></figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ As the name suggests, data type allows the user to set the type of data you want
 The input box will show an error "invalid input" if the entered data does not match the data type or disable the invalid data type input. (If you select the data type as a number, you won't be able to enter text in the input box.)
 
 <figure>
-  <object data="https://www.youtube.com/embed/Ehg74WJeCHo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Ehg74WJeCHo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Data type</i></figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/7VFebef9JZg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/7VFebef9JZg?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to set label properties?</i></figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 You can set a proxy text/value inside the input box using the `placeholder` property. It can be any message or hint for the expected input.
 
 <figure>
-  <object data="https://www.youtube.com/embed/576Bfo8htf0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/576Bfo8htf0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Placeholder</i></figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ This property lets you set a default value for the widget before the user has ma
 One good example of using this property is to bind it with a column of the selected row of a table. `Default text` will fill the input widget with the value at that table's cell.
 
 <figure>
-  <object data="https://www.youtube.com/embed/8oZFBLHoWC8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/8oZFBLHoWC8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Default text</i></figcaption>
 </figure>
 
@@ -114,7 +114,7 @@ For example, let's add a regular expression for entering a name. The name can co
 If you enter a value other than an alphabet or space (number of special characters), the widget will show an error message "invalid input."
 
 <figure>
-  <object data="https://www.youtube.com/embed/n6VUQN-wv9U?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/n6VUQN-wv9U?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Regular Expression (Regex)</i></figcaption>
 </figure>
 
@@ -124,7 +124,7 @@ If you enter a value other than an alphabet or space (number of special characte
 If a user enters an incorrect value, the input widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
 <figure>
-  <object data="https://www.youtube.com/embed/oeUHJhM4zyU?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/oeUHJhM4zyU?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Error Message</i></figcaption>
 </figure>
 
@@ -141,7 +141,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 When you tick the checkbox, it will enable the Required property, and the input box will show an error message "This field is required" if you have not entered any input.
 
 <figure>
-  <object data="https://www.youtube.com/embed/2hqT02HCah8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/2hqT02HCah8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Required</i></figcaption>
 </figure>
 
@@ -158,7 +158,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 When you tick the checkbox, it will enable the Visible property, and the input box will be visible in the app.
 
 <figure>
-  <object data="https://www.youtube.com/embed/Jb5bNVhFoRE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Jb5bNVhFoRE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 
@@ -175,7 +175,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 When you tick the checkbox, it will enable the Disabled property and prevent a user input in the input box.
 
 <figure>
-  <object data="https://www.youtube.com/embed/JEARavnq0vQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/JEARavnq0vQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Disabled</i></figcaption>
 </figure>
 
@@ -185,7 +185,7 @@ When `Reset on Submit` is enabled, the input widget resets or clears the entered
 Let's use the event `onSubmit` to show a message when input is submitted. You'll see once the user submits and the message pops up, the input widget will reset itself to its original state.
 
 <figure>
-  <object data="https://www.youtube.com/embed/EtKbP85Z9-s?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/EtKbP85Z9-s?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Reset on Submit</i></figcaption>
 </figure>
 
@@ -194,7 +194,7 @@ Let's use the event `onSubmit` to show a message when input is submitted. You'll
 When you enable `Autofocus`, the cursor focuses on the input box whenever the widget is loaded.
 
 <figure>
-  <object data="https://www.youtube.com/embed/_asmaJ1TuxE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/_asmaJ1TuxE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Autofocus</i></figcaption>
 </figure>
 
@@ -234,7 +234,7 @@ Property binding has other applications. For example, it helps in parsing the va
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/713Zs2EFPcs?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/713Zs2EFPcs?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Text</i></figcaption>
 </figure>
 

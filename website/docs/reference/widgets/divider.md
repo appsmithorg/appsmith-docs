@@ -3,7 +3,7 @@
 The Divider widget is used to visually separate or compartmentalise different parts of your application.
 
 <figure>
-  <object data="https://www.youtube.com/embed/rTJtDOusWmM?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/rTJtDOusWmM?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Divider Widget</i></figcaption>
 </figure>
 

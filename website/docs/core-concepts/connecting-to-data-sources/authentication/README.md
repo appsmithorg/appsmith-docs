@@ -7,7 +7,7 @@ If your APIs are protected by an authentication mechanism, that requires a stand
 Navigate to **Explorer** → scroll down to **Datasources** → Click on the **(+)** sign → Click **Authenticated API**.
 
  <figure>
- <object data="https://www.youtube.com/embed/Uy7ZDviGbtM?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/Uy7ZDviGbtM?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Add new API</i></figcaption>
 </figure> 
 
@@ -59,6 +59,6 @@ Appsmith safely encrypts all your authentication credentials and stores them sec
 The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
 
  <figure>
-  <object data="https://www.youtube.com/embed/-Z3y-pdNhXc?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/-Z3y-pdNhXc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use smart JSON substitution</i></figcaption>
 </figure>

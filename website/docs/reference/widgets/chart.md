@@ -11,7 +11,7 @@ Please note that our license does **not** cover **Fusion Maps**, and you will ha
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/Rvlwb5123mE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Rvlwb5123mE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Chart Widget</i></figcaption>
 </figure>
 
@@ -22,7 +22,7 @@ To add a chart widget to your canvas, drag a chart widget from a widget pane ava
 Navigate to PAGES —> Select Widget Tab —> Write “**chart”** in the search bar —> Drag the widget on the canvas.
 
 <figure>
-  <object data="https://www.youtube.com/embed/YrTtmdephs8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/YrTtmdephs8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to add a Chart widget to canvas?</i></figcaption>
 </figure>
 
@@ -96,7 +96,7 @@ For example, you are working on defect tracking for a project and want to expres
 Let’s use a line chart to visualize the data.
 
 <figure>
-  <object data="https://www.youtube.com/embed/yPLH8bbUth0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/yPLH8bbUth0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to plot a line chart on Appsmith?</i></figcaption>
 </figure>
 
@@ -110,21 +110,21 @@ As you can see in the video, we use the `Chart Series` property head to supply t
 To get a comparative study, you will add data for each category: bugs raised, active bugs, and closed bugs. To add more series, click on the button `+Add Series` and embed the data into `Series Data`, as shown in the video below.
 
 <figure>
-  <object data="https://www.youtube.com/embed/wp4IHJIynmc?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/wp4IHJIynmc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to add series to capture more data points?</i></figcaption>
 </figure>
 
 Similar to cumulative open, you can also add details for active bugs.
 
 <figure>
-  <object data="https://www.youtube.com/embed/5z21ep4moIk?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/5z21ep4moIk?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to add data points for active bugs?</i></figcaption>
 </figure>
 
 In the series data, you can also bind it to fetch the defect data from an API/Query.
 
 <figure>
-  <object data="https://www.youtube.com/embed/5z21ep4moIk?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/5z21ep4moIk?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to add data points by binding an API response?</i></figcaption>
 </figure>
 
@@ -223,7 +223,7 @@ Below is an example configuration for the Custom Fusion Chart property:
 Let’s take an example to create custom Fusioncharts.
 
 <figure>
-  <object data="https://www.youtube.com/embed/lLrybSBTb9k?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/lLrybSBTb9k?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>A two-dimensional column chart</i></figcaption>
 </figure>
 
@@ -280,7 +280,7 @@ Say you have multiple sister companies under your business name and are targetin
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/GVfm9RTuRaE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/GVfm9RTuRaE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Add a sub caption</i></figcaption>
 </figure>
 
@@ -292,7 +292,7 @@ The revenue displayed is in USD($), and in that case, you can choose a series (`
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/M2CLXC3rlMQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/M2CLXC3rlMQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Add a number prefix</i></figcaption>
 </figure>
 
@@ -313,7 +313,7 @@ You have a monthly target revenue of say $70,000 and would want to plot it in th
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/ITwJOlQnqyI?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/ITwJOlQnqyI?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Add trendlines</i></figcaption>
 </figure>
 
@@ -332,7 +332,7 @@ A Pareto chart is a type of bar graph. It represents the frequency of change. Th
 Let’s take an example of a Pareto 3D chart to visualize the data by combining a line chart and column chart.
 
 <figure>
-  <object data="https://www.youtube.com/embed/InxEQvwpiSw?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/InxEQvwpiSw?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>A Pareto 3D Chart</i></figcaption>
 </figure>
 
@@ -397,7 +397,7 @@ You can also add a Pie 3D chart with the help of fusion charts.
 Take a quick look at the video to know-how.
 
 <figure>
-  <object data="https://www.youtube.com/embed/232PF7OFSu8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/232PF7OFSu8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>A three-dimensional Pie Chart</i></figcaption>
 </figure>
 
@@ -453,7 +453,7 @@ For a sliced view, you can use a property `enablemultislicing`. Below is a code 
 A Stacked Column represents a part of the whole comparison over time across a different set of data. For example, you can use a fusion chart on Appsmith to plot a stacked column chart in a 3-dimensional view.
 
 <figure>
-  <object data="https://www.youtube.com/embed/4nsdEfEJewc?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/4nsdEfEJewc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>A three-dimensional Stacked Column Chart</i></figcaption>
 </figure>
 
@@ -549,7 +549,7 @@ For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/cnmHBAwZz1g?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/cnmHBAwZz1g?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use visible property to show/hide a widget</i></figcaption>
 </figure>
 

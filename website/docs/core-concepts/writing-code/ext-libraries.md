@@ -12,7 +12,7 @@ The Appsmith platform includes JavaScript utility libraries, which can be used t
 * [Forge](https://github.com/digitalbazaar/forge)
 
  <figure>
- <object data="https://www.youtube.com/embed/tqJna718tj4?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/tqJna718tj4?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Using Built-in Libraries in Appsmith</i></figcaption>
 </figure> 
 

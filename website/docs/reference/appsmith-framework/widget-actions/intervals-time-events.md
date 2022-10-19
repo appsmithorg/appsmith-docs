@@ -8,7 +8,7 @@ Interval events (Timing functions in JavaScript) allow the user to periodically 
 
 
 <figure>
-<object data="https://www.youtube.com/embed/ByE3aqlQ1pE" width='860px' height='515px'></object>
+<object data="https://www.youtube.com/embed/ByE3aqlQ1pE" width='750px' height='400px'></object>
 <figcaption align = "center"><i>How To Use The SetInterval & ClearInterval Functions To Auto-Update Widgets
 </i></figcaption>
 </figure>

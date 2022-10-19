@@ -17,7 +17,7 @@ To connect your app with git, follow the steps below:
 
 
  <figure>
- <object data="https://www.youtube.com/embed/oFfdIwhSPL8" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/oFfdIwhSPL8" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Generating a Deploy key
 </i></figcaption>
 </figure>
@@ -35,7 +35,7 @@ To connect your app with git, follow the steps below:
 
 
   <figure> 
-  <object data="https://www.youtube.com/embed/4xMHO4G2hEA" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/4xMHO4G2hEA" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Adding the deploy key in the Repository | Github
 </i></figcaption>
 </figure>
@@ -49,7 +49,7 @@ To connect your app with git, follow the steps below:
 
 
  <figure>
- <object data="https://www.youtube.com/embed/9aaiE6OERW0" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/9aaiE6OERW0" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Adding the deploy key in the Repository | Gitlab
 </i></figcaption>
 </figure>
@@ -63,7 +63,7 @@ To connect your app with git, follow the steps below:
 
 
  <figure>
- <object data="https://www.youtube.com/embed/A8ZOvW1CVIk" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/A8ZOvW1CVIk" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Adding the deploy key in the Repository | Bitbucket
 </i></figcaption>
 </figure>
@@ -77,7 +77,7 @@ To connect your app with git, follow the steps below:
 
 
  <figure>
- <object data="https://www.youtube.com/embed/d5R1MYKtpCM" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/d5R1MYKtpCM" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>User Settings | Git Sync
 </i></figcaption>
 </figure>
@@ -87,7 +87,7 @@ Finally, click on _**connect**_, and if the connection is successful, your repos
 
 
   <figure>
- <object data="https://www.youtube.com/embed/Z67SfBpKrnk" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/Z67SfBpKrnk" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Initial Commit | Git Sync
 </i></figcaption>
 </figure>

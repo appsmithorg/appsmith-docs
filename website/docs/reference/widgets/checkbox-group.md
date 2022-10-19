@@ -3,7 +3,7 @@
 Checkbox group widget allows users to configure multiple checkboxes together.
 
 <figure>
-  <object data="https://www.youtube.com/embed/-7cvZ2yCgtE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/-7cvZ2yCgtE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Checkbox Group Widget</i></figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/KVCjIWWzO5o?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/KVCjIWWzO5o?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to set the label properties?</i></figcaption>
 </figure>
 

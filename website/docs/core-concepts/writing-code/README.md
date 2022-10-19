@@ -45,7 +45,7 @@ When data changes within your app, your widgets need to update themselves to ref
 Instead of managing widget properties and states with direct variable assignment in code (like `x = 5`), widgets in your applications are connected to each other and share data; when one value is updated in your app, any objects that depend on that changed value also update accordingly. Below is a quick example of using the reactive code style to update a [Button](../../reference/widgets/button/)'s label in real time by taking user input from an [Input](../../reference/widgets/input.md) widget. Take a look at the video below:
 
 <figure>
- <object data="https://www.youtube.com/embed/YXo4PVrw1RQ?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/YXo4PVrw1RQ?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center">Reactive</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ But this won't work in Appsmith! Instead, you might create and store a special v
 ```
 
 <figure>
- <object data="https://www.youtube.com/embed/yKb6SRonfmQ?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/yKb6SRonfmQ?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Controlling Widgets with code</i></figcaption>
 </figure>
 

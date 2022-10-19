@@ -37,7 +37,7 @@ Applications built in an older version of an Appsmith instance will work when im
 
 
  <figure>
-<object data="https://www.youtube.com/embed/2JuJ0v56ztw" width='860px' height='515px'></object> 
+<object data="https://www.youtube.com/embed/2JuJ0v56ztw" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Import/Export Apps on Appsmith
 </i></figcaption>
 </figure>
@@ -57,7 +57,7 @@ Follow the steps below to export your application as a JSON file:
 
 
  <figure>
-<object data="https://www.youtube.com/embed/lBMP9MQHdCQ" width='860px' height='515px'></object> 
+<object data="https://www.youtube.com/embed/lBMP9MQHdCQ" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>How to export an app
 </i></figcaption>
 </figure>
@@ -88,7 +88,7 @@ As a security measure, we do not export any config values used for the connectin
 
 
  <figure>
-<object data="https://www.youtube.com/embed/bhzGIdXq2Z4" width='860px' height='515px'></object> 
+<object data="https://www.youtube.com/embed/bhzGIdXq2Z4" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>How to import an app
 </i></figcaption>
 </figure>

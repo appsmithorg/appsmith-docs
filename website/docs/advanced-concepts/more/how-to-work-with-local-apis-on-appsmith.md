@@ -24,7 +24,7 @@ You can also visit docker docs to read the use cases and workarounds for the [ho
 
 
  <figure>
- <object data="https://www.youtube.com/embed/4XlgsVekzhI" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/4XlgsVekzhI" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Connect to databases/APIs running on localhost
 </i></figcaption>
 </figure>
@@ -56,7 +56,7 @@ Appsmith allows you to work with APIs running on `localhost` using the help of *
 
 
  <figure>
- <object data="https://www.youtube.com/embed/IUX2rXmS17E" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/IUX2rXmS17E" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Connect to localhost using ngrok
 </i></figcaption>
 </figure>

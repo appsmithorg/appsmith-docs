@@ -3,7 +3,7 @@
 A tree-select widget captures user inputs from a specified list of permitted options in which each option can then have child options associated with it.
 
 <figure>
-  <object data="https://www.youtube.com/embed/vSqpSssJdws?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/vSqpSssJdws?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Tree-select Widget</i></figcaption>
 </figure>
 
@@ -121,7 +121,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/p1mt_Fo3C70?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/p1mt_Fo3C70?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to set the label properties?</i></figcaption>
 </figure>
 

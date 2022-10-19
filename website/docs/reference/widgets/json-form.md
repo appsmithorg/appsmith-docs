@@ -50,7 +50,7 @@ The source data field allows you to add JSON data for your form. Once you drag a
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/-29FuF7YRkg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/-29FuF7YRkg?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Binding Table Data to JSON Form</i></figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ If your data is an array type, you can mention the index value to get the source
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/mQBdt38dWGg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/mQBdt38dWGg?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Connecting a Query with JSON Form</i></figcaption>
 </figure>
 
@@ -88,14 +88,14 @@ Post binding, the form is automatically generated and ready to use. We optimize 
 When you enable auto-generate form, the form fields are generated according to the source data (fields are generated according to the key-value pairs in the source data). Whenever there is a change in the source data, the form fields get updated automatically.
 
 <figure>
-  <object data="https://www.youtube.com/embed/8T_nh5VI4-E?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/8T_nh5VI4-E?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Auto-Generate Form</i></figcaption>
 </figure>
 
 When the auto-generate form is disabled, any change in the source data will not affect the Form field. You’ll have to manually generate the form fields on demand by clicking on “**Generate form**.” It prevents the removal of the fields that are essential in the form.
 
 <figure>
-  <object data="https://www.youtube.com/embed/3r8GfXKM6y0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/3r8GfXKM6y0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Using Generate Form option</i></figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ Field configuration shows all the fields generated automatically in the forms. Y
 Most fields use the underlying data type-specific widget’s properties to allow a full level of customization just like the widget would. For example, if the input type is text input, the editable properties are similar to the [input widget](input.md) in Appsmith.
 
 <figure>
-  <object data="https://www.youtube.com/embed/DULrXY8WXqo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/DULrXY8WXqo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Field Configuration</i></figcaption>
 </figure>
 
@@ -125,7 +125,7 @@ Object fields can also be created within the form while customizing by adding a 
 You can also add new fields from the **Add new field** button in the Field configuration. These are called **Custom fields**. Once you add the field, you can customize it similar to any existing form field. For example, its “property name” can be updated within the field configuration for easier management of the form data. You can delete the custom fields later using the field configuration section in the widget.
 
 <figure>
-  <object data="https://www.youtube.com/embed/GmgFNppZhOM?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/GmgFNppZhOM?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Add New Field</i></figcaption>
 </figure>
 
@@ -146,7 +146,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/VgO6S4I7XSQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/VgO6S4I7XSQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 
@@ -175,7 +175,7 @@ For example, let's take a JSON Form widget `JSONform1` and bind the data in the 
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/e49oc0s8elw?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/e49oc0s8elw?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>formData</i></figcaption>
 </figure>
 
@@ -184,7 +184,7 @@ For example, let's take a JSON Form widget `JSONform1` and bind the data in the 
 `fieldState` captures the state of the fields present in the form in JSON format. The states include the properties of the fields (widgets) like disabled, required, visible, etc.
 
 <figure>
-  <object data="https://www.youtube.com/embed/ml7gEgkqq8w?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/ml7gEgkqq8w?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>fieldState</i></figcaption>
 </figure>
 
@@ -193,7 +193,7 @@ For example, let's take a JSON Form widget `JSONform1` and bind the data in the 
 `sourceData` fetches the data coming from the source data that is bound to the form in a JSON format. The source data may have static JSON data or data coming in from a query or an API.
 
 <figure>
-  <object data="https://www.youtube.com/embed/xEBuu5rUpqE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/xEBuu5rUpqE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>sourceData</i></figcaption>
 </figure>
 
@@ -215,7 +215,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Box Shadow**       | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
 <figure>
-  <object data="https://www.youtube.com/embed/MW_8sn2lDVQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/MW_8sn2lDVQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Form Styles</i></figcaption>
 </figure>
 
@@ -232,7 +232,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
 
 <figure>
-  <object data="https://www.youtube.com/embed/U0vko4TrFmo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/U0vko4TrFmo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Button Styles</i></figcaption>
 </figure>
 

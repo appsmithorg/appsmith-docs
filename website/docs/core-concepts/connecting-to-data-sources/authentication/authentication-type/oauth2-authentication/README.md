@@ -33,7 +33,7 @@ You can connect to your OAuth 2.0 APIs using Authenticated APIs on Appsmith. You
 An authorization grant type is a secured representation of the owner’s authorization presented in exchange for an access token.
 
  <figure>
- <object data="https://www.youtube.com/embed/NOpmWnQuwwQ?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/NOpmWnQuwwQ?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Grant type</i></figcaption>
 </figure> 
 
