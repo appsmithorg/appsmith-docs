@@ -71,7 +71,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
     </div>
     <div class="columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
-            <img class="containerImage" src="/img/hasura-logo_T6L3JlHSt.png" alt="Hasura-logo" height="100px"/>
+            <img class="containerImage" src="/img/hasura-logo_T6L3JlHSt.png" alt="Hasura-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Hasura</strong> gives you instant GraphQL &#x26; REST APIs on new &#x26; existing data sources. <br/><br/> </div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/e-commerce-order-management-dashboard-with-hasura-and-graphql"><strong>View Tutorial</strong> </a>
@@ -79,7 +79,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
     </div>
     <div class="columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
-            <img class="containerImage" src="/img/MariaDB-logo_kP1myud8_.png" height="100px" alt="MariaDB-logo"/>
+            <img class="containerImage" src="/img/MariaDB-logo_kP1myud8_.png" alt="MariaDB-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>MariaDB</strong> is a community-developed, commercially supported fork of the MySQL RDBMS.<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://www.youtube.com/watch?v=2DfCLf5ELN8"><strong>View Tutorial</strong></a> </div>
@@ -149,7 +149,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
     </div>
     <div class="columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
-            <img class="containerImage" src="/img/supabase-logo_JCWmwonfL.png" height="100px" alt="Supabase-logo"/>
+            <img class="containerImage" src="/img/supabase-logo_JCWmwonfL.png" alt="Supabase-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Supabase</strong> is an open-source Firebase alternative. <br/><br/> </div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong> </a>
@@ -157,7 +157,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
     </div>
     <div class="columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
-            <img class="containerImage" src="/img/xano-logo_nnco8rx_b.png" height="100px" alt="Xano-logo"/>
+            <img class="containerImage" src="/img/xano-logo_nnco8rx_b.png" alt="Xano-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Xano</strong> is the fastest no-code backend development platform.<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/adding-social-authentication-for-your-internal-applications-without-writing-any-code"><strong>View Tutorial</strong></a> </div>

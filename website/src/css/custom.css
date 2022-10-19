@@ -109,6 +109,17 @@
   margin: 20px ;
 }
 
+.containerGridSampleApp {
+  display: flex;
+  height: fit-content;
+  margin: 10px ;
+}
+
+.containerColumnSampleApp {
+  border: 1px solid #dadce0 !important;
+  border-radius: 4px;
+  margin: 10px;
+}
 .columnGrid {
   flex: 1;
   /* background: #f2f2f2; */
