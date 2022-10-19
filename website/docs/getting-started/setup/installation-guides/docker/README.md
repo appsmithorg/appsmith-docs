@@ -40,7 +40,7 @@ Currently, auto-update is disabled on the docker-compose file. If you want to en
 
 Download the below `docker-compose.yml` file into the appsmith installation folder
 
-{% file src="/img/docker-compose_(3).yml" %}
+<a target="_blank" href='/img/docker-compose_(3).yml' download="docker-compose_(3).yml">docker-compose.yml (Click to Download)</a>
 
 **or** run the following curl if you're on a remote machine:
 
@@ -145,9 +145,7 @@ If you are **unable** to **locate** the message but can **access** Appsmith via 
 
 If your containers are failing to restart, you can execute the below script to bring them up:
 
-{% file src="/img/restart-container.sh" %}
-restart-containers.sh
-{% endfile %}
+<a target="_blank" href='/img/restart-container.sh' download="restart-container.sh">restart-container.sh (Click to Download)</a>
 
 copy the script to your installation folder and make it executable
 
