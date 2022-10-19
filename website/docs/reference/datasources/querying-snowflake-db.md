@@ -21,17 +21,17 @@ All required fields are suffixed with an asterisk (\*).
 
 You need to fill in the following parameters:
 
-* **Account name\*:** Your account name is part of the connection string and consists of one or more components mentioned in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html).
-* **Warehouse\*:** Specifies the virtual warehouse to use once connected. The specified warehouse should be an existing warehouse for which the default role has privileges.
-* **Database\*:** Specifies the default database to use once connected. The specified database should be an existing database for which the default role has privileges.
+* **Account name:** Your account name is part of the connection string and consists of one or more components mentioned in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html).
+* **Warehouse:** Specifies the virtual warehouse to use once connected. The specified warehouse should be an existing warehouse for which the default role has privileges.
+* **Database:** Specifies the default database to use once connected. The specified database should be an existing database for which the default role has privileges.
 * **Default Schema:** The connection does not limit queries to this schema. This information is only used to view the schema structure inside Appsmith.
 
 ### **Authentication**
 
 Please fill in the following parameters:
 
-* **Username\*:** Fill in the _**username**_ required to authenticate your database connection request.
-* **Password\*:** Fill _**password**_ required for authenticating connection requests for the given username to the database.
+* **Username:** Fill in the _**username**_ required to authenticate your database connection request.
+* **Password:** Fill _**password**_ required for authenticating connection requests for the given username to the database.
 
 ## Connecting Snowflake on Appsmith <a href="#heading-getting-started-connecting-snowflake-on-appsmith" id="heading-getting-started-connecting-snowflake-on-appsmith"></a>
 
@@ -42,7 +42,7 @@ What we need to make the connection are the endpoint, database name, and user cr
 * Rename the Datasource to **SnowflakeDB** CRUD by double-clicking on the existing one.
 * Now, add your **SnowflakeDB account details.** All the details are available under the SnowflakeCloud settings:
 
-![Snowflake Database Dashboard](/img/aW5Lwtslt.avif)
+![Snowflake Database Dashboard](/img/Snowflake_db_.jpeg)
 
 * Here’s what the database configuration would look like:
 
@@ -57,7 +57,7 @@ What we need to make the connection are the endpoint, database name, and user cr
 After the connection is established, we can see all the sample data (tables) under the connected data source.
 :::
 
-![](/img/2W1WC4sa9.avif)
+![](/img/Snowflake_db_crud_sa9.jpeg)
 
 Now that we have the sample data, we will see how you query the snowflake database in the next section.
 
