@@ -131,7 +131,7 @@ You can create queries to fetch, update and delete data from a datasource using 
 | ----------------------------------------------------------- | --------------------------------------- |
 | [​List Records​](./graphql.md#list-records)                   | Fetches all the data from the database. |
 | [​Retrieve A Record​](./graphql.md#retrieve-a-record)         | Retrieve a particular record.           |
-| [Insert Records​](./graphql.md#insert-records​create-records) | Insert a new record in the database.    |
+| [Insert Records​](./graphql.md#insert-recordscreate-records) | Insert a new record in the database.    |
 | [​Delete A Record​](./graphql.md#delete-a-record)             | Delete a specific record.               |
 | [​Update Records​](./graphql.md#update-records)               | Update a few fields in a record.        |
 

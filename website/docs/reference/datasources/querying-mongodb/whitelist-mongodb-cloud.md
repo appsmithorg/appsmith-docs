@@ -10,7 +10,7 @@ Follow the below steps to whitelist the IP of Appsmith in the MongoDB cloud:
 
 1.Sign in to the MongoDB Cloud [dashboard](https://account.mongodb.com/account/login).
 
-1. Navigate to the Network Access screen\*\*:\*\*
+1. Navigate to the Network Access screen \*\*:\*\*
 
 ![](</img/image_(20).png>)
 
