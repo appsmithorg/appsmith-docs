@@ -6,13 +6,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #f1991f;
-  --ifm-color-primary-dark: #f1881f;
-  --ifm-color-primary-darker: #ec722b;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #f86a2b;
+  --ifm-color-primary-dark: #ed6227;
+  --ifm-color-primary-darker: #df5b23;
+  --ifm-color-primary-darkest: #d15420;
+  --ifm-color-primary-light: #f9936b;
+  --ifm-color-primary-lighter: #fbb195;
+  --ifm-color-primary-lightest: #fbb195;
   --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -20,31 +20,106 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #f9936b;
+  --ifm-color-primary-dark: #ed6227;
+  --ifm-color-primary-darker: #df5b23;
+  --ifm-color-primary-darkest: #d15420;
+  --ifm-color-primary-light: #f9936b;
+  --ifm-color-primary-lighter: #fbb195;
+  --ifm-color-primary-lightest: #fbb195;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist {
     margin-bottom: 6px;
     font-size: .938rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 100%;
     color: #000;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
-#__docusaurus .menu__list li:last-of-type {
+[data-theme='dark'] .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist  {
+  color: #fff;
+}
+
+.menu__list li:last-of-type {
   -webkit-padding-after: 1.5rem;
-  padding-block-end: 1.5rem;
+  padding-block-end: 0.5rem;
 }
 
+.menu__link {
+  align-items: center;
+  display: flex;
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 16px;
+  transition: opacity .2s ease-out;
+}
 
+.theme-doc-sidebar-menu .menu__list-item .menu__caret:before, .theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDEwIDggNmwtNCA0IiBzdHJva2U9IiMxQjI3MzgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) 50% no-repeat;
+  height: 1.5rem;
+  min-height: 29.5px;
+  min-width: 1.5rem;
+  width: 1.5rem;
+}
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist.theme-doc-sidebar-menu .menu__list-item .menu__caret:before, .theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
+    background: none;
+    height: 1.5rem;
+    min-height: 29.5px;
+    min-width: 1.5rem;
+    width: 1.5rem;
+}
+.menu__caret {
+   padding: 0em 0.375em 0em 0.75em !important;
+}
+
+[class^=sidebar_] {
+  -webkit-padding-before: 1rem;
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow-y: auto;
+  padding-block-start: 1rem;
+  position: static;
+  padding-inline-end: 0.5em;
+    padding-inline-start: 0.5em;
+}
+
+[class^=sidebar_]>.menu {
+  -webkit-padding-after: 2rem;
+  overflow-x: initial;
+  padding: 0;
+  padding-block-end: 2rem;
+}
+.menu__list {
+  display: block!important;
+  margin: 0;
+  transition: height .35s cubic-bezier(.36,.66,.04,1) 25ms!important;
+  will-change: auto!important;
+}
+
+.navbar__item.navbar__link {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.DocSearch-Button {
+  border-radius: 8px !important;
+  box-shadow: inset 0 0 0 1px var(--c-indigo-30) !important;
+  width: 100% !important;
+}
+
+.nav-link_get-appsmith {
+  background-color: #f86a2b;
+  border-radius: 0.25em;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+  color:#f3f5f7;
+}
 .gridContainer {
   max-width: 75%!important;
   box-sizing: border-box;
