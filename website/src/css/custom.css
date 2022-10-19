@@ -120,6 +120,11 @@
   white-space: nowrap;
   color:#f3f5f7;
 }
+
+.navbar__items--right > :last-child {
+  padding-right: 1em !important;
+}
+
 .gridContainer {
   max-width: 75%!important;
   box-sizing: border-box;
