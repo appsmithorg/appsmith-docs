@@ -85,7 +85,7 @@ The Switch is one of the few column types that supports inline editing; you can 
 
 #### Select
 
-A [Select/Dropdown](../dropdown-1.md) component is a menu list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as gender, role, and status. Here is a code snippet for the **options** property:
+A [Select/Dropdown](../select) component is a menu list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as gender, role, and status. Here is a code snippet for the **options** property:
 
 ```
 [

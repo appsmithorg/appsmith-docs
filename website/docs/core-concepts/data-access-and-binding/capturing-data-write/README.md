@@ -4,16 +4,16 @@ This document presumes you have successfully [connected to a data source](../../
 
 The following widgets can be used to capture user inputs in an application
 
-* [Checkbox](../../../reference/widgets/checkbox.md)
-* [Datepicker](../../../reference/widgets/datepicker.md)
-* [Filepicker](../../../reference/widgets/filepicker.md)
-* [Form](../../../reference/widgets/form.md)
-* [Input](../../../reference/widgets/input.md)
-* [Maps](../../../reference/widgets/maps.md)
-* [Radio Group](../../../reference/widgets/radio-group.md)
-* [Rich Text Editor](../../../reference/widgets/rich-text-editor.md)
-* [Select](../../../reference/widgets/dropdown-1.md)
-* [Switch](../../../reference/widgets/switch.md)
+* [Checkbox](../../../reference/widgets/checkbox)
+* [Datepicker](../../../reference/widgets/datepicker)
+* [Filepicker](../../../reference/widgets/filepicker)
+* [Form](../../../reference/widgets/form)
+* [Input](../../../reference/widgets/input)
+* [Maps](../../../reference/widgets/maps)
+* [Radio Group](../../../reference/widgets/radio-group)
+* [Rich Text Editor](../../../reference/widgets/rich-text-editor)
+* [Select](../../../reference/widgets/select)
+* [Switch](../../../reference/widgets/switch)
 
 Widgets store their user input in an internal property that can be referenced using javascript.
 

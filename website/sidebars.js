@@ -434,6 +434,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'More',
+          link: {type: 'doc', id: 'advanced-concepts/more/README'},
           items: [
             'advanced-concepts/more/how-to-work-with-local-apis-on-appsmith',
             'advanced-concepts/more/backup-restore',

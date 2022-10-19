@@ -9,7 +9,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 ###             
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/activecampaign_logo.jpeg" alt="ActiveCampaign-logo"/>
         </div> <hr/>
@@ -17,7 +17,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/apitemplate-logo.png" alt="APITemplate-logo"/>
         </div> <hr/>
@@ -25,7 +25,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-a-tool-to-generate-pdf-files-with-apitemplate-and-n8n"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/appwrite-logo_DGkbk_MxO.png" alt="Appwrite-logo"/>
         </div> <hr/>
@@ -35,7 +35,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 </div>
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/brex-logo_CNZYG94J4.png" alt="Brex-logo"/>
         </div> <hr/>
@@ -43,7 +43,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerTutorialLink"><a href="https://www.youtube.com/watch?v=3WSLex6f3yM">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/cube-logo_S50__hLNq.jpeg" alt="CubeJS-logo"/>
         </div> <hr/>
@@ -51,7 +51,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-appsmith-dashboard-with-cube"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/fauna-logo_jSlqC25LH.jpeg" alt="Fauna-logo"/>
         </div> <hr/>
@@ -61,7 +61,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 </div>
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/HarperDB-Logo_GLE5XlPJ6.png" alt="HarperDB-logo"/>
         </div> <hr/>
@@ -69,7 +69,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-inventory-management-tool-using-harperdb">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/hasura-logo_T6L3JlHSt.png" alt="Hasura-logo"/>
         </div> <hr/>
@@ -77,7 +77,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/e-commerce-order-management-dashboard-with-hasura-and-graphql"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/MariaDB-logo_kP1myud8_.png" alt="MariaDB-logo"/>
         </div> <hr/>
@@ -87,7 +87,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 </div>
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/mixpanel-logo_nLTAstL7N.jpeg" alt="Mixpanel-logo"/>
         </div> <hr/>
@@ -95,7 +95,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/n8n-logo_8BFnDWE3s.png" alt="n8n-logo"/>
         </div> <hr/>
@@ -103,7 +103,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-employee-survey-dashboard-with-supabase-and-n8n"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/notion-logo_nw3DY5mWz.png" alt="Notion-logo"/>
         </div> <hr/>
@@ -113,7 +113,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 </div>
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/replyto-logo_6yaZHFIeU.jpeg" alt="Replyio-logo"/>
         </div> <hr/>
@@ -121,7 +121,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/rowy-logo_pkqwXawrdl.png" alt="Rowy-logo"/>
         </div> <hr/>
@@ -129,7 +129,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
          <div class="containerTutorialLink"><a href="https://www.youtube.com/watch?v=m-vSQRrar8A"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/shopify-logo_3YbQ78SX7.png" alt="Shopify-logo"/>
         </div> <hr/>
@@ -139,7 +139,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 </div>
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/Slack-logo.png" alt="Slack-logo"/>
         </div> <hr/>
@@ -147,7 +147,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-a-daily-standup-application-in-30-minutes">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/supabase-logo_JCWmwonfL.png" alt="Supabase-logo"/>
         </div> <hr/>
@@ -155,7 +155,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/xano-logo_nnco8rx_b.png" alt="Xano-logo"/>
         </div> <hr/>
@@ -165,7 +165,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
 </div>
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/zapier-logo_odZ9wZQ3vY.jpeg" alt="Zapier-logo"/>
         </div> <hr/>

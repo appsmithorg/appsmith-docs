@@ -87,17 +87,10 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-         /* {
-            type: 'docsVersionDropdown',
-            position: 'left',
-            dropdownActiveClassDisabled: true,
-          },*/
-          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://app.appsmith.com',
-            label: 'Get Appsmith',
+            type: 'search',
             position: 'right',
-          }, 
+          },
           {
             href: 'https://www.appsmith.com/blog-categories/tutorial',
             label: 'Tutorials',
@@ -111,8 +104,15 @@ const config = {
           {
             href: 'https://github.com/appsmithorg/appsmith',
             label: 'GitHub',
-            position: 'right',
+            position: 'right'
           },
+          {
+            href: 'https://app.appsmith.com',
+            label: 'Get Appsmith',
+            position: 'right',
+            class: 'nav-link_get-appsmith',
+          }, 
+          
         ],
       },
       footer: {
