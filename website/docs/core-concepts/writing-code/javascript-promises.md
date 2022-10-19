@@ -3,7 +3,7 @@
 Previously, the only way to achieve asynchronous workflows in Appsmith was through callbacks, and dealing with callbacks was not easy. Appsmith now supports native [JavaScript promises](https://javascript.info/promise-basics) to make working with asynchronous workflows easier.
 
  <figure>
-  <object data="https://www.youtube.com/embed/VuBycqPJVug?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/VuBycqPJVug?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use JS Promises and Async/Await</i></figcaption>
 </figure>
 

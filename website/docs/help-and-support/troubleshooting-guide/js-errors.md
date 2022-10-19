@@ -211,7 +211,7 @@ Aside from using the `debugger`, it is also possible to use `console.log()` to i
 
 
 <figure>
-<object data="https://www.youtube.com/embed/YLnvb9_k96s" width='860px' height='515px'></object>)
+<object data="https://www.youtube.com/embed/YLnvb9_k96s" width='750px' height='400px'></object>)
 <figcaption align = "center"><i>How to Debug
 </i></figcaption>
 </figure>

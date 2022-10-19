@@ -15,7 +15,7 @@ To configure SAML within Appsmith using Active Directory as a SAML provider, fol
 
 ### Create Application
 
-<object data="https://www.youtube.com/embed/H94cQBp5sFE?autoplay=0" width='860px' height='515px'></object> 
+<object data="https://www.youtube.com/embed/H94cQBp5sFE?autoplay=0" width='750px' height='400px'></object> 
 
 1. Log in to your [Azure](https://portal.azure.com/#allservices) account and click on **More services**.
 2. Click on **Azure Active Directory** and hit “**+Add**”, and select “**Enterprise Application**.”
@@ -29,7 +29,7 @@ To configure SAML within Appsmith using Active Directory as a SAML provider, fol
 As mentioned in [Capture Redirect & Entity URL](./#capture-redirect-and-entity-url), you need to add these URLs to your SAML application. Go to your SAML application homepage and follow the steps below:
 
 <figure>
-  <object data="https://www.youtube.com/embed/9EFlC0PaxD0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/9EFlC0PaxD0?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Adding Redirect and Entity URLs</i></figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ Metadata URL is the **quickest** and **most recommended way** to set up **SAML**
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/5YEXAhdPwOI?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/5YEXAhdPwOI?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Fetching the metadata URL</i></figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ Metadata URL is the **quickest** and **most recommended way** to set up **SAML**
 If you don’t have a Metadata URL but have a raw SAML metadata XML document, you can choose XML to configure SAML.
 
 <figure>
-  <object data="https://www.youtube.com/embed/nUt1__WQBOE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/nUt1__WQBOE?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Metadata XML</i></figcaption>
 </figure>
 

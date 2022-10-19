@@ -10,7 +10,7 @@ Document viewer widget is used to show documents on a page. The widget currently
 6. .xlsx
 
 <figure>
-  <object data="https://www.youtube.com/embed/I-FusTdnJeE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/I-FusTdnJeE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Document Viewer Widget</i></figcaption>
 </figure>
 
@@ -35,6 +35,6 @@ These properties allow you to edit the Document Viewer widget. All of these prop
 Generating reports or documents from a dataset is vital in many applications. The video below shows how to generate a PDF report on Appsmith.
 
 <figure>
-  <object data="https://www.youtube.com/embed/8j6Z9bZvLqA?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/8j6Z9bZvLqA?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Generating PDF Documents</i></figcaption>
 </figure>

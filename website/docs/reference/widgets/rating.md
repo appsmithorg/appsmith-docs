@@ -3,7 +3,7 @@
 The Rating widget is used to perform a quick rating operation on something.
 
 <figure>
-  <object data="https://www.youtube.com/embed/ssm7TYCQtfo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/ssm7TYCQtfo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Rating Widget</i></figcaption>
 </figure>
 

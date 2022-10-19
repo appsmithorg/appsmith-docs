@@ -3,7 +3,7 @@
 ‌Select / Dropdown widget is used to capture user input/s from a specified list of permitted inputs.
 
 <figure>
-  <object data="https://www.youtube.com/embed/zNw1yMwg-aY?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/zNw1yMwg-aY?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Select Widget</i></figcaption>
 </figure>
 
@@ -121,7 +121,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/wyQGr-ggvhM?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/wyQGr-ggvhM?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to set the label properties?</i></figcaption>
 </figure>
 
@@ -144,7 +144,7 @@ The Select widget has the option to configure server-side filtering, where searc
 The video below explains how to configure this.
 
 <figure>
-  <object data="https://www.youtube.com/embed/QDmTwRaLzHg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/QDmTwRaLzHg?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Server-side Filtering</i></figcaption>
 </figure>
 

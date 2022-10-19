@@ -3,7 +3,7 @@
 A text widget displays textual information. Whether you want to add a paragraph or a heading to a container, a text widget makes it easy to style and display text.
 
 <figure>
-  <object data="https://www.youtube.com/embed/-anmDHXDScQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/-anmDHXDScQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Text Widget</i></figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ Let's understand the widget properties in detail.
 The `Text` field takes the input for the text widget. You can also add `HTML` code in the Text field manually or dynamically to render it in the widget.
 
 <figure>
-  <object data="https://www.youtube.com/embed/jIOajSSe6vI?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/jIOajSSe6vI?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Text</i></figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ Text field can only render inline CSS. If you want to use external CSS, we sugge
 This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fit inside the given widget area.
 
 <figure>
-  <object data="https://www.youtube.com/embed/Pex6RAyeHso?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Pex6RAyeHso?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Truncate Text</i></figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 When you tick the checkbox, it will enable the Visible property, and the text widget will be visible in the app.
 
 <figure>
-  <object data="https://www.youtube.com/embed/NBDZVBKX4jM?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/NBDZVBKX4jM?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 When you tick the checkbox, it will enable the Disable link property, and the input will be parsed as text.
 
 <figure>
-  <object data="https://www.youtube.com/embed/bmPk0arvZQM?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/bmPk0arvZQM?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Disable link</i></figcaption>
 </figure>
 
@@ -106,6 +106,6 @@ Style properties allow you to modify the text widget visually. It has several op
 * **Text Align:** This property focuses on the text alignment inside the text widget. It has three options - left, center, or right.
 
 <figure>
-  <object data="https://www.youtube.com/embed/kXkGfzGSxYA?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/kXkGfzGSxYA?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Styles</i></figcaption>
 </figure>

@@ -4,7 +4,7 @@ An [authorization code](https://oauth.net/2/grant-types/authorization-code/) is 
 
 In Appsmith, you can achieve this by setting up an `Authenticated API` and configuring it to use the `Authorization Code` as the grant type.
 
- <object data="https://www.youtube.com/embed/YfdK3t2r5Co?autoplay=0" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/YfdK3t2r5Co?autoplay=0" width='750px' height='400px'></object> 
 
 
 ## Integrate with Dropbox
@@ -63,7 +63,7 @@ You can send the response all up to the Portal App to display the uploaded file 
 
 Let’s configure Authentication API to integrate with Dropbox and create the workflow for uploading files.
 
- <object data="https://www.youtube.com/embed/RHhp5WaQV1g?autoplay=0" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/RHhp5WaQV1g?autoplay=0" width='750px' height='400px'></object> 
 
 ### Create Query
 
@@ -116,7 +116,7 @@ You’ll have to connect to a user endpoint on the Google Docs platform to perfo
 
 Follow these steps to configure Google docs integration for an Authenticated API.
 
- <object data="https://www.youtube.com/embed/ZO9rV9j2S9w?autoplay=0" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/ZO9rV9j2S9w?autoplay=0" width='750px' height='400px'></object> 
 
 
 
@@ -156,7 +156,7 @@ You’ll have to connect to a user endpoint on the Zoho Campaigns platform to pe
 
 Follow these steps to configure Zoho Campaigns' integration for an Authenticated API.
 
- <object data="https://www.youtube.com/embed/ABN1SadqXk4?autoplay=0" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/ABN1SadqXk4?autoplay=0" width='750px' height='400px'></object> 
 
 
 :::info

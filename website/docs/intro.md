@@ -24,8 +24,9 @@ Build **CRUD** apps, **Dashboards**, **Admin Panels**, **Dynamic Forms**, and mu
 You can build anything from simple CRUD apps to complicated multi-step workflows with these simple steps. Appsmith makes it easy to build a UI that talks to any datasource.
 
 **Got 2 minutes?** Here's a video overview of Appsmith:
-
-<object data="https://www.youtube.com/embed/Dxe_NzdGzL4?autoplay=0" width='860px' height='515px'></object> 
+<figure>
+<object data="https://www.youtube.com/embed/Dxe_NzdGzL4?autoplay=0" width='750px' height='400px'></object> 
+</figure>
 
 ## **Get Started**
 
@@ -39,44 +40,6 @@ There are two ways of using Appsmith:
 #### **New Users**
 
 If you are new to Appsmith, this is the place to start:
-
-<!-- <div class="gridContainer">
-   <div class="containerRow">
-      <div class="containerCol">
-         <div class="containerCol"><img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/quickstart_qZKI7b9na.png?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1657567806641" alt="quickstart" /></div>
-         <div class="containerCol"><a class="containerLink" href="/getting-started/start-building">Quickstart Tutorial</a></div>
-         <div class="containerCol">
-            <div class="containerDescription">Build your first app using Appsmith</div>
-         </div>
-      </div>
-   </div>
-</div>
-<div class="gridContainer">
-   <div class="containerRow">
-      <div class="containerCol">
-         <div class="containerCol">
-             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/concepts_f_oFY_5zS.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657568503368" alt="concepts"/>
-         </div>
-         <div class="containerCol"><a class="containerLink" href="core-concepts/connecting-to-data-sources">Core Concepts</a></div>
-         <div class="containerCol">
-            <div class="containerDescription">Everything you need to know about Appsmith fundamentals </div>
-         </div>
-      </div>
-   </div>
-</div>
-<div class="gridContainer">
-   <div class="containerRow">
-      <div class="containerCol">
-         <div class="containerCol">
-             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/support1_Fanv9b1dK.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657570424985" alt="concepts"/>
-         </div>
-         <div class="containerCol"><a class="containerLink" href="https://community.appsmith.com/">Support</a></div>
-         <div class="containerCol">
-            <div class="containerDescription">Reach out to us for any questions</div>
-         </div>
-      </div>
-   </div>
-</div> -->
 
 <div class="containerGrid">
    <div class="columnGrid column-one">

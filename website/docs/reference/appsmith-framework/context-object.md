@@ -11,7 +11,7 @@ The Appsmith context object provides information around the current state of the
 
 
 <figure>
-<object data="https://www.youtube.com/embed/5Z65l_PssEQ" width='860px' height='515px'></object>)
+<object data="https://www.youtube.com/embed/5Z65l_PssEQ" width='750px' height='400px'></object>)
 <figcaption align = "center"><i>How to Use the Appsmith Context Object
 </i></figcaption>
 </figure>

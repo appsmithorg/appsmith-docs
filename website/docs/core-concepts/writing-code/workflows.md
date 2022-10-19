@@ -35,7 +35,7 @@ For example, the properties like `OnTextChanged` and `OnSubmit` of an input widg
 ### **Use an Async Function Response in a Sync Field**
 
  <figure>
- <object data="https://www.youtube.com/embed/yn_8gs5w04g?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/yn_8gs5w04g?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Using data from Async function in Synchronous Field</i></figcaption>
 </figure>  
 
@@ -53,7 +53,7 @@ You have an API that fetches Users. You want to trigger the API execution, so yo
 To add a Table widget; Navigate to `Explorer` >> Click on `Widgets` >> Search `table` >> Drag a table widget onto the canvas.
 
  <figure>
- <object data="https://www.youtube.com/embed/iYZV9DPnugY?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/iYZV9DPnugY?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Using an API</i></figcaption>
 </figure>  
 
@@ -75,7 +75,7 @@ A `{{API.run()}}` method, if supplied to the [Table data](../../reference/widget
 You have a JSObject function that fetches all Users' information, filters data for `firstname` & `email,` and then returns the result so you can bind it to the table widget and display information.
 
  <figure>
- <object data="https://www.youtube.com/embed/8mVQS6uaR6M?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/8mVQS6uaR6M?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Using a JSobject</i></figcaption>
 </figure>  
 
@@ -103,7 +103,7 @@ A function call to the JSObject `getFilteredUsersList.userFilteredList()` will t
 You have a query that fetches Users’ information, returns the response, and binds it to the table widget to display data.
 
  <figure>
- <object data="https://www.youtube.com/embed/hqkI0h7DQ-s?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/hqkI0h7DQ-s?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Using a Query</i></figcaption>
 </figure>  
 
@@ -135,7 +135,7 @@ You can only use the **global actions** provided out-of-the-box by Appsmith in t
 :::
 
  <figure>
- <object data="https://www.youtube.com/embed/tjJIDkoCyQE?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/tjJIDkoCyQE?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Global Functions</i></figcaption>
 </figure>  
 
@@ -183,7 +183,7 @@ or chained to be called `onSuccess / onError` using the callback arguments in th
 The following example shows how you can run two queries on a single click event:
 
  <figure>
- <object data="https://www.youtube.com/embed/flCSSNTwWc4?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/flCSSNTwWc4?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Running Multiple Queries</i></figcaption>
 </figure>  
 

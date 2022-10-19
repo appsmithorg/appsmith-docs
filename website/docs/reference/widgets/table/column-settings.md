@@ -31,7 +31,7 @@ The button type is a clickable entity that triggers any event attached to it. It
 #### Checkbox
 
 <figure>
-  <object data="https://www.youtube.com/embed/EJn6XiZBI0k?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/EJn6XiZBI0k?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Checkbox column</i></figcaption>
 </figure>
 
@@ -111,7 +111,7 @@ You can also access each row's column values with `currentRow` property. `curren
 For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
 
 <figure>
-  <object data="https://www.youtube.com/embed/tjc8HlzQ4xU?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/tjc8HlzQ4xU?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Merging Columns</i></figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 When you tick the checkbox, it will enable the Visible property, and the column will be visible in the app.
 
 <figure>
-  <object data="https://www.youtube.com/embed/8mFTnQpI8bA?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/8mFTnQpI8bA?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 
@@ -137,7 +137,7 @@ When you tick the checkbox, it will enable the Visible property, and the column 
 Cell wrapping allows the contents of a cell to be wrapped to the following line instead of getting truncated. Cell wrapping can be enabled for a column or subset of cells in a column using `cell wrapping` property in column settings.
 
 <figure>
-  <object data="https://www.youtube.com/embed/RTP1SX6OLL8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/RTP1SX6OLL8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Cell Wrapping</i></figcaption>
 </figure>
 
@@ -155,7 +155,7 @@ Based on the Column type, you can edit the cell content. Once done, you can move
 2. Edited contents can be discarded by pressing the escape key.
 
 <figure>
-  <object data="https://www.youtube.com/embed/Wmitzz4UAGo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Wmitzz4UAGo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Editable</i></figcaption>
 </figure>
 

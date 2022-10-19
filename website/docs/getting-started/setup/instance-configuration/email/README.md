@@ -14,7 +14,7 @@ sidebar_position: 2
 
 Appsmith allows you to configure email using environment variables or the [admin settings](../admin-settings.md#using-the-admin-settings-ui).
 
-<object data="https://www.youtube.com/embed/NOAofPbmJWw?autoplay=0" width='860px' height='515px'></object> 
+<object data="https://www.youtube.com/embed/NOAofPbmJWw?autoplay=0" width='750px' height='400px'></object> 
  
 ## Configure using Environment Variables
 

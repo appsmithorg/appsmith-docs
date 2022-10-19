@@ -141,7 +141,7 @@ If you have accidentally opted for Telemetry, you can disable it. You can either
 * Navigate to **Profile** >> Click **Admin Settings** >> Click on **General** >> Scroll to **Share anonymous usage** **data.**
 
 <figure>
-  <object data="https://www.youtube.com/embed/di3CkNX7oUQ?autoplay=0" width='860px' height='515px'></object>   
+  <object data="https://www.youtube.com/embed/di3CkNX7oUQ?autoplay=0" width='750px' height='400px'></object>   
    <figcaption align="center"><i>How to disable telemetry from Admin Settings?</i></figcaption>
 </figure>
 
@@ -165,7 +165,7 @@ APPSMITH_DISABLE_TELEMETRY=true
 * Save Changes
 
 <figure>
-  <object data="https://www.youtube.com/embed/a8_S2fhskW4?autoplay=0" width='860px' height='515px'></object>   
+  <object data="https://www.youtube.com/embed/a8_S2fhskW4?autoplay=0" width='750px' height='400px'></object>   
    <figcaption align="center"><i>How to disable telemetry?</i></figcaption>
 </figure>
 

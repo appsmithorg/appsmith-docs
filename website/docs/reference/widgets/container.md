@@ -3,7 +3,7 @@
 When you organize your cupboard or home, you want to pack stuff in boxes and name them. Similarly, you can use a container widget to hold the widgets. A container widget serves as a logical group of related widgets. It gives your page a distinctive layout.
 
 <figure>
-  <object data="https://www.youtube.com/embed/mfPGTUxr6SY?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/mfPGTUxr6SY?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Container Widget</i></figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ For example, let’s drag a checkbox widget Checkbox1 onto the canvas. Rename th
 When you check the checkbox, it will enable the Visible property and shows the container widget and all its child. Whereas the uncheck on the checkbox will hide the widget and its child.
 
 <figure>
-  <object data="https://www.youtube.com/embed/ImuDDWfVWas?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/ImuDDWfVWas?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 

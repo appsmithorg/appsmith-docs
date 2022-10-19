@@ -3,7 +3,7 @@
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
 
 <figure>
-  <object data="https://www.youtube.com/embed/-rzePEV2QQ8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/-rzePEV2QQ8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Table Widget?</i></figcaption>
 </figure>
 
@@ -58,7 +58,7 @@ Let's bind the data from a mock database into a table widget.
 Where `<query_name>` is the query's name created in Step 2.
 
 <figure>
-  <object data="https://www.youtube.com/embed/czxtgHJ1sUE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/czxtgHJ1sUE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i></i></figcaption>
 </figure>
 
@@ -147,7 +147,7 @@ Open the property pane of the text widget and add the following snippet to its l
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/0Pl7p1sA1fY?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/0Pl7p1sA1fY?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>selectedRow</i></figcaption>
 </figure>
 
@@ -171,7 +171,7 @@ It will result in the data at `<columnname>` of the row selected. Using this sni
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/hHZ5IbtE-wo?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/hHZ5IbtE-wo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Displaying column value using selectedRow</i></figcaption>
 </figure>
 
@@ -190,7 +190,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using selectedRows.
 
 <figure>
-  <object data="https://www.youtube.com/embed/K8F4oggpOk0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/K8F4oggpOk0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>selectedRows</i></figcaption>
 </figure>
 
@@ -211,7 +211,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using triggeredRow.
 
 <figure>
-  <object data="https://www.youtube.com/embed/HUcQ8lf7cH4?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/HUcQ8lf7cH4?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>triggeredRow</i></figcaption>
 </figure>
 
@@ -230,7 +230,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using seledRowIndex.
 
 <figure>
-  <object data="https://www.youtube.com/embed/KXYkdFzOKsQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/KXYkdFzOKsQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>selectedRowIndex</i></figcaption>
 </figure>
 
@@ -249,7 +249,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using seledRowIndices.
 
 <figure>
-  <object data="https://www.youtube.com/embed/yLOYqrW2xaw?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/yLOYqrW2xaw?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>selectedRowIndices</i></figcaption>
 </figure>
 
@@ -268,7 +268,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using filteredTableData.
 
 <figure>
-  <object data="https://www.youtube.com/embed/0tvZXEtSMp4?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/0tvZXEtSMp4?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>filteredTableData</i></figcaption>
 </figure>
 
@@ -287,7 +287,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using pageNo.
 
 <figure>
-  <object data="https://www.youtube.com/embed/DqKok2cCJk0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/DqKok2cCJk0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>pageNo</i></figcaption>
 </figure>
 
@@ -305,7 +305,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using pageSize.
 
 <figure>
-  <object data="https://www.youtube.com/embed/XkFJQh4vcCw?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/XkFJQh4vcCw?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>pageSize</i></figcaption>
 </figure>
 
@@ -324,7 +324,7 @@ Where `<table_name>` is the name of your table.
 Let's bind a text widget to `Table_1` using searchText.
 
 <figure>
-  <object data="https://www.youtube.com/embed/vn6zx7zMeUs?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/vn6zx7zMeUs?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>searchText</i></figcaption>
 </figure>
 
@@ -401,6 +401,6 @@ Here, the `setInterval` function calls the `getData` query every 2 seconds when 
 A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform a search on the server-side (API server or database) and have the results displayed on the table. A video guide on how to do this is shown below:
 
 <figure>
-  <object data="https://www.youtube.com/embed/3ayioaw5uj8?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/3ayioaw5uj8?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How To Setup Server-Side Search For The Table Widget</i></figcaption>
 </figure>

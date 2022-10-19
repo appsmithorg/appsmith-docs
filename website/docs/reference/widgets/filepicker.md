@@ -3,7 +3,7 @@
 Filepicker widget is used to allow users to upload files from their local machines to any cloud storage via API. Cloudinary and Amazon S3 have simple APIs for cloud storage uploads
 
 <figure>
-  <object data="https://www.youtube.com/embed/Sl0zN2CSJaY?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Sl0zN2CSJaY?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Filepicker Widget</i></figcaption>
 </figure>
 

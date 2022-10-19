@@ -121,7 +121,7 @@ Alternatively, A column can be editable by turning on `Editable` property inside
 
 
 <figure>
-  <object data="https://www.youtube.com/embed/BW5cVp0GfLE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/BW5cVp0GfLE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Making column editable</i></figcaption>
 </figure>
 
@@ -162,7 +162,7 @@ If a word other than "John" is added to the cell, an error will be displayed. Si
 
 
 <figure>
-  <object data="https://www.youtube.com/embed/c4Ylp9QUAc0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/c4Ylp9QUAc0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Valid</i></figcaption>
 </figure>
 
@@ -189,7 +189,7 @@ Sets the minimum allowed value. For example, you could set the minimum value to 
 Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want the numbers from 2 to 100. Any number entered that's more than 100 is considered invalid.
 
 <figure>
-  <object data="https://www.youtube.com/embed/bUbGMUuINvg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/bUbGMUuINvg?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Min & Max Example</i></figcaption>
 </figure>
 

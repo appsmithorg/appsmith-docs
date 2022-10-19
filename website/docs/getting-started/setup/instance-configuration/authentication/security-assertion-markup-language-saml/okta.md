@@ -14,7 +14,7 @@ Security Assertion Markup Language (SAML) is available only in the [enterprise e
 Log in to your [Okta Developer Account](https://developer.okta.com/) and navigate to **Applications** >> **Applications** >> Click **Create App Integration**.
 
 <figure>
-  <object data="https://www.youtube.com/embed/4Tj2OEV-r10?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/4Tj2OEV-r10?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>How to create an app integration?</i></figcaption>
 </figure>
 
