@@ -22,7 +22,7 @@ Let's quickly first see how you can integrate Elasticsearch in Appsmith. Just he
 
 Click on the `New` button to create a new application. Then click on `Generate from a Data table` option. You should be prompted with a screen that would ask you to connect the database of your choice. It should look something like this:
 
-![Elastic-1](<../../.gitbook/assets/Elastic - 1.png>)
+![Elastic-1](<../../.gitbook/assets/Elastic - 1 (1).png>)
 
 Click on `Connect new Datasource` and find `ElasticSearch` from all the available database options.
 
@@ -40,7 +40,7 @@ If the test is successful, click on "Save" to save your connection on Appsmith.
 
 So, now that you're done with setting up a connection to your database server, you should be able to see a screen like this:
 
-![Elastic-3](../../.gitbook/assets/Elastic-3.png)
+![Elastic-3](<../../.gitbook/assets/Elastic-3 (1).png>)
 
 You can change the name of Datasource by clicking on it. I will use the How To datasource here. From here, let's try writing a query for our application. For our database, I have already added the accouts.json data file.
 
@@ -64,7 +64,7 @@ In the body, we will write our query.
 
 It will look something like this.
 
-![Elastic-4](<../../.gitbook/assets/Elastic - 4 (1).png>)
+![Elastic-4](<../../.gitbook/assets/Elastic - 4.png>)
 
 I will name this query Defaulter. Now for your convenience, Appsmith does all the input sanitization and helps you query your database without worrying about any malicious data. In our case, we're just reading from the database, so our query will also be straightforward.
 
@@ -76,7 +76,7 @@ Data is stored as a JSON format in Elasticsearch, and we will use a table to dis
 
 Click on the `Widgets` ribbon and select the `Table` widget.
 
-![Elastic-5](<../../.gitbook/assets/Elastic-5 (1).png>)
+![Elastic-5](../../.gitbook/assets/Elastic-5.png)
 
 Drag and drop it on the canvas. It should be like this.
 
@@ -112,7 +112,7 @@ Now that we know how to read data via ElasticSearch, let's make a function that 
 
 Create a new column next to balance by clicking on the table and selecting the `ADD A NEW COLUMN` button. I am going to name the column as Balance Update. Click the settings icon on the column name to modify it. In column type, select `Button` and you will see all the rows in the Update Balance column will have a button. I am going to name the button as Update. Your configuration should look like this.
 
-![Elastic-9](<../../.gitbook/assets/Elastic 9.png>)
+![Elastic-9](<../../.gitbook/assets/Elastic 9 (1).png>)
 
 On clicking the button, we should get a prompt on the screen with a textbox to write our new balance and update it. To accomplish this, we are going to use another widget call `Modal`. Click the `+` icon next to Widgets and drag the modal widget to the canvas.
 
@@ -162,7 +162,7 @@ Your application is now ready and can be easily deployed by clicking the Deploy 
 
 Let's update one of the values to check if our application is working.
 
-![Elastic-2-gif](<../../.gitbook/assets/Elastic - 2 gif (1) (1) (1) (2) (1) (1) (1) (1) (1) (3) (3) (3) (1) (3).gif>)
+![Elastic-2-gif](<../../.gitbook/assets/Elastic - 2 gif (1) (1) (1) (2) (1) (1) (1) (1) (1) (3) (3) (3) (3).gif>)
 
 All the queries have executed properly. Let's check the value of id 6 to see if it's appropriately updated. I'll use Kibana to check the value.
 
