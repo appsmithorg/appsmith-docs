@@ -3,7 +3,7 @@
 The Image widget displays the images in your app. Images must be either a URL or a valid base64.
 
 <figure>
-  <object data="https://www.youtube.com/embed/jdDcydQ8Ho0?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/jdDcydQ8Ho0?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Image Widget</i></figcaption>
 </figure>
 

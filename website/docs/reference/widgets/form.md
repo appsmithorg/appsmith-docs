@@ -5,7 +5,7 @@ A **Form** is the most widely used way of capturing a user’s digital or handwr
 Form widget serves as a parent widget that can store different widgets like texts to display what information to capture, an input box to capture the desired input from the user, a dropdown to allow selection, and many more. From building a user registration to a complex checkout or payment app, you can easily design the forms that best suit your business requirement with all these widgets at your disposal.
 
 <figure>
-  <object data="https://www.youtube.com/embed/UgpQ0ZOnzdg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/UgpQ0ZOnzdg?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Form Widget</i></figcaption>
 </figure>
 
@@ -16,7 +16,7 @@ To add a form widget to your canvas, drag a form widget from a widget pane avail
 Navigate to **PAGES** —> Select **Widget** Tab —> Write **Form** in the search bar —> **Drag** the widget on the **canvas**.
 
 <figure>
-  <object data="https://www.youtube.com/embed/o-9kl0L6m58?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/o-9kl0L6m58?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Add a Widget to Canvas</i></figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ There are a lot of use cases that you can build using a form widget like user re
 To build this app, you can use a form widget to trigger the search with an input widget to capture the search term, embedded form buttons to trigger the search, reset the search term, and a table widget to display the search result.
 
 <figure>
-  <object data="https://www.youtube.com/embed/Mi_RNg5RVxk?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Mi_RNg5RVxk?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Employee Directory Search Term</i></figcaption>
 </figure>
 
@@ -84,7 +84,7 @@ The property is on for a submit form button, and it clears the fields after the 
 Now that the search is in place, you can use the table widget to bind the query's response and display the results, as shown in the video. You can do a lot of manipulation in data in a table widget, like hiding some columns, format column values, and more. [Read more on how to use the table widget to structure your data](table/).
 
 <figure>
-  <object data="https://www.youtube.com/embed/Upn7LDy7UQQ?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Upn7LDy7UQQ?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Display Search Results</i></figcaption>
 </figure>
 
@@ -159,7 +159,7 @@ For example, let’s drag a checkbox widget `Checkbox1` onto the canvas. Rename 
 When you check the checkbox, it will enable the Visible property and show the form widget and all its children. Whereas the uncheck on the checkbox will hide the widget and its children.
 
 <figure>
-  <object data="https://www.youtube.com/embed/P_98MzwE_lI?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/P_98MzwE_lI?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ You can enable scroll contents em on when you want to embed multiple widgets. Th
 Whenever the application is loaded the `hasChanges` property is set to **false.** Whenever the application user changes the values of the widgets embedded in the form, Appsmith sets the property `hasChanges` to **true**. You can use this property to verify if the fields are modified and can prompt the users with a confirmation message to save or discard the changes.
 
 <figure>
-  <object data="https://www.youtube.com/embed/UsZQ6q48sKw?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/UsZQ6q48sKw?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use hasChanges property?</i></figcaption>
 </figure>
 
@@ -199,7 +199,7 @@ EmployeeForm.data.FirstName;
 ```
 
 <figure>
-  <object data="https://www.youtube.com/embed/pKrOLPDYelc?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/pKrOLPDYelc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use the data property of the form to read embedded widgets' values?</i></figcaption>
 </figure>
 

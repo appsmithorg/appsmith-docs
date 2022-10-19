@@ -20,14 +20,14 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 * Click on **Build your own solution** in the **Create Environment** window and choose `PingOne SSO` from the given options.
 
 <figure>
-  <object data="https://www.youtube.com/embed/B-Vsbqkkwqg?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/B-Vsbqkkwqg?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Build your own Solution</i></figcaption>
 </figure>
 
 * Fill in the details about the environment and click on Next.
 
 <figure>
-  <object data="https://www.youtube.com/embed/h8QqEhbpEPs?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/h8QqEhbpEPs?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Environment Configuration</i></figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 * In the Attribute Mapping, add the OIDC attributes. Please note that only the values added in the `Scope Grant` will be valid here. Hit **Save and Close**, and your application is ready.
 
 <figure>
-  <object data="https://www.youtube.com/embed/fRreXB6P0No?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/fRreXB6P0No?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Configure Environment and Scope</i></figcaption>
 </figure>
 

@@ -5,7 +5,7 @@
 The Button group widget represents a set of buttons in a group. Group can have simple buttons or menu buttons with drop-down items.
 
 <figure>
-  <object data="https://www.youtube.com/embed/oWGK1s5nGns?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/oWGK1s5nGns?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Button Group Widget</i></figcaption>
 </figure>
 

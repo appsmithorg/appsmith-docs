@@ -3,7 +3,7 @@
 The Progress widget indicates the progress of certain user performed or system triggered actions.
 
 <figure>
-  <object data="https://www.youtube.com/embed/Yg1Pfy7uc1s?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/Yg1Pfy7uc1s?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Progress Widget</i></figcaption>
 </figure>
 

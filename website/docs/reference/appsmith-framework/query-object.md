@@ -65,7 +65,7 @@ Please see the quick demo below showing how to access your params from `Query.ru
 
 
 <figure>
-<object data="https://www.youtube.com/embed/oktXirbay8U" width='860px' height='515px'></object>)
+<object data="https://www.youtube.com/embed/oktXirbay8U" width='750px' height='400px'></object>)
 <figcaption align = "center"><i>Use this.params.key within your query to access any params you passed within the .run(params) function.
 </i></figcaption>
 </figure>

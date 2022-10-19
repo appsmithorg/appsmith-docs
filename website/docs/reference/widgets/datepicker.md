@@ -3,7 +3,7 @@
 Datepicker is used to capture the date and time input by a user. It can be used to filter data based on the input date range as well as to capture personal information such as date of birth.
 
 <figure>
-  <object data="https://www.youtube.com/embed/MFflGf3K324?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/MFflGf3K324?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Datepicker Widget</i></figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/y6LwyDgojoE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/y6LwyDgojoE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to set the label properties?</i></figcaption>
 </figure>
 

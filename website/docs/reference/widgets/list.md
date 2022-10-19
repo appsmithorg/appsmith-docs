@@ -7,7 +7,7 @@ List widget is in beta right now. It can only render widgets for display purpose
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/0ePiZlWmp7Q?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/0ePiZlWmp7Q?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use List Widget</i></figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ To add a list widget to your canvas, drag a list widget from a widget pane avail
 Navigate to PAGES —> Select Widget Tab —> Write “**list”** in the search bar —> Drag the widget on the canvas.
 
 <figure>
-  <object data="https://www.youtube.com/embed/8LWM10svhZU?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/8LWM10svhZU?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Add a widget to Canvas</i></figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ You can see a textbox available at the top of the Properties pane. List1 is the 
 
 
 <figure>
-  <object data="https://www.youtube.com/embed/WqSrZphpZv4?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/WqSrZphpZv4?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to name a list widget?</i></figcaption>
 </figure>
 
@@ -111,7 +111,7 @@ To have a dynamic data binding for the list widget, you can use the **Connect Da
 
 
 <figure>
-  <object data="https://www.youtube.com/embed/PPsqqkaq_7Q?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/PPsqqkaq_7Q?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to add Data to Widget?</i></figcaption>
 </figure>
 
@@ -215,7 +215,7 @@ For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind
 When you check the checkbox, it will enable the Visible property, and shows the list widget. Whereas the uncheck on the checkbox will hide the widget.
 
 <figure>
-  <object data="https://www.youtube.com/embed/iJICPdtoUQc?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/iJICPdtoUQc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Visible</i></figcaption>
 </figure>
 
@@ -254,7 +254,7 @@ An individual item on the list is defined as the entire row. A row includes the 
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/_h3hUjnGwSE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/_h3hUjnGwSE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>onListItemClick</i></figcaption>
 </figure>
 

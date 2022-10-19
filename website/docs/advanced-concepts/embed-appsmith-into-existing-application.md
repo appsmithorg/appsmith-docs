@@ -6,7 +6,7 @@ description: Guide on how to embed Appsmith into an existing application
 # Embed Apps
 
 <figure>
- <object data="https://www.youtube.com/embed/l7508s-5VwU" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/l7508s-5VwU" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Embed Appsmith in your Website
 </i></figcaption>
 </figure>
@@ -39,7 +39,7 @@ You'll also have to ensure your app is public to embed into other applications. 
 
 
 <figure>
- <object data="https://www.youtube.com/embed/gD0xV-Tt1_U" width='860px' height='515px'></object> 
+ <object data="https://www.youtube.com/embed/gD0xV-Tt1_U" width='750px' height='400px'></object> 
 <figcaption align = "center"><i>Follow these steps to make your application public
 </i></figcaption>
 </figure>

@@ -14,7 +14,7 @@ To configure OpenID Connect(OIDC) within Appsmith using Active Directory as an O
 ### Create an Application
 
 <figure>
-  <object data="https://www.youtube.com/embed/GDOVdeIe3VU?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/GDOVdeIe3VU?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Creating an application in Active Directory</i></figcaption>
 </figure>
 
@@ -37,13 +37,13 @@ On the application homepage, go to the overview tab and perform the following ac
   * Copy the value of the new Client secret and add it under **Client secret** in the OIDC configurations in Appsmith.
 
 <figure>
-  <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Creating a new Client secret in Active Directory</i></figcaption>
 </figure>
 
 * Click the **Endpoints** tab under App overview and copy the **OpenID Connect metadata document** URL.
 
-  <object data="https://www.youtube.com/embed/v6N09_Q5LoY?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/v6N09_Q5LoY?autoplay=0" width='750px' height='400px'></object> 
 
 
 * Open the metadata URL in a browser window and copy the following configurations from the above link and add them to OIDC Configurations on Appsmith:
@@ -70,7 +70,7 @@ Appsmith needs **openId** as a mandatory scope. You can add more scopes if the n
 ### Configure Scopes in Active Directory
 
 <figure>
-  <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Configuring scopes in Active Directory</i></figcaption>
 </figure>
 

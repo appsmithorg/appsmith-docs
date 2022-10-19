@@ -3,7 +3,7 @@
 The multi-tree-select widget captures the user input from a specified list of permitted options, and these options can have child options within them. It captures multiple choices.
 
 <figure>
-  <object data="https://www.youtube.com/embed/XaaFY0grXjE?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/XaaFY0grXjE?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Multi-tree-select Widget</i></figcaption>
 </figure>
 
@@ -123,7 +123,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/g6IIejdNmfU?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/g6IIejdNmfU?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i> How to set the label properties?</i></figcaption>
 </figure>
 

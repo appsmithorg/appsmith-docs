@@ -27,7 +27,7 @@ Queries are **auto-saved**, so you never lose your work. These changes will be r
 :::
 
  <figure>
- <object data="https://www.youtube.com/embed/N6zRxIVSGfk?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/N6zRxIVSGfk?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Setting up a Query</i></figcaption>
 </figure> 
 
@@ -70,7 +70,7 @@ Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) a
 Click on the `Run` button or hit `cmd + enter` to execute a query. You'll see the results in the Response tab if the query succeeds.
 
  <figure>
- <object data="https://www.youtube.com/embed/0xA7ChO7Rlk?autoplay=0" width='860px' height='515px'></object>
+ <object data="https://www.youtube.com/embed/0xA7ChO7Rlk?autoplay=0" width='750px' height='400px'></object>
  <figcaption align="center"><i>Running a Query</i></figcaption>
 </figure>  
 

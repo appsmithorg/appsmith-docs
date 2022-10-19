@@ -3,7 +3,7 @@
 Switch group widget captures user inputs from a set of binary choices. This widget captures multiple choices.
 
 <figure>
-  <object data="https://www.youtube.com/embed/p--j-QyBlAY?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/p--j-QyBlAY?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Switch Group Widget</i></figcaption>
 </figure>
 
@@ -116,7 +116,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 <figure>
-  <object data="https://www.youtube.com/embed/mXkHx0W-xdM?autoplay=0" width='860px' height='515px'></object> 
+  <object data="https://www.youtube.com/embed/mXkHx0W-xdM?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to set the label properties?</i></figcaption>
 </figure>
 

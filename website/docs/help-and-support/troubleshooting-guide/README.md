@@ -14,7 +14,7 @@ The [Linter](../../core-concepts/writing-code/javascript-editor-beta/#linting-er
 
 
 <figure>
-<object data="https://www.youtube.com/embed/DuDBMCqG2Zo" width='860px' height='515px'></object>)
+<object data="https://www.youtube.com/embed/DuDBMCqG2Zo" width='750px' height='400px'></object>)
 <figcaption align = "center"><i>Using the Linter and Debugger</i></figcaption>
 </figure>
 
