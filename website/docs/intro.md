@@ -44,7 +44,7 @@ If you are new to Appsmith, this is the place to start:
 <div class="containerGridSampleApp">
    <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
-         <img class="containerImage" src="/img/hosting1-icon.png" alt="quickstart"/>
+         <img class="containerImage" src="/img/quickstart.png" alt="quickstart"/>
       </div> 
       <b><a href="/getting-started/start-building">Quickstart Tutorial</a></b>
       <div class="containerDescription">Build your first app using Appsmith 
@@ -53,7 +53,7 @@ If you are new to Appsmith, this is the place to start:
 
    <div class=" containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
-         <img class="containerImage" src="/img/widget-icon.png" alt="concepts"/>
+         <img class="containerImage" src="/img/concepts.png" alt="concepts"/>
       </div>
       <b><a href="core-concepts/connecting-to-data-sources">Core Concepts</a></b>
       <div class="containerDescription">Everything you need to know about Appsmith fundamentals 
