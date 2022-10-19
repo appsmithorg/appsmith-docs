@@ -38,3 +38,10 @@ Generating reports or documents from a dataset is vital in many applications. Th
   <object data="https://www.youtube.com/embed/8j6Z9bZvLqA?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>Generating PDF Documents</i></figcaption>
 </figure>
+
+You can also generate a PDF document using Carbone.io:
+
+<figure>
+  <object data="https://www.youtube.com/embed/xlthDth2S6Q?autoplay=0" width='750px' height='400px'></object> 
+  <figcaption align="center"><i>Generating PDF Documents</i></figcaption>
+</figure>
