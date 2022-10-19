@@ -78,8 +78,8 @@ If you are new to Appsmith, this is the place to start:
    </div>
 </div> -->
 
-<div class="containerGrid">
-   <div class="columnGrid column-one">
+<div class="containerGridSampleApp">
+   <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
          <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/quickstart_qZKI7b9na.png?ik-sdk-version=javascript-1.4.3&amp;updatedAt=1657567806641" alt="quickstart"/>
       </div> 
@@ -88,7 +88,7 @@ If you are new to Appsmith, this is the place to start:
       </div>
    </div>
 
-   <div class="columnGrid column-two">
+   <div class=" containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
          <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/concepts_f_oFY_5zS.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657568503368" alt="concepts"/>
       </div>
@@ -98,7 +98,7 @@ If you are new to Appsmith, this is the place to start:
    </div>
    
 
-   <div class="columnGrid column-three">
+   <div class="containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
          <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/support1_Fanv9b1dK.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657570424985" alt="support"/>
       </div>
@@ -114,15 +114,15 @@ If you are new to Appsmith, this is the place to start:
 
 If you are an **intermediate** to **advanced** user, we recommend going through the topics below:
 
-<div class="containerGrid">
-   <div class="columnGrid column-one">
+<div class="containerGridSampleApp">
+   <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
          <img class="containerImage" src="/img/hosting1-icon.png" alt="deploy"/>
       </div> 
    <p><strong>Deployment</strong></p><p><a href="getting-started/setup/">Install Appsmith<br/></a><a href="getting-started/setup/instance-configuration/">Configure</a><br/><a href="getting-started/setup/instance-management/">Manage</a></p>
    </div>
 
-   <div class="columnGrid column-two">
+   <div class="containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
          <img class="containerImage" src="/img/widget-icon.png" alt="widgets"/>
       </div> 
@@ -130,7 +130,7 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
    </div>
    
 
-   <div class="columnGrid column-three">
+   <div class=" containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
          <img class="containerImage" src="/img/database-icon.png" alt="datasources"/>
       </div> 
@@ -138,15 +138,15 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
    </div>
   
 </div>
-<div class="containerGrid">
-   <div class="columnGrid column-one">
+<div class="containerGridSampleApp">
+   <div class="containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
          <img class="containerImage" src="/img/hosting1-icon.png" alt="javascript"/>
       </div> 
    <p><strong>JavaScript</strong></p><p><a href="core-concepts/writing-code/workflows">Create Workflows</a><br/><a href="core-concepts/writing-code/javascript-promises">JS Promises</a><br/><a href="core-concepts/writing-code/ext-libraries">External Libraries</a><br/></p> 
    </div>
 
-   <div class="columnGrid column-two">
+   <div class="containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
          <img class="containerImage" src="/img/widget-icon.png" alt="framework"/>
       </div> 
@@ -154,7 +154,7 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
    </div>
    
 
-   <div class="columnGrid column-three">
+   <div class="containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
          <img class="containerImage" src="/img/database-icon.png" alt="resources"/>
       </div> 
