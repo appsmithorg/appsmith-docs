@@ -1,6 +1,12 @@
 # Inline Editing
 
-Inline edit-ability for a column can be enabled for the whole column or at the cell level based on a condition. The column list on the Table property pane has a checkbox to make that column editable.
+Inline edit-ability for a column can be enabled for the whole column or at the cell level based on a condition.
+
+{% embed url="https://youtu.be/eIecDfvSOsU" %}
+
+&#x20;
+
+The column list on the Table property pane has a checkbox to make that column editable.
 
 ![Editable Checkbox](<../../../.gitbook/assets/Editable checkbox - Inline editing.png>)
 
