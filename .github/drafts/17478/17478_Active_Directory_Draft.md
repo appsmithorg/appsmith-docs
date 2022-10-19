@@ -83,7 +83,7 @@ To configure scopes/permissions on Active Directory, follow the steps below:
       1. email
       2. offline_access
       3. openid
-      4. Profile
+      4. profile
    2. Under **User** permissions-
       1. User.Read
 5. Once complete, these scopes will get added to the Active Directory application.
@@ -93,7 +93,7 @@ To configure scopes/permissions on Active Directory, follow the steps below:
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
-![Appsmith Username Attribute](<../../../../../.gitbook/assets/OIDC \_ Active Directory \_ Username Attribute \_ sub.png>)
+![Appsmith Username Attribute](./as_activedir_usernameattr.png) <!-- updated for 17478 -->
 
 #### What does Appsmith need as a Username Attribute?
 

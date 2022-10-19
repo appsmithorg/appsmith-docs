@@ -47,7 +47,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 
 
 
-![Client ID, Client Secret, and Okta Domain](<../../../../../.gitbook/assets/Screenshot 2022-07-18 at 11.45.21 AM.png>)
+![Use these Okta values to configure OIDC on Appsmith](<../../../../../.gitbook/assets/Screenshot 2022-07-18 at 11.45.21 AM.png>)
 
 * **Configuration at Okta**
   * Copy your Okta domain URL, attach <mark style="color:red;">`/.well-known/openid-configuration`</mark> to it, and open this modified URL in your browser.
