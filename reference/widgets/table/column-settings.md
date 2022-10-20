@@ -52,6 +52,8 @@ You can use any of the available icons; read this guide to understand more about
 
 The[ Image](../image.md) type displays the images in the table. Images must be either a URL or a valid base64. Once you've provided the image URL, the image will show up in the table.
 
+The size of image can be adjusted using the Image Size property under Style > General.
+
 **Menu Button**
 
 [Menu buttons](../menu-button.md) represent a set of actions in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.&#x20;
@@ -160,3 +162,4 @@ Depending upon the column type, various style properties are available to change
 | Vertical Alignment | Sets the vertical alignment of the contents in a column cell. |
 | Text Color         | Allows you to set text color for the column.                  |
 | Cell Background    | Allows you to set background color for the cells.             |
+| Image Size         | Allows you to resize an image for Image Column Type           |
