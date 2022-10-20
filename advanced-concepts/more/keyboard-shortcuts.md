@@ -12,7 +12,7 @@ You'll see a pop-up screen below that provides the list of available shortcuts i
 
 ### Mac OS
 
-![List of Keyboard Shortcuts on Mac](<../../.gitbook/assets/Appsmith  Keyboard Shortcuts (1).png>)
+![List of Keyboard Shortcuts on Mac](<../../.gitbook/assets/Appsmith  Keyboard Shortcuts.png>)
 
 ### Windows
 

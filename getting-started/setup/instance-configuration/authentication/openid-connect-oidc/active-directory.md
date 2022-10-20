@@ -55,16 +55,22 @@ Creating a new Client secret in Active Directory
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. You'll see the Scope field below the **JSON Web Key Set**:
 
-![Configure Scope(s) at Appsmith](../../../../../.gitbook/assets/Appsmith-Scope-Field.png)
+<figure><img src="../../../../../.gitbook/assets/as_oidc_offline.png" alt=""><figcaption><p>Configure Scope(s) at Appsmith</p></figcaption></figure>
 
 #### What does Appsmith need as part of Scopes?
 
-Appsmith needs **openId** as a mandatory scope. You can add more scopes if the need be. You'll have to ensure that the same is available at Active Directory.
+Appsmith needs **openid** as a mandatory scope. It's also highly recommended to use the **offline\_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
+
+{% hint style="info" %}
+Enabling the `offline_access` scope enables your app to receive refresh tokens that extend the duration that your users have access to their resources. To read more, see the [Active Directory documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#offline\_access).
+{% endhint %}
+
+You can add more scopes if you wish, provided that they're available via Active Directory.
 
 ### Configure Scopes in Active Directory
 
-{% embed url="https://youtu.be/CkUOXc1u87A" %}
-Configuring scopes in Active Directory
+{% embed url="https://youtu.be/D1qA11NKbNY" %}
+Configuring Scopes in Active Directory
 {% endembed %}
 
 To configure scopes/permissions on Active Directory, follow the steps below:
@@ -86,7 +92,7 @@ To configure scopes/permissions on Active Directory, follow the steps below:
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
-![Appsmith Username Attribute](<../../../../../.gitbook/assets/OIDC \_ Active Directory \_ Username Attribute \_ sub.png>)
+<figure><img src="../../../../../.gitbook/assets/as_activedir_usernameattr.png" alt=""><figcaption><p>Appsmith Username Attribute</p></figcaption></figure>
 
 #### What does Appsmith need as a Username Attribute?
 
