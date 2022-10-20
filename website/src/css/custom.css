@@ -230,4 +230,9 @@
 .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
   display: none;
   }
+
+ .downloadAssets {
+  width: 25px!important;
+  height: 40px !important;
+ } 
   

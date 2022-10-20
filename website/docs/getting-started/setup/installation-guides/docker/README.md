@@ -145,8 +145,11 @@ If you are **unable** to **locate** the message but can **access** Appsmith via 
 
 If your containers are failing to restart, you can execute the below script to bring them up:
 
-<a target="_blank" href='/img/restart-container.sh' download="restart-container.sh">restart-container.sh (Click to Download)</a>
-
+<div class="downloadAssets">
+    <a target="_blank" download="restart-container.sh" href="/img/restart-container.sh">
+     <img src="/img/FileDownload.png" alt="Click to Download"/>
+    </a>
+</div>
 copy the script to your installation folder and make it executable
 
 ```bash
