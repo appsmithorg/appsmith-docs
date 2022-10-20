@@ -57,7 +57,6 @@ redirects:
   tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts: learning-and-resources/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts.md
   tutorials/building-a-store-catalog-manager: learning-and-resources/tutorials/building-a-store-catalog-manager/README.md
   tutorials/building-a-store-catalog-manager/building-a-simple-ui: learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui.md
-  tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view#accessing-query-results-to-a-widget: https://docs.appsmith.com/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui#accessing-query-results-to-a-widget
   tutorials/building-a-store-catalog-manager/using-forms: learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms.md
   tutorials/building-a-store-catalog-manager/creating-interactive-views: learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views.md
   how-to-guides: learning-and-resources/how-to-guides/README.md
