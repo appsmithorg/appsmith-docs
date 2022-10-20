@@ -236,11 +236,26 @@
   height: 40px !important;
  } 
   
- img[src$='#docImg']{
+ .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module{
   border: 2px solid #f2f2f2;
   border-radius: 8px;
   display: block;
   margin: 1rem auto;
   max-width: 100%;
   width: 750px;
+ }
+
+
+div.containerColumnSampleApp.columnGrid > div.containerCol > img, .div.columnGrid > img{
+border:none;
+height: auto;
+width: auto;
+float: left;
+ }
+ 
+ 
+.containerGrid > div.columnGrid > div > a > img {
+border:none;
+height: auto;
+width: auto;
  }
