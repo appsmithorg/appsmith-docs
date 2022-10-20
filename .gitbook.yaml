@@ -205,3 +205,4 @@ redirects:
   widget-reference/tree-select: reference/widgets/tree-select.md
   widget-reference/video: reference/widgets/video.md
   learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith: reference/datasources/graphql.md
+  tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view#accessing-query-results-to-a-widget: learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui#accessing-query-results-to-a-widget
