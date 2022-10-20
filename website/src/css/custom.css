@@ -236,3 +236,11 @@
   height: 40px !important;
  } 
   
+ img[src$='#docImg']{
+  border: 2px solid #f2f2f2;
+  border-radius: 16px;
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  width: 750px;
+ }
