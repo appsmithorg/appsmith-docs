@@ -23,4 +23,4 @@ jobs:
 
       - name: Run Docker Container
         run: |
-            docker run -e "APPLICATION_ID=${{ secrets.ALGOLIA_APPLICATION_ID }}" -e "ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}" -e "CONFIG=$(cat config.json | jq -r tostring)" algolia/docsearch-scraper:latest
+            docker run -e "APPLICATION_ID=AZ2Z9CJSJ0" -e "ALGOLIA_API_KEY=770894548566756df4db4c92bcaf42d9" -e "CONFIG=$(cat config.json | jq -r tostring)" algolia/docsearch-scraper:latest
