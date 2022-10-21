@@ -1,0 +1,26 @@
+name: Run Crawler
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - v1.5
+
+jobs:
+  deploy:
+    name: Update Algolia Index
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+        shell: bash
+
+    steps:
+         # Checkout the code
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Run Docker Container
+        run: |
+            docker run -e "APPLICATION_ID=${{ secrets.ALGOLIA_APPLICATION_ID }}" -e "ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}" -e "CONFIG=$(cat config.json | jq -r tostring)" algolia/docsearch-scraper:latest
