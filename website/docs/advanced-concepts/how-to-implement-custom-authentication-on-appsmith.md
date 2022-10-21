@@ -21,12 +21,12 @@ description: >-
 
 
 
-<figure>
+<!-- <figure>
 <object data="https://www.youtube.com/embed/5oPcF9dXZyU" width='860px' height='515px'></object>
 <figcaption align = "center"><i>How to Implement Custom Login/Authentication in Appsmith
 </i></figcaption>
 </figure>
-
+ -->
 
 
 A lot of applications use Authentication APIs to secure their information. You can use those API's on Appsmith to build UI or tools using a custom authentication mode. In this guide, you'll learn how to implement this custom Auth using JWTs by chaining multiple steps.
