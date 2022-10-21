@@ -19,9 +19,7 @@ Build **CRUD** apps, **Dashboards**, **Admin Panels**, **Dynamic Forms**, and mu
 
 You can build anything from simple CRUD apps to complicated multi-step workflows with these simple steps. Appsmith makes it easy to build a UI that talks to any datasource.
 
-**Got 2 minutes?** Here's a video overview of Appsmith:
-
-{% embed url="https://youtu.be/Dxe_NzdGzL4" %}
+**Got 2 minutes?** Here's a quck [video overview](https://youtu.be/Dxe_NzdGzL4) of Appsmith:
 
 ## **Get Started**
 
