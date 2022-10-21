@@ -259,3 +259,42 @@ border:none;
 height: auto;
 width: auto;
  }
+
+ /*embed code - 1 */
+
+ .youtube-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+ /*embed code - 2
+.embed-youtube {
+  position: relative;
+  padding-bottom: 56.25%; 
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.embed-youtube iframe,
+.embed-youtube object,
+.embed-youtube embed {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+*/

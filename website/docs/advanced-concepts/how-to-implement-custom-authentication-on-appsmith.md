@@ -8,8 +8,21 @@ description: >-
 
 # Custom Authentication
 
+
+
+<div class="youtube-wrapper">
+    <iframe src="https://www.youtube.com/embed/5oPcF9dXZyU" allowfullscreen></iframe>
+</div>
+
+
+<!-- <div class="embed-youtube">
+    <iframe src="//www.youtube.com/embed/5oPcF9dXZyU" width="750" height="563"></iframe>
+</div> -->
+
+
+
 <figure>
-<object data="https://www.youtube.com/embed/5oPcF9dXZyU" width='750px' height='400px'></object>)
+<object data="https://www.youtube.com/embed/5oPcF9dXZyU" width='860px' height='515px'></object>
 <figcaption align = "center"><i>How to Implement Custom Login/Authentication in Appsmith
 </i></figcaption>
 </figure>
@@ -31,7 +44,7 @@ The auth APIs require a login form. Hence let’s build one on Appsmith. Follow 
 
 This is a screenshot of how the login form looks like:
 
-![](/img/Building_ui_for_login_form.png)
+![](https://lh3.googleusercontent.com/ZumVJGnKnwENgd\_sVX-hv9BxWUjINUh0ClOZfGQqIhXKQXOJLpNG51phXV5CRriuSQnWOgtbA1vk0gDz2epQk2CNv5iWJbUXAZ2HpsG5Jma0pZkBtLmgTCGLnPMO0cC4ahcm8vsI)
 
 Let's use these values in an Auth API; usually, login API requires a username and a password. In this example, we'll be using the same, which will return a JWT token and the user details with his permission roles. Here’s how the output looks like after running the API:
 
@@ -89,7 +102,7 @@ Awesome, now we’ll need to save the JWT token generated after the API is run. 
 
 This will save the **jwt** token from the API response. This is how the screenshot looks like:
 
-![](/img/jwt_token_from_api_response.png)
+![](https://lh4.googleusercontent.com/-onVg-gGl\_Uu0QouR3NBmL1tggxEuklnoI\_2i7D1fBgam6K3TvRUbpDviuv0kAhWVfGA-xT-vy0S\_wyRdO7zzEk52IzK3\_Pm5s7KDzpj5ceCYRi7ftrGykOBJSqr6566Qn2\_mPZy)
 
 Now we’ll be passing this `jwt` variable in the header with an Authorization mode to access the secure APIs. As an example, let’s create a secure page and test it out.
 
@@ -120,7 +133,7 @@ It is possible to use third-party OAuth services like Google, Twitter, Github, e
 
 
  <figure>
- <object data="https://www.youtube.com/embed/n3XSAA7q--I" width='750px' height='400px'></object> 
+ <object data="https://www.youtube.com/embed/n3XSAA7q--I" width='860px' height='515px'></object> 
 <figcaption align = "center"><i>Setting up Custom Login | Google
 </i></figcaption>
 </figure>
@@ -132,7 +145,7 @@ You can also setup custom Google authentication using Supabase:
 
  <figure>
 
- <object data="https://www.youtube.com/embed/mfhHUDNCkoQ" width='750px' height='400px'></object> 
+ <object data="https://www.youtube.com/embed/mfhHUDNCkoQ" width='860px' height='515px'></object> 
 <figcaption align = "center"><i>Setting Up Custom Login | Supabase
 </i></figcaption>
 </figure>
