@@ -161,11 +161,11 @@
 
 .containerLink {
   border: 1px solid;
-  border-radius:;
+  border-radius: 1px;
   display: block;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  vertical-align: left;
+  /* vertical-align: left; */
   font-size: .9rem;
   font-weight: 600;
   text-decoration: none;
