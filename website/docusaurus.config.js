@@ -114,8 +114,7 @@ const config = {
           {
             href: 'https://app.appsmith.com',
             label: 'Get Appsmith',
-            position: 'right',
-            class: 'nav-link_get-appsmith',
+            position: 'right'
           }, 
           
         ],

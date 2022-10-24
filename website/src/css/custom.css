@@ -122,7 +122,7 @@
   font-size: .875rem;
 }
 
-.nav-link_get-appsmith:hover {
+.navbar__items--right > :last-child:hover {
   background-color: #df5b23;
   color: #fff;
   text-decoration: none;
@@ -130,6 +130,16 @@
 
 .navbar__items--right > :last-child {
   padding-right: 1em !important;
+  background-color: #f86a2b;
+  border-radius: 0.25em;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-left : 0.5rem;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+  color:#f3f5f7;
+  font-size: .875rem;
 }
 
 .gridContainer {
@@ -253,4 +263,8 @@ float: left;
 border:none;
 height: auto;
 width: auto;
+ }
+
+ .navbar__item > .iconExternalLink_nPIU {
+  display: none;
  }
