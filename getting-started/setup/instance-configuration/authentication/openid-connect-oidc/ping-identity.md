@@ -12,7 +12,7 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
   * On the top left, click the Ping Identity logo.
   * Select **Home**. You’ll see the list of environments available. Click `Add Environment` available on the top right.
 
-![Create Environment](<../../../../../.gitbook/assets/PingID-Add-Environment (1).png>)
+![Create Environment](../../../../../.gitbook/assets/PingID-Add-Environment.png)
 
 * Click on **Build your own solution** in the **Create Environment** window and choose `PingOne SSO` from the given options.
 
@@ -70,7 +70,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Ping 
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-<figure><img src="../../../../../.gitbook/assets/as_oidc_offline.png" alt=""><figcaption><p>Appsmith - configure scope(s)</p></figcaption></figure>
+<figure><img src="../../../../../.github/drafts/17478/as_oidc_offline.png" alt=""><figcaption><p>Appsmith - configure scope(s)</p></figcaption></figure>
 
 #### What does Appsmith need as part of Scopes?
 

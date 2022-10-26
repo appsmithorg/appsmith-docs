@@ -19,7 +19,7 @@ However, if you create a new branch, it will have the uncommitted changes of you
 
 To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the “<mark style="color:purple;">Sync branches</mark>” button.
 
-![](<../../.gitbook/assets/Git\_sync\_syc branches (1).gif>)
+![](<../../.gitbook/assets/Git\_sync\_syc branches.gif>)
 
 Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
 

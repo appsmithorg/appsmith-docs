@@ -55,7 +55,7 @@ Creating a new Client secret in Active Directory
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. You'll see the Scope field below the **JSON Web Key Set**:
 
-<figure><img src="../../../../../.gitbook/assets/as_oidc_offline.png" alt=""><figcaption><p>Configure Scope(s) at Appsmith</p></figcaption></figure>
+<figure><img src="../../../../../.github/drafts/17478/as_oidc_offline.png" alt=""><figcaption><p>Configure Scope(s) at Appsmith</p></figcaption></figure>
 
 #### What does Appsmith need as part of Scopes?
 
@@ -92,7 +92,7 @@ To configure scopes/permissions on Active Directory, follow the steps below:
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
-<figure><img src="../../../../../.gitbook/assets/as_activedir_usernameattr.png" alt=""><figcaption><p>Appsmith Username Attribute</p></figcaption></figure>
+<figure><img src="../../../../../.github/drafts/17478/as_activedir_usernameattr.png" alt=""><figcaption><p>Appsmith Username Attribute</p></figcaption></figure>
 
 #### What does Appsmith need as a Username Attribute?
 
