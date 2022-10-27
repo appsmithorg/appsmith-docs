@@ -1,5 +1,7 @@
 {
-    "redirects": [
+
+    "cleanUrls": true,
+    "redirects": [   
       {
         "source": "/v/v1.2.1/setup/docker/google-maps",
         "destination": "getting-started/setup/instance-configuration/google-maps.md"
@@ -810,3 +812,5 @@
       }
     ]
   }
+ 
+  
