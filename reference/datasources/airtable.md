@@ -70,13 +70,7 @@ You can add queries to Airtable datasource by selecting the **New API +** button
 
 You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. Airtable supports the following query methods:
 
-| Query Name                                                     | Description                                         |   |
-| -------------------------------------------------------------- | --------------------------------------------------- | - |
-| ****[**List Records**](airtable.md#list-records)****           | Fetches all the records from the airtable database. |   |
-| ****[**Create Records**](airtable.md#create-records)****       | Creates a new record in the airtable database.      |   |
-| ****[**Delete A Record**](airtable.md#delete-records)****      | Delete a specific record ID.                        |   |
-| ****[**Retrieve A Record**](airtable.md#retrieve-a-record)**** | Retrieve an existing record.                        |   |
-| ****[**Update Records**](airtable.md#update-records)****       | Update a few fields in a record.                    |   |
+<table><thead><tr><th>Query Name</th><th>Description</th><th data-hidden></th></tr></thead><tbody><tr><td><strong></strong><a href="airtable.md#list-records"><strong>List Records</strong></a><strong></strong></td><td>Fetches all the records from the airtable database.</td><td></td></tr><tr><td><strong></strong><a href="airtable.md#create-records"><strong>Create Records</strong></a><strong></strong></td><td>Creates a new record in the airtable database.</td><td></td></tr><tr><td><strong></strong><a href="airtable.md#delete-records"><strong>Delete A Record</strong></a><strong></strong></td><td>Delete a specific record ID.</td><td></td></tr><tr><td><strong></strong><a href="airtable.md#retrieve-a-record"><strong>Retrieve A Record</strong></a><strong></strong></td><td>Retrieve an existing record. </td><td></td></tr><tr><td><strong></strong><a href="airtable.md#update-records"><strong>Update Records</strong></a><strong></strong></td><td>Update a few fields in a record.</td><td></td></tr></tbody></table>
 
 You can check the [Query Settings Guide](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
 

@@ -62,13 +62,7 @@ You can add queries to **DynamoDB** datasource by selecting the **New API +** bu
 
 You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. Here we have listed some of the most basic operations to get started with using a DynamoDB API:
 
-| Query Name                                                       | Description                                                                                     |   |
-| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | - |
-| ****[**ListTables** ](querying-dynamodb.md#listtables)****       | ListTables command gets a list of all the tables that are currently accessible at the endpoint. |   |
-| ****[**DescribeTable** ](querying-dynamodb.md#describetable)**** | DescribeTable command returns metadata about the table that is queried using the JSON body.     |   |
-| ****[**GetItem**](querying-dynamodb.md#getitem)****              | GetItem command retrieves a single item on the basis of its primary key.                        |   |
-| ****[**PutItem**](querying-dynamodb.md#putitem)****              | PutItem command is used to insert or replace an entire item object.                             |   |
-| [**UpdateItem**](querying-dynamodb.md#updateitem)****            | UpdateItem can be used for conditionally updating parts of an item.                             |   |
+<table><thead><tr><th>Query Name</th><th>Description</th><th data-hidden></th></tr></thead><tbody><tr><td><strong></strong><a href="querying-dynamodb.md#listtables"><strong>ListTables</strong> </a><strong></strong></td><td>ListTables command gets a list of all the tables that are currently accessible at the endpoint.</td><td></td></tr><tr><td><strong></strong><a href="querying-dynamodb.md#describetable"><strong>DescribeTable</strong> </a><strong></strong></td><td>DescribeTable command returns metadata about the table that is queried using the JSON body.</td><td></td></tr><tr><td><strong></strong><a href="querying-dynamodb.md#getitem"><strong>GetItem</strong></a><strong></strong></td><td>GetItem command retrieves a single item on the basis of its primary key. </td><td></td></tr><tr><td><strong></strong><a href="querying-dynamodb.md#putitem"><strong>PutItem</strong></a><strong></strong></td><td>PutItem command is used to insert or replace an entire item object. </td><td></td></tr><tr><td><a href="querying-dynamodb.md#updateitem"><strong>UpdateItem</strong></a><strong></strong></td><td>UpdateItem can be used for conditionally updating parts of an item. </td><td></td></tr></tbody></table>
 
 You can check the [Query Settings Guide](../../core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
 
