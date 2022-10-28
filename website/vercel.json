@@ -1,0 +1,814 @@
+{
+
+    "cleanUrls": true,
+    "redirects": [   
+      {
+        "source": "/v/v1.2.1/setup/docker/google-maps",
+        "destination": "getting-started/setup/instance-configuration/google-maps"
+      },
+      {
+        "source": "setup/instance-configuration/google-login",
+        "destination": "getting-started/setup/instance-configuration/authentication/google-login"
+      },
+      {
+        "source": "setup/instance-configuration/github-login",
+        "destination": "getting-started/setup/instance-configuration/authentication/github-login"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager/part-2-using-forms",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views"
+      },
+      {
+        "source": "core-concepts/git-sync",
+        "destination": "advanced-concepts/version-control-with-git/README"
+      },
+      {
+        "source": "setup",
+        "destination": "getting-started/setup/README"
+      },
+      {
+        "source": "setup/docker",
+        "destination": "getting-started/setup/installation-guides/docker/README"
+      },
+      {
+        "source": "setup/kubernetes",
+        "destination": "getting-started/setup/installation-guides/kubernetes/README"
+      },
+      {
+        "source": "setup/kubernetes/migrate-k8s",
+        "destination": "getting-started/setup/installation-guides/kubernetes/migrate-k8s"
+      },
+      {
+        "source": "setting-up-appsmith/aws-ami",
+        "destination": "getting-started/setup/installation-guides/aws-ami"
+      },
+      {
+        "source": "setup/aws-ami",
+        "destination": "getting-started/setup/installation-guides/aws-ami"
+      },
+      {
+        "source": "setup/aws-ecs",
+        "destination": "getting-started/setup/installation-guides/aws-ecs"
+      },
+      {
+        "source": "setup/digitalocean",
+        "destination": "getting-started/setup/installation-guides/digitalocean"
+      },
+      {
+        "source": "setup/heroku",
+        "destination": "getting-started/setup/installation-guides/heroku"
+      },
+      {
+        "source": "setup/cloudjiffy",
+        "destination": "getting-started/setup/installation-guides/cloudjiffy"
+      },
+      {
+        "source": "setup/ansible",
+        "destination": "getting-started/setup/installation-guides/ansible"
+      },
+      {
+        "source": "setup/instance-configuration",
+        "destination": "getting-started/setup/instance-configuration/README"
+      },
+      {
+        "source": "setup/instance-configuration/admin-settings",
+        "destination": "getting-started/setup/instance-configuration/admin-settings"
+      },
+      {
+        "source": "setup/instance-configuration/email",
+        "destination": "getting-started/setup/instance-configuration/email/README"
+      },
+      {
+        "source": "setup/instance-configuration/email/sendgrid",
+        "destination": "getting-started/setup/instance-configuration/email/sendgrid"
+      },
+      {
+        "source": "setup/instance-configuration/email/amazon-ses",
+        "destination": "getting-started/setup/instance-configuration/email/amazon-ses"
+      },
+      {
+        "source": "setup/instance-configuration/custom-domain",
+        "destination": "getting-started/setup/instance-configuration/custom-domain/README"
+      },
+      {
+        "source": "setup/instance-configuration/custom-mongodb-redis",
+        "destination": "getting-started/setup/instance-configuration/custom-mongodb-redis"
+      },
+      {
+        "source": "setup/instance-configuration/disable-user-signup",
+        "destination": "getting-started/setup/instance-configuration/disable-user-signup"
+      },
+      {
+        "source": "setup/instance-configuration/google-maps",
+        "destination": "getting-started/setup/instance-configuration/google-maps"
+      },
+      {
+        "source": "setup/instance-configuration/disable-intercom",
+        "destination": "getting-started/setup/instance-configuration/disable-intercom"
+      },
+      {
+        "source": "setup/instance-configuration/maintenance-window",
+        "destination": "getting-started/setup/instance-management/maintenance-window"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso",
+        "destination": "getting-started/setup/instance-configuration/authentication/README"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/github-login",
+        "destination": "getting-started/setup/instance-configuration/authentication/github-login"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/google-login",
+        "destination": "getting-started/setup/instance-configuration/authentication/google-login"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/openid-connect-oidc",
+        "destination": "getting-started/setup/instance-configuration/authentication/openid-connect-oidc/README"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/auth0",
+        "destination": "getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/ping-identity",
+        "destination": "getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/okta",
+        "destination": "getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/active-directory",
+        "destination": "getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml",
+        "destination": "getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/auth0",
+        "destination": "getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/ping-identity",
+        "destination": "getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/okta",
+        "destination": "getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta"
+      },
+      {
+        "source": "setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/active-directory",
+        "destination": "getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory"
+      },
+      {
+        "source": "setup/instance-configuration/custom-ca-root-certificate",
+        "destination": "getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate"
+      },
+      {
+        "source": "setup/instance-management",
+        "destination": "getting-started/setup/instance-management/README"
+      },
+      {
+        "source": "setup/migrate",
+        "destination": "getting-started/setup/installation-guides/docker/migrate"
+      },
+      {
+        "source": "setup/upgrade-to-business-edition",
+        "destination": "getting-started/setup/upgrade-to-business-edition/README"
+      },
+      {
+        "source": "setup/upgrade-to-business-edition/docker",
+        "destination": "getting-started/setup/upgrade-to-business-edition/docker"
+      },
+      {
+        "source": "tutorials/review-moderator-dashboard",
+        "destination": "learning-and-resources/tutorials/review-moderator-dashboard/README"
+      },
+      {
+        "source": "tutorials/review-moderator-dashboard/setting-up-the-app",
+        "destination": "learning-and-resources/tutorials/review-moderator-dashboard/setting-up-the-app"
+      },
+      {
+        "source": "tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries",
+        "destination": "learning-and-resources/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries"
+      },
+      {
+        "source": "tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties",
+        "destination": "learning-and-resources/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties"
+      },
+      {
+        "source": "tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts",
+        "destination": "learning-and-resources/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/README"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager/building-a-simple-ui",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager/using-forms",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager/creating-interactive-views",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views"
+      },
+      {
+        "source": "how-to-guides",
+        "destination": "learning-and-resources/how-to-guides/README"
+      },
+      {
+        "source": "how-to-guides/returning-data-from-a-stored-procedure",
+        "destination": "learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure"
+      },
+      {
+        "source": "how-to-guides/how-to-work-with-google-sheets-on-appsmith",
+        "destination": "learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
+      },
+      {
+        "source": "how-to-guides/oauth2-authorization-for-google-sheets",
+        "destination": "learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets"
+      },
+      {
+        "source": "how-to-guides/sharing-data-across-pages",
+        "destination": "advanced-concepts/sharing-data-across-pages"
+      },
+      {
+        "source": "how-to-guides/how-to-upload-to-s3",
+        "destination": "learning-and-resources/how-to-guides/how-to-upload-to-s3"
+      },
+      {
+        "source": "how-to-guides/backup-restore",
+        "destination": "advanced-concepts/more/backup-restore"
+      },
+      {
+        "source": "how-to-guides/writing-javascript-in-appsmith",
+        "destination": "learning-and-resources/how-to-guides/writing-javascript-in-appsmith"
+      },
+      {
+        "source": "how-to-guides/embed-appsmith-into-existing-application",
+        "destination": "advanced-concepts/embed-appsmith-into-existing-application"
+      },
+      {
+        "source": "how-to-guides/aws-whitelist",
+        "destination": "learning-and-resources/how-to-guides/aws-whitelist"
+      },
+      {
+        "source": "how-to-guides/how-to-implement-custom-authentication-on-appsmith",
+        "destination": "advanced-concepts/how-to-implement-custom-authentication-on-appsmith"
+      },
+      {
+        "source": "how-to-guides/how-to-work-with-local-apis-on-appsmith",
+        "destination": "advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"
+      },
+      {
+        "source": "how-to-guides/how-to-use-filters-on-appsmith-table-widget",
+        "destination": "learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget"
+      },
+      {
+        "source": "how-to-guides/use-mssql-as-data-source",
+        "destination": "learning-and-resources/how-to-guides/use-mssql-as-data-source"
+      },
+      {
+        "source": "how-to-guides/build-auto-generated-forms-using-list-widget",
+        "destination": "learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget"
+      },
+      {
+        "source": "how-to-guides/use-notion-as-database-on-appsmith",
+        "destination": "learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith"
+      },
+      {
+        "source": "how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith",
+        "destination": "learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith"
+      },
+      {
+        "source": "how-to-guides/use-redshift-as-data-source-on-appsmith",
+        "destination": "learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith"
+      },
+      {
+        "source": "how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
+        "destination": "learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith"
+      },
+      {
+        "source": "how-to-guides/how-to-work-with-graphql-on-appsmith",
+        "destination": "reference/datasources/graphql"
+      },
+      {
+        "source": "how-to-guides/how-to-use-js-object-within-appsmith",
+        "destination": "learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith"
+      },
+      {
+        "source": "how-to-guides/how-to-use-prepared-statements",
+        "destination": "learning-and-resources/how-to-guides/how-to-use-prepared-statements"
+      },
+      {
+        "source": "sample-apps",
+        "destination": "learning-and-resources/sample-apps"
+      },
+      {
+        "source": "templates",
+        "destination": "https//www.appsmith.com/templates"
+      },
+      {
+        "source": "troubleshooting-guide",
+        "destination": "help-and-support/troubleshooting-guide/README"
+      },
+      {
+        "source": "troubleshooting-guide/action-errors",
+        "destination": "help-and-support/troubleshooting-guide/action-errors/README"
+      },
+      {
+        "source": "troubleshooting-guide/action-errors/datasource-errors",
+        "destination": "help-and-support/troubleshooting-guide/action-errors/datasource-errors"
+      },
+      {
+        "source": "troubleshooting-guide/action-errors/rest-api-errors",
+        "destination": "help-and-support/troubleshooting-guide/action-errors/rest-api-errors"
+      },
+      {
+        "source": "troubleshooting-guide/action-errors/mysql-plugin-errors",
+        "destination": "help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors"
+      },
+      {
+        "source": "troubleshooting-guide/action-errors/google-sheets-plugin-errors",
+        "destination": "help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors"
+      },
+      {
+        "source": "troubleshooting-guide/widget-errors",
+        "destination": "help-and-support/troubleshooting-guide/widget-errors"
+      },
+      {
+        "source": "troubleshooting-guide/deployment-errors",
+        "destination": "help-and-support/troubleshooting-guide/deployment-errors"
+      },
+      {
+        "source": "troubleshooting-guide/application-errors",
+        "destination": "help-and-support/troubleshooting-guide/application-errors"
+      },
+      {
+        "source": "faq",
+        "destination": "getting-started/faq"
+      },
+      {
+        "source": "telemetry",
+        "destination": "product/telemetry"
+      },
+      {
+        "source": "security",
+        "destination": "product/security"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources",
+        "destination": "core-concepts/connecting-to-data-sources/README"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/connecting-to-databases",
+        "destination": "core-concepts/connecting-to-data-sources/connecting-to-databases"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/README"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication/basic-authentication",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication/oauth2-authentication",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/README"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/authorization-code",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/client-credentials",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/authentication/self-signed-certificates",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/self-signed-certificates"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/querying-a-database",
+        "destination": "core-concepts/data-access-and-binding/querying-a-database/README"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis",
+        "destination": "core-concepts/connecting-to-data-sources/authentication/connect-to-apis"
+      },
+      {
+        "source": "core-concepts/connecting-to-data-sources/query-settings",
+        "destination": "core-concepts/data-access-and-binding/querying-a-database/query-settings"
+      },
+      {
+        "source": "core-concepts/displaying-data-read",
+        "destination": "core-concepts/data-access-and-binding/displaying-data-read/README"
+      },
+      {
+        "source": "core-concepts/displaying-data-read/display-data-tables",
+        "destination": "core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      },
+      {
+        "source": "core-concepts/capturing-data-write",
+        "destination": "core-concepts/data-access-and-binding/capturing-data-write/README"
+      },
+      {
+        "source": "core-concepts/capturing-data-write/capture-form-data",
+        "destination": "core-concepts/data-access-and-binding/capturing-data-write/capture-form-data"
+      },
+      {
+        "source": "core-concepts/writing-code",
+        "destination": "core-concepts/writing-code/README"
+      },
+      {
+        "source": "core-concepts/writing-code/workflows",
+        "destination": "core-concepts/writing-code/workflows"
+      },
+      {
+        "source": "core-concepts/writing-code/appsmith-framework",
+        "destination": "core-concepts/writing-code/appsmith-framework"
+      },
+      {
+        "source": "core-concepts/writing-code/javascript-promises",
+        "destination": "core-concepts/writing-code/javascript-promises"
+      },
+      {
+        "source": "core-concepts/writing-code/ext-libraries",
+        "destination": "core-concepts/writing-code/ext-libraries"
+      },
+      {
+        "source": "core-concepts/designing-an-application",
+        "destination": "core-concepts/building-ui/designing-an-application/README"
+      },
+      {
+        "source": "core-concepts/designing-an-application/application-layout",
+        "destination": "core-concepts/building-ui/designing-an-application/application-layout"
+      },
+      {
+        "source": "core-concepts/dynamic-ui",
+        "destination": "core-concepts/building-ui/dynamic-ui/README"
+      },
+      {
+        "source": "core-concepts/dynamic-ui/widget-visibility",
+        "destination": "core-concepts/building-ui/dynamic-ui/widget-visibility"
+      },
+      {
+        "source": "core-concepts/access-control",
+        "destination": "advanced-concepts/access-control"
+      },
+      {
+        "source": "core-concepts/version-control-with-git",
+        "destination": "advanced-concepts/version-control-with-git/README"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/connecting-to-git-repository",
+        "destination": "advanced-concepts/version-control-with-git/connecting-to-git-repository"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/import-from-repository",
+        "destination": "advanced-concepts/version-control-with-git/import-from-repository"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/commit-and-push",
+        "destination": "advanced-concepts/version-control-with-git/commit-and-push"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/working-with-branches",
+        "destination": "advanced-concepts/version-control-with-git/working-with-branches"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/pull-and-sync",
+        "destination": "advanced-concepts/version-control-with-git/pull-and-sync"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/merging-branches",
+        "destination": "advanced-concepts/version-control-with-git/merging-branches"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/disconnect-the-git-repository",
+        "destination": "advanced-concepts/version-control-with-git/disconnect-the-git-repository"
+      },
+      {
+        "source": "core-concepts/version-control-with-git/updating-local-file-path",
+        "destination": "advanced-concepts/version-control-with-git/updating-local-file-path"
+      },
+      {
+        "source": "core-concepts/json-web-tokens-jwt",
+        "destination": "getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt"
+      },
+      {
+        "source": "datasource-reference/airtable",
+        "destination": "reference/datasources/airtable"
+      },
+      {
+        "source": "datasource-reference/querying-amazon-s3",
+        "destination": "reference/datasources/querying-amazon-s3"
+      },
+      {
+        "source": "datasource-reference/querying-arango-db",
+        "destination": "reference/datasources/querying-arango-db"
+      },
+      {
+        "source": "datasource-reference/querying-dynamodb",
+        "destination": "reference/datasources/querying-dynamodb"
+      },
+      {
+        "source": "datasource-reference/querying-elasticsearch",
+        "destination": "reference/datasources/querying-dynamodb"
+      },
+      {
+        "source": "datasource-reference/querying-firestore",
+        "destination": "reference/datasources/querying-dynamodb"
+      },
+      {
+        "source": "datasource-reference/querying-google-sheets",
+        "destination": "reference/datasources/querying-google-sheets"
+      },
+      {
+        "source": "datasource-reference/querying-mongodb",
+        "destination": "reference/datasources/querying-mongodb/README"
+      },
+      {
+        "source": "datasource-reference/querying-mongodb/mongo-syntax",
+        "destination": "reference/datasources/querying-mongodb/mongo-syntax"
+      },
+      {
+        "source": "datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
+        "destination": "reference/datasources/querying-mongodb/whitelist-mongodb-cloud"
+      },
+      {
+        "source": "datasource-reference/querying-mssql",
+        "destination": "reference/datasources/querying-mssql"
+      },
+      {
+        "source": "datasource-reference/querying-mysql",
+        "destination": "reference/datasources/querying-mysql"
+      },
+      {
+        "source": "datasource-reference/querying-postgres",
+        "destination": "reference/datasources/querying-postgres"
+      },
+      {
+        "source": "datasource-reference/querying-redis",
+        "destination": "reference/datasources/querying-redis"
+      },
+      {
+        "source": "datasource-reference/querying-redshift",
+        "destination": "reference/datasources/querying-redshift"
+      },
+      {
+        "source": "datasource-reference/querying-snowflake-db",
+        "destination": "reference/datasources/querying-snowflake-db"
+      },
+      {
+        "source": "datasource-reference/using-smtp",
+        "destination": "reference/datasources/using-smtp"
+      },
+      {
+        "source": "framework-reference/appsmith",
+        "destination": "reference/appsmith-framework/README"
+      },
+      {
+        "source": "framework-reference/run",
+        "destination": "reference/appsmith-framework/query-object"
+      },
+      {
+        "source": "framework-reference/show-modal",
+        "destination": "reference/appsmith-framework/widget-actions/show-modal"
+      },
+      {
+        "source": "framework-reference/close-modal",
+        "destination": "reference/appsmith-framework/widget-actions/close-modal"
+      },
+      {
+        "source": "framework-reference/download",
+        "destination": "reference/appsmith-framework/widget-actions/download"
+      },
+      {
+        "source": "framework-reference/intervals-time-events",
+        "destination": "reference/appsmith-framework/widget-actions/intervals-time-events"
+      },
+      {
+        "source": "framework-reference/show-alert",
+        "destination": "reference/appsmith-framework/widget-actions/show-alert"
+      },
+      {
+        "source": "framework-reference/navigateto",
+        "destination": "reference/appsmith-framework/widget-actions/navigate-to"
+      },
+      {
+        "source": "framework-reference/store-value",
+        "destination": "reference/appsmith-framework/widget-actions/store-value"
+      },
+      {
+        "source": "framework-reference/copytoclipboard",
+        "destination": "reference/appsmith-framework/widget-actions/copy-to-clipboard"
+      },
+      {
+        "source": "framework-reference/resetwidget",
+        "destination": "reference/appsmith-framework/widget-actions/reset-widget"
+      },
+      {
+        "source": "framework-reference/javascript-editor-beta",
+        "destination": "core-concepts/writing-code/javascript-editor-beta/README"
+      },
+      {
+        "source": "framework-reference/javascript-editor-beta/asynchronous-javascript-function-settings",
+        "destination": "core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings"
+      },
+      {
+        "source": "widget-reference/audio",
+        "destination": "reference/widgets/audio"
+      },
+      {
+        "source": "widget-reference/audio-recorder",
+        "destination": "reference/widgets/audio-recorder"
+      },
+      {
+        "source": "widget-reference/button",
+        "destination": "reference/widgets/button/README"
+      },
+      {
+        "source": "widget-reference/button/google-recaptcha",
+        "destination": "reference/widgets/button/google-recaptcha"
+      },
+      {
+        "source": "widget-reference/button-group",
+        "destination": "reference/widgets/button-group"
+      },
+      {
+        "source": "widget-reference/camera",
+        "destination": "reference/widgets/camera"
+      },
+      {
+        "source": "widget-reference/chart",
+        "destination": "reference/widgets/chart"
+      },
+      {
+        "source": "widget-reference/checkbox",
+        "destination": "reference/widgets/checkbox"
+      },
+      {
+        "source": "widget-reference/checkbox-group",
+        "destination": "reference/widgets/checkbox-group"
+      },
+      {
+        "source": "widget-reference/container",
+        "destination": "reference/widgets/container"
+      },
+      {
+        "source": "widget-reference/currency-input",
+        "destination": "reference/widgets/currency-input"
+      },
+      {
+        "source": "widget-reference/datepicker",
+        "destination": "reference/widgets/datepicker"
+      },
+      {
+        "source": "widget-reference/divider",
+        "destination": "reference/widgets/divider"
+      },
+      {
+        "source": "widget-reference/document-viewer",
+        "destination": "reference/widgets/document-viewer"
+      },
+      {
+        "source": "widget-reference/form",
+        "destination": "reference/widgets/form"
+      },
+      {
+        "source": "widget-reference/filepicker",
+        "destination": "reference/widgets/filepicker"
+      },
+      {
+        "source": "widget-reference/icon-button",
+        "destination": "reference/widgets/icon-button"
+      },
+      {
+        "source": "widget-reference/iframe",
+        "destination": "reference/widgets/iframe"
+      },
+      {
+        "source": "widget-reference/image",
+        "destination": "reference/widgets/image"
+      },
+      {
+        "source": "widget-reference/input",
+        "destination": "reference/widgets/input"
+      },
+      {
+        "source": "widget-reference/json-form",
+        "destination": "reference/widgets/json-form"
+      },
+      {
+        "source": "widget-reference/list",
+        "destination": "reference/widgets/list"
+      },
+      {
+        "source": "widget-reference/maps",
+        "destination": "reference/widgets/maps"
+      },
+      {
+        "source": "widget-reference/map-chart",
+        "destination": "reference/widgets/map-chart"
+      },
+      {
+        "source": "widget-reference/menu-button",
+        "destination": "reference/widgets/menu-button"
+      },
+      {
+        "source": "widget-reference/modal",
+        "destination": "reference/widgets/modal"
+      },
+      {
+        "source": "widget-reference/multiselect",
+        "destination": "reference/widgets/multiselect"
+      },
+      {
+        "source": "widget-reference/multi-tree-select",
+        "destination": "reference/widgets/multi-tree-select"
+      },
+      {
+        "source": "widget-reference/phone-input",
+        "destination": "reference/widgets/phone-input"
+      },
+      {
+        "source": "widget-reference/progress",
+        "destination": "reference/widgets/progress"
+      },
+      {
+        "source": "widget-reference/radio-group",
+        "destination": "reference/widgets/radio-group"
+      },
+      {
+        "source": "widget-reference/rating",
+        "destination": "reference/widgets/rating"
+      },
+      {
+        "source": "widget-reference/rich-text-editor",
+        "destination": "reference/widgets/rich-text-editor"
+      },
+      {
+        "source": "widget-reference/dropdown-1",
+        "destination": "reference/widgets/dropdown-1"
+      },
+      {
+        "source": "widget-reference/stat-box",
+        "destination": "reference/widgets/stat-box"
+      },
+      {
+        "source": "widget-reference/switch",
+        "destination": "reference/widgets/switch"
+      },
+      {
+        "source": "widget-reference/switch-group",
+        "destination": "reference/widgets/switch-group"
+      },
+      {
+        "source": "widget-reference/tabs",
+        "destination": "reference/widgets/tabs"
+      },
+      {
+        "source": "widget-reference/table",
+        "destination": "reference/widgets/table"
+      },
+      {
+        "source": "widget-reference/table/inline-editing",
+        "destination": "reference/widgets/table/inline-editing"
+      },
+      {
+        "source": "widget-reference/text",
+        "destination": "reference/widgets/text"
+      },
+      {
+        "source": "widget-reference/tree-select",
+        "destination": "reference/widgets/tree-select"
+      },
+      {
+        "source": "widget-reference/video",
+        "destination": "reference/widgets/video"
+      },
+      {
+        "source": "learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith",
+        "destination": "reference/datasources/graphql"
+      },
+      {
+        "source": "tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view#accessing-query-results-to-a-widget",
+        "destination": "learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui#accessing-query-results-to-a-widget"
+      }
+    ]
+  }
