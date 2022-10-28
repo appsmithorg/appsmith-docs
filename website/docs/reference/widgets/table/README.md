@@ -365,6 +365,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 | **Font Style**            | Allows you to choose a font style, i.e., bold or italic. |
 | **Text Align**            | Sets the label alignment of the text.                    |
 | **Vertical Alignment**    | Sets the alignment of the widget.                        |
+| **Cell Borders**          | Allows you to choose the border style for the table's cells. Default (all borders), horizontal borders only, or no borders. |
 | **Border Radius**         | Allows you to define curved corners.                     |
 | **Box Shadow**            | Allows you to choose from the available shadow styles.   |
 
