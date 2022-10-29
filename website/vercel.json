@@ -808,6 +808,10 @@
     {
       "source": "/tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view#accessing-query-results-to-a-widget",
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui#accessing-query-results-to-a-widget"
+    },
+    {
+      "source": "/core-concepts/writing-code/readme-1",
+      "destination": "/reference/appsmith-framework"
     }
   ]
 }
