@@ -8,6 +8,9 @@ To integrate Twilio with Appsmith, you should understand the [basics of connecti
 
 Appsmith integration with Twilio provides an easy way to manage your customer-focused messaging. With these integrations, you can design a custom UI on Appsmith to support easy integrations for users.
 
+
+{% embed url="https://youtu.be/QHrEfSxL-aA" %}
+
 ## Create Twilio Datasource
 
 To add a **Twilio** datasource, navigate to **Explorer**>> Click plus sign(+) next to **Datasources** >> Select **Twilio** under APIs.
