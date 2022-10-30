@@ -10,6 +10,8 @@ To integrate Airtable with Appsmith, you should understand the [basics of connec
 
 On Appsmith, it's pretty straightforward to establish a connection with any datasource, including Airtable. With this integration, you can perform different operations using a custom UI built on Appsmith, with minimal configurations.
 
+{% embed url="https://youtu.be/cmr2-SsBR3w" %}
+
 ## Create Airtable Datasource
 
 To add an Airtable datasource, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> **Select Airtable under APIs.**
