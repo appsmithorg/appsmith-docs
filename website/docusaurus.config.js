@@ -181,19 +181,13 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: '/start-building',
-            to: '/getting-started/start-building',
-          }
-        ],
-      },
-    ],
-  ],
+  scripts: [
+    {
+      src:
+        '/scripts/intercomSettings.js',
+      async: false,
+    }
+  ]
 };
 
 module.exports = config;
