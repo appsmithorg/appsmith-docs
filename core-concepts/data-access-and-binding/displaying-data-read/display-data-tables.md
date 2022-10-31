@@ -2,7 +2,7 @@
 
 The [Table Widget](../../../reference/widgets/table/) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
-![](<../../../.gitbook/assets/bind-table (2) (4) (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (9) (1) (1) (1) (1) (1) (1) (1) (1) (11) (11) (11) (1) (1) (10) (2).gif>)
+![](<../../../.gitbook/assets/bind-table (2) (4) (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (9) (1) (1) (1) (1) (1) (1) (1) (1) (11) (11) (11) (1) (1) (14).gif>)
 
 ## Pagination
 
