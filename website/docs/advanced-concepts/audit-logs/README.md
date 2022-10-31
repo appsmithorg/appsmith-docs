@@ -1,12 +1,11 @@
 ---
-sidebar_position: 1
+sidebar_position: 6
 ---
 
 # Audit logs
 
 The audit log is a paper trail of all activities that occur on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to easily follow up and address any unexpected or undesirable events.
 
----
 
 :::info
 Audit logs are only available on self-hosted, business edition instances of Appsmith.
