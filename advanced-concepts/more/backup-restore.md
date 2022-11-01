@@ -31,7 +31,7 @@ Applications are forward compatible from Appsmith version 1.6.9.&#x20;
 Applications built in an older version of an Appsmith instance will work when imported into a newer version of an Appsmith instance.
 {% endhint %}
 
-{% embed url="https://youtu.be/2JuJ0v56ztw" %}
+{% embed url="https://youtu.be/1YpIzX4DF28" %}
 
 ### Export Application
 
