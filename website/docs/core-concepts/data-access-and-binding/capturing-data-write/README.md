@@ -1,6 +1,6 @@
 # Capturing Data (Write)
 
-This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a [Query](broken-reference/) that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
+This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a query that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
 
 The following widgets can be used to capture user inputs in an application
 

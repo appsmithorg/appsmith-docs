@@ -9,7 +9,7 @@ description: >-
 When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
 
 :::info
-To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](broken-reference/) and expand on triggering more complex actions.
+To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](/reference/widgets.md) and expand on triggering more complex actions.
 :::
 
 ## **Fields**
@@ -143,29 +143,29 @@ You can only use the **global actions** provided out-of-the-box by Appsmith in t
 
 The property pane allows us to configure the action to take once a Query returns with a success or an error. The Success / Error returned by the API/Query can be determined by the HTTP status code or the query response status.
 
-We can decide to display a success or an error message by using the [**showAlert action**](broken-reference/).
+We can decide to display a success or an error message by using the [**showAlert action**](/reference/appsmith-framework/widget-actions/show-alert.md).
 
 ![](</img/error_handling.gif>)
 
 ## Complex Workflows
 
-The GUI is limited to a single [onSuccess](broken-reference/) / [onError](broken-reference/) callback, while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
+The GUI is limited to a single [onSuccess](/reference/appsmith-framework/query-object.md#onsuccess) / [onError](/reference/appsmith-framework/query-object.md#onerror) callback, while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
 
 ![](</img/conditional_query.gif>)
 
 :::tip
-Once you have configured [actions](broken-reference/) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. It can help you learn to use JavaScript to configure workflows!
+Once you have configured [actions](/reference/appsmith-framework/widget-actions) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. It can help you learn to use JavaScript to configure workflows!
 :::
 
 ### Executing Queries in Parallel / Serial
 
-Each query object has a [run](../../reference/appsmith-framework/query-object.md#run) method used to execute the query. To execute multiple queries, you have to separate the run statement in the buttons `onClick` handler with a semicolon(;). The [run](broken-reference/) method is asynchronous, and you can execute multiple queries in parallel as below:
+Each query object has a [run](/reference/appsmith-framework/query-object.md#run) method used to execute the query. To execute multiple queries, you have to separate the run statement in the buttons `onClick` handler with a semicolon(`;`). The [run](/reference/appsmith-framework/query-object.md#run) method is asynchronous, and you can execute multiple queries in parallel as below:
 
 ```javascript
 {{ API1.run(); Query2.run(); API2.run(); }}
 ```
 
-or chained to be called `onSuccess / onError` using the callback arguments in the [Run Signature](broken-reference/).
+or chained to be called `onSuccess`/`onError` using the callback arguments in the `run` signature.
 
 ```javascript
 {{ 
