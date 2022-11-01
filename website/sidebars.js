@@ -433,6 +433,16 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Audit Logs',
+          link: {type: 'doc', id:  'advanced-concepts/audit-logs/README'},
+          items: [
+            'advanced-concepts/audit-logs/filtering-audit-logs',
+            'advanced-concepts/audit-logs/log-contents',
+            'advanced-concepts/audit-logs/tracked-events'
+          ]
+        },
+        {
+          type: 'category',
           label: 'More',
           link: {type: 'doc', id: 'advanced-concepts/more/README'},
           items: [
