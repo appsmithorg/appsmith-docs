@@ -157,7 +157,7 @@ This method will set the given document at the given document path. If a documen
 **Let's look at an example** to see how to create a new document. Let’s assume you have a table which displays data from firestore. Now let's add a modal, to update the value to the database.
 
 :::info
-[Modal ](/widgets/modal.md)is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
+[Modal ](/reference/widgets/modal.md)is a simple UI widget you can use when you want to create Dialogs, Popovers or Alerts.
 :::
 
 * Drag and drop a button widget onto the canvas. Open its property pane, set the onClick property to **Open a New Modal**, and choose to **Create New.**
