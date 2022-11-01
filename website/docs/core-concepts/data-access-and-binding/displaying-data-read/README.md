@@ -24,9 +24,9 @@ Each widget property has a specific data type that it validates its value agains
 
 ## Transforming Data
 
-You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a [dropdown](../../../reference/widgets/dropdown-1.md). Directly binding the data will lead to an error as shown below
+You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a [dropdown](/reference/widgets/select.md). Directly binding the data will lead to an error as shown below
 
-A [dropdown](../../../reference/widgets/dropdown-1.md) needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the [dropdown options property.](../../../reference/widgets/dropdown-1.md#widget-properties)
+A [select](/reference/widgets/select.md) needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the [dropdown options property.](/reference/widgets/select.md#widget-properties)
 
 **Example Query Data**
 
