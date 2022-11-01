@@ -187,7 +187,7 @@ query GetRepositoryWithIssues {
 
 In the preceding query, we obtained information on issues (totalCount), the most recent issues with their titles and creation dates (createdAt), as well as information on the issue author.
 
-You can use a table widget to display your data. You can follow this [document](/widgets/table/) to understand how the table widget works.
+You can use a table widget to display your data. You can follow this [document](/reference/widgets/table) to understand how the table widget works.
 
 ![CDisplay Data Using Table Widget](</img/graphlql1.PNG>)<figure><figcaption align="center"><i>Display Data Using Table Widget</i></figcaption></figure>
 
