@@ -11,15 +11,8 @@ const config = {
   tagline: 'Open source, low code - Build, Ship and maintain Internal tools',
   url: 'https://docs.appsmith.com',
   baseUrl: '/',
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/Appsmith-Logo.png',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'appsmith', // Usually your GitHub org/user name.
-  projectName: 'appsmith-docs', // Usually your repo name.
-  deploymentBranch: "gh-pages",
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
