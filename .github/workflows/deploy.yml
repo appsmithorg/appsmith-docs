@@ -23,13 +23,13 @@ jobs:
           
       - name: Check invalid redirect rules
         run: |
-          incorrect_paths="$(jq -r '.redirects[] | select(.source == .destination) | .source' website/vercel.json)"
+          incorrect_paths="$(jq -r '.redirects[] | select(.source == .destination) | .source' vercel.json)"
           if [[ -n $incorrect_paths ]]; then
             echo "There are redirect rules with source = destination. Please correct them." >&2
             echo "$incorrect_paths" >&2
             exit 1
           fi
-          repeated_sources="$(jq -r '.redirects[].source' website/vercel.json | sort | uniq --count --repeated)"
+          repeated_sources="$(jq -r '.redirects[].source' vercel.json | sort | uniq --count --repeated)"
           if [[ -n $repeated_sources ]]; then
             echo "There are repeated sources in redirect rules. Please correct them." >&2
             echo "$repeated_sources" >&2
