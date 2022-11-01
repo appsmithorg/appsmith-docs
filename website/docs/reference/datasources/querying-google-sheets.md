@@ -372,10 +372,10 @@ To fetch spreadsheets data, you can choose the below parameters:
 You can choose to add filters using range or `where` Clause.
 :::
 
-You can display the data by binding it to a [widget](./../widgets/README.md). For example, you can display the spreadsheet data in a [table](./../widgets/table/README.md) widget.
+You can display the data by binding it to a [widget](./../widgets/README.md). For example, you can display the spreadsheet data in a [table](/reference/widgets/table) widget.
 
 :::info
-Bind the data returned by the query to a [table](./../widgets/table/README.md) widget - [TableData](/widgets/table/#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
+Bind the data returned by the query to a [table](/reference/widgets/table) widget - [TableData](/reference/widgets/table#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
 :::
 
 ## Insert Many
