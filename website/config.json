@@ -2,12 +2,12 @@
 	"index_name": "appsmith_docusaurus_index",
   "start_urls": [
     {
-      "url": "https://appsmith-docs-nu.vercel.app/",
+      "url": "https://docs.appsmith.com/",
       "selectors_key": "doc"
     }
   ],
 	"sitemap_urls": [
-		"https://appsmith-docs-nu.vercel.app/sitemap.xml"
+		"https://docs.appsmith.com/sitemap.xml"
 	],
 	"sitemap_alternate_links": true,
 	"stop_urls": [
