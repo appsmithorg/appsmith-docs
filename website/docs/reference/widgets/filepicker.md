@@ -141,7 +141,7 @@ To learn how to upload or manage files on Cloudinary with the Filepicker widget,
 
 The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](../../learning-and-resources/tutorials/review-moderator-dashboard/broken-reference/)
+* [Connecting to Datasources](/core-concepts/connecting-to-data-sources)
 * [Appsmith Framework](../appsmith-framework/)
 * [JavaScript Editor](../../core-concepts/writing-code/javascript-editor-beta/)
 * [Uploading a File to S3](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
