@@ -29,6 +29,12 @@ jobs:
             echo "$incorrect_paths" >&2
             exit 1
           fi
+          repeated_sources="$(jq -r '.redirects[].source' website/vercel.json | sort | uniq --count --repeated)"
+          if [[ -n $repeated_sources ]]; then
+            echo "There are repeated sources in redirect rules. Please correct them." >&2
+            echo "$repeated_sources" >&2
+            exit 1
+          fi
 
       - name: Run Docker Container
         run: |
