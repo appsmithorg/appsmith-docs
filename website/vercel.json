@@ -781,7 +781,7 @@
       "source": "/tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view",
       "has": [
         {
-          "key": "#accessing-query-results-to-a-widget"
+          "value": "#accessing-query-results-to-a-widget"
         }
       ],
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui#accessing-query-results-to-a-widget"
