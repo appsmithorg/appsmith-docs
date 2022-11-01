@@ -23,19 +23,19 @@
     },
     {
       "source": "/core-concepts/git-sync",
-      "destination": "/advanced-concepts/version-control-with-git/README"
+      "destination": "/advanced-concepts/version-control-with-git"
     },
     {
       "source": "/setup",
-      "destination": "/getting-started/setup/README"
+      "destination": "/getting-started/setup"
     },
     {
       "source": "/setup/docker",
-      "destination": "/getting-started/setup/installation-guides/docker/README"
+      "destination": "/getting-started/setup/installation-guides/docker"
     },
     {
       "source": "/setup/kubernetes",
-      "destination": "/getting-started/setup/installation-guides/kubernetes/README"
+      "destination": "/getting-started/setup/installation-guides/kubernetes"
     },
     {
       "source": "/setup/kubernetes/migrate-k8s",
@@ -71,7 +71,7 @@
     },
     {
       "source": "/setup/instance-configuration",
-      "destination": "/getting-started/setup/instance-configuration/README"
+      "destination": "/getting-started/setup/instance-configuration"
     },
     {
       "source": "/setup/instance-configuration/admin-settings",
@@ -79,7 +79,7 @@
     },
     {
       "source": "/setup/instance-configuration/email",
-      "destination": "/getting-started/setup/instance-configuration/email/README"
+      "destination": "/getting-started/setup/instance-configuration/email"
     },
     {
       "source": "/setup/instance-configuration/email/sendgrid",
@@ -91,7 +91,7 @@
     },
     {
       "source": "/setup/instance-configuration/custom-domain",
-      "destination": "/getting-started/setup/instance-configuration/custom-domain/README"
+      "destination": "/getting-started/setup/instance-configuration/custom-domain"
     },
     {
       "source": "/setup/instance-configuration/custom-mongodb-redis",
@@ -115,7 +115,7 @@
     },
     {
       "source": "/setup/instance-configuration/single-sign-on-sso",
-      "destination": "/getting-started/setup/instance-configuration/authentication/README"
+      "destination": "/getting-started/setup/instance-configuration/authentication"
     },
     {
       "source": "/setup/instance-configuration/single-sign-on-sso/github-login",
@@ -127,7 +127,7 @@
     },
     {
       "source": "/setup/instance-configuration/single-sign-on-sso/openid-connect-oidc",
-      "destination": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/README"
+      "destination": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc"
     },
     {
       "source": "/setup/instance-configuration/single-sign-on-sso/openid-connect-oidc/auth0",
@@ -147,7 +147,7 @@
     },
     {
       "source": "/setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml",
-      "destination": "/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README"
+      "destination": "/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml"
     },
     {
       "source": "/setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/auth0",
@@ -171,7 +171,7 @@
     },
     {
       "source": "/setup/instance-management",
-      "destination": "/getting-started/setup/instance-management/README"
+      "destination": "/getting-started/setup/instance-management"
     },
     {
       "source": "/setup/migrate",
@@ -179,7 +179,7 @@
     },
     {
       "source": "/setup/upgrade-to-business-edition",
-      "destination": "/getting-started/setup/upgrade-to-business-edition/README"
+      "destination": "/getting-started/setup/upgrade-to-business-edition"
     },
     {
       "source": "/setup/upgrade-to-business-edition/docker",
@@ -187,7 +187,7 @@
     },
     {
       "source": "/tutorials/review-moderator-dashboard",
-      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard/README"
+      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard"
     },
     {
       "source": "/tutorials/review-moderator-dashboard/setting-up-the-app",
@@ -207,7 +207,7 @@
     },
     {
       "source": "/tutorials/building-a-store-catalog-manager",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/README"
+      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager"
     },
     {
       "source": "/tutorials/building-a-store-catalog-manager/building-a-simple-ui",
@@ -223,7 +223,7 @@
     },
     {
       "source": "/how-to-guides",
-      "destination": "/learning-and-resources/how-to-guides/README"
+      "destination": "/learning-and-resources/how-to-guides"
     },
     {
       "source": "/how-to-guides/returning-data-from-a-stored-procedure",
@@ -319,11 +319,11 @@
     },
     {
       "source": "/troubleshooting-guide",
-      "destination": "/help-and-support/troubleshooting-guide/README"
+      "destination": "/help-and-support/troubleshooting-guide"
     },
     {
       "source": "/troubleshooting-guide/action-errors",
-      "destination": "/help-and-support/troubleshooting-guide/action-errors/README"
+      "destination": "/help-and-support/troubleshooting-guide/action-errors"
     },
     {
       "source": "/troubleshooting-guide/action-errors/datasource-errors",
@@ -366,24 +366,12 @@
       "destination": "/product/security"
     },
     {
-      "source": "/core-concepts/connecting-to-data-sources",
-      "destination": "/core-concepts/connecting-to-data-sources/README"
-    },
-    {
-      "source": "/core-concepts/connecting-to-data-sources/connecting-to-databases",
-      "destination": "/core-concepts/connecting-to-data-sources/connecting-to-databases"
-    },
-    {
-      "source": "/core-concepts/connecting-to-data-sources/authentication",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/README"
-    },
-    {
       "source": "/core-concepts/connecting-to-data-sources/authentication/basic-authentication",
       "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/README"
+      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/authorization-code",
@@ -394,16 +382,8 @@
       "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials"
     },
     {
-      "source": "/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions"
-    },
-    {
-      "source": "/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates"
-    },
-    {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database",
-      "destination": "/core-concepts/data-access-and-binding/querying-a-database/README"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis",
@@ -415,7 +395,7 @@
     },
     {
       "source": "/core-concepts/displaying-data-read",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/README"
+      "destination": "/core-concepts/data-access-and-binding/displaying-data-read"
     },
     {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
@@ -423,35 +403,15 @@
     },
     {
       "source": "/core-concepts/capturing-data-write",
-      "destination": "/core-concepts/data-access-and-binding/capturing-data-write/README"
+      "destination": "/core-concepts/data-access-and-binding/capturing-data-write"
     },
     {
       "source": "/core-concepts/capturing-data-write/capture-form-data",
       "destination": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data"
     },
-    {
-      "source": "/core-concepts/writing-code",
-      "destination": "/core-concepts/writing-code/README"
-    },
-    {
-      "source": "/core-concepts/writing-code/workflows",
-      "destination": "/core-concepts/writing-code/workflows"
-    },
-    {
-      "source": "/core-concepts/writing-code/appsmith-framework",
-      "destination": "/core-concepts/writing-code/appsmith-framework"
-    },
-    {
-      "source": "/core-concepts/writing-code/javascript-promises",
-      "destination": "/core-concepts/writing-code/javascript-promises"
-    },
-    {
-      "source": "/core-concepts/writing-code/ext-libraries",
-      "destination": "/core-concepts/writing-code/ext-libraries"
-    },
-    {
+   {
       "source": "/core-concepts/designing-an-application",
-      "destination": "/core-concepts/building-ui/designing-an-application/README"
+      "destination": "/core-concepts/building-ui/designing-an-application"
     },
     {
       "source": "/core-concepts/designing-an-application/application-layout",
@@ -459,7 +419,7 @@
     },
     {
       "source": "/core-concepts/dynamic-ui",
-      "destination": "/core-concepts/building-ui/dynamic-ui/README"
+      "destination": "/core-concepts/building-ui/dynamic-ui"
     },
     {
       "source": "/core-concepts/dynamic-ui/widget-visibility",
@@ -471,7 +431,7 @@
     },
     {
       "source": "/core-concepts/version-control-with-git",
-      "destination": "/advanced-concepts/version-control-with-git/README"
+      "destination": "/advanced-concepts/version-control-with-git"
     },
     {
       "source": "/core-concepts/version-control-with-git/connecting-to-git-repository",
@@ -539,7 +499,7 @@
     },
     {
       "source": "/datasource-reference/querying-mongodb",
-      "destination": "/reference/datasources/querying-mongodb/README"
+      "destination": "/reference/datasources/querying-mongodb"
     },
     {
       "source": "/datasource-reference/querying-mongodb/mongo-syntax",
@@ -579,7 +539,7 @@
     },
     {
       "source": "/framework-reference/appsmith",
-      "destination": "/reference/appsmith-framework/README"
+      "destination": "/reference/appsmith-framework"
     },
     {
       "source": "/framework-reference/run",
@@ -623,7 +583,7 @@
     },
     {
       "source": "/framework-reference/javascript-editor-beta",
-      "destination": "/core-concepts/writing-code/javascript-editor-beta/README"
+      "destination": "/core-concepts/writing-code/javascript-editor-beta"
     },
     {
       "source": "/framework-reference/javascript-editor-beta/asynchronous-javascript-function-settings",
@@ -639,7 +599,7 @@
     },
     {
       "source": "/widget-reference/button",
-      "destination": "/reference/widgets/button/README"
+      "destination": "/reference/widgets/button"
     },
     {
       "source": "/widget-reference/button/google-recaptcha",
@@ -810,7 +770,7 @@
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui#accessing-query-results-to-a-widget"
     },
     {
-      "source": "/core-concepts/writing-code/readme-1",
+      "source": "/core-concepts/writing-code",
       "destination": "/reference/appsmith-framework"
     }
   ]
