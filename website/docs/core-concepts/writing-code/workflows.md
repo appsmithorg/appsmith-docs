@@ -9,7 +9,7 @@ description: >-
 When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
 
 :::info
-To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](/reference/widgets.md) and expand on triggering more complex actions.
+To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](/reference/widgets) and expand on triggering more complex actions.
 :::
 
 ## **Fields**
