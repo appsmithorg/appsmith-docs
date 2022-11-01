@@ -6,6 +6,9 @@ Appsmith comes with an <mark style="color:red;">`appsmithctl`</mark> command lin
 appsmithctl <subcommand> <options>
 ```
 
+{% embed url="https://youtu.be/tlbK8Cke3sw" %}
+
+
 ### Subcommands
 
 Subcommands allow you to trigger different operations like exporting or importing databases.
