@@ -3,7 +3,7 @@ sidebar_position: 16
 ---
 # SMTP
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to a datasource on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 

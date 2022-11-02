@@ -6,7 +6,7 @@ sidebar_position: 3
 
 [ArangoDB](https://www.arangodb.com) is a free and open-source native multi-model database system developed by ArangoDB GmbH. The database system supports three data models with one database core and a unified query language AQL
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
@@ -55,7 +55,7 @@ The SSL Mode can be set to one of the following values:
 * **`Enabled`**: Rejects the connection if SSL is not available.
 * **`Disabled`**: Connects without SSL using a plain unencrypted connection.
 
-:::caution
+:::tip
 Ensure that the SSL mode is enabled so as to establish a secure connection.
 :::
 

@@ -30,7 +30,7 @@ In our container, we support to generate a free SSL certificate If you have your
 
 The container will check the certificate files in the folder `<mounting-directory>/ssl` and use them if they exist.
 
-:::caution
+:::note
 _In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will be considered as missing custom certificate and auto-provisioning the certificate by Let's Encrypt_
 :::
 
@@ -75,7 +75,7 @@ Please ensure port 80 on your server is open and accessible from the Internet fo
 3. Input your domain name & click `Next`. Heroku will provide you with a DNS target that you can map your domain with.
 4. Go to your DNS provider and make sure that your custom DNS Record (Ex. **appsmith.yourcompany.com**) is updated to map to the `DNS Target`
 
-:::caution
+:::note
 * Once you use a custom domain, You might want to set up SSL for your dyno. Please check the official document of Heroku [how to configure SSL](https://devcenter.heroku.com/articles/ssl)
 * Your dyno will need to be upgraded to at least "**Hobby"** type to use this feature of Heroku
 :::

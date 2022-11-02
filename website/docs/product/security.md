@@ -14,7 +14,7 @@ Appsmith applications are secure-by-default. The security measures implemented f
 * Appsmith Cloud is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers. We also maintain data redundancy on our cloud instances via regular backups.
 * Internal access to Appsmith Cloud is controlled through a [Two-Factor Authentication System](https://en.wikipedia.org/wiki/Help:Two-factor\_authentication) and audit logs.
 
-:::caution
+:::note
 The above reference to the **audit logs** pertains only to the **cloud-hosted instance** of Appsmith and does **not** refer to the **audit logs** **feature.**
 :::
 
@@ -34,7 +34,7 @@ The code is stored in the MongoDB database that Appsmith uses to store all other
 
 * We recommend that you **do** **not** hard code the sensitive keys, credentials, or other sensitive information in the JavaScript objects in plain text.
 
-:::caution
+:::tip
 You can add **secrets** to **APIs** or **datasource configurations** as they are **not** exposed in the **view mode**. You can update the **secrets** in **edit** **mode** but **cannot** view the existing **secrets** while **viewing** or **editing** the configurations.
 :::
 

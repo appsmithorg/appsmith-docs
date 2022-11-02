@@ -6,7 +6,7 @@ sidebar_position: 6
 
 On Appsmith, it's pretty straightforward to establish a connection with any datasource, including Firestore.
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
@@ -305,7 +305,7 @@ The **Delete Document** method deletes the document at the given path.
 
 For example, “tasks/issue\_id” and click run to delete that document.
 
-:::caution
+:::note
 Deleting a document by giving a non-existing path is **NOT** treated as an error.
 :::
 

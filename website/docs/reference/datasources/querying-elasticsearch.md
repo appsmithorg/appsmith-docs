@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Elasticsearch
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
@@ -24,7 +24,7 @@ After filling up the fields as described above, click on the "Test" button to ve
 
 Elasticsearch support a rich set of [REST APIs](https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html) that can be accessed using the Elasticsearch plugin in Appsmith. The plugin itself supports all requests that would use the `GET`, `POST`, `PUT`, or `DELETE` HTTP methods. These APIs support single as well as bulk queries, some of which are demonstrated below. Do note the leading `/` that needs to be added for each of these requests.
 
-:::caution
+:::tip
 While Elasticsearch has a comprehensive reference list for its APIs, please make sure that you refer to specific documentation by your provider for requests that may or may not be applicable.
 :::
 

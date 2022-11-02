@@ -5,7 +5,7 @@ sidebar_position: 15
 
 On Appsmith, it’s pretty straightforward to establish a connection with any data source, including SnowflakeDB, be it on the cloud, self-hosted version, or local environment.
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
