@@ -1,0 +1,1 @@
+![alt_text](../../../website/static/img/hubspotsidebar.png)
