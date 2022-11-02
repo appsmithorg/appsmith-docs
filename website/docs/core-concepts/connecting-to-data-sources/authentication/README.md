@@ -24,9 +24,9 @@ You can configure the data source as follows:
 
 By default, Appsmith supplies a running sequence for the data source created. You can click on the pencil icon next to it to edit the name of the data source.
 
-{% hint style="info" %}
+:::info
 It is advisable that you give a meaningful name to your Authenticated API datasource.
-{% endhint %}
+:::
 
 ### URL
 
