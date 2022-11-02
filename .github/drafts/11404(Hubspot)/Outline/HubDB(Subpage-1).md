@@ -17,66 +17,82 @@ Info on queries
 
 * **Get Published Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Create Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Archive Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Update Existing Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Clone Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Export Published Version Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Unpublish Tables**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Get Table rows**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Add a new Table row**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Get Table row**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Update existing Row**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Replace existing Row**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Permanently delete Row**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Clone row**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Get set rows**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Permanently delete Rows**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 

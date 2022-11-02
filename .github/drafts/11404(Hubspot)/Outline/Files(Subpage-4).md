@@ -17,30 +17,37 @@ Info on queries
 
 * **List Objects**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Create Object**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Read Object**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Update Object**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Archive Object**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Search Object**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **GDPR Delete**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 

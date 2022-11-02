@@ -14,42 +14,52 @@ Info on queries
 
 * **Import File**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Delete File**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Get File**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Create Folder**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Search File**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Search Folder**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Update Folder Properties**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Check Folder Update Status**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Get Folder**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Delete Folder**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 

@@ -34,11 +34,9 @@ Info on queries
     * Example
 * **Retrieve Roles Account**
     * Info
-    * Video/Image
     * Example
 * **See Details Account's Teams**
     * Info
-    * Video/Image
     * Example
 
 

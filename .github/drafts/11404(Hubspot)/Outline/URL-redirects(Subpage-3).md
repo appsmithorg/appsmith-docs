@@ -15,22 +15,27 @@ Info on queries
 
 * **Get Current Redirects**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Create Redirect**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Get Details Redirect**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Update Redirect**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 * **Delete Redirect**
     * Info
+    * Explain all the parameters and cross-link the common ones.
     * Video/Image
     * Example
 
