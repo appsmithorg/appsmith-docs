@@ -10,7 +10,7 @@ The console is integral to any developer's toolkit - it allows you to monitor wh
 
 Appsmith provides the global console object for logging information about your [API](../../core-concepts/connecting-to-data-sources/authentication/), [Queries](../../core-concepts/data-access-and-binding/querying-a-database/), and [Widgets properties](../widgets/) in your JavaScript code. Invoke a console object using the mustache sign `{{}}` in widget properties or [directly in your code](../../core-concepts/writing-code/javascript-editor-beta/#use-case).
 
-:::caution
+:::note
 The console logs **will not be** saved and are **only** available for the **current session.**
 :::
 
@@ -59,7 +59,7 @@ To troubleshoot the error, you would want to log some messages: at the start of 
 
 The `console.log()` method outputs a message to the logs tab. The message could be a single string value, multiple string values, or JavaScript object(s).
 
-:::caution
+:::note
 Console methods **don’t** support **string substitutions**.
 :::
 
@@ -107,7 +107,7 @@ You can examine the task object and its attributes that are part of the response
 
 The `console.error()` method outputs an error message to the [logs tab](../../core-concepts/writing-code/javascript-editor-beta/#logs-tab). It can log a string, written as-is - with a custom error object, - or with a function that returns either a string or prints a custom object.
 
-:::caution
+:::note
 Console methods **don't** support **string substitutions.**
 :::
 
@@ -174,7 +174,7 @@ Having reviewed the error messages and correcting the code, you want to be sure 
 
 The `console.warn()` method logs a warning message in the[ logs tab](../../core-concepts/writing-code/javascript-editor-beta/#logs-tab). Like `console.log()` and `console.error()`, you can log string(s) and JavaScript object(s) as warning messages.
 
-:::caution
+:::note
 &#x20;Console methods **don’t** support **string substitutions**.
 :::
 
@@ -218,6 +218,6 @@ When you're in the logs tab, you can filter them by console logs which are user-
 
 Debugging with the console object is more efficient, faster, and easier than using a debugger directly in the Appsmith Editor. There is no need to worry if you have complex API logic, multiple [JS Objects](../../core-concepts/writing-code/javascript-editor-beta/), or complicated queries to debug.
 
-:::caution
+:::info
 If you're experiencing issues, please go through the [JS Errors](../../help-and-support/troubleshooting-guide/js-errors.md)/[Action Errors](../../help-and-support/troubleshooting-guide/action-errors/) [troubleshooting guide ](../../help-and-support/troubleshooting-guide/)or raise your queries via [Discord](https://discord.com/invite/rBTTVJp) or the [Community Forum.](https://community.appsmith.com/)
 :::

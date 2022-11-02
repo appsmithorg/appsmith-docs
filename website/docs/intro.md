@@ -127,7 +127,7 @@ If you are an **intermediate** to **advanced** user, we recommend going through 
 </div>
 
 
-:::caution
+:::info
 If you think we need to include something in this documentation, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com), and we’ll get working on it!
 :::
 
@@ -137,6 +137,4 @@ If you think we need to include something in this documentation, please fill out
 * View our [Guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith).
 * Report Bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
 
-:::caution
 Are you still having trouble? We want to help! Reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com).
-:::

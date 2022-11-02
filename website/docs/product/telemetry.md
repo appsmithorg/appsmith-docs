@@ -7,7 +7,7 @@ description: >-
 
 # Telemetry
 
-:::caution
+:::note
 Data collected is strictly **anonymous** in nature and **cannot** be used to **uniquely** **identify** a **user**.
 :::
 

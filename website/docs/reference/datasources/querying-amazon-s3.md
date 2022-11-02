@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Amazon / Generic S3
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
 :::
 
@@ -94,7 +94,7 @@ You can set an expiry duration for the generated signed URLs by editing the `Exp
 
 ![Enter the file path, which is a string representing the complete path relative to the bucket.](/img/as_s3_create.png)
 
-:::caution
+:::note
 If a file by the same name/path already exists within the bucket, the old file will be _overwritten_ by the new file!
 
 Enable the **"Request confirmation before running query"** setting to help avoid accidentally overwriting files!
@@ -140,7 +140,7 @@ This action fetches a file from the bucket (specified in the `Bucket Name` field
 
 If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
 
-:::caution
+:::tip
 When reading multimedia files or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded with `atob()` as noted above.
 :::
 
@@ -152,7 +152,7 @@ This action deletes a file with the name/path matching the contents of the `File
 
 This action returns a message on the `status` property describing the outcome of your query.
 
-:::caution
+:::tip
 Enable the **"Request confirmation before running query"** setting in your Delete Query to help avoid accidentally deleting files!
 :::
 

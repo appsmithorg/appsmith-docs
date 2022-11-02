@@ -80,7 +80,7 @@ The `{{mustache}}` template is used to write JS inside widgets and queries.
 | DOB    | dobInput   | Default Date                                      | ```{{usersTable.selectedRow.dob}}``` |
 | Phone  | phoneInput | Default Text                                      | ```{{usersTable.selectedRow.phone}}``` |
 
-:::caution
+:::tip
 Turn on the **JS** toggle to bind data for the **Default Date** property
 :::
 

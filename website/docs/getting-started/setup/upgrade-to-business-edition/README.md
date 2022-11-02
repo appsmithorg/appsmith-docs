@@ -2,7 +2,7 @@
 
 Follow the below guides to **upgrade** your **Community Edition (CE)** to a **Business Edition (BE)** based on the type of your **Appsmith Installation:**
 
-:::caution
+:::note
 You'll need your  [**Business Edition License Key**](https://www.appsmith.com/pricing)  to complete the upgrade.
 :::
 
@@ -10,7 +10,7 @@ You'll need your  [**Business Edition License Key**](https://www.appsmith.com/pr
 * [Docker](docker.md)
 
 
-:::caution
+:::note
 For **non-docker Appsmith installations**, please get in touch with us via [discord](https://discord.com/invite/rBTTVJp) or [email](mailto:support@appsmith.com). We will help you upgrade your Appsmith instance.
 :::
 
@@ -22,7 +22,7 @@ The Appsmith server shuts down if your Business license key is expired. You will
 Exiting application. Invalid license key.
 ```
 
-:::caution
+:::info
 Please get in touch with our support team either on [Discord](https://discord.com/invite/rBTTVJp) or by [email](mailto:support@appsmith.com) to renew your license.
 :::
 

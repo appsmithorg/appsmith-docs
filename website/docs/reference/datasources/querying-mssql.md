@@ -10,7 +10,7 @@ The following document assumes that you understand the [basics of connecting to 
 
 [Microsoft SQL Server](https://www.microsoft.com/en-in/sql-server/sql-server-downloads) is a relational database management system developed by Microsoft that supports a wide variety of transaction processing, business intelligence, and analytics applications in corporate IT environments.
 
-:::caution
+:::note
 Appsmith's backend server supports **TLS1.1** and **TLS1.2** for connecting to endpoints.
 :::
 

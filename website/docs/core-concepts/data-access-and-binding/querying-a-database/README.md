@@ -53,7 +53,7 @@ The query is created with a **default name**. It’s **recommended** that you **
 * Write your query in the syntax that is valid for your [database type](../../connecting-to-data-sources/connecting-to-databases.md#supported-databases).
 * Bind your query to the widget and carry out data manipulations.
 
-:::caution
+:::note
 A query and its results can be accessed from **only** the **page** it is a part of. To use a query on another page, click the context menu next to the query name and clone it.
 :::
 
@@ -61,8 +61,8 @@ A query and its results can be accessed from **only** the **page** it is a part 
 
 A query must have a **unique** and **meaningful name** that acts as an **identifier**. It is used to access the query results. In that sense, a name is like a variable in a programming language. You can access the various properties of the query and its data using the **query name**.
 
-:::caution
-Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as query names.
+:::note
+[JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as query names.
 :::
 
 ### **Running a Query**

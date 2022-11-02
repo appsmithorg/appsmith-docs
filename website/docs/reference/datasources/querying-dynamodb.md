@@ -5,7 +5,7 @@ sidebar_position: 4
 
 DynamoDB is a serverless, fully managed, key-value NoSQL database designed to handle high-performance applications of any size
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 

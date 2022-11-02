@@ -13,6 +13,6 @@ The fields relevant to this grant type are as follows:
 * `Client Secret`**:** The client secret issued to the client during the application registration process. This field is encrypted and stored in the Appsmith database. To avoid any security threats over the network, Appsmith does not allow users to view the client secret after the data source is saved.
 * `Scope(s)`**:** The scope of the access request. It may have multiple comma-separated values.
 
-:::caution
+:::note
 In case you feel like there may have been a data breach in your infrastructure, you can simply invalidate your client credentials at the authorization server to immediately revoke Appsmith's access to your resources.
 :::

@@ -75,7 +75,7 @@ In the example above:
 
 If you want only one action/promise to finish for further execution, you can use `Promise.any()` or `Promise.race()` methods.
 
-:::caution
+:::tip
 Please remember to always return the promise for `.then`or `.catch` blocks to work as expected.
 :::
 

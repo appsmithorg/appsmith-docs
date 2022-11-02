@@ -33,6 +33,6 @@ To determine if the problem is caused due to:
 
 Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form#source-data) field to make changes.
 
-:::caution
+:::info
 If you still can't see a JSON form and need help debugging an error, please get in touch with us on our [Discord Server](https://discord.com/invite/rBTTVJp) or email us at support@appsmith.com.
 :::

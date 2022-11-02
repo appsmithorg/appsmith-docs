@@ -65,7 +65,7 @@ By default, Appsmith boots up with default user credentials that allow you to lo
 
 ### Option 1: Find Credentials By Checking The System Log On The AWS Cloud Console (EC2)
 
-:::caution
+:::note
 IMPORTANT: The application password is only available in the system log for the first 24 hours after you first start the instance. We strongly recommend that you note it down immediately on the first boot and save it in a safe place, as you will be unable to access the instance console without it. We also recommend that you change it as soon as possible for security reasons.
 :::
 
