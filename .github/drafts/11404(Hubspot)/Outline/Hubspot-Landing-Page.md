@@ -89,7 +89,6 @@ Create a table of commands explaining a bit about it. **(List all 48 queries, an
 | Settings - See Details Account's Teams   |                                       |
 
 
-![alt_text](/img/hubspotsidebar.png)
+The sidebar will look something like this.
+![alt_text](../../../../website/static/img/hubspotsidebar.png)
 
-
-The side bar will look something like this.
