@@ -27,7 +27,9 @@ To use App Passwords, please enable 2-factor authentication for your Gmail accou
 
 ![Generate App Password](/img/app\_pass\_generated\_edit.png)
 
+* Paste your new Gmail App Password into your SMTP datasource's `Password` field.
+
 :::info
-You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings). Add `Gmail App Password` in the `SMTP Password` Field.
+You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
 :::
 
