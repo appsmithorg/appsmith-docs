@@ -23,7 +23,7 @@ The SMTP datasource requires the following information to establish a connection
 1. **Host address:** This is the host address of the SMTP server.
 2. **Port:** The port for communication with the SMTP server. Typically this is 25 or 587.
 3. **Username:** The username of the SMTP server.
-4. **Password:** The password of the SMTP server. Please note that if you have a multi-factor authentication setup for your SMTP server, your normal password may not work. You may have to generate a separate password from your provider which won't require multi-factor authentication. For example, Gmail requires that you generate an app password to use as authentication; see [here](/getting-started/setup/instance-configuration/email/gmail) to read more.
+4. **Password:** The password of the SMTP server. Please note that if you have a multi-factor authentication setup for your SMTP server, your normal password may not work. You may have to generate a separate password from your provider which won't require multi-factor authentication. For example, Gmail requires that you [generate an app password](https://support.google.com/mail/answer/185833?hl=en) to use as authentication instead of your regular password.
 
 ## Send email
 
