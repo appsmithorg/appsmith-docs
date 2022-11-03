@@ -182,6 +182,6 @@ If you encounter any errors during this process, check out our guide on [debuggi
 
 ## Further Reading
 
-* [Configuring ECS Installations](../instance-configuration/#configuring-ecs-installations)
+* [Configuring ECS Installations](../instance-configuration/README.md#configuring-ecs-installations)
 * [Managing the Appsmith instance](../instance-management/)
 * [Tutorials](../../../learning-and-resources/tutorials/)
