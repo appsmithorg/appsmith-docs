@@ -9,6 +9,11 @@ sidebar_position: 9
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
+<figure>
+  <object data="https://www.youtube.com/embed/F_By1KmJKrk?autoplay=0" width='750px' height='400px'></object> 
+  <figcaption align="center"><i>Build a MongoDB Panel</i></figcaption>
+</figure>
+
 ## Connection Settings
 
 Appsmith needs the following parameters for connecting to a Mongo database:
