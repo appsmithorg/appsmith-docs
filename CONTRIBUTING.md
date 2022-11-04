@@ -1,6 +1,6 @@
 # Contributing to Appsmith documentation
 
-Thank you for your interest and for taking time to contribute to the Appsmith documentation project. 🙌
+Thank you for your interest and for taking time to contribute to the Appsmith documentation. 🙌
 Appsmith is a project by developers for developers. Appsmith documentation help developers learn and build apps faster on Appsmith.
 
 In this guide, you'll get an overview of the workflow from opening an issue, creating pull requests, reviewing, and merging.
