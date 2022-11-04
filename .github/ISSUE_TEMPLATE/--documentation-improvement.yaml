@@ -33,6 +33,20 @@ body:
     description: Add a link to the discussion 
   validations:
     required: false
+- type: input
+  id: gitBookSearchTerms
+  attributes:
+    label: GitBook Insights searchTerms or link
+    description: Add GitBook Insights - search terms or a link to the report 
+  validations:
+    required: true
+- type: input
+  id: googleAnalyticsTerms
+  attributes:
+    label: Google Analytics - search terms or a link 
+    description: Add Google Analytics - search terms or a link
+  validations:
+    required: true
 - type: textarea
   id: whatHappened
   attributes:
