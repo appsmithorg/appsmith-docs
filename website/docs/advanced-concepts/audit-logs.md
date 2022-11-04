@@ -42,7 +42,7 @@ Active workspaces generate thousands of log events. To help you quickly find the
 </figure>
 
 - User: Users are identified by their email. To see a certain user's activity, filter the logs by their email.
-- Event: Logs are triggered by specific occurrences called Events, which each have a name. For example, to find all logs related to query execution, filter by the `query.executed` event. For a complete list of events and their names, see the [Tracked Events](tracked-events.md) page.
+- Event: Logs are triggered by specific occurrences called Events, which each have a name. For example, to find all logs related to query execution, filter by the `query.executed` event. For a complete list of events and their names, see [Tracked Events](#tracked-events).
 - ResourceId: A resourceID identifies each entity on your Appsmith instance, be it a workspace, app, page, datasource, query, or JSObject.
 - Date Range: Show logs from only a certain period of time.
 
