@@ -103,7 +103,7 @@ docker-compose up -d
 ```
 
 :::info
-To compliment automatic updates, Appsmith now also has an auto-backup feature. Before an automatic update, Appsmith first creates a backup to ensure you can [roll back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary.
+To complement automatic updates, Appsmith also has an auto-backup feature. Before an automatic update, Appsmith first creates a backup to ensure you can [roll back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto-backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
 :::
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date. Your installation is now configured to stay up-to-date automatically.
@@ -114,33 +114,17 @@ This configuration runs an Appsmith instance and a Watchtower instance to keep A
 
 To get Appsmith up and running, run the following command on your machine:
 
-### Community Edition
+### Community Edition setup
+
+This command downloads the image and starts Appsmith.
 
 ```bash
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" --pull always appsmith/appsmith-ce
 ```
 
-### Business Edition
-
-```
-docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> --pull always appsmith/appsmith-ee
-```
-
-This command downloads the image and starts Appsmith. Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
-
-```bash
-docker logs -f appsmith
-```
-
-Once the container is ready, you should see `Appsmith is Running!` in the Docker logs. This message is also logged and available in server logs in (<mark>`stacks/logs/backend/backend.log`</mark>).
-
-![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
-
-### Updating Appsmith
+#### Updating
 
 To update Appsmith manually, go to the root directory of your installation and run the following commands:
-
-#### Community Edition
 
 ```
 docker rmi appsmith/appsmith-ce -f
@@ -149,7 +133,25 @@ docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
 ```
 
-#### Business Edition
+Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
+
+```bash
+docker logs -f appsmith
+```
+
+Once the container is ready, you should see `Appsmith is Running!` in the Docker logs. This message is also logged and available in server logs in (<mark>`stacks/logs/backend/backend.log`</mark>).
+
+### Business Edition setup
+
+This command downloads the image and starts Appsmith.
+
+```
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> --pull always appsmith/appsmith-ee
+```
+
+#### Updating
+
+To update Appsmith manually, go to the root directory of your installation and run the following commands:
 
 ```
 docker rmi appsmith/appsmith-ee -f
@@ -157,6 +159,14 @@ docker pull appsmith/appsmith-ee
 docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> appsmith/appsmith-ee
 ```
+
+Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
+
+```bash
+docker logs -f appsmith
+```
+
+Once the container is ready, you should see `Appsmith is Running!` in the Docker logs. This message is also logged and available in server logs in (<mark>`stacks/logs/backend/backend.log`</mark>).
 
 ---
 
