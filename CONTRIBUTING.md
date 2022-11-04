@@ -61,8 +61,6 @@ You can use this template to raise a new documentation request. For example, if 
 | Loom video link |  Add the link to a loom video that explains the feature. |
 | Discord/Slack/intercom link | Add the link to the appropriate channel/discussion thread. |
 | Documentation search terms/ link | Add a link or search terms|
-| Google Analytics search terms/ link | Add a link to a report or search terms |
-| Add Engineering Ticket Link | Add a link to the engineering ticket. |
 | Release Date | Add a tentative/actual release date of the feature. |
 | Link to PRD | Add a link to PRD, Design doc, or any other document that would help the documentation team better understand the feature. |
 | Link to test plan/cases | Add a link to the test plan or cases to help the documentation team understand the edge cases (if any). |
