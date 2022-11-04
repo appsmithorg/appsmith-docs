@@ -30,7 +30,6 @@ You could select one of the available templates for raising an issue.
 
 - Documentation Improvement - to raise an improvement request. You could select this issue for raising issues in the existing documents.
 - Documentation Feature - to raise a new documentation request. You could select this type of issue for raising a new documentation request.
-- Documentation Rehaul Improvement - to raise a Rehaul improvement request. You could select this type of issue for rewriting existing documentation.
 
 #### Documentation improvement
 
