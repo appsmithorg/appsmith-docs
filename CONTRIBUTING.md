@@ -1,6 +1,6 @@
 # Contributing to Appsmith documentation
 
-Thank you for your interest and for taking time to contribute to the Appsmith documentation. 🙌
+Thank you for your interest and for taking time to contribute to the Appsmith documentation project. 🙌
 Appsmith is a project by developers for developers. Appsmith documentation help developers learn and build apps faster on Appsmith.
 
 In this guide, you'll get an overview of the workflow from opening an issue, creating pull requests, reviewing, and merging.
@@ -30,7 +30,6 @@ You could select one of the available templates for raising an issue.
 
 - Documentation Improvement - to raise an improvement request. You could select this issue for raising issues in the existing documents.
 - Documentation Feature - to raise a new documentation request. You could select this type of issue for raising a new documentation request.
-- Documentation Rehaul Improvement - to raise a Rehaul improvement request. You could select this type of issue for rewriting existing documentation.
 
 #### Documentation improvement
 
@@ -61,28 +60,11 @@ You can use this template to raise a new documentation request. For example, if 
 | First Draft Link | Add the link to the first draft. (Typically, this would be the link to a sub-page available under First Drafts on the notion) |
 | Loom video link |  Add the link to a loom video that explains the feature. |
 | Discord/Slack/intercom link | Add the link to the appropriate channel/discussion thread. |
-| Add Engineering Ticket Link | Add a link to the engineering ticket. |
+| Documentation search terms/ link | Add a link or search terms|
 | Release Date | Add a tentative/actual release date of the feature. |
 | Link to PRD | Add a link to PRD, Design doc, or any other document that would help the documentation team better understand the feature. |
 | Link to test plan/cases | Add a link to the test plan or cases to help the documentation team understand the edge cases (if any). |
 | Add user use cases summary /user requests  |  Add a summary of user requests/use cases so the same can be included in the documentation. |
-
-#### Documentation rehaul improvement
-
-You can use this template to raise a Rehaul request when a document needs structural amendments or rewriting.
-
-![Documentation Rehaul Issue](/website/static/img/Documentation-Rehaul-Issue-Template.png)
-
-| Attribute | Description |
-| --- | --- |
-| Title | Title of the Doc Issue |
-| Existing Issue | Ensure that you’ve searched the existing issues for any similar issues if there are similar issues available. Update the existing issue with your scenario. |
-| GitBook insights search terms/ link | Add a link or search terms for the rehaul request. |
-| Google Analytics search terms/ link | Add a link to a report or search terms for the rehaul request. |
-| Discord/Slack/intercom link | Add the link to the appropriate channel/discussion thread. |
-| Describe the problem | Add a summary of issues or sections that needs improvements. |
-| Describe the improvement | Add a summary of improvements that you are requesting. |
-| Why do you think this change is needed?  |  Explain the reasons for which the change is requested. Add user queries/requests/issues and resolutions. |
 
 ## Pull request
 You would have to branch out from the ```main``` branch. Make changes to the existing documents or add a new document in this branch. Once you're happy, create a pull request[PR].
