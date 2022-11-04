@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+description: Audit logs allow you to keep records of everything that happens on your instance.
 ---
 
 # Audit logs
@@ -8,7 +9,7 @@ The audit log is a paper trail of all notable activities on an Appsmith instance
 
 
 :::info
-Audit logs are only available on self-hosted, business edition instances of Appsmith.
+Audit logs are only available on self-hosted, Business Edition instances of Appsmith.
 :::
 
 ![Access the Audit Logs from the Admin Settings page.](</img/as_auditlogs.png>)
@@ -30,7 +31,7 @@ There are several kinds of events that are logged:
 
 For an exhaustive list of events, see [Tracked Events](#tracked-events).
 
-# Filtering audit logs
+## Filtering audit logs
 
 Active workspaces generate thousands of log events. To help you quickly find the log you're looking for, Appsmith offers a number of search filters:
 
@@ -47,7 +48,7 @@ Active workspaces generate thousands of log events. To help you quickly find the
 
 From the JSON area of any event (accessed by clicking the log record), you can use the 🔍`event`, 🔍`email`, or 🔍`resource.id` buttons to add that value to the search filters.
 
-# Log contents
+## Log contents
 
 Each logged item has a number of data points that describe that event, including references to related apps, datasources, queries, and workspaces. This data is served in JSON format.
 
@@ -96,7 +97,7 @@ Below is an example of a log item:
 }
 ```
 
-# Tracked events
+## Tracked events
 
 The following table shows the events that appear in Appsmith's audit logs. In any given log record, you can find the event's name on the record's `event` property.
 
