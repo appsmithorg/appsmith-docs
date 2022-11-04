@@ -61,7 +61,7 @@ The <mark >`docker.env`</mark> file can be copied from the container with the fo
 docker cp appsmith:/appsmith-stacks/configuration/docker.env .
 ```
 
-:::caution
+:::note
 Please save the encryption environment variables <mark >`APPSMITH_ENCRYPTION_PASSWORD`</mark> and <mark >`APPSMITH_ENCRYPTION_SALT`</mark>values, from <mark >docker.env</mark> because the backup archive does not include them for security reasons.
 :::
 
@@ -89,7 +89,7 @@ You may also want to copy the <mark >`docker.env`</mark> from the original insta
 
 * Copy the <mark>`docker.env`</mark> file using the below command:
 
-:::caution
+:::tip
 If you are in the installation folder and <mark>`docker.env`</mark> exists in the same folder. If not, please append the path where the file resides to the below command.
 :::
 
@@ -166,7 +166,7 @@ docker-compose exec appsmith appsmithctl restore
 
 The command first lists all the backup archives in the directory <mark>`/appsmith-stacks/data/backup/`</mark> in ascending/chronological order (the most recent backup archive at the bottom).
 
-:::caution
+:::note
 You may see a **warning** if you restore an instance with an **older Appsmith version**. You can follow the **instructions to update** the <mark >`docker-compose.yml`</mark> file with the correct Appsmith image corresponding to the **instance to be restored**.
 :::
 

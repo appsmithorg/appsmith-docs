@@ -19,7 +19,7 @@ Form data can be submitted using a PUT / POST API or an Insert / Update Query. T
 
 ![](</img/form_query_(1).gif>)
 
-:::caution
+:::note
 Widgets inside a form are automatically reset to their default values when the Form Button onClick succeeds. This can be disabled in the button properties
 :::
 

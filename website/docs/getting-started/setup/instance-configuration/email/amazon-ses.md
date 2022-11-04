@@ -25,13 +25,13 @@ To configure Amazon SES as your SMTP server, [create an account](https://aws.ama
 
 **5. Verify the email address via which Appsmith should send and receive emails**
 
-:::caution
+:::note
 Follow the guide to [configure SPF for SMTP/emails to prevent emails from being flagged as Spam](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-spf.html).
 :::
 
 ![Verify Email Address](</img/aws_verify_email.png>)
 
-:::caution
+:::note
 You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
 :::
 
@@ -63,6 +63,6 @@ Your email service should now be configured correctly. Read more about [setting 
 
 **7.** [**Restart the Appsmith Instance**](../)
 
-:::caution
+:::note
 If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids. Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html).
 :::

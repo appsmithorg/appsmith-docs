@@ -29,8 +29,8 @@ This chart bootstraps an [Appsmith](https://github.com/appsmithorg/appsmith) dep
   * AWS EKS: [Install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb)
   * Microk8s: [Add on: Ingress](https://microk8s.io/docs/addon-ingress)
 
-:::caution
-Note: By default, the ingress controller will not have data compression enabled. You can enable it by following the steps listed in the [Nginx ingress controller compression](./#nginx-ingress-controller-compression-gzip) section.
+:::note
+By default, the ingress controller will not have data compression enabled. You can enable it by following the steps listed in the [Nginx ingress controller compression](./#nginx-ingress-controller-compression-gzip) section.
 :::
 
 ### Installing the Chart
@@ -292,7 +292,7 @@ kubectl edit configmap -n ingress-nginx ingress-nginx-controller
       gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
     ```
 
-:::caution
+:::note
 The Nginx controller will automatically update after saving (`:wq!`) the above changes.
 :::
 

@@ -24,7 +24,7 @@ description: >-
 
 **5. Configure the server-side integration on your backend**
 
-:::caution
+:::note
 The exact steps depend on your backend - see [Google's reference](https://developers.google.com/recaptcha/docs/verify) for detailed instructions.
 :::
 

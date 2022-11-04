@@ -27,7 +27,7 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![Click to expand](</img/sendgrid_create_sender.png>)
 
-:::caution
+:::note
 You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
 :::
 

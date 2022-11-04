@@ -5,11 +5,16 @@ sidebar_position: 17
 
 [Twilio](https://www.twilio.com/) is a customer engagement platform businesses use to build personalized customer experiences. Twilio provides APIs for voice, text, chat, video, and email integrations. By using these APIs, businesses build integrations that can provide updates to their customers in real-time.
 
-:::caution
+:::note
 To integrate Twilio with Appsmith, you should understand the [basics of connecting to databases](/core-concepts/connecting-to-data-sources/) on Appsmith.
 :::
 
 Appsmith integration with Twilio provides an easy way to manage your customer-focused messaging. With these integrations, you can design a custom UI on Appsmith to support easy integrations for users.
+
+<figure>
+  <object data="https://www.youtube.com/embed/QHrEfSxL-aA?autoplay=0" width='750px' height='400px'></object> 
+  <figcaption align="center"><i>How To Send SMS Notifications With Twilio</i></figcaption>
+</figure>
 
 ## Create Twilio Datasource
 
@@ -56,7 +61,7 @@ You’ll have to ensure that your **Twilio account** has a [Messaging Service se
 
 If you are using a Twilio trial account, you can only add the **Verified Caller IDs** in the destination phone number (**To)** field.
 
-:::caution
+:::info
 Read more on [how to work with your Free Twilio Account](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account).
 :::
 
@@ -116,7 +121,7 @@ You can get your **Twilio phone number** from the [account info](twilio.md#get-t
 
 > You can also read the [widget](./../widgets/README.md) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](./../widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
 
-:::caution
+:::note
 You can change the [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) by clicking the **settings** tab.
 :::
 
@@ -148,13 +153,13 @@ The destination phone number (**To**) should follow the [E.164 format](https://e
 * **Body** - Add the message text that you want to send to this field
 * **Send At** - Add the date and timestamp you want to schedule the message delivery. The data and timestamp should follow the format [ISO 8601 format](https://en.wikipedia.org/wiki/ISO\_8601).
 
-:::caution
+:::note
 &#x20;Please supply the date and timestamp for the `Send At` in the [UTC](https://en.wikipedia.org/wiki/Coordinated\_Universal\_Time).
 :::
 
 > You can also read the [widget](./../widgets/README.md) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](./../widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
 
-:::caution
+:::note
 The schedule data and timestamp should follow the [**Time range limitations for scheduled messages**](https://support.twilio.com/hc/en-us/articles/4412165297947-Message-Scheduling-FAQs-and-Beta-Limitations) as defined on Twilio Site.
 :::
 
@@ -253,7 +258,7 @@ You can get the **Message SID** from [List Message](twilio.md#list-message) Comm
 * **Body** - Add the updated message text to this field
 * **Status - Only** select **canceled** status if you wish to **cancel** the delivery of a **scheduled** message
 
-:::caution
+:::note
 You can change the [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) for all the queries by clicking the **settings** tab.
 :::
 

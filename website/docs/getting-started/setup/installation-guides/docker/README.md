@@ -20,13 +20,13 @@ Create an installation folder called `appsmith` where you would like your Appsmi
 
 ## Quick Start (with docker-compose)
 
-:::caution
+:::info
 Appsmith [auto-update](./#enabling-appsmith-auto-updates-with-docker-compose) now also supports auto-backup feature. This backup can be used to roll back an update to a previous version of Appsmith, if the user wants to.
 :::
 
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
 
-:::caution
+:::note
 You can expect one container running when using the `docker-compose ps` command. Something like:
 
 _#Container appsmith Running_
@@ -48,13 +48,13 @@ Download the below `docker-compose.yml` file into the appsmith installation fold
 curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
 ```
 
-:::caution
+:::note
 For the **Business Edition** - change the **image** name from `appsmith-ce` to `appsmith-ee` for the `image:` key in the `docker-compose.yml` file.
 :::
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date.
 
-:::caution
+:::note
 For the **Business Edition** - add your **license key** (`APPSMITH_LICENSE_KEY`) to the `environment:` key in the `docker-compose.yml` file.
 :::
 
@@ -74,7 +74,7 @@ You should see a message `Appsmith is Running!` once the container is ready. The
 
 ![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
-:::caution
+:::tip
 If you are **unable** to **locate** the message but can **access** Appsmith via **localhost** or a **custom domain** you have **created**, then Appsmith is up and running.
 :::
 
@@ -137,7 +137,7 @@ You should see a message `Appsmith is Running!` once the container is ready. The
 
 ![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
-:::caution
+:::tip
 If you are **unable** to **locate** the message but can **access** Appsmith via **localhost** or a **custom domain** you have **created**, then Appsmith is up and running.
 :::
 

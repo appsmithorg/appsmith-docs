@@ -5,9 +5,14 @@ sidebar_position: 9
 
 [MongoDB](https://www.mongodb.com) is a document-oriented NoSQL database used for high-volume data storage. It doesn't store the data in the form of tables and rows as in traditional relational databases. Instead, it stores the data in collections and documents in JSON format (using key-value pairs).
 
-:::caution
+:::note
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
+
+<figure>
+  <object data="https://www.youtube.com/embed/F_By1KmJKrk?autoplay=0" width='750px' height='400px'></object> 
+  <figcaption align="center"><i>Build a MongoDB Panel</i></figcaption>
+</figure>
 
 ## Connection Settings
 
@@ -68,7 +73,7 @@ Map the URI fields as below:
 * `@username` - the username of the MongoDB you wish to connect to.
 * `@password` - the password of the MongoDB you want to connect to.
 
-:::caution
+:::tip
 If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
 :::
 
@@ -87,7 +92,7 @@ The <mark style={{color:'#d33d3f'}}>`defaultauthdb`</mark> is a <mark style={{co
 
 * `@authDB` - the database that stores the authorization information and authenticates the credentials. If you wish to use any other database instead of defaultauthdb, you can add the auth database name using the authSource keyword.
 
-:::caution
+:::note
 If <mark style={{color:'#d33d3f'}}>**`authSource`**</mark> is unspecified, Appsmith attempts to authenticate using the <mark style={{color:'#d33d3f'}}>admin</mark> database.
 :::
 
@@ -128,13 +133,13 @@ Like [standard format](./#standard-connection-string-format), you can map the fi
 
 * `mongodb+srv://` - a prefix to identify that it’s a DNS Seed List format.
 
-:::caution
+:::note
 Using the <mark style={{color:'#d33d3f'}}>`+srv`</mark> automatically sets the TLS or SSL option to true. If you wish to turn off the TLS or SSL option, set <mark style={{color:'#d33d3f'}}>`tls/ssl=false`</mark> in the query string.
 :::
 
 * Like Standard format, you can add `username`, `password`, `host`, `port`, `default database,` and `authSource`.
 
-:::caution
+:::tip
 If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
 :::
 
@@ -327,7 +332,7 @@ The above example performs an aggregate operation on the articles collection to 
 
 You can use a `Raw` command to write your custom Mongo queries.
 
-:::caution
+:::info
 The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/).
 :::
 

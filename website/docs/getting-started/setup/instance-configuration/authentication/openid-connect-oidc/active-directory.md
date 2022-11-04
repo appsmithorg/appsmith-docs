@@ -61,16 +61,22 @@ On the application homepage, go to the overview tab and perform the following ac
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. You'll see the Scope field below the **JSON Web Key Set**:
 
-![Configure Scope(s) at Appsmith](/img/Appsmith-Scope-Field.png)
+![Configure Scope(s) at Appsmith](/img/as_oidc_offline.png)
 
 #### What does Appsmith need as part of Scopes?
 
-Appsmith needs **openId** as a mandatory scope. You can add more scopes if the need be. You'll have to ensure that the same is available at Active Directory.
+Appsmith needs **openid** as a mandatory scope. It's also highly recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
+
+:::info
+Enabling the `offline_access` scope enables your app to receive refresh tokens that extend the duration that your users have access to their resources. To read more, see the [Active Directory documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#offline_access).
+:::
+
+You can add more scopes if you wish, provided that they're available via Active Directory.
 
 ### Configure Scopes in Active Directory
 
 <figure>
-  <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='750px' height='400px'></object> 
+  <object data="https://youtube.com/embed/D1qA11NKbNY?autoplay=0" width='750px' height='400px'></object> 
    <figcaption align="center"><i>Configuring scopes in Active Directory</i></figcaption>
 </figure>
 
@@ -93,7 +99,7 @@ To configure scopes/permissions on Active Directory, follow the steps below:
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
-![Appsmith Username Attribute](</img/OIDC___Active_Directory___Username_Attribute___sub.png>)
+![Appsmith Username Attribute](/img/as_activedir_usernameattr.png)
 
 #### What does Appsmith need as a Username Attribute?
 

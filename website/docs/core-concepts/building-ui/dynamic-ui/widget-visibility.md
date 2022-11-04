@@ -14,7 +14,7 @@ In the example below the visibility of the table is a conditional value based on
 {{RadioGroup1.selectedOptionValue === "Visible"}}
 ```
 
-:::caution
+:::note
 The Visible property expects the expression to evaluate to a boolean value
 :::
 

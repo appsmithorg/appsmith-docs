@@ -18,7 +18,7 @@ Cloud-hosted version is available over the internet, which makes it easy for use
 
 You can choose to deploy Appsmith on your own infrastructure. It's often useful when you want to plug it into existing infrastructure without the need to maintain a different setup. It enables you to take advantage of what your infrastructure has to offer and extend it to Appsmith.
 
-:::caution
+:::info
 Appsmith collects [usage data](../../product/telemetry.md) to serve you better. You can choose to [opt out](../../product/telemetry.md#disable-telemetry) at any time.
 :::
 
@@ -44,7 +44,7 @@ Appsmith uses MongoDB to store app data and Redis to store session information a
 
 You can configure more flexible updates, schedules, and other maintenance activities for a self-hosted instance. You can follow the steps to configure [maintenance window and schedule auto updates](./instance-management/maintenance-window.md).
 
-:::caution
+:::note
 The self-hosted version isn't air-gapped and reaches out to the Appsmith cloud. For example, to fetch release notes about product updates. It helps you stay updated with the latest releases. If you would like a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
 :::
 
@@ -97,6 +97,6 @@ You can also effectively [manage your self-hosted instance](./instance-managemen
 
 Deploying Appsmith as a self-hosted instance has its own perks - having your data and apps hosted on your infrastructure. It's also easier to manage things such as \[backups]\(Link to Appsmithctl page) and scaling that follow the rules across deployed instances. Get started by following the \[installation guides]\(link to the installation guide) that work for you.
 
-:::caution
+:::info
 Are you having trouble deploying Appsmith? Check out the [deployment troubleshooting guide](../../help-and-support/troubleshooting-guide/deployment-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you **know** the error and want to **reinstall**, **delete** the **installation** and **templates** folder, and **execute** the script **again**.
 :::

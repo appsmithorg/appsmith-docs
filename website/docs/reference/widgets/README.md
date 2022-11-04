@@ -14,7 +14,7 @@ In the left navigation pane, navigate to PAGES —> Select the "Widget" Tab —>
 
 A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
 
-:::caution
+:::info
 Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as widget names.
 :::
 
