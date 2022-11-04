@@ -98,30 +98,6 @@
   will-change: auto!important;
 }
 
-.navbar__item.navbar__link {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.DocSearch-Button {
-  border-radius: 8px !important;
-  box-shadow: inset 0 0 0 1px var(--c-indigo-30) !important;
-  width: 14rem !important;
-}
-
-.nav-link_get-appsmith {
-  background-color: #f86a2b;
-  border-radius: 0.25em;
-  font-weight: 500;
-  margin-right: 0.5rem;
-  margin-left : 0.5rem;
-  padding: 0.5rem 1rem;
-  text-transform: capitalize;
-  white-space: nowrap;
-  color:#f3f5f7;
-  font-size: .875rem;
-}
-
 .navbar__items--right > :last-child:hover {
   background-color: #df5b23;
   color: #fff;
