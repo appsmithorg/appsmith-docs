@@ -85,10 +85,6 @@ To update Appsmith (configured with docker-compose) manually, go to the root dir
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-:::info
-Appsmith now also has [backup and restore](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) features. If necessary, you can use this to roll back an update to a previous version of Appsmith.
-:::
-
 ### Enabling Appsmith auto-updates
 
 Automatic updates are disabled by default in the docker-compose.yml file. If you would like to enable automatic updates for Appsmith, please follow these steps:
@@ -105,6 +101,10 @@ docker-compose down
 ```
 docker-compose up -d
 ```
+
+:::info
+To compliment automatic updates, Appsmith now also has an auto-backup feature. Before an automatic update, Appsmith first creates a backup to ensure you can [roll back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary.
+:::
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date. Your installation is now configured to stay up-to-date automatically.
 
@@ -157,10 +157,6 @@ docker pull appsmith/appsmith-ee
 docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> appsmith/appsmith-ee
 ```
-
-:::info
-Appsmith now also has [backup and restore](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) features. If necessary, you can use this to roll back an update to a previous version of Appsmith.
-:::
 
 ---
 
