@@ -12,7 +12,7 @@ Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/lear
 ## Prerequisites
 
 * [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
-* [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later) _(Optional)_
+* [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later) _(Recommended)_
 
 1. Create an installation folder called `appsmith` where you would like your Appsmith installation and data storage.
 2. `cd` into the installation folder.
@@ -39,7 +39,11 @@ The Appsmith Docker image contains all the components required to run within a s
 
 Click the link below to download the `docker-compose.yml` file, and place it into your Appsmith installation folder.
 
-<a target="_blank" href='/img/docker-compose_(3).yml' download="docker-compose_(3).yml">docker-compose.yml (Click to Download)</a>
+<div class="downloadAssets">
+    <a target="_blank" href='/img/docker-compose_(3).yml' download="docker-compose_(3).yml">
+     <img src="/img/FileDownload.png" alt="Click to Download"/>
+    </a>
+</div>
 
 **OR,** run the following curl:
 
