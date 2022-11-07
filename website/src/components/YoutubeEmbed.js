@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function YoutubeEmbed(props) {
-    const { title, videoId, caption, bgColor } = props;
+    const { title, videoId, caption } = props;
     return (
-      <div style={{ backgroundColor: bgColor ? bgColor : 'transparent' }}>
         <figure style={{
           width: '100%',
           margin: '0',
@@ -18,11 +17,10 @@ export default function YoutubeEmbed(props) {
             srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://youtube.com/embed/${videoId}><img src=https://img.youtube.com/vi/${videoId}/maxresdefault.jpg alt='${title}'><span>▶</span></a>`}
             frameBorder="0"
             allowFullScreen
-            title={title}
+            title={title ? title : 'YouTube video player'}
             loading="lazy"
           ></iframe>
-          <figcaption>{caption}</figcaption>
+          { caption && <figcaption>{caption}</figcaption> }
         </figure>
-      </div>
     );
   };
