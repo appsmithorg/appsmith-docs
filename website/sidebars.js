@@ -416,6 +416,7 @@ const sidebars = {
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/access-control',
+        'advanced-concepts/audit-logs',
         {
           type: 'category',
           label: 'Version Control With Git',
@@ -429,16 +430,6 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/merging-branches',
             'advanced-concepts/version-control-with-git/disconnect-the-git-repository',
             'advanced-concepts/version-control-with-git/updating-local-file-path'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Audit Logs',
-          link: {type: 'doc', id:  'advanced-concepts/audit-logs/README'},
-          items: [
-            'advanced-concepts/audit-logs/filtering-audit-logs',
-            'advanced-concepts/audit-logs/log-contents',
-            'advanced-concepts/audit-logs/tracked-events'
           ]
         },
         {
