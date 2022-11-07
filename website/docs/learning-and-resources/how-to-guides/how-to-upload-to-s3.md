@@ -6,9 +6,7 @@ sidebar_position: 5
 
 Files can be uploaded to Amazon S3 using the S3 plugin and FilePicker Widget. This document presumes you have successfully [connected to your S3 instance](/reference/datasources/querying-amazon-s3.md)
 
-<figure>
-  <object data="https://www.youtube.com/embed/pmEmQcd9_KA?autoplay=0" width='750px' height='400px'></object> 
-</figure>
+  <YoutubeEmbed videoId="pmEmQcd9_KA" /> 
 
 ## Uploading a File
 

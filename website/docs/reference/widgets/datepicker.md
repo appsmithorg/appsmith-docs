@@ -2,10 +2,7 @@
 
 Datepicker is used to capture the date and time input by a user. It can be used to filter data based on the input date range as well as to capture personal information such as date of birth.
 
-<figure>
-  <object data="https://www.youtube.com/embed/MFflGf3K324?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Datepicker Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="MFflGf3K324" title="How to use Datepicker Widget" caption="How to use Datepicker Widget"/>
 
 ## Properties
 
@@ -90,10 +87,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<figure>
-  <object data="https://www.youtube.com/embed/y6LwyDgojoE?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to set the label properties?</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="y6LwyDgojoE" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 

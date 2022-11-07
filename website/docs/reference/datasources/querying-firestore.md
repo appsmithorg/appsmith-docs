@@ -49,10 +49,7 @@ The above details are available from the Firebase Console. Let's fetch each one 
 
 The video below explains how to connect to Firestore.
 
-<figure>
-  <object data="https://www.youtube.com/embed/6hpMy2s-xDQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Connecting Firestore on Appsmith</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="6hpMy2s-xDQ" title="Connecting Firestore on Appsmith" caption="Connecting Firestore on Appsmith"/>
 
 
 ## Understanding Commands
@@ -80,10 +77,7 @@ For example, setting the path to users/sherlock@gmail.com will get the document 
 
 Below is a video that shows how you can fetch a single document from the firestore. The below example fetches task details. Here the number represents the issue ID. As a result, **task/issue_id** provides information about that specific issue.
 
-<figure>
-  <object data="https://www.youtube.com/embed/RdieZyfXLfs?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Fetching Single Document</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="RdieZyfXLfs" title="Fetching Single Document" caption="Fetching Single Document"/>
 
 ### Fetching Multiple Documents
 
@@ -95,10 +89,7 @@ Below is a video that shows how you can fetch a single document from the firesto
 
 The video below shows how you can fetch multiple documents from the firestore. The example below fetches all the documents from a collection.
 
-<figure>
-  <object data="https://www.youtube.com/embed/nuc18ARTfGk?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Fetching Multiple Document</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="nuc18ARTfGk" title="Fetching Multiple Document" caption="Fetching Multiple Document"/>
 
 We now have our query; let's bind this onto the table widget; for this, follow the below steps:
 
@@ -291,10 +282,7 @@ Note: The \{{ Table1.selectedRow.\_ref \}} snippet evaluates to the selected row
 
 Here, we have an edited query that collects all the data from the form widgets on Modal2. Note that we use the mustache syntax to bind the data from the widgets onto the query body. We’ll now need to configure the submit button; Go back to Modal2, set the button’s onClick property to execute a query, and choose _**editTask**_ under the events property.
 
-<figure>
-  <object data="https://www.youtube.com/embed/yW8m8kydNhQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Updating Document</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="yW8m8kydNhQ" title="Updating Document" caption="Updating Document"/>
 
 ## Deleting Document
 

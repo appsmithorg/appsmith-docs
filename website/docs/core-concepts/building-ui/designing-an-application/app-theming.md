@@ -2,10 +2,7 @@
 
 App theming allows you to style your pages and [widgets](../../../reference/widgets/) using global controls, making it easy to change the visual layout with a single click.
 
- <figure>
- <object data="https://www.youtube.com/embed/v6Lc3p6lv7o?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>How to use App themes</i></figcaption>
-</figure>
+ <YoutubeEmbed videoId="v6Lc3p6lv7o" title="How to use App themes" caption="How to use App themes"/>
 
 Themes are application-level styles that apply to all the widgets linked to the theme properties.
 
@@ -55,10 +52,7 @@ All apps support theming, but apps created before the new theme options might st
 
 To update your older apps to use theming, you will need to use the **Reset widget styles** button from the menu in the **Theme Properties** pane.
 
-<figure>
- <object data="https://www.youtube.com/embed/6W-EIPKCNK8?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Reset all Widget Styles</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="6W-EIPKCNK8" title="Reset all Widget Styles" caption="Reset all Widget Styles"/>
 
 
 

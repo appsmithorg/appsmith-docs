@@ -9,10 +9,7 @@ The following document assumes that you understand the [basics of connecting to 
 
 The SMTP plugin can connect to an SMTP server and send dynamic emails to a list of recipients.
 
-<figure>
-  <object data="https://www.youtube.com/embed/hAln7o1aUA4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<YoutubeEmbed videoId="hAln7o1aUA4" title="" caption=""/>
 
 ## Connection settings
 

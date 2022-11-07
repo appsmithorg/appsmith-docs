@@ -210,9 +210,5 @@ You need to have the browser console open to make the debugger work.
 Aside from using the `debugger`, it is also possible to use `console.log()` to inspect various parts of your code. The video below illustrates how to do this:
 
 
-<figure>
-<object data="https://www.youtube.com/embed/YLnvb9_k96s" width='750px' height='400px'></object>)
-<figcaption align = "center"><i>How to Debug
-</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="YLnvb9_k96s" title="How to Debug" caption="How to Debug"/>
 

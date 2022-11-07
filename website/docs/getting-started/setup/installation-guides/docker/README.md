@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
 
-<object data="https://www.youtube.com/embed/Tde7GqE6FQQ?autoplay=0" width='750px' height='400px'></object> 
+<YoutubeEmbed videoId="Tde7GqE6FQQ" /> 
 
 ## Prerequisites
 

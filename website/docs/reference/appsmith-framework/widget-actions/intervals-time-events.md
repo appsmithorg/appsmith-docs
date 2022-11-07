@@ -7,11 +7,7 @@ sidebar_position: 9
 Interval events (Timing functions in JavaScript) allow the user to periodically run APIs and DB queries. You can configure these by using the setInterval and clearInterval functions.
 
 
-<figure>
-<object data="https://www.youtube.com/embed/ByE3aqlQ1pE" width='750px' height='400px'></object>
-<figcaption align = "center"><i>How To Use The SetInterval & ClearInterval Functions To Auto-Update Widgets
-</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="ByE3aqlQ1pE" title="How To Use The SetInterval & ClearInterval Functions To Auto-Update Widgets" caption="How To Use The SetInterval & ClearInterval Functions To Auto-Update Widgets"/>
 
 
 

@@ -2,10 +2,7 @@
 
 The Progress widget indicates the progress of certain user performed or system triggered actions.
 
-<figure>
-  <object data="https://www.youtube.com/embed/Yg1Pfy7uc1s?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Progress Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="Yg1Pfy7uc1s" title="How to use Progress Widget" caption="How to use Progress Widget"/>
 
 ## Properties
 

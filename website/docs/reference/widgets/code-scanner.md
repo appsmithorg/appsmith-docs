@@ -40,10 +40,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 Text/Label is a widget property that lets you set the text inside the button, describing the function it performs. It displays static text on the button. For example, you can enter "Scan Menu" as the label for a button that scans the restaurant menu.
 
-<figure>
-  <object data="https://www.youtube.com/embed/o80-IKcXAVQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Text Property</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="o80-IKcXAVQ" title="How to use Text Property" caption="How to use Text Property"/>
 
 #### Value
 
@@ -59,10 +56,7 @@ For example, let's take a Code Scanner widget (`CodeScanner1`) and bind its valu
 {{CodeScanner1.value}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/zfkpIzaiTX0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Value Property</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="zfkpIzaiTX0" title="How to use Value Property" caption="How to use Value Property"/>
 
 ## Events
 
@@ -88,10 +82,7 @@ In this example, we will use the [Modal widget](./modal.md) to display the code 
 
 Whenever a valid code is detected, a modal window displaying the code response will show up. The video below demonstrates how to achieve that.
 
-<figure>
-  <object data="https://www.youtube.com/embed/_2p1bMbdk6U?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>onCodeDetected</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="_2p1bMbdk6U" title="onCodeDetected" caption="onCodeDetected"/>
 
 ## Styles
 

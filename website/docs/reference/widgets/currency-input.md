@@ -2,10 +2,7 @@
 
 The currency input widget gives you an input field to capture a user's currency input.
 
-<figure>
-  <object data="https://www.youtube.com/embed/I-FusTdnJeE?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Currency Input Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="I-FusTdnJeE" title="How to use Currency Input Widget" caption="How to use Currency Input Widget"/>
 
 ## Properties
 
@@ -39,28 +36,19 @@ Let's understand the widget properties in detail.
 
 It enables/disables the currency dropdown next to the input box. If you enable this property, the user can change the currency from the dropdown.
 
-<figure>
-  <object data="https://www.youtube.com/embed/Rvzi2nUqimc?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Allow Currency Exchange</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="Rvzi2nUqimc" title="Allow Currency Exchange" caption="Allow Currency Exchange"/>
 
 #### Placeholder
 
 You can set a proxy text/value inside the input box using the placeholder property. It can be any message or hint for the expected input.
 
-<figure>
-  <object data="https://www.youtube.com/embed/OimnFGTYCz8?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Placeholder</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="OimnFGTYCz8" title="Placeholder" caption="Placeholder"/>
 
 #### Default text
 
 This property lets you set a default value for the widget before the user has made any changes. The value must be a **number** datatype.
 
-<figure>
-  <object data="https://www.youtube.com/embed/1vZ6sj1Azf4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Default text</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="1vZ6sj1Azf4" title="Default text" caption="Default text"/>
 
 #### Regex
 
@@ -74,19 +62,13 @@ For example, let’s add a regular expression for entering a price in multiples 
 
 If you enter a value other than a multiple of 5, the widget will show an error message “_invalid input._”
 
-<figure>
-  <object data="https://www.youtube.com/embed/XLygxNmpdUQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Regular Expression (Regex)</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="XLygxNmpdUQ" title="Regular Expression (Regex)" caption="Regular Expression (Regex)"/>
 
 #### Error Message
 
 If a user enters an incorrect value, the input widget shows a message “_invalid input_.” You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
-<figure>
-  <object data="https://www.youtube.com/embed/wMhLTemn32Y?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Error Message</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="wMhLTemn32Y" title="Error Message" caption="Error Message"/>
 
 #### Required
 
@@ -100,10 +82,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Required property, and the input box will show an error message “_This field is required_” if you have not entered any input.
 
-<figure>
-  <object data="https://www.youtube.com/embed/K3VkoyWXcCo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Error Message</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="K3VkoyWXcCo" title="Error Message" caption="Error Message"/>
 
 #### Visible
 
@@ -117,10 +96,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Visible property, and the input box will be visible in the app.
 
-<figure>
-  <object data="https://www.youtube.com/embed/OP123TD8s5w?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Error Message</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="OP123TD8s5w" title="Error Message" caption="Error Message"/>
 
 #### Disabled
 
@@ -134,29 +110,20 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Disabled property and prevent a user input in the input box.
 
-<figure>
-  <object data="https://www.youtube.com/embed/oVmw_LSHfJw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Disabled</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="oVmw_LSHfJw" title="Disabled" caption="Disabled"/>
 
 #### Reset on Submit
 
 When `Reset on Submit` is enabled, the widget resets or clears the entered input after the user submits it.\
 Let’s use the event `onSubmit` to show a message when input is submitted. You’ll see once the user submits and the message pops up, the currency input widget will reset itself to its original state.
 
-<figure>
-  <object data="https://www.youtube.com/embed/9c0o4UF9hGk?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Disabled</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="9c0o4UF9hGk" title="Disabled" caption="Disabled"/>
 
 #### Auto Focus
 
 When you enable `Auto focus`, the cursor focuses on the input box whenever the widget is loaded.
 
-<figure>
-  <object data="https://www.youtube.com/embed/htoB7zcyT5g?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Disabled</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="htoB7zcyT5g" title="Disabled" caption="Disabled"/>
 
 ### Binding Properties
 
@@ -193,10 +160,7 @@ For example, let's take the widget `currencyinput1` and bind its text to a text 
 
 The text widget will then display the data present in the currency input widget.
 
-<figure>
-  <object data="https://www.youtube.com/embed/uNopiIWdih0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Text</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="uNopiIWdih0" title="Text" caption="Text"/>
 
 This property has many applications like it helps in parsing the values entered in the widget to a query.
 
@@ -220,10 +184,7 @@ For example, let's take a widget `currencyinput1` and bind its value to a text w
 
 The text widget will then display the value present in the currency input widget.
 
-<figure>
-  <object data="https://www.youtube.com/embed/TaKMTGZ5UwQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Value</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="TaKMTGZ5UwQ" title="Value" caption="Value"/>
 
 #### currencyCode
 
@@ -234,10 +195,7 @@ Let's take a widget `currencyinput1` use this property to display the selected c
 {{currencyinput1.currencyCode}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/EVksywb2UR4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Currency Code</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="EVksywb2UR4" title="Currency Code" caption="Currency Code"/>
 
 #### countryCode
 
@@ -249,10 +207,7 @@ Let's take a widget `currencyinput1` use this property to display the selected c
 {{currencyinput1.currencyCode}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/A6xeE12Igcw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Country Code</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="A6xeE12Igcw" title="Country Code" caption="Country Code"/>
 
 ### Events
 
@@ -298,10 +253,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 
 You can leave the label empty if you don’t want any labels.
 
-<figure>
-  <object data="https://www.youtube.com/embed/zlEEwBXErd0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to set Lable Properties</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="zlEEwBXErd0" title="How to set Lable Properties" caption="How to set Lable Properties"/>
 
 | Label Styles         | Description                                                                                                                          |   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | - |

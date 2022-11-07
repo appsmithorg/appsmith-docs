@@ -2,10 +2,7 @@
 
 Audio widget allows you to play a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
 
-<figure>
-  <object data="https://www.youtube.com/embed/FhY6-yUixto?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Audio Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="FhY6-yUixto" title="How to use Audio Widget" caption="How to use Audio Widget"/>
 
 ## Properties
 

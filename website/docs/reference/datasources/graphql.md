@@ -15,10 +15,7 @@ To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next 
 You can choose to create a one-off query by selecting [_**Create New GraphQL API**_](graphql.md#datasource-page)_**.**_
 :::
 
-<figure>
-  <object data="https://www.youtube.com/embed/lIb2SGnQFm4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Create GraphQL Datasource</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="lIb2SGnQFm4" title="Create GraphQL Datasource" caption="Create GraphQL Datasource"/>
 
 ## Connection Settings
 
@@ -91,10 +88,7 @@ You can create and run queries for an existing GraphQL datasource. You can provi
 
 Let’s take an example to understand how **“Create new GraphQL API”** works.
 
-<figure>
-  <object data="https://www.youtube.com/embed/kEjCQ9o4Ozs?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<YoutubeEmbed videoId="kEjCQ9o4Ozs" title="" caption=""/>
 
 :::info
 To understand GraphQL query creation, let's use the [Public GraphQL API](https://countries.trevorblades.com/) that gives information about continents and countries.
@@ -255,10 +249,7 @@ In GraphQL, you **insert**, **update** or **delete** data with mutations. A **Mu
 
 Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into a **database table** with **specified table values**.
 
-<figure>
-  <object data="https://www.youtube.com/embed/zy1wcfgyNjg?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Create New Record</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="zy1wcfgyNjg" title="Create New Record" caption="Create New Record"/>
 
 * Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query to **`create_user`**.
@@ -284,10 +275,7 @@ You can create a new issue using the [button ](./../widgets/button/README.md)and
 
 Update queries let you update existing objects of a particular type. With an update query, you can filter nodes and set or remove any field belonging to a type.
 
-<figure>
-  <object data="https://www.youtube.com/embed/iOnuUo8F-DQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<YoutubeEmbed videoId="iOnuUo8F-DQ" title="" caption=""/>
 
 * Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query to **`update_users`**.
@@ -364,10 +352,7 @@ Using both limit and offset skips both rows and limits the rows returned.
 
 Let's take an example to understand how Limit/Offset Based Pagination works.
 
-<figure>
-  <object data="https://www.youtube.com/embed/wxVP--GMBVQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Limit/Offset Based Pagination</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="wxVP--GMBVQ" title="Limit/Offset Based Pagination" caption="Limit/Offset Based Pagination"/>
 
 * Add the following code in the body section:
 
@@ -494,10 +479,7 @@ You can check this [document](/core-concepts/data-access-and-binding/displaying-
 
 With this, you can run a query on a page change event. The below video demonstrates how you can perform cursor-based pagination:
 
-<figure>
-  <object data="https://www.youtube.com/embed/R9yUCBb_OFo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<YoutubeEmbed videoId="R9yUCBb_OFo" title="" caption=""/>
 
 ### **Query Settings**
 

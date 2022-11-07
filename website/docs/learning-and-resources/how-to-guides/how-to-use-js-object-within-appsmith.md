@@ -246,10 +246,7 @@ Add a table widget onto the canvas, name it as `AfterJSCall` and bind the JS fun
 
 Here’s a video that shows how the above code works:
 
-<figure>
-  <object data="https://www.youtube.com/embed/Y5k71xnOw3I?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>How to use JS object within Appsmith</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="Y5k71xnOw3I" title="How to use JS object within Appsmith" caption="How to use JS object within Appsmith"/>
 
 ## Conclusion
 

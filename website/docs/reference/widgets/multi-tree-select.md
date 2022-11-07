@@ -2,10 +2,7 @@
 
 The multi-tree-select widget captures the user input from a specified list of permitted options, and these options can have child options within them. It captures multiple choices.
 
-<figure>
-  <object data="https://www.youtube.com/embed/XaaFY0grXjE?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Multi-tree-select Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="XaaFY0grXjE" title="How to use Multi-tree-select Widget" caption="How to use Multi-tree-select Widget"/>
 
 ### Displaying Data
 
@@ -122,10 +119,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<figure>
-  <object data="https://www.youtube.com/embed/g6IIejdNmfU?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i> How to set the label properties?</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="g6IIejdNmfU" title=" How to set the label properties?" caption=" How to set the label properties?"/>
 
 ### Styles
 

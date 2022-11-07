@@ -5,11 +5,7 @@ description: Guide on how to embed Appsmith into an existing application
 
 # Embed Apps
 
-<figure>
- <object data="https://www.youtube.com/embed/l7508s-5VwU" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Embed Appsmith in your Website
-</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="l7508s-5VwU" title="Embed Appsmith in your Website" caption="Embed Appsmith in your Website"/>
 
 
 
@@ -38,11 +34,7 @@ You'll also have to ensure your app is public to embed into other applications. 
 
 
 
-<figure>
- <object data="https://www.youtube.com/embed/gD0xV-Tt1_U" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Follow these steps to make your application public
-</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="gD0xV-Tt1_U" title="Follow these steps to make your application public" caption="Follow these steps to make your application public"/>
 
 Next, create an `iframe` tag and add the shareable link from share options to the `src` attribute with height and width set to `500` and `100%` respectively.
 

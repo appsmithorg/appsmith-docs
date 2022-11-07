@@ -140,10 +140,7 @@ If you have accidentally opted for Telemetry, you can disable it. You can either
 
 * Navigate to **Profile** >> Click **Admin Settings** >> Click on **General** >> Scroll to **Share anonymous usage** **data.**
 
-<figure>
-  <object data="https://www.youtube.com/embed/di3CkNX7oUQ?autoplay=0" width='750px' height='400px'></object>   
-   <figcaption align="center"><i>How to disable telemetry from Admin Settings?</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="di3CkNX7oUQ" title="How to disable telemetry from Admin Settings?" caption="How to disable telemetry from Admin Settings?"/>
 
 * Toggle to turn off telemetry
 
@@ -164,10 +161,7 @@ APPSMITH_DISABLE_TELEMETRY=true
 
 * Save Changes
 
-<figure>
-  <object data="https://www.youtube.com/embed/a8_S2fhskW4?autoplay=0" width='750px' height='400px'></object>   
-   <figcaption align="center"><i>How to disable telemetry?</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="a8_S2fhskW4" title="How to disable telemetry?" caption="How to disable telemetry?"/>
 
 * Open the terminal and navigate to the location where the `docker-compose.yml` file is located **`(docker host directory)`**.
 * Copy and paste the below command to restart the container:

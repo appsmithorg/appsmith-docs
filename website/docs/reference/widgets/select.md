@@ -2,10 +2,7 @@
 
 ‌Select / Dropdown widget is used to capture user input/s from a specified list of permitted inputs.
 
-<figure>
-  <object data="https://www.youtube.com/embed/zNw1yMwg-aY?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Select Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="zNw1yMwg-aY" title="How to use Select Widget" caption="How to use Select Widget"/>
 
 ### Displaying Data
 
@@ -120,10 +117,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<figure>
-  <object data="https://www.youtube.com/embed/wyQGr-ggvhM?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to set the label properties?</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="wyQGr-ggvhM" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 
@@ -143,8 +137,5 @@ The Select widget has the option to configure server-side filtering, where searc
 
 The video below explains how to configure this.
 
-<figure>
-  <object data="https://www.youtube.com/embed/QDmTwRaLzHg?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Server-side Filtering</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="QDmTwRaLzHg" title="Server-side Filtering" caption="Server-side Filtering"/>
 

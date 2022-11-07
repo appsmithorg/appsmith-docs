@@ -13,10 +13,7 @@ To configure OpenID Connect(OIDC) within Appsmith using Active Directory as an O
 
 ### Create an Application
 
-<figure>
-  <object data="https://www.youtube.com/embed/GDOVdeIe3VU?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Creating an application in Active Directory</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="GDOVdeIe3VU" title="Creating an application in Active Directory" caption="Creating an application in Active Directory"/>
 
 1. Log in to your [Azure](https://portal.azure.com/#allservices) account and click on **More services**.
 2. Click on Azure Active Directory and hit “**+Add**.” From the "+Add" dropdown, select “**App Registration**.”
@@ -36,14 +33,11 @@ On the application homepage, go to the overview tab and perform the following ac
   * Add the key's description and expiration time in the “**Add a client secret**” pop-up. Click on Save.
   * Copy the value of the new Client secret and add it under **Client secret** in the OIDC configurations in Appsmith.
 
-<figure>
-  <object data="https://www.youtube.com/embed/AcpfV0sQ26w?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Creating a new Client secret in Active Directory</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="AcpfV0sQ26w" title="Creating a new Client secret in Active Directory" caption="Creating a new Client secret in Active Directory"/>
 
 * Click the **Endpoints** tab under App overview and copy the **OpenID Connect metadata document** URL.
 
-  <object data="https://www.youtube.com/embed/v6N09_Q5LoY?autoplay=0" width='750px' height='400px'></object> 
+  <YoutubeEmbed videoId="v6N09_Q5LoY" /> 
 
 
 * Open the metadata URL in a browser window and copy the following configurations from the above link and add them to OIDC Configurations on Appsmith:
@@ -75,10 +69,7 @@ You can add more scopes if you wish, provided that they're available via Active 
 
 ### Configure Scopes in Active Directory
 
-<figure>
-  <object data="https://youtube.com/embed/D1qA11NKbNY?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Configuring scopes in Active Directory</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="D1qA11NKbNY" title="Configuring scopes in Active Directory" caption="Configuring scopes in Active Directory" />
 
 To configure scopes/permissions on Active Directory, follow the steps below:
 

@@ -7,7 +7,7 @@ sidebar_position: 6
 
 # DigitalOcean
 
-<object data="https://www.youtube.com/embed/6fitHGX2G4E?autoplay=0" width='750px' height='400px'></object> 
+<YoutubeEmbed videoId="6fitHGX2G4E" /> 
 
 
 

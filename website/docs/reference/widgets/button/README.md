@@ -2,10 +2,7 @@
 
 The button widget is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly.
 
-<figure>
- <object data="https://www.youtube.com/embed/8FOJ1CFRQcU?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>How to use Button Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="8FOJ1CFRQcU" title="How to use Button Widget" caption="How to use Button Widget"/>
 
 ## Properties
 
@@ -31,10 +28,7 @@ Let's understand the widget properties in detail.
 
 It lets the user set the text inside the button, describing the function it performs. For example, if a button performs an action that updates the data, you can enter the label as "Update."
 
-<figure>
- <object data="https://www.youtube.com/embed/VdUrYvo06mc?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Label</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="VdUrYvo06mc" title="Label" caption="Label"/>
 
 #### Visible
 
@@ -48,10 +42,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 
 When you tick the checkbox, it will enable the Visible property, and the button will be visible in the app.
 
-<figure>
- <object data="https://www.youtube.com/embed/mFVSVgbGsSA?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Visible</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="mFVSVgbGsSA" title="Visible" caption="Visible"/>
 
 #### Disabled
 
@@ -65,10 +56,7 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 
 When you tick the checkbox, it will enable the Disabled property and prevent a user input on the button.
 
-<figure>
- <object data="https://www.youtube.com/embed/iaubB0XGouU?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Disabled</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="iaubB0XGouU" title="Disabled" caption="Disabled"/>
 
 ### Binding Properties
 
@@ -103,10 +91,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
 | **Placement**      | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the _string_ "START", "CENTER", or "BETWEEN". |
 
-<figure>
- <object data="https://www.youtube.com/embed/LOBPY1O4Wrc?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Button styling</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="LOBPY1O4Wrc" title="Button styling" caption="Button styling"/>
 
 :::info
 We currently use the icons from [Blueprint](https://blueprintjs.com) library. You can see the list of icons [here](https://blueprintjs.com/docs/#icons).

@@ -2,10 +2,7 @@
 
 The phone input widget gives you an input field to capture a phone number as an input.
 
-<figure>
-  <object data="https://www.youtube.com/embed/DuyMuOZm83g?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Phone Input Widget</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="DuyMuOZm83g" title="How to use Phone Input Widget" caption="How to use Phone Input Widget"/>
 
 ## Properties
 
@@ -39,37 +36,25 @@ Let's understand the widget properties in detail.
 
 It enables/disables the dial code dropdown next to the input box. If you enable this property, the user can change the dial code from the dropdown.
 
-<figure>
-  <object data="https://www.youtube.com/embed/5oFMsVmETQ4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Allow Country Code Change</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="5oFMsVmETQ4" title="Allow Country Code Change" caption="Allow Country Code Change"/>
 
 #### Tooltip
 
 It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. The tooltip appears as "?" on the left of the input field.
 
-<figure>
-  <object data="https://www.youtube.com/embed/Gdglth-2eDs?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Tooltip</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="Gdglth-2eDs" title="Tooltip" caption="Tooltip"/>
 
 #### Placeholder
 
 You can set a proxy text/value inside the input box using the placeholder property. It can be any message or hint for the expected input.
 
-<figure>
-  <object data="https://www.youtube.com/embed/H6rU6C_QA_k?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Placeholder</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="H6rU6C_QA_k" title="Placeholder" caption="Placeholder"/>
 
 #### Default text
 
 This property lets you set a default value for the widget before the user has made any changes.
 
-<figure>
-  <object data="https://www.youtube.com/embed/aL2ngU6xcts?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Default text</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="aL2ngU6xcts" title="Default text" caption="Default text"/>
 
 #### Regex
 
@@ -79,10 +64,7 @@ Using Regex or Regular expression property, you can set specific constraints on 
 
 If a user enters an incorrect value, the input widget shows a message “invalid input.” You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
-<figure>
-  <object data="https://www.youtube.com/embed/CrDNJMQy0fM?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Error Message</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="CrDNJMQy0fM" title="Error Message" caption="Error Message"/>
 
 #### Required
 
@@ -96,10 +78,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Required property, and the input box will show an error message “This field is required” if you have not entered any input.
 
-<figure>
-  <object data="https://www.youtube.com/embed/1RlJfJDsq7I?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Required</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="1RlJfJDsq7I" title="Required" caption="Required"/>
 
 #### Visible
 
@@ -113,10 +92,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Visible property, and the input box will be visible in the app.
 
-<figure>
-  <object data="https://www.youtube.com/embed/xIbnrJcCTQo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Visible</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="xIbnrJcCTQo" title="Visible" caption="Visible"/>
 
 #### Disabled
 
@@ -130,29 +106,20 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Disabled property and prevent a user input in the input box.
 
-<figure>
-  <object data="https://www.youtube.com/embed/YBGEeuqvP28?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Disabled</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="YBGEeuqvP28" title="Disabled" caption="Disabled"/>
 
 #### Reset on Submit
 
 When `Reset on Submit` is enabled, the widget resets or clears the entered input after the user submits it.\
 Let’s use the event `onSubmit` to show a message when input is submitted. You’ll see once the user submits and the message pops up, the input widget will reset itself to its original state.
 
-<figure>
-  <object data="https://www.youtube.com/embed/Bz02obeYFcU?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Reset on Submit</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="Bz02obeYFcU" title="Reset on Submit" caption="Reset on Submit"/>
 
 #### Autofocus
 
 When you enable `Autofocus`, the cursor focuses on the input box whenever the widget is loaded.
 
-<figure>
-  <object data="https://www.youtube.com/embed/S-u1kMlF43M?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Autofocus</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="S-u1kMlF43M" title="Autofocus" caption="Autofocus"/>
 
 ### Binding Properties
 
@@ -188,10 +155,7 @@ For example, let's take an Input widget `Phoneinput1` and bind its text to a tex
 
 The Text widget will then display the text present in the input widget.
 
-<figure>
-  <object data="https://www.youtube.com/embed/3_XfCxqHECs?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Text</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="3_XfCxqHECs" title="Text" caption="Text"/>
 
 #### Value
 
@@ -211,10 +175,7 @@ For example, let's take an Input widget `Phoneinput1` and bind its value to a te
 {{Phoneinput1.value}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/Q--zopJje0o?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Value</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="Q--zopJje0o" title="Value" caption="Value"/>
 
 #### dialCode
 
@@ -234,10 +195,7 @@ For example, let's take an Input widget `Phoneinput1` and bind its dial code to 
 {{Phoneinput1.dialCode}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/pFoQgQaBER0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>dialCode</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="pFoQgQaBER0" title="dialCode" caption="dialCode"/>
 
 #### countryCode
 
@@ -256,10 +214,7 @@ For example, let's take an Input widget `Phoneinput1` and bind the selected coun
 ```
 {{Phoneinput1.countryCode}}
 ```
-<figure>
-  <object data="https://www.youtube.com/embed/3E11ma5vGuM?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>countryCode</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="3E11ma5vGuM" title="countryCode" caption="countryCode"/>
 
 ### Events
 
@@ -311,10 +266,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<figure>
-  <object data="https://www.youtube.com/embed/l92dQO-d6rw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to set the label properties?</i></figcaption>
-</figure>
+<YoutubeEmbed videoId="l92dQO-d6rw" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 
