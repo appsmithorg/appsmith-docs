@@ -11,8 +11,8 @@ Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/lear
 
 ## Prerequisites
 
-* [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
 * [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later) _(Recommended)_
+* [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
 
 1. Create an installation folder called `appsmith` where you would like your Appsmith installation and data storage.
 2. `cd` into the installation folder.
@@ -45,7 +45,7 @@ Click the link below to download the `docker-compose.yml` file, and place it int
     </a>
 </div>
 
-**OR,** run the following curl:
+**OR,** run the following cURL:
 
 ```bash
 curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
@@ -81,7 +81,7 @@ Congratulations, your Appsmith server should be up and running now. You can acce
 
 ![Welcome Page](</img/image_(1)_(1).png>)
 
-### Updating Appsmith manually
+### Updating Appsmith
 
 To update Appsmith (configured with docker-compose) manually, go to the root directory of your installation and run the following command:
 
@@ -114,7 +114,7 @@ This configuration runs an Appsmith instance and a Watchtower instance to keep A
 
 ---
 
-## Setup without docker-compose
+## Setup with Docker run
 
 To get Appsmith up and running, run the following command on your machine:
 
@@ -126,7 +126,7 @@ This command downloads the image and starts Appsmith.
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" --pull always appsmith/appsmith-ce
 ```
 
-#### Updating
+#### Updating Appsmith
 
 To update Appsmith manually, go to the root directory of your installation and run the following commands:
 
@@ -153,7 +153,7 @@ This command downloads the image and starts Appsmith.
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> --pull always appsmith/appsmith-ee
 ```
 
-#### Updating
+#### Updating Appsmith
 
 To update Appsmith manually, go to the root directory of your installation and run the following commands:
 
@@ -199,4 +199,3 @@ If you encounter any errors during this process, try following this guide on [de
 
 * [Configuring Self-Hosted Instances](../../instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](../../instance-management/)
-* [Tutorials](../../../../learning-and-resources/tutorials/)
