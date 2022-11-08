@@ -9,7 +9,7 @@ description: >-
 
 # Connect via localhost
 
-## Connect to a localhost database/API
+## Connect to a localhost database/ API
 
 With your on-premises Appsmith instance running on the same system, you may use [`host.docker.internal` ](how-to-work-with-local-apis-on-appsmith.md#using-docker-internal)or [ngrok](how-to-work-with-local-apis-on-appsmith.md#using-ngrok) to connect to databases, APIs, and services that are running on localhost or as other docker containers.
 
@@ -38,12 +38,12 @@ For Linux systems, you would need to provide a run flag `add-host`.
 Only more recent versions of Docker support host-gateway, which is transformed to the Docker default bridge network IP (or virtual IP of the host).
 :::
 
-Run the below command to test it and make sure the IP address from the hosts file is displayed.
+Run the below command to test and ensure the IP address from the hosts’ file is displayed.
 
 ```bash
  run —-rm -—add-host=host.docker.internal:host-gateway
  ```
-For Docker compose on Linux, you need to manually add it to the ```docker-compose.yaml``` file, use ```extra hosts``` to add the entry as shown below: 
+For Docker compose on Linux, you need to manually add it to the ```docker-compose.yaml``` file. Use ```extra hosts``` to add the entry as shown below: 
 
 ```yaml
  extra_hosts:
@@ -52,8 +52,18 @@ For Docker compose on Linux, you need to manually add it to the ```docker-compos
 
 ## Using ngrok
 
-Appsmith allows you to work with APIs running on `localhost` using the help of **`ngrok`**. Let’s look at how you can build an Appsmith application utilizing the APIs running on localhost.
+Appsmith allows you to work with APIs and databases running on `localhost` using the help of **`ngrok`**. You'll have to set up `ngrok` for the same.
 
+### Setting ngrok
+
+To set up 'ngrok’- you would have to signup at [ngrok](https://dashboard.ngrok.com/get-started/setup) (it’s free!). Follow the instructions to connect your account.
+
+* Download the `ngrok` installation file and unzip it
+* Add the [`auth-token` to the configuration](https://ngrok.com/docs/ngrok-agent#install-your-authtoken)
+
+
+### Connect via ngrok
+With 'ngrok,’ you would be able to connect to the databases and APIs running on your localhost.
 
  <figure>
  <object data="https://www.youtube.com/embed/IUX2rXmS17E" width='750px' height='400px'></object> 
@@ -61,16 +71,38 @@ Appsmith allows you to work with APIs running on `localhost` using the help of *
 </i></figcaption>
 </figure>
 
+### Connecting to a localhost database
+You've a MongoDB instance running on your localhost. You wish to connect the app you are building on [Appsmith Cloud](https://app.appsmith.com) to MongoDB.
 
-### Building a Simple Local API
-
-Let's take an example, we’ll use a Python FastAPI server for serving a simple API on localhost. Let’s install the necessary packages using pip:
+Follow the below steps to connect to the MongoDB instance:
+* Expose your local MongoDB instance using ```ngrok``` command
+```bash
+ngrok <PROTOCOL> <LOCAL_PORT> 
+```
+MongoDB uses a ```tcp``` protocol for creating connections, and ```27017``` is the default port. If you are not using a default port, provide it in place of ```27017```.
 
 ```bash
-$ pip install fastapi uvicorn
+ngrok tcp 27017
 ```
 
-Now let’s write a script that’ll serve as a simple API request, below is the code snippet:
+![connect using ngrok MongoDB running on localhost](/img/connect-localhost-mongodb-using-ngrok.png)
+
+Use the host address ```0.tcp.in.ngrok.io``` and the port number ```17392``` to add a MongoDB datasource to your app.
+
+![create a MongoDB datasource using ngrok by connecting to local MongoDB ](/img/Appsmith-connect-localhost-mongodb-using-ngrok.png)
+
+#### Create query
+You can [create queries](/core-concepts/data-access-and-binding/querying-a-database/#setting-up-a-query) to the newly added localhost instance of MongoDB ```LocalMongoDBUsingNgrok``` datasource.
+
+### Building a simple local API
+
+To host an API locally, you could use a [Python FastAPI](https://realpython.com/fastapi-python-web-apis/#what-is-fastapi) server. You could install it using ```pip```.
+
+```bash
+$ python3 -m pip install fastapi uvicorn
+```
+
+You could serve the API request by using the code snippet:
 
 ```python
 from fastapi import FastAPI
@@ -98,57 +130,48 @@ async def root():
    return items
 ```
 
-Here, we imported the FastAPI library and initiated an app using the `FastAPI` class. Next, we define a simple list consisting of details of steam games as objects
+In the code snippet - you have:
+* Imported a FastAPI library and initiated an app using the `FastAPI` class
+* Defined a collection of steam game objects
+* Declared a route “/” at which the items (game objects) could be accessed 
 
-Lastly, we declare a route “/” at which the items variables (game objects) are being returned. We can get this server running by using the following command:
+You could run the server with the following command:
 
 ```bash
 $ uvicorn main:app --reload
 ```
-
 > The command uvicorn main:app refers to:
 >
 > * `main`: the file main.py (the Python "module").
-> * `app`: the object created inside of main.py with the line app = FastAPI().
-> * `--reload`: make the server restart after code changes. Only use for development.
+> * `app`: the object created inside main.py with the line app = FastAPI().
+> * `--reload`: to restart the server after code changes. Only used for a development environment.
 
-Awesome, with this we should see our API running at [http://127.0.0.1:8000](https://github.com/appsmithorg/appsmith-docs/blob/v1.3/how-to-guides/http:/127.0.0.1:8000!) !
+You would see a screen below when the app is up and API is ready to use.
 
-### Setting ngrok
+![Run the localhost API using FastAPI](/img/start-localhost-api-using-fastapi.png)
 
-Now that we have our local APIs, let’s use `ngrok` to serve them on production. For this, we’ll have to signup at [ngrok](https://dashboard.ngrok.com/get-started/setup) (it’s free!), and follow the instructions to connect your account.
+Awesome, you could see your [API in action](http://127.0.0.1:8000).
 
-1. Download the `ngrok` installation file and unzip it.
-2. Add your `auth-token` to the default ngrok.yml configuration file using:
+Fire up `ngrok` and expose the local port[8000] to access the local API in your app available on [Appsmith Cloud](https://app.appsmith.com).
 
-```
-$ ./ngrok authtoken <your-auth-token>
-```
-
-Fire up `ngrok`, we already have our API server ready, now we’ll have to expose the particular local port for HTTP tunnel forwarding using the following command:
-
-```
-$ ./ngrok http 8000
+```bash
+ngrok <PROTOCOL> <LOCAL_PORT> 
 ```
 
-Awesome, we can now see that the local APIs are now being forwarded to a different server on production using `ngrok`. Below is a screenshot,
+To access the API, you would have to use the `HTTP` protocol and port `8000`.
 
-![ngrok commands](https://lh5.googleusercontent.com/5Qdqw3U5EYtDk5EhpWrTrrUw5EcKPqZGE8xX2W7NjazBd\_cdSQZNUgVkUzkQXjG0NqCusqQW4ftUp3GAOg794gsWCZpXrDi1lmtBF7ZplJ5lAAcdsc\_hfKOFr93KebVE4nZ1JKp9)
-
-### Testing APIs on Appsmith
-
-Now that we have API, up and running, let’s test these out on Appsmith.
-
-* Create an application on Appsmith
-* Create a New API by clicking on the `+` icon next to the APIs section on the left navigation and rename it to `getGames`
-* Add the forwarded API link and hit RUN, we’ll have to see the API response on the response pane.
-* Next, navigate to Pages, and drag and drop a Table Widget onto the canvas.
-* Open the table property pane and add use the API to display data on to the table by adding the following code snippet under the Table Data property:
-
-```javascript
-{{ getGames.data }}
+```bash
+ngrok http 8000
 ```
 
-Below is a GIF, following the same steps:
+`ngrok` creates an HTTP tunnel, forwards the externally accessible address to the local address, and enables access to the local API over the internet.
 
-![Test API](/img/NGROK.gif)
+![connect local api using ngrok](/img/connect-localhost-api-using-ngrok.png)
+
+#### Create API
+You can [create and API](core-concepts/connecting-to-data-sources/authentication/connect-to-apis#api-editor) and add the localhost API with the address `https://a8cc-2405-201-21-4011-5564-59ac-2209-1c4c.in.ngrok.io`.
+
+![connect to an API hosted on localhost using ngrok](/img/create-api-for-local-api-on-appsmith.png)
+
+## Displaying data
+You could read the API/ query response and [display the data](/core-concepts/data-access-and-binding/displaying-data-read/) by binding it with different [widgets](/reference/widgets/) available on Appsmith.
