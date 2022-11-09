@@ -173,5 +173,5 @@ You can [create and API](core-concepts/connecting-to-data-sources/authentication
 
 ![connect to an API hosted on localhost using ngrok](/img/create-api-for-local-api-on-appsmith.png)
 
-## Displaying data
+## Next Steps
 You could read the API/ query response and [display the data](/core-concepts/data-access-and-binding/displaying-data-read/) by binding it with different [widgets](/reference/widgets/) available on Appsmith.
