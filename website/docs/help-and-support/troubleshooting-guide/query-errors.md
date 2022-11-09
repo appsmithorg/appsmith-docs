@@ -34,5 +34,5 @@ You could resolve the error response by doing one of the following:
 APPSMITH_PLUGIN_MAX_RESPONSE_SIZE_MB=10
 ```
 :::info
-If you can't find what you are looking for and need help debugging an error, please raise your issue on [Discord Server](https://discord.com/invite/rBTTVJp) or email at [mailto:support@appsmith.com](support).
+If you can't find what you are looking for and need help debugging an error, please raise your issue on [Discord Server](https://discord.com/invite/rBTTVJp) or email at support@appsmith.com.
 :::
