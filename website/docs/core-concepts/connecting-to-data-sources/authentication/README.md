@@ -62,3 +62,7 @@ The smart JSON substitution feature allows Appsmith to dynamically perform type 
   <object data="https://www.youtube.com/embed/-Z3y-pdNhXc?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use smart JSON substitution</i></figcaption>
 </figure>
+
+:::info
+Are you having trouble? Check out the [API response troubleshooting guide](../../../help-and-support/troubleshooting-guide/query-errors.md) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+:::

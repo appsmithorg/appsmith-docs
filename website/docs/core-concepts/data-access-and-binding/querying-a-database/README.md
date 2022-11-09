@@ -93,3 +93,7 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](../displaying-data-read/)
 * [Capture Data](../capturing-data-write/)
+
+:::info
+Are you having trouble? Check out the [Query troubleshooting guide](../../../help-and-support/troubleshooting-guide/query-errors.md) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+:::
