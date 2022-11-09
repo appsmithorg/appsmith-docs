@@ -6,6 +6,8 @@ Inline edit-ability for a column can be enabled for the whole column or at the c
   <figcaption align="center"><i></i></figcaption>
 </figure>
 
+## Editing cells
+
 The column list on the Table property pane has a checkbox to make that column editable.
 
 ![Editable Checkbox](</img/Editable_checkbox_-_Inline_editing.png>)
@@ -24,7 +26,7 @@ Once a column has been made editable, an edit icon appears on the column header 
 
 ![](</img/Edit_icon_on_column_header.png>)
 
-## How to edit a cell
+### How to edit a cell
 
 An edit icon appears on hovering an editable cell, which, when clicked, would make the cell editable.&#x20;
 
@@ -39,13 +41,13 @@ Based on the Column type, cell content can be edited. Once done user can move aw
 1. Edited contents can be persisted on the Table cell by either pressing enter key or clicking anywhere outside the cell.
 2. You can discard the Edited contents by pressing the escape key.
 
-## Update mode
+### Update mode
 
 Once a column is editable, a new property, `Update mode` , appears under the column list.
 
 ![](</img/Update_mode.png>)
 
-### Row level mode
+#### Row level mode
 
 Actions can be performed at the row level. On selecting row level, a new column is injected called `Save/Discard` with two buttons when a column is made editable.
 
@@ -63,7 +65,7 @@ Users can customize the appearance of the Save and Discard button in the column 
 ONLY single row cells are editable in row-level update mode. Users should save or discard the edited row before editing another row.
 :::
 
-### Custom mode
+#### Custom mode
 
 In custom mode, users can opt to save data at the table level, that is users are free to choose when to save the edited rows.
 
@@ -76,7 +78,7 @@ You can edit Multiple rows in custom update mode.
 
 Table exposes two new properties `updatedRows` and `updatedRowIndices`. `updatedRows` has details of all the edited rows. This property can be used in a trigger action to save the edited cells of the table, which gets called with the click of a button widget outside the table.
 
-## Perform an Action when a cell is edited
+### Perform an Action when a cell is edited
 
 When a column is made editable, `onSubmit` trigger property appears under the event section in the column settings.
 
@@ -88,7 +90,7 @@ Users can bind any trigger action on this property, which gets called anytime ce
 currentRow can be used to access the corresponding row, and currentRow\[”keyName”] can be used to access the updated data.
 :::
 
-## Properties
+### Properties
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
@@ -107,19 +109,17 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **updatedRowIndices**        | Binding     | This property contains an array of edited row indices.                                                        | `{{Table1.updatedRowIndices}}` |
 | **updatedRow**               | Binding     | This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`) | `{{Table1.updatedRow}}`|
 
-
-
-### Update Mode
+#### Update Mode
 
 Controls the save experience of an edited cell.
 **Row level** - Cells can be saved using the Save/Discard column buttons\
 **Custom** - Cells can be saved by using an onSubmit action of the column or through an external button.
 
-### Cell Wrapping
+#### Cell Wrapping
 
 Controls how overflowing contents of the column are handled.  When turned on the Contents get wrapped to the next line.
 
-### Editable
+#### Editable
 
 Controls whether cells of the column are editable. To make the column editable, click the checkbox inside a column card that makes all the cells in that column editable.
 
@@ -136,7 +136,7 @@ Alternatively, A column can be editable by turning on `Editable` property inside
 Validation ensures that only certain values are entered in a field. You have to make the column editable to allow validation. The validation feature is available for **text** and **numeric** column types.
 :::
 
-### Regex
+#### Regex
 
 Regex adds validation to the cell value which displays an error on failure. When the input doesn't match the regex expression, the input is considered invalid. Using `Regex` or Regular expression property, you can set specific constraints on the input you expect from the user.
 
@@ -150,7 +150,7 @@ If you enter a value other than an alphabet or space (number of special characte
 
 Similarly, you can use `s.`to only display words that start with the letter "**s**".
 
-### Valid
+#### Valid
 
 Valid property shows the validity of the cell. When the expression evaluates to `false`, the input is considered invalid and the widget shows an Error Message. The following variables are available for binding:
 
@@ -172,17 +172,17 @@ If a word other than "John" is added to the cell, an error will be displayed. Si
   <figcaption align="center"><i>Valid</i></figcaption>
 </figure>
 
-### Error Message
+#### Error Message
 
 The error message displays if the regular expression(regex) or valid property check fails. If a user enters an incorrect value, the widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
 ![](/img/inline32.PNG)
 
-### Required
+#### Required
 
 Makes input to the widget mandatory. Sets whether a non-empty value must be entered for the editable cell input.
 
-### Min
+#### Min
 
 Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want the numbers from 2 to 100. Any number entered that's less than 2 is considered invalid.
 
@@ -190,7 +190,7 @@ Sets the minimum allowed value. For example, you could set the minimum value to 
 **Min** and **Max** properties are available for **numeric**  column types.
 :::
 
-### Max
+#### Max
 
 Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want the numbers from 2 to 100. Any number entered that's more than 100 is considered invalid.
 
@@ -199,7 +199,7 @@ Sets the maximum allowed value. For example, you could set the maximum value to 
   <figcaption align="center"><i>Min & Max Example</i></figcaption>
 </figure>
 
-### updatedRows
+#### updatedRows
 
 This property contains all the details of the edited rows. It has the following structure.
 
@@ -222,7 +222,7 @@ This property contains all the details of the edited rows. It has the following 
 ]
 ```
 
-### updatedRowIndices
+#### updatedRowIndices
 
 This binding property displays the index number of the updated row. It contains an array of edited row indices.&#x20;
 
@@ -234,7 +234,7 @@ For example, if you updated the second row of a table. Now, when you bind this p
 ]
 ```
 
-### updatedRow
+#### updatedRow
 
 This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`). For example, if you bind this property into a text widget, you get an output something like this:
 
@@ -247,13 +247,90 @@ This property contains the details of the row that triggered the action (`onSubm
 }
 ```
 
-## Events
+
+
+### Events
 
 | Events        | Description                                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **onSubmit**  | Action that gets triggered when the user moves away from editing a cell by pressing the enter key or clicking outside. |
-| **onSave**    | Action that gets triggered when the user clicks the save button.                                                       |
-| **onDiscard** | Action that gets triggered when user clicks discard button                                                             |
+| **onSave**    | Action that gets triggered when the user clicks the save button for a cell or a new row.                                                       |
+| **onDiscard** | Action that gets triggered when user clicks discard button for a cell or a new row.                                                       |
+
+## Adding new rows
+
+In addition to editing individual cells, you may allow users to use the Table UI to submit new rows of data. This works similarly to the Inline Editing features.
+
+### How to add a new row
+
+1. Select your Table widget, and ensure that at least one of its columns has its **Editable** property turned on.
+  - Even in new rows, only **Editable** cells can accept user input.
+2. Next, find the **Allow adding a row** property and turn it on as well.
+3. A new button should appear in the Table's UI called 'Add new row'. Click this button to add a row of new cells to the top of the table.
+  - If the Table's **Default Values** property has data added to it, the new cells will be pre-populated with those default values. Otherwise, they will be blank.
+4. Once the cells have been filled in with desired values, clicking the "Save" button will close the editing mode and execute the Table's **onSave** event. Or, clicking "Discard" will throw away the new cells and trigger the **onDiscard** event.
+
+### Capturing and using data from new rows
+
+Saving new rows works much like submitting a form. In order for the data to be sent to update the same datasource populating the table, you must use the Table's **onSave** event to execute a query or function that sends the new data to the right place.
+
+Imagine that your table gets information from a query called `myAPI_get`, which is a GET request to a datasource called `myAPI`.
+
+```javascript
+// In the Table Data field
+{{myAPI.data}}
+
+// Returns [{fruit: "pomegranate", color: "red"}, ... ]
+```
+
+And perhaps you add a new row to the table with the data:
+
+```javascript
+{fruit: "banana", color: "yellow"}
+```
+
+To update the original datasource with the new data, you might execute a query like `myAPI_post`, which would be a POST request to `myAPI`. To add the data to the POST request, you can use the Table's `newRow` attribute to reference the new row.
+
+```javascript
+// In our `myAPI_post` query:
+{{Table1.newRow}}
+
+// In the Table's `onSave` event:
+{{myAPI_post.run()}}
+```
+
+Assuming that the POST request is successful, the `myAPI` datasource receives the new information, and the Table should contain the new row the next time it updates.
+
+### Properties
+
+The following properties are related to adding new rows:
+
+| Property              | Type        | Definition               | Code Snippet        |
+| --------------------- | ----------- | ------------------------ | ------------------- |
+| **Allow adding a row** | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
+| **isAddRowInProgress** | Binding |  | `Table1.isAddRowInProgress` |
+| **newRow** | Binding | When writing code for validation properties, this variable contains a reference to the new row added by the user. | `newRow` |
+
+The subheadings below describe these properties in more detail:
+
+#### Allow adding a row
+
+Turning this on allows users to click a button on the table to start a new row in the table. Users can only input data for columns that are marked as **Editable** in the table properties.
+
+Use the **onSave** event to update the source of the table's data and reflect the user's changes. For example, the **onSave** event might be set to trigger a query that sends the data from a new table row to the database that supplies the table with its values.
+
+#### Default Values
+
+The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data.
+
+### Bindings
+
+
+
+### Events
+
+
 
 ## What's next?
 
