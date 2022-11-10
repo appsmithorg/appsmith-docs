@@ -15,7 +15,7 @@ On Appsmith, it's pretty straightforward to establish a connection with any data
 
 To add an **DynamoDB** datasource, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> Select **DynamoDB** under **Databases.**
 
-<YoutubeEmbed videoId="LNNhWh30wK4" title="Create DynamoDB Datasource" caption="Create DynamoDB Datasource"/>
+<VideoEmbed host="youtube" videoId="LNNhWh30wK4" title="Create DynamoDB Datasource" caption="Create DynamoDB Datasource"/>
 
 ## Connection Settings
 

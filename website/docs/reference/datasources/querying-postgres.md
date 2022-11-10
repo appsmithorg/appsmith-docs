@@ -59,7 +59,7 @@ Appsmith converts the user query into a parameterized one by replacing the bindi
 Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
 
 
-<YoutubeEmbed videoId="Q69wdQEQbbE" title="" caption=""/>
+<VideoEmbed host="youtube" videoId="Q69wdQEQbbE" title="" caption=""/>
 
 ## Using Queries in Applications
 

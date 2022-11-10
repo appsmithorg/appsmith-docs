@@ -36,7 +36,7 @@ Applications built in an older version of an Appsmith instance will work when im
 
 
 
- <YoutubeEmbed videoId="2JuJ0v56ztw" title="Import/Export Apps on Appsmith" caption="Import/Export Apps on Appsmith"/>
+ <VideoEmbed host="youtube" videoId="2JuJ0v56ztw" title="Import/Export Apps on Appsmith" caption="Import/Export Apps on Appsmith"/>
 
 
 
@@ -52,7 +52,7 @@ Follow the steps below to export your application as a JSON file:
 
 
 
- <YoutubeEmbed videoId="lBMP9MQHdCQ" title="How to export an app" caption="How to export an app"/>
+ <VideoEmbed host="youtube" videoId="lBMP9MQHdCQ" title="How to export an app" caption="How to export an app"/>
 
 
 ### Import Application
@@ -79,7 +79,7 @@ As a security measure, we do not export any config values used for the connectin
 
 
 
- <YoutubeEmbed videoId="bhzGIdXq2Z4" title="How to import an app" caption="How to import an app"/>
+ <VideoEmbed host="youtube" videoId="bhzGIdXq2Z4" title="How to import an app" caption="How to import an app"/>
 
 :::tip
 When you import the application into the destination instance/ workspace, it's a new one, meaning source and destination applications are detached, and changes will not be synced.

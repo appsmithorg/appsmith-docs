@@ -6,7 +6,7 @@ If your APIs are protected by an authentication mechanism, that requires a stand
 
 Navigate to **Explorer** → scroll down to **Datasources** → Click on the **(+)** sign → Click **Authenticated API**.
 
- <YoutubeEmbed videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
+ <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
 
 
 You’ll be redirected to the create datasource page as shown below:
@@ -55,4 +55,4 @@ Appsmith safely encrypts all your authentication credentials and stores them sec
 
 The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
 
- <YoutubeEmbed videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
+ <VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>

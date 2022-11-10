@@ -15,7 +15,7 @@ To configure SAML within Appsmith using Active Directory as a SAML provider, fol
 
 ### Create Application
 
-<YoutubeEmbed videoId="H94cQBp5sFE" /> 
+<VideoEmbed host="youtube" videoId="H94cQBp5sFE" /> 
 
 1. Log in to your [Azure](https://portal.azure.com/#allservices) account and click on **More services**.
 2. Click on **Azure Active Directory** and hit “**+Add**”, and select “**Enterprise Application**.”
@@ -28,7 +28,7 @@ To configure SAML within Appsmith using Active Directory as a SAML provider, fol
 
 As mentioned in [Capture Redirect & Entity URL](./#capture-redirect-and-entity-url), you need to add these URLs to your SAML application. Go to your SAML application homepage and follow the steps below:
 
-<YoutubeEmbed videoId="9EFlC0PaxD0" title="Adding Redirect and Entity URLs" caption="Adding Redirect and Entity URLs"/>
+<VideoEmbed host="youtube" videoId="9EFlC0PaxD0" title="Adding Redirect and Entity URLs" caption="Adding Redirect and Entity URLs"/>
 
 
 
@@ -53,7 +53,7 @@ SAML metadata is an XML document that provides information required for interact
 Metadata URL is the **quickest** and **most recommended way** to set up **SAML**.
 :::
 
-<YoutubeEmbed videoId="5YEXAhdPwOI" title="Fetching the metadata URL" caption="Fetching the metadata URL"/>
+<VideoEmbed host="youtube" videoId="5YEXAhdPwOI" title="Fetching the metadata URL" caption="Fetching the metadata URL"/>
 
 * To get the metadata URL, click on Single Sign-on from the sidebar and go to section 3, “**SAML Signing Certificate**.”
 * Copy the “**App Federation Metadata Url**” and add it to the “**metadata URL**” field in Appsmith.
@@ -65,7 +65,7 @@ Metadata URL is the **quickest** and **most recommended way** to set up **SAML**
 
 If you don’t have a Metadata URL but have a raw SAML metadata XML document, you can choose XML to configure SAML.
 
-<YoutubeEmbed videoId="nUt1__WQBOE" title="Metadata XML" caption="Metadata XML"/>
+<VideoEmbed host="youtube" videoId="nUt1__WQBOE" title="Metadata XML" caption="Metadata XML"/>
 
 * To get the metadata XML, click on Single Sign-on from the sidebar and go to section 3 “**SAML Signing Certificate**”.
 * Download the “**Federation metadata XML**”.

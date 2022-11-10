@@ -2,7 +2,7 @@
 
 The Rich Text Editor is used to capture Rich Text input from a user. The input is captured in HTML format.
 
-<YoutubeEmbed videoId="_KrxFScQJys" title="How to use Rich Text Editor Widget" caption="How to use Rich Text Editor Widget"/>
+<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="How to use Rich Text Editor Widget" caption="How to use Rich Text Editor Widget"/>
 
 ## Properties
 
@@ -36,7 +36,7 @@ This property lets you set a default value for the widget before the user has ma
 
 Once you have selected an input type, you can add markdown/HTML text in the default text section. For example, if you want to use the markdown input type. You can either use the default text property or use an input widget to display the text. The video below demonstrates how to use the markdown input type.
 
-<YoutubeEmbed videoId="Ld8bxUvY0p0" title="Default text" caption="Default text"/>
+<VideoEmbed host="youtube" videoId="Ld8bxUvY0p0" title="Default text" caption="Default text"/>
 
 ```
 Markdown: 
@@ -121,7 +121,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 
 How to set the label properties?
 {% endembed %}
-<YoutubeEmbed videoId="WACXsnoBa5Y" title="How to set the label properties?" caption="How to set the label properties?"/>
+<VideoEmbed host="youtube" videoId="WACXsnoBa5Y" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 

@@ -11,7 +11,7 @@ The Appsmith platform includes JavaScript utility libraries, which can be used t
 * [xmlParser](https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/docs/v3/docs.md)
 * [Forge](https://github.com/digitalbazaar/forge)
 
- <YoutubeEmbed videoId="tqJna718tj4" title="Using Built-in Libraries in Appsmith" caption="Using Built-in Libraries in Appsmith"/> 
+ <VideoEmbed host="youtube" videoId="tqJna718tj4" title="Using Built-in Libraries in Appsmith" caption="Using Built-in Libraries in Appsmith"/> 
 
 
 ## Using JavaScript libraries

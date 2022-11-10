@@ -11,7 +11,7 @@ To integrate Twilio with Appsmith, you should understand the [basics of connecti
 
 Appsmith integration with Twilio provides an easy way to manage your customer-focused messaging. With these integrations, you can design a custom UI on Appsmith to support easy integrations for users.
 
-<YoutubeEmbed videoId="QHrEfSxL-aA" title="How To Send SMS Notifications With Twilio" caption="How To Send SMS Notifications With Twilio"/>
+<VideoEmbed host="youtube" videoId="QHrEfSxL-aA" title="How To Send SMS Notifications With Twilio" caption="How To Send SMS Notifications With Twilio"/>
 
 ## Create Twilio Datasource
 

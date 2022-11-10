@@ -9,7 +9,7 @@ description: >-
 
 This document presumes you understand the basics of [Displaying Data](../../data-access-and-binding/displaying-data-read/) & [Capturing Data](../../data-access-and-binding/capturing-data-write/) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
-<YoutubeEmbed videoId="vlx8TEuep5I" title="Dynamically Update Widget Properties" caption="Dynamically Update Widget Properties"/>
+<VideoEmbed host="youtube" videoId="vlx8TEuep5I" title="Dynamically Update Widget Properties" caption="Dynamically Update Widget Properties"/>
 
 ## Dynamic Properties
 

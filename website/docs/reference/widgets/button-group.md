@@ -4,7 +4,7 @@
 
 The Button group widget represents a set of buttons in a group. Group can have simple buttons or menu buttons with drop-down items.
 
-<YoutubeEmbed videoId="oWGK1s5nGns" title="How to use Button Group Widget" caption="How to use Button Group Widget"/>
+<VideoEmbed host="youtube" videoId="oWGK1s5nGns" title="How to use Button Group Widget" caption="How to use Button Group Widget"/>
 
 ## Properties
 

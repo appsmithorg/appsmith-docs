@@ -2,7 +2,7 @@
 
 The Switch is a simple UI widget you can use when you want users to make a binary choice.
 
-<YoutubeEmbed videoId="5kNWJ9mtlOw" title="How to use Switch Widget" caption="How to use Switch Widget"/>
+<VideoEmbed host="youtube" videoId="5kNWJ9mtlOw" title="How to use Switch Widget" caption="How to use Switch Widget"/>
 
 ## Properties
 

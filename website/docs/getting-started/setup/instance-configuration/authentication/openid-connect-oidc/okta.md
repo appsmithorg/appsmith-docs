@@ -57,7 +57,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 <your_okta_domain>/.well-known/openid-configuration
 ```
 
-<YoutubeEmbed videoId="dgDhBUXKA6s" title="Get Okta Configurations" caption="Get Okta Configurations"/>
+<VideoEmbed host="youtube" videoId="dgDhBUXKA6s" title="Get Okta Configurations" caption="Get Okta Configurations"/>
 
 * **Configuration at Appsmith** - Add all the configurations from the above URL in OIDC Configurations on Appsmith. Refer to the below table that shows field mapping:
 

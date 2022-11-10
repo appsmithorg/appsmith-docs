@@ -10,7 +10,7 @@ description: >-
 The Appsmith context object provides information around the current state of the application
 
 
-<YoutubeEmbed videoId="5Z65l_PssEQ" title="How to Use the Appsmith Context Object" caption="How to Use the Appsmith Context Object"/>
+<VideoEmbed host="youtube" videoId="5Z65l_PssEQ" title="How to Use the Appsmith Context Object" caption="How to Use the Appsmith Context Object"/>
 
 
 ## Properties

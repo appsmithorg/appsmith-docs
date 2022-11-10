@@ -2,7 +2,7 @@
 
 Filepicker widget is used to allow users to upload files from their local machines to any cloud storage via API. Cloudinary and Amazon S3 have simple APIs for cloud storage uploads
 
-<YoutubeEmbed videoId="Sl0zN2CSJaY" title="How to use Filepicker Widget" caption="How to use Filepicker Widget"/>
+<VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="How to use Filepicker Widget" caption="How to use Filepicker Widget"/>
 
 ## Upload File
 
@@ -81,7 +81,7 @@ Text refers to data (file contents) that contain readable characters without the
 
 
 
-<YoutubeEmbed videoId="LjSuzxS2lY8" />
+<VideoEmbed host="youtube" videoId="LjSuzxS2lY8" />
 
 * **Array(CSV)**
 
@@ -90,7 +90,7 @@ With the Array data format, CSV data will be directly parsed into an array or ar
 For example, if you have data in a CSV format and want to display it in a [table widget. ](table/)
 
 
-<YoutubeEmbed videoId="VcIiy7NuBeA" />
+<VideoEmbed host="youtube" videoId="VcIiy7NuBeA" />
 
 * Select the **Array(Only CSV)** option.
 * Upload your CSV file using the **filepicker** widget

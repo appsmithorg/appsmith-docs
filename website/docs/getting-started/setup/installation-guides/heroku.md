@@ -7,7 +7,7 @@ sidebar_position: 7
 
 [_Heroku_ ](https://www.heroku.com/)is a platform that enables developers to build, run, and operate applications entirely in the cloud. Let's see how to self-host Appsmith on Heroku.
 
-<YoutubeEmbed videoId="Bclt_VmDMpo" /> 
+<VideoEmbed host="youtube" videoId="Bclt_VmDMpo" /> 
 
 :::info
 The administrative privileges (Admin settings) are not available due to deployment restrictions with the Heroku container (dynos).

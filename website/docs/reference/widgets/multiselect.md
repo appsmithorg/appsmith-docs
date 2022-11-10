@@ -81,7 +81,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<YoutubeEmbed videoId="LlDnwBjDE6k" title="How to set the label properties?" caption="How to set the label properties?"/>
+<VideoEmbed host="youtube" videoId="LlDnwBjDE6k" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 

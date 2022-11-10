@@ -20,7 +20,7 @@ In this tutorial, you'll learn to build a feature-complete internal tool on top 
 * Use various widgets such as charts, lists, maps, tables, etc.
 :::
 
-<YoutubeEmbed videoId="QHOpLoSH7ws" title="A Glimpse of the Review Moderator App" caption="A Glimpse of the Review Moderator App"/>
+<VideoEmbed host="youtube" videoId="QHOpLoSH7ws" title="A Glimpse of the Review Moderator App" caption="A Glimpse of the Review Moderator App"/>
 
 The tutorial has four parts & we recommend you follow them in order. Now before getting started, let's set up Appsmith. You could either use the self-hosted version using Docker or Appsmith cloud and follow along.
 

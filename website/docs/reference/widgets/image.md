@@ -2,7 +2,7 @@
 
 The Image widget displays the images in your app. Images must be either a URL or a valid base64.
 
-<YoutubeEmbed videoId="jdDcydQ8Ho0" title="How to use Image Widget" caption="How to use Image Widget"/>
+<VideoEmbed host="youtube" videoId="jdDcydQ8Ho0" title="How to use Image Widget" caption="How to use Image Widget"/>
 
 ## Properties
 

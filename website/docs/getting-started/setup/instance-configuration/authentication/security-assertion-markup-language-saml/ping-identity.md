@@ -35,7 +35,7 @@ Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) ac
 
 * You can choose one of the available options to configure SAML.
 
-<YoutubeEmbed videoId="iMAOqRo2KuI" title="How to Configure SAML For Ping Identity as IdP?" caption="How to Configure SAML For Ping Identity as IdP?"/>
+<VideoEmbed host="youtube" videoId="iMAOqRo2KuI" title="How to Configure SAML For Ping Identity as IdP?" caption="How to Configure SAML For Ping Identity as IdP?"/>
 
 ### Configure SAML
 

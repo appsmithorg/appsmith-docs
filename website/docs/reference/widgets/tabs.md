@@ -2,7 +2,7 @@
 
 The tabs widget is a special widget that contains multiple containers. Tabs can be used to contextually show UI to a user based on their choices.
 
-<YoutubeEmbed videoId="NLe0To_fB7E" title="How to use Tabs Widget" caption="How to use Tabs Widget"/>
+<VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="How to use Tabs Widget" caption="How to use Tabs Widget"/>
 
 ## Properties
 
@@ -59,5 +59,5 @@ You can create separate UIs in each tab container and dynamically switch between
 
 By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](../appsmith-framework/widget-actions/store-value.md) and some JavaScript:
 
-<YoutubeEmbed videoId="dHeS5kPHlHE" title="" caption=""/>
+<VideoEmbed host="youtube" videoId="dHeS5kPHlHE" title="" caption=""/>
 

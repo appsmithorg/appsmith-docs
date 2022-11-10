@@ -2,7 +2,7 @@
 
 A tree-select widget captures user inputs from a specified list of permitted options in which each option can then have child options associated with it.
 
-<YoutubeEmbed videoId="vSqpSssJdws" title="How to use Tree-select Widget" caption="How to use Tree-select Widget"/>
+<VideoEmbed host="youtube" videoId="vSqpSssJdws" title="How to use Tree-select Widget" caption="How to use Tree-select Widget"/>
 
 ### Displaying Data
 
@@ -117,7 +117,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<YoutubeEmbed videoId="p1mt_Fo3C70" title="How to set the label properties?" caption="How to set the label properties?"/>
+<VideoEmbed host="youtube" videoId="p1mt_Fo3C70" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 

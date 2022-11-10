@@ -7,7 +7,7 @@ sidebar_position: 6
 
 # DigitalOcean
 
-<YoutubeEmbed videoId="6fitHGX2G4E" /> 
+<VideoEmbed host="youtube" videoId="6fitHGX2G4E" /> 
 
 
 

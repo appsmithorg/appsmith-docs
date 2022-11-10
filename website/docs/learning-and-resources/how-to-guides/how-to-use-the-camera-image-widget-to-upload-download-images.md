@@ -26,7 +26,7 @@ To upload your data to Amazon S3, you must first create an Amazon S3 bucket in o
 
 The camera widget powers you to capture images and videos from your applications and share the data for further use. In this section, you will learn how you can upload images/videos to Amazon S3.
 
-  <YoutubeEmbed videoId="v43gTz_4Jck" /> 
+  <VideoEmbed host="youtube" videoId="v43gTz_4Jck" /> 
 
 * Drag and drop the [Camera widget](/reference/widgets/camera) onto the canvas.
 * Click on the **+** icon next to the **queries/js** and choose your S3 datasource.
@@ -100,7 +100,7 @@ Your image will be stored in the S3 database once you run this query. Let's look
 
 #### Fetch Single File
 
-  <YoutubeEmbed videoId="dVZEd8p0Y2c" /> 
+  <VideoEmbed host="youtube" videoId="dVZEd8p0Y2c" /> 
 
 * Click on the + icon next to the **queries/js** and choose your **S3 datasource.**
 * Rename the query.
@@ -123,7 +123,7 @@ Once you have added all the required parameters:
 
 #### Fetch All Files
 
-  <YoutubeEmbed videoId="UzV5LZ0kvDQ" /> 
+  <VideoEmbed host="youtube" videoId="UzV5LZ0kvDQ" /> 
 
 * Click on the + icon next to the **queries/js** and choose your **S3 datasource.**
 * Rename the query.

@@ -10,7 +10,7 @@ The following document assumes that you understand the [basics of connecting to 
 
 The Appsmith S3 Datasource can connect to Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, MinIO, and any other S3 provider! Below, you will see examples of connecting to your S3 provider and issuing [List](querying-amazon-s3.md#list-files), [Create](querying-amazon-s3.md#create-file), [Read](querying-amazon-s3.md#read-file), and [Delete](querying-amazon-s3.md#delete-file) actions.
 
-<YoutubeEmbed videoId="pmEmQcd9_KA" title="" caption=""/>
+<VideoEmbed host="youtube" videoId="pmEmQcd9_KA" title="" caption=""/>
 
 For our examples below, we will connect to an **Amazon S3** provider.
 

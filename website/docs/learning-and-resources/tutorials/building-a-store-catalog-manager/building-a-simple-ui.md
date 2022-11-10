@@ -23,7 +23,7 @@ As discussed in the previous sections, Widgets are simple UI Components that can
 
 This will create a new table on `ProductListPage`.
 
-<YoutubeEmbed videoId="O46_oPfurTc" title="Drag-and-dropping your first widget onto the canvas" caption="Drag-and-dropping your first widget onto the canvas"/>
+<VideoEmbed host="youtube" videoId="O46_oPfurTc" title="Drag-and-dropping your first widget onto the canvas" caption="Drag-and-dropping your first widget onto the canvas"/>
 
 Let's discuss what has happened now:
 

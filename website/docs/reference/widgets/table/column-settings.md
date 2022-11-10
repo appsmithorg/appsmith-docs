@@ -30,7 +30,7 @@ The button type is a clickable entity that triggers any event attached to it. It
 
 #### Checkbox
 
-<YoutubeEmbed videoId="EJn6XiZBI0k" title="Checkbox column" caption="Checkbox column"/>
+<VideoEmbed host="youtube" videoId="EJn6XiZBI0k" title="Checkbox column" caption="Checkbox column"/>
 
 
 A [checkbox ](../checkbox.md)is a component that enables the user to make a binary choice, i.e. a choice between one of two possible mutually exclusive options. Checkboxes typically use the boolean values **True** and **False** for checked and unchecked, respectively.
@@ -109,7 +109,7 @@ You can also access each row's column values with `currentRow` property. `curren
 
 For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
 
-<YoutubeEmbed videoId="tjc8HlzQ4xU" title="Merging Columns" caption="Merging Columns"/>
+<VideoEmbed host="youtube" videoId="tjc8HlzQ4xU" title="Merging Columns" caption="Merging Columns"/>
 
 ### Visible
 
@@ -123,13 +123,13 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 
 When you tick the checkbox, it will enable the Visible property, and the column will be visible in the app.
 
-<YoutubeEmbed videoId="8mFTnQpI8bA" title="Visible" caption="Visible"/>
+<VideoEmbed host="youtube" videoId="8mFTnQpI8bA" title="Visible" caption="Visible"/>
 
 ### Cell Wrapping
 
 Cell wrapping allows the contents of a cell to be wrapped to the following line instead of getting truncated. Cell wrapping can be enabled for a column or subset of cells in a column using `cell wrapping` property in column settings.
 
-<YoutubeEmbed videoId="RTP1SX6OLL8" title="Cell Wrapping" caption="Cell Wrapping"/>
+<VideoEmbed host="youtube" videoId="RTP1SX6OLL8" title="Cell Wrapping" caption="Cell Wrapping"/>
 
 
 
@@ -144,7 +144,7 @@ Based on the Column type, you can edit the cell content. Once done, you can move
 1. Edited contents can be persisted on the Table cell by either pressing enter key or clicking anywhere outside the cell.
 2. Edited contents can be discarded by pressing the escape key.
 
-<YoutubeEmbed videoId="Wmitzz4UAGo" title="Editable" caption="Editable"/>
+<VideoEmbed host="youtube" videoId="Wmitzz4UAGo" title="Editable" caption="Editable"/>
 
 ## Styles
 

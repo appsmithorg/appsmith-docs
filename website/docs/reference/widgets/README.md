@@ -61,13 +61,13 @@ For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to t
 
 When you tick the checkbox, it enables the Disabled property and prevents interaction with the input box.
 
-<YoutubeEmbed videoId="JEARavnq0vQ" title="Disable" caption="Disable"/>
+<VideoEmbed host="youtube" videoId="JEARavnq0vQ" title="Disable" caption="Disable"/>
 
 #### Error Message
 
 If a user enters an incorrect value, the input widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
-<YoutubeEmbed videoId="oeUHJhM4zyU" title="Error Message" caption="Error Message"/>
+<VideoEmbed host="youtube" videoId="oeUHJhM4zyU" title="Error Message" caption="Error Message"/>
 
 #### Tooltip
 
@@ -75,13 +75,13 @@ Tooltips are often used to show the user extra information about an element on t
 
 The Tooltip property in Appsmith is used to set the text that appears within a floating box near the widget when the user mouses over it. In some cases (such as the Input widget), the tooltip is applied to a small question mark icon set within the widget, and appears when the user's cursor is placed over the icon.
 
-<YoutubeEmbed videoId="UZ3MBVfNSzk" title="Tooltip" caption="Tooltip"/>
+<VideoEmbed host="youtube" videoId="UZ3MBVfNSzk" title="Tooltip" caption="Tooltip"/>
 
 #### Placeholder
 
 You can set a proxy text/value inside the input box using the `placeholder` property. It can be any message or hint for the expected input.
 
-<YoutubeEmbed videoId="576Bfo8htf0" title="Placeholder" caption="Placeholder"/>
+<VideoEmbed host="youtube" videoId="576Bfo8htf0" title="Placeholder" caption="Placeholder"/>
 
 #### Regex
 
@@ -95,7 +95,7 @@ For example, add a regular expression for entering a name. The name can contain 
 
 If you enter a value other than an alphabetic or space (number of special characters), the widget shows an error message "invalid input."
 
-<YoutubeEmbed videoId="n6VUQN-wv9U" title="Regular Expression(Regex)" caption="Regular Expression(Regex)"/>
+<VideoEmbed host="youtube" videoId="n6VUQN-wv9U" title="Regular Expression(Regex)" caption="Regular Expression(Regex)"/>
 
 #### Required
 
@@ -109,7 +109,7 @@ For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to t
 
 When you tick the checkbox, it enables the Required property, and the input box shows an error message "This field is required" if you haven't entered any input.
 
-<YoutubeEmbed videoId="2hqT02HCah8" title="Required" caption="Required"/>
+<VideoEmbed host="youtube" videoId="2hqT02HCah8" title="Required" caption="Required"/>
 
 #### Valid
 
@@ -123,7 +123,7 @@ To see how the Valid property works, drag an Input widget onto the canvas and se
 
 Now when the field has fewer than three characters entered, a tooltip appears with the widget's **Error Message**, or the text "Invalid input."
 
-<YoutubeEmbed videoId="rk3yzSoe6aw" title="Valid" caption="Valid"/>
+<VideoEmbed host="youtube" videoId="rk3yzSoe6aw" title="Valid" caption="Valid"/>
 
 #### Visible
 
@@ -137,4 +137,4 @@ For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to t
 
 When you tick the checkbox, it enables the Visible property, and the input box will be visible in the app.
 
-<YoutubeEmbed videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
+<VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>

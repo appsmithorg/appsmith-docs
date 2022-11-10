@@ -2,7 +2,7 @@
 
 The phone input widget gives you an input field to capture a phone number as an input.
 
-<YoutubeEmbed videoId="DuyMuOZm83g" title="How to use Phone Input Widget" caption="How to use Phone Input Widget"/>
+<VideoEmbed host="youtube" videoId="DuyMuOZm83g" title="How to use Phone Input Widget" caption="How to use Phone Input Widget"/>
 
 ## Properties
 
@@ -36,25 +36,25 @@ Let's understand the widget properties in detail.
 
 It enables/disables the dial code dropdown next to the input box. If you enable this property, the user can change the dial code from the dropdown.
 
-<YoutubeEmbed videoId="5oFMsVmETQ4" title="Allow Country Code Change" caption="Allow Country Code Change"/>
+<VideoEmbed host="youtube" videoId="5oFMsVmETQ4" title="Allow Country Code Change" caption="Allow Country Code Change"/>
 
 #### Tooltip
 
 It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. The tooltip appears as "?" on the left of the input field.
 
-<YoutubeEmbed videoId="Gdglth-2eDs" title="Tooltip" caption="Tooltip"/>
+<VideoEmbed host="youtube" videoId="Gdglth-2eDs" title="Tooltip" caption="Tooltip"/>
 
 #### Placeholder
 
 You can set a proxy text/value inside the input box using the placeholder property. It can be any message or hint for the expected input.
 
-<YoutubeEmbed videoId="H6rU6C_QA_k" title="Placeholder" caption="Placeholder"/>
+<VideoEmbed host="youtube" videoId="H6rU6C_QA_k" title="Placeholder" caption="Placeholder"/>
 
 #### Default text
 
 This property lets you set a default value for the widget before the user has made any changes.
 
-<YoutubeEmbed videoId="aL2ngU6xcts" title="Default text" caption="Default text"/>
+<VideoEmbed host="youtube" videoId="aL2ngU6xcts" title="Default text" caption="Default text"/>
 
 #### Regex
 
@@ -64,7 +64,7 @@ Using Regex or Regular expression property, you can set specific constraints on 
 
 If a user enters an incorrect value, the input widget shows a message “invalid input.” You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
-<YoutubeEmbed videoId="CrDNJMQy0fM" title="Error Message" caption="Error Message"/>
+<VideoEmbed host="youtube" videoId="CrDNJMQy0fM" title="Error Message" caption="Error Message"/>
 
 #### Required
 
@@ -78,7 +78,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Required property, and the input box will show an error message “This field is required” if you have not entered any input.
 
-<YoutubeEmbed videoId="1RlJfJDsq7I" title="Required" caption="Required"/>
+<VideoEmbed host="youtube" videoId="1RlJfJDsq7I" title="Required" caption="Required"/>
 
 #### Visible
 
@@ -92,7 +92,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Visible property, and the input box will be visible in the app.
 
-<YoutubeEmbed videoId="xIbnrJcCTQo" title="Visible" caption="Visible"/>
+<VideoEmbed host="youtube" videoId="xIbnrJcCTQo" title="Visible" caption="Visible"/>
 
 #### Disabled
 
@@ -106,20 +106,20 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Disabled property and prevent a user input in the input box.
 
-<YoutubeEmbed videoId="YBGEeuqvP28" title="Disabled" caption="Disabled"/>
+<VideoEmbed host="youtube" videoId="YBGEeuqvP28" title="Disabled" caption="Disabled"/>
 
 #### Reset on Submit
 
 When `Reset on Submit` is enabled, the widget resets or clears the entered input after the user submits it.\
 Let’s use the event `onSubmit` to show a message when input is submitted. You’ll see once the user submits and the message pops up, the input widget will reset itself to its original state.
 
-<YoutubeEmbed videoId="Bz02obeYFcU" title="Reset on Submit" caption="Reset on Submit"/>
+<VideoEmbed host="youtube" videoId="Bz02obeYFcU" title="Reset on Submit" caption="Reset on Submit"/>
 
 #### Autofocus
 
 When you enable `Autofocus`, the cursor focuses on the input box whenever the widget is loaded.
 
-<YoutubeEmbed videoId="S-u1kMlF43M" title="Autofocus" caption="Autofocus"/>
+<VideoEmbed host="youtube" videoId="S-u1kMlF43M" title="Autofocus" caption="Autofocus"/>
 
 ### Binding Properties
 
@@ -155,7 +155,7 @@ For example, let's take an Input widget `Phoneinput1` and bind its text to a tex
 
 The Text widget will then display the text present in the input widget.
 
-<YoutubeEmbed videoId="3_XfCxqHECs" title="Text" caption="Text"/>
+<VideoEmbed host="youtube" videoId="3_XfCxqHECs" title="Text" caption="Text"/>
 
 #### Value
 
@@ -175,7 +175,7 @@ For example, let's take an Input widget `Phoneinput1` and bind its value to a te
 {{Phoneinput1.value}}
 ```
 
-<YoutubeEmbed videoId="Q--zopJje0o" title="Value" caption="Value"/>
+<VideoEmbed host="youtube" videoId="Q--zopJje0o" title="Value" caption="Value"/>
 
 #### dialCode
 
@@ -195,7 +195,7 @@ For example, let's take an Input widget `Phoneinput1` and bind its dial code to 
 {{Phoneinput1.dialCode}}
 ```
 
-<YoutubeEmbed videoId="pFoQgQaBER0" title="dialCode" caption="dialCode"/>
+<VideoEmbed host="youtube" videoId="pFoQgQaBER0" title="dialCode" caption="dialCode"/>
 
 #### countryCode
 
@@ -214,7 +214,7 @@ For example, let's take an Input widget `Phoneinput1` and bind the selected coun
 ```
 {{Phoneinput1.countryCode}}
 ```
-<YoutubeEmbed videoId="3E11ma5vGuM" title="countryCode" caption="countryCode"/>
+<VideoEmbed host="youtube" videoId="3E11ma5vGuM" title="countryCode" caption="countryCode"/>
 
 ### Events
 
@@ -266,7 +266,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<YoutubeEmbed videoId="l92dQO-d6rw" title="How to set the label properties?" caption="How to set the label properties?"/>
+<VideoEmbed host="youtube" videoId="l92dQO-d6rw" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 

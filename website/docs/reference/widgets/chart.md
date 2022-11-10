@@ -10,7 +10,7 @@ Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and
 Please note that our license does **not** cover **Fusion Maps**, and you will have to acquire a license if you wish to use it.
 :::
 
-<YoutubeEmbed videoId="Rvlwb5123mE" title="How to use Chart Widget" caption="How to use Chart Widget"/>
+<VideoEmbed host="youtube" videoId="Rvlwb5123mE" title="How to use Chart Widget" caption="How to use Chart Widget"/>
 
 ## Add to Canvas
 
@@ -18,7 +18,7 @@ To add a chart widget to your canvas, drag a chart widget from a widget pane ava
 
 Navigate to PAGES —> Select Widget Tab —> Write “**chart”** in the search bar —> Drag the widget on the canvas.
 
-<YoutubeEmbed videoId="YrTtmdephs8" title="How to add a Chart widget to canvas?" caption="How to add a Chart widget to canvas?"/>
+<VideoEmbed host="youtube" videoId="YrTtmdephs8" title="How to add a Chart widget to canvas?" caption="How to add a Chart widget to canvas?"/>
 
 :::info
 You can move the chart widget and position it on the screen according to your convenience.
@@ -89,7 +89,7 @@ For example, you are working on defect tracking for a project and want to expres
 
 Let’s use a line chart to visualize the data.
 
-<YoutubeEmbed videoId="yPLH8bbUth0" title="How to plot a line chart on Appsmith?" caption="How to plot a line chart on Appsmith?"/>
+<VideoEmbed host="youtube" videoId="yPLH8bbUth0" title="How to plot a line chart on Appsmith?" caption="How to plot a line chart on Appsmith?"/>
 
 As you can see in the video, we use the `Chart Series` property head to supply the data and details related to identifying the data points.
 
@@ -100,15 +100,15 @@ As you can see in the video, we use the `Chart Series` property head to supply t
 
 To get a comparative study, you will add data for each category: bugs raised, active bugs, and closed bugs. To add more series, click on the button `+Add Series` and embed the data into `Series Data`, as shown in the video below.
 
-<YoutubeEmbed videoId="wp4IHJIynmc" title="How to add series to capture more data points?" caption="How to add series to capture more data points?"/>
+<VideoEmbed host="youtube" videoId="wp4IHJIynmc" title="How to add series to capture more data points?" caption="How to add series to capture more data points?"/>
 
 Similar to cumulative open, you can also add details for active bugs.
 
-<YoutubeEmbed videoId="5z21ep4moIk" title="How to add data points for active bugs?" caption="How to add data points for active bugs?"/>
+<VideoEmbed host="youtube" videoId="5z21ep4moIk" title="How to add data points for active bugs?" caption="How to add data points for active bugs?"/>
 
 In the series data, you can also bind it to fetch the defect data from an API/Query.
 
-<YoutubeEmbed videoId="5z21ep4moIk" title="How to add data points by binding an API response?" caption="How to add data points by binding an API response?"/>
+<VideoEmbed host="youtube" videoId="5z21ep4moIk" title="How to add data points by binding an API response?" caption="How to add data points by binding an API response?"/>
 
 Here, you saw that you fetched the data from an API call by using a mustache sign `GetClosedDefectCountFromAPI` and you can use as below:
 
@@ -204,7 +204,7 @@ Below is an example configuration for the Custom Fusion Chart property:
 
 Let’s take an example to create custom Fusioncharts.
 
-<YoutubeEmbed videoId="lLrybSBTb9k" title="A two-dimensional column chart" caption="A two-dimensional column chart"/>
+<VideoEmbed host="youtube" videoId="lLrybSBTb9k" title="A two-dimensional column chart" caption="A two-dimensional column chart"/>
 
 As you can see, you can choose the `Custom Chart` option from the `Chart Type` property. Once you select the custom chart type, you can see a new property `Custom Fusion Chart`.
 
@@ -258,7 +258,7 @@ Say you have multiple sister companies under your business name and are targetin
  “subCaption”: "Harry's SuperMart"
 ```
 
-<YoutubeEmbed videoId="GVfm9RTuRaE" title="Add a sub caption" caption="Add a sub caption"/>
+<VideoEmbed host="youtube" videoId="GVfm9RTuRaE" title="Add a sub caption" caption="Add a sub caption"/>
 
 
 The revenue displayed is in USD($), and in that case, you can choose a series (`y-axis`) to show `$` as a prefix. You can use `numberPrefix` and add the dollar($) sign.
@@ -267,7 +267,7 @@ The revenue displayed is in USD($), and in that case, you can choose a series (`
  “numberPrefix": "$"
 ```
 
-<YoutubeEmbed videoId="M2CLXC3rlMQ" title="Add a number prefix" caption="Add a number prefix"/>
+<VideoEmbed host="youtube" videoId="M2CLXC3rlMQ" title="Add a number prefix" caption="Add a number prefix"/>
 
 You have a monthly target revenue of say $70,000 and would want to plot it in the chart. You can use `trendlines` to add this detail to your chart.
 
@@ -285,7 +285,7 @@ You have a monthly target revenue of say $70,000 and would want to plot it in th
   ]
 ```
 
-<YoutubeEmbed videoId="ITwJOlQnqyI" title="Add trendlines" caption="Add trendlines"/>
+<VideoEmbed host="youtube" videoId="ITwJOlQnqyI" title="Add trendlines" caption="Add trendlines"/>
 
 :::info
 `trendlines` are vertical or horizontal lines that help users quickly understand the emphasized data point. For example, a monthly target.
@@ -301,7 +301,7 @@ A Pareto chart is a type of bar graph. It represents the frequency of change. Th
 
 Let’s take an example of a Pareto 3D chart to visualize the data by combining a line chart and column chart.
 
-<YoutubeEmbed videoId="InxEQvwpiSw" title="A Pareto 3D Chart" caption="A Pareto 3D Chart"/>
+<VideoEmbed host="youtube" videoId="InxEQvwpiSw" title="A Pareto 3D Chart" caption="A Pareto 3D Chart"/>
 
 
 :::info
@@ -363,7 +363,7 @@ You can also add a Pie 3D chart with the help of fusion charts.
 
 Take a quick look at the video to know-how.
 
-<YoutubeEmbed videoId="232PF7OFSu8" title="A three-dimensional Pie Chart" caption="A three-dimensional Pie Chart"/>
+<VideoEmbed host="youtube" videoId="232PF7OFSu8" title="A three-dimensional Pie Chart" caption="A three-dimensional Pie Chart"/>
 
 You can use the following sample code snippet to add to the custom fusion chart property and plot a pie chart with a 3-dimensional look and feel.
 
@@ -416,7 +416,7 @@ For a sliced view, you can use a property `enablemultislicing`. Below is a code 
 
 A Stacked Column represents a part of the whole comparison over time across a different set of data. For example, you can use a fusion chart on Appsmith to plot a stacked column chart in a 3-dimensional view.
 
-<YoutubeEmbed videoId="4nsdEfEJewc" title="A three-dimensional Stacked Column Chart" caption="A three-dimensional Stacked Column Chart"/>
+<VideoEmbed host="youtube" videoId="4nsdEfEJewc" title="A three-dimensional Stacked Column Chart" caption="A three-dimensional Stacked Column Chart"/>
 
 You can use the below code snippet to add and modify to see how a stacked column 3D chart works.
 
@@ -509,7 +509,7 @@ For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind
 {{Checkbox1.isChecked}}
 ```
 
-<YoutubeEmbed videoId="cnmHBAwZz1g" title="How to use visible property to show/hide a widget" caption="How to use visible property to show/hide a widget"/>
+<VideoEmbed host="youtube" videoId="cnmHBAwZz1g" title="How to use visible property to show/hide a widget" caption="How to use visible property to show/hide a widget"/>
 
 
 When you tick the checkbox, it will enable the Visible property, and the chart will be visible in the app.

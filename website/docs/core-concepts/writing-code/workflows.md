@@ -34,7 +34,7 @@ For example, the properties like `OnTextChanged` and `OnSubmit` of an input widg
 
 ### **Use an Async Function Response in a Sync Field**
 
- <YoutubeEmbed videoId="yn_8gs5w04g" title="Using data from Async function in Synchronous Field" caption="Using data from Async function in Synchronous Field"/>  
+ <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Using data from Async function in Synchronous Field" caption="Using data from Async function in Synchronous Field"/>  
 
 
 Let's look at some examples to understand how you can use async functions in sync fields.
@@ -49,7 +49,7 @@ You have an API that fetches Users. You want to trigger the API execution, so yo
 
 To add a Table widget; Navigate to `Explorer` >> Click on `Widgets` >> Search `table` >> Drag a table widget onto the canvas.
 
- <YoutubeEmbed videoId="iYZV9DPnugY" title="Using an API" caption="Using an API"/>  
+ <VideoEmbed host="youtube" videoId="iYZV9DPnugY" title="Using an API" caption="Using an API"/>  
 
 
 To read data by using an API: Create an API - `getAllUsers` on Appsmith by adding the `API` from `Explorer` >> Click `(+)` Query/JS >> Select `New Blank API` >> Rename to `getAllUsers` (or select an existing API) Add API call to the table data property of a table widget as shown in the code snippet below:
@@ -68,7 +68,7 @@ A `{{API.run()}}` method, if supplied to the [Table data](../../reference/widget
 
 You have a JSObject function that fetches all Users' information, filters data for `firstname` & `email,` and then returns the result so you can bind it to the table widget and display information.
 
- <YoutubeEmbed videoId="8mVQS6uaR6M" title="Using a JSobject" caption="Using a JSobject"/>  
+ <VideoEmbed host="youtube" videoId="8mVQS6uaR6M" title="Using a JSobject" caption="Using a JSobject"/>  
 
 
 To read the data by calling a JSObject function: Create a JSObject - `getFilteredUsersList` on Appsmith by adding a `JSObject` from `Explorer` >> Click `(+)` Query/JS >> Select `New JS Object` >> Rename to `getFilteredUsersList` (or select an existing JSObject) You can add your API or Query Call to the function call and filter the data for the required details as below:
@@ -93,7 +93,7 @@ A function call to the JSObject `getFilteredUsersList.userFilteredList()` will t
 
 You have a query that fetches Users’ information, returns the response, and binds it to the table widget to display data.
 
- <YoutubeEmbed videoId="hqkI0h7DQ-s" title="Using a Query" caption="Using a Query"/>  
+ <VideoEmbed host="youtube" videoId="hqkI0h7DQ-s" title="Using a Query" caption="Using a Query"/>  
 
 
 To read data by calling a query:
@@ -122,7 +122,7 @@ You can trigger the actions by binding them with Async fields. For example, you 
 You can only use the **global actions** provided out-of-the-box by Appsmith in the **async** **fields**, which are events or actions.
 :::
 
- <YoutubeEmbed videoId="tjJIDkoCyQE" title="Global Functions" caption="Global Functions"/>  
+ <VideoEmbed host="youtube" videoId="tjJIDkoCyQE" title="Global Functions" caption="Global Functions"/>  
 
 ### Handling Success / Error
 
@@ -167,7 +167,7 @@ or chained to be called `onSuccess`/`onError` using the callback arguments in th
 
 The following example shows how you can run two queries on a single click event:
 
- <YoutubeEmbed videoId="flCSSNTwWc4" title="Running Multiple Queries" caption="Running Multiple Queries"/>  
+ <VideoEmbed host="youtube" videoId="flCSSNTwWc4" title="Running Multiple Queries" caption="Running Multiple Queries"/>  
 
 
 You'll see that **Query 1** includes information about location, pin code, email address, and phone number, and **Query 2** includes information about name, gender, and ID.

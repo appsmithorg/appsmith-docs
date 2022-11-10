@@ -9,7 +9,7 @@ Document viewer widget is used to show documents on a page. The widget currently
 5. .docx
 6. .xlsx
 
-<YoutubeEmbed videoId="I-FusTdnJeE" title="How to use Document Viewer Widget" caption="How to use Document Viewer Widget"/>
+<VideoEmbed host="youtube" videoId="I-FusTdnJeE" title="How to use Document Viewer Widget" caption="How to use Document Viewer Widget"/>
 
 Documents can be populated from a data source like API or Query in which the incoming data points to the URL of the file.
 
@@ -31,8 +31,8 @@ These properties allow you to edit the Document Viewer widget. All of these prop
 
 Generating reports or documents from a dataset is vital in many applications. The video below shows how to generate a PDF report on Appsmith.
 
-<YoutubeEmbed videoId="8j6Z9bZvLqA" title="Generating PDF Documents" caption="Generating PDF Documents"/>
+<VideoEmbed host="youtube" videoId="8j6Z9bZvLqA" title="Generating PDF Documents" caption="Generating PDF Documents"/>
 
 You can also generate a PDF document using Carbone.io:
 
-<YoutubeEmbed videoId="xlthDth2S6Q" title="Generating PDF Documents" caption="Generating PDF Documents"/>
+<VideoEmbed host="youtube" videoId="xlthDth2S6Q" title="Generating PDF Documents" caption="Generating PDF Documents"/>

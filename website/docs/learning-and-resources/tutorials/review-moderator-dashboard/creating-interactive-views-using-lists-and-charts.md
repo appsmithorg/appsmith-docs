@@ -14,7 +14,7 @@ You are now almost ready with your super cool dashboard. To make your app more i
 
 Let's start by adding a button that'll redirect to a new page. Also, on the new page, you would require the **`business_id`** to filter the reviews from the review table. Hence, now store the value in the [Appsmith Context Object ](/reference/appsmith-framework/context-object.md)and use it as a reference. Follow the instructions below:
 
-<YoutubeEmbed videoId="7xQid95aHuM" title="Storing Value and Redirecting to a Page" caption="Storing Value and Redirecting to a Page"/>
+<VideoEmbed host="youtube" videoId="7xQid95aHuM" title="Storing Value and Redirecting to a Page" caption="Storing Value and Redirecting to a Page"/>
 
 1. Drag and drop a **button widget** under business details.
 2. Open the buttons property pane and change the label to **View Re**views.
@@ -38,7 +38,7 @@ As you can see here, as soon as the viewer clicks the button, it now navigates t
 
 Now, to fetch review data, we will write a query for the **Business Reviews Page**. Let's write one DB query to filter the reviews from the reviews table based on the selected business\_id by following the below steps:
 
-<YoutubeEmbed videoId="7hQqJ2Cfj5o" title="Writing a query for Business Reviews Page" caption="Writing a query for Business Reviews Page"/>
+<VideoEmbed host="youtube" videoId="7hQqJ2Cfj5o" title="Writing a query for Business Reviews Page" caption="Writing a query for Business Reviews Page"/>
 
 1. Find and select **Postgres Mock DB** data source under the Explorer tab.
 2. Click **`NEW QUERY`** on the top-right corner.
@@ -71,7 +71,7 @@ If you run this, you'll only see one row that fetches all the business details f
 
 Now, let's build a dashboard that will show all the reviews fetched from the reviews table.
 
-<YoutubeEmbed videoId="dFcX2fs38ak" title="Creating a UI for the Business Reviews Page" caption="Creating a UI for the Business Reviews Page"/>
+<VideoEmbed host="youtube" videoId="dFcX2fs38ak" title="Creating a UI for the Business Reviews Page" caption="Creating a UI for the Business Reviews Page"/>
 
 1. First, drag and drop a container widget and rearrange it for the whole page.
 2. Next, add a text widget and paste the following in the Value property pane:
@@ -114,7 +114,7 @@ Now, let's customize our list view according to our needs and remove the items w
 4. In the text, widgets use the mustache syntax and bind the data like `{{currentItem.text}}`.
 5. Now, in the overflow setting, change it to "scroll contents". So this will make the text view scrollable.
 
-<YoutubeEmbed videoId="e4f1QMq2zoA" title="Using the List Widget" caption="Using the List Widget"/>
+<VideoEmbed host="youtube" videoId="e4f1QMq2zoA" title="Using the List Widget" caption="Using the List Widget"/>
 
 Now you can try displaying the rest of the data onto the list widget using the `currentItem` property.
 
@@ -171,7 +171,7 @@ Appsmith uses the Chart Series property head to supply the data and details rela
 
 Now, follow the below steps to create a chart for visualizing the ratings of the business based on reviews.
 
-<YoutubeEmbed videoId="ujmjVmkSO9c" title="Adding Chart Widget" caption="Adding Chart Widget"/>
+<VideoEmbed host="youtube" videoId="ujmjVmkSO9c" title="Adding Chart Widget" caption="Adding Chart Widget"/>
 
 1. Drag and drop a **chart widget** onto the canvas.
 2. Open the chart widget property pane and set the chart type to **Line chart**.
@@ -183,7 +183,7 @@ Now, follow the below steps to create a chart for visualizing the ratings of the
 
 Awesome! You should see all the data plotted on the chart widget. Similarly, you can plot the other ratings by clicking on the **`ADD SERIES`** option. The video below demonstrates how to add series to your chart.
 
-<YoutubeEmbed videoId="fIBjUCBL6wA" title="Customizing Chart Widget" caption="Customizing Chart Widget"/>
+<VideoEmbed host="youtube" videoId="fIBjUCBL6wA" title="Customizing Chart Widget" caption="Customizing Chart Widget"/>
 
 With that, you have created an interactive and beautiful dashboard on Appsmith.
 

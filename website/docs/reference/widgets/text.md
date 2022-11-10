@@ -2,7 +2,7 @@
 
 A text widget displays textual information. Whether you want to add a paragraph or a heading to a container, a text widget makes it easy to style and display text.
 
-<YoutubeEmbed videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use Text Widget"/>
+<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use Text Widget"/>
 
 ## Properties
 
@@ -27,7 +27,7 @@ Let's understand the widget properties in detail.
 
 The `Text` field takes the input for the text widget. You can also add `HTML` code in the Text field manually or dynamically to render it in the widget.
 
-<YoutubeEmbed videoId="jIOajSSe6vI" title="Text" caption="Text"/>
+<VideoEmbed host="youtube" videoId="jIOajSSe6vI" title="Text" caption="Text"/>
 
 :::info
 Text field can only render inline CSS. If you want to use external CSS, we suggest using the [iFrame widget.](iframe.md)
@@ -37,7 +37,7 @@ Text field can only render inline CSS. If you want to use external CSS, we sugge
 
 This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fit inside the given widget area.
 
-<YoutubeEmbed videoId="Pex6RAyeHso" title="Truncate Text" caption="Truncate Text"/>
+<VideoEmbed host="youtube" videoId="Pex6RAyeHso" title="Truncate Text" caption="Truncate Text"/>
 
 #### Visible
 
@@ -51,7 +51,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Visible property, and the text widget will be visible in the app.
 
-<YoutubeEmbed videoId="NBDZVBKX4jM" title="Visible" caption="Visible"/>
+<VideoEmbed host="youtube" videoId="NBDZVBKX4jM" title="Visible" caption="Visible"/>
 
 #### Disable link
 
@@ -65,7 +65,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 
 When you tick the checkbox, it will enable the Disable link property, and the input will be parsed as text.
 
-<YoutubeEmbed videoId="bmPk0arvZQM" title="Disable link" caption="Disable link"/>
+<VideoEmbed host="youtube" videoId="bmPk0arvZQM" title="Disable link" caption="Disable link"/>
 
 
 ### Binding Properties
@@ -90,4 +90,4 @@ Style properties allow you to modify the text widget visually. It has several op
 * **Font Family:** Using this property, you can select a thefont.
 * **Text Align:** This property focuses on the text alignment inside the text widget. It has three options - left, center, or right.
 
-<YoutubeEmbed videoId="kXkGfzGSxYA" title="Styles" caption="Styles"/>
+<VideoEmbed host="youtube" videoId="kXkGfzGSxYA" title="Styles" caption="Styles"/>

@@ -2,7 +2,7 @@
 
 Switch group widget captures user inputs from a set of binary choices. This widget captures multiple choices.
 
-<YoutubeEmbed videoId="p--j-QyBlAY" title="How to use Switch Group Widget" caption="How to use Switch Group Widget"/>
+<VideoEmbed host="youtube" videoId="p--j-QyBlAY" title="How to use Switch Group Widget" caption="How to use Switch Group Widget"/>
 
 ### Displaying Data
 
@@ -112,7 +112,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<YoutubeEmbed videoId="mXkHx0W-xdM" title="How to set the label properties?" caption="How to set the label properties?"/>
+<VideoEmbed host="youtube" videoId="mXkHx0W-xdM" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 

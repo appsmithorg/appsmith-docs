@@ -2,7 +2,7 @@
 
 Checkbox group widget allows users to configure multiple checkboxes together.
 
-<YoutubeEmbed videoId="-7cvZ2yCgtE" title="How to use Checkbox Group Widget" caption="How to use Checkbox Group Widget"/>
+<VideoEmbed host="youtube" videoId="-7cvZ2yCgtE" title="How to use Checkbox Group Widget" caption="How to use Checkbox Group Widget"/>
 
 ### Properties
 
@@ -45,7 +45,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<YoutubeEmbed videoId="KVCjIWWzO5o" title="How to set the label properties?" caption="How to set the label properties?"/>
+<VideoEmbed host="youtube" videoId="KVCjIWWzO5o" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 
 ## Actions

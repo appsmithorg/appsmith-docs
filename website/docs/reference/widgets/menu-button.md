@@ -2,7 +2,7 @@
 
 Menu buttons are used to represent a set of actions in a group.
 
-<YoutubeEmbed videoId="tDMAOxZTmxY" title="How to use Mwnu Button Widget" caption="How to use Mwnu Button Widget"/>
+<VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Mwnu Button Widget" caption="How to use Mwnu Button Widget"/>
 
 ## Properties
 

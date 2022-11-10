@@ -29,7 +29,7 @@ Appsmith supports various databases like:
 
 Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
 
-<YoutubeEmbed videoId="ZOSYloiB8ZY" title="Connecting to a Datasource on Appsmith" caption="Connecting to a Datasource on Appsmith"/>
+<VideoEmbed host="youtube" videoId="ZOSYloiB8ZY" title="Connecting to a Datasource on Appsmith" caption="Connecting to a Datasource on Appsmith"/>
 
 1. First, click on the `+` the icon next to the `Datasources`.
 2. Next, you'll see a list of data source options that you can connect to.
@@ -55,7 +55,7 @@ Now, save your data source by clicking the **Save** button. You'll see a success
 
 The data source is successfully connected; now, let's write a simple DB query to fetch all the business data from the business table. Follow the below steps to do so:
 
-<YoutubeEmbed videoId="QoyzrOEG5to" title="Running Queries on Appsmith" caption="Running Queries on Appsmith"/>
+<VideoEmbed host="youtube" videoId="QoyzrOEG5to" title="Running Queries on Appsmith" caption="Running Queries on Appsmith"/>
 
 1. First, click on the `+` the icon next to the `Datasources`.
 2. Find the created `Postgres Mock DB` data source under the Active tab and click `NEW QUERY`.
@@ -83,7 +83,7 @@ In the previous section, you’ve created a DB query named **`getBusinessData`**
 
 The First and simple method is to open the query window and select the table option on the right-side property pane. It will automatically add a table widget to your canvas. The video below demonstrates adding a table widget from the query window.
 
-<YoutubeEmbed videoId="XgQ9AsRdLek" title="Adding a table widget from the query window" caption="Adding a table widget from the query window"/>
+<VideoEmbed host="youtube" videoId="XgQ9AsRdLek" title="Adding a table widget from the query window" caption="Adding a table widget from the query window"/>
 
 :::info
 Note that the above method would also automatically bind the data from the query for you.
@@ -133,7 +133,7 @@ Now copy the following onto the `Table Data` property:
 
 When you copy this onto the Table Data, you should see the data magically populated onto the table. Then, based on your preference, you can customize the column names and style your table widget with the other properties. The video below demonstrates how to add the table widget and fetch the data.
 
-<YoutubeEmbed videoId="Ys1zN2GjNGA" title="Adding a table widget to the canvas" caption="Adding a table widget to the canvas"/>
+<VideoEmbed host="youtube" videoId="Ys1zN2GjNGA" title="Adding a table widget to the canvas" caption="Adding a table widget to the canvas"/>
 
 But what just happened here?
 

@@ -46,7 +46,7 @@ What we need to make the connection are the endpoint, database name, and user cr
 
 * Here’s what the database configuration would look like:
 
-<YoutubeEmbed videoId="7ZFvDXiIez0" title="Connecting Snowflake on Appsmith" caption="Connecting Snowflake on Appsmith"/>
+<VideoEmbed host="youtube" videoId="7ZFvDXiIez0" title="Connecting Snowflake on Appsmith" caption="Connecting Snowflake on Appsmith"/>
 
 * Next, click on the `Test` button at the bottom right of the screen. It will help you understand whether your configuration is valid or not. If it returns a successful message, hit the ‘**Save**’ button to establish a secure connection between Appsmith and SnowflakeDB.
 
@@ -74,7 +74,7 @@ SELECT * FROM TPCDS_SF100TCL.CUSTOMER LIMIT 10;
 
 The video below demonstrates how to query the Snowflake database.
 
-<YoutubeEmbed videoId="JXOS1dJU8ZM" title="Querying Snowflake" caption="Querying Snowflake"/>
+<VideoEmbed host="youtube" videoId="JXOS1dJU8ZM" title="Querying Snowflake" caption="Querying Snowflake"/>
 
 You have your query; you can bind it to various widgets. You can take reference from [this ](https://appsmith.hashnode.dev/a-simple-front-end-for-your-snowflakedb-datasource)example and learn how to build a frontend that can connect to [SnowflakeDB](https://www.snowflake.com/) as a data source.
 

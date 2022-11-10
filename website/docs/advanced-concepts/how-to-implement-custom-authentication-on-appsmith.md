@@ -21,7 +21,7 @@ description: >-
 
 
 
-<YoutubeEmbed videoId="5oPcF9dXZyU" title="How to Implement Custom Login/Authentication in Appsmith" caption="How to Implement Custom Login/Authentication in Appsmith"/>
+<VideoEmbed host="youtube" videoId="5oPcF9dXZyU" title="How to Implement Custom Login/Authentication in Appsmith" caption="How to Implement Custom Login/Authentication in Appsmith"/>
 
 
 
@@ -128,13 +128,13 @@ It is possible to use third-party OAuth services like Google, Twitter, Github, e
 
 
 
- <YoutubeEmbed videoId="n3XSAA7q--I" title="Setting up Custom Login | Google" caption="Setting up Custom Login | Google"/>
+ <VideoEmbed host="youtube" videoId="n3XSAA7q--I" title="Setting up Custom Login | Google" caption="Setting up Custom Login | Google"/>
 
 You can also setup custom Google authentication using Supabase:
 
 
 
 
- <YoutubeEmbed videoId="mfhHUDNCkoQ" title="Setting Up Custom Login | Supabase" caption="Setting Up Custom Login | Supabase"/>
+ <VideoEmbed host="youtube" videoId="mfhHUDNCkoQ" title="Setting Up Custom Login | Supabase" caption="Setting Up Custom Login | Supabase"/>
 
 

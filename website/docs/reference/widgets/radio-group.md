@@ -2,7 +2,7 @@
 
 The Radio group widget allows users to configure a group of radio buttons. It lets the user choose one option from a predefined set of options.
 
-<YoutubeEmbed videoId="ZQ3CKFx3cbM" title="How to use Radio Group Widget" caption="How to use Radio Group Widget"/>
+<VideoEmbed host="youtube" videoId="ZQ3CKFx3cbM" title="How to use Radio Group Widget" caption="How to use Radio Group Widget"/>
 
 ## Properties
 
@@ -78,7 +78,7 @@ It allows you to specify the placement of the label. You can select one of the a
 Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
 :::
 
-<YoutubeEmbed videoId="yhsTdLgmi0c" title="How to set the label properties" caption="How to set the label properties"/>
+<VideoEmbed host="youtube" videoId="yhsTdLgmi0c" title="How to set the label properties" caption="How to set the label properties"/>
 
 ### Styles
 

@@ -2,7 +2,7 @@
 
 The Map widget is used to display lat, long data on a google map and allows users to select locations on a map as lat, long.
 
-<YoutubeEmbed videoId="xCTiPNlBKLU" title="How to use Map Widget" caption="How to use Map Widget"/>
+<VideoEmbed host="youtube" videoId="xCTiPNlBKLU" title="How to use Map Widget" caption="How to use Map Widget"/>
 
 ## Properties
 

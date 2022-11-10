@@ -12,7 +12,7 @@ Appsmith  `storeValue`  works similar to the browser's localStorage method [setI
 
 
 
-<YoutubeEmbed videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
+<VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
 
 
 ## Signature

@@ -19,11 +19,11 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 
 * Click on **Build your own solution** in the **Create Environment** window and choose `PingOne SSO` from the given options.
 
-<YoutubeEmbed videoId="B-Vsbqkkwqg" title="Build your own Solution" caption="Build your own Solution"/>
+<VideoEmbed host="youtube" videoId="B-Vsbqkkwqg" title="Build your own Solution" caption="Build your own Solution"/>
 
 * Fill in the details about the environment and click on Next.
 
-<YoutubeEmbed videoId="h8QqEhbpEPs" title="Environment Configuration" caption="Environment Configuration"/>
+<VideoEmbed host="youtube" videoId="h8QqEhbpEPs" title="Environment Configuration" caption="Environment Configuration"/>
 
 * Go to **Connections** from the sidebar and click on **Applications**. Create a new Application by clicking on the `+` button.
 * On the New application window, select `Web App` and choose OIDC as the connection type. Enter the application name and description (optional) on the next page.
@@ -34,11 +34,11 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 * Use the **Grant Access Resources** to filter the scopes by **openid** resource type. Move the desired scopes to **Scope Grants** to give access to the resources. Click on **Save and Continue**.
 * In the Attribute Mapping, add the OIDC attributes. Please note that only the values added in the `Scope Grant` will be valid here. Hit **Save and Close**, and your application is ready.
 
-<YoutubeEmbed videoId="fRreXB6P0No" title="Configure Environment and Scope" caption="Configure Environment and Scope"/>
+<VideoEmbed host="youtube" videoId="fRreXB6P0No" title="Configure Environment and Scope" caption="Configure Environment and Scope"/>
 
 * In your app's settings pane, navigate to the **Configuration** tab. Click the pencil icon to begin editing the app's settings, and tick the **Refresh Token** box to enable Ping Identity to issue refresh tokens to Appsmith. Your app is now configured for use with Appsmith.
 
-<YoutubeEmbed videoId="y7f2kXY9zcw" title="Enable Refresh Tokens in Ping Identity Dashboard" caption="Enable Refresh Tokens in Ping Identity Dashboard"/>
+<VideoEmbed host="youtube" videoId="y7f2kXY9zcw" title="Enable Refresh Tokens in Ping Identity Dashboard" caption="Enable Refresh Tokens in Ping Identity Dashboard"/>
 
 * Under the general section, you can see the basic information about your application. You can add multiple **Redirect URLs** by simply editing the general configurations. (Allows you to use this PingID application for multiple Appsmith applications.
 

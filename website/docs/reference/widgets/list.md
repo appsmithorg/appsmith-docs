@@ -6,7 +6,7 @@ You can use a list widget to display structured data collection. For example, Yo
 List widget is in beta right now. It can only render widgets for display purposes like text, images, etc., in the template, but we plan to offer more features in the future.
 :::
 
-<YoutubeEmbed videoId="0ePiZlWmp7Q" title="How to use List Widget" caption="How to use List Widget"/>
+<VideoEmbed host="youtube" videoId="0ePiZlWmp7Q" title="How to use List Widget" caption="How to use List Widget"/>
 
 ## Usage
 
@@ -30,7 +30,7 @@ To add a list widget to your canvas, drag a list widget from a widget pane avail
 
 Navigate to PAGES —> Select Widget Tab —> Write “**list”** in the search bar —> Drag the widget on the canvas.
 
-<YoutubeEmbed videoId="8LWM10svhZU" title="Add a widget to Canvas" caption="Add a widget to Canvas"/>
+<VideoEmbed host="youtube" videoId="8LWM10svhZU" title="Add a widget to Canvas" caption="Add a widget to Canvas"/>
 
 
 Now that you have a list widget added to the canvas, you can move it anywhere on the canvas by simply dragging the widget.
@@ -79,7 +79,7 @@ These properties allow you to name, edit the List widget.
 You can see a textbox available at the top of the Properties pane. List1 is the default name given to a list widget added to the canvas. The number `{1}` in List1 is a running sequence. If you add more list widgets, the names of the subsequent list widgets could be like List2, List3, and more.
 
 
-<YoutubeEmbed videoId="WqSrZphpZv4" title="How to name a list widget?" caption="How to name a list widget?"/>
+<VideoEmbed host="youtube" videoId="WqSrZphpZv4" title="How to name a list widget?" caption="How to name a list widget?"/>
 
 :::info
 It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
@@ -101,7 +101,7 @@ Items are used to bind your dataset with the list widget. Either you want to ite
 To have a dynamic data binding for the list widget, you can use the **Connect Data** button on the right bar or choose the Queries/API/JS functions from the left navigation bar available under the **Explorer** tab.
 
 
-<YoutubeEmbed videoId="PPsqqkaq_7Q" title="How to add Data to Widget?" caption="How to add Data to Widget?"/>
+<VideoEmbed host="youtube" videoId="PPsqqkaq_7Q" title="How to add Data to Widget?" caption="How to add Data to Widget?"/>
 
 #### Connect Data
 
@@ -202,7 +202,7 @@ For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind
 
 When you check the checkbox, it will enable the Visible property, and shows the list widget. Whereas the uncheck on the checkbox will hide the widget.
 
-<YoutubeEmbed videoId="iJICPdtoUQc" title="Visible" caption="Visible"/>
+<VideoEmbed host="youtube" videoId="iJICPdtoUQc" title="Visible" caption="Visible"/>
 
 
 ### Binding Properties
@@ -238,7 +238,7 @@ For example, show a message whenever a user clicks on a list item.
 An individual item on the list is defined as the entire row. A row includes the widgets embedded into it. You can get the values of embedded widgets for the selected or clicked item in your code to perform various operations.
 :::
 
-<YoutubeEmbed videoId="_h3hUjnGwSE" title="onListItemClick" caption="onListItemClick"/>
+<VideoEmbed host="youtube" videoId="_h3hUjnGwSE" title="onListItemClick" caption="onListItemClick"/>
 
 
 ### Styles

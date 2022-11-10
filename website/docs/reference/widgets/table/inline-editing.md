@@ -1,7 +1,7 @@
 # Inline Editing
 
 Inline edit-ability for a column can be enabled for the whole column or at the cell level based on a condition. 
-<YoutubeEmbed videoId="eIecDfvSOsU" title="" caption=""/>
+<VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
 The column list on the Table property pane has a checkbox to make that column editable.
 
@@ -123,7 +123,7 @@ Controls whether cells of the column are editable. To make the column editable, 
 Alternatively, A column can be editable by turning on `Editable` property inside column settings.
 
 
-<YoutubeEmbed videoId="BW5cVp0GfLE" title="Making column editable" caption="Making column editable"/>
+<VideoEmbed host="youtube" videoId="BW5cVp0GfLE" title="Making column editable" caption="Making column editable"/>
 
 
 :::info
@@ -161,7 +161,7 @@ Let's take an example to understand how the valid property works. If you want th
 If a word other than "John" is added to the cell, an error will be displayed. Similarly, the above-mentioned binding variables can be used to obtain values and row indexes.&#x20;
 
 
-<YoutubeEmbed videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
+<VideoEmbed host="youtube" videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
 
 ### Error Message
 
@@ -185,7 +185,7 @@ Sets the minimum allowed value. For example, you could set the minimum value to 
 
 Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want the numbers from 2 to 100. Any number entered that's more than 100 is considered invalid.
 
-<YoutubeEmbed videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
+<VideoEmbed host="youtube" videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
 
 ### updatedRows
 

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 
 
-<YoutubeEmbed videoId="9YyHwmrkztE" title="Error Handling for APIs & Queries" caption="Error Handling for APIs & Queries"/>
+<VideoEmbed host="youtube" videoId="9YyHwmrkztE" title="Error Handling for APIs & Queries" caption="Error Handling for APIs & Queries"/>
 
 
 ### Timeout Error

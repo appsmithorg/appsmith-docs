@@ -18,7 +18,7 @@ Appsmith integration with Google Sheets provides an easy way to manipulate, anal
 
 To add a **Google Sheets datasource**, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> Select **Google Sheets** under APIs.
 
-<YoutubeEmbed videoId="P222_GQTSDI" title="Creating a Google Sheets Datasource in Appsmith" caption="Creating a Google Sheets Datasource in Appsmith"/>
+<VideoEmbed host="youtube" videoId="P222_GQTSDI" title="Creating a Google Sheets Datasource in Appsmith" caption="Creating a Google Sheets Datasource in Appsmith"/>
 
 ## Connection Settings
 
@@ -100,7 +100,7 @@ Operation lets you define the type of action you want to perform on Google Sheet
 
 The operation allows you to fetch the details of a given spreadsheet.
 
-<YoutubeEmbed videoId="elAabPXK_xk" title="Fetch Details of a Spreadsheet" caption="Fetch Details of a Spreadsheet"/>
+<VideoEmbed host="youtube" videoId="elAabPXK_xk" title="Fetch Details of a Spreadsheet" caption="Fetch Details of a Spreadsheet"/>
 
 You can set the parameter values as below:
 
@@ -120,7 +120,7 @@ With Insert One, you can choose to insert a new row in an existing spreadsheet o
 
 When you select to add a new spreadsheet, the new spreadsheet is created and available in your google account. When adding a new spreadsheet, you can also choose to add data to it.
 
-<YoutubeEmbed videoId="eSZyxR3vAj4" title="Insert a Spreadsheet" caption="Insert a Spreadsheet"/>
+<VideoEmbed host="youtube" videoId="eSZyxR3vAj4" title="Insert a Spreadsheet" caption="Insert a Spreadsheet"/>
 
 For creating a spreadsheet and adding data to it, you can set the parameter values as below:
 
@@ -161,7 +161,7 @@ You’ll have to supply `rowIndex` when creating a new spreadsheet and adding da
 
 You have a form that you use to capture the employee details. Whenever a new employee joins, you want to use that form and add the details to the existing spreadsheet `AppsmithEmployeeDirectory`.
 
-<YoutubeEmbed videoId="QMB8O2bBTqE" title="Add New Data to an Existing Sheet" caption="Add New Data to an Existing Sheet"/>
+<VideoEmbed host="youtube" videoId="QMB8O2bBTqE" title="Add New Data to an Existing Sheet" caption="Add New Data to an Existing Sheet"/>
 
 You’ll have to add a query to insert the data by setting parameters as below:
 
@@ -216,7 +216,7 @@ When the user inputs an employee’s data, and clicks the `Submit` button, the q
 
 With Update One, you can choose to update a single record in an existing spreadsheet.
 
-<YoutubeEmbed videoId="-zgd0LmzZ6c" title="Update Row in an Existing Sheet" caption="Update Row in an Existing Sheet"/>
+<VideoEmbed host="youtube" videoId="-zgd0LmzZ6c" title="Update Row in an Existing Sheet" caption="Update Row in an Existing Sheet"/>
 
 You can capture the data you want to update and send it to the update one query. For example, you want to update the designation and experience of an employee. You can pass the below parameters to the **Update One** Query.
 
@@ -255,7 +255,7 @@ You can perform the Delete One operation to delete a spreadsheet, a sheet within
 
 To delete a spreadsheet, you can choose the below parameters:
 
-<YoutubeEmbed videoId="rfD4IgcXtOg" title="Delete a Spreadsheet" caption="Delete a Spreadsheet"/>
+<VideoEmbed host="youtube" videoId="rfD4IgcXtOg" title="Delete a Spreadsheet" caption="Delete a Spreadsheet"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Delete One
 * [Entity](./querying-google-sheets.md#entity) - Spreadsheet
@@ -265,7 +265,7 @@ To delete a spreadsheet, you can choose the below parameters:
 
 You can choose to delete a sheet from the given spreadsheet. You can choose the below parameters:
 
-<YoutubeEmbed videoId="kW45AZoMkm4" title="Delete a Sheet" caption="Delete a Sheet"/>
+<VideoEmbed host="youtube" videoId="kW45AZoMkm4" title="Delete a Sheet" caption="Delete a Sheet"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Delete One
 * [Entity](./querying-google-sheets.md#entity) - Sheet
@@ -280,7 +280,7 @@ The `Delete One` operation for a Sheet only works when there is more than one sh
 
 You can choose to delete a row from the existing sheet from the given spreadsheet. You can choose the below parameters:
 
-<YoutubeEmbed videoId="vE5PrkFd0y0" title="Delete a Row" caption="Delete a Row"/>
+<VideoEmbed host="youtube" videoId="vE5PrkFd0y0" title="Delete a Row" caption="Delete a Row"/>
 
 * Operation - Delete One
 * [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
@@ -302,7 +302,7 @@ You can choose to fetch multiple records from a sheet or fetch spreadsheets avai
 
 To fetch spreadsheets available in your account, you can choose the below parameters:
 
-<YoutubeEmbed videoId="uVmVKySPN_A" title="Fetch all Spreadsheets" caption="Fetch all Spreadsheets"/>
+<VideoEmbed host="youtube" videoId="uVmVKySPN_A" title="Fetch all Spreadsheets" caption="Fetch all Spreadsheets"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Fetch Many
 * [Entity](./querying-google-sheets.md#entity) - Spreadsheet
@@ -330,7 +330,7 @@ Bind the data returned by the JS object to the select widget by using `{{<JS_OBJ
 
 To fetch spreadsheets data, you can choose the below parameters:
 
-<YoutubeEmbed videoId="KaagWQaR5wg" title="Fetch Data from Sheet" caption="Fetch Data from Sheet"/>
+<VideoEmbed host="youtube" videoId="KaagWQaR5wg" title="Fetch Data from Sheet" caption="Fetch Data from Sheet"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Fetch Many
 * [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
@@ -352,7 +352,7 @@ Bind the data returned by the query to a [table](/reference/widgets/table) widge
 
 You can choose to insert multiple records in an existing sheet by using Insert Many.
 
-<YoutubeEmbed videoId="Mxlw_2U5PeA" title="Add Multiple Rows to Sheet" caption="Add Multiple Rows to Sheet"/>
+<VideoEmbed host="youtube" videoId="Mxlw_2U5PeA" title="Add Multiple Rows to Sheet" caption="Add Multiple Rows to Sheet"/>
 
 
 * [Operation](./querying-google-sheets.md#operation) - Insert Many
@@ -394,7 +394,7 @@ You can also bind an API or a Query response returning a JSON Array to Row Objec
 
 You can choose to update multiple records in an existing sheet by using Update Many.
 
-<YoutubeEmbed videoId="i9B3yuKDtEc" title="Update Multiple Rows in Sheet" caption="Update Multiple Rows in Sheet"/>
+<VideoEmbed host="youtube" videoId="i9B3yuKDtEc" title="Update Multiple Rows in Sheet" caption="Update Multiple Rows in Sheet"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Update Many
 * [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
@@ -484,7 +484,7 @@ The filter format allows you to filter your Google sheet data based on range or 
 
 You can filter by range for cases when you want to fetch data from designated cells in your sheet. For example, you want to check the experience level and designations of the employees to create a data table that shows how many employees are eligible for a promotion. You can choose filter by cell range and select the designated columns excluding all the other details. Filter by cell range gives you the desired data set that works best for your use case.
 
-<YoutubeEmbed videoId="FC_7OKeRQQs" title="Set Cell Range Filtering" caption="Set Cell Range Filtering"/>
+<VideoEmbed host="youtube" videoId="FC_7OKeRQQs" title="Set Cell Range Filtering" caption="Set Cell Range Filtering"/>
 
 #### **Where Clause**
 
@@ -492,7 +492,7 @@ By defining the column and the filter criteria, you can filter by the data avail
 
 You can define a where clause by defining the following values:
 
-<YoutubeEmbed videoId="hE0YHCdD4FY" title="Confide Where Clause" caption="Confide Where Clause"/>
+<VideoEmbed host="youtube" videoId="hE0YHCdD4FY" title="Confide Where Clause" caption="Confide Where Clause"/>
 
 * **Filter By** - You define one or more criteria as part of the `filter by`.
   * **Key** - Specify the column names on which you would want to add filters

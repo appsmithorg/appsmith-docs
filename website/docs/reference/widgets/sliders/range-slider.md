@@ -33,38 +33,38 @@ These properties allow you to perform formatting changes or bind it to any other
 
 These properties represent the lower and upper bounds of values that can be selected with the slider. The **Min Value** determines the value at the far left end of the widget, and the **Max Value** determines the value at the far right end. Negative and/or decimal values are allowed, however the Min Value must always be less than the Max Value.
 
-<YoutubeEmbed videoId="VphLW50YPKo" title="Min Value / Max Value" caption="Min Value / Max Value"/>
+<VideoEmbed host="youtube" videoId="VphLW50YPKo" title="Min Value / Max Value" caption="Min Value / Max Value"/>
 
 
 #### Step Size
 
 The `Step Size` property determines the smallest increment by which the user may adjust the value selected by the slider. Smaller values for this property (can't be smaller than 0.1) result in finer control of the selection, whereas larger step sizes result in coarser control.
 
-<YoutubeEmbed videoId="mecwJ-D49gU" title="Step Size" caption="Step Size"/>
+<VideoEmbed host="youtube" videoId="mecwJ-D49gU" title="Step Size" caption="Step Size"/>
 
 #### Min Range
 
 This property represents the minimum difference allowed between the low and high ends of the user's selection. This value can't be less than 0.1.
 
-<YoutubeEmbed videoId="C40N4hh3SRA" title="Min Range" caption="Min Range"/>
+<VideoEmbed host="youtube" videoId="C40N4hh3SRA" title="Min Range" caption="Min Range"/>
 
 #### Default Start / End Value
 
 Sets an initial start/end value for the range to be captured as user input unless it's changed by the user.
 
-<YoutubeEmbed videoId="2-iIwfNigbo" title="Default Start / End Value" caption="Default Start / End Value"/>
+<VideoEmbed host="youtube" videoId="2-iIwfNigbo" title="Default Start / End Value" caption="Default Start / End Value"/>
 
 #### Marks
 
 Marks appear along the bottom of the widget as labels for the different values along the slider. Using the `Marks` property, which is an array of objects with keys `label` and `value`, you can define where these marks appear and how they're labeled. Each mark appears below the place where its `value` is located on the slider, and has the text from its corresponding `label`.
 
-<YoutubeEmbed videoId="9lkNIjJ8EFs" title="Marks" caption="Marks"/>
+<VideoEmbed host="youtube" videoId="9lkNIjJ8EFs" title="Marks" caption="Marks"/>
 
 #### Tooltip Always On
 
 When this property is enabled, the widget's tooltip is _always_ visible, and shows the currently selected value on the slider. If this setting is turned off, the tooltip is only visible when the user is hovering over the slider with their mouse cursor.
 
-<YoutubeEmbed videoId="mtlqTYBplqk" title="Tooltip Always On" caption="Tooltip Always On"/>
+<VideoEmbed host="youtube" videoId="mtlqTYBplqk" title="Tooltip Always On" caption="Tooltip Always On"/>
 
 #### Start / End
 
@@ -78,7 +78,7 @@ These binding properties allow you to access the values that have been selected 
 // 80
 ```
 
-<YoutubeEmbed videoId="c5jzfvx1hvQ" title="Start / End" caption="Start / End"/>
+<VideoEmbed host="youtube" videoId="c5jzfvx1hvQ" title="Start / End" caption="Start / End"/>
 
 
 ## Events

@@ -24,4 +24,4 @@ Appsmith makes it easy to import your APIs into your application using CURL comm
 
 There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
 
-<YoutubeEmbed videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
+<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
