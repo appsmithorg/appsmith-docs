@@ -11,10 +11,7 @@ You can easily make Appsmith available on a custom domain by updating your domai
 * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
 * [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
 
-<figure>
- <object data="https://www.youtube.com/embed/0llo1exi4IY?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>How To Self-Host Appsmith With A Custom Domain</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="0llo1exi4IY" title="How To Self-Host Appsmith With A Custom Domain" caption="How To Self-Host Appsmith With A Custom Domain"/>
 
 ## Setting up SSL
 

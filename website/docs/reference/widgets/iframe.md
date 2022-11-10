@@ -42,10 +42,7 @@ The message content may be of any type; before any message is received, this pro
 
 You can try out the message property by following the steps below:
 
-<figure>
-  <object data="https://www.youtube.com/embed/kDJ56AMsXrM?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="kDJ56AMsXrM" title="Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!" caption="Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!"/>
 
 1. On a blank canvas, drag and drop a new iframe widget.
 

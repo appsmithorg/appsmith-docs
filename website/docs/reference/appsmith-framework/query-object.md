@@ -64,11 +64,7 @@ Params sent to a query can be accessed using the `this` keyword
 Please see the quick demo below showing how to access your params from `Query.run(params)` within the query. We'll use the [Postman Echo API](https://learning.postman.com/docs/developer/echo-api/), which will echo our request. We'll pass it `{ phrase: "hello, world!" }` , and then receive it back as a response:
 
 
-<figure>
-<object data="https://www.youtube.com/embed/oktXirbay8U" width='750px' height='400px'></object>)
-<figcaption align = "center"><i>Use this.params.key within your query to access any params you passed within the .run(params) function.
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="oktXirbay8U" title="Use this.params.key within your query to access any params you passed within the .run(params) function." caption="Use this.params.key within your query to access any params you passed within the .run(params) function."/>
 
 ### onSuccess
 

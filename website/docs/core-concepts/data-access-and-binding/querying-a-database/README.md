@@ -26,10 +26,7 @@ Go to the page where you wish to run the query. Follow the below steps to set up
 Queries are **auto-saved**, so you never lose your work. These changes will be reflected in your **published** application only after you deploy.
 :::
 
- <figure>
- <object data="https://www.youtube.com/embed/N6zRxIVSGfk?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Setting up a Query</i></figcaption>
-</figure> 
+ <VideoEmbed host="youtube" videoId="N6zRxIVSGfk" title="Setting up a Query" caption="Setting up a Query"/> 
 
 
 * Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query.
@@ -69,10 +66,7 @@ A query must have a **unique** and **meaningful name** that acts as an **identif
 
 Click on the `Run` button or hit `cmd + enter` to execute a query. You'll see the results in the Response tab if the query succeeds.
 
- <figure>
- <object data="https://www.youtube.com/embed/0xA7ChO7Rlk?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Running a Query</i></figcaption>
-</figure>  
+ <VideoEmbed host="youtube" videoId="0xA7ChO7Rlk" title="Running a Query" caption="Running a Query"/>  
 
 
 All query results are stored in the [data](../../../reference/appsmith-framework/query-object.md#data) property of the [query object](../../../reference/appsmith-framework/query-object.md). It is immutable and cannot be changed. You can access it using JavaScript, as shown in the code snippet below:
