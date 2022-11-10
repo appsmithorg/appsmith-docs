@@ -14,11 +14,7 @@ Version Control works with any Git hosting service that supports SSH protocol.
 
 
 
-<figure>
-<object data="https://www.youtube.com/embed/emdZaG-tzgw" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Version Control with Git 
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="emdZaG-tzgw" title="Version Control with Git " caption="Version Control with Git "/>
 
 
 ## Prerequisites
