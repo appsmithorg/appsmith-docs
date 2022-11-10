@@ -180,7 +180,6 @@ You’ll have to use the `debugger` keyword in the code snippet to pause the exe
 You must have the **browser’s developer console** **open** to see the debugger in action.
 :::
 
- <object data="https://www.youtube.com/embed/ZjleR7iM-xo?autoplay=0" width='750px' height='400px'></object> 
  <figure>
   <object data="https://www.youtube.com/embed/ZjleR7iM-xo?autoplay=0" width='750px' height='400px'></object> 
   <figcaption align="center"><i>How to use Debugger</i></figcaption>
