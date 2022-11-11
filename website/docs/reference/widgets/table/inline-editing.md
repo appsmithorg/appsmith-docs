@@ -235,8 +235,6 @@ This property contains the details of the row that triggered the action (`onSubm
 }
 ```
 
-
-
 ### Events
 
 | Events        | Description                                                                                                            |
@@ -261,6 +259,8 @@ In addition to editing individual cells, you may allow users to use the Table UI
 ### Capturing and using data from new rows
 
 Saving new rows works much like submitting a form. In order for the data to be sent to update the same datasource populating the table, you must use the Table's **onSave** event to execute a query or function that sends the new data to the right place.
+
+<VideoEmbed host="youtube" videoId="09pOAgK9mhk" title="Using newRow to save new table data" caption="Using newRow to save new table data"/>
 
 Imagine that your table gets information from a query called `myAPI_get`, which is a GET request to a datasource called `myAPI`.
 
@@ -297,8 +297,9 @@ The following properties are related to adding new rows:
 | --------------------- | ----------- | ------------------------ | ------------------- |
 | **Allow adding a row** | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
-| **isAddRowInProgress** | Binding |  | `Table1.isAddRowInProgress` |
-| **newRow** | Binding | When writing code for validation properties, this variable contains a reference to the new row added by the user. | `newRow` |
+| **isAddRowInProgress** | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
+| **newRow** | Binding | When writing code for validation properties, this variable contains a reference to the new row object added by the user. | `Table1.newRow` |
+| **isNewRow** | Validation | When writing code for validation properties, this variable indicates whether the cells being validated are part of a new or an existing row. | `isNewRow` |
 
 The subheadings below describe these properties in more detail:
 
@@ -310,15 +311,41 @@ Use the **onSave** event to update the source of the table's data and reflect th
 
 #### Default Values
 
+<VideoEmbed host="youtube" videoId="3KozovP7LNk" title="Table | Add new rows | Default values" caption="Set default values for new Table rows"/>
+
 The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data.
 
-### Bindings
+#### isAddRowInProgress
 
+While the "Add new row" mode is enabled in the Table widget, `isAddRowInProgress` is `true`. You can use this for a variety of reasons, such as providing visual feedback in the UI for the user or for enforcing specific validation rules for user input in new rows (See [isNewRow](#isnewrow)).
 
+#### newRow
+
+When a new row is being added to the Table, this variable contains a reference to that new row object being added. When there is not a new row in progress, `newRow` is `undefined`.
+
+This is useful for accessing the user input to send it via query once the user is ready to submit the new data.
+
+#### isNewRow
+
+`isNewRow` can be used only within the **Valid** property. With it, you may set specific validation rules for new table rows that does not neccesarily apply to editing existing cells.
+
+In the following video example, the Table allows editing a client in "Zone AE," however it does not allow adding any _new_ rows in Zone AE.
+
+<VideoEmbed host="youtube" videoId="d8hpCBW6rGI" title="Table | Add new rows | isNewRow Validation" caption="Set specific validation rules for new rows"/>
+
+```javascript
+// in the Table widget's Valid property:
+{{isNewRow? Table1.currentRow.zone !== "AE" : true}}
+```
+
+A user may make any changes to existing rows, however they are not allowed to add any new row in AE.
 
 ### Events
 
-
+| Events        | Description                                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **onSave**    | Action that gets triggered when the user clicks the save button for a cell or a new row.                               |
+| **onDiscard** | Action that gets triggered when user clicks discard button for a cell or a new row.                                    |
 
 ## What's next?
 
