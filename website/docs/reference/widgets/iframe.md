@@ -42,31 +42,24 @@ The message content may be of any type; before any message is received, this pro
 
 You can try out the message property by following the steps below:
 
-<figure>
-  <object data="https://www.youtube.com/embed/kDJ56AMsXrM?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="kDJ56AMsXrM" title="Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!" caption="Follow these steps to test out how to receive messages posted from the sites embedded in your iframe!"/>
 
 1. On a blank canvas, drag and drop a new iframe widget.
 
 2. We need to embed a page that is able to send a message with `postMessage()`. In the iframe widget’s settings, copy and paste the following snippet into its **srcDoc** property:
 
-```html
-{{
-    `
-        <input id="messageinput" type="text"></input>
-        <input type="button" onclick="sendMyMessage()" value="SEND" />
-        <script>
-            function sendMyMessage() {
-                const msgText = document.getElementById("messageinput").value;
-                window.parent.postMessage(msgText, "*");
-            }
-        </script>
-    `
-}}
-```
+   ```html
+   <input id="messageinput" type="text"></input>
+   <input type="button" onclick="sendMyMessage()" value="SEND" />
+   <script>
+       function sendMyMessage() {
+           const msgText = document.getElementById("messageinput").value;
+           window.parent.postMessage(msgText, "*");
+       }
+   </script>
+   ```
 
-You’ve created a very simple HTML document in the iframe containing a text input, a button, and a script to handle sending the message.
+   You’ve created a very simple HTML document in the iframe containing a text input, a button, and a script to handle sending the message.
 
 3. Drag and drop a new [Text](text.md) widget onto the canvas, and set its Text property to `{{Iframe1.message}}`.
 

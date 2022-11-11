@@ -2,10 +2,7 @@
 
 The Audio recorder widget allows users to record using their microphone, listen to its playback and export the data to a data source.
 
-<figure>
-  <object data="https://www.youtube.com/embed/fMovD6hfHQU?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Audio Recorder widget</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="fMovD6hfHQU" title="How to use Audio Recorder widget" caption="How to use Audio Recorder widget"/>
 
 
 ## Properties

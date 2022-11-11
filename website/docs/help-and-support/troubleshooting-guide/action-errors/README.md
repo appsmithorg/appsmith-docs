@@ -6,11 +6,7 @@ sidebar_position: 1
 
 
 
-<figure>
-<object data="https://www.youtube.com/embed/9YyHwmrkztE" width='750px' height='400px'></object>)
-<figcaption align = "center"><i>Error Handling for APIs & Queries
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="9YyHwmrkztE" title="Error Handling for APIs & Queries" caption="Error Handling for APIs & Queries"/>
 
 
 ### Timeout Error

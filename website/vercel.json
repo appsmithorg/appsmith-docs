@@ -22,6 +22,18 @@
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views"
     },
     {
+      "source": "/advanced-concepts/log-contents",
+      "destination": "/advanced-concepts/audit-logs#log-contents"
+    },
+    {
+      "source": "/advanced-concepts/filtering-audit-logs",
+      "destination": "/advanced-concepts/audit-logs#filtering-audit-logs"
+    },
+    {
+      "source": "/advanced-concepts/tracked-events",
+      "destination": "/advanced-concepts/audit-logs#tracked-events"
+    },
+    {
       "source": "/core-concepts/git-sync",
       "destination": "/advanced-concepts/version-control-with-git"
     },

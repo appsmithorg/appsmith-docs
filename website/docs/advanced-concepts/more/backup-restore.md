@@ -36,11 +36,7 @@ Applications built in an older version of an Appsmith instance will work when im
 
 
 
- <figure>
-<object data="https://www.youtube.com/embed/2JuJ0v56ztw" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Import/Export Apps on Appsmith
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="2JuJ0v56ztw" title="Import/Export Apps on Appsmith" caption="Import/Export Apps on Appsmith"/>
 
 
 
@@ -56,11 +52,7 @@ Follow the steps below to export your application as a JSON file:
 
 
 
- <figure>
-<object data="https://www.youtube.com/embed/lBMP9MQHdCQ" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>How to export an app
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="lBMP9MQHdCQ" title="How to export an app" caption="How to export an app"/>
 
 
 ### Import Application
@@ -87,11 +79,7 @@ As a security measure, we do not export any config values used for the connectin
 
 
 
- <figure>
-<object data="https://www.youtube.com/embed/bhzGIdXq2Z4" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>How to import an app
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="bhzGIdXq2Z4" title="How to import an app" caption="How to import an app"/>
 
 :::tip
 When you import the application into the destination instance/ workspace, it's a new one, meaning source and destination applications are detached, and changes will not be synced.

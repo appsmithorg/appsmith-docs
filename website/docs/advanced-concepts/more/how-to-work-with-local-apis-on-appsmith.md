@@ -23,11 +23,7 @@ You can also visit docker docs to read the use cases and workarounds for the [ho
 
 
 
- <figure>
- <object data="https://www.youtube.com/embed/4XlgsVekzhI" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Connect to databases/APIs running on localhost
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connect to databases/APIs running on localhost" caption="Connect to databases/APIs running on localhost"/>
  
 For Linux systems, you would need to provide a run flag `add-host`. 
 
@@ -55,11 +51,7 @@ For Docker compose on Linux, you need to manually add it to the ```docker-compos
 Appsmith allows you to work with APIs running on `localhost` using the help of **`ngrok`**. Let’s look at how you can build an Appsmith application utilizing the APIs running on localhost.
 
 
- <figure>
- <object data="https://www.youtube.com/embed/IUX2rXmS17E" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Connect to localhost using ngrok
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="IUX2rXmS17E" title="Connect to localhost using ngrok" caption="Connect to localhost using ngrok"/>
 
 
 ### Building a Simple Local API
