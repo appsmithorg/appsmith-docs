@@ -61,7 +61,7 @@
             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"/>
             </a> 
         </div> 
-        <b><a href="cloudjiffy/">CloudJiffy</a></b>
+            <b><a href="cloudjiffy/">CloudJiffy</a></b>
     </div>
    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
@@ -69,8 +69,14 @@
             <img class="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
             </a>     
         </div> 
-         <b><a href="ansible/">Ansible</a></b>
+        <b><a href="ansible/">Ansible</a></b>
     </div>
      <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+                <a href="ansible/">
+                <img class="containerImage" src="/img/Restack_Icon_100px.png" alt="Restack-logo"/>
+                </a>     
+            </div> 
+            <b><a href="ansible/">Restack</a></b>
    </div>
 </div>

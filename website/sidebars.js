@@ -56,6 +56,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
+                'getting-started/setup/installation-guides/restack',
                 'getting-started/setup/installation-guides/cloudjiffy',
                 'getting-started/setup/installation-guides/ansible'
               ],
