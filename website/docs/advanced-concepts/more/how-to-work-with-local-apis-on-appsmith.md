@@ -169,7 +169,7 @@ ngrok http 8000
 ![connect local api using ngrok](/img/connect-localhost-api-using-ngrok.png)
 
 #### Connect to local API
-You can [create and API](core-concepts/connecting-to-data-sources/authentication/connect-to-apis#api-editor) and add the localhost API with the address `https://a8cc-2405-201-21-4011-5564-59ac-2209-1c4c.in.ngrok.io`.
+You can [create an API](core-concepts/connecting-to-data-sources/authentication/connect-to-apis#api-editor) and add the localhost API with the address `https://a8cc-2405-201-21-4011-5564-59ac-2209-1c4c.in.ngrok.io`.
 
 ![connect to an API hosted on localhost using ngrok](/img/create-api-for-local-api-on-appsmith.png)
 
