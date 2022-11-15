@@ -362,6 +362,14 @@ const sidebars = {
                 'reference/datasources/graphql',
                 {
                   type: 'category',
+                  label: 'Hubspot',
+                  link: {type: 'doc', id:  'reference/datasources/hubspot/README'},
+                  items: [ 
+                    
+                  ]
+                },
+                {
+                  type: 'category',
                   label: 'Mongo',
                   link: {type: 'doc', id:  'reference/datasources/querying-mongodb/README'},
                   items: [ 
