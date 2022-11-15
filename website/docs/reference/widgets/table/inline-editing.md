@@ -1,6 +1,7 @@
 # Inline Editing
 
-Inline edit-ability for a column can be enabled for the whole column or at the cell level based on a condition. 
+Inline edit-ability for a column [can be enabled](#editing-cells) for the whole column or at the cell level based on a condition. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
+
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
 ## Editing cells
@@ -245,20 +246,24 @@ This property contains the details of the row that triggered the action (`onSubm
 
 ## Adding new rows
 
-In addition to editing individual cells, you may allow users to use the Table UI to submit new rows of data. This works similarly to the Inline Editing features.
+In addition to [editing individual cells](#how-to-edit-a-cell), you may allow users to use the Table UI to submit new rows of data.
 
 ### How to add a new row
 
-1. Select your Table widget, and ensure that at least one of its columns has its **Editable** property turned on.
-  - Even in new rows, only **Editable** cells can accept user input.
-2. Next, find the **Allow adding a row** property and turn it on as well.
-3. A new button should appear in the Table's UI called 'Add new row'. Click this button to add a row of new cells to the top of the table.
-  - If the Table's **Default Values** property has data added to it, the new cells will be pre-populated with those default values. Otherwise, they will be blank.
-4. Once the cells have been filled in with desired values, clicking the "Save" button will close the editing mode and execute the Table's **onSave** event. Or, clicking "Discard" will throw away the new cells and trigger the **onDiscard** event.
+<VideoEmbed host="youtube" videoId="uthJ6IrYPXA" title="Table | Add new rows | Enable feature" caption="Enable adding new rows to your table"/>
+
+:::info
+If you'd like to add new rows to your table, first ensure that the columns in your Table's properties are marked as [**Editable**](#editable). A column can only accept user input if its **Editable** property is checked.
+:::
+
+1. Select your Table widget and turn on the **Allow adding a row** property.
+2. A new button should appear in the Table's header called 'Add new row'. Click this button to add a row of new cells to the top of the table.
+    - If the Table's **Default Values** property has data added to it, the new cells are pre-populated with those default values. Otherwise, they're blank.
+3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events-1) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
 
 ### Capturing and using data from new rows
 
-Saving new rows works much like submitting a form. In order for the data to be sent to update the same datasource populating the table, you must use the Table's **onSave** event to execute a query or function that sends the new data to the right place.
+Saving new rows works much like submitting a form. Use the **onSave** event under the **Adding a row** section in the Table's property pane to execute a query or function that sends the new row to the underlying datasource. For example:
 
 <VideoEmbed host="youtube" videoId="09pOAgK9mhk" title="Using newRow to save new table data" caption="Using newRow to save new table data"/>
 
@@ -277,7 +282,7 @@ And perhaps you add a new row to the table with the data:
 {fruit: "banana", color: "yellow"}
 ```
 
-To update the original datasource with the new data, you might execute a query like `myAPI_post`, which would be a POST request to `myAPI`. To add the data to the POST request, you can use the Table's `newRow` attribute to reference the new row.
+To update the original datasource with the new data, you might execute a query like `myAPI_post`, which would be a POST request to `myAPI`. To add the data to the POST request, you can use the Table's [`newRow`](#newrow) attribute to reference the new row.
 
 ```javascript
 // In our `myAPI_post` query:
@@ -321,15 +326,13 @@ While the "Add new row" mode is enabled in the Table widget, `isAddRowInProgress
 
 #### newRow
 
-When a new row is being added to the Table, this variable contains a reference to that new row object being added. When there is not a new row in progress, `newRow` is `undefined`.
-
-This is useful for accessing the user input to send it via query once the user is ready to submit the new data.
+When a new row is being added to the Table, this variable contains a reference to that new row object being added; otherwise, it's `undefined`. This is useful for accessing the user input to send it via query once the user is ready to submit the new data.
 
 #### isNewRow
 
-`isNewRow` can be used only within the **Valid** property. With it, you may set specific validation rules for new table rows that does not neccesarily apply to editing existing cells.
+`isNewRow` can be used only within the Validation-related properties (for example, **Regex**, **Valid**, **Error Message**, and **Required**). With it, you may set specific validation rules for new table rows that don't necessarily apply to editing existing cells.
 
-In the following video example, the Table allows editing a client in "Zone AE," however it does not allow adding any _new_ rows in Zone AE.
+In the following video example, the Table allows editing a client in "Zone AE," however it doesn't allow adding any _new_ rows in Zone AE.
 
 <VideoEmbed host="youtube" videoId="d8hpCBW6rGI" title="Table | Add new rows | isNewRow Validation" caption="Set specific validation rules for new rows"/>
 
@@ -338,7 +341,7 @@ In the following video example, the Table allows editing a client in "Zone AE," 
 {{isNewRow? Table1.currentRow.zone !== "AE" : true}}
 ```
 
-A user may make any changes to existing rows, however they are not allowed to add any new row in AE.
+A user may make any changes to existing rows, however they're not allowed to add any new row in AE.
 
 ### Events
 
