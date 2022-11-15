@@ -22,7 +22,7 @@ export default function YoutubeEmbed(props) {
             title={title ? title : 'YouTube video player'}
             loading="lazy"
           ></iframe>
-          { caption && <figcaption>{caption}</figcaption> }
+          { caption && <figcaption align="center"><i>{caption}</i></figcaption> }
         </figure>
     );
   };
