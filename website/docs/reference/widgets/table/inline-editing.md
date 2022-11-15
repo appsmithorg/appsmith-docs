@@ -248,52 +248,6 @@ This property contains the details of the row that triggered the action (`onSubm
 
 In addition to [editing individual cells](#how-to-edit-a-cell), you may allow users to use the Table UI to submit new rows of data.
 
-### How to add a new row
-
-<VideoEmbed host="youtube" videoId="uthJ6IrYPXA" title="Table | Add new rows | Enable feature" caption="Enable adding new rows to your table"/>
-
-:::info
-If you'd like to add new rows to your table, first ensure that the columns in your Table's properties are marked as [**Editable**](#editable). A column can only accept user input if its **Editable** property is checked.
-:::
-
-1. Select your Table widget and turn on the **Allow adding a row** property.
-2. A new button should appear in the Table's header called 'Add new row'. Click this button to add a row of new cells to the top of the table.
-    - If the Table's **Default Values** property has data added to it, the new cells are pre-populated with those default values. Otherwise, they're blank.
-3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events-1) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
-
-### Saving new rows
-
-Saving new rows works much like submitting a form. Use the **onSave** event under the **Adding a row** section in the Table's property pane to execute a query or function that sends the new row to the underlying datasource. For example:
-
-<VideoEmbed host="youtube" videoId="09pOAgK9mhk" title="Using newRow to save new table data" caption="Using newRow to save new table data"/>
-
-Imagine that your table gets information from a query called `myAPI_get`, which is a GET request to a datasource called `myAPI`.
-
-```javascript
-// In the Table Data field
-{{myAPI.data}}
-
-// Returns [{fruit: "pomegranate", color: "red"}, ... ]
-```
-
-And perhaps you add a new row to the table with the data:
-
-```javascript
-{fruit: "banana", color: "yellow"}
-```
-
-To update the original datasource with the new data, you might execute a query like `myAPI_post`, which would be a POST request to `myAPI`. To add the data to the POST request, you can use the Table's [`newRow`](#newrow) attribute to reference the new row.
-
-```javascript
-// In our `myAPI_post` query:
-{{Table1.newRow}}
-
-// In the Table's `onSave` event:
-{{myAPI_post.run()}}
-```
-
-Assuming that the POST request is successful, the `myAPI` datasource receives the new information, and the Table should contain the new row the next time it updates.
-
 ### Properties
 
 The following properties are related to adding new rows:
@@ -303,7 +257,7 @@ The following properties are related to adding new rows:
 | **Allow adding a row** | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | **isAddRowInProgress** | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
-| **newRow** | Binding | When writing code for validation properties, this variable contains a reference to the new row object added by the user. | `Table1.newRow` |
+| **newRow** | Binding | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
 | **isNewRow** | Validation | When writing code for validation properties, this variable indicates whether the cells being validated are part of a new or an existing row. | `isNewRow` |
 
 The subheadings below describe these properties in more detail:
@@ -338,7 +292,7 @@ In the following video example, the Table allows editing a client in "Zone AE," 
 
 ```javascript
 // in the Table widget's Valid property:
-{{isNewRow? Table1.currentRow.zone !== "AE" : true}}
+{{isNewRow? currentRow.zone !== "AE" : true}}
 ```
 
 A user may make any changes to existing rows, however they're not allowed to add any new row in AE.
@@ -348,7 +302,52 @@ A user may make any changes to existing rows, however they're not allowed to add
 | Events        | Description                                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **onSave**    | Action that gets triggered when the user clicks the save button for a cell or a new row.                               |
-| **onDiscard** | Action that gets triggered when user clicks discard button for a cell or a new row.                                    |
+| **onDiscard** | Action that gets triggered when user clicks discard button for a cell or a new row.     
+
+### How to add a new row
+
+<VideoEmbed host="youtube" videoId="uthJ6IrYPXA" title="Table | Add new rows | Enable feature" caption="Enable adding new rows to your table"/>
+
+:::info
+If you'd like to add new rows to your table, first ensure that the columns in your Table's properties are marked as [**Editable**](#editable). A column can only accept user input if its **Editable** property is checked.
+:::
+
+1. Select your Table widget and turn on the **Allow adding a row** property.
+2. A new button should appear in the Table's header called 'Add new row'. Click this button to add a row of empty cells to the top of the table (or if the the Table's [**Default Values**](#default-values) property is filled, the new cells will have that data).
+3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events-1) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
+
+### Saving new rows
+
+Saving new rows works much like submitting a form. Use the **onSave** event under the **Adding a row** section in the Table's property pane to execute a query or function that sends the new row to the underlying datasource. For example:
+
+<VideoEmbed host="youtube" videoId="09pOAgK9mhk" title="Using newRow to save new table data" caption="Using newRow to save new table data"/>
+
+Imagine that your table gets information from a query called `myAPI_get`, which is a GET request to a datasource called `myAPI`.
+
+```javascript
+// In the Table Data field
+{{myAPI.data}}
+
+// Returns [{fruit: "pomegranate", color: "red"}, ... ]
+```
+
+And perhaps you add a new row to the table with the data:
+
+```javascript
+{fruit: "banana", color: "yellow"}
+```
+
+To update the original datasource with the new data, you might execute a query like `myAPI_post`, which would be a POST request to `myAPI`. To add the data to the POST request, you can use the Table's [`newRow`](#newrow) attribute to reference the new row.
+
+```javascript
+// In our `myAPI_post` query:
+{{Table1.newRow}}
+
+// In the Table's `onSave` event:
+{{myAPI_post.run()}}
+```
+
+Assuming that the POST request is successful, the `myAPI` datasource receives the new information, and the Table should contain the new row the next time it updates.
 
 ## What's next?
 
