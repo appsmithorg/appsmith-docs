@@ -65,7 +65,7 @@ ONLY single row cells are editable in row-level update mode. Users should save o
 
 #### Custom mode
 
-In custom mode, users can opt to save data at the table level, that is users are free to choose when to save the edited rows.
+In custom mode, users can opt to save data at the table level; users are free to choose when to save the edited rows.
 
 1. `onSubmit` property of the editable column can be used to save that cell when it's edited.
 2. Users can trigger save when a button is clicked outside the table.
@@ -85,7 +85,7 @@ When a column is made editable, `onSubmit` trigger property appears under the ev
 Users can bind any trigger action on this property, which gets called anytime cell content is edited and persisted. `currentRow` can be used to access the corresponding row and `currentRow[”keyName”]` can be used to access the updated data.
 
 :::info
-currentRow can be used to access the corresponding row, and currentRow\[”keyName”] can be used to access the updated data.
+`currentRow` can be used to access the corresponding row, and currentRow\[”keyName”] can be used to access the updated data.
 :::
 
 ### Properties
@@ -95,11 +95,11 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | Property                                           | Type        | Definition                                                                                                                                                                                                                                                               | Code Snippet                   |
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
 | **Update Mode**              | Formatting  | Controls the save experience of an edited cell.<br/> **Row level** - Cells can be saved using the Save/Discard column buttons. <br/> **Custom** - cells can be saved by using an onSubmit action of the column or through an external button. | NA                             |
-| **Cell Wrapping**            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents get ellipsised. | NA |
+| **Cell Wrapping**            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis (...). | NA |
 | **Editable**                 | Formatting  | Controls whether cells of the column are editable                                                             | NA                             |
 | **Regex**                    | Validation  | Regex adds validation to the cell value which displays an error on failure.                                   | NA                             |
 | **Valid**                    | Validation  | Valid property shows the validity of the cell.                                                                | NA                             |
-| **Error Message**            | Validation  | The error message displays if the regex or valid property check fails.                                        | NA                             |
+| **Error Message**            | Validation  | The error message displays if the **regex** or **valid** property check fails.                                        | NA                             |
 | **Required**                 | Validation  | Makes input to the widget mandatory.                                                                          | NA                             |
 | **Min**                      | Validation  | Sets the minimum allowed value.                                                                               | NA                             |
 | **Max**                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
@@ -111,11 +111,11 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 Controls the save experience of an edited cell.
 **Row level** - Cells can be saved using the Save/Discard column buttons\
-**Custom** - Cells can be saved by using an onSubmit action of the column or through an external button.
+**Custom** - Cells can be saved by using an **onSubmit** action of the column or through an external button.
 
 #### Cell Wrapping
 
-Controls how overflowing contents of the column are handled.  When turned on the Contents get wrapped to the next line.
+Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.
 
 #### Editable
 
@@ -143,7 +143,7 @@ For example, add a regular expression for entering a name. The name can contain 
 
 If you enter a value other than an alphabet or space (number of special characters), the widget shows an error message "invalid input."
 
-Similarly, you can use `s.`to only display words that start with the letter "**s**".
+Similarly, you can use `s.` to only display words that start with the letter "**s**".
 
 #### Valid
 
@@ -153,20 +153,20 @@ Valid property shows the validity of the cell. When the expression evaluates to 
 2. `currentIndex` - index of the current editable row.
 3. `editedValue` - the newly entered value on the editable input.
 
-Let's take an example to understand how the valid property works. If you want the updated value to be "John", so in the valid property section, add:
+For example: Imagine you want the updated value to be "John". In the **Valid** property field, add:
 
 ```
 {{editedValue == "John"}}
 ```
 
-If a word other than "John" is added to the cell, an error will be displayed. Similarly, the above-mentioned binding variables can be used to obtain values and row indexes.&#x20;
+If a word other than "John" is added to the cell, an error is displayed. Similarly, the previously mentioned binding variables can be used to obtain values and row indexes.&#x20;
 
 
 <VideoEmbed host="youtube" videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
 
-#### Error Message
+#### Error message
 
-The error message displays if the regular expression(regex) or valid property check fails. If a user enters an incorrect value, the widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
+The error message displays if the regular expression (regex) or valid property check fails. If a user enters an incorrect value, the widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
 ![](/img/inline32.PNG)
 
@@ -261,7 +261,7 @@ If you'd like to add new rows to your table, first ensure that the columns in yo
     - If the Table's **Default Values** property has data added to it, the new cells are pre-populated with those default values. Otherwise, they're blank.
 3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events-1) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
 
-### Capturing and using data from new rows
+### Saving new rows
 
 Saving new rows works much like submitting a form. Use the **onSave** event under the **Adding a row** section in the Table's property pane to execute a query or function that sends the new row to the underlying datasource. For example:
 
@@ -314,7 +314,7 @@ Turning this on allows users to click a button on the table to start a new row i
 
 Use the **onSave** event to update the source of the table's data and reflect the user's changes. For example, the **onSave** event might be set to trigger a query that sends the data from a new table row to the database that supplies the table with its values.
 
-#### Default Values
+#### Default values
 
 <VideoEmbed host="youtube" videoId="3KozovP7LNk" title="Table | Add new rows | Default values" caption="Set default values for new Table rows"/>
 
