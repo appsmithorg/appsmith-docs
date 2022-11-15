@@ -107,13 +107,13 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **updatedRowIndices**        | Binding     | This property contains an array of edited row indices.                                                        | `{{Table1.updatedRowIndices}}` |
 | **updatedRow**               | Binding     | This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`) | `{{Table1.updatedRow}}`|
 
-#### Update Mode
+#### Update mode
 
 Controls the save experience of an edited cell.
 **Row level** - Cells can be saved using the Save/Discard column buttons\
 **Custom** - Cells can be saved by using an **onSubmit** action of the column or through an external button.
 
-#### Cell Wrapping
+#### Cell wrapping
 
 Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.
 
@@ -313,7 +313,7 @@ If you'd like to add new rows to your table, first ensure that the columns in yo
 :::
 
 1. Select your Table widget and turn on the **Allow adding a row** property.
-2. A new button should appear in the Table's header called 'Add new row'. Click this button to add a row of empty cells to the top of the table (or if the the Table's [**Default Values**](#default-values) property is filled, the new cells will have that data).
+2. A new button should appear in the Table's header called 'Add new row'. Click this button to add a row of empty cells to the top of the table (or if the Table's [**Default Values**](#default-values) property is filled, the new cells are created with that data).
 3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events-1) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
 
 ### Saving new rows
