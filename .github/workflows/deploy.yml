@@ -43,5 +43,5 @@ jobs:
       - name: Update omnibar algolia index
         run: |
             npm i
-            node omnibar-algolia-index.js ${{ secrets.ALGOLIA_APPLICATION_ID }} ${{ secrets.ALOGLIA_API_KEY }}
+            node omnibar-algolia-index.js "${{ secrets.ALGOLIA_APPLICATION_ID }}" "${{ secrets.ALOGLIA_API_KEY }}"
             
