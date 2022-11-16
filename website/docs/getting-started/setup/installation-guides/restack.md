@@ -15,6 +15,6 @@ The easiest way to do this is
 2. Connect your AWS account to create a cluster. 
 3. Search for Appsmith in the restack console and click on add application. 
 
-Here’s a [detailed guide](https://www.restack.io/docs/deploy-appsmith-on-restack#overview) provided in Restack’s docs.  
+Here’s a [detailed guide](https://www.restack.io/docs/deploy-appsmith-on-kubernetes) provided in Restack’s docs.  
 
 So go ahead and deploy production-ready Appsmith on Kubernetes with Restack in minutes.
