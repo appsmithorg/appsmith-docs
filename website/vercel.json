@@ -78,10 +78,6 @@
       "destination": "/getting-started/setup/installation-guides/cloudjiffy"
     },
     {
-      "source": "/setup/restack",
-      "destination": "/getting-started/setup/installation-guides/restack"
-    },
-    {
       "source": "/setup/ansible",
       "destination": "/getting-started/setup/installation-guides/ansible"
     },
@@ -1156,10 +1152,6 @@
     {
       "source": "/v/master/setup/cloudjiffy",
       "destination": "/getting-started/setup/installation-guides/cloudjiffy"
-    },
-    {
-      "source": "/v/master/setup/restack",
-      "destination": "/getting-started/setup/installation-guides/restack"
     },
     {
       "source": "/v/master/setup/digitalocean",
