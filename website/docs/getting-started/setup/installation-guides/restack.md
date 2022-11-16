@@ -15,7 +15,7 @@
  * Connect your AWS account to create a cluster. 
  * Search for Appsmith in the restack console and click to trigger the deployment. 
 
- You could also follow the [detailed guide for deploying Appsmith available on Restack docs.](https://www.restack.io/docs/deploy-appsmith-on-restack#overview)  
+You could also follow the [detailed guide for deploying Appsmith available on Restack docs.](https://www.restack.io/docs/deploy-appsmith-on-restack#overview)  
 
 ## Troubleshooting
 
