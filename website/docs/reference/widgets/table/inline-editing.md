@@ -27,11 +27,71 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **updatedRowIndices**        | Binding     | This property contains an array of edited row indices.                                                        | `{{Table1.updatedRowIndices}}` |
 | **updatedRow**               | Binding     | This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`) | `{{Table1.updatedRow}}`|
 
-#### Update mode
+#### Update mode (single row)
 
-Controls the save experience of an edited cell.
-**Row level** - Cells can be saved using the Save/Discard column buttons\
-**Custom** - Cells can be saved by using an **onSubmit** action of the column or through an external button.
+**Single row** - Cells can be edited within a single row at a time, and saved using the Save/Discard column buttons that have been configured to run a query to submit a single row to a datasource. While a row has pending edits, the user isn't allowed to begin editing other rows.
+
+When one or more columns of a table are **Editable** in Single row mode, a new table column is injected called `Save/Discard`. This new column contains a Save button and a Discard button, which execute the table's **onSave** and **onDiscard** events when clicked. Style options for these buttons are available in the `Save/Discard` column's settings in the Table widget's properties pane.
+
+![](</img/SaveDiscard.jpg>)
+
+The `Save/Discard` column can't be deleted, only hidden; if the update mode is switched to Multi row or if editing is turned off in the table, this column automatically disappears.
+
+:::info
+While you are configuring the **onSave** or **onDiscard** events, you can use the `updatedRow` property to access the data of the row that has been updated.
+:::
+
+As an alternative to using the `Save/Discard` buttons and events, you can configure the **onSubmit** event in each column's settings to run a query that saves the new data. The onSubmit event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it.
+
+#### Update mode (multi row)
+
+**Multi row** - Cells can be edited across any number of rows at a time. Updated rows are saved all at once by using an external Button widget, which you should place onto the canvas and configure to run a query that submits multiple rows to a datasource.
+
+In this mode, users are free to choose when to save their edited rows. To facilitate this, take a look at this example of setting up a new Save button:
+
+<VideoEmbed host="youtube" videoId="nzk-2_9qWtg" title="Table | Update Mode | Multi Row" caption="Save changes with Multi row updating"/>
+
+1. In your Table's properties pane, set your columns to be **Editable** and select **Multi row** mode.
+2. Navigate to your query that handles saving the user's changes, or create a new one. This query should be configured to submit multiple rows of data at a time to its datasource. For example, when using [Google Sheets](/reference/datasources/querying-google-sheets/), you should use the [Update Many](/reference/datasources/querying-google-sheets#update-many) type of query.
+
+When you make changes in the table, the affected rows are added to the table's `updatedRows` property. This `updatedRows` object contains all the information about those rows, including their indices, changed values, and their complete set of values.
+
+3. In the query field that expects the data to send, use `Table1.updatedRows` to access your table data. The required format might vary depending on the type of datasource you use, but for this example with Google Sheets, it expects an array of row objects. Be sure to check the [datasource reference](/reference/datasources/) pages to see what format your datasource requires.
+
+To get just an array containing the affected rows, you can use the JS [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method along with `Table1.updatedRows`:
+
+```javascript
+// in a Google Sheets "Update Many" query
+{{
+	Table1.updatedRows.map(row => {
+		return row.allFields
+	})	
+}}
+```
+
+4. Back on the canvas, drop a Button widget near the table. Update its label to "Save All", or whatever else you'd like.
+5. In the button's **onClick** event, configure it to execute the Update Many query. Use either the dropdown menu or code:
+
+```javascript
+// in the button's onClick field
+{{myAPI_updateMany.run()}}
+```
+
+6. Add a callback to automatically refresh the table after a successful query. In this example, `myAPI_get` is a query that refreshes the table data.
+
+![](/img/as_updateMany.png)
+
+```javascript
+{{
+  //in the button's onClick field
+  myAPI_updateMany.run(
+    () => myAPI_get.run(), // success callback
+    () => {} // error callback
+  )
+}}
+```
+
+Now you are ready to edit your table in any number of rows, and the "Save All" button should submit all your changes to the datasource and refresh the table.
 
 #### Cell wrapping
 
@@ -78,7 +138,6 @@ For example: Imagine you want the updated value to be "John". In the **Valid** p
 ```
 
 If a word other than "John" is added to the cell, an error is displayed. Similarly, the previously mentioned binding variables can be used to obtain values and row indexes.&#x20;
-
 
 <VideoEmbed host="youtube" videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
 
@@ -137,7 +196,7 @@ For example, if you updated the second row of a table. Now, when you bind this p
 
 ```
 [ 
-1
+  1
 ]
 ```
 
@@ -158,9 +217,9 @@ This property contains the details of the row that triggered the action (`onSubm
 
 | Events        | Description                                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **onSubmit**  | Action that gets triggered when the user moves away from editing a cell by pressing the enter key or clicking outside. |
-| **onSave**    | Action that gets triggered when the user clicks the save button for a cell or a new row.                                                       |
-| **onDiscard** | Action that gets triggered when user clicks discard button for a cell or a new row. 
+| **onSubmit**  | Action that gets triggered when the user moves away from editing a cell by pressing the enter key or clicking outside of the cell. |
+| **onSave**    | Action that gets triggered when the user clicks the save button for a cell or a new row.                               |
+| **onDiscard** | Action that gets triggered when user clicks discard button for a cell or a new row.                                    |
 
 ### Enable editing cells
 
@@ -197,44 +256,11 @@ Based on the Column type, cell content can be edited. Once done user can move aw
 1. Edited contents can be persisted on the Table cell by either pressing enter key or clicking anywhere outside the cell.
 2. You can discard the Edited contents by pressing the escape key.
 
-### Update mode
-
-Once a column is editable, a new property, `Update mode` , appears under the column list.
-
-![](</img/Update_mode.png>)
-
-#### Row level mode
-
-Actions can be performed at the row level. On selecting row level, a new column is injected called `Save/Discard` with two buttons when a column is made editable.
-
-![](</img/SaveDiscard.jpg>)
-
-This column can't be deleted. It can only be made hidden. This column gets deleted when the update mode is switched to custom, or all the columns are made non-editable.
-
-Users can customize the appearance of the Save and Discard button in the column settings. There are two events available `onSave,` and `onDiscard`, which users can use to trigger an action when the corresponding button is clicked.
-
 :::info
-`updatedRow` can be used to access the row that triggered the event
+To save the edits made to your table rows, you'll need to set the table's [**Update mode**](#properties) to [**Single row**](#update-mode-single-row) or [**Multi row**](#update-mode-multi-row) mode and then configure your Save buttons to execute queries.
 :::
 
-:::info
-ONLY single row cells are editable in row-level update mode. Users should save or discard the edited row before editing another row.
-:::
-
-#### Custom mode
-
-In custom mode, users can opt to save data at the table level; users are free to choose when to save the edited rows.
-
-1. `onSubmit` property of the editable column can be used to save that cell when it's edited.
-2. Users can trigger save when a button is clicked outside the table.
-
-:::info
-You can edit Multiple rows in custom update mode.
-:::
-
-Table exposes two new properties `updatedRows` and `updatedRowIndices`. `updatedRows` has details of all the edited rows. This property can be used in a trigger action to save the edited cells of the table, which gets called with the click of a button widget outside the table.
-
-### Perform an Action when a cell is edited
+### Perform an action when a cell is edited
 
 When a column is made editable, `onSubmit` trigger property appears under the event section in the column settings.
 
