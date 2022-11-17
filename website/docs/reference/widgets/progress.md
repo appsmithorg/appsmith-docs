@@ -1,4 +1,4 @@
-# Progress
+# Progress Bar
 
 The Progress widget indicates the progress of certain user performed or system triggered actions.
 
