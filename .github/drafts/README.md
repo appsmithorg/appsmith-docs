@@ -2,7 +2,8 @@
 Drafts directory stores the first drafts, outline, and final content that would be published.
 
 
-We've sunset the drafts directory. Please refer to the [contributing guidelines](https://github.com/appsmithorg/appsmith-docs/blob/main/CONTRIBUTING.md) to raise PR for first drafts/change to existing documentation.
+| We've sunset the drafts directory. Please refer to the [contributing guidelines](https://github.com/appsmithorg/appsmith-docs/blob/main/CONTRIBUTING.md) to raise PR for first drafts/changes to the existing documentation.|
+|---|
 
 
 > **Please ensure that a doc ticket is raised. Use one of the available [templates](https://github.com/appsmithorg/appsmith-docs/issues/new/choose) to raise an issue.**
