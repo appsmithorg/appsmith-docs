@@ -23,7 +23,7 @@ Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/lates
 
 If you already have an existing security group with ports 80, 443, 22 and 9001 open, you can skip this step.
 
-Appsmith is a web application that requires ports 80 and 443 for HTTP access, port 22 to be accessible for SSH access, it also requires port 9001 to be accessible for the supervisor UI. Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
+Appsmith is a web application that requires ports 80 and 443 for HTTP access, port 22 to be accessible for SSH access, it also requires port 9001 to be accessible for the [supervisord UI](http://supervisord.org/running.html). Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
 While creating the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, 22 and 9001 accessible from anywhere.
 
