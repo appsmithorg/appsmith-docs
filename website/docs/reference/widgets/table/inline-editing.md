@@ -6,26 +6,24 @@ Inline edit-ability for a column [can be enabled](#editing-cells) for the whole 
 
 ## Editing cells
 
-
-
 ### Properties
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
 | Property                                           | Type        | Definition                                                                                                                                                                                                                                                               | Code Snippet                   |
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
-| **Update Mode**              | Formatting  | Controls the save experience of an edited cell.<br/> **Row level** - Cells can be saved using the Save/Discard column buttons. <br/> **Custom** - cells can be saved by using an onSubmit action of the column or through an external button. | NA                             |
+| **Update Mode**              | Formatting  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
 | **Cell Wrapping**            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis (...). | NA |
 | **Editable**                 | Formatting  | Controls whether cells of the column are editable                                                             | NA                             |
-| **Regex**                    | Validation  | Regex adds validation to the cell value which displays an error on failure.                                   | NA                             |
-| **Valid**                    | Validation  | Valid property shows the validity of the cell.                                                                | NA                             |
-| **Error Message**            | Validation  | The error message displays if the **regex** or **valid** property check fails.                                        | NA                             |
+| **Regex**                    | Validation  | Enter a regular expression that user input must match to be considered valid. Displays an error mesage on failure.                                   | NA                             |
+| **Valid**                    | Validation  | Enter a JS expression that evaluates whether the user's input is valid.                                                                | NA                             |
+| **Error Message**            | Validation  | The error message displays if the input fails the **Regex** or **Valid** properties' checks.                                        | NA                             |
 | **Required**                 | Validation  | Makes input to the widget mandatory.                                                                          | NA                             |
 | **Min**                      | Validation  | Sets the minimum allowed value.                                                                               | NA                             |
 | **Max**                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
-| **updatedRows**              | Binding     | This property contains all the details of the edited rows.                                                    | `{{Table1.updatedRows}}`       |
-| **updatedRowIndices**        | Binding     | This property contains an array of edited row indices.                                                        | `{{Table1.updatedRowIndices}}` |
-| **updatedRow**               | Binding     | This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`) | `{{Table1.updatedRow}}`|
+| **updatedRows**              | Binding     | Contains all the data of the edited table rows.                                                    | `{{Table1.updatedRows}}`       |
+| **updatedRowIndices**        | Binding     | Contains an array of indices of the table rows that have been edited.                                                        | `{{Table1.updatedRowIndices}}` |
+| **updatedRow**               | Binding     | Contains the data of the row that triggered the **onSubmit**, **onSave** or **onDiscard** action. | `{{Table1.updatedRow}}`|
 
 #### Update mode (single row)
 
@@ -69,7 +67,7 @@ To get just an array containing the affected rows, you can use the JS [`map()`](
 }}
 ```
 
-4. Back on the canvas, drop a Button widget near the table. Update its label to "Save All", or whatever else you'd like.
+4. Back on the canvas, drop a Button widget near the table. Update its label to "Save All" or whatever else you'd like.
 5. In the button's **onClick** event, configure it to execute the Update Many query. Use either the dropdown menu or code:
 
 ```javascript
@@ -113,9 +111,9 @@ You can implement user input validation to ensure that only certain values are e
 
 [Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) (regex) are patterns that describe valid user input. For example, the pattern `[a-zA-Z]` describes a string that contains only letters of the English alphabet. Using regular expressions in the **Regex** property of columns, you can set specific constraints on the input you expect from the user.
 
-When you add a regular expression to a column, all user input in that column is compared to the pattern; it's considered to be valid when it matches the expression, or invalid when it doesn't match. When input is invalid, the cell will display its **Error message** to the user in a tooltip.
+When you add a regular expression to a column, all user input in that column is compared to the pattern; it's considered to be valid when it matches the expression, or invalid when it doesn't match. When input is invalid, the cell displays its **Error message** to the user in a tool-tip.
 
-For example, add a regular expression for entering a name. The name can contain only alphabetic characters and spaces between the first and last name:
+For example, add a regular expression for entering a name. The name can contain only alphabetical characters and spaces between the first and last name:
 
 ```
 /^[a-z -]+$/i
@@ -143,7 +141,7 @@ If a value other than "John" is added to the cell, an error is displayed. Simila
 
 #### Error message
 
-The error message appears if the regular expression (**Regex**) and/or the **Valid** propery determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
+The error message appears if the regular expression (**Regex**) and/or the **Valid** property determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
 ![](/img/inline32.PNG)
 
