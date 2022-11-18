@@ -529,6 +529,7 @@ const sidebars = {
         'help-and-support/troubleshooting-guide/js-errors',
         'help-and-support/troubleshooting-guide/deployment-errors',
         'help-and-support/troubleshooting-guide/application-errors',
+        'help-and-support/troubleshooting-guide/query-errors',
         'help-and-support/troubleshooting-guide/widget-errors'
       ],
     },// Help & Support end

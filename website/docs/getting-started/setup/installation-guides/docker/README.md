@@ -5,14 +5,14 @@ sidebar_position: 1
 
 # Docker
 
-Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
+Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into containers — standardized executable components combining application source code with the Operating System (OS) libraries and dependencies required to run that code in any environment.
 
 <VideoEmbed host="youtube" videoId="Tde7GqE6FQQ" /> 
 
 ## Prerequisites
 
 * [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
-* [Docker-Compose ](https://docs.docker.com/compose/install/)(version 1.29.2 or later)
+* [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later)
 
 Create an installation folder called `appsmith` where you would like your Appsmith installation and data storage.
 
@@ -21,7 +21,7 @@ Create an installation folder called `appsmith` where you would like your Appsmi
 ## Quick Start (with docker-compose)
 
 :::info
-Appsmith [auto-update](./#enabling-appsmith-auto-updates-with-docker-compose) now also supports auto-backup feature. This backup can be used to roll back an update to a previous version of Appsmith, if the user wants to.
+Appsmith [auto-update](#enabling-appsmith-auto-updates-with-docker-compose) now also supports auto-backup feature. This backup can be used to roll back an update to a previous version of Appsmith, if the user wants to.
 :::
 
 The Appsmith Docker image is built with all the components required to run within a single Docker container. All these multiple processes are managed by a Supervisord instance, which is a lightweight process manager.
@@ -180,15 +180,15 @@ docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPS
 ```
 
 :::info
-Follow the instructions to [upgrade your existing installation](../../upgrade-to-business-edition/) to a Business Edition.
+Follow the instructions to [upgrade your existing installation](/getting-started/setup/upgrade-to-business-edition/) to a Business Edition.
 :::
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../../help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors/). If you are still facing any issues, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
 
 ## Further Reading
 
-* [Configuring Self Hosted Instances](../../instance-configuration/#configuring-docker-installations)
-* [Managing the Appsmith instance](../../instance-management/)
-* [Tutorials](../../../../learning-and-resources/tutorials/)
+* [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
+* [Managing the Appsmith instance](/getting-started/setup/instance-management/)
+* [Tutorials](/learning-and-resources/tutorials/)
