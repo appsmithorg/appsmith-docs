@@ -101,49 +101,49 @@ Controls how overflowing contents of the column are handled. When turned on, the
 
 Controls whether cells of the column are editable. To make the column editable, click the checkbox inside a column card that makes all the cells in that column editable.
 
-Alternatively, A column can be editable by turning on `Editable` property inside column settings.
+Alternatively, a column can be made editable by turning on the `Editable` switch inside that column's settings.
 
 <VideoEmbed host="youtube" videoId="BW5cVp0GfLE" title="Making column editable" caption="Making column editable"/>
 
 :::info
-Validation ensures that only certain values are entered in a field. You have to make the column editable to allow validation. The validation feature is available for **text** and **numeric** column types.
+You can implement user input validation to ensure that only certain values are entered in a cell. The validation features require the column to be editable, and the validation options can be found in a **text** or **numeric** column's settings.
 :::
 
 #### Regex
 
-Regex adds validation to the cell value which displays an error on failure. When the input doesn't match the regex expression, the input is considered invalid. Using `Regex` or Regular expression property, you can set specific constraints on the input you expect from the user.
+[Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) (regex) are patterns that describe valid user input. For example, the pattern `[a-zA-Z]` describes a string that contains only letters of the English alphabet. Using regular expressions in the **Regex** property of columns, you can set specific constraints on the input you expect from the user.
 
-For example, add a regular expression for entering a name. The name can contain only alphabets and spaces between the first and last name.
+When you add a regular expression to a column, all user input in that column is compared to the pattern; it's considered to be valid when it matches the expression, or invalid when it doesn't match. When input is invalid, the cell will display its **Error message** to the user in a tooltip.
+
+For example, add a regular expression for entering a name. The name can contain only alphabetic characters and spaces between the first and last name:
 
 ```
 /^[a-z -]+$/i
 ```
 
-If you enter a value other than an alphabet or space (number of special characters), the widget shows an error message "invalid input."
-
-Similarly, you can use `s.` to only display words that start with the letter "**s**".
+If you enter a value that contains something other than alphabetical or space characters, the widget shows an error message "Invalid input."
 
 #### Valid
 
-Valid property shows the validity of the cell. When the expression evaluates to `false`, the input is considered invalid and the widget shows an Error Message. The following variables are available for binding:
+The **Valid** property is an expression that determines whether the cell input is acceptable. When this expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. The following variables are available for binding:
 
-1. `currentRow` - gives access to the row values of the editable cell.
+1. `currentRow` - accesses the values of the whole row that contains the editable cell.
 2. `currentIndex` - index of the current editable row.
-3. `editedValue` - the newly entered value on the editable input.
+3. `editedValue` - the newly entered value of the editable cell.
 
-For example: Imagine you want the updated value to be "John". In the **Valid** property field, add:
+For example, imagine you want the updated value to be `John`. In the **Valid** property field, add:
 
 ```
 {{editedValue == "John"}}
 ```
 
-If a word other than "John" is added to the cell, an error is displayed. Similarly, the previously mentioned binding variables can be used to obtain values and row indexes.&#x20;
+If a value other than "John" is added to the cell, an error is displayed. Similarly, the previously mentioned binding variables can be used to obtain other values and row indexes.&#x20;
 
 <VideoEmbed host="youtube" videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
 
 #### Error message
 
-The error message displays if the regular expression (regex) or valid property check fails. If a user enters an incorrect value, the widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
+The error message appears if the regular expression (**Regex**) and/or the **Valid** propery determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
 ![](/img/inline32.PNG)
 
@@ -153,7 +153,7 @@ Makes input to the widget mandatory. Sets whether a non-empty value must be ente
 
 #### Min
 
-Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want the numbers from 2 to 100. Any number entered that's less than 2 is considered invalid.
+Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want values greater than 2. Any number entered that's less than 2 is considered invalid.
 
 :::info
 **Min** and **Max** properties are available for **numeric**  column types.
@@ -161,15 +161,15 @@ Sets the minimum allowed value. For example, you could set the minimum value to 
 
 #### Max
 
-Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want the numbers from 2 to 100. Any number entered that's more than 100 is considered invalid.
+Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want values less than 100. Any number entered that's more than 100 is considered invalid.
 
 <VideoEmbed host="youtube" videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
 
 #### updatedRows
 
-This property contains all the details of the edited rows. It has the following structure.
+This property contains all the details of the edited rows. It has the following structure:
 
-```jsx
+```javascript
 [
   {
     "index": 0, // Index of the row in tableData
@@ -192,28 +192,30 @@ This property contains all the details of the edited rows. It has the following 
 
 This binding property displays the index number of the updated row. It contains an array of edited row indices.&#x20;
 
-For example, if you updated the second row of a table. Now, when you bind this property into a text widget, the property displays the outcome as follows:&#x20;
+For example, if you update the second and fourth rows of a table, the `updatedRowIndices` property contains the value:
 
-```
+```javascript
 [ 
-  1
+  1,
+  3
 ]
 ```
 
 #### updatedRow
 
-This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`). For example, if you bind this property into a text widget, you get an output something like this:
+This property contains the details of the row that triggered the **onSubmit**, **onSave** or **onDiscard** action. For example, if you bind this property into a text widget, you get an output something like this:
 
-```
+```javascript
 {
   "Name": "Updated Name",
   "Date": "Updated Date",
-  "Status ": "Updated Status",
-  "rowIndex": "Row Index"
+  "Status ": "Updated Status"
 }
 ```
 
 ### Events
+
+These properties can be used run code any time one of the events occurs. Be sure to take a look at the list of [supported actions](/reference/appsmith-framework/widget-actions/) that come built in to Appsmith.
 
 | Events        | Description                                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -225,36 +227,37 @@ This property contains the details of the row that triggered the action (`onSubm
 
 The column list on the Table property pane has a checkbox to make that column editable.
 
-![Editable Checkbox](</img/Editable_checkbox_-_Inline_editing.png>)
-
 Click the checkbox inside a column card makes all the cells in that column editable. The editable checkbox at the top of the list can be checked to make all the editable columns editable.
 
-Alternatively, A column can be editable by turning on `Editable` property inside column settings.
+![Editable Checkbox](</img/Editable_checkbox_-_Inline_editing.png>)
+
+Alternatively, A column can be editable by turning on `Editable` property inside the column's settings.
 
 ![](</img/Editable_preoperty.png>)
 
-JS option of the `Editable` property can be leveraged to make a subset of the cells in a column editable.
+You can also use JS to control the `Editable` property. For example, you might use this feature to make only a subset of the cells editable:
+
+```javascript
+// in the Editable property
+{{ currentRow.status === "pending" }} // only "pending rows are editable
+```
 
 ![](</img/Using_JS_in_Editable.png>)
 
-Once a column has been made editable, an edit icon appears on the column header as an indicator.
+Once a column has been made editable, a pencil icon appears on the column header as an indicator.
 
 ![](</img/Edit_icon_on_column_header.png>)
 
 ### How to edit a cell
 
-An edit icon appears on hovering an editable cell, which, when clicked, would make the cell editable.&#x20;
-
-:::info
-Currently, **four column types** support inline editing: **Text, Number, Switch, and Checkbox.**
-:::
+Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon to make changes to the cell.&#x20;
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 
-Based on the Column type, cell content can be edited. Once done user can move away from the edit mode in two ways.
+Once the user is finished editing, they can move away from the edit mode in two ways:
 
-1. Edited contents can be persisted on the Table cell by either pressing enter key or clicking anywhere outside the cell.
-2. You can discard the Edited contents by pressing the escape key.
+1. Pressing the **Enter** key or **clicking outside the cell** keeps the new value and closes the input box.
+2. Pressing the **Escape** key discards the new value and closes the input box.
 
 :::info
 To save the edits made to your table rows, you'll need to set the table's [**Update mode**](#properties) to [**Single row**](#update-mode-single-row) or [**Multi row**](#update-mode-multi-row) mode and then configure your Save buttons to execute queries.
@@ -262,15 +265,11 @@ To save the edits made to your table rows, you'll need to set the table's [**Upd
 
 ### Perform an action when a cell is edited
 
-When a column is made editable, `onSubmit` trigger property appears under the event section in the column settings.
+When a column is made editable, the `onSubmit` property appears under the Event section in the column settings.
 
 ![](</img/OnSubmit\_editable\_enabled.png>)
 
-Users can bind any trigger action on this property, which gets called anytime cell content is edited and persisted. `currentRow` can be used to access the corresponding row and `currentRow[”keyName”]` can be used to access the updated data.
-
-:::info
-`currentRow` can be used to access the corresponding row, and currentRow\[”keyName”] can be used to access the updated data.
-:::
+Users can bind any trigger action on this property, which gets called anytime cell content is edited and persisted. You can use `currentRow` to access the row of the edited cell, and `currentRow["<key_name>"]` can be used to access the updated value.
 
 ## Adding new rows
 
