@@ -127,7 +127,7 @@ Since you can Appsmith supports JavaScript just about everywhere, you can use Ja
 
 ## Wrapping up the Form
 
-So far, the form can accept a name and a category for the product. Now, we will add a field for the price. Drag a new [input widget](/reference/widgets/input.md) and rename it to `MrpInput`. This will be taking a numerical value, so we will change the `Data Type` to `Number.` Lastly, add a [text widget](/reference/widgets/text.md) next to `MrpInput` and set its **`Text`** property to **`MRP($)`**.
+So far, the form can accept a name and a category for the product. Now, we will add a field for the price. Drag a new [input widget](/reference/widgets/input.md) and rename it to `MrpInput`. This will be taking a numerical value, so change the `Data Type` to `Number.` Use the [label property](reference/widgets/input#label-1) of `MrpInput` and set it to **`MRP($)`**.
 
 ![](/img/as_storeTutorial_completeForm.png)
 
