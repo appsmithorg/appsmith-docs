@@ -229,20 +229,18 @@ The column list on the Table property pane has a checkbox to make that column ed
 
 Click the checkbox inside a column card makes all the cells in that column editable. The editable checkbox at the top of the list can be checked to make all the editable columns editable.
 
-![Editable Checkbox](</img/Editable_checkbox_-_Inline_editing.png>)
-
 Alternatively, A column can be editable by turning on `Editable` property inside the column's settings.
 
 ![](</img/Editable_preoperty.png>)
 
 You can also use JS to control the `Editable` property. For example, you might use this feature to make only a subset of the cells editable:
 
+![](</img/Using_JS_in_Editable.png>)
+
 ```javascript
 // in the Editable property
 {{ currentRow.status === "pending" }} // only "pending rows are editable
 ```
-
-![](</img/Using_JS_in_Editable.png>)
 
 Once a column has been made editable, a pencil icon appears on the column header as an indicator.
 
