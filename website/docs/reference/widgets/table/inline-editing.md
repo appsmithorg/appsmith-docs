@@ -376,10 +376,9 @@ To update the original datasource with the new data, you might execute a query l
 
 Assuming that the POST request is successful, the `myAPI` datasource receives the new information, and the Table should contain the new row the next time it updates.
 
-## What's next?
+## Further reference
 
-The following resources can come in handy as you need to learn new tricks:
+The following resources may come in handy:
 
-* [Core Concepts](./../../../core-concepts/connecting-to-data-sources/README.md)
-* [Appsmith Framework](../../appsmith-framework/)
-* [JavaScript Editor](../../../core-concepts/writing-code/javascript-editor-beta/)
+* [Sample apps for Tables](/learning-and-resources/sample-apps#table)
+  * [Editable table rows](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc)
