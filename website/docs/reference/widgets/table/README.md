@@ -29,7 +29,7 @@ These properties allow you to edit the table itself. All these properties are pr
 | **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                                                       |
 | **Table Record Count**         | The user has to input the total number of records returned as part of a query or API call, which will be displayed in a table. It is only visible when you choose to enable **server-side pagination**. |
-| **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
 
 Let's understand the widget properties in detail.
 
@@ -71,7 +71,7 @@ The data fetched from the Query/ API is sometimes too large to be displayed on o
 
 #### Inline editing
 
-Inline editing allows you to edit a cell contents in the table columns, and can be enabled for the whole column or at the cell level based on a condition. You can also allow users to add new rows of data to the Table. Read more about Inline editing [here](./#inline-editing).
+Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about Inline editing [here](./#inline-editing).
 
 ### Binding Properties
 

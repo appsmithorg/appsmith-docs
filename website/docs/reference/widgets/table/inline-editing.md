@@ -1,10 +1,12 @@
-# Inline Editing
+# Inline editing
 
-Inline edit-ability for a column [can be enabled](#editing-cells) for the whole column or at the cell level based on a condition. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
+Inline edit-ability for a column [can be enabled](#editing-cells) for the whole column, or you can use code to enable it for only particular cells. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
 ## Editing cells
+
+This feature allows users to make changes directly within the table widget, without the need for a separate form or page. Enable editing by toggling columns' **Editable** property, and then handle updates by configuring the table's event handlers to execute API/database queries.
 
 ### Properties
 
@@ -75,6 +77,10 @@ To get just an array containing the affected rows, you can use the JS [`map()`](
 {{myAPI_updateMany.run()}}
 ```
 
+:::note
+For information about handling synchronous/asynchronous code, event handling, and callbacks, visit this page about [workflows in Appsmith](/core-concepts/writing-code/workflows/).
+:::
+
 6. Add a callback to automatically refresh the table after a successful query. In this example, `myAPI_get` is a query that refreshes the table data.
 
 ![](/img/as_updateMany.png)
@@ -113,6 +119,8 @@ You can implement user input validation to ensure that only certain values are e
 
 When you add a regular expression to a column, all user input in that column is compared to the pattern; it's considered to be valid when it matches the expression, or invalid when it doesn't match. When input is invalid, the cell displays its **Error message** to the user in a tool-tip.
 
+![](/img/as_errormsg.png)
+
 For example, add a regular expression for entering a name. The name can contain only alphabetical characters and spaces between the first and last name:
 
 ```
@@ -135,7 +143,7 @@ For example, imagine you want the updated value to be `John`. In the **Valid** p
 {{editedValue == "John"}}
 ```
 
-If a value other than "John" is added to the cell, an error is displayed. Similarly, the previously mentioned binding variables can be used to obtain other values and row indexes.&#x20;
+If a value other than "John" is added to the cell, an error is displayed. Similarly, the previously mentioned binding variables can be used to obtain other values and row indexes.
 
 <VideoEmbed host="youtube" videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
 
@@ -143,7 +151,7 @@ If a value other than "John" is added to the cell, an error is displayed. Simila
 
 The error message appears if the regular expression (**Regex**) and/or the **Valid** property determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
-![](/img/inline32.PNG)
+![](/img/table_err_msg.PNG)
 
 #### Required
 
@@ -188,7 +196,7 @@ This property contains all the details of the edited rows. It has the following 
 
 #### updatedRowIndices
 
-This binding property displays the index number of the updated row. It contains an array of edited row indices.&#x20;
+This binding property displays the index number of the updated row. It contains an array of edited row indices.
 
 For example, if you update the second and fourth rows of a table, the `updatedRowIndices` property contains the value:
 
@@ -246,7 +254,7 @@ Once a column has been made editable, a pencil icon appears on the column header
 
 ### How to edit a cell
 
-Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon to make changes to the cell.&#x20;
+Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon to make changes to the cell.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 
@@ -277,7 +285,7 @@ The following properties are related to adding new rows:
 
 | Property              | Type        | Definition               | Code Snippet        |
 | --------------------- | ----------- | ------------------------ | ------------------- |
-| **Allow adding a row** | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **Allow adding a row** | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | **isAddRowInProgress** | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
 | **newRow** | Binding | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
