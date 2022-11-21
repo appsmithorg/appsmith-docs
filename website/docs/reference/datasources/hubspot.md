@@ -8,7 +8,7 @@ sidebar_position: 10
 HubSpot is a **cloud-based CRM** designed to help align sales and marketing teams, promote sales, increase ROI, and improve your inbound marketing strategy to produce more qualified leads. In simple words, it's a software platform created to assist your business with marketing and sales.
 
 :::info
-To integrate HubSpot with Appsmith, you should understand the [basics of connecting to databases](core-concepts/connecting-to-data-sources/) on Appsmith.
+To integrate HubSpot with Appsmith, you should understand the [basics of connecting to datasource](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/) on Appsmith.
 :::
 
 Appsmith provides an easy way to integrate with HubSpot, and enables you to perform different operations using a custom UI built with minimal configurations.
