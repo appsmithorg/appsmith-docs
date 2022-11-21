@@ -2,10 +2,10 @@
 # HubSpot
 
 
-HubSpot is a **cloud-based CRM** designed to help align sales and marketing teams, promote sales enablement, increase ROI, and improve your inbound marketing strategy to produce more qualified leads. In simple words, it is a software platform created to assist your business with marketing and sales.
+HubSpot is a **cloud-based CRM** designed to help align sales and marketing teams, promote sales, increase ROI, and improve your inbound marketing strategy to produce more qualified leads. In simple words, it's a software platform created to assist your business with marketing and sales.
 
 :::info
-To integrate Hubspot with Appsmith, you should understand the [basics of connecting to databases](core-concepts/connecting-to-data-sources/) on Appsmith.
+To integrate HubSpot with Appsmith, you should understand the [basics of connecting to databases](core-concepts/connecting-to-data-sources/) on Appsmith.
 :::
 
 Appsmith provides an easy way to integrate with HubSpot, and enables you to perform different operations using a custom UI built with minimal configurations.
@@ -18,10 +18,10 @@ To add a HubSpot API, navigate to **Explorer** >> Click on the **+** icon (next 
 <figure>
  <object data="https://www.youtube.com/embed/h2Jp8PenbTM" width='750px' height='400px'></object>
  <figcaption align="center"><i>Create Hubspot Datasource</i></figcaption>
-</figure>
+</figure> 
 
 <!-- <figure>
-<VideoEmbed host="youtube" videoId="Dxe_NzdGzL4" /> 
+<VideoEmbed host="youtube" videoId="h2Jp8PenbTM" /> 
 </figure> -->
 
 
@@ -34,7 +34,7 @@ Configure the HubSpot API as illustrated below:
 
 
 ### Authentication Type
-Appsmith allows you to select from the available authentication types to integrate with an Hubspot database:
+Appsmith allows you to select from the available authentication types to integrate with an HubSpot database:
 
 #### Bearer Token 
 
@@ -50,6 +50,10 @@ Let's see how you can fetch your Bearer Token:
  <figcaption align="center"><i>Fetching Access Token</i></figcaption>
 </figure>
 
+<!-- <figure>
+<VideoEmbed host="youtube" videoId="q1DkGLJ6JFU" /> 
+</figure> -->
+
 
 * Open [**HubSpot**](https://www.hubspot.com/products).
 * You can **create a new account** or select an existing one.
@@ -61,9 +65,9 @@ Let's see how you can fetch your Bearer Token:
 * Here you'll be able to find the app's **client ID** and [**access token**](https://developers.hubspot.com/docs/api/oauth/tokens).
 
 
-Access token will look something like this:
+Access token looks something like this:
 
-```js
+```
 pat-na1-217ee**-****-****-****-***
 ```
 
@@ -74,19 +78,19 @@ You can add queries to the newly created HubSpot datasource in one of the below 
 
 
 ### Datasource Page
-You can add queries to Hubspot datasource by selecting the **New API +** button available on the datasource page.
+You can add queries to HubSpot datasource by selecting the **New API +** button available on the datasource page.
 
 ![](/img/hubspot-create-query-from-datasource-page.png)
 
 ### Query/JS page
-By navigating to **Explorer** >> **Click plus sign** (+) next to Queries/JS >> Select the **Hubspot datasource**.
+By navigating to **Explorer** >> **Click plus sign** (+) next to Queries/JS >> Select the **HubSpot datasource**.
 
 
 ![](/img/create-hubspot-query-from-Query-JS-page.png)
 
 ## Query
 
-You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. Hubspot integration supports the following query methods:
+You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. HubSpot integration supports the following query methods:
 
 |                Query Name                |              Description              |
 |:----------------------------------------:|:-------------------------------------:|
@@ -132,7 +136,7 @@ You can create queries to fetch, update and delete data from a datasource using 
 | Files - Get Folder                       |  Get the details for a specific folder.                                     |
 | Files - Delete Folder                    |   Delete a specific folder.                                    |
 | Settings - Retrieve List of Users        |  Get a list of authorized users.                                   |
-| Settings - Add User                      |  Add users to your hubSpot account.                                     |
+| Settings - Add User                      |  Add users to your HubSpot account.                                     |
 | Settings - Retrieve User                 |  Retrieve an existing user.                                  |
 | Settings - Modify User                   |  Update user details.                                  |
 | Settings - Remove User                   |  Remove set of user.                                    |
@@ -147,7 +151,7 @@ You can check the [Query Settings Guide ](https://docs.appsmith.com/core-concept
 
 ## Using Queries in Applications
 
-Once you have successfully run a Query, you can use it in your application to:
+Once you have successfully run a Query, you can use it in your app to:
 
 * [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
 * [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
