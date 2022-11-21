@@ -1,6 +1,6 @@
 # Inline editing
 
-Inline edit-ability for a column [can be enabled](#editing-cells) for the whole column, or you can use code to enable it for only particular cells. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
+Inline editing for a column can be enabled for the whole column, or you can use code to enable it for only particular cells. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
@@ -295,9 +295,9 @@ The subheadings below describe these properties in more detail:
 
 #### Allow adding a row
 
-Turning this on allows users to click a button on the table to start a new row in the table. Users can only input data for columns that are marked as **Editable** in the table properties.
+Turning this on allows users to click a button on the table to create a new row in the table. Users can only input data for columns that are marked as **Editable** in the table properties.
 
-Use the **onSave** event to update the source of the table's data and reflect the user's changes. For example, the **onSave** event might be set to trigger a query that sends the data from a new table row to the database that supplies the table with its values.
+Use the **onSave** event to update the original datasource to reflect the user's changes. For example, the **onSave** event might be set to trigger a query that sends the data from a new table row to the database that supplies the table with its values.
 
 #### Default values
 
