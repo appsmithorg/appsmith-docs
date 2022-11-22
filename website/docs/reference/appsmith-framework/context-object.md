@@ -56,7 +56,7 @@ This object contains all the values associated with the current URL that the use
 ```
 
 #### host
-The host property of the URL interface is a **string** containing the host, that is the [hostname](/reference/appsmith-framework/context-object#hostname), and then, a ```:```, followed by the port of the URL(if the [port](/reference/appsmith-framework/context-object#port) of the URL is nonempty).
+The host property of the URL interface is a string that includes the hostname, and then, a ```:```, followed by the port of the URL(if the [port](/reference/appsmith-framework/context-object#port) is available).
 
 
 Example:
@@ -66,10 +66,11 @@ host:"app.appsmith.com:111"
 ```
 
 #### hostName
-The hostname property of the URL interface is a **string** containing the **domain name of the URL**. 
+The hostname property of the URL is a **string** that holds the **domain of the URL**. 
+
 
 :::info
-hostname is the host name (without the port number or square brackets).
+hostname is the host name (without the port number).
 :::
 
 Example:
@@ -105,7 +106,7 @@ pathName:"/app/demo-app/page1-6324031aa"
 ```
 
 #### port
-The port property of the URL interface is a string containing the port number of the URL.
+The port property of the URL is a string that contains the port number of the URL.
 
 Example:
 ```js
@@ -113,7 +114,7 @@ Example:
 port:"localhost:3000/"
 ```
 #### protocol
-The protocol property of the URL interface is a string representing the protocol scheme of the URL, including the final ```:```.
+The protocol property of the URL is a string that represents the protocol scheme of the URL, including the ```:```.
 :::info
 The resource name and the protocol identification are separated from one another by a colon and two forward slashes.
 :::
