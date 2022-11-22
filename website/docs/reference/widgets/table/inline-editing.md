@@ -27,9 +27,13 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **updatedRowIndices**        | Binding     | Contains an array of indices of the table rows that have been edited.                                                        | `{{Table1.updatedRowIndices}}` |
 | **updatedRow**               | Binding     | Contains the data of the row that triggered the **onSubmit**, **onSave** or **onDiscard** action. | `{{Table1.updatedRow}}`|
 
-#### Update mode (single row)
+#### Update mode
 
-> **Single row** - Cells can be edited within a single row at a time, and then saved using the Save/Discard column buttons. While a row has pending edits, the user isn't allowed to begin editing other rows. Be sure to configure the Save/Discard buttons' **onSave** event to run a query that updates the table's datasource.
+These modes allow you to choose how to handle the flow of updating, saving, and discarding new values within editable tables.
+
+##### Single row
+
+> Cells can be edited within a single row at a time, and then saved using the Save/Discard column buttons. While a row has pending edits, the user isn't allowed to begin editing other rows. Be sure to configure the Save/Discard buttons' **onSave** event to run a query that updates the table's datasource.
 
 When one or more columns of a table are **Editable** in Single row mode, a new table column is injected called `Save/Discard`. This new column contains a Save button and a Discard button, which execute the table's **onSave** and **onDiscard** events when clicked. Style options for these buttons are available in the `Save/Discard` column's settings in the Table widget's properties pane.
 
@@ -43,11 +47,9 @@ While you are configuring the **onSave** or **onDiscard** events, you can use th
 
 As an alternative to using the `Save/Discard` buttons and events, you can configure the **onSubmit** event in each column's settings to run a query that saves the new data. The onSubmit event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it.
 
-#### Update mode (multi row)
+##### Multi row
 
-
-> **Multi row** - Cells can be edited across any number of rows at a time. Updated rows are saved all at once by using an external Button widget, which you should place onto the canvas and configure to run a query that submits multiple rows to a datasource.
-
+> Cells can be edited across any number of rows at a time. Updated rows are saved all at once by using an external Button widget, which you should place onto the canvas and configure to run a query that submits multiple rows to a datasource.
 
 In this mode, users are free to choose when to save their edited rows. To facilitate this, take a look at this example of setting up a new Save button:
 
