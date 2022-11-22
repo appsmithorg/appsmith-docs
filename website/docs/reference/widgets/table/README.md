@@ -29,6 +29,7 @@ These properties allow you to edit the table itself. All these properties are pr
 | **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                                                       |
 | **Total Record Count**         | It stores the total number of rows returned by a query or API, which helps in calculating the total number of pages on the table when using server-side pagination. |
+| **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
 
 Let's understand the widget properties in detail.
 
@@ -68,9 +69,9 @@ This property shows all the columns in the table, and it gets auto-populated fro
 
 The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](./../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
-#### Inline Editing
+#### Inline editing
 
-Inline editing allows you to edit a cell contents in the table columns. It can be enabled for the whole column or at the cell level based on a condition. Read more about Inline editing [here](./#inline-editing).
+Inline editing allows you to edit a cell contents in the table columns, and can be enabled for the whole column or at the cell level based on a condition. You can also allow users to add new rows of data to the Table. Read more about Inline editing [here](./#inline-editing).
 
 #### Total Record Count
 
