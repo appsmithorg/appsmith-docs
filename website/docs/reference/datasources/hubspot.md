@@ -19,9 +19,11 @@ Appsmith provides an easy way to integrate with HubSpot, and enables you to perf
 To add a HubSpot API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **HubSpot** under APIs.
 
 
-<figure>
-<VideoEmbed host="youtube" videoId="h2Jp8PenbTM" /> 
-</figure> 
+
+
+<VideoEmbed host="youtube" videoId="h2Jp8PenbTM" title="Create HubSpot Datasource" caption="Create HubSpot Datasource"/>
+
+
 
 ## Connection Settings
 
@@ -43,9 +45,9 @@ Let's see how you can fetch your Bearer Token:
 
 
 
-<figure>
-<VideoEmbed host="youtube" videoId="q1DkGLJ6JFU" /> 
-</figure>
+
+
+<VideoEmbed host="youtube" videoId="q1DkGLJ6JFU" title="Fetching Access Token" caption="Fetching Access Token"/>
 
 
 * Open [**HubSpot**](https://www.hubspot.com/products).
