@@ -29,7 +29,7 @@ The Appsmith context object contains the following properties:
 
 ### Store
 
-This object contains the key-value pairs of the local storage of the application. Values to the store can be updated using the [storeValue function](widget-actions/store-value.md). Values from the store can be accessed using their key.
+This object contains the key-value pairs of the local storage of the app. Values to the store can be updated using the [storeValue function](widget-actions/store-value.md). Values from the store can be accessed using their key.
 
 ```javascript
 {{ appsmith.store.key }}
@@ -37,7 +37,10 @@ This object contains the key-value pairs of the local storage of the application
 
 ### URL
 
-This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](widget-actions/navigate-to).
+This object contains all the values associated with the current URL that the user is on. The queryParams object of this field can be used to read data sent from other pages to this page using the [navigateTo function](widget-actions/navigate-to).  Values from the URL can be accessed using:
+```javascript
+{{ appsmith.URL }}
+```
 
 ```javascript
 {
@@ -50,6 +53,94 @@ This object contains all the values associated with the current URL that the use
   hash: string,
   queryParams: object
 }
+```
+
+#### host
+The host property of the URL interface is a **string** containing the host, that is the [hostname](/reference/appsmith-framework/context-object#hostname), and then, a ```:```, followed by the port of the URL(if the [port](/reference/appsmith-framework/context-object#port) of the URL is nonempty).
+
+
+Example:
+```js
+//{{appsmith.URL.host}}
+host:"app.appsmith.com:111"
+```
+
+#### hostName
+The hostname property of the URL interface is a **string** containing the **domain name of the URL**. 
+
+:::info
+hostname is the host name (without the port number or square brackets).
+:::
+
+Example:
+```js
+//{{appsmith.URL.hostname}}
+hostName:"app.appsmith.com"
+```
+
+
+#### fullPath
+A full-path URL designates an EXACT location (such as a page, app, file, etc.). In addition to the domain and TLD, a full-path URL needs to include the protocol, subdomain (such as "app," "support," etc.), path/destination, and possibly a file extension as well as parameters. A full-path can include:
+
+* Protocol
+* Subdomain
+* Domain Name
+* Top Level Domain (TLD)
+* Path/File
+* Parameters
+
+Example:
+```js
+//{{appsmith.URL.fullPath}}
+fullPath:"https://app.appsmith.com/app/demo-app/page1-6324031aa"
+```
+
+#### pathName
+It is a string made up of a collection of path segments, each of which has the ```/``` character prefixed to it. The empty string will be the value of the pathname property if the URL has no path segments.
+
+Example:
+```js
+//{{appsmith.URL.pathname}}
+pathName:"/app/demo-app/page1-6324031aa"
+```
+
+#### port
+The port property of the URL interface is a string containing the port number of the URL.
+
+Example:
+```js
+//{{appsmith.URL.port}}
+port:"localhost:3000/"
+```
+#### protocol
+The protocol property of the URL interface is a string representing the protocol scheme of the URL, including the final ```:```.
+:::info
+The resource name and the protocol identification are separated from one another by a colon and two forward slashes.
+:::
+
+Example:
+```js
+//{{appsmith.URL.protocol}}
+protocol:"https:"
+```
+
+#### hash
+The ```appsmith.URL.hash``` value is the string after the hashtag (**including #**). The URL fragment identification is followed by a hash symbol (#), which is the hash property of the URL interface.
+
+Example:
+```js
+//{{appsmith.URL.hash}}
+hash:"#n912xhesgo"
+```
+
+#### queryParams
+Query parameters are a predefined set of parameters that are added to the end of a URL.
+They are URL extensions that help define particular content or actions based on the data being delivered. A ```?``` is added at the end of a URL, then a query parameter is added right after it.
+
+Example:
+```js
+//{{appsmith.URL.queryParams}}
+queryParams:"?name=value&variable=value"
 ```
 
 ### User
@@ -130,4 +221,4 @@ Almost similar to the original browser API, apart from the fact that you don't h
 
 ### Mode
 
-This field is an enum that contains whether the application is currently running in view mode or edit mode. It takes the values VIEW|EDIT
+This field is an enum that contains whether the app is currently running in view mode or edit mode. It takes the values VIEW|EDIT
