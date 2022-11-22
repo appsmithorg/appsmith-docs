@@ -28,7 +28,7 @@ These properties allow you to edit the table itself. All these properties are pr
 | **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
 | **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                                                       |
-| **Table Record Count**         | The user has to input the total number of records returned as part of a query or API call, which will be displayed in a table. It is only visible when you choose to enable **server-side pagination**. |
+| **Total Record Count**         | It stores the total number of rows returned by a query or API, which helps in calculating the total number of pages on the table when using server-side pagination. |
 | **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
 
 Let's understand the widget properties in detail.
@@ -59,19 +59,41 @@ Where `<query_name>` is the query's name created in Step 2.
 
 That's it! The table widget will get populated with the data coming from the query.
 
-**Columns**
+#### Columns
 
 This property shows all the columns in the table, and it gets auto-populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the [column settings](column-settings.md).
 
 ![](/img/columns\_tablewidget.png)
 
-**Server-Side Pagination**
+#### Server-Side Pagination
 
 The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](./../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
 #### Inline editing
 
 Inline editing allows you to edit a cell contents in the table columns, and can be enabled for the whole column or at the cell level based on a condition. You can also allow users to add new rows of data to the Table. Read more about Inline editing [here](./#inline-editing).
+
+#### Total Record Count
+
+Total record count stores the total number of rows in the table. It's useful in pagination as it helps in determining the number of pages, thus enabling/disabling the next/previous page control in the table. It's only visible when you enable **server-side pagination**.
+To get the Total record count of your data, follow the steps below:
+ 
+ 1. Create a new query `get_count` for the data source connected to the table.
+ 2. In the query window, enter a count query for the data.
+    ```
+    #Postgres
+    SELECT COUNT(*) FROM <table_name>;
+    ```
+ 3. Click on Run and the output will be displayed the response tab below.
+
+Once the `get_count` query is successfully created, enter the following code to bind the query's output in the total records count:
+```
+#Postgres
+{{get_count.data[0].count}}
+```
+<VideoEmbed host="youtube" videoId="p7mH00xp7Nc" title="Using Total Records Count in th Table Widget" caption="Using Total Records Count in th Table Widget"/>
+
+
 
 ### Binding Properties
 

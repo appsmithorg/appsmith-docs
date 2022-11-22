@@ -40,6 +40,7 @@ website/i18n/**/*
 #!website/i18n/fr/**/*
 test-appsmith-docusaurus/.env
 .vale.ini
+vale.ini
 Linter/ValeLinter.md
 styles/Google/Acronyms.yml
 styles/Google/AMPM.yml
