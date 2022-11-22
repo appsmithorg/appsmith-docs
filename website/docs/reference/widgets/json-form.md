@@ -49,10 +49,7 @@ The source data field allows you to add JSON data for your form. Once you drag a
 {{<tableName>.selectedRow}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/-29FuF7YRkg?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Binding Table Data to JSON Form</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="-29FuF7YRkg" title="Binding Table Data to JSON Form" caption="Binding Table Data to JSON Form"/>
 
 * If your source data is coming from an API or a DB query, you can bind it to source data using:
 
@@ -64,10 +61,7 @@ The source data field allows you to add JSON data for your form. Once you drag a
 If your data is an array type, you can mention the index value to get the source data as an object.
 :::
 
-<figure>
-  <object data="https://www.youtube.com/embed/mQBdt38dWGg?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Connecting a Query with JSON Form</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="mQBdt38dWGg" title="Connecting a Query with JSON Form" caption="Connecting a Query with JSON Form"/>
 
 
 * You can also provide static data directly in the form or use a JS object.
@@ -87,17 +81,11 @@ Post binding, the form is automatically generated and ready to use. We optimize 
 
 When you enable auto-generate form, the form fields are generated according to the source data (fields are generated according to the key-value pairs in the source data). Whenever there is a change in the source data, the form fields get updated automatically.
 
-<figure>
-  <object data="https://www.youtube.com/embed/8T_nh5VI4-E?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Auto-Generate Form</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="8T_nh5VI4-E" title="Auto-Generate Form" caption="Auto-Generate Form"/>
 
 When the auto-generate form is disabled, any change in the source data will not affect the Form field. You’ll have to manually generate the form fields on demand by clicking on “**Generate form**.” It prevents the removal of the fields that are essential in the form.
 
-<figure>
-  <object data="https://www.youtube.com/embed/3r8GfXKM6y0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Using Generate Form option</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="3r8GfXKM6y0" title="Using Generate Form option" caption="Using Generate Form option"/>
 
 #### Field Configuration
 
@@ -105,10 +93,7 @@ Field configuration shows all the fields generated automatically in the forms. Y
 
 Most fields use the underlying data type-specific widget’s properties to allow a full level of customization just like the widget would. For example, if the input type is text input, the editable properties are similar to the [input widget](input.md) in Appsmith.
 
-<figure>
-  <object data="https://www.youtube.com/embed/DULrXY8WXqo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Field Configuration</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="DULrXY8WXqo" title="Field Configuration" caption="Field Configuration"/>
 
 #### Array Field
 
@@ -124,10 +109,7 @@ Object fields can also be created within the form while customizing by adding a 
 
 You can also add new fields from the **Add new field** button in the Field configuration. These are called **Custom fields**. Once you add the field, you can customize it similar to any existing form field. For example, its “property name” can be updated within the field configuration for easier management of the form data. You can delete the custom fields later using the field configuration section in the widget.
 
-<figure>
-  <object data="https://www.youtube.com/embed/GmgFNppZhOM?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Add New Field</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="GmgFNppZhOM" title="Add New Field" caption="Add New Field"/>
 
 #### Disable Invalid Forms
 
@@ -145,10 +127,7 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 {{Checkbox1.isChecked}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/VgO6S4I7XSQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Visible</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="VgO6S4I7XSQ" title="Visible" caption="Visible"/>
 
 
 When you tick the checkbox, it will enable the Visible property, and the JSON Form will be visible in the app.
@@ -174,28 +153,19 @@ For example, let's take a JSON Form widget `JSONform1` and bind the data in the 
 {{JSONform1.formData}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/e49oc0s8elw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>formData</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="e49oc0s8elw" title="formData" caption="formData"/>
 
 #### fieldState
 
 `fieldState` captures the state of the fields present in the form in JSON format. The states include the properties of the fields (widgets) like disabled, required, visible, etc.
 
-<figure>
-  <object data="https://www.youtube.com/embed/ml7gEgkqq8w?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>fieldState</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="ml7gEgkqq8w" title="fieldState" caption="fieldState"/>
 
 #### sourceData
 
 `sourceData` fetches the data coming from the source data that is bound to the form in a JSON format. The source data may have static JSON data or data coming in from a query or an API.
 
-<figure>
-  <object data="https://www.youtube.com/embed/xEBuu5rUpqE?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>sourceData</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="xEBuu5rUpqE" title="sourceData" caption="sourceData"/>
 
 ### Events
 
@@ -214,10 +184,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Width**     | Sets the width of the widget's border. Accepts _number_ values only, in px.                                                                                                      |
 | **Box Shadow**       | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
-<figure>
-  <object data="https://www.youtube.com/embed/MW_8sn2lDVQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Form Styles</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="MW_8sn2lDVQ" title="Form Styles" caption="Form Styles"/>
 
 ### Submit and Reset Button Styles
 
@@ -231,10 +198,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Placement**      | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the _string_ "START", "CENTER", or "BETWEEN". |
 | **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
 
-<figure>
-  <object data="https://www.youtube.com/embed/U0vko4TrFmo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Button Styles</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="U0vko4TrFmo" title="Button Styles" caption="Button Styles"/>
 
 :::info
 Are you having trouble? Check out the [JSON Form troubleshooting guide](../../help-and-support/troubleshooting-guide/widget-errors.md#json-form-errors) or reach out to us on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on our [community forum](https://community.appsmith.com/).

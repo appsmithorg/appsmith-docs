@@ -22,7 +22,7 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 * In the **General settings** of the newly created App Integration:
   * Give your App integration a meaningful name (Optional.)
 
-![New App - General Settings](/img/Okta-General-Settings.png)
+![New App - General Settings](/img/as_okta_edited.png)
 
 * Add the redirect URL (Copied from the [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)) in the **Sign-in redirect URL** field.
 
@@ -57,10 +57,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 <your_okta_domain>/.well-known/openid-configuration
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/dgDhBUXKA6s?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Get Okta Configurations</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="dgDhBUXKA6s" title="Get Okta Configurations" caption="Get Okta Configurations"/>
 
 * **Configuration at Appsmith** - Add all the configurations from the above URL in OIDC Configurations on Appsmith. Refer to the below table that shows field mapping:
 
@@ -77,11 +74,17 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-![Configure Scope(s) at Appsmith](/img/Appsmith-Scope-Field.png)
+![Configure Scope(s) at Appsmith](/img/as_oidc_offline.png)
 
 #### What does Appsmith need as part of Scopes?
 
-Appsmith needs **openId** as a mandatory scope. You can add more scopes if the need be. You'll have to ensure that the same is available at Okta.
+Appsmith needs **openid** as a mandatory scope. It's also highly recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
+
+:::info
+Enabling the `offline_access` scope enables your app to receive refresh tokens that extend the duration that your users have access to their resources. To read more, see the [Okta documentation](https://developer.okta.com/docs/reference/api/oidc/#scopes).
+:::
+
+You can add more scopes if you wish, provided that they're available via Okta.
 
 #### Okta Scope
 

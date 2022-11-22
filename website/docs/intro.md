@@ -25,7 +25,7 @@ You can build anything from simple CRUD apps to complicated multi-step workflows
 
 **Got 2 minutes?** Here's a video overview of Appsmith:
 <figure>
-<object data="https://www.youtube.com/embed/Dxe_NzdGzL4?autoplay=0" width='750px' height='400px'></object> 
+<VideoEmbed host="youtube" videoId="Dxe_NzdGzL4" /> 
 </figure>
 
 ## **Get Started**

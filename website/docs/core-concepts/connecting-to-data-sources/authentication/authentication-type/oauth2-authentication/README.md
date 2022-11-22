@@ -32,10 +32,7 @@ You can connect to your OAuth 2.0 APIs using Authenticated APIs on Appsmith. You
 
 An authorization grant type is a secured representation of the owner’s authorization presented in exchange for an access token.
 
- <figure>
- <object data="https://www.youtube.com/embed/NOpmWnQuwwQ?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Grant type</i></figcaption>
-</figure> 
+ <VideoEmbed host="youtube" videoId="NOpmWnQuwwQ" title="Grant type" caption="Grant type"/> 
 
 
 For OAuth 2.0 on Appsmith, you can use the below grant types to communicate with your APIs. Navigate to the below grant types for their specific configurations.

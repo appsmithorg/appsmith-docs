@@ -19,17 +19,11 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 
 * Click on **Build your own solution** in the **Create Environment** window and choose `PingOne SSO` from the given options.
 
-<figure>
-  <object data="https://www.youtube.com/embed/B-Vsbqkkwqg?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Build your own Solution</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="B-Vsbqkkwqg" title="Build your own Solution" caption="Build your own Solution"/>
 
 * Fill in the details about the environment and click on Next.
 
-<figure>
-  <object data="https://www.youtube.com/embed/h8QqEhbpEPs?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Environment Configuration</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="h8QqEhbpEPs" title="Environment Configuration" caption="Environment Configuration"/>
 
 * Go to **Connections** from the sidebar and click on **Applications**. Create a new Application by clicking on the `+` button.
 * On the New application window, select `Web App` and choose OIDC as the connection type. Enter the application name and description (optional) on the next page.
@@ -40,10 +34,11 @@ OpenID Connect is available **only in the** [**enterprise edition**](https://www
 * Use the **Grant Access Resources** to filter the scopes by **openid** resource type. Move the desired scopes to **Scope Grants** to give access to the resources. Click on **Save and Continue**.
 * In the Attribute Mapping, add the OIDC attributes. Please note that only the values added in the `Scope Grant` will be valid here. Hit **Save and Close**, and your application is ready.
 
-<figure>
-  <object data="https://www.youtube.com/embed/fRreXB6P0No?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Configure Environment and Scope</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="fRreXB6P0No" title="Configure Environment and Scope" caption="Configure Environment and Scope"/>
+
+* In your app's settings pane, navigate to the **Configuration** tab. Click the pencil icon to begin editing the app's settings, and tick the **Refresh Token** box to enable Ping Identity to issue refresh tokens to Appsmith. Your app is now configured for use with Appsmith.
+
+<VideoEmbed host="youtube" videoId="y7f2kXY9zcw" title="Enable Refresh Tokens in Ping Identity Dashboard" caption="Enable Refresh Tokens in Ping Identity Dashboard"/>
 
 * Under the general section, you can see the basic information about your application. You can add multiple **Redirect URLs** by simply editing the general configurations. (Allows you to use this PingID application for multiple Appsmith applications.
 
@@ -70,7 +65,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Ping 
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-![Appsmith - configure scope(s)](/img/Appsmith-Scope-Field.png)
+![Appsmith - configure scope(s)](/img/as_oidc_offline.png)
 
 #### What does Appsmith need as part of Scopes?
 

@@ -30,28 +30,19 @@ These properties allow you to perform formatting changes or bind it to any other
 
 Use the `Options` property to define the set of choices that the user may choose from with the slider. This property should be an array of objects, each with a `label` key (text to be displayed to the user) and a `value` key (the corresponding value to use within your widgets and code).
 
-<figure>
- <object data="https://www.youtube.com/embed/VpdlnhOL3Eo?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Options</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="VpdlnhOL3Eo" title="Options" caption="Options"/>
 
 #### Default Value
 
 Sets an initial option to be captured as user input unless it's changed by the user. Please note that this property should be set to match the `value` attribute of your desired option from the **Options** object.
 
-<figure>
- <object data="https://www.youtube.com/embed/GOQ0SguBbp0?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Default Value</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="GOQ0SguBbp0" title="Default Value" caption="Default Value"/>
 
 #### Show Marks
 
 This property is a toggle that enables/disables the label markings along the bottom of the slider.
 
-<figure>
- <object data="https://www.youtube.com/embed/-4DS16RBkeI?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Show Marks</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="-4DS16RBkeI" title="Show Marks" caption="Show Marks"/>
 
 #### Value
 
@@ -62,10 +53,7 @@ This binding property allows you to access the value that has been selected with
 // agree
 ```
 
-<figure>
- <object data="https://www.youtube.com/embed/AD89aGY2Kwc?autoplay=0" width='750px' height='400px'></object>
- <figcaption align="center"><i>Value</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="AD89aGY2Kwc" title="Value" caption="Value"/>
 
 ## Events
 

@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Docker is an open source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into standardized executable components called containers. These containers combine the application's source code with the Operating System (OS) libraries and dependencies required to run that code in any environment.
 
-<object data="https://www.youtube.com/embed/Tde7GqE6FQQ?autoplay=0" width='750px' height='400px'></object> 
+<VideoEmbed host="youtube" videoId="Tde7GqE6FQQ" /> 
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
 
 2. Add your **license key** (`APPSMITH_LICENSE_KEY`) to the `environment:` key in the `docker-compose.yml` file.
 
-To upgrade your existing Community Edition installation to the Business Edition, [follow these instructions](../../upgrade-to-business-edition/).
+To upgrade your existing Community Edition installation to the Business Edition, [follow these instructions](/getting-started/setup/upgrade-to-business-edition/docker).
 :::
 
 2. Start the Docker container by running the command below. You may need to run with `sudo` if `docker` and `docker-compose` aren't accessible by your user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
@@ -157,9 +157,10 @@ chmod +x restart-container.sh
 
 ## Troubleshooting
 
-If you encounter any errors during this process, follow the guide on [debugging deployment errors](../../../../help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing issues, please contact [support@appsmith.com](mailto:support@appsmith.com) or join the Appsmith [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
+If you encounter any errors during this process, follow the guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you are still facing issues, please contact [support@appsmith.com](mailto:support@appsmith.com) or join the Appsmith [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
 
 ## Further reading
 
-* [Configuring Self-Hosted Instances](../../instance-configuration/#configuring-docker-installations)
-* [Managing the Appsmith instance](../../instance-management/)
+* [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
+* [Managing the Appsmith instance](/getting-started/setup/instance-management/)
+* [Tutorials](/learning-and-resources/tutorials/)

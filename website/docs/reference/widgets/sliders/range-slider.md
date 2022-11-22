@@ -33,56 +33,38 @@ These properties allow you to perform formatting changes or bind it to any other
 
 These properties represent the lower and upper bounds of values that can be selected with the slider. The **Min Value** determines the value at the far left end of the widget, and the **Max Value** determines the value at the far right end. Negative and/or decimal values are allowed, however the Min Value must always be less than the Max Value.
 
-<figure>
-  <object data="https://www.youtube.com/embed/VphLW50YPKo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Min Value / Max Value</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="VphLW50YPKo" title="Min Value / Max Value" caption="Min Value / Max Value"/>
 
 
 #### Step Size
 
 The `Step Size` property determines the smallest increment by which the user may adjust the value selected by the slider. Smaller values for this property (can't be smaller than 0.1) result in finer control of the selection, whereas larger step sizes result in coarser control.
 
-<figure>
-  <object data="https://www.youtube.com/embed/mecwJ-D49gU?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Step Size</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="mecwJ-D49gU" title="Step Size" caption="Step Size"/>
 
 #### Min Range
 
 This property represents the minimum difference allowed between the low and high ends of the user's selection. This value can't be less than 0.1.
 
-<figure>
-  <object data="https://www.youtube.com/embed/C40N4hh3SRA?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Min Range</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="C40N4hh3SRA" title="Min Range" caption="Min Range"/>
 
 #### Default Start / End Value
 
 Sets an initial start/end value for the range to be captured as user input unless it's changed by the user.
 
-<figure>
-  <object data="https://www.youtube.com/embed/2-iIwfNigbo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Default Start / End Value</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="2-iIwfNigbo" title="Default Start / End Value" caption="Default Start / End Value"/>
 
 #### Marks
 
 Marks appear along the bottom of the widget as labels for the different values along the slider. Using the `Marks` property, which is an array of objects with keys `label` and `value`, you can define where these marks appear and how they're labeled. Each mark appears below the place where its `value` is located on the slider, and has the text from its corresponding `label`.
 
-<figure>
-  <object data="https://www.youtube.com/embed/9lkNIjJ8EFs?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Marks</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="9lkNIjJ8EFs" title="Marks" caption="Marks"/>
 
 #### Tooltip Always On
 
 When this property is enabled, the widget's tooltip is _always_ visible, and shows the currently selected value on the slider. If this setting is turned off, the tooltip is only visible when the user is hovering over the slider with their mouse cursor.
 
-<figure>
-  <object data="https://www.youtube.com/embed/mtlqTYBplqk?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Tooltip Always On</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="mtlqTYBplqk" title="Tooltip Always On" caption="Tooltip Always On"/>
 
 #### Start / End
 
@@ -96,10 +78,7 @@ These binding properties allow you to access the values that have been selected 
 // 80
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/c5jzfvx1hvQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Start / End</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="c5jzfvx1hvQ" title="Start / End" caption="Start / End"/>
 
 
 ## Events
@@ -109,7 +88,6 @@ Each variant of the Slider widget has events that are called when the user adjus
 | Event        | Description                                                                                                                                                                                                                                                                                       | Example                                                                  |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | **onStartValueChange** | Sets an action to take place when the user changes the range's start value. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead. | Filtering a dataset according to user input. |
-
 | **onEndValueChange**   | Sets an action to take place when the user changes the range's end value. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead.   | Filtering a dataset according to user input. |
 
 Range sliders are a great choice when you have a large dataset, but only wish to see a portion of it at a time. They provide an easy way to choose exactly what part you'd like to use, and offer a visual representation of the size of your selection relative to the whole.
