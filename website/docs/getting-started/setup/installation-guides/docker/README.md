@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Docker
 
-Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into standardized executable components called containers. These containers combine the app's source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
+Docker is an open source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into standardized executable components called containers. These containers combine the application's source code with the Operating System (OS) libraries and dependencies required to run that code in any environment.
 
 <object data="https://www.youtube.com/embed/Tde7GqE6FQQ?autoplay=0" width='750px' height='400px'></object> 
 
@@ -17,33 +17,11 @@ Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/lear
 1. Create an installation folder called `appsmith` where you would like your Appsmith installation and data storage.
 2. `cd` into the installation folder.
 
-:::tip
-If you'd like to name your installation directory something other than `appsmith`, update your docker-compose.yml file with the name you'd like:
-```yml
-# docker-compose.yml
+## Setup with docker compose
 
-# ...
-services:
-  appsmith:
-    image: index.docker.io/appsmith/appsmith-ce
-    container_name: <YOUR_DIRECTORY_NAME>
-# ...
-```
-:::
+The Appsmith Docker image contains all the components required to run, within a single Docker container. All these multiple processes are managed by a [Supervisord](http://supervisord.org/) instance, which is a lightweight process manager.
 
-## Setup with docker-compose
-
-The Appsmith Docker image contains all the components required to run within a single Docker container. All these multiple processes are managed by a [Supervisord](http://supervisord.org/) instance, which is a lightweight process manager.
-
-### Docker-compose configuration
-
-Click the link below to download the `docker-compose.yml` file, and place it into your Appsmith installation folder.
-
-<div class="downloadAssets">
-    <a target="_blank" href='/img/docker-compose_(3).yml' download="docker-compose_(3).yml">
-     <img src="/img/FileDownload.png" alt="Click to Download"/>
-    </a>
-</div>
+1. Click to [download the `docker-compose.yml` file](/img/docker-compose_(3).yml), and place it into your Appsmith installation folder.
 
 **OR,** run the following cURL:
 
@@ -52,7 +30,7 @@ curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
 ```
 
 :::info
-**For Business Edition users:**
+**Business Edition:**
 
 1. Change the **image** name from `appsmith-ce` to `appsmith-ee` for the `image:` key in the `docker-compose.yml` file.
 
@@ -61,23 +39,15 @@ curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
 To upgrade your existing Community Edition installation to the Business Edition, [follow these instructions](../../upgrade-to-business-edition/).
 :::
 
-Start up the Docker container by running the following command - You may need to run with `sudo` if docker and docker-compose aren't accessible by your user.
+2. Start the Docker container by running the command below. You may need to run with `sudo` if `docker` and `docker-compose` aren't accessible by your user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
 
 ```bash
 docker-compose up -d
 ```
 
-If the image doesn't exist locally, this command downloads the Docker images and starts its services. You can follow the logs with the following command:
+Your Appsmith server should be up and running soon. You can access it at [http://localhost](http://localhost). You can also verify that it's working correctly in the [Docker logs](#docker-logs).
 
-```bash
-docker logs -f appsmith
-```
-
-Once the container is ready, you should see `Appsmith is Running!` in the Docker logs. This message is also logged and available in server logs in (<mark>`stacks/logs/backend/backend.log`</mark>).
-
-![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
-
-Congratulations, your Appsmith server should be up and running now. You can access it at [http://localhost](http://localhost). If this is your first time setting up using Docker, you should expect a welcome page similar to the one below.
+If this is your first time setting up using Docker, you should expect a welcome page similar to the one below.
 
 ![Welcome Page](</img/image_(1)_(1).png>)
 
@@ -91,20 +61,20 @@ docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 
 ### Enabling Appsmith auto-updates
 
-Automatic updates are disabled by default in the docker-compose.yml file. If you would like to enable automatic updates for Appsmith, please follow these steps:
+Automatic updates are turned off by default in the docker-compose.yml file. To enable them, please follow these steps:
 
 1. Go to the root directory of your Appsmith instance and run:
 
-```
-docker-compose down
-```
+   ```
+   docker-compose down
+   ```
 
-2. Open the `docker-compose.yml` file with any text editor and uncomment all the lines that are commented out (lines 13-23).
+2. Open the `docker-compose.yml` file with any text editor and un-comment all the lines that are commented out (lines 13-23).
 3. Save the file and run:
 
-```
-docker-compose up -d
-```
+   ```
+   docker-compose up -d
+   ```
 
 :::info
 To complement automatic updates, Appsmith also has an auto-backup feature. Before an automatic update, Appsmith first creates a backup to ensure you can [roll back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto-backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
@@ -118,7 +88,7 @@ This configuration runs an Appsmith instance and a Watchtower instance to keep A
 
 To get Appsmith up and running, run the following command on your machine:
 
-### Community Edition setup
+### Community Edition
 
 This command downloads the image and starts Appsmith.
 
@@ -137,15 +107,9 @@ docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
 ```
 
-Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
+Once the download is complete, the server should be up in under a minute. You can verify that it's working correctly in the [Docker logs](#docker-logs).
 
-```bash
-docker logs -f appsmith
-```
-
-Once the container is ready, you should see `Appsmith is Running!` in the Docker logs. This message is also logged and available in server logs in (<mark>`stacks/logs/backend/backend.log`</mark>).
-
-### Business Edition setup
+### Business Edition
 
 This command downloads the image and starts Appsmith.
 
@@ -164,27 +128,27 @@ docker rm -f appsmith
 docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> appsmith/appsmith-ee
 ```
 
-Once the download is complete, the server should be up in under a minute. You can follow the logs with the following command:
+Once the download is complete, the server should be up in under a minute. You can verify that it's working correctly in the [Docker logs](#docker-logs).
+
+## Docker logs
+
+Once your Appsmith container is ready, you should see `Appsmith is Running!` in the Docker logs.
+
+![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
+
+You can follow the logs with the following command:
 
 ```bash
 docker logs -f appsmith
 ```
 
-Once the container is ready, you should see `Appsmith is Running!` in the Docker logs. This message is also logged and available in server logs in (<mark>`stacks/logs/backend/backend.log`</mark>).
-
----
+This message is also logged and available in server logs in (`stacks/logs/backend/backend.log`).
 
 ## Restarting containers
 
-If your containers are failing to restart, you can download and run the script linked below to bring them up:
+If your containers are failing to restart, you can [download and run the `restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
 
-<div class="downloadAssets">
-    <a target="_blank" download="restart-container.sh" href="/img/restart-container.sh">
-     <img src="/img/FileDownload.png" alt="Click to Download"/>
-    </a>
-</div>
-
-Copy the script (restart-container.sh) to your installation folder and make it executable:
+Copy the script (`restart-container.sh`) to your installation folder and make it executable:
 
 ```bash
 chmod +x restart-container.sh
@@ -193,7 +157,7 @@ chmod +x restart-container.sh
 
 ## Troubleshooting
 
-If you encounter any errors during this process, try following this guide on [debugging deployment errors](../../../../help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing issues, please contact [support@appsmith.com](mailto:support@appsmith.com) or join the Appsmith [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
+If you encounter any errors during this process, follow the guide on [debugging deployment errors](../../../../help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing issues, please contact [support@appsmith.com](mailto:support@appsmith.com) or join the Appsmith [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
 
 ## Further reading
 
