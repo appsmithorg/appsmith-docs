@@ -360,6 +360,7 @@ const sidebars = {
                 'reference/datasources/querying-firestore',
                 'reference/datasources/querying-google-sheets',
                 'reference/datasources/graphql',
+                'reference/datasources/hubspot',
                 {
                   type: 'category',
                   label: 'Mongo',
