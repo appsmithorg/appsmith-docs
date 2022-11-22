@@ -212,35 +212,55 @@
 
 .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
   display: none;
-  }
+}
 
  .downloadAssets {
   width: 25px!important;
   height: 40px !important;
- } 
+} 
   
- .img_ev3q{
+ .img_ev3q {
   border: 2px solid #f2f2f2;
   border-radius: 8px;
   display: block;
   margin: 1rem auto;
   max-width: 100%;
   width: 750px;
- }
+}
 
-div.containerColumnSampleApp.columnGrid > div.containerCol > img, .div.columnGrid > img{
+div.containerColumnSampleApp.columnGrid > div.containerCol > img, .div.columnGrid > img {
 border:none;
 height: auto;
 width: auto;
 float: left;
- }
+}
  
 .containerGrid > div.columnGrid > div > a > img {
 border:none;
 height: auto;
 width: auto;
- }
+}
 
- .navbar__item > .iconExternalLink_nPIU {
+.navbar__item > .iconExternalLink_nPIU {
   display: none;
- }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
