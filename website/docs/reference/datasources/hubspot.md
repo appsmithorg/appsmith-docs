@@ -8,7 +8,7 @@ sidebar_position: 10
 HubSpot is a **cloud-based CRM** designed to help align sales and marketing teams, promote sales, increase ROI, and improve your inbound marketing strategy to produce more qualified leads. In simple words, it's a software platform created to assist your business with marketing and sales.
 
 :::info
-To integrate HubSpot with Appsmith, you should understand the [basics of connecting to datasource](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/) on Appsmith.
+To integrate HubSpot with Appsmith, you should understand the [basics of connecting to datasource](/core-concepts/connecting-to-data-sources/) on Appsmith.
 :::
 
 Appsmith provides an easy way to integrate with HubSpot, and enables you to perform different operations using a custom UI built with minimal configurations.
@@ -18,10 +18,6 @@ Appsmith provides an easy way to integrate with HubSpot, and enables you to perf
 
 To add a HubSpot API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **HubSpot** under APIs.
 
-<!-- <figure>
- <object data="https://www.youtube.com/embed/h2Jp8PenbTM" width='750px' height='400px'></object>
- <figcaption align="center"><i>Create Hubspot Datasource</i></figcaption>
-</figure>  -->
 
 <figure>
 <VideoEmbed host="youtube" videoId="h2Jp8PenbTM" /> 
@@ -46,11 +42,6 @@ You can authenticate to the API by providing your access token in the HTTP autho
 Let's see how you can fetch your Bearer Token:
 
 
-
-<!-- <figure>
- <object data="https://www.youtube.com/embed/q1DkGLJ6JFU" width='750px' height='400px'></object>
- <figcaption align="center"><i>Fetching Access Token</i></figcaption>
-</figure> -->
 
 <figure>
 <VideoEmbed host="youtube" videoId="q1DkGLJ6JFU" /> 
