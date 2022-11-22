@@ -137,7 +137,7 @@ You can create queries to fetch, update and delete data from a datasource using 
 | Settings - See Details Account's Teams   |  Obtain information about the team's account.                                    |
 
 
-You can check the [Query Settings Guide ](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/) to learn more about queries.
+You can check the [Query Settings Guide ](/core-concepts/data-access-and-binding/querying-a-database/) to learn more about queries.
 
 
 
