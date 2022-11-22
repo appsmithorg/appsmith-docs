@@ -20,5 +20,5 @@ jobs:
           fail_on_error: true
           files: website/docs/
         env:
-          GITHUB_TOKEN: ${{secrets.LINTER_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
