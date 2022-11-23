@@ -1,0 +1,24 @@
+name: Lint
+on: 
+  pull_request:
+  
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+         
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+         fetch-depth: 0
+
+      - name: Run vale linter
+
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          reporter: github-pr-check
+          fail_on_error: true
+          files: website/docs/
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
