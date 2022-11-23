@@ -11,7 +11,7 @@ The identity provider(IdP) is responsible for authentication and shares the user
 Upon successful authentication by the identity provider, the service provider authorizes the user to access resources.
 
 :::info
-Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
+Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
 ## **Capture Redirect & Entity URL**
