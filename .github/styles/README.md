@@ -15,7 +15,10 @@ Please ensure that the below prerequisites are met before you configure vale lin
 > You could also use [vale cli](https://vale.sh/docs/vale-cli/overview/). 
 
 ## Setup
-Clone the documentation [appsmith-docs](https://github.com/appsmithorg/appsmith-docs) repository and open it in VS Code Editor. Create a branch that you need to work on. Configure the vale extension to read the `.vale.ini` file. Go to Extension Settings --> Select `Workspace` tab --> Set up the path of `.vale.ini` file for `Vale › Vale CLI: Config` parameter. 
+Follow the below steps to setup the linter:
+* Clone the documentation [appsmith-docs](https://github.com/appsmithorg/appsmith-docs) repository and open it in VS Code Editor. 
+* Create a branch that you need to work on. 
+* Configure the vale extension to read the `.vale.ini` file. Go to Extension Settings --> Select `Workspace` tab --> Set up the path of `.vale.ini` file for `Vale › Vale CLI: Config` parameter. 
 
 > You could use `${workspaceFolder}/.vale.ini` to specify the path. Please note that `${workspaceFolder}` points to the folder that's opened in the VS Code Editor.
 
