@@ -136,7 +136,7 @@ hash:"#n912xhego"
 ```
 
 #### queryParams
-Query parameters are a predefined set of parameters that are added to the end of a URL. They are URL extensions that help define particular content or actions based on the data being delivered. A URL has all the query parameters appended at the end with a ```?``` as a separator.
+Query parameters are a predefined set of parameters that define particular content or actions based on the data being delivered. A URL has all the query parameters appended at the end with a ```?``` as a separator.
 
 
 
