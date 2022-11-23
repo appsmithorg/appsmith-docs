@@ -127,7 +127,7 @@ The ```appsmith.URL.hash``` value is the string after the hashtag (**including `
 Example:
 ```js
 //{{appsmith.URL.hash}}
-hash:"#n912xhesgo"
+hash:"#n912xhego"
 ```
 
 #### queryParams

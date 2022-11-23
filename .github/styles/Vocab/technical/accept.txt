@@ -1,0 +1,15 @@
+img
+pageinfo
+Appsmith
+appsmith
+Datasource
+datasources
+URL
+queryParams
+hostname
+hostName
+fullPath
+fullpath
+pathName
+path
+protocol
