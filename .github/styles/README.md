@@ -1,5 +1,5 @@
 # Style Guide
-The team follows the Google developer's and the Microsoft's documentation style guide. The style rules are configured with the help of Vale linter.
+The team follows the Google developer's and the Microsoft's documentation style guide. The style rules are configured with the help of [Vale](https://vale.sh/) linter.
 
 ## Prerequisites
 Please ensure that the below prerequisites are met before you configure vale linter. You should have:
