@@ -8,7 +8,7 @@ Please ensure that the below prerequisites are met before you configure vale lin
 > For windows, you could also use the command prompt and curl command to install brew - `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh`
 * Vale installed on your mac/window. 
 
-> If not already installed, you could install vale using `brew install vale`. Once installed, verify the version ` vale -v`.
+> If not already installed, you could install vale using `brew install vale` for mac, or `choco install vale` on Windows. Once installed, verify the version ` vale -v`. You can also check the [Vale installation page](https://vale.sh/docs/vale-cli/installation/) for other options.
 
 * Install the [vale extension](https://marketplace.visualstudio.com/items?itemName=errata-ai.vale-server) for VS Code Editor.
 
