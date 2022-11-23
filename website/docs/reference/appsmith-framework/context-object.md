@@ -66,12 +66,8 @@ host:"app.appsmith.com:111"
 ```
 
 #### hostName
-The hostname property of the URL is a **string** that holds the **domain of the URL**. 
+The hostname property of the URL is a **string** that holds the **domain of the URL**. hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number).
 
-
-:::info
-hostname is the host name (without the port number).
-:::
 
 Example:
 ```js
@@ -81,13 +77,13 @@ hostName:"app.appsmith.com"
 
 
 #### fullPath
-A full-path URL designates an EXACT location (such as a page, app, file, etc.). In addition to the domain and TLD, a full-path URL needs to include the protocol, subdomain (such as "app," "support," etc.), path/destination, and possibly a file extension as well as parameters. A full-path can include:
+A full-path URL designates an EXACT location (such as a page, app, file, etc.). In addition to the Domain and Top Level Domain(TLD), a full-path URL needs to include the protocol, subdomain (such as "app," "support," etc.), path/destination, and possibly a file extension as well as query parameters. A full-path can include:
 
 * Protocol
 * Subdomain
 * Domain Name
 * Top Level Domain (TLD)
-* Path/File
+* Path
 * Parameters
 
 Example:
@@ -111,13 +107,13 @@ The port property of the URL is a string that contains the port number of the UR
 Example:
 ```js
 //{{appsmith.URL.port}}
-port:"localhost:3000/"
+port:"3000"
 ```
 #### protocol
 The protocol property of the URL is a string that represents the protocol scheme of the URL, including the ```:```.
-:::info
-The resource name and the protocol identification are separated from one another by a colon and two forward slashes.
-:::
+
+> The resource name and the protocol identification are separated from one another by a colon and two forward slashes.
+
 
 Example:
 ```js
@@ -135,8 +131,9 @@ hash:"#n912xhesgo"
 ```
 
 #### queryParams
-Query parameters are a predefined set of parameters that are added to the end of a URL.
-They are URL extensions that help define particular content or actions based on the data being delivered. A ```?``` is added at the end of a URL, then a query parameter is added right after it.
+Query parameters are a predefined set of parameters that are added to the end of a URL. They are URL extensions that help define particular content or actions based on the data being delivered. A URL has all the query parameters appended at the end with a ```?``` as a separator.
+
+
 
 Example:
 ```js
