@@ -2,7 +2,7 @@
 description: >-
   You'll learn about common query errors and how to resolve them on Appsmith.
 ---
-# Query errors
+# Query Errors
 The section illustrates common query errors and how to resolve them on Appsmith.
 
 ## Query/API response errors
