@@ -92,6 +92,11 @@ Example:
 fullPath:"https://app.appsmith.com/app/demo-app/page1-6324031aa"
 ```
 
+:::info
+In the preceding example, ```6324031aa``` represents the **id** of the page named ```page1```. The current page slug in the URL is created by combining ```$pageName-$pageId```. Each page has a unique page id that is assigned to it.
+:::
+
+
 #### pathName
 It is a string made up of a collection of path segments, each of which has the ```/``` character prefixed to it. The empty string will be the value of the pathname property if the URL has no path segments.
 
