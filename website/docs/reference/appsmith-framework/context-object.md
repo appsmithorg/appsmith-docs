@@ -66,7 +66,7 @@ host:"app.appsmith.com:111"
 ```
 
 #### hostName
-The hostname property of the URL is a **string** that holds the **domain of the URL**. hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number).
+The hostname property of the URL is a string that holds the **domain of the URL**. In simple words, hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number).
 
 
 Example:
@@ -122,7 +122,7 @@ protocol:"https:"
 ```
 
 #### hash
-The ```appsmith.URL.hash``` value is the string after the hashtag (**including #**). The URL fragment identification is followed by a hash symbol (#), which is the hash property of the URL interface.
+The ```appsmith.URL.hash``` value is the string after the hashtag (**including ```#```**). The URL fragment identification is followed by a hash symbol (#), which is the hash property of the URL interface.
 
 Example:
 ```js
