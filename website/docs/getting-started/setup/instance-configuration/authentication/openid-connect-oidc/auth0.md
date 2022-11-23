@@ -6,7 +6,7 @@ sidebar_position: 4.1
 [Auth0](https://auth0.com/) is an authentication and authorization as a service provider. To configure OpenID Connect(OIDC) within Appsmith using Auth0 as an OIDC provider, follow these steps:
 
 :::info
-OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
+OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
 :::
 
 ### Create Application
