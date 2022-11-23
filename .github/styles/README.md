@@ -19,6 +19,6 @@ Clone the documentation [appsmith-docs](https://github.com/appsmithorg/appsmith-
 Restart the VS code editor and open up any `.md` file to verify the errors if any. The vale linter issues are shown in the problems tab.
 
 ## Tips & tricks
-* Add words to be recognized as valid: There could be instances where the linter would raise issues for words as misspelled which are technically correct. For example, `datasource`, `Appsmith` and more. To add these as exceptions, you could navigate to ` .github\styles\Vocab\technical`. Open `accept.txt` file and add the words to it. Vale linter would ensure that these words are treated valid.
+* Add words to be recognized as valid: There could be instances where the linter would raise issues for words as misspelled, even though they are technically correct. For example, `datasource`, `Appsmith`, and more. To add these exceptions, navigate to ` .github\styles\Vocab\technical`. Open `accept.txt` file and add the words to it. Vale linter will now treat these words as valid and will not raise errors for them.
 * Add words to be recognized as invalid: There are some words that we want to raise errors, even if they are technically correct. To do that, navigate to ` .github\styles\Vocab\technical`. Open `reject.txt` and add the words to it on new lines. Vale linter ensures that these words are treated as invalid and errors are raised.
 
