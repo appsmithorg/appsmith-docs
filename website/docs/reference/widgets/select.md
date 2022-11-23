@@ -50,7 +50,7 @@ These properties allow you to edit the Select widget. All these properties are p
 
 | Property                  | Description                                                                                                                                                                       |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**               | Let's you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
+| **Options**               | Lets you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
 | **Default Value**         | Sets a default option that's captured as user input unless it's changed by the user.                                                                                       |
 | **Placeholder**           | Sets the Placeholder of the dropdown widget.                                                                                                                                      |
 | **Required**              | When turned on, it makes a user input mandatory and disables any form submission until input is made.                                                                             |
@@ -133,16 +133,14 @@ Style properties allow you to change the look and feel of the widget.
 
 ### Server-side filtering
 
-The Select widget has the option to configure server-side filtering, where search queries are sent to the backend, and responses are used to populate options on the Select widget. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value isn't present in the default options.
-
-The video below explains how to configure this.
+The Select widget has the option to configure server-side filtering, where search queries are sent to the back end, and responses are used to populate options on the Select widget. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value isn't present in the default options.
 
 <VideoEmbed host="youtube" videoId="QDmTwRaLzHg" title="Server-side Filtering" caption="Server-side Filtering"/>
 
-As shown in the video above, follow these steps to configure server side filtering:
+As shown in the video, follow these steps to configure server side filtering:
 
 1. Drag a Select widget onto the canvas.
-1. Create a query `get_users` that retrieves user data to use in the widget. For example, try working with Appsmith's `users` Postgresql test database. Use the following statement as the query:
+1. Create a [query](/core-concepts/data-access-and-binding/querying-a-database/) `get_users` that retrieves user data to use in the widget. For example, try working with Appsmith's `users` Postgresql test database. Use the following statement as the query:
   ```sql
   SELECT id, name FROM users ORDER BY id LIMIT 10;
   ```
@@ -158,6 +156,7 @@ As shown in the video above, follow these steps to configure server side filteri
   ```javascript
   {{ get_users.run() }}
   ```
+  ![](/img/as_select_filtering.png)
 1. Now that the widget is configured for server side filtering, update the `get_users` query with a `WHERE` statement that incorporates the filter text from the Select widget:
   ```sql
   SELECT id, name FROM users
@@ -167,4 +166,4 @@ As shown in the video above, follow these steps to configure server side filteri
 
 Now when you open your Select widget, you can enter text to narrow the query's results.
 
-You can also take a look at what this behavior looks like by visiting the [sample app](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695). To begin with, there are only 10 results in the widget; if you enter text, you will see the list update itself with new entries that match your filter text.
+You can also take a look at what this behavior looks like by visiting the sample app for this topic ([Select Widget - Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695)). To begin with, there are only 10 results in the widget; if you enter text, the list updates itself with new entries that match your filter text.
