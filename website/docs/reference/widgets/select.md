@@ -25,7 +25,7 @@ A Dropdown can be used to filter a dataset based on the user's input. The select
 Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, and status.
 
 :::info
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this
+Some forms need to be pre-filled data from a table or API. You can bind the data to the default text property to enable this
 :::
 
 ```
@@ -44,7 +44,7 @@ Read more about submitting Input data to an API below.
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Select widget. All these properties are present in the property pane of the widget.
 
@@ -60,7 +60,7 @@ These properties allow you to edit the Select widget. All these properties are p
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                               |
 | **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                        |
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -91,7 +91,7 @@ The property hosts a group of configurations that you can use to associate a dis
 | **Alignment** | Sets the label alignment of the widget.                      |
 | **Width**     | Sets the label width of the widget as the number of columns. |
 
-Let's understand the label properties in detail:
+Here are the label properties in detail:
 
 #### **Text**
 
@@ -133,7 +133,7 @@ Style properties allow you to change the look and feel of the widget.
 
 ### Server-side filtering
 
-The Select widget has the option to configure server-side filtering, where search queries are sent to the back end, and responses are used to populate options on the Select widget. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value isn't present in the default options.
+The Select widget has the option to configure server-side filtering, where search queries are sent to the back-end, and responses are used to populate options on the Select widget. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value isn't present in the default options.
 
 <VideoEmbed host="youtube" videoId="QDmTwRaLzHg" title="Server-side Filtering" caption="Server-side Filtering"/>
 
