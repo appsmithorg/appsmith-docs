@@ -20,5 +20,5 @@ Restart the VS code editor and open up any `.md` file to verify the errors if an
 
 ## Tips & tricks
 * Add words to be recognized as valid: There could be instances where the linter would raise issues for words as misspelled which are technically correct. For example, `datasource`, `Appsmith` and more. To add these as exceptions, you could navigate to ` .github\styles\Vocab\technical`. Open `accept.txt` file and add the words to it. Vale linter would ensure that these words are treated valid.
-* Add words to be recognized as invalid: You would want linter to raise errors when some words even if are correct as invalid. To do that, navigate to ` .github\styles\Vocab\technical`. Open `reject.txt` and add the words to it. Vale linter would ensure that the words added are treated as invalid and error are raised.
+* Add words to be recognized as invalid: There are some words that we want to raise errors, even if they are technically correct. To do that, navigate to ` .github\styles\Vocab\technical`. Open `reject.txt` and add the words to it on new lines. Vale linter ensures that these words are treated as invalid and errors are raised.
 
