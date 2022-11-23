@@ -6,7 +6,7 @@ sidebar_position: 4
 OpenID Connect (OIDC) is an authentication protocol built on OAuth2.0 paradigm. You can use OIDC to securely sign-in users to your application.
 
 :::info
-OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
+OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
 :::
 
 ## Capture Redirect URL for OIDC Configuration
