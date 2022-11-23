@@ -4,7 +4,8 @@ The team follows the Google developer's and the Microsoft's documentation style 
 ## Prerequisites
 Please ensure that the below prerequisites are met before you configure vale linter. You should have:
 
-* [Brew](https://brew.sh) installed on your mac/window.
+* [Brew](https://brew.sh) installed on your Mac, or [Chocolatey](https://chocolatey.org/) installed on your Windows machine.
+> For windows, you could also use the command prompt and curl command to install brew - `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh`
 * Vale installed on your mac/window. 
 
 > If not already installed, you could install vale using `brew install vale`. Once installed, verify the version ` vale -v`.
