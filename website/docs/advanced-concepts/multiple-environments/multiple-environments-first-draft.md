@@ -27,3 +27,37 @@ The deployed version of the app always uses the production environment. However,
 **Access controls**
 
 You can specify access controls for the staging and production environments. For each of these environments, you can specify if the user can read the environment, update the environment and apply the environment configuration in edit/view modes.
+
+
+----------------------------------------------------
+# Multiple Environments Outline
+--
+
+## Introduction
+
+Information about multiple environments
+
+* **What are Multiple Environments?**
+
+* **Why do we need Multiple Environments?**
+
+* **What Environments are available on Appsmith?**  
+Explain the differences between the production and staging environments.
+
+  
+## How to Configure an Environment  
+This will be the main section of the document, where we will explain how users can configure environments.  
+### Configure databases  
+In this section, we will discuss how users can configure databases, like PostgreSQL,  
+MongoDB, MySQL, etc. We will add videos, screenshots, and steps to setup the environment.
+
+  
+### Configure APIs  
+In this section, we will discuss how users can configure APIs, like REST, GraphQL, Google Sheets, etc. We will add videos/ screenshots, and steps to setup the environment.
+
+  
+## Switch environments  
+In this section, we will explain how users can switch between different environments. and discuss a few questions like: Which environment is applied for production deployments?
+
+## User's access to environments  
+Discuss access controls for the staging and production environments.

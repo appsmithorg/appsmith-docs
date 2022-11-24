@@ -432,6 +432,7 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/updating-local-file-path'
           ]
         },
+      
         {
           type: 'category',
           label: 'More',
