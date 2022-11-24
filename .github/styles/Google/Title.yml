@@ -1,0 +1,6 @@
+extends: capitalization
+message: "'%s' should be in title case"
+level: warning
+# Could be `heading.h2`, `heading.h3`, etc.
+scope: heading.h1
+match: $title

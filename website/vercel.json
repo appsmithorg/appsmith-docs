@@ -787,7 +787,7 @@
     },
     {
       "source": "/core-concepts/writing-code",
-      "destination": "/reference/appsmith-framework"
+      "destination": "/core-concepts/writing-code/"
     },
     {
       "source": "/v/master/",

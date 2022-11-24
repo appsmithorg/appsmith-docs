@@ -69,5 +69,5 @@ Finally, click on _**connect**_, and if the connection is successful, your repos
   <VideoEmbed host="youtube" videoId="Z67SfBpKrnk" title="Initial Commit | Git Sync" caption="Initial Commit | Git Sync"/>
 
 :::info
-In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [Enterprise Edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
+In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [Business Edition](https://www.appsmith.com/pricing). However, you can connect **unlimited** public repositories.
 :::

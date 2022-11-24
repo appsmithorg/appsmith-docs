@@ -6,7 +6,7 @@ sidebar_position: 5.1
 Auth0 is an authentication & authorization provider. It provides Security Assertion Markup Language (SAML) integration that you can use to integrate with Appsmith. Follow these steps to configure SAML integration:
 
 :::info
-Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
+Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
 ## Create Application
