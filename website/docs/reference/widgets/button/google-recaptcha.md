@@ -51,7 +51,7 @@ Now that you have registered the site with [Google Recaptcha](https://www.google
 * Add the **site key** to the [button's `Google reCAPTCHA Key` ](./#widget-properties)property
 
 :::info
-Navigate to [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha/adminhttps://www.google.com/recaptcha/admin) >> Select **Settings** for your site>> expand **reCAPTCH Keys** section >> click **Copy Site Key**
+Navigate to [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha/admin) >> Select **Settings** for your site>> expand **reCAPTCH Keys** section >> click **Copy Site Key**
 :::
 
 * Navigate to **Explorer** >> Add **New Blank API** >> Add details as below:
@@ -67,7 +67,7 @@ Navigate to [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha
   * Add key as **secret** and add your site's **Recaptcha secret key**.
 
 :::info
-Navigate to  [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha/adminhttps://www.google.com/recaptcha/admin) >> Select **Settings** for your site>> expand **reCAPTCH Keys** section >> click **Copy Secret Key**
+Navigate to  [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha/admin) >> Select **Settings** for your site>> expand **reCAPTCH Keys** section >> click **Copy Secret Key**
 :::
 
 ![Add response and secret to Body - Multipart form data.](</img/Widgets__Button__reCAPTCHA__Validate_API__Add_reCaptchToken_and_Secret_to_Body_.png>)
