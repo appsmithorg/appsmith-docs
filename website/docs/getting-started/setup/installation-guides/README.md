@@ -1,5 +1,5 @@
 # Installation Guides
-
+<div class="containerBorder">
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
         <div class="containerCol">
@@ -79,4 +79,5 @@
              </div> 
              <b><a href="restack/">Restack</a></b>
    </div>
+  </div>
 </div>

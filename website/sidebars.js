@@ -139,7 +139,13 @@ const sidebars = {
             label: 'Upgrade to Business Edition',
             link: {type: 'doc', id:  'getting-started/setup/upgrade-to-business-edition/README'},
             items: [
-              'getting-started/setup/upgrade-to-business-edition/docker'
+              'getting-started/setup/upgrade-to-business-edition/docker',
+              'getting-started/setup/upgrade-to-business-edition/kubernetes',
+              'getting-started/setup/upgrade-to-business-edition/aws-ami',
+              'getting-started/setup/upgrade-to-business-edition/aws-ecs',
+              'getting-started/setup/upgrade-to-business-edition/digitalocean',
+              'getting-started/setup/upgrade-to-business-edition/heroku',
+              'getting-started/setup/upgrade-to-business-edition/ansible'
             ]  
           },
          ],

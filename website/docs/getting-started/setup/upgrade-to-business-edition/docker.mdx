@@ -1,0 +1,131 @@
+---
+description: Upgrade the Appsmith community docker installation to a Business Edition.
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Docker
+
+Follow the steps listed below to **upgrade** your **Community Edition (CE)** to a **Business Edition (EE)** installed on **docker**.
+
+### Step 1: Database Backup
+
+The Community and Business editions use Mongo DB, so you don't have to migrate the database. Though, it's recommended to [backup the Community Edition Mongo DB](/getting-started/setup/instance-management/#export-database).
+
+> The database backup should be taken with the docker instance **up** and **running**.
+
+### Step 2: Update Image
+Go to the directory where the `docker-compose.yml` file is located. Open the `docker-compose.yml` file, and look for `image:` key. Update the image in the `docker-compose.yml` file from Community Edition (_appsmith-ce_) to Business Edition (_appsmith-ee_). 
+
+The updated file should have the image attribute set as below:
+
+ ``` yaml
+  services:
+    appsmith:
+    #highlight-next-line
+      image: index.docker.io/appsmith/appsmith-ee
+```
+And save the file.
+
+### Step3: Add or Replace License Key
+
+Navigate to the directory `~stacks/configuration` where the `docker.env` file is located. Add/replace the Business Edition license key and save the file.
+
+```bash
+APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
+```
+
+### Step 4: Recreate the Instance
+
+<Tabs groupId="recreateInstances">
+ <TabItem label="docker-compose" value="using-docker-compose-command">
+ You can recreate the instance by running the below command:
+
+```bash
+docker-compose up -d
+```
+:::info replace license key
+If you are only replacing the license key, please run the following command to restart the instance.
+
+```bash
+docker-compose restart appsmith
+```
+::: 
+
+Once the container is up and running, you have successfully upgraded the docker instance to the Business Edition. You could verify that the business image (_appsmith-ee_) is in use with the help of the **`docker ps`** command.
+  
+ </TabItem>
+ <TabItem label="docker-run" value="using-docker-run-command">
+  Go to the root directory of the docker installation and run the following commands: 
+
+```bash
+docker rmi appsmith/appsmith-ce -f
+#highlight-next-line
+docker pull appsmith/appsmith-ee
+docker rm -f appsmith
+#highlight-next-line
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ee
+```
+
+Once the download is complete, the server should be up. You should see Appsmith is Running! in the Docker logs (`stacks/logs/backend/backend.log`).
+
+  </TabItem>
+</Tabs> 
+
+### Rollback (Optional)
+
+Follow the below steps to rollback to the Community Edition.
+
+<Tabs groupId="rollback">
+ <TabItem label="docker-compose" value="using-docker-compose">
+
+* Stop the docker instance by using
+
+    ```bash
+    docker-compose down
+    ```
+
+* Navigate to the directory (`~stacks\configuration`) where the `docker.env` file is located. Remove the license key (APPSMITH\_LICENSE\_KEY)
+* Navigate to the `docsker-compose.yml` file, and look for `image:` key. Update the image in the `docker-compose.yml` file from Business Edition (_appsmith-ee_) to Community Edition (_appsmith-ce_). 
+
+The updated file should have the image attribute set as below:
+
+``` yaml
+services:
+  appsmith:
+    #highlight-next-line
+    image: index.docker.io/appsmith/appsmith-ce
+```
+
+* Recreate Instance by running the below command:
+
+```bash
+docker-compose up -d
+```
+Once the container is up and running, you have successfully upgraded the docker instance to the Business Edition. You could verify that the business image (_appsmith-ce_) is in use with the help of the **`docker ps`** command.
+
+ </TabItem>
+ <TabItem label="docker-run" value="using-docker-run">
+ Go to the root directory of the docker installation and run the following commands: 
+
+```bash
+docker rmi appsmith/appsmith-ee -f
+#highlight-next-line
+docker pull appsmith/appsmith-ce
+docker rm -f appsmith
+#highlight-next-line
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ce
+```
+
+Once the download is complete, the server should be up. You should see Appsmith is Running! in the Docker logs (`stacks/logs/backend/backend.log`).
+
+ </TabItem>
+ </Tabs>
+
+
+
+* [Restore](/getting-started/setup/instance-management/#import-database) the database backup you had taken at the start of the upgrade process.
+
+:::info troubleshooting
+Are you having trouble? Check out the [deployment errors troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) or reach out on [discord](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+:::
