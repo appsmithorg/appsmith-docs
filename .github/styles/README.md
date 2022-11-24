@@ -13,7 +13,7 @@ Please ensure that the below prerequisites are met before you configure vale lin
 
 * Install the [vale extension](https://marketplace.visualstudio.com/items?itemName=errata-ai.vale-server) for VS Code Editor.
 
-> You could also use [vale cli](https://vale.sh/docs/vale-cli/overview/). 
+  > You could also use [vale cli](https://vale.sh/docs/vale-cli/overview/).
 
 ## Setup
 Follow the below steps to setup the linter:
