@@ -4,9 +4,9 @@
 
 <VideoEmbed host="youtube" videoId="zNw1yMwg-aY" title="How to use Select Widget" caption="How to use Select Widget"/>
 
-### Displaying Data
+### Displaying data
 
-A Dropdown's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+A Dropdown's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here
@@ -42,27 +42,27 @@ Read more about submitting Input data to an API below.
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Properties allow editing the widget, connecting it with other widgets, and customizing user actions.
 
 ### Widget properties
 
-These properties allow you to edit the Select widget. All these properties are present in the property pane of the widget.
+These properties allow editing the Select widget. All these properties are present in the property pane of the widget.
 
 | Property                  | Description                                                                                                                                                                       |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**               | Lets you set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
+| **Options**               | Use to set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
 | **Default Value**         | Sets a default option that's captured as user input unless it's changed by the user.                                                                                       |
 | **Placeholder**           | Sets the Placeholder of the dropdown widget.                                                                                                                                      |
 | **Required**              | When turned on, it makes a user input mandatory and disables any form submission until input is made.                                                                             |
 | **Visible**               | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published                                                               |
 | **Disabled**              | Disables input/selection to the widget. The widget remains visible to the user but user input/selection won't be allowed.                                                  |
-| **Animate Loading**       | Allows you to control a widget’s animation on the page load.                                                                                                                      |
+| **Animate Loading**       | Controls the widget’s animation on page load.                                                                                                                      |
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                               |
-| **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                        |
+| **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when the Select widget's Option data is being bound to an API / Query.                                        |
 
 ### Binding properties
 
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+These properties help to share values between widgets and also allow easy access to the widget property within Queries or JS functions.
 
 | Property                | Description                                                                                                                                                          |                                       |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
@@ -74,7 +74,7 @@ These properties help you share values between widgets and also allow you to eas
 
 ### Events
 
-They're a set of actions that you can perform on the widget.
+These are functions that are called when event listeners are triggered in the widget.
 
 | Events             | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +82,7 @@ They're a set of actions that you can perform on the widget.
 
 ### Label
 
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+The property hosts a group of configurations that are used to associate a display name and define a placement for the widget. Below are the properties that affect Labels:
 
 | Label         | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
@@ -95,49 +95,49 @@ Here are the label properties in detail:
 
 #### **Text**
 
-It allows you to set the display name for the Select widget. For example, if you want the user to select a Gender Type, you can enter the text as "Gender."
+Sets the display name for the Select widget. Users see this name on the page with the widget, like a title.
 
 :::tip
-You can leave the text empty if you don't want any display name for your Select widget.
+Leaving the field empty sets the widget to have no display name.
 :::
 
 #### **Position**
 
-It allows you to specify the placement of the label. You can select one of the available options:
+It allows specifying the placement of the label. You can select one of the available options:
 
-* Top - It allows you to align the text at the top of the Select widget.
-* Left - It aligns the text to the left of the Select widget. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
-  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Select widget. You can choose:
-    * Left - It aligns the text to the widget's left boundary that's away from the Select widget.
-    * Right - It aligns the text closer to the Select widget.
-  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Select widget.
-* Auto - It automatically adjusts the position of the text based on the Select widget's height.
+* Top - Aligns the text at the top of the Select widget.
+* Left - It aligns the text to the left of the Select widget. When the **Left** alignment is selected, there are additional settings that can be used to control the alignment and define the text's width.
+  * Alignment - Controls the placement of text relative to the Select widget. The options are:
+    * Left - Aligns the text to the widget's left boundary that's away from the Select widget.
+    * Right - Aligns the text closer to the Select widget.
+  * Width - Sets how much space is allocated to the label, measured in number of columns of the canvas grid.
+* Auto - Automatically adjusts the position of the text based on the Select widget's height.
 
 :::info
-Columns are the dashed lines (-----) that surround a widget when you try to drag it on the canvas.
+Columns are the dashed lines (-----) that surround a widget when it's being placed on the canvas.
 :::
 
 <VideoEmbed host="youtube" videoId="wyQGr-ggvhM" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles
 
-Style properties allow you to change the look and feel of the widget.
+Style properties allow for customizing the look and feel of the widget.
 
 | Style                | Description                                              |
 | -------------------- | -------------------------------------------------------- |
-| **Label Text Color** | Allows you to set text color for the label.              |
-| **Label Text Size**  | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style, such as bold or italic. |
-| **Border Radius**    | Allows you to define curved corners.                     |
-| **Box Shadow**       | Allows you to choose from the available shadow styles.   |
+| **Label Text Color** | Sets text color for the label.                           |
+| **Label Text Size**  | Sets the size of the label.                              |
+| **Label Font Style** | Sets the font style, such as **bold** or _italic_.       |
+| **Border Radius**    | Sets the roundedness of the widget's corners.            |
+| **Box Shadow**       | Sets the widget's shadow style.                          |
 
 ### Server-side filtering
 
 The Select widget has the option to configure server-side filtering, where search queries are sent to the back-end, and responses are used to populate options on the Select widget. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value isn't present in the default options.
 
-<VideoEmbed host="youtube" videoId="QDmTwRaLzHg" title="Server-side Filtering" caption="Server-side Filtering"/>
+<VideoEmbed host="youtube" videoId="QDmTwRaLzHg" title="Server Side Filtering" caption="Server Side Filtering"/>
 
-As shown in the video, follow these steps to configure server side filtering:
+As shown in the Server Side Filtering video, follow these steps:
 
 1. Drag a Select widget onto the canvas.
 1. Create a [query](/core-concepts/data-access-and-binding/querying-a-database/) `get_users` that retrieves user data to use in the widget. For example, try working with Appsmith's `users` Postgresql test database. Use the following statement as the query:
@@ -152,7 +152,7 @@ As shown in the video, follow these steps to configure server side filtering:
     })
   }}
   ```
-1. Enable the Select widget's **Server Side Filtering** property, and set the **onFilterUpdate** event to execute your query.
+1. Enable the Select widget's **Server Side Filtering** property, and set the **onFilterUpdate** event to execute the query.
   ```javascript
   {{ get_users.run() }}
   ```
@@ -160,10 +160,12 @@ As shown in the video, follow these steps to configure server side filtering:
 1. Now that the widget is configured for server side filtering, update the `get_users` query with a `WHERE` statement that incorporates the filter text from the Select widget:
   ```sql
   SELECT id, name FROM users
-  WHERE name LIKE '{{'%'+ Select2.filterText + '%'}}'
+  WHERE name LIKE '{{'%'+ Select1.filterText + '%'}}'
   ORDER BY id LIMIT 10;
   ```
 
-Now when you open your Select widget, you can enter text to narrow the query's results.
+In the Select widget's filter field, enter text to narrow the query's results.
 
-You can also take a look at what this behavior looks like by visiting the sample app for this topic ([Select Widget - Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695)). To begin with, there are only 10 results in the widget; if you enter text, the list updates itself with new entries that match your filter text.
+![](/img/select_filtered.png)
+
+View the sample app for ([Select Widget - Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695)).
