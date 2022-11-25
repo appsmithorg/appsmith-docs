@@ -435,7 +435,7 @@ import TabItem from '@theme/TabItem';
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <strong>Get Base64 String of Image</strong>
+            <strong>Get Base64 string of image</strong>
         </div> <hr/>
         <div class="containerDescription">This app shows how to extract the Base64 encoded string of an image captured on the Camera widget.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/61f10fb69d6d6a6720c9549b/pages/61f7d62c9d6d6a6720c9acfe">
@@ -443,7 +443,7 @@ import TabItem from '@theme/TabItem';
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <strong>Get Image URL</strong>
+           <strong>Get image URL</strong>
         </div><hr/>
         <div class="containerDescription">This app shows how to extract the Image URL of an image captured on the Camera widget.<br/><br/> <strong>Datasource</strong> - NA<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/61f10fb69d6d6a6720c9549b/pages/61f10fb69d6d6a6720c9549e"><strong>View App</strong> </a>
@@ -1041,10 +1041,10 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## How do I do X on Appsmith
+## How to do X on Appsmith
 
-Live streams and apps from the community calls, where we discuss some frequently asked questions on Discord and Intercom.
+Live streams and apps from the community calls with answers to frequently asked questions on Discord and Intercom.
 
-**Session #1**: [Video Link](https://www.youtube.com/watch?v=tfGXatrbi-M), [Template Link](sample-apps.md#undefined) | Topics covered: Combining multiple queries, Dynamic queries, Switching between tabs, JS Promises, and Dynamically adding widgets.
+**Session #1**: [video link](https://www.youtube.com/watch?v=tfGXatrbi-M), [Template Link](sample-apps.md#undefined) | Topics covered: combining multiple queries, dynamic queries, switching between tabs, JS promises, and dynamically adding widgets.
 
-**Session #2:** [Video Link](https://www.youtube.com/watch?v=ZjZyMHVfaQY), [Template Link](https://app.appsmith.com/applications/62307344f1c0af1ceded404f/pages/62307344f1c0af1ceded4052) | Topics covered: Pagination, Bulk Uploads, Appsmith Framework
+**Session #2:** [video link](https://www.youtube.com/watch?v=ZjZyMHVfaQY), [Template Link](https://app.appsmith.com/applications/62307344f1c0af1ceded404f/pages/62307344f1c0af1ceded4052) | Topics covered: pagination, bulk Uploads, Appsmith Framework
