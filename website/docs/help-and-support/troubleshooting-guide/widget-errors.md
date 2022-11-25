@@ -2,38 +2,7 @@
 
 This section would help you troubleshoot common widget errors on the Appsmith platform.
 
-## JSON form errors
-
-You may see the below errors when working with a [JSON Form ](../../reference/widgets/json-form)widget.
-
-### Source data exceeds 50 fields
-
-You see an error message **Source data exceeds 50 fields. Please update the source data** when you try to bind the query/API response to the [source data ](../../reference/widgets/json-form#source-data)property.
-
-#### Error message
-
-Source data exceeds 50 fields. Please update the source data.
-
-![When the data had more than 50 fields](</img/Troubleshooting__Widget_Errors__JSON_Form_Errors__Source_Exceeds_50_Fields.png>)
-
-#### Cause
-
-The problem can be caused when you are trying to bind:
-
-* A large array of multiple JSON objects
-* A huge JSON object which has a lot of fields
-* The whole query data rather than a selected row or triggered row in a table
-
-#### Solution
-
-To determine if the problem is caused due to:
-
-* **A large array or a huge JSON object** - You can re-look at the data and evaluate the need to display all the data on UI, as it would be painful for your users to navigate more than 50 fields.
-* **The whole query response that you bound to the source data** - You recheck the source data field you are trying to bind and select either the selected row / triggered row to bind.
-
-Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form#source-data) field to make changes.
-
-## Query/API/JS object execution errors
+## Execution errors
 You may see below errors when executing an [API](../../core-concepts/connecting-to-data-sources/authentication/)/[Query](../../core-concepts/data-access-and-binding/querying-a-database/)/[JS object](../../core-concepts/writing-code/javascript-editor-beta/) using a widget property.
 
 ### Sync fields can't execute async framework actions
@@ -78,6 +47,37 @@ getFullNameOfLoggedInUser.data
 ```
 
 Similarly, you could invoke the `.data` property for API/Query/JS Object to create [complex workflows](../../core-concepts/writing-code/workflows#use-an-async-function-response-in-a-sync-field). 
+
+## JSON form errors
+
+You may see the below errors when working with a [JSON Form ](../../reference/widgets/json-form)widget.
+
+### Source data exceeds 50 fields
+
+You see an error message **Source data exceeds 50 fields. Please update the source data** when you try to bind the query/API response to the [source data ](../../reference/widgets/json-form#source-data)property.
+
+#### Error message
+
+Source data exceeds 50 fields. Please update the source data.
+
+![When the data had more than 50 fields](</img/Troubleshooting__Widget_Errors__JSON_Form_Errors__Source_Exceeds_50_Fields.png>)
+
+#### Cause
+
+The problem can be caused when you are trying to bind:
+
+* A large array of multiple JSON objects
+* A huge JSON object which has a lot of fields
+* The whole query data rather than a selected row or triggered row in a table
+
+#### Solution
+
+To determine if the problem is caused due to:
+
+* **A large array or a huge JSON object** - You can re-look at the data and evaluate the need to display all the data on UI, as it would be painful for your users to navigate more than 50 fields.
+* **The whole query response that you bound to the source data** - You recheck the source data field you are trying to bind and select either the selected row / triggered row to bind.
+
+Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form#source-data) field to make changes.
 
 :::info Need help
 If you still need help debugging an error, please raise a request on [Discord Server](https://discord.com/invite/rBTTVJp) or email support@appsmith.com.
