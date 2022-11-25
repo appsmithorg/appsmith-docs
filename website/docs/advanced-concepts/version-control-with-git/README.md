@@ -25,7 +25,7 @@ To get started with Version control with Git in Appsmith -
 * [Import from a Git Repository](connecting-to-git-repository.md#importing-from-a-repository)
 
 :::info
-In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [enterprise edition](https://www.appsmith.com/pricing). However, you can connect **unlimited** public repositories.
+In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [**business** edition](https://www.appsmith.com/pricing). However, you can connect **unlimited** public repositories.
 :::
 
 ## Git In Action

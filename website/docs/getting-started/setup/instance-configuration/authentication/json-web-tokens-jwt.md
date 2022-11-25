@@ -6,7 +6,7 @@ sidebar_position: 5
 JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) for securely transmitting information between parties in the form of a JSON object.
 
 :::info
-**JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
+**JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
 :::
 
 ## When to Use JSON Web Tokens?
