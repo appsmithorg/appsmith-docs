@@ -79,6 +79,6 @@ getFullNameOfLoggedInUser.data
 
 Similarly, you could invoke the `.data` property for API/Query/JS Object to create [complex workflows](../../core-concepts/writing-code/workflows#use-an-async-function-response-in-a-sync-field). 
 
-:::info
+:::info Need help
 If you still need help debugging an error, please raise a request on [Discord Server](https://discord.com/invite/rBTTVJp) or email support@appsmith.com.
 :::
