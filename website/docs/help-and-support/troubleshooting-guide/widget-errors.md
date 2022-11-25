@@ -79,6 +79,5 @@ To determine if the problem is caused due to:
 
 Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form#source-data) field to make changes.
 
-:::info Need help
 If you still need help debugging an error, please raise a request on [Discord Server](https://discord.com/invite/rBTTVJp) or email support@appsmith.com.
-:::
+
