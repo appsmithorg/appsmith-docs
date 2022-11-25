@@ -128,7 +128,7 @@ Style properties allow for customizing the look and feel of the widget.
 | **Label Text Color** | Sets text color for the label.                           |
 | **Label Text Size**  | Sets the size of the label.                              |
 | **Label Font Style** | Sets the font style, such as **bold** or _italic_.       |
-| **Border Radius**    | Sets the roundedness of the widget's corners.            |
+| **Border Radius**    | Sets the rounded-ness of the widget's corners.            |
 | **Box Shadow**       | Sets the widget's shadow style.                          |
 
 ### Server-side filtering
