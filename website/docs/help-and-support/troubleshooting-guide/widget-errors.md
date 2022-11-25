@@ -22,7 +22,7 @@ You would see one of the below error messages based on API/Query or a JS Object 
 **To-Do to add screenshot**
 
 #### Cause
-**Action** refers to the execution of an [API](../../core-concepts/connecting-to-data-sources/authentication/)/[Query](../../core-concepts/data-access-and-binding/querying-a-database/)/[JS object](../../core-concepts/writing-code/javascript-editor-beta/). 
+Action refers to the execution of an API/Query/JS object. 
 
 Action can only be performed by binding it to an [async](../../core-concepts/writing-code/workflows#async-fields) field. When you bind an action to a [sync](../../core-concepts/writing-code/workflows#sync-fields) field that only expects data it throws an error.
 
