@@ -1,5 +1,5 @@
 ---
-description: Upgrade the Appsmith community docker installation to a Business Edition.
+description: Follow the steps to upgrade the Appsmith community docker installation to a Business Edition.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -10,13 +10,13 @@ Follow the steps listed below to **upgrade** your **Community Edition (CE)** to 
 
 ### Step 1: Database backup
 
-The Community and Business editions use Mongo DB, so you don't have to migrate the database. Though, it's recommended to [backup the Community Edition Mongo DB](/getting-started/setup/instance-management/appsmithctl#export-database).
+The Community and Business editions use Mongo DB, so you don't have to migrate the database. TIt's still recommended to [backup the Community Edition Mongo DB](/getting-started/setup/instance-management/appsmithctl#export-database).
 
-> The database backup should be taken with the docker instance **up** and **running**.
+> Ensure that you backup the database with the docker instance **up** and **running**.
 
 ### Step 2: Add or replace license key
 
-Navigate to the directory `~stacks/configuration` where the `docker.env` file is located. Add/replace the Business Edition license key and save the file.
+Go to the directory `~stacks/configuration` and open the `docker.env` file. Add/replace the Business Edition license key and save the file.
 
 ```bash
 APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
@@ -54,8 +54,8 @@ docker-compose restart appsmith
 ```
 ::: 
 
-Once the container is up and running, you have successfully upgraded the docker instance to the Business Edition. You can verify that the business image (_appsmith-ee_) is in use with the help of the **`docker ps`** command.
-  
+You have successfully upgraded the docker instance to the Business Edition. Once the container is up and running, you can verify that the business image (_appsmith-ee_) is in use. Use the **`docker ps`** command to verify the image name.
+
  </TabItem>
  <TabItem label="Docker Run" value="using-docker-run-command">
   Go to the root directory of the docker installation and run the following commands: 
@@ -87,8 +87,8 @@ Follow the below steps to rollback to the Community Edition.
     docker-compose down
     ```
 
-* Navigate to the directory (`~stacks\configuration`) where the `docker.env` file is located. Remove the license key (APPSMITH\_LICENSE\_KEY)
-* Navigate to the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Business Edition (_appsmith-ee_) to Community Edition (_appsmith-ce_). 
+* Go to the directory (`~stacks\configuration`) and open the `docker.env`. Remove the license key (APPSMITH\_LICENSE\_KEY)
+* Go to the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Business Edition (_appsmith-ee_) to Community Edition (_appsmith-ce_). 
 
 The updated file should have the image attribute set as below:
 
@@ -104,7 +104,7 @@ services:
 ```bash
 docker-compose up -d
 ```
-Once the container is up and running, you have successfully upgraded the docker instance to the Business Edition. You can verify that the business image (_appsmith-ce_) is in use with the help of the **`docker ps`** command.
+You have successfully upgraded the docker instance to the Business Edition. Once the container is up and running, you can verify that the business image (_appsmith-ee_) is in use. Use the **`docker ps`** command to verify the image name.
 
  </TabItem>
  <TabItem label="Docker Run" value="using-docker-run-command">
@@ -126,4 +126,4 @@ Once the download is complete, the server should be up. You should see `Appsmith
 
 * [Restore](/getting-started/setup/instance-management/appsmithctl#im-import_db) the database backup you had taken at the start of the upgrade process.
 
-If you’re having issues with the deployment, please see the [deployment errors troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) if you continue to have problems reach out on [discord](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+If you’re having issues with the deployment, please see the [deployment errors troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to have problems reach out on [discord](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
