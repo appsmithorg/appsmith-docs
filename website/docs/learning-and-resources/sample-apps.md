@@ -11,7 +11,7 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Sample apps
+# Sample Apps
 
 <Tabs>
 
