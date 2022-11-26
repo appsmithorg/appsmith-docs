@@ -3,11 +3,11 @@
 This section would help you troubleshoot common widget errors on the Appsmith platform.
 
 ## Execution errors
-You may see below errors when executing an [API](../../core-concepts/connecting-to-data-sources/authentication/)/[Query](../../core-concepts/data-access-and-binding/querying-a-database/)/[JS object](../../core-concepts/writing-code/javascript-editor-beta/) using a widget property.
+You may see below errors when executing an [API](../../core-concepts/connecting-to-data-sources/authentication/)/[Query](../../core-concepts/data-access-and-binding/querying-a-database/)/[JS object](../../core-concepts/writing-code/javascript-editor-beta/).
 
 ### Sync fields errors
 
-You may see this error when binding an API/Query/JS Object execution to a widget property that expects data, and can't be used to trigger an action. 
+You may see this error when executing an API/Query/JS Object from a widget property that expects data, and can't be used to trigger an action. 
 
 #### Error message
 You would see one of the below error messages based on API/Query or a JS Object function execution.
