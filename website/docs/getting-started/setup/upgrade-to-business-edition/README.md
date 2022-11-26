@@ -26,8 +26,7 @@ Choose the type of  Appsmith Installation to upgrade your Community Edition (CE)
     </div>
 </div>
 
-## License renewal
-
+## Renew license
 The Appsmith server shuts down once the license key expires. You would see `Invalid license key` message in the logs:
 
 ```bash
