@@ -7,7 +7,7 @@ description: Follow the steps to upgrade the Appsmith installation to a Business
 Keep the License Key ready to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
 :::
 
-Follow the steps below to upgrade your Community Edition (CE) to a Business Edition (BE). Choose the type of  Appsmith Installation to get started.
+Choose the type of  Appsmith Installation to upgrade your Community Edition (CE) to a Business Edition (BE).
 
 <div class="containerBorder">
     <div class="containerGrid">
