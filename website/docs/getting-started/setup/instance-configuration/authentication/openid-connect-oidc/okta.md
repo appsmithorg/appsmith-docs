@@ -6,7 +6,7 @@ sidebar_position: 4.3
 Okta is an Identity-as-a-Service (IDaaS) provider. To configure OpenID Connect (OIDC) within Appsmith using Okta, follow these steps:
 
 :::info
-OpenID Connect is available **only in the** [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
+OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
 :::
 
 ### **Create Application**
@@ -57,10 +57,7 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 <your_okta_domain>/.well-known/openid-configuration
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/dgDhBUXKA6s?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>Get Okta Configurations</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="dgDhBUXKA6s" title="Get Okta Configurations" caption="Get Okta Configurations"/>
 
 * **Configuration at Appsmith** - Add all the configurations from the above URL in OIDC Configurations on Appsmith. Refer to the below table that shows field mapping:
 

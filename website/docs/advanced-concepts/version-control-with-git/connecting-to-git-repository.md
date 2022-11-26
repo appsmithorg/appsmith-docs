@@ -16,11 +16,7 @@ To connect your app with git, follow the steps below:
 
 
 
- <figure>
- <object data="https://www.youtube.com/embed/oFfdIwhSPL8" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Generating a Deploy key
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="oFfdIwhSPL8" title="Generating a Deploy key" caption="Generating a Deploy key"/>
 
 ### Adding the deploy key in the Repository
 
@@ -34,11 +30,7 @@ To connect your app with git, follow the steps below:
 
 
 
-  <figure> 
-  <object data="https://www.youtube.com/embed/4xMHO4G2hEA" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Adding the deploy key in the Repository | Github
-</i></figcaption>
-</figure>
+  <VideoEmbed host="youtube" videoId="4xMHO4G2hEA" title="Adding the deploy key in the Repository | Github" caption="Adding the deploy key in the Repository | Github"/>
 
 #### **For Gitlab**
 
@@ -48,11 +40,7 @@ To connect your app with git, follow the steps below:
 
 
 
- <figure>
- <object data="https://www.youtube.com/embed/9aaiE6OERW0" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Adding the deploy key in the Repository | Gitlab
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="9aaiE6OERW0" title="Adding the deploy key in the Repository | Gitlab" caption="Adding the deploy key in the Repository | Gitlab"/>
 
 #### For Bitbucket
 
@@ -62,11 +50,7 @@ To connect your app with git, follow the steps below:
 
 
 
- <figure>
- <object data="https://www.youtube.com/embed/A8ZOvW1CVIk" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Adding the deploy key in the Repository | Bitbucket
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="A8ZOvW1CVIk" title="Adding the deploy key in the Repository | Bitbucket" caption="Adding the deploy key in the Repository | Bitbucket"/>
 
 ### User Configurations
 
@@ -76,22 +60,14 @@ To connect your app with git, follow the steps below:
 
 
 
- <figure>
- <object data="https://www.youtube.com/embed/d5R1MYKtpCM" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>User Settings | Git Sync
-</i></figcaption>
-</figure>
+ <VideoEmbed host="youtube" videoId="d5R1MYKtpCM" title="User Settings | Git Sync" caption="User Settings | Git Sync"/>
 
 Finally, click on _**connect**_, and if the connection is successful, your repository will have a `README.md` file. On the Git window, you’ll move to the **Deploy** section, where you can make an initial commit.
 
 
 
-  <figure>
- <object data="https://www.youtube.com/embed/Z67SfBpKrnk" width='750px' height='400px'></object> 
-<figcaption align = "center"><i>Initial Commit | Git Sync
-</i></figcaption>
-</figure>
+  <VideoEmbed host="youtube" videoId="Z67SfBpKrnk" title="Initial Commit | Git Sync" caption="Initial Commit | Git Sync"/>
 
 :::info
-In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [Enterprise Edition](https://www.appsmith.com/pricing) (coming soon). However, you can connect **unlimited** public repositories.
+In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [Business Edition](https://www.appsmith.com/pricing). However, you can connect **unlimited** public repositories.
 :::

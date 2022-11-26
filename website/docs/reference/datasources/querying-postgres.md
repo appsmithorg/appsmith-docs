@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 13
 ---
 # PostgreSQL
 
@@ -59,10 +59,7 @@ Appsmith converts the user query into a parameterized one by replacing the bindi
 Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
 
 
-<figure>
-  <object data="https://www.youtube.com/embed/Q69wdQEQbbE?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="Q69wdQEQbbE" title="" caption=""/>
 
 ## Using Queries in Applications
 

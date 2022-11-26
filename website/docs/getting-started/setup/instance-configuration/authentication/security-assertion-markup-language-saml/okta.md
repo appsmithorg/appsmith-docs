@@ -6,17 +6,14 @@ sidebar_position: 5.3
 Okta, an Identity-as-a-Service (IDaaS) provider, supports authentication using Secure Assertion Markup Language (SAML). You can use SAML as an authentication type on Appsmith and configure the setup to use Okta as an identity provider.
 
 :::info
-Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
+Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
 ## Create App Integration
 
 Log in to your [Okta Developer Account](https://developer.okta.com/) and navigate to **Applications** >> **Applications** >> Click **Create App Integration**.
 
-<figure>
-  <object data="https://www.youtube.com/embed/4Tj2OEV-r10?autoplay=0" width='750px' height='400px'></object> 
-   <figcaption align="center"><i>How to create an app integration?</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="4Tj2OEV-r10" title="How to create an app integration?" caption="How to create an app integration?"/>
 
 * Choose **SAML** as the Sign-in method and click **Next**.
 

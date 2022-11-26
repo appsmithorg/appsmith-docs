@@ -59,55 +59,55 @@ The names of widgets inside your **EditProductModal** are the same as that of th
 
 Like **AddProductForm**, all the form-fields in **EditProductModal** are empty. However, to edit a product, you'll want them to be pre-filled with the values of the product that you want to update. This means that:
 
-* **ProductNameInput** should show the **productName** value of the selected row.
-* **MrpInput** should show **mrp** value of the selected row.
-* **CategorySelect** should show the **category** value of the selected row.
+* **ProductNameInput** should show the **productName** value of the triggered row.
+* **MrpInput** should show **mrp** value of the triggered row.
+* **CategorySelect** should show the **category** value of the triggered row.
 
 Let's configure those widgets!
 
 To set a default value of **ProductNameInput**:
 
 1. Open properties of **ProductNameInput**.
-2. Set **Default Text** to `{{ProductsTable.selectedRow.productName}}`.
-3. Verify that the **Evaluated Value** of the property matches the corresponding value from the selected row.
+2. Set **Default Text** to `{{ProductsTable.triggeredRow.productName}}`.
+3. Verify that the **Evaluated Value** of the property matches the corresponding value from the triggered row.
 
-Above, you just wrote JavaScript to set the value of **Default Text** using data from `ProductsTable.selectedRow`, which has all the column values of the selected row. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default Text** to this, you're pre-filling the form with this value.
+Above, you just wrote JavaScript to set the value of **Default Text** using data from `ProductsTable.triggeredRow`, which has all the column values of the row you wish to view/perform action on. By referencing **`productName`** on it, you're accessing the value of **productName** column. By setting **Default Text** to this, you're pre-filling the form with this value.
 
-From within our form, we've accessed data from the selected row of our table via its `selectedRow` property. To see the exposed properties you can access for any given widget, check the **Properties** section of its entry in the [**Widget** ](/reference/widgets/)documentation.
+From within the form, you've accessed data of the table row via its `triggeredRow` property. To see the exposed properties you can access for any given widget, select the **Properties** section of its entry in the [**Widget** ](/reference/widgets/)documentation.
 
-Finally, note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `ProductsTable.selectedRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `ProductsTable.selectedRow` can't be accessed from any widget, query, or API of **AddProductPage**.
+Finally, note that since the scope of a widget is limited to its parent page, a widget shares its properties only with other widgets, queries, and APIs defined within the same page. For example, in this case, `ProductsTable.triggeredRow` can be accessed only in other widgets, queries, and APIs of **ProductListPage**. `ProductsTable.triggeredRow` can't be accessed from any widget, query, or API of **AddProductPage**.
 
 :::info
 **Accessing data across pages:**
 
-There are two ways to access a widget's properties or an APIs/DB Query's results _from another page_:
+There are two ways to access properties of a widget or results of an API/DB Query _from another page_:
 
 1. Store the data in your browser cache using the [storeValue](../../../reference/appsmith-framework/widget-actions/store-value.md) function so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../../reference/appsmith-framework/widget-actions/navigate-to.md) function.
 :::
 
-Let's now set a default value for **MrpInput**:
+Now set a default value for **MrpInput**:
 
 1. Open properties of **MrpInput**.
-2. Set **Default Text** to `{{ProductsTable.selectedRow.mrp}}`.
-3. Verify that the **Evaluated Value** of the property matches the value in the currently selected row.
+2. Set **Default Text** to `{{ProductsTable.triggeredRow.mrp}}`.
+3. Verify that the **Evaluated Value** of the property matches the value of the current row.
 
 And for CategorySelect:
 
 1. Open **CategorySelect**'s properties.
-2. Set **Default Option** to `{{ProductsTable.selectedRow.category}}`.
-3. Verify that the **Evaluated Value** of the property matches the value in the selected row.
+2. Set **Default Option** to `{{ProductsTable.triggeredRow.category}}`.
+3. Verify that the **Evaluated Value** of the property matches the value in the triggered row.
 
-Great, our form should now pre-fill with the selected product's details! Try it out to make sure that everything gets filled correctly from the selected table row.
+Great, your form should now pre-fill with the selected product's details. Try it out to make sure that everything gets filled correctly from the selected table row.
 
 ## Writing your first API
 
-Your edit form is ready to take user input. Next, you will configure its Confirm button to trigger the update of the product via an API. It involves two steps:
+Your edit form is ready to take user input. Next, you would have to configure its Confirm button to trigger the update of the product via an API. It involves two steps:
 
 1. Setting up the required API.
 2. Wiring the form-submit button to initiate the API query.
 
-In this section, we'll set up the API.
+In this section, you'll set up the API.
 
 You'll use the endpoint below to update a product:
 
@@ -115,7 +115,7 @@ You'll use the endpoint below to update a product:
 PUT https://mock-api.appsmith.com/products/:id
 ```
 
-This is a mock API exposed by Appsmith to help you learn API basics. It doesn't require any authentication. It accepts JSON input and responds with JSON output. Let's set it up on your app:
+This is a mock API exposed by Appsmith to help you learn API basics. It doesn't require any authentication. It accepts JSON input and responds with JSON output. To set it up on your app:
 
 1. Navigate to **ProductListPage → Datasources**.
 2. Click **+ Create New**.
@@ -123,7 +123,7 @@ This is a mock API exposed by Appsmith to help you learn API basics. It doesn't 
 4. You'll see a Postman-like interface.
 5. Rename the API to **UpdateProductApi**.
 6. Set the request method to **PUT**.
-7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{ProductsTable.selectedRow.id}}`.
+7. Copy-paste the below in **URL** `https://mock-api.appsmith.com/products/{{ProductsTable.triggeredRow.id}}`.
 8. Copy-paste the query below into the **Body** section.
 9. Run the API.
 
@@ -142,7 +142,7 @@ By using the mustache template in the URL (step 7), you're providing the ID of t
 :::info
 **A word on sharing widget properties:**
 
-Here, you are accessing widgets' properties from within an API query. This is in line with what you learned in the previous sections - that you can access a widget's properties from other widgets, APIs, and DB Queries. Regardless of where you access a widget's properties from, you use the same naming syntax to refer to the objects. That is, you will access a value by its`{{<widgetname>.<property_name>}}` no matter where you are in the editor.
+Here, you are accessing widgets' properties from within an API query. This is in line with what you learned in the previous sections - that you can access properties of a widget from other widgets, APIs, and DB Queries. Regardless of where you access properties of a widget from, you use the same naming syntax to refer to the objects. That's, you would access a value by its`{{<widgetname>.<property_name>}}` no matter where you are in the editor.
 :::
 
 ## Configuring multiple actions on UI events
@@ -163,8 +163,8 @@ The API to update a product is ready! In this section, you'll bind the **Confirm
 Let's see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** will be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto-update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
-* You set the **onError** event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message will be displayed.
+* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto-update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
+* You set the **onError** event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message would be displayed.
 
 Try to edit a product, and click **Confirm** to verify that it works - You should now see success/error notifications in the top right of the screen.
 
@@ -176,7 +176,7 @@ Currently, the form modal always stays open after submission; let's configure it
 
 ## Triggering multiple actions on a UI event
 
-To bind multiple actions to a button event, let's write some JavaScript:
+To bind multiple actions to a button event, you would have to write some JavaScript:
 
 1. Click on the **JS** button of the **onClick** field in **EditConfirmButton**'s properties.
 2. The **onClick** field then converts to JavaScript. Paste in the following:
@@ -192,12 +192,12 @@ To bind multiple actions to a button event, let's write some JavaScript:
 }}
 ```
 
-This is similar to what you learned in [part 2](./using-forms.md) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method above is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
+This is similar to what you learned in [part 2](./using-forms.md) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
 
-Note that since these actions happen asynchronously, they will all run in parallel. You can trigger as many actions as you want within **onSuccess** and **onError** by wrapping them within an anonymous function.
+Note that since these actions happen asynchronously, they would all run in parallel. You can trigger as many actions as you want within **onSuccess** and **onError** by wrapping them within an anonymous function.
 
 Try to edit a product again and verify that the form-submit works as expected.
 
@@ -206,7 +206,7 @@ Try to edit a product again and verify that the form-submit works as expected.
 
 You'll often be able to customize app behavior more finely by writing JavaScript, as compared to only using the GUI.
 
-For example, configuring multiple actions to be run in **onSuccess** is supported only via JavaScript, because it's easier to write code for it than it is to configure by using the GUI.
+For example, configuring multiple actions to be run in **onSuccess** is supported only via JavaScript, because it's easier to write code for it than it's to configure by using the GUI.
 
 Similarly, to configure conditional behavior, writing ternary conditions in JavaScript is easier and more extensible; hence the GUI doesn't provide for it.
 

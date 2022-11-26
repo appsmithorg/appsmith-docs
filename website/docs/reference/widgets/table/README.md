@@ -2,10 +2,7 @@
 
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
 
-<figure>
-  <object data="https://www.youtube.com/embed/-rzePEV2QQ8?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How to use Table Widget?</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget?" caption="How to use Table Widget?"/>
 
 
 :::info
@@ -31,7 +28,8 @@ These properties allow you to edit the table itself. All these properties are pr
 | **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
 | **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated in the selectedRows field.                                                                                                       |
-| **Table Record Count**         | The user has to input the total number of records returned as part of a query or API call, which will be displayed in a table. It is only visible when you choose to enable **server-side pagination**. |
+| **Total Record Count**         | It stores the total number of rows returned by a query or API, which helps in calculating the total number of pages on the table when using [server-side pagination](README.md#server-side-pagination). |
+| **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use the **onSave** event to update the source of the table's data and reflect the user's changes. |
 
 Let's understand the widget properties in detail.
 
@@ -57,26 +55,45 @@ Let's bind the data from a mock database into a table widget.
 
 Where `<query_name>` is the query's name created in Step 2.
 
-<figure>
-  <object data="https://www.youtube.com/embed/czxtgHJ1sUE?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="czxtgHJ1sUE" title="" caption=""/>
 
 That's it! The table widget will get populated with the data coming from the query.
 
-**Columns**
+#### Columns
 
-This property shows all the columns in the table, and it gets auto-populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the [column settings](column-settings.md).
+This property shows all the columns in the table, and it gets auto populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the [column settings](column-settings.md).
 
 ![](/img/columns\_tablewidget.png)
 
-**Server-Side Pagination**
+#### Server-Side Pagination
 
 The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](./../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
-#### Inline Editing
+#### Inline editing
 
-Inline editing allows you to edit a cell contents in the table columns. It can be enabled for the whole column or at the cell level based on a condition. Read more about Inline editing [here](./#inline-editing).
+Inline editing allows you to edit a cell contents in the table columns, and can be enabled for the whole column or at the cell level based on a condition. You can also allow users to add new rows of data to the Table. Read more about Inline editing [here](./#inline-editing).
+
+#### Total Record Count
+
+Total record count stores the total number of rows in the table. It's useful in pagination as it helps in determining the number of pages, thus enabling/disabling the next/previous page control in the table. It's only visible when you enable **server-side pagination**.
+
+<VideoEmbed host="youtube" videoId="p7mH00xp7Nc" title="Using Total Records Count in th Table Widget" caption="Using Total Records Count in th Table Widget"/>
+
+To get the Total record count of your data, follow the steps below:
+ 
+ 1. Create a new query `get_count` for the data source connected to the table.
+ 2. In the query window, enter a count query for the data.
+    ```
+    #Postgres
+    SELECT COUNT(*) FROM <table_name>;
+    ```
+ 3. Click on Run and you can see the output in the response tab below.
+
+Once the `get_count` query is successfully created, enter the following code to bind the query's output in the total records count:
+```
+#Postgres
+{{get_count.data[0].count}}
+```
 
 ### Binding Properties
 
@@ -146,10 +163,7 @@ Open the property pane of the text widget and add the following snippet to its l
 {{Table_1.selectedRow}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/0Pl7p1sA1fY?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>selectedRow</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="0Pl7p1sA1fY" title="selectedRow" caption="selectedRow"/>
 
 The Text widget will then display the data of the row selected on the table.
 If no row is selected, selectedRow shows the column names with no data.
@@ -170,10 +184,7 @@ It will result in the data at `<columnname>` of the row selected. Using this sni
 {{Table_1.selectedRow.task}}
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/hHZ5IbtE-wo?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Displaying column value using selectedRow</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="hHZ5IbtE-wo" title="Displaying column value using selectedRow" caption="Displaying column value using selectedRow"/>
 
 #### selectedRows
 
@@ -189,10 +200,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using selectedRows.
 
-<figure>
-  <object data="https://www.youtube.com/embed/K8F4oggpOk0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>selectedRows</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="K8F4oggpOk0" title="selectedRows" caption="selectedRows"/>
 
 A null array '\[]' is returned If no row is selected in the table.
 
@@ -210,10 +218,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using triggeredRow.
 
-<figure>
-  <object data="https://www.youtube.com/embed/HUcQ8lf7cH4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>triggeredRow</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="HUcQ8lf7cH4" title="triggeredRow" caption="triggeredRow"/>
 
 #### selectedRowIndex
 
@@ -229,10 +234,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using seledRowIndex.
 
-<figure>
-  <object data="https://www.youtube.com/embed/KXYkdFzOKsQ?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>selectedRowIndex</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="KXYkdFzOKsQ" title="selectedRowIndex" caption="selectedRowIndex"/>
 
 #### selectedRowIndices
 
@@ -248,10 +250,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using seledRowIndices.
 
-<figure>
-  <object data="https://www.youtube.com/embed/yLOYqrW2xaw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>selectedRowIndices</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="yLOYqrW2xaw" title="selectedRowIndices" caption="selectedRowIndices"/>
 
 #### filteredTableData
 
@@ -267,10 +266,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using filteredTableData.
 
-<figure>
-  <object data="https://www.youtube.com/embed/0tvZXEtSMp4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>filteredTableData</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
 
 #### pageNo
 
@@ -286,10 +282,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using pageNo.
 
-<figure>
-  <object data="https://www.youtube.com/embed/DqKok2cCJk0?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>pageNo</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="DqKok2cCJk0" title="pageNo" caption="pageNo"/>
 
 #### pageSize
 
@@ -304,10 +297,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using pageSize.
 
-<figure>
-  <object data="https://www.youtube.com/embed/XkFJQh4vcCw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>pageSize</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="XkFJQh4vcCw" title="pageSize" caption="pageSize"/>
 
 #### searchText
 
@@ -323,10 +313,7 @@ Where `<table_name>` is the name of your table.
 
 Let's bind a text widget to `Table_1` using searchText.
 
-<figure>
-  <object data="https://www.youtube.com/embed/vn6zx7zMeUs?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>searchText</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
 
 ### Events
 
@@ -401,7 +388,4 @@ Here, the `setInterval` function calls the `getData` query every 2 seconds when 
 
 A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it is possible to perform a search on the server-side (API server or database) and have the results displayed on the table. A video guide on how to do this is shown below:
 
-<figure>
-  <object data="https://www.youtube.com/embed/3ayioaw5uj8?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>How To Setup Server-Side Search For The Table Widget</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>

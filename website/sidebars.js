@@ -57,7 +57,8 @@ const sidebars = {
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/cloudjiffy',
-                'getting-started/setup/installation-guides/ansible'
+                'getting-started/setup/installation-guides/ansible',
+                'getting-started/setup/installation-guides/restack'
               ],
             },
             {
@@ -360,6 +361,7 @@ const sidebars = {
                 'reference/datasources/querying-firestore',
                 'reference/datasources/querying-google-sheets',
                 'reference/datasources/graphql',
+                'reference/datasources/hubspot',
                 {
                   type: 'category',
                   label: 'Mongo',
@@ -529,6 +531,7 @@ const sidebars = {
         'help-and-support/troubleshooting-guide/js-errors',
         'help-and-support/troubleshooting-guide/deployment-errors',
         'help-and-support/troubleshooting-guide/application-errors',
+        'help-and-support/troubleshooting-guide/query-errors',
         'help-and-support/troubleshooting-guide/widget-errors'
       ],
     },// Help & Support end

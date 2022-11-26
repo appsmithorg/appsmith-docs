@@ -16,10 +16,7 @@ On Appsmith, it's pretty straightforward to establish a connection with any data
 
 To add an Airtable datasource, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> **Select Airtable under APIs.**
 
-<figure>
-  <object data="https://www.youtube.com/embed/pXjkT_n4uhI?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Create Airtable Datasource</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="pXjkT_n4uhI" title="Create Airtable Datasource" caption="Create Airtable Datasource"/>
 
 ## Connection Settings
 
@@ -42,10 +39,7 @@ Appsmith allows you to select from the available authentication types to integra
 
 Let's see how you can fetch your API key.
 
-<figure>
-  <object data="https://www.youtube.com/embed/1ERdreXERFw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Fetching Airtable API Key</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="1ERdreXERFw" title="Fetching Airtable API Key" caption="Fetching Airtable API Key"/>
 
 * Open your Airtable console.
 * Navigate to your account page in the top-right corner.
@@ -105,10 +99,7 @@ All required fields are suffixed with an asterisk (\*).
 * **User Locale**: The [user locale](https://support.airtable.com/hc/en-us/articles/220340268-Supported-locale-modifiers-for-SET-LOCALE) is used to format dates when using string as the cellFormat.
 * **Offset:** The response will contain an offset if there are more records. Pagination will stop when you’ve reached the end of your table.
 
-<figure>
-  <object data="https://www.youtube.com/embed/-1NwawxZ-XI?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Using the List Records Command</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="-1NwawxZ-XI" title="Using the List Records Command" caption="Using the List Records Command"/>
 
 * Click on the **+** icon next to the **queries/js** and choose your airtable datasource.
 * Rename the query.
@@ -130,10 +121,7 @@ Let’s assume we have a task manager database, which displays - _Task Name, Dea
 | Heroku Deployment Issue | 26 June 2022 | Nikhila |
 ```
 
-<figure>
-  <object data="https://www.youtube.com/embed/YKOFXEQUtgc?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>List Record Example</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="YKOFXEQUtgc" title="List Record Example" caption="List Record Example"/>
 
 * After creating the **list\_records** query, Click on the plus **(+)** icon next to the queries/js and create a New **JS Object.**
 * Rename the JS Object to **GetAirtableRecordsData**.
@@ -172,10 +160,7 @@ This method will let you create a new record for the Airtable database. You can 
 * [**Table Name**](./airtable.md#table-name) - Name of your Airtable table.
 * [**Records**](./airtable.md#records) - A record is the base equivalent of a row in a spreadsheet.
 
-<figure>
-  <object data="https://www.youtube.com/embed/bAVUsK-Cvj4?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Using Create Records Command</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="bAVUsK-Cvj4" title="Using Create Records Command" caption="Using Create Records Command"/>
 
 * Click on the + icon next to the queries/js and choose your airtable datasource.
 * Rename the query.
@@ -196,11 +181,7 @@ This method will let you create a new record for the Airtable database. You can 
 
 Let’s take an **example** to get a better understanding of how the create records command works.
 
-<figure>
-  <object data="https://www.youtube.com/embed/B07VmB8rac8?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Create Records example
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="B07VmB8rac8" title="Create Records example" caption="Create Records example"/>
 
 * Drag and drop a button widget into the canvas, and change the title to **“Create New Task”.**
 * Now, set buttons **onClick** event to Open a New [Modal](./../widgets/modal.md/), and choose to Create New**.**
@@ -241,10 +222,7 @@ The Delete Record command deletes a particular record from the airtable database
 * [**Table Name**](./airtable.md#table-name) - Name of your Airtable table.
 * [**Record ID**](./airtable.md#record-id) - Within Airtable, each record has a unique identifier known as a [Record ID.](https://support.airtable.com/hc/en-us/articles/360051564873-Record-ID)
 
-<figure>
-  <object data="https://www.youtube.com/embed/vincNd_J_8A?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="vincNd_J_8A" title="</i></figcaption>" caption="</i></figcaption>"/>
 
 * Click on the **+** icon next to the **queries/js** and choose your airtable datasource.
 * Rename the query.
@@ -262,10 +240,7 @@ Let’s take an **example** to understand how the delete records command works.
 
 In this example, we will use the [Modal widget](./../widgets/modal.md) to delete the selected records.
 
-<figure>
-  <object data="https://www.youtube.com/embed/WKfjTDp-p8k?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i></i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="WKfjTDp-p8k" title="" caption=""/>
 
 * Let's edit the table widget we created in the **List Record Example.**
 * Add a column to the table property and name it "**delete**."
@@ -293,11 +268,7 @@ Retrieve record lets you fetch data for a particular record ID. You can pass the
 * [**Table Name**](./airtable.md#table-name) - Name of your Airtable table.
 * [**Record ID**](./airtable.md#record-id) - Within Airtable, each record has a unique identifier known as a [Record ID.](https://support.airtable.com/hc/en-us/articles/360051564873-Record-ID)
 
-<figure>
-  <object data="https://www.youtube.com/embed/sGITfLFYS5Q?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Use the Retrieve a record command
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="sGITfLFYS5Q" title="Use the Retrieve a record command" caption="Use the Retrieve a record command"/>
 
 * Click on the **+** icon next to the queries/js and choose your airtable datasource.
 * Rename the query.
@@ -320,11 +291,7 @@ Use the Update Records method to update only specific fields in a database and k
 * [**Records**](./airtable.md#records) - A [record ](https://support.airtable.com/hc/en-us/articles/360021333094-Getting-started-tables-records-and-fields)is the base equivalent of a row in a spreadsheet.
 
 
-<figure>
-  <object data="https://www.youtube.com/embed/Rf-4jIBXHEw?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Use the Update Records Command
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="Rf-4jIBXHEw" title="Use the Update Records Command" caption="Use the Update Records Command"/>
 
 * Click on the **+** icon next to the queries/js and choose your airtable datasource.
 * Rename the query.
@@ -343,11 +310,7 @@ Use the Update Records method to update only specific fields in a database and k
 
 Let’s take an **example** to update our records.
 
-<figure>
-  <object data="https://www.youtube.com/embed/0omjwAbe49M?autoplay=0" width='750px' height='400px'></object> 
-  <figcaption align="center"><i>Example for an update records command
-</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="0omjwAbe49M" title="Example for an update records command" caption="Example for an update records command"/>
 
 * Edit the table widget **`Tasks_list`** created in the List Record Example.
 * Add a column to the table property and name it "**Update**."
