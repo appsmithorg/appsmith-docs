@@ -3,11 +3,11 @@ description: Follow the steps to upgrade the Appsmith installation to a Business
 ---
 # Upgrade to Business Edition
 
-Follow the steps below to **upgrade** your **Community Edition (CE)** to a **Business Edition (BE)**. Choose the type of  **Appsmith Installation** to get started.
-
-:::info License Key
-You would need a **Business Edition License Key** to complete the upgrade. Learn more on [**Business Edition & pricing**](https://www.appsmith.com/pricing) options.
+:::info Important
+Keep the License Key ready to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
 :::
+
+Follow the steps below to upgrade your Community Edition (CE) to a Business Edition (BE). Choose the type of  Appsmith Installation to get started.
 
 <div class="containerBorder">
     <div class="containerGrid">
@@ -34,7 +34,7 @@ The Appsmith server shuts down once the license key expires. You would see `Inva
 Exiting application. Invalid license key.
 ```
 
-Raise a request on [Discord](https://discord.com/invite/rBTTVJp), or [send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](docker#step2-add-or-replace-license-key) it to have Appsmith up and running.
+[Send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](docker#step2-add-or-replace-license-key) it in the configuration file and start Appsmith.
 
 
 ## Next steps
