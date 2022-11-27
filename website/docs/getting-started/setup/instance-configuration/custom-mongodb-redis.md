@@ -17,6 +17,8 @@ The exact URI to be set here can be obtained from MongoDB Cloud's web interface.
 
 Note that to use a MongoDB database with Appsmith, replicaSet needs to be configured on the database. This can be done by connecting to the database as admin, and running [`rs.initiate()`](https://docs.mongodb.com/manual/reference/method/rs.initiate/). If you are using MongoDB Cloud, this is always done for you.
 
+Ensure that the credentials used to connect to MongoDB need to have the `readWrite` and `clusterMonitor` roles at least.
+
 ## Custom Redis
 
 To use a custom Redis with Appsmith, please change the env variable `APPSMITH_REDIS_URL`. For example,
