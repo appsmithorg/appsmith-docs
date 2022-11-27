@@ -41,7 +41,7 @@ You can access the values from the store by referencing the key inside the store
 Store value is **asynchronous**. Thus, the execution of the function **doesn't** happen **simultaneously**, so when you try to **read** the key from the **store** in the **following line,** it might **not** always give the **expected** result.
 :::
 
-### Reading store value with async and Await
+### Reading store value with async and await
 
 Store value is an asynchronous action, and you get some unexpected results when you try to read the key (you added) in the **following** line. You sometimes want to **read** the store value right after you set it. To achieve this, you can use  `async`  and  `await` .
 
@@ -110,7 +110,7 @@ You can set a persistent value by simply calling the store value with two parame
 
 Lets see how it works:
 
-* Drag the _**input widget**_ to the canvas.
+* Drag and drop the _**input widget**_ to the canvas.
 * Select the input widget and go to the widget properties.
 * Scroll down to the Actions section, select the `onTextChanged` action, and toggle the `JS` label.
 * Copy and paste the code below, adjusting the value if needed.
@@ -189,12 +189,12 @@ If you want to clear the session store value, you must define three parameters a
 ```
 
 
-> Your app may face performance issues if you make multiple calls to the ```storeValue``` function to store values. It is **recommended** to use an array object to store values. For instance: 
-If you are using something like:
+> If you need to store many values, instead of making multiple calls to the ```storeValue``` function, it is **recommended** to use an object array to store the values. For instance:
+
 ```js
 storeValue("showSelect", true); storeValue("showTable", true); storeValue("showButton", true); .....
 ``` 
-It should be used as:
+All values can be assigned in a single ```storeValue()``` function as shown below:
 ```js
 storeValue("flags", { showSelect: true, showTable: true, showButton: true });
 ```
