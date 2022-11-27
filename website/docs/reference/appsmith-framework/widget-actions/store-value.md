@@ -189,9 +189,8 @@ If you want to clear the session store value, you must define three parameters a
 ```
 
 
-> If you need to store many values, instead of making multiple calls to the ```storeValue``` function, it is **recommended** to use an object array to store the values. For instance:
-
-```js
+> If you need to store many values, instead of making multiple calls to the ```storeValue``` function, it is **recommended** to use an object array to store the values. For instance: 
+ ```js
 storeValue("showSelect", true); storeValue("showTable", true); storeValue("showButton", true); .....
 ``` 
 All values can be assigned in a single ```storeValue()``` function as shown below:
