@@ -59,5 +59,5 @@ In this section, we will discuss how users can configure APIs, like REST, GraphQ
 ## Switch environments  
 In this section, we will explain how users can switch between different environments. and discuss a few questions like: Which environment is applied for production deployments?
 
-## User's access to environments  
+## Access control
 Discuss access controls for the staging and production environments.
