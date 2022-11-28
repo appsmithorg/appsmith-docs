@@ -27,7 +27,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **updatedRowIndices**        | Binding     | Contains an array of indices of the table rows that have been edited.                                                        | `{{Table1.updatedRowIndices}}` |
 | **updatedRow**               | Binding     | Contains the all the data of the row that was recently updated. | `{{Table1.updatedRow}}`|
 
-#### Update mode
+### Update mode
 
 These modes allow you to choose how to handle the flow of updating, saving, and discarding new values within editable tables.
 
@@ -271,7 +271,7 @@ Once a column has been made editable, a pencil icon appears on the column header
 
 ### How to edit a cell
 
-Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon to make changes to the cell.
+Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 

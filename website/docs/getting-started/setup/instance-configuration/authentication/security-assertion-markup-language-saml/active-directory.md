@@ -8,7 +8,7 @@ sidebar_position: 5.4
 Azure Active Directory (Azure AD) is a cloud-based identity and access management service. This service helps your employees access external resources, such as **Microsoft 365,** the **Azure portal,** and thousands of other **SaaS** applications.
 
 :::info
-SAML is available only in the [**enterprise edition**](https://www.appsmith.com/pricing) for **self-hosted instances,** and only the **Superuser** of your **Appsmith Instance** can set up SAML.
+SAML is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances,** and only the **Superuser** of your **Appsmith Instance** can set up SAML.
 :::
 
 To configure SAML within Appsmith using Active Directory as a SAML provider, follow these steps:
