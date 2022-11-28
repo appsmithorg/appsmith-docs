@@ -25,7 +25,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **Max**                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
 | **updatedRows**              | Binding     | Contains all the data of the edited table rows.                                                    | `{{Table1.updatedRows}}`       |
 | **updatedRowIndices**        | Binding     | Contains an array of indices of the table rows that have been edited.                                                        | `{{Table1.updatedRowIndices}}` |
-| **updatedRow**               | Binding     | Contains the data of the row that triggered the **onSubmit**, **onSave** or **onDiscard** action. | `{{Table1.updatedRow}}`|
+| **updatedRow**               | Binding     | Contains the all the data of the row that was recently updated. | `{{Table1.updatedRow}}`|
 
 #### Update mode
 
@@ -213,15 +213,28 @@ For example, if you update the second and fourth rows of a table, the `updatedRo
 
 #### updatedRow
 
-This property contains the details of the row that triggered the **onSubmit**, **onSave** or **onDiscard** action. For example, if you bind this property into a text widget, you get an output something like this:
+This property contains the details of the row that was recently updated, regardless of the **Update mode**. For example, if you bind this property into a text widget, you get an output something like this:
 
 ```javascript
 {
-  "Name": "Updated Name",
-  "Date": "Updated Date",
-  "Status ": "Updated Status"
+  "step": "<updated-step-value>",
+	"task": "<updated-task-value>",
+	"status": "<updated-status-value>"
 }
 ```
+
+The default value for this property is an object with keys as column names and blank strings as its values. For example,
+
+```
+{
+	"step": "",
+	"task": "",
+	"status": ""
+}
+```
+The new values become available as soon as a user updates a table cell and navigates away from it (triggering the **onSubmit** event).
+
+The `updatedRow` property is reset to the default value whenever the cell changes are saved (**onSave**) or discarded (**onDiscard**).
 
 ### Events
 
