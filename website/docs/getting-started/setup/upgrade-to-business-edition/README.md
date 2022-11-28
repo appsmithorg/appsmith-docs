@@ -38,4 +38,7 @@ Exiting application. Invalid license key.
 
 ## Next steps
 * [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/)
+    * [Single Sign On](/getting-started/setup/instance-configuration/authentication/)
+    * [Audit Logs](/advanced-concepts/audit-logs)
 * [Managing Self Hosted Instances](/getting-started/setup/instance-management/)
+    * [Backup & Restore](/advanced-concepts/more/backup-restore)
