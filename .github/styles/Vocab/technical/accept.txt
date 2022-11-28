@@ -26,4 +26,8 @@ Protocol
 host
 JSON
 async
-
+updateRow
+onSave
+onSubmit
+onDiscard
+updatedRows

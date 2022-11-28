@@ -55,9 +55,8 @@ This column can't be deleted. It can only be made hidden. This column gets delet
 
 Users can customize the appearance of the Save and Discard button in the column settings. There are two events available `onSave,` and `onDiscard`, which users can use to trigger an action when the corresponding button is clicked.
 
-:::info
-ONLY single row cells are editable in row-level update mode. Users should save or discard the edited row before editing another row.
-:::
+> Only single row cells are editable in row-level update mode. Users should save or discard the edited row before editing another row.
+
 
 #### Custom mode
 
@@ -101,7 +100,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **Max**                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
 | **updatedRows**              | Binding     | This property contains all the details of the edited rows.                                                    | `{{Table1.updatedRows}}`       |
 | **updatedRowIndices**        | Binding     | This property contains an array of edited row indices.                                                        | `{{Table1.updatedRowIndices}}` |
-| **updatedRow**               | Binding     | This property consists of the details of the row that recently got updated | `{{Table1.updatedRow}}`|
+| **updatedRow**               | Binding     | This property contains all the details of the row that recently got updated | `{{Table1.updatedRow}}`|
 
 #### Update mode
 
@@ -242,7 +241,7 @@ The default value for this property is an object with keys as column names and b
 ```
 The value gets available as soon as a user updates a table cell. Not edits, but updates.
 
-The `updatedRow` property will get reset to the default value whenever the value is saved(onSave) or when it is discarded(onDiscard).
+The `updatedRow` property gets reset to the default value whenever the value is saved(onSave) or when it's discarded(onDiscard).
 
 ### Events
 
