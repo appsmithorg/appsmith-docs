@@ -148,7 +148,11 @@ Valid property shows the validity of the cell. When the expression evaluates to 
 2. `currentIndex` - index of the current editable row.
 3. `editedValue` - the newly entered value on the editable input.
 
+<<<<<<< HEAD
 For example, imagine you want the updated value to be `John`. In the **Valid** property field, add:
+=======
+For example: Imagine you want the updated value to be `John`. In the **Valid** property field, add:
+>>>>>>> 9282c33acf2dea9dea036d58b0def9c22455c6ea
 
 ```
 {{editedValue == "John"}}
