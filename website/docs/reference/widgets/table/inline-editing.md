@@ -148,7 +148,7 @@ Valid property shows the validity of the cell. When the expression evaluates to 
 2. `currentIndex` - index of the current editable row.
 3. `editedValue` - the newly entered value on the editable input.
 
-For example: Imagine you want the updated value to be "John". In the **Valid** property field, add:
+For example, imagine you want the updated value to be `John`. In the **Valid** property field, add:
 
 ```
 {{editedValue == "John"}}
@@ -287,7 +287,7 @@ While the "Add new row" mode is enabled in the Table widget, `isAddRowInProgress
 
 #### newRow
 
-When a new row is being added to the Table, this variable contains a reference to that new row object being added; otherwise, it's `undefined`. This is useful for accessing the user input to send it via query once the user is ready to submit the new data.
+When a new row is being added to the Table, this variable contains a reference to that new row object being added; otherwise, it is `undefined`. This is useful for accessing the user input to send it via query once the user is ready to submit the new data.
 
 #### isNewRow
 
@@ -356,7 +356,7 @@ To update the original datasource with the new data, you might execute a query l
 
 Assuming that the POST request is successful, the `myAPI` datasource receives the new information, and the Table should contain the new row the next time it updates.
 
-## What's next?
+## Further reading
 
 The following resources can come in handy as you need to learn new tricks:
 
