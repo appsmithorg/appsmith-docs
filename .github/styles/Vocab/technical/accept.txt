@@ -3,6 +3,7 @@ pageinfo
 Appsmith
 appsmith
 Datasource
+datasource
 datasources
 application
 URL
@@ -31,3 +32,4 @@ onSave
 onSubmit
 onDiscard
 updatedRows
+newRow
