@@ -240,6 +240,9 @@ The default value for this property is an object with keys as column names and b
 	"status": ""
 }
 ```
+The value gets available as soon as a user updates a table cell. Not edits, but updates.
+
+The `updatedRow` property will get reset to the default value whenever the value is saved(onSave) or when it is discarded(onDiscard).
 
 ### Events
 
