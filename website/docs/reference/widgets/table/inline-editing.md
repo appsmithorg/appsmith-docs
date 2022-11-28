@@ -56,10 +56,6 @@ This column can't be deleted. It can only be made hidden. This column gets delet
 Users can customize the appearance of the Save and Discard button in the column settings. There are two events available `onSave,` and `onDiscard`, which users can use to trigger an action when the corresponding button is clicked.
 
 :::info
-`updatedRow` can be used to access the row that triggered the event
-:::
-
-:::info
 ONLY single row cells are editable in row-level update mode. Users should save or discard the edited row before editing another row.
 :::
 
@@ -105,7 +101,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **Max**                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
 | **updatedRows**              | Binding     | This property contains all the details of the edited rows.                                                    | `{{Table1.updatedRows}}`       |
 | **updatedRowIndices**        | Binding     | This property contains an array of edited row indices.                                                        | `{{Table1.updatedRowIndices}}` |
-| **updatedRow**               | Binding     | This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`) | `{{Table1.updatedRow}}`|
+| **updatedRow**               | Binding     | This property consists of the details of the row that recently got updated | `{{Table1.updatedRow}}`|
 
 #### Update mode
 
@@ -225,14 +221,23 @@ For example, if you updated the second row of a table. Now, when you bind this p
 
 #### updatedRow
 
-This property contains the details of the row that triggered the action (`onSubmit`, `onSave` or `onDiscard`). For example, if you bind this property into a text widget, you get an output something like this:
+This property consists of the details of the row that recently got updated. Irrespective of the update mode, the `updatedRow` property consists of the row that got recently updated.
 
 ```
 {
-  "Name": "Updated Name",
-  "Date": "Updated Date",
-  "Status ": "Updated Status",
-  "rowIndex": "Row Index"
+	"step": "Updated step",
+	"task": "Updated task",
+	"status": "Updated status"
+}
+```
+
+The default value for this property is an object with keys as column names and blank string as its values. For example,
+
+```
+{
+	"step": "",
+	"task": "",
+	"status": ""
 }
 ```
 
