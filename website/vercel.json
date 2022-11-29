@@ -778,12 +778,16 @@
       "destination": "/reference/datasources/graphql"
     },
     {
+      "source": "/tutorials",
+      "destination": "/learning-and-resources/tutorials/"
+    },
+    {
       "source": "/tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view",
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui"
     },
     {
       "source": "/core-concepts/writing-code",
-      "destination": "/reference/appsmith-framework"
+      "destination": "/core-concepts/writing-code/"
     },
     {
       "source": "/v/master/",

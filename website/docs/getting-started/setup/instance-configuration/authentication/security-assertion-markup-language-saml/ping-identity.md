@@ -3,10 +3,10 @@ sidebar_position: 5.2
 ---
 # Ping Identity
 
-Ping Identity (PingID) is the identity as a security platform provider. It is a cloud-based authentication service provider and supports Security Assertion Markup Language (SAML). You can use Appsmith to integrate with Ping Identity using SAML configuration for authentication.
+Ping Identity (PingID) is the identity as a security platform provider. It's a cloud-based authentication service provider and supports Security Assertion Markup Language (SAML). You can use Appsmith to integrate with Ping Identity using SAML configuration for authentication.
 
 :::info
-Security Assertion Markup Language (SAML) is available only in the [enterprise edition](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
+Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
 ## Create Environment
