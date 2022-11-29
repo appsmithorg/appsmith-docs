@@ -525,6 +525,7 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
             'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
             'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
+            'help-and-support/troubleshooting-guide/action-errors/mysql-sql-mode',
             'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors'
           ]
         },
