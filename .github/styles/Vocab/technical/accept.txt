@@ -3,6 +3,7 @@ pageinfo
 Appsmith
 appsmith
 Datasource
+datasource
 datasources
 application
 URL
@@ -26,4 +27,9 @@ Protocol
 host
 JSON
 async
-
+updatedRow
+onSave
+onSubmit
+onDiscard
+updatedRows
+newRow
