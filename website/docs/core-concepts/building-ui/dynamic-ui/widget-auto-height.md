@@ -4,11 +4,16 @@ description: A natural consequence of dynamic UI are the content changes. Appsmi
 
 # Widget Auto Height
 
-Auto height is a capability of widgets to change height in response to content changes. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.
+Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.
 
 [Auto height In Action](https://www.loom.com/share/261a0c6d9e914694885db2ee621d5462)
 
-This feature exists for a subset of Appsmith widgets. In these widgets, some have auto height enabled by default and some do not. The following table contains a comprehensive list of widgets which have the auto height feature.
+<details>
+<summary>List of widgets with auto height</summary>
+
+The auto height feature exists for a subset of Appsmith widgets.
+
+Some widgets have auto height turned off by default. These need finishing touches for optimized resizing and will soon have it on by default.
 
 | Widget           | Enabled by default |
 | ---------------- | ------------------ |
@@ -35,9 +40,7 @@ This feature exists for a subset of Appsmith widgets. In these widgets, some hav
 | MultiTreeSelect  | No                 |
 | TreeSelect       | No                 |
 
-:::info
-Container and Form widgets have a minimum height of 10 rows by default, which can be changed by choosing auto height with limits.
-:::
+</details>
 
 ## Widget auto height with limits
 
@@ -46,7 +49,10 @@ Appsmith provides an option to set the limits to which a widget can grow or shri
 [Auto Height with limits](https://www.loom.com/share/261a0c6d9e914694885db2ee621d5462)
 
 :::note
-The minimum height possible for any widget is 4 rows.
+
+- Container and Form widgets have a minimum height of 10 rows by default, which can be changed by choosing auto height with limits.
+- The minimum height possible for any widget is 4 rows.
+
 :::
 
 ## Reflow
