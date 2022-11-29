@@ -41,7 +41,7 @@ Information about multiple environments
 
 * **Why do we need Multiple Environments?**
 
-* **What Environments are available on Appsmith?**  
+* **Environments on Appsmith**  
 Explain the differences between the production and staging environments.
 
   
