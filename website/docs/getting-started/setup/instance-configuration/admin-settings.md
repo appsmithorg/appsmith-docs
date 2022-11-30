@@ -3,7 +3,7 @@ sidebar_position: 8
 ---
 # Super Admin
 
-Admin Settings page provides a comfortable UI to configure your Appsmith instance. It is available only to superusers on all self-hosted instances. See below on how to [configure superusers](#configuring-a-super-admin) for your instance.
+Admin Settings page provides a comfortable UI to configure your Appsmith instance. It's available only to superusers on all self-hosted instances. See below on how to [configure superusers](#configuring-a-super-admin) for your instance.
 
 ## Using the Admin Settings UI
 
@@ -15,7 +15,7 @@ You can update all the instance configurations listed [here](./) in the Admin Se
 
 ![Use Admin Settings to configure your instance.](/img/Profile-Admin-Settings-Setup-Info.png)
 
-The Admin Settings are segregated based on the area they affect. Pick the desired category from the left panel. You can update any setting and click `save & restart` (the UI will show a restart modal while the instance restarts). Once it restarts, your instance will have new settings.
+The Admin Settings are segregated based on the area they affect. Pick the desired category from the left panel. You can update any setting and click `save & restart` (the UI shows a restart modal while the instance restarts). Once it restarts, your instance has the new settings.
 
 ### Configuring a Super Admin
 
