@@ -14,15 +14,7 @@ The Community and Business editions use Mongo DB, so you don't have to migrate t
 
 > Ensure that you backup the database with the docker instance **up** and **running**.
 
-### Step 2: Add or replace license key
-
-Go to the directory `stacks/configuration` and open the `docker.env` file. Add/replace the Business Edition license key and save the file.
-
-```bash
-APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
-```
-
-## Step 3: Update image
+## Step 2: Update image
 Go to the directory where the `docker-compose.yml` file is located. Open the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Community Edition (_appsmith-ce_) to Business Edition (_appsmith-ee_). 
 
 The updated file should have the image attribute set as below and save the file:
@@ -36,6 +28,14 @@ The updated file should have the image attribute set as below and save the file:
 
 If you are using `docker run`, head to [recreate the instance](#step-4-recreate-the-instance) step.
 
+## Step 3: Add or replace license key
+
+Go to the directory `stacks/configuration` and open the `docker.env` file. Add/replace the Business Edition license key and save the file.
+
+```bash
+APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
+```
+
 ## Step 4: Recreate the instance
 
 <Tabs groupId="dockercommands">
@@ -45,13 +45,15 @@ If you are using `docker run`, head to [recreate the instance](#step-4-recreate-
 ```bash
 docker-compose up -d
 ```
-:::info replace license key
-Run the following command to restart the instance if you have only replaced the license key, 
+
+::: note
+If you have **only** replaced the license key then you have to run the following command to restart the instance.
 
 ```bash
 docker-compose restart appsmith
 ```
-::: 
+:::
+
 
 You have successfully upgraded the docker instance to the Business Edition. Once the container is up and running, you can verify that the business image (_appsmith-ee_) is in use. Use the `docker ps` command to verify the image name.
 

@@ -32,7 +32,7 @@ The Appsmith server shuts down once the license key expires. Logs show 'Shutting
 ![License Check failed](/img/License-Check-Fails-Invalid-Message.png)
 
 
-[Send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](docker#step2-add-or-replace-license-key) it in the configuration file and start Appsmith.
+[Send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](docker#step3-add-or-replace-license-key) it in the configuration file and start Appsmith.
 
 
 ## Next steps
