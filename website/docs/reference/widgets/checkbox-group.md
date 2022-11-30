@@ -16,7 +16,8 @@ Checkbox group widget allows users to configure multiple checkboxes together.
 | **Visible**                 | Controls the visibility of the widget.                                                                                                                    |
 | **Select All Options**      | Controls whether select all control is shown.                                                                                                             |
 | **Disabled**                | Disables input to this widget.                                                                                                                            |
-| **Height**         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+
 
 ### Label
 
