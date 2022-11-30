@@ -52,7 +52,7 @@ The self-hosted version isn't air-gapped and reaches out to the Appsmith cloud. 
 
 You can choose from various popular platforms to deploy Appsmith, like Docker, Kubernetes, AWS, Digital Ocean, and more.
 
-> 🔔 Appsmith officially supports [docker-based installations.](./installation-guides/docker/README.md)
+> 🔔 Appsmith officially supports [docker-based installations.](/getting-started/setup/installation-guides/docker/)
 
 ### Pre-setup checklist
 
@@ -69,7 +69,7 @@ On Amazon Web Services(AWS), a [t3.medium](https://aws.amazon.com/ec2/instance-t
 
 With a variety of[ deployment options](./installation-guides/README.md), choose the one that best suits you:
 
-* [Docker](./installation-guides/docker/README.md)
+* [Docker](/getting-started/setup/installation-guides/docker/)
 * [Kubernetes](./installation-guides/kubernetes/README.md)
 * [AWS AMI](./installation-guides/aws-ami.md)
 * [AWS ECS](./installation-guides/aws-ecs.md)
