@@ -1,5 +1,5 @@
 application
-appsmith
+Appsmith
 appsmith
 async
 clearWatch
@@ -7,7 +7,7 @@ datasource
 datasource
 datasources
 Drag and drop
-dropdown
+Dropdown
 dropdown
 enum
 filterText
@@ -42,5 +42,5 @@ updatedRows
 URL
 watchId
 watchPosition
-widget
+Widget
 widget
