@@ -72,5 +72,11 @@
          <b><a href="ansible/">Ansible</a></b>
     </div>
      <div class="columnGrid column-three" align="center">
+     <div class="containerCol">
+                 <a href="restack/">
+                 <img class="containerImage" src="/img/Restack_Icon_100px.png" alt="Restack-logo"/>
+                 </a>     
+             </div> 
+             <b><a href="restack/">Restack</a></b>
    </div>
 </div>

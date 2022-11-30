@@ -3,6 +3,7 @@ pageinfo
 Appsmith
 appsmith
 Datasource
+datasource
 datasources
 application
 URL
@@ -30,4 +31,10 @@ async
 localStorage
 storeValue
 JSObject
+updatedRow
+onSave
+onSubmit
+onDiscard
+updatedRows
+newRow
 
