@@ -417,6 +417,7 @@ const sidebars = {
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/access-control',
         'advanced-concepts/audit-logs',
+        'advanced-concepts/multiple-environments-first-draft',
         {
           type: 'category',
           label: 'Version Control With Git',
