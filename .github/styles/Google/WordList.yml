@@ -23,7 +23,7 @@ swap:
   above: preceding
   account name: username
   action bar: app bar
-  admin: administrator
+  admin: administrator | Super Admin
   Ajax: AJAX
   Android device: Android-powered device
   android: Android
