@@ -14,7 +14,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | [**Update Mode**](#update-mode)              | Formatting  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
 | [**Allow adding a row**](#allow-adding-a-row) | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | [**Default Values**](#default-values) | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
-| [**Cell Wrapping**](#cell-wrapping)            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis (...). | NA |
+| [**Cell Wrapping**](#cell-wrapping)            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis. | NA |
 | [**Min**](#min)                      | Validation  | Sets the minimum allowed value.                                                                               | NA                             |
 | [**Max**](#max)                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
 | [**Regex**](#regex)                    | Validation  | Enter a regular expression that user input must match to be considered valid. Displays an error message on failure.                                   | NA                             |
@@ -54,7 +54,7 @@ Click the checkbox inside a column card makes all the cells in that column edita
 
 Alternatively, A column can be editable by turning on `Editable` property inside the column's settings.
 
-You can also use JS to control the `Editable` property. This is very useful for making only a subset of the cells editable:
+You can also use JS to control the `Editable` property. This is useful for making only a subset of the cells editable:
 
 ![](</img/Using_JS_in_Editable.png>)
 
@@ -207,7 +207,7 @@ In this mode, users are free to choose when to save their edited rows. To facili
 
 When you make changes in the table, the affected rows are added to the table's `updatedRows` property. This `updatedRows` object contains all the information about those rows, including their indices, changed values, and their complete set of values.
 
-3. In the query field that expects the data to send, use `Table1.updatedRows` to access your table data. The required format might vary depending on the type of datasource you use, but for this example with Google Sheets, it expects an array of row objects. Be sure to check the [datasource reference](/reference/datasources/) pages to see what format your datasource requires.
+3. In the query field that expects the data to send, use `Table1.updatedRows` to access your table data. The required format might vary depending on the type of datasource you use, but for this example with Google Sheets, it expects an array of row objects. Be sure to look at the [datasource reference](/reference/datasources/) pages to see what format your datasource requires.
 
 To get just an array containing the affected rows, you can use the JS [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method along with `Table1.updatedRows`:
 
