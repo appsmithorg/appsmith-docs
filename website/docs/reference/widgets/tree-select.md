@@ -59,6 +59,8 @@ These properties allow you to edit the widget. All these properties are present 
 | **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                                                                                  |
 | **Clear all Selections**  | When turned on, it allows users to clear the selection, which was the default or the selection made by them.                                                                                                                                                                                |
 | **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                                                                                                |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+
 
 ### Binding Properties
 

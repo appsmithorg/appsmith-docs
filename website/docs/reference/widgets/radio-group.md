@@ -22,6 +22,7 @@ These properties allow you to edit the Radio Group widget. All these properties 
 | **Disabled**               | Disables input to this widget.                                                                                       |
 | **Animate Loading**        | Allows you to control a widget’s animation on the page load.                                                         |
 | **Alignment**              | Sets alignment of the widget.                                                                                        |
+| **Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 ### Binding Properties
 

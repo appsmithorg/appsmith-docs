@@ -58,6 +58,7 @@ These properties allow you to edit the widget. All these properties are present 
 | **Disabled**                | Disables input/selection to the widget. The widget will remain visible to the user, but user input/selection will not be allowed.                                                          |
 | **Animate Loading**         | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
 | **Alignment**               | Controls the switch alignment on the page. Switches can be left or right-aligned.                                                                                                          |
+| **Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 ### Binding Properties
 

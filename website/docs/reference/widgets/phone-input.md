@@ -29,6 +29,8 @@ These properties allow you to edit the phone widget. All these properties are pr
 | **Reset on Submit**           | It clears the value entered by the user after submitting.                                                                                              |
 | **Autofocus**                 | It focuses your cursor on the input box when it is loaded.                                                                                             |
 | **Animate Loading**           | Allows you to control a widget’s animation on the page load.                                                                                           |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+
 
 Let's understand the widget properties in detail.
 

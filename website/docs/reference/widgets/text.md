@@ -20,6 +20,7 @@ These properties enable you to edit the text widget. All these properties are pr
 | **Visible**         | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                |
 | **Animate Loading** | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
 | **Disable link**    | It parses any link in the widget as standard text.                                                                                                                                         |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 Let's understand the widget properties in detail.
 

@@ -24,6 +24,8 @@ These properties allow you to edit the widget. All these properties are present 
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                                    |
 | **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                             |
 | **Allow Select All**      | Controls the visibility of `select all` option in the dropdown.                                                                                                                        |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+
 
 ### Binding Properties
 

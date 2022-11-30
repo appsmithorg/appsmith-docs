@@ -20,6 +20,7 @@ These properties allow you to edit the widget. All these properties are present 
 | **Scroll Contents** | This property enables scrolling within the contents of each tab                                                          |
 | **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published      |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                             |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 ### Binding Properties
 

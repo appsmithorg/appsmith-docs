@@ -21,6 +21,8 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 | **Disable**         | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed.      |
 | **Animate Loading** | Controls the loading of the widget.                                                                                 |
 | **Hide toolbar**    | Controls the visibility of the toolbar                                                                              |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+
 
 Let's understand the widget properties in detail:
 

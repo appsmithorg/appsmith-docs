@@ -46,3 +46,7 @@ Get Category Dropdown (Default Option property)
 Here Table1 is the name of the widget
 
 ![Click to expand](</img/form_-_table.gif>)
+
+# Widget Auto Height
+
+Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. Click [here](./../../../reference/widgets/README.md#) tp learn more about Height property.

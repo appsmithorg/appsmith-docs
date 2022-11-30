@@ -17,6 +17,7 @@ These properties allow you to edit the Modal widget. All these properties are pr
 | **Scroll Contents** | This property enables scrolling within the contents of the modal            |
 | **Quick Dismiss**   | Quickly dismisses or closes the Modal when the user taps outside the modal. |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 ### Binding Properties
 

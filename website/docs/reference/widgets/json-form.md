@@ -36,6 +36,7 @@ These properties allow you to edit the JSON Form widget. All of these properties
 | **Show Reset**            | When enabled, shows a reset button in the form allowing users to reset the form at any time.                                                                                                                                 |
 | **Submit Button Label**   | Sets the text for the label on the Submit button.                                                                                                                                                                            |
 | **Reset Button Label**    | Sets the text for the label on the Reset button.                                                                                                                                                                             |
+| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 Let's understand the widget properties in detail.
 

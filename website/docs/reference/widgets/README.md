@@ -48,6 +48,7 @@ The following properties are common across many of Appsmith's widgets. You can f
 | **Required**        | Sets whether the input field is a mandatory field. When the input widget is within a Form widget, that Form's submit button is automatically turned off until a user adds input to the field.    |
 | **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. |
 | **Visible**         | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                      |
+| Height         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
 
 #### Disabled
 
@@ -138,3 +139,68 @@ For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to t
 When you tick the checkbox, it enables the Visible property, and the input box will be visible in the app.
 
 <VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
+
+#### Auto Height
+
+Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.
+
+[Auto height In Action](https://www.loom.com/share/261a0c6d9e914694885db2ee621d5462)
+
+<details>
+<summary>List of widgets with auto height</summary>
+
+The auto height feature exists for a subset of Appsmith widgets.
+
+Some widgets have auto height turned off by default. These need finishing touches for optimized resizing and will soon have it on by default.
+
+| Widget           | Enabled by default |
+| ---------------- | ------------------ |
+| Container        | Yes                |
+| Form             | Yes                |
+| Tabs             | Yes                |
+| Text             | Yes                |
+| CheckboxGroup    | Yes                |
+| Checkbox         | Yes                |
+| RadioGroup       | Yes                |
+| Radio            | Yes                |
+| Rating           | Yes                |
+| Switch           | Yes                |
+| SwitchGroup      | Yes                |
+| Stats Box        | Yes                |
+| Modal            | Yes                |
+| JSON form        | No                 |
+| Input            | No                 |
+| DatePicker       | No                 |
+| CurrencyInput    | No                 |
+| PhoneInput       | No                 |
+| Rich Text Editor | No                 |
+| MultiSelect      | No                 |
+| MultiTreeSelect  | No                 |
+| TreeSelect       | No                 |
+
+</details>
+
+##### Auto Height with Limits
+
+Appsmith provides an option to set the limits to which a widget can grow or shrink in height. This can be configured to be enabled by selecting `Auto height with limits` from the `Height` property in the `General` section of the property pane. Once enabled, select the widget, to find two handles which also work as the values for the minimum and maximum height a widget can occupy on the canvas. These handles can be dragged to configure the minimum and maximum height limits for the widget.
+
+[Auto Height with limits](https://www.loom.com/share/261a0c6d9e914694885db2ee621d5462)
+
+:::note
+
+- Container and Form widgets have a minimum height of 10 rows by default, which can be changed by choosing auto height with limits.
+- The minimum height possible for any widget is 4 rows.
+
+:::
+
+##### Reflow
+
+When a widget changes height, the layout adjusts to maintain the distance between the widget undergoing a height change and the sibling widgets below this widget occupying one or more of the same columns.
+
+[Layout changes based on auto height](https://www.loom.com/share/a00448f098674ded99d51c48d5893d86)
+
+##### Invisible widgets
+
+Widgets which have auto height enabled, and are invisible in view and preview mode, let go of their occupied space, allowing widgets below to move up and occupy the now free space.
+
+[Layout changes due to invisible widgets](https://www.loom.com/share/dd7ab3992acb45fe9124b214fcbf89b0)

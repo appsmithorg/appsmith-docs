@@ -208,8 +208,7 @@ const sidebars = {
               label: 'Building Dynamic UI',
               link: {type: 'doc', id:  'core-concepts/building-ui/dynamic-ui/README'},
               items: [
-                'core-concepts/building-ui/dynamic-ui/widget-visibility',
-                "core-concepts/building-ui/dynamic-ui/widget-auto-height",
+                'core-concepts/building-ui/dynamic-ui/widget-visibility'
               ]  
             }            
           ]  
