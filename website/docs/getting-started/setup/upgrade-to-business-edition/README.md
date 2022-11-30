@@ -4,10 +4,10 @@ description: Follow the steps to upgrade the Appsmith installation to a Business
 # Upgrade to Business Edition
 
 :::info Important
-Keep the License Key ready to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
+You need a License Key to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
 :::
 
-Choose the type of  Appsmith Installation to upgrade your Community Edition (CE) to a Business Edition (BE).
+Upgrade your Community Edition to a Business Edition by selecting below installation type.
 
 <div class="containerBorder">
     <div class="containerGrid">
@@ -26,19 +26,16 @@ Choose the type of  Appsmith Installation to upgrade your Community Edition (CE)
     </div>
 </div>
 
-## Renew license
-The Appsmith server shuts down once the license key expires. You would see `Invalid license key` message in the logs:
+## License renewal
+The Appsmith server shuts down once the license key expires. Logs show 'Shutting down. License Check returned invalid.' message.
 
-```bash
-Exiting application. Invalid license key.
-```
+![License Check failed](/img/License-Check-Fails-Invalid-Message.png)
+
 
 [Send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](docker#step2-add-or-replace-license-key) it in the configuration file and start Appsmith.
 
 
 ## Next steps
-* [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/)
-    * [Single Sign On](/getting-started/setup/instance-configuration/authentication/)
-    * [Audit Logs](/advanced-concepts/audit-logs)
-* [Managing Self Hosted Instances](/getting-started/setup/instance-management/)
-    * [Backup & Restore](/advanced-concepts/more/backup-restore)
+* [Single Sign On](/getting-started/setup/instance-configuration/authentication/)
+* [Audit Logs](/advanced-concepts/audit-logs)
+* [Backup & Restore](/advanced-concepts/more/backup-restore)

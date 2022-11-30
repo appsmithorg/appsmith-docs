@@ -57,7 +57,7 @@ docker-compose restart appsmith
 You have successfully upgraded the docker instance to the Business Edition. Once the container is up and running, you can verify that the business image (_appsmith-ee_) is in use. Use the `docker ps` command to verify the image name.
 
  </TabItem>
- <TabItem label="Docker Run" value="using-docker-run-command">
+ <TabItem label="Docker" value="using-docker-run-command">
   Go to the root directory of the docker installation and run the following commands: 
 
 ```bash
@@ -81,14 +81,14 @@ Follow the below steps to rollback to the Community Edition.
 <Tabs groupId="dockercommands">
  <TabItem label="Docker Compose" value="using-docker-compose-command">
 
-* Stop the docker instance by using
+1. Stop the docker instance by using
 
     ```bash
     docker-compose down
     ```
 
-* Go to the directory (`~stacks\configuration`) and open the `docker.env`. Remove the license key (APPSMITH\_LICENSE\_KEY)
-* Go to the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Business Edition (_appsmith-ee_) to Community Edition (_appsmith-ce_). 
+2. Go to the directory (`~stacks\configuration`) and open the `docker.env`. Remove the license key (APPSMITH\_LICENSE\_KEY)
+3. Go to the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Business Edition (_appsmith-ee_) to Community Edition (_appsmith-ce_). 
 
 The updated file should have the image attribute set as below:
 
@@ -99,7 +99,7 @@ services:
     image: index.docker.io/appsmith/appsmith-ce
 ```
 
-* Recreate the instance by running the below command:
+4. Recreate the instance by running the below command:
 
 ```bash
 docker-compose up -d
@@ -107,7 +107,7 @@ docker-compose up -d
 You have successfully upgraded the docker instance to the Business Edition. Once the container is up and running, you can verify that the business image (_appsmith-ee_) is in use. Use the `docker ps` command to verify the image name.
 
  </TabItem>
- <TabItem label="Docker Run" value="using-docker-run-command">
+ <TabItem label="Docker" value="using-docker-run-command">
  Go to the root directory of the docker installation and run the following commands: 
 
 ```bash
