@@ -25,7 +25,7 @@ APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
 ## Step 3: Update image
 Go to the directory where the `docker-compose.yml` file is located. Open the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Community Edition (_appsmith-ce_) to Business Edition (_appsmith-ee_). 
 
-The updated file should have the image attribute set as below:
+The updated file should have the image attribute set as below and save the file:
 
  ``` yaml
   services:
@@ -33,7 +33,6 @@ The updated file should have the image attribute set as below:
     #highlight-next-line
       image: index.docker.io/appsmith/appsmith-ee
 ```
-And save the file.
 
 If you are using `docker run`, head to [recreate the instance](#step-4-recreate-the-instance) step.
 
