@@ -38,4 +38,3 @@ The Appsmith server shuts down once the license key expires. Logs show 'Shutting
 ## Next steps
 * [Single Sign On](/getting-started/setup/instance-configuration/authentication/)
 * [Audit Logs](/advanced-concepts/audit-logs)
-* [Backup & Restore](/advanced-concepts/more/backup-restore)
