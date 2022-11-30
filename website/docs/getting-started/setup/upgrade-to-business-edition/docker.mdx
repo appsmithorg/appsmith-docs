@@ -6,9 +6,9 @@ import TabItem from '@theme/TabItem';
 
 # Docker
 
-Follow the steps listed below to **upgrade** your Community Edition (CE) to a Business Edition (EE) installed on docker.
+Follow the steps listed below to upgrade your Community Edition (CE) to a Business Edition (BE) installed on docker.
 
-### Step 1: Database backup
+## Step 1: Database backup
 
 The Community and Business editions use Mongo DB, so you don't have to migrate the database. It's still recommended to [backup the Community Edition Mongo DB](/getting-started/setup/instance-management/appsmithctl#export-database).
 
@@ -16,13 +16,13 @@ The Community and Business editions use Mongo DB, so you don't have to migrate t
 
 ### Step 2: Add or replace license key
 
-Go to the directory `~stacks/configuration` and open the `docker.env` file. Add/replace the Business Edition license key and save the file.
+Go to the directory `stacks/configuration` and open the `docker.env` file. Add/replace the Business Edition license key and save the file.
 
 ```bash
 APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
 ```
 
-### Step 3: Update image
+## Step 3: Update image
 Go to the directory where the `docker-compose.yml` file is located. Open the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Community Edition (_appsmith-ce_) to Business Edition (_appsmith-ee_). 
 
 The updated file should have the image attribute set as below:
@@ -35,9 +35,9 @@ The updated file should have the image attribute set as below:
 ```
 And save the file.
 
-> If you are using `docker run`, head to [recreate the instance](#step-4-recreate-the-instance) step.
+If you are using `docker run`, head to [recreate the instance](#step-4-recreate-the-instance) step.
 
-### Step 4: Recreate the instance
+## Step 4: Recreate the instance
 
 <Tabs groupId="dockercommands">
  <TabItem label="Docker Compose" value="using-docker-compose-command">
@@ -74,7 +74,7 @@ Once the download is complete, the server should be up. You should see `Appsmith
   </TabItem>
 </Tabs> 
 
-### Rollback (optional)
+## Rollback (optional)
 
 Follow the below steps to rollback to the Community Edition.
 
@@ -87,7 +87,7 @@ Follow the below steps to rollback to the Community Edition.
     docker-compose down
     ```
 
-2. Go to the directory (`~stacks\configuration`) and open the `docker.env`. Remove the license key (APPSMITH\_LICENSE\_KEY)
+2. Go to the directory (`stacks\configuration`) and open the `docker.env`. Remove the license key (APPSMITH\_LICENSE\_KEY)
 3. Go to the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Business Edition (_appsmith-ee_) to Community Edition (_appsmith-ce_). 
 
 The updated file should have the image attribute set as below:
