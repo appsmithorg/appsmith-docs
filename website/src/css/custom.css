@@ -268,7 +268,8 @@ width: auto;
   border-bottom-color: #f86a2b !important;
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  color: #f86a2b;
+  background-color: #f86a2b;
+  color:#000;
   border-spacing: 2px;
 }
 
@@ -307,4 +308,27 @@ width: auto;
 
 .tabs__item:first-of-type{
     margin-left: 20px !important;
+}
+
+.error {
+  background-color: hsl(0, 80%, 94%);
+  border: 2px solid rgb(226, 128, 35);
+  border-radius: 8px;
+  float: left;
+  padding: 10px;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.errorHeading {
+  color: #D8000C;
+  background-color: #FFBABA;
+  padding-bottom: 2px;
+  margin-bottom: 1em;
+}
+
+.errorText {
+  color: #cc0033;
+  line-height: 20px;
+  text-shadow: 1px 1px rgba(250,250,250,.3);
 }

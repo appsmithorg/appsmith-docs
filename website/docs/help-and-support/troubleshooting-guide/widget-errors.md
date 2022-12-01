@@ -13,17 +13,22 @@ You may see this error when executing an API, Query, JS Object from a widget pro
 When you try to run async functions in sync fields, there are errors thrown for:
 
 **API, Query**
-```
-Found a reference to {{action}} during evaluation. Sync fields cannot execute async framework actions. Please remove any direct/indirect references to {{action}} and try again.
-```
+
+<Message caption="Error!" 
+messageContainerClassName="error" 
+captionClassName="errorHeading" 
+messageContentClassName="errorText" 
+messageContent="Found a reference to {{action}} during evaluation. Sync fields cannot execute async framework actions. Please remove any direct/indirect references to {{action}} and try again."></Message>
 
 **To-Do to add screenshot**
 
 **JS Object**
 
-```
-Found a Promise() during evaluation. Sync fields cannot execute asynchronous code.
-```
+<Message caption="Error!" 
+messageContainerClassName="error" 
+captionClassName="errorHeading" 
+messageContentClassName="errorText" 
+messageContent="Found a Promise() during evaluation. Sync fields cannot execute asynchronous code."></Message>
 
 **To-Do to add screenshot**
 
@@ -32,16 +37,20 @@ Action refers to the execution of an API, Query, or JS object. You can only perf
 
 For example, you are executing a `storeValue()` function in a `TableData` property of a table. The `TableData` property expects data and can't execute a function, so it throws an error.
 
-```
-Found a reference to `storeValue` during evaluation. Sync fields can't execute async framework actions. 
-Please remove any direct/indirect references to `storeValue` and try again.
-```
+<Message caption="Error" 
+messageContainerClassName="error" 
+captionClassName="errorHeading" 
+messageContentClassName="errorText" 
+messageContent="Found a reference to `storeValue` during evaluation. Sync fields cannot execute async framework actions. Please remove any direct/indirect references to `storeValue` and try again."></Message>
 
 Similarly, if you try to execute a JS Object function `<JSOBJECT_NAME.FUNCTION_NAME>` in the `TableData` property, it again throws an error:
 
-```
-Found a Promise() during evaluation. Sync fields cannot execute asynchronous code
-```
+<Message caption="Error!" 
+messageContainerClassName="error" 
+captionClassName="errorHeading" 
+messageContentClassName="errorText" 
+messageContent="Found a Promise() during evaluation. Sync fields cannot execute asynchronous code."></Message>
+
 
 #### Solution
 You would have to invoke the [`.data` property of an API, Query, JS object](/core-concepts/writing-code/workflows#use-case).
