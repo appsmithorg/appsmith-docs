@@ -4,7 +4,7 @@ description: Follow the steps to upgrade the Appsmith installation to a Business
 # Upgrade to Business Edition
 
 :::info Important
-You need a License Key to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
+You need a **License Key** to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
 :::
 
 Upgrade your Community Edition to a Business Edition by selecting below installation type.
