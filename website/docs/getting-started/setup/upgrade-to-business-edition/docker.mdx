@@ -15,6 +15,9 @@ The Community and Business editions use MongoDB, so you don't have to migrate th
 > Ensure that you backup the database with the docker instance **up** and **running**.
 
 ## Step 2: Update image
+
+If you are using `docker run`, head to [Step 4: Recreate the instance](#step-4-recreate-the-instance).
+
 Go to the directory where the `docker-compose.yml` file is located. Open the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Community Edition (_appsmith-ce_) to Business Edition (_appsmith-ee_). 
 
 The updated file should have the image attribute set as below and save the file:
@@ -25,8 +28,6 @@ The updated file should have the image attribute set as below and save the file:
     #highlight-next-line
       image: index.docker.io/appsmith/appsmith-ee
 ```
-
-If you are using `docker run`, head to [recreate the instance](#step-4-recreate-the-instance) step.
 
 ## Step 3: Add or replace license key
 
