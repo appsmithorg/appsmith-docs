@@ -18,9 +18,9 @@ These properties allow you to edit the widget. All these properties are present 
 | **Default Tab**     | This property selects the tab which matches the corresponding name                                                       |
 | **Show Tabs**       | This property hides / shows the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI |
 | **Scroll Contents** | This property enables scrolling within the contents of each tab                                                          |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published      |
+| **Visible**         | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published      |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                             |
-| [**Height**](./README.md#auto-height)         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+| [**Height**](./README.md#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 ### Binding Properties
 
@@ -29,11 +29,11 @@ These properties help you share values between widgets and also allow you to eas
 | Widget Property | Description                                                   |
 | --------------- | ------------------------------------------------------------- |
 | **isVisible**   | This property indicates whether the widget is visible or not. |
-| **selectedTab** | Contains the id of the tab currently selecte                  |
+| **selectedTab** | Contains the id of the tab currently selected                  |
 
 ### Events
 
-They are a set of actions that you can perform on the widget. The following table lists the actions:
+They're a set of actions that you can perform on the widget. The following table lists the actions:
 
 | Events            | Description                                                                                                                      |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ You can create separate UIs in each tab container and dynamically switch between
 
 ## Tab Navigation
 
-By manipulating the properties of a tab widget, it is possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](../appsmith-framework/widget-actions/store-value.md) and some JavaScript:
+By manipulating the properties of a tab widget, it's possible to create a custom navigation scheme for the tab widget. This quick video show's how to setup tab navigation with the [`storeValue` function](../appsmith-framework/widget-actions/store-value.md) and some JavaScript:
 
 <VideoEmbed host="youtube" videoId="dHeS5kPHlHE" title="" caption=""/>
 

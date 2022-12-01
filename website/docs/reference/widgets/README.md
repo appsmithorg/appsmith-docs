@@ -8,14 +8,14 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 
 ## Add to Canvas
 
-In the left navigation pane, navigate to PAGES —> Select the "Widget" Tab —> Choose your desired widget, and drag it onto the canvas. You can move it anywhere on the canvas by simply dragging it around.
+In the left navigation pane, navigate to PAGES—> Select the "Widget" Tab—> Choose your desired widget, and drag it onto the canvas. You can move it anywhere on the canvas by simply dragging it around.
 
 ### Naming a Widget
 
-A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
+A widget must have a unique name that acts as an identifier on the page. It's used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
 
 :::info
-Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as widget names.
+Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) aren't valid as widget names.
 :::
 
 You can access the various properties of the widget using the widget's name.
@@ -26,10 +26,10 @@ You can access the various properties of the widget using the widget's name.
 
 ### Grouping Widgets
 
-Appsmith supports the grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
+Appsmith supports the grouping of widgets. When you group widgets, they're put in a container and can be moved together. To do this -
 
 * Select multiple widgets with Ctrl + Left Click
-* Now click on the dotted square icon or press Ctrl + G
+* Now click in the dotted square icon or press Ctrl + G
 
 ![](/img/groupingwidget.gif)
 
@@ -39,6 +39,7 @@ The following properties are common across many of Appsmith's widgets. You can f
 
 | Property            | Description                                                                                                                                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [**Height**](./README.md#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 | **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off.                                                                                 |
 | **Disabled**        | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                         |
 | **Error Message**   | Sets the text of the error message to display if user input is considered invalid.                                                                                                               |
@@ -48,7 +49,48 @@ The following properties are common across many of Appsmith's widgets. You can f
 | **Required**        | Sets whether the input field is a mandatory field. When the input widget is within a Form widget, that Form's submit button is automatically turned off until a user adds input to the field.    |
 | **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. |
 | **Visible**         | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                      |
-| **Height**         | Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.                                      |
+
+Lets understand these properties in detail.
+
+#### Height
+The Height property describes how a widget’s height reacts to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. It has three possible configurations:
+- Fixed
+- Auto Height
+- Auto Height with limits
+
+##### Fixed
+
+When you choose the Height as fixed, The height of the widget remains as set during drag and resize. The widget doesn't change or adapt to any content changes,i.e, you have to adjust the height manually.
+
+<VideoEmbed host="youtube" videoId="265AWQkqZAM" title="Fixed Height" caption="Fixed Height"/>
+
+
+##### Auto Height
+
+Auto height is a capability in widgets to change height in response to content changes. While using Auto Height, there is no limit to how much a widget can grow in height. However, the minimum height possible for any widget is 4 rows. 
+
+<VideoEmbed host="youtube" videoId="JF9zeUDKnl0" title="Auto height In Action" caption="Auto height In Action"/>
+
+When a widget changes height, the layout adjusts to maintain the distance between the widget undergoing a height change and the sibling widgets below this widget occupying one or more of the same columns.
+
+<VideoEmbed host="youtube" videoId="xjQqHrswZLM" title="Layout changes based on auto height" caption="Layout changes based on Auto Height"/>
+
+Widgets which have auto height enabled, and are invisible in view and preview mode, let go of their occupied space, allowing widgets below to move up and occupy the now free space.
+
+<VideoEmbed host="youtube" videoId="JdkAGFpxvxY" title="Layout changes due to invisible widgets" caption="Layout changes due to invisible widgets"/>
+
+##### Auto Height with Limits
+
+Appsmith provides an option to set the limits to which a widget can grow or shrink in height. This can be configured to be enabled by selecting `Auto height with limits` from the `Height` property in the `General` section of the property pane. Once enabled, select the widget, to find two handles which also work as the values for the minimum and maximum height a widget can occupy on the canvas. These handles can be dragged to configure the minimum and maximum height limits for the widget.
+
+<VideoEmbed host="youtube" videoId="yADpUJ3Y8v8" title="Auto Height with limits" caption="Auto Height with limits"/>
+
+:::note
+
+- Container and Form widgets have a minimum height of 10 rows by default, which can be changed by choosing auto height with limits.
+- The minimum height possible for any widget is 4 rows.
+
+:::
 
 #### Disabled
 
@@ -139,68 +181,3 @@ For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to t
 When you tick the checkbox, it enables the Visible property, and the input box will be visible in the app.
 
 <VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
-
-#### Auto Height
-
-Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`.
-
-[Auto height In Action](https://www.loom.com/share/261a0c6d9e914694885db2ee621d5462)
-
-<details>
-<summary>List of widgets with auto height</summary>
-
-The auto height feature exists for a subset of Appsmith widgets.
-
-Some widgets have auto height turned off by default. These need finishing touches for optimized resizing and will soon have it on by default.
-
-| Widget           | Enabled by default |
-| ---------------- | ------------------ |
-| Container        | Yes                |
-| Form             | Yes                |
-| Tabs             | Yes                |
-| Text             | Yes                |
-| CheckboxGroup    | Yes                |
-| Checkbox         | Yes                |
-| RadioGroup       | Yes                |
-| Radio            | Yes                |
-| Rating           | Yes                |
-| Switch           | Yes                |
-| SwitchGroup      | Yes                |
-| Stats Box        | Yes                |
-| Modal            | Yes                |
-| JSON form        | No                 |
-| Input            | No                 |
-| DatePicker       | No                 |
-| CurrencyInput    | No                 |
-| PhoneInput       | No                 |
-| Rich Text Editor | No                 |
-| MultiSelect      | No                 |
-| MultiTreeSelect  | No                 |
-| TreeSelect       | No                 |
-
-</details>
-
-##### Auto Height with Limits
-
-Appsmith provides an option to set the limits to which a widget can grow or shrink in height. This can be configured to be enabled by selecting `Auto height with limits` from the `Height` property in the `General` section of the property pane. Once enabled, select the widget, to find two handles which also work as the values for the minimum and maximum height a widget can occupy on the canvas. These handles can be dragged to configure the minimum and maximum height limits for the widget.
-
-[Auto Height with limits](https://www.loom.com/share/261a0c6d9e914694885db2ee621d5462)
-
-:::note
-
-- Container and Form widgets have a minimum height of 10 rows by default, which can be changed by choosing auto height with limits.
-- The minimum height possible for any widget is 4 rows.
-
-:::
-
-##### Reflow
-
-When a widget changes height, the layout adjusts to maintain the distance between the widget undergoing a height change and the sibling widgets below this widget occupying one or more of the same columns.
-
-[Layout changes based on auto height](https://www.loom.com/share/a00448f098674ded99d51c48d5893d86)
-
-##### Invisible widgets
-
-Widgets which have auto height enabled, and are invisible in view and preview mode, let go of their occupied space, allowing widgets below to move up and occupy the now free space.
-
-[Layout changes due to invisible widgets](https://www.loom.com/share/dd7ab3992acb45fe9124b214fcbf89b0)

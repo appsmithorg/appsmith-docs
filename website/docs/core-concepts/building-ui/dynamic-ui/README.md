@@ -13,7 +13,7 @@ This document presumes you understand the basics of [Displaying Data](../../data
 
 ## Dynamic Properties
 
-Every property of a widget can be described dynamically using javascript inside handlebars `{{}}` . The properties which do not have an input to write javascript can be made dynamic by clicking the JS button next to them. This transforms the property into an input field that can be used to write code.
+Every property of a widget can be described dynamically using JavaScript inside handlebars `{{}}` . The properties which don't have an input to write JavaScript can be made dynamic by clicking the JS button next to them. This transforms the property into an input field that can be used to write code.
 
 ![](</img/convert_js.gif>)
 
@@ -47,6 +47,8 @@ Here Table1 is the name of the widget
 
 ![Click to expand](</img/form_-_table.gif>)
 
-# Widget Auto Height
-
-Auto height is a capability in widgets to change height in response to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. Click [here](./../../../reference/widgets/README.md#) tp learn more about Height property.
+## [Height](./../../../reference/widgets/README.md#height)
+The Height property describes how a widget’s height reacts to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. It has three possible configurations:
+- [Fixed](./../../../reference/widgets/README.md#fixed)
+- [Auto Height](./../../../reference/widgets/README.md#auto-height)
+- [Auto Height with limits](./../../../reference/widgets/README.md#auto-height-with-limits)
