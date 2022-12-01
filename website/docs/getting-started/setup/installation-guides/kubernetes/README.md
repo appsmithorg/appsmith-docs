@@ -10,30 +10,32 @@ sidebar_position: 3
 This chart bootstraps an [Appsmith](https://github.com/appsmithorg/appsmith) deployment on a [Kubernetes](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/kubernetes.io) cluster using [Helm](https://helm.sh) package manager.
 
 ### Prerequisites
-
-* Install the [Helm package manager](https://helm.sh/docs/intro/install/).
-* Ensure `kubectl` is installed and configured to connect to your cluster.
-  * Install [kubectl](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/).
-  * Minikube: [Setup Kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/).
+Please make sure that you have all the prerequisites installed and configured:
+* [Helm package manager](https://helm.sh/docs/intro/install/)
+* `kubectl`
+  * Install [kubectl](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/)
+  * Minikube: [Setup Kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
   * Google Cloud Kubernetes: [Configuring cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
   * AWS EKS: [Create a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
   * Microk8s: [Working with kubectl](https://microk8s.io/docs/working-with-kubectl)
-* Please ensure you have a default storage class running on your cluster. Please follow one of the below guidelines to enable your default storage class -
+* Enable default storage class:
+  Please ensure you have a default storage class running on your cluster. Please follow one of the below guidelines to enable your default storage class -
   * Minikube: [Enable addon default-storageclass](https://kubernetes.io/docs/tutorials/hello-minikube/#enable-addons)
   * Google Cloud Kubernetes: [Setting up default storage class on GKE](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)
   * AWS EKS: [Create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
   * Microk8s: [Enable storage](https://microk8s.io/docs/command-reference#heading--microk8s-enable)
-* Kubernetes NGINX Ingress Controller should be enabled on your cluster by default. Please make sure that you install the correct version for your cluster
+* Enable Kubernetes NGINX Ingress Controller:
+  The controleer should be enabled on your cluster by default. Please make sure that you install the correct version for your cluster 
   * Minikube: [Set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
   * Google Cloud Kubernetes: [Ingress with NGINX controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
   * AWS EKS: [Install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb)
   * Microk8s: [Add on: Ingress](https://microk8s.io/docs/addon-ingress)
 
 :::note
-By default, the ingress controller will not have data compression enabled. You can enable it by following the steps listed in the [Nginx ingress controller compression](./#nginx-ingress-controller-compression-gzip) section.
+By default, the ingress controller doesn't have data compression enabled. You can enable it by following the steps listed in the [Nginx ingress controller compression](./#nginx-ingress-controller-compression-gzip) section.
 :::
 
-### Installing the Chart
+### Installing the chart
 
 1. Add Appsmith into your repository using Helm.
 
@@ -43,15 +45,15 @@ helm repo add appsmith https://helm.appsmith.com
 helm repo update
 ```
 
-2\. Install the chart with the <mark>`appsmith`</mark> release.
+2. Install the chart with the <mark>`appsmith`</mark> release.
 
 ```
 helm install appsmith/appsmith --generate-name
 ```
 
-The command deploys the Appsmith application on the Kubernetes cluster in the default configuration. The [Parameters](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#paramters) section lists the configurable parameters during installation.
+The command deploys the Appsmith application on the Kubernetes cluster with the default configuration. The [parameters](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#paramters) section lists the configurable parameters during installation.
 
-### Uninstalling the Chart
+### Uninstalling the chart
 
 To uninstall the <mark>`appsmith`</mark> release:
 
@@ -83,7 +85,7 @@ The command uninstalls the release and removes all Kubernetes resources associat
 | `commonLabels`      | Labels to add to all deployed objects             | `{}`         |
 | `commonAnnotations` | Annotations to add to all deployed objects        | `{}`         |
 
-#### Appsmith Image parameters
+#### Appsmith image parameters
 
 | Name               | Description                | Value                      |
 | ------------------ | -------------------------- | -------------------------- |
@@ -121,7 +123,7 @@ The command uninstalls the release and removes all Kubernetes resources associat
 | `serviceAccount.name`        | Name of the created `ServiceAccount` . If not set, a name is generated using the appsmith.fullname template | `""`   |
 | `serviceAccount.annotations` | Additional service account annotations                                                                      | `{}`   |
 
-#### Traffic Exposure Parameters
+#### Traffic exposure parameters
 
 | Name                               | Description                                                                 | Value       |
 | ---------------------------------- | --------------------------------------------------------------------------- | ----------- |
@@ -249,7 +251,7 @@ helm install \
 
 ## Updating Appsmith
 
-### Auto Update
+### Auto update
 
 *   In the default Appsmith helm installation the auto-update is disabled (Recommended). You have the option to enable auto-update for your Appsmith helm deployment by either:
 
@@ -269,7 +271,7 @@ helm install \
         --set autoupdate.enabled=true
     ```
 
-### Manual Update
+### Manual update
 
 * To manually update the Appsmith container image to the latest release, run the command: `kubectl rollout restart statefulset appsmith`
 
@@ -292,16 +294,12 @@ kubectl edit configmap -n ingress-nginx ingress-nginx-controller
       gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
     ```
 
-:::note
 The Nginx controller will automatically update after saving (`:wq!`) the above changes.
-:::
 
-## Troubleshooting
+If you’re having issues with the deployment, please see the [debugging deployment errors] troubleshooting guide(../../../../help-and-support/troubleshooting-guide/deployment-errors.md). If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../../help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
+## Further reading
 
-## Further Reading
-
-* [Configuring Self Hosted Instances](../../instance-configuration/#configuring-kubernetes-installations)
-* [Managing the Appsmith instance](../../instance-management/)
-* [Tutorials](../../../../learning-and-resources/tutorials/)
+* [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/#configuring-kubernetes-installations)
+* [Managing the Appsmith instance](/getting-started/setup/instance-management/)
+* [Tutorials](/learning-and-resources/tutorials/)
