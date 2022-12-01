@@ -7,7 +7,7 @@ The section illustrates common query errors and how to resolve them on Appsmith.
 
 ## Find error messages from the datasource
 
-When a query fails, Appsmith commonly shows a notification stating something like: "UncaughtPromiseRejection: <query_name> failed to execute."
+When a query fails, Appsmith commonly shows a notification stating something like: `UncaughtPromiseRejection: <query_name> failed to execute.`
 
 ![](/img/as_error.png)
 
