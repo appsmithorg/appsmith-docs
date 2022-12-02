@@ -45,3 +45,9 @@ watchId
 watchPosition
 Widget
 widget
+namespace
+Tolerations
+fod
+cron
+Nginx
+NGINX
