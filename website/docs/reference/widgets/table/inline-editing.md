@@ -50,13 +50,15 @@ The column list on the Table property pane has a checkbox to make that column ed
 
 Click the checkbox inside a column card makes all the cells in that column editable. The editable checkbox at the top of the list can be checked to make all the editable columns editable.
 
-![](</img/Editable_preoperty.png>)
+<!-- ![](</img/Editable_preoperty.png>) -->
+<img src="/img/Editable_preoperty.png" alt="Editable checkboxes" width="267"/>
 
 Alternatively, A column can be editable by turning on `Editable` property inside the column's settings.
 
 You can also use JS to control the `Editable` property. This is useful for making only a subset of the cells editable:
 
-![](</img/Using_JS_in_Editable.png>)
+<!-- ![](</img/Using_JS_in_Editable.png>) -->
+<img src="/img/Using_JS_in_Editable.png" alt="JS in Editable property" width="275"/>
 
 - You might only want cells containing a particular value to be editable:
 
@@ -81,7 +83,8 @@ You can also use JS to control the `Editable` property. This is useful for makin
 
 Once a column has been made editable, a pencil icon appears on the column header as an indicator.
 
-![](</img/Edit_icon_on_column_header.png>)
+<!-- ![](</img/Edit_icon_on_column_header.png>) -->
+<img src="/img/Edit_icon_on_column_header.png" alt="edit icon on the column headers" width="300"/>
 
 Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
 
@@ -134,7 +137,8 @@ If a value other than "John" is added to the cell, an error is displayed. Simila
 
 The error message appears if the regular expression (**Regex**) and/or the **Valid** property determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
-![](/img/table_err_msg.PNG)
+<!-- ![](/img/table_err_msg.PNG) -->
+<img src="/img/table_err_msg.png" alt="Error message when input is invalid" width="524"/>
 
 #### Regex
 
@@ -142,7 +146,8 @@ The error message appears if the regular expression (**Regex**) and/or the **Val
 
 When you add a regular expression to a column, all user input in that column is compared to the pattern; it's considered to be valid when it matches the expression, or invalid when it doesn't match. When input is invalid, the cell displays its **Error message** to the user in a tool-tip.
 
-![](/img/as_errormsg.png)
+<!-- ![](/img/as_errormsg.png) -->
+<img src="/img/as_errormsg.png" alt="Error message when input is invalid" width="511"/>
 
 For example, add a regular expression for entering a name. The name can contain only alphabetical characters and spaces between the first and last name:
 
@@ -234,7 +239,8 @@ For information about handling synchronous/asynchronous code, event handling, an
 
 6. Add a callback to automatically refresh the table after a successful query. In this example, `myAPI_get` is a query that refreshes the table data.
 
-![](/img/as_updateMany.png)
+<!-- ![](/img/as_updateMany.png) -->
+<img src="/img/as_updateMany.png" alt="Set onClick to update table and refresh" width="587"/>
 
 ```javascript
 {{
@@ -406,7 +412,8 @@ Assuming that the POST request is successful, the `myAPI` datasource receives th
 :::note
 When a column is made editable, the `onSubmit` property appears under the Event section in the column settings. This event is called anytime cell content is edited and persisted. In addition to the **onSave** event, this is another option for executing queries to save new table data.
 
-![](</img/OnSubmit\_editable\_enabled.png>)
+<!-- ![](</img/OnSubmit\_editable\_enabled.png>) -->
+<img src="/img/OnSubmit_editable_enabled.png" alt="onSubmit" width="281"/>
 
 Within this field, you can use `currentRow` to access the row of the edited cell, and `currentRow["<key_name>"]` to access the updated value.
 :::
