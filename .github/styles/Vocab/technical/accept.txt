@@ -1,3 +1,4 @@
+API
 application
 appsmith
 Appsmith
@@ -8,6 +9,7 @@ Datasource
 datasources
 Drag and drop
 enum
+filteredTableData
 fullpath
 fullPath
 hash
@@ -17,6 +19,7 @@ hostName
 img
 isAddRowInProgress
 isNewRow
+isVisible
 JSObject
 JSON
 localStorage
@@ -24,19 +27,30 @@ newRow
 onClick
 onDiscard
 onSave
+onSort
 onSubmit
 pageinfo
 path
 Path
 pathName
 pathname
+pageNo
+pageSize
 port
 Protocol
 protocol
 queryParams
 regex
 Regex
+searchText
+selectedRow
+selectedRowIndex
+selectedRowIndices
+selectedRows
+sortOrder
 storeValue
+tableData
+triggeredRow
 updatedRow
 updatedRowIndices
 updatedRows

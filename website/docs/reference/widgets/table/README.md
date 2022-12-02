@@ -65,7 +65,7 @@ This property shows all the columns in the table, and it gets auto populated fro
 
 #### Server side pagination
 
-The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](./../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
+The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
 #### Inline editing
 
@@ -144,7 +144,7 @@ And this is how the data looks in the table widget:
 **selectedRow**
 
 A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.\
-selectedRow is an internal property that fetches the row's data selected by the user in the table. You can easily bind different widgets to each table row using this property.
+selectedRow is an internal property that fetches the data of the table row that the user selected. You can bind different widgets to each table row using this property.
 
 As you already know by now, you can write JS code anywhere in Appsmith inside \{{\}}., To bind the selected row of the table to another widget, open the property pane of it, and add the code snippet given below:
 
@@ -319,11 +319,11 @@ These are a set of actions that you can perform on the widget. The following tab
 
 | Action                 | Description                                                                                                                                                                                                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                  |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property isn't available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../../appsmith-framework/widget-actions/). |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                           |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                 |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](/reference/appsmith-framework/widget-actions/).                                                                                                                                                                                  |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](/reference/appsmith-framework/widget-actions/).                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property isn't available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](/reference/appsmith-framework/widget-actions/). |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](/reference/appsmith-framework/widget-actions/).                                                                                                                                                                           |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](/reference/appsmith-framework/widget-actions/).                                                                                                                                                                                 |
 
 ### Header options
 
