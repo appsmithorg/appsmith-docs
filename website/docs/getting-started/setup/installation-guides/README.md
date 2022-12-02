@@ -1,10 +1,11 @@
 # Installation Guides
 
+<div class="containerBorder">
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
         <div class="containerCol">
             <a href="docker/">
-            <img class="containerImage" src="/img/docker-logo_(1).png" alt="Docker-logo"/>
+            <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
             </a> 
         </div> 
         <b><a href="docker/">Docker</a></b>
@@ -79,4 +80,5 @@
              </div> 
              <b><a href="restack/">Restack</a></b>
    </div>
+</div>
 </div>
