@@ -5,7 +5,7 @@ description: >-
   HTML/CSS.
 ---
 
-# Building Dynamic UI
+# Building dynamic UI
 
 This document presumes you understand the basics of [Displaying Data](../../data-access-and-binding/displaying-data-read/) & [Capturing Data](../../data-access-and-binding/capturing-data-write/) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
@@ -17,7 +17,7 @@ Every property of a widget can be described dynamically using JavaScript inside 
 
 ![](</img/convert_js.gif>)
 
-## Updating Widget Data
+## Updating widget data
 
 Let us take an example of a [table displaying ](../../../reference/widgets/table/#table-data)a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
 
@@ -47,8 +47,9 @@ Here Table1 is the name of the widget
 
 ![Click to expand](</img/form_-_table.gif>)
 
-## [Height](./../../../reference/widgets/README.md#height)
-The Height property describes how a widget’s height reacts to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. It has three possible configurations:
-- [Fixed](./../../../reference/widgets/README.md#fixed)
-- [Auto Height](./../../../reference/widgets/README.md#auto-height)
-- [Auto Height with limits](./../../../reference/widgets/README.md#auto-height-with-limits)
+## Setting widget height
+You can set the height of widget using the Height property. It configures how a widget’s height reacts to content changes in the app. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`([Learn more](/reference/widgets/#height) about Height property). It has three possible configurations:
+- [Fixed](/reference/widgets/#fixed)
+- [Auto Height](/reference/widgets/#auto-height)
+- [Auto Height with limits](/reference/widgets/#auto-height-with-limits)
+
