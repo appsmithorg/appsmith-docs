@@ -2,6 +2,14 @@
 
 Inline editing for a column can be enabled for the whole column, or you can use code to enable it for only particular cells. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
 
+Inline editing provides a quick way to edit data on the Table widget without navigating to the row details or moving away from the current screen.
+
+Use this feature for
+
+  - [Editing cells](#editing-cells)
+  - [Updating rows](#update-modes)
+  - [Adding new rows](#adding-new-rows)
+
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
 ## Properties
