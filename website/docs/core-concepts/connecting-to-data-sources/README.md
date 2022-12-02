@@ -1,5 +1,41 @@
 # Connecting to Datasource
 
+## **Outline**
+
+**Introduction** 
+
+**Prerequisites​**
+
+Before you begin, you'll need to create an account on Appsmith Cloud, or you can self-host Appsmith locally or on a hosting platform of your choice.
+
+**How to connect to a datasource**
+
+Explain how to connect to a datasource
+
+**APIs**
+* Information about APIs
+* List of supported APIs. 
+* Sample API​ (Explain how to use sample API)
+
+**Databases**
+* Information about databases
+* List of supported Database.
+* Sample DB​ (Explain how to use sample DB, both movies and users)
+
+**Security**
+
+**Internal database​(LocalDB)**
+
+Explain how to connect with a database running on the same machine, cross-link to self-hosting. 
+
+**Conclusion**
+
+**Cross-link to Datasource Errors**(Troubleshooting)
+
+-------
+
+## Main Draft
+
 Rich applications require real data to build intuitive UI, perform data transformations & write business-correct logic. Appsmith can talk to your data in the following ways
 
 * [Query your database directly](connecting-to-databases)
