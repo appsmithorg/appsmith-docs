@@ -8,7 +8,7 @@ The section illustrates common query errors and how to resolve them on Appsmith.
 ## Query/API response errors
 You may see below errors when working with [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) or [Query](/core-concepts/data-access-and-binding/querying-a-database/) responses.
 
-### `Execution failed with status 5009`
+### Execution failed with status 5009
 You could see the query/API execution fails and generates an error response. 
 
 > **[<QUERY_OR_API_NAME>] action returned an error response. Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched.**
@@ -37,7 +37,7 @@ APPSMITH_PLUGIN_MAX_RESPONSE_SIZE_MB=10
 If you can't find what you are looking for and need help debugging an error, please raise your issue on [Discord Server](https://discord.com/invite/rBTTVJp) or email at support@appsmith.com.
 :::
 
-### `MongoDB name cannot be null`
+### MongoDB name can not be null
 
 You may encounter this error when trying to run queries against a MongoDB datasource.
 
