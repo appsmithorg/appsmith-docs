@@ -97,7 +97,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Radius** | Allows you to define curved corners.                   |
 | **Box Shadow**    | Allows you to choose from the available shadow styles. |
 
-### What's next
+## What's next
 
 The following resources will come in handy as you need to learn new tricks:
 
@@ -105,6 +105,6 @@ The following resources will come in handy as you need to learn new tricks:
 * [Appsmith Framework](/reference/appsmith-framework/)
 * [JavaScript Editor](/core-concepts/writing-code/javascript-editor-beta/)
 
-### Troubleshooting
+## Troubleshooting
 
 If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to support@appsmith.com or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
