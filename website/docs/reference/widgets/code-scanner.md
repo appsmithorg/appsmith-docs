@@ -101,10 +101,10 @@ Style properties allow you to change the look and feel of the widget.
 
 The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](./../../core-concepts/connecting-to-data-sources/README.md)
-* [Appsmith Framework](./../appsmith-framework/README.md)
-* [JavaScript Editor](../../core-concepts/writing-code/javascript-editor-beta/)
+* [Core Concepts](/core-concepts/connecting-to-data-sources/)
+* [Appsmith Framework](/reference/appsmith-framework/)
+* [JavaScript Editor](/core-concepts/writing-code/javascript-editor-beta/)
 
 ### Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](./../../help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to support@appsmith.com or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to support@appsmith.com or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!

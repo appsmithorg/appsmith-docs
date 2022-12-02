@@ -5,7 +5,7 @@ sidebar_position: 14
 
 # How to Use Redshift as a Datasource on Appsmith
 
-The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](../../core-concepts/connecting-to-data-sources/README.md) of Appsmith, it is recommended to create an account and try implementing them.
+The guide presumes that you are familiar with the basic core concepts of [Appsmith](https://www.appsmith.com) and builds further on integrating Appsmith with other tools. In case you don't have much understanding of the [core concepts](/core-concepts/connecting-to-data-sources/) of Appsmith, it is recommended to create an account and try implementing them.
 
 ## Redshift
 
