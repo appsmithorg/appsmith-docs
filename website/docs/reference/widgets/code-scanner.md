@@ -12,7 +12,7 @@ QR/Barcodes have taken off because they offer a clear and fast return on investm
 * **Asset Management**- The most widely used system by businesses for tracking equipment, vehicles, and computers to support their everyday operations is the usage of barcodes. With the code scanner widget, you can keep track of equipment and the location of the assets and keep any pertinent maintenance and repair records.
 * **Logistics and Transportation industries**- Effective track and trace methods offer logistics teams the ability to locate, track, and identify objects in real-time, providing better business insight and quicker problem-solving. QR-based tracking eliminates paperwork, reduces errors, and increases productivity.
 
-### Supported QR/Barcode Formats
+### Supported QR/Barcode formats
 
 We support the following formats for QR and barcodes:
 
@@ -50,7 +50,7 @@ Value is a binding property that fetches the response from the scanned code. To 
 {{<your_widget>.value}}
 ```
 
-For example, let's take a Code Scanner widget (`CodeScanner1`) and bind its value to a text widget. Drag a text widget onto the canvas and add the following code:
+For example, lets take a Code Scanner widget (`CodeScanner1`) and bind its value to a text widget. Drag a text widget onto the canvas and add the following code:
 
 ```
 {{CodeScanner1.value}}
@@ -97,7 +97,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Radius** | Allows you to define curved corners.                   |
 | **Box Shadow**    | Allows you to choose from the available shadow styles. |
 
-### What's next?
+### What's next
 
 The following resources will come in handy as you need to learn new tricks:
 
