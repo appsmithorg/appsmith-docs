@@ -39,7 +39,7 @@ The **data** in the **mock database** gets **reset** every **24 hours** and is *
 ### Sample API
 
 You can import the below CURL commands to execute these [APIs](authentication/)
-ß
+
 #### Fetch Users
 
 ```bash
