@@ -270,13 +270,13 @@ Appsmith installation can be updated manually or by enabling auto update.
 
 The default Appsmith helm installation disables the auto update (_Recommended_). You have an option to enable auto update by either setting it in values file or using a command.
 
-* Values file: Set `autoupdate.enabled` to `true`.
+* Values file: Ensure that the parameters are configured to enable auto update. For more information, see [Auto update image](#auto-update-image). Once the set up is in place, run the below command.
 
     ```
      helm upgrade --values values.yaml appsmith appsmith/appsmith
     ```
 
-* Command: Pass the argument `--set autoupdate.enabled=true` to the `helm install/upgrade` command.
+* Command: You could choose to pass an argument `--set autoupdate.enabled=true` to the command.
 
     ```
       helm install appsmith/appsmith --generate-name \
