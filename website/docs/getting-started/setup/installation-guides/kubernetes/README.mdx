@@ -62,7 +62,7 @@ curl -L https://bit.ly/3ETEgPT -o $PWD/values.yml
 
 2. Add Appsmith into your repository using Helm.
 
-```
+```bash
 helm repo add appsmith https://helm.appsmith.com
 
 helm repo update
@@ -70,7 +70,7 @@ helm repo update
 
 2. Install the chart with the <mark>`appsmith`</mark> release.
 
-```
+```bash
 helm install appsmith/appsmith --generate-name
 ```
 
@@ -189,21 +189,23 @@ There are a number of parameters that you can configure while installing Appsmit
 ### Configure parameters
 You could choose to configure parameters using command line, or using `values.yaml` file.
 
-Specify each parameter using `--set key=value[,key=value]` argument to helm install. For example, the below command deploys the Appsmith application and configures the application to use the storage class name `appsmith-pv`. 
+Specify each parameter using `--set key=value[,key=value]` argument to helm install. For example, the below command deploys Appsmith and configures it to use the storage class name `appsmith-pv`. 
 
-```
+```bash
 helm install \
 --set persistence.storageClass=appsmith-pv \
   stable-appsmith/appsmith --generate-name
 ```
 
-Alternatively, give a `values.yaml` file that specifies the values for the parameters while installing the chart. For example:
+Similarly, run the below command if you wish to change the encryption salt configuration.
 
-```
-helm install -f values.yaml stable-appsmith/appsmith --generate-name
+```bash 
+helm install \
+--set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
+  stable-appsmith/appsmith --generate-name
 ```
 
-To change Appsmith configurations, you can update the `values.yaml` file (the available configurations are listed below).
+Alternatively, use a `values.yaml` file. You can specify the parameter values needed for installing the chart. To change configurations specific to Appsmith update the `values.yaml` file. Listed below are available configurations.
 
 | Name                                                     | Value |
 | -------------------------------------------------------- | ----- |
@@ -232,28 +234,26 @@ To change Appsmith configurations, you can update the `values.yaml` file (the av
 | `applicationConfig.APPSMITH_ENCRYPTION_SALT`             | `""`  |
 | [`applicationConfig.APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/instance-configuration/custom-domain/#dockerk8s)               | `""`  |
 
-For example, to change the encryption salt configuration, you can run the following command:
+Once you have made changes to the values file, run the below command.
 
-``` 
-helm install \
---set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
-  stable-appsmith/appsmith --generate-name
+```bash
+helm install -f values.yaml stable-appsmith/appsmith --generate-name
 ```
 
 ## Publish
 
 You need an Ingress controller set up to publish your Appsmith installation to Internet. For more information about Ingress controller, see [Configure Kubernetes Cluster](#configure-kubernetes-cluster)
 
-In case you haven't installed the Helm chart yet, you can run the below command to install it along with publishing Appsmith:
+In case you haven't installed the Helm chart yet, you can run the below command to install helm chart, enable ingress controller along with publishing Appsmith.
 
-    ```
-    helm install appsmith/appsmith --generate-name \
-      --set ingress.enabled=true \
-      --set ingress.annotations."kubernetes\.io/ingress\.class"=nginx \
-      --set service.type=ClusterIP
-    ```
+```bash 
+helm install appsmith/appsmith --generate-name \
+  --set ingress.enabled=true \
+  --set ingress.annotations."kubernetes\.io/ingress\.class"=nginx \
+  --set service.type=ClusterIP
+```
 
-If you have installed Appsmith Helm chart, run the `helm upgrade` command to upgrade the existing installation
+If you have installed Appsmith Helm chart, run the `helm upgrade` command to upgrade the existing installation.
 
     ```
     helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
@@ -264,7 +264,7 @@ If you have installed Appsmith Helm chart, run the `helm upgrade` command to upg
 
 ## Updating Appsmith
 
-Appsmith installation can be updated be manually or by enabling auto update.
+Appsmith installation can be updated manually or by enabling auto update.
 
 ### Auto update
 
