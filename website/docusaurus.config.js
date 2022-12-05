@@ -84,7 +84,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://www.appsmith.com/blog-categories/tutorial',
+            href: 'https://www.appsmith.com/blog?cat=Tutorial',
             label: 'Tutorials',
             position: 'right',
           },

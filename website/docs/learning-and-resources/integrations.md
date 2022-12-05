@@ -160,7 +160,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
             <img class="containerImage" src="/img/xano-logo_nnco8rx_b.png" alt="Xano-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Xano</strong> is the fastest no-code backend development platform.<br/><br/></div>
-         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/adding-social-authentication-for-your-internal-applications-without-writing-any-code"><strong>View Tutorial</strong></a> </div>
+         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/adding-social-authentication"><strong>View Tutorial</strong></a> </div>
     </div>
 </div>
 
