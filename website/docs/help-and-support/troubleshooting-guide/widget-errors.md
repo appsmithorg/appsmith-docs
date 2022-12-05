@@ -2,58 +2,41 @@
 
 This section helps you troubleshoot common widget errors on the Appsmith platform.
 
-## Execution errors
-You may see below errors when executing an [API](/core-concepts/connecting-to-data-sources/authentication/),[Query](/core-concepts/data-access-and-binding/querying-a-database/),[JS object](/core-concepts/writing-code/javascript-editor-beta/).
+## Binding errors
+You may see below errors when binding data to widgets from an [API](/core-concepts/connecting-to-data-sources/authentication/), [Query](/core-concepts/data-access-and-binding/querying-a-database/), [JS object](/core-concepts/writing-code/javascript-editor-beta/).
 
-### Sync field errors
+### Sync field error
 
-You may see this error when executing an API, Query, JS Object from a widget property that expects data, and can't be used to trigger an action. 
+You may see this error when executing an API, Query, JS Object in a widget property that expects data, and can't be used to trigger an action. 
 
 #### Error message
-When you try to run async functions in sync fields, there are errors thrown for:
 
-**API, Query**
-
-<Message caption="Error!" 
+<Message
 messageContainerClassName="error" 
-captionClassName="errorHeading" 
-messageContentClassName="errorText" 
 messageContent="Found a reference to {{action}} during evaluation. Sync fields cannot execute async framework actions. Please remove any direct/indirect references to {{action}} and try again."></Message>
 
-**To-Do to add screenshot**
+<p align="center">Or </p>
 
-**JS Object**
 
-<Message caption="Error!" 
+<Message
 messageContainerClassName="error" 
-captionClassName="errorHeading" 
-messageContentClassName="errorText" 
 messageContent="Found a Promise() during evaluation. Sync fields cannot execute asynchronous code."></Message>
 
-**To-Do to add screenshot**
 
 #### Cause
 Action refers to the execution of an API, Query, or JS object. You can only perform an action by binding it to an [async](/core-concepts/writing-code/workflows#async-fields) field. When you bind an action to a [sync](/core-concepts/writing-code/workflows#sync-fields) field that only expects data, it throws an error.
 
-For example, you are executing a `storeValue()` function in a `TableData` property of a table. The `TableData` property expects data and can't execute a function, so it throws an error.
+Example: if you are executing a `storeValue()` function in a `TableData` property of a table. The `TableData` property expects data and can't execute a function, and results in an error.
 
-<Message caption="Error" 
-messageContainerClassName="error" 
-captionClassName="errorHeading" 
-messageContentClassName="errorText" 
-messageContent="Found a reference to `storeValue` during evaluation. Sync fields cannot execute async framework actions. Please remove any direct/indirect references to `storeValue` and try again."></Message>
+**To-Do to add screenshot**
 
-Similarly, if you try to execute a JS Object function `<JSOBJECT_NAME.FUNCTION_NAME>` in the `TableData` property, it again throws an error:
+Similarly, if you try to execute a JS Object function `<JSOBJECT_NAME.FUNCTION_NAME>` in the `TableData` property, it throws an error as shown below.
 
-<Message caption="Error!" 
-messageContainerClassName="error" 
-captionClassName="errorHeading" 
-messageContentClassName="errorText" 
-messageContent="Found a Promise() during evaluation. Sync fields cannot execute asynchronous code."></Message>
+**To-Do to add screenshot**
 
 
 #### Solution
-You would have to invoke the [`.data` property of an API, Query, JS object](/core-concepts/writing-code/workflows#use-case).
+Invoke the [data property](/core-concepts/writing-code/workflows#use-an-async-function-response-in-a-sync-field) of an API, Query or JS object.
 
 For example, you have a JS Object `getLoggedInUserInfo`, which has a function ```getFullNameOfLoggedInUser```. The function returns the full name of the logged-in user. You wish to add the full name and create a welcome text, `Welcome! <LOGGED_IN_USER_NAME>`. Bind the response of ```getFullNameOfLoggedInUser``` function to a text widget by calling the `.data` property. To bind the response, add the below code snippet in a mustache (`{{}}`) sign.
 
@@ -61,21 +44,19 @@ For example, you have a JS Object `getLoggedInUserInfo`, which has a function ``
  getLoggedInUserInfo.getFullNameOfLoggedInUser.data
 ```
 
-Read more about invoking a [`.data` property for API, Query, JS Object](/core-concepts/writing-code/workflows#use-an-async-function-response-in-a-sync-field) to create complex workflows. 
-
 ## JSON form errors
 
 You may see the below errors when working with a [JSON Form ](../../reference/widgets/json-form)widget.
 
 ### Source data exceeds 50 fields
 
-You see an error message **Source data exceeds 50 fields. Please update the source data** when you try to bind the query/API response to the [source data ](../../reference/widgets/json-form#source-data)property.
+You may see an error message when you try to bind a large query/API response to the [source data ](../../reference/widgets/json-form#source-data)property of the JSON Form widget.
 
 #### Error message
 
-Source data exceeds 50 fields. Please update the source data.
-
-![When the data had more than 50 fields](</img/Troubleshooting__Widget_Errors__JSON_Form_Errors__Source_Exceeds_50_Fields.png>)
+<Message
+messageContainerClassName="error" 
+messageContent="Source data exceeds 50 fields. Please update the source data."></Message>
 
 #### Cause
 
@@ -84,6 +65,9 @@ The problem can be caused when you are trying to bind:
 * A large array of multiple JSON objects
 * A huge JSON object which has a lot of fields
 * The whole query data rather than a selected row or triggered row in a table
+
+![When the data had more than 50 fields](</img/Troubleshooting__Widget_Errors__JSON_Form_Errors__Source_Exceeds_50_Fields.png>)
+
 
 #### Solution
 

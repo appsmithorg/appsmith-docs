@@ -310,25 +310,18 @@ width: auto;
     margin-left: 20px !important;
 }
 
-.error {
-  background-color: hsl(0, 80%, 94%);
-  border: 2px solid rgb(226, 128, 35);
-  border-radius: 8px;
-  float: left;
-  padding: 10px;
-  margin-bottom: 0.5em;
-  width: 100%;
-}
-
-.errorHeading {
-  color: #D8000C;
-  background-color: #FFBABA;
-  padding-bottom: 2px;
-  margin-bottom: 1em;
-}
-
-.errorText {
-  color: #cc0033;
-  line-height: 20px;
-  text-shadow: 1px 1px rgba(250,250,250,.3);
+.error{
+    line-height: normal;
+    max-width: 100%;
+    background: #fff;
+    border: solid 1px #e1e4e5;
+    font-size: 80%;
+    padding: 5px;
+    margin: 10px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace;
+    color: #E74C3C;
+    overflow-x: auto;
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 400;
 }
