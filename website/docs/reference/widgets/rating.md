@@ -25,6 +25,7 @@ These properties allow you to edit the Rating widget. All these properties are p
 | **Disabled**         | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
 | **Read Only**        | Disallows user input, but the stars retain their normal styling and the star's **Tooltips** remain visible when the user hovers with the mouse cursor. When the **Disabled** setting is on, the **Read Only** mode is ignored. |
 | **Animate Loading**  | Allows you to control a widget’s animation on the page load.                                                                     |
+| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 ### Binding Properties
 

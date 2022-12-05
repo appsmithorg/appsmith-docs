@@ -27,7 +27,7 @@ It is advisable that you give a meaningful name to your Authenticated API dataso
 
 ### URL
 
-Use this field to add the API URL you would like to access. For example, I would like to access the mock API of Appsmith, and for that, I’ll supply the URL as  [`https://mock-api.appsmith.com`](https://mock-api.appsmith.com)``
+Use this field to add the API URL you would like to access. For example, I would like to access the mock API of Appsmith, and for that, I’ll supply the URL as `https://mock-api.appsmith.com`
 
 ### Headers
 

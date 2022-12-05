@@ -10,7 +10,7 @@ Before connecting to a data source, you must whitelist the IP address of the App
 
 **18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 
-This is a guide on how to [whitelist appsmith on AWS.](learning-and-resources/how-to-guides/aws-whitelist)
+This is a guide on how to [whitelist appsmith on AWS.](/learning-and-resources/how-to-guides/aws-whitelist)
 :::
 
 ## Security
