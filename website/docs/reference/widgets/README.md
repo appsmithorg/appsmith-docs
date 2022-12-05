@@ -6,16 +6,16 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 
 ![](</img/spaces\_sRqv8vEmanRWzCklPZou\_uploads\_kpwSwyVV6AnRPtthUHmq\_drop_widget.gif>)
 
-## Add to Canvas
+## Add to canvas
 
-In the left navigation pane, navigate to PAGES —> Select the "Widget" Tab —> Choose your desired widget, and drag it onto the canvas. You can move it anywhere on the canvas by simply dragging it around.
+In the left navigation pane, navigate to PAGES—> Select the "Widget" Tab—> Choose your desired widget, and drag it onto the canvas. You can move it anywhere on the canvas by simply dragging it around.
 
-### Naming a Widget
+### Naming a widget
 
-A widget must have a unique name that acts as an identifier on the page. It is used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
+A widget must have a unique name that acts as an identifier on the page. It's used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
 
 :::info
-Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) are not valid as widget names.
+Note that [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) aren't valid as widget names.
 :::
 
 You can access the various properties of the widget using the widget's name.
@@ -24,30 +24,73 @@ You can access the various properties of the widget using the widget's name.
 {{ Table1.selectedRow.id }}
 ```
 
-### Grouping Widgets
+### Grouping widgets
 
-Appsmith supports the grouping of widgets. When you group widgets, they are put in a container and can be moved together. To do this -
+Appsmith supports the grouping of widgets. When you group widgets, they're put in a container and can be moved together. To do this -
 
 * Select multiple widgets with Ctrl + Left Click
-* Now click on the dotted square icon or press Ctrl + G
+* Now click in the dotted square icon or press Ctrl + G
 
 ![](/img/groupingwidget.gif)
 
-### Common Properties
+### Common properties
 
 The following properties are common across many of Appsmith's widgets. You can find them by selecting your widget and checking its properties pane, and you can use them to customize the details and behavior of your app.
 
 | Property            | Description                                                                                                                                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [**Height**](#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**[Fixed](#fixed)**: The height of the widget remains as set using drag and resize.<br/>**[Auto Height](#auto-height)**: The height of the widget reacts to content changes.<br/>  **[Auto Height with limits](#auto-height-with-limits)**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| **[Disabled](#disabled)**        | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                         |
+| **[Error Message](#error-message)**   | Sets the text of the error message to display if user input is considered invalid.                                                                                                               |
+| **[Tooltip](#tooltip)**         | Sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                                    |
+| **[Regex](#regex)**           | Used to add custom regular expression validation to perform on user input. When the input doesn't match the regular expression, the input is considered invalid.                                 |
+| **[Placeholder](#placeholder)**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                 |
+| **[Required](#required)**        | Sets whether the input field is a mandatory field. When the input widget is within a Form widget, that Form's submit button is automatically turned off until a user adds input to the field.    |
+| **[Valid](#valid)**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. |
+| **[Visible](#visible)**         | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                      |
 | **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off.                                                                                 |
-| **Disabled**        | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                         |
-| **Error Message**   | Sets the text of the error message to display if user input is considered invalid.                                                                                                               |
-| **Tooltip**         | Sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                                    |
-| **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                 |
-| **Regex**           | Used to add custom regular expression validation to perform on user input. When the input doesn't match the regular expression, the input is considered invalid.                                 |
-| **Required**        | Sets whether the input field is a mandatory field. When the input widget is within a Form widget, that Form's submit button is automatically turned off until a user adds input to the field.    |
-| **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. |
-| **Visible**         | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                      |
+
+Lets understand these properties in detail.
+
+#### Height
+The Height property configures how a widget’s height reacts to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. It has three possible configurations:
+- Fixed
+- Auto Height
+- Auto Height with limits
+
+##### Fixed
+
+When you choose the Height as fixed, The height of the widget remains as set during drag and resize. The widget doesn't change or adapt to any content changes,i.e, you have to adjust the height manually.
+
+<VideoEmbed host="youtube" videoId="265AWQkqZAM" title="Fixed Height" caption="Fixed Height"/>
+
+
+##### Auto height
+
+Auto height is a capability in widgets to change height in response to content changes. While using Auto Height, there is no limit to how much a widget can grow in height. However, the minimum height possible for any widget is 4 rows. 
+
+<VideoEmbed host="youtube" videoId="JF9zeUDKnl0" title="Auto height In Action" caption="Auto height In Action"/>
+
+When a widget changes height, the layout adjusts to maintain the distance between the widget undergoing a height change and the sibling widgets below this widget occupying one or more of the same columns.
+
+<VideoEmbed host="youtube" videoId="xjQqHrswZLM" title="Layout changes based on auto height" caption="Layout changes based on Auto Height"/>
+
+Widgets which have auto height enabled, and are invisible in view and preview mode, let go of their occupied space, allowing widgets below to move up and occupy the now free space.
+
+<VideoEmbed host="youtube" videoId="JdkAGFpxvxY" title="Layout changes due to invisible widgets" caption="Layout changes due to invisible widgets"/>
+
+##### Auto height with limits
+
+Appsmith provides an option to set the limits to which a widget can grow or shrink in height. This can be configured to be enabled by selecting `Auto height with limits` from the `Height` property in the `General` section of the property pane. Once enabled, select the widget, to find two handles which also work as the values for the minimum and maximum height a widget can occupy on the canvas. These handles can be dragged to configure the minimum and maximum height limits for the widget.
+
+<VideoEmbed host="youtube" videoId="yADpUJ3Y8v8" title="Auto Height with limits" caption="Auto Height with limits"/>
+
+:::note
+
+- Container and Form widgets have a minimum height of 10 rows by default, which can be changed by choosing auto height with limits.
+- The minimum height possible for any widget is 4 rows.
+
+:::
 
 #### Disabled
 
@@ -63,7 +106,7 @@ When you tick the checkbox, it enables the Disabled property and prevents intera
 
 <VideoEmbed host="youtube" videoId="JEARavnq0vQ" title="Disable" caption="Disable"/>
 
-#### Error Message
+#### Error message
 
 If a user enters an incorrect value, the input widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
