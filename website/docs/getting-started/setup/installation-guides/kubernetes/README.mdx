@@ -10,12 +10,12 @@ import TabItem from '@theme/TabItem';
 [Kubernetes[K8s]](https://kubernetes.io/docs/concepts/overview/) is an open source platform for managing, scaling, and automating the deployment of [containerized applications](https://en.wikipedia.org/wiki/Containerization). It's one of the most popular container orchestration tools. The guide helps you to install [Appsmith](https://github.com/appsmithorg/appsmith) on a [Kubernetes](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/kubernetes.io) cluster using [Helm](https://helm.sh) package manager.
 
 ## Prerequisites
-Follow the guides below to set up Helm and `kubectl`.
-1. [Helm](https://helm.sh/docs/intro/install/)
-2. [kubectl](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/). 
+Before installing Appsmith, a few prerequisites need to be installed and configured.
+1. Install the [Helm Package Manager](https://helm.sh/docs/intro/install/)- Helm is a package manager for Kubernetes. It allows you to install and manage applications on Kubernetes. To install Helm, follow the instructions for your platform from the official [Helm documentation](https://helm.sh/docs/intro/install/).
+2. Install [`kubectl`](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/) - `kubectl` is the command-line interface for Kubernetes. It allows you to run commands against Kubernetes clusters to manage applications and other resources. To install kubectl, follow the instructions for your platform from the official [Kubernetes documentation](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/).
 
 ### Configure Kubernetes cluster
-Follow one of the below guidelines to set up a Kubernetes cluster.
+Once the prerequisites are installed, configure the Kubernetes cluster by following one of the available guidelines below.
 
 <Tabs groupId="configurations">
   <TabItem label="Minikube" value="Minikube">
@@ -50,9 +50,11 @@ Follow one of the below guidelines to set up a Kubernetes cluster.
 </TabItem>
 </Tabs>
 
-## Install
+## Install Appsmith
 
-1. Click to download the [`values.yaml`](https://bit.ly/3ETEgPT) file, and place it into the Appsmith installation folder.
+You've installed and configured the Kubernetes cluster. Now, you can install Appsmith using Helm.
+
+1. Download the [`values.yaml`](https://bit.ly/3ETEgPT) file, and place it into the Appsmith installation folder.
 
 OR, run the following cURL:
 
@@ -60,28 +62,46 @@ OR, run the following cURL:
 curl -L https://bit.ly/3ETEgPT -o $PWD/values.yml
 ```
 
-2. Add Appsmith into your repository using Helm.
+2. Add Appsmith into your repository using Helm. First, add the Appsmith Helm repository to your local Helm installation. It allows Helm to download the Appsmith chart from the Appsmith GitHub repository.
+
 
 ```bash
 helm repo add appsmith https://helm.appsmith.com
-
-helm repo update
 ```
-
-2. Install the chart with the <mark>`appsmith`</mark> release.
+3. Update the Helm repository to make sure you have the latest version of the Appsmith chart by running the following command:
 
 ```bash
-helm install appsmith/appsmith --generate-name
+helm repo update
+```
+4. Install Appsmith on your Kubernetes cluster using the Helm chart. Replace `<your-namespace>` with the namespace you want to install Appsmith in, and `<release-name>` with a unique name for the Appsmith release:
+
+```bash
+helm install <release-name> appsmith/appsmith --namespace <your-namespace>
 ```
 
-The command deploys Appsmith on the Kubernetes cluster with the default configuration. Read more on [configurations](#configuration) that you could do during installation.
+It creates all the necessary Kubernetes objects to run Appsmith on your clusters, such as pods, services, and ingresses with the default configuration. Read more on configurations you can do in the [Configure Appsmith](#configure-appsmith) section.
+
+5. Wait for Appsmith to be ready by running the following command:
+
+```bash
+kubectl -n <your-namespace> rollout status deployment <release-name>-appsmith
+```
+When the deployment is ready, you should see a message that says deployment "appsmith" successfully rolled out.
+
+6. Access Appsmith by visiting the URL that was output by the Helm installation command. You can also use the `kubectl` command to get the URL. The URL has a `hostname` and `port` of the Appsmith ingress to access Appsmith using a web browser.
 
 
-## Configuration
-You should be able to use Appsmith with the default configuration. If you wish, you could also configure the installation.
+```bash 
+kubectl -n <your-namespace> get ingress <release-name>-appsmith
+```
+
+Congratulations, you have successfully installed Appsmith on your Kubernetes cluster using Helm. For more detailed instructions and options for configuring the Appsmith Helm chart, see the Configure Appsmith section below.
+
+## Configure Appsmith
+You should be able to use Appsmith with the default configuration. If you wish, you could also configure the installation to fit your specific needs. You could choose to configure parameters using command line, or using `values.yaml` file. Below is the exhaustive list of available parameters that can be used to customize the installation.
 
 ### Parameters
-There are a number of parameters that you can configure while installing Appsmith.
+Appsmith can be configured using Helm parameters, or parameters specific to Appsmith. The below table details the different Helm and Appsmith specific parameters that you can configure.
 
 #### Global
 
@@ -186,10 +206,7 @@ There are a number of parameters that you can configure while installing Appsmit
 | `autoupdate.enabled`   | Enable auto update Helm chart's image         | `true`        |
 | `autoupdate.scheduler` | Schedule time to run cron job to update image | `"0 * * * *"` |
 
-### Configure parameters
-You could choose to configure parameters using command line, or using `values.yaml` file.
-
-Specify each parameter using `--set key=value[,key=value]` argument to helm install. For example, the below command deploys Appsmith and configures it to use the storage class name `appsmith-pv`. 
+When using command, specify each parameter using `--set key=value[,key=value]` argument to helm install. For example, the below command deploys Appsmith and configures it to use the storage class name `appsmith-pv`. 
 
 ```bash
 helm install \
@@ -205,7 +222,7 @@ helm install \
   stable-appsmith/appsmith --generate-name
 ```
 
-Alternatively, use a `values.yaml` file. You can specify the parameter values needed for installing the chart. To change configurations specific to Appsmith update the `values.yaml` file. Listed below are available configurations.
+Alternatively, use a `values.yaml` file. You can specify the parameter values needed for installing the chart. To change configurations specific to Appsmith update the `values.yaml` file. Listed below are available configurations for Appsmith.
 
 | Name                                                     | Value |
 | -------------------------------------------------------- | ----- |
@@ -240,11 +257,11 @@ Once you have made changes to the values file, run the below command.
 helm install -f values.yaml stable-appsmith/appsmith --generate-name
 ```
 
-## Publish
+## Publish Appsmith
 
 You need an Ingress controller set up to publish your Appsmith installation to Internet. For more information about Ingress controller, see [Configure Kubernetes Cluster](#configure-kubernetes-cluster)
 
-In case you haven't installed the Helm chart yet, you can run the below command to install helm chart, enable ingress controller along with publishing Appsmith.
+In case you haven't installed the Helm chart yet, you can run the below command to install helm chart, enable ingress controller, and publish Appsmith.
 
 ```bash 
 helm install appsmith/appsmith --generate-name \
@@ -294,19 +311,7 @@ To manually update the Appsmith container image to the latest release, run the c
 kubectl rollout restart statefulset appsmith
 ```
 
-## Uninstall
-You can uninstall the <mark>`appsmith`</mark> release. The command uninstalls the release and removes Kubernetes resources associated with the chart.
-
-```bash
-helm list
-NAME                       NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-#highlight-next-line
-appsmith-1631069261        default         1               2021-09-09 11:24:40.152766 +0700 +07    deployed        appsmith-1.3.0  1.16.0
-
-helm uninstall appsmith-1631069261
-```
-
-## Enable Ingress data compression
+## Enable data compression for Ingress controller
 
 The default installation doesn't have data compression configured for Nginx ingress controller. Follow the below steps to enable it.
 
@@ -325,6 +330,18 @@ data: # ADD IF NOT PRESENT
 ```
 
 The Nginx controller automatically updates once you save (`:wq!`) the changes.
+
+## Uninstall Appsmith
+You can uninstall the <mark>`appsmith`</mark> release. The command uninstalls the release and removes Kubernetes resources associated with the chart.
+
+```bash
+helm list
+NAME                       NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+#highlight-next-line
+appsmith-1631069261        default         1               2021-09-09 11:24:40.152766 +0700 +07    deployed        appsmith-1.3.0  1.16.0
+
+helm uninstall appsmith-1631069261
+```
 
 ## Troubleshooting
 If you’re having issues with the deployment, please see the [debugging deployment errors] troubleshooting guide(/help-and-support/troubleshooting-guide/deployment-errors.md). If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
