@@ -15,8 +15,8 @@ These properties allow you to edit the video widget. All these properties are pr
 | Property            | Description                                                                                                          |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **URL**             | Renders the video from the URL.                                                                                      |
-| **AutoPlay**        | Plays video automatically, without action from a user.                                                               |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published. |
+| **Autoplay**        | Plays video automatically, without action from a user.                                                               |
+| **Visible**         | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published. |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                         |
 
 ### Binding Properties
@@ -25,12 +25,12 @@ These properties help you share values between widgets and also allow you to eas
 
 | Property      | Description                                                              | Code Snippet          |
 | ------------- | ------------------------------------------------------------------------ | --------------------- |
-| **autoPlay**  | This parameter indicates whether or not the autoplay feature is enabled. | `{{Video.autoPlay}}`  |
-| **playState** | This field shows whether or not a video is currently playing.            | `{{Video.playState}}` |
+| **autoPlay**  | This parameter indicates whether the auto play feature is enabled. | `{{Video.autoPlay}}`  |
+| **playState** | This field shows whether a video is currently playing.            | `{{Video.playState}}` |
 
 ### Events
 
-They are a set of actions that you can perform on the widget. The following table lists the actions:
+They're a set of actions that you can perform on the widget. The following table lists the actions:
 
 | Events      | Description                                                                                                                |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------- |

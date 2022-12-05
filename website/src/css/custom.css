@@ -244,7 +244,6 @@ width: auto;
  .navbar__item > .iconExternalLink_nPIU {
   display: none;
  }
-
  .tabs{
   color: #47525d;
   display: flex;
@@ -310,6 +309,7 @@ width: auto;
     margin-left: 20px !important;
 }
 
+
 .error{
     line-height: normal;
     max-width: 100%;
@@ -325,3 +325,9 @@ width: auto;
     font-style: normal;
     font-weight: 400;
 }
+ .containerBorder {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  display: block;
+  margin: 1rem auto;
+ }
