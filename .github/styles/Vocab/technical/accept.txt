@@ -24,6 +24,7 @@ JSObject
 JSON
 localStorage
 newRow
+onClick
 onDiscard
 onSave
 onSubmit
@@ -37,10 +38,13 @@ Postgresql
 Protocol
 Protocol
 queryParams
+srcDoc
 storeValue
 updatedRow
 updatedRows
 newRow
+targetIframe
+targetOrigin
 Tooltip
 tooltip
 widget's
@@ -48,6 +52,8 @@ Ctrl
 CTRL
 Disabled's
 Visible's
+iframe
+Iframe
 isVisible
 isDisabled
 isValid
