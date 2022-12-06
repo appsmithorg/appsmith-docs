@@ -19,6 +19,15 @@ hostName
 hostName
 img
 isDisabled
+APIs
+PostgreSQL
+PostgreSQL
+Datasources
+Datasource
+datasource
+admin
+APIs
+datasources
 isVisible
 JSObject
 JSON
