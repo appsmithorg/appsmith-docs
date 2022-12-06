@@ -504,6 +504,7 @@ const sidebars = {
         }, 
          'learning-and-resources/sample-apps',
          'learning-and-resources/integrations',
+         'learning-and-resources/Glossary',
         {
           type: 'link',
           label: 'Templates', // The link label
