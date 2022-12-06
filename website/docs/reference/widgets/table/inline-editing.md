@@ -1,16 +1,16 @@
 # Inline Editing
 
-Inline editing for a column can be enabled for the whole column, or you can use code to enable it for only particular cells. You may also allow users to [update existing rows](#row-level-mode) of data, or [add new rows](#adding-new-rows) entirely.
-
 Inline editing provides a quick way to edit data on the Table widget without navigating to the row details or moving away from the current screen.
 
 Use this feature for
 
   - [Editing cells](#editing-cells)
-  - [Updating rows](#update-modes)
+  - [Updating rows](#updating-rows)
   - [Adding new rows](#adding-new-rows)
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
+
+To try this feature yourself, take a look at the sample app for [inline editing](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc).
 
 ## Properties
 
@@ -19,9 +19,6 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | Property                                           | Type        | Definition                                                                                                                                                                                                                                                               | Code Snippet                   |
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
 | [**Editable**](#editable)                 | Formatting  | Controls whether cells of the column are editable                                                             | NA                             |
-| [**Update Mode**](#update-mode)              | Formatting  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
-| [**Allow adding a row**](#allow-adding-a-row) | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
-| [**Default Values**](#default-values) | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | [**Cell Wrapping**](#cell-wrapping)            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis. | NA |
 | [**Min**](#min)                      | Validation  | Sets the minimum allowed value.                                                                               | NA                             |
 | [**Max**](#max)                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
@@ -29,6 +26,9 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | [**Valid**](#valid)                    | Validation  | Enter a JS expression that evaluates whether the user's input is valid.                                                                | NA                             |
 | [**Error Message**](#error-message)            | Validation  | The error message displays if the input fails the **Regex** or **Valid** properties' checks.                                        | NA                             |
 | [**Required**](#required)                 | Validation  | Makes input to the widget mandatory.                                                                          | NA                             |
+| [**Update Mode**](#update-mode)              | Formatting  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
+| [**Allow adding a row**](#allow-adding-a-row) | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| [**Default Values**](#default-values) | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | [**updatedRows**](#updatedrows)              | Binding     | Contains all the data of the edited table rows.                                                    | `{{Table1.updatedRows}}`       |
 | [**updatedRowIndices**](#updatedrowindices)        | Binding     | Contains an array of indices of the table rows that have been edited.                                                        | `{{Table1.updatedRowIndices}}` |
 | [**updatedRow**](#updatedrow)               | Binding     | Contains the all the data of the row that was recently updated. | `{{Table1.updatedRow}}`|
@@ -46,84 +46,53 @@ These properties can be used run code any time one of the events occurs. Be sure
 | **onSave**    | Triggered when the user clicks the save button for a new or existing row.                                                |
 | **onDiscard** | Triggered when the user clicks the discard button for a new or existing row.                                             |
 
-To try this feature yourself, take a look at the sample app for [editable table rows](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc).
-
 ---
 
 ## Editing cells
 
 This feature allows users to make changes directly within the table widget, without the need for a separate form or page. Enable editing by toggling columns' **Editable** property, and then handle updates by configuring the table's event handlers to execute API/database queries.
 
-The column list on the Table property pane has a checkbox to make that column editable.
+#### Editable
 
-Click the checkbox inside a column card makes all the cells in that column editable. The editable checkbox at the top of the list can be checked to make all the editable columns editable.
+Tick a table column's checkbox in the properties pane to make all the cells in that column editable. The editable checkbox at the top of the list can also be checked to make _all_ the supported columns editable.
 
-<!-- ![](</img/Editable_preoperty.png>) -->
 <img src="/img/Editable_preoperty.png" alt="Editable checkboxes" width="267"/>
 
-Alternatively, A column can be editable by turning on `Editable` property inside the column's settings.
+<VideoEmbed host="youtube" videoId="BW5cVp0GfLE" title="Making column editable" caption="Making columns editable"/>
 
-You can also use JS to control the `Editable` property. This is useful for making only a subset of the cells editable:
-
-<!-- ![](</img/Using_JS_in_Editable.png>) -->
-<img src="/img/Using_JS_in_Editable.png" alt="JS in Editable property" width="275"/>
-
-- You might only want cells containing a particular value to be editable:
+You can also use JS to control the `Editable` property in the column's settings. This is useful for making only a subset of the cells editable. For example, if you only want cells containing a particular value to be editable:
 
   ```javascript
     // only "pending" cells can be updated
     {{ currentRow.status === "pending" }}
   ```
 
-- Or a cell can be editable only if the sum of other cells meet a threshold:
-  
-  ```javascript
-    // the cell is editable if account1 + account2 is greater than 1500
-    {{ currentRow.account1 + currentRow.account2 > 1500 }}
-  ```
+<img src="/img/Using_JS_in_Editable.png" alt="JS in Editable property" width="275"/>
 
-- Or you could let only even-numbered rows of the table be editable:
-
-  ```javascript
-    // only rows with an even index are editable
-    {{currentIndex % 2 === 0? true:false }}
-  ```
-
-Once a column has been made editable, a pencil icon appears on the column header as an indicator.
-
-<!-- ![](</img/Edit_icon_on_column_header.png>) -->
-<img src="/img/Edit_icon_on_column_header.png" alt="edit icon on the column headers" width="300"/>
-
-Currently, **four column types** support inline editing: these  are **Text, Number, Switch, and Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
+Currently, **four column types** support inline editing: these  are **Text**, **Number**, **Switch**, and **Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
+
+:::info
+You can implement user input validation to ensure that only certain values are entered in a cell. The validation features require the column to be editable, and the validation options can be found in a **text** or **numeric** column's settings.
+:::
 
 Once the user is finished editing a cell, they can perform either of the following actions to close editing:
 
 1. Pressing the **Enter** key or **clicking outside the cell** keeps the new value and closes the input box.
 2. Pressing the **Escape** key discards the new value and closes the input box.
 
-Read further to see how to [save the changes](#saving-changes) you've made.
-
-### Related properties
-
-#### Editable
-
-Controls whether cells of the column are editable. To make the column editable, click the checkbox inside a column card that makes all the cells in that column editable.
-
-Alternatively, a column can be made editable by turning on the `Editable` switch inside that column's settings.
-
-<VideoEmbed host="youtube" videoId="BW5cVp0GfLE" title="Making column editable" caption="Making column editable"/>
-
-:::info
-You can implement user input validation to ensure that only certain values are entered in a cell. The validation features require the column to be editable, and the validation options can be found in a **text** or **numeric** column's settings.
-:::
+Read further to see how to [save the changes](#updating-rows) you've made.
 
 #### Cell wrapping
 
+<VideoEmbed host="youtube" videoId="bNMV_WhTUU4" title="Table | Inline Editing | Cell Wrapping" caption="Wrapping text within cells"/>
+
 Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.
 
-#### Valid
+#### Validation properties
+
+##### Valid
 
 The **Valid** property is an expression that determines whether the cell input is acceptable. When this expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. The following variables are available for binding:
 
@@ -141,14 +110,14 @@ If a value other than "John" is added to the cell, an error is displayed. Simila
 
 <VideoEmbed host="youtube" videoId="c4Ylp9QUAc0" title="Valid" caption="Valid"/>
 
-#### Error message
+##### Error message
 
 The error message appears if the regular expression (**Regex**) and/or the **Valid** property determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
 <!-- ![](/img/table_err_msg.PNG) -->
 <img src="/img/table_err_msg.png" alt="Error message when input is invalid" width="524"/>
 
-#### Regex
+##### Regex
 
 [Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) (regex) are patterns that describe valid user input. For example, the pattern `[a-zA-Z]` describes a string that contains only letters of the English alphabet. Using regular expressions in the **Regex** property of columns, you can set specific constraints on the input you expect from the user.
 
@@ -165,35 +134,37 @@ For example, add a regular expression for entering a name. The name can contain 
 
 If you enter a value that contains something other than alphabetical or space characters, the widget shows an error message "Invalid input."
 
-#### Required
+##### Required
 
 Makes input to the widget mandatory. Sets whether a non-empty value must be entered for the editable cell input.
 
-#### Min
+##### Min
 
-Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want values greater than 2. Any number entered that's less than 2 is considered invalid.
+Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want values greater than 2. Any number entered that's less than 2 is considered invalid. Only available for columns that are type **numeric**.
 
-:::info
-**Min** and **Max** properties are available for **numeric**  column types.
-:::
+##### Max
 
-#### Max
-
-Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want values less than 100. Any number entered that's more than 100 is considered invalid.
+Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want values less than 100. Any number entered that's more than 100 is considered invalid. Only available for columns that are type **numeric**.
 
 <VideoEmbed host="youtube" videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
 
 ---
 
-## Update modes
+## Updating rows
 
-To save the edits made to your table rows, you'll need to set the table's [**Update mode**](#properties) to [**Single row**](#update-mode-single-row) or [**Multi row**](#update-mode-multi-row) mode, and then configure your Save buttons to execute queries.
+The changes made to the cells with inline editing are visible within the table, however they're not permanently saved to the original datasource automatically.
+
+To save the edits made to your table rows, you'll first need to set the table's **Update mode**, which determines the behavior and flow of making changes. Choose from [**Single row**](#single-row) or [**Multi row**](#multi-row) mode.
+
+Once this is done, configure your Save buttons to execute queries that update the table's source of data. Read further for more information on the update modes and how to use them to save your changes permanently.
+
+#### Update modes
 
 These modes allow you to choose how to handle the flow of updating, saving, and discarding new values within editable tables.
 
-#### Single row
+##### Single row
 
-> Cells can be edited within a single row at a time, and then saved using the Save/Discard column buttons. While a row has pending edits, the user isn't allowed to begin editing other rows. Be sure to configure the Save/Discard buttons' **onSave** event to run a query that updates the table's datasource.
+Cells can be edited within a single row at a time, and then saved using the Save/Discard column buttons. While a row has pending edits, the user isn't allowed to begin editing other rows. Be sure to configure the Save/Discard buttons' **onSave** event to run a query that updates the table's datasource.
 
 When one or more columns of a table are **Editable** in Single row mode, a new table column is injected called `Save/Discard`. This new column contains a Save button and a Discard button, which execute the table's **onSave** and **onDiscard** events when clicked. Style options for these buttons are available in the `Save/Discard` column's settings in the Table widget's properties pane.
 
@@ -207,9 +178,9 @@ While you are configuring the **onSave** or **onDiscard** events, you can use th
 
 As an alternative to using the `Save/Discard` buttons and events, you can configure the **onSubmit** event in each column's settings to run a query that saves the new data. The onSubmit event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it.
 
-#### Multi row
+##### Multi row
 
-> Cells can be edited across any number of rows at a time. Updated rows are saved all at once by using an external Button widget, which you should place onto the canvas and configure to run a query that submits multiple rows to a datasource.
+Cells can be edited across any number of rows at a time. Updated rows are saved all at once by using an external Button widget, which you should place onto the canvas and configure to run a query that submits multiple rows to a datasource.
 
 In this mode, users are free to choose when to save their edited rows. To facilitate this, take a look at this example of setting up a new Save button:
 
@@ -261,8 +232,6 @@ For information about handling synchronous/asynchronous code, event handling, an
 ```
 
 Now you are ready to edit your table in any number of rows, and the "Save All" button should submit all your changes to the datasource and refresh the table.
-
-### Related properties
 
 #### updatedRows
 
@@ -331,12 +300,6 @@ The `updatedRow` property is reset to the default value whenever the cell change
 
 In addition to [editing individual cells](#how-to-edit-a-cell), you may allow users to use the Table UI to submit new rows of data.
 
-### Allow adding a row
-
-Turning this on allows users to click a button on the table to create a new row in the table. Users can only input data for columns that are marked as **Editable** in the table properties.
-
-Use the **onSave** event to update the original datasource to reflect the user's changes. For example, the **onSave** event might be set to trigger a query that sends the data from a new table row to the database that supplies the table with its values.
-
 ### How to add a new row
 
 <VideoEmbed host="youtube" videoId="uthJ6IrYPXA" title="Table | Add new rows | Enable feature" caption="Enable adding new rows to your table"/>
@@ -347,11 +310,13 @@ If you'd like to add new rows to your table, first ensure that the columns in yo
 
 1. Select your Table widget and turn on the **Allow adding a row** property.
 2. A new button should appear in the Table's header called 'Add new row'. Click this button to add a row of empty cells to the top of the table (or if the Table's [**Default Values**](#default-values) property is filled, the new cells are created with that data).
-3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events-1) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
+3. Once the cells have been filled in with desired values, clicking the "Save" button closes the editing mode and executes the Table's [**onSave**](#events) event. This event should contain code to execute a query that sends the new row to the datasource which supplies the table. Or, clicking "Discard" removes the new row from the table and triggers the [**onDiscard**](#events-1) event.
 
+#### Allow adding a row
 
-
-### Related properties
+When this property is turned on:
+  - Users are able to click a button on the table to create a new row of data. Users can only input data for columns that are marked as **Editable** in the table properties.
+  - The **Default Values** property and the **onSave** and **onDiscard** events appear in the table's properties pane under the **Adding a row** section. Use these to configure the table's behavior when adding new rows.
 
 #### Default values
 
@@ -380,11 +345,11 @@ In the following video example, the Table allows editing a client in "Zone AE," 
 {{isNewRow? currentRow.zone !== "AE" : true}}
 ```
 
-A user may make any changes to existing rows, however they're not allowed to add any new row in AE.
+A user may make any changes to existing rows, however they're not allowed to add any new row where the `zone` is `"AE"`.
 
 ---
 
-## Saving changes
+### Saving changes
 
 Saving changes you've made to the table works much like submitting a form. Use the **onSave** event in the Table's property pane to execute a query or function that sends the new data to the underlying datasource. For example:
 
