@@ -154,7 +154,7 @@ After finishing this, you can customize the text widget, find the background-col
 
 ![Customizing the List Widget](/img/issue_12550_img4.png)
 
-### Adding Chart Widget
+### Adding chart widget
 
 The chart widget on Appsmith is used to view the graphical representation of your data. It's available in multiple configurations; however, if you want to do advanced visualization, you can choose the custom configuration and use `Custom Fusion Chart Configuration.`
 
@@ -195,7 +195,7 @@ Below is the live link to the fully configured app.
    <figcaption align="center"><i>Dasbhboard on Appsmith</i></figcaption>
 </figure>
 
-### Sharing your Application
+### Sharing your application
 
 Let's deploy your app for the final time. Once deployed, you can share your deployed application with both internal and external users:
 
@@ -206,11 +206,11 @@ Let's deploy your app for the final time. Once deployed, you can share your depl
 
 You can also make the application public. In that case, anyone with the URL to the application can view the application without signing in. You can read more about [access control here](/advanced-concepts/access-control.md).
 
-### **What's next?**
+## **What's next**
 
 The basic Review Moderator Dashboard is now up and running. It also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. The following resources will come in handy as you need to learn new tricks:
 
-* [Core Concepts](./../../../core-concepts/connecting-to-data-sources/README.md)
+* [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Widgets](/reference/widgets/)
 * [Appsmith Framework](/reference/appsmith-framework/)
 * [JavaScript Editor](/core-concepts/writing-code/javascript-editor-beta/)
