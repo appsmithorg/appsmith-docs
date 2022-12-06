@@ -27,28 +27,12 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
        docs: {
-          /*lastVersion: 'current',
-          versions: {
-            current: {
-              label: '1.5',
-              path: '1.5',
-            },
-          },*/
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/appsmithorg/appsmith-docs/blob/v1.5/website/',
+            'https://github.com/appsmithorg/appsmith-docs/edit/main/website/',
         },
         blog: false,
-        /*blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },*/
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -100,7 +84,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://www.appsmith.com/blog-categories/tutorial',
+            href: 'https://www.appsmith.com/blog?cat=Tutorial',
             label: 'Tutorials',
             position: 'right',
           },

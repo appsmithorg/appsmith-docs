@@ -8,3 +8,6 @@ tokens:
 exceptions:
   - API
   - URL
+  - JSON
+  - JS
+  - UI
