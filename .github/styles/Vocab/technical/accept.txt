@@ -75,3 +75,5 @@ cron
 Nginx
 NGINX
 kubectl
+signup
+OAuth
