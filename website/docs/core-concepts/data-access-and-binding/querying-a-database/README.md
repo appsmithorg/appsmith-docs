@@ -23,7 +23,7 @@ By default, the `prepared statement` is enabled for all queries. Prepared statem
 Go to the page where you wish to run the query. Follow the below steps to set up a query using a query editor:
 
 :::info
-Queries are **automatically saved**, so you never lose your work. These changes will be reflected in your **published** application only after you deploy.
+Queries are **automatically saved**, so you never lose your work. These changes are reflected in your **published** application only after you deploy.
 :::
 
  <VideoEmbed host="youtube" videoId="N6zRxIVSGfk" title="Setting up a Query" caption="Setting up a Query"/> 
