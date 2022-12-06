@@ -5,16 +5,6 @@ description: >-
 # Query Errors
 The section illustrates common query errors and how to resolve them on Appsmith.
 
-## Find error messages from the datasource
-
-When a query fails, Appsmith commonly shows a notification stating something like: `UncaughtPromiseRejection: <query_name> failed to execute.`
-
-![](/img/as_error.png)
-
-To see the error message returned by the datasource in response to your query, look for the failed query in the [debug console](/help-and-support/troubleshooting-guide/#using-the-linter-and-debugger), or bind `<query_name>.data` to a [Text widget](/reference/widgets/text/) to see what it says.
-
-<VideoEmbed host="youtube" videoId="wRyafclQt1c" title="Query Troubleshooting | Get Error message from datasource" caption="Use {{ <query>.data }} to see error messages"/>
-
 ## Query/API response errors
 You may see below errors when working with [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) or [Query](/core-concepts/data-access-and-binding/querying-a-database/) responses.
 
