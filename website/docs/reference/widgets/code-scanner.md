@@ -1,3 +1,4 @@
+
 # Code Scanner
 
 **Barcodes** and **QR** codes are now found on a wide range of goods, including health bands, rental cars, checked baggage, and clothing purchased from supermarkets or retail stores. They each identify a thing or a person and encode significant information.
@@ -27,14 +28,22 @@ We support the following formats for QR and barcodes:
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-| Property                                                       | Type                 | Description                                                                                                                                                                                        | Code Snippet                 |
-| -------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [Text](code-scanner.md#text) | Formatting  | Sets the label text of the widget. | NA                           |
-| [Visible](./README.md#visible)   | Binding & Formatting | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published. Learn more about [Visible Property](./README.md#visible | `{{CodeScanner.isVisible}}`  |
-| [Disabled](./README.md#disabled)                                        | Binding & Formatting | Disables input to the widget. The widget will remain visible to the user but a user input won't be allowed. Learn more about [Disable Property](./README.md#disabled)       | `{{CodeScanner.isDisabled}}` |
-| [Animate Loading](./README.md) | Formatting  | Controls the loading of the widget.  | NA   |
-| [Tooltip](./README.md#tooltip) | Formatting  | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. Learn more about [Tooltip](./README.md#tooltip) | NA  |
-| [Value](code-scanner.md#value)  | Binding   | Fetches the value of scanned code   | `{{CodeScanner.value}}`  |
+| Property                                         | Type                 | Description                                                                                                                                                               | Code Snippet                 |
+|--------------------------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| [Scanner Layout](code-scanner.md#scanner-layout) | Formatting           | Sets how the code scanner will look and behave.                                                                                                                           | NA                           |
+| [Text](code-scanner.md#text)                     | Formatting           | Sets the label text of the widget.                                                                                                                                        | NA                           |
+| [Visible](./README.md#visible)                   | Binding & Formatting | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published. Learn more about [Visible Property](./README.md#visible | `{{CodeScanner.isVisible}}`  |
+| [Disabled](./README.md#disabled)                 | Binding & Formatting | Disables input to the widget. The widget will remain visible to the user but a user input won't be allowed. Learn more about [Disable Property](./README.md#disabled)     | `{{CodeScanner.isDisabled}}` |
+| [Animate Loading](./README.md)                   | Formatting           | Controls the loading of the widget.                                                                                                                                       | NA                           |
+| [Tooltip](./README.md#tooltip)                   | Formatting           | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. Learn more about [Tooltip](./README.md#tooltip)          | NA                           |
+| [Value](code-scanner.md#value)                   | Binding              | Fetches the value of scanned code                                                                                                                                         | `{{CodeScanner.value}}`      |
+
+
+#### Scanner Layout
+
+Scanner layout allows you to set how the code scanner will look and behave. If set to "Always on", the scanner will be visible and scanning all the time. If set to "Click to Scan", the scanner will pop up inside a modal and start scanning when the user clicks on the button.
+
+![](/img/code-scanner-scanner-layout.png)
 
 #### Text
 
