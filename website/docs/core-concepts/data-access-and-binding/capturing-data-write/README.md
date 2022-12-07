@@ -43,6 +43,6 @@ Since write operations are more expensive, the Query should be triggered once al
 
 The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
 
-To [configure the Query](/core-concepts/data-access-and-binding/querying-a-database/) we want to call when a button is clicked, we can select the action in the onClick dropdown.
+To [configure the Query](/core-concepts/data-access-and-binding/querying-a-database) we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
 ![](</img/button-onclick_(2)_(4)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(3)_(5)_(1)_(1)_(1)_(2)_(1)_(1)_(1)_(1)_(1)_(3)_(2)_(2)_(1).gif>)
