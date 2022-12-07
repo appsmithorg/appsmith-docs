@@ -89,5 +89,5 @@ Once you have successfully run a Query, you can use it in your application to
 * [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write)
 
 :::info
-Are you having trouble? Check out the [Query troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors.md) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+Are you having trouble? Check out the [Query troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
 :::
