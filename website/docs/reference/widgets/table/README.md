@@ -6,7 +6,7 @@ The table widget displays data in rows and columns. You can display data from an
 
 
 :::info
-If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
+If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 :::
 
 ## Properties
@@ -321,11 +321,11 @@ They are a set of actions that you can perform on the widget. The following tabl
 
 | Action                 | Description                                                                                                                                                                                                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                  |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](../../appsmith-framework/widget-actions/). |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                           |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](../../appsmith-framework/widget-actions/).                                                                                                                                                                                 |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                  |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property is not available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](/reference/appsmith-framework/widget-actions). |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                           |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                 |
 
 ### Header Options
 

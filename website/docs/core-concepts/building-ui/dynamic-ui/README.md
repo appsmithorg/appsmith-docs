@@ -7,7 +7,7 @@ description: >-
 
 # Building dynamic UI
 
-This document presumes you understand the basics of [Displaying Data](../../data-access-and-binding/displaying-data-read/) & [Capturing Data](../../data-access-and-binding/capturing-data-write/) and expands on the concept of building dynamic UI that reacts to user inputs and system data
+This document presumes you understand the basics of [Displaying Data](/core-concepts/data-access-and-binding/displaying-data-read) & [Capturing Data](/core-concepts/data-access-and-binding/capturing-data-write) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
 <VideoEmbed host="youtube" videoId="vlx8TEuep5I" title="Dynamically Update Widget Properties" caption="Dynamically Update Widget Properties"/>
 
@@ -19,11 +19,11 @@ Every property of a widget can be described dynamically using JavaScript inside 
 
 ## Updating widget data
 
-Let us take an example of a [table displaying ](../../../reference/widgets/table/#table-data)a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
+Let us take an example of a [table displaying ](/reference/widgets/table/#table-data)a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
 
 ![Click to expand](</img/table_form.gif>)
 
-In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the [Tables](../../../reference/widgets/table/#binding-properties) [`selectedRow`](../../../reference/widgets/table/#selectedrows) property using its name inside the **`{{ }}`**
+In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the [Tables](/reference/widgets/table/#binding-properties) [`selectedRow`](/reference/widgets/table/#selectedrows) property using its name inside the **`{{ }}`**
 
 Get Product Name Input (Default Text property)
 

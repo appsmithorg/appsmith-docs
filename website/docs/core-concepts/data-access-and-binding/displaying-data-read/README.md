@@ -1,10 +1,10 @@
 # Displaying Data (Read)
 
-This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a Query that fetches data.
+This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a Query that fetches data.
 
 ## Displaying Data in a widget
 
-Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a [Query](../querying-a-database/) can be set in a widget property by referencing the name (unique identifier) of the Query.
+Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a [Query](/core-concepts/data-access-and-binding/querying-a-database) can be set in a widget property by referencing the name (unique identifier) of the Query.
 
 :::tip
 Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
@@ -26,7 +26,7 @@ Each widget property has a specific data type that it validates its value agains
 
 You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a [dropdown](/reference/widgets/select.md). Directly binding the data will lead to an error as shown below
 
-A [select](/reference/widgets/select.md) needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the [dropdown options property.](/reference/widgets/select.md#widget-properties)
+A [select](/reference/widgets/select.md) needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the [dropdown options property.](/reference/widgets/select/#widget-properties)
 
 **Example Query Data**
 
