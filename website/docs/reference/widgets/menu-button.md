@@ -127,7 +127,7 @@ Color - {{currentItem}}, Index - {{currentIndex}}
 ```
 The menu items list will now be 
 
-![](label.png)
+![Menu items with label using currentItem and currentIndex binding](/img/dynamic-menu-items-label.png)
 
 Using these bindings, we can also apply properties conditionally. For example, `source data` is -
 ```js
@@ -139,7 +139,9 @@ and `background color` can be -
 ```
 The menu items list will now be 
 
-![](background-color.png)
+![Menu items with conditional background color](/img/dynamic-menu-items-background-color.png)
 
 ### Note
 Right now, dynamic menu items are only supported inside the menu button and the list widget. Two more issues for adding dynamic menu items inside the table widget ([#17955](https://github.com/appsmithorg/appsmith/issues/17955)) and in the button group widget have been created ([#17956](https://github.com/appsmithorg/appsmith/issues/17956)). We will add the support inside table and button group in the upcoming weeks.
+
+![Error message when the menu items exceed than 10](/img/dynamic-menu-items-error.png)
