@@ -17,7 +17,7 @@ Upgrade your Community Edition to a Business Edition by selecting below installa
                 <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
                 </a> 
             </div> 
-            <b><a href="/getting-started/setup/upgrade-to-business-edition/docker/">Docker</a></b>
+            <b><a href="/getting-started/setup/upgrade-to-business-edition/docker">Docker</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
        </div>
