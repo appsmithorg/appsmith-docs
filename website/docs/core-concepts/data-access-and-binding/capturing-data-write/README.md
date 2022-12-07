@@ -39,7 +39,7 @@ In the examples above, **`text`** is the internal property of the **`nameInput`*
 
 ## Triggering Updates
 
-Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](/reference/widgets/button/) widget and configure the [Query](/core-concepts/data-access-and-binding/querying-a-database/) to run in the onClick of the [button](/reference/widgets/button/).
+Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](/reference/widgets/button/) widget and configure the [Query](/core-concepts/data-access-and-binding/querying-a-database) to run in the onClick of the [button](/reference/widgets/button).
 
 The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
 
