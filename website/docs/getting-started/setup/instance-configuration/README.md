@@ -70,10 +70,10 @@ It may take a minute for the new ECS Task to start running.
 
 ## Available Configurations
 
-* [Email](/getting-started/setup/instance-configuration/email/)
-* [Custom Domain](/getting-started/setup/instance-configuration/custom-domain/)
+* [Email](/getting-started/setup/instance-configuration/email)
+* [Custom Domain](/getting-started/setup/instance-configuration/custom-domain)
 * [Signup Restrictions](/getting-started/setup/instance-configuration/disable-user-signup)
 * [Google Maps](/getting-started/setup/instance-configuration/google-maps)
 * [Disable Intercom](/getting-started/setup/instance-configuration/disable-intercom)
-* [Single Sign-On (SSO)](/getting-started/setup/instance-configuration/authentication/)
+* [Single Sign-On (SSO)](/getting-started/setup/instance-configuration/authentication)
 * [Frame Ancestors](/getting-started/setup/instance-configuration/frame-ancestors)
