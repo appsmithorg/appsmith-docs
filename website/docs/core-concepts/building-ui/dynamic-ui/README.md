@@ -23,7 +23,7 @@ Let us take an example of a [table displaying ](/reference/widgets/table/#table-
 
 ![Click to expand](</img/table_form.gif>)
 
-In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the [Tables](/reference/widgets/table/#binding-properties) [`selectedRow`](/reference/widgets/table/#selectedrows) property using its name inside the **`{{ }}`**
+In order to achieve this, we can populate the default values of each of the Form's widgets with the corresponding value selected in the table. We can reference the [Tables](/reference/widgets/table#binding-properties) [`selectedRows`](/reference/widgets/table#selectedrows) property using its name inside the **`{{ }}`**
 
 Get Product Name Input (Default Text property)
 
