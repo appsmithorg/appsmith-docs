@@ -6,7 +6,7 @@ The table widget displays data in rows and columns. You can display data from an
 
 
 :::info
-If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
+If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#pagination).
 :::
 
 ## Properties
