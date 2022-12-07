@@ -49,7 +49,7 @@ You can define an [authentication type](/core-concepts/connecting-to-data-source
 
 ## Security
 
-Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](/getting-started/setup/), and audit it to ensure none of your data leaves your VPC.
+Appsmith safely encrypts all your authentication credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Since Appsmith is an open-source framework, you can [deploy it on-premise](/getting-started/setup), and audit it to ensure none of your data leaves your VPC.
 
 ## Smart JSON Substitution
 
