@@ -19,7 +19,7 @@ Every property of a widget can be described dynamically using JavaScript inside 
 
 ## Updating widget data
 
-Let us take an example of a [table displaying ](/reference/widgets/table/#table-data)a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
+Let us take an example of a [table displaying](/reference/widgets/table#table-data) a list of products. When a user selects a product in the table, we may want to update the product information in a form so that the user can update the product.
 
 ![Click to expand](</img/table_form.gif>)
 
