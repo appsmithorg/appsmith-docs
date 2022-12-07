@@ -12,9 +12,20 @@ The Appsmith platform supports installation and usage of external Javascript lib
 
 ## Installing custom JavaScript libraries
 
-Browse and install a custom libraries under the Recommended Libraries list. Install any other custom JS library from popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). Custom JS Libraries can be installed pasting the library URL(eg: https://cdn.jsdelivr.net/npm/dayjs@1.11.6/dayjs.min.js) and clicking install. 
+Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) and obtain the URL. 
 
-> Please ensure that your library supports a [UMD](https://github.com/umdjs/umd) build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries will have a .min.js under the root or /umd or /browser folders. If the installation fails, it is most likely that the build you are trying to install isn’t a UMD build. If a library that you wish to use does not support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
+:::info
+Please use a URL that points to the library's index file. Also ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries will have a `.min.js` under the `root` or `/umd` or `/browser` folders. If a library that you wish to use does not support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice. 
+
+❌ Invalid URL 
+https://www.jsdelivr.com/package/npm/datejs
+
+❌ Valid URL but unsupported library module format
+https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
+
+✅ Valid URL and supported library module format
+https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
+:::
 
 
 ## Usage
@@ -41,6 +52,36 @@ insert into users (name, email, createdDate) values
 ('John', 'john@appsmith.com', {{moment().format("YYYY-MM-DD")}})
 ```
 
+
+### Example: excelJS
+
+You can install this library using this URL -> https://unpkg.com/exceljs@latest/dist/exceljs.min.js
+
+```javascript
+createWorkbook: async() => {
+		const workbook = new ExcelJS.Workbook();
+    workbook.creator = 'Tomato';
+    workbook.lastModifiedBy = 'Tomato';
+    workbook.created = new Date();
+    workbook.modified = new Date();
+    workbook.calcProperties.fullCalcOnLoad = true;
+    const worksheet = workbook.addWorksheet('Tomato page 1', {
+      properties: {tabColor: {argb: '#FF0000'}},
+      pageSetup: {paperSize: 9, orientation: 'landscape'}
+    });
+		worksheet.getCell('A1').value = 'Hello, World!';
+    worksheet.getCell('B1').value = 'What time is it?';
+    worksheet.getCell('A2').value = 7;
+    worksheet.getCell('B2').value = '12pm';
+    const buf = await workbook.xlsx.writeBuffer();
+	  const blob = new Blob([buf], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+	  const url = URL.createObjectURL(blob);
+    await download(
+			url, 
+			"test.xls",
+		);
+	}
+```
 
 ## Limitations
 Please note that you may not be able to install or use methods of certain libraries due to platform limitations:
