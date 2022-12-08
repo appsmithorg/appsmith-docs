@@ -8,8 +8,8 @@ This section covers different authentication methods available on Appsmith. The 
 **Single Sign-On (SSO)** is a session and user authentication service that permits users to use one set of login credentials. For example, you can use a single ID(email) to log in to any related or independent software applications. SSO lets you get your users quickly and securely into your apps, using an authentication system they are already using and trust. You can configure SSO in Appsmith to use custom authentication.
 
 
-* [Google Login](google-login.md)
-* [GitHub Login](github-login.md)
-* [Security Assertion Markup Language (SAML)](security-assertion-markup-language-saml/)
-* [Openid Connect (OIDC)](openid-connect-oidc/)
+* [Google Login](/getting-started/setup/instance-configuration/authentication/google-login)
+* [GitHub Login](/getting-started/setup/instance-configuration/authentication/github-login)
+* [Security Assertion Markup Language (SAML)](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
+* [Openid Connect (OIDC)](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc)
 

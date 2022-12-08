@@ -1,6 +1,6 @@
 # Widgets
 
-[Widgets](./) help the user in building the app layout. Users can [store data](../../core-concepts/data-access-and-binding/displaying-data-read/) from a [Database](../datasources/) or an[ API ](../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md)call, [trigger events](./../appsmith-framework/widget-actions/README.md), etc.
+[Widgets](./) help the user in building the app layout. Users can [store data](/core-concepts/data-access-and-binding/capturing-data-write) from a [Database](/reference/datasources/) or an[ API ](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis)call, [trigger events](/reference/appsmith-framework/widget-actions), etc.
 
 Widgets can be dragged from the widget pane, positioned on the canvas, and resized to fit the data they need to display. They also come with properties that can be visually edited to set their data, change their styles, and trigger actions from them.
 
