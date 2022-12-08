@@ -1,3 +1,4 @@
+API
 application
 Appsmith
 appsmith
@@ -5,8 +6,9 @@ async
 back-end
 clearWatch
 datasource
-datasource
+Datasource
 datasources
+Datasources
 Drag and drop
 Dropdown
 dropdown
