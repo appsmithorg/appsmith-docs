@@ -182,7 +182,7 @@ Table1.isVisible -> Table1
 ```
 
 ## Infinite loop error
-An infinite loop error occurs when a function or code block repeats indefinitely, causing the app or function to become unresponsive, and can even prevent users from accessing certain features of the app. For example, after making changes to a JS function, you may encounter issues with navigating between pages.
+An infinite loop error occurs when a function or code block repeats indefinitely, causing the app or function to become unresponsive, and can even prevent users from accessing certain features of the app. 
  
 #### Cause
  The problem may be due to a page load function that's stuck in a loop. This can happen if you have added code that uses the `navigateTo` function and is executed on `onPageLoad`, which can cause the page to become inaccessible or cause the app to get stuck in a loop and constantly routing to the destination page. 
