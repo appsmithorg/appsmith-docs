@@ -144,7 +144,7 @@ mongodb:
 Error: INSTALLATION FAILED: execution error at (appsmith/templates/import.yaml:8:4): We Recommend enabling mongo if autoscaling is enabled
 ```
 
-If either of the two scenarios fail then the helm installation fails with error as follows.
+If either of the two scenarios fail then the helm installation fails with error as mentioned above.
 
 ### Create a shared file system
 
