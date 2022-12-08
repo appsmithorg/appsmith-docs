@@ -17,6 +17,10 @@ Yes, absolutely. You can write JS code anywhere inside the product within `{{ }}
 
 Appsmith safely encrypts all your database credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open-source platform and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
 
+## Do you have a bounty program for reporting security vulnerabilities?
+
+Thanks for reaching out. There's no official security bounty program right now, but on a case-by-case basis Appsmith does reward security researchers who report issues that are serious and weren't already found. Having said that, you are encouraged to report any vulnerability you see in the code base. People like you keep open source projects like Appsmith secure and usable for the entire community. If you notice a security issue, please reach out at security@appsmith.com to report any vulnerability responsibly.
+
 ## What if there is a missing feature that I need?
 
 We take all community feature requests very seriously and the best way to request for a missing feature is by raising a [Github Issue](https://github.com/appsmithorg/appsmith/issues/new/choose). Alternatively, we welcome external contributions and would be happy to help you unblock yourself with a feature on the platform. This is our [Contribution Guide](https://github.com/appsmithorg/appsmith/blob/release/contributions/CodeContributionsGuidelines.md).
