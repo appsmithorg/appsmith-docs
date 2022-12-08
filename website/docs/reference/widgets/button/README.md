@@ -75,7 +75,7 @@ You can define functions that will be called when these events are triggered in 
 
 | Event       | Description                                                                                                                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets an an action to take place when the user clicks on this widget. Can be set from the GUI list of common actions (See a list of [supported actions](../../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead. |
+| **onClick** | Sets an an action to take place when the user clicks on this widget. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions).), or you can define a custom JavaScript function to call instead. |
 
 ### Styles
 

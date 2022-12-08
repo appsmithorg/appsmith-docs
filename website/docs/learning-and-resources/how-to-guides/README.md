@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # How To Guides
 
-This document presumes you are familiar with the [core concepts](../../core-concepts/connecting-to-data-sources/README.md) of Appsmith and expands upon using Appsmith in real-world scenarios.
+This document presumes you are familiar with the [core concepts](core-concepts/connecting-to-data-sources/README.md) of Appsmith and expands upon using Appsmith in real-world scenarios.
 
 ## Guide Reference
 

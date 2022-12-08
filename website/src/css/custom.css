@@ -244,3 +244,73 @@ width: auto;
  .navbar__item > .iconExternalLink_nPIU {
   display: none;
  }
+ .tabs{
+  color: #47525d;
+  display: flex;
+  overflow-x: auto;
+  border-left: 2px solid hsl(216deg 14% 93%);
+  border-right: 2px solid hsl(216deg 14% 93%);
+  border-top: 2px solid hsl(216deg 14% 93%);
+  margin-block-start: 0em !important;
+  margin-block-end: 0em !important;
+  padding-bottom: 0px !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: 500;
+ }
+
+ .margin-top--md{
+  margin-top: 0rem !important
+ }
+
+ .tabs__item--active {
+  border-bottom-color: #f86a2b !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  color: #f86a2b;
+  border-spacing: 2px;
+}
+
+
+.tabs__item:hover {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: #f76a2b;
+  background-color: #fff !important;
+}
+
+
+.tabs__item {
+  border-bottom: 2px solid #0000;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 10px 20px;
+}
+
+.tabItem_LNqP {
+  margin-top: 0!important;
+}
+
+.tabItem_Ymn6{
+  border-left: 2px solid #f2f2f2;
+    border-right: 2px solid hsl(216deg 14% 93%);
+    border-top: 2px solid hsl(216deg 14% 93%);
+    border-bottom: 2px solid hsl(216deg 14% 93%);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 20px;
+}
+
+.tabs__item:first-of-type{
+    margin-left: 20px !important;
+}
+
+ .containerBorder {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  display: block;
+  margin: 1rem auto;
+ }
