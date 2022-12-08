@@ -1,148 +1,76 @@
-# Pre Requisites
+# Kubernetes
 
-* `kubectl` must be installed and configured to connect your cluster:
-  * Install kubectl: [kubernetes.io/vi/docs/tasks/tools/install-kubectl/](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/)
+## Pre-requisites
+
+* [Install `kubectl`](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/)
   * Minikube: [Setup Kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
-  * Aws EKS: [Create a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
-* `helm` must be installed
-  * Install helm: [install helm](https://helm.sh/docs/intro/install/)
+  * AWS EKS: [Create a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
+* [Install `helm`](https://helm.sh/docs/intro/install/)
 
-## Install metrics-server for kubernetes
+## Prepare
 
-This helps in scaling the pods for appsmith
+1. Install `metrics-server`, which provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods.
 
-```bash
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-```
+    ```bash
+    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    ```
 
-## Add appsmith-ee charts to helm repo
+2. Add `appsmith-ee` Helm chart.
 
-```markdown
-helm repo add appsmithee https://helm-ee.appsmith.com
-helm repo update
-```
+    ```bash
+    helm repo add appsmith-ee https://helm-ee.appsmith.com
+    helm repo update
+    ```
 
-## Get values.yaml
+3. Get the initial `values-ee.yaml`.
 
-```markdown
-helm show values appsmithee/appsmith --version 2.0.0 > values_ee.yaml
-```
+    ```bash
+    helm show values appsmith-ee/appsmith --version 2.0.0 > values-ee.yaml
+    ```
 
-## Guidelines to deploy appsmith-ee helm chart
+## High Availability
 
-You can turn off/on charts based on the convenience .
+If you need High Availability (HA), ensure your configuration matches with the below pointers.
 
-### Sample values.yaml
+1. Postgres has to be enabled or an external Postgres' URL has to be provided.
 
-```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ head -n 30 values.yaml
-## Redis parameters
-redis:
-  enabled: true
-  auth:
-    enabled: false
-  replica:
-    replicaCount: 1
+    ```yaml
+    postgresql:
+      # highlight-next-line
+      enabled: true
+      auth:
+        username: root
+    ```
 
-## Mongo parameters
-mongodb:
-  enabled: true
-  service:
-    nameOverride: appsmith-mongodb
-  auth:
-    rootUser: root
-    rootPassword : password
-  replicaCount: 2
-  architecture: "replicaset"
-  replicaSetName: rs0
+2. Ensure `autoscaling` is enabled:
 
-## postgresql parameters
-postgresql:
-  enabled: true
-  auth:
-    username: root
-    password: password
-    postgresPassword: password
-    database: keycloak
+    ```yaml
+    autoscaling:
+      # highlight-next-line
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 2
+    ```
 
-## cloudservice parameters
-```
+3. Ensure `mongodb` is enabled, or that you are using an [external MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb).
 
-**Note:**
+    ```yaml
+    mongodb:
+      # highlight-next-line
+      enabled: true
+      service:
+        nameOverride: appsmith-mongodb
+    ```
 
-- **If you need HA for keycloak Postgres has to be enabled or an external postgresURL has to be provided**
-
-**eg:**
-
-```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ head -n 25 values.yaml
-## Redis parameters
-redis:
-  enabled: true
-  auth:
-    enabled: false
-  replica:
-    replicaCount: 1
-
-## Mongo parameters
-mongodb:
-  enabled: true
-  service:
-    nameOverride: appsmith-mongodb
-  auth:
-    rootUser: root
-    rootPassword : password
-  replicaCount: 2
-  architecture: "replicaset"
-  replicaSetName: rs0
-
-## postgresql parameters
-postgresql:
-  enabled: false
-  auth:
-    username: root
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ helm install appsmith . -n goutham --create-namespace -f values-vanilla.yaml
-Error: INSTALLATION FAILED: execution error at (appsmith/templates/import.yaml:12:4): We Recommend enabling postgresql to have HA for keycloak or an external postgres
-```
-
-- **If appsmith auto scaling is enabled then mongo has to be enabled or external mongo db url has to be provided**
-
-**eg:**
-
-```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ head -n 15 values.yaml
-## Redis parameters
-redis:
-  enabled: true
-  auth:
-    enabled: false
-  replica:
-    replicaCount: 1
-
-## Mongo parameters
-mongodb:
-  enabled: false
-  service:
-    nameOverride: appsmith-mongodb
-  auth:
-    rootUser: root
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ helm install appsmith . -n goutham --create-namespace -f values-vanilla.yaml
-Error: INSTALLATION FAILED: execution error at (appsmith/templates/import.yaml:8:4): We Recommend enabling mongo if autoscaling is enabled
-```
-
-If either of the two scenarios fail then the helm installation fails with error as follows.
-
-### Create a shared file system
+4. Create a shared file system. This is required for some Appsmith features that make use of the filesystem, like `git`-connected applications. This is elaborated in the [following section](#efs).
 
 ## EFS
 
-You can use efs-csi driver and use that to mount EFS on the kubernetes pods
+You can use the [EFS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on the kubernetes pods.
 
-Reference-link: [https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html)
+Here's an example of how to configure EFS with a new `PersistenceVolumeClaim` (PVC):
 
-**Access** **EFS with new PVC:**
-
-```bash
+```yaml
 persistence:
   ## @param persistence.enabled - Enable data persistence using PVC
   ##
@@ -173,37 +101,23 @@ persistence:
   ##
   ReclaimPolicy: Retain
   existingClaim:
+    # highlight-next-line
     enabled: false
     name: 
     claimName: 
   efs:
+    # highlight-next-line
     enabled: true
     driver: efs.csi.aws.com
+    # highlight-next-line
     volumeHandle: <file_system_id>
-  volumeClaimTemplates:
-    ## @param persistence.volumeClaimTemplates.selector A label query over volumes to consider for binding (e.g. when using local volumes)
-    ## A label query over volumes to consider for binding (e.g. when using local volumes)
-    ## See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#labelselector-v1-meta for more details
-    ##
-    selector: {}
-    ## @param persistence.volumeClaimTemplates.requests Custom PVC requests attributes
-    ## Sometime cloud providers use additional requests attributes to provision custom storage instance
-    ## See https://cloud.ibm.com/docs/containers?topic=containers-file_storage#file_dynamic_statefulset
-    ##
-    requests: {}
-    ## @param persistence.volumeClaimTemplates.dataSource Add dataSource to the VolumeClaimTemplate
-    ##
-    dataSource: {}
-# tags:
-#   install-ingress-nginx: true
 ```
 
-**EFS using an existing PVC:**
+### EFS using an existing PVC
 
 In case, you already have a persistent volume and use it to mount EFS on Kubernetes pods.
 
-```bash
-
+```yaml
 persistence:
   ## @param persistence.enabled - Enable data persistence using PVC
   ##
@@ -234,34 +148,23 @@ persistence:
   ##
   ReclaimPolicy: Retain
   existingClaim:
+    # highlight-next-line
     enabled: true
     name: efsappsmith
     claimName: efsappsmith
   efs:
+    # highlight-next-line
     enabled: true
     driver: efs.csi.aws.com
+    # highlight-next-line
     volumeHandle: <file-system-id>
-  volumeClaimTemplates:
-    ## @param persistence.volumeClaimTemplates.selector A label query over volumes to consider for binding (e.g. when using local volumes)
-    ## A label query over volumes to consider for binding (e.g. when using local volumes)
-    ## See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#labelselector-v1-meta for more details
-    ##
-    selector: {}
-    ## @param persistence.volumeClaimTemplates.requests Custom PVC requests attributes
-    ## Sometime cloud providers use additional requests attributes to provision custom storage instance
-    ## See https://cloud.ibm.com/docs/containers?topic=containers-file_storage#file_dynamic_statefulset
-    ##
-    requests: {}
-    ## @param persistence.volumeClaimTemplates.dataSource Add dataSource to the VolumeClaimTemplate
-    ##
-    dataSource: {}
-# tags:
-#   install-ingress-nginx: true
 ```
 
-## Local Deployment (minikube)
+### Local Deployment (minikube)
 
-```bash
+If using a local deploymeng with minikube, you can configure persistence like this:
+
+```yaml
 persistence:
   ## @param persistence.enabled - Enable data persistence using PVC
   ##
@@ -274,6 +177,7 @@ persistence:
   annotations: {}
   ## @param persistence.localStorage - Use local storage for PVC
   ##
+  # highlight-next-line
   localStorage: true
   ## @param persistence.storagePath - local storage path
   ##
@@ -291,53 +195,33 @@ persistence:
   size: 10Gi
   ## Fine tuning for volumeClaimTemplates
   ##
-  existingClaim: false
-  name: 
-  claimName: 
+  existingClaim:
+    # highlight-next-line
+    enabled: false
+    name:
+    claimName:
   ReclaimPolicy: Retain
   efs:
+    # highlight-next-line
     enabled: false
     driver: 
-    volumeHandle: 
-  volumeClaimTemplates:
-    ## @param persistence.volumeClaimTemplates.selector A label query over volumes to consider for binding (e.g. when using local volumes)
-    ## A label query over volumes to consider for binding (e.g. when using local volumes)
-    ## See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#labelselector-v1-meta for more details
-    ##
-    selector: {}
-    ## @param persistence.volumeClaimTemplates.requests Custom PVC requests attributes
-    ## Sometime cloud providers use additional requests attributes to provision custom storage instance
-    ## See https://cloud.ibm.com/docs/containers?topic=containers-file_storage#file_dynamic_statefulset
-    ##
-    requests: {}
-    ## @param persistence.volumeClaimTemplates.dataSource Add dataSource to the VolumeClaimTemplate
-    ##
-    dataSource: {}
-# tags:
-#   install-ingress-nginx: true
+    volumeHandle:
 ```
 
-Deploy the new helm chart
+## Deploy
+
+After configuring the `values.yaml` file, you can deploy Appsmith using the following command:
 
 ```bash
-cd deploy/helm/
+helm install appsmith-ee/appsmith -f values-ee.yaml --generate-name
 ```
 
-### Deploy new chart
+Here's a sample output you can expect from the above install command:
 
-```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts)✗ helm install <chart_name> . -n <namespace> --create-namespace -f values.yaml
-eg:
-(base) ➜  helm git:(helm/ee/keycloak/charts)✗ helm install appsmith-2.0.0.tgz -n appsmithee -f values_ee.yaml --generate-name
 ```
-
-### Sample output
-
-```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ helm install appsmith-2.0.0.tgz -n appsmithee -f values_ee.yaml --generate-name
 NAME: appsmith
 LAST DEPLOYED: Mon Oct 24 13:24:07 2022
-NAMESPACE: appsmithee
+NAMESPACE: <namespace>
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
@@ -349,13 +233,11 @@ NOTES:
   kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
 
 To expose your Appsmith service to be accessible from the Internet, please refer to our docs here https://docs.appsmith.com/setup/kubernetes#expose-appsmith.
-
 ```
 
-### Check the output
+Check/verify list of pods, with the command `kubectl get pods`. It should produce an output like this:
 
-```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ kubectl get pods -n appsmithee
+```
 NAME                            READY   STATUS    RESTARTS   AGE
 appsmith-875b6cddc-4mmj6        1/1     Running   0          90s
 appsmith-875b6cddc-7b2hw        1/1     Running   0          3m30s
