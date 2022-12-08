@@ -13,11 +13,11 @@ Upgrade your Community Edition to a Business Edition by selecting below installa
     <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
-                <a href="docker/">
+                <a href="/getting-started/setup/upgrade-to-business-edition/docker">
                 <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
                 </a> 
             </div> 
-            <b><a href="docker/">Docker</a></b>
+            <b><a href="/getting-started/setup/upgrade-to-business-edition/docker">Docker</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
        </div>
@@ -32,7 +32,7 @@ The Appsmith server shuts down once the license key expires. Logs show 'Shutting
 ![License Check failed](/img/License-Check-Fails-Invalid-Message.png)
 
 
-[Send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](docker#step3-add-or-replace-license-key) it in the configuration file and start Appsmith.
+[Send an email to support](mailto:support@appsmith.com) to raise a renewal request. Once you have a renewed license key, [replace](/getting-started/setup/upgrade-to-business-edition/docker#step3-add-or-replace-license-key) it in the configuration file and start Appsmith.
 
 
 ## Next steps
