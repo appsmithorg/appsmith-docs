@@ -15,7 +15,7 @@ QR/Barcodes have taken off because they offer a clear and fast return on investm
 
 ### Supported QR/Barcode formats
 
-Appsmith supports the following formats for QR and barcodes:
+The following formats for QR and barcodes are supported:
 
 | 1D product | 1D industrial | 2D          |
 | ---------- | ------------- | ----------- |
