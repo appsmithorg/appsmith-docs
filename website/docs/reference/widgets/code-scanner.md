@@ -7,7 +7,7 @@ The Code Scanner widget allows you to scan a variety of barcodes and QR codes. U
 
 ## Usage
 
-QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminates manual entry of product information at receiving, meaning there are far fewer opportunities for error. You can use a code scanner in some of the below scenarios:
+QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminates manual entry of product information at receiving, meaning there are far fewer opportunities for error. You can use a code scanner in the below scenarios:
 
 * **Warehouse**- Companies need to know not just their current inventory levels, but the location of those products, always. With the help of a code scanner widget, employees can keep track of their warehouse inventories. They can use a code scanner in their app to scan codes rather than manually entering them.
 * **Asset Management**- The most widely used system by businesses for tracking equipment, vehicles, and computers to support their everyday operations is the usage of barcodes. With the code scanner widget, you can keep track of equipment and the location of the assets and keep any pertinent maintenance and repair records.
