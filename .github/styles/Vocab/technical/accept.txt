@@ -70,4 +70,6 @@ watchId
 watchPosition
 Widget
 widget
+kubectl
+cronjob
 
