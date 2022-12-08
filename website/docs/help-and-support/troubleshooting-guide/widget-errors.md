@@ -26,13 +26,7 @@ messageContent="Found a Promise() during evaluation. Sync fields cannot execute 
 #### Cause
 Action refers to the execution of an API, Query, or JS object. You can only perform an action by binding it to an [async](/core-concepts/writing-code/workflows#async-fields) field. When you bind an action to a [sync](/core-concepts/writing-code/workflows#sync-fields) field that only expects data, it throws an error.
 
-Example: if you are executing a `storeValue()` function in a `TableData` property of a table. The `TableData` property expects data and can't execute a function, and results in an error.
-
-**To-Do to add screenshot**
-
-Similarly, if you try to execute a JS Object function `<JSOBJECT_NAME.FUNCTION_NAME>` in the `TableData` property, it throws an error as shown below.
-
-**To-Do to add screenshot**
+Example: if you are executing a `storeValue()` function in a `TableData` property of a table. The `TableData` property expects data and can't execute a function, and results in an error. Similarly, if you try to execute a JS Object function `<JSOBJECT_NAME.FUNCTION_NAME>` in the `TableData` property, it throws an error.
 
 
 #### Solution
