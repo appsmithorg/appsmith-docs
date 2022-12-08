@@ -15,16 +15,24 @@ This helps in scaling the pods for appsmith
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 
-## Add appsmith-ee charts to helm repo
+## Add appsmith-ee charts to helm repository
 
 ```markdown
+helm repo add <repo_name> https://helm-ee.appsmith.com
+eg:
 helm repo add appsmithee https://helm-ee.appsmith.com
+```
+
+## Update the helm repositories
+```
 helm repo update
 ```
 
 ## Get the latest build
 
 ```markdown
+helm pull repo_name/appsmith
+eg:
 helm pull appsmithee/appsmith
 ```
 
