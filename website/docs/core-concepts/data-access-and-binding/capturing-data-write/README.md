@@ -1,19 +1,19 @@
 # Capturing Data (Write)
 
-This document presumes you have successfully [connected to a data source](../../connecting-to-data-sources/) and have a query that can insert/update/delete data. You should also have gone through the basics of [using widgets](../displaying-data-read/#widgets).
+This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a query that can insert/update/delete data. You should also have gone through the basics of [using widgets](/core-concepts/data-access-and-binding/displaying-data-read).
 
 The following widgets can be used to capture user inputs in an application
 
-* [Checkbox](../../../reference/widgets/checkbox)
-* [Datepicker](../../../reference/widgets/datepicker)
-* [Filepicker](../../../reference/widgets/filepicker)
-* [Form](../../../reference/widgets/form)
-* [Input](../../../reference/widgets/input)
-* [Maps](../../../reference/widgets/maps)
-* [Radio Group](../../../reference/widgets/radio-group)
-* [Rich Text Editor](../../../reference/widgets/rich-text-editor)
-* [Select](../../../reference/widgets/select)
-* [Switch](../../../reference/widgets/switch)
+* [Checkbox](/reference/widgets/checkbox)
+* [Datepicker](/reference/widgets/datepicker)
+* [Filepicker](/reference/widgets/filepicker)
+* [Form](/reference/widgets/form)
+* [Input](/reference/widgets/input)
+* [Maps](/reference/widgets/maps)
+* [Radio Group](/reference/widgets/radio-group)
+* [Rich Text Editor](/reference/widgets/rich-text-editor)
+* [Select](/reference/widgets/select)
+* [Switch](/reference/widgets/switch)
 
 Widgets store their user input in an internal property that can be referenced using javascript.
 
@@ -39,10 +39,10 @@ In the examples above, **`text`** is the internal property of the **`nameInput`*
 
 ## Triggering Updates
 
-Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](../../../reference/widgets/button/) widget and configure the [Query](../querying-a-database/) to run in the onClick of the [button](../../../reference/widgets/button/).
+Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](/reference/widgets/button/) widget and configure the [Query](/core-concepts/data-access-and-binding/querying-a-database) to run in the onClick of the [button](/reference/widgets/button).
 
 The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
 
-To [configure the Query](../querying-a-database/) we want to call when a button is clicked, we can select the action in the onClick dropdown.
+To [configure the Query](/core-concepts/data-access-and-binding/querying-a-database) we want to call when a button is clicked, we can select the action in the onClick dropdown.
 
 ![](</img/button-onclick_(2)_(4)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(3)_(5)_(1)_(1)_(1)_(2)_(1)_(1)_(1)_(1)_(1)_(3)_(2)_(2)_(1).gif>)
