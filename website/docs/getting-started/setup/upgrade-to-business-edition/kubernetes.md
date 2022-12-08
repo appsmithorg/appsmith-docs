@@ -68,6 +68,8 @@ If you need High Availability (HA), ensure your configuration matches with the b
 
 You can use the [EFS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on the kubernetes pods.
 
+### EFS using new PVC
+
 Here's an example of how to configure EFS with a new `PersistenceVolumeClaim` (PVC):
 
 ```yaml
