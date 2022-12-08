@@ -1,6 +1,6 @@
-# Inline Editing
+# Adding and Updating Data
 
-Inline editing provides a quick way to edit data on the Table widget without navigating to the row details or moving away from the current screen.
+The Table widget comes with features such as inline editing to provide a quick way to add and update data without needing to move away from the current screen.
 
 Use this feature for
 
@@ -20,8 +20,8 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
 | [**Editable**](#editable)                 | Formatting  | Controls whether cells of the column are editable                                                             | NA                             |
 | [**Cell Wrapping**](#cell-wrapping)            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis. | NA |
-| [**Min**](#min)                      | Validation  | Sets the minimum allowed value.                                                                               | NA                             |
-| [**Max**](#max)                      | Validation  | Sets the maximum allowed value.                                                                               | NA                             |
+| [**Min**](#min)                      | Validation  | Sets the minimum allowed value. Only available for columns that are type _Number_.                                                                               | NA                             |
+| [**Max**](#max)                      | Validation  | Sets the maximum allowed value. Only available for columns that are type _Number_.                                                                              | NA                             |
 | [**Regex**](#regex)                    | Validation  | Enter a regular expression that user input must match to be considered valid. Displays an error message on failure.                                   | NA                             |
 | [**Valid**](#valid)                    | Validation  | Enter a JS expression that evaluates whether the user's input is valid.                                                                | NA                             |
 | [**Error Message**](#error-message)            | Validation  | The error message displays if the input fails the **Regex** or **Valid** properties' checks.                                        | NA                             |
@@ -69,7 +69,9 @@ You can also use JS to control the `Editable` property in the column's settings.
 
 <img src="/img/Using_JS_in_Editable.png" alt="JS in Editable property" width="275"/>
 
-Currently, **four column types** support inline editing: these  are **Text**, **Number**, **Switch**, and **Checkbox**. When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
+Currently, **four column types** support inline editing: these  are **Text**, **Number**, **Switch**, **Select**, and **Checkbox**. Custom user-added columns don't support inline editing at this time.
+
+When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 
@@ -83,12 +85,6 @@ Once the user is finished editing a cell, they can perform either of the followi
 2. Pressing the **Escape** key discards the new value and closes the input box.
 
 Read further to see how to [save the changes](#updating-rows) you've made.
-
-#### Cell wrapping
-
-<VideoEmbed host="youtube" videoId="bNMV_WhTUU4" title="Table | Inline Editing | Cell Wrapping" caption="Wrapping text within cells"/>
-
-Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.
 
 #### Validation properties
 
@@ -115,7 +111,7 @@ If a value other than "John" is added to the cell, an error is displayed. Simila
 The error message appears if the regular expression (**Regex**) and/or the **Valid** property determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
 <!-- ![](/img/table_err_msg.PNG) -->
-<img src="/img/table_err_msg.png" alt="Error message when input is invalid" width="524"/>
+<img src="/img/table_err_msg.PNG" alt="Error message when input is invalid" width="524"/>
 
 ##### Regex
 
@@ -140,11 +136,11 @@ Makes input to the widget mandatory. Sets whether a non-empty value must be ente
 
 ##### Min
 
-Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want values greater than 2. Any number entered that's less than 2 is considered invalid. Only available for columns that are type **numeric**.
+Sets the minimum allowed value. For example, you could set the minimum value to 2 if you only want values greater than 2. Any number entered that's less than 2 is considered invalid. Only available for columns that are type **Number**.
 
 ##### Max
 
-Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want values less than 100. Any number entered that's more than 100 is considered invalid. Only available for columns that are type **numeric**.
+Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want values less than 100. Any number entered that's more than 100 is considered invalid. Only available for columns that are type **Number**.
 
 <VideoEmbed host="youtube" videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
 
@@ -235,7 +231,7 @@ Now you are ready to edit your table in any number of rows, and the "Save All" b
 
 #### updatedRows
 
-This property contains all the details of the edited rows. It has the following structure:
+This property contains all the details of the edited rows (only useful when **Update mode** is set to **Multi row**). It has the following structure:
 
 ```javascript
 [
@@ -243,14 +239,13 @@ This property contains all the details of the edited rows. It has the following 
     "index": 0, // Index of the row in tableData
 		"PRIMARY_KEY": "PRIMARY_KEY_VALUE", 
     "updatedFields": { // contains all the edited cell values from the row
-      "step": "#11"
+      "address": "123 Maple St."
     },
     "allFields": { // contains all the cell values (including the edited cells) from the row
-      "step": "#11",
-      "task": "Drop a table",
-      "status": "✅",
-      "action": "",
-      "EditActions1": ""
+      "client-id": "1",
+      "address": "123 Maple St.",
+      "zone": "X",
+      "status": "processing"
     }
   }
 ]
@@ -271,23 +266,25 @@ For example, if you update the second and fourth rows of a table, the `updatedRo
 
 #### updatedRow
 
-This property contains the details of the row that was recently updated, regardless of the **Update mode**. For example, if you bind this property into a text widget, you get an output something like this:
+This property contains the details of the row that was recently updated. This is available regardless of the **Update mode**, however it's most useful in **Single row** mode. Once edits have been made, this property contains an object that looks like:
 
 ```javascript
 {
-  "step": "<updated-step-value>",
-	"task": "<updated-task-value>",
-	"status": "<updated-status-value>"
+  "address": "<updated-address-value>",
+	"client-id": "<updated-client-id-value>",
+	"zone": "<updated-zone-value>",
+  "status": "<updated-status-value>"
 }
 ```
 
-The default value for this property is an object with keys as column names and blank strings as its values. For example,
+The default value for this property is an object with keys as column names and blank strings as its values. For example:
 
-```
+```javascript
 {
-	"step": "",
-	"task": "",
-	"status": ""
+	"address": "",
+	"client-id": "",
+	"zone": "",
+  "status": ""
 }
 ```
 The new values become available as soon as a user updates a table cell and navigates away from it (triggering the **onSubmit** event).
@@ -302,7 +299,7 @@ In addition to [editing individual cells](#how-to-edit-a-cell), you may allow us
 
 ### How to add a new row
 
-<VideoEmbed host="youtube" videoId="uthJ6IrYPXA" title="Table | Add new rows | Enable feature" caption="Enable adding new rows to your table"/>
+<VideoEmbed host="youtube" videoId="fI_rqVtNRnk" title="Table | Add new rows | Enable feature" caption="Enable adding new rows to your table"/>
 
 :::info
 If you'd like to add new rows to your table, first ensure that the columns in your Table's properties are marked as [**Editable**](#editable). A column can only accept user input if its **Editable** property is checked.

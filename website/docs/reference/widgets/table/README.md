@@ -20,7 +20,8 @@ These properties allow you to edit the table itself. All these properties are pr
 | Widget Property       | Description                                                                                                                  
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Table Data**                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.|
-| **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings.                                                         |
+| **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
+| **Cell wrapping**              | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
 | **Server Side Pagination**     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
 | **Visible**                    | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
 | **Sortable**                   | It enables or disables sorting. If turned off, the user won't be able to sort the data when the app is published.                                                                                    |
@@ -63,13 +64,19 @@ This property shows all the columns in the table, and it gets auto populated fro
 
 ![](/img/columns\_tablewidget.png)
 
+#### Cell wrapping
+
+<VideoEmbed host="youtube" videoId="bNMV_WhTUU4" title="Table | Inline Editing | Cell Wrapping" caption="Wrapping text within cells"/>
+
+Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.
+
 #### Server side pagination
 
 The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
 #### Inline editing
 
-Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about Inline editing [here](./#inline-editing).
+Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about inline editing [here](./#inline-editing).
 
 #### Total record count
 
