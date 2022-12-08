@@ -38,8 +38,8 @@ With Appsmith, it's easy to set up staging and production environments. By defau
 
 ### Configure environment for databases
 
-![](/img/me-db-3.PNG)
-![](/img/me-db-2.PNG)
+![](/img/me-db-3.png)
+![](/img/me-db-2.png)
 //remove-above-images-and-add-videos
 
 * On the Explorer tab, click the **+** sign next to datasources.
@@ -51,7 +51,7 @@ With Appsmith, it's easy to set up staging and production environments. By defau
 You can set different values for each environment. For instance, if you have a Postgresql database with different configuration, you can select a particular environment and set the values.
 
 //remove-below-images-and-add-videos
-![](/img/me-db-1.PNG)
+![](/img/me-db-1.png)
 
 Once parameters are configured, **bind** the values. 
 
@@ -83,7 +83,7 @@ You can decide which environment to use when you are editing the app. In edit mo
 :::note
 Already-deployed version of the app won't be impacted by this. However, any modifications you make may have an impact on other editors who are still working on the app.
 :::
-![](/img/switch-environments.PNG)
+![](/img/switch-environments.png)
 //Will update the image when DP is ready
 
 
