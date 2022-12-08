@@ -210,7 +210,7 @@ persistence:
 
 ## Deploy
 
-After configuring the `values.yaml` file, you can deploy Appsmith using the following command:
+After configuring the `values-ee.yaml` file, you can deploy Appsmith using the following command:
 
 ```bash
 helm install appsmith-ee/appsmith -f values-ee.yaml --generate-name
