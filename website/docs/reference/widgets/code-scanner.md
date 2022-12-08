@@ -116,4 +116,4 @@ The following resources may come handy as you need to learn new tricks:
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to support@appsmith.com or join this [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
+If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please get in touch with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
