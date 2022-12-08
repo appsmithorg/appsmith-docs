@@ -4,7 +4,7 @@ description: >-
 ---
 
 # JS Errors
-JS errors are issues that occur in [JS Objects](/core-concepts/writing-code/javascript-editor-beta) and [JS functions](/core-concepts/writing-code/javascript-editor-beta/#types-of-js-functions). They can be caused by a variety of issues, such as syntax errors in the code, incorrect data types being used, or attempts to access properties or functions that don't exist. 
+Errors may be encountered when using [JS Objects](/core-concepts/writing-code/javascript-editor-beta) or writing [JS functions](/core-concepts/writing-code/javascript-editor-beta/#types-of-js-functions). They can be caused by syntax errors in the code, data type mismatch, or attempts to access properties or functions that don't exist. 
 
 This section helps you troubleshoot common JS errors on the Appsmith platform.
 
