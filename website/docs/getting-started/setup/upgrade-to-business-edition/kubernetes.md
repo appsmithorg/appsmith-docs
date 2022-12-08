@@ -22,6 +22,12 @@ helm repo add appsmithee https://helm-ee.appsmith.com
 helm repo update
 ```
 
+## Get the latest build
+
+```markdown
+helm pull appsmithee/appsmith
+```
+
 ## Get values.yaml
 
 ```markdown
@@ -326,9 +332,10 @@ cd deploy/helm/
 ### Deploy new chart
 
 ```bash
-(base) ➜  helm git:(helm/ee/keycloak/charts)✗ helm install <chart_name> . -n <namespace> --create-namespace -f values.yaml
+(base) ➜  helm git:(helm/ee/keycloak/charts)✗ helm install <chart_name> appsmith-2.0.0.tgz -n <namespace> --create-namespace -f values.yaml
 eg:
-(base) ➜  helm git:(helm/ee/keycloak/charts)✗ helm install appsmith-2.0.0.tgz -n appsmithee -f values_ee.yaml --generate-name
+(base) ➜  helm git:(helm/ee/keycloak/charts)✗ helm install appsmithee appsmith-2.0.0.tgz -n appsmithee --create-namespace -f values_ee.yaml
+
 ```
 
 ### Sample output
