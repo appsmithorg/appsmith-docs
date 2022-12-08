@@ -12,7 +12,7 @@ const config = {
   url: 'https://docs.appsmith.com',
   baseUrl: '/',
   favicon: 'img/Appsmith-Logo.png',
-
+  "trailingSlash" : false,
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -84,7 +84,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://www.appsmith.com/blog-categories/tutorial',
+            href: 'https://www.appsmith.com/blog?cat=Tutorial',
             label: 'Tutorials',
             position: 'right',
           },
