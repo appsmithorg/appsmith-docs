@@ -3,7 +3,7 @@
 The information you want to present in any application is typically spread over numerous tables in a well-designed database. A query can collect data from different tables/ documents and pull it together for display. You can either request data from your database or manipulate the data, or both.
 
 :::info
-To write and execute queries, you should understand the basics of [connecting to a Database](../../connecting-to-data-sources/connecting-to-databases.md) or [Connecting to an API](../../connecting-to-data-sources/authentication/connect-to-apis.md).
+To write and execute queries, you should understand the basics of [connecting to a Database](/core-concepts/connecting-to-data-sources/connecting-to-databases) or [Connecting to an API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 :::
 
 A query can insert, update, or remove data from a database, conduct calculations, integrate data from other databases, and much more.
@@ -15,7 +15,7 @@ Appsmith uses the term **Queries** to collectively refer to **APIs**, **Database
 You can create queries to manipulate data from a datasource using the Appsmith query editor.
 
 :::info
-By default, the `prepared statement` is enabled for all queries. Prepared statements provide a secure way of executing your queries. You can read  [How to Use Prepared Statements](../../../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secure data transactions.
+By default, the `prepared statement` is enabled for all queries. Prepared statements provide a secure way of executing your queries. You can read  [How to Use Prepared Statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for efficient and secure data transactions.
 :::
 
 ### Setting up a query
@@ -32,7 +32,7 @@ Queries are **automatically saved**, so you never lose your work. These changes 
 * Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query.
 
 :::info
-You can follow the steps detailed in [Datasources to add a new datasource](../../connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database).
+You can follow the steps detailed in [Datasources to add a new datasource](/core-concepts/connecting-to-data-sources/connecting-to-databases#connecting-to-a-database).
 :::
 
 * Choose the connected datasource and click **+ New Query.** You'll be taken to the query editor to configure the query. You can also choose to add a new query by navigating to **Explorer** >> Scroll down to **Queries/JS** >> Click plus (**+**) sign >> Select the **name** `<DATASOURCE_NAME> Query` (users query)
@@ -40,14 +40,14 @@ You can follow the steps detailed in [Datasources to add a new datasource](../..
 ![Create a Query from QUERIES/JS Menu Item](</img/Core_Concepts__Data_Access_and_Binding__Setting_up_Query__Add_Query.png>)
 
 :::info
-You can configure your APIs using a [REST interface](../../connecting-to-data-sources/authentication/connect-to-apis.md).
+You can configure your API(s) using a [REST interface](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 :::
 
 :::tip
 The query is created with a **default name**. It’s **recommended** that you **rename** it for **readability** and **access**.
 :::
 
-* Write your query in the syntax that's valid for your [database type](../../connecting-to-data-sources/connecting-to-databases.md#supported-databases).
+* Write your query in the syntax that's valid for your [database type](/core-concepts/connecting-to-data-sources/connecting-to-databases#supported-databases).
 * Bind your query to the widget and carry out data manipulations.
 
 :::note
@@ -69,7 +69,7 @@ Click on the `Run` button or hit `cmd + enter` to execute a query. You'll see th
  <VideoEmbed host="youtube" videoId="0xA7ChO7Rlk" title="Running a Query" caption="Running a Query"/>  
 
 
-All query results are stored in the [data](../../../reference/appsmith-framework/query-object.md#data) property of the [query object](../../../reference/appsmith-framework/query-object.md). it's immutable and can't be changed. You can access it using JavaScript, as shown in the code snippet below:
+All query results are stored in the [data](/reference/appsmith-framework/query-object#data) property of the [query object](/reference/appsmith-framework/query-object). it's immutable and can't be changed. You can access it using JavaScript, as shown in the code snippet below:
 
 ```javascript
 {{ Query1.data }}
@@ -85,12 +85,8 @@ All **API Queries** return the exact API response of the endpoint.
 
 Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](../displaying-data-read/)
-* [Capture Data](../capturing-data-write/)
-
-:::info
-Are you having trouble? Check out the [Query troubleshooting guide](../../../help-and-support/troubleshooting-guide/query-errors.md) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
-:::
+* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read)
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write)
 
 ## Debugging queries
 
@@ -101,3 +97,7 @@ When a query fails, Appsmith commonly shows a notification stating something lik
 To see the error message returned by the datasource in response to your query, look for the failed query in the [debug console](/help-and-support/troubleshooting-guide/#using-the-linter-and-debugger), or access it in code with `<query_name>.data`.
 
 <VideoEmbed host="youtube" videoId="wRyafclQt1c" title="Query Troubleshooting | Get Error message from datasource" caption="Use {{ <query>.data }} to see error messages"/>
+
+:::info
+Are you having trouble? Check out the [Query troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+:::
