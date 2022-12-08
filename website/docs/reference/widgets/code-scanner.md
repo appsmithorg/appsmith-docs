@@ -7,7 +7,7 @@ The Code Scanner widget allows you to scan a variety of barcodes and QR codes. U
 
 ## Usage
 
-QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminates manual entry of product information at receiving, meaning there are far fewer opportunities for error. Let's look at some scenarios where a code scanner can be helpful:
+QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminates manual entry of product information at receiving, meaning there are far fewer opportunities for error. Lets look at some scenarios where a code scanner can be helpful:
 
 * **Warehouse**- Companies need to know not just their current inventory levels, but the location of those products, always. With the help of a code scanner widget, employees can keep track of their warehouse inventories. They can use a code scanner in their app to scan codes rather than manually entering them.
 * **Asset Management**- The most widely used system by businesses for tracking equipment, vehicles, and computers to support their everyday operations is the usage of barcodes. With the code scanner widget, you can keep track of equipment and the location of the assets and keep any pertinent maintenance and repair records.
@@ -15,7 +15,7 @@ QR/Barcodes have taken off because they offer a clear and fast return on investm
 
 ### Supported QR/Barcode formats
 
-We support the following formats for QR and barcodes:
+Appsmith supports the following formats for QR and barcodes:
 
 | 1D product | 1D industrial | 2D          |
 | ---------- | ------------- | ----------- |
@@ -30,20 +30,20 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 | Property                                         | Type                 | Description                                                                                                                                                               | Code Snippet                 |
 |--------------------------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| [Scanner Layout](code-scanner.md#scanner-layout) | Formatting           | Sets how the code scanner will look and behave.                                                                                                                           | NA                           |
+| [Scanner Layout](code-scanner.md#scanner-layout) | Formatting           | Sets the appearance and behaviour of the widget.                                                                                                                           | NA                           |
 | [Text](code-scanner.md#text)                     | Formatting           | Sets the label text of the widget.                                                                                                                                        | NA                           |
 | [Visible](./README.md#visible)                   | Binding & Formatting | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published. Learn more about [Visible Property](./README.md#visible | `{{CodeScanner.isVisible}}`  |
-| [Disabled](./README.md#disabled)                 | Binding & Formatting | Disables input to the widget. The widget will remain visible to the user but a user input won't be allowed. Learn more about [Disable Property](./README.md#disabled)     | `{{CodeScanner.isDisabled}}` |
+| [Disabled](./README.md#disabled)                 | Binding & Formatting | Disables input to the widget. The widget remains visible to the user but a user input won't be allowed. Learn more about [Disable Property](./README.md#disabled)     | `{{CodeScanner.isDisabled}}` |
 | [Animate Loading](./README.md)                   | Formatting           | Controls the loading of the widget.                                                                                                                                       | NA                           |
 | [Tooltip](./README.md#tooltip)                   | Formatting           | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. Learn more about [Tooltip](./README.md#tooltip)          | NA                           |
 | [Value](code-scanner.md#value)                   | Binding              | Fetches the value of scanned code                                                                                                                                         | `{{CodeScanner.value}}`      |
 
 
-#### Scanner Layout
+#### Scanner layout
 
-Scanner layout allows you to set how the code scanner will look and behave. If set to "Always on", the scanner will be visible and scanning all the time. If set to "Click to Scan", the scanner will pop up inside a modal and start scanning when the user clicks on the button.
+The behavior and appearance of the code scanner can be configured through the scanner layout property. If set to ```Always on```, the scanner will be continuously visible and scanning. Alternatively, if ```Click to Scan``` is chosen, the scanner will be shown inside a modal and will begin scanning when the user presses the button.
 
-![](/img/code-scanner-scanner-layout.png)
+<VideoEmbed host="youtube" videoId="hD-akPJDtW8" title="Scanner layout Property" caption="Scanner layout Property"/>
 
 #### Text
 
@@ -69,7 +69,7 @@ For example, lets take a Code Scanner widget (`CodeScanner1`) and bind its value
 
 ## Events
 
-You can define functions that will be called when these events are triggered in the widget. For example, you can navigate to another page, show alert messages, open and close modals, and store data in local storage.
+They're' a set of actions that you can perform on the widget. For example, you can navigate to another page, show alert messages, open and close modals, and store data in local storage.
 
 | Event              | Description                                                                                                                                                 |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,19 +77,19 @@ You can define functions that will be called when these events are triggered in 
 
 #### onCodeDetected
 
-When a valid barcode or QR code is detected, this event triggers an action.  The Appsmith framework allows triggering actions for widget events and inside JS Objects. Let’s take an example to understand how the onCodeDetected event works.
+When a valid barcode or QR code is detected, this event triggers an action. The Appsmith framework allows triggering actions for widget events and inside JS Objects. Let’s take an example to understand how the onCodeDetected event works.
 
-In this example, we will use the [Modal widget](./modal.md) to display the code response.
+In this example, the code response would be displayed using the [Modal widget](./modal.md).
 
 * Set the onCodeDetected event to open a New Modal, and choose to Create New.
-* This will open up a new modal; lets drag the [text widget](./text.md) into the modal.
+* This would open up a new modal; lets drag the [text widget](./text.md) into the modal.
 * In the property section, add the following code:
 
 ```
 {{CodeScanner1.value}}
 ```
 
-Whenever a valid code is detected, a modal window displaying the code response will show up. The video below demonstrates how to achieve that.
+Whenever a valid code is detected, a modal window displaying the code response shows up. The video below demonstrates how to achieve that.
 
 <VideoEmbed host="youtube" videoId="_2p1bMbdk6U" title="onCodeDetected" caption="onCodeDetected"/>
 
@@ -108,7 +108,7 @@ Style properties allow you to change the look and feel of the widget.
 
 ## What's next
 
-The following resources will come in handy as you need to learn new tricks:
+The following resources may come handy as you need to learn new tricks:
 
 * [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Appsmith Framework](/reference/appsmith-framework/)
@@ -116,4 +116,4 @@ The following resources will come in handy as you need to learn new tricks:
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to support@appsmith.com or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly!
+If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please reach out to support@appsmith.com or join this [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
