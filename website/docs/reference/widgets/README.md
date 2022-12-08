@@ -10,7 +10,7 @@ Widgets can be dragged from the widget pane, positioned on the canvas, and resiz
 
 In the left navigation pane, navigate to PAGES—> Select the "Widget" Tab—> Choose your desired widget, and drag it onto the canvas. You can move it anywhere on the canvas by simply dragging it around.
 
-### Naming a widget
+## Naming a widget
 
 A widget must have a unique name that acts as an identifier on the page. It's used to access the properties of the widget everywhere in the application. In that sense, a name is like a variable in a programming language.
 
@@ -24,7 +24,7 @@ You can access the various properties of the widget using the widget's name.
 {{ Table1.selectedRow.id }}
 ```
 
-### Grouping widgets
+## Grouping widgets
 
 Appsmith supports the grouping of widgets. When you group widgets, they're put in a container and can be moved together. To do this -
 
@@ -33,7 +33,7 @@ Appsmith supports the grouping of widgets. When you group widgets, they're put i
 
 ![](/img/groupingwidget.gif)
 
-### Common properties
+## Common properties
 
 The following properties are common across many of Appsmith's widgets. You can find them by selecting your widget and checking its properties pane, and you can use them to customize the details and behavior of your app.
 
@@ -52,20 +52,20 @@ The following properties are common across many of Appsmith's widgets. You can f
 
 Lets understand these properties in detail.
 
-#### Height
+## Height
 The Height property configures how a widget’s height reacts to content changes. This is a configurable property. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`. It has three possible configurations:
 - Fixed
 - Auto Height
 - Auto Height with limits
 
-##### Fixed
+### Fixed
 
 When you choose the Height as fixed, The height of the widget remains as set during drag and resize. The widget doesn't change or adapt to any content changes,i.e, you have to adjust the height manually.
 
 <VideoEmbed host="youtube" videoId="265AWQkqZAM" title="Fixed Height" caption="Fixed Height"/>
 
 
-##### Auto height
+### Auto height
 
 Auto height is a capability in widgets to change height in response to content changes. While using Auto Height, there is no limit to how much a widget can grow in height. However, the minimum height possible for any widget is 4 rows. 
 
@@ -79,7 +79,7 @@ Widgets which have auto height enabled, and are invisible in view and preview mo
 
 <VideoEmbed host="youtube" videoId="JdkAGFpxvxY" title="Layout changes due to invisible widgets" caption="Layout changes due to invisible widgets"/>
 
-##### Auto height with limits
+### Auto height with limits
 
 Appsmith provides an option to set the limits to which a widget can grow or shrink in height. This can be configured to be enabled by selecting `Auto height with limits` from the `Height` property in the `General` section of the property pane. Once enabled, select the widget, to find two handles which also work as the values for the minimum and maximum height a widget can occupy on the canvas. These handles can be dragged to configure the minimum and maximum height limits for the widget.
 
@@ -92,7 +92,7 @@ Appsmith provides an option to set the limits to which a widget can grow or shri
 
 :::
 
-#### Disabled
+## Disabled
 
 It disables the user from entering values in the input widget. The widget is visible (if Visible is enabled), but user input won't be allowed. You can also write a JS code to link Disabled's functionality to a user action. Click on `JS` next to the `Disabled` to write JavaScript code.
 
@@ -106,13 +106,13 @@ When you tick the checkbox, it enables the Disabled property and prevents intera
 
 <VideoEmbed host="youtube" videoId="JEARavnq0vQ" title="Disable" caption="Disable"/>
 
-#### Error message
+## Error message
 
 If a user enters an incorrect value, the input widget shows a message "invalid input." You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
 <VideoEmbed host="youtube" videoId="oeUHJhM4zyU" title="Error Message" caption="Error Message"/>
 
-#### Tooltip
+## Tooltip
 
 Tooltips are often used to show the user extra information about an element on the page, or to give them extra hints on how to use something. They're usually hidden until a certain condition is met, such as the user's mouse cursor hovering over the element.
 
@@ -120,13 +120,13 @@ The Tooltip property in Appsmith is used to set the text that appears within a f
 
 <VideoEmbed host="youtube" videoId="UZ3MBVfNSzk" title="Tooltip" caption="Tooltip"/>
 
-#### Placeholder
+## Placeholder
 
 You can set a proxy text/value inside the input box using the `placeholder` property. It can be any message or hint for the expected input.
 
 <VideoEmbed host="youtube" videoId="576Bfo8htf0" title="Placeholder" caption="Placeholder"/>
 
-#### Regex
+## Regex
 
 Using `Regex` or Regular expression property, you can set specific constraints on the input you expect from the user.
 
@@ -140,7 +140,7 @@ If you enter a value other than an alphabetic or space (number of special charac
 
 <VideoEmbed host="youtube" videoId="n6VUQN-wv9U" title="Regular Expression(Regex)" caption="Regular Expression(Regex)"/>
 
-#### Required
+## Required
 
 Entering a value in the input box is mandatory when the required property is enabled. You can also write a JS code to link this property to a user action. Click on `JS` next to the `Required` to write JavaScript code.
 
@@ -154,7 +154,7 @@ When you tick the checkbox, it enables the Required property, and the input box 
 
 <VideoEmbed host="youtube" videoId="2hqT02HCah8" title="Required" caption="Required"/>
 
-#### Valid
+## Valid
 
 The `Valid` property can be used to set a condition or expression that the user's input must meet in order for the widget to accept it. If the given condition isn't met, the widget shows a tooltip that contains the text that has been set within its **Error Message** property (or "Invalid input" if the property isn't set). Forms can also be configured such that they're not able to be submitted if one of their child widgets has user input that's considered invalid.
 
@@ -168,7 +168,7 @@ Now when the field has fewer than three characters entered, a tooltip appears wi
 
 <VideoEmbed host="youtube" videoId="rk3yzSoe6aw" title="Valid" caption="Valid"/>
 
-#### Visible
+## Visible
 
 `Visible` controls the widget's visibility on the app's page. The widget won't be visible on the published app if you turn off this property. You can also write a JS code to link Visible's functionality to a user action. Click on `JS` next to the `Visible` to write JavaScript code.
 

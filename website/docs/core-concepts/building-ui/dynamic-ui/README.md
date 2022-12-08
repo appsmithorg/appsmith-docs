@@ -48,8 +48,4 @@ Here Table1 is the name of the widget
 ![Click to expand](</img/form_-_table.gif>)
 
 ## Setting widget height
-You can set the height of widget using the Height property. It configures how a widget’s height reacts to content changes in the app. The configuration to this property can be found in the property pane under the section `General`, with the property name `Height`([Learn more](/reference/widgets/#height) about Height property). It has three possible configurations:
-- [Fixed](/reference/widgets/#fixed)
-- [Auto Height](/reference/widgets/#auto-height)
-- [Auto Height with limits](/reference/widgets/#auto-height-with-limits)
-
+You can set the height of widget using the Height property. It configures how a widget’s height reacts to content changes in the app. To build a dynamic UI, you can use the Auto Height, that gives the widget a capability to change height in response to content changes. Auto height saves you from the task of defining the height of the widget manually. For more information, see the [Auto height](/reference/widgets/#auto-height) property of widgets . 
