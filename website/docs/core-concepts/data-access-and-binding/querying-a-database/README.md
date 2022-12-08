@@ -88,7 +88,7 @@ Once you have successfully run a Query, you can use it in your application to
 * [Display Data](/core-concepts/data-access-and-binding/displaying-data-read)
 * [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write)
 
-## Debugging queries
+## Debugging errors
 
 When a query fails, Appsmith commonly shows a notification stating something like: `UncaughtPromiseRejection: <query_name> failed to execute.`.
 
