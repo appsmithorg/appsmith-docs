@@ -58,8 +58,30 @@ storeValue
 updatedRow
 updatedRows
 
-newRow
 
+newRow
+Tooltip
+tooltip
+widget's
+Ctrl
+CTRL
+Disabled's
+Visible's
+isVisible
+isDisabled
+isValid
+selectedTab
+UIs
+Streamable
+Wistia
+Mixcloud
+autoPlay
+Autoplay
+playState
+onPlay
+onPause
+onEnd
+px
 URL
 watchId
 watchPosition
@@ -68,3 +90,4 @@ widget
 
 APIs
 figma
+

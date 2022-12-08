@@ -360,6 +360,6 @@ Assuming that the POST request is successful, the `myAPI` datasource receives th
 
 The following resources can come in handy as you need to learn new tricks:
 
-* [Core Concepts](./../../../core-concepts/connecting-to-data-sources/README.md)
-* [Appsmith Framework](../../appsmith-framework/)
-* [JavaScript Editor](../../../core-concepts/writing-code/javascript-editor-beta/)
+* [Core Concepts](/core-concepts/connecting-to-data-sources/)
+* [Appsmith Framework](/reference/appsmith-framework/)
+* [JavaScript Editor](/core-concepts/writing-code/javascript-editor-beta/)
