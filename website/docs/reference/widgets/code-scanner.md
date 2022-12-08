@@ -77,7 +77,7 @@ They're' a set of actions that you can perform on the widget. For example, you c
 
 #### onCodeDetected
 
-When a valid barcode or QR code is detected, this event triggers an action. The Appsmith framework allows triggering actions for widget events and inside JS Objects. Let’s take an example to understand how the onCodeDetected event works.
+When a valid barcode or QR code is detected, this event triggers an action. The Appsmith framework allows triggering actions for widget events and inside JS Objects. Lets take an example to understand how the ```onCodeDetected``` event works.
 
 In this example, the code response would be displayed using the [Modal widget](./modal.md).
 
