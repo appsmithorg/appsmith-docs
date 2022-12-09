@@ -20,6 +20,8 @@ kubectl exec -it <pod> bash
 root@appsmith-0:/opt/appsmith# appsmithctl backup
 ```
 
+Eg:
+
 ```bash
 root@appsmith-0:/opt/appsmith# ls /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
 /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
@@ -32,6 +34,13 @@ root@appsmith-0:/opt/appsmith# md5sum /appsmith-stacks/data/backup/appsmith-back
 ```
 
 ## Copy the backup
+
+```bash
+(base) ➜  backups git:(helm/ee/keycloak/charts) ✗ kubectl cp <namespace>/appsmith-0:<backup_path> ./<local_file>.tar.gz
+
+```
+
+Eg:
 
 ```bash
 
@@ -58,11 +67,18 @@ Deploy the new version of helm chart using this [page](./setup-ee-helmChart.md)
 Copy the appsmith backup specifically to `/appsmith-stacks/data/backup/`
 
 ```bash
+(base) ➜  helm git:(helm/ee/keycloak/charts) ✗ kubectl cp <local_path> <namespace>/<pod>:/appsmith-stacks/data/backup/
+
+```
+
+Eg:
+
+```bash
 (base) ➜  helm git:(helm/ee/keycloak/charts) ✗ kubectl cp backups/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz goutham/appsmith-875b6cddc-smzwz:/appsmith-stacks/data/backup/
 Defaulted container "appsmith" out of: appsmith, redis-init-container (init), mongo-init-container (init), psql-init-container (init)
 ```
 
-## Restore Appsmith**
+## Restore Appsmith
 
 ```bash
 root@appsmith-875b6cddc-smzwz:/appsmith-stacks# appsmithctl restore
