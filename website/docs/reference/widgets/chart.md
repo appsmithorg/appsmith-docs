@@ -94,6 +94,7 @@ Let’s use a line chart to visualize the data.
 As you can see in the video, we use the `Chart Series` property head to supply the data and details related to identifying the data points.
 
 * `Series Title` - the name of the series. In the example above, it is _**Total Bugs**_.
+* `Series Color` - a color picker input to select the color of the series.
 * `Series Data` - stores the data points for the total bugs.
 * `X-axis Label` - to define a title for the x-axis.
 * `Y-axis Label` - to define a title for the y-axis.
