@@ -59,3 +59,7 @@ watchId
 watchPosition
 widget
 Widget
+Supported QR/Barcode formats
+QR
+onCodeDetected
+check
