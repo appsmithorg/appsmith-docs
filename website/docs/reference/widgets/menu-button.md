@@ -1,147 +1,107 @@
 # Menu Button
 
-Menu buttons are used to represent a set of actions in a group.
+The Appsmith menu buttons widget is a customizable dropdown menu that allows you to add a list of options for users to select from. It's a powerful tool for creating navigation menus, dropdown lists, and options for users to choose from.
 
-<VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Mwnu Button Widget" caption="How to use Mwnu Button Widget"/>
+<VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Menu Button Widget" caption="How to use Menu Button Widget"/>
+
+:::info
+The icons are used from [Blueprint](https://blueprintjs.com) library. For more information, see the [list of icons available on Blueprint](https://blueprintjs.com/docs/#icons).
+:::
+
+## Usage
+
+To use the menu buttons widget, simply drag & drop it onto your app canvas from the widget library and customize it using the properties and events available. The widget comes with default styles, but you can also use the styles tab to customize the look and feel of your buttons and menus. 
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+The menu buttons widget has several properties that you can use to customize its behavior and appearance. Properties also allow you to connect it with other widgets and customize the user actions. The table below gives an exhaustive list of available properties for the menu button and menu item.
 
-### Widget Properties
+### Menu Button properties
+These properties allow you to perform formatting changes or bind the Menu Button widget to any other widget, query, or JS object. 
 
-These properties allow you to edit the Menu Button widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+| Property            | Type | Description | Code Snippet |
+| ------------------- | ---------------- |------------------- | ---------------- |
+| **Label**        | Formatting/ Binding | This property sets the label of the menu button. It can be a static text value or dynamically bound to a source of data. For example, you might set the label to be the logged-in user’s name. To dynamically bind the text, use the `{{}}` mustache sign. You can also read the value of the label in the code. | `{{<WIDGET_NAME.label}}`|
+| [**Menu Items Source**](#menu-items-source)| Formatting | This property allows you to specify the source for the menu items. You can define a static list of items or provide a dynamic data source to be displayed as menu items. |                   |
+| **Disabled**         | Formatting | This property disables the input to the widget. For more information, see [Disabled property details](/reference/widgets#disabled).|                  |
+| **Visible**          | Formatting/Binding | This property controls the visibility of the widget. For more information, see [Visible property details](/reference/widgets#visible)| `{{<WIDGET_NAME.visible}}`|
+| **Animate Loading** | Formatting | This property allows you to control a widget’s animation on the page. This can be useful for adding visual feedback to the user when the widget is loading or processing data.|                  |
+| **Compact**         | Formatting | This property decides if the widget is in compact mode. In compact mode, the widget takes up less space on the page and can be suitable to use in tight layouts.|                 
 
-| Property            | Description                                                                                                                                                    |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **label**           | Sets the label of a menu.                                                                                                                                      |
-| **menuItems**       | Array of menu items in the dropdown list. This lets you add/remove/edit a menu item and customize the [menu item settings](menu-button.md#menu-item-settings). |
-| **Disabled**        | Disables input to the widget.                                                                                                                                  |
-| **Visible**         | Controls the visibility of the widget.                                                                                                                         |
-| **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                                                                   |
-| **Compact**         | Decides if the widget is in compact mode.                                                                                                                      |
+### Menu Item properties
+These properties allow you to perform formatting changes for menu items that are added manually using Static source.
 
-### Binding Properties
+| Property            | Type | Description | Code Snippet |
+| ------------------- | ---------------- |------------------- | ---------------- |
+| **Label**           | Formatting| This property sets the label of a menu item. This can be a static text value, or it can be dynamically bound to a data source. For example, you might set the label to be the name of a page or a user. | |
+| **Visible**           | Formatting/Binding | This property controls the visibility of a menu item. This can be useful for showing or hiding the menu item based on certain conditions. For example, you might show the menu item only if a user has permission to access it. For more information, see [Visible property details](/reference/widgets#visible)) | |
+| **Disabled**           | Formatting| This property allows you to turn off input to a menu item. This can be useful if you want to prevent users from interacting with the menu item in certain scenarios. For example, you might turn off a menu item when it's not relevant or applicable. For more information, see [Disabled property details](/reference/widgets#disabled).| |
+| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. | |
+|**Position** | Style |  This property allows you to select the position where you want to place the icon on the menu item. You can choose between left or right alignment.| |
+|**Icon color** | Style | This property sets the color of the icon for the menu item. This can be useful for matching the icon with the overall design of the menu button.| |
+|**Text color** | Style |  This property sets the color of the text for the menu item. This can be useful for making the text stand out or blending in with the background.| |
+|**Background color**| Style | This property sets the background color of the menu item. This can be useful for adding visual interest or highlighting the selected menu item.| |
 
-These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+### Dynamic Menu Item properties
+These properties allow you to perform formatting changes or bind the Menu Button widget to any other widget, queries or JS objects. 
 
-| Binding Properties | Description                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| **label**          | This property gets the label value of the widget.             |
-| **isVisible**      | This property indicates whether the widget is visible or not. |
+| Property            | Type | Description | Code Snippet |
+| ------------------- | ---------------- |------------------- | ---------------- |
+| [**Label**](#item-configuration)| Formatting| This allows you to display different text for each menu item based on its data. | |
+| **Visible**           | Formatting/Binding | This property controls the visibility of a menu item. This can be useful for showing or hiding the menu item based on certain conditions. For example, you might show the menu item only if a user has permission to access it. For more information, see [Visible property details](/reference/widgets#visible)) | |
+| **Disabled**           | Formatting| This property allows you to turn off input to a menu item. This can be useful if you want to prevent users from interacting with the menu item in certain scenarios. For example, you might turn off a menu item when it's not relevant or applicable. For more information, see [Disabled property details](/reference/widgets#disabled).| |
+| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. | |
+|**Position** | Style |  This property allows you to select the position where you want to place the icon on the menu item. You can choose between left or right alignment.| |
+|**Icon color** | Style | This property sets the color of the icon for the menu item. This can be useful for matching the icon with the overall design of the menu button.| |
+|**Text color** | Style |  This property sets the color of the text for the menu item. This can be useful for making the text stand out or blending in with the background.| |
+|**Background color**| Style | This property sets the background color of the menu item. This can be useful for adding visual interest or highlighting the selected menu item.| |
 
-### Styles
+The properties are described as follows:
 
-Style properties allow you to change the look and feel of the widget.
+### Menu items source
+The "Menu items source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful for providing up-to-date information in the menu.
 
-| Styles             | Description                                            |
-| ------------------ | ------------------------------------------------------ |
-| **Menu Color**     | Sets the background color of the widget.               |
-| **Menu Variant**   | Sets the variant of the menu button.                   |
-| **Border Radius**  | Allows you to define curved corners.                   |
-| **Box Shadow**     | Allows you to choose from the available shadow styles. |
-| **Icon**           | Sets the icon to be used for menu button.              |
-| **Placement**      | Sets the space between items.                          |
-| **Icon Alignment** | Sets the alignment of the selected icon.               |
+<VideoEmbed host="youtube" videoId="MrvRADv-H9A" title="How to set Menu Items Source for Menu Button Widget" caption="How to set Menu Items Source for Menu Button Widget"/>
 
-### Menu Item Settings
+#### Static
+The "Static" source refers to the ability to manually define the menu items. This means that the menu items don't change unless the user manually updates them. For example, if you have a static menu with three items (Home, About, Contact), the menu always displays those items until they’re manually edited using the gear icon next to it. Once you select `Static` as the source, you see the `Menu Items` property, where you can define the items for the menu.
 
-Each menu item can now be customized through a set of properties by clicking on the gear icon.
+##### Menu items
+This property allows you to define the options you can show in the dropdown list when the menu button is clicked. You can add the items from the property pane by using the `Add a Menu Item` button. Each menu item can be customized using the gear icon available next to it. For example, you might define a menu item with a label of "Home" and an action of "Navigate to Home page" by using the gear icon.
 
-![](/img/Menu_items.gif)
+###### Menu item settings
 
-| Property                           | Description                                                                     |
-| -----------------------------------| -------------------------------------------------------------------------------------------------------------|
-| **label**                          | Sets the label of a menu item.          |
-| **Visible**                        | Controls the visibility of a menu item. |
-| **Disabled**                       | Disables input to a menu item.          |
+The gear icon allows you to access and configure settings for a menu item, such as its [properties](#menu-item-properties). This can be useful for customizing the behavior and appearance of the menu item. You can also set [styles specific to the menu item](#menu-item-properties) like Icon, the position of the icon, background color, and more.
 
-| Icon Options       | Description                               |
-| ------------------ | ----------------------------------------- |
-| **Icon**           | Sets the icon to be used for menu button. |
-| **Icon alignment** | Sets the alignment of the selected icon.  |
+To specify an action to be performed when a menu item is clicked, you can bind a supported action to the `onClick` event of the menu item. You can define different actions to be triggered for different menu items using the gear icon next to them. For more information, see the list of [supported actions](/reference/appsmith-framework/widget-actions)
 
-| Events      | Description                                                                                                                        |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets the action to be run when the menu item is clicked. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+#### Dynamic
+When you select the dynamic source, you can bind the menu item's property to a data source, such as a database query or API response. This allows the widget to dynamically populate the menu items based on available data. This is useful for creating menus that can change and adapt based on user input or application state. You can configure the menu items by clicking the `Item Configuration` button.
 
-| Styles               | Description                               |
-| -------------------- | ----------------------------------------- |
-| **Icon color**       | Sets the icon color of menu item          |
-| **Background Color** | Sets the background color of a menu item. |
-| **Text Color**       | Sets the text color of a menu item.       |
-
-:::info
-We currently use the icons from [Blueprint](https://blueprintjs.com) library. You can see the list of icons [here](https://blueprintjs.com/docs/#icons).
+:::note
+ Dynamic menu items are **only** supported inside the menu button and the list widget. You can add up to 10 menu items by defining them in the "Source Data" property for a dynamic source.
 :::
 
-# Dynamic Menu Items
-
-Previously, the Menu Button Widget only allowed users to add menu items using the UI in the property pane. They would simple click on "Add a new menu item" button and then go on to configure this individual menu item using the settings icon after the menu item.
-
-This prevented super users to add the menu options dynamically, using JS.
-
-With [#17652](https://github.com/appsmithorg/appsmith/pull/17652), users will be able to add upto 10 menu items using JS. They simply need to select Menu Item Source (a new property) as Dynamic, bind a source data, and then they can configure each menu item by referencing `currentItem` inside the configuration.
-
-### TL;DR
-
--   Dropdown to select Menu Items Source as Static (default) or Dynamic
--   If dynamic, get menu items from a source (an array of values/objects, max length 10)
--   Configure the menu items individually using  `{{ currentItem }}`. An autocomplete will also help here. Control item's
-    -   Label
-    -   Visibility
-    -   Disabled state
-    -   onClick event
-    -   Icon
-        -   Position
-        -   Color
-    -   Background color
-    -   Text color
-
-### New Widget Properties
-**1. Menu Items Source** - Options - Static, and Dynamic; Default value - Static
-
-When static is selected, the menu button works exactly the same as it did previously.
-When `Dynamic`, the new option, is selected, two new properties, `Source Data` and `Configure Menu Items` show up. More on these below.
-
-**2. Source Data** - Default value - [], Expected value - Array of values
-
-Any array can be binded here. It can be a query's response, an API response, or even our own Table's `Table.tableData` works. The evaluated array here will be used as the base for our menu items. Using `Configure Menu Items` we will essentially loop over each item inside this array to configure the menu item's appearance and behaviour.
-We have added one important validation here on the source data array - it's length cannot be more than 10. This translates to the following - 
-
-> When using dynamic menu items inside the menu button widget, we can create a menu button having a maximum of 10 menu items.
-
-**3. Configure Menu Items** - 
-
-When you click the `Item Configuration` button, a new child panel opens up. Here, we can configure how each menu item will appear and behave. There are two ways we can configure a menu item here.
-1. By using the UI - all menu items will have a similar configuration. 
-For example, if I have the label set to `Menu Item`, all menu items inside the menu button dropdown will have the label `Menu Item`
-2. Using the `currentItem` and `currentIndex` binding - All menu items will be customized.
-For example, if the `Source Data` is 
-```js
-["yellow", "red", "blue"]
-```
-and my label is set to be
-```js
-Color - {{currentItem}}, Index - {{currentIndex}}
-```
-The menu items list will now be 
-
-![Menu items with label using currentItem and currentIndex binding](/img/dynamic-menu-items-label.png)
-
-Using these bindings, we can also apply properties conditionally. For example, `source data` is -
-```js
-["yellow", "red", "blue"]
-```
-and `background color` can be - 
-```js
-{{currentItem === "blue" ? "black" : "gray"}}
-```
-The menu items list will now be 
-
-![Menu items with conditional background color](/img/dynamic-menu-items-background-color.png)
-
-### Note
-Right now, dynamic menu items are only supported inside the menu button and the list widget. Two more issues for adding dynamic menu items inside the table widget ([#17955](https://github.com/appsmithorg/appsmith/issues/17955)) and in the button group widget have been created ([#17956](https://github.com/appsmithorg/appsmith/issues/17956)). We will add the support inside table and button group in the upcoming weeks.
+If the dynamic source array has more than 10 items, the `SourceData` fields show an error message: `Source data cannot have more than 10 items`.
 
 ![Error message when the menu items exceed than 10](/img/dynamic-menu-items-error.png)
+
+#### Source data
+The "Source Data" property is used to specify the data source for a dynamic menu. By default, this property has an empty value but can be set to an array of values. This array can be the result of a query, an API response, or any other data source that can be represented as an array. The evaluated array generates the menu items for the dynamic menu.
+
+#### Configure Menu Items
+With the "Configure Menu Items" option, you define the styles for the menu items. You can add customizations to every item in the array by configuring them using the 'Item Configuration` button.
+
+##### Item configuration
+You can access and configure settings for a menu item, such as its properties, events, and styles. This can be useful for customizing the behavior and appearance of the menu item. The configurations are applied to every item in the Menu. You can use `currentItem` and `currentIndex` to configure the labels, appearance, and actions.
+
+###### How to use currentItem and currentIndex
+The `currentItem` property references the selected item on the menu button. You can use the `currentItem` to read the attributes of the selected menu item. For example, if you want to set the dynamic value for the label, then you can use a placeholder such as `{{currentItem.Name}}`, where "Name" is the attribute that holds the name of the menu item. This allows you to display different text for each menu item based on its data. 
+
+![using `currentItem` to show labels](/img/MenuButton-Dynamic-Menu-Label-CurrentItem.png)
+
+`currentIndex` is helpful when you want to show a numbered list of menu items or want to set alternate background colors for the menu items.
+
+![Menu items with label using currentItem and currentIndex binding](/img/MenuButton-dynamic-Menu-Label-NumberedList-CurrentIndex.png)
+
+Overall, the Appsmith menu button widget is a powerful and versatile tool for creating dropdown menus, and navigation tools that provide options for users to choose from. With its customizable properties and styles, you can tailor the widget to suit your specific needs and design preferences.

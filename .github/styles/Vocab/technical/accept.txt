@@ -70,4 +70,5 @@ watchId
 watchPosition
 Widget
 widget
-
+currentItem
+currentIndex
