@@ -72,3 +72,7 @@ Widget
 widget
 currentItem
 currentIndex
+Supported QR/Barcode formats
+QR
+onCodeDetected
+check
