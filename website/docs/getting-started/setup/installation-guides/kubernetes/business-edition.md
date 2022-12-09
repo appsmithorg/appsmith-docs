@@ -1,4 +1,4 @@
-# Kubernetes
+# Business Edition with Kubernetes
 
 ## Pre-requisites
 
