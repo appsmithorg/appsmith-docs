@@ -49,7 +49,8 @@ const sidebars = {
                   label: 'Kubernetes',
                   link: {type: 'doc', id: 'getting-started/setup/installation-guides/kubernetes/README'},
                   items: [
-                    'getting-started/setup/installation-guides/kubernetes/migrate-k8s'
+                    'getting-started/setup/installation-guides/kubernetes/business-edition',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
                 'getting-started/setup/installation-guides/aws-ami',
@@ -139,8 +140,7 @@ const sidebars = {
             label: 'Upgrade to Business Edition',
             link: {type: 'doc', id:  'getting-started/setup/upgrade-to-business-edition/README'},
             items: [
-              'getting-started/setup/upgrade-to-business-edition/docker',
-              'getting-started/setup/upgrade-to-business-edition/kubernetes',
+              'getting-started/setup/upgrade-to-business-edition/docker'
             ]
           },
          ],
