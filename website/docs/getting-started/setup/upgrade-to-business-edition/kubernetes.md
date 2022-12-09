@@ -1,58 +1,38 @@
-# Migration Guide from CE to EE
+# Kubernetes
 
-**Key aspects of the new ee-helm-chart:**
+The EE Helm charts, supportr Horizontal Pod Autoscaling (HPA). This means that Appsmith pods can be scaled up or down automatically depending on the current load.
 
-- Support for horizontal pod autoscaling
-  - This means appsmith will now be a kubernetes deployment and not a stateful-set
-- Based on the load the pods can scale-up and scale-down
+Internally, this also means that the Appsmith pods will now be managed by a Kubernetes _deployment_ resource instead of a _stateful-set_ resource.
 
-## Taking backup
+## Take backup
 
-### exec into the pod
+Open a shell into one of your current Appsmith pods:
 
 ```bash
 kubectl exec -it <pod> bash
 ```
 
-### Appsmith backup
+Run the backup command:
 
 ```bash
-root@appsmith-0:/opt/appsmith# appsmithctl backup
+appsmithctl backup
 ```
 
-Eg:
+Once this is finished, you should have a backup archive generated at a location like this:
 
-```bash
-root@appsmith-0:/opt/appsmith# ls /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
+```
 /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-
-root@appsmith-0:/opt/appsmith# du -hs /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-72K /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-
-root@appsmith-0:/opt/appsmith# md5sum /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-122dedfe6de3724596455246a04dff32  /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
 ```
 
-## Copy the backup
+Download the backup archive:
 
 ```bash
-(base) ➜  backups git:(helm/ee/keycloak/charts) ✗ kubectl cp <namespace>/appsmith-0:<backup_path> ./<local_file>.tar.gz
-
+kubectl cp <namespace>/appsmith-0:<backup_path_from_above> ./appsmith-ce-backup.tar.gz
 ```
 
-Eg:
+## Uninstall CE helm chart
 
-```bash
-
-(base) ➜  backups git:(helm/ee/keycloak/charts) ✗ kubectl cp goutham/appsmith-0:/appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz ./appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-(base) ➜  backups git:(helm/ee/keycloak/charts) ✗ du -hs appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
- 72K appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-(base) ➜  backups git:(helm/ee/keycloak/charts) ✗ md5 appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-MD5 (appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz) = 122dedfe6de3724596455246a04dff32
-
-```
-
-### Uninstall helm chart
+Now that you have a backup, you can uninstall the CE helm chart:
 
 ```bash
 helm uninstall appsmith 
