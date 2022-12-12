@@ -47,6 +47,8 @@ You can define functions that will be called when these events are triggered in 
 | Event              | Description                                                                                                                                                                                                                       |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onDateSelected** | Sets an an action to take place when a date is selected. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onFocus** | Sets an an action to take place when a datepicker is focused. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onBlur** | Sets an an action to take place when a datepicker loses focus. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
 
 ### Label
 
