@@ -217,6 +217,8 @@ Let's take a widget `currencyinput1` use this property to display the selected c
 | Event             | Description                                                                                                                                                                                                                                              |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onTextChanged** | Sets an an action to take place when the input's value is changed. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onFocus**      | Sets an an action to take place when the input area in the currency widget is focused. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onBlur**      | Sets an an action to take place when the input area in the currency widget loses focus. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
 | **onSubmit**      | Sets an an action to take place when the input is submitted with the ENTER key. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
 
 ### Label
