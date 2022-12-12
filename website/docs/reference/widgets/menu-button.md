@@ -1,6 +1,6 @@
 # Menu Button
 
-The Appsmith menu buttons widget is a customizable dropdown menu that allows you to add a list of options for users to select from. It's a powerful tool for creating navigation menus, dropdown lists, and options for users to choose from.
+The Appsmith Menu Button widget is a customizable dropdown menu that allows you to add a list of options for users to select from. It's a powerful tool for creating navigation menus, dropdown lists, and options for users to choose from.
 
 <VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Menu Button Widget" caption="How to use Menu Button Widget"/>
 
@@ -23,8 +23,8 @@ These properties allow you to perform formatting changes or bind the Menu Button
 | ------------------- | ---------------- |------------------- | ---------------- |
 | **Label**        | Formatting/ Binding | This property sets the label of the menu button. It can be a static text value or dynamically bound to a source of data. For example, you might set the label to be the logged-in user’s name. To dynamically bind the text, use the `{{}}` mustache sign. You can also read the value of the label in the code. | `{{<WIDGET_NAME.label}}`|
 | [**Menu Items Source**](#menu-items-source)| Formatting | This property allows you to specify the source for the menu items. You can define a static list of items or provide a dynamic data source to be displayed as menu items. |                   |
-| **Disabled**         | Formatting | This property disables the input to the widget. For more information, see [Disabled property details](/reference/widgets#disabled).|                  |
 | **Visible**          | Formatting/Binding | This property controls the visibility of the widget. For more information, see [Visible property details](/reference/widgets#visible)| `{{<WIDGET_NAME.visible}}`|
+| **Disabled**         | Formatting | This property disables the input to the widget. For more information, see [Disabled property details](/reference/widgets#disabled).|                  |
 | **Animate Loading** | Formatting | This property allows you to control a widget’s animation on the page. This can be useful for adding visual feedback to the user when the widget is loading or processing data.|                  |
 | **Compact**         | Formatting | This property decides if the widget is in compact mode. In compact mode, the widget takes up less space on the page and can be suitable to use in tight layouts.|                 
 
@@ -58,7 +58,7 @@ These properties allow you to perform formatting changes or bind the Menu Button
 
 The properties are described as follows:
 
-### Menu items source
+### Menu Items Source
 The "Menu items source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful for providing up-to-date information in the menu.
 
 <VideoEmbed host="youtube" videoId="MrvRADv-H9A" title="How to set Menu Items Source for Menu Button Widget" caption="How to set Menu Items Source for Menu Button Widget"/>
@@ -66,8 +66,8 @@ The "Menu items source" property lets you define where the menu items come from.
 #### Static
 The "Static" source refers to the ability to manually define the menu items. This means that the menu items don't change unless the user manually updates them. For example, if you have a static menu with three items (Home, About, Contact), the menu always displays those items until they’re manually edited using the gear icon next to it. Once you select `Static` as the source, you see the `Menu Items` property, where you can define the items for the menu.
 
-##### Menu items
-This property allows you to define the options you can show in the dropdown list when the menu button is clicked. You can add the items from the property pane by using the `Add a Menu Item` button. Each menu item can be customized using the gear icon available next to it. For example, you might define a menu item with a label of "Home" and an action of "Navigate to Home page" by using the gear icon.
+##### Menu Items
+This property allows you to define the options you can show in the dropdown list when the menu button is clicked. You can add the items from the property pane by using the `Add a New Menu Item` button. Each menu item can be customized using the gear icon available next to it. For example, you might define a menu item with a label of "Home" and an action of "Navigate to Home page" by using the gear icon.
 
 ###### Menu item settings
 
