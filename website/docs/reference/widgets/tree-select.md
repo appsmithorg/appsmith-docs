@@ -81,6 +81,8 @@ They are a set of actions that you can perform on the widget. The following tabl
 | Events             | Description                                                                                                                 |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------- |
 | **onOptionChange** | Triggers an action when a user selects an option. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownClose** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 
