@@ -11,7 +11,6 @@ To try this feature yourself, take a look at the [sample app for inline editing]
 | Property                                           | Type        | Definition                                                                                                                                                                                                                                                               | Code Snippet                   |
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
 | [**Editable**](#editable)                 | Formatting  | Controls whether cells of the column are editable                                                             | NA                             |
-| [**Cell Wrapping**](#cell-wrapping)            | Formatting  | Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents are truncated with an ellipsis. | NA |
 | [**Min**](#min)                      | Validation  | Sets the minimum allowed value. Only available for columns that are type _Number_.                                                                               | NA                             |
 | [**Max**](#max)                      | Validation  | Sets the maximum allowed value. Only available for columns that are type _Number_.                                                                              | NA                             |
 | [**Regex**](#regex)                    | Validation  | Enter a regular expression that user input must match to be considered valid. Displays an error message on failure.                                   | NA                             |
@@ -19,9 +18,9 @@ To try this feature yourself, take a look at the [sample app for inline editing]
 | [**Error Message**](#error-message)            | Validation  | The error message displays if the input fails the **Regex** or **Valid** properties' checks.                                        | NA                             |
 | [**Required**](#required)                 | Validation  | Makes input to the widget mandatory.                                                                          | NA                             |
 | [**Update Mode**](#update-mode)              | Formatting  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
-| [**updatedRows**](#updatedrows)              | Binding     | Contains all the data of the edited table rows.                                                    | `{{Table1.updatedRows}}`       |
-| [**updatedRowIndices**](#updatedrowindices)        | Binding     | Contains an array of indices of the table rows that have been edited.                                                        | `{{Table1.updatedRowIndices}}` |
-| [**updatedRow**](#updatedrow)               | Binding     | Contains the all the data of the row that was recently updated. | `{{Table1.updatedRow}}`|
+| [**updatedRows**](#updatedrows)              | Binding     | Contains all the data of the edited table rows. Useful in **Multi row** update mode.                                                    | `{{Table1.updatedRows}}`       |
+| [**updatedRowIndices**](#updatedrowindices)        | Binding     | Contains an array of indices of the table rows that have been edited. Useful in **Multi row** update mode.                                                        | `{{Table1.updatedRowIndices}}` |
+| [**updatedRow**](#updatedrow)               | Binding     | Contains the all the data of the row that was recently updated. Useful in **Single row** update mode. | `{{Table1.updatedRow}}`|
 | [**Allow adding a row**](#allow-adding-a-row) | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | [**Default Values**](#default-values) | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | [**isAddRowInProgress**]( #isaddrowinprogress) | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
@@ -101,7 +100,6 @@ If a value other than "John" is added to the cell, an error is displayed. Simila
 
 The error message appears if the regular expression (**Regex**) and/or the **Valid** property determine the input is invalid. If a user enters an incorrect value, the widget shows "invalid input." by default. You can change this message by using the **Error message** property to provide better feedback to the user.
 
-<!-- ![](/img/table_err_msg.PNG) -->
 <img src="/img/table_err_msg.PNG" alt="Error message when input is invalid" width="524"/>
 
 ##### Regex
@@ -110,7 +108,6 @@ The error message appears if the regular expression (**Regex**) and/or the **Val
 
 When you add a regular expression to a column, all user input in that column is compared to the pattern; it's considered to be valid when it matches the expression, or invalid when it doesn't match. When input is invalid, the cell displays its **Error message** to the user in a tool-tip.
 
-<!-- ![](/img/as_errormsg.png) -->
 <img src="/img/as_errormsg.png" alt="Error message when input is invalid" width="511"/>
 
 For example, add a regular expression for entering a name. The name can contain only alphabetical characters and spaces between the first and last name:
@@ -166,6 +163,17 @@ While you are configuring the **onSave** or **onDiscard** events, you can use th
 :::
 
 As an alternative to using the `Save/Discard` buttons and events, you can configure the **onSubmit** event in each column's settings to run a query that saves the new data. The onSubmit event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it.
+
+After configuring your save button to send data back to your datasource, set up a success callback nested within the button's onClick to automatically pull the latest information into the table. In this example, `myAPI_get` is a query that refreshes the table data.
+
+```javascript
+{{
+  // in the button's onClick field
+  myAPI_update.run(
+    () => myAPI_get.run(), // success callback
+    () => {} // error callback
+  )
+}}
 
 ###### updatedRow
 
@@ -231,12 +239,11 @@ To get just an array containing the affected rows, you can use the JS [`map()`](
 
 6. Add a callback to automatically refresh the table after a successful query. In this example, `myAPI_get` is a query that refreshes the table data.
 
-<!-- ![](/img/as_updateMany.png) -->
 <img src="/img/as_updateMany.png" alt="Set onClick to update table and refresh" width="587"/>
 
 ```javascript
 {{
-  //in the button's onClick field
+  // in the button's onClick field
   myAPI_updateMany.run(
     () => myAPI_get.run(), // success callback
     () => {} // error callback
@@ -344,10 +351,14 @@ Saving new rows works much like submitting a form. Use the **onSave** event unde
 
 As shown in the video, suppose that your table gets information from a query called `myAPI_get`, which is a GET request to a datasource called `myAPI`. After you add a new row to the table, to update the original datasource with the new data, you might execute a query like `myAPI_post`, which would be a POST request to `myAPI`. To add the newly added data to the POST request, you can use the Table's [`newRow`](#newrow) attribute to reference the new row. When the POST request is successful, the `myAPI` datasource receives the new information, and the Table shows the new row the next time it updates.
 
-In addition to the **onSave** event, the `onSubmit` event can be used for executing queries to save new table data.
-When a column is made editable, the `onSubmit` property appears under the Event section in the column settings. This event is called anytime the cell content is edited and persisted. 
+Once the save button is configured to send the new row back to your datasource, set up a success callback nested within the button's onClick to automatically pull the latest information into the table.
 
-<!-- ![](</img/OnSubmit\_editable\_enabled.png>) -->
-<img src="/img/OnSubmit_editable_enabled.png" alt="onSubmit" width="281"/>
-
-Within this field, you can use `currentRow` to access the row of the edited cell, and `currentRow["<key_name>"]` to access the updated value.
+```javascript
+{{
+  // in the button's onClick field
+  myAPI_post.run(
+    () => myAPI_get.run(), // success callback to refresh table
+    () => {} // error callback
+  )
+}}
+```
