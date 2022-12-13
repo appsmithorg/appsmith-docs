@@ -89,7 +89,7 @@ MD5 (appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz) = 122dedfe6de3724596455246
 
 ```bash
 (base) ➜  backups git:(helm/ee/keycloak/charts) ✗ kubectl cp goutham/appsmith-0:/appsmith-stacks/data/keycloak_bkp/keycloak_backup.json ./keycloak_bkp.json
-tar: Removing leading `/' from member names
+tar: Removing leading '/' from member names
 (base) ➜  backups git:(helm/ee/keycloak/charts) ✗ ls
 keycloak_bkp.json keycloak_details
 ```
@@ -102,9 +102,50 @@ helm uninstall appsmith -n <namespace>
 
 ## Deploy new helm chart
 
-Deploy the new version of helm chart using this [page](./setup-ee-helmChart.md)
+### Modifying existing values.yaml to install EE
 
-## Copy appsmith backup from local to the new deployment.
+Add the following keys to values.yaml
+
+- Enabling postgresql
+
+  ```bash
+
+  postgresql:
+    enabled: true
+    auth:
+      username: root
+      password: password
+      postgresPassword: password
+      database: keycloak
+  ```
+
+- Change image and tag
+
+  ```bash
+
+  image:
+    registry: index.docker.io
+    repository: appsmith/appsmith-ee
+    pullPolicy: Always
+    tag: "latest"
+  ```
+
+- Choose the storage using this [page](./setup-ee-helmChart.md#Create-a-shared-file-system)
+
+- Update applicationConfig
+
+  ```bash
+  APPSMITH_LICENSE_KEY: ""
+  APPSMITH_KEYCLOAK_DB_DRIVER: ""
+  APPSMITH_KEYCLOAK_DB_USERNAME: ""
+  APPSMITH_KEYCLOAK_DB_PASSWORD: ""
+  APPSMITH_KEYCLOAK_DB_URL: ""
+  APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
+  ```
+
+More information about the helm chart can be found [here](./setup-ee-helmChart.md)
+
+## Copy appsmith backup from local to the new deployment
 
 Copy the appsmith backup specifically to `/appsmith-stacks/data/backup/`
 
