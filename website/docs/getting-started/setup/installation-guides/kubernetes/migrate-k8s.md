@@ -6,7 +6,7 @@ description: Follow the steps in the guide to migrate the multi-container Kubern
 
  Migrating from a multi-container Kubernetes installation to a single-container Helm deployment can provide several benefits, including easier management and increased efficiency. You can make the transition and migrate your Appsmith deployment from the old stack (multiple pods/containers) Kubernetes to Helm chart(single container). The guide below covers the steps to help you successfully migrate to the Helm chart and works well with the default Kubernetes installation. 
 
-Use the `kubectl get all` command to review the default Kubernetes installation resources. You can see the output similar to the one shown below:
+The migration works on the default Kubernetes installation with following resources. Use the `kubectl get all` command to review the default Kubernetes installation resources. You can see the output similar to the one shown below:
 
 ```
 ➜ kubectl get all
@@ -55,11 +55,11 @@ Before you start the migration process, ensure that the below prerequisites are 
      * Microk8s: Set up Kubernetes by following [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
 3. Install `yq` package: [yq package](https://github.com/mikefarah/yq#install) is needed to format data from the `ConfigMap` resources into a `.yaml` file referenced in migration configurations.
 
-## Migrate multi container to single container
+## Migrate to single container
 
 Migrating from a multi-container Kubernetes installation to a new cluster involves exporting your data and configuration, setting up the new cluster, and migrating your applications and services to the new environment. Here are the steps to do this:
 
-### Export old Kubernetes database
+### Export database
 Export data from the existing `MongoDB` pod and download the archive file to your local. Follow the steps below to backup database:
 
   1. Create `backup` directory in `MongoDB` pod.
@@ -85,7 +85,7 @@ Export data from the existing `MongoDB` pod and download the archive file to you
       appsmith-data.archive
       ```
 
-### Export old Kubernetes configuration
+### Export configuration
 
 Export all existing configurations from the `ConfigMap` in the running Kubernetes system and migrate them into the `values.yaml` file.
 
@@ -106,7 +106,7 @@ Export all existing configurations from the `ConfigMap` in the running Kubernete
 
     ![Manually copy data from values.yaml file](/img/helm-values-mapping.png)
 
-  4. Verify the `applicationConfig` section in the `values.yaml`:
+  4. Verify the `applicationConfig` section in the `values.yaml` as shown below:
 
     ```yaml
     applicationConfig:
@@ -138,19 +138,11 @@ Export all existing configurations from the `ConfigMap` in the running Kubernete
     APPSMITH_CUSTOM_DOMAIN: ""
     ```
 
-### Configure values.yaml
+### Configure parameters
 
 In the old Kubernetes stack, MongoDB was deployed as a separate resource in the cluster. However, in the new Helm chart, MongoDB is an internal service and is configured as a ReplicaSet. To ensure that the Helm chart runs with internal Redis and MongoDB services, you need to make some changes to the `values.yaml` file. Follow the steps below to configure internal Redis and MongoDB services.
 
-  1. Change the host for `APPSMITH_MONGODB_URI`.
-   
-   From `mongo-service`:
-
-  ```bash old
-    APPSMITH_MONGODB_URI: "mongodb://root:root@mongo-service/appsmith"
-  ```
-  
-  To `localhost`:
+  1. Change the host for `APPSMITH_MONGODB_URI` from `mongo-service` to `localhost`:
 
   ```bash new
     APPSMITH_MONGODB_URI: "mongodb://root:root@localhost/appsmith"
@@ -160,15 +152,7 @@ In the old Kubernetes stack, MongoDB was deployed as a separate resource in the 
   3. Add additional configuration for `MongoDB`.
       1. Add `APPSMITH_MONGODB_USER` that stores the username
       2. Add `APPSMITH_MONGODB_PASSWORD` that stores the password
-  4. Change the host for `Redis URL`.
-   
-   From `redis-service`:
-
-  ```bash old
-    APPSMITH_REDIS_URL: "redis://redis-service:6379"
-  ```
-  
-  To `localhost`:
+  4. Change the host for `Redis URL` from `redis-service` to `localhost`:
 
   ```bash new
     APPSMITH_REDIS_URL: "redis://127.0.0.1:6379"
@@ -228,7 +212,7 @@ Follow the below steps to install helm chart with old configuration:
       kubectl delete sa,cronjob imago
       ```
 
-  4. Install Appsmith Helm chart
+  4. Install Appsmith
 
       ```bash
       helm install appsmith appsmith/appsmith --values values.yaml
@@ -269,13 +253,14 @@ Follow the below steps to import data from archive file into new Helm chart:
 
 4. Verify that Helm chart still works after importing and the data from old Kubernetes stack also shows up in the Helm chart
 
-## Migrate SSL certificate
+### Migrate SSL certificate
 You may want to migrate existing SSL certificate to the new Helm chart. With the old Kubernetes stack & new Helm chart, Kubernetes cluster uses [`cert-manager`](https://cert-manager.io/) to provision the SSL certificate. `cert-manager` is an `Automate certificate manager` that provisions and manages the certificates itself => Backward incompatible if migrating certificate from one `cert-manager` to another one.
 
 It's recommended that after migrating to the Helm chart, you can follow the document [Setup Https](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/Setup-https.md) to setup a new `cert-manager` and provision a new certificate for Helm installation.
 
-## Test Appsmith
-After the chart has been deployed to the Kubernetes cluster, it's important to test the Appsmith application to ensure it's functioning as expected in the new Helm-based deployment. This may involve running a series of integration tests, or simply verifying that the application is accessible and responding to requests as expected.
+### Test migration
+After the chart has been deployed to the Kubernetes cluster, it's important to test that the migration is successful and the Appsmith application is functioning as expected in the new Helm-based deployment. This may involve running a series of integration tests, or simply verifying that the application is accessible and responding to requests as expected. 
 
-## Rollback
-If any issues are encountered during the migration process or while testing the Appsmith Helm installation, it may be necessary to roll back to the previous multi-container Kubernetes installation. You can start using the old Kubernetes stacks as it's not removed and is available.
+## Troubleshooting
+If any issues are encountered during the migration process or while testing the Appsmith Helm installation, it may be necessary to roll back to the previous multi-container Kubernetes installation. You can start using the old Kubernetes stacks as it's not removed and is available. If you are still facing any issues, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or raised it on the [Discord Server](https://discord.com/invite/rBTTVJp).
+
