@@ -51,7 +51,7 @@ To overcome this, you can bind the user's array of the response instead of the e
 ```javascript
 {{ fetch_users.data.users }}
 ```
-
+#### Error message
 **This value doesn't evaluate to type Array\[{`label: string, value: string`}]**
 
 #### Cause
@@ -82,7 +82,7 @@ In case the response doesn't contain label and value keys as below, you can map 
     })
 }}
 ```
-
+#### Error message
 **The value doesn't evaluate to type Array\[{x: string, y: number}]**
 
 #### Cause
@@ -107,7 +107,7 @@ In cases like these, you can use JavaScript to transform the data to the correct
     }, {}))
 }}
 ```
-
+#### Error message
 **Value doesn't match ISO 8601 standard date string**
 
 #### Cause
@@ -127,7 +127,7 @@ To resolve this, you can transform the date string using moment.js.
 // Moment can parse your date format
 {{ moment("2021-07-26", "YYYY-MM-DD") }}
 ```
-
+#### Error message
 **This value doesn't evaluate to type `boolean`**
 
 #### Cause
