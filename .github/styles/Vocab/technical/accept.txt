@@ -74,3 +74,7 @@ Supported QR/Barcode formats
 QR
 onCodeDetected
 check
+callbackFunction
+setInterval
+clearInterval
+setTimeout
