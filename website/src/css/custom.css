@@ -264,6 +264,10 @@ h5 {
   font-size: 1.25rem;
 }
 
+h6 {
+  font-size: 1.05rem;
+}
+
 .tabs {
   color: #47525d;
   display: flex;

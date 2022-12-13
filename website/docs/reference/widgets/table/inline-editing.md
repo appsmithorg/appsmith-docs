@@ -167,6 +167,33 @@ While you are configuring the **onSave** or **onDiscard** events, you can use th
 
 As an alternative to using the `Save/Discard` buttons and events, you can configure the **onSubmit** event in each column's settings to run a query that saves the new data. The onSubmit event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it.
 
+###### updatedRow
+
+This property contains the details of the row that was recently updated. This is available regardless of the **Update mode**, however it's most useful in **Single row** mode. Once edits have been made, this property contains an object that looks like:
+
+```javascript
+{
+  "address": "<updated-address-value>",
+	"client-id": "<updated-client-id-value>",
+	"zone": "<updated-zone-value>",
+  "status": "<updated-status-value>"
+}
+```
+
+The default value for this property is an object with keys as column names and blank strings as its values. For example:
+
+```javascript
+{
+	"address": "",
+	"client-id": "",
+	"zone": "",
+  "status": ""
+}
+```
+The new values become available as soon as a user updates a table cell and navigates away from it (triggering the **onSubmit** event).
+
+The `updatedRow` property is reset to the default value whenever the cell changes are saved (**onSave**) or discarded (**onDiscard**).
+
 ##### Multi row
 
 Cells can be edited across any number of rows at a time. Updated rows are saved all at once by using an external Button widget, which you should place onto the canvas and configure to run a query that submits multiple rows to a datasource.
@@ -219,7 +246,7 @@ To get just an array containing the affected rows, you can use the JS [`map()`](
 
 Now you are ready to edit your table in any number of rows, and the "Save All" button should submit all your changes to the datasource and refresh the table.
 
-#### updatedRows
+###### updatedRows
 
 This property contains all the details of the edited rows (only useful when **Update mode** is set to **Multi row**). It has the following structure:
 
@@ -241,7 +268,7 @@ This property contains all the details of the edited rows (only useful when **Up
 ]
 ```
 
-#### updatedRowIndices
+###### updatedRowIndices
 
 This binding property displays the index number of the updated row. It contains an array of edited row indices.
 
@@ -253,33 +280,6 @@ For example, if you update the second and fourth rows of a table, the `updatedRo
   3
 ]
 ```
-
-#### updatedRow
-
-This property contains the details of the row that was recently updated. This is available regardless of the **Update mode**, however it's most useful in **Single row** mode. Once edits have been made, this property contains an object that looks like:
-
-```javascript
-{
-  "address": "<updated-address-value>",
-	"client-id": "<updated-client-id-value>",
-	"zone": "<updated-zone-value>",
-  "status": "<updated-status-value>"
-}
-```
-
-The default value for this property is an object with keys as column names and blank strings as its values. For example:
-
-```javascript
-{
-	"address": "",
-	"client-id": "",
-	"zone": "",
-  "status": ""
-}
-```
-The new values become available as soon as a user updates a table cell and navigates away from it (triggering the **onSubmit** event).
-
-The `updatedRow` property is reset to the default value whenever the cell changes are saved (**onSave**) or discarded (**onDiscard**).
 
 ---
 
