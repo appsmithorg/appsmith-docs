@@ -42,7 +42,7 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 ## Editing cells
 
-This feature enables users to make changes directly in the table cell. Currently, only a few column types support inline editing - **Text**, **Number**, **Switch**, and **Checkbox**. 
+This feature enables users to make changes directly in the table cell. Currently, there are several column types support inline editing - **Text**, **Number**, **Switch**, **Select**, and **Checkbox**. Custom user-added columns don't support inline editing at this time.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 
@@ -62,9 +62,7 @@ You can also use the JS toggle to control the `Editable` property in each column
 
 <img src="/img/Using_JS_in_Editable.png" alt="JS in Editable property" width="275"/>
 
-Currently, **four column types** support inline editing: these  are **Text**, **Number**, **Switch**, **Select**, and **Checkbox**. Custom user-added columns don't support inline editing at this time.
-
-When one of these types of cells is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
+When a supported column is made editable, it displays a pencil edit icon when the user hovers their cursor over it. Click this icon or double-click the cell to begin making changes.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 
