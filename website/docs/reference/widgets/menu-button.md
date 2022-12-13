@@ -1,12 +1,8 @@
 # Menu Button
 
-The Appsmith Menu Button widget is a customizable dropdown menu that allows you to add a list of options for users to select from. It's a powerful tool for creating navigation menus, dropdown lists, and options for users to choose from.
+The Menu Button widget is a customizable dropdown menu that allows you to add a list of options for users to select from. It's a powerful tool for creating navigation menus, dropdown lists, and options for users to choose from.
 
 <VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Menu Button Widget" caption="How to use Menu Button Widget"/>
-
-:::info
-The icons are used from [Blueprint](https://blueprintjs.com) library. For more information, see the [list of icons available on Blueprint](https://blueprintjs.com/docs/#icons).
-:::
 
 ## Usage
 
@@ -36,7 +32,7 @@ These properties allow you to perform formatting changes for menu items that are
 | **Label**           | Formatting| This property sets the label of a menu item. This can be a static text value, or it can be dynamically bound to a data source. For example, you might set the label to be the name of a page or a user. | |
 | **Visible**           | Formatting/Binding | This property controls the visibility of a menu item. This can be useful for showing or hiding the menu item based on certain conditions. For example, you might show the menu item only if a user has permission to access it. For more information, see [Visible property details](/reference/widgets#visible)) | |
 | **Disabled**           | Formatting| This property allows you to turn off input to a menu item. This can be useful if you want to prevent users from interacting with the menu item in certain scenarios. For example, you might turn off a menu item when it's not relevant or applicable. For more information, see [Disabled property details](/reference/widgets#disabled).| |
-| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. | |
+| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. The icons are used from [Blueprint](https://blueprintjs.com) library. For more information, see the [list of icons available on Blueprint](https://blueprintjs.com/docs/#icons).| |
 |**Position** | Style |  This property allows you to select the position where you want to place the icon on the menu item. You can choose between left or right alignment.| |
 |**Icon color** | Style | This property sets the color of the icon for the menu item. This can be useful for matching the icon with the overall design of the menu button.| |
 |**Text color** | Style |  This property sets the color of the text for the menu item. This can be useful for making the text stand out or blending in with the background.| |
@@ -50,7 +46,7 @@ These properties allow you to perform formatting changes or bind the Menu Button
 | [**Label**](#item-configuration)| Formatting| This allows you to display different text for each menu item based on its data. | |
 | **Visible**           | Formatting/Binding | This property controls the visibility of a menu item. This can be useful for showing or hiding the menu item based on certain conditions. For example, you might show the menu item only if a user has permission to access it. For more information, see [Visible property details](/reference/widgets#visible)) | |
 | **Disabled**           | Formatting| This property allows you to turn off input to a menu item. This can be useful if you want to prevent users from interacting with the menu item in certain scenarios. For example, you might turn off a menu item when it's not relevant or applicable. For more information, see [Disabled property details](/reference/widgets#disabled).| |
-| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. | |
+| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. The icons are used from [Blueprint](https://blueprintjs.com) library. For more information, see the [list of icons available on Blueprint](https://blueprintjs.com/docs/#icons).| |
 |**Position** | Style |  This property allows you to select the position where you want to place the icon on the menu item. You can choose between left or right alignment.| |
 |**Icon color** | Style | This property sets the color of the icon for the menu item. This can be useful for matching the icon with the overall design of the menu button.| |
 |**Text color** | Style |  This property sets the color of the text for the menu item. This can be useful for making the text stand out or blending in with the background.| |
