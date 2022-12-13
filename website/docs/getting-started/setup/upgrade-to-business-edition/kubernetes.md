@@ -1,6 +1,6 @@
 # Kubernetes
 
-The EE Helm charts, supportr Horizontal Pod Autoscaling (HPA). This means that Appsmith pods can be scaled up or down automatically depending on the current load.
+The EE Helm charts, supports Horizontal Pod Autoscaling (HPA). This means that Appsmith pods can be scaled up or down automatically depending on the current load.
 
 Internally, this also means that the Appsmith pods will now be managed by a Kubernetes _deployment_ resource instead of a _stateful-set_ resource.
 
