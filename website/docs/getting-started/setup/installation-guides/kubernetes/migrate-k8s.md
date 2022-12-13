@@ -2,7 +2,7 @@
 description: Follow the steps in the guide to migrate the multi-container Kubernetes Appsmith installation to Single Container Helm chart installation.
 
 ---
-# Migrate from Multi Container to Single Container
+# Migrate From Multi-Container Setup (k8s)
 
  Migrating from a multi-container Kubernetes installation to a single-container Helm deployment can provide several benefits, including easier management and increased efficiency. You can make the transition and migrate your Appsmith deployment from the old stack (multiple pods/containers) Kubernetes to Helm chart(single container). The guide below covers the steps to help you successfully migrate to the Helm chart and works well with the default Kubernetes installation. 
 
