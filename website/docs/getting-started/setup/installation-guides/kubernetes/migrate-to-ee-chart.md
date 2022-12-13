@@ -1,4 +1,4 @@
-# Migration Guide from EE to EE
+# Migrate to the EE Helm Chart
 
 If you are using Appsmith Business Edition, with the Helm chart from `helm.appsmith.com`, this document will help you move to the new Helm chart from `helm-ee.appsmith.com`.
 

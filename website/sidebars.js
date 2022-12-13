@@ -50,6 +50,7 @@ const sidebars = {
                   link: {type: 'doc', id: 'getting-started/setup/installation-guides/kubernetes/README'},
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/business-edition',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-ee-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
