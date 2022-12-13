@@ -54,3 +54,4 @@ watchId
 watchPosition
 Widget
 widget
+REST
