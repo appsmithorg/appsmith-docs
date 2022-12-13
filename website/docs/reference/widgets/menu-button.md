@@ -18,7 +18,7 @@ These properties allow you to perform formatting changes or bind the Menu Button
 | Property            | Type | Description | Code Snippet |
 | ------------------- | ---------------- |------------------- | ---------------- |
 | **Label**        | Formatting/ Binding | This property sets the label of the menu button. It can be a static text value or dynamically bound to a source of data. For example, you might set the label to be the logged-in user’s name. To dynamically bind the text, use the `{{}}` mustache sign. You can also read the value of the label in the code. | `{{<WIDGET_NAME.label}}`|
-| [**Menu Items Source**](#menu-items-source)| Formatting | This property allows you to specify the source for the menu items. You can define a static list of items or provide a dynamic data source to be displayed as menu items. |                   |
+| [**Menu Items Source**](#menu-items-source)| Formatting | This property allows you to specify the source for the menu items. You can define a [static](#static) list of items or provide a [dynamic](#dynamic) data source to be displayed as menu items. |                   |
 | **Visible**          | Formatting/Binding | This property controls the visibility of the widget. For more information, see [Visible property details](/reference/widgets#visible)| `{{<WIDGET_NAME.visible}}`|
 | **Disabled**         | Formatting | This property disables the input to the widget. For more information, see [Disabled property details](/reference/widgets#disabled).|                  |
 | **Animate Loading** | Formatting | This property allows you to control a widget’s animation on the page. This can be useful for adding visual feedback to the user when the widget is loading or processing data.|                  |
