@@ -24,8 +24,8 @@ These properties allow you to perform formatting changes or bind the Menu Button
 | **Animate Loading** | Formatting | This property allows you to control a widget’s animation on the page. This can be useful for adding visual feedback to the user when the widget is loading or processing data.|                  |
 | **Compact**         | Formatting | This property decides if the widget is in compact mode. In compact mode, the widget takes up less space on the page and can be suitable to use in tight layouts.|                 
 
-### Menu Item properties
-These properties allow you to perform formatting changes for menu items that are added manually using Static source.
+### Menu Items Source properties
+These properties allow you to perform formatting changes for menu items that are added manually using [Static](#static) or dynamically added using [Dynamic](#dynamic) source.
 
 | Property            | Type | Description | Code Snippet |
 | ------------------- | ---------------- |------------------- | ---------------- |
@@ -38,40 +38,26 @@ These properties allow you to perform formatting changes for menu items that are
 |**Text color** | Style |  This property sets the color of the text for the menu item. This can be useful for making the text stand out or blending in with the background.| |
 |**Background color**| Style | This property sets the background color of the menu item. This can be useful for adding visual interest or highlighting the selected menu item.| |
 
-### Dynamic Menu Item properties
-These properties allow you to perform formatting changes or bind the Menu Button widget to any other widget, queries or JS objects. 
-
-| Property            | Type | Description | Code Snippet |
-| ------------------- | ---------------- |------------------- | ---------------- |
-| [**Label**](#item-configuration)| Formatting| This allows you to display different text for each menu item based on its data. | |
-| **Visible**           | Formatting/Binding | This property controls the visibility of a menu item. This can be useful for showing or hiding the menu item based on certain conditions. For example, you might show the menu item only if a user has permission to access it. For more information, see [Visible property details](/reference/widgets#visible)) | |
-| **Disabled**           | Formatting| This property allows you to turn off input to a menu item. This can be useful if you want to prevent users from interacting with the menu item in certain scenarios. For example, you might turn off a menu item when it's not relevant or applicable. For more information, see [Disabled property details](/reference/widgets#disabled).| |
-| **Icon** | Style | This property sets the icon to be used for a menu item. This can be useful for adding visual context and branding to the menu item. The icons are used from [Blueprint](https://blueprintjs.com) library. For more information, see the [list of icons available on Blueprint](https://blueprintjs.com/docs/#icons).| |
-|**Position** | Style |  This property allows you to select the position where you want to place the icon on the menu item. You can choose between left or right alignment.| |
-|**Icon color** | Style | This property sets the color of the icon for the menu item. This can be useful for matching the icon with the overall design of the menu button.| |
-|**Text color** | Style |  This property sets the color of the text for the menu item. This can be useful for making the text stand out or blending in with the background.| |
-|**Background color**| Style | This property sets the background color of the menu item. This can be useful for adding visual interest or highlighting the selected menu item.| |
-
 The properties are described as follows:
 
-### Menu Items Source
-The "Menu items source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful for providing up-to-date information in the menu.
+## Menu Items Source
+The "Menu Items Source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful for providing up-to-date information in the menu.
 
 <VideoEmbed host="youtube" videoId="MrvRADv-H9A" title="How to set Menu Items Source for Menu Button Widget" caption="How to set Menu Items Source for Menu Button Widget"/>
 
-#### Static
+### Static
 The "Static" source refers to the ability to manually define the menu items. This means that the menu items don't change unless the user manually updates them. For example, if you have a static menu with three items (Home, About, Contact), the menu always displays those items until they’re manually edited using the gear icon next to it. Once you select `Static` as the source, you see the `Menu Items` property, where you can define the items for the menu.
 
-##### Menu Items
+#### Menu Items
 This property allows you to define the options you can show in the dropdown list when the menu button is clicked. You can add the items from the property pane by using the `Add a New Menu Item` button. Each menu item can be customized using the gear icon available next to it. For example, you might define a menu item with a label of "Home" and an action of "Navigate to Home page" by using the gear icon.
 
-###### Menu item settings
+##### Menu item settings
 
 The gear icon allows you to access and configure settings for a menu item, such as its [properties](#menu-item-properties). This can be useful for customizing the behavior and appearance of the menu item. You can also set [styles specific to the menu item](#menu-item-properties) like Icon, the position of the icon, background color, and more.
 
 To specify an action to be performed when a menu item is clicked, you can bind a supported action to the `onClick` event of the menu item. You can define different actions to be triggered for different menu items using the gear icon next to them. For more information, see the list of [supported actions](/reference/appsmith-framework/widget-actions)
 
-#### Dynamic
+### Dynamic
 When you select the dynamic source, you can bind the menu item's property to a data source, such as a database query or API response. This allows the widget to dynamically populate the menu items based on available data. This is useful for creating menus that can change and adapt based on user input or application state. You can configure the menu items by clicking the `Item Configuration` button.
 
 :::note
