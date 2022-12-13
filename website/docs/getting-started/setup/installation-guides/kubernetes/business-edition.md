@@ -64,7 +64,14 @@ If you need High Availability (HA), ensure your configuration matches with the b
 
 4. Create a shared file system. This is required for some Appsmith features that make use of the filesystem, like `git`-connected applications. This is elaborated in the [following section](#efs).
 
-## EFS
+5. Set a secret value to password, and to salt.
+
+   ```yaml
+     APPSMITH_ENCRYPTION_PASSWORD: "password_here"
+     APPSMITH_ENCRYPTION_SALT: "salt_here"
+   ```
+
+## Create a shared file system
 
 You can use the [EFS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on the kubernetes pods.
 

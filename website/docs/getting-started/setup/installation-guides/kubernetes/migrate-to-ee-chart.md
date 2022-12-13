@@ -1,8 +1,6 @@
-# Kubernetes
+# Migration Guide from EE to EE
 
-The EE Helm charts, supports Horizontal Pod Autoscaling (HPA). This means that Appsmith pods can be scaled up or down automatically depending on the current load.
-
-Internally, this also means that the Appsmith pods will now be managed by a Kubernetes _deployment_ resource instead of a _stateful-set_ resource.
+If you are using Appsmith Business Edition, with the Helm chart from `helm.appsmith.com`, this document will help you move to the new Helm chart from `helm-ee.appsmith.com`.
 
 ## Take backup
 
@@ -18,19 +16,25 @@ Internally, this also means that the Appsmith pods will now be managed by a Kube
    appsmithctl backup
    ```
 
-3. Once this is finished, you should have a backup archive generated at a location like this:
+3. Once this is finished, you should have a backup archive generated at a location like this. This is the Appsmith backup archive.
 
    ```
    /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
    ```
 
-4. Download the backup archive:
-
+4. Exit out of the shell with:
+   
    ```bash
-   kubectl cp <namespace>/appsmith-0:<backup_path_from_above> ./appsmith-ce-backup.tar.gz
+   exit
    ```
 
-5. Grab the salt and password from the pod, and copy them to `values.yaml`.
+5. Download the backup archive:
+
+   ```bash
+   kubectl cp <namespace>/appsmith-0:<appsmith_backup_archive_path> ./appsmith-ee-backup.tar.gz
+   ```
+
+6. Grab the salt and password from the pod, and copy them to `values.yaml`.
 
    ```bash
    kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
@@ -43,15 +47,65 @@ Internally, this also means that the Appsmith pods will now be managed by a Kube
      APPSMITH_ENCRYPTION_SALT: "salt_here"
    ```
 
+Similarly, take a backup of Keycloak:
+
+1. Open a shell into one of your current Appsmith pods:
+
+   ```bash
+   kubectl exec -it <pod> bash
+   ```
+
+2. Stop Keycloak:
+
+   ```bash
+   supervisorctl stop keycloak
+   ```
+
+3. Kill the remaining process
+
+   ``` bash
+   kill -9 `pgrep -f keycloak`
+   ```
+
+4. Start keycloak backup process
+
+   ``` bash
+   /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/tmp/keycloak_backup.json
+   ```
+
+5. Now monitor the output, and look for lines like the following:
+
+   ```bash
+   07:25:11,805 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 57) HV000001: Hibernate Validator 6.0.22.Final
+   07:25:12,930 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 57) HHH000397: Using ASTQueryTranslatorFactory
+   07:25:13,691 INFO  [org.keycloak.services] (ServerService Thread Pool -- 57) KC-SERVICES0033: Full model export requested
+   07:25:13,691 INFO  [org.keycloak.exportimport.singlefile.SingleFileExportProvider] (ServerService Thread Pool -- 57) Exporting model into file /appsmith-stacks/data/keycloak_bkp/keycloak_backup.json
+   07:25:14,488 INFO  [org.keycloak.services] (ServerService Thread Pool -- 57) KC-SERVICES0035: Export finished successfully
+   ```
+
+   Press <kbd>ctrl+c</kbd> to stop the process after seeing the above lines.
+
+6. Exit out of the shell with:
+
+   ```bash
+   exit
+   ```
+
+7. Download the backup file, available at `/tmp/keycloak_backup.json`:
+
+   ```bash
+   kubectl cp goutham/appsmith-0:/tmp/keycloak_backup.json ./keycloak_bkp.json
+   ```
+
 ## Uninstall existing Helm chart
 
-Let's uninstall the CE helm chart:
+Let's uninstall the current Appsmith Helm chart.
 
 ```bash
-helm uninstall appsmith
+helm uninstall appsmith -n <namespace>
 ```
 
-## Deploy the new helm chart
+## Deploy new helm chart
 
 Before we can deploy using the Helm chart from `helm-ee.appsmith.com`, we need to make the following few additions to the configuration in `values.yaml`.
 
@@ -68,7 +122,7 @@ Before we can deploy using the Helm chart from `helm-ee.appsmith.com`, we need t
        database: keycloak
    ```
 
-2. Change image to use the `appsmith-ee` repository:
+2. Ensure you have the `appsmith-ee` image repository set:
 
    ```yaml
    image:
