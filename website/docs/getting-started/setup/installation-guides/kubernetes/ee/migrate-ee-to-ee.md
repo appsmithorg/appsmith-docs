@@ -1,4 +1,4 @@
-# Migration Guide from CE to EE
+# Migration Guide from EE to EE
 
 - Support for horizontal pod autoscaling
   - This means appsmith will now be a kubernetes deployment and not a stateful-set
