@@ -72,4 +72,7 @@ Widget
 widget
 kubectl
 cronjob
-
+Supported QR/Barcode formats
+QR
+onCodeDetected
+check
