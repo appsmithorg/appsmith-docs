@@ -1,23 +1,27 @@
 ---
-sidebar_position: 2
+description: >-
+  You'll learn about common JS errors and how to resolve them on Appsmith.
 ---
+
 # JS Errors
+Errors may be encountered when using [JS Objects](/core-concepts/writing-code/javascript-editor-beta) or writing [JS functions](/core-concepts/writing-code/javascript-editor-beta/#types-of-js-functions). They can be caused by syntax errors in the code, data type mismatch, or attempts to access properties or functions that don't exist. 
 
-## JS Errors
+This section helps you troubleshoot common JS errors on the Appsmith platform.
 
-### Data Type Mismatch
+## Data type evaluation errors
 
-This error occurs when the value in the property of the widget does not match the data type required by the property.
+This error occurs when the value in the property of the widget doesn't match the data type required by the property.
 
-#### This value does not evaluate to type Array\[Object]
+#### Error message
+ ** This value doesn't evaluate to type Array\[Object]** 
 
-**Why do you see this error?**
+#### Cause
 
-While working with [Tables](../../reference/widgets/table/) or [Lists](../../reference/widgets/list), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](../../core-concepts/connecting-to-data-sources/authentication/) response.
+While working with [Tables](/reference/widgets/table/) or [Lists](/reference/widgets/list), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](/core-concepts/connecting-to-data-sources/authentication/) response.
 
-**Solution:**
+#### Solution
 
-The solution to this is to bind the array inside the response object or transform the response object using javascript. Take an example response of the fetch users [API](../../core-concepts/connecting-to-data-sources/authentication/) as below. Binding it to a [table](../../reference/widgets/table/) directly would lead to an error.
+The solution to this is to bind the array inside the response object or transform the response object using JavaScript. Take an example response of the fetch users [API](/core-concepts/connecting-to-data-sources/authentication) as below. Binding it to a [table](/reference/widgets/table/) directly would lead to an error.
 
 ```javascript
 {
@@ -42,21 +46,21 @@ The solution to this is to bind the array inside the response object or transfor
 }
 ```
 
-To overcome this, we can bind the user's array of the response instead of the entire response object using javascript:
+To overcome this, you can bind the user's array of the response instead of the entire response object using JavaScript:
 
 ```javascript
 {{ fetch_users.data.users }}
 ```
+#### Error message
+**This value doesn't evaluate to type Array\[{`label: string, value: string`}]**
 
-#### **This value does not evaluate to type Array\[{ label: string, value: string }]**
+#### Cause
 
-**Why do you see this error?**
+While adding options to single-select or multi-select dropdowns, you might face a data mismatch error. In such cases, make sure the options property is an array of objects containing a label and value as strings.
 
-While adding options to single-select or multi-select dropdowns, we might face a **data mismatch error**. In such cases, make sure the options property is an array of objects containing a label and value as strings.
+#### Solution
 
-**Solution:**
-
-In case the response does not contain label and value keys as below, we can map over the response to transform it using javascript
+In case the response doesn't contain label and value keys as below, you can map over the response to transform it using JavaScript.
 
 ```javascript
 // invalid response of fetchColors API
@@ -78,16 +82,16 @@ In case the response does not contain label and value keys as below, we can map 
     })
 }}
 ```
+#### Error message
+**The value doesn't evaluate to type Array\[{x: string, y: number}]**
 
-#### **The** **value does not evaluate to type Array\[{x: string, y: number}]**
+#### Cause
 
-**Why do you see this error?**
-
-The below image shows that there is an error in the `Chart Data field` of the [Chart](../../reference/widgets/chart), giving us the same error. The Evaluated Value here indicates the current value of the field, and in the screenshot below, you can see that the current value is an array while the error indicates that it must be an array\<x, y>.
+The below image shows that there is an error in the `Chart Data field` of the [Chart](/reference/widgets/chart) widget. The Evaluated Value here indicates the current value of the field, and in the screenshot below, you can see that the current value is an array while the error indicates that it must be an array\<x, y>.
 
 ![](/img/chart_error.png)
 
-**Solution:**
+#### Solution
 
 In cases like these, you can use JavaScript to transform the data to the correct data type or access the correct data inside the object. The below code reduces the fetch\_orders.data array to aggregate orders based on the date into an array \<x, y> where x is the date of the order and y is the order amount
 
@@ -103,14 +107,14 @@ In cases like these, you can use JavaScript to transform the data to the correct
     }, {}))
 }}
 ```
+#### Error message
+**Value doesn't match ISO 8601 standard date string**
 
-#### **Value does not match ISO 8601 standard date string**
+#### Cause
 
-**Why do you see this error?**
+The date picker expects its default date in the standard[ISO format](https://www.iso.org/iso-8601-date-and-time-format.html). If the date you provided doesn't match this, you'll see this error.
 
-The date picker expects its default date in the standard[ ISO format](https://www.iso.org/iso-8601-date-and-time-format.html). If the date you provided does not match this, you'll see this error.
-
-**Solution:**
+#### Solution
 
 To resolve this, you can transform the date string using moment.js.
 
@@ -123,30 +127,35 @@ To resolve this, you can transform the date string using moment.js.
 // Moment can parse your date format
 {{ moment("2021-07-26", "YYYY-MM-DD") }}
 ```
+#### Error message
+**This value doesn't evaluate to type `boolean`**
 
-#### This value does not evaluate to type boolean
+#### Cause
+This error typically occurs in the isVisible and `isDisabled` properties and indicates that the value in the property doesn't match a `boolean` type. 
 
-This error typically occurs in the isVisible and `isDisabled` properties and indicates that the value in the property does not match a boolean type. You can solve this by using a comparison operator.
+#### Solution
+
+You can solve this by using a comparison operator.
 
 ```
 {{ Dropdown1.selectedOptionValue === "RED" }}
 ```
 
-### Syntax Error
+## Syntax error
 
-This error occurs when there is invalid javascript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Double-check the number of braces in your code and consider re-writing your [JS as multi-line ](../../core-concepts/writing-code/#multi-line-javascript)code.
+This error occurs when there is invalid JavaScript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Verify the number of braces in your code and consider re-writing your [JS as multi-line ](../../core-concepts/writing-code/#multi-line-javascript)code.
 
-In the example below, fetch is not defined anywhere in the application
+In the example below, fetch isn't defined anywhere in the application
 
 ![](/img/syntax_error.png)
 
-### Cyclic Dependency Error
+## Cyclic dependency error
 
 An app gets a cyclic dependency error when a node is directly or indirectly dependent on itself.
 
-#### Reactivity and Dependency Map
+#### Reactivity and dependency map
 
-In Appsmith, we define all user-editable fields as nodes, and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For eg: when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, we know `Table1.tableData` needs to update as well.
+In Appsmith, all user-editable fields are defined as nodes, and to provide reactivity, a dependency map is created between these nodes to find the optimal evaluation order of these nodes. For example, when you would refer to `{{Api1.data}}` in a Table1's `tableData` field, there is a dependency created between `Api1.data` and `Table1.tableData`. So every time `Api1.data` updates, `Table1.tableData` needs to be updated.
 
 ```
 // Table1.tableData depends on Api1.data
@@ -164,7 +173,7 @@ Table1.tableData -> Table1
 Api1.data -> Table1.tableData
 ```
 
-The most common scenario where a cycle occurs is when you would try to bind a node to its parent node. Since it is impossible to evaluate an app with a cyclic dependency, we will have to exit out and be in an error state till the cycle is resolved.
+The most common scenario where a cycle occurs is when you would try to bind a node to its parent node. Since it's impossible to evaluate an app with a cyclic dependency, you have to exit out and be in an error state till the cycle is resolved.
 
 ```
 // A cycle is formed
@@ -172,43 +181,20 @@ Table1 -> Table1.tableData
 Table1.isVisible -> Table1
 ```
 
-## Debugging
+## Infinite loop error
+An infinite loop error occurs when a function or code block repeats indefinitely, causing the app or function to become unresponsive, and can even prevent users from accessing certain features of the app. 
+ 
+#### Cause
+ The problem may be due to a page load function that's stuck in a loop. This can happen if you have added code that uses the `navigateTo` function and is executed on `onPageLoad`, which can cause the page to become inaccessible or cause the app to get stuck in a loop and constantly routing to the destination page. 
 
-For debugging JS logic inside widget actions, you can use a [`debugger`](../../core-concepts/writing-code/javascript-editor-beta/#debugger-statements) statement.
+#### Solution 
+To fix this problem, you can use debugger statements in Appsmith to halt the execution of the code and identify the source of the infinite loop. Here are the steps to do this:
 
-### Description
+1. Open the app in Appsmith and go to the page where the infinite loop is occurring.
+2. Locate the function or code block that's causing the infinite loop.
+3. Insert a debugger statement at the beginning of the function or code block that pauses the execution of the code and allows you to inspect its state. For more information, see [debugging statement and how to use it](/core-concepts/writing-code/javascript-editor-beta/#debugger-statements).
+4. Use the debugger console of the browser to step through the code and identify the cause of the infinite loop.
+5. Once you have identified the issue, make the necessary changes to the code to fix it.
+6. Save the changes and test the app again to ensure the infinite loop issue has been resolved.
 
-The debugger statement invokes any available debugging functionality, such as setting a breakpoint. If no debugging functionality is available, this statement has no effect.
-
-### Syntax
-
-```
-debugger;
-```
-
-### Examples
-
-#### Using the debugger statement
-
-The following example shows code where a debugger statement has been inserted, to invoke a debugger (if one exists) when the function is called.
-
-```
-function potentiallyBuggyCode() {
-debugger;
-// do potentially buggy stuff to examine, step through, etc.
-}
-```
-
-When the debugger is invoked, execution is paused at the debugger statement. It is like a breakpoint in the script source.
-
-:::info
-You need to have the browser console open to make the debugger work.
-:::
-
-### Debugging Errors With Console.log()
-
-Aside from using the `debugger`, it is also possible to use `console.log()` to inspect various parts of your code. The video below illustrates how to do this:
-
-
-<VideoEmbed host="youtube" videoId="YLnvb9_k96s" title="How to Debug" caption="How to Debug"/>
-
+If you can't find what you are looking for and need help debugging an error, please raise your issue on [Discord Server](https://discord.com/invite/rBTTVJp) or email at support@appsmith.com.
