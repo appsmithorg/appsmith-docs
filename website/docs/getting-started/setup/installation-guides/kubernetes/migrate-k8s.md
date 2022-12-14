@@ -149,10 +149,10 @@ In the old Kubernetes stack, MongoDB was deployed as a separate resource in the 
   ```
 
   2. Remove query parameter in the URI if they exist.
-  3. Add additional configuration for `MongoDB`.
+  3. Add parameters for `MongoDB` credentials.
       1. Add `APPSMITH_MONGODB_USER` that stores the username
       2. Add `APPSMITH_MONGODB_PASSWORD` that stores the password
-  4. Change the host for `Redis URL` from `redis-service` to `localhost`:
+  4. Change the host in the `APPSMITH_REDIS_URL` parameter from `redis-service` to `localhost`.
 
   ```bash new
     APPSMITH_REDIS_URL: "redis://127.0.0.1:6379"
