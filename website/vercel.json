@@ -1,5 +1,6 @@
 {
   "cleanUrls": true,
+  "trailingSlash" : false,
   "redirects": [
     {
       "source": "/v/v1.2.1/setup/docker/google-maps",
@@ -784,10 +785,6 @@
     {
       "source": "/tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view",
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui"
-    },
-    {
-      "source": "/core-concepts/writing-code",
-      "destination": "/core-concepts/writing-code/"
     },
     {
       "source": "/v/master/",

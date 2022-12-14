@@ -1,3 +1,4 @@
+API
 application
 Appsmith
 appsmith
@@ -5,8 +6,9 @@ async
 back-end
 clearWatch
 datasource
-datasource
+Datasource
 datasources
+Datasources
 Drag and drop
 Dropdown
 dropdown
@@ -74,4 +76,12 @@ watchId
 watchPosition
 Widget
 widget
-
+kubectl
+cronjob
+APIs
+onClick
+Async
+Supported QR/Barcode formats
+QR
+onCodeDetected
+check
