@@ -57,22 +57,7 @@ MySQL databases can be queried using the standard [SQL syntax](https://dev.mysql
 
 ### SQL modes
 
-The SQL mode (```sql_mode```) is a system variable in MySQL that controls the behavior of the MySQL server. The SQL mode can be used to configure the server to be strict or forgiving when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases. 
-
-#### Why use SQL modes
-
-By default, MySQL operates in a non-strict, or "forgiving" mode, where the server automatically convert **invalid input values** to the **closest valid value** and continue processing the query. For example, if you try to insert a negative number into an `UNSIGNED` column, MySQL converts it to zero. This behavior is enabled by setting the ```sql_mode``` variable to an empty string, which means that no restrictions are imposed on the server's behavior. In non-strict mode, the SQL server attempts to execute the query even if the input data does not conform to the column definitions.
-
-* Strict mode can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. Additionally, strict mode can make it easier to identify and fix errors in your data, since the database returns an error message when it encounters invalid or missing data.
-
-* For example, suppose you have a table in your database that stores financial transactions, and the table has columns for the transaction date, amount, and account number. In strict mode, the database would return an error if you tried to insert a record with a missing or invalid transaction date or amount. This can help to prevent errors or inconsistencies in the data that could have serious consequences in a financial application.
-
-
-
-| Operational Mode        	| When Statement Default is Error 	| When Statement Default is Warning 	|
-|-------------------------	|---------------------------------	|-----------------------------------	|
-| Without strict SQL mode 	| Error                           	| Warning                           	|
-| With strict SQL mode    	| Error                           	| Error                             	|
+The SQL mode (```sql_mode```) is a system variable in MySQL that controls the behavior of the MySQL server. The SQL mode can be used to configure the server to be strict or forgiving when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases. [Strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
 
 #### How to use SQL modes
 
