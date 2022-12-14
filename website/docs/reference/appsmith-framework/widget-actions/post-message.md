@@ -1,9 +1,9 @@
 # Post Message
 
-The **Post message** action is used to enable safe cross-origin communication between [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objects; for example, between a page and a pop-up that it has created, or between a page and an iframe embedded within it. The Appsmith function `postWindowMessage` works by using the JavaScript function [`postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) so that you can communicate between applications in situations such as:
+The **Post message** action uses the `postWindowMessage()` function to enable safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objects; for example, between an app and an iframe embedded within it. This may be useful in situations like:
 
-- Appsmith being embedded in an iframe of a parent application.
-- Appsmith using [Iframe](/reference/widgets/iframe/) widgets to embed other applications or pages.
+- Using Appsmith's [Iframe](/reference/widgets/iframe/) widget to embed other applications or pages.
+- Embedding Appsmith in an iframe of a parent application.
 
 ## Signature
 
@@ -15,19 +15,17 @@ postWindowMessage(message, targetIframe, targetOrigin)
 
 | Argument Name | Description |
 | ------------- | ----------- |
-| **message** | This is the message to send to the parent application. Most JavaScript values are acceptable here, except `null` and `undefined`. (Default: `""`) |
+| **message** | This is the message to send to the target iframe or window. Most JavaScript values are acceptable here, except `null` and `undefined`. (Default: `""`) |
 | **targetIframe** | This is the window to which you want to send the message. If its value is `"window"`, you are sending a message to the parent application’s window (where Appsmith is embedded). If you want to send a message to an iframe within Appsmith, enter the name of the iframe here. (Default: `"window"`) |
 | **targetOrigin** | This is the URL to which you can send messages. The default value of "`*`" means the message can be sent to any URL. If you want to limit sending messages to only the parent application (in which Appsmith is embedded), enter the URL of the parent application here. (Default: `"*"`) |
 
-## Examples
+To see examples of the **Post message** action, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
-### Page embedded in Appsmith
+## Iframe widget in Appsmith app
 
-For these examples, imagine you are building an app in Appsmith that has an Iframe widget called `Iframe1` containing an embedded page.
+### From Appsmith to embedded page
 
-##### From Appsmith to iframe
-
-To send a piece of data (perhaps an email address) to that embedded page:
+Imagine you are building an app in Appsmith that has an Iframe widget called `Iframe1` containing an embedded page. To send data to a page embedded in an Appsmith Iframe widget:
 
 1. Drag and drop an [Input](/reference/widgets/input/) widget and a [Button](/reference/widgets/button) widget onto the canvas.
 2. In the button's **onClick** event property, select **Post message**. Set the **Message** to `{{ Input1.text }}` and **Target iframe** to `Iframe1`.
@@ -50,17 +48,17 @@ If you want to try this but you need a page to receive your message, set up your
 When the iframe receives your message, it puts the message text into the `#target` div.
 :::
 
-##### From iframe to Appsmith
+### From embedded page to Iframe widget
 
-To capture and handle a message that was sent to Appsmith from the page embedded in the iframe:
+Imagine you are building an app in Appsmith that has an Iframe widget called `Iframe1` containing an embedded page. To capture and handle a message that was sent to Appsmith from the page embedded in the iframe:
 
 Use the iframe's [**onMessageReceived**](/reference/widgets/iframe#events) event in the properties pane. Choose an action or write code to be executed when the message is received from the embedded page. You can use the `Iframe1.message` property to access the content of the message that was received by Appsmith.
 
-### Appsmith embedded in parent page
+## Appsmith app embedded in parent app
 
-For these examples, imagine you are building a page outside of Appsmith, and you have embedded an Appsmith app into it using an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+### From Appsmith to parent app
 
-##### From Appsmith to parent page
+In this example, imagine you are building a page outside of Appsmith, and you have embedded an Appsmith app into it using an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
 
 To configure your Appsmith application to send messages to its parent page:
 
@@ -71,7 +69,3 @@ To configure your Appsmith application to send messages to its parent page:
 :::tip
 The parent application where Appsmith is embedded should have an event listener set up to receive the message that you send from Appsmith. Read more about setting up message event handling [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event).
 :::
-
-##### From parent to Appsmith (embedded)
-
-_This feature is currently unavailable._
