@@ -4,6 +4,6 @@ The API authentication is a process of validating the consumer's identity who at
 
 Configure one of the below authentication modes and save it.
 
-1. [Basic Authentication](basic-authentication.md)
-2. [OAuth 2.0 Authentication](oauth2-authentication/)
+1. [Basic Authentication](/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication)
+2. [OAuth 2.0 Authentication](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication)
 
