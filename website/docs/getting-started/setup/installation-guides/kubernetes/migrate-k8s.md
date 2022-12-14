@@ -142,7 +142,7 @@ Export all existing configurations from the `ConfigMap` in the running Kubernete
 
 In the old Kubernetes stack, MongoDB was deployed as a separate resource in the cluster. However, in the new Helm chart, MongoDB is an internal service and is configured as a ReplicaSet. To ensure that the Helm chart runs with internal Redis and MongoDB services, you need to make some changes to the `values.yaml` file. Follow the steps below to configure internal Redis and MongoDB services.
 
-  1. Change the host for `APPSMITH_MONGODB_URI` from `mongo-service` to `localhost`:
+1. Change the host in the `APPSMITH_MONGODB_URI` parameter from `mongo-service` to `localhost`:
 
   ```bash new
     APPSMITH_MONGODB_URI: "mongodb://root:root@localhost/appsmith"
