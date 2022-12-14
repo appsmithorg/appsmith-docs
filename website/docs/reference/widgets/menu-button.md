@@ -41,7 +41,7 @@ These properties allow you to perform formatting changes for menu items that are
 The properties are described as follows:
 
 ## Menu Items Source
-The "Menu Items Source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful for providing up-to-date information in the menu.
+The "Menu Items Source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful when the number of items or properties in each item need to be updated dynamically.
 
 <VideoEmbed host="youtube" videoId="MrvRADv-H9A" title="How to set Menu Items Source for Menu Button Widget" caption="How to set Menu Items Source for Menu Button Widget"/>
 
@@ -61,12 +61,8 @@ To specify an action to be performed when a menu item is clicked, you can bind a
 When you select the dynamic source, you can bind the menu item's property to a data source, such as a database query or API response. This allows the widget to dynamically populate the menu items based on available data. This is useful for creating menus that can change and adapt based on user input or application state. You can configure the menu items by clicking the `Item Configuration` button.
 
 :::note
- Dynamic menu items are **only** supported inside the menu button and the list widget. You can add up to 10 menu items by defining them in the "Source Data" property for a dynamic source.
+ Dynamic menu items **only** supports up to 10 menu items. You can define them in the "Source Data" property for a dynamic source.
 :::
-
-If the dynamic source array has more than 10 items, the `SourceData` fields show an error message: `Source data cannot have more than 10 items`.
-
-![Error message when the menu items exceed than 10](/img/dynamic-menu-items-error.png)
 
 #### Source data
 The "Source Data" property is used to specify the data source for a dynamic menu. By default, this property has an empty value but can be set to an array of values. This array can be the result of a query, an API response, or any other data source that can be represented as an array. The evaluated array generates the menu items for the dynamic menu.
