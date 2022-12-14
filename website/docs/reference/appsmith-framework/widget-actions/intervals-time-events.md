@@ -1,5 +1,8 @@
 ---
 sidebar_position: 9
+
+toc_min_heading_level: 2
+toc_max_heading_level: 2
 ---
 
 # Intervals (Time Events)
@@ -10,7 +13,7 @@ Interval events (timing functions in JavaScript) allow the user to periodically 
 
 ## setInterval()
 
-`setInterval()` executes a callback function with a fixed time interval between the calls. This function is analogous to the [JavaScript `setInterval` function](https://developer.mozilla.org/en-US/docs/Web/API/setInterval).
+`setInterval()` executes a callback function with a fixed time interval between the calls. This function is analogous to the [Window `setInterval()` method](https://developer.mozilla.org/en-US/docs/Web/API/setInterval).
 
 ### Signature
 
@@ -36,7 +39,7 @@ setInterval(() => { Query1.run() }, 10000, "myTimer");
 
 ## clearInterval()
 
-`clearInterval()` stops a repeating callback that was started with the `setInterval` method. This function is analogous to the [JavaScript `clearInterval` function](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval).
+`clearInterval()` stops a repeating callback that was started with the `setInterval` method. This function is analogous to the [Window `clearInterval()` method](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval).
 
 ### Signature
 
@@ -60,7 +63,7 @@ clearInterval("myTimer");
 
 ## setTimeout()
 
-`setTimeout()` executes a piece of code once after a specified amount of time has passed. This function is analogous to the [JavaScript `setTimeout` function](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout).
+`setTimeout()` executes a piece of code once after a specified amount of time has passed. This function is analogous to the [Window `setTimeout()` method](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout).
 
 ### Signature
 
