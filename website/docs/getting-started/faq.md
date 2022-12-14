@@ -13,11 +13,11 @@ You can use Appsmith to build custom forms, dashboards & workflows. Tools like C
 
 Yes, absolutely. You can write JavaScript code anywhere inside the product within curly braces `{{ }}`, or using standard syntax within [JS Objects](/core-concepts/writing-code/javascript-editor-beta). We know how complex and intricate business logic can be, and trying to build it without code can get excruciating. Appsmith bridges mundane API and UI configurations with powerful code expressions to let you build the apps the way you see them fit.
 
-Read more about writing code [here](/core-concepts/writing-code).
+For more information, see [writing code](/core-concepts/writing-code).
 
 ## What type of data security does Appsmith provide?
 
-Appsmith safely encrypts all your database credentials and stores them securely. Appsmith doesn't store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open-source platform and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
+Appsmith safely encrypts all your database credentials and stores them securely. Appsmith doesn't store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open source platform and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
 
 ## Do you have a bounty program for reporting security vulnerabilities?
 
