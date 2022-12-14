@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-description: Audit logs allow you to keep records of everything that happens on your instance.
+description: Custom branding for Appsmith is a feature that allows users to customize the appearance of their Appsmith workspace and apps with their own logo and color palette.
 ---
 
 # Branding
