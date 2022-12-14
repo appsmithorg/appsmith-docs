@@ -1,4 +1,4 @@
-# Adding and Updating Data
+# Inline Editing
 
 The Table widget comes with features such as inline editing to provide a quick way to add and update data without needing to move away from the current screen.
 
