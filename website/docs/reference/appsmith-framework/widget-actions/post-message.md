@@ -23,9 +23,11 @@ To see examples of the **Post message** action, take a look at the [sample app](
 
 ## Iframe widget in Appsmith app
 
+In this scenario, you are building an Appsmith that has an Iframe widget called `Iframe1`. There is an external page embedded within that Iframe widget, and you are setting up communication between the embedded page and the Iframe in Appsmith.
+
 ### From Appsmith to embedded page
 
-Imagine you are building an app in Appsmith that has an Iframe widget called `Iframe1` containing an embedded page. To send data to a page embedded in an Appsmith Iframe widget:
+To send data to a page that's embedded in an Appsmith Iframe widget:
 
 1. Drag and drop an [Input](/reference/widgets/input/) widget and a [Button](/reference/widgets/button) widget onto the canvas.
 2. In the button's **onClick** event property, select **Post message**. Set the **Message** to `{{ Input1.text }}` and **Target iframe** to `Iframe1`.
@@ -50,15 +52,15 @@ When the iframe receives your message, it puts the message text into the `#targe
 
 ### From embedded page to Iframe widget
 
-Imagine you are building an app in Appsmith that has an Iframe widget called `Iframe1` containing an embedded page. To capture and handle a message that was sent to Appsmith from the page embedded in the iframe:
+To capture and handle a message that was sent to an Appsmith Iframe widget from the page embedded in the iframe:
 
 Use the iframe's [**onMessageReceived**](/reference/widgets/iframe#events) event in the properties pane. Choose an action or write code to be executed when the message is received from the embedded page. You can use the `Iframe1.message` property to access the content of the message that was received by Appsmith.
 
 ## Appsmith app embedded in parent app
 
-### From Appsmith to parent app
+In this scenario, you are building an app outside of Appsmith, and you have used an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) element to embed a deployed Appsmith app in that page. Now you are setting up communication between the non-Appsmith parent app and the Appsmith app embedded within it.
 
-In this example, imagine you are building a page outside of Appsmith, and you have embedded an Appsmith app into it using an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+### From Appsmith to parent app
 
 To configure your Appsmith application to send messages to its parent page:
 
