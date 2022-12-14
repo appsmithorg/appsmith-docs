@@ -72,6 +72,11 @@ Widget
 widget
 currentItem
 currentIndex
+kubectl
+cronjob
+APIs
+onClick
+Async
 Supported QR/Barcode formats
 QR
 onCodeDetected
