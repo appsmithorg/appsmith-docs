@@ -24,7 +24,7 @@ These properties allow you to perform formatting changes or bind the Menu Button
 | **Animate Loading** | Formatting | This property allows you to control a widget’s animation on the page. This can be useful for adding visual feedback to the user when the widget is loading or processing data.|                  |
 | **Compact**         | Formatting | This property decides if the widget is in compact mode. In compact mode, the widget takes up less space on the page and can be suitable to use in tight layouts.|                 
 
-### Menu Items Source properties
+### Menu Item properties
 These properties allow you to perform formatting changes for menu items that are added manually using [Static](#static) or dynamically added using [Dynamic](#dynamic) source.
 
 | Property            | Type | Description | Code Snippet |
