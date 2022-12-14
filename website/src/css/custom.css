@@ -314,3 +314,13 @@ width: auto;
   display: block;
   margin: 1rem auto;
  }
+
+ h1{
+  font-size: 2.25rem;
+ }
+ h2{
+  font-size: 1.75rem;
+ }
+ h3{
+  font-size: 1.25rem;
+ }
