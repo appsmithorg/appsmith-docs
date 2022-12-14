@@ -26,10 +26,10 @@ You need to fill in the following parameters:
 * **Connection Mode\*:** You must choose one of the following two modes:
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Host Address / port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port 3306.
+* **Host Address / port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith may to connect to port 3306.
 * **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
 
-### **Authentication**
+### Authentication
 
 You need to fill in the following parameters:
 
@@ -61,7 +61,7 @@ The SQL mode (```sql_mode```) is a system variable in MySQL that controls the be
 
 #### Why use SQL modes
 
-By default, MySQL operates in a non-strict, or "forgiving" mode, where the server automatically convert **invalid input values** to the **closest valid value** and continue processing the query. For example, if you try to insert a negative number into an `UNSIGNED` column, MySQL converts it to zero. This behavior is enabled by setting the ```sql_mode``` variable to an empty string, which means that no restrictions are imposed on the server's behavior. In non-strict mode, the server will do its best to interpret and execute the query, even if the input data is not valid according to the column definitions.
+By default, MySQL operates in a non-strict, or "forgiving" mode, where the server automatically convert **invalid input values** to the **closest valid value** and continue processing the query. For example, if you try to insert a negative number into an `UNSIGNED` column, MySQL converts it to zero. This behavior is enabled by setting the ```sql_mode``` variable to an empty string, which means that no restrictions are imposed on the server's behavior. In non-strict mode, the SQL server attempts to execute the query even if the input data does not conform to the column definitions.
 
 * Strict mode can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. Additionally, strict mode can make it easier to identify and fix errors in your data, since the database returns an error message when it encounters invalid or missing data.
 
