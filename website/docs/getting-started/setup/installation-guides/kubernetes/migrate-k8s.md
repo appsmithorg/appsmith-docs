@@ -102,7 +102,7 @@ Export all existing configurations from the `ConfigMap` in the running Kubernete
       curl -o values.yaml https://bit.ly/3ETEgPT 
       ```
 
-  3.  Manually copy data from `configuration.yaml` to the section `applicationConfig` of the `values.yaml`.
+  3.  Manually copy data from `configuration.yaml` to the section `applicationConfig` of the `values.yaml`(put value in the quote "" is highly recommend).
 
     ![Manually copy data from values.yaml file](/img/helm-values-mapping.png)
 
@@ -142,22 +142,20 @@ Export all existing configurations from the `ConfigMap` in the running Kubernete
 
 In the old Kubernetes stack, MongoDB was deployed as a separate resource in the cluster. However, in the new Helm chart, MongoDB is an internal service and is configured as a ReplicaSet. To ensure that the Helm chart runs with internal Redis and MongoDB services, you need to make some changes to the `values.yaml` file. Follow the steps below to configure internal Redis and MongoDB services.
 
-1. Change the host in the `APPSMITH_MONGODB_URI` parameter from `mongo-service` to `localhost`:
+1. Change the host in the APPSMITH_MONGODB_URI parameter from mongo-service to localhost. Remove query parameters in the URI if they exist.
 
   ```bash new
     APPSMITH_MONGODB_URI: "mongodb://root:root@localhost/appsmith"
   ```
-
-  2. Remove query parameter in the URI if they exist.
-  3. Add parameters for `MongoDB` credentials.
+2. Add parameters for `MongoDB` credentials.
       1. Add `APPSMITH_MONGODB_USER` that stores the username
       2. Add `APPSMITH_MONGODB_PASSWORD` that stores the password
-  4. Change the host in the `APPSMITH_REDIS_URL` parameter from `redis-service` to `localhost`.
+3. Change the host in the `APPSMITH_REDIS_URL` parameter from `redis-service` to `localhost`.
 
   ```bash new
     APPSMITH_REDIS_URL: "redis://127.0.0.1:6379"
   ```
-  5. Verify the configuration for `applicationConfig` section as below:
+4. Verify the configuration for `applicationConfig` section as below:
 
 ```yaml
       applicationConfig:
