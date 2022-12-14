@@ -40,7 +40,10 @@ These properties allow you to edit the Chart widget. All of these properties are
 
 | Property                     | Description                                                                                                                                                                                                                           |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Title**                    | Set the text that will appear at the top of the chart as a title.                                                                                                                                                                     |
+| **Series Title**                    | Sets the title of the current Chart series.
+| **Series Color**                    | Sets the color of the current Chart series.
+| **Series Data**                    | Sets the data of the current Chart series.
+| **Title**                    | Sets the text that will appear at the top of the chart as a title.                                                                                                                                                                     |
 | **Chart Type**               | Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart ([available from FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts)).              |
 | **Visible**                  | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                        |
 | **Animate Loading**          | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                |
@@ -94,7 +97,6 @@ Let’s use a line chart to visualize the data.
 As you can see in the video, we use the `Chart Series` property head to supply the data and details related to identifying the data points.
 
 * `Series Title` - the name of the series. In the example above, it is _**Total Bugs**_.
-* `Series Color` - a color picker input to select the color of the series (this property is not available for pie chart yet).
 * `Series Data` - stores the data points for the total bugs.
 * `X-axis Label` - to define a title for the x-axis.
 * `Y-axis Label` - to define a title for the y-axis.

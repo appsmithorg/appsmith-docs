@@ -165,7 +165,6 @@ There are almost 100+ variants of Fusion Chart Configuration; learn more from th
 Appsmith uses the Chart Series property head to supply the data and details related to identifying the data points.
 
 * `Series Title` - the name of the series.
-* `Series Color` - a color picker input to select the color of the series (this property is not available for pie chart yet).
 * `Series Data` - stores the data points for the total bugs.
 * `X-axis Label` - to define a title for the x-axis.
 * `Y-axis Label` - to define a title for the y-axis
