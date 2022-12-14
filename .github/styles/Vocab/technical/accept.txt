@@ -70,6 +70,11 @@ watchId
 watchPosition
 Widget
 widget
+kubectl
+cronjob
+APIs
+onClick
+Async
 Supported QR/Barcode formats
 QR
 onCodeDetected
