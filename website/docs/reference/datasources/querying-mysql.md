@@ -11,7 +11,7 @@ The following document assumes that you understand the [basics of connecting to 
 
 Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
-## Connection Settings
+## Connection settings
 
 Appsmith needs the following parameters for connecting to a MySQL database:
 
@@ -26,7 +26,7 @@ You need to fill in the following parameters:
 * **Connection Mode\*:** You must choose one of the following two modes:
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port 3306.
+* **Host Address / port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port 3306.
 * **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
 
 ### **Authentication**
@@ -36,13 +36,13 @@ You need to fill in the following parameters:
 * **Username\*:** Fill username required for authenticating connection requests to your database.
 * **Password\*:** Fill password required for authenticating connection requests for the given username to the database.
 
-### **SSL**
+### SSL
 
 The SSL Mode can be set to one of the following values:
 
 * **`Default`**: Same as `Preferred`.
 * **`Preferred`**: Use SSL, if the server _supports_ it.
-* **`Required`**: Reject connection, if SSL is not available.
+* **`Required`**: Reject connection, if SSL isn't available.
 * **`Disabled`**: Connect without SSL, use a plain unencrypted connection.
 
 More information available at [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option\_general\_ssl-mode).
@@ -53,15 +53,54 @@ MySQL databases can be queried using the standard [SQL syntax](https://dev.mysql
 
 ![](/img/postgres.gif)
 
-## Using Prepared Statement (Beta)
 
-Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging untrusted user input with trusted data for execution. Using a prepared Statement is one strategy for mitigating this risk.
 
-Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get properly escaped and sanitized before the query is sent to the database for execution.
+### SQL modes
+
+The SQL mode (```sql_mode```) is a system variable in MySQL that controls the behavior of the MySQL server. The SQL mode can be used to configure the server to be strict or forgiving when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases. 
+
+#### Why use SQL modes
+
+By default, MySQL operates in a non-strict, or "forgiving" mode, where the server automatically convert **invalid input values** to the **closest valid value** and continue processing the query. For example, if you try to insert a negative number into an `UNSIGNED` column, MySQL converts it to zero. This behavior is enabled by setting the ```sql_mode``` variable to an empty string, which means that no restrictions are imposed on the server's behavior. In non-strict mode, the server will do its best to interpret and execute the query, even if the input data is not valid according to the column definitions.
+
+* Strict mode can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. Additionally, strict mode can make it easier to identify and fix errors in your data, since the database returns an error message when it encounters invalid or missing data.
+
+* For example, suppose you have a table in your database that stores financial transactions, and the table has columns for the transaction date, amount, and account number. In strict mode, the database would return an error if you tried to insert a record with a missing or invalid transaction date or amount. This can help to prevent errors or inconsistencies in the data that could have serious consequences in a financial application.
+
+
+
+| Operational Mode        	| When Statement Default is Error 	| When Statement Default is Warning 	|
+|-------------------------	|---------------------------------	|-----------------------------------	|
+| Without strict SQL mode 	| Error                           	| Warning                           	|
+| With strict SQL mode    	| Error                           	| Error                             	|
+
+#### How to use SQL modes
+
+To change the SQL mode at runtime, you can use a **SET** statement to set the global or session ```sql_mode``` system variable:
+
+```js
+SET GLOBAL sql_mode = 'mode1,mode2,...';
+SET SESSION sql_mode = 'mode1,mode2,...';
+```
+where **mode1**, **mode2**, etc. are the specific [SQL modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-important) that you want to enable or disable.
+
+* To check whether strict mode is enabled or not run:
+```SHOW VARIABLES LIKE 'sql_mode';```
+
+* To disable strict mode run:
+```set global sql_mode='';```
+
+Using SQL modes is recommended to ensure that your queries conform to standard SQL behavior. With SQL modes, your queries can run more consistently across different MySQL versions and configurations. You can check the SQL documentation to learn more about [SQL modes.](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html)
+
+## Using prepared statement (beta)
+
+Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging suspicious user input with trusted data for execution. Using a prepared Statement is one strategy for mitigating this risk.
+
+Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get escaped and sanitized before the query is sent to the database for execution.
 
 Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
 
-## Using Queries in Applications
+## Using queries in applications
 
 Once you have successfully run a Query, you can use it in your application to
 
