@@ -68,13 +68,14 @@ Before we can deploy using the Helm chart from `helm-ee.appsmith.com`, we need t
        database: keycloak
    ```
 
-2. Change image to use the `appsmith-ee` repository:
+2. Remove the highlighted lines, irrespective of the value, if present:
 
    ```yaml
    image:
-     registry: index.docker.io
      # highlight-next-line
-     repository: appsmith/appsmith-ee
+     registry: anything
+     # highlight-next-line
+     repository: anything
      pullPolicy: Always
      tag: "latest"
    ```

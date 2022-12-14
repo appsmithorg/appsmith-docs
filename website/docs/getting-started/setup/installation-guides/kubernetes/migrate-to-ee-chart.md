@@ -122,20 +122,9 @@ Before we can deploy using the Helm chart from `helm-ee.appsmith.com`, we need t
        database: keycloak
    ```
 
-2. Ensure you have the `appsmith-ee` image repository set:
+2. [Choose, or create a shared file system](./business-edition#create-a-shared-file-system)
 
-   ```yaml
-   image:
-     registry: index.docker.io
-     # highlight-next-line
-     repository: appsmith/appsmith-ee
-     pullPolicy: Always
-     tag: "latest"
-   ```
-
-3. [Choose, or create a shared file system](./business-edition#create-a-shared-file-system)
-
-4. Add the license and a few other variables to `applicationConfig`, like so:
+3. Add the license and a few other variables to `applicationConfig`, like so:
 
    ```yaml
      APPSMITH_LICENSE_KEY: ""
@@ -146,7 +135,7 @@ Before we can deploy using the Helm chart from `helm-ee.appsmith.com`, we need t
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-5. Now add and deploy the new Helm chart:
+4. Now add and deploy the new Helm chart:
 
    ```bash
    helm repo add appsmith-ee https://helm-ee.appsmith.com
