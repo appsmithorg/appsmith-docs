@@ -59,6 +59,8 @@ watchId
 watchPosition
 widget
 Widget
+currentItem
+currentIndex
 kubectl
 cronjob
 APIs
