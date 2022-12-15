@@ -74,3 +74,5 @@ Supported QR/Barcode formats
 QR
 onCodeDetected
 check
+favicon
+Favicon
