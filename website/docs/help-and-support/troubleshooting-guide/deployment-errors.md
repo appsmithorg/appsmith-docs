@@ -27,7 +27,7 @@ If you encounter the error that ```ports 80 & 443``` aren't open, its is recomme
 2. Run `docker-compose up -d`
 
 :::tip
-To Stop a previous version of appsmith running on these ports, run the following:
+To stop a previous version of appsmith running on these ports, run the following:
 
 * ```sudo su```
 * ```docker container kill $(docker ps -q)```
