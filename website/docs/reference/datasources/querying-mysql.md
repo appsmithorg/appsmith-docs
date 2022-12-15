@@ -57,7 +57,7 @@ MySQL databases can be queried using the standard [SQL syntax](https://dev.mysql
 
 ### SQL modes
 
-The SQL mode (```sql_mode```) is a system variable in MySQL that controls the behavior of the MySQL server. The SQL mode can be used to configure the server to be strict or forgiving when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases. [Strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
+```SQL_MODE``` is a system variable in MySQL that controls the behaviour of the MySQL server. It can be used to configure the server to be strict or forgiving when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases. [Strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
 
 #### How to use SQL modes
 
