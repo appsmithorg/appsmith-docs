@@ -87,7 +87,7 @@ Adding `&authSource=admin` to the end of your `APPSMITH_MONGODB_URI` variable’
 APPSMITH_MONGODB_URI=mongodb://<your_username>:<your_password>@mongo/appsmith?retryWrites=true
 ```
 
-Change it to the following (notice the only change is `&authSource=admin`. Don't copy-paste this whole line. Only add the `&authSource=admin` part to your existing value.
+Change it to the following (notice the only change is `&authSource=admin`. Please don't paste this whole line. Only add the `&authSource=admin` part to your current value.
 
 ```bash
 # New config
