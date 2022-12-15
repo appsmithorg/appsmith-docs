@@ -417,7 +417,6 @@ const sidebars = {
         'advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/access-control',
         'advanced-concepts/audit-logs',
         {
           type: 'category',
@@ -432,6 +431,16 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/merging-branches',
             'advanced-concepts/version-control-with-git/disconnect-the-git-repository',
             'advanced-concepts/version-control-with-git/updating-local-file-path'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Access Control',
+          link: {type: 'doc', id:  'advanced-concepts/access-control/README'},
+          items: [
+            'advanced-concepts/access-control/users',
+            'advanced-concepts/access-control/groups',
+            'advanced-concepts/access-control/roles',
           ]
         },
         {
