@@ -269,7 +269,7 @@ helm install appsmith/appsmith --generate-name \
   --set service.type=ClusterIP
 ```
 
-If you have installed Appsmith Helm chart, run the `helm upgrade` command to upgrade the existing installation.
+If you have already installed Appsmith, run the `helm upgrade` command to upgrade the existing installation, and apply these configuration changes.
 
     ```
     helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
