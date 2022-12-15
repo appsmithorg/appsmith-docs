@@ -318,17 +318,17 @@ The default installation doesn't have data compression configured for Nginx ingr
 
 1. Edit the `configMap` for `ingress-nginx-controller` by using the below command
 
-```bash
-kubectl edit configmap -n ingress-nginx ingress-nginx-controller
-```
+  ```bash
+  kubectl edit configmap -n ingress-nginx ingress-nginx-controller
+  ```
 
 2. Add the following to the data section.
 
-```yaml
-data: # ADD IF NOT PRESENT
-  use-gzip: "true" # ENABLE GZIP COMPRESSION
-  gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
-```
+  ```yaml
+  data: # ADD IF NOT PRESENT
+    use-gzip: "true" # ENABLE GZIP COMPRESSION
+    gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
+  ```
 
 The Nginx controller automatically updates once you save (`:wq!`) the changes.
 
