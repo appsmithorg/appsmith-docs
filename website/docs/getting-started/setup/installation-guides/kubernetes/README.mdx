@@ -61,11 +61,14 @@ You've installed and configured the Kubernetes cluster. Great, now go ahead and 
 
    ```bash
    curl -L https://bit.ly/3ETEgPT -o "$PWD/values.yml"
+   ```
 
 2. Add the Appsmith chart repository with:
 
    ```bash
    helm repo add appsmith https://helm.appsmith.com
+   ```
+   
 3. Load the Appsmith chart repository with:
 
 ```bash
@@ -271,12 +274,12 @@ helm install appsmith/appsmith --generate-name \
 
 If you have already installed Appsmith, run the `helm upgrade` command to upgrade the existing installation, and apply these configuration changes.
 
-    ```
-    helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
+ ```
+ helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
 
-    # Or this command if you are using values.yaml file
-    helm upgrade --values values.yaml appsmith appsmith/appsmith
-    ```
+ # Or this command if you are using values.yaml file
+ helm upgrade --values values.yaml appsmith appsmith/appsmith
+```
 
 ## Update Appsmith
 
@@ -288,7 +291,7 @@ The default Appsmith helm installation disables auto update (_recommended_). You
 
 * Values file: Ensure that the parameters are configured to enable auto update. For more information, see [Auto update image](#auto-update-image). Once the set up is in place, run the below command.
 
-    ```
+   ```
      helm upgrade --values values.yaml appsmith appsmith/appsmith
     ```
 
