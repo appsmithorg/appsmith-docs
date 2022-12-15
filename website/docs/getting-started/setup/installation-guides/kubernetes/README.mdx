@@ -81,7 +81,7 @@ helm install appsmith appsmith/appsmith --namespace <your-namespace>
 
 When installing Appsmith using Helm, it automatically creates all the necessary Kubernetes objects to run the app on your clusters, such as pods, services, and ingresses with the default configuration. For more information on customizing the configuration, checkout the [Configure Appsmith](#configure-appsmith) section.
 
-5. Wait for Appsmith to be ready by running the following command:
+5. Check the status of the Appsmith installation by running the following command:
 
 ```bash
 kubectl -n <your-namespace> rollout status deployment <release-name>-appsmith
