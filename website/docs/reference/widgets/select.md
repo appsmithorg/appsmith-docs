@@ -66,7 +66,23 @@ This property allows you to specify a default value that can be selected when th
 
 The default selected value should be set to the value of the option from the options property. This value should match the value attribute of the selected option.
 
+For example, if your options property is an array of objects with a **label** and a **value** property, such as
+```javascript
+[
+  {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  }
+]  
+```
+You can add the **value** to the **defaultValue** property in order to set the default value for the options. For example, if you want the default value to be "blue", you can set the defaultValue property to "BLUE".
+
 <VideoEmbed host="youtube" videoId="KP3qdEi4i3w" title="Default selected value" caption="Default selected value"/>
+
 
 
 ### Binding properties
