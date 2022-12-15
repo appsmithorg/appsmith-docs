@@ -94,7 +94,7 @@ Similarly, take a backup of Keycloak:
 7. Download the backup file, available at `/tmp/keycloak_backup.json`:
 
    ```bash
-   kubectl cp goutham/appsmith-0:/tmp/keycloak_backup.json ./keycloak_bkp.json
+   kubectl cp <namespace>/appsmith-0:/tmp/keycloak_backup.json ./keycloak_bkp.json
    ```
 
 ## Uninstall existing Helm chart
@@ -191,7 +191,7 @@ For reference, more information about this Helm chart can be found on [the fresh
 5. Restart for the changes to be applied:
 
    ```bash
-   kubectl rollout restart deployment/appsmith -n goutham
+   kubectl rollout restart deployment/appsmith -n <namespace>
    ```
 
 You should have your Appsmith instance running with the new Helm chart.

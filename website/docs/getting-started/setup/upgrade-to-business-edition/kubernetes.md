@@ -149,7 +149,7 @@ For reference, more information about this Helm chart can be found on [the fresh
 5. Restart for the changes to be applied:
 
    ```bash
-   kubectl rollout restart deployment/appsmith -n goutham
+   kubectl rollout restart deployment/appsmith -n <namespack>
    ```
 
 You should have your Appsmith instance running with the new Helm chart.
