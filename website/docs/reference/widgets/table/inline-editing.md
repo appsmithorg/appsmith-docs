@@ -174,6 +174,7 @@ After configuring your save button to send data back to your datasource, set up 
     () => {} // error callback
   )
 }}
+```
 
 ###### updatedRow
 
