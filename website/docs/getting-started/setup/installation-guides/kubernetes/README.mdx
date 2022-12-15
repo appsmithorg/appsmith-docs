@@ -62,12 +62,10 @@ You've installed and configured the Kubernetes cluster. Great, now go ahead and 
    ```bash
    curl -L https://bit.ly/3ETEgPT -o "$PWD/values.yml"
 
-2. Add Appsmith into your repository using Helm. First, add the Appsmith Helm repository to your local Helm installation. It allows Helm to download the Appsmith chart from the Appsmith GitHub repository.
+2. Add the Appsmith chart repository with:
 
-
-```bash
-helm repo add appsmith https://helm.appsmith.com
-```
+   ```bash
+   helm repo add appsmith https://helm.appsmith.com
 3. Update the Helm repository to make sure you have the latest version of the Appsmith chart by running the following command:
 
 ```bash
