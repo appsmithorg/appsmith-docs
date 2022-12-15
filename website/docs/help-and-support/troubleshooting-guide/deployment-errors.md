@@ -113,6 +113,6 @@ If you are using Docker and are having trouble with invitation emails not being 
 
 If you aren't receiving the invitation email, please check the value for ```APPSMITH_REPLY_TO``` in your **docker.env** file. If this value is empty, please set it to the same email address you are using for ```APPSMITH_MAIL_FROM``` and **restart the application**.
 
-This should resolve the issue with not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and that there are no issues with the network or other components that could be preventing the emails from being sent.
+This should resolve the issue of not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and there are no issues with the network or other components preventing the emails from being sent.
 
 However, if you encounter any issues, you can contact the support team on [ Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com).
