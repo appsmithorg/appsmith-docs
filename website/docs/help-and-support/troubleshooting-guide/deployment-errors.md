@@ -48,7 +48,7 @@ Restart the installation process with valid values.
 
 * Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
 * You can access the running application on[ localhost](http://localhost) in any browser or the `public IP` of your machine.
-* You may need to wait for few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
+* You may need to wait for a few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
 
 ## OAuth sign up not working
 
