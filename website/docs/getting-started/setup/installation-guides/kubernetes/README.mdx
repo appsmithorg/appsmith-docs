@@ -73,10 +73,10 @@ helm repo add appsmith https://helm.appsmith.com
 ```bash
 helm repo update
 ```
-4. Install Appsmith on your Kubernetes cluster using the Helm chart. Replace `<your-namespace>` with the namespace you want to install Appsmith in, and `<release-name>` with a unique name for the Appsmith release:
+4. Install Appsmith on your Kubernetes cluster using the Helm chart. Replace `<your-namespace>` with the namespace you want to install Appsmith in:
 
 ```bash
-helm install <release-name> appsmith/appsmith --namespace <your-namespace>
+helm install appsmith appsmith/appsmith --namespace <your-namespace>
 ```
 
 When installing Appsmith using Helm, it automatically creates all the necessary Kubernetes objects to run the app on your clusters, such as pods, services, and ingresses with the default configuration. For more information on customizing the configuration, checkout the [Configure Appsmith](#configure-appsmith) section.
