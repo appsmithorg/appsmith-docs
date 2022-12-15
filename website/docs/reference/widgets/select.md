@@ -64,7 +64,7 @@ These properties allow editing the Select widget. All these properties are prese
 
 This property allows you to specify a default value that can be selected when the widget is first displayed. This can be useful if you want to pre-populate the widget with a specific value, or if you want to ensure that a certain option is selected by default.  
 
-Please note that this property should be set to match the ```value``` attribute of your desired option from the options property.
+The default selected value should be set to the value of the option from the options property. This value should match the value attribute of the selected option.
 
 <VideoEmbed host="youtube" videoId="KP3qdEi4i3w" title="Default selected value" caption="Default selected value"/>
 
