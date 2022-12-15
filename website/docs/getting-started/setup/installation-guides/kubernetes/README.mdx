@@ -57,13 +57,10 @@ Follow one of the available guidelines below to configure the Kubernetes cluster
 
 You've installed and configured the Kubernetes cluster. Great, now go ahead and install Appsmith using Helm.
 
-1. Download the [`values.yaml`](https://bit.ly/3ETEgPT) file, and place it into the Appsmith installation folder.
+1. Download the [`values.yaml`](https://bit.ly/3ETEgPT) file, and place it into the Appsmith installation folder. Or, run the following `cURL` command:
 
-OR, run the following cURL:
-
-```bash
-curl -L https://bit.ly/3ETEgPT -o $PWD/values.yml
-```
+   ```bash
+   curl -L https://bit.ly/3ETEgPT -o "$PWD/values.yml"
 
 2. Add Appsmith into your repository using Helm. First, add the Appsmith Helm repository to your local Helm installation. It allows Helm to download the Appsmith chart from the Appsmith GitHub repository.
 
