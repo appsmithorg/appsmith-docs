@@ -82,7 +82,7 @@ You've installed and configured the Kubernetes cluster. Great, now go ahead and 
 
 When installing Appsmith using Helm, it automatically creates all the necessary Kubernetes objects to run the app on your clusters, such as pods, services, and ingresses with the default configuration. For more information on customizing the configuration, checkout the [Configure Appsmith](#configure-appsmith) section.
 
-5. Check the status of the Appsmith installation by running the following command:
+5. Verify the status of the Appsmith installation by running the following command:
 
   ```bash
   kubectl -n <your-namespace> rollout status deployment <release-name>-appsmith
@@ -98,7 +98,7 @@ When the deployment is ready, a message that indicates the deployment of "appsmi
 Congratulations, you have successfully installed Appsmith on your Kubernetes cluster using Helm. For more detailed instructions and options for configuring the Appsmith Helm chart, see the Configure Appsmith section below.
 
 ## Configure Appsmith
-The Appsmith installation works with the default configuration, but you also have the option to customize it to fit your specific needs. To configure the installation parameters, it is recommended to use the values.yaml file. This file allows you to specify the settings and options you want to use for your Appsmith installation, allowing you to tailor the installation to your needs. The following is a comprehensive list of available parameters.
+The Appsmith installation works with the default configuration, but you also have the option to customize it to fit your specific needs. To configure the installation parameters, it's recommended to use the `values.yaml` file. This file allows you to specify the settings and options you want to use for your Appsmith installation, allowing you to tailor the installation to your needs. The following is a comprehensive list of available parameters.
 
 ### Parameters
 Customize Appsmith by using either Helm parameters or Appsmith-specific parameters. The table below provides details on the various Helm and Appsmith parameters that are available for configuration.
