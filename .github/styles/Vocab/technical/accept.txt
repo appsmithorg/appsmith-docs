@@ -79,6 +79,13 @@ Supported QR/Barcode formats
 QR
 onCodeDetected
 check
+Host
+unencrypted
+javascript
+MySQL
+SSL
+SQL
+disable
 callbackFunction
 setInterval
 clearInterval
@@ -90,4 +97,5 @@ Javascript
 Fusioncharts
 FusionCharts
 seriesTitle
+
 
