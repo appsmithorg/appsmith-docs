@@ -41,8 +41,8 @@ The Business Edition (BE) Helm charts installation includes support for Horizont
    Set the values in the `applicationConfig` section:
 
    ```yaml
-     APPSMITH_ENCRYPTION_PASSWORD: "password_here"
-     APPSMITH_ENCRYPTION_SALT: "salt_here"
+     APPSMITH_ENCRYPTION_PASSWORD: <PASSWORD>
+     APPSMITH_ENCRYPTION_SALT: <SALT>
    ```
 
 ## Uninstall Helm chart
