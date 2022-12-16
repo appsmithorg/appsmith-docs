@@ -83,7 +83,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 
 3. Choose, or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes/business-edition#create-a-shared-file-system)
 
-4. Include the license and a few other variables related to keycloak to `applicationConfig` section:
+4. Add the license key and a few other variables related to keycloak to `applicationConfig` section:
 
    ```yaml
      APPSMITH_LICENSE_KEY: ""
