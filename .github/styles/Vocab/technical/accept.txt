@@ -79,6 +79,8 @@ Supported QR/Barcode formats
 QR
 onCodeDetected
 check
+favicon
+Favicon
 javascript
 Javascript
 Fusioncharts
