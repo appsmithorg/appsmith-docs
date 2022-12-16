@@ -67,7 +67,7 @@ To change the SQL mode at runtime, you can use a **SET** statement to set the `G
 SET GLOBAL sql_mode = 'mode1,mode2,...';
 SET SESSION sql_mode = 'mode1,mode2,...';
 ```
-where **mode1**, **mode2**, etc. are the specific SQL modes that you want to enable or disable.
+where **mode1**, **mode2**, etc. are the specific SQL modes that you want to enable or disable. To switch to strict mode, it is recommended to use the TRADITIONAL mode by setting ```SET sql_mode to TRADITIONAL```.
 
 * To check whether strict mode is enabled or not run:
 ```SHOW VARIABLES LIKE 'sql_mode';```
