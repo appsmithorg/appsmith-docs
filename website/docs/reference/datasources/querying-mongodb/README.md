@@ -245,7 +245,24 @@ people
 { $inc: { score: 1 } }
 ```
 
-`Limit`: The dropdown is used to configure if this delete command should act upon a single document or if this command should delete all the matching documents according to the query.
+`Limit`: The dropdown is used to configure if this delete command should act upon a **single document** or if this command should delete **all the matching documents** according to the query.
+
+MongoDB's multi update feature does not support replacement style updates. This means that you cannot replace the entire document, but rather, you can only update a single field.
+
+To successfully run a multi update command in MongoDB, you can use the following syntax:
+
+```js
+   { $set: { <field1>: <value1>, <field2>: <value2>, ... } },
+   { multi: true }
+```
+
+This updates all documents that match the ```query``` criteria and set the specified fields to the specified values.
+
+It's important to note that the ```$set``` operator is required in the update document when using the multi option. Without ```$set```, the update command only updates the first document that matches the query criteria, rather than updating all matching documents. To learn more about the update many command in MongoDB, you can check the [official documentation](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
+
+
+
+
 
 ### 4. Delete Document(s)
 
