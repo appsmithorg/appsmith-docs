@@ -5,22 +5,22 @@ description: Custom branding for Appsmith is a feature that allows users to cust
 
 # Branding
 
-Custom branding for Appsmith is a feature that allows app builders to customize the appearance of their Appsmith workspace and apps with their own logo and color palette. The ensures that the end-users of the app have a more familiar and cohesive experience, with the login screen, invite emails, and error pages matching the branding of the user's company. 
+Custom branding for Appsmith is a feature that allows app builders to customize the appearance of their Appsmith workspace and apps with their own logo and color palette. This ensures that the end-users of the app have a more familiar and cohesive experience, with the login screen, invite emails, and error pages matching the branding of your company. 
 
 :::info
 Branding is only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
 :::
-
-![Access the branding settings within the Admin Settings area.](/img/branding_newbrand.png)
-
-If you are using custom branding with Appsmith, setting it up is simple and straightforward. All you need to do is provide your own logo and branding assets, and Appsmith handles the rest.
 
 When you use custom branding with Appsmith, not only are the login screen and email templates customized to match your organization's branding, but other screens in your app or service are also affected.
 
 ![Branding affects the 404 and login screens.](/img/branding_404_login.png)
 ![Branding affects the dashboard and email templates.](</img/branding_dash_email.png>)
 
-This feature is available on self-hosted, Business Edition instances of Appsmith. This means that if you are using Appsmith on a self-hosted server and have a Business Edition license, you can use custom branding right away.
+## Configure branding
+
+If you are using custom branding with Appsmith, setting it up is simple and straightforward. All you need to do is provide your own logo and branding assets, and Appsmith handles the rest.
+
+![Access the branding settings within the Admin Settings area.](/img/branding_newbrand.png)
 
 To configure Appsmith to show your brand, follow these steps:
 
