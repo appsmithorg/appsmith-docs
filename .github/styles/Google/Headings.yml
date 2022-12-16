@@ -34,6 +34,7 @@ exceptions:
   - Windows
   - API
   - APIs
+  - Ingress
   - Button
   - Item
   - Menu
@@ -44,3 +45,4 @@ exceptions:
   - JS Object
   - JS Objects
   - JavaScript
+
