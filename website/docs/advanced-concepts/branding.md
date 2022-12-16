@@ -11,11 +11,6 @@ Custom branding for Appsmith is a feature that allows app builders to customize 
 Branding is only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
 :::
 
-When you use custom branding with Appsmith, not only are the login screen and email templates customized to match your organization's branding, but other screens in your app or service are also affected.
-
-![Branding affects the 404 and login screens.](/img/branding_404_login.png)
-![Branding affects the dashboard and email templates.](</img/branding_dash_email.png>)
-
 ## Configure branding
 
 If you are using custom branding with Appsmith, setting it up is simple and straightforward. All you need to do is provide your own logo and branding assets, and Appsmith handles the rest.
@@ -30,10 +25,17 @@ To configure Appsmith to show your brand, follow these steps:
 2. Click on the **Branding** tab to open branding settings.
 3. To upload your logo, click in the **Logo** box and browse to select the image file you'd like to upload. Appsmith supports .svg, .png, and .jpg files up to 2 MB in size.
 4. To upload a favicon, click in the **Favicon** box and browse to select the file you'd like to upload. You may provide a file of type .ico, .png, or .jpg which shouldn't be larger than 32x32 pixels.
-5. In the **Color** section, each of the three bars of color represent the primary, background, and font colors. Click the one you'd like to customize, and enter a hex color code in the input box. Alternatively, you can click the color preview circle in the box to open a color-picker window and select it that way.
-<!-- 
+5. To customize the colors in the **Color** section, click on the bar for the color you want to change (primary, background, or font) and enter a hex code in the input box. You can also click the color preview circle to open the color-picker window.
+
 :::tip
-Updating the **Colors** section makes your brand colors easily accessible while building apps. In the app's theme settings or a widget's style settings, open the color picker and you can quickly select any of your brand's palette.
-::: -->
+Updating the **Colors** section makes your brand colors easily accessible while building apps. In the app's theme settings or a widget's style settings, your brand's colors are available as presets when using the color picker.
+:::
 
 6. Once you are satisfied with your changes and the previews look acceptable, click the **SUBMIT** button to save your changes. Your branding is now available throughout Appsmith.
+
+---
+
+When you use custom branding with Appsmith, not only are the login screen and email templates customized to match your organization's branding, but other screens in your app or service are also affected.
+
+![Branding affects the 404 and login screens.](/img/branding_404_login.png)
+![Branding affects the dashboard and email templates.](</img/branding_dash_email.png>)
