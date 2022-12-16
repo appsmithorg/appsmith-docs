@@ -58,6 +58,15 @@ URL
 watchId
 watchPosition
 widget
+namespace
+Tolerations
+fod
+cron
+Nginx
+NGINX
+kubectl
+signup
+OAuth
 Widget
 currentItem
 currentIndex
@@ -72,3 +81,9 @@ onCodeDetected
 check
 favicon
 Favicon
+javascript
+Javascript
+Fusioncharts
+FusionCharts
+seriesTitle
+
