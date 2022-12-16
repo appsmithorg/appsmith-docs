@@ -83,6 +83,8 @@ callbackFunction
 setInterval
 clearInterval
 setTimeout
+favicon
+Favicon
 javascript
 Javascript
 Fusioncharts
