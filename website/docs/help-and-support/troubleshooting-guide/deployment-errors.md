@@ -107,12 +107,12 @@ sudo docker-compose up -d --force-recreate appsmith-internal-server
 In a minute or two, the server should now come up and be ready.
 
 
-## Email errors
+## Unable to send emails
 
-If you are using Docker and are having trouble with invitation emails not being sent, even though the Admin email setup is able to send test emails, it may be due to an issue with the configuration of the Docker container.
+If you are having trouble with invitation emails not being sent, even though the **Admin email setup** is able to send test emails, it may be due to an issue with the configuration of the email parameters.
 
-If you aren't receiving the invitation email, please check the value for ```APPSMITH_REPLY_TO``` in your **docker.env** file. If this value is empty, please set it to the same email address you are using for ```APPSMITH_MAIL_FROM``` and **restart the application**.
+If you aren't receiving the invitation email, please check the value for ```APPSMITH_REPLY_TO``` in the configuration file. If this value is empty, please set it to the same email address that you are using for ```APPSMITH_MAIL_FROM``` and **restart the application**.
 
 This should resolve the issue of not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and there are no issues with the network or other components preventing the emails from being sent.
 
-However, if you encounter any issues, you can contact the support team on [ Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com).
+However, if you encounter any issues, you can contact the support team on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com).
