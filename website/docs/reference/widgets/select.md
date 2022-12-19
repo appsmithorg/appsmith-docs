@@ -6,7 +6,7 @@
 
 ### Displaying data
 
-A Dropdown's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+A Dropdown **Options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here
@@ -62,11 +62,9 @@ These properties allow editing the Select widget. All these properties are prese
 
 #### Default selected value
 
-This property allows you to specify a default value that can be selected when the widget is first displayed. This can be useful if you want to pre-populate the widget with a specific value, or if you want to ensure that a certain option is selected by default.  
+This property allows you to specify a default value when the widget is first displayed. This can be useful if you want to pre-populate the widget with a specific value, or if you want to ensure that a certain option is selected by default. The Default Selected Value should be set to the value of the option from the Options property. 
 
-The default selected value should be set to the value of the option from the options property. This value should match the value attribute of the selected option.
-
-For example, if your options property is an array of objects with a **label** and a **value** property, such as
+For example, if your Options property is an array of objects with a **label** and a **value** property, such as
 ```javascript
 [
   {
@@ -79,7 +77,7 @@ For example, if your options property is an array of objects with a **label** an
   }
 ]  
 ```
-You can add the **value** to the **defaultValue** property in order to set the default value for the options. For example, if you want the default value to be "blue", you can set the defaultValue property to "BLUE".
+If you want the default value to be ```Blue```, set the 'Default Selected Value' property to ```BLUE```.
 
 <VideoEmbed host="youtube" videoId="KP3qdEi4i3w" title="Default selected value" caption="Default selected value"/>
 

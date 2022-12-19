@@ -99,4 +99,7 @@ Javascript
 Fusioncharts
 FusionCharts
 seriesTitle
-
+defaultValue
+JavaScript
+filterText
+back-end
