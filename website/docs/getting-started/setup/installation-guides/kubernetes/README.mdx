@@ -1,0 +1,364 @@
+---
+description: Deploy Appsmith on a Kubernetes cluster
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Kubernetes
+
+[Kubernetes (K8s)](https://kubernetes.io/docs/concepts/overview/) is an open source platform for managing, scaling, and automating the deployment of [containerized applications](https://en.wikipedia.org/wiki/Containerization). It's one of the most popular container orchestration tools. This guide helps you to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager.
+
+## Prerequisites
+Before you install Appsmith, ensure the following are installed:
+
+1. Helm Package Manager - This is a package manager for Kubernetes clusters. It allows you to install and manage applications on Kubernetes clusters. To install Helm, follow the instructions for your platform from the official [Helm documentation](https://helm.sh/docs/intro/install/).
+
+2. `kubectl` - This is the command-line interface to manage resources on Kubernetes clusters. To install `kubectl`, follow the instructions for your platform from the official [Kubernetes documentation](https://kubernetes.io/vi/docs/tasks/tools/install-kubectl/).
+
+
+### Configure Kubernetes cluster
+Follow one of the available guidelines below to configure the Kubernetes cluster.
+
+<Tabs groupId="configurations">
+  <TabItem label="Minikube" value="Minikube">
+
+  1. [Setup kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
+  2. Ensure that you have a default storage class running. If not, [enable addon default-storage class](https://kubernetes.io/docs/tutorials/hello-minikube/#enable-addons)
+  3. The NGINX Ingress Controller is enabled by default. If not, [set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/).
+  Ensure that you enable the correct version for your cluster.
+
+</TabItem>
+<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
+
+  1. [Configure cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) on Google Cloud Kubernetes.
+  2. Ensure that you have a default storage class running. If not, [set up a default storage class on Google Kubernetes Engine](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)[GKE].
+  3. The NGINX Ingress Controller is enabled by default. If not, [install ingress controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)[GKE]. Ensure that you enable the correct version for your cluster.
+
+</TabItem>
+<TabItem label="AWS EKS" value="AWSEKS">
+
+   1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+    2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
+    3. The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
+    Ensure that you enable the correct version for your cluster.
+
+</TabItem>
+<TabItem label="Microk8s" value="Microk8s">
+
+  1. Set up Kubernetes by following [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
+  2. Ensure that you have a default storage class running. If not, [enable storage class](https://microk8s.io/docs/command-reference#heading--microk8s-enable).
+  3. The NGINX Ingress Controller is enabled by default. If not, [add on: Ingress](https://microk8s.io/docs/addon-ingress). Ensure that you enable the correct version for your cluster.
+    
+</TabItem>
+</Tabs>
+
+## Install Appsmith
+
+You've installed and configured the Kubernetes cluster. Great, now go ahead and install Appsmith using Helm.
+
+1. Download the [`values.yaml`](https://bit.ly/3ETEgPT) file, and place it into the Appsmith installation folder. Or, run the following `cURL` command:
+
+   ```bash
+   curl -L https://bit.ly/3ETEgPT -o "$PWD/values.yml"
+   ```
+
+2. Add the Appsmith chart repository with:
+
+   ```bash
+   helm repo add appsmith https://helm.appsmith.com
+   ```
+   
+3. Load the Appsmith chart repository with:
+
+  ```bash
+  helm repo update
+  ```
+4. Install Appsmith on your Kubernetes cluster using the Helm chart. Replace `<your-namespace>` with the namespace you want to install Appsmith in:
+
+  ```bash
+  helm install appsmith appsmith/appsmith --namespace <your-namespace>
+  ```
+
+When installing Appsmith using Helm, it automatically creates all the necessary Kubernetes objects to run the app on your clusters, such as pods, services, and ingresses with the default configuration. For more information on customizing the configuration, checkout the [Configure Appsmith](#configure-appsmith) section.
+
+5. Verify the status of the Appsmith installation by running the following command:
+
+  ```bash
+  kubectl -n <your-namespace> rollout status deployment <release-name>-appsmith
+  ```
+When the deployment is ready, a message that indicates the deployment of "appsmith" has been successfully rolled out is displayed.
+
+6. Access Appsmith by visiting the URL that was output by the Helm installation command. Use the `kubectl` command to get the URL. The URL has a `hostname` and `port` of the Appsmith ingress to access Appsmith using a web browser.
+
+  ```bash 
+  kubectl -n <your-namespace> get ingress <release-name>-appsmith
+  ```
+
+Congratulations, you have successfully installed Appsmith on your Kubernetes cluster using Helm. For more detailed instructions and options for configuring the Appsmith Helm chart, see the Configure Appsmith section below.
+
+## Configure Appsmith
+The Appsmith installation works with the default configuration, but you also have the option to customize it to fit your specific needs. To configure the installation parameters, it's recommended to use the `values.yaml` file. This file allows you to specify the settings and options you want to use for your Appsmith installation, allowing you to tailor the installation to your needs. The following is a comprehensive list of available parameters.
+
+### Parameters
+Customize Appsmith by using either Helm parameters or Appsmith-specific parameters. The table below provides details on the various Helm and Appsmith parameters that are available for configuration.
+
+#### Global
+
+| Name                       | Description                                               | Value |
+| -------------------------- | --------------------------------------------------------- | ----- |
+| `global.namespaceOverride` | Override the namespace for resource deployed by the chart | `""`  |
+| `global.storageClass`      | Global StorageClass for Persistent Volume              | `""`  |
+
+#### Common
+
+| Name                | Description                                       | Value        |
+| ------------------- | ------------------------------------------------- | ------------ |
+| `fullnameOverride`  | String to fully override `appsmith.name` template | `""`         |
+| `containerName`     | Specify container's name running in the pods      | `"appsmith"` |
+| `commonLabels`      | Labels to add to all deployed objects             | `{}`         |
+| `commonAnnotations` | Annotations to add to all deployed objects        | `{}`         |
+
+#### Appsmith image
+
+| Name               | Description                | Value                      |
+| ------------------ | -------------------------- | -------------------------- |
+| `image.registry`   | Appsmith image registry    | `index.docker.io`          |
+| `image.repository` | Appsmith image repository  | `appsmith/appsmith-editor` |
+| `image.tag`        | Appsmith image tag         | `latest`                   |
+| `image.pullPolicy` | Appsmith image pull policy | `IfNotPresent`             |
+
+#### Appsmith deployment
+
+| Name                 | Description                                        | Value           |
+| -------------------- | -------------------------------------------------- | --------------- |
+| `strategyType`       | Appsmith deployment strategy type                  | `RollingUpdate` |
+| `schedulerName`      | Alternate scheduler                                | `""`            |
+| `podAnnotations`     | Annotations for Appsmith pods                      | `{}`            |
+| `podSecurityContext` | Appsmith pods security context                     | `{}`            |
+| `securityContext`    | Set security context                               | `{}`            |
+| `resources.limits`   | The resources limits for the Appsmith container    | `{}`            |
+| `resources.requests` | The requested resources for the Appsmith container | `{}`            |
+| `nodeSelector`       | Node labels for pod assignment                     | `{}`            |
+| `tolerations`        | Tolerations for pod assignment                     | `[]`            |
+| `affinity`           | Affinity fod pod assignment                        | `{}`            |
+
+#### Appsmith namespace
+
+| Name               | Description                    | Value  |
+| ------------------ | ------------------------------ | ------ |
+| `namespace.create` | Enable creation of `Namespace` | `true` |
+
+#### Appsmith service account
+
+| Name                         | Description                                                                                                 | Value  |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------- | ------ |
+| `serviceAccount.create`      | Enable creation of `ServiceAccount` for Appsmith pods                                                       | `true` |
+| `serviceAccount.name`        | Name of the created `ServiceAccount` . If not set, a name is generated using the appsmith.fullname template | `""`   |
+| `serviceAccount.annotations` | Additional service account annotations                                                                      | `{}`   |
+
+#### Traffic exposure
+
+| Name                               | Description                                                                 | Value       |
+| ---------------------------------- | --------------------------------------------------------------------------- | ----------- |
+| `service.type`                     | Appsmith service type                                                       | `ClusterIP` |
+| `service.port`                     | Appsmith service port                                                       | `80`        |
+| `service.portName`                 | Appsmith service port name                                                  | `appsmith`  |
+| `service.nodePort`                 | Appsmith service node port to expose to expose                              | `8000`      |
+| `service.clusterIP`                | Appsmith service Cluster                                                    | `""`        |
+| `service.loadBalancerIP`           | Appsmith service Load Balancer IP                                           | `""`        |
+| `service.loadBalancerSourceRanges` | Appsmith service Load Balancer sources                                      | `[]`        |
+| `service.annotations`              | Additional custom annotations for Appsmith service                          | `{}`        |
+| `ingress.enabled`                  | Enable ingress record generation for Appsmith                               | `false`     |
+| `ingress.hosts`                    | An array of hosts to be covered with the ingress record                     | `[]`        |
+| `ingress.tls`                      | Enable TLS configuration for the hosts defined at `ingress.hosts` parameter | `false`     |
+| `ingress.secrets`                  | Custom TLS certificates as secrets                                          | `[]`        |
+| `ingress.certManager`              | Enable ingress to use TLS certificates provided by Cert Manager             | `false`     |
+| `ingress.certManagerTls`           | Specify TLS secret resources created by Cert Manager                        | `[]`        |
+| `ingress.className`                | Configure Ingress class that being used in ingress resource                 | `""`        |
+
+#### Persistence
+
+| Name                                | Description                                                          | Value              |
+| ----------------------------------- | -------------------------------------------------------------------- | ------------------ |
+| `persistence.enabled`               | Enable persistence using Persistent Volume Claims                    | `true`             |
+| `persistence.storageClass`          | Persistent Volume storage class                                      | `""`               |
+| `persistence.annotations`           | Additional custom annotations for the PVC                            | `{}`               |
+| `persistence.localStorage`          | Enable persistent volume using local storage                         | `false`            |
+| `persistence.storagePath`           | Local storage Path                                                   | `/tmp/hostpath_pv` |
+| `persistence.localCluster`          | Local running cluster to provide storage space                       | `[minikube]`       |
+| `persistence.accessModes`           | Persistent Volume access modes                                       | `[ReadWriteOnce]`  |
+| `persistence.size`                  | Persistent Volume size                                               | `10Gi`             |
+| `storageClass.enabled`              | Enable Storage Class configuration                                   | `false`            |
+| `storageClass.defaultClass`         | Create default Storage Class                                         | `false`            |
+| `storageClass.bindingMode`          | Binding mode for Persistent Volume Claims using Storage Class        | `Immediate`        |
+| `storageClass.allowVolumeExpansion` | Allow expansion of Persistent Volume Claims using Storage Class      | `true`             |
+| `storageClass.reclaimPolicy`        | Configure the retention of the dynamically created Persistent Volume | `Delete`           |
+| `storageClass.provisioner`          | Storage Class provisioner                                            | `""`               |
+| `storageClass.annotations`          | Additional storage class annotations                                 | `{}`               |
+| `storageClass.mountOptions`         | Mount options used by Persistent Volumes                             | `{}`               |
+| `storageClass.parameters`           | Storage Class parameters                                             | `{}`               |
+
+#### Auto update image
+
+| Name                   | Description                                   | Value         |
+| ---------------------- | --------------------------------------------- | ------------- |
+| `autoupdate.enabled`   | Enable auto update Helm chart's image         | `true`        |
+| `autoupdate.scheduler` | Schedule time to run cron job to update image | `"0 * * * *"` |
+
+### Set parameters
+
+When using command, specify each parameter using `--set key=value[,key=value]` argument to helm install. For example, the below command deploys Appsmith and configures it to use the storage class name `appsmith-pv`. 
+
+```bash
+helm install \
+--set persistence.storageClass=appsmith-pv \
+  stable-appsmith/appsmith --generate-name
+```
+
+Similarly, run the below command if you wish to change the encryption salt configuration.
+
+```bash 
+helm install \
+--set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
+  stable-appsmith/appsmith --generate-name
+```
+
+Alternatively, use a `values.yaml` file. You can specify the parameter values needed for installing the chart. To change configurations specific to Appsmith update the `values.yaml` file. Listed below are available configurations for Appsmith.
+
+| Name                                                     | Value |
+| -------------------------------------------------------- | ----- |
+| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/google-login)    | `""`  |
+| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/google-login) | `""`  |
+| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/github-login)     | `""`  |
+| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/github-login) | `""`  |
+| `applicationConfig.APPSMITH_CLIENT_LOG_LEVEL`            | `""`  |
+| [`applicationConfig.APPSMITH_GOOGLE_MAPS_API_KEY`](/getting-started/setup/instance-configuration/google-maps)         | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_ENABLED`](/getting-started/setup/instance-configuration/email/)                | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_HOST`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_PORT`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_USERNAME`](/getting-started/setup/instance-configuration/email/)               | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_PASSWORD`](/getting-started/setup/instance-configuration/email/)               | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_FROM`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
+| [`applicationConfig.APPSMITH_REPLY_TO`](/getting-started/setup/instance-configuration/email/)                    | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_SMTP_AUTH`](/getting-started/setup/instance-configuration/email/)              | `""`  |
+| `applicationConfig.APPSMITH_MAIL_SMTP_TLS_ENABLED`       | `""`  |
+| [`applicationConfig.APPSMITH_DISABLE_TELEMETRY`](https://docs.appsmith.com/product/telemetry#disable-telemetry)           | `""`  |
+| `applicationConfig.APPSMITH_RECAPTCHA_SITE_KEY`          | `""`  |
+| `applicationConfig.APPSMITH_RECAPTCHA_SECRET_KEY`        | `""`  |
+| `applicationConfig.APPSMITH_RECAPTCHA_ENABLED`           | `""`  |
+| [`applicationConfig.APPSMITH_MONGODB_URI`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)                | `""`  |
+| [`applicationConfig.APPSMITH_REDIS_URL`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-redis)                   | `""`  |
+| `applicationConfig.APPSMITH_ENCRYPTION_PASSWORD`         | `""`  |
+| `applicationConfig.APPSMITH_ENCRYPTION_SALT`             | `""`  |
+| [`applicationConfig.APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/instance-configuration/custom-domain/#dockerk8s)               | `""`  |
+
+Once you have made changes to the values file, run the below command.
+
+```bash
+helm install -f values.yaml appsmith/appsmith --generate-name
+```
+
+## Publish Appsmith
+
+To make your Appsmith installation accessible on the internet, you need an Ingress controller set up. For more information on Ingress controllers, see the Configure Kubernetes Cluster section. If you haven't yet installed the Helm chart, you can run the following command to install the chart, enable the ingress controller, and publish Appsmith.
+
+```bash 
+ingress:
+  ## @param ingress.enabled Enable ingress record generation for Ghost
+  ##
+  enabled: true
+  ## @param ingress.annotations Additional custom annotations for the ingress record
+  ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+  ##
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts: []
+    # - host: appsmith-domain.me
+service:
+  ## @param service.type Kubernetes Service type
+  ##
+  type: ClusterIP
+```
+
+If you have already installed Appsmith, run the `helm upgrade` command to upgrade the existing installation, and apply these configuration changes.
+
+ ```
+ helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
+
+ # Or this command if you are using values.yaml file
+ helm upgrade --values values.yaml appsmith appsmith/appsmith
+```
+
+## Update Appsmith
+
+Appsmith installation can be updated manually or by enabling auto update.
+
+### Auto update
+
+The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either setting it in values file or using a command.
+
+* Values file: Ensure that the parameters are configured to enable auto update. For more information, see [Auto update image](#auto-update-image). Once the set up is in place, run the below command.
+
+   ```
+     helm upgrade --values values.yaml appsmith appsmith/appsmith
+    ```
+
+* Command: Pass an argument using the `--set` keyword (`--set autoupdate.enabled=true`) to the command.
+
+    ```
+      helm install appsmith/appsmith --generate-name \
+        --set ingress.enabled=true \
+        --set ingress.annotations."kubernetes\.io/ingress\.class"=nginx \
+        --set service.type=ClusterIP \
+        --set autoupdate.enabled=true
+    ```
+
+### Manual update
+
+To manually update the Appsmith container image to the latest release, run the command: 
+
+```bash
+kubectl rollout restart statefulset appsmith
+```
+
+## Enable data compression for Ingress controller
+
+The default installation doesn't have data compression configured for Nginx ingress controller. Follow the below steps to enable it.
+
+1. Edit the `configMap` for `ingress-nginx-controller` by using the below command
+
+  ```bash
+  kubectl edit configmap -n ingress-nginx ingress-nginx-controller
+  ```
+
+2. Add the following to the data section.
+
+  ```yaml
+  data: # ADD IF NOT PRESENT
+    use-gzip: "true" # ENABLE GZIP COMPRESSION
+    gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
+  ```
+
+The Nginx controller automatically updates once you save (`:wq!`) the changes.
+
+## Uninstall Appsmith
+
+The following command uninstalls Appsmith and removes all Kubernetes resources associated with the chart:
+
+```bash
+helm list
+NAME                       NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+#highlight-next-line
+appsmith-1631069261        default         1               2021-09-09 11:24:40.152766 +0700 +07    deployed        appsmith-1.3.0  1.16.0
+
+helm uninstall appsmith-1631069261
+```
+
+## Troubleshooting
+If you’re having issues with the deployment, please see the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+
+## Further reading
+
+* [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/#configuring-kubernetes-installations)
+* [Managing the Appsmith instance](/getting-started/setup/instance-management/)
+* [Migrate from multi-container to single container setup](/getting-started/setup/installation-guides/kubernetes/migrate-k8s)
