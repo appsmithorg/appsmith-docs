@@ -245,7 +245,8 @@ people
 { $inc: { score: 1 } }
 ```
 
-`Limit`: The dropdown is used to configure if this delete command should act upon a **single document** or if this command should delete **all the matching documents** according to the query.
+`Limit`: The dropdown can be used to specify whether the command should apply to a single document or to all documents that match the query.
+
 
 MongoDB's multi update feature does not support replacement style updates. This means that you cannot replace the entire document, but rather, you can only update a single field.
 
