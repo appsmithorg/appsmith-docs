@@ -165,7 +165,7 @@ With appsmith, you can connect with a wide range of tools and platforms; if ther
             <img class="containerImage" src="/img/Curl-logo.svg_.png" alt="curl-logo"/>
             </a>     
         </div> 
-         <b><a href="/core-conepts/connecting-to-data-sources/authentication/connect-to-apis">CURL import</a></b>
+         <b><a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">CURL import</a></b>
     </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
