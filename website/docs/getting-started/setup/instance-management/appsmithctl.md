@@ -8,6 +8,8 @@ Appsmith comes with an <mark >`appsmithctl`</mark> command line utility. You can
 ```bash
 appsmithctl <subcommand> <options>
 ```
+<VideoEmbed host="youtube" videoId="tlbK8Cke3sw" title="How To Use Appsmithctl For Instance Management" caption="How To Use Appsmithctl For Instance Management"/>
+
 
 ### Subcommands
 
