@@ -79,6 +79,8 @@ Supported QR/Barcode formats
 QR
 onCodeDetected
 check
+disabled
+Disabled
 Host
 unencrypted
 javascript
@@ -99,3 +101,7 @@ FusionCharts
 seriesTitle
 Datasources
 REST
+defaultValue
+JavaScript
+filterText
+back-end
