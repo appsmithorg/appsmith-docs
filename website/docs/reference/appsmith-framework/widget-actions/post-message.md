@@ -21,11 +21,17 @@ postWindowMessage(message, targetIframe, targetOrigin)
 
 To see examples of the **Post message** action, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
-## Iframe widget in Appsmith app
+## Types of communication
 
-In this scenario, you are building an Appsmith that has an Iframe widget called `Iframe1`. There is an external page embedded within that Iframe widget, and you are setting up communication between the embedded page and the Iframe in Appsmith.
+There are a number of directions in which your apps may need to communicate. Depending on their parent/embed relationship and the message's target recipient, the configuration is a bit different.
 
-### From Appsmith to embedded page
+![Reference: Communication between windows with postWindowMessage](/img/postmessage_diagram.png)
+
+### Iframe widget in Appsmith app
+
+In this scenario, you are building an app that has an Iframe widget called `Iframe1`. There is an external page embedded within that Iframe widget, and you are setting up communication between the embedded page and the Iframe in Appsmith.
+
+#### From Appsmith to embedded page
 
 To send data to a page that's embedded in an Appsmith Iframe widget:
 
@@ -33,8 +39,7 @@ To send data to a page that's embedded in an Appsmith Iframe widget:
 2. In the button's **onClick** event property, select **Post message**. Set the **Message** to `{{ Input1.text }}` and **Target iframe** to `Iframe1`.
 3. On the canvas, enter your piece of data into the input widget, and click the button widget. The iframe has now received the message you sent.
 
-:::note
-If you want to try this but you need a page to receive your message, set up your iframe with this HTML string in its **srcDoc** property:
+If you want to try this but you need a sample page to receive your message, set up your iframe with this HTML string in its **srcDoc** property:
 
 ```html
 <div id="target"></div>
@@ -48,19 +53,18 @@ If you want to try this but you need a page to receive your message, set up your
 ```
 
 When the iframe receives your message, it puts the message text into the `#target` div.
-:::
 
-### From embedded page to Iframe widget
+#### From embedded page to Iframe widget
 
 To capture and handle a message that was sent to an Appsmith Iframe widget from the page embedded in the iframe:
 
 Use the iframe's [**onMessageReceived**](/reference/widgets/iframe#events) event in the properties pane. Choose an action or write code to be executed when the message is received from the embedded page. You can use the `Iframe1.message` property to access the content of the message that was received by Appsmith.
 
-## Appsmith app embedded in parent app
+### Appsmith app embedded in parent app
 
 In this scenario, you are building an app outside of Appsmith, and you have used an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) element to embed a deployed Appsmith app in that page. Now you are setting up communication between the non-Appsmith parent app and the Appsmith app embedded within it.
 
-### From Appsmith to parent app
+#### From Appsmith to parent app
 
 To configure your Appsmith application to send messages to its parent page:
 
