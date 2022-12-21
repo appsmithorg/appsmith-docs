@@ -6,7 +6,7 @@ description: Follow the steps to upgrade the Appsmith community Kubernetes insta
 
 The Business Edition (BE) Helm charts installation includes support for Horizontal Pod Auto Scaling (HPA), which allows Appsmith pods to be automatically scaled based on current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. To upgrade from the Community Edition (CE) to the Business Edition (BE) installed on Kubernetes, follow the steps listed below.
 
-## Export backup
+## Backup data
 
 1. Open a shell into one of your current Appsmith pods:
 
@@ -41,11 +41,11 @@ The Business Edition (BE) Helm charts installation includes support for Horizont
    Set the values in the `applicationConfig` section:
 
    ```yaml
-     APPSMITH_ENCRYPTION_PASSWORD: <PASSWORD>
-     APPSMITH_ENCRYPTION_SALT: <SALT>
+     APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
+     APPSMITH_ENCRYPTION_SALT: "<SALT>"
    ```
 
-## Uninstall Helm chart
+## Uninstall CE Helm chart
 
 To uninstall the CE helm chart, run the following command:
 
@@ -64,8 +64,8 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      enabled: true
      auth:
        username: root
-       password: <PASSWORD>
-       postgresPassword: <POSTGRESQL_PASSWORD>
+       password: "<PASSWORD>"
+       postgresPassword: "<POSTGRESQL_PASSWORD>"
        database: keycloak
    ```
 
@@ -81,7 +81,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      tag: "latest"
    ```
 
-3. Choose, or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes/business-edition#create-a-shared-file-system)
+3. Choose, or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
 
 4. Add the license key and a few other variables related to keycloak to `applicationConfig` section:
 
@@ -94,7 +94,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install Helm chart 
+## Install BE Helm chart 
 
 To add and deploy the new Helm chart, run the following command:
 
@@ -104,7 +104,7 @@ To add and deploy the new Helm chart, run the following command:
    helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
    ```
 
-For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes/business-edition).
+For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
 
 
 ## Restore backup

@@ -13,3 +13,7 @@ exceptions:
   - UI
   - SSL
   - BE
+  - EFS
+  - PVC
+  - CE
+  - BE

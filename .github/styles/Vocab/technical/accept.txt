@@ -87,3 +87,6 @@ seriesTitle
 keycloak
 Keycloak
 Check
+Autoscaler
+minikube
+Minikube

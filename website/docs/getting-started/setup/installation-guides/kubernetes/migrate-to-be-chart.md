@@ -46,8 +46,8 @@ Follow the below guide to migrate to the Business Edition running on Helm chart 
    Set these values in the `applicationConfig` section:
 
    ```yaml
-     APPSMITH_ENCRYPTION_PASSWORD: <PASSWORD>
-     APPSMITH_ENCRYPTION_SALT: <SALT>
+     APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
+     APPSMITH_ENCRYPTION_SALT: "<SALT>"
    ```
 
 ## Backup Keycloak
@@ -124,7 +124,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
        database: keycloak
    ```
 
-2. Choose, or create a shared file system. Follow the instructions available at [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes/business-edition#create-a-shared-file-system)
+2. Choose, or create a shared file system. Follow the instructions available at [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
 
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
@@ -147,7 +147,7 @@ Run the below command to add and deploy the new Helm chart:
    helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
    ```
 
-For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes/business-edition).
+For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
 
 ## Restore backup
 
