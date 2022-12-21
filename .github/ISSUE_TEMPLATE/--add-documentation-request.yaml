@@ -30,7 +30,14 @@ body:
   id: featureReleaseDate
   attributes:
     label: Release Date
-    description: Add actual/tentative release date of the feature
+    description: Add actual/tentative release date
+  validations:
+    required: true
+- type: input
+  id: featureReleaseNumber
+  attributes:
+    label: Release Number
+    description: Add actual/tentative release number
   validations:
     required: true
 - type: input

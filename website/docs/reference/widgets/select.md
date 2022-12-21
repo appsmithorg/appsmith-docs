@@ -6,7 +6,7 @@
 
 ### Displaying data
 
-A Dropdown's **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+A Dropdown **Options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here
@@ -51,7 +51,7 @@ These properties allow editing the Select widget. All these properties are prese
 | Property                  | Description                                                                                                                                                                       |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Options**               | Use to set labels and values for different items/options in the list of the dropdown widget. Options must be specified as an array of objects with a label and value property. |
-| **Default Value**         | Sets a default option that's captured as user input unless it's changed by the user.                                                                                       |
+| **Default Selected Value**         | Sets a default option that's captured as user input unless it's changed by the user.                                                                                       |
 | **Placeholder**           | Sets the Placeholder of the dropdown widget.                                                                                                                                      |
 | **Required**              | When turned on, it makes a user input mandatory and disables any form submission until input is made.                                                                             |
 | **Visible**               | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published                                                               |
@@ -59,6 +59,29 @@ These properties allow editing the Select widget. All these properties are prese
 | **Animate Loading**       | Controls the widget’s animation on page load.                                                                                                                      |
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                               |
 | **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when the Select widget's Option data is being bound to an API / Query.                                        |
+
+#### Default selected value
+
+This property allows you to specify a default value when the widget is first displayed. This can be useful if you want to pre-populate the widget with a specific value, or if you want to ensure that a certain option is selected by default. The Default Selected Value should be set to the value of the option from the Options property. 
+
+For example, if your Options property is an array of objects with a **label** and a **value** property, such as
+```javascript
+[
+  {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  }
+]  
+```
+If you want the default value to be ```Blue```, set the 'Default Selected Value' property to ```BLUE```.
+
+<VideoEmbed host="youtube" videoId="KP3qdEi4i3w" title="Default selected value" caption="Default selected value"/>
+
+
 
 ### Binding properties
 
@@ -79,6 +102,8 @@ These are functions that are called when event listeners are triggered in the wi
 | Events             | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownClose** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 
