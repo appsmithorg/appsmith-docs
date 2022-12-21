@@ -1,8 +1,11 @@
-# Migrate
+---
+description: Follow the guide to migrate to the Appsmith Business Edition running on Helm chart v2.
+---
+# Migrate to Helm Chart v2 (BE)
 
-Follow this guide to move from Appsmith Business Edition Helm chart installation(`helm.appsmith.com`) to Business Edition Helm chart(`helm-ee.appsmith.com`). The new `helm-ee.appsmith.com` installation supports Horizontal Pod Auto Scaling (HPA) which allows Appsmith pods to be automatically scaled based on current load.
+Follow the below guide to migrate to the Business Edition running on Helm chart v2 (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
-## Export backup
+## Backup data
 
 1. Open a shell into one of your current Appsmith pods:
 
@@ -22,19 +25,19 @@ Follow this guide to move from Appsmith Business Edition Helm chart installation
    /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
    ```
 
-4. To exit the shell, run the following command:
+4. Run the below command to exit the shell:
    
    ```bash
    exit
    ```
 
-5. To download the backup archive, run the following command:
+5. Run the below command to download the backup archive:
 
    ```bash
    kubectl cp <namespace>/appsmith-0:<appsmith_backup_archive_path> ./appsmith-ee-backup.tar.gz
    ```
 
-6. To retrieve the salt and password from the pod, run the following command and copy the values to `values.yaml`.
+6. Run the below command to retrieve the salt and password from the pod, and copy the values to `values.yaml`.
 
    ```bash
    kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
@@ -47,7 +50,7 @@ Follow this guide to move from Appsmith Business Edition Helm chart installation
      APPSMITH_ENCRYPTION_SALT: <SALT>
    ```
 
-## Export keycloak backup
+## Backup Keycloak
 
 1. Open a shell into one of your current Appsmith pods:
 
@@ -55,25 +58,25 @@ Follow this guide to move from Appsmith Business Edition Helm chart installation
    kubectl exec -it <pod> bash
    ```
 
-2. To stop keycloak, run the following command:
+2. Run the below command to stop Keycloak:
 
    ```bash
    supervisorctl stop keycloak
    ```
 
-3. To exit the remaining process, run the following command:
+3. Run the below command to exit the remaining process:
 
    ``` bash
    kill -9 `pgrep -f keycloak`
    ```
 
-4. To start keycloak backup, run the following command
+4. Run the below command to start Keycloak backup:
 
    ``` bash
    /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/tmp/keycloak_backup.json
    ```
 
-5. Monitor the output and look for similar lines:
+5. Monitor the output as shown below:
 
    ```bash
    07:25:11,805 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 57) HV000001: Hibernate Validator 6.0.22.Final
@@ -85,21 +88,21 @@ Follow this guide to move from Appsmith Business Edition Helm chart installation
 
    When you see lines similar to this, press <kbd>ctrl+c</kbd> to stop the process.
 
-6. To exit out of the shell, run following command:
+6. Run the below command to exit out of the shell:
 
    ```bash
    exit
    ```
 
-7. To download the backup file available at `/tmp/keycloak_backup.json`, run the following command:
+7. Run the below command to download the backup file available at `/tmp/keycloak_backup.json`:
 
    ```bash
    kubectl cp <namespace>/appsmith-0:/tmp/keycloak_backup.json ./keycloak_bkp.json
    ```
 
-## Uninstall Helm chart
+## Uninstall old Helm chart
 
-To uninstall the existing helm chart, run the following command:
+Run the below command to uninstall the existing helm chart:
 
 ```bash
 helm uninstall appsmith -n <namespace>
@@ -116,14 +119,14 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      enabled: true
      auth:
        username: root
-       password: <PASSWORD>
-       postgresPassword: <POSTGRESQL_PASSWORD>
+       password: "<PASSWORD>"
+       postgresPassword: "<POSTGRESQL_PASSWORD>"
        database: keycloak
    ```
 
-2. Choose, or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes/business-edition#create-a-shared-file-system)
+2. Choose, or create a shared file system. Follow the instructions available at [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes/business-edition#create-a-shared-file-system)
 
-3. Add the license key and a few other variables related to keycloak to `applicationConfig` section:
+3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
    ```yaml
      APPSMITH_LICENSE_KEY: ""
@@ -134,9 +137,9 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install Helm chart 
+## Install v2 Helm chart 
 
-To add and deploy the new Helm chart, run the following command:
+Run the below command to add and deploy the new Helm chart:
 
    ```bash
    helm repo add appsmith-ee https://helm-ee.appsmith.com
@@ -150,19 +153,19 @@ For more information, see [installing Business Edition with Kubernetes](/getting
 
 To restore the backup, follow the below steps:
 
-1. To copy the Appsmith backup into the new Appsmith pod, run the following command:
+1. Run the below command to copy the Appsmith backup into the new Appsmith pod:
 
    ```bash
    kubectl cp appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz <namespace>/<pod_name>:/appsmith-stacks/data/backup/
    ```
 
-2. To copy the keycloak backup into the new Appsmith pod, run the following command:
+2. Run the below command to copy the keycloak backup into the new Appsmith pod:
 
    ```bash
    kubectl cp keycloak_bkp.json <namespace>/<pod_name>:/appsmith-stacks/data/
    ```
 
-3. To restore Appsmith data, run the following command:
+3. Run the below command to restore Appsmith data:
 
    ```bash
    kubectl exec -it <namespace>/<pod_name> -- appsmithctl restore
@@ -170,13 +173,13 @@ To restore the backup, follow the below steps:
 
  Once the data is restored, the pod restarts automatically.
 
-4. To restore the keycloak data, run the following command:
+4. Run the below command to restore the keycloak data:
 
    ```bash
    kubectl exec -it <namespace>/<pod_name> -- /bin/sh /opt/keycloak/bin/standalone.sh -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/appsmith-stacks/data/keycloak_bkp.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
    ```
 
-    Monitor the output and look for similar lines:
+    Monitor the output as shown below:
 
    ```
    08:20:54,708 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0030: Full model import requested. Strategy: OVERWRITE_EXISTING
@@ -194,6 +197,8 @@ To restore the backup, follow the below steps:
    ```bash
    kubectl rollout restart deployment/appsmith -n <namespace>
    ```
+
+Congratulations, you have successfully migrated to the Appsmith Business Edition Helm chart v2 installation.
 
 ## Troubleshooting
 If any issues are encountered, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or raise it on the [Discord Server](https://discord.com/invite/rBTTVJp).

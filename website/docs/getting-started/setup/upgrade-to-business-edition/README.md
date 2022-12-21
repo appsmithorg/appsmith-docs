@@ -22,7 +22,7 @@ Upgrade your Community Edition to a Business Edition by selecting below installa
         <div class="columnGrid column-two" align="center">
             <div class="containerCol">
                 <a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">
-                <img class="containerImage" src="/img/kubernetes_logo.png" alt="Kubernetes-logo"/>
+                <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
                 </a> 
             </div> 
             <b><a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">Kubernetes</a></b>
