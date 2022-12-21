@@ -79,6 +79,9 @@ Supported QR/Barcode formats
 QR
 onCodeDetected
 check
+OAuth
+MongoDB
+URI
 disabled
 Disabled
 Host
