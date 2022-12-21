@@ -27,7 +27,7 @@ If you encounter the error that ```ports 80 & 443``` aren't open, its is recomme
 2. Run `docker-compose up -d`
 
 :::tip
-To Stop a previous version of appsmith running on these ports, run the following:
+To stop a previous version of appsmith running on these ports, run the following:
 
 * ```sudo su```
 * ```docker container kill $(docker ps -q)```
@@ -35,7 +35,7 @@ To Stop a previous version of appsmith running on these ports, run the following
 
 ## Containers Failed to Start
 
-If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work. If it doesn't, please reach out to us on [discord](https://discord.com/invite/rBTTVJp)
+If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work. If it doesn't, please reach out on [discord](https://discord.com/invite/rBTTVJp)
 
 If you are trying to connect to an existing [MongoDB](../../reference/datasources/querying-mongodb/) and the containers failed to start it may be due to one of the following reasons:
 
@@ -48,7 +48,7 @@ Restart the installation process with valid values.
 
 * Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
 * You can access the running application on[ localhost](http://localhost) in any browser or the `public IP` of your machine.
-* You may need to wait for few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
+* You may need to wait for a few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
 
 ## OAuth sign up not working
 
@@ -64,13 +64,14 @@ with
 proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
 ```
 
-This ensures that the redirect URLs are correct during [OAuth2](../../core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/) logins. This works even if the ELB is configured to run on a custom port.
+This ensures that the redirect URLs are correct during [OAuth2](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/) logins. This works even if the ELB is configured to run on a custom port.
 
 ## Server not booting because of MongoCommandException
 
-In release `v1.6.4`, we upgraded our libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](../../reference/datasources/querying-mongodb/) that was shipped earlier. This didn't show up in our testing because all our testing happened against [MongoDB](../../reference/datasources/querying-mongodb/) clusters with replica sets, where the problem doesn't surface. We apologize for this breaking experience.
+In release `v1.6.4`, Appsmith upgraded its libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](/reference/datasources/querying-mongodb/) that was shipped earlier. This didn't show up in testing because all testing happened against [MongoDB](/reference/datasources/querying-mongodb/) clusters with replica sets, where the problem doesn't surface.
 
-If you see an error like the below, your instance is affected by the library upgrade we performed in `v1.6.4`.
+
+If you see an error like the below, your instance is affected by the library upgrade performed in `v1.6.4`.
 
 ```
 Caused by: com.mongodb.MongoCommandException: Command failed with error 17 (ProtocolError): 'Attempt to switch database target during SASL authentication.' on server mongo:27017. The full response is {"ok": 0.0, "errmsg": "Attempt to switch database target during SASL authentication.", "code": 17, "codeName": "ProtocolError"}
@@ -87,7 +88,7 @@ Adding `&authSource=admin` to the end of your `APPSMITH_MONGODB_URI` variable’
 APPSMITH_MONGODB_URI=mongodb://<your_username>:<your_password>@mongo/appsmith?retryWrites=true
 ```
 
-Change it to the following (notice the only change is `&authSource=admin`. Don't copy-paste this whole line. Only add the `&authSource=admin` part to your existing value.
+Change it to the following (notice the only change is `&authSource=admin`. Please don't paste this whole line. Only add the `&authSource=admin` part to your current value.
 
 ```bash
 # New config
@@ -113,6 +114,6 @@ If you are having trouble with invitation emails not being sent, even though the
 
 If you aren't receiving the invitation email, please check the value for ```APPSMITH_REPLY_TO``` in the configuration file. If this value is empty, please set it to the same email address that you are using for ```APPSMITH_MAIL_FROM``` and **restart the application**.
 
-This should resolve the issue with not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and that there are no issues with the network or other components that could be preventing the emails from being sent.
+This should resolve the issue of not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and there are no issues with the network or other components preventing the emails from being sent.
 
-However, if you encounter any issues, you can contact the support team on [ Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com).
+However, if you encounter any issues, you can contact the support team on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com).
