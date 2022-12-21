@@ -34,6 +34,13 @@ body:
   validations:
     required: true
 - type: input
+  id: featureReleaseNumber
+  attributes:
+    label: Release Number
+    description: Add actual/tentative release number of the feature
+  validations:
+    required: true
+- type: input
   id: FirstDraftLink
   attributes:
     label: First Draft 
