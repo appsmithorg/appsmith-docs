@@ -5,36 +5,36 @@ sidebar_position: 1
 
 ![Click to expand](/img/missing-endpoint-error.png)
 
-Following is the list of errors we often see while creating new Datasources:
+Following is the list of errors users often see while creating new datasources:
 
 * Missing endpoint
-* Missing endpoint(s)
+* Missing endpoints
 * Missing host for endpoint
 * Missing endpoint and URL
 * Missing hostname
-* No endpoint(s) configured
+* No endpoints configured
 
-These messages indicate that the `Host address` field in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) has been left empty. This error can be fixed by editing the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) and typing in the host address for the datasource.
+These messages indicate that the `Host address` field in the [datasource creation form](/core-concepts/connecting-to-data-sources/connecting-to-databases.md) has been left empty. This error can be fixed by editing the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) and typing in the host address for the datasource.
 
-### Invalid Host Error
+### Invalid host error
 
 ```
 Invalid host provided. It should be of the form http(s)://your-es-url.com
 ```
 
-This message indicates that the provided URL format is not correct. This error can be fixed by editing the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) and providing the host URL in the correct format.
+This message indicates that the provided URL format isn't correct. This error can be fixed by editing the [datasource creation form](/core-concepts/connecting-to-data-sources/connecting-to-databases) and providing the host URL in the correct format.
 
-### Missing Port Error
+### Missing port error
 
 ```
 Missing port for endpoint
 ```
 
-This message indicates that the `Port` field in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) has been left empty.
+This message indicates that the `Port` field in the [datasource creation form](/core-concepts/connecting-to-data-sources/connecting-to-databases) has been left empty.
 
-This error can be fixed by editing the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md) and typing in the port address for the datasource.
+This error can be fixed by editing the [datasource creation form](/core-concepts/connecting-to-data-sources/connecting-to-databases) and typing in the port address for the datasource.
 
-### Missing Username Error
+### Missing username error
 
 ```
 Missing username for authentication
@@ -44,7 +44,7 @@ This message indicates that the `Username` field in the [datasource creation for
 
 This error can be fixed by editing the `Username` field in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md).
 
-### Missing Password Error
+### Missing password error
 
 ```
 Missing password for authentication
@@ -54,7 +54,7 @@ This message indicates that the `Password` field in the [datasource creation for
 
 This error can be fixed by editing the `Password` field in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md).
 
-### Mandatory Parameter / Field Empty Error
+### Mandatory parameter / field empty error
 
 ```
 The mandatory parameter 'Access Key' is empty.
@@ -66,14 +66,32 @@ At least one of the mandatory fields in the plugin's datasource creation form is
 
 This message indicates that one of the mandatory fields, for example, `Access Key`, has been left empty in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md).
 
-This error can be fixed by filling the mentioned mandatory field(s) in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md).
+This error can be fixed by filling the mentioned mandatory fields in the [datasource creation form](../../../core-concepts/connecting-to-data-sources/connecting-to-databases.md).
 
-### Cannot Delete Datasource Error
+### Can't delete datasource error
 
 ```
 Cannot delete datasource since it has 1 action(s) using it.
 ```
 
-This message indicates that the [datasource](../../../reference/datasources/) attempting to be deleted has some query action configured on it.
+This message indicates that the [datasource](/reference/datasources/) attempting to be deleted has some query action configured on it.
 
-This error can be fixed by deleting any queries dependent on this [datasource](../../../reference/datasources/) before attempting to delete the [datasource](../../../reference/datasources/).
+This error can be fixed by deleting any queries dependent on this [datasource](/reference/datasources/) before attempting to delete the [datasource](../../../reference/datasources/).
+
+### Error connecting to local db or API
+
+If you are trying to connect to a local MySQL database from Appsmith and see an error message like:
+
+ ```
+ io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: /172.17.0.1:3306
+ ```
+
+When running Appsmith inside a Docker container, it may have its own network namespace and won't be able to access services running on the host machine using the ```localhost``` or ```127.0.0.1``` addresses. This is because these addresses are reserved for use within the network namespace of the container, and are not accessible from the host machine.
+
+Instead, you can use the hostname ```host.docker.internal``` on **Windows** and **macOS**, and ```172.17.0.1``` on **Linux**, to access services running on the host machine from within the container. This will allow the container to access the MySQL server running on the host.
+
+It's important to note that binding the MySQL server to ```0.0.0.0``` will allow connections from any host, including other devices on the same network as the host. This may or may not be desirable, depending on your security requirements.
+
+If you continue to experience problems with building in Appsmith, it's a good idea to check the backend logs from the ```stacks/logs/backend/backend.log``` file for any error messages or other information that might help troubleshoot the issue.
+
+You can check this document to learn more about [Connect to a localhost database/ API](https://docs.appsmith.com/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
