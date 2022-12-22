@@ -1,10 +1,35 @@
 # Connecting to Datasources
 
-Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Whether you're working with a traditional database like MySQL or a more modern tool like S3, Appsmith makes it easy to connect and start working with your data right away.
+Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Whether you're working with a traditional database like MySQL or a more modern tool like S3, Appsmith makes it easy to connect and start working with your data right away. Connecting to a datasource is a necessary step before data can be visualized, transformed, or otherwise utilized. 
 
-Connecting to a datasource is a necessary step before any data can be manipulated, analyzed, or otherwise utilized. This process involves specifying the location of the data, authenticating the user, and providing the necessary data access permissions. 
+To create a datasource, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select the datasource. After creating and configuring a datasource, you can query the datasource and bind the response in the [UI](/core-concepts/building-ui) to [display data](/core-concepts/data-access-and-binding) or store the information entered by users into the datasource.
+
 
 In Appsmith, data sources are divided into two categories:
+
+<div class="containerGridSampleApp">
+
+   <div class=" containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+         <img class="containerImage" src="/img/icons8-database-40.png" alt="quickstart"/>
+      </div> 
+      <b><a href="/core-concepts/connecting-to-data-sources/connecting-to-databases">Databases</a></b>
+      <div class="containerDescription">
+      </div>
+   </div>
+   
+
+   <div class="containerColumnSampleApp columnGrid column-three">
+   <div class="containerCol">
+         <img class="containerImage" src="/img/icons8-api-35.png" alt="support"/>
+      </div>
+      <b><a href="core-concepts/connecting-to-data-sources/authentication/">REST APIs</a></b>
+      <div class="containerDescription"> 
+      </div>
+   </div>
+  
+</div> 
+
 
 ## Databases
 Databases are an essential part of many applications and are used to store and manage data. You can run queries to read and write data directly from the Appsmith editor. Following databases are supported by Appsmith:
@@ -170,7 +195,7 @@ With appsmith, you can connect with a wide range of tools and platforms; if ther
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/datasources/graphql">
-            <img class="containerImage" src="/img/graphqllogo.png" alt="graphql"/>
+            <img class="containerImage" src="/img/graphqllogo.png" alt="GraphQL"/>
             </a>   
         </div> 
             <b><a href="/reference/datasources/graphql">GraphQL API</a></b>
@@ -183,7 +208,7 @@ With appsmith, you can connect with a wide range of tools and platforms; if ther
     <div class="columnGrid column-one" align="center">
         <div class="containerCol">
             <a href="/reference/datasources/airtable">
-            <img class="containerImage" src="/img/Airtable-logo.png" alt="airtable"/>
+            <img class="containerImage" src="/img/Airtable-logo.png" alt="Airtable"/>
             </a> 
         </div> 
         <b><a href="/reference/datasources/airtable">Airtable</a></b>
@@ -218,28 +243,6 @@ With appsmith, you can connect with a wide range of tools and platforms; if ther
    </div>
    
 
-<!-- <div class="containerGridSampleApp">
-
-   <div class=" containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
-         <img class="containerImage" src="/img/icons8-database-40.png" alt="quickstart"/>
-      </div> 
-      <b><a href="/core-concepts/connecting-to-data-sources/connecting-to-databases">Databases</a></b>
-      <div class="containerDescription">
-      </div>
-   </div>
-   
-
-   <div class="containerColumnSampleApp columnGrid column-three">
-   <div class="containerCol">
-         <img class="containerImage" src="/img/icons8-api-35.png" alt="support"/>
-      </div>
-      <b><a href="core-concepts/connecting-to-data-sources/authentication/">REST APIs</a></b>
-      <div class="containerDescription"> 
-      </div>
-   </div>
-  
-</div> -->
 
 
    
