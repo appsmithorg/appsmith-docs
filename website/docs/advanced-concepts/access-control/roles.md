@@ -41,9 +41,9 @@ On an application level, here are the permissions that can be assigned to user o
 
 `Create` gives the ability to create applications in a workspace, pages of an application or actions (APIs, queries, JSObjects) in a page. In App resources, you can give the create permission at different hierarchical levels -
 
-##### Create access for workspace 
+##### Workspace 
 
- If you give create permission to the workspace, It gives access to create applications in the respective workspace.
+ If you give create permission to the workspace, it gives access to create applications in the respective workspace.
 
 :::note
     Under App resources, you can only define access for the applications in a workspace. To have access for the workspace itself, go to others tab and check the permission adjacent to workspace.
@@ -53,11 +53,11 @@ On an application level, here are the permissions that can be assigned to user o
     Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the applications in the workspace. 
 :::
 
-##### Create access for an application
+##### Application
 
-If you want the user to have create access only to a specific application in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the repsective application. `Create` for just an application allows you to create resources like page, action (APIs, queries, JSObjects). 
+If you want the user to have create access only to a specific application in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective application. `Create` for just an application allows you to create resources like page, action (APIs, queries, JSObjects). 
 
-##### Create access for a page
+##### Page
 
 Going granular, you can give `create` access to a page in an application. It allows you to create resources like APIs, queries, JSObjects for one page.
 
@@ -67,25 +67,25 @@ Going granular, you can give `create` access to a page in an application. It all
 
 Edit permission can be given at different hierarchical levels -
 
-##### Edit access for a workspace 
+##### Workspace 
 
  If you give edit permission to the workspace, It gives access to modify all the applications in the respective workspace.
 
 :::info
-    Giving `Create` permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
+    Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
 :::
 
-##### Edit access for an application
+##### Application
 
 If you want the user to have edit access only to a specific application in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective application. `Edit` for just an application allows you to edit resources like page, actions (APIs, queries, JSObjects), Git connection etc. 
 
-##### Edit access for a page
+##### Page
 
 `Edit` access for a particular page allows you to make changes on the respective page. You can edit the page name, clone the page, set it as the home page, and toggle their visibility.
 
 #### View 
 
-`View` only allows a user to just have view access for the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. You can't make any changes if you kust have the View permission. It applies to all the hierarchical levels in a workspace.
+`View` only allows a user to just have view access for the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. You can't make any changes if you only have the View permission. It applies to all the hierarchical levels in a workspace.
 
 #### Delete
 
@@ -93,15 +93,15 @@ If you want the user to have edit access only to a specific application in a wor
 
 Delete permission behaves differently at various hierarchical levels -
 
-##### Delete access for a workspace 
+##### Workspace 
 
- If you give delete permission to the workspace, It gives access to remove any application in the respective workspace. 
+ If you give delete permission to the workspace, It gives access to remove any application from the respective workspace. 
 
-##### Delete access for an application
+##### Application
 
 If you want the user to have delete access only to a specific application in a workspace, open the respective workspace's dropdown and check the delete permission adjacent to the respective application. `Delete` for just an application allows you to delete resources like page, actions (APIs, queries, JSObjects).
 
-##### Delete access for a Page
+##### Page
 
 `Delete` access for a particular page allows you to delete the respective page or the resources in the page like APIs, queries, JSObjects. 
 
@@ -116,18 +116,90 @@ This permission can also be enabled for a particular application, allowing the u
 
 ### Datasource and queries permissions
 
-Explain what permissions can be defined here followed by the brief explanation of each permission with example.
+For datasource and queries, here are the permissions that can be assigned to user or a group -
 
 
 #### Execute
 
+`Execute` gives a user the ability to execute the datasource. This permission can be given to workspace or for a particular datasource.
+
+##### Workspace
+
+Giving execute permission at a workspace level allows the user to execute any datasource in the workspace.
+
+##### Datasource
+
+If you want the user to have execute access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the execute permission adjacent to the respective datasource. `Execute` for a specific datasource allows the user to execute only that datasource.
+
+##### Page
+
+Going further down the hierarchy, you can give execute access to the queries inside a page. Execute permission at this stage allows the user to run the respective query.
+
+:::note
+
+Execute permission for a query in page only works if the corresponding datasource also has the execute access.
+
 #### Create
+
+`Create` gives the ability to create datasources in a workspace. In Datasource and queries, you can give the create permission at different hierarchical levels -
+
+##### Workspace
+
+If you give create permission to the workspace, it gives access to create datasources in the respective workspace.
+
+:::info
+    Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the datasources in the workspace.
+:::
+
+:::note
+    You can't create queries for a datasource by giving create access for the datasources in the workspace. To create new queries, check the create permissions under Apps and resources 
+:::
+
+##### Datasource
+
+If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective datasource. `Create` for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
 
 #### Edit 
 
+`Edit` allows the user to change/modify the existing datasources. You can edit the datasource name, configurations and further test and save the datasource. Edit permission can be given at different hierarchical levels -
+
+##### Workspace
+
+If you give edit permission to the workspace, it gives access to modify all the datasources in the respective workspace.
+
+:::note
+
+Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit, view and execute permission to all the datasources in the workspace. 
+:::
+
+##### Datasource
+
+If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective datasource. `Edit` for just a datasource allows you to modify the name, configurations of that datasource.
+
 #### View
 
+`View` only allows a user to have view access for the existing datasources. The user can interact with the functionality of the datasource, test the datasource, but can't make any changes with View permission. View permission can be given at different hierarchical levels -
+
+##### Workspace
+
+If you give view permission to the workspace, it gives access to view and execute all the datasources in the respective workspace.
+
+##### Datasource 
+
+If you want the user to have view access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the view permission adjacent to the respective datasource. `View` for just a datasource allows you to view, test and execute that datasource.
+
 #### Delete
+
+`Delete` gives the user an access to delete the existing datasources in a workspace. With the delete permission, one can't edit or create a datasource, but, the user has the access to delete it.
+Delete permission can be given at various hierarchical levels - 
+
+##### Workspace
+
+If you give delete permission to the workspace, It gives access to remove any datasource from the respective workspace. 
+
+##### Datasource
+
+`Delete` for a paritculaar datasource allows you to remove that datasource only.
 
 ### Groups and roles permissions
 
