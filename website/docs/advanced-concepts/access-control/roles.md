@@ -31,7 +31,7 @@ Introduction to permissions and followed by what the tabs/resources (App Resourc
 | **Invite**         |Allows you to invite users to a user group | Groups and Roles     |
 | **Make public**    |It allows you to make the applications public in a workspace |App Resources|
 | **Execute**        |It gives you the ability to execute queries on a datasource | Datasource and queries |
-| **Remove users**   | It gives you the ability to remove a user from a group| Groups and roles |
+| **Remove users**   |It gives you the ability to remove a user from a group| Groups and roles |
 
 ### App resources permissions
 
@@ -43,19 +43,19 @@ On an application level, here are the permissions that can be assigned to user o
 
 ##### Workspace 
 
- If you give create permission to the workspace, it gives access to create applications in the respective workspace.
+If you give create permission to the workspace, it gives access to create applications in the respective workspace.
 
 :::note
-    Under App resources, you can only define access for the applications in a workspace. To have access for the workspace itself, go to others tab and check the permission adjacent to workspace.
+Under App resources, you can only define access for the applications in a workspace. To have access for the workspace itself, go to [others](#others-permissions) tab and check the permission adjacent to workspace.
 :::
 
 :::info
-    Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the applications in the workspace. 
+Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the applications in the workspace. 
 :::
 
 ##### Application
 
-If you want the user to have create access only to a specific application in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective application. `Create` for just an application allows you to create resources like page, action (APIs, queries, JSObjects). 
+If you want the user to have create access only to a specific application in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective application. `Create` for just an application allows you to create resources like pages, actions (APIs, queries, JSObjects). 
 
 ##### Page
 
@@ -69,10 +69,10 @@ Edit permission can be given at different hierarchical levels -
 
 ##### Workspace 
 
- If you give edit permission to the workspace, It gives access to modify all the applications in the respective workspace.
+ If you give edit permission to the workspace, it gives access to modify all the applications in the respective workspace.
 
 :::info
-    Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
+Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
 :::
 
 ##### Application
@@ -121,7 +121,7 @@ For datasource and queries, here are the permissions that can be assigned to use
 
 #### Execute
 
-`Execute` gives a user the ability to execute the datasource. This permission can be given to workspace or for a particular datasource.
+`Execute` gives a user the ability to execute the datasource. This permission can be given for a workspace or a particular datasource in the workspace.
 
 ##### Workspace
 
@@ -136,8 +136,8 @@ If you want the user to have execute access only to a specific datasource in a w
 Going further down the hierarchy, you can give execute access to the queries inside a page. Execute permission at this stage allows the user to run the respective query.
 
 :::note
-
 Execute permission for a query in page only works if the corresponding datasource also has the execute access.
+:::
 
 #### Create
 
@@ -148,11 +148,11 @@ Execute permission for a query in page only works if the corresponding datasourc
 If you give create permission to the workspace, it gives access to create datasources in the respective workspace.
 
 :::info
-    Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the datasources in the workspace.
+Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the datasources in the workspace.
 :::
 
 :::note
-    You can't create queries for a datasource by giving create access for the datasources in the workspace. To create new queries, check the create permissions under Apps and resources 
+You can't create queries for a datasource by giving create access for the datasources in the workspace. To create new queries, check the create permissions under [App resources](#app-resources-permissions) 
 :::
 
 ##### Datasource
@@ -199,7 +199,7 @@ If you give delete permission to the workspace, It gives access to remove any da
 
 ##### Datasource
 
-`Delete` for a paritculaar datasource allows you to remove that datasource only.
+`Delete` for a particular datasource allows you to remove that datasource only.
 
 ### Groups and roles permissions
 
