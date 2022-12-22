@@ -341,3 +341,19 @@ h6 {
   margin: 1rem auto;
 
 }
+
+.error{
+  line-height: normal;
+  max-width: 100%;
+  background: #fff;
+  border: solid 1px #e1e4e5;
+  font-size: 80%;
+  padding: 5px;
+  margin: 10px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace;
+  color: #E74C3C;
+  overflow-x: auto;
+  border-radius: 2px;
+  font-style: normal;
+  font-weight: 400;
+}
