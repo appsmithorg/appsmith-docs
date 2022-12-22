@@ -1,4 +1,4 @@
-# REST APIs
+# APIs
 
 APIs are sets of definitions and protocols that enable communication and interaction between software applications using a limited number of instructions. APIs serve as messengers, passing requests from one application to another and instantly returning a response. With appsmith, you can connect with a wide range of tools and platforms; if there isn't a supported datasource, you can connect using the REST API. 
 
@@ -94,18 +94,6 @@ curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
 
 The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) is a REST interface that allows you to create and modify your existing APIs.
 
-
-## Smart JSON Substitution
-
-The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
-
-<VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
-
-## Passing Data/Parameters To API Calls
-
-There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
-
-<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
 
 
 :::info

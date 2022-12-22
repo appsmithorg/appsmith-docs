@@ -10,6 +10,12 @@ Configuring APIs involves setting up and managing the various aspects of an API 
 If your API is not available on the public internet, you must expose it via a service such as [https://ngrok.com/](https://ngrok.com/)
 :::
 
+## API Editor
+
+The API pane is a REST interface that allows you to create and modify your existing APIs. All [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) are supported and API values can be configured in the headers, params, and body fields
+
+![](</img/create_api_(1).gif>)
+
 ## Connection settings
 
 You can configure the data source as follows:
@@ -62,9 +68,15 @@ You can define an [authentication type](/core-concepts/connecting-to-data-source
 
 
 
-## API Editor
 
-The API pane is a REST interface that allows you to create and modify your existing APIs. All [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) are supported and API values can be configured in the headers, params, and body fields
+## Smart JSON Substitution
 
-![](</img/create_api_(1).gif>)
+The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
 
+<VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
+
+## Passing Data/Parameters To API Calls
+
+There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
+
+<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
