@@ -82,12 +82,21 @@ This error can be fixed by deleting any queries dependent on this [datasource](/
 
 If you are trying to connect to a local MySQL database from Appsmith and see an error message like:
 
- ```
- io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: /172.17.0.1:3306
- ```
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="Connection refused"></Message>
+
+<Message
+messageContainerClassName="error" 
+messageContent="Server logs - 'io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: /172.17.0.1:3306'"></Message>
+
+#### Cause
 
 When running Appsmith inside a Docker container, it may have its own network namespace and won't be able to access services running on the host machine using the `localhost` or `127.0.0.1` addresses. This is because these addresses points to the container's local network, which is different from that of the host machine.
 
+#### Solution
 Instead, you can use the hostname `host.docker.internal` on Windows and macOS hosts, and `172.17.0.1` on Linux hosts, to access services running on the host machine from within the container. This allows the container to access the MySQL server running on the host.
 
 In particular, if you are connecting to a MySQL server, make sure that it's configured to bind to `0.0.0.0`. This allows connections from any host, including other devices on the same network. This may or may not be desirable, depending on your security requirements.
