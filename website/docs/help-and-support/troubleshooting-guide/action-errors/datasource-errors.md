@@ -78,7 +78,7 @@ This message indicates that the [datasource](/reference/datasources/) attempting
 
 This error can be fixed by deleting any queries dependent on this [datasource](/reference/datasources/) before attempting to delete the [datasource](../../../reference/datasources/).
 
-### Error connecting to local db or API
+### Error connecting to local DB or API
 
 If you are trying to connect to a local MySQL database from Appsmith and see an error message like:
 
@@ -86,12 +86,12 @@ If you are trying to connect to a local MySQL database from Appsmith and see an 
  io.netty.channel.AbstractChannel$AnnotatedConnectException: finishConnect(..) failed: Connection refused: /172.17.0.1:3306
  ```
 
-When running Appsmith inside a Docker container, it may have its own network namespace and won't be able to access services running on the host machine using the ```localhost``` or ```127.0.0.1``` addresses. This is because these addresses are reserved for use within the network namespace of the container, and are not accessible from the host machine.
+When running Appsmith inside a Docker container, it may have its own network namespace and won't be able to access services running on the host machine using the `localhost` or `127.0.0.1` addresses. This is because these addresses points to the container's local network, which is different from that of the host machine.
 
-Instead, you can use the hostname ```host.docker.internal``` on **Windows** and **macOS**, and ```172.17.0.1``` on **Linux**, to access services running on the host machine from within the container. This will allow the container to access the MySQL server running on the host.
+Instead, you can use the hostname `host.docker.internal` on Windows and macOS hosts, and `172.17.0.1` on Linux hosts, to access services running on the host machine from within the container. This allows the container to access the MySQL server running on the host.
 
-It's important to note that binding the MySQL server to ```0.0.0.0``` will allow connections from any host, including other devices on the same network as the host. This may or may not be desirable, depending on your security requirements.
+In particular, if you are connecting to a MySQL server, make sure that it's configured to bind to `0.0.0.0`. This allows connections from any host, including other devices on the same network. This may or may not be desirable, depending on your security requirements.
 
-If you continue to experience problems with building in Appsmith, it's a good idea to check the backend logs from the ```stacks/logs/backend/backend.log``` file for any error messages or other information that might help troubleshoot the issue.
+If you continue to experience problems with building in Appsmith, it's a good idea to check the backend logs from the `stacks/logs/backend/backend.log` file for any error messages or other information that might help troubleshoot the issue.
 
-You can check this document to learn more about [Connect to a localhost database/ API](https://docs.appsmith.com/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+You can check this document to learn more about [Connect to a localhost database / API](https://docs.appsmith.com/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
