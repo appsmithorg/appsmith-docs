@@ -787,10 +787,6 @@
       "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui"
     },
     {
-      "source": "/core-concepts/writing-code",
-      "destination": "/core-concepts/writing-code/"
-    },
-    {
       "source": "/v/master/",
       "destination": "/"
     },
