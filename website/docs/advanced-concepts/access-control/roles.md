@@ -24,7 +24,7 @@ raw lines - On the roles configuration screen under the App resources tab, you'l
 
 ## Permissions
 
- A Permission is the ability to perform a specific action on a resource. Mutiple permissions can be clubbed under a role and onr permission can be present in multiple roles. The table below lists all the permissions available in Appsmith -
+ A permission is the ability to perform a specific action on a resource. Multiple permissions can be clubbed under a role and a permission can be present in multiple roles. The table below lists all the permissions available in Appsmith -
 
 
 |  Permissions       |    Description                                                     |   Resource   |
