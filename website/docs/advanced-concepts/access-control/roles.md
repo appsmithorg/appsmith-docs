@@ -11,7 +11,12 @@
 
 ## Resource
 
-When you open a role, the permissions are divided into different tabs based on the resource they affect. 
+When you open a role, the permissions are divided into different tabs based on the resource they affect. Currently, there are four resources -
+
+1. App Resources 
+2. Datasource and queries
+3. Groups and Roles
+4. Others
 
 ```
 raw lines - On the roles configuration screen under the App resources tab, you'll get a dropdown list of all the workspaces on your instance.
@@ -19,7 +24,8 @@ raw lines - On the roles configuration screen under the App resources tab, you'l
 
 ## Permissions
 
-Introduction to permissions and followed by what the tabs/resources (App Resources, Datasource and queries, Groups and Roles, Others) on the permission screen mean 
+ A Permission is the ability to perform a specific action on a resource. Mutiple permissions can be clubbed under a role and onr permission can be present in multiple roles. The table below lists all the permissions available in Appsmith -
+
 
 |  Permissions       |    Description                                                     |   Resource   |
 | ---------------    |------------------------------------------------------------------- | ------------ |
@@ -32,6 +38,8 @@ Introduction to permissions and followed by what the tabs/resources (App Resourc
 | **Make public**    |It allows you to make the applications public in a workspace |App Resources|
 | **Execute**        |It gives you the ability to execute queries on a datasource | Datasource and queries |
 | **Remove users**   |It gives you the ability to remove a user from a group| Groups and roles |
+
+Let's understand these permissions in detail.
 
 ### App resources permissions
 
