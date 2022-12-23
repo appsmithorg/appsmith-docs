@@ -9,15 +9,19 @@ The section illustrates common query errors and how to resolve them on Appsmith.
 You may see below errors when working with [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) or [Query](/core-concepts/data-access-and-binding/querying-a-database/) responses.
 
 ### Execution failed with status 5009
-You could see the query/API execution fails and generates an error response. 
+You could see the query/API execution fails and generates an error response:
 
-> **[<QUERY_OR_API_NAME>] action returned an error response. Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched.**
+<Message
+ messageContainerClassName="error"
+messageContent="<QUERY_OR_API_NAME> action returned an error response. Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched."></Message>
 
 
 ![Response larger than the supported size](/img/Query-errors-response-size-larger-than-5MB.png)
 
 #### Error message
-Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched.
+<Message
+ messageContainerClassName='error'
+messageContent='Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched.'></Message>
 
 ![Response larger than the supported size error shown in errors tab](/img/Query-errors-response-size-larger-than-5MB-errors-tab.png)
 
@@ -46,17 +50,19 @@ You may encounter this error when trying to run queries against a MongoDB dataso
 The error message might appear in a few different ways. For example:
 
 - As an error response in the console:
-  ```
-  { message: 'name can not be null', type: 'PLUGIN_EXECUTION', subType: undefined }
-  ```
+<Message
+ messageContainerClassName="error"
+messageContent="{ message: 'name can not be null', type: 'PLUGIN_EXECUTION', subType: undefined }"></Message>
+
 - As a notification with the text:
-  ```
-  Mongo is not correctly configured. Please fix the following and then re-run: [Missing default database name.]`
-  ```
-  Or,
-  ```
-  Missing default database name.
-  ```
+<Message
+ messageContainerClassName="error"
+messageContent="Mongo is not correctly configured. Please fix the following and then re-run: [Missing default database name.]"></Message>
+  
+- Or,
+<Message
+ messageContainerClassName="error"
+messageContent="Missing default database name."></Message>
 
 #### Cause
 
@@ -64,7 +70,7 @@ This error may be caused by the database name being omitted from the **Connectio
 
 #### Solution
 
-Check your **Connection String URI** in the datasource settings, and verify that the database's name is in the string following the host name. For example, if your database name is `Movies`, it should look something like this:
+Find your **Connection String URI** in the datasource settings and verify that the database's name is in the string following the host name. For example, if your database name is `Movies`, it should look something like this:
 
 ```
 // Connection String URI
