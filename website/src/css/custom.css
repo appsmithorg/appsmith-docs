@@ -291,8 +291,7 @@ h6 {
   border-bottom-color: #f86a2b !important;
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  background-color: #f86a2b;
-  color:#000;
+  color: #f86a2b;
   border-spacing: 2px;
 }
 
@@ -334,12 +333,10 @@ h6 {
 }
 
 .containerBorder {
-
   border: 2px solid #f2f2f2;
   border-radius: 8px;
   display: block;
   margin: 1rem auto;
-
 }
 
 .error{
