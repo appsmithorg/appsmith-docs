@@ -25,7 +25,8 @@ To see examples of the **Post message** action, take a look at the [sample app](
 
 There are a number of directions in which your apps may need to communicate. Depending on their parent/embed relationship and the message's target recipient, the configuration is a bit different.
 
-![Reference: Communication between windows with postWindowMessage](/img/postmessage_diagram.png)
+<!-- TODO: Collin to add infographic -->
+<!-- ![Reference: Communication between windows with postWindowMessage](/img/postmessage_diagram.png) -->
 
 ### Iframe widget in Appsmith app
 
