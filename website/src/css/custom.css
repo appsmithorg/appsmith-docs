@@ -354,3 +354,15 @@ h6 {
   font-style: normal;
   font-weight: 400;
 }
+
+.highlightText{
+  line-height: normal;
+  background: rgb(247, 248, 249);
+  border: solid 1px #e1e4e5;
+  font-size: 90%;
+  padding: 3px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace;
+  border-radius: 5px;
+  font-weight: 400;
+  width: fit-content;
+}
