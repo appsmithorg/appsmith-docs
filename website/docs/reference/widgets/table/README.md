@@ -11,26 +11,35 @@ If you already know the basics and want to learn how to display data and handle 
 
 ## Properties
 
-Properties allow you to edit the table, connect it with other widgets and customize the user actions.
+Properties allow you to edit the table, connect it with other widgets and customize the user actions. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
 
-### Widget properties
-
-These properties allow you to edit the table itself. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
-
-| Widget Property       | Description                                                                                                                  
+| Property       | Type | Definition | Code Snippet |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Table Data**                 | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax.|
-| **Columns**                    | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
-| **Cell wrapping**              | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
-| **Server Side Pagination**     | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
-| **Visible**                    | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
-| **Sortable**                   | It enables or disables sorting. If turned off, the user won't be able to sort the data when the app is published.                                                                                    |
-| **Default Search Text**        | Sets the default search text of the table.                                                                                                                                                              |
-| **Default Selected Row**       | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
-| **Default Row Height**         | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
-| **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated with `{{ Table1.selectedRows }}` field.                                                                                                       |
-| **Table Record Count**         | Use this field to set the number of records to return from a query or API call for showing on one page of the table. Access this number in your query with `{{ Table1.totalRecordsCount }}`. This property is only visible when you enable **Server Side Pagination**. |
-| **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **Table Data**                 | Widget | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax. |
+| **Columns**                    | Widget | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
+| **Cell wrapping**              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
+| **Server Side Pagination**     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
+| **Visible**                    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
+| **Sortable**                   | Widget | It enables or disables sorting. If turned off, the user won't be able to sort the data when the app is published.                                                                                    |
+| **Default Search Text**        | Formatting | Sets the default search text of the table.                                                                                                                                                              |
+| **Default Selected Row**       | Formatting | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
+| **Default Row Height**         | Formatting | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
+| **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected. The rows are populated with `{{ Table1.selectedRows }}` field.                                                                                                       |
+| **Table Record Count**         | Widget | Use this field to set the number of records to return from a query or API call for showing on one page of the table. Access this number in your query with `{{ Table1.totalRecordsCount }}`. This property is only visible when you enable **Server Side Pagination**. |
+| **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected.                       | `{{<table_name>.selectedRow}}`         |
+| **selectedRows**       | Binding | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
+| **triggeredRow**       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
+| **isVisible**          | Binding | This property indicates whether the widget is visible or not.                                                                | `{{<table_name>.isVisible}}`           |
+| **sortOrder**          | Binding | This property helps you sort values.                                                                                         | `{{<table_name>.sortOrder}}`           |
+| **tableData**          | Binding | This property gets all the table data in JSON format.                                                                        | `{{<table_name>.tableData}}`           |
+| **selectedRowIndex**   | Binding | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.                          | `{{<table_name>.selectedRowIndex}}`    |
+| **selectedRowIndices** | Binding | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
+| **filteredTableData**  | Binding | Contains the data of the rows left after applying any selected filters, sort rule, or search terms.                  | `{{<table_name>.filteredTableData}}`   |
+| **pageNo**             | Binding | Contains the current page number that the user is on. APIs can use it for pagination                                         | `{{<table_name>.pageNo}}`              |
+| **pageSize**           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`            |
+| **searchText**         | Binding | Contains the search text entered by the user in the Table                                                                    | `{{<table_name>.searchText}}`          |
+
 
 #### Table data
 
@@ -99,54 +108,6 @@ Once the `get_count` query is successfully created, enter the following code to 
 #Postgres
 {{get_count.data[0].count}}
 ```
-
-### Binding properties
-
-These properties allow you to bind your table widget with any other widget in queries or JS objects.
-
-| Binding Property       | Description                                                                                                                  | Snippet                                |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| **selectedRow**        | It contains the data of the row selected by the user. It's an empty object if no row is selected.                       | `{{<table_name>.selectedRow}}`         |
-| **selectedRows**       | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
-| **triggeredRow**       | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
-| **isVisible**          | This property indicates whether the widget is visible or not.                                                                | `{{<table_name>.isVisible}}`           |
-| **sortOrder**          | This property helps you sort values.                                                                                         | `{{<table_name>.sortOrder}}`           |
-| **tableData**          | This property gets all the table data in JSON format.                                                                        | `{{<table_name>.tableData}}`           |
-| **selectedRowIndex**   | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.                          | `{{<table_name>.selectedRowIndex}}`    |
-| **selectedRowIndices** | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
-| **filteredTableData**  | Contains the data of the rows left after applying any selected filters, sort rule, or search terms.                  | `{{<table_name>.filteredTableData}}`   |
-| **pageNo**             | Contains the current page number that the user is on. APIs can use it for pagination                                         | `{{<table_name>.pageNo}}`              |
-| **pageSize**           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`            |
-| **searchText**         | Contains the search text entered by the user in the Table                                                                    | `{{<table_name>.searchText}}`          |
-
-For the following examples of binding properties, consider a table called `Table_1` with the table data given below:
-
-```
-[
-  {
-    "step": "#1",
-    "task": "Drop a table",
-    "status": "✅",
-    "action": ""
-  },
-  {
-    "step": "#2",
-    "task": "Create a query fetch_users with the Mock DB",
-    "status": "--",
-    "action": ""
-  },
-  {
-    "step": "#3",
-    "task": "Bind the query using => fetch_users.data",
-    "status": "--",
-    "action": ""
-  }
-]
-```
-
-And this is how the data looks in the table widget:
-
-![](/img/table\_sample\_data.png)
 
 **selectedRow**
 
