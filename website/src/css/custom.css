@@ -13,7 +13,9 @@
   --ifm-color-primary-light: #f9936b;
   --ifm-color-primary-lighter: #fbb195;
   --ifm-color-primary-lightest: #fbb195;
-  --ifm-code-font-size: 90%;
+  --ifm-font-family-base: Roboto,Noto Sans,Noto Sans JP,Noto Sans KR,Noto Naskh Arabic,Noto Sans Thai,Noto Sans Hebrew,Noto Sans Bengali,sans-serif;
+  --ifm-code-font-size: 95%;
+  --ifm-code-font-color: #202124;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
 }
@@ -355,14 +357,14 @@ h6 {
   font-weight: 400;
 }
 
-.highlightText{
+p > code, td > code, a > code {
+  background: #f1f3f4 !important;
+  color: #37474f !important;
+  font-family: Roboto Mono, monospace !important;
+  word-break: break-word !important;
+  padding: 1px 4px !important;
+  font-weight: 14.4px !important;
+  border-radius: 0 ! important;
+  border: 0 ! important;
   line-height: normal;
-  background: rgb(247, 248, 249);
-  border: solid 1px #e1e4e5;
-  font-size: 90%;
-  padding: 3px;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace;
-  border-radius: 5px;
-  font-weight: 400;
-  width: fit-content;
 }

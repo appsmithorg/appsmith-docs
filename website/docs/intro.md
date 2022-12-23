@@ -1,10 +1,9 @@
 ---
 sidebar_position: 1
+title: Introduction
 slug: /
 ---
-# Introduction
-
-## What is Appsmith?
+# What is Appsmith
 
 Appsmith is a low code, open-source developer tool to build internal applications quickly.
 
