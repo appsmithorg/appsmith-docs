@@ -55,11 +55,13 @@ These properties allow you to edit the Muti-tree select widget. All these proper
 | **Default Value**         | Sets a default option that will be captured as user input unless the user changes it. Multiple values can be provided as CSV or an array of value strings for a Multi-Select dropdown.                                     |
 | **Placeholder**           | Sets the Placeholder of the multi-select widget.                                                                                                                                                                           |
 | **Required**              | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                                                       |
-| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                                                       |
-| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                                                           |
-| **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                 |
+| **Visible**               | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published.                                                                                                       |
+| **Disabled**              | Disables input/selection to the widget. The widget remains visible to the user but user input/selection isn't allowed.                                                                                           |
+| **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                 |
 | **Clear All Selections**  | When turned on, it allows users to clear the selection which was the default or the selection made by them.                                                                                                                |
 | **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                               |
+| [**Height**](./README.md#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+
 
 ### Binding Properties
 
@@ -76,11 +78,13 @@ These properties allow you to bind your widget with any other widget in queries 
 
 ### Events
 
-They are a set of actions that you can perform on the widget. The following table lists the actions:
+They're a set of actions that you can perform on the widget. The following table lists the actions:
 
 | Events             | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownClose** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 
@@ -88,7 +92,7 @@ The property hosts a group of configurations that you can use to associate a dis
 
 | Label         | Description                                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **Text**      | It is a group of properties that allows you to provide a name to the field and define the placement of the widget. |
+| **Text**      | It's a group of properties that allows you to provide a name to the field and define the placement of the widget. |
 | **Position**  | Sets the label position of the widget.                                                                             |
 | **Alignment** | Sets the label alignment of the widget.                                                                            |
 | **Width**     | Sets the label width of the widget as the number of columns.                                                       |
@@ -110,7 +114,7 @@ It allows you to specify the placement of the label. You can select one of the a
 * Top - It allows you to align the text at the top of the Multi-tree-select widget.
 * Left - It aligns the text to the left of the Multi-tree-select. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
   * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Multi-tree-select widget. You can choose:
-    * Left - It aligns the text to the widget's left boundary that is away from the Multi-tree-select widget.
+    * Left - It aligns the text to the widget's left boundary that's away from the Multi-tree-select widget.
     * Right - It aligns the text closer to the Multi-tree-select widget.
   * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Multi-tree-select widget.
 * Auto - It automatically adjusts the position of the text based on the Multi-tree-select widget's height.
@@ -131,4 +135,4 @@ Style properties allow you to change the look and feel of the widget.
 | **Box Shadow**       | Allows you to choose from the available shadow styles.   |
 | **Label Text Color** | Allows you to set text color for the label.              |
 | **Label Text Size**  | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Label Font Style** | Allows you to choose a font style, that's,  bold or italic. |

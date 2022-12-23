@@ -2,15 +2,15 @@
 
 Rich applications require real data to build intuitive UI, perform data transformations & write business-correct logic. Appsmith can talk to your data in the following ways
 
-* [Query your database directly](connecting-to-databases)
-* [Hit a REST API](authentication/)
+* [Query your database directly](/core-concepts/connecting-to-data-sources/connecting-to-databases)
+* [Hit a REST API](/core-concepts/connecting-to-data-sources/authentication)
 
 :::tip
 Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
 
 **18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 
-This is a guide on how to [whitelist appsmith on AWS.](learning-and-resources/how-to-guides/aws-whitelist)
+This is a guide on how to [whitelist appsmith on AWS.](/learning-and-resources/how-to-guides/aws-whitelist)
 :::
 
 ## Security
@@ -38,7 +38,7 @@ The **data** in the **mock database** gets **reset** every **24 hours** and is *
 
 ### Sample API
 
-You can import the below CURL commands to execute these [APIs](authentication/)
+You can import the below CURL commands to execute these [APIs](/core-concepts/connecting-to-data-sources/authentication)
 
 #### Fetch Users
 
