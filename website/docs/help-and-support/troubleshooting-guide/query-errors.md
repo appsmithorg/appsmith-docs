@@ -15,18 +15,18 @@ You could see the query/API execution fails and generates an error response:
  messageContainerClassName="error"
 messageContent="<QUERY_OR_API_NAME> action returned an error response. Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched."></Message>
 
-
-![Response larger than the supported size](/img/Query-errors-response-size-larger-than-5MB.png)
-
 #### Error message
 <Message
  messageContainerClassName='error'
 messageContent='Response size exceeded the maximum supported size of <SIZE_SPECIFIED_IN_FILE> MB. Please use LIMIT to reduce the amount of data fetched.'></Message>
 
-![Response larger than the supported size error shown in errors tab](/img/Query-errors-response-size-larger-than-5MB-errors-tab.png)
 
 #### Cause
 The error response could be caused when the API/query response size exceeds the allowed maximum limit of **5 MB** or the size setup.
+
+![Response larger than the supported size](/img/Query-errors-response-size-larger-than-5MB.png)
+
+![Response larger than the supported size error shown in errors tab](/img/Query-errors-response-size-larger-than-5MB-errors-tab.png)
 
 #### Solution
 You could resolve the error response by doing one of the following:
