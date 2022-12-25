@@ -1,78 +1,70 @@
 
 
 # Roles
- A Role is a collection of permissions that defines access for entities or resources which can be further assigned to a user or a group. Roles allow you to adjust multiple permissions rather than assigning individual permissions to users/groups. In Appsmith, a role can contain multiple permissions and a permission can be present in multiple roles. However, a role can't be nested, i.e, it can contain only permissions, not other roles. 
+ A Role is a collection of permissions that grant access to perform certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than assigning individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions and a permission can be mapped to multiple roles. However, a role cannot be nested, i.e. it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
  
- In an Appsmith instance, there are three roles available by default -
+ Appsmith provides three built-in roles - **Admin**, **Developer** and **App Viewer**.  With GAC, you can create a custom role that provides fine-grained access control. 
 
- 1. **Admin**
- 2. **Developer**
- 3. **App Viewer**
+## Resources
 
-## Resource
+A resource refers to specific components or aspects of an application that can be accessed or modified by users. These resources may include individual pages or views within the application, specific data sets or database tables, or specific actions or functions that can be performed within the application. In Appsmith, resources are classified into the following categories:
 
-When you open a role, the permissions are divided into different tabs based on the resource they affect. Currently, there are four resources -
-
-1. App Resources 
-2. Datasource and queries
-3. Groups and Roles
-4. Others
-
-```
-raw lines - On the roles configuration screen under the App resources tab, you'll get a dropdown list of all the workspaces on your instance.
-```
+* **App Resources:** These are resources related to the applications built in Appsmith, such as individual pages or views within the application.
+* **Datasource and Queries:** These are resources related to databases or queries created in Appsmith, such as a MongoDB setup used as a data source.
+* **Groups and Roles:** These are resources related to the roles available for each workspace in Appsmith. For example, if you have two workspaces - HR and Finance - then roles related to HR and finance would be available.
+* **Others:** These are resources related to workspaces and audit logs in Appsmith.
 
 ## Permissions
 
- A permission is the ability to perform a specific action on a resource. Multiple permissions can be clubbed under a role and a permission can be present in multiple roles. The table below lists all the permissions available in Appsmith -
+ A permission refers to the ability to perform a certain operation on a resource. Multiple permissions can be clubbed under a role and a permission can be present in multiple roles. The table below lists all the permissions available in Appsmith -
 
 
 |  Permissions       |    Description                                                     |   Resource   |
 | ---------------    |------------------------------------------------------------------- | ------------ |
-| **Create**         | It allows you to create, edit, view, delete resources like app(pages, themes,app names), datasources(queries, API's) etc. You can also define users to have the access to create groups and roles          | App Resources/ Datasource and queries/ Groups and roles/ others. |
-| **Edit**           |It allows you to edit and view resources like app(pages, themes,app names), datasources(queries, API's) etc. You can also define users to have the access to create groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |
-| **View**           |It allows you to only view resources like app(pages, themes,app names), datasources(queries, API's) etc. With the View permission, a user can only view the existing groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |
-| **Delete**         |It allows you to delete resources like app(pages, themes,app names), datasources(queries, API's) etc. You can also define users to have the access to delete groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |  
-| **Export**         |Allows you to export applications in a workspace. | App Resources | 
-| **Invite**         |Allows you to invite users to a user group | Groups and Roles     |
-| **Make public**    |It allows you to make the applications public in a workspace |App Resources|
-| **Execute**        |It gives you the ability to execute queries on a datasource | Datasource and queries |
-| **Remove users**   |It gives you the ability to remove a user from a group| Groups and roles |
+| **Create**         | Enables permission to create, edit, view, and delete resources. You can also grant users access to create groups and roles. | App Resources/ Datasource and queries/ Groups and roles/ others. |
+| **Edit**           |Enables permission to edit and view resources. You can also grant users access to create groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |
+| **View**           |Enables permission to only view resources. With the View permission, a user can only view the existing groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |
+| **Delete**         |Enables permission to delete resources. You can also grant users access to delete groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |  
+| **Export**         |Grants users permission to export applications in a workspace. | App Resources | 
+| **Invite**         |Grants users permission to invite users to a user group | Groups and Roles     |
+| **Make public**    |Grants users permission to make the applications public in a workspace |App Resources|
+| **Execute**        |Grants users permission to execute queries on a datasource | Datasource and queries |
+| **Remove users**   |Grants users permission to remove a user from a group| Groups and roles |
 
 Let's understand these permissions in detail.
 
-### App resources permissions
+### Application resources permissions
 
 On an application level, here are the permissions that can be assigned to user or a group -
 
 #### Create
 
-`Create` gives the ability to create applications in a workspace, pages of an application or actions (APIs, queries, JSObjects) in a page. In App resources, you can give the create permission at different hierarchical levels -
+With this permission, users can create applications, pages, API queries and JS Objects. This also automatically enables permission to view, edit, and delete existing pages, database/API queries and JS Objects. Under Application Resources, you can control the **Create** permission at different hierarchical levels:
 
 ##### Workspace 
 
-If you give create permission to the workspace, it gives access to create applications in the respective workspace.
-
-:::note
-Under App resources, you can only define access for the applications in a workspace. To have access for the workspace itself, go to [others](#others-permissions) tab and check the permission adjacent to workspace.
-:::
+When you grant the **Create** permission to a workspace, it provides access to create resources only in that particular workspace. 
 
 :::info
 Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the applications in the workspace. 
 :::
 
+:::note
+Under Application Resources, you can only grant access to create applications, pages, API queries and JS Objects. To enable premission to create workspaces, go to the [Others](#others-permissions) tab.
+:::
+
+
 ##### Application
 
-If you want the user to have create access only to a specific application in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective application. `Create` for just an application allows you to create resources like pages, actions (APIs, queries, JSObjects). 
+You can restrict access to specific applications and their resources in a workspace by checking the box next to the application name.
 
 ##### Page
 
-Going granular, you can give `create` access to a page in an application. It allows you to create resources like APIs, queries, JSObjects for one page.
+At a more granular level, you can restrict **Create** permission to a specific page and its resources within an application by checking the box next to the page name.
 
 #### Edit
 
-`Edit` allows the user to change/ modify the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. You can edit the app name, pages, and their order, color, icon, theme etc. Edit also gives you the access for deploying an app and connecting to your Git repository. 
-
+**Edit** allows the user to modify the existing applications, pages, database/API queries and JS Objects in a workspace. You can edit the app name, pages, and their order, color, icon, theme etc. Edit also enables access to deploy an app and connect to a Git repository. 
 Edit permission can be given at different hierarchical levels -
 
 ##### Workspace 
@@ -129,7 +121,7 @@ For datasource and queries, here are the permissions that can be assigned to use
 
 #### Execute
 
-`Execute` gives a user the ability to execute the datasource. This permission can be given for a workspace or a particular datasource in the workspace.
+**Execute** gives a user permission to run DB/API queries created on a datasource. This permission can be given for a workspace or for an individual datasource in a workspace.
 
 ##### Workspace
 
