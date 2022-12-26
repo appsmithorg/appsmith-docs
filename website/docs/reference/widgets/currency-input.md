@@ -24,6 +24,7 @@ These properties allow you to edit the Currency Input widget. All of these prope
 | **Placeholder**           | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                       |
 | **Tooltip**               | Sets a tooltip that appears when the user hovers over the widget with the mouse. Use this to provide hints or extra information to the user.                                                           |
 | **Required**              | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button will be automatically disabled until the Checkbox is checked.                     |
+| **Show step arrows**              | Control's visibility of step arrows. When turned off: The step arrows to increment or decrement the values in the widget will be hidden.                                                                        |
 | **Visible**               | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                         |
 | **Disabled**              | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                                                        |
 | **Reset on Submit**       | Clears the value entered by the user after form submission.                                                                                                                                            |
@@ -86,6 +87,9 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 When you tick the checkbox, it will enable the Required property, and the input box will show an error message “_This field is required_” if you have not entered any input.
 
 <VideoEmbed host="youtube" videoId="K3VkoyWXcCo" title="Error Message" caption="Error Message"/>
+
+### Show step arrows
+`Show step arrows` controls the visibility of the increase and decrease arrows in the widget. They will not be visible on the widget if you turn off this property. You can also write `JS` code to show or hide the arrows. 
 
 #### Visible
 
