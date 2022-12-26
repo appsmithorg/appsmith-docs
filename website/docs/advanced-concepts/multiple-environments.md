@@ -56,7 +56,7 @@ You can set different values for each environment. For instance, if you have a P
 Once parameters are configured, **bind** the values. 
 
 
-### Configure environment for APIs
+### APIs
 
 //add video
 
