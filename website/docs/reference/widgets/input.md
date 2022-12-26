@@ -24,6 +24,7 @@ These properties allow you to edit the Input widget. All of these properties are
 | **Error message**   | Sets the text of the error message to display if user input is considered invalid.                                                                                                                     |
 | **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                       |
 | **Tooltip**         | Sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                                          |
+| **Show step arrows**              | Control's visibility of step arrows for a number type input. When turned off: The step arrows to increment or decrement the values in the widget will be hidden.                                                                        |
 | **Required**        | Sets whether the input field is a mandatory field. When the input widget is within a Form widget, that Form's submit button will be automatically disabled until a user adds input to the field.       |
 | **Visible**         | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                         |
 | **Disabled**        | Makes the widget un-clickable or unusable. The widget will remain visible to the user, but user interaction will not be allowed.                                                                       |
@@ -121,6 +122,9 @@ For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind i
 When you tick the checkbox, it will enable the Required property, and the input box will show an error message "This field is required" if you have not entered any input.
 
 <VideoEmbed host="youtube" videoId="2hqT02HCah8" title="Required" caption="Required"/>
+
+### Show step arrows
+`Show step arrows` controls the visibility of the increase and decrease arrows in the widget. They will not be visible on the widget if you turn off this property. You can also write `JS` code to show or hide the arrows.
 
 #### Visible
 
