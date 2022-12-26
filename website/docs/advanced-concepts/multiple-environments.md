@@ -78,7 +78,7 @@ Once parameters are configured, **bind** the values.
 
 ## Switch environments
 
-You can decide which environment to use when you are editing the app. In edit mode, you can switch between staging and production environments by using the **toggle** located on the **bottom right corner of the screen**. 
+You can decide which environment to use when you are editing the app. In edit mode, you can switch between staging and production environments by using the **toggle** located on the bottom right corner of the screen. 
 
 :::note
 Already-deployed version of the app won't be impacted by this. However, any modifications you make may have an impact on other editors who are still working on the app.
