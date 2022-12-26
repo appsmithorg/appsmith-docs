@@ -10,7 +10,7 @@ Multiple Environments are only available on [Business Edition](https://www.appsm
 Developers can run numerous tests in these environments to filter out bugs and raise the application's overall quality before deploying it to production. 
 
 ## Environments on Appsmith
-There are two different environments that are available on Appsmith:
+Appsmith provides two environments - Staging and Production.
 
 ### Staging environment
 Before launching an application, staging environments are created to evaluate builds, codes, and updates in an environment which is similar to a production environment. This is the area that developers take advantage of to inspect new aspects, debug, and explore their applications.
