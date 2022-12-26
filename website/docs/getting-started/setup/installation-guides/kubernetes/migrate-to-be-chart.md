@@ -124,7 +124,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
        database: keycloak
    ```
 
-2. Choose, or create a shared file system. Follow the instructions available at [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
+2. To configure high availability, choose or create a shared file system. Follow the instructions available at [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
 
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
