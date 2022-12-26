@@ -1,5 +1,5 @@
 ---
-description: Follow the steps to upgrade the Appsmith community Kubernetes installation to a Business Edition.
+description: Follow the guide to upgrade the Appsmith Community Edition installation on Kubernetes to Business Edition.
 ---
 
 # Kubernetes
