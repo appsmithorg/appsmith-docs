@@ -6,3 +6,5 @@ level: error
 tokens:
   - \d+(?:B|kB|MB|GB|TB)
   - \d+(?:ns|ms|s|min|h|d)
+exceptions:
+  - 8s

@@ -26,6 +26,8 @@ These properties allow you to edit the Datepicker widget. All of these propertie
 | **Min Date**           | Sets a minimum/earliest date allowed to be selected with the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Max Date**           | Sets a maximum/latest date allowed to be selected with the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **First Day Of Week**  | Sets which day of the week appears first within the calendar of the Datepicker's menu. Accepts number values between 0 and 6.<br/>0 represents Sunday, 1 represents Monday, and so on.                                                                                                                                                                                                                                                                                                               |
+| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+
 
 ### Binding Properties
 
@@ -44,7 +46,9 @@ You can define functions that will be called when these events are triggered in 
 
 | Event              | Description                                                                                                                                                                                                                       |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onDateSelected** | Sets an an action to take place when a date is selected. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onDateSelected** | Sets an action to take place when a date is selected. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onFocus** | Sets an action to take place when a datepicker is focused. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onBlur** | Sets an action to take place when a datepicker loses focus. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
 
 ### Label
 

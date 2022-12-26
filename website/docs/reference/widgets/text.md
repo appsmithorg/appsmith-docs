@@ -17,9 +17,10 @@ These properties enable you to edit the text widget. All these properties are pr
 | **Text**            | Sets the text to be displayed.                                                                                                                                                             |
 | **Enable Scroll**   | It enables scrolling within a widget's set boundary. It helps you not truncate long text and lets you display it inside a small area on the app.                                           |
 | **Truncate text**   | It truncates the text that goes beyond the text box size.                                                                                                                                  |
-| **Visible**         | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                |
+| **Visible**         | It controls the widget's visibility on the page. When turned off, the widget would not be visible when the app is published.                                                                |
 | **Animate Loading** | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
 | **Disable link**    | It parses any link in the widget as standard text.                                                                                                                                         |
+| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 Let's understand the widget properties in detail.
 
@@ -35,13 +36,13 @@ Text field can only render inline CSS. If you want to use external CSS, we sugge
 
 #### Truncate Text
 
-This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It is enabled by default and truncation will only be applied if the text is longer than what can fit inside the given widget area.
+This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It's enabled by default and truncation will only be applied if the text is longer than what can fit inside the given widget area.
 
 <VideoEmbed host="youtube" videoId="Pex6RAyeHso" title="Truncate Text" caption="Truncate Text"/>
 
 #### Visible
 
-`Visible` controls the widget’s visibility on the app’s page. The widget will not be visible on the published app if you turn off this property. You can also write a `JS`\` code to link Visible’s functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
+`Visible` controls the widget’s visibility on the app’s page. The widget would not be visible on the published app if you turn off this property. You can also write a `JS`\` code to link Visible’s functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
 
 For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
 
@@ -87,7 +88,7 @@ Style properties allow you to modify the text widget visually. It has several op
 * **Border width:** You can define the width of the border here. It takes input in px.
 * **Text size:** It gives you an option to specify the text size.
 * **Font style:** Using this property, you can modify your text visually.
-* **Font Family:** Using this property, you can select a thefont.
+* **Font Family:** Using this property, you can select a the font.
 * **Text Align:** This property focuses on the text alignment inside the text widget. It has three options - left, center, or right.
 
 <VideoEmbed host="youtube" videoId="kXkGfzGSxYA" title="Styles" caption="Styles"/>

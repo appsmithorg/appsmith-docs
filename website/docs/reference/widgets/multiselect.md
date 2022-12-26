@@ -24,6 +24,8 @@ These properties allow you to edit the widget. All these properties are present 
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                                    |
 | **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                             |
 | **Allow Select All**      | Controls the visibility of `select all` option in the dropdown.                                                                                                                        |
+| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+
 
 ### Binding Properties
 
@@ -45,6 +47,8 @@ They are a set of actions that you can perform on the widget. The following tabl
 | Events             | Description                                                                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onOptionChange** | Sets the action to be run when the user selects/unselects an option. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onDropdownClose** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 

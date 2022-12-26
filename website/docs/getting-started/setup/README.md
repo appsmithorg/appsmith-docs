@@ -52,7 +52,7 @@ The self-hosted version isn't air-gapped and reaches out to the Appsmith cloud. 
 
 You can choose from various popular platforms to deploy Appsmith, like Docker, Kubernetes, AWS, Digital Ocean, and more.
 
-> 🔔 Appsmith officially supports [docker-based installations.](./installation-guides/docker/README.md)
+> 🔔 Appsmith officially supports [docker-based installations.](/getting-started/setup/installation-guides/docker/)
 
 ### Pre-setup checklist
 
@@ -69,13 +69,13 @@ On Amazon Web Services(AWS), a [t3.medium](https://aws.amazon.com/ec2/instance-t
 
 With a variety of[ deployment options](./installation-guides/README.md), choose the one that best suits you:
 
-* [Docker](./installation-guides/docker/README.md)
-* [Kubernetes](./installation-guides/kubernetes/README.md)
-* [AWS AMI](./installation-guides/aws-ami.md)
-* [AWS ECS](./installation-guides/aws-ecs.md)
-* [DigitalOcean](./installation-guides/digitalocean.md)
+* [Docker](/getting-started/setup/installation-guides/docker/)
+* [Kubernetes](/getting-started/setup/installation-guides/kubernetes/)
+* [AWS AMI](/getting-started/setup/installation-guides/aws-ami)
+* [AWS ECS](/getting-started/setup/installation-guides/aws-ecs)
+* [DigitalOcean](/getting-started/setup/installation-guides/digitalocean)
 
-And [more](./installation-guides/README.md).
+And [more](/getting-started/setup/installation-guides/).
 
 :::info
 [DigitalOcean](https://marketplace.digitalocean.com/apps/appsmith) or [AWS](https://aws.amazon.com/marketplace/seller-profile?id=f12088a7-c7be-46e5-8c5d-9cd7a16c8c1e) offers a one-click deployment from their marketplaces.
@@ -85,18 +85,18 @@ And [more](./installation-guides/README.md).
 
 You can configure and manage the self-hosted instance with the help of a [Super Admin](./instance-configuration/admin-settings.md) user. There are out-of-the-box integrations like:
 
-* [Custom authentication](./instance-configuration/authentication/README.md) to onboard your existing user base
-* [Email](./instance-configuration/email/README.md) to invite users and notify admins
-* [Sign-up restriction](./instance-configuration/disable-user-signup.md) to turn off signing up using the signup form or OAuth buttons, ensuring that only users you invite can signup
+* [Custom authentication](/getting-started/setup/instance-configuration/authentication/) to onboard your existing user base
+* [Email](/getting-started/setup/instance-configuration/email/) to invite users and notify admins
+* [Sign-up restriction](/getting-started/setup/instance-configuration/disable-user-signup) to turn off signing up using the signup form or OAuth buttons, ensuring that only users you invite can signup
 
-And [more](./instance-configuration/README.md) that can be configured.
+And [more](/getting-started/setup/instance-configuration/) that can be configured.
 
 ### Manage
 
-You can also effectively [manage your self-hosted instance](./instance-management/README.md) like [database backup](./instance-management/appsmithctl.md#export-database), [instance backup](./instance-management/appsmithctl.md#backup-appsmith-instance), and [more](./instance-management/appsmithctl.md).
+You can also effectively [manage your self-hosted instance](/getting-started/setup/instance-management/README.md) like [database backup](/getting-started/setup/instance-management/appsmithctl#export-database), [instance backup](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance), and [more](/getting-started/setup/instance-management/appsmithctl).
 
 Deploying Appsmith as a self-hosted instance has its own perks - having your data and apps hosted on your infrastructure. It's also easier to manage things such as \[backups]\(Link to Appsmithctl page) and scaling that follow the rules across deployed instances. Get started by following the \[installation guides]\(link to the installation guide) that work for you.
 
 :::info
-Are you having trouble deploying Appsmith? Check out the [deployment troubleshooting guide](../../help-and-support/troubleshooting-guide/deployment-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you **know** the error and want to **reinstall**, **delete** the **installation** and **templates** folder, and **execute** the script **again**.
+Are you having trouble deploying Appsmith? Check out the [deployment troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you **know** the error and want to **reinstall**, **delete** the **installation** and **templates** folder, and **execute** the script **again**.
 :::
