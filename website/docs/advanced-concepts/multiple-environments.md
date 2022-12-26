@@ -7,7 +7,7 @@ Environments are container entities within a workspace that let you create diffe
 Multiple Environments are only available on [Business Edition](https://www.appsmith.com/pricing). 
 :::
 
-Software developers can run numerous tests in these environments to filter out bugs and raise the application's overall quality. Different testing settings can be used to examine different aspects of a software application, including its performance, user interface, security, and more.
+Developers can run numerous tests in these environments to filter out bugs and raise the application's overall quality before deploying it to production. 
 
 ## Environments on Appsmith
 There are two different environments that are available on Appsmith:
