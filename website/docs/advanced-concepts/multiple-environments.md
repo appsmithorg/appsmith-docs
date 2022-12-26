@@ -31,7 +31,7 @@ Once the latest software, services, or upgrades are ready for public use, they'r
 
 This type of infrastructure makes it possible for teams to completely control the quality of their product releases. It encourages innovation and improvement, while ensuring efficient monitoring of the creation, testing, and deployment of a new product or updates. In addition, it guarantees the end user receives the best experience possible.
 
-## How to configure an environment
+## Configure an environment
 
 
 With Appsmith, it's easy to set up staging and production environments. By default, all the configuration values for a datasource are shared between staging and production. If you have to configure different parameters for staging and production, follow the steps mentioned below:
