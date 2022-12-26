@@ -36,7 +36,7 @@ This type of infrastructure makes it possible for teams to completely control th
 
 With Appsmith, it's easy to set up staging and production environments. By default, all the configuration values for a datasource are shared between staging and production. If you have to configure different parameters for staging and production, follow the steps mentioned below:
 
-### Configure environment for databases
+### Databases
 
 ![](/img/me-db-3.png)
 ![](/img/me-db-2.png)
