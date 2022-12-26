@@ -148,7 +148,7 @@ To restore the backup, follow the below steps:
    08:21:01,794 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0032: Import finished successfully
    ```
 
-   When you see lines similar to this, press <kbd>ctrl+c</kbd> to stop.
+   When you see the output, as shown above, press <kbd>ctrl+c</kbd> to stop.
 
 5. To apply the changes, restart using the following command:
 
