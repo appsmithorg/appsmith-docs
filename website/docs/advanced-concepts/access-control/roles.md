@@ -45,10 +45,6 @@ With this permission, users can create applications, pages, API queries and JS O
 
 When you grant the **Create** permission to a workspace, it provides access to create resources only in that particular workspace. 
 
-:::info
-Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the applications in the workspace. 
-:::
-
 :::note
 Under Application Resources, you can only grant access to create applications, pages, API queries and JS Objects. To enable premission to create workspaces, go to the [Others](#others-permissions) tab.
 :::
@@ -69,7 +65,7 @@ Edit permission can be given at different hierarchical levels -
 
 ##### Workspace 
 
- If you give edit permission to the workspace, it gives access to modify all the applications in the respective workspace.
+When you grant the **Create** permission to a workspace, it provides access to edit resources only in that particular workspace.
 
 :::info
 Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
@@ -81,7 +77,7 @@ If you want the user to have edit access only to a specific application in a wor
 
 ##### Page
 
-`Edit` access for a particular page allows you to make changes on the respective page. You can edit the page name, clone the page, set it as the home page, and toggle their visibility.
+At a more granular level, you can restrict **Edit** permission to a specific page and its resources within an application by checking the box next to the page name. You can edit the page name, clone the page, set it as the home page, and toggle their visibility.
 
 #### View 
 
@@ -203,27 +199,56 @@ If you give delete permission to the workspace, It gives access to remove any da
 
 ### Groups and roles permissions
 
-Explain what permissions can be defined here followed by the brief explanation of each permission with example.
+For Groups and roles, here are the permissions that can be assigned to user or a group -
 
 
 #### Create
 
+With this permission, users can create new groups and roles for an instance. This also automatically enables permission to view, edit, delete the existing groups and roles and invite or remove a user from a group .
+
 #### Edit 
+
+With this permission, users can edit the existing groups and roles for an instance. For groups, it enables permission to view, edit, invite, or remove a user from an existing groups.
+For Roles, it grants the user to edit, view a existing role or assign an associate role.
+
+:::info
+
+You can't edit the built-in roles from Appsmith. You can only the edit the custom roles defined by any user in your instance.
+:::
 
 #### View
 
+With this permission, users can only view the existing groups and roles for an instance.
+
 #### Delete
+
+This permission grants users to delete and view the existing groups and roles for an instance.
+
+:::info
+
+You can't delete the built-in roles from Appsmith. You can only the delete the custom roles defined by any user in your instance.
+:::
 
 #### Invite Users
 
+This permission grants the user the access to invite users to a group.
+
 #### Remove User
+
+This permission grants the user the access to remove users from a group.
 
 #### Associate Role
 
+With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission restricts a user from creating new roles or editing, viewing and deleting the exisitng ones,but , he/she can assign the exisitng roles to various users on the instance.
+
 ### Others permissions
 
-Explain what permissions can be defined here followed by the brief explanation of each permission with example.
+In this section, a user can assign permissions for workspaces and Audit logs.
 
 #### Workspace
 
+Workpace level permissions enables a user to perform actions on the workspaces itself. You can create new workspace or edit, delete, view the exisiting ones
+
 #### Audit logs
+
+Audit logs has View permission, that is, you can restrict users from looking at the Audit logs for your instance. 
