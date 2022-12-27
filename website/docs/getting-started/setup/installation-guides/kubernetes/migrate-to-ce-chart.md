@@ -32,14 +32,8 @@ It's recommended to install the new appsmith helm chart in the same namespace. H
   
   The command generates the output as shown below:
 
-  ```
-  NAME: appsmith-1669367715
-  LAST DEPLOYED: Fri Nov 25 14:45:17 2022
-  NAMESPACE: <NAMESPACE_NAME>
-  STATUS: deployed
-  REVISION: 1
-  TEST SUITE: None
-  ```
+  <Highlighter highlighterClassName="commandOutput " htmlContent="NAME: appsmith-1669367715 <br/> LAST DEPLOYED: Fri Nov 25 14:45:17 2022 <br/> NAMESPACE: NAMESPACE_NAME <br/> STATUS: deployed <br/> REVISION: 1 <br/> TEST SUITE: None"></Highlighter>
+
 2. In the earlier version of Appsmith, MongoDB and Redis instances were all running within the same container. However, with the v2 Helm chart, you now have the option to run these in separate containers. If you wish to do so, you can modify the values for Redis and MongoDB parameters in the `values.yaml` file as shown below:
 
   a. Run the below command to see the parameter configuration in `values.yaml` file.
@@ -94,8 +88,8 @@ kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-875b6cddc-smzwz:/appsmith-s
 Now, that you have copied the backup into the pod, proceed to restore the backup by running the below command:
 
 ```bash
-kubectl exec -it appsmith-0 -n original bash
-root@appsmith-0:/opt/appsmith# appsmithctl restore
+kubectl exec -it appsmith-0 -n original bash 
+appsmithctl restore
 ```
 
 Congratulations, you have successfully migrated to the Appsmith Community Edition Helm chart v2 installation.
