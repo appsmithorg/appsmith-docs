@@ -47,6 +47,42 @@ kubectl scale deployment appsmith-internal-server --replicas=0
 kubectl scale deployment appsmith-internal-server --replicas=1
 ```
 
+## Configuring Helm Installations
+
+To configure a helm install, you can either:
+ - Run the command below
+  ```
+  // Command template
+  helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]
+
+  // Example to enable APPSMITH_SIGNUP_DISABLED 
+  helm upgrade --set applicationConfig.APPSMITH_SIGNUP_DISABLED="true" appsmith appsmith/appsmith
+  ```
+ - If you have the values.yaml, then update the data in the applicationConfig.
+    ```
+    ....
+    applicationConfig:
+      APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+      APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+      APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+      APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+      APPSMITH_FORM_LOGIN_DISABLED: ""
+      APPSMITH_SIGNUP_DISABLED: "true"
+    ....
+    ```
+   Followed by running
+   ```
+   helm upgrade --values values.yaml appsmith appsmith/appsmith
+   ```
+
+After making any changes, **remember to restart the pods** for the changes to take effect
+
+```
+// commands to restart k8s pods
+kubectl apply -f appsmith-configmap.yaml
+kubectl scale deployment appsmith-internal-server --replicas=0
+kubectl scale deployment appsmith-internal-server --replicas=1
+```
 ## Configuring ECS Installations
 
 To configure an ECS installation, follow these steps:
