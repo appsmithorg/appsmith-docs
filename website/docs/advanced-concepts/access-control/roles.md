@@ -239,7 +239,7 @@ This permission grants the user the access to remove users from a group.
 
 #### Associate Role
 
-With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission restricts a user from creating new roles or editing, viewing and deleting the exisitng ones,but , he/she can assign the exisitng roles to various users on the instance.
+With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission restricts a user from creating new roles or, editing, viewing, and deleting the existing ones,but , they can assign the exisitng roles to various users on the instance.
 
 ### Others permissions
 
@@ -247,7 +247,7 @@ In this section, a user can assign permissions for workspaces and Audit logs.
 
 #### Workspace
 
-Workpace level permissions enables a user to perform actions on the workspaces itself. You can create new workspace or edit, delete, view the exisiting ones
+Workspace level permissions enables a user to perform actions on the workspaces itself. You can create new workspace or edit, delete, view the existing ones.
 
 #### Audit logs
 
