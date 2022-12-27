@@ -60,6 +60,7 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-ce-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
