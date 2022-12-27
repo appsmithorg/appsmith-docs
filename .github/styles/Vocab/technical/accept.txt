@@ -102,9 +102,17 @@ Javascript
 Fusioncharts
 FusionCharts
 seriesTitle
+keycloak
+Keycloak
+Check
+Autoscaler
+minikube
+Minikube
 defaultValue
 JavaScript
 filterText
 back-end
 backend
 DB
+Datasources
+

@@ -59,6 +59,7 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/kubernetes/README',
                   },
                   items: [
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
@@ -174,6 +175,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/upgrade-to-business-edition/docker',
+                'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
           ],

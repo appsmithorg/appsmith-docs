@@ -13,7 +13,7 @@
    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="/getting-started/setup/installation-guides/kubernetes">
-            <img class="containerImage" src="/img/Kubernetes_logo_(1).png" alt="Kubernetes-logo"/>
+            <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
             </a>     
         </div> 
          <b><a href="/getting-started/setup/installation-guides/kubernetes">Kubernetes</a></b>
