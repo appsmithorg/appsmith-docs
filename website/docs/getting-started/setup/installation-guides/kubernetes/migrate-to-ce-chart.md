@@ -84,7 +84,7 @@ It's recommended to install the new appsmith helm chart in the same namespace. H
 
 Once appsmith pods are up and running, proceed with copying and restoring the backup.
 
-### Copy backup
+## Copy backup
 
 Run the below command to move the appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/data/backup/`.
 
@@ -92,7 +92,7 @@ Run the below command to move the appsmith backup from a local drive or s3 into 
 kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-<POD_NAME>:/appsmith-stacks/data/backup/ 
 ```
 
-### Restore backup
+## Restore backup
 Now, that you have copied the backup into the pod, proceed to restore the backup by running the below command:
 
 ```bash
