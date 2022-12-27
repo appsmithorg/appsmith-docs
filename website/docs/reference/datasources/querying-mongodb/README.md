@@ -261,7 +261,7 @@ You should include the `$set` command in the `update` input field.
 
 This updates all documents that match the ```query``` criteria and set the specified fields to the specified values.
 
-It's important to note that the ```$set``` operator is required in the update document when using the multi option. If the `$set` operator is not used in an update command, no documents in the collection will be modified. To learn more about the update many command in MongoDB, you can check the [official documentation](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
+It's important to note that the ```$set``` operator is required in the update document when using the multi option. If the `$set` operator is not used in an update command, no documents in the collection will be modified. For more information, see the [update many commands in MongoDB](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/) available on the official documentation.
 
 
 
