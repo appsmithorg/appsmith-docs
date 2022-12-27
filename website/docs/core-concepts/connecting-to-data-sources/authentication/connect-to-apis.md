@@ -78,14 +78,18 @@ Example - Map key pageNo or similar to value
 #### Paginate with response URL
 
 ### Authentication
+Authentication refers to the process of verifying the identity of a client or user making a request to the API. This is typically done by requiring the client or user to provide a set of credentials, such as a username and password, which can be checked against a database of authorized users or a third-party authentication service.
+
+To save the URL of a REST API as a data source and access its authentication settings, you can simply click the 
+`SAVE AS DATASOURCE` button and save the API query as a [autheticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
 
 ### Settings
 
-#### Run API on page load
-#### Request confirmation before running API
-#### Encode query params
-#### Smart JSON substitution
-#### API timeout (in milliseconds)
+The Query Settings Pane provides access to properties for the query. You can specify the following [settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) in the Settings tab on the Appsmith Query Editor:
+
+The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options, or to control the behavior of the API as a whole.
+
+
 
 ## Configure authenticated API datasource
 
@@ -125,28 +129,55 @@ When you want to ensure that the incoming requests originate from Appsmith, you 
 
 ![Appsmith Signature Header](</img/OAuth__API_Integration__Appsmith_Signature_Header__Enable__.png>)
 
-### Authentication Type
+### Authentication type
 
-The authentication type refers to the method that is used to authenticate a client when making a request to the API. This is important because it determines how the client will provide their credentials to the API in order to prove their identity and access the protected resources. Common authentication types for REST APIs include 
+The authentication type refers to the method that's used to authenticate a client when making a request to the API. This is important because it determines how the user provides their credentials to the API to prove their identity and access the protected resources. Common authentication types for REST APIs include 
 
 * Basic Authentication, where the client provides a username and password with each request. 
 * OAuth, where the client obtains a token from an authorization server and includes that token with each request. 
 
-The authentication type that is used by an API can have a significant impact on its security, so it is important to choose an appropriate authentication method for your API.
+The authentication type that's used by an API can have a significant impact on its security, so it is important to choose an appropriate authentication method for your API.
 
 You can define an [authentication type](/core-concepts/connecting-to-data-sources/authentication/authentication-type) for REST APIs by using the protocols available on Appsmith.
 
 
 
 
-## Smart JSON Substitution
+## Smart JSON substitution
 
 The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
 
 <VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
 
-## Passing Data/Parameters To API Calls
+## Passing data/parameters to API calls
 
 There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
 
 <VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
+
+## Use self-signed certificate
+
+Self-signed certificates are certificates that are generated and signed by the same entity, rather than by a trusted third-party certificate authority. They're often used in testing or internal environments because they can be created at no cost, and they provide encryption for incoming and outgoing data.
+
+You can check [this](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates) documentation to learn more about self-signed certificate.
+
+
+
+## Troubleshooting
+Are you having trouble configuring APIs? check out the [REST API Errors](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+
+
+## Further reading
+
+At this point, you should know enough to start a project of your own and start playing around with datasources. The resources mentioned below can be useful when you need to learn new skills:
+
+* [Building UI](/core-concepts/building-ui/)
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+* [Data Access and Binding](/core-concepts/data-access-and-binding)
+* [Datasources](/reference/datasources)
+* [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+
+
+
+
+

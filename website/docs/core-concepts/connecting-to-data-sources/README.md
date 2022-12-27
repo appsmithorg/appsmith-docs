@@ -23,7 +23,7 @@ In Appsmith, data sources are divided into two categories:
    <div class="containerCol">
          <img class="containerImage" src="/img/icons8-api-35.png" alt="support"/>
       </div>
-      <b><a href="core-concepts/connecting-to-data-sources/authentication/">APIs</a></b>
+      <b><a href="/core-concepts/connecting-to-data-sources/authentication">APIs</a></b>
       <div class="containerDescription"> 
       </div>
    </div>

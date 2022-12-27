@@ -67,7 +67,7 @@ For certain database plugins such as PostgreSQL and MySQL, Appsmith maintains a 
 The maximum number of concurrent queries that can be run on a database with Appsmith is 5. If the application tries to execute more concurrent queries, you may receive an error message stating that the connection isn't available.
 
 
-### Troubleshooting
+## Troubleshooting
 Are you having trouble connecting datasources with Appsmith? check out the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
 
 
