@@ -245,10 +245,10 @@ people
 { $inc: { score: 1 } }
 ```
 
-`Limit`: The dropdown can be used to specify whether the command should apply to a single document or to all documents that match the query.
+`Limit`: the dropdown can be used to specify whether the command should apply to a single document or to all documents that match the query.
 
 
-MongoDB's multi update feature doesn't support replacement style updates. This means that you cannot replace the entire document, but rather, you can only update a single field.
+MongoDB's multi update feature doesn't support replacement style updates. This means that you can't replace the entire document, but rather, you can only update a single field.
 
 To successfully run a multi update command in MongoDB, you can use the following syntax:
 
@@ -268,7 +268,7 @@ It's important to note that the ```$set``` operator is required in the update do
 
 
 
-### 4. Delete Document(s)
+### 4. Delete document
 
 This command removes documents from a collection. The following fields are supported in Appsmith for this command :
 
