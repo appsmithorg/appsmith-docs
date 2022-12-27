@@ -256,10 +256,8 @@ To successfully run a multi update command in MongoDB, you can use the following
    { $set: { <field1>: <value1>, <field2>: <value2>, ... } }
 ```
 
-For example, to update the value of the "age" field in a document to 31, you can use the following update command:
-```js
-   { $set: { age: 31 } }
-```
+You should include the `$set` command in the `update` input field.
+
 
 This updates all documents that match the ```query``` criteria and set the specified fields to the specified values.
 
