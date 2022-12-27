@@ -8,6 +8,11 @@ description: >-
 
 Databases are an essential part of many applications and are used to store and manage data. They provide a structured way to organize, retrieve, and manipulate data, and are designed to be efficient and reliable. You can run queries to read and write data directly from the Appsmith editor. 
 
+:::info
+Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Read more about [security](/product/security#security-measures-within-appsmith). 
+:::
+
+
 ### Connecting to a database
 
 
@@ -20,7 +25,7 @@ Before connecting to a data source, you must whitelist the IP address of the App
 This is a guide on how to whitelist appsmith on AWS.
 :::
 
-
+<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
 
 * On the **Explorer tab**, click the **+** sign next to **Datasources**. 
 * Choose a Database from the [Datasources](/reference/datasources/) that Appsmith can connect to.
@@ -28,7 +33,7 @@ This is a guide on how to whitelist appsmith on AWS.
 * Click **Test** to verify that Appsmith can connect to your database using the details you provided.
 * Rename and save your datasource.
 
-<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
+
 
 Once your datasource has been added successfully, a success pop-up appears at the top. 
 
@@ -48,14 +53,11 @@ The mock databases are public and shared by all users, which may result in mangl
 * Select the mock **users** PostgreSQL database.
 * Now, click the **+** icon next to the **queries/js** and choose the user datasource.
 * Add your code in the body section and **run** your query. For example:
-```js
+```sql
 SELECT * FROM users;
 ```
-The preceding query retrieves all the data from the users table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
+The select query retrieves the data from the users' table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
 
-:::note
-Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Read more about [security](/product/security#security-measures-within-appsmith). 
-:::
 
 ## General notes
 Appsmith establishes a connection pool with the database server when you first connect the database to your app. This allows subsequent queries to be executed efficiently. If an idle connection is closed by the database server, Appsmith creates a new connection for the next query.
@@ -64,7 +66,12 @@ For certain database plugins such as PostgreSQL and MySQL, Appsmith maintains a 
 
 The maximum number of concurrent queries that can be run on a database with Appsmith is 5. If the application tries to execute more concurrent queries, you may receive an error message stating that the connection isn't available.
 
-## What's next
+
+### Troubleshooting
+Are you having trouble connecting datasources with Appsmith? check out the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+
+
+## Further reading
 
 At this point, you should know enough to start a project of your own and start playing around with datasources. The resources mentioned below can be useful when you need to learn new skills:
 
@@ -72,9 +79,7 @@ At this point, you should know enough to start a project of your own and start p
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
 * [Datasources](/reference/datasources)
+* [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
 
-
-### Troubleshooting
-Are you having trouble connecting datasources with Appsmith? check out the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
 
 

@@ -7,28 +7,31 @@ APIs are sets of definitions and protocols that enable communication and interac
 
 You can choose to create a one-off query by clicking on the “**+**” icon next to **“Datasources”** and selecting “**REST API**".
 
-In the context of a REST API, one-off queries are typically used when someone needs a quick answer to a specific question or problem, rather than engaging in a longer, more involved process. They are often used to retrieve or manipulate data from a server in real-time.
+In the context of a REST API, one-off queries are typically used when someone needs a quick answer to a specific question or problem, rather than engaging in a longer, more involved process. They're often used to retrieve or manipulate data from a server in real-time.
 
 
  <VideoEmbed host="youtube" videoId="IptCmvKdbog" title="Add new API" caption="Add new REST API"/> 
 
-You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets.
+You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
+
 
 ### Connecting to a authenticated API
 
-A one-off query is a single request for information or assistance, while an authenticated API is an API that requires authentication before allowing access to its resources or functionality. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or functionality from unauthorized access:
+A one-off query is a single request for information or assistance, while an authenticated API is an API that requires authentication before allowing access to its resources or capability. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or capability from unauthorized access:
+
+ <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
+
 
 * Click on the **+** icon next to the Datasources and choose **Authenticated API**.
 * Provide the configuration details required to connect to your API.
 * Rename and save your datasource.
 
 
- <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
 
 Once your datasource has been added successfully, a success pop-up appears at the top. 
 
 
-### Importing CURL Commands
+### Importing CURL commands
 
 CURL is a command-line tool that can be used to make HTTP requests to a server. You can use CURL to send various types of HTTP requests, such as GET, POST, PUT, and DELETE, to a server to retrieve or manipulate data. Appsmith makes it easy to import your APIs into your application using CURL commands.
 
@@ -44,7 +47,7 @@ curl -X GET https://example.com/resource
 
 ![](</img/import_curl_(1).gif>)
 
-## Sample API
+## Mock API
 
 Appsmith provides a mock API so you can fetch the data and perform actions using a RESTful interface.
 
@@ -96,21 +99,16 @@ The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-
 
 
 
-:::info
-Are you having trouble? Check out the [API response troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
-:::
 
-
-
-## What's next
+## Further reading
 
 At this point, you should know enough to start a project of your own and start playing around with datasources. The resources mentioned below can be useful when you need to learn new skills:
 
-* [Building UI](/core-concepts/building-ui/)
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
-* [Widgets](/reference/widgets/)
-* [Appsmith Framework](/reference/appsmith-framework/)
+* [Datasource Reference](reference/datasources)
+* [Data Access and Binding](/core-concepts/data-access-and-binding)
+* [GraphQL](reference/datasources/graphql)
 
-:::info
-Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). You can read more about security in this [document](/product/security#security-measures-within-appsmith). 
-:::
+
+## Troubleshooting
+
+Are you having trouble? check out the [API response troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
