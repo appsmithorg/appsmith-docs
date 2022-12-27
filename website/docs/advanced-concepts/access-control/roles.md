@@ -21,15 +21,15 @@ A resource refers to specific components or aspects of an application that can b
 
 |  Permissions       |    Description                                                     |   Resource   |
 | ---------------    |------------------------------------------------------------------- | ------------ |
-| **Create**         | Enables permission to create, edit, view, and delete resources. You can also grant users access to create groups and roles. | App Resources/ Datasource and queries/ Groups and roles/ others. |
-| **Edit**           |Enables permission to edit and view resources. You can also grant users access to create groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |
-| **View**           |Enables permission to only view resources. With the View permission, a user can only view the existing groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |
-| **Delete**         |Enables permission to delete resources. You can also grant users access to delete groups and roles | App Resources/ Datasource and queries/ Groups and roles/ others. |  
-| **Export**         |Grants users permission to export applications in a workspace. | App Resources | 
-| **Invite**         |Grants users permission to invite users to a user group | Groups and Roles     |
-| **Make public**    |Grants users permission to make the applications public in a workspace |App Resources|
-| **Execute**        |Grants users permission to execute queries on a datasource | Datasource and queries |
-| **Remove users**   |Grants users permission to remove a user from a group| Groups and roles |
+| **Create**         | Enables permission to create, edit, view, and delete resources. You can also grant users access to create groups and roles. | [App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
+| **Edit**           |Enables permission to edit and view resources. You can also grant users access to create groups and roles | [App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
+| **View**           |Enables permission to only view resources. With the View permission, a user can only view the existing groups and roles | [App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
+| **Delete**         |Enables permission to delete resources. You can also grant users access to delete groups and roles |[App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |  
+| **Export**         |Grants users permission to export applications in a workspace. | [App Resources](#application-resources-permissions) | 
+| **Invite**         |Grants users permission to invite users to a user group | [Groups and roles](#groups-and-roles-permissions)     |
+| **Make public**    |Grants users permission to make the applications public in a workspace |[App Resources](#application-resources-permissions)|
+| **Execute**        |Grants users permission to execute queries on a datasource | [Datasource and queries](#datasource-and-queries-permissions) |
+| **Remove users**   |Grants users permission to remove a user from a group| [Groups and roles](#groups-and-roles-permissions) |
 
 Let's understand these permissions in detail.
 
@@ -68,12 +68,12 @@ Edit permission can be given at different hierarchical levels -
 When you grant the **Create** permission to a workspace, it provides access to edit resources only in that particular workspace.
 
 :::info
-Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
+Giving **Edit** permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
 :::
 
 ##### Application
 
-If you want the user to have edit access only to a specific application in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective application. `Edit` for just an application allows you to edit resources like page, actions (APIs, queries, JSObjects), Git connection etc. 
+If you want the user to have edit access only to a specific application in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective application. **Edit** for just an application allows you to edit resources like page, actions (APIs, queries, JSObjects), Git connection etc. 
 
 ##### Page
 
@@ -81,11 +81,11 @@ At a more granular level, you can restrict **Edit** permission to a specific pag
 
 #### View 
 
-`View` only allows a user to just have view access for the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. You can't make any changes if you only have the View permission. It applies to all the hierarchical levels in a workspace.
+**View** only allows a user to just have view access for the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. You can't make any changes if you only have the View permission. It applies to all the hierarchical levels in a workspace.
 
 #### Delete
 
-`Delete` gives the user an access to delete the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. With the delete permission, one can't edit or create resources, but, the user has the access to delete it.
+**Delete** gives the user an access to delete the existing applications, pages, or actions (APIs, queries, JSObjects) in a workspace. With the delete permission, one can't edit or create resources, but, the user has the access to delete it.
 
 Delete permission behaves differently at various hierarchical levels -
 
@@ -95,20 +95,20 @@ Delete permission behaves differently at various hierarchical levels -
 
 ##### Application
 
-If you want the user to have delete access only to a specific application in a workspace, open the respective workspace's dropdown and check the delete permission adjacent to the respective application. `Delete` for just an application allows you to delete resources like page, actions (APIs, queries, JSObjects).
+If you want the user to have delete access only to a specific application in a workspace, open the respective workspace's dropdown and check the delete permission adjacent to the respective application. **Delete** for just an application allows you to delete resources like page, actions (APIs, queries, JSObjects).
 
 ##### Page
 
-`Delete` access for a particular page allows you to delete the respective page or the resources in the page like APIs, queries, JSObjects. 
+**Delete** access for a particular page allows you to delete the respective page or the resources in the page like APIs, queries, JSObjects. 
 
 #### Export
 
-`Export` allows a user to export the applications in a workspace. If a user has export permission enabled, he can also view the applications in the workspace.
+**Export** allows a user to export the applications in a workspace. If a user has export permission enabled, he can also view the applications in the workspace.
 This permission can also be enabled for a particular application, allowing the user to export and view the respective application only.
 
 #### Make public
 
-`Make Public` gives the user an ability to make the application public or private in a workspace.
+**Make Public** gives the user an ability to make the application public or private in a workspace.
 
 ### Datasource and queries permissions
 
@@ -125,7 +125,7 @@ Giving execute permission at a workspace level allows the user to execute any da
 
 ##### Datasource
 
-If you want the user to have execute access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the execute permission adjacent to the respective datasource. `Execute` for a specific datasource allows the user to execute only that datasource.
+If you want the user to have execute access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the execute permission adjacent to the respective datasource. **Execute** for a specific datasource allows the user to execute only that datasource.
 
 ##### Page
 
@@ -137,14 +137,14 @@ Execute permission for a query in page only works if the corresponding datasourc
 
 #### Create
 
-`Create` gives the ability to create datasources in a workspace. In Datasource and queries, you can give the create permission at different hierarchical levels -
+**Create** gives the ability to create datasources in a workspace. In Datasource and queries, you can give the create permission at different hierarchical levels -
 
 ##### Workspace
 
 If you give create permission to the workspace, it gives access to create datasources in the respective workspace.
 
 :::info
-Giving `Create` permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the datasources in the workspace.
+Giving **Create** permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the datasources in the workspace.
 :::
 
 :::note
@@ -153,11 +153,11 @@ You can't create queries for a datasource by giving create access for the dataso
 
 ##### Datasource
 
-If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective datasource. `Create` for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
+If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
 
 #### Edit 
 
-`Edit` allows the user to change/modify the existing datasources. You can edit the datasource name, configurations and further test and save the datasource. Edit permission can be given at different hierarchical levels -
+**Edit** allows the user to change/modify the existing datasources. You can edit the datasource name, configurations and further test and save the datasource. Edit permission can be given at different hierarchical levels -
 
 ##### Workspace
 
@@ -165,16 +165,16 @@ If you give edit permission to the workspace, it gives access to modify all the 
 
 :::note
 
-Giving `Edit` permission to a workspace has a cascading effect, i.e, it gives edit, view and execute permission to all the datasources in the workspace. 
+Giving **Edit** permission to a workspace has a cascading effect, i.e, it gives edit, view and execute permission to all the datasources in the workspace. 
 :::
 
 ##### Datasource
 
-If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective datasource. `Edit` for just a datasource allows you to modify the name, configurations of that datasource.
+If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective datasource. **Edit** for just a datasource allows you to modify the name, configurations of that datasource.
 
 #### View
 
-`View` only allows a user to have view access for the existing datasources. The user can interact with the functionality of the datasource, test the datasource, but can't make any changes with View permission. View permission can be given at different hierarchical levels -
+**View** only allows a user to have view access for the existing datasources. The user can interact with the functionality of the datasource, test the datasource, but can't make any changes with View permission. View permission can be given at different hierarchical levels -
 
 ##### Workspace
 
@@ -182,11 +182,11 @@ If you give view permission to the workspace, it gives access to view and execut
 
 ##### Datasource 
 
-If you want the user to have view access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the view permission adjacent to the respective datasource. `View` for just a datasource allows you to view, test and execute that datasource.
+If you want the user to have view access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the view permission adjacent to the respective datasource. **View** for just a datasource allows you to view, test and execute that datasource.
 
 #### Delete
 
-`Delete` gives the user an access to delete the existing datasources in a workspace. With the delete permission, one can't edit or create a datasource, but, the user has the access to delete it.
+**Delete** gives the user an access to delete the existing datasources in a workspace. With the delete permission, one can't edit or create a datasource, but, the user has the access to delete it.
 Delete permission can be given at various hierarchical levels - 
 
 ##### Workspace
@@ -195,7 +195,7 @@ If you give delete permission to the workspace, It gives access to remove any da
 
 ##### Datasource
 
-`Delete` for a particular datasource allows you to remove that datasource only.
+**Delete** for a particular datasource allows you to remove that datasource only.
 
 ### Groups and roles permissions
 
@@ -239,7 +239,7 @@ This permission grants the user the access to remove users from a group.
 
 #### Associate Role
 
-With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission restricts a user from creating new roles or, editing, viewing, and deleting the existing ones,but , they can assign the exisitng roles to various users on the instance.
+With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission restricts a user from creating new roles or, editing, viewing, and deleting the existing ones, but, they can assign the existing roles to various users on the instance.
 
 ### Others permissions
 
