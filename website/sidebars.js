@@ -475,7 +475,8 @@ const sidebars = {
                 'reference/appsmith-framework/widget-actions/copy-to-clipboard',
                 'reference/appsmith-framework/widget-actions/reset-widget',
                 'reference/appsmith-framework/widget-actions/intervals-time-events',
-              ],
+                'reference/appsmith-framework/widget-actions/post-message'
+              ]
             },
           ],
         },
