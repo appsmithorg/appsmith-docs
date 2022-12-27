@@ -248,18 +248,23 @@ people
 `Limit`: The dropdown can be used to specify whether the command should apply to a single document or to all documents that match the query.
 
 
-MongoDB's multi update feature does not support replacement style updates. This means that you cannot replace the entire document, but rather, you can only update a single field.
+MongoDB's multi update feature doesn't support replacement style updates. This means that you cannot replace the entire document, but rather, you can only update a single field.
 
 To successfully run a multi update command in MongoDB, you can use the following syntax:
 
 ```js
-   { $set: { <field1>: <value1>, <field2>: <value2>, ... } },
-   { multi: true }
+   { $set: { <field1>: <value1>, <field2>: <value2>, ... } }
+```
+
+For example, to update the value of the "age" field in a document to 31, you can use the following update command:
+```js
+   { $set: { age: 31 } }
 ```
 
 This updates all documents that match the ```query``` criteria and set the specified fields to the specified values.
 
-It's important to note that the ```$set``` operator is required in the update document when using the multi option. Without ```$set```, the update command only updates the first document that matches the query criteria, rather than updating all matching documents. To learn more about the update many command in MongoDB, you can check the [official documentation](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
+It's important to note that the ```$set``` operator is required in the update document when using the multi option. If the `$set` operator is not used in an update command, no documents in the collection will be modified. To learn more about the update many command in MongoDB, you can check the [official documentation](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
+
 
 
 
