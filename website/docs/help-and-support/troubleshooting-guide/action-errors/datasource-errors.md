@@ -80,7 +80,7 @@ This error can be fixed by deleting any queries dependent on this [datasource](/
 
 ### Error connecting to local DB or API
 
-If you are trying to connect to a local MySQL database from Appsmith and see an error message like:
+If you are trying to connect to a local database from Appsmith and see an error message like:
 
 #### Error message
 
