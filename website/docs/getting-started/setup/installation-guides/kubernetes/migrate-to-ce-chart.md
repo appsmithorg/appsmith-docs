@@ -45,37 +45,37 @@ It's recommended to install the new appsmith helm chart in the same namespace. H
 
   a. Run the below command to see the parameter configuration in `values.yaml` file.
 
-    ```bash
-    helm show values appsmith/appsmith --version 2.0.0 > values.yaml
-    ```
+      ```bash
+      helm show values appsmith/appsmith --version 2.0.0 > values.yaml
+      ```
 
   b. Locate the below parameters for MongoDB and Redis in `values.yaml` file and modify them as shown below:
 
-    ```yaml
-    ## Redis parameters
-    redis:
-      # highlight-next-line
-      enabled: true
-      auth:
-        enabled: false
-      replica:
+      ```yaml
+      ## Redis parameters
+      redis:
         # highlight-next-line
-        replicaCount: 1
+        enabled: true
+        auth:
+          enabled: false
+        replica:
+          # highlight-next-line
+          replicaCount: 1
 
-    mongodb:
-      # highlight-next-line
-      enabled: true
-      service:
-        nameOverride: appsmith-mongodb
-      auth:
-        rootUser: root
-        rootPassword : <ROOT_PASSWORD>
-      # highlight-next-line  
-      replicaCount: 2
-      architecture: "replicaset"
-      # highlight-next-line  
-      replicaSetName: <REPLICA_SET_NAME>
-    ```
+      mongodb:
+        # highlight-next-line
+        enabled: true
+        service:
+          nameOverride: appsmith-mongodb
+        auth:
+          rootUser: root
+          rootPassword : <ROOT_PASSWORD>
+        # highlight-next-line  
+        replicaCount: 2
+        architecture: "replicaset"
+        # highlight-next-line  
+        replicaSetName: <REPLICA_SET_NAME>
+      ```
 3. Run the below command to install Appsmith:
 
   ```bash
