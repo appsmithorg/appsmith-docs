@@ -6,25 +6,32 @@ description: Follow the guide to migrate to the Appsmith Community Edition runni
 Follow the below guide to migrate to the Community Edition running on Helm chart v2 (`helm.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
-Run the following [`appsmithctl`](/getting-started/setup/instance-management/appsmithctl) [backup](/getting-started/setup/instance-management/appsmithctl#backup) command in the old pods to create a data backup:
+To backup data use the [`appsmithctl`](/getting-started/setup/instance-management/appsmithctl) [backup](/getting-started/setup/instance-management/appsmithctl#backup).
 
-```bash
-kubectl exec -it appsmith-0 -n original bash
-appsmithctl backup
-```
+1. Run the following command in the old pods to create a data backup:
+
+  ```bash
+  kubectl exec -it appsmith-0 -n <NAMESPACE> appsmithctl backup
+  ```
+2. Copy the backup to local disk
+
+  ```bash
+  kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz appsmith_backup.tar.gz
+  ```
+
 
 ## Uninstall old Helm chart
 
 Run the below command to uninstall the existing helm chart:
 
 ```bash
-helm uninstall helm -n original
+helm uninstall appsmith -n <namespace>
 ```
 
 ## Install v2 Helm chart
 It's recommended to install the new appsmith helm chart in the same namespace. However, you may choose to create a new namespace also. 
 
-1. Run the below command to create a new namespace:
+1. Run the below command to install appsmith in a new namespace:
 
   ```bash
   helm install appsmith/appsmith --generate-name --version 2.0.0 -n <NAMESPACE_NAME> --create-namespace
@@ -74,28 +81,28 @@ It's recommended to install the new appsmith helm chart in the same namespace. H
   ```bash
    helm install appsmith/appsmith --generate-name --version 2.0.0 
   ```
+
 Once appsmith pods are up and running, proceed with copying and restoring the backup.
 
 ### Copy backup
 
-If the appsmith backup is available on a local drive or s3. Run the below command to move it into the pod `/appsmith-stacks/data/backup/`.
+Run the below command to move the appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/data/backup/`.
 
 ```bash
-kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-875b6cddc-smzwz:/appsmith-stacks/data/backup/
+kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-<POD_NAME>:/appsmith-stacks/data/backup/ 
 ```
 
 ### Restore backup
 Now, that you have copied the backup into the pod, proceed to restore the backup by running the below command:
 
 ```bash
-kubectl exec -it appsmith-0 -n original bash 
-appsmithctl restore
+kubectl exec -it appsmith-0 -n <namespace> appsmithctl restore
 ```
 
 Congratulations, you have successfully migrated to the Appsmith Community Edition Helm chart v2 installation.
 
 ## Publish Appsmith
-You may choose to publish Appsmith service over internet. For more information, see [Publish Appsmith](/getting-started/setup/installation-guides/kubernetes#publish-appsmith)
+You may choose to publish Appsmith service over internet. For more information, see [How to publish Appsmith](/getting-started/setup/installation-guides/kubernetes#publish-appsmith)?
 
 ## Troubleshooting
 If any issues are encountered, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or raise it on the [Discord Server](https://discord.com/invite/rBTTVJp).
