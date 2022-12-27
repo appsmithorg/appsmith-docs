@@ -75,14 +75,6 @@ To configure a helm install, you can either:
    helm upgrade --values values.yaml appsmith appsmith/appsmith
    ```
 
-After making any changes, **remember to restart the pods** for the changes to take effect
-
-```
-// commands to restart k8s pods
-kubectl apply -f appsmith-configmap.yaml
-kubectl scale deployment appsmith-internal-server --replicas=0
-kubectl scale deployment appsmith-internal-server --replicas=1
-```
 ## Configuring ECS Installations
 
 To configure an ECS installation, follow these steps:
