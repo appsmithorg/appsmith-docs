@@ -1,9 +1,9 @@
 ---
-description: Follow the guide to migrate to the Appsmith Community Edition running on Helm chart v2.
+description: Migrate to the Appsmith Community Edition using Helm chart v2.
 ---
 
 # Migrate to Helm Chart v2 (CE)
-Follow the below guide to migrate to the Community Edition running on Helm chart v2 (`helm.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
+To migrate to the Community Edition running on Helm chart v2 (helm.appsmith.com), follow the instructions in the guide below. Helm chart v2 includes the Horizontal Pod Auto Scaling (HPA) feature, which allows the Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
 To backup data use the [`appsmithctl`](/getting-started/setup/instance-management/appsmithctl) [backup](/getting-started/setup/instance-management/appsmithctl#backup).
