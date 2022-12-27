@@ -99,7 +99,7 @@ When running Appsmith inside a Docker container, it may have its own network nam
 #### Solution
 Instead, you can use the hostname `host.docker.internal` on Windows and macOS hosts, and `172.17.0.1` on Linux hosts, to access services running on the host machine from within the container. This allows the container to access the MySQL server running on the host.
 
-In particular, if you are connecting to a MySQL server, make sure that it's configured to bind to `0.0.0.0`. This allows connections from any host, including other devices on the same network. This may or may not be desirable, depending on your security requirements.
+In particular, if you are connecting to a MySQL server (or similar SQL server), make sure that it's configured to bind to `0.0.0.0`. This allows connections from any host, including other devices on the same network. This may or may not be desirable, depending on your security requirements.
 
 If you continue to experience problems with building in Appsmith, it's a good idea to check the backend logs from the `stacks/logs/backend/backend.log` file for any error messages or other information that might help troubleshoot the issue.
 
