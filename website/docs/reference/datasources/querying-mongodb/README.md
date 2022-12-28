@@ -267,7 +267,7 @@ It's important to note that the ```$set``` operator is required in the update do
 
 
 
-### 4. Delete document
+### 4. Delete Document(s)
 
 This command removes documents from a collection. The following fields are supported in Appsmith for this command :
 
