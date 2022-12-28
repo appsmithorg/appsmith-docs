@@ -47,6 +47,12 @@ curl -X GET https://example.com/resource
 
 ![](</img/import_curl_(1).gif>)
 
+## Passing data/parameters to API calls
+
+There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
+
+<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
+
 ## Mock API
 
 Appsmith provides a mock API so you can fetch the data and perform actions using a RESTful interface.
@@ -55,7 +61,7 @@ Appsmith provides a mock API so you can fetch the data and perform actions using
 https://mock-api.appsmith.com/users?page=1
 ```
 
-This is a mock API exposed by Appsmith to help you learn API basics. Data in the mock API will have the following structure:
+This is a mock API exposed by Appsmith to help you learn API basics. Data in the mock API have the following structure:
 
 ```js
 {
@@ -100,6 +106,10 @@ The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-
 
 
 
+## Troubleshooting
+
+Are you having trouble? check out the [API response troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+
 ## Further reading
 
 At this point, you should know enough to start a project of your own and start playing around with datasources. The resources mentioned below can be useful when you need to learn new skills:
@@ -108,7 +118,3 @@ At this point, you should know enough to start a project of your own and start p
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
 * [GraphQL](reference/datasources/graphql)
 
-
-## Troubleshooting
-
-Are you having trouble? check out the [API response troubleshooting guide](/help-and-support/troubleshooting-guide/query-errors) or reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).

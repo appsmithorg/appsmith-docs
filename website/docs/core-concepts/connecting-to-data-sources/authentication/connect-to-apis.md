@@ -10,7 +10,7 @@ Configuring APIs involves setting up and managing the various aspects of an API 
 If your API isn't available on the public internet, you must expose it via a service such as [https://ngrok.com/](https://ngrok.com/)
 :::
 
-## API editor
+## API query editor
 
 The API pane is a REST interface that allows you to create and modify your existing APIs. All [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) are supported and API values can be configured in the headers, Params, and body fields
 
@@ -18,7 +18,7 @@ The API pane is a REST interface that allows you to create and modify your exist
 
 ## Configure API query
 
-Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query:
+Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query.
 
 ### Name
 
@@ -63,19 +63,18 @@ Pagination refers to the process of receiving portions of a huge dataset until y
 
 
 #### Paginate with table page number
-Allows you to paginate the results of an API query using a table page number. To use this feature, you will need to configure table and request parameters.
+Allows you to paginate the results of an API query using a table page number. To use this feature, you need to configure table and request parameters.
 
-* Configure Table for Pagination
-1. Enable server side pagination
-2. Configure OnPageChange action
-
-* Configure Request Parameters
-Set up request parameters to control the table's pagination. This may involve mapping a key like "pageNo" to the table's page number property.
+This can be done by setting up request parameters to control the table's pagination. This may involve mapping a key like "**pageNo**" to the table's page number property.
 
 Example - Map key pageNo or similar to value
 ```{{UsersTable.pageNo}}``` 
 
 #### Paginate with response URL
+
+A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. To paginate with response URLs, the API typically includes a link to the next or previous page of results in the HTTP header of the response. 
+
+You can then use this URL to request the next or previous page of results. This can be done by adding Previous and Next URL in the Pagination section. 
 
 ### Authentication
 Authentication refers to the process of verifying the identity of a client or user making a request to the API. This is typically done by requiring the client or user to provide a set of credentials, such as a username and password, which can be checked against a database of authorized users or a third-party authentication service.
@@ -85,10 +84,15 @@ To save the URL of a REST API as a data source and access its authentication set
 
 ### Settings
 
-The Query Settings Pane provides access to properties for the query. You can specify the following [settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) in the Settings tab on the Appsmith Query Editor:
+The Query Settings Pane provides access to properties for the query. You can specify the following [settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) in the Settings tab on the Appsmith Query Editor.
 
 The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options, or to control the behavior of the API as a whole.
 
+### Smart JSON substitution
+
+The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
+
+<VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
 
 
 ## Configure authenticated API datasource
@@ -136,24 +140,10 @@ The authentication type refers to the method that's used to authenticate a clien
 * Basic Authentication, where the client provides a username and password with each request. 
 * OAuth, where the client obtains a token from an authorization server and includes that token with each request. 
 
-The authentication type that's used by an API can have a significant impact on its security, so it is important to choose an appropriate authentication method for your API.
+The authentication type that's used by an API can have a significant impact on its security, so it's important to choose an appropriate authentication method for your API.
 
 You can define an [authentication type](/core-concepts/connecting-to-data-sources/authentication/authentication-type) for REST APIs by using the protocols available on Appsmith.
 
-
-
-
-## Smart JSON substitution
-
-The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
-
-<VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
-
-## Passing data/parameters to API calls
-
-There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
-
-<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
 
 ## Use self-signed certificate
 
