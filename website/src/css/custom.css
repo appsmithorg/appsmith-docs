@@ -370,16 +370,3 @@ p > code, td > code, a > code, li > code, mark > code {
   border: 0 !important;
   line-height: normal;
 }
-
-.commandOutput {
-  background: #f1f3f4;
-  color: #37474f;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", Courier, monospace;
-  word-break: break-word;
-  padding: 15px;
-  font-weight: 14.4px;
-  border-radius: 0;
-  border: 0;
-  line-height: normal;
-  max-width: 100%;
-}
