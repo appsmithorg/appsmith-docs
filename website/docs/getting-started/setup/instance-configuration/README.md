@@ -6,7 +6,9 @@ description: >-
 
 # Instance Configuration
 
-## Configuring Docker Installations
+Configuration of your Appsmith instance allows you to tailor it to your specific needs. This process includes setting up elements like environment variables, authentication, emails, SSL, and custom domain. Proper configuration ensures that your instance is running efficiently. 
+
+## Configure Docker installations
 
 To configure a docker installation, simply open the folder of your installation and edit the **`stacks/configuration/docker.env`** file with the environment variables for the service.
 
@@ -27,9 +29,9 @@ docker restart appsmith
 docker-compose restart appsmith
 ```
 
-## Configuring Kubernetes Installations
+## Configure Kubernetes installations
 
-To configure a k8s installation, simply open the folder of your installation and edit the **`config-template/appsmith-configmap.yaml`** file.
+To configure a `k8s` installation, simply open the folder of your installation and edit the `config-template/appsmith-configmap.yaml` file.
 
 Remove # before the variables to ensure they're not commented
 
@@ -47,56 +49,56 @@ kubectl scale deployment appsmith-internal-server --replicas=0
 kubectl scale deployment appsmith-internal-server --replicas=1
 ```
 
-## Configuring Helm Installations
+## Configure Helm installations
 
 To configure a helm install, you can either:
- - Run the command below
-  ```
+ Run the command below
+ 
+  ```bash
   // Command template
   helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]
 
   // Example to enable APPSMITH_SIGNUP_DISABLED 
   helm upgrade --set applicationConfig.APPSMITH_SIGNUP_DISABLED="true" appsmith appsmith/appsmith
   ```
- - If you have the values.yaml, then update the data in the applicationConfig.
+ - If you have the values.yaml, then update the data in the `applicationConfig`.
+
     ```
-    ....
-    applicationConfig:
       APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
       APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
       APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
       APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
       APPSMITH_FORM_LOGIN_DISABLED: ""
       APPSMITH_SIGNUP_DISABLED: "true"
-    ....
     ```
    Followed by running
+   
    ```
    helm upgrade --values values.yaml appsmith appsmith/appsmith
    ```
 
-## Configuring ECS Installations
+## Configure ECS installations
 
 To configure an ECS installation, follow these steps:
 
 1. Navigate to the **ECS console** and select **Task Definitions** on the sidebar.
 2. Click on the Task Definition used by your ECS instance, and hit **Create new revision**.
-3. On the **Task Definition config** page, click on the Appsmith **container definition** to edit it. In the **Environment Section**, enter the environment configuration as **key-value pairs** as shown below.
+3. On the `Task Definition config` page, click the Appsmith **container definition** to edit it. In the **Environment Section**, enter the environment configuration as **key-value pairs** as shown below.
 
 ![](/img/ecs-task-env_(1).png)
 
-For sensitive information we recommend using **AWS Secrets**, please follow the steps [**detailed here**](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage\_create-basic-secret.html) to create a secret. Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
+It's recommended to use **AWS Secrets** for sensitive information, please follow the steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage\_create-basic-secret.html). Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
 
 1. Hit the **Update** button, and hit **Create** to make a new task definition.
 2. Navigate back to the **ECS console** and select your cluster. Click on your service to open the **service details**.
 3. Click on **Update**, and select the **latest revision** of the Task Definition.
-4. Hit **Skip** to **review** and then Update Service. A screen showing the status will show up.
+4. Hit **Skip** to **review** and then Update Service. A screen as below shows the status.
 
 ![](/img/ecs-service-restart_(1)_(1)_(1)_(1)_(3)_(3)_(1).png)
 
 It may take a minute for the new ECS Task to start running.
 
-## Available Configurations
+## Further reading
 
 * [Email](/getting-started/setup/instance-configuration/email)
 * [Custom Domain](/getting-started/setup/instance-configuration/custom-domain)
