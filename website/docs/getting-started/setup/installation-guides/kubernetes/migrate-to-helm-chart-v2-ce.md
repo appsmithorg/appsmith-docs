@@ -29,9 +29,9 @@ helm uninstall appsmith -n <namespace>
 ```
 
 ## Install v2 Helm chart
-It's recommended to install the new appsmith helm chart in the same namespace. However, you may choose to create a new namespace also. 
+It's recommended to install the new Appsmith helm chart in the same namespace. However, you may choose to create a new namespace also. 
 
-1. Run the below command to install appsmith in a new namespace:
+1. Run the below command to install Appsmith in a new namespace:
 
    ```bash
    helm install appsmith/appsmith --generate-name --version 2.0.0 -n <NAMESPACE_NAME> --create-namespace
