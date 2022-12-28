@@ -60,7 +60,7 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
-                    'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-v2-chart-ce',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
