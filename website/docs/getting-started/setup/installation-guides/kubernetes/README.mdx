@@ -343,7 +343,7 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
           maxReplicas: 2
    ```
   :::note
-  When autoscaling is enabled the postgresql 
+  When autoscaling is enabled both the postgresql and mongodb will also need to be enabled, or configured to point external instance.
   :::
 
   3. PostgreSQL has to be enabled 
