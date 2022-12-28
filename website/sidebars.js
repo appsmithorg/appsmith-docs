@@ -430,7 +430,7 @@ const sidebars = {
             'reference/datasources/hubspot',
             {
               type: 'category',
-              label: 'Mongo',
+              label: 'MongoDB',
               link: {
                 type: 'doc',
                 id: 'reference/datasources/querying-mongodb/README',
