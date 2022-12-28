@@ -81,7 +81,7 @@ At a more granular level, you can restrict **Edit** permission to a specific pag
 
 #### View 
 
-**View** only allows a user to view the deployed applications in a workspace. You can't make any changes as you won't be able to access the canvas if you only have the View permission. It applies to all the hierarchical levels in a workspace.
+**View** only allows a user to view and interact with the deployed applications in a workspace. You can't make any changes as you won't be able to access the canvas if you only have the View permission. It applies to all the hierarchical levels in a workspace.
 
 #### Delete
 
