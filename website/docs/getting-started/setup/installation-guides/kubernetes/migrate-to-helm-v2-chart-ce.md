@@ -10,14 +10,15 @@ Take a backup using the [`appsmithctl backup`](/getting-started/setup/instance-m
 
 1. Run the following command in the old pods to create a data backup:
 
-  ```bash
-  kubectl exec -it appsmith-0 -n <NAMESPACE> appsmithctl backup
-  ```
+   ```bash
+   kubectl exec -it appsmith-0 -n <NAMESPACE> appsmithctl backup
+   ```
+
 2. Copy the backup to local disk. The actual backup file's name should be available in the output of the previous step.
 
-  ```bash
-  kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz appsmith_backup.tar.gz
-  ```
+   ```bash
+   kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz appsmith_backup.tar.gz
+   ```
 
 ## Uninstall old Helm chart
 
@@ -32,68 +33,68 @@ It's recommended to install the new appsmith helm chart in the same namespace. H
 
 1. Run the below command to install appsmith in a new namespace:
 
-  ```bash
-  helm install appsmith/appsmith --generate-name --version 2.0.0 -n <NAMESPACE_NAME> --create-namespace
-  ```
-  
-  The command generates the output as shown below:
+   ```bash
+   helm install appsmith/appsmith --generate-name --version 2.0.0 -n <NAMESPACE_NAME> --create-namespace
+   ```
 
-  ```text
-    NAME: appsmith-1669367715
-    LAST DEPLOYED: Fri Nov 25 14:45:17 2022
-    NAMESPACE: <NAMESPACE_NAME>
-    STATUS: deployed 
-    REVISION: 1 
-    TEST SUITE: None
-  ```
+   The command generates the output as shown below:
+
+   ```text
+   NAME: appsmith-1669367715
+   LAST DEPLOYED: Fri Nov 25 14:45:17 2022
+   NAMESPACE: <NAMESPACE_NAME>
+   STATUS: deployed
+   REVISION: 1
+   TEST SUITE: None
+   ```
 
 2. In the earlier version of Appsmith, MongoDB and Redis instances were all running within the same container. However, with the v2 Helm chart, you now have the option to run these in separate containers. If you wish to do so, you can modify the values for Redis and MongoDB parameters in the `values.yaml` file as shown below:
 
-  a. Run the below command to see the parameter configuration in `values.yaml` file.
+   1. Run the below command to see the parameter configuration in `values.yaml` file.
 
-  ```bash
-     helm show values appsmith/appsmith --version 2.0.0 > values.yaml
-  ```
+      ```bash
+      helm show values appsmith/appsmith --version 2.0.0 > values.yaml
+      ```
 
-  b. Locate the below parameters for MongoDB and Redis in `values.yaml` file and modify them as shown below:
+   2. Locate the below parameters for MongoDB and Redis in `values.yaml` file and modify them as shown below:
 
-  ```yaml
-  ## Redis parameters
-  redis:
-    # highlight-next-line
-    enabled: true
-    auth:
-      enabled: false
-    replica:
-      # highlight-next-line
-      replicaCount: 1
-
-  mongodb:
-    # highlight-next-line
-    enabled: true
-    service:
-      nameOverride: appsmith-mongodb
-    auth:
-      rootUser: root
-      rootPassword : <ROOT_PASSWORD>
-    # highlight-next-line  
-    replicaCount: 2
-    architecture: "replicaset"
-    # highlight-next-line  
-    replicaSetName: <REPLICA_SET_NAME>
-  ```
+      ```yaml
+      ## Redis parameters
+      redis:
+        # highlight-next-line
+        enabled: true
+        auth:
+          enabled: false
+        replica:
+          # highlight-next-line
+          replicaCount: 1
+    
+      mongodb:
+        # highlight-next-line
+        enabled: true
+        service:
+          nameOverride: appsmith-mongodb
+        auth:
+          rootUser: root
+          rootPassword : <ROOT_PASSWORD>
+        # highlight-next-line  
+        replicaCount: 2
+        architecture: "replicaset"
+        # highlight-next-line  
+        replicaSetName: <REPLICA_SET_NAME>
+      ```
 
 3. Run the below command to install Appsmith:
 
-  ```bash
+   ```bash
    helm install appsmith/appsmith --generate-name --version 2.0.0 
-  ```
+   ```
 
-Once appsmith pods are up and running, proceed with copying and restoring the backup.
+Once Appsmith pods are up and running, proceed with copying and restoring the backup.
 
 ## Copy backup
 
-Run the below command to move the appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/data/backup/`.
+Run the below command to move the Appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/data/backup/`.
 
 ```bash
 kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-<POD_NAME>:/appsmith-stacks/data/backup/ 
