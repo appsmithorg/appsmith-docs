@@ -11,7 +11,7 @@ A resource refers to specific components or aspects of an application that can b
 
 * **App Resources:** These are resources related to the applications built in Appsmith, such as individual pages or views within the application.
 * **Datasource and Queries:** These are resources related to databases or queries created in Appsmith, such as a MongoDB setup used as a data source.
-* **Groups and Roles:** These are resources related to the roles available for each workspace in Appsmith. For example, if you have two workspaces - HR and Finance - then roles related to HR and finance would be available.
+* **Groups and Roles:** These are resources related to the roles available for the workspaces in an Appsmith instance . For example, if you have two workspaces - HR and Finance - then roles related to HR and finance would be available.
 * **Others:** These are resources related to workspaces and audit logs in Appsmith.
 
 ## Permissions
@@ -43,11 +43,8 @@ With this permission, users can create applications, pages, API queries and JS O
 
 ##### Workspace 
 
-When you grant the **Create** permission to a workspace, it provides access to create resources only in that particular workspace. 
+When you grant the **Create** permission to a workspace, it provides access to create resources only in that particular workspace, for example, create applications, pages, API queries and JS Objects. To enable permission to create workspaces, go to the [Others](#others-permissions) tab.
 
-:::note
-Under Application Resources, you can only grant access to create applications, pages, API queries and JS Objects. To enable premission to create workspaces, go to the [Others](#others-permissions) tab.
-:::
 
 
 ##### Application
@@ -65,15 +62,12 @@ Edit permission can be given at different hierarchical levels -
 
 ##### Workspace 
 
-When you grant the **Create** permission to a workspace, it provides access to edit resources only in that particular workspace.
+When you grant the **Create** permission to a workspace, it provides access to edit resources only in that particular workspace. This also automatically enables permission to view, edit the existing pages, database/API queries and JS Objects.
 
-:::info
-Giving **Edit** permission to a workspace has a cascading effect, i.e, it gives edit and view permission to all the applications in the workspace. 
-:::
 
 ##### Application
 
-If you want the user to have edit access only to a specific application in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective application. **Edit** for just an application allows you to edit resources like page, actions (APIs, queries, JSObjects), Git connection etc. 
+If you want the user to have edit access only to a specific application in a workspace, open the respective workspace dropdown and check the edit permission adjacent to the respective application. **Edit** for just an application allows you to edit resources like page, actions (APIs, queries, JSObjects), Git connection etc. 
 
 ##### Page
 
@@ -129,11 +123,7 @@ If you want the user to have execute access only to a specific datasource in a w
 
 ##### Page
 
-Going further down the hierarchy, you can give execute access to the queries inside a page. Execute permission at this stage allows the user to run the respective query.
-
-:::note
-Execute permission for a query in page only works if the corresponding datasource also has the execute access.
-:::
+Going further down the hierarchy, you can give execute access to the queries inside a page. Execute permission at this stage allows the user to run the respective query. Execute permission for a query in page only works if the corresponding datasource also has the execute access.
 
 #### Create
 
@@ -141,19 +131,12 @@ Execute permission for a query in page only works if the corresponding datasourc
 
 ##### Workspace
 
-If you give create permission to the workspace, it gives access to create datasources in the respective workspace.
-
-:::info
-Giving **Create** permission to a workspace has a cascading effect, i.e, it gives create, edit, view, delete permission to all the datasources in the workspace.
-:::
-
-:::note
-You can't create queries for a datasource by giving create access for the datasources in the workspace. To create new queries, check the create permissions under [App resources](#app-resources-permissions) 
-:::
+If you give create permission to the workspace, it gives access to create datasources in the respective workspace. This also automatically enables permission to create, edit, view, delete  all the datasources in the workspace.
 
 ##### Datasource
 
-If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
+If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace dropdown and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
+You can't create queries for a datasource by giving create access for the datasources in the workspace. To create new queries, check the create permissions under [Application resources permissions](#app-resources-permissions) 
 
 #### Edit 
 
@@ -161,16 +144,12 @@ If you want the user to have create access only to a specific datasource in a wo
 
 ##### Workspace
 
-If you give edit permission to the workspace, it gives access to modify all the datasources in the respective workspace.
+If you give edit permission to the workspace, it gives access to modify all the datasources in the respective workspace. This also automatically enables permission to edit, view, all the datasources in the workspace.
 
-:::note
-
-Giving **Edit** permission to a workspace has a cascading effect, i.e, it gives edit, view and execute permission to all the datasources in the workspace. 
-:::
 
 ##### Datasource
 
-If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the edit permission adjacent to the respective datasource. **Edit** for just a datasource allows you to modify the name, configurations of that datasource.
+If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace dropdown and check the edit permission adjacent to the respective datasource. **Edit** for just a datasource allows you to modify the name, configurations of that datasource.
 
 #### View
 
@@ -199,33 +178,31 @@ If you give delete permission to the workspace, It gives access to remove any da
 
 ### Groups and roles permissions
 
-For Groups and roles, here are the permissions that can be assigned to user or a group -
-
+For Groups and roles for an Appsmith instance, here are the permissions that can be assigned to user or a group -
 
 #### Create
 
-With this permission, users can create new groups and roles for an instance. 
+With this permission, users can create new groups and roles. 
 
 ##### Groups
 
-When the create permission is enabled for groups, a user can create a new group in an instance. This also automatically enables permission to view, edit, delete, invite, or remove a user from an existing group.
+When the create permission is enabled for groups, a user can create a new group. This also automatically enables permission to view, edit, delete, invite, or remove a user from an existing group.
 
 ##### Roles
 
-With create permission enables for roles, a user can create a new role in an instance. This also automatically enables permission to view, edit, delete, the existing roles.
+With create permission enables for roles, a user can create a new role. This also automatically enables permission to view, edit, delete, the existing roles.
 
 #### Edit 
 
-With this permission, users can edit the existing groups and roles for an instance. For groups, it enables permission to view, edit, invite, or remove a user from an existing groups.
-For Roles, it grants the user to edit, view a existing role or assign an associate role.
+With this permission, users can edit the existing groups and roles. 
 
 ##### Groups
 
-When the edit permission is enabled for groups, a user can edit an existing group in an instance. This also automatically enables permission to view, edit, invite, or remove a user from an existing groups
+When the edit permission is enabled for groups, a user can edit an existing group. This also automatically enables permission to view, edit, invite, or remove a user from an existing groups
 
 ##### Roles
 
-With edit permission enables for roles, a user can modify an existing role in an instance. This also automatically enables permission to edit, view an existing role or assign an associate role.
+With edit permission enables for roles, a user can modify an existing role. This also automatically enables permission to edit, view an existing role or assign an associate role.
 
 :::info
 
@@ -234,11 +211,11 @@ You can't edit the built-in roles from Appsmith. You can only the edit the custo
 
 #### View
 
-With this permission, users can only view the existing groups and roles for an instance.
+With this permission, users can only view the existing groups and roles.
 
 #### Delete
 
-This permission grants users to delete and view the existing groups and roles for an instance.
+This permission grants users to delete and view the existing groups and roles.
 
 :::info
 
