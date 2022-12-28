@@ -81,7 +81,7 @@ At a more granular level, you can restrict **Edit** permission to a specific pag
 
 #### View 
 
-**View** only allows a user to view and interact with the deployed applications in a workspace. You can't make any changes as you won't be able to access the canvas if you only have the View permission. It applies to all the hierarchical levels in a workspace.
+**View** only grants a user the access to view and interact with the deployed applications in a workspace. You can't make any changes as you won't be able to access the canvas if you only have the View permission. It applies to all the hierarchical levels in a workspace.
 
 #### Delete
 
@@ -204,12 +204,28 @@ For Groups and roles, here are the permissions that can be assigned to user or a
 
 #### Create
 
-With this permission, users can create new groups and roles for an instance. This also automatically enables permission to view, edit, delete the existing groups and roles and invite or remove a user from a group .
+With this permission, users can create new groups and roles for an instance. 
+
+##### Groups
+
+When the create permission is enabled for groups, a user can create a new group in an instance. This also automatically enables permission to view, edit, delete, invite, or remove a user from an existing group.
+
+##### Roles
+
+With create permission enables for roles, a user can create a new role in an instance. This also automatically enables permission to view, edit, delete, the existing roles.
 
 #### Edit 
 
 With this permission, users can edit the existing groups and roles for an instance. For groups, it enables permission to view, edit, invite, or remove a user from an existing groups.
 For Roles, it grants the user to edit, view a existing role or assign an associate role.
+
+##### Groups
+
+When the edit permission is enabled for groups, a user can edit an existing group in an instance. This also automatically enables permission to view, edit, invite, or remove a user from an existing groups
+
+##### Roles
+
+With edit permission enables for roles, a user can modify an existing role in an instance. This also automatically enables permission to edit, view an existing role or assign an associate role.
 
 :::info
 
