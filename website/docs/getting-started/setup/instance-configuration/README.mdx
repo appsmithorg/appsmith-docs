@@ -13,23 +13,21 @@ Configuration of your Appsmith instance allows you to tailor it to your specific
 
 ## Configure Docker installations
 
-To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service.
-
-Remove `#` before the variables to ensure they're not commented.
+To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. Remove `#` before the variables to ensure they're not commented. For example, you wish to add Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
 
 ```bash
-// Example variable configuration format
 APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 ```
 
-After making any changes, **remember to restart the docker containers** for the changes to take effect.
+After making changes, be sure to **restart the docker containers** for the changes to take effect. Run the below command to restart the Appsmith container.
 
+* Docker run
 ```bash
-// To restart Appsmith using docker
-docker restart appsmith
-
-// To restart Appsmith using docker compose
-docker-compose restart appsmith
+ docker restart appsmith
+```
+* Docker Compose
+```bash
+ docker-compose restart appsmith
 ```
 
 ## Configure Helm installations
@@ -43,21 +41,21 @@ To configure environment variables using helm, follow these steps:
 
   * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
 
-```bash
-  helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
-```
+  ```bash
+    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
+  ```
   For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
 
   * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
 
-```yaml
-  APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
-  APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
-  APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
-  APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
-  APPSMITH_FORM_LOGIN_DISABLED: ""
-  APPSMITH_SIGNUP_DISABLED: "true"
-```
+  ```yaml
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+    APPSMITH_FORM_LOGIN_DISABLED: ""
+    APPSMITH_SIGNUP_DISABLED: "true"
+  ``` 
 Once you have made changes to the values file, run the below command.
 
 ```bash
@@ -71,21 +69,21 @@ Once you have made changes to the values file, run the below command.
 
   * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
 
-```bash
-  helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
-```
+  ```bash
+    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
+  ```
   For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
 
   * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
 
-```yaml
-  APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
-  APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
-  APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
-  APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
-  APPSMITH_FORM_LOGIN_DISABLED: ""
-  APPSMITH_SIGNUP_DISABLED: "true"
-```
+  ```yaml
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+    APPSMITH_FORM_LOGIN_DISABLED: ""
+    APPSMITH_SIGNUP_DISABLED: "true"
+  ```
 Once you have made changes to the values file, run the below command.
 
 ```bash
@@ -98,18 +96,18 @@ Once you have made changes to the values file, run the below command.
 
 To configure an ECS installation, follow these steps:
 
-1. Navigate to the **ECS console** and select **Task Definitions** on the sidebar.
-2. Click on the Task Definition used by your ECS instance, and hit **Create new revision**.
-3. On the `Task Definition config` page, click the Appsmith **container definition** to edit it. In the **Environment Section**, enter the environment configuration as **key-value pairs** as shown below.
+1. Navigate to the ECS console and select Task Definitions on the sidebar.
+2. Click on the Task Definition used by your ECS instance, and hit Create new revision.
+3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs as shown below.
 
 ![](/img/ecs-task-env_(1).png)
 
-It's recommended to use **AWS Secrets** for sensitive information, please follow the steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the **ARN** of the secret as the Environment value and set the option to **ValueFrom**.
+It's recommended to use AWS Secrets for sensitive information, please follow the steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
 
-1. Hit the **Update** button, and hit **Create** to make a new task definition.
-2. Navigate back to the **ECS console** and select your cluster. Click on your service to open the **service details**.
-3. Click on **Update**, and select the **latest revision** of the Task Definition.
-4. Hit **Skip** to **review** and then Update Service. A screen as below shows the status.
+1. Hit the Update button, and hit Create to make a new task definition.
+2. Navigate back to the ECS console and select your cluster. Click on your service to open the service details.
+3. Click on Update, and select the latest revision of the Task Definition.
+4. Hit Skip to review and then Update Service. A screen as below shows the status.
 
 ![](/img/ecs-service-restart_(1)_(1)_(1)_(1)_(3)_(3)_(1).png)
 
