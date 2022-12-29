@@ -57,6 +57,12 @@ The size of image can be adjusted using the Image Size property under Style > Ge
 
 [Menu buttons](../menu-button.md) represents a set of actions in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.
 
+You can also add menu items dynamically using the [Menu Items Source as Dynamic](../menu-button.md#dynamic).
+
+:::note
+ You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you will only be able to use `{{currentItem}}` and `{{currentIndex}}` bindings [(docs here)](../menu-button.md#how-to-use-currentitem-and-currentindex) that references the selected item and it's index respectively on the menu button.
+:::
+
 #### Number
 
 Numbers are stored in database columns as numeric data types. Typically, these data kinds are categorized by:
