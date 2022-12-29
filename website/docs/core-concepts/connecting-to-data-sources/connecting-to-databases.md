@@ -22,10 +22,10 @@ Before connecting to a data source, you must whitelist the IP address of the App
 
 18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 
-This is a guide on how to whitelist appsmith on AWS.
+This is a guide on how to [whitelist appsmith on AWS](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist).
 :::
 
-<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
+
 
 * On the **Explorer tab**, click the **+** sign next to **Datasources**. 
 * Choose a Database from the [Datasources](/reference/datasources/) that Appsmith can connect to.
@@ -33,6 +33,7 @@ This is a guide on how to whitelist appsmith on AWS.
 * Click **Test** to verify that Appsmith can connect to your database using the details you provided.
 * Rename and save your datasource.
 
+<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
 
 
 Once your datasource has been added successfully, a success pop-up appears at the top. 
@@ -47,7 +48,7 @@ Appsmith provides two sample datasets to help you connect the data and test the 
 
 The mock databases are public and shared by all users, which may result in mangled data. To refresh the data, the databases are automatically **reset every day**, so any updates made to these databases are temporary.
 
-<VideoEmbed host="youtube" videoId="l_MNNa9mg0w" title="Using A Sample Database " caption="How to use sample database | Example"/>
+<VideoEmbed host="youtube" videoId="TrV8h_Dvhbg" title="Using A Sample Database " caption="How to use sample database | Example"/>
 
 * Click on **+** next to Datasources.
 * Select the mock **users** PostgreSQL database.
@@ -78,7 +79,6 @@ At this point, you should know enough to start a project of your own and start p
 * [Building UI](/core-concepts/building-ui/)
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
-* [Datasources](/reference/datasources)
 * [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
 
 

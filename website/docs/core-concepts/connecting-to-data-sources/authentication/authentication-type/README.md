@@ -8,7 +8,7 @@ Configure one of the below authentication modes and save it.
 
    <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
-         <img class="containerImage" src="/img/icons8-database-40.png" alt="quickstart"/>
+         <img class="containerImage" src="/img/authlanding_.png" alt="quickstart"/>
       </div> 
       <b><a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication">Basic Authentication</a></b>
       <div class="containerDescription">
@@ -18,7 +18,7 @@ Configure one of the below authentication modes and save it.
 
    <div class="containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
-         <img class="containerImage" src="/img/icons8-api-35.png" alt="support"/>
+         <img class="containerImage" src="/img/fingerprint_.png" alt="support"/>
       </div>
       <b><a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a></b>
       <div class="containerDescription"> 

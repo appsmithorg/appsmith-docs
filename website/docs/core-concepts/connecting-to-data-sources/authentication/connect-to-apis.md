@@ -72,15 +72,13 @@ Example - Map key pageNo or similar to value
 
 #### Paginate with response URL
 
-A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. To paginate with response URLs, the API typically includes a link to the next or previous page of results in the HTTP header of the response. 
-
-You can then use this URL to request the next or previous page of results. This can be done by adding Previous and Next URL in the Pagination section. 
+A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. To paginate with response URLs, the API typically includes a link to the next or previous page of results in the HTTP header of the response. This can be done by adding **Previous** and **Next URL** in the Pagination section. 
 
 ### Authentication
 Authentication refers to the process of verifying the identity of a client or user making a request to the API. This is typically done by requiring the client or user to provide a set of credentials, such as a username and password, which can be checked against a database of authorized users or a third-party authentication service.
 
 To save the URL of a REST API as a data source and access its authentication settings, you can simply click the 
-`SAVE AS DATASOURCE` button and save the API query as a [autheticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
+`SAVE AS DATASOURCE` button and save the API query as a [authenticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
 
 ### Settings
 
@@ -137,8 +135,8 @@ When you want to ensure that the incoming requests originate from Appsmith, you 
 
 The authentication type refers to the method that's used to authenticate a client when making a request to the API. This is important because it determines how the user provides their credentials to the API to prove their identity and access the protected resources. Common authentication types for REST APIs include 
 
-* Basic Authentication, where the client provides a username and password with each request. 
-* OAuth, where the client obtains a token from an authorization server and includes that token with each request. 
+* [Basic Authentication](/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication), where you have to provide a username and password. 
+* [OAuth](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication), where you need to obtain a token from an authorization server and include that token to authenticated. 
 
 The authentication type that's used by an API can have a significant impact on its security, so it's important to choose an appropriate authentication method for your API.
 
