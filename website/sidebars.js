@@ -61,6 +61,7 @@ const sidebars = {
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
+                    'getting-started/setup/installation-guides/kubernetes/helm-tls',
                   ],
                 },
                 'getting-started/setup/installation-guides/aws-ami',
