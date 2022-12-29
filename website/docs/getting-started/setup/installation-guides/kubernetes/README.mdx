@@ -494,12 +494,12 @@ existingClaim:
   When you run the install command, you may see output as shown below:
 
   ```
-    NAME: appsmith
-    LAST DEPLOYED: Mon Oct 24 13:24:07 2022
-    NAMESPACE: <namespace>
-    STATUS: deployed
-    REVISION: 1
-    TEST SUITE: None
+  NAME: appsmith
+  LAST DEPLOYED: Mon Oct 24 13:24:07 2022
+  NAMESPACE: <namespace>
+  STATUS: deployed
+  REVISION: 1
+  TEST SUITE: None
   ```
 
   Once deployed run the below commands to verify the installation.
@@ -507,10 +507,10 @@ existingClaim:
  i. To get the application URL run the below commands:
   
   ```
-      export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=appsmith,app.kubernetes.io/instance=appsmith-2-1670479627" -o jsonpath="{.items[0].metadata.name}")
-      export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-      echo "Visit http://127.0.0.1:8080 to use your application"
-      kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
+  export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=appsmith,app.kubernetes.io/instance=appsmith-2-1670479627" -o jsonpath="{.items[0].metadata.name}")
+  export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
   ```
 
 ii. Run the command `kubectl get pods` to verify the list of pods. You may see output as shown below:
@@ -539,17 +539,17 @@ Appsmith installation can be updated manually or by enabling auto update.
 The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either:
   - Running the command below.
     ```
-      helm upgrade --set autoupdate.enabled=true \
-      appsmith [appsmith-ee|appsmith]/appsmith 
+    helm upgrade --set autoupdate.enabled=true \
+    appsmith [appsmith-ee|appsmith]/appsmith 
     ```
   - Or edit `values.yaml` and specify the following parameters
     ```yaml
-        autoupdate.enabled: true
-        autoupdate.scheduler: 0
+    autoupdate.enabled: true
+    autoupdate.scheduler: 0
     ```
     Followed by running the command below.
     ```bash
-      helm upgrade --values values.yaml appsmith [appsmith-ee|appsmith]/appsmith
+    helm upgrade --values values.yaml appsmith [appsmith-ee|appsmith]/appsmith
     ```
 
 ##### Manual update
@@ -575,89 +575,99 @@ To install the Nginx ingress controller on AWS-EKS, GCE-GKE, or Azure, run the f
   <Tabs groupId="appsmithEditions">
 
   <TabItem label="Community Edition" value="communityEdition"> 
-    Enable the ingress controller through command or by modifying the `values.yaml` file.
+  Enable the ingress controller through command or by modifying the `values.yaml` file.
+  <details>
+  <summary>Follow the steps below to configure using command</summary>
+  Run the below command to enable ingress controller:
 
-  * Run the below command to enable ingress controller:
+  ```bash
+  helm upgrade appsmith/appsmith \
+      --set ingress.enabled=true \
+      --set ingress.className=nginx \
+      --set service.type=ClusterIP \
+  ```
 
-        ```bash
-        helm upgrade appsmith/appsmith \
-            --set ingress.enabled=true \
-            --set ingress.className=nginx \
-            --set service.type=ClusterIP \
-        ```
+  </details>
 
-  * To configure using `values.yaml`.
+  <details id="usingValues">
+  <summary>Follow the steps below to configure using `values.yaml`</summary>
 
-    * Open the `values.yaml` file and update the parameter values as below:
+  Open the `values.yaml` file and update the parameter values as below:
 
-    ```yaml 
-        ingress:
-          ## @param ingress.enabled Enable ingress record generation for Ghost
-          ##
-          enabled: true
-          ## @param ingress.annotations Additional custom annotations for the ingress record
-          ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-          ##
-          className: nginx
-          hosts: []
-            # - host: appsmith-domain.me
-        service:
-          ## @param service.type Kubernetes Service type
-          ##
-          type: ClusterIP
-    ```
+  ```yaml 
+  ingress:
+    ## @param ingress.enabled Enable ingress record generation for Ghost
+    ##
+    enabled: true
+    ## @param ingress.annotations Additional custom annotations for the ingress record
+    ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+    ##
+    className: nginx
+    hosts: []
+      # - host: appsmith-domain.me
+  service:
+    ## @param service.type Kubernetes Service type
+    ##
+    type: ClusterIP
+  ```
 
-    * Once the parameter values are modified, run the below command:
+  Once the parameter values are modified, run the below command:
 
-    ```bash 
-      helm upgrade --values values.yaml appsmith appsmith/appsmith
-    ```
+  ```bash 
+  helm upgrade --values values.yaml appsmith appsmith/appsmith
+  ```
 
+  </details>
 
-  </TabItem>
-  <TabItem label="Business Edition" value="businessEdition">
+ </TabItem>
+ <TabItem label="Business Edition" value="businessEdition">
 
    Enable the ingress controller through command or by modifying the `values.yaml` file.
 
-  * Run the below command to enable ingress controller:
+  <details id="usingCommand">
+  <summary>Follow the steps below to configure using command</summary>
+  Run the below command to enable ingress controller:
 
-        ```bash
-        helm upgrade appsmith-ee/appsmith \
-            --set ingress.enabled=true \
-            --set ingress.className=nginx \
-            --set service.type=ClusterIP \
-        ```
+  ```bash
+  helm upgrade appsmith-ee/appsmith \
+      --set ingress.enabled=true \
+      --set ingress.className=nginx \
+      --set service.type=ClusterIP \
+  ```
 
-  * To configure using `values.yaml`.
+   </details>
+   <details id="usingValues">
+  <summary>Follow the steps below to configure using `values.yaml`</summary>
+  
+  Open the `values.yaml` file and update the parameter values as below:
 
-    * Open the `values.yaml` file and update the parameter values as below:
+  ```yaml 
+  ingress:
+    ## @param ingress.enabled Enable ingress record generation for Ghost
+    ##
+    enabled: true
+    ## @param ingress.annotations Additional custom annotations for the ingress record
+    ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+    ##
+    className: nginx
+    hosts: []
+      # - host: appsmith-domain.me
+  service:
+    ## @param service.type Kubernetes Service type
+    ##
+    type: ClusterIP
+  ```
+    
+Once the parameter values are modified, run the below command:
 
-       ```yaml 
-      ingress:
-        ## @param ingress.enabled Enable ingress record generation for Ghost
-        ##
-        enabled: true
-        ## @param ingress.annotations Additional custom annotations for the ingress record
-        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-        ##
-        className: nginx
-        hosts: []
-          # - host: appsmith-domain.me
-      service:
-        ## @param service.type Kubernetes Service type
-        ##
-        type: ClusterIP
-      ```
+  ```bash 
+  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+  ```
+    
+  </details>
 
-    * Once the parameter values are modified, run the below command:
-
-      ```bash
-      helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
-      ```
-
-
-  </TabItem>
-  </Tabs>
+</TabItem>
+</Tabs>
   
 
 * It takes a few minutes for the ingress to get an IP assigned. Once it has been assigned, you should see an IPV4 address or a FQDN in the ADDRESS column. Run the below command to verify the assigned IP address/FQDN:
@@ -668,9 +678,8 @@ To install the Nginx ingress controller on AWS-EKS, GCE-GKE, or Azure, run the f
   The command generates the output as shown below:
 
   ```bash
-
-    NAME       CLASS   HOSTS   ADDRESS                                                                    PORTS   AGE
-    appsmith   nginx   *       a918d94876c27453ea78d2883539bb36-1165345706.ap-south-1.elb.amazonaws.com   80      25h
+  NAME       CLASS   HOSTS   ADDRESS                                                                    PORTS   AGE
+  appsmith   nginx   *       a918d94876c27453ea78d2883539bb36-1165345706.ap-south-1.elb.amazonaws.com   80      25h
   ```
 
 ## Enable data compression for Ingress controller
@@ -698,6 +707,8 @@ The Nginx controller automatically updates once you save (`:wq!`) the changes.
 
 The following command uninstalls Appsmith and removes all Kubernetes resources associated with the chart:
 
+1. List the releases by running below command:
+
 ```bash
 helm list
 ```
@@ -707,8 +718,16 @@ The command generates the output as shown below:
 NAME                       NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
 #highlight-next-line
 appsmith-1631069261        default         1               2021-09-09 11:24:40.152766 +0700 +07    deployed        appsmith-1.3.0  1.16.0
+```
+2. Pick the release name `appsmith-1631069261` and run the below command to uninstall Appsmith:
 
+```bash
 helm uninstall appsmith-1631069261
+```
+3. Run the command to verify the release status for `appsmith-1631069261`
+
+```bash
+helm status <RELEASE_NAME>
 ```
 
 ## Troubleshooting
