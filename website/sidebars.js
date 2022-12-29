@@ -513,11 +513,19 @@ const sidebars = {
           label: 'Access Control',
           link: {type: 'doc', id:  'advanced-concepts/access-control/README'},
           items: [
-            'advanced-concepts/access-control/users',
-            'advanced-concepts/access-control/groups',
-            'advanced-concepts/access-control/roles',
+          {
+            type: 'category',
+            label: 'Granular Access Control (GAC)',
+            link: {
+              type: 'doc',
+              id: 'advanced-concepts/access-control/granular-access-control/README',
+            },
+            items: [
+              'advanced-concepts/access-control/granular-access-control/roles', 
           ]
         },
+      ],
+       },
         {
           type: 'category',
           label: 'More',

@@ -1,17 +1,15 @@
-
-
 # Roles
  A Role is a collection of permissions that grant access to perform certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than assigning individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions and a permission can be mapped to multiple roles. However, a role cannot be nested, i.e. it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
  
- Appsmith provides three built-in roles - **Admin**, **Developer** and **App Viewer**.  With GAC, you can create a custom role that provides fine-grained access control. 
+ Appsmith provides three built-in roles - **Admin**, **Developer** and **App Viewer**.  With Granular Access Contorl (GAC), you can create a custom role that provides fine-grained access control. 
 
 ## Resources
 
 A resource refers to specific components or aspects of an application that can be accessed or modified by users. These resources may include individual pages or views within the application, specific data sets or database tables, or specific actions or functions that can be performed within the application. In Appsmith, resources are classified into the following categories:
 
-* **App Resources:** These are resources related to the applications built in Appsmith, such as individual pages or views within the application.
+* **Application Resources:** These are resources related to the applications built in Appsmith, such as individual pages or views within the application.
 * **Datasource and Queries:** These are resources related to databases or queries created in Appsmith, such as a MongoDB setup used as a data source.
-* **Groups and Roles:** These are resources related to the roles available for the workspaces in an Appsmith instance . For example, if you have two workspaces - HR and Finance - then roles related to HR and finance would be available.
+* **Groups and Roles:** These are resources related to the roles available for the workspaces in an Appsmith instance. For example, if you have two workspaces - HR and Finance - then roles related to HR and finance would be available.
 * **Others:** These are resources related to workspaces and audit logs in Appsmith.
 
 ## Permissions
@@ -39,39 +37,37 @@ On an application level, here are the permissions that can be assigned to user o
 
 #### Create
 
-With this permission, users can create applications, pages, API queries and JS Objects. This also automatically enables permission to view, edit, and delete existing pages, database/API queries and JS Objects. Under Application Resources, you can control the **Create** permission at different hierarchical levels:
+With this permission, users can create applications, pages, API queries and JS Objects. This also automatically enables permission to view, edit, and delete existing pages, API, queries and JS Objects. Under Application Resources, you can control the **Create** permission at different hierarchical levels:
 
 ##### Workspace 
 
-When you grant the **Create** permission to a workspace, it provides access to create resources only in that particular workspace, for example, create applications, pages, API queries and JS Objects. To enable permission to create workspaces, go to the [Others](#others-permissions) tab.
-
+When you grant the **Create** permission to a workspace, it provides access to create applications only in that particular workspace. To enable permission to create workspaces, go to the [Others](#others-permissions) tab.
 
 
 ##### Application
 
-You can restrict access to specific applications and their resources in a workspace by checking the box next to the application name.
+When you grant the **Create** permission to an application, it provides access to create new pages in the respective application.
 
 ##### Page
 
-At a more granular level, you can restrict **Create** permission to a specific page and its resources within an application by checking the box next to the page name.
+At a more granular level, giving **Create** permission to a specific page allows the user to create API, queries and JS Objects for the respective page. 
 
 #### Edit
 
-**Edit** allows the user to modify the existing applications, pages, database/API queries and JS Objects in a workspace. You can edit the app name, pages, and their order, color, icon, theme etc. Edit also enables access to deploy an app and connect to a Git repository. 
+**Edit** allows the user to modify the existing applications, pages, API, queries and JS Objects in a workspace. You can edit the app name, pages, and their order, color, icon, theme etc. Edit also enables access to deploy an app and connect to a Git repository. 
 Edit permission can be given at different hierarchical levels -
 
 ##### Workspace 
 
-When you grant the **Create** permission to a workspace, it provides access to edit resources only in that particular workspace. This also automatically enables permission to view, edit the existing pages, database/API queries and JS Objects.
-
+When you grant the **Create** permission to a workspace, it provides access to edit the newly created applications in that particular workspace. 
 
 ##### Application
 
-If you want the user to have edit access only to a specific application in a workspace, open the respective workspace dropdown and check the edit permission adjacent to the respective application. **Edit** for just an application allows you to edit resources like page, actions (APIs, queries, JSObjects), Git connection etc. 
+If you want the user to have edit access only to a specific application in a workspace, open the respective workspace tree and check the edit permission adjacent to the respective application. **Edit** for just an application allows you to edit the pages of that application.
 
 ##### Page
 
-At a more granular level, you can restrict **Edit** permission to a specific page and its resources within an application by checking the box next to the page name. You can edit the page name, clone the page, set it as the home page, and toggle their visibility.
+At a more granular level, giving **Edit** permission to a specific page allows the user to edit API, queries and JS Objects of the respective page. You can edit the page name, clone the page, set it as the home page, and toggle their visibility.
 
 #### View 
 
@@ -89,7 +85,7 @@ Delete permission behaves differently at various hierarchical levels -
 
 ##### Application
 
-If you want the user to have delete access only to a specific application in a workspace, open the respective workspace's dropdown and check the delete permission adjacent to the respective application. **Delete** for just an application allows you to delete resources like page, actions (APIs, queries, JSObjects).
+If you want the user to have delete access only to a specific application in a workspace, open the respective workspace's tree and check the delete permission adjacent to the respective application. **Delete** for just an application allows you to delete the pages of that application.
 
 ##### Page
 
@@ -119,7 +115,7 @@ Giving execute permission at a workspace level allows the user to execute any da
 
 ##### Datasource
 
-If you want the user to have execute access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the execute permission adjacent to the respective datasource. **Execute** for a specific datasource allows the user to execute only that datasource.
+If you want the user to have execute access only to a specific datasource in a workspace, open the respective workspace tree and check the execute permission adjacent to the respective datasource. **Execute** for a specific datasource allows the user to execute only that datasource.
 
 ##### Page
 
@@ -131,12 +127,12 @@ Going further down the hierarchy, you can give execute access to the queries ins
 
 ##### Workspace
 
-If you give create permission to the workspace, it gives access to create datasources in the respective workspace. This also automatically enables permission to create, edit, view, delete  all the datasources in the workspace.
+If you give create permission to the workspace, it gives access to create datasources in the respective workspace. 
 
 ##### Datasource
 
-If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace dropdown and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
-You can't create queries for a datasource by giving create access for the datasources in the workspace. To create new queries, check the create permissions under [Application resources permissions](#app-resources-permissions) 
+If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace tree and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
+You can't create queries for a datasource by only giving create access for the datasources in the workspace. To create new queries, check the create permission for the datasource and give the create access to queries under [Application resources permissions](#app-resources-permissions) 
 
 #### Edit 
 
@@ -144,12 +140,11 @@ You can't create queries for a datasource by giving create access for the dataso
 
 ##### Workspace
 
-If you give edit permission to the workspace, it gives access to modify all the datasources in the respective workspace. This also automatically enables permission to edit, view, all the datasources in the workspace.
-
+If you give edit permission to the workspace, it gives access to modify all the datasources in the respective workspace. 
 
 ##### Datasource
 
-If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace dropdown and check the edit permission adjacent to the respective datasource. **Edit** for just a datasource allows you to modify the name, configurations of that datasource.
+If you want the user to have edit access only to a specific datasource in a workspace, open the respective workspace tree and check the edit permission adjacent to the respective datasource. **Edit** for just a datasource allows you to modify the name, configurations of that datasource.
 
 #### View
 
@@ -161,7 +156,7 @@ If you give view permission to the workspace, it gives access to view and execut
 
 ##### Datasource 
 
-If you want the user to have view access only to a specific datasource in a workspace, open the respective workspace's dropdown and check the view permission adjacent to the respective datasource. **View** for just a datasource allows you to view, test and execute that datasource.
+If you want the user to have view access only to a specific datasource in a workspace, open the respective workspace tree and check the view permission adjacent to the respective datasource. **View** for just a datasource allows you to view, test and execute that datasource.
 
 #### Delete
 
@@ -190,7 +185,7 @@ When the create permission is enabled for groups, a user can create a new group.
 
 ##### Roles
 
-With create permission enables for roles, a user can create a new role. This also automatically enables permission to view, edit, delete, the existing roles.
+With create permission enabled for roles, a user can create a new role. This also automatically enables permission to view, edit, delete, the existing roles.
 
 #### Edit 
 
@@ -198,11 +193,11 @@ With this permission, users can edit the existing groups and roles.
 
 ##### Groups
 
-When the edit permission is enabled for groups, a user can edit an existing group. This also automatically enables permission to view, edit, invite, or remove a user from an existing groups
+When the edit permission is enabled for groups, a user can edit an existing group. 
 
 ##### Roles
 
-With edit permission enables for roles, a user can modify an existing role. This also automatically enables permission to edit, view an existing role or assign an associate role.
+With edit permission enables for roles, a user can modify an existing role.
 
 :::info
 
@@ -232,7 +227,7 @@ This permission grants the user the access to remove users from a group.
 
 #### Associate Role
 
-With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission restricts a user from creating new roles or, editing, viewing, and deleting the existing ones, but, they can assign the existing roles to various users on the instance.
+With this permission, a user has the access to assign the roles to other users on the instance. Associate role permission, if provided alone, restricts a user from creating new roles or, editing, viewing, and deleting the existing ones, but, they can assign the existing roles to various users on the instance.
 
 ### Others permissions
 
@@ -240,7 +235,7 @@ In this section, a user can assign permissions for workspaces and Audit logs.
 
 #### Workspace
 
-Workspace level permissions enables a user to perform actions on the workspaces itself. You can create new workspace or edit, delete, view the existing ones.
+Workspace level permissions enables a user to perform actions on the workspaces itself. You can create new workspace or edit, delete the existing ones.
 
 #### Audit logs
 
