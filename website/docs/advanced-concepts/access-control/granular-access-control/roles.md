@@ -1,7 +1,7 @@
 # Roles
  A Role is a collection of permissions that grant access to perform certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than assigning individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions and a permission can be mapped to multiple roles. However, a role cannot be nested, i.e. it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
  
- Appsmith provides three built-in roles - **Admin**, **Developer** and **App Viewer**.  With Granular Access Contorl (GAC), you can create a custom role that provides fine-grained access control. 
+ Appsmith provides three built-in roles - **Administrator**, **Developer** and **App Viewer**.  With Granular Access Contorl (GAC), you can create a custom role that provides fine-grained access control. 
 
 ## Resources
 
@@ -19,13 +19,13 @@ A resource refers to specific components or aspects of an application that can b
 
 |  Permissions       |    Description                                                     |   Resource   |
 | ---------------    |------------------------------------------------------------------- | ------------ |
-| **Create**         | Enables permission to create, edit, view, and delete resources. You can also grant users access to create groups and roles. | [App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
-| **Edit**           |Enables permission to edit and view resources. You can also grant users access to create groups and roles | [App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
-| **View**           |Enables permission to only view resources. With the View permission, a user can only view the existing groups and roles | [App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
-| **Delete**         |Enables permission to delete resources. You can also grant users access to delete groups and roles |[App Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |  
-| **Export**         |Grants users permission to export applications in a workspace. | [App Resources](#application-resources-permissions) | 
+| **Create**         | Enables permission to create, edit, view, and delete resources. You can also grant users access to create groups and roles. | [Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
+| **Edit**           |Enables permission to edit and view resources. You can also grant users access to create groups and roles | [Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
+| **View**           |Enables permission to only view resources. With the View permission, a user can only view the existing groups and roles | [Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
+| **Delete**         |Enables permission to delete resources. You can also grant users access to delete groups and roles |[Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |  
+| **Export**         |Grants users permission to export applications in a workspace. | [Application Resources](#application-resources-permissions) | 
 | **Invite**         |Grants users permission to invite users to a user group | [Groups and roles](#groups-and-roles-permissions)     |
-| **Make public**    |Grants users permission to make the applications public in a workspace |[App Resources](#application-resources-permissions)|
+| **Make public**    |Grants users permission to make the applications public in a workspace |[Application Resources](#application-resources-permissions)|
 | **Execute**        |Grants users permission to execute queries on a datasource | [Datasource and queries](#datasource-and-queries-permissions) |
 | **Remove users**   |Grants users permission to remove a user from a group| [Groups and roles](#groups-and-roles-permissions) |
 
@@ -132,7 +132,7 @@ If you give create permission to the workspace, it gives access to create dataso
 ##### Datasource
 
 If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace tree and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to make tweaks the datasource configurations and further test, delete or save it.
-You can't create queries for a datasource by only giving create access for the datasources in the workspace. To create new queries, check the create permission for the datasource and give the create access to queries under [Application resources permissions](#app-resources-permissions) 
+You can't create queries for a datasource by only giving create access for the datasources in the workspace. To create new queries, check the create permission for the datasource and give the create access to queries under [Application resources permissions](#application-resources-permissions) 
 
 #### Edit 
 
