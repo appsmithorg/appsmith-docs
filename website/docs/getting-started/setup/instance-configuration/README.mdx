@@ -32,26 +32,6 @@ docker restart appsmith
 docker-compose restart appsmith
 ```
 
-## Configure Kubernetes installations
-
-To configure a `k8s` installation, simply open the folder of your installation and edit the `config-template/appsmith-configmap.yaml` file.
-
-Remove # before the variables to ensure they're not commented
-
-```
-// Example variable configuration format
-APPSMITH_GOOGLE_MAPS_API_KEY: "YOUR_API_KEY"
-```
-
-After making any changes, **remember to restart the pods** for the changes to take effect
-
-```
-// commands to restart k8s pods
-kubectl apply -f appsmith-configmap.yaml
-kubectl scale deployment appsmith-internal-server --replicas=0
-kubectl scale deployment appsmith-internal-server --replicas=1
-```
-
 ## Configure Helm installations
 
 To configure environment variables using helm, follow these steps:
