@@ -17,7 +17,7 @@ Users under *Admin Settings* > *Access Control* at the sidebar gives you a list 
 
 ![](/img/Users_list.png)
 
-If you want to add a user to a group, open the user from the user's list and In the groups tab, add the user to a new group from "All Groups" list. Similarly, If you want to assign a role to a user, open the user from the user's list and In the roles tab, pick the desired roles from "**All Roles**" list.
+If you want to add a user to a group, open the user from the user's list and In the groups tab, add the user to a new group from "All Groups" list. Similarly, If you want to assign a role to a user, open the user from the user's list and in the roles tab, pick the desired roles from "**All Roles**" list.
 
 <VideoEmbed host="youtube" videoId="mJFlnd94Zd0" title="Add a user to group/Assign a role" caption="Add a user to group/Assign a role"/>
 
