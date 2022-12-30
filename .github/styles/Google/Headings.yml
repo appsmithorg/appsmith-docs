@@ -45,4 +45,6 @@ exceptions:
   - JS Object
   - JS Objects
   - JavaScript
+  - Keycloak
+  - Redis
 
