@@ -225,6 +225,8 @@ They are a set of actions that you can perform on the widget. The following tabl
 | Event             | Description                                                                                                                                  |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onTextChanged** | Sets the action to run when the user enters or changes its inputs. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onFocus** | Sets the action to run when the input area in the phone widget is focused. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+| **onBlur** | Sets the action to run when the input area in the phone widget loses focus. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 | **onSubmit**      | Triggers an action on submit (when the enter key is pressed). See a list of [supported actions](../appsmith-framework/widget-actions/).      |
 
 ### Label

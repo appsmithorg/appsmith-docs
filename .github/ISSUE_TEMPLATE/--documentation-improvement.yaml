@@ -1,5 +1,5 @@
 name: 📖 Documentation Improvement
-description: Suggest improvements to our documentation
+description: Use this template to suggest improvements for our documentation.
 title: "[Docs]: "
 labels: ["Documentation" , "User Education Pod"]
 assignees:
@@ -20,6 +20,13 @@ body:
     - label: I have searched the existing issues
       required: true
 - type: input
+  id: releaseNumberOrDate
+  attributes:
+    label: Release Number or Date
+    description: Add actual/tentative release date or number
+  validations:
+    required: true
+- type: input
   id: docLink
   attributes:
     label: Documentation Link 
@@ -36,14 +43,7 @@ body:
 - type: textarea
   id: whatHappened
   attributes:
-    label: Describe the problem
-    description: Is the documentation missing? Or is it confusing? Why is it confusing?
-  validations:
-    required: true
-- type: textarea
-  id: whatToImprove
-  attributes:
-    label: Describe the improvement
-    description: A clear and concise description of the improvement.  
+    label: Describe the problem and improvement.
+    description: Please provide more context or specify the content that needs to be rewritten. 
   validations:
     required: true

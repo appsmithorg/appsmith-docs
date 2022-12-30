@@ -12,3 +12,8 @@ exceptions:
   - JS
   - UI
   - SSL
+  - BE
+  - EFS
+  - PVC
+  - CE
+  - BE
