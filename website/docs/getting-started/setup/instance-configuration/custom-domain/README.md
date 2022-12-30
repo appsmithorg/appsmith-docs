@@ -88,3 +88,10 @@ It redirects you to a new page. Add your domain name there. Once that's done, it
 :::tip
 Your Appsmith instance should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com) with automatic certificate provisioning and renewals.
 :::
+
+## Kubernetes
+
+To setup TLS on your kubernetes installation of Appsmith, please refer to the instructions [here](Configure the `APPSMITH_CUSTOM_DOMAIN field` in your [instance configuration](../) with your custom domain).
+:::note
+Please do not use the environment variable `APPSMITH_CUSTOM_DOMAIN` to configure tls for a kubernetes installation of Appsmith.
+:::
