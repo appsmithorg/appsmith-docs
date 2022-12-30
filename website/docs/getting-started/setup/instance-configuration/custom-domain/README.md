@@ -48,6 +48,10 @@ APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
 Please ensure port 80 on your server is open and accessible from the Internet for the HTTPS certificate to be provisioned.
 :::
 
+## Kubernetes
+
+The `APPSMITH_CUSTOM_DOMAIN` environment variable is no longer used for configuring TLS for a Kubernetes installation of Appsmith. For more information, see [how to configure TLS for Appsmith Kubernetes installation](/getting-started/setup/installation-guides/kubernetes#configure-tls).
+
 ## AWS AMI
 
 * Once your instance is ready, connect to that instance (via SSH) using your key pair (Create in step 2) and the public IP of your instance (Created in step 4) via the terminal or any SSH Client that you have
@@ -88,8 +92,4 @@ It redirects you to a new page. Add your domain name there. Once that's done, it
 :::tip
 Your Appsmith instance should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com) with automatic certificate provisioning and renewals.
 :::
-
-## Kubernetes
-
-The `APPSMITH_CUSTOM_DOMAIN` environment variable is no longer used for configuring TLS for a Kubernetes installation of Appsmith. To setup TLS on your Kubernetes installation of Appsmith, refer to the instructions [here](Configure the `APPSMITH_CUSTOM_DOMAIN field` in your [instance configuration](../) with your custom domain).
 
