@@ -28,7 +28,7 @@ The container supports generating a free SSL certificate. If you have your own c
 The container checks the certificate files in the folder `<mounting-directory>/ssl` and use them if they exist.
 
 :::note
-In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it considers missing custom certificate and auto provisioning the certificate by `Let's Encrypt`
+In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will fail to find the  custom certificate and auto-provisions the certificate by `Let's Encrypt`
 :::
 
 ## Docker
