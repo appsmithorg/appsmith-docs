@@ -50,7 +50,7 @@ Please ensure port 80 on your server is open and accessible from the Internet fo
 
 ## Kubernetes
 
-The `APPSMITH_CUSTOM_DOMAIN` environment variable is no longer used for configuring TLS for a Kubernetes installation of Appsmith. For more information, see [how to configure TLS for Appsmith Kubernetes installation](/getting-started/setup/installation-guides/kubernetes#configure-tls).
+The `APPSMITH_CUSTOM_DOMAIN` environment variable is **not** used for configuring TLS for a Kubernetes installation of Appsmith. For more information, see [how to configure TLS for Appsmith Kubernetes installation](/getting-started/setup/installation-guides/kubernetes#configure-tls).
 
 ## AWS AMI
 
