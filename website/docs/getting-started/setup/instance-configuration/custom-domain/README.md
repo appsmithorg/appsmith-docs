@@ -31,7 +31,7 @@ The container will check the certificate files in the folder `<mounting-director
 _In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will be considered as missing custom certificate and auto-provisioning the certificate by Let's Encrypt_
 :::
 
-## Docker/K8s
+## Docker
 
 After configuring your custom domain as above, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you are on.
 
