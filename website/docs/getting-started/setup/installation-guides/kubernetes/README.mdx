@@ -570,12 +570,9 @@ If you have already installed Appsmith, run the `helm upgrade` command to upgrad
  helm upgrade --values values.yaml appsmith appsmith/appsmith
 ```
 
-## Setup TLS
-To ensure the security of your Appsmith application, it's recommended to use TLS certificates. One way to do this is by using [Cert Manager](https://cert-manager.io/). Cert Manager secures HTTP traffic with TLS and SSL certificates.
+## Configure TLS
 
-### Configure TLS
-
-The Appsmith Helm chart comes with built-in support for Ingress routes and certificate management through [cert-manager](https://github.com/jetstack/cert-manager). This makes it easy to configure TLS support using certificates from a variety of certificate providers, including [Let's Encrypt](https://letsencrypt.org/).
+To ensure the security of your Appsmith application, it's recommended to use TLS certificates. One way to do this is by using [Cert Manager](https://cert-manager.io/). Cert Manager secures HTTP traffic with TLS and SSL certificates. The Appsmith Helm chart comes with built-in support for Ingress routes and certificate management through [cert-manager](https://github.com/jetstack/cert-manager). This makes it easy to configure TLS support using certificates from a variety of certificate providers, including [Let's Encrypt](https://letsencrypt.org/).
 
 The steps below explain how to use Ingress routes and cert-manager to configure TLS for your Appsmith deployment using a free `Let's Encrypt` certificate:
 
@@ -637,44 +634,109 @@ spec:
 helm install cert-manager --namespace cert-manager jetstack/cert-manager --version v1.5.3
 ```
 
-8. To install Appsmith with integration to Ingress and cert-manager, you can either use a command or add additional parameters to the values.yaml file.
-
+8. Install Appsmith with integration to Ingress and cert-manager.
 
 <Tabs groupId="appsmithEditions">
   <TabItem label="Community Edition" value="communityEdition"> 
-    <details id="usingCommand">
-    <summary>Follow the below steps to configure using a command</summary>
-    You can use the Helm chart with the following additional parameters. Replace the DOMAIN placeholder with your specific domain name in the below command and run it:
-    
-    ```bash
-    helm upgrade appsmith appsmith/appsmith \
-      --set service.type=ClusterIP \
-      --set ingress.enabled=true \
-      --set ingress.tls=true \
-      --set ingress.certManager=true \
-      --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt-appsmith \
-      --set ingress.hosts[0].host=DOMAIN \
-      --set ingress.certManagerTls[0].hosts[0]=DOMAIN \
-      --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
-      --set ingress.className=nginx
-    ```   
-    </details>
-    <details id="usingValues">
-    <summary>Follow the below steps to configure using a `values.yaml` file</summary>
-    </details>
-  </TabItem>
-  <TabItem label="Business Edition" value="businessEdition"> 
-     <details id="usingCommand">
+  You can either use a command or add additional parameters to the `values.yaml` file.
+
+   <details id="usingCommand">
      <summary>Follow the below steps to configure using a command</summary>
       You can use the Helm chart with the following additional parameters. Replace the DOMAIN placeholder with your specific domain name in the below command and run it:
-    
 
-     </details>
+```bash
+  helm upgrade appsmith appsmith/appsmith \
+    --set service.type=ClusterIP \
+    --set ingress.enabled=true \
+    --set ingress.tls=true \
+    --set ingress.certManager=true \
+    --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt-appsmith \
+    --set ingress.hosts[0].host=<DOMAIN> \
+    --set ingress.certManagerTls[0].hosts[0]=<DOMAIN> \
+    --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
+    --set ingress.className=nginx
+```     
+
+  </details>
      <details id="usingValues">
      <summary>Follow the below steps to configure using a `values.yaml` file</summary>
       Open the `values.yaml` file, and update the parameters as shown below:
-      Run the below command once the parameter values are updated:
-     </details>
+      Run the below command once the parameter values are updated:    
+
+```bash
+ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-appsmith"
+    hosts:
+      - host: example.appsmith.com
+    tls: true
+    secrets: []
+    certManager: true
+    certManagerTls:
+      - hosts:
+          - example.appsmith.com
+        secretName: letsencrypt-appsmith
+    className: "nginx"
+```
+Run the below command once the parameter values are updated:
+
+```bash
+helm upgrade --values values.yaml appsmith appsmith/appsmith
+```
+
+</details>
+  </TabItem>
+  <TabItem label="Business Edition" value="businessEdition"> 
+   You can either use a command or add additional parameters to the `values.yaml` file.
+   
+     <details id="usingCommand">
+     <summary>Follow the below steps to configure using a command</summary>
+      You can use the Helm chart with the following additional parameters. Replace the DOMAIN placeholder with your specific domain name in the below command and run it:
+
+```bash
+  helm upgrade appsmith appsmith-ee/appsmith \
+    --set service.type=ClusterIP \
+    --set ingress.enabled=true \
+    --set ingress.tls=true \
+    --set ingress.certManager=true \
+    --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt-appsmith \
+    --set ingress.hosts[0].host=<DOMAIN> \
+    --set ingress.certManagerTls[0].hosts[0]=<DOMAIN> \
+    --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
+    --set ingress.className=nginx
+```     
+
+  </details>
+     <details id="usingValues">
+     <summary>Follow the below steps to configure using a `values.yaml` file</summary>
+      Open the `values.yaml` file, and update the parameters as shown below:
+      Run the below command once the parameter values are updated:    
+
+```bash
+ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-appsmith"
+    hosts:
+      - host: example.appsmith.com
+    tls: true
+    secrets: []
+    certManager: true
+    certManagerTls:
+      - hosts:
+          - example.appsmith.com
+        secretName: letsencrypt-appsmith
+    className: "nginx"
+```
+Run the below command once the parameter values are updated:
+
+```bash
+helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+```
+
+</details>
+
   </TabItem>
 </Tabs> 
 
