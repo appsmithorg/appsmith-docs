@@ -1,7 +1,7 @@
 # Roles
- A Role is a collection of permissions that grant access to perform certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than assigning individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions and a permission can be mapped to multiple roles. However, a role cannot be nested, i.e. it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
+ A Role is a collection of permissions that grant access to perform certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than assigning individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions and a permission can be mapped to multiple roles. However, a role can't be nested, i.e. it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
  
- Appsmith provides three built-in roles - **Administrator**, **Developer** and **App Viewer**.  With Granular Access Contorl (GAC), you can create a custom role that provides fine-grained access control. 
+ Appsmith provides three built-in roles - **Administrator**, **Developer** and **App Viewer**.  With Granular Access Control (GAC), you can create a custom role that provides fine-grained access control. 
 
 ## Resources
 
