@@ -5,9 +5,9 @@ Granular Access Control (GAC), in simple terms, define who can have access to va
 
 Following are the components of an Appsmith instance that help you in implementing GAC.
 
-### Users
+## Users
 
-### Groups
+## Groups
 
 A group is a collection of users. Groups let you specify roles for multiple users, making it easier to manage the permissions for those users. You can view the exisiting groups and the roles mapped to them or create a new group under Admin Settings.
 
@@ -17,6 +17,6 @@ To view the existing groups and further look at the users and roles assigned to 
 1. Click **Groups** under Access Control from the sidebar. You'll see a list of all the groups in your Appsmith instance 
 2. Open the group you want to check. 
 
-### Roles 
+## Roles 
 
 Permissions are rules that let you define the access to a resource. However, it's difficult to map each permission to a user or a group. A Role is a collection of permissions that enables a user to manage multiple permissions rather than assigning individual permissions to users/groups. Check [Roles](/advanced-concepts/access-control/granular-access-control/roles) to learn more about Roles and permissions.
