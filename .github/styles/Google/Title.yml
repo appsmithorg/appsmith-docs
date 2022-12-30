@@ -6,3 +6,4 @@ scope: heading.h1
 match: $title
 exceptions:
   - k8s 
+  - is
