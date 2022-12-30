@@ -18,3 +18,6 @@ exceptions:
   - CE
   - BE
   - TLS
+  - AWS 
+  - ECS
+  - AMI
