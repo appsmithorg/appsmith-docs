@@ -17,3 +17,4 @@ exceptions:
   - PVC
   - CE
   - BE
+  - TLS
