@@ -8,7 +8,7 @@ description: >-
 
 Databases are an essential part of many applications and are used to store and manage data. They provide a structured way to organize, retrieve, and manipulate data, and are designed to be efficient and reliable. You can run queries to read and write data directly from the Appsmith editor. 
 
-:::info
+:::note
 Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Read more about [security](/product/security#security-measures-within-appsmith). 
 :::
 
@@ -17,12 +17,9 @@ Appsmith applications are **secure-by-default**. All sensitive credentials, such
 
 
 
-:::tip
-Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
+:::info important
 
-18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted
-
-This is a guide on how to [whitelist appsmith on AWS](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist).
+As a self-hosted Appsmith user, you must [whitelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP address of the Appsmith deployment on your database instance or VPC. `18.223.74.85` and `3.131.104.27` are the IP addresses of the Appsmith cloud instances that need to be whitelisted
 :::
 
 
@@ -47,12 +44,13 @@ Appsmith provides two sample datasets to help you connect the data and test the 
 
 The mock databases are public and shared by all users, which may result in mangled data. To refresh the data, the databases are automatically **reset every day**, so any updates made to these databases are temporary.
 
-<VideoEmbed host="youtube" videoId="TrV8h_Dvhbg" title="Using A Sample Database " caption="How to use sample database | Example"/>
+<VideoEmbed host="youtube" videoId="TrV8h_Dvhbg" title="Using A Sample Database " caption="How to use mock database | Example"/>
 
 * Click on **+** next to Datasources.
 * Select the mock **users** PostgreSQL database.
-* Now, click the **+** icon next to the **queries/js** and choose the user datasource.
-* Add your code in the body section and **run** your query. For example:
+* You can create queries by selecting the **New API +** button available on the **datasource** page.
+* Write the query in the query editor and click the **Run** button to execute it. For example:
+
 ```sql
 SELECT * FROM users;
 ```

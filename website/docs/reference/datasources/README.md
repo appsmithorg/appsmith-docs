@@ -148,7 +148,7 @@ Databases are an essential part of many applications and are used to store and m
 Learn More about [Databases](/core-concepts/connecting-to-data-sources/connecting-to-databases)
 
 ## APIs
-With appsmith, you can connect with a wide range of tools and platforms; if there isn't a supported datasource, you can connect using the REST API. Following APIs are supported by Appsmith:
+With Appsmith, you can connect with a wide range of tools and platforms; if there isn't a supported datasource, you can connect using the REST API. Following APIs are supported by Appsmith:
 
 
 
