@@ -17,6 +17,8 @@ There are two steps to enable the signature header for a particular [REST dataso
 
 Now _Save_ the datasource and any action built on top of this datasource should now have an `X-Appsmith-Signature` header with a JWT (described below) as it's value.
 
+
+
 ## Contents of the JWT
 
 A [JSON Web Token (JWT)](https://jwt.io) is made up of three parts. The header, payload, and signature. The header and payload are essentially base64 encoded JSON objects.

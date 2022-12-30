@@ -26,7 +26,6 @@ This is a guide on how to [whitelist appsmith on AWS](https://docs.appsmith.com/
 :::
 
 
-
 * On the **Explorer tab**, click the **+** sign next to **Datasources**. 
 * Choose a Database from the [Datasources](/reference/datasources/) that Appsmith can connect to.
 * Provide the **configuration details** required to connect to your database. 
