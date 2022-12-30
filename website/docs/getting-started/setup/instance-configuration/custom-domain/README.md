@@ -19,7 +19,7 @@ SSL automatically set up for your instance once you configure a custom domain fo
 
 ## Custom SSL certificate
 
-The container supports to generate a free SSL certificate. If you have your owned certificate, please follow these steps to use it inside the container.
+The container supports generating a free SSL certificate. If you have your own certificate, please follow these steps to use it inside the container.
 
 * Firstly, please rename your certificate file as `fullchain.pem` and key file as `privkey.pem`
 * Copy these files into the sub-directory `<mounting-directory>/ssl/` (_Note: Please change `<mounting-directory>` by the mounting volume directory in the `docker-compose.yml`. Default is `./stacks`_)
