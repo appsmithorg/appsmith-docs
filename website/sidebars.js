@@ -515,7 +515,7 @@ const sidebars = {
           items: [
           {
             type: 'category',
-            label: 'Granular Access Control (GAC)',
+            label: 'Granular Access Control',
             link: {
               type: 'doc',
               id: 'advanced-concepts/access-control/granular-access-control/README',
