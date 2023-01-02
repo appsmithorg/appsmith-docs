@@ -14,46 +14,7 @@ In the context of a REST API, one-off queries are typically used when someone ne
 
 You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
-
-### Connecting to a authenticated API
-
-A one-off query is a single request for information or assistance, while an authenticated API is an API that requires authentication before allowing access to its resources or capability. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or capability from unauthorized access:
-
- <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
-
-
-* Click on the **+** icon next to the Datasources and choose **Authenticated API**.
-* Provide the configuration details required to connect to your API.
-* Rename and save your datasource.
-
-
-
-Once your datasource has been added successfully, a success pop-up appears at the top. 
-
-
-### Importing CURL commands
-
-CURL is a command-line tool that can be used to make HTTP requests to a server. You can use CURL to send various types of HTTP requests, such as GET, POST, PUT, and DELETE, to a server to retrieve or manipulate data. Appsmith makes it easy to import your APIs into your application using CURL commands.
-
-
-To import CURL commands into your application:
-
-* Click on the **+** icon next to the Datasources and choose **CURL Import**.
-* Add your command, for example:
-
-```js
-curl -X GET https://example.com/resource
-```
-
-![](</img/import_curl_(1).gif>)
-
-## Passing data/parameters to API calls
-
-There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
-
-<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
-
-## Mock API
+#### Mock API
 
 Appsmith provides a mock API so you can fetch the data and perform actions using a RESTful interface.
 
@@ -103,6 +64,45 @@ curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
 
 The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) is a REST interface that allows you to create and modify your existing APIs.
 
+
+
+### Connecting to a authenticated API
+
+A one-off query is a single request for information or assistance, while an authenticated API is an API that requires authentication before allowing access to its resources or capability. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or capability from unauthorized access:
+
+ <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
+
+
+* Click on the **+** icon next to the Datasources and choose **Authenticated API**.
+* Provide the configuration details required to connect to your API.
+* Rename and save your datasource.
+
+
+
+Once your datasource has been added successfully, a success pop-up appears at the top. 
+
+
+### Importing CURL commands
+
+CURL is a command-line tool that can be used to make HTTP requests to a server. You can use CURL to send various types of HTTP requests, such as GET, POST, PUT, and DELETE, to a server to retrieve or manipulate data. Appsmith makes it easy to import your APIs into your application using CURL commands.
+
+
+To import CURL commands into your application:
+
+* Click on the **+** icon next to the Datasources and choose **CURL Import**.
+* Add your command, for example:
+
+```js
+curl -X GET https://example.com/resource
+```
+
+![](</img/import_curl_(1).gif>)
+
+## Passing data/parameters to API calls
+
+There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
+
+<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
 
 
 
