@@ -85,8 +85,11 @@ When you tick the checkbox, it enables the Required property, and the input box 
 
 <VideoEmbed host="youtube" videoId="K3VkoyWXcCo" title="Error Message" caption="Error Message"/>
 
-### Show step arrows
-`Show step arrows` controls the visibility of the increase and decrease arrows in the widget. They aren't visible on the widget if you turn off this property. You can also write `JS` code to show or hide the arrows. 
+#### Show step arrows
+
+When `Show step arrows` property is turned on, the step arrows are displayed and user can use them to increase or decrease the value inside the widget. You can also use JavaScript code to dynamically show or hide the step arrows based on certain conditions or events. This can be useful if you want to enable or disable the step arrows based on the current state of the widget or other factors.
+
+<VideoEmbed host="youtube" videoId="e25pBl3DFhM" title="Show step arrows" caption="Show step arrows"/>
 
 #### Visible
 
