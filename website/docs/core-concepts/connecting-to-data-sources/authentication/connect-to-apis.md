@@ -7,7 +7,7 @@ description: You can hit any REST endpoint available on the public internet
 Configuring APIs involves setting up and managing the various aspects of an API that allow it to function effectively. This can include defining the API's structure and capability, setting up authentication and authorization, and establishing connections with other systems or services.
 
 :::tip
-If your API isn't available on the public internet, you must expose it via a service such as [https://ngrok.com/](https://ngrok.com/)
+If your API isn't available on the public internet, you must expose it via a service such as [https://ngrok.com/](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith#using-ngrok)
 :::
 
 ## API query editor
@@ -20,9 +20,11 @@ The API pane is a REST interface that allows you to create and modify your exist
 
 Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query.
 
+
+
 ### Name
 
-By default, Appsmith provides a default name for the data source it creates. You can edit this name by clicking on the pencil icon next to it. It's important to ensure that the name is unique, as it serves as an identifier for the queries on the page and is used to access the data source's properties throughout the application.
+By default, Appsmith provides a default name for the data source it creates. You can edit this name by clicking on the pencil icon next to it. For more information, see [common parameters section.](#name-2)
 
 ### Method
 
@@ -32,9 +34,7 @@ It's important to choose the appropriate method based on the task you want to ac
 
 ### URL
 
-The URL Path field in an API query specifies the address of the API endpoint you want to access. To use this field, you can enter the URL of the API you want to use. For example, if you want to access the Appsmith mock API, you would enter the URL `https://mock-api.appsmith.com` into the URL Path field. 
-
-The URL Path is a critical component of an API query, as it determines which API and which specific data or capability you are trying to access. Make sure to enter the correct URL for the API you want to use
+The URL Path field in an API query specifies the address of the API endpoint you want to access. To use this field, you can enter the URL of the API you want to use. 
 
 ### Headers
 
@@ -164,8 +164,6 @@ At this point, you should know enough to start a project of your own and start p
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
 * [Datasources](/reference/datasources)
 * [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
-
-
 
 
 
