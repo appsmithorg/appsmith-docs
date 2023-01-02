@@ -59,6 +59,8 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/kubernetes/README',
                   },
                   items: [
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
@@ -174,6 +176,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/upgrade-to-business-edition/docker',
+                'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
           ],
@@ -428,7 +431,7 @@ const sidebars = {
             'reference/datasources/hubspot',
             {
               type: 'category',
-              label: 'Mongo',
+              label: 'MongoDB',
               link: {
                 type: 'doc',
                 id: 'reference/datasources/querying-mongodb/README',
@@ -473,7 +476,8 @@ const sidebars = {
                 'reference/appsmith-framework/widget-actions/copy-to-clipboard',
                 'reference/appsmith-framework/widget-actions/reset-widget',
                 'reference/appsmith-framework/widget-actions/intervals-time-events',
-              ],
+                'reference/appsmith-framework/widget-actions/post-message'
+              ]
             },
           ],
         },
