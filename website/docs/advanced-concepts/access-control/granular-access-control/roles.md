@@ -33,11 +33,11 @@ Let's understand these permissions in detail.
 
 ### Application resources permissions
 
-On an application level, here are the permissions that can be assigned to user or a group -
+In Application Resources, here are the permissions that can be assigned to user or a group -
 
 #### Create
 
-With this permission, users can create applications, pages, API queries and JS Objects. This also automatically enables permission to view, edit, and delete existing pages, API, queries and JS Objects. Under Application Resources, you can control the **Create** permission at different hierarchical levels:
+With this permission, users can create applications, pages, API queries and JS Objects. Under Application Resources, you can control the **Create** permission at different hierarchical levels:
 
 ##### Workspace 
 
@@ -59,7 +59,7 @@ Edit permission can be given at different hierarchical levels -
 
 ##### Workspace 
 
-When you grant the **Create** permission to a workspace, it provides access to edit the newly created applications in that particular workspace. 
+When you grant the **Edit** permission to a workspace, it provides access to edit the newly created applications in that particular workspace. 
 
 ##### Application
 
@@ -81,7 +81,7 @@ Delete permission behaves differently at various hierarchical levels -
 
 ##### Workspace 
 
- If you give delete permission to the workspace, It gives access to remove any application from the respective workspace. 
+If you give delete permission to the workspace, It gives access to remove any application from the respective workspace. 
 
 ##### Application
 
