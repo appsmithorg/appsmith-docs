@@ -20,6 +20,12 @@ Upgrade your Community Edition to a Business Edition by selecting below installa
             <b><a href="/getting-started/setup/upgrade-to-business-edition/docker">Docker</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
+            <div class="containerCol">
+                <a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">
+                <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
+                </a> 
+            </div> 
+            <b><a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">Kubernetes</a></b>
        </div>
         <div class="columnGrid column-three" align="center">
         </div>
