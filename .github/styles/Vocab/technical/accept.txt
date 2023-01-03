@@ -145,3 +145,9 @@ backend
 DB
 Datasources
 dyno
+
+Lodash
+lodash
+xmlParser
+moment
+excelJS
