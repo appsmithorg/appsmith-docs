@@ -68,7 +68,7 @@ clearInterval("myTimer");
 ### Signature
 
 ```javascript
-setTimeout(callbackFunction: Function, delay: number)
+setTimeout(callbackFunction: Function, delay = 0, param1, param2, /* … ,*/ paramN)
 ```
 
 ### Arguments
@@ -76,10 +76,18 @@ setTimeout(callbackFunction: Function, delay: number)
 | Argument Name | Description |
 | ------------- | ----------- |
 | **callbackFunction** | A function to be called once after a `delay` number of milliseconds have passed. |
-| **delay** | The number of milliseconds to wait before calling the `callbackFunction`. |
+| **delay** | The number of milliseconds to wait before calling the `callbackFunction`. Defaults to 0. |
+| **param** | Optional parameters to pass to the `callbackFunction`. `param1` is be passed as the first parameter, `param2` as the second, and so forth. |
 
-### Example
+### Examples
 
 ```javascript
+// Shows the message "5 seconds have passed" after 5000 milliseconds.
 setTimeout(() => { showAlert("5 seconds have passed") }, 5000);
+```
+
+```javascript
+// 3rd argument of the setTimeout function ("Hello after 1 second")
+// is passed as the first argument to callbackFunction
+setTimeout((message) => showAlert(message), 1000,  "Hello after 1 second")
 ```
