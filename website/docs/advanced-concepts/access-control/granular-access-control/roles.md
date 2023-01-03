@@ -9,7 +9,7 @@ A resource refers to specific components or aspects of an application that can b
 
 * **Application Resources:** These are resources related to the applications built in Appsmith, such as individual pages or views within the application.
 * **Datasource and Queries:** These are resources related to databases or queries created in Appsmith, such as a MongoDB setup used as a data source.
-* **Groups and Roles:** These are resources related to the roles available for the workspaces in an Appsmith instance. For example, if you have two workspaces - H.R. and Finance - then roles related to H.R. and finance would be available.
+* **Groups and Roles:** These are resources related to the roles available for the workspaces and custom groups & roles available in an Appsmith instance. For example, if you have two workspaces - H.R. and Finance - then roles related to H.R. and finance would be available.
 * **Others:** These are resources related to workspaces and audit logs in Appsmith.
 
 ## Permissions
