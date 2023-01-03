@@ -106,4 +106,9 @@ defaultValue
 JavaScript
 filterText
 back-end
-Application
+CRDs
+backend
+DB
+Datasources
+dyno
+
