@@ -181,11 +181,11 @@ With this permission, users can create new groups and roles.
 
 ##### Groups
 
-When the create permission is enabled for groups, a user can create a new group. This also automatically enables permission to view, edit, delete, invite, or remove a user from an existing group.
+When the create permission is enabled for groups, a user can create a new group. 
 
 ##### Roles
 
-With create permission enabled for roles, a user can create a new role. This also automatically enables permission to view, edit, delete, the existing roles.
+With create permission enabled for roles, a user can create a new role. 
 
 #### Edit 
 
@@ -201,7 +201,7 @@ With edit permission enables for roles, a user can modify an existing role.
 
 :::info
 
-You can't edit the built-in roles from Appsmith. You can only the edit the custom roles defined by any user in your instance.
+You can't edit the built-in roles from Appsmith. You can only edit the custom roles defined by any user in your instance.
 :::
 
 #### View
@@ -214,7 +214,7 @@ This permission grants users to delete and view the existing groups and roles.
 
 :::info
 
-You can't delete the built-in roles from Appsmith. You can only the delete the custom roles defined by any user in your instance.
+You can't delete the built-in roles from Appsmith. You can only delete the custom roles defined by any user in your instance.
 :::
 
 #### Invite Users
