@@ -17,3 +17,7 @@ exceptions:
   - PVC
   - CE
   - BE
+  - TLS
+  - AWS 
+  - ECS
+  - AMI
