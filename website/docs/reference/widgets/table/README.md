@@ -4,7 +4,6 @@ The table widget displays data in rows and columns. You can display data from an
 
 <VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget?" caption="How to use Table Widget?"/>
 
-
 :::info
 If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#pagination).
 :::
@@ -14,7 +13,7 @@ If you already know the basics and want to learn how to display data and handle 
 Properties allow you to edit the table, connect it with other widgets and customize the user actions. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
 
 | Property       | Type | Definition | Code Snippet |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ---------------|------|------------|--------------|
 | **Table Data**                 | Widget | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax. |
 | **Columns**                    | Widget | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
 | **Cell wrapping**              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
@@ -109,7 +108,7 @@ Once the `get_count` query is successfully created, enter the following code to 
 {{get_count.data[0].count}}
 ```
 
-**selectedRow**
+#### selectedRow
 
 A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.\
 selectedRow is an internal property that fetches the data of the table row that the user selected. You can bind different widgets to each table row using this property.
@@ -136,7 +135,7 @@ If no row is selected, selectedRow shows the column names with no data.
 
 ![](/img/slectedRow\_default.png)
 
-**Displaying column value using selectedRow**
+##### Displaying column value using selectedRow
 
 If you want to fetch the data from a column in the row selected on the table, add the column's name after the selected row. You can refer to the code snippet below:
 
@@ -281,18 +280,6 @@ The following video shows how to bind a text widget to `Table_1` using searchTex
 
 <VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
 
-### Events
-
-These are a set of actions that you can perform on the widget. The following table lists the actions:
-
-| Action                 | Description                                                                                                                                                                                                                                                                                                       |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                  |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property isn't available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](/reference/appsmith-framework/widget-actions). |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                           |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                 |
-
 ### Header options
 
 These are the options that you can add to the table header. Currently, the following features are available to add or remove from the table header -
@@ -302,13 +289,25 @@ These are the options that you can add to the table header. Currently, the follo
 * Download
 * Pagination
 
-### Styles
+## Events
 
-Style properties allow you to change the look and feel of the table. It has several options such as -
+You can define functions that are called when these events are triggered in the widget.
 
-* Changing the style and size of the font;
-* Text alignment;
-* Playing around with the color of the text or cell background.
+| Action                 | Description               |
+| ---------------------- | ------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                  |
+| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property isn't available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](/reference/appsmith-framework/widget-actions). |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                           |
+| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                 |
+
+## Styles
+
+Style properties allow you to change the look and feel of the table. It has several options, such as:
+
+* Changing the style and size of the font
+* Text alignment
+* Playing around with the color of the text or cell background
 
 | Style                     | Description                                              |
 | ------------------------- | -------------------------------------------------------- |
@@ -318,7 +317,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 | **Font Style**            | Allows you to choose a font style, such as **bold** or _italic_. |
 | **Text Align**            | Sets the label alignment of the text.                    |
 | **Vertical Alignment**    | Sets the alignment of the widget.                        |
-| **Cell Borders** | Allows you to choose the border style for the table's cells. Default (all borders), horizontal borders only, or no borders. |
+| **Cell Borders**          | Allows you to choose the border style for the table's cells. Default (all borders), horizontal borders only, or no borders. |
 | **Border Radius**         | Allows you to define curved corners.                     |
 | **Box Shadow**            | Allows you to choose from the available shadow styles.   |
 
