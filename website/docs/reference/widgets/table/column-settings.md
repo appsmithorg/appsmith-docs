@@ -60,7 +60,7 @@ The size of image can be adjusted using the Image Size property under Style > Ge
 You can also add menu items dynamically using the [Menu Items Source as Dynamic](../menu-button.md#dynamic).
 
 :::note
- You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you will only be able to use `{{currentItem}}` and `{{currentIndex}}` bindings [(docs here)](../menu-button.md#how-to-use-currentitem-and-currentindex) that references the selected item and it's index respectively on the menu button.
+ You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use [`{{currentItem}}` and `{{currentIndex}}`](../menu-button.md#how-to-use-currentitem-and-currentindex) bindings that reference the selected item, and it's index respectively on the menu button.
 :::
 
 #### Number
