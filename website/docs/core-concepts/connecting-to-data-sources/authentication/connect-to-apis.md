@@ -34,7 +34,7 @@ Configuring an API query involves specifying the various components that make up
 
 ### Name
 
-By default, Appsmith provides a default name for the data source it creates. You can edit this name by clicking on the pencil icon next to it. It's important to ensure that the name is unique, as it serves as an identifier for the queries on the page and is used to access the data source's properties throughout the application.
+When you create a datasource in Appsmith, a default name is provided for you. You can change this name by clicking on the pencil icon. It's important to make sure that the name is unique, as it serves as an identifier for queries on the page and is used to access the datasource properties in the application.
 
 ### Method
 
