@@ -131,8 +131,7 @@ If you give create permission to the workspace, it gives access to create dataso
 
 ##### Datasource
 
-If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace tree and check the create permission adjacent to the respective datasource. **Create** for a particular datasource allows the user to tweak the datasource configurations and further test, delete or save it.
-You can't create queries for a datasource by only giving create access for the datasources in the workspace. To make new queries, check the create permission for the datasource and give the create access to queries under [Application resources permissions](#application-resources-permissions) 
+If you want the user to have create access only to a specific datasource in a workspace, open the respective workspace tree and check the create permission adjacent to the respective datasource. Create on a particular datasource allows you to create queries on that datasource, but, you can't create queries for a datasource by only giving create access for the datasources in the workspace. To make new queries, check the create permission for the datasource and give the create access to queries under [Application resources permissions](#application-resources-permissions) 
 
 #### Edit 
 
@@ -165,7 +164,7 @@ Delete permission can be given at various hierarchical levels -
 
 ##### Workspace
 
-If you give delete permission to the workspace, It gives access to remove any datasource from the respective workspace. 
+If you give delete permission to the workspace, it provides access to remove any datasource from the respective workspace unless any existing queries are using it. You can’t delete the datasource used in any existing queries.
 
 ##### Datasource
 
