@@ -8,9 +8,6 @@ description: >-
 
 Databases are an essential part of many applications and are used to store and manage data. They provide a structured way to organize, retrieve, and manipulate data, and are designed to be efficient and reliable. You can run queries to read and write data directly from the Appsmith editor. 
 
-:::note
-Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). For more information, see [security](/product/security#security-measures-within-appsmith). 
-:::
 
 
 ### Connecting to a database
@@ -18,7 +15,7 @@ Appsmith applications are **secure-by-default**. All sensitive credentials, such
 
 :::info important
 
-As a self-hosted Appsmith user, it is necessary to [safelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP addresses of the Appsmith deployment on your database instance or VPC. The IP addresses to be added to the safelist are `18.223.74.85` and `3.131.104.27`, which are the IP addresses of the Appsmith cloud instances.
+As a self-hosted Appsmith user, it's necessary to [safelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP addresses of the Appsmith deployment on your database instance or VPC. The IP addresses to be added to the safelist are `18.223.74.85` and `3.131.104.27`, which are the IP addresses of the Appsmith cloud instances.
 :::
 
 

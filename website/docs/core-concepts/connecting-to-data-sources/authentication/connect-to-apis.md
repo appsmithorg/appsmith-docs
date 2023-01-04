@@ -20,16 +20,16 @@ The API pane is a REST interface that allows you to create and modify your exist
 
 Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query.
 
-| Property                       	| Configure                    	| Description                                                                                                                                                      	|
+| Setting                       	| Availability                    	| Description                                                                                                                                                      	|
 |--------------------------------	|------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Name                           	| REST API & Authenticated API 	| The `name` property allows you to specify a name for the API.                                                                                                    	|
-| Method                         	| REST API                     	| Query method is a request made to the server to retrieve specific data.                                                                                          	|
-| URL                            	| REST API & Authenticated API 	| The URL Path field in an API query specifies the address of the API endpoint you want to access.                                                                 	|
-| Headers                        	| REST API & Authenticated API 	| Headers are key-value pairs that can be sent along with an HTTP request to provide additional information about the request context.                             	|
-| Query parameters               	| REST API & Authenticated API 	| Query parameters are used to filter and sort the data that's being retrieved, or to specify certain options for the API's behavior.                             	|
-| Body                           	| REST API                     	| The body is the part of the request that contains the payload of the request, which can include data that's sent to the server for processing or storage.       	|
-| Pagination                     	| REST API                     	| Pagination is the process of dividing a large set of data into smaller chunks or pages, and providing a way for the client to access the data one page at a time 	|
-| Send appsmith signature header 	| Authenticated API            	| When you want to ensure that the incoming requests originate from Appsmith, you can enable Send Appsmith Signature Header property.                              	|
+| [Name](#name)                           	| REST API & Authenticated API 	| The `name` property allows you to specify a name for the API.                                                                                                    	|
+| [Method](#method)                         	| REST API                     	| Query method is a request made to the server to retrieve specific data.                                                                                          	|
+| [URL](#url)                            	| REST API & Authenticated API 	| The URL Path field in an API query specifies the address of the API endpoint you want to access.                                                                 	|
+| [Headers](#headers)                        	| REST API & Authenticated API 	| Headers are key-value pairs that can be sent along with an HTTP request to provide additional information about the request context.                             	|
+| [Query parameters](#query-parameters)               	| REST API & Authenticated API 	| Query parameters are used to filter and sort the data that's being retrieved, or to specify certain options for the API's behavior.                             	|
+| [Body](#body)                           	| REST API                     	| The body is the part of the request that contains the payload of the request, which can include data that's sent to the server for processing or storage.       	|
+| [Pagination](#pagination)                     	| REST API                     	| Pagination is the process of dividing a large set of data into smaller chunks or pages, and providing a way for the client to access the data one page at a time 	|
+| [Send appsmith signature header](#send-appsmith-signature-header) 	| Authenticated API            	| When you want to ensure that the incoming requests originate from Appsmith, you can enable Send Appsmith Signature Header property.                              	|
 
 
 ### Name
@@ -91,7 +91,14 @@ Authentication refers to the process of verifying the identity of a client or us
 To save the URL of a REST API as a data source and access its authentication settings, you can simply click the 
 `SAVE AS DATASOURCE` button and save the API query as a [authenticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
 
-#### Authentication type
+
+### Send appsmith signature header
+
+When you want to ensure that the incoming requests originate from Appsmith, you can enable `Send Appsmith Signature Header` by selecting **Yes**. You’ll see a new field - **Session Details Signature Key** to supply the signature key.
+
+![Appsmith Signature Header](</img/OAuth__API_Integration__Appsmith_Signature_Header__Enable__.png>)
+
+### Authentication type
 
 Common authentication types for REST APIs include: 
 
@@ -102,32 +109,18 @@ The authentication type that's used by an API can have a significant impact on i
 
 You can define an [authentication type](/core-concepts/connecting-to-data-sources/authentication/authentication-type) for REST APIs by using the protocols available on Appsmith.
 
+
 ### Settings
 
 The Query Settings Pane provides access to properties for the query. You can specify the following [settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) in the Settings tab on the Appsmith Query Editor.
 
 The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options, or to control the behavior of the API as a whole.
 
-### Send appsmith signature header
-
-When you want to ensure that the incoming requests originate from Appsmith, you can enable `Send Appsmith Signature Header` by selecting **Yes**. You’ll see a new field - **Session Details Signature Key** to supply the signature key.
-
-![Appsmith Signature Header](</img/OAuth__API_Integration__Appsmith_Signature_Header__Enable__.png>)
-
-
-
-
 ## Use self-signed certificate
 
-Self-signed certificates are certificates that are generated and signed by the same entity, rather than by a trusted third-party certificate authority. They're often used in testing or internal environments because they can be created at no cost, and they provide encryption for incoming and outgoing data.
+Self-signed certificates are certificates that are generated and signed by the same entity that uses them, rather than by a trusted third-party certificate authority. These certificates can be configured as part of the Advanced Settings. They're often used in testing or internal environments because they can be created at no cost, and they provide encryption for incoming and outgoing data. 
 
 You can check [this](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates) documentation to learn more about self-signed certificate.
-
-### Smart JSON substitution
-
-The smart JSON substitution feature allows Appsmith to dynamically perform type conversions on field values in a request body. The video below illustrates how to use this feature:
-
-<VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/>
 
 
 ## Troubleshooting
@@ -142,7 +135,7 @@ At this point, you should know enough to start a project of your own and start p
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
 * [Datasources](/reference/datasources)
-* [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+* [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith#using-hostdockerinternal)
 
 
 
