@@ -22,13 +22,13 @@ Configuring an API query involves specifying the various components that make up
 
 | Setting                       	| Availability                    	| Description                                                                                                                                                      	|
 |--------------------------------	|------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| [Name](#name)                           	| REST API & Authenticated API 	| The `name` property allows you to specify a name for the API.                                                                                                    	|
-| [Method](#method)                         	| REST API                     	| Query method is a request made to the server to retrieve specific data.                                                                                          	|
-| [URL](#url)                            	| REST API & Authenticated API 	| The URL Path field in an API query specifies the address of the API endpoint you want to access.                                                                 	|
-| [Headers](#headers)                        	| REST API & Authenticated API 	| Headers are key-value pairs that can be sent along with an HTTP request to provide additional information about the request context.                             	|
-| [Query parameters](#query-parameters)               	| REST API & Authenticated API 	| Query parameters are used to filter and sort the data that's being retrieved, or to specify certain options for the API's behavior.                             	|
-| [Body](#body)                           	| REST API                     	| The body is the part of the request that contains the payload of the request, which can include data that's sent to the server for processing or storage.       	|
-| [Pagination](#pagination)                     	| REST API                     	| Pagination is the process of dividing a large set of data into smaller chunks or pages, and providing a way for the client to access the data one page at a time 	|
+| [Name](#name)                           	| REST API & Authenticated API 	| Specify a name for the API.                                                                                                     	|
+| [Method](#method)                         	| REST API                     	| Select the method for the API request.
+| [URL](#url)                            	| REST API & Authenticated API 	| Specify the URL for the API endpoint.
+| [Headers](#headers)                        	| REST API & Authenticated API 	| Set any required HTTP headers for the API request.
+| [Query parameters](#query-parameters)               	| REST API & Authenticated API 	|  Provide any query parameters for the API request, if necessary.
+| [Body](#body)                           	| REST API                     	| Set the request body payload for API requests that use a body.
+| [Pagination](#pagination)                     	| REST API                     	| Set the pagination, if applicable.
 | [Send appsmith signature header](#send-appsmith-signature-header) 	| Authenticated API            	| When you want to ensure that the incoming requests originate from Appsmith, you can enable Send Appsmith Signature Header property.                              	|
 
 
