@@ -113,7 +113,7 @@ You may not be able to install or use methods of certain libraries due to platfo
 
 
 ### Troubleshooting
-If you are having trouble connecting External Libraries, check out this [troubleshooting guide](help-and-support/troubleshooting-guide/js-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
+If you are experiencing difficulties with connecting external libraries, you can refer to the [JavaScript Errors troubleshooting guide](help-and-support/troubleshooting-guide/js-errors) for assistance or seek help on [Discord](https://discord.com/invite/rBTTVJp). You can also ask questions and get support on the [community forum](https://community.appsmith.com/).
 
 
 
