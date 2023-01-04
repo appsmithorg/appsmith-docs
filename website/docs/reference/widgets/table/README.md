@@ -17,15 +17,22 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Table Data**                 | Widget | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax. |
 | **Columns**                    | Widget | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
 | **Cell wrapping**              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
+| **Show Pagination** | Formatting | Toggles visibility for the page information and control buttons in the table header. |
 | **Server Side Pagination**     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
-| **Visible**                    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
-| **Sortable**                   | Widget | It enables or disables sorting. If turned off, the user won't be able to sort the data when the app is published.                                                                                    |
-| **Default Search Text**        | Formatting | Sets the default search text of the table.                                                                                                                                                              |
-| **Default Selected Row**       | Formatting | Sets the default selected row of the table. It takes the index no. of the row as an input.                                                                                                              |
-| **Default Row Height**         | Formatting | Sets the height of the row in the table - Default, short or tall.                                                                                                                                       |
+| **Total Records** | Widget | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
+| **Allow Searching** | Widget | Toggles visibility of the search bar in the table header. |
+| **Client Side Search** | Widget | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
+| **Default Search Text**        | Formatting | Sets the default search text of the table.     |
+| **Allow Filtering** | Widget | Toggles visibility for the "Filters" button and its features in the table header. |
+| **Default Selected Rows**       | Formatting | Sets which rows are selected in the table by default. Expects an array of numbers of the row indices as input.                                    |
 | **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected. The rows are populated with `{{ Table1.selectedRows }}` field.                                                                                                       |
-| **Table Record Count**         | Widget | Use this field to set the number of records to return from a query or API call for showing on one page of the table. Access this number in your query with `{{ Table1.totalRecordsCount }}`. This property is only visible when you enable **Server Side Pagination**. |
+| **Column Sorting** | Widget | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
 | **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
+| **Visible**                    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
+| **Animate Loading** | Formatting | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
+| **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users will be able to download the table data as a .csv file or Microsoft Excel file. |
+| **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. |
 | **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected.                       | `{{<table_name>.selectedRow}}`         |
 | **selectedRows**       | Binding | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
 | **triggeredRow**       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
@@ -311,6 +318,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 
 | Style                     | Description                                              |
 | ------------------------- | -------------------------------------------------------- |
+| **Default Row Height**    | Sets the height of the row in the table - short, default, or tall.  |
 | **Cell Background Color** | Allows you to set background color for the cells.        |
 | **Text Color**            | Allows you to set text color.                            |
 | **Text Size**             | Allows you to set the size of the text.                  |
