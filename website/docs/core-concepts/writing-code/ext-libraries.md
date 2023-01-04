@@ -106,7 +106,7 @@ createWorkbook: async() => {
 ```
 ## General notes
 
-Please note that you may not be able to install or use methods of certain libraries due to platform limitations:
+You may not be able to install or use methods of certain libraries due to platform limitations:
 * [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) access: Libraries that try to manipulate document objects won’t work. Example: https://d3js.org/
 * [XHR](https://www.notion.so/Custom-JS-Libraries-82c03d95918b4eaa8f3e0dd811f3cd00): Libraries that only rely on XHR won’t work.
 * Other APIs: Library methods that use the following APIs under the hood won’t work: [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval), [clearInterval](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval), [setImmediate](https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate), [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) and [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator).
