@@ -16,6 +16,11 @@ A Dropdown **Options** can be populated from a data source like an API / Query b
 }}
 ```
 
+To access object values, you should use the something like `obj["test"]` instead of `obj.test`. For example:
+
+```javascript
+ return { label: obj["test"], value: obj["test"]} 
+```
 ### Filtering data
 
 A Dropdown can be used to filter a dataset based on the user's input. The selected value can be passed to an API using\*\*`{{ dropdownName.selectedOptionValue }}` .
