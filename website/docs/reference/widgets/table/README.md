@@ -30,8 +30,8 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | **Visible**                    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
-| **Animate Loading** | Formatting | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
-| **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users will be able to download the table data as a .csv file or Microsoft Excel file. |
+| **Animate Loading** | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
+| **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
 | **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. |
 | **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected.                       | `{{<table_name>.selectedRow}}`         |
 | **selectedRows**       | Binding | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
@@ -89,17 +89,13 @@ Controls how overflowing contents of the column are handled. When turned on, the
 
 The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
 
-#### Inline editing
+#### Total records
 
-Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about inline editing [here](./#inline-editing).
+The total records field stores the total number of rows in the table. It's useful in pagination as it helps in determining the number of pages, and then when to turn on/off the page control buttons in the table header. It's only visible when you enable **server-side pagination**.
 
-#### Total record count
+<VideoEmbed host="youtube" videoId="p7mH00xp7Nc" title="Using Total Records in the Table Widget" caption="Using Total Records in the Table Widget"/>
 
-Total record count stores the total number of rows in the table. It's useful in pagination as it helps in determining the number of pages, thus enabling/disabling the next/previous page control in the table. It's only visible when you enable **server-side pagination**.
-
-<VideoEmbed host="youtube" videoId="p7mH00xp7Nc" title="Using Total Records Count in th Table Widget" caption="Using Total Records Count in th Table Widget"/>
-
-To get the Total record count of your data, follow the steps below:
+To get the total record count of your data, follow the steps below:
  
  1. Create a new query `get_count` for the data source connected to the table.
  2. In the query window, enter a count query for the data.
@@ -109,11 +105,20 @@ To get the Total record count of your data, follow the steps below:
     ```
  3. Click on Run and you can see the output in the response tab below.
 
-Once the `get_count` query is successfully created, enter the following code to bind the query's output in the total records count:
+Once the `get_count` query is successfully created, enter the following code to bind the query's output in the total records field:
 ```
 #Postgres
 {{get_count.data[0].count}}
 ```
+
+
+
+
+---
+
+#### Inline editing
+
+Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about inline editing [here](./#inline-editing).
 
 #### selectedRow
 
