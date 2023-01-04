@@ -21,13 +21,17 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 ## Installing custom JavaScript libraries
 
+Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) and obtain the URL. Use a URL that points to the library's index file. Also ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries might have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library that you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice. 
 
-Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) and obtain the URL. 
+❌ Invalid URL -> https://www.jsdelivr.com/package/npm/datejs
 
+❌ Valid URL but unsupported library module format -> https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
+
+✅ Valid URL and supported library module format -> https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
+
+Follow the below steps to install a custom JavaScript library:
 
 ![Installing custom JavaScript libraries](/img/customjs.gif)
-
-To install a custom JavaScript library, 
 
 * On the Explorer tab,
 * Click the `+` sign next to `Libraries`.
@@ -36,17 +40,6 @@ To install a custom JavaScript library,
 https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 ```
 * Click `Install`.
-
-
-:::info
-Please use a URL that points to the library's index file. Also ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries might have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library that you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice. 
-
-❌ Invalid URL -> https://www.jsdelivr.com/package/npm/datejs
-
-❌ Valid URL but unsupported library module format -> https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
-
-✅ Valid URL and supported library module format -> https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
-:::
 
 ## Using JavaScript libraries
 
