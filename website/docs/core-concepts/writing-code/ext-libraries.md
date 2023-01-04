@@ -20,17 +20,13 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 ## Install custom JavaScript libraries
 
-You can browse and install recommended JS libraries or install a JS library of your choice by providing a valid URL. For example:
+You can browse and install recommended JS libraries or install a JS library of your choice by providing a valid URL. For example, a valid and supported format of url `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`. Some of the invalid URL formats are - 
 
-✅ Valid URL and supported library module format -> https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
+* Invalid URL: `https://www.jsdelivr.com/package/npm/datejs`
 
-Some of the invalid URL formats are:
+* Valid URL but no supported: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
 
-❌ Invalid URL -> https://www.jsdelivr.com/package/npm/datejs
-
-❌ Valid URL but unsupported library module format -> https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
-
-You can search for libraries on popular CDN services like jsDelivr or UNPKG to find the URL, which should be pointed towards the library's index file. It's important to ensure that the library supports a [UMD](https://github.com/umdjs/umd bu)ild in order to work with Appsmith. For more information, see the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build.
+You can search for libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to find the URL, which should be pointed towards the library's index file. It's important to ensure that the library supports a [UMD](https://github.com/umdjs/umd) build in order to work with Appsmith. For more information, see the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build.
 
 Many libraries may have a `.min.js` file located in the root, `/umd`, or `/browser` folders. If the library you wish to use doesn't support a UMD build, you can use browserify to create one and host it on a CDN of your choice.
 
