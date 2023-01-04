@@ -18,16 +18,22 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 * [Forge](https://github.com/digitalbazaar/forge), is a library for working with cryptographic algorithms and protocols in JavaScript.
 
 
+## Install custom JavaScript libraries
 
-## Installing custom JavaScript libraries
+You can browse and install recommended JS libraries or install a JS library of your choice by providing a valid URL. For example:
 
-Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) and obtain the URL. Use a URL that points to the library's index file. Also ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries might have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library that you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice. 
+✅ Valid URL and supported library module format -> https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
+
+Some of the invalid URL formats are:
 
 ❌ Invalid URL -> https://www.jsdelivr.com/package/npm/datejs
 
 ❌ Valid URL but unsupported library module format -> https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
 
-✅ Valid URL and supported library module format -> https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
+You can search for libraries on popular CDN services like jsDelivr or UNPKG to find the URL, which should be pointed towards the library's index file. It's important to ensure that the library supports a [UMD](https://github.com/umdjs/umd bu)ild in order to work with Appsmith. For more information, see the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build.
+
+Many libraries may have a `.min.js` file located in the root, `/umd`, or `/browser` folders. If the library you wish to use doesn't support a UMD build, you can use browserify to create one and host it on a CDN of your choice.
+
 
 Follow the below steps to install a custom JavaScript library:
 
