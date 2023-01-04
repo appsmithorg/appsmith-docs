@@ -29,7 +29,7 @@ A resource refers to specific components or aspects of an application that can b
 | **Execute**        |Grants users permission to execute queries on a datasource | [Datasource and queries](#datasource-and-queries-permissions) |
 | **Remove users**   |Grants users permission to remove a user from a group| [Groups and roles](#groups-and-roles-permissions) |
 
-Let's understand these permissions in detail.
+ All the permission for each resource are explained in detail below.
 
 ### Application resources permissions
 
@@ -85,7 +85,7 @@ If you give delete permission to the workspace, It provides access to remove any
 
 ##### Application
 
-If you want the user to have delete access only to a specific application in a workspace, open the respective workspace's tree and check the delete permission adjacent to the respective application. **Delete** for just an application allows you to delete the pages of that application.
+If you want the user to have delete access only to a specific application in a workspace, open the respective workspace tree and check the delete permission adjacent to the respective application. **Delete** for just an application allows you to delete the pages of that application.
 
 ##### Page
 
@@ -234,8 +234,8 @@ In this section, users can assign permissions for workspaces and Audit logs.
 
 #### Workspace
 
-Workspace-level permissions enable a user to perform actions on the workspaces themselves. You can create a new workspace, edit or delete existing ones.
+Workspace-level permissions enable a user to perform actions on the workspaces themselves. You can create a new workspace, edit, or delete existing ones.
 
 #### Audit logs
 
-Audit logs have View permission. That is, you can restrict users from looking at the Audit logs for your instance.
+Audit logs have View permission. That's, you can restrict users from looking at the Audit logs for your instance.
