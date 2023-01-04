@@ -21,9 +21,9 @@ Follow one of the available guidelines below to configure the Kubernetes cluster
 <Tabs groupId="configurations">
  <TabItem label="AWS EKS" value="AWSEKS">
 
-    1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
-    2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
-    3. The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
+  1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+  2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)    
+  3. The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
     Ensure that you enable the correct version for your cluster.
 
 </TabItem>
@@ -571,6 +571,7 @@ To install the Nginx ingress controller on AWS-EKS, GCE-GKE, or Azure, run the f
  ```bash 
   helm install ingress-nginx ingress-nginx/ingress-nginx
   ```
+
   <Tabs groupId="appsmithEditions">
 
   <TabItem label="Community Edition" value="communityEdition"> 
