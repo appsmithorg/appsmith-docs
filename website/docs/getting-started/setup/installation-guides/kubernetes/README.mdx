@@ -21,7 +21,7 @@ Follow one of the available guidelines below to configure the Kubernetes cluster
 <Tabs groupId="configurations">
  <TabItem label="AWS EKS" value="AWSEKS">
 
-   1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+    1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
     2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
     3. The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
     Ensure that you enable the correct version for your cluster.
@@ -314,7 +314,7 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
     ```bash
     helm show values appsmith-ee/appsmith --version 2.0.0 > values.yaml
     ```
-4. Edit the `values.yaml` file and set the following parameters
+4. Edit the `values.yaml` file and set the following parameters. You may choose to add a random generated password.
 
    ```yaml
     applicationConfig:
@@ -360,7 +360,7 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
                   username: root
       ```
 
-      ii. Configure the parameters to point to an external PostgreSQL as shown below:
+      2. Configure the parameters to point to an external PostgreSQL as shown below:
     
       ```yaml
         # configure an external PostgreSQL
@@ -373,24 +373,24 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 
   4.  Enable MongoDB in the `values.yaml` or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
 
-    i. Configure the parameters to enable MongoDB as shown below:
+      1. Configure the parameters to enable MongoDB as shown below:
 
-      ```yaml
-        # enable MongoDB
-        mongodb:
-          # highlight-next-line
-          enabled: true
-          service:
-            nameOverride: appsmith-mongodb
-      ```
-     
-     ii. Configure the parameters to point to an external MongoDB as shown below:
+        ```yaml
+          # enable MongoDB
+          mongodb:
+            # highlight-next-line
+            enabled: true
+            service:
+              nameOverride: appsmith-mongodb
+        ```
+      
+      2. Configure the parameters to point to an external MongoDB as shown below:
 
-      ```yaml
-       # configure an external MongoDB
-        applicationConfig::
-          APPSMITH_MONGODB_URI: "<MONGODB_URI>"
-      ```
+        ```yaml
+        # configure an external MongoDB
+          applicationConfig::
+            APPSMITH_MONGODB_URI: "<MONGODB_URI>"
+        ```
 
 6. Create a shared file system. This is required for some Appsmith features that make use of the filesystem, like `git`-connected applications. Read more about this in the [Create a shared file system](#create-a-shared-file-system) section.
 
@@ -503,29 +503,29 @@ existingClaim:
 
   Once deployed run the below commands to verify the installation.
 
- i. To get the application URL run the below commands:
-  
-  ```
-  export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=appsmith,app.kubernetes.io/instance=appsmith-2-1670479627" -o jsonpath="{.items[0].metadata.name}")
-  export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-  echo "Visit http://127.0.0.1:8080 to use your application"
-  kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
-  ```
+    1. To get the application URL run the below commands:
+      
+      ```
+      export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=appsmith,app.kubernetes.io/instance=appsmith-2-1670479627" -o jsonpath="{.items[0].metadata.name}")
+      export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+      echo "Visit http://127.0.0.1:8080 to use your application"
+      kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
+      ```
 
-ii. Run the command `kubectl get pods` to verify the list of pods. You may see output as shown below:
+    2. Run the command `kubectl get pods` to verify the list of pods. You may see output as shown below:
 
-  ```bash
-  NAME                            READY   STATUS    RESTARTS   AGE
-  appsmith-875b6cddc-4mmj6        1/1     Running   0          90s
-  appsmith-875b6cddc-7b2hw        1/1     Running   0          3m30s
-  appsmith-875b6cddc-smzwz        1/1     Running   0          3m15s
-  appsmith-mongodb-0              1/1     Running   0          3m30s
-  appsmith-mongodb-1              1/1     Running   0          3m10s
-  appsmith-mongodb-arbiter-0      1/1     Running   0          3m30s
-  appsmith-postgresql-0           1/1     Running   0          3m30s
-  appsmith-redis-master-0         1/1     Running   0          3m30s
-  appsmith-redis-replicas-0       1/1     Running   0          3m30s
-  ```
+      ```bash
+      NAME                            READY   STATUS    RESTARTS   AGE
+      appsmith-875b6cddc-4mmj6        1/1     Running   0          90s
+      appsmith-875b6cddc-7b2hw        1/1     Running   0          3m30s
+      appsmith-875b6cddc-smzwz        1/1     Running   0          3m15s
+      appsmith-mongodb-0              1/1     Running   0          3m30s
+      appsmith-mongodb-1              1/1     Running   0          3m10s
+      appsmith-mongodb-arbiter-0      1/1     Running   0          3m30s
+      appsmith-postgresql-0           1/1     Running   0          3m30s
+      appsmith-redis-master-0         1/1     Running   0          3m30s
+      appsmith-redis-replicas-0       1/1     Running   0          3m30s
+      ```
 
 Congratulations, you have successfully installed Appsmith Business Edition Helm chart v2 installation.
 
