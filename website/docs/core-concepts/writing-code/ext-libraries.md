@@ -50,7 +50,7 @@ Please use a URL that points to the library's index file. Also ensure that your 
 
 ## Using JavaScript libraries
 
-The external libraries can be used anywhere inside `{{ }}` just as JavaScript is used in the rest of the application. The signature of the JavaScript libraries are exactly the same as mentioned in their documentation. 
+External libraries can be used within `{{ }}` in the same way JavaScript is used elsewhere in the application. For more information about the signature of the JavaScript libraries, see their official documentation.
 
 ### Examples
 Here are some examples of how to use external JavaScript libraries:
