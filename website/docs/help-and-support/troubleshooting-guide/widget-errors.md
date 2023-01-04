@@ -9,6 +9,8 @@ You may see below errors when binding data to widgets from an [API](/core-concep
 
 You may see this error when executing an API, Query, JS Object in a widget property that expects data, and can't be used to trigger an action. 
 
+![Error action can't be triggered](/img/Troubleshooting-Widget-errors-action-cannot-be-triggered.png)
+
 #### Error message
 
 <Message
