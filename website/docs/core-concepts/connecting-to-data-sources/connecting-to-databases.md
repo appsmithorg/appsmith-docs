@@ -9,7 +9,7 @@ description: >-
 Databases are an essential part of many applications and are used to store and manage data. They provide a structured way to organize, retrieve, and manipulate data, and are designed to be efficient and reliable. You can run queries to read and write data directly from the Appsmith editor. 
 
 :::note
-Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). Read more about [security](/product/security#security-measures-within-appsmith). 
+Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). For more information, see [security](/product/security#security-measures-within-appsmith). 
 :::
 
 
