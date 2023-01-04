@@ -29,7 +29,7 @@ The base64-encoded username and password are automatically added to the header o
 
 
 ### Username
-The username is a string that identifies the user making the request to the API. It is often a combination of the user's first and last name, or it could be a unique identifier like an email address or employee number.
+The username is a string that identifies the user making the request to the API. It's often a combination of the user's first and last name, or it could be a unique identifier like an email address or employee number.
 
 ### Password
 Password is a **secret string** that's used to verify the identity of the user making a request to an API. The password is sent as part of the Authorization header in an HTTP request, along with the username, to the server that's hosting the API.
