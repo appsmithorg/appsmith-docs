@@ -38,7 +38,7 @@ When you create a datasource in Appsmith, a default name is provided for you. Yo
 
 ### Method
 
-An API query involves making a request to an API using a specific method, or type of request. Appsmith supports all the common methods, including GET, POST, PUT, DELETE, and PATCH. When configuring an API query in Appsmith, you can select the desired method from a dropdown menu before adding the URL. 
+A method refers to the type of request being made to the API. Appsmith supports all the standard methods, including GET, POST, PUT, DELETE, and PATCH. When setting up an API query in Appsmith, you can select the desired method from a dropdown menu before adding the URL.
 
 It's important to choose the appropriate method based on the task you want to accomplish, as each method has a specific meaning and can behave differently depending on the API you are using.
 
