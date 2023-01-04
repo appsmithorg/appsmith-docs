@@ -18,7 +18,7 @@ Appsmith applications are **secure-by-default**. All sensitive credentials, such
 
 :::info important
 
-As a self-hosted Appsmith user, you must [whitelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP address of the Appsmith deployment on your database instance or VPC. `18.223.74.85` and `3.131.104.27` are the IP addresses of the Appsmith cloud instances that need to be whitelisted
+As a self-hosted Appsmith user, it is necessary to [safelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP addresses of the Appsmith deployment on your database instance or VPC. The IP addresses to be added to the safelist are `18.223.74.85` and `3.131.104.27`, which are the IP addresses of the Appsmith cloud instances.
 :::
 
 
