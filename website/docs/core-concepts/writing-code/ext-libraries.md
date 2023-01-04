@@ -25,7 +25,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) and obtain the URL. 
 
 
-![](/img/customjs.gif)
+![Installing custom JavaScript libraries](/img/customjs.gif)
 
 To install a custom JavaScript library, 
 
