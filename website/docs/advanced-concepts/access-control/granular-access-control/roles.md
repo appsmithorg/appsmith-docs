@@ -29,7 +29,7 @@ A resource refers to specific components or aspects of an application that can b
 | **Execute**        |Grants users permission to execute queries on a datasource | [Datasource and queries](#datasource-and-queries-permissions) |
 | **Remove users**   |Grants users permission to remove a user from a group| [Groups and roles](#groups-and-roles-permissions) |
 
- All the permission for each resource are explained in detail below.
+All the permission for each resource are explained in detail below.
 
 ### Application resources permissions
 
