@@ -140,7 +140,14 @@ defaultValue
 JavaScript
 filterText
 back-end
+CRDs
 backend
 DB
 Datasources
+tooltip
+Tooltip
+onFocus
+onBlur
+Autofocus
+dyno
 
