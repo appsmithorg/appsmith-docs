@@ -19,7 +19,7 @@ A Dropdown **Options** can be populated from a data source like an API / Query b
 To access the values of an object with attribute names that contain spaces, use obj["<ATTRIBUTE_NAME"] instead of `obj.<ATTRIBUTE_NAME>`, where "<ATTRIBUTE_NAME>" is the placeholder for an attribute name.  For example, the attribute is "income tax".
 
 ```javascript
- return { label: obj["test"], value: obj["test"]} 
+ return { label: obj["income tax"], value: obj["income tax"]} 
 ```
 ### Filtering data
 
