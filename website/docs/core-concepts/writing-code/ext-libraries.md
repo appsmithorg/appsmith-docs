@@ -30,7 +30,7 @@ Some of the URL formats are -
 
 * Valid URL but not supported: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
 
-You can search for libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to find the URL, which should be pointed towards the library's index file. It's important to ensure that the library supports a [UMD](https://github.com/umdjs/umd) build in order to work with Appsmith. For more information, see the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build.
+You can search for libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to find the URL, which points to the library's index file. It's important to ensure that the library supports a [UMD](https://github.com/umdjs/umd) build in order to work with Appsmith. For more information, see the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build.
 
 Many libraries may have a `.min.js` file located in the `root`, `/umd`, or `/browser` folders. If the library you wish to use doesn't support a UMD build, you can use browserify to create one and host it on a CDN of your choice.
 
