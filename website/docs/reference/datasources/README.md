@@ -219,7 +219,7 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
 
    
    
-Learn More about [APIs](/core-concepts/connecting-to-data-sources/authentication/)
+For more information, see [How to connect to an API](/core-concepts/connecting-to-data-sources/authentication#connecting-to-a-rest-api)?
 
 
 
