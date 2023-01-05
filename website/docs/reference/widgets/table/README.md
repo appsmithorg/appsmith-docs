@@ -1,11 +1,11 @@
 # Table
 
-The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
+The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets. Once a table is connected to a datasource, you can also use [inline-editing](/reference/widgets/table/inline-editing) features to make changes and additions to the table data directly in the widget.
 
 <VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget?" caption="How to use Table Widget?"/>
 
 :::info
-If you already know the basics and want to learn how to display data and handle pagination inside a table, [Read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#pagination).
+If you already know the basics and want to learn how to display data and handle pagination inside a table, [read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#pagination).
 :::
 
 ## Properties
@@ -22,14 +22,14 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Total Records** | Widget | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
 | **Allow Searching** | Widget | Toggles visibility of the search bar in the table header. |
 | **Client Side Search** | Widget | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
-| **Default Search Text**        | Formatting | Sets the default search text of the table.     |
+| **Default Search Text**        | Formatting | Sets the default search query for the search bar in the table header.     |
 | **Allow Filtering** | Widget | Toggles visibility for the "Filters" button and its features in the table header. |
-| **Default Selected Rows**       | Formatting | Sets which rows are selected in the table by default. Expects an array of numbers of the row indices as input.                                    |
-| **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected. The rows are populated with `{{ Table1.selectedRows }}` field.                                                                                                       |
+| **Default Selected Row**       | Formatting | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
+| **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
 | **Column Sorting** | Widget | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
-| **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
-| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
-| **Visible**                    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
+| **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. See [inline editing](/reference/widgets/table/inline-editing#allow-adding-a-row) for more details. |
+| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. See [inline editing](/reference/widgets/table/inline-editing#default-values) for more details. |
+| **Visible**    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
 | **Animate Loading** | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 | **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
 | **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. |
@@ -111,18 +111,45 @@ Once the `get_count` query is successfully created, enter the following code to 
 {{get_count.data[0].count}}
 ```
 
+#### Client side search
 
+Client side search controls whether the user is able to search the entire data set for their query, or only what's currently shown in the table widget.
 
+#### Column sorting
+
+Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
+
+<VideoEmbed host="youtube" videoId="TODO" title="TODO" caption="TODO"/>
+
+## Visible
+
+This controls the widget's visibility on the app's page. When turned off, the widget isn't visible in the published app. You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
+
+For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the table's `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
+
+```
+{{Checkbox1.isChecked}}
+```
+
+When you tick the checkbox, `Visible` is set to `true`, and the table becomes visible in the app.
+
+<VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
+
+#### CSV separator 
+
+Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on.
+
+<VideoEmbed host="youtube" videoId="TODO" title="TODO" caption="TODO"/>
 
 ---
 
-#### Inline editing
+## (REMOVE) Inline editing
 
 Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about inline editing [here](./#inline-editing).
 
 #### selectedRow
 
-A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.\
+A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.
 selectedRow is an internal property that fetches the data of the table row that the user selected. You can bind different widgets to each table row using this property.
 
 As you already know by now, you can write JS code anywhere in Appsmith inside \{{\}}., To bind the selected row of the table to another widget, open the property pane of it, and add the code snippet given below:
@@ -303,15 +330,15 @@ These are the options that you can add to the table header. Currently, the follo
 
 ## Events
 
-You can define functions that are called when these events are triggered in the widget.
+These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
 
 | Action                 | Description               |
 | ---------------------- | ------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                  |
-| **onPageChange**       | Sets the action to run when the table's page changes. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. The property isn't available on the app but can **only be used by developers when building apps**. For example, It can be used to set a Limit in your query dynamically. See a list of [supported actions](/reference/appsmith-framework/widget-actions). |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                           |
-| **onSort**             | Sets the action to run when the user sorts the data. See a list of [supported actions](/reference/appsmith-framework/widget-actions).                                                                                                                                                                                 |
+| **onRowSelected**      | Sets the action to run when the user selects a row.   |
+| **onPageChange**       | Sets the action to run when the table's page changes.  |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. This event can only be triggered by developers working on the app, not by end users. For example, it can be used to set a Limit in your query dynamically. |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text.     |
+| **onSort**             | Sets the action to run when the user sorts the data.          |
 
 ## Styles
 
@@ -319,7 +346,7 @@ Style properties allow you to change the look and feel of the table. It has seve
 
 * Changing the style and size of the font
 * Text alignment
-* Playing around with the color of the text or cell background
+* Choosing the color of text or cell backgrounds
 
 | Style                     | Description                                              |
 | ------------------------- | -------------------------------------------------------- |
@@ -336,29 +363,29 @@ Style properties allow you to change the look and feel of the table. It has seve
 
 ## Guides
 
-### Automatically refresh data on tables
+### Refresh table data in real time
 
-If you want to update data on Table without re-running the API / or using a refresh button, you can use the `setInterval` function.
+If you want to update data in the table periodically without requiring users to trigger the refreshes, you can use the `setInterval` function.
 
-In this example, You'll use the [Switch widget](/reference/widgets/switch/) (`Switch1`) to control this function and a table widget that uses the `getData` query.
+In this example, you'll use the [Switch widget](/reference/widgets/switch/) `Switch1` to control this function and a table widget that uses the `getData` query.
 
-* Drag and Drop `Switch Wiget` into the canvas.
-* Next, go to `onChange` event and toggle the `JS` option.
-*   Now on `Switch` widget’s `onChange` property, paste the following code after making the necessary changes:
+* Drag and drop a switch widget onto the canvas.
+* Go to its **onChange** event and toggle the `JS` option.
+* In the **onChange** field, paste the following code with any necessary changes:
 
-    ```
-    {{
-    (() => {
-        if (Switch1.isSwitchedOn) {
-            setInterval(() => getData.run(), 2000, "autoupdate");
-        } else {
-            clearInterval("autoupdate");
-        }
-    })()
-    }}
-    ```
+```javascript
+{{
+(() => {
+    if (Switch1.isSwitchedOn) {
+        setInterval(() => getData.run(), 2000, "autoupdate");
+    } else {
+        clearInterval("autoupdate");
+    }
+})()
+}}
+```
 
-Here, the `setInterval` function calls the `getData` query every 2 seconds when the switch widget is turned on, else, it removes the `autoupdate` (`id`) interval.
+Here, the `setInterval` function calls the `getData` query every 2 seconds once the switch widget is turned on, or it stops the cycle if it's switched off.
 
 ![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
 
