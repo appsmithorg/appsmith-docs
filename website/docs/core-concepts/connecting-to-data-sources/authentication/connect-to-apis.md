@@ -112,7 +112,7 @@ You can define an [authentication type](/core-concepts/connecting-to-data-source
 
 ### Settings
 
-The Query Settings Pane provides access to properties for the query. You can specify the following [settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) in the Settings tab on the Appsmith Query Editor.
+To access and configure settings for a query, click the Settings tab on the Appsmith Query Editor. Some options available in the Query Settings Pane include Run on Page Load and others. For more information, see [Query Settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
 
 The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options, or to control the behavior of the API as a whole.
 
