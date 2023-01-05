@@ -165,12 +165,6 @@ Sets the separator character to use for formatting the downloaded .csv file. The
 
 <VideoEmbed host="youtube" videoId="CJBJt7TkqGU" title="Table Widget | CSV Separator" caption="Choose the characters to use as separators in your .csv"/>
 
----
-
-## (REMOVE) Inline editing
-
-Inline editing allows users to edit cell contents in the table columns. You can enable it for the whole column, or you can use code to enable it for only particular cells. You can also allow users to add new rows of data to the Table. Read more about inline editing [here](./#inline-editing).
-
 #### selectedRow
 
 A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.
@@ -298,9 +292,7 @@ The following video shows how to bind a text widget to `Table_1` using filteredT
 
 #### pageNo
 
-pageNo gets the page no. of the table that the user is currently viewing. This property can be used by APIs for pagination.\
-\
-To use this property in a widget, enter the code snippet given below:
+pageNo gets the page no. of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
 
 ```
 {{<table_name>.pageNo}}
@@ -376,19 +368,94 @@ Style properties allow you to change the look and feel of the table. There are s
 | Style                     | Description                                              |
 | ------------------------- | -------------------------------------------------------- |
 | **Default Row Height**    | Sets the height of the row in the table - short, default, or tall.  |
-| **Cell Background Color** | Allows you to set background color for the cells.        |
-| **Text Color**            | Allows you to set text color.                            |
-| **Text Size**             | Allows you to set the size of the text.                  |
-| **Font Style**            | Allows you to choose a font style, such as **bold** or _italic_. |
-| **Text Align**            | Sets the label alignment of the text.                    |
-| **Vertical Alignment**    | Sets the alignment of the widget.                        |
-| **Cell Borders**          | Allows you to choose the border style for the table's cells. Default (all borders), horizontal borders only, or no borders. |
-| **Border Radius**         | Allows you to define curved corners.                     |
-| **Box Shadow**            | Allows you to choose from the available shadow styles.   |
+| **Text Size**             | Sets the size of the text.                               |
+| **Emphasis**              | Sets a font style for text, such as **bold** or _italic_.|
+| **Text Align**            | Sets how text is aligned horizontally within the cells.  |
+| **Vertical Alignment**    | Sets where the cell contents are vertically positioned within the cells. |
+| **Cell Background Color** | Sets the background color of the table cells.            |
+| **Text Color**            | Sets the color for the text in the table.                |
+| **Cell Borders**          | Sets the border configuration for the table's cells. Default (all borders), horizontal borders only, or no borders. |
+| **Border Radius**         | Sets rounded-ness for the widget's corners.              |
+| **Box Shadow**            | Sets a shadow around the widget's edges.                 |
+| **Border Color**          | Sets the color of the widget's borders.                  |
+| **Border Width**          | Sets the thickness of the widget's borders.              |
 
-## Guides
+## Transforming table data
 
-### Refresh table data in real time
+Some API / Query responses might have nested, unnecessary, or poorly formatted fields. These can be easily transformed inside the table data property by mapping over the data using javascript.
+
+### Example
+
+```
+https://api.github.com/repos/appsmithorg/appsmith/issues
+```
+
+Binding this APIs response directly to a table would be unreadable like the image below
+
+![](</img/github_table.gif>)
+
+To format this data, we can write a map function over the API response and return an array of objects with only the fields we want to display. We can also format these fields how we'd like using javascript
+
+```javascript
+{{ 
+    fetch_issues.data.map((issue) => {
+    return {
+        user: issue.user.login,
+        assignees: issue.assignees.map((assignee) => assignee.login).join(","),
+        title: issue.title,
+        number: "#" + issue.number,
+    };
+    });
+
+}}
+```
+
+![](</img/github_table_formatted.png>)
+
+## Server side searching / filtering
+
+Tables come with client side searching and filtering out of the box. This is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search and filter terms to the server, so that it only needs to data that's relevant. This can significantly improve performance and user experience when working with large data sets.
+
+To perform these operations, we need to pass these values to the API / query.
+
+### Searching
+
+A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event will be triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
+
+<VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>
+
+1. Call the API / query with the **onSearchTextChange** event in the table's properties pane.
+2. Pass the value of `Table1.searchText` within the API request / query.
+
+As a SQL string:
+```sql
+SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
+```
+
+As an API request with URL parameters:
+```
+https://mock-api.appsmith.com/users?name={{Table1.searchText}}
+```
+
+### Filtering
+
+Server-side filtering requires the use of another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users a list of supported filters to choose from.
+
+1. Drag a select widget to the canvas and add options that you might use to filter your data
+2. Set the table widget's **onOptionChange** event to call your API / query 
+3. Pass the Select widget's `selectedOptionValue` within the API request / query string
+
+As a SQL query:
+```sql
+SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
+```
+
+As an API request with URL parameters:
+```
+https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
+```
+
+## Refresh table data in real time
 
 If you want to update data in the table periodically without requiring users to trigger the refreshes, you can use the `setInterval` function.
 
@@ -413,9 +480,3 @@ In this example, you'll use the [Switch widget](/reference/widgets/switch/) `Swi
 Here, the `setInterval` function calls the `getData` query every 2 seconds once the switch widget is turned on, or it stops the cycle if it's switched off.
 
 ![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
-
-### Setup server-side search
-
-A search input is available on the table to filter out records being displayed on the table. Using the `onSearchTextChange` event, it's possible to perform a search on the server-side (API server or database) and have the results displayed on the table. A video guide on how to do this is shown below:
-
-<VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>

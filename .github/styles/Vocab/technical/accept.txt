@@ -151,3 +151,4 @@ onBlur
 Autofocus
 dyno
 onChange
+boolean

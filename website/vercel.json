@@ -412,7 +412,11 @@
     },
     {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      "destination": "/reference/widgets/table#transforming-table-data"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables",
+      "destination": "/reference/widgets/table#transforming-table-data"
     },
     {
       "source": "/core-concepts/capturing-data-write",
@@ -2044,7 +2048,7 @@
     },
     {
       "source": "/v/master/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      "destination": "/reference/widgets/table#transforming-table-data"
     },
     {
       "source": "/v/master/core-concepts/dynamic-ui/widget-visibility",
@@ -2288,7 +2292,7 @@
     },
     {
       "source": "/v/v1.2.1/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      "destination": "/reference/widgets/table#transforming-table-data"
     },
     {
       "source": "/v/v1.2.1/core-concepts/dynamic-ui/application-layout",
