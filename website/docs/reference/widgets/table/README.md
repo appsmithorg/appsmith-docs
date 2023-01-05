@@ -32,7 +32,7 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Visible**    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
 | **Animate Loading** | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 | **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
-| **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. |
+| **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. Default: `,` |
 | **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected.                       | `{{<table_name>.selectedRow}}`         |
 | **selectedRows**       | Binding | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
 | **triggeredRow**       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
@@ -99,15 +99,15 @@ To get the total record count of your data, follow the steps below:
  
  1. Create a new query `get_count` for the data source connected to the table.
  2. In the query window, enter a count query for the data.
-    ```
-    #Postgres
+    ```SQL
+    -- Postgres
     SELECT COUNT(*) FROM <table_name>;
     ```
  3. Click on Run and you can see the output in the response tab below.
 
 Once the `get_count` query is successfully created, enter the following code to bind the query's output in the total records field:
-```
-#Postgres
+```javascript
+// Total records
 {{get_count.data[0].count}}
 ```
 
@@ -118,10 +118,10 @@ Client side search controls whether the user is able to search the entire data s
 #### Column sorting
 
 Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
+https://youtu.be/
+<VideoEmbed host="youtube" videoId="hmi7BaF3jFI" title="Table | Column Sorting" caption="Use this setting to enable sorting rows by column value."/>
 
-<VideoEmbed host="youtube" videoId="TODO" title="TODO" caption="TODO"/>
-
-## Visible
+#### Visible
 
 This controls the widget's visibility on the app's page. When turned off, the widget isn't visible in the published app. You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
 
@@ -137,9 +137,9 @@ When you tick the checkbox, `Visible` is set to `true`, and the table becomes vi
 
 #### CSV separator 
 
-Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on.
+Sets the separator character to use for formatting the downloaded .csv file. The default separator character is a comma `,`. Only applies when **Allow Download** is turned on.
 
-<VideoEmbed host="youtube" videoId="TODO" title="TODO" caption="TODO"/>
+<VideoEmbed host="youtube" videoId="CJBJt7TkqGU" title="Table Widget | CSV Separator" caption="Choose the characters to use as separators in your .csv"/>
 
 ---
 
@@ -321,12 +321,13 @@ The following video shows how to bind a text widget to `Table_1` using searchTex
 
 ### Header options
 
-These are the options that you can add to the table header. Currently, the following features are available to add or remove from the table header -
+You can customize which features are available for use in the table header. These features can be turned on or off via their related setting in the table's properties pane:
 
-* Search
-* Filters
-* Download
-* Pagination
+* Search (toggle with **Allow Searching**)
+* Filters (toggle with **Allow Filtering**)
+* Download (toggle with **Allow Download**)
+* Add a row (toggle with **Allow adding a row**)
+* Pagination (toggle with **Show Pagination**)
 
 ## Events
 
@@ -342,7 +343,7 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 ## Styles
 
-Style properties allow you to change the look and feel of the table. It has several options, such as:
+Style properties allow you to change the look and feel of the table. There are several options, such as:
 
 * Changing the style and size of the font
 * Text alignment
