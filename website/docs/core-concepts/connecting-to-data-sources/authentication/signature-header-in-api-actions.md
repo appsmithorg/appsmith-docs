@@ -6,7 +6,7 @@ description: >-
 
 # Signature Header
 
-This is an option that can be enabled on [REST](./#create-authenticated-api) datasources. When enabled, appsmith require a signature secret (a string of at least 32 characters) as input from the user. The effect of this option being enabled is that every API call made to this datasource includes an additional header, `X-Appsmith-Signature`, whose value is a [JSON Web Token (JWT)](https://jwt.io) signed with the secret provided by the user. Following are details of how this signature is constructed, what the JWT contains, and what significance this header holds to users.
+This is an option that can be enabled on [REST API](/core-concepts/connecting-to-data-sources/authentication/#create-authenticated-api) datasources. When enabled, appsmith require a signature secret (a string of at least 32 characters) as input from the user. The effect of this option being enabled is that every API call made to this datasource includes an additional header, `X-Appsmith-Signature`, whose value is a [JSON Web Token (JWT)](https://jwt.io) signed with the secret provided by the user. Following are details of how this signature is constructed, what the JWT contains, and what significance this header holds to users.
 
 ## Enabling the header
 

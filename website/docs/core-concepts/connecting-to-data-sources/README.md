@@ -2,7 +2,7 @@
 
 Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Whether you're working with a traditional database like MySQL or a more modern tool like S3, Appsmith makes it easy to connect and start working with your data right away. Connecting to a datasource is a necessary step before data can be visualized, transformed, or otherwise utilized. 
 
-:::note
+:::info
 Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). For more information, see [security](/product/security#security-measures-within-appsmith). 
 :::
 
