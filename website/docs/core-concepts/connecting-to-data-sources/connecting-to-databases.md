@@ -72,7 +72,7 @@ At this point, you should know enough to start a project of your own and start p
 * [Building UI](/core-concepts/building-ui/)
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
-* [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+* [Connect to a localhost database or an API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
 
 
 
