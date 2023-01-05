@@ -29,7 +29,7 @@ Configuring an API query involves specifying the various components that make up
 | [Query parameters](#query-parameters)               	| REST API & Authenticated API 	|  Provide any query parameters for the API request, if necessary.
 | [Body](#body)                           	| REST API                     	| Set the request body payload for API requests that use a body.
 | [Pagination](#pagination)                     	| REST API                     	| Set the pagination, if applicable.
-| [Send appsmith signature header](#send-appsmith-signature-header) 	| Authenticated API            	| When you want to ensure that the incoming requests originate from Appsmith, you can enable Send Appsmith Signature Header property.                              	|
+| [Send appsmith signature header](#send-appsmith-signature-header) 	| Authenticated API            	| Enable to ensure that the incoming requests originate from Appsmith.                            	|
 
 
 ### Name
