@@ -2,7 +2,7 @@
 
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets. Once a table is connected to a datasource, you can also use [inline-editing](/reference/widgets/table/inline-editing) features to make changes and additions to the table data directly in the widget.
 
-<VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget?" caption="How to use Table Widget?"/>
+<VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget" caption="How to use Table Widget"/>
 
 :::info
 If you already know the basics and want to learn how to display data and handle pagination inside a table, [read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#pagination).
@@ -10,7 +10,7 @@ If you already know the basics and want to learn how to display data and handle 
 
 ## Properties
 
-Properties allow you to edit the table, connect it with other widgets and customize the user actions. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
+Properties allow you to edit the table, connect it with other widgets and customize the user actions. All these properties are present in the properties pane of the widget.
 
 | Property       | Type | Definition | Code Snippet |
 | ---------------|------|------------|--------------|
@@ -18,7 +18,7 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Columns**                    | Widget | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
 | **Cell wrapping**              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
 | **Show Pagination** | Formatting | Toggles visibility for the page information and control buttons in the table header. |
-| **Server Side Pagination**     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / Query request. Use this property when your table data is bound to an API / Query.                               |
+| **Server Side Pagination**     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |
 | **Total Records** | Widget | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
 | **Allow Searching** | Widget | Toggles visibility of the search bar in the table header. |
 | **Client Side Search** | Widget | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
@@ -27,24 +27,24 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Default Selected Row**       | Formatting | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
 | **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
 | **Column Sorting** | Widget | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
-| **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. See [inline editing](/reference/widgets/table/inline-editing#allow-adding-a-row) for more details. |
-| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. See [inline editing](/reference/widgets/table/inline-editing#default-values) for more details. |
+| **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. Read about [inline editing](/reference/widgets/table/inline-editing#allow-adding-a-row) for more details. |
+| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. Read about [inline editing](/reference/widgets/table/inline-editing#default-values) for more details. |
 | **Visible**    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
 | **Animate Loading** | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 | **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
 | **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. Default: `,` |
-| **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected.                       | `{{<table_name>.selectedRow}}`         |
+| **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected. | `{{<table_name>.selectedRow}}`   |
 | **selectedRows**       | Binding | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
-| **triggeredRow**       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.           | `{{<table_name>.triggeredRow}}`        |
-| **isVisible**          | Binding | This property indicates whether the widget is visible or not.                                                                | `{{<table_name>.isVisible}}`           |
-| **sortOrder**          | Binding | This property helps you sort values.                                                                                         | `{{<table_name>.sortOrder}}`           |
-| **tableData**          | Binding | This property gets all the table data in JSON format.                                                                        | `{{<table_name>.tableData}}`           |
-| **selectedRowIndex**   | Binding | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.                          | `{{<table_name>.selectedRowIndex}}`    |
+| **triggeredRow**       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.   | `{{<table_name>.triggeredRow}}`        |
+| **isVisible**          | Binding | This property indicates whether the widget is visible or not.  | `{{<table_name>.isVisible}}`   |
+| **sortOrder**          | Binding | This property helps you sort values.   | `{{<table_name>.sortOrder}}`   |
+| **tableData**          | Binding | This property gets all the table data in JSON format.      | `{{<table_name>.tableData}}`  |
+| **selectedRowIndex**   | Binding | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.    | `{{<table_name>.selectedRowIndex}}`   |
 | **selectedRowIndices** | Binding | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
-| **filteredTableData**  | Binding | Contains the data of the rows left after applying any selected filters, sort rule, or search terms.                  | `{{<table_name>.filteredTableData}}`   |
-| **pageNo**             | Binding | Contains the current page number that the user is on. APIs can use it for pagination                                         | `{{<table_name>.pageNo}}`              |
-| **pageSize**           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`            |
-| **searchText**         | Binding | Contains the search text entered by the user in the Table                                                                    | `{{<table_name>.searchText}}`          |
+| **filteredTableData**  | Binding | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
+| **pageNo**             | Binding | Contains the current page number that the user is on. APIs can use it for pagination | `{{<table_name>.pageNo}}`  |
+| **pageSize**           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`   |
+| **searchText**         | Binding | Contains the search text entered by the user in the Table | `{{<table_name>.searchText}}`  |
 
 
 #### Table data
@@ -87,7 +87,31 @@ Controls how overflowing contents of the column are handled. When turned on, the
 
 #### Server side pagination
 
-The data fetched from the Query/ API is sometimes too large to be displayed on one table page. Server-Side Pagination lets you implement pagination by limiting the number of results fetched per API / Query request. For more information on how to paginate your data, click [here](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination).
+Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. To paginate this data and request smaller chunks of data at a time:
+
+1. Enable the server-side pagination property in the table
+2. Call the API / query onPageChange
+3. Configure pagination in the API / query using the Offset or Key-based pagination method
+
+##### Offset based pagination
+
+This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** fields of the table and is used in both APIs and Queries.
+
+The **pageNo** and **pageSize** can be used in the API / query by referencing them inside curly braces `{{ }}`.
+
+```sql
+SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ (Table1.pageNo - 1) * Table1.pageSize }}
+```
+
+```
+https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
+```
+
+##### Key based pagination
+
+This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute onPageChange.
+
+![](</img/pagination_(2)_(2).gif>)
 
 #### Total records
 
