@@ -7,10 +7,8 @@ description: You can hit any REST endpoint available on the public internet
 Configuring APIs involves setting up and managing the various aspects of an API that allow it to function effectively. This can include defining the API's structure and capability, setting up authentication and authorization, and establishing connections with other systems or services.
 
 :::tip
-If you want to access an API that's not publicly available on the internet, you can use a service like [ngrok](https://ngrok.com/) to expose it. You can check [this](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith#using-hostdockerinternal) documentation to learn more about connecting via ngrok.
+If you want to access an API that's not publicly available on the internet, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to work with local APIs on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
-
-
 
 ## API query editor
 
