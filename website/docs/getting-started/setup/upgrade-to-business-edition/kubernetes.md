@@ -159,5 +159,5 @@ To restore the backup, follow the below steps:
    Congratulations, you have successfully upgraded to the Appsmith Business Edition Helm chart v2 installation.
 
 ## Troubleshooting
-If you’re having issues with the deployment, please see the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+If you’re having issues with the deployment, please see the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.mdx) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
