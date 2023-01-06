@@ -18,6 +18,7 @@ Databases are an essential part of many applications and are used to store and m
 As a self-hosted Appsmith user, it's necessary to [safelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP addresses of the Appsmith deployment on your database instance or VPC. The IP addresses to be added to the safelist are `18.223.74.85` and `3.131.104.27`, which are the IP addresses of the Appsmith cloud instances.
 :::
 
+<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
 
 * On the **Explorer tab**, click the **+** sign next to **Datasources**. 
 * Choose a Database from the [Datasources](/reference/datasources/) that Appsmith can connect to.
@@ -25,7 +26,6 @@ As a self-hosted Appsmith user, it's necessary to [safelist](https://docs.appsmi
 * Click **Test** to verify that Appsmith can connect to your database using the details you provided.
 * Rename and save your datasource.
 
-<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
 
 
 Once your datasource has been added successfully, a success pop-up appears at the top. 
@@ -35,8 +35,8 @@ Once your datasource has been added successfully, a success pop-up appears at th
 
 Appsmith provides two sample datasets to help you connect the data and test the platform. 
 
-1. The first database is a sample [MongoDB](/reference/datasources/querying-mongodb/) database with a collection called "movies"
-2. The second database is a sample [PostgreSQL](/reference/datasources/querying-postgres) database with a table called "users"
+1. The first database is a sample [MongoDB](/reference/datasources/querying-mongodb/) database with a collection called "movies."
+2. The second database is a sample [PostgreSQL](/reference/datasources/querying-postgres) database with a table called "users."
 
 The mock databases are public and shared by all users, which may result in mangled data. To refresh the data, the databases are automatically **reset every day**, so any updates made to these databases are temporary.
 

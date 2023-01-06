@@ -36,6 +36,6 @@ Password is a **secret string** that's used to verify the identity of the user m
 
 The server uses the password to verify the identity of the user and determine whether the request should be allowed to proceed. The password is stored in a encrypted form, to protect it from being accessed by unauthorized users.
 
-:::info
+:::info important
 The Appsmith's system doesn't store any information about query responses or user inputs. Appsmith only acts as a proxy and never logs or stores the private/confidential data in Appsmith's data stores.
 :::
