@@ -378,7 +378,7 @@ Style properties allow you to change the look and feel of the table. There are s
 
 ## Transforming table data
 
-Some API / Query responses might have nested, unnecessary, or poorly formatted fields. These can be easily transformed inside the table data property by mapping over the data using javascript.
+Some API / Query responses might have deeply nested, unnecessary, or poorly formatted fields. These can be transformed to fit your formatting needs by parsing and processing the data with JavaScript. The JS [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function is highly recommended for processing raw data from your queries to fit your table correctly.
 
 ### Example
 
@@ -386,21 +386,21 @@ Some API / Query responses might have nested, unnecessary, or poorly formatted f
 https://api.github.com/repos/appsmithorg/appsmith/issues
 ```
 
-Binding this APIs response directly to a table would be unreadable like the image below
+Binding this API's response directly to a table would be unreadable like the image below:
 
 ![](</img/github_table.gif>)
 
-To format this data, we can write a map function over the API response and return an array of objects with only the fields we want to display. We can also format these fields how we'd like using javascript
+To format this data, you can write a [map function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to parse the API response, format the data, and return an array of row objects that contain only the desired fields:
 
 ```javascript
 {{ 
     fetch_issues.data.map((issue) => {
-    return {
-        user: issue.user.login,
-        assignees: issue.assignees.map((assignee) => assignee.login).join(","),
-        title: issue.title,
-        number: "#" + issue.number,
-    };
+        return {
+            user: issue.user.login,
+            assignees: issue.assignees.map((assignee) => assignee.login).join(","),
+            title: issue.title,
+            number: "#" + issue.number,
+        };
     });
 
 }}
@@ -412,11 +412,11 @@ To format this data, we can write a map function over the API response and retur
 
 Tables come with client side searching and filtering out of the box. This is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search and filter terms to the server, so that it only needs to data that's relevant. This can significantly improve performance and user experience when working with large data sets.
 
-To perform these operations, we need to pass these values to the API / query.
+To perform these operations, you should to update your widgets and API / queries to handle search and filter terms:
 
 ### Searching
 
-A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event will be triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
+A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event is triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
 
 <VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>
 
