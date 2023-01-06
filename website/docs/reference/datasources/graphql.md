@@ -474,7 +474,7 @@ End Cursor Value: {{testapi.data.data.repository.issues.pageInfo.endCursor}}
 ```
 
 :::info
-You can check this [document](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md) to learn more about server-side pagination.
+You can check this [document](/reference/widgets/table#transforming-table-data) to learn more about server-side pagination.
 :::
 
 With this, you can run a query on a page change event. The below video demonstrates how you can perform cursor-based pagination:

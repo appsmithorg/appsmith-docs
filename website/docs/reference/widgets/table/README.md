@@ -4,10 +4,6 @@ The table widget displays data in rows and columns. You can display data from an
 
 <VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget" caption="How to use Table Widget"/>
 
-:::info
-If you already know the basics and want to learn how to display data and handle pagination inside a table, [read this guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#pagination).
-:::
-
 ## Properties
 
 Properties allow you to edit the table, connect it with other widgets and customize the user actions. All these properties are present in the properties pane of the widget.
