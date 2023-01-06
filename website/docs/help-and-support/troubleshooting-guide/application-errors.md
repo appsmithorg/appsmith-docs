@@ -80,4 +80,4 @@ You can fix the error by providing an email that has been used to register with 
 This message indicates one of the following:
 
 * The page URL is invalid. This error can be fixed by getting the correct page URL from the administrator/developer.
-* The User doesn't have [permission](../../advanced-concepts/access-control.md) to access the page. You can fix the error by requesting access permission for the page from the `admin/developer`.
+* The User doesn't have [permission](/advanced-concepts/access-control) to access the page. You can fix the error by requesting access permission for the page from the `admin/developer`.
