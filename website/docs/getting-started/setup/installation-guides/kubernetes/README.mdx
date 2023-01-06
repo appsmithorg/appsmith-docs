@@ -21,9 +21,9 @@ Follow one of the available guidelines below to configure the Kubernetes cluster
 <Tabs groupId="configurations">
  <TabItem label="AWS EKS" value="AWSEKS">
 
-   1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
-    2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
-    3. The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
+  1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+  2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)    
+  3. The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
     Ensure that you enable the correct version for your cluster.
 
 </TabItem>
@@ -216,7 +216,7 @@ When using command, specify each parameter using `--set key=value[,key=value]` a
 ```bash
 helm install \
 --set persistence.storageClass=appsmith-pv \
-  stable-appsmith/appsmith --generate-name
+  appsmith appsmith/appsmith 
 ```
 
 Similarly, run the below command if you wish to change the encryption salt configuration.
@@ -224,7 +224,7 @@ Similarly, run the below command if you wish to change the encryption salt confi
 ```bash 
 helm install \
 --set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
-  stable-appsmith/appsmith --generate-name
+  appsmith appsmith/appsmith 
 ```
 
 Alternatively, use a `values.yaml` file. You can specify the parameter values needed for installing the chart. To change configurations specific to Appsmith update the `values.yaml` file. Listed below are available configurations for Appsmith.
@@ -259,7 +259,7 @@ Alternatively, use a `values.yaml` file. You can specify the parameter values ne
 Once you have made changes to the values file, run the below command.
 
 ```bash
-helm install -f values.yaml appsmith/appsmith --generate-name
+helm install appsmith appsmith/appsmith -f values.yaml 
 ```
 
 #### Update Appsmith
@@ -279,7 +279,7 @@ The default Appsmith helm installation disables auto update (_recommended_). You
 * Command: Pass an argument using the `--set` keyword (`--set autoupdate.enabled=true`) to the command.
 
     ```
-      helm install appsmith/appsmith --generate-name \
+      helm install appsmith/appsmith appsmith \
         --set autoupdate.enabled=true
     ```
 
@@ -310,32 +310,34 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
     ```bash
     helm repo update
     ```
+3. Generate the `values.yaml` config file
+    ```bash
+    helm show values appsmith-ee/appsmith --version 2.0.0 > values.yaml
+    ```
+4. Edit the `values.yaml` file and set the following parameters. You may choose to add a random generated password.
+
+   ```yaml
+    applicationConfig:
+      APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
+      APPSMITH_ENCRYPTION_SALT: "<SALT_PASSWORD>"
+      APPSMITH_LICENSE_KEY: "<LICENSE_KEY>"
+   ```
 
 <details id="highAvailability" open>
   <summary> <b>To configure High Availability (HA), be sure to configure the following</b> </summary>
+
+:::note Important
+
+  Both PostgreSQL and MongoDB must be enabled or configured to point to an external instance when `autoscaling` is enabled.
+:::
 
   1. Install `metrics-server`, which provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods.
 
     ```bash
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
     ```
-  2. Get the initial `values-ee.yaml`.
 
-    ```bash
-    helm show values appsmith-ee/appsmith --version 2.0.0 > values-ee.yaml
-    ```
-
-  3. PostgreSQL has to be enabled or an external PostgreSQL URL has to be provided.
-
-   ```yaml
-         postgresql:
-         # highlight-next-line
-            enabled: true
-            auth:
-              username: root
-  ```
-
-  4.  Enable `autoscaling` in the `values-ee.yaml`:
+  2. Enable `autoscaling` in the `values.yaml`. The below shows the `autoscaling` configuration for the Appsmith Deployment:
 
    ```yaml
         autoscaling:
@@ -343,26 +345,54 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
           enabled: true
           minReplicas: 2
           maxReplicas: 2
-  ```
+   ```
 
-  5.  Enable `mongodb` in the `values-ee.yaml`, or point it to an [external MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb).
+  3. PostgreSQL has to be enabled Or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
 
-  ```yaml
-    mongodb:
-      # highlight-next-line
-      enabled: true
-      service:
-        nameOverride: appsmith-mongodb
-  ```
+      1. Configure the parameters to enable PostgreSQL as shown below:
+
+      ```yaml
+            # enable PostgreSQL
+            postgresql:
+            # highlight-next-line
+                enabled: true
+                auth:
+                  username: root
+      ```
+
+      2. Configure the parameters to point to an external PostgreSQL as shown below:
+    
+      ```yaml
+        # configure an external PostgreSQL
+        applicationConfig::
+          APPSMITH_KEYCLOAK_DB_DRIVER: "postgresql"
+          APPSMITH_KEYCLOAK_DB_USERNAME: "<POSTGRES_USER>"
+          APPSMITH_KEYCLOAK_DB_PASSWORD: "<POSTGRES_PASSWORD>"
+          APPSMITH_KEYCLOAK_DB_URL: "<POSTGRES_DB_URL>"
+      ```
+
+  4.  Enable MongoDB in the `values.yaml` or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
+
+      1. Configure the parameters to enable MongoDB as shown below:
+
+        ```yaml
+          # enable MongoDB
+          mongodb:
+            # highlight-next-line
+            enabled: true
+            service:
+              nameOverride: appsmith-mongodb
+        ```
+      
+      2. Configure the parameters to point to an external MongoDB as shown below:
+
+        ```yaml
+        # configure an external MongoDB
+          applicationConfig::
+            APPSMITH_MONGODB_URI: "<MONGODB_URI>"
+        ```
 
 6. Create a shared file system. This is required for some Appsmith features that make use of the filesystem, like `git`-connected applications. Read more about this in the [Create a shared file system](#create-a-shared-file-system) section.
-
-7. Set a secret value to password, and to salt.
-
-   ```yaml
-     APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
-     APPSMITH_ENCRYPTION_SALT: "<SALT_PASSWORD>"
-   ```
 
 #### Create a shared file system
 
@@ -388,7 +418,7 @@ To configure persistence, you can use persistent volumes, persistent volume clai
 You have the option to either configure EFS using a new [Persistent Volume Claim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) or using an existing PVC.
 
 ###### Using new PVC
-This is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, ensure that the following configuration is updated in `values-ee.yaml` file under `persistence` attribute as shown below:
+This is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, ensure that the following configuration is updated in `values.yaml` file under `persistence` attribute as shown below:
 
 ```yaml
   existingClaim:
@@ -400,12 +430,12 @@ This is useful when you don't have any existing PVC available or if you want to 
     enabled: true
     driver: efs.csi.aws.com
     # highlight-next-line
-    volumeHandle: <file_system_id>
+    volumeHandle: <FILE_SYSTEM_ID>
 ```
 
 ###### Using existing PVC
 
-This is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Ensure that the following configuration is updated in `values-ee.yaml` file under `persistence` attribute as shown below:
+This is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Ensure that the following configuration is updated in `values.yaml` file under `persistence` attribute as shown below:
 
 ```yaml
 existingClaim:
@@ -416,13 +446,13 @@ existingClaim:
   efs:
     enabled: true
     driver: efs.csi.aws.com
-    volumeHandle: <file-system-id>
+    volumeHandle: <FILE_SYSTEM_ID>
 ```
 
 </TabItem>
 
 <TabItem label="Minikube" value="Minikube">
-  To configure persistence in Minikube, ensure that you have set the properties in `values-ee.yaml` file under `persistence` attribute as shown below.
+  To configure persistence in Minikube, ensure that you have set the properties in `values.yaml` file under `persistence` attribute as shown below.
 
 ```yaml
   localCluster:
@@ -454,17 +484,13 @@ existingClaim:
 
 </details>
 
-#### Deploy
 
-Follow the below steps to deploy Appsmith:
+5. Run the below command to deploy Appsmith:
 
-1. Run the below command to deploy Appsmith:
-
-```bash
-helm install appsmith-ee/appsmith -f values-ee.yaml --generate-name
-```
-
-When you run the install command, you may see output as shown below:
+  ```bash
+  helm install appsmith appsmith-ee/appsmith -f values.yaml
+  ```
+  When you run the install command, you may see output as shown below:
 
   ```
   NAME: appsmith
@@ -473,30 +499,33 @@ When you run the install command, you may see output as shown below:
   STATUS: deployed
   REVISION: 1
   TEST SUITE: None
-  NOTES:
-  1. Get the application URL by running these commands:
-    export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=appsmith,app.kubernetes.io/instance=appsmith-2-1670479627" -o jsonpath="{.items[0].metadata.name}")
-    export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
-    echo "Visit http://127.0.0.1:8080 to use your application"
-    kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
-
-  To expose your Appsmith service to be accessible from the Internet, please refer to our docs here https://docs.appsmith.com/setup/kubernetes#expose-appsmith.
   ```
 
-2. Run the command `kubectl get pods` to verify the list of pods. You may see output as shown below:
+  Once deployed run the below commands to verify the installation.
 
-```
-NAME                            READY   STATUS    RESTARTS   AGE
-appsmith-875b6cddc-4mmj6        1/1     Running   0          90s
-appsmith-875b6cddc-7b2hw        1/1     Running   0          3m30s
-appsmith-875b6cddc-smzwz        1/1     Running   0          3m15s
-appsmith-mongodb-0              1/1     Running   0          3m30s
-appsmith-mongodb-1              1/1     Running   0          3m10s
-appsmith-mongodb-arbiter-0      1/1     Running   0          3m30s
-appsmith-postgresql-0           1/1     Running   0          3m30s
-appsmith-redis-master-0         1/1     Running   0          3m30s
-appsmith-redis-replicas-0       1/1     Running   0          3m30s
-```
+    1. To get the application URL run the below commands:
+      
+      ```
+      export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=appsmith,app.kubernetes.io/instance=appsmith-2-1670479627" -o jsonpath="{.items[0].metadata.name}")
+      export CONTAINER_PORT=$(kubectl get pod --namespace default $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+      echo "Visit http://127.0.0.1:8080 to use your application"
+      kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
+      ```
+
+    2. Run the command `kubectl get pods` to verify the list of pods. You may see output as shown below:
+
+      ```bash
+      NAME                            READY   STATUS    RESTARTS   AGE
+      appsmith-875b6cddc-4mmj6        1/1     Running   0          90s
+      appsmith-875b6cddc-7b2hw        1/1     Running   0          3m30s
+      appsmith-875b6cddc-smzwz        1/1     Running   0          3m15s
+      appsmith-mongodb-0              1/1     Running   0          3m30s
+      appsmith-mongodb-1              1/1     Running   0          3m10s
+      appsmith-mongodb-arbiter-0      1/1     Running   0          3m30s
+      appsmith-postgresql-0           1/1     Running   0          3m30s
+      appsmith-redis-master-0         1/1     Running   0          3m30s
+      appsmith-redis-replicas-0       1/1     Running   0          3m30s
+      ```
 
 Congratulations, you have successfully installed Appsmith Business Edition Helm chart v2 installation.
 
@@ -506,25 +535,20 @@ Appsmith installation can be updated manually or by enabling auto update.
 
 ##### Auto update
 
-The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either setting it in values file or using a command.
-
-* Values file: Ensure that the following parameters are configured in `values-ee.yaml` file to enable auto update. 
-
-   ```yaml
-       autoupdate.enabled: true
-       autoupdate.scheduler: 0
-   ```
-Once the parameters are configure, run the below command. 
-
-   ```
-     helm upgrade --values values-ee.yaml appsmith appsmith-ee/appsmith
+The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either:
+  - Running the command below.
     ```
-
-* Command: Pass an argument using the `--set` keyword (`--set autoupdate.enabled=true`) to the command.
-
+    helm upgrade --set autoupdate.enabled=true \
+    appsmith [appsmith-ee|appsmith]/appsmith 
     ```
-      helm install appsmith-ee/appsmith --generate-name \
-        --set autoupdate.enabled=true
+  - Or edit `values.yaml` and specify the following parameters
+    ```yaml
+    autoupdate.enabled: true
+    autoupdate.scheduler: 0
+    ```
+    Followed by running the command below.
+    ```bash
+    helm upgrade --values values.yaml appsmith [appsmith-ee|appsmith]/appsmith
     ```
 
 ##### Manual update
@@ -542,32 +566,121 @@ kubectl rollout restart deployment appsmith
 
 To make your Appsmith installation accessible on the internet, you need an Ingress controller set up. For more information on Ingress controllers, see the [Configure Kubernetes Cluster](#configure-kubernetes-cluster) section. If you haven't yet installed the Helm chart, you can run the following command to install the chart, enable the ingress controller, and publish Appsmith.
 
-```bash 
-ingress:
-  ## @param ingress.enabled Enable ingress record generation for Ghost
-  ##
-  enabled: true
-  ## @param ingress.annotations Additional custom annotations for the ingress record
-  ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-  ##
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  hosts: []
-    # - host: appsmith-domain.me
-service:
-  ## @param service.type Kubernetes Service type
-  ##
-  type: ClusterIP
-```
+To install the Nginx ingress controller on AWS-EKS, GCE-GKE, or Azure, run the following command if it hasn't already been installed:
 
-If you have already installed Appsmith, run the `helm upgrade` command to upgrade the existing installation, and apply these configuration changes.
+ ```bash 
+  helm install ingress-nginx ingress-nginx/ingress-nginx
+  ```
 
- ```
- helm upgrade --set ingress.enabled=true appsmith appsmith/appsmith
+  <Tabs groupId="appsmithEditions">
 
- # Or this command if you are using values.yaml file
- helm upgrade --values values.yaml appsmith appsmith/appsmith
-```
+  <TabItem label="Community Edition" value="communityEdition"> 
+  Enable the ingress controller through command or by modifying the `values.yaml` file.
+  <details>
+  <summary>Follow the steps below to configure using command</summary>
+  Run the below command to enable ingress controller:
+
+  ```bash
+  helm upgrade appsmith/appsmith \
+      --set ingress.enabled=true \
+      --set ingress.className=nginx \
+      --set service.type=ClusterIP \
+  ```
+
+  </details>
+
+  <details id="usingValues">
+  <summary>Follow the steps below to configure using `values.yaml`</summary>
+
+  Open the `values.yaml` file and update the parameter values as below:
+
+  ```yaml 
+  ingress:
+    ## @param ingress.enabled Enable ingress record generation for Ghost
+    ##
+    enabled: true
+    ## @param ingress.annotations Additional custom annotations for the ingress record
+    ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+    ##
+    className: nginx
+    hosts: []
+      # - host: appsmith-domain.me
+  service:
+    ## @param service.type Kubernetes Service type
+    ##
+    type: ClusterIP
+  ```
+
+  Once the parameter values are modified, run the below command:
+
+  ```bash 
+  helm upgrade --values values.yaml appsmith appsmith/appsmith
+  ```
+
+  </details>
+
+ </TabItem>
+ <TabItem label="Business Edition" value="businessEdition">
+
+   Enable the ingress controller through command or by modifying the `values.yaml` file.
+
+  <details id="usingCommand">
+  <summary>Follow the steps below to configure using command</summary>
+  Run the below command to enable ingress controller:
+
+  ```bash
+  helm upgrade appsmith-ee/appsmith \
+      --set ingress.enabled=true \
+      --set ingress.className=nginx \
+      --set service.type=ClusterIP \
+  ```
+
+   </details>
+   <details id="usingValues">
+  <summary>Follow the steps below to configure using `values.yaml`</summary>
+  
+  Open the `values.yaml` file and update the parameter values as below:
+
+  ```yaml 
+  ingress:
+    ## @param ingress.enabled Enable ingress record generation for Ghost
+    ##
+    enabled: true
+    ## @param ingress.annotations Additional custom annotations for the ingress record
+    ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+    ##
+    className: nginx
+    hosts: []
+      # - host: appsmith-domain.me
+  service:
+    ## @param service.type Kubernetes Service type
+    ##
+    type: ClusterIP
+  ```
+    
+Once the parameter values are modified, run the below command:
+
+  ```bash 
+  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+  ```
+    
+  </details>
+
+</TabItem>
+</Tabs>
+  
+
+* It takes a few minutes for the ingress to get a public IP assigned. Once it has been assigned, you should see an IPv4 address or a domain name in the `ADDRESS` column. Run the below command to get this address:
+
+  ```bash
+  kubectl get ingress
+  ```
+  The command generates the output as shown below:
+
+  ```bash
+  NAME       CLASS   HOSTS   ADDRESS                                                                    PORTS   AGE
+  appsmith   nginx   *       a918d94876c27453ea78d2883539bb36-1165345706.ap-south-1.elb.amazonaws.com   80      25h
+  ```
 
 ## Configure TLS
 
@@ -746,7 +859,7 @@ Once the deployment is finished, check the domain in a browser to verify that th
 
 The default installation doesn't have data compression configured for Nginx ingress controller. Follow the below steps to enable it.
 
-1. Edit the `configMap` for `ingress-nginx-controller` by using the below command
+1. Edit the `configMap` for `ingress-nginx-controller` by using the below command.
 
   ```bash
   kubectl edit configmap -n ingress-nginx ingress-nginx-controller
@@ -755,7 +868,8 @@ The default installation doesn't have data compression configured for Nginx ingr
 2. Add the following to the data section.
 
   ```yaml
-  data: # ADD IF NOT PRESENT
+  # Add the data section if not already present
+  data: 
     use-gzip: "true" # ENABLE GZIP COMPRESSION
     gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
   ```
@@ -766,13 +880,27 @@ The Nginx controller automatically updates once you save (`:wq!`) the changes.
 
 The following command uninstalls Appsmith and removes all Kubernetes resources associated with the chart:
 
+1. List the releases by running below command:
+
 ```bash
 helm list
+```
+The command generates the output as shown below:
+
+```
 NAME                       NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
 #highlight-next-line
 appsmith-1631069261        default         1               2021-09-09 11:24:40.152766 +0700 +07    deployed        appsmith-1.3.0  1.16.0
+```
+2. Pick the release name `appsmith-1631069261` and run the below command to uninstall Appsmith:
 
+```bash
 helm uninstall appsmith-1631069261
+```
+3. Run the command to verify the release status for `appsmith-1631069261`
+
+```bash
+helm status <RELEASE_NAME>
 ```
 
 ## Troubleshooting

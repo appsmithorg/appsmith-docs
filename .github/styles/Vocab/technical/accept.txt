@@ -7,6 +7,7 @@ clearWatch
 datasource
 Datasource
 datasources
+Datasources
 Drag and drop
 enum
 filteredTableData
@@ -155,4 +156,5 @@ lodash
 xmlParser
 moment
 excelJS
+Application
 
