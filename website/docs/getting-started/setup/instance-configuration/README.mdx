@@ -1,0 +1,124 @@
+---
+description: >-
+  Appsmith ships with third-party services & configurations that improve the app
+  building experience. All services & configurations are entirely optional.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Instance Configuration
+
+Configuration of your Appsmith instance allows you to tailor it to your specific needs. This process includes setting up elements like environment variables, authentication, emails, SSL, and custom domain. Proper configuration ensures that your instance is running efficiently. 
+
+## Configure Docker installations
+
+To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. For example, you wish to add Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
+
+```bash
+APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+```
+
+After making changes, be sure to **restart the docker containers** for the changes to take effect. Run the below command to restart the Appsmith container.
+
+* Docker run
+  ```bash
+   docker restart appsmith
+  ```
+* Docker Compose
+  ```bash
+   docker-compose restart appsmith
+  ```
+
+## Configure Helm installations
+
+To configure environment variables using helm, follow these steps:
+
+<Tabs groupId="appsmithEditions">
+  <TabItem label="Community Edition" value="communityEdition"> 
+
+  You may choose to configure environment variables: through commands or by using a `values.yaml` file.
+
+  * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
+
+  ```bash
+    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
+  ```
+  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
+
+  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
+
+  ```yaml
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+    APPSMITH_FORM_LOGIN_DISABLED: ""
+    APPSMITH_SIGNUP_DISABLED: "true"
+  ``` 
+Once you have made changes to the values file, run the below command.
+
+```bash
+  helm upgrade --values values.yaml appsmith appsmith/appsmith
+```
+
+  </TabItem>
+  <TabItem label="Business Edition" value="businessEdition"> 
+
+   You may choose to configure environment variables: through commands or by using a `values.yaml` file.
+
+  * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
+
+  ```bash
+    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
+  ```
+  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
+
+  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
+
+  ```yaml
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+    APPSMITH_FORM_LOGIN_DISABLED: ""
+    APPSMITH_SIGNUP_DISABLED: "true"
+  ```
+Once you have made changes to the values file, run the below command.
+
+```bash
+  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+```
+  </TabItem>
+</Tabs> 
+
+## Configure ECS installations
+
+To configure an ECS installation, follow these steps:
+
+1. Navigate to the ECS console and select Task Definitions on the sidebar.
+2. Click on the Task Definition used by your ECS instance, and hit Create new revision.
+3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs as shown below.
+
+![](/img/ecs-task-env_(1).png)
+
+It's recommended to use AWS Secrets for sensitive information, please follow the steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
+
+1. Hit the Update button, and hit Create to make a new task definition.
+2. Navigate back to the ECS console and select your cluster. Click on your service to open the service details.
+3. Click on Update, and select the latest revision of the Task Definition.
+4. Hit Skip to review and then Update Service. A screen as below shows the status.
+
+![](/img/ecs-service-restart_(1)_(1)_(1)_(1)_(3)_(3)_(1).png)
+
+It may take a minute for the new ECS Task to start running.
+
+## Further reading
+
+* [Email](/getting-started/setup/instance-configuration/email)
+* [Custom Domain](/getting-started/setup/instance-configuration/custom-domain)
+* [Signup Restrictions](/getting-started/setup/instance-configuration/disable-user-signup)
+* [Google Maps](/getting-started/setup/instance-configuration/google-maps)
+* [Disable Intercom](/getting-started/setup/instance-configuration/disable-intercom)
+* [Single Sign-On (SSO)](/getting-started/setup/instance-configuration/authentication)
+* [Frame Ancestors](/getting-started/setup/instance-configuration/frame-ancestors)
