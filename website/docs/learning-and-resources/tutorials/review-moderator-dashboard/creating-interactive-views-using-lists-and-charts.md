@@ -28,11 +28,11 @@ Lets start by adding a button that'll redirect to a new page. Also, on the new p
 }}
 ```
 
-Ayousome, you've successfully written your first JS function on Appsmith. As you can notice, these are primary Invoked functions, which means it runs as soon as it defined. Inside the function, you've first used the **`storeValue`** method to store the business key from businessTable into the **`business_id`** variable. Next, you've used a **`navigateTo`** method to be able to redirect to a new page.
+Great, you've successfully written your first JS function on Appsmith. As you can notice, these are primary Invoked functions, which means it runs as soon as it defined. Inside the function, you've first used the **`storeValue`** method to store the business key from businessTable into the **`business_id`** variable. Next, you've used a **`navigateTo`** method to be able to redirect to a new page.
 
 Now create a new page and name it "Business Reviews". So, when you click the button, it takes you to a page called **"Business Reviews."**
 
-As you can see here, as soon as the vieyour clicks the button, it now navigates to a new Page. Also, you have the **`business_id`** saved from the selected row.
+As you can see here, as soon as the viewer clicks the button, it now navigates to a new Page. Also, you have the **`business_id`** saved from the selected row.
 
 ### Using Store Value in DB Queries
 
@@ -112,7 +112,7 @@ Now, Lets customize the list view according to your needs and remove the items y
 2. You should notice that the widgets are automatically added to the other items of the list widget.
 3. You can bind the Items into these widgets by using the **`currentItem`** property.
 4. In the text, widgets use the mustache syntax and bind the data like `{{currentItem.text}}`.
-5. Now, in the overflow setting, change it to "scroll contents". So this makes the text view scrollable.
+5. Now, in the overflow setting, change it to "scroll contents". So this make the text view scrollable.
 
 <VideoEmbed host="youtube" videoId="e4f1QMq2zoA" title="Using the List Widget" caption="Using the List Widget"/>
 
@@ -156,7 +156,7 @@ After finishing this, you can customize the text widget, find the background-col
 
 ### Adding chart widget
 
-The chart widget on Appsmith is used to view the graphical representation of your data. It's available in multiple configurations; hoyouver, if you want to do advanced visualization, you can choose the custom configuration and use `Custom Fusion Chart Configuration.`
+The chart widget on Appsmith is used to view the graphical representation of your data. It's available in multiple configurations; however, if you want to do advanced visualization, you can choose the custom configuration and use `Custom Fusion Chart Configuration.`
 
 :::info
 There are almost 100+ variants of Fusion Chart Configuration; learn more from the official docs[ here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
@@ -181,7 +181,7 @@ Now, follow the below steps to create a chart for visualizing the ratings of the
 {{filterBusinessReviews.data.map((item, index)=>{return {x:moment(item.date).format("L"), y:item.stars}})}}
 ```
 
-Ayousome! You should see all the data plotted on the chart widget. Similarly, you can plot the other ratings by clicking on the **`ADD SERIES`** option. The video below demonstrates how to add series to your chart.
+Awesome, you should see all the data plotted on the chart widget. Similarly, you can plot the other ratings by clicking on the **`ADD SERIES`** option. The video below demonstrates how to add series to your chart.
 
 <VideoEmbed host="youtube" videoId="fIBjUCBL6wA" title="Customizing Chart Widget" caption="Customizing Chart Widget"/>
 
