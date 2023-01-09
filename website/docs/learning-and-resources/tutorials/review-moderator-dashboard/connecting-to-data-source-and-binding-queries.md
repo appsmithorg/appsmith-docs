@@ -27,11 +27,11 @@ Appsmith supports various databases like:
 * [MySQL](/reference/datasources/querying-mysql.md), and a [lot more](/reference/datasources/).
 :::
 
-Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
+Lets utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
 
 <VideoEmbed host="youtube" videoId="ZOSYloiB8ZY" title="Connecting to a Datasource on Appsmith" caption="Connecting to a Datasource on Appsmith"/>
 
-1. First, click on the `+` the icon next to the `Datasources`.
+1. First, click the `+` the icon next to the `Datasources`.
 2. Next, you'll see a list of data source options that you can connect to.
 3. Choose **Postgres** and rename the data source to `Postgres Mock DB`.
 4. Next, use the following details to connect with the data source.
@@ -46,18 +46,18 @@ Password: that-annoying-yelper
 ```
 
 :::info
-To verify if this data source is valid or not, you can click on the `Test` button on your mid-bottom right. You should see a pop-up with the connection status.
+To verify if this data source is valid or not, you can click the `Test` button on your mid-bottom right. You should see a pop-up with the connection status.
 :::
 
 Now, save your data source by clicking the **Save** button. You'll see a success pop-up on the top-right after successfully adding your DB.
 
 ### **Writing your First Query**
 
-The data source is successfully connected; now, let's write a simple DB query to fetch all the business data from the business table. Follow the below steps to do so:
+The data source is successfully connected; now, Lets write a simple DB query to fetch all the business data from the business table. Follow the below steps to do so:
 
 <VideoEmbed host="youtube" videoId="QoyzrOEG5to" title="Running Queries on Appsmith" caption="Running Queries on Appsmith"/>
 
-1. First, click on the `+` the icon next to the `Datasources`.
+1. First, click the `+` the icon next to the `Datasources`.
 2. Find the created `Postgres Mock DB` data source under the Active tab and click `NEW QUERY`.
 3. It will create a new DB Query that you can use across the Page.
 4. Name this query as `getBusinessData` and click select.
@@ -67,11 +67,11 @@ The data source is successfully connected; now, let's write a simple DB query to
 select * from yelp_business;
 ```
 
-To run this query, click on the **RUN** button in the top-right corner of the **DB query**.
+To run this query, click the **RUN** button in the top-right corner of the **DB query**.
 
 Just like that, you should see the response from the DB Query in the Response Pane tab below.
 
-Next, let's bind this data onto the powerful [table widget](/reference/widgets/table/) of Appsmith!
+Next, Lets bind this data onto the powerful [table widget](/reference/widgets/table/) of Appsmith!
 
 :::info
 All names within a page must be unique, including widget names, query names, or API names.
@@ -79,19 +79,19 @@ All names within a page must be unique, including widget names, query names, or 
 
 ### Binding Queries onto Widgets
 
-In the previous section, you’ve created a DB query named **`getBusinessData`**; let's bind the query onto a table widget. You can achieve it in two ways:
+In the previous section, you’ve created a DB query named **`getBusinessData`**; Lets bind the query onto a table widget. You can achieve it in two ways:
 
 The First and simple method is to open the query window and select the table option on the right-side property pane. It will automatically add a table widget to your canvas. The video below demonstrates adding a table widget from the query window.
 
 <VideoEmbed host="youtube" videoId="XgQ9AsRdLek" title="Adding a table widget from the query window" caption="Adding a table widget from the query window"/>
 
 :::info
-Note that the above method would also automatically bind the data from the query for you.
+Note that the preceding method would also automatically bind the data from the query for you.
 :::
 
-Let's look at another method for adding a table widget to your canvas.
+Lets look at another method for adding a table widget to your canvas.
 
-1. Click on the **`Widgets`** option from **entity explorer.**
+1. click the **`Widgets`** option from **entity explorer.**
 2. You'll find a great set of UI widgets here that you can use to build the application.
 3. Drag and drop an **`Table widget`** onto the canvas.
 
@@ -107,11 +107,11 @@ You'll notice a property window on the right side of the program as soon as you 
 You can access the docked property pane of any widget, by simply clicking on the widget from the canvas.
 :::
 
-Let's look at the Table's Property Pane:
+Lets look at the Table's Property Pane:
 
 **Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. Go through the detailed documentation [here](/reference/widgets/table/) To learn more about the table widget.
 
-**Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click on the cog icon and set the column data type individually.
+**Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click the cog icon and set the column data type individually.
 
 :::info
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
@@ -119,7 +119,7 @@ The table widget displays data in rows and columns. You can display data from an
 
 These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)
 
-Now, in the **`Table Data`** property, let's bind the response from the DB Query. To do this, you'll have to use the Moustache Operator.
+Now, in the **`Table Data`** property, Lets bind the response from the DB Query. To do this, you'll have to use the Moustache Operator.
 
 :::info
 In Appsmith, the mustache operator **`{{ /* This is JavaScript */ }}`** can be used anywhere to write JavaScript. For example, when binding data onto widgets, sending params to APIs, sharing data across pages, etc.

@@ -33,7 +33,7 @@ There are now buttons in each row of the table, each corresponding to that row's
 5. Rename the new modal to **EditProductModal** using its properties.
 6. Rename the modal's title to **Edit Product**.
 7. Delete the two default buttons at the bottom of the modal, called "Reset" and "Submit". You can do this with the trash can icon at the top of each widget's properties, or by selecting the widgets and hitting the "Delete" keyboard key.
-8. Drag and drop a new Form Widget into the modal window, and delete the form's default text widget (since the modal already has our title).
+8. Drag and drop a new Form Widget into the modal window, and delete the form's default text widget.
 9. Rename the form's "Submit" button to **EditConfirmButton**.
 
 After those steps, your new modal should look like this:
@@ -83,7 +83,7 @@ Finally, note that since the scope of a widget is limited to its parent page, a 
 There are two ways to access properties of a widget or results of an API/DB Query _from another page_:
 
 1. Store the data in your browser cache using the [storeValue](reference/appsmith-framework/widget-actions/store-value) function so that it's available for accessing even when the user moves to another page in your app.
-2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](/reference/appsmith-framework/widget-actions/navigate-to) function.
+2. Pass the data as a query parameter in the URL of the page you redirect the user to. This can be done using the [navigateTo](/reference/appsmith-framework/widget-actions/navigate-to) function.
 :::
 
 Now set a default value for **MrpInput**:
