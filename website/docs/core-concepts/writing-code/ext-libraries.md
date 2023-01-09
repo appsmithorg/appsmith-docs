@@ -15,7 +15,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 * [xmlParser](https://naturalintelligence.github.io/fast-xml-parser/) can be used for parsing and manipulating XML data in JavaScript.
 
-* [Forge](https://github.com/digitalbazaar/forge), is a library for working with cryptographic algorithms and protocols in JavaScript.
+* [Forge](https://github.com/digitalbazaar/forge) can be used to work with cryptographic algorithms and protocols in JavaScript.
 
 
 ## Custom JavaScript libraries
