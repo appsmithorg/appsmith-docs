@@ -22,7 +22,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to obtain the URL. ```
 
-For example- 
+Use a URL that points to the library's index file. Ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries will have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library you wish to use does not support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice. ```
 
 *  Valid and supported:  `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`. 
 
