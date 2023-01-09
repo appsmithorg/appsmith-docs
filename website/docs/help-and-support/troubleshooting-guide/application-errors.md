@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-description: You'll learn about common application errors and how to resolve them on Appsmith.
+description: Troubleshoot the issues with your Appsmith applications. This page includes a list of common errors, causes, and solutions to help you resolve application issues.
 ---
 # Application Errors
 
