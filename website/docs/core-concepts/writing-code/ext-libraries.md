@@ -5,7 +5,7 @@ The Appsmith platform includes built-in JavaScript utility libraries, which can 
  <VideoEmbed host="youtube" videoId="tqJna718tj4" title="Using Built-in Libraries in Appsmith" caption="Using Built-in Libraries in Appsmith"/> 
 
 
-## Pre-installed JavaScript libraries
+## Built-in JavaScript libraries
 
 There are variety of pre-installed JavaScript libraries that can be utilized in your projects. These libraries provide access to a range of useful functions and can be incorporated into your applications.
 
