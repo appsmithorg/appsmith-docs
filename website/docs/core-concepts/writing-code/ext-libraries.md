@@ -13,7 +13,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 * [Moment](https://momentjs.com/docs/) simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
 
-* [xmlParser](https://naturalintelligence.github.io/fast-xml-parser/), is a library for parsing and manipulating XML data in JavaScript.
+* [xmlParser](https://naturalintelligence.github.io/fast-xml-parser/) can be used for parsing and manipulating XML data in JavaScript.
 
 * [Forge](https://github.com/digitalbazaar/forge), is a library for working with cryptographic algorithms and protocols in JavaScript.
 
