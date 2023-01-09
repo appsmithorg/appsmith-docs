@@ -1,6 +1,6 @@
 # External Libraries
 
-With Appsmith, you have the ability to install and utilize external JavaScript libraries to enhance your ability to manipulate data within `{{ }}` bindings or within JSObjects. These external libraries can provide you with additional methods to help you build complex application and business logic.
+The Appsmith platform includes built-in JavaScript utility libraries, which can be used to work with data within `{{ }}` bindings or within JSObjects. You can also install and use other custom libraries to manipulate or transform data. These external libraries provide additional methods to help you build complex applications and business logic.
 
  <VideoEmbed host="youtube" videoId="tqJna718tj4" title="Using Built-in Libraries in Appsmith" caption="Using Built-in Libraries in Appsmith"/> 
 
