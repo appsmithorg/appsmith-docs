@@ -9,7 +9,7 @@ The Appsmith platform includes built-in JavaScript utility libraries, which can 
 
 There are variety of pre-installed JavaScript libraries that can be utilized in your projects. These libraries provide access to a range of useful functions and can be incorporated into your applications.
 
-* [Lodash](https://lodash.com/docs/4.17.15), is a JavaScript utility library that provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
+* [Lodash](https://lodash.com/docs/4.17.15) provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
 
 * [Moment](https://momentjs.com/docs/), is a JavaScript library that simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
 
