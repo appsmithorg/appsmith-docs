@@ -7,7 +7,7 @@ The Appsmith platform includes built-in JavaScript utility libraries, which can 
 
 ## Built-in JavaScript libraries
 
-There are variety of pre-installed JavaScript libraries that can be utilized in your projects. These libraries provide access to a range of useful functions and can be incorporated into your applications.
+Appsmith provides the following built-in JavaScript libraries that can be utilized in your applications.
 
 * [Lodash](https://lodash.com/docs/4.17.15) provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
 
