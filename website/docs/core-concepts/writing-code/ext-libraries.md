@@ -46,7 +46,7 @@ https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 ```
 * Click `Install`.
 
-## Using JavaScript libraries
+## Using external libraries
 
 External libraries can be used within `{{ }}` in the same way JavaScript is used elsewhere in the application. For more information about the signature of the JavaScript libraries, see their official documentation.
 
