@@ -20,7 +20,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 ## Custom JavaScript libraries
 
-You can browse and install recommended JS libraries or install a JS library of your choice by providing a valid URL. 
+Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to obtain the URL. ```
 
 For example- 
 
