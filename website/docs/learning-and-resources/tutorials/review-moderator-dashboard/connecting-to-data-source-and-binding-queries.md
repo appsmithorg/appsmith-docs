@@ -71,7 +71,7 @@ To run this query, click the **RUN** button in the top-right corner of the **DB 
 
 Just like that, you should see the response from the DB Query in the Response Pane tab below.
 
-Next, Lets bind this data onto the powerful [table widget](/reference/widgets/table/) of Appsmith!
+Next, Lets bind this data onto the powerful [table widget](/reference/widgets/table/) of Appsmith
 
 :::info
 All names within a page must be unique, including widget names, query names, or API names.
@@ -111,7 +111,7 @@ Lets look at the Table's Property Pane:
 
 **Table Data**: To add data to the table, we can update the property pane's `Table Data` property. By default, it has some initial configuration; you can update it based on your preferences. But also make sure that it will only accept array data types. Go through the detailed documentation [here](/reference/widgets/table/) To learn more about the table widget.
 
-**Table Columns**: Beneath the Table Data property, you can configure all your column data. You can click the cog icon and set the column data type individually.
+**Table Columns**: beneath the Table Data property, you can configure all your column data. You can click the cog icon and set the column data type individually.
 
 :::info
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.

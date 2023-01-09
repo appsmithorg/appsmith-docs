@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ### Storing Data in Appsmith Context Object
 
-You are now almost ready with your super cool dashboard. To make your app more interactive, we will add another page that will show reviews of that particular business.
+You are now almost ready with your super cool dashboard. To make your app more interactive, you have to add another page that displays reviews of that particular business.
 
 Lets start by adding a button that'll redirect to a new page. Also, on the new page, you would require the **`business_id`** to filter the reviews from the review table. Hence, now store the value in the [Appsmith Context Object ](/reference/appsmith-framework/context-object)and use it as a reference. Follow the instructions below:
 
@@ -28,15 +28,15 @@ Lets start by adding a button that'll redirect to a new page. Also, on the new p
 }}
 ```
 
-Awesome, you've successfully written your first JS function on Appsmith. As you can notice, these are primary Invoked functions, which means it runs as soon as it defined. Inside the function, we've first used the **`storeValue`** method to store the business key from businessTable into the **`business_id`** variable. Next, you've used a **`navigateTo`** method to be able to redirect to a new page.
+Ayousome, you've successfully written your first JS function on Appsmith. As you can notice, these are primary Invoked functions, which means it runs as soon as it defined. Inside the function, you've first used the **`storeValue`** method to store the business key from businessTable into the **`business_id`** variable. Next, you've used a **`navigateTo`** method to be able to redirect to a new page.
 
 Now create a new page and name it "Business Reviews". So, when you click the button, it takes you to a page called **"Business Reviews."**
 
-As you can see here, as soon as the viewer clicks the button, it now navigates to a new Page! Also, we have the **`business_id`** saved from the selected row.
+As you can see here, as soon as the vieyour clicks the button, it now navigates to a new Page. Also, you have the **`business_id`** saved from the selected row.
 
 ### Using Store Value in DB Queries
 
-Now, to fetch review data, we will write a query for the **Business Reviews Page**. Lets write one DB query to filter the reviews from the reviews table based on the selected business\_id by following the below steps:
+Now, to fetch review data, you can write a query for the **Business Reviews Page**. Lets write one DB query to filter the reviews from the reviews table based on the selected business\_id by following the below steps:
 
 <VideoEmbed host="youtube" videoId="7hQqJ2Cfj5o" title="Writing a query for Business Reviews Page" caption="Writing a query for Business Reviews Page"/>
 
@@ -53,9 +53,9 @@ select * from yelp_reviews where business_id = {{appsmith.store.business_id}}
 Make sure you perform this query for the "Business Reviews" page.
 :::
 
-We're selecting all the rows from the **`yelp_review`** table and filtering them by the **`business_id`** variable you've saved in the appsmith store while navigating to the new page. Hence, you've used it for the WHERE clause using the mustache syntax. **Now hit RUN!**
+you're selecting all the rows from the **`yelp_review`** table and filtering them by the **`business_id`** variable you've saved in the appsmith store while navigating to the new page. Hence, you've used it for the WHERE clause using the mustache syntax. **Now hit RUN!**
 
-By running the query, we can see all the reviews based on the selected **`business_id`** . In the query settings tab, make sure you toggle the **Run query on the page load option.**
+By running the query, you can see all the reviews based on the selected **`business_id`** . In the query settings tab, make sure you toggle the **Run query on the page load option.**
 
 Additionally, you'll need to **fetch thebusiness details again on this page**, making it easier on dashboards to show complete details from a DB query. Follow the below steps:
 
@@ -69,7 +69,7 @@ select * from yelp_business where business_id={{appsmith.store.business_id}}
 
 If you run this, you'll only see one row that fetches all the business details from the business table based on the **`business_id`** stored inside the appsmith context object.
 
-Now, Lets build a dashboard that will show all the reviews fetched from the reviews table.
+Now, Lets build a dashboard that shows all the reviews fetched from the reviews table.
 
 <VideoEmbed host="youtube" videoId="dFcX2fs38ak" title="Creating a UI for the Business Reviews Page" caption="Creating a UI for the Business Reviews Page"/>
 
@@ -106,13 +106,13 @@ Now, let us use a List Widget to display all the reviews from the filterBusiness
 {{filterBusinessReviews.data}}
 ```
 
-Now, Lets customize the list view according to our needs and remove the items we don't need in the list view.
+Now, Lets customize the list view according to your needs and remove the items you don't need in the list view.
 
 1. Delete the already populated data in the list widget and add a few text widgets inside the list view.
-2. You should notice that the widgets will be automatically added to the other items of the list widget.
+2. You should notice that the widgets are automatically added to the other items of the list widget.
 3. You can bind the Items into these widgets by using the **`currentItem`** property.
 4. In the text, widgets use the mustache syntax and bind the data like `{{currentItem.text}}`.
-5. Now, in the overflow setting, change it to "scroll contents". So this will make the text view scrollable.
+5. Now, in the overflow setting, change it to "scroll contents". So this makes the text view scrollable.
 
 <VideoEmbed host="youtube" videoId="e4f1QMq2zoA" title="Using the List Widget" caption="Using the List Widget"/>
 
@@ -132,7 +132,7 @@ Here, if you notice, the date isn't in a readable way. You can use `` `moment.js
 {{moment(currentItem.date).format("LL")}}
 ```
 
-The date automatically formats based on the type we give in the .format() method.
+The date automatically formats based on the type you give in the .format() method.
 
 ### **Displaying Ratings**
 
@@ -156,7 +156,7 @@ After finishing this, you can customize the text widget, find the background-col
 
 ### Adding chart widget
 
-The chart widget on Appsmith is used to view the graphical representation of your data. It's available in multiple configurations; however, if you want to do advanced visualization, you can choose the custom configuration and use `Custom Fusion Chart Configuration.`
+The chart widget on Appsmith is used to view the graphical representation of your data. It's available in multiple configurations; hoyouver, if you want to do advanced visualization, you can choose the custom configuration and use `Custom Fusion Chart Configuration.`
 
 :::info
 There are almost 100+ variants of Fusion Chart Configuration; learn more from the official docs[ here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
@@ -181,7 +181,7 @@ Now, follow the below steps to create a chart for visualizing the ratings of the
 {{filterBusinessReviews.data.map((item, index)=>{return {x:moment(item.date).format("L"), y:item.stars}})}}
 ```
 
-Awesome! You should see all the data plotted on the chart widget. Similarly, you can plot the other ratings by clicking on the **`ADD SERIES`** option. The video below demonstrates how to add series to your chart.
+Ayousome! You should see all the data plotted on the chart widget. Similarly, you can plot the other ratings by clicking on the **`ADD SERIES`** option. The video below demonstrates how to add series to your chart.
 
 <VideoEmbed host="youtube" videoId="fIBjUCBL6wA" title="Customizing Chart Widget" caption="Customizing Chart Widget"/>
 
@@ -208,7 +208,7 @@ You can also make the application public. In that case, anyone with the URL to t
 
 ## **What's next**
 
-The basic Review Moderator Dashboard is now up and running. It also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. The following resources will come in handy as you need to learn new tricks:
+The basic Review Moderator Dashboard is now up and running. It also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start fooling around. The following resources comes in handy as you need to learn new tricks:
 
 * [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Widgets](/reference/widgets/)
