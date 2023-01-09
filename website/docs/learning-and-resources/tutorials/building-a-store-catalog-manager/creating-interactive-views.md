@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+description: >-
+  In this part of the tutorial, you'll learn how to build an interactive
+  UI using widgets like buttons, lists, charts, and more.
 ---
 
 # Creating Interactive Views

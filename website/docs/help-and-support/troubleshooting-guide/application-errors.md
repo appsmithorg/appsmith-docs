@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: You'll learn about common application errors and how to resolve them on Appsmith.
 ---
 # Application Errors
 
