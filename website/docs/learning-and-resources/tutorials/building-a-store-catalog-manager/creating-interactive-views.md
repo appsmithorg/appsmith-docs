@@ -49,7 +49,7 @@ Click on the **Edit** button of any row to ensure that the **EditProductModal** 
 * It looks exactly like the **AddProductForm**
 * Its properties are configured in the same way as that of **AddProductForm**
 
-Click [here](using-forms.md) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
+Click [here](using-forms) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
 
 :::info
 **Naming:**
@@ -82,7 +82,7 @@ Finally, note that since the scope of a widget is limited to its parent page, a 
 
 There are two ways to access properties of a widget or results of an API/DB Query _from another page_:
 
-1. Store the data in your browser cache using the [storeValue](reference/appsmith-framework/widget-actions/store-value.md) function so that it's available for accessing even when the user moves to another page in your app.
+1. Store the data in your browser cache using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) function so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../../reference/appsmith-framework/widget-actions/navigate-to.md) function.
 :::
 
@@ -192,7 +192,7 @@ To bind multiple actions to a button event, you would have to write some JavaScr
 }}
 ```
 
-This is similar to what you learned in [part 2](./using-forms.md) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
+This is similar to what you learned in [part 2](/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
@@ -223,7 +223,7 @@ Once deployed, you can share your deployed application with both internal and ex
 2. Share the application's URL with the user, OR
 3. Invite a user by adding their email, selecting an appropriate role for them, and clicking **INVITE**.
 
-You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](/advanced-concepts/access-control.md).)
+You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](/advanced-concepts/access-control))
 
 **What's next?**
 
