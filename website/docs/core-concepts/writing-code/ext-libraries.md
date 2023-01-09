@@ -38,7 +38,7 @@ Follow the below steps to install a custom JavaScript library:
 
 ![Installing custom JavaScript libraries](/img/customjs.gif)
 
-* On the Explorer tab,
+* Navigate to the Explorer tab
 * Click the `+` sign next to `Libraries`.
 * Paste the URL into the designated field. For example: 
 ```js 
