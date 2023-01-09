@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-description: The Migrate Applications feature on Appsmith allows you to move all of your Appsmith data or specific applications from one instance to another.
+description: The Migrate Applications feature gives you the flexibility to move your Appsmith applications and data from one instance to another. You may choose to migrate all or specific applications as needed.
 ---
 
 # Migrate Applications
