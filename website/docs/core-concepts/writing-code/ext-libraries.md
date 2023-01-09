@@ -18,7 +18,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 * [Forge](https://github.com/digitalbazaar/forge), is a library for working with cryptographic algorithms and protocols in JavaScript.
 
 
-## Install custom JavaScript libraries
+## Custom JavaScript libraries
 
 You can browse and install recommended JS libraries or install a JS library of your choice by providing a valid URL. 
 
