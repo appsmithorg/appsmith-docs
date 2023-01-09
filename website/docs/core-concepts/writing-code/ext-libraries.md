@@ -11,7 +11,7 @@ There are variety of pre-installed JavaScript libraries that can be utilized in 
 
 * [Lodash](https://lodash.com/docs/4.17.15) provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
 
-* [Moment](https://momentjs.com/docs/), is a JavaScript library that simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
+* [Moment](https://momentjs.com/docs/) simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
 
 * [xmlParser](https://naturalintelligence.github.io/fast-xml-parser/), is a library for parsing and manipulating XML data in JavaScript.
 
