@@ -1,10 +1,49 @@
 ---
 description: >-
-  Every widget, API & query is exposed as an object which can be used to write
-  logic
+  Learn how to write custom code with Appsmith. The guide covers a variety of programming languages, including JavaScript and SQL, and provides examples and best practices to help you get started.
 ---
 
 # Writing Code
+Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-friendly, intuitive application building. The JavaScript code editor and debugging tools are designed to help users write code that's easy to read and understand, allowing for smoother collaboration and the creation of reliable, high-performing applications. These tools also aid in troubleshooting any issues that may arise, allowing users to build the best possible applications for their users. 
+
+This documentation guide helps you in writing code by providing an overview of the Appsmith code editor, its features, and best practices for writing clean and efficient code. It also covers how to incorporate external libraries and APIs into Appsmith projects, and provide tips for debugging and troubleshooting code. 
+
+## JavaScript editor
+The Appsmith JavaScript editor is a powerful tool that allows users to write, test, and debug their JavaScript code directly within the platform. It includes features such as syntax highlighting, code completion, and error highlighting, making it easy for users to write and debug their code.
+
+<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JS Editor" caption="How to build with JS Editor" />
+
+The code editor also includes a built-in console, allowing users to see the results of their code in real-time as they write it. This allows users to test their code and make any necessary changes without having to leave the Appsmith platform.
+
+It includes a number of pre-built JavaScript libraries and functions that users can incorporate into their code. This makes it easy for users to add advanced capabilities to their applications without having to write the code from scratch. It also helps you to import external libraries, and use them in your code. For more information, see [pre-built and custom libraries](/core-concepts/writing-code/ext-libraries).
+
+### Working with JS Objects
+* overview of JS Objects
+* Cross-reference to JS Objects page. 
+
+### Debugging
+* Overview of Appsmith's debugging tools, such as the console and breakpoints, and how to use them effectively
+* Tips for working with errors and debugging code in a team environment, such as communicating and collaborating with team members and utilizing version control to track changes and debug issues
+Cross-rerences to the debugging section in JS Objects.
+
+### Working with widgets
+* Existing content related to Javascript
+* Cross-references to widgets
+
+## Creating workflows
+* Overview of workflows, and cross-reference to existing docs.
+
+## Working with external libraries
+* Explanation of how to incorporate external libraries and APIs into Appsmith projects, including how to import them and access their functions. Cross-reference to the External Libraries page.
+
+## Best practices
+
+## Troubleshooting
+
+## Further reading
+
+
+------------------Existing content---------------
 
 You can use JavaScript  inside `{{ }}` anywhere in Appsmith. You can reference every entity in Appsmith as a JavaScript variable and perform all JavaScript functions and operations on them. It means you can reference all Widgets, APIs, Queries, and their associated data and properties  anywhere in an application in mustache syntax`{{ }}`.
 

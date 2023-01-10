@@ -1,11 +1,5 @@
 # JS Objects
 
-Writing extensive code without a full-fledge editor could be challenging. The JavaScript Editor(beta) in Appsmith allows you to create a reusable set of JavaScript functions that you can call within JavaScript bindings across a Page’s component to write complex code with ease. In Appsmith, it’s referred to as `JS Objects`.
-
-<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JS Editor" caption="How to build with JS Editor" />
-
-### JS Object
-
 A JS Object is an entity comprised of multiple functions and variables. It's a reusable component you can refer to in other JS Objects, allowing you to create an organized set of hierarchies.
 
 **How to Create a JS Object?**
