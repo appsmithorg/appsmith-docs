@@ -11,6 +11,11 @@ sidebar_position: 2
 
 * Invite users to your Appsmith workspace
 * Notify admins of important events & approval requests
+* Handle user management emails such as invites and password resets
+
+:::note
+[Password resets](/help-and-support/troubleshooting-guide/application-errors#reset-password-error) for user accounts are handled by emails from the Appsmith instance. If you would like users to be able to perform this action, ensure that your instance has been configured to handle email notifications. 
+:::
 
 Appsmith allows you to configure email using environment variables or the [admin settings](../admin-settings.md#using-the-admin-settings-ui).
 
@@ -19,10 +24,6 @@ Appsmith allows you to configure email using environment variables or the [admin
 ## Configure using Environment Variables
 
 Appsmith requires the following environment variables to be configured:
-
-:::tip
-You could start with email configuration after following the [Instance Configuration Guide](../) for your instance deployment.
-:::
 
 | Variable                               | Description                                                                                                                                                                                             |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
