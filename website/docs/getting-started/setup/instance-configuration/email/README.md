@@ -42,7 +42,7 @@ Be sure to double-check your configuration if you find that you're able to send 
 
 [Restart the Appsmith instance](../) once the environment variables are configured.
 
-## Configure using administrator settings
+## Configure using admin settings
 
 You can configure the email for your self-hosted instance using the [Admin Settings](../admin-settings.md#using-the-admin-settings-ui) page. Follow the below steps:
 
