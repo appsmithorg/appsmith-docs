@@ -2,12 +2,14 @@
 
 The Appsmith platform includes built-in JavaScript utility libraries, which can be used to work with data within `{{ }}` bindings or within JSObjects. You can also install and use other custom libraries to manipulate or transform data. These external libraries provide additional methods to help you build complex applications and business logic.
 
- <VideoEmbed host="youtube" videoId="tqJna718tj4" title="Using Built-in Libraries in Appsmith" caption="Using Built-in Libraries in Appsmith"/> 
 
 
 ## Built-in JavaScript libraries
 
 Appsmith provides the following built-in JavaScript libraries that can be utilized in your applications.
+
+ <VideoEmbed host="youtube" videoId="tqJna718tj4" title="Using Built-in Libraries in Appsmith" caption="Using Built-in Libraries in Appsmith"/> 
+
 
 * [Lodash](https://lodash.com/docs/4.17.15) provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
 
@@ -20,23 +22,26 @@ Appsmith provides the following built-in JavaScript libraries that can be utiliz
 
 ## Custom JavaScript libraries
 
-Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to obtain the URL. ```
+Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to obtain the URL.
 
-Use a URL that points to the library's index file. Ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries will have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library you wish to use does not support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice. ```
+Use a URL that points to the library's index file. Ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
 
-*  Valid and supported:  `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`. 
+```
+✅ Valid and supported:  `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`. 
 
-* Invalid URL: `https://www.jsdelivr.com/package/npm/datejs`
+❌ Invalid URL: `https://www.jsdelivr.com/package/npm/datejs`
 
-* Valid URL but not supported: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+❌ Valid URL but not supported: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+```
 
-You can search for libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to find the URL, which points to the library's index file. It's important to ensure that the library supports a [UMD](https://github.com/umdjs/umd) build to work with Appsmith. For more information, see the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build.
+### Install external library
 
-Many libraries may have a `.min.js` file located in the `root`, `/umd`, or `/browser` folders. If the library you wish to use doesn't support a UMD build, you can use `browserify` to create one and host it on a CDN of your choice.
+Appsmith makes it easy to install an external JavaScript library with just a few simple steps
 
-Follow the below steps to install a custom JavaScript library:
+ <VideoEmbed host="youtube" videoId="bo66yFTfy6Q" title="Installing custom JavaScript libraries" caption="Installing External JavaScript libraries"/> 
 
-![Installing custom JavaScript libraries](/img/customjs.gif)
+
+There are selection of **recommended libraries** that you can install by simply clicking on the install icon. However, if you want to install a specific library with a URL, the process is just as simple. To install other libraries:
 
 * Navigate to the Explorer tab
 * Click the `+` sign next to `Libraries`.
@@ -46,7 +51,7 @@ https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 ```
 * Click `Install`.
 
-## Using external libraries
+### Using external libraries
 
 External libraries can be used within `{{ }}` in the same way JavaScript is used elsewhere in the application. For more information about the signature of the JavaScript libraries, see their official documentation.
 
