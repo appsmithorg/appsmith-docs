@@ -156,9 +156,9 @@ The API to update a product is ready! In this section, you'll bind the **Confirm
 2. Rename **label** to **Update**.
 3. Go to **Events → onClick → Execute Query**.
 4. Choose **UpdateProductApi**.
-5. Go to **onSuccess**.
+5. Go to `onSuccess`.
 6. Choose **Execute Query → ProductsQuery**.
-7. Go to **onError**.
+7. Go to `onError`.
 8. Choose **Show Message**.
 9. Set the **Message** to **Product update failed!**.
 10. Set **Type** to **Error**.
@@ -166,8 +166,8 @@ The API to update a product is ready! In this section, you'll bind the **Confirm
 Let's see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto-update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
-* You set the **onError** event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message would be displayed.
+* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the `onSuccess` event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto-update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
+* You set the `onError` event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message would be displayed.
 
 Try to edit a product, and click **Confirm** to verify that it works - You should now see success/error notifications in the top right of the screen.
 
@@ -195,12 +195,12 @@ To bind multiple actions to a button event, you would have to write some JavaScr
 }}
 ```
 
-This is similar to what you learned in [part 2](/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
+This is similar to what you learned in [part 2](/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action `onSuccess` of **onClick** - but here, you're configuring _two_ actions. The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the `onSuccess` case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
 
-Note that since these actions happen asynchronously, they would all run in parallel. You can trigger as many actions as you want within **onSuccess** and **onError** by wrapping them within an anonymous function.
+Note that since these actions happen asynchronously, they would all run in parallel. You can trigger as many actions as you want within `onSuccess` and `onError` by wrapping them within an anonymous function.
 
 Try to edit a product again and verify that the form-submit works as expected.
 
@@ -209,7 +209,7 @@ Try to edit a product again and verify that the form-submit works as expected.
 
 You'll often be able to customize app behavior more finely by writing JavaScript, as compared to only using the GUI.
 
-For example, configuring multiple actions to be run in **onSuccess** is supported only via JavaScript, because it's easier to write code for it than it's to configure by using the GUI.
+For example, configuring multiple actions to be run in `onSuccess` is supported only via JavaScript, because it's easier to write code for it than it's to configure by using the GUI.
 
 Similarly, to configure conditional behavior, writing ternary conditions in JavaScript is easier and more extensible; hence the GUI doesn't provide for it.
 
@@ -218,7 +218,7 @@ We recommend that you spend some time fiddling with JavaScript on Appsmith!
 
 ## Sharing your app
 
-Now deploy your app for the final time!
+Now deploy your app for the final time.
 
 Once deployed, you can share your deployed application with both internal and external users:
 

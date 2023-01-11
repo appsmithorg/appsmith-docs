@@ -114,7 +114,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 ### Step 3: Create and Run an ECS Service.
 
-1. Navigate to the **clusters dashboard** and click on the ECS cluster created in [**Step 1**]/(aws-ecs#step-1-create-an-ecs-cluster).
+1. Navigate to the **clusters dashboard** and click the ECS cluster created in [**Step 1**]/(aws-ecs#step-1-create-an-ecs-cluster).
 2. On the cluster details, under the **Services tab** hit the **create** button.
 
 ![Cluster Dashboard](/img/ecs-cluster-service-creation.png)

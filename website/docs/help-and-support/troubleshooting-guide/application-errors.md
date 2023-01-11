@@ -24,7 +24,7 @@ Entity name: <name> is already being used
 
 This error indicates that the name being assigned to the entity has been used before.
 
-[JavaScript reserved keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) cannot be used as entity names. You can fix the error by assigning a new unique name to the entity.
+[JavaScript reserved keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) can't be used as entity names. You can fix the error by assigning a new unique name to the entity.
 
 ## Login / Signup Errors
 
@@ -48,7 +48,7 @@ This error can be fixed by either using a different email to signup or doing `lo
 Unable to find user <email>
 ```
 
-The error indicates that the email provided to reset the password is not registered with Appsmith.
+The error indicates that the email provided to reset the password isn't registered with Appsmith.
 
 You can fix the error by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
 
