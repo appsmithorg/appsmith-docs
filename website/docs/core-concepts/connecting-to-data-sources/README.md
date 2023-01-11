@@ -12,6 +12,9 @@ To create a datasource,
 * Click on the **+** icon (next to Datasources) 
 * Select the **datasource**. 
 
+
+![Connecting to Datasources](</img/connecting-to-data-sources.png>)
+
 After creating and configuring a datasource, you can query the datasource and bind the response in the [UI](/core-concepts/building-ui) to [display data](/core-concepts/data-access-and-binding).
 
 
