@@ -230,7 +230,7 @@ You can also make the application public, in which case, anyone with the URL to 
 
 **What's next?**
 
-The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
+The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources comes in handy as you need to learn new tricks:
 
 * [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Widgets](/reference/widgets/)

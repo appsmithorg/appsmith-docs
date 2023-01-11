@@ -183,5 +183,5 @@ If you encounter any errors during this process, check out the [debugging deploy
 ## Further Reading
 
 * [Configuring ECS Installations](/getting-started/setup/instance-configuration#configure-ecs-installations)
-* [Managing the Appsmith instance](/getting-started/setup/instance-management)
+* [Managing the Appsmith instance](/getting-started/setup/instance-management/)
 * [Tutorials](/learning-and-resources/tutorials/)
