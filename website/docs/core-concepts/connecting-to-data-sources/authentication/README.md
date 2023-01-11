@@ -1,13 +1,13 @@
-# APIs
+# REST APIs
 
 APIs are sets of definitions and protocols that enable communication and interaction between software applications using a limited number of instructions. APIs serve as messengers, passing requests from one application to another and instantly returning a response. With Appsmith, you can connect with a wide range of tools and platforms; if there isn't a native integration with a datasource, you can connect through the REST API interface. 
 
 
-### Connecting to a REST API
+### Connecting to REST API
 
-You can choose to create a one-off query by clicking on the “**+**” icon next to **“Datasources”** and selecting “**REST API**".
+You can choose to connect to a REST API by clicking on the “**+**” icon next to **“Datasources”** and selecting “**REST API**".
 
-In the context of a REST API, one-off queries are typically used when someone needs a quick answer to a specific question or problem, rather than engaging in a longer, more involved process. They're often used to retrieve or manipulate data from a server in real-time.
+In the context of a REST API, these queries are typically used when someone needs a quick answer to a specific question or problem, rather than engaging in a longer, more involved process. They're often used to retrieve or manipulate data from a server in real-time.
 
 
  <VideoEmbed host="youtube" videoId="IptCmvKdbog" title="Add new API" caption="Add new REST API"/> 
@@ -45,51 +45,46 @@ This is a mock API exposed by Appsmith to help you learn API basics. Data in the
 
 <VideoEmbed host="youtube" videoId="DWLF0pNjjuI" title="Using A Sample API " caption="How to use mock API | Example"/>
 
- To use these mock APIs, import the CURL commands listed below.
+ To use these mock APIs,
 
 * Click on **+** next to Datasources.
-* Select **CURL import**
-* Now, to ```fetch users```, use the below-mentioned code and click ```import```:
+* Select **REST API**
+* To ```fetch users``` choose the GET method and enter the following URL:
+
 ```js
-curl --location --request GET 'https://mock-api.appsmith.com/users?page=1'
+ GET 'https://mock-api.appsmith.com/users?page=1'
 ```
-* To ```update users```, use:
-```js
-curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "status" : "Approved"
-}'
-```
+
 
 The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) is a REST interface that allows you to create and modify your existing APIs.
 
 
 
-### Connecting to a authenticated API
+### Creating an authenticated API
 
-A one-off query is a single request for information or assistance, while an authenticated API is an API that requires authentication before allowing access to its resources or capability. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or capability from unauthorized access:
+Authenticated API is an API that requires authentication before allowing access to its resources or capability. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or capability from unauthorized access:
 
  <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
 
 
 * Click on the **+** icon next to the Datasources and choose **Authenticated API**.
 * Provide the configuration details required to connect to your API.
+* To configure, you can provide the URL and additional information like the headers, parameters, [authentication type](core-concepts/connecting-to-data-sources/authentication/authentication-type), [self-signed certificate](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates), and more.
 * Rename and save your datasource.
 
 
 
-Once your datasource has been added successfully, a success pop-up appears at the top. 
+Once your datasource has been added successfully, a success pop-up appears at the top. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
 
-### Importing CURL commands
+### Importing cURL commands
 
-CURL is a command-line tool that can be used to make HTTP requests to a server. You can use CURL to send various types of HTTP requests, such as GET, POST, PUT, and DELETE, to a server to retrieve or manipulate data. Appsmith makes it easy to import your APIs into your application using CURL commands.
+cURL is a command-line tool that can be used to make HTTP requests to a server. You can use cURL to send various types of HTTP requests, such as GET, POST, PUT, and DELETE, to a server to retrieve or manipulate data. Appsmith makes it easy to import your APIs into your application using cURL commands.
 
 
-To import CURL commands into your application:
+To import cURL commands into your application:
 
-* Click on the **+** icon next to the Datasources and choose **CURL Import**.
+* Click on the **+** icon next to the Datasources and choose **cURL Import**.
 * Add your command, for example:
 
 ```js
@@ -98,7 +93,7 @@ curl -X GET https://example.com/resource
 
 ![](</img/import_curl_(1).gif>)
 
-## Passing data/parameters to API calls
+## Passing data to API calls
 
 There are various ways to pass parameters to API calls on Appsmith. This video shows three ways to pass data to API calls:
 

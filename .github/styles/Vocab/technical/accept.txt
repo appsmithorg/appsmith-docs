@@ -163,3 +163,4 @@ dyno
 safelist
 Application
 ngrok
+cURL

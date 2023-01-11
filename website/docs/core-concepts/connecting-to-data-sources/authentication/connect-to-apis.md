@@ -20,18 +20,6 @@ The API pane is a REST interface that allows you to create and modify your exist
 
 Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query.
 
-| Setting                       	| Availability                    	| Description                                                                                                                                                      	|
-|--------------------------------	|------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| [Name](#name)                           	| REST API & Authenticated API 	| Specify a name for the API.                                                                                                     	|
-| [Method](#method)                         	| REST API                     	| Select the method for the API request.
-| [URL](#url)                            	| REST API & Authenticated API 	| Specify the URL for the API endpoint.
-| [Headers](#headers)                        	| REST API & Authenticated API 	| Set any required HTTP headers for the API request.
-| [Query parameters](#query-parameters)               	| REST API & Authenticated API 	|  Provide any query parameters for the API request, if necessary.
-| [Body](#body)                           	| REST API                     	| Set the request body payload for API requests that use a body.
-| [Pagination](#pagination)                     	| REST API                     	| Set the pagination, if applicable.
-| [Send appsmith signature header](#send-appsmith-signature-header) 	| Authenticated API            	| Enable to ensure that the incoming requests originate from Appsmith.                            	|
-
-
 ### Name
 
 When you create a datasource in Appsmith, a default name is provided for you. You can change this name by clicking on the pencil icon. It's important to make sure that the name is unique, as it serves as an identifier for queries on the page and is used to access the datasource properties in the application.
@@ -92,35 +80,11 @@ To save the URL of a REST API as a data source and access its authentication set
 `SAVE AS DATASOURCE` button and save the API query as a [authenticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
 
 
-### Send appsmith signature header
-
-When you want to ensure that the incoming requests originate from Appsmith, you can enable `Send Appsmith Signature Header` by selecting **Yes**. You’ll see a new field - **Session Details Signature Key** to supply the signature key.
-
-![Appsmith Signature Header](</img/OAuth__API_Integration__Appsmith_Signature_Header__Enable__.png>)
-
-### Authentication type
-
-Common authentication types for REST APIs include: 
-
-* [Basic Authentication](/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication), where you have to provide a username and password. 
-* [OAuth](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication), where you need to obtain a token from an authorization server and include that token to authenticated. 
-
-The authentication type that's used by an API can have a significant impact on its security, so it's important to choose an appropriate authentication method for your API.
-
-You can define an [authentication type](/core-concepts/connecting-to-data-sources/authentication/authentication-type) for REST APIs by using the protocols available on Appsmith.
-
-
 ### Settings
 
 To access and configure settings for a query, click the Settings tab on the Appsmith Query Editor. Some options available in the Query Settings Pane include Run on Page Load and others. For more information, see [Query Settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
 
 The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options, or to control the behavior of the API as a whole.
-
-## Use self-signed certificate
-
-Self-signed certificates are certificates that are generated and signed by the same entity that uses them, rather than by a trusted third-party certificate authority. These certificates can be configured as part of the Advanced Settings. They're often used in testing or internal environments because they can be created at no cost, and they provide encryption for incoming and outgoing data. 
-
-You can check [this](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates) documentation to learn more about self-signed certificate.
 
 
 ## Troubleshooting

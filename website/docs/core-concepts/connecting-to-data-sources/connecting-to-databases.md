@@ -18,7 +18,7 @@ Databases are an essential part of many applications and are used to store and m
 If you are a self-hosted Appsmith user, it's necessary to whitelist the IP addresses of the Appsmith deployment on your database instance or VPC. 18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
 :::
 
-<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
+<VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource"/>
 
 * On the **Explorer tab**, click the **+** sign next to **Datasources**. 
 * Choose a Database from the [Datasources](/reference/datasources/) that Appsmith can connect to.
@@ -35,12 +35,14 @@ Once your datasource has been added successfully, a success pop-up appears at th
 
 Appsmith provides two sample datasets to help you connect the data and test the platform. 
 
-1. A sample [MongoDB](/reference/datasources/querying-mongodb/) database with a collection called "movies."
-2. A sample [PostgreSQL](/reference/datasources/querying-postgres) database with a table called "users."
+1. A sample MongoDB database with a collection called "movies."
+2. A sample PostgreSQL database with a table called "users."
 
+:::note
 The mock databases are public and shared by all users, which may result in mangled data. To refresh the data, the databases are automatically **reset every day**, so any updates made to these databases are temporary.
+:::
 
-<VideoEmbed host="youtube" videoId="TrV8h_Dvhbg" title="Using A Sample Database " caption="How to use mock database | Example"/>
+<VideoEmbed host="youtube" videoId="TrV8h_Dvhbg" title="Using A Sample Database " caption="How to use mock database"/>
 
 * Click on **+** next to Datasources.
 * Select the mock **users** PostgreSQL database.
@@ -51,6 +53,8 @@ The mock databases are public and shared by all users, which may result in mangl
 SELECT * FROM users;
 ```
 The select query retrieves the data from the users' table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
+
+Databases configured within one page of an app can be accessed by developers anywhere within the workspace.
 
 
 ## General notes
@@ -69,7 +73,6 @@ If you are experiencing difficulties with connecting datasources in Appsmith, yo
 
 At this point, you should know enough to start a project of your own and start playing around with datasources. The resources mentioned below can be useful when you need to learn new skills:
 
-* [Building UI](/core-concepts/building-ui/)
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
 * [Connect to a localhost database or an API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
