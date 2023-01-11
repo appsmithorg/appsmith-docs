@@ -15,7 +15,7 @@ Databases are an essential part of many applications and are used to store and m
 
 :::info important
 
-As a self-hosted Appsmith user, it's necessary to [safelist](https://docs.appsmith.com/learning-and-resources/how-to-guides/aws-whitelist) the IP addresses of the Appsmith deployment on your database instance or VPC. The IP addresses to be added to the safelist are `18.223.74.85` and `3.131.104.27`, which are the IP addresses of the Appsmith cloud instances.
+If you are a self-hosted Appsmith user, it's necessary to whitelist the IP addresses of the Appsmith deployment on your database instance or VPC. 18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
 :::
 
 <VideoEmbed host="youtube" videoId="sJIxtXInV14" title="How to connect to a datasource" caption="How to connect to a datasource | Example"/>
