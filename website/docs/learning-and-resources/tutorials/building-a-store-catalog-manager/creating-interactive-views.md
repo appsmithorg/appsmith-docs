@@ -166,7 +166,7 @@ The API to update a product is ready! In this section, you'll bind the **Confirm
 Let's see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the `onSuccess` event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto-update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
+* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the `onSuccess` event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
 * You set the `onError` event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message would be displayed.
 
 Try to edit a product, and click **Confirm** to verify that it works - You should now see success/error notifications in the top right of the screen.

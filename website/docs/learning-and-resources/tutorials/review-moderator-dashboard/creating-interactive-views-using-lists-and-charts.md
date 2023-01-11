@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ### Storing Data in Appsmith Context Object
 
-You are now almost ready with your super cool dashboard. To make your app more interactive, we will add another page that shows reviews of that particular business.
+You are now almost ready with your super cool dashboard. To make your app more interactive, add another page that shows reviews of that particular business.
 
  Start by adding a button that'll redirect to a new page. Also, on the new page, you would require the **`business_id`** to filter the reviews from the review table. Hence, now store the value in the [Appsmith Context Object ](/reference/appsmith-framework/context-object)and use it as a reference. Follow the instructions below:
 
@@ -28,7 +28,7 @@ You are now almost ready with your super cool dashboard. To make your app more i
 }}
 ```
 
-Awesome, you've successfully written your first JS function on Appsmith. As you can notice, these are primary Invoked functions, which means it runs as soon as it defined. Inside the function, we've first used the **`storeValue`** method to store the business key from businessTable into the **`business_id`** variable. Next, you've used a **`navigateTo`** method to be able to redirect to a new page.
+Awesome, you've successfully written your first JS function on Appsmith. As you can notice, these are primary Invoked functions, which means it runs as soon as it defined. Inside the function, use the **`storeValue`** method to store the business key from `businessTable` into the **`business_id`** variable. Next, you've used a **`navigateTo`** method to be able to redirect to a new page.
 
 Now create a new page and name it "Business Reviews". So, when you click the button, it takes you to a page called **"Business Reviews."**
 
@@ -53,11 +53,11 @@ select * from yelp_reviews where business_id = {{appsmith.store.business_id}}
 Make sure you perform this query for the "Business Reviews" page.
 :::
 
-We're selecting all the rows from the **`yelp_review`** table and filtering them by the **`business_id`** variable you've saved in the appsmith store while navigating to the new page. Hence, you've used it for the WHERE clause using the mustache syntax. **Now hit RUN!**
+You're selecting all the rows from the **`yelp_review`** table and filtering them by the **`business_id`** variable you've saved in the appsmith store while navigating to the new page. Hence, you've used it for the WHERE clause using the mustache syntax. **Now hit RUN.**
 
-By running the query, we can see all the reviews based on the selected **`business_id`** . In the query settings tab, make sure you toggle the **Run query on the page load option.**
+By running the query, you can see all the reviews based on the selected **`business_id`** . In the query settings tab, make sure you toggle the **Run query on the page load option.**
 
-Additionally, you'll need to **fetch thebusiness details again on this page**, making it easier on dashboards to show complete details from a DB query. Follow the below steps:
+Additionally, you'll need to **fetch the business details again on this page**, making it easier on dashboards to show complete details from a DB query. Follow the below steps:
 
 1. Find the created **Postgres Mock DB** data source under the Explorer tab and click **NEW QUER**Y.
 2. Rename the query to **`getBusinessDetails`**.
@@ -106,13 +106,13 @@ Now, use a List Widget to display all the reviews from the filterBusinessReviews
 {{filterBusinessReviews.data}}
 ```
 
-Now, customize the list view according to your needs and remove the items we don't need in the list view.
+Now, customize the list view according to your needs and remove the items you don't need in the list view.
 
 1. Delete the already populated data in the list widget and add a few text widgets inside the list view.
-2. You should notice that the widgets will be automatically added to the other items of the list widget.
+2. You should notice that the widgets are automatically added to the other items of the list widget.
 3. You can bind the Items into these widgets by using the **`currentItem`** property.
 4. In the text, widgets use the mustache syntax and bind the data like `{{currentItem.text}}`.
-5. Now, in the overflow setting, change it to "scroll contents". So this will make the text view scrollable.
+5. Now, in the overflow setting, change it to "scroll contents". So this makes the text view scrollable.
 
 <VideoEmbed host="youtube" videoId="e4f1QMq2zoA" title="Using the List Widget" caption="Using the List Widget"/>
 
@@ -132,7 +132,7 @@ Here, if you notice, the date isn't in a readable way. You can use `` `moment.js
 {{moment(currentItem.date).format("LL")}}
 ```
 
-The date automatically formats based on the type we give in the .format() method.
+The date automatically formats based on the type give in the `.format()` method.
 
 ### **Displaying Ratings**
 
