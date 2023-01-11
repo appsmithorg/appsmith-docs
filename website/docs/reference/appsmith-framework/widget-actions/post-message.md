@@ -1,6 +1,6 @@
 # Cross-origin communication
 
-Appsmith provides a way to enable safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objectssuch as application/parent window and iframes. This is useful when:
+Appsmith provides a way to enable safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objects such as application/parent window and iframes. This is useful when:
 
 - Using Appsmith's [Iframe](/reference/widgets/iframe/) widget to embed other applications or pages.
 - Embedding Appsmith in an iframe of a parent application.
