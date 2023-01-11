@@ -136,13 +136,19 @@ This feature available only in Appsmith's [business edition](https://www.appsmit
 :::
 
 When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
-The parent website calls this function when a button is clicked - 
+   
+On your Appsmith app, you can enable/disable a page to react to these messages using the following functions - 
+
+1. [subscribeParentMessages](#subscribeparentmessages)
+2. [unsubscribeParentMessages](#unsubscribeparentmessages)
+
+For example, a parent website (`https:/mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked - 
 
 ```javascript
 const iFrame = document.getElementById(”#appsmith-iframe”);
 iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
 ```   
-On your Appsmith app, you can enable/disable a page to react to these messages using the following functions - 
-
-1. [subscribeParentMessages](#subscribeparentmessages)
-2. [unsubscribeParentMessages](#unsubscribeparentmessages)
+In the Appsmith app, if you want to run and API (Api1) in reaction to this message, you can use the `subscribeParentMessages()` function as follows - 
+```javascript
+subscribeParentMessages(”https:/mywebsite.com”, () => Api1.run());
+```
