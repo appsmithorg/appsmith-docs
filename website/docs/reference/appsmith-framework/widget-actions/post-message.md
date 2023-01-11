@@ -7,11 +7,11 @@ Appsmith provides a way to enable safe cross-origin communication between differ
 
 ## Methods
 In Appsmith, you can use the following methods for cross-origin communication -
-1. postWindowMessage()
-2. subscribeParentMessages()
-3. unsubscribeParentMessages()
+* [postWindowMessage()](#postwindowmessage)
+* [subscribeParentMessages()](#subscribeparentmessages)
+* [unsubscribeParentMessages()](#unsubscribeparentmessages)
 
-### postWindowMessage
+### postWindowMessage()
 
 `postWindowMessage()` method can be used to send messages between the application or parent windows and iframes.
 
@@ -32,13 +32,9 @@ postWindowMessage(message, targetIframe, targetOrigin)
 To see examples of the **postWindowMessage** function, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
 
-### subscribeParentMessages
+### subscribeParentMessages()
 
 `subscribeParentMessages()` function enables an appsmith app to react to the messages incoming from the parent website. Subscription is a page level action that means a subscription won’t persist upon switching pages.
-
-:::tip
-You can setup subscription automatically in a page by calling `subscribeParentMessages` in a JS object method and setting it to run on page load.
-:::
 
 #### Signature
 
@@ -57,7 +53,7 @@ subscribeParentMessages(”https://parent-domain.com”, () => Api1.run());
 | domain | This is the address of the website that sends the message (`https:/mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https:/myother-website.com`)the callback  won’t be triggered. If a subscription is already active, it's not overridden and a warning is logged in the console. |
 | callback | A callback comes to action whenever a message is sent from the defined domain. It accepts a parameter that  returns the response to the incoming message. |
 
-### unsubscribeParentMessages
+### unsubscribeParentMessages()
 
 `unsubscribeParentMessages()` allows you to disable an appsmith app from reacting to messages from the parent website.
 
@@ -67,7 +63,7 @@ subscribeParentMessages(”https://parent-domain.com”, () => Api1.run());
 unsubscribeParentMessages(”domain”)
 ```
 
-##### Argument
+##### Arguments
 
 | Argument | Description |
 | --- | --- |
@@ -139,8 +135,8 @@ When you embed an Appsmith app as an iframe on a website, the event listeners al
    
 On your Appsmith app, you can enable/disable a page to react to these messages using the following functions - 
 
-1. [subscribeParentMessages](#subscribeparentmessages)
-2. [unsubscribeParentMessages](#unsubscribeparentmessages)
+* [subscribeParentMessages](#subscribeparentmessages)
+* [unsubscribeParentMessages](#unsubscribeparentmessages)
 
 For example, a parent website (`https:/mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked - 
 
@@ -152,3 +148,10 @@ In the Appsmith app, if you want to run and API (Api1) in reaction to this messa
 ```javascript
 subscribeParentMessages(”https:/mywebsite.com”, () => Api1.run());
 ```
+To stop the appsmith app from reacting to the incoming messages from the parent website (`https:/mywebsite.com`), you can use the `unsubscribeParentMessages` method as follows -
+```javascript
+unsubscribeParentMessages(”https:/mywebsite.com”)
+```
+:::tip
+You can setup subscription automatically in a page by calling `subscribeParentMessages` in a JS object method and setting it to run on page load.
+:::
