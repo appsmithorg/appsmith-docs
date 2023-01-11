@@ -36,7 +36,7 @@ Once your datasource has been added successfully, a success pop-up appears at th
 Appsmith provides two sample datasets to help you connect the data and test the platform. 
 
 1. A sample [MongoDB](/reference/datasources/querying-mongodb/) database with a collection called "movies."
-2. The second database is a sample [PostgreSQL](/reference/datasources/querying-postgres) database with a table called "users."
+2. A sample [PostgreSQL](/reference/datasources/querying-postgres) database with a table called "users."
 
 The mock databases are public and shared by all users, which may result in mangled data. To refresh the data, the databases are automatically **reset every day**, so any updates made to these databases are temporary.
 
