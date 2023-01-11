@@ -35,9 +35,9 @@ While creating the new security group, please follow the steps [detailed here](h
 
 ## Steps to Deploy Appsmith on ECS (using EC2 Launch Type):
 
-1. [Create an ECS Cluster](./aws-ecs#step-1-create-an-ecs-cluster)
-2. [Create Task and Container Definitions](./aws-ecs#step-2-create-task-and-container-definitions)
-3. [Create and Run an ECS Service](./aws-ecs.md#step-3-create-and-run-an-ecs-service)
+1. [Create an ECS Cluster](#step-1-create-an-ecs-cluster)
+2. [Create Task and Container Definitions](#step-2-create-task-and-container-definitions)
+3. [Create and Run an ECS Service](#step-3-create-and-run-an-ecs-service)
 
 > Note: Please switch to the old AWS console UI to follow the steps in this tutorial.
 
@@ -56,20 +56,20 @@ While creating the new security group, please follow the steps [detailed here](h
 * Select the provisioning model as **On-Demand Instance**.
 * Select the server size you wish to use, and set the **Number of instances** as **1**.
 * Select the **Amazon Linux2 AMI** for the EC2 AMI ID dropdown, and enter the required EBS volume size.
-* Select a **Key pair**. Please refer to [Prerequisite 2](./aws-ecs.md#2-generate-an-ssh-key-pair), if you have not already created one.
+* Select a **Key pair**. Please refer to [Prerequisite 2](#2-generate-an-ssh-key-pair), if you haven't already created one.
 
 ![Configuring the instance](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-9b572559c7d254290a9d0e928d54b07d4314d60e\_ecs-cluster-instance-config.png)
 
 5\. Networking Section
 
 * Select the **default VPC** followed by selecting the **first subnet** from the drop-down.
-* Select the **security group** created in [Prerequisite 3](./aws-ecs.md#3-create-an-aws-security-group).
+* Select the **security group** created in [Prerequisite 3](#3-create-an-aws-security-group).
 
 ![Configuring the Networking Section](/img/ecs-cluster-networking.png)
 
 6\. Enable container insights (this gives CloudWatch monitoring and helps to debug).
 
-7\. Leave the Container instance IAM role as default (**ecsInstanceRole**), if you do not have one AWS will create it for you.
+7\. Leave the Container instance IAM role as default (**ecsInstanceRole**), if you don't have one AWS creates it for you.
 
 8\. Hit the **Create button**. It may take a minute for your cluster to be ready.
 
@@ -77,7 +77,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 ### Step 2: Create Task and Container Definitions
 
-Once the cluster is created, you will need to create a task that will be run on the cluster created in [**Step 1**](./aws-ecs.md#step-1-create-an-ecs-cluster).
+Once the cluster is created, you need to create a task that runs on the cluster created in [**Step 1**](#step-1-create-an-ecs-cluster).
 
 1. On the sidebar, choose **Task Definitions** and select **Create new Task Definition**.
 2. Choose **EC2** as the **launch type**, and proceed to the next step.
@@ -88,7 +88,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 ![Configuration of the Task](</img/ecs-task-def_(1)_(1)_(1)_(2)_(1).png>)
 
-4\. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS will create one for you if you do not have one.
+4\. Select the default Task execution IAM role (**ecsTaskExecutionRole**). AWS creates one for you if you don't have one.
 
 5\. Set the required **task size** (memory & CPU)
 
@@ -114,7 +114,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 ### Step 3: Create and Run an ECS Service.
 
-1. Navigate to the **clusters dashboard** and click on the ECS cluster created in [**Step 1**]../(aws-ecs#step-1-create-an-ecs-cluster).
+1. Navigate to the **clusters dashboard** and click the ECS cluster created in [**Step 1**]/(aws-ecs#step-1-create-an-ecs-cluster).
 2. On the cluster details, under the **Services tab** hit the **create** button.
 
 ![Cluster Dashboard](/img/ecs-cluster-service-creation.png)
@@ -122,8 +122,8 @@ Once the cluster is created, you will need to create a task that will be run on 
 3\. Configure Service
 
 * Select **EC2** as Launch Type.
-* Select the **Task Definition** created in [**Step 2**](./aws-ecs.md#step-2-create-task-and-container-definitions) with the latest revision.
-* Select the **Cluster** created in [**Step 1**](./aws-ecs.md#step-1-create-an-ecs-cluster).
+* Select the **Task Definition** created in [**Step 2**](#step-2-create-task-and-container-definitions) with the latest revision.
+* Select the **Cluster** created in [**Step 1**](#step-1-create-an-ecs-cluster).
 * Enter the service name.
 * Select the **REPLICA** Service type.
 * Set the **Number of tasks** to **1**.
@@ -143,11 +143,11 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 ![Review Section](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d41afa800108de88c398d00edf945db81077d4c0\_ecs-service-review.png)
 
-7\. The following screen will appear showing the **launch status**, click on the **View Service** button.
+7\. The following screen is shown with the **launch status**, click the **View Service** button.
 
 ![Launch Status Dashboard](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-6e59de9348c02c19d5b8bf0871b056ebf8ec5a97\_ecs-service-launch-status.png)
 
-8\. You will be directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
+8\. You are directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
 
 ![Service Detail Page](/img/ecs-service-task-status.png)
 
@@ -178,7 +178,7 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
+If you encounter any errors during this process, check out the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join the [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team.
 
 ## Further Reading
 
