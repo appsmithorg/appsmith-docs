@@ -129,14 +129,14 @@ The instance keeps restarting due to a server shutdown displaying a schema misma
 
 <Message
 messageContainerClassName="error" 
-messageContent="Looks like you skipped some required updates, please go back to the mandatory upgrade path v1.9."></Message>
+messageContent="Looks like you skipped some required updates, please go back to the mandatory upgrade path v1.9.2"></Message>
 
 #### Cause
 As the error message in the server logs suggests, your Appsmith instance has missed a required checkpoint upgrade. This occurs if you are manually upgrading and have skipped a version or are on an automatic upgrade but your instance hasn't checked for updates for a particular period.
 
 #### Solution
 
-To resolve this error, you may need to manually map your instance to the required version, in this case, v1.9.0. To do this, access your Appsmith instance and make the following change to the `docker-compose.yml` file:
+To resolve this error, you may need to manually map your instance to the required version, in this case, v1.9.2. To do this, access your Appsmith instance and make the following change to the `docker-compose.yml` file:
 
 <Tabs groupId="operating-systems">
   <TabItem value="CE" label="Community Edition" default>
@@ -155,7 +155,7 @@ To:
 ```bash
 services:
   appsmith:
-    image: index.docker.io/appsmith/appsmith-ce:v1.9.0
+    image: index.docker.io/appsmith/appsmith-ce:v1.9.2
     container_name: appsmith
 ```
 
@@ -177,7 +177,7 @@ To:
 ```bash
 services:
   appsmith:
-    image: index.docker.io/appsmith/appsmith-ee:v1.9.0
+    image: index.docker.io/appsmith/appsmith-ee:v1.9.2
     container_name: appsmith
 ```
    
@@ -192,7 +192,7 @@ docker-compose up -d
 ```
 
 :::note
-In this case, version `1.9.0` was used. If required, you can also use a specific older version.
+In this case, version `1.9.2` was used. If required, you can also use a specific older version.
 :::
 
 With this, your server starts with the older version that makes all the necessary schema changes to your Appsmith instance. Once this process has been completed successfully (you can verify this by logging in to your Appsmith instance), you can return to the original version of your `docker-compose.yml` file and resume normal operations.
