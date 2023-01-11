@@ -6,100 +6,44 @@ description: >-
 # Writing Code
 Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-friendly, intuitive application building. The JavaScript code editor and debugging tools are designed to help users write code that's easy to read and understand, allowing for smoother collaboration and the creation of reliable, high-performing applications. These tools also aid in troubleshooting any issues that may arise, allowing users to build the best possible applications for their users. 
 
-This documentation guide helps you in writing code by providing an overview of the Appsmith code editor, its features, and best practices for writing clean and efficient code. It also covers how to incorporate external libraries and APIs into Appsmith projects, and provide tips for debugging and troubleshooting code. 
+Appsmith also provides the ability to incorporate external libraries and APIs into your projects, helping you expand the capabilities of your applications.
 
 ## JavaScript editor
 The Appsmith JavaScript editor is a powerful tool that allows users to write, test, and debug their JavaScript code directly within the platform. It includes features such as syntax highlighting, code completion, and error highlighting, making it easy for users to write and debug their code.
 
-<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JS Editor" caption="How to build with JS Editor" />
+<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JavaScript Editor" caption="How to build with JavaScript Editor" />
 
-The code editor also includes a built-in console, allowing users to see the results of their code in real-time as they write it. This allows users to test their code and make any necessary changes without having to leave the Appsmith platform.
+The code editor also includes a built-in response, errors, and logs tabs that helps users to see the results of their code. For more information, see [Working with JavaScript editor](core-concepts/writing-code/javascript-editor-beta#working-with-javascript-editor).
 
-It includes a number of pre-built JavaScript libraries and functions that users can incorporate into their code. This makes it easy for users to add advanced capabilities to their applications without having to write the code from scratch. It also helps you to import external libraries, and use them in your code. For more information, see [pre-built and custom libraries](/core-concepts/writing-code/ext-libraries).
+The Appsmith JavaScript Editor also includes a number of [built-in JavaScript libraries](/core-concepts/writing-code/ext-libraries#javascript-library-reference) that users can incorporate into their code. This makes it easy for users to add advanced capabilities to their applications without having to write the code from scratch. It also enables you to import external libraries, and use them in your code. For more information, see [built-in and custom libraries](/core-concepts/writing-code/ext-libraries).
 
 ### Working with JS Objects
-* overview of JS Objects
-* Cross-reference to JS Objects page. 
+JS Objects are a powerful and versatile data structure that can be used to organize and store data in a structured manner. You can create, manipulate, and work with JS Objects to build powerful and dynamic applications. Appsmith provides a user-friendly interface that allows developers to interact with JS Objects in an intuitive and efficient way. Whether you're a beginner or an experienced developer, working with JS Objects in Appsmith can help you create robust, feature-rich applications with minimal effort. For more information, see [JS Objects in Appsmith](core-concepts/writing-code/javascript-editor-beta#js-object).
 
 ### Debugging
-* Overview of Appsmith's debugging tools, such as the console and breakpoints, and how to use them effectively
-* Tips for working with errors and debugging code in a team environment, such as communicating and collaborating with team members and utilizing version control to track changes and debug issues
-Cross-rerences to the debugging section in JS Objects.
+Appsmith provides a wide range of debugging tools to help you work with JS Objects efficiently. You can use tools like `console.log()` and `debugger` statements to identify and fix errors in your code. 
 
-### Working with widgets
-* Existing content related to Javascript
-* Cross-references to widgets
+The `console.log()` allows you to log information and see the state of your code at any point, while `debugger` statements serve as breakpoints, pausing the execution of your code. This makes it easy to understand the flow of the code and identify any issues.
 
-## Creating workflows
-* Overview of workflows, and cross-reference to existing docs.
+By using these debugging tools effectively, you can minimize the time it takes to identify and fix errors, and help your team build robust and high-performing applications more efficiently. For more information, see [how to debug JS objects](/core-concepts/writing-code/javascript-editor-beta#debugging).
 
-## Working with external libraries
-* Explanation of how to incorporate external libraries and APIs into Appsmith projects, including how to import them and access their functions. Cross-reference to the External Libraries page.
+## Working with widgets
+When working with widgets in Appsmith, it's important to understand how the app updates itself in response to changes in data. To reflect these changes, Appsmith follows the reactive programming paradigm. This means that, instead of updating widget properties and states through direct variable assignment, widgets are connected and share data, so when one value is updated, any objects that depends on it also updates automatically.
 
-## Best practices
+For example, you have an [Input](/reference/widgets/input) widget where the user can enter text, and a [Button](/reference/widgets/button) widget with a label. You want to update the button's label based on the user's input. By using the reactive programming, the user types into the Input widget, and the label of the Button updates in real time to reflect the current user input. You can also check out the below video to understand how this works in a more visual way.
 
-## Troubleshooting
+<VideoEmbed host="youtube" videoId="YXo4PVrw1RQ" title="How to set properties in widgets?" caption="How to set properties in widgets?" />
 
-## Further reading
+Consider another scenario, where you're building a dashboard for managing product inventory information, and you want to include an `Edit` mode for updating the values. In this scenario, you don't want to allow users to make changes when `Edit` mode is off. You only want to enable the changes after the user clicks the `Edit` button and save the changes after user clicks the 'Save' button. There are many Input widgets for handling the product data and two buttons for switching `Edit` mode on and off.
 
-
-------------------Existing content---------------
-
-You can use JavaScript  inside `{{ }}` anywhere in Appsmith. You can reference every entity in Appsmith as a JavaScript variable and perform all JavaScript functions and operations on them. It means you can reference all Widgets, APIs, Queries, and their associated data and properties  anywhere in an application in mustache syntax`{{ }}`.
-
-Appsmith currently supports two forms of JavaScript code for dynamically evaluated property values:
-
-1. Single line code or functions, such as ternary conditions
-
-```javascript
-{{ QueryName.data.filter((row) => row.id > 5 ) }}
-```
-
-2\. Immediately-Invoked Function Expressions ([IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE))
-
-```javascript
-{{ 
-  (function() {
-      const array = QueryName.data;
-      const filterArray = array.filter((row) => row.id > 5);
-      return filterArray;
-   })()
-}}
-```
-
-You can also write JavaScript code for event listeners. For JavaScript code inside an event listener, you can write multi-line JavaScript as below.
-
-```javascript
-{{
-  storeValue("userID", 42);  
-  console.log(appsmith.store.userID); 
-  showAlert("userID saved");
-}}
-```
-
-## Configuring Widgets with Code
-
-When data changes within your app, your widgets need to update themselves to reflect these changes. To make this happen, Appsmith follows the reactive programming paradigm.
-
-Instead of managing widget properties and states with direct variable assignment in code (like `x = 5`), widgets in your applications are connected to each other and share data; when one value is updated in your app, any objects that depend on that changed value also update accordingly. Below is a quick example of using the reactive code style to update a [Button](../../reference/widgets/button/)'s label in real time by taking user input from an [Input](../../reference/widgets/input.md) widget. Take a look at the video below:
-
-<VideoEmbed host="youtube" videoId="YXo4PVrw1RQ" title="Reactive" caption="Reactive" />
-
-The button’s label could be set as a simple static value (like “Submit”) in its properties pane, but if you’d like that property to change at any point, it must be defined differently.
-
-When writing JavaScript to configure a widget’s property, your code should tell that widget where to look to find its data rather than explicitly setting a specific value. Consider the following example scenario:
-
-Imagine that you're creating a dashboard for viewing and editing product inventory information, and you'd like to implement an 'Edit' mode for changing values. Values shouldn't be allowed to change when 'Edit' mode is off; they can only be updated after the user clicks the 'Edit' button, and then can be saved with a 'Save' button when they're finished. In total, there are a handful of Input widgets for handling the product data and two buttons for switching 'Edit' mode on and off.
-
-In an imperative style, you might expect the Input widgets to be toggled with this kind of control:
+Using imperative programming style, you may think of disabling the input widgets when edit mode is off like this:
 
 ```javascript
 Input1.disable()
 // or,
 Input1.enabled = false
 ```
-
-But this won't work in Appsmith! Instead, you might create and store a special value that represents whether 'Edit' mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the [`storeValue()`](../../reference/appsmith-framework/widget-actions/store-value.md) function to make this possible, which you can read about [here](../../reference/appsmith-framework/widget-actions/store-value.md).
+But, this doesn't work in Appsmith as it uses a reactive programming paradigm. You need to create and store an indicator that represents whether `Edit` mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the `storeValue()` function to make this possible. For more information, see [storeValue()](/reference/appsmith-framework/widget-actions/store-value).
 
 ```javascript
 // in the Disabled field of the Input widgets' properties
@@ -109,55 +53,44 @@ But this won't work in Appsmith! Instead, you might create and store a special v
 // in the onClick event field of the Save button's properties
 {{storeValue('editMode', false)}}
 ```
-
 <VideoEmbed host="youtube" videoId="yKb6SRonfmQ" title="Controlling Widgets with code" caption="Controlling Widgets with code" />
 
-With this configuration, the Input widgets behave according to the current state of `editMode` in the Appsmith store. Anytime this value is toggled, the Input widgets are automatically updated.
+With this configuration, the Input widgets' behavior is dynamically linked to the `editMode` state stored in the Appsmith store. As soon as this state is altered, the Input widgets are updated accordingly.
 
-## Single Line JavaScript
+## Creating workflows
+Creating workflows is an integral part of building your app. You can manipulate data by performing actions like adding, updating, deleting, and retrieving data, as well as adding and triggering actions. 
 
-Appsmith primarily supports writing single-line javascript between mustache brackets `{{ }}`. Anything written between the brackets is evaluated as a javascript expression and its result is used as the given property's value.
+You can accomplish it by using a combination of JavaScript functions, APIs, and Queries. For more information, see [creating workflows](/core-concepts/writing-code/workflows), that provides more details on the different elements and concepts that can be used to build your workflows.
 
-Sometimes, to achieve the intended result, it may require us to chain multiple operations (methods, ternary expressions, etc.) in a single line. If your expression becomes too complex to fit easily into a single line, consider writing a helper function in a [JS Object](../../learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md) to help keep your code readable!
+### Appsmith Framework
+The Appsmith framework provides a range of utility functions and objects that allow developers to access important information, such as the current application URL or the authenticated user, and more. The framework also includes in-built functions for storing values in the local storage, as well as triggering actions in response to user inputs, such as displaying an alert message when a button is clicked. 
 
-### Valid JavaScript
+Additionally, Appsmith provides in-built global objects: [Query object](/reference/appsmith-framework/query-object) that enables developers to run database queries and share data between different pages by passing parameters, [Context](/reference/appsmith-framework/context-object) that provides information about the current state of the application, and more. This makes it easy to create dynamic, data-driven applications that respond to user interactions in real-time. For more information, see [Appsmith framework](/reference/appsmith-framework).
 
-Following are valid examples of JavaScript for property values.
+## Working with external libraries
+External libraries to extend the capabilities of your application by building complex business logic. The Appsmith platform also includes built-in JavaScript utility libraries that can be used to work with data within `{{ }}` bindings or within JSObjects. For more information, see [Using external libraries](/core-concepts/writing-code/ext-libraries).
+
+## Best practices
+In Appsmith, you can use JavaScript inside curly braces (`{{ }}`) to reference and manipulate all entities, such as Widgets, APIs, Queries, and their associated data and properties, within your application. This allows for a high degree of flexibility and customization, as you can execute any JavaScript function or operation on these entities.
+
+:::tip
+While you can use JavaScript's multi-line comment syntax, `/* /`, to write comments within the mustache brackets, single-line comments, `//`, aren't supported. This means that you can use `/ */` to write comments that span multiple lines, but `//` doesn't work. 
+:::
+
+Appsmith currently supports two forms of JavaScript for dynamically evaluated property values:
+
+### Single line JavaScript
+Single line code or functions, such as ternary conditions, can be used as shown in this example:
 
 ```javascript
 {{ QueryName.data.filter((row) => row.id > 5 ) }}
 ```
 
-```javascript
-{{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}
-```
+Sometimes, to achieve a desired outcome, you may have to perform multiple operations one after the other. This could involve chaining methods together, ternary expressions and others. For example, `{{ QueryName.data.filter((row) => row.id > 5 ) }}` or `{{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}`.  However, in situations where your expression becomes convoluted and hard to fit in a single line, it's a good idea to consider breaking it down and encapsulating it within a [helper function in a JS Object](/core-concepts/writing-code/javascript-editor-beta#js-object).
 
-**Invalid JavaScript**
-
-You cannot simply write multi-line javascript between the mustache brackets; the following two snippets are examples of invalid code. See the next section, "Multi-Line Javascript," to see how we can structure properties that accept multiple lines of code.
-
-```javascript
-{{ 
-   const array = QueryName.data;
-   const filterArray = array.filter((row) => row.id > 5);
-   return filterArray;
-}}
-```
-
-```javascript
-{{ 
-  if (Dropdown.selectedOptionValue === "1") {
-      return "Option 1";
-  } else {
-      return "Option 2";
-  }
-}}
-```
-
-## Multi-Line JavaScript
-
-Appsmith supports multi-line JS if it is an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) (Immediately-Invoked Function Expression). The above invalid examples become valid if restructured and used as below.
-
+### Multi-line JavaScript
+Appsmith enables the use of multi-line JavaScript through the use of Immediately Invoked Function Expression (IIFE). This allows for more complex code organization and readability. Moreover, you can also write JavaScript code for events listeners which can contain multiple lines of code. An example of this is provided below:
+* Call a query and then manipulate its result:
 ```javascript
 {{ 
   (function() {
@@ -167,6 +100,7 @@ Appsmith supports multi-line JS if it is an [IIFE](https://developer.mozilla.org
    })()
 }}
 ```
+* Verify the selected option and then perform operation on it:
 
 ```javascript
 {{ 
@@ -180,8 +114,38 @@ Appsmith supports multi-line JS if it is an [IIFE](https://developer.mozilla.org
 }}
 ```
 
-:::tip
-**Writing comments inside :**
+You **can't** write multi-line JavaScript directly within the curly brackets (`{{ }}`). The examples shown below are considered invalid:
 
-Note that you can write comments inside using JavaScript's multi-line comment syntax `/* */`, but single-line comments `//` are not supported inside.
-:::
+* Call a query to fetch the results and manipulate it's data:
+```javascript
+{{ 
+   const array = QueryName.data;
+   const filterArray = array.filter((row) => row.id > 5);
+   return filterArray;
+}}
+```
+* Verify the selected option and then perform operation on it:
+```javascript
+{{ 
+  if (Dropdown.selectedOptionValue === "1") {
+      return "Option 1";
+  } else {
+      return "Option 2";
+  }
+}}
+```
+
+It's important to keep in mind that, when using JavaScript inside curly braces (`{{ }}`) the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
+
+### Accessing column names or attribute names with spaces
+When working with column or attribute names that include spaces, it's necessary to use the following syntax: `<QUERY_OR_API_OR_OBJECT_NAME>["COLUMN_OR_ATTRIBUTE_NAME"]`. As an example, if you have an API called `getFullName` that returns data for an attribute named `Full Name`, you can access it as follows:
+
+```javascript
+getFullName.data["Full Name"]
+```
+It's also important to note that this applies to all the JS Objects, Widgets, Queries, and APIs.
+
+## Further reading
+* [Share Data Across Pages](/advanced-concepts/sharing-data-across-pages)
+* [Embed Apps](/advanced-concepts/embed-appsmith-into-existing-application)
+* [Version Control with Git](/advanced-concepts/version-control-with-git)

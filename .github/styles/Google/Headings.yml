@@ -50,4 +50,5 @@ exceptions:
   - DigitalOcean
   - Docker
   - K8s
+  - Framework
 
