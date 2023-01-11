@@ -16,4 +16,4 @@ Browse this section to learn about the different actions you can trigger on Apps
 * [Reset Widget](/reference/appsmith-framework/widget-actions/reset-widget)
 * [Set Interval](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval)
 * [Clear Interval](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval)
-* [Post Message](/reference/appsmith-framework/widget-actions/post-message)
+* [Cross-origin communication](/reference/appsmith-framework/widget-actions/post-message)

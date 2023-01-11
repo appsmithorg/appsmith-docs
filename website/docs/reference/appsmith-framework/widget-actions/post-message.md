@@ -25,8 +25,8 @@ To see examples of the **Post message** action, take a look at the [sample app](
 
 ## Parent message
     
-When you embed an Appsmith app as an iFrame on a website, the Parent message allows you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
-The parent website will call this function when a button is clicked - 
+When you embed an Appsmith app as an iframe on a website, the Parent message allows you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
+The parent website calls this function when a button is clicked - 
 ```
 const iFrame = document.getElementById(”#appsmith-iframe”);
 iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
