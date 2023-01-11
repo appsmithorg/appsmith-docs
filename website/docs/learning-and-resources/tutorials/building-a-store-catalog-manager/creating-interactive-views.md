@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+description: >-
+  In this part of the tutorial, you'll learn how to build an interactive
+  UI using widgets like buttons, lists, charts, and more.
 ---
 
 # Creating Interactive Views
@@ -49,7 +52,7 @@ Click on the **Edit** button of any row to ensure that the **EditProductModal** 
 * It looks exactly like the **AddProductForm**
 * Its properties are configured in the same way as that of **AddProductForm**
 
-Click [here](using-forms.md) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
+Click [here](using-forms) if you'd like to refer back to the previous instructions for creating the **AddProductForm**.
 
 :::info
 **Naming:**
@@ -82,7 +85,7 @@ Finally, note that since the scope of a widget is limited to its parent page, a 
 
 There are two ways to access properties of a widget or results of an API/DB Query _from another page_:
 
-1. Store the data in your browser cache using the [storeValue](reference/appsmith-framework/widget-actions/store-value.md) function so that it's available for accessing even when the user moves to another page in your app.
+1. Store the data in your browser cache using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) function so that it's available for accessing even when the user moves to another page in your app.
 2. Pass the data as a query param in the URL of the page you redirect the user to. This can be done using the [navigateTo](../../../reference/appsmith-framework/widget-actions/navigate-to.md) function.
 :::
 
@@ -153,9 +156,9 @@ The API to update a product is ready! In this section, you'll bind the **Confirm
 2. Rename **label** to **Update**.
 3. Go to **Events → onClick → Execute Query**.
 4. Choose **UpdateProductApi**.
-5. Go to **onSuccess**.
+5. Go to `onSuccess`.
 6. Choose **Execute Query → ProductsQuery**.
-7. Go to **onError**.
+7. Go to `onError`.
 8. Choose **Show Message**.
 9. Set the **Message** to **Product update failed!**.
 10. Set **Type** to **Error**.
@@ -163,8 +166,8 @@ The API to update a product is ready! In this section, you'll bind the **Confirm
 Let's see what you did there:
 
 * You configured the **Confirm** button to run **UpdateProductApi**.
-* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the **onSuccess** event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto-update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
-* You set the **onError** event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message would be displayed.
+* Now, you want the **ProductsTable** to show the updated list of products after the new product gets added successfully. For that, you set the `onSuccess` event of the button to execute **ProductQuery**; if the **UpdateProductApi** runs successfully, **ProductQuery** would be executed. Here you're following the reactive programming paradigm of Appsmith: You are triggering an auto update of the data displayed by the **ProductsTable** by calling `ProductsQuery.run()`.
+* You set the `onError` event of the button to show an alert message so that if **UpdateProductApi** returns an error, an alert message would be displayed.
 
 Try to edit a product, and click **Confirm** to verify that it works - You should now see success/error notifications in the top right of the screen.
 
@@ -192,12 +195,12 @@ To bind multiple actions to a button event, you would have to write some JavaScr
 }}
 ```
 
-This is similar to what you learned in [part 2](./using-forms.md) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action **onSuccess** of **onClick** - but here, you're configuring _two_ actions! The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the **onSuccess** case of **onClick**:
+This is similar to what you learned in [part 2](/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action `onSuccess` of **onClick** - but here, you're configuring _two_ actions. The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the `onSuccess` case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
 
-Note that since these actions happen asynchronously, they would all run in parallel. You can trigger as many actions as you want within **onSuccess** and **onError** by wrapping them within an anonymous function.
+Note that since these actions happen asynchronously, they would all run in parallel. You can trigger as many actions as you want within `onSuccess` and `onError` by wrapping them within an anonymous function.
 
 Try to edit a product again and verify that the form-submit works as expected.
 
@@ -206,7 +209,7 @@ Try to edit a product again and verify that the form-submit works as expected.
 
 You'll often be able to customize app behavior more finely by writing JavaScript, as compared to only using the GUI.
 
-For example, configuring multiple actions to be run in **onSuccess** is supported only via JavaScript, because it's easier to write code for it than it's to configure by using the GUI.
+For example, configuring multiple actions to be run in `onSuccess` is supported only via JavaScript, because it's easier to write code for it than it's to configure by using the GUI.
 
 Similarly, to configure conditional behavior, writing ternary conditions in JavaScript is easier and more extensible; hence the GUI doesn't provide for it.
 
@@ -215,7 +218,7 @@ We recommend that you spend some time fiddling with JavaScript on Appsmith!
 
 ## Sharing your app
 
-Now deploy your app for the final time!
+Now deploy your app for the final time.
 
 Once deployed, you can share your deployed application with both internal and external users:
 
@@ -223,11 +226,11 @@ Once deployed, you can share your deployed application with both internal and ex
 2. Share the application's URL with the user, OR
 3. Invite a user by adding their email, selecting an appropriate role for them, and clicking **INVITE**.
 
-You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](/advanced-concepts/access-control).)
+You can also make the application public, in which case, anyone with the URL to the application can view it without needing to sign in. (Read more about [access control](/advanced-concepts/access-control))
 
 **What's next?**
 
-The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources will come in handy as you need to learn new tricks:
+The basic Catalog Dashboard is now up and running. This also marks the end of the beginner tutorial. At this point, you should know enough to start a project of your own and start playing around. The following resources comes in handy as you need to learn new tricks:
 
 * [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Widgets](/reference/widgets/)
