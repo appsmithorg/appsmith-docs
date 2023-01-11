@@ -127,7 +127,7 @@ For those with intermediate to advanced skill levels, it's recommended to review
 
 
 :::info
-If you think that more information to be included in this documentation, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can also shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com).
+If you think that more information needs to be included in this documentation, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can also shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com).
 :::
 
 ## Other resources

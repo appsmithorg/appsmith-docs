@@ -178,10 +178,10 @@ Once the cluster is created, you will need to create a task that will be run on 
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
+If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
 
 ## Further Reading
 
-* [Configuring ECS Installations](../instance-configuration/README.md#configuring-ecs-installations)
-* [Managing the Appsmith instance](../instance-management/)
-* [Tutorials](../../../learning-and-resources/tutorials/)
+* [Configuring ECS Installations](/getting-started/setup/instance-configuration#configure-ecs-installations)
+* [Managing the Appsmith instance](/getting-started/setup/instance-management/)
+* [Tutorials](/learning-and-resources/tutorials/)
