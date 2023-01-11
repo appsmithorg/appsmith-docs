@@ -127,7 +127,9 @@ docker-compose up -d
 
 ## Troubleshooting
 
+
 If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team.
+
 
 ## Further Reading
 
