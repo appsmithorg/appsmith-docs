@@ -1,11 +1,13 @@
 # Cross-origin communication
 
-## postWindowMessage
-
-`postWindowMessage()` function enables a safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objects; for example, between an app and an iframe embedded within it. This may be useful in situations like:
+Appsmith provides a way to enable safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objectssuch as application/parent window and iframes. This is useful when:
 
 - Using Appsmith's [Iframe](/reference/widgets/iframe/) widget to embed other applications or pages.
 - Embedding Appsmith in an iframe of a parent application.
+
+## postWindowMessage
+
+`postWindowMessage()` method can be used to send messages between the application or parent windows and iframes.
 
 ### Signature
 
@@ -21,12 +23,16 @@ postWindowMessage(message, targetIframe, targetOrigin)
 | **targetIframe** | This is the window to which you want to send the message. If its value is `"window"`, you are sending a message to the parent application’s window (where Appsmith is embedded). If you want to send a message to an iframe within Appsmith, enter the name of the iframe here. (Default: `"window"`) |
 | **targetOrigin** | This is the URL to which you can send messages. The default value of "`*`" means the message can be sent to any URL. If you want to limit sending messages to only the parent application (in which Appsmith is embedded), enter the URL of the parent application here. (Default: `"*"`) |
 
-To see examples of the **Post message** action, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
+To see examples of the **postWindowMessage** function, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
 
 ## subscribeParentMessages
 
-`subscribeParentMessages()` function enables an appsmith app to react to the messages incoming from the parent website.
+`subscribeParentMessages()` function enables an appsmith app to react to the messages incoming from the parent website. Subscription is a page level action that means a subscription won’t persist upon switching pages.
+
+:::tip
+You can setup subscription automatically in a page by calling `subscribeParentMessages` in a JS object method and setting it to run on page load.
+:::
 
 ### Signature
 
@@ -117,8 +123,12 @@ To configure your Appsmith application to send messages to its parent page:
 The parent application where Appsmith is embedded should have an event listener set up to receive the message that you send from Appsmith. Read more about setting up message event handling [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event).
 :::
 
-#### Appsmith app embedded in a website
-    
+#### From parent app to Appsmith
+
+:::info
+This feature available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
+:::
+
 When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
 The parent website calls this function when a button is clicked - 
 
