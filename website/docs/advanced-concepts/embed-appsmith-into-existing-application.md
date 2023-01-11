@@ -46,7 +46,7 @@ Include the meta tag in the head to ensure that the embedded application renders
     <title></title>
 </head>
 <body>
-    <iframe src="https://app.appsmith.com/app/your-app-123" height="700" width="100%"></iframe>
+    <iframe src="<LINK_OF_APP" height="700" width="100%"></iframe>
 </body>
 </html>
 ```
