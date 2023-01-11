@@ -55,5 +55,5 @@ The Client ID and Client Secret entered are not verified by any means. Please te
 **6.** [**Restart the Appsmith instance**](../)
 
 :::tip
-Google Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](../../../../help-and-support/troubleshooting-guide/deployment-errors.md#oauth-sign-up-not-working)
+Google Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working)
 :::
