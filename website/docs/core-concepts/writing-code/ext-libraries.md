@@ -26,13 +26,13 @@ Browse and install recommended JS libraries or install a JS library of your choi
 
 Use a URL that points to the library's index file. Ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
 
-```
+
 ✅ Valid and supported:  `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`. 
 
 ❌ Invalid URL: `https://www.jsdelivr.com/package/npm/datejs`
 
 ❌ Valid URL but not supported: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
-```
+
 
 ### Install external library
 
