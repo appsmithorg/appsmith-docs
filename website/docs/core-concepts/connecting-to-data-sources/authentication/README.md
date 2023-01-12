@@ -60,7 +60,7 @@ The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-
 
 
 
-### Creating an authenticated API
+### Creating an authenticated API datasource
 
 Authenticated API is an API that requires authentication before allowing access to its resources or capability. This is done to ensure that only authorized users are able to interact with the API and to protect sensitive data or capability from unauthorized access:
 
