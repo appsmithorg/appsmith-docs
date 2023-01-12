@@ -1,18 +1,8 @@
 # Queries
 
-The information you want to present in any application is typically spread over numerous tables in a well-designed database. A query can collect data from different tables/ documents and pull it together for display. You can either request data from your database or manipulate the data, or both.
+The information you want to present in any application is typically spread over numerous tables in a well-designed database. A query can collect data from different tables/ documents and pull it together for display. You can either request data from your database or manipulate the data, or both. A query can insert, update, or remove data from a database, conduct calculations, integrate data from other databases, and more.
 
-:::info
-To write and execute queries, you should understand the basics of [connecting to a Database](/core-concepts/connecting-to-data-sources/connecting-to-databases) or [Connecting to an API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
-:::
-
-A query can insert, update, or remove data from a database, conduct calculations, integrate data from other databases, and much more.
-
-:::info
-Appsmith uses the term **Queries** to collectively refer to **APIs**, **Database queries**, and **Integrations** that perform `CRUD` operations.
-:::
-
-You can create queries to manipulate data from a datasource using the Appsmith query editor.
+To write and execute queries, you should understand the basics of [connecting to a Database](/core-concepts/connecting-to-data-sources/connecting-to-databases) or [Connecting to an API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis). Appsmith uses the term **Queries** to collectively refer to **APIs**, **Database queries**, and **Integrations** that perform `CRUD` operations. You can create queries to manipulate data from a datasource using the Appsmith query editor.
 
 :::info
 By default, the `prepared statement` is enabled for all queries. Prepared statements provide a secure way of executing your queries. You can read  [How to Use Prepared Statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for efficient and secure data transactions.
@@ -21,10 +11,6 @@ By default, the `prepared statement` is enabled for all queries. Prepared statem
 ### Setting up a query
 
 Go to the page where you wish to run the query. Follow the below steps to set up a query using a query editor:
-
-:::info
-Queries are **automatically saved**, so you never lose your work. These changes are reflected in your **published** application only after you deploy.
-:::
 
  <VideoEmbed host="youtube" videoId="N6zRxIVSGfk" title="Setting up a Query" caption="Setting up a Query"/> 
 
@@ -39,20 +25,14 @@ You can follow the steps detailed in [Datasources to add a new datasource](/core
 
 ![Create a Query from QUERIES/JS Menu Item](</img/Core_Concepts__Data_Access_and_Binding__Setting_up_Query__Add_Query.png>)
 
-:::info
 You can configure your API(s) using a [REST interface](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
-:::
 
-:::tip
-The query is created with a **default name**. It’s **recommended** that you **rename** it for **readability** and **access**.
-:::
+* The query is created with a **default name**. It’s **recommended** that you **rename** it for **readability** and **access**.
 
 * Write your query in the syntax that's valid for your [database type](/core-concepts/connecting-to-data-sources/connecting-to-databases#supported-databases).
 * Bind your query to the widget and carry out data manipulations.
 
-:::note
-A query and its results can be accessed from **only** the **page** it's a part of. To use a query on another page, click the context menu next to the query name and clone it.
-:::
+Queries are **automatically saved**, so you never lose your work. These changes are reflected in your **published** application only after you deploy. A query and its results can be accessed from **only** the **page** it's a part of. To use a query on another page, click the context menu next to the query name and clone it.
 
 ### Naming a query
 
@@ -75,9 +55,7 @@ All query results are stored in the [data](/reference/appsmith-framework/query-o
 {{ Query1.data }}
 ```
 
-:::info
 **DB Queries** fetch data in the form of an array of objects where each **object** is a **row**, and each **key** in the **object** is a **column**.
-:::
 
 All **API Queries** return the exact API response of the endpoint.
 
