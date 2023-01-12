@@ -7,7 +7,7 @@ APIs are sets of definitions and protocols that enable communication and interac
 
 You can choose to connect to a REST API by clicking on the “**+**” icon next to **“Datasources”** and selecting “**REST API**".
 
-In the context of a REST API, these queries are typically used when someone needs a quick answer to a specific question or problem, rather than engaging in a longer, more involved process. They're often used to retrieve or manipulate data from a server in real-time.
+You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
 
  <VideoEmbed host="youtube" videoId="IptCmvKdbog" title="Add new API" caption="Add new REST API"/> 
