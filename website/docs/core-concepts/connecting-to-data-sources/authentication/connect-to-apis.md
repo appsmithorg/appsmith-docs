@@ -46,7 +46,7 @@ HTTP headers are a critical part of the API request and response, as they contai
 
 It's important to be familiar with the major request and response headers, as you may need to set request headers when testing an API, and you may need to set assertions against response headers to ensure that the correct headers are being returned.
 
-### Query parameters
+### Params
 
 In a REST API, parameters are values that are passed in the URL, query string, or request body that are used to filter, sort, paginate, or perform some other operation on a set of data. These parameters allow the API to return a specific set of data based on the values that are provided.
 

@@ -10,11 +10,10 @@ You can choose to connect to a REST API by clicking on the “**+**” icon next
 You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
 
- <VideoEmbed host="youtube" videoId="IptCmvKdbog" title="Add new API" caption="Add new REST API"/> 
+ <VideoEmbed host="youtube" videoId="IptCmvKdbog" title="Connect to REST API" caption="Connect to REST API"/> 
 
-You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
-#### Mock API
+### Mock API
 
 Appsmith provides a mock API so you can fetch the data and perform actions using a RESTful interface.
 
@@ -62,14 +61,24 @@ The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-
 
 ### Creating an authenticated API datasource
 
-When you create an authenticated API datasource, you need to configure the headers and query parameters only once and thereafter do not need to configure these for every API request. Further, to ensure authorized access and security, you can configure OAuth 2.0, signature headers and self-signed certificates for your API requests.
+When you create an authenticated API datasource, you need to configure the headers and query parameters only once and thereafter don't need to configure these for every API request. Further, to ensure authorized access and security, you can configure OAuth 2.0, signature headers and self-signed certificates for your API requests.
 
- <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Add new API" caption="Add new API"/> 
+ <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Creating an authenticated API " caption="Creating an authenticated API"/> 
 
+To create an authenticated API datasource:
 
 * Click on the **+** icon next to the Datasources and choose **Authenticated API**.
 * Provide the configuration details required to connect to your API.
-* To configure, you can provide the URL and additional information like the headers, parameters, [authentication type](core-concepts/connecting-to-data-sources/authentication/authentication-type), [self-signed certificate](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates), and more.
+
+   * [**Name**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#name):		Specify a name for the API.
+   * [**Method**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#method):	REST API	Select the method for the API request.
+   * [**URL**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#url):		Specify the URL for the API endpoint.
+   * [**Headers**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#headers):		Set any required HTTP headers for the API request.
+   * [**Query parameters**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#params):		Provide any query parameters for the API request, if necessary.
+   * [**Authentication type**](/core-concepts/connecting-to-data-sources/authentication/authentication-type): Define an authentication type for REST APIs by using the protocols available on Appsmith.
+   * [**Send appsmith signature header**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#send-appsmith-signature-header): Ensure that the incoming requests originate from Appsmith.
+   * [**Use self-signed certificate**](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates):  These certificates can be configured as part of the Advanced Settings. 
+
 * Rename and save your datasource.
 
 

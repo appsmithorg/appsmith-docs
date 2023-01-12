@@ -54,8 +54,9 @@ SELECT * FROM users;
 ```
 The select query retrieves the data from the users' table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
 
+:::note
 Databases configured within one page of an app can be accessed by developers anywhere within the workspace.
-
+:::
 
 ## General notes
 Appsmith establishes a connection pool with the database server when you first connect the database to your app. This allows subsequent queries to be executed efficiently. If an idle connection is closed by the database server, Appsmith creates a new connection for the next query.
