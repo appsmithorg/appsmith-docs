@@ -3,7 +3,7 @@
 The Map widget is used to display lat, long data on a google map and allows users to select locations on a map as lat, long.
 
 :::info
-To use the Maps widget on a self-hosted Appsmith, ensure that Google Maps is set up on your instance. For more information, see [Configuring Google Maps on a Self-hosted Appsmith Instance](/getting-started/setup/instance-configuration/google-maps).
+To use the Maps widget on a self-hosted Appsmith, ensure that Google Maps is set up on your instance. For more information, see [Configuring Google Maps on a self-hosted Appsmith instance](/getting-started/setup/instance-configuration/google-maps).
 :::
 
 <VideoEmbed host="youtube" videoId="xCTiPNlBKLU" title="How to use Map Widget" caption="How to use Map Widget"/>
