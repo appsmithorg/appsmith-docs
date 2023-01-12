@@ -1,9 +1,54 @@
 ---
 description: >-
-  Multiple Queries can be triggered in serial/parallel/conditional when a user
-  interacts with a widget
+  Learn to create dynamic and responsive workflows in Appsmith using widgets, queries, actions, and JS Objects. Build advanced functionality such as data validation and user-specific data retrieval. Build your own application now.
 ---
 
+# Creating Workflows
+Appsmith lets you create dynamic and responsive web applications. It empowers developers to design user interfaces that adapt to user interactions on the fly and execute advanced operations like data retrieval, manipulation, and event triggering. Appsmith facilitates adding, configuring, and using widgets, queries, actions, JS Objects, and APIs. Additionally, it allows for more advanced functionalities such as parallel and conditional queries as well as data transfer between pages.
+
+## Widgets
+Widgets are the building blocks of any Appsmith application. They're used to display information on the page and respond to user interactions. There are different types of [widgets](cross-reference to Widgets landing page] available in Appsmith.
+
+### Fields
+Widgets provide fields that you can use to bind and display data or trigger an action. Based on this, the properties are categorized as either sync or async.
+
+#### Sync fields
+Whenever you drag a widget on the canvas, you can select it and see the properties associated with it in the properties pane. The fields that expect input or data in the properties pane are called Sync Fields.
+
+#### Async fields
+The properties that can trigger an action or perform an operation are called Async Fields.
+
+#### Use the Async function in sync field
+Existing content
+
+Add a reference in the same doc for the Queries/API/JS objects section.
+
+## Queries & API
+Queries and APIs are used to retrieve data from external sources. The data retrieved by Queries and API can be bound to the widgets.
+
+
+### Handling success and error
+When using queries and APIs, it's important to handle both success and error cases. This can be done using the `onSuccess` and `onError` properties of the query or API. You can configure the [action](Cross-reference to below section] to take once a Query returns with a success or an error. The Success / Error returned by the API/Query can be determined by the HTTP status code or the query response status.
+For example, you can display a success or an error message by using the `showAlert` action.
+
+## JS Objects
+JS Objects are used to create custom logic in Appsmith. They can be used to manipulate data, handle events, and perform advanced operations. You can create JS Objects by using the JavaScript Editor. It allows you to write complex code and use it throughout your application.
+
+
+## Actions
+Actions are used to trigger events in response to user interactions. They can be used to navigate between pages, send data to external sources, and perform other operations.
+
+## Navigation
+Navigation is an essential feature of any web application. Appsmith provides a lot of flexibility to define the navigation in your application, allowing you to create dynamic and responsive navigation menus and routes.
+
+## User management and authentication
+Appsmith provides built-in support for user management and authentication. You can implement login, registration, and password reset capabilities in your application (Cross-reference to various docs). You can also use APIs and custom logic to integrate with external authentication providers like Google, GitHub, and more. (`We can also cross-reference here for the BE features like SSO- OIDC and SAML`) - Thoughts???
+
+## Complex workflows
+Appsmith allows for the creation of complex workflows using parallel and conditional queries as well as data transfer between pages. This allows for the creation of advanced functionalities such as form validation, data validation, and user-specific data retrieval.
+
+
+--------Existing Content -----------
 # Creating Workflows
 
 When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
