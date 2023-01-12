@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: Troubleshoot the issues with your Appsmith applications. This page includes a list of common errors, causes, and solutions to help you resolve application issues.
 ---
 # Application Errors
 
@@ -51,6 +52,7 @@ This error can be fixed by either using a different email to signup or doing `lo
 
 This error appears when the user attempts to log into the Appsmith platform with invalid email and/or password.
 
+
 If you are unable to log in due to forgotten credentials, it's recommended to reset your account password. This can be done with the "Forgot Password" button on the Appsmith sign-in page; the page prompts you for the email address associated with your account, and then Appsmith sends an email to that address with a link for creating a new password.
 
 Alternatively, you may be able to access your account by using an SSO method like Google or GitHub. If you use SSO with an account that has the same email address as the one you normally use to log in via email and password, you should be signed in successfully.
@@ -63,6 +65,7 @@ If you need to reset your password while using a self-hosted instance of Appsmit
     messageContainerClassName="error"
     messageContent="Unable to find user <email>."
 ></Message>
+
 
 The error indicates that the email provided to reset the password isn't registered with Appsmith.
 
@@ -81,3 +84,4 @@ This message indicates one of the following:
 
 * The page URL is invalid. This error can be fixed by getting the correct page URL from the administrator/developer.
 * The User doesn't have [permission](/advanced-concepts/access-control) to access the page. You can fix the error by requesting access permission for the page from the `admin/developer`.
+
