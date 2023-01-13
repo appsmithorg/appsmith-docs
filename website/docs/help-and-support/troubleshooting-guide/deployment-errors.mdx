@@ -231,3 +231,35 @@ If you haven't been using your Appsmith instance for a while, it could be possib
 :::
 
 To prevent similar issues in the future, consider [enabling auto updates](/getting-started/setup/installation-guides/docker#enabling-appsmith-auto-updates) for your Appsmith instance. If you already had auto updates on and still encountered this issue, please contact the [Appsmith team](https://discord.com/invite/rBTTVJp) to determine the cause of the deployment problem
+
+## Docker auto update / watchtower error on arm64
+
+ ```
+docker-compose ps
+        Name                      Command                  State                                       Ports                                 
+---------------------------------------------------------------------------------------------------------------------------------------------
+appsmith               /opt/appsmith/entrypoint.s ...   Up (healthy)   0.0.0.0:443->443/tcp,:::443->443/tcp, 0.0.0.0:80->80/tcp,:::80->80/tcp
+ubuntu_auto_update_1   /watchtower --schedule 0 0 ...   Restarting    
+ ```
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="auto_update_1 | exec /watchtower: exec format error"></Message>
+
+#### Cause
+On an arm64 architecture, watchtower may encounter errors when attempting to update the containers. This can be caused by a variety of factors, such as compatibility issues with the specific version of the container image being used or issues with the configuration of the Docker environment. 
+
+#### Solution
+To resolve this issue, update the following line in the docker-compose file:
+
+ ```
+image: containrrr/watchtower:latest-dev
+to:
+image: containrrr/watchtower
+ ```
+
+After making the necessary changes, run the command ```docker-compose up -d``` again to start the containers. If you still encounter this issue, please contact the [Appsmith team](https://discord.com/invite/rBTTVJp) to determine the cause of the deployment problem
+
+
+
