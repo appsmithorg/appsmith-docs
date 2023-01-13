@@ -22,7 +22,7 @@ After creating and configuring a datasource, you can query the datasource and bi
 
    <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
-         <img class="containerImage" src="/img/db-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "5px", 'margin-top': "9px"}} alt="quickstart"/>
+         <img class="containerImage" src="/img/db-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "5px", 'margin-top': "8px"}} alt="quickstart"/>
       </div> 
       <b><a href="/core-concepts/connecting-to-data-sources/connecting-to-databases">Databases</a></b>
       <div class="containerDescription">
@@ -31,7 +31,7 @@ After creating and configuring a datasource, you can query the datasource and bi
 
    <div class="containerColumnSampleApp columnGrid column-two">
    <div class="containerCol">
-         <img class="containerImage" src="/img/api-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "5px", 'margin-top': "9px"}} alt="support"/>
+         <img class="containerImage" src="/img/api-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "5px", 'margin-top': "8px"}} alt="support"/>
       </div>
       <b><a href="/core-concepts/connecting-to-data-sources/authentication">APIs</a></b>
       <div class="containerDescription"> 
@@ -40,7 +40,7 @@ After creating and configuring a datasource, you can query the datasource and bi
 
    <div class="containerColumnSampleApp columnGrid column-three">
    <div class="containerCol">
-         <img class="containerImage" src="/img/query-icon.png" style= {{width:"60px", height:"60px"}} alt="support"/>
+         <img class="containerImage" src="/img/query-icon.png" style= {{width:"60px", height:"60px", margin:"0"}} alt="support"/>
       </div>
       <b><a href="/core-concepts/connecting-to-data-sources/authentication">Queries</a></b>
       <div class="containerDescription"> 
