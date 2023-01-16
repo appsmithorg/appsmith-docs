@@ -7,9 +7,9 @@ sidebar_position: 2
 
 Appsmith is a low-code tool that lets us build tools and user interfaces. We’ll be using JavaScript to interact with the UI Widgets, APIs, and Database Queries during this process of building applications. In this guide, we’ll be looking at some of the basic operations with JavaScript to help us understand how easy and fun building apps on Appsmith is!
 
-## **Moustache Syntax**
+## **Mustache Syntax**
 
-The Moustache syntax helps us write JavaScript anywhere in Appsmith. For example, say if you want to render the data onto a table from API, on Appsmith, you can drag and drop the table widget, open the property pane and inside the table data, use moustache syntax to call the API.
+The Mustache syntax helps us write JavaScript anywhere in Appsmith. For example, say if you want to render the data onto a table from API, on Appsmith, you can drag and drop the table widget, open the property pane and inside the table data, use mustache syntax to call the API.
 
 ```javascript
 {{ myApiEndpoint.data.field1 }}
@@ -31,7 +31,7 @@ select * from products
 
 Execute the query by clicking on the Run button, you should see all the products in the Query response section.
 
-Next, add the response; let’s bind this query to the table widget; you can now go to a page and drag and drop a table widget. You can access the table’s property pane by clicking on the cog icon on the top-right of the widget. Now let’s write JS in the Table Data section to access the query. For this, you should be using the Moustache syntax:
+Next, add the response; let’s bind this query to the table widget; you can now go to a page and drag and drop a table widget. You can access the table’s property pane by clicking on the cog icon on the top-right of the widget. Now let’s write JS in the Table Data section to access the query. For this, you should be using the Mustache syntax:
 
 ```javascript
 {{ get_products.data }}
@@ -83,7 +83,7 @@ In this way, you can customise all the actions on Appsmith for different widgets
 
 ## Multiline JavaScript
 
-So far, we’ve seen simple JS operations, but say if you’re working on some API integrations or some different data sources, you might need to write some huge JS code. With Appsmith, you can do that within the same moustache syntax. Here’s a simple example of using multi-line code in Appsmith.
+So far, we’ve seen simple JS operations, but say if you’re working on some API integrations or some different data sources, you might need to write some huge JS code. With Appsmith, you can do that within the same mustache syntax. Here’s a simple example of using multi-line code in Appsmith.
 
 In our `Table1`, where we are binding all our products data, we’ve simply used `get_products.data()` method. Instead of that, you can also write a function, try the below code snippet:
 
@@ -153,7 +153,7 @@ Drag and drop a Dropdown widget onto the canvas and add the following to the `Op
 ]
 ```
 
-Lastly, update the code in the table widget, map the data in the `Table Data` property using a moustache syntax and only return the data that's selected from the dropdown widget:
+Lastly, update the code in the table widget, map the data in the `Table Data` property using a mustache syntax and only return the data that's selected from the dropdown widget:
 
 ```javascript
 {{
