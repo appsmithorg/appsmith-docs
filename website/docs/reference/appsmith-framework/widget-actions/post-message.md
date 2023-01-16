@@ -11,9 +11,6 @@ In Appsmith, you can use the following methods for cross-origin communication -
 * [windowMessageListener()](#windowmessagelistener)
 * [unlistenWindowMessage()](#unlistenwindowmessage)
 
-:::info
-This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
-:::
 
 ### postWindowMessage()
 
@@ -41,6 +38,9 @@ To see examples of the **postWindowMessage** function, take a look at the [sampl
 
 `windowMessageListener()` function enables an appsmith app to react to the messages incoming from the parent website. This is a page level action that's specific to the current page and won't continue on other pages.
 
+:::info
+This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
+:::
 
 #### Signature
 
