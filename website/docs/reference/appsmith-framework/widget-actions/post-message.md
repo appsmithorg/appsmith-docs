@@ -1,4 +1,4 @@
-# Cross-origin communication
+# Cross-origin Communication
 
 Appsmith provides a way to enable safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objects such as application/parent window and iframes. This is useful when:
 
@@ -8,8 +8,8 @@ Appsmith provides a way to enable safe cross-origin communication between differ
 ## Methods
 In Appsmith, you can use the following methods for cross-origin communication -
 * [postWindowMessage()](#postwindowmessage)
-* [subscribeParentMessages()](#subscribeparentmessages)
-* [unsubscribeParentMessages()](#unsubscribeparentmessages)
+* [windowMessageListener()](#windowmessagelistener)
+* [unlistenWindowMessage()](#unlistenwindowmessage)
 
 ### postWindowMessage()
 
@@ -32,42 +32,43 @@ postWindowMessage(message, targetIframe, targetOrigin)
 To see examples of the **postWindowMessage** function, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
 
-### subscribeParentMessages()
+### windowMessageListener()
 
-`subscribeParentMessages()` function enables an appsmith app to react to the messages incoming from the parent website. Subscription is a page level action that means a subscription won’t persist upon switching pages.
+`windowMessageListener()` function enables an appsmith app to react to the messages incoming from the parent website. This is a page level action that's specific to the current page and won't continue on other pages.
+
 
 #### Signature
 
 ```javascript
-subscribeParentMessages("domain", callback);
+windowMessageListener("domain", callback);
 
 #Example - Run an API 
 
-subscribeParentMessages(”https://parent-domain.com”, () => Api1.run());
+windowMessageListener(”https://parent-domain.com”, () => Api1.run());
 ```
 
 ##### Arguments
 
 | Argument | Description |
 | --- | --- |
-| domain | This is the address of the website that sends the message (`https:/mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https:/myother-website.com`)the callback  won’t be triggered. If a subscription is already active, it's not overridden and a warning is logged in the console. |
+| domain | This is the address of the website that sends the message (`https:/mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https:/myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. |
 | callback | A callback comes to action whenever a message is sent from the defined domain. It accepts a parameter that  returns the response to the incoming message. |
 
-### unsubscribeParentMessages()
+### unlistenWindowMessage()
 
-`unsubscribeParentMessages()` allows you to disable an appsmith app from reacting to messages from the parent website.
+`unlistenWindowMessage()` allows you to disable an appsmith app from reacting to messages from the parent website.
 
 #### Signature
 
 ```javascript
-unsubscribeParentMessages(”domain”)
+unlistenWindowMessage(”domain”)
 ```
 
 ##### Arguments
 
 | Argument | Description |
 | --- | --- |
-| domain | This is the address of the website with an already active subscription. If a subscription doesn’t exist in the given domain, a warning is logged in the console. |
+| domain | This is the address of the website with an already active action. If no active action exists in this domain, a warning appears in the console. |
 
 ## Types of communication
 
@@ -135,8 +136,8 @@ When you embed an Appsmith app as an iframe on a website, the event listeners al
    
 On your Appsmith app, you can enable/disable a page to react to these messages using the following functions - 
 
-* [subscribeParentMessages](#subscribeparentmessages)
-* [unsubscribeParentMessages](#unsubscribeparentmessages)
+* [windowMessageListener()](#windowmessagelistener)
+* [unlistenWindowMessage()](#unlistenwindowmessage)
 
 For example, a parent website (`https:/mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked - 
 
@@ -144,14 +145,15 @@ For example, a parent website (`https:/mywebsite.com`) where an appsmith app is 
 const iFrame = document.getElementById(”#appsmith-iframe”);
 iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
 ```   
-In the Appsmith app, if you want to run and API (Api1) in reaction to this message, you can use the `subscribeParentMessages()` function as follows - 
+In the Appsmith app, if you want to run and API (Api1) in reaction to this message, you can use the `windowMessageListener()` function as follows - 
 ```javascript
-subscribeParentMessages(”https:/mywebsite.com”, () => Api1.run());
+windowMessageListener(”https:/mywebsite.com”, () => Api1.run());
 ```
-To stop the appsmith app from reacting to the incoming messages from the parent website (`https:/mywebsite.com`), you can use the `unsubscribeParentMessages` method as follows -
+To stop the appsmith app from reacting to the incoming messages from the parent website (`https:/mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
 ```javascript
-unsubscribeParentMessages(”https:/mywebsite.com”)
+unlistenWindowMessage(”https:/mywebsite.com”)
 ```
 :::tip
-You can setup subscription automatically in a page by calling `subscribeParentMessages` in a JS object method and setting it to run on page load.
+You can automatically set up an action in a page by calling the `windowMessageListener` in a JS object method and have it run when the page loads.
 :::
+
