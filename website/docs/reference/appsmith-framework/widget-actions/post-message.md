@@ -62,6 +62,10 @@ windowMessageListener(
 
 `unlistenWindowMessage()` allows you to disable an appsmith app from reacting to messages from the parent website.
 
+:::info
+This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
+:::
+
 #### Signature
 
 ```javascript
