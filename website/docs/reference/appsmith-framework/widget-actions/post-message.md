@@ -11,6 +11,10 @@ In Appsmith, you can use the following methods for cross-origin communication -
 * [windowMessageListener()](#windowmessagelistener)
 * [unlistenWindowMessage()](#unlistenwindowmessage)
 
+:::info
+This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
+:::
+
 ### postWindowMessage()
 
 `postWindowMessage()` method can be used to send messages between the application or parent windows and iframes.
@@ -32,6 +36,7 @@ postWindowMessage(message, targetIframe, targetOrigin)
 To see examples of the **postWindowMessage** function, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
 
+
 ### windowMessageListener()
 
 `windowMessageListener()` function enables an appsmith app to react to the messages incoming from the parent website. This is a page level action that's specific to the current page and won't continue on other pages.
@@ -40,18 +45,17 @@ To see examples of the **postWindowMessage** function, take a look at the [sampl
 #### Signature
 
 ```javascript
-windowMessageListener("domain", callback);
-
-#Example - Run an API 
-
-windowMessageListener(”https://parent-domain.com”, () => Api1.run());
+windowMessageListener(
+	"https://your-site.github.io", 
+	(message) => { showAlert(message) }
+)
 ```
 
 ##### Arguments
 
 | Argument | Description |
 | --- | --- |
-| domain | This is the address of the website that sends the message (`https:/mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https:/myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. |
+| domain | This is the address of the website that sends the message (`https://mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https://myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. |
 | callback | A callback comes to action whenever a message is sent from the defined domain. It accepts a parameter that  returns the response to the incoming message. |
 
 ### unlistenWindowMessage()
@@ -129,7 +133,7 @@ The parent application where Appsmith is embedded should have an event listener 
 #### From parent app to Appsmith
 
 :::info
-This feature available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
+This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
 :::
 
 When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
@@ -139,7 +143,7 @@ On your Appsmith app, you can enable/disable a page to react to these messages u
 * [windowMessageListener()](#windowmessagelistener)
 * [unlistenWindowMessage()](#unlistenwindowmessage)
 
-For example, a parent website (`https:/mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked - 
+For example, a parent website (`https://mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked - 
 
 ```javascript
 const iFrame = document.getElementById(”#appsmith-iframe”);
@@ -147,11 +151,11 @@ iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain
 ```   
 In the Appsmith app, if you want to run and API (Api1) in reaction to this message, you can use the `windowMessageListener()` function as follows - 
 ```javascript
-windowMessageListener(”https:/mywebsite.com”, () => Api1.run());
+windowMessageListener(”https://mywebsite.com”, () => Api1.run());
 ```
-To stop the appsmith app from reacting to the incoming messages from the parent website (`https:/mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
+To stop the appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
 ```javascript
-unlistenWindowMessage(”https:/mywebsite.com”)
+unlistenWindowMessage(”https://mywebsite.com”)
 ```
 :::tip
 You can automatically set up an action in a page by calling the `windowMessageListener` in a JS object method and have it run when the page loads.
