@@ -2,24 +2,16 @@
 
 <HideElements/>
 
-1. Click to download the docker-compose.yml(Create_a_new_Bitly_Link) file and place it into the Appsmith installation folder. Or, run the following cURL:
+1. Download and place the `docker-compose.yml` file in the Appsmith installation folder or run the cURL command.:
 
 ```bash
 curl -L <ADD_NEW_BITLY_LINK_TO_DOWNLOAD -o $PWD/docker-compose.yml
 ```
 
-2. Start the Docker container by running the command below. This may need to be run with `sudo` if docker and docker-compose aren't accessible by the user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
+2. Start the Docker container using the command `docker-compose up -d ` (You may need to run with `sudo`).
 
-```bash
-docker-compose up -d
-```
-The Appsmith server should be up and running soon. Once the Appsmith container is ready, the message `Appsmith is Running!` is displayed in the Docker logs. You can follow the logs with the following command:
+3. Check the Docker logs for the message `Appsmith is Running!` using the command `docker logs -f appsmith` and confirm that the Appsmith container is ready. The server logs are available in `stacks/logs/backend/backend.log`.
 
-```bash
-docker logs -f appsmith
-```
-This message is also logged and available in server logs in `stacks/logs/backend/backend.log`.
-
-3. After launching Appsmith, create or sign in to your account. Upon successful login, a screen is shown where you can enter your license key or start a trial.
+4. Create or sign in to your Appsmith account, and enter your license key or start a trial after successful login.
 
 ![Choose the Appsmith Subscription](/img/Customer-portal-choose-subscription.png)
