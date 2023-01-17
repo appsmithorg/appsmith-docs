@@ -28,8 +28,8 @@ To try this feature yourself, take a look at the [sample app for inline editing]
 | [**isAddRowInProgress**]( #isaddrowinprogress) | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
 | [**newRow**](#newrow) | Binding | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
 | [**isNewRow**](#isnewrow) | Validation | When writing code for validation properties, this variable indicates whether the cells being validated are part of a new or an existing row. | `isNewRow` |
-| **First Day of Week** | Date Settings | Sets the first day of week that will be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
-| **Show Shortcuts** | Date Settings | Sets whether shortcuts will be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
+| **First Day of Week** | Date Settings | Sets the first day of week that should be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
+| **Show Shortcuts** | Date Settings | Sets whether shortcuts should be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
 
 ## Events
 
@@ -137,13 +137,13 @@ Sets the maximum allowed value. For example, you could set the maximum value to 
 
 <VideoEmbed host="youtube" videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
 
-##### Min Date
+##### Min date
 
-Sets the maximum allowed date. For example, you could set the minimum date to 01-01-1900 if you only want dates after that. Any date before 01-01-1900 cannot be selected in the Date Picker. Only available for columns that are type **Date**.
+Sets the maximum allowed date. For example, you could set the minimum date to 1900/01/01 if you only want dates after that. Any date before 1900/01/01 can't be selected in the Date Picker. Only available for columns that are type **Date**.
 
-##### Max Date
+##### Max date
 
-Sets the maximum allowed date. For example, you could set the maximum date to 31-12-2100 if you only want dates before that. Any date after 31-12-2100 cannot be selected in the Date Picker. Only available for columns that are type **Date**.
+Sets the maximum allowed date. For example, you could set the maximum date to 2100/12/31 if you only want dates before that. Any date after 2100/12/31 can't be selected in the Date Picker. Only available for columns that are type **Date**.
 
 ---
 
