@@ -5,7 +5,6 @@ sidebar_position: 6
 
 With Appsmith, users have the ability to download a wide range of file formats. This action serves the purpose of downloading any data as a file. The feature is made possible by using  [downloadjs](https://github.com/rndme/download) library.
 
-![Click to expand](/img/download.gif)
 
 ## Signature
 
