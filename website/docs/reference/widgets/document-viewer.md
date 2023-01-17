@@ -9,7 +9,7 @@ Document viewer widget is used to show documents on a page. The widget currently
 5. .docx
 6. .xlsx
 
-<VideoEmbed host="youtube" videoId="I-FusTdnJeE" title="How to use Document Viewer Widget" caption="How to use Document Viewer Widget"/>
+<VideoEmbed host="youtube" videoId="UuecSUqFOpQ" title="How to use Document Viewer Widget" caption="How to use Document Viewer Widget"/>
 
 Documents can be populated from a data source like API or Query in which the incoming data points to the URL of the file.
 
