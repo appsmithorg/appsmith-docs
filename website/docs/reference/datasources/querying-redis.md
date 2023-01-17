@@ -17,7 +17,7 @@ After filling up the three fields as described preceding, click the "Test" butto
 
 ## Querying Redis
 
-The Redis query pane can be used to run any of the commands supported by Redis. The response from this command is displayed in the result window. A few examples are listed below.
+The Redis query pane can be used to run any of the commands supported by Redis. The response from this command is displayed in the result window. 
 
 ### Checking connection
 
