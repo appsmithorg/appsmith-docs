@@ -3,17 +3,17 @@ sidebar_position: 6
 ---
 # Download
 
-This action is used to download any data as a file. We use [downloadjs](https://github.com/rndme/download) for this functionality
+With Appsmith, users have the ability to download a wide range of file formats. This action serves the purpose of downloading any data as a file. The feature is made possible by using  [downloadjs](https://github.com/rndme/download) library.
 
 ![Click to expand](/img/download.gif)
 
-### Signature
+## Signature
 
 ```javascript
 download(data: any, fileName: string, fileType?: string): Promise
 ```
 
-#### Arguments
+### Arguments
 
 | **Argument Name** | **Description**                            |
 | ----------------- | ------------------------------------------ |
@@ -21,30 +21,48 @@ download(data: any, fileName: string, fileType?: string): Promise
 | **fileName**      | Name of the file to be downloaded          |
 | **fileType**      | The mime type of the file to be downloaded |
 
-### Use cases
+## Supported file type
+Appsmith offers wide range support for downloading files in various formats, including:
 
-*   **Downloading a Plain Text**
+* Plain text
+* HTML
+* CSV
+* JSON
+* JPEG
+* PNG
+* SVG
 
-    To download a plain text, the _expected data_ is a string representing the text content to be downloaded.
-
-    ```javascript
-    download(data: string, fileName: string, fileType?: string): void
-    ```
-
-   
-
-![Click to expand](/img/download-text.gif)
-
-*   **Downloading an image**
-
-    To download an Image, the _expected data_ is the image's URL or Base64 string.
+:::info
+It's important to note that the mime-type parameter of the file can't be forced or manipulated, and the system only allows the file to be downloaded in its original mime-type.
+:::
 
 
+## Use cases
 
-![Click to expand](/img/download-image.gif)
+### Downloading a plain text
+To download a plain text document, the data passed to the download action should be a `string` representation of the text content to be downloaded. Additionally, a `fileName`and an optional `fileType` should be provided as parameters to the download function. 
 
-*   **Downloading a file**
+```javascript
+download(data: string, fileName: string, fileType?: string): void
+```
+<VideoEmbed host="youtube" videoId="JL0XRRIIcus" title="Downloading a plain text" caption="Downloading a plain text"/>
 
-    By supplying the URL of the file to be downloaded, files of different types can be downloaded via the download action.
 
-    > For files to be successfully downloaded, **their contents must be served over HTTPS** to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is **CORS-enabled** and returns the required headers in the response.
+This feature can be useful for saving notes, logs, or any other type of plain text information for later reference or sharing with others.
+
+
+### Downloading an image
+
+To download an image, the data passed to the download action should be the image's URL or Base64 string representation of the image. Additionally, a fileName and an optional fileType should be provided as parameters to the download function. 
+
+<VideoEmbed host="youtube" videoId="PoDi1MR6nI4" title="Downloading an image" caption="Downloading an image"/>
+
+
+### Downloading a file
+
+Files of various types can be downloaded using the download action by providing the URL of the file to be downloaded.
+
+> For files to be successfully downloaded, **their contents must be served over HTTPS** to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is **CORS-enabled** and returns the required headers in the response.
+
+## Troubleshooting
+If you encounter any errors during this process, check out this guide on [debugging JS Errors](/help-and-support/troubleshooting-guide/js-errors). If you are still facing any issues, please connect with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
