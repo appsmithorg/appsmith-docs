@@ -29,7 +29,7 @@ A Prepared Statement is a feature provided by Database Management Systems (DBMS)
 
 ### Encode query params
 
-This enables you to encode all the query parameters of an API. You can also encode form body when Content-Type header is set to `FORM_URLENCODED`/`x-www-form-encoded`. 
+This enables you to encode all the query parameters of an API. You can also encode form body when Content-Type header is set to `FORM_URLENCODED`.
 
 
 ### Smart JSON substitution
