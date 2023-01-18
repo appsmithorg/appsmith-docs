@@ -7,7 +7,7 @@ toc_max_heading_level: 4
 ---
 
 # Writing Code
-Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-friendly, intuitive application building. The JavaScript code editor and debugging tools are designed to help users write code that's easy to read and understand, allowing for smoother collaboration and the creation of reliable, high-performing applications. These tools also aid in troubleshooting any issues that may arise, allowing users to build the best possible applications for their users. 
+Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-friendly, intuitive application building. The JavaScript code editor and debugging tools are designed to help users write code that's easy to read and understand, allowing for smoother collaboration and creating reliable, high-performing applications. 
 
 Appsmith also provides the ability to incorporate external libraries and APIs into your projects, helping you expand the capabilities of your applications.
 
