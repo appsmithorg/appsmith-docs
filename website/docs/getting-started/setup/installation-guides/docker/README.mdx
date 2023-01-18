@@ -19,7 +19,7 @@ Docker is an open source [containerization](https://www.ibm.com/in-en/cloud/lear
 1. Create an installation folder called `appsmith` for deployment and data storage.
 2. `cd` into the installation folder.
 
-## Setup with Docker Compose _(recommended)_
+## Setup with Docker compose _(recommended)_
 
 The Appsmith Docker image contains all the components required to run, within a single Docker container. All these multiple processes are managed by a [Supervisord](http://supervisord.org/) instance, which is a lightweight process manager.
 
@@ -87,7 +87,7 @@ To update Appsmith manually, go to the root directory of the installation and ru
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-### Enabling Appsmith auto-updates
+### Enabling Appsmith auto updates
 
 Automatic updates are turned off by default in the docker-compose.yml file. To enable them, please follow these steps:
 
@@ -105,7 +105,7 @@ Automatic updates are turned off by default in the docker-compose.yml file. To e
    ```
 
 :::info
-To complement automatic updates, Appsmith also has an auto-backup feature. Before an automatic update, Appsmith first creates a backup to allow [rolling back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto-backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
+To complement automatic updates, Appsmith also has an auto backup feature. Before an automatic update, Appsmith first creates a backup to allow [rolling back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
 :::
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date. The installation is now configured to stay up-to-date automatically.
@@ -168,7 +168,7 @@ Once the download is complete, the server should be up soon. You can verify that
 
 ## Docker logs
 
-Once the Appsmith container is ready, the message Appsmith is Running! will be displayed in the Docker logs.
+Once the Appsmith container is ready, the message "Appsmith is Running" would be displayed in the Docker logs.
 
 ![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
@@ -178,11 +178,21 @@ You can follow the logs with the following command:
 docker logs -f appsmith
 ```
 
-This message is also logged and available in server logs in (`stacks/logs/backend/backend.log`).
+This message is also logged and available in server logs in (`stacks/logs/backend/backend.log`). You can access backend logs from your Appsmith deployment by following these steps:
+
+* Navigate to the folder where Appsmith was deployed, open the `logs` folder within the `stacks` folder.
+* Find the `backend` folder.
+* Retrieve the `.log` files and bundle them in a `.zip` file. 
+
+You can either share these logs with the Appsmith team or retain them for your own reference.
+
+:::note
+Logs don't contain any sensitive information that would pose a risk to share. However, you can remove any personally identifiable information (PII) using [scrubadub library](https://github.com/LeapBeyond/scrubadub).
+:::
 
 ## Restarting containers
 
-If the Docker containers are failing to restart, download and run the [`restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
+If the Docker containers are failing to restart, download ,and run the [`restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
 
 Copy the script (`restart-container.sh`) to the installation folder and make it executable:
 
