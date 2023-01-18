@@ -36,7 +36,7 @@ The Download action does not convert the file to a specific type and it is downl
 :::
 
 
-## Use cases
+## Examples
 
 ### Downloading a plain text
 To download a plain text document, the data passed to the download action should be a `string` representation of the text content to be downloaded. Additionally, a `fileName`and an optional `fileType` should be provided as parameters to the download function. 
