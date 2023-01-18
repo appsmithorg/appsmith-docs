@@ -32,7 +32,7 @@ Appsmith offers wide range support for downloading files in various formats, inc
 * SVG
 
 :::info
-The Download action does not convert the file to a specific type and it is downloaded in the original format. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
+The Download action doesn't convert the file to a specific type and it's downloaded in the original format. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
 :::
 
 
@@ -61,7 +61,9 @@ To download an image, the data passed to the download action should be the image
 
 Files of various types can be downloaded using the download action by providing the URL of the file to be downloaded.
 
-> For files to be successfully downloaded, **their contents must be served over HTTPS** to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is **CORS-enabled** and returns the required headers in the response.
+:::tip
+For files to be successfully downloaded, **their contents must be served over HTTPS** to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is **CORS-enabled** and returns the required headers in the response.
+:::
 
 ## Troubleshooting
 If you encounter any errors during this process, check out this guide on [debugging JS Errors](/help-and-support/troubleshooting-guide/js-errors). If you are still facing any issues, please connect with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
