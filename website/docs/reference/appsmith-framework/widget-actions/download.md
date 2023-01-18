@@ -32,7 +32,7 @@ Appsmith offers wide range support for downloading files in various formats, inc
 * SVG
 
 :::info
-It's important to note that the mime-type parameter of the file can't be forced or manipulated, and the system only allows the file to be downloaded in its original mime-type.
+The Download action does not convert the file to a specific type and it is downloaded in the original format. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
 :::
 
 
