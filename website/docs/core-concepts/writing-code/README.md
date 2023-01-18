@@ -84,7 +84,7 @@ For example, you want to write JavaScript code for events listeners which can co
 
 It's important to keep in mind that, when using JavaScript inside mustache syntax (`{{ }}`) the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
 
-### JavaScript editor
+## JavaScript editor
 The Appsmith JavaScript editor is a powerful tool that empowers you to write, test, and debug your JavaScript code directly within the platform. It enables you to create a reusable set of JavaScript functions, and comes equipped with several useful features such as syntax highlighting, code completion, and error highlighting, making it easy for you to write and debug your code, and helps in writing complex code with ease.
 
 <VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JavaScript Editor" caption="How to build with JavaScript Editor" />
@@ -117,7 +117,6 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
         </div><hr/>
         <div class="containerDescription">
 
-* An integral part of building your app.
 * Manipulate data by performing actions like adding, updating, deleting, and retrieving data.
 * Add and trigger actions by using a combination of JavaScript functions, APIs, and Queries. For more information, see 
 <a href="/core-concepts/writing-code/workflows">
