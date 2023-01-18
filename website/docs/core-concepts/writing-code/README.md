@@ -11,37 +11,56 @@ Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-
 
 Appsmith also provides the ability to incorporate external libraries and APIs into your projects, helping you expand the capabilities of your applications.
 
-## JavaScript editor
-The Appsmith JavaScript editor is a powerful tool that allows users to write, test, and debug their JavaScript code directly within the platform. It includes features such as syntax highlighting, code completion, and error highlighting, making it easy for users to write and debug their code.
-
-<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JavaScript Editor" caption="How to build with JavaScript Editor" />
-
-The code editor also includes a built-in response, errors, and logs tabs that helps users to see the results of their code. For more information, see [Working with JavaScript editor](core-concepts/writing-code/javascript-editor-beta#working-with-javascript-editor).
-
-The Appsmith JavaScript Editor also includes a number of [built-in JavaScript libraries](/core-concepts/writing-code/ext-libraries#javascript-library-reference) that users can incorporate into their code. This makes it easy for users to add advanced capabilities to their applications without having to write the code from scratch. It also enables you to import external libraries, and use them in your code. For more information, see [built-in and custom libraries](/core-concepts/writing-code/ext-libraries).
-
-### Coding in JavaScript
-In Appsmith, you can use JavaScript inside curly braces (`{{ }}`) to reference and manipulate all entities, such as Widgets, APIs, Queries, and their associated data and properties, within your application. This allows for a high degree of flexibility and customization, as you can execute any JavaScript function or operation on these entities.
-
-:::tip
-While you can use JavaScript's multi-line comment syntax, `/* /`, to write comments within the mustache brackets, single-line comments, `//`, aren't supported. This means that you can use `/ */` to write comments that span multiple lines, but `//` doesn't work. 
-:::
+## Coding in JavaScript
+In Appsmith, you can use JavaScript inside mustache syntax `{{ }}` to reference entities such as widgets, queries, and their associated data and properties, as a JavaScript variable and perform operations on them. This allows for a high degree of flexibility and customization, as you can manipulate and transform the data and build powerful applications.
 
 Appsmith currently supports the following forms of JavaScript for dynamically evaluated property values:
 
 #### Single line JavaScript
-Single line code or functions, such as ternary conditions, can be used as shown in this example:
+Appsmith supports writing single-line JavaScript  within mustache syntax `{{ }}`. Any code written between the brackets is interpreted as a JavaScript expression and its output is assigned as the value of the corresponding property.
+
+You can use single-line code or functions, such as ternary conditions, as shown in the example below:
 
 ```javascript
+/*Trigger a Query*/
 {{ QueryName.data.filter((row) => row.id > 5 ) }}
+
+/*A terneary condition*/
+{{SelectWidgetName.selectedOptionValue === "1" ? "Option 1" : "Option 2" }} 
 ```
 
-Sometimes, to achieve a desired outcome, you may have to perform multiple operations one after the other. This could involve chaining methods together, ternary expressions and others. For example, `{{ QueryName.data.filter((row) => row.id > 5 ) }}` or `{{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}`.  However, in situations where your expression becomes convoluted and hard to fit in a single line, it's a good idea to consider breaking it down and encapsulating it within a [helper function in a JS Object](/core-concepts/writing-code/javascript-editor-beta#js-object).
+Sometimes, to achieve a desired outcome, you may have to perform multiple operations one after the other. This could involve chaining methods together, ternary expressions and others. For example: `{{ QueryName.data.filter((row) => row.id > 5 ) }}` or `{{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}`.  
+
+However, when your expression becomes convoluted and hard to fit in a single line, it's a good idea to consider [Multi-line JavaScript](#multi-line-javascript) or writing a [helper function in a JS Object](/core-concepts/writing-code/javascript-editor-beta#js-object).
 
 #### Multi-line JavaScript
-Appsmith enables the use of multi-line JavaScript through the use of Immediately Invoked Function Expression (IIFE). This allows for more complex code organization and readability. Moreover, you can also write JavaScript code for events listeners which can contain multiple lines of code. An example of this is provided below:
-* Call a query and then manipulate its result:
+Appsmith supports multi-line JavaScript using [Immediately Invoked Function Expression (IIFE)]((https://developer.mozilla.org/en-US/docs/Glossary/IIFE). This allows you to manage complex code organization and improve code readability. 
+
+
+You **can't** write multi-line JavaScript directly within the mustache sign (`{{ }}`). The examples shown below are considered invalid:
+
 ```javascript
+/*Call a query to fetch the results and manipulate it's data*/
+{{ 
+   const array = QueryName.data;
+   const filterArray = array.filter((row) => row.id > 5);
+   return filterArray;
+}}
+
+/* Verify the selected option and then perform operation on it*/
+{{ 
+  if (Dropdown.selectedOptionValue === "1") {
+      return "Option 1";
+  } else {
+      return "Option 2";
+  }
+}}
+```
+
+For example, you want to write JavaScript code for events listeners which can contain multiple lines of code. An example of this is provided below:
+
+```javascript
+/* Call a query and then manipulate its result */
 {{ 
   (function() {
       const array = QueryName.data;
@@ -49,10 +68,9 @@ Appsmith enables the use of multi-line JavaScript through the use of Immediately
       return filterArray;
    })()
 }}
-```
-* Verify the selected option and then perform operation on it:
 
-```javascript
+/* Verify the selected option and then perform operation on it*/
+
 {{ 
   (function() {
       if (Dropdown.selectedOptionValue === "1") {
@@ -64,28 +82,17 @@ Appsmith enables the use of multi-line JavaScript through the use of Immediately
 }}
 ```
 
-You **can't** write multi-line JavaScript directly within the curly brackets (`{{ }}`). The examples shown below are considered invalid:
+It's important to keep in mind that, when using JavaScript inside mustache syntax (`{{ }}`) the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
 
-* Call a query to fetch the results and manipulate it's data:
-```javascript
-{{ 
-   const array = QueryName.data;
-   const filterArray = array.filter((row) => row.id > 5);
-   return filterArray;
-}}
-```
-* Verify the selected option and then perform operation on it:
-```javascript
-{{ 
-  if (Dropdown.selectedOptionValue === "1") {
-      return "Option 1";
-  } else {
-      return "Option 2";
-  }
-}}
-```
+### JavaScript editor
+The Appsmith JavaScript editor is a powerful tool that empowers you to write, test, and debug your JavaScript code directly within the platform. It enables you to create a reusable set of JavaScript functions, and comes equipped with several useful features such as syntax highlighting, code completion, and error highlighting, making it easy for you to write and debug your code, and helps in writing complex code with ease.
 
-It's important to keep in mind that, when using JavaScript inside curly braces (`{{ }}`) the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
+<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JavaScript Editor" caption="How to build with JavaScript Editor" />
+
+The code editor also includes a built-in response, errors, and logs tabs that helps users to see the results of their code. For more information, see [Working with JavaScript editor](core-concepts/writing-code/javascript-editor-beta#working-with-javascript-editor).
+
+The Appsmith JavaScript Editor offers a variety of [built-in JavaScript libraries](/core-concepts/writing-code/ext-libraries#javascript-library-reference) that you can integrate into your code, enabling you to effortlessly add advanced functionalities to your applications without having to start from scratch. Furthermore, you can import external libraries and utilize them in your code. For more information, see [built-in and custom libraries](/core-concepts/writing-code/ext-libraries).
+
 
 <!-- First row for JS OBjects and Creating workflows -->
 <div class="containerGridSampleApp">
