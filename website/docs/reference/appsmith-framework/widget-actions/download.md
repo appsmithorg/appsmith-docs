@@ -59,11 +59,22 @@ To download an image, the data passed to the download action should be the image
 
 ### Downloading a file
 
-Files of various types can be downloaded using the download action by providing the URL of the file to be downloaded.
+Files of various types can be downloaded using the download action by providing the URL of the file to be downloaded. Below code snippet demonstrates how to download any file from a URL using JavaScript.
+
+```javascript
+downloadPDF: async () => {
+	let data = getPdf.data
+	const blob = new Blob([data], {type: 'application/pdf'});
+	const url = URL.createObjectURL(blob);
+	await download(url, "sample.pdf", "application/pdf")
+}
+```
 
 :::tip
 For files to be successfully downloaded, **their contents must be served over HTTPS** to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is **CORS-enabled** and returns the required headers in the response.
 :::
+
+
 
 ## Troubleshooting
 If you encounter any errors during this process, check out this guide on [debugging JS Errors](/help-and-support/troubleshooting-guide/js-errors). If you are still facing any issues, please connect with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
