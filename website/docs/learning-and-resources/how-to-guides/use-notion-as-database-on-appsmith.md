@@ -93,7 +93,7 @@ Now we need to display the data that we have fetched in a presentable format. An
 
 ![Screenshot eight](/img/notion-appsmith-8.png)
 
-To include response from the API in this table use the moustache syntax to write JS in Appsmith.
+To include response from the API in this table use the mustache syntax to write JS in Appsmith.
 
 ```
 {{
