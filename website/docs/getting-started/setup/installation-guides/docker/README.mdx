@@ -19,7 +19,7 @@ Docker is an open source [containerization](https://www.ibm.com/in-en/cloud/lear
 1. Create an installation folder called `appsmith` for deployment and data storage.
 2. `cd` into the installation folder.
 
-## Setup with Docker compose _(recommended)_
+## Setup with Docker Compose _(recommended)_
 
 The Appsmith Docker image contains all the components required to run, within a single Docker container. All these multiple processes are managed by a [Supervisord](http://supervisord.org/) instance, which is a lightweight process manager.
 
@@ -183,8 +183,6 @@ Backend/Server logs are stored in `stacks/logs/backend/backend.log`. You can acc
 * Navigate to the folder where Appsmith was deployed, open the `logs` folder within the `stacks` folder.
 * Find the `backend` folder.
 * Retrieve the `.log` files and bundle them in a `.zip` file. 
-
-You can either share these logs with the Appsmith team or retain them for your own reference.
 
 :::note
 Logs don't contain any sensitive information that would pose a risk to share. However, you can remove any personally identifiable information (PII) using [scrubadub library](https://github.com/LeapBeyond/scrubadub).
