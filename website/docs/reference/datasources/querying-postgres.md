@@ -22,7 +22,7 @@ You need to fill in the following parameters:
 * **Connection Mode\*:** You must choose one of the following two modes:
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Host Address / port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith may try to connect to port `5432`.
+* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith may try to connect to port `5432`.
 * **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
 
 ### **Authentication**
