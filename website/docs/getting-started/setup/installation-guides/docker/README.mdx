@@ -172,21 +172,14 @@ Once the Appsmith container is ready, the message "Appsmith is Running!" is disp
 
 ![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
-You can follow the logs with the following command:
+You can follow the **frontend logs** with the following command:
 
 ```bash
 docker logs -f appsmith
 ```
 
-Backend/Server logs are stored in `stacks/logs/backend/backend.log`. You can access backend logs from your Appsmith deployment by following these steps:
+**Backend logs** are stored in `stacks/logs/backend/backend.log`. Backend logs can assist in debugging by providing information on requests, responses, and errors. They can help identify and resolve problems in your application. For more information on backend logs, check this [guide](https://github.com/felix-appsmith/guide-how-to-get-logs-appsmith).
 
-* Navigate to the folder where Appsmith was deployed, open the `logs` folder within the `stacks` folder.
-* Find the `backend` folder.
-* Retrieve the `.log` files and bundle them in a `.zip` file. 
-
-:::note
-Logs don't contain any sensitive information that would pose a risk to share. However, you can remove any personally identifiable information (PII) using [scrubadub library](https://github.com/LeapBeyond/scrubadub).
-:::
 
 ## Restarting containers
 
