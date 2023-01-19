@@ -119,7 +119,7 @@ The table widget displays data in rows and columns. You can display data from an
 
 These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)
 
-Now, in the **`Table Data`** property, let's bind the response from the DB Query. To do this, you'll have to use the Moustache Operator.
+Now, in the **`Table Data`** property, let's bind the response from the DB Query. To do this, you'll have to use the Mustache Operator.
 
 :::info
 In Appsmith, the mustache operator **`{{ /* This is JavaScript */ }}`** can be used anywhere to write JavaScript. For example, when binding data onto widgets, sending params to APIs, sharing data across pages, etc.

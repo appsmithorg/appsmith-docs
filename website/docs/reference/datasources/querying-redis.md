@@ -7,17 +7,17 @@ sidebar_position: 14
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
-## Connection Settings
+## Connection settings
 
 Appsmith needs the following information to connect to a Redis instance.
 
 ![Click to expand](/img/redis-datasource-form.png)
 
-After filling up the three fields as described above, click on the "Test" button to verify the configuration and click "Save".
+After filling up the three fields as described preceding, click the "Test" button to verify the configuration and click `Save`.
 
 ## Querying Redis
 
-The Redis query pane can be used to run any of the commands supported by Redis. The response from this command is displayed in the result window. Please refer to the official [documentation](https://redis.io/commands) for the list of commands that are supported. A few examples are listed below.
+The Redis query pane can be used to run any of the commands supported by Redis. The response from this command is displayed in the result window. 
 
 ### Checking connection
 
@@ -43,7 +43,7 @@ Stored key value pairs can be retrieved using the `GET` command.
 GET key_name
 ```
 
-## Using Queries in applications
+## Using queries in applications
 
 Once you have successfully run a Query, you can use it in your application to
 
