@@ -22,7 +22,7 @@ This error occurs when the value in the property of the widget doesn't match the
 
 <Message
 messageContainerClassName="error"
-messageContent="This value doesn't evaluate to type Array\[Object]"></Message>
+messageContent="This value doesn't evaluate to type Array[Object]"></Message>
 
 
 
