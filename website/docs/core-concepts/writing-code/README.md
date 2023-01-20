@@ -36,7 +36,7 @@ However, when your expression becomes convoluted and hard to fit in a single lin
 #### Multi-line JavaScript
 Appsmith supports multi-line JavaScript using [Immediately Invoked Function Expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). This allows you to manage complex code organization and improve code readability. 
 
-Multi-line JavaScript code isn't supported within the mustache syntax `({{ }})`. The examples shown below are considered invalid:
+Multi-line JavaScript code isn't supported within the mustache syntax `{{ }}`. The examples shown below are considered invalid:
 
 ```javascript title="Invalid"
 /*Call a query to fetch the results and manipulate it's data*/
@@ -81,7 +81,7 @@ For example, you want to write JavaScript code for events listeners which can co
 }}
 ```
 
-It's important to keep in mind that, when using JavaScript inside mustache syntax (`{{ }}`) the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
+It's important to keep in mind that, when using JavaScript inside mustache syntax `{{ }}` the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
 
 #### JS Objects
 JS Objects are used to create custom logic in Appsmith. They can be used to manipulate data, handle events, and perform advanced operations. You can create JS Objects by using the JavaScript Editor. It allows you to write complex code and use it throughout your application. For more information, see [JS Objects](/core-concepts/writing-code/javascript-editor-beta).
