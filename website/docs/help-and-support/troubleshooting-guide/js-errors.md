@@ -74,7 +74,7 @@ To overcome this, you can bind the user's array of the response instead of the e
 
 <Message
 messageContainerClassName="error"
-messageContent="This value doesn't evaluate to type Array\[{`label: string, value: string`}]"></Message>
+messageContent="This value doesn't evaluate to type Array[{`label: string, value: string`}]"></Message>
 
 
 
