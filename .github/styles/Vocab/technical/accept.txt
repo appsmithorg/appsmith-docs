@@ -7,6 +7,7 @@ clearWatch
 datasource
 Datasource
 datasources
+Datasources
 Drag and drop
 enum
 filteredTableData
@@ -152,3 +153,12 @@ Autofocus
 dyno
 onChange
 boolean
+Application
+Port
+OnSuccess
+sudo
+13-23
+Docker Compose
+Backend
+Postgres
+untrusted

@@ -69,6 +69,12 @@ The menu button column type is a set of buttons in a group. Menus are sometimes 
 
 For more information, read about the [Menu Button widget](/reference/widgets/menu-button).
 
+You can also add menu items dynamically using the [Menu Items Source as Dynamic](../menu-button.md#dynamic).
+
+:::note
+ You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use [`{{currentItem}}` and `{{currentIndex}}`](../menu-button.md#how-to-use-currentitem-and-currentindex) bindings that reference the selected item, and it's index respectively on the menu button.
+:::
+
 #### Number
 
 Numbers are stored in database columns as numeric data types. Typically, these data kinds are categorized by:
