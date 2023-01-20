@@ -175,8 +175,8 @@ const sidebars = {
                 id: 'getting-started/setup/upgrade-to-business-edition/README',
               },
               items: [
-                'getting-started/setup/upgrade-to-business-edition/docker/README',
-                'getting-started/setup/upgrade-to-business-edition/kubernetes/README',
+                'getting-started/setup/upgrade-to-business-edition/docker',
+                'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
           ],
