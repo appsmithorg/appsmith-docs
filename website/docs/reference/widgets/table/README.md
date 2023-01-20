@@ -71,7 +71,7 @@ Now, the table widget should be populated with the data coming from the query.
 
 #### Columns
 
-This property shows all the columns in the table, and it gets auto populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the [column settings](column-settings.md).
+This property shows all the columns in the table, and it gets automatically populated from the Table Data. You can edit the column's name, hide/show a column, and customize more from the [column settings](column-settings.md).
 
 ![](/img/columns\_tablewidget.png)
 
@@ -86,7 +86,7 @@ Controls how overflowing contents of the column are handled. When turned on, the
 Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. To paginate this data and request smaller chunks of data at a time:
 
 1. Enable the server-side pagination property in the table
-2. Call the API / query onPageChange
+2. Call the API / query **onPageChange**
 3. Configure pagination in the API / query using the Offset or Key-based pagination method
 
 ##### Offset based pagination
@@ -105,7 +105,7 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 ##### Key based pagination
 
-This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute onPageChange.
+This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
 
 ![](</img/pagination_(2)_(2).gif>)
 
@@ -138,7 +138,7 @@ Client side search controls whether the user is able to search the entire data s
 #### Column sorting
 
 Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
-https://youtu.be/
+
 <VideoEmbed host="youtube" videoId="hmi7BaF3jFI" title="Table | Column Sorting" caption="Use this setting to enable sorting rows by column value."/>
 
 #### Visible
@@ -206,17 +206,17 @@ This gives you the data for `<columnname>` of the selected row. Using this snipp
 
 #### selectedRows
 
-selectedRows allows you to fetch the data from the table when the user selects multiple rows. To use this property, enable the "multi-row selection" option from the property pane of the table widget.
+`selectedRows` allows you to fetch the data from the table when the user selects multiple rows. To use this property, enable the "multi-row selection" option from the property pane of the table widget.
 
 To bind a widget to the multiple rows of the table, enter the snippet given below:
 
-```
+```javascript
 {{<table_name>.selectedRows}}
 ```
 
 Where `<table_name>` is the name of your table.
 
-The following video shows how to bind a text widget to `Table_1` using selectedRows.
+The following video shows how to bind a text widget to `Table_1` using `selectedRows`.
 
 <VideoEmbed host="youtube" videoId="K8F4oggpOk0" title="selectedRows" caption="selectedRows"/>
 
@@ -224,11 +224,11 @@ An empty array `[]` is returned if no row is selected in the table.
 
 #### triggeredRow
 
-If your table has actionable items (like buttons) and a user interacts with it, triggeredRow fetches row's data where that action has been performed.
+If your table has actionable items (like buttons) and a user interacts with it, triggeredRow fetches data from rows where that action has been performed.
 
 To bind a widget using this property, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.triggeredRow}}
 ```
 
@@ -240,11 +240,11 @@ The following video shows how to bind a text widget to `Table_1` using triggered
 
 #### selectedRowIndex
 
-selectedRowIndex gives you the index number of the selected row in the table. It's only applicable when one row is selected. If you have multiple rows selected, it returns `-1`.
+`selectedRowIndex` gives you the index number of the selected row in the table. It's only applicable when one row is selected. If you have multiple rows selected, it returns `-1`.
 
 To bind a widget using this property, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.selectedRowIndex}}
 ```
 
@@ -258,9 +258,9 @@ The following video shows how to bind a text widget to `Table_1` using seledRowI
 
 selectedRowIndices gives you an array of the index numbers of the multiple rows selected in the table. It's only applicable when multiple rows are selected. You have to enable the "multi-row selection" from the property pane to use this property.
 
-To bind widget using this property, enter the code snippet given below:
+To bind a widget using this property, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.selectedRowIndices}}
 ```
 
@@ -272,17 +272,17 @@ The following video shows how to bind a text widget to `Table_1` using seledRowI
 
 #### filteredTableData
 
-`filteredTableData` contains the data of the rows left after applying any selected filters, sort rule, or search terms.
+`filteredTableData` contains the data of the rows left after applying any selected filters, sorting rule, or search terms.
 
 To use this property in a widget, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.filteredTableData}}
 ```
 
 Where `<table_name>` is the name of your table.
 
-The following video shows how to bind a text widget to `Table_1` using filteredTableData.
+The following video shows how to bind a text widget to `Table_1` using **filteredTableData**.
 
 <VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
 
@@ -290,22 +290,22 @@ The following video shows how to bind a text widget to `Table_1` using filteredT
 
 pageNo gets the page no. of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.pageNo}}
 ```
 
 Where `<table_name>` is the name of your table.
 
-The following video shows how to bind a text widget to `Table_1` using pageNo.
+The following video shows how to bind a text widget to `Table_1` using `pageNo`.
 
 <VideoEmbed host="youtube" videoId="DqKok2cCJk0" title="pageNo" caption="pageNo"/>
 
 #### pageSize
 
-`pageSize` shows the total number of rows displayed on a page of the table. `pageSize` can change on resizing the table.
+`pageSize` shows the total number of rows displayed on a page of the table. `pageSize` can change upon resizing the table.
 To bind a widget using this property, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.pageSize}}
 ```
 
@@ -319,9 +319,9 @@ The following video shows how to bind a text widget to `Table_1` using pageSize.
 
 searchText fetches the text entered in the search bar by the user.
 
-To bind widget using this property, enter the code snippet given below:
+To bind a widget using this property, enter the code snippet given below:
 
-```
+```javascript
 {{<table_name>.searchText}}
 ```
 
@@ -410,9 +410,9 @@ To format this data, you can write a [map function](https://developer.mozilla.or
 
 ## Server side searching / filtering
 
-Tables come with client side searching and filtering out of the box. This is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search and filter terms to the server, so that it only needs to data that's relevant. This can significantly improve performance and user experience when working with large data sets.
+Tables come with client side searching and filtering out of the box. This is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search and filter terms to the server, so that it only needs to fetch data that's relevant. This can significantly improve performance and user experience when working with large data sets.
 
-To perform these operations, you should to update your widgets and API / queries to handle search and filter terms:
+To perform these operations, update your widgets and API / queries to handle search and filter terms:
 
 ### Searching
 
