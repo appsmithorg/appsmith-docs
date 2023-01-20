@@ -12,7 +12,7 @@ Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-
 Appsmith also provides the ability to incorporate external libraries and APIs into your projects, helping you expand the capabilities of your applications.
 
 ## Coding in JavaScript
-In Appsmith, you can use JavaScript inside mustache syntax `{{ }}` to reference entities such as widgets, queries, and their associated data and properties, as a JavaScript variable and perform operations on them. This allows for a high degree of flexibility and customization, as you can manipulate and transform the data and build powerful applications.
+In Appsmith, you can use JavaScript inside mustache syntax `{{ }}` to reference entities such as widgets, queries, JS Objects, and their associated data, properties, and functions, as a JavaScript variable and perform operations on them. This allows for a high degree of flexibility and customization, as you can manipulate and transform the data and build powerful applications.
 
 Appsmith currently supports the following forms of JavaScript for dynamically evaluated property values:
 
