@@ -9,7 +9,7 @@ toc_max_heading_level: 4
 # Writing Code
 Appsmith puts a strong emphasis on writing clean, efficient code to ensure user-friendly, intuitive application building. The JavaScript code editor and debugging tools are designed to help users write code that's easy to read and understand, allowing for smoother collaboration and creating reliable, high-performing applications. 
 
-Appsmith also provides the ability to incorporate external libraries and APIs into your projects, helping you expand the capabilities of your applications.
+Appsmith also provides the ability to incorporate external libraries into your projects, helping you expand the capabilities of your applications.
 
 ## Coding in JavaScript
 In Appsmith, you can use JavaScript inside mustache syntax `{{ }}` to reference entities such as widgets, queries, JS Objects, and their associated data, properties, and functions, as a JavaScript variable and perform operations on them. This allows for a high degree of flexibility and customization, as you can manipulate and transform the data and build powerful applications.
