@@ -36,9 +36,9 @@ However, when your expression becomes convoluted and hard to fit in a single lin
 #### Multi-line JavaScript
 Appsmith supports multi-line JavaScript using [Immediately Invoked Function Expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). This allows you to manage complex code organization and improve code readability. 
 
-You **can't** write multi-line JavaScript directly within the mustache sign (`{{ }}`). The examples shown below are considered invalid:
+Multi-line JavaScript code isn't supported within the mustache syntax `({{ }})`. The examples shown below are considered invalid:
 
-```javascript
+```javascript title="Invalid"
 /*Call a query to fetch the results and manipulate it's data*/
 {{ 
    const array = QueryName.data;
@@ -58,7 +58,7 @@ You **can't** write multi-line JavaScript directly within the mustache sign (`{{
 
 For example, you want to write JavaScript code for events listeners which can contain multiple lines of code. An example of this is provided below:
 
-```javascript
+```javascript title="Valid"
 /* Call a query and then manipulate its result */
 {{ 
   (function() {

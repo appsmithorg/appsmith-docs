@@ -370,3 +370,7 @@ p > code, td > code, a > code, li > code, mark > code {
   border: 0 !important;
   line-height: normal;
 }
+
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  font-weight: 800 !important;
+}
