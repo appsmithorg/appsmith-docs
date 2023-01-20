@@ -29,13 +29,12 @@ You can use single-line code or functions, such as ternary conditions, as shown 
 {{SelectWidgetName.selectedOptionValue === "1" ? "Option 1" : "Option 2" }} 
 ```
 
-Sometimes, to achieve a desired outcome, you may have to perform multiple operations one after the other. This could involve chaining methods together, ternary expressions and others. For example: `{{ QueryName.data.filter((row) => row.id > 5 ) }}` or `{{ Dropdown.selectedOptionValue === "1" ? "Option 1" : "Option 2" }}`.  
+Sometimes, to achieve a desired outcome, you may have to perform multiple operations one after the other. This could involve chaining methods together, ternary expressions and others. For example: `{{updateData.run(() => {getData.run(), closeModal('ModalName')}, () => {})}}`
 
 However, when your expression becomes convoluted and hard to fit in a single line, it's a good idea to consider [Multi-line JavaScript](#multi-line-javascript) or writing a [helper function in a JS Object](/core-concepts/writing-code/javascript-editor-beta#js-object).
 
 #### Multi-line JavaScript
-Appsmith supports multi-line JavaScript using [Immediately Invoked Function Expression (IIFE)]((https://developer.mozilla.org/en-US/docs/Glossary/IIFE). This allows you to manage complex code organization and improve code readability. 
-
+Appsmith supports multi-line JavaScript using [Immediately Invoked Function Expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). This allows you to manage complex code organization and improve code readability. 
 
 You **can't** write multi-line JavaScript directly within the mustache sign (`{{ }}`). The examples shown below are considered invalid:
 
@@ -84,6 +83,9 @@ For example, you want to write JavaScript code for events listeners which can co
 
 It's important to keep in mind that, when using JavaScript inside mustache syntax (`{{ }}`) the code is written in a way that's accurate, efficient, readable, and well-organized to make it easier to understand and maintain. 
 
+#### JS Objects
+JS Objects are used to create custom logic in Appsmith. They can be used to manipulate data, handle events, and perform advanced operations. You can create JS Objects by using the JavaScript Editor. It allows you to write complex code and use it throughout your application. For more information, see [JS Objects](/core-concepts/writing-code/javascript-editor-beta).
+
 ## JavaScript editor
 The Appsmith JavaScript editor is a powerful tool that empowers you to write, test, and debug your JavaScript code directly within the platform. It enables you to create a reusable set of JavaScript functions, and comes equipped with several useful features such as syntax highlighting, code completion, and error highlighting, making it easy for you to write and debug your code, and helps in writing complex code with ease.
 
@@ -98,28 +100,22 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-        <strong >JS Objects </strong>
+        <a href="/core-concepts/writing-code/workflows">
+        <strong >Creating Workflows </strong></a>
         </div> <hr/>
         <div class="containerDescription">
-
-* Create, manipulate, and work with JS Objects to build powerful and dynamic applications. For more information, see 
-<a href="/core-concepts/writing-code/javascript-editor-beta">
-        <strong >JS Objects </strong></a>
-
-</div>
+        Manipulate data by performing actions like adding, updating, deleting, and retrieving data.
+        </div>
         <div class="containerTutorialLink"></div>
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <strong>Creating Workflows</strong>
+           <a href="/core-concepts/writing-code/javascript-editor-beta">
+        <strong >JavaScript Promises </strong></a>
         </div><hr/>
         <div class="containerDescription">
-
-* Manipulate data by performing actions like adding, updating, deleting, and retrieving data. For more information, see 
-<a href="/core-concepts/writing-code/workflows">
-        <strong >Creating workflows </strong></a>
-
-</div>
+        Simplify integration within your asynchronous processes.
+    </div>
     </div>
 </div>
 
@@ -128,41 +124,25 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-        <strong >JavaScript Promises </strong>
+        <a href="/core-concepts/writing-code/ext-libraries">
+        <strong >External Libraries </strong></a>
         </div> <hr/>
         <div class="containerDescription">
-
-* Simplify integration within your asynchronous processes. For more information, see 
-<a href="/core-concepts/writing-code/javascript-editor-beta">
-        <strong >JavaScript Promises </strong></a>
-
-</div>
+        Extend the capabilities of your application by building complex business logic.
+      </div>
         <div class="containerTutorialLink"></div>
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <strong>External Libraries</strong>
+           <a href="/reference/appsmith-framework">
+        <strong >Appsmith Framework Functions</strong></a>   
         </div><hr/>
         <div class="containerDescription">
 
-* Extend the capabilities of your application by building complex business logic. For more information, see 
-<a href="/core-concepts/writing-code/ext-libraries">
-        <strong >External Libraries </strong></a>
-        
+Provides a range of utility functions for **[storing values](/reference/appsmith-framework/widget-actions/store-value)** in the local storage, as well as **[triggering actions](/reference/appsmith-framework/widget-actions)** in response to user inputs.     
 </div>
     </div>
 </div>
 
 <div>
-<div class="containerColumnSampleApp columnGrid column-one">
-<div class="containerCol">
-  <strong >Appsmith Framework Functions</strong>
-</div> <hr/>
- <div class="containerDescription">
-
-* Provides a range of utility functions for **[storing values](/reference/appsmith-framework/widget-actions/store-value)** in the local storage, as well as **[triggering actions](/reference/appsmith-framework/widget-actions)** in response to user inputs.  
-
-
- </div>
-</div>
 </div>
