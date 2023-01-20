@@ -211,7 +211,7 @@ messageContent="This value does not evaluate to type string"></Message>
 
 
 #### Cause
-When working with widgets, you may come across an error where the data property is expecting a string value that doesn't match the data type of the API response.
+When working with widgets, you may come across an error where the data property is expecting a string value that doesn't match the data type of the query response.
 
 
 #### Solution
