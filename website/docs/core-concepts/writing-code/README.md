@@ -102,9 +102,7 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
         </div> <hr/>
         <div class="containerDescription">
 
-* A powerful and versatile data structure.
-* Create, manipulate, and work with JS Objects to build powerful and dynamic applications.
-* A wide range of debugging tools like `console.log()` and `debugger` statements to identify and fix errors in your code. For more information, see 
+* Create, manipulate, and work with JS Objects to build powerful and dynamic applications. For more information, see 
 <a href="/core-concepts/writing-code/javascript-editor-beta">
         <strong >JS Objects </strong></a>
 
@@ -117,8 +115,7 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
         </div><hr/>
         <div class="containerDescription">
 
-* Manipulate data by performing actions like adding, updating, deleting, and retrieving data.
-* Add and trigger actions by using a combination of JavaScript functions, APIs, and Queries. For more information, see 
+* Manipulate data by performing actions like adding, updating, deleting, and retrieving data. For more information, see 
 <a href="/core-concepts/writing-code/workflows">
         <strong >Creating workflows </strong></a>
 
@@ -135,9 +132,7 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
         </div> <hr/>
         <div class="containerDescription">
 
-* Simplify integration within your asynchronous processes.
-* Appsmith's global functions utilize JavaScript promises for seamless implementation.
-* Eliminate the need for explicit promise chain configuration by utilizing `async` and `await`. For more information, see 
+* Simplify integration within your asynchronous processes. For more information, see 
 <a href="/core-concepts/writing-code/javascript-editor-beta">
         <strong >JavaScript Promises </strong></a>
 
@@ -150,9 +145,7 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
         </div><hr/>
         <div class="containerDescription">
 
-* Extend the capabilities of your application by building complex business logic.
-* Built-in JavaScript utility libraries like `lodash`, `moment`, `XML parser` and more.
-* Use the libraries to work with data within `{{ }}` bindings or within JSObjects. For more information, see 
+* Extend the capabilities of your application by building complex business logic. For more information, see 
 <a href="/core-concepts/writing-code/ext-libraries">
         <strong >External Libraries </strong></a>
         
@@ -167,9 +160,7 @@ The Appsmith JavaScript Editor offers a variety of [built-in JavaScript librarie
 </div> <hr/>
  <div class="containerDescription">
 
-* Create dynamic, data-driven applications that respond to user interactions in real-time.
-* Provides a range of utility functions for **[storing values](/reference/appsmith-framework/widget-actions/store-value)** in the local storage, as well as **[triggering actions](/reference/appsmith-framework/widget-actions)** in response to user inputs.
-* Provides in-built global objects: **[Query object](/reference/appsmith-framework/query-object)** that enables developers to run database queries and share data between different pages by passing parameters, **[Context](/reference/appsmith-framework/context-object)** that provides information about the current state of the application, and more.  
+* Provides a range of utility functions for **[storing values](/reference/appsmith-framework/widget-actions/store-value)** in the local storage, as well as **[triggering actions](/reference/appsmith-framework/widget-actions)** in response to user inputs.  
 
 
  </div>
