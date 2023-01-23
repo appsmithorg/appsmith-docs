@@ -3,10 +3,10 @@
 In this guide, you’ll learn how to create different environments for your App using the Git connection in Appsmith.
 
 ## Environments
-If you have an App connected to Git in Appsmith, you can create separate branches to work on it independently. The problem arises when you are working on the same database. Any alteration to the database can cause multiple failures on various branches. So, it's better to have a different environment with a test database for developing an application that won't affect the production database. What are Environments?
+If you have an App connected to Git in Appsmith, you can create separate branches to work on it independently. The problem arises when you are working on the same database. Any alteration to the database can cause multiple failures on various branches. So, it's better to have a different environment with a test database for developing an application that won't affect the production database. But, what are Environments?
 Environments are container entities within a space that allows you to create and maintain multiple versions of your App and make changes to them in isolation. A separate environment can be an app with a test database in another workspace or instance.
 
-The multiple environments feature is still under development, but till then, you can use Version control with Git in Appsmith to implement it by following these steps:
+The multiple environments feature is still under development, but till then, you can use Version control with Git in Appsmith to create different environments by following these steps:
 
 1. Establishing Git connection
 2. Import your App
