@@ -17,6 +17,7 @@ The multiple environments feature is still under development, but till then, you
 ### Establish a Git connection
 To get started, connect your app to a git repository. You can follow the steps from [Connecting to repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository) to complete the setup.
 Once the setup is complete, commit and push the initial commit to your Git repository from the Appsmith.
+
 ### Import Application
 
 Go to the workspace or the instance where you want to add the development environment. Import the application from the Git repository using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository). As Appsmith doesn't store the credentials of your database, the datasource window appears when the import is complete. In this window, enter the credentials for your development data which is different from the production environment. Test and save the connection.
@@ -27,3 +28,8 @@ The development environment for your app is now complete. To test it out, make s
 
 ### Pull the changes
 You’ve made changes in your development environment, but they're not in the production app yet. To sync the changes, go back to the production app and pull the latest changes from the Git repository. You’ll see that a select widget will appear on the canvas bonded with the production database when the pull from the repository is complete.
+
+:::info
+This method does not support GSheet, Twilio, API or any SAAS-type datasource. 
+:::
+
