@@ -79,7 +79,7 @@ showAlert("Data saved successfully.");
 
 You can only use the **global actions** provided out-of-the-box by Appsmith in the **async** **fields**.  
 
-##### Handle success or error
+#### Handle query success or error
 
 When configuring API and query executions, it's important to provide feedback to the user about the outcome of the action. This can be done by displaying success messages when an action is completed successfully or error messages when there are issues with the execution.
 
