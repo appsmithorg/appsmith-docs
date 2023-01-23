@@ -411,6 +411,10 @@
       "destination": "/core-concepts/data-access-and-binding/displaying-data-read"
     },
     {
+      "source": "/reference/widgets/table#displaying-column-value-using selectedrow",
+      "destination": "/reference/widgets/table#selectedrow"
+    },
+    {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
       "destination": "/reference/widgets/table#transforming-table-data"
     },

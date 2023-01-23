@@ -10,37 +10,37 @@ Properties allow you to edit the table, connect it with other widgets and custom
 
 | Property       | Type | Definition | Code Snippet |
 | ---------------|------|------------|--------------|
-| **Table Data**                 | Widget | It lets you edit the data in the table, either by writing an array of objects to display as table rows or binding data from an API/Database using the mustache syntax. |
-| **Columns**                    | Widget | Auto populated from the Table data. This lets you edit the label, show/hide each column (the eye icon), and also customize the column settings
-| **Cell wrapping**              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.                                                         |
+| [**Table Data**](#table-data)                 | Widget | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax. |
+| [**Columns**](#columns)                    | Widget | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.
+| [**Cell wrapping**](#cell-wrapping)              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents wrap to the next line.                                                         |
 | **Show Pagination** | Formatting | Toggles visibility for the page information and control buttons in the table header. |
-| **Server Side Pagination**     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |
-| **Total Records** | Widget | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
+| [**Server Side Pagination**](#server-side-pagination)     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |
+| [**Total Records**](#total-records) | Widget | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
 | **Allow Searching** | Widget | Toggles visibility of the search bar in the table header. |
-| **Client Side Search** | Widget | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
+| [**Client Side Search**](#client-side-search) | Widget | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
 | **Default Search Text**        | Formatting | Sets the default search query for the search bar in the table header.     |
 | **Allow Filtering** | Widget | Toggles visibility for the "Filters" button and its features in the table header. |
 | **Default Selected Row**       | Formatting | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
 | **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
-| **Column Sorting** | Widget | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
+| [**Column Sorting**](#column-sorting) | Widget | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
 | **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. Read about [inline editing](/reference/widgets/table/inline-editing#allow-adding-a-row) for more details. |
-| **Default Values** | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. Read about [inline editing](/reference/widgets/table/inline-editing#default-values) for more details. |
-| **Visible**    | Formatting | It controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.                                                                             |
+| **Default Values** | Widget | These values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. Read about [inline editing](/reference/widgets/table/inline-editing#default-values) for more details. |
+| [**Visible**](#visible)    | Formatting | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
 | **Animate Loading** | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 | **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
-| **CSV Separator** | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. Default: `,` |
-| **selectedRow**        | Binding | It contains the data of the row selected by the user. It's an empty object if no row is selected. | `{{<table_name>.selectedRow}}`   |
-| **selectedRows**       | Binding | It contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
-| **triggeredRow**       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.   | `{{<table_name>.triggeredRow}}`        |
-| **isVisible**          | Binding | This property indicates whether the widget is visible or not.  | `{{<table_name>.isVisible}}`   |
-| **sortOrder**          | Binding | This property helps you sort values.   | `{{<table_name>.sortOrder}}`   |
-| **tableData**          | Binding | This property gets all the table data in JSON format.      | `{{<table_name>.tableData}}`  |
-| **selectedRowIndex**   | Binding | It gives the index of the row selected by the user. Not applicable when multiple rows are selected.    | `{{<table_name>.selectedRowIndex}}`   |
-| **selectedRowIndices** | Binding | It gives you an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
-| **filteredTableData**  | Binding | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
-| **pageNo**             | Binding | Contains the current page number that the user is on. APIs can use it for pagination | `{{<table_name>.pageNo}}`  |
-| **pageSize**           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`   |
-| **searchText**         | Binding | Contains the search text entered by the user in the Table | `{{<table_name>.searchText}}`  |
+| [**CSV Separator**](#csv-separator) | Widget | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. Default: `,` |
+| [**selectedRow**](#selectedrow)        | Binding | Contains the data of the row selected by the user. It's an empty object if no row is selected. | `{{<table_name>.selectedRow}}`   |
+| [**selectedRows**](#selectedrows)       | Binding | Contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
+| [**triggeredRow**](#triggeredrow)       | Binding | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.   | `{{<table_name>.triggeredRow}}`        |
+| **isVisible**          | Binding | Reflects whether the widget is visible or not.  | `{{<table_name>.isVisible}}`   |
+| **sortOrder**          | Binding | Reflects the current column sort criteria. For example, if table rows are being sorted by the value of column `id` in ascending order, this property contains `{"column": "id", "order": "asc"}`.   | `{{<table_name>.sortOrder}}`   |
+| **tableData**          | Binding | Contains all the table data in JSON format.      | `{{<table_name>.tableData}}`  |
+| [**selectedRowIndex**](#selectedrowindex)   | Binding | Contains the index of the row selected by the user. Not applicable when multiple rows are selected.    | `{{<table_name>.selectedRowIndex}}`   |
+| [**selectedRowIndices**](#selectedrowindices) | Binding | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
+| [**filteredTableData**](#filteredtabledata)  | Binding | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
+| [**pageNo**](#pageno)             | Binding | Contains the current page number that the user is on. APIs can use it for pagination | `{{<table_name>.pageNo}}`  |
+| [**pageSize**](#pagesize)           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`   |
+| [**searchText**](#searchtext)         | Binding | Contains the search text entered by the user in the Table | `{{<table_name>.searchText}}`  |
 
 
 #### Table data
@@ -86,7 +86,7 @@ Controls how overflowing contents of the column are handled. When turned on, the
 Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. To paginate this data and request smaller chunks of data at a time:
 
 1. Enable the server-side pagination property in the table
-2. Call the API / query **onPageChange**
+2. Call the API / query via the **onPageChange** event
 3. Configure pagination in the API / query using the Offset or Key-based pagination method
 
 ##### Offset based pagination
@@ -111,7 +111,7 @@ This method uses a value in the response of the API as the key to the next API c
 
 #### Total records
 
-The total records field stores the total number of rows in the table. It's useful in pagination as it helps in determining the number of pages, and then when to turn on/off the page control buttons in the table header. It's only visible when you enable **server-side pagination**.
+The total records field stores the total number of rows in the table. It's useful in pagination as it helps in determining the number of pages, and then when to turn on/off the page control buttons in the table header. It's only visible when you enable **Server Side Pagination**.
 
 <VideoEmbed host="youtube" videoId="p7mH00xp7Nc" title="Using Total Records in the Table Widget" caption="Using Total Records in the Table Widget"/>
 
@@ -133,7 +133,7 @@ Once the `get_count` query is successfully created, enter the following code to 
 
 #### Client side search
 
-Client side search controls whether the user is able to search the entire data set for their query, or only what's currently shown in the table widget.
+Client side search controls whether the user can search the entire data set for their query, or only what's currently shown in the table widget.
 
 #### Column sorting
 
@@ -143,8 +143,9 @@ Toggles whether table columns are sort-able. When turned on, users may click col
 
 #### Visible
 
-This controls the widget's visibility on the app's page. When turned off, the widget isn't visible in the published app. You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
+This controls the widget's visibility on the app's page. When turned off, the widget doesn't appear in the published app. While editing the app on the Appsmith canvas, widgets with visibility turned off appear translucent.
 
+You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
 For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the table's `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
 
 ```
@@ -157,64 +158,38 @@ When you tick the checkbox, `Visible` is set to `true`, and the table becomes vi
 
 #### CSV separator 
 
-Sets the separator character to use for formatting the downloaded .csv file. The default separator character is a comma `,`. Only applies when **Allow Download** is turned on.
+Sets the separator character to use for formatting the downloaded .csv file. The default separator character is a comma `,`. This setting only applies when **Allow Download** is turned on.
 
 <VideoEmbed host="youtube" videoId="CJBJt7TkqGU" title="Table Widget | CSV Separator" caption="Choose the characters to use as separators in your .csv"/>
 
 #### selectedRow
 
-A table you have created might contain a large amount of data. But when you want to get the data of a single row of the table, the selectedRow property comes into play.
-selectedRow is an internal property that fetches the data of the table row that the user selected. You can bind different widgets to each table row using this property.
+The `selectedRow` property contains the data of the row that's selected within the Table. This may be useful for pulling data from the table to display specific records within other widgets. If no row is selected, `selectedRow` shows the column names with no data.
 
-As you already know by now, you can write JS code anywhere in Appsmith inside \{{\}}., To bind the selected row of the table to another widget, open the property pane of it, and add the code snippet given below:
+You can access the row data with `<table_name>.selectedRow`, and use dot or bracket notation with the column names to access the record's values:
 
-```
-{{<table_name>.selectedRow}}
-```
-
-Where `<table_name>` is the name of your table.
-
-Drag a text widget onto the canvas and bind it to a selected table row of `Table_1`.\
-Open the property pane of the text widget and add the following snippet to its label:
-
-```
-{{Table_1.selectedRow}}
+```javascript
+// access a row called "id" with dot notation
+{{Table1.selectedRow.id}}
 ```
 
-<VideoEmbed host="youtube" videoId="0Pl7p1sA1fY" title="selectedRow" caption="selectedRow"/>
-
-The Text widget then displays the data of the row selected on the table.
-If no row is selected, selectedRow shows the column names with no data.
-
-![](/img/slectedRow\_default.png)
-
-##### Displaying column value using selectedRow
-
-If you want to fetch the data from a column in the row selected on the table, add the column's name after the selected row. You can refer to the code snippet below:
-
-```
-{{<table_name>.selectedRow.<column_name>}}
-```
-
-This gives you the data for `<columnname>` of the selected row. Using this snippet in `Table_1`, suppose you want to bind the task of the selected row to the text widget. To do this open the property pane of the text widget and add the following to its label:
-
-```
-{{Table_1.selectedRow.task}}
+```javascript
+// access a row called "favorite color" with bracket notation
+{{Table1.selectedRow["favorite color"]}}
 ```
 
 <VideoEmbed host="youtube" videoId="hHZ5IbtE-wo" title="Displaying column value using selectedRow" caption="Displaying column value using selectedRow"/>
 
 #### selectedRows
 
-`selectedRows` allows you to fetch the data from the table when the user selects multiple rows. To use this property, enable the "multi-row selection" option from the property pane of the table widget.
+`selectedRows` allows you to fetch the data from the table when the user selects multiple rows. To use this property, enable the **multi-row selection** option from the property pane of the table widget.
 
-To bind a widget to the multiple rows of the table, enter the snippet given below:
+To bind table data to a widget, use the following snippet to access the selected table rows from within the widget's properties:
 
 ```javascript
+// an array of row objects
 {{<table_name>.selectedRows}}
 ```
-
-Where `<table_name>` is the name of your table.
 
 The following video shows how to bind a text widget to `Table_1` using `selectedRows`.
 
@@ -224,7 +199,7 @@ An empty array `[]` is returned if no row is selected in the table.
 
 #### triggeredRow
 
-If your table has actionable items (like buttons) and a user interacts with it, triggeredRow fetches data from rows where that action has been performed.
+If your table has actionable items (like buttons) and a user interacts with it, triggeredRow fetches data from rows where that action has been performed. For example, if a button is pressed within the second row of a table, `<table_name>.triggeredRow` in that instance would contain all the data of the second row.
 
 To bind a widget using this property, enter the code snippet given below:
 
@@ -232,23 +207,19 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.triggeredRow}}
 ```
 
-Where `<table_name>` is the name of your table.
-
 The following video shows how to bind a text widget to `Table_1` using triggeredRow.
 
 <VideoEmbed host="youtube" videoId="HUcQ8lf7cH4" title="triggeredRow" caption="triggeredRow"/>
 
 #### selectedRowIndex
 
-`selectedRowIndex` gives you the index number of the selected row in the table. It's only applicable when one row is selected. If you have multiple rows selected, it returns `-1`.
+`selectedRowIndex` gives you the index number of the selected row in the table. It's only applicable when one row is selected. If you have multiple or zero rows selected, it returns `-1`.
 
 To bind a widget using this property, enter the code snippet given below:
 
 ```javascript
 {{<table_name>.selectedRowIndex}}
 ```
-
-Where `<table_name>` is the name of your table.
 
 The following video shows how to bind a text widget to `Table_1` using seledRowIndex.
 
@@ -264,8 +235,6 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.selectedRowIndices}}
 ```
 
-Where `<table_name>` is the name of your table.
-
 The following video shows how to bind a text widget to `Table_1` using seledRowIndices.
 
 <VideoEmbed host="youtube" videoId="yLOYqrW2xaw" title="selectedRowIndices" caption="selectedRowIndices"/>
@@ -280,21 +249,17 @@ To use this property in a widget, enter the code snippet given below:
 {{<table_name>.filteredTableData}}
 ```
 
-Where `<table_name>` is the name of your table.
-
 The following video shows how to bind a text widget to `Table_1` using **filteredTableData**.
 
 <VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
 
 #### pageNo
 
-pageNo gets the page no. of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
+pageNo gets the page number of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
 
 ```javascript
 {{<table_name>.pageNo}}
 ```
-
-Where `<table_name>` is the name of your table.
 
 The following video shows how to bind a text widget to `Table_1` using `pageNo`.
 
@@ -309,23 +274,19 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.pageSize}}
 ```
 
-Where `<table_name>` is the name of your table.
-
 The following video shows how to bind a text widget to `Table_1` using pageSize.
 
 <VideoEmbed host="youtube" videoId="XkFJQh4vcCw" title="pageSize" caption="pageSize"/>
 
 #### searchText
 
-searchText fetches the text entered in the search bar by the user.
+`searchText` mirrors the text entered in the table's search bar by the user.
 
 To bind a widget using this property, enter the code snippet given below:
 
 ```javascript
 {{<table_name>.searchText}}
 ```
-
-Where `<table_name>` is the name of your table.
 
 The following video shows how to bind a text widget to `Table_1` using searchText.
 
