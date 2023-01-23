@@ -162,3 +162,4 @@ Backend
 Postgres
 untrusted
 Filepicker
+Cloudinary

@@ -606,6 +606,7 @@ const sidebars = {
             'learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
+            "learning-and-resources/how-to-guides/how-to-submit-multipart-and-binary-form-data",
           ],
         },
         'learning-and-resources/sample-apps',
