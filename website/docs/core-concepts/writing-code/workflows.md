@@ -12,7 +12,7 @@ toc_max_heading_level: 5
 Appsmith lets you create dynamic and responsive web applications. It empowers developers to design user interfaces that adapt to user interactions on the fly and execute advanced operations like data retrieval, manipulation, and event triggering. Appsmith facilitates adding, configuring, and using widgets, queries, actions, JS Objects, and APIs. Additionally, it allows for more advanced functionalities such as parallel, serial, and conditional execution of queries.
 
 ## Programming widgets
-Widgets are the building blocks of any Appsmith application. They're used to display information on the page and respond to user interactions. There are different types of [widgets](/reference/widgets) available in Appsmith.
+[Widgets](/reference/widgets) are the building blocks of any Appsmith application. They're used to display information on the page and respond to user interactions.
 
 When working with widgets in Appsmith, it's important to understand how the app updates itself in response to changes in data. To reflect these changes, Appsmith follows the reactive programming paradigm. This means that, instead of updating widget properties and states through direct variable assignment, widgets are connected and share data, so when one value is updated, any objects that depends on it also updates automatically.
 
