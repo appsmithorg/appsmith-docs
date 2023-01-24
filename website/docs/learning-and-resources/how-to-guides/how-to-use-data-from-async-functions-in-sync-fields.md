@@ -4,19 +4,19 @@ description:
 ---
 
 # How to Use Data from Async Functions in Sync Fields
-In Appsmith, it's common to use [async/await](/core-concepts/writing-code/javascript-promises#asyncawait) functions to handle the asynchronous nature of certain operations, such as fetching data from an API or a database. However, it's not always straightforward to use async functions in synchronous fields, such as when binding data to a widget. 
+In Appsmith, it's common to use [async/await](/core-concepts/writing-code/javascript-promises#asyncawait)  functions to handle asynchronous operations. For example, fetching data from an API or a database. Using async functions in sync fields can be more complex when binding data to a widget.
 
  <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Using data from Async function in Synchronous Field" caption="Using data from Async function in Synchronous Field"/> 
 
-This guide helps you understand how to use async functions in sync fields in Appsmith, by going through a practical use case and code snippets. It further elaborates on how to trigger an API execution, use a JS Object function to filter data, and use a query to fetch data, and binding the results to a table widget.
+This guide helps you understand using async functions in sync fields. It focuses on a practical use case and code examples to fetch data by triggering APIs,  JS Object, or a query.
 
 ## Display user information on a page
 
-Consider the scenario where you need to fetch all the users and display their information such as first name, last name, email, and more on a page using a table widget.
+Consider an example where you fetch the user information and show it in a Table widget. You can fetch the user information using an API, a database query, or a JS Object function.
 
 ### Fetch user data using an API
 
- When using an API to fetch users, the process involves triggering the API execution and binding the response to the table widget to display the data like first name, last name, email and more. Here's how it can be done:
+ When using an API, you trigger the API and bind the response to the Table widget in the Table Data property. You can also watch the video below to see the code in action.
 
 <VideoEmbed host="youtube" videoId="iYZV9DPnugY" title="Fetch user data using an API" caption="Fetch user data using an API"/>  
 
@@ -27,11 +27,11 @@ Consider the scenario where you need to fetch all the users and display their in
 ```javascript
 {{getAllUsers.data}}
 ```
-In Appsmith, when you bind an API to the table data property using the `data` attribute, the API is executed, and generates the resulting data, which can be displayed in the table widget.
+When using the `data` property, Appsmith handles API execution and shows the data in the Table widget.
 
 ### Fetch user data using a JS Object
 
-When using a JS Object function to fetch and filter users' data, the process involves calling the API or Query, filtering the data, generating the response which can be bind and displayed in the table widget. Here's how it can be done:
+When using a JS Object, you can perform more operations on the generated data. For example, you can filter the generated data, return it, and show it in the Table widget. You can also watch the video below to see the code in action.
 
  <VideoEmbed host="youtube" videoId="8mVQS6uaR6M" title="Fetch user data using a JS Object" caption="Fetch user data using a JS Object"/>  
 
@@ -57,11 +57,11 @@ export default {
 ```javascript
 {{getFilteredUsersList.userFilteredList.data}}
 ```
-When you bind a function using `data` attribute, Appsmith handles the function execution and generates data that you can bind to the table data property and display it in a table widget.
+When you bind a function using `data` property, Appsmith handles execution and shows the data in the Table widget.
 
 ### Fetch user data using a query
 
-When using a query to fetch users, the process involves executing the query, binding the response to the table widget to display the data. Here's how it can be done:
+When using a query, you execute a query and bind the response to the table widget to display the data. You can also watch the video below to see the code in action.
 
  <VideoEmbed host="youtube" videoId="hqkI0h7DQ-s" title="Using a Query" caption="Using a Query"/>  
 
@@ -76,10 +76,10 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ```javascript
 {{getAllUsers.data}}
 ```
-Appsmith handles the query execution and generates the data when you bind a query using `data` attribute and displays generated data in a table widget.
+When using the `data` attribute, Appsmith executes the query, generates the data and shows it in a Table widget.
 
 ## Pro tips
-It's important to note that the table data property is a synchronous field and expects data to be passed to it. If you bind a run method, it results in an error. For more information on troubleshooting this issue, see the [Sync field errors](/help-and-support/troubleshooting-guide/widget-errors#sync-field-error.) section.
+It's important to note that the [Table Data](/reference/widgets/table#table-data) property is a synchronous field and expects data to be passed to it. If you bind a run method, it results in an error. For more information on troubleshooting this issue, see the [Sync field errors](/help-and-support/troubleshooting-guide/widget-errors#sync-field-error.) section.
 
 You can choose to execute the API or query when the page is loaded by enabling the "Run on page load" option in the Query or API settings. For more information, see the [Run on page load](/core-concepts/data-access-and-binding/querying-a-database/query-settings#run-query-on-page-load) section. Additionally, you can configure similar settings for asynchronous functions. For more information, see the [Asynchoronous JavaScript Function Settings](/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings) section.
 

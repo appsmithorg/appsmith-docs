@@ -1,7 +1,6 @@
 ---
 description: >-
-  Multiple Queries can be triggered in serial/parallel/conditional when a user
-  interacts with a widget
+  Learn how to build effective workflows with Appsmith by using multiple Queries that can be executed in serial, parallel or conditional manner and programming widgets for smooth user interaction.
 
 toc_min_heading_level: 2
 toc_max_heading_level: 5
@@ -9,47 +8,49 @@ toc_max_heading_level: 5
 
 # Creating Workflows
 
-Appsmith lets you create dynamic and responsive web applications. It empowers developers to design user interfaces that adapt to user interactions on the fly and execute advanced operations like data retrieval, manipulation, and event triggering. Appsmith facilitates adding, configuring, and using widgets, queries, actions, JS Objects, and APIs. Additionally, it allows for more advanced functionalities such as parallel, serial, and conditional execution of queries.
+AAppsmith lets you create dynamic and responsive web applications. It empowers developers to design user interfaces that adapt to user interactions and execute advanced operations like data retrieval, manipulation, and event triggering. Appsmith facilitates adding, configuring, and using widgets, queries, actions, JS Objects, and JavaScript functions to build different workflows. Additionally, it allows for more advanced functionalities such as parallel, serial, and conditional execution of queries.
 
 ## Programming widgets
 [Widgets](/reference/widgets) are the building blocks of any Appsmith application. They're used to display information on the page and respond to user interactions.
 
-When working with widgets in Appsmith, it's important to understand how the app updates itself in response to changes in data. To reflect these changes, Appsmith follows the reactive programming paradigm. This means that, instead of updating widget properties and states through direct variable assignment, widgets are connected and share data, so when one value is updated, any objects that depends on it also updates automatically.
+When working with widgets in Appsmith, it's important to understand that Appsmith follows the reactive programming paradigm. This means that, instead of updating widget properties and states through direct variable assignment, widgets are connected and share data, so when one value is updated, any objects that depends on it also updates automatically.
 
 For example, you have an [Input](/reference/widgets/input) widget where the user can enter text, and a [Button](/reference/widgets/button) widget with a label. You want to update the button's label based on the user's input. By using the reactive programming, the user types into the Input widget, and the label of the Button updates in real time to reflect the current user input. You can also check out the below video to understand how this works in a more visual way.
 
 <VideoEmbed host="youtube" videoId="34G1sCaRnvI" title="How to set properties in widgets?" caption="How to set properties in widgets?" />
 
-Consider another scenario, where you're building a dashboard for managing product inventory information, and you want to include an `Edit` mode for updating the values. In this scenario, you don't want to allow users to make changes when `Edit` mode is off. You only want to enable the changes after the user clicks the `Edit` button and save the changes after user clicks the 'Save' button. There are many Input widgets for handling the product data and two buttons for switching `Edit` mode on and off.
-
-Using imperative programming style, you may think of disabling the input widgets when edit mode is off like this:
+Consider another scenario, where you want to allow the editing of input widget only after clicking the "Edit" button. To achieve this using imperative programming, input widgets can be set to read-only when editing is turned off.
 
 ```javascript
-Input1.disable()
-// or,
-Input1.enabled = false
-```
-But, this doesn't work in Appsmith as it uses a reactive programming paradigm. You need to create and store an indicator that represents whether `Edit` mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the `storeValue()` function to make this possible. For more information, see [storeValue()](/reference/appsmith-framework/widget-actions/store-value).
+// using imperative programming
+Input1.disable();
 
-```javascript
-// in the Disabled field of the Input widgets' properties
-{{!appsmith.store.editMode}}
-// in the onClick event field of the Edit button's properties
-{{storeValue('editMode', true)}}
-// in the onClick event field of the Save button's properties
-{{storeValue('editMode', false)}}
+//Or
+Input1.enabled = false;
 ```
+However, to achieve this in Appsmith, you can use [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function. You can set an indicator when the Edit button is clicked. Based on this indicator, the widgets can be configured to accept user input or can be set as read-only. You can also check out the below video to understand how this works in a more visual way.
+
 <VideoEmbed host="youtube" videoId="Nmf8ib2NzAQ" title="Controlling Widgets with code" caption="Controlling Widgets with code" />
 
-With this configuration, the Input widgets' behavior is dynamically linked to the `editMode` state stored in the Appsmith store. As soon as this state is altered, the Input widgets are updated accordingly.
+The below example code shows how to set the indicator value and read the values from Appsmith store.
+
+```javascript
+// store editMode in Appsmith store.
+{{storeValue('editMode', <BOOLEAN_VALUE>)}}`
+
+// read the editMode value from Appsmith store. Bind it to the Disabled property of input widget
+{{appsmith.store.editMode}}
+```
+
+With this configuration, the Input widget's behavior is dynamically linked to the `editMode` state stored in the Appsmith store.
 
 ### Fields
 
-Widgets provide fields that you can use to bind and display data or trigger an action. Based on this, the properties are categorized as either sync or async.
+Widgets have fields/properties that you can use to bind data or trigger operations.
 
 #### Sync fields
 
-Sync fields are properties that expect input or data in the properties pane. These fields are updated immediately when the data changes.
+Sync fields are fields/properties that expect input or data in the properties pane. These fields show the changed information that occurs due to triggered actions.
 
 ![Input widget - Sync Fields](</img/Writing_Code__Creating_Workflows__Sync_Fields__Input_Widget.png>)
 
@@ -57,7 +58,7 @@ For example, when you add an Input widget to the canvas, properties such as `Max
 
 #### Async fields
 
-Async fields are properties that can trigger an action or perform an operation. They're updated as soon as the data is received.
+Async fields are properties that can trigger an action or perform an operation.
 
 ![Input Widget - Async Fields](</img/Writing_Code__Creating_Workflows__Async_Fields__Input_Widget.png>)
 
@@ -66,26 +67,28 @@ For example, the properties like `OnTextChanged` and `OnSubmit` of an input widg
 #### Async function data in a sync field
 When working with data in Appsmith, it's important to understand how to use async functions in sync fields. Asynchronous functions can be a powerful tool, but they can also be a source of errors if not used correctly. For more information, see [How to use data from async functions in sync fields](/learning-and-resources/how-to-guides/how-to-use-data-from-async-functions-in-sync-fields).
 
-#### Trigger actions on events
-[Actions](/reference/appsmith-framework/widget-actions) in Appsmith are predefined functions that allow you to perform specific tasks in response to user interactions or other events in your app. 
+#### Trigger Actions when event occurs
+[Actions](/reference/appsmith-framework/widget-actions) in Appsmith are predefined functions that provide a way to perform specific operations in response to user interactions or other events in your app. 
 
-They can be triggered by binding them to events, such as a button click. For example, you want to execute a API on button click and show a success message on the successful execution of the API. You can bind to invoke [showAlert()](/reference/appsmith-framework/widget-actions/show-alert) function on the `onClick()` event for `onSuccess` attribute, as shown below:
+You can trigger actions by binding them to Events(Async fields). For example, you want to execute a query on a button click and show a success message after the query has been executed. You can bind [showAlert()](/reference/appsmith-framework/widget-actions/show-alert) function on the `onSuccess` callback for `onClick()` event.
 
 ```javascript
-showAlert("Data saved successfully.");
+{{saveData.run(() => showAlert("Data saved successfully."), () => {})}}
 ```
 
-<VideoEmbed host="youtube" videoId="tjJIDkoCyQE" title="Global Functions" caption="Global Functions"/> 
+<VideoEmbed host="youtube" videoId="tjJIDkoCyQE" title="Global Functions" caption="Executing actions when event occurs"/> 
 
-You can only use the **global actions** provided out-of-the-box by Appsmith in the **async** **fields**.  
+:::info
+You can use **Actions** provided by the Appsmith framework only in  *Async fields**. 
+:::
 
 #### Handle query success or error
 
-When configuring API and query executions, it's important to provide feedback to the user about the outcome of the action. This can be done by displaying success messages when an action is completed successfully or error messages when there are issues with the execution.
+When configuring API or query executions, you might have to provide feedback or call other action/operation. For example, you have to provide feedback to the user about the outcome of the action. This can be done by displaying success messages when an action is completed successfully or error messages when there are issues with the execution.
 
-<VideoEmbed host="youtube" videoId="4aEMFU1r1yg" title="Setup Success or Error messages" caption="Setup Success or Error messages"/>
+<VideoEmbed host="youtube" videoId="4aEMFU1r1yg" title="Handling query success or error" caption="Handling query success or error"/>
 
-You can configure the action to be performed once a query returns with a success or an error. The success or error returned by the API or query can be determined by the HTTP status code or the query response status. These status code are bound to `onSuccess` and `onError` attributes of events and available in property pane to be setup for showing informative messages to end users.
+You can configure the action to be executed once a query returns with a success or an error. The success or error returned by the API or query can be determined by the HTTP status code or the query response status. These status code are bound to `onSuccess` and `onError` attributes of events and available in property pane to be setup for showing informative messages to end users.
 
 You can also choose to write custom JavaScript code by enabling the `JS` label next to event, and add the code you wish to trigger on success or when an error is generated, as shown below:
 
@@ -104,7 +107,7 @@ The GUI is limited to a single `onSuccess` or `onError` callbacks, while the und
 You can also configure actions using the GUI and then click the JS icon next to the event/property to view the JavaScript equivalent of the configuration. This can serve as a starting point and help you configure workflows according to your specific needs. This gives you more flexibility and options to configure complex workflows that can't be handled by the GUI alone.
 
 ### Conditional execution
-Write custom JavaScript code enables you to handle conditional execution of operations. For example, you wish to execute different queries based on user selection, and bind the data to a table widget. You can do so, by enabling the JS label next to the table data property and add below code:
+Operations can be chained to execute conditionally based on the value of a widget or the response of a query or JS function. For example, if you wish to show data in a Table widget based on an item chosen in the Select widget, enable the JS label next to the Table Data property and add below code:
 
 ```javascript
 {{
@@ -116,7 +119,7 @@ Write custom JavaScript code enables you to handle conditional execution of oper
 
 In this scenario, `Choose_operations` is a select widget that allows the user to select various options. Based on the selected option, the corresponding query is triggered and the generated data is displayed in a table widget.
 
-You can also chain the queries to execute conditionally based on the value of a widget or the response of a Query.
+You can also chain the queries to execute conditionally based on the value of a widget or the response of a Query on events, as shown in the code example below:
 
 ```javascript
 {{ 

@@ -51,4 +51,6 @@ exceptions:
   - Docker
   - K8s
   - Framework
+  - Promises
+  - Actions
 
