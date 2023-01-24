@@ -161,7 +161,7 @@ Now we need to display the fetched data in a presentable format. This can be don
 
 ![Screenshot twenty three](/img/redshift-appsmith-23.png)
 
-To include response in this table use the moustache syntax to write JS in Appsmith.
+To include response in this table use the mustache syntax to write JS in Appsmith.
 
 ```
 {{Query1.data}}

@@ -87,7 +87,7 @@ To update Appsmith manually, go to the root directory of the installation and ru
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-### Enabling Appsmith auto-updates
+### Enabling Appsmith auto updates
 
 Automatic updates are turned off by default in the docker-compose.yml file. To enable them, please follow these steps:
 
@@ -105,7 +105,7 @@ Automatic updates are turned off by default in the docker-compose.yml file. To e
    ```
 
 :::info
-To complement automatic updates, Appsmith also has an auto-backup feature. Before an automatic update, Appsmith first creates a backup to allow [rolling back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto-backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
+To complement automatic updates, Appsmith also has an auto backup feature. Before an automatic update, Appsmith first creates a backup to allow [rolling back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
 :::
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date. The installation is now configured to stay up-to-date automatically.
@@ -168,21 +168,22 @@ Once the download is complete, the server should be up soon. You can verify that
 
 ## Docker logs
 
-Once the Appsmith container is ready, the message Appsmith is Running! will be displayed in the Docker logs.
+Once the Appsmith container is ready, the message "Appsmith is Running!" is displayed in the Docker logs.
 
 ![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
-You can follow the logs with the following command:
+You can follow the **frontend logs** with the following command:
 
 ```bash
 docker logs -f appsmith
 ```
 
-This message is also logged and available in server logs in (`stacks/logs/backend/backend.log`).
+**Backend logs** are stored in `stacks/logs/backend/backend.log`. Backend logs can assist in debugging by providing information on requests, responses, and errors. They can help identify and resolve problems in your application. For more information on backend logs, check this [guide](https://github.com/felix-appsmith/guide-how-to-get-logs-appsmith).
+
 
 ## Restarting containers
 
-If the Docker containers are failing to restart, download and run the [`restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
+If the Docker containers are failing to restart, download ,and run the [`restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
 
 Copy the script (`restart-container.sh`) to the installation folder and make it executable:
 
