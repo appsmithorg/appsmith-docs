@@ -1,6 +1,6 @@
 # Appsmith Architecture
 
-Getting started on the Appsmith platform is quick and secure, available via the [cloud]((http://app.appsmith.com/user/sign-up)) as well as [self-hosted](/getting-started/setup#self-hosted) instances. Both versions are extremely similar in features and architecture, deployed as a single Docker container with a single volume for storing persistent data. With a [single line of code](/getting-started/setup/installation-guides/docker#setup-with-docker-run) or a one-click interaction via the AWS or DigitalOcean Marketplace or Heroku, Appsmith can be installed and put to use.
+Getting started on the Appsmith platform is quick and secure, available via the [cloud](http://app.appsmith.com/user/sign-up) as well as [self-hosted](/getting-started/setup#self-hosted) instances. Both versions are extremely similar in features and architecture, deployed as a single Docker container with a single volume for storing persistent data. With a [single line of code](/getting-started/setup/installation-guides/docker#setup-with-docker-run) or a one-click interaction via the AWS or DigitalOcean Marketplace or Heroku, Appsmith can be installed and put to use.
 
 Read further to learn about how the platform is organized, built, and deployed.
 
