@@ -53,4 +53,8 @@ exceptions:
   - Framework
   - Promises
   - Actions
-
+  - Promise.allSettled()
+  - Promise.all()
+  - Promise.any()
+  - Promise.race()
+  - Async/Await
