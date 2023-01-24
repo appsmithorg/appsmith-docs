@@ -1,23 +1,14 @@
-# Architecture
+# Appsmith Architecture
 
-Appsmith is simple to deploy on Docker or Kubernetes. Machine images are available for AWS, DigitalOcean, and Heroku.
+Getting started on the Appsmith platform is quick and secure, available via the [cloud]((http://app.appsmith.com/user/sign-up)) as well as [self-hosted](/getting-started/setup#self-hosted) instances. Both versions are extremely similar in features and architecture, deployed as a single Docker container with a single volume for storing persistent data. With a [single line of code](/getting-started/setup/installation-guides/docker#setup-with-docker-run) or a one-click interaction via the AWS or DigitalOcean Marketplace, Appsmith can be installed and put to use.
 
-1. Appsmith Community is available [hosted](http://app.appsmith.com/user/sign-up) and self-hosted.
-2. There is little difference between the two ways of using Appsmith, both in features and architecture.
-3. The Business Edition is only available on self-hosted instances.
-4. Both Community and Business self-hosted instances are deployed as a single Docker container. It requires a single volume for all persistent data.
-5. A single line of code gets you started:
-    
-    ```docker
-    docker run -d -p 80:80 -v "$PWD/stacks":/appsmith-stacks appsmith/appsmith-ce
-    ```
-    
-6. Appsmith can be one-click installed from the AMI on the AWS marketplace or from the image on the DigitalOcean Marketplace, both of which wrap around the single Docker container that’s the focus of this post.
+Read further to learn about how the platform is organized, built, and deployed.
 
 ## Self-hosted instance architecture
 
-![Appsmith Deployment Architecture](/img/Appsmith_Deployment_Architecture.png)
+The diagram below illustrates how the different pieces of the platform relate to each other:
 
+![Appsmith Deployment Architecture](/img/Appsmith_Deployment_Architecture.png)
 
 ## How it works
 
