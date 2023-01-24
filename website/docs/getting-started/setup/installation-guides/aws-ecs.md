@@ -96,7 +96,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
     In order to persist data on the Appsmith installation we have two options.
     Option 1 > Bind mount a directory on the host ec2 instance. The data is tied to the lifecycle of the host ec2 instance/ecs cluster.
     Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount,** and set the **Source path** to `/Appsmith/stacks`.
-
+      ![Bind Mount Volume Configuration](/img/ecs\_volume.png)
     Option 2 > Amazon EFS volumes. The data is independent of the lifecycle of the host ec2 instance/ecs cluster.
      Prequisite: Create an EFS filesystem by following the steps below:
       - Navigate to AWS EFS on the console and hit the Create button.
@@ -105,8 +105,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
       - Create a new security group to allow inbount and outbond NFS traffic.
       - Attach the security group to the ECS cluster and the EFS mount-target.
     Enter the Name as `appsmith_stack`, set Volume type as **EFS** and set the **File System ID** to the EFS filesystem created in the pequisite step above. Leave the remaining fields with the default values.
-
-![Volume Configuration](/img/ecs\_volume.png)
+      ![EFS Volume Configuration](/img/ecs_efs.png)
 
 7\. Configure **Appsmith container configuration**.
 
@@ -116,7 +115,10 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 * Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`
 
 ![Storage Setting](</img/ecs\_mount_(1).png>)
+
 * You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values we recommend you create secrets and set the env value using the ValueFrom option by specifying the arn of the secret created. Please refer the https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html to create a new secret.
+![Container Environment](</img/ecs-container-env.png>)
+
 * Note for Appsmith Business Edition the APPSMITH_LICENSE_KEY can be set here.
 
 * Enable **Auto-configure CloudWatch Logs** for log configuration.
@@ -143,7 +145,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 * Set the **Minimum Healthy Percent** to **40**.
 * Leave the remaining fields and sections with the **default values**, and proceed to the next step.
 
-![Configuring the service](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-20dc92b61eefda149b051105fc43932a4069a2a7\_ecs-service-creation.png)
+![Configuring the service](/img/service-ecs-appsmith.png)
 
 4\. Configure network - Proceed to the next step with the **default** configurations.
 
