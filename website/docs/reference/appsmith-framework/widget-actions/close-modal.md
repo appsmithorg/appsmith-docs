@@ -5,7 +5,9 @@ sidebar_position: 4
 
 This action is used to close a modal when triggered. Create a new modal and open it before calling this action
 
-![](/img/closemodal.gif)
+<VideoEmbed host="youtube" videoId="CaPOjNihFZE" title="Close Modal" caption="Close Modal"/>
+
+
 
 ## Signature
 

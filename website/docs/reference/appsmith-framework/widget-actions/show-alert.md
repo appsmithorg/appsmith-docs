@@ -5,7 +5,8 @@ sidebar_position: 2
 
 It shows a temporary notification style alert message to the user
 
-![](/img/alert.gif)
+<VideoEmbed host="youtube" videoId="FZTKZhnmQgc" title="Show Alert" caption="Show Alert"/>
+
 
 ## Signature
 

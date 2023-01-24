@@ -162,3 +162,7 @@ Backend
 Postgres
 untrusted
 Port
+navigateTo
+triggerable
+params
+resetChildren

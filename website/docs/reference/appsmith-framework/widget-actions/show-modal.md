@@ -5,7 +5,8 @@ sidebar_position: 3
 
 This function is used to open a modal when triggered.
 
-![Click to expand](/img/showModal.gif)
+<VideoEmbed host="youtube" videoId="ezkURutlOY4" title="Show Modal" caption="Show Modal"/>
+
 
 :::tip
 Remember to create a new modal before calling this action
