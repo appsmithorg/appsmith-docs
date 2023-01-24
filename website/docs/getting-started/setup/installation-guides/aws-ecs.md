@@ -186,11 +186,9 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 ## Updating to the latest Appsmith release
 
 1. Navigate to the ECS cluster from the ECS dashboard.
-2. In the Services tab select the Appsmith service.
-3. On the Service page, hit the Update button.
-4. In the configure service page, set the Number of Tasks field to 0 with other configurations intact, and skip to review and launch.
-5. Wait until the new service is deployed, once done again go to the Service page and hit Update button.
-6. In the configure service page, set the Number of Tasks field to 1 and check the Force new deployment option (with other configurations intact), and skip to review and launch.
+2. In the Tasks Tab, click the respective task.
+3. On the Task Page, hit the stop button.
+4. Wait until the new task is deployed automatically.
 
 ## Troubleshooting
 
