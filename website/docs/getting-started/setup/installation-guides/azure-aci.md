@@ -47,3 +47,23 @@ fileShareName="appsmith-test"
  --azure-file-volume-account-key $storageAccountKey \
  --azure-file-volume-share-name $fileShareName \
  --azure-file-volume-mount-path "/appsmith-stacks/"`
+
+# For EE
+`az container create\
+ --resource-group $resourceGroupName \
+ --name $aciName \
+ --image appsmith/appsmith-ce \
+ --ports 80 443 \
+ --environment-variables 'APPSMITH_LICENSE_KEY'='<Your Appsmith License>' \
+ --azure-file-volume-account-name $storageAccountName \
+ --azure-file-volume-account-key $storageAccountKey \
+ --azure-file-volume-share-name $fileShareName \
+ --azure-file-volume-mount-path "/appsmith-stacks/"`
+
+
+## Updating to the latest Appsmith release
+
+1. Navigate to the ACI on the Azure Portal
+2. Click the ACI running Appsmith
+3. Click on the Restart button
+4. Wait until the ACI restarts with the latest Appsmith release.
