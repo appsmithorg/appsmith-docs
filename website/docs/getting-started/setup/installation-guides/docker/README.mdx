@@ -106,7 +106,6 @@ Automatic updates are turned off by default in the docker-compose.yml file. To e
    docker-compose up -d
    ```
 
-:::info
 To complement automatic updates, Appsmith also has an auto backup feature. Before an automatic update, Appsmith first creates a backup to allow [rolling back](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) an update to a previous version of Appsmith if necessary. For this auto backup to work, please ensure that there is a minimum of 2 GB of free storage; otherwise, both the backup and update tasks fail.
 Appsmith relies on the Watchtower hook to perform an auto-backup before an update. Please ensure the WATCHTOWER_LIFECYCLE_HOOKS env is enabled on the Watchtower instance. Refer to the docker-compose.yaml at https://bit.ly/3h08WqB.
 
