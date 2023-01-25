@@ -50,4 +50,6 @@ exceptions:
   - DigitalOcean
   - Docker
   - K8s
+  - Amazon Web Services
+  - SSH
 
