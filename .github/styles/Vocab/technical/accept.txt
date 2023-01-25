@@ -159,6 +159,7 @@ Cross-origin
 windowMessageListener
 unlistenWindowMessage
 continue on 
+fileType
 sudo
 13-23
 Docker Compose
@@ -166,4 +167,5 @@ Backend
 Postgres
 untrusted
 Port
-
+subnet
+auto-configure
