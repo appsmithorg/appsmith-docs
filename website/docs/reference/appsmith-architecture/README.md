@@ -15,7 +15,7 @@ The diagram below illustrates how the different pieces of the platform relate to
 A single Docker container runs the following processes to deploy and get started with Appsmith:
 
 1. The **backend server** as a Java process, which handles:
-    1. Authentication: username and password, OAuth 2.0 with Google and GitHub, SSO with OIDC and SAML
+    1. Authentication: login credentials, OAuth 2.0 with [Google](/getting-started/setup/instance-configuration/authentication/google-login) and [GitHub](http://localhost:3000/getting-started/setup/instance-configuration/authentication/github-login), SSO with [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) and [SAML](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
     2. A CRUD API for users, workspaces, applications, pages, widgets
     3. An action execution module that executes your queries to your databases and APIs
     4. A git module that maintains clones of your Git-connected apps on the file system.
