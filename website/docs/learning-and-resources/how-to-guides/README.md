@@ -20,4 +20,4 @@ This document presumes you are familiar with the [core concepts](core-concepts/c
 10. [How to use Redshift as a Data Source on Appsmith](use-redshift-as-data-source-on-appsmith.md)
 11. [How to use ElasticSearch as a data source on Appsmith](how-to-use-elasticsearch-as-a-data-source-on-appsmith.md)
 12. [How to use JS objects within Appsmith?](how-to-use-js-object-within-appsmith.md)
-13. [How to use Git flow for different environments](how-to-use-git-flow-for-different-environments.md)
+13. [How to use Git flow for different environments](/learning-and-resources/how-to-guides/how-to-use-git-flow-for-different-environments)
