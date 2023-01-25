@@ -110,7 +110,7 @@ To complement automatic updates, Appsmith also has an auto backup feature. Befor
 :::note Appsmith relies on the Watchtower hook to perform an auto-backup before an update. Ensure that the WATCHTOWER_LIFECYCLE_HOOKS environment variable is enabled on the Watchtower instance in the [docker-compose.yaml](https://bit.ly/3h08WqB).
 :::
 
-Please refer to this(/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) to rollback the Appsmith data using the backup archives.
+If you update your Appsmith instance and face any issues you can rollback the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive.
 
 This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith automatically up-to-date. The installation is now configured to stay up-to-date automatically.
 
