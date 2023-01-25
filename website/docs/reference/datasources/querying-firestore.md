@@ -94,7 +94,7 @@ The video below shows how you can fetch multiple documents from the firestore. T
 We now have our query; let's bind this onto the table widget; for this, follow the below steps:
 
 * Click on the `+` icon next to widgets on the sidebar, search for the **table widget**, and drag and drop it onto the canvas.
-* You can make any configurations to any widget via the property pane. Click on the table widget on the canvas; you will see the property pane docked to the sidebar on the right. Now, under the Table Data property, use the moustache syntax to bind the query:
+* You can make any configurations to any widget via the property pane. Click on the table widget on the canvas; you will see the property pane docked to the sidebar on the right. Now, under the Table Data property, use the mustache syntax to bind the query:
 
 ```
 {{getTasks.data}}

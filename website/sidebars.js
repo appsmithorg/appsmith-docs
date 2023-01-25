@@ -60,6 +60,7 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
                   ],
                 },
@@ -430,7 +431,7 @@ const sidebars = {
             'reference/datasources/hubspot',
             {
               type: 'category',
-              label: 'Mongo',
+              label: 'MongoDB',
               link: {
                 type: 'doc',
                 id: 'reference/datasources/querying-mongodb/README',
@@ -475,7 +476,8 @@ const sidebars = {
                 'reference/appsmith-framework/widget-actions/copy-to-clipboard',
                 'reference/appsmith-framework/widget-actions/reset-widget',
                 'reference/appsmith-framework/widget-actions/intervals-time-events',
-              ],
+                'reference/appsmith-framework/widget-actions/post-message'
+              ]
             },
           ],
         },
@@ -490,7 +492,6 @@ const sidebars = {
         'advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/access-control',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
         {
@@ -511,6 +512,24 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/updating-local-file-path',
           ],
         },
+        {
+          type: 'category',
+          label: 'Access Control',
+          link: {type: 'doc', id:  'advanced-concepts/access-control/README'},
+          items: [
+          {
+            type: 'category',
+            label: 'Granular Access Control',
+            link: {
+              type: 'doc',
+              id: 'advanced-concepts/access-control/granular-access-control/README',
+            },
+            items: [
+              'advanced-concepts/access-control/granular-access-control/roles', 
+          ]
+        },
+      ],
+       },
         {
           type: 'category',
           label: 'More',
@@ -619,6 +638,7 @@ const sidebars = {
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
             'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
+            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
             'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
             'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
           ],

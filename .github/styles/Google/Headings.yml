@@ -46,4 +46,8 @@ exceptions:
   - JS Objects
   - JavaScript
   - Keycloak
+  - Redis
+  - DigitalOcean
+  - Docker
+  - K8s
 
