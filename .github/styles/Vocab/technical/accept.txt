@@ -166,3 +166,6 @@ navigateTo
 triggerable
 params
 resetChildren
+subnet
+auto-configure
+
