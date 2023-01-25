@@ -23,16 +23,19 @@ Appsmith provides the following built-in JavaScript libraries that can be utiliz
 
 ## Custom JavaScript libraries
 
-Browse and install recommended JS libraries or install a JS library of your choice by pasting a valid URL. You can search libraries on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) to obtain the URL.
+Custom Javascript libraries provide far more advanced capabilities for complex use cases like PDF generation, CSV Parsing, analytics, authentication, error logging, etc... You can browse and install a JS library of your choice by pasting a valid URL to the library’s index file. 
 
 Use a URL that points to the library's index file. Ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
 
 
-✅ Valid and supported:  `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`. 
+### Library Compatibility 
+Appsmith is only compatible with libraries that support **[UMD](https://github.com/umdjs/umd)** builds. If a library supports the UMD build format, the source code of a library’s index file should conform to this [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js). The index file for most compatible libraries can be found under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
 
-❌ Invalid URL: `https://www.jsdelivr.com/package/npm/datejs`
+✅ Valid URL: `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
 
-❌ Valid URL but not supported: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+❌ Valid URL. Unsupported build format: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+
+❌ Invalid URL. Does not point to the index file: `https://www.jsdelivr.com/package/npm/datejs`
 
 
 ### Install external library
@@ -42,8 +45,11 @@ Appsmith makes it easy to install an external JavaScript library with just a few
  <VideoEmbed host="youtube" videoId="bo66yFTfy6Q" title="Installing custom JavaScript libraries" caption="Installing External JavaScript libraries"/> 
 
 
-There are selection of **recommended libraries** that you can install by simply clicking on the install icon. However, if you want to install a specific library with a URL, the process is just as simple. To install other libraries:
+There is a selection of recommended libraries that you can install by simply clicking on the install icon. However, if you want to install a specific library with a URL, the process is just as simple. To install other libraries:
 
+
+* Find a [compatible](#library-compatibility) library on popular CDN services like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). 
+* Copy the URL to its index file and paste it on Appsmith to start the installation. 
 * Navigate to the Explorer tab
 * Click the `+` sign next to `Libraries`.
 * Paste the URL into the designated field. For example: 
