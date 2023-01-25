@@ -18,18 +18,19 @@ Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/kn
 
 ### Set Basic variable details
 Open a bash shell and set the following variables
-`
+```
 resourceGroupName="myResourceGroup"
 aciName="myAppsmithACI"
 storageAccountName="mystorageaccount$RANDOM"
 aciLocation="southindia"  
 fileShareName="appsmith-test"
-`
+dnsNameLabel="myDNSLabel"
+```
 ### Create a resource group (optional)
 
 `az group create --name $resourceGroupName --location $aciLocation`
 
-###Create a storage account (optional)
+### Create a storage account (optional)
 `az storage account create --resource-group $resourceGroupName --name $storageAccountName --location $aciLocation --sku Standard_LRS`
 ### Get the storage account key
 `storageAccountKey=$(az storage account keys list --resource-group $resourceGroupName --account-name $storageAccountName --query "[0].value"  --output tsv)`
@@ -38,28 +39,39 @@ fileShareName="appsmith-test"
 `az storage share create --name $fileShareName --account-name $storageAccountName --account-key $storageAccountKey`
 
 ### Create an Appsmith ACI with the storage account and file share mounted
-`az container create\
- --resource-group $resourceGroupName \
- --name $aciName \
- --image appsmith/appsmith-ce \
- --ports 80 443 \
- --azure-file-volume-account-name $storageAccountName \
- --azure-file-volume-account-key $storageAccountKey \
- --azure-file-volume-share-name $fileShareName \
- --azure-file-volume-mount-path "/appsmith-stacks/"`
+```
+az container create \
+  --resource-group $resourceGroupName \
+	--name appsmith-release \
+	--image appsmith/appsmith-ce:release \
+	--ip-address public \
+	--dns-name-label appsmith-release-azure-aci \
+	--ports 80 443\
+	--cpu 2 \
+	--memory 4 \
+	--azure-file-volume-account-name $storageAccountName \
+	--azure-file-volume-account-key $storageAccountKey \
+	--azure-file-volume-share-name $fileShareName \
+	--azure-file-volume-mount-path "/appsmith-stacks/"
+ ```
 
 # For EE
-`az container create\
- --resource-group $resourceGroupName \
- --name $aciName \
- --image appsmith/appsmith-ce \
- --ports 80 443 \
- --environment-variables 'APPSMITH_LICENSE_KEY'='<Your Appsmith License>' \
- --azure-file-volume-account-name $storageAccountName \
- --azure-file-volume-account-key $storageAccountKey \
- --azure-file-volume-share-name $fileShareName \
- --azure-file-volume-mount-path "/appsmith-stacks/"`
-
+```
+az container create \
+  --resource-group $resourceGroupName \
+	--name appsmith-release \
+	--image appsmith/appsmith-ce:release \
+	--ip-address public \
+	--dns-name-label $dnsNameLabel \
+	--ports 80 443 \
+	--cpu 2 \
+	--memory 4 \
+	--azure-file-volume-account-name $storageAccountName \
+	--azure-file-volume-account-key $storageAccountKey \
+	--azure-file-volume-share-name $fileShareName \
+	--azure-file-volume-mount-path "/appsmith-stacks/" \
+  --environment-variables 'APPSMITH_LICENSE_KEY'='<Your Appsmith License>'
+```
 
 ## Updating to the latest Appsmith release
 
