@@ -1,4 +1,4 @@
-# Appsmith Architecture
+# Architecture
 
 Appsmith is available via the [cloud](http://app.appsmith.com/user/sign-up) as well as [self-hosted](/getting-started/setup#self-hosted) instances. It comes in [two versions](https://www.appsmith.com/pricing): Community and Business. Both of these are extremely similar in build and architecture, deployed as a single Docker container with a single volume for storing persistent data.
 
