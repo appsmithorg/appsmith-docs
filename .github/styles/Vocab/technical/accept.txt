@@ -165,4 +165,14 @@ Application
 ngrok
 cURL
 OnSuccess
+Port
+OnSuccess
+fileType
+sudo
+13-23
+Docker Compose
+Backend
+Postgres
+untrusted
+Port
 

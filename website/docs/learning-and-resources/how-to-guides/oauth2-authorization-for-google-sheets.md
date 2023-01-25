@@ -82,7 +82,7 @@ Open the Table Settings and paste the following JS code in the Table Data proper
 
 With this, you’ll be able to see all the data from Google Sheet showing up in the table widget on the Appsmith dashboard. Also, the logic used here is a straightforward map function on the API using JavaScript.
 
-> One powerful feature of Appsmith is the ability to write JS anywhere to access and manipulate things within the moustache syntax.
+> One powerful feature of Appsmith is the ability to write JS anywhere to access and manipulate things within the mustache syntax.
 
 ### **Posting Data to Google Sheet from Appsmith**
 

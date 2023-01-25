@@ -20,20 +20,20 @@ Before you begin, you'll need to create an account on [Appsmith Cloud](https://a
 
 ## **Create a New Application**
 
-* When creating a new [Appsmith account](https://app.appsmith.com/), an application titled '**My first application'** is automatically added under the default **Workspace**. You can use this application to build your first app or create a new one by clicking on the **+ New** button under the Workspace.
-* For this tutorial, we will use the default application. Hover over the '**My first application'** card and click the **Edit** button to open the application.
+* When creating a new [Appsmith account](https://app.appsmith.com/), an application titled '**My first application**' is automatically added under the default **Workspace**. You can use this application to build your first app or create a new one by clicking on the **+ New** button under the Workspace.
+* For this tutorial, we will use the default application. Hover over the '**My first application**' card and click the **Edit** button to open the application.
 
 ![Creating a new application on Appsmith](/img/Screenshot_2022-07-21_at_11.49.02_AM.png)
 
 * You'll land on the Appsmith editor. Select the **Build with drag & drop** option to start from scratch and create your custom UI.
-* **'Page 1'** is the default page on the application. To rename the page, click on the Kebab menu (three vertical dots) and select **Edit Name**. Label the page '**User Information**'.
+* '**Page 1**' is the default page on the application. To rename the page, click on the Kebab menu (three vertical dots) and select **Edit Name**. Label the page '**User Information**'.
 
 ## **Connect Database**
 
-We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
+We'll use the mock PostgreSQL database named '**users**' available on Appsmith.
 
 * On the **Explorer** tab, click the **+** sign next to **DATASOURCES**. Under **Sample Databases,** select **users.**
-* The '**users'** database will be added under the **Explorer** tab -> **DATASOURCES**.
+* The '**users**' database will be added under the **Explorer** tab -> **DATASOURCES**.
 
 ![Creating a new datasource](/img/Add_Datasource.png)
 
@@ -53,7 +53,7 @@ We'll use the mock PostgreSQL database named '**users'** available on Appsmith.
 ![Creating a new query on the datasource](/img/New_Query_(1).png)
 
 * Rename the query to ‘**getUsers**’
-* Write the below query to pull ten records from the '**users'** table in the database.
+* Write the below query to pull ten records from the '**users**' table in the database.
 
 ```
 SELECT * FROM users ORDER BY id LIMIT 10;
@@ -62,7 +62,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ![Writing query to fetch data in the Query Editor](/img/Screenshot_2022-07-12_at_22.38.19.png)
 
 * Click the **Run** button on the right of the Query Editor to confirm that the query returns data.
-* Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**](../reference/widgets/table/#table-data) property write this JS snippet **`{{getUsers.data}}`** to display the results from the 'getUsers**'** query on the table.
+* Navigate to **PAGES** → **User Information**. Hover over the table and click on the table name 'usersTable' to open the property pane. On the [**Table Data**](../reference/widgets/table/#table-data) property write this JS snippet **`{{getUsers.data}}`** to display the results from the '**getUsers**' query on the table.
 
 :::info
 The `{{mustache}}` template is used to write JS inside widgets and queries.
@@ -84,17 +84,17 @@ The `{{mustache}}` template is used to write JS inside widgets and queries.
 Turn on the **JS** toggle to bind data for the **Default Date** property
 :::
 
-* Create another query on the '**users'** database and rename it to '**updateUsers**'. Use the below update command to write any modified data on the widgets back to the database.
+* Create another query on the '**users**' database and rename it to '**updateUsers**'. Use the below update command to write any modified data on the widgets back to the database.
 
 ```
 UPDATE users SET name = '{{nameInput.text}}', email = '{{emailInput.text}}', dob = '{{dobInput.selectedDate}}', phone = '{{phoneInput.text}}' WHERE id = {{usersTable.selectedRow.id}} 
 ```
 
-* On the property pane of the **Update** button execute this query on the [**onClick**](../reference/widgets/button/#events) event. On the success of the update query, run the '**getusers'** query to populate the table with updated data.
+* On the property pane of the **Update** button execute this query on the [**onClick**](../reference/widgets/button/#events) event. On the success of the update query, run the '**getusers**' query to populate the table with updated data.
 
 ![Bind query execution to the button's  onClick event ](/img/Screenshot_2022-06-28_at_11.36.28_PM.png)
 
-* Test the **'Update'** button by modifying the phone number of the user.
+* Test the '**Update**' button by modifying the phone number of the user.
 
 > You’ve completed your first app that can display information from the database and update data, all in just a few minutes.
 
