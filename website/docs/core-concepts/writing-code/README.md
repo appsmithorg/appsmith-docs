@@ -38,13 +38,13 @@ You can also write JavaScript code for event listeners. For JavaScript code insi
 }}
 ```
 
-## Configuring Widgets with Code
+## Configuring widgets with code
 
 When data changes within your app, your widgets need to update themselves to reflect these changes. To make this happen, Appsmith follows the reactive programming paradigm.
 
 Instead of managing widget properties and states with direct variable assignment in code (like `x = 5`), widgets in your applications are connected to each other and share data; when one value is updated in your app, any objects that depend on that changed value also update accordingly. Below is a quick example of using the reactive code style to update a [Button](../../reference/widgets/button/)'s label in real time by taking user input from an [Input](../../reference/widgets/input.md) widget. Take a look at the video below:
 
-<VideoEmbed host="youtube" videoId="YXo4PVrw1RQ" title="Reactive" caption="Reactive" />
+<VideoEmbed host="youtube" videoId="34G1sCaRnvI" title="Reactive" caption="Reactive" />
 
 The button’s label could be set as a simple static value (like “Submit”) in its properties pane, but if you’d like that property to change at any point, it must be defined differently.
 
@@ -60,7 +60,7 @@ Input1.disable()
 Input1.enabled = false
 ```
 
-But this won't work in Appsmith! Instead, you might create and store a special value that represents whether 'Edit' mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the [`storeValue()`](../../reference/appsmith-framework/widget-actions/store-value.md) function to make this possible, which you can read about [here](../../reference/appsmith-framework/widget-actions/store-value.md).
+But this won't work in Appsmith; instead, you might create and store a special value that represents whether 'Edit' mode is enabled, and configure the widgets to behave according to that value. Appsmith provides the [`storeValue()`](../../reference/appsmith-framework/widget-actions/store-value.md) function to make this possible, which you can read about [here](../../reference/appsmith-framework/widget-actions/store-value.md).
 
 ```javascript
 // in the Disabled field of the Input widgets' properties
@@ -71,15 +71,15 @@ But this won't work in Appsmith! Instead, you might create and store a special v
 {{storeValue('editMode', false)}}
 ```
 
-<VideoEmbed host="youtube" videoId="yKb6SRonfmQ" title="Controlling Widgets with code" caption="Controlling Widgets with code" />
+<VideoEmbed host="youtube" videoId="Nmf8ib2NzAQ" title="Controlling Widgets with code" caption="Controlling Widgets with code" />
 
 With this configuration, the Input widgets behave according to the current state of `editMode` in the Appsmith store. Anytime this value is toggled, the Input widgets are automatically updated.
 
-## Single Line JavaScript
+## Single line JavaScript
 
 Appsmith primarily supports writing single-line javascript between mustache brackets `{{ }}`. Anything written between the brackets is evaluated as a javascript expression and its result is used as the given property's value.
 
-Sometimes, to achieve the intended result, it may require us to chain multiple operations (methods, ternary expressions, etc.) in a single line. If your expression becomes too complex to fit easily into a single line, consider writing a helper function in a [JS Object](../../learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md) to help keep your code readable!
+Sometimes, to achieve the intended result, it may require chaining multiple operations (methods, ternary expressions, etc.) in a single line. If your expression becomes too complex to fit easily into a single line, consider writing a helper function in a [JS Object](../../learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith.md) to help keep your code readable.
 
 ### Valid JavaScript
 
@@ -95,7 +95,7 @@ Following are valid examples of JavaScript for property values.
 
 **Invalid JavaScript**
 
-You cannot simply write multi-line javascript between the mustache brackets; the following two snippets are examples of invalid code. See the next section, "Multi-Line Javascript," to see how we can structure properties that accept multiple lines of code.
+You can't simply write multi-line javascript between the mustache brackets; the following two snippets are examples of invalid code. See the next section, "Multi-Line Javascript," to see how we can structure properties that accept multiple lines of code.
 
 ```javascript
 {{ 
@@ -115,9 +115,9 @@ You cannot simply write multi-line javascript between the mustache brackets; the
 }}
 ```
 
-## Multi-Line JavaScript
+## Multi-line JavaScript
 
-Appsmith supports multi-line JS if it is an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) (Immediately-Invoked Function Expression). The above invalid examples become valid if restructured and used as below.
+Appsmith supports multi-line JS if it's an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) (Immediately-Invoked Function Expression). The above invalid examples become valid if restructured and used as below.
 
 ```javascript
 {{ 
