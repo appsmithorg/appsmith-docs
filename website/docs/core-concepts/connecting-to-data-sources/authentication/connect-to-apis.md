@@ -10,23 +10,23 @@ Configuring APIs involves setting up and managing the various aspects of an API 
 If you want to access an API that's not publicly available on the internet, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to work with local APIs on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
-## API query editor
+## REST API query editor
 
-The API pane is a REST interface that allows you to create and modify your existing APIs. All [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) are supported and API values can be configured in the headers, Params, and body fields
+The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and allows you to configure API values in the headers, query parameters, and request body fields.
 
 ![](</img/create_api_(1).gif>)
 
-## Configure API query
+## Configure REST API query
 
 Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query.
 
 ### Name
 
-When you create a datasource in Appsmith, a default name is provided for you. You can change this name by clicking on the pencil icon. It's important to make sure that the name is unique, as it serves as an identifier for queries on the page and is used to access the datasource properties in the application.
+When you create a query in Appsmith, a default name is provided for you. You can change this name by clicking on the pencil icon. It's important to make sure that the name is unique, as it serves as an identifier for queries on the page.
 
 ### Method
 
-A method refers to the type of request being made to the API. Appsmith supports all the standard methods, including GET, POST, PUT, DELETE, and PATCH. When setting up an API query in Appsmith, you can select the desired method from a dropdown menu before adding the URL.
+A method refers to the type of request being made to the REST API endpoint. Appsmith supports all the standard methods, including GET, POST, PUT, DELETE, and PATCH. When setting up an API query in Appsmith, you can select the desired method from a dropdown menu before adding the URL.
 
 It's important to choose the appropriate method based on the task you want to accomplish, as each method has a specific meaning and can behave differently depending on the API you are using.
 
@@ -39,7 +39,6 @@ The URL Path provides a way to access the API and its functions. To use this fie
 
 HTTP headers are a critical part of the API request and response, as they contain meta-data about the API request and response. Headers carry the following information:
 
-* Request and Response Body;
 * Request Authorization;
 * Response Caching;
 * Response Cookies.
@@ -48,7 +47,7 @@ It's important to be familiar with the major request and response headers, as yo
 
 ### Params
 
-In a REST API, parameters are values that are passed in the URL, query string, or request body that are used to filter, sort, paginate, or perform some other operation on a set of data. These parameters allow the API to return a specific set of data based on the values that are provided.
+In a REST API, parameters are values that are passed in the URL, that are used to filter, sort, paginate, or perform some other operation on a set of data. These parameters allow the API to return a specific set of data based on the values that are provided.
 
 For example, an API might have a parameter called "limit" that specifies the maximum number of results to return, or a parameter called "sort" that determines the order in which the results should be sorted. By providing different values for these parameters, a client can control the data that's returned by the API.
 
@@ -69,9 +68,18 @@ This can be done by setting up request parameters to control the table's paginat
 Example - Map key pageNo or similar to value
 ```{{UsersTable.pageNo}}``` 
 
+However, in certain cases, it may be beneficial to configure limit and offset properties. For example, 
+```
+limit = {{UsersTable.pageSize}}
+
+offset = {{UsersTable.pageOffset}}
+```
+
 #### Paginate with response URL
 
-A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. To paginate with response URLs, the API typically includes a link to the next or previous page of results in the HTTP header of the response. This can be done by adding **Previous** and **Next URL** in the Pagination section. 
+A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. This can be done by adding **Previous** and **Next URL** in the Pagination section. 
+
+For example, when using the Appsmith mock API, a JSON response is returned that contains the `next` and `previous` keys. These keys can be used to configure pagination properties, such as ```{{Api.data.next}}``` and ```{{Api.data.previous}}```. You can validate your configuration by clicking the "test" button.
 
 ### Authentication
 Authentication refers to the process of verifying the identity of a client or user making a request to the API. This is typically done by requiring the client or user to provide a set of credentials, such as a username and password, which can be checked against a database of authorized users or a third-party authentication service.

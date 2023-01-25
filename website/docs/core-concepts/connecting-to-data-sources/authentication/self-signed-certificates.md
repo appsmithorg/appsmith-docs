@@ -1,7 +1,5 @@
 # Self Signed Certificates
 
-Self-signed certificates are sometimes used in testing or internal environments, as they provide incoming/outgoing data encryption and can be created with no cost. It's important to consider the potential security risks associated with this practice, as they may carry significantly increased risks.
-
 In case you need to use a self-signed certificate to access your REST endpoint, the [**Authenticated API**](./#create-authenticated-api) Datasource allows you to upload your own self-signed certificate within the API's configuration page.
 
 To upload your self-signed certificate:

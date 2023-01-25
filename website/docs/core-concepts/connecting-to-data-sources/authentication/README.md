@@ -7,7 +7,7 @@ APIs are sets of definitions and protocols that enable communication and interac
 
 You can choose to connect to a REST API by clicking on the “**+**” icon next to **“Datasources”** and selecting “**REST API**".
 
-You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
+You can provide the URL and additional information like the Headers, Params, Body, and Pagination. You can directly run the query and connect it with widgets. To learn more about configuring APIs, you can refer to the documentation on [configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
 
  <VideoEmbed host="youtube" videoId="IptCmvKdbog" title="Connect to REST API" caption="Connect to REST API"/> 
@@ -61,7 +61,7 @@ The [API pane](/core-concepts/connecting-to-data-sources/authentication/connect-
 
 ### Creating an authenticated API datasource
 
-When you create an authenticated API datasource, you need to configure the headers and query parameters only once and thereafter don't need to configure these for every API request. Further, to ensure authorized access and security, you can configure OAuth 2.0, signature headers and self-signed certificates for your API requests.
+When you create an authenticated API datasource, you need to configure the headers and query parameters only once and thereafter don't need to configure these for every API request. Additionally, to ensure authorized access and secure data transfer, various authentication mechanisms can be implemented, such as OAuth 2.0, signature headers, self-signed certificates, bearer token-based authentication, and API key-based authentication.
 
  <VideoEmbed host="youtube" videoId="Uy7ZDviGbtM" title="Creating an authenticated API " caption="Creating an authenticated API"/> 
 

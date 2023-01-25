@@ -26,9 +26,7 @@ If you are a self-hosted Appsmith user, it's necessary to whitelist the IP addre
 * Click **Test** to verify that Appsmith can connect to your database using the details you provided.
 * Rename and save your datasource.
 
-
-
-Once your datasource has been added successfully, a success pop-up appears at the top. 
+It's important to note that the configuration of the datasource aren't be updated/saved unless the "save" button is clicked. Once your datasource has been added successfully, a success pop-up appears at the top. 
 
 ### Mock database
 
@@ -52,7 +50,7 @@ The mock databases are public and shared by all users, which may result in mangl
 ```sql
 SELECT * FROM users;
 ```
-The select query retrieves the data from the users' table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
+The select query retrieves the data from the users table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
 
 :::note
 Databases configured within one page of an app can be accessed by developers anywhere within the workspace.
@@ -63,7 +61,7 @@ Appsmith establishes a connection pool with the database server when you first c
 
 For certain database plugins such as PostgreSQL and MySQL, Appsmith maintains a connection pool because multiple queries can't be run on a single connection.
 
-The maximum number of concurrent queries that can be run on a database with Appsmith is 5. If the application tries to execute more concurrent queries, you may receive an error message stating that the connection isn't available.
+The maximum number of connections in the pool is limited to 5. This limit applies solely to the number of connections in the pool and not to the number of concurrent queries.
 
 
 ## Troubleshooting
