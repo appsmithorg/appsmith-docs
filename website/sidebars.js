@@ -483,7 +483,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Appsmith Architecture',
+          label: 'Architecture',
           link: { type: 'doc', id: 'reference/architecture/README' },
           items: [],
         },
