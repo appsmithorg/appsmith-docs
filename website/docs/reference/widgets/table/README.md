@@ -23,8 +23,7 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | **Default Selected Row**       | Formatting | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
 | **Enable multi-row selection** | Widget | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
 | [**Column Sorting**](#column-sorting) | Widget | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
-| **Allow adding a row**         | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. Read about [inline editing](/reference/widgets/table/inline-editing#allow-adding-a-row) for more details. |
-| **Default Values** | Widget | These values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. Read about [inline editing](/reference/widgets/table/inline-editing#default-values) for more details. |
+inline-editing#default-values) for more details. |
 | [**Visible**](#visible)    | Formatting | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
 | **Animate Loading** | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 | **Allow Download** | Widget | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
@@ -42,6 +41,44 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | [**pageSize**](#pagesize)           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`   |
 | [**searchText**](#searchtext)         | Binding | Contains the search text entered by the user in the Table | `{{<table_name>.searchText}}`  |
 
+## Events
+
+These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
+
+| Action                 | Description               |
+| ---------------------- | ------------------------- |
+| **onRowSelected**      | Sets the action to run when the user selects a row.   |
+| **onPageChange**       | Sets the action to run when the table's page changes.  |
+| **onPageSizeChange**   | Sets the action to run when the table's height is changed. This event can only be triggered by developers working on the app, not by end users. For example, it can be used to set a Limit in your query dynamically. |
+| **onSearchTextChange** | Sets the action to run when the user enters a search text.     |
+| **onSort**             | Sets the action to run when the user sorts the data.          |
+
+## Styles
+
+Style properties allow you to change the look and feel of the table. There are several options, such as:
+
+* Changing the style and size of the font
+* Text alignment
+* Choosing the color of text or cell backgrounds
+
+| Style                     | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| **Default Row Height**    | Sets the height of the row in the table - short, default, or tall.  |
+| **Text Size**             | Sets the size of the text.                               |
+| **Emphasis**              | Sets a font style for text, such as **bold** or _italic_.|
+| **Text Align**            | Sets how text is aligned horizontally within the cells.  |
+| **Vertical Alignment**    | Sets where the cell contents are vertically positioned within the cells. |
+| **Cell Background Color** | Sets the background color of the table cells.            |
+| **Text Color**            | Sets the color for the text in the table.                |
+| **Cell Borders**          | Sets the border configuration for the table's cells. Default (all borders), horizontal borders only, or no borders. |
+| **Border Radius**         | Sets rounded-ness for the widget's corners.              |
+| **Box Shadow**            | Sets a shadow around the widget's edges.                 |
+| **Border Color**          | Sets the color of the widget's borders.                  |
+| **Border Width**          | Sets the thickness of the widget's borders.              |
+
+### Display data in tables
+
+These properties are used to pipe data into your table widget and manage the behavior of its individual columns.
 
 #### Table data
 
@@ -75,39 +112,48 @@ This property shows all the columns in the table, and it gets automatically popu
 
 ![](/img/columns\_tablewidget.png)
 
-#### Cell wrapping
+#### Column sorting
 
-<VideoEmbed host="youtube" videoId="bNMV_WhTUU4" title="Table | Inline Editing | Cell Wrapping" caption="Wrapping text within cells"/>
+Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
 
-Controls how overflowing contents of the column are handled. When turned on, the contents get wrapped to the next line.
+<VideoEmbed host="youtube" videoId="hmi7BaF3jFI" title="Table | Column Sorting" caption="Use this setting to enable sorting rows by column value."/>
 
-#### Server side pagination
+#### Add new columns
+
+By clicking the "+ ADD A NEW COLUMN" button, you can insert your own custom column into your dataset. These can be used for a wide variety of purposes, including adding button- or checkbox-type columns alongside your data. You can adjust the settings for this column just like any other.
+
+### Server side pagination
 
 Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. To paginate this data and request smaller chunks of data at a time:
 
 1. Enable the server-side pagination property in the table
 2. Call the API / query via the **onPageChange** event
-3. Configure pagination in the API / query using the Offset or Key-based pagination method
+3. Configure pagination in the API / query using the [Offset](#offset-based-pagination) or [Key-based](#key-based-pagination) pagination method.
 
-##### Offset based pagination
+#### pageNo
 
-This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** fields of the table and is used in both APIs and Queries.
+`pageNo` gets the page number of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
 
-The **pageNo** and **pageSize** can be used in the API / query by referencing them inside curly braces `{{ }}`.
-
-```sql
-SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ (Table1.pageNo - 1) * Table1.pageSize }}
+```javascript
+{{<table_name>.pageNo}}
 ```
 
+The following video shows how to bind a text widget to `Table_1` using `pageNo`.
+
+<VideoEmbed host="youtube" videoId="DqKok2cCJk0" title="pageNo" caption="pageNo"/>
+
+#### pageSize
+
+`pageSize` shows the total number of rows displayed on a page of the table. `pageSize` can change upon resizing the table.
+To bind a widget using this property, enter the code snippet given below:
+
+```javascript
+{{<table_name>.pageSize}}
 ```
-https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
-```
 
-##### Key based pagination
+The following video shows how to bind a text widget to `Table_1` using pageSize.
 
-This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
-
-![](</img/pagination_(2)_(2).gif>)
+<VideoEmbed host="youtube" videoId="XkFJQh4vcCw" title="pageSize" caption="pageSize"/>
 
 #### Total records
 
@@ -131,36 +177,86 @@ Once the `get_count` query is successfully created, enter the following code to 
 {{get_count.data[0].count}}
 ```
 
-#### Client side search
+#### Offset based pagination
 
-Client side search controls whether the user can search the entire data set for their query, or only what's currently shown in the table widget.
+This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** fields of the table and is used in both APIs and Queries.
 
-#### Column sorting
+The **pageNo** and **pageSize** can be used in the API / query by referencing them inside curly braces `{{ }}`.
 
-Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
-
-<VideoEmbed host="youtube" videoId="hmi7BaF3jFI" title="Table | Column Sorting" caption="Use this setting to enable sorting rows by column value."/>
-
-#### Visible
-
-This controls the widget's visibility on the app's page. When turned off, the widget doesn't appear in the published app. While editing the app on the Appsmith canvas, widgets with visibility turned off appear translucent.
-
-You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
-For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the table's `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
-
-```
-{{Checkbox1.isChecked}}
+```sql
+SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ (Table1.pageNo - 1) * Table1.pageSize }}
 ```
 
-When you tick the checkbox, `Visible` is set to `true`, and the table becomes visible in the app.
+```
+https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
+```
 
-<VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
+#### Key based pagination
 
-#### CSV separator 
+This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
 
-Sets the separator character to use for formatting the downloaded .csv file. The default separator character is a comma `,`. This setting only applies when **Allow Download** is turned on.
+![](</img/pagination_(2)_(2).gif>)
 
-<VideoEmbed host="youtube" videoId="CJBJt7TkqGU" title="Table Widget | CSV Separator" caption="Choose the characters to use as separators in your .csv"/>
+## Server side searching
+
+Tables come with the capability of server side searching, which is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search terms to the server, so that it only needs to fetch data that's relevant. This can significantly improve performance and user experience when working with large data sets.
+
+#### searchText
+
+`searchText` mirrors the text entered in the table's search bar by the user.
+
+To bind a widget using this property, enter the code snippet given below:
+
+```javascript
+{{<table_name>.searchText}}
+```
+
+The following video shows how to bind a text widget to `Table_1` using searchText.
+
+<VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
+
+### Searching
+
+A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event is triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
+
+<VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>
+
+1. Call the API / query with the **onSearchTextChange** event in the table's properties pane.
+2. Pass the value of `Table1.searchText` within the API request / query.
+
+As a SQL string:
+```sql
+SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
+```
+
+As an API request with URL parameters:
+```
+https://mock-api.appsmith.com/users?name={{Table1.searchText}}
+```
+
+### Server side filtering
+
+Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to be used to filter out unnecessary data from the requested dataset. In this case, you will choose a value that records must match in order to be returned in the query's response.
+
+Server-side filtering requires the use of another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users a list of supported filters to choose from.
+
+1. Drag a select widget to the canvas and add options that you might use to filter your data
+2. Set the table widget's **onOptionChange** event to call your API / query 
+3. Pass the Select widget's `selectedOptionValue` within the API request / query string
+
+As a SQL query:
+```sql
+SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
+```
+
+As an API request with URL parameters:
+```
+https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
+```
+
+### Work with table data
+
+These properties and concepts are used to access your table data with code and process the dataset so the values are correctly formatted in the table widget.
 
 #### selectedRow
 
@@ -253,95 +349,11 @@ The following video shows how to bind a text widget to `Table_1` using **filtere
 
 <VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
 
-#### pageNo
-
-pageNo gets the page number of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
-
-```javascript
-{{<table_name>.pageNo}}
-```
-
-The following video shows how to bind a text widget to `Table_1` using `pageNo`.
-
-<VideoEmbed host="youtube" videoId="DqKok2cCJk0" title="pageNo" caption="pageNo"/>
-
-#### pageSize
-
-`pageSize` shows the total number of rows displayed on a page of the table. `pageSize` can change upon resizing the table.
-To bind a widget using this property, enter the code snippet given below:
-
-```javascript
-{{<table_name>.pageSize}}
-```
-
-The following video shows how to bind a text widget to `Table_1` using pageSize.
-
-<VideoEmbed host="youtube" videoId="XkFJQh4vcCw" title="pageSize" caption="pageSize"/>
-
-#### searchText
-
-`searchText` mirrors the text entered in the table's search bar by the user.
-
-To bind a widget using this property, enter the code snippet given below:
-
-```javascript
-{{<table_name>.searchText}}
-```
-
-The following video shows how to bind a text widget to `Table_1` using searchText.
-
-<VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
-
-### Header options
-
-You can customize which features are available for use in the table header. These features can be turned on or off via their related setting in the table's properties pane:
-
-* Search (toggle with **Allow Searching**)
-* Filters (toggle with **Allow Filtering**)
-* Download (toggle with **Allow Download**)
-* Add a row (toggle with **Allow adding a row**)
-* Pagination (toggle with **Show Pagination**)
-
-## Events
-
-These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
-
-| Action                 | Description               |
-| ---------------------- | ------------------------- |
-| **onRowSelected**      | Sets the action to run when the user selects a row.   |
-| **onPageChange**       | Sets the action to run when the table's page changes.  |
-| **onPageSizeChange**   | Sets the action to run when the table's height is changed. This event can only be triggered by developers working on the app, not by end users. For example, it can be used to set a Limit in your query dynamically. |
-| **onSearchTextChange** | Sets the action to run when the user enters a search text.     |
-| **onSort**             | Sets the action to run when the user sorts the data.          |
-
-## Styles
-
-Style properties allow you to change the look and feel of the table. There are several options, such as:
-
-* Changing the style and size of the font
-* Text alignment
-* Choosing the color of text or cell backgrounds
-
-| Style                     | Description                                              |
-| ------------------------- | -------------------------------------------------------- |
-| **Default Row Height**    | Sets the height of the row in the table - short, default, or tall.  |
-| **Text Size**             | Sets the size of the text.                               |
-| **Emphasis**              | Sets a font style for text, such as **bold** or _italic_.|
-| **Text Align**            | Sets how text is aligned horizontally within the cells.  |
-| **Vertical Alignment**    | Sets where the cell contents are vertically positioned within the cells. |
-| **Cell Background Color** | Sets the background color of the table cells.            |
-| **Text Color**            | Sets the color for the text in the table.                |
-| **Cell Borders**          | Sets the border configuration for the table's cells. Default (all borders), horizontal borders only, or no borders. |
-| **Border Radius**         | Sets rounded-ness for the widget's corners.              |
-| **Box Shadow**            | Sets a shadow around the widget's edges.                 |
-| **Border Color**          | Sets the color of the widget's borders.                  |
-| **Border Width**          | Sets the thickness of the widget's borders.              |
-
-## Transforming table data
+#### Transform table data
 
 Some API / Query responses might have deeply nested, unnecessary, or poorly formatted fields. These can be transformed to fit your formatting needs by parsing and processing the data with JavaScript. The JS [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function is highly recommended for processing raw data from your queries to fit your table correctly.
 
-### Example
+##### Example
 
 ```
 https://api.github.com/repos/appsmithorg/appsmith/issues
@@ -369,50 +381,7 @@ To format this data, you can write a [map function](https://developer.mozilla.or
 
 ![](</img/github_table_formatted.png>)
 
-## Server side searching / filtering
-
-Tables come with client side searching and filtering out of the box. This is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search and filter terms to the server, so that it only needs to fetch data that's relevant. This can significantly improve performance and user experience when working with large data sets.
-
-To perform these operations, update your widgets and API / queries to handle search and filter terms:
-
-### Searching
-
-A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event is triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
-
-<VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>
-
-1. Call the API / query with the **onSearchTextChange** event in the table's properties pane.
-2. Pass the value of `Table1.searchText` within the API request / query.
-
-As a SQL string:
-```sql
-SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
-```
-
-As an API request with URL parameters:
-```
-https://mock-api.appsmith.com/users?name={{Table1.searchText}}
-```
-
-### Filtering
-
-Server-side filtering requires the use of another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users a list of supported filters to choose from.
-
-1. Drag a select widget to the canvas and add options that you might use to filter your data
-2. Set the table widget's **onOptionChange** event to call your API / query 
-3. Pass the Select widget's `selectedOptionValue` within the API request / query string
-
-As a SQL query:
-```sql
-SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
-```
-
-As an API request with URL parameters:
-```
-https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
-```
-
-## Refresh table data in real time
+#### Update table data in real time
 
 If you want to update data in the table periodically without requiring users to trigger the refreshes, you can use the `setInterval` function.
 
@@ -437,3 +406,31 @@ In this example, you'll use the [Switch widget](/reference/widgets/switch/) `Swi
 Here, the `setInterval` function calls the `getData` query every 2 seconds once the switch widget is turned on, or it stops the cycle if it's switched off.
 
 ![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
+
+### Table header options
+
+You can customize which features are available for use in the table header. These features can be turned on or off via their related setting in the table's properties pane:
+
+1. Search (toggle with **Allow Searching**)
+
+    Toggles visibility of the table widget's search bar.
+
+2. Filters (toggle with **Allow Filtering**)
+
+    Toggles visibility of the table widget's filtering options.
+
+3. Download (toggle with **Allow Download**)
+
+    This button prompts the user to choose a file format (.CSV or Excel spreadsheet) and initiates the file download in the user's browser.
+
+    - **CSV separator**
+
+        Sets the separator character to use for formatting the downloaded .csv file. The default separator character is a comma `,`. This setting only applies when **Allow Download** is turned on.
+
+4. Add a row (toggle with **Allow adding a row**)
+
+    This button inserts a new row into the table for the user to fill in. Read about [inline editing](/reference/widgets/table/inline-editing#allow-adding-a-row) for more details.
+
+5. Pagination (toggle with **Show Pagination**)
+
+    Toggles visibility of the page cycle buttons, and toggles showing total number of records and pages in the header.
