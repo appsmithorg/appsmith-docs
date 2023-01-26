@@ -45,7 +45,7 @@ You can add **secrets** to **APIs** or **datasource configurations** as they are
 
 ## Sandboxing iframe widgets
 
-The `iframe` widget on older versions of Appsmith are vulnerable to XSS attacks. This was fixed in v1.8.6 of Appsmith. In order to for this fix is applied on your Appsmith instance, please ensure you have the following environment variable set in your `stacks/configuration/docker.env` file:
+The `iframe` widget on older versions of Appsmith are vulnerable to XSS attacks. This was fixed in v1.8.6 of Appsmith. For this fix to be applied on your Appsmith instance, please ensure you have the following environment variable set in your `stacks/configuration/docker.env` file:
 
 ```sh
 APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX=false

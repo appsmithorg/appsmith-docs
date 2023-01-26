@@ -7,7 +7,7 @@ description: Iframe widget is used to display iframes in your app.
 ![Use iframes to embed other webpages within your applications](</img/as_iframe_cover.png>)
 
 :::info
-**Heads-up**: Please ensure you have your iframe widgets sandboxed. See [Security](/product/security#sandboxing-iframe-widgets) for more information.
+**Heads-up**: please ensure you have your iframe widgets sandboxed. See [Security](/product/security#sandboxing-iframe-widgets) for more information.
 :::
 
 ## Properties
