@@ -1,3 +1,8 @@
+---
+toc_min_heading_level: 2
+toc_max_heading_level: 3
+---
+
 # Table
 
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets. Once a table is connected to a datasource, you can also use [inline-editing](/reference/widgets/table/inline-editing) features to make changes and additions to the table data directly in the widget.
@@ -76,7 +81,7 @@ Style properties allow you to change the look and feel of the table. There are s
 | **Border Color**          | Sets the color of the widget's borders.                  |
 | **Border Width**          | Sets the thickness of the widget's borders.              |
 
-### Display data in tables
+## Display data in tables
 
 These properties are used to pipe data into your table widget and manage the behavior of its individual columns.
 
@@ -122,7 +127,7 @@ Toggles whether table columns are sort-able. When turned on, users may click col
 
 By clicking the "+ ADD A NEW COLUMN" button, you can insert your own custom column into your dataset. These can be used for a wide variety of purposes, including adding button- or checkbox-type columns alongside your data. You can adjust the settings for this column just like any other.
 
-### Server side pagination
+## Server side pagination
 
 Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. To paginate this data and request smaller chunks of data at a time:
 
@@ -177,7 +182,7 @@ Once the `get_count` query is successfully created, enter the following code to 
 {{get_count.data[0].count}}
 ```
 
-#### Offset based pagination
+### Offset based pagination
 
 This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** fields of the table and is used in both APIs and Queries.
 
@@ -191,7 +196,7 @@ SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ (Table1.pageNo - 1) * 
 https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 ```
 
-#### Key based pagination
+### Key based pagination
 
 This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
 
@@ -215,7 +220,7 @@ The following video shows how to bind a text widget to `Table_1` using searchTex
 
 <VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
 
-### Searching
+#### Searching
 
 A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event is triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
 
@@ -254,7 +259,7 @@ As an API request with URL parameters:
 https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
 ```
 
-### Work with table data
+## Work with table data
 
 These properties and concepts are used to access your table data with code and process the dataset so the values are correctly formatted in the table widget.
 
@@ -349,11 +354,11 @@ The following video shows how to bind a text widget to `Table_1` using **filtere
 
 <VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
 
-#### Transform table data
+### Transform table data
 
 Some API / Query responses might have deeply nested, unnecessary, or poorly formatted fields. These can be transformed to fit your formatting needs by parsing and processing the data with JavaScript. The JS [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function is highly recommended for processing raw data from your queries to fit your table correctly.
 
-##### Example
+#### Example
 
 ```
 https://api.github.com/repos/appsmithorg/appsmith/issues
@@ -381,7 +386,7 @@ To format this data, you can write a [map function](https://developer.mozilla.or
 
 ![](</img/github_table_formatted.png>)
 
-#### Update table data in real time
+### Update table data in real time
 
 If you want to update data in the table periodically without requiring users to trigger the refreshes, you can use the `setInterval` function.
 
@@ -407,7 +412,7 @@ Here, the `setInterval` function calls the `getData` query every 2 seconds once 
 
 ![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
 
-### Table header options
+## Table header options
 
 You can customize which features are available for use in the table header. These features can be turned on or off via their related setting in the table's properties pane:
 
