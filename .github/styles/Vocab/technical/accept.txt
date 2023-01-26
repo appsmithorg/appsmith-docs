@@ -156,6 +156,7 @@ boolean
 Application
 Port
 OnSuccess
+fileType
 sudo
 13-23
 Docker Compose

@@ -1,6 +1,6 @@
 # OAuth 2.0
 
-[Open Authentication (OAuth 2.0)](https://oauth.net/2/) is an open-standard authorization protocol that allows you to share information between services without relieving or exchanging your password. It is a widely used standard by developers to exchange information securely and thus provides **secure designated access** to the applications. For example, you can tell GitHub to give access to Appsmith to merge or create pull requests on your behalf without sharing your password. Thus, giving you the flexibility to allow the interaction between applications without exposing your password.
+[Open Authentication (OAuth 2.0)](https://oauth.net/2/) is an open-standard authorization protocol that allows you to share information between services without revealing or exchanging your password. It is a widely used standard by developers to exchange information securely and thus provides **secure designated access** to the applications. For example, you can tell GitHub to give access to Appsmith to merge or create pull requests on your behalf without sharing your password. Thus, giving you the flexibility to allow the interaction between applications without exposing your password.
 
 By using OAuth 2.0, you minimize the security risk. It ensures that even if the associated application is breached, your password is safe as it was never exposed.
 
