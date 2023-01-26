@@ -1,6 +1,6 @@
 # Architecture
 
-Appsmith is available via the [cloud](http://app.appsmith.com/user/sign-up) as well as [self-hosted](/getting-started/setup#self-hosted) instances. It comes in [two versions](https://www.appsmith.com/pricing): Community and Business. Both of these are extremely similar in build and architecture, deployed as a single Docker container with a single volume for storing persistent data.
+Appsmith is available via the [cloud](http://app.appsmith.com/user/sign-up) as well as [self-hosted](/getting-started/setup#self-hosted) instances. It comes in [two versions](https://www.appsmith.com/pricing): Community and Business. Both of these are extremely similar in build and architecture and are deployed as a single Docker container with a single volume for storing persistent data.
 
 Read further to learn about how the Appsmith platform works under the hood.
 
@@ -16,9 +16,9 @@ A single Docker container runs the following processes to deploy and get started
 
 1. The **Appsmith Server** (backend) as a Java process, which handles:
     1. Authentication: login credentials, OAuth 2.0 with [Google](/getting-started/setup/instance-configuration/authentication/google-login) and [GitHub](http://localhost:3000/getting-started/setup/instance-configuration/authentication/github-login), SSO with [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) and [SAML](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
-    2. A CRUD API for users, workspaces, applications, pages, widgets
+    2. A CRUD API for users, workspaces, applications, pages, and widgets
     3. An action execution module that executes your queries to your databases and APIs
-    4. A git module that maintains clones of your Git-connected apps on the file system.
+    4. A git module that maintains clones of your Git-connected apps on the file system
 
 2. The **NGINX Server**, which routes:
     1. Requests to static assets like Javascript, CSS, and images
@@ -42,9 +42,9 @@ To manage the processes needed to function, Appsmith uses [Supervisor](http://su
 
 Supervisor comes with a command line tool called `supervisorctl` that's used to control these processes individually. For example, running `supervisorctl restart redis` restarts the Redis process. Or, as another example, the `Save and Restart` button under `Admin Settings` on the Appsmith UI is powered by the `supervisorctl` tool; clicking that button after making changes with the UI prompts the backend server to execute `supervisorctl restart backend`, which restarts the backend process.
 
-When you run the Docker command to start the Appsmith container, Supervisor identifies which processes are required to start and run. This includes the backend server, the RTS, and the NGINX server -- as well as any additional processes that haven't been plugged in by the user externally, such as a custom MongoDB or Redis instance.
+When the user runs the Docker command to start the Appsmith container, Supervisor identifies which processes are required to start and run. This includes the backend server, the RTS, and the NGINX server, as well as any additional processes that haven't been plugged in by the user externally, such as a custom MongoDB or Redis instance.
 
-For each of the processes in Appsmith, the container’s entry-point script (the one that Docker invokes when the container starts) generates a config file with all the details needed for the Supervisor daemon. For example, the config file generated for the backend Java server includes the full set of commands for starting the process, as well as all necessary environment variables and settings. This same entry-point script also helps set up SSL certificates and install custom CA roots.
+For each of the processes in Appsmith, the container’s entry-point script (which Docker invokes when the container starts) generates a config file with all the details needed for the Supervisor daemon. For example, the config file generated for the backend Java server includes the full set of commands for starting the process, as well as all necessary environment variables and settings. This same entry-point script also helps set up SSL certificates and install custom CA roots.
 
 ## Deployment
 
