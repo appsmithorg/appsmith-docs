@@ -11,8 +11,8 @@ Properties allow you to edit the table, connect it with other widgets and custom
 | Property       | Type | Definition | Code Snippet |
 | ---------------|------|------------|--------------|
 | [**Table Data**](#table-data)                 | Widget | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax. |
-| [**Columns**](#columns)                    | Widget | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.
-| [**Cell wrapping**](#cell-wrapping)              | Formatting | Controls how overflowing contents of the column are handled. When turned on, the contents wrap to the next line.                                                         |
+| [**Columns**](#columns)                    | Widget | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.   |
+| **Primary key column** | Widget | Assigns a unique column which helps maintain `selectedRows` and `triggeredRows` based on value. Affects the performance of caching the dataset for quick loading and access. |
 | **Show Pagination** | Formatting | Toggles visibility for the page information and control buttons in the table header. |
 | [**Server Side Pagination**](#server-side-pagination)     | Widget | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |
 | [**Total Records**](#total-records) | Widget | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
