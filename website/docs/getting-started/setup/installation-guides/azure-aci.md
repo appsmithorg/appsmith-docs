@@ -18,7 +18,7 @@ If you already have an Amazon Web Services account, you may skip this step.
 Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) in order to create an account on AWS.
 
 
-### Set Basic variable details
+### Configure variables
 Open a bash shell and set the following variables
 ```
 resourceGroupName="myResourceGroup"
