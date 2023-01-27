@@ -1,4 +1,4 @@
-  ---
+---
 description: Appsmith can be deployed locally or on a private instance using Docker
 sidebar_position: 1
 ---
@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Docker
 
-Docker is an open-source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into standardized executable components called containers. These containers combine the application's source code with the Operating System (OS) libraries and dependencies required to run that code in any environment.
+Docker is an open source [containerization](https://www.ibm.com/in-en/cloud/learn/containerization) platform. It enables developers to package applications into standardized executable components called containers. These containers combine the application's source code with the Operating System (OS) libraries and dependencies required to run that code in any environment.
 
 <VideoEmbed host="youtube" videoId="Tde7GqE6FQQ" /> 
 
@@ -90,7 +90,7 @@ To update Appsmith manually, go to the root directory of the installation and ru
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-### Enabling Appsmith auto-updates
+### Enabling Appsmith auto updates
 
 Automatic updates are turned off by default in the `docker-compose.yml` file. To enable them, please follow these steps:
 
@@ -188,7 +188,7 @@ docker logs -f appsmith
 
 ## Restarting containers
 
-If the Docker containers are failing to restart, download and run the [`restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
+If the Docker containers are failing to restart, download, and run the [`restart-container.sh`](/img/restart-container.sh) script linked below to bring them up:
 
 Copy the script (`restart-container.sh`) to the installation folder and make it executable:
 
@@ -199,7 +199,7 @@ chmod +x restart-container.sh
 
 ## Troubleshooting
 
-If there are any errors during this process, follow the guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If there are still issues, please get in touch with [support@appsmith.com](mailto:support@appsmith.com) or join the Appsmith [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
+If there are any errors during this process, follow the guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors) or send an email to [support@appsmith.com](mailto:support@appsmith.com) or join the Appsmith [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
 
 ## Further reading
 
