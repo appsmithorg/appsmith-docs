@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Azure Container Instance
 Azure Container Instances (ACI) is a fast and simple way to run containers in the cloud.
-In this document, we will guide you through the process of launching an ACI instance and running an Appsmith container on it. The data will be persisted to an Azure Storage Account File Share 
+This document guides you through the process of launching an ACI instance and running an Appsmith container on it. The data persists in Azure Storage Account File Share.
 note: Azure only supports CIFS file shares and NFS file shares are not yet supported.
 
 ### Prequisite
