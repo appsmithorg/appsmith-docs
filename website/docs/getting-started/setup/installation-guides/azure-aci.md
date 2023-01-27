@@ -10,7 +10,7 @@ This document guides you through the process of launching an ACI instance and ru
 Azure only supports CIFS file shares and NFS file shares aren't yet supported.
 :::
 
-### Prequisite
+### Prequisites
 Before you can launch an ACI instance, you need to have an Azure subscription and have the Azure CLI installed on your machine. If you do not have an Azure subscription, you can sign up for a free trial at **[https://azure.com/free](https://azure.com/free)**.
 
 If you already have an Amazon Web Services account, you may skip this step.
