@@ -4,11 +4,11 @@ description:
 ---
 
 # How to Use Data from Async Functions in Sync Fields
-In Appsmith, it's common to use [async/await](/core-concepts/writing-code/javascript-promises#asyncawait)  functions to handle asynchronous operations. For example, fetching data from an API or a database. Using async functions in sync fields can be more complex when binding data to a widget.
+In Appsmith, it's common to use [async/await](/core-concepts/writing-code/javascript-promises#asyncawait) functions to handle asynchronous operations. For example, fetching data from an API or a database. Using async functions in sync fields can be more complex when binding data to a widget.
 
  <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Using data from Async function in Synchronous Field" caption="Using data from Async function in Synchronous Field"/> 
 
-This guide helps you understand using async functions in sync fields. It focuses on a practical use case and code examples to fetch data by triggering APIs,  JS Object, or a query.
+This guide helps you understand using async functions in sync fields. It focuses on a practical use case and code examples to fetch data by triggering APIs, JS Object, or a query.
 
 ## Display user information on a page
 
@@ -66,7 +66,7 @@ When using a query, you execute a query and bind the response to the table widge
  <VideoEmbed host="youtube" videoId="hqkI0h7DQ-s" title="Using a Query" caption="Using a Query"/>  
 
 
-1. Navigate to the Explorer tab and click Queries/JS and select `<DATASOURCE_NAME> Query`. For example, users query where users is datasource name.
+1. Navigate to the Explorer tab and click `Queries/JS` and select `<DATASOURCE_NAME> Query`. For example, users query where `users` is a datasource name.
 2. Rename the query to `getAllUsers`. Alternatively, you can use an existing Query.
 3. In the query, you can write your SQL statement to fetch the data from the database as shown below:
 ```sql
@@ -78,9 +78,9 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ```
 When using the `data` attribute, Appsmith executes the query, generates the data and shows it in a Table widget.
 
-## Pro tips
+## Pro-tips
 It's important to note that the [Table Data](/reference/widgets/table#table-data) property is a synchronous field and expects data to be passed to it. If you bind a run method, it results in an error. For more information on troubleshooting this issue, see the [Sync field errors](/help-and-support/troubleshooting-guide/widget-errors#sync-field-error.) section.
 
-You can choose to execute the API or query when the page is loaded by enabling the "Run on page load" option in the Query or API settings. For more information, see the [Run on page load](/core-concepts/data-access-and-binding/querying-a-database/query-settings#run-query-on-page-load) section. Additionally, you can configure similar settings for asynchronous functions. For more information, see the [Asynchoronous JavaScript Function Settings](/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings) section.
+You can choose to execute the API or query when the page is loaded by enabling the "Run on page load" option in the Query or API settings. For more information, see the [Run on page load](/core-concepts/data-access-and-binding/querying-a-database/query-settings#run-query-on-page-load) section. Additionally, you can configure similar settings for asynchronous functions. For more information, see the [Asynchronous JavaScript Function Settings](/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings) section.
 
 At this point, you have gained a deeper understanding of how to use data from async functions in sync fields within Appsmith. By applying this knowledge, you can now create more powerful and dynamic apps with Appsmith.

@@ -3,7 +3,7 @@ A JavaScript Promise helps to handle asynchronous operations. It registers callb
 
  <VideoEmbed host="youtube" videoId="VuBycqPJVug" title="How to use JS Promises and Async/Await" caption="How to use JS Promises and Async/Await"/>
 
-Appsmith APIs like [showAlert()](/reference/appsmith-framework/widget-actions/show-alert.md), [showModal()](/reference/appsmith-framework/widget-actions/show-modal.md), [storeValue()](/reference/appsmith-framework/widget-actions/store-value.md), [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to.md), and more returns a promise, making asynchronous workflow's implementation easier and readable.
+Appsmith framework functions like [showAlert()](/reference/appsmith-framework/widget-actions/show-alert.md), [showModal()](/reference/appsmith-framework/widget-actions/show-modal.md), [storeValue()](/reference/appsmith-framework/widget-actions/store-value.md), [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to.md), and more returns a promise, making asynchronous workflow's implementation easier and readable.
 
 To understand the difference between callbacks and Promise implementation, consider an example. You execute three APIs in sequence and show a message "done" when all the APIs have finished running successfully.
 
@@ -69,16 +69,16 @@ Remember to always return the promise for `.then` or `.catch` blocks to work as 
 ```javascript title='Return Promise for .then'
 {{
   (function() {
-	// incorrect
-    MockApi.run().then(() => showAlert(`Success`))	
+	 
+    ❌ MockApi.run().then(() => showAlert(`Success`))	
 	//highlight-next-line
-    return MockApi.run().then(() => showAlert(`Success`)) // correct
+    ✅ return MockApi.run().then(() => showAlert(`Success`)) // correct
    })()
 }}
 ```
 
 ### Promise.any()
-It takes an iterable of promises. Once one of the promises is fulfilled it returns a single promise that resolves with that Promise's value. For more information, see [Promise.any()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any) available on official MDN web docs. You can use `Promise.any()` when you want only one action/promise to finish the execution.
+It takes a collection of promises. Once one of the promises is fulfilled it returns a single promise that resolves with that Promise's value. For more information, see [Promise.any()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any) available on official MDN web docs. You can use `Promise.any()` when you want only one action/promise to finish the execution.
 
 The below example code shows the use of `Promise.any()`:
  
@@ -179,7 +179,7 @@ In the example:
 ## Using Promises in Appsmith
 Here are some general guidelines for using Promises in Appsmith:
 
-* Most action triggers in Appsmith now return promises so you can attach a `.then / await` to wait for the action before proceeding.
+* Most action triggers in Appsmith now return promises, so you can attach a `.then / await` to wait for the action before proceeding.
 * All triggers are wrapped in a promise, so any missed error results in an uncaught promise error.
 * Return promise with `.then` attached to it, as shown below:
 
@@ -210,10 +210,9 @@ Here are some general guidelines for using Promises in Appsmith:
 ```javascript
 {{
   (function() {
-	// incorrect
-	MockApi.run().then(showAlert(`Success`))
+	❌ MockApi.run().then(showAlert(`Success`))
 	//highlight-next-line
-	return MockApi.run().then(() => showAlert(`Success`)) // correct
+	✅ return MockApi.run().then(() => showAlert(`Success`))
       
    })()
 }}

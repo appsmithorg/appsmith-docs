@@ -8,16 +8,16 @@ toc_max_heading_level: 5
 
 # Creating Workflows
 
-AAppsmith lets you create dynamic and responsive web applications. It empowers developers to design user interfaces that adapt to user interactions and execute advanced operations like data retrieval, manipulation, and event triggering. Appsmith facilitates adding, configuring, and using widgets, queries, actions, JS Objects, and JavaScript functions to build different workflows. Additionally, it allows for more advanced functionalities such as parallel, serial, and conditional execution of queries.
+Appsmith lets you create dynamic and responsive web applications. It empowers developers to design user interfaces that adapt to user interactions and execute advanced operations like data retrieval, manipulation, and defining actions on event triggers. Appsmith facilitates adding, configuring, and using widgets, queries, actions, JS Objects, and JavaScript functions to build different workflows. Additionally, it allows for more advanced functionalities such as parallel, serial, and conditional execution of queries.
 
 ## Programming widgets
-[Widgets](/reference/widgets) are the building blocks of any Appsmith application. They're used to display information on the page and respond to user interactions.
+In Appsmith, [widgets](/reference/widgets) are the building blocks of any Appsmith application. They display information on the page and respond to user interactions. When data changes within your app, your widgets need to update to reflect these changes.
 
-When working with widgets in Appsmith, it's important to understand that Appsmith follows the reactive programming paradigm. This means that, instead of updating widget properties and states through direct variable assignment, widgets are connected and share data, so when one value is updated, any objects that depends on it also updates automatically.
+When working with widgets in Appsmith, it's important to understand that Appsmith follows the **reactive programming paradigm**. This means that, instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data, so when one value is updated, any objects that depend on it also update automatically.
 
 For example, you have an [Input](/reference/widgets/input) widget where the user can enter text, and a [Button](/reference/widgets/button) widget with a label. You want to update the button's label based on the user's input. By using the reactive programming, the user types into the Input widget, and the label of the Button updates in real time to reflect the current user input. You can also check out the below video to understand how this works in a more visual way.
 
-<VideoEmbed host="youtube" videoId="34G1sCaRnvI" title="How to set properties in widgets?" caption="How to set properties in widgets?" />
+<VideoEmbed host="youtube" videoId="34G1sCaRnvI" title="How to set properties in widgets dynamically?" caption="How to set properties in widgets dynamically?" />
 
 Consider another scenario, where you want to allow the editing of input widget only after clicking the "Edit" button. To achieve this using imperative programming, input widgets can be set to read-only when editing is turned off.
 
@@ -50,7 +50,7 @@ Widgets have fields/properties that you can use to bind data or trigger operatio
 
 #### Sync fields
 
-Sync fields are fields/properties that expect input or data in the properties pane. These fields show the changed information that occurs due to triggered actions.
+Sync fields are fields/properties that expect input or data in the `properties` pane. These fields can be programmed to show the updated information that occurs due to triggered operations.
 
 ![Input widget - Sync Fields](</img/Writing_Code__Creating_Workflows__Sync_Fields__Input_Widget.png>)
 
@@ -60,14 +60,18 @@ For example, when you add an Input widget to the canvas, properties such as `Max
 
 Async fields are properties that can trigger an action or perform an operation.
 
-![Input Widget - Async Fields](</img/Writing_Code__Creating_Workflows__Async_Fields__Input_Widget.png>)
+![Input Widget -Async Fields](</img/Writing_Code__Creating_Workflows__Async_Fields__Input_Widget.png>)
 
 For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an [action](/reference/appsmith-framework/widget-actions) or perform and operation like [API or Query](/core-concepts/data-access-and-binding/querying-a-database#running-a-query) execution.
 
 #### Async function data in a sync field
-When working with data in Appsmith, it's important to understand how to use async functions in sync fields. Asynchronous functions can be a powerful tool, but they can also be a source of errors if not used correctly. For more information, see [How to use data from async functions in sync fields](/learning-and-resources/how-to-guides/how-to-use-data-from-async-functions-in-sync-fields).
+When working with data in Appsmith, it's important to understand how to use async functions in sync fields.
 
-#### Trigger Actions when event occurs
+ <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Using data from Async function in Synchronous Field" caption="Using data from Async function in Synchronous Field"/> 
+
+For more information, see [How to use data from async functions in sync fields](/learning-and-resources/how-to-guides/how-to-use-data-from-async-functions-in-sync-fields).
+
+### Trigger actions when event occurs
 [Actions](/reference/appsmith-framework/widget-actions) in Appsmith are predefined functions that provide a way to perform specific operations in response to user interactions or other events in your app. 
 
 You can trigger actions by binding them to Events(Async fields). For example, you want to execute a query on a button click and show a success message after the query has been executed. You can bind [showAlert()](/reference/appsmith-framework/widget-actions/show-alert) function on the `onSuccess` callback for `onClick()` event.
@@ -79,16 +83,16 @@ You can trigger actions by binding them to Events(Async fields). For example, yo
 <VideoEmbed host="youtube" videoId="tjJIDkoCyQE" title="Global Functions" caption="Executing actions when event occurs"/> 
 
 :::info
-You can use **Actions** provided by the Appsmith framework only in  *Async fields**. 
+You can use **Actions** provided by the Appsmith framework only in *Async fields**. 
 :::
 
-#### Handle query success or error
+### Handle query success or error
 
 When configuring API or query executions, you might have to provide feedback or call other action/operation. For example, you have to provide feedback to the user about the outcome of the action. This can be done by displaying success messages when an action is completed successfully or error messages when there are issues with the execution.
 
 <VideoEmbed host="youtube" videoId="4aEMFU1r1yg" title="Handling query success or error" caption="Handling query success or error"/>
 
-You can configure the action to be executed once a query returns with a success or an error. The success or error returned by the API or query can be determined by the HTTP status code or the query response status. These status code are bound to `onSuccess` and `onError` attributes of events and available in property pane to be setup for showing informative messages to end users.
+You can configure the action to be executed once a query returns with a success or an error. The success or error returned by the API or query can be determined by the HTTP status code or the query response status. The status codes are bound to `onSuccess` and `onError` callbacks and available in property pane to be setup for showing informative messages to end users.
 
 You can also choose to write custom JavaScript code by enabling the `JS` label next to event, and add the code you wish to trigger on success or when an error is generated, as shown below:
 
@@ -117,7 +121,7 @@ Operations can be chained to execute conditionally based on the value of a widge
 
 <VideoEmbed host="youtube" videoId="N_M-i9dnweo" title="Trigger multiple operations based on user input" caption="Trigger multiple operations based on user input"/>
 
-In this scenario, `Choose_operations` is a select widget that allows the user to select various options. Based on the selected option, the corresponding query is triggered and the generated data is displayed in a table widget.
+In this scenario, `Choose_operations` is a select widget that allows the user to select various options. Based on the selected option, the corresponding query is triggered, and the generated data is displayed in a table widget.
 
 You can also chain the queries to execute conditionally based on the value of a widget or the response of a Query on events, as shown in the code example below:
 
@@ -134,7 +138,7 @@ You can also chain the queries to execute conditionally based on the value of a 
 ```
 
 ### Parallel execution
-Parallel execution of queries in Appsmith allows you to retrieve data from multiple sources simultaneously. This can be useful when you have multiple queries that need to be executed and the result of one query doesn't depend on the other.
+When executing queries in parallel, Appsmith allows you to retrieve data from multiple sources simultaneously. This can be useful when you have multiple queries that need to be executed and the result of one query doesn't depend on the other.
 
 Each query object in Appsmith has a run method that can be used to execute the query. For example, to execute multiple queries in parallel on a button's click, select the JS label next to `onClick` event and separate the run statements using a semicolon `(;)`. This executes the queries simultaneously, allowing you to retrieve data from multiple sources in parallel:
 
