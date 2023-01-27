@@ -155,6 +155,7 @@ Application
 Port
 OnSuccess
 onSuccess
+fileType
 sudo
 13-23
 Docker Compose
@@ -163,3 +164,6 @@ Postgres
 untrusted
 Filepicker
 Cloudinary
+Port
+subnet
+auto-configure
