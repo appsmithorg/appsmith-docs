@@ -75,7 +75,7 @@ az container create \
   --environment-variables 'APPSMITH_LICENSE_KEY'='<Your Appsmith License>'
 ```
 
-## Updating to the latest Appsmith release
+## Updating Appsmith
 
 1. Navigate to the ACI on the Azure Portal
 2. Click the ACI running Appsmith
