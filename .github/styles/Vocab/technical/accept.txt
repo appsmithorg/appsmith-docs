@@ -163,3 +163,5 @@ Backend
 Postgres
 untrusted
 Port
+subnet
+auto-configure

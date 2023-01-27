@@ -49,7 +49,7 @@ exceptions:
   - Redis
   - DigitalOcean
   - Docker
-  - K8s
+  - K8s   
   - Framework
   - Promises
   - Actions
@@ -58,3 +58,5 @@ exceptions:
   - Promise.any()
   - Promise.race()
   - Async/Await
+  - Amazon Web Services
+  - SSH
