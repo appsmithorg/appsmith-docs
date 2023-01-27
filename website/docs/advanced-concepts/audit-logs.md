@@ -124,7 +124,7 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **query.created** | Logged when a new query is created. |
 | **query.updated** | Logged when a user edits an existing query's configuration. |
 | **query.deleted** | Logged when a query is deleted. |
-| **query.executed** | Logged when an existing query runs. This applies both in Edit and View modes. |
+| **query.executed** | Logged when an existing query runs. This applies both in Edit and View modes. We include the execution parameters of the query in the log, up to a limit of 5 MB. |
 | **user.logged_in** | Logged when a user signs in. |
 | **user.logged_out** | Logged when a user signs out. |
 | **user.invited** | Logged when someone invites another user to the app or workspace. |
