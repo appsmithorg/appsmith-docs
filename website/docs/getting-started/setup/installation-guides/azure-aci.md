@@ -40,7 +40,7 @@ dnsNameLabel="myDNSLabel"
 ### Create a file share
 `az storage share create --name $fileShareName --account-name $storageAccountName --account-key $storageAccountKey`
 
-### Create an Appsmith ACI with the storage account and file share mounted
+### Create Appsmith ACI
 ```
 az container create \
   --resource-group $resourceGroupName \
