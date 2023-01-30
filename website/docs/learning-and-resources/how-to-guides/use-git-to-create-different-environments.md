@@ -1,4 +1,4 @@
-# How To Use Git To Create Different Environments
+# Use Git to Create Different Environments
 
 In this guide, you’ll learn how to create different environments for your App using the Git connection in Appsmith.
 
