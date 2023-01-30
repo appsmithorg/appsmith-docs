@@ -154,6 +154,11 @@ dyno
 Application
 Port
 OnSuccess
+postWindowMessage
+Cross-origin 
+windowMessageListener
+unlistenWindowMessage
+continue on 
 fileType
 sudo
 13-23
