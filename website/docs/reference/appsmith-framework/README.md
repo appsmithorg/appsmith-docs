@@ -5,4 +5,4 @@ The Appsmith framework provides utility functions and objects to get information
 - [Context Object](context-object.md)
 - [Console Object](console-object.md)
 - [Query Object](query-object.md)
-- [Widget Actions](widget-actions/README.md)
+- [Actions](widget-actions/README.md)

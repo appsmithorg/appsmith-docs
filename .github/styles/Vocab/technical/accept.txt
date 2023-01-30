@@ -159,6 +159,12 @@ excelJS
 Application
 Port
 OnSuccess
+postWindowMessage
+Cross-origin 
+windowMessageListener
+unlistenWindowMessage
+continue on 
+fileType
 sudo
 13-23
 Docker Compose
@@ -166,5 +172,8 @@ Backend
 Postgres
 untrusted
 Port
-
+GSheet
+Twilio
+subnet
+auto-configure
 
