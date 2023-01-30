@@ -7,7 +7,7 @@ description: Iframe widget is used to display iframes in your app.
 ![Use iframes to embed other webpages within your applications](</img/as_iframe_cover.png>)
 
 :::info
-**Heads-up**: please ensure you have your iframe widgets sandboxed. By default, this is enabled for all Appsmith instances. See [Security](/product/security#sandboxing-iframe-widgets) for more information.
+**Ensure you have your Iframe widgets sandboxed. By default, this is enabled for all Appsmith instances. See [Security](/product/security#sandboxing-iframe-widgets) for more information.
 :::
 
 ## Properties
