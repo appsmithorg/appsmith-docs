@@ -59,10 +59,9 @@ Databases configured within one page of an app can be accessed by developers any
 ## General notes
 Appsmith establishes a connection pool with the database server when you first connect the database to your app. This allows subsequent queries to be executed efficiently. If an idle connection is closed by the database server, Appsmith creates a new connection for the next query.
 
-For certain database plugins such as PostgreSQL and MySQL, Appsmith maintains a connection pool because multiple queries can't be run on a single connection.
+for certain database plugins such as PostgreSQL, MySQL, Redis, and a few more. Appsmith explicitly creates and maintains a connection pool because, usually, a single connection is not designed to handle multiple simultaneous queries.
 
-The maximum number of connections in the pool is limited to 5. This limit applies solely to the number of connections in the pool and not to the number of concurrent queries.
-
+The maximum number of connections in a pool is limited to 5. Please note that max 5 connections in a pool doesn't mean that a max of 5 queries can be run concurrently using this pool. The number of concurrent queries that this pool can run is usually much higher. 
 
 ## Troubleshooting
 If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](https://chat.openai.com/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).

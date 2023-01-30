@@ -12,7 +12,7 @@ If you want to access an API that's not publicly available on the internet, you 
 
 ## REST API query editor
 
-The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and allows you to configure API values in the headers, query parameters, and request body fields.
+The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and allows you to configure values in the headers, query parameters, and request body fields.
 
 ![](</img/create_api_(1).gif>)
 
@@ -37,17 +37,11 @@ The URL Path provides a way to access the API and its functions. To use this fie
 
 ### Headers
 
-HTTP headers are a critical part of the API request and response, as they contain meta-data about the API request and response. Headers carry the following information:
-
-* Request Authorization;
-* Response Caching;
-* Response Cookies.
-
-It's important to be familiar with the major request and response headers, as you may need to set request headers when testing an API, and you may need to set assertions against response headers to ensure that the correct headers are being returned.
+HTTP headers are a critical part of the API request and response, as they contain meta-data about the API request and response. It's important to be familiar with the major request and response headers, as you may need to set request headers when testing an API.
 
 ### Params
 
-In a REST API, parameters are values that are passed in the URL, that are used to filter, sort, paginate, or perform some other operation on a set of data. These parameters allow the API to return a specific set of data based on the values that are provided.
+In a REST API, parameters are values that are passed in the URL, that can be used to filter, sort, paginate, or perform some other operation on a set of data. These parameters allow the API to return a specific set of data based on the values that are provided.
 
 For example, an API might have a parameter called "limit" that specifies the maximum number of results to return, or a parameter called "sort" that determines the order in which the results should be sorted. By providing different values for these parameters, a client can control the data that's returned by the API.
 

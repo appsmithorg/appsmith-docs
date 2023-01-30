@@ -1,6 +1,6 @@
 # REST APIs
 
-APIs are sets of definitions and protocols that enable communication and interaction between software applications using a limited number of instructions. APIs serve as messengers, passing requests from one application to another and instantly returning a response. With Appsmith, you can connect with a wide range of tools and platforms; if there isn't a native integration with a datasource, you can connect through the REST API interface. 
+With Appsmith, you can connect with a wide range of tools and platforms; if there isn't a native integration with a datasource, you can connect through the REST API interface. 
 
 
 ### Connecting to REST API
