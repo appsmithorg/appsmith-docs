@@ -12,6 +12,8 @@ Tables are generally required to display large data sets from [Queries](../query
 2. Call the API / Query onPageChange
 3. Configure pagination in the API / Query
 
+<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="How To Use The Table Page-offset Property For Easier Paginations" caption=""/>
+
 ### Offset Based Pagination
 
 This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the pageNo and pageSize fields of the [Table](../../../reference/widgets/table/) and is used in both APIs and Queries.
