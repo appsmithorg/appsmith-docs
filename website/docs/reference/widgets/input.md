@@ -14,7 +14,7 @@ These properties allow you to edit the Input widget, and are present in the prop
 
 | Widget Property     | Description                                                                                                                                                                                            |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type adds the associated validation to the user input. Choose from Text, Number, Password, or Email.                 |
+| **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type adds the associated validation to the user input. Choose from Single-line text, Multi-line text, Number, Password, or Email.                 |
 | **Default text**    | Sets the widget's default value before the user has made any changes.                                                                                                                                  |
 | **Max Chars**       | Sets a maximum length allowed for user input. Only appears when **Data Type** is set to Text.                                                                                                          |
 | **Min**             | Sets a minimum value allowed for user input. Only appears when **Data Type** is set to Number.                                                                                                         |
@@ -37,11 +37,17 @@ These properties allow you to edit the Input widget, and are present in the prop
 
 #### Data type
 
-As the name suggests, data type allows the user to set the type of data you want in the input box, like- Text, Number, Email, Password.
+As the name suggests, data type allows the user to set the type of data you want in the input box, like- 
+
+* Single-line text
+* Multi-line text
+* Number
+* Password
+* Email
 
 The input box shows an error "invalid input" if the entered data doesn't match the data type or disable the invalid data type input. (If you select the data type as a number, you won't be able to enter text in the input box.)
 
-<VideoEmbed host="youtube" videoId="Ehg74WJeCHo" title="Data type" caption="Data type"/>
+<VideoEmbed host="youtube" videoId="cMUPIKK1_LI" title="Data type" caption="Data type"/>
 
 #### Label
 
