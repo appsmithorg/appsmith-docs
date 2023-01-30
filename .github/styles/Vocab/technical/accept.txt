@@ -167,5 +167,7 @@ Backend
 Postgres
 untrusted
 Port
+GSheet
+Twilio
 subnet
 auto-configure
