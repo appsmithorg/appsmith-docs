@@ -17,6 +17,8 @@ To try this feature yourself, take a look at the [sample app for inline editing]
 | [**Valid**](#valid)                    | Validation  | Enter a JS expression that evaluates whether the user's input is valid.                                                                | NA                             |
 | [**Error Message**](#error-message)            | Validation  | The error message displays if the input fails the **Regex** or **Valid** properties' checks.                                        | NA                             |
 | [**Required**](#required)                 | Validation  | Makes input to the widget mandatory.                                                                          | NA                             |
+| [**Min Date**](#min-date)                 | Validation  | Sets the minimum allowed date. Only available for columns that are type _Date_.                                                            | NA                             |
+| [**Max Date**](#max-date)                 | Validation  | Sets the maximum allowed date. Only available for columns that are type _Date_.                                                            | NA                             |
 | [**Update Mode**](#update-mode)              | Formatting  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
 | [**updatedRows**](#updatedrows)              | Binding     | Contains all the data of the edited table rows. Useful in **Multi row** update mode.                                                    | `{{Table1.updatedRows}}`       |
 | [**updatedRowIndices**](#updatedrowindices)        | Binding     | Contains an array of indices of the table rows that have been edited. Useful in **Multi row** update mode.                                                        | `{{Table1.updatedRowIndices}}` |
@@ -26,6 +28,8 @@ To try this feature yourself, take a look at the [sample app for inline editing]
 | [**isAddRowInProgress**]( #isaddrowinprogress) | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
 | [**newRow**](#newrow) | Binding | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
 | [**isNewRow**](#isnewrow) | Validation | When writing code for validation properties, this variable indicates whether the cells being validated are part of a new or an existing row. | `isNewRow` |
+| **First Day of Week** | Date Settings | Sets the first day of week that should be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
+| **Show Shortcuts** | Date Settings | Sets whether shortcuts should be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
 
 ## Events
 
@@ -36,12 +40,13 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 | **onSubmit**  | Triggered when the user moves away from editing a cell by pressing the Enter key or clicking outside of the cell.      |
 | **onSave**    | Triggered when the user clicks the save button for a new or existing row.                                                |
 | **onDiscard** | Triggered when the user clicks the discard button for a new or existing row.                                             |
+| **onDateSelected** | Triggered when the user selects a date from Date Picker while editing a date type column.                                             |
 
 ---
 
 ## Editing cells
 
-This feature enables users to make changes directly in the table cell. Currently, there are several column types support inline editing - **Text**, **Number**, **Switch**, **Select**, and **Checkbox**. Custom user-added columns don't support inline editing at this time.
+This feature enables users to make changes directly in the table cell. Currently, there are several column types support inline editing - **Text**, **Number**, **Date**, **Switch**, **Select**, and **Checkbox**. Custom user-added columns don't support inline editing at this time.
 
 ![](</img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif>)
 
@@ -131,6 +136,14 @@ Sets the minimum allowed value. For example, you could set the minimum value to 
 Sets the maximum allowed value. For example, you could set the maximum value to 100 if you only want values less than 100. Any number entered that's more than 100 is considered invalid. Only available for columns that are type **Number**.
 
 <VideoEmbed host="youtube" videoId="bUbGMUuINvg" title="Min & Max Example" caption="Min & Max Example"/>
+
+##### Min date
+
+Sets the maximum allowed date. For example, you could set the minimum date to 1900/01/01 if you only want dates after that. Any date before 1900/01/01 can't be selected in the Date Picker. Only available for columns that are type **Date**.
+
+##### Max date
+
+Sets the maximum allowed date. For example, you could set the maximum date to 2100/12/31 if you only want dates before that. Any date after 2100/12/31 can't be selected in the Date Picker. Only available for columns that are type **Date**.
 
 ---
 
