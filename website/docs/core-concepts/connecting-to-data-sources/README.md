@@ -3,10 +3,10 @@
 Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Whether you're working with a traditional database like MySQL or a more modern tool like S3, Appsmith makes it easy to connect and start working with your data right away. Connecting to a datasource is a necessary step before data can be visualized, transformed, or otherwise utilized. 
 
 :::info
-Appsmith applications are **secure-by-default**. All sensitive credentials, such as database credentials, are encrypted with [**AES-256 encryption**](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). For more information, see [security](/product/security#security-measures-within-appsmith). 
+Appsmith encrypts all your datasource credentials and stores them securely. Appsmith also doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of Queries. As Appsmith is an open source framework, you can [deploy it on-premise](/getting-started/setup), and audit it to ensure none of your data leaves your VPC. For more information, see [Security](/product/security#security-measures-within-appsmith). 
 :::
 
-To create a datasource, 
+To connect to a datasource, 
 
 * Navigate to **Explorer**
 * Click on the **+** icon (next to Datasources) 
@@ -15,7 +15,9 @@ To create a datasource,
 
 ![Connecting to Datasources](</img/connecting-to-data-sources.png>)
 
-After creating and configuring a datasource, you can query the datasource and bind the response in the [UI](/core-concepts/building-ui) to [display data](/core-concepts/data-access-and-binding).
+After creating and configuring a datasource, you can query the datasource and bind the results in the [UI](/core-concepts/building-ui) to [display data](/core-concepts/data-access-and-binding).
+
+Datasources configured within an application can be accessed by all the developers who are members of the workspace. 
 
 
 <div class="containerGridSampleApp">

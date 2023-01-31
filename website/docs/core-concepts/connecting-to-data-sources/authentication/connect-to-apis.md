@@ -4,25 +4,21 @@ description: You can hit any REST endpoint available on the public internet
 
 # Configuring APIs
 
-Configuring APIs involves setting up and managing the various aspects of an API that allow it to function effectively. This can include defining the API's structure and capability, setting up authentication and authorization, and establishing connections with other systems or services.
+Configuring APIs involves setting up and managing the REST API requests that allow it to function effectively. This can include adding requests details, sending parameters, setting up authentication, and choosing custom settings. 
 
-:::tip
-If you want to access an API that's not publicly available on the internet, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to work with local APIs on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
-:::
+## API pane
 
-## REST API query editor
-
-The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and allows you to configure values in the headers, query parameters, and request body fields.
+The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and provide a way to create API requests and add request details such as headers, parameters and body data.
 
 ![](</img/create_api_(1).gif>)
 
-## Configure REST API query
+## Adding API request details
 
-Configuring an API query involves specifying the various components that make up the request and the desired response. Here is an overview of the main elements you need to consider when configuring an API query.
+Configuring an API query involves specifying the various components that make up the API request. Here is an overview of the main elements you need to consider when configuring an API query.
 
 ### Name
 
-When you create a query in Appsmith, a default name is provided for you. You can change this name by clicking on the pencil icon. It's important to make sure that the name is unique, as it serves as an identifier for queries on the page.
+When you create an API query in Appsmith, a default name is provided. You can change this name by clicking on the edit pencil icon. It's important to make sure that the name is unique, as it serves as an identifier for queries on the page.
 
 ### Method
 
@@ -37,7 +33,7 @@ The URL Path provides a way to access the API and its functions. To use this fie
 
 ### Headers
 
-HTTP headers are a critical part of the API request and response, as they contain meta-data about the API request and response. It's important to be familiar with the major request and response headers, as you may need to set request headers when testing an API.
+Headers contain meta-data about the operation and may be required to be sent along with an REST API request.
 
 ### Params
 
@@ -95,12 +91,8 @@ Are you having trouble configuring APIs? check out the [REST API Errors](/help-a
 
 ## Further reading
 
-At this point, you should know enough to start a project of your own and start playing around with datasources. The resources mentioned below can be useful when you need to learn new skills:
-
-* [Building UI](/core-concepts/building-ui/)
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+* [Write queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
-* [Datasources](/reference/datasources)
 * [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith#using-hostdockerinternal)
 
 
