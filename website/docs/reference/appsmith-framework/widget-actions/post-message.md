@@ -89,6 +89,8 @@ There are a number of directions in which your apps may need to communicate. Dep
 
 In this scenario, you are building an app that has an Iframe widget called `Iframe1`. There is an external page embedded within that Iframe widget, and you are setting up communication between the embedded page and the Iframe in Appsmith.
 
+![Use postWindowMessage to send messages between windows](/img/as_postmessage_communication.png)
+
 #### From Appsmith to embedded page
 
 To send data to a page that's embedded in an Appsmith Iframe widget:
