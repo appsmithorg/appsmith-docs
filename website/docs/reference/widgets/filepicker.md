@@ -23,7 +23,7 @@ if you are trying to upload large files, please increase the timeout in API conf
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Filepicker widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -38,10 +38,10 @@ These properties allow you to edit the Filepicker widget. All these properties a
 | **Required**                  | Validation           | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button is automatically disabled until the Checkbox is checked.                                                                                                                        | NA                          |
 | **Visible**                   | Binding & Formatting | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                                                                                                                            | `{{FilePicker.isVisible}}`  |
 | **Disabled**                   | Binding & Formatting | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                                                                                                                           | `{{FilePicker.isDisabled}}` |
-| **Animate Loading**           | Formatting           | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                                                                    |                             |
+| **Animate Loading**           | Formatting           | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                                                                    |                             |
 | **files**                     | Binding              | Contains an _array of file objects_ selected by the user. Each file object contains the file data on its `data` property.                                                                                                                                                                                 | `{{FilePicker.files}}`      |
 
-#### Data Format
+#### Data format
 
 Determines the data format of the files uploaded. The following data formats are supported as of now:
 
@@ -133,7 +133,7 @@ The following resources should come in handy as you need to learn new tricks:
 * [Appsmith Framework](../appsmith-framework/)
 * [JavaScript Editor](../../core-concepts/writing-code/javascript-editor-beta/)
 * [Uploading a File to S3](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
-* [How to submit multipart form data and binary file data via API](/learning-and-resources/how-to-guides/how-to-submit-multipart-and-binary-form-data)
+* [Upload File Data with API Requests](/learning-and-resources/how-to-guides/how-to-submit-multipart-and-binary-form-data)
 
 ### Troubleshooting
 
