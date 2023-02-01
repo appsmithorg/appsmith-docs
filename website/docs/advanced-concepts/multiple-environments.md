@@ -1,7 +1,7 @@
 
 # Multiple Environments
 
-Environments are container entities within a workspace that let you create different updates to different versions of your content types while still keeping them all in isolation. This process is often utilized when developing, identifying errors, or introducing new features without any concerns about how it might influence the current production.
+While building apps, there is usually a clear distinction between the version of the app that end users see versus the version that's still under development or testing. Software of moderate complexity typically separates development, testing, and production environments to avoid affecting end-users with ongoing changes. This clarity helps maintain stability in the application.
 
 :::info
 Multiple Environments are only available on [Business Edition](https://www.appsmith.com/pricing). 
@@ -9,25 +9,21 @@ Multiple Environments are only available on [Business Edition](https://www.appsm
 
 Developers can run numerous tests in these environments to filter out bugs and raise the application's overall quality before deploying it to production. 
 
+Appsmith provides a way for you to define different environments for datasources. It allows you to switch between different environments as you develop your application in the Edit mode. By switching environments, you can apply the datasource configurations defined in that particular environment.
+
 ## Environments on Appsmith
 Appsmith provides two environments - Staging and Production.
 
 ### Staging environment
-Before launching an application, staging environments are created to evaluate builds, codes, and updates in an environment which is similar to a production environment. This is the area that developers take advantage of to inspect new aspects, debug, and explore their applications.
+The ideal configuration for staging environments should reference data sources used in development, QA, or user acceptance testing. This is the area that developers take advantage of to inspect new aspects, debug, and explore their applications. It's also referred to as the Testing or QA environment.
 
-:::info
-It's also referred to as the Testing or QA environment
-:::
-* The configuration values for a datasource are usually the same for staging and production. If you want to change them, you can go to the ```manage environments``` page and make the necessary adjustments.
-* Integration testing frequently takes place in a staging environment.
-* Each team member has a particular level of access to this collaborative workspace.
+The configuration values for a datasource are usually the same for staging and production. If you want to change them, you can go to the ```manage environments``` page and make the necessary adjustments.
 
 
 ### Production environment
-Once the latest software, services, or upgrades are ready for public use, they're pushed live to the users in a production environment. This is the final stage of production, where the end user can view, use, and interact with the new product.
+Production environment configurations should be linked to data sources that contain live, customer-facing data. This is the final stage of production, where the end user can view, use, and interact with the new product.
 
-* When deployed, the application always uses the production environment. However, if the user has requisite permissions, they can “apply” the staging environment configuration in view mode.
-* Similar to a staging environment, each team member has a designated level of access to this environment.
+When deployed, the application always uses the production environment. However, if the user has requisite permissions, they can “apply” the staging environment configuration in view mode. Similar to a staging environment, each team member has a designated level of access to this environment.
 
 This type of infrastructure makes it possible for teams to completely control the quality of their product releases. It encourages innovation and improvement, while ensuring efficient monitoring of the creation, testing, and deployment of a new product or updates. In addition, it guarantees the end user receives the best experience possible.
 
