@@ -161,6 +161,11 @@ onBlur
 Autofocus
 dyno
 safelist
+Lodash
+lodash
+xmlParser
+moment
+excelJS
 Application
 ngrok
 cURL
@@ -180,6 +185,8 @@ Backend
 Postgres
 untrusted
 Port
+GSheet
+Twilio
 subnet
 auto-configure
 

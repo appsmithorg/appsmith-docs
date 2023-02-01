@@ -186,10 +186,16 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 ## Update Appsmith
 
+:::caution
+   It's recommended to backup the Appsmith instance before performing an update. For more information, see [How to create a backup](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance).
+:::
+
 1. Navigate to the ECS cluster from the ECS dashboard.
 2. In the Tasks Tab, click the respective task.
 3. On the Task Page, hit the stop button.
 4. Wait until the new task is deployed automatically.
+
+If you have updated your Appsmith instance and face any issues. You can rollback the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
 
 ## Troubleshooting
 
