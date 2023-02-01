@@ -6,6 +6,8 @@ In this guide, you’ll learn how to create different environments for your App 
 This method doesn't support APIs, Google Sheets, Twilio, or any authenticated API datasources.
 :::
 
+<VideoEmbed host="youtube" videoId="UOEpLM80uh8" title="How To Use Multiple Environments In Appsmith" caption="Use Git to create different environments"/>
+
 ## Environments
 Environments are container entities within a space that allows you to create and maintain multiple versions of your applications and make changes to them in isolation.
 
