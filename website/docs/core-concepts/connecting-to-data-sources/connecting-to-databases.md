@@ -78,7 +78,7 @@ The select query retrieves all the data from the users table. You can display th
 :::info
 Appsmith encrypts all your datasource credentials and stores them securely. Appsmith also doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of Queries. As Appsmith is an open source framework, you can [deploy it on-premise](/getting-started/setup), and audit it to ensure none of your data leaves your VPC. For more information, see [Security](/product/security#security-measures-within-appsmith). 
 :::
-
+### Connection pooling
 Appsmith creates a new connection with the database server when you first connect the database to your application. All subsequent queries executed by Appsmith against your database then re-use this connection to ensure that your queries are executed at run-time. In the case that an idle connection is closed by the database server, Appsmith creates a new connection while executing the next query.
 
 For certain database plugins such as PostgreSQL, MySQL, Redis, MS SQL, and Redshift, Appsmith explicitly creates and maintains a connection pool because, usually, a single connection isn't designed to handle multiple simultaneous queries.
