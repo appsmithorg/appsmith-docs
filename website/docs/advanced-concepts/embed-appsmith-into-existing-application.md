@@ -9,7 +9,7 @@ description: Guide on how to embed Appsmith into an existing application
 
 
 
-Tools and Dashboards are great as an app and on a website, and now, you can have it both in one go by embedding apps to your website! In this guide, you'll learn how to embed Appsmith Apps into any website.
+Tools and Dashboards are great as an app and on a website, and now, you can have it both in one go by embedding apps to your website. In this guide, you'll learn how to embed Appsmith Apps into any website.
 
 ### Creating HTML page
 
@@ -42,8 +42,8 @@ Include the meta tag in the head to ensure that the embedded application renders
 <!DOCTYPE html>
 <html> 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Customer Support Dashboard </title>
 </head>
 <body>
     <iframe src="<LINK_OF_APP>" height="700" width="100%"></iframe>
@@ -53,7 +53,7 @@ Include the meta tag in the head to ensure that the embedded application renders
 
 
 
-### Opening the HTML Page
+### Opening the HTML page
 
 :::info
 If you are opening the HTML page as a`file,`then the browser won't allow you to do that. The HTML file needs to come from a server.
@@ -63,7 +63,7 @@ After creating the HTML page, save it as `dashboard.html` and have an HTTP serve
 
 #### Serving an HTML file with Node.js
 
-Once you have created your HTML file, create a new `app.js`` `**``** file. Paste the below-mentioned code and edit your HTML file name.
+Once you have created your HTML file, create a new `app.js`` `**``** file. Paste the below-mentioned code and edit your HTML filename.
 
 ```markup
 const http = require('http');
@@ -80,15 +80,15 @@ http.createServer(function(req, res) {
 
 Now, in the terminal, run `node app.js`
 
-This will prompt a `running on 3000` message. Next, go to your browser and open [http://localhost:3000/](http://localhost:3000/)
+This would prompt a `running on 3000` message. Next, go to your browser and open [http://localhost:3000/](http://localhost:3000/)
 
-This will open your HTML file.
+This opens your HTML file.
 
-![Sceenshot of Appsmith Embed](/img/Appsmith\_embed.png)
+![screenshot of Appsmith Embed](/img/Appsmith\_embed.png)
 
 #### Running npx http-server
 
-Let's look at another way to open an HTML file.
+Lets look at another way to open an HTML file.
 
 Now, if you have _Node JS_ installed, go to the command terminal and run:
 
@@ -98,33 +98,37 @@ npx http-server
 
 Next, open [http://localhost:8080/dashboard.html](http://localhost:8080/dashboard.html) and it should open the HTML File.
 
-### Modifying Layout
+### Modifying layout
 
-If you want to get your app to use the whole page in your browser, you can still change your height and width parameters like so:
+You can modify the layout of your embedded code directly from the settings of your Appsmith app. This allows you to control the appearance of your app when it's displayed on a website or another platform. 
+
+<VideoEmbed host="youtube" videoId="qACSzNMsdKA" title="Modifying layout" caption="Modifying layout"/>
+
+
+* To change the layout, open the `app settings`.
+* Click on `Share & Embed`.
+* Update the Embed size as desired.
+* Copy the updated embed code.
+
+By following these simple steps and the code examples and explanations provided, you would be able to customize the layout of your embedded app to fit your specific needs and requirements.
+
+#### Remove Appsmith top bar
+
+Additionally, you can also see the Appsmith toolbar on the top, you can remove this by adding **`?embed=true`** to the share URL. 
+
+![Remove Appsmith top bar](/img/embed_apps.png)
+
+* To remove the top bar, open the `app settings`.
+* Click on `Share & Embed`.
+* Toggle `Show navigation bar`.
+* Copy the updated embed code.
 
 ```markup
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
-</head>
-<body>
-    <iframe src="<LINK_OF_APP>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
-</body>
-</html>
-```
-
-#### Remove Appsmith Top Bar
-
-Additionally, you can also see the Appsmith toolbar on the top, you can remove this by adding **`?embed=true`** to the share URL. Update the code to the following:
-
-```markup
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Customer Support Dashboard </title>
 </head>
 <body>
     <iframe src="<LINK_OF_APP>" height="700" width="100%"></iframe>
@@ -132,6 +136,5 @@ Additionally, you can also see the Appsmith toolbar on the top, you can remove t
 </html>
 ```
 
-Awesome! Now you can see the app without any toolbar! Below is a screenshot:
 
-![Appsmith Embed with ?embed=true propert](/img/embed=true.png)
+![Appsmith Embed with ?embed=true property](/img/embed=true.png)
