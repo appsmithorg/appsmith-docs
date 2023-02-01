@@ -4,6 +4,27 @@ The API authentication is a process of validating the consumer's identity who at
 
 Configure one of the below authentication modes and save it.
 
-1. [Basic Authentication](/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication)
-2. [OAuth 2.0 Authentication](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication)
+<div class="containerGridSampleApp">
+
+   <div class=" containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+         <img class="containerImage" src="/img/authlanding_.png" alt="quickstart"/>
+      </div> 
+      <b><a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication">Basic Authentication</a></b>
+      <div class="containerDescription">
+      </div>
+   </div>
+   
+   <div class="containerColumnSampleApp columnGrid column-three">
+   <div class="containerCol">
+         <img class="containerImage" src="/img/fingerprint_.png" alt="support"/>
+      </div>
+      <b><a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a></b>
+      <div class="containerDescription"> 
+      </div>
+   </div>
+  
+</div> 
+
+
 
