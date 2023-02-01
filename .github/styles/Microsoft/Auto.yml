@@ -9,3 +9,5 @@ action:
     - simple
 tokens:
   - 'auto-\w+'
+exceptions:
+  - auto-backup
