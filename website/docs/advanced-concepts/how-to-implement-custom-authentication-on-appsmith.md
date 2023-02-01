@@ -75,7 +75,7 @@ Now, let’s create an API that’ll return the JWT using the login API. Follow 
 > To test this out, we’ve created a test Auth API; use the following if you don’t have any Auth APIs.
 
 * In this example, let’s use `https://appsmith-tutorial-apis.herokuapp.com/auth/local`, set the request type to `POST`.
-* Next, in the body, add the following JSON to send username and password to the API. IN this case, we’re taking the inputs from the form using the moustache syntax.
+* Next, in the body, add the following JSON to send username and password to the API. IN this case, we’re taking the inputs from the form using the mustache syntax.
 
 ```
 {
@@ -91,7 +91,7 @@ Identifier: appsmith_user
 Password: appsmith_password
 ```
 
-Awesome, now we’ll need to save the JWT token generated after the API is run. Appsmith has a store where you can save all the variables; for this, we’ll need to use the moustache syntax after the API is successfully run. Below are the steps.
+Awesome, now we’ll need to save the JWT token generated after the API is run. Appsmith has a store where you can save all the variables; for this, we’ll need to use the mustache syntax after the API is successfully run. Below are the steps.
 
 1. Firstly, open the Submit button property pane and set the `onClick` property to `Call an API` and choose `call_an_api`
 2. Next, set the `onSuccess` property to \`Store a value\` and name the key as jwt and value as `{{login_api.data.jwt}}`
@@ -114,7 +114,7 @@ https://appsmith-tutorial-apis.herokuapp.com/logistics
 
 `Authorization: Bearer {{appsmith.store.jwt}}`
 
-* As we can see, in the place of the token, we’re using the moustache syntax and binding the `jwt` token that’s saved from the login-api.
+* As we can see, in the place of the token, we’re using the mustache syntax and binding the `jwt` token that’s saved from the login-api.
 * Now run the API, you should see the response.
 
 In this way, you can use a custom login on Appsmith. Additionally, you can customise the redirections based on the authentication mode and your use case.

@@ -43,6 +43,18 @@ You can add **secrets** to **APIs** or **datasource configurations** as they are
 * Appsmith does not allow some actions like `Fetch`. You cannot call an external API directly from the JavaScript code. However, you can add an API on Appsmith and use it to request, read data, or manipulate the response from the external API.
 * You should not store sensitive information using a `storeValue` function because the data is stored in the browser's local storage and can be read.
 
+## Sandboxing Iframe widgets
+
+The [Iframe](/reference/widgets/iframe/) widget on older versions of Appsmith is vulnerable to XSS attacks. This was fixed in v1.8.6 of Appsmith. For this fix to be applied on your Appsmith instance, ensure you have the following environment variable set in your `stacks/configuration/docker.env` file:
+
+```sh
+APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX=false
+```
+
+This is automatically set for any Appsmith instance created after the release of v1.8.6.
+
+The fix works by setting a `sandbox` attribute on iframe widgets. This reduces what the widget is capable of, by a little bit, and shouldn't impact most real-world uses of this widget.
+
 :::tip
 We maintain an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email [security@appsmith.com](mailto:security@appsmith.com), and we'll resolve it ASAP.
 :::

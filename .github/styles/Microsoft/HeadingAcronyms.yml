@@ -11,3 +11,15 @@ exceptions:
   - JSON
   - JS
   - UI
+  - SSL
+  - BE
+  - EFS
+  - PVC
+  - CE
+  - BE
+  - ECS
+  - TLS
+  - AWS 
+  - ECS
+  - AMI
+  - SSH

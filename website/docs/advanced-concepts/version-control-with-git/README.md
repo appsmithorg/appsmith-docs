@@ -30,7 +30,7 @@ In the community edition, You can connect up to **three** private repositories i
 
 ## Git In Action
 
-Once your app connects to the Git repository, you can further learn how version control works on Appsmith.\
+Once your app connects to the Git repository, you can further learn how version control works on Appsmith.
 The flow is similar to how you work on Git -
 
 * [Commit and Push](commit-and-push.md)
