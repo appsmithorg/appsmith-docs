@@ -43,6 +43,7 @@ inline-editing#default-values) for more details. |
 | [**selectedRowIndices**](#selectedrowindices) | Binding | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
 | [**filteredTableData**](#filteredtabledata)  | Binding | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
 | [**pageNo**](#pageno)             | Binding | Contains the current page number that the user is on. APIs can use it for pagination | `{{<table_name>.pageNo}}`  |
+| [**pageOffset**](#pageoffset) | Binding | Contains a calculated value to represent how many records to skip when using **Server side pagination**. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}} |
 | [**pageSize**](#pagesize)           | Binding | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`   |
 | [**searchText**](#searchtext)         | Binding | Contains the search text entered by the user in the Table | `{{<table_name>.searchText}}`  |
 
@@ -147,6 +148,18 @@ The following video shows how to bind a text widget to `Table_1` using `pageNo`.
 
 <VideoEmbed host="youtube" videoId="DqKok2cCJk0" title="pageNo" caption="pageNo"/>
 
+#### pageOffset
+
+This value is calculated by multiplying the table's page number with the amount of records displayed per page. For example, if there are five records on each page, and the table is showing page three, then `Table1.pageOffset` should be equal to 10. Use this value in your query to fetch the correct set of results by asking it to skip the first 10 records.
+
+```javascript
+{{<table_name>.pageOffset}}
+```
+
+The following video shows how to use `pageOffset` in your API / database query:
+
+<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="pageOffset" caption="pageOffset"/>
+
 #### pageSize
 
 `pageSize` shows the total number of rows displayed on a page of the table. `pageSize` can change upon resizing the table.
@@ -184,12 +197,16 @@ Once the `get_count` query is successfully created, enter the following code to 
 
 ### Offset based pagination
 
-This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** fields of the table and is used in both APIs and Queries.
+This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** values of the table to calculate the required **pageOffset** to fetch the correct records.
 
-The **pageNo** and **pageSize** can be used in the API / query by referencing them inside curly braces `{{ }}`.
+```
+Table1.pageOffset = (Table1.pageNo - 1) * Table1.pageSize
+```
+
+The **pageOffset** property (as well as **pageNo** and **pageSize**) can be used in the API / query by referencing it inside curly braces `{{ }}`.
 
 ```sql
-SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ (Table1.pageNo - 1) * Table1.pageSize }}
+SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}
 ```
 
 ```
