@@ -73,7 +73,6 @@ This ensures that the redirect URLs are correct during [OAuth2](/core-concepts/c
 
 In release `v1.6.4`, Appsmith upgraded its libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](/reference/datasources/querying-mongodb/) that was shipped earlier. This didn't show up in testing because all testing happened against [MongoDB](/reference/datasources/querying-mongodb/) clusters with replica sets, where the problem doesn't surface.
 
-
 If you see an error like the below, your instance is affected by the library upgrade performed in `v1.6.4`.
 
 ```

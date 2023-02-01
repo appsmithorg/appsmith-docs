@@ -94,7 +94,7 @@ You can fix the error by providing an email that has been used to register with 
 #### Error message
 <Message
     messageContainerClassName="error"
-    messageContent="Either this page doesn't exist, or you don't have access to this page."
+    messageContent="Either this page does not exist, or you don't have access to this page."
 ></Message>
 
 #### Cause
