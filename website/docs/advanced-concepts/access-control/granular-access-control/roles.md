@@ -239,3 +239,15 @@ Workspace-level permissions enable a user to perform actions on the workspaces t
 #### Audit logs
 
 Audit logs have View permission. That's, you can restrict users from looking at the Audit logs for your instance.
+
+## Default Roles
+
+A default role is an Appsmith generated role, they are generated during the creation of an Instance or a Workspace. They cannot be deleted by the user.
+
+### Default Role For All Users
+
+The **Default Role For All Users** role sets the base level of access given to all users of an instance. The Instance Administrators can modify this role to provide the right level of access to their new users. Some of the use cases that can be solved with this role are:
+
+* Provide view access to certain important apps in an instance.
+* Remove the ability to create workspaces or apps for new users.
+* Limit creation of apps to a single team workspace.
