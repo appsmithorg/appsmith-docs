@@ -1,7 +1,20 @@
 # Roles
  A Role is a collection of permissions that grant access to certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than giving individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions, and a permission can be mapped to various roles. However, a role can't be nested, that's, it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
  
- Appsmith provides three built-in roles - **Administrator**, **Developer**, and **App Viewer**. With Granular Access Control (GAC), you can create a custom role that provides fine-grained access control. 
+## Default roles
+
+A default role is an Appsmith generated role, they're generated during the creation of an Instance or a Workspace. They can't be deleted by the user.
+
+Appsmith provides three built-in roles - **Administrator**, **Developer**, and **App Viewer**. With Granular Access Control (GAC), you can create a custom role that provides fine-grained access control.
+
+### Default Role For All Users
+
+The **Default Role For All Users** role sets the base level of access given to all users of an instance. The Instance Administrators can modify this role to provide the right level of access to their new users. Some use cases that can be solved with this role are:
+
+* Provide view access to certain important apps in an instance.
+* Remove the ability to create workspaces or apps for new users.
+* Limit creation of apps to a single team workspace.
+
 
 ## Resources
 
@@ -239,15 +252,3 @@ Workspace-level permissions enable a user to perform actions on the workspaces t
 #### Audit logs
 
 Audit logs have View permission. That's, you can restrict users from looking at the Audit logs for your instance.
-
-## Default roles
-
-A default role is an Appsmith generated role, they're generated during the creation of an Instance or a Workspace. They can't be deleted by the user.
-
-### Default Role For All Users
-
-The **Default Role For All Users** role sets the base level of access given to all users of an instance. The Instance Administrators can modify this role to provide the right level of access to their new users. Some use cases that can be solved with this role are:
-
-* Provide view access to certain important apps in an instance.
-* Remove the ability to create workspaces or apps for new users.
-* Limit creation of apps to a single team workspace.
