@@ -27,9 +27,9 @@ To enable Google Sign in, login to your [google cloud console](https://console.c
 
 **4. Configure the OAuth Credentials for a web application**
 
-**Javascript Origins:** The domain on which you are hosting Appsmith with https **`(ex: https://app.appsmith.com)`**
+**Javascript Origins:** the domain on which you are hosting Appsmith with HTTPS **`(ex: https://app.appsmith.com)`**
 
-**Redirect URIs:** Append **/login/oauth2/code/google** to your Javascript origins **`(ex: https://app.appsmith.com/login/oauth2/code/google)`**
+**Redirect URIs:** append **/login/oauth2/code/google** to your Javascript origins **`(ex: https://app.appsmith.com/login/oauth2/code/google)`**
 
 ![Click to expand](</img/Google_Oauth_Creds_2.png>)
 

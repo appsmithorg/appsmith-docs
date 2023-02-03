@@ -27,9 +27,9 @@ To enable GitHub Sign in, login to your [GitHub Account](https://github.com)
 
 **4. Configure the OAuth Credentials for a web application**
 
-**Homepage URL:** The domain on which you are hosting Appsmith with https **`(ex: https://app.appsmith.com)`**
+**Homepage URL:** the domain on which you are hosting Appsmith with HTTPS **`(ex: https://app.appsmith.com)`**
 
-**Authorization Callback URL:** Append **/login/oauth2/code/github** to the Homepage URL **`(ex: https://app.appsmith.com/login/oauth2/code/github)`**
+**Authorization Callback URL:** append **/login/oauth2/code/github** to the Homepage URL **`(ex: https://app.appsmith.com/login/oauth2/code/github)`**
 
 ![Click to expand](</img/Github_App_Config.png>)
 
@@ -54,7 +54,7 @@ To enable GitHub Sign in, login to your [GitHub Account](https://github.com)
     APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET
     # ******************************
     ```
-    
+
     * Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the step above
     * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**
       * **Note**: you can provide several domain names using a comma-separated list
