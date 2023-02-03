@@ -76,3 +76,20 @@ Once you have figured out the new structure for the data, head to the [source da
 
 If you still need help debugging an error, please raise a request on [Discord Server](https://discord.com/invite/rBTTVJp) or email support@appsmith.com.
 
+## Default value is missing in options 
+
+You may encounter an error message "Default value is missing in options. Please update the value." while using the Select widget.
+
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="Default value is missing in options. Please update the value."></Message>
+
+#### Cause
+
+This error occurs when the Default Selected Value doesn't match any of the values specified in the options property of the widget.
+
+#### Solution
+
+To fix this error, either change the value in the options property to match the selected value, or change the selected value to match an option listed in the options property. This ensures that the value selected is valid and prevents the error from appearing.
