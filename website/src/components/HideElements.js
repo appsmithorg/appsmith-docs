@@ -9,7 +9,6 @@ export default function Message(props) {
 return true;
 }
 
-
 function hideFooter() {
     if (ExecutionEnvironment.canUseDOM){
         Array.prototype.forEach.call(document.getElementsByClassName('footer'), function(element) {
