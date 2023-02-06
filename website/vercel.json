@@ -416,11 +416,7 @@
     },
     {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/reference/widgets/table#transforming-table-data"
-    },
-    {
-      "source": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables",
-      "destination": "/reference/widgets/table#transforming-table-data"
+      "destination": "/reference/widgets/table#display-data-in-tables"
     },
     {
       "source": "/core-concepts/capturing-data-write",
