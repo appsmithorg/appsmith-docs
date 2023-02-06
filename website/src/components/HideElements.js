@@ -5,8 +5,7 @@ export default function Message(props) {
     hideFooter();
     hideTopBar();
     hideEditPage();
-    hideIntercomApp();
-
+    setTimeout (hideIntercomApp, 11);
 return true;
 }
 
