@@ -1,0 +1,21 @@
+# 
+
+<HideElements/>
+
+Follow the steps below to upgrade Docker Community edition to Business edition:
+
+<ul class="circle"> 
+
+<li> Open the <code>docker-compose.yml</code> file and look for the <code>image:</code> key. Update the image from Community Edition (<code>appsmith-ce</code>) to Business Edition (<code>appsmith-ee</code>).
+
+        services:
+      appsmith:
+        image: index.docker.io/appsmith/appsmith-ee
+  </li>
+<li> Recreate the instance by running the following command:
+
+        docker-compose up -d
+</li>
+<li>Sign-in to your instance again. Upon successful login, you see a screen where you can enter the license key and activate the instance. </li>
+
+</ul>
