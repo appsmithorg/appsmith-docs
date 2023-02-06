@@ -26,12 +26,12 @@ The Appsmith Docker image contains all the components required to run within a s
 <Tabs groupId="editions" >
    <TabItem label="Community Edition" value="community">
 
-1. Click to download the [`docker-compose.yml`](https://bit.ly/3h08WqB) file and place it into the Appsmith installation folder.
+1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-ce) file and place it into the Appsmith installation folder.
 
    **OR,** run the following cURL:
 
    ```bash
-   curl -L https://bit.ly/3h08WqB -o $PWD/docker-compose.yml
+   curl -L https://bit.ly/docker-compose-ce -o $PWD/docker-compose.yml
    ```
 
 2. Start the Docker container by running the command below. This may need to be run with sudo if `docker` and `docker-compose` aren't accessible by the user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
@@ -49,12 +49,12 @@ The Appsmith server should be up and running soon and can be accessed at [http:/
 To upgrade from Community Edition to Business Edition, [follow these instructions](/getting-started/setup/upgrade-to-business-edition/docker).
 :::
 
-1. Click to download the [`docker-compose.yml`](/img/docker-compose_(3).yml) file, and place it into the Appsmith installation folder.
+1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-ce) file, and place it into the Appsmith installation folder.
 
    **OR,** run the following cURL:
 
    ```bash
-   curl -L https://bit.ly/3AQzII6 -o $PWD/docker-compose.yml
+   curl -L https://bit.ly/docker-compose-ce -o $PWD/docker-compose.yml
    ```
 
 2. Change the **image** name from `appsmith-ce` to `appsmith-ee` for the `image:` key in the `docker-compose.yml` file.
