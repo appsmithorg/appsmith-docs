@@ -141,6 +141,10 @@ To paginate the responses and request smaller chunks of data at a time:
 2. Call the API / query via the **onPageChange** event
 3. Configure pagination in the API / query using the [Offset](#offset-based-pagination) or [Key-based](#key-based-pagination) pagination method.
 
+:::tip
+Turning on **Server side pagination** also enables the [**Total records**](#total-records) property. This property is useful for helping to control the page buttons in the table header.
+:::
+
 #### pageNo
 
 `pageNo` gets the page number of the table that the user is currently viewing. This property can be used by APIs for pagination. To use this property in a widget, enter the code snippet given below:
@@ -148,10 +152,6 @@ To paginate the responses and request smaller chunks of data at a time:
 ```javascript
 {{<table_name>.pageNo}}
 ```
-
-The following video shows how to bind a text widget to `Table_1` using `pageNo`.
-
-<VideoEmbed host="youtube" videoId="DqKok2cCJk0" title="pageNo" caption="pageNo"/>
 
 #### pageOffset
 
@@ -173,10 +173,6 @@ To bind a widget using this property, enter the code snippet given below:
 ```javascript
 {{<table_name>.pageSize}}
 ```
-
-The following video shows how to bind a text widget to `Table_1` using pageSize.
-
-<VideoEmbed host="youtube" videoId="XkFJQh4vcCw" title="pageSize" caption="pageSize"/>
 
 #### Total records
 
@@ -226,7 +222,7 @@ This method uses a value in the response of the API as the key to the next API c
 
 ## Server side searching
 
-Tables come with the capability of server side searching, which is useful for reducing the amount of unnecessary extra results received from queries: rather than requesting a lot of data from the server and then filtering it on the client, this method passes search terms to the server, so that it only needs to fetch data that's relevant. This can significantly improve performance and user experience when working with large data sets.
+Server side searching is useful for reducing unnecessary results from queries: rather than requesting lots of data from the server and then filtering it on the client, you can pass search terms to the server so it only fetches relevant results in the first place. This can significantly improve response times when working with large data sets.
 
 #### searchText
 
@@ -261,9 +257,9 @@ As an API request with URL parameters:
 https://mock-api.appsmith.com/users?name={{Table1.searchText}}
 ```
 
-### Server side filtering
+## Server side filtering
 
-Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to be used to filter out unnecessary data from the requested dataset. In this case, you will choose a value that records must match in order to be returned in the query's response.
+Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to be used to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match in order to be returned in the query's response.
 
 Server-side filtering requires the use of another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users a list of supported filters to choose from.
 
