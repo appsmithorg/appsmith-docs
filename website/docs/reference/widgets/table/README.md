@@ -121,7 +121,9 @@ This property shows all the columns in the table, and it gets automatically popu
 
 Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
 
+<!--
 <VideoEmbed host="youtube" videoId="hmi7BaF3jFI" title="Table | Column Sorting" caption="Use this setting to enable sorting rows by column value."/>
+-->
 
 #### Add new columns
 
@@ -161,9 +163,11 @@ This value is calculated by multiplying the table's page number with the amount 
 {{<table_name>.pageOffset}}
 ```
 
+<!--
 The following video shows how to use `pageOffset` in your API / database query:
 
 <VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="pageOffset" caption="pageOffset"/>
+-->
 
 #### pageSize
 
@@ -234,9 +238,11 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.searchText}}
 ```
 
+<!--
 The following video shows how to bind a text widget to `Table_1` using searchText.
 
 <VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
+-->
 
 #### Searching
 
@@ -297,7 +303,9 @@ You can access the row data with `<table_name>.selectedRow`, and use dot or brac
 {{Table1.selectedRow["favorite color"]}}
 ```
 
+<!--
 <VideoEmbed host="youtube" videoId="hHZ5IbtE-wo" title="Displaying column value using selectedRow" caption="Displaying column value using selectedRow"/>
+-->
 
 #### selectedRows
 
@@ -310,9 +318,11 @@ To bind table data to a widget, use the following snippet to access the selected
 {{<table_name>.selectedRows}}
 ```
 
+<!--
 The following video shows how to bind a text widget to `Table_1` using `selectedRows`.
 
 <VideoEmbed host="youtube" videoId="K8F4oggpOk0" title="selectedRows" caption="selectedRows"/>
+-->
 
 An empty array `[]` is returned if no row is selected in the table.
 
@@ -326,9 +336,11 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.triggeredRow}}
 ```
 
+<!--
 The following video shows how to bind a text widget to `Table_1` using triggeredRow.
 
 <VideoEmbed host="youtube" videoId="HUcQ8lf7cH4" title="triggeredRow" caption="triggeredRow"/>
+-->
 
 #### selectedRowIndex
 
@@ -340,9 +352,11 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.selectedRowIndex}}
 ```
 
+<!--
 The following video shows how to bind a text widget to `Table_1` using seledRowIndex.
 
 <VideoEmbed host="youtube" videoId="KXYkdFzOKsQ" title="selectedRowIndex" caption="selectedRowIndex"/>
+-->
 
 #### selectedRowIndices
 
@@ -354,9 +368,11 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.selectedRowIndices}}
 ```
 
+<!--
 The following video shows how to bind a text widget to `Table_1` using seledRowIndices.
 
 <VideoEmbed host="youtube" videoId="yLOYqrW2xaw" title="selectedRowIndices" caption="selectedRowIndices"/>
+-->
 
 #### filteredTableData
 
@@ -368,9 +384,11 @@ To use this property in a widget, enter the code snippet given below:
 {{<table_name>.filteredTableData}}
 ```
 
+<!--
 The following video shows how to bind a text widget to `Table_1` using **filteredTableData**.
 
 <VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
+-->
 
 ### Transform table data
 
