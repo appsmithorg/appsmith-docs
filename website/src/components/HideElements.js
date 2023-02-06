@@ -5,6 +5,7 @@ export default function Message(props) {
     hideFooter();
     hideTopBar();
     hideEditPage();
+    hideIntercomApp();
 
 return true;
 }
@@ -35,4 +36,12 @@ function hideEditPage() {
          })
     }
         
+}
+
+function hideIntercomApp() {
+    if (ExecutionEnvironment.canUseDOM){
+        Array.prototype.forEach.call(document.getElementsByClassName('intercom-lightweight-app'), function(element) {
+             element.style.display = 'none';
+         })
+    }   
 }
