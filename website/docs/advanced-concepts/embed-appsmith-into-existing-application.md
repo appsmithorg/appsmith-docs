@@ -112,6 +112,19 @@ You can modify the layout of your embedded code directly from the settings of yo
 
 By following these simple steps and the code examples and explanations provided, you would be able to customize the layout of your embedded app to fit your specific needs and requirements.
 
+```markup
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+    <title></title>
+</head>
+<body>
+    <iframe src="<LINK_OF_APP>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+</body>
+</html>
+```
+
 #### Remove Appsmith top bar
 
 Additionally, you can also see the Appsmith toolbar on the top, you can remove this by adding **`?embed=true`** to the share URL. 
