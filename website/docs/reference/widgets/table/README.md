@@ -129,7 +129,13 @@ By clicking the "+ ADD A NEW COLUMN" button, you can insert your own custom colu
 
 ## Server side pagination
 
-Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. To paginate this data and request smaller chunks of data at a time:
+Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. Appsmith supports responses of **5 MB** at a time; larger responses result in [this error](/help-and-support/troubleshooting-guide/query-errors#execution-failed-with-status-5009):
+
+<Message
+ messageContainerClassName="error"
+messageContent="<QUERY_OR_API_NAME> action returned an error response. Response size exceeded the maximum supported size of 5 MB. Please use LIMIT to reduce the amount of data fetched."></Message>
+
+To paginate the responses and request smaller chunks of data at a time:
 
 1. Enable the server-side pagination property in the table
 2. Call the API / query via the **onPageChange** event
