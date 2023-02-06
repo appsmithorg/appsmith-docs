@@ -197,6 +197,207 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 If you have updated your Appsmith instance and face any issues. You can rollback the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
 
+
+
+
+   - save the policy ecs-ssm
+6. Name, review, and create
+  - Name the role eg: ecsTaskRole
+
+
+## Deploy Appsmith (using Fargater):
+
+## Prequisites 
+   A. Provision an external MongoDB v5.0 instance for the Appsmith Fargate instance.
+   B. Provision an Application Load Balancer
+   B. Create an EFS filesystem
+      i. Navigate to AWS EFS on the console and hit the Create button.
+      ii. Set the parameters like VPC (should be the same as the ECS cluster) and storage class as suiting your requirement.
+      iii. Click on the EFS created and navigate to the Network tab to ensure mount-target is created in the same availability-zone as that of the ECS cluster.
+      iv. Create a new security group to allow inbound and outbound NFS traffic.
+      v. Attach the security group to the ECS cluster and the EFS mount-target.
+   C. Create a task execution role:
+      i. Go to the iam console and select **Roles**
+      ii. Click Create Role
+      iii. Select trust entity:
+          - Select Trusted entity type as ASW Service
+          - Select **Elastic Container Service Task** as the use case, and hit next
+      iv. Add permission
+          - Add AmazonECSTaskExecutionRolePolicy
+          - Add SecretsManagerReadWrite
+          - Click create Policy to open the policy editor, choose json mode
+          ```
+          {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "ssmmessages:CreateControlChannel",
+                      "ssmmessages:CreateDataChannel",
+                      "ssmmessages:OpenControlChannel",
+                      "ssmmessages:OpenDataChannel"
+                  ],
+                  "Resource": "*"
+              }
+            ]
+          }
+        ```
+
+   :::caution
+   Please do not run an embeded MongoDB on the EFS, this could cause the Appsmith instance to crash unexpectadly.
+   :::
+   
+   
+
+1. [Create an ECS Cluster](#step-1-create-an-ecs-cluster)
+2. [Create Task and Container Definitions](#step-2-create-task-and-container-definitions)
+3. [Create and Run an ECS Service](#step-3-create-and-run-an-ecs-service)
+
+:::info Important
+ Switch to the old AWS console UI to follow the steps in this tutorial.
+:::
+
+### Step 1: Create an ECS Cluster
+
+1. Navigate to Amazon ECS and choose clusters on the side bar and select `Create Cluster`.
+
+![Creating Cluster in AWS ECS](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-217fcdb99846c6da6b6b5b374ec8ceb61ff5c221\_ecs-start-dash.png)
+
+2. Choose **Networking Only**, and select the next step.
+
+3. Enter your cluster name
+
+4. Create a VPC by defining the CIDR block and subnets. You can skip this step is you already have a VPC.
+
+    ![Configuring the instance](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-9b572559c7d254290a9d0e928d54b07d4314d60e\_ecs-cluster-instance-config.png)
+
+5. Enable CloudWatch Conatiner Insights
+
+6. Hit the **Create button**.
+
+![ECS Cluster Status](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-838febeb60a4267fe023333877400abfa9cdecbe\_ecs-cluster-launch.png)
+
+### Step 2: Create task and container definitions
+
+Once the cluster is created, you need to create a task that runs on the cluster created in [**Step 1**](#step-1-create-an-ecs-cluster).
+
+1. On the sidebar, choose Task Definitions and select Create new Task Definition.
+2. Choose Fargate as the launch type, and proceed to the next step.
+
+1. Enter the task definition name.
+2. Set the task role to None
+3. Select the default Network mode
+4. Set Linux as the Operating system family
+5. Set the Task Execution Role to the one created in the prequisite step
+
+  ![Configuration of the Task](</img/ecs-task-def_(1)_(1)_(1)_(2)_(1).png>)
+
+4. Select the default Task execution IAM role (ecsTaskExecutionRole). AWS creates one for you if you don't have one.
+
+5. Set the required task size (memory & CPU) [Minimum requirement: 2vCPU and 4GB Memory]
+
+6. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set Volume type as **EFS** and set the **File System ID** to the EFS filesystem created in the prequisite step. Leave the remaining fields with the default values.
+
+          ![EFS Volume Configuration](/img/ecs-efs.png)
+
+7. Configure **Appsmith container**.
+    1. Click the **Add container** button.
+    2. Enter the container name, and set the Image to `appsmith/appsmith-ce`
+    3. Add port mappings for the ports **80->80,443->443**
+    4. Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`
+
+      ![Storage Setting](/img/ecs\_mount_(1).png)
+
+    5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values it's recommended you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created.
+    
+    You can either add the Appsmith Business Edition License Key as plain text to the `APPSMITH_LICENSE_KEY` variable or create a new secret for it and add that secret into the field. For more information, see [How to create a new secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) on Amazon official documentation.
+
+    6. Enter the URI of the external MonboDB v5 instance by adding a new env key APPSMITH_MONGODB_URI.
+
+      ![Container Environment](/img/ecs-container-env.png)
+
+    7. Enable auto-configure CloudWatch Logs for log configuration.
+    8. Hit **Add.**
+
+      ![Container Port Configuration](/img/ecs-task-appsmith_(1)_(1)_(1)_(2).png)
+
+    9. Finally, hit the **Create** button.
+
+### Step 3: Create and run an ECS service
+
+1. Navigate to the **clusters dashboard** and click the ECS cluster created in [**Step 1**]/(aws-ecs#step-1-create-an-ecs-cluster).
+2. On the cluster details, under the **Services tab** hit the **create** button.
+
+![Cluster Dashboard](/img/ecs-cluster-service-creation.png)
+
+3. Configure Service
+
+    1. Select **Fargate** as Launch Type.
+    2. Select the **Task Definition** created in [**Step 2**](#step-2-create-task-and-container-definitions) with the latest revision.
+    3. Select the **Cluster** created in [**Step 1**](#step-1-create-an-ecs-cluster).
+    4. Enter the service name.
+    5. Select the **Replica** Service type and the **Number of Tasks** to 1.
+    7. Leave the remaining fields and sections with the **default values**, and proceed to the next step.
+
+      ![Configuring the service](/img/service-ecs-appsmith.png)
+
+4. Configure network 
+    1. Select the VPC and the subnets
+    2. Update the security group to add NFS access.
+    3. Load Balancing
+       - Select Application Load Balancer
+       - Select the ALB created in the prequisite step
+       - Set Container port: name to port 80 and click Add to load balancer.
+       - Create a new Production listener port for port 80
+       - Set Production listener protocol to HTTP
+       - Set Target Group to create new, and rename the tg if required
+       - Set Health Check patter to / and evaluation order to 1
+       - Do the same for fort 443 and HTTPS
+
+![Configure Network](</img/ecs-service-lb_(1)_(1)_(1)_(2)_(3).png>)
+
+5. Set Auto Scaling - Proceed to the next step with the **default** configuration.
+
+![Setting Up Auto Scaling](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-c530f8614a433bc339b500c3859d7332960ac0fc\_ecs-service-auto-scaling.png)
+
+6. Review the Service configurations and hit the **Create Service** button.
+
+![Review Section](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-d41afa800108de88c398d00edf945db81077d4c0\_ecs-service-review.png)
+
+7. The following screen is shown with the **launch status**, click the **View Service** button.
+
+![Launch Status Dashboard](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-6e59de9348c02c19d5b8bf0871b056ebf8ec5a97\_ecs-service-launch-status.png)
+
+8. You are directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. refresh the table until the status is **RUNNING**.
+
+![Service Detail Page](/img/ecs-service-task-status.png)
+
+9. Click on the **task** to get the details of your running service.
+
+![Task Dashboard](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-0e04e6250702a263e7398969ee75be5b82a4f1f4\_ecs-task-details.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Troubleshooting
 
 If you encounter any errors during this process, check out the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join the [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team.
