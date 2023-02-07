@@ -1,26 +1,28 @@
 ---
+
 description: Deploy Appsmith on Azure Container Instance Service
 sidebar_position: 4
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Azure Container Instance
-Azure Container Instances (ACI) is a fast and simple way to run containers in the cloud.
+Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud, providing fast deployment and persistent storage options.
 This document guides you through the process of launching an ACI instance and running an Appsmith container on it. The data persists in Azure Storage Account File Share.
+
 :::note 
 Azure only supports CIFS file shares and NFS file shares aren't yet supported.
 :::
 
-### Prequisites
-Before you can launch an ACI instance, you need to have an Azure subscription and have the Azure CLI installed on your machine. If you do not have an Azure subscription, you can sign up for a free trial at **[https://azure.com/free](https://azure.com/free)**.
+## Prequisites
+Before you launch, make sure you have an Azure subscription and have the Azure CLI installed on your machine. If you don't have an Azure subscription, you can sign up for a free trial at **[https://azure.com/free](https://azure.com/free)**.
 
-If you already have an Amazon Web Services account, you may skip this step.
-
-Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) in order to create an account on AWS.
+If you already have an Amazon Web Services account, you may skip this step. However, if you need to create an AWS account, follow the easy steps outlined [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 
 
 ### Configure variables
 Open a bash shell and set the following variables
-```
+```bash
 resourceGroupName="myResourceGroup"
 aciName="myAppsmithACI"
 storageAccountName="mystorageaccount$RANDOM"
@@ -30,19 +32,33 @@ dnsNameLabel="myDNSLabel"
 ```
 ### Create a resource group (optional)
 
-`az group create --name $resourceGroupName --location $aciLocation`
+```bash
+az group create --name $resourceGroupName --location $aciLocation
+```
 
 ### Create a storage account (optional)
-`az storage account create --resource-group $resourceGroupName --name $storageAccountName --location $aciLocation --sku Standard_LRS`
+```bash
+az storage account create --resource-group $resourceGroupName --name $storageAccountName --location $aciLocation --sku Standard_LRS
+```
 ### Get the storage account key
-`storageAccountKey=$(az storage account keys list --resource-group $resourceGroupName --account-name $storageAccountName --query "[0].value"  --output tsv)`
+```bash
+storageAccountKey=$(az storage account keys list --resource-group $resourceGroupName --account-name $storageAccountName --query "[0].value"  --output tsv)
+```
 
 ### Create a file share
-`az storage share create --name $fileShareName --account-name $storageAccountName --account-key $storageAccountKey`
-
-### Create Appsmith ACI
+```bash
+az storage share create --name $fileShareName --account-name $storageAccountName --account-key $storageAccountKey
 ```
-az container create \
+
+## Create Appsmith ACI
+
+In this section, learn how to create Appsmith ACI
+
+<Tabs groupId="editions">
+   <TabItem label="Community Edition" value="community">
+
+```bash
+ az container create \
   --resource-group $resourceGroupName \
 	--name appsmith-release \
 	--image appsmith/appsmith-ce:release \
@@ -57,8 +73,11 @@ az container create \
 	--azure-file-volume-mount-path "/appsmith-stacks/"
  ```
 
-# For EE
-```
+   </TabItem>
+   <TabItem label="Business Edition" value="business">
+
+
+```bash
 az container create \
   --resource-group $resourceGroupName \
 	--name appsmith-release \
@@ -74,6 +93,11 @@ az container create \
 	--azure-file-volume-mount-path "/appsmith-stacks/" \
   --environment-variables 'APPSMITH_LICENSE_KEY'='<Your Appsmith License>'
 ```
+
+   </TabItem>
+</Tabs>
+
+Congratulations, you now have your Appsmith application running in the cloud with Azure Container Instances! If you want to learn more about the capabilities of ACI, be sure to check out the relevant resources. If you encounter any errors along the way, don't worry, simply follow the troubleshooting guide for assistance. 
 
 ## Updating Appsmith
 
