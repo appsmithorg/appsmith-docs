@@ -66,6 +66,7 @@ const sidebars = {
                 },
                 'getting-started/setup/installation-guides/aws-ami',
                 'getting-started/setup/installation-guides/aws-ecs',
+                'getting-started/setup/installation-guides/aws-ecs-with-fargate',
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/cloudjiffy',

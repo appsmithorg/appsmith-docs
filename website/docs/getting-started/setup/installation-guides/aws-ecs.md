@@ -3,7 +3,7 @@ description: Deploy Appsmith on ECS cluster using EC2 instance.
 sidebar_position: 5
 ---
 
-# AWS ECS
+# AWS ECS with EC2
 
 ## Prerequisites
 
