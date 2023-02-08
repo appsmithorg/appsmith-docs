@@ -19,10 +19,16 @@ docker pull appsmith/appsmith-ce && docker restart appsmith
 docker-compose pull && docker-compose up -d --force-recreate appsmith
 ```
 
-## Checkpoint upgrade
-Upgrading a Docker container checkpoint to the latest version is a crucial step in maintaining the stability, security, and performance of the containerized applications. 
+## Checkpoint version and upgrades
 
-You may need to manually map your instance to the required version If your current version of Appsmith is less than `v1.9.2`. To do this, access your Appsmith instance and make the following change to the `docker-compose.yml` file:
+When you upgrade manually, you must upgrade to the checkpoint version released between your version and the latest version.
+
+Appsmith checkpoint versions:
+```
+v1.9.2
+```
+
+Access your Appsmith instance and make the following change to the docker-compose.yml file:
 
 <Tabs groupId="operating-systems">
   <TabItem value="CE" label="Community Edition" default>
