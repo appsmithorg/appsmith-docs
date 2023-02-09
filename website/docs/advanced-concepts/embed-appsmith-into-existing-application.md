@@ -132,7 +132,7 @@ You can remove the Appsmith topbar with page tabs by appending **`?embed=true`**
 
 ![Remove Appsmith top bar](/img/embed_apps.png)
 
-* To remove the top bar, open the `app settings`.
+* Click on `App settings` in the Canvas properties .
 * Click on `Share & Embed`.
 * Toggle `Show navigation bar`.
 * Copy the updated embed code.
