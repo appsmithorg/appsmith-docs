@@ -110,7 +110,7 @@ In the old Kubernetes stack, MongoDB and Redis were deployed as separate resourc
         helm show values appsmith/appsmith > values.yml
       ```
 
-  4. Modify values.yaml and enable mongo and redis.
+  4. Modify values.yaml and enable MongoDB and Redis.
 
       ```bash new
         redis:
