@@ -2,9 +2,25 @@
 
 <HideElements/>
 
-Follow the steps below to upgrade Kubernetes Community edition to Business edition:
+Follow the steps below to upgrade the Kubernetes Community edition to the Business edition:
 
 <ul class="circle"> 
+
+<li> Create a backup of the CE data available at <code>/appsmith-stacks/data/backup</code>. Connect to the shell of a running container.
+
+         kubectl exec -it <pod> bash
+    
+    /* Run the backup command */
+    appsmithctl backup
+
+    /* Download the backup file */
+    kubectl cp <namespace>/appsmith-0:<backup_path_from_above> ./<name_of_backup_file>
+
+    /* Retrieve the salt and password and paste it in the values.yaml file */
+    kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
+
+</li>
+
 <li> Uninstall the community edition Helm chart by running the following command:
 
          helm uninstall appsmith
