@@ -89,9 +89,9 @@ There are a number of directions in which your apps may need to communicate. Dep
 
 In this scenario, you are building an app that has an Iframe widget called `Iframe1`. There is an external page embedded within that Iframe widget, and you are setting up communication between the embedded page and the Iframe in Appsmith.
 
-![Use postWindowMessage to send messages between windows](/img/as_postmessage_communication.png)
-
 #### From Appsmith to embedded page
+
+![](/img/postmessage_child_incoming.png)
 
 To send data to a page that's embedded in an Appsmith Iframe widget:
 
@@ -116,6 +116,8 @@ When the iframe receives your message, it puts the message text into the `#targe
 
 #### From embedded page to Iframe widget
 
+![](/img/postmessage_child_outgoing.png)
+
 To capture and handle a message that was sent to an Appsmith Iframe widget from the page embedded in the iframe:
 
 Use the iframe's [**onMessageReceived**](/reference/widgets/iframe#events) event in the properties pane. Choose an action or write code to be executed when the message is received from the embedded page. You can use the `Iframe1.message` property to access the content of the message that was received by Appsmith.
@@ -125,6 +127,8 @@ Use the iframe's [**onMessageReceived**](/reference/widgets/iframe#events) event
 In this scenario, you are building an app outside of Appsmith, and you have used an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) element to embed a deployed Appsmith app in that page. Now you are setting up communication between the non-Appsmith parent app and the Appsmith app embedded within it.
 
 #### From Appsmith to parent app
+
+![](/img/postmessage_parent_outgoing.png)
 
 To configure your Appsmith application to send messages to its parent page:
 
@@ -142,6 +146,8 @@ The parent application where Appsmith is embedded should have an event listener 
 This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
 :::
 
+![](/img/postmessage_parent_incoming.png)
+
 When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
    
 On your Appsmith app, you can enable/disable a page to react to these messages using the following functions - 
@@ -155,11 +161,11 @@ For example, a parent website (`https://mywebsite.com`) where an appsmith app is
 const iFrame = document.getElementById(”#appsmith-iframe”);
 iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
 ```   
-In the Appsmith app, if you want to run and API (Api1) in reaction to this message, you can use the `windowMessageListener()` function as follows - 
+In the Appsmith app, if you want to run an API called `Api1` in reaction to this message, you can use the `windowMessageListener()` function as follows - 
 ```javascript
 windowMessageListener(”https://mywebsite.com”, () => Api1.run());
 ```
-To stop the appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
+To stop the Appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
 ```javascript
 unlistenWindowMessage(”https://mywebsite.com”)
 ```
