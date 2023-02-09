@@ -116,8 +116,6 @@ When the iframe receives your message, it puts the message text into the `#targe
 
 #### From embedded page to Iframe widget
 
-![](/img/postmessage_child_outgoing.png)
-
 To capture and handle a message that was sent to an Appsmith Iframe widget from the page embedded in the iframe:
 
 Use the iframe's [**onMessageReceived**](/reference/widgets/iframe#events) event in the properties pane. Choose an action or write code to be executed when the message is received from the embedded page. You can use the `Iframe1.message` property to access the content of the message that was received by Appsmith.
