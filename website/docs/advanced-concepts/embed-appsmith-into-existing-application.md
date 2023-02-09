@@ -110,7 +110,8 @@ You can modify the layout of your embedded code directly from the settings of yo
 * Update the Embed size as desired.
 * Copy the updated embed code.
 
-By following these simple steps and the code examples and explanations provided, you would be able to customize the layout of your embedded app to fit your specific needs and requirements.
+If you want to get your app to use the whole page in your browser, you can change your height and width parameters like shown below:
+
 
 ```markup
 <!DOCTYPE html>
