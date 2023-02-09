@@ -91,7 +91,7 @@ Export data from the existing `MongoDB` pod and download the archive file to you
 
 ### Configure parameters
 
-In the old Kubernetes stack, MongoDB and redis were deployed as separate resources in the cluster. However, in the new Helm chart, you have the option to configure both MongoDB and redis as an internal service or users also have an option to deploy MongoDB and redis as separate services in the cluster. To ensure that the Helm chart runs with external Redis and MongoDB services, you need to make some changes to the `values.yaml` file. Follow the steps below to configure external Redis and MongoDB services.
+In the old Kubernetes stack, MongoDB and Redis were deployed as separate resources in the cluster. However, in the new Helm chart, you can configure MongoDB and Redis as an internal service or deploy MongoDB and Redis as separate services in the cluster. To ensure that the Helm chart runs with external Redis and MongoDB services, you need to make some changes to the `values.yaml` file. Follow the steps below to configure external Redis and MongoDB services.
 
   1. Add Helm repository
 
