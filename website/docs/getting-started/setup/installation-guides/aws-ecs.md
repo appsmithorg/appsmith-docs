@@ -5,6 +5,8 @@ sidebar_position: 5
 
 # AWS ECS on EC2
 
+This document guides you through installing Appsmith using AWS ECS on EC2
+
 ## Prerequisites
 
 ### 1: Register with Amazon Web Services
