@@ -14,7 +14,7 @@ Follow the steps below to upgrade the Kubernetes Community edition to the Busine
     appsmithctl backup
 
     /* Download the backup file */
-    kubectl cp <namespace>/appsmith-0:<backup_path_from_above> ./<name_of_backup_file>
+    kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
 
     /* Retrieve the salt and password and paste it in the values.yaml file */
     kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
