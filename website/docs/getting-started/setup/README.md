@@ -58,7 +58,7 @@ You can choose from various popular platforms to deploy Appsmith, like Docker, K
 
 It's simple and quick to deploy Appsmith. Please ensure that your system has the following recommended configuration for optimal performance before moving forward with the deployment:
 
-* Two virtual CPUs \[vCPU]
+* Two virtual CPU \[vCPU]
 * A four GB of memory
 
 :::info
@@ -93,7 +93,7 @@ And [more](/getting-started/setup/instance-configuration/) that can be configure
 
 ### Manage
 
-You can also effectively [manage your self-hosted instance](/getting-started/setup/instance-management/README.md) like [database backup](/getting-started/setup/instance-management/appsmithctl#export-database), [instance backup](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance), and [more](/getting-started/setup/instance-management/appsmithctl).
+You can also effectively [manage your self-hosted instance](/getting-started/setup/instance-management) like [database backup](/getting-started/setup/instance-management/appsmithctl#export-database), [instance backup](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance), and [more](/getting-started/setup/instance-management/appsmithctl).
 
 Deploying Appsmith as a self-hosted instance has its own perks - having your data and apps hosted on your infrastructure. It's also easier to manage things such as \[backups]\(Link to Appsmithctl page) and scaling that follow the rules across deployed instances. Get started by following the \[installation guides]\(link to the installation guide) that work for you.
 
