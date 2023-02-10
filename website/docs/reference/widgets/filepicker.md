@@ -105,7 +105,7 @@ Currently, only **CSV** data is supported; XLS or other formats aren't supported
 
 ### Events
 
-You can define functions to be called when these events are triggered in the widget. For example, you can navigate to another page, show alert messages, open and close modals, and store data in local storage.
+You can define functions to be called when these events are triggered in the widget. For example, you can navigate to another page,show alert messages,open and close modals,and store data in local storage.
 
 | Event               | Description                                                                                                                                                                                                                            |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -133,8 +133,8 @@ The following resources should come in handy as you need to learn new tricks:
 * [Appsmith Framework](../appsmith-framework/)
 * [JavaScript Editor](../../core-concepts/writing-code/javascript-editor-beta/)
 * [Uploading a File to S3](../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
-* [Upload File Data with API Requests](/learning-and-resources/how-to-guides/how-to-submit-multipart-and-binary-form-data)
+* [Send File Data with API Requests](/core-concepts/connecting-to-data-sources/authentication#send-body-data-with-api-requests)
 
 ### Troubleshooting
 
-If you encounter any errors during this process, check out the guide on [debugging deployment errors](https://docs.appsmith.com/help-and-support/troubleshooting-guide/deployment-errors). If you are still facing any issues, please reach out to support@appsmith.com or join our [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
+If you encounter any errors during this process, check out the guide on [debugging deployment errors](https://docs.appsmith.com/help-and-support/troubleshooting-guide/deployment-errors). If you are still facing any issues, please reach out to support@appsmith.com or join the [Discord Server](https://discord.com/invite/rBTTVJp) to speak to the Appsmith team directly.
