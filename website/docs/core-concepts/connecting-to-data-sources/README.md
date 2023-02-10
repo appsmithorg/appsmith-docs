@@ -1,57 +1,55 @@
-# Connecting to Datasource
+# Connecting to Datasources
 
-Rich applications require real data to build intuitive UI, perform data transformations & write business-correct logic. Appsmith can talk to your data in the following ways
+Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Whether you're working with a traditional database like MySQL or a more modern tool like S3, Appsmith makes it easy to connect and start working with your data right away. Connecting to a datasource is a necessary step before data can be visualized, transformed, or otherwise utilized. 
 
-* [Query your database directly](/core-concepts/connecting-to-data-sources/connecting-to-databases)
-* [Hit a REST API](/core-concepts/connecting-to-data-sources/authentication)
-
-:::tip
-Before connecting to a data source, you must whitelist the IP address of the Appsmith deployment on your database instance or VPC
-
-**18.223.74.85** and **3.131.104.27** are the IP addresses of the Appsmith cloud instances that need to be whitelisted
-
-This is a guide on how to [whitelist appsmith on AWS.](/learning-and-resources/how-to-guides/aws-whitelist)
+:::info
+Appsmith encrypts all your datasource credentials and stores them securely. Appsmith also doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of Queries. As Appsmith is an open source framework, you can [deploy it on-premise](/getting-started/setup), and audit it to ensure none of your data leaves your VPC. For more information, see [Security](/product/security#security-measures-within-appsmith). 
 :::
 
-## Security
+To connect to a datasource, 
 
-Appsmith safely encrypts all your data source credentials and stores them securely. Appsmith also does not store any data returned from your data sources and acts only as a proxy layer to orchestrate the execution of Queries. Since Appsmith is an open-source framework, you can [deploy it on-premise](/getting-started/setup/), and audit it to ensure none of your data leaves your VPC.
+* Navigate to **Explorer**
+* Click on the **+** icon (next to Datasources) 
+* Select the **datasource**. 
 
-Read more about [Security](/product/security)
 
-## Sample Data
+![Connecting to Datasources](</img/connecting-to-data-sources.png>)
 
-If you would like to play around with the platform before connecting your data, we provide mock data sources that you can use.
+After creating and configuring a datasource, you can query the datasource and bind the results in the [UI](/core-concepts/building-ui) to [display data](/core-concepts/data-access-and-binding).
 
-### Sample DB
+Datasources configured within an application can be accessed by all the developers who are members of the workspace. 
 
-You can connect to 2 sample datasets
 
-1. Movies: This is a sample [MongoDB](/reference/datasources/querying-mongodb/) database with a collection called movies
-2. Users: This is a sample [PostgreSQL](/reference/datasources/querying-postgres) database with a table called users
+<div class="containerGridSampleApp">
 
-:::note
-The **data** in the **mock database** gets **reset** every **24 hours** and is **common** for **all users** so it may contain **some unexpected values**.
-:::
+   <div class=" containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+         <img class="containerImage" src="/img/db-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="quickstart"/>
+      </div> 
+      <b><a href="/core-concepts/connecting-to-data-sources/connecting-to-databases">Databases</a></b>
+      <div class="containerDescription">
+      </div>
+   </div>
 
-![](</img/add_mock_db_(3).gif>)
+   <div class="containerColumnSampleApp columnGrid column-two">
+   <div class="containerCol">
+         <img class="containerImage" src="/img/api-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="support"/>
+      </div>
+      <b><a href="/core-concepts/connecting-to-data-sources/authentication">APIs</a></b>
+      <div class="containerDescription"> 
+      </div>
+   </div>
 
-### Sample API
+   <div class="containerColumnSampleApp columnGrid column-three">
+   <div class="containerCol">
+         <img class="containerImage" src="/img/query-icon.png" style= {{width:"60px", height:"60px", margin:"0"}} alt="support"/>
+      </div>
+      <b><a href="/core-concepts/data-access-and-binding/querying-a-database">Queries</a></b>
+      <div class="containerDescription"> 
+      </div>
+   </div>
+  
+</div> 
 
-You can import the below CURL commands to execute these [APIs](/core-concepts/connecting-to-data-sources/authentication)
 
-#### Fetch Users
 
-```bash
-curl --location --request GET 'https://mock-api.appsmith.com/users?page=1'
-```
-
-#### Update Users
-
-```bash
-curl --location --request PUT 'https://mock-api.appsmith.com/users/1' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "status" : "Approved"
-}'
-```
