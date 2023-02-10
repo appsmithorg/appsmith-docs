@@ -18,27 +18,26 @@ Azure only supports CIFS file shares and doesn't support NFS file shares.
 Before launching an ACI instance, you need to have an Azure subscription and have the Azure CLI installed on your machine. 
 
 * [Azure Subscription](https://azure.com/free) - If you don't have an Azure subscription, you can sign up for a free trial
-* Azure CLI 
-* [Register with Amazon Web Services](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) - You may skip this step if you already have an AWS account.
+* [Azure CLI](https://learn.microsoft.com/en-us/cli/azure) 
 
-
-### Configure variables
-Open a bash shell and set the following variables
+## Configure variables
+Update the following values starting with 'my' where necessary, and enter them in your shell/terminal.
 ```bash
 resourceGroupName="myResourceGroup"
 aciName="myAppsmithACI"
 storageAccountName="mystorageaccount$RANDOM"
 aciLocation="southindia"  
-fileShareName="appsmith-test"
+fileShareName="myFileShareName"
 dnsNameLabel="myDNSLabel"
 ```
 ### Create a resource group (optional)
-
+You can skip this step if you want to use an existing resource group.
 ```bash
 az group create --name $resourceGroupName --location $aciLocation
 ```
 
 ### Create a storage account (optional)
+You can skip this setp if you want to use an existing storage account.
 ```bash
 az storage account create --resource-group $resourceGroupName --name $storageAccountName --location $aciLocation --sku Standard_LRS
 ```
@@ -60,10 +59,10 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 ```bash
  az container create \
   --resource-group $resourceGroupName \
-	--name appsmith-release \
-	--image appsmith/appsmith-ce:release \
+	--name $aciName \
+	--image appsmith/appsmith-ce \
 	--ip-address public \
-	--dns-name-label appsmith-release-azure-aci \
+	--dns-name-label $dnsNameLabel \
 	--ports 80 443\
 	--cpu 2 \
 	--memory 4 \
@@ -80,8 +79,8 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 ```bash
 az container create \
   --resource-group $resourceGroupName \
-	--name appsmith-release \
-	--image appsmith/appsmith-ce:release \
+	--name $aciName \
+	--image appsmith/appsmith-ee \
 	--ip-address public \
 	--dns-name-label $dnsNameLabel \
 	--ports 80 443 \
