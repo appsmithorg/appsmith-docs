@@ -370,3 +370,32 @@ p > code, td > code, a > code, li > code, mark > code {
   border: 0 !important;
   line-height: normal;
 }
+
+ul.circle {
+  list-style: none;
+  counter-reset: item;
+  text-indent: -2.8em;
+  margin-left: 2em;
+}
+
+ul.circle > li{
+  counter-increment: item;
+  margin-bottom: 10px;
+}
+
+ul.circle > li:before {
+  margin-right: 9px;
+  content: counter(item);
+  background: #f86a2b;
+  border-radius: 100%;
+  color: white;
+  /* width: 0.3em; */
+  text-align: center;
+  display: inline-block;
+  padding-left: 2.4em;
+  height: 2.1em;
+  font-size: 0.89em;
+  padding-top: 0.3em;
+  letter-spacing: -4em;
+  margin-top: 1.5em;
+}
