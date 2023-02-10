@@ -172,6 +172,7 @@ cURL
 OnSuccess
 Port
 OnSuccess
+onSuccess
 postWindowMessage
 Cross-origin 
 windowMessageListener
@@ -184,6 +185,8 @@ Docker Compose
 Backend
 Postgres
 untrusted
+Filepicker
+Cloudinary
 Port
 GSheet
 Twilio
