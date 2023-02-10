@@ -1,14 +1,14 @@
-# AWS ECS with Fargate
+# AWS ECS on Fargate
 
 ## Prerequisites
 
-### 1: Register with Amazon Web Services
+1. **Register with Amazon Web Services:**
 
 You may skip this step if you already have an Amazon Web Services account.
 
 Please follow the steps [detailed here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) to create an account on AWS.
 
-### 2: Create an AWS security group
+2. **Create an AWS security group:**
 
 You can skip this step if you already have an existing security group with ports 80, 443.
 
@@ -16,36 +16,37 @@ Appsmith is a web application that requires ports 80 and 443 for HTTP access. Pl
 
 While creating the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443 accessible from anywhere.
 
-### 3: Provision of an Application Load Balancer
+3. **Provision of an Application Load Balancer**
 
 You can skip this step if you already have an ALB, but please ensure the listeners for ports 80 and 443 are available.
 
-### 4: Create an EFS filesystem
+4. **Create an EFS filesystem:**
 
-1. Navigate to **AWS EFS** on the console and hit the *Create* button.
-2. Set the parameters like VPC (should be the same as the ECS cluster) and storage class as suiting your requirement.
+    1. Navigate to **AWS EFS** on the console and hit the *Create* button.
+    2. Set the parameters like VPC (should be the same as the ECS cluster) and storage class as suiting your requirement.
 
-:::caution
-Please ensure your EFS, ECS cluster, and Fargate instances are all in the same VPC.
-:::
+    :::caution
+    Please ensure your EFS, ECS cluster, and Fargate instances are all in the same VPC.
+    :::
       
-3. Click on the EFS created and navigate to the Network tab to ensure mount-target is made in the same availability zone as the ECS cluster.
-4. Create a new security group to allow inbound and outbound NFS traffic.
-5. Attach the security group to the EFS mount-target.
+    3. Click on the EFS created and navigate to the Network tab to ensure mount-target is made in the same availability zone as the ECS cluster.
+    4. Create a new security group to allow inbound and outbound NFS traffic.
+    5. Attach the security group to the EFS mount-target.
 
-### 5:  Create the ECS task execution role:
+5. **Create the ECS task execution role:**
 
-1. Go to the **IAM** console and select **Roles**.
-2. Click Create Role.
-3. Select trust entity:
+    1. Go to the **IAM** console and select **Roles**.
+    2. Click Create Role.
+    3. Select trust entity:
 
-    1. Select the Trusted entity type as AWS Service.
-    2. Select **Elastic Container Service Task** as the use case, and hit next.
-4. Add permission
+        1. Select the Trusted entity type as AWS Service.
+        2. Select **Elastic Container Service Task** as the use case, and hit next.
+    
+    4. Add permission
 
-    1. Add AmazonECSTaskExecutionRolePolicy.
-    2. Add SecretsManagerReadWrite.
-    3. Click Create Policy to open the policy editor, choose JSON mode.
+        1. Add AmazonECSTaskExecutionRolePolicy.
+        2. Add SecretsManagerReadWrite.
+        3. Click Create Policy to open the policy editor, choose JSON mode.
 
 ```
     {
@@ -66,7 +67,7 @@ Please ensure your EFS, ECS cluster, and Fargate instances are all in the same V
 ```
 
     
-### 6: Provision an external MongoDB v5.0 instance
+6. Provision an external MongoDB v5.0 instance
 
 Generate the MongoDB URI and ensure the credential used has the ClusterMonitor Role attached.
 
@@ -86,7 +87,7 @@ Generate the MongoDB URI and ensure the credential used has the ClusterMonitor R
 
 Switch to the old AWS console UI to follow the steps below.
 
-### Step 1: Create an ECS Cluster
+### 1. Create an ECS Cluster
 
 1. Navigate to Amazon ECS, choose clusters on the sidebar, and select `Create Cluster`.
 
@@ -102,7 +103,7 @@ Switch to the old AWS console UI to follow the steps below.
 
 6. Hit the **Create button**.
 
-### Step 2: Create task and container definitions
+### 2. Create task and container definitions
 
 Once the cluster is created, you need to create a task that runs on the cluster formed in [**Step 1**](#step-1-create-an-ecs-cluster).
 
@@ -125,8 +126,8 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 11. Configure **Appsmith container**.
 
     1. Click the **Add container** button.
-    2. Enter the container name, and set the Image to `appsmith/appsmith-ce`
-    3. Add port mappings for the ports **80->80,443->443**
+    2. Enter the container name, and set the Image to `appsmith/appsmith-ce`.
+    3. Add port mappings for the ports **80->80,443->443**.
     4. Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`.
 
     ![Storage Setting](/img/storage_settings_aws_fargate.png)
@@ -143,14 +144,14 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
     6. Set the following Environment Variables:
 
-        - `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database. You can use any random string (Eg. abcd). The more random, the better.
-        - `APPSMITH_ENCRYPTION_SALT`: Encryption salt is used to encrypt all credentials in the database. You can use any random string (Eg. abcd). The more random, the better.
-        - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access supervisor console to monitor the processes in the Appsmith container
+        - `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database. You can use any random string (Eg. test). The more random, the better.
+        - `APPSMITH_ENCRYPTION_SALT`: Encryption salt is used to encrypt all credentials in the database. You can use any random string (Eg. test). The more random, the better.
+        - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access supervisor console to monitor the processes in the Appsmith container.
         - `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB v5 instance by adding a new env key.
 
         ![Container Environment](/img/container_environment_aws_fargate.png)
 
-    7. Configure the Healthcheck to the following settings
+    7. Configure the Healthcheck to the following settings:
 
         - Command: `CMD-SHELL, curl http://localhost/api/v1/health`
         - Interval: 10 seconds
@@ -161,17 +162,17 @@ Once the cluster is created, you need to create a task that runs on the cluster 
         ![Health Check](/img/health_check_appsmith_fargate.png)
 
     8. Enable auto-configure CloudWatch Logs for log configuration.
-    9. Hit **Add.**
+    9. Hit **Add**.
     10. Finally, hit the **Create** button.
 
-### Step 3: Create and run an ECS service
+### 3. Create and run an ECS service
 
-1. Navigate to the **clusters dashboard** and click the ECS cluster created in [**Step 1**]/(aws-ecs#step-1-create-an-ecs-cluster).
+1. Navigate to the **clusters dashboard** and click the ECS cluster created in [**Step 1**](aws-ecs#step-1-create-an-ecs-cluster).
 2. On the cluster details, under the **Services tab** hit the **create** button.
 
 ![Cluster Dashboard](/img/ecs-cluster-service-creation.png)
 
-3. Configure Service
+3. Configure the Service:
 
     1. Select **Fargate** as Launch Type.
     2. Select the **Task Definition** created in [**Step 2**](#step-2-create-task-and-container-definitions) with the latest revision.
@@ -181,10 +182,10 @@ Once the cluster is created, you need to create a task that runs on the cluster 
     7. Leave the remaining fields and sections with the **default values**, and proceed to the next step.
 
 
-4. Configure the network 
-    1. Select the VPC and the subnets
+4. Configure the network:
+    1. Select the VPC and the subnets.
     2. Update the security group to add the security group created in the prerequisite step.
-    3. Load Balancing
+    3. Load Balancing:
        1. Select Application Load Balancer.
        2. Select the ALB created in the perquisite step.
        3. Set the Listener for port 80 and click Add to the load balancer.
