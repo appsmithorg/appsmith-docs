@@ -93,3 +93,32 @@ This error occurs when the Default Selected Value doesn't match any of the value
 #### Solution
 
 To fix this error, either change the value in the options property to match the selected value, or change the selected value to match an option listed in the options property. This ensures that the value selected is valid and prevents the error from appearing.
+
+
+## Default value is missing in options 
+
+You may encounter an error message "Duplicate values found for the following properties" while using the Select widget.
+
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="Duplicate values found for the following properties, in the array entries, that must be unique -- value."></Message>
+
+#### Cause
+
+This error occurs when there are duplicate values in the options property of the Select widget. For example,
+```js
+ {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "BLUE"
+  },
+```
+
+#### Solution
+
+To resolve this error, ensure that each value in the options property of the Select widget is unique. You can do this by checking the values and making sure that there are no duplicates. 
