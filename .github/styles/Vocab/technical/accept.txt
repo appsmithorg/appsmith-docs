@@ -188,6 +188,9 @@ untrusted
 Filepicker
 Cloudinary
 Port
+the cloud
+CLI
+ACI
 GSheet
 Twilio
 subnet
@@ -196,3 +199,4 @@ Fargate
 env
 api
 HTML
+
