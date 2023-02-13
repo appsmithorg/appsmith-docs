@@ -91,13 +91,21 @@
         </div> 
         <b><a href="/getting-started/setup/installation-guides/restack">Restack</a></b>
     </div>
-     <div class="columnGrid column-two" align="center">
+    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="/getting-started/setup/installation-guides/cloudjiffy">
             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"/>
             </a> 
         </div> 
         <b><a href="/getting-started/setup/installation-guides/cloudjiffy">CloudJiffy</a></b>
+     </div>
+     <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="">
+            <img class="containerImage" src="" alt=""/>
+            </a> 
+        </div> 
+        <b><a href=""></a></b>
      </div>
 </div>
 
