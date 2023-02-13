@@ -8,7 +8,7 @@ In the Appsmith Query Editor, you can specify the following settings in the **Se
 | Request confirmation  | API and DB query  | Set up a confirmation pop-up before a query is run  |
 | Query timeout  | API and DB query  | The time till server waits for the query to execute before closing the connection   |
 | Prepared statements | DB query | Execute a statement with dynamic data bindings repeatedly and efficiently |
-| Encode query params  | API  |   |
+| Encode query params  | API  |  Encode query params for all APIs. |
 | Smart JSON substitution  | API   | Dynamically perform type conversions on field values in a request body  |
 
 ### Run on page load
@@ -25,11 +25,11 @@ It’s the time till which Appsmith server waits for the query to execute before
 
 ### Prepared statements
 
-A Prepared Statement is a feature provided by Database Management Systems (DBMS) to execute the same statement with dynamic data bindings repeatedly and efficiently. Appsmith supports using prepared statements by converting the user query into a parameterized query by replacing the bindings. That means the query created on the Appsmith will have bindings for reading the widget values selected by users. To know more about Prepared statements in Appsmith, please check [How to Use Prepared Statements?](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md)
+A Prepared Statement is a feature provided by Database Management Systems (DBMS) to execute the same statement with dynamic data bindings repeatedly and efficiently. Appsmith supports using prepared statements by converting the user query into a parameterized query by replacing the bindings. That means the query created on the Appsmith will have bindings for reading the widget values selected by users. By default, the `prepared statement` is enabled for all queries. To know more about Prepared statements in Appsmith, please check [How to Use Prepared Statements?](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md)
 
 ### Encode query params
 
-This enables you to encode all the query parameters of an API. You can also encode form body when Content-Type header is set to `FORM_URLENCODED`.
+ Encode query params converts the special characters in params to their UTF equivalents. You can also encode form body when Content-Type header is set to `FORM_URLENCODED`.
 
 
 ### Smart JSON substitution
