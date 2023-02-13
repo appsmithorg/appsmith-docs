@@ -43,7 +43,7 @@
             <img class="containerImage" src="/img/aws_fargate.png" alt="AWS-Fargate-logo"/>
             </a>     
         </div> 
-         <b><a href="/getting-started/setup/installation-guides/digitalocean"> AWS ECS - Fargate</a></b>
+         <b><a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate"> AWS ECS - Fargate</a></b>
     </div>
    <div class="columnGrid column-three" align="center">
        <div class="containerCol">
@@ -51,7 +51,7 @@
             <img class="containerImage" src="/img/azure_aci.png" alt="ACI-logo"/>
             </a> 
         </div> 
-            <b><a href="/getting-started/setup/installation-guides/heroku">Azure Cloud Instance(ACI)</a></b>
+            <b><a href="/getting-started/setup/installation-guides/azure-aci">Azure Container Instance(ACI)</a></b>
    </div>
 </div>
 
@@ -93,19 +93,19 @@
     </div>
     <div class="columnGrid column-two" align="center">
         <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/ansible">
-            <img class="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/getting-started/setup/installation-guides/ansible">Ansible</a></b>
-    </div>
-     <div class="columnGrid column-three" align="center">
-        <div class="containerCol">
             <a href="/getting-started/setup/installation-guides/cloudjiffy">
             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"/>
             </a> 
         </div> 
         <b><a href="/getting-started/setup/installation-guides/cloudjiffy">CloudJiffy</a></b>
+     </div>
+     <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="">
+            <img class="containerImage" src="" alt=""/>
+            </a> 
+        </div> 
+        <b><a href=""></a></b>
      </div>
 </div>
 
