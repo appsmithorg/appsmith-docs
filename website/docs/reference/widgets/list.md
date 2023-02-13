@@ -2,10 +2,6 @@
 
 You can use a list widget to display structured data collection. For example, You have a dataset of employees with each entity having properties like name, designation, department, etc. You can use a list widget to iterate over the employee collection and display the data one after the other. The list widget allows you to supply this dataset and takes care of the iteration without writing any code.
 
-:::info
-List widget is in beta right now. It can only render widgets for display purposes like text, images, etc., in the template, but we plan to offer more features in the future.
-:::
-
 <VideoEmbed host="youtube" videoId="0ePiZlWmp7Q" title="How to use List Widget" caption="How to use List Widget"/>
 
 ## Usage
@@ -52,10 +48,6 @@ So, your list widget will be a collection of three text widgets and one image wi
 
 The platform provides a list widget with an embedded image and two text widgets. You can add more widgets as per your requirement.
 
-:::info
-In the beta version of the List widget, you can only use widgets to display the data like images, text, and more. However, the widgets that need users to provide inputs like text box, checkbox, and more, are not available in beta but will be added as part of future releases.
-:::
-
 To add more widgets to your list, navigate to the left bar under **PAGES**, click on the **Widget** tab, and search for a widget like **Text**. **Drag** the widget on the first item for the list in the widget.
 
 ![](</img/List-Widget-Add-widgets-to-first-item_(1).png>)
@@ -90,6 +82,7 @@ All of these properties are present in the property pane of the widget. The foll
 | Property                   | Description                                                                                                                                                                                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Items**                  | Allows you to bind static or dynamic data collection to the widget.                                                                                                                                                                                       |
+| **Data Identifier** | Like `keys` in React, you need to select a data identifier from you data items which helps uniquely identify each item. This helps List widget  identify which items have changed, are added, or are removed. You could also combine two columns or data identifiers by enabling the JS mode. |
 | **Server-side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. [See here](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination) for more information on pagination. |
 | **Visible**                | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                            |
 | **Animate Loading**        | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
@@ -121,45 +114,26 @@ To better understand how to bind data to a list widget, let’s take an example 
 
 You’ll see that in the JSON snippet below, there is a collection of books with details like `bookId`, `bookName`, `bookImage`, `category`, `author`, `publishedDate`, and `price`.
 
-```
+```json
 [
-
   {
-
     "bookId": "001",
-
     "bookName": "Artificial Intelligence for Business Leaders",
-
     "bookImage": "https://m.media-amazon.com/images/I/511Y1LSr0JL.jpg",
-
     "category":"Computing, Internet & Digital Media",
-
     "author" :"Ajit K Jha",
-
     "publishedDate": "22-July-2020",
-
     "price": "INR 599"
-
   },
-
   {
-
     "bookId": "002",
-
     "bookName": "Bootstrap 4 Quick Start",
-
     "bookImage": "https://images-na.ssl-images-amazon.com/images/I/41GTBaVKAyL._SX404_BO1,204,203,200_.jpg",
-
     "category":"Computing, Internet & Digital Media",
-
     "author" :"Jacob Lett",
-
     "publishedDate": "20-March-2018",
-
-    "price": "INR 439.90”
-
+    "price": "INR 439.90"
  }
-
 ]
 ```
 
@@ -180,6 +154,21 @@ If you are binding the dynamic response of your query or API to the list widget,
 #### Server Side Pagination
 
 You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md).
+
+#### Data Identifier
+
+The List widget needs to identify each item uniquely in order to update, reorder, add or remove them. So similar to the concept of `Primary Key` in database or `key` in React, an identifier should be selected from the dropdown which whose values are unique in the data provided to the List widget.
+For example, in the `Data Mapping` section in the JSON data; the identifier `bookId` has unique value in the data set.
+
+If no such unique identifier is present in the data, then multiple identifiers can be joined together to form a unique pattern by enabling the JS mode.
+Example
+```
+{{currentItem.bookName + "_" + currentItem.author}}
+```
+
+:::tip
+Always set the **Data Identifier** property with a valid unique identifier to boost the performance.
+:::
 
 #### Visible
 
@@ -212,23 +201,111 @@ These properties allow you to bind your List widget with any other widget in que
 | Binding Property    | Description                                                                                                                                                                                                                               |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **backgroundColor** | Represents the widget's **Background Color** setting as a CSS `color` value _(string)_.                                                                                                                                                   |
-| **gridGap**         | Reflects the widget's **Item Spacing** property _(number)_.                                                                                                                                                                               |
+| **itemSpacing**         | Reflects the widget's ¸ property _(number)_.                                                                                                                                                                               |
 | **isVisible**       | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                                                          |
-| **items**           | Contains an *array* of *objects* that each represent a widget within the list items, and holds information about that widget's state.<br/>e.g. `[ { "Text1": { "isVisible": true, ... }, ... }, ... ]` |
+| **currentItemsView**           | Contains an *array* of *objects* that each represent a widget within the list items, and holds information about that widget's state. <br/>e.g. `[ { "Text1": { "isVisible": true, ... }, ... }, ... ]` <br/>  |
 | **listData**        | Contains an _array_ of _objects_ that each represent a list item and its data.                                                                                                                                                            |
 | **pageNo**          | Contains a _number_ representing which page of the list is currently being displayed.                                                                                                                                                     |
 | **pageSize**        | Contains a _number_ representing the number of list items that can fit on one page of the List widget.                                                                                                                                    |
 | **selectedItem**    | Contains an _object_ representing the data of the list item that is selected.                                                                                                                                                             |
+| **triggeredItem**    | Contains an _object_ representing the data of the list item that is selected when interacted with an actionable item (like button) in an item.                                                                                                                                                           |
+| **selectedItemView**    | Contains an _object_ representing the widget's state of the list item that is selected.                                                                                                                                                             |
+| **triggeredItemView**    | Contains an _object_ representing the widget's state of the list item that is selected when interacted with widget (like button) in an item.                                                                                                                                                           |
 
+#### currentItemsView
+The ***currentItemView*** helps you to peek into the state of the widgets present in all the items of the List widget. It is an *array* of *objects* with each widget's state represented as an object.
+It may look something like
+
+```js
+[
+	{
+		Input1: {
+			isVisible: true,
+			text: "hello",
+			isRequired: true,
+		},
+		Text1: {
+			text: "Lorem ipsum ...",
+			isVisible: true,
+		}
+	},
+
+	{
+		Input1: {
+			isVisible: true,
+			text: "hey",
+			isRequired: false,
+		},
+		Text1: {
+			text: "Lorem ipsum ...",
+			isVisible: true,
+		}
+	},
+
+	{
+		Input1: {
+			isVisible: true,
+			text: "hey",
+			isRequired: false,
+		},
+		Text1: {
+			text: "Lorem ipsum ...",
+			isVisible: true,
+		}
+	}
+]
+```
+
+:::info
+This *array* of *objects* will be limited to the number of items visible on the page rather than the number list items present. E.g. If there are 300 objects in the list data but the List widget is showing 5 items per page then the **currentItemsView** property would show an *array* of only 5 *objects*.
+:::
+
+
+#### selectedItem
+The *selectedItem* property helps you grab a single item's data when it is clicked.
+To bind the selected item of the list to another widget, open the property pane of it, and add the code snippet given below:
+
+```
+{{<list_name>.selectedItem}}
+```
+Where ```<list_name>``` is the name of your list.
+
+#### triggeredItem
+The *triggeredItem* property helps you grab a single item's data when a widget is clicked.
+To bind the triggered item of the list to another widget, open the property pane of it, and add the code snippet given below:
+
+```
+{{<list_name>.triggeredItem}}
+```
+Where ```<list_name>``` is the name of your list.
+#### selectedView
+Where *selectedItem* property gives you the data for a particular item, *selectedView* would give all the widget's state present in the particular item when the item is clicked.
+
+To bind the selectedView of the list to another widget, open the property pane of it, and add the code snippet given below:
+
+```
+{{<list_name>.selectedView}}
+```
+Where ```<list_name>``` is the name of your list.
+
+#### triggeredView
+Similar to *selectedView*, the *triggeredView* would give all the widget's state present in the particular item but only when a widget present inside the item is clicked.
+
+To bind the triggeredView of the list to another widget, open the property pane of it, and add the code snippet given below:
+
+```
+{{<list_name>.triggeredView}}
+```
+Where ```<list_name>``` is the name of your list.
 ### Events
 
 You can define functions that will be called when these events are triggered in the widget.
 
 | Event               | Description                                                                                                                                                                                                                                             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onListItemClick** | Sets an action to take place when the user clicks on one of the list items. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
+| **onItemClick** | Sets an action to take place when the user clicks on one of the list items. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
 
-#### onListItemClick
+#### onItemClick
 
 For a list widget, the event onListItemClick is fired whenever a user clicks or selects an item on the list. You can perform many[ supported actions](../appsmith-framework/widget-actions/) on a list item click.
 
@@ -248,7 +325,6 @@ You can do some formatting changes to enhance the look and feel of the widget by
 | Style Property            | Description                                                                                                                                                                      |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Background Color**      | Sets the background color of the widget. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                  |
-| **Item Background Color** | Sets the background color of the list item cards. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                         |
 | **Item Spacing**          | Sets the width in pixels of the gap between list item cards. Accepts _number_ values.                                                                                            |
 | **Border Radius**         | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
 | **Box Shadow**            | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
@@ -256,16 +332,6 @@ You can do some formatting changes to enhance the look and feel of the widget by
 #### Background Color
 
 You can use the property background color to change the widget’s background. You can select the available colors from the color pallet to change the background color.
-
-#### Item Background Color
-
-Like Background color, you can select the available colors from the pallet to change the item’s background color for your widget.
-
-![How to set background/item background color for a list widget?](/img/List-Widget-Background-Item-Background-Color.png)
-
-:::tip
-To change the background/item background color by using HTML Color codes, click the JS label next to Background Color/ Item Background Color label and supply the HTML Color code in the box below.
-:::
 
 #### Item Spacing
 
@@ -280,3 +346,60 @@ You can use the border radius style to curve the edges of list widget. You can s
 You can use the box shadow style to cast a drop shadow of list widget. You can select one of the available option to choose the box shadow.
 
 Take advantage of using the list widget to display your datasets and visualize your content in a better way.
+
+### Internal Binding Properties
+
+These properties are available only to the widgets that are placed inside the list widget and allows you configure the widget's properties based on the position/order of the item.
+
+| Binding Property    | Description                                                                                                                                                                                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **currentItem** | This represents the data for a particular item.                                                                                                                                                   |
+| **currentIndex**         | Represents the index of the item.                                                                                                                                                                               |
+| **currentView**       | Reflects the state of the all the widgets present in current item.                                                                                                                                                                          |
+| **level_***           | *level* property is only available for nested list. This property can be used to access *currentItem*, *currentView* and *currentIndex* of parent property. E.g {{level_1.currentItem.name}}  |
+
+#### currentItem
+The currentItem represents the data for particular item. If the data in the List looks something like this
+```json
+[
+  {
+    "bookId": "001",
+    "bookName": "Artificial Intelligence for Business Leaders",
+    "bookImage": "https://m.media-amazon.com/images/I/511Y1LSr0JL.jpg",
+    "category":"Computing, Internet & Digital Media",
+    "author" :"Ajit K Jha",
+    "publishedDate": "22-July-2020",
+    "price": "INR 599"
+  },
+  {
+    "bookId": "002",
+    "bookName": "Bootstrap 4 Quick Start",
+    "bookImage": "https://images-na.ssl-images-amazon.com/images/I/41GTBaVKAyL._SX404_BO1,204,203,200_.jpg",
+    "category":"Computing, Internet & Digital Media",
+    "author" :"Jacob Lett",
+    "publishedDate": "20-March-2018",
+    "price": "INR 439.90"
+ }
+]
+```
+
+then the **currentItem** for the first item would reflect the 0th object of the above JSON and the properties of the object can be accessed by using `{{currentItem.bookName}}.`
+This can be used anywhere within the a widget that is placed inside the List widget.
+
+#### currentView
+This property can be used to access all sibling widgets present inside a List widget item. Let's assume we have an input widget and a button widget inside the List widget and we want to use the input's text to show alert on button click. In the button widget's *onClick* event we can access the input widget by using `{{showAlert(currentView.Input1.text)}}`.
+
+:::info
+The **currentView** syntax should always be used to access sibling data, referencing it directly e.g. `{{Input1.text}}` may seem to work while editing but won't work when deployed.
+:::
+
+#### level_*
+This is a special property designed to access parent List item's data and widget properties in a nested List setup. Let's assume we drag and drop a List widget inside another list widget, we will call List1 as outer list and List2 as inner list. The widgets present in the inner list want to gain access to the **currentItem** for the outer list to get the **bookId** property. We can have a binding of `{{level_1.currentItem.bookId}}` to gain access to the **bookId** for that particular item. We can similarly use **currentView** and **currentIndex** with the **level_1**
+<br/>
+
+We call this property `level_*` because inside the inner list we can drop another List widget to have deeper level of nesting. Let's assume we drag and drop another List widget inside the List2, we'll call this as List3. Now the inner most list will have access 2 special properties instead of 1 i.e **level_1** and **level_2**. Here the **level_1** would reflect the topmost list widget's state i.e List1 and **level_2** would reflect the inner List's state i.e List2.
+<br />
+
+:::info
+The parent list widgets do not have access to it's child list widgets. In the above setup, the widgets in List1 cannot use `level_2` or `level_3` here. Similarly List2 can only access `level_1` and not `level_2` but List3 can access both `level_1` and `level_2`.
+:::
