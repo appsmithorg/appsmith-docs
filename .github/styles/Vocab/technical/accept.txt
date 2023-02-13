@@ -188,8 +188,15 @@ untrusted
 Filepicker
 Cloudinary
 Port
+the cloud
+CLI
+ACI
 GSheet
 Twilio
 subnet
 auto-configure
+Fargate
+env
+api
 HTML
+
