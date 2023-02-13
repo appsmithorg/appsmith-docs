@@ -24,10 +24,10 @@ When deployed, the application always uses the production environment. However, 
 
 ## Configure an environment
 
-With Appsmith, it's easy to set up staging and production environments. By default, all the configuration values for a datasource are shared between staging and production. If you have to configure different parameters for staging and production, follow the steps mentioned below:
+With Appsmith, it's easy to set up staging and production environments. By default, all the configuration values for a datasource are shared between staging and production. If you have to configure different parameters for staging and production, follow the steps mentioned below. 
 
+<VideoEmbed host="youtube" videoId="3hoIWkvL9hA" title="Configure an environment" caption="Configure an environment | MongoDB example." /> 
 
-![](/img/me-db-3.png)
 
 * On the Explorer tab, click the **+** sign next to datasources.
 * Select a **datasource**.
