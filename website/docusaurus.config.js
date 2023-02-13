@@ -60,9 +60,8 @@ const config = {
         respectPrefersColorScheme: false,
       },
       algolia: {
-        appId: 'AZ2Z9CJSJ0',
-        apiKey: 'dfde934d9bdc2e0b14830f1dd3cb240f',
-        indexName: 'appsmith_docusaurus_index',
+        appId: 'OPXQIUYFFX',
+        apiKey: '7fa7b1c65af847ceb970d9819b02b85f',
         contextualSearch: false,
 
         //... other Algolia params
