@@ -31,6 +31,7 @@ These properties allow you to edit the table itself. All these properties are pr
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected. The rows are populated with `{{ Table1.selectedRows }}` field.                                                                                                       |
 | **Table Record Count**         | Use this field to set the number of records to return from a query or API call for showing on one page of the table. Access this number in your query with `{{ Table1.totalRecordsCount }}`. This property is only visible when you enable **Server Side Pagination**. |
 | **Allow adding a row**         | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| **Allow column freeze**         | Enable users to freeze the columns. Once enabled, users can freeze or unfreeze a column from the drop down that appears on hover |
 
 #### Table data
 
