@@ -31,6 +31,11 @@ The container checks the certificate files in the folder `<mounting-directory>/s
 In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will fail to find the  custom certificate and auto-provisions the certificate by `Let's Encrypt`
 :::
 
+:::info
+Please do not set the APPSMITH_CUSTOM_DOMAIN env variable specified before when using Custom certificates.
+APPSMITH_CUSTOM_DOMAIN has to be configured only for auto-provisioning the certificate by `Let's Encrypt`
+:::
+
 ## Docker
 
 After configuring your custom domain, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you are on.
