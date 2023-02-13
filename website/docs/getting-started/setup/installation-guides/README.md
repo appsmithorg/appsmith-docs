@@ -43,7 +43,7 @@
             <img class="containerImage" src="/img/aws_fargate.png" alt="AWS-Fargate-logo"/>
             </a>     
         </div> 
-         <b><a href="/getting-started/setup/installation-guides/digitalocean"> AWS ECS - Fargate</a></b>
+         <b><a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate"> AWS ECS - Fargate</a></b>
     </div>
    <div class="columnGrid column-three" align="center">
        <div class="containerCol">
@@ -51,7 +51,7 @@
             <img class="containerImage" src="/img/azure_aci.png" alt="ACI-logo"/>
             </a> 
         </div> 
-            <b><a href="/getting-started/setup/installation-guides/heroku">Azure Cloud Instance(ACI)</a></b>
+            <b><a href="/getting-started/setup/installation-guides/azure-aci">Azure Container Instance(ACI)</a></b>
    </div>
 </div>
 
@@ -90,14 +90,6 @@
              </a>     
         </div> 
         <b><a href="/getting-started/setup/installation-guides/restack">Restack</a></b>
-    </div>
-    <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/ansible">
-            <img class="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/getting-started/setup/installation-guides/ansible">Ansible</a></b>
     </div>
      <div class="columnGrid column-three" align="center">
         <div class="containerCol">
