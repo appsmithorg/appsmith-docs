@@ -38,7 +38,7 @@ function hideEditPage() {
 
 function hideIntercomApp() {
     if (ExecutionEnvironment.canUseDOM){
-        Array.prototype.forEach.call(document.getElementsByClassName('intercom-lightweight-app'), function(element) {
+        Array.prototype.forEach.call(document.getElementsByClassName('intercom-app'), function(element) {
              element.style.display = 'none';
          })
     }   
