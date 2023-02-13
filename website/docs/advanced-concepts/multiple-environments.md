@@ -8,16 +8,16 @@ Multiple Environments are only available on [Business Edition](https://www.appsm
 :::
 
 ## Environments on Appsmith
-Appsmith offers two environments, Staging and Production, to help developers efficiently manage the development, testing, and deployment of their applications. 
+Appsmith offers two environments, Staging and Production, to help developers efficiently manage their applications' development, testing, and deployment.
 
 ### Staging environment
-Staging environment refers to a environment used for testing and debugging purposes during the development of an application. It's a place where developers can inspect new aspects, debug, and explore their applications without affecting end-users. 
+A staging environment refers to an environment used for testing and debugging purposes during the development of an application. It's a place where developers can inspect new aspects, debug, and explore their applications without affecting end-users. 
 
 The configuration values for a datasource are usually the same for staging and production. If you want to change them, you can go to the [manage environments](#configure-an-environment) and make the necessary adjustments.
 
 
 ### Production environment
-The Production environment in Appsmith refers to the final stage of app development where end users can interact with the fully functional product. The environment configurations should be linked to data sources containing live, customer-facing data to ensure a smooth and optimal experience for the end user.
+The Production environment in Appsmith refers to the final stage of app development, where end users can interact with the fully functional product. The environment configurations should be linked to data sources containing live, customer-facing data to ensure a smooth and optimal experience for the end user.
 
 When deployed, the application always uses the production environment. However, if the user has requisite permissions, they can `apply` the staging environment configuration in view mode. Similar to a staging environment, each team member has a designated level of access to this environment.
 
@@ -38,7 +38,7 @@ With Appsmith, it's easy to set up staging and production environments. By defau
 * Set the parameters for the production and staging environments. 
 * Once parameters are configured, **bind** the values. 
 
-You can set different values for each environment. For instance, if you have a Postgresql database with different configuration, you can select a particular environment and set the values.
+You can set different values for each environment. For instance, if you have a Postgresql database with a different configuration, you can select a particular environment and set the values.
 
 ![](/img/me-db-1.png)
 
