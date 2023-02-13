@@ -1,6 +1,6 @@
 # Select
 
-‌Select / Dropdown widget is used to capture user input/s from a specified list of permitted inputs. It offers a simple and intuitive interface for users to select a single option from the list, making it an essential tool for capturing user inputs in various forms and applications. 
+Select / Dropdown widget captures user input/s from a specified list of permitted inputs. It offers a simple and intuitive interface for users to select a single option from the list, making it an essential tool for capturing user inputs in various forms and applications. 
 
 <VideoEmbed host="youtube" videoId="zNw1yMwg-aY" title="How to use Select Widget" caption="How to use Select Widget"/>
 
@@ -35,35 +35,9 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 | **Box Shadow**             	| Style                	| Casts a drop shadow from the frame of the widget.                                                                                                                              	| NA                                     	|
 
 
-## Events
-
-These are functions that are called when event listeners are triggered in the widget.
-
-| Events             | Description                                                                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onOptionChange** | The "onOptionChange" property allows you to specify the action that should occur when the user selects an option in the dropdown list. This is an important feature that enables you to capture the user's input and perform specific actions in response.  |
-| **onDropdownOpen** | The "onDropdownOpen" property allows you to specify the action that should occur when the user opens the dropdown list. For example, you could use the "onDropdownOpen" event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user.   |
-| **onDropdownClose** | The "onDropdownClose" property allows you to specify the action that should occur when the user closes the dropdown list. For example, you could use the "onDropdownClose" event to store the selected option in a database, hide additional information, or reset the widget to its original state.  |
-
-
-
 ## Displaying data
 
-A Dropdown **Options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
-
-```javascript
-// Query1.data is assumed to be an array here
-{{ Query1.data.map((row) => { 
-      return { label: row.name, value: row.id } 
-   }) 
-}}
-```
-
-To access the values of an object with attribute names that contain spaces, use `obj["<ATTRIBUTE_NAME"]` instead of `obj.<ATTRIBUTE_NAME>`, where `"<ATTRIBUTE_NAME>"` is the placeholder for an attribute name. For example, if the attribute is `income tax`.
-
-```javascript
- return { label: obj["income tax"], value: obj["income tax"]} 
-```
+Displaying data in a select widget, is a crucial aspect of creating an interactive user interface. The select widget provides a list of options for the user to choose from and it's important to specify these options to effectively display the data. 
 
 ### Options
 
@@ -105,10 +79,29 @@ If you want the default value to be ```Blue```, set the 'Default Selected Value'
 
 <VideoEmbed host="youtube" videoId="KP3qdEi4i3w" title="Default selected value" caption="Default selected value"/>
 
+
+### Data from an API or query
+
+A Dropdown **Options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+
+```javascript
+// Query1.data is assumed to be an array here
+{{ Query1.data.map((row) => { 
+      return { label: row.name, value: row.id } 
+   }) 
+}}
+```
+
+To access the values of an object with attribute names that contain spaces, use `obj["<ATTRIBUTE_NAME"]` instead of `obj.<ATTRIBUTE_NAME>`, where `"<ATTRIBUTE_NAME>"` is the placeholder for an attribute name. For example, if the attribute is `income tax`.
+
+```javascript
+ return { label: obj["income tax"], value: obj["income tax"]} 
+```
+
 ## Accessing data
 These properties allow you to bind your select widget with any other widget in queries or JS objects.
 
-### selectedOptionValue
+#### selectedOptionValue
 
 The "selectedOptionValue" in a Select widget is a value that represents the selected option in a  dropdown. It updates when the user selects a new option or the default value changes. 
 
@@ -116,7 +109,7 @@ The "selectedOptionValue" in a Select widget is a value that represents the sele
 {{widget_name.selectedOptionValue}}
 ```
 
-### selectedOptionLabel
+#### selectedOptionLabel
 
 The "selectedOptionLabel" in a Select widget represents the label of the selected option in a dropdown. This property is used to display the label of the selected option in the widget and is updated whenever the user selects a different option from the dropdown list or if the default label changes. 
 
@@ -127,7 +120,7 @@ The "selectedOptionLabel" in a Select widget represents the label of the selecte
 
 ## Search and filters
 
-A Dropdown can be used to filter a dataset based on the user's input. The selected value can be passed to an API using\*\*`{{ dropdownName.selectedOptionValue }}` .
+A Dropdown can be used to filter a dataset based on the user's input. The selected value can be passed to an API using `{{ widgetName.selectedOptionValue }}` .
 
 
 ### Allow searching	
@@ -188,7 +181,7 @@ View the sample app for ([Select Widget - Server Side Filtering](https://app.app
 
 ### Capturing data in forms
 
-Dropdown widgets can be used to capture from a fixed set of options inside a form such as gender, role, and status.
+Select widget can be used to capture from a fixed set of options inside a form, such as a gender, role, and status.
 
 :::info
 Some forms need to be pre-filled data from a table or API. You can bind the data to the default text property to enable this
@@ -206,16 +199,27 @@ Read more about submitting Input data to an API below.
 
 [Sending widget data in the post body](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
 
+## Events
+
+These are functions that are called when event listeners are triggered in the widget.
+
+| Events             | Description                                                                                                                                    |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onOptionChange** | The "onOptionChange" property allows you to specify the action that should occur when the user selects an option in the dropdown list. This is an important feature that enables you to capture the user's input and perform specific actions in response.  |
+| **onDropdownOpen** | The "onDropdownOpen" property allows you to specify the action that should occur when the user opens the dropdown list. For example, you could use the "onDropdownOpen" event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user.   |
+| **onDropdownClose** | The "onDropdownClose" property allows you to specify the action that should occur when the user closes the dropdown list. For example, you could use the "onDropdownClose" event to store the selected option in a database, hide additional information, or reset the widget to its original state.  |
+
+
+
 ## Troubleshooting
 
-If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you are still facing any issues, please connect with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
+If you run into any issues while working with select widget, check out this guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If you are still facing any issues, please connect with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
 
 
 ## Further reading
 
 The following resources may come handy as you need to learn new tricks:
 
-* [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Appsmith Framework](/reference/appsmith-framework/)
 * [JavaScript Editor](/core-concepts/writing-code/javascript-editor-beta/)
 
