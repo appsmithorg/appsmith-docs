@@ -172,6 +172,7 @@ cURL
 OnSuccess
 Port
 OnSuccess
+onSuccess
 postWindowMessage
 Cross-origin 
 windowMessageListener
@@ -184,9 +185,22 @@ Docker Compose
 Backend
 Postgres
 untrusted
+Filepicker
+Cloudinary
 Port
+the cloud
+CLI
+ACI
 GSheet
 Twilio
 subnet
 auto-configure
-
+onOptionChange
+onDropdownOpen
+onDropdownClose
+selectedOptionValue
+selectedOptionLabel
+Fargate
+env
+api
+HTML
