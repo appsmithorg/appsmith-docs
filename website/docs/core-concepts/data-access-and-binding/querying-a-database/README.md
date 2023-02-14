@@ -69,8 +69,8 @@ To see the error message returned by the datasource in response to your query, l
 
 Once you have successfully run a Query, you can use it in your application to:
 
-* Bind the query results to a widget to display the data. For more information, please check [Display Data from a query](/core-concepts/data-access-and-binding/displaying-data-read).
-* Capture the user input entered in a widget that can be referenced using JavaScript. For more information, please check [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write).
+* [Display Data from a query](/core-concepts/data-access-and-binding/displaying-data-read) - Bind the query results to a widget to display the data.
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write) - Capture the user input entered in a widget that can be referenced using JavaScript.
 * Run multiple queries by separating the run statements with a `;`. Check out the sample app that shows [how to run multiple queries](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/62ab7a7e84b91337251afd40) on a button click.
 * Pass parameters to a query in the run() function and access these parameters in the query. Check out the sample app that shows [how to pass parameters to the Query.run() function](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/628e64d47901344ba8d2a584).
 
