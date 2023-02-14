@@ -11,7 +11,7 @@ To write and execute queries, you should understand the basics of [connecting to
 
 ## Create a query
 
-This section talks about creating a DB query in Appsmith. To learn about API queries, please check [Configuring APIs](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
+This section talks about creating a DB query in Appsmith. To learn about API queries, please check [Create an API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
 Follow the below steps to create a database query in the query editor:
 
@@ -55,7 +55,7 @@ All query results are stored in the [data](/reference/appsmith-framework/query-o
 
 DB Queries fetch data in an array of objects where each object is a row, and each key in the object is a column.
 
-## Debugging errors
+## Debug errors
 
 When a query fails, Appsmith commonly shows a notification stating: `UncaughtPromiseRejection: <query_name> failed to execute.`.
 
