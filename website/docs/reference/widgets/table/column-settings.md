@@ -155,7 +155,7 @@ Based on the Column type, you can edit the cell content. Once done, you can move
 
 ### Column Freeze
 
-Column freeze controls whether the column can be frozen to the left, right or no freeze in the table. Once the column is frozen a Pin icon appears on the respective column in the Columns property.
+Column freeze controls whether the column can be frozen to the left, right or no freeze in the table. Frozen columns will be pinned in the property pane.
 
 Below are the scenarios that occur while freezing and unfreezing a column:
 * Any new column frozen to the left or right can be seen in the property pane occupying the same index as seen in the table.
