@@ -5,7 +5,7 @@ toc_max_heading_level: 3
 
 # Table
 
-The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets. Once a table is connected to a datasource, you can also use [inline-editing](/reference/widgets/table/inline-editing) features to make changes and additions to the table data directly in the widget.
+This page details how to work with your data in a Table widget. You will learn how to transform raw data from your queries, set up the table to fit your preferences, and implement server-side functions like pagination to make it speedier to work with large amounts of data. If you would like to learn about making changes and additions to your data within the Table widget, see [inline-editing](/reference/widgets/table/inline-editing).
 
 <VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget" caption="How to use Table Widget"/>
 
