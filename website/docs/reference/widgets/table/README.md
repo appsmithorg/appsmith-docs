@@ -11,7 +11,19 @@ The table widget displays data in rows and columns. You can display data from an
 
 ## Display data in tables
 
-These properties are used to pipe data into your table widget and manage the behavior of its individual columns.
+To get data from a query to appear in a table widget, follow these steps:
+
+1. If you don't already have a query that returns data from a datasource, [create one first](/core-concepts/data-access-and-binding/querying-a-database).
+2. Click on your table widget to open its properties pane.
+3. In its properties pane, enter the following code snippet into its [**Table data**](#table-data) property:
+    ```javascript
+    // replace <query_name> with the name of your query
+    {{<query_name>.data}}
+    ```
+
+<VideoEmbed host="youtube" videoId="czxtgHJ1sUE" title="" caption=""/>
+
+Now, the table widget should be populated with the data coming from the query. By default, this query will also now run automatically when the page loads. You can change this behavior from the query's settings page.
 
 ### Transform table data
 
@@ -51,7 +63,13 @@ Alternatively, you may wish to add a column to the table that's not already pres
 
 ## Refreshing the table
 
-TODO: You will need to run the query again to get the latest version of the table data
+When changes are made to the datasource that supplies your table with data, the table won't automatically know about the new data. Any time you submit new data to your datasource, be sure to use events and/or write code that re-runs the query that puts data into your table.
+
+This can be as simple as creating a [button widget](/reference/widgets/button) whose `onClick` event is bound to `<query_name>.run()`, where `<query_name>` is the name of the query that gets data for your table (and is referenced in the table's **Table data** field). When the button is clicked, the query is run, and the table is given fresh data.
+
+Another common flow for keeping your table data fresh happens when you submit new data via a POST type query, and then execute the GET type query as a success callback if the POST succeeds:
+
+Imagine you have a form 
 
 ### Update table data in real time
 
@@ -245,29 +263,11 @@ Properties allow you to edit the table, connect it with other widgets and custom
 
 #### Table data
 
-The Table Data in the property pane allows a user to edit data in the table. You can write an array of objects to display it as table rows.
+This field is where you can supply data to the table. The table expects this field to be an array of objects, with each object representing a row of the table.
 
 ![Property pane showing the Table data](/img/table\_data.png)
 
-You can also bind your data from a database / API using the mustache syntax ( `{{ }}` ).
-
-Follow these steps to bind the data from a mock database into a table widget:
-
-1. Create an App and click on `Datasources` under the explorer panel.
-2. Go to `+Create new` and select the `users` database from the Sample Databases. The user database should now appear under the Active window.
-3. From the "Active" window, click New Query+ for the Users database and create a "select" [query](/core-concepts/data-access-and-binding/querying-a-database/) to fetch the data.
-4. Go back to the canvas and drag the table widget onto it.
-5. Open the property pane, clear the Table data window and enter the following snippet:
-
-```
-{{<query_name>.data}}
-```
-
-Where `<query_name>` is the query's name created in Step 2.
-
-<VideoEmbed host="youtube" videoId="czxtgHJ1sUE" title="" caption=""/>
-
-Now, the table widget should be populated with the data coming from the query.
+Data can be written manually in this field as an array, or retrieved from a query response by using mustache syntax ( `{{ }}` ) to reference the query. To see how to get query data into the table, check [display data in tables](#display-data-in-tables).
 
 #### Columns
 
