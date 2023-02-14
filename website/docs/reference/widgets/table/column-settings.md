@@ -158,22 +158,8 @@ Based on the Column type, you can edit the cell content. Once done, you can move
 Column freeze controls whether the column can be frozen to the left, right or no freeze in the table. Once the column is frozen a Pin icon appears on the respective column in the Columns property.
 
 Below are the scenarios that occur while freezing and unfreezing a column:
-* **Freezing**
-  * A column if frozen to left, get positioned after the last left frozen column.
-  * A column if frozen to right, get positioned before the first right frozen column.
-* **Unfreeze**
-  * If a left frozen column is unfrozen, then it gets positioned after all the left frozen columns.
-  * If a right frozen column is unfrozen, then it gets positioned before all the right frozen columns.
-* Column order if changed gets persisted accross refreshes in the page view mode i.e. deployed mode.
-* Users can unfreeze the columns that are frozen by the developer if developers enables the `Allow column freeze` property.
-* Columns that are frozen cannot be re-ordered.
-* Whenever a column is made editable, the Save/ Discard column will be frozen to the right.
-* **Property pane changes (Columns property)**:
-    - If the column is frozen to the left then that column appears at top of the list.
-    - If the column is frozen to the right then that column appears at the bottom of the list.
-    - The columns that are frozen cannot be moved or re-ordered in the list. They remain fixed in their position.
-    - Columns that are frozen will have a pin icon at start.
-* In published app mode, If there is a change in frozen or unfrozen columns in multiple tables then the order of columns and frozen and unfrozen columns should get persisted on refresh i.e. changes should get persisted across refreshes.
+* Any new column frozen to the left or right can be seen in the property pane occupying the same index as seen in the table.
+* In published app mode, If there is a change in frozen or unfrozen columns in multiple tables then the order of columns, frozen and unfrozen columns will get persisted accross ssessions.
 * User’s changes get reset whenever the Appsmith developer makes the following changes:
     * When there is a change in column order
     * When there is a change in the count of hidden columns
