@@ -6,7 +6,8 @@ export default function Message(props) {
     hideTopBar();
     hideEditPage();
     hideIntercomApp();
-return true;
+
+    return true;
 }
 
 function hideFooter() {
@@ -37,9 +38,9 @@ function hideEditPage() {
 }
 
 function hideIntercomApp() {
-    if (ExecutionEnvironment.canUseDOM){
-        Array.prototype.forEach.call(document.getElementsByClassName('intercom-app'), function(element) {
-             element.style.display = 'none';
-         })
-    }   
+  if (typeof Intercom === "function") {
+    Intercom('update', {
+      "hide_default_launcher": true
+    });
+  }  
 }
