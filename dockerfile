@@ -2,12 +2,12 @@
 ## resolvebuilder-docs: This is the downstream resolvbuilder repo. It containerizes
 ## the documentation and serves it via nodejs.
 ##
-## installation info: https://github.com/appsmithorg/appsmith-docs
+## installation info: https://github.com/resolvebuilderorg/resolvebuilder-docs
 ##
 FROM node:16-alpine
 
 ## copy raw content into container
-COPY ./website/* /rslvbldr/docs/
+ADD ./website /rslvbldr/docs
 WORKDIR /rslvbldr/docs
 
 ## install nginx packages & build documentation (note nonzero exit code hack from npm install)
@@ -15,4 +15,5 @@ WORKDIR /rslvbldr/docs
 RUN npm install package.json
 RUN npm run build
 
-RUN npm run serve
+EXPOSE 3000
+CMD npm run serve
