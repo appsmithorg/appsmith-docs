@@ -152,3 +152,24 @@ You can remove the Appsmith topbar with page tabs by appending **`?embed=true`**
 
 
 ![Appsmith Embed with ?embed=true property](/img/embed=true.png)
+
+### Embedding private apps
+
+:::info
+Embedding of private apps is only supported for apps on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
+:::
+
+You can embed private Appsmith apps on your website and authenitcate your users seamlessly through SSO. To configure Appsmith to try SSO, add the below URL parameter to the URL of the app you're embedding.
+* `ssoTrigger=oidc` for OIDC SSO.
+* `ssoTrigger=saml` for SAML 2.0 based SSO.
+* `ssoTrigger=google` for Google OAuth 2.0 SSO
+
+There are a few pre-requsites for private embeds to work.
+* The Appsmith app and the parent app should be sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
+* The same SSO identity provider(IDP) should be configured on Appsmith and the parent app.
+
+#### Resolving Issues
+* The feature may not work on `HTTP` URLs, we strongly recommend you use `HTTPS` for both Appsmith instance and the parent website.
+* Firefox has additional 3rd part restrictions that may cause issues with private embeds.
+* Users may see issues when strict 3rd party cooking sharing restrictions are enabled on the browser. 
+* SSO in private embeds is not supported for GitHub OAuth 2.0.
