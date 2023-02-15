@@ -5,33 +5,42 @@
 Follow the steps below to upgrade the Kubernetes Community edition to the Business edition:
 
 <ul class="circle"> 
+<li> Sign up on <a href="http://customer.appsmith.com/">customer.appsmith.com</a> and generate a trial license key </li>
 
-<li> Create a backup of the CE data available at <code>/appsmith-stacks/data/backup</code>. Connect to the shell of a running container.
+<li> Connect to the shell of a running container.
 
-         kubectl exec -it <pod> bash
-    
-    /* Run the backup command */
-    appsmithctl backup
-
-    /* Download the backup file */
-    kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
-
-    /* Retrieve the salt and password and paste it in the values.yaml file */
-    kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
+         kubectl exec -it <pod> bash        
 
 </li>
 
-<li> Uninstall the community edition Helm chart by running the following command:
+<li> Retrieve the salt and password and add these to values.yaml file of the appsmith-ee helm deployment
+
+          cat /appsmith-stacks/configuration/docker.env | grep APPSMITH_ENCRYPTION_ 
+</li>
+
+<li> Run the following commands to backup the database which is available at <code>/appsmith-stacks/data/backup</code>
+
+          /* Run the backup command */
+        appsmithctl backup
+
+     /* Exit the shell from the pod */
+        exit
+
+     /* Download the backup file */
+        kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
+</li>
+    
+<li> Uninstall the community edition Helm chart by running the following command
 
          helm uninstall appsmith
 </li>
-<li>Run the following commands to add and deploy the new Helm chart:
+<li>Run the following commands to add and deploy the new Helm chart
 
          helm repo add appsmith-ee https://helm-ee.appsmith.com
     helm repo update
     helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
  </li>
-<li> Sign-in to your instance again. Upon successful login, you see a screen where you can enter the license key and activate the instance.
+<li> Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.
 </li>
 
 </ul>

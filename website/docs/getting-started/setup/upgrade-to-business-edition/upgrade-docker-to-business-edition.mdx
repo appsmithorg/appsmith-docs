@@ -5,10 +5,11 @@
 Follow the steps below to upgrade the Docker Community edition to the Business edition:
 
 <ul class="circle"> 
+<li> Sign up on <a href="http://customer.appsmith.com/">customer.appsmith.com</a> and generate a trial license key </li>
 
 <li> Create a backup of the CE data. Run the below command in the directory with <code>docker-compose.yml</code>. The output file is stored in <code>/appsmith-stacks/data/backup/</code>
 
-        docker-compose exec appsmith appsmithctl export_db
+        docker-compose exec appsmith appsmithctl backup
 </li>
 
 <li> Open the <code>docker-compose.yml</code> file and look for the <code>image:</code> key. Update the image from Community Edition (<code>appsmith-ce</code>) to Business Edition (<code>appsmith-ee</code>).
@@ -21,6 +22,6 @@ Follow the steps below to upgrade the Docker Community edition to the Business e
 
         docker-compose up -d
 </li>
-<li>Sign-in to your instance again. Upon successful login, you see a screen where you can enter the license key and activate the instance. </li>
+<li>Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance. </li>
 
 </ul>
