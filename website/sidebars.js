@@ -287,6 +287,7 @@ const sidebars = {
                 'core-concepts/data-access-and-binding/querying-a-database/query-settings',
               ],
             },
+            'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
               label: 'Capturing Data (Write)',
@@ -298,7 +299,6 @@ const sidebars = {
                 'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
               ],
             },
-            'core-concepts/data-access-and-binding/displaying-data-read/README',
           ],
         },
         {
