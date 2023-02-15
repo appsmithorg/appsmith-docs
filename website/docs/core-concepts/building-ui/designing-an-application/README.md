@@ -5,7 +5,7 @@ Appsmith provides an intuitive drag-and-drop interface that allows you to create
 <VideoEmbed host="youtube" videoId="NB8Btt0aw0g" title="How to use Drag and Drop" caption="How to use Drag and Drop"/>
 
 
-## Positioning widgets
+## Adding and arranging widgets
 
 When designing an application, it's essential to position widgets correctly to achieve the desired layout and capability. Widgets are pre-built UI components that can be added to your application by dragging and dropping them onto the canvas. The first step in positioning widgets is to add them to your application. 
 
@@ -62,20 +62,10 @@ Styles are important concepts that allow you to customize the look and behavior 
 
 <VideoEmbed host="youtube" videoId="8RK5ww3baF4" title="Styles" caption="Styles"/>
 
-States refer to the different states or conditions that a widget can have, such as enabled, disabled, or filled in. By defining these states, you can control the behavior and appearance of your widgets in response to user actions or data changes. For instance, you may need to create components with multiple states, such as a button that's disabled until an input is filled in.
+States refer to the different states or conditions that a widget can have, such as enabled, disabled, or filled in. By defining these states, you can control the behavior and appearance of your widgets in response to user actions or data changes. For instance, you may need to create components with multiple states, such as a button that's disabled until an input is filled in. 
 
-## Best design practices
-To make the most of Appsmith, there are some best design practices that can help ensure your applications are intuitive, user-friendly, and visually appealing. Here are a few design practices to keep in mind when using Appsmith:
+The widget won't be visible on the published app if you turn off this visible property. You can also write a JS code to link Visible's capability to a user action. Click on JS next to the Visible to write JavaScript code.
 
-* **Keep it Simple:** The best apps are often the simplest ones. Use Appsmith's drag-and-drop features to create a clean, uncluttered interface that's easy to navigate.
-
-* **Consistency:** Consistency is key in app design. Use the same colors, fonts, and styles throughout your application to create a cohesive and professional look. Appsmith offers an [App Theming](/core-concepts/building-ui/designing-an-application/app-theming) feature that can assist in maintaining consistency across your app's design elements.feature.  
-
-* **Responsive Design:** With more and more people accessing apps from their mobile devices, it's important to design your app with a responsive layout. Appsmith allows you to preview your app on [different screen sizes](/building-ui/designing-an-application/application-layout), so take advantage of this feature to ensure your app looks great on all devices.
-
-* **Use Visuals Effectively:** Use visuals like icons and images to convey information in a way that's easy to understand. Make sure the visuals you use are high-quality and relevant to the content.
-
-* **User Testing:** Finally, make sure to test your app with real users to get feedback on the design and user experience. This helps you identify any issues or areas for improvement, and create a better app.
 
 ## Further reading
 
