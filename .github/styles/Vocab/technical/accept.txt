@@ -204,3 +204,6 @@ Fargate
 env
 api
 HTML
+Queries/JS
+drag-and-drop
+drag and drop

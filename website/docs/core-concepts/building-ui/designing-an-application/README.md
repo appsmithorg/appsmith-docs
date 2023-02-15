@@ -1,50 +1,83 @@
 # Designing an Application
 
-An app can be built using UI elements ([widgets](../../../reference/widgets/)) by placing them on the canvas as per your requirement.
+Appsmith provides an intuitive drag-and-drop interface that allows you to create custom applications with ease. It also comes with pre-built templates and components that you can customize to suit your needs. Using UI elements([widgets](/reference/widgets/)), an application can be created by positioning them on a canvas to match your specific needs.
 
 <VideoEmbed host="youtube" videoId="NB8Btt0aw0g" title="How to use Drag and Drop" caption="How to use Drag and Drop"/>
 
-## Adding and Arranging Widgets
 
-To add a widget to the canvas, select the widget from the widget tab, drag it onto the canvas and drop it there!
+## Positioning widgets
 
-When creating an app, you might need several widgets for various purposes like storing data, triggering an action, etc. You can place the widgets anywhere on the canvas.
+When designing an application, it's essential to position widgets correctly to achieve the desired layout and capability. Widgets are pre-built UI components that can be added to your application by dragging and dropping them onto the canvas. The first step in positioning widgets is to add them to your application. 
 
-### Placing Widgets on the Canvas
-
-While working on an app, creating a complex layout (adding and placing multiple widgets) is easy and intuitive with the enhanced drag and drop gestures in Appsmith!
-
-When you add a new widget, the widgets already present on the canvas move aside and provide the space for the incoming widget. You can drag the widget to the desired location, and other widgets in the same area on the canvas will automatically move or resize to accommodate the incoming widget.
-
-<VideoEmbed host="youtube" videoId="_JOeo0dfk8Y" title="Placing widgets" caption="Placing widgets"/>
+To place a widget onto the canvas, first choose the widget from the widget tab, then drag and release it onto the canvas.
 
 
-When the widget hits the boundary of its container, it starts resizing itself to provide more room to the incoming widget. The aspect ratio is still maintained even when the size changes.
+### Placing widgets on the canvas
 
-<VideoEmbed host="youtube" videoId="Frw_E1dfhvg" title="Resizing" caption="Resizing"/>
+Arranging a sophisticated layout consisting of multiple widgets is made effortless with the help of improved drag and drop gestures. As a new widget is added, the existing widgets on the canvas make room for it by moving aside. Once the widget is added, the user can simply drag it to the desired location. The other widgets in the surrounding area on the canvas adjust automatically by moving or resizing to make space for the new widget.
+
+<VideoEmbed host="youtube" videoId="PovX7V5vPho" title="Placing widgets" caption="Placing widgets"/>
+
+
+As the widget approaches the boundary of its container, it begins to resize itself to create additional space for the incoming widget. Despite the change in size, the widget maintains its aspect ratio to ensure that it remains proportional.
+
+### Resizing a widget
+
+Resizing widgets is essential when designing an application. You can adjust the size of a widget by selecting it and dragging the resize handle. To do so, select the widget and click and hold on an edge or corner. Then, move the cursor to adjust the widget's size according to your requirements.
+
+<VideoEmbed host="youtube" videoId="b4fISDtt2u0" title="Manual Resize" caption="Manual Resize"/>
+
+Appsmith provides an [auto height](/reference/widgets#auto-height) feature for some of its widgets, which allows the widget to adjust its height automatically in response to changes in its content. This capability enables widgets to grow in height without any limit, providing a more dynamic and versatile user interface. 
+
+
+### Duplicate widgets
+
+Duplicate widgets are a convenient feature available that allows you to create multiple copies of the same widget. This can save you a significant amount of time and effort when building complex layouts or forms. To duplicate a widget, simply select it and use the appropriate keyboard shortcut - typically `cmd+c` on a Mac or `cntrl+c` on Windows - and then paste the copied widget where you want it to appear.
+
+<VideoEmbed host="youtube" videoId="p3yxwtkeBXk" title="Duplicate widgets" caption="Duplicate widgets"/>
+
+One of the advantages of duplicating widgets is that the copied widgets have the exact same configuration as the original, including any properties or settings that were applied to it. This means that you don't need to manually recreate the widget and apply the same settings again.
 
 
 
-### Moving Widgets across Containers
+## Grouping widgets
 
-A widget can move across containers. A container can be the canvas or a layout widget.
+You can group widgets to manage their layout, maintain their position on the screen, or apply visibility rules and actions to a group of widgets at once. Grouping widgets is also useful to restrict their movement and prevent them from expanding into unnecessary areas. A container is a widget used to group and organize other widgets into a structured interface. 
 
 :::info
-Layout widgets are the ones that can contain other widgets, like - [Container](../../../reference/widgets/container.md) widget, [List](../../../reference/widgets/list.md) widget, [Tabs](../../../reference/widgets/tabs.md) Widget, etc.
+Layout widgets are the ones that can contain other widgets, like - [Container](/reference/widgets/container) widget, [List](/reference/widgets/list) widget, [Tabs](/reference/widgets/tabs) Widget, etc.
 :::
 
 You can move a widget into a new container by dragging your cursor.
 
-* Select and hold the widget you want to move.
-* If you move it slowly towards a layout widget, the selected widget moves and resizes it.
-* However, if you move your cursor with an increased velocity, the widget jumps inside the droppable widget.
+* Select the widget you want to move and hold it.
+* Move the widget inside the layout widget and resize it.
 
-<VideoEmbed host="youtube" videoId="FL57bXMYeL4" title="Moving Across Containers" caption="Moving Across Containers"/>
+<VideoEmbed host="youtube" videoId="QyRb-PFE2To" title="Moving Across Containers" caption="Moving Across Containers"/>
 
 
-### Resizing a widget
+## Styles and states
 
-You can change the size of the widget. To resize a widget, select the widget, click and hold an edge or a corner and move the cursor to change the widget’s size.
+Styles are important concepts that allow you to customize the look and behavior of your widgets. With styles, you can change the color, position, font, and other visual properties of your widgets, making them stand out and match your brand. 
 
-<VideoEmbed host="youtube" videoId="nnmYtv1gb5M" title="Manual Resize" caption="Manual Resize"/>
+<VideoEmbed host="youtube" videoId="8RK5ww3baF4" title="Styles" caption="Styles"/>
 
+States refer to the different states or conditions that a widget can have, such as enabled, disabled, or filled in. By defining these states, you can control the behavior and appearance of your widgets in response to user actions or data changes. For instance, you may need to create components with multiple states, such as a button that's disabled until an input is filled in.
+
+## Best design practices
+To make the most of Appsmith, there are some best design practices that can help ensure your applications are intuitive, user-friendly, and visually appealing. Here are a few design practices to keep in mind when using Appsmith:
+
+* **Keep it Simple:** The best apps are often the simplest ones. Use Appsmith's drag-and-drop features to create a clean, uncluttered interface that's easy to navigate.
+
+* **Consistency:** Consistency is key in app design. Use the same colors, fonts, and styles throughout your application to create a cohesive and professional look. Appsmith offers an [App Theming](/core-concepts/building-ui/designing-an-application/app-theming) feature that can assist in maintaining consistency across your app's design elements.feature.  
+
+* **Responsive Design:** With more and more people accessing apps from their mobile devices, it's important to design your app with a responsive layout. Appsmith allows you to preview your app on [different screen sizes](/building-ui/designing-an-application/application-layout), so take advantage of this feature to ensure your app looks great on all devices.
+
+* **Use Visuals Effectively:** Use visuals like icons and images to convey information in a way that's easy to understand. Make sure the visuals you use are high-quality and relevant to the content.
+
+* **User Testing:** Finally, make sure to test your app with real users to get feedback on the design and user experience. This helps you identify any issues or areas for improvement, and create a better app.
+
+## Further reading
+
+* [App Theming](/core-concepts/building-ui/designing-an-application/app-theming)
+* [Building dynamic UI](/core-concepts/building-ui/dynamic-ui)
