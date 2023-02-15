@@ -298,6 +298,7 @@ const sidebars = {
                 'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
               ],
             },
+            'core-concepts/data-access-and-binding/displaying-data-read/README',
           ],
         },
         {
