@@ -159,14 +159,14 @@ Appsmith supports embedding private apps only on self-hosted [**Business Edition
 
 You can embed private Appsmith apps on your website or in an external application and authenticate users seamlessly through SSO. 
 
-**Prerequisites**
+#### Prerequisites
 * The Appsmith app and the parent app should be under sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
 * You must configure the same SSO identity provider(IDP) on the Appsmith and the parent applications.
 
 To configure Appsmith to use SSO, you can append the below parameters (based on your SSO type) to the URL path of the app you're embedding.
-* `?ssoTrigger=oidc` for OIDC SSO.
-* `?ssoTrigger=saml` for SAML 2.0 based SSO.
-* `?ssoTrigger=google` for Google OAuth 2.0 SSO
+* `ssoTrigger=oidc` for OIDC SSO.
+* `ssoTrigger=saml` for SAML 2.0 based SSO.
+* `ssoTrigger=google` for Google OAuth 2.0 SSO
 
 #### General notes
 * The feature may not work on `HTTP` URLs. Use `HTTPS` for both the Appsmith instance and the parent application.
