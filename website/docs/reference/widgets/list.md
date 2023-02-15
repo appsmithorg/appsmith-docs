@@ -90,7 +90,7 @@ All of these properties are present in the property pane of the widget. The foll
 | Property                   | Description                                                                                                                                                                                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Items**                  | Allows you to bind static or dynamic data collection to the widget.                                                                                                                                                                                       |
-| **Server-side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. [See here](/reference/widgets/table#server-side-pagination) for more information on pagination. |
+| **Server-side Pagination** | Enables you to implement pagination by limiting the number of results fetched per API / Query request. [See here](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination) for more information on pagination. |
 | **Visible**                | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                            |
 | **Animate Loading**        | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
 
@@ -179,7 +179,7 @@ If you are binding the dynamic response of your query or API to the list widget,
 
 #### Server Side Pagination
 
-You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](/reference/widgets/table#server-side-pagination).
+You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md).
 
 #### Visible
 
