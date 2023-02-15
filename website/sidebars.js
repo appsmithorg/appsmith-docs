@@ -289,17 +289,6 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Displaying Data (Read)',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/displaying-data-read/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/displaying-data-read/display-data-tables',
-              ],
-            },
-            {
-              type: 'category',
               label: 'Capturing Data (Write)',
               link: {
                 type: 'doc',

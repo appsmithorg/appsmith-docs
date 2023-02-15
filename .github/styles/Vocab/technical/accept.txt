@@ -160,6 +160,8 @@ onFocus
 onBlur
 Autofocus
 dyno
+onChange
+boolean
 safelist
 Lodash
 lodash
@@ -195,6 +197,7 @@ GSheet
 Twilio
 subnet
 auto-configure
+pageOffset
 onOptionChange
 onDropdownOpen
 onDropdownClose
