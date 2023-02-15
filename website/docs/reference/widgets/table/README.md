@@ -21,7 +21,13 @@ To get data from a query to appear in a table widget, follow these steps:
     {{<query_name>.data}}
     ```
 
-TODO: JS OBJECT, and check sample apps.
+If you are doing work on your data in a [JS object](/core-concepts/writing-code/javascript-editor-beta) before it goes into the table and you need to supply the data from there, you should instead reference whichever of the JS object's properties returns your final results. For example, if you have a JS object called `utils` with a function `formatData`, you might put the following snippet into the table's **Table data** field:
+
+```javascript
+{{ utils.formatData() }}
+```
+
+You can look at how this is set up in [this sample app](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364).
 
 Now, the table widget should be populated with the data coming from the query. By default, this query also now runs automatically when the page loads. You can change this behavior from the query's settings page.
 
@@ -38,8 +44,6 @@ https://api.github.com/repos/appsmithorg/appsmith/issues
 Binding this API's response directly to a table would be unreadable like the image below:
 
 <img src="/img/github_table.gif" width="50%" ></img>
-
-<!-- ![](</img/github_table.gif>) TODO: Make this an Image tag to reduce size -->
 
 To format this data, you can write a [map function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to parse the API response, format the data, and return an array of row objects that contain only the desired fields:
 
@@ -58,19 +62,13 @@ To format this data, you can write a [map function](https://developer.mozilla.or
 ```
 <img src="/img/github_table_formatted.png" width="50%" ></img>
 
-<!-- ![](</img/github_table_formatted.png>) TODO: Make this an Image tag to reduce size -->
+## Column settings
 
-## Columns
-
-TODO
+You can configure your table columns individually in a variety of ways to best fit your needs. For more information about their settings, see [column settings](/reference/widgets/table/column-settings).
 
 ### Add new columns
 
-Alternatively, you may wish to add a column to the table that's not already present in your dataset. By clicking the "+ ADD A NEW COLUMN" button, you can manually insert your own custom column into the table. These can be used for a wide variety of purposes, including adding button- or checkbox-type columns alongside your data. You can adjust the settings for this column just like any other.
-
-### Column settings
-
-Columns can be configured individually in a variety of ways to best fit your needs. For more information about their settings, see [column settings](/reference/widgets/table/column-settings).
+You can manually add a custom column to the table by clicking the "+ ADD A NEW COLUMN" button in the table's properties pane. These can be used for a wide variety of purposes, including adding button- or checkbox-type columns alongside your data. You can adjust the settings for this column just like any other.
 
 ## Table header options
 
@@ -98,15 +96,17 @@ You can customize which features are available for use in the table header. Thes
 
 5. Pagination (toggle with **Show Pagination**)
 
-    Toggles visibility of the page cycle buttons, and toggles showing total number of records and pages in the header.
+    Toggles visibility of the page cycle buttons and toggles showing the total number of records and pages in the header.
 
 ## Pagination
 
-TODO
+Once the table widget has a set of records to display, it automatically shows as many rows as possible within its height. The remainder are placed on subsequent pages, which are navigable via the page buttons in the table header. (**Show Pagination** must be turned on in the table's properties).
+
+The records are all held in memory regardless of whether they're currently visible on the table's page, so very large query responses and datasets can lead to performance degradation. For a strategy to handle paginating large datasets, see [server side pagination](#server-side-pagination).
 
 ### Server side pagination
 
-Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database. Appsmith supports responses of **5 MB** at a time; larger responses result in [this error (5009)](/help-and-support/troubleshooting-guide/query-errors#execution-failed-with-status-5009).
+Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database, or might do so very slowly. Appsmith supports responses of up to **5 MB** at a time; larger responses result in [this error (5009)](/help-and-support/troubleshooting-guide/query-errors#execution-failed-with-status-5009).
 
 To paginate the responses and request smaller chunks of data at a time:
 
@@ -138,21 +138,27 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 #### Key based pagination
 
-This method uses a value in the response of the API as the key to the next API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
+This method uses a value in the API response as the key to the following API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
 
 <img src="/img/pagination_(2)_(2).gif" width="70%" ></img>
 
 ## Sort
 
-TODO
+The records in a table can be sorted by the value of a particular column by clicking on the column's header cell (where it shows the column's name). Clicking once sorts the rows by that column value in descending order, clicking again sorts in ascending order, and clicking a third time clears the sort. When the table is being sorted by a column, clicking the header of a different column automatically clears the first sort and begins sorting by the newly selected column.
+
+The column sorting feature only works for users when **Column Sorting** is turned on in the table's properties. When this setting is turned off, you can still sort by column _while using your app in Edit mode_, but it won't work in View mode where the app is deployed.
 
 ## Search
 
-TODO
+When **Allow Searching** is turned on, the table header has a search bar that can be used to find records that have a value that matches the given search term. Search results include perfect matches as well as matches where the search term is contained somewhere within one of the row's values.
+
+You can also set **Default Search Text** in the table's properties to narrow results automatically when the page loads.
+
+Searching large datasets may degrade performance, so it's recommended to set up [server side search](#server-side-search) for your table. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to your search.
 
 ### Server side search
 
-Server side searching is useful for reducing unnecessary results from queries: rather than requesting lots of data from the server and then filtering it on the client, you can pass search terms to the server so it only fetches relevant results in the first place. This can significantly improve response times when working with large data sets.
+Server side searching is useful for reducing unnecessary results from queries; rather than requesting lots of data from the server and then filtering it on the client, you can pass search terms to the server so it only fetches relevant results in the first place. This can significantly improve response times when working with large data sets.
 
 A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event is triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
 
@@ -173,12 +179,15 @@ https://mock-api.appsmith.com/users?name={{Table1.searchText}}
 
 ## Filter
 
+When **Allow Filtering** is turned on, the table header has a "Filters" button, which can be used to find records where specific fields meet a given condition. For example, in an employee management dashboard, you might want to filter the table to show only records where the person's `Team Leader` is equal to `Alex Smith`. 
+
+Filtering large datasets may degrade performance, so it's recommended to set up [server side filter](#server-side-filter) for your table. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to you.
 
 ### Server side filter
 
-Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to be used to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match in order to be returned in the query's response.
+Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match in order to be returned in the query's response.
 
-Server-side filtering requires the use of another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users a list of supported filters to choose from.
+Server-side filtering requires using another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users with a list of supported filters to choose from.
 
 1. Drag a select widget to the canvas and add options that you might use to filter your data
 2. Set the table widget's **onOptionChange** event to call your API / query 
@@ -204,7 +213,7 @@ This can be as simple as creating a [button widget](/reference/widgets/button) w
 
 **Example 2:**
 
-Another common flow for keeping your table data fresh happens when you submit new data to your datasource, and then re-run your original query as a success callback if the submission succeeds. Imagine you have a table whose data comes from your GET query `getData`, and a button that submits a form with new user input via a query called `sendNewData`:
+When you submit new data to your datasource, re-run your original query as a success callback if the submission succeeds. Imagine you have a table whose data comes from your GET query `getData`, and a button that submits a form with new user input via a query called `sendNewData`:
 
 1. When the form is submitted via the button's `onClick`, it executes
     ```javascript
@@ -257,7 +266,7 @@ Properties allow you to edit the table, connect it with other widgets, and custo
 
 | Property       | Definition |
 | ---------------|------------|
-| [**Table Data**](#table-data)                 | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax. |
+| [**Table Data**](#table-data)                 | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax, like `{{<query_name>.data}}`. |
 | [**Columns**](#columns)                    | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.   |
 | **Primary key column** | Assigns a unique column which helps maintain `selectedRows` and `triggeredRows` based on value. Affects the performance of caching the dataset for quick loading and access. |
 | **Show Pagination** | Toggles visibility for the page information and control buttons in the table header. |
@@ -291,10 +300,10 @@ Reference properties are used to access the widget's data and state using code. 
 | [**selectedRowIndex**](#selectedrowindex)   | Contains the index of the row selected by the user. Not applicable when multiple rows are selected.    | `{{<table_name>.selectedRowIndex}}`   |
 | [**selectedRowIndices**](#selectedrowindices) | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
 | [**filteredTableData**](#filteredtabledata)  | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
-| [**pageNo**](#pageno)             | Contains the current page number that the user is on. APIs can use it for pagination | `{{<table_name>.pageNo}}`  |
+| [**pageNo**](#pageno)             | Contains the current page number that the user is on. APIs can use it for pagination. | `{{<table_name>.pageNo}}`  |
 | [**pageOffset**](#pageoffset) | Contains a calculated value to represent how many records to skip when using **Server side pagination**. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
-| [**pageSize**](#pagesize)           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table | `{{<table_name>.pageSize}}`   |
-| [**searchText**](#searchtext)         | Contains the search text entered by the user in the Table | `{{<table_name>.searchText}}`  |
+| [**pageSize**](#pagesize)           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table. | `{{<table_name>.pageSize}}`   |
+| [**searchText**](#searchtext)         | Contains the search text entered by the user in the Table. | `{{<table_name>.searchText}}`  |
 
 ### Style
 
@@ -316,7 +325,7 @@ Style properties allow you to change the look and feel of the table. These prope
 | **Border Width**          | Sets the thickness of the widget's borders.              |
 
 
-## Events
+### Events
 
 These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
 
@@ -369,10 +378,6 @@ Once the `get_count` query is successfully created, enter the following code to 
 
 Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode (where the app is deployed).
 
-<!--
-<VideoEmbed host="youtube" videoId="hmi7BaF3jFI" title="Table | Column Sorting" caption="Use this setting to enable sorting rows by column value."/>
--->
-
 #### selectedRow
 
 The `selectedRow` property contains the data of the row that's selected within the Table. This may be useful for pulling data from the table to display specific records within other widgets. If no row is selected, `selectedRow` shows the column names with no data.
@@ -389,10 +394,6 @@ You can access the row data with `<table_name>.selectedRow`, and use dot or brac
 {{Table1.selectedRow["favorite color"]}}
 ```
 
-<!--
-<VideoEmbed host="youtube" videoId="hHZ5IbtE-wo" title="Displaying column value using selectedRow" caption="Displaying column value using selectedRow"/>
--->
-
 #### selectedRows
 
 `selectedRows` allows you to fetch the data from the table when the user selects multiple rows. To use this property, enable the **multi-row selection** option from the property pane of the table widget.
@@ -403,12 +404,6 @@ To bind table data to a widget, use the following snippet to access the selected
 // an array of row objects
 {{<table_name>.selectedRows}}
 ```
-
-<!--
-The following video shows how to bind a text widget to `Table_1` using `selectedRows`.
-
-<VideoEmbed host="youtube" videoId="K8F4oggpOk0" title="selectedRows" caption="selectedRows"/>
--->
 
 An empty array `[]` is returned if no row is selected in the table.
 
@@ -422,12 +417,6 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.triggeredRow}}
 ```
 
-<!--
-The following video shows how to bind a text widget to `Table_1` using triggeredRow.
-
-<VideoEmbed host="youtube" videoId="HUcQ8lf7cH4" title="triggeredRow" caption="triggeredRow"/>
--->
-
 #### selectedRowIndex
 
 `selectedRowIndex` gives you the index number of the selected row in the table. It's only applicable when one row is selected. If you have multiple or zero rows selected, it returns `-1`.
@@ -437,12 +426,6 @@ To bind a widget using this property, enter the code snippet given below:
 ```javascript
 {{<table_name>.selectedRowIndex}}
 ```
-
-<!--
-The following video shows how to bind a text widget to `Table_1` using seledRowIndex.
-
-<VideoEmbed host="youtube" videoId="KXYkdFzOKsQ" title="selectedRowIndex" caption="selectedRowIndex"/>
--->
 
 #### selectedRowIndices
 
@@ -454,12 +437,6 @@ To bind a widget using this property, enter the code snippet given below:
 {{<table_name>.selectedRowIndices}}
 ```
 
-<!--
-The following video shows how to bind a text widget to `Table_1` using seledRowIndices.
-
-<VideoEmbed host="youtube" videoId="yLOYqrW2xaw" title="selectedRowIndices" caption="selectedRowIndices"/>
--->
-
 #### filteredTableData
 
 `filteredTableData` contains the data of the rows left after applying any selected filters, sorting rule, or search terms.
@@ -469,12 +446,6 @@ To use this property in a widget, enter the code snippet given below:
 ```javascript
 {{<table_name>.filteredTableData}}
 ```
-
-<!--
-The following video shows how to bind a text widget to `Table_1` using **filteredTableData**.
-
-<VideoEmbed host="youtube" videoId="0tvZXEtSMp4" title="filteredTableData" caption="filteredTableData"/>
--->
 
 #### pageNo
 
@@ -491,12 +462,6 @@ This value is calculated by multiplying the table's page number with the amount 
 ```javascript
 {{<table_name>.pageOffset}}
 ```
-
-<!--
-The following video shows how to use `pageOffset` in your API / database query:
-
-<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="pageOffset" caption="pageOffset"/>
--->
 
 #### pageSize
 
@@ -516,8 +481,3 @@ To bind a widget using this property, enter the code snippet given below:
 ```javascript
 {{<table_name>.searchText}}
 ```
-<!--
-The following video shows how to bind a text widget to `Table_1` using searchText.
-
-<VideoEmbed host="youtube" videoId="vn6zx7zMeUs" title="searchText" caption="searchText"/>
--->
