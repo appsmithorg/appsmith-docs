@@ -38,7 +38,7 @@ You can store a value in the Appsmith store using storeValue() function by passi
 ```
 Here, `value1` is the key for the value being stored and `Input1.text` is the text in the input widget that's now stored.
 
-You can save any datatype with this function . For example, look at the code snippet below that shows how to store basic information of employees using storeValue in a JSObject 
+You can save any datatype with this function . For example, look at the code snippet below that shows how to store basic information of employees using storeValue in a JSObject :
 
 ```javascript
 
@@ -56,7 +56,7 @@ export default {
 
 If you need to store many values, instead of making multiple calls to the `storeValue` function, it's recommended to use an object array to store the values. All values can be assigned in a single `storeValue()` function as shown below:
 
-```js
+```javascript
 
 //employee data
 storeValue("user", { "name": "Bar Crouch", "email": "bar@appsmith.com", "pin": "9984"}) 
@@ -275,4 +275,4 @@ If you want to clear the session store value, you must define three parameters a
 
 ### What's next
 
-Check out the app to [learn more about persistent and session stores](https://app.appsmith.com/app/appsmith-store/page1-627b8afe0b47255c28137dca).[ ](https://app.appsmith.com/app/appsmith-store/page1-627b8afe0b47255c28137dca)You can fork this app to have a better understanding of it.
+Check out the app to [learn more about persistent and session stores](https://app.appsmith.com/app/appsmith-store/page1-627b8afe0b47255c28137dca).You can fork this app to have a better understanding of it.
