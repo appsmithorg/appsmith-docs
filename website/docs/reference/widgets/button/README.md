@@ -139,3 +139,11 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 |    Event    |    Description     |
 | ----------- | ------------------ |
 | **onClick** | Sets an action to take place when the user clicks on this widget. Can be set from the GUI list of built-in actions, or you can define a custom JavaScript function to call instead. |
+
+## Further reading
+
+You may be interested in these pages that can come in handy with the Button widget:
+
+1. [Appsmith Framework built-in actions](/reference/appsmith-framework/widget-actions/)
+2. [Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
+3. [Form widget](/reference/widgets/form)
