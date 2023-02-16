@@ -211,4 +211,4 @@ The  `getUniqueValue`  function calls  `GetUniqueNameAPI.run()` to fetch data fr
 
 # Further Reading
 
-- [Appsmith Framework](/reference/appsmith-framework/README)
+- [Appsmith Framework](/reference/appsmith-framework)
