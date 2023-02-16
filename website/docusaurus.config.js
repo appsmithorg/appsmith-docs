@@ -174,6 +174,11 @@ const config = {
       src:
         '/scripts/intercomSettings.js',
       async: false,
+    },
+    {
+      src:
+        '/scripts/hotjarSettings.js',
+      async: false,
     }
   ]
 };
