@@ -24,7 +24,7 @@ To add a widget to the canvas, select the `widget` from the Widgets tab on the e
 While working on an app, adding, and placing multiple widgets is easy and intuitive with the drag-and-drop gestures in Appsmith. When you add a new widget, the widgets already present on the canvas move aside and provide space for the incoming widget. You can drag the widget to the desired location, and other widgets in the same area on the canvas automatically moves or resize to accommodate the incoming widget.
 
 
-<!-- ![Arrange widgets](</img/giftest.gif>) -->
+![Arrange widgets](</img/arrange-widgets.gif>)
 
 
 
