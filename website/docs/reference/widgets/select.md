@@ -89,7 +89,11 @@ The **filterText** is a binding property in a Select widget that allows you to i
 
 <VideoEmbed host="youtube" videoId="QDmTwRaLzHg" title="Server Side Filtering" caption="Server Side Filtering"/>
 
+<<<<<<< HEAD
 The preceding video demonstrates how to enable Server Side Filtering, and you can also refer to this [guide](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables#server-side-searching--filtering) to learn more about Server-Side Searching or Filtering.
+=======
+The preceding video demonstrates how to enable Server Side Filtering, and you can also refer to this [guide](/reference/widgets/table#server-side-filter) to learn more about Server-Side Searching or Filtering.
+>>>>>>> main
 
 
 **Sample app** for [Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695).

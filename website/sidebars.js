@@ -287,17 +287,7 @@ const sidebars = {
                 'core-concepts/data-access-and-binding/querying-a-database/query-settings',
               ],
             },
-            {
-              type: 'category',
-              label: 'Displaying Data (Read)',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/displaying-data-read/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/displaying-data-read/display-data-tables',
-              ],
-            },
+            'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
               label: 'Capturing Data (Write)',

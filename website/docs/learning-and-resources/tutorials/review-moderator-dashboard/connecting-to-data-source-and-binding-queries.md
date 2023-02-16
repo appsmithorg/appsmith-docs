@@ -117,7 +117,7 @@ Let's look at the Table's Property Pane:
 The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
 :::
 
-These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md)
+These are the two fundamental properties needed for the table widget. However, many other properties allow you to add different actions and customize the UI. If you want to learn how to display data and handle pagination inside a table,[ read this guide.](/reference/widgets/table#transforming-table-data)
 
 Now, in the **`Table Data`** property, let's bind the response from the DB Query. To do this, you'll have to use the Mustache Operator.
 
