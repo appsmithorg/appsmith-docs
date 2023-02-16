@@ -65,7 +65,7 @@ You can move a widget into a new container by dragging your cursor.
 Styles allow you to customize the look and feel of your widgets. With the style properties in the property pane, you can change the color, position, font, etc. to modify the appearance of your widgets. Each widget can have unique styling options or attributes that are specific to its type and purpose.
 
 
-<!-- ![Moving Across Containers](</img/style-widget.gif>) -->
+![Moving Across Containers](</img/style-widget.gif>)
 
 ## Further reading
 
