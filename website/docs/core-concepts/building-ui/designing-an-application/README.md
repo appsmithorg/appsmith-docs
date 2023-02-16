@@ -50,7 +50,7 @@ To save significant amount of time and effort when building complex layouts or f
 In addition to duplicating individual widgets, you can also copy **multiple widgets at once** by selecting them with your cursor. By selecting multiple widgets, you can copy and paste them as a single unit, rather than duplicating each widget individually.
 
 
-<!-- ![copy multiple widgets at once](</img/gro-copy.gif>) -->
+![copy multiple widgets at once](</img/group-copy.gif>) 
 
 
 One of the advantages of duplicating widgets is that the copied widgets have the exact same configuration as the original, including any properties or settings that were applied to it. This means that you don't need to manually recreate the widget and apply the same settings again.
@@ -65,7 +65,7 @@ You can group widgets to manage their layout, maintain their position on the scr
 To group widgets, you can select them using your cursor, and then click the "Group" icon or use the [keyboard shortcut](/advanced-concepts/more/keyboard-shortcuts) to group the widgets together.
 
 
-<!-- ![Group widgets](</img/ui-group-widgets.gif>) -->
+![Group widgets](</img/group-widgets.gif>)
 
 
 ## Move widgets across containers
@@ -88,7 +88,7 @@ You can move a widget into a new container by dragging your cursor.
 
 
 
-<!-- ![Moving Across Containers](</img/grp-ui.gif>) -->
+![Moving Across Containers](</img/move-widgets.gif>)
 
 
 ## Widget styling
