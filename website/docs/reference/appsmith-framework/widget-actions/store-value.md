@@ -1,13 +1,13 @@
 ---
 sidebar_position: 5
 ---
-# storeValue()
+# Store Value
 
 The storeValue() function saves data in the browser as key-value pairs representing storage objects and can be later accessed anywhere in the application. Appsmith’s storeValue() works similarly to the browser's localStorage method [setItem](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)().
 
 <VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
 
-## Store  value
+## Save value in storage
 
 You can store a value in the Appsmith store using the storeValue() function by passing the parameters shown in the signature. 
 
@@ -101,7 +101,7 @@ clearStore() function clears all the stored data in the storage object.
 clearStore()
 ```
 
-### Store multiple values
+## Store multiple values
 
 If you need to store many values, instead of making multiple calls to the `storeValue` function, it's recommended to use an object array to store the values. All values can be assigned in a single `storeValue()` function as shown below:
 
