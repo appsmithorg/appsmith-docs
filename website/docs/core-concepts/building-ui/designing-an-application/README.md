@@ -102,7 +102,5 @@ Styles allow you to customize the look and feel of your widgets. With the style 
 
 ## Further reading
 
-If you're interested in learning more about developing applications, here are some additional topics that you may find helpful:
-
-* [App Theming](/core-concepts/building-ui/designing-an-application/app-theming): Learn about the process of designing and implementing consistent visual themes across your application's user interface.
-* [Building dynamic UI](/core-concepts/building-ui/dynamic-ui): Explore techniques for creating dynamic user interfaces that can adapt to changes in data or user interactions, and keep your app feeling responsive and engaging.
+* [App Theming](/core-concepts/building-ui/designing-an-application/app-theming)
+* [Building dynamic UI](/core-concepts/building-ui/dynamic-ui)
