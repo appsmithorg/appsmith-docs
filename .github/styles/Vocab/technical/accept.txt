@@ -197,10 +197,7 @@ GSheet
 Twilio
 subnet
 auto-configure
-<<<<<<< HEAD
-=======
 pageOffset
->>>>>>> main
 onOptionChange
 onDropdownOpen
 onDropdownClose
