@@ -99,7 +99,7 @@ Styles allow you to customize the look and feel of your widgets. With the style 
 
 
 
-<!-- ![Moving Across Containers](</img/style-widget.gif>)  -->
+![Moving Across Containers](</img/style-widgets-2.gif>)
 
 
 ## Further reading
