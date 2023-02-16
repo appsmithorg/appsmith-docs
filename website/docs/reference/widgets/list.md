@@ -153,7 +153,7 @@ If you are binding the dynamic response of your query or API to the list widget,
 
 #### Server Side Pagination
 
-You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md).
+You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a Query or an API call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.[ Read more on server-side pagination to paginate your large data sets](/reference/widgets/table#server-side-pagination).
 
 #### Data Identifier
 
