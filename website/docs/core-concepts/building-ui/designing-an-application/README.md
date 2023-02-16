@@ -44,13 +44,11 @@ Appsmith provides an [auto height](/reference/widgets#auto-height) feature for s
 ### Duplicate widgets
 
 
-To save significant amount of time and effort when building complex layouts or forms, you can create multiple copies of the same widget. To duplicate a widget, select it and [copy and paste](/advanced-concepts/more/keyboard-shortcuts) the widget where you want it to appear.
+To save significant amount of time and effort when building complex layouts or forms, you can create multiple copies of the same widget. To duplicate a widget, select it and copy and paste the widget where you want it to appear.
 
 
 In addition to duplicating individual widgets, you can also copy **multiple widgets at once** by selecting them with your cursor. By selecting multiple widgets, you can copy and paste them as a single unit, rather than duplicating each widget individually.
 
-
-![copy multiple widgets at once](</img/group-copy.gif>) 
 
 
 One of the advantages of duplicating widgets is that the copied widgets have the exact same configuration as the original, including any properties or settings that were applied to it. This means that you don't need to manually recreate the widget and apply the same settings again.
@@ -62,7 +60,7 @@ One of the advantages of duplicating widgets is that the copied widgets have the
 You can group widgets to manage their layout, maintain their position on the screen, or apply visibility rules and actions to a group of widgets at once. Grouping widgets is also useful to restrict their movement and prevent them from expanding into unnecessary areas.
 
 
-To group widgets, you can select them using your cursor, and then click the "Group" icon or use the [keyboard shortcut](/advanced-concepts/more/keyboard-shortcuts) to group the widgets together.
+To group widgets, you can select them using your cursor, and then click the "Group" icon or use the keyboard shortcut to group the widgets together.
 
 
 ![Group widgets](</img/group-widgets.gif>)
@@ -104,6 +102,7 @@ Styles allow you to customize the look and feel of your widgets. With the style 
 
 ## Further reading
 
+If you're interested in learning more about developing applications, here are some additional topics that you may find helpful:
 
-* [App Theming](/core-concepts/building-ui/designing-an-application/app-theming)
-* [Building dynamic UI](/core-concepts/building-ui/dynamic-ui)
+* [App Theming](/core-concepts/building-ui/designing-an-application/app-theming): Learn about the process of designing and implementing consistent visual themes across your application's user interface.
+* [Building dynamic UI](/core-concepts/building-ui/dynamic-ui): Explore techniques for creating dynamic user interfaces that can adapt to changes in data or user interactions, and keep your app feeling responsive and engaging.
