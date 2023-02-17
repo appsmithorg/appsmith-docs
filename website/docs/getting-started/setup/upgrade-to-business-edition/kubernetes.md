@@ -8,7 +8,7 @@ The Business Edition (BE) Helm chart installation includes support for Horizonta
 
 ## Generate license key
 
-Sign up on [customer.appsmith.com](http://customer.appsmith.com/) and generate a trial license key.
+Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 
 
 ## Backup data
@@ -84,10 +84,9 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 
 3. To configure high availability, choose or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
 
-4. Add the license key and a few other variables related to keycloak to `applicationConfig` section:
+4. Add variables related to keycloak to `applicationConfig` section:
 
    ```yaml
-     APPSMITH_LICENSE_KEY: ""
      APPSMITH_KEYCLOAK_DB_DRIVER: ""
      APPSMITH_KEYCLOAK_DB_USERNAME: ""
      APPSMITH_KEYCLOAK_DB_PASSWORD: ""
@@ -159,6 +158,9 @@ To restore the backup, follow the below steps:
 
    Congratulations, you have successfully upgraded to the Appsmith Business Edition Helm chart v2 installation.
 
-## Troubleshooting
-If you’re having issues with the deployment, please see the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+## Enter license key
+
+Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.   
+
+If you’re having issues with the deployment, please reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
