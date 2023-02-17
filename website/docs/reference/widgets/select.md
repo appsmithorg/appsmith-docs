@@ -157,7 +157,7 @@ These are functions that are called when event listeners are triggered in the wi
 
 * [Default value is missing in options. Please update the value](/help-and-support/troubleshooting-guide/widget-errors#default-value-is-missing-in-options)
 
-* [Duplicate values found for the following properties, in the array entries, that must be unique -- value](/help-and-support/troubleshooting-guide/widget-errors#duplicate-values-found) 
+* [Duplicate values found](/help-and-support/troubleshooting-guide/widget-errors#duplicate-values-found) 
 
 If you run into any other issues while working with the Select widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If your issue isn't covered in the guide, please connect with support@appsmith.com or raise your query on the [Discord Server](https://discord.com/invite/rBTTVJp).
 
