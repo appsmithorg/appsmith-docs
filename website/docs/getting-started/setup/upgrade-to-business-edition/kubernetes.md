@@ -13,7 +13,7 @@ Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate 
 
 ## Backup data
 
-1. Open a shell into one of your current Appsmith pods:
+1. Connect to the shell of a running container:
 
    ```bash
    kubectl exec -it <pod> bash
@@ -30,9 +30,9 @@ Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate 
 4. To download the backup archive, run the following command:
 
    ```bash
-   kubectl cp <namespace>/appsmith-0:<backup_path_from_above> ./appsmith-ce-backup.tar.gz
+   kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
    ```
-
+   
 5. To retrieve the salt and password from the pod, run the following command and copy the values to `values.yaml`.
 
    ```bash
@@ -101,7 +101,7 @@ To add and deploy the new Helm chart, run the following command:
    ```bash
    helm repo add appsmith-ee https://helm-ee.appsmith.com
    helm repo update
-   helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
+   helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
    ```
 
 For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
@@ -114,7 +114,7 @@ To restore the backup, follow the below steps:
 1. To copy the Appsmith backup into the new Appsmith pod, run the following command:
 
    ```bash
-   kubectl cp appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz <namespace>/<pod_name>:/appsmith-stacks/data/backup/
+   kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/data/backup/
    ```
 
 2. To copy the keycloak backup into the new Appsmith pod, run the following command:
