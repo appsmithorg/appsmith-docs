@@ -207,3 +207,5 @@ Fargate
 env
 api
 HTML
+onSuccess
+onError

@@ -16,25 +16,27 @@ Buttons are often used to execute [queries](/core-concepts/data-access-and-bindi
 
 **Example 2**
 
-There are some cases where you might want to create more complex flows based on certain conditions. This example is going to demonstrate how to configure the event field to achieve a more complex set of actions.
+There are some cases where you might want to create more complex flows:
 
-Once you've selected a query for your button to run (see example above), two new fields appear in the properties pane: **onSuccess** and **onError**. You can use these fields to set up subsequent functions to run after the completion of your query. If the query is successful, the action in the **onSuccess** field will be executed. If the query returns an error response, **onError** will be executed.
+Once you've selected a query (see prior example), two new fields appear in the properties pane: **onSuccess** and **onError**. You can use these fields to set up subsequent functions to run after your query completes. If the query is successful, the action in the **onSuccess** field is executed. If the query returns an error response, **onError** is executed.
 
-If you'd like even more control or more [complex workflows](/core-concepts/writing-code/workflows#complex-workflows), consider writing custom code in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to handle the logic. Once you have created a function in the JS Object that does what you want, you can set the button to execute it just like you did with the query before -- this time, look for your JS Object under the "Execute a JS function" menu item.
+If you'd like even more control or more [complex workflows](/core-concepts/writing-code/workflows#complex-workflows), consider writing custom code in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to handle the logic. Once you've created a function in the JS Object, you can set the button to execute it just like you did with the query before -- this time, look for your JS Object under the "Execute a JS function" menu item.
 
 ## Buttons in forms
 
-Every [Form widget](/reference/widgets/button/) comes with two buttons automatically: one labeled "Submit," and another labeled "Reset." These buttons (and any other button you drag _into the form widget's area_) can have some special behavior, controlled by two of the button's properties:
+Buttons can have some special behaviors when they are located within the boundaries of a [Form widget](/reference/widgets/form). Its form-specific behavior is controlled by two of the button's properties:
 
 ### Disabled invalid forms 
 
-When this button property is turned on, the button is **Disabled** while the form has any required fields that are incomplete.
+When this button property is turned on, the button is **Disabled** while the form has any required fields that are incomplete, or while any of the fields have input that is considered invalid.
 
 For example, imagine that you have a form with an [Input widget](/reference/widgets/input/) whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
 
+Similarly, if an Input widget's **Valid** property is ```{{ Input1.text.length > 5 }}``` but the user input is only 2 characters long, the input is considered invalid and the button is disabled.
+
 ### Reset form on success
 
-When this button property is turned on, the button can be used to reset all fields present in the form's area to their default state.
+When this button property is turned on, the button can be used to reset all fields present in the form's area to their default state. This is useful for clearing inputs after the form is submitted; when both **Disabled invalid forms** and **Reset form on success** are turned on, submitting the form automatically resets the input fields so they can be used again.
 
 ## Properties
 
@@ -78,10 +80,6 @@ Style properties allow you to change the look and feel of the button. These prop
 | **Icon**           | Sets an icon to be included on the button. Uses icons from the [Blueprint](https://blueprintjs.com) library. See the [list of icons here](https://blueprintjs.com/docs/#icons).  |
 | **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.  |
 | **Placement**      | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the _string_ "START", "CENTER", or "BETWEEN". |
-
-:::info
-
-:::
 
 ## Events
 
