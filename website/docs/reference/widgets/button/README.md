@@ -24,11 +24,11 @@ If you'd like even more control or more [complex workflows](/core-concepts/writi
 
 ## Buttons in forms
 
-Buttons can have some special behaviors when they are located within the boundaries of a [Form widget](/reference/widgets/form). Its form-specific behavior is controlled by two of the button's properties:
+Buttons can have some special behaviors when they're located within the boundaries of a [Form widget](/reference/widgets/form). Its form-specific behavior is controlled by two of the button's properties:
 
 ### Disabled invalid forms 
 
-When this button property is turned on, the button is **Disabled** while the form has any required fields that are incomplete, or while any of the fields have input that is considered invalid.
+When this button property is turned on, the button is **Disabled** while the form has any required fields that are incomplete, or while any of the fields have input that's considered invalid.
 
 For example, imagine that you have a form with an [Input widget](/reference/widgets/input/) whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
 
