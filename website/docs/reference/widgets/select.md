@@ -166,6 +166,6 @@ If you run into any other issues while working with the Select widget, check out
 
 * [Filter data based on user input](/reference/widgets/table#server-side-filter)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
-* [Writing Code](/reference/widgets)
+* [Widgets Reference](/reference/widgets)
 
 
