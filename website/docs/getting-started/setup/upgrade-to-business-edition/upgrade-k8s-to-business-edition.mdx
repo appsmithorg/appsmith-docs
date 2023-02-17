@@ -34,32 +34,30 @@ Follow the steps below to upgrade the Kubernetes Community edition to the Busine
 </li>
 <li>Run the following commands to add new Helm chart
 
-    helm repo add appsmith-ee https://helm-ee.appsmith.com
+         helm repo add appsmith-ee https://helm-ee.appsmith.com
     helm repo update
 </li>    
 <li>Pull the latest values.yaml for appsmith-ee
 
         helm show values appsmith-ee/appsmith > values.yaml
 </li>
-<li>Update encryption values and license key in the values.yaml
+<li>Update encryption values in the values.yaml
 
-         /* Update Encryption values */
-       APPSMITH_ENCRYPTION_PASSWORD: <>
-       APPSMITH_ENCRYPTION_SALT: <>
-       APPSMITH_LICENSE_KEY: <>
+         APPSMITH_ENCRYPTION_PASSWORD: <>
+    APPSMITH_ENCRYPTION_SALT: <>
 </li>
 <li>Run the following commands to deploy the new Helm chart
 
-    helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
+         helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
 
  </li>
 <li>Download the backup file and restore the data
 
           /* Download the backup file */
-         kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/backup/
+        kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/backup/
 
-      /* Restore */
-         appsmithctl restore
+     /* Restore */
+        appsmithctl restore
 </li>
 
 <li> Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.
