@@ -1,9 +1,9 @@
 
 # Multiple Environments
 
-When building applications, there is usually a clear distinction between the version of the app that end users see versus the version that's still under development/testing. Most pieces of software of reasonable complexity make this distinction clear by having different environments for development/testing and production use. This ensures that end users of the app aren't impacted by changes which are still in development. 
+When building applications, there is usually a clear distinction between the version of the app that end users see and the version still under development/testing. Most software of reasonable complexity make this distinction clear by having different environments for development/testing and production use. This ensures that end users of the app aren't impacted by changes which are still in development. 
 
-Appsmith provides a way to define multiple environments for datasources. It allows you to switch between different environments as you develop your app in edit mode. By switching environments, you are applying the datasource configurations defined in that environment.
+Appsmith provides a way to define multiple environments for datasources. It allows you to switch between different environments while developing your app in edit mode. By switching environments, you are applying the datasource configurations defined in that environment.
 
 :::info
 The multiple environments feature is only available on [Business Edition](https://www.appsmith.com/pricing). 
@@ -11,13 +11,13 @@ The multiple environments feature is only available on [Business Edition](https:
 
 ## Environments on Appsmith
 
-Appsmith provides two environments out of the box - **staging** and **production**. Staging environment configurations should ideally point to datasources which are used for development, QA or user acceptance testing. Production environment configurations should point to datasources which have live, end-user facing data.
+Appsmith provides two environments out of the box - **staging** and **production**. Staging environment configurations should ideally point to datasources which are used for development, QA or user acceptance testing. Production environment configurations should point to datasources which have live data that the end user see on the app.
 
-In Appsmith, environments are set at the workspace level. This means that all the apps within a workspace share the same configuration values for both staging and production environments.
+In Appsmith, environments work at the workspace level. This means that all the apps within a workspace share the same configuration values for both staging and production environments.
 
 ## Configure an environment
 
- By default, all the configuration values for a datasource are shared across staging and production environments. If you want to have different values for staging and production, you can go to the **Manage Environments** page where you can provide different values for any of the available fields for staging and production. 
+ By default, all the configuration values for a datasource are shared across staging and production environments. If you want to have different values for staging and production, you can go to the **Manage Environments** page where you can provide different values for the available configuration fields for staging and production. 
 
 <VideoEmbed host="youtube" videoId="3hoIWkvL9hA" title="Configure an environment" caption="Configure an environment | MongoDB" />  
 
@@ -25,7 +25,7 @@ In Appsmith, environments are set at the workspace level. This means that all th
 * Click the **EDIT** button on the top-right corner.
 * Click **MANAGE ENVIRONMENTS** on the top-right corner.
 * Select the environment from the **Configure Environment** dropdown list.
-* Set the `Host Address` and `port` fields under the **Endpoints** section for the chosen environment. 
+* Set the `Host Address` and `port` fields under the **Endpoints** section for the chosen environment. 
 * Under **Datasource Configurations** add the values by selecting the fields you want to configure.
 * Once the fields are configured, click **BIND VALUES** button on the bottom right of the page to bind the environment variables. 
 
@@ -38,7 +38,7 @@ You can set different values in the database configuration fields for each envir
 
 ## Switch environments
 
-In the **edit mode**, you can toggle between staging and production environments on the bottom right hand corner of the screen enabling you to run queries in the environment of their choice. 
+In the **edit mode**, you can toggle between staging and production environments on the bottom right corner of the screen, enabling you to run queries in the environment of your choice. 
 
 Switching between environments in the edit mode has no impact on the deployed version of the app. However, switching impacts all other developers who are working on the app in the edit mode.
 
@@ -54,7 +54,3 @@ The deployed version of the app always uses the production environment. However,
 You can set up access controls for both the staging and production environments. For each, you can decide whether a user can view the environment, modify it, and apply the environment configuration in edit/view modes. 
 
 To learn more about access control in Appsmith, you can refer to [RBAC](/advanced-concepts/access-control/granular-access-control).
-
-
-
-
