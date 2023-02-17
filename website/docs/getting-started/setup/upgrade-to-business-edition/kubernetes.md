@@ -6,6 +6,11 @@ description: Follow the guide to upgrade the Appsmith Community Edition installa
 
 The Business Edition (BE) Helm chart installation includes support for Horizontal Pod Auto Scaling (HPA), which allows Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade from the Community Edition (CE) to the Business Edition (BE) installed on Kubernetes.
 
+## Generate license key
+
+Sign up on [customer.appsmith.com](http://customer.appsmith.com/) and generate a trial license key.
+
+
 ## Backup data
 
 1. Open a shell into one of your current Appsmith pods:
@@ -20,11 +25,7 @@ The Business Edition (BE) Helm chart installation includes support for Horizonta
    appsmithctl backup
    ```
 
-3. Once the backup process is complete, the backup archive is available at a location like this:
-
-   ```
-   /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-   ```
+3. Once the backup process is complete, the backup archive is available at `/appsmith-stacks/data/backup/`
 
 4. To download the backup archive, run the following command:
 
@@ -148,7 +149,7 @@ To restore the backup, follow the below steps:
    08:21:01,794 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0032: Import finished successfully
    ```
 
-   When you see the output, as shown above, press <kbd>ctrl+c</kbd> to stop.
+   When you see the output, press <kbd>Ctrl+c</kbd> to stop.
 
 5. To apply the changes, restart using the following command:
 
