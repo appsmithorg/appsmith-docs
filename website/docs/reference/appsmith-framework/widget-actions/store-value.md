@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 # Store Value
 
-The storeValue() function saves data in the browser as key-value pairs and can be later accessed anywhere in the application. Appsmith’s storeValue() works similarly to the browser's localStorage method.
+The storeValue() function saves data in the browser as key-value pairs and can be later accessed anywhere in the application. 
 
 <VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
 
@@ -21,19 +21,19 @@ storeValue(key: string, value: any, persist? = true): Promise
 
 #### Arguments
 
-| Argument Name | Description  |
-| ------------- |--------------------------- |
-| **key**       | Name of the key.            |
-| **value**     | The data you want to save using storeValue(). You can save any data type in the Appsmith store.  |
-| **persist**   | Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed. |
+| Argument Name   | Description              |
+| --------------|--------------------------- |
+| **key**          | Name of the key.        |
+| **value**        | The data you want to save using storeValue(). You can save any data type in the Appsmith store.  |
+| **persist**      | Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.            |
 
 **Example 1:** if you want to store the text of an input widget, you can use the storeValue() as shown below:
 
 ```javascript
-{{storeValue('email',email1.text)}}
+{{storeValue('email',input1.text)}}
 ```
 
-Here, `email` is the key where the value is stored and `email1.text` is the value in the input widget that's saved in the storage object.
+Here, `email` is the key where the value is stored and `input1.text` is the value in the input widget that's saved in the storage object.
 
 **Example 2**:  You can save any data type with storeValue(). The example below shows how to store employees' basic information using a function inside a JSObject. 
 
@@ -56,7 +56,7 @@ You can access the values from the store by referencing the key inside the store
 
 {{ appsmith.store.key }}
 ```
-**Example**: in the example above, you stored the value of `email1.text`. You can access this value anywhere in the application by referencing the key `email`:
+**Example**: in the example above, you stored the value of `input1.text`. You can access this value anywhere in the application by referencing the key `email`:
 
 ```javascript
 {{appsmith.store.email}}
@@ -172,16 +172,16 @@ If the **same key** is available in the session and persisted states, the **sess
 
 Check the sample app to learn more about [persistent and session states](https://app.appsmith.com/app/appsmith-store/page1-627b8afe0b47255c28137dca).
 
-## Read store value using async/await
+## Asynchronous behaviour of store value
 
-storeValue() is asynchronous, so its execution isn't dependent on another function or task.
+storeValue() is asynchronous, so its execution isn't dependent on another function or task. To handle this scenario, you'll have to use async/await to control the execution.
 
 **Example**: suppose there is a JS function that calls an API that returns a unique identifier, and you want to save the value returned using `storeValue()`.
 
 ```javascript
 export default {
-    getUniqueValue: async () => {
-       await GetUniqueNameAPI.run()
+    getUniqueValue: () => {
+        GetUniqueNameAPI.run()
         storeValue("uniqueEmail", GetUniqueNameAPI.data.uniqueName);
         showAlert("Success! Store value set: " + appsmith.store.uniqueEmail);
     }
