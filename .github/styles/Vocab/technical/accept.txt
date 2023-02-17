@@ -207,10 +207,7 @@ Fargate
 env
 api
 HTML
-<<<<<<< HEAD
 onSuccess
 onError
-=======
 drag-and-drop
 as per
->>>>>>> main
