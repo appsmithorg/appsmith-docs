@@ -179,6 +179,8 @@ onFocus
 onBlur
 Autofocus
 dyno
+onChange
+boolean
 safelist
 Lodash
 lodash
@@ -191,6 +193,7 @@ cURL
 OnSuccess
 Port
 OnSuccess
+onSuccess
 postWindowMessage
 Cross-origin 
 windowMessageListener
@@ -203,7 +206,12 @@ Docker Compose
 Backend
 Postgres
 untrusted
+Filepicker
+Cloudinary
 Port
+the cloud
+CLI
+ACI
 GSheet
 Twilio
 subnet
@@ -212,3 +220,17 @@ auto-configure
 APIs
 figma
 
+pageOffset
+onOptionChange
+onDropdownOpen
+onDropdownClose
+selectedOptionValue
+selectedOptionLabel
+Fargate
+env
+api
+HTML
+onSuccess
+onError
+drag-and-drop
+as per
