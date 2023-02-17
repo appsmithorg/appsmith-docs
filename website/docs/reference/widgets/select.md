@@ -155,7 +155,7 @@ These are functions that are called when event listeners are triggered in the wi
 ## Troubleshooting
 
 
-* [Default value is missing in options. Please update the value](/help-and-support/troubleshooting-guide/widget-errors#default-value-is-missing-in-options)
+* [Default value is missing in options](/help-and-support/troubleshooting-guide/widget-errors#default-value-is-missing-in-options)
 
 * [Duplicate values found](/help-and-support/troubleshooting-guide/widget-errors#duplicate-values-found) 
 
