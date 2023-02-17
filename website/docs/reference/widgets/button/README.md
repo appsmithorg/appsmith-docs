@@ -1,75 +1,26 @@
 # Button
 
-The button widget is a clickable entity used to capture user intent by triggering an attached event.
+This page describes how to use a Button widget to trigger actions and code in your application.
 
 <VideoEmbed host="youtube" videoId="8FOJ1CFRQcU" title="How to use Button Widget" caption="How to use Button Widget"/>
 
 ## Trigger actions with buttons
 
-To execute an action or function when the Button widget is clicked, you must use the button's `onClick` event property. This is an event listener that, when the widget is clicked, executes whatever action or code has been added in the button's properties pane in the `onClick` field.
+To execute an action or function when the Button widget is clicked, you must use the button's `onClick` event property. When the widget is clicked, it executes whatever function is contained in the `onClick` field.
 
-Appsmith has a number of [built-in functions](/reference/appsmith-framework/widget-actions/) that can be selected with the GUI in the properties pane, or you can click the "JS" tag next to **onClick** to allow writing custom code in this field instead.
+Appsmith has a number of [built-in functions](/reference/appsmith-framework/widget-actions/) that can be selected with the GUI in the properties pane, or you can click the "JS" toggle next to **onClick** to allow writing custom code in this field instead.
 
-### Example 1: Built-ins
+**Example 1**
 
-Imagine that you've created a query that returns a passage of text to be displayed in your app within a [Text widget](/reference/widgets/text/). You might want to provide the user an easy way to copy the text to their clipboard, so they can paste it elsewhere. For this, you can use the built-in [`copyToClipboard()`](/reference/appsmith-framework/widget-actions/copy-to-clipboard/) function.
+Buttons are often used to execute [queries](/core-concepts/data-access-and-binding/querying-a-database/). In the button's **onClick** field dropdown, you can find an "Execute a query" menu item that exposes a list of all the queries available on this page of your app. Once you select your query from the list, the button widget is ready for use.
 
-Drag a Button widget onto the canvas near your Text widget, and find the **onClick** field in its properties pane. By default, this field is a dropdown menu with options to select an action to use. Select "Copy to clipboard."
+**Example 2**
 
-A new input box has appeared alongside the **onClick** field, which reads "Text to be copied to clipboard." Here, you can use a code snippet to connect the content of your Text widget to the button's action:
+There are some cases where you might want to create more complex flows based on certain conditions. This example is going to demonstrate how to configure the event field to achieve a more complex set of actions.
 
-```javascript
-// in the Button's onClick > "Text to be copied to clipboard" field.
-{{ Text1.text }}
-```
+Once you've selected a query for your button to run (see example above), two new fields appear in the properties pane: **onSuccess** and **onError**. You can use these fields to set up subsequent functions to run after the completion of your query. If the query is successful, the action in the **onSuccess** field will be executed. If the query returns an error response, **onError** will be executed.
 
-Now when the user clicks the Button, the text content contained within the Text widget is added to the user's clipboard, ready to paste. (You may want to update the button's **Label** property to something like "Copy").
-
-### Example 2: Custom code
-
-There are some cases where you might want to create more complex flows based on certain conditions; when this is the case, consider writing your own code to handle the logic. This example is going to demonstrate how to use custom code in the event field to achieve a more complex action.
-
-In [example 1](#example-1-built-ins), you used the properties pane GUI to set up an action that copies the text content of a [Text widget](/reference/widgets/text/) to the user's clipboard, using the built-in [`copyToClipboard()`](/reference/appsmith-framework/widget-actions/copy-to-clipboard/) function. Let's add an alert message to this event to let the user know that the content was successfully copied.
-
-When inside of the button's properties pane, you can toggle the "JS" flag next to the **onClick** field to allow writing code in it. If there is already a function selected with the GUI, toggling the "JS" tag will convert that selected action to equivalent code that you can modify.
-
-After example 1, the contents of the button's **onClick** field are:
-
-```javascript
-{{ copyToClipboard(Text1.text) }}
-```
-
-To add an alert message using the built-in [`showAlert()`](/reference/appsmith-framework/widget-actions/show-alert/) function, we can simply add a semicolon after the `copyToClipboard()` call, and then write the `showAlert()` call directly after:
-
-```javascript
-{{ copyToClipboard(Text1.text); showAlert("Copied to clipboard!", "success") }}
-```
-
-This is valid, shows the user a success message when they use the button. Unfortunately though, the fields of the properties pane become crowded and difficult to maintain when they have more than a single simple function call in them. For this reason, when you are writing more than a very small code snippet, it's recommended to use [JS Objects](/core-concepts/writing-code/javascript-editor-beta). This way, you can use Appsmith's [code editor](/core-concepts/writing-code/javascript-editor-beta#working-with-javascript-editor) to write multi-line, well-organized functions that take advantage of the code editor's features like the debugger.
-
-Let's move the code into a JS Object and connect it to the button's event.
-
-1. First, [create a JS Object](/core-concepts/writing-code/javascript-editor-beta#js-object) and name it something meaningful, like `eventFunctions`.
-2. Remove the placeholder code in the object, and update the object so that it contains:
-    ```javascript
-    export default {
-
-	    button1Event: () => {
-            copyToClipboard(Text1.text)
-            showAlert("Copied to clipboard!", "success")
-	    }
-
-    }
-    ```
-    :::tip
-    Since JS Objects are written in the code editor and not a simple input box, you don't have to use mustache syntax `{{ }}` here.
-    :::
-3. Back in the button's properties pane, update the **onClick** field so that it only contains:
-    ```javscript
-    {{ eventFunctions.button1Event() }}
-    ```
-
-The button actions should work again as before. But now, you can add as much complexity or logic as you like to the function in the JS Object without making the button's properties cramped and unreadable; the button's **onClick** can simply be a reference to the JS Object's function, where the real working code is located.
+If you'd like even more control or more [complex workflows](/core-concepts/writing-code/workflows#complex-workflows), consider writing custom code in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to handle the logic. Once you have created a function in the JS Object that does what you want, you can set the button to execute it just like you did with the query before -- this time, look for your JS Object under the "Execute a JS function" menu item.
 
 ## Buttons in forms
 
@@ -89,7 +40,7 @@ When this button property is turned on, the button can be used to reset all fiel
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### General
+### General properties
 
 General properties control the data and behavior of the widget. These properties are present in the properties pane of the widget.
 
@@ -103,7 +54,7 @@ General properties control the data and behavior of the widget. These properties
 | **Disabled**                 | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.   |
 | **Animate loading**          | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 
-### Reference
+### Reference properties
 
 Reference properties are used to access the widget's data and state using code. When using reference properties, substitute `<button_name>` in the examples below with the name of your button widget.
 
@@ -114,7 +65,7 @@ Reference properties are used to access the widget's data and state using code. 
 | **isVisible**          | Reflects the state of the widget's **Visible** setting _(bool)_.                                     | `{{ <button_name>.isVisible }}` |
 | **isDisabled**         | Reflects the state of the widget's **Disabled** setting _(bool)_.                                    | `{{ <button_name>.isDisabled }}` |
 
-### Style
+### Style properties
 
 Style properties allow you to change the look and feel of the button. These properties are present in the properties pane of the widget.
 
@@ -124,15 +75,15 @@ Style properties allow you to change the look and feel of the button. These prop
 | **Button Variant** | Sets the button style type to represent its significance - Primary, Secondary, or Tertiary. You can use JavaScript to set this field by writing code that evaluates to the _string_ "PRIMARY", "SECONDARY", or "TERTIARY".  |
 | **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.  |
 | **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
-| **Icon**           | Sets an icon to be included on the button.   |
+| **Icon**           | Sets an icon to be included on the button. Uses icons from the [Blueprint](https://blueprintjs.com) library. See the [list of icons here](https://blueprintjs.com/docs/#icons).  |
 | **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.  |
 | **Placement**      | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the _string_ "START", "CENTER", or "BETWEEN". |
 
 :::info
-Appsmith uses icons from the [Blueprint](https://blueprintjs.com) library. See the [list of icons here](https://blueprintjs.com/docs/#icons).
+
 :::
 
-### Events
+## Events
 
 These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
 
@@ -144,6 +95,6 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 You may be interested in these pages that can come in handy with the Button widget:
 
-1. [Appsmith Framework built-in actions](/reference/appsmith-framework/widget-actions/)
+1. [Built-in actions](/reference/appsmith-framework/widget-actions/)
 2. [Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
-3. [Form widget](/reference/widgets/form)
+3. [Widgets](/reference/widgets/)
