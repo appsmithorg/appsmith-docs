@@ -36,7 +36,7 @@ Follow the steps below to upgrade the Kubernetes Community edition to the Busine
 
          helm repo add appsmith-ee https://helm-ee.appsmith.com
     helm repo update
-    helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
+    helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
  </li>
 <li>Update encryption values in the values.yaml
 
@@ -47,7 +47,7 @@ Follow the steps below to upgrade the Kubernetes Community edition to the Busine
 <li>Download the backup file and restore the data
 
           /* Download the backup file */
-         kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/backup/<backup_path>
+         kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/backup/
 
       /* Restore */
          appsmithctl restore
