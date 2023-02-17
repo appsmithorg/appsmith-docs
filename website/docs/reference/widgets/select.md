@@ -1,6 +1,6 @@
 # Select
 
-Select widget(*previously dropdown*) captures user input/s from a specified list of permitted inputs. It offers a simple and intuitive interface for users to select a single option from the list, 
+The select widget, (*formerly known as the dropdown*), enables users to select one input from a predetermined list of permitted options. This document provides information on how to use the select widget to capture user input effortlessly. 
 
 <VideoEmbed host="youtube" videoId="zNw1yMwg-aY" title="How to use Select Widget" caption="How to use Select Widget"/>
 
@@ -47,7 +47,7 @@ To access the values of an object with attribute names that contain spaces, use 
 ```javascript
  return { label: obj["income tax"], value: obj["income tax"]} 
 ```
-**Sample app** - Dynamically Add Options to a [Select Widget](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808)
+**Sample app** - [Dynamically Add Options to a Select Widget](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808)
 
 ### Set default value in options
 
@@ -94,33 +94,7 @@ The preceding video demonstrates how to enable Server Side Filtering, and you ca
 
 **Sample app** for [Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695).
 
-## Filter data based on user input
-
-You can implement an external filter for your data that allows users to filter data based on their input. The selected value from the Dropdown can be transmitted to an API/Query through `{{ widgetName.selectedOptionValue }}`.
-
-For instance,if you have a table that displays all the data, and you want to filter the data based on a specific criterion such as gender, you can create a query by adding a WHERE clause that filters the data according to the selected value in a Select widget. The query would resemble something like this:
-
-```javascript
-SELECT * FROM users {{Select1.selectedOptionValue !== "all" ? "WHERE gender = '" + Select1.selectedOptionValue + "'": "" }} ORDER BY id LIMIT 100;
-```
-
-You can use the query to populate a table widget by setting its Table Data property to `{{fetch_users.data}}`. This displays the filtered data in the table based on the selected value in the Select widget.
-
-
 **Sample App** for [External Filter - Where Clause](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78).
-
-## Reset select widget 
-
-When building an application, it's often necessary to reset a widget to its default state. This can be useful when you want to provide users with the ability to clear their selection and start over or if you want to reset the state of the widget after a certain action has been performed.
-
-To reset a widget is by using a button widget and modifying its onClick event with the following code:
-
-```javascript
-{{resetWidget("Select1",true)}}
-```
-This method can be used to reset other types of widgets as well by replacing "Select1" with the appropriate widget name.
-
-**Sample App** for [reset select widget](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78)
 
 ## Properties
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
@@ -199,6 +173,7 @@ If you run into any other issues while working with the Select widget, check out
 
 The following resources may come handy as you need to learn new tricks:
 
+* [Filter data based on user input](/reference/widgets/table#filter)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
 * [Writing Code](/core-concepts/writing-code)
 
