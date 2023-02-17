@@ -154,7 +154,6 @@ These are functions that are called when event listeners are triggered in the wi
 
 ## Troubleshooting
 
-If you are using the Select widget, you may encounter some errors. A list of common errors are included below to assist in troubleshooting these issues.
 
 * [Default value is missing in options. Please update the value](/help-and-support/troubleshooting-guide/widget-errors#default-value-is-missing-in-options)
 
