@@ -384,6 +384,9 @@ mark > code {
   line-height: normal;
 }
 
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  font-weight: 800 !important;
+}
 ul.circle {
   list-style: none;
   counter-reset: item;
