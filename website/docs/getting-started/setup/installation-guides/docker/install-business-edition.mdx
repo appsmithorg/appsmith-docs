@@ -6,12 +6,18 @@ Follow the steps listed below to install Appsmith on docker:
 
 
 <ul class="circle"> 
-<li>Download and place the <a href="https://bit.ly/docker-compose-business"><code>docker-compose.yml</code></a> file in the Appsmith installation folder or run the cURL command.
+<li>Download and place the <a href="https://bit.ly/docker-compose-be"><code>docker-compose.yml</code></a> file in the Appsmith installation folder or run the cURL command.
 
-        curl -L https://bit.ly/docker-compose-business -o $PWD/docker-compose.yml
-    
+```bash
+    curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
+```   
 </li> 
-<li>Start the Docker container using the command <code>docker-compose up -d</code> (You may need to run with <code>sudo</code>).</li> 
+<li>Start the Docker container using the command (You may need to run command with <code>sudo</code>).
+
+```bash
+    docker-compose up -d
+``` 
+</li> 
 <li>Check the Docker logs for the message <code>Appsmith is Running!</code> using the command <code>docker logs -f appsmith</code> and confirm that the Appsmith container is ready.
 </li> 
 <li>Create or sign in to your Appsmith account, and enter your license key to activate the instance.</li> 

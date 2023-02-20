@@ -7,19 +7,27 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 <ul class="circle"> 
 <li> Add the Appsmith appsmith-ee chart repository. 
 
-        helm repo add appsmith-ee https://helm-ee.appsmith.com
+```bash
+    helm repo add appsmith-ee https://helm-ee.appsmith.com
+```    
 </li>
 <li>Enter the following command to load the Appsmith chart repository.
 
-        helm repo update 
+```bash
+    helm repo update
+```    
 </li>
 <li>Generate the <code>values.yaml</code> file.
 
-        helm show values appsmith-ee/appsmith --version 2.0.0 > values.yaml
+```bash
+    helm show values appsmith-ee/appsmith --version 2.0.0 > values.yaml
+```    
 </li>
 <li> Run the below command to deploy Appsmith:
 
-        helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
+```bash
+    helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
+```
 </li>
 <li> Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.
 </li>
