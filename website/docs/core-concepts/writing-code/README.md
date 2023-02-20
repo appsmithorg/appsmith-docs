@@ -11,7 +11,7 @@ Appsmith enables writing JavaScript code almost everywhere on the GUI inside wid
 
 Appsmith also provides the ability to [import external libraries](/core-concepts/writing-code/ext-libraries#custom-javascript-libraries), helping you expand the capabilities of your applications.
 
-## Coding in JavaScript
+## Code in JavaScript
 You can write JS code inside the **mustache syntax `{{ }}`**. You can reference entities (widgets, queries, JS objects) and their associated data and properties as JavaScript variables and perform operations on them using built-in functions.  
 
 Appsmith currently supports two forms of JavaScript code for dynamically evaluated properties:
@@ -19,7 +19,7 @@ Appsmith currently supports two forms of JavaScript code for dynamically evaluat
 #### Single-line code
 Appsmith supports writing single-line code within `{{ }}` and interprets anything written between the brackets as a JavaScript expression. The output of the JS expression is bound to the corresponding property. You can write single-line code for cases such as performing transformations on arrays or using ternary operators for conditional expressions.
 
-**Examples**
+**Example**
 
 ```javascript
 /*Filter the data array received from a query*/
@@ -31,9 +31,7 @@ Appsmith supports writing single-line code within `{{ }}` and interprets anythin
 
 Sometimes, you may have to chain multiple operations, such as running queries, calling functions/methods, using conditional expressions, etc., in a single line to achieve a desired outcome. 
 
-**Example**
-
-This example shows how to run multiple actions on the successful execution of the `updateData` query.
+**Example**:This example shows how to run multiple actions on the successful execution of the `updateData` query.
 
 ```javascript
 {{updateData.run(() => {getData.run(), closeModal('ModalName')}, () => {})}}
@@ -43,11 +41,9 @@ If your expression becomes too complex or challenging to fit in a single line, u
 
 #### Multi-line code
 
-As the name suggests, you can break code into multiple lines to make it readable and also use **[Immediately Invoked Function Expression (IIFE)]**(https://developer.mozilla.org/en-US/docs/Glossary/IIFE) to write functions or code blocks with return statements. 
+As the name suggests, you can break code into multiple lines to make it readable and also use **[Immediately Invoked Function Expression (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)** to write functions or code blocks with return statements. 
 
-**Examples**
-
-This example shows how to code the button's `onClick` event listener to execute a set of actions.
+**Example**:This example shows how to code the button's `onClick` event listener to execute a set of actions.
 
 ```javascript 
 {{
@@ -57,7 +53,7 @@ This example shows how to code the button's `onClick` event listener to execute 
 }}
 ```
 
-This example shows how to restructure an invalid code block using IIFE.
+The example below shows how to restructure an invalid code block using **IIFE**.
 
 **Invalid code**
 
@@ -105,10 +101,42 @@ This example shows how to restructure an invalid code block using IIFE.
 ```
 
 #### JS Objects
-JS Objects stores a collection of variables and functions, and you can use it to write reusable code in Appsmith. With it, you can manipulate data, handle events, perform advanced operations, write complex logic and invoke anywhere within the application where it's defined. You can create JS Objects using the JavaScript Editor. For more information, see [JS Objects](/core-concepts/writing-code/javascript-editor-beta).
+JS Objects stores a collection of variables and functions, and you can use it to write reusable code in Appsmith. With it, you can manipulate data, handle events, perform advanced operations, write complex logic and invoke them anywhere within the application where it's defined. You can create JS Objects in the JavaScript Editor. For more information, see [JS Objects](/core-concepts/writing-code/javascript-editor-beta).
 
 
+## Update widgets programmatically
 
+When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically.
+
+Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
+
+**Examples**
+
+Suppose you have two Input widgets named `Input1` and `Input 2`. 
+
+This example shows how to update `Input2` with the value entered in `Input1`. Paste the following code in the `Default Value` property of Input2.
+
+```javascript
+{{Input1.text}}
+```
+
+Enter a value in `Input1` and see how the value updates in `Input2`.
+
+---
+Suppose you have two input widgets and one button widget named `Input1`, `Input2`, and `Button1`, respectively. This example shows how to update `Input2` with the value in `Input1` on the button click. Here, the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is used.
+
+Paste the following code in the `onClick` event of `Button1`. 
+
+```javascript
+{{storeValue('inputData',Input1.text)}}
+```
+
+Paste the following code in the `Default Value` property of Input2.
+```javascript
+{{appsmith.store.inputData}}
+```
+
+Enter a value in `Input1`. On button click, the value updates in `Input2`.
 
 ## Further reading
 
