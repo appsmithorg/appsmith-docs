@@ -59,7 +59,7 @@ For example, you can display a success message when the query has executed succe
 
 The Appsmith GUI is limited to a single `onSuccess` or `onError` callback, while the underlying framework has no limitation. To write complex workflows, you can enable JavaScript by clicking the `JS` toggle next to the event listener. You can perform operations such as chaining multiple queries and executing them in a specific order or conditionally executing a query based on the result of another query. 
 
-**Every query object has a [run()](https://docs.appsmith.com/reference/appsmith-framework/query-object#run) method used to execute the query.**
+**Every query object has a [run()](/reference/appsmith-framework/query-object#run) method used to execute the query.**
 
 :::tip
 Once you have configured actions using the GUI, you can click the `JS` icon next to the event to view the JavaScript equivalent of your configuration and then modify the code per your requirement.
