@@ -66,6 +66,8 @@ const sidebars = {
                 },
                 'getting-started/setup/installation-guides/aws-ami',
                 'getting-started/setup/installation-guides/aws-ecs',
+                'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                'getting-started/setup/installation-guides/azure-aci',
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/cloudjiffy',
@@ -285,17 +287,7 @@ const sidebars = {
                 'core-concepts/data-access-and-binding/querying-a-database/query-settings',
               ],
             },
-            {
-              type: 'category',
-              label: 'Displaying Data (Read)',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/displaying-data-read/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/displaying-data-read/display-data-tables',
-              ],
-            },
+            'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
               label: 'Capturing Data (Write)',
@@ -606,6 +598,9 @@ const sidebars = {
             'learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
+            'learning-and-resources/how-to-guides/use-git-to-create-different-environments',
+            'learning-and-resources/how-to-guides/how-to-get-container-logs',
+
           ],
         },
         'learning-and-resources/sample-apps',

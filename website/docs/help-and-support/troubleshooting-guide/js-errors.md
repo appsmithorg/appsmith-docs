@@ -22,7 +22,7 @@ This error occurs when the value in the property of the widget doesn't match the
 
 <Message
 messageContainerClassName="error"
-messageContent="This value doesn't evaluate to type Array[Object]"></Message>
+messageContent="This value does not evaluate to type Array[Object]"></Message>
 
 
 
@@ -74,7 +74,7 @@ To overcome this, you can bind the user's array of the response instead of the e
 
 <Message
 messageContainerClassName="error"
-messageContent="This value doesn't evaluate to type Array[{`label: string, value: string`}]"></Message>
+messageContent="This value does not evaluate to type Array[{`label: string, value: string`}]"></Message>
 
 
 
@@ -82,7 +82,7 @@ messageContent="This value doesn't evaluate to type Array[{`label: string, value
 #### Cause
 
 
-While adding options to single-select or multi-select dropdowns, you might face a data mismatch error. In such cases, make sure the options property is an array of objects containing a label and value as strings.
+While adding options to single-select or multi-select dropdowns, you might face a data mismatch error. In such cases, make sure the `options` property is an array of objects containing a label and value as strings.
 
 
 #### Solution
@@ -117,7 +117,7 @@ In case the response doesn't contain label and value keys as below, you can map 
 
 <Message
 messageContainerClassName="error"
-messageContent="The value doesn't evaluate to type Array [{x: string, y: number}]"></Message>
+messageContent="The value does not evaluate to type Array [{x: string, y: number}]"></Message>
 
 
 #### Cause
@@ -152,13 +152,13 @@ In cases like these, you can use JavaScript to transform the data to the correct
 
 <Message
 messageContainerClassName="error"
-messageContent="Value doesn't match ISO 8601 standard date string"></Message>
+messageContent="Value does not match ISO 8601 standard date string"></Message>
 
 
 #### Cause
 
 
-The date picker expects its default date in the standard[ISO format](https://www.iso.org/iso-8601-date-and-time-format.html). If the date you provided doesn't match this, you'll see this error.
+The date picker expects its default date in the standard [ISO format](https://www.iso.org/iso-8601-date-and-time-format.html). If the date you provided doesn't match this, you'll see this error.
 
 
 #### Solution
@@ -182,13 +182,13 @@ To resolve this, you can transform the date string using moment.js.
 
 <Message
 messageContainerClassName="error"
-messageContent="This value doesn't evaluate to type `boolean"></Message>
+messageContent="This value does not evaluate to type `boolean"></Message>
 
 
 
 
 #### Cause
-This error typically occurs in the isVisible and `isDisabled` properties and indicates that the value in the property doesn't match a `boolean` type.
+This error typically occurs in the `isVisible` and `isDisabled` properties and indicates that the value in the property doesn't match a `boolean` type.
 
 
 #### Solution
@@ -234,7 +234,6 @@ In case the preceding doesn't work, you can also check the EVALUATED VALUE secti
 
 
 #### Error message
-
 
 <Message
 messageContainerClassName="error"

@@ -14,6 +14,7 @@ The Appsmith S3 Datasource can connect to Amazon S3, Upcloud, Digital Ocean Spac
 
 For our examples below, we will connect to an **Amazon S3** provider.
 
+
 ## Connection Settings
 
 The S3 Datasource requires the following information to establish a connection:

@@ -7,6 +7,8 @@ GraphQL is a query language that allows a requesting client to ask for exactly w
 
 Appsmith provides an easy way to integrate with GraphQL, and enables you to perform different operations using a custom UI built with minimal configurations.
 
+<VideoEmbed host="youtube" videoId="KPLrbp-4Y6E" title="How To Build Apps With GraphQL APIs feat. Hasura" caption=""/>
+
 ## Create GraphQL API
 
 To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **Authenticated GraphQL API** under APIs.
@@ -474,7 +476,7 @@ End Cursor Value: {{testapi.data.data.repository.issues.pageInfo.endCursor}}
 ```
 
 :::info
-You can check this [document](/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md) to learn more about server-side pagination.
+You can check this [document](/reference/widgets/table#transforming-table-data) to learn more about server-side pagination.
 :::
 
 With this, you can run a query on a page change event. The below video demonstrates how you can perform cursor-based pagination:
