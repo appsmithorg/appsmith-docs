@@ -40,6 +40,8 @@ You can adjust the size of a widget by selecting it and dragging the resize hand
 
 Appsmith provides an [auto height](/reference/widgets#auto-height) feature for some widgets, which allows the widget to adjust its height automatically in response to changes in its content. This capability enables widgets to grow in height without any limit, providing a more dynamic user interface. 
 
+![auto height](</img/auto-height.gif>)
+
 When a widget changes height, the layout adjusts to maintain the distance between the widget undergoing a height change and the sibling widgets below this widget occupying one or more of the same columns.
 
 
