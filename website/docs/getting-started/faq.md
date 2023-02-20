@@ -3,7 +3,7 @@ description: Frequently asked questions about Appsmith.
 sidebar_position: 4
 ---
 
-# FAQs
+# FAQ
 
 ### What kind of apps can be built on Appsmith?
 
