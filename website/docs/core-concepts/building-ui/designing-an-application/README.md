@@ -38,17 +38,16 @@ When the widget hits the boundary of its container, it starts resizing itself to
 You can adjust the size of a widget by selecting it and dragging the resize handle.
 
 
-Appsmith provides an [auto height](/reference/widgets#auto-height) feature for some widgets, which allows the widget to adjust its height automatically in response to changes in its content. This capability enables widgets to grow in height without any limit, providing a more dynamic user interface.
+Appsmith provides an [auto height](/reference/widgets#auto-height) feature for some widgets, which allows the widget to adjust its height automatically in response to changes in its content. This capability enables widgets to grow in height without any limit, providing a more dynamic user interface. 
+
+When a widget changes height, the layout adjusts to maintain the distance between the widget undergoing a height change and the sibling widgets below this widget occupying one or more of the same columns.
+
 
 
 ### Duplicate widgets
 
 
-To save significant amount of time and effort when building complex layouts or forms, you can create multiple copies of the same widget. To duplicate a widget, select it and copy and paste the widget where you want it to appear.
-
-
-In addition to duplicating individual widgets, you can also copy **multiple widgets at once** by selecting them with your cursor. By selecting multiple widgets, you can copy and paste them as a single unit, rather than duplicating each widget individually.
-
+To save significant amount of time and effort when building complex layouts or forms, you can create multiple copies of the same widget. To duplicate a widget, select it and copy and paste the widget where you want it to appear. In addition to duplicating individual widgets, you can also copy **multiple widgets at once** by selecting them with your cursor. 
 
 
 One of the advantages of duplicating widgets is that the copied widgets have the exact same configuration as the original, including any properties or settings that were applied to it. This means that you don't need to manually recreate the widget and apply the same settings again.
@@ -69,19 +68,7 @@ To group widgets, you can select them using your cursor, and then click the "Gro
 ## Move widgets across containers
 
 
-A widget can move across containers. A container can be the canvas or a layout widget.
-
-
-:::info
-Layout widgets are the ones that can contain other widgets, like - [Container](/reference/widgets/container) widget, [List](/reference/widgets/list) widget, [Tabs](/reference/widgets/tabs) Widget, etc.
-:::
-
-
-You can move a widget into a new container by dragging your cursor.
-
-
-* Select the widget you want to move and hold it.
-* Move the widget inside the layout widget and resize it.
+A widget can move across containers. A container can be the canvas or a layout widget. Layout widgets are the ones that can contain other widgets, like - [Container](/reference/widgets/container) widget, [List](/reference/widgets/list) widget, [Tabs](/reference/widgets/tabs) Widget, etc. You can move a widget into a new container by dragging your cursor.
 
 
 
