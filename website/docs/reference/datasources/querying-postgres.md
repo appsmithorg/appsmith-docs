@@ -51,7 +51,7 @@ SSL (Secure Sockets Layer) is a protocol that provides a secure and encrypted co
 * **Allow**: The Allow SSL Mode uses SSL only if the server _insists_ on it.
 * **Prefer**: The Prefer SSL Mode uses SSL if the server supports it but connects without SSL if it's not available.
 * **Require**: The Require SSL Mode rejects the connection if SSL isn't available.
-* **Disable**: The Require SSL Mode rejects the connection if SSL isn't available.
+* **Disable**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
 
 For more information on SSL, you can refer to the [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-ssl.html).
 
