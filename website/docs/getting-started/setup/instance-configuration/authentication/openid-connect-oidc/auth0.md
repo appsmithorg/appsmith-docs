@@ -46,7 +46,7 @@ To continue with the OIDC setup on Appsmith, navigate to Auth0 configurations an
 
 ![Appsmith OIDC Configurations](/img/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
 
-> `RS256` is the default Token Signing Algorithm used by Appsmith and most IDPs. If you have a custom setup, you can choose from one of our supported algorithms under the Advanced section of the OIDC page. Please note, the `HS256` algorithm is not supported for signing tokens.
+> `RS256` is the default Token Signing Algorithm used by Appsmith and most identity providers. If you have a custom setup, you can choose from one of the supported algorithms under the Advanced section of the OIDC page. Please note, the `HS256` algorithm isn't supported for signing tokens.
 
 ### Configuring Scopes for Auth0
 
