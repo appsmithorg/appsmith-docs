@@ -21,7 +21,7 @@ To connect your app with git, follow the steps below:
 ### Adding the deploy key in the Repository
 
 * Copy the generated deploy key and add it to your repository. Please note that you have to **enable write access** for pushing the changes to the remote repo from Appsmith.
-
+* testando
 #### **For Github**
 
 * Open the settings of the repository and go to deploy keys.
