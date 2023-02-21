@@ -17,7 +17,7 @@ Take a backup using the [`appsmithctl backup`](/getting-started/setup/instance-m
 2. Copy the backup to local disk. The actual backup file's name should be available in the output of the previous step.
 
    ```bash
-   kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz appsmith_backup.tar.gz
+   kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz <APPSMITH_BACKUP_GENERATED_NAME>.tar.gz
    ```
 
 ## Uninstall old Helm chart
