@@ -2,25 +2,26 @@
 sidebar_position: 13
 ---
 # PostgreSQL
-PostgreSQL is a reliable open source relational database management system that offers advanced features and capability for managing large datasets. This documentation provides guidance on establishing the connection and configuring the integration.
 
-:::info
-To integrate PostgreSQL with Appsmith, you should understand the [basics of connecting to databases on Appsmith.](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database)
-:::
+This document covers how to establish a connection between your PostgreSQL database and Appsmith. You can also learn how to utilize this connection to read and write data on your applications.
 
-## Create PostgreSQL datasource
+
+## Add PostgreSQL datasource
 
 To add an PostgreSQL datasource, navigate to **Explorer** >> Click plus sign (**+**) next to **Datasources** >> Select PostgreSQL under Databases.
 
 
-## Connection settings
+## Configure datasource
 
-Configure the PostgreSQL as illustrated below:
+Configure the PostgreSQL as illustrated below. 
 
+![Configure PostgreSQL Datasource ](</img/postgres-db.png>)
 
 :::info
 All required fields are suffixed with an asterisk (\*).
 :::
+
+To connect to a PostgreSQL database, you must configure the following parameters:
 
 #### Connection mode*
 
@@ -35,7 +36,7 @@ In PostgreSQL, connection mode refers to the level of permission granted to Apps
 Headers are metadata information about the communication between the client and server, while ports identify the endpoint on the network to which data is being sent. If you don’t specify a port, Appsmith may try to connect to port `5432`.
 
 #### Database name
-Databases are separate and independent entities, and each database has its own set of tables, views, indexes, and other objects. Therefore, specifying the correct database name is essential for connecting to and accessing the correct database instance.
+To establish a connection to the desired database instance, it's necessary to provide the database name. 
 
 #### Authentication
 
@@ -45,7 +46,7 @@ The process of authentication requires you to provide certain parameters. These 
 
 #### SSL
 
-SSL (Secure Sockets Layer) is a protocol that provides a secure and encrypted connection between a client and server. In PostgreSQL, the SSL Mode can be set to one of five values:
+In PostgreSQL, the SSL(Secure Sockets Layer) Mode can be set to one of five values:
 
 * **Default**: The Default SSL Mode is the same as Prefer, meaning SSL is used if the server supports it.
 * **Allow**: The Allow SSL Mode uses SSL only if the server _insists_ on it.
@@ -53,86 +54,85 @@ SSL (Secure Sockets Layer) is a protocol that provides a secure and encrypted co
 * **Require**: The Require SSL Mode rejects the connection if SSL isn't available.
 * **Disable**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
 
-For more information on SSL, you can refer to the [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-ssl.html).
+For more information, see SSL Support on [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-ssl.html).
 
 
-## Create queries
+## Write queries
 
-You can create queries to PostgreSQL datasource by selecting the **+ New Query**  button available on the datasource page or by navigating to **Explorer** >> Click plus sign (**+**) next to Queries/JS >> Select the datasource name (PostgreSQL).
+You can create [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings)  to PostgreSQL datasource by selecting the **+ New Query**  button available on the datasource page or by navigating to **Explorer** >> Click plus sign (**+**) next to Queries/JS >> Select the datasource name (PostgreSQL).
 
 PostgreSQL databases can be queried using the standard [SQL syntax](https://www.postgresql.org/docs/12/index.html). All PostgreSQL queries return an array of objects where each object is a row returned by the query and each property in the object is a column.
 
-### Query
-You can create queries to fetch, update, and delete data from a datasource using the Appsmith query editor. We would use the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) to perform these tasks. Lets discuss the following query methods:
 
 
-| Query Name                                                  | Description                             |
-| ----------------------------------------------------------- | --------------------------------------- |
-| [​List Records​](#list-records)                   | Fetches all the data from the database. |
-| [Update Records​](#update-records) | Update a few fields in a record.  |
-| [Insert records​/create records​](#insert-recordscreate-records)             | Insert a new record in the database.               |
-| [Delete record​](#delete-record)               | Delete a specific record.  |
+### Fetch data
+To fetch data, you'll need to first connect to your database by selecting your datasource in the **queries/js** section. Once you've created a query, you can add your SQL code in the body section.
 
-You can check the [Query Settings Guide](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to learn more about queries.
+For example, if you want to retrieve all the data from a table called `users`, you can use the following SQL code:
 
-### List records
-List command lets you display all the data from the database. With Appsmith, you can present data that has been filtered and sorted based on fields, records, etc.
-
-* Click on the **+** icon next to the queries/js and choose your **datasource**.
-* Add your code in the body section.
-
-For example, the select query retrieves all the data from the users table: 
-
-```js
+```sql
 SELECT * FROM users;
 ```
-You can even filter data, like retrieving only the first 10 rows from a table. 
 
-```js
+You can also filter data by adding conditions to your SQL query. For instance, if you only want to retrieve the first 10 rows of data from the `users` table, you can use the following SQL code:
+
+```sql
 SELECT * FROM users ORDER BY id LIMIT 10;
 ```
-You can display the query results in a Table widget by [binding the data in the Table](https://docs.appsmith.com/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) Data property.
-
-### Insert records​/create records
-Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert one or more rows into a database table with specified table values.
-
-* Click on the **+** icon next to the queries/js and choose your **datasource**.
-* Add your code in the body section.
+After fetching your data using queries, you may want to display it in a table for better visualization. To do so, you can [bind your data](/reference/widgets/table) to a table using the Table data property: 
 
 ```js
+{{Query1.data}}
+```
+
+
+### Insert data
+The insert command is used to insert one or more rows into a database table with specified table values.
+
+For example, lets say you have a table called `users` with columns for `name`, `email`, and `phone`. If you want to insert a new row of data into this table with values for these columns, you can use the following SQL code:
+
+```sql
+INSERT INTO users (name, email, phone) VALUES ('John Smith', 'john@example.com', '555-1234');
+```
+For instance, if you want to insert data into a database table directly from the UI, you can use a [JSON form](/reference/widgets/json-form). 
+
+To do this, you can add a JSON form and configure its properties to match the fields you want to insert into your database table. Then, you can set its **onClick** event to **run** the insert query using the INSERT INTO SQL command, something like:
+
+```sql
 INSERT INTO users
-  (name, gender, email)
+  (name, id, email)
 VALUES
   (
-    {{ nameInput.text }},
-    {{ genderDropdown.selectedOptionValue }},
-    {{ nameInput.text }}
+    {{ JSONForm1.formData.name }},
+    {{ JSONForm1.formData.employee_id}},
+    {{ JSONForm1.formData.email }}
   );
 
 ```
 
-You can create a new records using the [Input](/reference/widgets/input) and [modal widget](/reference/widgets/modal).
 
 
+This inserts a new row into the `users` table with the values entered into the JSON form fields.
 
-
-### Delete record
+### Delete data
 The Delete Record command deletes a particular record from the database. 
 
-* Click on the **+** icon next to the queries/js and choose your **datasource**.
-* Add your code in the body section.
+For instance, lets say you have a table called `users` with columns for `id`, `name`, `email`, and `phone`. If you want to delete a specific row from this table, you can use the following SQL code:
 
-For instance, you can use the following command to delete a row from the users table:
 
-```js
+```sql
 DELETE FROM users WHERE id = 1;
 ```
 
-### Update records
-Update command let you update existing data of a particular type. With an update query, you can filter nodes and set or remove any field belonging to a type.
+Suppose you want to delete data directly from the UI. To do this, you can add a "Delete" column to the table property and set its type to an button. Then, you can set the **onClick** property of the Delete button to execute the delete query, which removes the selected row from the database table.
 
-* Click on the **+** icon next to the queries/js and choose your **datasource**.
-* Add your code in the body section.
+```sql
+DELETE FROM users WHERE id = {{Table1.selectedRow.id}};
+```
+
+
+### Update data
+Update command let you update existing data of a particular type. With an update query, you can filter or remove any field belonging to a type.
 
 For example, if you want to change the email ID in the users table, you can:
 
@@ -142,7 +142,17 @@ UPDATE users
   WHERE id = {{5}};
 ```
 
-You can use the [Modal widget](https://docs.appsmith.com/reference/widgets/modal) or [JSON form Widget](https://docs.appsmith.com/reference/widgets/json-form) to update the database.
+To enable editing data directly from the UI, you can add an Update column to the table widget and change its column type to a button. 
+
+* Bind the **onClick** event of the button to open a **modal** window to edit the data. 
+* In the modal, you can use **input widgets** to update the record's fields. 
+* Set the **onClick** event of the confirm button to execute an update query, and change the records section to update the selected row's fields with the input widget's text.
+
+```sql
+UPDATE users
+  SET email = '{{Input1.text}}'
+  WHERE id = {{ Table1.selectedRow.id }};
+```
 
 
 ## Using prepared statement
@@ -151,10 +161,9 @@ Normal query execution simply string concatenates the evaluated values of the ja
 
 Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get escaped and sanitized before the query is sent to the database for execution.
 
-Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) for efficient and secured data transactions.
+Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for efficient and secure data transactions.
 
 
-<VideoEmbed host="youtube" videoId="Q69wdQEQbbE" title="" caption=""/>
 
 ## Troubleshooting
 If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](https://chat.openai.com/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
