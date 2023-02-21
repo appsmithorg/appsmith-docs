@@ -209,7 +209,7 @@ When you run your code, the value of `<VARIABLE_NAME>` is printed to the browser
 
 To learn how to use `console.log()` watch the video `How to Debug using console.log()`.
 
-<VideoEmbed host="youtube" videoId="YLnvb9_k96s" title="How to Debug using console.log()" caption="How to Debug using console.log()"/>
+<VideoEmbed host="youtube" videoId="EYNPm9cJWGw" title="How To Debug JavaScript With Console.log" caption="How To Debug JavaScript With Console.log"/>
 
 ## Writing complex code
 
