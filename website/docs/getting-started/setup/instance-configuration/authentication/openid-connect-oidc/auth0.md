@@ -46,6 +46,8 @@ To continue with the OIDC setup on Appsmith, navigate to Auth0 configurations an
 
 ![Appsmith OIDC Configurations](/img/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
 
+> `RS256` is the default Token Signing Algorithm used by Appsmith and most IDPs. If you have a custom setup, you can choose from one of our supported algorithms under the Advanced section of the OIDC page. Please note, the `HS256` algorithm is not supported for signing tokens.
+
 ### Configuring Scopes for Auth0
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details (after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
