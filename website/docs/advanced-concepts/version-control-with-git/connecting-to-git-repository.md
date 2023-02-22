@@ -52,6 +52,11 @@ To connect your app with git, follow the steps below:
 
  <VideoEmbed host="youtube" videoId="A8ZOvW1CVIk" title="Adding the deploy key in the Repository | Bitbucket" caption="Adding the deploy key in the Repository | Bitbucket"/>
 
+
+:::info
+**AWS CodeCommit** isn't supported as a source control repository due to their lack of support for deploy keys.
+:::
+
 ### User Configurations
 
 * In user settings, define the user configurations. By default, the global user configurations are used. Click on the **Edit** button or directly open the profile section to change the global configurations. If you want to add a user configuration specific to the current app, you must uncheck the "use default configuration" checkbox and enter the author details below.
