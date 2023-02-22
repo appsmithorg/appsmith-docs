@@ -6,7 +6,7 @@ List widget provides a way to iterate over a structured dataset(array of objects
 <VideoEmbed host="youtube" videoId="0ePiZlWmp7Q" title="How to use List Widget" caption="How to use List Widget"/>
 
 :::info
-Currenlty,you can only use widgets to display the data like images, text in the list.
+Although you can add many other widgets inside the List widget, currently, Appsmith fully supports only the Text and Image widgets inside a List.
 :::
 
 
