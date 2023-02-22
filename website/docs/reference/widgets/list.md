@@ -80,7 +80,7 @@ Lists are often required to display large data sets from queries, but browsers c
 
 Follow the steps below to paginate the responses and request smaller chunks of data at a time:
 
-1. Enable the server-side pagination property in the list
+1. Enable the Server Side Pagination property for the List
 2. Call the query via the onPageChange event.
 3. Calculate the required pageOffset using the pageSize and pageNo property as shown below:
 
