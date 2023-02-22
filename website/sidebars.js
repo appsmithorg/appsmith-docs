@@ -481,7 +481,17 @@ const sidebars = {
       collapsed: false,
       label: 'Advanced Concepts',
       items: [
-        'advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
+        {
+          type: 'category',
+          label: 'Custom Authentication',
+          link: {
+            type: 'doc',
+            id: 'advanced-concepts/custom-authentication/README',
+          },
+          items: [
+            'advanced-concepts/custom-authentication/third-party-oauth',
+          ],
+        },
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/audit-logs',

@@ -212,3 +212,5 @@ onSuccess
 onError
 drag-and-drop
 as per
+Xano
+Supabase
