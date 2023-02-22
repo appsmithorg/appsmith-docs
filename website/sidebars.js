@@ -481,17 +481,7 @@ const sidebars = {
       collapsed: false,
       label: 'Advanced Concepts',
       items: [
-        {
-          type: 'category',
-          label: 'Custom Authentication',
-          link: {
-            type: 'doc',
-            id: 'advanced-concepts/custom-authentication/README',
-          },
-          items: [
-            'advanced-concepts/custom-authentication/third-party-oauth',
-          ],
-        },
+        'advanced-concepts/custom-authentication',
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/audit-logs',

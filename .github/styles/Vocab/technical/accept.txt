@@ -215,3 +215,4 @@ as per
 Xano
 Supabase
 Google
+SSO

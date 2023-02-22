@@ -2,7 +2,7 @@
 sidebar_position: 1
 
 description: >-
-  In this guide, you'll learn how to implement a custom Auth flow using and API with JWTs.
+  In this guide, you'll learn how to implement a custom Auth flow using an API with JWTs.
 ---
 
 # Custom Authentication
@@ -94,6 +94,13 @@ After these steps, any user who isn't logged in with a valid `jwt` token can onl
 
 ## Further reading
 
-1. [Third-Party OAuth](/advanced-concepts/custom-authentication/third-party-oauth/)
+1. [Authentication for self-hosted instances](/advanced-concepts/custom-authentication/third-party-oauth/)
 2. [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application)
 3. [Security](/product/security)
+
+### Authentication via SSO
+
+It's possible to use third-party OAuth services to authenticate users for your app via SSO with like Google, GitHub, Twitter, and more. To do this, you'll need to connect with a service that integrates with your desired OAuth provider. You may like these video guides:
+
+* [Custom Google authentication with Xano](https://www.youtube.com/watch?v=n3XSAA7q--I)
+* [Custom Google authentication with Supabase](https://www.youtube.com/watch?v=mfhHUDNCkoQ)
