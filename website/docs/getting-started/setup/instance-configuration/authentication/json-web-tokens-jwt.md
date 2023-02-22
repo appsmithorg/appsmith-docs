@@ -203,6 +203,6 @@ The environment variable is not accessible on the client-side as per security no
 
 The environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` stores access token. You can read the value of the access token by using it in between the angular braces`<<>>.`
 
-`<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN >>`
+`<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`
 
 With the JSON Web Tokens available on Appsmith, you can securely exchange data or information between Appsmith and your apps or APIs.
