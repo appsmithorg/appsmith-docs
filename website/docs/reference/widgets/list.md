@@ -22,11 +22,11 @@ The `Items` property can be used to bind your dataset to the list widget. You ca
 
 You can see a box displaying the static JSON data. You can replace the static JSON in the items pane or bind the query/API/JS response, and the list widget uses the data for generating the list items.
 
-#### Manual data
+#### Manual data mapping
 
 You can add static JSON data in the `items` for generating the list items for the widget.
 
-**Example:** see the JSON snippet below, there is a collection of books with details like `bookId`, `bookName`, `bookImage`, `category`, `author`, `publishedDate`, and `price`.
+**Example:** see the JSON snippet below, there is a collection of books with details like `bookId`, `bookName`, and `price`.
 
 ```javascript
 [
@@ -58,9 +58,9 @@ You can add static JSON data in the `items` for generating the list items for th
 ]
 ```
 
-Replace the above JSON snippet in the items pane. To display the data in the list widget, add three text widgets and one image widget. Add the widgets on the **first item** of the list widget.
+To display the data in the list widget, add three text widgets and one image widget in the first list item.
 
-Follow the steps below bind each JSON field to the widgets embedded in the list:
+Follow the steps below to bind each JSON field to the widgets embedded in the list:
 
 * Select the Image widget and add  `{{currentItem.bookImage}}`under `Image` in the property pane. Please note that `currentItem` refers to the item read from the data collection. . `bookImage` is the JSON attribute.
 * You can now see image in the list item, as the image widget renders the image available on the URL supplied in JSON.
@@ -69,12 +69,12 @@ Similarly, you can bind bookName, bookId, and price to the embedded widgets in t
 
 <VideoEmbed host="youtube" videoId="PPsqqkaq_7Q" title="How to add Data to Widget?" caption="How to add Data to Widget?"/>
 
-#### Dynamic data
+#### Dynamic data mapping
 
 If you wish to bind the dynamic response of the queries, then you can use mustache syntax (`{{ }}`) to embed the same. For example, You have written a query `“GetAllEmployees”` then to bind the response use `{{GetAllEmployees.data}}`. Typically, you have a format of `{{QUERY_NAME.data}}` to bind the data returned by the query.
 If you are binding the dynamic response of your query or API to the list widget, remember to use the query columns or API response object’s attributes to map to the individual widget by using `currentItem.<attribute_or_column_name>`.
 
-### Server Side Pagination
+### Server-side pagination
 
 Lists are often required to display large data sets from queries, but browsers can't always load all the data present in the database, or might do so slowly. You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a query call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.
 
