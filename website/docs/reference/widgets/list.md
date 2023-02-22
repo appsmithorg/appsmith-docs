@@ -12,7 +12,7 @@ Although you can add many other widgets inside the List widget, currently, Appsm
 
 ##  List components
 
-Typically, a list widget is a collection of other widgets that you can embed to display data or capture user input. Once you drag the list widget on the canvas, you can see it has embedded widgets [ image](./image.md) and two[ texts](./text.md) available. You can add more widgets as per your requirement. Add the widgets only on the first list item container. The widgets get replicated for the other list items automatically when a dataset is connected to the list. 
+Typically, a List widget is a collection of other widgets you can embed to display data or capture user input. Once you drag a List widget on the canvas, it has embedded Image and Text widgets by default. You can add more widgets per your requirement on the first list item container. The widgets get replicated on the other list items automatically when a dataset is connected to the list. 
 
 ##  Display data in list items
 
