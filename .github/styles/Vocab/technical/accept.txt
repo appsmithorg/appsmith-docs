@@ -212,3 +212,7 @@ onSuccess
 onError
 drag-and-drop
 as per
+backgroundColor
+gridGap
+listData  
+selectedItem
