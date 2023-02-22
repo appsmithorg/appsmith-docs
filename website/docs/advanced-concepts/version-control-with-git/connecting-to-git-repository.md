@@ -52,7 +52,7 @@ To connect your app with git, follow the steps below:
 
  <VideoEmbed host="youtube" videoId="A8ZOvW1CVIk" title="Adding the deploy key in the Repository | Bitbucket" caption="Adding the deploy key in the Repository | Bitbucket"/>
  
- :::info
+:::info
 **AWS CodeCommit** isn't supported as a source control repository due to their lack of support for deploy keys.
 :::
 
