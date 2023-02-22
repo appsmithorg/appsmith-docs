@@ -96,7 +96,7 @@ List1.pageOffset = (List1.pageNo - 1) * List1.pageSize
 4. Set the LIMIT and OFFSET clause in the query:
 
 ```javascript
-SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ List1.pageOffset }}
+SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ (List1.pageNo - 1) * List1.pageSize }}
 ```
 
 ## Access list items
