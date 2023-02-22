@@ -214,3 +214,4 @@ drag-and-drop
 as per
 PostgreSQL
 Disable
+CRUD
