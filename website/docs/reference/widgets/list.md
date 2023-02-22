@@ -121,7 +121,7 @@ These properties can be referenced in other widgets , queries, or JS functions u
 | **pageSize**        | Contains a _number_ representing the number of list items that can fit on one page of the List widget.                                                                                                                                    |
 | **selectedItem**    | Contains an _object_ representing the data of the list item that is selected.                                                                                                                                                             |
 
-### Styles
+### Style properties
 
 You can do some formatting changes to enhance the look and feel of the widget by using styles.
 
