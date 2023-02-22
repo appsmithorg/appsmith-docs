@@ -106,14 +106,14 @@ These properties allow you to name, edit the List widget. All these properties a
 | **Items**                  | Allows you to bind static or dynamic data collection to the widget.                                                                                                                                                                                       |
 | **Server-side Pagination** | Enables you to implement pagination by limiting the number of results fetched per Query request.  |
 | **Visible**                | Controls widget's visibility on the page. When turned off: The widget is visible when the app is published. It appears translucent when in Edit mode.                                                                                            |
-| **Animate Loading**        | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
+| **Animate Loading**        | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
 
 
-### Reference Properties
+### Reference properties
 
 These properties allow you to bind your List widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Binding Property    | Description                                                                                                                                                                                                                               |
+| Reference Property    | Description                                                                                                                                                                                                                               |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **isVisible**       | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                                                          |
 | **items**           | Contains an *array* of *objects* that each represent a widget within the list items, and holds information about that widget's state.<br/>e.g. `[ { "Text1": { "isVisible": true, ... }, ... }, ... ]` |
