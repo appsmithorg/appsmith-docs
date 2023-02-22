@@ -110,7 +110,7 @@ These properties allow you to name, edit the List widget. All these properties a
 
 ### Reference properties
 
-These properties allow you to bind your List widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+These properties can be referenced in other widgets , queries, or JS functions using the dot operator.
 
 | Reference Property    | Description                                                                                                                                                                                                                               |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
