@@ -6,15 +6,17 @@ sidebar_position: 3
 
 # Self Hosting
 
-[Self-hosting](https://en.wikipedia.org/wiki/Self-hosting\_\(web\_services\)) Appsmith means hosting and managing Appsmith directly on your server rather than relying on third-party service providers. Self-hosting is often seen as more secure and private, as you have complete control over your data and how it's used.
+Self-hosting Appsmith means hosting and managing Appsmith directly on your server rather than relying on third-party service providers. Self-hosting is more secure and private, as you have complete control over your data and how it's used.
 
-Appsmith provides a [cloud-hosted version](https://app.appsmith.com) and the option to set up your instance on some popular [platforms](./README.md#deploy).
+When you are just starting to use Appsmith, there are two options -
+1. **Appsmith Cloud** - Easy solution for the users who don't have their infrastructure. Signup and start using Appsmith!
+2. **Self-hosted Insatnces** - For users who want to plug into their own infrastructure.
 
-## Cloud-hosted
+## Appsmith Cloud
 
-Cloud-hosted version is available over the internet, which makes it easy for users to sign up and start building apps. It's a perfect solution for users who don't have their infrastructure set up. You can sign up on [appsmith.com](https://appsmith.com) and follow the [Quick start guide](./../../getting-started/start-building.md) to get started.
+Appsmith's cloud version is available at [appsmith.com](https://appsmith.com). You can signup here and started usind the cloud version. It's a perfect solution for users who don't have their infrastructure set up. Follow the [Quick start guide](./../../getting-started/start-building.md) to get started.
 
-## Self-hosted
+## Self-hosted Instance
 
 You can choose to deploy Appsmith on your own infrastructure. It's often useful when you want to plug it into existing infrastructure without the need to maintain a different setup. It enables you to take advantage of what your infrastructure has to offer and extend it to Appsmith.
 
