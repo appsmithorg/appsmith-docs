@@ -99,6 +99,29 @@ List1.pageOffset = (List1.pageNo - 1) * List1.pageSize
 SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ List1.pageOffset }}
 ```
 
+## Access list items
+
+You can reference the values inside each item selected in the list using the `selectedItem` property as shown below:
+
+```javascript
+
+{{listName.selectedItem.fieldName}}
+```
+
+**Example**: In the preceding example, if you want to display the book name of the selected item in`List1` in a Text widget, bind it as shown below in the **Text** property of the Text widget.
+
+```javascript
+
+{{List1.selectedItem.bookName}}
+```
+
+To access the index of the selected item in the list, you can use:
+
+```javascript
+
+{{listName.selectedItemIndex}}
+```
+
 ## Properties
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
