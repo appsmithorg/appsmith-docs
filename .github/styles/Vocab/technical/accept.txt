@@ -215,3 +215,8 @@ as per
 PostgreSQL
 Disable
 CRUD
+backgroundColor
+gridGap
+listData  
+selectedItem
+
