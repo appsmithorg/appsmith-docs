@@ -93,7 +93,7 @@ Follow the steps below to paginate the responses and request smaller chunks of d
 ```javascript
 List1.pageOffset = (List1.pageNo - 1) * List1.pageSize
 ```
-4. Set the LIMIT and OFFSET in the query:
+4. Set the LIMIT and OFFSET clause in the query:
 
 ```javascript
 SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ List1.pageOffset }}
