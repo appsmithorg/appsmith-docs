@@ -108,7 +108,7 @@ You can reference the values inside each item selected in the list using the `se
 {{listName.selectedItem.fieldName}}
 ```
 
-**Example**: In the preceding example, if you want to display the book name of the selected item in`List1` in a Text widget, bind it as shown below in the **Text** property of the Text widget.
+**Example**: in the preceding example, if you want to display the book name of the selected item in a Text widget of `List1`, bind it in the **Text** property of the Text widget as shown below 
 
 ```javascript
 
@@ -145,7 +145,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **backgroundColor** | Represents the widget's Background Color setting as a CSS color value (string). |
 | **gridGap** | Reflects the widget's Item Spacing property (number).|
-| **isVisible**       | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                                                          |
+| **isVisible**       | Reflects the state of the widget's **Visible** setting.                                                                                                                                                                          |
 | **items**           | Contains an *array* of *objects* that each represents a widget within the list items and holds information about that widget's state.<br/>e.g. `[ { "Text1": { "isVisible": true, ... }, ... }, ... ]` |
 | **listData**        | Contains an _array_ of _objects_ that each represent a list item and its data.                                                                                                                                                            |
 | **pageNo**          | Contains a _number_ representing which page of the list is currently displayed.                                                                                                                                                     |
