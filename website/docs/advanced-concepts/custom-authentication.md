@@ -95,8 +95,7 @@ After these steps, any user who isn't logged in with a valid `jwt` token can onl
 ## Further reading
 
 1. [Authentication for self-hosted instances](/getting-started/setup/instance-configuration/authentication)
-2. [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application)
-3. [Security](/product/security)
+2. [Security](/product/security)
 
 ### Authentication via SSO
 
