@@ -1,6 +1,6 @@
 # List
 
-The list widget provides a way to iterate over a structured dataset(array of objects) and display the data in repeating sections without writing any code. Each list item can contain other widgets to display data or capture user input.
+The List widget provides a way to iterate over a structured dataset(array of objects) and display the data in repeating sections without writing any code. Each list item can contain other widgets to display data or capture user input.
 
 
 <VideoEmbed host="youtube" videoId="0ePiZlWmp7Q" title="How to use List Widget" caption="How to use List Widget"/>
@@ -89,11 +89,7 @@ Follow the steps below to paginate the responses and request smaller chunks of d
 
 1. Enable the Server Side Pagination property for the List.
 2. Call the query on the onPageChange event listener.
-
-```javascript
-List1.pageOffset = (List1.pageNo - 1) * List1.pageSize
-```
-4. Set the LIMIT and OFFSET clause in the query:
+3. Set the LIMIT and OFFSET clause in the query:
 
 ```javascript
 SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ (List1.pageNo - 1) * List1.pageSize }}
@@ -115,7 +111,7 @@ You can reference the values inside each item selected in the list using the `se
 {{List1.selectedItem.bookName}}
 ```
 
-To access the index of the selected item in the list, you can use:
+To access the index of the selected item in the list, you can use the following:
 
 ```javascript
 
