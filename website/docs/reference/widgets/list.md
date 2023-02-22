@@ -82,7 +82,6 @@ Follow the steps below to paginate the responses and request smaller chunks of d
 
 1. Enable the Server Side Pagination property for the List
 2. Call the query on the onPageChange event listener.
-3. Calculate the required pageOffset using the pageSize and pageNo property as shown below:
 
 ```javascript
 List1.pageOffset = (List1.pageNo - 1) * List1.pageSize
