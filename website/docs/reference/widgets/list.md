@@ -124,7 +124,7 @@ To access the index of the selected item in the list, you can use:
 
 ## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Properties allow you to customize the widget, connect it to other widgets and trigger events on user actions.
 
 ### Widget properties
 
