@@ -6,27 +6,27 @@ sidebar_position: 3
 
 # Self Hosting
 
-You can host and manage Appsmith directly on your server, giving you complete control over the privacy, security, and integrity of your data.
+You can host and manage Appsmith directly on your server, giving you complete control over your data's privacy, security, and integrity.
 
 You can use Appsmith in two ways:
 
 1. **[Appsmith Cloud](https://appsmith.com)** - It's a perfect solution for users who don't have an on-premise infrastructure. Appsmith only acts as a proxy layer and does not store any data returned from your API endpoints or database queries. See [Security](/product/security)
-2. **Self-hosted Appsmith** - For users who want to deploy Appsmith in their own infrastructure, manage the instance, updates etc.
+2. **Self-hosted Appsmith** - For users who want to deploy Appsmith in their infrastructure, manage the instance, updates, etc.
 
 
 ## Self-hosted instance
 
-Deploying Appsmith on your own infrastructure makes it easier to manage [updates](/getting-started/setup/instance-management), create [backups](/getting-started/setup/instance-management/appsmithctl) and scale your infrastructure as per requirements.
+Deploying Appsmith on your infrastructure makes it easier to manage [updates](/getting-started/setup/instance-management), create [backups](/getting-started/setup/instance-management/appsmithctl), and scale your infrastructure as per requirements.
 
-The self-hosted version isn't air-gapped and needs Internet access to reach Appsmith cloud services (cs.appsmith.com) for a few features to work such as fetching release notes, more than three private repositories for git version control, templates, business license validity checks, etc. If you would like a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
+The self-hosted version isn't air-gapped and needs Internet access to reach Appsmith cloud services (cs.appsmith.com) for a few features to work, such as fetching release notes, more than three private repositories for git version control, templates, business license validity checks, etc. If you want a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
 
 :::info
-Appsmith collects [usage data](../../product/telemetry.md) and you can [disable](../../product/telemetry.md#disable-telemetry) this in your instance configuration file.
+Appsmith collects [usage data](../../product/telemetry.md), and you can [disable](../../product/telemetry.md#disable-telemetry) this in your instance configuration file.
 :::
 
 Deploying Appsmith as a self-hosted instance has the following advantages:
 
-- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials would never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You may choose to host it on internal networks behind a firewall for a defined set of users. You may also configure your [SSL and custom domain](./instance-configuration/custom-domain/README.md).
+- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You may host it on internal networks behind a firewall for a defined set of users. You may also configure your [SSL and custom domain](./instance-configuration/custom-domain/README.md).
 
 Appsmith provides a [secure environment](../../product/security) for cloud-hosted and self-hosted instances by encrypting sensitive information like database credentials using [AES 256 Encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard). 
 
@@ -71,5 +71,5 @@ You can [configure](/getting-started/setup/instance-configuration) and [manage](
 * [Backup Instance](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) to create a backup archive of the Appsmith instance.
 
 :::info
-Are you having trouble deploying Appsmith? Check out the [deployment troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you know the error and want to reinstall, **delete** the installation and templates folder, and execute the script again.
+Do you need help deploying Appsmith? Check out the [deployment troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you know the error and want to reinstall, **delete** the installation and templates folder and execute the script again.
 :::
