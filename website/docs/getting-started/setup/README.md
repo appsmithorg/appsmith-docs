@@ -21,20 +21,20 @@ Deploying Appsmith on your infrastructure makes it easier to manage [updates](/g
 The self-hosted version isn't air-gapped and needs Internet access to reach Appsmith cloud services (cs.appsmith.com) for a few features to work, such as fetching release notes, more than three private repositories for git version control, templates, business license validity checks, etc. If you want a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
 
 :::info
-Appsmith collects [usage data](../../product/telemetry.md), and you can [disable](../../product/telemetry.md#disable-telemetry) this in your instance configuration file.
+Appsmith collects [usage data](/product/telemetry), and you can [disable](/product/telemetry#disable-telemetry) this in your instance configuration file.
 :::
 
 Deploying Appsmith as a self-hosted instance has the following advantages:
 
-- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You may host it on internal networks behind a firewall for a defined set of users. You may also configure your [SSL and custom domain](./instance-configuration/custom-domain/README.md).
+- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You may host it on internal networks behind a firewall for a defined set of users. You may also configure your [SSL and custom domain](/getting-started/setup/instance-configuration/custom-domain).
 
-Appsmith provides a [secure environment](../../product/security) for cloud-hosted and self-hosted instances by encrypting sensitive information like database credentials using [AES 256 Encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard). 
+ Appsmith provides a [secure environment](/product/security) for cloud-hosted and self-hosted instances by encrypting sensitive information like database credentials using [AES 256 Encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard). 
 
 - **Local database**: A self-hosted instance allows you to connect with a database running on the same machine/intranet and use it to build apps.
 
-- **Storage**: Appsmith uses MongoDB to store app data and Redis to store session information and non-critical caches. You can also connect to [external MongoDB or Redis](./instance-configuration/custom-mongodb-redis) servers hosted on your infrastructure.
+- **Storage**: Appsmith uses MongoDB to store app data and Redis to store session information and non-critical caches. You can also connect to [external MongoDB or Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis) servers hosted on your infrastructure.
 
-- **Updates**: You can configure more flexible updates, schedules, and other maintenance activities for a self-hosted instance. You can follow the steps to configure [maintenance window and schedule auto updates](./instance-management/maintenance-window.md).
+- **Updates**: You can configure more flexible updates, schedules, and other maintenance activities for a self-hosted instance. You can follow the steps to configure [maintenance window and schedule auto updates](/getting-started/setup/instance-management/maintenance-window).
 
 
 ## System Requirements
@@ -61,7 +61,7 @@ With a variety of [deployment options](./installation-guides/README.md), choose 
 
 ## Configure and manage instance
 
-You can [configure](/getting-started/setup/instance-configuration) and [manage](/getting-started/setup/instance-management) the self-hosted instance if you are a [Super Admin](./instance-configuration/admin-settings.md) user.
+You can [configure](/getting-started/setup/instance-configuration) and [manage](/getting-started/setup/instance-management) the self-hosted instance if you are a [Super Admin](/getting-started/setup/instance-configuration/admin-settings) user.
 
 * [Instance authentication](/getting-started/setup/instance-configuration/authentication/) to onboard your existing user base.
 * [Email configuration](/getting-started/setup/instance-configuration/email/) to invite users and notify admins.
