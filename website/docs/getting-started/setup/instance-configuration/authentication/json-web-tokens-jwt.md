@@ -11,15 +11,15 @@ JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org
 
 ## How to use JSON web tokens in Appsmith
 
-Let’s take an example. You have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](openid-connect-oidc/). You are using Appsmith to log in and your SSO provider to authenticate the request.
+Suppose you have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](openid-connect-oidc/), and you are using Appsmith to log in and your SSO provider to authenticate the request.
 
-Let’s take a closer look at how this interaction happens from Appsmith.
+Refer to the image below to see how this interaction takes place.
 
 ![Interaction between Appsmith and SSO Provider](</img/Appsmith-SSO-Provider-JWT_Integration.png>)
 
-In the above diagram, you can see that:
+In the above image, you can see that:
 
-* A user requests for login using Appsmith.
+* A user requests to login using Appsmith.
 * Behind the scenes, Appsmith is integrated with the SSO provider.
 * SSO Provider authorizes the request.
 * The SSO provider generates a token for authenticated users and shares them with Appsmith.
@@ -27,7 +27,7 @@ In the above diagram, you can see that:
 
 ### Types of tokens
 
-Appsmith provides two types of JSON Web Tokens that your application can integrate with: ID Token and Access Token.
+Appsmith provides two types of JSON Web Tokens that your application can integrate with ID Token and Access Token.
 
 #### ID token
 
@@ -38,10 +38,10 @@ An ID token is a signed assurance of a user’s identity and contains basic info
 Once the SSO provider successfully authenticates a user, the ID token is available on the Appsmith platform.
 
 :::info
-Appsmith exposes the `idToken` parameter on the client-side. It thus is available to be embedded in any operation that you would like to perform either in JavaScript functions, APIs, or queries.
+Appsmith exposes the `idToken` parameter on the client side. It thus can be embedded in any operation that you would like to perform in JavaScript functions, APIs, or queries.
 :::
 
-You can read the value of an id token in your APIs/Queries by using a mustache sign \{{\}}.
+You can read the value of an id token in your APIs/Queries by using the mustache syntax `{{}}`.
 
 ```
 {{appsmith.user.idToken}}
@@ -49,14 +49,14 @@ You can read the value of an id token in your APIs/Queries by using a mustache s
 
 #### Access token
 
-An access token is an object that stores information about an entity in the form of claims. When you want to use token-based authentication, an access token comes in handy. Access tokens are self-contained. You don’t have to call a server to validate a token.
+An access token is an object that stores information about an entity in the form of claims. An access token comes in handy when you want to use token-based authentication. Access tokens are self-contained. You don’t have to call a server to validate a token.
 
 **How to read Access token on Appsmith?**
 
 After successful user authentication through an SSO Provider, you can use the access tokens on Appsmith. The access token is available as an environment variable.
 
 :::info
-The environment variable isn't accessible on the client-side as per security norms.
+The environment variable isn't accessible on the client side as per security norms.
 :::
 
 The environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` stores access token. You can read the value of the access token by using it between the angular braces`<<>>.`
@@ -69,17 +69,13 @@ With the JSON Web Tokens available on Appsmith, you can securely exchange data o
 
 Following are some common scenarios where JSON Web Tokens are used:
 
-:::info
-If you are aware of JSON Web Tokens, move directly to [How to Use JSON Web Tokens in Appsmith?](json-web-tokens-jwt.md#how-to-use-json-web-tokens-in-appsmith).
-:::
-
 ### Authentication
 
-For an authenticated user, whenever a user requests to access resources or services, or routes, the application passes the information in the form of an access token that follows a JWT format. Single Sign-On (SSO) commonly uses JWTs to communicate with different systems residing on similar or other domains.
+For an authenticated user, whenever a user requests to access resources, services, or routes, the application passes the information as an access token that follows a JWT format. Single Sign-On (SSO) commonly uses JWTs to communicate with different systems residing on similar or other domains.
 
 ### Information Exchange
 
-JSON Web Tokens are a secure way of transmitting information between different applications. JWTs can also be signed. Tokens can have a timestamp associated with them, and once the timestamp is expired, you can block the information exchange for the expired token. You can also verify that the content of the token has not been tampered with. For example, using public/private keypairs, you can ensure that the sender is an authorized sender. This provides an additional layer of security for data or information exchange.
+JSON Web Tokens are a secure way of transmitting information between different applications. JWTs can also be signed. Tokens can have a timestamp associated with them, and once the timestamp is expired, you can block the information exchange for the expired token. You can also verify that the content of the token has not been tampered with. For example, using public/private keypairs, you can ensure that the sender is authorized. This provides an additional layer of security for data or information exchange.
 
 ## How Does JSON Web Token Work?
 
@@ -187,7 +183,7 @@ For example, you are using HMAC SHA-256(HS256) algorithm. Then the generated sig
   secret)
 ```
 
-You can use the signature to validate the sender's authenticity, check if the message is tampered with or not, and can sign with a private key.
+You can use the signature to validate the sender's authenticity, check if the message is tampered with, and sign with a private key.
 
 The signature is encoded as Base64Url and appended to form a complete JSON Web Token.
 
