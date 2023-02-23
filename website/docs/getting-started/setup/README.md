@@ -6,33 +6,30 @@ sidebar_position: 3
 
 # Self Hosting
 
-Self-hosting Appsmith means hosting and managing Appsmith directly on your server rather than relying on third-party service providers. Self-hosting is more secure and private, as you have complete control over your data and how it's used.
+Self-hosting is hosting and managing Appsmith directly on your server, giving you complete control over your data and how it's used.
 
 When you are just starting to use Appsmith, there are two options -
-1. **Appsmith Cloud** - Easy solution for the users who don't have their infrastructure. Signup and start using Appsmith!
-2. **Self-hosted Insatnces** - For users who want to plug into their own infrastructure.
+1. **Appsmith Cloud** - Easy solution for the users who don't have their infrastructure. YOu can sign up at [appsmith.com](https://appsmith.com) start using Appsmith.
+2. **Self-hosted Instances** - For users who want to plug into their own infrastructure.
 
-## Appsmith Cloud
 
-Appsmith's cloud version is available at [appsmith.com](https://appsmith.com). You can signup here and started usind the cloud version. It's a perfect solution for users who don't have their infrastructure set up. Follow the [Quick start guide](./../../getting-started/start-building.md) to get started.
+## Self-hosted instance
 
-## Self-hosted Instance
-
-You can choose to deploy Appsmith on your own infrastructure. It's often useful when you want to plug it into existing infrastructure without the need to maintain a different setup. It enables you to take advantage of what your infrastructure has to offer and extend it to Appsmith.
+You can choose to deploy Appsmith on your own infrastructure without the need to maintain a different setup. Having your data and apps hosted on your infrastructure, its easier to manage things such as [backups](/getting-started/setup/instance-management/appsmithctl) and scaling that follow the rules across deployed instances. Get started by following the [installation guides](/getting-started/setup/installation-guides).
 
 :::info
 Appsmith collects [usage data](../../product/telemetry.md) to serve you better. You can choose to [opt out](../../product/telemetry.md#disable-telemetry) at any time.
 :::
 
-Deploying Appsmith on your infrastructure offers the following benefits:
+Deploying Appsmith as a self-hosted instance has its own perks:
 
-#### Security
+### Security
 
 You get to keep your data on-premise. It also ensures that your API keys or security credentials would never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your corporate networks. You may choose to host it on internal networks behind a firewall for a defined set of users. You may also configure your [custom domain](./instance-configuration/custom-domain/README.md) and extend the security policies to Appsmith installation.
 
 Appsmith provides a [secured environment](../../product/security) for cloud-hosted and self-hosted instances by encrypting sensitive information like database credentials using [AES 256 Encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard). For self-hosted instances, it also supports setting up [SSL certificates](./instance-configuration/custom-domain/README.md#custom-ssl-certificate) via [LetsEncrypt](https://letsencrypt.org/) during installation.
 
-#### Internal database
+### Internal database
 
 A self-hosted instance could allow you to connect with a database running on the same machine/intranet and use it to build apps.
 
@@ -40,9 +37,9 @@ A self-hosted instance could allow you to connect with a database running on the
 Using a **cloud-hosted instance** would require the ability to access the **internal databases**. For example, you would be required to use tunneling services like [ngrok](../../advanced-concepts/more/how-to-work-with-local-apis-on-appsmith/#using-ngrok) to expose your internal database to the internet or whitelist Appsmith cloud's external IP addresses to build apps.
 :::
 
-Appsmith uses MongoDB to store app data and Redis to store session information and non-critical caches. You may wish to integrate with custom MongoDB or Redis servers hosted on your infrastructure. For this, you would have to [modify the configuration of environment variables and point them to the custom MongoDB/Redis](./instance-configuration/custom-mongodb-redis.md) instances.
+Appsmith uses MongoDB to store app data and Redis to store session information and non-critical caches. You may want to integrate with custom MongoDB or Redis servers hosted on your infrastructure. For this, you would have to [modify the configuration of environment variables and point them to the custom MongoDB/Redis](./instance-configuration/custom-mongodb-redis.md) instances.
 
-#### Updates
+### Updates
 
 You can configure more flexible updates, schedules, and other maintenance activities for a self-hosted instance. You can follow the steps to configure [maintenance window and schedule auto updates](./instance-management/maintenance-window.md).
 
@@ -54,7 +51,7 @@ The self-hosted version isn't air-gapped and reaches out to the Appsmith cloud. 
 
 You can choose from various popular platforms to deploy Appsmith, like Docker, Kubernetes, AWS, Digital Ocean, and more.
 
-> 🔔 Appsmith officially supports [docker-based installations.](/getting-started/setup/installation-guides/docker/)
+> 🔔 Appsmith officially supports [docker-based installations](/getting-started/setup/installation-guides/docker/).
 
 ### Pre-setup checklist
 
@@ -87,9 +84,9 @@ And [more](/getting-started/setup/installation-guides/).
 
 You can configure and manage the self-hosted instance with the help of a [Super Admin](./instance-configuration/admin-settings.md) user. There are out-of-the-box integrations like:
 
-* [Custom authentication](/getting-started/setup/instance-configuration/authentication/) to onboard your existing user base
-* [Email](/getting-started/setup/instance-configuration/email/) to invite users and notify admins
-* [Sign-up restriction](/getting-started/setup/instance-configuration/disable-user-signup) to turn off signing up using the signup form or OAuth buttons, ensuring that only users you invite can signup
+* [Custom authentication](/getting-started/setup/instance-configuration/authentication/) to onboard your existing user base.
+* [Email](/getting-started/setup/instance-configuration/email/) to invite users and notify admins.
+* [Sign-up restriction](/getting-started/setup/instance-configuration/disable-user-signup) to turn off signing up using the signup form or OAuth buttons, ensuring that only users you invite can signup.
 
 And [more](/getting-started/setup/instance-configuration/) that can be configured.
 
@@ -97,7 +94,6 @@ And [more](/getting-started/setup/instance-configuration/) that can be configure
 
 You can also effectively [manage your self-hosted instance](/getting-started/setup/instance-management) like [database backup](/getting-started/setup/instance-management/appsmithctl#export-database), [instance backup](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance), and [more](/getting-started/setup/instance-management/appsmithctl).
 
-Deploying Appsmith as a self-hosted instance has its own perks - having your data and apps hosted on your infrastructure. It's also easier to manage things such as \[backups]\(Link to Appsmithctl page) and scaling that follow the rules across deployed instances. Get started by following the \[installation guides]\(link to the installation guide) that work for you.
 
 :::info
 Are you having trouble deploying Appsmith? Check out the [deployment troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/). If you **know** the error and want to **reinstall**, **delete** the **installation** and **templates** folder, and **execute** the script **again**.
