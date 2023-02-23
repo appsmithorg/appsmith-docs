@@ -9,7 +9,7 @@ JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org
 **JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
 :::
 
-## How to Use JSON Web Tokens in Appsmith
+## How to use JSON web tokens in Appsmith
 
 Let’s take an example. You have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](openid-connect-oidc/). You are using Appsmith to log in and your SSO provider to authenticate the request.
 
@@ -25,11 +25,11 @@ In the above diagram, you can see that:
 * The SSO provider generates a token for authenticated users and shares them with Appsmith.
 * Appsmith has the token accessible on the platform. You can pass it on in your APIs to provide access to the resources or perform desired operations.
 
-### Types of Token
+### Types of tokens
 
 Appsmith provides two types of JSON Web Tokens that your application can integrate with: ID Token and Access Token.
 
-#### ID Token
+#### ID token
 
 An ID token is a signed assurance of a user’s identity and contains basic information like the name, picture, email address, etc. When a user logs in successfully, an ID token is shared as per the Open ID Connect (OIDC) specification.
 
@@ -47,7 +47,7 @@ You can read the value of an id token in your APIs/Queries by using a mustache s
 {{appsmith.user.idToken}}
 ```
 
-#### Access Token
+#### Access token
 
 An access token is an object that stores information about an entity in the form of claims. When you want to use token-based authentication, an access token comes in handy. Access tokens are self-contained. You don’t have to call a server to validate a token.
 
@@ -59,7 +59,7 @@ After successful user authentication through an SSO Provider, you can use the ac
 The environment variable isn't accessible on the client-side as per security norms.
 :::
 
-The environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` stores access token. You can read the value of the access token by using it in between the angular braces`<<>>.`
+The environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` stores access token. You can read the value of the access token by using it between the angular braces`<<>>.`
 
 `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`
 
