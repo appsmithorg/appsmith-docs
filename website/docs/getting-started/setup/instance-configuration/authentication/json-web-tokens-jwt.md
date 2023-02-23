@@ -9,7 +9,7 @@ JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org
 **JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
 :::
 
-## How to Use JSON Web Tokens in Appsmith?
+## How to Use JSON Web Tokens in Appsmith
 
 Let’s take an example. You have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](openid-connect-oidc/). You are using Appsmith to log in and your SSO provider to authenticate the request.
 
@@ -56,7 +56,7 @@ An access token is an object that stores information about an entity in the form
 After successful user authentication through an SSO Provider, you can use the access tokens on Appsmith. The access token is available as an environment variable.
 
 :::info
-The environment variable is not accessible on the client-side as per security norms.
+The environment variable isn't accessible on the client-side as per security norms.
 :::
 
 The environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` stores access token. You can read the value of the access token by using it in between the angular braces`<<>>.`
