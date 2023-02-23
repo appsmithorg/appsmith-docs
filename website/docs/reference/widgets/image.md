@@ -7,14 +7,13 @@ You can add images in the form of URLs or base64 strings. The Image widget suppo
 
 ## Display static images 
 
-To display an image, you can specify the image source using the **Image property**. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
+You can specify the image source using the **Image property**to display an image. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
 
 ```js
 https://jpeg.org/images/jpegsystems-home.jpg
 ```
 
-You can also set an image in the **Default Image** property to be displayed if the image source fails to load or is invalid. This can be accomplished by specifying the default image as an image URL, data URI, or a base64 encoded image data in the Default Image property. 
-
+You can also set an image in the **Default Image**  property to be displayed if the image source fails to load or is invalid. 
 
 ### Inline SVG
 
@@ -28,7 +27,7 @@ data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height=
 ```
 
 ## Display images dynamically
-Fetching data from an API or querying a data source. This allows you to display images that change based on user input or other components such as widget or query.
+Fetch data from an API or query a data source. This allows you to display images that change based on user input or other components, such as a widget or query.
 
 You can dynamically populate an image based on another widget. For example, suppose you have a Table displaying a list of users with their respective image URLs stored in a column.
 
@@ -41,7 +40,7 @@ Bind ```{{Table1.selectedRow.image}}``` in the Image property where "Table1" is 
 
 ## Access images
 
-To access the data in an Image widget, use the `image` reference property in your JS code or queries as shown below
+To access the data in an Image widget, use the `image` reference property in your JS code or queries as shown below.
 
 ```js
 {{Image1.image}}
@@ -56,22 +55,22 @@ To fetch an image from [S3](/reference/datasources/querying-amazon-s3), follow t
 
 * Click the + icon next to Queries/JS and choose your S3 datasource.
 * Select the "Read file" method from the Commands drop-down menu.
-* Provide the required parameters for reading the file, including the bucket name, file path, and file data type.
+* Provide the required parameters for reading the file, including the bucket name, file path and file data type.
 
-Once you have added all the required parameters, in the Image property pane, add:
+Once you have added all the required parameters in the Image property pane, add:
 ```js
 {{<your_query_name>.data.fileData}}
 ```
 
 ## Download images
-You can toggle the "**Enable Download**" property in the Image widget's property pane. Once enabled, a download icon appears on the image.
+You can toggle the **Enable Download** property in the Image widget's property pane. Once enabled, a download icon appears on the image.
 
 <figure>
   <img src="/img/download-image-ss.png" style= {{width:"700px", height:"auto"}} alt="Download image"/>
   <figcaption align = "center"><i>Download image</i></figcaption>
 </figure>
 
-Alternatively, you can use the built-in [Download](/reference/appsmith-framework/widget-actions/download) function and set it to run on the the `onClick` event of the Image widget:
+Alternatively, you can use the built-in [Download](/reference/appsmith-framework/widget-actions/download) function and set it to run on the `onClick` event of the Image widget:
 
 ```js
 {{download(Image1.image,'my-image-name','image/png')}}
@@ -115,7 +114,7 @@ These are functions that are called when event listeners are triggered in the wi
 
 | Event       | Description                                                                                                                                                                                                                     |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets an action to take place when the user clicks this widget. |
+| **onClick** | Sets an action when the user clicks this widget. |
 
 ## Further reading
 
