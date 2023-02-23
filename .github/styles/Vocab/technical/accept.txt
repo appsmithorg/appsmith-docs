@@ -216,3 +216,10 @@ Xano
 Supabase
 Google
 SSO
+PostgreSQL
+Disable
+CRUD
+backgroundColor
+gridGap
+listData  
+selectedItem
