@@ -42,6 +42,18 @@ You can dynamically populate an image based on another widget. For example, you 
  To do this, use the ```{{Table1.selectedRow.image}}``` in the image property where "Table1" is the name of your table widget and "image" is the name of the column containing the image URL.
 
 
+
+## Read image
+
+To read the data in an Image widget, use the `image` reference property in your JS code or queries as shown below
+
+```js
+{{Image1.image}}
+```
+
+This displays the image corresponding to the URL/Base64 specified in the Image property.
+
+
 ### Fetch image from S3
 
 To fetch an image from [S3](/reference/datasources/querying-amazon-s3), follow these steps:
@@ -55,16 +67,6 @@ Once you have added all the required parameters, in the Image property pane, add
 {{<your_query_name>.data.fileData}}
 ```
 
-
-## Read image
-
-To read the data in an Image widget, use the `image` reference property in your JS code or queries as shown below
-
-```js
-{{Image1.image}}
-```
-
-This displays the image corresponding to the URL/Base64 specified in the Image property.
 
 ## Download image
 You can toggle the "**Enable Download**" property in the image widget's property pane. Once enabled, a download icon would appear on the image widget. Clicking on the download icon triggers the download of the image.
