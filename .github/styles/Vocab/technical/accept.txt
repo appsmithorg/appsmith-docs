@@ -219,4 +219,4 @@ backgroundColor
 gridGap
 listData  
 selectedItem
-
+SVG
