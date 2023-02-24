@@ -24,9 +24,7 @@ data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height=
 ```
 
 ## Display images dynamically
-Fetch data from an API or query a data source. This allows you to display images that change based on user input or other components, such as a widget or query.
-
-You can dynamically populate an image based on another widget. For example, suppose you have a Table displaying a list of users with their respective image URLs stored in a column.
+This allows you to display images that change based on user input or other components, such as a widget or query. For example, suppose you have a Table displaying a list of users with their respective image URLs stored in a column.
 
 Bind ```{{Table1.selectedRow.image}}``` in the Image property where "Table1" is the name of your table widget and "image" is the name of the column containing the image URL.
 
@@ -35,28 +33,18 @@ Bind ```{{Table1.selectedRow.image}}``` in the Image property where "Table1" is 
   <figcaption align = "center"><i>Display images on table row selection</i></figcaption>
 </figure>
 
-## Access images
-
-To access the data in an Image widget, use the `image` reference property in your JS code or queries as shown below.
-
-```js
-{{Image1.image}}
-```
-
-This displays the image corresponding to the URL/Base64 specified in the Image property.
-
 
 ## Display images from S3 bucket
 
 To fetch an image from [S3](/reference/datasources/querying-amazon-s3), follow these steps:
 
 * Click the + icon next to Queries/JS and choose your S3 datasource.
-* Select the "Read file" method from the Commands drop-down menu.
+* Select the "List files" method from the Commands drop-down menu.
 * Provide the required parameters for reading the file, including the bucket name, file path and file data type.
 
 Once you have added all the required parameters in the Image property pane, add:
 ```js
-{{<your_query_name>.data.fileData}}
+{{list_files.data[0].signedUrl}}
 ```
 
 ## Download images
@@ -115,6 +103,6 @@ These are functions that are called when event listeners are triggered in the wi
 
 ## Further reading
 
-* [Camera widget](reference/widgets/camera)
+* [Amazon S3](/reference/datasources/querying-amazon-s3)
 * [Filepicker widget](/reference/widgets/filepicker)
 
