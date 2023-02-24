@@ -21,7 +21,7 @@ To connect to a PostgreSQL database, you must configure the following parameters
    * **Read Only:** This mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
    * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
 
-* **Host Address:** Provide the hostname or IP address. If you are on a self-hosted instance and connecting to a database on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container.
+* **Host Address\*:** Provide the hostname or IP address. If you are on a self-hosted instance and connecting to a database on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container.
 
 * **Port:** If you don’t specify a port, Appsmith may try to connect to port `5432`.
 
