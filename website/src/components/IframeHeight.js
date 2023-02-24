@@ -8,7 +8,7 @@ import React, { useEffect } from "react";
 export default function IframeHeight() {
   useEffect(() => {
     if (window.top) {
-      window.top.postMessage(`{dataType: "contentHeight", value: ${window.innerHeight}}`)
+      window.top.postMessage(`{dataType: "contentHeight", value: ${window.innerHeight}}`, "https://customer.appsmith.com")
     }
   }, []);
 
