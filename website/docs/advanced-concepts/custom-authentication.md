@@ -7,26 +7,31 @@ description: >-
 
 # Custom Authentication
 
-In this guide, you'll learn how to build a custom login flow that uses an API to verify user credentials and log them in to your secure application via JSON Web Token (JWT).
+In this guide, you’ll learn how to build a custom login flow to secure your application using an authentication API to verify user credentials when they log in to your application.
 
 <VideoEmbed host="youtube" videoId="5oPcF9dXZyU" title="How to Implement Custom Login/Authentication in Appsmith" caption="How to Implement Custom Login/Authentication in Appsmith"/>
 
-## Build login form
+## Setup
 
 For this example, assume that you have a page called "**MainPage**" in your application that you would like to secure with a login flow.
 
-Start by creating a new login page called "**LoginPage**" in your application. You'll need a form that contains [Input widgets](/reference/widgets/input) for both a username (named "**UsernameInput**" in this guide) and a password ("**PasswordInput**"). You'll need at least one [Button](/reference/widgets/button) within the form to handle submitting the user data.
+1. Start by creating a new login page called "**LoginPage**" in your application.
+2. Create a [Form widget](/reference/widgets/form) and add [Input widgets](/reference/widgets/input) for both a username (named "**UsernameInput**" in this guide) and a password ("**PasswordInput**").
 
-When you have created the form, it's time to connect it to your login API with a query (named "**login_api**" here). Create a [datasource](/core-concepts/connecting-to-data-sources/authentication#creating-an-authenticated-api-datasource) and [set up an API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) with the your authentication endpoint URI, and place the user data from the Input widgets into the appropriate fields of the query body. Accessing your Input widgets should look something like:
+You'll need a query to handle communication with your authentication API:
 
-```javascript
-// identifier
-{{UsernameInput.text}}
-// password
-{{PasswordInput.text}}
-```
+1. Create a [datasource](/core-concepts/connecting-to-data-sources/authentication#creating-an-authenticated-api-datasource).
+2. Create an [API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) (named "**login_api**" here) with the your authentication endpoint URI.
+3. Place the user data from the Input widgets into the appropriate fields of the query body. Accessing your Input widgets should look something like:
 
-As an example, a successful response may resemble:
+  ```javascript
+  // identifier
+  {{UsernameInput.text}}
+  // password
+  {{PasswordInput.text}}
+  ```
+
+Once you have valid credentials in the Input widgets, you can run this query from the query screen. A successful response may resemble:
 
 ```javascript
 {
@@ -50,9 +55,9 @@ As an example, a successful response may resemble:
 }
 ```
 
-## Set up authentication flow
+## Authentication flow
 
-Back on the application canvas, set up the login form's button to run the **login_api** query via the button's **onClick** property. This flow should:
+Back on the application canvas, set up the login form's button to run the **login_api** query via the button's **onClick** property. In this example, the API returns a value for `jwt` that indicates that the user has been authenticated. Here is how the flow works:
 
 1. Execute the query
 2. If the response contains a valid `jwt`, store it in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value) and then take the user to the **MainPage**
@@ -92,14 +97,15 @@ For now, it's time to configure your **MainPage** to allow access to logged-in u
 
 After these steps, any user who isn't logged in with a valid `jwt` token can only see the **unauthorized** tab, which redirects them back to the **LoginPage**. Users with valid tokens are taken straight to your **authorized** tab.
 
-## Further reading
+Your app is ready for handling user logins.
 
-1. [Authentication for self-hosted instances](/getting-started/setup/instance-configuration/authentication)
-2. [Security](/product/security)
-
-### Authentication via SSO
+## Custom OAuth guides
 
 It's possible to use third-party OAuth services to authenticate users for your app via SSO with like Google, GitHub, Twitter, and more. To do this, you'll need to connect with a service that integrates with your desired OAuth provider. You may like these video guides:
 
 * [Custom Google authentication with Xano](https://www.youtube.com/watch?v=n3XSAA7q--I)
 * [Custom Google authentication with Supabase](https://www.youtube.com/watch?v=mfhHUDNCkoQ)
+
+## Further reading
+
+1. [Authentication for self-hosted Appsmith instances](/getting-started/setup/instance-configuration/authentication)
