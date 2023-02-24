@@ -5,6 +5,7 @@ import VideoEmbed from '@site/src/components/VideoEmbed';
 import Message from '@site/src/components/Message';
 import Highlighter from '@site/src/components/Highlighter';
 import HideElements from '@site/src/components/HideElements';
+import IframeHeight from '@site/src/components/IframeHeight';
 
 export default {
   // Re-use the default mapping
@@ -13,4 +14,5 @@ export default {
   Message,
   Highlighter,
   HideElements,
+  IframeHeight
 };
