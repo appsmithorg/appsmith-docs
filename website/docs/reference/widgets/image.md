@@ -17,7 +17,7 @@ You can also set an image in the **Default Image**  property to be displayed if 
 
 ### Inline SVG
 
-To display inline SVG, paste your SVG content in the Image property. For example, below is a sample SVG code:
+To display inline SVG, paste your SVG content in the Image property and escape the special characters with the UTF-8 equivalents.
 
 ```js
 data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' /%3E%3C/svg%3E
