@@ -26,31 +26,18 @@ You can display static JSON data in the `Items` property for generating the list
 
 ```javascript
 [
-
   {
-
     "bookId": "001",
-
     "bookName": "Artificial Intelligence for Business Leaders",
-
     "bookImage": "https://m.media-amazon.com/images/I/511Y1LSr0JL.jpg",
-
     "price": "INR 599"
-
   },
-
   {
-
     "bookId": "002",
-
     "bookName": "Bootstrap 4 Quick Start",
-
     "bookImage": "https://images-na.ssl-images-amazon.com/images/I/41GTBaVKAyL._SX404_BO1,204,203,200_.jpg",
-
     "price": "INR 439.90”
-
  }
-
 ]
 ```
 
