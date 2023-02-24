@@ -7,7 +7,7 @@ You can add images in the form of URLs or base64 strings. The Image widget suppo
 
 ## Display static images 
 
-You can specify the image source using the **Image property**to display an image. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
+You can specify the image source using the **Image property** to display an image. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
 
 ```js
 https://jpeg.org/images/jpegsystems-home.jpg
@@ -17,12 +17,9 @@ You can also set an image in the **Default Image**  property to be displayed if 
 
 ### Inline SVG
 
-To display inline SVG, paste your SVG content in the Image property in the format shown below:
+To display inline SVG, paste your SVG content in the Image property and escape the special characters with the UTF-8 equivalents.
 
 ```js
-data:image/svg+xml;charset=UTF-8,{{encodeURI('<svg..<your-svg>.. ></svg>')}}
-
-//example
 data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' /%3E%3C/svg%3E
 ```
 

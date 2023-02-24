@@ -62,7 +62,7 @@ If you want to retrieve the data from a table `users`, you can write the followi
 ```sql
 SELECT * FROM users;
 ```
-After fetching your data, you can display it in a Table widget by [binding](/reference/widgets/table#display-data-in-tables it to the **Table Data** property as shown below. 
+After fetching your data, you can display it in a Table widget by [binding](/reference/widgets/table#display-data-in-tables) it to the **Table Data** property as shown below. 
 
 ```js
 {{Query1.data}}
