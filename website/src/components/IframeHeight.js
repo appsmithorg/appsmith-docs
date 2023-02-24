@@ -10,7 +10,7 @@ export default function IframeHeight() {
     if (window.top) {
       window.top.postMessage(`{dataType: "contentHeight", value: ${window.innerHeight}}`)
     }
-  });
+  }, []);
 
   return null;
 }
