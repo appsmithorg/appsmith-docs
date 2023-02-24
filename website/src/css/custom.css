@@ -399,6 +399,10 @@ ul.circle > li {
   margin-bottom: 10px;
 }
 
+ul.circle > li code > span:first-child {
+  margin-left: 45px;
+}
+
 ul.circle > li:before {
   margin-right: 9px;
   content: counter(item);
