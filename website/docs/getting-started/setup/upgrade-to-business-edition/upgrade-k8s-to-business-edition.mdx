@@ -4,74 +4,74 @@
 
 Follow the steps below to upgrade the Kubernetes Community edition to the Business edition:
 
-<ul class="circle"> 
+<ul className="circle"> 
 <li> Connect to the shell of a running container.
 
-   ```bash
-       kubectl exec -it <pod> bash      
-   ```      
+```bash
+kubectl exec -it <pod> bash
+```      
 </li>
 
 <li> Retrieve the salt and password and add these to values.yaml file of the appsmith-ee helm deployment
 
-   ```bash
-       cat /appsmith-stacks/configuration/docker.env | grep APPSMITH_ENCRYPTION_ 
-   ```
+```bash
+cat /appsmith-stacks/configuration/docker.env | grep APPSMITH_ENCRYPTION_
+```
 </li>
 
 <li> Run the following commands to backup the database which is available at <code>/appsmith-stacks/data/backup</code>
 
-   ```bash
-        # Run the backup command
-   appsmithctl backup
-      
-   # Exit the shell from the pod
-   exit
+```bash
+# Run the backup command
+appsmithctl backup
 
-   # Download the backup file
-   kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
-   ```
+# Exit the shell from the pod
+exit
+
+# Download the backup file
+kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
+```
 </li>
     
 <li> Uninstall the community edition Helm chart by running the following command
 
-   ```bash
-       helm uninstall appsmith
-   ```    
+```bash
+helm uninstall appsmith
+```    
 </li>
 <li>Run the following commands to add new Helm chart
 
-   ```bash
-        helm repo add appsmith-ee https://helm-ee.appsmith.com
-   helm repo update
-   ``` 
+```bash
+helm repo add appsmith-ee https://helm-ee.appsmith.com
+helm repo update
+``` 
 </li>    
 <li>Pull the latest values.yaml for appsmith-ee and update encryption values
 
-   ```yaml
-        # Pull the latest values.yaml
-   helm show values appsmith-ee/appsmith > values.yaml
-      
-   # Update encryption values in values.yaml
-   APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
-   APPSMITH_ENCRYPTION_SALT: "<SALT>"
-   ```
+```yaml
+# Pull the latest values.yaml
+helm show values appsmith-ee/appsmith > values.yaml
+
+# Update encryption values in values.yaml
+APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
+APPSMITH_ENCRYPTION_SALT: "<SALT>"
+```
 </li>
 <li>Run the following commands to deploy the new Helm chart
 
-   ```bash
-       helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
-   ```
+```bash
+helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
+```
  </li>
 <li>Download the backup file and restore the data
 
-   ```bash
-        # Download the backup file 
-   kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/data/backup/
+```bash
+# Download the backup file 
+kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/data/backup/
 
-   # Restore
-   appsmithctl restore
-   ```     
+# Restore
+appsmithctl restore
+```     
 </li>
 
 <li> Sign in using the Appsmith administrator account and enter your license key to activate the instance.
