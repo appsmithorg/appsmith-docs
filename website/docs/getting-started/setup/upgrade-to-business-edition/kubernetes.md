@@ -6,9 +6,14 @@ description: Follow the guide to upgrade the Appsmith Community Edition installa
 
 The Business Edition (BE) Helm chart installation includes support for Horizontal Pod Auto Scaling (HPA), which allows Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade from the Community Edition (CE) to the Business Edition (BE) installed on Kubernetes.
 
+## Generate license key
+
+Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+
+
 ## Backup data
 
-1. Open a shell into one of your current Appsmith pods:
+1. Connect to the shell of a running container:
 
    ```bash
    kubectl exec -it <pod> bash
@@ -20,18 +25,14 @@ The Business Edition (BE) Helm chart installation includes support for Horizonta
    appsmithctl backup
    ```
 
-3. Once the backup process is complete, the backup archive is available at a location like this:
-
-   ```
-   /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
-   ```
+3. Once the backup process is complete, the backup archive is available at `/appsmith-stacks/data/backup/`
 
 4. To download the backup archive, run the following command:
 
    ```bash
-   kubectl cp <namespace>/appsmith-0:<backup_path_from_above> ./appsmith-ce-backup.tar.gz
+   kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
    ```
-
+   
 5. To retrieve the salt and password from the pod, run the following command and copy the values to `values.yaml`.
 
    ```bash
@@ -83,10 +84,9 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 
 3. To configure high availability, choose or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
 
-4. Add the license key and a few other variables related to keycloak to `applicationConfig` section:
+4. Add variables related to keycloak to `applicationConfig` section:
 
    ```yaml
-     APPSMITH_LICENSE_KEY: ""
      APPSMITH_KEYCLOAK_DB_DRIVER: ""
      APPSMITH_KEYCLOAK_DB_USERNAME: ""
      APPSMITH_KEYCLOAK_DB_PASSWORD: ""
@@ -101,7 +101,7 @@ To add and deploy the new Helm chart, run the following command:
    ```bash
    helm repo add appsmith-ee https://helm-ee.appsmith.com
    helm repo update
-   helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
+   helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
    ```
 
 For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
@@ -114,7 +114,7 @@ To restore the backup, follow the below steps:
 1. To copy the Appsmith backup into the new Appsmith pod, run the following command:
 
    ```bash
-   kubectl cp appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz <namespace>/<pod_name>:/appsmith-stacks/data/backup/
+   kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/data/backup/
    ```
 
 2. To copy the keycloak backup into the new Appsmith pod, run the following command:
@@ -148,7 +148,7 @@ To restore the backup, follow the below steps:
    08:21:01,794 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0032: Import finished successfully
    ```
 
-   When you see the output, as shown above, press <kbd>ctrl+c</kbd> to stop.
+   When you see the output, press <kbd>Ctrl+c</kbd> to stop.
 
 5. To apply the changes, restart using the following command:
 
@@ -158,6 +158,9 @@ To restore the backup, follow the below steps:
 
    Congratulations, you have successfully upgraded to the Appsmith Business Edition Helm chart v2 installation.
 
-## Troubleshooting
-If you’re having issues with the deployment, please see the [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+## Enter license key
+
+Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.   
+
+If you’re having issues with the deployment, please reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
