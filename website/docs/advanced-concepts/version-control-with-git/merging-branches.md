@@ -28,7 +28,7 @@ You can resolve it in the following way:
 ##### Best practices to avoid merge conflicts
 Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
 
-**For changes that affect more than just one page of the app, eg. Theme, datasources etc.**
+**For changes that affect more than just one page of the app like app theme, datasources**
 
 * Avoid making these changes when feature branches are in the middle of building new updates.
 * Ensure that these changes are completed and pushed to the `main` branch.
