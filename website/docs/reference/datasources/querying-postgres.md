@@ -27,7 +27,7 @@ To connect to a PostgreSQL database, you must configure the following parameters
 
 * **Host Address\*:** Provide the hostname or IP address. If you are on a self-hosted instance and connecting to a database on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container.
 
-* **Port\*:** A port is a numerical identifier that helps establish a network connection. If you don’t specify a port, Appsmith try's to connect to port `5432`.
+* **Port\*:** A port is a numerical identifier that helps establish a network connection. Appsmith tries to connect to port `5432` if you don't specify a port.
 
 * **Database Name:** You need to specify the name of the database to retrieve data from it.
 
