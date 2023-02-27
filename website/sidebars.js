@@ -502,7 +502,7 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/merging-branches',
             'advanced-concepts/version-control-with-git/disconnect-the-git-repository',
             'advanced-concepts/version-control-with-git/updating-local-file-path',
-            'advanced-concepts/version-control-with-git/best-practices-git'
+            'advanced-concepts/version-control-with-git/troubleshooting'
           ],
         },
         {
