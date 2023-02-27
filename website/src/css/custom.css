@@ -384,6 +384,9 @@ mark > code {
   line-height: normal;
 }
 
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  font-weight: 800 !important;
+}
 ul.circle {
   list-style: none;
   counter-reset: item;
@@ -394,6 +397,10 @@ ul.circle {
 ul.circle > li {
   counter-increment: item;
   margin-bottom: 10px;
+}
+
+ul.circle > li code > span:first-child {
+  margin-left: 45px;
 }
 
 ul.circle > li:before {

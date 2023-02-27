@@ -15,15 +15,11 @@ This section talks about creating a DB query in Appsmith. To learn about API que
 
 Follow the below steps to create a database query in the query editor:
 
-* Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query.
+* Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query. If you want to add a new datasource, follow the steps detailed in [Datasources](/core-concepts/connecting-to-data-sources/connecting-to-databases#connecting-to-a-database).
 
-:::info
-You can follow the steps detailed in [Datasources](/core-concepts/connecting-to-data-sources/connecting-to-databases#connecting-to-a-database) to add a new datasource.
-:::
 
 * Choose the connected datasource and click **+ New Query**. You can also choose to add a new query by navigating to **Explorer** >> Scroll down to **Queries/JS** >> Click plus (**+**) sign >> Select the name `<DATASOURCE_NAME> Query` (users query).
 
-![Create a Query from QUERIES/JS Menu Item](/img/Core_Concepts__Data_Access_and_Binding__Setting_up_Query__Add_Query.png)
 
 * The Appsmith query editor opens up when you create a new query or select an existing query. You can write the queries in the query editor and tweak the [query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) from the settings tab.
 
@@ -57,13 +53,11 @@ DB Queries fetch data in an array of objects where each object is a row, and eac
 
 ## Debug errors
 
-When a query fails, Appsmith commonly shows a notification stating: `UncaughtPromiseRejection: <query_name> failed to execute.`.
+When a query fails, Appsmith commonly shows a notification stating: `<query_name> action returned an error response `.
 
-![](/img/as_error.png)
 
-To see the error message returned by the datasource in response to your query, look for the failed query in the [debug console](/help-and-support/troubleshooting-guide/#using-the-linter-and-debugger), or access it in code with `<query_name>.data`.
+To see the error message returned by the datasource in response to your query, look for the failed query in the [debugger](/help-and-support/troubleshooting-guide/#using-the-linter-and-debugger), or access it in code with `<query_name>.data`.
 
-<VideoEmbed host="youtube" videoId="wRyafclQt1c" title="Query Troubleshooting | Get Error message from datasource" caption="Use {{ <query>.data }} to see error messages"/>
 
 ## Use queries in applications
 

@@ -20,6 +20,7 @@ These properties allow you to edit the widget. All these properties are present 
 | **Required**              | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                   |
 | **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                    |
 | **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                       |
+| [**Tooltip**](/reference/widgets#tooltip)                           	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
 | **Animate Loading**       | Allows you to control a widget’s animation on the page load.                                                                                                                           |
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                                    |
 | **Server Side Filtering** | Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                             |
