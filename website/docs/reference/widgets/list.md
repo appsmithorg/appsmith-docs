@@ -1,6 +1,6 @@
 # List
 
-The List widget provides a way to iterate over a structured dataset(array of objects) and display the data in repeating sections without writing any code. Each list item can contain other widgets to display data or capture user input.
+The List widget provides a way to iterate over a structured dataset (array of objects) and display the data in repeating sections without writing any code. Each list item can contain other widgets to display data or capture user input.
 
 <VideoEmbed host="youtube" videoId="0ePiZlWmp7Q" title="How to use List Widget" caption="How to use List Widget"/>
 
@@ -54,16 +54,32 @@ If you want to bind the response from a query or a JS function, then you can use
 
 To learn how to bind data from JS functions, see [Display Data from JS function](/core-concepts/writing-code/workflows#display-data-from-async-js-function)
 
-If you are binding the dynamic data to the List widget, remember to use the  columns/attribute name to map to the individual widget as shown below:
+To display the data in individual widgets in the list item cards use the `currentItem` property to bind the corresponding value from the object's fields in the widget  as shown below. 
  
 ```javascript
 
 {{currentItem.<attribute_or_column_name>}}
 ```
 
+where the `currentItem` for the first list item reflects the 0th object in the dataset. This can be used anywhere within a widget that's placed inside the List widget.
+
+
+### Unique list item identifier
+
+The List widget needs to identify each item uniquely to update, reorder, add or remove them. Similar to the concept of `Primary Key` in database or `key` in React, an identifier should be selected from the **Data identifier** property dropdown whose values are unique in the data provided to the List widget. Always set the **Data Identifier** property with a valid unique identifier to boost performance.
+
+In the preceding example, the identifier `bookId` has a unique value in the dataset.
+
+If no such unique identifier is present in the data, then multiple identifiers can be joined together to form a unique pattern by enabling the `JS` mode in the property.
+
+**Example:**
+```
+{{currentItem.bookName + "_" + currentItem.author}}
+```
+
 ## Server-side pagination
 
-Lists are often required to display large data sets from queries, but browsers can only sometimes load all the data present in the database or might do so slowly. You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a query call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.
+Lists are often required to display large data sets from queries, but browsers can only sometimes load all the data present in the database or might do so at a slow speed. You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a query call can render. Thus, allowing you to paginate the data and determine the pagination boundaries.
 
 Follow the steps below to paginate the responses and request smaller chunks of data at a time:
 
@@ -74,23 +90,6 @@ Follow the steps below to paginate the responses and request smaller chunks of d
 ```javascript
 SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ (List1.pageNo - 1) * List1.pageSize }}
 ```
-
-## Data identifier
-
-The List widget needs to identify each item uniquely to update, reorder, add or remove them. So similar to the concept of `Primary Key` in database or `key` in React, an identifier should be selected from the dropdown whose values are unique in the data provided to the List widget.
-
-In the preceding example, the identifier `bookId` has a unique value in the dataset.
-
-If no such unique identifier is present in the data, then multiple identifiers can be joined together to form a unique pattern by enabling the `JS` mode in the property.
-Example
-```
-{{currentItem.bookName + "_" + currentItem.author}}
-```
-
-:::tip
-Always set the **Data Identifier** property with a valid unique identifier to boost the performance.
-:::
-
 
 ## Access list items
 
@@ -115,6 +114,23 @@ To access the index of the selected item in the list, you can use the following:
 {{listName.selectedItemIndex}}
 ```
 
+## Nested lists
+
+You can nest lists within a List widget up to three levels. The `level_*` property can be used to access the parent List item's data and widget properties where * represents the level number (from 1 through 3).
+
+Suppose there is a parent list - List1 and a child list - List2. The widgets present in the inner list List2 can access the values of an attribute/field in the dataset using the **currentItem** property of the outer list List1 as shown below:
+
+```javascript
+{{level_1.currentItem.fieldName}}
+```
+
+The **currentView** and **currentIndex** properties can be used in a similar way.
+
+Suppose there is another List widget List3 inside List2. The inner most list List3 can access 2 levels i.e **level_1** and **level_2**. Here, **level_1** represents the data and state of the topmost list widget List1 and **level_2** represents List2.
+
+The parent list widgets don't have access to it's child list widgets. In the preceding example, the widgets in List1 can't use `level_2` or `level_3` to access the data in it child lists. Similarly List2 can only access `level_1` and not `level_2` but List3 can access both `level_1` and `level_2`.
+
+
 ## Properties
 
 Properties allow you to customize the widget, connect it to other widgets and trigger events on user actions.
@@ -125,7 +141,7 @@ Properties allow you to customize the widget, connect it to other widgets and tr
 | Property                   | Description                                                                                                                                                                                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Items**                  | Allows you to bind static or dynamic data collection to the widget.                                                                                                                                                                                       |
-| **Data Identifier** | Like `keys` in React, you need to select a data identifier from you data items which helps uniquely identify each item. This helps List widget  identify which items have changed, are added, or are removed. You could also combine two columns or data identifiers by enabling the JS mode. |
+| **Data Identifier** | Like `keys` in React, you need to select a data identifier from your dataset which helps uniquely identify each item. This helps the List widget identify which items are added, have changed, or are removed. You can also combine two columns or data identifiers by enabling the JS mode. |
 | **Server-side Pagination** | Enables you to implement pagination by limiting the number of results fetched per Query request.  |
 | **Visible**                | Controls widget's visibility on the page. When turned off: The widget is visible when the app is published. It appears translucent when in Edit mode.                                                                                            |
 | **Animate Loading**        | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
@@ -140,14 +156,14 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **backgroundColor** | Represents the widget's Background Color setting as a CSS color value (string). |
 | **itemSpacing**         | Reflects the vertical spacing between each item. The value can range between 0 and 16. _(number)_.                                                                                                                                                                               |
 | **isVisible**       | Reflects the state of the widget's **Visible** setting.                                                                                                                                                                          |
-| **currentItemsView**           | Contains an *array* of *objects* that each represent a widget within the list items, and holds information about that widget's state. <br/>e.g. `[ { "Text1": { "isVisible": true, ... }, ... }, ... ]` <br/>  |
+| **currentItemsView**           | Contains an *array* of *objects* that each represent a widget within the list items, and holds information about that widget's state. <br/>e.g. `[ { "Text1": { "isVisible": true, ... }, ... }, ... ]` <br/> . This *array* of *objects* is limited to the number of items visible on the page rather than the number list items present. Eg: If there are 300 objects in the list data but the List widget is showing 5 items per page then the **currentItemsView** property shows an *array* of only 5 *objects*. |
 | **listData**        | Contains an _array_ of _objects_ that each represent a list item and its data.                                                                                                                                                            |
 | **pageNo**          | Contains a _number_ representing which page of the list is currently displayed.                                                                                                                                                     |
 | **pageSize**        | Contains a _number_ representing the number of list items that can fit on one page of the List widget.                                                                                                                                    |
 | **selectedItem**    | Contains an _object_ representing the data of the selected list item.                                                                                                                                                             |
-| **triggeredItem**    | Contains an _object_ representing the data of the list item that is selected when interacted with an actionable item (like button) in an item.                                                                                                                                                           |
-| **selectedItemView**    | Contains an _object_ representing the widget's state of the list item that is selected.                                                                                                                                                             |
-| **triggeredItemView**    | Contains an _object_ representing the widget's state of the list item that is selected when interacted with widget (like button) in an item.                                                                                                                                                           |
+| **triggeredItem**    | Contains an _object_ representing the data of the list item that's selected by clicking on the list item card or by clicking on a button inside the list item                                                                                                                    |
+| **selectedItemView**    | Contains an _object_ representing the state of the widgets inside a list item when it's selected.                                                                                                                                                             |
+| **triggeredItemView**    | Contains an _object_ representing the state of the widgets inside a list item when selected by clicking on the list item card or by clicking on a button inside the list item                                                                                   |
 
 ### Style properties
 
@@ -156,12 +172,12 @@ You can make some formatting changes to enhance the look and feel of the widget 
 |  Property            | Description                                                                                                                                                                      |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Background Color**      | Sets the background color of the widget. Accepts  CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                  |
-| **Item Spacing**          |  Adds the padding to the list cells. It accepts Pixels(px) as a unit for the gap width between list item cards. Accepts _number_ values.                                                                                            |
+| **Item Spacing**          |  Adds padding to the list cells. It accepts Pixels(px) as a unit for the gap width between list item cards. Accepts _number_ values.                                                                                            |
 | **Border Radius**         | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
 | **Box Shadow**            | Casts a drop shadow from the widget's frame. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
 
-### Internal Binding Properties
+### Internal binding properties
 
 These properties are available only to the widgets that are placed inside the list widget and allows you configure the widget's properties based on the position/order of the item.
 
@@ -169,54 +185,8 @@ These properties are available only to the widgets that are placed inside the li
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **currentItem** | This represents the data for a particular item.                                                                                                                                                   |
 | **currentIndex**         | Represents the index of the item.                                                                                                                                                                               |
-| **currentView**       | Reflects the state of the all the widgets present in current item.                                                                                                                                                                          |
-| **level_***           | *level* property is only available for nested list. This property can be used to access *currentItem*, *currentView* and *currentIndex* of parent property. E.g {{level_1.currentItem.name}}  |
-
-#### currentItem
-The currentItem represents the data for particular item. If the data in the List looks something like this
-```json
-[
-  {
-    "bookId": "001",
-    "bookName": "Artificial Intelligence for Business Leaders",
-    "bookImage": "https://m.media-amazon.com/images/I/511Y1LSr0JL.jpg",
-    "category":"Computing, Internet & Digital Media",
-    "author" :"Ajit K Jha",
-    "publishedDate": "22-July-2020",
-    "price": "INR 599"
-  },
-  {
-    "bookId": "002",
-    "bookName": "Bootstrap 4 Quick Start",
-    "bookImage": "https://images-na.ssl-images-amazon.com/images/I/41GTBaVKAyL._SX404_BO1,204,203,200_.jpg",
-    "category":"Computing, Internet & Digital Media",
-    "author" :"Jacob Lett",
-    "publishedDate": "20-March-2018",
-    "price": "INR 439.90"
- }
-]
-```
-
-then the **currentItem** for the first item would reflect the 0th object of the above JSON and the properties of the object can be accessed by using `{{currentItem.bookName}}.`
-This can be used anywhere within the a widget that is placed inside the List widget.
-
-#### currentView
-This property can be used to access all sibling widgets present inside a List widget item. Let's assume we have an input widget and a button widget inside the List widget and we want to use the input's text to show alert on button click. In the button widget's *onClick* event we can access the input widget by using `{{showAlert(currentView.Input1.text)}}`.
-
-:::info
-The **currentView** syntax should always be used to access sibling data, referencing it directly e.g. `{{Input1.text}}` may seem to work while editing but won't work when deployed.
-:::
-
-#### level_*
-This is a special property designed to access parent List item's data and widget properties in a nested List setup. Let's assume we drag and drop a List widget inside another list widget, we will call List1 as outer list and List2 as inner list. The widgets present in the inner list want to gain access to the **currentItem** for the outer list to get the **bookId** property. We can have a binding of `{{level_1.currentItem.bookId}}` to gain access to the **bookId** for that particular item. We can similarly use **currentView** and **currentIndex** with the **level_1**
-<br/>
-
-We call this property `level_*` because inside the inner list we can drop another List widget to have deeper level of nesting. Let's assume we drag and drop another List widget inside the List2, we'll call this as List3. Now the inner most list will have access 2 special properties instead of 1 i.e **level_1** and **level_2**. Here the **level_1** would reflect the topmost list widget's state i.e List1 and **level_2** would reflect the inner List's state i.e List2.
-<br />
-
-:::info
-The parent list widgets do not have access to it's child list widgets. In the above setup, the widgets in List1 cannot use `level_2` or `level_3` here. Similarly List2 can only access `level_1` and not `level_2` but List3 can access both `level_1` and `level_2`.
-:::
+| **currentView**       | Reflects the state of the all the widgets present in current item. This property can be used to access all sibling widgets present inside a List item card. For example, if you have an input widget and a button widget inside the List and want to use the Input's `Text` property to show an alert message on button click. In the button widget's *onClick* event you can access the input widget by using `{{showAlert(currentView.Input1.text)}}`. The **currentView** property should always be used to access sibling data instead of referencing it directly Eg: `{{Input1.text}}` may seem to work in the app's Edit mode but won't work when deployed.`.                                                                                                                                                                          |
+| **level_***           | *level* property is only available for nested lists where * represents the level number (from 1 through 3). This property can be used to access *currentItem*, *currentView* and *currentIndex* properties of the parent lists. Eg: {{level_1.currentItem.name}}  |
 
 
 ### Events
