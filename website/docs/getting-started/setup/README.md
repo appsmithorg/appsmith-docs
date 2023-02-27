@@ -10,19 +10,15 @@ You can host and manage Appsmith directly on your server, giving you complete co
 
 You can use Appsmith in two ways:
 
-* **[Appsmith Cloud](https://app.appsmith.com/user/login)** - For users who don't have an on-premise infrastructure. Appsmith only acts as a proxy layer and doesn't store any data returned from your API endpoints or database queries. See [Security](/product/security)
-* **Self-host Appsmith** - For users who want to deploy Appsmith on own their infrastructure, manage the instance, updates, etc.
+* **[Appsmith Cloud](https://app.appsmith.com/user/login)** - For users who don't have an infrastructure. Appsmith only acts as a proxy layer and doesn't store any data returned from your API endpoints or database queries. See [Security](/product/security)
+* **Self-host Appsmith** - For users who want to deploy Appsmith on their own infrastructure, manage the instance, updates, etc.
 
 
 ## Self-host Appsmith
 
-Deploying Appsmith on your infrastructure makes it easier to manage updates, create backups, and scale your infrastructure as per requirements.
+Deploying Appsmith on your infrastructure gives complete control over security, updates and scaling your infrastructure as per requirements.
 
 The self-hosted version isn't air-gapped and needs internet access to reach Appsmith cloud services (cs.appsmith.com) for a few features to work, such as fetching release notes, more than three private repositories for git version control, templates, business license validity checks, etc. If you want a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
-
-:::info
-Appsmith collects [usage data](/product/telemetry) on self hosted instances, and you can [disable](/product/telemetry#disable-telemetry) this in your instance configuration file.
-:::
 
 Installing Appsmith as a self-hosted instance has the following advantages:
 
