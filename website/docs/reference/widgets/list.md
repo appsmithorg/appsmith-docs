@@ -194,7 +194,7 @@ You can make some formatting changes to enhance the look and feel of the widget 
 | **Border Radius**         | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
 | **Box Shadow**            | Casts a drop shadow from the widget's frame. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
-### Events
+## Events
 
 When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/).
 
