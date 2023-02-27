@@ -90,7 +90,6 @@ az container create \
 	--azure-file-volume-account-key $storageAccountKey \
 	--azure-file-volume-share-name $fileShareName \
 	--azure-file-volume-mount-path "/appsmith-stacks/" \
-  --environment-variables 'APPSMITH_LICENSE_KEY'='<Your Appsmith License>'
 ```
 
    </TabItem>

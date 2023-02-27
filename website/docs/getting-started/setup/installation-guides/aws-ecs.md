@@ -120,16 +120,12 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
       ![Storage Setting](/img/ecs\_mount_(1).png)
 
-    5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values it's recommended you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created. You can either add the Appsmith Business Edition License Key as plain text to the `APPSMITH_LICENSE_KEY` variable or create a new secret for it and add that secret into the field. For more information, see [How to create a new secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) on Amazon official documentation.
-
-      ![Container Environment](/img/ecs-container-env.png)
-
-    7. Enable auto-configure CloudWatch Logs for log configuration.
-    8. Hit **Add.**
+    5. Enable auto-configure CloudWatch Logs for log configuration.
+    6. Hit **Add.**
 
       ![Container Port Configuration](/img/ecs-task-appsmith_(1)_(1)_(1)_(2).png)
 
-    9. Finally, hit the **Create** button.
+    7. Finally, hit the **Create** button.
 
 ### Step 3: Create and run an ECS service
 
