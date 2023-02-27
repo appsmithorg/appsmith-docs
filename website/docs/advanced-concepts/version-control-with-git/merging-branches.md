@@ -12,9 +12,9 @@ When you want to merge your branch with the base branch -
    3. The `base` and the `head` branch shouldn't have any conflicting changes.
 3. Click on `Merge Changes` if the merge status check is successful.
 
-#### Conflicts
+### Merge conflicts
 
-Consider a scenario where the **user 1** wants to develop a new feature and has a single branch `main`. As a general practice user creates `feature-f1` from the `main` branch. At the same time, **user 2** updates the `main` branch with the same resources like page, query, or JSObject that **user 1** modifies on the `feature-f1` branch. If **user 1** tries to merge `feature-f1` to `main` branch it leads to a merge conflict.
+Consider a scenario where **user 1** wants to develop a new feature and has a single branch main. As a general practice, the user creates feature-f1 from the main branch. At the same time, **user 2** updates the main branch with the same resources like page, query, or JSObject that **user 1** modifies on the feature-f1 branch. If **user 1** tries to merge feature-f1 to the main branch, it creates a merge conflict.
 
 You can resolve it in the following way:
 
@@ -25,10 +25,10 @@ You can resolve it in the following way:
 * Delete branch `origin/feature-f1` on the remote repository;
 * Sync branches in the Git branches modal on Appsmith to remove `origin/featuref1` from the local repository.
 
-##### Best practices to avoid merge conflicts
+#### Best practices to avoid merge conflicts
 Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
 
-**For changes that affect more than just one page of the app like app theme, datasources**
+**For changes that affect more than just one page of the app, like the app theme, datasources, etc: **
 
 * Avoid making these changes when feature branches are in the middle of building new updates.
 * Ensure that these changes are completed and pushed to the `main` branch.
