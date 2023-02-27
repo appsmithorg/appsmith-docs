@@ -4,11 +4,9 @@ Writing extensive code without a full-fledge editor could be challenging. The Ja
 
 <VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JS Editor" caption="How to build with JS Editor" />
 
-### JS Object
+**How to Create a JS Object?**
 
 A JS Object is an entity comprised of multiple functions and variables. It's a reusable component you can refer to in other JS Objects, allowing you to create an organized set of hierarchies.
-
-**How to Create a JS Object?**
 
 You can create new JS Objects from the Entity Explorer.
 

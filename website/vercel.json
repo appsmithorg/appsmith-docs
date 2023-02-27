@@ -639,6 +639,18 @@
       "destination": "/reference/widgets/button"
     },
     {
+      "source": "/widget-reference/button#widget-properties",
+      "destination": "/reference/widgets/button#general"
+    },
+    {
+      "source": "/widget-reference/button#binding-properties",
+      "destination": "/reference/widgets/button#reference"
+    },
+    {
+      "source": "/widget-reference/button#styles",
+      "destination": "/reference/widgets/button#style"
+    },
+    {
       "source": "/widget-reference/button/google-recaptcha",
       "destination": "/reference/widgets/button/google-recaptcha"
     },
