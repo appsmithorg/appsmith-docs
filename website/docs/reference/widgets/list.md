@@ -163,7 +163,7 @@ These properties are available only to the widgets placed inside the List widget
 | **currentItem** | This represents the data for a particular item.                                                                                                                                                   |
 | **currentIndex**         | Represents the index of the item.                                                                                                                                                                               |
 | **currentView**       | Reflects the state of all the widgets present in the current item. This property can be used to access all sibling widgets present inside a List item card.                                                                                                                      |
-| **level_***           | *level* property is only available for nested lists where * represents the level number (from 1 through 3). This property can be used to access the *currentItem*, *currentView* and *currentIndex* properties of the parent lists. Eg: {{level_1.currentItem.name}}  |
+| **level_***           | This property is only available for nested lists where \* represents the level number (from 1 through 3). This property can be used to access the **currentItem**, **currentView** and **currentIndex** properties of the parent lists. Eg: {{level_1.currentItem.name}}  |
 
 ### Reference properties
 
