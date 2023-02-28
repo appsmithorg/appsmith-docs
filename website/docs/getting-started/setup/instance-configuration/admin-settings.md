@@ -43,7 +43,7 @@ Under General settings, you can configure the instance name, add super admins, a
 
 * **Admin Email:** This setting lets you specify the email addresses of the users to make them super administrators of your instance.
 
-* **Generated Docker Compose File:** Docker Compose file is a YAML file used to define and configure multi-container Docker applications. By clicking on the download button you can generate the Docker Compose file. 
+* **Generated Docker Compose File:** You can generate the Docker Compose file which defines services for your Appsmith instance. 
 
 * **Share anonymous usage data**: : This setting lets you choose whether to share [anonymous usage data](/product/telemetry#opt-in-telemetry) with Appsmith to help improve the product.
 
