@@ -24,6 +24,7 @@ To try this feature yourself, take a look at the [sample app for inline editing]
 | [**updatedRowIndices**](#updatedrowindices)        | Binding     | Contains an array of indices of the table rows that have been edited. Useful in **Multi row** update mode.                                                        | `{{Table1.updatedRowIndices}}` |
 | [**updatedRow**](#updatedrow)               | Binding     | Contains the all the data of the row that was recently updated. Useful in **Single row** update mode. | `{{Table1.updatedRow}}`|
 | [**Allow adding a row**](#allow-adding-a-row) | Widget | Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
+| [**Allow column freeze**](#allow-column-freeze)  | Widget| Toggles a button which allows users to select the freeze or unfreeze a column from the dropdown that appears when you hover over a column name. | |
 | [**Default Values**](#default-values) | Widget | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
 | [**isAddRowInProgress**]( #isaddrowinprogress) | Binding | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
 | [**newRow**](#newrow) | Binding | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
@@ -325,6 +326,12 @@ The **properties** that can be used for adding new rows are explained in detail 
 When this property is turned on:
   - Users are able to click a button on the table to create a new row of data. Users can only input data for columns that are marked as **Editable** in the table properties.
   - The **Default Values** property and the **onSave** and **onDiscard** events appear in the table's properties pane under the **Adding a row** section. Use these to configure the table's behavior when adding new rows.
+
+#### Allow column freeze
+
+When this property is turned on:
+  - Users are able to select the column to freeze or unfreeze from a dropdown that appears when users hover over a column name.
+  - Users can choose `Freeze column left` to freeze the column on left side or `Freeze column right` to freeze the column on right side.
 
 #### Default values
 

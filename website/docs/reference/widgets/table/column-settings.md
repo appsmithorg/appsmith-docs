@@ -15,6 +15,7 @@ These common properties allow you to set the behavior of specific columns within
 | **Visible**        | Controls the column's visibility on the page. When turned off, the column won't be visible.  |
 | **Cell Wrapping**  |Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents get ellipsis. |
 | **Editable**       | Controls whether cells of the column are editable.        |
+| **Column Freeze**      | Controls whether the column can be frozen to left or right in the table        |
 
 ### Column type
 
@@ -168,6 +169,24 @@ Based on the Column type, you can edit the cell content. Once done, you can move
 2. Edited contents can be discarded by pressing the escape key.
 
 <VideoEmbed host="youtube" videoId="Wmitzz4UAGo" title="Editable" caption="Editable"/>
+
+### Column freeze
+This property controls whether the column can be frozen to the left, right, or no freeze in the table. Frozen columns can be pinned in the property pane.
+
+Below are the scenarios that occur while freezing and unfreezing a column:
+ * Any new column when frozen to the left or right can be seen in the property pane occupying the same index as seen in the table.
+ * In published app mode, if there is a change in frozen or unfrozen columns in multiple tables then the order of columns, frozen and unfrozen are persisted across sessions.
+
+  User’s changes get reset whenever the Appsmith developer makes the following changes:
+     * When there is a change in column order
+     * When there is a change in the count of hidden columns
+     * When there is a change in the frozen column count.
+ * Now on hover of the column header, a drop-down appears that has the following options:
+     * Sort column ascending
+     * Sort column descending
+     * Freeze column left
+     * Freeze column right
+ * On enabling the multi-row selection option, the checkbox column is frozen to the left.
 
 ## Styles
 
