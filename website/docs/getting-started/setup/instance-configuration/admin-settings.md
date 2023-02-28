@@ -58,7 +58,7 @@ You can configure email on your Appsmith instance to send invitation emails to u
 
 ### Google maps
 
- Google Maps API integration lets you add maps to the apps, displaying location-based data interactively using the Map widget. For more information, refer to the [Google Maps API guide](/getting-started/setup/instance-configuration/email).
+ You must configure Google Maps for your instance to enable the Maps widget  For more information, see [Google Maps](/getting-started/setup/instance-configuration/email).
 
 
 
