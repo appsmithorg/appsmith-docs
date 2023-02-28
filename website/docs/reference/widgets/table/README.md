@@ -207,6 +207,27 @@ As an API request with URL parameters:
 https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
 ```
 
+## Freeze columns
+
+When your table has many columns, you may want to freeze important columns in place so that they're always visible, independent of scrolling.
+
+To freeze a column, click the arrow on the right side of the column's header cell and choose to freeze it on either the left or right side of the table. Alternatively, you can freeze or unfreeze a column via its individual settings accessed within the table's properties pane.
+
+The **Allow Column Freeze** property must be turned on in the table's properties pane to allow changes to freezing or unfreezing. This property doesn't change any frozen columns; it just prevents further changes by enabling or disabling the "Freeze column" button controls in the widget.
+
+![Use the column header arrow to freeze or unfreeze columns](/img/as-freeze-column.png)
+
+Columns that are frozen while your app is in Edit mode are also frozen in the deployed app. However, while **Allow Column Freeze** is turned on, users can change which columns are frozen in their view. Their changes persist in their local storage across page refreshes until a developer deploys a change in the table's column order, hidden columns, or frozen columns.
+
+When a column gets frozen, its position changes in the column list of the table's properties pane: left-frozen columns are pinned to the top of the list, and right-frozen ones are pinned to the bottom. These columns can't be re-ordered while they're frozen.
+
+There are two special columns that are automatically pinned when they're relevant:
+
+- When the table contains **Editable** columns, a Save/Discard button column is frozen to the right of the table.
+- When **Multi-row selection** is turned on, a checkbox column is frozen to the left of the table.
+
+When a column gets unfrozen, its position is moved. If it had been left-frozen, it's put at the beginning of the unfrozen group of columns. If it had been right-frozen, it's put at the end of the unfrozen columns.
+
 ## Properties
 
 Properties allow you to edit the table, connect it with other widgets, and customize how the user interacts with it.
