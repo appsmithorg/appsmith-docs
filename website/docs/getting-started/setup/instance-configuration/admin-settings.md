@@ -51,7 +51,7 @@ Under General settings, you can configure the instance name, add super admins, a
 
 ### Email
 
-You can configure email on your Appsmith instance to send invitation emails to users to join your workspace, handle user management emails such as invites and password resets. For more information, see [Email](/getting-started/setup/instance-configuration/email).
+You can configure email on your Appsmith instance to send users invitation emails to join your workspace, password reset notifications, etc.  For more information, see [Email](/getting-started/setup/instance-configuration/email).
 
 
 
