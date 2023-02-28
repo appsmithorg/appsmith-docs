@@ -64,7 +64,7 @@ You can configure email on your Appsmith instance to send invitation emails to u
 
 
 ### Authentication
-By default, users can sign in to the Appsmith app using their email address and password through the Form Login. Additionally, Appsmith supports [**Google OAuth**](/getting-started/setup/instance-configuration/authentication/google-login), [**GitHub OAuth**](/getting-started/setup/instance-configuration/authentication/github-login), as well as popular single sign-on (SSO) authentication protocols like [**SAML**](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) (in the enterprise version) and [**OpenID Connect**](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) (in the enterprise version).
+By default, users can sign in to the Appsmith app using their email address and password through the Form Login. Additionally, Appsmith supports [**Google OAuth**](/getting-started/setup/instance-configuration/authentication/google-login), [**GitHub OAuth**](/getting-started/setup/instance-configuration/authentication/github-login), as well as popular single sign-on (SSO) authentication protocols available on the enterprise edition such as [**SAML**](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)  and [**OpenID Connect**](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc).
 
 
 ### Advanced settings
