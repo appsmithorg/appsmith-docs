@@ -125,7 +125,7 @@ SELECT * FROM users LIMIT {{ <listName>.pageSize }} OFFSET {{ (<listName>.pageNo
   ```
   The **currentView** property should always be used to access sibling data instead of referencing it directly Eg: `{{Input1.text}` may seem to work in the app's Edit mode but won't work when deployed.   
 
-* The **currentItemView** helps you to view the data and the state of the widgets present in all the items of the List widget and is an *array* of *objects* with each widget's state represented as an object. The *array* of *objects* is limited to the number of items visible on the page rather than the number list items present. If there are 300 objects in the list data, but the List widget is showing 5 items per page, then the **currentItemsView** property shows an *array* of only 5 *objects*.
+* The **currentItemsView** helps you to view the data and the state of the widgets present in all the items of the List widget and is an *array* of *objects* with each widget's state represented as an object. The *array* of *objects* is limited to the number of items visible on the page rather than the number list items present. If there are 300 objects in the list data, but the List widget is showing 5 items per page, then the **currentItemsView** property shows an *array* of only 5 *objects*.
 
   **Example** - Below is an example of the evaluated value for all the items of the List.
 
