@@ -254,6 +254,7 @@ Properties allow you to edit the table, connect it with other widgets, and custo
 | **Visible**   | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
 | **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
 | **Allow Download** | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
+| **Allow Column Freeze** | Toggles controls in column headers for freezing and unfreezing columns. Does not change currently frozen or unfrozen columns. |
 | **CSV Separator** | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. Default: `,` |
 
 
