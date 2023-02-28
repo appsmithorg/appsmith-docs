@@ -47,7 +47,7 @@ Under General settings, you can configure the instance name, add super admins, a
 
 * **Share anonymous usage data**: : This setting lets you choose whether to share [anonymous usage data](/product/telemetry#opt-in-telemetry) with Appsmith to help improve the product.
 
-* **Appsmith Watermark**: This refers to a watermark that appears on the bottom right corner of the Appsmith editor. You can [upgrade](www.appsmith.com/pricing) your plan to remove the Build on Appsmith badge on the app's bottom right corner.
+* **Appsmith Watermark**: This refers to a watermark that appears on the bottom right corner of the Appsmith editor. You can [upgrade](https://www.appsmith.com/pricing) your plan to remove the Build on Appsmith badge on the app's bottom right corner.
 
 ### Email
 
@@ -80,7 +80,7 @@ The Advanced Settings section allows you to configure additional settings for yo
 
 ### Branding
 
-Appsmith's custom branding feature is exclusive to self-hosted, [Business Edition](www.appsmith.com/pricing) instances. It enables app builders to personalize their workspace and apps with their own logo and color palette for a cohesive experience. This includes the login screen, invite emails, and error pages to match the company's branding for end-users. To customize the appearance of your apps, see [Branding](/advanced-concepts/branding).
+Appsmith's custom branding feature is exclusive to self-hosted, [Business Edition](https://www.appsmith.com/pricing) instances. It enables app builders to personalize their workspace and apps with their own logo and color palette for a cohesive experience. This includes the login screen, invite emails, and error pages to match the company's branding for end-users. To customize the appearance of your apps, see [Branding](/advanced-concepts/branding).
 
 
 
