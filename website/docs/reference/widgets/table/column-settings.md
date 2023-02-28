@@ -15,6 +15,7 @@ These common properties allow you to set the behavior of specific columns within
 | **Visible**        | Controls the column's visibility on the page. When turned off, the column won't be visible.  |
 | **Cell Wrapping**  |Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents get ellipsis. |
 | **Editable**       | Controls whether cells of the column are editable.        |
+| **Column Freeze** | Sets whether the column is frozen to the left, unfrozen, or frozen to the right. For more information about column freezing, see [Freeze Columns](/reference/widgets/table#freeze-columns). |
 
 ### Column type
 
