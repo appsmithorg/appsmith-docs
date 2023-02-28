@@ -12,7 +12,7 @@ The Admin Settings page allows superusers on self-hosted instances to manage var
 </figure>
 
 :::note
-If you don’t see the “Admin Settings” option in the left sidebar, you’re not the super admin of this instance. 
+If you don’t see the “Admin Settings” option on the left sidebar, you’re not a super admin for the Appsmith instance and will need to be granted admin privileges by an existing super admin.
 :::
 
 
