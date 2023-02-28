@@ -12,16 +12,14 @@ The Admin Settings page allows superusers on self-hosted instances to manage var
 </figure>
 
 :::note
-If you don’t see the “Admin Settings” option on the left sidebar, you’re not a super admin for the Appsmith instance and will need to be granted admin privileges by an existing super admin.
+If you don’t see the “Admin Settings” option on the left sidebar, you’re not a super admin for the Appsmith instance and must be granted admin privileges by an existing super admin.
 :::
 
 
 ## Add super admins
 Users who are granted super admin privileges are authorized to access and make changes to instance & platform settings. If you are a super admin and want to grant super admin privileges to other users, add their email addresses in the **Admin Email** field on the **General** settings page so they can access and modify instance settings as shown below:
 
-```sql
-user1@mydomain.com, user2@mydomain.com
-```
+
 
 
 <figure>
@@ -51,7 +49,7 @@ Under General settings, you can configure the instance name, add super admins, a
 
 ### Email
 
-You can configure email on your Appsmith instance to send users invitation emails to join your workspace, password reset notifications, etc.  For more information, see [Email](/getting-started/setup/instance-configuration/email).
+You can configure email on your Appsmith instance to send users invitation emails to join your workspace, password reset notifications, etc. For more information, see [Email](/getting-started/setup/instance-configuration/email).
 
 
 
