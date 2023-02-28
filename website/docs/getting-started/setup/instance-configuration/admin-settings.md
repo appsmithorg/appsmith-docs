@@ -23,7 +23,7 @@ Users who are granted super admin privileges are authorized to access and make c
 
 
 <figure>
-  <img src="/img/admin-email-settings.png" style= {{width:"700px", height:"auto"}} alt="Use Admin Settings to configure your instance"/>
+  <img src="/img/admin-email-settings.png" style= {{width:"900px", height:"auto"}} alt="Use Admin Settings to configure your instance"/>
   <figcaption align = "center"><i>Configure a super admin</i></figcaption>
 </figure>
 
