@@ -18,6 +18,8 @@ If a widget that collects user input is added to the form, you can access that w
 }
 ```
 
+Note that all widgets on the page, including those in forms, must still have unique names.
+
 ## Special button behavior
 
 Button widgets have two properties that are useful when they're located within forms: [**Disabled Invalid Forms**](#prevent-invalid-submissions) and [**Reset Form on Success**](#clear-form-fields).
@@ -70,3 +72,8 @@ Style properties allow you to change the look and feel of the form. These proper
 | **Border Width**     | Defines the thickness of the border.  |
 | **Border Radius**    | Sets the rounded-ness of the form's corners. Use a higher number for a profound curve. |
 | **Box Shadow**       | Sets the shadow style of the form.  | 
+
+## Further reading
+
+- [Queries](/core-concepts/data-access-and-binding/querying-a-database)
+- [Widgets](/reference/widgets)
