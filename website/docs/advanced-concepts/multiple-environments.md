@@ -54,3 +54,23 @@ The deployed version of the app always uses the production environment. However,
 You can set up access controls for both the staging and production environments. For each, you can decide whether a user can view the environment, modify it, and apply the environment configuration in edit/view modes. 
 
 To learn more about access control in Appsmith, you can refer to [RBAC](/advanced-concepts/access-control/granular-access-control).
+
+
+## Environments with git
+
+Environments with Git allows you to work on separate versions of the data, test changes before deployment, and maintain a stable production environment. 
+
+When using a staging environment, you can use the staging data and work on any feature branch in Git. You can create a new branch for each feature you're working on and commit changes to that branch as you make progress. Once a feature is stable and ready for deployment, you can merge it into the master branch.
+
+To use environments with Git, you can follow these steps:
+
+* Create a new datasource and configure its staging and production data.
+* Create or switch the branch in Git from the screen's bottom-left corner.
+* Write queries using the staging environment data in the branch.
+* Once you have tested your changes and are ready to deploy to production, merge the changes into the master branch. 
+
+
+When you merge changes from the staging environment into the master branch, the production data remains unchanged, ensuring that end-users continue to view the same data they did before the changes were made. Check this guide to learn more about [working with Branches](/advanced-concepts/version-control-with-git/working-with-branches).
+
+
+
