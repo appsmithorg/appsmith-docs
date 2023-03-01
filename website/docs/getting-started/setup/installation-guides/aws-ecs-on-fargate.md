@@ -107,10 +107,6 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
     5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values, it's **recommended** you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created.
 
-    :::info
-    For Business Edition, you can add the Appsmith Business Edition License Key as plain text to the `APPSMITH_LICENSE_KEY` variable or add a new secret to the field. For more information, see [How to create a new secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) on Amazon's official documentation.
-    :::
-
     6. Set the following Environment Variables:
 
         - `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database. You can use any random string (Eg. test). The more random, the better.

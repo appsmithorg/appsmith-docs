@@ -12,20 +12,26 @@ When you want to merge your branch with the base branch -
    3. The `base` and the `head` branch shouldn't have any conflicting changes.
 3. Click on `Merge Changes` if the merge status check is successful.
 
-#### **Conflicts**
+### Merge conflicts
 
-Consider a scenario where the **user1** wants to develop a new feature and have a single branch  main **.** As a general practice user creates  feature/f1  from the main branch. At the same time, **user2** updates the  main  branch with the same resources like page, query, or JSObject that **user1** modifies on the  feature/f1  branch. If **user1** tries to merge  feature/f1  to  main **,** it leads to a merge conflict.
+Consider a scenario where **user 1** wants to develop a new feature and has a single branch main. As a general practice, the user creates feature-f1 from the main branch. At the same time, **user 2** updates the main branch with the same resources like page, query, or JSObject that **user 1** modifies on the feature-f1 branch. If **user 1** tries to merge feature-f1 to the main branch, it creates a merge conflict.
 
 You can resolve it in the following way:
 
-* Create a pull request with main  as the base branch;
-* Resolve the conflicts on remote branches (Between origin/f1  and  origin/main );
-* Once the conflicts are resolved, merge this new branch(origin/f1 ) into the old branch( origin/main );
+* Create a pull request with `main` as the base branch;
+* Resolve the conflicts on remote branches (Between `origin/feature-f1` and `origin/main`);
+* Once the conflicts are resolved, merge this new branch(`origin/feature-f1`) into the old branch(`origin/main`);
+* Pull the `main` branch again in your app. Now you should have all the changes from the `feature-f1` branch;
+* Delete branch `origin/feature-f1` on the remote repository;
+* Sync branches in the Git branches modal on Appsmith to remove `origin/featuref1` from the local repository.
 
-`
-( origin/main  **<-** origin/f1 )
-`
+#### Best practices to avoid merge conflicts
+Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
 
-* Pull the main branch again in your app. Now you should have all the changes from the  feature/f1  branch;
-* Delete branch  origin/feature/f1  on remote;
-* Sync branch with remote to remove  feature/f1  from the local repository.
+**For changes that affect more than just one page of the app, like the app theme, datasources, etc: **
+
+* Avoid making these changes when feature branches are in the middle of building new updates.
+* Ensure that these changes are completed and pushed to the `main` branch.
+* Pull changes from `main` to the feature branches that are in development.
+* Finish updates on the feature branch, then commit and merge with main.
+

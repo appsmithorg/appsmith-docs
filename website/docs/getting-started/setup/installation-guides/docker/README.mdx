@@ -26,12 +26,12 @@ The Appsmith Docker image contains all the components required to run within a s
 <Tabs groupId="editions" >
    <TabItem label="Community Edition" value="community">
 
-1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-ce) file and place it into the Appsmith installation folder.
+1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder.
 
    **OR,** run the following cURL:
 
    ```bash
-   curl -L https://bit.ly/docker-compose-ce -o $PWD/docker-compose.yml
+   curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
    ```
 
 2. Start the Docker container by running the command below. This may need to be run with sudo if `docker` and `docker-compose` aren't accessible by the user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
@@ -49,34 +49,23 @@ The Appsmith server should be up and running soon and can be accessed at [http:/
 To upgrade from Community Edition to Business Edition, [follow these instructions](/getting-started/setup/upgrade-to-business-edition/docker).
 :::
 
-1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-ce) file, and place it into the Appsmith installation folder.
+   1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 
-   **OR,** run the following cURL:
+   2. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder.
 
-   ```bash
-   curl -L https://bit.ly/docker-compose-ce -o $PWD/docker-compose.yml
-   ```
-
-2. Change the **image** name from `appsmith-ce` to `appsmith-ee` for the `image:` key in the `docker-compose.yml` file.
-
-3. Add the **license key** to the `docker-compose.yml` file as follows:
-   ```yml
-   services:
-      appsmith:
-         # ...
-         environment:
-            APPSMITH_LICENSE_KEY: <YOUR_LICENSE_KEY>
-   ```
-
-4. Start the Docker container by running the command below. This may need to be run with sudo if `docker` and `docker-compose` aren't accessible by the user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
+   **OR,** run the following cURL command:
 
    ```bash
-   docker-compose up -d
+      curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
    ```
+   3. Start the Docker container by running the command below. This may need to be run with sudo if `docker` and `docker-compose` aren't accessible by the user. If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
+      ```bash
+      docker-compose up -d
+      ```
+   4. The Appsmith server should be up and running soon and can be accessed at [http://localhost](http://localhost). Check the [Docker logs](#docker-logs) to verify that the instance is working correctly.
+   5. Create or sign in to your Appsmith account, and enter your license key to activate the instance.
 
-The Appsmith server should be up and running soon and can be accessed at [http://localhost](http://localhost). Check the [Docker logs](#docker-logs) to verify that the instance is working correctly.
-
-   </TabItem>
+</TabItem>
 </Tabs>
 
 ### Updating Appsmith
@@ -136,7 +125,7 @@ docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" --pull 
 This command downloads the image and starts Appsmith:
 
 ```bash
-docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> --pull always appsmith/appsmith-ee
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" --pull always appsmith/appsmith-ee
 ```
 
    </TabItem>
@@ -165,7 +154,7 @@ To update Appsmith manually, go to the root directory of the installation and ru
 docker rmi appsmith/appsmith-ee -f
 docker pull appsmith/appsmith-ee
 docker rm -f appsmith
-docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" -e APPSMITH_LICENSE_KEY=<YOUR_LICENSE_KEY> appsmith/appsmith-ee
+docker run -d --name appsmith -p 80:80 -v "$PWD/stacks:/appsmith-stacks" appsmith/appsmith-ee
 ```
 
    </TabItem>

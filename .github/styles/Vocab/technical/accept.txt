@@ -193,6 +193,7 @@ cURL
 OnSuccess
 Port
 OnSuccess
+iterable
 onSuccess
 postWindowMessage
 Cross-origin 
@@ -234,3 +235,14 @@ onSuccess
 onError
 drag-and-drop
 as per
+PostgreSQL
+Disable
+CRUD
+backgroundColor
+gridGap
+listData  
+selectedItem
+SVG
+admin
+Admin
+sign-on
