@@ -300,28 +300,22 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 
 Follow the steps below to install Appsmith on your Kubernetes cluster:
 
-1. Add the Appsmith `appsmith-ee` chart repository with:
+1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+
+2. Add the Appsmith `appsmith-ee` chart repository with:
 
     ```bash
     helm repo add appsmith-ee https://helm-ee.appsmith.com
     ```
-2. Load the Appsmith chart repository with:
+3. Load the Appsmith chart repository with:
 
     ```bash
     helm repo update
     ```
-3. Generate the `values.yaml` config file
+4. Generate the `values.yaml` config file:
     ```bash
     helm show values appsmith-ee/appsmith --version 2.0.0 > values.yaml
     ```
-4. Edit the `values.yaml` file and set the following parameters. You may choose to add a random generated password.
-
-   ```yaml
-    applicationConfig:
-      APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
-      APPSMITH_ENCRYPTION_SALT: "<SALT_PASSWORD>"
-      APPSMITH_LICENSE_KEY: "<LICENSE_KEY>"
-   ```
 
 <details id="highAvailability" open>
   <summary> <b>To configure High Availability (HA), be sure to configure the following</b> </summary>
@@ -527,7 +521,7 @@ existingClaim:
       appsmith-redis-replicas-0       1/1     Running   0          3m30s
       ```
 
-Congratulations, you have successfully installed Appsmith Business Edition Helm chart v2 installation.
+6. Sign-in to your instance again. Upon successful login, you see a screen where you can enter the license key and activate the instance.
 
 #### Update Appsmith
 

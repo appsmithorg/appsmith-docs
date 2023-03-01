@@ -129,7 +129,6 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
    ```yaml
-     APPSMITH_LICENSE_KEY: ""
      APPSMITH_KEYCLOAK_DB_DRIVER: ""
      APPSMITH_KEYCLOAK_DB_USERNAME: ""
      APPSMITH_KEYCLOAK_DB_PASSWORD: ""
