@@ -1,59 +1,72 @@
 ---
 sidebar_position: 9
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 # MongoDB
 
-[MongoDB](https://www.mongodb.com) is a document-oriented NoSQL database used for high-volume data storage. It doesn't store the data in the form of tables and rows as in traditional relational databases. Instead, it stores the data in collections and documents in JSON format (using key-value pairs).
+This document covers how to establish a connection between your MongoDB database and Appsmith to read and write data on your applications.
 
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
-:::
 
 <VideoEmbed host="youtube" videoId="F_By1KmJKrk" title="Build a MongoDB Panel" caption="Build a MongoDB Panel"/>
 
-## Connection Settings
+## Connect to MongoDB datasource
+To add a MongoDB datasource, navigate to **Explorer** >> click the (**+**) sign next to **Datasources** >> select MongoDB under Databases. This opens up the page where you can configure the parameters to connect to your MongoDB database.
 
-Appsmith needs the following parameters for connecting to a Mongo database:
+### Configure datasource
+To connect to a MongoDB database, you must configure the following parameters. 
 
-:::tip
-All required fields are suffixed with an asterisk (*).
+![Configure MongoDB datasource](/img/mongo-1.png)
+
+
+* **Connection Mode:** This refers to the permission granted to Appsmith when establishing a connection to the database. The two available modes are:
+
+   * **Read Only:** This mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
+   * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
+
+* **Connection Type:** This refers to the method used to establish a connection between a client and a database. You are required to select any one of the available connection types:
+
+  * **Direct Connection**: This connection type enables you to connect directly to a mongo instance.
+  * **Replicate Set**: This connection type enables you to connect to a group of mongo instances.
+
+
+* **Host Address:** Provide the hostname or IP address. You can specify multiple host addresses for a replicate set. If you have an [SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format), please follow [these](#connect-using-srv-uri) steps to connect to your MongoDB instance.
+
+* **Port:** A port is a numerical identifier that helps establish a network connection. Appsmith tries to connect to port `27017` if you don't specify a port.
+
+:::note
+If you are on a self-hosted instance and connecting to a database on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container. 
 :::
 
-### **Connection**
+* **Default** **Database Name:** This refers to the name of the database on your mongo server. Fill in the name of the database you want to connect to. 
 
-To set up a connection, fill in the following parameters:
+* **Authentication:** To establish a connection with the database, provide the necessary authentication parameters.
 
-* **Connection Mode:** You must choose one of the following two modes:
-  * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This only allows you to fetch data from the database.
-  * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Connection Type:** You must choose one of the following connection types:
-  * **Direct Connection**: Choose this connection type to connect directly to a mongo instance
-  * **Replicate Set**: Choose this connection type to connect to a set of mongo instances.
-* **Host Address / Port:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port `27017`. You can specify multiple host addresses for a replicate set. If you have an [SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format), please follow [these](./#connect-using-srv-uri) steps to connect to your MongoDB instance.
-* **Default** **Database Name:** Fill in the name of the database you want to connect to. This is your database’s name on your mongo server.
+  * **Database Name:** Enter the name of the database that you want to authenticate against.
+  * **Authentication Type:** Choose the authentication mechanism that you want to use to connect to your database. You can select from [`SCRAM-SHA-1`](https://www.mongodb.com/docs/manual/core/security-scram/), `SCRAM-SHA-256`, or [`MONGO-CR`](https://mongoing.com/docs/core/security-mongodb-cr.html). 
+  * **Username:** Provide the username required for authenticating connection requests to your database. Leave this field blank if you don't wish to specify a username for authentication.
+  * **Password:** Provide the password required for authenticating connection requests for the given username to the database. If you don't want to log in with a password, leave this field empty (note that your database must accept such connections).
 
-### **Authentication**
+* **SSL:** The connection uses the Default SSL mode. You can set it to one of the following modes:
 
-For authentication, fill in the following parameters:
+   * **Default**: Depends on Connection Type. If using the `Replica set`, this is `Enabled`. If using a `Direct connection`, this is `Disabled`.
+   * **Enabled**: This option rejects the connection if SSL isn't available.
+   * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
 
-* **Database Name:** Fill in the name of the database against which you want to authenticate. This is typically admin for most MongoDB instances.
-* **Authentication Type:** Choose the authentication mechanism to connect to your database. This can be one of `SCRAM-SHA-1`, `SCRAM-SHA-256`, or `MONGO-CR`.
-* **Username:** Fill in the username required for authenticating connection requests to your database. Set this to empty if you won't want to specify a username to authenticate with.
-* **Password:** Fill password required for authenticating connection requests for the given username to the database. Set this to _empty_ if you want to log in without a password (please ensure your database accepts such connections).
-
-### **SSL**
-
-The SSL Mode can be set to one of the following values:
-
-* **`Default`**: Depends on Connection Type. If using the `Replica set`, this is `Enabled`. If using a `Direct connection`, this is `Disabled`.
-* **`Enabled`**: Reject connection (if SSL is not available).
-* **`Disabled`**: Connect without SSL, use a plain unencrypted connection.
 
 ### Connect using SRV URI
 
-A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can create a MongoDB datasource on Appsmith using. [SRV URI Formats](https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format) - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
+Connecting to a MongoDB cluster using an SRV URI is a method that enables you to establish a connection without having to manually specify the host and port of each server.
 
-#### Standard Connection String Format
+A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can create a MongoDB datasource on Appsmith using SRV URI Formats - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
+
+
+
+<Tabs>
+  <TabItem value="scsf" label="Standard Connection String Format" default>
 
 A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:
 
@@ -61,151 +74,107 @@ A Standard Connection String Format(Standard Format) connects to a standalone re
 mongodb://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
 ```
 
-
-![](</img/Datasources__MongoDB__Connect_using_SRV__Standard_Format.png>)<figure><figcaption align="center"><i>Prefix with <strong>mongodb://</strong> to add a Standard Connection String URI</i></figcaption></figure>
-
 Map the URI fields as below:
 
-* `mongodb://` - a prefix to identify that it's a standard connection format.
-* `@username` - the username of the MongoDB you wish to connect to.
-* `@password` - the password of the MongoDB you want to connect to.
+* **`mongodb://`** - a prefix to indicate a standard connection format.
+* **`@username`** - the username for the MongoDB you want to connect to.
+* **`@password`** - the password for the MongoDB you want to connect to.
+* **`@host`** - the host address for the MongoDB you want to connect to.
+* **`@port`** -  the port number on which the MongoDB is running.
+* **`@defaultauthdb`** - the database you want to connect to and use for user authentication.
+* **`@authDB`** - the database that stores the authorization information and authenticates the credentials. If you want to use any other database instead of defaultauthdb, you can add the auth database name using the authSource keyword.
 
-:::tip
-If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
-:::
-
-* `@host` - the host address of the MongoDB you wish to connect to.
-* `@port` - the port on which MongoDB is running.
 
 :::info
-You can add **multiple host** and **port** details separated by a **comma** in the connection string to connect using the same user.
+* You can add multiple host and port details separated by a comma in the connection string to connect using the same user.
+* If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
+* It's mandatory to provide a value for the `defaultauthdb` field as the queries will be executed against it.
+* In case the `authSource` is not specified, Appsmith will try to authenticate using the admin database.
 :::
 
-* `@defaultauthdb` - the database you wish to connect to and would also authenticate the user credentials.
 
-:::info
-The <mark style={{color:'#d33d3f'}}>`defaultauthdb`</mark> is a <mark style={{color:'#d33d3f'}}>**required**</mark> field in Appsmith as the queries would run against it.
-:::
-
-* `@authDB` - the database that stores the authorization information and authenticates the credentials. If you wish to use any other database instead of defaultauthdb, you can add the auth database name using the authSource keyword.
-
-:::note
-If <mark style={{color:'#d33d3f'}}>**`authSource`**</mark> is unspecified, Appsmith attempts to authenticate using the <mark style={{color:'#d33d3f'}}>admin</mark> database.
-:::
 
 **Example URIs**
 
-Some example URIs could be as follows:
-
-* The default database is <mark style={{color:'#d33d3f'}}>`users,`</mark> and <mark style={{color:'#d33d3f'}}>`authSource`</mark> is set as <mark style={{color:'#d33d3f'}}>`authusers`</mark> which is used to authenticate the user(<mark style={{color:'#d33d3f'}}>`dbuser`</mark>).
-
-```mongodb
-mongodb://dbuser:s@cur!ty/mongodb0.standalone.com:27017/users/?authSource=authusers
+```js
+mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
 ```
 
-* <mark style={{color:'#d33d3f'}}>`authSource`</mark> is set as <mark style={{color:'#d33d3f'}}>`admin`</mark><mark style={{color:'#d33d3f'}}>,</mark> and <mark style={{color:'#d33d3f'}}>`replicaSet`</mark> keyword point to set the name of the replica set (<mark style={{color:'#d33d3f'}}>`mongoRepl`</mark>).
-
-```mongodb
-mongodb://dbuser:s@cur!ty@mongodb0.replicaset.com:27017,mongodb2.replicaset.com:27017/?authSource=admin&replicaSet=mongoRepl
-
-```
-
-* <mark style={{color:'#d33d3f'}}>`authSource`</mark> keyword points to <mark style={{color:'#d33d3f'}}>`admin`</mark><mark style={{color:'#d33d3f'}}>.</mark> You can add multiple host and port combinations that points to the shared cluster.
-
-```mongodb
-mongodb://dbuser:s@cur!ty@mongos0.sharedcluster.com:27017,mongos1.sharedcluster.com:27017,mongos2.sharedcluster.com:27017/?authSource=admin
-```
-
-#### **Domain name service seed list format**
-
+  </TabItem>
+  <TabItem value="dns" label="Domain name service seed list format">
 MongoDB also supports a Domain Name Service (DNS) Seed list for connecting with the standard format. To use the DNS seed list format, you’ll have to prefix the connection string with `mongodb+srv://`. The `+srv` indicates that the hostname corresponds to the DNS SRV. The DNS seed list format is represented as below:
 
 ```mongodb
 mongodb+srv://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
 ```
 
-![](</img/Datasources__MongoDB__Connect_using_SRV__DNS_Seed_List_Format.png>)<figure><figcaption align="center"><i>Prefix with <strong>mongodb+srv://</strong> to add a DNS seed list URI</i></figcaption></figure>
-
-Like [standard format](./#standard-connection-string-format), you can map the fields as below:
+You can map the fields as below:
 
 * `mongodb+srv://` - a prefix to identify that it’s a DNS Seed List format.
 
-:::note
-Using the <mark style={{color:'#d33d3f'}}>`+srv`</mark> automatically sets the TLS or SSL option to true. If you wish to turn off the TLS or SSL option, set <mark style={{color:'#d33d3f'}}>`tls/ssl=false`</mark> in the query string.
-:::
+* Like [Standard format](#connect-using-srv-uri), you can add `username`, `password`, `host`, `port`, `default database,` and `authSource`.
 
-* Like Standard format, you can add `username`, `password`, `host`, `port`, `default database,` and `authSource`.
 
-:::tip
-If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
-:::
 
 **Example URIs**
 
-An example URI could be as follows:
-
-```mongodb
+```js
 mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSource=authusersb
 ```
 
 :::info
-Read more about the [standard format ](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format)and [DNS seed list format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format) available on [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
+* Using the +srv automatically sets the TLS or SSL option to true. If you wish to turn off the TLS or SSL option, `tls/ssl=false` in the query string.
+* If the username or password includes (`: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
+* Read more about the [standard format ](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format)and [DNS seed list format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format) available on [MongoDB documentation](https://docs.mongodb.com/manual/reference/connection-string/#mongodb-urioption-urioption.ssl).
 :::
+  </TabItem>
 
-## Querying Mongo (Form Input)
+</Tabs>
 
-`Form input` provides an easy interface to query the Mongo database.
 
-As part of Form Input, Appsmith supports queries like `Find one or more documents`, `Insert a document`, `Update one`, `Count,` and more.
 
-:::info
-All mongo queries return an **array of objects** where each object is a **mongo document**, and the object's properties are the document's keys.
-:::
 
-![](/img/mongo-form.gif)
+## Create queries
 
-### 1. Find Document(s)
 
-This command selects documents in a collection or view. The following fields are supported in Appsmith for this command :
+You can write queries to fetch or write data to the MongoDB database by selecting the **+** New Query button available on datasource page under **Explorer** >> **Datasources** or by navigating to Explorer >> click (**+**) next to Queries/JS >> select your MongoDB database. 
 
-`Collection Name`: The name of the collection or view to query. The input is expected in a string format like the following :
+| Query Name                                                     | Description                                         |   
+| -------------------------------------------------------------- | --------------------------------------------------- | 
+| [**Find Documents**](#create-queries)           | Fetches documents from a collection in a database based on specific criteria. |   
+| [**Insert Documents**](#create-queries)       |   Adds new documents to a collection in a database.  |   
+| [**Update Documents**](#create-queries)      |    Modifies existing documents in a collection by updating or adding fields.                |   
+| [**Delete Documents**](#create-queries) |  Removes documents from a collection in a database permanently.                  |   
+| [**Count**](#create-queries)       |      Returns the number of documents that match a specific query in a collection.              |   
+| [**Distinct**](#create-queries) |         Returns unique values from a specific field in a collection.               |   
+| [**Aggregate**](#create-queries)       |      Performs various operations on a collection such as grouping, sorting, and calculating.             |   
+| [**Raw**](#create-queries)       |       Executes a raw query in a database using the database-specific query language.            |  
 
-```
-restaurants
-```
+You can check the [Query Settings Guide](core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
 
-`Query`: The query predicate. If unspecified, then all documents in the collection will match the predicate. The input is expected in JSON/BSON format like the following :
 
-```
-{
+### Find documents
+
+The "Find documents" is a query method in MongoDB used to retrieve documents from a MongoDB database collection. The method allows you to specify a set of criteria, such as search conditions or filters, to find documents that match the criteria.
+
+The following fields are supported in Appsmith for this command :
+
+* **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. Learn more about [collections](https://www.mongodb.com/docs/manual/core/databases-and-collections/).
+* **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. The input is expected in JSON/BSON format like the following :
+
+     ```sql
+    {
      rating: { $gte: 9 }, 
      cuisine: "italian" 
-}
-```
+    } 
+     ```
 
-`Sort` : (Optional) The sort specification for ordering the results. The input is expected in JSON/BSON format like the following :
+* **Sort**: This field specifies the order in which the documents should be returned, based on one or more fields.
+* **Projection**: This field specifies which fields to include or exclude from the query result. You can use this to limit the amount of data returned by the query.
+* **Limit**: This field specifies the maximum number of documents to return from the query result. If this method isn't specified, it defaults to returning 10 documents.
+* **Skip**:  This field specifies the number of documents to skip before returning results. 
 
-```
-{ name: 1 }
-```
-
-`Projection` : (Optional) The projection specification determines which fields to include in the returned documents. The input is expected in JSON/BSON format like the following :
-
-```
-{ name: 1, rating: 1, address: 1 }
-```
-
-`Limit` : (Optional) The maximum number of documents to return. If unspecified, then defaults to 10 documents. The input is expected in number format :
-
-```
-10
-```
-
-`Skip` : (Optional) Number of documents to skip. Defaults to 0. The input is expected in number format :
-
-```
-0
-```
+Learn more about [Find documents](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
 
 ### 2. Insert Document(s)
 
