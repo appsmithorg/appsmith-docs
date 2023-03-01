@@ -7,31 +7,36 @@ description: >-
 
 # Custom Authentication
 
-In this guide, you’ll learn how to build a custom login flow to secure your application using an authentication API to verify user credentials when they log in to your application.
+In this guide, you’ll learn how to build a custom login flow to secure your application using your own authentication API.
 
 <VideoEmbed host="youtube" videoId="5oPcF9dXZyU" title="How to Implement Custom Login/Authentication in Appsmith" caption="How to Implement Custom Login/Authentication in Appsmith"/>
 
-## Setup
+## Steps to implement
+
+### Setup
 
 For this example, assume that you have a page called "**MainPage**" in your application that you would like to secure with a login flow.
 
-1. Start by creating a new login page called "**LoginPage**" in your application.
+1. Start by creating a new page called "**LoginPage**" in your application.
 2. Create a [Form widget](/reference/widgets/form) and add [Input widgets](/reference/widgets/input) for both a username (named "**UsernameInput**" in this guide) and a password ("**PasswordInput**").
 
 You'll need a query to handle communication with your authentication API:
 
 1. Create a [datasource](/core-concepts/connecting-to-data-sources/authentication#creating-an-authenticated-api-datasource).
 2. Create an [API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) (named "**login_api**" here) with the your authentication endpoint URI.
-3. Place the user data from the Input widgets into the appropriate fields of the query body. Accessing your Input widgets should look something like:
+3. Place the Input widgets' text into your query body. Accessing the Input widgets should look something like:
 
   ```javascript
-  // identifier
-  {{UsernameInput.text}}
-  // password
-  {{PasswordInput.text}}
+  // JSON in the query body field
+  {{
+    {
+      identifier: UsernameInput.text,
+      password: PasswordInput.text
+    }
+  }}
   ```
 
-Once you have valid credentials in the Input widgets, you can run this query from the query screen. A successful response may resemble:
+On a successful response, your authentication API should return a valid access token. In the example below, the `jwt` key is a token that indicates that the user has been authenticated. A successful response may resemble:
 
 ```javascript
 {
@@ -55,9 +60,9 @@ Once you have valid credentials in the Input widgets, you can run this query fro
 }
 ```
 
-## Authentication flow
+### Authentication flow
 
-Back on the application canvas, set up the login form's button to run the **login_api** query via the button's **onClick** property. In this example, the API returns a value for `jwt` that indicates that the user has been authenticated. Here is how the flow works:
+Back on the application canvas, set up the login form's button to run the **login_api** query via the button's **onClick** property. Here is how the flow works:
 
 1. Execute the query
 2. If the response contains a valid `jwt`, store it in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value) and then take the user to the **MainPage**
@@ -83,15 +88,17 @@ In code, the button's **onClick** should look like:
 
 The `jwt` value that you saved in the Appsmith store is used to prove to your application that the user is recognized, and may be served the main content. Later, it can be used in your main application's queries to identify and grant permissions to the user, e.g. `Authorization: Bearer {{appsmith.store.jwt}}`.
 
-## Control access to application
+### Control access to application
 
 For now, it's time to configure your **MainPage** to allow access to logged-in users and redirect unauthorized ones.
 
 1. On **MainPage**, place the content of your application into a [Tabs widget](/reference/widgets/tabs). It should have at least two tabs: one for your secure content (called "**authorized**"), and one to be used as a redirect for unauthorized users ("**unauthorized**").
-2. In the Tabs widget's **Default Tabs" property, write the code:
-    ```javascript
-    {{appsmith.store.jwt? "authorized": "unauthorized"}}
-    ```
+2. In the Tabs widget's **Default Tabs** property, write code to run a query that requires the user to be authenticated. If it's successful, the user may see the "authorized" tab; on error, the user should see the "unauthorized" tab.
+  ```javascript
+  {{
+    SecureQuery.data.status == "200 OK"? "authorized": "unauthorized"
+  }}
+  ```
 3. In the **unauthorized** tab, add a message to tell the user that they must log in, and add a "Login" button that uses `navigateTo()` to send the user to the **LoginPage**.
 4. Toggle off the **Show Tabs** property of the Tabs widget to hide the tabs at the top of the pages and prevent users from navigating between them on their own.
 
