@@ -392,12 +392,113 @@ When running a Raw query, the filter criteria must be included in the pipeline a
   <figcaption align = "center"><i>The error generated when the pipeline keyword  isn't added</i></figcaption>
 </figure>
 
+
+#### Raw query syntax
+This section provides a reference for the syntax and usage of raw MongoDB queries.
+
+
+#####  Find query
+The [Find Query](https://docs.mongodb.com/manual/reference/command/find/) syntax is used to retrieve data from MongoDB collections based on specified filter conditions and projection criteria.
+
+   ```bash
+    {
+      "find": <string>,
+      "filter": <document>,
+      "sort": <document>,
+      "projection": <document>,
+      "skip": <int>,
+      "limit": <int>
+     }
+
+     //example
+     {
+     "find": "restaurants",
+     "filter": { "rating": { "$gte": 9 }, "cuisine": "italian" },
+     "projection": { "name": 1, "rating": 1, "address": 1 },
+     "sort": { "name": 1 },
+     "limit": 5
+      }
+   ```
+
+
+#####  Update query
+The [Update Query](https://docs.mongodb.com/manual/reference/command/update/#dbcmd.update) syntax is used to modify existing data in MongoDB collections.
+
+
+   ```bash
+     {
+      "update": <collection>,
+      "updates": [
+         {
+           "q": <query>,
+           "u": <document or pipeline>
+         }
+      ]
+      }     
+
+      //example
+      {    
+      "update": "members",
+      "updates": [
+         { 
+         "q": { }, 
+         "u": { "$set": { "status": "A" }, "$inc": { "points": 1 } }, 
+         "multi": true 
+         }
+      ]
+      }
+   ```
+
+#####  Insert query
+The [Insert Query](https://docs.mongodb.com/manual/reference/command/insert/) syntax is used to add new documents to MongoDB collections.
+
+
+   ```bash
+    {
+   "insert": <collection>,
+   "documents": [ <document>, <document>, ... ],
+   "ordered": <boolean>
+    }  
+
+      //example
+    {
+      "insert": "users",
+      "documents": [ 
+            { "_id": 1, "user": "abc123", status: "A" } 
+      ]
+    }
+   ```
+#####  Delete query
+The [Delete Query](https://docs.mongodb.com/manual/reference/command/delete/) syntax is used to remove data from MongoDB collections based on specified filter conditions.
+
+
+   ```bash
+     {
+       "delete": <collection>,
+       "deletes": [
+       {
+         "q" : <query>,
+         "limit" : <integer>
+       }
+      ]
+      }
+
+      //example
+      {
+       "delete": "orders",
+       "deletes": [ { 
+             "q": { status: "D" }, 
+             "limit": 1 
+      } ]
+       }
+   ```
+
+You can refer to this sample app on [MongoDB RAW Query](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f).
+
 ## Server-side pagination 
 
 Server-side pagination in MongoDB limits the number of query results returned by the server and enables the client to fetch additional results as required.
-It involves the use of the `limit()` and `skip()` methods in conjunction with queries.
-
-For example, 
+It involves the use of the `limit()` and `skip()` methods in conjunction with queries. For example, 
 ```js
 Limit:
 {{Table_1.pageSize}}
