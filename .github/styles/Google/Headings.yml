@@ -22,6 +22,7 @@ exceptions:
   - Document
   - Documents
   - Connection String URI
+  - URIs
   - I
   - Kubernetes
   - Linux
