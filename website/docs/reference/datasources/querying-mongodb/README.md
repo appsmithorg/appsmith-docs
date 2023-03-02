@@ -62,7 +62,7 @@ For more information, see [Configure SSL](https://www.mongodb.com/docs/manual/tu
 
 ### Connection String URI
 
-Using an SRV URI as a connection string for connecting to a MongoDB cluster allows you to establish a connection without the need to manually specify details
+Using an SRV URI as a connection string for connecting to a MongoDB cluster allows you to establish a connection without the need to manually specify details.
 
 A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can connect to a MongoDB datasource on Appsmith using SRV URI Formats - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
 
@@ -186,7 +186,7 @@ You can write queries to fetch or write data to the MongoDB database by selectin
 
 ### Insert Documents
 
-This command inserts one or more documents and returns a document containing the status of all inserts. The following fields are supported in Appsmith for this command :
+This command inserts one or more documents and returns a document containing the status of all inserts. You can pass the below parameters to Insert Documents:
 
 * **Collection Name**: This field specifies the name of the MongoDB collection where you want to insert documents. 
 
@@ -194,7 +194,7 @@ This command inserts one or more documents and returns a document containing the
     users
    ```
 
-* **Documents**: This field specifies the document or documents you want to insert into the collection. A document is a set of key-value pairs that represents an object in MongoDB. The input is expected in a JSON/BSON Array format like the following :
+* **Documents**: This field specifies the document or documents you want to insert into the collection. A document is a set of key-value pairs that represents an object in MongoDB. For example, to insert a single document you can specify:
 
    ```bash
     [ { _id: 1, user: "abc123", status: "A" } ]
@@ -202,16 +202,16 @@ This command inserts one or more documents and returns a document containing the
 
 ### Update Documents
 
-The Update command in MongoDB is used to modify existing documents in a collection based on a specified set of criteria, such as search conditions or filters. The following fields are supported in Appsmith for this command :
+The Update command in MongoDB is used to modify existing documents in a collection based on a specified set of criteria, such as search conditions or filters. You can pass the below parameters to Update Documents:
 
 * **Collection Name**: This field specifies the name of the MongoDB collection where you want to update documents. 
-* **Query**: This field specifies the search criteria or filters for the documents you want to update. The input is expected in JSON/BSON format like the following :
+* **Query**: This field specifies the search criteria or filters for the documents you want to update. 
 
   ```bash
   { name: "Andy" }
   ```
 
-* **Update**:  This field specifies the modifications you want to make to the selected documents. The input is expected in JSON/BSON format like the following :
+* **Update**:  This field specifies the modifications you want to make to the selected documents. For example, to update the `score` field you can write:
 
   ```bash
   { $inc: { score: 1 } }
@@ -245,10 +245,10 @@ Delete Documents command removes one or more documents from a collection based o
 * **Collection Name**:  This field specifies the name of the MongoDB collection from which you want to delete documents. 
 
 
-* **Query**: This field specifies the criteria or filters for selecting documents to delete. The input is expected in JSON/BSON format like the following :
+* **Query**: This field specifies the criteria or filters for selecting documents to delete. For example, to delete all documents with a "status" field set to "inactive, you can specify:
 
    ```bash
-   { status: "D" }
+   { status: "inactive" }
    ```
 
 * **Limit**: This field lets you choose whether to delete a single document or multiple documents that match the query.
@@ -260,7 +260,7 @@ This command counts the number of documents in a collection or a view that match
 * **Collection Name**:  This field specifies the name of the MongoDB collection or view that you want to count documents in. 
 
 
-* **Query**: This field specifies the criteria or filters for selecting the documents to count. The input is expected in JSON/BSON format like the following :
+* **Query**: This field specifies the criteria or filters for selecting the documents to count. For example, to count the number of documents in the `orders` collection where the order date is greater than `January 1st, 2021`, you can specify:
 
    ```bash
    { ord_dt: { $gt: new Date('01/01/2021') }
@@ -276,13 +276,13 @@ Distinct command is used to find the unique or distinct values for a specified f
 * **Collection Name**: The name of the collection to query for distinct values.
 
 
-* **Query**: A query specifies documents from which to retrieve the distinct values. The input is expected in JSON/BSON format like the following :
+* **Query**: A query specifies documents from which to retrieve the distinct values. For example, to retrieve distinct values for the `department` field where the department is `A`, you can specify:
 
    ```bash
    { dept: "A"} }
    ```
 
-* **Key/Field**: The field for which to return distinct values
+* **Key/Field**: The field for which to return distinct values. For example, to return distinct values for a field named `sku` in a collection named `items`, you can specify:
 
     ```bash
     item.sku
@@ -294,7 +294,7 @@ This command performs aggregation operations using the aggregation pipeline. The
 
 * **Collection Name**: The name of the collection or view that serves as the input for the aggregation pipeline. 
 
-* **Array of Pipelines**: An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. The input is expected in JSON/BSON array format like the following :
+* **Array of Pipelines**: An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. 
 
     ```bash
     [
@@ -330,7 +330,7 @@ This query returns all documents from the `user` collection where the `name` fie
 
 #### Aggregation pipeline query
 
-The [pipeline](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) is an array that contains the aggregation stages that process the documents. In your Raw query, you'll have to include the filter criteria in a pipeline keyword when using aggregation. For example, you wish to fetch data from movies where the revenue is 42600000. You'll use `$match` that checks for documents where the `revenue` is  `42600000`. You added the below query:
+The [pipeline](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) is an array that contains the aggregation stages that process the documents. In your Raw query, you'll have to include the filter criteria in a pipeline keyword when using aggregation.
 
 
 ```bash
@@ -349,7 +349,8 @@ The [pipeline](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) i
 }
 
 ```
-This query uses the $match stage in the aggregation pipeline to filter documents in the `orders` collection where the `status` field matches `paid`. It also specifies a cursor with a batch size of 50 documents.
+
+This query uses the `$match` stage in the aggregation pipeline to filter documents in the `orders` collection where the `status` field matches `paid`. It also specifies a cursor with a batch size of 50 documents.
 
 #### Raw command with lookup
 
@@ -379,7 +380,7 @@ This query uses the $match stage in the aggregation pipeline to filter documents
    }
 }
 ```
-This query uses the $lookup stage in the aggregation pipeline to join documents in the `orders` collection with documents in the `customers` collection based on the `customer_id` field. 
+This query uses the `$lookup` stage in the aggregation pipeline to join documents in the `orders` collection with documents in the `customers` collection based on the `customer_id` field. 
 
 :::info
 By default, Mongo returns only **101 records** due to its default [batchSize](https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/). You can update the limit and batchSize by adding values to your query.
