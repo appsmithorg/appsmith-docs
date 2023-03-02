@@ -4,7 +4,7 @@ sidebar_position: 8
 # Admin Settings
 
 
-The Admin Settings page allows superusers on self-hosted instances to manage various instance configurations, including email, authentication, and Google Maps integration, as well as user settings and permissions.
+The Admin Settings page allows [super-admins](#add-super-admins) on self-hosted instances to manage various instance configurations, including email, authentication, integration, and lot more.
 
 <figure>
   <img src="/img/super-admin-sidebar.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
@@ -56,7 +56,7 @@ You can configure email on your Appsmith instance to send users invitation email
 
 ### Google maps
 
- You must configure Google Maps for your instance to enable the Maps widget  For more information, see [Google Maps](/getting-started/setup/instance-configuration/email).
+In order to use the Maps widget, you need to configure Google Maps for your instance. For more information, see [Google Maps](/getting-started/setup/instance-configuration/email).
 
 
 
