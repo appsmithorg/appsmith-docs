@@ -19,6 +19,8 @@ exceptions:
   - Docker
   - Emmet
   - gRPC
+  - Document
+  - Documents
   - I
   - Kubernetes
   - Linux

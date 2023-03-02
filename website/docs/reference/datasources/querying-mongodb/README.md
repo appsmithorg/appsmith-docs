@@ -14,7 +14,7 @@ This document covers how to establish a connection between your MongoDB database
 <VideoEmbed host="youtube" videoId="F_By1KmJKrk" title="Build a MongoDB Panel" caption="Build a MongoDB Panel"/>
 
 ## Connect to MongoDB datasource
-To add a MongoDB datasource, navigate to **Explorer** >> click the (**+**) sign next to **Datasources** >> select MongoDB under Databases. This opens up the page where you can configure the parameters to connect to your MongoDB database.
+To add a MongoDB datasource, navigate to **Explorer** >> click the (**+**) sign next to **Datasources** >> select **MongoDB** under Databases. This opens up the page where you can configure the parameters to connect to your MongoDB database.
 
 ### Configure datasource
 To connect to a MongoDB database, you must configure the following parameters. 
@@ -25,12 +25,12 @@ To connect to a MongoDB database, you must configure the following parameters.
 * **Connection Mode:** This refers to the permission granted to Appsmith when establishing a connection to the database. The two available modes are:
 
    * **Read Only:** This mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
-   * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
+   * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. 
 
 * **Connection Type:** This refers to the method used to establish a connection between a client and a database. You are required to select any one of the available connection types:
 
-  * **Direct Connection**: This connection type enables you to connect directly to a mongo instance.
-  * **Replicate Set**: This connection type enables you to connect to a group of mongo instances.
+  * **Direct Connection**: This connection type enables you to connect directly to a MongoDB instance.
+  * **Replicate Set**: This connection type enables you to connect to a set of MongoDB instances.
 
 
 * **Host Address:** Provide the hostname or IP address. You can specify multiple host addresses for a replicate set. If you have an [SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format), please follow [these](#connect-using-srv-uri) steps to connect to your MongoDB instance.
@@ -96,7 +96,7 @@ Map the URI fields as below:
 
 **Example URIs**
 
-```js
+```bash
 mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
 ```
 
@@ -118,7 +118,7 @@ You can map the fields as below:
 
 **Example URIs**
 
-```js
+```bash
 mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSource=authusersb
 ```
 
@@ -139,27 +139,18 @@ mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSou
 
 You can write queries to fetch or write data to the MongoDB database by selecting the **+** New Query button available on datasource page under **Explorer** >> **Datasources** or by navigating to Explorer >> click (**+**) next to Queries/JS >> select your MongoDB database. 
 
-| Query Name                                                     | Description                                         |   
-| -------------------------------------------------------------- | --------------------------------------------------- | 
-| [**Find Documents**](#create-queries)           | Fetches documents from a collection in a database based on specific criteria. |   
-| [**Insert Documents**](#create-queries)       |   Adds new documents to a collection in a database.  |   
-| [**Update Documents**](#create-queries)      |    Modifies existing documents in a collection by updating or adding fields.                |   
-| [**Delete Documents**](#create-queries) |  Removes documents from a collection in a database permanently.                  |   
-| [**Count**](#create-queries)       |      Returns the number of documents that match a specific query in a collection.              |   
-| [**Distinct**](#create-queries) |         Returns unique values from a specific field in a collection.               |   
-| [**Aggregate**](#create-queries)       |      Performs various operations on a collection such as grouping, sorting, and calculating.             |   
-| [**Raw**](#create-queries)       |       Executes a raw query in a database using the database-specific query language.            |  
 
-You can check the [Query Settings Guide](core-concepts/data-access-and-binding/querying-a-database/query-settings.md) to learn more about queries.
-
-
-### Find documents
+### Find Documents
 
 The "Find documents" is a query method in MongoDB used to retrieve documents from a MongoDB database collection. The method allows you to specify a set of criteria, such as search conditions or filters, to find documents that match the criteria.
 
 The following fields are supported in Appsmith for this command :
 
 * **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. Learn more about [collections](https://www.mongodb.com/docs/manual/core/databases-and-collections/).
+
+    ```sql
+    restaurants
+    ```
 * **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. The input is expected in JSON/BSON format like the following :
 
      ```sql
@@ -170,58 +161,66 @@ The following fields are supported in Appsmith for this command :
      ```
 
 * **Sort**: This field specifies the order in which the documents should be returned, based on one or more fields.
+
+     ```sql
+     { name: 1 }
+     ```
 * **Projection**: This field specifies which fields to include or exclude from the query result. You can use this to limit the amount of data returned by the query.
+   ```sql
+   { name: 1, rating: 1, address: 1 }
+   ```
+
 * **Limit**: This field specifies the maximum number of documents to return from the query result. If this method isn't specified, it defaults to returning 10 documents.
+   ```sql
+   10
+   ```
 * **Skip**:  This field specifies the number of documents to skip before returning results. 
 
-Learn more about [Find documents](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
+   ```sql
+   0
+   ```
 
-### 2. Insert Document(s)
+
+### Insert Documents
 
 This command inserts one or more documents and returns a document containing the status of all inserts. The following fields are supported in Appsmith for this command :
 
-`Collection Name`: The name of the target collection. The input is expected in a string format like the following :
+* **Collection Name**: This field specifies the name of the MongoDB collection where you want to insert documents. 
 
-```
-users
-```
+   ```bash
+    users
+   ```
 
-`Documents`: An array of one or more documents to insert into the named collection. The input is expected in a JSON/BSON Array format like the following :
+* **Documents**: This field specifies the document or documents you want to insert into the collection. A document is a set of key-value pairs that represents an object in MongoDB. The input is expected in a JSON/BSON Array format like the following :
 
-```
-[ { _id: 1, user: "abc123", status: "A" } ]
-```
+   ```bash
+    [ { _id: 1, user: "abc123", status: "A" } ]
+   ```
 
-### 3. Update Document(s)
+### Update Documents
 
-This command modifies multiple documents in a collection. The following fields are supported in Appsmith for this command :
+The Update command in MongoDB is used to modify existing documents in a collection based on a specified set of criteria, such as search conditions or filters. The following fields are supported in Appsmith for this command :
 
-`Collection Name`: The collection against which to run the command. The input is expected in a string format like the following :
+* **Collection Name**: This field specifies the name of the MongoDB collection where you want to update documents. 
+* **Query**: This field specifies the search criteria or filters for the documents you want to update. The input is expected in JSON/BSON format like the following :
 
-```
-people
-```
+  ```bash
+  { name: "Andy" }
+  ```
 
-`Query`: The query that matches documents to update. The input is expected in JSON/BSON format like the following :
+* **Update**:  This field specifies the modifications you want to make to the selected documents. The input is expected in JSON/BSON format like the following :
 
-```
-{ name: "Andy" }
-```
+  ```bash
+  { $inc: { score: 1 } }
+  ```
 
-`Update`: The modifications are to apply. The input is expected in JSON/BSON format like the following :
-
-```
-{ $inc: { score: 1 } }
-```
-
-`Limit`: the dropdown can be used to specify whether the command should apply to a single document or to all documents that match the query.
-
+* **Limit**: This field specifies the maximum number of documents to update. 
 
 MongoDB's multi update feature doesn't support replacement style updates. This means that you can't replace the entire document, but rather, you can only update a single field.
 
 To successfully run a multi update command in MongoDB, you can use the following syntax:
 
-```js
+```bash
    { $set: { <field1>: <value1>, <field2>: <value2>, ... } }
 ```
 
@@ -236,154 +235,162 @@ It's important to note that the ```$set``` operator is required in the update do
 
 
 
-### 4. Delete Document(s)
+### Delete Documents
 
-This command removes documents from a collection. The following fields are supported in Appsmith for this command :
+Delete Documents command removes one or more documents from a collection based on a specified set of criteria. 
 
-`Collection Name`: The target collection against which to run the command. The input is expected in a string format like the following :
+* **Collection Name**:  This field specifies the name of the MongoDB collection from which you want to delete documents. 
 
-```
-orders
-```
 
-`Query`: The query that matches document(s) to delete. The input is expected in JSON/BSON format like the following :
+* **Query**: This field specifies the criteria or filters for selecting documents to delete. The input is expected in JSON/BSON format like the following :
 
-```
-{ status: "D" }
-```
+   ```bash
+   { status: "D" }
+   ```
 
-`Limit`: The dropdown is used to configure if this delete command should act upon a single document or if this command should delete all the matching documents according to the query.
+* **Limit**: This field lets you choose whether to delete a single document or multiple documents that match the query.
 
-### 5. Count
+### Count
 
-This command counts the number of documents in a collection or a view. Returns a document that contains this count. The following fields are supported in Appsmith for this command :
+This command counts the number of documents in a collection or a view that match a specified set of criteria. 
 
-`Collection Name`: The name of the collection or view to count. The input is expected in a string format like the following :
+* **Collection Name**:  This field specifies the name of the MongoDB collection or view that you want to count documents in. 
 
-```
-orders
-```
 
-`Query`: A query that selects which documents to count in the collection or view. The input is expected in JSON/BSON format like the following :
+* **Query**: This field specifies the criteria or filters for selecting the documents to count. The input is expected in JSON/BSON format like the following :
 
-```
-{ ord_dt: { $gt: new Date('01/01/2021') }
-```
+   ```bash
+   { ord_dt: { $gt: new Date('01/01/2021') }
+   ```
 
-### 6. Distinct
 
-This command finds the distinct values for a specified field across a single collection. The following fields are supported in Appsmith for this command :
 
-`Collection Name`: The name of the collection to query for distinct values. The input is expected in a string format like the following :
+### Distinct
 
-```
-inventory
-```
+Distinct command is used to find the unique or distinct values for a specified field in a single collection.
 
-`Query`: A query specifies documents from which to retrieve the distinct values. The input is expected in JSON/BSON format like the following :
 
-```
-{ dept: "A"} }
-```
+* **Collection Name**: The name of the collection to query for distinct values.
 
-`Key/Field`: The field for which to return distinct values. The input is expected in a string format like the following :
 
-```
-item.sku
-```
+* **Query**: A query specifies documents from which to retrieve the distinct values. The input is expected in JSON/BSON format like the following :
 
-### 7. Aggregate
+   ```bash
+   { dept: "A"} }
+   ```
 
-This command performs aggregation operations using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. The following fields are supported in Appsmith for this command :
+* **Key/Field**: The field for which to return distinct values
 
-`Collection Name`: The name of the collection or view that acts as the input for the aggregation pipeline. The input is expected in a string format like the following :
+    ```bash
+    item.sku
+    ```
 
-```
-articles
-```
+### Aggregate
 
-`Array of Pipelines`: An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. The input is expected in JSON/BSON array format like the following :
+This command performs aggregation operations using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. 
 
-```
-[
-      { $project: { tags: 1 } },
-      { $unwind: "$tags" },
-      { $group: { _id: "$tags", count: { $sum : 1 } } }
-]
-```
+* **Collection Name**: The name of the collection or view that serves as the input for the aggregation pipeline. The input is expected in a string format like the following :
+
+* **Array of Pipelines**: An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. The input is expected in JSON/BSON array format like the following :
+
+    ```bash
+    [
+       { $project: { tags: 1 } },
+       { $unwind: "$tags" },
+       { $group: { _id: "$tags", count: { $sum : 1 } } }
+   ]
+    ```
 
 The above example performs an aggregate operation on the articles collection to calculate the count of each distinct element in the tags array that appears in the collection.
 
-## Querying Mongo (Advanced)
+### Raw
 
-You can use a `Raw` command to write your custom Mongo queries.
+The Raw command allows you to write custom queries using the MongoDB database command syntax. 
+
 
 :::info
 The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/).
 :::
 
-To add a Raw query, set your query parameters as below:
 
-* **Commands** - Select Command as **Raw.**
-* **Query palette -** Add the Raw query to it.&#x20;
-* Click **Run** to test your query.
+#### Basic raw query
 
-![How to create a Raw Query?](</img/Datasources__MongoDB__Add_a_Raw_Query.png>)
+```bash
+{
+   "find":"users",
+   "filter":{
+      "name":"John"
+   }
+}
+```
+This query will return all documents from the `user` collection where the `name` field matches `John`.
 
-:::info
-All mongo queries return an **array of objects** where each object is a **mongo document**, and the object's properties are the document's keys.
-:::
+#### Aggregation pipeline query
 
 The [pipeline](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) is an array that contains the aggregation stages that process the documents. In your Raw query, you'll have to include the filter criteria in a pipeline keyword when using aggregation. For example, you wish to fetch data from movies where the revenue is 42600000. You'll use `$match` that checks for documents where the `revenue` is  `42600000`. You added the below query:
 
-```
+
+```bash
 {
-   "aggregate":"movies",
-   "$lookup":[
+   "aggregate":"orders",
+   "pipeline":[
       {
          "$match":{
-            "revenue":42600000
+            "status":"paid"
          }
       }
    ],
    "cursor":{
-      "batchSize":10
+      "batchSize":50
    }
 }
 
 ```
+This query uses the $match stage in the aggregation pipeline to filter documents in the "orders" collection where the "status" field matches "paid". It also specifies a cursor with a batch size of 50 documents.
+
+#### Raw Command with Lookup
+
+```bash
+{
+   "aggregate":"orders",
+   "pipeline":[
+      {
+         "$lookup":{
+            "from":"customers",
+            "localField":"customer_id",
+            "foreignField":"_id",
+            "as":"customer"
+         }
+      },
+      {
+         "$unwind":"$customer"
+      },
+      {
+         "$match":{
+            "customer.status":"active"
+         }
+      }
+   ],
+   "cursor":{
+      "batchSize":100
+   }
+}
+```
+This query uses the $lookup stage in the aggregation pipeline to join documents in the "orders" collection with documents in the "customers" collection based on the "customer_id" field. 
 
 :::info
 By default, Mongo returns only **101 records** due to its default [batchSize](https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/). You can update the limit and batchSize by adding values to your query.
 :::
 
-* Click the `Run` button to execute the query.
+When running a Raw query, the filter criteria must be included in the pipeline array for aggregation. If the pipeline option is not specified or isn't an array, the query will fail and generate the error message `Pipeline option must be specified as an array`.
 
-The queries will fail to execute and throw an exception `Pipeline option must be specified as an array.`&#x20;
 
-![The error generated when the pipeline keyword  is not added](</img/Datasources__MongoDB__Pipeline_Keyword_not_supplied__Error_Generated.png>)
+<figure>
+  <img src="/img/Datasources__MongoDB__Pipeline_Keyword_not_supplied__Error_Generated.png" style= {{width:"700px", height:"auto"}} alt="Configure PostgreSQL Datasource"/>
+  <figcaption align = "center"><i>The error generated when the pipeline keyword  is not added</i></figcaption>
+</figure>
 
-* For Raw queries, you'll have to add the filter criteria to the **`pipeline`** keyword as below:
 
-```
-{
-   "aggregate":"movies",
-   "pipeline":[
-      {
-         "$match":{
-            "revenue":42600000
-         }
-      }
-   ],
-   "cursor":{
-      "batchSize":10
-   }
-}
-```
-
-* Click the `Run` button to execute the query.
-
-![A raw query response](</img/Datasources__MongoDB__Pipeline_Keyword_added__Response_Generated_Successfully.png>)
 
 ## Template Queries
 
