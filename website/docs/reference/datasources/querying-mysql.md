@@ -5,13 +5,13 @@ sidebar_position: 12
 
 This page describes how to connect your application to a MySQL database and use it to execute queries.
 
-:::tip
-Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
-:::
-
 ## Connect to MySQL database
 
 To add a MySQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select MySQL button. Your datasource is created and you are taken to a screen to configure its settings.
+
+:::tip
+Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
+:::
 
 ### Configuration
 
@@ -35,7 +35,7 @@ To connect to your database, Appsmith needs the following parameters. All requir
 
 * **Authentication:** Provide the username and password for the user with which you are connecting to the database.
 
-* **SSL:** Choose one of the following modes to set whether your queries will use SSL to connect:
+* **SSL:** Choose one of the following modes to set whether your queries use SSL to connect:
 
    * **Default**: SSL is used if the server supports it.
    * **Required**: The Require SSL Mode rejects the connection if SSL isn't available.
@@ -49,15 +49,19 @@ To connect to your database, Appsmith needs the following parameters. All requir
 If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
-### SQL modes
+## SQL modes
 
-```SQL_MODE``` is a system variable in MySQL that controls the behavior of the MySQL server. It can be used to configure the server's strictness when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases.
+```SQL_MODE``` is a system variable in MySQL that can:
 
-[Strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
+* Configure the server's strictness when accepting input data,
+* Enable or disable standard SQL conformance, or
+* Provide better compatibility with other databases.
+
+In particular, [strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
 
 Using SQL modes is recommended to ensure that your queries conform to standard SQL behavior. With SQL modes, your queries can run more consistently across different MySQL versions and configurations.
 
-## Setting SQL modes
+### Setting SQL modes
 
 To change the SQL mode at runtime, you can use a **SET** statement in a query to set the `GLOBAL` or `SESSION` ```sql_mode``` variable:
 
@@ -75,23 +79,28 @@ You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-
 
 MySQL databases are queried using standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html). All MySQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
-### Select record
+:::tip
+Consider [using prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#why-should-you-use-prepared-statements) to improve the security of the queries in your app by preventing SQL-injection attacks.
+:::
 
-If you want to retrieve data from a table `users`, you can write the following **SELECT** query (called `Query1` in this example):
+### Select
+
+Use a `SELECT` statement to retrieve data from a table. For example, to fetch records from a table `users`:
 
 ```sql
 SELECT * FROM users ORDER BY id LIMIT 10;
 ```
 
-It is highly recommended to use the `LIMIT` operator like the example to prevent querying huge amounts of data at once. You can also read about how to [paginate your data](/reference/widgets/table#server-side-pagination).
+It's highly recommended to use the `LIMIT` operator like the example to prevent querying huge amounts of data at once. You can also read about how to [paginate your data](/reference/widgets/table#server-side-pagination).
 
 After fetching your data, you can display it in a Table widget by [binding](/reference/widgets/table#display-data-in-tables) it to the **Table Data** property as shown below.
 
 ```js
-{{ Query1.data }}
+// in the Table Data field of a table widget
+{{ <query_name>.data }}
 ```
 
-### Insert record
+### Insert
 
 Use an `INSERT` statement to add rows to a database table. 
 
@@ -111,7 +120,7 @@ VALUES
 
 Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your table.
 
-### Update record
+### Update
 
 Use `UPDATE` statements to change the values of existing records in your database. For example, if you want to change the `email` value of a record in the `users` table, you can add a button column to your Table widget and label it "Update." 
 
@@ -126,14 +135,14 @@ UPDATE users
 
 Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your table.
 
-### Delete record
+### Delete
 
 Use a `DELETE` statement to delete a record from your database.
 
 For example, to delete an existing row from your table widget, add a button column to your Table widget and label it "Delete." Set that button's **onClick** event to run a `DELETE` query like the one below:
 
 ```sql
-DELETE FROM users WHERE id = {{Table1.selectedRow.id}};
+DELETE FROM users WHERE id = {{ Table1.selectedRow.id }};
 ```
 
 When the user clicks the button, the record is deleted from the database table.
