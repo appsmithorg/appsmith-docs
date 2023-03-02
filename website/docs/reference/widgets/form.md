@@ -4,39 +4,56 @@ This page describes how to use the Form widget as a container for other widgets 
 
 <VideoEmbed host="youtube" videoId="UgpQ0ZOnzdg" title="How to use Form Widget" caption="How to use Form Widget"/>
 
-## Add widgets to forms
+## Form components
 
-Any widget can be added to the body of a form by dragging that widget within the form's boundaries. This helps keep your inputs logically organized in the form's space and also under the form's name:
+Form widgets are used as containers to group and handle related user inputs.
 
-If a widget that collects user input is added to the form, you can access that widget's data with `{{ <form_name>.data }}`. For example, if you add an [Input widget](/reference/widgets/input) called "CompanyInput" and write "Appsmith" in it, a new key appears on the `data` property:
+When you add a Form widget to the canvas, it automatically includes a [Text widget](/reference/widgets/text) as a title and two [Button widgets](/reference/widgets/button) that **Submit** and **Reset** the form fields.
+
+To build your Form, drag other input-collecting widgets (like the [Input](/reference/widgets/input) or [Select](/reference/widgets/select) widgets, for example) into the form's boundaries. 
+
+## Form validation
+
+The **Disabled Invalid Forms** property helps prevent submitting invalid data in your queries.
+
+Several input-collecting widgets have properties that check entries for correctness (like the [Input widget's](/reference/widgets/input) **Valid** property). While **Disabled Invalid Forms** is turned on, the **Submit** [Button widget](/reference/widgets/button) in the form is automatically disabled if any fields contain incorrect data.
+
+Using this property guarantees that all user input meets the criteria you have defined in the form fields, and that all **Required** fields are completed.
+
+## Clear form fields
+
+The **Reset Form on Success** property is useful for resetting all form fields back to default values with one click. When this is turned on, the Form is automatically reset any time the button completes its action successfully. For example, a button set to submit the form data clears the fields if the query is successful. Otherwise, if there is an error, the Form won't be reset.
+
+The Form's **Reset** button can be used anytime; it's configured for "No Action," and thus always completes successfully.
+
+## Submit form data
+
+Once you've populated your Form widget with input fields, you are ready to use their values within your query.
+
+For any input-gathering widget in your Form, you can access that widget's current value with `{{ <form_name>.data.<widget_name> }}`. For example, if you add a [Select widget](/reference/widgets/select) called "OrderStatus," a new key appears on the Form's `data` property:
 
 ```javascript
 // Form1.data
 {
 	"Text": "Form1",
-	"CompanyInput": "Appsmith"
+	"OrderStatus": "SHIPPED"
 }
 ```
 
-Note that all widgets on the page, including those in forms, must still have unique names.
+On the query screen, use mustache syntax `{{ }}` to access the widget values you need. For example, a SQL query using the "OrderStatus" Select widget looks like:
 
-## Special button behavior
+```sql
+SELECT * FROM orders WHERE orderStatus = {{ Form1.data.OrderStatus }} LIMIT 10;
+```
 
-Button widgets have two properties that are useful when they're located within forms: [**Disabled Invalid Forms**](#prevent-invalid-submissions) and [**Reset Form on Success**](#clear-form-fields).
+Call your query from the Form's **Submit** button in its **onClick** field using code or the properties GUI:
 
-### Prevent invalid submissions
+```javascript
+// Submit button's onClick
+{{ Query1.run() }}
+```
 
-The **Disabled Invalid Forms** property helps keep bad data out of your queries.
-
-Several input-collecting widgets have properties that check entries for correctness (like the [Input widget's](/reference/widgets/input) **Valid** property). While **Disabled Invalid Forms** is turned on, the "Submit" [Button widget](/reference/widgets/button) in the form is automatically disabled if any fields contain incorrect data.
-
-Using this property guarantees that all user input meets the criteria you have defined in the form fields, and that all **Required** fields are completed.
-
-### Clear form fields
-
-The **Reset Form on Success** property is useful for resetting all form fields back to default values with one click. When this is turned on, the form is automatically reset any time the button completes its action successfully. For example, a button set to submit the form data clears the fields if the query is successful. Otherwise, on error, the form won't be reset.
-
-The form's "Reset" button can be used anytime; it's configured for "No Action," and thus always completes successfully.
+You can also run multiple actions sequentially depending on whether the query succeeds or fails. Read more about this in [complex workflows](/core-concepts/writing-code/workflows#complex-workflows).
 
 ## Properties
 
@@ -63,17 +80,23 @@ Reference properties are used to access the widget's data and state using code. 
 
 ### Style properties
 
-Style properties allow you to change the look and feel of the form. These properties are present in the properties pane of the widget.
+Style properties allow you to change the look and feel of the Form. These properties are present in the properties pane of the widget.
 
 | **Property**         | **Description**  |
 | -------------------- | -----------------|
 | **Background Color** | Sets the background color of the widget. Accepts any valid CSS color values.  |
 | **Border Color**     | Sets a color for the form's border. Accepts any valid CSS color values. |
 | **Border Width**     | Defines the thickness of the border.  |
-| **Border Radius**    | Sets the rounded-ness of the form's corners. Use a higher number for a profound curve. |
-| **Box Shadow**       | Sets the shadow style of the form.  | 
+| **Border Radius**    | Sets the rounded-ness of the Form's corners. Use a higher number for a profound curve. |
+| **Box Shadow**       | Sets the shadow style of the Form.  | 
+
+## Events
+
+The Form widget doesn't have any event handlers of its own, however there are several events you may want to handle when using Forms. You can find these events on the individual widgets inside the Form, such as the [Button's **onClick**](/reference/widgets/button#events) or the [Input's **onTextChanged**](/reference/widgets/input#events).
+
 
 ## Further reading
 
 - [Queries](/core-concepts/data-access-and-binding/querying-a-database)
 - [Widgets](/reference/widgets)
+- [Writing code](/core-concepts/writing-code)
