@@ -51,8 +51,8 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
       }
 ```
     
-6. **Provision an external MongoDB v5.0 instance** - Generate the MongoDB URI and ensure the credential used has the ClusterMonitor Role attached.
-
+6. **Provision an external DB v5.0 instance** - Obtain the MongoDB URI which includes the user crdentials for data access.
+[Ref: Custom MongoDB](getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)
 :::danger
 Please don't run the built-in embedded MongoDB with the EFS, as it could cause the Appsmith instance to crash.
 :::
@@ -149,7 +149,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 4. Configure the network:
     1. Select the VPC and the subnets.
-    2. Update the security group to add the security group created in the prerequisite step.
+    2. Update the security group to add the security group created in the prerequisite step, along with the security group with NFS access.
     3. Load Balancing:
        1. Select Application Load Balancer.
        2. Select the ALB created in the prerequisite step.
