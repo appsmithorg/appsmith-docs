@@ -3,91 +3,149 @@ sidebar_position: 12
 ---
 # MySQL
 
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
-:::
-
-## **Supported versions**
-
-Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
-
-## Connection settings
-
-Appsmith needs the following parameters for connecting to a MySQL database:
+This page describes how to connect your application to a MySQL database and use it to execute queries.
 
 :::tip
-All required fields are suffixed with an asterisk (\*).
+Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 :::
 
-### **Connection**
+## Connect to MySQL database
 
-You need to fill in the following parameters:
+To add a MySQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select MySQL button. Your datasource is created and you are taken to a screen to configure its settings.
 
-* **Connection Mode\*:** You must choose one of the following two modes:
-  * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
-  * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Host Address / port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith may to connect to port 3306.
-* **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
+### Configuration
 
-### Authentication
+<figure>
+  <img src="/img/mysql-datasource-config.png" style= {{width:"700px", height:"auto"}} alt="MySQL Datasource configuration page"/>
+  <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
+</figure>
 
-You need to fill in the following parameters:
+To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (\*).
 
-* **Username\*:** Fill username required for authenticating connection requests to your database.
-* **Password\*:** Fill password required for authenticating connection requests for the given username to the database.
+* **Connection Mode\*:** Choose which permissions to grant to Appsmith when establishing a connection to the database. The two available modes are:
 
-### SSL
+   * **Read Only:** This mode gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records so that you don't make accidental changes to your data.
+   * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.
 
-The SSL Mode can be set to one of the following values:
+* **Host Address\*:** Provide the hostname or IP address of your database server. If you are on a self-hosted instance and connecting to a database on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container.
 
-* **`Default`**: Same as `Preferred`.
-* **`Preferred`**: Use SSL, if the server _supports_ it.
-* **`Required`**: Reject connection, if SSL isn't available.
-* **`Disabled`**: Connect without SSL, use a plain unencrypted connection.
+* **Port\*:** Provide the port on which to connect to your database. Appsmith tries to connect to port `5432` by default.
 
-More information available at [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option\_general\_ssl-mode).
+* **Database Name:** Provide the name of your database.
 
-## Querying MySQL
+* **Authentication:** Provide the username and password for the user with which you are connecting to the database.
 
-MySQL databases can be queried using the standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/). All MySQL queries return an array of objects where each object is a row returned by the query and each property in the object is a column.
+* **SSL:** Choose one of the following modes to set whether your queries will use SSL to connect:
 
-![](/img/postgres.gif)
+   * **Default**: SSL is used if the server supports it.
+   * **Required**: The Require SSL Mode rejects the connection if SSL isn't available.
+   * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
 
+  For more information, see the MySQL docs for [using encrypted connections](https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html).
 
+* **Server Timezone Override:** Provide a valid timezone to use for your queries. Use this option to solve errors when Appsmith doesn't recognize your MySQL server's timezone.
+
+:::tip
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+:::
 
 ### SQL modes
 
-```SQL_MODE``` is a system variable in MySQL that controls the behavior of the MySQL server. It can be used to configure the server to be strict or forgiving when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases. [Strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
+```SQL_MODE``` is a system variable in MySQL that controls the behavior of the MySQL server. It can be used to configure the server's strictness when accepting input data, enable or disable standard SQL conformance, or provide better compatibility with other databases.
 
-#### Setting SQL modes
+[Strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data. 
 
-To change the SQL mode at runtime, you can use a **SET** statement to set the `GLOBAL` or `SESSION` ```sql_mode``` system variable:
+Using SQL modes is recommended to ensure that your queries conform to standard SQL behavior. With SQL modes, your queries can run more consistently across different MySQL versions and configurations.
+
+## Setting SQL modes
+
+To change the SQL mode at runtime, you can use a **SET** statement in a query to set the `GLOBAL` or `SESSION` ```sql_mode``` variable:
 
 ```js
 SET GLOBAL sql_mode = 'mode1,mode2,...';
 SET SESSION sql_mode = 'mode1,mode2,...';
 ```
-where **mode1**, **mode2**, etc. are the specific SQL modes that you want to enable or disable. To switch to strict mode, it's recommended to use the TRADITIONAL mode by setting ```SET sql_mode = TRADITIONAL```.
+where **mode1** and **mode2** are the specific SQL modes that you want to enable or disable. To switch to strict mode, it's recommended to use the TRADITIONAL mode by setting ```SET sql_mode = TRADITIONAL```.
 
-* To check whether strict mode is enabled or not run:
-```SHOW VARIABLES LIKE 'sql_mode';```
+You can check the SQL documentation to learn more about [SQL modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
 
-* To disable strict mode run:
-```set global sql_mode='';```
+## Example queries
 
-Using SQL modes is recommended to ensure that your queries conform to standard SQL behavior. With SQL modes, your queries can run more consistently across different MySQL versions and configurations. You can check the SQL documentation to learn more about [SQL modes.](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html)
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to Queries/JS in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL.
 
-## Using prepared statement (beta)
+MySQL databases are queried using standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html). All MySQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
-Normal query execution simply string concatenates the evaluated values of the javascript bindings to produce the final query. This opens up the possibility of SQL injection by merging suspicious user input with trusted data for execution. Using a prepared Statement is one strategy for mitigating this risk.
+### Select record
 
-Appsmith converts the user query into a parameterized one by replacing the bindings in the query with '?'. The payload is then inserted one by one ensuring that the bindings get escaped and sanitized before the query is sent to the database for execution.
+If you want to retrieve data from a table `users`, you can write the following **SELECT** query (called `Query1` in this example):
 
-Follow the guide on [how to use prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for efficient and secured data transactions.
+```sql
+SELECT * FROM users ORDER BY id LIMIT 10;
+```
 
-## Using queries in applications
+It is highly recommended to use the `LIMIT` operator like the example to prevent querying huge amounts of data at once. You can also read about how to [paginate your data](/reference/widgets/table#server-side-pagination).
 
-Once you have successfully run a Query, you can use it in your application to
+After fetching your data, you can display it in a Table widget by [binding](/reference/widgets/table#display-data-in-tables) it to the **Table Data** property as shown below.
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+```js
+{{ Query1.data }}
+```
+
+### Insert record
+
+Use an `INSERT` statement to add rows to a database table. 
+
+For example, imagine you have a table called users with columns for `name`, `email`, and `phone`. You can add [Input widgets](/reference/widgets/input) and a [Select widget](/reference/widgets/select) on the canvas, and pull their values into your query like below:
+
+```sql
+INSERT INTO users
+  (name, gender, email)
+VALUES
+  (
+    {{ nameInput.text }},
+    {{ genderDropdown.selectedOptionValue }},
+    {{ emailInput.text }}
+  );
+
+```
+
+Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your table.
+
+### Update record
+
+Use `UPDATE` statements to change the values of existing records in your database. For example, if you want to change the `email` value of a record in the `users` table, you can add a button column to your Table widget and label it "Update." 
+
+Set the **onClick** event of the button to execute an `UPDATE` query, and configure your query like below to replace the `email` value with the text of an Input widget filled out by your user.
+
+
+```sql
+UPDATE users
+  SET email = '{{emailInput.text}}'
+  WHERE id = {{ Table1.selectedRow.id}};
+```
+
+Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your table.
+
+### Delete record
+
+Use a `DELETE` statement to delete a record from your database.
+
+For example, to delete an existing row from your table widget, add a button column to your Table widget and label it "Delete." Set that button's **onClick** event to run a `DELETE` query like the one below:
+
+```sql
+DELETE FROM users WHERE id = {{Table1.selectedRow.id}};
+```
+
+When the user clicks the button, the record is deleted from the database table.
+
+For potentially destructive queries, consider enabling the "Request confirmation before running query" setting in your [query's settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
+
+## Troubleshooting
+
+If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](https://chat.openai.com/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
+
+## Further reading
+
+* [Table widget](/reference/widgets/table)
+* [Form widget](/reference/widgets/form)
+* [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings)
