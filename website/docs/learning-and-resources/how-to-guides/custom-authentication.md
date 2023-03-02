@@ -93,7 +93,7 @@ The `jwt` value that you saved in the Appsmith store is used to prove to your ap
 For now, it's time to configure your **MainPage** to allow access to logged-in users and redirect unauthorized ones.
 
 1. On **MainPage**, place the content of your application into a [Tabs widget](/reference/widgets/tabs). It should have at least two tabs: one for your secure content (called "**authorized**"), and one to be used as a redirect for unauthorized users ("**unauthorized**").
-2. In the Tabs widget's **Default Tabs** property, write code to run a query that requires the user to be authenticated. If it's successful, the user may see the "authorized" tab; on error, the user should see the "unauthorized" tab.
+2. In the Tabs widget's **Default Tabs** property, write code to run a query that requires the user to be authenticated. If it's successful, the user can see the "authorized" tab; on error, the user should see the "unauthorized" tab.
   ```javascript
   {{
     SecureQuery.data.status == "200 OK"? "authorized": "unauthorized"
