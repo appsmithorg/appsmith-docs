@@ -19,16 +19,20 @@ To add a MongoDB datasource, navigate to **Explorer** >> click the (**+**) sign 
 ### Configure datasource
 To connect to a MongoDB database, you must configure the following parameters. 
 
-![Configure MongoDB datasource](/img/mongo-1.png)
+
+<figure>
+  <img src="/img/mongodb-datasource-1.png" style= {{width:"700px", height:"auto"}} alt="Configure PostgreSQL Datasource"/>
+  <figcaption align = "center"><i>Configure MongoDB datasource</i></figcaption>
+</figure>
 
 * **Connection String URI:** It's a string that contains all the necessary information for an application to connect to a database. If you have an SRV URI, please follow [these steps](#connection-string-uri) to connect to your MongoDB instance.
 
 * **Connection Mode:** This refers to the permission granted to Appsmith when establishing a connection to the database. The two available modes are:
 
-   * **Read Only:** This mode grants read-only access to the database, restricting any modifications to fetching data only.
-   * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. 
+   * **Read Only:** This mode grants read-only access to the database.
+   * **Read / Write:** This mode grants Appsmith both read and write permissions on the database. 
 
-* **Connection Type:** This refers to the method used to establish a connection between a client and a database. You are required to select any one of the available connection types:
+* **Connection Type:** This refers to the method used to establish a connection between a client and a database. You must choose one of the available connection types:
 
   * **Direct Connection**: This connection type enables you to connect directly to a MongoDB instance.
   * **Replicate Set**: This connection type enables you to connect to a set of MongoDB instances.
@@ -41,8 +45,7 @@ To connect to a MongoDB database, you must configure the following parameters.
 * **Default** **Database Name:** This refers to the name of the database on your Mongo server that you want to connect to.
 
 * **Authentication:** To establish a connection with the database, provide the necessary authentication parameters.
-authentication DB is the one that keeps username password info and the other DB is the one that you want to read / write data to.
-  * **Database Name:** MongoDB's authentication DB stores user authentication data like usernames and passwords. Enter the name of the database that you want to authenticate against.
+  * **Database Name:** MongoDB's authentication DB stores user authentication data like usernames and passwords. Enter the name of the authentication DB.
   * **Authentication Type:** Choose the authentication mechanism that you want to use to connect to your database. You can select from [`SCRAM-SHA-1`](https://www.mongodb.com/docs/manual/core/security-scram/), `SCRAM-SHA-256`, or [`MONGO-CR`](https://mongoing.com/docs/core/security-mongodb-cr.html). 
   * **Username:** Provide the username required for authenticating connection requests to your database. Leave this field blank if you don't wish to specify a username for authentication.(note that your database must accept such connections).
   * **Password:** Provide the password required for authenticating connection requests for the given username to the database. If you don't want to log in with a password, leave this field empty (note that your database must accept such connections).
@@ -59,9 +62,9 @@ For more information, see [Configure SSL](https://www.mongodb.com/docs/manual/tu
 
 ### Connection String URI
 
-Connecting to a MongoDB cluster using an SRV URI is a method that enables you to establish a connection without having to manually specify the host and port of each server.
+Using an SRV URI as a connection string for connecting to a MongoDB cluster allows you to establish a connection without the need to manually specify details
 
-A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can create a MongoDB datasource on Appsmith using SRV URI Formats - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
+A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can connect to a MongoDB datasource on Appsmith using SRV URI Formats - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
 
 
 
@@ -70,7 +73,7 @@ A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the 
 
 A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:
 
-```mongodb
+```bsh
 mongodb://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
 ```
 
@@ -101,15 +104,16 @@ mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true
 
   </TabItem>
   <TabItem value="dns" label="Domain name service seed list format">
-MongoDB also supports a Domain Name Service (DNS) Seed list for connecting with the standard format. To use the DNS seed list format, you’ll have to prefix the connection string with `mongodb+srv://`. The `+srv` indicates that the hostname corresponds to the DNS SRV. The DNS seed list format is represented as below:
+    
+The DNS seed list format is another way of connecting to MongoDB, which is supported by the Appsmith. It involves using a standard format for Domain Name Service (DNS) seed lists, which requires the connection string to be prefixed with `mongodb+srv://`. The `+srv` prefix is used to indicate that the hostname is associated with the DNS SRV. Here's an example of how the DNS seed list format is represented:
 
-```mongodb
+```bash
 mongodb+srv://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
 ```
 
 You can map the fields as below:
 
-* `mongodb+srv://` - a prefix to identify that it’s a DNS Seed List format.
+* **`mongodb+srv://`** - a prefix to identify that it’s a DNS Seed List format.
 
 * Like [Standard format](#connect-using-srv-uri), you can add `username`, `password`, `host`, `port`, `default database,` and `authSource`.
 
@@ -137,21 +141,19 @@ mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSou
 ## Create queries
 
 
-You can write queries to fetch or write data to the MongoDB database by selecting the **+** New Query button available on datasource page under **Explorer** >> **Datasources** or by navigating to Explorer >> click (**+**) next to Queries/JS >> select your MongoDB database. 
+You can write queries to fetch or write data to the MongoDB database by selecting the **+ New Query** button available on datasource page under **Explorer** >> **Datasources** or by navigating to Explorer >> click (**+**) next to **Queries/JS** >> select your MongoDB database. 
 
 
 ### Find Documents
 
-The "Find documents" is a query method in MongoDB used to retrieve documents from a MongoDB database collection. The method allows you to specify a set of criteria, such as search conditions or filters, to find documents that match the criteria.
+"Find documents" is a query method that retrieves documents from a collection within a database. The method allows you to specify a set of criteria, such as search conditions or filters, to find documents that match the criteria. You can pass the below parameters to Find Documents:
 
-The following fields are supported in Appsmith for this command :
-
-* **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. Learn more about [collections](https://www.mongodb.com/docs/manual/core/databases-and-collections/).
+* **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. For example, to find documents from a collection named `restaurants`, you can specify:
 
     ```sql
     restaurants
     ```
-* **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. The input is expected in JSON/BSON format like the following :
+* **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. For example, to retrieve all Italian restaurants with a rating greater than or equal to 9, you can specify:
 
      ```sql
     {
@@ -160,21 +162,22 @@ The following fields are supported in Appsmith for this command :
     } 
      ```
 
-* **Sort**: This field specifies the order in which the documents should be returned, based on one or more fields.
+* **Sort**: This field specifies the order in which the documents should be returned, based on one or more fields. For example, to sort the results by the `name` field in ascending order, you can specify:
 
      ```sql
      { name: 1 }
      ```
-* **Projection**: This field specifies which fields to include or exclude from the query result. You can use this to limit the amount of data returned by the query.
+* **Projection**: This field specifies which fields to include or exclude from the query result. You can use this to limit the amount of data returned by the query. For example, to include only the `name`, `rating`, and `address` fields, you can specify:
+
    ```sql
    { name: 1, rating: 1, address: 1 }
    ```
 
-* **Limit**: This field specifies the maximum number of documents to return from the query result. If this method isn't specified, it defaults to returning 10 documents.
+* **Limit**: This field specifies the maximum number of documents to return from the query result. If this method isn't specified, it defaults to returning 10 documents. For example, to limit the results to 5 documents, you can specify:
    ```sql
    10
    ```
-* **Skip**:  This field specifies the number of documents to skip before returning results. 
+* **Skip**:  This field specifies the number of documents to skip before returning results. For example, to skip the first 5 documents and return the rest, you would specify:
 
    ```sql
    0
@@ -289,7 +292,7 @@ Distinct command is used to find the unique or distinct values for a specified f
 
 This command performs aggregation operations using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. 
 
-* **Collection Name**: The name of the collection or view that serves as the input for the aggregation pipeline. The input is expected in a string format like the following :
+* **Collection Name**: The name of the collection or view that serves as the input for the aggregation pipeline. 
 
 * **Array of Pipelines**: An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. The input is expected in JSON/BSON array format like the following :
 
