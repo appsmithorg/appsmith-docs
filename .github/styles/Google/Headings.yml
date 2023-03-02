@@ -21,6 +21,7 @@ exceptions:
   - gRPC
   - Document
   - Documents
+  - Connection String URI
   - I
   - Kubernetes
   - Linux

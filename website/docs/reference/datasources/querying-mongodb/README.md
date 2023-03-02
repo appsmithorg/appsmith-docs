@@ -21,10 +21,11 @@ To connect to a MongoDB database, you must configure the following parameters.
 
 ![Configure MongoDB datasource](/img/mongo-1.png)
 
+* **Connection String URI:** It's a string that contains all the necessary information for an application to connect to a database. If you have an SRV URI, please follow [these steps](#connection-string-uri) to connect to your MongoDB instance.
 
 * **Connection Mode:** This refers to the permission granted to Appsmith when establishing a connection to the database. The two available modes are:
 
-   * **Read Only:** This mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
+   * **Read Only:** This mode grants read-only access to the database, restricting any modifications to fetching data only.
    * **Read / Write:** This mode gives Appsmith both read and write permissions on the database. 
 
 * **Connection Type:** This refers to the method used to establish a connection between a client and a database. You are required to select any one of the available connection types:
@@ -33,21 +34,17 @@ To connect to a MongoDB database, you must configure the following parameters.
   * **Replicate Set**: This connection type enables you to connect to a set of MongoDB instances.
 
 
-* **Host Address:** Provide the hostname or IP address. You can specify multiple host addresses for a replicate set. If you have an [SRV URI](https://docs.mongodb.com/manual/reference/connection-string/#dns-seed-list-connection-format), please follow [these](#connect-using-srv-uri) steps to connect to your MongoDB instance.
+* **Host Address:** Provide the hostname or IP address. You can specify multiple host addresses for a replicate set. 
 
 * **Port:** A port is a numerical identifier that helps establish a network connection. Appsmith tries to connect to port `27017` if you don't specify a port.
 
-:::note
-If you are on a self-hosted instance and connecting to a database on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container. 
-:::
-
-* **Default** **Database Name:** This refers to the name of the database on your mongo server. Fill in the name of the database you want to connect to. 
+* **Default** **Database Name:** This refers to the name of the database on your Mongo server that you want to connect to.
 
 * **Authentication:** To establish a connection with the database, provide the necessary authentication parameters.
-
-  * **Database Name:** Enter the name of the database that you want to authenticate against.
+authentication DB is the one that keeps username password info and the other DB is the one that we want to read / write data to.
+  * **Database Name:** MongoDB's authentication DB stores user authentication data like usernames and passwords. Enter the name of the database that you want to authenticate against.
   * **Authentication Type:** Choose the authentication mechanism that you want to use to connect to your database. You can select from [`SCRAM-SHA-1`](https://www.mongodb.com/docs/manual/core/security-scram/), `SCRAM-SHA-256`, or [`MONGO-CR`](https://mongoing.com/docs/core/security-mongodb-cr.html). 
-  * **Username:** Provide the username required for authenticating connection requests to your database. Leave this field blank if you don't wish to specify a username for authentication.
+  * **Username:** Provide the username required for authenticating connection requests to your database. Leave this field blank if you don't wish to specify a username for authentication.(note that your database must accept such connections).
   * **Password:** Provide the password required for authenticating connection requests for the given username to the database. If you don't want to log in with a password, leave this field empty (note that your database must accept such connections).
 
 * **SSL:** The connection uses the Default SSL mode. You can set it to one of the following modes:
@@ -56,8 +53,11 @@ If you are on a self-hosted instance and connecting to a database on `localhost`
    * **Enabled**: This option rejects the connection if SSL isn't available.
    * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
 
+For more information, see [Configure SSL](https://www.mongodb.com/docs/manual/tutorial/configure-ssl/).
 
-### Connect using SRV URI
+
+
+### Connection String URI
 
 Connecting to a MongoDB cluster using an SRV URI is a method that enables you to establish a connection without having to manually specify the host and port of each server.
 
@@ -390,22 +390,28 @@ When running a Raw query, the filter criteria must be included in the pipeline a
   <figcaption align = "center"><i>The error generated when the pipeline keyword  is not added</i></figcaption>
 </figure>
 
+## Server-side pagination 
 
+Server-side pagination in MongoDB limits the number of query results returned by the server and enables the client to fetch additional results as required.
+It involves the use of the `limit()` and `skip()` methods in conjunction with queries.
 
-## Template Queries
+For example, 
+```js
+Limit:
+{{Table_1.pageSize}}
 
-Appsmith provides template queries to help with the syntax.
+Skip:
+{{(Table_1.pageNo - 1) * Table_Mongo.pageSize}}
+```
+This example shows how to implement server-side pagination for a collection called "movies" in MongoDB. The limit() method sets the maximum number of documents to be returned in a single query result, while the skip() method specifies the number of documents to skip before starting to return results.
 
-* [Insert Query](mongo-syntax.md#insert-query)
-* [Find Query](mongo-syntax.md#find-query)
-* [Update Query](mongo-syntax.md#update-query)
-* [Delete Query](mongo-syntax.md#delete-query)
+You can refer to this [sample app](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd) to learn how to implement server-side pagination on the Table widget.
 
-![](/img/mongo.gif)
+## Troubleshooting
+If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](https://chat.openai.com/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
 
-## Using Queries in applications
+## Further reading
 
-Once you have successfully run a Query, you can use it in your application to
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database)
+* [Data access and binding](/core-concepts/data-access-and-binding)
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
