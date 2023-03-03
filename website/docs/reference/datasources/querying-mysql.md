@@ -16,7 +16,7 @@ Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 ### Configuration
 
 <figure>
-  <img src="/img/as-mysql-datasource-config.png" style= {{width:"700px", height:"auto"}} alt="MySQL Datasource configuration page"/>
+  <img src="/img/as-mysql-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="MySQL Datasource configuration page"/>
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
 </figure>
 
