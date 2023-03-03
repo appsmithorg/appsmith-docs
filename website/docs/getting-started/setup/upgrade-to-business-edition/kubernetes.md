@@ -4,7 +4,7 @@ description: Follow the guide to upgrade the Appsmith Community Edition installa
 
 # Kubernetes
 
-The Appsmith Business Edition (BE) Helm chart installation includes support for Horizontal Pod Auto Scaling (HPA), which allows Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade from the Appsmith Community Edition (CE) to the Appsmith Business Edition (BE) installed on Kubernetes.
+The Appsmith Business Edition (BE) Helm chart installation supports Horizontal Pod Auto Scaling (HPA), allowing Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade the Kubernetes installation from Community Edition (CE) to Business Edition (BE).
 
 ## Generate license key
 
