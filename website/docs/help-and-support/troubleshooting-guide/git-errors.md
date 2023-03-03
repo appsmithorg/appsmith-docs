@@ -1,8 +1,8 @@
 ---
-sidebar_position: 9
+sidebar_position: 7
 ---
 
-# Troubleshooting
+# Git Errors
 
 <details>
   <summary>What if I deleted a remote branch?</summary>
