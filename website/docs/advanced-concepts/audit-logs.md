@@ -110,6 +110,7 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **application.updated** | Logged when a user edits an existing application. |
 | **application.deleted** | Logged when an application is deleted. |
 | **application.imported** | Logged when a new application is created via importing with Git or JSON. |
+| **application.exported** | Logged when an existing application is exported via Git or JSON. |
 | **application.cloned** | Logged when a new application is created via cloning. |
 | **application.forked** | Logged when an existing application is forked. |
 | **application.deployed** | Logged when a new version of an application is deployed/published. |
