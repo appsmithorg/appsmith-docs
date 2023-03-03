@@ -7,18 +7,22 @@ This page describes how to connect your application to a MySQL database and use 
 
 ## Connect to MySQL database
 
-To add a MySQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select MySQL button. Your datasource is created and you are taken to a screen to configure its settings.
+To add a MySQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select **MySQL** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-:::tip
+:::info
 Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 :::
 
 ### Configuration
 
 <figure>
-  <img src="/img/mysql-datasource-config.png" style= {{width:"700px", height:"auto"}} alt="MySQL Datasource configuration page"/>
+  <img src="/img/as-mysql-datasource-config.png" style= {{width:"700px", height:"auto"}} alt="MySQL Datasource configuration page"/>
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
 </figure>
+
+:::tip
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+:::
 
 To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (\*).
 
@@ -43,11 +47,8 @@ To connect to your database, Appsmith needs the following parameters. All requir
 
   For more information, see the MySQL docs for [using encrypted connections](https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html).
 
-* **Server Timezone Override:** Provide a valid timezone to use for your queries. Use this option to solve errors when Appsmith doesn't recognize your MySQL server's timezone.
+* **Server Timezone Override:** Provide a valid timezone (For example: "UTC") to use for your queries. Use this option if Appsmith doesn't automatically recognize the MySQL server's timezone.
 
-:::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
-:::
 
 ## SQL modes
 
@@ -61,6 +62,8 @@ In particular, [strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.ht
 
 Using SQL modes is recommended to ensure that your queries conform to standard SQL behavior. With SQL modes, your queries can run more consistently across different MySQL versions and configurations.
 
+You can check the MySQL documentation to learn more about [SQL modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
+
 ### Setting SQL modes
 
 To change the SQL mode at runtime, you can use a **SET** statement in a query to set the `GLOBAL` or `SESSION` ```sql_mode``` variable:
@@ -71,11 +74,9 @@ SET SESSION sql_mode = 'mode1,mode2,...';
 ```
 where **mode1** and **mode2** are the specific SQL modes that you want to enable or disable. To switch to strict mode, it's recommended to use the TRADITIONAL mode by setting ```SET sql_mode = TRADITIONAL```.
 
-You can check the SQL documentation to learn more about [SQL modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
+## Create queries
 
-## Example queries
-
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to Queries/JS in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL.
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL queries.
 
 MySQL databases are queried using standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html). All MySQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
@@ -147,14 +148,16 @@ DELETE FROM users WHERE id = {{ Table1.selectedRow.id }};
 
 When the user clicks the button, the record is deleted from the database table.
 
-For potentially destructive queries, consider enabling the "Request confirmation before running query" setting in your [query's settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
+To avoid deleting records by accident, consider enabling the "Request confirmation before running query" setting in your [query's settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
 
 ## Troubleshooting
 
-If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](https://chat.openai.com/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or the [MySQL Errors](/help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors) page for assistance.
+
+If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
 
 ## Further reading
 
 * [Table widget](/reference/widgets/table)
 * [Form widget](/reference/widgets/form)
-* [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings)
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
