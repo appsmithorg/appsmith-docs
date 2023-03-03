@@ -39,4 +39,3 @@ The flow is similar to how you work on Git -
 * [Merging Branches](merging-branches.md)
 * [Disconnect the Git repository](disconnect-the-git-repository.md)
 * [Update local file path](updating-local-file-path.md)
-* [Troubleshooting](troubleshooting.md)
