@@ -1,6 +1,6 @@
 # Form
 
-This page describes how to use the Form widget as a container for other widgets that collect, validate, and submit user input.
+This page describes how to use the Form widget to collect, validate, and submit user input.
 
 <VideoEmbed host="youtube" videoId="UgpQ0ZOnzdg" title="How to use Form Widget" caption="How to use Form Widget"/>
 
@@ -10,21 +10,7 @@ Form widgets are used as containers to group and handle related user inputs.
 
 When you add a Form widget to the canvas, it automatically includes a [Text widget](/reference/widgets/text) as a title and two [Button widgets](/reference/widgets/button) that **Submit** and **Reset** the form fields.
 
-To build your Form, drag other input-collecting widgets (like the [Input](/reference/widgets/input) or [Select](/reference/widgets/select) widgets, for example) into the form's boundaries. 
-
-## Form validation
-
-The **Disabled Invalid Forms** property helps prevent submitting invalid data in your queries.
-
-Several input-collecting widgets have properties that check entries for correctness (like the [Input widget's](/reference/widgets/input) **Valid** property). While **Disabled Invalid Forms** is turned on, the **Submit** [Button widget](/reference/widgets/button) in the form is automatically disabled if any fields contain incorrect data.
-
-Using this property guarantees that all user input meets the criteria you have defined in the form fields, and that all **Required** fields are completed.
-
-## Clear form fields
-
-The **Reset Form on Success** property is useful for resetting all form fields back to default values with one click. When this is turned on, the Form is automatically reset any time the button completes its action successfully. For example, a button set to submit the form data clears the fields if the query is successful. Otherwise, if there is an error, the Form won't be reset.
-
-The Form's **Reset** button can be used anytime; it's configured for "No Action," and thus always completes successfully.
+To build your Form, drag other input-collecting widgets ([Select](/reference/widgets/select) widget, for example) into the form's boundaries.
 
 ## Submit form data
 
@@ -54,6 +40,26 @@ Call your query from the Form's **Submit** button in its **onClick** field using
 ```
 
 You can also run multiple actions sequentially depending on whether the query succeeds or fails. Read more about this in [complex workflows](/core-concepts/writing-code/workflows#complex-workflows).
+
+## Form validation
+
+The **Disabled Invalid Forms** property helps prevent submitting invalid data in your queries.
+
+Several widgets, such as the [Input widget](/reference/widgets/input), have validation properties that check entries for correctness. Some examples are:
+
+- The **Valid** property, which checks input against a code expression,
+- The **Regex** property, which checks that input matches a regular expression,
+- The **Required** property, which indicates that the field must be filled out.
+
+While **Disabled Invalid Forms** is turned on, the Form widget checks the validation properties of its children and the **Submit** [Button widget](/reference/widgets/button) is automatically disabled if there are failing checks.
+
+Using this property guarantees that all user input meets the criteria you have defined in the form fields.
+
+## Clear form fields
+
+The **Reset Form on Success** property is useful for resetting all form fields back to default values with one click. When this is turned on, the Form is automatically reset any time the button completes its action successfully. For example, a button set to submit the form data clears the fields if the query is successful. Otherwise, if there is an error, the Form won't be reset.
+
+The Form's **Reset** button can be used anytime; it's configured for "No Action," and thus always completes successfully.
 
 ## Properties
 
