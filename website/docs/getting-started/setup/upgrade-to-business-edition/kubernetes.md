@@ -4,7 +4,7 @@ description: Follow the guide to upgrade the Appsmith Community Edition installa
 
 # Kubernetes
 
-The Business Edition (BE) Helm chart installation includes support for Horizontal Pod Auto Scaling (HPA), which allows Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade from the Community Edition (CE) to the Business Edition (BE) installed on Kubernetes.
+The Appsmith Business Edition (BE) Helm chart installation includes support for Horizontal Pod Auto Scaling (HPA), which allows Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade from the Appsmith Community Edition (CE) to the Appsmith Business Edition (BE) installed on Kubernetes.
 
 ## Generate license key
 
@@ -46,7 +46,7 @@ Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate 
      APPSMITH_ENCRYPTION_SALT: "<SALT>"
    ```
 
-## Uninstall CE Helm chart
+## Uninstall Community Edition Helm chart
 
 To uninstall the CE helm chart, run the following command:
 
@@ -56,7 +56,7 @@ helm uninstall appsmith
 
 ## Configure parameters
 
-To ensure that the Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure parameters:
+To ensure that the Appsmith Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure parameters:
 
 1. Add the following snippet to the bottom of your `values.yaml` file. This snippet enables PostgreSQL.
 
@@ -94,7 +94,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install BE Helm chart 
+## Install Business Edition Helm chart 
 
 To add and deploy the new Helm chart, run the following command:
 
@@ -162,5 +162,5 @@ To restore the backup, follow the below steps:
 
 Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.   
 
-If you’re having issues with the deployment, please reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+If you’re having issues with the deployment, please reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
