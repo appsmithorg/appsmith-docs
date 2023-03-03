@@ -502,7 +502,6 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/merging-branches',
             'advanced-concepts/version-control-with-git/disconnect-the-git-repository',
             'advanced-concepts/version-control-with-git/updating-local-file-path',
-            'advanced-concepts/version-control-with-git/troubleshooting'
           ],
         },
         {
@@ -644,6 +643,7 @@ const sidebars = {
         'help-and-support/troubleshooting-guide/application-errors',
         'help-and-support/troubleshooting-guide/query-errors',
         'help-and-support/troubleshooting-guide/widget-errors',
+        'help-and-support/troubleshooting-guide/git-errors'
       ],
     }, // Help & Support end
     {

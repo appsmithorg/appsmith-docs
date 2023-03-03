@@ -6,6 +6,7 @@ This document aims to help debug common errors on the Appsmith platform.
 * [Application Errors](/help-and-support/troubleshooting-guide/application-errors)
 * [Deployment Errors](/help-and-support/troubleshooting-guide/deployment-errors)
 * [JS Errors](/help-and-support/troubleshooting-guide/js-errors)
+* [Git Errors](/help-and-support/troubleshooting-guide/git-errors)
 * [Hint Messages](https://github.com/appsmithorg/appsmith-docs/tree/9fe81bb98cdc29e7f6ba351c3620699e98ca891e/troubleshooting-guide/hint-messages.md) (Coming Soon)
 
 ## Using the Linter and Debugger
