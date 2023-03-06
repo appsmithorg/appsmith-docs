@@ -19,6 +19,10 @@ exceptions:
   - Docker
   - Emmet
   - gRPC
+  - Document
+  - Documents
+  - Connection String URI
+  - URIs
   - I
   - Kubernetes
   - Linux
@@ -60,3 +64,5 @@ exceptions:
   - Async/Await
   - Amazon Web Services
   - SSH
+  - Business Edition 
+  - Community Edition

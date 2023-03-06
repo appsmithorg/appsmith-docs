@@ -130,3 +130,6 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **user.invited** | Logged when someone invites another user to the app or workspace. |
 | **user.signed_up** | Logged when a new user logs in for the first time. |
 | **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration. |
+
+### Export
+Users can export audit logs by either querying or exporting the `auditLog` collection from the Mongo DB on Appsmith instance. The user would need to have root access to the Appsmith deployment to perform this action.
