@@ -110,12 +110,12 @@ Your app is ready for handling user logins.
 
 Providing your users with the ability to log out of your app when they're finished can help increase the security of your data.
 
-In the previous steps, you used the `jwt` token stored in the Appsmith store to run a query that determines whether the user is currently authenticated. To remove their ability to be authenticated and see secure data, you should clear their `jwt` access token from the Appsmith store, so that they need to log in again if they want to get a new one.
+In the previous steps, you used the `jwt` token stored in the Appsmith store in a query that shows whether the user is authenticated. To remove their ability to be authenticated and see secure data, you should clear their `jwt` access token from the Appsmith store so that they need to log in again if they want to get a new one.
 
 To clear that value from the store, set it to `undefined`. Then, redirect them to the **LoginPage** away from your secure data.
 
 ```javascript
-// In a Button widget, or other custom workflow
+// In a Button widget or other custom workflow
 {{ 
   (() => {
     storeValue("jwt", undefined);
@@ -124,7 +124,7 @@ To clear that value from the store, set it to `undefined`. Then, redirect them t
 }}
 ```
 
-After clicking your button to sign out, they're brought to the **LoginPage** where they must log in again to see your **MainPage** content.
+After clicking your button to sign out, they're brought to the **LoginPage**, where they must log in again to see your **MainPage** content.
 
 ## Custom OAuth guides
 
