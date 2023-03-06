@@ -93,7 +93,7 @@ The `jwt` value that you saved in the Appsmith store is used to prove to your ap
 For now, it's time to configure your **MainPage** to allow access to logged-in users and redirect unauthorized ones.
 
 1. On **MainPage**, place the content of your application into a [Tabs widget](/reference/widgets/tabs). It should have at least two tabs: one for your secure content (called "**authorized**"), and one to be used as a redirect for unauthorized users ("**unauthorized**").
-2. In the Tabs widget's **Default Tabs** property, write code to run a query that requires the user to be authenticated. If it's successful, the user can see the "authorized" tab; on error, the user should see the "unauthorized" tab.
+2. In the Tabs widget's **Default Tabs** property, write code to run a query that requires the user to be authenticated. The query should use the `jwt` access token from earlier, referenced with `{{ appsmith.store.jwt }}`. If it's successful, the user can see the "authorized" tab; on error, the user should see the "unauthorized" tab.
   ```javascript
   {{
     SecureQuery.data.status == "200 OK"? "authorized": "unauthorized"
@@ -105,6 +105,26 @@ For now, it's time to configure your **MainPage** to allow access to logged-in u
 After these steps, any user who isn't logged in with a valid `jwt` token can only see the **unauthorized** tab, which redirects them back to the **LoginPage**. Users with valid tokens are taken straight to your **authorized** tab.
 
 Your app is ready for handling user logins.
+
+### Log out users
+
+Providing your users with the ability to log out of your app when they're finished can help increase the security of your data.
+
+In the previous steps, you used the `jwt` token stored in the Appsmith store to run a query that determines whether the user is currently authenticated. To remove their ability to be authenticated and see secure data, you should clear their `jwt` access token from the Appsmith store, so that they need to log in again if they want to get a new one.
+
+To clear that value from the store, set it to `undefined`. Then, redirect them to the **LoginPage** away from your secure data.
+
+```javascript
+// In a Button widget, or other custom workflow
+{{ 
+  (() => {
+    storeValue("jwt", undefined);
+    navigateTo("LoginPage");
+  })()
+}}
+```
+
+After clicking your button to sign out, they're brought to the **LoginPage** where they must log in again to see your **MainPage** content.
 
 ## Custom OAuth guides
 
