@@ -173,6 +173,7 @@ To configure Appsmith to use SSO, you can append the below parameters (based on 
 * Firefox has additional third-party cookie restrictions that may cause issues with private embeds.
 * Users may see issues when strict third-party cookie sharing restrictions are enabled on the browser. 
 * SSO in private embeds isn't supported for GitHub OAuth 2.0.
+* For Google OAuth 2.0 config, the parent and child can be two OAuth 2.0 clients under the same project.
 
 
 ### Further reading
