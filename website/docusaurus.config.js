@@ -115,7 +115,7 @@ const config = {
             items: [
               {
                 label: 'Advanced Concepts',
-                to: '/learning-and-resources/how-to-guides/custom-authentication',
+                to: 'advanced-concepts/custom-authentication',
               },
               {
                 label: 'Reference',

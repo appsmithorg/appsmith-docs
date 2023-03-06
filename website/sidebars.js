@@ -481,6 +481,7 @@ const sidebars = {
       collapsed: false,
       label: 'Advanced Concepts',
       items: [
+        'advanced-concepts/custom-authentication',
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/audit-logs',
@@ -599,7 +600,6 @@ const sidebars = {
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/use-git-to-create-different-environments',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
-            'learning-and-resources/how-to-guides/custom-authentication',
           ],
         },
         'learning-and-resources/sample-apps',
