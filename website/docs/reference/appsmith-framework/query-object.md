@@ -3,27 +3,17 @@ sidebar_position: 3
 ---
 # Query Object
 
+This page describes how to use the Query object to set up the flow of data in your app with code.
+
 ## Run
 
-Each query object contains a run function used to execute the query. The run function is asynchronous by nature and can be chained using the callbacks in the function signature.
-
-![](/img/chaining.gif)
+Calling a query's `run()` function executes that query. `run()` is asynchronous and can be promise-chained using the callbacks in the function signature. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
 
 ### Signature
-
-You can now use [JavaScript Promises](../../core-concepts/writing-code/javascript-promises.md) (recommended).
 
 ```
 run(params: Object): Promise
 ```
-
-If you want to use Callbacks(not recommended), copy the signature below:
-
-```javascript
-run(onSuccess: Function, onError: Function, params: Object): void
-```
-
-where **onSuccess** and **onError** are functions and **params** is a dictionary of key-value pairs.
 
 :::info
 We suggest you use the JavaScript Promise signature as it makes the code easy and readable. Callbacks are an old way and will be deprecated soon.
@@ -45,7 +35,7 @@ Query.run(params)
 | **onSuccess** | The function to be executed when the run method succeeds                                     |
 | **onError**   | The function to be executed when the run method fails                                        |
 
-### Passing Params to Run
+### Passing parameters to `run()`
 
 Most Queries read values directly from entities as global variables. In some cases, like running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution. It can be achieved using the params argument of the run signature. Please see the example below.
 
@@ -82,12 +72,21 @@ The onError function is run when a query execution fails. The function returns t
 onError(response, params): void
 ```
 
-## Data
+### Callbacks (deprecated)
 
-Each query stores the data from its latest run inside its **data** property. This property is populated only if the query successfully executes and can be accessed as
+:::caution info
+This style is deprecated in Appsmith. Reference this function signature only if you have existing callback-style syntax in your app.
+:::
 
 ```javascript
-{{ Query1.data }}
+run(onSuccess: Function, onError: Function, params: Object): void
 ```
 
-The data type of this property depends on the data.
+## Properties
+
+| Property         | Description                                                                                  |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| **data**         | Contains the response body from the last successful execution of this query. If this property is referenced in a widget's property field, the query is automatically run on page load. |
+| **responseMeta** | Contains metadata from the last response to this query's execution.                          |
+| **clear()**      | Empties all data from the query's **`data`** property.                                       |
+| [**run()**](#signature) | Executes the query when called. Can't be called in sync fields; see [sync vs. async fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function). |
