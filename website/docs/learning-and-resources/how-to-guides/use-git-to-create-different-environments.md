@@ -15,32 +15,22 @@ To create different environments following the steps below:
 
 ### Setup
 
-1. Create two worksapces for your development and production versions of the app. These workspaces can also be across two separate instances of Appsmith.
-2. Create your app in the development workspace and connet to Git version control. Once connected, checkout a develop branch from master and 
+1. Create two worksapces for your staging and production versions of the app. These workspaces can be across two separate instances of Appsmith.
+2. Create your app in the staging workspace and connet to Git version control. Once connected, checkout a staging branch from the default branch(you can name the default branch as production).
+3. Import the app into your production workspace using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository).
 
-### 1. Establish a Git connection
+### Build and Deploy
+1. Build the app in the staging workspace with staging datasources. 
+2. Use the Git workflow to make changes in staging branch(or feature branches), before merging to production branch through a pull request.
+3. When you're ready to deploy, pull the chages on production branch in the production workspace app.
+4. Connect the production workspace app to your production datasources.
 
-To get started, connect your app to a git repository. You can follow the steps from [Connecting to repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository) to complete the setup.
-Once the setup is complete, commit and push the initial state of your app to your Git repository from the Appsmith.
+### Share
+1. Invite your end users to your production app as App Viewers. They will only have access to view the deployed app.
+2. Invite a few trusted individuals as Admins to the production app to setup datasources and deploy the app periodically.
+3. Invite your developers to the staging app as "Developers" to build the app and test out changes on the staging datasources.
+4. QA team members can be invited to both staging and production apps as App Viewers to test out the changes deployed.
 
-### 2. Import application
-
-Go to the workspace or the instance where you want to add the development environment and import the application from the Git repository using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository). Since Appsmith doesn't store your database credentials, the datasource window appears and prompts you to re-enter them for your newly created app. In this window, enter the credentials for your development database which is different from the production environment. Test and save the connection.
-
-### 3. Commit and push
-
-Once the development database is connected, open the app. You’ll be prompted to make an initial push to the Git repository from the app.
-The development environment for your app is now complete. To test it out, make some changes in the app. For example, add a select widget and bind it to your development data. Once you’ve made the changes, commit and push it to your Git repository.
-
-### 4. Pull the changes
-
-You’ve made changes in your development environment, but they're not in the production app yet. To sync the changes, go back to the production app and pull the latest changes from the Git repository. You’ll see that a select widget appears on the canvas bonded with the production database when the pull from the repository is complete.
-
-Have 2 instances 1 for staging and 1 for production
-Connect all your apps to git with 2 branches 1 master and 1 staging
-Invite your users to the production instance and import the apps there
-Invite your developers and QA to the staging instance and import the apps there
-Build your apps on the staging instance and commit them to test them out. Once you are confident, raise a pull request and have it merged to master
-Pull the new changes in the production instance master branch once you are ready to deploy them
-If you want to upgrade to the latest appsmith version first take a backup of both instances. Then upgrade only the staging instance and run a complete test on it. Next update the production instance
-In the event of an error, you can easily rollback using this command
+### General Notes
+1. If you're using two different instances, take a backup of both instances before upgrading. Upgrade only the staging instance and test all your apps on it before upgrading the production instance.
+2. In the event of an error, you can easily rollback by following the instructions on [Restore Appsmith Instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance)
