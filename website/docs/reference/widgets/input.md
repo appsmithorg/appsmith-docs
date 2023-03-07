@@ -80,7 +80,7 @@ General properties control the data and behavior of the Input widget. These prop
 
 Reference properties are used to access the widget's data and state using code. When using reference properties, substitute `<input_name>` in the examples below with the name of your Input widget.
 
-| Binding Property | Description       | Code Snippet |
+| Reference Property | Description       | Code Snippet |
 | ---------------- | ----------------- | ------------ |
 | **text**         | Contains the widget's text / user input, either as a _string_ or _number_. depending on the widget's **Data Type** property. | `{{ Input1.text }}` |
 | **isDisabled**   | Reflects the state of the widget's **Disabled** setting.    | `{{ Input1.isDisabled }}` |
@@ -112,6 +112,6 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 ## Further reading
 
-- [Form widget](/reference/widgets/form)
 - [Currency Input](/reference/widgets/currency-input)
 - [Phone Input](/reference/widgets/phone-input)
+- [Form widget](/reference/widgets/form)
