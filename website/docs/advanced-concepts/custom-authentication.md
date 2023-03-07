@@ -22,6 +22,18 @@ For this example, assume that you have a page called "**MainPage**" in your appl
 
 You'll need a query to handle communication with your authentication API:
 
+:::info
+If you need an endpoint to test your app, you can use Appsmith's sample authentication API with the following credentials:
+
+```
+url:          https://strapi-production-6391.up.railway.app/api/auth/local
+request type: POST
+identifier:   appsmith_user
+password:     appsmith_password
+
+```
+:::
+
 1. Create a [datasource](/core-concepts/connecting-to-data-sources/authentication#creating-an-authenticated-api-datasource).
 2. Create an [API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) (named "**login_api**" here) with the your authentication endpoint URI.
 3. Place the Input widgets' text into your query body. Accessing the Input widgets should look something like:
