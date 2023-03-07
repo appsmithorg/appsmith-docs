@@ -55,24 +55,26 @@ General properties control the data and behavior of the Input widget. These prop
 | Widget Property     | Description       |
 | ------------------- | ----------------- |
 | **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type adds the associated validation to the user input. Choose from Single-line text, Multi-line text, Number, Password, or Email.       |
-| **Default text**    | Sets the widget's default value before the user has made any changes.       |
-| **Max Characters** | Sets a maximum length allowed for user input. Only appears when **Data Type** is set to a Text type.    |
+| **Default value**   | Sets the widget's default value before the user has made any changes.       |
+| **Text**            | Sets the label text of the widget.                                                                   |
+| **Position**        | Sets where the label appears relative to the widget's input area. Choose between Left, Top, or Auto. |
+| **Required**        | Sets whether the input field is a mandatory field. When this is turned on and the user has left the field blank, it's considered invalid.       |
+| **Max Characters**  | Sets a maximum length allowed for user input. Only appears when **Data Type** is set to a Text type.    |
 | **Min**             | Sets a minimum value allowed for user input. Only appears when **Data Type** is set to Number.       |
 | **Max**             | Sets a maximum value allowed for user input. Only appears when **Data Type** is set to Number.      |
 | **Regex**           | Used to add custom regex validation to perform on user input. When the input doesn't match the regex expression, the input is considered invalid.                                                     |
 | **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid.   |
 | **Error message**   | Sets the text of the error message to display if user input is invalid.      |
-| **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.    |
+| **Spellcheck**      | When enabled, user input is checked for spelling errors. This doesn't affect whether the input is considered invalid.   |
 | **Tooltip**         | Sets a tooltip for the widget on mouse hover. You can add hints or extra information about the required input.    |
+| **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.    |
 | **Show step arrows**  | Controls visibility of step arrows. Turning this toggle off hides the step arrows to increment or decrement the values in the widget. Only appears when **Data Type** is set to Number.  |
-| **Required**        | Sets whether the input field is a mandatory field. When this is turned on and the user has left the field blank, it's considered invalid.       |
 | **Visible**         | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published. It appears translucent when in Edit mode.     |
 | **Disabled**        | Makes the widget un-clickable or unusable. The widget remains visible to the user, but user interaction isn't allowed.     |
-| **Reset on Submit** | Clears the value entered by the user after the user submits with the Enter key.       |
-| **Autofocus**       | When enabled, the user's cursor focuses on the input box automatically on page load.      |
 | **Animate Loading** | When turned off, the widget loads without any skeletal animation. |
-| **Spellcheck**      | When enabled, user input is checked for spelling errors. This doesn't affect whether the input is considered invalid.   |
+| **Autofocus**       | When enabled, the user's cursor focuses on the input box automatically on page load.      |
 | [**Height**](/reference/widgets/#height)  | Configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| **Reset on Submit** | Clears the value entered by the user after the user submits with the Enter key.       |
 
 ### Reference properties
 
@@ -80,10 +82,10 @@ Reference properties are used to access the widget's data and state using code. 
 
 | Binding Property | Description       | Code Snippet |
 | ---------------- | ----------------- | ------------ |
-| **isDisabled**   | Reflects the state of the widget's **Disabled** setting _(`bool`)_.    | `{{ Input1.isDisabled }}` |
-| **isValid**      | Reflects whether the widget's input is considered **Valid** _(`bool`)_.  | `{{ Input1.isValid }}` | 
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(`bool`)_.   | `{{ Input1.isVisible }}` |
 | **text**         | Contains the widget's text / user input, either as a _string_ or _number_. depending on the widget's **Data Type** property. | `{{ Input1.text }}` |
+| **isDisabled**   | Reflects the state of the widget's **Disabled** setting.    | `{{ Input1.isDisabled }}` |
+| **isValid**      | Reflects whether the widget's input is considered **Valid**.  | `{{ Input1.isValid }}` | 
+| **isVisible**    | Reflects the state of the widget's **Visible** setting.   | `{{ Input1.isVisible }}` |
 
 ### Style properties
 
@@ -91,15 +93,9 @@ Style properties allow you to change the look and feel of the Input widget. Thes
 
 | Style Property     | Description              |
 | ------------------ | ------------------------ |
-| **Text**      | Sets the label text of the widget.                                                                   |
-| **Position**  | Sets where the label appears relative to the widget's input area. Choose between Left, Top, or Auto. |
-| **Alignment** | Sets whether the label is left- or right-aligned.                                                    |
-| **Width**     | Sets the width of the label. The number represents how many characters/columns wide the label is.    |
-| **Text Color**       | Sets the text color for the label. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.   |
-| **Text Size**        | Sets the size of the label font. Accepts valid CSS [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values. |
-| **Label Font Style** | Toggles font styles (**bold** or _italic)._   |
-| **Icon**           | Sets an icon to be included in the input field. Icons are from the [Blueprint](https://blueprintjs.com) library. See the [icons here](https://blueprintjs.com/docs/#icons).  |
-| **Icon Alignment** | Sets whether the icon appears on the left or right of the input field.                                                                                                           |
+| **Font Color**       | Sets the text color for the label. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.   |
+| **Font Size**        | Sets the size of the label font. Accepts valid CSS [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values. |
+| **Emphasis** | Toggles font styles (**bold** or _italic)._   |
 | **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
 | **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
