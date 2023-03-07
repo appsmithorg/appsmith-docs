@@ -108,7 +108,7 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 | **onTextChanged** | Sets an action to take place when the input's value is changed.  |
 | **onFocus**      | Sets an action to take place when the widget has focus (when the user's text cursor is in the field). |
 | **onBlur**      | Sets an action to take place when the input loses focus. |
-| **onSubmit**      | Sets an action to take place when the input is submitted with the Enter key. This action is disabled when the widget's **Data Type** is set to **Multi-line text**. |
+| **onSubmit**      | Sets an action to take place when the input is submitted with the Enter key. When the widget's **Data Type** is set to **Multi-line text**, the submit is triggered by CTRL + Enter instead. |
 
 ## Further reading
 
