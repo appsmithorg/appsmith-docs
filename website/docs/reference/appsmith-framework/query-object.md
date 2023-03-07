@@ -35,11 +35,13 @@ To learn more about chaining actions to create complex workflows, see [complex w
 
 ### Pass parameters to `run()`
 
-When writing queries, you typically interpolate data from widgets or the [Appsmith Store](/reference/appsmith-framework/widget-actions/store-value) directly into the query body. Sometimes though, it's useful to pass non-widget data into the queries programmatically. For this, use the `params` argument; you can access these params in the query with `{{ this.params.key }}`.
+When writing queries, you typically interpolate data from widgets or the [Appsmith Store](/reference/appsmith-framework/widget-actions/store-value) directly into the query body. Sometimes though, it's useful to pass non-widget data into the queries programmatically, using the same query multiple times in a loop.
+
+For this, use the `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
 
 #### Example use
 
-Imagine that you have an API endpoint that returns data about teams of employees. `api.domain/teams/1` returns Team 1, `api.domain/teams/2` returns Team 2, etc. It would be useful to write a function that uses a single query to return aggregated data from a number of selected teams.
+Imagine that you have an API endpoint that returns data about teams of employees. `api.domain/teams/1` returns Team 1, `api.domain/teams/2` returns Team 2, etc. It would be useful to write a function that uses a single button click to return aggregated data from a number of selected teams.
 
 First, create a query `GetTeamsData` to query the `api.domain/teams/` endpoint.
 
@@ -48,9 +50,9 @@ First, create a query `GetTeamsData` to query the `api.domain/teams/` endpoint.
 https://api.domain/teams/{{ this.params.team }}
 ```
 
-On the canvas, use a [Checkbox-group widget](/reference/widgets/checkbox-group/) and populate the checkbox options and values with the teams that can be selected. This may be done manually, or with a query that returns a list of all existing teams.
+On the canvas, use a [Checkbox-group widget](/reference/widgets/checkbox-group/) and populate the checkbox options and values with the teams that can be selected. This may be done manually, or with a query that returns a list of all existing team numbers.
 
-On the Checkbox-group's `selectedValues` property, there is an array of all values of the selected options.
+On the Checkbox-group's `selectedValues` property, there's an array of the selected values.
 
 ```javascript
 // CheckboxGroup1.selectedValues
@@ -81,13 +83,13 @@ Back on the canvas, call your function to run the queries in a [Button widget's]
 {{ utils.queryTeams(CheckboxGroup1.selectedValues) }}
 ```
 
-Create a [Table widget](/reference/widgets/table) to display the data, and bind your stored data into the **Table Data** field:
+Create a [Table widget](/reference/widgets/table) and bind your stored data into the **Table Data** field:
 
 ```javascript
 {{ appsmith.store.teamsData }}
 ```
 
-Now you can select the teams you want to query with the checkboxes, click the button, and see your table populate with data.
+Now you can select your teams with the checkboxes, click the button, and see your table populate with data.
 
 ### Callbacks (deprecated)
 
