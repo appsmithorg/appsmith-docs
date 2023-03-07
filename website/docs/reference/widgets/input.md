@@ -29,7 +29,7 @@ When any of the validation rules have been broken, the widget flags itself as in
 
 The most flexible and customizable validation properties are **Valid** and **Regex**.
 
-In the **Valid** property field, you can write a code expression to evaluate the user's input. Or, if you have more complex logic, you can define a function in a JS Object to determine whether it's acceptable. The input is acceptable when the **Valid** field evaluates to `true`.
+In the **Valid** property field, you can write a code expression to evaluate the user's input. Or, if you have more complex logic, you can define a function in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to determine whether it's acceptable. The input is acceptable when the **Valid** field evaluates to `true`.
 
 As an example, imagine that you are creating rules for a "Create Password" field in an account registration form. If you want to be sure that new passwords don't contain certain strings, you may write:
 
