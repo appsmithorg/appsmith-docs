@@ -14,23 +14,23 @@ To integrate Google Sheets with Appsmith, you should understand the [basics of c
 
 Appsmith integration with Google Sheets provides an easy way to manipulate, analyze and manage Spreadsheets. With this integration, you can perform different operations using a custom UI built on Appsmith, with minimal configurations.
 
-## **Create Google Sheets Datasource**
+## Create Google Sheets datasource
 
 To add a **Google Sheets datasource**, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> Select **Google Sheets** under APIs.
 
 <VideoEmbed host="youtube" videoId="P222_GQTSDI" title="Creating a Google Sheets Datasource in Appsmith" caption="Creating a Google Sheets Datasource in Appsmith"/>
 
-## Connection Settings
+## Connection settings
 
 Configure the Google Sheets Datasource as illustrated below:
 
-### **Scope**
+### Scope
 
-Your datasource’s **scope** setting defines what type of access privileges your app will have when working with your Google Sheets. Use this option to allow only the necessary operations that your app requires. This will help avoid accidentally deleting or overwriting data.
+Your datasource’s **scope** setting defines what type of access privileges your app will have when working with your Google Sheets. Use this option to allow only the necessary operations that your app requires. This helps to avoid accidentally deleting or overwriting data.
 
 ![](/img/google_sheets_scope.png)
 
-### Read Files 
+### Read files 
 
 You can use the **Read Files** scope if you’d like to provide limited access to Sheets, which is restricted to only listing existing spreadsheets or reading data from them.
 
@@ -39,7 +39,7 @@ The Read permission is required for the following query types:
 * [Fetch Details](./querying-google-sheets.md#fetch-details)
 * [Fetch Many](./querying-google-sheets.md#fetch-many)
 
-### Read, Edit, and Create Files
+### Read, edit, and create files
 
 If you want to perform additional operations like creating new spreadsheets or updating existing ones, you can use the **Read, Edit, and Create Files** scope to configure your datasource.
 
@@ -50,36 +50,36 @@ The **Edit** and **Create** permissions are required for the following query typ
 * [Update One ](./querying-google-sheets.md#update-one)
 * [Update Many](./querying-google-sheets.md#update-many)
 
-### Read, Edit, Create, and Delete Files
+### Read, edit, create, and delete files
 
-In order to delete spreadsheets, you will be required to authorize the Read, Edit, Create, and Delete scope for your datasource.
+To delete spreadsheets, you are required to authorize the Read, Edit, Create, and Delete scope for your datasource.
 
 The **Delete** permission is required for the following query type:
 
 * [Delete One](./querying-google-sheets.md#delete-one)
 
 :::caution
-When configured with this scope, queries related to this datasource may be potentially destructive and should be used carefully to avoid accidentally deleting data!
+When configured with this scope, queries related to this datasource may overwrite existing records and should be used with care to avoid mistakenly deleting data.
 
 Consider enabling the [**Request confirmation before running query**](./../..//core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
 :::
 
-### **Save and Authorize**
+### Save and authorize
 
 Click on the **Save and Authorize** button once you have selected your desired scope. You'll automatically be navigated to a Google Login screen, where you should select and log-in to the account whose spreadsheets you’d like to access.
 
-On successful login, you will be shown a screen where you will be asked to grant Appsmith certain permissions relating to managing your Google Sheets. Be sure to click Allow in order for Google Sheets to allow Appsmith to manage your spreadsheets.
+On successful login, a screen appears where you are asked to grant Appsmith certain permissions relating to managing your Google Sheets. Be sure to click Allow in order for Google Sheets to allow Appsmith to manage your spreadsheets.
 
-## **Create Queries**
+## Create queries
 
 You can add queries to Google Sheets datasource by selecting the **New API +** button available on the datasource page or by navigating to **Explorer** >> Click plus sign **(+)** next to **Queries/JS** >> Select the **datasource** name (GoogleSheetsDatasource).
 
-### **Query**
+### Query
 
-You use the Query tab to define - the type of operation you want to perform and the entity on which the operation will be performed.
+You use the Query tab to define - the type of operation you want to perform and the entity on which the operation should be performed.
 
 :::info
-Some **operations** are **not** available for some **entities**. If an **operation** is **not** available for an **entity,** the **entity** is grayed out, and the tooltip **`Action not supported`** will be displayed when you hover over it.
+Some operations aren't available for some entities. If an operation isn't available for an entity, the entity is grayed out, and the tooltip `Action not supported` is displayed when you hover over it.
 :::
 
 ## **Operation**
@@ -96,7 +96,7 @@ Operation lets you define the type of action you want to perform on Google Sheet
 | [**Insert Many**](./querying-google-sheets.md#insert-many)          | Use it to insert multiple rows in a given sheet                                           | Sheet Rows                    |
 | [**Update Many**](./querying-google-sheets.md#update-many)        | Use it to update multiple rows in a given sheet                                           | Sheet Rows                    |
 
-## **Fetch Details**
+## Fetch details
 
 The operation allows you to fetch the details of a given spreadsheet.
 
@@ -112,11 +112,11 @@ You can set the parameter values as below:
 The **Fetch Details** operation is only available to fetch the details of a spreadsheet.
 :::
 
-## **Insert One**
+## Insert one
 
 With Insert One, you can choose to insert a new row in an existing spreadsheet or add a new spreadsheet.
 
-### **Insert a new Spreadsheet**
+### Insert a new spreadsheet
 
 When you select to add a new spreadsheet, the new spreadsheet is created and available in your google account. When adding a new spreadsheet, you can also choose to add data to it.
 
@@ -130,11 +130,12 @@ For creating a spreadsheet and adding data to it, you can set the parameter valu
 * Row Objects - For adding data to the spreadsheet, you’ll have to add the data in the form of a JSON Array. For example, you want to add the existing employee records to the sheet.
 
 :::info
-The **first insert** to a **blank** sheet will also define the **Sheet Schema** - the column headers. If you wish to **add more columns**, you’ll have to **add the column names** **manually** to the sheet. If the column names are **not** present in the sheet, the subsequent inserts will **ignore** the data for the **additional** columns even if supplied in the JSON.
+The first insert to a blank sheet also defines the **Sheet Schema** - the column headers. If you wish to add more columns, you’ll have to add the column names manually to the sheet. If the column names aren't present in the sheet, the subsequent inserts ignore the data for the additional columns even if supplied in the JSON.
 :::
 
-```
+```json
 [
+  {
     "rowIndex" : 1,
     "id": "EMP001",
     "FullName": "Alex D",
@@ -157,7 +158,7 @@ The **first insert** to a **blank** sheet will also define the **Sheet Schema** 
 You’ll have to supply `rowIndex` when creating a new spreadsheet and adding data.
 :::
 
-### Insert new row to Sheet
+### Insert new row to sheet
 
 You have a form that you use to capture the employee details. Whenever a new employee joins, you want to use that form and add the details to the existing spreadsheet `AppsmithEmployeeDirectory`.
 
@@ -166,10 +167,10 @@ You have a form that you use to capture the employee details. Whenever a new emp
 You’ll have to add a query to insert the data by setting parameters as below:
 
 * [Operation](./querying-google-sheets.md#operation) - Insert One
-* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Entity](./querying-google-sheets.md#entity) - Sheet Rows
 * [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`
 * [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the name of the Sheet `Sheet1`
-* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value (1)
 * Row Objects - For adding data to the spreadsheet, you’ll have to add the data in JSON format as shown in the below code snippet:
 
 ```
@@ -183,7 +184,7 @@ You’ll have to add a query to insert the data by setting parameters as below:
 ```
 
 :::info
-You can use the above JSON to test the Query execution.
+You can use the JSON in the preceding example to test the Query execution.
 :::
 
 To capture the user input, you can create a [form](./../widgets/form.md) as shown in the screenshot below and bind the query execution on the `onClick` event of a **Submit** button.
@@ -212,7 +213,7 @@ You can read the child widget data embedded in the form widget using `{{<FORM_NA
 
 When the user inputs an employee’s data, and clicks the `Submit` button, the query executes, and data is added to the existing sheet `Sheet1` of the `AppsmithEmployeeDirectory.`
 
-## Update One
+## Update one
 
 With Update One, you can choose to update a single record in an existing spreadsheet.
 
@@ -221,14 +222,14 @@ With Update One, you can choose to update a single record in an existing spreads
 You can capture the data you want to update and send it to the update one query. For example, you want to update the designation and experience of an employee. You can pass the below parameters to the **Update One** Query.
 
 * [Operation](./querying-google-sheets.md#operation) - Update One
-* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Entity](./querying-google-sheets.md#entity) - Sheet Rows
 * [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`
 * [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the name of the Sheet `Sheet1`
-* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value (1)
 * Row Objects - For updating data to the spreadsheet, you’ll have to add the data in JSON format as shown in the below code snippet:
 
 :::info
-You should supply the value of **rowIndex** when **updating** the data. You get the value of **rowIndex** when you **fetch the data** from a **sheet** by using[ **Fetch Many**](./querying-google-sheets.md#fetch-many).
+You should supply the value of **rowIndex** when updating the data. You get the value of **rowIndex** when you fetch the data from a sheet by using [**Fetch Many**](./querying-google-sheets.md#fetch-many).
 :::
 
 ```
@@ -242,16 +243,16 @@ You should supply the value of **rowIndex** when **updating** the data. You get 
 You can also choose to update all the data columns if needed.
 
 :::info
-The **row to be updated** is a calculated entity using the formula (`Row Index` + `Table Heading Row Index` + `Modifier for the 0 indexed Google Sheet`). The modifier for the 0 indexed Google Sheet is a constant set to 1.
+The row to be updated is a calculated entity using the formula (`Row Index` + `Table Heading Row Index` + `Modifier for the 0 indexed Google Sheet`). The modifier for the 0 indexed Google Sheet is a constant set to 1.
 :::
 
-The calculated to be updated row index will be `(4 + 1 + 1) = 6`.
+The calculated index for the row to be updated is `(4 + 1 + 1) = 6`.
 
-## Delete One
+## Delete one
 
 You can perform the Delete One operation to delete a spreadsheet, a sheet within a spreadsheet, or a row from the sheet.
 
-### Delete a Spreadsheet
+### Delete a spreadsheet
 
 To delete a spreadsheet, you can choose the below parameters:
 
@@ -261,7 +262,7 @@ To delete a spreadsheet, you can choose the below parameters:
 * [Entity](./querying-google-sheets.md#entity) - Spreadsheet
 * [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `TestDeletion`. You can also supply the URL for the spreadsheet by enabling the JS label.
 
-### Delete a Sheet
+### Delete a sheet
 
 You can choose to delete a sheet from the given spreadsheet. You can choose the below parameters:
 
@@ -276,14 +277,14 @@ You can choose to delete a sheet from the given spreadsheet. You can choose the 
 The `Delete One` operation for a Sheet only works when there is more than one sheet in the spreadsheet.
 :::
 
-### Delete a Sheet Row
+### Delete a sheet row
 
 You can choose to delete a row from the existing sheet from the given spreadsheet. You can choose the below parameters:
 
 <VideoEmbed host="youtube" videoId="vE5PrkFd0y0" title="Delete a Row" caption="Delete a Row"/>
 
 * Operation - Delete One
-* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Entity](./querying-google-sheets.md#entity) - Sheet Row
 * [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
 * [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the sheet name you want to delete from the spreadsheet `Sheet1`.
 * Row Index - If you want to delete the row 5 data in the Google Sheet, you should supply the Row Index as 3.
@@ -292,13 +293,13 @@ You can choose to delete a row from the existing sheet from the given spreadshee
 The row to be deleted is a calculated entity using the formula (`Row Index` + `Table Heading Row Index` + `Modifier for the 0 indexed Google Sheet`). The modifier for the 0 indexed Google Sheet is a constant set to 1.
 :::
 
-The calculated to be deleted row index will be `(3 + 1 + 1) = 5.`
+The calculated index for the row to be deleted is `(3 + 1 + 1) = 5.`
 
-## Fetch Many
+## Fetch many
 
-You can choose to fetch multiple records from a sheet or fetch spreadsheets available in your Google account by using Fetch Many.
+You can choose to fetch multiple records from a sheet or fetch spreadsheets available in your Google Account by using Fetch Many.
 
-### Fetch Many Spreadsheet
+### Fetch many spreadsheet
 
 To fetch spreadsheets available in your account, you can choose the below parameters:
 
@@ -326,17 +327,17 @@ export default {
 Bind the data returned by the JS object to the select widget by using `{{<JS_OBJECT_NAME.FUNCTION_NAME()>}}` embedded in a mustache `{{}}` sign.
 :::
 
-### Fetch Many Sheet Rows
+### Fetch many sheet rows
 
 To fetch spreadsheets data, you can choose the below parameters:
 
 <VideoEmbed host="youtube" videoId="KaagWQaR5wg" title="Fetch Data from Sheet" caption="Fetch Data from Sheet"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Fetch Many
-* [Entity](./querying-google-sheets.md#entity) - Sheet Row(s)
+* [Entity](./querying-google-sheets.md#entity) - Sheet Rows
 * [Spreadsheet](./querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
 * [Sheet Name](./querying-google-sheets.md#sheet-name) - Select the sheet name you want to delete from the spreadsheet `Sheet1`.
-* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Table Heading Row Index](./querying-google-sheets.md#table-heading-row-index) - Keep the default value (1)
 
 :::info
 You can choose to add filters using range or `where` Clause.
@@ -348,7 +349,7 @@ You can display the data by binding it to a [widget](./../widgets/README.md). Fo
 Bind the data returned by the query to a [table](/reference/widgets/table) widget - [TableData](/reference/widgets/table#table-data) property by using `{{<QUERY_NAME>.data>}}` embedded in a mustache `{{}}` sign.
 :::
 
-## Insert Many
+## Insert many
 
 You can choose to insert multiple records in an existing sheet by using Insert Many.
 
@@ -356,10 +357,10 @@ You can choose to insert multiple records in an existing sheet by using Insert M
 
 
 * [Operation](./querying-google-sheets.md#operation) - Insert Many
-* [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
+* [Entity](querying-google-sheets.md#entity) - Sheet Rows
 * [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the `JS label`.
 * [Sheet Name](querying-google-sheets.md#sheet-name) - Select the sheet name you want to insert to the spreadsheet `Sheet1`.
-* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value (1)
 * Row Objects - For inserting data to the spreadsheet, you’ll have to add the data in JSON Array Format as shown in the below code snippet:
 
 ```
@@ -385,26 +386,26 @@ You can choose to insert multiple records in an existing sheet by using Insert M
 ```
 
 :::info
-You can choose not to provide **rowIndex**, and inserts will still happen.
+You can choose not to provide **rowIndex**, and inserts still happen.
 :::
 
 You can also bind an API or a Query response returning a JSON Array to Row Objects by using `{{<QUERY/API_NAME>.data}}` embedded in a mustache `{{}}` sign.
 
-## **Update Many**
+## Update many
 
 You can choose to update multiple records in an existing sheet by using Update Many.
 
 <VideoEmbed host="youtube" videoId="i9B3yuKDtEc" title="Update Multiple Rows in Sheet" caption="Update Multiple Rows in Sheet"/>
 
 * [Operation](./querying-google-sheets.md#operation) - Update Many
-* [Entity](querying-google-sheets.md#entity) - Sheet Row(s)
+* [Entity](querying-google-sheets.md#entity) - Sheet Rows
 * [Spreadsheet](querying-google-sheets.md#spreadsheet) - Select the name of the spreadsheet `AppsmithEmployeeDirectory`. You can also supply the URL for the spreadsheet by enabling the JS label.
 * [Sheet Name](querying-google-sheets.md#sheet-name) - Select the sheet name you want to update from the spreadsheet `Sheet1`.
-* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value that is 1
+* [Table Heading Row Index](querying-google-sheets.md#table-heading-row-index) - Keep the default value (1)
 * Row Objects - For updating data in the spreadsheet, you’ll have to add the data in JSON Array Format as shown in the below code snippet:
 
 :::info
-You will have to provide `rowIndex`, without which the updates will fail.
+You must provide `rowIndex`, without which the updates fail.
 :::
 
 ```
@@ -426,13 +427,13 @@ You will have to provide `rowIndex`, without which the updates will fail.
 The row to be updated is a calculated entity using the formula (`Row Index` + `Table Heading Row Index` + `Modifier for the 0 indexed Google Sheet`). The modifier for the 0 indexed Google Sheet is a constant set to 1.
 :::
 
-The calculated to be updated row index will be `(1 + 1 + 1) = 3`, and `(2+1+1) = 4` respectively.
+The calculated indices for the rows to be updated are `(1 + 1 + 1) = 3`, and `(2+1+1) = 4` respectively.
 
-## **Common Settings**
+## Column settings
 
-There are a few settings listed below that are common to many operations that you will perform on the Google Sheets:
+There are a few settings listed below that are common to many operations that you can perform on the Google Sheets:
 
-### **Entity**
+### Entity
 
 You can select the type of entity that you want to perform the operation on:
 
@@ -441,7 +442,7 @@ You can select the type of entity that you want to perform the operation on:
 * **Sheet Rows** - When you want to focus on inserting, updating, or deleting rows in an existing sheet, you can use Sheet Rows for the same.
 
 :::info
-**All** operations may **not** be available for every **entity**. For all the **unsupported** **operations** for that entity, you will see an `Action not supported` tooltip when you try to select an Entity.
+All operations may not be available for every entity. For all the unsupported operations for that entity, an `Action not supported` tooltip appears when you try to select an Entity.
 :::
 
 Depending upon the type of operation and the entity selected, you'll have to provide the below details:
@@ -452,41 +453,41 @@ Depending upon the type of operation and the entity selected, you'll have to pro
 
 Provide the name of the spreadsheet you want to perform an operation on. You can also add the spreadsheet URL by enabling the JS label.
 
-#### **Sheet Name**
+#### Sheet name
 
 Select the sheet's name from the dropdown on which you want to perform an operation. You can also choose to add the name by enabling the JS label.
 
-#### **Table Heading Row Index**
+#### Table heading row index
 
 Enter the row index of the header row in a Google Sheet. Usually, it starts with 1, so the default value supplied to this field is 1. You can change it to the heading row index if needed.
 
-#### **Columns**
+#### Columns
 
-You could provide the columns that you want to select for the query. The default setting is All Columns will be fetched. If you want to select only a few columns, you can do that by enabling the JS label and supplying the column names in a [JSON array format](http://json-schema.org/draft-07/schema) as below:
+You could provide the columns that you want to select for the query. The default setting is for All Columns to be fetched. If you want to select only a few columns, you can do that by enabling the JS label and supplying the column names in a [JSON array format](http://json-schema.org/draft-07/schema) as below:
 
 ```
 ["columnname1", "columnname2"]
 ```
 
-In the above code snippet, `columnname1` and `columnname2` are the column names in the Google sheet.
+In the preceding code snippet, `columnname1` and `columnname2` are the column names in the Google sheet.
 
 ![Either select All columns or specific columns](</img/Datasources__Google_Sheets__Common_Settings__Entity__Spreadsheet__Columns.png>)
 
 :::info
-The column names are **case sensitive**, and you should include **trailing or leading spaces** when **adding** the **column names** in JS if they are present in the Google Sheet.
+The column names are **case sensitive**, and you should include trailing or leading spaces when adding the column names in JS if they're present in the Google Sheet.
 :::
 
-### **Filter Format**
+### Filter format
 
 The filter format allows you to filter your Google sheet data based on range or data filters.
 
-#### **Cell Range**
+#### Cell range
 
 You can filter by range for cases when you want to fetch data from designated cells in your sheet. For example, you want to check the experience level and designations of the employees to create a data table that shows how many employees are eligible for a promotion. You can choose filter by cell range and select the designated columns excluding all the other details. Filter by cell range gives you the desired data set that works best for your use case.
 
 <VideoEmbed host="youtube" videoId="FC_7OKeRQQs" title="Set Cell Range Filtering" caption="Set Cell Range Filtering"/>
 
-#### **Where Clause**
+#### Where clause
 
 By defining the column and the filter criteria, you can filter by the data available in columns. For example, you want to fetch all employees designated as **project leaders**. You can define the designation column as part of the Where clause and supply the filter value as **Project Leader**.
 
@@ -497,13 +498,13 @@ You can define a where clause by defining the following values:
 * **Filter By** - You define one or more criteria as part of the `filter by`.
   * **Key** - Specify the column names on which you would want to add filters
   * Select the comparison operator to evaluate the condition
-  * **Value** - Specify the filter value which will be used to filter the data
+  * **Value** - Specify the filter value which is used to filter the data
   * **Add Condition** - You can use it to add more conditions and select the “And/or” operator for evaluation
   * **Add Group Condition** - You can add a group condition that uses an “And” clause to evaluate the conditions specified in the group.
 * **Sort By** - You can choose to sort the data based on the column name and provide the type of sorting: Ascending or Descending. You can choose to enable JS label and add your own code in [JSON Format](http://json-schema.org/draft-07/schema) :`[ { "column": "columnName", "order": "Ascending" } ]` For example, you want to sort the data on the employee’s full name in ascending order. You can add the code for the sort by condition:`[ { "column": "FullName", "order": "Ascending" } ]`
 * **Add Parameter** - you can add more parameters to sort if you want to sort on more than one column.
 * **Pagination Limit** - You can set the number of pages to be displayed per page. By default, the value is set to 20. But you can change it as per your needs.
-* **Pagination Offset** - If you wish to skip some data, you can add the number of rows in the field. The number of rows specified will be skipped and will not be a part of the dataset returned as a result of query execution.
+* **Pagination Offset** - If you wish to skip some data, you can add the number of rows in the field. The number of rows specified are skipped and won't be a part of the dataset returned because of query execution.
 
 You can also choose to write the Where Clause by enabling the JS label and adding the below code snippet in a [JSON Format](http://json-schema.org/draft-07/schema)
 
@@ -536,7 +537,7 @@ You can also choose to write the Where Clause by enabling the JS label and addin
 ```
 
 :::info
-As per your filter criteria, you can **replace** the **key** and **value** with the **column names.** You can also **add**, **replace** or **remove** **conditions** based on **filtering** needs.
+Depending on your filter criteria, you can replace the key and value with the column names. You can also add**, **replace or remove conditions based on filtering needs.
 :::
 
 For example, you want to fetch all the employees with designation as **Junior Engineer.** You can write a where clause as below and enable the `JS label` for the `Filter By` and add it to the text field.
@@ -554,7 +555,7 @@ For example, you want to fetch all the employees with designation as **Junior En
 }
 ```
 
-If you now want to fetch all employees with designation as **Junior Engineer** and have experience of **3 years**, then the code for conditions will be as follows:
+If you now want to fetch all employees with designation as **Junior Engineer** and have experience of **3 years**, then the code for conditions looks like:
 
 ```
 {
@@ -574,7 +575,7 @@ If you now want to fetch all employees with designation as **Junior Engineer** a
 }
 ```
 
-### **Using Queries in applications**
+### Using Queries in applications
 
 Once you have successfully run a Query, you can use it in your application to
 
