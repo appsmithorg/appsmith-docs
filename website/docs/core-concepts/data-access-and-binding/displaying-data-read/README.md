@@ -1,6 +1,6 @@
 # Display Data (Read)
 
-YOu can display data from a query or JS function in a widget by referencing its name in the respective widget property. This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a Query that fetches data.
+You can display data from a query or JS function in a widget by referencing its name in the respective widget property. This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a Query that fetches data.
 
 ## Display data in a widget
 
