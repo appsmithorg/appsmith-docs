@@ -1,12 +1,10 @@
 # Display Data (Read)
 
-YOu can display data from a query or JS function by referencing its name. This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a Query that fetches data.
+YOu can display data from a query or JS function in a widget by referencing its name in the respective widget property. This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a Query that fetches data.
 
 ## Display data in a widget
 
-Widget properties can be edited via the property pane. Data from a [Query](/core-concepts/data-access-and-binding/querying-a-database) can be set in a widget property by referencing the name of the Query.
-
-Each widget property has a specific data type that it validates its value against. If the data type mismatches, it throws an error. This can be fixed using JavaScript to [transform](#transforming-data) the value of the property. 
+Widget properties can be edited via the property pane. Data from a [Query](/core-concepts/data-access-and-binding/querying-a-database) can be set in a widget property by referencing the name of the Query. Each widget property has a specific data type that it validates its value against. If the data type mismatches, it throws an error. This can be fixed using JavaScript to [transform](#transforming-data) the value of the property. 
 
 :::tip
 Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes.
@@ -25,7 +23,7 @@ For more information about using [Table widgets](/reference/widgets/table) to sh
 When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
 
 
-**Example 2:** suppose you have two Input widgets named `Input1` and `Input 2`. This example shows how to update `Input2` with the value entered in `Input1`. Paste the following code in the `Default Value` property of Input2.
+**Example 2:** suppose you have two Input widgets named `Input1` and `Input 2`. To update `Input2` with the value entered in `Input1`, add the following code in the `Default Value` property of Input2.
 
 ```javascript
 {{Input1.text}}
