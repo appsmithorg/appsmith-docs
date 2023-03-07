@@ -2,15 +2,14 @@
 description: Appsmith uses the database command syntax to query MongoDB
 ---
 
-# Raw Query
+# Raw Query Commands
 
 The Raw command allows you to write custom queries using the MongoDB database command syntax. 
 
 
 :::info
-The mongo database command syntax is slightly different from the mongo collection methods you may be familiar with. [Read more](https://docs.mongodb.com/manual/reference/command/nav-crud/).
+The syntax for MongoDB database commands differs slightly from the MongoDB collection methods you may be familiar with. For more information, see [Query and Write Operation Commands](https://docs.mongodb.com/manual/reference/command/nav-crud/) available on the official MongoDB documentation.
 :::
-
 
 ### Basic raw query
 
@@ -79,7 +78,7 @@ This query uses the `$match` stage in the aggregation pipeline to filter documen
 This query uses the `$lookup` stage in the aggregation pipeline to join documents in the `orders` collection with documents in the `customers` collection based on the `customer_id` field. 
 
 :::info
-By default, Mongo returns only **101 records** due to its default [batchSize](https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/). You can update the limit and batchSize by adding values to your query.
+By default, MongoDB returns only **101 records** due to its default [`batchSize`](https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/). You can update the limit and `batchSize` by adding values to your query.
 :::
 
 When running a Raw query, the filter criteria must be included in the pipeline array for aggregation. The error `Pipeline option must be specified as an array` is generated when the pipeline option is missing or not specified as an array, leading to query failure.
