@@ -42,31 +42,6 @@ To display the response from an asynchronous JS function in a synchronous field,
 
 <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Display response from async function in widget field" caption="Display response from async function in widget field"/> 
 
-## Update widgets programmatically
-
-When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
-
-**Example 1:** suppose you have two Input widgets named `Input1` and `Input 2`. To update `Input2` with the value entered in `Input1`, add the following code in the `Default Value` property of Input2.
-
-```javascript
-{{Input1.text}}
-```
-
-Enter a value in `Input1` and see how the value updates in `Input2`.
-
-**Example 2:** suppose you have two input widgets and one button widget named `Input1`, `Input2`, and `Button1`, respectively. This example shows how to update `Input2` with the value in `Input1` on the button click. Here, the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is used.
-
-Paste the following code in the `onClick` event of `Button1`. 
-
-```javascript
-{{storeValue('inputData',Input1.text)}}
-```
-Paste the following code in the `Default Value` property of Input2.
-```javascript
-{{appsmith.store.inputData}}
-```
-Enter a value in `Input1`. On button click, the value updates in `Input2`.
-
 ## Transform data
 
 Each widget property has a specific data type that it validates its value against. If the data type mismatches, it throws an error. You can use JavaScript to transform the data when binding it to a property. For example, consider a query that returns an array of objects, as shown below:    
@@ -113,6 +88,8 @@ Each widget property has a specific data type that it validates its value agains
 
 Suppose you want to display this data in a [Select](/reference/widgets/select.md) widget. A Select widget only accepts data as an Array in the `{ "label": "string", "value": "string" }` format in its **Options** property, so you must transform the data from the query to pass it in the required structure.
 
+The following example iterates over the query data and returns it in an `Array<label, value>` format:
+
 ```javascript
 {{
   QueryName.data.map((row) => {
@@ -121,8 +98,34 @@ Suppose you want to display this data in a [Select](/reference/widgets/select.md
 }}
 ```
 
+## Update widgets programmatically
+
+When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
+
+**Example 1:** suppose you have two Input widgets named `Input1` and `Input 2`. To update `Input2` with the value entered in `Input1`, add the following code in the `Default Value` property of Input2.
+
+```javascript
+{{Input1.text}}
+```
+
+Enter a value in `Input1` and see how the value updates in `Input2`.
+
+**Example 2:** suppose you have two input widgets and one button widget named `Input1`, `Input2`, and `Button1`, respectively. This example shows how to update `Input2` with the value in `Input1` on the button click. Here, the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is used.
+
+Paste the following code in the `onClick` event of `Button1`. 
+
+```javascript
+{{storeValue('inputData',Input1.text)}}
+```
+Paste the following code in the `Default Value` property of Input2.
+```javascript
+{{appsmith.store.inputData}}
+```
+Enter a value in `Input1`. On button click, the value updates in `Input2`.
+
 ## Further reading
 
 * [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write)
-* [Creating Workflows](/core-concepts/writing-code/workflows)
+* [Table Widget](/reference/widgets/table)
+* [List Widget](/reference/widgets/list)
 * [Working with Appsmith Framework Functions](/reference/appsmith-framework)
