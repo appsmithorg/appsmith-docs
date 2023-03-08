@@ -3,91 +3,120 @@ sidebar_position: 3
 ---
 # Query Object
 
-## Run
+This page describes how to use the Query object to set up the flow of data in your app with code.
 
-Each query object contains a run function used to execute the query. The run function is asynchronous by nature and can be chained using the callbacks in the function signature.
+## `Run()`
 
-![](/img/chaining.gif)
+Calling a query's `run()` function executes that query. `run()` is asynchronous and can be promise-chained using the callbacks in the function signature. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
 
 ### Signature
-
-You can now use [JavaScript Promises](../../core-concepts/writing-code/javascript-promises.md) (recommended).
 
 ```
 run(params: Object): Promise
 ```
 
-If you want to use Callbacks(not recommended), copy the signature below:
+| Argument      | Description                                                                                         |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| **params**    | An object containing key-value pairs to pass into the query. Accessed with `{{ this.params.key }}`. |
+
+
+This function returns a JavaScript **promise**, which can be used to handle async actions in sequence. Use `.then()` and `.catch()` to write code to be executed when the query returns successfully or in error, respectively.
+
+```javascript
+// Using promise syntax to chain actions in sequence
+{{
+    Query1.run(params)
+        .then(() => {...}) // run after the query is successful
+        .catch(() => {...}) // run if the query encounters any errors
+}}
+```
+
+To learn more about chaining actions to create complex workflows, see [complex workflows](/core-concepts/writing-code/workflows#complex-workflows).
+
+### Pass parameters to `run()`
+
+When writing queries, you typically interpolate data from widgets or the [Appsmith Store](/reference/appsmith-framework/widget-actions/store-value) directly into the query body. Sometimes though, it's useful to pass non-widget data into the queries programmatically, using the same query multiple times in a loop.
+
+For this, use the `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
+
+#### Example use
+
+Imagine that you have an API endpoint that returns data about teams of employees. `api.domain/teams/1` returns Team 1, `api.domain/teams/2` returns Team 2, etc. It would be useful to write a function that uses a single button click to return aggregated data from a number of selected teams.
+
+First, create a query `GetTeamsData` to query the `api.domain/teams/` endpoint.
+
+```javascript
+// URL to query
+https://api.domain/teams/{{ this.params.team }}
+```
+
+On the canvas, use a [Checkbox-group widget](/reference/widgets/checkbox-group/) and populate the checkbox options and values with the teams that can be selected. This may be done manually, or with a query that returns a list of all existing team numbers.
+
+On the Checkbox-group's `selectedValues` property, there's an array of the selected values.
+
+```javascript
+// CheckboxGroup1.selectedValues
+[ "1", "3", "4", "6", "10" ]
+```
+
+Next, set up a helper function `queryTeams` in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) called `utils`:
+
+```javascript
+// function in a JS Object
+queryTeams: async ( teamsArray ) => {
+    const teamsPromises = await teamsArray.map( team => {
+        GetTeamsData.run({ "team": team })
+    })
+
+    Promise.allSettled(teamsPromises)
+        .then( responseArray => responseArray.map( result => result.value? ))
+        .then( teamsData => storeValue("teamsData", teamsData))
+}
+```
+
+The `queryTeams` function takes the user's selection from the CheckboxGroup, and runs the query once for each selected team, substituting the team number into the query. Once all the queries have completed, the function creates an array of their aggregated data from the responses and stores them in the [Appsmith Store](/reference/appsmith-framework/widget-actions/store-value).
+
+Back on the canvas, call your function to run the queries in a [Button widget's](/reference/widgets/button) **onClick** field:
+
+```javascript
+// Button widget's onClick
+{{ utils.queryTeams(CheckboxGroup1.selectedValues) }}
+```
+
+Create a [Table widget](/reference/widgets/table) and bind your stored data into the **Table Data** field:
+
+```javascript
+{{ appsmith.store.teamsData }}
+```
+
+Now you can select your teams with the checkboxes, click the button, and see your table populate with data.
+
+### Callbacks (deprecated)
+
+:::caution info
+This style is deprecated in Appsmith. Reference this function signature only if you have existing callback-style syntax in your app.
+:::
 
 ```javascript
 run(onSuccess: Function, onError: Function, params: Object): void
 ```
 
-where **onSuccess** and **onError** are functions and **params** is a dictionary of key-value pairs.
+**onSuccess** and **onError** are callback functions that are executed in the case of query success or error, respectively.
 
-:::info
-We suggest you use the JavaScript Promise signature as it makes the code easy and readable. Callbacks are an old way and will be deprecated soon.
+The **params** argument ([see above](#pass-parameters-to-run)) is an object of key-value pairs that can be referenced from within the query body using `{{ this.params.key }}`.
 
-We recommend using the following Promise syntax:
+## Properties
 
-```
-Query.run(params)
-    .then(() => {...}) // run after the query is successful
-    .catch(() => {...}) // run if the query encounters any errors
-```
-:::
+These properties are used to reference and control data related to your query.
 
-#### Arguments
+| Property         | Description                                                                                  |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| **data**         | Contains the response body from the last successful execution of this query. If this property is referenced in a widget's property field, the query is automatically run on page load. |
+| **responseMeta** | Contains metadata from the last response to this query's execution.                          |
+| **clear()**      | Empties all data from the query's **`data`** property.                                       |
+| [**run()**](#signature) | Executes the query when called. Can't be called in sync fields; see [sync vs. async fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function). |
 
-| Argument Name | Description                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| **params**    | An object containing key-value pairs to pass into the query, accessed with `this.params.key` |
-| **onSuccess** | The function to be executed when the run method succeeds                                     |
-| **onError**   | The function to be executed when the run method fails                                        |
+## Further reading
 
-### Passing Params to Run
-
-Most Queries read values directly from entities as global variables. In some cases, like running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution. It can be achieved using the params argument of the run signature. Please see the example below.
-
-```
-UsersApi.run({ org: "Appsmith" })
-    .then((response) => showAlert(response) )
-    .catch((error) => showAlert(error, 'error'))
-```
-
-Params sent to a query can be accessed using the `this` keyword
-
-```javascript
-{{ this.params.key }}
-```
-
-Please see the quick demo below showing how to access your params from `Query.run(params)` within the query. We'll use the [Postman Echo API](https://learning.postman.com/docs/developer/echo-api/), which will echo our request. We'll pass it `{ phrase: "hello, world!" }` , and then receive it back as a response:
-
-
-<VideoEmbed host="youtube" videoId="oktXirbay8U" title="Use this.params.key within your query to access any params you passed within the .run(params) function." caption="Use this.params.key within your query to access any params you passed within the .run(params) function."/>
-
-### onSuccess
-
-The onSuccess function is run when a query runs successfully. The function returns the response of the query and the params passed to it in the callback arguments.
-
-```javascript
-onSuccess(response, params): void
-```
-
-### onError
-
-The onError function is run when a query execution fails. The function returns the response of the query and the params passed to it.
-
-```javascript
-onError(response, params): void
-```
-
-## Data
-
-Each query stores the data from its latest run inside its **data** property. This property is populated only if the query successfully executes and can be accessed as
-
-```javascript
-{{ Query1.data }}
-```
-
-The data type of this property depends on the data.
+- [Creating Workflows](https://docs.appsmith.com/core-concepts/writing-code/workflows#complex-workflows)
+- [JS Objects](/core-concepts/writing-code/javascript-editor-beta)
