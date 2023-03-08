@@ -20,7 +20,7 @@ run(params: Object): Promise
 | **params**    | An object containing key-value pairs to pass into the query. Accessed with `{{ this.params.key }}`. |
 
 
-This function returns a JavaScript **promise**, which can be used to handle async actions in sequence. Use `.then()` and `.catch()` to write code to be executed when the query returns successfully or in error, respectively.
+This function returns a JavaScript **promise**, which can be used to handle async actions in sequence. Use `.then()` and `.catch()` to write code to be executed when the query returns successfully or in error, respectively. Or, use `async/await` syntax.
 
 ```javascript
 // Using promise syntax to chain actions in sequence
@@ -63,15 +63,14 @@ Next, set up a helper function `queryTeams` in a [JS Object](/core-concepts/writ
 
 ```javascript
 // function in a JS Object
-queryTeams: async ( teamsArray ) => {
-    const teamsPromises = await teamsArray.map( team => {
-        GetTeamsData.run({ "team": team })
+  queryTeams: async (teamsArray) => {
+    const teamsPromises = await teamsArray.map(team => {
+      GetTeamsData.run({ "team": team })
     })
-
-    Promise.allSettled(teamsPromises)
-        .then( responseArray => responseArray.map( result => result.value? ))
-        .then( teamsData => storeValue("teamsData", teamsData))
-}
+    const responseArray = await Promise.allSettled(teamsPromises);
+    const result = responseArray.map( result => result.value? )
+    await storeValue("teamsData", result)
+  }
 ```
 
 The `queryTeams` function takes the user's selection from the CheckboxGroup, and runs the query once for each selected team, substituting the team number into the query. Once all the queries have completed, the function creates an array of their aggregated data from the responses and stores them in the [Appsmith Store](/reference/appsmith-framework/widget-actions/store-value).
