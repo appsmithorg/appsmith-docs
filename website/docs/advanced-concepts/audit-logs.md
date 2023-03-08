@@ -9,7 +9,7 @@ The audit log is a paper trail of all notable activities on an Appsmith instance
 
 
 :::info
-Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
+Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith. They are retained in the database for a period of 1 year.
 :::
 
 ![Access the Audit Logs from the Admin Settings page.](</img/as_auditlogs.png>)
@@ -85,7 +85,7 @@ Below is an example of a log item:
 Active workspaces generate thousands of log events. To help you quickly find the log you're looking for, Appsmith offers a number of search filters:
 
 <figure>
-    <object data="https://www.youtube.com/embed/KIIHDeTJuaY" width='750px' height='400px'></object> 
+    <object data="https://www.youtube.com/embed/KIIHDeTJuaY" width='100%' height='400px'></object> 
     <figcaption align = "center"><i>Use filters to find specific types of log records 
     </i></figcaption>
 </figure>
