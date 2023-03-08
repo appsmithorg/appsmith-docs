@@ -6,12 +6,9 @@ In this guide, you’ll learn how to create different versions for your App usin
 This method doesn't support APIs, Google Sheets, Twilio, or any authenticated API datasources.
 :::
 
-## Environments
-Environments allow you to create and maintain multiple versions of your applications and make changes to them in isolation. Having separate build and production environments ensures that users can continue to use your apps even while it is being changed or upgraded.
+Git in Appsmith allows you to create and maintain multiple versions of your applications and make changes to them in isolation. Having separate staging and production workspaces ensures that users can continue to use your apps even while they are being changed or upgraded.
 
-With the Connect to Git feature in Appsmith, you can create separate environments for each version of your app, each with different databases.
-
-To create different environments following the steps below:
+Follow the steps below to setup the pipeline:
 
 ### Setup
 
