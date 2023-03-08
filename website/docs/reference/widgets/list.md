@@ -110,12 +110,6 @@ SELECT * FROM users LIMIT {{ <listName>.pageSize }} OFFSET {{ (<listName>.pageNo
   {{<listName>.selectedItem.bookName}}
   ```
 
-* To access the index of the selected item in the List, you can use the **selectedItemIndex** as shown below:
-
-  ```javascript
-  {{<listName>.selectedItemIndex}}
-  ```
-
 * You can access the sibling widgets inside a list item card using the **currentView** property. 
 
   **Example** - If you have an Input widget and a Button widget inside the List and want to use the Input's **Text** property to show an alert message on button click. In the button widget's *onClick* event, you can access the input widget's value as shown below
@@ -205,6 +199,8 @@ Properties allow you to customize the widget, connect it to other widgets and tr
 | **Items**                  | Enables you to bind static or dynamic data as an array of objects to the widget.                                                                                                                                                                                       |
 | **Data Identifier** | Like `keys` in React, you need to select a data identifier from your dataset, which helps uniquely identify each item. This helps the List widget identify which items are added, have changed, or are removed. You can also combine two columns or data identifiers by enabling the `JS` mode. |
 | **Server-side Pagination** | Enables you to implement [server side pagination](#server-side-pagination) on the List widget  |
+| **Total Records** | This field displays the number of records in the source data for a list. This value is used to calculate the number of pages to be displayed when using server-side pagination. Note that this field is only visible when **Server Side Pagination** is enabled. |
+| **Default Selected Item** | This field allows you to specify which item should be selected by default when a user first opens the List widget. To set the **Default Selected Item**, simply enter a valid data identifier for the item you want to select.|
 | **Visible**                | Controls widget's visibility on the page. When turned off: The widget is visible when the app is published. It appears translucent when in Edit mode.                                                                                            |
 | **Animate Loading**        | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                    |
 
