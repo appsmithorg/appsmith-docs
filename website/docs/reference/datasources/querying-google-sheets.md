@@ -4,97 +4,109 @@ sidebar_position: 7
 
 # Google Sheets
 
-[Google Sheets](https://www.google.com/sheets/about/) is a web-based application provided by [Google](https://www.google.com/) that enables users to create, update and share spreadsheets online in real-time.
+This page describes how to connect your application to your Google Sheets account and query your spreadsheets.
 
-Spreadsheets are a common way of organizing, editing, and analyzing data and serve as a data source for many teams.
+## Connect to Google Sheets
 
-:::info
-To integrate Google Sheets with Appsmith, you should understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/).
-:::
+To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Google Sheets** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-Appsmith integration with Google Sheets provides an easy way to manipulate, analyze and manage Spreadsheets. With this integration, you can perform different operations using a custom UI built on Appsmith, with minimal configurations.
-
-## Create Google Sheets datasource
-
-To add a **Google Sheets datasource**, navigate to **Explorer** >> Click plus sign **(+)** next to **Datasources** >> Select **Google Sheets** under APIs.
-
-<VideoEmbed host="youtube" videoId="P222_GQTSDI" title="Creating a Google Sheets Datasource in Appsmith" caption="Creating a Google Sheets Datasource in Appsmith"/>
-
-## Connection settings
+## Configuration
 
 Configure the Google Sheets Datasource as illustrated below:
 
 ### Scope
 
-Your datasource’s **scope** setting defines what type of access privileges your app will have when working with your Google Sheets. Use this option to allow only the necessary operations that your app requires. This helps to avoid accidentally deleting or overwriting data.
-
 ![](/img/google_sheets_scope.png)
 
-### Read files 
+The **Scope** setting defines what type of privileges your app has while querying your spreadsheets. Use this option to allow the minimum necessary privileges for your app's function to reduce the risk to your data.
 
-You can use the **Read Files** scope if you’d like to provide limited access to Sheets, which is restricted to only listing existing spreadsheets or reading data from them.
 
-The Read permission is required for the following query types:
+#### Read/Write | Selected Google Sheets
 
-* [Fetch Details](./querying-google-sheets.md#fetch-details)
-* [Fetch Many](./querying-google-sheets.md#fetch-many)
 
-### Read, edit, and create files
+#### Read/Write | All Google Sheets
 
-If you want to perform additional operations like creating new spreadsheets or updating existing ones, you can use the **Read, Edit, and Create Files** scope to configure your datasource.
 
-The **Edit** and **Create** permissions are required for the following query types:
+#### Read Files | All Google Sheets
 
-* [Insert One](./querying-google-sheets.md#insert-one)
-* [Insert Many](./querying-google-sheets.md#insert-many)
-* [Update One ](./querying-google-sheets.md#update-one)
-* [Update Many](./querying-google-sheets.md#update-many)
 
-### Read, edit, create, and delete files
+#### Save and authorize
 
-To delete spreadsheets, you are required to authorize the Read, Edit, Create, and Delete scope for your datasource.
+Click on the **Save and Authorize** button once you have selected your **Scope**. You'll directed to a Google Login screen, where you can log into the account whose spreadsheets you’d like to access.
 
-The **Delete** permission is required for the following query type:
+On a successful login, a screen appears which asks you to grant Appsmith permissions for managing your Google Sheets. Click "Allow" to allow Appsmith to manage your spreadsheets.
 
-* [Delete One](./querying-google-sheets.md#delete-one)
-
-:::caution
-When configured with this scope, queries related to this datasource may overwrite existing records and should be used with care to avoid mistakenly deleting data.
-
-Consider enabling the [**Request confirmation before running query**](./../..//core-concepts/data-access-and-binding/querying-a-database/query-settings.md#request-confirmation-before-running-query) setting to help prevent unintentional loss of data.
-:::
-
-### Save and authorize
-
-Click on the **Save and Authorize** button once you have selected your desired scope. You'll automatically be navigated to a Google Login screen, where you should select and log-in to the account whose spreadsheets you’d like to access.
-
-On successful login, a screen appears where you are asked to grant Appsmith certain permissions relating to managing your Google Sheets. Be sure to click Allow in order for Google Sheets to allow Appsmith to manage your spreadsheets.
-
-## Create queries
-
-You can add queries to Google Sheets datasource by selecting the **New API +** button available on the datasource page or by navigating to **Explorer** >> Click plus sign **(+)** next to **Queries/JS** >> Select the **datasource** name (GoogleSheetsDatasource).
-
-### Query
-
-You use the Query tab to define - the type of operation you want to perform and the entity on which the operation should be performed.
-
-:::info
-Some operations aren't available for some entities. If an operation isn't available for an entity, the entity is grayed out, and the tooltip `Action not supported` is displayed when you hover over it.
-:::
-
-## **Operation**
+## Operations
 
 Operation lets you define the type of action you want to perform on Google Sheets (Spreadsheets or individual Sheets available in a spreadsheet). Following is the list of available operations:
 
-| **Operation**                                                             | **Description**                                                                           | **Available on below Entity** |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------- |
+| **Operation**          | **Description**                           | **Available for:**             |
+| ---------------------- | ----------------------------------------- | ----------------------------- |
 | [**Fetch Details**](./querying-google-sheets.md#fetch-details)      | Use it to fetch details like the name of the spreadsheet, created date and time, and more | Spreadsheet                   |
-| [**Insert One**](./querying-google-sheets.md#insert-one)            | Use it to insert a single row in a sheet or add a new spreadsheet                         | Spreadsheet/Sheet Rows        |
+| [**Insert One**](./querying-google-sheets.md#insert-one)            | Use it to insert a single row in a sheet or add a new spreadsheet                         | Sheet Rows<br/>Spreadsheet        |
 | [**Update One**](./querying-google-sheets.md#update-one)            | Use it to update rows in a given sheet in a spreadsheet                                   | Sheet Rows                    |
-| [**Delete One**](./querying-google-sheets.md#delete-one)            | Use it to delete a spreadsheet or a sheet or row in a sheet                               | Spreadsheet/Sheet/ Sheet Rows |
-| [**Fetch Many**](./querying-google-sheets.md#fetch-many-sheet-rows) | Use it to fetch data from a sheet or all the spreadsheets available in your account.      | Spreadsheet/Sheet Rows        |
+| [**Delete One**](./querying-google-sheets.md#delete-one)            | Use it to delete a spreadsheet or a sheet or row in a sheet                               | Sheet Rows<br/>Spreadsheet<br/>Sheet |
+| [**Fetch Many**](./querying-google-sheets.md#fetch-many-sheet-rows) | Use it to fetch data from a sheet or all the spreadsheets available in your account.      | Sheet Rows<br/>Spreadsheet        |
 | [**Insert Many**](./querying-google-sheets.md#insert-many)          | Use it to insert multiple rows in a given sheet                                           | Sheet Rows                    |
 | [**Update Many**](./querying-google-sheets.md#update-many)        | Use it to update multiple rows in a given sheet                                           | Sheet Rows                    |
+
+## Create queries
+
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to your spreadsheets by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Google Sheets datasource. You'll be brought to a new screen to set up your query.
+
+### Fetch
+
+Use this operation to request data from Google Sheets. You can request a list of existing spreadsheets, existing records from a spreadsheet, or metadata about a specific spreadsheet.
+
+Sheet rows
+
+Spreadsheets
+
+#### Fetch details
+
+Use this operation to request metadata about a specific existing spreadsheet.
+
+Spreadsheet
+
+### Insert
+
+Use **Insert** operations to create a new spreadsheet, or to add a new record to an existing spreadsheet.
+
+Sheet rows
+
+Spreadsheet
+
+#### Insert many
+
+Use this operation when you are inserting multiple new records into a spreadsheet with a single query. You can't use this to create multiple new spreadsheets at once.
+
+Sheet rows
+
+### Update
+
+Use this operation when you want to submit an existing record with an updated value.
+
+Sheet row
+
+#### Update many
+
+Use this operation when you want submit multiple records with updated values.
+
+Sheet rows
+
+### Delete
+
+Use this record to delete a single existing spreadsheet, sheet, or record. You can only delete a single entity per query call.
+
+Sheet row
+
+Spreadsheet
+
+Sheet
+
+---
+
+## ***OLD CONTENT***
 
 ## Fetch details
 
