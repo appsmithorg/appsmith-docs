@@ -9,7 +9,7 @@ The audit log is a paper trail of all notable activities on an Appsmith instance
 
 
 :::info
-Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith. They are retained in the database for a period of 1 year.
+Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith. They're retained in the database for a period of 1 year.
 :::
 
 ![Access the Audit Logs from the Admin Settings page.](</img/as_auditlogs.png>)
