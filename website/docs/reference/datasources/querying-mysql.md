@@ -15,6 +15,12 @@ Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
 ### Configuration
 
+:::caution important
+If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database.
+
+18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
+:::
+
 <figure>
   <img src="/img/as-mysql-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="MySQL Datasource configuration page"/>
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
@@ -23,13 +29,6 @@ Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 :::tip
 If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
-
-:::caution important
-If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database.
-
-18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
-:::
-
 
 To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (\*).
 
