@@ -11,6 +11,8 @@ Custom branding for Appsmith is a feature that allows app builders to customize 
 Branding is only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
 :::
 
+<VideoEmbed host="youtube" videoId="E_4I0J-0u1k" title="How to use Custom Branding" caption="How to use Custom Branding" /> 
+
 ## Configure branding
 
 If you are using custom branding with Appsmith, setting it up is simple and straightforward. All you need to do is provide your own logo and branding assets, and Appsmith handles the rest.
