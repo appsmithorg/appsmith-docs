@@ -136,7 +136,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install v3 Helm chart
+## Install new Helm chart
 
 Run the below command to add and deploy the new Helm chart:
 
