@@ -276,7 +276,15 @@
     },
     {
       "source": "/how-to-guides/how-to-implement-custom-authentication-on-appsmith",
-      "destination": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith"
+      "destination": "advanced-concepts/custom-authentication"
+    },
+    {
+      "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith#building-ui-for-login-form",
+      "destination": "advanced-concepts/custom-authentication"
+    },
+    {
+      "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith",
+      "destination": "advanced-concepts/custom-authentication"
     },
     {
       "source": "/how-to-guides/how-to-work-with-local-apis-on-appsmith",
