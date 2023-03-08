@@ -15,6 +15,12 @@ Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
 ### Configuration
 
+:::caution important
+If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database.
+
+ 18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
+:::
+
 <figure>
   <img src="/img/mysql-datasource-config.png" style= {{width:"700px", height:"auto"}} alt="MySQL Datasource configuration page"/>
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
