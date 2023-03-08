@@ -19,7 +19,7 @@ If you are using custom branding with Appsmith, setting it up is simple and stra
 
 To configure Appsmith to show your brand, follow these steps:
 
-<VideoEmbed host="youtube" videoId="aK-JHRFNUrU" title="Branding | Demo" caption="Set up Appsmith to show your own branding" /> 
+<VideoEmbed host="youtube" videoId="E_4I0J-0u1k" title="Branding | Demo" caption="Set up Appsmith to show your own branding" /> 
 
 1. From your Appsmith dashboard, navigate to the [Admin Settings](/getting-started/setup/instance-configuration). You must have Administrator privileges to see access this area.
 2. Click on the **Branding** tab to open branding settings.
