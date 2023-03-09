@@ -38,7 +38,11 @@ To enable Google Sign in, log in to your [google cloud console](https://console.
 
 Update the [**instance configuration**](../) with the following fields:
 
+<<<<<<< HEAD
 1. **Configure via UI (recommended)**: On your self-hosted instance, navigate to the [Admin Settings page](/getting-started/setup/instance-configuration/admin-settings#using-the-admin-settings-ui). Under the **Authentication** tab, you can find fields for providing your Client ID and Client Secret generated in the previous steps.
+=======
+  On your self-hosted instance, navigate to the [Admin Settings page](/getting-started/setup/instance-configuration/). Under the **Authentication** tab, you can find fields for providing your Client ID and Client Secret generated in the previous steps.
+>>>>>>> main
 
 ![](/img/as_google_auth_config.png)
 
