@@ -242,3 +242,4 @@ batchSize
 1st
 Google Sheets
 rowIndex
+svg
