@@ -56,21 +56,21 @@ You can set up access controls for both the staging and production environments.
 To learn more about access control in Appsmith, you can refer to [RBAC](/advanced-concepts/access-control/granular-access-control).
 
 
-## Environments with git
+## Multiple environments with Git version control
 
-Environments with Git allows you to work on separate versions of the data, test changes before deployment, and maintain a stable production environment. 
+You can connect your application to Git and work on different branches without affecting data in the production environment enabling you to test changes on staging data before merging changes to the `master` branch. 
 
-When using a staging environment, you can use the staging data and work on any feature branch in Git. You can create a new branch for each feature you're working on and commit changes to that branch as you make progress. Once a feature is stable and ready for deployment, you can merge it into the master branch.
+You can work on a `feature` branch and use the data in staging environment. You can create a new branch for each feature you're working on and commit changes to that branch as you make progress. Once a feature is stable and ready for deployment, you can merge it into the `master` branch.
 
 To use environments with Git, you can follow these steps:
 
-* Create a new datasource and configure its staging and production data.
-* Create or switch the branch in Git from the screen's bottom-left corner.
-* Write queries using the staging environment data in the branch.
-* Once you have tested your changes and are ready to deploy to production, merge the changes into the master branch. 
+* If you haven't done it already, [connect your application to Git](/advanced-concepts/version-control-with-git)
+* Connect to a datasource and configure its staging and production environments.
+* Switch to a `feature` branch.
+* Use the staging environment while working on your application so that you can test the changes without affecting production data.
+* Once you have tested your changes and are ready to deploy to production, merge the changes into the `master` branch. 
 
-
-When you merge changes from the staging environment into the master branch, the production data remains unchanged, ensuring that end-users continue to view the same data they did before the changes were made. Check this guide to learn more about [working with Branches](/advanced-concepts/version-control-with-git/working-with-branches).
+When you merge changes into the master branch, the production data remains unchanged, ensuring that end-users continue to view the same data they did before the changes were made. Check this guide to learn more about [working with Branches](/advanced-concepts/version-control-with-git/working-with-branches).
 
 
 
