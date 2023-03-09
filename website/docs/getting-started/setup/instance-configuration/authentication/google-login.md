@@ -13,7 +13,7 @@ Appsmith provides a way to integrate with Google OAuth 2.0, enabling end users t
 
 To enable Google Sign-in, go to the [Google API console](https://console.cloud.google.com/apis) to get the authorization credentials that identify Appsmith to Google's OAuth 2.0 server. Create a new project and follow the steps below:
 
-1. Navigate to the [**OAuth consent screen**](https://console.cloud.google.com/apis/credentials/consent) under **APIs & Services**. Choose how you want to configure and register your app, including your target users and click Create.
+1. Navigate to the **OAuth consent screen** under **APIs & Services**. Choose how you want to configure and register your app, including your target users and click **Create**.
 
   ![Click to expand](</img/Google_OAuth_Consent_1.png>)
 
@@ -21,24 +21,25 @@ To enable Google Sign-in, go to the [Google API console](https://console.cloud.g
 
   ![Click to expand](</img/Google_OAuth_Consent.png>)
 
-3. Navigate to the Credentials screen and click **Create Credentials**, select **OAuth client ID** from the options to create OAuth credentials.
+3. Navigate to the **Credentials** screen and click **Create Credentials**, select **OAuth client ID** from the options to create OAuth credentials.
 
   ![Click to expand](</img/Google_OAuth_Creds.png>)
 
-4. Select Web application under the Application Type dropdown list. Update the following fields:
+4. Select **Web application** under the **Application Type** dropdown list. Update the following fields:
 
-    1. **Authorized JavaScript origins:** the domain on which you are hosting Appsmith with HTTPS (Eg: `https://app.appsmith.com`)
-    2. **Authorized redirect URIs:** Append the path `/login/oauth2/code/google` that users should be redirected to after they have authenticated with Google (Eg: `https://app.appsmith.com/login/oauth2/code/google`)
+    1. **Authorized JavaScript origins** - The HTTP origins that host your web application.  (Eg: `https://app.appsmith.com`)
+    2. **Authorized redirect URIs**  - Append the path that users should be redirected to after they have authenticated with Google (Eg: `https://app.appsmith.com/login/oauth2/code/google`)
 
-5. Click Create. You can get the Client ID and Client secret under "OAuth 2.0 Client IDs" in the Credentials tab.
+5. Click **Create**. You can get the Client ID and Client secret under **OAuth 2.0 Client IDs** in the **Credentials** screen.
 
   ![Click to expand](</img/Google_Oauth_Creds_2.png>)
 
 ## Configure Appsmith instance  
 
 :::caution
-1. The Client ID and Client Secret entered aren't verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the Google authentication configuration setup, it may lead to the user getting stuck on the login screen if the Google configuration is invalid. You’ll have to update the environment variables manually to fix this, as you can't edit it via the Admin settings page since you won’t be logged in anymore.
-2. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
+* The Client ID and Client Secret entered aren't verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the Google authentication configuration setup, it may lead to the user getting stuck on the login screen if the Google configuration is invalid. You’ll have to update the environment variables manually to fix this, as you can't edit it via the Admin settings page since you won’t be logged in anymore.
+
+* If you are running appsmith behind an ELB / Proxy, please [configure Nginx](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
 :::
 
 There are two ways to configure the self-hosted Appsmith instance - Admin Settings and Environment Variables:
