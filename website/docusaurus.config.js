@@ -115,7 +115,7 @@ const config = {
             items: [
               {
                 label: 'Advanced Concepts',
-                to: '/advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
+                to: 'advanced-concepts/custom-authentication',
               },
               {
                 label: 'Reference',
@@ -173,6 +173,11 @@ const config = {
     {
       src:
         '/scripts/intercomSettings.js',
+      async: false,
+    },
+    {
+      src:
+        '/scripts/hotjarSettings.js',
       async: false,
     }
   ]

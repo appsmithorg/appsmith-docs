@@ -21,9 +21,9 @@ If you are using custom branding with Appsmith, setting it up is simple and stra
 
 To configure Appsmith to show your brand, follow these steps:
 
-<VideoEmbed host="youtube" videoId="aK-JHRFNUrU" title="Branding | Demo" caption="Set up Appsmith to show your own branding" /> 
+<VideoEmbed host="youtube" videoId="E_4I0J-0u1k" title="Branding | Demo" caption="Set up Appsmith to show your own branding" /> 
 
-1. From your Appsmith dashboard, navigate to the [Admin Settings](/getting-started/setup/instance-configuration/admin-settings). You must have Administrator privileges to see access this area.
+1. From your Appsmith dashboard, navigate to the [Admin Settings](/getting-started/setup/instance-configuration). You must have Administrator privileges to see access this area.
 2. Click on the **Branding** tab to open branding settings.
 3. To upload your logo, click in the **Logo** box and browse to select the image file you'd like to upload. Appsmith supports .svg, .png, and .jpg files up to 2 MB in size.
 4. To upload a favicon, click in the **Favicon** box and browse to select the file you'd like to upload. You may provide a file of type .ico, .png, or .jpg which shouldn't be larger than 32x32 pixels.

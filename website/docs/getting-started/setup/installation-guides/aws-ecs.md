@@ -3,7 +3,9 @@ description: Deploy Appsmith on ECS cluster using EC2 instance.
 sidebar_position: 5
 ---
 
-# AWS ECS
+# AWS ECS on EC2
+
+This document guides you through installing Appsmith using AWS ECS on EC2
 
 ## Prerequisites
 
@@ -118,16 +120,12 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
       ![Storage Setting](/img/ecs\_mount_(1).png)
 
-    5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values it's recommended you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created. You can either add the Appsmith Business Edition License Key as plain text to the `APPSMITH_LICENSE_KEY` variable or create a new secret for it and add that secret into the field. For more information, see [How to create a new secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) on Amazon official documentation.
-
-      ![Container Environment](/img/ecs-container-env.png)
-
-    7. Enable auto-configure CloudWatch Logs for log configuration.
-    8. Hit **Add.**
+    5. Enable auto-configure CloudWatch Logs for log configuration.
+    6. Hit **Add.**
 
       ![Container Port Configuration](/img/ecs-task-appsmith_(1)_(1)_(1)_(2).png)
 
-    9. Finally, hit the **Create** button.
+    7. Finally, hit the **Create** button.
 
 ### Step 3: Create and run an ECS service
 
@@ -186,10 +184,16 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 ## Update Appsmith
 
+:::caution
+   It's recommended to backup the Appsmith instance before performing an update. For more information, see [How to create a backup](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance).
+:::
+
 1. Navigate to the ECS cluster from the ECS dashboard.
 2. In the Tasks Tab, click the respective task.
 3. On the Task Page, hit the stop button.
 4. Wait until the new task is deployed automatically.
+
+If you have updated your Appsmith instance and face any issues. You can rollback the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
 
 ## Troubleshooting
 

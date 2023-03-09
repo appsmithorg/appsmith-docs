@@ -4,11 +4,9 @@ Writing extensive code without a full-fledge editor could be challenging. The Ja
 
 <VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JS Editor" caption="How to build with JS Editor" />
 
-### JS Object
+**How to Create a JS Object?**
 
 A JS Object is an entity comprised of multiple functions and variables. It's a reusable component you can refer to in other JS Objects, allowing you to create an organized set of hierarchies.
-
-**How to Create a JS Object?**
 
 You can create new JS Objects from the Entity Explorer.
 
@@ -444,7 +442,7 @@ You don't have permission to access the Dashboard.
 
 As the JavaScript Editor is in its BETA, there are a few limitations:
 
-* At the moment, you can't use `JS Objects` across pages. You can subscribe to[ the issue](https://github.com/appsmithorg/appsmith/issues/1751) and follow the progress.
+* At the moment, you can't use `JS Objects` across pages. You can subscribe to[ the issue](https://github.com/appsmithorg/appsmith/issues/1911) and follow the progress.
 * You can't define variables and functions outside of export default { }. In future iterations, you can write and export only selected variables/functions from a `JS Object`.
 
 ![Async Function](/img/JS\_editor\_async\_function.png)

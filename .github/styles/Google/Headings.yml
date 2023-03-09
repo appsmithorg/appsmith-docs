@@ -19,6 +19,10 @@ exceptions:
   - Docker
   - Emmet
   - gRPC
+  - Document
+  - Documents
+  - Connection String URI
+  - URIs
   - I
   - Kubernetes
   - Linux
@@ -49,7 +53,16 @@ exceptions:
   - Redis
   - DigitalOcean
   - Docker
-  - K8s
+  - K8s   
+  - Framework
+  - Promises
+  - Actions
+  - Promise.allSettled()
+  - Promise.all()
+  - Promise.any()
+  - Promise.race()
+  - Async/Await
   - Amazon Web Services
   - SSH
-
+  - Business Edition 
+  - Community Edition
