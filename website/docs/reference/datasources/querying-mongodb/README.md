@@ -20,11 +20,13 @@ If you are a self-hosted user, you may need to whitelist the IP address of the A
 :::
 
 ### Configure datasource
-Appsmith provides two ways to configure MongoDB - Connection Mode or Connection String URI. The default option for configuring is Connection Mode. You can choose to use a MongoDB Connection String URI by selecting Yes for the **Use Mongo Connection String URI** field.
+You can configure MongoDB by choosing any one of the below option:
 
-<details id="usingConnectionStringURI">
-  <summary><b>Configure using Connection String</b></summary>
-Using an SRV URI as a connection string for connecting to a MongoDB cluster allows you to establish a connection without the need to manually specify details.
+* [Connecting String URI](#connection-string-uri)
+* [Connection Mode](#connection-mode)
+
+#### Connection String URI
+You can choose to use a MongoDB Connection String URI by selecting Yes for the **Use Mongo Connection String URI** field. Using an SRV URI as a connection string for connecting to a MongoDB cluster allows you to establish a connection without the need to manually specify details.
 
 <figure>
   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"700px", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
@@ -100,12 +102,8 @@ Learn more about [Domain name service seed list format](https://www.mongodb.com/
   </TabItem>
 </Tabs>
 
-
- </details> 
-
-<details id="usingConnectionMode">
-  <summary><b>Configure using Connection Mode</b></summary>
-  To connect to a MongoDB database using connection mode, you must configure the following parameters.
+#### Connection Mode
+When configuring MongoDB, the default option is to use Connection Mode, and you need to configure the following parameters:
 
 <figure>
   <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"700px", height:"auto"}} alt="Configure MongoDB using Connection Mode"/>
@@ -140,8 +138,6 @@ Learn more about [Domain name service seed list format](https://www.mongodb.com/
    * **Default**: Depends on Connection Type. If using the `Replica set`, this is `Enabled`. If using a `Direct connection`, this is `Disabled`.
    * **Enabled**: This option rejects the connection if SSL isn't available.
    * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
-   
-</details>
 
 :::tip
 If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [Connect via localhost](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
@@ -162,19 +158,18 @@ The syntax for MongoDB database commands differs slightly from the MongoDB colle
 
 ### Find Documents
 
-"Find documents" is a query method that retrieves documents from a collection within a database. The method allows you to specify a set of criteria, such as search conditions or filters, to find documents that match the criteria. You can pass the below parameters to Find Documents:
+"Find Documents" is a query that fetches documents from a collection. You can specify conditions and filters to retrieve a specific set of documents. You can pass the below parameters to Find Documents:
 
-* **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. For example, to find documents from a collection named `restaurants`, you can specify:
+* **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. For example, to find documents from a collection named `movies`, you can specify:
 
     ```sql
-    restaurants
+    movies
     ```
-* **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. For example, to retrieve all Italian restaurants with a rating greater than or equal to 9, you can bind the Input widget values selected by users as shown below:
+* **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. For example, to retrieve all movies with a rating greater than or equal to 9, you can bind the Input widget values selected by users as shown below:
 
      ```sql
     {
-      rating: { $gte: {{select_rating.selectedOptionValue}} }, 
-      cuisine: {{Input2.inputText}} 
+      "rating": { $gte: {{select_rating.selectedOptionValue}} }
     }  
      ```
 
@@ -191,13 +186,13 @@ The syntax for MongoDB database commands differs slightly from the MongoDB colle
 
 * **Limit**: This field specifies the maximum number of documents to return from the query result. If this method isn't specified, it defaults to returning 10 documents. For example, you can dynamically bind your [table widget's](/reference/widgets/table) page size value to limit the number of documents returned:
    ```sql
-   {{Table_1.pageSize}}
+   {{Table2.pageSize}}
    ```
 
 * **Skip**: This field specifies the number of documents to skip before returning results. 
 
    ```sql
-   {{(Table_1.pageNo - 1) * Table_Mongo.pageSize}}
+   {{(Table2.pageNo - 1) * Table_Mongo.pageSize}}
    ```
 
 Server-side pagination in MongoDB limits the number of query results returned by the server and enables the client to fetch additional results as required. The `limit()` method sets the maximum number of documents to be returned in a single query result, while the `skip()` method specifies the number of documents to skip before starting to return results.
@@ -211,23 +206,24 @@ This command inserts one or more documents and returns a document containing the
 * **Collection Name**: This field specifies the name of the MongoDB collection where you want to insert documents. 
 
    ```sql
-    users
+    movies
    ```
-Suppose you want to add a new document to the "users" collection, and you have columns for `id`, `user`, and `status`. To collect the data for the new record, you can create a [form](/reference/widgets/form) named `NewUserForm` with the following fields:
+Suppose you want to add a new document to the "movies" collection, and you have columns for `_id`, `name`, and `rating`. To collect the data for the new record, you can create a [form](/reference/widgets/form) named `NewMovieForm` with the following fields:
 
   * An input field called `idInput` for the `id`.
-  * A Select field called `statusSelect` for the status.
-  * An input field called `userInput` for the username.
+  * A Select field called `ratingSelect` for the rating.
+  * An input field called `nameInput` for the name.
+
 Once the user fills out the form, you can extract the values of the form fields and use them to construct your query 
 
-* **Documents**: This field specifies the document or documents you want to insert into the collection. A document is a set of key-value pairs that represents an object in MongoDB. For example, to insert a new user using input and select widget, you can write:
+* **Documents**: This field specifies the document or documents you want to insert into the collection. A document is a set of key-value pairs that represents an object in MongoDB. For example, to insert a new movie using input and select widget, you can write:
 
    ```sql
     [
       { 
-         _id: {{NewUserForm.data.idInput}}, 
-         user: {{NewUserForm.data.userInput}}, 
-         status: {{NewUserForm.data.statusSelect}}
+         "_id": {{NewMovieForm.data.idInput}}, 
+         "name": {{NewMovieForm.data.nameInput}}, 
+         "rating": {{NewMovieForm.data.ratingSelect}}
       }
    ]
    ```
@@ -235,32 +231,30 @@ You can run this query via the `onClick` event of a [Button widget](/reference/w
 
 ### Update Documents
 
-The Update command in MongoDB is used to modify existing documents in a collection based on a specified set of criteria, such as search conditions or filters. You can pass the below parameters to Update Documents:
+The Update command in MongoDB is used to modify existing documents in a collection based on a specified set of criteria, such as search conditions or filters. For example, if you want to change the `name` value of a document in your `movies` collection using a Table widget `Table2`. Create the `Update Documents` query as shown below:
 
-* **Collection Name**: This field specifies the name of the MongoDB collection where you want to update documents. 
-* **Query**: This field specifies the search criteria or filters for the documents you want to update. For example, if you want to update the `title` from a `movies` table.
-
-In your Table widget, make the title column [Editable](/reference/widgets/table/inline-editing#editable). A new **Save/Discard** button column should have appeared in the table.
-
-In the Table's properties pane, open the column settings for the Save/Discard button column and set the button's `onClick` to run your **UPDATE** query. 
+* **Collection Name**: This field specifies the name of the MongoDB collection where you want to update documents. For example, `movies`.
+* **Query**: This field specifies the search criteria or filters for the documents you want to update. In your Table widget, make the `name` column [Editable](/reference/widgets/table/inline-editing#editable). A new **Save/Discard** button column should have appeared in the table. Add the below code to Query field.
 
   ```sql
   { 
-      title: {{Table1.selectedRow.title}} 
+      "_id": {{Table2.selectedRow._id}} 
   }
   ```
 
-* **Update**: This field specifies the modifications you want to make to the selected documents. For example, to update the `title` field you can write:
+* **Update**: This field specifies the modifications you want to make to the selected documents. For example, to update the `title` field you can write: 
 
   ```sql
     {
       $set: {
-               title:  {{Table1.updatedRow.title}}
+               "name":  {{Table2.updatedRow.name}}
            }
    }
   ```
 
 * **Limit**: This field specifies the maximum number of documents to update. 
+
+In the Table's properties pane, open the column settings for the Save/Discard button column and set the button's `onClick` to run your **UPDATE** query. Also, bind the `OnSuccess` of your Save button click to refresh the Table data by executing the [Find Documents](#find-documents) query. This ensures that your Table widget displays updated data.
 
 MongoDB's multi update feature doesn't support replacement style updates. This means that you can't replace the entire document, but rather, you can only update a single field.
 
@@ -285,10 +279,10 @@ Delete Documents command removes one or more documents from a collection based o
 * **Collection Name**: This field specifies the name of the MongoDB collection from which you want to delete documents. 
 
 
-* **Query**: This field specifies the criteria or filters for selecting documents to delete. For example, to delete all documents with a "status" field selected by user(inactive), you can specify:
+* **Query**: This field specifies the criteria or filters for selecting documents to delete. For example, to delete all documents with a "rating" field selected by user(4), you can specify:
 
    ```sql
-   { status: {{select_select.selectedOptionValue}} }
+   { "rating": {{select_rating.selectedOptionValue}} }
    ```
 
 * **Limit**: This field lets you choose whether to delete a single document or multiple documents that match the query.
@@ -300,10 +294,10 @@ This command counts the number of documents in a collection or a view that match
 * **Collection Name**: This field specifies the name of the MongoDB collection or view that you want to count documents in. 
 
 
-* **Query**: This field specifies the criteria or filters for selecting the documents to count. For example, to count the number of documents in the `orders` collection where the order date is greater than `January 1st, 2021`, you can specify:
+* **Query**: This field specifies the criteria or filters for selecting the documents to count. For example, to count the number of documents in the `movies` collection where the release date is greater than `January 1st, 2021`, you can specify:
 
    ```sql
-   { ord_dt: { $gte: {{DatePicker1.formattedDate}} }
+   { "release_dt": { $gte: {{DatePicker1.formattedDate}} }
    ```
 
 ### Distinct
@@ -313,16 +307,16 @@ Distinct command is used to find the unique or distinct values for a specified f
 * **Collection Name**: The name of the collection to query for distinct values.
 
 
-* **Query**: A query specifies documents from which to retrieve the distinct values. For example, to retrieve distinct values for the `department` field where the department is selected by the user(Finance), you can specify:
+* **Query**: A query specifies documents from which to retrieve the distinct values. For example, to retrieve distinct values for the `multiplex` field where the multiplex is selected by the user(IMAX), you can specify:
 
    ```sql
-   { dept: {{select_department.selectedOptionValue}} } 
+   { "multiplex": {{select_multiplex.selectedOptionValue}} } 
    ```
 
-* **Key/Field**: The field for which to return distinct values. For example, to return distinct values for a field named `sku` in a collection named `items`, you can specify:
+* **Key/Field**: The field for which to return distinct values. For example, to return distinct values for a field named `rating` in a collection named `movies`, you can specify:
 
     ```bash
-    item.sku
+    rating
     ```
 
 ### Aggregate
