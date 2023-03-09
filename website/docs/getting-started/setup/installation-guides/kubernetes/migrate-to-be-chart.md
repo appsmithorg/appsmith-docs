@@ -1,9 +1,9 @@
 ---
-description: Follow the guide to migrate to the Appsmith Business Edition running on Helm chart v2.
+description: Follow the guide to migrate to the Appsmith Business Edition running on v3 Helm chart.
 ---
-# Migrate to Business Edition Helm Chart v2 
+# Migrate to Business Edition Helm Chart v3
 
-Follow the below guide to migrate to the Business Edition running on Helm chart v2 (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
+Follow the below guide to migrate to the Business Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
 
@@ -136,7 +136,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install new Helm chart
+## Install v3 Helm chart
 
 Run the below command to add and deploy the new Helm chart:
 
