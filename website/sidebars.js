@@ -152,7 +152,6 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
-                'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },

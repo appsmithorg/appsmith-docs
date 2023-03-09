@@ -14,7 +14,7 @@ Audit logs are only available on self-hosted, [**Business Edition**](https://www
 
 ![Access the Audit Logs from the Admin Settings page.](</img/as_auditlogs.png>)
 
-You can find audit logs by navigating to your [Admin Settings](./../../getting-started/setup/instance-configuration/admin-settings) page, and finding the **Audit Logs** tab under the **Others** heading. From here, you can see all the events that have been tracked under your organization's account, along with the user, date, and time that the event was logged. Click the arrow next to any event to expand it and see its complete set of details in JSON form.
+You can find audit logs by navigating to your [Admin Settings](/getting-started/setup/instance-configuration/) page, and finding the **Audit Logs** tab under the **Others** heading. From here, you can see all the events that have been tracked under your organization's account, along with the user, date, and time that the event was logged. Click the arrow next to any event to expand it and see its complete set of details in JSON form.
 
 There are several kinds of events that are logged:
 
