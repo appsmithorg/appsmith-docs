@@ -11,10 +11,6 @@ This page describes how to connect your application to your Google Sheets accoun
 
 To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Google Sheets** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-## Configuration
-
-Configure the Google Sheets Datasource as illustrated below:
-
 ### Scope
 
 ![](/img/google_sheets_scope.png)
@@ -33,54 +29,18 @@ Click on the **Save and Authorize** button once you have selected your **Scope**
 
 On a successful login, a screen appears for granting Appsmith permissions for managing your Google Sheets. Click "Allow" to allow Appsmith to manage your spreadsheets.
 
-## Create queries
+## Common queries
 
 <figure>
   <img src="/img/google-sheets-query-page.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
 
-You can create [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to your spreadsheets by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Google Sheets datasource. You'll be brought to a new screen to set up your query.
 
-### Operations
+### Fetch rows
 
-**Operation** sets the type of action you want to perform with your query. A "Spreadsheet" is a document, a "Sheet" is a page of a spreadsheet, and "Sheet Rows" are horizontal records in a sheet.
+Use this operation to request data from your existing Google Sheets.
 
-| **Operation**                        | **Description**                           | **Available entities:**       |
-| ------------------------------------ | ----------------------------------------- | ----------------------------- |
-| [**Fetch Details**](#fetch-details)  | Fetches metadata about a spreadsheet. | [Spreadsheet](#fetch-details-spreadsheet)  |
-| [**Insert One**](#insert)            | Inserts a single new row into a spreadsheet, or creates a new spreadsheet.|  [Sheet Rows](#insert-sheet-row)<br/>[Spreadsheet](#insert-spreadsheet)  |
-| [**Update One**](#update)            | Updates a record in a spreadsheet.        | [Sheet Rows](#update-sheet-row) |
-| [**Delete One**](#delete)            | Deletes a single record, sheet, or spreadsheet. | [Sheet Rows](#delete-sheet-row)<br/>[Spreadsheet](#delete-spreadsheet)<br/>[Sheet](#delete-sheet) |
-| [**Fetch Many**](#fetch-many)        | Fetches records from a spreadsheet, or fetches all existing spreadsheets in your account. | [Sheet Rows](#fetch-many-sheet-rows)<br/>[Spreadsheet](#fetch-many-spreadsheet)        |
-| [**Insert Many**](#insert-many)      | Inserts several new rows into a spreadsheet. | [Sheet Rows](#insert-many-sheet-rows) |
-| [**Update Many**](#update-many)      | Updates multiple existing records in a spreadsheet.  | [Sheet Rows](#update-many-sheet-rows)  |
-
-All the operation types have some of these common fields that identify where in your spreadsheets your query should access:
-
-| **Configuration Field**     | **Description**                                                               |
-| --------------------------- | ----------------------------------------------------------------------------- |
-| **Entity**                  | Select which entity type you want to query. (Sheet Rows, Spreadsheet, Sheet). |
-| **Spreadsheet**             | Select which spreadsheet you want to query from.                              |
-| **Sheet Name**              | Select which sheet you want to query from the spreadsheet.                    |
-| **Table Heading Row Index** | Provide the index of the row in the spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is row 1.                                                     |
-
-### Fetch details
-
-Use this operation to request metadata about one existing spreadsheet.
-
-##### Spreadsheet {#fetch-details-spreadsheet}
-
-Provide the name of the target spreadsheet to fetch information about it such as its name, creation date, modified date, owner, and more.
-
-### Fetch many
-
-Use this operation to request data from your existing Google Sheets. You can fetch the following entities:
-
-- **Sheet rows**: Existing rows from a spreadsheet
-- **Spreadsheets**: A list of all existing spreadsheets
-
-##### Sheet rows {#fetch-many-sheet-rows}
 
 Fetching sheet rows is the way to get your dataset records into your app. In addition to the fields identifying which spreadsheet to query, you may provide extra filtering parameters to search for specific records.
 
@@ -122,43 +82,11 @@ In the **Table Data** property of your Table widget, bind the result of your que
 {{ FetchUsers.data }}
 ```
 
-##### Spreadsheet {#fetch-many-spreadsheet}
-
-Using the **Fetch Many** operation with the **Spreadsheet** entity returns an array of all the spreadsheets available on your Google account. Each spreadsheet is represented by an object with that spreadsheet's URL, name, and id.
-
-### Insert
+### Insert a row
 
 Use **Insert** operations to create a new spreadsheet, or to add a new record to an existing spreadsheet.
 
 If your Google Sheets datasource's **Scope** is set to **Read/Write | Selected Google Sheets**, you have to use an insert query to create any spreadsheets that you'd like your app to access.
-
-##### Spreadsheet {#insert-spreadsheet}
-
-**Insert One** with the **Spreadsheet** entity creates a single new spreadsheet document. When creating the spreadsheet, you can choose to immediately add data (such as a row with column headings) in the same request by filling the **Row Objects** field. This field should contain an array of row objects.
-
-:::caution important
-When you create a spreadsheet with rows, your initial rows must include a `rowIndex` key with a number to specify how to order them.
-:::
-
-**Example**: create a new spreadsheet called `UsersSpreadsheet` with a row for the column headings `name`, `gender`, and `email`.
-
-Create your query called `InsertSpreadsheet` based on your Google Sheets datasource. This query should use the **Insert One** operation for the **Spreadsheet** entity. In the **Spreadsheet Name** field, enter "UsersSpreadsheet."
-
-In the **Row Objects** field, add an array with an object containing your column headings with blank strings as their values:
-
-```javascript
-// in the Row Objects field
-[{
-  "rowIndex": 0,
-  "name": "",
-  "gender": "",
-  "email": ""
-}]
-```
-
-When you check your Google Sheets account, you should find a new spreadsheet `UsersSpreadsheet` populated with the three column headings in the top row.
-
-##### Sheet rows {#insert-sheet-rows}
 
 **Insert One** with the **Sheet Rows** entity adds a single record to your selected spreadsheet.
 
@@ -190,74 +118,38 @@ Once these form fields are filled out, you can add their values to your query li
 
 When your query is executed, the new record is inserted as the new highest index in your dataset (at the bottom of the spreadsheet).
 
-#### Insert many
-
-Use this operation when you are inserting multiple new records into a spreadsheet with a single query. You can't use this to create multiple new spreadsheets at once.
-
-##### Sheet rows {#insert-many-sheet-rows}
-
-
-
----
-
-**Example**: create multiple new records in a table `users` on `Sheet1` of `UsersSpreadsheet`, with columns for `name`, `gender`, and `email`.
-
-Consider a situation where you have a bulk amount of user data from another API request called `GetBulkUsers`, and you'd like to pipe this data into your Google spreadsheets.
-
-Create a query called `InsertNewUsers` based on your Google Sheets datasource. This query should use the **Insert Many** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**.
-
-In the **Row Objects** field, write a `map()` function that returns an array of user objects with the relevant keys for your spreadsheet:
-
-```javascript
-// in the Row Object field of your query
-{{
-  GetBulkUsers.map(user => {
-    return {
-      "name": user.name,
-      "gender": user.gender,
-      "email": user.email
-    }
-  })
-}}
-```
-
-When your query is executed, each new record is inserted at the highest index in your dataset (at the bottom of the spreadsheet).
-
-### Update
-
-Use this operation when you want to submit an existing record with an updated value.
-
-##### Sheet row {#update-sheet-row}
+### Update a row
 
 :::caution important
 When you update a row, your row object must include a `rowIndex` key with a number to specify which record in the spreadsheet to update.
 :::
 
-**Example**:
+### Delete a row
 
-#### Update many
+TODO
 
-Use this operation when you want submit multiple records with updated values.
+## Operations
 
-##### Sheet rows {#update-many-sheet-rows}
+**Operation** sets the type of action you want to perform with your query. A "Spreadsheet" is a document, a "Sheet" is a page of a spreadsheet, and "Sheet Rows" are horizontal records in a sheet.
 
-**Example**:
+| **Operation**                        | **Description**                           | **Available entities:**       |
+| ------------------------------------ | ----------------------------------------- | ----------------------------- |
+| [**Fetch Details**](#fetch-details)  | Fetches metadata about a spreadsheet. | [Spreadsheet](#fetch-details-spreadsheet)  |
+| [**Insert One**](#insert)            | Inserts a single new row into a spreadsheet, or creates a new spreadsheet.|  [Sheet Rows](#insert-sheet-row)<br/>[Spreadsheet](#insert-spreadsheet)  |
+| [**Update One**](#update)            | Updates a record in a spreadsheet.        | [Sheet Rows](#update-sheet-row) |
+| [**Delete One**](#delete)            | Deletes a single record, sheet, or spreadsheet. | [Sheet Rows](#delete-sheet-row)<br/>[Spreadsheet](#delete-spreadsheet)<br/>[Sheet](#delete-sheet) |
+| [**Fetch Many**](#fetch-many)        | Fetches records from a spreadsheet, or fetches all existing spreadsheets in your account. | [Sheet Rows](#fetch-many-sheet-rows)<br/>[Spreadsheet](#fetch-many-spreadsheet)        |
+| [**Insert Many**](#insert-many)      | Inserts several new rows into a spreadsheet. | [Sheet Rows](#insert-many-sheet-rows) |
+| [**Update Many**](#update-many)      | Updates multiple existing records in a spreadsheet.  | [Sheet Rows](#update-many-sheet-rows)  |
 
-### Delete
+All the operation types have some of these common fields that identify where in your spreadsheets your query should access:
 
-Use this record to delete a single existing spreadsheet, sheet, or record. You can only delete a single entity per query call.
-
-##### Sheet row {#delete-sheet-row}
-
-**Example**:
-
-##### Spreadsheet {#delete-spreadsheet}
-
-**Example**:
-
-##### Sheet {#delete-sheet}
-
-**Example**:
+| **Configuration Field**     | **Description**                                                               |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| **Entity**                  | Select which entity type you want to query. (Sheet Rows, Spreadsheet, Sheet). |
+| **Spreadsheet**             | Select which spreadsheet you want to query from.                              |
+| **Sheet Name**              | Select which sheet you want to query from the spreadsheet.                    |
+| **Table Heading Row Index** | Provide the index of the row in the spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is row 1.                                                     |
 
 ## Troubleshooting
 
