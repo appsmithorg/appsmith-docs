@@ -15,8 +15,14 @@ Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
 ### Configuration
 
+:::caution important
+If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database.
+
+18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
+:::
+
 <figure>
-  <img src="/img/as-mysql-datasource-config.png" style= {{width:"700px", height:"auto"}} alt="MySQL Datasource configuration page"/>
+  <img src="/img/as-mysql-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="MySQL Datasource configuration page"/>
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
 </figure>
 
@@ -44,8 +50,6 @@ To connect to your database, Appsmith needs the following parameters. All requir
    * **Default**: SSL is used if the server supports it.
    * **Required**: The Require SSL Mode rejects the connection if SSL isn't available.
    * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
-
-  For more information, see the MySQL docs for [using encrypted connections](https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html).
 
 * **Server Timezone Override:** Provide a valid timezone (For example: "UTC") to use for your queries. Use this option if Appsmith doesn't automatically recognize the MySQL server's timezone.
 
@@ -81,7 +85,7 @@ You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-
 MySQL databases are queried using standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html). All MySQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
 :::tip
-Consider [using prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#why-should-you-use-prepared-statements) to improve the security of the queries in your app by preventing SQL-injection attacks.
+[Prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) are turned on by default to improve the security of the queries in your app. 
 :::
 
 ### Select
@@ -105,36 +109,45 @@ After fetching your data, you can display it in a Table widget by [binding](/ref
 
 Use an `INSERT` statement to add rows to a database table. 
 
-For example, imagine you have a table called users with columns for `name`, `email`, and `phone`. You can add [Input widgets](/reference/widgets/input) and a [Select widget](/reference/widgets/select) on the canvas, and pull their values into your query like below:
+For example, imagine you have a table called users with columns for `name`, `gender`, and `phone` and you'd like to create a new record. To gather data for the record, you can build a [Form](/reference/widgets/form) called "NewUserForm" containing:
+
+- An [input widget](/reference/widgets/input) called "NameInput" for the name,
+- A [Select widget](/reference/widgets/select) called "GenderSelect" for the gender.
+- An input widget called "EmailInput" for the email,
+
+Once these form fields are filled out, you can pull their values into your query like below:
 
 ```sql
 INSERT INTO users
   (name, gender, email)
 VALUES
   (
-    {{ nameInput.text }},
-    {{ genderDropdown.selectedOptionValue }},
-    {{ emailInput.text }}
+    {{ NewUserForm.data.NameInput }},
+    {{ NewUserForm.data.GenderSelect }},
+    {{ NewUserForm.data.EmailInput }}
   );
 
 ```
 
-Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your table.
+Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your database. Be sure to add an `onSuccess` callback that re-runs the fetch query to refresh the data in your Table widget.
 
 ### Update
 
-Use `UPDATE` statements to change the values of existing records in your database. For example, if you want to change the `email` value of a record in the `users` table, you can add a button column to your Table widget and label it "Update." 
+Use `UPDATE` statements to change the values of existing records in your database.
 
-Set the **onClick** event of the button to execute an `UPDATE` query, and configure your query like below to replace the `email` value with the text of an Input widget filled out by your user.
+For example, imagine you want to change the `email` value of a record in your `users` table. In your Table widget, make the `email` column [**Editable**](/reference/widgets/table/inline-editing#editable). A new **Save/Discard** button column should have appeared in the table.
 
+In the Table's properties pane, open the column settings for the Save/Discard button column and set the button's **onClick** to run your `UPDATE` query. Be sure to add an `onSuccess` callback that re-runs the fetch query to refresh the data in your Table widget after execution.
+
+Configure your query like below to set the existing `email` entry to the updated value from the Table.
 
 ```sql
 UPDATE users
-  SET email = '{{emailInput.text}}'
+  SET email = '{{Table1.updatedRow.email}}'
   WHERE id = {{ Table1.selectedRow.id}};
 ```
 
-Then, run this query via the **onClick** event of a [Button widget](/reference/widgets/button) to insert the data into your table.
+Now you can edit the `email` cell of any row in the Table widget and click **Save** to send your update to the database.
 
 ### Delete
 
@@ -146,7 +159,7 @@ For example, to delete an existing row from your table widget, add a button colu
 DELETE FROM users WHERE id = {{ Table1.selectedRow.id }};
 ```
 
-When the user clicks the button, the record is deleted from the database table.
+When the user clicks the button, the record is deleted from the database table. Be sure to add an `onSuccess` callback to the delete query that re-runs your fetch query to refresh the data in your Table widget.
 
 To avoid deleting records by accident, consider enabling the "Request confirmation before running query" setting in your [query's settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
 

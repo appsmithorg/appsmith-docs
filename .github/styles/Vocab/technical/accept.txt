@@ -212,6 +212,10 @@ onSuccess
 onError
 drag-and-drop
 as per
+Xano
+Supabase
+Google
+SSO
 PostgreSQL
 Disable
 CRUD
@@ -238,3 +242,4 @@ batchSize
 1st
 Google Sheets
 rowIndex
+svg

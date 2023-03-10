@@ -37,7 +37,7 @@ To enable GitHub Sign in, login to your [GitHub Account](https://github.com)
 
   * **Configure via UI (recommended)**:
 
-  On your self-hosted instance, navigate to the [Admin Settings page](/getting-started/setup/instance-configuration/admin-settings#using-the-admin-settings-ui). Under the **Authentication** tab, you can find fields for providing your Client ID and Client Secret generated in the previous steps.
+  On your self-hosted instance, navigate to the [Admin Settings page](/getting-started/setup/instance-configuration). Under the **Authentication** tab, you can find fields for providing your Client ID and Client Secret generated in the previous steps.
 
   ![](/img/as_github_auth_config.png)
 

@@ -53,7 +53,7 @@ Appsmith officially supports all Docker-based installations. You can choose from
 
 ## Configure and manage instance
 
-You can configure and manage the self-hosted instance if you are a [Super Admin](/getting-started/setup/instance-configuration/admin-settings) user.
+You can configure and manage the self-hosted instance if you are a [Super Admin](/getting-started/setup/instance-configuration/) user.
 
 * [User authentication](/getting-started/setup/instance-configuration/authentication/) - manage how users login to applications.
 * [Email configuration](/getting-started/setup/instance-configuration/email/) - invite users and notify admins.
