@@ -37,10 +37,17 @@ To enable Google Sign-in, go to the [Google API console](https://console.cloud.g
 ## Configure Appsmith instance  
 
 :::caution
-* Please manually test the Client ID and Client secret before disabling the Form login authentication. If the google configuration is invalid, the user is stuck on the login screen. To fix this, you’ll have to update the environment variables manually.
-* If you are running appsmith behind an ELB / Proxy, [configure Nginx](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
+Test the Client ID and Client Secret before disabling Form login on Appsmith. This ensures that users can access Appsmith with their Google credentials. To fix an invalid Google configuration, update the environment variables.
 :::
-On the machine hosting the Appsmith instance, find your `docker.env` file located in `<project-root>/stacks/configuration/`. Update the values for the following keys:
+There are two ways to configure the self-hosted Appsmith instance - 
+- Admin Settings
+- Environment Variables
+
+**Admin Settings:** you can add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to *Admin Settings> Authentication> Google*, fill the required fields and click the **Save & Restart** button at the bottom of the page.
+
+![](/img/as_google_auth_config.png)
+
+**Environment Variables:** Navigate to the `docker.env` file located in `<PROJECT_ROOT>/stacks/configuration/`. Update the values for the following keys:
 
 * Configure the `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID` and `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET` fields with the client ID and client secret generated in the step above
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (eg: `abc.com`), to only allow users with an email address from that domain name to log in (eg: `john@abc.com`). You can provide several domain names using a comma-separated list.
@@ -55,9 +62,6 @@ On the machine hosting the Appsmith instance, find your `docker.env` file locate
   # ******************************
    ```
 
-Alternatively, you can also add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to *Admin Settings> Authentication> Google*, fill the required fields and click the **Save & Restart** button at the bottom of the page.
-
-![](/img/as_google_auth_config.png)
-
-After these steps, Google Login should be enabled for your Appsmith installation.
+ 
+After these steps, Google Login should be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
 
