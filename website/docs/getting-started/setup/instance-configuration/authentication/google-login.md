@@ -37,8 +37,7 @@ To enable Google Sign-in, go to the [Google API console](https://console.cloud.g
 ## Configure Appsmith instance  
 
 :::caution
-* The Client ID and Client Secret entered aren't verified by any means. Please test it out manually before disabling the Form login authentication method. If Form login is disabled before testing the Google authentication configuration setup, it may lead to the user getting stuck on the login screen if the Google configuration is invalid. You’ll have to update the environment variables manually to fix this, as you can't edit it via the Admin settings page since you won’t be logged in anymore.
-
+* Please manually test the Client ID and Client secret before disabling the Form login authentication. If the google configuration is invalid, the user is stuck on the login screen. To fix this, you’ll have to update the environment variables manually.
 * If you are running appsmith behind an ELB / Proxy, [configure Nginx](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
 :::
 
@@ -67,3 +66,4 @@ There are two ways to configure the self-hosted Appsmith instance - Admin Settin
    ```
 
 After these steps, Google Login should be enabled for your Appsmith installation.
+
