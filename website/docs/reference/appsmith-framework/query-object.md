@@ -3,11 +3,25 @@ sidebar_position: 3
 ---
 # Query Object
 
-This page describes how to use the Query object to set up the flow of data in your app with code.
+This page describes how to use the Query object to run queries and access the data from the response.
 
-## `Run()`
+## Properties and methods
 
-Calling a query's `run()` function executes that query. `run()` is asynchronous and can be promise-chained using the callbacks in the function signature. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
+These properties are used to reference and control data related to your query.
+
+| Property         | Description                                                                                  |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| **data**         | Contains the response body from the last successful execution of this query. If this property is referenced in a widget's property field, the query is automatically run on page load. |
+| **responseMeta** | Contains metadata from the last response to this query's execution.                          |
+
+| Method           | Description                                                                                  |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| **clear()**      | Empties all data from the query's **`data`** property.                                       |
+| [**run()**](#signature) | Executes the query when called. Can't be called in sync fields; see [sync vs. async fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function). |
+
+## run()
+
+Calling a query's `run()` function executes that query. `run()` is asynchronous and returns a promise, so you can use it with async syntax like `.then()` chains and `async/await`. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
 
 ### Signature
 
@@ -33,13 +47,13 @@ This function returns a JavaScript **promise**, which can be used to handle asyn
 
 To learn more about chaining actions to create complex workflows, see [complex workflows](/core-concepts/writing-code/workflows#complex-workflows).
 
-### Pass parameters to `run()`
+### Pass parameters to run()
 
-When writing queries, you typically interpolate data from widgets or the [Appsmith Store](/reference/appsmith-framework/widget-actions/store-value) directly into the query body. Sometimes though, it's useful to pass non-widget data into the queries programmatically, using the same query multiple times in a loop.
+Most queries read values directly from entities as global variables. In some cases, like running a query inside a loop, parameters may need to be passed to the query with values contextual to the execution.
 
 For this, use the `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
 
-#### Example use
+#### Example
 
 Imagine that you have an API endpoint that returns data about teams of employees. `api.domain/teams/1` returns Team 1, `api.domain/teams/2` returns Team 2, etc. It would be useful to write a function that uses a single button click to return aggregated data from a number of selected teams.
 
@@ -90,7 +104,19 @@ Create a [Table widget](/reference/widgets/table) and bind your stored data into
 
 Now you can select your teams with the checkboxes, click the button, and see your table populate with data.
 
-### Callbacks (deprecated)
+### Ways to use run()
+
+TODO
+
+#### Promise chains
+
+TODO
+
+#### async/await
+
+TODO
+
+#### Callbacks (deprecated)
 
 :::caution info
 This style is deprecated in Appsmith. Reference this function signature only if you have existing callback-style syntax in your app.
@@ -104,16 +130,15 @@ run(onSuccess: Function, onError: Function, params: Object): void
 
 The **params** argument ([see above](#pass-parameters-to-run)) is an object of key-value pairs that can be referenced from within the query body using `{{ this.params.key }}`.
 
-## Properties
+## data
 
-These properties are used to reference and control data related to your query.
+A query's `data` property contains the response data from its most recent execution. To pipe data from your query into your app, access `<query_name>.data` in a widget property or JS Object; For example, you might commonly reference it in a [Table widget's](/reference/widgets/table) **Table Data** property to populate the table with data.
 
-| Property         | Description                                                                                  |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| **data**         | Contains the response body from the last successful execution of this query. If this property is referenced in a widget's property field, the query is automatically run on page load. |
-| **responseMeta** | Contains metadata from the last response to this query's execution.                          |
-| **clear()**      | Empties all data from the query's **`data`** property.                                       |
-| [**run()**](#signature) | Executes the query when called. Can't be called in sync fields; see [sync vs. async fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function). |
+When you bind `<query_name>.data` to one of a widget's properties, it sets your query to run automatically when the app page loads. This way, your widgets are filled with data without user interaction. To turn off this behavior, toggle the **Run on page load** setting in your [query's settings page](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
+
+## responseMeta
+
+The query object's `responseMeta` property contains an object with metadata about the query's most recent execution. For example, you can see its status code, whether it was successful, and the time it was executed.
 
 ## Further reading
 
