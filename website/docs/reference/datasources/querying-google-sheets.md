@@ -1,6 +1,5 @@
 ---
 sidebar_position: 7
-toc_max_heading_level: 4
 ---
 
 # Google Sheets
@@ -23,40 +22,53 @@ The **Scope** setting defines what type of privileges your app has while queryin
 
 - **Read Files | All Google Sheets**: Your app has read-only access to all spreadsheets on your Google account, regardless of how or when they were created.
 
-#### Save and authorize
+### Save and authorize
 
 Click on the **Save and Authorize** button once you have selected your **Scope**. You'll be directed to a Google Login screen, where you can log into the account whose spreadsheets you’d like to access.
 
 On a successful login, a screen appears for granting Appsmith permissions for managing your Google Sheets. Click "Allow" to allow Appsmith to manage your spreadsheets.
 
-## Common queries
+## Fetch rows
 
 <figure>
   <img src="/img/google-sheets-query-page.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
 
+Use the **Fetch Many** operation with the **Sheet rows** entity to pull your spreadsheet records into your app. You can configure this query with the fields below to fetch records that meet specific conditions.
 
-### Fetch rows
+### Filter format
 
-Use this operation to request data from your existing Google Sheets.
+Under **Filter Format**, you can choose one of two styles of selecting a subset of your data:
 
+- **Where Clause**: fetch records based on conditions. Also enables sorting and pagination.
+- **Cell Range**: fetch a block of spreadsheet cells, defined by spreadsheet-style notation (like "A2:B7").
 
-Fetching sheet rows is the way to get your dataset records into your app. In addition to the fields identifying which spreadsheet to query, you may provide extra filtering parameters to search for specific records.
+#### Where clause
 
-Use the **Columns** field to specify which particular columns of the records to return. You can use the dropdown menu to search and select columns, or you can enable JS and provide an array of column names to request.
+These fields enable you to return records conditionally, sort on multiple levels, and set up pagination.
 
-**Filter Format** provides two options for filtering your spreadsheet records:
+##### Filter and sort
 
-The **Cell range** filter format selects a specific block of cells from the spreadsheet using Google Sheets' row number and column letter syntax (for example, `A1-B14`). Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells.
+In the **Filter by** fields, you can build expressions that return records when a column value meets some criteria. You can evaluate them using `in`, `not in`, `contains`, and logic operators.
 
-Use the **Where Clause** filter format to filter based on your data. These fields enable you to return records conditionally, sort on multiple levels, and set up pagination.
-
-In the **Filter by** fields, you can build expressions that return records only when a given column value meets some logical criteria. You can evaluate values using logical operators, "in," "not in," and "contains." The **Add Condition** button adds another simple single-line expression; **Add Group Condition** enables you to write a nested expression with multiple levels of And/Or statements.
+The **Add Condition** button adds another simple single-line expression. **Add Group Condition** adds a nested expression with multiple levels of And/Or statements.
 
 In the **Sort By** field, you can choose a column to use for sorting your results. The **Add Parameter** button adds multiple levels of sorting.
 
-To limit the amount of records you receive at once, use **Pagination Limit**. **Pagination Offset** allows skipping a given number of records before returning results; these two fields together enable you to implement pagination for large datasets.
+##### Pagination
+
+To limit the amount of records you receive at once, use **Pagination Limit**.
+
+**Pagination Offset** allows skipping a given number of records before returning results; these two fields together enable you to implement pagination for large datasets.
+
+To learn more about using paginating your data in tables, read [offset-based pagination](/reference/widgets/table#offset-based-pagination).
+
+#### Cell range
+
+If you need to select contiguous block of cells based on their location in the spreadsheet instead of their values, use the **Cell Range** filter format. This mode doesn't allow conditions, sorting, or pagination.
+
+This mode uses Google Sheets' row number and column letter syntax (for example, `A1-B14`) to select cells. Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells.
 
 ---
 
@@ -73,7 +85,7 @@ This query doesn't require filtering or sorting the data, so **Filter By** and *
 
 Set the **Pagination Limit** to 10 to limit the number of records you receive at once.
 
-To continue setting up pagination for your data, you should use your Table widget's `pageOffset` property in the **Pagination Offset** field. To learn more about pagination, read [server-side pagination](#reference/widgets/table#server-side-pagination).
+To continue setting up pagination for your data, you can use your Table widget's `pageOffset` property in the **Pagination Offset** field. To learn more about pagination, read [server-side pagination](#reference/widgets/table#server-side-pagination).
 
 In the **Table Data** property of your Table widget, bind the result of your query:
 
@@ -82,7 +94,9 @@ In the **Table Data** property of your Table widget, bind the result of your que
 {{ FetchUsers.data }}
 ```
 
-### Insert a row
+Your table should fill with data when the query is run.
+
+## Insert a row
 
 Use **Insert** operations to create a new spreadsheet, or to add a new record to an existing spreadsheet.
 
@@ -118,13 +132,13 @@ Once these form fields are filled out, you can add their values to your query li
 
 When your query is executed, the new record is inserted as the new highest index in your dataset (at the bottom of the spreadsheet).
 
-### Update a row
+## Update a row
 
 :::caution important
 When you update a row, your row object must include a `rowIndex` key with a number to specify which record in the spreadsheet to update.
 :::
 
-### Delete a row
+## Delete a row
 
 TODO
 
