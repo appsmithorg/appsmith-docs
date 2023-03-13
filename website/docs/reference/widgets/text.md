@@ -10,14 +10,14 @@ This page explains the use of a Text widget for displaying and binding textual i
 
 If you want to display text manually, enter the desired text directly into the `Text field`. This method of displaying text is static, meaning that the text remains the same until it's manually updated or edited. 
 
-This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change dynamically based on user interactions. 
+This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change based on user interactions. 
 
-Additionally, you can use **HTML code** in the Text field(manually or dynamically) to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [iFrame widget](/reference/widgets/iframe).
+Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [iFrame widget](/reference/widgets/iframe).
 
 
 ## Display text dynamically
 
-If you want to display text dynamically, it means that the text content is generated in real-time based on user interactions or data from external sources like APIs or other widgets. This method is useful when the text needs to be updated or changed frequently based on changing conditions or user inputs. 
+You can dynamically display text that's generated in real-time based on user interactions or data from external sources like APIs or other widgets. This method is useful when the text needs to be updated or changed frequently based on changing conditions or user inputs. 
 
 
 You can achieve this is by binding values from different widgets to display the text. For instance, if you want to display text based on user selection in a table widget, you can utilize the syntax.
