@@ -4,6 +4,88 @@ sidebar_position: 1
 
 # Airtable
 
+This page describes how to connect your application to your Airtable bases and use queries to manage their content.
+
+## Connect to Airtable
+
+To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
+
+:::caution info
+[The API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
+:::
+
+### Authentication type
+
+:::info
+Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens.
+:::
+
+You'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration. Appsmith automatically handles sending your token in your request headers.
+
+Once you're finished, click **Save** to save your datasource.
+
+### Base ID
+
+In your **queries**, you'll need to specify the **Base ID** and **Table Name** to access your data.
+
+The **Base ID** can be found in the URL of the webpage that displays your database. It's the first sub-string after `https://airtable.com/`, prefixed by `app`. For example:
+
+```
+https://airtable.com/appZueQaLuTv7fSXjJx/tblPhSJD7fdIKLY3j1/viwqRLKs978DFI6Q?blocks=hide
+                     ^^^^^^^^^^^^^^^^^^^
+// The Base ID for this URL is: appZueQaLuTv7fSXjJx
+```
+
+## List records
+
+
+
+### Filter and sort
+
+
+
+### Pagination
+
+
+
+## Create a record
+
+
+## Update a record
+
+
+## Delete a record
+
+
+
+## Commands
+
+**Command** sets the type of action you want to perform with your query.
+
+| **Command**           | **Description**                                                                    |
+| ----------------------  | ---------------------------------------------------------------------------------- |
+| **List Records**        | Fetch records from a base table.                                                   |
+| **Create Records**      | Add new records to a base table.                                                   |
+| **Delete A Record**     | Delete a record from a base table by its Record ID.                                |
+| **Retrieve A Record**   | Fetch a single record by its Record ID.                                            |
+| **Update Records**      | Update existing records in a base table, referenced by their Record ID.            |
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) page for assistance.
+
+If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
+
+## Further reading
+
+* [Table widget](/reference/widgets/table)
+* [Form widget](/reference/widgets/form)
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+
+---
+
+# Airtable
+
 [Airtable ](https://airtable.com/)is an easy-to-use online platform for creating and sharing relational databases. The user interface is simple, colorful, friendly, and allows anyone to spin up a database in minutes.
 
 :::info
