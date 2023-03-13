@@ -12,8 +12,11 @@ If you want to display text manually, enter the desired text directly into the `
 
 This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change based on user interactions. 
 
-Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [iFrame widget](/reference/widgets/iframe).
+Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [iFrame widget](/reference/widgets/iframe). For instance, you can use:
 
+```js
+<p style="color:blue;">{{Input1.text}}</p>
+```
 
 ## Display text dynamically
 
@@ -41,8 +44,8 @@ When the [**height**](/reference/widgets/#height) property of a Text widget is s
 Downloading content allows you to save the content for later use or share it with others. To download the content:
 
 * Add a Text widget to the canvas and enter the desired Text.
-* Add a Button widget to the canvas and enter a Label for it.
-* Run the Download method in the onClick event of the button created. You also can write JS code like this:
+* Add a Button widget to the canvas.
+* Run the Download method in the onClick event of the button created. You can also write JS code like this:
 
 ```js
 {{download(Text1.text,'LoremIpsum.txt','text/plain')}}
