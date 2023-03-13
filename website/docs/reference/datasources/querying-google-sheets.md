@@ -24,9 +24,9 @@ The **Scope** setting defines what type of privileges your app has while queryin
 
 ### Save and authorize
 
-Click on the **Save and Authorize** button once you have selected your **Scope**. You'll be directed to a Google Login screen, where you can log into the account whose spreadsheets you’d like to access.
+Click the **Save and Authorize** button after selecting the **Scope**. You'll be directed to the Google OAuth screen to choose the Google account whose spreadsheets you’d like to access.
 
-On a successful login, a screen appears for granting Appsmith permissions for managing your Google Sheets. Click "Allow" to allow Appsmith to manage your spreadsheets.
+On the next screen, click **Allow** to grant the Appsmith app permission to view and edit files based on the scope.
 
 ## Fetch rows
 
@@ -208,7 +208,7 @@ Create a [Button widget](/reference/widgets/button) on the canvas and update its
 {{ DeleteUser.run() }}
 ```
 
-To delete a record, you need only provide the `rowIndex` of the record to delete. In your `DeleteUser` query's **RowIndex** field, bind the value of the selected row of the `UsersTable`:
+To delete a record, you need only provide the `rowIndex` of the record to delete. In your `DeleteUser` query's **Row Index** field, bind the value of the selected row of the `UsersTable`:
 
 ```javascript
 // DeleteUser query's Row Index field
@@ -223,13 +223,13 @@ Now when the button is clicked, the query is run and the corresponding row is de
 
 | **Operation**                        | **Description**                           | **Available entities:**       |
 | ------------------------------------ | ----------------------------------------- | ----------------------------- |
-| [**Fetch Details**](#fetch-details)  | Fetches metadata about a spreadsheet. | [Spreadsheet](#fetch-details-spreadsheet)  |
-| [**Insert One**](#insert)            | Inserts a single new row into a spreadsheet, or creates a new spreadsheet.|  [Sheet Rows](#insert-sheet-row)<br/>[Spreadsheet](#insert-spreadsheet)  |
-| [**Update One**](#update)            | Updates a record in a spreadsheet.        | [Sheet Rows](#update-sheet-row) |
-| [**Delete One**](#delete)            | Deletes a single record, sheet, or spreadsheet. | [Sheet Rows](#delete-sheet-row)<br/>[Spreadsheet](#delete-spreadsheet)<br/>[Sheet](#delete-sheet) |
-| [**Fetch Many**](#fetch-many)        | Fetches records from a spreadsheet, or fetches all existing spreadsheets in your account. | [Sheet Rows](#fetch-many-sheet-rows)<br/>[Spreadsheet](#fetch-many-spreadsheet)        |
-| [**Insert Many**](#insert-many)      | Inserts several new rows into a spreadsheet. | [Sheet Rows](#insert-many-sheet-rows) |
-| [**Update Many**](#update-many)      | Updates multiple existing records in a spreadsheet.  | [Sheet Rows](#update-many-sheet-rows)  |
+| **Fetch Details**  | Fetches metadata about a spreadsheet. | Spreadsheet  |
+| **Insert One**            | Inserts a single new row into a spreadsheet, or creates a new spreadsheet.|  Sheet Rows<br/>Spreadsheet  |
+| **Update One**            | Updates a record in a spreadsheet.        | Sheet Rows |
+| **Delete One**            | Deletes a single record, sheet, or spreadsheet. | Sheet Rows<br/>Spreadsheet<br/>Sheet |
+| **Fetch Many**        | Fetches records from a spreadsheet, or fetches all existing spreadsheets in your account. | Sheet Rows<br/>Spreadsheet        |
+| **Insert Many**      | Inserts several new rows into a spreadsheet. | Sheet Rows |
+| **Update Many**      | Updates multiple existing records in a spreadsheet.  | Sheet Rows  |
 
 All the operation types have some of these common fields that identify where in your spreadsheets your query should access:
 
