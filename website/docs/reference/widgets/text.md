@@ -1,16 +1,59 @@
 # Text
 
-A text widget displays textual information. Whether you want to add a paragraph or a heading to a container, a text widget makes it easy to style and display text.
+This page explains the use of a Text widget for displaying and binding textual information.
+
+
 
 <VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use Text Widget"/>
 
+## Display text manually
+
+If you want to display text manually, enter the desired text directly into the `Text field`. This method of displaying text is static, meaning that the text remains the same until it's manually updated or edited. 
+
+This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change dynamically based on user interactions. 
+
+Additionally, you can use **HTML code** in the Text field(manually or dynamically) to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [iFrame widget](/reference/widgets/iframe).
+
+
+## Display text dynamically
+
+If you want to display text dynamically, it means that the text content is generated in real-time based on user interactions or data from external sources like APIs or other widgets. This method is useful when the text needs to be updated or changed frequently based on changing conditions or user inputs. 
+
+
+You can achieve this is by binding values from different widgets to display the text. For instance, if you want to display text based on user selection in a table widget, you can utilize the syntax.
+
+```js
+{{Table1.selectedRow.task}}
+```
+
+## Overflow text
+
+When displaying long strings of text within a Text widget, it's important to ensure that the text is displayed without affecting the layout of the user interface. Overflow text property refers to text that extends beyond the visible boundaries of a widget. 
+
+When the [**height**](/reference/widgets/#height) property of a Text widget is set to "auto," the height of the widget is adjusted automatically based on the length of the text. However, when the height property is set to a **fixed**, it provides options to handle **overflow text**. You can use:
+
+* **Truncate Text:** This feature truncates the text in the Text widget and adds three ellipses at the bottom left corner. If the text is longer than the widget area, clicking on the ellipses opens up a pop-up that displays the entire text.
+
+* **Scroll:** This option enables scrolling within the boundaries of the Text widget. It allows you to display longer text within a small area of the app without truncating it, and lets users scroll through the content to view it in its entirety.
+
+## Downloading the content
+
+Downloading content allows you to save the content for later use or share it with others. To download the content:
+
+* Add a Text widget to the canvas and enter the desired Text.
+* Add a Button widget to the canvas and enter a Label for it.
+* Run the Download method in the onClick event of the button created. You also can write JS code like this:
+
+```js
+{{download(Text1.text,'LoremIpsum.txt','text/plain')}}
+```
+
 ## Properties
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-Properties allow you to edit the text widget, connect it with other widgets and customize the user actions.
+### Widget properties
+These properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-### Widget Properties
-
-These properties enable you to edit the text widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 | Property            | Description                                                                                                                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -18,77 +61,46 @@ These properties enable you to edit the text widget. All these properties are pr
 | **Enable Scroll**   | It enables scrolling within a widget's set boundary. It helps you not truncate long text and lets you display it inside a small area on the app.                                           |
 | **Truncate text**   | It truncates the text that goes beyond the text box size.                                                                                                                                  |
 | **Visible**         | It controls the widget's visibility on the page. When turned off, the widget would not be visible when the app is published.                                                                |
-| **Animate Loading** | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
+| **Animate Loading** | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
 | **Disable link**    | It parses any link in the widget as standard text.                                                                                                                                         |
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
-Let's understand the widget properties in detail.
-
-#### Text
-
-The `Text` field takes the input for the text widget. You can also add `HTML` code in the Text field manually or dynamically to render it in the widget.
-
-<VideoEmbed host="youtube" videoId="jIOajSSe6vI" title="Text" caption="Text"/>
-
-:::info
-Text field can only render inline CSS. If you want to use external CSS, we suggest using the [iFrame widget.](iframe.md)
-:::
-
-#### Truncate Text
-
-This property shortens the text in the text box and further adds three ellipses at the bottom left of the widget. Clicking on the three ellipses opens up a pop-up showing all the text inside the text widget. It's enabled by default and truncation will only be applied if the text is longer than what can fit inside the given widget area.
-
-<VideoEmbed host="youtube" videoId="Pex6RAyeHso" title="Truncate Text" caption="Truncate Text"/>
-
-#### Visible
-
-`Visible` controls the widget’s visibility on the app’s page. The widget would not be visible on the published app if you turn off this property. You can also write a `JS`\` code to link Visible’s functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
-
-For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
-
-```
-{{Checkbox1.isChecked}}
-```
-
-When you tick the checkbox, it will enable the Visible property, and the text widget will be visible in the app.
-
-<VideoEmbed host="youtube" videoId="NBDZVBKX4jM" title="Visible" caption="Visible"/>
-
-#### Disable link
-
-It prevents the input text from being parsed as a link. You can also write a `JS` code to link Disable the link’s functionality to a user action. Click on `JS` next to the `Disable link` to write JavaScript code.
-
-For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Disable link` property. To enable the `Disable link` when the user checks the checkbox, add the following JavaScript code:
-
-```
-{{Checkbox1.isChecked}}
-```
-
-When you tick the checkbox, it will enable the Disable link property, and the input will be parsed as text.
-
-<VideoEmbed host="youtube" videoId="bmPk0arvZQM" title="Disable link" caption="Disable link"/>
 
 
-### Binding Properties
 
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+### Reference properties
+These properties allow you to bind your select widget with any other widget in queries or JS objects.
 
 | Property      | Description                                                   | Code Snippet         |
 | ------------- | ------------------------------------------------------------- | -------------------- |
 | **isVisible** | This property indicates whether the widget is visible or not. | `{{Text.isVisible}}` |
 | **text**      | This property returns the widget's text value.                | `{{Text.text}}`      |
 
-### Styles
+### Style properties
 
-Style properties allow you to modify the text widget visually. It has several options, such as -
+Style properties allow you to change the look and feel of the widget.
 
-* **Cell background color:** It lets you choose the background color of the text widget.
-* **Text color:** It gives an option to change the color of the text.
-* **Border color:** It allows you to change the border color of the text widget.
-* **Border width:** You can define the width of the border here. It takes input in px.
-* **Text size:** It gives you an option to specify the text size.
-* **Font style:** Using this property, you can modify your text visually.
-* **Font Family:** Using this property, you can select a the font.
-* **Text Align:** This property focuses on the text alignment inside the text widget. It has three options - left, center, or right.
 
-<VideoEmbed host="youtube" videoId="kXkGfzGSxYA" title="Styles" caption="Styles"/>
+| Events             | Description                                                                                                                                    |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Font Family**                	| Allows you to select a font.                                                                                                                                                    	|
+| **Font Size**              	       	| Allows you to set the size of the label.                                                                                                                                                                     	|
+| **Text Color**              	            	| Allows you to change the color of the text.                                                                                                                                               	|
+| **Background Color**                    	|  Allows you to change the background color of the text widget.                                                                                                                            	|
+| **Border Color**             	          	| Allows you to change the border color of the text widget.                                                                                                                                                            	|
+| **Alignment**             	          	| This property focuses on the text alignment inside the text widget.                                                                                                                                                            	|
+| **Emphasis**             	          	| Allows you to choose a font style; bold or italic.                                                                                                                                                   	|
+| **Border Width**             	          	| You can define the width of the border here. It takes input in px.                                                                                                              	|
+
+## Troubleshooting
+
+If you run into any other issues while working with the widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If your issue isn't covered in the guide, please connect with support@appsmith.com or raise your query on the [Discord Server](https://discord.com/invite/rBTTVJp).
+
+
+## Further reading
+
+* [Rich Text Editor](/reference/widgets/rich-text-editor)
+* [Button widget](/reference/widgets/button)
+* [Form widget](/reference/widgets/form)
+
+
