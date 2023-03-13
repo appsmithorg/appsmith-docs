@@ -79,7 +79,7 @@ This mode uses Google Sheets' row number and column letter syntax (for example, 
   <figcaption align="center"><i>Configuring a Fetch Many query.</i></figcaption>
 </figure>
 
-Create a query called `FetchUsers` based on your Google Sheets datasource. This query should use the **Fetch Many** operation for the **Sheet Rows** entity, and be configured with the spreadsheet and sheet name in their appropriate fields. Set the **Filter Format** to **Where Clause** to access the pagination settings.
+**Setup**: create a query called `FetchUsers` based on your Google Sheets datasource. This query should use the **Fetch Many** operation for the **Sheet Rows** entity, and be configured with the spreadsheet and sheet name in their appropriate fields. Set the **Filter Format** to **Where Clause** to access the pagination settings.
 
 This query doesn't require filtering or sorting the data, so **Filter By** and **Sort By** can be left blank.
 
@@ -102,49 +102,124 @@ Use **Insert** operations to create a new spreadsheet, or to add a new record to
 
 If your Google Sheets datasource's **Scope** is set to **Read/Write | Selected Google Sheets**, you have to use an insert query to create any spreadsheets that you'd like your app to access.
 
-**Insert One** with the **Sheet Rows** entity adds a single record to your selected spreadsheet.
+To insert a record, supply an object in the query's **Row Object** field with keys matching the spreadsheet's column headings.
 
 ---
 
-**Example**: create a new record in a table `users` on `Sheet1` of `UsersSpreadsheet`, with columns for `name`, `gender`, and `email`.
+**Example**: create a new record in a table `users` on `Sheet1` of `UsersSpreadsheet`, with columns for `name`, `date_of_birth`, and `employee_id`.
 
-Create your query called `InsertNewUser` based on your Google Sheets datasource. This query should use the **Insert One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**.
+**Setup**: create your query called `InsertNewUser` based on your Google Sheets datasource. This query should use the **Insert One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**.
 
-To gather data for the new record, you build a [Form](/reference/widgets/form) on the canvas called `NewUserForm` containing:
+To gather data for the new record, create a [JSON Form](/reference/widgets/json_form) on the canvas called `NewUserForm`. You should already have fields for `name`, `date_of_birth`, and `employee_id`.
 
-- An [input widget](/reference/widgets/input) called "NameInput" for the name,
-- A [Select widget](/reference/widgets/select) called "GenderSelect" for the gender,
-- An input widget called "EmailInput" for the email.
+In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
 
-Once these form fields are filled out, you can add their values to your query like below:
+```javascript
+// Submit button's onClick event
+{{ InsertNewUser.run() }}
+```
+
+Once these form fields are filled out, you can add their values to your query in the **Row Object** field like below:
 
 ```javascript
 // in the Row Object field of your query
 {{
   {
-    "name": NewUserForm.data.NameInput,
-    "gender": NewUserForm.data.GenderSelect,
-    "email": NewUserForm.data.EmailInput
+    "name": NewUserForm.formData.name,
+    "date_of_birth": NewUserForm.formData.date_of_birth,
+    "employee_id": NewUserForm.formData.employee_id
   }
 }}
 
 ```
 
-When your query is executed, the new record is inserted as the new highest index in your dataset (at the bottom of the spreadsheet).
+When the Submit button is clicked, your query is executed and the new record is inserted as the new highest index in your dataset (at the bottom of the spreadsheet).
 
 ## Update a row
 
+Use **Update** operations to modify existing records in your spreadsheet.
+
+To update a record, supply an object with updated values in the query's **Row Object** field. Include a `rowIndex` key that matches your original record.
+
 :::caution important
-When you update a row, your row object must include a `rowIndex` key with a number to specify which record in the spreadsheet to update.
+When you update a row, your row object must include a `rowIndex` key with a number to specify which record in the spreadsheet to update. `rowIndex` refers to the index of the record in the array of table records, *not* the record's row number in the spreadsheet.
 :::
+
+---
+
+**Example**: modify a record in a table `users` on `Sheet1` of `UsersSpreadsheet`, with columns for `name`, `date_of_birth`, and `employee_id`.
+
+**Setup**: create your query called `UpdateUser` based on your Google Sheets datasource. This query should use the **Update One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**. Finally, You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your spreadsheet data from a **Fetch** query.
+
+Create a [JSON Form widget](/reference/widgets/json-form) to use for submitting your updated data. It should come with fields for `name`, `date_of_birth`, and `employee_id`.
+
+When a row is selected in the table, it would be helpful if the JSON Form's fields pre-filled with the row's existing data. To implement this, match the keys in the JSON Form's **Source Data** property with the values from the table row's cells:
+
+```javascript
+// JSON Form's Source Data property
+{{
+  {
+    "name": UsersTable.selectedRow.name,
+    "date_of_birth": UsersTable.selectedRow.date_of_birth,
+    "employee_id": UsersTable.selectedRow.employee_id
+  }
+}}
+```
+
+In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+
+```javascript
+// Submit button's onClick event
+{{ InsertUserQuery.run() }}
+```
+
+To add your modified row data to your query, reference them in its **Row Object** field. You must include the `rowIndex` key in your submission to indicate which record to update. If your data came from a Google Sheets **Fetch** operation, this key was returned in the original response:
+
+```javascript
+// in the Row Object field of your query
+{{
+  {
+    "rowIndex": UsersTable.selectedRow.rowIndex, // include the rowIndex key
+    "name": NewUserForm.formData.name,
+    "date_of_birth": NewUserForm.formData.date_of_birth,
+    "employee_id": NewUserForm.formData.employee_id
+  }
+}}
+```
+
+When the Submit button is clicked, your query is executed and the record is updated in your spreadsheet.
 
 ## Delete a row
 
-TODO
+Use **Delete** operations to remove a record from your spreadsheet.
+
+To delete a record, supply the `rowIndex` value of the record to delete. `rowIndex` refers to the index of the record in the array of table records, *not* the record's row number in the spreadsheet.
+
+---
+
+**Example**: delete a record from a spreadsheet `users`.
+
+**Setup**: create your query called `DeleteUser` based on your Google Sheets datasource. This query should use the **Update One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**. Finally, You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your spreadsheet data from a **Fetch** query.
+
+Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
+
+```javascript
+// in the Delete button's onClick event
+{{ DeleteUser.run() }}
+```
+
+To delete a record, you need only provide the `rowIndex` of the record to delete. In your `DeleteUser` query's **RowIndex** field, bind the value of the selected row of the `UsersTable`:
+
+```javascript
+// DeleteUser query's Row Index field
+{{ UsersTable.selectedRow.rowIndex }}
+```
+
+Now when the button is clicked, the query is run and the corresponding row is deleted from your spreadsheet.
 
 ## Operations
 
-**Operation** sets the type of action you want to perform with your query. A "Spreadsheet" is a document, a "Sheet" is a page of a spreadsheet, and "Sheet Rows" are horizontal records in a sheet.
+**Operation** sets the type of action you want to perform with your query. A "Spreadsheet" is the document, a "Sheet" is a page of a spreadsheet, and "Sheet Rows" are horizontal records in a sheet.
 
 | **Operation**                        | **Description**                           | **Available entities:**       |
 | ------------------------------------ | ----------------------------------------- | ----------------------------- |
@@ -160,7 +235,7 @@ All the operation types have some of these common fields that identify where in 
 
 | **Configuration Field**     | **Description**                                                               |
 | --------------------------- | ----------------------------------------------------------------------------- |
-| **Entity**                  | Select which entity type you want to query. (Sheet Rows, Spreadsheet, Sheet). |
+| **Entity**                  | Select which entity type you want to query: <br/>**Sheet Rows**: Horizontal records in the spreadsheet.<br/>**Spreadsheet**: Document containing cell matrix.<br/>**Sheet**: A page of a spreadsheet. |
 | **Spreadsheet**             | Select which spreadsheet you want to query from.                              |
 | **Sheet Name**              | Select which sheet you want to query from the spreadsheet.                    |
 | **Table Heading Row Index** | Provide the index of the row in the spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is row 1.                                                     |
@@ -174,5 +249,5 @@ If you need further support, you can reach out on [Discord](https://discord.com/
 ## Further reading
 
 * [Table widget](/reference/widgets/table)
-* [Form widget](/reference/widgets/form)
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+* [Form widget](/reference/widgets/form)
