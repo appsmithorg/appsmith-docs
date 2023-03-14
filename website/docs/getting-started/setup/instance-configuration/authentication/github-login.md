@@ -46,7 +46,6 @@ There are two ways to configure the self-hosted Appsmith instance -
 
 * Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the step above.
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
-* Restart the Appsmith instance.
     
   ```bash
   # Example configuration in docker.env file
@@ -56,5 +55,6 @@ There are two ways to configure the self-hosted Appsmith instance -
   APPSMITH_SIGNUP_ALLOWED_DOMAINS=exampledomain.com
   # ******************************
    ```
- 
+* Restart the Appsmith instance. 
+
 After these steps, GitHub Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
