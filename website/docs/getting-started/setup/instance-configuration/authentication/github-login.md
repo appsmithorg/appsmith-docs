@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # GitHub OAuth
 
-GitHub allows the integration of third-party applications using your GitHub Identity. Follow the below guide to configure GitHub OAuth.
+Appsmith allows you to integrate with Google OAuth 2.0, enabling end users to sign in to the Appsmith account using their Github authentication credentials.
 
 ## Configure the Github account
 
@@ -17,11 +17,11 @@ To enable GitHub Sign in, login to your [GitHub Account](https://github.com) and
 
 ![Click to expand](</img/Github_Orgs.png>)
 
-2. Navigate to the **OAuth Apps** in the organization settings and click on **Register an Application** button to create a new OAuth app.
+2. Navigate to the *Developer Settigs> OAuth Apps* in the organization settings and click on **Register an Application** button to create a new OAuth app.
 
 ![Click to expand](</img/Github_Reg_App.png>)
 
-3. Configure the follwing  OAuth Credentials for a web application:
+3. Configure the following OAuth Credentials for a web application:
 
     1. **Homepage URL:** the domain on which you are hosting Appsmith with HTTPS **`(ex: https://app.appsmith.com)`**.
 
