@@ -127,4 +127,4 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 - [Currency Input](/reference/widgets/currency-input)
 - [Phone Input](/reference/widgets/phone-input)
-- [Rich-Text Editor widget](/reference/widgets/rich-text-editor)
+- [Rich-Text Editor](/reference/widgets/rich-text-editor)
