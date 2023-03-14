@@ -3,7 +3,7 @@
 This document explains how to display static or dynamic textual information using text widget.
 
 
-<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use the Text widget"/>
+<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="Use the Text widget to Bind Data" caption="Use the Text widget to Bind Data"/>
 
 ## Display static text
 
