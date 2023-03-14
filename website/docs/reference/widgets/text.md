@@ -37,7 +37,6 @@ To download the content, you need to add a Text widget to the canvas and enter t
 ```
 This code downloads the text in the Text widget as a plain text file named `LoremIpsum.txt`. You can customize the filename and type by adjusting the parameters in the download function.
 
-Learn more about the [Download method](/reference/appsmith-framework/widget-actions/download).
 
 ## Properties
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
