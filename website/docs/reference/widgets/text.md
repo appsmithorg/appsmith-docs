@@ -58,7 +58,7 @@ These properties are present in the property pane of the widget. The following t
 
 
 ### Reference properties
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the text, you can use `Text1.text'.
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the text, you can use `Text1.text`.
 
 | Property      | Description                                                   | 
 | ------------- | ------------------------------------------------------------- | 
