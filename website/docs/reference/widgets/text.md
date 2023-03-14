@@ -6,7 +6,7 @@ A Text widget displays static or dynamic textual information and makes it easy t
 
 <VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use the Text widget"/>
 
-## Display text manually
+## Display static text
 
 If you want to display text manually, enter the desired text directly into the `Text field`. This method of displaying text is static, meaning that the text remains the same until it's manually updated or edited. 
 
