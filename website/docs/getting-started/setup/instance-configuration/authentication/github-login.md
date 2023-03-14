@@ -9,7 +9,7 @@ sidebar_position: 2
 
 Appsmith allows you to integrate with Google OAuth 2.0, enabling end users to sign in to the Appsmith account using their Github authentication credentials.
 
-## Configure the Github account
+## Enable GitHub OAuth Integration
 
 To enable GitHub Sign in, login to your [GitHub Account](https://github.com) and follow the steps below:
 
@@ -23,9 +23,9 @@ To enable GitHub Sign in, login to your [GitHub Account](https://github.com) and
 
 3. Configure the following OAuth Credentials for a web application:
 
-    1. **Homepage URL:** the domain on which you are hosting Appsmith with HTTPS **`(ex: https://app.appsmith.com)`**.
+    1. **Homepage URL:** the domain on which you are hosting Appsmith with HTTPS (Eg: `https://app.appsmith.com`).
 
-    2. **Authorization Callback URL:** append **/login/oauth2/code/github** to the Homepage URL **`(ex: https://app.appsmith.com/login/oauth2/code/github)`**.
+    2. **Authorization Callback URL:** append `/login/oauth2/code/github` to the Homepage URL (Eg: `https://app.appsmith.com/login/oauth2/code/github`).
 
     ![Click to expand](</img/Github_App_Config.png>)
 
@@ -45,7 +45,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 **Environment Variables:** Navigate to the `docker.env` file located in `<PROJECT_ROOT>/stacks/configuration/`. Update the values for the following keys:
 
 * Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the step above.
-* Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name **`(ex: abc.com)`**, to only allow users with an email address from that domain name to log in **`(ex: john@abc.com)`**. You can provide several domain names using a comma-separated list.
+* Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
 * Restart the Appsmith instance.
     
   ```bash
