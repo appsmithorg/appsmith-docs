@@ -8,7 +8,7 @@ A Text widget displays static or dynamic textual information and makes it easy t
 
 ## Display static text
 
-If you want to display text manually, enter the desired text directly into the `Text field`. This method of displaying text is static, meaning that the text remains the same until it's manually updated or edited. 
+To display static text enter the desired text directly into the `Text` property. The text remains the same until manually updated or edited. 
 
 This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change based on user interactions. 
 
