@@ -14,7 +14,7 @@ This method is useful when you need to display fixed information, such as **inst
 Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [Iframe widget](/reference/widgets/iframe). For instance, you can use:
 
 ```js
-<p style="color:blue;">{{Input1.text}}</p>
+<p style="color:blue;">Hello World</p>
 ```
 
 ## Display dynamic text
@@ -48,7 +48,7 @@ These properties are present in the property pane of the widget. The following t
 | Property            | Description                                                                                                                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Text**            | Sets the text to be displayed.                                                                                                                                                             |
-| **Overflow Text**   |  Controls the text behavior when the length of the text exceeds. You can choose between Scroll or Truncate.
+| **Overflow Text**   |  Controls the text behavior when the length of the text exceeds. You can choose between Scroll, Truncate and None.<br/>**Scroll**:  This option enables scrolling within the boundaries of the Text widget.<br/>**Truncate**: This option shortens text in a Text widget and adds ellipses at the bottom left. Clicking on the ellipses reveals a pop-up with the full text if it exceeds the widget area.
 | **Visible**         | Controls the widget's visibility on the page. When turned off, the widget would not be visible when the app is published.                                                                |
 | **Animate Loading** | Controls the widget's loading animation. This can be controlled with JS until all the widgets are rendered. |
 | **Disable link**    | It parses any link in the widget as standard text.                                                                                                                                         |
