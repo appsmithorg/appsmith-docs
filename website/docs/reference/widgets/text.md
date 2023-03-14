@@ -1,6 +1,6 @@
 # Text
 
-This document explains how to display static or dynamic textual information using text widget.
+This document explains how to display static or dynamic textual information using the Text widget.
 
 
 <VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="Use the Text widget to Bind Data" caption="Use the Text widget to Bind Data"/>
