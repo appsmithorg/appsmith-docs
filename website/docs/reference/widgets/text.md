@@ -22,7 +22,7 @@ Additionally, you can use **HTML code** in the Text field to customize the appea
 To display dynamic text that changes based on user interactions or data from external sources, you can use binding values to connect different widgets and their properties.
 
 
-For example, if you have a table widget with a list of tasks, and you want to display the details of the currently selected task in a text widget, you can use a binding like this:
+For example, if you have a Table widget with a list of tasks, and you want to display the details of the currently selected task in a Text widget:
 
 ```js
 {{Table1.selectedRow.task}}
