@@ -11,15 +11,15 @@ Appsmith allows you to integrate with GitHub OAuth, enabling end users to sign i
 
 ## Register OAuth App on GitHub
 
-To enable GitHub Sign in, login to your [GitHub Account](https://github.com) and follow the steps below:
+To enable GitHub Sign in, log in to your [GitHub Account](https://github.com) and follow the steps below:
 
-1.  In you profile drop-down, navigate to the *Settings> Developer Settings> OAuth Apps* and click on Register an Application to create a new OAuth app
+1. In your profile drop-down, navigate to *Settings> Developer Settings> OAuth Apps* and click on Register an Application to create a new OAuth app
 
 ![Click to expand](</img/Github_Reg_App.png>)
 
 2. Configure the following OAuth Credentials for a web application:
 
-    1. **Homepage URL:** the domain on which you are hosting Appsmith with HTTPS (Eg: `https://app.appsmith.com`).
+    1. **Homepage URL:** the domain on which you host Appsmith with HTTPS (Eg: `https://app.appsmith.com`).
 
     2. **Authorization Callback URL:** append `/login/oauth2/code/github` to the Homepage URL (Eg: `https://app.appsmith.com/login/oauth2/code/github`).
 
@@ -45,7 +45,7 @@ There are two ways to configure the self-hosted Appsmith instance -
     
   ```bash
   # Example configuration in docker.env file
-  # ********* GitHub OAUth **********
+  # ********* GitHub OAuth **********
   APPSMITH_OAUTH2_GITHUB_CLIENT_ID=YOUR_GITHUB_CLIENT_ID
   APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET
   APPSMITH_SIGNUP_ALLOWED_DOMAINS=exampledomain.com
@@ -53,4 +53,4 @@ There are two ways to configure the self-hosted Appsmith instance -
    ```
 * Restart the Appsmith instance. 
 
-After these steps, GitHub Login should now be enabled for your Appsmith installation. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
+After these steps, your Appsmith installation should now enable GitHub Login. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
