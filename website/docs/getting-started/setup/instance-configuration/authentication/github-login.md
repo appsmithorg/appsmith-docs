@@ -13,7 +13,7 @@ Appsmith allows you to integrate with GitHub OAuth, enabling end users to sign i
 
 To enable GitHub Sign in, log in to your [GitHub Account](https://github.com) and follow the steps below:
 
-1. In your profile drop-down, navigate to *Settings> Developer Settings> OAuth Apps* and click on Register an Application to create a new OAuth app
+1. In your profile drop-down, navigate to **Settings > Developer Settings > OAuth Apps** and click on Register an Application to create and register a new OAuth App.
 
 ![Click to expand](</img/Github_Reg_App.png>)
 
