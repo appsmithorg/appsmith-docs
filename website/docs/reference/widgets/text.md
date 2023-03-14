@@ -3,7 +3,7 @@
 This document explains how to display static or dynamic textual information using the Text widget.
 
 
-<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="Use the Text widget to Bind Data" caption="Use the Text widget to Bind Data"/>
+<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="Use the Text widget to display data" caption="Use the Text widget to display data"/>
 
 ## Display static text
 
@@ -30,7 +30,7 @@ For example, if you have a Table widget with a list of tasks, and you want to di
 
 ## Download text content
 
-To download the content, you need to add a Text widget to the canvas and enter the desired text. Then, add a Button widget and configure it to run the Download method in the onClick event. Alternatively, you can use the following JS code to download the text:
+To download the content in a Text widget,  add a Button widget and use the [Download](/reference/appsmith-framework/widget-actions/download) method on the `onClick` event as shown below.
 
 ```js
 {{download(Text1.text,'LoremIpsum.txt','text/plain')}}
@@ -48,23 +48,22 @@ These properties are present in the property pane of the widget. The following t
 | Property            | Description                                                                                                                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Text**            | Sets the text to be displayed.                                                                                                                                                             |
-| **Scroll**   | This option enables scrolling within the boundaries of the Text widget. It allows you to display longer text within a small area of the app without truncating it, and lets users scroll through the content to view it in its entirety.                             |
-| **Truncate text**   | This feature truncates the text in the Text widget and adds three ellipses at the bottom left corner. If the text is longer than the widget area, clicking on the ellipses opens up a pop-up that displays the entire text.                                                                                                                           |
-| **Visible**         | It controls the widget's visibility on the page. When turned off, the widget would not be visible when the app is published.                                                                |
+| **Overflow Text**   |  Controls the text behavior when the length of the text exceeds. You can choose between Scroll or Truncate.
+| **Visible**         | Controls the widget's visibility on the page. When turned off, the widget would not be visible when the app is published.                                                                |
 | **Animate Loading** | Controls the widget's loading animation. This can be controlled with JS until all the widgets are rendered. |
 | **Disable link**    | It parses any link in the widget as standard text.                                                                                                                                         |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| **Height**      | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 
 
 
 ### Reference properties
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator.
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the text, you can use `Text1.text'.
 
-| Property      | Description                                                   | Code Snippet         |
-| ------------- | ------------------------------------------------------------- | -------------------- |
-| **isVisible** | This property indicates whether the widget is visible or not. | `{{Text.isVisible}}` |
-| **text**      | This property returns the widget's text value.                | `{{Text.text}}`      |
+| Property      | Description                                                   | 
+| ------------- | ------------------------------------------------------------- | 
+| **isVisible** | This property indicates whether the widget is visible or not. |
+| **text**      | This property returns the widget's text value.                |
 
 ### Style properties
 
@@ -85,7 +84,6 @@ Style properties allow you to change the look and feel of the widget.
 
 ## Further reading
 
-* [Rich Text Editor](/reference/widgets/rich-text-editor)
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database)
 * [Form](/reference/widgets/form)
 
