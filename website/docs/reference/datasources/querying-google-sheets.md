@@ -110,7 +110,7 @@ To insert a record, supply an object in the query's **Row Object** field with ke
 
 **Setup**: create your query called `InsertNewUser` based on your Google Sheets datasource. This query should use the **Insert One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**.
 
-To gather data for the new record, create a [JSON Form](/reference/widgets/json_form) on the canvas called `NewUserForm`. You should already have fields for `name`, `date_of_birth`, and `employee_id`.
+To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. You should already have fields for `name`, `date_of_birth`, and `employee_id`.
 
 In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
 
