@@ -12,7 +12,7 @@ To display static text enter the desired text directly into the `Text` property.
 
 This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change based on user interactions. 
 
-Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [iFrame widget](/reference/widgets/iframe). For instance, you can use:
+Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [Iframe widget](/reference/widgets/iframe). For instance, you can use:
 
 ```js
 <p style="color:blue;">{{Input1.text}}</p>
