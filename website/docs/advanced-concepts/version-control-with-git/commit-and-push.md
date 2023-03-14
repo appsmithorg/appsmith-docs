@@ -23,4 +23,4 @@ In case the remote counterpart of your current branch has some commits that are 
 If there are any merge conflicts, you will have to resolve them manually on the repository. Once you fix the conflicts, you can try pulling the changes again.
 
 #### General notes
-1. Renaming a resource is the same as deleting the old resource and creating a new one in the Git file system. For ex, when you rename a query, you may see `2 queries modified` while trying to commit, the 2 changes are the old query being deleted and the new one being created.
+1. Renaming a resource is the same as deleting the old resource and creating a new one in the Git file system. For example, when you rename a query, you may see `2 queries modified` while trying to commit; the 2 changes are the old query being deleted and the new one being created.
