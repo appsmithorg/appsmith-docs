@@ -20,7 +20,7 @@ Additionally, you can use **HTML code** in the Text field to customize the appea
 
 ## Display dynamic text
 
-You can dynamically display text that's generated in real-time based on user interactions or data from external sources like APIs or other widgets. This method is useful when the text needs to be updated or changed frequently based on changing conditions or user inputs. 
+You can dynamically display text that's generated in real-time based on user interactions or data from external sources like queries or other widgets.
 
 
 You can achieve this is by binding values from different widgets to display the text. For instance, if you want to display text based on user selection in a table widget, you can utilize the syntax.
