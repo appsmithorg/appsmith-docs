@@ -18,7 +18,7 @@ Additionally, you can use **HTML code** in the Text field to customize the appea
 <p style="color:blue;">{{Input1.text}}</p>
 ```
 
-## Display text dynamically
+## Display dynamic text
 
 You can dynamically display text that's generated in real-time based on user interactions or data from external sources like APIs or other widgets. This method is useful when the text needs to be updated or changed frequently based on changing conditions or user inputs. 
 
