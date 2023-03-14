@@ -47,7 +47,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 
 ![](/img/as_google_auth_config.png)
 
-**Environment Variables:** Navigate to the `docker.env` file located in `<PROJECT_ROOT>/stacks/configuration/`. Update the values for the following keys:
+**Environment Variables:** Update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
 
 * Configure the `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID` and `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET` fields with the client ID and client secret generated in the step above
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (eg: `abc.com`), to only allow users with an email address from that domain name to log in (eg: `john@abc.com`). You can provide several domain names using a comma-separated list.
