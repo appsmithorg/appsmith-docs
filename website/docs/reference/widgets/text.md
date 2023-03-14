@@ -28,7 +28,7 @@ For example, if you have a table widget with a list of tasks, and you want to di
 {{Table1.selectedRow.task}}
 ```
 
-## Downloading the content
+## Download text content
 
 To download the content, you need to add a Text widget to the canvas and enter the desired text. Then, add a Button widget and configure it to run the Download method in the onClick event. Alternatively, you can use the following JS code to download the text:
 
