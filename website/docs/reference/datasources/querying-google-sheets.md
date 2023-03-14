@@ -170,7 +170,7 @@ In JSON Form's Submit [button](/reference/widgets/button) properties, configure 
 
 ```javascript
 // Submit button's onClick event
-{{ InsertUserQuery.run() }}
+{{ UpdateUser.run() }}
 ```
 
 To add your modified row data to your query, reference them in its **Row Object** field. You must include the `rowIndex` key in your submission to indicate which record to update. If your data came from a Google Sheets **Fetch** operation, this key was returned in the original response:
