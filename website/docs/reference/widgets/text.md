@@ -1,6 +1,6 @@
 # Text
 
-This page explains the use of a Text widget for displaying and binding textual information.
+A Text widget displays static or dynamic textual information and makes it easy to style them.
 
 
 
