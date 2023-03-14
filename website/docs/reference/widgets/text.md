@@ -4,7 +4,7 @@ A Text widget displays static or dynamic textual information and makes it easy t
 
 
 
-<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use Text Widget"/>
+<VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="How to use Text Widget" caption="How to use the Text widget"/>
 
 ## Display text manually
 
