@@ -242,6 +242,8 @@ batchSize
 1st
 Google Sheets
 rowIndex
+showAlert
 svg
 scrollbar
 NameCheap
+GitHub
