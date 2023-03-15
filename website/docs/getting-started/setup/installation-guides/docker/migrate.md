@@ -192,4 +192,4 @@ Once this is successful, we are ready to bring up our new instance!
 
 Navigate to your Appsmith instance, the same way you used to with your old instance, whether using IP address, or custom domain, and verify that your Appsmith instance is working well, and all your data is intact.
 
-After this, please designate a user as the superuser, to give them access to the Admin Settings page. You can follow the instructions at [Configuring a superuser](../../instance-configuration/admin-settings.md#configuring-a-superuser) to apply this change. diff --git a/setting-up/migrate.md b/setting-up/migrate.md
+After this, please designate a user as the superuser, to give them access to the Admin Settings page. You can follow the instructions at [Configuring a superuser](/getting-started/setup/instance-configuration) to apply this change. diff --git a/setting-up/migrate.md b/setting-up/migrate.md

@@ -207,7 +207,7 @@ When you run your code, the value of `<VARIABLE_NAME>` is printed to the browser
 
 To learn how to use `console.log()` watch the video `How to Debug using console.log()`.
 
-<VideoEmbed host="youtube" videoId="YLnvb9_k96s" title="How to Debug using console.log()" caption="How to Debug using console.log()"/>
+<VideoEmbed host="youtube" videoId="EYNPm9cJWGw" title="How To Debug JavaScript With Console.log" caption="How To Debug JavaScript With Console.log"/>
 
 ## Writing complex code
 
@@ -442,7 +442,7 @@ You don't have permission to access the Dashboard.
 
 As the JavaScript Editor is in its BETA, there are a few limitations:
 
-* At the moment, you can't use `JS Objects` across pages. You can subscribe to[ the issue](https://github.com/appsmithorg/appsmith/issues/1751) and follow the progress.
+* At the moment, you can't use `JS Objects` across pages. You can subscribe to[ the issue](https://github.com/appsmithorg/appsmith/issues/1911) and follow the progress.
 * You can't define variables and functions outside of export default { }. In future iterations, you can write and export only selected variables/functions from a `JS Object`.
 
 ![Async Function](/img/JS\_editor\_async\_function.png)
