@@ -243,4 +243,5 @@ batchSize
 Google Sheets
 rowIndex
 svg
+scrollbar
 NameCheap
