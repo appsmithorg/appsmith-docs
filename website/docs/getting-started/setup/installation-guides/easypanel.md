@@ -1,3 +1,7 @@
+---
+description: Easypanel it's a modern server control panel. You can use it to deploy Appsmith on your own server.
+---
+
 # Easypanel
 [Easypanel](https://easypanel.io) it's a modern server control panel. You can use it to deploy Appsmith on your own server.
 
