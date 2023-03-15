@@ -73,6 +73,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/cloudjiffy',
                 'getting-started/setup/installation-guides/ansible',
                 'getting-started/setup/installation-guides/restack',
+                'getting-started/setup/installation-guides/easypanel',
               ],
             },
             {

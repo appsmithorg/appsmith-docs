@@ -99,14 +99,14 @@
         </div> 
         <b><a href="/getting-started/setup/installation-guides/cloudjiffy">CloudJiffy</a></b>
      </div>
-     <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-            <a href="">
-            <img class="containerImage" src="" alt=""/>
-            </a> 
+   <div class="columnGrid column-three" align="center">
+       <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/easypanel">
+            <img class="containerImage" src="/img/easypanel.svg" alt="Easypanel-logo"/>
+            </a>
         </div> 
-        <b><a href=""></a></b>
-     </div>
+        <b><a href="/getting-started/setup/installation-guides/easypanel">Easypanel</a></b>
+   </div>
 </div>
 
 </div>
