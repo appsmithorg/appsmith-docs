@@ -15,6 +15,9 @@ To upload a file or multiple files, you can drag and drop them onto the FilePick
 //here [0] represents index of the file.
 ```
 
+:::info
+Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
+:::
 
 Appsmith supports various file types and data formats, including:
 
@@ -23,10 +26,10 @@ Appsmith supports various file types and data formats, including:
 * **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
 * **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
 
-:::tip
-If you intend to upload files of significant size, kindly adjust the timeout settings in the API configuration. Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
-:::
 
+:::tip
+If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when you log the data. If you intend to upload files of significant size, kindly adjust the timeout settings in the API configuration.
+:::
 
 ### Upload file to S3
 
@@ -49,9 +52,6 @@ If using the S3 multiple file upload command, you only need to provide `{{FilePi
 You can refer to this [tutorial](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to understand how to use the FilePicker widget to upload or manage files on Cloudinary.
 
 
-:::info
-If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when logged.
-:::
 
 
 ## Display data in table
