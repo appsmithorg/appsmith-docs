@@ -54,9 +54,9 @@ On restart Appsmith generates SSL certificate for your custom domain. Appsmith u
 ### Configure a Custom SSL
 If you already have SSL Certificate and want to use that, follow the steps listed below:
 
-* Add your Custom Domain to environment variable `APPSMITH_CUSTOM_DOMAIN`. For more information, see [how to add custom domain using environment variable](#environment-variables).
 * Rename the certificate file as `fullchain.pem` and key file as `privkey.pem`.
 * Copy these files into the subdirectory `<MOUNTING-DIRECTORY>/ssl/`. Ensure that you change `<MOUNTING-DIRECTORY>` by the mounting volume directory available in the `docker-compose.yml`. For example, the default value is `./stacks`.
+* Add your Custom Domain to environment variable `APPSMITH_CUSTOM_DOMAIN` in 'docker.env' file.
 * Restart the container using `docker restart appsmith`
 
 The container checks the certificate files in the folder `<MOUNTING-DIRECTORY>/ssl` and use them if they exist.
