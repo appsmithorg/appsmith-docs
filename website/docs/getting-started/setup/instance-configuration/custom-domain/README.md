@@ -1,95 +1,77 @@
 ---
 sidebar_position: 7
 ---
-# SSL & Custom Domain
+# Set up SSL for a Custom Domain
 
-You can make Appsmith available on a custom domain by updating your domain's DNS records to point to the instance running Appsmith. Most domain registrars / DNS providers have documentation on how you can do this yourself.
+You can configure SSL for your Custom Domain to establish secured connections. This page provides instructions to set up SSL for your Custom Domain on your Appsmith instance.
 
-* [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080)
-* [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/)
-* [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/)
-* [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain)
-* [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains)
+<VideoEmbed host="youtube" videoId="0llo1exi4IY" title="How To Self-Host Appsmith With A Custom Domain" caption="Set up SSL and HTTPS for your Custom Domain on your self-hosted Appsmith Instance"/>
 
-<VideoEmbed host="youtube" videoId="0llo1exi4IY" title="How To Self-Host Appsmith With A Custom Domain" caption="How To Self-Host Appsmith With A Custom Domain"/>
+## Prerequisites
+Before configuring SSL for your custom domain, make sure you have the following:
+1. A self-hosted Appsmith instance running. For more information about installing Appsmith, see [Installation Guides](/getting-started/setup/installation-guides)
+2. A domain name - You can get a custom domain from popular providers like [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080), [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/), [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/), [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain), and [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains).
+3. Ports 80 and 443 are open and accessible.
 
-## Setting up SSL
+## Configure SSL
+Once you have a Custom Domain you can choose to set up SSL by one of the following way:
 
-SSL automatically set up for your instance once you configure a custom domain for your instance. All SSL certificates Appsmith creates are generated and kept up to date through [Let's Encrypt](https://letsencrypt.org).
+* [Generate and Configure SSL](#generate-and-configure-ssl)
+* [Configure a Custom SSL Certificate](#configure-a-custom-ssl)
 
-## Custom SSL certificate
 
-The container supports generating a free SSL certificate. If you have your own certificate, please follow these steps to use it inside the container.
+### Generate and configure SSL
+On Appsmith you can choose to add your Custom Domain by using one of the following ways:
+* [Admin settings](#admin-settings)
+* [Environment Variables](#environment-variables)
 
-* Firstly, please rename your certificate file as `fullchain.pem` and key file as `privkey.pem`
-* Copy these files into the sub-directory `<mounting-directory>/ssl/` (_Note: Please change `<mounting-directory>` by the mounting volume directory in the `docker-compose.yml`. Default is `./stacks`_)
+### Admin settings
+You can use Admin Settings User Interface to set up custom domain. The **Custom Domain** property is available under **Advanced** Settings. Add the domain name to the Custom Domain setting and click **SAVE & RESTART** button. The Custom domain setup can be done using Custom Domain setting for all your installation types except Kubernetes. For more information about how to set up TLS on Kubernetes, see [How to configure TLS for Appsmith Kubernetes installation](/getting-started/setup/installation-guides/kubernetes#configure-tls).
+
+![](/img/setup-custom-domain-using-admin-settings.png)
+<figure>
+  <img src="/img/setup-custom-domain-using-admin-settings.png" style= {{width:"700px", height:"auto"}} alt="Setup your custom domain using Admin settings"/>
+  <figcaption align = "center"><i>Setup your custom domain using Admin settings</i></figcaption>
+</figure>
+
+### Environment variables
+Appsmith under the hood is deployed on a docker container. So, you may choose to configure your custom domain using environment variable `APPSMITH_CUSTOM_DOMAIN` in a `docker.env` file. Follow the steps below:
+
+1. Navigate to the `docker.env` file located in the installation root folder. For example, if you are using Docker installation you can locate the file in `<PROJECT_ROOT>/stacks/configuration` file. Similarly, on AWS AMI the file is located in `/home/ubuntu/appsmith/stacks/configuration` folder.
+    1. Update the key `APPSMITH_CUSTOM_DOMAIN` as shown below:
+
+        ```yaml
+        APPSMITH_CUSTOM_DOMAIN=<ADD_CUSTOM_DOMAIN_HERE>
+        ```
+    2. Restart the Appsmith container by using the following command:
+
+        ```bash
+        docker-compose restart appsmith
+        ```
+
+On restart Appsmith generates SSL certificate for your custom domain. Appsmith uses [Let's Encrypt](https://letsencrypt.org) to generate and keep the certificate up to date. After a successful restart, you can use the custom domain that's mapped to port 443 using HTTPS to access Appsmith in the browser.
+
+### Configure a Custom SSL
+If you already have SSL Certificate and want to use that, follow the steps listed below:
+
+* Rename the certificate file as `fullchain.pem` and key file as `privkey.pem`.
+* Copy these files into the subdirectory `<MOUNTING-DIRECTORY>/ssl/`. Ensure that you change `<MOUNTING-DIRECTORY>` by the mounting volume directory available in the `docker-compose.yml`. For example, the default value is `./stacks`.
 * Restart the container using `docker restart appsmith`
 
-The container checks the certificate files in the folder `<mounting-directory>/ssl` and use them if they exist.
+The container checks the certificate files in the folder `<MOUNTING-DIRECTORY>/ssl` and use them if they exist.
 
 :::note
-In case the certificate files have a different name from `fullchain.pem` and `privkey.pem`, it will fail to find the  custom certificate and auto-provisions the certificate by `Let's Encrypt`
+If you want to configure a Custom SSL on your Appsmith installation platform, follow the steps as listed in the guides below:
+* [How to Configure SSL for your Heroku dyno](https://devcenter.heroku.com/articles/ssl)
+* [How do I install an SSL Certificate on a DigitalOcean Droplet](https://docs.digitalocean.com/support/how-do-i-install-an-ssl-certificate-on-a-droplet/)
 :::
 
-## Docker
+## Troubleshooting
 
-After configuring your custom domain, getting HTTPS support is super easy. Just tell Appsmith about the custom domain and you are on.
+If you’re having issues accessing Appsmith after Appsmith SSL Configuration, please see the [Unable to Access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
-Configure the `APPSMITH_CUSTOM_DOMAIN field` in your [instance configuration](../) with your custom domain
-
-```bash
-# Example Docker Configuration
-APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
-```
-
-[Restart the appsmith container](../).
-
-:::info
-Please ensure port 80 on your server is open and accessible from the Internet for the HTTPS certificate to be provisioned.
-:::
-
-## Kubernetes
-
-The `APPSMITH_CUSTOM_DOMAIN` environment variable is **not** used for configuring TLS for a Kubernetes installation of Appsmith. For more information, see [how to configure TLS for Appsmith Kubernetes installation](/getting-started/setup/installation-guides/kubernetes#configure-tls).
-
-## AWS AMI
-
-* Once your instance is ready, connect to that instance (via SSH) using your key pair (Create in step 2) and the public IP of your instance (Created in step 4) via the terminal or any SSH Client that you have
-* Move to `/home/ubuntu/appsmith/stacks/configuration` folder
-*   Edit the `docker.env` file here and change the value of `APPSMITH_CUSTOM_DOMAIN` variable to your custom domain. For example:
-
-    ```
-    APPSMITH_CUSTOM_DOMAIN=appsmith.mydomain.com
-    ```
-* Now restart your instance using `docker-compose restart appsmith`. This provisions the SSL certificate automatically before starting the server.
-
-At this point, you should be able to browse to cloud server by entering your custom domain directly into your browser's address bar with HTTPS.
-
-:::info
-Please ensure port 80 on your server is open and accessible from the Internet for the HTTPS certificate to be provisioned.
-:::
-
-## Heroku
-
-1. Go to the **Settings** tab in your Heroku app
-2. Click the `Add domain` button in the `Domains` section
-3. Input your domain name & click `Next`. Heroku provides you with a DNS target that you can map your domain with.
-4. Go to your DNS provider and make sure that your custom DNS Record (Ex. **appsmith.yourcompany.com**) is updated to map to the `DNS Target`
-
-:::note
-* Once you use a custom domain, You might want to set up SSL for your dyno. Please check the official document of Heroku [how to configure SSL](https://devcenter.heroku.com/articles/ssl)
-* The dyno needs to be upgraded to at least "**Hobby"** type to use this feature of Heroku
-:::
-
-## DigitalOcean
-
-To host the Appsmith DigitalOcean droplet on a custom domain, you'll need to select the Add a domain option from the dashboard.
-
-![](/img/custom\_domain.jpeg)
-
-It redirects you to a new page. Add your domain name there. Once that's done, it'll give you records of the name servers. Copy the details of the NS (name servers). Use the custom name server's configuration on your domain provider. Sometimes, it might take up to 24 or 48 hours for this to go live.
-
-:::tip
-Your Appsmith instance should be available at [https://appsmith.mydomain.com](https://appsmith.mydomain.com) with automatic certificate provisioning and renewals.
-:::
+## Further reading
+- [Monitor system logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
+- [Setup backups](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) 
+- [Setup Maintenance Window for automatic updates](/getting-started/setup/instance-management/maintenance-window)
 

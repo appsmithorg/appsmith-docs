@@ -243,3 +243,4 @@ batchSize
 Google Sheets
 rowIndex
 svg
+NameCheap
