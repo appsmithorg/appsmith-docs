@@ -9,11 +9,11 @@ sidebar_position: 2
 
 Appsmith allows you to integrate with GitHub OAuth, enabling end users to sign in to the Appsmith account using their GitHub authentication credentials.
 
-## Register OAuth App on GitHub
+## Register OAuth app on GitHub
 
 To enable GitHub Sign in, log in to your [GitHub Account](https://github.com) and follow the steps below:
 
-1. In your profile drop-down, navigate to **Settings > Developer Settings > OAuth Apps** and click on **Register a new application** to create and register a new OAuth App.
+1. In your profile drop-down, navigate to **Settings > Developer Settings > OAuth Apps** and click **Register a new application** to create and register a new OAuth App.
 
 ![Click to expand](</img/Github_Reg_App.png>)
 
@@ -34,11 +34,11 @@ There are two ways to configure the self-hosted Appsmith instance -
 - Admin Settings
 - Environment Variables
 
-**Admin Settings:** Click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` and  `Client Secret`. Click the **Save & Restart** button at the bottom of the page. 
+**Admin Settings:** click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` and  `Client Secret`. Click the **Save & Restart** button at the bottom of the page. 
 
 ![](/img/as_github_auth_config.png)
 
-**Environment Variables:** Update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
+**Environment Variables:** update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
 
 * Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the step above.
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
@@ -53,9 +53,9 @@ There are two ways to configure the self-hosted Appsmith instance -
    ```
 * Restart the Appsmith instance. 
 
-After these steps, your Appsmith installation should now enable GitHub Login. If you are running appsmith behind an ELB / Proxy, please configure Nginx [following this guide](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
+After these steps, your Appsmith installation should now enable GitHub Login. If you are running appsmith behind an ELB / Proxy, please update the [Nginx configuration](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
 
 # Further Reading
 
-- [Instance configuration](/getting-started/setup/instance-configuration)
+- [Instance Configuration](/getting-started/setup/instance-configuration)
 - [Instance Management](/getting-started/setup/instance-management)
