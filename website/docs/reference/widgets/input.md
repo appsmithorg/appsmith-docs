@@ -122,5 +122,7 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 ## Further reading
 
-- [Form](/reference/widgets/form)
-- [Queries](/core-concepts/data-access-and-binding/querying-a-database)
+- [Currency Input](/reference/widgets/currency-input)
+- [Phone Input](/reference/widgets/phone-input)
+- [Rich-Text Editor](/reference/widgets/rich-text-editor)
+
