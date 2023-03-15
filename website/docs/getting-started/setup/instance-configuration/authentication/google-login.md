@@ -44,7 +44,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 - Admin Settings
 - Environment Variables
 
-**Admin Settings:** you can add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to *Admin Settings> Authentication> Google*, fill the required fields and click the **Save & Restart** button at the bottom of the page.
+**Admin Settings:** you can add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to **Admin Settings> Authentication> Google**, fill the required fields and click the **Save & Restart** button at the bottom of the page.
 
 ![](/img/as_google_auth_config.png)
 
@@ -66,10 +66,9 @@ There are two ways to configure the self-hosted Appsmith instance -
  
 After these steps, Google Login should be enabled for your Appsmith installation. 
 
-# Troubleshooting
-If you’re having issues with OAuth Sign up not working, please see the [OAuth Sign up not working](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+After these steps, your Appsmith installation should now enable Google Login. If you are running appsmith behind an ELB / Proxy, please update the [Nginx configuration](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
 
-# Further Reading
+## Further reading
 
 - [Instance Configuration](/getting-started/setup/instance-configuration)
 - [Instance Management](/getting-started/setup/instance-management)

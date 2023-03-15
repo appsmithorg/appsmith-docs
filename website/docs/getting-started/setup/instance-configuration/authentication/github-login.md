@@ -56,7 +56,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 
 After these steps, your Appsmith installation should now enable GitHub Login. If you are running appsmith behind an ELB / Proxy, please update the [Nginx configuration](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
 
-# Further Reading
+## Further reading
 
 - [Instance Configuration](/getting-started/setup/instance-configuration)
 - [Instance Management](/getting-started/setup/instance-management)
