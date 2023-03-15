@@ -30,6 +30,7 @@ To enable GitHub Sign in, log in to your [GitHub Account](https://github.com) an
 :::caution
 Test the Client ID and Client Secret before disabling Form login on Appsmith. This ensures that users can access Appsmith with their GitHub credentials. To fix an invalid GitHub configuration, update the environment variables.
 :::
+
 There are two ways to configure the self-hosted Appsmith instance - 
 - Admin Settings
 - Environment Variables
@@ -40,7 +41,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 
 **Environment Variables:** update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
 
-* Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the step above.
+* Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the preceding step.
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
     
   ```bash
