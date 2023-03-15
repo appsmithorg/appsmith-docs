@@ -66,7 +66,7 @@ There are two ways to configure the self-hosted Appsmith instance -
  
 After these steps, Google Login should be enabled for your Appsmith installation. 
 
-#Troubleshooting
+# Troubleshooting
 If you’re having issues with OAuth Sign up not working, please see the [OAuth Sign up not working](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
 # Further Reading
