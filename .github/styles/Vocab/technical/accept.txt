@@ -244,3 +244,4 @@ Google Sheets
 rowIndex
 svg
 GitHub
+scrollbar
