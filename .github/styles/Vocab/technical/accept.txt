@@ -244,3 +244,8 @@ Google Sheets
 rowIndex
 svg
 scrollbar
+click on
+CSV
+FilePicker
+isDirty
+drag and drop
