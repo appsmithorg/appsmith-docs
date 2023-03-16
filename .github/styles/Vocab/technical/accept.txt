@@ -246,6 +246,8 @@ responseMeta
 svg
 showAlert
 svg
+MS SQL
+scrollbar
 ID
 showAlert
 scrollbar
