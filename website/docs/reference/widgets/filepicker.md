@@ -19,7 +19,7 @@ To upload a file or multiple files, you can drag and drop them onto the Filepick
 * If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when you log the data.
 :::
 
-To access the uploaded file's data, you can use the following code in JSObject, query or widget bindings. 
+To access the uploaded file's data, you can use the following code in a query or JS code. 
 
 ```js
 {{ FilePicker1.files[0].data }}
