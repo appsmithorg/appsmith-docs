@@ -242,4 +242,7 @@ batchSize
 1st
 Google Sheets
 rowIndex
+showAlert
 svg
+GitHub
+scrollbar
