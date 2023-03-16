@@ -1,6 +1,6 @@
 # Filepicker
 
-This document guides you on how to use the Filepicker widget to upload files from your local machine to cloud storage platforms or manage them within your app.
+This document guides you on how to use the Filepicker widget for selecting and uploading various file types, including images, videos, audio, text files, and more.
 
 <VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Filepicker widget and its properties" caption="Filepicker widget and its properties"/>
 
@@ -19,7 +19,7 @@ To upload a file or multiple files, you can drag and drop them onto the FilePick
 * If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when you log the data.
 :::
 
-To access the uploaded file's data, you can use the following code in query or widget bindings. 
+To access the uploaded file's data, you can use the following code in JSObject, query or widget bindings. 
 
 ```js
 {{ FilePicker1.files[0].data }}
@@ -49,15 +49,15 @@ To upload a file to [Amazon S3](/reference/datasources/querying-amazon-s3), foll
 {{ FilePicker1.files[0].data }}
 ```
 
-If using the S3 multiple file upload command, you only need to provide `{{FilePicker1.files}}`.
+If you are using the S3 multiple file upload command, you only need to provide `{{FilePicker1.files}}`.
 
 
 ### Send file data with API requests
 
-To upload a file via API, follow these steps:
+To upload a file via [API](/core-concepts/connecting-to-data-sources/authentication), follow these steps:
 
 * Click the "+" icon next to Queries/JS and create a new blank API.
-* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` represents your Cloudinary username. You can retrieve your Cloudinary `cloud_name` and `upload_preset` from the Cloudinary dashboard.
+* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` represents your Cloudinary username. You can retrieve your `cloud_name` and `upload_preset` from the Cloudinary dashboard.
 * Add the Cloudinary API URL and set the header in the API Datasource configuration.
 * Configure the request body in a multipart structure, including the image file data and any additional metadata.
 
