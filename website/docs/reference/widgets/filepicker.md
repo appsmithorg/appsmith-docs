@@ -1,13 +1,25 @@
-# FilePicker
+# Filepicker
 
-This document guides you on how to use the FilePicker widget to upload files from your local machine to cloud storage platforms or manage them within your app.
+This document guides you on how to use the Filepicker widget to upload files from your local machine to cloud storage platforms or manage them within your app.
 
-<VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Filepicker widget and its properties" caption="Configure Filepicker Widget"/>
+<VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Filepicker widget and its properties" caption="Filepicker widget and its properties"/>
 
 
 ##  Upload files
 
-To upload a file or multiple files, you can drag and drop them onto the FilePicker widget or select files from your local machine. To access the uploaded file's data, you can use the following code in query or widget bindings. 
+To upload a file or multiple files, you can drag and drop them onto the FilePicker widget or select files from your local machine. Appsmith supports various file types and data formats, including:
+
+* **Binary**: Binary files store data in the form of contiguous bytes, without a defined reading method. To upload a binary file, choose Data Format as Binary and then upload the file.
+* **Text**: Text files store data as human-readable characters. 
+* **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
+* **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
+
+:::info
+* Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
+* If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when you log the data.
+:::
+
+To access the uploaded file's data, you can use the following code in query or widget bindings. 
 
 ```js
 {{ FilePicker1.files[0].data }}
@@ -15,21 +27,11 @@ To upload a file or multiple files, you can drag and drop them onto the FilePick
 //here [0] represents index of the file.
 ```
 
-:::info
-Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
-:::
-
-Appsmith supports various file types and data formats, including:
-
-* **Binary**: Binary files store data in the form of contiguous bytes, without a defined reading method. To upload a binary file, choose Data Format as Binary and then upload the file.
-* **Text**: Text files store data as human-readable characters. 
-* **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
-* **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
 
 
-:::tip
-If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when you log the data. If you intend to upload files of significant size, kindly adjust the timeout settings in the API configuration.
-:::
+
+
+
 
 ### Upload file to S3
 
@@ -49,12 +51,35 @@ To upload a file to [Amazon S3](/reference/datasources/querying-amazon-s3), foll
 
 If using the S3 multiple file upload command, you only need to provide `{{FilePicker1.files}}`.
 
+
+### Send file data with API requests
+
+To upload a file via API, follow these steps:
+
+* Click the "+" icon next to Queries/JS and create a new blank API.
+* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` is your Cloudinary username.
+* Add the Cloudinary API URL and set the header in the API Datasource configuration.
+* Configure the request body in a multipart structure, including the image file data and any additional metadata.
+
+
+
+<figure>
+  <img src="/img/api-filepicker.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+Be sure to select `File` in the datatype dropdown. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
+
+* Now, update the `onFilesSelected` property to RUN the API.
+
+:::tip
+If you intend to upload files of significant size, kindly adjust the timeout settings in the API configuration.
+:::
+
 To learn more,  see [how to use the Filepicker widget](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to upload or manage files on Cloudinary.
 
 
-
-
-## Display CSV data in Table
+## Display CSV data in table
 
 To display CSV data in a [Table widget](/reference/widgets/text), use the Array data format. This format allows CSV data to be directly parsed into an array or array of objects that can be referenced throughout the platform. To achieve this, follow these steps:
 
