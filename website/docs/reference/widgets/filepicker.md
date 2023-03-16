@@ -34,7 +34,7 @@ If the user uses the data in an API or query, it would be uploaded as base64 or 
 ### Upload file to S3
 
 
-To upload a file to [S3](/reference/datasources/querying-amazon-s3), follow these steps:
+To upload a file to [Amazon S3](/reference/datasources/querying-amazon-s3), follow these steps:
 
 
 
