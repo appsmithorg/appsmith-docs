@@ -28,12 +28,16 @@ Click the **Save and Authorize** button after selecting the **Scope**. You'll be
 
 On the next screen, click **Allow** to grant the Appsmith app permission to view and edit files based on the scope.
 
-## Fetch rows
+## Create queries
 
 <figure>
   <img src="/img/google-sheets-query-page.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
+
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Google Sheets by selecting the **+ New Query**  button on the Google Sheets datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Google Sheets datasource. You'll be brought to a new query screen where you can configure your request.
+
+## Fetch rows
 
 Use the **Fetch Many** operation with the **Sheet rows** entity to pull your spreadsheet records into your app. You can configure this query with the fields below to fetch records that meet specific conditions.
 
@@ -242,12 +246,12 @@ All the operation types have some of these common fields that identify where in 
 
 ## Troubleshooting
 
-If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) page for assistance.
+If you are experiencing difficulties, you can refer to the [troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/) page for assistance.
 
 If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
 
 ## Further reading
 
-* [Table widget](/reference/widgets/table)
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+* [Table widget](/reference/widgets/table)
 * [Form widget](/reference/widgets/form)
