@@ -16,7 +16,7 @@ However, if you create a new branch, it will have the uncommitted changes of you
 :::info
 * Branch names should **not** start with `origin/` since this prefix is used to distinguish between local and remote versions of a branch.
 * Checking out a remote branch with a local counterpart already available would result in an error.
-* Branch protections on remote repository will cause errors with some operations involving Git push.
+* Branch protections on remote repository may cause errors with some operations involving Git push.
 :::
 
 #### Syncing Local with Remote Branch
