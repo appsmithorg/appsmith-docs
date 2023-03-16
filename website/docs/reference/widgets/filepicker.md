@@ -7,7 +7,7 @@ This document guides you on how to use the Filepicker widget for selecting and u
 
 ##  Upload files
 
-To upload a file or multiple files, you can drag and drop them onto the FilePicker widget or select files from your local machine. Appsmith supports various file types and data formats, including:
+To upload a file or multiple files, you can drag and drop them onto the Filepicker widget or select files from your local machine. Appsmith supports various file types and data formats, including:
 
 * **Binary**: Binary files store data in the form of contiguous bytes, without a defined reading method. To upload a binary file, choose Data Format as Binary and then upload the file.
 * **Text**: Text files store data as human-readable characters. 
