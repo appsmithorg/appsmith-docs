@@ -143,7 +143,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/disable-user-signup',
                 {
                   type: 'category',
-                  label: 'SSL for a Custom Domain',
+                  label: 'SSL & Custom Domain',
                   link: {
                     type: 'doc',
                     id: 'getting-started/setup/instance-configuration/custom-domain/README',
