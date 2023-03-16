@@ -243,6 +243,12 @@ batchSize
 Google Sheets
 rowIndex
 showAlert
-svg
+scrollbar
+click on
+CSV
+FilePicker
+isDirty
+drag and drop
 GitHub
 scrollbar
+
