@@ -244,3 +244,7 @@ Google Sheets
 rowIndex
 svg
 ID
+showAlert
+svg
+GitHub
+scrollbar
