@@ -242,6 +242,8 @@ batchSize
 1st
 Google Sheets
 rowIndex
+svg
+ID
 showAlert
 scrollbar
 click on
