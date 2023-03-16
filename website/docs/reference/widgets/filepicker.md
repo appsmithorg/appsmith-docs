@@ -2,7 +2,7 @@
 
 This document guides you on how to use the FilePicker widget to upload files from your local machine to cloud storage platforms or manage them within your app.
 
-<VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Configure Filepicker Widget" caption="Configure Filepicker Widget"/>
+<VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Filepicker widget and its properties" caption="Configure Filepicker Widget"/>
 
 
 ##  Upload files
