@@ -46,6 +46,39 @@ You can call the functions defined in a JS Object by using the notation `{{ JS_O
 The JS Objects defined are available across APIs, Queries, or other JS Objects defined for **a particular page,** and have a **page-level access** and are **not** accessible **across pages**.
 :::
 
+### JS Object variable as local state
+
+You can use JS Object variable to store your data in a non-peristent state and further perform mutations from a trigger field to change the value. As the storage state is non-persistent, the data is saved till the page reloads or a user closes the window. JSObject variable can be of any value type such as number, string, object, array, Date object, etc. 
+
+**Example 1:** suppose you want to create a counter that increments/decrements the value on a button using a JS Object. Create a JS Object `JSObject1` and add the following code:
+
+```javascript
+export default {
+		counter: 1,
+		increment: () ⇒ {
+			this.counter = this.counter + 1
+		},
+		decrement: () ⇒ {
+			this.counter = this.counter - 1
+		}
+}
+```
+Add a text widget to the canvas and bind it to the counter variable showing the initial state as follows:
+
+```javascript
+{{JSObject1.counter}}
+```
+To use the increment and decrement function, add two buttons and add the following code in onClick event to trigger these functions:
+
+```javascript
+//for increment
+{{JSObject1.increment()}}
+
+//for decrement
+{{JSObject1.decrement()}}
+
+```
+
 ## Types of JS functions
 
 You can write different types of functions in a JS Object that can be Synchronous or Asynchronous.
@@ -54,7 +87,7 @@ You can write different types of functions in a JS Object that can be Synchronou
 
 As the name suggests, synchronous means to be in a sequence, it means that every statement of the code gets executed one by one. So, a statement must wait for the earlier statement to complete its execution.
 
-For example, the below code snippet shows a data filter:
+For example, the below code snippet shows a data filter: 
 
 ```
 Api.data.filter(() => {}); // filtering data 
