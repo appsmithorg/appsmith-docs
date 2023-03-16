@@ -8,18 +8,14 @@ This page describes how to connect your application to your Airtable bases and u
 
 ## Connect to Airtable
 
-
-To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
-
-
-
-
-### Authentication type
-
 <figure>
   <img src="/img/airtable-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Airtable datasource." />
   <figcaption align="center"><i>Configuring an Airtable datasource.</i></figcaption>
 </figure>
+
+To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
+
+### Authentication type
 
 :::info
 Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens. If you must use an API Key, simply select the **API Key** authentication type and provide the key in the API Key field.
@@ -30,6 +26,11 @@ You'll need to [create a Personal Access Token](https://airtable.com/create/toke
 Once you're finished, click **Save** to save your datasource.
 
 ## Create queries
+
+<figure>
+  <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
+  <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
+</figure>
 
 You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Airtable by selecting the **+ New Query**  button on the Airtable datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Airtable datasource. You'll be brought to a new query screen where you can write queries.
 
@@ -48,11 +49,6 @@ https://airtable.com/appZueQaLuTv7fSXjJx/tblPhSJD7fdIKLY3j1/viwqRLKs978DFI6Q?blo
 ```
 
 ## List records
-
-<figure>
-  <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
-  <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
-</figure>
 
 Use the **List Records** command to fetch data from your Airtable base. You can use the query configuration settings to filter, sort, and format the data that's returned to your app.
 
@@ -343,6 +339,6 @@ Now when the button is clicked, the query is run and the corresponding row is de
 
 ## Further reading
 
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Table widget](/reference/widgets/table)
 * [Form widget](/reference/widgets/form)
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
