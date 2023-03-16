@@ -52,7 +52,7 @@ To upload a file to [Amazon S3](/reference/datasources/querying-amazon-s3), foll
 If you are using the S3 multiple file upload command, you only need to provide `{{FilePicker1.files}}`.
 
 
-### Send file data with API requests
+## Send file data with API requests
 
 To upload a file via [API](/core-concepts/connecting-to-data-sources/authentication), follow these steps:
 
