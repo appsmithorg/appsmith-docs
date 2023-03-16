@@ -88,11 +88,11 @@ To access your record fields in a widget, it's helpful to use a `map()` function
 
 | **Parameter**         | **Description**                                                                    |
 | --------------------- | ---------------------------------------------------------------------------------- |
-| **Fields**            | Specifies which columns to return, omits the rest.                                 |
+| **Fields**            | Specifies which columns to return, omits the rest. `fields%5B%5D=<COLUMN_NAME>`    |
 | **Filter by Formula** | Returns only the records where this Airtable formula is `true`.                    |
 | **Max Records**       | Sets a limit for how many records are allowed to be selected in this query.        |
 | **Page Size**         | Sets a limit for how many records can be returned at a time; others are sent in subsequent requests. |
-| **Sort**              | Specifies which column to sort by.                                                 |
+| **Sort**              | Specifies which column to sort by. `sort%5B0%5D%5Bfield%5D=<COLUMN_NAME>`          |
 | **Cell Format**       | Sets whether certain values are returned in `string` or `json` format. For example, ticked checkboxes are `"checked"` in string format, or `true` in JSON format.  |
 | **Time Zone**         | Sets the time zone to use for displaying date values.                              |
 | **User Locale**       | Sets format for displaying dates according to locale.                              |
@@ -100,15 +100,33 @@ To access your record fields in a widget, it's helpful to use a `map()` function
 
 ### Filter and sort
 
-Use the **Filter** setting to request only certain column values from your table records. This is useful for reducing the amount of data you're requesting when you only need a handful of values. Provide the names of the columns you want as an array of strings"
+:::info
+Appsmith is currently unable to support automatic parameter encoding for Airtable queries. Check the Filter and Sort examples below, and see this [Airtable API URL Encoder](https://codepen.io/airtable/full/MeXqOg) for more help.
+:::
+
+Use the **Filter** setting to request only certain column values from your table records. This is useful for reducing the amount of data you're requesting when you only need a handful of values. To provide a search field, enter the name of the column to sort by prefixed with the string: `fields%5B%5D=`.
 
 ```javascript
-["name", "employee_id"]
+// Return only "Name" column
+fields%5B%5D=name
+```
+```javascript
+// Return "Name" and "Employee ID" columns
+fields%5B%5D=name&fields%5B%5D=employee_id
 ```
 
 **Filter by formula** performs a check on each record in your base and returns it if the condition is true. Use this to filter your dataset with logical operations. This field expects a formula (such as `employee_id = 1001`) as a string; see [Airtable formulas](https://support.airtable.com/docs/formula-field-reference) for more information.
 
-To have your data sorted in the response, use the **Sort** field. Provide the column names to sort by as an array of strings.
+To have your data sorted in the response, use the **Sort** field. To provide a search field, enter the name of the column to sort by prefixed with the string: `sort%5B0%5D%5Bfield%5D=`.
+
+```javascript
+// Sort by "Employee ID" column
+sort%5B0%5D%5Bfield%5D=employee_id
+```
+```javascript
+// Sort by "Employee ID" column in descending order
+sort%5B0%5D%5Bfield%5D=employee_id&sort%5B0%5D%5Bdirection%5D=desc
+```
 
 ### Server side pagination
 
