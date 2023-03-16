@@ -1,41 +1,30 @@
 ---
 sidebar_position: 4
 ---
-# Emdedded PostgresSQL Database
+# Embedded PostgreSQL
 
-Appsmith comes with an <mark >`embedded PostgreSQL v13 database`</mark> . You can use it as a datasource for your applications and it also includes mocks database relations for various use cases.
+Appsmith has a built-in PostgreSQL v13 database. You can use it as a source of data for your applications. Additionally, it also has mock databases that you can use to experiment and test different scenarios.
 
-:::info
-This is an optional feature. To disable the embedded postgresql please refer to the instructions [here](#Disable the embedded postgresql)
-:::
+## Superusers and sample databases
 
-### Super users
+The following table provides a list of superusers and sample databases that are available on the Embedded PostgreSQL:
 
-There are three superusers for the embedded postgresql.
- - `postgres`
- - `mockdb`
- - `users`
-:::info
-All of the above users are configured with authentication of type `trust`, i.e a password is not required for authenticating into the database.
-:::
+| Name | Type | Description|
+|------|------|------------|
+|`postgres`, `mockdb`, `users`| superusers |You can use them to connect to the databases without having to provide a password.|
+|`users` | sample database | The sample database contains test data for users.|
+|`mockdb` | sample database | The sample database contains the application templates for PostgreSQL relations.|
 
-### Sample databases
+## Embedded PostgreSQL as a datasource
+You can use the built-in PostgreSQL as a datasource on Appsmith. Use the following configuration details to set it up:
 
-There are two sample databases that comes with the embedded postgresql.
-- `users` : The sample postgres data-source available on appsmith.
-- `mockdb` : The sample postgres relations available on applicatoin templates
-
-## Using the embedded postgresql as a data source
-
-Use the following credentials to configure the embedded postgresql as a datasource on Appsmith.
-
+```SQL
   host: `mockdb.internal.appsmith.com`
   port: `5432`
   database: `mockdb`
   user: `mockdb`
   password: ` `
+```
 
-
-## Disable the embedded postgresql
-
-If you want to disable the embedded postgresql database on Appsmith, please update the Environment variable `APPSMITH_ENABLE_EMBEDDED_DB` to `0` in the `docker.env` and restart the Appsmith container.
+## Disable the embedded PostgreSQL
+You may choose to disable the built-in embedded PostgreSQL. To disable the built-in PostgreSQL on Appsmith, you need to modify the environment variable `APPSMITH_ENABLE_EMBEDDED_DB` to `0` in the `docker.env` file, and then restart the Appsmith container.
