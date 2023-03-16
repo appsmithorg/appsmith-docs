@@ -242,6 +242,9 @@ batchSize
 1st
 Google Sheets
 rowIndex
+responseMeta
+svg
+showAlert
 svg
 ID
 showAlert
@@ -253,4 +256,3 @@ isDirty
 drag and drop
 GitHub
 scrollbar
-
