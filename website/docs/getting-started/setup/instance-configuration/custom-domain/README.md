@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 ---
-# SSL & Custom Domain
+# Custom Domain and SSL
 
 This page explains how to set up SSL for your custom domain on the Appsmith instance. So that you can make secure connections.
 
@@ -12,15 +12,15 @@ Before configuring SSL for your custom domain, make sure you have the following:
 1. A domain name - You can get a custom domain from popular providers like [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080), [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/), [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/), [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain), and [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains).
 2. Ports 80 and 443 are open and accessible.
 
-You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet. However, it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
+You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet. However, it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#configure-ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
 
 
 :::note
 For Appsmith Kubernetes installation, see [How to configure TLS on Kubernetes](/getting-started/setup/installation-guides/kubernetes#configure-tls).
 :::
 
-## SSL with Let's Encrypt
-Appsmith uses [Let's Encrypt](https://letsencrypt.org) to generate and maintain the certificate so that it remains up to date. On Appsmith, you can choose to add your Custom Domain and auto generate SSL certificate for it by using one of the following ways:
+## Configure SSL with Let's Encrypt
+Appsmith uses [Let's Encrypt](https://letsencrypt.org) to generate and maintain the certificate so that it remains up to date. On Appsmith, you can add your custom domain and auto generate SSL certificate for it by using one of the following ways:
 
 * [Admin settings](#admin-settings)
 * [Environment Variables](#environment-variables)
