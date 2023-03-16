@@ -1,17 +1,14 @@
----
-sidebar_position: 4
----
 # Embedded PostgreSQL
 
-Appsmith has a built-in PostgreSQL v13 database. You can use it as a source of data for your applications. Additionally, it also has mock databases that you can use to experiment and test different scenarios.
+Appsmith has a built-in PostgreSQL v13 database. You can use it as a source of data for your applications. Additionally, it also has mock databases for experimenting and testing different scenarios.
 
 ## Superusers and sample databases
 
-The following table provides a list of superusers and sample databases that are available on the Embedded PostgreSQL:
+Embedded PostgreSQL provides superusers and sample databases. Refer to the below table for details:
 
 | Name | Type | Description|
 |------|------|------------|
-|`postgres`, `mockdb`, `users`| superusers |You can use them to connect to the databases without having to provide a password.|
+|`postgres`, `mockdb`, `users`| superusers | Connect using them without providing a password.|
 |`users` | sample database | The sample database contains test data for users.|
 |`mockdb` | sample database | The sample database contains the application templates for PostgreSQL relations.|
 
@@ -21,10 +18,23 @@ You can use the built-in PostgreSQL as a datasource on Appsmith. Use the followi
 ```SQL
   host: `mockdb.internal.appsmith.com`
   port: `5432`
-  database: `mockdb`
+ database: `mockdb`
   user: `mockdb`
-  password: ` `
+ password: ` `
 ```
 
 ## Disable the embedded PostgreSQL
-You may choose to disable the built-in embedded PostgreSQL. To disable the built-in PostgreSQL on Appsmith, you need to modify the environment variable `APPSMITH_ENABLE_EMBEDDED_DB` to `0` in the `docker.env` file, and then restart the Appsmith container.
+You may choose to disable the built-in embedded PostgreSQL. Follow the steps below:
+1. Navigate to the `docker.env` file located in the installation root folder. For example, if you are using Docker installation, you can locate the file in the `<PROJECT_ROOT>/stacks/configuration` file. 
+    1. Update the key `APPSMITH_ENABLE_EMBEDDED_DB` as shown below:
+
+        ```yaml
+        APPSMITH_ENABLE_EMBEDDED_DB=0
+        ```
+    2. Restart the Appsmith container by using the following command:
+
+        ```bash
+        docker-compose restart appsmith
+        ```
+
+
