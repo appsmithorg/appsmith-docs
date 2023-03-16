@@ -244,3 +244,7 @@ Google Sheets
 rowIndex
 responseMeta
 svg
+showAlert
+svg
+GitHub
+scrollbar

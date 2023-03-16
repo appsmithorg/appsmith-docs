@@ -10,9 +10,25 @@ Input widgets gather user-provided data, which can be accessed using the widget'
 
 Properties under the "Validation" tab in the properties pane can be configured to enforce specific rules on what the user has entered.
 
-When any of the validation rules have been broken, the widget flags itself as invalid; the border shows red, and its **Error Message** appears to inform the user that there is a mistake. If the widget is part of a Form widget, that Form (by default) can't be submitted while it contains invalid data.
+When any of the validation rules have been broken, the widget flags itself as invalid; the border shows red, and its **Error Message** appears. If the widget is part of a Form widget, that Form (by default) can't be submitted while it contains invalid data.
+
+### Regex
+
+The **Regex** property is used to compare input to a regular expression that you have defined. If the user's input doesn't match the pattern, it's considered invalid.
+
+This is useful when you need to guarantee that the content exactly follows the formatting of your dataset.
+
+For example, if you'd like to create an input for a person's name, you can add the following regular expression to restrict input to only alphabetical characters, spaces, and certain special characters:
+
+```
+/^[a-z ,.'-]+$/i
+```
+
+### Valid
 
 In the **Valid** property field, you can write a code expression to evaluate the user's input. Or, if you have more complex logic, you can define a function in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to determine whether it's acceptable. The input is acceptable when the **Valid** field evaluates to `true`.
+
+Use this property when you have rules or logic beyond simple formatting that the input must follow.
 
 As an example, imagine that you are creating rules for a "Create Password" field in an account registration form. If you want to be sure that new passwords don't contain certain strings, you may write:
 
@@ -25,13 +41,7 @@ As an example, imagine that you are creating rules for a "Create Password" field
 }}
 ```
 
-The **Regex** property is used to compare input to a regular expression that you have defined. If the user's input doesn't match the pattern, it's considered invalid. This is important when you need to be sure that the content exactly follows the formatting of your datasource.
-
-For example, if you'd like to create an input for a person's name, you can add the following regular expression to restrict input to only alphabetical characters, spaces, and certain special characters:
-
-```
-/^[a-z ,.'-]+$/i
-```
+---
 
 Other validation properties include:
 
@@ -40,19 +50,6 @@ Other validation properties include:
 - **Min** / **Max**: Input less than **Min** or greater than **Max** is invalid.
 
 To see some of these validations in practice, visit the [sample app](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/6245b7264f1a665b23047e5f).
-
-## User instruction
-
-The Input widget has useful properties for communicating expected data formats and boundaries to users. Providing instructions and expectations to the user up-front helps improve their responses and reduces the chance of messy data.
-
-When you create your Input widget, give it a **Placeholder** value that shows the user an example of your expected response. These values are shown in grey when the widget loads and disappear instantly when the user starts typing.
-
-You can also provide a **Tooltip** filled with a more detailed outline of what you want. This is especially useful if your input field has special rules or requirements that aren't obvious, such as requirements for building a strong password.
-
-<figure>
-  <img src="/img/input-tooltip-placeholder.png" style={{width:"100%", height:"auto"}} alt="Use Tooltips and Placeholders to show users how to format their input."/>
-  <figcaption align = "center"><i>Use Tooltips and Placeholders to show users how to format their input.</i></figcaption>
-</figure>
 
 ## Properties
 
@@ -127,4 +124,5 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 - [Currency Input](/reference/widgets/currency-input)
 - [Phone Input](/reference/widgets/phone-input)
-- [Rich-Text Editor widget](/reference/widgets/rich-text-editor)
+- [Rich-Text Editor](/reference/widgets/rich-text-editor)
+
