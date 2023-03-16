@@ -54,7 +54,7 @@ You can refer to this [tutorial](https://www.appsmith.com/blog/upload-and-manage
 
 
 
-## Display data in table
+## Display CSV data in Table
 
 To display CSV data in a [Table widget](/reference/widgets/text), use the Array data format. This format allows CSV data to be directly parsed into an array or array of objects that can be referenced throughout the platform. To achieve this, follow these steps:
 
