@@ -57,7 +57,7 @@ If using the S3 multiple file upload command, you only need to provide `{{FilePi
 To upload a file via API, follow these steps:
 
 * Click the "+" icon next to Queries/JS and create a new blank API.
-* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` is your Cloudinary username.
+* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` represents your Cloudinary username. You can retrieve your Cloudinary `cloud_name` and `upload_preset` from the Cloudinary dashboard.
 * Add the Cloudinary API URL and set the header in the API Datasource configuration.
 * Configure the request body in a multipart structure, including the image file data and any additional metadata.
 
