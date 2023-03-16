@@ -49,7 +49,7 @@ To upload a file to [S3](/reference/datasources/querying-amazon-s3), follow thes
 
 If using the S3 multiple file upload command, you only need to provide `{{FilePicker1.files}}`.
 
-You can refer to this [tutorial](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to understand how to use the FilePicker widget to upload or manage files on Cloudinary.
+To learn more,  see [how to use the Filepicker widget](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to upload or manage files on Cloudinary.
 
 
 
