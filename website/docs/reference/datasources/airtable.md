@@ -8,31 +8,36 @@ This page describes how to connect your application to your Airtable bases and u
 
 ## Connect to Airtable
 
+
+To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
+
+
+
+
+### Authentication type
+
 <figure>
   <img src="/img/airtable-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Airtable datasource." />
   <figcaption align="center"><i>Configuring an Airtable datasource.</i></figcaption>
 </figure>
 
-To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
-
-:::caution info
-[The API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
-:::
-
-
-### Authentication type
-
 :::info
-Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens.
+Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens. If you must use an API Key, simply select the **API Key** authentication type and provide the key in the API Key field.
 :::
 
 You'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration. Appsmith automatically handles sending your token in your request headers.
 
 Once you're finished, click **Save** to save your datasource.
 
-### Base ID
+## Create queries
 
-In your **queries**, you'll need to specify the **Base ID** and **Table Name** to access your data.
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Airtable by selecting the **+ New Query**  button on the Airtable datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Airtable datasource. You'll be brought to a new query screen where you can write queries.
+
+:::caution info
+[The Airtable Web API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
+:::
+
+In your queries, you'll need to specify the **Base ID** and **Table Name** to access your data.
 
 The **Base ID** can be found in the URL of the webpage that displays your database. It's the first sub-string after `https://airtable.com/`, prefixed by `app`. For example:
 
@@ -85,6 +90,18 @@ To access your record fields in a widget, it's helpful to use a `map()` function
 }}
 ```
 
+| **Parameter**         | **Description**                                                                    |
+| --------------------- | ---------------------------------------------------------------------------------- |
+| **Fields**            | Specifies which columns to return, omits the rest.                                 |
+| **Filter by Formula** | Returns only the records where this Airtable formula is `true`.                    |
+| **Max Records**       | Sets a limit for how many records are allowed to be selected in this query.        |
+| **Page Size**         | Sets a limit for how many records can be returned at a time; others are sent in subsequent requests. |
+| **Sort**              | Specifies which column to sort by.                                                 |
+| **Cell Format**       | Sets whether certain values are returned in `string` or `json` format. For example, ticked checkboxes are `"checked"` in string format, or `true` in JSON format.  |
+| **Time Zone**         | Sets the time zone to use for displaying date values.                              |
+| **User Locale**       | Sets format for displaying dates according to locale.                              |
+| **Offset**            | Takes an `offset` token from the query's prior response that requests the next page of data. |
+
 ### Filter and sort
 
 Use the **Filter** setting to request only certain column values from your table records. This is useful for reducing the amount of data you're requesting when you only need a handful of values. Provide the names of the columns you want as an array of strings"
@@ -97,7 +114,7 @@ Use the **Filter** setting to request only certain column values from your table
 
 To have your data sorted in the response, use the **Sort** field. Provide the column names to sort by as an array of strings.
 
-### Pagination
+### Server side pagination
 
 To limit the amount of records you receive at once, use **Page Size**; the default setting is 100 records per page.
 
@@ -323,12 +340,6 @@ Now when the button is clicked, the query is run and the corresponding row is de
 | **Delete A Record**     | Delete a record from a base table by its Record ID.                                |
 | **Retrieve A Record**   | Fetch a single record by its Record ID.                                            |
 | **Update Records**      | Update existing records in a base table, referenced by their Record ID.            |
-
-## Troubleshooting
-
-If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) page for assistance.
-
-If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
 
 ## Further reading
 
