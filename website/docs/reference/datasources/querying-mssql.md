@@ -2,9 +2,9 @@
 sidebar_position: 11
 ---
 
-# MS SQL
+# Microsoft SQL Server
 
-This page describes how to connect your application to your Microsoft SQL databases and use queries to manage their content
+This page describes how to connect your application to your Microsoft SQL Server databases and use queries to manage their content
 
 :::note
 Appsmith's backend server supports **TLS1.1** and **TLS1.2** for connecting to endpoints.
@@ -55,7 +55,7 @@ You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-
 
 You can query MsSQL databases using [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15). All MS SQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
-:::tip
+:::info
 [Prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) are turned on by default to improve the security of the queries in your app. 
 :::
 
@@ -226,12 +226,12 @@ Now when the button is clicked, the query is run and the corresponding row is de
 
 ## Troubleshooting
 
-If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance.
+If you are experiencing difficulties, you can refer to the [troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/) for assistance.
 
 If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
 
 ## Further reading
 
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Table widget](/reference/widgets/table)
 * [Form widget](/reference/widgets/form)
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
