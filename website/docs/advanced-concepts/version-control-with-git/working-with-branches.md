@@ -11,8 +11,6 @@ To create a new branch -
 * If you create a new branch, it will have the uncommitted changes of your parent branch. 
 * When you switch to another branch, the uncommitted changes in your current branch won’t be carried over to the destination branch.
 
-However, if you create a new branch, it will have the uncommitted changes of your parent branch.
-
 :::info
 * Branch names should **not** start with `origin/` since this prefix is used to distinguish between local and remote versions of a branch.
 * Checking out a remote branch with a local counterpart already available would result in an error.
