@@ -3,7 +3,7 @@ sidebar_position: 7
 ---
 # Custom Domain and SSL
 
-This page explains how to set up SSL for your custom domain on the Appsmith instance. So that you can make secure connections.
+This page explains how to set up SSL for your custom domain on the Appsmith instance so that you can make secure connections.
 
 <VideoEmbed host="youtube" videoId="0llo1exi4IY" title="How To Self-Host Appsmith With A Custom Domain" caption="Set up SSL for your Custom Domain on your self-hosted Appsmith Instance"/>
 
