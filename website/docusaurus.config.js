@@ -20,6 +20,15 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  plugins: [
+    [
+      '@twilio-labs/docusaurus-plugin-segment',
+      {
+        writeKey: '5mV2pPUXuzTRHzZET0fv8PJrBrwQ2EeH',
+        allowedInDev: false,
+      },
+    ],
+  ],
 
   presets: [
     [

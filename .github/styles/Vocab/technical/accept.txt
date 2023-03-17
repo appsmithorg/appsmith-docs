@@ -242,8 +242,19 @@ batchSize
 1st
 Google Sheets
 rowIndex
+responseMeta
+svg
 showAlert
 svg
-scrollbar
 NameCheap
 GitHub
+MS SQL
+scrollbar
+ID
+showAlert
+click on
+CSV
+FilePicker
+isDirty
+drag and drop
+
