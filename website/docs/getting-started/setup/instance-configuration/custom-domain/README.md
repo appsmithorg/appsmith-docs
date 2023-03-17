@@ -15,7 +15,7 @@ Before configuring SSL for your custom domain, make sure you have the following:
 You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet. However, it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#configure-ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
 
 
-:::caution important
+:::info
 For Appsmith Kubernetes installation, see [How to configure TLS on Kubernetes](/getting-started/setup/installation-guides/kubernetes#configure-tls).
 :::
 
@@ -53,7 +53,7 @@ When you restart Appsmith, it generates an SSL certificate for your custom domai
 
 ## Configure custom SSL
 
-:::caution important
+:::info
 If you want to configure a Custom SSL on your Heroku or DigitalOcean Appsmith installation platform, follow the steps as listed in the guides below:
 * [How to Configure SSL for your Heroku dyno](https://devcenter.heroku.com/articles/ssl)
 * [How do I install an SSL Certificate on a DigitalOcean Droplet](https://docs.digitalocean.com/support/how-do-i-install-an-ssl-certificate-on-a-droplet/)
