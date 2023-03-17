@@ -3,7 +3,7 @@ sidebar_position: 7
 ---
 # Custom Domain and SSL
 
-This page explains how to set up SSL for your custom domain on the Appsmith instance so that you can make secure connections.
+This page explains how to set up SSL for your custom domain on the Appsmith instance.
 
 <VideoEmbed host="youtube" videoId="0llo1exi4IY" title="How To Self-Host Appsmith With A Custom Domain" caption="Set up SSL for your Custom Domain on your self-hosted Appsmith Instance"/>
 
@@ -15,7 +15,7 @@ Before configuring SSL for your custom domain, make sure you have the following:
 You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet. However, it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#configure-ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
 
 
-:::note
+:::caution important
 For Appsmith Kubernetes installation, see [How to configure TLS on Kubernetes](/getting-started/setup/installation-guides/kubernetes#configure-tls).
 :::
 
@@ -38,38 +38,40 @@ When you restart Appsmith, it generates an SSL certificate for your custom domai
 ### Environment variables
 Appsmith is deployed on a Docker container. To generate SSL certificate, add the custom domain to the environment variable `APPSMITH_CUSTOM_DOMAIN` in a `docker.env` file. Follow the steps below:
 
-1. Navigate to the `docker.env` file located in the installation root folder. For example, if you are using Docker installation, you can locate the file in the `<PROJECT_ROOT>/stacks/configuration` file. Similarly, the file is in the `/home/ubuntu/appsmith/stacks/configuration` folder on AWS AMI.
-    1. Update the key `APPSMITH_CUSTOM_DOMAIN` as shown below:
+Navigate to the `docker.env` file located in the installation root folder. For example, if you are using Docker installation, you can locate the file in the `<PROJECT_ROOT>/stacks/configuration` file. Similarly, the file is in the `/home/ubuntu/appsmith/stacks/configuration` folder on AWS AMI.
+1. Update the key `APPSMITH_CUSTOM_DOMAIN` as shown below:
 
-        ```yaml
-        APPSMITH_CUSTOM_DOMAIN=<ADD_CUSTOM_DOMAIN_HERE>
-        ```
-    2. Restart the Appsmith container by using the following command:
+```yaml
+APPSMITH_CUSTOM_DOMAIN=<ADD_CUSTOM_DOMAIN_HERE>
+```
+2. Restart the Appsmith container by using the following command:
 
-        ```bash
-        docker-compose restart appsmith
-        ```
+```bash
+docker-compose restart appsmith
+```
 When you restart Appsmith, it generates an SSL certificate for your custom domain. Once the restart is successful, you can use your custom domain mapped to port 443 via HTTPS to access Appsmith in your browser.
 
 ## Configure custom SSL
-If you already have SSL Certificate and want to use that, follow the steps listed below:
 
-1. Rename the certificate file as `fullchain.pem` and key file as `privkey.pem`.
-2. Copy these files into the subdirectory `<MOUNTING-DIRECTORY>/ssl/`. Ensure that you change `<MOUNTING-DIRECTORY>` by the mounting volume directory available in the `docker-compose.yml`. For example, the default value is `./stacks`.
-3. Add your Custom Domain to the environment variable `APPSMITH_CUSTOM_DOMAIN` in the 'docker.env' file.
-4. Restart the container using `docker-compose restart appsmith`
-
-The container uses the certificate if the files are present in the `<MOUNTING-DIRECTORY>/ssl` folder.
-
-:::note
+:::caution important
 If you want to configure a Custom SSL on your Heroku or DigitalOcean Appsmith installation platform, follow the steps as listed in the guides below:
 * [How to Configure SSL for your Heroku dyno](https://devcenter.heroku.com/articles/ssl)
 * [How do I install an SSL Certificate on a DigitalOcean Droplet](https://docs.digitalocean.com/support/how-do-i-install-an-ssl-certificate-on-a-droplet/)
 :::
 
+If you already have an SSL Certificate and want to use that, follow the steps listed below:
+
+1. Rename the certificate file as `fullchain.pem` and key file as `privkey.pem`.
+2. Copy these files into the subdirectory `<MOUNTING-DIRECTORY>/ssl/`. Ensure that you change `<MOUNTING-DIRECTORY>` by the mounting volume directory available in the `docker-compose.yml`. For example, the default value is `./stacks`.
+3. Add your Custom Domain to the environment variable `APPSMITH_CUSTOM_DOMAIN` in the `docker.env` file.
+4. Restart the container using `docker-compose restart appsmith`
+
+The container uses the certificate if the files are present in the `<MOUNTING-DIRECTORY>/ssl` folder.
+
+
 ## Troubleshooting
 
-If you’re having issues accessing Appsmith after Appsmith SSL Configuration, please see the [Unable to Access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) troubleshooting guide. If you continue to have problems reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+If you’re having issues accessing Appsmith after Appsmith SSL Configuration, please see the [Unable to Access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) troubleshooting guide. 
 
 ## Further reading
 - [System logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
