@@ -72,7 +72,7 @@ This query returns data in the required JSON format, where `x` represents the as
 
 If you want to display multiple data columns on a chart, you can do so by using the **Chart Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
 
-For example, if you have data on the number of males and females who voted in each year of a political election, you can use the Chart Series property to display both sets of data on the same chart. This would allow you to easily compare the number of male and female voters over time.
+For example, if you have data on the number of males and females who voted in each year of a political election, you can use the Chart Series property to display both sets of data on the same chart. This would allow you to compare the number of male and female voters over time.
 
 Check this [sample app](https://app.appsmith.com/applications/620b668f6b4b1e154a3c2418/pages/620b8bc56b4b1e154a3c2688) to learn how to produce a dual-axis chart combining columns, lines, and areas.
 
