@@ -6,6 +6,8 @@ sidebar_position: 1
 
 This page describes how to connect your application to your Airtable bases and use queries to manage their content.
 
+<VideoEmbed host="youtube" videoId="cmr2-SsBR3w" title="Build CRUD apps with Appsmith and Airtable" caption="Build CRUD apps with Appsmith and Airtable"/>
+
 ## Connect to Airtable
 
 <figure>
