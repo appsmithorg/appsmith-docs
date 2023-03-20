@@ -8,21 +8,12 @@ sidebar_position: 3
 
 You can host and manage Appsmith directly on your server, giving you complete control over your data privacy, security, and integrity.
 
-You can use Appsmith in two ways:
-
-* **[Appsmith Cloud](https://app.appsmith.com/user/login)** - For users who don't have an infrastructure. Appsmith only acts as a proxy layer and doesn't store any data returned from your API endpoints or database queries. See [Security](/product/security)
-* **Self-host Appsmith** - For users who want to deploy Appsmith on their own infrastructure, manage the instance, updates, etc.
-
 ## System requirements
 
 It's simple and quick to deploy Appsmith. Please ensure that your system has the following recommended configuration for optimal performance before moving forward with the deployment:
 
 * Two virtual CPU \[vCPU]
-* A four GB of memory
-
-:::info
-On Amazon Web Services(AWS), the [t3.medium](https://aws.amazon.com/ec2/instance-types/t3/) instance would be ideal for installing Appsmith.
-:::
+* 4 GB of memory ([t3.medium](https://aws.amazon.com/ec2/instance-types/t3/) on AWS)
 
 ## Deployment options
 
@@ -30,7 +21,7 @@ Appsmith officially supports only Docker-based installations.
 
 You can follow one of the guides to deploy Appsmith on the platform you prefer:
 
-* [Docker](/getting-started/setup/installation-guides/docker)
+* [Docker](/getting-started/setup/installation-guides/docker) (*Recommended*)
 * [Kubernetes](/getting-started/setup/installation-guides/kubernetes)
 * [AWS AMI](/getting-started/setup/installation-guides/aws-ami)
 * [AWS ECS - EC2](/getting-started/setup/installation-guides/aws-ecs)
@@ -53,7 +44,7 @@ Installing Appsmith as a self-hosted instance has the following advantages:
 
 - **Local database**: A self-hosted instance allows you to connect to a database running on the same machine/intranet and use it to build apps.
 
-- **Performance & Scalability**: Appsmith supports high availability(HA) and scalability on [Kubernetes](/getting-started/setup/installation-guides/kubernetes)installation where you can deploy Appsmith having EFS/NFS as a common shared storage which helps in deploying Appsmith without any downtime. You can also configure the Horizontal Pod Autoscaler which helps in scaling the pods.
+- **Performance & Scalability**: Appsmith supports high availability(HA) and scalability on [Kubernetes](/getting-started/setup/installation-guides/kubernetes) installation where you can deploy Appsmith having EFS/NFS as a common shared storage which helps in deploying Appsmith without any downtime. You can also configure the Horizontal Pod Autoscaler which helps in scaling the pods.
 
 ## Further reading
 
