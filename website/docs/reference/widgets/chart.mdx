@@ -12,7 +12,7 @@ Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and
 Please be aware that the license **doesn't** include permission to use **Fusion Maps**. If you want to use this product, you may need to obtain a separate license.
 :::
 
-<VideoEmbed host="youtube" videoId="Rvlwb5123mE" title="How to use Chart Widget" caption="How to use Chart Widget"/>
+<VideoEmbed host="youtube" videoId="Rvlwb5123mE" title="How to use Chart Widget" caption="Configure Custom Chart"/>
 
 
 ## Display data
@@ -28,7 +28,7 @@ Appsmith offers the ability to display both static and dynamic data in a chart. 
 ]
 ```
 
-In this format, **`x`** denotes the **label** and **`y`** denotes the **value**. It's important to provide a value when displaying data to ensure that the chart can render correctly. 
+In this format, **`x`** denotes the **label** and **`y`** denotes the **value**. It's important to provide a value when displaying data to ensure that the chart can render correctly. Please note that the JSON format provided is only suitable for basic charts
 
 Appsmith offers several quick and easy ways to represent your data. With the Chart Type property, you can select one of the following types to visualize your data:
 * Line Charts, 
@@ -70,7 +70,7 @@ This query returns data in the required JSON format, where `x` represents the as
 
 ### Display multiple data columns
 
-If you want to display multiple data columns on a chart, you can do so by using the **Chart Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
+If you want to display multiple data columns on a chart, you can do so by using the **Add Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
 
 For example, if you have data on the number of males and females who voted in each year of a political election, you can use the Chart Series property to display both sets of data on the same chart. This would allow you to compare the number of male and female voters over time.
 
@@ -80,7 +80,7 @@ Check this [sample app](https://app.appsmith.com/applications/620b668f6b4b1e154a
 
 Performing actions based on data point selection refers to the ability to execute certain actions or operations when a user clicks on a specific data point in a chart widget. 
 
-To make this happen, you can set up the **"onDataPointClick"** event to perform a designated action. For instance, you can use a Modal widget to show the details of the clicked data point using `{{Chart1.selectedDataPoint.x}}` or you can execute a query based on the user's selection.
+To achieve this, you can set up the **"onDataPointClick"** event to perform a designated action. For instance, you can use a Modal widget to show the details of the clicked data point using `{{Chart1.selectedDataPoint.x}}` or you can execute a query based on the user's selection.
 
 ## Custom charts
 
