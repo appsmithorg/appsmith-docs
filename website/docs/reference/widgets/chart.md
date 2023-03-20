@@ -1,8 +1,10 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Chart
 
-When communicating with a larger audience, visual representation of data is beneficial. Its more readable and gives a better understanding of problems/achievements. You can drill down to view specific information when selecting a segment of data.
+This document explains how to effectively use the Chart widget to visualize and represent data.
 
-A **Chart** widget is a visual representation of data. It allows you to visualize the bottlenecks in processes. With the root cause in hand, you can amend the methods to make calculated decisions.
 
 :::info
 Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a **re-distribution license**. With this license, you can use FusionCharts on the Appsmith **cloud** and **on-premise** platform. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
@@ -12,209 +14,97 @@ Please be aware that the license **doesn't** include permission to use **Fusion 
 
 <VideoEmbed host="youtube" videoId="Rvlwb5123mE" title="How to use Chart Widget" caption="How to use Chart Widget"/>
 
-## Add to canvas
 
-To add a chart widget to your canvas, drag a chart widget from a widget pane available on the left navigation bar.
+## Display data
 
-Navigate to PAGES—> Select Widget Tab—> Write “**chart”** in the search bar—> Drag the widget on the canvas.
+Appsmith offers the ability to display both static and dynamic data in a chart. The data should be provided in a JSON format:
 
-<VideoEmbed host="youtube" videoId="YrTtmdephs8" title="How to add a Chart widget to canvas?" caption="How to add a Chart widget to canvas?"/>
-
-:::info
-You can move the chart widget and position it on the screen according to your convenience.
-:::
-
-## Properties
-
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-:::info
-Ensure that you select the widget to access its properties on the sidebar to the right.
-:::
-
-The properties pane follows the same structure for most of the widgets and includes or excludes properties not specific to the selected widget.
-
-### Widget properties
-
-These properties allow you to edit the Chart widget. These properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property                     | Description                                                                                                                                                                                                                           |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Series Title**                    | Sets the title of the current Chart series.
-| **Series Color**                    | Sets the color of the current Chart series.
-| **Series Data**                    | Sets the data of the current Chart series.
-| **Title**                    | Sets the text that appears at the top of the chart as a title.                                                                                                                                                                     |
-| **Chart Type**               | Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart ([available from FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts)).              |
-| **Visible**                  | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                                                        |
-| **Animate Loading**          | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                |
-| **Allow Scroll**             | Allows you to enable a scroll bar to scroll the contents of the chart.                                                                                                                                                                |
-| **x-axis Label**             | Sets the text which appears as a label for the x-axis.                                                                                                                                                                                |
-| **y-axis Label**             | Sets the text which appears as a label for the y-axis.                                                                                                                                                                                |
-| **x-axis Label Orientation** | Sets the size/rotation behavior for the x-axis label text. Chose from Auto, Slant, Rotate, or Stagger.                                                                                                                                |
-| **Adaptive Axis**            | Determines the scaling behavior of the y-axis. **OFF:** The y-axis begins at zero and spans to an upper limit based on the data points; **ON:** The y-axis starting and ending values are both determined based upon the data points. |
-
-### General
-
-You can choose the properties under this head to name, show/hide, chart type, or animate the loading of the widget.
-
-Let’s deep dive into the properties available under this head.
-
-### Name of Widget
-
-As soon as you select the widget, you can see an editable box available on top of the properties pane.
-
-You can use the default name in the box or provide a meaningful name to the widget. You’ll also see the default naming convention follows the pattern WidgetType followed by a number.
-
-:::tip
-It’s advisable to rename the widget to give some meaningful name. It makes it easy to pass parameters by using the widget name to the APIs or queries.
-:::
-
-### Title of Widget
-
-When you are working with data, its crucial to understand what type of data it is. A title given to the chart lets you identify the data. It's especially beneficial to have multiple charts and refer them with names while presenting the data. With this property, you can provide a meaningful title to your chart.
-
-### Chart series
-
-Using the chart series property, you can populated the chart with data and customize it. This allows you to add multiple sets of data to the chart and change various aspects of its appearance, such as the colors or labels, to make it more informative and visually appealing.
-
-<VideoEmbed host="youtube" videoId="wmUOUwNk02Y" title="Chart series" caption="Chart series"/>
-
-
-#### Series title
-
-This property allows you to specify the name of the chart series. This can help you organize and label your data more effectively, making it easier to interpret and understand.
-
-#### Series color
-
-This property lets you to set the color of the data series on the chart. Currently, this only works with hexadecimal color codes. Additionally, this property can't be used with pie charts, because the concept of series color isn't applicable to pie chart.
-
-#### Series data
-This property allows you to set the data for the current chart series. It also enables you to connect the chart to a datasource ([API](/core-concepts/connecting-to-data-sources/authentication) or [database query](/core-concepts/data-access-and-binding/querying-a-database)) and automatically populate the chart with that data. This can be a useful feature if you want to dynamically update the chart with real-time or changing data.
-
-
-
-
-### Chart type
-
-Appsmith platform offers several quick and easy ways to represent your data. With the Chart Type property, you can select one of the following types to visualize your data:
-
-* Line Chart
-* Bar Chart
-* Pie Chart
-* Column Chart
-* Area Chart
-* Custom Chart
-
-#### Line chart
-
-A line chart represents the data by connecting the individual data points to form a line. It showcases the relationship between two sets of values and where one depends on the other. It shows how the value changes over time or how the different values change over time relative to each other.
-
-For example, you are working on defect tracking for a project and want to express the data to visualize bugs raised, closed, and the active bugs that the team is working on for your sprint. You can group the defects raised in these categories and use a line chart to show bugs introduced for a 5-day window.
-
-Let’s use a line chart to visualize the data.
-
-<VideoEmbed host="youtube" videoId="yPLH8bbUth0" title="How to plot a line chart on Appsmith?" caption="How to plot a line chart on Appsmith?"/>
-
-As you can see in the video, you can use the `Chart Series` property head to supply the data and details related to identifying the data points.
-
-* `Series Title` - the name of the series. In the example preceding, it's _**Total Bugs**_.
-* `Series Data` - stores the data points for the total bugs.
-* `X-axis Label` - to define a title for the x-axis.
-* `Y-axis Label` - to define a title for the y-axis.
-
-To get a comparative study, you can add data for each category: bugs raised, active bugs, and closed bugs. To add more series, click the button `+Add Series` and embed the data into `Series Data`, as shown in the video below.
-
-<VideoEmbed host="youtube" videoId="wp4IHJIynmc" title="How to add series to capture more data points?" caption="How to add series to capture more data points?"/>
-
-Similar to cumulative open, you can also add details for active bugs.
-
-<VideoEmbed host="youtube" videoId="5z21ep4moIk" title="How to add data points for active bugs?" caption="How to add data points for active bugs?"/>
-
-In the series data, you can also bind it to fetch the defect data from an API/Query.
-
-<VideoEmbed host="youtube" videoId="5z21ep4moIk" title="How to add data points by binding an API response?" caption="How to add data points by binding an API response?"/>
-
-Here, you saw that you fetched the data from an API call by using a mustache sign `GetClosedDefectCountFromAPI` and you can use as below:
-
-```
-{{GetClosedDefectCountFromAPI.data}}
+```js
+[
+  {
+    "x": "Product1",
+    "y": 20000
+  },..
+]
 ```
 
-:::tip
-When doing a comparative chart analysis, you can plot different data points to analyze their behavior in the same course of time by supplying the series data.
-:::
+In this format, **`x`** denotes the **label** and **`y`** denotes the **value**. It's important to provide a value when displaying data to ensure that the chart can render correctly. 
 
-#### Bar chart
+Appsmith offers several quick and easy ways to represent your data. With the Chart Type property, you can select one of the following types to visualize your data:
+* Line Charts, 
+* Bar Charts, 
+* Pie Charts, 
+* Column Charts, 
+* Area Charts, and  
+* [Custom Charts](#custom-charts)
 
-A bar chart represents data points in the form of rectangles. You can use a bar chart to show comparisons between different groups or categories of data. Bar charts measure change over time.
+
+### Display static data
+
+To display static data, you can enter the desired data directly into the `Series Data property`, and it remains the same until manually updated or edited. This method is useful when you need to display fixed information, such as trends or comparisons, that don't change based on user interactions. 
+
+```js
+[
+  {
+    "x": "2021",
+    "y": 200000
+  },
+  {
+    "x": "2022",
+    "y": 320000
+  }
+]
+```
+
+### Display data dynamically
+
+You can display dynamic data by fetching it from APIs or databases. This can be done by using binding values to **Series Data property**. If you need to transform the incoming data to match this format, you can use **JSObject** to perform the transformation before binding it to the chart widget.
+
+For example, lets say you have a PostgreSQL database containing information about assets in your organization, such as their types and the date they were purchased. You can create a query that groups the assets by type and counts how many there are of each type, like this:
+
+```sql
+select type as x, count (*) as y from asset group by type
+```
+
+This query returns data in the required JSON format, where `x` represents the asset type and `y` represents the count of assets of that type. Next, in the chart widget's **Series** property, add `{{assetquery.data}}` to bind the data returned by the query to the chart. This displays a dynamic chart that updates as the data in the database changes.
+
+### Display multiple data columns
+
+If you want to display multiple data columns on a chart, you can do so by using the **Chart Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
+
+For example, if you have data on the number of males and females who voted in each year of a political election, you can use the Chart Series property to display both sets of data on the same chart. This would allow you to easily compare the number of male and female voters over time.
+
+Check this [sample app](https://app.appsmith.com/applications/620b668f6b4b1e154a3c2418/pages/620b8bc56b4b1e154a3c2688) to learn how to produce a dual-axis chart combining columns, lines, and areas.
+
+## Perform actions based on data point selection
+
+Performing actions based on data point selection refers to the ability to execute certain actions or operations when a user clicks on a specific data point in a chart widget. 
+
+To make this happen, you can set up the **"onDataPointClick"** event to perform a designated action. For instance, you can use a Modal widget to show the details of the clicked data point using `{{Chart1.selectedDataPoint.x}}` or you can execute a query based on the user's selection.
+
+## Custom charts
+
+Appsmith offers integration with [FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) and provides a wide range of chart types that can be used to create custom charts. Once you have selected the Custom Chart type, you can configure the FusionCharts using the Custom Fusion Chart property.
+
 
 :::info
-Except for the Custom Chart Type, you can change from one type of chart to another by selecting a different chart type.
+FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. To learn more about these charts, you can refer to the official [FusionCharts documentation]((https://www.fusioncharts.com/dev/chart-guide/list-of-charts/)) 
 :::
 
-For a bar chart also, you can add the data for the `x` and `y` axes and add them to series data.
+To create a custom chart, you need to provide two keys in your configuration: type and datasource:
 
-You can add more series by clicking the `+Add Series` button and plot data points for a comparative study.
 
-![A bar chart](/img/BarChart.png)
-
-#### Pie chart
-
-A pie chart represents data points in a circle divided into slices. It designates the numerical proportions between the data points. Unlike bar or line charts, pie charts don't show changes over time. Each slice depicts the percentage occupied in a whole circle.
-
-:::info
-You can only use a single series of data to plot a pie chart.
-:::
-
-![A pie chart](/img/PieChart.png)
-
-#### Column chart
-
-A column chart represents the change over time between different categories and represents the data points in the form of rectangles. In a column chart, groups are organized along the horizontal axis and values on the vertical axis.
-
-![A column chart](/img/ColumnChart.png)
-
-:::info
-The main difference between a bar chart and a column chart is how the data is represented on the axis. A bar chart represents data horizontally: the values on the x-axis and categories on the y-axis. In contrast, a column chart represents the values on the y-axis and categories on the x-axis.
-:::
-
-Like bar charts for column charts also, you can add more categories by clicking the `+Add Series` button.
-
-#### Area chart
-
-An area chart is a special data segment type of line chart where the data points are connected to form a line, and the space below the line is also filled to show the area occupied by a category.
-
-Area graphs effectively represent the fall and rise of data series over time.
-
-![An area chart](/img/AreaChart.png)
-
-Like a line chart for an area chart also, you can add more categories and their data by clicking the `+Add Series` button.
-
-#### Custom chart
-
-Appsmith integrates with [FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) and provides a wide array of chart types that you can use as part of a custom chart.
-
-You can select **Custom Chart** from the **Chart Type** dropdown to initialize it. On selecting the Custom Chart type, you can see a property **Custom Fusion Chart** where you can define the configuration of the FusionCharts.
-
-:::info
-FusionCharts offers almost 100+ variants. You can learn more about the charts from the FusionCharts official docs [here](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/).
-:::
-
-A custom chart configuration needs data in the form of two keys: type and datasource.
-
-**type**
+* **Type**
 
 The type is used to define the chart type recognized by the FusionCharts. You can[ get a list of all the supported types available](https://www.fusioncharts.com/dev/chart-guide/list-of-charts) on FusionCharts.
 
-**datasource**
+* **Datasource**
 
-The datasource defines the customization options and the data points to create a chart.
+The datasource defines the customization options and the data points to create a chart. It includes two attributes: **chart** and **data**.
 
-It has two attributes chart and data. The chart object can customize the chart and includes options like caption, xAxisName, and yAxisName.
+The chart object can customize the chart and includes options like caption, xAxisName, and yAxisName. On the other hand, the data attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`.
 
-The data attribute represents the data in an array format with the key-value pairs as `[{“label”: “string value”, “value”: “string value”}]`
-
-Below is an example configuration for the Custom Fusion Chart property:
+Below is an example of a configuration for the Custom Fusion Chart property:
 
 ```
 {
@@ -226,17 +116,16 @@ Below is an example configuration for the Custom Fusion Chart property:
 }
 ```
 
-Let’s take an example to create custom Fusioncharts.
+### Custom charts examples
+Here are some examples of custom charts that you can use as a reference to create your own customized charts.
 
-<VideoEmbed host="youtube" videoId="lLrybSBTb9k" title="A two-dimensional column chart" caption="A two-dimensional column chart"/>
 
-As you can see, you can choose the `Custom Chart` option from the `Chart Type` property. Once you select the custom chart type, you can see a new property `Custom Fusion Chart`.
+<Tabs>
+  <TabItem value="2D" label="2D column chart " default>
 
-:::tip
-You can embed the configuration into the custom fusion chart property or can add an API/query data by using a mustache syntax to add the required configuration.
-:::
+Suppose you want to create a custom FusionChart to display monthly revenue data for Harry's SuperMart. You can use a two-dimensional column chart for this purpose.
 
-To plot a column chart in a 2-dimensional look and feel, you can use the configuration as below:
+You can either embed the configuration directly or use a query to retrieve the required configuration. To plot a column chart in a 2-dimensional, you can use the configuration as below:
 
 ```
 {
@@ -276,22 +165,20 @@ To plot a column chart in a 2-dimensional look and feel, you can use the configu
 
 In the preceding code snippet, you’ll see that you plotted a column chart to showcase the monthly revenue pattern for last year, say - 2021.
 
-Say you have multiple sister companies under your business name and are targeting to showcase the monthly revenue chart for Harry’s SuperMart. In this case, you can use `subCaption` to define the company name.
+ If you have several sister companies operating under the same business name and you want to display the monthly revenue chart specifically for Harry's SuperMart, you can use the `subCaption` property to specify the name of the company.
 
 ```
  “subCaption”: "Harry's SuperMart"
 ```
 
-<VideoEmbed host="youtube" videoId="GVfm9RTuRaE" title="Add a sub caption" caption="Add a sub caption"/>
 
-
-The revenue displayed is in USD($), and in that case, you can choose a series (`y-axis`) to show `$` as a prefix. You can use `numberPrefix` and add the dollar($) sign.
+To format the revenue values on the chart, you can choose a series (`y-axis`) to show `$` as a prefix. You can use `numberPrefix` and add the dollar($) sign.
 
 ```
  “numberPrefix": "$"
 ```
 
-<VideoEmbed host="youtube" videoId="M2CLXC3rlMQ" title="Add a number prefix" caption="Add a number prefix"/>
+
 
 You have a monthly target revenue of say $70,000 and would want to plot it in the chart. You can use `trendlines` to add this detail to your chart.
 
@@ -309,140 +196,88 @@ You have a monthly target revenue of say $70,000 and would want to plot it in th
   ]
 ```
 
-<VideoEmbed host="youtube" videoId="ITwJOlQnqyI" title="Add trendlines" caption="Add trendlines"/>
 
-:::info
 `trendlines` are vertical or horizontal lines that help users understand the emphasized data point. For example, a monthly target.
-:::
-
-#### Example custom charts
-
-Below are a few examples of custom charts that you can use as a starting point.
-
-##### Pareto 3D chart
-
-A Pareto chart is a type of bar graph. It represents the frequency of change. The bar graphs follow a pattern from the longest bars on the left to the shortest on the right. Pareto charts are used to identify the areas for improvement.
-
-Let’s take an example of a Pareto 3D chart to visualize the data by combining a line chart and column chart.
-
-<VideoEmbed host="youtube" videoId="InxEQvwpiSw" title="A Pareto 3D Chart" caption="A Pareto 3D Chart"/>
 
 
-:::info
-You can change the type of chart by changing the type in the configuration. For example, ```“type”: “pareto3d”```.
-:::
 
-Below is a sample Pareto Chart with a 3-dimensional look and feel.
 
-```
+  </TabItem>
+
+  <TabItem value="p3" label=" Pareto 3D chart" default>
+  
+
+Pareto chart is a type of bar graph that display the frequency of change with bars following a pattern from longest on the left to shortest on the right. To visualize data, a Pareto 3D chart can be used which combines a line chart and a column chart.
+
+
+<figure>
+  <img src="/img/pareto-3d.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+
+To display a Pareto 3D chart for "Harry's SuperMart" example, modify the type value in the configuration to `pareto3d`:
+
+```json
 {
   "type": "pareto3d",
   "dataSource": {
     "chart": {
-      "caption": "Common Car Damages",
-      "subcaption": "PitStop Service Station",
-      "xaxisname": "Reported Cause",
-      "yaxisname": "No. of Occurences",
-      "theme": "fusion"
-    },
-    "data": [
-      {
-        "label": "Burned out bulb",
-        "value": "41"
-      },
-      {
-        "label": "Discharged Battery",
-        "value": "20"
-      },
-      {
-        "label": "Blown fuse",
-        "value": "14"
-      },
-      {
-        "label": "Worn brake pads",
-        "value": "11"
-      },
-      {
-        "label": "Flat",
-        "value": "9"
-      },
-      {
-        "label": "Others",
-        "value": "5"
-      }
-    ]
-  }
-}
+      "caption": "Monthly Revenue for the year 2021",
+      "xAxisName": "Month",
+      "yAxisName": ..
 ```
 
 You can add the below code snippet to have a customized tooltip.
 
 ```
-"plottooltext": "$label accounted for &lt;b>$datavalue&lt;/b> cars which came for repairs"
+"plottooltext": "$label accounted for &lt;b>$datavalue&lt;/b> revenue"
 ```
 
-##### Pie 3D chart
+  </TabItem>
+  <TabItem value="p4" label="Pie 3D chart">
 
-You can also add a Pie 3D chart with the help of fusion charts.
 
-Take a quick look at the video to know-how.
+Pie chart is a type of data visualization that represents numerical data in a circular graph, where the size of each "slice" of the pie corresponds to the proportion of data it represents.
 
-<VideoEmbed host="youtube" videoId="232PF7OFSu8" title="A three-dimensional Pie Chart" caption="A three-dimensional Pie Chart"/>
+<figure>
+  <img src="/img/pie3d.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
 
-You can use the following sample code snippet to add to the custom fusion chart property and plot a pie chart with a 3-dimensional look and feel.
+
+To display a Pie 3D chart for "Harry's SuperMart" example, modify the type value in the configuration to `pie3d`:
+
 
 ```
 {
   "type": "pie3d",
   "dataSource": {
     "chart": {
-      "caption": "Recommended Portfolio Split",
-      "subcaption": "For a net-worth of $1M",
-      "showvalues": "1",
-      "showpercentintooltip": "0",
-      "numberprefix": "$",
-      "enablemultislicing": "1",
+      "caption": "Monthly Revenue for the year 2021",
+      "xAxisName": "Month",
+      "yAxisName": "Revenue",
       "theme": "fusion"
-    },
-    "data": [
-      {
-        "label": "Equity",
-        "value": "300000"
-      },
-      {
-        "label": "Debt",
-        "value": "230000"
-      },
-      {
-        "label": "Bullion",
-        "value": "180000"
-      },
-      {
-        "label": "Real-estate",
-        "value": "270000"
-      },
-      {
-        "label": "Insurance",
-        "value": "20000"
-      }
-    ]
-  }
-}
+    },..
 ```
 
-For a sliced view, you can use a property `enablemultislicing`. Below is a code snippet that you can add to the chart property to have this effect.
+For a sliced view, you can use a property `enablemultislicing`:
 
 ```
 "enablemultislicing": "1"
 ```
+  </TabItem>
+  <TabItem value="s3d" label="Stacked Column 3D Chart">
 
-**Stacked Column 3D Chart**
+A stacked column chart is a type of data visualization that allows for the comparison of parts of a whole over time or across different sets of data.
 
-A Stacked Column represents a part of the whole comparison over time across a different set of data. For example, you can use a fusion chart on Appsmith to plot a stacked column chart in a 3-dimensional view.
+<figure>
+  <img src="/img/3d-chart.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
 
-<VideoEmbed host="youtube" videoId="4nsdEfEJewc" title="A three-dimensional Stacked Column Chart" caption="A three-dimensional Stacked Column Chart"/>
 
-You can use the below code snippet to add and modify to see how a stacked column 3D chart works.
+For example, here the chart is designed to show the number of reported deaths due to insect bites in India, broken down by the type of infection (`Hymenopter` or `Diptera`) and by year (`1994-1997`).
 
 ```
 {
@@ -514,50 +349,50 @@ You can use the below code snippet to add and modify to see how a stacked column
 }
 ```
 
-### Visible
-
-You can use Visible to show or hide the widget. By default, visible is enabled, so the widget is visible on page load. This property particularly comes in handy when you want to **hide/show** a widget programmatically or hide a widget on page load and then show it when a particular condition or data is available.
-
-There are two ways in which you can manipulate this property.
-
-* Enable the `JS` label next to Visible and write the javascript code that can handle the show and hide of the widget by manipulating visible property.
-* Write your own JSObject and javascript code to link to any other widget and manage the show/hide.
-
-:::tip
-You can get the reference of visible property by using `{{widget_name.isVisible}}` in your code.
-:::
-
-For example, let’s drag a checkbox widget `Checkbox1` onto the canvas and bind it to the Visible property of the chart widget by enabling the `JS` label next to it. Add the following javascript code in the Visible property.
-
-```
-{{Checkbox1.isChecked}}
-```
-
-<VideoEmbed host="youtube" videoId="cnmHBAwZz1g" title="How to use visible property to show/hide a widget" caption="How to use visible property to show/hide a widget"/>
+  </TabItem>
+</Tabs>
 
 
-When you tick the checkbox, it enables the Visible property, which makes the chart visible in the app.
 
-### Binding properties
 
-These properties allow you to bind your Chart widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+## Properties
+
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+
+### Widget properties
+
+These properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **Series Title**             	| String    	| Sets the title of the current Chart series.                                                                                                                                                                                   	|
+| **Series Color**             	| String    	| Sets the color of the current Chart series.                                                                                                                                                                                   	|
+| **Series Data**              	| Array     	| Sets the data of the current Chart series.                                                                                                                                                                                    	|
+| **Title**                    	| String    	| Sets the text that appears at the top of the chart as a title.                                                                                                                                                                	|
+| **Chart Type**               	| String    	| Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).                                                                     	|
+| **Visible**                  	| Boolean   	| Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                                                   	|
+| **Animate Loading**          	| Boolean   	| When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                            	|
+| **Allow Scroll**             	| Boolean   	| Allows you to enable a scroll bar to scroll the contents of the chart.                                                                                                                                                        	|
+| **x-axis Label**             	| String    	| Sets the text which appears as a label for the x-axis.                                                                                                                                                                        	|
+| **y-axis Label**             	| String    	| Sets the text which appears as a label for the y-axis.                                                                                                                                                                        	|
+| **x-axis Label Orientation** 	| String    	| Sets the size/rotation behavior for the x-axis label text. Chose from Auto, Slant, Rotate, or Stagger.                                                                                                                        	|
+| **Adaptive Axis**            	| Boolean   	| Determines the scaling behavior of the y-axis. OFF: The y-axis begins at zero and spans to an upper limit based on the data points; ON: The y-axis starting and ending values are both determined based upon the data points. 	|
+
+
+### Reference properties
+
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the xAxisName, you can use `Chart1.xAxisName`.
+
 
 | Binding Property      | Description                                                                                                                                               |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **isVisible**         | Reflects the state of the widget's **Visible** setting.                                                                                           |
-| **selectedDataPoint** | Contains an object which represents the data point that the user has most recently clicked _(object containing: x, y, seriesTitle)._ Default _undefined._ |
-| **xAxisName**         | Contains the text of the Chart's **x-axis Label** setting.                                                                                     |
-| **yAxisName**         | Contains the text of the Chart's y**-axis Label** setting.                                                                                     |
+| **isVisible**         | This property indicates whether the widget is visible or not.                                                                                      |
+| **selectedDataPoint** | Contains an object which represents the data point that the user has most recently clicked `(object containing: x, y, seriesTitle)._ Default _undefined.` |
+| **xAxisName**         | Stores the text of the x-axis Label setting of the chart.                                                                                    |
+| **yAxisName**         | Stores the text of the y-axis Label setting of the chart.
 
-### Events
 
-You might want to fetch more data based on clicks on a chart. Events on the chart capture the user interaction.
-
-| Event                | Description                                                                                                                                                                                                                                                       |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onDataPointClick** | Sets an action to take place when the user clicks on a data point. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom javascript function to call instead. |
-
-### Styles
+### Style properties
 
 | Style Property    | Description                                                                                                                                                                      |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -565,5 +400,13 @@ You might want to fetch more data based on clicks on a chart. Events on the char
 | **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
 
+### Events
 
-With many out-of-the-box chart representations available on Appsmith, visualize and share your data across business functions.
+These are functions that are called when event listeners are triggered in the widget. [Use actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
+
+
+| Event                | Description                                                                                                                                                                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onDataPointClick** | Specifies an action to be performed when a user clicks on a data point in the chart. |
+
+
