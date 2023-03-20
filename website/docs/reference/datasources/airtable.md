@@ -15,24 +15,30 @@ This page describes how to connect your application to your Airtable bases and u
 
 To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-:::caution info
-[The API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
-:::
-
-
 ### Authentication type
 
 :::info
-Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens.
+Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens. If you must use an API Key, simply select the **API Key** authentication type and provide the key in the API Key field.
 :::
 
 You'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration. Appsmith automatically handles sending your token in your request headers.
 
 Once you're finished, click **Save** to save your datasource.
 
-### Base ID
+## Create queries
 
-In your **queries**, you'll need to specify the **Base ID** and **Table Name** to access your data.
+<figure>
+  <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
+  <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
+</figure>
+
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Airtable by selecting the **+ New Query**  button on the Airtable datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Airtable datasource. You'll be brought to a new query screen where you can write queries.
+
+:::caution info
+[The Airtable Web API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
+:::
+
+In your queries, you'll need to specify the **Base ID** and **Table Name** to access your data.
 
 The **Base ID** can be found in the URL of the webpage that displays your database. It's the first sub-string after `https://airtable.com/`, prefixed by `app`. For example:
 
@@ -43,11 +49,6 @@ https://airtable.com/appZueQaLuTv7fSXjJx/tblPhSJD7fdIKLY3j1/viwqRLKs978DFI6Q?blo
 ```
 
 ## List records
-
-<figure>
-  <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
-  <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
-</figure>
 
 Use the **List Records** command to fetch data from your Airtable base. You can use the query configuration settings to filter, sort, and format the data that's returned to your app.
 
@@ -85,19 +86,49 @@ To access your record fields in a widget, it's helpful to use a `map()` function
 }}
 ```
 
+| **Parameter**         | **Description**                                                                    |
+| --------------------- | ---------------------------------------------------------------------------------- |
+| **Fields**            | Specifies which columns to return, omits the rest. `fields%5B%5D=<COLUMN_NAME>`    |
+| **Filter by Formula** | Returns only the records where this Airtable formula is `true`.                    |
+| **Max Records**       | Sets a limit for how many records are allowed to be selected in this query.        |
+| **Page Size**         | Sets a limit for how many records can be returned at a time; others are sent in subsequent requests. |
+| **Sort**              | Specifies which column to sort by. `sort%5B0%5D%5Bfield%5D=<COLUMN_NAME>`          |
+| **Cell Format**       | Sets whether certain values are returned in `string` or `json` format. For example, ticked checkboxes are `"checked"` in string format, or `true` in JSON format.  |
+| **Time Zone**         | Sets the time zone to use for displaying date values.                              |
+| **User Locale**       | Sets format for displaying dates according to locale.                              |
+| **Offset**            | Takes an `offset` token from the query's prior response that requests the next page of data. |
+
 ### Filter and sort
 
-Use the **Filter** setting to request only certain column values from your table records. This is useful for reducing the amount of data you're requesting when you only need a handful of values. Provide the names of the columns you want as an array of strings"
+:::info
+Appsmith is currently unable to support automatic parameter encoding for Airtable queries. Check the Filter and Sort examples below, and see this [Airtable API URL Encoder](https://codepen.io/airtable/full/MeXqOg) for more help.
+:::
+
+Use the **Filter** setting to request only certain column values from your table records. This is useful for reducing the amount of data you're requesting when you only need a handful of values. To provide a search field, enter the name of the column to sort by prefixed with the string: `fields%5B%5D=`.
 
 ```javascript
-["name", "employee_id"]
+// Return only "Name" column
+fields%5B%5D=name
+```
+```javascript
+// Return "Name" and "Employee ID" columns
+fields%5B%5D=name&fields%5B%5D=employee_id
 ```
 
 **Filter by formula** performs a check on each record in your base and returns it if the condition is true. Use this to filter your dataset with logical operations. This field expects a formula (such as `employee_id = 1001`) as a string; see [Airtable formulas](https://support.airtable.com/docs/formula-field-reference) for more information.
 
-To have your data sorted in the response, use the **Sort** field. Provide the column names to sort by as an array of strings.
+To have your data sorted in the response, use the **Sort** field. To provide a search field, enter the name of the column to sort by prefixed with the string: `sort%5B0%5D%5Bfield%5D=`.
 
-### Pagination
+```javascript
+// Sort by "Employee ID" column
+sort%5B0%5D%5Bfield%5D=employee_id
+```
+```javascript
+// Sort by "Employee ID" column in descending order
+sort%5B0%5D%5Bfield%5D=employee_id&sort%5B0%5D%5Bdirection%5D=desc
+```
+
+### Server side pagination
 
 To limit the amount of records you receive at once, use **Page Size**; the default setting is 100 records per page.
 
@@ -324,14 +355,8 @@ Now when the button is clicked, the query is run and the corresponding row is de
 | **Retrieve A Record**   | Fetch a single record by its Record ID.                                            |
 | **Update Records**      | Update existing records in a base table, referenced by their Record ID.            |
 
-## Troubleshooting
-
-If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) page for assistance.
-
-If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
-
 ## Further reading
 
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Table widget](/reference/widgets/table)
 * [Form widget](/reference/widgets/form)
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
