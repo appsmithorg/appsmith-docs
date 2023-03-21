@@ -28,7 +28,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
             <img class="containerImage" src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/>
             </a>     
         </div> 
-         <b><a href="/getting-started/setup/installation-guides/digitalocean">Digital Ocean</a></b>
+         <b><a href="/getting-started/setup/installation-guides/digitalocean">DigitalOcean</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
          <div class="containerCol">
