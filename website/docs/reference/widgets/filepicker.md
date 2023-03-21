@@ -96,7 +96,7 @@ These properties are present in the property pane of the widget. The following t
 | **Maximum No. of files**      	| Number          	| Sets the maximum number of files allowed to be uploaded by a user.                                                                                                                                                                                                                    	|
 | **Maximum File Size**         	| Number          	| Sets the maximum allowed size of each file that a user can upload.                                                                                                                                                                                                                    	|
 | **Allowed File Types**        	| Array   	| Controls which types of files a user is allowed to upload. Accepts an array of wildcards image/, exact mime types image/jpeg, or file extensions e.g.: '.jpg', '.jpeg', '.png', '.gif']. The following file types are supported: Images, Videos, Audio, Text, MS Word, JPEG, and PNG. 	|
-| **Data Format**               	| String / array 	| Determines the data format of the files uploaded. You can choose from Base64, Binary, , Text, and Array(CSV).                                                                                                                                                                         	|
+| **Data Format**               	| String 	| Determines the data format of the files uploaded. You can choose from Base64, Binary, , Text, and Array(CSV).                                                                                                                                                                         	|
 | **Infer data-types from CSV** 	| Boolean         	| Enables or disables the automatic inference of data types from CSV files.                                                                                                                                                                                                             	|
 | **Required**                  	| Boolean         	| Makes input to the widget mandatory.                                                                                                                                                                                                                                                  	|
 | **Visible**                   	| Boolean        	| Controls widget's visibility on the page.                                                                                                                                                                                                                                             	|
@@ -108,13 +108,13 @@ These properties are present in the property pane of the widget. The following t
 ### Reference properties
 These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For example, to check the visibility setting of the widget, you can use `FilePicker1.isVisible`.
 
-|        Property         |                                               Description                                                                                   |  
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **files**                |  An array of file objects that have been selected by the user. Each file object contains the file data, which can be accessed through its `data` property.                                                                                                                                                                           
-| **isVisible**                | Indicates the state of the widget's Visible setting.  
-| **isDisabled**                | Indicates the state of the widget's Disabled setting.
-| **isDirty**                | Indicates whether the file picker has been used by the end user during their session.
-| **isValid**                | Indicates whether the file type selected by the user is considered valid for the widget.
+| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
+|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **files**             	| Array    |  An array of file objects that have been selected by the user. Each file object contains the file data, which can be accessed through its `data` property.                                                                                                                                                                           
+| **isVisible**         	| Boolean        | Indicates the state of the widget's Visible setting.  
+| **isDisabled**        	| Boolean         | Indicates the state of the widget's Disabled setting.
+| **isDirty**          	| Boolean       | Indicates whether the file picker has been used by the end user during their session.
+| **isValid**          	| Boolean       | Indicates whether the file type selected by the user is considered valid for the widget.
 
 
 ### Styles
@@ -123,14 +123,14 @@ These properties can be referenced in other widgets, queries, or JS functions us
 Style properties allow you to change the look and feel of the widget.
 
 
-| Style Property    | Description                                                                                                                                                                      |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Button Color**  | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
-| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
+|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **Button Color**  	| String | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
+| **Border Radius** 	| String | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**    	| String | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
 
-### Events
+## Events
 
 
 These are functions that are called when event listeners are triggered in the widget. Use [actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
@@ -145,7 +145,7 @@ These are functions that are called when event listeners are triggered in the wi
 
 
 
-### Further reading
+## Further reading
 
 
 * [Document Viewer](/reference/widgets/document-viewer)
