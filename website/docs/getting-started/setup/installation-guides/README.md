@@ -2,9 +2,10 @@
 
 Depending on your infrastructure, you can choose one of the following guides to deploy Appsmith. 
 
+<div class="containerBorder">
+
 #### Recommended
-<div>
-    <div class="containerGrid">
+<div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
                 <a href="/getting-started/setup/installation-guides/docker">
