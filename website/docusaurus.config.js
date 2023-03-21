@@ -188,8 +188,15 @@ const config = {
       src:
         '/scripts/hotjarSettings.js',
       async: false,
+    },
+    {
+        src: 'https://static.scarf.sh/a.png?x-pxid=ae471d67-d95c-4a3a-b35b-799e8ee8fa17',
+        async: true,
+        defer: true,
+        'data-domain': 'https://docs.appsmith.com',
+        'referrerpolicy': 'no-referrer-when-downgrade'
     }
-  ]
+  ],
 };
 
 module.exports = config;
