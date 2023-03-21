@@ -58,7 +58,7 @@ To display static data, you can enter the desired data directly into the `Series
 
 ### Display data dynamically
 
-You can display dynamic data by fetching it from APIs or databases. This can be done by using binding values to **Series Data property**. If you need to transform the incoming data to match this format, you can use **JSObject** to perform the transformation before binding it to the chart widget.
+You can display dynamic data from queries or JS functions by binding the response to the **Series Data** property. If you need to transform the incoming data to match the expected structure, you can use JavaScript code to perform the transformation before binding it to the Chart widget.
 
 For example, lets say you have a PostgreSQL database containing information about assets in your organization, such as their types and the date they were purchased. You can create a query that groups the assets by type and counts how many there are of each type, like this:
 
