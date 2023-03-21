@@ -3,7 +3,6 @@
 Depending on your infrastructure, you can choose one of the following guides to deploy Appsmith. 
 
 #### Recommended
-
 <div>
     <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
@@ -19,9 +18,9 @@ Depending on your infrastructure, you can choose one of the following guides to 
         <div class="columnGrid column-three" align="center">
         </div>
     </div>
+<br/>
 
 #### One-click deployment
-
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -48,9 +47,9 @@ Depending on your infrastructure, you can choose one of the following guides to 
         <b><a href="/getting-started/setup/installation-guides/heroku">Heroku</a></b>
         </div>
     </div>
+<br/>
 
 #### High availability and scalability
-
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -65,9 +64,9 @@ Depending on your infrastructure, you can choose one of the following guides to 
         <div class="columnGrid column-three" align="center">
         </div>
     </div>
+<br/>
 
 #### Managed container services
-
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
           <div class="containerCol">
@@ -94,9 +93,9 @@ Depending on your infrastructure, you can choose one of the following guides to 
             <b><a href="/getting-started/setup/installation-guides/azure-aci">Azure Container Instance(ACI)</a></b>
         </div>
     </div>
+<br/>
 
 #### Others
-
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
              <div class="containerCol">
