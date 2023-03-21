@@ -32,16 +32,31 @@ Follow the steps below to install Appsmith using Docker Compose:
 
 1. Download the `docker-compose.yml` file for the edition that you are using:
 
-   * **Community Edition** - Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. **Or,** run the following cURL:
+<Tabs groupId="editions" >
+<TabItem label="Community Edition" value="community">
+   You can download the `docker-compose.yml` file from one of the below ways:
+
+   1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. 
+   2. Run the following cURL:
 
       ```bash
       curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
       ```
-   * **Business Edition** - Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. **Or,** run the following cURL command:
+
+</TabItem>
+<TabItem label="Business Edition" value="business">
+
+   You can download the `docker-compose.yml` file from one of the below ways:
+   
+   1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. 
+   2. Run the following cURL command:
 
       ```bash
          curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
       ```
+
+</TabItem>
+</Tabs>
 
 2. Use the below command to start the Docker container. If you can't access `docker` and `docker-compose`, you may need to run the command with `sudo`. The command downloads the docker image if not available on your computer.
 
@@ -62,10 +77,10 @@ Follow the steps below to install Appsmith using Docker Compose:
 
 <details id="Community Edition">
     <summary><b>Community Edition</b></summary>
+To download the `docker-compse.yml` file, you have two options:
 
-* Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder.
-
-* Or run the following cURL:
+1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. 
+2. Run the following cURL:
 
    ```bash
    curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
@@ -76,9 +91,9 @@ Follow the steps below to install Appsmith using Docker Compose:
 <details id="Business Edition">
     <summary><b>Business Edition</b> </summary>
 
-* Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. 
-      
-* Or, run the following cURL command:
+To download the `docker-compse.yml` file, you have two options:
+1. Click to download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. 
+2. Run the following cURL command:
 
    ```bash
    curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
