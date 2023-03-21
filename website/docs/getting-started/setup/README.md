@@ -22,9 +22,9 @@ Appsmith officially supports only Docker-based installations.
 You can follow one of the guides to deploy Appsmith on the platform you prefer:
 
 * [Docker](/getting-started/setup/installation-guides/docker) (*Recommended*)
-* [Kubernetes](/getting-started/setup/installation-guides/kubernetes)
 * [AWS AMI](/getting-started/setup/installation-guides/aws-ami)
 * [DigitalOcean](/getting-started/setup/installation-guides/digitalocean)
+* [Kubernetes](/getting-started/setup/installation-guides/kubernetes)
 
 See all [installation guides](/getting-started/setup/installation-guides).
 
