@@ -25,7 +25,23 @@ To display dynamic text that changes based on user interactions or data from ext
 For example, if you have a Table widget that displays a list of tasks, where each row contains the task name, the person assigned to the task, and the deadline for completion.
 
 ```json
-[  {    "Name": "John",    "Task": "Create report",    "Deadline": "2023-04-01"  },  {    "Name": "Alice",    "Task": "Review proposal",    "Deadline": "2023-04-03"  },  {    "Name": "Bob",    "Task": "Update website",    "Deadline": "2023-04-05"  }]
+[
+  {
+    "Name": "John",
+    "Task": "Create report",
+    "Deadline": "2023-04-01"
+  },
+  {
+    "Name": "Alice",
+    "Task": "Review proposal",
+    "Deadline": "2023-04-03"
+  },
+  {
+    "Name": "Bob",
+    "Task": "Update website",
+    "Deadline": "2023-04-05"
+  }
+]
 ```
 
 Now, if you want to display the details of a particular task in a Text widget when the user clicks on the corresponding row in the Table widget, you can use the following steps:
@@ -57,24 +73,25 @@ These properties are present in the property pane of the widget. The following t
 ### Reference properties
 These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the text, you can use `Text1.text`.
 
-| Property      | Description                                                   | 
-| ------------- | ------------------------------------------------------------- | 
-| **isVisible** | This property indicates whether the widget is visible or not. |
-| **text**      | This property returns the widget's text value.                |
+| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
+|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **isVisible** | Boolean    | This property indicates whether the widget is visible or not. |
+| **text**      | String    | This property returns the widget's text value.                |
 
 ### Style properties
 
 Style properties allow you to change the look and feel of the widget.
 
 
-| Events             | Description                                                                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Font Family**                	| Allows you to select a font for the text.                                                                                             	|
-| **Font Size**              	       	| Allows you to set the size of the label.                                                                                                                                                                     	|
-| **Text Color**              	            	| Allows you to change the color of the text.                                                                                                                                               	|
-| **Background Color**                    	|  Allows you to change the background color of the text widget.                                                                                                                            	|
-| **Border Color**             	          	| Allows you to change the border color of the text widget.                                                                                                                                                            	|
-| **Alignment**             	          	| This property focuses on the text alignment inside the text widget.                                                                                                                                                            	|
-| **Emphasis**             	          	| Allows you to choose a font style; bold or italic.                                                                                                                                                   	|
-| **Border Width**             	          	| You can define the width of the border here. It takes input in px.                                                                                                              	|
+
+| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
+|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **Font Family**     | String             	| Allows you to select a font for the text.                                                                                             	|
+| **Font Size**      | String          	       	| Allows you to set the size of the label.                                                                                                                                                                     	|
+| **Text Color**     | String           	            	| Allows you to change the color of the text.                                                                                                                                               	|
+| **Background Color**   | String                   	|  Allows you to change the background color of the text widget.                                                                                                                            	|
+| **Border Color**      | String         	          	| Allows you to change the border color of the text widget.                                                                                                                                                            	|
+| **Alignment**        | String       	          	| This property focuses on the text alignment inside the text widget.                                                                                                                                                            	|
+| **Emphasis**      | String         	          	| Allows you to choose a font style; bold or italic.                                                                                                                                                   	|
+| **Border Width**   | Number            	          	| You can define the width of the border here. It takes input in px.                                                                                                              	|
 
