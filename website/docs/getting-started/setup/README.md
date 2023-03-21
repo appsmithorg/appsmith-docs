@@ -23,7 +23,8 @@ You can follow one of the guides to deploy Appsmith on the platform you prefer:
 
 * [Docker](/getting-started/setup/installation-guides/docker) (*Recommended*)
 * [Kubernetes](/getting-started/setup/installation-guides/kubernetes)
-* [AWS ECS - EC2](/getting-started/setup/installation-guides/aws-ecs)
+* [AWS AMI](/getting-started/setup/installation-guides/aws-ami)
+* [DigitalOcean](/getting-started/setup/installation-guides/digitalocean)
 
 See all [installation guides](/getting-started/setup/installation-guides).
 
