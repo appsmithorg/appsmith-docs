@@ -2,7 +2,7 @@
 
 The [Table Widget](../../../reference/widgets/table/) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
-![](</img/bind-table_(2)_(4).gif>)
+<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="How To Use The Table Page-offset Property For Easier Paginations" caption="Use the Table Page-offset property for easy paginations"/>
 
 ## Pagination
 
@@ -11,8 +11,6 @@ Tables are generally required to display large data sets from [Queries](../query
 1. Enable the server-side pagination property in the table
 2. Call the API / Query onPageChange
 3. Configure pagination in the API / Query
-
-<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="How To Use The Table Page-offset Property For Easier Paginations" caption=""/>
 
 ### Offset Based Pagination
 
