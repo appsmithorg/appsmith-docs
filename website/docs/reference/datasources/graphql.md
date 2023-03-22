@@ -14,7 +14,7 @@ To add a GraphQL datasource, click the (**+**) sign in the **Explorer** tab next
 If your API doesn't require authentication, you can select the **GraphQL API** datasource instead and skip the configuration screen.
 
 <figure>
-  <img src="/img/" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL datasource" />
+  <img src="/img/graphql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL datasource" />
   <figcaption align="center"><i>Configuring a GraphQL datasource.</i></figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ To connect to your database, Appsmith needs the following parameters. All requir
 ## Create queries
 
 <figure>
-  <img src="/img/" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL query." />
+  <img src="/img/graphql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL query." />
   <figcaption align="center"><i>Configuring a GraphQL query.</i></figcaption>
 </figure>
 
