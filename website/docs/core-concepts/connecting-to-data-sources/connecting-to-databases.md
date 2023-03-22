@@ -72,6 +72,31 @@ SELECT * FROM users;
 ```
 The select query retrieves all the data from the users table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
 
+### Embedded database
+Appsmith self-hosted instance comes with an embedded PostgreSQL v13 database. You can use the database to try out and test various scenarios.
+
+
+#### Connect to embedded database
+
+Embedded database provides superusers and sample databases. Use the following configuration details to set it up:
+
+```SQL
+host: `mockdb.internal.appsmith.com`
+port: `5432`
+database: `mockdb`
+  user: `mockdb`
+  password: ` `
+```
+
+##### Superusers
+You can use any one of the superusers (`postgres`, `mockdb`, `users`) to connect to the embedded database. You don't need to supply a password to connect to the database using the superusers.
+
+##### Sample databases
+The embedded database has two sample databases:
+* `users` - It contains the test data for users.
+* `movies` - It contains the application templates for PostgreSQL relations.
+
+You can disable the embedded database for your self-hosted instance. For more information, see [Disable the Embedded Database](/getting-started/setup/instance-configuration/embedded-database#disable-the-embedded-database).
 
 ## General notes
 

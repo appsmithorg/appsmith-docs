@@ -153,6 +153,7 @@ const sidebars = {
                   ],
                 },
                 'getting-started/setup/instance-configuration/frame-ancestors',
+                'getting-started/setup/instance-configuration/embedded-database',
               ],
             },
             {
@@ -166,7 +167,6 @@ const sidebars = {
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-management/maintenance-window',
-                'getting-started/setup/instance-management/embedded-postgres',
               ],
             },
             {
