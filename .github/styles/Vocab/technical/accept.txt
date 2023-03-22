@@ -260,3 +260,5 @@ FilePicker
 isDirty
 drag and drop
 Boolean
+GraphQL
+keyset
