@@ -4,7 +4,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
 
 <div class="containerBorder">
 
-#### Recommended
+##### Recommended
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -21,7 +21,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
     </div>
 <br/>
 
-#### One-click deployment
+##### One-click deployment
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -50,7 +50,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
     </div>
 <br/>
 
-#### High availability and scalability
+##### High availability and scalability
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -67,23 +67,23 @@ Depending on your infrastructure, you can choose one of the following guides to 
     </div>
 <br/>
 
-#### Managed container services
+##### Managed container services
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
-          <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/aws-ecs">
-            <img class="containerImage" src="/img/AWS-ec2.png" alt="AWS-EC2-logo"/>
-            </a> 
-        </div> 
-        <b><a href="/getting-started/setup/installation-guides/aws-ecs">AWS ECS - EC2</a></b>
-        </div>
-        <div class="columnGrid column-two" align="center">
-          <div class="containerCol">
+         <div class="containerCol">
             <a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate">
             <img class="containerImage" src="/img/aws_fargate.png" alt="AWS-Fargate-logo"/>
             </a>     
         </div> 
          <b><a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate"> AWS ECS - Fargate</a></b>
+        </div>
+        <div class="columnGrid column-two" align="center">
+           <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/aws-ecs">
+            <img class="containerImage" src="/img/AWS-ec2.png" alt="AWS-EC2-logo"/>
+            </a> 
+        </div> 
+        <b><a href="/getting-started/setup/installation-guides/aws-ecs">AWS ECS - EC2</a></b>
         </div>
         <div class="columnGrid column-three" align="center">
          <div class="containerCol">
@@ -96,7 +96,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
     </div>
 <br/>
 
-#### Others
+##### Others
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
              <div class="containerCol">
