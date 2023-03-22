@@ -12,70 +12,30 @@ Depending on your infrastructure, you can choose one of the following guides to 
                 <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
                 </a> 
             </div> 
-            <b><a href="/getting-started/setup/installation-guides/docker">Docker</a></b>
-        </div>
-        <div class="columnGrid column-two" align="center">
-        </div>
-        <div class="columnGrid column-three" align="center">
-        </div>
-    </div>
-<br/>
-
-##### One-click deployment
-<div class="containerGrid">
-        <div class="columnGrid column-one" align="center">
-            <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/digitalocean">
-            <img class="containerImage" src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/getting-started/setup/installation-guides/digitalocean">DigitalOcean</a></b>
+            <b><a href="/getting-started/setup/installation-guides/docker">Docker</a></b><br/>
+            (Quickstart)
         </div>
         <div class="columnGrid column-two" align="center">
          <div class="containerCol">
+                <a href="/getting-started/setup/installation-guides/kubernetes">
+                <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
+                </a>     
+            </div> 
+            <b><a href="/getting-started/setup/installation-guides/kubernetes">Kubernetes</a></b><br/>
+             (High Availability and Scalability)
+        </div>
+</div>
+<br/>
+
+##### Platform deployments
+<div class="containerGrid">
+        <div class="columnGrid column-one" align="center">
+          <div class="containerCol">
                 <a href="/getting-started/setup/installation-guides/aws-ami">
                 <img class="containerImage" src="/img/AWS_AMI.png" alt="AWS-AMI-logo"/>
                 </a>   
             </div> 
             <b><a href="/getting-started/setup/installation-guides/aws-ami">AWS AMI</a></b>
-        </div>
-        <div class="columnGrid column-three" align="center">
-         <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/heroku">
-            <img class="containerImage" src="/img/heroku-logo.png" alt="Heroku-logo"/>
-            </a>   
-        </div> 
-        <b><a href="/getting-started/setup/installation-guides/heroku">Heroku</a></b>
-        </div>
-    </div>
-<br/>
-
-##### High availability and scalability
-<div class="containerGrid">
-        <div class="columnGrid column-one" align="center">
-            <div class="containerCol">
-                <a href="/getting-started/setup/installation-guides/kubernetes">
-                <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
-                </a>     
-            </div> 
-            <b><a href="/getting-started/setup/installation-guides/kubernetes">Kubernetes</a></b>
-        </div>
-        <div class="columnGrid column-two" align="center">
-        </div>
-        <div class="columnGrid column-three" align="center">
-        </div>
-    </div>
-<br/>
-
-##### Managed container services
-<div class="containerGrid">
-        <div class="columnGrid column-one" align="center">
-         <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate">
-            <img class="containerImage" src="/img/aws_fargate.png" alt="AWS-Fargate-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate"> AWS ECS - Fargate</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
            <div class="containerCol">
@@ -87,16 +47,44 @@ Depending on your infrastructure, you can choose one of the following guides to 
         </div>
         <div class="columnGrid column-three" align="center">
          <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/azure-aci">
-            <img class="containerImage" src="/img/azure_aci.png" alt="ACI-logo"/>
-            </a> 
+            <a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate">
+            <img class="containerImage" src="/img/aws_fargate.png" alt="AWS-Fargate-logo"/>
+            </a>     
         </div> 
-            <b><a href="/getting-started/setup/installation-guides/azure-aci">Azure Container Instance(ACI)</a></b>
+         <b><a href="/getting-started/setup/installation-guides/aws-ecs-on-fargate"> AWS ECS - Fargate</a></b>
         </div>
     </div>
 <br/>
 
-##### Others
+
+<div class="containerGrid">
+        <div class="columnGrid column-one" align="center">
+         <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/azure-aci">
+            <img class="containerImage" src="/img/azure_aci.png" alt="ACI-logo"/>
+            </a> 
+        </div> 
+            <b><a href="/getting-started/setup/installation-guides/azure-aci">Azure Container Instance(ACI)</a></b> 
+        </div>
+        <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/digitalocean">
+            <img class="containerImage" src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/getting-started/setup/installation-guides/digitalocean">DigitalOcean</a></b>
+        </div>
+        <div class="columnGrid column-three" align="center">
+          <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/heroku">
+            <img class="containerImage" src="/img/heroku-logo.png" alt="Heroku-logo"/>
+            </a>   
+        </div> 
+        <b><a href="/getting-started/setup/installation-guides/heroku">Heroku</a></b> 
+        </div>
+    </div>
+<br/>
+
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
              <div class="containerCol">
