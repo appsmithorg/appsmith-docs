@@ -433,61 +433,64 @@ This example uses the GitHub GraphQL API. You can find the docs [here](https://d
 
 When the Submit button is clicked, your query is executed and the record is updated with new values.
 
+### ​Delete a record​
+
+Use a delete mutation to delete an existing record from your dataset.
+
+```javascript
+mutation DeletePost {
+  deletePost(data: {id: "<id>"}) {
+    post {
+			id
+      author
+      title
+    }
+  }
+}
+```
+
+The `deletePost` method uses the passed values to locate the record to delete, and once the request is processed, the API responds with the deleted `post{...}` data to confirm the operation.
+
 ---
 
-Update queries let you update existing objects of a particular type. With an update query, you can filter nodes and set or remove any field belonging to a type.
+#### Example
 
-<VideoEmbed host="youtube" videoId="iOnuUo8F-DQ" title="" caption=""/>
+> Delete an existing issue from a GitHub repository.
 
-* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
-* Rename the query to **`update_users`**.
-* Add your code in the body section and run your query.
+:::info
+This example uses the GitHub GraphQL API. You can find the docs [here](https://docs.github.com/en/graphql).
+:::
 
-```
-mutation updateIssueTest{
-  updateIssue(input:{id:"<issue.id>",title:"<updated_title", body:"<updated_body"}){
-    issue{
-      id
-    }
+**Setup:** to access the GitHub GraphQL API, you'll need a Personal Access Token. Follow the steps [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic) to generate one. Back in Appsmith, create an **Authenticated GraphQL API** datasource using your access token as **Bearer Token** authentication. Then, create a query called `DeleteIssue` based on your GraphQL datasource.
+
+* Start by [fetching existing issues](#fetch-records) from your repository into a Table widget `IssueTable` with a query called `FetchIssues`. You'll need this to get your existing repository and issue data.
+
+* Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteIssue` query:
+
+  ```javascript
+  // in the Delete button's onClick event
+  {{ DeleteIssue.run() }}
+  ```
+
+* To delete an issue, pass its `id` in your query:
+
+  ```javascript
+  // In the QUERY window
+  mutation DeleteIssue ($issueId: ID!) {
+    deleteIssue(input: {issueId: $issueId}) {
+			repository {
+				name
+			}
+		}
   }
-}
-```
 
-The above query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here we are calling `id`.
-
-You can use the [Modal ](./../widgets/modal.md)widget or[ JSON form Widget ](./../widgets/json-form.md)to update the GitHub issues.
-
-### **​Delete A Record​**
-
-The Delete Record command deletes a particular record from the database. You can pass the below parameters to Delete Records.
-
-* Click on the **+** icon next to the queries/js and choose your GraphQL datasource.
-* Rename the query.
-* Add your code in the body section and run your query.
-
-```
-mutation deleteIssueTest{
-  deleteIssue(input:{issueId:"<your_ID>"}){
-    repository{
-      id
-    }
+  // In the QUERY VARIABLES window
+  {
+    "issueId": {{ IssueTable.selectedRow.id}}
   }
-}
-```
+  ```
 
-The preceding code deletes the issue using your Issue ID.
-
-Similarly, if you want to close an issue, you can use the below-mentioned code:
-
-```
-mutation closeIssueTest{
-  closeIssue(input:{issueId:"<your_id>"}){
-    issue{
-      id
-    }
-  }
-}
-```
+When the Submit button is clicked, your query is executed and the issue is deleted.
 
 ## Further reading
 
