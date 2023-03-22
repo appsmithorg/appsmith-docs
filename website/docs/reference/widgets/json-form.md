@@ -5,7 +5,7 @@ This document explains how to use the JSON form widget to generate user-friendly
 The JSON form widget saves time and effort compared to a simple Form widget by automatically generating fields from JSON data, eliminating the need for manual field creation for large forms.
 
 
-<VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="How To Use The JSON Form Widget" caption="How To Use The JSON Form Widget"/>
+<VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
 
 
 ## Display the inputs
