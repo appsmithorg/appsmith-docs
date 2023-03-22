@@ -166,6 +166,7 @@ const sidebars = {
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-management/maintenance-window',
+                'getting-started/setup/instance-management/update-appsmith',
               ],
             },
             {
