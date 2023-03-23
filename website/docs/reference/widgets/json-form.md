@@ -75,7 +75,6 @@ For instance, to extract the ID from a JSON Form, you can use the following code
 {{JSONForm1.formData.ID}},
 ```
 
-Simply replace "ID" with the name of the form field you wish to extract.
 
 ## Submit form data
 
