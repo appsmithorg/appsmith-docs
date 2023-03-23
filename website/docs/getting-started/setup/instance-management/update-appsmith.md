@@ -21,7 +21,7 @@ You can update Appsmith in one of the following ways:
 * [Automatic update](#automatic-update)
 
 ### Manual update
-Go to the root directory of the installation and run:
+Go to the root directory of your installation and run:
 
 ```
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
@@ -37,7 +37,7 @@ Follow the below steps to turn on the auto updates:
    docker-compose down
    ```
 
-2. Open the `docker-compose.yml` file with any text editor and uncomment lines 13-23.
+2. Open the `docker-compose.yml` file and uncomment lines 13-23.
 3. Save the file and run:
 
    ```
@@ -48,6 +48,6 @@ When you restart the server, the latest version of Appsmith is deployed. You can
 
 ## Troubleshooting
 
-When you turn on automatic updates, it turns on the auto backup feature. And creates a backup before an update. You can roll back to a previous version if you see deployment errors. Refer to [the rollback instructions using the `appsmithctl` command](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
+When you turn on automatic updates, it turns on the auto backup feature. And creates a backup before an update. If you see deployment errors, you can roll back to a previous version to fix the issue. Refer to [the rollback instructions using the `appsmithctl` command](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
 
-If you continue to face issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a>.
+If you are facing issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a>.
