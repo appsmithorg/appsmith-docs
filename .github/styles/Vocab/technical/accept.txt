@@ -266,3 +266,6 @@ formData
 fieldState
 isRequired
 Generate JSON Form
+chartData
+dataSource
+

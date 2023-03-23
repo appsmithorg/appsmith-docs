@@ -24,7 +24,7 @@ const config = {
     [
       '@twilio-labs/docusaurus-plugin-segment',
       {
-        writeKey: '5mV2pPUXuzTRHzZET0fv8PJrBrwQ2EeH',
+        writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
         allowedInDev: false,
       },
     ],
