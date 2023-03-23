@@ -44,7 +44,7 @@ select type as x, count (*) as y from asset group by type
 This query returns data in the required format, where `x` represents the asset type and `y` represents the count of assets of that type. To bind the response returned by the query to the chart, add `{{assetquery.data}}` in the chart widget's **Series Data** property. This displays a chart that updates dynamically based on the response sent by the query.
 
 :::note
-If the query fails and there is no default data specified, the chart does not render and appears empty.
+If the query fails and there is no default data specified, the chart doesn't render and appears empty.
 :::
 
 ### Transform data using JS
