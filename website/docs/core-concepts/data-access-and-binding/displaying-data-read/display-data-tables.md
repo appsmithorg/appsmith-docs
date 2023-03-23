@@ -2,7 +2,7 @@
 
 The [Table Widget](../../../reference/widgets/table/) helps us visualize rows of information that are returned from our data sources. We make use of the Table Data property to display data in the table.
 
-<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="How To Use The Table Page-offset Property For Easier Paginations" caption="Use the Table Page-offset property for easy paginations"/>
+<VideoEmbed host="youtube" videoId="rPw2KRgq3xc" title="How To Use The Table Page-offset Property For Easier Pagination" caption="Use the Table Page-offset property for easy pagination"/>
 
 ## Pagination
 
