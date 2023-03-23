@@ -44,10 +44,10 @@ Follow the below steps to turn on the auto updates:
    docker-compose up -d
    ```
 
-The server restart updates the Appsmith to the latest version. You can choose to schedule automatic updates. Refer to [Configure a maintenance window](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
+When you restart the server, the latest version of Appsmith is deployed. You can choose to schedule automatic updates. Refer to [Configure a maintenance window](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
 
 ## Troubleshooting
 
 When you turn on automatic updates, it turns on the auto backup feature. And creates a backup before an update. You can roll back to a previous version if you see deployment errors. Refer to [the rollback instructions using the `appsmithctl` command](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
 
-If you are still having issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a>.
+If you continue to face issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a>.
