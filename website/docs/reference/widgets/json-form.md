@@ -23,7 +23,7 @@ JSON Form automatically detects the appropriate field type for each value. For i
 
 You can display dynamic data in a JSON Form widget by binding the response from a query or a JS function to the **Source Data** property. This allows the form to update dynamically as the data changes in the database or API.
 
-For example, if you have data stored in a Google Sheets and you want to create a form using those fields, you can create a Google Sheets data source, and create a query to fetch the data. Once you retrieve the data, you can bind it to the JSON Form widget using:
+For example, suppose you have fetched data from an API using the query `getData` and want to generate the JSON Form using the response returned by the query:
 ```js
  {{Api1.data[0]}}
  ```
