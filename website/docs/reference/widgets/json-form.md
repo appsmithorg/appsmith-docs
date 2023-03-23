@@ -8,7 +8,7 @@ The JSON form widget saves time and effort compared to a simple Form widget by a
 <VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
 
 
-## Display the inputs
+## Generate JSON Form
 To populate the JSON Form widget with data, you can utilize the **Source Data** property, which requires the data to be structured in a JSON format:
 
 ```json
