@@ -1,40 +1,37 @@
 ---
-description: Deploy Appsmith locally or on a private instance with ease using Docker Compose. Follow these simple steps to set up Appsmith on your Docker Compose platform.
+description: Follow these steps to deploy Appsmith on your Docker Compose platform.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Docker
 
-This page provides instructions to install Appsmith locally using Docker.
+This page provides instructions to install Appsmith using Docker.
 
 <VideoEmbed host="youtube" videoId="Tde7GqE6FQQ" title="How to install Appsmith using Docker" 
-caption="How to install Appsmith using Docker"/> 
+caption="How to install Appsmith using Docker Compose"/> 
 
 ## Prerequisites
 
 1. [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
 2. [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later)
+3. Create `appsmith` folder
 
 ## Install
-
-Follow the steps below to install Appsmith using Docker Compose:
+Go to the `appsmith` folder and follow the steps below to install Appsmith:
 
 <Tabs groupId="editions" >
 <TabItem label="Community Edition" value="community">
 
-1. Create a folder named `appsmith` for deployment and data storage, then navigate to it using `cd` command.
+1. There are two ways in which you can download the `docker-compose.yml` file:  
+   * Download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. 
 
-2. There are two ways in which you can download the `docker-compose.yml` file:
-   
-* Download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. 
+   * **Or** run the below cURL command:
 
-* Or run the following cURL command:
-
-```bash
-curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
-```
-3. To start the Docker container, use the following command. You may have to run the command with `sudo` if you don't have permission to execute `docker-compose`. The below command downloads the Docker image if not present locally.
+   ```bash
+   curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
+   ```
+2. To start the Docker container, use the below command. You may have to run the command with `sudo` if you don't have permission to execute `docker-compose`. The below command downloads the Docker image if not present locally.
 
 ```bash
 docker-compose up -d
@@ -46,41 +43,40 @@ The server deploys Appsmith at startup, and you can access it at [http://localho
 <TabItem label="Business Edition" value="business">
 
 :::info
-To upgrade your Community Edition to Business Edition, see [Upgrade to Business Edition using Docker](/getting-started/setup/upgrade-to-business-edition/docker).
+To upgrade your Community Edition to Business Edition, see [Upgrade to Business Edition](/getting-started/setup/upgrade-to-business-edition/docker).
 :::
-1. Create a folder named `appsmith` for deployment and data storage, then navigate to it using `cd` command.
 
-2. Sign up on [customer.appsmith.com](https://customer.appsmith.com) and generate a trial license key.
+1. Sign up on [customer.appsmith.com](https://customer.appsmith.com) and generate a trial license key.
 
-3. There are two ways in which you can download the `docker-compose.yml` file:
-   * Download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. 
+2. There are two ways in which you can download the `docker-compose.yml` file:
+   * Download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file and place it into the Appsmith installation folder. 
    
-   * Run the following cURL command:
+   * **Or** run the below cURL command:
 
    ```bash
    curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
    ```
-4. To start the Docker container, use the following command. You may have to run the command with `sudo` if you don't have permission to execute `docker-compose`. The below command downloads the Docker image if not present locally.
+3. To start the Docker container, use the below command. You may have to run the command with `sudo` if you don't have permission to execute `docker-compose`. The below command downloads the Docker image if not present locally.
 
 ```bash
 docker-compose up -d
 ```
 
-The server deploys Appsmith at startup, and you can access it at [http://localhost](http://localhost). You can also check the logs when deployment is in progress. Use the `docker logs -f appsmith` command to verify logs. After the deployment is complete, a message stating 'Appsmith is Running!' is displayed in the logs.
+Starting the server deploys Appsmith. You can access it at [http://localhost](http://localhost). You can check the logs when deployment is in progress. Use the `docker logs -f appsmith` command to verify logs. After the deployment is complete, a message 'Appsmith is Running!' is displayed in the logs.
 
-5. After logging into your Appsmith account, enter your license key to activate the instance.
+4. Log into your Appsmith account, and enter your license key to activate the instance.
 
 </TabItem>
 </Tabs>
 
 ## Troubleshooting
 
-Here are some common problems that you may encounter during installation:
+Some common errors that you may face during installation:
 * [Ports unavailable](/help-and-support/troubleshooting-guide/deployment-errors#ports-unavailable)
 * [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
 * [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) 
 
-If you are still facing issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a> available on this page.
+If you continue to face issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a>.
 
 ## Further reading
 

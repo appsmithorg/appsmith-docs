@@ -29,7 +29,7 @@ docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 
 ### Automatic update
 
-Follow the below steps to turn on the auto updates:
+When you turn on automatic update, it first creates a backup and then starts the update. Follow the below steps to turn on the auto updates:
 
 1. Go to the root directory of the Appsmith installation and run:
 
@@ -48,6 +48,6 @@ Restarting the server deploys the latest version of Appsmith. You have the optio
 
 ## Troubleshooting
 
-When you turn on automatic update, it first creates a backup and then starts the update. If you see deployment errors, you can roll back to a previous version to fix the issue. To roll back, see [the rollback instructions using the `appsmithctl` command](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
+If you see deployment errors, you can roll back to a previous version to fix the issue. To roll back, see [the rollback instructions using the `appsmithctl` command](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
 
 If you continue to face issues, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a>.
