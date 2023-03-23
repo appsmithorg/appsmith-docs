@@ -1,7 +1,7 @@
 # JSON Form
 
 
-The JSON form widget saves time and effort compared to a simple Form widget by automatically generating fields from JSON data, eliminating the need for manual field creation for large forms.
+The JSON form widget saves time and effort by automatically generating forms from JSON data, eliminating the need for manual form creation for large forms.
 
 
 <VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
