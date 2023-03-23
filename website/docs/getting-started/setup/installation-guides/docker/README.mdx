@@ -8,10 +8,6 @@ import TabItem from '@theme/TabItem';
 
 This page provides stepwise instructions to help you install Appsmith using Docker.
 
-:::info
-To upgrade your Community Edition Docker installation to Business Edition Docker installation, see [Upgrade to Business Edition using Docker](/getting-started/setup/upgrade-to-business-edition/docker).
-:::
-
 <VideoEmbed host="youtube" videoId="Tde7GqE6FQQ" title="How to install Appsmith using Docker" 
 caption="How to install Appsmith using Docker"/> 
 
@@ -30,7 +26,11 @@ Follow the steps below to install Appsmith using Docker Compose:
 <Tabs groupId="editions" >
 <TabItem label="Community Edition" value="community">
 
-Download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. Or run the following cURL:
+There are two ways in which you can download the `docker-compose.yml` file:
+   
+* Download the [`docker-compose.yml`](https://bit.ly/docker-compose-CE) file and place it into the Appsmith installation folder. 
+
+* Or run the following cURL command:
 
 ```bash
 curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
@@ -39,30 +39,44 @@ curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
 </TabItem>
 <TabItem label="Business Edition" value="business">
 
-Download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. Or run the following cURL command:
+:::info
+To upgrade your Community Edition to Business Edition, see [Upgrade to Business Edition using Docker](/getting-started/setup/upgrade-to-business-edition/docker).
+:::
 
-```bash
- curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
-```
+1. Sign up on [customer.appsmith.com](https://customer.appsmith.com) and generate a trial license key.
+
+2. There are two ways in which you can download the `docker-compose.yml` file:
+   * Download the [`docker-compose.yml`](https://bit.ly/docker-compose-be) file, and place it into the Appsmith installation folder. 
+   
+   * Run the following cURL command:
+
+   ```bash
+   curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
+   ```
 
 </TabItem>
 </Tabs>
 
-2. To start the Docker container, use the following command. If you're unable to access `docker` and `docker-compose`, you may need to run the command with `sudo`. The below command downloads the Docker image if not present on your computer.
+2. To start the Docker container, use the following command. You may have to run the command with `sudo` if you don't have permission to execute `docker-compose`. The below command downloads the Docker image if not present locally.
 
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
-The server deploys Appsmith at startup, and you can access it at [http://localhost](http://localhost). You can check the  [instance logs](/learning-and-resources/how-to-guides/how-to-get-container-logs#docker) to verify that the instance is up and running.
+The server deploys Appsmith at startup, and you can access it at [http://localhost](http://localhost). You can also check the message "Appsmith is Running!" displayed in docker logs by using `docker logs -f appsmith` command.
+
+![Appsmith is running message](/img/InstallationGuides__Docker__AppsmithRunningMessage.png)
 
 :::info important
-If you are on a Business Edition, after logging into your Appsmith account, enter your license key to activate the instance. If you need a license key, sign up for a free trial at [customer.appsmith.com](https://customer.appsmith.com).
+If you are on a Business Edition, after logging into your Appsmith account, enter your license key to activate the instance.
 :::
 
 ## Troubleshooting
 
-If you see any errors during deployment, refer to [Deployment Errors](/help-and-support/troubleshooting-guide/deployment-errors) troubleshooting guide. This guide provides detailed information on troubleshooting common deployment errors you may encounter.
+If you see any errors during deployment, refer to:
+* [Ports unavailable](/help-and-support/troubleshooting-guide/deployment-errors#ports-unavailable)
+* [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
+* [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) 
 
 ## Further reading
 

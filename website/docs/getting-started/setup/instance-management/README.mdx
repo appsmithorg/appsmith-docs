@@ -7,18 +7,6 @@ import TabItem from '@theme/TabItem';
 
 # Instance Management
 
-## Updating to the latest release
-
-You can perform a manual update of your Appsmith instance by running the following commands in the Appsmith installation directory.
-
-```bash
-// To restart appsmith without docker compose
-docker pull appsmith/appsmith-ce && docker restart appsmith
-
-// To restart appsmith with docker compose
-docker-compose pull && docker-compose up -d --force-recreate appsmith
-```
-
 ## Checkpoint version and upgrades
 
 When you upgrade manually, you must upgrade to the checkpoint version released between your version and the latest version.
