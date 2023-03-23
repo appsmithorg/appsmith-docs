@@ -182,4 +182,4 @@ These are functions that are called when event listeners are triggered in the wi
 
 * [Source data exceeds 50 fields](/help-and-support/troubleshooting-guide/widget-errors#source-data-exceeds-50-fields)
 
-If you run into any other issues while working with the widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If your issue isn't covered in the guide, please connect with support@appsmith.com or raise your query on the [Discord Server](https://discord.com/invite/rBTTVJp).
+If you run into any other issues while working with the widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If the guide doesn't cover your issue, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a> available on this page.
