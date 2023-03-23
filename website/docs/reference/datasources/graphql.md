@@ -7,7 +7,7 @@ This page describes how to connect your application to a GraphQL API and use que
 
 <VideoEmbed host="youtube" videoId="KPLrbp-4Y6E" title="How To Build Apps With GraphQL APIs feat. Hasura" caption=""/>
 
-## Connect to GraphQL API
+## Connect to GraphQL
 
 To add a GraphQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Authenticated GraphQL API** button. Your datasource is created and you are taken to a screen to configure its settings.
 
@@ -19,10 +19,10 @@ If your API doesn't require authentication, you can select the **GraphQL API** d
 </figure>
 
 :::tip
-If you want to connect to a local database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local api, you can use a service like ngrok to expose it. For more information, see [How to connect to local api on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
-To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
+To connect to a GraphQL API endpoint, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
 
 **URL*:** provide the URL of the GraphQL service to query. If you are on a self-hosted instance and connecting to an API on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container.
 
@@ -32,20 +32,20 @@ To connect to your database, Appsmith needs the following parameters. All requir
 
 **Send Appsmith signature header:** choose whether to include a special token in your request headers to help prove authenticity and integrity. For more information, read [signature headers](/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions).
 
-**Authentication Type:** choose the style of authentication to use for your queries.
+**Authentication Type:** choose the style of authentication to use for your queries. To read more about some of the options, visit [authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type).
 
 **Use self-signed certificate:** choose whether to upload your own self-signed certificate for encryption. For more information, read [self-signed certificates](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
 
 ## Create queries
 
 <figure>
-  <img src="/img/graphql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL query." />
-  <figcaption align="center"><i>Configuring a GraphQL query.</i></figcaption>
+  <img src="/img/graphql-query-config.png" style={{width: "100%", height: "auto"}} alt="Creating a GraphQL query." />
+  <figcaption align="center"><i>Creating a GraphQL query.</i></figcaption>
 </figure>
 
 You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data by selecting the **+ New Query**  button on the Authenticated GraphQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your GraphQL datasource. You'll be brought to a new query screen where you can write queries.
 
-GraphQL queries are written in the "Body" tab of the query screen. Use the "Query" window to construct your query or mutation, and the adjacent "Query Variables" window to add any variables to map into your query.
+GraphQL queries are written in the **Body** tab of the query screen. Use the **Query** window to construct your query or mutation, and the adjacent **Query Variables** window to add any variables to map into your query.
 
 ### Fetch records
 
@@ -67,7 +67,7 @@ Depending on the schema of the API you are querying, it's highly recommended to 
 
 #### Server side pagination
 
-Pagination help improve your app's performance by requesting only parts of a dataset at a time, instead of the entire set at once. Special pagination settings for your GraphQL query can be found in the "Pagination" tab of the query screen.
+Pagination help improve your app's performance by requesting only parts of a dataset at a time, instead of the entire set at once. Special pagination settings for your GraphQL query can be found in the **Pagination** tab of the query screen.
 
 To use pagination, first define the variables you need in the body of your query. For example:
 
@@ -81,7 +81,7 @@ query GetAllPosts (limit: $limit, offset: $offset) {
 }
 ```
 
-In the example, there are two variables defined in the first line of the query: `limit` and `offset`. Variables declared this way can be selected and used in the "Pagination" tab.
+In the example, there are two variables defined in the first line of the query: `limit` and `offset`. Variables declared this way can be selected and used in the **Pagination** tab.
 
 ##### Offset-based pagination
 
@@ -209,7 +209,7 @@ This example uses the GitHub GraphQL API. You can find the docs [here](https://d
 
 * Create a [Table widget](/reference/widgets/table) on the canvas called `IssueTable`.
 
-* In the "Body" tab of your `FetchIssues` query:
+* In the **Body** tab of your `FetchIssues` query:
 
   ```javascript
   // In the QUERY window:
@@ -235,7 +235,7 @@ This example uses the GitHub GraphQL API. You can find the docs [here](https://d
   }
   ```
 
-* In the "Pagination" tab of your query:
+* In the **Pagination** tab of your query:
   * Select **Paginate via Cursor based**
   * Set **Limit Variable** to `pageSize`
   * Set **Limit Value** to `{{ IssueTable.pageSize }}`
@@ -303,7 +303,7 @@ This example uses the GitHub GraphQL API. You can find the docs [here](https://d
   {{ CreateIssue.run() }}
   ```
 
-* Once these form fields are filled out, you can add their values to your query in the "Body" tab like below:
+* Once these form fields are filled out, you can add their values to your query in the **Body** tab like below:
 
   ```javascript
   // In the QUERY window
@@ -393,7 +393,7 @@ This example uses the GitHub GraphQL API. You can find the docs [here](https://d
   {{ UpdateIssue.run() }}
   ```
 
-* Once these form fields are filled out, you can add their values to your query in the "Body" tab like below:
+* Once these form fields are filled out, you can add their values to your query in the **Body** tab like below:
 
   ```javascript
   // In the QUERY window
