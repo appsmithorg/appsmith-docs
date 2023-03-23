@@ -38,7 +38,7 @@ For example, suppose you have fetched data from an API using the query `getData`
 
 You can click on an individual row in the Table and update data in the form fields.
 
-You can also enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys change or if a data type changes from string to a number. Note that this will override any configuration you are providing through data transformation using JS.
+You can also enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys change or if a data type changes from string to a number. Note that this overrides any configuration you are providing through data transformation using JS.
 
 #### Nested arrays
 
