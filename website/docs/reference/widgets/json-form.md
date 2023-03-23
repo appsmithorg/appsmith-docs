@@ -23,18 +23,33 @@ JSON Form automatically detects the appropriate field type for each value. For i
 You can display dynamic data in a JSON Form widget by binding the response from a query or a JS function to the **Source Data** property. This allows the form to update dynamically as the data changes in the database or API.
 
 For example, suppose you have fetched data from an API using the query `getData` and want to generate the JSON Form using the response returned by the query:
+
 ```js
  {{Api1.data[0]}}
  ```
 
-Additionally, you can also enable the **Auto Generate Form** property to have the form fields generated automatically according to the Source data. This means that any changes made in the Source data would be automatically update the form fields without the need for manual intervention. 
+For example, Lets say you have fetched data from a datasource using the query `getData` and you want to generate a JSON form using the response returned by the query.
+
+To display your data in the Table widget, you can bind the `getData` query to the Table data. Then, in the JSON form's Source Data property, add:
+
+```js
+{{Table1.selectedRow}}
+```
+
+By doing this, you can click on an individual row in the table and update/add data to the form fields. This makes it convenient to work with data and update it in real-time.
+
+
+Additionally, you can also enable the **Auto Generate Form** property to have the form fields generated automatically according to the Source data. However, it's important to note that if this property is enabled, the form fields would be generated automatically according to the source data, which may not always align with your desired configuration.
+
 
 However, if the **Auto Generate Form** property is disabled, any changes in the source data would not affect the form fields. In this case, you need to manually generate the form fields by clicking on **Generate Form**. 
 
 
-#### Complex JSON forms
+#### Nested arrays for input fields
 
 You can create complex nested JSON forms with structured and organized input fields. Here's an example of a complex nested JSON form schema for an ice cream menu item, where each item has its own unique ID, type, name, image, and thumbnail properties.
+
+However, it's important to note that the JSON format only supports up to three levels of nested arrays.
 ```json
 {
 	"id": "1",
@@ -43,19 +58,22 @@ You can create complex nested JSON forms with structured and organized input fie
 	"image":
 		{
 			"url": "img/01.png",
-			"width": 200,
-			"height": 200
-		},
-	"thumbnail":
+			"thumbnail":
 		{
 			"url": "images/thumbnails/01.png",
 			"width": 32,
 			"height": 32
 		}
+		}
 }
 ```
 
-## Validate submissions
+<figure>
+  <img src="/img/jsonfrom-1.png" style= {{width:"700px", height:"auto"}} alt=""/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+## Form validation
 
 Validating user input is essential for ensuring correct and formatted data. Appsmith provides validation properties such as Valid, Regex, and Required for **Fields** property. 
 
@@ -67,12 +85,14 @@ When **Disabled Invalid Forms** is turned on, the JSON Form widget checks the va
 
 ## Access form data
 
-To retrieve form data, you can use the `formData` binding property within JavaScript or widget bindings. This property enables you to obtain the values of form fields.
 
-For instance, to extract the ID from a JSON Form, you can use the following code:
+The values entered in the JSON form are stored in the `formData` property. 
+
+For instance, if your form has an ID field and you want to access its value using JavaScript or widget bindings, you can use
+
 
 ```js
-{{JSONForm1.formData.ID}},
+{{JSONForm.formData.ID}},
 ```
 
 
@@ -80,20 +100,21 @@ For instance, to extract the ID from a JSON Form, you can use the following code
 
 To submit form data, you can use the `onSubmit` event. This event allows you to perform an action when the user submits the form.
 
-For example, if you want to insert form data into a Google Sheet, you can create a new insert query and in the Row Object section, add:
+Lets say you have a user database where you want to insert user data collected through a form. To do this, you can create a new insert query and run:
 
-```js
-{
-	"ID": {{JSONForm1.formData.ID}}
-}
+```sql
+INSERT INTO users
+  (name, gender, email)
+VALUES
+  (
+    {{JSONForm1.formData.name}},
+    {{JSONForm1.formData.gender}},
+    {{JSONForm1.formData.email}}
+  );
 ```
 
 To trigger this insert query, you can set the `onSubmit` event of the submit button to run the insert query. 
 
-
-## Clear form fields
-
-To clear form fields, you can enable the **Show Reset** property. When the Show Reset property is enabled, a reset button is added to the form. Clicking this button resets all fields in the form to their default values. This is useful if a user wants to start over with a new entry or if they entered the wrong information and need to clear the form.
 
 ## Properties
 
@@ -125,7 +146,7 @@ These properties are present in the property pane of the widget. The following t
 
 
 
-### Binding properties
+### Reference properties
 
 These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the formData, you can use `JSONFrom1.formData`.
 
@@ -149,20 +170,11 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Width**   |   Number  | Sets the width of the widget's border. Accepts _number_ values only, in px.                                                                                                      |
 | **Box Shadow**   |   String | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 | **Border Color**   |   String    | Sets the Border color of the widget.    |
-
-
-
-
-
-### Submit and reset button styles
-
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Button Color** |   String  | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                                                                                                                                                                                                                                                                          |
+| **Button Color** |   String  | Sets the color of the submit and reset button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                                                                                                                                                                                                                                                                          |
 | **Button Variant** |   String| Sets the button style type to represent its significance - Primary, Secondary, or Tertiary. You can use JavaScript to set this field by writing code that evaluates to the `"PRIMARY", "SECONDARY", or "TERTIARY"`.                                                                                                                                                                                                              |
 | **Border Radius** |   String  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.                                                                                                                                                                                                                                                            |
 | **Box Shadow**   |   String  | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.                                                                                                                                                                                                                                                               |
-| **Icon**       |   String    | Sets an icon to be included on the button.                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Icon**       |   String    | Sets an icon to be included on the submit and reset button.                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **Placement**   |   String   | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the `"START", "CENTER", or "BETWEEN"`. |
 | **Position** |   String | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
 
@@ -178,7 +190,7 @@ These are functions that are called when event listeners are triggered in the wi
 | **onSubmit**   | Sets an action to take place when the user clicks the Submit button on this form. |
 
 
-## Troubleshooting
+Here are some common errors that you may see when using the JSON Form widget:
 
 * [Source data exceeds 50 fields](/help-and-support/troubleshooting-guide/widget-errors#source-data-exceeds-50-fields)
 
