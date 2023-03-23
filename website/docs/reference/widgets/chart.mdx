@@ -23,15 +23,15 @@ To display data in the Chart widget, you can use the **Series Data** property to
 ]
 ```
 
-In this format, **`x`** denotes the **label**, and **`y`** denotes the **value**. It's important to provide a value when displaying data to ensure the chart can render correctly. 
+In this format, **`x`** denotes the **label**, and **`y`** denotes the **value**. 
 
 Appsmith offers several built-in charts to represent your data. With the **Chart Type** property, you can select one of the following types to visualize your data:
-* Line Charts, 
-* Bar Charts, 
-* Pie Charts, 
-* Column Charts, 
-* Area Charts, and  
-* [Custom Charts](#custom-charts)
+* Line Chart, 
+* Bar Chart, 
+* Pie Chart, 
+* Column Chart, 
+* Area Chart, and  
+* [Custom Chart](#custom-charts)
 
 
 You can display dynamic data from queries or JS functions by binding the response to the **Series Data** property. 
@@ -42,6 +42,10 @@ select type as x, count (*) as y from asset group by type
 ```
 
 This query returns data in the required format, where `x` represents the asset type and `y` represents the count of assets of that type. To bind the response returned by the query to the chart, add `{{assetquery.data}}` in the chart widget's **Series Data** property. This displays a chart that updates dynamically based on the response sent by the query.
+
+:::note
+If the query fails and there is no default data specified, the chart does not render and appears empty.
+:::
 
 ### Transform data using JS
 
@@ -182,7 +186,7 @@ Here are some examples of custom charts that you can use as a reference to creat
 
 
 <Tabs>
-  <TabItem value="2D" label="2D column chart " default>
+  <TabItem value="2D" label="2D column " default>
 
 Suppose you want to create a custom FusionChart to display monthly revenue data for Harry's SuperMart. You can use a two-dimensional column chart for this purpose.
 
@@ -265,7 +269,7 @@ You have a monthly target revenue of say $70,000 and would want to plot it in th
 
   </TabItem>
 
-  <TabItem value="p3" label=" Pareto 3D chart" default>
+  <TabItem value="p3" label=" Pareto 3D" default>
   
 
 Pareto chart is a type of bar graph that display the frequency of change with bars following a pattern from longest on the left to shortest on the right. To visualize data, a Pareto 3D chart can be used which combines a line chart and a column chart.
@@ -322,7 +326,7 @@ You can add the below code snippet to have a customized tooltip.
 ```
 
   </TabItem>
-  <TabItem value="p4" label="Pie 3D chart">
+  <TabItem value="p4" label="Pie 3D">
 
 
 Pie chart is a type of data visualization that represents numerical data in a circular graph, where the size of each "slice" of the pie corresponds to the proportion of data it represents.
@@ -378,7 +382,7 @@ For a sliced view, you can use a property `enablemultislicing`:
 "enablemultislicing": "1"
 ```
   </TabItem>
-  <TabItem value="s3d" label="Stacked Column 3D Chart">
+  <TabItem value="s3d" label="Stacked Column 3D">
 
 A stacked column chart is a type of data visualization that allows for the comparison of parts of a whole over time or across different sets of data.
 
