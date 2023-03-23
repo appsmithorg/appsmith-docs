@@ -260,3 +260,6 @@ FilePicker
 isDirty
 drag and drop
 Boolean
+chartData
+dataSource
+
