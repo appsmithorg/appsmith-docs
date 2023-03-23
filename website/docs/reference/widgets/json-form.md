@@ -1,7 +1,7 @@
 # JSON Form
 
 
-The JSON form widget saves time and effort by automatically generating forms from JSON data, eliminating the need for manual form creation for large forms.
+The JSON form widget saves time and effort by automatically generating forms from JSON data, eliminating the need for manual form creation.
 
 
 <VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
@@ -11,45 +11,39 @@ The JSON form widget saves time and effort by automatically generating forms fro
 To populate the JSON Form widget with data, you can utilize the **Source Data** property, which requires the data to be structured in a JSON format:
 
 ```json
-{ 
-    "name": "John Doe", 
-    "age": 29 
+{
+  "name": "John",
+  "date_of_birth": "20/02/1990",
+  "age": 29, 
+  "employee_id": 1001
 }
 ```
-JSON Form automatically detects the appropriate field type for each value. For instance, if the JSON data contains an `age` field, the Form widget sets the input type to a number input. Additionally, you can add/customize field types using the **Field Configuration** property.
+JSON Form automatically detects the appropriate field type for each value. For instance, if the JSON data contains an `age` field, it sets the field type to a *Number Input*. Additionally, you can add/customize field types using the **Field Configuration** property.
 
 
 
 You can display dynamic data in a JSON Form widget by binding the response from a query or a JS function to the **Source Data** property. This allows the form to update dynamically as the data changes in the database or API.
 
-For example, suppose you have fetched data from an API using the query `getData` and want to generate the JSON Form using the response returned by the query:
+For example, suppose you have fetched data from an API using the query `getData` and want to generate a JSON Form using the response returned by the query. Display the data by binding the query response in the **Table Data** property of the Table widget `tbluserData` as shown below:
 
 ```js
- {{Api1.data[0]}}
+ {{getData.data}}
  ```
 
-For example, Lets say you have fetched data from a datasource using the query `getData` and you want to generate a JSON form using the response returned by the query.
-
-To display your data in the Table widget, you can bind the `getData` query to the Table data. Then, in the JSON form's Source Data property, add:
+ To automatically generate the fields in the JSON Form when a table row is selected, add the below code in the **Source Data** property:
 
 ```js
-{{Table1.selectedRow}}
+{{tbluserData.selectedRow}}
 ```
 
-By doing this, you can click on an individual row in the table and update/add data to the form fields. This makes it convenient to work with data and update it in real-time.
+You can click on an individual row in the Table and update data in the form fields.
 
+You can also enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys change or if a data type changes from string to a number. Note that this will override any configuration you are providing through data transformation using JS.
 
-Additionally, you can also enable the **Auto Generate Form** property to have the form fields generated automatically according to the Source data. However, it's important to note that if this property is enabled, the form fields would be generated automatically according to the source data, which may not always align with your desired configuration.
+#### Nested arrays
 
+You can create complex JSON forms that have nested array structures. Here's an example of a complex nested JSON form schema where each item has its own unique ID, type, name, image, and thumbnail properties. Note that the JSON Form only supports up to three levels of nested arrays.
 
-However, if the **Auto Generate Form** property is disabled, any changes in the source data would not affect the form fields. In this case, you need to manually generate the form fields by clicking on **Generate Form**. 
-
-
-#### Nested arrays for input fields
-
-You can create complex nested JSON forms with structured and organized input fields. Here's an example of a complex nested JSON form schema for an ice cream menu item, where each item has its own unique ID, type, name, image, and thumbnail properties.
-
-However, it's important to note that the JSON format only supports up to three levels of nested arrays.
 ```json
 {
 	"id": "1",
@@ -81,7 +75,7 @@ Validating user input is essential for ensuring correct and formatted data. Apps
 - The **Regex** property, which checks that input matches a regular expression,
 - The **Required** property, which indicates that the field must be filled out.
 
-When **Disabled Invalid Forms** is turned on, the JSON Form widget checks the validation properties and the **Submit Button** is automatically disabled if there are failing checks. Using this property guarantees that all user input meets the criteria you have defined in the form fields.
+When **Disabled Invalid Forms** is turned on, the JSON Form widget checks the validation properties, and the **Submit** button is automatically disabled if there are failing checks. Using this property guarantees that all user input meets the criteria you have defined in the form fields.
 
 ## Access form data
 
@@ -100,7 +94,7 @@ For instance, if your form has an ID field and you want to access its value usin
 
 To submit form data, you can use the `onSubmit` event. This event allows you to perform an action when the user submits the form.
 
-Lets say you have a user database where you want to insert user data collected through a form. To do this, you can create a new insert query and run:
+Suppose you have a database with user information `name`, `gender`, and `email` and you want to insert data collected through the JSON Form. To do this, you can create an SQL insert query and pass the data as shown:
 
 ```sql
 INSERT INTO users
@@ -113,7 +107,7 @@ VALUES
   );
 ```
 
-To trigger this insert query, you can set the `onSubmit` event of the submit button to run the insert query. 
+To trigger this insert query, you can set the `onSubmit` event of the **Submit** button on the JSON Form. 
 
 
 ## Properties
@@ -151,7 +145,7 @@ These properties are present in the property pane of the widget. The following t
 These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the formData, you can use `JSONFrom1.formData`.
 
 
-| Binding Property | Data Type                                                                                                                                                                                                                                                                                                                | Description                 |
+| Property | Data Type                                                                                                                                                                                                                                                                                                                | Description                 |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
 | **fieldState**  | Object   | 8A JSON *object* describing the state of each field in the form. State data includes: **isDisabled**, **isRequired**, **isVisible**, and **isValid** <br/>e.g. `{ "name": {"isVisible": true, ... }, ... }` 
 | **formData**   | Object    | Contains a JSON _object_ with the field names and their current values in the form.                                                                                                                                                                                                                                    
@@ -189,9 +183,10 @@ These are functions that are called when event listeners are triggered in the wi
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onSubmit**   | Sets an action to take place when the user clicks the Submit button on this form. |
 
+## Troubleshooting
 
 Here are some common errors that you may see when using the JSON Form widget:
 
 * [Source data exceeds 50 fields](/help-and-support/troubleshooting-guide/widget-errors#source-data-exceeds-50-fields)
 
-If you run into any other issues while working with the widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If the guide doesn't cover your issue, reach out to the support team on the <a href="#!" onclick="Intercom('show')">chat widget</a> available on this page.
+If you run into any other issues while working with the widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If the guide doesn't cover your issue, reach out to the <a href="#!" onclick="Intercom('show')">support team</a>.
