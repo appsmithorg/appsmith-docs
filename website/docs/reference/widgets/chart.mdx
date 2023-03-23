@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Chart
 
-This document explains how to effectively use the Chart widget to visualize and represent data to create admin panels, dashboards, and other data-driven applications.
+This document explains how to use the Chart widget effectively to visualize and represent data to create admin panels, dashboards, and other data-driven applications.
 
 
 
@@ -23,7 +23,7 @@ To display data in the Chart widget, you can use the **Series Data** property to
 ]
 ```
 
-In this format, **`x`** denotes the **label** and **`y`** denotes the **value**. It's important to provide a value when displaying data to ensure the chart can render correctly. 
+In this format, **`x`** denotes the **label**, and **`y`** denotes the **value**. It's important to provide a value when displaying data to ensure the chart can render correctly. 
 
 Appsmith offers several built-in charts to represent your data. With the **Chart Type** property, you can select one of the following types to visualize your data:
 * Line Charts, 
@@ -34,49 +34,46 @@ Appsmith offers several built-in charts to represent your data. With the **Chart
 * [Custom Charts](#custom-charts)
 
 
-To display static data, you can enter the desired data directly into the **Series Data property**, and it remains the same until manually updated or edited. This method is useful when you need to display fixed information, such as trends or comparisons, that don't change based on user interactions. 
-
-
-### Display data dynamically
-
 You can display dynamic data from queries or JS functions by binding the response to the **Series Data** property. 
 
-For example, lets say you have a PostgreSQL database containing information about assets in your organization, such as their types and the date they were purchased. You can create a query that groups the assets by type and counts how many there are of each type, like this:
-
+For example, suppose you have a database containing information about assets in your organization, such as their types and the date they were purchased. You can create a query `getAssetsByType` that groups the assets by type and count how many there are of each type, as shown below:
 ```sql
 select type as x, count (*) as y from asset group by type
 ```
 
-This query returns data in the required format, where `x` represents the asset type and `y` represents the count of assets of that type. Next, in the chart widget's **Series Data** property, add `{{assetquery.data}}` to bind the data returned by the query to the chart. This displays a dynamic chart that updates as the data in the database changes.
+This query returns data in the required format, where `x` represents the asset type and `y` represents the count of assets of that type. To bind the response returned by the query to the chart, add `{{assetquery.data}}` in the chart widget's **Series Data** property. This displays a chart that updates dynamically based on the response sent by the query.
 
-#### Transform data using JS
-In addition, you can use JavaScript code to transform the incoming data to match the expected structure. This can be useful in cases where the data needs to be processed or manipulated before being displayed in the chart.
+### Transform data using JS
 
-For example, suppose you have business revenue data stored in a Google Sheets spreadsheet and you want to display it in a chart. To do this, you can connect to the Google Sheets datasource and create a query to fetch the data. Once you have retrieved the data, you may need to transform it using the following syntax:
+You can also use JavaScript code to transform the data retrieved to match the expected structure in the chart.
+
+For example, suppose you have business revenue data fetched from an API `getRevenue` and want to display it in a chart. You can transform the data using the `map()` JS function as shown below:
 
 ```js
-{{Api1.data.map( p => ({x: p.year, y: p.amount}))}}
+{{getRevenue.data.map( p => ({x: p.year, y: p.amount}))}}
 ```
 
-The code preceding uses the `map()` function to transform each item in the `Api1.data` array into an object with an `x` and a `y` property. 
+The code uses the `map()` function to transform each item in the `getRevenue.data` array into an object with an `x` and a `y` key. 
 
-In this example, the `x` property represents the **year** and the `y` property represents the **amount** of data for that year. The transformed data displays a dynamic chart that updates as the data in the Google Sheets spreadsheet changes.
+In this example, `x` represents the year, and `y` represents the amount of money for that year. The transformed data displays the chart that updates dynamically based on the response sent by the API query.
 
 
 
-### Display multiple data series
+### Plot multiple data series
 
 If you want to display multiple data series on a chart, you can do so by using the **Add Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
 
-For example, if you have data on the number of males and females who voted in each year of a political election, you can use the **Chart Series** property to display both sets of data on the same chart. This would allow you to compare the number of male and female voters over time.
+For example, suppose you have data on the number of males and females who voted each year, you can use the **Chart Series** property to display both data sets on the same chart. This would allow you to compare the number of male and female voters over time.
 
+---
+The following section demonstrates the different types of built-in charts for data visualization: 
 
 <Tabs>
   <TabItem value="apple" label="Line Chart" default>
 
- A line chart displays data as a series of points connected by a line. It's a useful tool for representing data that changes over time, such as stock prices or temperature fluctuations. 
+A line chart displays data as a series of points connected by a line. It's a useful tool for representing data that changes over time, such as stock prices or temperature fluctuations. 
  
- By adding multiple series, you can compare the relationships between different sets of data over time, just like in the political election example.  
+By adding multiple series, you can compare the relationships between different sets of data over time, just like in the political election example.  
 
   <figure>
   <img src="/img/line-voter.png" style= {{width:"700px", height:"auto"}} alt=""/>
@@ -105,7 +102,7 @@ For example, if you have data on the number of males and females who voted in ea
     
   It's often used to display data in a more compact format or to make comparisons between groups of data. Adding multiple series can help you visualize relationships and differences between data across different categories.
   <figure>
-    <img src="/img/col-voter.png" style= {{width:"700px", height:"auto"}} alt=""/>
+    <img src="/img/new-col-chart.png" style= {{width:"700px", height:"auto"}} alt=""/>
     <figcaption align = "center"><i></i></figcaption>
    </figure>
   </TabItem>
@@ -116,7 +113,7 @@ For example, if you have data on the number of males and females who voted in ea
   It's often used to display trends over time, such as changes in revenue or population. Multiple series can be added to compare the relationship between different sets of data over time, similar to the example with the political election data.
      
   <figure>
-   <img src="/img/area-voter.png" style= {{width:"700px", height:"auto"}} alt=""/>
+   <img src="/img/new-area-chart.png" style= {{width:"700px", height:"auto"}} alt=""/>
      <figcaption align = "center"><i></i></figcaption>
   </figure>
   
@@ -141,7 +138,6 @@ For example, if you have data on the number of males and females who voted in ea
 </Tabs>
 
 
-
 ## Custom charts
 
 Appsmith offers integration with [FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) and provides a wide range of chart types that can be used to create custom charts. Once you have selected the **Chart Type > Custom Chart**, you can configure FusionCharts using the **Custom Fusion Chart** property.
@@ -151,27 +147,13 @@ Appsmith offers integration with [FusionCharts](https://www.fusioncharts.com/dev
 
 
 :::info
-* Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a **re-distribution license**. With this license, you can use FusionCharts on the Appsmith **cloud** and **on-premise** platform. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
+* Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
 
-* Please be aware that the license **doesn't** include permission to use **Fusion Maps**. If you want to use this product, you may need to obtain a separate license.
+* The license doesn't include permission to use **Fusion Maps**. You may need to obtain a separate license if you want to use this product.
 :::
 
-
-In the **Custom Fusion Chart** property, you need to specify **"type"** for chart type and **"dataSource"** for the data to create a custom FusionChart.
-
-
-
-#### Type
-
-The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. To learn more about these charts, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/). 
-
-#### Datasource
-
-The datasource defines the customization options and the data points to create a chart. It includes two attributes: **chart** and **data**.
-
-The chart object can customize the chart and includes options like caption, xAxisName, and yAxisName. On the other hand, the data attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`.
-
-Below is an example of a configuration for the Custom Fusion Chart property:
+### Display data in custom chart
+In the **Custom Fusion Chart** property, you need to specify "type" for chart type and "dataSource" for the data to create a custom FusionChart. Below is an example of a configuration for the Custom Fusion Chart property:
 
 ```
 {
@@ -182,6 +164,18 @@ Below is an example of a configuration for the Custom Fusion Chart property:
   }
 }
 ```
+
+#### Type
+
+The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. You can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) documentation to learn more about these charts.
+
+#### Datasource
+
+The datasource defines the customization options and the data points to create a chart. It includes two attributes: **chart** and **data**.
+
+The chart object can customize the chart and includes options like caption, xAxisName, and yAxisName. On the other hand, the data attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`.
+
+
 
 ### Examples
 Here are some examples of custom charts that you can use as a reference to create your own customized charts.
