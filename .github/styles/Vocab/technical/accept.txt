@@ -262,3 +262,11 @@ drag and drop
 Boolean
 GraphQL
 keyset
+scrollable
+sourceData
+formData
+fieldState
+isRequired
+Generate JSON Form
+chartData
+dataSource
