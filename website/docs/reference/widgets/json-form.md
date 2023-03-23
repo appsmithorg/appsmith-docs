@@ -20,7 +20,6 @@ To populate the JSON Form widget with data, you can utilize the **Source Data** 
 JSON Form automatically detects the appropriate field type for each value. For instance, if the JSON data contains an `age` field, the Form widget sets the input type to a number input. Additionally, you can add/customize field types using the **Field Configuration** property.
 
 
-### Display data dynamically
 
 You can display dynamic data in a JSON Form widget by binding the response from a query or a JS function to the **Source Data** property. This allows the form to update dynamically as the data changes in the database or API.
 
