@@ -75,7 +75,7 @@ Before an automatic update, Appsmith creates a backup. You may use this to rollb
    docker-compose up -d
    ```
 
-When the server restarts, Appsmith updates to the latest version. This setup runs an Appsmith instance and a Watchtower instance. The Watchtower checks and  updates the instance whenever a new version becomes available. You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
+When the server restarts, Appsmith updates to the latest version. This setup runs an Appsmith instance and a Watchtower instance. The Watchtower checks and updates the instance whenever a new version becomes available. You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
 
 ## Troubleshooting
 
