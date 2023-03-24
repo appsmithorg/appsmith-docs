@@ -349,6 +349,7 @@ h6 {
   border-radius: 8px;
   display: block;
   margin: 1rem auto;
+  padding: 15px;
 }
 
 .error {

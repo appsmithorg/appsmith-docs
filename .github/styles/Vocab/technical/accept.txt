@@ -242,6 +242,8 @@ batchSize
 1st
 Google Sheets
 rowIndex
+svg
+ID
 responseMeta
 svg
 showAlert
@@ -257,6 +259,15 @@ CSV
 FilePicker
 isDirty
 drag and drop
+Boolean
+scrollable
+sourceData
+formData
+fieldState
+isRequired
+Generate JSON Form
+chartData
+dataSource
 Cognito
 cognito
 
