@@ -26,7 +26,7 @@ You can display dynamic data in a JSON Form widget by binding the response from 
 
 ---
 
-For example, you want to create JSON form using [sample users database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) using the data fetched from a query called `fetchUserData`. You can display the fetched data by binding the query response to the Table Data property of the Table widget `tblUserData`, as shown below:
+For example, you want to create JSON form using [sample users database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases), and retrieving the necessary data from a query named `fetchUserData`. You can display the fetched data by binding the query response to the Table Data property of the Table widget `tblUserData`, as shown below:
 
 ```js
 {{fetchUserData.data}}
