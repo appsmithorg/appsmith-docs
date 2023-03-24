@@ -14,7 +14,7 @@ Before you start the update process, make sure you complete the below steps:
 
 * Ensure that you have at least 2 GB of free storage space for backup and update tasks.
 * You can create a backup of the Appsmith instance before a manual update. To create a backup, see the [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) section. (_Recommended_)
-* If you are on a version earlier than v1.9.2, first upgrade to the checkpoint version v1.9.2. For more, see [Checkpoint version and upgrade](/getting-started/setup/instance-management#checkpoint-version-and-upgrades).
+* If you are on a version earlier than v1.9.2, first upgrade to version v1.9.2.  See [Checkpoint version and upgrade](/getting-started/setup/instance-management#checkpoint-version-and-upgrades) to upgrade to a checkpoint version.
 
 ## Docker Compose
 The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
