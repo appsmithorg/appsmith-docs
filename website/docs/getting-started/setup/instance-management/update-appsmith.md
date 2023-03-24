@@ -44,7 +44,7 @@ docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 Follow the below steps to turn on the auto updates:
 
 :::info
-Before an automatic update, Appsmith creates a backup. You may use this to roll back to a previous version in case of any issues.
+Before an automatic update, Appsmith creates a backup. You may use this to rollback to a previous version in case of any issues.
 :::
 
 1. Go to the root directory of the Appsmith installation and run:
@@ -75,10 +75,10 @@ Before an automatic update, Appsmith creates a backup. You may use this to roll 
    docker-compose up -d
    ```
 
-When the server restarts, Appsmith updates to the latest version. This setup runs an Appsmith instance and a Watchtower instance to automate updates. You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
+When the server restarts, Appsmith updates to the latest version. This setup runs an Appsmith instance and a Watchtower instance. The Watchtower checks and  updates the instance whenever a new version becomes available. You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
 
 ## Troubleshooting
 
-If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
+If you see deployment errors, you can rollback to a previous version to fix the issue. For more information, see [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
 
 If you continue to face issues, contact the [support team](mailto:support@appsmith.com).
