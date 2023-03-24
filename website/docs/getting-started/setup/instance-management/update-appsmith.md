@@ -12,9 +12,9 @@ The steps below apply to both the Community and Business editions.
 ## Prerequisites
 Before you start the update process, make sure you complete the below steps:
 
-* Ensure that you have at least 2 GB of free storage space for backup and update tasks.
-* You can create a backup of the Appsmith instance before a manual update. To create a backup, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) (_Recommended_)
-* If you are on a version earlier than v1.9.2, first upgrade to version v1.9.2.  To upgrade to a checkpoint version, see [Checkpoint version and upgrade](/getting-started/setup/instance-management#checkpoint-version-and-upgrades).
+* Ensure you have at least 2 GB of free storage space for backup and update tasks.
+* You can create a backup of the Appsmith instance before a manual update. For more information, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) (_Recommended_)
+* If you are on a version earlier than v1.9.2, first upgrade to version v1.9.2.  For more information, see [Checkpoint version and upgrade](/getting-started/setup/instance-management#checkpoint-version-and-upgrades).
 
 ## Docker Compose
 The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
@@ -25,7 +25,7 @@ You can update Appsmith in one of the following ways:
 * [Automatic update](#automatic-update)
 
 :::info
-To find the directory where Appsmith is installed, run the following command:
+To find the Appsmith installation directory, run the following command:
 
 ```
 docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
@@ -75,10 +75,10 @@ Before an automatic update, Appsmith creates a backup. You may use this to rollb
    docker-compose up -d
    ```
 
-When the server restarts, Appsmith is updated to the latest version. This configuration runs an Appsmith instance and a Watchtower instance to keep Appsmith updated automatically. You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
+When the server restarts, Appsmith updates to the latest version. This setup runs an Appsmith instance and a Watchtower instance to auto-update Appsmith. You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
 
 ## Troubleshooting
 
 If you see deployment errors, you can rollback to a previous version to fix the issue. For more information, see [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance). 
 
-If you continue to face issues, reach out to the [support team](mailto:support@appsmith.com).
+If you continue to face issues, contact the [support team](mailto:support@appsmith.com).
