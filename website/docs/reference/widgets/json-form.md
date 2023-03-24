@@ -49,7 +49,7 @@ However, it's important to note that enabling this feature can override any cust
 
 #### Field configuration
 
-In the field configuration property, you can add or update different fields for the JSON form. The available fields that can be configured include:
+In the **Field Configuration** section of the JSON Form's property pane, you can add fields or update each field's settings by clicking the cog icon ⚙︎ next to it.  You can customize each form field using properties, for instance, updating the field type, setting validation and style properties, and triggering actions using event listeners. You can select any one of the following options from the **Field Type** property to update the widget type for that field on the JSON Form:
 
 * Array
 * Checkbox
