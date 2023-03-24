@@ -17,7 +17,7 @@ Before you start the update process, make sure you complete the below steps:
 * If you are on a version earlier than v1.9.2, first upgrade to version v1.9.2. To upgrade, see the [Checkpoint version and upgrade](/getting-started/setup/instance-management#checkpoint-version-and-upgrades) section.
 
 ## Docker Compose
-The below steps work on any platform that uses `docker-compose`. For example, Docker, AWS AMI, or DigitalOcean.
+The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
 
 You can update Appsmith in one of the below ways:
 
@@ -25,7 +25,8 @@ You can update Appsmith in one of the below ways:
 * [Automatic update](#automatic-update)
 
 :::info
-If you don't know the installation directory, run:
+To find where Appsmith is installed, run the below command:
+
 ```
 docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
 ```

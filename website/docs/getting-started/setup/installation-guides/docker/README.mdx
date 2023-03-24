@@ -15,10 +15,9 @@ caption="How to install Appsmith using Docker Compose"/>
 
 1. [Docker](https://docs.docker.com/get-docker/) (version 20.10.7 or later)
 2. [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later)
-3. Create `appsmith` folder
 
 ## Install
-Go to the `appsmith` folder and follow the steps below to install Appsmith:
+To install Appsmith, first create a folder named `appsmith` to be used for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
 
 <Tabs queryString="current-edition">
 <TabItem label="Community Edition" value="community_edition">
@@ -35,8 +34,10 @@ This saves the file in the current directory.
 docker-compose up -d
 ```
 :::info
- The Appsmith deployment may take up to 5 minutes to complete. To confirm that the deployment is complete, run the command `docker logs -f appsmith`. When the deployment is complete, you can see the message 'Appsmith is Running!' in the logs. You can access it at [http://localhost](http://localhost).
+ The Appsmith deployment may take up to 5 minutes to complete.
 :::
+
+3. To confirm that the deployment is complete, run the command `docker logs -f appsmith`. When the deployment is complete, you can see the message 'Appsmith is Running!' in the logs. You can access it at [http://localhost](http://localhost).
 
 </TabItem>
 <TabItem label="Business Edition" value="business_edition">
@@ -61,10 +62,12 @@ docker-compose up -d
 ```
 
 :::info
- The Appsmith deployment may take up to 5 minutes to complete. To confirm that the deployment is complete, run the command `docker logs -f appsmith`. When the deployment is complete, you can see the message 'Appsmith is Running!' in the logs. You can access Appsmith at [http://localhost](http://localhost).
+ The Appsmith deployment may take up to 5 minutes to complete. 
 :::
 
-4. Log into your Appsmith account, and enter your license key to activate the instance.
+4. To confirm that the deployment is complete, run the command `docker logs -f appsmith`. When the deployment is complete, you can see the message 'Appsmith is Running!' in the logs. You can access Appsmith at [http://localhost](http://localhost).
+
+5. Log into your Appsmith account, and enter your license key to activate the instance.
 
 </TabItem>
 </Tabs>
