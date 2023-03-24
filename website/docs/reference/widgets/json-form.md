@@ -45,7 +45,7 @@ You can click on an individual row in the Table and update data in the form fiel
 
 You can enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys in the JSON data change or if a data type changes, for example, from string to a number. 
 
-However, it's important to note that enabling this feature can override any custom configurations that you may have made using JavaScript for data transformation. 
+However, it's important to note that enabling this feature overrides any custom configurations that you are providing through data transformations using JavaScript.
 
 #### Field configuration
 
