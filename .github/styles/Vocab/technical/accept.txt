@@ -257,4 +257,6 @@ CSV
 FilePicker
 isDirty
 drag and drop
+Cognito
+cognito
 

@@ -116,6 +116,7 @@ const sidebars = {
                       },
                       items: [
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
