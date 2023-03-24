@@ -67,3 +67,6 @@ exceptions:
   - Business Edition 
   - Community Edition
   - Connection Mode
+  - Custom Domain
+  - Custom SSL
+  - SSL with Let's Encrypt

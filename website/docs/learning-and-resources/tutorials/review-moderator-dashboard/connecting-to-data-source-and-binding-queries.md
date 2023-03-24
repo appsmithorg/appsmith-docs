@@ -18,13 +18,13 @@ Appsmith supports various data sources and lets you write queries on them to per
 :::info
 Appsmith supports various databases like:
 
-* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](/reference/datasources/querying-amazon-s3.md)
-* [ArangoDB](/reference/datasources/querying-arango-db.md)
-* [DynamoDB](/reference/datasources/querying-dynamodb.md)
+* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](/reference/datasources/querying-amazon-s3)
+* [ArangoDB](/reference/datasources/querying-arango-db)
+* [DynamoDB](/reference/datasources/querying-dynamodb)
 * [ElasticSearch](/reference/datasources/querying-elasticsearch)
-* [Firestore](/reference/datasources/querying-firestore.md)
+* [Firestore](/reference/datasources/querying-firestore)
 * [MongoDB](/reference/datasources/querying-mongodb/)
-* [MySQL](/reference/datasources/querying-mysql.md), and a [lot more](/reference/datasources/).
+* [MySQL](/reference/datasources/querying-mysql), and a [lot more](/reference/datasources/).
 :::
 
 Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:
@@ -96,7 +96,7 @@ Let's look at another method for adding a table widget to your canvas.
 3. Drag and drop an **`Table widget`** onto the canvas.
 
 :::info
-Appsmith provides various widgets, like [tables](/reference/widgets/table/), [lists](/reference/widgets/list.md), [buttons](/reference/widgets/button/), [maps](/reference/widgets/maps.md), [audio](/reference/widgets/audio.md), [charts](/reference/widgets/chart.md), [forms](/reference/widgets/form.md), and more.
+Appsmith provides various widgets, like [tables](/reference/widgets/table/), [lists](/reference/widgets/list.md), [buttons](/reference/widgets/button/), [maps](/reference/widgets/maps), [audio](/reference/widgets/audio), [charts](/reference/widgets/chart), [forms](/reference/widgets/form), and more.
 :::
 
 You'll notice a property window on the right side of the program as soon as you drag the widget into the canvas; you can call it the **Widget Property Pane**. All of the table's configurations and customization properties can be found here. Here's a screenshot of the table widget and its property pane:
