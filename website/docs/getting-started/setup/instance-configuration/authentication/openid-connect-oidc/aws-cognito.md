@@ -8,7 +8,7 @@ OpenID Connect is available only in the [**business edition**](https://www.appsm
 
 ## Create user pool on Cognito
 
-Log in to your AWS account, open AWS Cognito and follow the steps below:
+Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security, Identity & Compliance** > **Cognito** and follow the steps below:
 
 1. Click the "Create User pool" button to create a new user pool.
 2. **Step 1 - Configure sign-in experience**: select "Email" in the Cognito user pool sign-in options. Click *Next*
