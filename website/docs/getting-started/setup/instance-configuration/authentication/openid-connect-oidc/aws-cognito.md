@@ -35,7 +35,7 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
 
     ![](/img/AWS-cognito_create-cognito-domain.png)
 
-    2. Enter a domain prefix in the **Create Cognito domain** screen and click on **Create Cognito domain** button.
+    2. On the **Create Cognito domain** screen, enter a domain prefix in the **Cognito domain** box. Click **Create Cognito domain**.
 
         ![](/img/AWS-cognito_create_domain.png)
 
