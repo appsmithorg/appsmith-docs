@@ -46,9 +46,9 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
 
         ![](/img/AWS-cognito_callback-url.png)
 
-        2. Select **Cognito user pool** in the **Identity providers**.
-        3. Select **Authorization code grant** in the  **OAuth 2.0 grant types**.
-        4. Select **OpenID**, **Email**, **Profile** in the **OpenID Connect scopes**.
+        2. Select **Cognito user pool** from the **Identity providers** dropdown.
+        3. Select **Authorization code grant** from the  **OAuth 2.0 grant types** dropdown.
+        4. Select **OpenID**, **Email**, and **Profile** from the **OpenID Connect scopes** dropdown.
 
 
 ## Configure Appsmith for Amazon Cognito
