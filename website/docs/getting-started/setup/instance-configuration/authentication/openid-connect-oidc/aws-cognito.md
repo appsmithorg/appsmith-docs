@@ -40,7 +40,7 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
         ![](/img/AWS-cognito_create_domain.png)
 
 9. On the **App Integration** tab, scroll down to the **App client list** section and click the name of the app client you created in the preceding steps.
-    1. Copy the client ID and client secret that will be added to the OIDC configurations in Appsmith.
+    1. Copy the **Client ID** and **Client Secret**.
 
     ![](/img/AWS-cognito_client-creds.png)
 
