@@ -23,7 +23,9 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
 5. In the **Configure message delivery** pane, you can choose one of the email providers - **Send email with Amazon SES** or **Send email with Cognito**. For this setup, select **Send email with Cognito**. Click **Next**.
 6.  In the **Integrate your app** pane:
     1. In the **User pool name** box, enter a name for your user pool.
-    2. Under *Initial app client*, add an app client name and select **Generate a client secret** under Client secret section.
+    2. Under the *Initial app client* section, in the **App client name** box, enter a name for your app client.
+    3. Under the **Client secret** section, select **Generate a client secret** option.
+    4. Click **Next**.
 
     ![](/img/AWS-cognito_App_client.png)
 
