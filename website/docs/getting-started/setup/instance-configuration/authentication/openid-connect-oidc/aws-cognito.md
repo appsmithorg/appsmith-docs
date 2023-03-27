@@ -30,7 +30,7 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
     ![](/img/AWS-cognito_App_client.png)
 
 7. In the **Review and create** pane, review the configurations and click **Create user pool**.
-8. Click the user pool you've created, go to the integrations tab and follow the steps below 
+8. In the **User pools** pane, select the user pool you created in the preceding steps. Click the **App Integration** tab and follow the steps below:
     1. In the domains section, click on the actions dropdown and select **Create a Cognito domain**. You can also select **Create a custom domain** to add a domain that you own.
 
     ![](/img/AWS-cognito_create-cognito-domain.png)
