@@ -15,7 +15,7 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
 
     ![](/img/Step1-AWS_Cognito.png)
 
-3. **Step 2 - Configure security requirements:** select "No MFA" in Multi-factor authentication. Click *Next*. 
+3. In the **Configure security requirements** pane, select **No MFA** under the **Multi-factor authentication** section. Click **Next**. 
 
     ![](/img/Step2-AWS_Cognito.png)
 
