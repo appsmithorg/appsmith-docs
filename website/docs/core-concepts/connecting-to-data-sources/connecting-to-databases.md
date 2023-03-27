@@ -79,7 +79,7 @@ Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. 
 2. Select the **PostgreSQL** database from the Databases head.
 3. Supply the details as shown below:
 
-  ```SQL
+  ```yaml
   host: `mockdb.internal.appsmith.com`
   port: `5432`
   database: `mockdb`
