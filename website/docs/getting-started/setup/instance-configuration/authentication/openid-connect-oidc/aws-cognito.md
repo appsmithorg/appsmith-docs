@@ -41,7 +41,7 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
 
     ![](/img/AWS-cognito_client-creds.png)
 
-    2. Scroll down to the **Hosted UI** section and click **Edit**. Click the **Add Callback URL** button and enter **Redirect URL** copied from [OIDC window in Appsmith’s Admin Settings]((./#capture-redirect-url-for-sso-configuration)s).
+    2. Scroll down to the **Hosted UI** section and click **Edit**. Click the **Add Callback URL** button and enter **Redirect URL** copied from [OIDC window in Appsmith’s Admin Settings](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc#capture-redirect-url-for-oidc-configuration).
 
     ![](/img/AWS-cognito_callback-url.png)
 
