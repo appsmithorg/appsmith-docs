@@ -6,7 +6,7 @@
 OpenID Connect is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances,** and only the **Superuser** of your **Appsmith Instance** can set up OIDC.
 :::
 
-## Configure a user pool
+## Create user pool on Cognito
 
 Log in to your AWS account, open AWS Cognito and follow the steps below:
 
