@@ -16,6 +16,8 @@ Click on the available slider links to learn more.
 - [Number Slider](number-slider.md)
 - [Range Slider](range-slider.md)
 
+<VideoEmbed host="youtube" videoId="3aszcdK1z0Y" title="How To Use The Slider Widget" caption="How To Use The Slider Widget"/>
+
 ## Styles
 
 Style properties allow you to control the look and feel of your widgets.
