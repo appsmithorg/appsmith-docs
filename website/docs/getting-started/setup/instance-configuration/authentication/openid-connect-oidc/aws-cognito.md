@@ -51,7 +51,7 @@ On your Appsmith instance, go to *Admin Settings> Authentication> OIDC*, click E
 
 ![](/img/Appsmith_OIDC_creds.png)
 
-1. Add the configurations in the format shown below:
+1. Refer to the table below when entering data in the input boxes to configure the instance:
 
     | OIDC configuration field in Appsmith | AWS Cognito URL |
     | ------------------------------------| -----------------|
