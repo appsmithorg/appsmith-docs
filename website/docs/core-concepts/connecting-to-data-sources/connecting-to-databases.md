@@ -73,12 +73,22 @@ SELECT * FROM users;
 The select query retrieves all the data from the users table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
 
 ### Embedded database
-Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. You can use the database to try out and test various scenarios.
+Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. You can use the database to test various scenarios.
 
+#### Superusers
+To connect to the built-in database, the below superusers are available out of the box. You don't need to supply a password for these users while connecting to the database.
 
-#### Connect to an embedded database
+* `postgres`
+* `mockdb`
+* `users`
 
-The Embedded database provides superusers and sample databases. Use the following configuration details to set it up:
+#### Mock databases
+The below mock databases are available, which you can use to test the platform.
+
+* `users` - It contains the test data for users.
+* `movies` - It contains the application templates for PostgreSQL relations.
+
+Use the following configuration details to connect to the built-in database:
 
 ```SQL
 host: `mockdb.internal.appsmith.com`
@@ -88,14 +98,6 @@ database: `mockdb`
   password: ` `
 ```
 
-##### Superusers
-You can use any one of the superusers (`postgres`, `mockdb`, `users`) to connect to the embedded database. You don't need to supply a password to connect to the database using the superusers.
-
-##### Sample databases
-The embedded database has two sample databases:
-* `users` - It contains the test data for users.
-* `movies` - It contains the application templates for PostgreSQL relations.
-
 You can disable the embedded database for your self-hosted instance. For more information, see [Disable the Embedded Database](/getting-started/setup/instance-configuration/embedded-database#disable-the-embedded-database).
 
 ## General notes
@@ -103,6 +105,7 @@ You can disable the embedded database for your self-hosted instance. For more in
 :::info
 Appsmith encrypts all your datasource credentials and stores them securely. Appsmith also doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of Queries. As Appsmith is an open source framework, you can [deploy it on-premise](/getting-started/setup), and audit it to ensure none of your data leaves your VPC. For more information, see [Security](/product/security#security-measures-within-appsmith). 
 :::
+
 ### Connection pooling
 Appsmith creates a new connection with the database server when you first connect the database to your application. All subsequent queries executed by Appsmith against your database then re-use this connection to ensure that your queries are executed at run-time. If an idle connection is closed by the database server, Appsmith creates a new connection while executing the next query.
 
