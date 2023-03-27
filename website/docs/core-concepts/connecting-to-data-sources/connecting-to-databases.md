@@ -73,7 +73,23 @@ SELECT * FROM users;
 The select query retrieves all the data from the users table. You can display the query results in a Table widget by [binding the data](/core-concepts/data-access-and-binding/displaying-data-read#displaying-data-in-a-widget) in the Table Data property.
 
 ### Embedded database
-Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. You can use the database to test various scenarios.
+Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. One of the key advantages of the embedded PostgreSQL database is the ability to use mock databases for testing scenarios. To use mock databases, follow these steps:
+
+1. On the **Explorer** tab, click the **+** icon next to Datasources.
+2. Select the **PostgreSQL** database from the Databases head.
+3. Supply the details as shown below:
+
+  ```SQL
+  host: `mockdb.internal.appsmith.com`
+  port: `5432`
+  database: `mockdb`
+    user: `mockdb`
+    password: ` `
+  ```
+4. Click the **Test** button to verify the connection details.
+5. Click the **Save** button to connect and save the database connection.
+
+You can now use the mock database to test and develop your applications.
 
 #### Superusers
 To connect to the built-in database, the below superusers are available out of the box. You don't need to supply a password for these users while connecting to the database.
@@ -87,16 +103,6 @@ The below mock databases are available, which you can use to test the platform.
 
 * `users` - It contains the test data for users.
 * `movies` - It contains the application templates for PostgreSQL relations.
-
-Use the following configuration details to connect to the built-in database:
-
-```SQL
-host: `mockdb.internal.appsmith.com`
-port: `5432`
-database: `mockdb`
-  user: `mockdb`
-  password: ` `
-```
 
 You can disable the embedded database for your self-hosted instance. For more information, see [Disable the Embedded Database](/getting-started/setup/instance-configuration/embedded-database#disable-the-embedded-database).
 

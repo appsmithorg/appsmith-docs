@@ -1,11 +1,11 @@
 # Embedded Database
-Appsmith comes with a built-in PostgreSQL v13 database. The embedded database hosts mock databases that you can use to test different scenarios.
+Appsmith comes equipped with a built-in PostgreSQL v13 database. This embedded database is an excellent tool for testing various scenarios using mock databases.
 
 :::info
 The embedded database is only available for self-hosted Appsmith instances.
 :::
 
-To connect to the mock databases present in the built-in database, see [Connect to an embedded database](/core-concepts/connecting-to-data-sources/connecting-to-databases#embedded-database).
+To connect to the mock databases within the embedded database, see [Connect to an embedded database](/core-concepts/connecting-to-data-sources/connecting-to-databases#embedded-database).
 
 ## Disable the embedded database
 
@@ -22,7 +22,7 @@ APPSMITH_ENABLE_EMBEDDED_DB=0
 docker-compose restart appsmith
 ```
 
-Once disabled, the Appsmith instance can't use the built-in database and the mock databases hosted on it.
+Once disabled, your Appsmith instance can no longer use the built-in database and the mock databases it hosts.
 
 ## Troubleshooting
 
