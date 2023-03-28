@@ -84,7 +84,7 @@ Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. 
   port: `5432`
   database: `mockdb`
     user: `mockdb`
-    password: ` `
+    password: `mockdb`
   ```
 4. Click the **Test** button to verify the connection details.
 5. Click the **Save** button to connect and save the database connection.
@@ -92,7 +92,7 @@ Appsmith's self-hosted instance comes with an embedded PostgreSQL v13 database. 
 You can now use the mock database to test and develop your applications.
 
 #### Superusers
-To connect to the built-in database, the below superusers are available out of the box. You don't need to supply a password for these users while connecting to the database.
+To connect to the built-in database, the below superusers are available out of the box. Use the password as the username to connect to the built-in database.
 
 * `postgres`
 * `mockdb`
