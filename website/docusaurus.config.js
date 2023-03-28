@@ -195,6 +195,11 @@ const config = {
         defer: true,
         'data-domain': 'https://docs.appsmith.com',
         'referrerpolicy': 'no-referrer-when-downgrade'
+    },
+    {
+      src:
+        '/scripts/smartlook.js',
+      async: false,
     }
   ],
 };
