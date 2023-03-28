@@ -259,6 +259,7 @@ CSV
 FilePicker
 isDirty
 drag and drop
+uncomment
 Boolean
 scrollable
 sourceData
@@ -276,3 +277,6 @@ formattedDate
 selectedDate
 Min
 Max
+Cognito
+cognito
+
