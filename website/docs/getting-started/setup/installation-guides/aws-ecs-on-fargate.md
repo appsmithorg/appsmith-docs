@@ -63,9 +63,9 @@ Please don't run the built-in embedded MongoDB with the EFS, as it could cause t
 
 ## Deploy Appsmith
    
-1. [Create an ECS Cluster](#step-1-create-an-ecs-cluster)
-2. [Create Task and Container Definitions](#step-2-create-task-and-container-definitions)
-3. [Create and Run an ECS Service](#step-3-create-and-run-an-ecs-service)
+1. [Create an ECS Cluster](#create-an-ecs-cluster)
+2. [Create Task and Container Definitions](#create-task-and-container-definitions)
+3. [Create and Run an ECS Service](#create-and-run-an-ecs-service)
 
 Switch to the old AWS console UI to follow the steps below.
 
