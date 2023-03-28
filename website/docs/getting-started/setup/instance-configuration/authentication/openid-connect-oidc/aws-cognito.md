@@ -36,7 +36,7 @@ In the **User pools** pane, select the user pool you created in the preceding st
 
 3. Back on the **App Integration** tab, scroll down to the **App client list** section and click the name of the app client you created in step 6 of [Create user pool](#create-user-pool).
 
-4. Copy the **Client ID** and **Client Secret** and save it for later use.
+4. Copy the **Client ID** and **Client Secret** and save them for later use.
 
 5. Scroll down to the **Hosted UI** section and click **Edit**. On the **Edit Hosted UI** pane, follow the steps below:
     ![](/img/edit-hosted-ui.png)
@@ -46,7 +46,7 @@ In the **User pools** pane, select the user pool you created in the preceding st
     4. In the **OpenID Connect scopes** list, select **OpenID**, **Email**, and **Profile** options.
     5. Click **Save changes**.
 
-## Configure Appsmith to use Cognito SSO
+## Setup Cognito SSO on Appsmith
 
 On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, click **Enable** and follow the steps below:
 
