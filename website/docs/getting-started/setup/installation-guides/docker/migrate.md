@@ -146,7 +146,7 @@ sudo cp -rfv "$old_path"/data/certbot/conf/* "$new_path"/stacks/letsencrypt
 
 ## 5. Setup new Appsmith with Fat container
 
-Let's bring down the old instance in-full now:
+Let's bring down the old instance in full now:
 
 ```
 docker-compose --file "$old_path"/docker-compose.yml down
@@ -156,7 +156,7 @@ Follow the official guide to start with a new Appsmith deployment at [Docker  Co
 
 ```
 cd "$new_path"
-curl -L https://bit.ly/32jBNin -o docker-compose.yml
+curl -L https://bit.ly/docker-compose-ce -o docker-compose.yml
 docker-compose up -d
 ```
 
