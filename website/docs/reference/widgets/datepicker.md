@@ -1,56 +1,64 @@
-# Date Picker
+# Datepicker
 
-This document explains how to use a Datepicker widget to capture date and time input from users.
+This page explains how to use the Datepicker widget to display or capture date and time information. It can be used to filter data based on a date range, format date and time and to perform min and max date validations. 
 
-<VideoEmbed host="youtube" videoId="MFflGf3K324" title="Configure Datepicker Widget" caption="Configure Datepicker Widget"/>
+<VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
 
+## Set date and time
+When working with the Datepicker widget, you may want to set a default date value to be displayed to the user.
 
-## Set default date
-When working with a Datepicker widget, you may want to set a default date value to be displayed to the user before they select anything. This can be useful for providing context or a starting point for the user.
-
-To set a default date, you can use the **Default Date** property. You can set this property to any valid date format that the widget supports. 
+To set the date and time, you can use the **Default Date** property. You can set this property to any valid date format that the widget supports. 
 
 ### Date format
-Appsmith provides several date formats that you can choose from, such as:
-
-* ISO 8601
-* LLL
-* LL
-* YYYY-MM-DD HH:mm
-* YYYY-MM-DDTHH:mm:ss
-* YYYY-MM-DD hh:mm:ss A
-* DD/MM/YYYY HH:mm
-* D MMMM, YYYY
-* H:mm A D MMMM, YYYY
-* YYYY-MM-DD
-* MM-DD-YYYY
-* DD-MM-YYYY
-* MM/DD/YYYY
-* DD/MM/YYYY
-* DD/MM/YY
+Appsmith provides several date formats that you can choose from in the **Date Format** property, such as **ISO 8601**, **LLL**, and **DD/MM/YY**, among others.
 
 
-If you need more advanced date formatting options, you can use the [**Moment.js**](https://momentjs.com/docs/) library which is installed by default in Appsmith. Moment.js is a JavaScript library for parsing, validating, manipulating, and formatting dates. With Moment.js, you can define your own custom date formats using a simple syntax.
+If you need more advanced date formatting options, you can use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith. With Moment.js, you can define your own custom date formats using JavaScript.
 
-To use Moment.js with Appsmith, you can simply write JavaScript code in the widget's **Date Format** property. For example, you can use the following code to set the default date value to **today's date** in a specific format:
+To use Moment.js with Appsmith, you can enter the desired format string directly into the **Date Format** property without using any curly braces or JavaScript code. 
 
-```JS
-{{moment().format('YYYY-MM-DD')}}
+For example, you can use `LLL` to display a date in a format such as `MMM D, YYYY h:mm A`, or `YYYY-MM` to display the year and month only.
+
+```js
+//Moment.js format examples
+
+{{moment().format('YYYY-MM-DD')}}   // Displays current date.
+{{moment().add(1, 'day').format('YYYY-MM-DD')}}   //Adds one day.
+{{moment().subtract(2, 'days').format('YYYY-MM-DD')}}  //Subtracts two days.
+{{moment().startOf('day').format('YYYY-MM-DD')}}   //Sets to start of day.
+{{moment().endOf('day').format('YYYY-MM-DD')}}    //Sets to end of day.
+{{moment().fromNow().format('YYYY-MM-DD')}}           // "7 years ago"
+
 ```
 
-This code uses the `moment()` function to get the current date and then formats it using the `format()` method with the desired [format string](https://momentjs.com/docs/#/parsing/string-format/).
 
 
-## Display date dynamically
+### Set date in a timezone
 
-You can display the date dynamically based on user interaction or by fetching the date from a query response.
+When working with dates and time, you may want to display them in a specific time zone. You can achieve this using Moment.js and the `moment-timezone` library. 
+
+---
+**Example**: suppose you want to convert the selected date and time to the IST time zone (Asia/Kolkata), you can use the following code in a query or widget binding:
+
+```js
+{{
+  moment(DatePicker.selectedDate).tz("Asia/Kolkata").format()
+}}
+```
+
+This code creates a `Moment.js` object from the `DatePicker.selectedDate` property, sets the time zone to `"Asia/Kolkata"` using the `tz()` function, and formats the resulting date and time using the default format. To learn more, refer to [MomentJS timezone documentation](https://momentjs.com/timezone/docs/).
+
+
+### Display date dynamically
+
+To display the date dynamically based on user interaction or query response, you need to provide data in the **Default date** property.
 
 
 ---
 
-**Example**: suppose you want to display the date of birth of users in the [mock database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases).
+**Example**: suppose you want a master-detail form that shows date of birth of users when you select a row in a table. Suppose you have fetched data from the [mock database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) using a SELECT query `fetchUserData`. 
 
-You can fetch the users data from the database using a query like `fetchUserData`. You can then bind the query response to the **Table Data** property of the Table widget `tblUserData` to display the fetched data:
+You can display the fetched data by binding the query response to the Table Data property of the **Table widget** `tblUserData`, as shown below:
 
 ```js
 {{fetchUserData.data}}
@@ -66,9 +74,9 @@ Now, to display the date of birth of each user in the Datepicker widget when a r
 
 ## Access selected date
 
-To access the date selected by the user in a Datepicker widget, you can use the `formattedDate` or `selectedDate` binding property in your widget bindings or JavaScript functions.
+To access the date selected by the user in a Datepicker widget, you can use the `formattedDate` or `selectedDate` reference property in your widget bindings or JavaScript functions.
 
-* The **`formattedDate`** property contains the formatted date value currently selected within the Datepicker widget. This value changes if the default value is updated or if the user inputs a new value. The format of the date depends on the `dateFormat` property that's set for the widget.
+* The **`formattedDate`** property contains the formatted date value currently selected within the Datepicker widget. This value changes if the default value is updated or if the user inputs a new value. The format of the date depends on the **Date Format** property that's set for the widget.
 * The **`selectedDate`** property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or if the user inputs a new value. The date is represented in the following format: YYYY-MM-DDTHH:mm:ss.sssZ, where Z represents the time zone offset from UTC.
 ---
 **Example**: lets take the same users example, if you want to update the date of birth, you can create a new query called `updateDob` with an SQL statement like:
@@ -78,14 +86,15 @@ UPDATE users
   SET dob = '{{DatePicker.formattedDate}}'
   WHERE id = {{tblUserData.selectedRow.id}};
 ```
-Then, set the `onDateSelected` property of the Datepicker widget to run the`updateDob` query. 
 
+Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
 
-### Retrieve data for a range
+### Filter data for a date range
 
 Retrieving data for a specific date involves using a query to retrieve data that falls within a specified date range.
 
-For example, suppose you want to allows users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/201`. To accomplish this, you can add two date pickers to your canvas. Then, create a new query called `filterdata` with the SQL statement:
+---
+**Example**: suppose you want to allows users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/201`. To accomplish this, you can add two date pickers to your canvas. Then, create a new query called `filterdata` with the SQL statement:
 
 ```sql
 SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePicker2.selectedDate}} ORDER BY id;
@@ -94,9 +103,6 @@ SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePic
 This query retrieves data based on the user-selected date range. Next, you can bind the `onDateSelected` event to run the `filterdata` query for both Datepickers.
 
 
-## Set min and max date limit
-
-To set a minimum and maximum date limit for the date pickers, you can make use of the **Min Date** and **Max Date** properties. These properties allow you to set the minimum and maximum selectable dates for the date pickers. Once you set these limits, only the dates that fall within the specified range would be displayed and selectable.
 
 
 ## Properties
@@ -112,20 +118,21 @@ These properties are present in the property pane of the widget. The following t
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Default Date**    | String   | Sets a default date that would be captured as user input unless it's changed by the user.	|
-| **Date Format**    | String    | The format of the date selected by the date picker.	                                |
+| **Date Format**    | ISO 8601 date string    | The format of the date selected by the date picker.	                                |
 | **Time Precision**  | String   | Decides whether a time is included within the Datepicker, and whether that time is to minute or second precision. With JS enabled, values may be `None`, `minute`, or `second`.                                                                                                                                                                                                                                                                                                                                |
-| **Required**      | String     | Sets whether the checkbox is a mandatory field.	                                                                                                                                                                                                                                                                                                                            |
-| **Visible**       | String     | Controls widget's visibility on the page.	                                                                                                                                                                                                                                                                                                                                                                 |
-| **Disabled**       | String    | Disables input to the widget.	                                                                                                                                                                                                                                                                                                                                                                        |
+| **Required**      | Boolean     | Sets whether the checkbox is a mandatory field.	                                                                                                                                                                                                                                                                                                                            |
+| **Visible**       | Boolean     | Controls widget's visibility on the page.	                                                                                                                                                                                                                                                                                                                                                                 |
+| **Disabled**       | Boolean    | Disables input to the widget.	                                                                                                                                                                                                                                                                                                                                                                        |
 | **Tooltip**          | String              	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
-| **Animate Loading** | String   | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                                                                                                                                                                                                                                                                         |
-| **Close On Selection** | String | Sets whether the Datepicker menu would automatically close when the user clicks on a date.	                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Show Shortcuts**  | String   | Toggles an additional part of the Datepicker menu that allows the user to select from options such as `Today`, `1 week ago`, etc.                                                                                                                                                                                                                                                                                                                                                                      |
-| **Min Date**        | String   | Sets a minimum/earliest date allowed to be selected with the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Max Date**        | String   | Sets a maximum/latest date allowed to be selected with the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **First Day Of Week**  | String| Sets which day of the week appears first within the calendar of the Datepicker's menu.	                                                                                                                                                                                                                                                                               |
+| **Animate Loading** | Boolean   | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                                                                                                                                                                                                                                                                                                         |
+| **Close On Selection** | Boolean | Sets whether the Datepicker menu would automatically close when the user clicks on a date.	                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Show Shortcuts**  | Boolean   | Toggles an additional part of the Datepicker menu that allows the user to select from options such as `Today`, `1 week ago`, etc.                                                                                                                                                                                                                                                                                                                                                                      |
+| **Min Date**        | ISO 8601 date string   | Sets a minimum/earliest date allowed to be selected with the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Max Date**        | ISO 8601 date string   | Sets a maximum/latest date allowed to be selected with the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **First Day Of Week**  | Number| Sets which day of the week appears first within the calendar of the Datepicker's menu.	                                                                                                                                                                                                                                                                               |
 | **Height**    | String   | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-
+| **Text**  | String| This property sets the default text of the Datepicker.                                                                                                                                                                                                                                                                               |
+| **Position**    | String   | It allows you to specify the placement of the label.                                     |
 
 ### Reference properties
 
@@ -165,4 +172,13 @@ These are functions that are called when event listeners are triggered in the wi
 | **onDateSelected** | Triggers an action when a user selects a date.  |
 | **onFocus** | Triggers an action when a Datepicker widget is focused. |
 | **onBlur** | Triggers an action when a Datepicker widget loses focus. |
+
+## Sample apps
+
+* [Set Min and Max Date](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af) -  Allows users to select a date within a specified range.
+* [Date Formatting](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6228975df782567d61f15158) - Demonstrates different date formatting options using Moment.js.
+* [Date Calculations](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9) - Calculates the time difference between two dates using Moment.js.
+* [Set and Clear Date](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6256e5e40d3d384069c07baa) - Lets users set or clear a selected date using a button.
+* [Filter Data Between Dates](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c) - Filters data based on a selected date range.
+
 
