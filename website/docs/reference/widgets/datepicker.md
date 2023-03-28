@@ -19,18 +19,6 @@ To use Moment.js with Appsmith, you can enter the desired format string directly
 
 For example, you can use `LLL` to display a date in a format such as `MMM D, YYYY h:mm A`, or `YYYY-MM` to display the year and month only.
 
-```js
-//Moment.js format examples
-
-{{moment().format('YYYY-MM-DD')}}   // Displays current date.
-{{moment().add(1, 'day').format('YYYY-MM-DD')}}   //Adds one day.
-{{moment().subtract(2, 'days').format('YYYY-MM-DD')}}  //Subtracts two days.
-{{moment().startOf('day').format('YYYY-MM-DD')}}   //Sets to start of day.
-{{moment().endOf('day').format('YYYY-MM-DD')}}    //Sets to end of day.
-{{moment().fromNow().format('YYYY-MM-DD')}}           // "7 years ago"
-
-```
-
 
 
 ### Set date in a timezone
@@ -91,10 +79,10 @@ Then, set the `onDateSelected` event listener of the Datepicker widget to run th
 
 ### Filter data for a date range
 
-Retrieving data for a specific date involves using a query to retrieve data that falls within a specified date range.
+To obtain data within a specific timeframe, it's necessary to filter the data by setting a date range using a query. 
 
 ---
-**Example**: suppose you want to allows users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/201`. To accomplish this, you can add two date pickers to your canvas. Then, create a new query called `filterdata` with the SQL statement:
+**Example**: suppose you want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/201`. To accomplish this, you can add two date pickers to your canvas. Then, create a new query called `filterdata` with the SQL statement:
 
 ```sql
 SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePicker2.selectedDate}} ORDER BY id;
