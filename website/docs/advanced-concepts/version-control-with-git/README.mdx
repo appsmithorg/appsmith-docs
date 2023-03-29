@@ -1,0 +1,102 @@
+---
+sidebar_position: 5
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Version Control With Git
+
+Version Control with Git allows you to version control your apps by connecting them with a Git hosting provider (Github, GitLab, Bitbucket), making it easier to track changes, create rollbacks or collaborate using git branches.
+
+:::info
+In the community edition, You can connect up to **three** private repositories in a workspace. If you wish to connect more, you can upgrade to the [**business** edition](https://www.appsmith.com/pricing). However, you can connect **unlimited** public repositories.
+:::
+
+<VideoEmbed host="youtube" videoId="emdZaG-tzgw" title="Version Control with Git " caption="Version Control with Git "/>
+
+Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+
+## Connect to a Git repository
+
+The first step to use Version control in Appsmith is to connect your remote repository with the app. Please follow the steps given below:
+
+### Create a new repository
+
+Create a new repository on your git service and copy the `SSH` URL. The repository should be empty except `README.md`, `.gitignore`, and `LICENSE` files (These can be auto-created when you create a new repository.)
+
+### Generate a deploy key
+
+1. Open the app you want to connect to git and click on the `Connect GIT` button on the bottom bar.
+2. In the Git connection window, paste your repository’s `SSH` URL and click on `Generate key` to generate an `SSH` key.
+
+
+
+ <VideoEmbed host="youtube" videoId="oFfdIwhSPL8" title="Generating a Deploy key" caption="Generating a Deploy key"/>
+
+Appsmith supports two types of keys -  **ECDSA 256** and **RSA 4096**. Please pick the one that's compatible with your Git hosting service. 
+
+### Adding the deploy key in the Repository
+
+Copy the generated deploy key and add it to your repository. Please note that you have to **enable write access** for pushing the changes to the remote repository from Appsmith.
+
+<Tabs queryString="current-edition">
+<TabItem label="GitHub" value="github">
+
+* Open the settings of the repository and go to deploy keys.
+* Click **Add deploy key**. Add a title for the key and paste the generated key into the key section.
+* Check the **Allow write access** checkbox and add the key.
+
+  <VideoEmbed host="youtube" videoId="4xMHO4G2hEA" title="Adding the deploy key in the Repository | Github" caption="Adding the deploy key in the Repository | Github"/>
+
+</TabItem>
+<TabItem label="Gitlab" value="gitlab">
+
+* Open the Settings> Repository and expand the deploy keys section.
+* Click **Add key** Add the title and paste the generated key in the key section.
+* Check the **Grant write permissions**" to this key and add the key.
+
+ <VideoEmbed host="youtube" videoId="9aaiE6OERW0" title="Adding the deploy key in the Repository | Gitlab" caption="Adding the deploy key in the Repository | Gitlab"/>
+
+</TabItem>
+<TabItem label="Bitbucket" value="bitbucket">
+
+* Open **Personal settings** from the bottom right corner and go to **SSH keys**.
+* Click **Add key**, add the label and paste the generated key in the key section.
+
+ <VideoEmbed host="youtube" videoId="A8ZOvW1CVIk" title="Adding the deploy key in the Repository | Bitbucket" caption="Adding the deploy key in the Repository | Bitbucket"/>
+
+</TabItem>
+</Tabs>
+
+:::info
+**AWS CodeCommit** isn't supported as a source control repository due to their lack of support for deploy keys.
+:::
+
+### User configurations
+
+* In user settings, define the user configurations. By default, the global user configurations are used. Click the **Edit** button or directly open the profile section to change the global configurations. If you want to add a user configuration specific to the current app, you must clear the **use default configuration** checkbox and enter the author details below.
+
+ <VideoEmbed host="youtube" videoId="d5R1MYKtpCM" title="User Settings | Git Sync" caption="User Settings | Git Sync"/>
+
+Finally, click on **connect**, and when the connection is successful, your repository will have a `README.md` file. On the Git window, you’ll move to the **Deploy** section, where you can make an initial commit.
+
+<VideoEmbed host="youtube" videoId="Z67SfBpKrnk" title="Initial Commit | Git Sync" caption="Initial Commit | Git Sync"/>
+
+## Updating local file path (optional)
+
+Appsmith clones the git repositories in the local filesystem, attached to the persistent volume within the docker container. To maintain the git repositories, you need a file path that points to the volume within the docker container. You can achieve this by just updating the relevant environment variable.
+
+#### Custom Git root
+
+To point to a custom Git Root where the git repositories is persisted, update the `env` variable called `APPSMITH_GIT_ROOT` to point to your custom file path.
+
+```
+APPSMITH_GIT_ROOT=./path/to/repo/directory 
+```
+
+Please remember to restart the container to apply changes.
+
+
+:::info
+If the file path isn't present, git repositories will be cloned, but this won't be persistent, and Appsmith will try to clone the repositories in case they got deleted by docker restart, etc.
+:::
