@@ -259,6 +259,7 @@ CSV
 FilePicker
 isDirty
 drag and drop
+uncomment
 Boolean
 scrollable
 sourceData
@@ -270,3 +271,6 @@ chartData
 dataSource
 What is
 Datepicker
+Cognito
+cognito
+
