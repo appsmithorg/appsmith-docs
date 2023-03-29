@@ -96,13 +96,13 @@ The mustache template `{{}}` is used to write JS inside widgets and queries.
 
 * Similarly, to display information from a selected row on the table, refer below to bind the corresponding data to the widgets inside the Container.
 
-| Widget | Name       | Property                                          | Value                              |
-| ------ | ---------- | ------------------------------------------------- | ---------------------------------- |
-| Image  | -          | Image                                             | ```{{usersTable.selectedRow.image}}``` |
-| Name   | `nameInput`  | Default Text                                      | ```{{usersTable.selectedRow.name}}```  |
-| Email  | `emailInput` | Default Text                                      | ```{{usersTable.selectedRow.email}}``` |
-| DOB    | `dobInput`   | Default Date                                      | ```{{usersTable.selectedRow.dob}}``` |
-| Phone  | `phoneInput` | Default Text                                      | ```{{usersTable.selectedRow.phone}}``` |
+  | Widget | Name       | Property                                          | Value                              |
+  | ------ | ---------- | ------------------------------------------------- | ---------------------------------- |
+  | Image  | -          | Image                                             | ```{{usersTable.selectedRow.image}}``` |
+  | Name   | `nameInput`  | Default Text                                      | ```{{usersTable.selectedRow.name}}```  |
+  | Email  | `emailInput` | Default Text                                      | ```{{usersTable.selectedRow.email}}``` |
+  | DOB    | `dobInput`   | Default Date                                      | ```{{usersTable.selectedRow.dob}}``` |
+  | Phone  | `phoneInput` | Default Text                                      | ```{{usersTable.selectedRow.phone}}``` |
 
 :::tip
 Turn on the **JS** toggle to bind data for the **Default Date** property
