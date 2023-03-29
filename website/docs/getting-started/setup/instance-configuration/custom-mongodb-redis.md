@@ -3,10 +3,12 @@ sidebar_position: 3
 ---
 # Custom MongoDB & Redis
 
-Appsmith runs it's own instances of MongoDB database for storing all application data, and Redis for storing session information. It's easy to switch to externally running instances of these services, by just changing the relevant environment variables.
+Appsmith runs its instances of MongoDB database for storing all application data, and Redis for storing session information. It's easy to switch to externally running instances of these services, by just changing the relevant environment variables.
 
-:::info Important
-If you are currently using an older version of MongoDB, it's important to upgrade to version 5.0 before connecting Appsmith to an external MongoDB instance. For more information, follow the steps detailed on MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+:::caution Attention
+To use a custom MongoDB with Appsmith v1.9.0 and later, note that it needs to be upgraded to version 5 for compatibility. To upgrade, migrate your MongoDB server to use MongoDB v5 on compliant hardware. See the list of [suggested platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support). Follow the steps detailed in the MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+
+If you can't upgrade, then downgrade your Appsmith instance to v1.8.15 and continue using it until you are ready to upgrade to MongoDB v5. See the [Downgrade from a checkpoint version](/getting-started/setup/instance-management#downgrade-from-a-checkpoint-version) section.
 :::
 
 ## Custom MongoDB
