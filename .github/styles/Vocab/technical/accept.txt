@@ -271,4 +271,5 @@ chartData
 dataSource
 Cognito
 cognito
-
+iFrame
+messageMetadata
