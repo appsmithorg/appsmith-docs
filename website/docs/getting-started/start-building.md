@@ -5,7 +5,7 @@ slug: /getting-started/start-building
 ---
 # Build Your First App
 
-In this Quickstart guide, learn to:
+In this quickstart guide, learn to:
 
 * Create a new application
 * Connect to a database
@@ -18,14 +18,14 @@ In this Quickstart guide, learn to:
 
 Before you begin, you'll need to create an account on [Appsmith Cloud](https://app.appsmith.com/), or you can [self-host Appsmith](/getting-started/setup) locally or on a hosting platform of your choice.
 
-## Create a new application
+## Create new application
 
 * When creating a new [Appsmith account](https://app.appsmith.com/), an application titled `My first application` is automatically added on the **Apps** tab under a default workspace on the **Workspaces** pane. You can use this application to build your first app or create a new one by clicking on the **+ New** button under the workspace.
 * For this tutorial, use the default application. Hover over the card titled `My first application` and click the **Edit** button to open the application.
 
 <figure>
-  <img src="/img/create-new-app.png" style= {{width:"100%", height:"auto"}} alt="Creating a new application on Appsmith"/>
-  <figcaption align = "center"><i>Creating a new application on Appsmith</i></figcaption>
+  <img src="/img/create-new-app.png" style= {{width:"100%", height:"auto"}} alt="Create a new application on Appsmith"/>
+  <figcaption align = "center"><i>Create a new application on Appsmith</i></figcaption>
 </figure>
 
 
@@ -40,8 +40,8 @@ For this guide, use the mock PostgreSQL database named `users` available on Apps
 * The '**users**' database gets added under **Explorer** > **Datasources**.
 
 <figure>
-  <img src="/img/Add_Datasource.png" style= {{width:"100%", height:"auto"}} alt="Creating a new datasource"/>
-  <figcaption align = "center"><i>Creating a new datasource</i></figcaption>
+  <img src="/img/Add_Datasource.png" style= {{width:"100%", height:"auto"}} alt="Connect to a datasource"/>
+  <figcaption align = "center"><i>Connect to a datasource</i></figcaption>
 </figure>
 
 ## Build UI
