@@ -1,10 +1,10 @@
 ---
-description: >-
- You'll learn about common JS errors and how to resolve them on Appsmith.
+sidebar_position: 6
+description: You'll learn about common JS errors and how to resolve them on Appsmith.
 ---
 
 
-# JS Errors
+# JavaScript Errors
 Errors may be encountered when using [JS Objects](/core-concepts/writing-code/javascript-editor-beta) or writing [JS functions](/core-concepts/writing-code/javascript-editor-beta/#types-of-js-functions). They can be caused by syntax errors in the code, data type mismatch, or attempts to access properties or functions that don't exist.
 
 

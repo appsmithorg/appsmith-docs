@@ -3,32 +3,58 @@ sidebar_position: 2
 ---
 # REST API Errors
 
-![Click to expand](/img/api_error.png)
+<figure>
+  <img src="/img/api-execution-error.png" alt="API execution error"/>
+  <figcaption align = "center"><i>API execution error</i></figcaption>
+</figure>
 
-### Missing URL Error
+|  <div style= {{width:"120px"}}> Error Code </div> | <div style= {{width:"230px"}}> Title </div>|  Message                              |
+| -------------    | ----------                     | ------------------------------------- |
+| PE-ARG-5000      | Query configuration is invalid | URI is invalid. Please rectify the URI and try again      |
+| PE-ARG-5000      | Query configuration is invalid | Invalid value for Content-Type  |
+| PE-ARG-5000      | Query configuration is invalid | HTTPMethod must be set |
+| PE-RST-5000      | Query configuration is invalid | An error occurred during the execution of your API. Please check the error logs for more details.|
+| PE-JSN-4000      | Query configuration is invalid | Plugin failed to parse JSON "{0}" |
+| PE-PLG-5000      | Query configuration is invalid | {0} |
 
-```
-DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: \n[Missing URL.]
-```
 
-This message indicates that the REST API's URL field in the [API editor form](../../../core-concepts/connecting-to-data-sources/authentication/) has been left empty.
+### Missing URL
 
-This error can be fixed by editing the [REST API form ](../../../core-concepts/connecting-to-data-sources/authentication/)and providing a URL.
+##### Error
+<Message
+messageContainerClassName="error"
+messageContent="DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: [Missing URL.]"></Message>
 
-### Missing Client Secret / Client ID / Access Token Error
+##### Cause
+This message indicates that the REST API's [URL](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#url) field in the API editor has been left empty.
 
-```
-DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: \n[Missing Client Secret, Missing Client ID, Missing Access Token URL]
-```
+##### Solution
+This error can be fixed by providing a URL.
 
-This message indicates that the mentioned parameter fields - `Client Secret` / `Client ID` / `Access Token URL` have been left empty. These fields are nested in the `Authentication` sub-section which becomes visible if the `Authentication Type` field has been chosen as [OAuth 2.0](../../../core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/)
 
-### Secret Key Required Error
+### Missing Client Secret, Client ID, Access Token URL
 
-```
-Secret key is required when sending session details is switched on, and should be at least 32 characters in length.
-```
+##### Error
+<Message
+messageContainerClassName="error"
+messageContent="DEFAULT_REST_DATASOURCE is not correctly configured. Please fix the following and then re-run: [Missing Client Secret, Missing Client ID, Missing Access Token URL]"></Message>
 
-This message indicates that `Send Appsmith signature header` field has been marked as `Yes` but the `Session Details Signature Key` field is left empty.
+##### Cause
+This message indicates that the mentioned parameter fields - *Client Secret` , `Client ID` and `Access Token URL` have been left empty. These fields are available when you select **OAuth 2.0** option in the **Authentication Type** list. 
 
-This error can be resolved by filling in the `Session Details Signature Key` field or by disabling the `Send Appsmith signature header` field by selecting `No`.
+##### Solution
+This error can be fixed by providing the Client secret, Client ID and the Access Token URL.
+
+### Secret key required
+
+##### Error
+<Message
+messageContainerClassName="error"
+messageContent="Secret key is required when sending session details is switched on, and should be at least 32 characters in length."></Message>
+
+##### Cause
+
+This message indicates that you have select **Yes** in the **Send Appsmith signature header** list but the **Session Details Signature Key** field is empty.
+
+##### Solution
+This error can be resolved by filling in the **Session Details Signature Key** field or by selecting **No** option in the **Send Appsmith signature header** field.

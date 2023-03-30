@@ -1,3 +1,8 @@
+---
+sidebar_position: 5
+description: Troubleshoot the issues with your Appsmith applications. This page includes a list of common errors, causes, and solutions to help you resolve application issues.
+---
+
 # Widget Errors
 
 This section helps you troubleshoot common widget errors on the Appsmith platform.

@@ -74,3 +74,6 @@ exceptions:
   - Let's 
   - Encrypt
   - TLS
+  - Client ID
+  - Client Secret
+  - Access Token URL
