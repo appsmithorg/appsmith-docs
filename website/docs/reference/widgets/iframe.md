@@ -77,8 +77,8 @@ Suppose you are building an app that has an Iframe widget embedding an external 
 
 To send data from Appsmith to an embedded page, you can use the `postMessage()` method in Javascript. This method allows you to send messages between different windows or frames in a web page. When the embedded page receives the message, it can perform actions based on its content. 
 
----
 ![](/img/postmessage_child_incoming.png)
+---
 
 **Example**:  suppose you want to send a message to an embedded page. To achieve this, you need to insert the following code into the **srcDoc** property:
 
@@ -128,11 +128,6 @@ Now, to display this message, you can use query or widget bindings. For instance
 
 Additionally, you can use the [**onMessageReceived**](#events) event to specify the action to be taken when a `postMessage()` event is received from the embedded page.
 
-<figure>
-  <img src="/img/to-iframe.gif" style= {{width:"700px", height:"auto"}} alt="Display HTML components"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
 
 
 ## Properties
@@ -161,7 +156,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **isVisible**  | Boolean  | This property indicates whether the widget is visible or not.                                                                                                                                                                                         |
 | **message**    | String  | Contains a message received from the embedded page via the JS [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method. It may be of _any_ type. The property is `undefined` before a message is received. |
 | **messageMetadata**    | String  | 	Contains metadata associated with the message received from the embedded page via the JavaScript `postMessage()` method.  |
-| **source**    | String   | Contains the URL of the embedded page _(string)._ Doesn't reflect the content set in the `srcDoc` property.                                                                                                                                                                                                      |
+| **source**    | String   | Contains the URL of the embedded page. Doesn't reflect the content set in the `srcDoc` property.                                                                                                                                                                                                      |
 | **title**     | String   | Contains the title of the Iframe as set in the widget's Title property._                                                                                                                                                                                                                                                           |
 
 ### Style properties
