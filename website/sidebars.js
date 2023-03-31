@@ -648,6 +648,7 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/redis-errors',
             'help-and-support/troubleshooting-guide/action-errors/redshift-errors',
             'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
+            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors2',
             'help-and-support/troubleshooting-guide/action-errors/snowflake-errors',
             'help-and-support/troubleshooting-guide/action-errors/smtp-errors',
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',

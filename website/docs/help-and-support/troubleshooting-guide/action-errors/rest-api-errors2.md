@@ -4,23 +4,20 @@ sidebar_position: 2
 # REST API Errors
 
 
-|  <div style= {{width:"120px"}}> Error Code </div> | <div style= {{width:"230px"}}> Error Title </div>|  Error Message                              |
+|  <div style= {{width:"120px"}}> Error Code </div> | <div style= {{width:"230px"}}> Error Type </div>|  Explanation                              |
 | -------------    | ----------                     | ------------------------------------- |
-| [PE-ARG-5000](#error)   | Query configuration is invalid | Invalid value for URI.      |
-| [PE-ARG-5000](#error-1) | Query configuration is invalid | Invalid value for Content-Type.  |
-| [PE-ARG-5000](#error-2) | Query configuration is invalid | HTTPMethod must be set. |
-| [PE-RST-5000](#error-3) | API execution error             | The Appsmith server received an error response from your API.|
-| [PE-JSN-4000](#error-4) | Invalid JSON found             | Plugin failed to parse JSON "{0}" |
-| [PE-PLG-5000](#error-5) | Query execution error             | Your API failed to execute.  |
+| [PE-ARG-5000](#pe-arg-5000)       | ACTION_CONFIGURATION_ERROR |       |
+| [PE-RST-5000](#pe-rst-5000)      | INTERNAL_ERROR             | |
+| [PE-JSN-4000](#pe-jsn-4000)      | INTERNAL_ERROR             |  |
+| [PE-PLG-5000](#pe-plg-5000)      | INTERNAL_ERROR             |  |
 
 
-### Query configuration is invalid
-Explain the error message here
+## PE-ARG-5000
 
 ##### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-ARG-5000] Invalid value for URI."></Message>
+messageContent="Invalid value for URI."></Message>
 
 ##### Cause
 Provide background information or context that gives the user additional insight into the problem.
@@ -32,7 +29,7 @@ Provide an ordered list of steps to guide users through the solution.
 ##### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-ARG-5000] Invalid value for Content-Type."></Message>
+messageContent="Invalid value for Content-Type."></Message>
 
 ##### Cause
 Provide background information or context that gives the user additional insight into the problem.
@@ -44,7 +41,7 @@ Provide an ordered list of steps to guide users through the solution.
 ##### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-ARG-5000] HTTPMethod must be set."></Message>
+messageContent="HTTPMethod must be set."></Message>
 
 ##### Cause
 Provide background information or context that gives the user additional insight into the problem.
@@ -53,13 +50,12 @@ Provide background information or context that gives the user additional insight
 ##### Solution
 Provide an ordered list of steps to guide users through the solution.
 
-### API execution error
-Explain the error message here
+## PE-RST-5000
 
 ##### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-RST-5000] The Appsmith server received an error response from your API."></Message>
+messageContent="The Appsmith server received an error response from your API."></Message>
 
 ##### Cause
 Provide background information or context that gives the user additional insight into the problem.
@@ -69,13 +65,12 @@ Provide background information or context that gives the user additional insight
 Provide an ordered list of steps to guide users through the solution.
 
 
-### Invalid JSON found
-Explain the error message here
+## PE-JSN-4000
 
 ##### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-JSN-4000] Plugin failed to parse JSON {0}"></Message>
+messageContent="Plugin failed to parse JSON {0}"></Message>
 
 ##### Cause
 Provide background information or context that gives the user additional insight into the problem.
@@ -84,13 +79,12 @@ Provide background information or context that gives the user additional insight
 ##### Solution
 Provide an ordered list of steps to guide users through the solution.
 
-### Query execution error
-Explain the error message here
+## PE-PLG-5000
 
 ##### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-PLG-5000] Your API failed to execute."></Message>
+messageContent="Your API failed to execute."></Message>
 
 ##### Cause
 Provide background information or context that gives the user additional insight into the problem.
