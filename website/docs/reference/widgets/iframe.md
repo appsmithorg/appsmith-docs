@@ -2,7 +2,7 @@
 # Iframe
 
 
-This page explains how to use the iFrame widget to embed external content, such as apps, websites, or custom widgets, into your Appsmith application. This allows you to display and interact with external content within your Appsmith app. 
+This page explains how to use the Iframe widget to embed third-party applications, and websites into your Appsmith application.
 
 <VideoEmbed host="youtube" videoId="4jXTyxUhnP0" title="Using the Iframe widget" caption="Using the Iframe widget"/>
 
