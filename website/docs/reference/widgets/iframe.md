@@ -37,7 +37,7 @@ To display HTML and CSS content in your Appsmith app, you can use the **srcDoc**
 
 In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
 
-## Custom widget
+## Display custom widgets
 
 Appsmith offers a wide range of widgets for building applications, but sometimes you may need to use a custom widget to add specific capability or visual elements. In such cases, you can use the **srcDoc** property of the iFrame widget to display a custom widget inside your Appsmith app.
 
