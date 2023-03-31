@@ -1,6 +1,6 @@
 # Datepicker
 
-This page explains how to use the Datepicker widget to display or capture date and time information. It can be used to filter data based on a date range, format date and time and to perform min and max date validations. 
+This page explains how to use the Datepicker widget to display or capture date and time information. It can be used to filter data based on a date range, format date and perform date validations. 
 
 <VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
 
