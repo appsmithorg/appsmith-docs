@@ -12,7 +12,7 @@ To set the date and time, you can use the **Default Date** property. You can set
 Appsmith provides several date formats that you can choose from in the **Date Format** property.
 
 
-If you need more advanced date formatting options, you can use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith. With Moment.js, you can define your own custom date formats using JavaScript.
+You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
 
 To use Moment.js with Appsmith, you can enter the desired format string directly into the **Date Format** property without using any curly braces or JavaScript code. 
 
