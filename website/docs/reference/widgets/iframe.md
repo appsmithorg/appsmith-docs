@@ -27,7 +27,7 @@ To display a website or third-party application within your Appsmith app, you ca
 
 ## Display HTML and CSS 
 
-To display HTML components within your Appsmith app, you can utilize the **srcDoc** property of the iframe widget. This allows you to add HTML code and CSS within `<style>` tags.
+To display HTML and CSS content in your Appsmith app, you can use the **srcDoc** property.
 
 
 <figure>
