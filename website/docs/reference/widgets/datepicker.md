@@ -9,7 +9,7 @@ This page explains how to use the Datepicker widget to display or capture date a
 To set the date and time, you can use the **Default Date** property. You can set this property to any valid date format that the widget supports. 
 
 ### Format dates
-Appsmith provides several date formats that you can choose from in the **Date Format** property, such as **ISO 8601**, **LLL**, and **DD/MM/YY**, among others.
+Appsmith provides several date formats that you can choose from in the **Date Format** property.
 
 
 If you need more advanced date formatting options, you can use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith. With Moment.js, you can define your own custom date formats using JavaScript.
