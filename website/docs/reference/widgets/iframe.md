@@ -150,7 +150,7 @@ These properties are present in the property pane of the widget. The following t
 | **URL**          | URL   | Sets the URL of the page to load within the iframe.                                                                                                                                                    |
 | **srcDoc**        | String  | Provide HTML (and CSS within `<style>` tags) to render within the Iframe instead of using a URL. When this property has a value, the widget's **URL** property is ignored.                         |
 | **Title**         | String  | Sets a title for the Iframe content.                                |
-| **Animate Loading** | Boolean | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
+| **Animate Loading** | Boolean | When this toggle is switched on, it enables a skeleton loading screen, which sets an animated placeholder while the widget is loading and becomes visible. You can also control this toggle using JavaScript code by clicking the **JS** button |
 
 ### Reference properties
 
