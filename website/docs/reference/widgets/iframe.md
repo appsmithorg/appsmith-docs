@@ -135,23 +135,7 @@ In addition, you can utilize the [**onMessageReceived**](#events) event to speci
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
-## Reload the content
-If you're using an Iframe to display external content, such as a website or web application, you may want to reload the content periodically to keep it up-to-date. You can use JavaScript to programmatically reload the content of an iFrame after a set amount of time.
 
----
-**Example**: if you want to reload the content of an Iframe after 5 minutes, you can use the following code:
-
-```html
- <script>
-      // Reload the iFrame after 5 minutes (300000 milliseconds)
-      setTimeout(function() {
-        const myIframe = document.getElementById("myIframe");
-        myIframe.contentWindow.location.reload();
-      }, 300000);
-    </script>
-```
-
-In this example, the `setTimeout()` method is used to trigger the reload of the Iframe after 5 minutes (300000 milliseconds). The first argument of `setTimeout()` is a function that gets executed after the specified time has elapsed.
 
 ## Properties
 
