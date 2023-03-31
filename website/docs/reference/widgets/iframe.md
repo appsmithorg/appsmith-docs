@@ -31,7 +31,7 @@ To display HTML and CSS content in your Appsmith app, you can use the **srcDoc**
 
 
 <figure>
-  <img src="/img/iframe-html.png" style= {{width:"700px", height:"auto"}} alt="Display HTML components"/>
+  <img src="/img/html-iframe-1.png" style= {{width:"700px", height:"auto"}} alt="Display HTML components"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ Appsmith offers a wide range of widgets for building applications, but sometimes
 
 
 ---
-**Example**: to add a custom time picker widget to your application, you can use the `select` element for each component of the time (hour, minute, AM/PM) and a `button` to submit the selected time. Once you have the HTML and CSS for the time picker widget, you can add the following JavaScript function to perform any necessary actions with the selected time: 
+**Example**: to create a custom time picker widget, use the select element for each time component and a submit button. Once you have the HTML and CSS, use this JavaScript function to handle the selected time.
 
 ```html
  <script>
@@ -57,11 +57,13 @@ Appsmith offers a wide range of widgets for building applications, but sometimes
     </script>
 ```
 
+You can also create a custom color picker widegt to allow your users to choose a color. You can use the following code as a starting point to create your own color picker:
 
-<figure>
-  <img src="/img/custom-widget-time-picker.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+```html
+<label for="favcolor">Pick Color: </label> <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+```
+
+
 
 
 ## Post message with Iframe
@@ -76,6 +78,8 @@ Suppose you are building an app that has an Iframe widget embedding an external 
 To send data from Appsmith to an embedded page, you can use the `postMessage()` method in Javascript. This method allows you to send messages between different windows or frames in a web page. When the embedded page receives the message, it can perform actions based on its content. 
 
 ---
+![](/img/postmessage_child_incoming.png)
+
 **Example**:  suppose you want to send a message to an embedded page. To achieve this, you need to insert the following code into the **srcDoc** property:
 
 ```html
@@ -88,17 +92,14 @@ To send data from Appsmith to an embedded page, you can use the `postMessage()` 
     });
 </script>
 ```
+This code listens for a message sent from another window and updates the text of an HTML element with ID `target` with the message received
 
-This code listens for a message event and updates the text content of an HTML element with the ID `target` based on the data received in the event. When the message event is triggered, the `querySelector()` method is used to find the HTML element, and its `textContent` property is set to the data received in the event.
+Now, to send data:
 
-You can send the message using the Input widget, you need to set its  `onTextChanged` property to `"Post message"`. Set the `"Message"` to `{{Input1.text }}`and the `"Target iframe"` to `Iframe1`.
+1. Drag and drop an [Input](/reference/widgets/input/) widget and a [Button](/reference/widgets/button) widget onto the canvas.
+2. In the button's **onClick** event property, select **Post message**. Set the **Message** to `{{ Input1.text }}` and **Target iframe** to `Iframe1`.
+3. On the canvas, enter your piece of data into the input widget, and click the button widget. The iframe has now received the message you sent.
 
-Now, when you add text to the Input widget and trigger the `onTextChanged` event, the message would be sent to the embedded page using the `postMessage()` method, and the text would be displayed in the embedded page's Iframe.
-
-<figure>
-  <img src="/img/iframe-2.gif" style= {{width:"700px", height:"auto"}} alt="Display HTML components"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
 
 ### From embedded page to Iframe widget
 
@@ -121,13 +122,11 @@ The Iframe widget listens for messages sent from the page embedded within it. Wh
 <div id="target"></div>
 ```
 
-The code includes an `input field`, a `SEND` button, and a `div` with the ID `"target"`. When the user types a message in the input field and clicks the "SEND" button, the function `sendMyMessage()` is called.
-
-The `sendMyMessage()` function retrieves the value of the input field and then uses the **`postMessage()`** method to send a message to the parent window. The `postMessage()` method takes two arguments: the message to send, and the target origin. In this case, the target origin is set to `"*"`, which means that the message can be sent to any domain.
+This code creates an `input field` and a `button` to send a message from the embedded iframe to its parent window. 
 
 Now, to display this message, you can use query or widget bindings. For instance, you can use the text widget and add `{{Iframe.message}}` to its property to display the message.
 
-In addition, you can utilize the [**onMessageReceived**](#events) event to specify the action to be taken when a `postMessage()` event is received from the embedded page.
+Additionally, you can use the [**onMessageReceived**](#events) event to specify the action to be taken when a `postMessage()` event is received from the embedded page.
 
 <figure>
   <img src="/img/to-iframe.gif" style= {{width:"700px", height:"auto"}} alt="Display HTML components"/>
@@ -171,11 +170,11 @@ Style properties allow you to change the look and feel of the widget.
 
 | Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
 |---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Border Color**   | String    | Sets the color of the widget's border. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
+| **Border Color**   | String    | Sets the color of the widget's border. Accepts valid CSS [color ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
 | **Border Opacity**  | Number  | Sets the opacity of the widget's border. Max: 100                                                                            |
 | **Border Width**    | Number   | Sets the width of the widget's border.                                                                                  |
-| **Border Radius**   | String   | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**     | String    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+| **Border Radius**   | String   | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**     | String    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
 ## Events
 
