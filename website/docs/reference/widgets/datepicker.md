@@ -9,7 +9,7 @@ When working with the Datepicker widget, you may want to set a default date valu
 
 To set the date and time, you can use the **Default Date** property. You can set this property to any valid date format that the widget supports. 
 
-### Date format
+### Format dates
 Appsmith provides several date formats that you can choose from in the **Date Format** property, such as **ISO 8601**, **LLL**, and **DD/MM/YY**, among others.
 
 
