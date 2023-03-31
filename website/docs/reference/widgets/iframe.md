@@ -64,7 +64,7 @@ Appsmith offers a wide range of widgets for building applications, but sometimes
 </figure>
 
 
-## Communication with Iframe
+## Post message with Iframe
 
 Appsmith allows secure communication between different Window objects, including iframes. There are a number of directions in which your apps may need to communicate. Depending on their parent/embed relationship and the message's target recipient, the configuration is a bit different. 
 
