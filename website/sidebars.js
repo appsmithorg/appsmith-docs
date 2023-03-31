@@ -495,7 +495,6 @@ const sidebars = {
             id: 'advanced-concepts/version-control-with-git/README',
           },
           items: [
-            'advanced-concepts/version-control-with-git/connecting-to-git-repository',
             'advanced-concepts/version-control-with-git/import-from-repository',
             'advanced-concepts/version-control-with-git/commit-and-push',
             'advanced-concepts/version-control-with-git/working-with-branches',
