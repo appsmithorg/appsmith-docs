@@ -35,7 +35,7 @@ To display HTML and CSS content in your Appsmith app, you can use the **srcDoc**
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
-In addition to static HTML components, you can also display dynamic data by utilizing queries or JavaScript functions. For example, you can display the contents of an API response by using `{{api.data}}` within the **srcDoc** property.
+In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
 
 ## Custom widget
 
