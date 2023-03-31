@@ -19,7 +19,6 @@ You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) librar
 
 
 
-When working with dates and time, you may want to display them in a specific time zone. You can achieve this using Moment.js and the `moment-timezone` library. 
 
 ---
 **Example**: suppose you want to convert the selected date and time to the IST time zone (Asia/Kolkata), you can use the following code in a query or widget binding:
