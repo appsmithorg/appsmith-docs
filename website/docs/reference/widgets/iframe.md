@@ -12,7 +12,7 @@ The Iframe widget is protected against XSS attacks from v1.8.6 onwards. If you h
 
 ## Display external content
 
-To display a website or third-party application within your Appsmith app, you can utilize the **URL** property by entering the external website or application's URL. For example, you can display `https://docs.appsmith.com/` within your Appsmith app by adding its URL to the **URL** property.
+To display a website or third-party application within your Appsmith app, you can use the **URL** property. For example, you can display `https://docs.appsmith.com/` in your Appsmith app by adding it to the **URL** property.
 
 
 <figure>
