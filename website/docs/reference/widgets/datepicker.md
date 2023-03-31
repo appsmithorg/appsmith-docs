@@ -5,7 +5,6 @@ This page explains how to use the Datepicker widget to display or capture date a
 <VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
 
 ## Set date and time
-When working with the Datepicker widget, you may want to set a default date value to be displayed to the user.
 
 To set the date and time, you can use the **Default Date** property. You can set this property to any valid date format that the widget supports. 
 
