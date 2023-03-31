@@ -41,10 +41,27 @@ In addition to static HTML components, you can also display dynamic data by util
 
 Appsmith offers a wide range of widgets for building applications, but sometimes you may need to use a custom widget to add specific capability or visual elements. In such cases, you can use the **srcDoc** property of the iFrame widget to display a custom widget inside your Appsmith app.
 
-You can create a wide range of custom widgets in Appsmith, such as advance video players, data visualizations, custom calendar, social media widgets, animations, chat-bots, and more. The possibilities are endless.
+You can create a wide range of custom widgets in Appsmith, such as advance video players, data visualizations, custom calendar, social media widgets, animations, chat-bots, and more. The possibilities are endless.  
+
+---
+**Example**: to add a custom time picker widget to your application, you can use the `select` element for each component of the time (hour, minute, AM/PM) and a `button` to submit the selected time. Once you have the HTML and CSS for the time picker widget, you can add the following JavaScript function to perform any necessary actions with the selected time: 
+
+```html
+ <script>
+        function sendSelectedTime() {
+            var selectedHour = document.getElementById("hourSelect").value;
+            var selectedMin = document.getElementById("minSelect").value;
+            var selectedAMPM = document.getElementById("ampmSelect").value;
+            var selectedTime = selectedHour + ":" + selectedMin + " " + selectedAMPM;
+            window.parent.postMessage(selectedTime, "*");
+        }
+    </script>
+```
+The JavaScript function, `sendSelectedTime()`, retrieves the selected values from the select elements, concatenates them into a string in the format `"hh:mm AM/PM"`, and then sends that string to the parent window using the `postMessage()` method. This allows the selected time to be passed for further use.
+
 
 <figure>
-  <img src="/img/custom-widget.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <img src="/img/custom-widget-time-picker.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
