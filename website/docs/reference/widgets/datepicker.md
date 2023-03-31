@@ -18,7 +18,6 @@ You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) librar
 
 
 
-### Set date in a timezone
 
 When working with dates and time, you may want to display them in a specific time zone. You can achieve this using Moment.js and the `moment-timezone` library. 
 
