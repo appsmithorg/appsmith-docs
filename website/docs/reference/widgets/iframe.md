@@ -25,7 +25,7 @@ To display a website or third-party application within your Appsmith app, you ca
 * If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe fails to load.
 :::
 
-## Display HTML content 
+## Display HTML and CSS 
 
 To display HTML components within your Appsmith app, you can utilize the **srcDoc** property of the iframe widget. This allows you to add HTML code and CSS within `<style>` tags.
 
