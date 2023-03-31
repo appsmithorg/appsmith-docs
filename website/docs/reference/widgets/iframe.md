@@ -41,7 +41,6 @@ In addition to static HTML, you can display data generated dynamically from quer
 
 Appsmith offers a wide range of widgets for building applications, but sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widgets, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
-You can create a wide range of custom widgets in Appsmith, such as advance video players, data visualizations, custom calendar, social media widgets, animations, chat-bots, and more. The possibilities are endless.  
 
 ---
 **Example**: to add a custom time picker widget to your application, you can use the `select` element for each component of the time (hour, minute, AM/PM) and a `button` to submit the selected time. Once you have the HTML and CSS for the time picker widget, you can add the following JavaScript function to perform any necessary actions with the selected time: 
