@@ -14,7 +14,6 @@ Appsmith provides several date formats that you can choose from in the **Date Fo
 
 You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
 
-To use Moment.js with Appsmith, you can enter the desired format string directly into the **Date Format** property without using any curly braces or JavaScript code. 
 
 For example, you can use `LLL` to display a date in a format such as `MMM D, YYYY h:mm A`, or `YYYY-MM` to display the year and month only.
 
