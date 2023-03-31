@@ -69,7 +69,6 @@ The JavaScript function, `sendSelectedTime()`, retrieves the selected values fro
 ## Communication with Iframe
 
 Appsmith allows secure communication between different Window objects, including iframes. There are a number of directions in which your apps may need to communicate. Depending on their parent/embed relationship and the message's target recipient, the configuration is a bit different. 
-Refer to this [document](/reference/appsmith-framework/widget-actions/post-message) for information on embedding your applications externally.
 
 
 ### From Appsmith to embedded page
