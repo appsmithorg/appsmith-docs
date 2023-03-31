@@ -22,7 +22,7 @@ To display a website or third-party application within your Appsmith app, you ca
 
 :::note
 * If the Iframe widget has a value in the **srcDoc** property, then it overrides the **URL** property.
-* If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page, the Iframe would fail to load.
+* If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe fails to load.
 :::
 
 ## Display HTML content 
