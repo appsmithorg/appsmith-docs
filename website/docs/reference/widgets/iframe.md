@@ -1,31 +1,29 @@
 
 # Iframe
 
-
-This page explains how to use the Iframe widget to embed third-party applications, and websites into your Appsmith application.
+This page explains how to use the Iframe widget to embed third-party applications and websites into your Appsmith application.
 
 <VideoEmbed host="youtube" videoId="4jXTyxUhnP0" title="Using the Iframe widget" caption="Using the Iframe widget"/>
 
 :::info
-The Iframe widget is protected against XSS attacks from v1.8.6 onwards. If you have self-hosted Appsmith and are on an older version, see [Sandboxing Iframe widgets](/product/security#sandboxing-iframe-widgets) to enable this.
+The Iframe widget is safe from XSS attacks from v1.8.6 onwards. If you have a self-hosted Appsmith and are on an older version, see [Sandboxing Iframe widgets](/product/security#sandboxing-iframe-widgets) to enable this.
 :::
 
 ## Display external content
 
 To display a website or third-party application within your Appsmith app, you can use the **URL** property. For example, you can display `https://docs.appsmith.com/` in your Appsmith app by adding it to the **URL** property.
 
-
 <figure>
   <img src="/img/iframe-website.png" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i></figcaption>
+  <figcaption align = "center"><i></i>Display external website</figcaption>
 </figure>
 
 :::note
-* If the Iframe widget has a value in the **srcDoc** property, then it overrides the **URL** property.
-* If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe fails to load.
+* If the Iframe widget has a value in the **srcDoc** property, it overrides the **URL** property.
+* If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe widget fails to load.
 :::
 
-## Display HTML and CSS 
+### HTML and CSS 
 
 To display HTML and CSS content in your Appsmith app, you can use the **srcDoc** property.
 
@@ -37,97 +35,88 @@ To display HTML and CSS content in your Appsmith app, you can use the **srcDoc**
 
 In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
 
-## Display custom widgets
+### Custom widgets
 
-Appsmith offers a wide range of widgets for building applications, but sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widgets, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
-
+Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
 ---
-**Example**: to create a custom time picker widget, use the select element for each time component and a submit button. Once you have the HTML and CSS, use this JavaScript function to handle the selected time.
+**Example**: a color picker widget created using HTML as shown below: 
 
 ```html
- <script>
-        function sendSelectedTime() {
-            var selectedHour = document.getElementById("hourSelect").value;
-            var selectedMin = document.getElementById("minSelect").value;
-            var selectedAMPM = document.getElementById("ampmSelect").value;
-            var selectedTime = selectedHour + ":" + selectedMin + " " + selectedAMPM;
-            window.parent.postMessage(selectedTime, "*");
-        }
-    </script>
+<label for="favcolor">Pick Color: </label> 
+<input type="color" id="favcolor" name="favcolor" value="#ff0000">
 ```
 
-You can also create a custom color picker widegt to allow your users to choose a color. You can use the following code as a starting point to create your own color picker:
-
-```html
-<label for="favcolor">Pick Color: </label> <input type="color" id="favcolor" name="favcolor" value="#ff0000">
-```
-
+<figure>
+  <img src="/img/iframe-color-picker.png" style= {{width:"700px", height:"auto"}} alt="Custom color picker"/>
+  <figcaption align = "center"><i>Custom color picker</i></figcaption>
+</figure>
 
 
+## Communication between app and Iframe
 
-## Post message with Iframe
+Appsmith provides a way to enable safe [cross-origin communication](/reference/appsmith-framework/widget-actions/post-message) between the Appsmith app and the Iframe widget.
 
-Appsmith enables safe [cross-origin communication](/reference/appsmith-framework/widget-actions/post-message) between the Appsmith app and the Iframe widget.
-
-Suppose you are building an app that has an Iframe widget embedding an external page and want to post messages between the Iframe and the Appsmith app.
-
+Suppose you are building an app with an Iframe widget embedding an external page and want to post messages between the external page and the Appsmith app.
 
 ### From Appsmith to embedded page
 
-To send data from Appsmith to an embedded page, you can use the `postMessage()` method in Javascript. This method allows you to send messages between different windows or frames in a web page. When the embedded page receives the message, it can perform actions based on its content. 
-
 ![](/img/postmessage_child_incoming.png)
----
-
-**Example**:  suppose you want to send a message to an embedded page. To achieve this, you need to insert the following code into the **srcDoc** property:
-
-```html
-<div id="target"></div>
-
-<script>
- window.addEventListener('message', (event) => {
-    const tgt = document.querySelector("#target")
-        tgt.textContent = event.data
-    });
-</script>
-```
-This code listens for a message sent from another window and updates the text of an HTML element with ID `target` with the message received
-
-Now, to send data:
-
-1. Drag and drop an [Input](/reference/widgets/input/) widget and a [Button](/reference/widgets/button) widget onto the canvas.
-2. In the button's **onClick** event property, select **Post message**. Set the **Message** to `{{ Input1.text }}` and **Target iframe** to `Iframe1`.
-3. On the canvas, enter your piece of data into the input widget, and click the button widget. The iframe has now received the message you sent.
-
-
-### From embedded page to Iframe widget
-
-The Iframe widget listens for messages sent from the page embedded within it. When this page sends data via the Javascript [`postmessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) function, Appsmith receives the message and exposes its content to the user on the iframe’s `message` reference property. This property remains undefined until a message is received.
 
 ---
-**Example**: suppose you want to send a message using a custom input element, you can use the following code into the **srcDoc** property:
 
+**Example**:  suppose you want to send the text entered in the Input widget to an app in the Iframe. 
 
-```html
-<input id="messageinput" type="text" placeholder="Type your message here..."></input>
-<input id="sendbutton" type="button" onclick="sendMyMessage()" value="SEND" />
+1. Drop an Input widget named `inputMessage` and a Button widget onto the canvas.
 
-<script>
-    function sendMyMessage() {
-        const msgText = document.getElementById("messageinput").value;
-        window.parent.postMessage(msgText, "*");
-    }
-</script>
-<div id="target"></div>
-```
+2. Drop an Iframe widget named `iframeExample` on the canvas. In the **srcDoc** property, insert the following code:
 
-This code creates an `input field` and a `button` to send a message from the embedded iframe to its parent window. 
+    ```html
+    <div id="target"></div>
 
-Now, to display this message, you can use query or widget bindings. For instance, you can use the text widget and add `{{Iframe.message}}` to its property to display the message.
+    <script>
+    window.addEventListener('message', (event) => {
+        const tgt = document.querySelector("#target")
+            tgt.textContent = event.data
+        });
+    </script>
+    ```
+    This code listens for a message sent from the Input widget in Appsmith and displays the text inside the `<div>` HTML element in the Iframe.
 
-Additionally, you can use the [**onMessageReceived**](#events) event to specify the action to be taken when a `postMessage()` event is received from the embedded page.
+3. In the button's **onClick** event, select the **Post message** option. Set the **Message** box to `{{inputMessage.text}}` and **Target iframe** box to `iframeExample`.
 
+4. Enter some text in the Input widget, and click the button. The Iframe receives the message and displays it.
+
+### From embedded page to Iframe
+
+The Iframe widget listens for messages sent from the page embedded within it. To send data from the embedded page, you can use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in Javascript. Appsmith receives the message in the Iframe’s `message` reference property when the page sends data. This property remains undefined until a message is received.
+
+---
+**Example**: 
+
+1. Drop an Iframe widget named `iframeExample` on the canvas.
+2. Embed a page that can send a message with `postMessage()` function. To do this,  paste the following code in the srcDoc property:
+
+    ```html
+    <input id="messageinput" type="text" placeholder="Type your message here..."></input>
+    <input id="sendbutton" type="button" onclick="sendMyMessage()" value="SEND" />
+
+    <script>
+        function sendMyMessage() {
+            const msgText = document.getElementById("messageinput").value;
+            window.parent.postMessage(msgText, "*");
+        }
+    </script>
+    <div id="target"></div>
+    ```
+
+    This code creates a simple HTML document in the Iframe containing a text input, a button, and a script to handle sending the message.
+
+3. Drop a Text widget onto the canvas, and set its Text property to {{iframeExample.message}}.
+
+4. Type something in the Iframe's input box and click the **Send** button. The Text widget displays the text that you sent from the Iframe.
+
+5. When a message is received, you can also execute a set of actions in the Iframe’s `onMessageReceived` event. For example, in the `onMessageReceived` event, select the **Show message** action and set the message to 'Message received'. When you click the **Send** button in the Iframe, a toast message appears on the top of the screen.
 
 
 ## Properties
@@ -141,7 +130,7 @@ These properties are present in the property pane of the widget. The following t
 
 | Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
 |---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **URL**          | URL   | Sets the URL of the page to load within the iframe.                                                                                                                                                    |
+| **URL**          | URL   | Sets the URL of the page to load within the Iframe.                                                                                                                                                    |
 | **srcDoc**        | String  | Embed HTML and CSS (within `<style>` tags) to render within the Iframe. When this property has a value, it overrides the **URL** property.   |
 | **Title**         | String  | Sets a title for the Iframe content.                                |
 | **Animate Loading** | Boolean | When this toggle is switched on, it enables a skeleton loading screen, which sets an animated placeholder while the widget is loading and becomes visible. You can also control this toggle using JavaScript code by clicking the **JS** button |
@@ -173,10 +162,9 @@ Style properties allow you to change the look and feel of the widget.
 
 ## Events
 
-These are functions that are called when event listeners are triggered in the widget. [Use actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
+When the event is triggered, these event handlers can run queries, JS code, or other supported actions.
 
-
-| Action                | Description                                                                                                                                                                                                                                                                     |
+| Event                | Description                                                                                                                                                                                                                                                                     |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onURLChanged**      | Sets the action to take place when the widget's URL is changed.                                     |
 | **onSrcDocChanged**   | Sets the action to take place when the `srcDoc`property is changed.  |
