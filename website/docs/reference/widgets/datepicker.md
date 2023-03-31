@@ -31,7 +31,6 @@ When working with dates and time, you may want to display them in a specific tim
 }}
 ```
 
-This code creates a `Moment.js` object from the `DatePicker.selectedDate` property, sets the time zone to `"Asia/Kolkata"` using the `tz()` function, and formats the resulting date and time using the default format. To learn more, refer to [MomentJS timezone documentation](https://momentjs.com/timezone/docs/).
 
 
 ### Display date dynamically
