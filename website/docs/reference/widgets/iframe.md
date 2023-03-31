@@ -39,7 +39,7 @@ In addition to static HTML, you can display data generated dynamically from quer
 
 ## Display custom widgets
 
-Appsmith offers a wide range of widgets for building applications, but sometimes you may need to use a custom widget to add specific capability or visual elements. In such cases, you can use the **srcDoc** property of the iFrame widget to display a custom widget inside your Appsmith app.
+Appsmith offers a wide range of widgets for building applications, but sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widgets, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
 You can create a wide range of custom widgets in Appsmith, such as advance video players, data visualizations, custom calendar, social media widgets, animations, chat-bots, and more. The possibilities are endless.  
 
