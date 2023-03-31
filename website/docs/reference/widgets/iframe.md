@@ -165,7 +165,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **source**    | String   | Contains the URL of the embedded page _(string)._ Doesn't reflect the content set in the `srcDoc` property.                                                                                                                                                                                                      |
 | **title**     | String   | Contains the title of the Iframe as set in the widget's Title property._                                                                                                                                                                                                                                                           |
 
-### Styles properties
+### Style properties
 
 Style properties allow you to change the look and feel of the widget.
 
