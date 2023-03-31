@@ -56,7 +56,6 @@ Appsmith offers a wide range of widgets for building applications, but sometimes
         }
     </script>
 ```
-The JavaScript function, `sendSelectedTime()`, retrieves the selected values from the select elements, concatenates them into a string in the format `"hh:mm AM/PM"`, and then sends that string to the parent window using the `postMessage()` method. This allows the selected time to be passed for further use.
 
 
 <figure>
