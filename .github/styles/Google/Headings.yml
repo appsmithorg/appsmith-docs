@@ -69,4 +69,8 @@ exceptions:
   - Connection Mode
   - Custom Domain
   - Custom SSL
-  - SSL with Let's Encrypt
+  - SSL
+  - HTTPS
+  - Let's 
+  - Encrypt
+  - TLS

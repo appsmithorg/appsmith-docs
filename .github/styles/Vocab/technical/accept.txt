@@ -277,6 +277,8 @@ formattedDate
 selectedDate
 Min
 Max
+What is
+Datepicker
 Cognito
 cognito
 

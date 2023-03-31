@@ -49,7 +49,7 @@ All query results are stored in the [data](/reference/appsmith-framework/query-o
 {{ Query1.data }}
 ```
 
-DB Queries fetch data in an array of objects where each object is a row, and each key in the object is a column.
+Queries fetch data in an array of objects where each object is a row, and each key in the object is a column. However, each widget property supports a specific data type. You can [transform the data](/core-concepts/data-access-and-binding/displaying-data-read#transform-data) from the query response to match the expected data structure in the property.
 
 ## Debug errors
 
