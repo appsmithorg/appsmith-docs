@@ -185,11 +185,6 @@ const config = {
       async: false,
     },
     {
-      src:
-        '/scripts/hotjarSettings.js',
-      async: false,
-    },
-    {
         src: 'https://static.scarf.sh/a.png?x-pxid=ae471d67-d95c-4a3a-b35b-799e8ee8fa17',
         async: true,
         defer: true,
