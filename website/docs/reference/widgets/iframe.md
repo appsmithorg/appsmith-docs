@@ -112,7 +112,7 @@ The Iframe widget listens for messages sent from the page embedded within it. To
 
     This code creates a simple HTML document in the Iframe containing a text input, a button, and a script to handle sending the message.
 
-3. Drop a Text widget onto the canvas, and set its Text property to {{iframeExample.message}}.
+3. Drop a Text widget onto the canvas, and set its Text property to `{{iframeExample.message}}`.
 
 4. Type something in the Iframe's input box and click the **Send** button. The Text widget displays the text that you sent from the Iframe.
 
