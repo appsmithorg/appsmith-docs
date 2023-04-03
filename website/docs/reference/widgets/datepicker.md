@@ -4,23 +4,38 @@ This page explains how to use the Datepicker widget to display or capture date/t
 
 <VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
 
-## Display date and time
 
-You can use the **Default Date** property to set the date and time. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
+## Filter data for a date range
+To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the [formattedDate](#access-selected-date) or [selectedDate](#access-selected-date) reference property.
 
----
+--- 
 
-**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. 
+**Example**: suppose you have a table in your database that contains user details, including their date of birth (DOB). You want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/2010`.
 
-1.  Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+1. Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
 ```js
 {{fetchUserData.data}}
 ```
+3. Now, add two date pickers to your canvas. Then, create a new query called `filterdata` with the SQL statement:
 
-3. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
+```sql
+SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePicker2.selectedDate}} ORDER BY id;
+```
+This query retrieves data based on the user-selected date range. Next, you can bind the `onDateSelected` event to run the `filterdata` query for both Datepickers.
+
+
+## Display date and time
+
+You can use the **Default Date** property to set the date and time. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
+
+---
+
+**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. For this, lets use the same `tblUserData` table.
+
+To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
 
 ```js
 {{tblUserData.selectedRow.dob}}
@@ -32,21 +47,8 @@ You can use the **Default Date** property to set the date and time. You can also
 </figure>
 
 
-### Format dates
-Appsmith provides several date formats that you can choose from in the **Date Format** property.
 
-You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
-
----
-**Example**: if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
-
-```js
-{{
-  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
-}}
-```
-
-## Access selected date
+### Access selected date
 
 To access the date the user selects in the Datepicker widget, you can use the `formattedDate` or `selectedDate` reference property.
 
@@ -64,13 +66,20 @@ UPDATE users
 
 Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
 
-## Sample apps
 
-* [Set Min and Max Date](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af) -  Allows users to select a date within a specified range.
-* [Date Formatting](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6228975df782567d61f15158) - Demonstrates different date formatting options using Moment.js.
-* [Date Calculations](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9) - Calculates the time difference between two dates using Moment.js.
-* [Set and Clear Date](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6256e5e40d3d384069c07baa) - Lets users set or clear a selected date using a button.
-* [Filter Data Between Dates](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c) - Filters data based on a selected date range.
+### Format dates
+Appsmith provides several date formats that you can choose from in the **Date Format** property.
+
+You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
+
+---
+**Example**: if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
+
+```js
+{{
+  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
+}}
+```
 
 
 ## Properties
