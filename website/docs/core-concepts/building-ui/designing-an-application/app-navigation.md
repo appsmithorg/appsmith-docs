@@ -1,6 +1,6 @@
 # App Navigation
 
-We have introduced new navigation styles with better a default navigation - Top (Stacked), a variant for Top (Inline), and a collapsible Sidebar. You can now configure your app's navigation by opening the navigation settings tab inside the app settings pane and observe how your app with the selected navigation settings will look side by side as you change them.
+We have introduced new navigation styles - a better default [top navigation (stacked)](app-navigation.md#variant), a variant for the [top navigation (inline)](app-navigation.md#variant), and a [collapsible sidebar](app-navigation.md#orientation). You can now configure your app's navigation by opening the navigation settings tab inside the app settings pane. You'll also see a preview of how your app will look as you change and try out different options in the navigation settings.
 
 <figure>
   <img src="/img/app-navigation-new-default.png" alt="The new default navigation - Top (Stacked)"/>
@@ -10,7 +10,7 @@ We have introduced new navigation styles with better a default navigation - Top 
 ## Navigation settings
 
 :::info
-Configuring the navigation is an application-level change.
+Configuring the navigation is an application level change, which means that the scope of the navigation settings configured will only apply to the application where these settings have been set, and not the entire workspace.
 :::
 
 You can configure the navigation for your app using -
@@ -54,7 +54,7 @@ The options available of configuring the navigation settings are as follows -
 
 #### Variant
 
-This option is inly available when the orientation is set to Top.
+This option is only available when the orientation is set to *Top*.
 
 1. **Stacked** - Shows the header (containing the application title, user dropdown, and share and edit buttons) and the navigation bar below that.
 <figure>
