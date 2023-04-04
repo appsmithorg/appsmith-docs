@@ -6,7 +6,7 @@ This page explains how to use the Datepicker widget to display or capture date/t
 
 
 ## Filter data for a date range
-To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the formattedDate or selectedDate reference property.
+To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the `formattedDate` or `selectedDate` reference property.
 
 * The `formattedDate` property contains the formatted date value currently selected within the Datepicker widget. The format depends on the **Date Format** property set for the widget.
 * The `selectedDate` property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or the user inputs a new value. The date is in the format: `YYYY-MM-DDTHH:mm:ss.sssZ`, where Z represents the time zone offset from UTC.
