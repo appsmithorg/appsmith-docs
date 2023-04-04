@@ -57,20 +57,20 @@ Create a folder named `appsmith` on your machine for deployment and data storage
 <Tabs groupId="appsmithEditions" queryString="currentTab">
   <TabItem label="Community Edition" value="communityEdition"> 
 
-  1. To download the `values.yaml`, run the below `cURL` command:
+  1. Download the `values.yaml` with:
 
-      ```bash
-        curl -L https://bit.ly/3ETEgPT -o "$PWD/values.yml"
-      ```
+    ```bash
+    curl -L https://bit.ly/3ETEgPT -o "$PWD/values.yml"
+    ```
   This command saves the file in the current directory.
 
-  2. To add the Appsmith chart repository, run the below command:
+  2. Add the Appsmith chart repository with:
 
    ```bash
    helm repo add appsmith https://helm.appsmith.com
    ```
    
-3. To load the Appsmith chart repository, run the below command:
+3. Load the Appsmith chart repository with:
 
   ```bash
   helm repo update
@@ -81,16 +81,18 @@ Create a folder named `appsmith` on your machine for deployment and data storage
   helm install appsmith appsmith/appsmith --namespace <YOUR_NAMESPACE>
   ```
 
-When installing Appsmith using Helm, it automatically creates all the necessary Kubernetes objects to run the app on your clusters, such as pods, services, and ingresses with the default configuration. To customize the configuration, see [Configure Appsmith](/getting-started/setup/installation-guides/kubernetes/configure-appsmith) section.
+When you install Appsmith using Helm, it sets up default pods, services, and ingresses. You can customize the default configurations. To customize, see the [Configure Appsmith](/getting-started/setup/installation-guides/kubernetes/configure-appsmith) section.
 
 5. Verify the status of the Appsmith installation by running the below command:
 
   ```bash
   kubectl -n <your-namespace> rollout status deployment <release-name>-appsmith
   ```
-When the deployment is ready, a message that says the deployment of "appsmith" has been successfully rolled out is displayed.
+  When the deployment completes, you can see below message:
 
-6. Helm installation command outputs the URL that you can use to access Appsmith. Use the below command to retrieve the URL:
+  `The deployment of "appsmith" has been successfully rolled out`.
+
+6. Helm installation command outputs the URL that you can use to access Appsmith. Retrieve the URL with:
 
   ```bash 
   kubectl -n <your-namespace> get ingress <release-name>-appsmith
@@ -187,10 +189,7 @@ This command installs the Helm chart, enables the ingress controller, and publis
   <Tabs groupId="appsmithEditions">
 
   <TabItem label="Community Edition" value="communityEdition"> 
-  Enable the ingress controller through command or by modifying the `values.yaml` file.
-  <details>
-  <summary>Follow the steps below to configure using command</summary>
-  Run the below command to enable ingress controller:
+  Enable the ingress controller through command with:
 
   ```bash
   helm upgrade appsmith/appsmith \
@@ -198,11 +197,6 @@ This command installs the Helm chart, enables the ingress controller, and publis
       --set ingress.className=nginx \
       --set service.type=ClusterIP \
   ```
-
-  </details>
-
-  <details id="usingValues">
-  <summary>Follow the steps below to configure using `values.yaml`</summary>
 
   Open the `values.yaml` file and update the parameter values as below:
 
@@ -228,8 +222,6 @@ This command installs the Helm chart, enables the ingress controller, and publis
   ```bash 
   helm upgrade --values values.yaml appsmith appsmith/appsmith
   ```
-
-  </details>
 
  </TabItem>
  <TabItem label="Business Edition" value="businessEdition">
@@ -305,5 +297,6 @@ If you continue to face issues, reach out to the [support team](mailto:support@a
 
 ## Further reading
 
-* [Configure your Instance](/getting-started/setup/instance-configuration/#configuring-kubernetes-installations)
-* [Manage your Appsmith instance](/getting-started/setup/instance-management/)
+* [Configure TLS](/getting-started/setup/installation-guides/kubernetes/configure-tls)
+* [Configure your Instance](/getting-started/setup/instance-configuration)
+* [Manage your Appsmith instance](/getting-started/setup/instance-management)
