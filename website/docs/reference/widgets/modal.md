@@ -16,6 +16,7 @@ When you add a Modal widget, it automatically includes a [Text](reference/widget
 
 To submit data from a Modal widget, you first need to define the input fields within the modal. Once the user has entered data into these fields, you can access the values using widget's reference properties. For instance, if you have an Input widget called `updateemail`, you can access its value using the syntax `{{updateemail.inputText}}`.
 
+Once you have the necessary data, you can use it to run queries or perform other actions when the user clicks the `Confirm` button.
 
 ---
 **Example**: consider a scenario where you have a Modal widget that displays a form with the details of a selected user when you click on a row in a table.
