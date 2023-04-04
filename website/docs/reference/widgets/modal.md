@@ -1,7 +1,7 @@
 # Modal
 
 
-This page explains how to use the Modal widget to create dialog windows on your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
+This page explains how to use the Modal widget to create dialog windows in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
 
 
 <VideoEmbed host="youtube" videoId="s8cHVkhj3ec" title="Using the Modal widget" caption="Using the Modal widget"/>
