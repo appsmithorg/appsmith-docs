@@ -87,6 +87,67 @@ When the server restarts, Appsmith updates to the latest version. This setup run
 
 You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
 
+## Kubernetes
+Business - 
+#### Update Appsmith
+
+Appsmith installation can be updated manually or by enabling auto update.
+
+##### Auto update
+
+The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either:
+  - Running the command below.
+    ```
+    helm upgrade --set autoupdate.enabled=true \
+    appsmith [appsmith-ee|appsmith]/appsmith 
+    ```
+  - Or edit `values.yaml` and specify the following parameters
+    ```yaml
+    autoupdate.enabled: true
+    autoupdate.scheduler: 0
+    ```
+    Followed by running the command below.
+    ```bash
+    helm upgrade --values values.yaml appsmith [appsmith-ee|appsmith]/appsmith
+    ```
+
+##### Manual update
+
+To manually update the Appsmith container image to the latest release, run the command: 
+
+```bash
+kubectl rollout restart deployment appsmith
+```
+Community - 
+#### Update Appsmith
+
+Appsmith installation can be updated manually or by enabling auto update.
+
+##### Auto update
+
+The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either setting it in values file or using a command.
+
+* Values file: Ensure that the parameters are configured to enable auto update. For more information, see [Auto update image](#auto-update-image). Once the set up is in place, run the below command.
+
+   ```
+     helm upgrade --values values.yaml appsmith appsmith/appsmith
+    ```
+
+* Command: Pass an argument using the `--set` keyword (`--set autoupdate.enabled=true`) to the command.
+
+    ```
+      helm install appsmith/appsmith appsmith \
+        --set autoupdate.enabled=true
+    ```
+
+##### Manual update
+
+To manually update the Appsmith container image to the latest release, run the command: 
+
+```bash
+kubectl rollout restart statefulset appsmith
+```
+
 ## Upgrade to a checkpoint version
 
 When you upgrade manually, you must upgrade to the checkpoint version released between your version and the latest version.
