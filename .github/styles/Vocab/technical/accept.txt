@@ -287,3 +287,5 @@ Iframe
 iframe
 CSS
 onwards
+isOpen
+onClose
