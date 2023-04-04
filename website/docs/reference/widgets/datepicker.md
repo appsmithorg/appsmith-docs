@@ -6,7 +6,11 @@ This page explains how to use the Datepicker widget to display or capture date/t
 
 
 ## Filter data for a date range
-To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the [formattedDate](#access-selected-date) or [selectedDate](#access-selected-date) reference property.
+To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the formattedDate or selectedDate reference property.
+
+* The `formattedDate` property contains the formatted date value currently selected within the Datepicker widget. The format depends on the **Date Format** property set for the widget.
+* The `selectedDate` property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or the user inputs a new value. The date is in the format: `YYYY-MM-DDTHH:mm:ss.sssZ`, where Z represents the time zone offset from UTC.
+
 
 --- 
 
@@ -27,36 +31,21 @@ SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePic
 This query retrieves data based on the user-selected date range. Next, you can bind the `onDateSelected` event to run the `filterdata` query for both Datepickers.
 
 
-## Display date and time
+## Update date
 
-You can use the **Default Date** property to set the date and time. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
+To update the date, you can start by setting a **Default Date**. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
 
 ---
 
 **Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. For this, lets use the same `tblUserData` table.
 
-To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
+1. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
 
 ```js
 {{tblUserData.selectedRow.dob}}
 ```
 
-<figure>
-  <img src="/img/display-date-datepicker.png" alt="Display date"/>
-  <figcaption align = "center"><i>Display date from table row</i></figcaption>
-</figure>
-
-
-
-### Access selected date
-
-To access the date the user selects in the Datepicker widget, you can use the `formattedDate` or `selectedDate` reference property.
-
-* The `formattedDate` property contains the formatted date value currently selected within the Datepicker widget. The format depends on the **Date Format** property set for the widget.
-* The `selectedDate` property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or the user inputs a new value. The date is in the format: `YYYY-MM-DDTHH:mm:ss.sssZ`, where Z represents the time zone offset from UTC.
-
----
-**Example**: in the preceding user's date of birth example, if you want to update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
+2. To update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
 
 ```sql
 UPDATE users
@@ -66,8 +55,12 @@ UPDATE users
 
 Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
 
+<figure>
+  <img src="/img/display-date-datepicker.png" alt="Display date"/>
+  <figcaption align = "center"><i>Display date from table row</i></figcaption>
+</figure>
 
-### Format dates
+## Format dates
 Appsmith provides several date formats that you can choose from in the **Date Format** property.
 
 You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
