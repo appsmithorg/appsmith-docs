@@ -335,3 +335,10 @@ Once you have successfully run a Query, you can use it in your application to
 
 * [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
 * [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+
+## Importing CSV files
+
+Firestore has some limitations when it comes to importing data from external sources. But Appsmith enables you to create a fast and efficient bulk import tool to bridge the gap. You can refer to the video below for a step-by-step guide on how to build the bulk import tool using Appsmith:
+
+
+<VideoEmbed host="youtube" videoId="9-BYpO3hj-4" title="How To Import CSV Files Into Firebase" caption="How To Import CSV Files Into Firebase"/>
