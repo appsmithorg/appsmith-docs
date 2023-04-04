@@ -20,9 +20,9 @@ APPSMITH_MONGODB_URI=mongodb+srv://<username>:<password>@mongo.host.name/databas
 The exact URI to be set here can be obtained from MongoDB Cloud's web interface.
 
 :::note Important
-* Use a MongoDB database with Appsmith, `replicaSet` needs to be configured on the database. This can be done by connecting to the database as `admin`, and running [`rs.initiate()`](https://docs.mongodb.com/manual/reference/method/rs.initiate/). If you are using MongoDB Cloud, this is always done for you.
+* To use an external MongoDB database with Appsmith, `replicaSet` needs to be configured on the database. This can be done by connecting to the database as `admin`, and running [`rs.initiate()`](https://docs.mongodb.com/manual/reference/method/rs.initiate/). If you are using MongoDB Cloud, this is always done for you.
 * Ensure that the credentials used to connect to MongoDB should have the `readWrite` and `clusterMonitor` roles assigned.
-* In a multi-node configuration of MongoDB cluster, the `readPreference=primary` URL parameter needs to be added to the MongoDB connection string. This is required to support app Import-Export feature.
+* In a multi-node configuration of MongoDB cluster, the `readPreference=primary` URL parameter needs to be added to the MongoDB connection string. For example, `mongodb://localhost:27017/appsmith?authSource=admin&replicaSet=rs0&readPreference=primary`. This is required to support transactional operations in MongoDB.
 :::
 
 ## Custom Redis
