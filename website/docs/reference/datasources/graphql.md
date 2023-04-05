@@ -11,7 +11,7 @@ Appsmith provides an easy way to integrate with GraphQL, and enables you to perf
 
 ## Create GraphQL API
 
-To add a GraphQL API, navigate to **Explorer** >> Click the **+** icon (next to Datasources) >> Select **Authenticated GraphQL API** under APIs.
+To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **Authenticated GraphQL API** under APIs.
 
 :::info
 You can choose to create a one-off query by selecting [_**Create New GraphQL API**_](graphql.md#datasource-page)_**.**_
@@ -19,7 +19,7 @@ You can choose to create a one-off query by selecting [_**Create New GraphQL API
 
 <VideoEmbed host="youtube" videoId="lIb2SGnQFm4" title="Create GraphQL Datasource" caption="Create GraphQL Datasource"/>
 
-## Connection settings
+## Connection Settings
 
 Configure the GraphQL API as illustrated below:
 
@@ -42,9 +42,9 @@ HTTP Headers are an important part of the API request and response, representing
 3. Response Caching;
 4. Response Cookies.
 
-#### Query parameters
+#### Query Parameters
 
-A parameter is a piece of information you provide to a query during its execution. In the query, parameters can be used independently or as a component of a larger expression to build a criterion. The API you integrate allows you to include one or more [query parameters](/core-concepts/data-access-and-binding/querying-a-database) as part of the request.
+A parameter is a piece of information you provide to a query during its execution. In the query, parameters can be used independently or as a component of a larger expression to build a criterion. The API you integrate allows you to include one or more[ query parameters](/core-concepts/data-access-and-binding/querying-a-database) as part of the request.
 
 #### Send Appsmith signature header\*
 
@@ -52,9 +52,9 @@ You can enable [Send Appsmith Signature Header](/core-concepts/connecting-to-dat
 
 #### Authentication Type
 
-GraphQL API [authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type) can be defined using the protocols offered by Appsmith.
+GraphQL API[ authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type) can be defined using the protocols offered by Appsmith.
 
-#### Use self-signed certificate
+#### Use Self-signed certificate
 
 Self-signed certificates are sometimes used in testing or internal environments, as they provide incoming/outgoing data encryption and can be created at no cost.
 
@@ -64,15 +64,15 @@ The GraphQL Datasource allows you to upload your own self-signed certificate wit
 This information needs to be provided in .PEM (Privacy Enhanced Mail) format, as shown [here](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
 :::
 
-## Create queries
+## Create Queries
 
 You can add queries to the newly created GraphQL datasource in one of the below ways:
 
-#### GraphQL datasource page
+#### GraphQL Datasource Page
 
 You can add queries to GraphQL datasource by selecting the **New API +** button available on the datasource page.
 
-![GraphQL datasource page](</img/Screenshot_2022-08-30_at_12.56.01_PM_(1).png>)<figure><figcaption align="center"><i>GraphQL datasource page</i></figcaption></figure>
+![GraphQL Datasource Page](</img/Screenshot_2022-08-30_at_12.56.01_PM_(1).png>)<figure><figcaption align="center"><i>GraphQL Datasource Page</i></figcaption></figure>
 
 #### Query/JS page
 
@@ -80,7 +80,7 @@ By navigating to **Explorer** >> Click plus sign (**+**) next to **Queries/JS** 
 
 ![Query/JS page](</img/Screenshot_2022-08-30_at_12.59.35_PM.png>)<figure><figcaption align="center"><i>Query/JS page</i></figcaption></figure>
 
-#### Datasource page
+#### Datasource Page
 
 Similar to REST APIs, you can choose to create a one-off query by clicking on the “**+**” icon next to “Datasources” and selecting “_**Create New GraphQL API**_”.
 
@@ -93,10 +93,10 @@ Let’s take an example to understand how **“Create new GraphQL API”** works
 <VideoEmbed host="youtube" videoId="kEjCQ9o4Ozs" title="" caption=""/>
 
 :::info
-To understand GraphQL query creation, use the [Public GraphQL API](https://countries.trevorblades.com/) that gives information about continents and countries.
+To understand GraphQL query creation, let's use the [Public GraphQL API](https://countries.trevorblades.com/) that gives information about continents and countries.
 :::
 
-* Click the **+** icon next to the **Datasources** and choose your “Create new GraphQL API”.
+* Click on the **+** icon next to the **Datasources** and choose your “Create new GraphQL API”.
 * Add your API request URL.
 * For this example, please use:[ _**https://countries.trevorblades.com**_](https://countries.trevorblades.com)_**.**_
 * In the **Body** of the request, put the GraphQL query to get details of countries.
@@ -117,11 +117,11 @@ query CountryFilterInput{
 
 * Now **run** the query.
 
-With this, all of a country's information, including its code, name, capital is displayed in the response section.
+With this, all of a country's information, including its code, name, capital, etc., will be displayed in the response section.
 
 ## Query
 
-You can create queries to fetch, update, and delete data from a datasource using the Appsmith query editor. Let's discuss the following query methods:
+You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. Let's discuss the following query methods:
 
 | Query Name                                                  | Description                             |
 | ----------------------------------------------------------- | --------------------------------------- |
@@ -135,19 +135,19 @@ You can create queries to fetch, update, and delete data from a datasource using
 [GraphQL Queries ](https://graphql.org/learn/queries/)(Read operations like List, Retrieve, etc.) and [GraphQL Mutations](https://graphql.org/learn/queries/#mutations) (Write operations like insert, update, etc.) are collectively termed [Queries ](/core-concepts/data-access-and-binding/querying-a-database)in Appsmith.
 :::
 
-### **List records**
+### **List Records**
 
 List command lets you display all the data from the database. With Appsmith, you can present data that has been filtered and sorted based on fields, records, etc.
 
-* Click the **+** icon next to the **queries/js** and choose your GraphQL datasource.
+* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query.
 * Add your code in the body section.
 
-Once the parameters have been specified, click **Run**. The response section now displays the data.
+Once the parameters have been specified, click **Run**. The response section will now display the data.
 
 Let's take an example to understand how the list record command works.
 
-In this example, you can use [Github’s GraphQL API](https://docs.github.com/en/graphql) to **view** and **manage issues**, including **issue assignees, comments, labels,** and **milestones.**
+In this example, we will use [Github’s GraphQL API](https://docs.github.com/en/graphql) to **view** and **manage issues**, including **issue assignees, comments, labels,** and **milestones.**
 
 :::info
 Please understand key terms and concepts before using the [GitHub GraphQL API.](https://docs.github.com/en/graphql)
@@ -181,23 +181,23 @@ query GetRepositoryWithIssues {
 }
 ```
 
-In the preceding query,you obtained information on issues (`totalCount`), the most recent issues with their titles and creation dates (`createdAt`), as well as information on the issue author.
+In the preceding query, we obtained information on issues (totalCount), the most recent issues with their titles and creation dates (createdAt), as well as information on the issue author.
 
 You can use a table widget to display your data. You can follow this [document](/reference/widgets/table) to understand how the table widget works.
 
-![Display Data Using Table Widget](</img/graphlql1.PNG>)<figure><figcaption align="center"><i>Display Data Using Table Widget</i></figcaption></figure>
+![CDisplay Data Using Table Widget](</img/graphlql1.PNG>)<figure><figcaption align="center"><i>Display Data Using Table Widget</i></figcaption></figure>
 
-When you make requests to the API, it returns many results. To make the responses more manageable, paginate the results. The benefit of this approach is that it doesn't require additional backend logic. Appsmith supports both [Limit/Offset Based Pagination](graphql.md#pagination) and [Cursor-based Pagination.](graphql.md#cursor-based-pagination)
+When you make requests to the API, it returns many results. To make the responses more manageable, paginate the results. The benefit of this approach is that it doesn't require additional backend logic. Appsmith supports both [Limit/Offset Based Pagination ](graphql.md#pagination)and [Cursor-based Pagination.](graphql.md#cursor-based-pagination)
 
-### **​Retrieve a record​**
+### **​Retrieve A Record​**
 
 Retrieve record lets you fetch data for a particular user detail.
 
-* Click the **+** icon next to the **queries/js** and choose your GraphQL datasource.
+* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query.
 * Add your code in the body section.
 
-For example, you want to retrieve the number of GitHub issues(**total**, **open** and **closed**):
+Let's look at an example where we retrieve the number of GitHub issues(**total**, **open** and **closed**):
 
 ```
 query { 
@@ -244,16 +244,16 @@ The advantage of using GraphQL over REST API is that you can cherry-pick the res
 In GraphQL, you **insert**, **update** or **delete** data with mutations. A **Mutation** is a GraphQL Operation that allows you to insert new data or modify the existing data on the server side. You can think of GraphQL Mutations as the equivalent of POST, PUT, PATCH, and DELETE requests in REST.
 
 :::info
-**Queries**, and **Mutations** to perform CRUD operations on data is collectively termed **Queries** in Appsmith.
+**Queries**, and **Mutations** to perform CRUD operations on data are collectively termed **Queries** in Appsmith.
 :::
 
-### **Insert records​/create records**
+### **Insert Records​/Create Records**
 
 Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into a **database table** with **specified table values**.
 
 <VideoEmbed host="youtube" videoId="zy1wcfgyNjg" title="Create New Record" caption="Create New Record"/>
 
-* Click the **+** icon next to the **queries/js** and choose your GraphQL datasource.
+* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query to **`create_user`**.
 * Next, add your code in the body section and run your query.
 
@@ -271,15 +271,15 @@ mutation CreateIssue {
 }
 ```
 
-You can create a new issue using the [button](/reference/widgets/button) and [modal](/reference/widgets/modal) widget.
+You can create a new issue using the [button ](./../widgets/button/README.md)and [modal ](./../widgets/modal.md)widget.
 
-### **Update records​**
+### **Update Records​**
 
 Update queries let you update existing objects of a particular type. With an update query, you can filter nodes and set or remove any field belonging to a type.
 
 <VideoEmbed host="youtube" videoId="iOnuUo8F-DQ" title="" caption=""/>
 
-* Click the **+** icon next to the **queries/js** and choose your GraphQL datasource.
+* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
 * Rename the query to **`update_users`**.
 * Add your code in the body section and run your query.
 
@@ -293,15 +293,15 @@ mutation updateIssueTest{
 }
 ```
 
-The query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here by calling `id`.
+The above query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here we are calling `id`.
 
-You can use the [Modal](/reference/widgets/modal) widget or [JSON form Widget](/reference/widgets/json-form) to update the GitHub issues.
+You can use the [Modal ](./../widgets/modal.md)widget or[ JSON form Widget ](./../widgets/json-form.md)to update the GitHub issues.
 
-### **​Delete a record​**
+### **​Delete A Record​**
 
 The Delete Record command deletes a particular record from the database. You can pass the below parameters to Delete Records.
 
-* Click the **+** icon next to the queries/js and choose your GraphQL datasource.
+* Click on the **+** icon next to the queries/js and choose your GraphQL datasource.
 * Rename the query.
 * Add your code in the body section and run your query.
 
@@ -333,7 +333,7 @@ mutation closeIssueTest{
 You can run queries on real GitHub data using the [GraphQL Explorer](https://docs.github.com/en/graphql/guides/using-the-explorer)
 :::
 
-## Common settings
+## Common Settings
 
 There are a few settings listed below that are common to many operations that you can perform on GraphQL:
 
@@ -341,12 +341,12 @@ There are a few settings listed below that are common to many operations that yo
 
 Pagination refers to the process of receiving portions of a huge dataset until you receive the entire dataset. This helps optimize your app's performance because trying to get all the data results in a slow load time of your app and a slow rendering of the results in the UI.
 
-#### **Limit/Offset based pagination**
+#### **Limit/Offset Based Pagination**
 
 Offset-based pagination is a popular technique where the user requests parameters for limit (number of results) and offset (no of records to skip). Let's define a few terms related to Limit-based Pagination.
 
 * **Limit Variable**: It lets you select the limit variable from the query.
-* **Limit Value**: Set the value of the limit variable (limit the number of rows returned from a query.)
+* **Limit Value**: Set the value of the limit variable ( limit the number of rows returned from a query.)
 * **Offset Variable**: It lets you select the offset variable from the query.
 * **Offset Value**: Set the value of the offset variable selected (allows you to omit a specified number of rows before the beginning of the result set)
 
@@ -372,16 +372,16 @@ query GetAllUsers($limitz:Int, $offsetz:Int){
 ```
 
 * In the pagination section, select **Paginate via Limit and Offset.**
-* Set _**`limitz`**_ as 2, and _**`offsetz`** _ as 0.
+* Set _**limitz**_ as 2, and _**offsetz** _ as 0.
 * Now **run** the query.
 
-So, if you set **Limit Value** to 2, it returns two rows. For instance, if you set _**`limitz`**_ as 4, then the data of 4 users are returned (number of rows).
+So, if you set **Limit Value** to 2, it returns two rows. For instance, if you set _**limitz**_ as 4, then the data of 4 users are returned (i.e., number of rows).
 
-_**Offset**_ allows you to omit a specified number of rows before beginning the result set. For instance, if you set _**`offsetz`**_ to 2, it skips the first two rows, and the results from the third row are displayed.
+_**Offset**_ allows you to omit a specified number of rows before beginning the result set. For instance, if you set _**offsetz**_ to 2, it skips the first two rows, and the results from the third row are displayed.
 
-#### **Cursor-based pagination**
+#### **Cursor-Based Pagination**
 
-Cursor-based pagination (also known as `keyset` pagination) works by returning a pointer to a specific item in the dataset. It's a popular pagination technique that stays clear of many of the difficulties of "offset-limit" pagination. Perhaps the biggest advantage of cursor pagination is its ability to handle real-time data effectively. This is because cursors don't require the data to remain static.
+Cursor-based pagination (also known as keyset pagination) works by returning a pointer to a specific item in the dataset. It's a popular pagination technique that stays clear of many of the difficulties of "offset-limit" pagination. Perhaps the biggest advantage of cursor pagination is its ability to handle real-time data effectively. This is because cursors don't require the data to remain static.
 
 :::info
 Cursor-based pagination works efficiently for large datasets.
@@ -403,9 +403,9 @@ It uses "_**before**_" and "_**after**_" cursors to traverse through the data an
 * **Start Cursor Variable**: Select the variable which holds the _after_ cursor.
 * **Start Cursor Value**: Binding the widget action to the next page activity.
 
-Let’s take an example to understand better how Cursor Based Pagination works. In this example, to display the _**GitHub repository’s issues**_ in a list widget using [GitHub’s GraphQL API](https://docs.github.com/en/graphql).
+Let’s take an example to understand better how Cursor Based Pagination works. In this example, let's display the _**GitHub repository’s issues**_ in a list widget using [GitHub’s GraphQL API](https://docs.github.com/en/graphql).
 
-In this case, declare the pagination variables that stand for **before**, **after**, **first**, and **last**. Then you can navigate through the data using the previous and next buttons highlighted in the screenshot below.
+In this case, we declare the pagination variables that stand for **before**, **after**, **first**, and **last**. Then we can navigate through the data using the previous and next buttons highlighted in the screenshot below.
 
 ![](</img/Screenshot_2022-09-05_at_3.29.42_PM.png>)<figure><figcaption></figcaption></figure>
 
@@ -485,11 +485,11 @@ With this, you can run a query on a page change event. The below video demonstra
 
 ### **Query Settings**
 
-The Query Settings Pane provides access to properties for the query. You can specify the following [settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings)in the **Settings** tab on the Appsmith Query Editor:
+The Query Settings Pane provides access to properties for the query. You can specify the following [settings ](/core-concepts/data-access-and-binding/querying-a-database/query-settings)in the **Settings** tab on the Appsmith Query Editor:
 
 With Appsmith GraphQL integration, it's possible to create apps that seamlessly connect with the database and provide additional flexibility for updating and analyzing data.
 
-## **Using queries in applications**
+## **Using Queries in Applications**
 
 Once you have successfully run a Query, you can use it in your application to:
 

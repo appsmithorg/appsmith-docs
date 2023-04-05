@@ -8,7 +8,7 @@ Modal is a simple UI widget you can use when you want to create Dialogs, Popover
 
 Properties allow you to edit the Modal widget, connect it with other widgets and customize the user actions.
 
-### Widget properties
+### Widget Properties
 
 These properties allow you to edit the Modal widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -18,7 +18,7 @@ These properties allow you to edit the Modal widget. All these properties are pr
 | **Quick Dismiss**   | Quickly dismisses or closes the Modal when the user taps outside the modal. |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                |
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-### Binding properties
+### Binding Properties
 
 These properties allow you to bind your Modal widget with any other widget in queries or JS objects.
 
@@ -44,12 +44,12 @@ Style properties allow you to change the look and feel of the widget.
 | **Background color** | Sets the background color of the widget. |
 | **Border Radius**    | Allows you to define curved corners.     |
 
-## Reopening created modals
+## Reopening Created Modals
 
-Selecting the created modal listed in the Entity Explorer opens it in Edit mode.
+Selecting the created modal listed in the Entity Explorer will open it in Edit mode.
 
 ![Click to expand](/img/open-created-modal.gif)
 
-## Opening modals via widgets
+## Opening Modals via Widgets
 
 To open the Modals via other widgets please refer to [Show Modal](../appsmith-framework/widget-actions/show-modal.md) function.
