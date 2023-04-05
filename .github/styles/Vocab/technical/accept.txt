@@ -287,3 +287,4 @@ Iframe
 iframe
 CSS
 onwards
+selectedMarker
