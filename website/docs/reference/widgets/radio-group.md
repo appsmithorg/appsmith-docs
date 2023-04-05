@@ -8,7 +8,7 @@ The Radio group widget allows users to configure a group of radio buttons. It le
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Radio Group widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -18,13 +18,13 @@ These properties allow you to edit the Radio Group widget. All these properties 
 | **Default Selected Value** | Sets a default value that is selected as user input unless it is changed by the user.                                |
 | **Inline**                 | Whether the checkbox buttons are to be displayed inline horizontally.                                                |
 | **Required**               | When turned on, it makes a user input required and disables any form submission until input is made.                 |
-| **Visible**                | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published. |
+| **Visible**                | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published. |
 | **Disabled**               | Disables input to this widget.                                                                                       |
 | **Animate Loading**        | Allows you to control a widget’s animation on the page load.                                                         |
 | **Alignment**              | Sets alignment of the widget.                                                                                        |
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -32,7 +32,7 @@ These properties help you share values between widgets and also allow you to eas
 | ----------------------- | --------------------------------------------------------------------------------- | ------------------------------------- |
 | **isRequired**          | This property indicates whether the widget is required or not.                    | `{{widget_name.isRequired}}`          |
 | **isVisible**           | This property indicates whether the widget is visible or not.                     | `{{widget_name.isVisible}}`           |
-| **selectedOptionValue** | This property dispays value of selected option. For example- Y for Yes, N for No. | `{{widget_name.selectedOptionValue}}` |
+| **selectedOptionValue** | This property displays value of selected option. For example- Y for Yes, N for No. | `{{widget_name.selectedOptionValue}}` |
 
 ### Events
 
@@ -89,5 +89,5 @@ Style properties allow you to change the look and feel of the widget.
 | -------------------- | -------------------------------------------------------- |
 | **Label Text Color** | Allows you to set text color for the label.              |
 | **Label Text Size**  | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Label Font Style** | Allows you to choose a font style (bold or italic). |
 | **Accent color**     | Sets the accent color of the widget.                     |
