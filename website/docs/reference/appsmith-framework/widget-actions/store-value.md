@@ -56,7 +56,7 @@ You can access the values from the store by referencing the key inside the store
 
 {{ appsmith.store.key }}
 ```
-**Example**: in the example above, you stored the value of `input1.text`. You can access this value anywhere in the application by referencing the key `email`:
+**Example**: in the example, you stored the value of `input1.text`. You can access this value anywhere in the application by referencing the key `email`:
 
 ```javascript
 {{appsmith.store.email}}
@@ -111,7 +111,7 @@ If you need to store many values, instead of making multiple calls to the `store
 storeValue("user", { "name": "Bar Crouch", "email": "bar@appsmith.com", "pin": "9984"}) 
 ```
 
-The below example shows how to access the name of the employee stored above:
+The below example shows how to access the name of the employee that you have stored:
 
 ```javascript
 

@@ -6,18 +6,18 @@ The camera widget powers users to capture images and videos from their applicati
 
 Properties allow you to edit the camera widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Camera widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 | Property     | Description                                                                                                                                                    |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mode**     | Toggle between Image and Video modes.                                                                                                                          |
-| **Visible**  | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode. |
-| **Disabled** | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                |
-| **Mirrored** | Mirrors the image being captured, toggled on by default. Only available for image capture.                                                                     |
+| **Visible**  | Control widget's visibility on the page. When turned off: The widget is not visible when the app is published. It appears translucent when in Edit mode. |
+| **Disabled** | Makes the widget inactive or unusable. The widget remains visible to the user but user interaction is not allowed.                                |
+| **Mirrored** | Mimics the image being captured, toggled on by default. Only available for image capture.                                                                     |
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your camera widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 

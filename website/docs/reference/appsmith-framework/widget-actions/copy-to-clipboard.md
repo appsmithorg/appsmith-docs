@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 ---
-# Copy to Clipboard
+# Copy to clipboard
 
 This function is used to copy text to the clipboard.
 
