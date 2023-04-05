@@ -36,7 +36,7 @@ You can update Appsmith in one of the following ways:
 :::info
 To find the Appsmith installation directory, run the following command:
 
-```
+```bash
 docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
 ```
 :::
@@ -44,7 +44,7 @@ docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
 ### Manual update
 Go to the root directory of your installation and run:
 
-```
+```bash
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
@@ -58,7 +58,7 @@ Before an automatic update, Appsmith creates a backup. You may use this to roll 
 
 1. Go to the root directory of the Appsmith installation and run:
 
-   ```
+   ```bash
    docker-compose down
    ```
 
@@ -80,7 +80,7 @@ Before an automatic update, Appsmith creates a backup. You may use this to roll 
 
 3. Save the file and run:
 
-   ```
+   ```bash
    docker-compose up -d
    ```
 
@@ -99,43 +99,22 @@ Access your Appsmith instance and make the below change to the `docker-compose.y
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem value="CE" label="Community Edition" default>
-  
-From:
 
-```bash
+```yaml
 services:
   appsmith:
-    image: index.docker.io/appsmith/appsmith-ce
-    container_name: appsmith
-```
-
-To:
-
-```bash
-services:
-  appsmith:
+    #highlight-next-line
     image: index.docker.io/appsmith/appsmith-ce:v1.9.2
     container_name: appsmith
 ```
 
-
 </TabItem>
    <TabItem value="BE" label="Business Edition">
-   
-From:
 
-```bash
+```yaml
 services:
   appsmith:
-    image: index.docker.io/appsmith/appsmith-ee
-    container_name: appsmith
-```
-
-To:
-
-```bash
-services:
-  appsmith:
+    #highlight-next-line
     image: index.docker.io/appsmith/appsmith-ee:v1.9.2
     container_name: appsmith
 ```
@@ -145,7 +124,7 @@ services:
 
 Save and run the below command on your shell to restart Appsmith.
 
-```
+```bash
 docker-compose up -d
 ```
 
@@ -155,9 +134,10 @@ Your server starts with the older version that makes all the necessary schema ch
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem value="CE" label="Community Edition" default>
 
-  ```bash
+  ```yaml
   services:
   appsmith:
+    #highlight-next-line
     image: index.docker.io/appsmith/appsmith-ce
     container_name: appsmith
   ```
@@ -165,11 +145,12 @@ Your server starts with the older version that makes all the necessary schema ch
   </TabItem>
   <TabItem value="BE" label="Business Edition">
 
-  ```
-services:
-  appsmith:
-    image: index.docker.io/appsmith/appsmith-ee
-    container_name: appsmith
+  ```yaml
+  services:
+    appsmith:
+      #highlight-next-line
+      image: index.docker.io/appsmith/appsmith-ee
+      container_name: appsmith
   ```
   </TabItem>
 </Tabs>
@@ -177,9 +158,9 @@ services:
 
 Run the restart command once again: 
 
- ```
+ ```bash
  docker-compose up -d
-  ```
+ ```
 :::note 
 If you haven't been using your Appsmith instance for a while, it could be possible that there might be multiple versions that show up in the error message. In such a case, perform the same steps for each version in order, starting from the oldest.
 :::
