@@ -1,6 +1,6 @@
 # Maps
 
-The Map widget is used to display lat, long data on a google map and allows users to select locations on a map as lat, long.
+The Map widget is used to display lat, long data on a Google map and allows users to select locations on a map as lat, long.
 
 :::info IMPORTANT
 To use the Maps widget on a self-hosted Appsmith, ensure that Google Maps is set up on your instance. For more information, see [Configuring Google Maps on a self-hosted Appsmith instance](/getting-started/setup/instance-configuration/google-maps).
@@ -12,23 +12,23 @@ To use the Maps widget on a self-hosted Appsmith, ensure that Google Maps is set
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Map widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 | Widget Property            | Description                                                                                                                                                                                |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Initial location**       | This property sets the default location that the map should focus on.                                                                                                                      |
-| **Default markers**        | This property sets an array of default markers. Every default marker will have the following format: `{lat: number, long: number, title?: string, color?: string}` |
-| **Map & Marker Centring**  | Controls whether the clicked marker is centred on the map.                                                                                                                                 |
+| **Default markers**        | This property sets an array of default markers. Every default marker has the following format: `{lat: number, long: number, title?: string, color?: string}` |
+| **Map & Marker Centring**  | Controls whether the clicked marker is centered on the map.                                                                                                                                 |
 | **Enable search location** | This property enables a search bar on the map which users can use to navigate                                                                                                              |
 | **Enable pick location**   | This property allows users to select a location on the map and moves the map marker to this location. The `selectedMarker` field is populated with this marker.                            |
 | **Create new marker**      | This property enables scrolling within the contents of each tab                                                                                                                            |
-| **Visible**                | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                        |
+| **Visible**                | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                        |
 | **Animate Loading**        | Allows you to control a widget’s animation on the page load.                                                                                                                               |
 | **Zoom Level**             | Sets the default zoom level of the map                                                                                                                                                     |
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your Map widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 

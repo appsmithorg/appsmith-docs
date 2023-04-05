@@ -4,14 +4,14 @@ sidebar_position: 2
 
 # Console Object
 
-The [console object ](https://developer.mozilla.org/en-US/docs/Web/API/Console\_API)provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs. By default, console output would appear in the browser's console tab, which you can view by invoking your browser's developer tools.
+The [console object](https://developer.mozilla.org/en-US/docs/Web/API/Console\_API)provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs. By default, console output would appear in the browser's console tab, which you can view by invoking your browser's developer tools.
 
 The console is integral to any developer's toolkit - it allows you to monitor what your program is doing by logging messages, errors, and warnings as they occur. These informative logs make it much easier to debug your code and locate the source of errors and unexpected behavior.
 
 Appsmith provides the global console object for logging information about your [API](../../core-concepts/connecting-to-data-sources/authentication/), [Queries](../../core-concepts/data-access-and-binding/querying-a-database/), and [Widgets properties](../widgets/) in your JavaScript code. Invoke a console object using the mustache sign `{{}}` in widget properties or [directly in your code](../../core-concepts/writing-code/javascript-editor-beta/#use-case).
 
 :::note
-The console logs **will not be** saved and are **only** available for the **current session.**
+The console logs **is not** saved and are **only** available for the **current session.**
 :::
 
 ## Methods
@@ -57,7 +57,7 @@ To troubleshoot the error, you would want to log some messages: at the start of 
 
 ### Log
 
-The `console.log()` method outputs a message to the logs tab. The message could be a single string value, multiple string values, or JavaScript object(s).
+The `console.log()` method outputs a message to the logs tab. The message could be a single string value, multiple string values, or JavaScript object.
 
 :::note
 Console methods **don’t** support **string substitutions**.
@@ -172,10 +172,10 @@ Having reviewed the error messages and correcting the code, you want to be sure 
 
 ### Warn
 
-The `console.warn()` method logs a warning message in the[ logs tab](../../core-concepts/writing-code/javascript-editor-beta/#logs-tab). Like `console.log()` and `console.error()`, you can log string(s) and JavaScript object(s) as warning messages.
+The `console.warn()` method logs a warning message in the [logs tab](../../core-concepts/writing-code/javascript-editor-beta/#logs-tab). Like `console.log()` and `console.error()`, you can log strings and JavaScript objects as warning messages.
 
 :::note
-&#x20;Console methods **don’t** support **string substitutions**.
+Console methods **don’t** support **string substitutions**.
 :::
 
 Warnings indicate cases where something may go wrong at runtime, so they shouldn't be ignored and can be logged using the `console.warn()` method.
