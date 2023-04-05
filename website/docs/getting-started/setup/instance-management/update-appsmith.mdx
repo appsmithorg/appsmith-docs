@@ -22,7 +22,7 @@ Before you start the update process, make sure you complete the below steps:
 :::caution Attention
 If you are on a version earlier than v1.9.2, first upgrade:
    * Your Embedded or Custom MongoDB server to use MongoDB v5. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/) once your infrastructure is in place.
-   * Follow the steps listed in the [Upgrade to a Checkpoint version](#upgrade-to-a-checkpoint-version) section to update Appsmith.
+   * Follow the steps in the [Upgrade to a Checkpoint version](#upgrade-to-a-checkpoint-version) section to update Appsmith.
 :::
 
 ## Docker Compose
@@ -90,12 +90,15 @@ You may also schedule automatic updates for your instance. For more information,
 
 ## Upgrade to a checkpoint version
 
-When you upgrade manually, you must upgrade to the checkpoint version released between your version and the latest version.
+When performing a manual upgrade, you must:
 
-Appsmith checkpoint versions:
-* v1.9.2
+* First, upgrade to the checkpoint between your current and the latest versions.
+* Appsmith checkpoint versions:
+  * v1.9.2
 
-Access your Appsmith instance and make the below change to the `docker-compose.yml` file:
+Follow the steps below to upgrade to a checkpoint version:
+
+1. Access your Appsmith instance. Make the below change to the `docker-compose.yml` file:
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem value="CE" label="Community Edition" default>
@@ -122,14 +125,13 @@ services:
    </TabItem>
 </Tabs>
 
-Save and run the below command on your shell to restart Appsmith.
+2. Save and run the below command on your shell to restart Appsmith.
 
 ```bash
 docker-compose up -d
 ```
 
-Your server starts with the older version that makes all the necessary schema changes to your Appsmith instance. Once this process has been completed successfully (you can verify this by logging in to your Appsmith instance), you can return to the original version of your `docker-compose.yml` file and resume normal operations.
-
+3. Your server starts with the older version. It applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image in the `docker-compose.yml` file and resume normal operations.
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem value="CE" label="Community Edition" default>
@@ -155,12 +157,13 @@ Your server starts with the older version that makes all the necessary schema ch
   </TabItem>
 </Tabs>
 
-
-Run the restart command once again: 
+4. Run the restart command once again: 
 
  ```bash
  docker-compose up -d
  ```
+ 
+ 
 :::note 
 If you haven't been using your Appsmith instance for a while, it could be possible that there might be multiple versions that show up in the error message. In such a case, perform the same steps for each version in order, starting from the oldest.
 :::
