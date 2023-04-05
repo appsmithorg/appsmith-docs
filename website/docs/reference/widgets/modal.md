@@ -14,7 +14,7 @@ The Modal widget is a container used to group and handle related user inputs. Yo
 Modal widget remains hidden on the canvas and becomes visible only when an event is triggered. You can access and edit the Modal widget from the entity explorer. 
 :::
 
-## Create a modal
+## View and edit data with Modal
 
 When you drag a Modal widget, by default, the modal is pre-populated with Text and two Button widgets. These may be edited or removed as required. To customize the modal, you can add multiple widgets, such as text, images, forms, or other widgets.
 
