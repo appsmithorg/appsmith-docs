@@ -221,13 +221,13 @@ The Fetch API provides an interface for executing network calls programmatically
 
 **GET request**
 ```javascript
-await fetch("https://opentdb.com/api.php?amount=10")
-	return questions.json()
+const questions = await fetch("https://opentdb.com/api.php?amount=10")
+return questions.json()
 ```
 
 **POST request**
 ```javascript
-await fetch("https://63772c9a5c477765121615ba.mockapi.io/users", {
+fetch("https://63772c9a5c477765121615ba.mockapi.io/users", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
