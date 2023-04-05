@@ -43,6 +43,14 @@ Restart the Appsmith container by using the below command:
 docker-compose restart appsmith
 ```
 
+The exact URI to be set here can be obtained from MongoDB Cloud's web interface.
+
+:::note Important
+* Use a MongoDB database with Appsmith, `replicaSet` needs to be configured on the database. This can be done by connecting to the database as `admin`, and running [`rs.initiate()`](https://docs.mongodb.com/manual/reference/method/rs.initiate/). If you are using MongoDB Cloud, this is always done for you.
+
+* Ensure that the credentials used to connect to MongoDB should have the `readWrite` and `clusterMonitor` roles assigned.
+:::
+
 ## Custom Redis
 You can add your external Redis to Appsmith using one of the below ways:
 

@@ -94,7 +94,7 @@ Appsmith provides an option to set the limits to which a widget can grow or shri
 
 ## Disabled
 
-It disables the user from entering values in the input widget. The widget is visible (if Visible is enabled), but user input won't be allowed. You can also write a JS code to link Disabled's functionality to a user action. Click on `JS` next to the `Disabled` to write JavaScript code.
+It disables the user from entering values in the input widget. The widget is visible (if Visible is enabled), but user input won't be allowed. You can also write a JS code to link Disabled property to a user action. Click on `JS` next to the `Disabled` to write JavaScript code.
 
 For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the `Disabled` property. To enable the `Disabled` when the user checks the checkbox, add the following JavaScript code:
 
@@ -170,7 +170,7 @@ Now when the field has fewer than three characters entered, a tooltip appears wi
 
 ## Visible
 
-`Visible` controls the widget's visibility on the app's page. The widget won't be visible on the published app if you turn off this property. You can also write a JS code to link Visible's functionality to a user action. Click on `JS` next to the `Visible` to write JavaScript code.
+`Visible` controls the widget's visibility on the app's page. The widget won't be visible on the published app if you turn off this property. You can also write a JS code to link Visible property to a user action. Click on `JS` next to the `Visible` to write JavaScript code.
 
 For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
 
@@ -178,6 +178,6 @@ For example, drag a checkbox widget `checkbox1` onto the canvas and bind it to t
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it enables the Visible property, and the input box will be visible in the app.
+When you tick the checkbox, it enables the Visible property, and the input box is visible in the app.
 
 <VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
