@@ -22,7 +22,7 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
     4. Create a new security group to allow inbound and outbound NFS traffic.
     5. Attach the security group to the EFS mount-target.
 
-5. **Create the ECS task execution role:**
+5. **Create the ECS task role:**
 
     1. Go to the **IAM** console and select **Roles**.
     2. Click Create Role.
@@ -30,10 +30,10 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
         1. Select the Trusted entity type as AWS Service.
         2. Select **Elastic Container Service Task** as the use case, and hit next.
     4. Add permission
-        1. Add AmazonECSTaskExecutionRolePolicy.
-        2. Add SecretsManagerReadWrite.
-        3. Click Create Policy to open the policy editor, and choose JSON mode.
-```
+        1. Add SecretsManagerReadWrite.
+        2. Click Create Policy to open the policy editor, and choose JSON mode.
+        Custom IAM Policy
+    ```
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -49,7 +49,29 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
           }
         ]
       }
-```
+    ```
+    5. Name, Review and Create.
+    Name the role and before hitting Create, please ensure that the IAM task role must have a trust policy that specifies the ecs-tasks.amazonaws.com service with the sts:AssumeRole permission.
+    Trust Policy
+    ```
+    {
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+  }
+    ```
+
+    :::Note
+    The IAM policy and Trust policy specified in steps 4 & 5 ensure that ECS Exec can be used to execute commands in the container.
+    :::
     
 6. **Provision an external DB v5.0 instance** - Obtain the MongoDB URI, which includes the user credentials for data access.
 Learn more about [Custom MongoDB](getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)
@@ -87,23 +109,22 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 1. On the sidebar, choose Task Definitions and Create a new Task Definition.
 2. Choose Fargate as the launch type, and proceed to the next step.
 3. Enter the task definition name.
-4. Set the task role to None.
+4. Set the task role to the one created in pre-requisite step 5.
 5. Select the default Network mode.
 6. Set Linux as the Operating system family.
-7. Set the Task Execution Role to the one created in the prerequisite step.
-8. Select the default Task execution IAM role created in the Prerequisite step.
-9. Set the required task size for memory & CPU (Minimum requirement: 2vCPU and 4 GB Memory).
-10. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set the Volume type as **EFS**, and set the **File System ID** to the EFS filesystem created in the prerequisite step. Leave the remaining fields with the default values.
+7. Set the Task Execution Role option to [**Create new role**].
+8. Set the required task size for memory & CPU (Minimum requirement: 2vCPU and 4 GB Memory).
+9. Go to the **Volumes** section and add a new volume. Enter the Name as `appsmith_stack`, set the Volume type as **EFS**, and set the **File System ID** to the EFS filesystem created in the prerequisite step. Leave the remaining fields with the default values.
 
-    ![EFS Volume Configuration](/img/ecs-efs.png)
+    ![EFS Volume Configuration](/img/ecs-efs-fargate.png)
 
-11. Configure **Appsmith container**.
+10. Configure **Appsmith container**.
     1. Click the **Add container** button.
     2. Enter the container name, and set the Image to `appsmith/appsmith-ce`.
     3. Add port mappings for the ports **80->80,443->443**.
     4. Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`.
 
-    ![Storage Setting](/img/storage_settings_aws_fargate.png)
+    ![Storage Setting](/img/storage-settings-ecs-fargate-efs.png)
 
     5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values, it's **recommended** you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created.
 
@@ -171,6 +192,23 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 8. You are directed to the **service detail** page. Your task is listed under the **Tasks tab** on the cluster. Refresh the table until the status is **RUNNING**.
 
 9. Obtain the DNS of your ALB and hit it with your browser to access the Appsmith instance.
+
+## Run commands on the fargate instance
+1. Enable ECS exec on the fargate instance run the command below:
+
+```aws ecs update-service --cluster <Cluster Name>  --service <Service Name> --region <Region> --enable-execute-command --force-new-deployment```
+
+Wait until a new deployemnt is rolled out and the instance will have exec enabled on it.
+
+2. Run the command below to exec into the Fargate Appsmith instance using the bash shell.
+```aws ecs execute-command <Cluster Name>
+    --task <Task ID>\
+    --container appsmith \
+    --interactive \
+    --command "bash"
+```
+3. Once you have access to the bash shell, you can execute all commands that are available in the Appsmith continer, like appsmithctl.
+
 
 ## Troubleshooting
 
