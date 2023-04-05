@@ -489,18 +489,19 @@ const sidebars = {
         'advanced-concepts/branding',
         {
           type: 'category',
-          label: 'Version Control With Git',
+          label: 'Git Workflow',
           link: {
             type: 'doc',
-            id: 'advanced-concepts/version-control-with-git/README',
+            id: 'advanced-concepts/git-workflow/README',
           },
           items: [
-            'advanced-concepts/version-control-with-git/import-from-repository',
-            'advanced-concepts/version-control-with-git/commit-and-push',
-            'advanced-concepts/version-control-with-git/working-with-branches',
-            'advanced-concepts/version-control-with-git/pull-and-sync',
-            'advanced-concepts/version-control-with-git/merging-branches',
-            'advanced-concepts/version-control-with-git/disconnect-the-git-repository',
+            'advanced-concepts/git-workflow/connecting-to-git-repository',
+            'advanced-concepts/git-workflow/working-with-branches',
+            'advanced-concepts/git-workflow/commit-and-push',
+            'advanced-concepts/git-workflow/pull-and-sync',
+            'advanced-concepts/git-workflow/merging-branches',
+            'advanced-concepts/git-workflow/import-from-repository',
+            
           ],
         },
         {
