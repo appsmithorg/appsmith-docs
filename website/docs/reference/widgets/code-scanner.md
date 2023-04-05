@@ -5,6 +5,8 @@
 
 The Code Scanner widget allows you to scan a variety of barcodes and QR codes. Using this widget, you'll be able to enhance internal business operations and provide excellent customer service.
 
+<VideoEmbed host="youtube" videoId="Suhefwa5pz0" title="How To Build A Self-Checkout Payment System With The CodeScanner Widget" caption=""/>
+
 ## Usage
 
 QR/Barcodes have taken off because they offer a clear and fast return on investment. It eliminates manual entry of product information at receiving, meaning there are far fewer opportunities for error. You can use a code scanner in the below scenarios:
@@ -116,4 +118,4 @@ The following resources may come handy as you need to learn new tricks:
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors.md). If you are still facing any issues, please get in touch with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
+If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you are still facing any issues, please connect with support@appsmith.com or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).

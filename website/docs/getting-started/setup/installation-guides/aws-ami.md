@@ -94,6 +94,11 @@ The default application credentials are stored in a standalone file. To obtain t
 
 You can either choose to update the Appsmith installation manually or choose to enable auto-updates.
 
+:::caution
+   It's recommended to backup the Appsmith instance before performing an update. For more information, see [How to create a backup](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance).
+:::
+
+
 ### Update Installation Manually
 
 To update Appsmith manually, `ssh` into the `ec2` instance with the username `appsmith` and run the following command:
@@ -124,10 +129,14 @@ docker-compose down
 ```
 docker-compose up -d
 ```
+If you have updated your Appsmith instance and face any issues. You can rollback the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
+
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](../../../help-and-support/troubleshooting-guide/deployment-errors.md), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
+
+If you encounter any errors during this process, check out this guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team.
+
 
 ## Further Reading
 

@@ -1,61 +1,80 @@
 # Column Settings
 
-You can customize each table column through a set of properties by clicking on the gear icon.
+You can customize each table column individually through a set of properties by clicking on its gear icon in the table's properties pane.
 
 ![Column Settings](/img/Column\_control.gif)
 
-Clicking on the gear icon opens the column settings that give you major customization options.
+## Properties
 
-## **Column Control**
-
-Column Control has the following properties:
+These common properties allow you to set the behavior of specific columns within the table widget.
 
 | Property       | Description  |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Column type    | It gives you an option to select the data type for the column  |
-| Computed Value |  It allows you to manipulate the value using JS expressions    |
-| Visible        | Controls the column's visibility on the page. When turned off, the column will not be visible.  |
-| Cell Wrapping  |Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents get ellipsis. |
-| Editable       | Controls whether cells of the column are editable        |
+| -------------- | -------------|
+| **Column type**    | Sets the type of cell to use in this column. There are a variety of different types that have different behaviors, such as buttons, switches, and more.  |
+| **Computed Value** |  It allows you to manipulate the value using JS expressions    |
+| **Visible**        | Controls the column's visibility on the page. When turned off, the column won't be visible.  |
+| **Cell Wrapping**  |Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents get ellipsis. |
+| **Editable**       | Controls whether cells of the column are editable.        |
+| **Column Freeze** | Controls whether to unfreeze or freeze the column to the left or right. For more information about column freezing, see [Freeze Columns](/reference/widgets/table#freeze-columns). |
 
 ### Column type
 
-This property allows you to select the type of data in the column. Currently, the following column types are available:
+This property allows you to select the type of cell to use in the column. Currently, the following column types are available:
+
+* Button
+* Checkbox
+* Date
+* Icon Button
+* Image
+* Menu Button
+* Number
+* Plain Text
+* Select
+* Switch
+* URL
+* Video
 
 ![Column types available for table](/img/column\_type.gif)
 
 #### Button
 
-The button type is a clickable entity that triggers any event attached to it. It captures user intent and triggers an action accordingly. For the button column type, you can use [button properties](../button/).
+The button column type is a clickable cell that triggers an **onClick** event attached to it. For extra information about buttons, read about the [Button widget](/reference/widgets/button).
 
 #### Checkbox
 
 <VideoEmbed host="youtube" videoId="EJn6XiZBI0k" title="Checkbox column" caption="Checkbox column"/>
 
+The [checkbox](/reference/widgets/checkbox) column type represents something with two possible values - usually booleans **True** and **False** for checked and unchecked, respectively.
 
-A [checkbox ](../checkbox.md)is a component that enables the user to make a binary choice, i.e. a choice between one of two possible mutually exclusive options. Checkboxes typically use the boolean values **True** and **False** for checked and unchecked, respectively.
-
-The checkbox column type is not [editable](column-settings.md#editable) by default; however, you can change it in the property pane section. You can update or fetch the checkbox value using [**onCheckChange**](./../checkbox.md#events) after setting it to be editable.
+The checkbox column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
 #### Date
 
-The [Date column type](../datepicker.md) captures the date and time input by a user. It can be used to filter data based on the input date range as well as to capture personal information such as date of birth.
+The date column type displays formatted date and time information. For more information on handling dates, read about the [Datepicker widget](/reference/widgets/datepicker).
 
-#### **Icon Button**
+#### Icon button
 
-An icon button is an icon that triggers an action. More accurately, an icon button is a button that contains an icon and no (visible) accompanying text.
+The icon button column type contains a button that uses an icon as a label rather than text. It's a clickable cell that triggers an **onClick** event attached to it.
 
-You can use any of the available icons; read this guide to understand more about [icon buttons](../icon-button.md).
+For extra information about icon buttons, read about the [Icon Button widget](/reference/widgets/icon-button).
 
-#### **Image**
+#### Image
 
-The[ Image](../image.md) type displays the images in the table. Images must be either a URL or a valid base64. Once you've provided the image URL, the image will show up in the table.
+The image column type parses the cell value as an image source URL or base64 data, and displays the resulting image within the table (or "Invalid Image" if the data isn't valid). The size of the image can be adjusted in the column's Style settings tab with the **Image Size** setting.
 
-The size of image can be adjusted using the Image Size property under Style > General.
+For more information about images in Appsmith, read about the [Image widget](/reference/widgets/icon-button).
 
 #### Menu Button
 
-[Menu buttons](../menu-button.md) represents a set of actions in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.
+The menu button column type is a set of buttons in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.
+
+For more information, read about the [Menu Button widget](/reference/widgets/menu-button).
+
+You can also add menu items dynamically using the [Menu Items Source as Dynamic](../menu-button.md#dynamic).
+
+:::note
+ You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use [`{{currentItem}}` and `{{currentIndex}}`](../menu-button.md#how-to-use-currentitem-and-currentindex) bindings that reference the selected item, and it's index respectively on the menu button.
+:::
 
 #### Number
 
@@ -64,29 +83,33 @@ Numbers are stored in database columns as numeric data types. Typically, these d
 * Precise Numeric Types - values that must maintain precision and scale. INTEGER, BIGINT, DECIMAL, NUMERIC, NUMBER, and MONEY.
 * Forms of Approximate Numbers - where the precision must be maintained and the scale may be floating. DOUBLE PRECISION, FLOAT, and REAL.
 
-#### Plain Text
+The number column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-The Plain text refers to data (such as file contents) that contain readable characters without their graphical representation or other elements (floating-point numbers, images, etc.).
+#### Plain text
+
+The Plain text refers to data (such as file contents) that contain readable characters without graphical representation or other elements (floating-point numbers, images, etc.).
+
+The plain text column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
 #### URL
 
-Data that complies with the universal patterns of URLs are of the URL data type. The only pieces of the URL that must be included are the domain and suffix (e.g., example.com ). By clicking on the URL in the table, you can quickly access the URL.
+When the column type is URL, the table parses the cell contents as a hyperlink and the user may click the cell to be taken to the URL in a new browser tab. The only pieces of the URL that must be included are the domain and suffix (such as: example.com).
 
 #### Video
 
-A [video ](../video.md)format is a format for storing digital video data on a table. It supports a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. You only need to insert the URL of your video and click the play button to play the video.[ ](https://docs.appsmith.com/reference/widgets/video)
+The video column type displays videos within the table. The cell value should be a source file path or URL, such as YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, or DailyMotion. To read more about videos in Appsmith, take a look at the [Video widget](/reference/widgets/video).
 
 #### Switch
 
-The Switch is a UI component that allows users to make a binary decision. Switches toggle the state of a single item **on** or **off**. It employs the boolean values **True** and **False** for the **on** and **off** states, respectively, just like the [checkbox](column-settings.md#checkbox).
+The Switch column type allows users to make a binary decision. Switches toggle the state of a single item on or off. It uses the boolean values **True** and **False** for the on and off states respectively, just like the [checkbox](#checkbox).
 
-The Switch is one of the few column types that supports inline editing; you can update or fetch the switch value using the **onChange event** after setting it to be editable. Read more about [Switch ](./../switch.md)in this guide.
+The switch column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
 #### Select
 
-A [Select/Dropdown](../select) component is a menu list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as gender, role, and status. Here is a code snippet for the **options** property:
+The select column type contains a drop-down list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as T-shirt size, gender, or favorite color. The list of choices for the select column should be placed in the **Options** property, as an array of objects with keys `label` and `value`:
 
-```
+```javascript
 [
   {
     "label": "abc",
@@ -95,49 +118,50 @@ A [Select/Dropdown](../select) component is a menu list that offers options from
 ]
 ```
 
+For more information about properties specific to this column type, read about the [Select widget](/reference/widgets/select).
+
 ![Switch Column type available for table](/img/Switch_column_type.gif)
 
+The select column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-### Computed Value
+
+### Computed value
 
 The computed value field helps in creating custom table columns. For example, you can show a value calculated from the response of two different queries. This field also allows you to manipulate the value using JS expressions; For example, if you want to show the date time stamp in the human-readable format, you can use a `Moment.JS` function.
 
 ![](/img/computed\_value.jpg)
 
+You can also access each row's column values with the `currentRow` property. `currentRow` is only accessible from inside the column properties pane. It can be helpful if you wish to merge multiple values/properties under a single column.
 
-You can also access each row's column values with `currentRow` property. `currentRow` property is only accessible inside column properties. It can be helpful if you wish to merge multiple values/properties under a single column.
-
-For example, in the video below, we renamed the 'email' column to 'Contact' and then used the computed value property inside the column settings to merge email and phone in one column. We later hide the phone column.
+In the video below, the "Email" column is renamed to "Contact" and then the **Computed Value** property is used to merge the email and phone number into a single column.
 
 <VideoEmbed host="youtube" videoId="tjc8HlzQ4xU" title="Merging Columns" caption="Merging Columns"/>
 
 ### Visible
 
-`Visible` in the column settings control the column's visibility on the app's page. The column will not be visible on the published app if you turn off this property. You can also write a JS code to link Visible's functionality to a user action. Click on `JS` next to the `Visible` to write JavaScript code.
+This controls the widget's visibility on the app's page. When turned off, the widget isn't visible in the published app. You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
 
-For example, let's drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Visible` property of a column. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
+For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the table's `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
 
 ```
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it will enable the Visible property, and the column will be visible in the app.
+When you tick the checkbox, `Visible` is set to `true`, and the table becomes visible in the app.
 
-<VideoEmbed host="youtube" videoId="8mFTnQpI8bA" title="Visible" caption="Visible"/>
+<VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
 
-### Cell Wrapping
+### Cell wrapping
 
 Cell wrapping allows the contents of a cell to be wrapped to the following line instead of getting truncated. Cell wrapping can be enabled for a column or subset of cells in a column using `cell wrapping` property in column settings.
 
 <VideoEmbed host="youtube" videoId="RTP1SX6OLL8" title="Cell Wrapping" caption="Cell Wrapping"/>
 
-
-
 ### Editable
 
-Editable controls the cell's editability in the column. You can edit data in a cell of the column when it is turned on. Once a column has been made editable, an edit icon appears on the column header as an indicator.
+Editable controls the cell's edit-ability in the column. You can edit data in a cell of the column when it's turned on. Once a column has been made editable, an edit icon appears on the column header as an indicator. Currently, there are several column types support inline editing - **Text**, **Number**, **Switch**, **Select**, and **Checkbox**.
 
-If you hover over any cell in the column, an edit icon will appear. Click on the icon to edit the individual cell.&#x20;
+If you hover over any cell in the column, an edit icon appears. Click the icon to edit the individual cell.
 
 Based on the Column type, you can edit the cell content. Once done, you can move away from the edit mode in two ways:
 
@@ -152,10 +176,10 @@ Depending upon the column type, various style properties are available to change
 
 |     Property                    |         Description                                           |
 | ------------------------------- | ------------------------------------------------------------- |
-| Text Align                      | Sets the horizontal alignment of the text.                    |
-| Text Size                       | Allows you to set the size of the text in the column          |
-| Font Style                      | Allows you to choose a font style, i.e., bold or italic.      |
-| Vertical Alignment              | Sets the vertical alignment of the contents in a column cell. |
-| Text Color                      | Allows you to set text color for the column.                  |
-| Cell Background                 | Allows you to set background color for the cells.             |
-| Image Size                      | Allows you to resize an image for Image Column Type           |
+| **Text Align**                  | Sets the horizontal alignment of the text.                    |
+| **Text Size**                   | Sets the size of the text in the column.                      |
+| **Font Style**                  | Sets a font style for text, such as **bold** or _italic_.     |
+| **Vertical Alignment**          | Sets how the cell contents are vertically positioned.         |
+| **Text Color**                  | Sets the color of the text in the column.                     |
+| **Cell Background**             | Sets the background color for the cells in the column.        |
+| **Image Size**                  | Allows you to resize an image for Image column type.          |

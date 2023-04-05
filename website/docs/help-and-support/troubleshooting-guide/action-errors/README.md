@@ -16,7 +16,7 @@ If your API / DB Query times out, it could be due to one of the following reason
 * Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by [whitelisting the appsmith instance](../../../learning-and-resources/how-to-guides/aws-whitelist.md) in your database or VPC.
 * Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using
 
-[server-side pagination](../../../core-concepts/data-access-and-binding/displaying-data-read/display-data-tables.md#pagination) or increasing the timeout of the [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md) / [Query](../../../core-concepts/data-access-and-binding/querying-a-database/) in the [settings](../../../core-concepts/data-access-and-binding/querying-a-database/#setting-up-a-query) section.
+[server-side pagination](/reference/widgets/table#server-side-pagination) or increasing the timeout of the [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md) / [Query](../../../core-concepts/data-access-and-binding/querying-a-database/) in the [settings](../../../core-concepts/data-access-and-binding/querying-a-database/#setting-up-a-query) section.
 
 ### Configuration Error
 
