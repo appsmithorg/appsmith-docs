@@ -1,6 +1,6 @@
 # Checkbox
 
-Checkbox is a simple UI widget you can use when you want users to make a binary choice.
+A Checkbox is a simple UI widget you can use when you want users to make a binary choice.
 
 ![Click to expand](/img/checkbox.gif)
 
@@ -8,7 +8,7 @@ Checkbox is a simple UI widget you can use when you want users to make a binary 
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Checkbox widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -18,15 +18,15 @@ These properties allow you to edit the Checkbox widget. All of these properties 
 | **Position**         | Sets whether the label of the checkbox is aligned to the left or right side of the widget.  |
 | **Alignment**        | Sets whether the checkbox is aligned to the left or right side of the widget.  |
 | **Default Selected** | Sets whether the checkbox begins checked or unchecked by default.  |
-| **Required**         | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button will be automatically disabled until the Checkbox is checked. |
-| **Visible**          | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.  |
-| **Disabled**         | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.   |
-| **Animate Loading**  | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
+| **Required**         | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button is automatically disabled until the Checkbox is checked. |
+| **Visible**          | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.  |
+| **Disabled**         | Makes the widget inactive or unusable. The widget remains visible to the user but user interaction isn't allowed.   |
+| **Animate Loading**  | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your Checkbox widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
@@ -38,7 +38,7 @@ These properties allow you to bind your Checkbox widget with any other widget in
 
 ### Events
 
-You can define functions that will be called when these events are triggered in the widget.
+You can define functions that are called when these events are triggered in the widget.
 
 | Events            | Description                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |

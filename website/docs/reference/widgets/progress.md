@@ -1,6 +1,6 @@
 # Progress
 
-The Progress widget indicates the progress of certain user performed or system triggered actions.
+The Progress widget indicates the progress of certain user-performed or system-triggered actions.
 
 <VideoEmbed host="youtube" videoId="Yg1Pfy7uc1s" title="How to use Progress Widget" caption="How to use Progress Widget"/>
 
@@ -8,7 +8,7 @@ The Progress widget indicates the progress of certain user performed or system t
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Progress bar widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -19,9 +19,9 @@ These properties allow you to edit the Progress bar widget. All these properties
 | **Progress**         | Percentage of progress to be indicated to the user.                                                                                                                                                                                              |
 | **Number of steps**  | Progress bar can be broken down into multiple parts called steps, each step contains a fixed percentage of progress. Number of steps can be configured to break down the progress bar for better communication. Only supports positive integers. |
 | **Show Result**      | Controls widget’s ability to show the current evaluated percentage as in number along with the progress.                                                                                                                                         |
-| **Visible**          | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published.                                                                                                                             |
+| **Visible**          | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published.                                                                                                                             |
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your Progress bar widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
