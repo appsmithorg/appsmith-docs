@@ -499,6 +499,7 @@ const sidebars = {
             'advanced-concepts/git-workflow/working-with-branches',
             'advanced-concepts/git-workflow/commit-and-push',
             'advanced-concepts/git-workflow/pull-and-sync',
+            'advanced-concepts/git-workflow/revert-changes',
             'advanced-concepts/git-workflow/merging-branches',
             'advanced-concepts/git-workflow/import-from-repository',
             
