@@ -17,8 +17,6 @@ Create a new repository on your Git hosting service and copy the `SSH URL`. The 
 1. Open the Appsmith app you want to connect to Git and click the **Connect Git** button on the left of the bottom bar.
 2. In the Git connection modal, paste your repository’s `SSH URL` and click the **Generate Key** button to generate an SSH key.
 
-
-
  <VideoEmbed host="youtube" videoId="oFfdIwhSPL8" title="Generating a Deploy key" caption="Generating a Deploy key"/>
 
 Appsmith supports two types of keys -  **ECDSA 256** and **RSA 4096**. Please pick the one that's compatible with your Git hosting service. 
@@ -54,15 +52,13 @@ Copy the `SSH key` generated in the preceding section.
 
 ## User configuration
 
-* In user settings, define the user configurations. By default, the global user configurations are used. Click the **Edit** button or directly open the profile section to change the global configurations. If you want to add a user configuration specific to the current app, you must clear the **Use Default Configuration** checkbox and enter the author details below.
+In user settings, define the user configurations. By default, the global user configurations are used. Click the **Edit** button or directly open the profile section to change the global configurations. If you want to add a user configuration specific to the current app, you must clear the **Use Default Configuration** checkbox and enter the author details below.
 
  <VideoEmbed host="youtube" videoId="d5R1MYKtpCM" title="User Settings | Git Sync" caption="User Settings | Git Sync"/>
 
 Finally, click on **connect**, and when the connection is successful, the app is added to your repository by system generated commit. On the Git modal, you’ll move to the **Deploy** tab, where you can make an initial commit.
 
-<VideoEmbed host="youtube" videoId="Z67SfBpKrnk" title="Initial Commit | Git Sync" caption="Initial Commit | Git Sync"/>
-
-## Updating local file path (optional)
+## Updating local file path
 
 For self-hosted instances, Appsmith clones the Git repositories in the local file system, attached to the persistent volume within the Docker container. To maintain the Git repositories, you need a file path that points to the volume within the Docker container.
 
@@ -76,7 +72,6 @@ APPSMITH_GIT_ROOT= <path-to-repo-directory>
 
 2. Restart the container to apply changes.
 
-
 :::info
-If the file path isn't present, git repositories will be cloned, but this won't be persistent, and Appsmith will try to clone the repositories in case they got deleted by docker restart, etc.
+If the file path isn't present, git repositories is cloned, but this isn't persistent, and Appsmith would try to clone the repositories in case they got deleted by docker restart, etc.
 :::
