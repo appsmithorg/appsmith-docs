@@ -1,10 +1,9 @@
-# Maps
+# Map
 
-
-This page explains how to use the Map widget to display lat-long data on a Google Map and enable users to search and select locations on the map as lat-long coordinates.
+This page guides you on how to use the Map widget to display location data powered by Google Maps API and enable users to add markers, search, and select locations on the map.
 
 :::info IMPORTANT
-To use the Maps widget on a self-hosted Appsmith, ensure that Google Maps is set up on your instance. For more information, see [Configuring Google Maps on a self-hosted Appsmith instance](/getting-started/setup/instance-configuration/google-maps).
+If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. For more information, see [Configuring Google Maps](/getting-started/setup/instance-configuration/google-maps).
 :::
 
 <VideoEmbed host="youtube" videoId="xCTiPNlBKLU" title="Using the Map Widget" caption="Using the Map Widget"/>
@@ -12,7 +11,7 @@ To use the Maps widget on a self-hosted Appsmith, ensure that Google Maps is set
 
 ## Display location
 
-In the Map widget, you can display your desired location on the map by setting the **Initial location** property by choosing from Google's autocomplete suggestions. For example, if you search for `New York, NY, USA`, the location would be shown on the Map widget. Alternatively, you can define the location using JavaScript and pass it as an array of objects with latitude and longitude coordinates, like:
+To display a specific area on the Map widget, you can set the **Initial location** property by selecting a location from Google's autocomplete suggestions. For instance, if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
 
 ```js
 {
@@ -23,7 +22,7 @@ In the Map widget, you can display your desired location on the map by setting t
 ```
 
 ### Add markers
-To add markers to the Map widget, define an array of markers with latitude, longitude, title and optional color keys, and set it in the **Default markers** property. For example:
+You can use markers on the Map widget to showcase precise locations or display multiple locations at once. To add markers to the Map widget, define an array of markers with latitude, longitude, title and optional color keys, and set it in the **Default markers** property. For example:
 
 ```js
 [
@@ -36,7 +35,7 @@ To add markers to the Map widget, define an array of markers with latitude, long
 ]
 ```
 
-This would display markers at the specified coordinates with the specified titles and colors. You can use the JSON format to add multiple markers with varying properties, and also allow users to add their markers with the **Create new marker** property. 
+This would display markers at the specified coordinates with the specified titles and colors. 
 
 Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Default markers** property.
 
@@ -62,15 +61,21 @@ Additionally, you can display dynamic data from queries or JS functions by bindi
   }
 ]
 ```
-This code creates a map marker with a title and blue color, using latitude and longitude values from `tblUserData.selectedRow` after converting them from strings to numbers.
-
-<figure>
-  <img src="/img/map-marker.gif" alt="Display date"/>
-  <figcaption align = "center"><i>Display location from table row</i></figcaption>
-</figure>
+This creates a map marker using the latitude and longitude values from the database. In addition, the marker is given a title and is displayed in blue color.
 
 
-Alternatively, you can **transform the data** into an array of objects containing latitude, longitude, and title properties using a map function, and then use it to display all the locations together on the map.
+
+#### Display multiple markers 
+
+You can use the JSON format to add multiple markers with varying properties, and also allow users to add their markers with the **Create new marker** property. 
+
+This is useful when you want to visualize and compare the geographic distribution of data, such as customer locations or store locations.
+
+---
+**Example**: suppose you want to display all the locations available in the users' database.
+
+
+To do this, you can use the`fetchUserData` query to retrieve the data and then **transform the data** into an array of objects containing latitude, longitude, and title properties using a `map()` function, and then set it in the **Default markers** property to display all the locations together on the map.
 
 ```js
 {{fetchUserData.data.map(loc  => {
@@ -84,7 +89,7 @@ Alternatively, you can **transform the data** into an array of objects containin
 
 
 
-### Display live location
+### Live location
 
 If you want to display the live location on a map, you can use the **Default Marker** property to set a marker at your current latitude and longitude coordinates. To do this, you can use the following code:
 
@@ -102,7 +107,7 @@ To fetch the current location, use `appsmith.geolocation.watchPosition()` action
 
 Enabling the **Search Location** property on a map allows users to search and select a specific location on the map. This can be achieved using Google Autocomplete, which suggests potential locations as the user types in the search bar.
 
-To access the searched location, use the ``center`` reference property. This returns the latitude and longitude coordinates of the searched location. To display the searched location on the map, add the following code to the **Default markers** property:
+To access the searched location, use the ``center`` reference property. This returns the latitude and longitude coordinates of the location. To display the searched location on the map, add the following code to the **Default markers** property:
 
 ```js
 [
@@ -141,7 +146,7 @@ These properties allow you to edit the Map widget. All of these properties are p
 
 These properties allow you to bind your select widget with any other widget in queries or JS objects. For instance, you can use `Map1.isVisible` to get the visibility status.
 
-| Reference Property | Data type | Description                                                                                                                                                    |
+| Property | Data type | Description                                                                                                                                                    |
 | ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **selectedMarker**  | Object  | This contains the marker object selected by the user          |
 | **markers**        | Array   | This contains the list of markers on the map                  |
