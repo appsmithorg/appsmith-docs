@@ -15,11 +15,11 @@ Please the note following while creating a new branch:
 * Checking out a remote branch with a local counterpart already available would result in an error.
 * Branch protections on the remote repository may cause errors with some operations involving Git push.
 
-#### Syncing local with remote branch
+## Sync local with remote branch
 
 To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the **Sync branches** button. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
 
-### Delete a branch
+## Delete a branch
 
 Similar to the Git flow, you can delete a branch in Appsmith that's no longer needed. You can delete any branch other than the default branch. Please make sure that you aren't editing the branch you want to delete.
 

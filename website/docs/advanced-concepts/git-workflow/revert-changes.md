@@ -1,5 +1,5 @@
 
-## Reverting Changes in Git
+# Reverting Changes in Git
 
 If you need to revert changes that have already been committed to your Git repository, you can use the `git revert` command. This command creates a new commit that undoes the changes made by a previous commit.
 

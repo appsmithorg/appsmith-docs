@@ -70,3 +70,4 @@ exceptions:
   - Custom Domain
   - Custom SSL
   - SSL with Let's Encrypt
+  - Git
