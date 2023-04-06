@@ -10,11 +10,9 @@ It acts as a container used to group and handle related user inputs, and can be 
 
 
 
-
 ## View and edit data with Modal
 
-The Modal widget can be used to view and edit data in a table. By displaying the details of a selected row in the Modal, users can easily make changes to the data and improve the usability of your application.
-
+The Modal widget can be used to view and edit data in a table. By displaying the details of a selected row in the Modal, users can easily make changes to the data. To open or close the Modal widget, you can make use of event listeners. 
 
 
 ---
@@ -28,15 +26,15 @@ The Modal widget can be used to view and edit data in a table. By displaying the
 {{fetchUserData.data}}
 ```
 
-3.  Now, set Table's `onRowSelected` event to open a Modal widget.
+3.  Set Table's `onRowSelected` event to open a Modal widget, you can create a new Modal widget or select an existing one
 
 :::note
 Modal widget remains hidden on the canvas and becomes visible only when an event is triggered. You can access and edit the Modal widget from the entity explorer. 
 :::
 
-4. Next, add the necessary widgets to the Modal widget based on the number of data fields you wish to update. For instance, if you plan to modify a user's `Date of Birth` and `Email`, you can drag and drop a Datepicker widget and an Input widget accordingly.
+5. Next, add the necessary widgets to the Modal widget based on the number of data fields you wish to update. For instance, if you plan to modify a user's `Date of Birth` and `Email`, you can drag and drop a Datepicker widget and an Input widget accordingly.
 
-5. Create a new `updateuserdata` query, to update the database
+6. Create a new `updateuserdata` query, to update the database:
 
 ```sql
 UPDATE users
