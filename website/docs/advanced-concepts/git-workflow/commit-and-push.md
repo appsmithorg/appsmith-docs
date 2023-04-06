@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Commit Changes
 
-After developing your app further, you’d want to sync it with your repository. To sync the app to the repository, commit the changes using the **deploy** button at the top right or **+** icon at the bottom left corner. In the deploy modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. The user committing changes on Appsmith is tagged as the commit author.
+After developing your app further, you’d want to sync it with your repository. To sync the app to the repository, commit the changes using the **deploy** button at the top right or the **+** icon at the bottom left corner. In the deploy modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. The user committing changes on Appsmith is tagged as the commit author.
 
-Once you commit and push changes, the changes are also published for the app viewers. Please note that the deployed version of one branch doesn't affect the other. For example, if you are working on a feature branch `f1` and you deploy the changes from `f1` branch, the changes of the master branch aren't affected.
+Once you commit and push changes, the changes are also published for the app viewers. Please note that the deployed version of one branch doesn't affect the other. For example, if you are working on a feature branch `f1` and you deploy the changes from the `f1` branch, the changes of the master branch aren't affected.
 
 Let’s discuss some common errors you may face during the commit and push process.
 
