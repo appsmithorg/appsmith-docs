@@ -288,6 +288,8 @@ iframe
 CSS
 onwards
 selectedMarker
+isOpen
+onClose
 bool
 IFrame
 Multiselect
