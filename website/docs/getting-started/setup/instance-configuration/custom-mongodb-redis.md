@@ -7,7 +7,7 @@ toc_max_heading_level: 4
 Appsmith runs internal instances of MongoDB and Redis. It uses MongoDB and Redis for data storage and session management. You can also switch to external instances. Using external instances makes the Appsmith container stateless, enabling better performance and scalability. Follow the steps on this page to set up external MongoDB and Redis for Appsmith.
 
 :::caution Attention
-To use a custom MongoDB with Appsmith v1.9.0 and later, you need MongoDB version 5 or higher. Follow the steps detailed in the MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+To use external MongoDB with Appsmith v1.9.0 onwards, you need MongoDB version 5 or higher. Follow the steps in the MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/)
 :::
 
 ## External MongoDB
@@ -15,7 +15,7 @@ Follow the steps below to configure Appsmith to use an external MongoDB instance
 
 ### Prerequisites
 * Ensure that your external MongoDB has a replica set configuration in place. Connect to your database as an admin user and run [rs.initiate()](https://docs.mongodb.com/manual/reference/method/rs.initiate/). Note that if you're using MongoDB Cloud, the replica set configuration is already set up for you.
-* Ensure that the user you are connecting with has `readWrite` and `clusterMonitor` roles assigned.
+* Ensure the MongoDB user account has `readWrite` and `clusterMonitor` roles assigned.
 
 ### Configure instance 
 On Appsmith, you can add your external MongoDB by using one of the below ways:
