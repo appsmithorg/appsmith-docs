@@ -1,27 +1,24 @@
 # Modal
 
 
-This page explains how to use the Modal widget to create dialog windows in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
+This page explains how to use the Modal widget to create dialog in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
 
+It acts as a container used to group and handle related user inputs, and can be opened using actions such as setting a Button widget's onClick event. 
 
 <VideoEmbed host="youtube" videoId="s8cHVkhj3ec" title="Using the Modal widget" caption="Using the Modal widget"/>
 
 
 
-The Modal widget is a container used to group and handle related user inputs. You can open the Modal widget using actions, such as setting a Button widget's **onClick** event to open a Modal.
 
-:::note
-Modal widget remains hidden on the canvas and becomes visible only when an event is triggered. You can access and edit the Modal widget from the entity explorer. 
-:::
 
 ## View and edit data with Modal
 
-When you drag a Modal widget, by default, the modal is pre-populated with Text and two Button widgets. These may be edited or removed as required. To customize the modal, you can add multiple widgets, such as text, images, forms, or other widgets.
+The Modal widget can be used to view and edit data in a table. By displaying the details of a selected row in the Modal, users can easily make changes to the data and improve the usability of your application.
 
 
 
 ---
-**Example**: consider a scenario where you have a Modal widget that displays a form with the details of a selected user when you click on a row in a table.
+**Example**: to use the Modal widget to view and update details for each row in the table, you can follow the steps below:
 
 1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
 
@@ -32,6 +29,10 @@ When you drag a Modal widget, by default, the modal is pre-populated with Text a
 ```
 
 3.  Now, set Table's `onRowSelected` event to open a Modal widget.
+
+:::note
+Modal widget remains hidden on the canvas and becomes visible only when an event is triggered. You can access and edit the Modal widget from the entity explorer. 
+:::
 
 4. Next, add the necessary widgets to the Modal widget based on the number of data fields you wish to update. For instance, if you plan to modify a user's `Date of Birth` and `Email`, you can drag and drop a Datepicker widget and an Input widget accordingly.
 
