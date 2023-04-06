@@ -6,17 +6,17 @@ sidebar_position: 3
 
 ---
 
-# Building UI and Accessing Widget Properties
+# Building UI and Accessing Widget properties
 
-### Customizing the Table Widget
+### Customizing the Table widget
 
 As you can see, the table widget has a lot of data from the query, but say you might want to show only a few columns and hide the rest of them for better clarity.
 
 :::info
-You can open the property pane, find the columns, and toggle the eye icon. It will hide the columns from the table.
+You can open the property pane, find the columns, and toggle the eye icon. It hides the columns from the table.
 :::
 
-Now open the tables property pane, and only display the following columns:
+Now open the property pane, and only display the following columns:
 
 * Name
 * Address
@@ -26,17 +26,17 @@ Below is the video to build the UI and edit table properties:
 
 <VideoEmbed host="youtube" videoId="4ET9wtFFIF0" title="Building the UI and Editing Table Properties" caption="Building the UI and Editing Table Properties"/>
 
-Additionally, let's make the UI more beautiful by using a Container widget. Using this, we can group multiple widgets on a minimal white-spaced background. To do this, follow the below steps:
+Additionally, make the UI more beautiful by using a Container widget. Using this, you can group multiple widgets on a minimal white-spaced background. To do this, follow the below steps:
 
 1. Drag and drop a **Container** widget onto the canvas.
 2. Move the Table widget into the Container widget.
-3. Additionally, add a **Text widget** on top of the Table widget to add a heading. You can name that text "Review Moderator Dashboard".
+3. Additionally, add a **Text widget** on top of the Table widget to add a heading. You can name that text "Review Moderator Dashboard."
 
 Let's add some additional components that display the information whenever a particular business is selected on the table row. Let's first rename the Table widget from **Table1** to **businessTable**. You can edit the widget's name from the property pane.
 
-### Adding a Map Widget
+### Adding a Map widget
 
-To make the UI more intuitive, let's add the location of the business. To do this, we will add a [Map Widget](/reference/widgets/maps.md) and display the location of the business by following the below steps:
+To make the UI more intuitive add the location of the business. To do this, add a [Map Widget](/reference/widgets/maps.md) and display the location of the business by following the below steps:
 
 <VideoEmbed host="youtube" videoId="J_xVn-TKPXY" title="Adding Map Widget" caption="Adding Map Widget"/>
 
@@ -78,9 +78,9 @@ Now select any row from the table, and the map automatically updates with the bu
 The zoom level can be used to pinpoint the exact location.
 :::
 
-### Adding Text Widgets and Binding Data
+### Adding Text widgets and binding data
 
-Next, let's add a few text widgets and bind all the business information under the map. You can drop text widgets onto the canvas and add their associated names and values like:
+Next, add a few text widgets and bind all the business information under the map. You can drop text widgets onto the canvas and add their associated names and values like:
 
 <VideoEmbed host="youtube" videoId="jEhbeoc4sTE" title="Adding Text Widgets</i></figcaption>" caption="Adding Text Widgets</i></figcaption>"/>
 
@@ -100,6 +100,6 @@ Business Rating: {{businessTable.selectedRow.stars}}
 Categories Rating: {{businessTable.selectedRow.categories}}
 ```
 
-### What's Next?
+### What's next?
 
 In the next section, you'll learn how to write JS functions inside the widget to create interactive views. You'll also use the list and chart widgets to analyze the reviews from the reviews table based on the selected business.

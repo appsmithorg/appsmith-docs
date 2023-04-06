@@ -16,7 +16,7 @@ Appsmith provides an easy way to integrate with HubSpot, and enables you to perf
 
 # Create HubSpot Datasource
 
-To add a HubSpot API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **HubSpot** under APIs.
+To add a HubSpot API, navigate to **Explorer** >> Click the **+** icon (next to Datasources) >> Select **HubSpot** under APIs.
 
 
 
@@ -25,7 +25,7 @@ To add a HubSpot API, navigate to **Explorer** >> Click on the **+** icon (next 
 
 
 
-## Connection Settings
+## Connection settings
 
 Configure the HubSpot API as illustrated below:
 
@@ -52,7 +52,7 @@ Let's see how you can fetch your Bearer Token:
 
 * Open [**HubSpot**](https://www.hubspot.com/products).
 * You can **create a new account** or select an existing one.
-* Click on the **settings** icon on top-right corner, and select integrations.
+* Click the **settings** icon on top-right corner, and select integrations.
 * Create a private app (or open an existing one).
 * Navigate to **Scopes**.
 * Allow necessary permissions for **CMS, CRM, and Settings**.
@@ -67,12 +67,12 @@ pat-na1-217ee**-****-****-****-***
 ```
 
 
-## Create Queries
+## Create queries
 
 You can add queries to the newly created HubSpot datasource in one of the below ways:
 
 
-### Datasource Page
+### Datasource page
 You can add queries to HubSpot datasource by selecting the **New API +** button available on the datasource page.
 
 ![](/img/hubspot-create-query-from-datasource-page.png)
@@ -85,7 +85,7 @@ By navigating to **Explorer** >> **Click plus sign** (+) next to Queries/JS >> S
 
 ## Query
 
-You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. HubSpot integration supports the following query methods:
+You can create queries to fetch, update, and delete data from a datasource using the Appsmith query editor. HubSpot integration supports the following query methods:
 
 |                Query Name                |              Description              |
 |:----------------------------------------:|:-------------------------------------:|
@@ -144,7 +144,7 @@ You can check the [Query Settings Guide ](/core-concepts/data-access-and-binding
 
 
 
-## Using Queries in Applications
+## Using queries in applications
 
 Once you have successfully run a Query, you can use it in your app to:
 
