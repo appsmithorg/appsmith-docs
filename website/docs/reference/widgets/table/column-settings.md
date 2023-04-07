@@ -60,7 +60,7 @@ For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` but the **
 
 * The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the **Display Format** property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
 
-It's important to ensure that both properties are set correctly to handle and display date and time information in your app. For more information on handling dates, read about the [Datepicker widget](/reference/widgets/datepicker).
+It's important to ensure that both properties are set correctly to handle and display date and time information in your app. 
 
 #### Icon button
 
