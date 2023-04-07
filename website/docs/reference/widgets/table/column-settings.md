@@ -52,7 +52,11 @@ The checkbox column type supports [inline editing](/reference/widgets/table/inli
 
 The date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
 
-* The **Date Format** property specifies how incoming date data should be interpreted. For example, lets say that the incoming date data is in the format `YYYY-MM-DD HH:mm` but the Date Format property is set to `DD/MM/YYYY`. In this case, the app would not be able to properly interpret the date information and would display an evaluation error.
+* The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. 
+
+For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` but the **Date Format** property selected is **DD/MM/YYYY**, it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
+* Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, YYYY-MM-DD hh:mm:ss, etc.
+* Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
 
 * The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date data is in the format `YYYY-MM-DD` but the Display Format property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
 
