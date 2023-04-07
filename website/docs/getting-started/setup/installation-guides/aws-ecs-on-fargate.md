@@ -18,63 +18,68 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
     Ensure that the EFS, ECS cluster, and Fargate instances are all in the same VPC.
     :::
       
-    3. Click on the EFS created and navigate to the Network tab to ensure mount-target is made in the same availability zone as the ECS cluster.
+    3. Click the EFS created and navigate to the Network tab to ensure the mount-target is made in the same availability zone as the ECS cluster.
     4. Create a new security group to allow inbound and outbound NFS traffic.
     5. Attach the security group to the EFS mount-target.
 
 5. **Create the ECS task role:**
+    To enable the `exec` command, follow the steps below:
 
     1. Go to the **IAM** console and select **Roles**.
     2. Click Create Role.
     3. Select trust entity:
         1. Select the Trusted entity type as AWS Service.
         2. Select **Elastic Container Service Task** as the use case, and hit next.
-    4. Add permission
-        1. Add SecretsManagerReadWrite.
-        2. Click Create Policy to open the policy editor, and choose JSON mode.
-        Custom IAM Policy
-    ```
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Effect": "Allow",
-              "Action": [
-                  "ssmmessages:CreateControlChannel",
-                  "ssmmessages:CreateDataChannel",
-                  "ssmmessages:OpenControlChannel",
-                  "ssmmessages:OpenDataChannel"
-              ],
-              "Resource": "*"
-          }
-        ]
-      }
-    ```
-    5. Name, Review and Create.
-    Name the role and before hitting Create, please ensure that the IAM task role must have a trust policy that specifies the ecs-tasks.amazonaws.com service with the sts:AssumeRole permission.
-    Trust Policy
-    ```
-    {
-    "Version": "2008-10-17",
-    "Statement": [
-        {
-            "Sid": "",
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "ecs-tasks.amazonaws.com"
-            },
-            "Action": "sts:AssumeRole"
-        }
-    ]
-  }
-    ```
 
-    :::Note
-    The IAM policy and Trust policy specified in steps 4 & 5 ensure that ECS Exec can be used to execute commands in the container.
-    :::
+    4. Add permission
+        1. Add `SecretsManagerReadWrite`.
+        2. Click Create Policy to open the policy editor, and choose JSON mode.
+
+        ```json title="Custom IAM Policy"
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "ssmmessages:CreateControlChannel",
+                        "ssmmessages:CreateDataChannel",
+                        "ssmmessages:OpenControlChannel",
+                        "ssmmessages:OpenDataChannel"
+                    ],
+                    "Resource": "*"
+                }
+                ]
+        }
+
+        ```
+
+    5. Name, Review, and Create:
+
+    Name the role and review that the trust policy has `ecs-tasks.amazonaws.com` and `sts:AssumeRole` permissions as shown below:
+
+    ```json title="Trust Policy"
+    {
+        "Version": "2008-10-17",
+        "Statement": [
+            {
+                "Sid": "",
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": "ecs-tasks.amazonaws.com"
+                },
+                "Action": "sts:AssumeRole"
+            }
+        ]
+    
+    }
+
+    ```
+    Once done, click **Create**.
     
 6. **Provision an external DB v5.0 instance** - Obtain the MongoDB URI, which includes the user credentials for data access.
 Learn more about [Custom MongoDB](getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)
+
 :::danger
 Please don't run the built-in embedded MongoDB with the EFS, as it could cause the Appsmith instance to crash.
 :::
@@ -109,7 +114,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 1. On the sidebar, choose Task Definitions and Create a new Task Definition.
 2. Choose Fargate as the launch type, and proceed to the next step.
 3. Enter the task definition name.
-4. Set the task role to the one created in pre-requisite step 5.
+4. Set the task role to the one created in prerequisites - **Create the ECS task role**.
 5. Select the default Network mode.
 6. Set Linux as the Operating system family.
 7. Set the Task Execution Role option to [**Create new role**].
@@ -118,10 +123,10 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
     ![EFS Volume Configuration](/img/ecs-efs-fargate.png)
 
-10. Configure **Appsmith container**.
+10. Configure the **Appsmith container**.
     1. Click the **Add container** button.
     2. Enter the container name, and set the Image to `appsmith/appsmith-ce`.
-    3. Add port mappings for the ports **80->80,443->443**.
+    3. Add port mappings for ports **80->80,443->443**.
     4. Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`.
 
     ![Storage Setting](/img/storage-settings-ecs-fargate-efs.png)
@@ -132,12 +137,12 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
         - `APPSMITH_ENCRYPTION_PASSWORD`: Encryption password to encrypt all credentials in the database. You can use any random string (Eg. test). The more random, the better.
         - `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. You can use any random string (Eg. test). The more random, the better.
-        - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access supervisor console to monitor the processes in the Appsmith container.
+        - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to monitor the processes in the Appsmith container.
         - `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB v5 instance by adding a new env key.
 
         ![Container Environment](/img/container_environment_aws_fargate.png)
 
-    7. Configure the Healthcheck to the following settings:
+    7. Configure the health check to the following settings:
 
         - Command: `CMD-SHELL, curl http://localhost/api/v1/health`
         - Interval: 10 seconds
@@ -178,7 +183,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
        4. Create a new Production listener port for port 80.
        5. Set the Production listener protocol to HTTP.
        6. Set a Target Group to create new.
-       7. Set the Health Check pattern to /api/v1/health and evaluation order to 1.
+       7. Set the Health Check pattern to `/api/v1/health` and evaluation order to 1.
        8. Repeat the same steps to add a Listener for port 443 but with HTTPS protocol.
 
     ![Configure Network](/img/configure_network_appsmith_fargate.png)
@@ -193,21 +198,26 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 9. Obtain the DNS of your ALB and hit it with your browser to access the Appsmith instance.
 
-## Run commands on the fargate instance
-1. Enable ECS exec on the fargate instance run the command below:
+## Run commands on the Fargate instance
+1. Enable ECS `exec` on the Fargate instance with:
 
-```aws ecs update-service --cluster <Cluster Name>  --service <Service Name> --region <Region> --enable-execute-command --force-new-deployment```
+```bash
+aws ecs update-service --cluster <Cluster Name>  --service <Service Name> --region <Region> --enable-execute-command --force-new-deployment
+```
 
-Wait until a new deployemnt is rolled out and the instance will have exec enabled on it.
+Wait until a new deployment is rolled out, and the instance has exec enabled on it.
 
-2. Run the command below to exec into the Fargate Appsmith instance using the bash shell.
-```aws ecs execute-command <Cluster Name>
+2. Exec into the Fargate Appsmith instance with:
+
+```bash
+aws ecs execute-command <Cluster Name>
     --task <Task ID>\
     --container appsmith \
     --interactive \
     --command "bash"
 ```
-3. Once you have access to the bash shell, you can execute all commands that are available in the Appsmith continer, like appsmithctl.
+
+3. Once you have access to the bash shell, you can execute all commands that are available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
 
 
 ## Troubleshooting
