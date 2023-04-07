@@ -186,4 +186,44 @@ If you can't upgrade your infrastructure, downgrade your Appsmith instance to v1
 ```bash
  docker-compose up -d
 ```
+=======
+If it is not possible for you to upgrade your infrastructure to support MongoDB version 5 or higher:
+* You may use an external MongoDB version 5 or higher on [MongoDB Atlas](https://www.mongodb.com/pricing).
+* If you are upgrading your infrastructure and need time, consider downgrading Appsmith. Once you have upgraded MongoDB, [Update Appsmith](/getting-started/setup/instance-management/update-appsmith) to the latest version to use new features.
+
+Follow the steps below to downgrade to v1.8.15:
+
+  1. Access your Appsmith instance and make the below change to the `docker-compose.yml` file:
+
+  <Tabs groupId="appsmithEditions" queryString="current-edition">
+    <TabItem value="CE" label="Community Edition" default>
+
+    ```yaml
+    services:
+    appsmith:
+      #highlight-next-line
+      image: index.docker.io/appsmith/appsmith-ce:v1.8.15
+      container_name: appsmith
+    ```
+    
+    </TabItem>
+    <TabItem value="BE" label="Business Edition">
+
+    ```yaml
+    services:
+    appsmith:
+       #highlight-next-line
+      image: index.docker.io/appsmith/appsmith-ee:v1.8.15
+      container_name: appsmith
+    ```
+    </TabItem>
+  </Tabs>
+
+
+  2. Run the restart command: 
+
+  ```bash
+  docker-compose up -d
+  ```
+
 Your server starts with version 1.8.15, which makes all the necessary schema changes to your Appsmith instance. 
