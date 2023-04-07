@@ -75,7 +75,7 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
     }
 
     ```
-    Once done, click **Create**.
+    6. Click **Create**.
     
 6. **Provision an external DB v5.0 instance** - Obtain the MongoDB URI, which includes the user credentials for data access.
 Learn more about [Custom MongoDB](getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)
