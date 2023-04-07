@@ -58,7 +58,7 @@ For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` but the **
 * Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, YYYY-MM-DD hh:mm:ss, etc.
 * Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
 
-* The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date data is in the format `YYYY-MM-DD` but the Display Format property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
+* The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the **Display Format** property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
 
 It's important to ensure that both properties are set correctly to handle and display date and time information in your app. For more information on handling dates, read about the [Datepicker widget](/reference/widgets/datepicker).
 
