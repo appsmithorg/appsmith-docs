@@ -50,7 +50,7 @@ The checkbox column type supports [inline editing](/reference/widgets/table/inli
 
 #### Date
 
-The date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
+The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
 
 * The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. 
 
