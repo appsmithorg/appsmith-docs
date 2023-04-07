@@ -124,6 +124,16 @@ For more information about properties specific to this column type, read about t
 
 The select column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
+The select column type also supports setting the select options while adding a new row. The below mentioned properties help to set the select options for new row:
+* Same options in new row:
+    When this property is turned ON the options in the first row are used in the new row.
+    By default, this property is turned on.
+* New row options: When the above property is turned off, this property becomes visible. This will allow to add options specifically for the new row. Supports static and dynamic data, but doesn't have access `currentRow `object.
+
+It is to be noted that `Same options in new row` and `New row options` are only visible when add new row property is turned on in table widget
+
+
+
 
 ### Computed value
 
