@@ -54,9 +54,7 @@ This document guides you through installing Appsmith using AWS ECS on Fargate.
 
         ```
 
-    5. Name, Review, and Create:
-
-    Name the role and review that the trust policy has `ecs-tasks.amazonaws.com` and `sts:AssumeRole` permissions as shown below:
+    5. Name the role and review that the trust policy has `ecs-tasks.amazonaws.com` and `sts:AssumeRole` permissions as shown below:
 
     ```json title="Trust Policy"
     {
