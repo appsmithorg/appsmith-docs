@@ -9,6 +9,8 @@ Similar to using Git flow in SDLC, you can make separate branches in Appsmith fo
 - **Release** - All the feature branches should be merged into the release where the app goes through testing and QA. When the QA is completed, raise a PR from the release to the main branch in the remote repository.
 - **Main** - The main branch contains the final version of the app that's accessible to the app viewer. You can make this branch protected from the settings in the remote repository.
 
+## Create a branch
+
 To create these branches in your Appsmith app, follow the steps below:
 
 * Click the current branch at the bottom left corner to open the branch modal that shows the list of existing branches.
