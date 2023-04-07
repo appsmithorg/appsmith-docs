@@ -112,7 +112,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 1. On the sidebar, choose Task Definitions and Create a new Task Definition.
 2. Choose Fargate as the launch type, and proceed to the next step.
 3. Enter the task definition name.
-4. Set the task role to the one created in prerequisites - **Create the ECS task role**.
+4. Set the task role to the one created in step 5 **Create the ECS task role** under [Prerequisites](/getting-started/setup/installation-guides/aws-ecs-on-fargate#prerequisites)
 5. Select the default Network mode.
 6. Set Linux as the Operating system family.
 7. Set the Task Execution Role option to [**Create new role**].
@@ -121,7 +121,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
     ![EFS Volume Configuration](/img/ecs-efs-fargate.png)
 
-10. Configure the **Appsmith container**.
+10. Configure the Appsmith container.
     1. Click the **Add container** button.
     2. Enter the container name, and set the Image to `appsmith/appsmith-ce`.
     3. Add port mappings for ports **80->80,443->443**.
@@ -129,7 +129,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
     ![Storage Setting](/img/storage-settings-ecs-fargate-efs.png)
 
-    5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values, it's **recommended** you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created.
+    5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values, it's **recommended** you create secrets and set the `env` value using the `ValueFrom` option by specifying the `arn` of the secret created.
 
     6. Set the following Environment Variables:
 
