@@ -92,6 +92,8 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
 
 Once Appsmith pods are up and running, proceed with copying and restoring the backup.
 
+**Note:** Make sure `APPSMITH_CUSTOM_DOMAIN` is not set in docker.env when appsmith is deployed on kubernetes.
+
 ## Copy backup
 
 Run the below command to move the Appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/data/backup/`.

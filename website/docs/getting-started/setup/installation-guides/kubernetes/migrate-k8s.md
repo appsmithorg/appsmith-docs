@@ -155,6 +155,7 @@ Follow the below steps to install helm chart with old configuration:
           appsmith-redis-replicas-0    1/1     Running    0          90s
       ```
 
+**Note:** Make sure `APPSMITH_CUSTOM_DOMAIN` is not set in docker.env when appsmith is deployed on kubernetes.
 ### Import database
 
 Follow the below steps to import data from archive file into new Helm chart:
