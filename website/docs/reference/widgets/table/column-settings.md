@@ -50,7 +50,13 @@ The checkbox column type supports [inline editing](/reference/widgets/table/inli
 
 #### Date
 
-The date column type displays formatted date and time information. For more information on handling dates, read about the [Datepicker widget](/reference/widgets/datepicker).
+The date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
+
+* The **Date Format** property specifies how incoming date data should be interpreted. For example, lets say that the incoming date data is in the format `YYYY-MM-DD HH:mm` but the Date Format property is set to `DD/MM/YYYY`. In this case, the app would not be able to properly interpret the date information and would display an evaluation error.
+
+* The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date data is in the format `YYYY-MM-DD` but the Display Format property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
+
+It's important to ensure that both properties are set correctly to handle and display date and time information in your app. For more information on handling dates, read about the [Datepicker widget](/reference/widgets/datepicker).
 
 #### Icon button
 
