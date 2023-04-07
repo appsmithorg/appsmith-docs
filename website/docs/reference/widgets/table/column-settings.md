@@ -54,7 +54,7 @@ The Date column type allows you to set up custom formatting options for date and
 
 * The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. 
 
-For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` but the **Date Format** property selected is **DD/MM/YYYY**, it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
+For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
 * Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, YYYY-MM-DD hh:mm:ss, etc.
 * Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
 
