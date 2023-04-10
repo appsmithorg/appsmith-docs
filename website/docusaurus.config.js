@@ -28,7 +28,13 @@ const config = {
         allowedInDev: false,
       },
     ],
-  ],
+    [    require.resolve('./plugins/scarfplugin'),   
+          {      
+            trackingCode: 'ae471d67-d95c-4a3a-b35b-799e8ee8fa17',      
+            domain: 'https://docs.appsmith.com',    
+          },  
+    ],
+  ],  
 
   presets: [
     [
@@ -183,13 +189,6 @@ const config = {
       src:
         '/scripts/intercomSettings.js',
       async: false,
-    },
-    {
-        src: 'https://static.scarf.sh/a.png?x-pxid=ae471d67-d95c-4a3a-b35b-799e8ee8fa17',
-        async: true,
-        defer: true,
-        'data-domain': 'https://docs.appsmith.com',
-        'referrerpolicy': 'no-referrer-when-downgrade'
     },
     {
       src:
