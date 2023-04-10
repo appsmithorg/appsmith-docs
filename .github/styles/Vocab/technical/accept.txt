@@ -191,15 +191,12 @@ untrusted
 Filepicker
 Cloudinary
 Port
-<<<<<<< HEAD
 navigateTo
 triggerable
 params
 resetChildren
 subnet
 auto-configure
-
-=======
 the cloud
 CLI
 ACI
@@ -325,4 +322,5 @@ Unpublish
 unpublish
 Id
 Upcloud
->>>>>>> main
+Modal
+
