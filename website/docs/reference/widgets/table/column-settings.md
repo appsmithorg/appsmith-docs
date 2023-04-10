@@ -52,11 +52,10 @@ The checkbox column type supports [inline editing](/reference/widgets/table/inli
 
 The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
 
-* The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. 
+* The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
 
-For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
-* Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, **YYYY-MM-DD hh:mm:ss**, etc.
-* Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
+   * Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, **YYYY-MM-DD hh:mm:ss**, etc.
+   * Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
 
 * The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the **Display Format** property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
 
@@ -117,30 +116,29 @@ The switch column type supports [inline editing](/reference/widgets/table/inline
 
 #### Select
 
-The select column type contains a drop-down list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as T-shirt size, gender, or favorite color. The list of choices for the select column should be placed in the **Options** property, as an array of objects with keys `label` and `value`:
+The Select column type allows users to select an option from a predefined list of choices. It is useful for capturing data such as T-shirt size, gender, or favorite color. To set up a Select column, you need to specify the list of options in the Options property. The Options property should be an array of objects, with each object containing a `label` and a `value` property.
 
 ```javascript
 [
   {
-    "label": "abc",
+    "label": "ABC",
     "value": "abc"
   }
 ]
 ```
-
-For more information about properties specific to this column type, read about the [Select widget](/reference/widgets/select).
-
-![Switch Column type available for table](/img/Switch_column_type.gif)
+The `label` property specifies the text that would be displayed to the user, and the `value` property specifies the value that would be stored in the cell.
 
 The select column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-The select column type also supports setting the select options while adding a new row. The below mentioned properties help to set the select options for new row:
-* Same options in new row:
-    When this property is turned ON the options in the first row are used in the new row.
-    By default, this property is turned on.
-* New row options: When the above property is turned off, this property becomes visible. This will allow to add options specifically for the new row. Supports static and dynamic data, but doesn't have access `currentRow `object.
+If you want to specify the options available for new rows in a Select column, you can use the following properties:
 
-It is to be noted that `Same options in new row` and `New row options` are only visible when add new row property is turned on in table widget
+:::note
+Please note that the Table's **Allow adding a row** property must be turned on to add a new row.
+:::
+
+* **Same options in new row:** When this property is turned on, it ensures that the same options are available for new rows as well. For instance, if your Select column has options like `Small`, `Medium`, and `Large`, then these options would also be available when you add new rows.
+
+* **New row options:** If you want to provide different options for new rows, you can turn off the `Same options in new row` property. This would make the `New row options` property visible, where you can add options specifically for the new row. Please note that the New row options property does not have access to the current row object.
 
 
 
