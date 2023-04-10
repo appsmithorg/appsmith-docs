@@ -14,7 +14,7 @@ Similar to using Git flow in SDLC, you can make separate branches in Appsmith fo
 To create these branches in your Appsmith app, follow the steps below:
 
 * Click the current branch at the bottom left corner to open the branch modal that shows the list of existing branches.
-* To create a new branch, enter the new branch name in the input box and click on `Create branch:<branch-name>`.
+* To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**.
 
 ![](/img/create_branch.gif)
 
