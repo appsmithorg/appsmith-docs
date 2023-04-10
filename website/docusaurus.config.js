@@ -25,7 +25,7 @@ const config = {
       '@twilio-labs/docusaurus-plugin-segment',
       {
         writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
-        allowedInDev: false,
+        allowedInDev: true,
       },
     ],
   ],
@@ -195,6 +195,11 @@ const config = {
       src:
         '/scripts/smartlook.js',
       async: false,
+    },    
+    {
+      src:
+        '/scripts/analyticsEvents.js',
+      defer: true,
     }
   ],
 };
