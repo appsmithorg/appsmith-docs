@@ -110,7 +110,7 @@ helm uninstall appsmith -n <namespace>
 
 ## Configure parameters
 
-To ensure that the Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure parameters:
+To ensure that the Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure the parameters:
 
 1. Add the following snippet to the bottom of your `values.yaml` file. This snippet enables PostgreSQL.
 
@@ -128,6 +128,10 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
+   :::caution Attention
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+   :::
+
    ```yaml
      APPSMITH_KEYCLOAK_DB_DRIVER: ""
      APPSMITH_KEYCLOAK_DB_USERNAME: ""
@@ -135,8 +139,6 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_URL: ""
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
-
-**Note:** Make sure `APPSMITH_CUSTOM_DOMAIN` is not set in docker.env when appsmith is deployed on kubernetes.
 
 ## Install v3 Helm chart
 
