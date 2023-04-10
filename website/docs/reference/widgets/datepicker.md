@@ -5,6 +5,46 @@ This page explains how to use the Datepicker widget to display or capture date/t
 <VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
 
 
+
+## Update date
+
+To update the date, you can start by setting a **Default Date**. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
+
+---
+
+**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. For this, lets use the same `tblUserData` table.
+
+1. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
+
+```js
+{{tblUserData.selectedRow.dob}}
+```
+
+2. To update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
+
+```sql
+UPDATE users
+  SET dob = {{DatePicker.selectedDate}}
+  WHERE id = {{tblUserData.selectedRow.id}};
+```
+
+Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
+
+You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required. For instance, if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
+
+```js
+{{
+  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
+}}
+```
+
+<figure>
+  <img src="/img/display-date-datepicker.png" alt="Display date"/>
+  <figcaption align = "center"><i>Display date from table row</i></figcaption>
+</figure>
+
+
+
 ## Filter data for a date range
 To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the `formattedDate` or `selectedDate` reference property.
 
@@ -31,48 +71,6 @@ SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePic
 This query retrieves data based on the user-selected date range. Next, you can bind the `onDateSelected` event to run the `filterdata` query for both Datepickers.
 
 
-## Update date
-
-To update the date, you can start by setting a **Default Date**. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
-
----
-
-**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. For this, lets use the same `tblUserData` table.
-
-1. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
-
-```js
-{{tblUserData.selectedRow.dob}}
-```
-
-2. To update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
-
-```sql
-UPDATE users
-  SET dob = '{{DatePicker.formattedDate}}'
-  WHERE id = {{tblUserData.selectedRow.id}};
-```
-
-Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
-
-<figure>
-  <img src="/img/display-date-datepicker.png" alt="Display date"/>
-  <figcaption align = "center"><i>Display date from table row</i></figcaption>
-</figure>
-
-## Format dates
-Appsmith provides several date formats that you can choose from in the **Date Format** property.
-
-You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
-
----
-**Example**: if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
-
-```js
-{{
-  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
-}}
-```
 
 
 ## Properties
