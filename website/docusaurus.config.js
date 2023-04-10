@@ -20,6 +20,15 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  plugins: [
+    [
+      '@twilio-labs/docusaurus-plugin-segment',
+      {
+        writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
+        allowedInDev: false,
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -115,7 +124,7 @@ const config = {
             items: [
               {
                 label: 'Advanced Concepts',
-                to: '/advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
+                to: 'advanced-concepts/custom-authentication',
               },
               {
                 label: 'Reference',
@@ -174,8 +183,20 @@ const config = {
       src:
         '/scripts/intercomSettings.js',
       async: false,
+    },
+    {
+        src: 'https://static.scarf.sh/a.png?x-pxid=ae471d67-d95c-4a3a-b35b-799e8ee8fa17',
+        async: true,
+        defer: true,
+        'data-domain': 'https://docs.appsmith.com',
+        'referrerpolicy': 'no-referrer-when-downgrade'
+    },
+    {
+      src:
+        '/scripts/smartlook.js',
+      async: false,
     }
-  ]
+  ],
 };
 
 module.exports = config;

@@ -101,6 +101,11 @@ Then follow the steps below:
       git clone --branch master https://github.com/appsmithorg/appsmith
       cd ./appsmith/deploy/heroku
     ```
+*   For existing repository, pull the fresh Appsmith image:
+
+     ```
+      docker pull appsmith/appsmith-ce
+     ```
 *   Login to Heroku CLI.
 
     ```

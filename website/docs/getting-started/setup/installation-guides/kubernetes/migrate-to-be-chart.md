@@ -1,9 +1,9 @@
 ---
-description: Follow the guide to migrate to the Appsmith Business Edition running on Helm chart v2.
+description: Follow the guide to migrate to the Appsmith Business Edition running on v3 Helm chart.
 ---
-# Migrate to Helm Chart v2 (BE)
+# Migrate to Business Edition Helm Chart v3
 
-Follow the below guide to migrate to the Business Edition running on Helm chart v2 (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
+Follow the below guide to migrate to the Business Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
 
@@ -86,7 +86,7 @@ Follow the below guide to migrate to the Business Edition running on Helm chart 
    07:25:14,488 INFO  [org.keycloak.services] (ServerService Thread Pool -- 57) KC-SERVICES0035: Export finished successfully
    ```
 
-   When you see lines similar to this, press <kbd>ctrl+c</kbd> to stop the process.
+   When you see lines similar to this, press <kbd>Ctrl+c</kbd> to stop the process.
 
 6. Run the below command to exit out of the shell:
 
@@ -129,7 +129,6 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
    ```yaml
-     APPSMITH_LICENSE_KEY: ""
      APPSMITH_KEYCLOAK_DB_DRIVER: ""
      APPSMITH_KEYCLOAK_DB_USERNAME: ""
      APPSMITH_KEYCLOAK_DB_PASSWORD: ""
@@ -137,7 +136,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install v2 Helm chart 
+## Install v3 Helm chart
 
 Run the below command to add and deploy the new Helm chart:
 
@@ -190,7 +189,7 @@ To restore the backup, follow the below steps:
    08:21:01,794 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0032: Import finished successfully
    ```
 
-   When you see lines similar to this, press <kbd>ctrl+c</kbd> to stop.
+   When you see lines similar to this, press <kbd>Ctrl+c</kbd> to stop.
 
 5. To apply the changes, restart using the following command:
 

@@ -1,0 +1,692 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Chart
+
+This document explains how to use the Chart widget effectively to visualize and represent data to create admin panels, dashboards, and other data-driven applications.
+
+
+
+<VideoEmbed host="youtube" videoId="MadSMf9SOaE" title="How to use Chart Widget" caption="Configure Chart Widget"/>
+
+
+## Display data
+
+To display data in the Chart widget, you can use the **Series Data** property to provide the data in the following structure: 
+
+```js
+[
+  {
+    "x": "Product1",
+    "y": 20000
+  },..
+]
+```
+
+In this format, **`x`** denotes the **label**, and **`y`** denotes the **value**. 
+
+Appsmith offers several built-in charts to represent your data. With the **Chart Type** property, you can select one of the following types to visualize your data:
+* Line Chart, 
+* Bar Chart, 
+* Pie Chart, 
+* Column Chart, 
+* Area Chart, and  
+* [Custom Chart](#custom-charts)
+
+
+You can display dynamic data from queries or JS functions by binding the response to the **Series Data** property. 
+
+---
+
+**Example**: suppose you have a database with user data that includes a column indicating the gender of each user. You want to get the number of males and females in the database and create a chart to display the results.
+
+1.  Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+
+```sql
+SELECT gender, COUNT(*) as count
+FROM users
+GROUP BY gender;
+```
+This SQL query counts the number of users in a database grouped by their gender and displays the result with a count for each gender.
+
+2. Next, lets use JavaScript to **transform the data** by adding it to the **Series Data** property.
+
+```js
+{{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}
+```
+The code uses the `map()` function to transform each item in the `fetchUserData.data` array into an object with an `x` and a `y` key.
+
+
+:::note
+If the query fails and there is no default data specified, the chart doesn't render and appears empty.
+:::
+
+
+
+
+### Plot multiple data series
+
+If you want to display multiple data series on a chart, you can do so by using the **Add Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
+
+For example, suppose you have data on the number of males and females who voted each year, you can use the **Chart Series** property to display both data sets on the same chart. This would allow you to compare the number of male and female voters over time.
+
+---
+The following section demonstrates the different types of built-in charts for data visualization: 
+
+<Tabs>
+  <TabItem value="apple" label="Line Chart" default>
+
+A line chart displays data as a series of points connected by a line. It's a useful tool for representing data that changes over time, such as stock prices or temperature fluctuations. 
+ 
+By adding multiple series, you can compare the relationships between different sets of data over time, just like in the political election example.  
+
+  <figure>
+  <img src="/img/line-voter.png" style= {{width:"700px", height:"auto"}} alt=""/>
+  <figcaption align = "center"><i></i></figcaption>
+  </figure>
+
+
+  </TabItem>
+  <TabItem value="orange" label="Bar Chart">
+
+
+  A bar chart displays data as a series of rectangular bars of varying lengths, with each bar representing a category or group.
+  
+  It's commonly used to compare different data points, such as sales figures for different products. By adding multiple series, you can compare and contrast data across different categories.
+
+  <figure>
+  <img src="/img/bar-voter.png" style= {{width:"700px", height:"auto"}} alt=""/>
+  <figcaption align = "center"><i></i></figcaption>
+  </figure>  
+    
+  </TabItem>
+  
+    <TabItem value="1banana" label="Column Chart">
+
+  A column chart is similar to a bar chart, but the bars are arranged vertically instead of horizontally. 
+    
+  It's often used to display data in a more compact format or to make comparisons between groups of data. Adding multiple series can help you visualize relationships and differences between data across different categories.
+  <figure>
+    <img src="/img/new-col-chart.png" style= {{width:"700px", height:"auto"}} alt=""/>
+    <figcaption align = "center"><i></i></figcaption>
+   </figure>
+  </TabItem>
+  <TabItem value="b2anana" label="Area Chart">
+
+  An area chart is a type of line chart where the space between the line and the x-axis is filled with color, creating an area. 
+    
+  It's often used to display trends over time, such as changes in revenue or population. Multiple series can be added to compare the relationship between different sets of data over time, similar to the example with the political election data.
+     
+  <figure>
+   <img src="/img/new-area-chart.png" style= {{width:"700px", height:"auto"}} alt=""/>
+     <figcaption align = "center"><i></i></figcaption>
+  </figure>
+  
+
+  </TabItem>
+
+  <TabItem value="banana" label="Pie Chart">
+
+  A pie chart displays data as a circular graph, with each slice representing a portion of the whole. It's commonly used to show the proportion of each category in a set of data. Only a single series of data can be used to plot a pie chart.
+
+
+ 
+  <figure>
+  <img src="/img/pie-chart-img.png" style= {{width:"700px", height:"auto"}} alt=""/>
+  <figcaption align = "center"><i></i></figcaption>
+  </figure>
+
+
+
+  </TabItem>
+
+</Tabs>
+
+
+## Custom charts
+
+Appsmith offers integration with [FusionCharts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) and provides a wide range of chart types that can be used to create custom charts. Once you have selected the **Chart Type > Custom Chart**, you can configure FusionCharts using the **Custom Fusion Chart** property.
+
+
+<VideoEmbed host="youtube" videoId="Rvlwb5123mE" title="How to use Chart Widget" caption="Configure Custom Chart"/>
+
+
+:::info
+* Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
+
+* The license doesn't include permission to use **Fusion Maps**. You may need to obtain a separate license if you want to use this product.
+:::
+
+### Display data in custom chart
+In the **Custom Fusion Chart** property, you need to specify "type" for chart type and "dataSource" for the data to create a custom FusionChart. Below is an example of a configuration for the Custom Fusion Chart property:
+
+```json
+{
+  "type": "",
+  "dataSource": {
+    "chart": {},
+    "data": []
+  }
+}
+```
+
+#### Type
+
+The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. You can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) documentation to learn more about these charts.
+
+```json
+//example
+"type": "column2d"
+```
+This creates a 2D column chart. The value of the `type` property is case-sensitive.
+
+#### Datasource
+
+The datasource defines the customization options and the data points to create a chart. It includes two attributes: **chart** and **data**.
+
+* **Chart**:
+
+The `chart` attribute is an object that can be used to customize the overall appearance of the chart. It includes options such as the chart `title`, `x-axis` and `y-axis labels`, chart `width` and `height`, and more. Here are some most commonly used properties of the `chart` object:
+
+```json
+//example
+ "chart": {
+      "caption": "Monthly Revenue for the year 2021",  //Sets the main title of the chart.
+      "xAxisName": "Month",  // Sets the label for the x-axis.
+      "yAxisName": "Revenue",  // Sets the label for the y-axis.
+      "theme": "fusion"  //Sets the color scheme for the chart.
+    },..
+```
+* **Data**: 
+
+The "data" attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`. It's where you specify the actual data that you want to display in the chart.
+
+Here is an example of how to set the "data" array in the "dataSource" property:
+
+```json
+ "data": [
+      {
+        "label": "Jan",
+        "value": 42000
+      },
+      {
+        "label": "Feb",
+        "value": 810000
+      },..
+```
+
+
+#### Examples
+Here are some examples of custom charts that you can use as a reference to create your own customized charts.
+
+
+<Tabs>
+  <TabItem value="2D" label="2D column " default>
+
+Suppose you want to create a custom FusionChart to display monthly revenue data for Harry's SuperMart. You can use a two-dimensional column chart for this purpose.
+
+You can either embed the configuration directly or use a query to retrieve the required configuration. To plot a column chart in a 2-dimensional, you can use the configuration as below:
+
+```json
+{
+  "type": "column2d",
+  "dataSource": {
+    "chart": {
+      "caption": "Monthly Revenue for the year 2021",
+      "xAxisName": "Month",
+      "yAxisName": "Revenue",
+      "theme": "fusion"
+    },
+    "data": [
+      {
+        "label": "Jan",
+        "value": 42000
+      },
+      {
+        "label": "Feb",
+        "value": 810000
+      },
+      {
+        "label": "Mar",
+        "value": 72000
+      },
+      {
+        "label": "Apr",
+        "value": 55000
+      },
+      {
+        "label": "May",
+        "value": 91000
+      }
+    ]
+  }
+}
+```
+
+In the preceding code snippet, you’ll see that you plotted a column chart to showcase the monthly revenue pattern for last year, say - 2021.
+
+ If you have several sister companies operating under the same business name and you want to display the monthly revenue chart specifically for Harry's SuperMart, you can use the `subCaption` property to specify the name of the company.
+
+```
+ “subCaption”: "Harry's SuperMart"
+```
+
+
+To format the revenue values on the chart, you can choose a series (`y-axis`) to show `$` as a prefix. You can use `numberPrefix` and add the dollar($) sign.
+
+```
+ “numberPrefix": "$"
+```
+
+
+
+You have a monthly target revenue of say $70,000 and would want to plot it in the chart. You can use `trendlines` to add this detail to your chart.
+
+```
+"trendlines": [
+    {
+      "line": [
+        {
+          "startValue": "700000",
+          "valueOnRight": "1",
+          "displayvalue": "Monthly Target"
+        }
+      ]
+    }
+  ]
+```
+
+
+`trendlines` are vertical or horizontal lines that help users understand the emphasized data point. For example, a monthly target.
+
+
+
+
+  </TabItem>
+
+  <TabItem value="p3" label=" Pareto 3D" default>
+  
+
+Pareto chart is a type of bar graph that display the frequency of change with bars following a pattern from longest on the left to shortest on the right. To visualize data, a Pareto 3D chart can be used which combines a line chart and a column chart.
+
+
+<figure>
+  <img src="/img/pareto-3d.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+
+To display a Pareto 3D chart for "Harry's SuperMart" example, modify the type value in the configuration to `pareto3d`:
+
+```json
+{
+  "type": "pareto3d",
+  "dataSource": {
+     "chart": {
+      "caption": "Monthly Revenue for the year 2021",
+      "xAxisName": "Month",
+      "yAxisName": "Revenue",
+      "theme": "fusion"
+    },
+    "data": [
+      {
+        "label": "Jan",
+        "value": 42000
+      },
+      {
+        "label": "Feb",
+        "value": 810000
+      },
+      {
+        "label": "Mar",
+        "value": 72000
+      },
+      {
+        "label": "Apr",
+        "value": 55000
+      },
+      {
+        "label": "May",
+        "value": 91000
+      }
+    ]
+  }
+}
+```
+
+You can add the below code snippet to have a customized tooltip.
+
+```
+"plottooltext": "$label accounted for &lt;b>$datavalue&lt;/b> revenue"
+```
+
+  </TabItem>
+  <TabItem value="p4" label="Pie 3D">
+
+
+Pie chart is a type of data visualization that represents numerical data in a circular graph, where the size of each "slice" of the pie corresponds to the proportion of data it represents.
+
+<figure>
+  <img src="/img/pie3d.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+
+To display a Pie 3D chart for "Harry's SuperMart" example, modify the type value in the configuration to `pie3d`:
+
+
+```
+{
+  "type": "pie3d",
+  "dataSource": {
+     "chart": {
+      "caption": "Monthly Revenue for the year 2021",
+      "xAxisName": "Month",
+      "yAxisName": "Revenue",
+      "theme": "fusion"
+    },
+    "data": [
+      {
+        "label": "Jan",
+        "value": 42000
+      },
+      {
+        "label": "Feb",
+        "value": 810000
+      },
+      {
+        "label": "Mar",
+        "value": 72000
+      },
+      {
+        "label": "Apr",
+        "value": 55000
+      },
+      {
+        "label": "May",
+        "value": 91000
+      }
+    ]
+  }
+}
+```
+
+For a sliced view, you can use a property `enablemultislicing`:
+
+```
+"enablemultislicing": "1"
+```
+  </TabItem>
+  <TabItem value="s3d" label="Stacked Column 3D">
+
+A stacked column chart is a type of data visualization that allows for the comparison of parts of a whole over time or across different sets of data.
+
+<figure>
+  <img src="/img/3d-chart.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+
+For example, here the chart is designed to show the number of reported deaths due to insect bites in India, broken down by the type of infection (`Hymenopter` or `Diptera`) and by year (`1994-1997`).
+
+```
+{
+  "type": "stackedcolumn3d",
+  "dataSource": {
+    "chart": {
+      "caption": "Deaths reported because of insect bites in India",
+      "yaxisname": "Number of deaths reported",
+      "subcaption": "(As per government records)",
+      "plottooltext": "&lt;b>$dataValue&lt;/b> people died because of $seriesName in $label",
+      "showsum": "0",
+      "theme": "fusion"
+    },
+    "categories": [
+      {
+        "category": [
+          {
+            "label": "1994"
+          },
+          {
+            "label": "1995"
+          },
+          {
+            "label": "1996"
+          },
+          {
+            "label": "1997"
+          }
+        ]
+      }
+    ],
+    "dataset": [
+      {
+        "seriesname": "Hymenoptera",
+        "data": [
+          {
+            "value": "15622"
+          },
+          {
+            "value": "10612"
+          },
+          {
+            "value": "15820"
+          },
+          {
+            "value": "26723"
+          }
+        ]
+      },
+      {
+        "seriesname": "Diptera",
+        "data": [
+          {
+            "value": "3622"
+          },
+          {
+            "value": "2612"
+          },
+          {
+            "value": "5820"
+          },
+          {
+            "value": "6723"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+  </TabItem>
+
+
+
+
+ <TabItem value="Dual" label="Dual axis">
+
+A dual-axis chart is a type of chart that combines columns, lines, and areas to display two sets of data with different value ranges. 
+<figure>
+  <img src="/img/dual-axis.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+The chart type used is  `mscombidy2d`, which stands for Multi-series Combination Dual Y-Axis 2D chart. 
+
+The chart displays data for revenue, profits, and number of employees over time, with revenue and profits represented by columns and an area, and the number of employees represented by a line. The chart also includes various chart properties, such as the chart caption, axis names, and chart theme.
+ ```json
+{
+  "type": "mscombidy2d",
+  "dataSource": {
+    "chart": {
+    "caption": "Revenue, Profits & Number of employees",
+    "drawcrossline": "1",
+    "yaxisname": "Revenue / Profit (in $)",
+    "syaxisname": "Number of employees",
+    "showvalues": "0",
+    "showanchors": "0",
+    "numberprefix": "$",
+    "plothighlighteffect": "fadeout",
+    "theme": "fusion"
+  },
+	 "categories": [
+    {
+      "category": [
+        {
+          "label": "Mar-2012"
+        },
+        {
+          "label": "Jun-2012"
+        },
+        {
+          "label": "Sept-2012"
+        },
+        {
+          "label": "Dec-2012"
+        },
+        {
+          "label": "Mar-2013"
+        }
+        
+      ]
+    }
+  ],
+  "dataset": [
+    {
+      "seriesname": "Revenue",
+      "plottooltext": "Revenue in $label : <b>$dataValue</b>",
+      "data": [
+        {
+          "value": "36000"
+        },
+        {
+          "value": "22000"
+        },
+        {
+          "value": "24000"
+        },
+        {
+          "value": "42000"
+        },
+        {
+          "value": "35000"
+        }
+      ]
+    },
+    {
+      "seriesname": "Profit",
+      "plottooltext": "Profit in $label : <b>$dataValue</b>",
+      "renderas": "area",
+      "showvalues": "0",
+      "data": [
+        {
+          "value": "4000"
+        },
+        {
+          "value": "5000"
+        },
+        {
+          "value": "3000"
+        },
+        {
+          "value": "4000"
+        },
+        {
+          "value": "1000"
+        }
+      ]
+    },
+    {
+      "seriesname": "Number of Employees",
+      "parentyaxis": "S",
+      "renderas": "line",
+      "showvalues": "0",
+      "plottooltext": "$value employees",
+      "data": [
+        {
+          "value": "31"
+        },
+        {
+          "value": "25"
+        },
+        {
+          "value": "35"
+        },
+        {
+          "value": "29"
+        },
+        {
+          "value": "25"
+        }
+      ]
+    }
+  ]
+	
+  }
+}
+```
+  </TabItem>
+
+</Tabs>
+
+
+
+
+## Properties
+
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+
+### Widget properties
+
+These properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **Series Title**             	| String    	| Sets the title of the current Chart series.                                                                                                                                                                                   	|
+| **Series Color**             	| String    	| Sets the color of the current Chart series.                                                                                                                                                                                   	|
+| **Series Data**              	| Array     	| Sets the data of the current Chart series.                                                                                                                                                                                    	|
+| **Title**                    	| String    	| Sets the text that appears at the top of the chart as a title.                                                                                                                                                                	|
+| **Chart Type**               	| String    	| Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).                                                                     	|
+| **Visible**                  	| Boolean   	| Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                                                   	|
+| **Animate Loading**          	| Boolean   	| When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                            	|
+| **Allow Scroll**             	| Boolean   	| Allows you to enable a scroll bar to scroll the contents of the chart.                                                                                                                                                        	|
+| **x-axis Label**             	| String    	| Sets the text which appears as a label for the x-axis.                                                                                                                                                                        	|
+| **y-axis Label**             	| String    	| Sets the text which appears as a label for the y-axis.                                                                                                                                                                        	|
+| **x-axis Label Orientation** 	| String    	| Sets the size/rotation behavior for the x-axis label text. Chose from Auto, Slant, Rotate, or Stagger.                                                                                                                        	|
+| **Adaptive Axis**            	| Boolean   	| Determines the scaling behavior of the y-axis. OFF: The y-axis begins at zero and spans to an upper limit based on the data points; ON: The y-axis starting and ending values are both determined based upon the data points. 	|
+
+
+### Reference properties
+
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the xAxisName, you can use `Chart1.xAxisName`.
+
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **isVisible**        | Boolean | This property indicates whether the widget is visible or not.                                                                                      |
+| **selectedDataPoint** | Object| Contains an object which represents the data point that the user has most recently clicked `(object containing: x, y, seriesTitle)._ Default _undefined.` |
+| **xAxisName**        | String | Stores the text of the x-axis Label setting of the chart.                                                                                    |
+| **yAxisName**        | String | Stores the text of the y-axis Label setting of the chart.
+| **chartData**        | Object | Stores all the data needed to display the chart.
+
+
+
+### Style properties
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **Border Radius** | String | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**  | String  | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+
+
+## Events
+
+These are functions that are called when event listeners are triggered in the widget. [Use actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
+
+
+| Event                | Description                                                                                                                                                                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onDataPointClick** | Specifies an action to be performed when a user clicks on a data point in the chart. |
+
+
