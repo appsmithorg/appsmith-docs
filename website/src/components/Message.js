@@ -11,11 +11,11 @@ import React from "react";
  * @returns a html component
  */
 export default function Message(props) {
-    const {messageContainerClassName, caption, captionClassName, messageContent, messageContentClassName} = props;
+    const { messageContainerClassName, caption, captionClassName, messageContent, messageContentClassName } = props;
     return (
-        <div className={messageContainerClassName}> 
-            <div class={captionClassName}>{caption}</div>
-            <div class={messageContentClassName}> {messageContent}</div>
+        <div className={messageContainerClassName}>
+            <div className={captionClassName}>{caption}</div>
+            <div className={messageContentClassName}> {messageContent}</div>
         </div>
     );
 };
