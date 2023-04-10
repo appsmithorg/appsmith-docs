@@ -287,4 +287,36 @@ Iframe
 iframe
 CSS
 onwards
+<<<<<<< HEAD
 time frame
+=======
+selectedMarker
+isOpen
+onClose
+bool
+IFrame
+Multiselect
+Topbar
+businessTable
+rawBinary
+capType
+strokeStyle
+nc
+id
+selectedMarker
+Dialogs
+isOpen
+isVisible
+onClose
+unformatted
+dialCode
+countryCode
+reCaptcha
+reCAPTCHA
+Recaptcha
+navigateTo
+Unpublish
+unpublish
+Id
+Upcloud
+>>>>>>> main

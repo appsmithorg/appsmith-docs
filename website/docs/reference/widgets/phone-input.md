@@ -8,13 +8,13 @@ The phone input widget gives you an input field to capture a phone number as an 
 
 Properties allow you to edit the phone widget, connect it with other widgets and customize the user actions. Let's look into different types of properties.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the phone widget. All these properties are present in the property pane of the widget. Given below is a table of widget properties.
 
 | Widget Property               | Description                                                                                                                                            |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Allow country code change** | It enables/disables the dial code dropdown next to the input. If you enable this property, the User will change the dial code from the dropdown.       |
+| **Allow country code change** | It enables/disables the dial code dropdown next to the input. If you enable this property, the User can change the dial code from the dropdown.       |
 | **Default country code**      | It sets the default dial code of the widget                                                                                                            |
 | **Default text**              | Sets the default text in the input widget before the user has made any changes. This field can be bound to a table's `selectedRow` to update a record. |
 | **Enable formatting**         | When turned on, the phone number typed into the input gets formatted based on the selected country code.                                               |
@@ -24,8 +24,8 @@ These properties allow you to edit the phone widget. All these properties are pr
 | **Placeholder**               | It sets a placeholder text inside the input. It displays an expected input or hints to the user.                                                       |
 | **Tooltip**                   | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                       |
 | **Required**                  | When turned on, user input is required and disables any form submission until the user enters something in the input box.                              |
-| **Visible**                   | It controls the widget's visibility on the page. When turned off, the widget will not be visible when the app is published                             |
-| **Disabled**                  | It disables input to the widget. The widget will remain visible to the user, but user input will not be allowed.                                       |
+| **Visible**                   | It controls the widget's visibility on the page. When turned off, the widget isn't visible when the app is published                             |
+| **Disabled**                  | It disables input to the widget. The widget remains visible to the user, but user input is not allowed.                                       |
 | **Reset on Submit**           | It clears the value entered by the user after submitting.                                                                                              |
 | **Autofocus**                 | It focuses your cursor on the input box when it is loaded.                                                                                             |
 | **Animate Loading**           | Allows you to control a widget’s animation on the page load.                                                                                           |
@@ -34,7 +34,7 @@ These properties allow you to edit the phone widget. All these properties are pr
 
 Let's understand the widget properties in detail.
 
-#### Allow Country Code Change
+#### Allow country code change
 
 It enables/disables the dial code dropdown next to the input box. If you enable this property, the user can change the dial code from the dropdown.
 
@@ -62,7 +62,7 @@ This property lets you set a default value for the widget before the user has ma
 
 Using Regex or Regular expression property, you can set specific constraints on the input you expect from the user.
 
-#### Error Message
+#### Error message
 
 If a user enters an incorrect value, the input widget shows a message “invalid input.” You can change this message by using the `Error message` property to provide better feedback on the input given by the user.
 
@@ -78,13 +78,13 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it will enable the Required property, and the input box will show an error message “This field is required” if you have not entered any input.
+When you tick the checkbox, it enables the Required property, and the input box shows an error message “This field is required” if you have not entered any input.
 
 <VideoEmbed host="youtube" videoId="1RlJfJDsq7I" title="Required" caption="Required"/>
 
 #### Visible
 
-`Visible` controls the widget’s visibility on the app’s page. The widget will not be visible on the published app if you turn off this property. You can also write a `JS` code to link Visible’s functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
+`Visible` controls the widget’s visibility on the app’s page. The widget isn't visible on the published app if you turn off this property. You can also write a `JS` code to link the Visible property to a user action. Click on `JS` next to the Visible to write JavaScript code.
 
 For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
 
@@ -92,13 +92,13 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it will enable the Visible property, and the input box will be visible in the app.
+When you tick the checkbox, it enables the Visible property, and the input box is visible in the app.
 
 <VideoEmbed host="youtube" videoId="xIbnrJcCTQo" title="Visible" caption="Visible"/>
 
 #### Disabled
 
-It disables the user from entering values in the widget. The widget will be visible (if Visible is enabled), but user input will not be allowed. You can also write a JS code to link Disabled’s functionality to a user action. Click on `JS` next to the Visible to write JavaScript code.
+It disables the user from entering values in the widget. The widget is visible (if Visible is enabled), but user input is not allowed. You can also write a JS code to link the Disabled property to a user action. Click on `JS` next to the Visible to write JavaScript code.
 
 For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind it to the `Disabled` property. To enable the `Disabled` when the user checks the checkbox, add the following JavaScript code:
 
@@ -106,16 +106,16 @@ For example, let’s drag a checkbox widget `checkbox1` onto the canvas and bind
 {{Checkbox1.isChecked}}
 ```
 
-When you tick the checkbox, it will enable the Disabled property and prevent a user input in the input box.
+When you tick the checkbox, it enables the Disabled property and prevent a user input in the input box.
 
 <VideoEmbed host="youtube" videoId="YBGEeuqvP28" title="Disabled" caption="Disabled"/>
 
-#### Reset on Submit
+#### Reset on submit
 
-When `Reset on Submit` is enabled, the widget resets or clears the entered input after the user submits it.\
-Let’s use the event `onSubmit` to show a message when input is submitted. You’ll see once the user submits and the message pops up, the input widget will reset itself to its original state.
+When `Reset on submit` is enabled, the widget resets or clears the entered input after the user submits it.\
+Let’s use the event `onSubmit` to show a message when input is submitted. You’ll see once the user submits and the message pops up, the input widget resets itself to its original state.
 
-<VideoEmbed host="youtube" videoId="Bz02obeYFcU" title="Reset on Submit" caption="Reset on Submit"/>
+<VideoEmbed host="youtube" videoId="Bz02obeYFcU" title="Reset on submit" caption="Reset on submit"/>
 
 #### Autofocus
 
@@ -123,17 +123,17 @@ When you enable `Autofocus`, the cursor focuses on the input box whenever the wi
 
 <VideoEmbed host="youtube" videoId="S-u1kMlF43M" title="Autofocus" caption="Autofocus"/>
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
 |                 |                                                                                                               |                                 |
 | --------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| **countryCode** | It fetches the country code of the chosen currency.                                                           | `{{<widget_name>.countryCode}}` |
-| **dialCode**    | It fetches the dialing code of the chosen country.                                                            | `{{<widget_name>.dialCode}}`    |
-| **isDisabled**  | This property indicates whether the widget is disabled or not.                                                | `{{<widget_name>.isDisabled}}`  |
-| **isVisible**   | This property indicates whether the widget is visible or not.                                                 | `{{<widget_name>.`isVisible`}}` |
-| **isValid**     | This property indicates whether the input value is valid or not.                                              | `{{<widget_name>.isValid}}`     |
+| **`countryCode`** | It fetches the country code of the chosen currency.                                                           | `{{<widget_name>.countryCode}}` |
+| **`dialCode`**    | It fetches the dialing code of the chosen country.                                                            | `{{<widget_name>.dialCode}}`    |
+| **`isDisabled`**  | This property indicates whether the widget is disabled or not.                                                | `{{<widget_name>.isDisabled}}`  |
+| **`isVisible`**   | This property indicates whether the widget is visible or not.                                                 | `{{<widget_name>.`isVisible`}}` |
+| **`isValid`**     | This property indicates whether the input value is valid or not.                                              | `{{<widget_name>.isValid}}`     |
 | **Text**        | It fetches the phone number that the user enters in the input box.                                            | `{{<widget_name>.text}}`        |
 | **Value**       | It fetches the unformatted phone number, even if formatting is enabled. The value is of **String** data type. | `{{<widget_name.value}}`        |
 
@@ -149,13 +149,13 @@ To bind the text in the input widget to another widget, open the property pane o
 
 Where <widget_name> is the name of your input box.
 
-For example, let's take an Input widget `Phoneinput1` and bind its text to a text widget. Drag a text widget onto the canvas and add the following snippet:
+For example, take an Input widget `Phoneinput1` and bind its text to a text widget. Drag a text widget onto the canvas and add the following snippet:
 
 ```
 {{Phoneinput1.text}}
 ```
 
-The Text widget will then display the text present in the input widget.
+The Text widget displays the text present in the input widget.
 
 <VideoEmbed host="youtube" videoId="3_XfCxqHECs" title="Text" caption="Text"/>
 
@@ -171,7 +171,7 @@ To bind the value of the input widget to another widget, open the property pane 
 
 Where <widget_name> is the name of your input box.
 
-For example, let's take an Input widget `Phoneinput1` and bind its value to a text widget. Drag a text widget onto the canvas and add the following snippet:
+For example, take an Input widget `Phoneinput1` and bind its value to a text widget. Drag a text widget onto the canvas and add the following snippet:
 
 ```
 {{Phoneinput1.value}}
@@ -191,7 +191,7 @@ To bind the dial code, add the code snippet given below:
 
 Where <widget_name> is the name of your input box.
 
-For example, let's take an Input widget `Phoneinput1` and bind its dial code to a text widget. Drag a text widget onto the canvas and add the following snippet:
+For example, take an Input widget `Phoneinput1` and bind its dial code to a text widget. Drag a text widget onto the canvas and add the following snippet:
 
 ```
 {{Phoneinput1.dialCode}}
@@ -211,7 +211,7 @@ To bind the country code, add the code snippet given below:
 
 Where <widget_name> is the name of your input box.
 
-For example, let's take an Input widget `Phoneinput1` and bind the selected country's code to a text widget. Drag a text widget onto the canvas and add the following snippet:
+For example, take an Input widget `Phoneinput1` and bind the selected country's code to a text widget. Drag a text widget onto the canvas and add the following snippet:
 
 ```
 {{Phoneinput1.countryCode}}
@@ -244,7 +244,7 @@ The property hosts a group of configurations that you can use to associate a dis
 | -------------------- | -------------------------------------------------------- |
 | **Text Color**       | Allows you to set the text color for the label.          |
 | **Text Size**        | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Label Font Style** | Allows you to choose a font style (bold or italic). |
 
 #### **Text**
 

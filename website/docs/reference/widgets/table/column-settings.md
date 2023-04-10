@@ -161,7 +161,7 @@ Cell wrapping allows the contents of a cell to be wrapped to the following line 
 
 Editable controls the cell's edit-ability in the column. You can edit data in a cell of the column when it's turned on. Once a column has been made editable, an edit icon appears on the column header as an indicator. Currently, there are several column types support inline editing - **Text**, **Number**, **Switch**, **Select**, and **Checkbox**.
 
-If you hover over any cell in the column, an edit icon appears. Click on the icon to edit the individual cell.
+If you hover over any cell in the column, an edit icon appears. Click the icon to edit the individual cell.
 
 Based on the Column type, you can edit the cell content. Once done, you can move away from the edit mode in two ways:
 
