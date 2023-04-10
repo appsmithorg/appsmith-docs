@@ -127,7 +127,7 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **query.executed** | Logged when an existing query runs. This applies both in Edit and View modes. The execution parameters of the query are included in the log up to a limit of 5 MB.  |
 | **user.logged_in** | Logged when a user signs in. |
 | **user.logged_out** | Logged when a user signs out. |
-| **user.invited** | Logged when someone invites another user to the app or workspace. |
+| **[Deprecated] user.invited** | [This event is deprecated from `v1.9.16` in favour of `role.assigned`] Logged when someone invites another user to the app or workspace. |
 | **user.signed_up** | Logged when a new user logs in for the first time. |
 | **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration. |
 
