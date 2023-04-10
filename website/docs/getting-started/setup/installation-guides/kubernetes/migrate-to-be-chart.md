@@ -140,6 +140,8 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
+**Note:** make sure `APPSMITH_CUSTOM_DOMAIN` is not set in docker.env when appsmith is deployed on Kubernetes.
+
 ## Install v3 Helm chart
 
 Run the below command to add and deploy the new Helm chart:
