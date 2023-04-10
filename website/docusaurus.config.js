@@ -195,6 +195,11 @@ const config = {
       src:
         '/scripts/smartlook.js',
       async: false,
+    },    
+    {
+      src:
+        '/scripts/analyticsEvents.js',
+      defer: true,
     }
   ],
 };
