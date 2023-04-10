@@ -1,11 +1,19 @@
 # Configure Appsmith on Kubernetes Cluster
-The page guides you through customizing your Appsmith installation on a Kubernetes cluster to meet your specific needs.
+The page provides steps to configure your Appsmith installation on a Kubernetes cluster to suit your needs.
 
 ## Prerequisites
+Before you start, make sure you have the following:
+ - Appsmith installation on your Kubernetes Cluster. See, [Install Appsmith on Kubernetes Cluster](https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes).
+ - Access to your Kubernetes cluster using `kubectl` 
 
+## Parameters
+You can modify your Appsmith installation on Kubernetes using two types of parameters:
 
-## Configure parameters
-Customize Appsmith by using either Helm parameters or parameters specific to Appsmith. The table below provides details on the various Helm and Appsmith parameters that are available for configuration.
+* [Helm parameters](#helm-parameters)
+* [Appsmith parameters](#appsmith-parameters)
+
+### Helm parameters
+Helm parameters allow you to configure your Kubernetes installation. Refer to the table below for a list of available parameters:
 
 | Name                      | Type | Description                                               | Value |
 | -------------------------- | --------------------------------------------------------- | ----- |----|
@@ -15,10 +23,10 @@ Customize Appsmith by using either Helm parameters or parameters specific to App
 | `containerName`     | Common| Specifies container's name running in the pods      | `"appsmith"` |
 | `commonLabels`      | Common| Labels to add to all deployed objects             | `{}`         |
 | `commonAnnotations` | Common| Annotations to add to all deployed objects        | `{}`         |
-| `image.registry`   | Appsmith image | Sets image registry    | `index.docker.io`          | |
-| `image.repository` | Appsmith image | Sets image repository  | `appsmith/appsmith-editor` | |
-| `image.tag`        | Appsmith image | Sets image tag         | `latest`                   | |
-| `image.pullPolicy` | Appsmith image | Sets image pull policy | `IfNotPresent`             | |
+| `image.registry`   |  image | Set it to Appsmith image registry    | `index.docker.io`          | |
+| `image.repository` |  image | Set it to Appsmith image repository  | `appsmith/appsmith-editor` | |
+| `image.tag`        |  image | Set it to Appsmith image tag         | `latest`                   | |
+| `image.pullPolicy` |  image | Set it to Appsmith image pull policy | `IfNotPresent`             | |
 | `strategyType`       | Deployment | Appsmith deployment strategy type                  | `RollingUpdate` |
 | `schedulerName`      | Deployment | Alternate scheduler                                | `""`            |
 | `podAnnotations`     | Deployment | Annotations for Appsmith pods                      | `{}`            |
@@ -68,8 +76,43 @@ Customize Appsmith by using either Helm parameters or parameters specific to App
 | `autoupdate.enabled`   | Auto update Image | Enable auto update Helm chart's image         | `true`        |
 | `autoupdate.scheduler` | Auto update Image | Schedule time to run cron job to update image | `"0 * * * *"` |
 
+### Appsmith parameters
+Appsmith parameters allow you to configure your Appsmith installation. Refer to the table below for a list of available parameters:
 
-When using a command, specify each parameter using the `--set key=value[,key=value]` argument to helm install. For example, the below command deploys Appsmith and configures it to use the storage class `appsmith-pv`. 
+| Name                                                     | Value |
+| -------------------------------------------------------- | ----- |
+| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/google-login)    | `""`  |
+| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/google-login) | `""`  |
+| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/github-login)     | `""`  |
+| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/github-login) | `""`  |
+| `applicationConfig.APPSMITH_CLIENT_LOG_LEVEL`            | `""`  |
+| [`applicationConfig.APPSMITH_GOOGLE_MAPS_API_KEY`](/getting-started/setup/instance-configuration/google-maps)         | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_ENABLED`](/getting-started/setup/instance-configuration/email/)                | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_HOST`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_PORT`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_USERNAME`](/getting-started/setup/instance-configuration/email/)               | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_PASSWORD`](/getting-started/setup/instance-configuration/email/)               | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_FROM`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
+| [`applicationConfig.APPSMITH_REPLY_TO`](/getting-started/setup/instance-configuration/email/)                    | `""`  |
+| [`applicationConfig.APPSMITH_MAIL_SMTP_AUTH`](/getting-started/setup/instance-configuration/email/)              | `""`  |
+| `applicationConfig.APPSMITH_MAIL_SMTP_TLS_ENABLED`       | `""`  |
+| [`applicationConfig.APPSMITH_DISABLE_TELEMETRY`](https://docs.appsmith.com/product/telemetry#disable-telemetry)           | `""`  |
+| `applicationConfig.APPSMITH_RECAPTCHA_SITE_KEY`          | `""`  |
+| `applicationConfig.APPSMITH_RECAPTCHA_SECRET_KEY`        | `""`  |
+| `applicationConfig.APPSMITH_RECAPTCHA_ENABLED`           | `""`  |
+| [`applicationConfig.APPSMITH_MONGODB_URI`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)                | `""`  |
+| [`applicationConfig.APPSMITH_REDIS_URL`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-redis)                   | `""`  |
+| `applicationConfig.APPSMITH_ENCRYPTION_PASSWORD`         | `""`  |
+| `applicationConfig.APPSMITH_ENCRYPTION_SALT`             | `""`  |
+| [`applicationConfig.APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/instance-configuration/custom-domain/#dockerk8s)               | `""`  |
+
+### Configure instance
+
+You can use the `helm install` command to configure your Appsmith installation using one of the below ways:
+
+When using command, specify each parameter using the `--set key=value[,key=value]` argument.
+
+* Using Helm parameters: For example, deploy Appsmith and configure it to use the storage class `appsmith-pv` with:
 
 ```bash
 helm install \
@@ -77,7 +120,7 @@ helm install \
   appsmith appsmith/appsmith 
 ```
 
-Similarly, run the below command if you wish to change the encryption salt configuration.
+* Using Appsmith parameters: For example, to change the encryption salt configuration with:
 
 ```bash 
 helm install \
@@ -85,10 +128,15 @@ helm install \
   appsmith appsmith/appsmith 
 ```
 
-Alternatively, use the `values.yaml` file. You can specify the parameter values needed for installing the chart. To change configurations specific to Appsmith update the `values.yaml` file. Listed below are available configurations for Appsmith. For more information, see the [Configuring Appsmith instance](/getting-started/setup/instance-configuration) section.
-
-Once you have made changes to the `values.yaml` file, run the below command.
+* Using `values.yam`l file: Change the parameter values in the `values.yaml` file and run the below command:
 
 ```bash
 helm install appsmith appsmith/appsmith -f values.yaml 
 ```
+
+## Troubleshooting
+If you face issues, reach out to the [support team](mailto:support@appsmith.com).
+
+## Further reading
+* [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-docker-installations)
+* [Manage Appsmith instance](/getting-started/setup/instance-management/)
