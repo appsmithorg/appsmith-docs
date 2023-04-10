@@ -48,7 +48,7 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
    TEST SUITE: None
    ```
 
-2. In the earlier version of Appsmith, MongoDB and Redis instances were all running within the same container. However, with the v2 Helm chart, you now have the option to run these in separate containers. If you wish to do so, you can modify the values for Redis and MongoDB parameters in the `values.yaml` file as shown below:
+2. In the earlier version of Appsmith, MongoDB, and Redis instances were all running within the same container. However, with the v2 Helm chart, you now have the option to run these in separate containers. If you wish to do so, you can modify the values for Redis and MongoDB parameters in the `values.yaml` file as shown below:
 
    1. Run the below command to see the parameter configuration in `values.yaml` file.
 
@@ -95,8 +95,6 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
    ```
 
 Once Appsmith pods are up and running, proceed with copying and restoring the backup.
-
-**Note:** make sure `APPSMITH_CUSTOM_DOMAIN` is not set in docker.env when appsmith is deployed on Kubernetes.
 
 ## Copy backup
 
