@@ -77,3 +77,41 @@ exceptions:
   - Client ID
   - Client Secret
   - Access Token URL
+  - Stats Box
+  - IFrame
+  - Document Viewer
+  - GraphQL
+  - Table
+  - Map
+  - UI
+  - Default Value
+  - Show Marks
+  - Value
+  - Min
+  - Max
+  - Size
+  - Always On
+  - Range
+  - Start
+  - End
+  - run()
+  - Type
+  - Token
+  - JS
+  - Records
+  - Settings
+  - Firestore
+  - Project
+  - ID
+  - Database
+  - Service
+  - Account
+  - Credentials
+  - Single
+  - Multiple
+  - Collection
+  - Pagination
+  - Signed and Unsigned
+  - Signed
+  - File
+  - Files

@@ -6,7 +6,7 @@ The multi-tree-select widget captures the user input from a specified list of pe
 
 ### Displaying Data
 
-Multi-tree-select's options can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+Multi-tree-select's options can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, you can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```
 // Query1.data is assumed to be an array here
@@ -20,12 +20,12 @@ Multi-tree-select's options can be populated from a data source like an API / Qu
 
 A Multi-tree-select widget can filter a dataset based on the user's input. The selected value can be passed to an API using `{{ MultiTreeSelect1.selectedOptionValues }}` .
 
-### **Form Submission**
+### **Form submission**
 
 The multi-tree-select widget can capture from a fixed set of options inside a form such as a gender, role, and status.
 
 :::info
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this.
+Some forms need to be pre-filled data from a table or API. You can bind the data to the default text property to enable this.
 :::
 
 ```
@@ -44,7 +44,7 @@ Read more about submitting Input data to an API below.
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Muti-tree select widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -52,7 +52,7 @@ These properties allow you to edit the Muti-tree select widget. All these proper
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mode**                  | Mode to display options.                                                                                                                                                                                                   |
 | **Options**               | It lets you set labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property and the optional children property. |
-| **Default Value**         | Sets a default option that will be captured as user input unless the user changes it. Multiple values can be provided as CSV or an array of value strings for a Multi-Select dropdown.                                     |
+| **Default Value**         | Sets a default option that is captured as user input unless the user changes it. Multiple values can be provided as CSV or an array of value strings for a Multi-Select dropdown.                                     |
 | **Placeholder**           | Sets the Placeholder of the multi-select widget.                                                                                                                                                                           |
 | **Required**              | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                                                       |
 | **Visible**               | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published.                                                                                                       |
@@ -64,7 +64,7 @@ These properties allow you to edit the Muti-tree select widget. All these proper
 | [**Height**](./README.md#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 

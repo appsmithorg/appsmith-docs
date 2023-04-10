@@ -7,3 +7,5 @@ match: $title
 exceptions:
   - k8s 
   - is
+  - to
+  - clipboard
