@@ -16,9 +16,9 @@ module.exports = function scarf(context, options) {
         return {
           headTags: [
             {
-              tagName: 'script',
+              tagName: 'img',
               attributes: {
-                src: `https://static.scarf.sh/a.js?tracking-code=${trackingCode}&domain=${domain}`,
+                src: `https://static.scarf.sh/a.png?x-pxid=${trackingCode}`,
                 'data-domain': domain,
                 async: true,
               },
