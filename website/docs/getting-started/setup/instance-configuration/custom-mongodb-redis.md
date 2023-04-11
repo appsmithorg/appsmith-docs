@@ -76,7 +76,7 @@ Some common errors that you may face after external configuration:
 * [The server is not booting because of MongoCommandException](/help-and-support/troubleshooting-guide/deployment-errors?current-edition=BE#server-not-booting-because-of-mongocommandexception)
 * [The server shuts down with a Schema mismatch error](/help-and-support/troubleshooting-guide/deployment-errors?current-edition=BE#server-shuts-down-with-schema-mismatch-error)
 
-If you continue to face issues, reach out to the [support team](mailto:support@appsmith.com).
+If you continue to face issues, reach out to the support team at [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
 - [Container logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
