@@ -5,7 +5,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Configure High Availability for Appsmith on Kubernetes
-The page provides steps to configure High Availability (HA) and Scalability for Appsmith on Kubernetes.
+This page provides steps to configure High Availability(HA) and scalability for Appsmith on Kubernetes.
 
 :::info
 High Availability and Scalability is only available on Kubernetes self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
@@ -18,20 +18,20 @@ High Availability and Scalability is only available on Kubernetes self-hosted, [
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
    ```
 
-  2. PostgreSQL has to be enabled Or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
+  2. Enable PostgreSQL Or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
 
-      1. Configure the parameters to enable PostgreSQL as shown below:
+      * Configure the parameters to enable PostgreSQL as shown below:
 
       ```yaml
             # enable PostgreSQL
             postgresql:
-            # highlight-next-line
+            #highlight-next-line
                 enabled: true
                 auth:
                   username: root
       ```
 
-      2. Configure the parameters to point to an external PostgreSQL as shown below:
+      * **Or** configure the parameters to point to an external PostgreSQL as shown below:
     
       ```yaml
         # configure an external PostgreSQL
@@ -42,30 +42,32 @@ High Availability and Scalability is only available on Kubernetes self-hosted, [
           APPSMITH_KEYCLOAK_DB_URL: "<POSTGRES_DB_URL>"
       ```
 
-  3.  Enable MongoDB in the `values.yaml` or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
+  3.  Enable MongoDB or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
 
-      1. Configure the parameters to enable MongoDB as shown below:
+      * Configure the parameters to enable MongoDB as shown below:
 
         ```yaml
           # enable MongoDB
           mongodb:
-            # highlight-next-line
+            #highlight-next-line
             enabled: true
             service:
               nameOverride: appsmith-mongodb
         ```
       
-      2. Configure the parameters to point to an external MongoDB as shown below:
+      * **Or** configure the parameters to point to an external MongoDB as shown below:
 
         ```yaml
         # configure an external MongoDB
           applicationConfig::
+          #highlight-next-line
             APPSMITH_MONGODB_URI: "<MONGODB_URI>"
         ```
 
 ## Configure instance
-Follow the steps below to configure your instance:
-1. Enable `autoscaling` in the `values.yaml`. The below shows the `autoscaling` configuration for the Appsmith Deployment:
+Follow these steps to configure your instance:
+
+1. Enable `autoscaling` in the `values.yaml` as shown below:
 
    ```yaml
         autoscaling:
@@ -80,7 +82,7 @@ Follow the steps below to configure your instance:
 <Tabs groupId="configurations">
   <TabItem label="AWS EKS" value="AWSEKS">
 
-The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) driver is a plugin for the Kubernetes container orchestration system that enables you to mount [Amazon Elastic File System (EFS)](https://aws.amazon.com/efs/) on Kubernetes pods. Using the EFS CSI driver, you can create a shared file system on Kubernetes by mounting an EFS file system on the pods in your cluster. Follow the steps available at the official [EFS CSI driver documentation](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on the Kubernetes pods.
+The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) driver is a plugin for Kubernetes that allows you to mount [Amazon Elastic File System (EFS)](https://aws.amazon.com/efs/) on your Kubernetes pods. This enables you to create a shared file system on Kubernetes by mounting an EFS file system on the pods in your cluster. You can follow the instructions provided in the official [EFS CSI driver documentation](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on your Kubernetes pods.
 
 </TabItem>
 </Tabs>
@@ -90,10 +92,10 @@ The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/e
 <Tabs groupId="configurations">
   <TabItem label="AWS EKS" value="AWSEKS">
 
-You have the option to either configure EFS using a new [Persistent Volume Claim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) or using an existing PVC.
+You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) or existing PVC.
 
   1. Using new PVC
-  This is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, ensure that the following configuration is updated in `values.yaml` file under `persistence` attribute as shown below:
+  This is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, update the `values.yaml` file under `persistence` attribute as shown below:
 
   ```yaml
     existingClaim:
@@ -110,7 +112,7 @@ You have the option to either configure EFS using a new [Persistent Volume Claim
 
   2. Using existing PVC
 
-  This is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Ensure that the following configuration is updated in `values.yaml` file under `persistence` attribute as shown below:
+  This is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Update the `values.yaml` file under `persistence` attribute as shown below:
 
   ```yaml
   existingClaim:
@@ -127,7 +129,7 @@ You have the option to either configure EFS using a new [Persistent Volume Claim
 </TabItem>
 <TabItem label="Minikube" value="Minikube">
    
-  To configure persistence in Minikube, ensure that you have set the properties in `values.yaml` file under `persistence` attribute as shown below.
+  To configure persistence in Minikube, update the `values.yaml` file under `persistence` attribute as shown below.
 
   ```yaml
     localCluster:
