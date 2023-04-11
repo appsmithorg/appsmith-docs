@@ -136,7 +136,7 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **role.assigned_users** | Logged when a role is assigned to users. |
 | **role.unassigned_users** | Logged when a role is unassigned from users. |
 | **role.assigned_groups** | Logged when a role is assigned to user groups. |
-| **role.unassigned_groups** | Logged when a role is unasigned from user groups. |
+| **role.unassigned_groups** | Logged when a role is unassigned from user groups. |
 | **group.created** | Logged when new group is created in granular access controls. |
 | **group.updated** | Logged when a group's information is updated in granular access controls. |
 | **group.deleted** | Logged when a group is deleted from granular access controls. |
