@@ -1,30 +1,42 @@
 ---
 sidebar_position: 3
 ---
-# Deploy Changes
+# Pull and Deploy Changes
 
-If your local branch is not in sync with the remote branch of the git repository, you pull the latest changes by clicking on the pull button at the bottom left corner.
+In Git, a pull is a command that updates a local repository with changes from a remote repository. Similarly, when you make changes to the remote repository of the Appsmith app (Eg. - merged a pull request to the main branch), the local counterpart has to be updated with those changes. To sync the local branch with the remote updates, pull the latest changes by clicking on the pull button at the bottom left corner.
 
-#### **Conflicts**
+:::info
+The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote repositories. In such cases, resolve the conflicts manually on the remote repository.
+:::
 
-Consider a scenario where multiple users work on a single branch, say, the _feature/f1_ branch (we don’t recommend this approach), and update the same resources from 2 different Appsmith instances (e.g., cloud and self-hosted). Now whoever commits later will face the issue of a merge conflict as the user who tries to commit and push will have to pull the changes from remote first.
+## Merging branches
 
-You can resolve it in the following way:
+Merging branches is typically done when you want to incorporate changes made to the base branch into your feature branch. Here are a few scenarios where you may want to merge branches:
 
-* Create a new branch in appsmith from the conflicted branch (feature/f1\_conflicted);
-* Resolve the conflicts on the remote repository (Between origin/feature/f1 and origin/feature/f1\_conflicted) by creating a pull request with origin/feature/f1 as a base branch;
-* Once the conflicts are resolved merge this new branch (origin/feature/f1\_conflicted) into the old branch(origin/feature/f1);
+1. **Keeping up-to-date with changes in the main branch**: if you have been working on your feature branch for a while and the main branch has been updated with new changes, you may want to merge the main branch into your feature branch to keep it up-to-date with the latest changes. This can help you avoid conflicts later on when you merge your changes back into the main branch.
 
-(origin/feature/f1 <- origin/feature/f1\_conflicted)
+2. **Resolving conflicts**: If you have made changes to your feature branch that conflict with changes made to the main branch, you may want to merge the main branch into your feature branch to resolve these conflicts. This can help you identify and fix any conflicts early on, rather than waiting until you merge your changes back into the main branch.
+  
+Follow the steps below when you want to merge your feature branch with the base branch -
 
-* Pull the branch (feature/f1) again in Appsmith’s local repository;
-* Delete branch origin/feature/f1\_conflicted on the remote repository;
-* Run sync branch flow to remove feature/f1\_conflicted< from the local repository.
+1. Click the Merge button at the bottom left corner of the screen. It opens the merge tab
+2. Select your base branch and check the merge status.
+   1. The `base` and `head` branches shouldn't have any uncommitted changes.
+   2. The remote counterpart of the `base` branch shouldn't have any commits that are missing locally (the local and remote versions should be in sync.)
+   3. The `base` and the `head` branch shouldn't have any conflicting changes.
+3. Click on `Merge Changes` if the merge status check is successful.
 
-## Discard and pull changes
+:::info
+Merging the branches can also introduce new conflicts or issues, so it's important to review the changes and test your app after merging.
 
-While developing an application in Appsmith, sometimes, you may end up in a situation where you want to discard the current changes and revert to the previous stable version. Now, with discard and pull functionality, you can remove the unwanted changes, and pull the changes present in the remote repository so that your application will always be in sync.
+### Best practices to avoid merge conflicts
+Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
 
-Discarding changes will result in the following scenarios: Any resources added after the last commit will be removed. Any resources deleted after the last commit will be restored. Changes made to any resource after the last commit will be removed.
+**For changes that affect more than just one page of the app, like the app theme, datasources, etc: **
 
-Note: Resources refers to pages, JSObjects, queries, etc
+* Avoid making these changes when feature branches are in the middle of building new updates.
+* Ensure that these changes are completed and pushed to the `main` branch.
+* Pull changes from `main` to the feature branches that are in development.
+* Finish updates on the feature branch, then commit and merge with main.
+
+

@@ -12,7 +12,7 @@ sidebar_position: 6
 
 ​If you already have an Appsmith App in a Git repository, you can import it to a new workspace or a different Appsmith account. Follow the steps given below:
 
-* On the Appsmith workspace home, click on desired workspace's Menu button and select Import.
+* On the Appsmith workspace home, click on desired workspace Menu button and select Import.
 * Choose the `Import from a Git repo` option on the import application pop-up. You'll be navigated to an `Import from the Git Repository` screen.
 * Add your Repository’s SSH URL and click on [Generate key](/advanced-concepts/git-workflow/connecting-to-git-repository#generate-a-deploy-key).
 

@@ -12,17 +12,26 @@ After developing your app, to commit and push changes to your remote repository,
 ![](/img/commit_changes_git.gif)
 
 
-In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to pull the changes to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
+In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to [pull the changes](/advanced-concepts/git-workflow/pull-and-sync) to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
 
 :::note
 Renaming an entity (query, widgets etc) is the same as deleting the old entity and creating a new one in the Git file system. For example, when you rename a query, you may see `2 queries modified` while trying to commit; the 2 changes are the old query being deleted and the new one being created.
 :::
 
-## Discard changes
-
-While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the deploy modal, click the **Discard Changes** button. 
-
 ## Migration changes
 
 When an Appsmith version is upgraded (self-hosted or cloud), you may see uncommitted changes in your local Git branch even when you've made no changes in your app. This happens due to new feature additions to the platform. You can commit these changes as version upgrade changes. Conflicts that may arise during the review process should be resolved on the remote repository.
+
+## Discard changes
+
+While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the deploy modal, click the **Discard Changes** button. Discarding changes results in the following scenarios: 
+- Any resources added after the last commit is removed. 
+- Any resources that are deleted after the last commit is restored. 
+- Changes made to any resource after the last commit is removed.
+
+(Resources refers to pages, JSObjects, queries, etc.)
+
+
+
+
 
