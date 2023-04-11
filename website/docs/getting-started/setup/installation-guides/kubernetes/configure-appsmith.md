@@ -110,12 +110,11 @@ Appsmith parameters allow you to configure your Appsmith installation. Refer to 
 
 You can use the `helm install` command to configure your Appsmith installation using one of the below ways:
 
-When using command, specify each parameter using the `--set key=value[,key=value]` argument.
-
 * Using Helm parameters: For example, deploy Appsmith and configure it to use the storage class `appsmith-pv` with:
 
 ```bash
 helm install \
+#highlight-next-line
 --set persistence.storageClass=appsmith-pv \
   appsmith appsmith/appsmith 
 ```
@@ -124,19 +123,19 @@ helm install \
 
 ```bash 
 helm install \
+#highlight-next-line
 --set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
   appsmith appsmith/appsmith 
 ```
 
-* Using `values.yam`l file: Change the parameter values in the `values.yaml` file and run the below command:
+* Using `values.yaml` file: Change the parameter values in the `values.yaml` file and run the below command:
 
 ```bash
 helm install appsmith appsmith/appsmith -f values.yaml 
 ```
 
 ## Troubleshooting
-If you face issues, reach out to the [support team](mailto:support@appsmith.com).
+If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
-* [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-docker-installations)
 * [Manage Appsmith instance](/getting-started/setup/instance-management/)

@@ -28,7 +28,7 @@ If you are on a version earlier than v1.9.2, first upgrade:
 ## Docker Compose
 The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
 
-You can update Appsmith in one of the following ways:
+You can update Appsmith in one of the below ways:
 
 * [Manual update](#manual-update)
 * [Automatic update](#automatic-update)
@@ -87,6 +87,75 @@ Before an automatic update, Appsmith creates a backup. You may use this to roll 
 This setup runs an Appsmith and a Watchtower container. The Watchtower checks and updates Appsmith when a new version becomes available. 
 
 You may also schedule automatic updates for your instance. For more information, see [Configure auto-updates](/getting-started/setup/instance-management/maintenance-window#adding-a-configurable-maintenance-window-for-appsmiths-auto-updates).
+
+## Kubernetes
+
+Follow the steps to update your Appsmith installation:
+
+<Tabs groupId="appsmithEditions">
+
+<TabItem label="Community Edition" value="communityEdition"> 
+
+You can update Appsmith in one of the below ways:
+
+### Automatic update
+
+The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either setting it in values file or using a command.
+
+* Running the command below.
+  ```bash 
+    helm install appsmith/appsmith appsmith \
+      #highlight-next-line
+      --set autoupdate.enabled=true
+  ```
+
+* Or edit `values.yaml` and specify the following parameters
+   ```bash
+     helm upgrade --values values.yaml appsmith appsmith/appsmith
+    ```
+
+### Manual update
+
+To manually update the Appsmith container image to the latest release, run the command: 
+
+```bash
+kubectl rollout restart statefulset appsmith
+```
+
+</TabItem>
+
+<TabItem label="Business Edition" value="businessEditin">
+
+You can update Appsmith in one of the below ways:
+
+### Automatic update
+
+The default Appsmith helm installation disables auto update (_recommended_). You have an option to enable auto update by either:
+  - Running the command below.
+    ```bash
+    helm upgrade --set autoupdate.enabled=true \
+    appsmith [appsmith-ee|appsmith]/appsmith 
+    ```
+  - Or edit `values.yaml` and specify the following parameters
+    ```yaml
+    autoupdate.enabled: true
+    autoupdate.scheduler: 0
+    ```
+    Followed by running the command below.
+    ```bash
+    helm upgrade --values values.yaml appsmith [appsmith-ee|appsmith]/appsmith
+    ```
+
+### Manual update
+
+To manually update the Appsmith container image to the latest release, run the command: 
+
+```bash
+kubectl rollout restart deployment appsmith
+```
+
+</TabItem>
+</Tabs>
 
 ## Upgrade to a checkpoint version
 

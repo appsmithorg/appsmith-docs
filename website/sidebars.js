@@ -60,8 +60,8 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/configure-appsmith',
-                    'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                     'getting-started/setup/installation-guides/kubernetes/configure-tls',
+                    'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',

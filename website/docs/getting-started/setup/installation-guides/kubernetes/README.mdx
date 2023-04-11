@@ -4,7 +4,7 @@ description: Deploy Appsmith on a Kubernetes cluster
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Kubernetes
+# Kubernetes (k8s)
 
 This page provides steps to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager.
 
@@ -177,19 +177,20 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 
 ## Publish Appsmith online
 
-To make your Appsmith installation accessible on the internet, you need an Ingress controller set up. For more information on Ingress controllers, see the [Configure Kubernetes Cluster](#configure-kubernetes-cluster) section. 
-
-To install the Nginx ingress controller on AWS-EKS, GCE-GKE, or Azure, run the below command if it hasn't already been installed:
+To make your Appsmith installation accessible on the internet, you need an Ingress controller set up as part of Step 3 in [Prerequisites](#prerequisites) section. To install the Nginx ingress controller on AWS-EKS, GCE-GKE, or Azure, run the below command if it hasn't already been installed:
 
  ```bash 
   helm install ingress-nginx ingress-nginx/ingress-nginx
   ```
 This command installs the Helm chart, enables the ingress controller, and publishes Appsmith on the internet.
 
-  <Tabs groupId="appsmithEditions">
+<Tabs groupId="appsmithEditions">
 
-  <TabItem label="Community Edition" value="communityEdition"> 
-  Enable the ingress controller through command with:
+<TabItem label="Community Edition" value="communityEdition"> 
+
+You can use the `helm upgrade` command to enable the ingress controller using one of the below ways:
+  
+  * Using Helm parameters with:
 
   ```bash
   helm upgrade appsmith/appsmith \
@@ -198,39 +199,39 @@ This command installs the Helm chart, enables the ingress controller, and publis
       --set service.type=ClusterIP \
   ```
 
-  Open the `values.yaml` file and update the parameter values as below:
+  * Using `values.yaml` file:
+  
+    1. Open the `values.yaml` file and update the parameter values as below:
 
-  ```yaml 
-  ingress:
-    ## @param ingress.enabled Enable ingress record generation for Ghost
-    ##
-    enabled: true
-    ## @param ingress.annotations Additional custom annotations for the ingress record
-    ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-    ##
-    className: nginx
-    hosts: []
-      # - host: appsmith-domain.me
-  service:
-    ## @param service.type Kubernetes Service type
-    ##
-    type: ClusterIP
-  ```
+    ```yaml 
+      ingress:
+        ## @param ingress.enabled Enable ingress record generation for Ghost
+        ##
+        enabled: true
+        ## @param ingress.annotations Additional custom annotations for the ingress record
+        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+        ##
+        className: nginx
+        hosts: []
+          # - host: appsmith-domain.me
+      service:
+        ## @param service.type Kubernetes Service type
+        ##
+        type: ClusterIP
+    ```
 
-  Once the parameter values are modified, run the below command:
+    2. Run the below command once the parameter values are updated:un the below command:
 
-  ```bash 
-  helm upgrade --values values.yaml appsmith appsmith/appsmith
-  ```
+      ```bash 
+      helm upgrade --values values.yaml appsmith appsmith/appsmith
+      ```
 
- </TabItem>
+</TabItem>
  <TabItem label="Business Edition" value="businessEdition">
 
-   Enable the ingress controller through command or by modifying the `values.yaml` file.
-
-  <details id="usingCommand">
-  <summary>Follow the steps below to configure using command</summary>
-  Run the below command to enable ingress controller:
+ You can use the `helm upgrade` command to enable the ingress controller using one of the below ways:
+  
+ * Using Helm parameters with:
 
   ```bash
   helm upgrade appsmith-ee/appsmith \
@@ -239,36 +240,33 @@ This command installs the Helm chart, enables the ingress controller, and publis
       --set service.type=ClusterIP \
   ```
 
-   </details>
-   <details id="usingValues">
-  <summary>Follow the steps below to configure using `values.yaml`</summary>
+* Using `values.yaml` file:
   
-  Open the `values.yaml` file and update the parameter values as below:
+    1. Open the `values.yaml` file and update the parameter values as below:
 
-  ```yaml 
-  ingress:
-    ## @param ingress.enabled Enable ingress record generation for Ghost
-    ##
-    enabled: true
-    ## @param ingress.annotations Additional custom annotations for the ingress record
-    ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-    ##
-    className: nginx
-    hosts: []
-      # - host: appsmith-domain.me
-  service:
-    ## @param service.type Kubernetes Service type
-    ##
-    type: ClusterIP
-  ```
+    ```yaml 
+    ingress:
+      ## @param ingress.enabled Enable ingress record generation for Ghost
+      ##
+      enabled: true
+      ## @param ingress.annotations Additional custom annotations for the ingress record
+      ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+      ##
+      className: nginx
+      hosts: []
+        # - host: appsmith-domain.me
+    service:
+      ## @param service.type Kubernetes Service type
+      ##
+      type: ClusterIP
+    ```
     
-Once the parameter values are modified, run the below command:
+     2. Run the below command once the parameter values are updated:un the below command:
 
-  ```bash 
-  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
-  ```
-    
-  </details>
+    ```bash 
+    helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+    ```
+
 
 </TabItem>
 </Tabs>
@@ -293,10 +291,10 @@ Some common errors that you may face during installation:
 * [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
 * [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) 
 
-If you continue to face issues, reach out to the [support team](mailto:support@appsmith.com).
+If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
 
-* [Configure TLS](/getting-started/setup/installation-guides/kubernetes/configure-tls)
-* [Configure your Instance](/getting-started/setup/instance-configuration)
+* [Configure TLS for your Appsmith installation](/getting-started/setup/installation-guides/kubernetes/configure-tls)
+* [Configure High Availability for your Appsmith Installation](/getting-started/setup/installation-guides/kubernetes/configure-high-availability)
 * [Manage your Appsmith instance](/getting-started/setup/instance-management)
