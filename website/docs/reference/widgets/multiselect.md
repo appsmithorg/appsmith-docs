@@ -138,7 +138,7 @@ Style properties allow you to change the look and feel of the widget. All of the
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Label Text Color** | String| Allows you to set text color for the label.              |
 | **Label Text Size**  | String| Allows you to set the size of the label.                 |
-| **Label Font Style** | String| Allows you to choose a font style (bold or italic). |
+| **Emphasis** | String| Allows you to choose a font style (bold or italic). |
 | **Border Radius**    | String| Allows you to define curved corners.                     |
 | **Box Shadow**       | String | Allows you to choose from the available shadow styles.   |
 
