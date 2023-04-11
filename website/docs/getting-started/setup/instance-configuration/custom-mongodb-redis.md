@@ -2,7 +2,7 @@
 sidebar_position: 3
 toc_max_heading_level: 4
 ---
-# Custom MongoDB & Redis
+# External MongoDB and Redis
 
 Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB and Redis for data storage and session management. You can also switch to external instances. Using external instances makes the Appsmith container stateless, enabling better performance and scalability. Follow the steps on this page to set up external MongoDB and Redis for Appsmith.
 
@@ -80,8 +80,4 @@ If you continue to face issues, reach out to the support team at [support@appsmi
 
 ## Further reading
 - [Container logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
-- [Instance Management](/getting-started/setup/instance-management) 
-
-## Further reading
-- [System logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
 - [Instance Management](/getting-started/setup/instance-management) 
