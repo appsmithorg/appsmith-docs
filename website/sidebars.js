@@ -495,7 +495,15 @@ const sidebars = {
             id: 'advanced-concepts/git-workflow/README',
           },
           items: [
-            'advanced-concepts/git-workflow/connecting-to-git-repository',
+            {
+              type: 'category',
+              label: 'Connect to a Git Repository',
+              link: {
+                type: 'doc',
+                id: 'advanced-concepts/git-workflow/connecting-to-git-repository',
+              },
+              items: ['advanced-concepts/git-workflow/update-file-path',],
+            },
             'advanced-concepts/git-workflow/working-with-branches',
             'advanced-concepts/git-workflow/commit-and-push',
             'advanced-concepts/git-workflow/pull-and-sync',
