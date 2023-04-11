@@ -30,7 +30,7 @@ The options must be specified as an array of objects, where each object has two 
 
 ## Display options dynamically 
 
-Instead of creating a predetermined set of options, you can dynamically generate options by fetching data from an API or querying a data source.
+Instead of creating a predetermined set of options, you can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
 
 
 ---
@@ -42,7 +42,7 @@ Instead of creating a predetermined set of options, you can dynamically generate
 SELECT DISTINCT country FROM users;
 ```
 
-This query retrieves only unique country values from the "users" table and is used to generate the options for the Select widget dynamically.
+This query retrieves only unique country values from the "users" table and is used to generate the options for the Multiselect widget dynamically.
 
 2. Next, lets use JavaScript to **transform the data** by adding it to the **Options** property.
 
@@ -52,11 +52,11 @@ This query retrieves only unique country values from the "users" table and is us
 
 The code uses the `map()` function to transform each item in the `fetchUserData` array to an object with `label` and `value` properties, both set to the `country` value of each object in the array.
 
-## Set default value in options
+## Set default values in options
 
-The Default Selected Value property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific option is selected by default. To use this property, set its value to the value of the desired option from the **Options property**. 
+The **Default Selected Values** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options property**. 
 
-For example, if you want the default selected value to be `RED` and `GREEN,` you can set the **Default Selected Value** property to:
+For example, if you want the default selected values to be `RED` and `GREEN,` you can set the **Default Selected Values** property to:
 
 ```json
 [
@@ -68,15 +68,12 @@ For example, if you want the default selected value to be `RED` and `GREEN,` you
 ## Access selected option
 These properties allow you to bind your Multiselect widget with any other widget in queries or JS objects.
 
-* The **selectedOptionValue** in a Multiselect widget is a value that represents the selected option in a  dropdown. It updates when the user selects a new option or the default value changes. 
+* The **selectedOptionValue** in a Multiselect widget is a value that represents the selected option in a dropdown. It updates when the user selects a new option or the default value changes. 
 
-* The **selectedOptionLabel** in a Multiselect widget represents the label of the selected option in a dropdown. This property is used to display the label of the selected option in the widget and is updated whenever the user selects a different option from the dropdown list or if the default label changes. 
+* The **selectedOptionLabel** in a Multiselect widget represents the label of the selected option in a dropdown. It is used to display the label of the selected option in the widget and is updated whenever the user selects a different option from the dropdown list or if the default label changes.
 
-```javascript
-{{widget_name.selectedOptionLabel}}
-```
 ---
-**Example**: suppose you want to filter data based on count
+**Example**: suppose you want to filter data based on 
 
 
 ## Server side filtering	
