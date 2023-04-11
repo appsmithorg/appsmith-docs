@@ -3,7 +3,7 @@
 This document explains how to use a multi-select widget to allow users to select multiple options from a predetermined list.
 
 
-<VideoEmbed host="youtube" videoId="oH7Y-vSMIgM" title="How to use Multiselect" caption="How to use Multiselect"/>
+<VideoEmbed host="youtube" videoId="oH7Y-vSMIgM" title="Using Multiselect" caption="Using Multiselect"/>
 
 ## Display options manually
 
@@ -42,7 +42,6 @@ Instead of creating a predetermined set of options, you can dynamically generate
 ```sql
 SELECT DISTINCT country as label, country as value FROM users;
 ```
-This query retrieves unique country values from the `users` table and sets both `label` and `value` properties to the country value of each object in the array. 
 
 2. In the Multiselect **Options** property, display the data using:
 
@@ -62,7 +61,7 @@ If the data retrieved from the database query is not in the desired format, you 
 SELECT DISTINCT country FROM users;
 ```
 
-This query retrieves unique country values from the `users` table. The data retrieved from the database using the query is in the format of an array of objects, where each object contains the key `country`.
+This query retrieves unique country values from the `users` table. The retrieved data is in the form of an array of objects, where each object has a country `key`.
 
 2. Next, lets use JavaScript to **transform the data** by adding it to the **Options** property.
 
