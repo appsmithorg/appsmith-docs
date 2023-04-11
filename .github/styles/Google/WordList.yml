@@ -77,3 +77,5 @@ swap:
   url:  URL
   vs\.: versus
   World Wide Web: web
+exceptions:
+  - k8s 

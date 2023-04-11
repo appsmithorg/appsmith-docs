@@ -5,11 +5,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Configure High Availability for Appsmith on Kubernetes
-The page provides steps to configure High Availability (HA) for Appsmith on Kubernetes. 
+The page provides steps to configure High Availability (HA) and Scalability for Appsmith on Kubernetes.
+
+:::info
+High Availability and Scalability is only available on Kubernetes self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
+:::
 
 ## Prerequisites
-Ensure that below prerequisites are met:
-
   1. Install `metrics-server`, which provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods.
 
    ```bash

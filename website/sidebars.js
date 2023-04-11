@@ -60,7 +60,6 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/kubernetes/configure-appsmith',
-                    'getting-started/setup/installation-guides/kubernetes/configure-tls',
                     'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
@@ -153,6 +152,7 @@ const sidebars = {
                     id: 'getting-started/setup/instance-configuration/custom-domain/README',
                   },
                   items: [
+                    'getting-started/setup/instance-configuration/custom-domain/configure-tls',
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
