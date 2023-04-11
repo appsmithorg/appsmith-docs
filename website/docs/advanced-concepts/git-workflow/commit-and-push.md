@@ -24,7 +24,9 @@ When an Appsmith version is upgraded (self-hosted or cloud), you may see uncommi
 
 ## Discard changes
 
-While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the deploy modal, click the **Discard Changes** button. Discarding changes results in the following scenarios: 
+While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the deploy modal, click the **Discard Changes** button. When this button is clicked, along with the current changes being discarded, the latest changes are pulled from the remote repository so that your application is in sync. 
+
+Discarding changes results in the following scenarios: 
 - Any resources added after the last commit is removed. 
 - Any resources that are deleted after the last commit is restored. 
 - Changes made to any resource after the last commit is removed.

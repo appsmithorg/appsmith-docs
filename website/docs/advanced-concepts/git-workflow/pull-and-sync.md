@@ -28,6 +28,7 @@ Follow the steps below when you want to merge your feature branch with the base 
 
 :::info
 Merging the branches can also introduce new conflicts or issues, so it's important to review the changes and test your app after merging.
+:::
 
 ### Best practices to avoid merge conflicts
 Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
