@@ -164,7 +164,7 @@ These properties allow you to edit the widget. All of these properties are prese
 
 ### Reference properties
 
-These properties allow you to bind your select widget with any other widget in queries or JS objects. For instance, you can use `MultiSelect1.isVisible` to get the visibility status.
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `MultiSelect1.isVisible` to get the visibility status.
 
 | Reference Property | Data type | Description                                                                                                                                                    |
 | ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
