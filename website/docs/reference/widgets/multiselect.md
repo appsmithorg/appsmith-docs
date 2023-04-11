@@ -34,23 +34,79 @@ Instead of creating a predetermined set of options, you can dynamically generate
 
 
 ---
-**Example:** suppose you want to get a list of countries based on data stored in a database. 
+**Example:** suppose you want to use a Multiselect widget to filter the table data and display information related to only certain countries.
 
-1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve unique country values.
+1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
+
+
+```sql
+SELECT DISTINCT country as label, country as value FROM users;
+```
+This query retrieves unique country values from the `users` table and sets both `label` and `value` properties to the country value of each object in the array. 
+
+2. In the Multiselect **Options** property, display the data using:
+
+```js
+{{fetchData.data}}
+```
+
+With this configuration, the Multiselect widget displays a list of unique country values directly from the query. 
+
+### Transform data using JavaScript
+
+If the data retrieved from the database query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
+
+1. Lets consider using the `users` table in the database and fetch the unique country values using the following `getdata` SQL query:
 
 ```sql
 SELECT DISTINCT country FROM users;
 ```
 
-This query retrieves only unique country values from the "users" table and is used to generate the options for the Multiselect widget dynamically.
+This query retrieves unique country values from the `users` table. The data retrieved from the database using the query is in the format of an array of objects, where each object contains the key `country`.
 
 2. Next, lets use JavaScript to **transform the data** by adding it to the **Options** property.
 
 ```js
-{{fetchData.data.map( p => ({label: p.country, value: p.country}))}}
+{{getdata.data.map( p => ({label: p.country, value: p.country}))}}
 ```
 
-The code uses the `map()` function to transform each item in the `fetchUserData` array to an object with `label` and `value` properties, both set to the `country` value of each object in the array.
+The code uses the `map()` function to transform each item in the `getdata` array to an object with `label` and `value` properties, both set to the `country` value of each object in the array.
+
+## Access selected options
+If you want to retrieve the selected values from a Multiselect widget and bind them to other widgets or JavaScript objects, you can use the following properties:
+
+
+* **selectedOptionValues**: This property returns the value of the selected options in the Multiselect widget. It updates automatically when the user selects a new option.
+
+* **selectedOptionLabels**: This property returns the label of the selected options in the Multiselect widget. 
+
+---
+**Example**: suppose you want to filter the table data based on the user-selected countries from a Multiselect widget. 
+
+1. Create a new query called `filterdata` and add a SQL statement to select all the data from the `users` table where the `country` column matches the selected options from a Multiselect widget. 
+
+```sql
+SELECT *
+FROM users
+WHERE country IN ({{"'" + MultiSelect.selectedOptionLabels.join("', '") + "'"}})
+LIMIT 10;
+```
+The query filters the `users` table by matching the selected options from the Multiselect widget with the `country` column using the SQL IN operator with a comma-separated string.
+
+:::note
+When using dynamic binding with SQL queries containing SQL keywords such as 'SELECT', 'WHERE', 'AND', etc., [**prepared statement**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
+:::
+
+2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
+
+```js
+{{filterdata.data}}
+```
+
+3. Now, set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. Whenever the user selects or deselects an option. This updates the displayed data in real-time as the user selects or deselects options.
+
+
+
 
 ## Set default values in options
 
@@ -65,25 +121,16 @@ For example, if you want the default selected values to be `RED` and `GREEN,` yo
 ]
 ```
 
-## Access selected option
-These properties allow you to bind your Multiselect widget with any other widget in queries or JS objects.
 
-* The **selectedOptionValue** in a Multiselect widget is a value that represents the selected option in a dropdown. It updates when the user selects a new option or the default value changes. 
-
-* The **selectedOptionLabel** in a Multiselect widget represents the label of the selected option in a dropdown. It is used to display the label of the selected option in the widget and is updated whenever the user selects a different option from the dropdown list or if the default label changes.
-
----
-**Example**: suppose you want to filter data based on 
 
 
 ## Server side filtering	
 
-The Multiselect widget has the option to configure server-side filtering, where search queries are sent to the back-end, and responses are used to populate options on the Multiselect widget. You can implement server-side filtering of options in the Multiselect widget by using the `filterText` binding property.
+Filtering large datasets may degrade performance, so it's recommended to set up server-side filtering	for the widget. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to you.
 
-The **filterText** is a binding property in a Multiselect widget that allows you to implement server-side filtering of options in the dropdown list. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value isn't present in the default options.
+To use server-side filtering, you can use the `filterText` reference property, which lets you implement the filtering on the server side. You can also configure the `onFilterUpdate` event to handle the filtering. This event is triggered when the user types in the search bar, and it sends the search query to the server. If you're implementing server-side filtering in your widget, make sure to update the default value to include both `label` and `value`.
 
-You can also configure the `onFilterUpdate` event can be configured to handle server-side filtering in the Multiselect widget. It's triggered when the user types in the search bar and provides the search query as an argument. You can use this query to update the options displayed in the widget based on the server response.
-
+For example, if the user types `"un"` in the search bar of a Multiselect widget that displays a list of countries, you can send the search query `"un"` to the server, which can then return only the countries that match the search query, such as the United States and the United Kingdom.
 
 ## Properties
 
