@@ -97,8 +97,8 @@ Helm parameters allow you to configure your Kubernetes installation. Refer to th
 
 | Name                      | Type | Description                                               | Value |
 | -------------------------- | --------------------------------------------------------- | ----- |----|
-| `global.namespaceOverride` | Global | Overrides the namespace for resource deployed by the chart | `""`  |
-| `global.storageClass`      | Global | Sets `StorageClass` for Persistent Volume              | `""`  |
+| `global.namespaceOverride` | Global | Overrides the namespace for resource deployed by the chart | 
+| `global.storageClass`      | Global | Sets `StorageClass` for Persistent Volume              | 
 | `fullnameOverride`  | Common| String to fully override `appsmith.name` template | `""`         |
 | `containerName`     | Common| Specifies container's name running in the pods      | `"appsmith"` |
 | `commonLabels`      | Common| Labels to add to all deployed objects             | `{}`         |
@@ -160,32 +160,32 @@ Helm parameters allow you to configure your Kubernetes installation. Refer to th
 Appsmith parameters allow you to configure your Appsmith installation. Refer to the table below for a list of available parameters:
 
 
-| Name                                                     | Value |
-| -------------------------------------------------------- | ----- |
-| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/google-login)    | `""`  |
-| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/google-login) | `""`  |
-| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/github-login)     | `""`  |
-| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/github-login) | `""`  |
-| `applicationConfig.APPSMITH_CLIENT_LOG_LEVEL`            | `""`  |
-| [`applicationConfig.APPSMITH_GOOGLE_MAPS_API_KEY`](/getting-started/setup/instance-configuration/google-maps)         | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_ENABLED`](/getting-started/setup/instance-configuration/email/)                | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_HOST`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_PORT`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_USERNAME`](/getting-started/setup/instance-configuration/email/)               | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_PASSWORD`](/getting-started/setup/instance-configuration/email/)               | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_FROM`](/getting-started/setup/instance-configuration/email/)                   | `""`  |
-| [`applicationConfig.APPSMITH_REPLY_TO`](/getting-started/setup/instance-configuration/email/)                    | `""`  |
-| [`applicationConfig.APPSMITH_MAIL_SMTP_AUTH`](/getting-started/setup/instance-configuration/email/)              | `""`  |
-| `applicationConfig.APPSMITH_MAIL_SMTP_TLS_ENABLED`       | `""`  |
-| [`applicationConfig.APPSMITH_DISABLE_TELEMETRY`](https://docs.appsmith.com/product/telemetry#disable-telemetry)           | `""`  |
-| `applicationConfig.APPSMITH_RECAPTCHA_SITE_KEY`          | `""`  |
-| `applicationConfig.APPSMITH_RECAPTCHA_SECRET_KEY`        | `""`  |
-| `applicationConfig.APPSMITH_RECAPTCHA_ENABLED`           | `""`  |
-| [`applicationConfig.APPSMITH_MONGODB_URI`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)                | `""`  |
-| [`applicationConfig.APPSMITH_REDIS_URL`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-redis)                   | `""`  |
-| `applicationConfig.APPSMITH_ENCRYPTION_PASSWORD`         | `""`  |
-| `applicationConfig.APPSMITH_ENCRYPTION_SALT`             | `""`  |
-| [`applicationConfig.APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/instance-configuration/custom-domain/#dockerk8s)               | `""`  |
+| Name                                                     |
+| -------------------------------------------------------- |
+| [applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_ID](/getting-started/setup/instance-configuration/authentication/google-login)    | 
+| [`applicationConfig.APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/google-login) | 
+| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_ID`](/getting-started/setup/instance-configuration/authentication/github-login)     | 
+| [`applicationConfig.APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`](/getting-started/setup/instance-configuration/authentication/github-login) | 
+| `applicationConfig.APPSMITH_CLIENT_LOG_LEVEL`            | 
+| [`applicationConfig.APPSMITH_GOOGLE_MAPS_API_KEY`](/getting-started/setup/instance-configuration/google-maps)         | 
+| [`applicationConfig.APPSMITH_MAIL_ENABLED`](/getting-started/setup/instance-configuration/email/)                | 
+| [`applicationConfig.APPSMITH_MAIL_HOST`](/getting-started/setup/instance-configuration/email/)                   | 
+| [`applicationConfig.APPSMITH_MAIL_PORT`](/getting-started/setup/instance-configuration/email/)                   | 
+| [`applicationConfig.APPSMITH_MAIL_USERNAME`](/getting-started/setup/instance-configuration/email/)               | 
+| [`applicationConfig.APPSMITH_MAIL_PASSWORD`](/getting-started/setup/instance-configuration/email/)               | 
+| [`applicationConfig.APPSMITH_MAIL_FROM`](/getting-started/setup/instance-configuration/email/)                   | 
+| [`applicationConfig.APPSMITH_REPLY_TO`](/getting-started/setup/instance-configuration/email/)                    | 
+| [`applicationConfig.APPSMITH_MAIL_SMTP_AUTH`](/getting-started/setup/instance-configuration/email/)              | 
+| `applicationConfig.APPSMITH_MAIL_SMTP_TLS_ENABLED`       | 
+| [`applicationConfig.APPSMITH_DISABLE_TELEMETRY`](https://docs.appsmith.com/product/telemetry#disable-telemetry)           | 
+| `applicationConfig.APPSMITH_RECAPTCHA_SITE_KEY`          | 
+| `applicationConfig.APPSMITH_RECAPTCHA_SECRET_KEY`        | 
+| `applicationConfig.APPSMITH_RECAPTCHA_ENABLED`           | 
+| [`applicationConfig.APPSMITH_MONGODB_URI`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)                | 
+| [`applicationConfig.APPSMITH_REDIS_URL`](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-redis)                   | 
+| `applicationConfig.APPSMITH_ENCRYPTION_PASSWORD`         | 
+| `applicationConfig.APPSMITH_ENCRYPTION_SALT`             | 
+| [`applicationConfig.APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/instance-configuration/custom-domain/#dockerk8s)               | 
 
 #### Configure instance
 
@@ -227,72 +227,12 @@ Change the parameter values in the `values.yaml` file and run the below command:
   </TabItem>
  </Tabs> 
 
-To configure environment variables using helm, follow these steps:
-
-<Tabs groupId="appsmithEditions">
-  <TabItem label="Community Edition" value="communityEdition"> 
-
-  You may choose to configure environment variables: through commands or by using a `values.yaml` file.
-
-  * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
-
-  ```bash
-    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
-  ```
-  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
-
-  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
-
-  ```yaml
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
-    APPSMITH_FORM_LOGIN_DISABLED: ""
-    APPSMITH_SIGNUP_DISABLED: "true"
-  ``` 
-Once you have made changes to the values file, run the below command.
-
-```bash
-  helm upgrade --values values.yaml appsmith appsmith/appsmith
-```
-
-  </TabItem>
-  <TabItem label="Business Edition" value="businessEdition"> 
-
-   You may choose to configure environment variables: through commands or by using a `values.yaml` file.
-
-  * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
-
-  ```bash
-    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
-  ```
-  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
-
-  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
-
-  ```yaml
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
-    APPSMITH_FORM_LOGIN_DISABLED: ""
-    APPSMITH_SIGNUP_DISABLED: "true"
-  ```
-Once you have made changes to the values file, run the below command.
-
-```bash
-  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
-```
-  </TabItem>
-</Tabs> 
-
 ### Configure ECS installations
 
 To configure an ECS installation, follow these steps:
 
 1. Navigate to the ECS console and select Task Definitions on the sidebar.
-2. Click on the Task Definition used by your ECS instance, and hit Create new revision.
+2. Click the Task Definition used by your ECS instance, and hit Create new revision.
 3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs as shown below.
 
 ![](/img/ecs-task-env_(1).png)
@@ -300,8 +240,8 @@ To configure an ECS installation, follow these steps:
 It's recommended to use AWS Secrets for sensitive information, please follow the steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
 
 1. Hit the Update button, and hit Create to make a new task definition.
-2. Navigate back to the ECS console and select your cluster. Click on your service to open the service details.
-3. Click on Update, and select the latest revision of the Task Definition.
+2. Navigate back to the ECS console and select your cluster. Click your service to open the service details.
+3. Click Update, and select the latest revision of the Task Definition.
 4. Hit Skip to review and then Update Service. A screen as below shows the status.
 
 ![](/img/instance-configuration-ecs-service-restart.png)

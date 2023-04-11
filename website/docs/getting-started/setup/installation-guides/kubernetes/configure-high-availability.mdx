@@ -65,7 +65,7 @@ High Availability and Scalability is only available on Kubernetes self-hosted, [
         ```
 
 ## Configure instance
-Follow these steps to configure your instance:
+Follow these steps to configure auto scaling for your instance:
 
 1. Enable `autoscaling` in the `values.yaml` as shown below:
 
@@ -77,7 +77,7 @@ Follow these steps to configure your instance:
           maxReplicas: 2
    ```
 
-2. Create a shared file system. 
+2. Follow the steps below to create a shared file system:
 
 <Tabs groupId="configurations">
   <TabItem label="AWS EKS" value="AWSEKS">
@@ -87,7 +87,7 @@ The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/e
 </TabItem>
 </Tabs>
 
-3. To configure persistence, you can use persistent volumes, persistent volume claims, or storage classes, depending on your platform. 
+3. Follow the steps below to configure persistence:
 
 <Tabs groupId="configurations">
   <TabItem label="AWS EKS" value="AWSEKS">
