@@ -489,7 +489,7 @@ const sidebars = {
         'advanced-concepts/branding',
         {
           type: 'category',
-          label: 'Git Workflow',
+          label: 'Version Control with Git',
           link: {
             type: 'doc',
             id: 'advanced-concepts/git-workflow/README',
