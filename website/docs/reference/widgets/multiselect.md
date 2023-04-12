@@ -53,7 +53,7 @@ With this configuration, the Multiselect widget displays a list of unique countr
 
 ### Transform data using JavaScript
 
-If the data retrieved from the database query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
+If the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
 
 1. Lets consider using the `users` table in the database and fetch the unique country values using the following `getdata` SQL query:
 
@@ -69,7 +69,7 @@ This query retrieves unique country values from the `users` table. The retrieved
 {{getdata.data.map( p => ({label: p.country, value: p.country}))}}
 ```
 
-The code uses the `map()` function to transform each item in the `getdata` array to an object with `label` and `value` properties, both set to the `country` value of each object in the array.
+The code transforms each item in the `getdata` array by using the `map()` function to create a new object with a `label` and `value` property, both set to the country value of each object in the array.
 
 ## Access selected options
 If you want to retrieve the selected values from a Multiselect widget and bind them to other widgets or JavaScript objects, you can use the following properties:
