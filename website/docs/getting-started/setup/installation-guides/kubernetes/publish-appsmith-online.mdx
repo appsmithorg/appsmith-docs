@@ -1,15 +1,15 @@
 ---
-description: Publish Appsmith on a Kubernetes cluster to internet
+description: Publish Appsmith on a Kubernetes cluster to the internet
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Publish Appsmith on Internet
-The page provides steps to publish Appsmith Kubernetes installation on internet.
+# Publish Appsmith on the Internet
+The page provides steps to publish Appsmith Kubernetes installation on the internet.
 
 ## Prerequisites
 1. A Kubernetes cluster running Appsmith with at least one node
-3. Ingress Controller installed on your Kubernetes cluster. 
+3. Follow the steps below to install Ingress Controller on your Kubernetes cluster. 
 
 <Tabs groupId="configurations">
  <TabItem label="AWS EKS" value="AWSEKS">
@@ -36,7 +36,7 @@ The page provides steps to publish Appsmith Kubernetes installation on internet.
 </TabItem>
 </Tabs>
 
-3. Configuring data compression for Nginx ingress controller can help reduce the amount of data transferred between the server and client, which improves the performance of your application. If you want to use `gzip` compression, follow these steps to enable it.
+3. Configuring data compression for the Nginx ingress controller can help reduce the amount of data transferred between the server and client, which improves the performance of your application. If you want to use `gzip` compression, follow these steps to enable it.
 
     1. Edit the `configMap` for `ingress-nginx-controller` with:
 
@@ -72,7 +72,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
       --set service.type=ClusterIP \
   ```
 
-  * Using `values.yaml` file:
+  * Using the `values.yaml` file:
   
     1. Open the `values.yaml` file and update the parameter values as below:
 
@@ -113,7 +113,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
       --set service.type=ClusterIP \
   ```
 
-* Using `values.yaml` file:
+* Using the `values.yaml` file:
   
     1. Open the `values.yaml` file and update the parameter values as below:
 

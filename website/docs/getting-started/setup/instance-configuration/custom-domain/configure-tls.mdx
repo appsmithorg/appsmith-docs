@@ -43,7 +43,7 @@ If you see permission errors when running these commands on Google Kubernetes En
   kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.crds.yaml
   ```
 
-7. Create a `ClusterIssuer` resource for Let's Encrypt certificates. Create a file with below content. Replace the `<EMAIL_ADDRESS>` placeholder with a valid email address. Save the file as `letsencrypt-appsmith.yaml`:
+7. Create a `ClusterIssuer` resource for Let's Encrypt certificates. Create a file with the below content. Replace the `<EMAIL_ADDRESS>` placeholder with a valid email address. Save the file as `letsencrypt-appsmith.yaml`:
 
   ```yaml
   apiVersion: cert-manager.io/v1
@@ -82,7 +82,7 @@ If you see permission errors when running these commands on Google Kubernetes En
 
 You can use the `helm upgrade` command to update your Appsmith installation in one of two ways:
 
-  * Use the below command to update Appsmith using Helm parameters. In this command, replace `<DOMAIN>` with your own domain name.
+  * Use the below command to update Appsmith using Helm parameters. In this command, replace `<DOMAIN>` with your domain name.
 
       ```bash
         helm upgrade appsmith appsmith/appsmith \
