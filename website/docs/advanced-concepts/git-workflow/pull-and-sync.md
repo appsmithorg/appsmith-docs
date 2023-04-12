@@ -11,7 +11,7 @@ To sync the local branch with the remote updates, pull the latest changes by cli
 The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote repositories. In such cases, resolve the conflicts manually on the remote repository.
 :::
 
-## Merging branches
+## Merge branches 
 
 Merging branches is typically done when you want to incorporate changes made to the base branch into your feature branch. Here are a few scenarios where you may want to merge branches:
 

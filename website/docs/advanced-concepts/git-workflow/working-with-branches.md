@@ -13,21 +13,22 @@ Similar to using Git flow in SDLC, you can make separate branches in Appsmith fo
 
 To create these branches in your Appsmith app, follow the steps below:
 
-* Click the current branch at the bottom left corner to open the branch modal that shows the list of existing branches.
-* To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**.
+1. Click the current branch at the bottom left corner to open the branch modal that shows the list of existing branches.
+2. To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**. Your application switches to the new (release) branch
 
 ![](/img/create_branch.gif)
 
 Please the note following while creating a new branch:
 
-* When you **create** a new branch, it carries the uncommitted changes of your parent branch. 
-* When you **switch** to another branch, the uncommitted changes in your current branch aren't carried over to the destination branch.
-* Branch names shouldn't start with `origin/` since this prefix is used to distinguish between local and remote versions of a branch.
+* When you create a new branch, it carries the uncommitted changes of your parent branch. 
+* When you switch to another branch, the uncommitted changes in your current branch aren't carried over to the destination branch.
 * Checking out a remote branch with a local counterpart already available would result in an error.
 
-:::info
+## Sync branches
+
 To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the **Sync branches** button. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
-:::
+
+![](/img/Sync_branches.png)
 
 ## Delete a branch
 
@@ -35,3 +36,7 @@ Similar to the Git flow, you can delete a branch in Appsmith that's no longer ne
 
 1. Click the current branch at the bottom left corner.
 2. Go to the branch you want to delete, click options, and **Delete**.
+
+![](/img/delete_branch.gif)
+
+

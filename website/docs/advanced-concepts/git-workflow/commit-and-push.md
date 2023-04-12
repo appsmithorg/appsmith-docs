@@ -7,7 +7,7 @@ sidebar_position: 2
 After developing your app, to commit and push changes to your remote repository, follow the steps below:
 
 1.  Click the **+** icon at the bottom left corner to commit the changes. 
-2. In the deploy modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
+2. In the deploy tab on the modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
 
 ![](/img/commit_changes_git.gif)
 
@@ -20,7 +20,7 @@ Renaming an entity (query, widgets etc) is the same as deleting the old entity a
 
 ## Migration changes
 
-When an Appsmith version is upgraded (self-hosted or cloud), you may see uncommitted changes in your local Git branch even when you've made no changes in your app. This happens due to new feature additions to the platform. You can commit these changes as version upgrade changes. Conflicts that may arise during the review process should be resolved on the remote repository.
+When an Appsmith version is upgraded, you may see uncommitted changes in your local Git branch even when you've made no changes in your app. This happens due to new feature additions to the platform. You can commit these changes as version upgrade changes. Conflicts that may arise during the review process should be resolved on the remote repository.
 
 ## Discard changes
 
