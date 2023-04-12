@@ -14,7 +14,7 @@ The table widget displays data in rows and columns. You can display data from an
 To get data from a query to appear in a table widget, follow these steps:
 
 1. If you don't already have a query that returns data from a datasource, [create one first](/core-concepts/data-access-and-binding/querying-a-database).
-2. Click on your table widget to open its properties pane.
+2. Select your table widget to open its properties pane.
 3. In its properties pane, enter the following code snippet into its [**Table data** property:
     ```javascript
     // replace <query_name> with the name of your query
@@ -189,7 +189,7 @@ Filtering large datasets may degrade performance, so it's recommended to set up 
 
 ### Server side filter
 
-Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match in order to be returned in the query's response.
+Server side filtering uses the same principles as described in [server side searching](#server-side-searching): some term or value is sent to the database or API to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match to return in the query's response.
 
 Server-side filtering requires using another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users with a list of supported filters to choose from.
 
@@ -252,10 +252,10 @@ Properties allow you to edit the table, connect it with other widgets, and custo
 | **Enable multi-row selection** | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
 | **Column Sorting** | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
 | **Visible**   | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
-| **Allow Download** | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a .csv file or Microsoft Excel file. |
-| **Allow Column Freeze** | Enables freezing and unfreezing the columns via a drop down in the columns' header cells. |
-| **CSV Separator** | Sets the separator character to use for formatting the downloaded .csv file. Only applies when **Allow Download** is turned on. Default: `,` |
+| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
+| **Allow Download** | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a `.csv` file or Microsoft Excel file. |
+| **Allow Column Freeze** | Enables freezing and unfreezing the columns via a dropdown in the columns' header cells. |
+| **CSV Separator** | Sets the separator character to use for formatting the downloaded `.csv` file. Only applies when **Allow Download** is turned on. Default: `,` |
 
 
 ### Reference properties

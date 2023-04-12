@@ -6,7 +6,7 @@ Switch group widget captures user inputs from a set of binary choices. This widg
 
 ### Displaying Data
 
-Switch group’s **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(label, value\\). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+Switch group’s **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(label, value\\). The transformation can be performed using JavaScript. So if the data is an array, you can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```
 // Query1.data is assumed to be an array here
@@ -18,14 +18,14 @@ Switch group’s **options** can be populated from a data source like an API / Q
 
 ### Filtering Data
 
-A Switch Group widget can show a set of binary choices for users. The selected values can be passed to an API using  `{{ SwitchGroup1.selectedValues }}` .
+A Switch Group widget can show a set of binary choices for users. The selected values can be passed to an API using `{{ SwitchGroup1.selectedValues }}`.
 
-### **Form Submission**
+### **Form submission**
 
-Switch group widgets can capture a fixed set of choices for the user like, showing and hiding or enabling and disabling.
+Switch group widgets can capture a fixed set of choices for the user like, showing, and hiding or enabling and disabling.
 
 :::info
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this.
+Some forms need to be pre-filled data from a table or API. You can bind the data to the default text property to enable this.
 :::
 
 ```
@@ -44,23 +44,23 @@ Read more about submitting Input data to an API below.
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 | Property                    | Description                                                                                                                                                                                |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Placeholder**             | Sets the Placeholder of the multi-select widget.                                                                                                                                           |
-| **Default Selected Values** | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value strings.                           |
+| **Default Selected Values** | Sets a default option that captures the user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value strings.                           |
 | **Inline**                  | Whether the checkbox buttons are to be displayed inline horizontally.                                                                                                                      |
 | **Required**                | Makes input of the widget mandatory.                                                                                                                                                       |
-| **Visible**                 | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                        |
-| **Disabled**                | Disables input/selection to the widget. The widget will remain visible to the user, but user input/selection will not be allowed.                                                          |
-| **Animate Loading**         | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
+| **Visible**                 | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                        |
+| **Disabled**                | Disables input/selection to the widget. The widget remains visible to the user, but user input/selection is not allowed.                                                          |
+| **Animate Loading**         | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
 | **Alignment**               | Controls the switch alignment on the page. Switches can be left or right-aligned.                                                                                                          |
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions
 
@@ -123,5 +123,5 @@ Style properties allow you to change the look and feel of the widget.
 | -------------------- | -------------------------------------------------------- |
 | **Label Text Color** | Allows you to set text color for the label.              |
 | **Label Text Size**  | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Label Font Style** | Allows you to choose a font style (bold or italic). |
 | **Accent color**     | Sets the background color of the widget.                 |

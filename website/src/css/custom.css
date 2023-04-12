@@ -420,3 +420,7 @@ ul.circle > li:before {
   letter-spacing: -4em;
   margin-top: 1.5em;
 }
+
+.pagination-nav {
+  display: none !important;
+}

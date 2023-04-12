@@ -8,7 +8,7 @@ The Rich Text Editor is used to capture Rich Text input from a user. The input i
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Rich text Editor widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -17,8 +17,8 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 | **Input Type**      | Sets the input type of the default text property in the widget.                                                     |
 | **Default Text**    | This property sets the default text of the Rich Text Editor.                                                        |
 | **Required**        | Makes input to the widget mandatory.                                                                                |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
-| **Disable**         | Disables input to the widget. The widget will remain visible to the user but a user input will not be allowed.      |
+| **Visible**         | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published |
+| **Disable**         | Disables input to the widget. The widget remains visible to the user, but a user input isn't allowed.      |
 | **Animate Loading** | Controls the loading of the widget.                                                                                 |
 | **Hide toolbar**    | Controls the visibility of the toolbar                                                                              |
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
@@ -26,11 +26,11 @@ These properties allow you to edit the Rich text Editor widget. All these proper
 
 Let's understand the widget properties in detail:
 
-#### Input Type
+#### Input type
 
 As the name suggests, input type allows you to set the type of text you want in the input box, HTML, or Markdown format. It sets the input type of the default text property in the widget.
 
-The input box will show an error if the entered data does not match the input type. For example, If you select the input type as HTML, you won't be able to display Markdown text.
+The input box shows an error if the entered data does not match the input type. For example, If you select the input type as HTML, you won't be able to display Markdown text.
 
 #### Default text
 
@@ -65,7 +65,7 @@ HTML:
 
 
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 
@@ -95,7 +95,7 @@ The property hosts a group of configurations that you can use to associate a dis
 | **Width**            | Sets the label width of the widget as the number of columns. |
 | **Label Text Color** | Allows you to set text color for the label.                  |
 | **Label Text Size**  | Allows you to set the size of the label.                     |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic.     |
+| **Label Font Style** | Allows you to choose a font style (bold or italic).     |
 
 #### **Text**
 
@@ -122,7 +122,7 @@ Columns are the dashed lines (-----) that surround a widget when you try to drag
 :::
 
 How to set the label properties?
-{% endembed %}
+
 <VideoEmbed host="youtube" videoId="WACXsnoBa5Y" title="How to set the label properties?" caption="How to set the label properties?"/>
 
 ### Styles

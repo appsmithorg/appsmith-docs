@@ -1,6 +1,6 @@
 # Filepicker
 
-This document guides you on how to use the Filepicker widget for selecting and uploading various file types, including images, videos, audio, text files, and more.
+This document explains how to use a datapicker widget to capture date and time input from users.
 
 <VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Filepicker widget and its properties" caption="Filepicker widget and its properties"/>
 

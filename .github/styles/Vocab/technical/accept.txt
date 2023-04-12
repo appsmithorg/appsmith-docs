@@ -259,6 +259,7 @@ CSV
 FilePicker
 isDirty
 drag and drop
+uncomment
 Boolean
 GraphQL
 keyset
@@ -269,4 +270,57 @@ fieldState
 isRequired
 Generate JSON Form
 chartData
+<<<<<<< HEAD
 dataSource
+=======
+dataSource
+Moment
+Datepicker
+min
+max
+formattedDate
+selectedDate
+Min
+Max
+What is
+Datepicker
+Cognito
+cognito
+iFrame
+messageMetadata
+Iframe
+iframe
+CSS
+onwards
+selectedMarker
+isOpen
+onClose
+bool
+IFrame
+Multiselect
+Topbar
+businessTable
+rawBinary
+capType
+strokeStyle
+nc
+id
+selectedMarker
+Dialogs
+isOpen
+isVisible
+onClose
+unformatted
+dialCode
+countryCode
+reCaptcha
+reCAPTCHA
+Recaptcha
+navigateTo
+Unpublish
+unpublish
+Id
+Upcloud
+Modal
+config
+>>>>>>> main
