@@ -88,7 +88,7 @@ The JavaScript code transforms data into a specific format required by the Trees
 
 
 
-### Set default value in option
+## Set default value in option
 
 The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options** property.
 
@@ -114,7 +114,7 @@ The **Default Selected Value** property in a widget allows you to specify an ini
 For example, if you want the default selected values to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
 
 
-### Access selected option
+## Access selected option
 
 If you want to retrieve the selected values from a Treeselect widget and bind them to other widgets or JavaScript objects, you can use the following properties:
 
