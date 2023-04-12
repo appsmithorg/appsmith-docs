@@ -18,7 +18,7 @@ The Elasticsearch plugin requires two pieces of information to establish a conne
 * **Username / Password:** The authentication detail for the elastic search instance. The password for your data source is encrypted when it is stored within the Appsmith database.
 * **Authorization Header:** In case you choose to connect to your instance with another mechanism, you can use the `Authorization Header` field. This field is only considered when the `Username` and `Password` fields are empty.
 
-After filling up the fields as described, click the "Test" button to verify the configuration and click "Save".
+After filling up the fields as described, click the "Test" button to verify the configuration and click **Save**.
 
 ## Querying Elasticsearch
 
@@ -63,7 +63,7 @@ Body:
 
 ### Retrieving a single document
 
-A single document can be accessed using it `id` within an index using a GET request that has the following path:
+A single document can be accessed using its `id` within an index using a GET request that has the following path:
 
 ```
 Path: /movies/_doc/2

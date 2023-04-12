@@ -59,7 +59,7 @@ Now, when you click on the random row’s in the table, you can see the text aut
 
 ## **Performing Actions**
 
-Appsmith loves JavaScript! Whenever you want to write custom logic for certain action calls or API calls, you can customize with simple JS. For example, say, you want to show an alert whenever you’re searching through tables. You can select the row and can add logic to the **`onSeachTextChanged`** property.
+ Whenever you want to write custom logic for certain action calls or API calls, you can customize with simple JS. For example, say, you want to show an alert whenever you’re searching through tables. You can select the row and can add logic to the **`onSeachTextChanged`** property.
 
 ```javascript
 {{ showAlert(Table1.searchText) }}
@@ -81,7 +81,7 @@ Now, let’s quickly add a button that executes the Query when clicked. Next, op
 
 In this way, you can customize all the actions on Appsmith for different widgets.
 
-## Multiline JavaScript
+## Multi-line JavaScript
 
 So far, you’ve seen simple JS operations, but say if you’re working on some API integrations or some different data sources, you might need to write some huge JS code. With Appsmith, you can do that within the same mustache syntax. Here’s a simple example of using multi-line code in Appsmith.
 

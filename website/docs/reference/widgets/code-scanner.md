@@ -81,10 +81,10 @@ They're' a set of actions that you can perform on the widget. For example, you c
 
 When a valid barcode or QR code is detected, this event triggers an action. The Appsmith framework allows triggering actions for widget events and inside JS Objects.
 
-In this example, the code response would be displayed using the [Modal widget](./Modal.md).
+In this example, the code response would be displayed using the [Modal widget](/reference/widgets/modal).
 
 * Set the `onCodeDetected` event to open a New Modal, and choose to Create New.
-* This would open up a new Modal; drag the [text widget](./text.md) into the Modal.
+* This would open up a new Modal; drag the [text widget](/reference/widgets/text) into the Modal.
 * In the property section, add the following code:
 
 ```

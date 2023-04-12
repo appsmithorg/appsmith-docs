@@ -27,7 +27,7 @@ Choose `Roles` from the left navigation panel and click on `Create role`. In the
 
 ![Screenshot two](/img/redshift-appsmith-2.png)
 
-You can leave the default setting for the **Set permissions** boundary. Choose Next: tags. When the **Add Tags** page appears you can add tags(optional). For this, add two tags: 'Name': 'For\_Redshift\_db', 'value': 'For\_Appsmith\_App'. Then choose Next: Review. Give the Role a name and description, and click **Create role**.
+You can leave the default setting for the **Set permissions** boundary. Choose Next: tags. When the **Add Tags** page appears you can add tags(optional). For this, add two tags: 'Name': 'For\_Redshift\_db', 'value': 'For\_Appsmith\_App'. Then choose Next: review. Give the Role a name and description, and click **Create role**.
 
 ![Screenshot three](/img/redshift-appsmith-3.png)
 
@@ -65,7 +65,7 @@ To insert and query the data in the database you need to create an IAM user to g
 
 ![Screenshot nine](/img/redshift-appsmith-9.png)
 
-In the Add users screen give the User a name, for instance, `appsmith\_user-1`. Check both the AWS credential type: Access Key and Password. Assign a custom password for the console. Click `Next: Permissions`.
+In the Add users screen give the User a name, for instance, `appsmith\_user-1`. Check both the AWS credential type: access Key and Password. Assign a custom password for the console. Click `Next: Permissions`.
 
 ![Screenshot ten](/img/redshift-appsmith-10.png)
 
@@ -123,7 +123,7 @@ One last thing to do before hopping on to Appsmith for developing your applicati
 
 ![Screenshot seventeen](/img/redshift-appsmith-17.png)
 
-Add inbound rules for type Redshift one for custom: Anywhere IPv4 and one for custom: My IP then click on `Save rules`. **Remember to delete the new inbound rules after you have completed your task**, for **long-term** use prefer** creating a new security group.**
+Add inbound rules for type Redshift one for custom: anywhere IPv4 and one for custom: `My IP` then click on `Save rules`. **Remember to delete the new inbound rules after you have completed your task**, for **long-term** use prefer** creating a new security group.**
 
 ![Screenshot eighteen](/img/redshift-appsmith-18.png)
 
