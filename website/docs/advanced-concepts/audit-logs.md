@@ -3,7 +3,7 @@ sidebar_position: 6
 description: Audit logs allow you to keep records of everything that happens on your instance.
 ---
 
-# Audit logs
+# Audit Logs
 
 The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events.
 
@@ -14,7 +14,7 @@ Audit logs are only available on self-hosted, [**Business Edition**](https://www
 
 ![Access the Audit Logs from the Admin Settings page.](</img/as_auditlogs.png>)
 
-You can find audit logs by navigating to your [Admin Settings](/getting-started/setup/instance-configuration/) page, and finding the **Audit Logs** tab under the **Others** heading. From here, you can see all the events that have been tracked under your organization's account, along with the user, date, and time that the event was logged. Click the arrow next to any event to expand it and see its complete set of details in JSON form.
+You can find audit logs by navigating to your [Admin Settings](/getting-started/setup/instance-configuration/) page and finding the **Audit Logs** tab under the **Others** heading. From here, you can see all the events that have been tracked under your organization's account, along with the user, date, and time that the event was logged. Click the arrow next to any event to expand it and see its complete set of details in JSON form.
 
 There are several kinds of events that are logged:
 
@@ -132,4 +132,4 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration. |
 
 ### Export
-Users can export audit logs by either querying or exporting the `auditLog` collection from the Mongo DB on Appsmith instance. The user would need to have root access to the Appsmith deployment to perform this action.
+Users can export audit logs by either querying or exporting the `auditLog` collection from MongoDB on the Appsmith instance. The user would need to have root access to the Appsmith deployment to perform this action.

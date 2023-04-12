@@ -34,7 +34,7 @@ zip -r $targetZipFile "$stacksPath/logs/$service"
 ## Docker in remote servers
 
 - SSH into the remote server and note the absolute path of the stacks directory.
-- If you don’t remember the path use the same command above to locate it
+- If you don’t remember the path use the same command to locate it
 - Exit from the remote server
 - In your local shell, run the command
 
@@ -76,7 +76,7 @@ Please switch to the old AWS console to follow the instructions here
 
 ![Navigate to ECS cluster](/img/navigate-ecs-cluster.png)
 
-2. Select the service running Appsmith, and switch to **Tasks** tab. Click on the task running the Appsmith container.
+2. Select the service running Appsmith, and switch to **Tasks** tab. Click the task running the Appsmith container.
 **Important** You may need to switch the **task filter** to see the **Stopped Tasks** to find the task where the issue occurred if ECS rolled out a new task after the crash.
 
 ![Select service and switch to tasks tab](/img/select-service.png)
@@ -99,9 +99,9 @@ Please switch to the old AWS console to follow the instructions here
 
 ![Click the File Share](/img/file-share-mounted.png)
 
-3. Click on Browse on the sidebar menu
+3. Click Browse on the sidebar menu
 
-![Click on Browse](/img/browse-on-sidebar.png)
+![Click to Browse](/img/browse-on-sidebar.png)
 
 4. In the file share browser, open the `logs` directory
 5. Open the directory for the service for which the logs are required.
