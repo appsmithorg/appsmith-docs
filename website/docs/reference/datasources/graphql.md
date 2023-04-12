@@ -323,7 +323,11 @@ Then, create a query called `CreateUser` based on your GraphQL datasource as a `
   }
   ```
 
+<<<<<<< HEAD
 When the Submit button is clicked, your query is executed and the new record is inserted. If it is successful, you should receive the new record's `name` and `email` fields back in response.
+=======
+When the Submit button is clicked, your query is executed and the new record is inserted. If it is successful, you will receive the new record's `name` and `email` fields back in response.
+>>>>>>> 92b610d6d1316437d192150559fb8ec3be09ca9e
 
 ### Update a record
 
@@ -412,7 +416,11 @@ Then, create a query called `UpdateUser` based on your GraphQL datasource as a `
   }
   ```
 
+<<<<<<< HEAD
 When the Submit button is clicked, your query is executed and the record is updated with new values. If the operation is successful, you'll receive a response with the record's `id`, `name`, and `value` as confirmation.
+=======
+When the Submit button is clicked, your query is executed and the record is updated with new values. If the operation is successful, you'll recieve a response with the record's `id`, `name`, and `value` as confirmation.
+>>>>>>> 92b610d6d1316437d192150559fb8ec3be09ca9e
 
 ### ​Delete a record​
 
