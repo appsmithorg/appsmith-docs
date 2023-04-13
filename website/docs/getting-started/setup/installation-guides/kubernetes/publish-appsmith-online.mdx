@@ -8,8 +8,8 @@ import TabItem from '@theme/TabItem';
 The page provides steps to publish Appsmith Kubernetes installation on the internet.
 
 ## Prerequisites
-1. A Kubernetes cluster running Appsmith with at least one node
-3. Follow the steps below to install Ingress Controller on your Kubernetes cluster. 
+1. A Kubernetes cluster running Appsmith with at least one node.
+2. Follow the steps below to install NGINX Ingress Controller on your Kubernetes cluster. 
 
 <Tabs groupId="configurations">
  <TabItem label="AWS EKS" value="AWSEKS">
@@ -72,7 +72,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
       --set service.type=ClusterIP \
   ```
 
-  * Using the `values.yaml` file:
+  * **Or** using the `values.yaml` file:
   
     1. Open the `values.yaml` file and update the parameter values as below:
 
@@ -113,7 +113,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
       --set service.type=ClusterIP \
   ```
 
-* Using the `values.yaml` file:
+* **Or** using the `values.yaml` file:
   
     1. Open the `values.yaml` file and update the parameter values as below:
 
@@ -151,7 +151,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
   ```
 
 ## Troubleshooting
-If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
 * [Configure TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls)

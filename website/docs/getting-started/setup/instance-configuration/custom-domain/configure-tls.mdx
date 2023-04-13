@@ -4,7 +4,7 @@ description: Follow these steps to configure TLS for Appsmith on Kubernetes.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Configure TLS for Appsmith on Kubernetes
+# Configure TLS on Kubernetes
 
 This page provides steps to configure TLS for your Appsmith deployment using a free `Let's Encrypt` certificate.
 
@@ -13,11 +13,11 @@ This page provides steps to configure TLS for your Appsmith deployment using a f
 * Ports 80 and 443 are open and accessible.
 
 ## Configure TLS (HTTPS) with Let's Encrypt
-Follow these steps to configure TLS:
-
 :::tip
 If you see permission errors when running these commands on Google Kubernetes Engine (GKE), refer to the official cert-manager documentation on [how to elevate your permissions](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html).
 :::
+
+Follow these steps to configure TLS:
 
 1. Get the `LoadBalancer` hostname with:
 
@@ -27,7 +27,7 @@ If you see permission errors when running these commands on Google Kubernetes En
 
 2. Confirm that you can access your Appsmith instance by browsing the hostname.
 
-3. Create a CNAME record for the LoadBalancer hostname in your DNS configuration.
+3. Create a `CNAME` record for the `LoadBalancer` hostname in your DNS configuration.
 
 4. Add the repository with:
 
@@ -129,7 +129,7 @@ You can use the `helm upgrade` command to update your Appsmith installation in o
 
  You can use the `helm upgrade` command in one of the two ways:
 
-  * Use the below command to update Helm parameters. Replace `<DOMAIN>` with your own domain name.
+  * Use the below command to update Helm parameters. Replace `<DOMAIN>` with your domain name.
 
 ```bash
   helm upgrade appsmith appsmith-ee/appsmith \
@@ -146,7 +146,7 @@ You can use the `helm upgrade` command to update your Appsmith installation in o
     --set ingress.className=nginx
 ```     
 
-  * Use the `values.yaml` file to update parameters. Follow these steps to update:
+  * **Or** use the `values.yaml` file to update parameters. Follow these steps to update:
 
     1. Open the `values.yaml` file, and make changes to the parameters as shown below:   
 

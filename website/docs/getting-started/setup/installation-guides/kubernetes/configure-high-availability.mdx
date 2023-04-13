@@ -4,11 +4,11 @@ description: Follow these steps to configure high availability for Appsmith on K
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Configure High Availability for Appsmith on Kubernetes
+# Configure High Availability and Scalability
 This page provides steps to configure High Availability(HA) and scalability for Appsmith on Kubernetes.
 
 :::info
-High Availability is only available on Kubernetes self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
+High Availability is only available on Kubernetes self-hosted [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
 :::
 
 ## Prerequisites
@@ -18,7 +18,7 @@ High Availability is only available on Kubernetes self-hosted, [**Business Editi
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
    ```
 
-  2. Enable PostgreSQL Or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
+  2. Enable PostgreSQL or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
 
       * Configure the parameters to enable PostgreSQL as shown below:
 
@@ -94,8 +94,7 @@ The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/e
 
 You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) or existing PVC.
 
-  1. Using new PVC
-  This is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, update the `values.yaml` file under the `persistence` attribute as shown below:
+  a. Using new PVC: this is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, update the `values.yaml` file under the `persistence` attribute as shown below:
 
   ```yaml
     existingClaim:
@@ -110,9 +109,7 @@ You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubern
       volumeHandle: <FILE_SYSTEM_ID>
   ```
 
-  2. Using existing PVC
-
-  This is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Update the `values.yaml` file under the `persistence` attribute as shown below:
+  b. Using existing PVC: this is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Update the `values.yaml` file under the `persistence` attribute as shown below:
 
   ```yaml
   existingClaim:
@@ -160,8 +157,9 @@ You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubern
 </Tabs>
 
 ## Troubleshooting
-If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
+* [Publish Appsmith on the Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
 * [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-helm-installations)
 * [Manage Appsmith instance](/getting-started/setup/instance-management/)
