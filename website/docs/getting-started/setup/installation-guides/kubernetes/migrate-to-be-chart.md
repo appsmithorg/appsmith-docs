@@ -1,9 +1,9 @@
 ---
-description: Follow the guide to migrate to the Appsmith Business Edition running on Helm chart v2.
+description: Follow the guide to migrate to the Appsmith Business Edition running on v3 Helm chart.
 ---
-# Migrate to Business Edition Helm Chart v2 
+# Migrate to Business Edition Helm Chart v3
 
-Follow the below guide to migrate to the Business Edition running on Helm chart v2 (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
+Follow the below guide to migrate to the Business Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
 
@@ -110,7 +110,7 @@ helm uninstall appsmith -n <namespace>
 
 ## Configure parameters
 
-To ensure that the Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure parameters:
+To ensure that the Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure the parameters:
 
 1. Add the following snippet to the bottom of your `values.yaml` file. This snippet enables PostgreSQL.
 
@@ -128,6 +128,10 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
 
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
+   :::caution Attention
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+   :::
+
    ```yaml
      APPSMITH_KEYCLOAK_DB_DRIVER: ""
      APPSMITH_KEYCLOAK_DB_USERNAME: ""
@@ -136,7 +140,7 @@ To ensure that the Business Edition Helm chart runs, you need to make some chang
      APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
    ```
 
-## Install v2 Helm chart 
+## Install v3 Helm chart
 
 Run the below command to add and deploy the new Helm chart:
 

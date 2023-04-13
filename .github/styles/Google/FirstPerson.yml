@@ -11,3 +11,5 @@ tokens:
   - \bme\b
   - \bmy\b
   - \bmine\b
+exceptions: 
+- my

@@ -8,7 +8,7 @@ A widget for playing a variety of URLs, including file paths, YouTube, Facebook,
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the video widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -19,7 +19,7 @@ These properties allow you to edit the video widget. All these properties are pr
 | **Visible**         | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published. |
 | **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                         |
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 

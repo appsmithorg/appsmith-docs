@@ -349,6 +349,7 @@ h6 {
   border-radius: 8px;
   display: block;
   margin: 1rem auto;
+  padding: 15px;
 }
 
 .error {
@@ -418,4 +419,8 @@ ul.circle > li:before {
   padding-top: 0.42em;
   letter-spacing: -4em;
   margin-top: 1.5em;
+}
+
+.pagination-nav {
+  display: none !important;
 }

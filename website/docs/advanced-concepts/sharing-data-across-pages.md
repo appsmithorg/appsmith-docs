@@ -21,6 +21,6 @@ These can be consumed on the destination page with `appsmith.URL.queryParams.par
 
 ## Sharing data via local storage
 
-Key-value pairs can be stored within the local storage with the help of the [StoreValue action](/reference/appsmith-framework/widget-actions/store-value). To do so pick the StoreValue action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`
+Key-value pairs can be stored within the local storage with the help of the [StoreValue action](/reference/appsmith-framework/widget-actions/store-value). To do so pick the `StoreValue` action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`
 
 ![Click to expand](/img/localStorage.gif)

@@ -20,6 +20,21 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  plugins: [
+    [
+      '@twilio-labs/docusaurus-plugin-segment',
+      {
+        writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
+        allowedInDev: false,
+      },
+    ],
+    [    require.resolve('./plugins/scarfplugin'),   
+          {      
+            trackingCode: 'ae471d67-d95c-4a3a-b35b-799e8ee8fa17',      
+            domain: 'https://docs.appsmith.com',    
+          },  
+    ],
+  ],  
 
   presets: [
     [
@@ -177,10 +192,15 @@ const config = {
     },
     {
       src:
-        '/scripts/hotjarSettings.js',
+        '/scripts/smartlook.js',
       async: false,
+    },    
+    {
+      src:
+        '/scripts/analyticsEvents.js',
+      defer: true,
     }
-  ]
+  ],
 };
 
 module.exports = config;

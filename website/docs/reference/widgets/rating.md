@@ -10,7 +10,7 @@ Use the Rate component to rate any sort of information from the connected data s
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Rating widget. All these properties are present in the property pane of the widget. The rating widget comes with the following settings:
 
@@ -21,13 +21,13 @@ These properties allow you to edit the Rating widget. All these properties are p
 | **Tooltips**         | Sets the tooltip content of starts. This expects an array of strings that can describe the values of each star   |
 | **Size**             | The star's sizes can be varied, default is set to `Medium`                                                                       |
 | **Allow half stars** | When toggled, half star ratings are accepted                                                                                     |
-| **Visible**          | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published |
-| **Disabled**         | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed. |
+| **Visible**          | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published |
+| **Disabled**         | Disables input/selection to the widget. The widget remains visible to the user but user input/selection isn't allowed. |
 | **Read Only**        | Disallows user input, but the stars retain their normal styling and the star's **Tooltips** remain visible when the user hovers with the mouse cursor. When the **Disabled** setting is on, the **Read Only** mode is ignored. |
 | **Animate Loading**  | Allows you to control a widget’s animation on the page load.                                                                     |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/> **Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
-### Binding Properties
+### Binding properties
 
 These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
 

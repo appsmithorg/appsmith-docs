@@ -2689,6 +2689,10 @@
     {
       "source": "/v/v1.2/getting-started/setting-up/docker/email/sendgrid",
       "destination": "/getting-started/setup/instance-configuration/email/sendgrid"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/admin-settings",
+      "destination": "/getting-started/setup/instance-configuration#admin-settings"
     }
   ]
 }

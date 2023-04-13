@@ -116,6 +116,7 @@ const sidebars = {
                       },
                       items: [
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
@@ -143,7 +144,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/disable-user-signup',
                 {
                   type: 'category',
-                  label: 'SSL & Custom Domain',
+                  label: 'Custom Domain and SSL',
                   link: {
                     type: 'doc',
                     id: 'getting-started/setup/instance-configuration/custom-domain/README',
@@ -152,7 +153,6 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
-                'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },
@@ -166,6 +166,7 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/appsmithctl',
+                'getting-started/setup/instance-management/update-appsmith',
                 'getting-started/setup/instance-management/maintenance-window',
               ],
             },

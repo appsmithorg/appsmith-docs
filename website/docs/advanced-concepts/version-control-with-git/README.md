@@ -8,7 +8,7 @@ Version Control with Git allows you to version control your apps by connecting t
 **Note:**
 
 :::info
-Version Control works with any Git hosting service that supports SSH protocol.
+Version Control works with any Git hosting service that supports SSH protocol and deploy keys. HTTPS Git connections are currently not supported on Appsmith.
 :::
 
 

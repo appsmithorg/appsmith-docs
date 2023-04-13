@@ -1,6 +1,6 @@
-# Multi-select
+# Multiselect
 
-Multi-select widget is used to capture user inputs from a specified list of permitted options. This widget captures multiple choices.
+Multiselect widget is used to capture user inputs from a specified list of permitted options. This widget captures multiple choices.
 
 ![](/img/multiselect.png)
 
@@ -8,18 +8,18 @@ Multi-select widget is used to capture user inputs from a specified list of perm
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 | Property                  | Description                                                                                                                                                                            |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**               | Let's you set labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property.  |
-| **Default Value**         | Sets a default option that will be captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of strings for a Multi-Select dropdown. |
+| **Options**               | Sets the labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property.  |
+| **Default Value**         | Sets a default option that is captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of strings for a Multi-Select dropdown. |
 | **Placeholder**           | Sets the Placeholder of the multi-select widget.                                                                                                                                       |
 | **Required**              | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                   |
-| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                    |
-| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                       |
+| **Visible**               | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                    |
+| **Disabled**              | Disables input/selection to the widget. The widget is visible to the user but user input/selection is not allowed.                                                       |
 | [**Tooltip**](/reference/widgets#tooltip)                           	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
 | **Animate Loading**       | Allows you to control a widget’s animation on the page load.                                                                                                                           |
 | **Filterable**            | Makes the dropdown list filterable.                                                                                                                                                    |
@@ -28,7 +28,7 @@ These properties allow you to edit the widget. All these properties are present 
 | [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
@@ -96,13 +96,13 @@ Style properties allow you to change the look and feel of the widget.
 | -------------------- | -------------------------------------------------------- |
 | **Label Text Color** | Allows you to set text color for the label.              |
 | **Label Text Size**  | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
+| **Label Font Style** | Allows you to choose a font style (bold or italic). |
 | **Border Radius**    | Allows you to define curved corners.                     |
 | **Box Shadow**       | Allows you to choose from the available shadow styles.   |
 
 ### Displaying Data
 
-Multi-select **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+Multi-select **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, you can transform it using the [**Array map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```javascript
 // Query1.data is assumed to be an array here
@@ -114,16 +114,16 @@ Multi-select **options** can be populated from a data source like an API / Query
 
 ## Filtering Data
 
-A MultiSelect widget can be used to filter a dataset based on the user's input. The selected value can be passed to an API using `{{ multiselect1.selectedOptionValues }}`.
+A Multiselect widget can be used to filter a dataset based on the user's input. The selected value can be passed to an API using `{{ multiselect1.selectedOptionValues }}`.
 
 Server Side Filtering can also be enabled on the widget by enabling Server Side Filtering property. When enabling server-side filtering in the widget, please update the default value to contain both `label` and `value` in this format `{"label":<label>, "value": <value>}` if the default value is not present in the default options.
 
-## **Form Submission**
+## **Form submission**
 
 Multi-select widgets can be used to capture from a fixed set of options inside a form such as gender, role, and status.
 
 :::info
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default text property to enable this.
+Some forms need to be pre-filled data from a table or API. You can bind the data to the default text property to enable this.
 :::
 
 ```
