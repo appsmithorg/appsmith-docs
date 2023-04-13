@@ -115,7 +115,7 @@ The **Default Selected Value** property in a widget allows you to specify an ini
 ]
   ```
 
-For example, if you want the default selected values to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
+For example, if you want the default selected value to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
 
 
 ## Access selected option
