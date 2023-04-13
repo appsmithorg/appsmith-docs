@@ -1,13 +1,14 @@
 # Multiselect
 
-This document explains how to use a multi-select widget to allow users to select multiple options from a predetermined list.
+This page explains how to use a Multiselect widget to allow users to select multiple options from a given list.
+
 
 
 <VideoEmbed host="youtube" videoId="oH7Y-vSMIgM" title="Using Multiselect" caption="Using Multiselect"/>
 
-## Display options manually
+## Display static options 
 
-To manually display options in a Multiselect widget, you can use the **Options** property. The Options property is used to specify the available options for the user to choose from. It allows you to set both the label and value for each item in the dropdown list. 
+To display static options in a Multiselect widget, you can use the **Options** property.
 
 The options must be specified as an array of objects, where each object has two properties: `label` and `value`. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
 
@@ -28,13 +29,27 @@ The options must be specified as an array of objects, where each object has two 
 ]
 ```
 
+### Set default values in options
+
+The **Default Selected Values** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options property**. 
+
+For example, if you want the default selected values to be `RED` and `GREEN,` you can set the **Default Selected Values** property to:
+
+```json
+[
+  "GREEN",
+  "RED"
+]
+```
+
 ## Display options dynamically 
 
-Instead of creating a predetermined set of options, you can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
 
 
 ---
-**Example:** suppose you want to use a Multiselect widget to filter the table data and display information related to only certain countries.
+**Example:** suppose you want to use a Multiselect widget to allow users to select one or more countries from a database, with the dynamic population of options.
+
 
 1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
 
@@ -49,9 +64,10 @@ SELECT DISTINCT country as label, country as value FROM users;
 {{fetchData.data}}
 ```
 
-With this configuration, the Multiselect widget displays a list of unique country values directly from the query. 
+With this configuration, the Multiselect widget displays a list of unique country values directly from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Multiselect widget.
 
-### Transform data using JavaScript
+
+##### Example 2
 
 If the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
 
@@ -72,12 +88,14 @@ This query retrieves unique country values from the `users` table. The retrieved
 The code transforms each item in the `getdata` array by using the `map()` function to create a new object with a `label` and `value` property, both set to the country value of each object in the array.
 
 ## Access selected options
-If you want to retrieve the selected values from a Multiselect widget and bind them to other widgets or JavaScript objects, you can use the following properties:
+If you want to retrieve the selected values from a Multiselect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
 
 
-* **selectedOptionValues**: This property returns the value of the selected options in the Multiselect widget. It updates automatically when the user selects a new option.
+* **selectedOptionValues**: This property returns the value of the selected options in the Multiselect widget. 
 
 * **selectedOptionLabels**: This property returns the label of the selected options in the Multiselect widget. 
+
+Both properties, `selectedOptionValues` and `selectedOptionLabels`, update automatically when the user selects or deselects a new option in the Multiselect widget.
 
 ---
 **Example**: suppose you want to filter the table data based on the user-selected countries from a Multiselect widget. 
@@ -90,10 +108,9 @@ FROM users
 WHERE country IN ({{"'" + MultiSelect.selectedOptionLabels.join("', '") + "'"}})
 LIMIT 10;
 ```
-The query filters the `users` table by matching the selected options from the Multiselect widget with the `country` column using the SQL IN operator with a comma-separated string.
 
-:::note
-When using dynamic binding with SQL queries containing SQL keywords such as 'SELECT', 'WHERE', 'AND', etc., [**prepared statement**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
+:::info
+When using dynamic binding with queries that contain SQL keywords such as `SELECT`, `WHERE`, `AND`, and other keywords, a [prepared statement](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
 :::
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
@@ -102,34 +119,21 @@ When using dynamic binding with SQL queries containing SQL keywords such as 'SEL
 {{filterdata.data}}
 ```
 
-3. Now, set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. Whenever the user selects or deselects an option. This updates the displayed data in real-time as the user selects or deselects options.
-
-
-
-
-## Set default values in options
-
-The **Default Selected Values** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options property**. 
-
-For example, if you want the default selected values to be `RED` and `GREEN,` you can set the **Default Selected Values** property to:
-
-```json
-[
-  "GREEN",
-  "RED"
-]
-```
+3. Set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. Whenever the user selects or deselects an option. This updates the displayed data in real-time as the user selects or deselects options.
 
 
 
 
 ## Server side filtering	
 
-Filtering large datasets may degrade performance, so it's recommended to set up server-side filtering	for the widget. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to you.
+When working with large datasets, it's recommended to use server-side filtering for the widget to improve performance. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to you. This can be achieved by utilizing the `filterText` reference property, which enables you to implement the filtering process on the server side.
 
-To use server-side filtering, you can use the `filterText` reference property, which lets you implement the filtering on the server side. You can also configure the `onFilterUpdate` event to handle the filtering. This event is triggered when the user types in the search bar, and it sends the search query to the server. If you're implementing server-side filtering in your widget, make sure to update the default value to include both `label` and `value`.
+When the user types in the search bar, the `onFilterUpdate` event is triggered and sends the search query to the server for processing.
 
 For example, if the user types `"un"` in the search bar of a Multiselect widget that displays a list of countries, you can send the search query `"un"` to the server, which can then return only the countries that match the search query, such as the United States and the United Kingdom.
+
+
+You can refer to this [sample app](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695) that implements server-side filtering for the Select widget.
 
 ## Properties
 
