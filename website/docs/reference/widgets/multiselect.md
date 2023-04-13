@@ -119,7 +119,7 @@ When using dynamic binding with queries that contain SQL keywords such as `SELEC
 {{filterdata.data}}
 ```
 
-3. Set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. Whenever the user selects or deselects an option. This updates the displayed data in real-time as the user selects or deselects options.
+3. Set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. This updates the displayed data in real-time as the user selects or deselects options.
 
 
 
