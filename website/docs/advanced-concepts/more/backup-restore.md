@@ -44,7 +44,7 @@ Applications built in an older version of an Appsmith instance will work when im
 
 ### Export Application
 
-You can sync your application to a [Git repository](/advanced-concepts/git-workflow) or export your application as a JSON file to your system.
+You can sync your application to a [Git repository](/advanced-concepts/version-control-with-git) or export your application as a JSON file to your system.
 
 Follow the steps below to export your application as a JSON file:
 
@@ -89,4 +89,4 @@ When you import the application into the destination instance/ workspace, it's a
 
 ### Import from a Git repository
 
-If you have an application connected to Git version control in Appsmith, you can import the Appsmith application from your Git repository into any workspace. For more information, check out [Import from Repository](/advanced-concepts/git-workflow/import-from-repository).
+If you have an application connected to Git version control in Appsmith, you can import the Appsmith application from your Git repository into any workspace. For more information, check out [Import from Repository](/advanced-concepts/version-control-with-git/import-from-repository).

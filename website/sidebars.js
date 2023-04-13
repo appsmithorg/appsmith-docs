@@ -492,7 +492,7 @@ const sidebars = {
           label: 'Version Control with Git',
           link: {
             type: 'doc',
-            id: 'advanced-concepts/git-workflow/README',
+            id: 'advanced-concepts/version-control-with-git/README',
           },
           items: [
             {
@@ -500,16 +500,17 @@ const sidebars = {
               label: 'Connect to a Git Repository',
               link: {
                 type: 'doc',
-                id: 'advanced-concepts/git-workflow/connecting-to-git-repository',
+                id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository',
               },
-              items: ['advanced-concepts/git-workflow/update-file-path',],
+              items: ['advanced-concepts/version-control-with-git/update-file-path',],
             },
-            'advanced-concepts/git-workflow/working-with-branches',
-            'advanced-concepts/git-workflow/commit-and-push',
-            'advanced-concepts/git-workflow/pull-and-sync',
-            'advanced-concepts/git-workflow/revert-changes',
-            'advanced-concepts/git-workflow/import-from-repository',
-            'advanced-concepts/git-workflow/environments-with-git',            
+            'advanced-concepts/version-control-with-git/working-with-branches',
+            'advanced-concepts/version-control-with-git/commit-and-push',
+            'advanced-concepts/version-control-with-git/pull-and-sync',
+            'advanced-concepts/version-control-with-git/merge-branches',
+            'advanced-concepts/version-control-with-git/revert-changes',
+            'advanced-concepts/version-control-with-git/import-from-repository',
+            'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
         {
