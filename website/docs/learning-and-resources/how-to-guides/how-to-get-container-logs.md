@@ -17,7 +17,7 @@ The logs directory contains the sub-directories below for each **service**:
 
 `appsmithctl backend cron editor mongodb redis rts`
 
-If you don’t remember where your stacks directory is located, run
+If you don’t remember where your `stacks` directory is located, run
 
 `docker inspect -f '{{ (index .Mounts 0).Source }}’ <your-appsmith-container-id>`
 
@@ -34,7 +34,7 @@ zip -r $targetZipFile "$stacksPath/logs/$service"
 ## Docker in remote servers
 
 - SSH into the remote server and note the absolute path of the `stacks` directory.
-- If you don’t remember the path use the same above command to locate it
+- If you don’t remember the path, use the `docker inspect` command as shown in the above section to locate it.
 - Exit from the remote server
 - In your local shell, run the command
 
