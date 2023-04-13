@@ -1,6 +1,6 @@
 # Treeselect
 
-This document explains how to use a Treeselect widget to allow users to select single option from a hierarchical list of predetermined options. 
+This document explains how to use a Treeselect widget, which enables users to select a single option from a list of pre-determined options organized in a hierarchical structure.
 
 <VideoEmbed host="youtube" videoId="vSqpSssJdws" title="Using Treeselect Widget" caption="Using Treeselect Widget"/>
 
@@ -8,7 +8,7 @@ This document explains how to use a Treeselect widget to allow users to select s
 
 ## Display options manually
 
-To manually display options in a Treeselect widget, you can use the **Options** property. The Options property is used to specify the available options for the user to choose from. It allows you to set both the label and value for each item in the dropdown list.
+You can use the **Options** property to manually display options in a Treeselect widget. The Options property is used to specify the available options for the user to choose from. It allows you to set both the label and value for each item in the dropdown list.
 
 To display data, options must be specified as an array of objects. Each object represents an option and must include a `label` and a `value`. If the option has **child** options, the object must also include a `children array` containing the child options in the same format.
 
@@ -79,7 +79,11 @@ SELECT DISTINCT country FROM users LIMIT 10;
 }}
 ```
 
-The JavaScript code transforms data into a specific format required by the Treeselect widget. It maps through `fetchData` data and creates an array of objects, where each object represents a country with two child options for `Male` and `Female`.
+The JavaScript code transforms data into a specific format required by the Treeselect widget. This code maps through the data fetched by the `fetchData` and creates an array of objects. Each object in the array represents a `country` and has two child options: `Male` and `Female`.
+
+
+
+
 
 <figure>
   <img src="/img/tree-select.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
