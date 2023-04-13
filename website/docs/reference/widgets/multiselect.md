@@ -146,9 +146,9 @@ These properties allow you to edit the widget. All of these properties are prese
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**          | Array     | Sets the labels and values for different items/options in the list of the multi-select widget. Options must be specified as an array of objects with a label and value property.  |
-| **Default Value**      | Array     | Sets a default option that is captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of strings for a Multi-Select dropdown. |
-| **Placeholder**         | String  | Sets the Placeholder of the multi-select widget.                                                                                                                                       |
+| **Options**          | Array     | Sets the labels and values for different items/options in the list of the Multiselect widget. Options must be specified as an array of objects with a label and value property.  |
+| **Default Value**      | Array     | Sets a default option that is captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of strings for a Multiselect dropdown. |
+| **Placeholder**         | String  | Sets the Placeholder of the Multiselect widget.                                                                                                                                       |
 | **Required**        | Boolean       | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                   |
 | **Visible**         | Boolean       | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                    |
 | **Disabled**       | Boolean        | Disables input/selection to the widget. The widget is visible to the user but user input/selection is not allowed.                                                       |
@@ -157,7 +157,7 @@ These properties allow you to edit the widget. All of these properties are prese
 | **Server Side Filtering** | Boolean| Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                             |
 | **Allow Select All**     | Boolean  | Controls the visibility of `select all` option in the dropdown.                                                                                                                        |
 | **Height**     | String  | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-| **Text**      | String | Sets the Placeholder of the multi-select widget.             |
+| **Text**      | String | Sets the Placeholder of the Multiselect widget.             |
 | **Position**  | String | Sets the label position of the widget.                       |
 | **Alignment** | String | Sets the label alignment of the widget.                      |
 | **Allow Searching**   | Boolean   | Makes the dropdown list filterable. |
@@ -175,9 +175,9 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **isVisible**     | Boolean       | This property indicates whether the widget is visible or not.                                                                                                                       |
 | **isDisabled**     | Boolean      | This property indicates whether the widget is disabled or not.                                                                                                                      |
 | **options**        | Array      | This property shows the values of all the options.                                                                                                                                  |
-| **selectedOptionLabels** | Array | An array of Labels of the options are displayed in a Multi-Select dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
-| **selectedOptionValues** | Array  | An array of values of the options are displayed in a Multi-Select dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
-| **isDirty** | Boolean | Indicates whether the multi-select widget has been used by the end user during their session. |
+| **selectedOptionLabels** | Array | An array of Labels of the options are displayed in a Multiselect dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
+| **selectedOptionValues** | Array  | An array of values of the options are displayed in a Multiselect dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
+| **isDirty** | Boolean | Indicates whether the Multiselect widget has been used by the end user during their session. |
 | **isValid** | Boolean | This property indicates whether the widget is valid or not.	 |
 
 ### Style properties
