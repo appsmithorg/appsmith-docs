@@ -7,10 +7,10 @@ When you make changes to the remote repository of the Appsmith app (Eg. - merged
 
 ![](/img/pull_changes.gif)
 
-Once the pull is successful, the app is automatically deployed. You can view the deployed version by clicking the deploy button from the top right corner.
+Once the pull is successful, the app is automatically deployed. You can view the deployed version by clicking the **﹀** icon from the top right corner.
 
 :::info
-The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote repositories. In such cases, resolve the conflicts manually on the remote repository.
+The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branch. In such cases, resolve the conflicts manually on the remote repository.
 :::
 
 
