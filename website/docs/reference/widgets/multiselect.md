@@ -122,7 +122,10 @@ When using dynamic binding with queries that contain SQL keywords such as `SELEC
 3. Set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. This updates the displayed data in real-time as the user selects or deselects options.
 
 
-
+<figure>
+  <img src="/img/multi-select-access.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Access selected options</i></figcaption>
+</figure>
 
 ## Server side filtering	
 
