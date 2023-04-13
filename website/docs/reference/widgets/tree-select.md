@@ -1,6 +1,6 @@
 # Treeselect
 
-This page explains how to use a Treeselect widget, which allows users to select a single option from a hierarchical list of options.
+This page explains how to use the Treeselect widget to allow users to select a single option from a hierarchical list.
 
 
 <VideoEmbed host="youtube" videoId="vSqpSssJdws" title="Using Treeselect Widget" caption="Using Treeselect Widget"/>
@@ -39,7 +39,7 @@ To display data, options must be specified as an array of objects. Each object r
   }
 ]
 ```
-### Set default value in option
+### Set default value
 
 The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options** property.
 
@@ -52,7 +52,7 @@ For example, if you want the default selected option to be `Dark Blue`, you can 
 You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
 
 ---
-**Example**: suppose you have a database that includes a column for product categories (type), as well as other product details such as its name and description. For instance, you might have a category called `Household` with a product name `Measuring Spoons`. 
+**Example 1**: suppose you have a database that includes a column for product categories (type), as well as other product details such as its name and description. For instance, you might have a category called `Household` with a product name `Measuring Spoons`. 
 
 1. You can construct a query that retrieves the relevant data and formats it to be used as options, something like:
 
@@ -89,19 +89,15 @@ With this configuration, the Treeselect widget displays a list of unique product
 It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Treeselect widget.
 
 
-##### Example 2
-
-If the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Treeselect widget.
-
 ---
-**Example**: lets take the same product example, where you have a list of products with their name and type. 
+**Example 2**: if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Treeselect widget. In the same product example where you have a list of products with their name and type: 
 
-1. You can use a simple SELECT query to fetch the data from the product database.
+1. You can use a SELECT query to fetch the data from the database.
 
 ```sql
 SELECT type, name FROM product LIMIT 10;
 ```
-2. Next, lets use JavaScript to **transform the data** by adding it to the **Options** property.
+2. Use JavaScript to transform the data in the **Options** property.
 
 ```js
 {{ getdata.data.reduce((acc, cur) => {
