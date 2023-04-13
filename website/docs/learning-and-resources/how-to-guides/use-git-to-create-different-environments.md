@@ -17,12 +17,12 @@ To create different environments following the steps below:
 
 ### 1. Establish a Git connection
 
-To get started, connect your app to a git repository. You can follow the steps from [Connecting to repository](/advanced-concepts/git-workflow/connecting-to-git-repository) to complete the setup.
+To get started, connect your app to a git repository. You can follow the steps from [Connecting to repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository) to complete the setup.
 Once the setup is complete, commit and push the initial state of your app to your Git repository from the Appsmith.
 
 ### 2. Import application
 
-Go to the workspace or the instance where you want to add the development environment and import the application from the Git repository using [Import from Git](/advanced-concepts/git-workflow/import-from-repository). Since Appsmith doesn't store your database credentials, the datasource window appears and prompts you to re-enter them for your newly created app. In this window, enter the credentials for your development database which is different from the production environment. Test and save the connection.
+Go to the workspace or the instance where you want to add the development environment and import the application from the Git repository using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository). Since Appsmith doesn't store your database credentials, the datasource window appears and prompts you to re-enter them for your newly created app. In this window, enter the credentials for your development database which is different from the production environment. Test and save the connection.
 
 ### 3. Commit and push
 

@@ -45,7 +45,7 @@ Appsmith isn't built for complicated UI interactions that are common to e-commer
 
 ### Does Appsmith support multi-user editing?
 
-Appsmith is currently built for a single-user editor experience. If you try to update the same page/widget/action from two different places, they overwrite each other and may lead to a loss of work. It's recommended that at any given time, only one user should edit a page in a single open tab. Appsmith supports [version control using Git](/advanced-concepts/git-workflow) which provides a way for multiple users to edit the apps on different branches before they can be merged to the main branch.
+Appsmith is currently built for a single-user editor experience. If you try to update the same page/widget/action from two different places, they overwrite each other and may lead to a loss of work. It's recommended that at any given time, only one user should edit a page in a single open tab. Appsmith supports [version control using Git](/advanced-concepts/version-control-with-git) which provides a way for multiple users to edit the apps on different branches before they can be merged to the main branch.
 
 ### Where's the data on cloud services processed?
 For cloud users, data is store and processed on servers in the US.
