@@ -1,5 +1,5 @@
 extends: metric
-message: "Try to keep the Flesch reading ease score (%s) above 70."
+message: "Try to keep the Flesch reading ease score (%s) above 60."
 link: https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests
 
 formula: |
