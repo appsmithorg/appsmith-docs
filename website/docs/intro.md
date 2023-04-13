@@ -20,7 +20,7 @@ Appsmith makes it easy to build a UI that talks to any datasource. You can creat
 * **Connect Datasource**: Integrate with a datasource such as a database or an API. Appsmith has plug-and-play support for many databases and the RESTful API interface to connect with most tools seamlessly.
 * **Build UI**: Use customizable built-in widgets to build an app layout.
 * **Access Data**: Connect UI to the datasource by writing queries and binding the data to widgets. Control everything with JavaScript.
-* **Collaborate, Deploy, Share**: Appsmith supports version control with Git to track changes, create rollbacks and collaborate using git branches. Deploy the app and share it with other users.
+* **Collaborate, Deploy, Share**: Appsmith supports version control using Git to build apps in collaboration using branches to track and rollback changes. Deploy the app and share it with other users.
 
 ## Get started
 
