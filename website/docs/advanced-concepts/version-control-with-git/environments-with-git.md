@@ -1,4 +1,4 @@
-# Use Git to manage your software development lifecycle
+# Build Environments With Git
 
 Git in Appsmith allows you to create and maintain multiple versions of your applications and make changes to them in isolation. Having separate staging and production workspaces ensures that users can continue to use your apps even while they're being changed or upgraded.
 
