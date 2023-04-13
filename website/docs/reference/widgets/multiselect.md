@@ -29,7 +29,7 @@ The options must be specified as an array of objects, where each object has two 
 ]
 ```
 
-### Set default values in options
+### Set default values
 
 The **Default Selected Values** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options property**. 
 
@@ -48,7 +48,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 
 
 ---
-**Example:** suppose you want to use a Multiselect widget to allow users to select one or more countries from a database, with the dynamic population of options.
+**Example 1:** suppose you want to use a Multiselect widget to allow users to select one or more countries from a database, with the dynamic population of options.
 
 
 1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
@@ -66,12 +66,10 @@ SELECT DISTINCT country as label, country as value FROM users;
 
 With this configuration, the Multiselect widget displays a list of unique country values directly from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Multiselect widget.
 
+---
+**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
 
-##### Example 2
-
-If the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
-
-1. Lets consider using the `users` table in the database and fetch the unique country values using the following `getdata` SQL query:
+1. Use the `users` table in the sample database and fetch the unique country values using the following `getdata` SQL query:
 
 ```sql
 SELECT DISTINCT country FROM users;
@@ -79,7 +77,7 @@ SELECT DISTINCT country FROM users;
 
 This query retrieves unique country values from the `users` table. The retrieved data is in the form of an array of objects, where each object has a country `key`.
 
-2. Next, lets use JavaScript to **transform the data** by adding it to the **Options** property.
+2. Use JavaScript to **transform the data** by adding it to the **Options** property.
 
 ```js
 {{getdata.data.map( p => ({label: p.country, value: p.country}))}}
