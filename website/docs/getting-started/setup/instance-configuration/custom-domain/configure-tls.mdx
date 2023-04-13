@@ -43,7 +43,7 @@ Follow these steps to configure TLS:
   kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.crds.yaml
   ```
 
-7. Create a `ClusterIssuer` resource for Let's Encrypt certificates. Create a file with the below content. Replace the `<EMAIL_ADDRESS>` placeholder with a valid email address. Save the file as `letsencrypt-appsmith.yaml`:
+7. Create a `ClusterIssuer` resource for Let's Encrypt certificates. Create a file with the below content. Replace the `<EMAIL_ADDRESS>` placeholder with a valid email address. Save the file as `letsencrypt-appsmith.yaml`.
 
   ```yaml
   apiVersion: cert-manager.io/v1
@@ -98,7 +98,7 @@ You can use the `helm upgrade` command to update your Appsmith installation in o
           --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
           --set ingress.className=nginx
       ```     
-  * Use `values.yaml file to upgrade
+  * **Or** use `values.yaml file to update parameters. Follow these steps to update:
 
     1. Open the `values.yaml` file and make the necessary changes to the parameters as shown below:
 
