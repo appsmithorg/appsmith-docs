@@ -1,14 +1,15 @@
 # Treeselect
 
-This document explains how to use a Treeselect widget, which enables users to select a single option from a list of pre-determined options organized in a hierarchical structure.
+This page explains how to use a Treeselect widget, which allows users to select a single option from a hierarchical list of options.
+
 
 <VideoEmbed host="youtube" videoId="vSqpSssJdws" title="Using Treeselect Widget" caption="Using Treeselect Widget"/>
 
 
 
-## Display options manually
+## Display static options
 
-You can use the **Options** property to manually display options in a Treeselect widget. The Options property is used to specify the available options for the user to choose from. It allows you to set both the label and value for each item in the dropdown list.
+To display static options in a Treeselect widget, you can use the **Options** property.
 
 To display data, options must be specified as an array of objects. Each object represents an option and must include a `label` and a `value`. If the option has **child** options, the object must also include a `children array` containing the child options in the same format.
 
@@ -38,101 +39,126 @@ To display data, options must be specified as an array of objects. Each object r
   }
 ]
 ```
+### Set default value in option
+
+The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options** property.
+
+
+For example, if you want the default selected option to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
+
 
 ## Display options dynamically
 
-Instead of creating a predetermined set of options, you can dynamically generate options by fetching data from queries or JS functions by binding the response to the Options property.
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
 
-For example, suppose you have a database of device assets with different categories of products and their make, such as `laptop` with the make `Opela`. You can create a query that fetches data in the desired format and bind it to the **Options** property of a Treeselect widget.
+---
+**Example**: suppose you have a database that includes a column for product categories (type), as well as other product details such as its name and description. For instance, you might have a category called `Household` with a product name `Measuring Spoons`. 
+
+1. You can construct a query that retrieves the relevant data and formats it to be used as options, something like:
+
+```sql
+SELECT 
+  type AS label,
+  type AS value,
+  JSON_AGG(
+    JSON_BUILD_OBJECT(
+      'label', (name),
+      'value', (name)
+    )
+  ) AS children
+FROM product
+GROUP BY type
+ORDER BY label;
+```
+This query groups product names by type and creates a nested JSON object for each type, where the `type` is the parent and the `product names` are the children.
+`
+
+2. In the Treeselect **Options** property, display the data using:
+
+```sql
+{{fetchData.data}}
+```
 
 <figure>
-  <img src="/img/ASSET-TREESELECT.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
+  <img src="/img/fetchData-tree.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
   <figcaption align = "center"><i>Display options dynamically</i></figcaption>
 </figure>
 
+With this configuration, the Treeselect widget displays a list of unique products directly from the query. 
+
+It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Treeselect widget.
 
 
-
-### Transform data using JavaScript
+##### Example 2
 
 If the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Treeselect widget.
 
 ---
-**Example**: suppose you want to use a Treeselect widget to filter table data based on country and gender. For instance, selecting "Canada" as the parent option and "male" as the child option would display information on all Canadian males.
+**Example**: lets take the same product example, where you have a list of products with their name and type. 
 
-1. Fetch data from the [sample database](core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values:
+1. You can use a simple SELECT query to fetch the data from the product database.
 
 ```sql
-SELECT DISTINCT country FROM users LIMIT 10;
+SELECT type, name FROM product LIMIT 10;
 ```
 2. Next, lets use JavaScript to **transform the data** by adding it to the **Options** property.
 
 ```js
-{{fetchData.data.map( p => ({
-      label: p.country,
-      value: p.country,
-      children: [
-        {label: "Male", value: `Male_${p.country}`},
-        {label: "Female", value: `Female_${p.country}`}
-      ]
-   }))
-}}
+{{ getdata.data.reduce((acc, cur) => {
+  const group = acc.find(item => item.value === cur.type);
+  group ? group.children.push({ label: cur.name, value: cur.name }) : acc.push({ label: cur.type, value: cur.type, children: [{ label: cur.name, value: cur.name }] });
+  return acc;
+}, []) }}
 ```
 
-The JavaScript code transforms data into a specific format required by the Treeselect widget. This code maps through the data fetched by the `fetchData` and creates an array of objects. Each object in the array represents a `country` and has two child options: `Male` and `Female`.
-
-
+This code takes an array of products and creates a nested data structure that groups the products by their type, making it easier to display them in a hierarchical view.
 
 
 
 <figure>
-  <img src="/img/tree-select.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
+  <img src="/img/tree-js-3.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
   <figcaption align = "center"><i>Transform data using JavaScript</i></figcaption>
 </figure>
 
 
 
-## Set default value in option
-
-The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options** property.
-
-```js
-[
-  {
-    "label": "Blue",
-    "value": "BLUE",
-    "children": [
-      {
-        "label": "Dark Blue",
-        "value": "DARK BLUE"
-      }
-    ]
-  },
-  {
-    "label": "Green",
-    "value": "GREEN"
-  }
-]
-  ```
-
-For example, if you want the default selected value to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
-
 
 ## Access selected option
 
-If you want to retrieve the selected values from a Treeselect widget and bind them to other widgets or JavaScript objects, you can use the following properties:
+If you want to retrieve the selected value from a Treeselect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
 
-* **selectedOptionValue**: This property returns the value of the selected option in the Treeselect widget. It updates automatically when the user selects a new option.
 
-```javascript
-{{widget_name.selectedOptionValue}}
-```
+* **selectedOptionValue**: This property returns the value of the selected option in the Treeselect widget. 
 
 * **selectedOptionLabel**: This property returns the label of the selected option in the Treeselect widget.
 
-```javascript
-{{widget_name.selectedOptionLabel}}
+Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the Treeselect widget.
+
+---
+**Example**: suppose you want to filter the table data based on the user-selected product name or type from a Treeselect widget.
+
+1. Create a new query called `filterproducts` and add a SQL statement to select all the data from the products table where the type/name column matches the selected options from a Treeselect widget.
+
+```sql
+SELECT * FROM product
+WHERE type = '{{TreeSelect.selectedOptionValue}}' OR name = '{{TreeSelect.selectedOptionValue}}';
 ```
+:::info
+When using dynamic binding with queries that contain SQL keywords such as `SELECT`,`WHERE`, `AND`, and other keywords, a [prepared statement](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterproducts` query for the Treeselect widget.
+:::
+
+2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
+
+```js
+{{filterproducts.data}}
+```
+
+3. Set the `onOptionChange` event of the Treeselect widget to run the `filterproducts` query. This updates the displayed data in real time as the user selects or deselects options.
+
+<figure>
+  <img src="/img/tree-access.gif" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
+  <figcaption align = "center"><i>Access selected option</i></figcaption>
+</figure>
 
 ## Properties
 
@@ -169,7 +195,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | Reference Property | Data type | Description                                                                                                                                                    |
 | ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **selectedOptionValue** | String| This is the value of the option displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option.                 | 
-| **selectedOptionLabel** | String| This is the Label of the option displayed in a Tree-Select dropdown. This label changes if the default value of the dropdown changes or the user changes an option selection. |
+| **selectedOptionLabel** | String| This is the Label of the option displayed in a Treeselect dropdown. This label changes if the default value of the dropdown changes or the user changes an option selection. |
 | **isDisabled**         | Boolean | This property indicates whether the widget is disabled or not.                                                                                                                | 
 | **isValid**            | Boolean | This property indicates whether the widget is valid or not.                                                                                                                   | 
 | **isVisible**          | Boolean | This property indicates whether the widget is visible or not.                                                                                                                 | 
