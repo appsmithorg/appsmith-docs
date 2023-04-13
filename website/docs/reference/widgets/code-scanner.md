@@ -32,10 +32,10 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 | Property                                         | Type                 | Description                                                                                                                                                               | Code Snippet                 |
 |--------------------------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| [Scanner Layout](code-scanner.md#scanner-layout) | Formatting           | Sets the appearance and behaviour of the widget.                                                                                                                           | NA                           |
+| [Scanner Layout](code-scanner.md#scanner-layout) | Formatting           | Sets the appearance and behavior of the widget.                                                                                                                           | NA                           |
 | [Text](code-scanner.md#text)                     | Formatting           | Sets the label text of the widget.                                                                                                                                        | NA                           |
-| [Visible](./README.md#visible)                   | Binding & Formatting | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published. Learn more about [Visible Property](./README.md#visible | `{{CodeScanner.isVisible}}`  |
-| [Disabled](./README.md#disabled)                 | Binding & Formatting | Disables input to the widget. The widget remains visible to the user but a user input won't be allowed. Learn more about [Disable Property](./README.md#disabled)     | `{{CodeScanner.isDisabled}}` |
+| [Visible](./README.md#visible)                   | Binding & Formatting | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published. Learn more about [Visible Property](./README.md#visible) | `{{CodeScanner.isVisible}}`  |
+| [Disabled](./README.md#disabled)                 | Binding & Formatting | Disables input to the widget. The widget remains visible to the user, but a user input won't be allowed. Learn more about [Disable Property](./README.md#disabled)     | `{{CodeScanner.isDisabled}}` |
 | [Animate Loading](./README.md)                   | Formatting           | Controls the loading of the widget.                                                                                                                                       | NA                           |
 | [Tooltip](./README.md#tooltip)                   | Formatting           | It sets a tooltip for the widget. You can add hints or extra information about the required input from the user. Learn more about [Tooltip](./README.md#tooltip)          | NA                           |
 | [Value](code-scanner.md#value)                   | Binding              | Fetches the value of scanned code                                                                                                                                         | `{{CodeScanner.value}}`      |
@@ -43,7 +43,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 #### Scanner layout
 
-The behavior and appearance of the code scanner can be configured through the scanner layout property. If set to ```Always on```, the scanner will be continuously visible and scanning. Alternatively, if ```Click to Scan``` is chosen, the scanner will be shown inside a modal and will begin scanning when the user presses the button.
+The behavior and appearance of the code scanner can be configured through the scanner layout property. If set to ```Always on```, the scanner will be continuously visible and scanning. Alternatively, if ```Click to Scan``` is chosen, the scanner will be shown inside a Modal and will begin scanning when the user presses the button.
 
 <VideoEmbed host="youtube" videoId="hD-akPJDtW8" title="Scanner layout Property" caption="Scanner layout Property"/>
 
@@ -61,7 +61,7 @@ Value is a binding property that fetches the response from the scanned code. To 
 {{<your_widget>.value}}
 ```
 
-For example, lets take a Code Scanner widget (`CodeScanner1`) and bind its value to a text widget. Drag a text widget onto the canvas and add the following code:
+For example, take a Code Scanner widget (`CodeScanner1`) and bind its value to a text widget. Drag a text widget onto the canvas and add the following code:
 
 ```
 {{CodeScanner1.value}}
@@ -71,7 +71,7 @@ For example, lets take a Code Scanner widget (`CodeScanner1`) and bind its value
 
 ## Events
 
-They're' a set of actions that you can perform on the widget. For example, you can navigate to another page, show alert messages, open and close modals, and store data in local storage.
+They're' a set of actions that you can perform on the widget. For example, you can navigate to another page, show alert messages, open and close Modals, and store data in local storage.
 
 | Event              | Description                                                                                                                                                 |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,19 +79,19 @@ They're' a set of actions that you can perform on the widget. For example, you c
 
 #### onCodeDetected
 
-When a valid barcode or QR code is detected, this event triggers an action. The Appsmith framework allows triggering actions for widget events and inside JS Objects. Lets take an example to understand how the ```onCodeDetected``` event works.
+When a valid barcode or QR code is detected, this event triggers an action. The Appsmith framework allows triggering actions for widget events and inside JS Objects.
 
-In this example, the code response would be displayed using the [Modal widget](./modal.md).
+In this example, the code response would be displayed using the [Modal widget](/reference/widgets/modal).
 
-* Set the onCodeDetected event to open a New Modal, and choose to Create New.
-* This would open up a new modal; lets drag the [text widget](./text.md) into the modal.
+* Set the `onCodeDetected` event to open a New Modal, and choose to Create New.
+* This would open up a new Modal; drag the [text widget](/reference/widgets/text) into the Modal.
 * In the property section, add the following code:
 
 ```
 {{CodeScanner1.value}}
 ```
 
-Whenever a valid code is detected, a modal window displaying the code response shows up. The video below demonstrates how to achieve that.
+Whenever a valid code is detected, a Modal window displaying the code response shows up. The video below demonstrates how to achieve that.
 
 <VideoEmbed host="youtube" videoId="_2p1bMbdk6U" title="onCodeDetected" caption="onCodeDetected"/>
 
@@ -110,7 +110,7 @@ Style properties allow you to change the look and feel of the widget.
 
 ## What's next
 
-The following resources may come handy as you need to learn new tricks:
+The following resources may come in handy as you need to learn new tricks:
 
 * [Core Concepts](/core-concepts/connecting-to-data-sources/)
 * [Appsmith Framework](/reference/appsmith-framework/)
