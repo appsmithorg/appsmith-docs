@@ -1,137 +1,223 @@
-# Tree-select
+# Treeselect
 
-A tree-select widget captures user inputs from a specified list of permitted options in which each option can then have child options associated with it.
+This page explains how to use the Treeselect widget to allow users to select a single option from a hierarchical list.
 
-<VideoEmbed host="youtube" videoId="vSqpSssJdws" title="How to use Tree-select Widget" caption="How to use Tree-select Widget"/>
 
-### Displaying Data
+<VideoEmbed host="youtube" videoId="vSqpSssJdws" title="Using Treeselect Widget" caption="Using Treeselect Widget"/>
 
-Tree-select options can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(label, value\\). The transformation can be performed using javascript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
+
+## Display static options
+
+To display static options in a Treeselect widget, you can use the **Options** property.
+
+To display data, options must be specified as an array of objects. Each object represents an option and must include a `label` and a `value`. If the option has **child** options, the object must also include a `children array` containing the child options in the same format.
+
+```js
+[
+  {
+    "label": "Blue",
+    "value": "BLUE",
+    "children": [
+      {
+        "label": "Dark Blue",
+        "value": "DARK BLUE"
+      },
+      {
+        "label": "Light Blue",
+        "value": "LIGHT BLUE"
+      }
+    ]
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  },
+  {
+    "label": "Red",
+    "value": "RED"
+  }
+]
 ```
-// Query1.data is assumed to be an array here
-{{ Query1.data.map((row) => {
-      return { label: row.name, value: row.id, children: {label: row.child.label, value: row.child.value}}
-   })
-}}
+### Set default value
+
+The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options** property.
+
+
+For example, if you want the default selected option to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
+
+
+## Display options dynamically
+
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
+
+---
+**Example 1**: suppose you have a database that includes a column for product categories (type), as well as other product details such as its name and description. For instance, you might have a category called `Household` with a product name `Measuring Spoons`. 
+
+1. You can construct a query that retrieves the relevant data and formats it to be used as options, something like:
+
+```sql
+SELECT 
+  type AS label,
+  type AS value,
+  JSON_AGG(
+    JSON_BUILD_OBJECT(
+      'label', (name),
+      'value', (name)
+    )
+  ) AS children
+FROM product
+GROUP BY type
+ORDER BY label;
+```
+This query groups product names by type and creates a nested JSON object for each type, where the `type` is the parent and the `product names` are the children.
+`
+
+2. In the Treeselect **Options** property, display the data using:
+
+```sql
+{{fetchData.data}}
 ```
 
-### Filtering Data
+<figure>
+  <img src="/img/fetchData-tree.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
+  <figcaption align = "center"><i>Display options dynamically</i></figcaption>
+</figure>
 
-A Tree-select widget can filter a dataset based on the user's input. The selected value can be passed to an API using`{{ TreeSelect1.selectedOptionValue }}` .
+With this configuration, the Treeselect widget displays a list of unique products directly from the query. 
 
-### **Form Submission**
+It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Treeselect widget.
 
-Tree-select widgets can capture from a fixed set of options inside a form such as gender, role, status.
 
+---
+**Example 2**: if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Treeselect widget. In the same product example where you have a list of products with their name and type: 
+
+1. You can use a SELECT query to fetch the data from the database.
+
+```sql
+SELECT type, name FROM product LIMIT 10;
+```
+2. Use JavaScript to transform the data in the **Options** property.
+
+```js
+{{ getdata.data.reduce((acc, cur) => {
+  const group = acc.find(item => item.value === cur.type);
+  group ? group.children.push({ label: cur.name, value: cur.name }) : acc.push({ label: cur.type, value: cur.type, children: [{ label: cur.name, value: cur.name }] });
+  return acc;
+}, []) }}
+```
+
+This code takes an array of products and creates a nested data structure that groups the products by their type, making it easier to display them in a hierarchical view.
+
+
+
+<figure>
+  <img src="/img/tree-js-3.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
+  <figcaption align = "center"><i>Transform data using JavaScript</i></figcaption>
+</figure>
+
+
+
+
+## Access selected option
+
+If you want to retrieve the selected value from a Treeselect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
+
+
+* **selectedOptionValue**: This property returns the value of the selected option in the Treeselect widget. 
+
+* **selectedOptionLabel**: This property returns the label of the selected option in the Treeselect widget.
+
+Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the Treeselect widget.
+
+---
+**Example**: suppose you want to filter the table data based on the user-selected product name or type from a Treeselect widget.
+
+1. Create a new query called `filterproducts` and add a SQL statement to select all the data from the products table where the type/name column matches the selected options from a Treeselect widget.
+
+```sql
+SELECT * FROM product
+WHERE type = '{{TreeSelect.selectedOptionValue}}' OR name = '{{TreeSelect.selectedOptionValue}}';
+```
 :::info
-Some forms need to be pre-filled data from a table or API. We can bind the data to the default property to enable this
+When using dynamic binding with queries that contain SQL keywords such as `SELECT`,`WHERE`, `AND`, and other keywords, a [prepared statement](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterproducts` query for the Treeselect widget.
 :::
 
-```
-{{ Table1.selectedRow.gender }}
-/**
-* Binding this to the default option will update the selected option
-* of the TreeSelect widget with the gender of the selected row in Table1
-*/
+2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
+
+```js
+{{filterproducts.data}}
 ```
 
-Read more about submitting Input data to an API below.
+3. Set the `onOptionChange` event of the Treeselect widget to run the `filterproducts` query. This updates the displayed data in real time as the user selects or deselects options.
 
-[Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+<figure>
+  <img src="/img/tree-access.gif" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
+  <figcaption align = "center"><i>Access selected option</i></figcaption>
+</figure>
 
 ## Properties
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
 
-These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+### Widget properties
 
-| Property                  | Description                                                                                                                                                                                                                                                                                 |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**               | It lets you set labels and values for different items/options in the list of the tree select widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. |
-| **Default Value**         | Sets a default option that will be captured as user input unless the user changes it.                                                                                                                                                                                                       |
-| **Placeholder**           | Sets the Placeholder of the multi-select widget.                                                                                                                                                                                                                                            |
-| **Required**              | When turned on, it makes a user input required and disables any form submission until the user makes an input.                                                                                                                                                                              |
-| **Visible**               | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                                                                                                                         |
-| **Disabled**              | Disables input/selection to the widget. The widget will remain visible to the user but user input/selection will not be allowed.                                                                                                                                                            |
-| [**Tooltip**](/reference/widgets#tooltip)                           	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
-| **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget will load without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                                                                                  |
-| **Clear all Selections**  | When turned on, it allows users to clear the selection, which was the default or the selection made by them.                                                                                                                                                                                |
-| **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                                                                                                |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+These properties allow you to edit the Modal widget. All of these properties are present in the property pane of the widget.
+
+|  Property   | Data type |  Description                                                                                                                                                                      |
+| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Options**         | Array	        | It lets you set labels and values for different items/options in the list of the tree select widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. |
+| **Default Value**   | String        | Sets a default option that is captured as user input unless the user changes it.                                                                                                                                                                                                       |
+| **Placeholder**     | String        | Sets the Placeholder of the Treeselect widget.                                                                                                                                                                                                                                            |
+| **Required**      | Boolean          | When turned on, it makes a user input required and disables any form submission until the user makes an input.                                                                                                                                                                              |
+| **Visible**       | Boolean          | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                                                                                                                         |
+| **Disabled**       | Boolean         | Disables input/selection to the widget. The widget remains visible to the user but user input/selection is not allowed.                                                                                                                                                            |
+| **Tooltip**         | String                   	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
+| **Animate Loading**    | Boolean     | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                                                                                  |
+| **Allow Clearing Value**  | Boolean  | When turned on, it allows users to clear the selection, which was the default or the selection made by them.                                                                                                                                                                                |
+| **Expand all by default**  | Boolean | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                                                                                                |
+| **Height**      | String   | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| **Text**      | String  | Sets the label of the widget.                                |
+| **Position**   | String | Sets the label position of the widget.                       |
+| **Alignment**  | String | Sets the label alignment of the widget.                      |
+| **Width**      | Number | Sets the label width of the widget as the number of columns. |
 
 
-### Binding Properties
+### Reference properties
 
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `TreeSelect1.isVisible` to get the visibility status.
 
-| Property                | Description                                                                                                                                                                   | Code Snippet                         |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| **selectedOptionValue** | This is the value of the option displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option.                 | `{{TreeSelect.selectedOptionLabel}}` |
-| **selectedOptionLabel** | This is the Label of the option displayed in a Tree-Select dropdown. This label changes if the default value of the dropdown changes or the user changes an option selection. | `{{TreeSelect.selectedOptionLabel}}` |
-| **isDisabled**          | This property indicates whether the widget is disabled or not.                                                                                                                | `{{TreeSelect.isDisabled}}`          |
-| **isValid**             | This property indicates whether the widget is valid or not.                                                                                                                   | `{{TreeSelect.isValid}}`             |
-| **isVisible**           | This property indicates whether the widget is visible or not.                                                                                                                 | `{{TreeSelect.isVisible}}`           |
+| Reference Property | Data type | Description                                                                                                                                                    |
+| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **selectedOptionValue** | String| This is the value of the option displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option.                 | 
+| **selectedOptionLabel** | String| This is the Label of the option displayed in a Treeselect dropdown. This label changes if the default value of the dropdown changes or the user changes an option selection. |
+| **isDisabled**         | Boolean | This property indicates whether the widget is disabled or not.                                                                                                                | 
+| **isValid**            | Boolean | This property indicates whether the widget is valid or not.                                                                                                                   | 
+| **isVisible**          | Boolean | This property indicates whether the widget is visible or not.                                                                                                                 | 
+| **options**          | Array | This property shows the values of all the options.
+                                                                                        
 
-### Events
 
-They are a set of actions that you can perform on the widget. The following table lists the actions:
+### Style properties
+
+Style properties allow you to change the look and feel of the widget. All of these properties are present in the property pane of the widget.
+
+|  Property   | Data type |  Description                                                                                                                                                                      |
+| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Border Radius**    | String| Allows you to define curved corners.                     |
+| **Box Shadow**       | String| Allows you to choose from the available shadow styles.   |
+| **Emphasis** | String| Allows you to choose a font style (bold or italic). |
+| **Font Color** | String| Allows you to set text color for the label.              |
+| **Font Size** | String | Allows you to set the size of the label.                 |
+
+
+## Events
+
+When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
 
 | Events             | Description                                                                                                                 |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| **onOptionChange** | Triggers an action when a user selects an option. See a list of [supported actions](../appsmith-framework/widget-actions/). |
-| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
-| **onDropdownClose** | Sets the action to be run when the user opens the dropdown. See a list of [supported actions](../appsmith-framework/widget-actions/). |
-
-### Label
-
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
-
-| Label         | Description                                                  |
-| ------------- | ------------------------------------------------------------ |
-| **Text**      | Sets the label of the widget.                                |
-| **Position**  | Sets the label position of the widget.                       |
-| **Alignment** | Sets the label alignment of the widget.                      |
-| **Width**     | Sets the label width of the widget as the number of columns. |
-
-Let's understand these properties in detail.
-
-#### **Text**
-
-It allows you to set the display name for the Tree-select. For example, if you want the user to select a category and its subcategories of fruits, you can enter the text as "Fruits."
-
-:::tip
-You can leave the text empty if you don't want any display name for your Tree-select widget.
-:::
-
-#### **Position**
-
-It allows you to specify the placement of the label. You can select one of the available options:
-
-* Top - It allows you to align the text at the top of the Tree-select.
-* Left - It aligns the text to the left of the Tree-select. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
-  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Tree-select. You can choose:
-    * Left - It aligns the text to the widget's left boundary that is away from the Tree-select.
-    * Right - It aligns the text closer to the Tree-select.
-  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Tree-select.
-* Auto - It automatically adjusts the position of the text based on the Tree-select's height.
-
-:::info
-Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
-:::
-
-<VideoEmbed host="youtube" videoId="p1mt_Fo3C70" title="How to set the label properties?" caption="How to set the label properties?"/>
-
-### Styles
-
-Style properties allow you to change the look and feel of the widget.
-
-| Style                | Description                                              |
-| -------------------- | -------------------------------------------------------- |
-| **Border Radius**    | Allows you to define curved corners.                     |
-| **Box Shadow**       | Allows you to choose from the available shadow styles.   |
-| **Label Font Style** | Allows you to choose a font style, i.e., bold or italic. |
-| **Label Text Color** | Allows you to set text color for the label.              |
-| **Label Text Size**  | Allows you to set the size of the label.                 |
+| **onOptionChange** | Triggers an action when a user selects an option.  |
+| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown.  |
+| **onDropdownClose** | Sets the action to be run when the user opens the dropdown.  |

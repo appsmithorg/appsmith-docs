@@ -207,7 +207,7 @@ import TabItem from '@theme/TabItem';
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <strong>Change Widget Properties</strong>
+            <strong>Change Widget properties</strong>
         </div> <hr/>
         <div class="containerDescription">This app shows how to update the value property of the Text widget dynamically.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fe22d62cd3d95ca414cd8b/pages/61fe22d62cd3d95ca414cd8e">
@@ -348,7 +348,7 @@ import TabItem from '@theme/TabItem';
         <div class="containerCol">
             <strong>Open Modal</strong>
         </div> <hr/>
-        <div class="containerDescription">This app shows how to open a modal using openModal() function of the Appsmith framework.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
+        <div class="containerDescription">This app shows how to open a Modal using openModal() function of the Appsmith framework.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407">
         <strong >View App </strong></a></div>
     </div>
@@ -377,7 +377,7 @@ import TabItem from '@theme/TabItem';
         <div class="containerCol">
            <strong>Set Min and Max Date</strong>
         </div><hr/>
-        <div class="containerDescription">This app shows how to set minimum and maximum dates in the DatePicker widget.<br/><br/> <strong>Datasource</strong> - NA<br/><br/></div>
+        <div class="containerDescription">This app shows how to set minimum and maximum dates in the Datepicker widget.<br/><br/> <strong>Datasource</strong> - NA<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af"><strong>View App</strong> </a>
          </div>
     </div>

@@ -54,9 +54,9 @@ In the **Field Configuration** section of the JSON Form's property pane, you can
 * Array
 * Checkbox
 * Currency Input
-* DatePicker
+* Datepicker
 * Email Input
-* MultiSelect
+* Multiselect
 * Multi-line Text Input
 * Number Input
 * Object
@@ -67,13 +67,13 @@ In the **Field Configuration** section of the JSON Form's property pane, you can
 * Switch
 * Text Input
 
-Each field type has different sets of events and configurations that can be customized. For example, the Number Input field can have a min and max value, while the DatePicker field can have a specific date format.
+Each field type has different sets of events and configurations that can be customized. For example, the Number Input field can have a min and max value, while the Datepicker field can have a specific date format.
 
 The configuration options for each field type may include default values, placeholder text, validation rules, and more. These options can be adjusted to fit the specific needs of the form being created.
 
 ## Submit form data
 
-To access form data, the values entered in the JSON form are stored in the `formData` property. For instance, if you have a JSON form with an name field, you can access its value using:
+To access form data, the values entered in the JSON form are stored in the `formData` property. For instance, if you have a JSON form with a name field, you can access its value using:
 
 ```js
 {{JSONForm.formData.name}}

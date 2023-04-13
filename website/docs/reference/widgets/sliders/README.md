@@ -10,7 +10,7 @@ Appsmith provides different types of slider widgets that you could use:
 * **Number Slider** - Useful for numerical data like percentages or temperatures.
 * **Range Slider** - Useful for numerical ranges of data like temperatures and pressures.
 
-Click on the available slider links to learn more.
+Refer to the below slider links to learn more.
 
 - [Category Slider](category-slider.md)
 - [Number Slider](number-slider.md)
