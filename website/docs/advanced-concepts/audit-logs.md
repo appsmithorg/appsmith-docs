@@ -130,6 +130,19 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **user.invited** | Logged when someone invites another user to the app or workspace. |
 | **user.signed_up** | Logged when a new user logs in for the first time. |
 | **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration. |
+| **role.created** | Logged when a new role is created in granular access controls. |
+| **role.updated** | Logged when a role configuration is updated in granular access controls. |
+| **role.deleted** | Logged when a role is deleted from granular access controls. |
+| **role.assigned_users** | Logged when a role is assigned to users. |
+| **role.unassigned_users** | Logged when a role is unassigned from users. |
+| **role.assigned_groups** | Logged when a role is assigned to user groups. |
+| **role.unassigned_groups** | Logged when a role is unassigned from user groups. |
+| **group.created** | Logged when new group is created in granular access controls. |
+| **group.updated** | Logged when a group's information is updated in granular access controls. |
+| **group.deleted** | Logged when a group is deleted from granular access controls. |
+| **group.invite_users** | Logged when users are added to a user group. |
+| **group.remove_users** | Logged when users are removed from a user group. |
+
 
 ### Export
 Users can export audit logs by either querying or exporting the `auditLog` collection from the Mongo DB on Appsmith instance. The user would need to have root access to the Appsmith deployment to perform this action.
