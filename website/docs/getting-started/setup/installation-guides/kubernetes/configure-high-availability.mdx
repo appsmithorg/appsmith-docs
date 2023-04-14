@@ -12,13 +12,16 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
 :::
 
 ## Prerequisites
-  1. Install `metrics-server`, which provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods.
+  1. Ensure you have at least 2 GB of free storage space for backup and update tasks.
+  2. You can create a backup of the Appsmith instance before a manual update. For more information, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance) (_Recommended_)
+
+  3. Install `metrics-server`, which provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods.
 
    ```bash
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
    ```
 
-  2. Enable PostgreSQL or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
+  4. Enable PostgreSQL or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
 
       * Configure the parameters to enable PostgreSQL as shown below:
 
@@ -42,7 +45,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
           APPSMITH_KEYCLOAK_DB_URL: "<POSTGRES_DB_URL>"
       ```
 
-  3.  Enable MongoDB or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
+  5.  Enable MongoDB or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
 
       * Configure the parameters to enable MongoDB as shown below:
 
@@ -157,7 +160,9 @@ You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubern
 </Tabs>
 
 ## Troubleshooting
-If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) section. 
+
+If you continue to face issues, contact the [support team](mailto:support@appsmith.com).
 
 ## Further reading
 * [Publish Appsmith on the Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)

@@ -58,17 +58,16 @@ Create a folder named `appsmith` on your machine for deployment and data storage
   helm repo update
   ```
 
-  3. Generate the `values.yaml` config file:
+  3. Run the below command to deploy Appsmith:
   ```bash
-  helm show values appsmith/appsmith  > values.yaml
+  helm install appsmith appsmith/appsmith
   ```
 
-  4. Run the below command to deploy Appsmith:
-  ```bash
-  helm install appsmith appsmith/appsmith -f values.yaml
-  ```
+  :::info
+  The Appsmith deployment may take up to 5 minutes to complete. 
+  :::
 
-  5. Verify Appsmith installation with:
+  4. Verify Appsmith installation with:
   ```bash
   kubectl get pods
   ```
@@ -94,24 +93,23 @@ helm repo add appsmith-ee https://helm-ee.appsmith.com
 ```bash
 helm repo update
 ```
-4. Generate the `values.yaml` config file:
-```bash
-helm show values appsmith-ee/appsmith  > values.yaml
-```
-
-5. Run the below command to deploy Appsmith:
+4. Run the below command to deploy Appsmith:
 
 ```bash
-helm install appsmith appsmith-ee/appsmith -f values.yaml
+helm install appsmith appsmith-ee/appsmith
 ```
 
-6. Verify Appsmith installation with:
+:::info
+ The Appsmith deployment may take up to 5 minutes to complete. 
+:::
+
+5. Verify Appsmith installation with:
 
 ```bash
 kubectl get pods
 ```
 
-7. Log into your Appsmith account, and enter your license key to activate the instance.
+6. Log into your Appsmith account, and enter your license key to activate the instance.
 
 
 </TabItem>
