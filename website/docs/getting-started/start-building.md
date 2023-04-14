@@ -79,15 +79,17 @@ On the **Explorer** tab, click the **+** sign next to **Datasources**. Under the
 The mustache template `{{}}` is used to write JS code inside widgets and queries in Appsmith.
 :::
 
-3. Drag and drop a Form widget to the right of the Table widget. Change the title from *Form* to `User Details`.
-4. Add an Input widget inside the form. Rename the widget to `nameInput`. In the **Text** property box, enter `Name`. Similarly, add Input widgets for email and phone named `emailInput`, and `phoneInput`, respectively. Add a Datepicker widget for date of birth named `dobInput` and an Image widget to display the user's photo. The output should look something like this:
+## Edit and submit data
+
+1. Drag and drop a Form widget to the right of the Table widget. Change the title from *Form* to `User Details`.
+2. Add an Input widget inside the form. Rename the widget to `nameInput`. In the **Text** property box, enter `Name`. Similarly, add Input widgets for email and phone named `emailInput`, and `phoneInput`, respectively. Add a Datepicker widget for date of birth named `dobInput` and an Image widget to display the user's photo. The output should look something like this:
 
 <figure>
   <img src="/img/form-to-edit-details.png" style= {{width:"100%", height:"auto"}} alt="Create a form to view and edit details"/>
   <figcaption align = "center"><i>Create a form to view and edit details</i></figcaption>
 </figure>
 
-5. To display details on the form when you select a table row, bind the query response to the widgets. Refer to the table below to see the widget properties and the values to enter.
+3. To display details on the form when you select a table row, bind the query response to the widgets. Refer to the table below to see the widget properties and the values to enter.
 
   | Widget | Name       | Property                                          | Value                              |
   | ------ | ---------- | ------------------------------------------------- | ---------------------------------- |
@@ -104,11 +106,9 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
 </figure>
 
-## Edit and submit data
+4. On the **Explorer** tab, navigate to **Datasources > users**. Click the **New Query +** button to the right of the screen.
 
-1. On the **Explorer** tab, navigate to **Datasources > users**. Click the **New Query +** button to the right of the screen.
-
-2. Rename the query to `updateUsers`. Write the below update query to update any modified data on the widgets back to the database.
+5. Rename the query to `updateUsers`. Write the below update query to update any modified data on the widgets back to the database.
 
   ```sql
   UPDATE users 
@@ -119,16 +119,16 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
 
-3. On the property pane of the **Submit** button on the form, in the **onClick** event list, select **Execute a query > updateUsers** to run the query on button click. 
+6. On the property pane of the **Submit** button on the form, in the **onClick** event list, select **Execute a query > updateUsers** to run the query on button click. 
 
-4. In the **onSuccess** list, select **Execute a query > getUsers** to repopulate the table with updated data.
+7. In the **onSuccess** list, select **Execute a query > getUsers** to repopulate the table with updated data.
 
 <figure>
   <img src="/img/run-query-on-click-event.png" style= {{width:"100%", height:"auto"}} alt="Run query on the button's onClick event"/>
   <figcaption align = "center"><i>Run query on the button's onClick event</i></figcaption>
 </figure>
 
-5. Test the **Update** button after modifying the user's phone number.
+8. Test the **Update** button after modifying the user's phone number.
 
 You have built your first app that can read and display data from the database and save the updated data.
 
