@@ -12,6 +12,8 @@ To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** ta
 
 ### Scope
 
+<!-- HIDDEN BY FEATURE FLAG
+
 ![](/img/google_sheets_scope.png)
 
 The **Scope** setting defines what type of privileges your app has while querying your spreadsheets. Use this option to allow the minimum necessary privileges for your app's function to reduce the risk to your data.
@@ -21,6 +23,27 @@ The **Scope** setting defines what type of privileges your app has while queryin
 - **Read/Write | All Google Sheets**: Your app has read and write access to all spreadsheets on your Google account, regardless of how or when they were created.
 
 - **Read Files | All Google Sheets**: Your app has read-only access to all spreadsheets on your Google account, regardless of how or when they were created.
+
+### Save and authorize
+
+Click the **Save and Authorize** button after selecting the **Scope**. You'll be directed to the Google OAuth screen to choose the Google account whose spreadsheets you’d like to access.
+
+On the next screen, click **Allow** to grant the Appsmith app permission to view and edit files based on the scope.
+
+-->
+
+<figure>
+  <img src="/img/googlesheets_scopes.png" style={{width: "100%", height: "auto"}} alt="Configuring a new Google Sheets datasource."/>
+  <figcaption align="center"><i>Configuring a new Google Sheets datasource.</i></figcaption>
+</figure>
+
+The **Scope** setting defines what type of privileges your app has while querying your spreadsheets. Use this option to allow the minimum necessary privileges for your app's function to reduce the risk to your data.
+
+- **Read Files**: Your app only has read access to your spreadsheets. The sheets are not mutable by your queries from Appsmith.
+
+- **Read, Edit, and Create Files**: Your app has read and write access to all spreadsheets on your Google account, and can be used to create new spreadsheets on your account as well.
+
+- **Read, Edit, Create, and Delete Files**: Your app has access to perform any operation on your sheets, including permanently deleting them.
 
 ### Save and authorize
 
@@ -104,7 +127,9 @@ Your table should fill with data when the query is run.
 
 Use **Insert** operations to create a new spreadsheet, or to add a new record to an existing spreadsheet.
 
+<!-- HIDDEN BY FEATURE FLAG
 If your Google Sheets datasource's **Scope** is set to **Read/Write | Selected Google Sheets**, you have to use an insert query to create any spreadsheets that you'd like your app to access.
+-->
 
 To insert a record, supply an object in the query's **Row Object** field with keys matching the spreadsheet's column headings.
 
