@@ -212,7 +212,7 @@ Style properties allow you to change the look and feel of the widget. All of the
 | **Font Size** | String | Allows you to set the size of the label.                 |
 
 
-## Events
+### Events
 
 When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
 
