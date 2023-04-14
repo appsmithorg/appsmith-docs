@@ -2,9 +2,9 @@
 
 Merging branches is typically done when you want to incorporate changes made to the master branch into your feature branch. Here are a few scenarios where you may want to merge branches:
 
-1. **Keeping up-to-date with changes in the master branch**: if you have been working on your feature branch for a while and the main branch has been updated with new changes, you may want to merge the master branch into your feature branch to keep it up-to-date with the latest changes. This can help you avoid conflicts later on when you merge your changes back into the main branch.
+1. **Keeping up-to-date with changes in the master branch**: if you have been working on your feature branch for a while and the main branch has been updated with new changes, you may want to merge the master branch into your feature branch to keep it up-to-date with the latest changes. This can help you avoid conflicts later on when you merge your changes back into the master branch.
 
-2. **Resolving conflicts**: If you have made changes to your feature branch that conflict with changes made to the main branch, you may want to merge the main branch into your feature branch to resolve these conflicts. This can help you identify and fix any conflicts early on, rather than waiting until you merge your changes back into the main branch.
+2. **Resolving conflicts**: If you have made changes to your feature branch that conflict with changes made to the master branch, you may want to merge the master branch into your feature branch to resolve these conflicts. This can help you identify and fix any conflicts early on, rather than waiting until you merge your changes back into the master branch.
   
 Follow the steps below when you want to merge your feature branch with the master branch -
 
