@@ -63,7 +63,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
         ```yaml
         # configure an external MongoDB
           applicationConfig::
-          #highlight-next-line
+            #highlight-next-line
             APPSMITH_MONGODB_URI: "<MONGODB_URI>"
         ```
 
@@ -123,6 +123,7 @@ You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubern
     efs:
       enabled: true
       driver: efs.csi.aws.com
+      # highlight-next-line
       volumeHandle: <FILE_SYSTEM_ID>
   ```
 
