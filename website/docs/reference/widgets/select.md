@@ -1,13 +1,14 @@
 # Select
 
-The select widget, (*formerly known as dropdown*), enables users to select one input from a predetermined list of permitted options. This document provides information on displaying options in the select widget and explains different properties.
+This page explains how to use a Select widget(*formerly known as dropdown*) to allow users to select single option from a given list.
 
-<VideoEmbed host="youtube" videoId="zNw1yMwg-aY" title="How to use Select Widget" caption="How to use Select Widget"/>
+<VideoEmbed host="youtube" videoId="zNw1yMwg-aY" title="Using the Select Widget" caption="Using the Select Widget"/>
 
 
 
-## Display options manually
-To manually display options in a Select widget, you can use the **Options property**. The Options property is used to specify the available options for the user to choose from. It allows you to set both the label and value for each item in the dropdown list. 
+## Display static options
+
+To display static options in a Select widget, you can use the **Options** property.
 
 The options must be specified as an array of objects, where each object has two properties: `label` and `value`. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
 
@@ -24,26 +25,9 @@ The options must be specified as an array of objects, where each object has two 
 ]
 ```
 
+### Set default value
 
-## Display options dynamically 
-Instead of creating a predetermined set of options, you can dynamically generate options by fetching data from an API or querying a data source.
-
-A Dropdown **Options** can be populated from a data source like an API / Query by transforming the incoming data to an array of (label, value). The transformation can be performed using JavaScript. So if the data is an array, it can be transformed using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
-
-```javascript
-// Query1.data is assumed to be an array here
-{{ Query1.data.map((row) => { 
-      return { label: row.name, value: row.id } 
-   }) 
-}}
-```
-
-
-**Sample app** - [Dynamically Add Options to a Select Widget](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808)
-
-## Set default value in options
-
-The Default Selected Value property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific option is selected by default. To use this property, set its value to the value of the desired option from the Options property. 
+The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific option is selected by default. To use this property, set its value to the value of the desired option from the Options property. 
 
 ```javascript
 [
@@ -57,24 +41,87 @@ The Default Selected Value property in a widget allows you to specify an initial
   }
 ]
 ```
-For example, if you want the default value to be ```Blue```, set the **Default Selected Value** property to ```BLUE```.
+For example, if you want the default option to be ```Blue```, set the **Default Selected Value** property to ```BLUE```.
 
+
+## Display options dynamically 
+
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
+
+
+---
+**Example 1:** suppose you want to use a Select widget to allow users to select one country from a database, with the dynamic population of options.
+
+
+1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
+
+
+```sql
+SELECT DISTINCT country as label, country as value FROM users;
+```
+
+2. In the Select **Options** property, display the data using:
+
+```js
+{{fetchData.data}}
+```
+
+With this configuration, the Select widget displays a list of unique country values directly from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Select widget.
+
+---
+**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Select widget. 
+
+1. Use the `users` table in the sample database and fetch the unique country values using the following `getdata` SQL query:
+
+```sql
+SELECT DISTINCT country FROM users;
+```
+
+This query retrieves unique country values from the `users` table. The retrieved data is in the form of an array of objects, where each object has a country `key`.
+
+2. Use JavaScript to **transform the data** by adding it to the **Options** property.
+
+```js
+{{getdata.data.map( p => ({label: p.country, value: p.country}))}}
+```
+
+The code transforms each item in the `getdata` array by using the `map()` function to create a new object with a `label` and `value` property, both set to the country value of each object in the array.
 
 
 ## Access selected option
 These properties allow you to bind your select widget with any other widget in queries or JS objects.
 
-The **selectedOptionValue** in a Select widget is a value that represents the selected option in a  dropdown. It updates when the user selects a new option or the default value changes. 
+* **selectedOptionValue**: This property returns the value of the selected option in the Select widget.
 
-```javascript
-{{widget_name.selectedOptionValue}}
+* **selectedOptionLabel**: This property returns the label of the selected option in the Select widget.
+
+Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the Select widget.
+
+---
+**Example**: suppose you want to filter the table data based on the user-selected country from a Select widget. 
+
+1. Create a new query called `filterdata` and add a SQL statement to select all the data from the `users` table where the `country` column matches the selected option from a Select widget. 
+
+```sql
+SELECT *
+FROM users
+WHERE country IN ({{Select1.selectedOptionValue}})
+LIMIT 10;
 ```
 
-The **selectedOptionLabel** in a Select widget represents the label of the selected option in a dropdown. This property is used to display the label of the selected option in the widget and is updated whenever the user selects a different option from the dropdown list or if the default label changes. 
+2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
-```javascript
-{{widget_name.selectedOptionLabel}}
+```js
+{{filterdata.data}}
 ```
+
+3. Set the `onOptionChange` event of the Select widget to run the `filterdata` query. This updates the displayed data in real-time as the user selects or deselects option.
+
+
+<figure>
+  <img src="/img/select-access.gif" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Access selected option</i></figcaption>
+</figure>
 
 
 
@@ -140,7 +187,7 @@ Style properties allow you to change the look and feel of the widget.
 | **Box Shadow**             	          	| Casts a drop shadow from the frame of the widget.                                                                                                                                                            	|
 
 
-## Events
+### Events
 
 These are functions that are called when event listeners are triggered in the widget. Use [actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
 
@@ -160,12 +207,4 @@ These are functions that are called when event listeners are triggered in the wi
 * [Duplicate values found](/help-and-support/troubleshooting-guide/widget-errors#duplicate-values-found) 
 
 If you run into any other issues while working with the Select widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If your issue isn't covered in the guide, please connect with support@appsmith.com or raise your query on the [Discord Server](https://discord.com/invite/rBTTVJp).
-
-
-## Further reading
-
-* [Filter data based on user input](/reference/widgets/table#server-side-filter)
-* [Data Access and Binding](/core-concepts/data-access-and-binding)
-* [Widgets Reference](/reference/widgets)
-
 
