@@ -1,10 +1,7 @@
-# Merge Changes
+# Merge and Pull Changes
 
 Merging branches is typically done when you want to incorporate changes made to the master branch into your feature branch. Here are a few scenarios where you may want to merge branches:
-
-1. **Keeping up-to-date with changes in the master branch**: if you have been working on your feature branch for a while and the main branch has been updated with new changes, you may want to merge the master branch into your feature branch to keep it up-to-date with the latest changes. This can help you avoid conflicts later on when you merge your changes back into the master branch.
-
-2. **Resolving conflicts**: If you have made changes to your feature branch that conflict with changes made to the master branch, you may want to merge the master branch into your feature branch to resolve these conflicts. This can help you identify and fix any conflicts early on, rather than waiting until you merge your changes back into the master branch.
+When you are working on your feature branch for a while, the master may get updated with new changes. As your branch is behind the master now, to avoid conflicts, you have to merge the master branch into your feature branch to keep it up-to-date with the latest changes.
   
 Follow the steps below when you want to merge your feature branch with the master branch -
 
@@ -17,18 +14,17 @@ Follow the steps below when you want to merge your feature branch with the maste
 
 Once the merge is successful, you can raise a PR on the remote repository to merge the changes of the feature branch to the master branch.
 
-## Merge conflicts
+## Pull changes
 
-Consider a scenario where user 1 wants to develop a new feature and has a single branch main. As a general practice, the user creates feature-f1 from the main branch. At the same time, user 2 updates the main branch with the same resources like page, query, or JSObject that user 1 modifies on the feature-f1 branch. If user 1 tries to merge feature-f1 to the main branch, it creates a merge conflict.
+When the PR raised from the feature branch is merged to the master in the remote repository, the local counterpart has to be updated with those changes. To sync the local branch with the remote updates, pull the latest changes by clicking on the **pull icon** at the bottom left corner. 
 
-You can resolve it in the following way:
+![](/img/pull_changes.gif)
 
-1. Create a pull request with the master as the base branch;
-2. Resolve the conflicts on remote branches (Between origin/feature-f1 and origin/main);
-3. Once the conflicts are resolved, merge this new branch(origin/feature-f1) into the old branch(origin/main);
-4. Pull the main branch again in your app. Now you should have all the changes from the feature-f1 branch;
-5. Delete branch origin/feature-f1 on the remote repository;
-6. Sync branches in the Git branch modal on Appsmith to remove origin/featuref1 from the local repository.
+Once the pull is successful, the app is automatically deployed. You can view the deployed version by clicking the **﹀** icon from the top right corner.
+
+:::info
+The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branch. In such cases, resolve the conflicts manually on the remote repository.
+:::
 
 ### Best practices to avoid merge conflicts
 Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
@@ -39,3 +35,12 @@ Merge conflicts can occur when different branches attempt to merge changes to th
 * Ensure that these changes are completed and pushed to the `master` branch.
 * Pull changes from the `master` to the feature branches that are in development.
 * Finish updates on the feature branch, then commit and merge with the master branch.
+
+## Delete a branch
+
+Similar to the Git flow, you can delete a branch in Appsmith that's no longer needed. If you want to delete a branch from Appsmith, follow the steps given below:
+
+1. Click the current branch at the bottom left corner.
+2. Go to the branch you want to delete, click options, and **Delete**.
+
+![](/img/delete_branch.gif)

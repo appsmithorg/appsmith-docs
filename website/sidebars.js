@@ -506,7 +506,6 @@ const sidebars = {
             },
             'advanced-concepts/version-control-with-git/working-with-branches',
             'advanced-concepts/version-control-with-git/commit-and-push',
-            'advanced-concepts/version-control-with-git/pull-and-sync',
             'advanced-concepts/version-control-with-git/merge-branches',
             'advanced-concepts/version-control-with-git/revert-changes',
             'advanced-concepts/version-control-with-git/import-from-repository',

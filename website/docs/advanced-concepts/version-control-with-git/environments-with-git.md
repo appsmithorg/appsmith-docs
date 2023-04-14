@@ -1,4 +1,4 @@
-# Build Environments With Git
+# Setup Environments With Git
 
 Git in Appsmith allows you to create and maintain multiple versions of your applications and make changes to them in isolation. Having separate staging and production workspaces ensures that users can continue to use your apps even while they're being changed or upgraded.
 
@@ -13,12 +13,12 @@ Follow the steps below to setup the pipeline:
 1. Create two workspaces for your staging and production versions of the app. These workspaces can be across two separate instances of Appsmith.
 2. Create your app in the staging workspace and connect to Git version control. Once connected, check out a staging branch from the default branch(you can name the default branch as production).
 3. Import the app into your production workspace using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository).
+4. Once the import is complete, add your production datasource configurations in the datasource modal.
 
 ### Build and deploy
 1. Build the app in the staging workspace with staging datasources. 
 2. Use the Git workflow to make changes in the staging branch(or feature branches), before merging to the production branch through a pull request.
-3. When you're ready to deploy, pull the changes on the production branch in the production workspace app.
-4. Connect the production workspace app to your production datasources.
+3. When you're ready to deploy, pull the changes on the production branch in the production workspace app..
 
 ### Share
 1. Invite your end users to your production app as App Viewers. They only have access to view the deployed app.

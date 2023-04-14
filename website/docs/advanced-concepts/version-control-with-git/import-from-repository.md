@@ -21,3 +21,9 @@ Follow the steps given below:
 :::info
 If the imported workspace already has a data source with the same name but a different type, the import fails due to name conflicts. For example, a git-connected application has a MongoDB data source - "movies" and you are importing it to a workspace that has a Postgres data source also named "movies." In such a case, the import fails.
 :::
+
+## Sync branches
+
+To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the **Sync branches** button. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
+
+![](/img/Sync_branches.png)

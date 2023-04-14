@@ -7,12 +7,12 @@ sidebar_position: 2
 After developing your app on a feature branch, to commit and push changes to your remote repository, follow the steps below:
 
 1.  Click the **+** icon at the bottom left corner to commit the changes. 
-2. In the deploy tab on the modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
+2. In the deploy tab on the Modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
 
 ![](/img/commit_changes_git.gif)
 
 
-In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to [pull the changes](/advanced-concepts/version-control-with-git/pull-and-sync) to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
+In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to [pull the changes](/advanced-concepts/version-control-with-git/merge-branches#pull-changes) to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
 
 Once the remote branch is updated with the repository, you can raise a PR to merge the changes with the main branch.
 
@@ -26,7 +26,7 @@ When an Appsmith version is updated, you may see uncommitted changes in your loc
 
 ## Discard changes
 
-While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the deploy modal, click the **Discard Changes** button. When this button is clicked, along with the current changes being discarded, the latest changes are pulled from the remote repository so that your application is in sync. 
+While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the deploy Modal, click the **Discard Changes** button. When this button is clicked, along with the current changes being discarded, the latest changes are pulled from the remote repository so that your application is in sync. 
 
 Discarding changes have the following impact on the entities (pages, queries, JSObjects etc.): 
 - Any entity (pages, queries, JSObjects etc.) added after the last commit is removed. 
