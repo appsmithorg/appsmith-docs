@@ -139,9 +139,6 @@ Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automat
 SELECT * FROM product
 WHERE type = {{TreeSelect.selectedOptionValue}} OR name = {{TreeSelect.selectedOptionValue}};
 ```
-:::info
-When using dynamic binding with queries that contain SQL keywords such as `SELECT`,`WHERE`, `AND`, and other keywords, a [prepared statement](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterproducts` query for the Treeselect widget.
-:::
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
