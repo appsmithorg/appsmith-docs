@@ -21,7 +21,7 @@ You could also follow the detailed guide for [deploying Appsmith](https://www.re
 
 If you encounter any errors during this process, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or raise your query on [Discord Server](https://discord.com/invite/rBTTVJp).
 
-## Next steps
+## Further reading
 
 * [Configuring Self Hosted Instances](../instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](../instance-management/)

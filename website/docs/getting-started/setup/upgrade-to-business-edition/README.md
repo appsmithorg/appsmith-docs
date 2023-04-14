@@ -33,6 +33,6 @@ Upgrade your Community Edition to a Business Edition by selecting below installa
 </div>
 
 
-## Next steps
+## Further reading
 * [Single Sign On](/getting-started/setup/instance-configuration/authentication/)
 * [Audit Logs](/advanced-concepts/audit-logs)

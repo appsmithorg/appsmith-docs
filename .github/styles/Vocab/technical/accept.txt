@@ -287,9 +287,7 @@ Iframe
 iframe
 CSS
 onwards
-<<<<<<< HEAD
 time frame
-=======
 selectedMarker
 isOpen
 onClose
@@ -319,4 +317,14 @@ Unpublish
 unpublish
 Id
 Upcloud
->>>>>>> main
+Modal
+config
+Treeselect
+PageSize
+geospatial
+sanitization
+Arango
+StoreValue
+updateUsers
+getUsers
+

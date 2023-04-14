@@ -105,7 +105,7 @@ You can modify the layout of your embedded code directly from within your Appsmi
 <VideoEmbed host="youtube" videoId="qACSzNMsdKA" title="Modifying layout" caption="Modifying layout"/>
 
 * To change the layout, open the `app settings`.
-* Click on `Share & Embed`.
+* Click `Share & Embed`.
 * Update the Embed size as desired.
 * Copy the updated embed code.
 
@@ -130,8 +130,8 @@ You can remove the Appsmith top bar with page tabs by appending **`?embed=true`*
 
 ![Remove Appsmith top bar](/img/embed_apps.png)
 
-* Click on `App settings` in the Canvas properties.
-* Click on `Share & Embed`.
+* Click `App settings` in the Canvas properties.
+* Click `Share & Embed`.
 * Toggle `Show navigation bar`.
 * Copy the updated embed code.
 

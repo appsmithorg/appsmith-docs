@@ -23,7 +23,7 @@ The above reference to the **audit logs** pertains only to the **cloud-hosted in
 Appsmith's backend system doesn't store any data when responding to API calls or executing any queries. The security measures implemented for Appsmith Executing Queries & APIs are:
 
 * The Appsmith's backend system doesn't store any information about query responses or user inputs. Appsmith **only** acts as a proxy and never logs or stores the private/confidential data in Appsmith's data stores.
-* To protect the application so that users cannot infer the executed query - Appsmith stores the query configuration and ensures that the SQL query body or custom API URLs are never exposed to the client in `view` mode. &#x20;
+* To protect the application so that users cannot infer the executed query - Appsmith stores the query configuration and ensures that the SQL query body or custom API URLs are never exposed to the client in `view` mode. 
 * To avoid SQL injections, all SQL queries have [prepared statements](../learning-and-resources/how-to-guides/how-to-use-prepared-statements.md) enabled by default.
 
 ## Securely Executing JavaScript

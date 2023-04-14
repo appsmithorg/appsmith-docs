@@ -11,7 +11,7 @@ On Appsmith, you can migrate all Appsmith data from one instance to another or j
 
 #### **Backup the old VM**
 
-1. Dump the mongo data from the old VM via the command: `mongodump --uri "mongodb://<rootUsername>:<rootPassword>@localhost:27017/appsmith" --out=/tmp/appsmith-mongo-dump`
+1. Dump the MongoDB data from the old VM via the command: `mongodump --uri "mongodb://<rootUsername>:<rootPassword>@localhost:27017/appsmith" --out=/tmp/appsmith-mongo-dump`
 2. Copy the dump file to the new VM
 3. Open the file `encryption.env` and note the values in this file. The values here are important for Appsmith to be able to read sensitive information in the new installation.
 
@@ -22,11 +22,11 @@ The restore would end up deleting all the existing data in the mongo database of
 :::
 
 1. Install Appsmith via the install.sh script.
-2. Restore the dump on the newly created mongo container via the command: `mongorestore --drop /tmp/appsmith-mongo-dump -d appsmith --uri=mongodb://<rootUsername>:<rootPassword>@localhost/appsmith`
+2. Restore the dump on the newly created MongoDB container via the command: `mongorestore --drop /tmp/appsmith-mongo-dump -d appsmith --uri=mongodb://<rootUsername>:<rootPassword>@localhost/appsmith`
 3. Open the file `encryption.env` and change the variables `APPSMITH_ENCRYPTION_PASSWORD` & `APPSMITH_ENCRYPTION_SALT` to the same ones as the old VM. This is important because sensitive data in Mongo is encrypted using these credentials. Without this, you risk corrupting any passwords you've saved.
 4. Restart the Appsmith system using the command: `sudo docker-compose down && sudo docker-compose up -d`
 
-## Import/Export Applications
+## Import/Export applications
 
 You can import or export the desired application to any workspace, either in the same or a different Appsmith instance.
 
@@ -42,7 +42,7 @@ Applications built in an older version of an Appsmith instance will work when im
 
 
 
-### Export Application
+### Export application
 
 You can [sync](../version-control-with-git/connecting-to-git-repository.md) your application to a [Git repository](../version-control-with-git/) or export your application as a JSON file to your system.
 
@@ -57,7 +57,7 @@ Follow the steps below to export your application as a JSON file:
  <VideoEmbed host="youtube" videoId="lBMP9MQHdCQ" title="How to export an app" caption="How to export an app"/>
 
 
-### Import Application
+### Import application
 
 You can choose one of the below ways to import an Appsmith application.-
 
@@ -71,9 +71,9 @@ If you have exported an application as a JSON file, you can import the same appl
 Follow the steps below to import an exported (JSON file) application -
 
 1. Go to your workspace homepage and navigate to the menu button of the workspace.
-2. Click on the menu button (next to +NEW) and select the “**Import**” option.
+2. Click the menu button (next to +NEW) and select the “**Import**” option.
 3. In the import pop-up window, click on import from file and pick the JSON file from your system’s memory.
-4. Once the file is imported, you will see a datasource configuration modal (if the imported app had a datasource connection) where you can configure the datasources used by the imported application.
+4. Once the file is imported, you can see a datasource configuration Modal (if the imported app had a datasource connection) where you can configure the datasources used by the imported application.
 
 :::info
 As a security measure, we do not export any config values used for the connecting datasource during the import operation. So either you have to configure it in the datasource configuration modal, or you can skip this and choose to configure it later
@@ -84,7 +84,7 @@ As a security measure, we do not export any config values used for the connectin
  <VideoEmbed host="youtube" videoId="bhzGIdXq2Z4" title="How to import an app" caption="How to import an app"/>
 
 :::tip
-When you import the application into the destination instance/ workspace, it's a new one, meaning source and destination applications are detached, and changes will not be synced.
+When you import the application into the destination instance/ workspace, it's a new one, meaning source and destination applications are detached, and changes are not synced.
 :::
 
 ### Import from a Git repository
