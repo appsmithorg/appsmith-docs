@@ -125,16 +125,6 @@ When using dynamic binding with queries that contain SQL keywords such as `SELEC
   <figcaption align = "center"><i>Access selected options</i></figcaption>
 </figure>
 
-## Server side filtering	
-
-When working with large datasets, it's recommended to use server-side filtering for the widget to improve performance. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to you. This can be achieved by utilizing the `filterText` reference property, which enables you to implement the filtering process on the server side.
-
-When the user types in the search bar, the `onFilterUpdate` event is triggered and sends the search query to the server for processing.
-
-For example, if the user types `"un"` in the search bar of a Multiselect widget that displays a list of countries, you can send the search query `"un"` to the server, which can then return only the countries that match the search query, such as the United States and the United Kingdom.
-
-
-You can refer to this [sample app](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695) that implements server-side filtering for the Select widget.
 
 ## Properties
 
@@ -195,7 +185,7 @@ Style properties allow you to change the look and feel of the widget. All of the
 
 
 
-## Events
+### Events
 
 When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
 
