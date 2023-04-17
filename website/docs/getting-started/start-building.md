@@ -41,7 +41,7 @@ On the **Explorer** tab, click the **+** sign next to **Datasources**. Under the
   <figcaption align = "center"><i>Connect to a datasource</i></figcaption>
 </figure>
 
-## Query data
+## Fetch data
 
 1. Click the **New Query +** button to the right of the screen.
 
