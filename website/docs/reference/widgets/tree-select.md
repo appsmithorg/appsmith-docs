@@ -139,9 +139,6 @@ Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automat
 SELECT * FROM product
 WHERE type = {{TreeSelect.selectedOptionValue}} OR name = {{TreeSelect.selectedOptionValue}};
 ```
-:::info
-When using dynamic binding with queries that contain SQL keywords such as `SELECT`,`WHERE`, `AND`, and other keywords, a [prepared statement](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterproducts` query for the Treeselect widget.
-:::
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
@@ -212,7 +209,7 @@ Style properties allow you to change the look and feel of the widget. All of the
 | **Font Size** | String | Allows you to set the size of the label.                 |
 
 
-## Events
+### Events
 
 When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
 
