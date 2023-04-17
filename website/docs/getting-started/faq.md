@@ -32,6 +32,6 @@ Appsmith is currently built for a single-user editor experience. If you try to u
 
 The best way to request a missing feature is by raising a [Github Issue](https://github.com/appsmithorg/appsmith/issues/new/choose). Alternatively, we welcome external contributions and would be happy to help you unblock yourself with a feature on the platform. This is our [Contribution Guide](https://github.com/appsmithorg/appsmith/blob/release/contributions/CodeContributionsGuidelines.md).
 
-## Where can I find information about pricing for Business edition?
+## What is the pricing plan for the Business edition?
 
 See [Pricing](https://www.appsmith.com/pricing) for information about the Appsmith Business edition.
