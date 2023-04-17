@@ -73,7 +73,7 @@ To paginate the responses and request smaller chunks of data at a time:
 
 1. Enable the server-side pagination property in the table
 2. Call the API / query via the **onPageChange** event
-3. Configure pagination in the API / query using the [Offset](#offset-based-pagination) or [Key-based](#key-based-pagination) pagination method.
+3. Configure pagination in the API / query using the [Offset](#offset-based-pagination) / [Key-based](#key-based-pagination) / [Table Meta](#meta-properties-based-pagination) pagination methods.
 
 :::tip
 Turning on **Server side pagination** also enables the **Total records** property. This property is useful for helping to control the page buttons in the table header.
@@ -102,6 +102,30 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 This method uses a value in the API response as the key to the following API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
 
 <img src="/img/pagination_(2)_(2).gif" width="70%" ></img>
+
+#### Meta properties based pagination
+
+Table widget exposes two meta properties, `previousPageVisited` and `nextPageVisited`. These values of these properties are set when a user moves to a new page. Depending on the direction of the new visited page with respect to the current page, the values of these properties are set.
+
+If the page number of the new visited page is greater than the current page number, `nextPageVisited` will be set to `true` and `previousPageVisited` will be set to `false`. Else, if the new page number is less than current page number, `nextPageVisited` will be set to `false` and `previousPageVisited` will be set to `true`.
+
+Both flags are initialized to `false` when the table loads for the first time.
+
+A sample code that demonstrates the use of these flags is below:
+
+```
+const loadTableData =  () => {
+    if (Table1.nextPageVisited == true){
+        nextQuery.run()
+    }
+    else if (Table1.previousPageVisited == true){
+        previousQuery.run()
+    }
+    else {
+        baseQuery.run()
+    }
+}
+```
 
 ## Refresh table data
 
