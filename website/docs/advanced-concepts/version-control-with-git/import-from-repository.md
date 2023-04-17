@@ -16,7 +16,7 @@ Follow the steps given below:
 3. Add your Repository’s SSH URL and click on [Generate key](/advanced-concepts/version-control-with-git/connecting-to-git-repository#generate-a-deploy-key).
 4. Add the [Deploy key to your repository.](/advanced-concepts/version-control-with-git/connecting-to-git-repository#add-the-deploy-key-in-the-repository)​
 5. Go back to the Git connection window and [configure the user settings](/advanced-concepts/version-control-with-git/connecting-to-git-repository#user-configuration) and click on **Import.**
-6. Once the import is complete, you’ll see a data source configuration modal where you can configure the data sources used by the imported Application. Appsmith doesn't export any configuration values used for connecting a data source. So either you have to configure it in the data source configuration modal, or you can skip this and choose to configure it later.
+6. Once the import is complete, you’ll see a data source configuration Modal where you can configure the data sources used by the imported Application. Appsmith doesn't export any configuration values used for connecting a data source. So either you have to configure it in the data source configuration Modal, or you can skip this and choose to configure it later.
 
 :::info
 If the imported workspace already has a data source with the same name but a different type, the import fails due to name conflicts. For example, a git-connected application has a MongoDB data source - "movies" and you are importing it to a workspace that has a Postgres data source also named "movies." In such a case, the import fails.
@@ -27,3 +27,7 @@ If the imported workspace already has a data source with the same name but a dif
 To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the **Sync branches** button. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
 
 ![](/img/Sync_branches.png)
+
+## Further reading
+
+[Setup Environments With Git](/advanced-concepts/version-control-with-git/environments-with-git)

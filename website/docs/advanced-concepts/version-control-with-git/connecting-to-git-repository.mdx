@@ -1,4 +1,3 @@
-
 ---
 sidebar_position: 1
 ---
@@ -9,9 +8,13 @@ import TabItem from '@theme/TabItem';
 
 The first step to using version control in Appsmith is to connect your remote repository with the app. Please follow the steps given below:
 
-### Prerequistes
+### Prerequisites
 
-Create a new repository on your Git hosting service and copy the `SSH URL`. The repository shouldn't contain the any files.
+Create a new repository on your Git hosting service and copy the `SSH URL`. The repository shouldn't contain any files.
+
+:::info
+Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+:::
 
 ### Generate a deploy key
 
@@ -56,6 +59,10 @@ Copy the **SSH key** generated in the preceding section.
 
 Go back to Git connection Modal in Appsmith and click **Connect**, it may take some time and when the connection is successful, the app is added to your repository by system generated commit.
 
+:::info
+For self-hosted instances, to maintain the Git repositories, please [update the local file path](/advanced-concepts/version-control-with-git/update-file-path).
+:::
+
 ## Further reading
 
-- [Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)
+[Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)

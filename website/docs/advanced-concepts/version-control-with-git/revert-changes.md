@@ -12,3 +12,7 @@ To revert a commit, follow these steps:
     2. Some Git service providers such as [GitHub](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/reverting-a-commit) provide GUI to perform this operation.
 4. Once you have reverted the commit, you should push the changes to your remote Git repository so that other members of your team can see the changes.
 5. Once your changes have been reverted, you can pull them in the Appsmith app to deploy the changes.
+
+## Further reading
+
+[Import from a Git Repository](/advanced-concepts/version-control-with-git/import-from-repository)

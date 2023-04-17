@@ -1,4 +1,4 @@
-# Updating Local File path
+# Update Local File path
 
 For self-hosted instances, Appsmith clones the Git repositories in the local file system, attached to the persistent volume within the Docker container. To maintain the Git repositories, you need a file path that points to the volume within the Docker container.
 

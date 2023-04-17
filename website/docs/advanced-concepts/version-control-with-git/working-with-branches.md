@@ -10,13 +10,14 @@ Similar to using Git flow in SDLC, you can make separate branches in Appsmith fo
 - **Feature** - A feature branch is for the developers to work on building the app. Each developer should have an individual feature branch and on completion, raise a PR to the release branch in the remote repository
 
 :::info
-It is recommended that each developer should have an individual feature branch
+It is recommended that each developer should have an individual feature branch.
+:::
 
 ## Create a branch
 
 To create these branches in your Appsmith app, follow the steps below:
 
-1. Click the current branch at the bottom left corner to open the branch modal that shows the list of existing branches.
+1. Click the current branch at the bottom left corner to open the branch Modal that shows the list of existing branches.
 2. To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**. Your application switches to the new (release) branch
 
 ![](/img/create_branch.gif)
@@ -27,5 +28,7 @@ Please the note following while creating a new branch:
 * When you switch to another branch, the uncommitted changes in your current branch aren't carried over to the destination branch.
 * Checking out a remote branch with a local counterpart already available would result in an error.
 
+## Further reading
 
+[Commit Changes](/advanced-concepts/version-control-with-git/commit-and-push)
 

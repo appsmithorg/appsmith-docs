@@ -1,6 +1,5 @@
 # Merge and Pull Changes
 
-Merging branches is typically done when you want to incorporate changes made to the master branch into your feature branch. Here are a few scenarios where you may want to merge branches:
 When you are working on your feature branch for a while, the master may get updated with new changes. As your branch is behind the master now, to avoid conflicts, you have to merge the master branch into your feature branch to keep it up-to-date with the latest changes.
   
 Follow the steps below when you want to merge your feature branch with the master branch -
@@ -23,7 +22,7 @@ When the PR raised from the feature branch is merged to the master in the remote
 Once the pull is successful, the app is automatically deployed. You can view the deployed version by clicking the **﹀** icon from the top right corner.
 
 :::info
-The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branch. In such cases, resolve the conflicts manually on the remote repository.
+The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
 :::
 
 ### Best practices to avoid merge conflicts
@@ -44,3 +43,8 @@ Similar to the Git flow, you can delete a branch in Appsmith that's no longer ne
 2. Go to the branch you want to delete, click options, and **Delete**.
 
 ![](/img/delete_branch.gif)
+
+## Further reading
+
+- [Revert Changes](/advanced-concepts/version-control-with-git/revert-changes)
+- [Import from a Git Repository](/advanced-concepts/version-control-with-git/import-from-repository)
