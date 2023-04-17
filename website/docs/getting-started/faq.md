@@ -19,7 +19,7 @@ Internal apps are our current focus area. Appsmith isn't built for complicated U
 
 ## How secure is Appsmith?
 
-Appsmith applications are secure-by-default. See Security[/product/security] for more information. For Appsmith cloud users, data is stored and processed on servers in the US. If you want to have complete control over how your data is stored and transmitted, or need to ensure HIPAA compliance, you can [self-host Appsmith](/getting-started/setup) to ensure none of your data leaves your VPC.
+Appsmith applications are secure-by-default. See [Security](/product/security) for more information. For Appsmith cloud users, data is stored and processed on servers in the US. If you want to have complete control over how your data is stored and transmitted, or need to ensure HIPAA compliance, you can [self-host Appsmith](/getting-started/setup) to ensure none of your data leaves your VPC.
 
 We appreciate any information that can help improve the security of our systems and protect users' data. We do reward security researchers who report serious and previously undiscovered issues. If you believe you have discovered a security vulnerability, please email our security team at security@appsmith.com with a description of the issue and any relevant details. After reviewing the report, we will take appropriate action to address the issue.
 
