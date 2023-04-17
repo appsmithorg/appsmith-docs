@@ -23,7 +23,6 @@ Appsmith applications are secure-by-default. See [Security](/product/security) f
 
 We appreciate any information that can help improve the security of our systems and protect users' data. We do reward security researchers who report serious and previously undiscovered issues. If you believe you have discovered a security vulnerability, please email our security team at security@appsmith.com with a description of the issue and any relevant details. After reviewing the report, appropriate action is taken to address the issue.
 
-
 ## Does Appsmith support multi-user editing?
 
 Appsmith is currently built for a single-user editor experience. If you try to update the same page/widget/action from two different places, they overwrite each other and may lead to a loss of work. It's recommended that at any given time, only one user should edit a page in a single open tab. Appsmith supports [version control using Git](/advanced-concepts/version-control-with-git) which provides a way for multiple users to edit the apps on different branches before they can be merged into the master branch.
@@ -33,3 +32,6 @@ Appsmith is currently built for a single-user editor experience. If you try to u
 
 The best way to request a missing feature is by raising a [Github Issue](https://github.com/appsmithorg/appsmith/issues/new/choose). Alternatively, we welcome external contributions and would be happy to help you unblock yourself with a feature on the platform. This is our [Contribution Guide](https://github.com/appsmithorg/appsmith/blob/release/contributions/CodeContributionsGuidelines.md).
 
+## Where can I find information about pricing for Business edition?
+
+See [Pricing](https://www.appsmith.com/pricing) for information about the Appsmith Business edition.
