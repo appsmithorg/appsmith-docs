@@ -13,15 +13,15 @@ Appsmith integration with Twilio provides an easy way to manage your customer-fo
 
 <VideoEmbed host="youtube" videoId="QHrEfSxL-aA" title="How To Send SMS Notifications With Twilio" caption="How To Send SMS Notifications With Twilio"/>
 
-## Create Twilio Datasource
+## Create Twilio datasource
 
 To add a **Twilio** datasource, navigate to **Explorer**>> Click plus sign(+) next to **Datasources** >> Select **Twilio** under APIs.
 
-## Connection Settings
+## Connection settings
 
 Configure the Twilio datasource as illustrated below:
 
-### Authentication Type
+### Authentication type
 
 As part of the authentication type, you can choose from the available options:
 
@@ -29,7 +29,7 @@ As part of the authentication type, you can choose from the available options:
 
 * **Basic Auth** - Select **Basic Auth** for using Basic Authentication to create a Twilio datasource.
 
-### Get Twilio Account Info
+### Get Twilio account info
 
 You’ll have to log into your **Twilio** **Account** to get account information to be added to the datasource configuration:
 
@@ -38,7 +38,7 @@ You’ll have to log into your **Twilio** **Account** to get account information
 * **Account SID** - Navigate to your **Twilio** **account** >> Select **Develop** tab >> Scroll down to **Account Info** >> Copy **Account SID**.
 * **Auth Token** - Navigate to your **Twilio** **account** >> Select **Develop** tab >> Scroll down to **Account Info** >> Copy **Auth Token**.
 
-### **Get My Twilio Phone Number**
+### Get my Twilio phone number
 
 You can get your Twilio Phone Number (`My Twilio phone number`) from the [account info](twilio.md#get-twilio-account-info) section to add it to the **From** field in [commands](twilio.md#commands).
 
@@ -46,7 +46,7 @@ Navigate to the [account info](twilio.md#get-twilio-account-info) section and cl
 
 ![Get your Twilio Phone Number](</img/Datasources__Twilio__My_Twilio_Phone_Number.png>)
 
-### Save Configuration
+### Save configuration
 
 Click the **Save** button to save the configuration and complete the setup of the Twilio datasource. On successful configuration, you’ll be navigated to the datasources screen.
 
@@ -62,13 +62,13 @@ If you are using a Twilio trial account, you can only add the **Verified Caller 
 Read more on [how to work with your Free Twilio Account](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account).
 :::
 
-### Add Verified Caller ID
+### Add verified caller ID
 
-You can add a verified caller to your **Twilio account**. Navigate to **Twilio Account >>** Click on **Develop** tab **>>** Click **#Phone Numbers** section >> Click **Verified Caller IDs** >> Click **Add a new Caller ID** button to add a new `Verified Caller ID`.
+You can add a verified caller to your **Twilio account**. Navigate to **Twilio Account >>** Click **Develop** tab **>>** Click **#Phone Numbers** section >> Click **Verified Caller IDs** >> Click **Add a new Caller ID** button to add a new `Verified Caller ID`.
 
 ![Add a Verified Caller ID](</img/Datasources__Twilio__Add_Verified_Caller_ID.png>)
 
-## Create Queries
+## Create queries
 
 You can add queries to the **Twilio datasource** by selecting the **New API +** button next to the datasource. You can also navigate to **Explorer** >> Click plus (**+**) sign next to **Queries/JS** >> Select the **datasource** name (**TwilioAppsmithIntegration**).
 
@@ -93,7 +93,7 @@ With the help of Commands, you can choose the type of action you want to perform
 | [Delete Message](twilio.md#delete-message)     | Delete the given message using the [Delete Message](https://www.twilio.com/docs/sms/api/message-resource#delete-a-message-resource) command.                                    |
 | [Update Message](twilio.md#update-message)     | Update or cancel the scheduled message using the [Update Message](https://www.twilio.com/docs/sms/api/message-resource#update-a-message-resource) command.                      |
 
-## **Create Message**
+## Create message
 
 You can use the create message command when you want to send a message.
 
@@ -114,7 +114,7 @@ The destination phone number (**To**) and your Twilio Phone number (**From**) sh
 You can get your **Twilio phone number** from the [account info](twilio.md#get-twilio-account-info) section. Copy [My Twilio phone number](twilio.md#get-my-twilio-phone-number) to add to the **Twilio Phone Number** field.
 :::
 
-* **Body** - Add the message text you want to send to this field.&#x20;
+* **Body** - Add the message text you want to send to this field.
 
 > You can also read the [widget](./../widgets/README.md) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](./../widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
 
@@ -122,7 +122,7 @@ You can get your **Twilio phone number** from the [account info](twilio.md#get-t
 You can change the [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) by clicking the **settings** tab.
 :::
 
-## **Schedule Message**
+## Schedule message
 
 You can use the Schedule Message command to configure a message delivery in the future.
 
@@ -151,7 +151,7 @@ The destination phone number (**To**) should follow the [E.164 format](https://e
 * **Send At** - Add the date and timestamp you want to schedule the message delivery. The data and timestamp should follow the format [ISO 8601 format](https://en.wikipedia.org/wiki/ISO\_8601).
 
 :::note
-&#x20;Please supply the date and timestamp for the `Send At` in the [UTC](https://en.wikipedia.org/wiki/Coordinated\_Universal\_Time).
+Please supply the date and timestamp for the `Send At` in the [UTC](https://en.wikipedia.org/wiki/Coordinated\_Universal\_Time).
 :::
 
 > You can also read the [widget](./../widgets/README.md) values selected by the users for the above fields in the **Create Message** Command. For example, if you want to bind a [text widget](./../widgets/text.md) value that captures the message content, you can read the value as `<WIDGET_NAME.TEXT>` and add it to **Create Message** >> **Body**.
@@ -166,7 +166,7 @@ By default, the Twilio Schedule Message uses the [UTC](https://en.wikipedia.org/
 Call an [update message](twilio.md#update-message) command with the status selected as “**Canceled**” to **Cancel** a **scheduled** message **delivery**.
 :::
 
-## List Message
+## List message
 
 You can use the List Message command to view all the messages sent by using a specified [Twilio Phone Number](twilio.md#get-my-twilio-phone-number).
 
@@ -174,33 +174,33 @@ For listing messages, you can set parameter values as below:
 
 ![How to read all messages sent by a Twilio phone number?](</img/Datasources__Twilio__Queries__Command__List_Message.png>)
 
-* **To** - Add the phone number to which you want to send the message.&#x20;
+* **To** - Add the phone number to which you want to send the message.
 
 :::info
 The destination phone number (**To**) and your Twilio Phone number (**From**) should follow the [E.164](https://en.wikipedia.org/wiki/E.164) format.
 :::
 
-* **From** - Add your Twilio phone number to this field.&#x20;
+* **From** - Add your Twilio phone number to this field.
 
 :::info
-You can get your [Twilio phone number](twilio.md#get-my-twilio-phone-number) from the [account info](twilio.md#get-twilio-account-info) section. Copy [My Twilio phone number](twilio.md#get-my-twilio-phone-number) to add to the **Twilio Phone Number** field.&#x20;
+You can get your [Twilio phone number](twilio.md#get-my-twilio-phone-number) from the [account info](twilio.md#get-twilio-account-info) section. Copy [My Twilio phone number](twilio.md#get-my-twilio-phone-number) to add to the **Twilio Phone Number** field.
 :::
 
-* **DateSent** - Supply the date for which you want to view sent messages. The date should follow a YYYY-MM-DD format.&#x20;
-* **PageSize** - Give the maximum number of records you wish to pull per page.&#x20;
-* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.&#x20;
+* **DateSent** - Supply the date for which you want to view sent messages. The date should follow a `YYYY-MM-DD` format.
+* **PageSize** - Give the maximum number of records you wish to pull per page.
+* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.
 
 :::info
-&#x20;You can **read** the response of the **List message** command by using `<QUERY_NAME.data.messages>`
+You can **read** the response of the **List message** command by using `<QUERY_NAME.data.messages>`
 :::
 
-## Fetch Message
+## Fetch message
 
 You can use the Fetch Message command to read a sent message. **** To read a sent message, you can set the below parameter values:
 
 ![How to read a sent message?](</img/Datasources__Twilio__Queries__Command__Fetch_Message.png>)
 
-* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.&#x20;
+* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.
 * **Message SID** - Add the Message SID for the message you want to read.
 
 :::info
@@ -226,26 +226,26 @@ You can read the **Message SID** in the [create message](twilio.md#create-messag
 
 ```
 
-## **Delete Message**
+## **Delete message**
 
 You can use the Delete Message command to delete the delivered message. To delete a delivered message, you can set up the parameter values below:
 
 ![How to delete a delivered message?](</img/Datasources__Twilio__Queries__Command__Delete_Message.png>)
 
-* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.&#x20;
+* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.
 * **Message SID** - Add the **Message SID** for the message you want to read.
 
 :::info
 You can get the **Message SID** from [List Message](twilio.md#list-message) Command or when you **create** a message using [Create Message](twilio.md#create-message) command.
 :::
 
-## Update Message
+## Update message
 
 You can use the Update Message command to **update/cancel** a **scheduled** message. For updating or canceling a scheduled message, supply the parameter values as below:
 
 ![How to update/cancel a scheduled message?](</img/Datasources__Twilio__Queries__Command__Update_Message.png>)
 
-* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.&#x20;
+* **Twilio Account SID** - Add your [Twilio Account SID](twilio.md#get-twilio-account-info) to this field.
 * **Message SID** - Add the **Message SID** for the message you want to read.
 
 :::info
@@ -259,8 +259,8 @@ You can get the **Message SID** from [List Message](twilio.md#list-message) Comm
 You can change the [Query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings.md) for all the queries by clicking the **settings** tab.
 :::
 
-## **WhatsApp and Text Message Integration**
+## WhatsApp and text message integration
 
-You can use the above commands to send a text or a WhatsApp message. For a WhatsApp integration, add the keyword `whatsapp:` in the **To** and **From** fields in the commands. You can read more about [using Twilio phone numbers with WhatsApp](https://www.twilio.com/docs/whatsapp/api#using-twilio-phone-numbers-with-whatsapp).
+You can use the commands to send a text or a WhatsApp message. For a WhatsApp integration, add the keyword `whatsapp:` in the **To** and **From** fields in the commands. You can read more about [using Twilio phone numbers with WhatsApp](https://www.twilio.com/docs/whatsapp/api#using-twilio-phone-numbers-with-whatsapp).
 
 With Twilio Appsmith integration, you can build an easy and intuitive interface to enhance your customer engagement.

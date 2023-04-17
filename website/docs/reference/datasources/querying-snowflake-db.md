@@ -9,7 +9,7 @@ On Appsmith, it’s pretty straightforward to establish a connection with any da
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
-## Connection Settings
+## Connection settings
 
 Appsmith needs the following parameters for connecting to a Snowflake database:
 
@@ -35,7 +35,7 @@ Please fill in the following parameters:
 
 ## Connecting Snowflake on Appsmith <a href="#heading-getting-started-connecting-snowflake-on-appsmith" id="heading-getting-started-connecting-snowflake-on-appsmith"></a>
 
-What we need to make the connection are the endpoint, database name, and user credentials. With this in mind, let’s get started.
+What you need to make the connection are the endpoint, database name, and user credentials. With this in mind, let’s get started.
 
 * On your Appsmith application, click on the `+` icon next to Datasources on the left navigation bar under Page1.
 * Next, navigate to the Create New tab and choose **SnowflakeDB data source**.
@@ -48,22 +48,22 @@ What we need to make the connection are the endpoint, database name, and user cr
 
 <VideoEmbed host="youtube" videoId="7ZFvDXiIez0" title="Connecting Snowflake on Appsmith" caption="Connecting Snowflake on Appsmith"/>
 
-* Next, click on the `Test` button at the bottom right of the screen. It will help you understand whether your configuration is valid or not. If it returns a successful message, hit the ‘**Save**’ button to establish a secure connection between Appsmith and SnowflakeDB.
+* Next, click on the `Test` button at the bottom right of the screen. It helps you understand whether your configuration is valid or not. If it returns a successful message, hit the ‘**Save**’ button to establish a secure connection between Appsmith and SnowflakeDB.
 
 :::info
-After the connection is established, we can see all the sample data (tables) under the connected data source.
+After the connection is established,you can see all the sample data (tables) under the connected data source.
 :::
 
 ![](/img/Snowflake_db_crud_sa9.jpeg)
 
-Now that we have the sample data, we will see how you query the snowflake database in the next section.
+Now that you have the sample data, you can query the snowflake database in the next section.
 
 ## Querying Snowflake
 
 Snowflake databases can be queried using the SQL syntax provided in their [command reference documentation](https://docs.snowflake.com/en/sql-reference-commands.html). All Snowflake queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Let's look at an example to see how to query the Snowflake database.
 
-* Click on the `+` icon next to the `datasources` and choose to Create New + from the **SnowflakeDB** CRUD data source.
-* Rename the query to _**getCustomers.**_
+* Click the `+` icon next to the `datasources` and choose to Create New + from the **SnowflakeDB** CRUD data source.
+* Rename the query to _**`getCustomers`.**_
 * Copy the following SQL script to query all the Customers from the CUSTOMER table:
 
 ```
@@ -78,7 +78,7 @@ The video below demonstrates how to query the Snowflake database.
 
 You have your query; you can bind it to various widgets. You can take reference from [this ](https://appsmith.hashnode.dev/a-simple-front-end-for-your-snowflakedb-datasource)example and learn how to build a frontend that can connect to [SnowflakeDB](https://www.snowflake.com/) as a data source.
 
-## Using Queries in applications
+## Using queries in applications
 
 Once you have successfully run a Query, you can use it in your application to
 

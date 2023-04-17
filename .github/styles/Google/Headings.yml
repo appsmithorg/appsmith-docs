@@ -112,3 +112,15 @@ exceptions:
   - Signed
   - File
   - Files
+  - WhatsApp
+  - Redshift
+  - Elasticsearch
+  - Snowflake
+  - ArangoDB
+  - Camera
+  - Image
+  - Container 
+  - Instance 
+  - Git
+  - OS
+  - APIs/Query

@@ -270,9 +270,6 @@ fieldState
 isRequired
 Generate JSON Form
 chartData
-<<<<<<< HEAD
-dataSource
-=======
 dataSource
 Moment
 Datepicker
@@ -292,6 +289,7 @@ Iframe
 iframe
 CSS
 onwards
+time frame
 selectedMarker
 isOpen
 onClose
@@ -323,4 +321,11 @@ Id
 Upcloud
 Modal
 config
->>>>>>> main
+Treeselect
+PageSize
+geospatial
+sanitization
+Arango
+StoreValue
+updateUsers
+getUsers
