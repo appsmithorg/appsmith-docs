@@ -23,7 +23,7 @@ When you push your feature branch to the remote repository, you can see the depl
 Each branch has its unique URL that can be shared to view its deployed version in the following format:
 
 ```javascript
-<Appsmith-app-URL>?branch=<branch-name>
+<APPSMITH-APP-URL>?branch=<BRANCH-NAME>
 ```
 
 ## File changes

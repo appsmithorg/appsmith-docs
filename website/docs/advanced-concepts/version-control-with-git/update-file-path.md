@@ -13,5 +13,5 @@ APPSMITH_GIT_ROOT= <path-to-repo-directory>
 2. Restart the container to apply changes.
 
 :::info
-If the file path isn't present, git repositories are cloned, but this isn't persistent, and Appsmith would try to clone the repositories in case they got deleted by docker restart, etc.
+If the file path isn't present, Git repositories are cloned, but this isn't persistent, and Appsmith would try to clone the repositories in case they got deleted by docker restart, etc.
 :::

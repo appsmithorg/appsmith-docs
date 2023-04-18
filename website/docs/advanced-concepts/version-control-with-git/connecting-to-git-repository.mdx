@@ -4,7 +4,7 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Connect To a Git Repository
+# Connect Git Repository
 
 The first step to using version control in Appsmith is to connect your remote repository with the app. Please follow the steps given below:
 
@@ -24,12 +24,11 @@ Version Control works with any Git hosting service that supports **SSH protocol*
     ![Click to generate deploy key](/img/generate_deploy_key.png)
 
 3. Pick the key that's compatible with your Git hosting service. Appsmith supports two types of keys -  **ECDSA 256** and **RSA 4096**. To select a key, Click **︙** icon and select the desired key.
+4. Copy the **SSH key**.
 
 ## Add the deploy key in the Repository
-
-Copy the **SSH key** generated in the preceding section. 
-
-<Tabs queryString="current-edition">
+ 
+<Tabs queryString="version-control">
 <TabItem label="GitHub" value="github">
 
 1. In your repository, go to the **Settings** tab.
