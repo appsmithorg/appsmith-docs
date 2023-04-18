@@ -47,7 +47,7 @@ job.batch/imago-27473940   1/1           16s        12m
 
 Before you start the migration process, ensure that the below prerequisites are met.
 
-1. Install `kubectl` - `kubectl` is the command-line interface for Kubernetes. It allows you to run commands against Kubernetes clusters to manage applications and other resources. To install kubectl, follow the instructions for your platform from the official [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl).
+1. Install `kubectl` - `kubectl` is the command-line interface for Kubernetes. It allows you to run commands against Kubernetes clusters to manage applications and other resources. To install `kubectl`, follow the instructions for your platform from the official [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/#kubectl).
 2. Once `kubectl` is installed, configure it to connect to your cluster. Follow one of the available guides below for your platform:
      * Minikube: [Setup Kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
      * Google Cloud Kubernetes: [Configuring cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)

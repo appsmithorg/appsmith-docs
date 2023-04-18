@@ -37,7 +37,7 @@ A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the 
 
 
 
-<Tabs>
+<Tabs queryString="current-connection-type">
   <TabItem value="scsf" label="Standard Connection String Format" default>
 
 A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:

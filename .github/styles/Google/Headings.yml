@@ -124,3 +124,15 @@ exceptions:
   - Git
   - OS
   - APIs/Query
+  - Group
+  - Cloud
+  - Ansible
+  - IdP
+  - Ping
+  - Identity
+  - Active
+  - Auth0
+  - PingID
+  - Active
+  - Directory
+
