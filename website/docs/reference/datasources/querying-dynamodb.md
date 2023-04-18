@@ -7,6 +7,11 @@ This page describes how to connect your application to your DynamoDB database an
 
 ## Connect to DynamoDB
 
+<figure>
+  <img src="/img/dynamodb_config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB datasource." />
+  <figcaption align="center"><i>Configuring a DynamoDB datasource.</i></figcaption>
+</figure>
+
 To add a DynamoDB datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **DynamoDB** button. Your datasource is created and you are taken to a screen to configure its settings.
 
 Appsmith needs the following parameters for connecting to a DynamoDB instance. All required fields are suffixed with an asterisk (\*):
@@ -16,6 +21,11 @@ Appsmith needs the following parameters for connecting to a DynamoDB instance. A
 * **AWS Secret Access Key:** Provide your AWS Secret Access Key. This value is accessible from your AWS security credentials page. Read further to learn how to [find your AWS secret key](https://aws.amazon.com/blogs/security/how-to-find-update-access-keys-password-mfa-aws-management-console/).
 
 ## Create queries
+
+<figure>
+  <img src="/img/dynamodb_query.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB scan query." />
+  <figcaption align="center"><i>Configuring a DynamoDB scan query.</i></figcaption>
+</figure>
 
 You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to DynamoDB by selecting the **+ New Query**  button on the DynamoDB datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your DynamoDB datasource. You'll be brought to a new screen where you can write your query. You can query **DynamoDB** tables using any of the [officially supported operations](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations.html).
 
