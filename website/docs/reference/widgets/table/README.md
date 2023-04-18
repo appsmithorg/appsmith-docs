@@ -111,12 +111,12 @@ https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 
 Cursor-based pagination is a technique used to fetch a large dataset in smaller sets while also improving performance and scalability. Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-You can use cursor-based pagination by setting up queries that use cursors to fetch data. The widget's `previousPageVisited` and `nextPageVisited` reference properties keep track of which pages have been visited, and you can utilize them along with your queries to implement efficient and scalable pagination for your large datasets.
+You can use cursor-based pagination by setting up queries that use cursors to fetch data. The widget's `previousPageVisited` and `nextPageVisited` reference properties keep track of which pages have been visited, and you can utilize them along with your queries. For instance, to add cursor-based pagination in a user's database, you can use this query:
 
-example
-
-
-
+```sql
+SELECT * FROM users {{Table2.nextPageVisited ?  "WHERE id > "+ " "+ Table2.tableData[Table2.tableData.length-1]["id"] : Table2.previousPageVisited ? "WHERE id <"+ " "+ Table2.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{Table2.pageSize}} ;
+```
+This SQL query selects all columns from the `users` table and applies cursor-based pagination to limit the number of results returned. The `WHERE` clause is dynamically generated based on whether the user has already visited the `next` or `previous` page, and orders the results by `ID`. The `LIMIT` clause limits the number of rows returned using `Table2.pageSize`.
 
 
 ## Server-side searching
@@ -145,23 +145,26 @@ Watch this video to learn how to set up [server-side search](https://www.youtube
 
 ## Server-side filtering
 
-Server-side filtering uses the same principles as described in [server side searching](#server-side-searching):some term or value is sent to the database or API to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match to return in the query's response.
 
-Server-side filtering requires using another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users with a list of supported filters to choose from.
+Server-side filtering is similar to server-side searching, where a term or value is sent to the database or API to filter out unwanted data from the requested dataset. Instead of searching for a term, server-side filtering involves selecting a value that records must match to return in the query response. 
 
-1. Drag a select widget to the canvas and add options that you might use to filter your data
-2. Set the table widget's **onOptionChange** event to call your query. 
-3. Pass the Select widget's `selectedOptionValue` within the API request/query string
+To enable server-side filtering, you can use widgets such as the [Select widget](/reference/widgets/select/) to provide users with a list of supported filters to choose from.
 
-As a SQL query:
-```sql
-SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
-```
+1. Drag a select widget to the canvas and add options that you might use to filter your data.
 
-As an API request with URL parameters:
-```
-https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
-```
+2. Create a query, and add the Select widget's `selectedOptionValue`:
+
+    As a SQL query:
+    ```sql
+    SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
+    ```
+
+    As an API request with URL parameters:
+    ```
+    https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
+    ```
+
+3. Set the table widget's **onOptionChange** event to run the query. 
 
 ## Edit table
 
@@ -196,11 +199,6 @@ To select multiple rows at the same time, you can enable the **Enable Multi-row 
 
 ---
 **Example:** suppose you want to d
-
-1. Drag a JSON form
-2. In the **Source Data** property, add:
-
-{{{{Table1.selectedRow}}}}
 
 ## Refresh table data
 
