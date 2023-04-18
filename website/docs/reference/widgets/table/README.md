@@ -184,22 +184,6 @@ Learn more about [Column settings](/reference/widgets/table/column-settings).
 
 
 
-## Access table data
-
-If you want to retrieve the selected values from a Table widget and bind them to other widgets or JavaScript functions, you can use the following properties:
-
-* selectedRow
-* selectedRows
-* tableData	
-
-
-To trigger actions on row selection in a table, you can use the **onRowSelected** event. When a user clicks on a row, you can run a query or execute a JavaScript function using this event. For example, you can display a Modal with the data from the selected row.
-
-To select multiple rows at the same time, you can enable the **Enable Multi-row Selection** property in the Table. To access the data from the selected rows, you can use the `selectedRows` reference property. This property provides an array of objects, where each object represents a selected row, and the object properties represent the data from that row.
-
----
-**Example:** suppose you want to d
-
 ## Refresh table data
 
 To keep your table updated with the latest data from your datasource, you need to ensure that you refresh the table whenever new data is submitted. By default, the table won't automatically reflect any changes made to the datasource, so you would need to use events or code to re-run the query that populates your table with data.
