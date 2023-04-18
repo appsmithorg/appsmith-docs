@@ -271,3 +271,4 @@ dataSource
 DynamoDB
 PutItem
 UpdateItem
+DeleteItem

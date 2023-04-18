@@ -108,6 +108,15 @@ Depending on your use-case, there are several operations that can return records
 
 #### Example
 
+:::info
+This example uses a sample DynamoDB table. Follow along by using the following credentials to create your datasource:
+```
+Region: us-east-2
+AWS Access Key ID: AKIAZ5TOIQTW3G52QNU5
+AWS Secret Access Key: sYulBX1SL+EEP0ebXofSn8Vl5g3mW88mgLY3RBte
+```
+:::
+
 > Fetch records with matching `team_id` values from a table `users`, 10 records at a time, and put them into a Table widget `UsersTable`. The table has columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
 **Setup:** create a query called `FetchUsers` based on your DynamoDB datasource. This query should use the **Query** operation. Create a [Table widget](/reference/widgets/table) called `UsersTable`. Then create a JS Object called `utils` that contains the following code to handle logic and formatting for paginating your query:
@@ -202,6 +211,15 @@ Use PutItem to insert a new record or replace an existing record. Any existing r
 
 #### Example
 
+:::info
+This example uses a sample DynamoDB table. Follow along by using the following credentials to create your datasource:
+```
+Region: us-east-2
+AWS Access Key ID: AKIAZ5TOIQTW3G52QNU5
+AWS Secret Access Key: sYulBX1SL+EEP0ebXofSn8Vl5g3mW88mgLY3RBte
+```
+:::
+
 > Add a new record to a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
 **Setup:** create a query called `CreateUser` based on your DynamoDB datasource. This query should use the **PutItem** operation. You might want to create a [Table widget](/reference/widgets/table) set up with data like the example from the previous [fetch records](#fetch-records) section.
@@ -275,6 +293,15 @@ Use UpdateItem to change specific attributes of an existing record. You only nee
 ---
 
 #### Example
+
+:::info
+This example uses a sample DynamoDB table. Follow along by using the following credentials to create your datasource:
+```
+Region: us-east-2
+AWS Access Key ID: AKIAZ5TOIQTW3G52QNU5
+AWS Secret Access Key: sYulBX1SL+EEP0ebXofSn8Vl5g3mW88mgLY3RBte
+```
+:::
 
 > Modify an existing record in a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
@@ -353,6 +380,15 @@ Use DeleteItem to delete a specific record.
 ---
 
 #### Example
+
+:::info
+This example uses a sample DynamoDB table. Follow along by using the following credentials to create your datasource:
+```
+Region: us-east-2
+AWS Access Key ID: AKIAZ5TOIQTW3G52QNU5
+AWS Secret Access Key: sYulBX1SL+EEP0ebXofSn8Vl5g3mW88mgLY3RBte
+```
+:::
 
 > Delete a record from a table `users`.
 
