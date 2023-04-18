@@ -24,13 +24,15 @@ JSON Form automatically detects the appropriate field type for each value. For i
 
 You can display dynamic data in a JSON Form widget by binding the response from a query or a JS function to the **Source Data** property. This allows the form to update dynamically as the data changes in the database or API.
 
-For example, suppose you have fetched data from an API using the query `getData` and want to generate a JSON Form using the response returned by the query. Display the data by binding the query response in the **Table Data** property of the Table widget `tbluserData` as shown below:
+---
+
+**Example**: suppose you want a master-detail form that shows details of each record in a form when you select a row in a table. Suppose you have fetched data from the [mock database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) using a SELECT query `fetchUserData`. You can display the fetched data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
 ```js
- {{getData.data}}
- ```
+{{fetchUserData.data}}
+```
 
- To automatically generate the fields in the JSON Form when a table row is selected, add the below code in the **Source Data** property:
+To automatically generate the fields in the JSON Form when a table row is selected, add the below code in the **Source Data** property:
 
 ```js
 {{tbluserData.selectedRow}}
@@ -38,59 +40,45 @@ For example, suppose you have fetched data from an API using the query `getData`
 
 You can click on an individual row in the Table and update data in the form fields.
 
-You can also enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys change or if a data type changes from string to a number. Note that this overrides any configuration you are providing through data transformation using JS.
 
-#### Nested arrays
+#### Auto generate form
 
-You can create complex JSON forms that have nested array structures. Here's an example of a complex nested JSON form schema where each item has its own unique ID, type, name, image, and thumbnail properties. Note that the JSON Form only supports up to three levels of nested arrays.
+You can enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys in the JSON data change or if a data type changes, for example, from string to a number. 
 
-```json
-{
-	"id": "1",
-	"type": "icecream",
-	"name": "Vanilla Cone",
-	"image":
-		{
-			"url": "img/01.png",
-			"thumbnail":
-		{
-			"url": "images/thumbnails/01.png",
-			"width": 32,
-			"height": 32
-		}
-		}
-}
-```
+However, it's important to note that enabling this feature overrides any custom configurations that you are providing through data transformations using JavaScript.
 
-<figure>
-  <img src="/img/jsonfrom-1.png" style= {{width:"700px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+#### Field configuration
 
-## Form validation
+In the **Field Configuration** section of the JSON Form's property pane, you can add fields or update each field's settings by clicking the cog icon ⚙︎ next to it. You can customize each form field using properties, for instance, updating the field type, setting validation and style properties, and triggering actions using event listeners. You can select any one of the following options from the **Field Type** property to update the widget type for that field on the JSON Form:
 
-Validating user input is essential for ensuring correct and formatted data. Appsmith provides validation properties such as Valid, Regex, and Required for **Fields** property. 
+* Array
+* Checkbox
+* Currency Input
+* Datepicker
+* Email Input
+* Multiselect
+* Multi-line Text Input
+* Number Input
+* Object
+* Password Input
+* Phone Number Input
+* Radio Group
+* Select
+* Switch
+* Text Input
 
-- The **Valid** property, which checks input against a code expression,
-- The **Regex** property, which checks that input matches a regular expression,
-- The **Required** property, which indicates that the field must be filled out.
+Each field type has different sets of events and configurations that can be customized. For example, the Number Input field can have a min and max value, while the Datepicker field can have a specific date format.
 
-When **Disabled Invalid Forms** is turned on, the JSON Form widget checks the validation properties, and the **Submit** button is automatically disabled if there are failing checks. Using this property guarantees that all user input meets the criteria you have defined in the form fields.
-
-## Access form data
-
-
-The values entered in the JSON form are stored in the `formData` property. 
-
-For instance, if your form has an ID field and you want to access its value using JavaScript or widget bindings, you can use
-
-
-```js
-{{JSONForm.formData.ID}},
-```
-
+The configuration options for each field type may include default values, placeholder text, validation rules, and more. These options can be adjusted to fit the specific needs of the form being created.
 
 ## Submit form data
+
+To access form data, the values entered in the JSON form are stored in the `formData` property. For instance, if you have a JSON form with a name field, you can access its value using:
+
+```js
+{{JSONForm.formData.name}}
+```
+
 
 To submit form data, you can use the `onSubmit` event. This event allows you to perform an action when the user submits the form.
 
@@ -108,6 +96,23 @@ VALUES
 ```
 
 To trigger this insert query, you can set the `onSubmit` event of the **Submit** button on the JSON Form. 
+
+
+## Form validation
+
+Validating user input is essential for ensuring correct and formatted data. Appsmith provides validation properties such as Valid, Regex, and Required for **Fields** property. 
+
+- The **Valid** property, which checks input against a code expression,
+- The **Regex** property, which checks that input matches a regular expression,
+- The **Required** property, which indicates that the field must be filled out.
+
+When **Disabled Invalid Forms** is turned on, the JSON Form widget checks the validation properties, and the **Submit** button is automatically disabled if there are failing checks. Using this property guarantees that all user input meets the criteria you have defined in the form fields.
+
+
+## Clear form fields
+
+To clear form fields, you can enable the **Show Reset** property. When the Show Reset property is enabled, a reset button is added to the form. Clicking this button resets all fields in the form to their default values. This is useful if a user wants to start over with a new entry or if they entered the wrong information and need to clear the form.
+
 
 
 ## Properties
@@ -189,4 +194,4 @@ Here are some common errors that you may see when using the JSON Form widget:
 
 * [Source data exceeds 50 fields](/help-and-support/troubleshooting-guide/widget-errors#source-data-exceeds-50-fields)
 
-If you run into any other issues while working with the widget, check out the guide on [widget errors guide](/help-and-support/troubleshooting-guide/widget-errors). If the guide doesn't cover your issue, reach out to the <a href="#!" onclick="Intercom('show')">support team</a>.
+If you encounter other issues while working with the widget, see [widget errors](/help-and-support/troubleshooting-guide/widget-errors). If the guide doesn't cover your issue, contact the [support team](mailto:support@appsmith.com).

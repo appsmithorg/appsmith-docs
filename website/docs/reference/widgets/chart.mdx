@@ -36,30 +36,31 @@ Appsmith offers several built-in charts to represent your data. With the **Chart
 
 You can display dynamic data from queries or JS functions by binding the response to the **Series Data** property. 
 
-For example, suppose you have a database containing information about assets in your organization, such as their types and the date they were purchased. You can create a query `getAssetsByType` that groups the assets by type and count how many there are of each type, as shown below:
-```sql
-select type as x, count (*) as y from asset group by type
-```
+---
 
-This query returns data in the required format, where `x` represents the asset type and `y` represents the count of assets of that type. To bind the response returned by the query to the chart, add `{{assetquery.data}}` in the chart widget's **Series Data** property. This displays a chart that updates dynamically based on the response sent by the query.
+**Example**: suppose you have a database with user data that includes a column indicating the gender of each user. You want to get the number of males and females in the database and create a chart to display the results.
+
+1.  Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+
+```sql
+SELECT gender, COUNT(*) as count
+FROM users
+GROUP BY gender;
+```
+This SQL query counts the number of users in a database grouped by their gender and displays the result with a count for each gender.
+
+2. Next, lets use JavaScript to **transform the data** by adding it to the **Series Data** property.
+
+```js
+{{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}
+```
+The code uses the `map()` function to transform each item in the `fetchUserData.data` array into an object with an `x` and a `y` key.
+
 
 :::note
 If the query fails and there is no default data specified, the chart doesn't render and appears empty.
 :::
 
-### Transform data using JS
-
-You can also use JavaScript code to transform the data retrieved to match the expected structure in the chart.
-
-For example, suppose you have business revenue data fetched from an API `getRevenue` and want to display it in a chart. You can transform the data using the `map()` JS function as shown below:
-
-```js
-{{getRevenue.data.map( p => ({x: p.year, y: p.amount}))}}
-```
-
-The code uses the `map()` function to transform each item in the `getRevenue.data` array into an object with an `x` and a `y` key. 
-
-In this example, `x` represents the year, and `y` represents the amount of money for that year. The transformed data displays the chart that updates dynamically based on the response sent by the API query.
 
 
 
@@ -159,7 +160,7 @@ Appsmith offers integration with [FusionCharts](https://www.fusioncharts.com/dev
 ### Display data in custom chart
 In the **Custom Fusion Chart** property, you need to specify "type" for chart type and "dataSource" for the data to create a custom FusionChart. Below is an example of a configuration for the Custom Fusion Chart property:
 
-```
+```json
 {
   "type": "",
   "dataSource": {
@@ -173,12 +174,46 @@ In the **Custom Fusion Chart** property, you need to specify "type" for chart ty
 
 The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. You can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) documentation to learn more about these charts.
 
+```json
+//example
+"type": "column2d"
+```
+This creates a 2D column chart. The value of the `type` property is case-sensitive.
+
 #### Datasource
 
 The datasource defines the customization options and the data points to create a chart. It includes two attributes: **chart** and **data**.
 
-The chart object can customize the chart and includes options like caption, xAxisName, and yAxisName. On the other hand, the data attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`.
+* **Chart**:
 
+The `chart` attribute is an object that can be used to customize the overall appearance of the chart. It includes options such as the chart `title`, `x-axis` and `y-axis labels`, chart `width` and `height`, and more. Here are some most commonly used properties of the `chart` object:
+
+```json
+//example
+ "chart": {
+      "caption": "Monthly Revenue for the year 2021",  //Sets the main title of the chart.
+      "xAxisName": "Month",  // Sets the label for the x-axis.
+      "yAxisName": "Revenue",  // Sets the label for the y-axis.
+      "theme": "fusion"  //Sets the color scheme for the chart.
+    },..
+```
+* **Data**: 
+
+The "data" attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`. It's where you specify the actual data that you want to display in the chart.
+
+Here is an example of how to set the "data" array in the "dataSource" property:
+
+```json
+ "data": [
+      {
+        "label": "Jan",
+        "value": 42000
+      },
+      {
+        "label": "Feb",
+        "value": 810000
+      },..
+```
 
 
 #### Examples

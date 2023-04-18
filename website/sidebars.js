@@ -116,6 +116,7 @@ const sidebars = {
                       },
                       items: [
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
@@ -165,6 +166,7 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/appsmithctl',
+                'getting-started/setup/instance-management/update-appsmith',
                 'getting-started/setup/instance-management/maintenance-window',
               ],
             },
