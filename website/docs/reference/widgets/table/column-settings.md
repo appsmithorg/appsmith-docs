@@ -1,4 +1,4 @@
-# Column Settings
+# Configure Column
 
 You can customize each table column individually through a set of properties by clicking on its gear icon in the table's properties pane.
 

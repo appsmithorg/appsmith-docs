@@ -5,13 +5,13 @@ toc_max_heading_level: 3
 
 # Table
 
-This page explains how to use a Table widget to display data in rows and columns, trigger actions based on user row selection, and work with paginated data sets of any size.sizable paginated data sets.
+This page explains how to use a Table widget to display data in rows and columns, trigger actions based on user row selection, and work with paginated data sets of any size.
 
 <VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="Using the Table Widget" caption="Using the Table Widget"/>
 
-## Display static data 
+## Display data 
 
-To display static data in a Table widget, you can use the **Table Data** property.
+To display data in a Table widget, you can use the **Table Data** property.
 
  The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example, the table has four columns: `step`, `task`, and `status`. 
 
@@ -58,11 +58,11 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 With this configuration, the Table widget displays all the data from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the data in the Table widget.
 
 ---
-**Example 2:** if the data retrieved from the query is not in the desired format, you can use **JavaScript to transform** it before passing it to the Table widget.
+**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Table widget.
 
 1. Use the `users` table in the sample database and fetch the data using the `fetchData` SQL query.
 
-2. Use JavaScript to **transform the data** by adding it to the **Options** property.
+2. Use JavaScript to transform the data by adding it to the **Options** property.
 
 ```javascript
 {{fetchData.data.map((user) => {
@@ -78,27 +78,23 @@ With this configuration, the Table widget displays all the data from the query. 
 This code is using the `map()` function to extract specific data, such as the `name`, `email`, and `country`, from the `fetchData` query. 
 
 
-## Server side pagination
+## Server-side pagination
 
-When displaying large datasets from APIs or queries, it's important to use server-side pagination to avoid performance issues. Appsmith supports responses up to 5 MB, so pagination is necessary to request smaller chunks of data
+When displaying large datasets from queries, it is recommended to use server-side pagination. Appsmith supports responses up to 5 MB.
 
 To paginate the responses and request smaller chunks of data at a time:
 
-1. Enable the server-side pagination property in the table
-2. Call the API / query via the **onPageChange** event
-3. Configure pagination in the API / query using the pagination method.
+1. Enable the **Server-side pagination** property in the table
+2. Run the query via the **onPageChange** event
+3. Configure pagination in the query using the pagination method.
 
 :::tip
 Turning on **Server side pagination** also enables the **Total records** property. This property is useful for helping to control the page buttons in the table header.
 :::
 
-### Offset based pagination
+### Offset-based pagination
 
-Offset-based pagination is a technique used to fetch a large dataset in smaller sets. It works by using the page number and size to calculate the offset of records to fetch from a database or API. The offset is calculated by multiplying the page number minus one by the page size, as shown in the formula:
-
-```
-Table1.pageOffset = (Table1.pageNo - 1) * Table1.pageSize
-```
+Offset-based pagination is a technique used to fetch a large dataset in smaller sets. It works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
 To retrieve the correct subset of data using offset-based pagination, the `pageOffset` property, as well as the `pageNo` and `pageSize` values, can be referenced in an API or query using `curly braces`. For instance, to add offset-based pagination in a user's database, you can use this query:
 
@@ -106,99 +102,55 @@ To retrieve the correct subset of data using offset-based pagination, the `pageO
 ```sql
 SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }};
 ```
-Similarly, in an API, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
+Similarly, in an API query, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
 
 ```
 https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 ```
-### Cursor based pagination
+### Cursor-based pagination
 
 Cursor-based pagination is a technique used to fetch a large dataset in smaller sets while also improving performance and scalability. Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
+You can use cursor-based pagination by setting up queries that use cursors to fetch data. The widget's `previousPageVisited` and `nextPageVisited` reference properties keep track of which pages have been visited, and you can utilize them along with your queries to implement efficient and scalable pagination for your large datasets.
+
+example
 
 
-## Edit table data
 
 
-To edit and update table data directly from the UI, you can use Inline editing. To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can double-click on a cell to edit its contents. 
 
-To update the data in a table, you can set the **onSubmit** event for each individual column. This event can be used to perform an action, such as updating a database, when the edited data cell is saved.
+## Server-side searching
 
-If you select Multi Row from the **Update mode** property, you can edit multiple rows at the same time. The data would be automatically updated as you make changes.
+Server-side search allows you to request specific records from the server by passing search terms, instead of requesting a full set of data and searching through it on the client side. 
 
+You can use the search input on the table header and `searchText` reference property to filter out records being displayed on the table. The table's `onSearchTextChange` event is triggered whenever the text in the search bar is changed, allowing you to configure the table to query its datasource for the appropriate results.
 
-Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+To use the server-side search with the Table widget, follow these steps:
 
-## Columns
-The **Columns** section in the Table widget properties panel provides a range of options for managing table columns. You can edit the properties of existing columns, including their name, data type, and computed value. Additionally, you can add new custom columns, rearrange columns, and hide columns as needed.
+1. Create a query, and add the `searchText` reference property to the query:
 
-### Format columns 
-Formatting table columns is important for clear data presentation. By using the gear icon located in the properties pane of a table, you can access a range of properties to customize each column to your specific needs. You can adjust the **Column Type** property to buttons, checkboxes, icons, images, and more. Additionally, you can use **Computed value** property that allows you to dynamically compute and display data in a table column based on custom logic or expressions.  
+   As a SQL statement:
+   ```sql
+   SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
+   ```
 
----
-**Example**: Prefix example...
+   You can also pass the `searchText` property as a URL parameter in an API request:
+   ```
+   https://mock-api.appsmith.com/users?name={{Table1.searchText}}
+   ```
 
+2. Configure the query to run when the `onSearchTextChange` event is triggered in the table's properties pane.
 
-### Freeze columns
+Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
 
-The Freeze Columns feature allows you to freeze the columns of the table while keeping the rest of the table scrollable. This can be useful when you have a large table with many columns and want to keep some of the important columns always visible.
+## Server-side filtering
 
- You can freeze columns by turning on the **Allow Column Freeze** property and selecting to freeze a column on either the left or right side of the table. You can also freeze or unfreeze columns via individual column properties.
-
- ![Use the column header arrow to freeze or unfreeze columns](/img/as-freeze-column.png)
-
-
-Learn more about [Column settings](/reference/widgets/table/column-settings).
-
-
-## Rows
-
-### Add a new row
-
-To add a new row, you first need to turn on the **Allow adding a row** property. This property enables the user to add new rows to the table by clicking on the **+ New Row** button on the table.
-
-To ensure that the data entered in the new row is saved to a database, you can use the **onSave** property. This property allows you to define a custom function that would be triggered whenever a new row is added
-
-### Trigger actions on row selection
-
-To trigger actions on row selection in a table, you can use the **onRowSelected** event. When a user clicks on a row, you can perform a query or execute a JavaScript function using this event. For example, you can display a Modal with the data from the selected row.
-
-To select multiple rows at the same time, you can enable the **Enable Multi-row Selection** property in the Table. To access the data from the selected rows, you can use the `selectedRows` reference property. This property provides an array of objects, where each object represents a selected row, and the object properties represent the data from that row.
-
-
-## Search, filter, and sort
-
-
-### Server side search
-
-Use server side search to make requests that return just the records you need; rather than requesting a full set of data from the server and then searching through it on the client, you can pass search terms to the server to help it return the records you're looking for. This can significantly improve response times when working with large data sets.
-
-A search input is available on the table header to filter out records being displayed on the table. You can access the text in the search bar with `Table1.searchText`; anytime that text is changed, the table's `onSearchTextChange` event is triggered. Using the search text and the related event, you can configure your table to query its datasource for the appropriate results:
-
-<VideoEmbed host="youtube" videoId="3ayioaw5uj8" title="How To Setup Server-Side Search For The Table Widget" caption="How To Setup Server-Side Search For The Table Widget"/>
-
-1. Call the API / query with the **onSearchTextChange** event in the table's properties pane.
-2. Pass the value of `Table1.searchText` within the API request / query.
-
-As a SQL string:
-```sql
-SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
-```
-
-As an API request with URL parameters:
-```
-https://mock-api.appsmith.com/users?name={{Table1.searchText}}
-```
-
-
-### Server side filter
-
-Server side filtering uses the same principles as described in [server side searching](#server-side-searching):some term or value is sent to the database or API to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match to return in the query's response.
+Server-side filtering uses the same principles as described in [server side searching](#server-side-searching):some term or value is sent to the database or API to filter out unnecessary data from the requested dataset. In this case, you choose a value that records must match to return in the query's response.
 
 Server-side filtering requires using another widget, such as a [Select widget](/reference/widgets/select/), which you can use to provide users with a list of supported filters to choose from.
 
 1. Drag a select widget to the canvas and add options that you might use to filter your data
-2. Set the table widget's **onOptionChange** event to call your API / query 
+2. Set the table widget's **onOptionChange** event to call your query. 
 3. Pass the Select widget's `selectedOptionValue` within the API request/query string
 
 As a SQL query:
@@ -211,21 +163,56 @@ As an API request with URL parameters:
 https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
 ```
 
-## Update table data
+## Edit table
 
-To keep your table updated with the latest data from your datasource, you need to ensure that you refresh the table whenever new data is submitted. By default, the table won't automatically reflect any changes made to the data source, so you would need to use events or code to re-run the query that populates your table with data.
 
-**Example 1:**
+To edit and update table data directly from the UI, you can use Inline editing. To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can double-click on a cell to edit its contents. 
 
-This can be as simple as creating a [button widget](/reference/widgets/button) whose `onClick` event is bound to `<query_name>.run()`. Here, `<query_name>` is the name of the query that gets data for your table (and is probably referenced in the table's **Table data** field). When the button is clicked, the query is run, and the table is given fresh data.
+To update the data in a table, you can set the **onSubmit** event for each individual column. This event can be used to perform an action, such as updating a database, when the edited data cell is saved.
 
-**Example 2:** 
+If you select Multi Row from the **Update mode** property, you can edit multiple rows at the same time. The data would be automatically updated as you make changes.
+
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+
+### Column formatting
+The Columns section in the Table widget properties panel provides a range of options for managing table columns. You can edit the properties of existing columns, including their name, data type, and computed value. Additionally, you can add new custom columns, rearrange columns, and hide columns as needed.
+
+Learn more about [Column settings](/reference/widgets/table/column-settings).
+
+
+
+## Access table data
+
+If you want to retrieve the selected values from a Table widget and bind them to other widgets or JavaScript functions, you can use the following properties:
+
+* selectedRow
+* selectedRows
+* tableData	
+
+
+To trigger actions on row selection in a table, you can use the **onRowSelected** event. When a user clicks on a row, you can run a query or execute a JavaScript function using this event. For example, you can display a Modal with the data from the selected row.
+
+To select multiple rows at the same time, you can enable the **Enable Multi-row Selection** property in the Table. To access the data from the selected rows, you can use the `selectedRows` reference property. This property provides an array of objects, where each object represents a selected row, and the object properties represent the data from that row.
+
+---
+**Example:** suppose you want to d
+
+1. Drag a JSON form
+2. In the **Source Data** property, add:
+
+{{{{Table1.selectedRow}}}}
+
+## Refresh table data
+
+To keep your table updated with the latest data from your datasource, you need to ensure that you refresh the table whenever new data is submitted. By default, the table won't automatically reflect any changes made to the datasource, so you would need to use events or code to re-run the query that populates your table with data.
+
+---
+**Example:**
 
 To update your table data in real-time, you can use the `setInterval` function. To do this, you can use the [Switch widget](/reference/widgets/switch/) `Switch1` to control this function and a table widget that uses the `getData` query.
 
-* Drag and drop a Switch widget onto the canvas.
-* Go to its **onChange** event and toggle the `JS` option.
-* In the **onChange** field, paste the following code with any necessary changes:
+* Drag a Switch widget onto the canvas.
+* In the **onChange** property, paste the following code with any necessary changes:
 
 ```javascript
 {{
@@ -249,32 +236,33 @@ Here, the `setInterval` function calls the `getData` query every 2 seconds once 
 
 ## Properties
 
-Properties allow you to edit the table, connect it with other widgets, and customize how the user interacts with it.
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+
 
 ### Widget properties
 
- General properties control the data and behavior of the widget. These properties are present in the properties pane of the widget.
+These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
 
-| Property       | Definition |
-| ---------------|------------|
-| **Table Data**               | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax, like `{{<query_name>.data}}`. |
-| **Columns**                    | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.   |
-| **Primary key column** | Assigns a unique column which helps maintain `selectedRows` and `triggeredRows` based on value. Affects the performance of caching the dataset for quick loading and access. |
-| **Show Pagination** | Toggles visibility for the page information and control buttons in the table header. |
-| **Server Side Pagination**    | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |
-| **Total Records** | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
-| **Allow Searching** | Toggles visibility of the search bar in the table header. |
-| **Client Side Search** | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
-| **Default Search Text**        | Sets the default search query for the search bar in the table header.     |
-| **Allow Filtering** | Toggles visibility for the "Filters" button and its features in the table header. |
-| **Default Selected Row**       | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
-| **Enable multi-row selection** | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
-| **Column Sorting** | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
-| **Visible**   | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
-| **Allow Download** | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a `.csv` file or Microsoft Excel file. |
-| **Allow Column Freeze** | Enables freezing and unfreezing the columns via a dropdown in the columns' header cells. |
-| **CSV Separator** | Sets the separator character to use for formatting the downloaded `.csv` file. Only applies when **Allow Download** is turned on. Default: `,` |
+|  Property   | Data type |  Description                                                                                                                                                                      |
+| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Table Data**        | Array/Object	       | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax, like `{{<query_name>.data}}`. |
+| **Columns**        |  Array           | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.   |
+| **Primary key column**  |  String	 | Assigns a unique column which helps maintain `selectedRows` and `triggeredRows` based on value. Affects the performance of caching the dataset for quick loading and access. |
+| **Show Pagination**  |  Boolean | Toggles visibility for the page information and control buttons in the table header. |
+| **Server Side Pagination**  |  Boolean    | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |
+| **Total Records**  |  Number | This number value is displayed in the table header to inform the user of how many records exist in the table. This property is only visible when you enable **Server Side Pagination**. |
+| **Allow Searching**  |  Boolean | Toggles visibility of the search bar in the table header. |
+| **Client Side Search**  |  Boolean | Sets search behavior for the search bar in the table header. When turned on, the bar searches only the data currently loaded in the table. Otherwise, it searches the entire data set. |
+| **Default Search Text**     |  String	     | Sets the default search query for the search bar in the table header.     |
+| **Allow Filtering**  |  Boolean | Toggles visibility for the "Filters" button and its features in the table header. |
+| **Default Selected Row**    |  Number/Array	     | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
+| **Enable multi-row selection**  |  Boolean | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
+| **Column Sorting** |  Boolean  | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
+| **Visible**    |  Boolean | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
+| **Animate Loading**  |  Boolean | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
+| **Allow Download** |  Boolean  | Toggles visibility of the "Download" button in the table header. When turned on, users are able to download the table data as a `.csv` file or Microsoft Excel file. |
+| **Allow Column Freeze**  |  Boolean | Enables freezing and unfreezing the columns via a dropdown in the columns' header cells. |
+| **CSV Separator**  |  String | Sets the separator character to use for formatting the downloaded `.csv` file. Only applies when **Allow Download** is turned on. Default: `,` |
 
 
 ### Reference properties
