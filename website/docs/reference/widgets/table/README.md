@@ -5,160 +5,169 @@ toc_max_heading_level: 3
 
 # Table
 
-The table widget displays data in rows and columns. You can display data from an API in a table, trigger an action when a user selects a row, and even work with sizable paginated data sets.
+This page explains how to use a Table widget to display data in rows and columns, trigger actions based on user row selection, and work with paginated data sets of any size.sizable paginated data sets.
 
-<VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="How to use Table Widget" caption="How to use Table Widget"/>
+<VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="Using the Table Widget" caption="Using the Table Widget"/>
 
-## Display data in tables
+## Display static data 
 
-To get data from a query to appear in a table widget, follow these steps:
+To display static data in a Table widget, you can use the **Table Data** property.
 
-1. If you don't already have a query that returns data from a datasource, [create one first](/core-concepts/data-access-and-binding/querying-a-database).
-2. Select your table widget to open its properties pane.
-3. In its properties pane, enter the following code snippet into its [**Table data** property:
-    ```javascript
-    // replace <query_name> with the name of your query
-    {{<query_name>.data}}
-    ```
+ The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example, the table has four columns: `step`, `task`, and `status`. 
 
-If you are doing work on your data in a [JS object](/core-concepts/writing-code/javascript-editor-beta) before it goes into the table and you need to supply the data from there, you should instead reference whichever of the JS object's properties returns your final results. For example, if you have a JS object called `utils` with a function `formatData`, you might put the following snippet into the table's **Table data** field:
-
-```javascript
-{{ utils.formatData() }}
+```js
+[
+  {
+    "step": "#1",
+    "task": "Drop a table",
+    "status": "approved"
+  },
+  {
+    "step": "#2",
+    "task": "Create a query fetch_users with the Mock DB",
+    "status": "pending"
+  },
+  {
+    "step": "#3",
+    "task": "Bind the query using => fetch_users.data",
+    "status": "pending"
+  }
+]
 ```
 
-You can look at how this is set up in [this sample app](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364).
 
-Now, the table widget should be populated with the data coming from the query. By default, this query also now runs automatically when the page loads. You can change this behavior from the query's settings page.
 
-### Transform table data
+## Display data dynamically
 
-Some API / Query responses might have deeply nested, unnecessary, or unhelpfully formatted fields. These can be transformed to fit your needs by parsing and processing the data with JavaScript. The JS [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function is highly recommended for processing raw data from your queries to fit your table correctly.
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Table Data** property.
 
-#### Example
+---
+**Example 1:** suppose you have data stored in a database and you want to display it in the Table widget.
 
-Imagine that you were querying the GitHub API for issues related to a certain repository. If you were to bind this API's response directly to a table without additional formatting, it would be unreadable like the image below:
+1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
 
-<img src="/img/github_table.gif" style={{height: "15em", width: "100%", objectFit: "cover", objectPosition: "0 0em"}} ></img>
+```sql
+SELECT * FROM users ORDER BY id LIMIT 10;
+```
 
-To format this data, you can write a [map function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to parse the API response, format the data, and return an array of row objects that contain only the desired fields:
+2. In the Table's **Table Data** property, display the data using:
+
+```js
+{{fetchData.data}}
+```
+With this configuration, the Table widget displays all the data from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the data in the Table widget.
+
+---
+**Example 2:** if the data retrieved from the query is not in the desired format, you can use **JavaScript to transform** it before passing it to the Table widget.
+
+1. Use the `users` table in the sample database and fetch the data using the `fetchData` SQL query.
+
+2. Use JavaScript to **transform the data** by adding it to the **Options** property.
 
 ```javascript
-{{ 
-    fetch_issues.data.map((issue) => {
-        return {
-            user: issue.user.login,
-            assignees: issue.assignees.map((assignee) => assignee.login).join(","),
-            title: issue.title,
-            number: "#" + issue.number,
-        };
-    });
-
+{{fetchData.data.map((user) => {
+  return {
+    name: user.name,
+    email: user.email,
+    country: user.country
+    };
+  });
 }}
 ```
 
-<img src="/img/github_table_formatted.png" style={{height: "15em", width: "100%", objectFit: "cover", objectPosition: "0 0em"}} ></img>
+This code is using the `map()` function to extract specific data, such as the `name`, `email`, and `country`, from the `fetchData` query. 
 
-## Pagination
 
-Once the table widget has a set of records to display, it automatically shows as many rows as possible within its height. The remainder are placed on subsequent pages, which are navigable via the page buttons in the table header. (**Show Pagination** must be turned on in the table's properties).
+## Server side pagination
 
-The records are all held in memory regardless of whether they're currently visible on the table's page, so large query responses and datasets can lead to performance degradation. For a strategy to handle paginating large datasets, see [server side pagination](#server-side-pagination).
-
-### Server side pagination
-
-Tables are often required to display large data sets from [queries](/core-concepts/data-access-and-binding/querying-a-database) and [APIs](/core-concepts/connecting-to-data-sources/authentication), but browsers can't always load all the data present in the database, or might do so very slowly. Appsmith supports responses of up to **5 MB** at a time; larger responses result in [this error (5009)](/help-and-support/troubleshooting-guide/query-errors#execution-failed-with-status-5009).
+When displaying large datasets from APIs or queries, it's important to use server-side pagination to avoid performance issues. Appsmith supports responses up to 5 MB, so pagination is necessary to request smaller chunks of data
 
 To paginate the responses and request smaller chunks of data at a time:
 
 1. Enable the server-side pagination property in the table
 2. Call the API / query via the **onPageChange** event
-3. Configure pagination in the API / query using the [Offset](#offset-based-pagination) or [Key-based](#key-based-pagination) pagination method.
+3. Configure pagination in the API / query using the pagination method.
 
 :::tip
 Turning on **Server side pagination** also enables the **Total records** property. This property is useful for helping to control the page buttons in the table header.
 :::
 
-#### Offset based pagination
+### Offset based pagination
 
-This method uses the Table's page number to determine the offset of the records to fetch from the database. This method relies on the **pageNo** and **pageSize** values of the table to calculate the required **pageOffset** to fetch the correct records.
+Offset-based pagination is a technique used to fetch a large dataset in smaller sets. It works by using the page number and size to calculate the offset of records to fetch from a database or API. The offset is calculated by multiplying the page number minus one by the page size, as shown in the formula:
 
 ```
 Table1.pageOffset = (Table1.pageNo - 1) * Table1.pageSize
 ```
 
-The **pageOffset** property (as well as **pageNo** and **pageSize**) can be used in the API / query by referencing it inside curly braces `{{ }}`.
+To retrieve the correct subset of data using offset-based pagination, the `pageOffset` property, as well as the `pageNo` and `pageSize` values, can be referenced in an API or query using `curly braces`. For instance, to add offset-based pagination in a user's database, you can use this query:
+
 
 ```sql
-SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}
+SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }};
 ```
+Similarly, in an API, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
 
 ```
 https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
 ```
+### Cursor based pagination
 
-#### Key based pagination
+Cursor-based pagination is a technique used to fetch a large dataset in smaller sets while also improving performance and scalability. Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-This method uses a value in the API response as the key to the following API call. This can be configured in the API settings by providing the Next & Previous URLs that the API should execute **onPageChange**.
 
-<img src="/img/pagination_(2)_(2).gif" width="70%" ></img>
 
-## Refresh table data
+## Edit table data
 
-When changes are made to the datasource that supplies your table with data, the table won't automatically reflect these changes. Any time you submit new data to your datasource, be sure to use events and/or write code that re-runs the query that puts data into your table.
 
-**Example 1:**
+To edit and update table data directly from the UI, you can use Inline editing. To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can double-click on a cell to edit its contents. 
 
-This can be as simple as creating a [button widget](/reference/widgets/button) whose `onClick` event is bound to `<query_name>.run()`. Here, `<query_name>` is the name of the query that gets data for your table (and is probably referenced in the table's **Table data** field). When the button is clicked, the query is run, and the table is given fresh data.
+To update the data in a table, you can set the **onSubmit** event for each individual column. This event can be used to perform an action, such as updating a database, when the edited data cell is saved.
 
-**Example 2:**
+If you select Multi Row from the **Update mode** property, you can edit multiple rows at the same time. The data would be automatically updated as you make changes.
 
-When you submit new data to your datasource, re-run your original query as a success callback if the submission succeeds. Imagine you have a table whose data comes from your GET query `getData`, and a button that submits a form with new user input via a query called `sendNewData`:
 
-1. When the form is submitted via the button's `onClick`, it executes
-    ```javascript
-    {{ sendNewData.run() }}
-    ```
-2. On success, it executes `getData.run()` as a callback to get the latest version of the dataset that includes the new changes:
-    ```javascript
-    {{ sendNewData.run(() => getData.run(), () => {}) }}
-    ```
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
 
-Now when `sendNewData` succeeds, your table automatically refreshes itself.
+## Columns
+The **Columns** section in the Table widget properties panel provides a range of options for managing table columns. You can edit the properties of existing columns, including their name, data type, and computed value. Additionally, you can add new custom columns, rearrange columns, and hide columns as needed.
 
-### Update table data in real time
+### Format columns 
+Formatting table columns is important for clear data presentation. By using the gear icon located in the properties pane of a table, you can access a range of properties to customize each column to your specific needs. You can adjust the **Column Type** property to buttons, checkboxes, icons, images, and more. Additionally, you can use **Computed value** property that allows you to dynamically compute and display data in a table column based on custom logic or expressions.  
 
-If you want to update data in the table periodically without requiring users to trigger the refreshes, you can use the `setInterval` function.
+---
+**Example**: Prefix example...
 
-In this example, you'll use the [Switch widget](/reference/widgets/switch/) `Switch1` to control this function and a table widget that uses the `getData` query.
 
-* Drag and drop a switch widget onto the canvas.
-* Go to its **onChange** event and toggle the `JS` option.
-* In the **onChange** field, paste the following code with any necessary changes:
+### Freeze columns
 
-```javascript
-{{
-(() => {
-    if (Switch1.isSwitchedOn) {
-        setInterval(() => getData.run(), 2000, "autoupdate");
-    } else {
-        clearInterval("autoupdate");
-    }
-})()
-}}
-```
+The Freeze Columns feature allows you to freeze the columns of the table while keeping the rest of the table scrollable. This can be useful when you have a large table with many columns and want to keep some of the important columns always visible.
 
-Here, the `setInterval` function calls the `getData` query every 2 seconds once the switch widget is turned on, or it stops the cycle if it's switched off.
+ You can freeze columns by turning on the **Allow Column Freeze** property and selecting to freeze a column on either the left or right side of the table. You can also freeze or unfreeze columns via individual column properties.
 
-![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
+ ![Use the column header arrow to freeze or unfreeze columns](/img/as-freeze-column.png)
 
-## Search
 
-When **Allow Searching** is turned on, the table header has a search bar that can be used to find records that have a value that matches the given search term. Search results include perfect matches as well as matches where the search term is contained somewhere within one of the row's values.
+Learn more about [Column settings](/reference/widgets/table/column-settings).
 
-You can also set **Default Search Text** in the table's properties to narrow results automatically when the page loads.
 
-Searching large datasets may degrade performance, so it's recommended to set up [server side search](#server-side-search) for your table. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to your search.
+## Rows
+
+### Add a new row
+
+To add a new row, you first need to turn on the **Allow adding a row** property. This property enables the user to add new rows to the table by clicking on the **+ New Row** button on the table.
+
+To ensure that the data entered in the new row is saved to a database, you can use the **onSave** property. This property allows you to define a custom function that would be triggered whenever a new row is added
+
+### Trigger actions on row selection
+
+To trigger actions on row selection in a table, you can use the **onRowSelected** event. When a user clicks on a row, you can perform a query or execute a JavaScript function using this event. For example, you can display a Modal with the data from the selected row.
+
+To select multiple rows at the same time, you can enable the **Enable Multi-row Selection** property in the Table. To access the data from the selected rows, you can use the `selectedRows` reference property. This property provides an array of objects, where each object represents a selected row, and the object properties represent the data from that row.
+
+
+## Search, filter, and sort
+
 
 ### Server side search
 
@@ -181,11 +190,6 @@ As an API request with URL parameters:
 https://mock-api.appsmith.com/users?name={{Table1.searchText}}
 ```
 
-## Filter
-
-When **Allow Filtering** is turned on, the table header has a "Filters" button, which can be used to find records where specific fields meet a given condition. For example, in an employee management dashboard, you might want to filter the table to show only records where the person's `Team Leader` is equal to `Alex Smith`. 
-
-Filtering large datasets may degrade performance, so it's recommended to set up [server side filter](#server-side-filter) for your table. This strategy helps to only query the data that you need, instead of pulling records that aren't relevant to you.
 
 ### Server side filter
 
@@ -207,32 +211,47 @@ As an API request with URL parameters:
 https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
 ```
 
-## Freeze columns
+## Update table data
 
-When your table has many columns, you may want to freeze and lock important columns in place so that they're always visible, and independent of scrolling.
+To keep your table updated with the latest data from your datasource, you need to ensure that you refresh the table whenever new data is submitted. By default, the table won't automatically reflect any changes made to the data source, so you would need to use events or code to re-run the query that populates your table with data.
 
-To freeze a column, click the arrow on the right side of the column's header cell and choose to freeze it on either the left or right side of the table. Alternatively, you can freeze or unfreeze a column via its settings accessed within the table's properties pane.
+**Example 1:**
 
-The **Allow Column Freeze** property must be turned on in the table's properties pane to allow changes to freezing or unfreezing. This property doesn't change any frozen columns; it just prevents further changes by enabling or disabling the "Freeze column" button controls in the widget.
+This can be as simple as creating a [button widget](/reference/widgets/button) whose `onClick` event is bound to `<query_name>.run()`. Here, `<query_name>` is the name of the query that gets data for your table (and is probably referenced in the table's **Table data** field). When the button is clicked, the query is run, and the table is given fresh data.
 
-![Use the column header arrow to freeze or unfreeze columns](/img/as-freeze-column.png)
+**Example 2:** 
 
-Columns that are frozen while your app is in Edit mode are also frozen in the deployed app. However, while **Allow Column Freeze** is turned on, users can change which columns are frozen in their view. Their changes persist in their local storage across page refreshes until a developer deploys a change in the table's column order, hidden columns, or frozen columns.
+To update your table data in real-time, you can use the `setInterval` function. To do this, you can use the [Switch widget](/reference/widgets/switch/) `Switch1` to control this function and a table widget that uses the `getData` query.
 
-The frozen columns are available in the table's properties pane: left-frozen columns are pinned to the top of the list, and right-frozen ones are pinned to the bottom. These columns can't be re-ordered while they're frozen.
+* Drag and drop a Switch widget onto the canvas.
+* Go to its **onChange** event and toggle the `JS` option.
+* In the **onChange** field, paste the following code with any necessary changes:
 
-Turning on the following properties causes an additional column to be frozen to the table:
+```javascript
+{{
+(() => {
+    if (Switch1.isSwitchedOn) {
+        setInterval(() => getData.run(), 2000, "autoupdate");
+    } else {
+        clearInterval("autoupdate");
+    }
+})()
+}}
+```
 
-- **Editable**: a Save/Discard button column is frozen to the right of the table.
-- **Multi-row selection**: a checkbox column is frozen to the left of the table.
+Here, the `setInterval` function calls the `getData` query every 2 seconds once the switch widget is turned on, or it stops the cycle if it's switched off.
 
-When a column gets unfrozen, its position is moved. If it had been left-frozen, it's put at the beginning of the unfrozen group of columns. If it had been right-frozen, it's put at the end of the unfrozen columns.
+![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
+
+
+
+
 
 ## Properties
 
 Properties allow you to edit the table, connect it with other widgets, and customize how the user interacts with it.
 
-### General properties
+### Widget properties
 
  General properties control the data and behavior of the widget. These properties are present in the properties pane of the widget.
 
