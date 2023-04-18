@@ -41,7 +41,7 @@ On the **Explorer** tab, click the **+** sign next to **Datasources**. Under the
   <figcaption align = "center"><i>Connect to a datasource</i></figcaption>
 </figure>
 
-## Query data
+## Fetch data
 
 1. Click the **New Query +** button to the right of the screen.
 
@@ -97,9 +97,9 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   | Name   | `nameInput`  | Default Text                                      | ```{{usersTable.selectedRow.name}}```  |
   | Email  | `emailInput` | Default Text                                      | ```{{usersTable.selectedRow.email}}``` |
   | Phone  | `phoneInput` | Default Text                                      | ```{{usersTable.selectedRow.phone}}``` |
-  | Date of Birth    | `dobInput`   | Default Date*                                      | ```{{usersTable.selectedRow.dob}}``` |
+  | Date of Birth    | `dobInput`   | Default Date *                                    | ```{{usersTable.selectedRow.dob}}``` |
 
-  \**Turn on the **JS** toggle to bind data for the **Default Date** property*
+  \* <i>Turn on the <b>JS</b> toggle to bind data for the <b>Default Date</b> property.</i>
 
 <figure>
   <img src="/img/bind-data-to-widgets.png" style= {{width:"100%", height:"auto"}} alt="Bind data to widgets"/>
