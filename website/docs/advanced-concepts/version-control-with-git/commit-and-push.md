@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Commit Changes
+# Commit and Push Changes
 
 After developing your app on a feature branch, to commit and push changes to your remote repository, follow the steps below:
 
