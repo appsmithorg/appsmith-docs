@@ -95,7 +95,7 @@ Depending on your use-case, there are several operations that can return records
     {
         "TableName": "users",
         "FilterExpression": "#n = :val",
-        "ExpressionAttributeNames": {
+        "ExpressionAttributeNames": { // "name" is a reserved keyword, this key sets an alias
             "#n": "name"
         },
         "ExpressionAttributeValues": {
@@ -108,89 +108,156 @@ Depending on your use-case, there are several operations that can return records
 
 #### Example
 
-> Fetch records from the date `22-11-9` from a table `Issues`, 10 records at a time, and put them into a Table widget `IssueTable` with columns for `name` (sort key), `opened_date` (primary key), and `days_old`.
+> Fetch records with matching `team_id` values from a table `users`, 10 records at a time, and put them into a Table widget `UsersTable`. The table has columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
-**Setup:** create a query called `FetchIssues` based on your DynamoDB datasource. This query should use the **Query** operation. Create a [Table widget](/reference/widgets/table) called `IssueTable`.
+**Setup:** create a query called `FetchUsers` based on your DynamoDB datasource. This query should use the **Query** operation. Create a [Table widget](/reference/widgets/table) called `UsersTable`. Then create a JS Object called `utils` that contains the following code to handle logic and formatting for paginating your query:
 
-* In your `FetchIssues` query, add the JSON snippet:
+```javascript
+export default {
+	handlePagination: () => {
+		if (Query.data.LastEvaluatedKey && Object.keys(Query.data.LastEvaluatedKey).length > 0) {
+			const startKey = {
+				"ExclusiveStartKey": {
+					"team_id": {
+						"S": Query.data.LastEvaluatedKey.team_id
+					},
+					"employee_id": {
+						"S": Query.data.LastEvaluatedKey.employee_id
+					}
+				}
+			}
+			return JSON.stringify(startKey).slice(1, -1) + ","
+			
+		} else {
+			return ""
+		}
+	}
+}
+```
+
+* Create a [**Select widget**](/reference/widgets/select) called `TeamSelect` with the following value in its **Options** property:
+
+    ```javascript
+    // TeamSelect widget's Options property
+    [
+        { "label": "1", "value": "team_1" },
+        { "label": "2", "value": "team_2" },
+        { "label": "3", "value": "team_3" },
+        { "label": "4", "value": "team_4" }
+    ]
+    ```
+    * Set the Select widget's **onOptionChange** action to execute your `FetchUsers` query to update the table.
+
+* In your `FetchUsers` query, add the JSON snippet:
 
     ```javascript
     {
-        "TableName": "Issues",
-        {{FetchIssues.data.LastEvaluatedKey?`\"ExclusiveStartKey\": ${JSON.stringify(FetchIssues.data.LastEvaluatedKey)},`:""}}
-        "KeyConditionExpression": "opened_date = :dt",
+        "TableName": "users",
+        "LIMIT": {{ UsersTable.pageSize }},
+        {{ utils.handlePagination() }}
+        "KeyConditionExpression": "team_id = :val",
         "ExpressionAttributeValues": {
-            ":dt": {
-                "S": "2022-11-9"
+            ":val": {
+                "S": "{{ TeamSelect.selectedOptionValue }}"
             }
         }
     }
     ```
 
-
-* Set the **Page Size** to 10 to limit the number of records you receive at once. To continue setting up pagination for your data, see [pagination](#pagination).
+* Set the **Page Size** to 10 to limit the number of records you receive at once.
 
 * In the **Table Data** property of your Table widget, bind the result of your query:
 
-  ```javascript
-  // in the Table Data property of UsersTable
-  {{
-    FetchIssues.data.records.map(record => {
-      return {
-        name: record.fields.Name,
-        opened_date: record.fields["Opened date"],
-        days_old: record.fields["Days old"]
-      }
-    })
-  }}
-  ```
+    ```javascript
+    // in the Table Data property of UsersTable
+    {{
+    FetchUsers.data.Items
+    }}
+    ```
 
 Your table should fill with data when the query is run.
 
 ### PutItem
 
-The [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_PutItem.html) command is used to insert or replace an entire item object. This request can be configured to return with the inserted/updated item using the `ReturnValues` parameter.
-
-:::info
-If an item with the same primary key as the new item already exists in the specified table, the new item completely replaces the existing item.
-:::
-
-* Click on the **+** icon next to the **queries/js** and choose your DynamoDB datasource.
-* From the Commands drop-down, Select the method **`PutItem`**.
-* Next, add your code in the body section.
-
-Here, we use the PutItem command for a simple insert.
+Use PutItem to insert a new record or replace an existing record. Any existing record is completely replaced with the data that you submit.
 
 ```javascript
 {
-    "TableName" : "four",
+    "TableName" : "users",
     "Item" : {
-        "pkey" : {
-            "S" : "a"
+        "team_id" : {
+            "S" : "team_1"
+        },
+        "employee_id": {
+            "S" : "emp_1"
         },
         "name": {
-            "S" : "Irene"
-        },
-        "friends": {
-            "SS" : ["Sherlock"]
+            "S" : "Aman"
         }
     }
 }
 ```
 
+---
+
+#### Example
+
+> Add a new record to a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
+
+**Setup:** create a query called `CreateUser` based on your DynamoDB datasource. This query should use the **PutItem** operation. You might want to create a [Table widget](/reference/widgets/table) set up with data like the example from the previous [fetch records](#fetch-records) section.
+
+To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
+
+```json
+{{
+    {
+        team_id: "",
+        employee_id: "",
+        name: "",
+        date_of_birth: "",
+    }
+}}
+```
+
+* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+
+    ```javascript
+    // Submit button's onClick event
+    {{ CreateUser.run() }}
+    ```
+    * Add an **onSuccess** callback to this action, such as executing the query that fills your table with fresh data.
+
+* Once these form fields are filled out, you can add their values to your query's body as below:
+
+    ```javascript
+    {
+        "TableName" : "users",
+        "Item" : {
+            "team_id" : {
+                "S" : "{{ NewUserForm.formData.team_id }}"
+            },
+            "employee_id": {
+                "S" : "{{ NewUserForm.formData.employee_id }}"
+            },
+            "name": {
+                "S" : "{{ NewUserForm.formData.name }}"
+            },
+            "date_of_birth": {
+                "S": "{{ NewUserForm.formData.date_of_birth }}"
+            }
+        }
+    }
+    ```
+
+When the Submit button is clicked, your query is executed and the new record is inserted into your table.
+
 ### UpdateItem
 
-The [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_UpdateItem.html) can be used for conditionally updating parts of an item. Edits an existing item's attributes or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also return the item's attribute values in the same `UpdateItem` operation using the `ReturnValues` parameter.
-
-* Click on the **+** icon next to the **queries/js** and choose your DynamoDB datasource.
-* From the Commands drop-down, Select the method **`UpdateItem`**.
-* Next, add your code in the body section.
-
-A sample request might have the following body:
+Use UpdateItem to change specific attributes of an existing record. You only need to supply the partition key and the values for the attributes that are changing.
 
 ```javascript
 {
-    "TableName" : "four",
+    "TableName" : "users",
     "Key" : {
         "pkey" : {
             "S" : "a"
@@ -201,12 +268,120 @@ A sample request might have the following body:
         ":new_friends" : {
             "SS" : ["Mycroft", "Watson", "Irene"]
         }
-    },
-    "ReturnValues" : "ALL_NEW"
+    }
 }
 ```
 
-With DynamoDB integration, it's possible to create apps that seamlessly connect with the DynamoDB database and provide additional flexibility for updating and analyzing data.
+---
+
+#### Example
+
+> Modify an existing record in a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
+
+* Create your query called `UpdateUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another query that fetches your records.
+
+* Create a [JSON Form widget](/reference/widgets/json-form) `UpdateUserForm` to use for submitting your updated values. Add **Source Data** to the JSON Form to create input fields. Reference the `selectedRow` of `UsersTable` to pre-fill the form fields:
+
+    ```json
+    {{
+    {
+        team_id: UsersTable.selectedRow.team_id,
+        employee_id: UsersTable.selectedRow.employee_id,
+        name: UsersTable.selectedRow.name,
+        date_of_birth: UsersTable.selectedRow.date_of_birth
+    }
+    }}
+    ```
+    * For fields that are primary or sort keys, you may want to set their inputs to **Disabled**, as they can't be updated with this query.
+
+* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+
+    ```javascript
+    // Submit button's onClick event
+    {{ UpdateUser.run() }}
+    ```
+    * Add an **onSuccess** callback to this action, such as executing the query that fills your table with fresh data.
+
+* To add your modified row data to your query, reference them in your UpdateItem query:
+
+    ```javascript
+    {
+        "TableName" : "users",
+        "Key" : {
+            "team_id" : {
+                "S" : "{{ UsersTable.selectedRow.team_id }}"
+            },
+            "employee_id" : {
+                "S" : "{{ UsersTable.selectedRow.employee_id }}"
+            }
+        },
+        "UpdateExpression" : "SET #n = :new_name, date_of_birth = :new_dob",
+        "ExpressionAttributeNames": { // "name" is a reserved keyword, this key sets an alias
+            "#n": "name"
+        },
+        "ExpressionAttributeValues" : {
+            ":new_name" : {
+                "S" : "{{ UpdateUserForm.formData.name }}"
+            },
+            ":new_dob": {
+                "S": " {{ UpdateUserForm.formData.date_of_birth }}"
+            }
+        }
+    }
+    ```
+
+When the Submit button is clicked, your query is executed and the record is updated in your table.
+
+### DeleteItem
+
+Use DeleteItem to delete a specific record.
+
+```javascript
+{
+    "TableName" : "users",
+    "Key" : {
+        "team_id" : {
+            "S" : "team_1"
+        },
+        "employee_id" : {
+            "S" : "emp_3"
+        }
+    }
+}
+```
+
+---
+
+#### Example
+
+> Delete a record from a table `users`.
+
+* Create your query called `DeleteUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your table data from a previous fetch query.
+
+* Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
+
+    ```javascript
+    // in the Delete button's onClick event
+    {{ DeleteUser.run() }}
+    ```
+    * Add an **onSuccess** callback to this action, such as executing the query that fills your table with fresh data.
+
+* To delete a specific record, reference it with its partition key (the primary and/or sort keys). In your `DeleteUser` query, use the `team_id` and `employee_id` values of the `UserTable`'s selected row:
+    ```javascript
+    {
+        "TableName" : "users",
+        "Key" : {
+            "team_id" : {
+                "S" : "{{ UsersTable.selectedRow.team_id }}"
+            },
+            "employee_id" : {
+                "S" : "{{ UsersTable.selectedRow.employee_id }}"
+            }
+        }
+    }
+    ```
+
+Now when the button is clicked, the query is run and the corresponding row is deleted from your table.
 
 ## Further reading
 

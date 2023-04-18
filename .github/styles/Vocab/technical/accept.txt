@@ -269,3 +269,5 @@ Generate JSON Form
 chartData
 dataSource
 DynamoDB
+PutItem
+UpdateItem
