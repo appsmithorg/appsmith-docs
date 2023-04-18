@@ -12,7 +12,7 @@ After developing your app on a feature branch, to commit and push changes to you
 ![](/img/commit_changes_git.gif)
 
 
-In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to [pull the changes](/advanced-concepts/version-control-with-git/merge-branches#pull-changes) to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
+In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to [pull the changes](/advanced-concepts/version-control-with-git/merging-branches#pull-changes) to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
 
 Once the remote feature branch is updated in the repository, you can raise a PR to merge the changes with the main branch.
 
@@ -44,7 +44,7 @@ Discarding changes have the following impact on the entities (pages, queries, JS
 
 ## Further reading
 
-[Merge and Pull changes](/advanced-concepts/version-control-with-git/merge-branches)
+[Merge and Pull changes](/advanced-concepts/version-control-with-git/merging-branches)
 
 
 

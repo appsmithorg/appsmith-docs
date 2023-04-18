@@ -18,7 +18,7 @@ Follow the steps below to setup the pipeline:
 ### Build and deploy app
 1. Build the app in the staging workspace with staging datasources. 
 2. Use the Git workflow to make changes in the staging branch(or feature branches), before merging to the production branch through a pull request.
-3. When you're ready to deploy, [pull the changes](/advanced-concepts/version-control-with-git/merge-branches#pull-changes) on the production branch in the production workspace app.
+3. When you're ready to deploy, [pull the changes](/advanced-concepts/version-control-with-git/merging-branches#pull-changes) on the production branch in the production workspace app.
 
 ### Share app
 1. Invite end users to your production app with the *App Viewer* role. They only have access to view the deployed app.
