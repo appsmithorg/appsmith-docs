@@ -105,7 +105,7 @@ This method uses a value in the API response as the key to the following API cal
 
 #### Meta properties based pagination
 
-Table widget exposes two meta properties, `previousPageVisited` and `nextPageVisited`. These values of these properties are set when a user moves to a new page. Depending on the direction of the new visited page with respect to the current page, the values of these properties are set.
+Table widget exposes two meta properties, `previousPageVisited` and `nextPageVisited`. The values of these properties are set when a user moves to a new page. Depending on the direction of the new visited page with respect to the current page, the values of these properties are set.
 
 If the page number of the new visited page is greater than the current page number, `nextPageVisited` will be set to `true` and `previousPageVisited` will be set to `false`. Else, if the new page number is less than current page number, `nextPageVisited` will be set to `false` and `previousPageVisited` will be set to `true`.
 
