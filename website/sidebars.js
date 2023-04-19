@@ -502,7 +502,7 @@ const sidebars = {
                 type: 'doc',
                 id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository',
               },
-              items: ['advanced-concepts/version-control-with-git/update-file-path',],
+              items: ['advanced-concepts/version-control-with-git/updating-local-file-path',],
             },
             'advanced-concepts/version-control-with-git/working-with-branches',
             'advanced-concepts/version-control-with-git/commit-and-push',
