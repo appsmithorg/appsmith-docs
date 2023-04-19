@@ -66,10 +66,10 @@ You can use the `helm upgrade` command to enable the ingress controller using on
   * Using Helm parameters with:
 
   ```bash
-  helm upgrade appsmith/appsmith \
+  helm upgrade -i appsmith appsmith/appsmith \
       --set ingress.enabled=true \
-      --set ingress.className=nginx \
-      --set service.type=ClusterIP \
+      --set "ingress.hosts[0].host="<hostname>", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
+      --set ingress.className="nginx"
   ```
 
   * **Or** using the `values.yaml` file:
@@ -81,12 +81,18 @@ You can use the `helm upgrade` command to enable the ingress controller using on
         ## @param ingress.enabled Enable ingress record generation for Ghost
         ##
         enabled: true
+        annotations:
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/limit-rps: "15"
         ## @param ingress.annotations Additional custom annotations for the ingress record
         ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
         ##
         className: nginx
         hosts: []
           # - host: appsmith-domain.me
+          #   paths:
+          #   - path: "/"
+          #     pathType: Prefix
       service:
         ## @param service.type Kubernetes Service type
         ##
@@ -96,7 +102,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
     2. Run the below command once the parameter values are updated:
 
       ```bash 
-      helm upgrade --values values.yaml appsmith appsmith/appsmith
+      helm upgrade -i appsmith appsmith/appsmith --f values.yaml
       ```
 
 </TabItem>
@@ -107,10 +113,10 @@ You can use the `helm upgrade` command to enable the ingress controller using on
  * Using Helm parameters with:
 
   ```bash
-  helm upgrade appsmith-ee/appsmith \
+  helm upgrade -i appsmith appsmith-ee/appsmith \
       --set ingress.enabled=true \
-      --set ingress.className=nginx \
-      --set service.type=ClusterIP \
+      --set "ingress.hosts[0].host="<hostname>", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
+      --set ingress.className="nginx"
   ```
 
 * **Or** using the `values.yaml` file:
@@ -118,20 +124,26 @@ You can use the `helm upgrade` command to enable the ingress controller using on
     1. Open the `values.yaml` file and update the parameter values as below:
 
     ```yaml 
-    ingress:
-      ## @param ingress.enabled Enable ingress record generation for Ghost
-      ##
-      enabled: true
-      ## @param ingress.annotations Additional custom annotations for the ingress record
-      ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-      ##
-      className: nginx
-      hosts: []
-        # - host: appsmith-domain.me
-    service:
-      ## @param service.type Kubernetes Service type
-      ##
-      type: ClusterIP
+      ingress:
+        ## @param ingress.enabled Enable ingress record generation for Ghost
+        ##
+        enabled: true
+        annotations:
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/limit-rps: "15"
+        ## @param ingress.annotations Additional custom annotations for the ingress record
+        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+        ##
+        className: nginx
+        hosts: []
+          # - host: appsmith-domain.me
+          #   paths:
+          #   - path: "/"
+          #     pathType: Prefix
+      service:
+        ## @param service.type Kubernetes Service type
+        ##
+        type: ClusterIP
     ```
     
      2. Run the below command once the parameter values are updated:un the below command:
