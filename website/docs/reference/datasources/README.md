@@ -9,7 +9,7 @@ Appsmith offers plug-and-play support for many databases and the RESTful API int
 
 
 ## Databases
-Databases are an essential part of many applications and are used to store and manage data. You can run queries to read and write data directly from the Appsmith editor. Following databases are supported by Appsmith:
+Databases are an essential part of many applications and are used to store and manage data. You can run queries to read and write data directly from the Appsmith editor. The following databases are supported by Appsmith:
 
 
 

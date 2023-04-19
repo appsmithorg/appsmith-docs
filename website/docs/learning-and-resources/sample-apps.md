@@ -348,7 +348,7 @@ import TabItem from '@theme/TabItem';
         <div class="containerCol">
             <strong>Open Modal</strong>
         </div> <hr/>
-        <div class="containerDescription">This app shows how to open a modal using openModal() function of the Appsmith framework.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
+        <div class="containerDescription">This app shows how to open a Modal using openModal() function of the Appsmith framework.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407">
         <strong >View App </strong></a></div>
     </div>
