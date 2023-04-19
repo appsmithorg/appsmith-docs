@@ -298,8 +298,10 @@ Reference properties are used to access the widget's data and state using code. 
 | **selectedRowIndices** | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
 | **filteredTableData**  | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
 | **pageNo**             | Contains the current page number that the user is on. APIs can use it for pagination. | `{{<table_name>.pageNo}}`  |
-| **pageOffset**)        | Contains a calculated value to represent how many records to skip when using **Server side pagination**. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
+| **pageOffset**        | Contains a calculated value to represent how many records to skip when using **Server side pagination**. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
 | **pageSize**           | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table. | `{{<table_name>.pageSize}}`   |
+| **nextPageVisited**         | Set to true when a user moves to new page with page number greater than current page number, false otherwise. | `{{<table_name>.nextPageVisited}}`  |
+| **previousPageVisited**         | Set to true when a user moves to new page with page number lesser than current page number, false otherwise. | `{{<table_name>.previousPageVisited}}`  |
 | **searchText**         | Contains the search text entered by the user in the Table. | `{{<table_name>.searchText}}`  |
 
 ### Style properties
