@@ -166,22 +166,6 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
 
 3. Set the table widget's **onOptionChange** event to run the query. 
 
-## Edit table
-
-
-To edit and update table data directly from the UI, you can use Inline editing. To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can double-click on a cell to edit its contents. 
-
-To update the data in a table, you can set the **onSubmit** event for each individual column. This event can be used to perform an action, such as updating a database, when the edited data cell is saved.
-
-If you select Multi Row from the **Update mode** property, you can edit multiple rows at the same time. The data would be automatically updated as you make changes.
-
-Learn more about [Inline editing](/reference/widgets/table/inline-editing).
-
-### Column formatting
-The Columns section in the Table widget properties panel provides a range of options for managing table columns. You can edit the properties of existing columns, including their name, data type, and computed value. Additionally, you can add new custom columns, rearrange columns, and hide columns as needed.
-
-Learn more about [Column settings](/reference/widgets/table/column-settings).
-
 
 
 ## Refresh table data
@@ -229,6 +213,8 @@ These properties allow you to edit the widget. All of these properties are prese
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Table Data**        | Array/Object	       | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax, like `{{<query_name>.data}}`. |
 | **Columns**        |  Array           | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.   |
+| **Editable**        |  Boolean           | A property that determines whether a field or cell can be modified by the user. Learn more about [Inline editing](/reference/widgets/table/inline-editing).  |
+| **Add a New Column**        |  Button           | A button that allows users to insert a new column into an existing table.    |
 | **Primary key column**  |  String	 | Assigns a unique column which helps maintain `selectedRows` and `triggeredRows` based on value. Affects the performance of caching the dataset for quick loading and access. |
 | **Show Pagination**  |  Boolean | Toggles visibility for the page information and control buttons in the table header. |
 | **Server Side Pagination**  |  Boolean    | Enables you to implement pagination by limiting the number of results fetched per API / query request. Use this property when your table data is bound to an API / query.                               |

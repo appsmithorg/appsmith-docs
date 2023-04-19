@@ -1,25 +1,82 @@
-# Configure Column
 
-You can customize each table column individually through a set of properties by clicking on its gear icon in the table's properties pane.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-![Column Settings](/img/Column\_control.gif)
+# Column
 
-## Properties
+This page explains how to customize each table column separately by accessing a range of properties available through the gear icon located in the table's properties pane. You can edit the properties of existing columns, including their name, data type, and computed value. Additionally, you can add new custom columns, rearrange columns, and hide columns as needed.
 
-These common properties allow you to set the behavior of specific columns within the table widget.
+<figure>
+  <img src="/img/col-settings.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
 
-| Property       | Description  |
-| -------------- | -------------|
-| **Column type**    | Sets the type of cell to use in this column. There are a variety of different types that have different behaviors, such as buttons, switches, and more.  |
-| **Computed Value** |  It allows you to manipulate the value using JS expressions    |
-| **Visible**        | Controls the column's visibility on the page. When turned off, the column won't be visible.  |
-| **Cell Wrapping**  |Controls how overflowing contents of the column are handled.<br/> **on** - Contents get wrapped to the next line.<br/> **off** - Contents get ellipsis. |
-| **Editable**       | Controls whether cells of the column are editable.        |
-| **Column Freeze** | Controls whether to unfreeze or freeze the column to the left or right. For more information about column freezing, see [Freeze Columns](/reference/widgets/table#freeze-columns). |
+
+
+### Computed value
+
+In the Table widget, computed values refer to a column property that allows you to access and manipulate the displayed value using JavaScript expressions. This property can only be accessed within the column settings. You can use the `currentRow` property to access each row's column values
+
+For instance, suppose you have a table with a column named `dob` that displays the date of birth for each row. By using the `{{currentRow['dob']}}` reference, you can access and display the data for the `dob` column in each row. With this reference, you can also create custom expressions that compute new values based on the data in the current row.
+
+----
+**Example**: suppose you have a table with a `name` column and a `gender` column. If you want to add a prefix of `Mr.` or `Mrs.` to the names in the `name` column based on the data in the `gender` column, you can use a computed value.
+
+1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data:
+
+```sql
+SELECT * FROM users ORDER BY id LIMIT 10;
+```
+2. In the Table's **Table Data** property, display the data using:
+
+```
+{{fetchData.data}}
+```
+
+3. Select the `name` column from the list of columns, and add following code in the **Computed Value** property:
+
+```js
+{{currentRow.gender === "male" ? "Mr " + currentRow.name : "Mrs " + currentRow.name}}
+```
+
+The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name column based on the value of the gender column in the current row.
+
+<figure>
+  <img src="/img/col-example.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Formatting Column</i></figcaption>
+</figure>
+
+
+## Edit table
+
+
+To edit and update table data directly from the UI, you can use Inline editing. To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can double-click on a cell to edit its contents. 
+
+To update the data in a table, you can set the **onSubmit** event for each individual column. This event can be used to perform an action, such as updating a database, when the edited data cell is saved.
+
+If you select Multi-Row from the **Update mode** property, you can edit multiple rows at the same time. The data would be automatically updated as you make changes.
+
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+
+## Freeze column
+
+The Freeze Columns feature allows you to freeze the columns of the table while keeping the rest of the table scrollable. This can be useful when you have a large table with many columns and want to keep some of the important columns always visible.
+
+You can freeze columns by turning on the **Allow Column Freeze** property and selecting to freeze a column on either the left or right side of the table. You can also freeze or unfreeze columns via individual column properties.
+
+
+<figure>
+  <img src="/img/as-freeze-column.png" style= {{width:"750px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Freeze column</i></figcaption>
+</figure>
+
+
+## Style
 
 ### Column type
 
 This property allows you to select the type of cell to use in the column. Currently, the following column types are available:
+
 
 * Button
 * Checkbox
@@ -34,12 +91,34 @@ This property allows you to select the type of cell to use in the column. Curren
 * URL
 * Video
 
-![Column types available for table](/img/column\_type.gif)
+<Tabs>
+  <TabItem value="Button" label="Button" default>
+   
 
-#### Button
+The button column type is a cell that can be clicked by the user, which triggers an `onClick` event and the `triggeredRow` reference property retrieves the data of the corresponding column.
 
-The button column type is a clickable cell that triggers an **onClick** event attached to it. For extra information about buttons, read about the [Button widget](/reference/widgets/button).
+#### Properties
 
+These properties allow you to edit the column type. All of these properties are present in the property pane of the widget.
+
+|  Property   | Data type |  Description                                                                                                                                                                      |
+| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   **Text**         |  String         | Sets the label of the button.
+|     **Disabled**    |  Boolean    |It disables input to the button. The button remains visible to the user, but user input is not allowed.
+| **Visible**        |  Boolean | Controls the column's visibility on the page. When turned off, the column won't be visible.  |
+| **Column Freeze**  |  Boolean | Controls whether to unfreeze or freeze the column to the left or right. |
+
+#### Events
+
+When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
+
+| Action                 | Description               |
+| ---------------------- | ------------------------- |
+| **onClick**             | Sets an action when the user clicks the button column type.     |
+
+
+  </TabItem>
+  <TabItem value="Checkbox" label="Checkbox">
 #### Checkbox
 
 <VideoEmbed host="youtube" videoId="EJn6XiZBI0k" title="Checkbox column" caption="Checkbox column"/>
@@ -48,32 +127,31 @@ The [checkbox](/reference/widgets/checkbox) column type represents something wit
 
 The checkbox column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-#### Date
+  </TabItem>
+  <TabItem value="Date" label="Date">
 
 The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
 
-* The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. 
+* The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
 
-For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
-* Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, **YYYY-MM-DD hh:mm:ss**, etc.
-* Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
+  * Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, **YYYY-MM-DD hh:mm:ss**, etc.
+  * Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
 
 * The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the **Display Format** property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
 
 It's important to ensure that both properties are set correctly to handle and display date and time information in your app. 
 
-#### Icon button
+  </TabItem>
+ <TabItem value="Icon Button" label="Icon Button" default>
+    #### Icon button
 
 The icon button column type contains a button that uses an icon as a label rather than text. It's a clickable cell that triggers an **onClick** event attached to it.
 
 For extra information about icon buttons, read about the [Icon Button widget](/reference/widgets/icon-button).
 
-#### Image
-
-The image column type parses the cell value as an image source URL or base64 data, and displays the resulting image within the table (or "Invalid Image" if the data isn't valid). The size of the image can be adjusted in the column's Style settings tab with the **Image Size** setting.
-
-For more information about images in Appsmith, read about the [Image widget](/reference/widgets/icon-button).
-
+  </TabItem>
+  <TabItem value="Menu Button" label="Menu Button">
+    
 #### Menu Button
 
 The menu button column type is a set of buttons in a group. Menus are sometimes hierarchically organized, allowing navigation through different levels of the menu structure.
@@ -85,8 +163,10 @@ You can also add menu items dynamically using the [Menu Items Source as Dynamic]
 :::note
  You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use [`{{currentItem}}` and `{{currentIndex}}`](../menu-button.md#how-to-use-currentitem-and-currentindex) bindings that reference the selected item, and it's index respectively on the menu button.
 :::
+  </TabItem>
 
-#### Number
+ <TabItem value="Number" label="Number" default>
+ #### Number
 
 Numbers are stored in database columns as numeric data types. Typically, these data kinds are categorized by:
 
@@ -95,29 +175,19 @@ Numbers are stored in database columns as numeric data types. Typically, these d
 
 The number column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-#### Plain text
+  </TabItem>
+  <TabItem value="Plain Text" label="Plain Text">
+
 
 The Plain text refers to data (such as file contents) that contain readable characters without graphical representation or other elements (floating-point numbers, images, etc.).
 
 The plain text column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-#### URL
 
-When the column type is URL, the table parses the cell contents as a hyperlink and the user may click the cell to be taken to the URL in a new browser tab. The only pieces of the URL that must be included are the domain and suffix (such as: example.com).
+  </TabItem>
+  <TabItem value="Select" label="Select">
 
-#### Video
-
-The video column type displays videos within the table. The cell value should be a source file path or URL, such as YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, or DailyMotion. To read more about videos in Appsmith, take a look at the [Video widget](/reference/widgets/video).
-
-#### Switch
-
-The Switch column type allows users to make a binary decision. Switches toggle the state of a single item on or off. It uses the boolean values **True** and **False** for the on and off states respectively, just like the [checkbox](#checkbox).
-
-The switch column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
-
-#### Select
-
-The select column type contains a drop-down list that offers options from a specified list of permitted inputs. For instance, you can use select type to capture values such as T-shirt size, gender, or favorite color. The list of choices for the select column should be placed in the **Options** property, as an array of objects with keys `label` and `value`:
+The Select column type allows users to select an option from a predefined list of choices. It is useful for capturing data such as T-shirt size, gender, or favorite color. To set up a Select column, you need to specify the list of options in the Options property. The Options property should be an array of objects, with each object containing a label and a value property.
 
 ```javascript
 [
@@ -127,69 +197,28 @@ The select column type contains a drop-down list that offers options from a spec
   }
 ]
 ```
-
-For more information about properties specific to this column type, read about the [Select widget](/reference/widgets/select).
-
-![Switch Column type available for table](/img/Switch_column_type.gif)
+The `label` property specifies the text that would be displayed to the user, and the value property specifies the value that would be stored in the cell.
 
 The select column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
+If you want to specify the options available for new rows in a Select column, you can use the following properties:
 
-### Computed value
+:::note
+Please note that the Table's **Allow adding a row** property must be turned on to add a new row.
+:::
 
-The computed value field helps in creating custom table columns. For example, you can show a value calculated from the response of two different queries. This field also allows you to manipulate the value using JS expressions; For example, if you want to show the date time stamp in the human-readable format, you can use a `Moment.JS` function.
+* **Same options in new row:** When this property is turned on, it ensures that the same options are available for new rows as well. For instance, if your Select column has options like `Small`, `Medium`, and `Large`, then these options would also be available when you add new rows.
 
-![](/img/computed\_value.jpg)
+* **New row options:** If you want to provide different options for new rows, you can turn off the `Same options in new row` property. This would make the `New row options` property visible, where you can add options specifically for the new row. Please note that the New row options property does not have access to the current row object.
+  
+</TabItem>
+ <TabItem value="Switch" label="Switch" default>
+    
+The Switch column type allows users to make a binary decision. Switches toggle the state of a single item on or off. It uses the boolean values **True** and **False** for the on and off states respectively, just like the [checkbox](#checkbox).
 
-You can also access each row's column values with the `currentRow` property. `currentRow` is only accessible from inside the column properties pane. It can be helpful if you wish to merge multiple values/properties under a single column.
+The switch column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the **Editable** property in the column settings.
 
-In the video below, the "Email" column is renamed to "Contact" and then the **Computed Value** property is used to merge the email and phone number into a single column.
+  </TabItem>
+ 
+</Tabs>
 
-<VideoEmbed host="youtube" videoId="tjc8HlzQ4xU" title="Merging Columns" caption="Merging Columns"/>
-
-### Visible
-
-This controls the widget's visibility on the app's page. When turned off, the widget isn't visible in the published app. You can also use JS code to determine the widget's visibility programmatically. Click on `JS` next to the `Visible` field in the properties pane to write JavaScript code.
-
-For example, drag a checkbox widget `Checkbox1` onto the canvas and bind it to the table's `Visible` property. To enable the `Visible` when the user checks the checkbox, add the following JavaScript code:
-
-```
-{{Checkbox1.isChecked}}
-```
-
-When you tick the checkbox, `Visible` is set to `true`, and the table becomes visible in the app.
-
-<VideoEmbed host="youtube" videoId="Jb5bNVhFoRE" title="Visible" caption="Visible"/>
-
-### Cell wrapping
-
-Cell wrapping allows the contents of a cell to be wrapped to the following line instead of getting truncated. Cell wrapping can be enabled for a column or subset of cells in a column using `cell wrapping` property in column settings.
-
-<VideoEmbed host="youtube" videoId="RTP1SX6OLL8" title="Cell Wrapping" caption="Cell Wrapping"/>
-
-### Editable
-
-Editable controls the cell's edit-ability in the column. You can edit data in a cell of the column when it's turned on. Once a column has been made editable, an edit icon appears on the column header as an indicator. Currently, there are several column types support inline editing - **Text**, **Number**, **Switch**, **Select**, and **Checkbox**.
-
-If you hover over any cell in the column, an edit icon appears. Click the icon to edit the individual cell.
-
-Based on the Column type, you can edit the cell content. Once done, you can move away from the edit mode in two ways:
-
-1. Edited contents can be persisted on the Table cell by either pressing enter key or clicking anywhere outside the cell.
-2. Edited contents can be discarded by pressing the escape key.
-
-<VideoEmbed host="youtube" videoId="Wmitzz4UAGo" title="Editable" caption="Editable"/>
-
-## Styles
-
-Depending upon the column type, various style properties are available to change the look and feel of each column. For example, for a text column, you can have the following style properties-
-
-|     Property                    |         Description                                           |
-| ------------------------------- | ------------------------------------------------------------- |
-| **Text Align**                  | Sets the horizontal alignment of the text.                    |
-| **Text Size**                   | Sets the size of the text in the column.                      |
-| **Font Style**                  | Sets a font style for text, such as **bold** or _italic_.     |
-| **Vertical Alignment**          | Sets how the cell contents are vertically positioned.         |
-| **Text Color**                  | Sets the color of the text in the column.                     |
-| **Cell Background**             | Sets the background color for the cells in the column.        |
-| **Image Size**                  | Allows you to resize an image for Image column type.          |
