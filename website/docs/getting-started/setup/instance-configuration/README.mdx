@@ -1,6 +1,6 @@
 ---
 description: >-
-  Appsmith ships with third-party services & configurations that improve the app
+  Appsmith ships with third-party services & configurations that improve the app-
   building experience. All services & configurations are entirely optional.
 ---
 
@@ -36,7 +36,7 @@ Users who are granted super admin privileges are authorized to access and make c
 </figure>
 
 ### Configure instance
-The Admin settings enables the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
+The Admin settings enable the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
 
 <figure>
   <img src="/img/Instance-Configuration-using-Admin-Settings.png" style= {{width:"900px", height:"auto"}} alt="Use Admin Settings to configure your instance"/>
@@ -223,7 +223,6 @@ helm install \
   appsmith appsmith/appsmith 
 ```
 
-* **Or** using `values.yaml` file: 
 <Tabs groupId="appsmithEditions">
   <TabItem label="Community Edition" value="communityEdition"> 
 Change the parameter values in the `values.yaml` file and run the below command:
@@ -231,12 +230,42 @@ Change the parameter values in the `values.yaml` file and run the below command:
   ```bash
   helm install appsmith appsmith/appsmith -f values.yaml 
   ```
+  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
+
+  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
+
+  ```yaml
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+    APPSMITH_FORM_LOGIN_DISABLED: ""
+    APPSMITH_SIGNUP_DISABLED: "true"
+  ``` 
+Once you have made changes to the values file, run the below command.
+
+```bash
+  helm upgrade --values values.yaml appsmith appsmith/appsmith
+```
+
   </TabItem>
   <TabItem label="Business Edition" value="businessEdition"> 
 Change the parameter values in the `values.yaml` file and run the below command:
 
   ```bash
-  helm install appsmith appsmith-ee/appsmith -f values.yaml 
+    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
+  ```
+  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable the signup button on the Appsmith login screen.
+
+  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
+
+  ```yaml
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
+    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
+    APPSMITH_FORM_LOGIN_DISABLED: ""
+    APPSMITH_SIGNUP_DISABLED: "true"
   ```
   </TabItem>
  </Tabs> 

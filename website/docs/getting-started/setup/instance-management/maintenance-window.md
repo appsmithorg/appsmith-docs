@@ -11,9 +11,9 @@ Checking for updates can be configured to run during a pre-specific maintenance 
 
 ### Step 1
 
-In the `docker-compose.yml` file, scroll to the configurations of the container with image `containrrr/watchtower`. It'll be named either _auto\_update_ or _watchtower_. This is what your configuration will look like
+In the `docker-compose.yml` file, scroll to the configurations of the container with image `containrrr/watchtower`. It'll be named either _auto\_update_ or _watchtower_.
 
-```
+```yaml
   auto_update:
     image: containrrr/watchtower
     volumes:
@@ -27,9 +27,9 @@ In the `docker-compose.yml` file, scroll to the configurations of the container 
 
 ### Step 2
 
-In the `command` configuration, please remove the `--interval` argument and the value `300` next to it, and in it’s place, add a `--schedule` and a cron expression defining an update interval of your choice. Your new configuration will look like below.
+In the `command` configuration, please remove the `--interval` argument and the value `300` next to it, and in its place, add a `--schedule` and a cron expression defining an update interval of your choice, as shown below:
 
-```
+```yaml
   auto_update:
     image: containrrr/watchtower
     volumes:

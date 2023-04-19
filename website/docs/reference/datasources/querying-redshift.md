@@ -7,7 +7,7 @@ sidebar_position: 15
 The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
 :::
 
-## Connection Settings
+## Connection settings
 
 Appsmith needs the following parameters for connecting to a Redshift database:
 
@@ -22,7 +22,7 @@ You need to fill in the following parameters:
 * **Connection Mode\*:** You must choose one of the following two modes:
   * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
   * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith will try to connect to port 5439.
+* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith connects to port 5439.
 * **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
 
 ### **Authentication**
@@ -49,7 +49,7 @@ Redshift databases can be queried using the standard [SQL syntax](https://docs.a
 
 ![Click to expand](/img/redshift_query_widget_input.gif)
 
-## Using Queries in applications
+## Using queries in applications
 
 Once you have successfully run a Query, you can use it in your application to
 

@@ -4,26 +4,41 @@ This page explains how to use the Datepicker widget to display or capture date/t
 
 <VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
 
-## Display date and time
 
-You can use the **Default Date** property to set the date and time. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. 
+
+## Update date
+
+To update the date, you can start by setting a **Default Date**. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. To access the date the user selects in the Datepicker widget, you can use the `formattedDate` or `selectedDate` reference property.
+
+* The `formattedDate` property contains the formatted date value currently selected within the Datepicker widget. The format depends on the **Date Format** property set for the widget.
+* The `selectedDate` property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or the user inputs a new value. The date is in the format: `YYYY-MM-DDTHH:mm:ss.sssZ`, where Z represents the time zone offset from UTC.
 
 ---
 
-**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. 
+**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. For this, lets use the same `tblUserData` table.
 
-1.  Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
-
-2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
-
-```js
-{{fetchUserData.data}}
-```
-
-3. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
+1. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
 
 ```js
 {{tblUserData.selectedRow.dob}}
+```
+
+2. To update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
+
+```sql
+UPDATE users
+  SET dob = {{DatePicker.selectedDate}}
+  WHERE id = {{tblUserData.selectedRow.id}};
+```
+
+Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
+
+You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required. For instance, if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
+
+```js
+{{
+  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
+}}
 ```
 
 <figure>
@@ -32,45 +47,29 @@ You can use the **Default Date** property to set the date and time. You can also
 </figure>
 
 
-### Format dates
-Appsmith provides several date formats that you can choose from in the **Date Format** property.
 
-You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required.
+## Filter data for a date range
+To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the `formattedDate` or `selectedDate` reference property.
 
----
-**Example**: if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
+--- 
+
+**Example**: suppose you have a table in your database that contains user details, including their date of birth (DOB). You want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/2010`.
+
+1. Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+
+2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
 ```js
-{{
-  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
-}}
+{{fetchUserData.data}}
 ```
-
-## Access selected date
-
-To access the date the user selects in the Datepicker widget, you can use the `formattedDate` or `selectedDate` reference property.
-
-* The `formattedDate` property contains the formatted date value currently selected within the Datepicker widget. The format depends on the **Date Format** property set for the widget.
-* The `selectedDate` property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or the user inputs a new value. The date is in the format: `YYYY-MM-DDTHH:mm:ss.sssZ`, where Z represents the time zone offset from UTC.
-
----
-**Example**: in the preceding user's date of birth example, if you want to update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
+3. Now, add two date pickers to your canvas. Then, create a new query called `filterdata` with the SQL statement:
 
 ```sql
-UPDATE users
-  SET dob = '{{DatePicker.formattedDate}}'
-  WHERE id = {{tblUserData.selectedRow.id}};
+SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePicker2.selectedDate}} ORDER BY id;
 ```
+This query retrieves data based on the user-selected date range. Next, you can bind the `onDateSelected` event to run the `filterdata` query for both Datepickers.
 
-Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
 
-## Sample apps
-
-* [Set Min and Max Date](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/61fbff472cd3d95ca414b9af) -  Allows users to select a date within a specified range.
-* [Date Formatting](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6228975df782567d61f15158) - Demonstrates different date formatting options using Moment.js.
-* [Date Calculations](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9) - Calculates the time difference between two dates using Moment.js.
-* [Set and Clear Date](https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6256e5e40d3d384069c07baa) - Lets users set or clear a selected date using a button.
-* [Filter Data Between Dates](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c) - Filters data based on a selected date range.
 
 
 ## Properties
