@@ -16,9 +16,12 @@ Appsmith integrates with the `supervisorctl` command line utility. It handles th
 To set up the credentials for accessing the web interface, update the environment variables:
 1. Go to the `docker.env` file available in the `stacks/configuration` folder.
 2. Set the values for the below variables:
-```
+
+```bash
 APPSMITH_SUPERVISOR_USER=<SUPERVISOR-USER>
 APPSMITH_SUPERVISOR_PASSWORD=<SUPERVISOR-PASSWORD>
+```
+
 3. Use the interface to manage the Appsmith server, Nginx, MongoDB, and more.
 
 ## Command line interface
