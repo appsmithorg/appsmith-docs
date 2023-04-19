@@ -8,7 +8,7 @@ The container runs multiple processes, including the Appsmith server, Nginx, Mon
 Supervisor comes with a web interface for managing the various processes, available at [http://localhost/supervisor](http://localhost/supervisor), as well as a command-line interface towards the same goal.
 
 :::info
-The credentials for supervisor access is defined by the environment variables `APPSMITH_SUPERVISOR_USER` and `APPSMITH_SUPERVISOR_PASSWORD` in the `stacks/configuration/docker.env` file.
+The credentials for supervisor access are defined by the environment variables `APPSMITH_SUPERVISOR_USER` and `APPSMITH_SUPERVISOR_PASSWORD` in the `stacks/configuration/docker.env` file.
 :::
 
 Here's a screenshot of the web interface listing all the processes managed:
@@ -21,7 +21,7 @@ The command-line interface can also be used to perform operations like restartin
 docker-compose exec appsmith supervisorctl status
 ```
 
-Or to view the last few lines of stderr output of one of the processes:
+Or to view the last few lines of the `stderr` output of one of the processes:
 
 ```bash
 docker-compose exec appsmith supervisorctl tail backend stderr

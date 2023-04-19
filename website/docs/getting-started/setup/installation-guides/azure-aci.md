@@ -37,7 +37,7 @@ az group create --name $resourceGroupName --location $aciLocation
 ```
 
 ### Create a storage account (optional)
-You can skip this setp if you want to use an existing storage account.
+You can skip this step if you want to use an existing storage account.
 ```bash
 az storage account create --resource-group $resourceGroupName --name $storageAccountName --location $aciLocation --sku Standard_LRS
 ```
@@ -53,7 +53,7 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
 ### Create Appsmith ACI
 
-<Tabs groupId="editions">
+<Tabs groupId="editions" queryString="current-edition">
    <TabItem label="Community Edition" value="community">
 
 ```bash
@@ -112,10 +112,10 @@ Create a backup of the Appsmith instance before performing an update. See [How t
 
 1. Navigate to the ACI on the Azure Portal
 2. Click the ACI running Appsmith
-3. Click on the Restart button
+3. Click the Restart button
 4. Wait until the ACI restarts with the latest Appsmith release.
 
-If you have updated your Appsmith instance and face any issues, you can rollback the changes and [restore the Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive.
+If you have updated your Appsmith instance and face any issues, you can roll back the changes and [restore the Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive.
 
 ### Troubleshooting
 
@@ -123,6 +123,6 @@ If there are any errors during this process, follow the guide on [debugging depl
 
 ### Further reading
 
-* [Configuring Self Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
+* [Configuring Self-Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](/getting-started/setup/instance-management/)
 * [Tutorials](/learning-and-resources/tutorials/)
