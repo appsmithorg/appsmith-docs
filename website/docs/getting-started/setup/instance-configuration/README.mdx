@@ -171,7 +171,10 @@ The below table provides a list of Helm parameters that can also be used for con
 | `persistence.localCluster`          | Persistence |  Local running cluster to provide storage space                       | `[minikube]`       |
 | `persistence.accessModes`           | Persistence |  Persistent Volume access modes                                       | `[ReadWriteOnce]`  |
 | `persistence.size`                  | Persistence | Persistent Volume size                                               | `10Gi`             |
-| `storageClass.enabled`              | Persistence |  Enable Storage Class configuration                                   | `false`            |
+| `persistence.efs.enabled`           | Persistence | If EFS is enabled                                                    | ``                 |
+| `persistence.efs.driver`            | Persistence | EFS driver                                                           | ``                 |
+| `persistence.efs.volumeHandle`      | Persistence | EFS volume id                                                        | ``                 |
+| `storageClass.enabled`              | Persistence |  Enable Storage Class configuration                                  | `false`           |
 | `storageClass.defaultClass`         |Persistence |  Create default Storage Class                                         | `false`            |
 | `storageClass.bindingMode`          | Persistence | Binding mode for Persistent Volume Claims using Storage Class        | `Immediate`        |
 | `storageClass.allowVolumeExpansion` | Persistence | Allow expansion of Persistent Volume Claims using Storage Class      | `true`             |
@@ -180,8 +183,23 @@ The below table provides a list of Helm parameters that can also be used for con
 | `storageClass.annotations`          | Persistence | Additional storage class annotations                                 | `{}`               |
 | `storageClass.mountOptions`         | Persistence | Mount options used by Persistent Volumes                             | `{}`               |
 | `storageClass.parameters`           | Persistence | Storage Class parameters                                             | `{}`               |
-| `autoupdate.enabled`   | Auto update Image | Enable auto update Helm chart's image         | `true`        |
-| `autoupdate.scheduler` | Auto update Image | Schedule time to run cron job to update image | `"0 * * * *"` |
+| `autoupdate.enabled`    | Auto update Image | Enable auto update Helm chart's image         | `true`        |
+| `autoupdate.scheduler`  | Auto update Image | Schedule time to run cron job to update image | `"0 * * * *"` |
+| `autoscaling.enabled`    | Auto scaling | Enable auto scaling    | `false` |
+| `autoscaling.minReplicas`| Auto scaling | Number of minimum pods | `2`     |
+| `autoscaling.maxReplicas`| Auto scaling | Number of maximum pods | `3`     |
+| `redis.enabled`             | Redis | Enable redis       | `true` |
+| `redis.replica.replicaCount`| Redis | Number of replicas | `1`    |
+| `mongodb.enabled`           | Mongo | Enable MongoDB     | `true` |
+| `mongodb.auth.rootUser`     | Mongo | MongoDB root user     | `root`     |
+| `mongodb.auth.rootPassword` | Mongo | MongoDB root Password | `password` |
+| `mongodb.replicaCount`      | Mongo | Replica of mongo      | `2` |
+| `mongodb.replicaSetName`    | Mongo | Mongo Replica set name| `rs0` |
+| `postgresql.enabled`        | Postgres | Enable Postgres        | `true`     |
+| `postgresql.auth.username`  | Postgres | Postgres auth username | `root`     |
+| `postgresql.auth.password`  | Postgres | Postgres auth password | `password` |
+| `postgresql.auth.postgresPassword`| Postgres | Postgres auth postgresPassword | `password` |
+| `postgresql.auth.database`  | Postgres | Number of maximum pods | `keycloak` |
 
 #### Configure instance
 
