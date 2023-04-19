@@ -1,10 +1,15 @@
 ---
 sidebar_position: 2
 ---
-# Appsmithctl
+# Backup and Restore CLI
 
-Appsmith comes with an <mark >`appsmithctl`</mark> command line utility. You can use it for managing and maintaining your Appsmith instance.
+Appsmith comes with a command line utility, `appsmithctl`.  You can use it to:
+* [Backup your Appsmith instance](#backup-appsmith-instance)
+* [Restore your Appsmith instance to a previous version](#restore-appsmith-instance)
+* [Export the Appsmith database](#export-database)
+* [Import the Appsmith database to a previous version](#import-database)
 
+## Usage
 ```bash
 appsmithctl <subcommand> <options>
 ```

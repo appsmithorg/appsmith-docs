@@ -3,28 +3,39 @@ sidebar_position: 1
 ---
 # Supervisor
 
-The container runs multiple processes, including the Appsmith server, Nginx, MongoDB, etc., inside a single Docker container. These processes are started and managed by [Supervisor](http://supervisord.org).
+Appsmith integrates with the `supervisorctl` command line utility. It handles the management of the Appsmith server, Nginx, MongoDB, and more. The page gives you steps to manage your Appsmith instance using the supervisor interface.
 
-Supervisor comes with a web interface for managing the various processes, available at [http://localhost/supervisor](http://localhost/supervisor), as well as a command-line interface towards the same goal.
+[Supervisor](http://supervisord.org/) also provides a web interface accessible on `http://localhost/supervisor`.
 
-:::info
-The credentials for supervisor access is defined by the environment variables `APPSMITH_SUPERVISOR_USER` and `APPSMITH_SUPERVISOR_PASSWORD` in the `stacks/configuration/docker.env` file.
-:::
+## Web interface
+<figure>
+  <img src="https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith\_supervisord\_ui.png" style= {{width:"700px", height:"auto"}} alt="The web interface listing all the managed processes"/>
+  <figcaption align = "center"><i>The web interface listing all the managed processes</i></figcaption>
+</figure>
 
-Here's a screenshot of the web interface listing all the processes managed:
+To set up the credentials for accessing the web interface, update the environment variables:
+1. Go to the `docker.env` file available in the `stacks/configuration` folder.
+2. Set the values for the below variables:
+```
+APPSMITH_SUPERVISOR_USER=<SUPERVISOR-USER>
+APPSMITH_SUPERVISOR_PASSWORD=<SUPERVISOR-PASSWORD>
+3. Use the interface to manage the Appsmith server, Nginx, MongoDB, and more.
 
-![](https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith\_supervisord\_ui.png)
+## Command line interface
+The command line interface also helps in managing the Appsmith server, Nginx, MongoDB, and more. 
 
-The command-line interface can also be used to perform operations like restarting the Appsmith server, restarting Nginx, etc. For example, the following command (run in the installation folder) can be used to get the status of all running processes:
+For example:
+* Check the status of all running processes with:
 
 ```bash
 docker-compose exec appsmith supervisorctl status
 ```
 
-Or to view the last few lines of stderr output of one of the processes:
+* View the last few lines of the `stderr` output of a specific process with: 
 
 ```bash
-docker-compose exec appsmith supervisorctl tail backend stderr
+docker-compose exec appsmith supervisorctl tail <process_name> stderr
 ```
 
-To learn more, please refer to [Supervisor's documentation](http://supervisord.org/running.html#supervisorctl-actions) on what actions are available to be performed by the command-line interface.
+Refer to the Supervisor official documentation to learn more about the [supervisorctl actions](http://supervisord.org/running.html#supervisorctl-actions).
+

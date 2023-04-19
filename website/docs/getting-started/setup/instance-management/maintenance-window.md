@@ -3,81 +3,54 @@ sidebar_position: 3
 ---
 # Maintenance Window
 
-## **Adding a configurable maintenance window for Appsmith’s auto-updates**
+A maintenance window is a defined time when you can perform maintenance tasks. For example, Appsmith updates, software updates, patches, and more. A maintenance window helps in reducing the impact on users during these activities. The page gives you steps to configure a maintenance window for your Appsmith instance.
 
-Checking for updates can be configured to run during a pre-specific maintenance window by specifying a cron expression to the `--schedule` argument in the `auto_update` container’s command.
+### Configure maintenance window for auto-updates
+You can choose a time slot for auto updates to happen. You've to set the time slot using a `cron` expression in the `--schedule` argument.
 
-## Changes required
+Below are some example configurations for common use cases:
 
-### Step 1
+* Check for updates every Sunday at 12:00 noon:
 
-In the `docker-compose.yml` file, scroll to the configurations of the container with image `containrrr/watchtower`. It'll be named either _auto\_update_ or _watchtower_. This is what your configuration will look like
-
+```bash
+command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
 ```
-  auto_update:
+
+* Check for updates every hour:
+
+```bash
+command: --schedule "0 0 * ? * *" --label-enable --cleanup
+```
+* Check for updates once at 12:00 midnight every day:
+
+```bash
+command: --schedule "0 0 12 * * ?" --label-enable --cleanup 
+```
+Follow these steps to update the `auto_update` container:
+1. Go to the `docker-compose.yml` file
+2. Open and update the `auto_update` attribute as shown below:
+
+:::caution Attention
+You must add a 6-value cron expression, not the traditional 5-value one. Refer to learn more about [How the cron expression works](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON\_Expression\_Format).
+:::
+
+```yaml
+auto_update:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     # Checks for update every 5 mins because of --interval
-    command: --interval 300 --label-enable --cleanup
-    networks:
-      - appsmith
-    restart: always
-```
-
-### Step 2
-
-In the `command` configuration, please remove the `--interval` argument and the value `300` next to it, and in it’s place, add a `--schedule` and a cron expression defining an update interval of your choice. Your new configuration will look like below.
-
-```
-  auto_update:
-    image: containrrr/watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    # Check for updates every hour because of the cron schedule
+    #highlight-next-line
     command: --schedule "0 0 * ? * *" --label-enable --cleanup
     networks:
       - appsmith
     restart: always
 ```
-
-> ℹ️ Note that a 6-value cron expression is expected here, not the traditional 5-value one. For details on how the expression works, please refer to (https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON\_Expression\_Format)
-
-After making the changes restart the auto update container via the command below:
-
+3. Restart the `auto_update` container with:
 ```bash
-# Use the container name as defined in your docker-compose.yml file. This command uses the name: auto_update
 sudo docker-compose pull && sudo docker-compose up --force-recreate auto_update
 ```
-
-Check the logs and see that the maintenance window is now in effect.
-
+4. Verify the logs that the maintenance window is in effect with:
 ```bash
 docker-compose logs -f auto_update
 ```
-
-## Example configurations for some common use cases
-
-Check for updates every Sunday at 12:00:
-
-```yaml
-command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
-```
-
-Check for updates every hour:
-
-```yaml
-command: --schedule "0 0 * ? * *" --label-enable --cleanup
-```
-
-Check for updates once at 12:00 everyday:
-
-```yaml
-command: --schedule "0 0 12 * * ?" --label-enable --cleanup
-```
-
-## References:
-
-[Cron Generator tool](https://www.freeformatter.com/cron-expression-generator-quartz.html)
-
-[Config Scheduler](https://containrrr.dev/watchtower/arguments/#scheduling)
