@@ -1,6 +1,6 @@
 ---
 description: >-
-  Appsmith ships with third-party services & configurations that improve the app
+  Appsmith ships with third-party services & configurations that improve the app-
   building experience. All services & configurations are entirely optional.
 ---
 
@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Instance Configuration
 
-This page provides instructions on how to configure your self-hosted Appsmith instance. You can configure a self-hosted Appsmith instance by choosing any one of the below option:
+This page provides instructions on how to configure your self-hosted Appsmith instance. You can configure a self-hosted Appsmith instance by choosing any one of the below options:
 * [Admin Settings](#admin-settings) 
 * [Environment Variables](#environment-variables)
 
@@ -36,7 +36,7 @@ Users who are granted super admin privileges are authorized to access and make c
 </figure>
 
 ### Configure instance
-The Admin settings enables configuration of various settings such as user authentication, email notifications, integrations, and more using user interface for your self-hosted Appsmith instance.
+The Admin settings enables the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
 
 <figure>
   <img src="/img/Instance-Configuration-using-Admin-Settings.png" style= {{width:"900px", height:"auto"}} alt="Use Admin Settings to configure your instance"/>
@@ -53,7 +53,7 @@ The Admin settings enables configuration of various settings such as user authen
 | **Appsmith Watermark** | General | [Upgrade to Appsmith Business Edition](https://www.appsmith.com/pricing) to remove the **Built on qppsmith\_** badge on the app's bottom right corner.|
 | **Embed Settings** | General | Configure to allow users to embed Appsmith in external applications. You may choose to enable embedding on any domain, limit it to certain domains, or disable it completely.|
 | **Email** | Email | Configure Email on your Appsmith instance. For more information, see [Email](/getting-started/setup/instance-configuration/email).|
-| ** Google Maps ** | Google Maps | Configure to use Maps widget on your instance. For more information, see [Google Maps](/getting-started/setup/instance-configuration/email). |
+| ** Google Maps ** | Google Maps | Configure to use the Maps widget on your instance. For more information, see [Google Maps](/getting-started/setup/instance-configuration/email). |
 | ** Authentication** | Authentication | Configure the authentication type like [**Google OAuth**](/getting-started/setup/instance-configuration/authentication/google-login), [**GitHub OAuth**](/getting-started/setup/instance-configuration/authentication/github-login). If you are on a [Appsmith Business Edition](https://www.appsmith.com/pricing) you can also configure authentication using popular Single Sign-on (SSO) authentication protocols such as [**SAML**](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)  and [**OpenID Connect**](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc).|
 | **MongoDB URI** | Advanced | Configure to use an external MongoDB database for your self-hosted instance. Form more information about how to configure external MongoDB, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
 | **Redis URL** | Advanced |Configure to use an external Redis instance for your self-hosted instance. For more information about how to configure external Redis, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
@@ -68,7 +68,7 @@ You may also choose to configure your self-hosted Appsmith instance using enviro
 
 ### Configure Docker installations
 
-To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. For example, you wish to add Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
+To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. For example, you wish to add the Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
 
 ```bash
 APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
@@ -89,7 +89,7 @@ After making changes, be sure to **restart the docker containers** for the chang
 
 To configure environment variables using helm, follow these steps:
 
-<Tabs groupId="appsmithEditions">
+<Tabs groupId="appsmithEditions" >
   <TabItem label="Community Edition" value="communityEdition"> 
 
   You may choose to configure environment variables: through commands or by using a `values.yaml` file.
@@ -99,7 +99,7 @@ To configure environment variables using helm, follow these steps:
   ```bash
     helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
   ```
-  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
+  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable the signup button on the Appsmith login screen. 
 
   * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
 
@@ -127,7 +127,7 @@ Once you have made changes to the values file, run the below command.
   ```bash
     helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
   ```
-  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable signup button on Appsmith login screen. 
+  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable the signup button on the Appsmith login screen. 
 
   * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
 
@@ -152,7 +152,7 @@ Once you have made changes to the values file, run the below command.
 To configure an ECS installation, follow these steps:
 
 1. Navigate to the ECS console and select Task Definitions on the sidebar.
-2. Click on the Task Definition used by your ECS instance, and hit Create new revision.
+2. Click the Task Definition used by your ECS instance, and hit Create new revision.
 3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs as shown below.
 
 ![](/img/ecs-task-env_(1).png)
@@ -160,9 +160,9 @@ To configure an ECS installation, follow these steps:
 It's recommended to use AWS Secrets for sensitive information, please follow the steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
 
 1. Hit the Update button, and hit Create to make a new task definition.
-2. Navigate back to the ECS console and select your cluster. Click on your service to open the service details.
-3. Click on Update, and select the latest revision of the Task Definition.
-4. Hit Skip to review and then Update Service. A screen as below shows the status.
+2. Navigate back to the ECS console and select your cluster. Click your service to open the service details.
+3. Click Update, and select the latest revision of the Task Definition.
+4. Hit Skip to review and then Update Service. The screen below shows the status.
 
 ![](/img/instance-configuration-ecs-service-restart.png)
 

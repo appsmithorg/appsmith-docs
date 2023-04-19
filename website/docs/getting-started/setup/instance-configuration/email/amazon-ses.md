@@ -64,5 +64,5 @@ Your email service should now be configured correctly. Read more about [setting 
 **7.** [**Restart the Appsmith Instance**](../)
 
 :::note
-If you have created a new amazon SES account, your account will be sandboxed and will be unable to send emails to unverified email Ids. Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html).
+If you have created a new Amazon SES account, your account is sandboxed and is unable to send emails to unverified email Ids. Read more on how to [request production access](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html).
 :::

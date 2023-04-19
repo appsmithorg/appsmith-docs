@@ -38,4 +38,3 @@ docker-compose exec appsmith supervisorctl tail <process_name> stderr
 ```
 
 Refer to the Supervisor official documentation to learn more about the [supervisorctl actions](http://supervisord.org/running.html#supervisorctl-actions).
-

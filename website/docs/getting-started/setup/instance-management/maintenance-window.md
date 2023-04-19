@@ -14,7 +14,6 @@ Below are some example configurations for common use cases:
 
 ```bash
 command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
-```
 
 * Check for updates every hour:
 
@@ -35,7 +34,7 @@ You must add a 6-value cron expression, not the traditional 5-value one. Refer t
 :::
 
 ```yaml
-auto_update:
+  auto_update:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
