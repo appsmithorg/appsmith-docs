@@ -2703,9 +2703,8 @@
       "destination": "/advanced-concepts/version-control-with-git/merging-branches"
     },
     {
-      "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
-      "destination": "/advanced-concepts/version-control-with-git/update-file-path"
+      "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
+      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
     }
-    
   ]
 }
