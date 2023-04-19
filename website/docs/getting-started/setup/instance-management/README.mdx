@@ -6,18 +6,118 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Instance Management
+One of the key features of Appsmith is its instance management capabilities. Appsmith provides a variety of tools for managing instances so that you can:
 
-## Switching off auto updates
+* Configure a Maintenance Window for auto-updates to cut the downtime for your users
+* Configure auto-updates to keep your Appsmith installation up-to-date
+* Backup and Restore your Appsmith instance using command line utilities
 
-In your `docker-compose.yml` file, the `auto_update` container is responsible for periodically checking for updates to Appsmith and applying those updates. If you wish to disable this auto updating, please run the below command:
+The page provides steps for managing your Appsmith instance. 
 
+## Maintenance window
+A maintenance window is a defined time when you can perform maintenance tasks. For example, Appsmith updates, software updates, patches, and more. A maintenance window helps in reducing the impact on users during these activities.
+
+### Configure maintenance window for auto-updates
+You can choose a time slot for auto updates to happen. You've to set the time slot using a cron expression in the `--schedule` argument.
+
+Below are some example configurations for common use cases:
+
+* Check for updates every Sunday at 12:00 noon:
+
+```bash
+command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
 ```
-docker-compose rm -s -v -f auto_update
+
+* Check for updates every hour:
+
+```bash
+command: --schedule "0 0 * ? * *" --label-enable --cleanup
+```
+* Check for updates once at 12:00 midnight every day:
+
+```bash
+command: --schedule "0 0 12 * * ?" --label-enable --cleanup 
+```
+Follow these steps to update the `auto_update` container:
+1. Go to the `docker-compose.yml` file
+2. Open and update the `auto_update` attribute as shown below:
+
+:::caution Attention
+You must add a 6-value cron expression, not the traditional 5-value one. Refer to learn more about [How the cron expression works](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON\_Expression\_Format).
+:::
+
+```yaml
+auto_update:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    # Checks for update every 5 mins because of --interval
+    #highlight-next-line
+    command: --schedule "0 0 * ? * *" --label-enable --cleanup
+    networks:
+      - appsmith
+    restart: always
+```
+3. Restart the `auto_update` container with:
+```bash
+sudo docker-compose pull && sudo docker-compose up --force-recreate auto_update
+```
+4. Verify the logs that the maintenance window is in effect with:
+```bash
+docker-compose logs -f auto_update
 ```
 
-This brings down the `auto_update` container, and update checks are no-longer performed. Note that however, if you run `docker-compose up -d` later, for any reason, then this `auto_update` will be brought up again. You can use that to turn auto updates on again in the future.
+## Auto updates 
 
-To check if auto updates are turned on in your instance, please run `docker-compose ps` and see if there a server called `auto_update` listed in the output, and if it's status is `Up`. If not, then auto updates are turned off for your instance.
+## Command line utilities
+Command line utilities enable you to perform various tasks using a terminal. Appsmith supports the below command line utilities:
+* `appsmithctl`
+* `supervisorctl`
+
+### appsmithctl
+Appsmith comes with a command line utility, `appsmithctl`.  You can use it to:
+* Backup your Appsmith instance
+* Restore your Appsmith instance to a previous version
+* Export the Appsmith database
+* Import the Appsmith database to a previous version
+
+For more information, see [How to use `appsmithctl` command line utility](/getting-started/setup/instance-management/appsmithctl). 
+
+### supervisorctl
+Appsmith also integrates with the `supervisorctl` command line utility. It handles the management of the Appsmith server, Nginx, MongoDB, and more. [Supervisor](http://supervisord.org/) also provides a web interface accessible on `http://localhost/supervisor`.
+
+### Web interface
+<figure>
+  <img src="https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith\_supervisord\_ui.png" style= {{width:"700px", height:"auto"}} alt="The web interface listing all the managed processes"/>
+  <figcaption align = "center"><i>The web interface listing all the managed processes</i></figcaption>
+</figure>
+
+To setup the credentials for accessing the web interface, update the environment variables:
+1. Go to the `docker.env` file available in the `stacks/configuration` folder.
+2. Set the values for the below variables:
+```
+APPSMITH_SUPERVISOR_USER=<SUPERVISOR-USER>
+APPSMITH_SUPERVISOR_PASSWORD=<SUPERVISOR-PASSWORD>
+3. Use the interface to manage the Appsmith server, Nginx, MongoDB, and more.
+
+### Command line interface
+The command line interface also helps in managing the Appsmith server, Nginx, MongoDB, and more. 
+
+For example:
+* Check the status of all running processes with:
+
+```bash
+docker-compose exec appsmith supervisorctl status
+```
+
+* View the last few lines of the `stderr` output of a specific process with: 
+
+```bash
+docker-compose exec appsmith supervisorctl tail <process_name> stderr
+```
+
+Refer to the official documentation of [Supervisor](http://supervisord.org/running.html#supervisorctl-actions) to learn more about the `supervisorctl` actions.
 
 ## Further reading
+* [appsmithctl](/getting-started/setup/instance-management/appsmithctl)
 * [Update Appsmith](/getting-started/setup/instance-management/update-appsmith)

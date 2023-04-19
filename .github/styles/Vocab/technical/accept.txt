@@ -327,4 +327,5 @@ Arango
 StoreValue
 updateUsers
 getUsers
-
+appsmithctl
+supervisorctl
