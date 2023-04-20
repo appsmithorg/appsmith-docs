@@ -125,6 +125,10 @@ After filling in the desired collection/path, enter your document data in the **
 }
 ```
 
+| **Parameter**        | **Description**                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Timestamp Path**   | When filled, adds a timestamp value in the created document under the key name you provide. Expects an array with a single string value (`["timestamp"]`).               |
+
 ---
 
 #### Example
@@ -184,6 +188,11 @@ When using **Update Document**, you only need to provide the fields that have be
 	"email": "nicholas@example.com"
 }
 ```
+
+| **Parameter**        | **Description**                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Delete Key Path**  | When filled, deletes the key/value pair with the name that you provide. For example, passing `["name"]` will delete the `name` property in the document. |
+| **Timestamp Path**   | When filled, adds a timestamp value in the created document under the key name you provide. Expects an array with a single string value (`["timestamp"]`).               |
 
 ---
 
