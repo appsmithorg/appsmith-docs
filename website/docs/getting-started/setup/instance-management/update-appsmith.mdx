@@ -168,6 +168,107 @@ docker-compose up -d
 If you haven't been using your Appsmith instance for a while, it could be possible that there might be multiple versions that show up in the error message. In such a case, perform the same steps for each version in order, starting from the oldest.
 :::
 
+## Switch off auto updates
+
+ Follow the below steps for your Appsmith installation to switch off auto updates:
+
+<Tabs queryString="current-installation">
+  <TabItem label="Docker" value="Docker"> 
+
+1. Go to the root directory of the Appsmith installation and run:
+
+   ```bash
+   docker-compose down
+   ```
+
+2. Open the `docker-compose.yml` file and comment out the below code block:
+   
+   ```yaml
+   auto_update:
+     image: containrrr/watchtower
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     # Update check interval in seconds.
+     command: --schedule "0 0 * ? * *" --label-enable --cleanup
+     restart: unless-stopped
+     depends_on:
+       - appsmith
+     environment:
+       - WATCHTOWER_LIFECYCLE_HOOKS=true
+   ```
+
+3. Save the file and run:
+
+```bash
+docker-compose up -d
+```
+
+4. Verify that auto update is turned off with:
+
+```bash
+docker-compose ps
+```
+
+  </TabItem>
+
+<TabItem label="Kubernetes" value="Kubernetes">
+Follow the steps below to turn off auto updates:
+
+<Tabs groupId="appsmithEditions" queryString="current-edition">
+<TabItem label="Community Edition" value="communityEdition"> 
+
+  You can switch off auto update by either using a command or setting it in the `values.yaml` file.
+
+  * Run the below command:
+
+  ```bash
+    #highlight-next-line
+    helm upgrade --set autoupdate.enabled=false \
+     appsmith appsmith/appsmith
+  ```
+
+  * **Or** edit `values.yaml`, update the below parameters:
+  ```yaml
+    autoupdate.enabled: false
+    autoupdate.scheduler: 0
+  ```
+  and run the below command:
+  ```bash
+    helm upgrade --values values.yaml appsmith appsmith/appsmith
+  ```
+
+</TabItem>
+<TabItem label="Business Edition" value="businessEdition"> 
+
+You can switch off auto update by either using a command or setting it in the `values.yaml` file.
+
+  * Run the below command:
+
+  ```bash
+    #highlight-next-line
+    helm upgrade --set autoupdate.enabled=false \
+    appsmith appsmith-ee/appsmith 
+  ```
+
+  * **Or** edit `values.yaml`, update the below parameters:
+  ```yaml
+    autoupdate.enabled: false
+    autoupdate.scheduler: 0
+  ```
+  and run the below command:
+  ```bash
+  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+  ```
+
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+</Tabs>
+
+
 ## Troubleshooting
 
 If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) section. 
