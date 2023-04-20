@@ -97,7 +97,7 @@ Pagination can be implemented using Offset-based pagination or Cursor-based pagi
 
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
-To retrieve the correct subset of data using offset-based pagination, the `pageOffset` property, as well as the `pageNo` and `pageSize` values, can be referenced in an API or query using `curly braces`. For instance, to add offset-based pagination in a user's database, you can use this query:
+To implement offset-based pagination in a `user's` database, reference the `pageOffset`, `pageNo`, and `pageSize` property values using curly braces in the query. 
 
 1. Enable the **Server-side pagination** property in the table. 
 2. Create a query, and configure pagination in the query using the pagination method.
@@ -123,8 +123,7 @@ To retrieve the correct subset of data using offset-based pagination, the `pageO
 
 Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-
-You can use cursor-based pagination by setting up queries that use cursors to fetch data. The widget's `previousPageVisited` and `nextPageVisited` reference properties keep track of which pages have been visited, and you can utilize them along with your queries. For instance, to add cursor-based pagination in a user's database, you can use this query:
+To implement cursor-based pagination in a `user's` database, use the widget's `previousPageVisited` and `nextPageVisited` reference properties to track visited pages. 
 
 1. Enable the **Server-side pagination** property in the table. 
 2. Create a query, and configure pagination in the query using the pagination method.
@@ -282,7 +281,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **nextPageVisited**    |  Boolean      | Indicates whether the next page of data has been visited by the user. | `{{<table_name>.searchText}}`  |
 | **previousPageVisited**    |  Boolean      | Indicates whether the previous page of data has been visited by the user. | `{{<table_name>.searchText}}`  |
 | **tableHeaders**    |  Array      | Indicates whether the table headers are visible.| `{{<table_name>.searchText}}`  |
-| **totalRecordsCount**    |  Number      |  Indicates the total number of records in the table. | `{{<table_name>.searchText}}`  |
+| **totalRecordsCount**    |  Number      |  Indicates the number of pages in server-side pagination. | `{{<table_name>.searchText}}`  |
 | **updatedRow**    |  Object      | Contains data related to recently updated added row. | `{{<table_name>.searchText}}`  |
 | **updatedRows**    |  Array      | Contains data related to updated added rows.| `{{<table_name>.searchText}}`  |
 | **triggeredRowIndex**    |  Number      | An index property that indicates the row index of the table that has been triggered. | `{{<table_name>.searchText}}`  |
