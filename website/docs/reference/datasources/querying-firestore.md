@@ -17,28 +17,22 @@ This page describes how to connect your application to your Firestore database a
 
 To add a Firestore datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Firestore** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-The Firestore plugin requires three pieces of information which are available from the Firebase Console:
+The Firestore plugin requires three pieces of information which are available from your project's settings page in the Firebase Console. To find the settings, navigate to your Firebase project's dashboard and click the **Gear** icon next to **Project Overview**.
 
-<figure>
-  <img src="/img/firestore-project-settings.png" style={{width: "80%", height: "auto"}} alt="Find your connection details in the project settings of your Firestore console." />
-  <figcaption align="center"><i>Find your connection details in the project settings of your Firestore console.</i></figcaption>
-</figure>
+* **Project ID**: Find this value under the **General** tab in your project settings.
+* **Database URL**: Build this value from your Project ID: `https://<project-id>.firebaseio.com`
+* **Service Account Credentials**: Under the **Service Accounts** tab in your project settings, click **Generate new private key**. Open the downloaded file and copy-paste its entire contents into the **Service Account Credentials** field in your Appsmith datasource configuration.
 
-* **Project ID**
-    * Find this value under the **General** tab in your project settings.
-* **Database URL**
-    * Build this value from your Project ID: `https://<project-id>.firebaseio.com`
-* **Service Account Credentials**
-    * Under the **Service Accounts** tab in your project settings, click **Generate new private key**. Open the downloaded file and copy-paste its entire contents into the **Service Account Credentials** field in your Appsmith datasource configuration.
+Click the **Test** button in Appsmith to check that your configuration is valid, and **Save** the datasource when you're done.
 
 ## Create queries
+
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Firestore by selecting the **+ New Query**  button on the Firestore datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Firestore datasource. You'll be brought to a new query screen where you can write queries.
 
 <figure>
   <img src="/img/firestore-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore query." />
   <figcaption align="center"><i>Configuring a Firestore query.</i></figcaption>
 </figure>
-
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Firestore by selecting the **+ New Query**  button on the Firestore datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Firestore datasource. You'll be brought to a new query screen where you can write queries.
 
 ## Fetch documents
 
@@ -135,7 +129,7 @@ After filling in the desired collection/path, enter your document data in the **
 
 > Create a new document in the `users` collection with values for `name`, `email`, and `date_of_birth`.
 
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List** query to display your collection of documents in the table.
+**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
 
 * Create a query `CreateUser` based on your Firestore datasource, and set it to use the **Add Document to Collection** command.
 * Set the **Collection/Document Path** field to `users`.
@@ -200,7 +194,7 @@ When using **Update Document**, you only need to provide the fields that have be
 
 > Update the `name` and `email` values of a document in the `users` collection.
 
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List** query to display your collection of documents in the table.
+**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
 
 * Create a query `UpdateUser` based on your Firestore datasource, and set it to use the **Update Document** command.
 * Set the **Collection/Document Path** field to `users`.
@@ -251,7 +245,7 @@ Use the **Delete Document** command to delete an existing document by its collec
 
 > Delete a document from the `users` collection.
 
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List** query to display your collection of documents in the table.
+**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
 
 * Create a query `DeleteUser` based on your Firestore datasource, and set it to use the **Delete Document** command.
 * Provide the **Collection/Document Path** of the document to delete by referencing the `UsersTable`'s selected row:
