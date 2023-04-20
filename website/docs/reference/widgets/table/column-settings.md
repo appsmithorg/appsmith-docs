@@ -71,6 +71,31 @@ You can freeze columns by turning on the **Allow Column Freeze** property and se
 </figure>
 
 
+* **Date**: 
+The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
+
+   * The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
+
+     * Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, **YYYY-MM-DD hh:mm:ss**, etc.
+     * Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
+
+    * The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the **Display Format** property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
+
+It's important to ensure that both properties are set correctly to handle and display date and time information in your app. 
+
+
+* **Select**:
+The Select column type allows users to select an option from a predefined list of choices. To set up a Select column, you need to specify the list of options in the Options property. The Options property should be an array of objects, with each object containing a `label` and a `value` property, `[{ "label": "ABC", "value": "abc"}]`. 
+
+  If you want to specify the options available for new rows in a Select column, you can use the following properties:
+
+   * **Same options in new row:** When this property is turned on, it ensures that the same options are available for new rows as well. For instance, if your Select column has options like `Small`, `Medium`, and `Large`, then these options would also be available when you add new rows.
+
+   * **New row options:** If you want to provide different options for new rows, you can turn off the `Same options in new row` property. This would make the `New row options` property visible, where you can add options specifically for the new row. Please note that the New row options property does not have access to the current row object.
+
+  :::note
+  Please note that the Table's **Allow adding a row** property must be turned on to add a new row.
+  :::
 
 
 ## Properties
