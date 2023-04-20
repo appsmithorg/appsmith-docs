@@ -71,69 +71,7 @@ You can freeze columns by turning on the **Allow Column Freeze** property and se
 </figure>
 
 
-### Column type
 
-This property allows you to select the type of cell to use in the column. Currently, the following column types are available:
-
-
-* **Button**: 
-The button column type is a cell that can be clicked by the user, which triggers an `onClick` event and the `triggeredRow` reference property retrieves the data of the corresponding column.
-
-* **Checkbox**: The checkbox column type denotes a binary value, with the checked and unchecked states represented by True and False, respectively. This column type also supports inline editing and can be made editable by enabling the Editable property in the column settings.
-
-* **Icon Button**:
-An Icon button column type comprises a button that employs an icon instead of text. This type of column contains a clickable cell that triggers an `onClick` event and the `triggeredRow` reference property retrieves the data of the corresponding column.
-
-* **Image**:
-The image column type interprets the cell value as an image source URL or base64 data and showcases the corresponding image within the table. In case of invalid data, the column displays an `Invalid Image`. The image size can be modified through the Image Size setting in the column's Style settings tab.
-
-* **Menu Button**:
-The menu button column type consists of a collection of buttons arranged in a group. Moreover, menu items can also be added dynamically by using the Menu Items Source as Dynamic.
-
- You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use `{{currentItem}}` and `{{currentIndex}}` bindings that reference the selected item, and its index respectively on the menu button.
-
-
-* **Number**:
-The number column type consists of numeric data that is often stored in database columns using number data types. The number column type supports [inline editing](/reference/widgets/table/inline-editing) and can be made [**Editable**](#editable) by turning on the Editable property in the column settings.
-
-
-* **Plain Text**:
-Plain text refers to data that contains readable characters without any graphical representation or other non-textual elements like images or floating-point numbers. The plain text column type enables inline editing and can be made editable by enabling the Editable property in the column settings.
-
-* **Switch**:
-The Switch column type enables users to make binary decisions by toggling the state of a single item on or off. Similar to checkboxes, it uses the boolean values True and False to represent the on and off states respectively. This column type supports inline editing and can be made editable by enabling the Editable property in the column settings.
-
-* **URL**:
-In the URL column type, the table interprets the cell contents as a hyperlink, allowing users to click on the cell and be directed to the corresponding URL in a new browser tab. The only pieces of the URL that must be included are the domain and suffix, such as: `example.com`.
-
-* **Video**:
-The video column type allows for the display of videos within a table. To include a video in a cell, the cell value should be a source file path or URL from platforms like YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, or DailyMotion. 
-
-* **Date**: 
-The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.
-
-   * The **Date Format** property specifies the date format of the incoming data specified in the **Computed Value** property. The date should be specified in a format that can be parsed correctly. For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the **Date Format** property is **DD/MM/YYYY**, then it is not able to parse the date and displays 'Invalid date' in the column. In this case, you can fix it in two ways. 
-
-     * Update the option in the **Date Format** property to match the format in the **Computed Value** property. In this case, select formats like **YYYY-MM-DD**, **YYYY-MM-DD HH:mm**, **YYYY-MM-DD hh:mm:ss**, etc.
-     * Transform the date in the **Computed Value** property using `moment().format()` to match the one in the **Date Format** property. 
-
-    * The **Display Format** property specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the **Display Format** property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format of `DD/MM/YYYY`.
-
-It's important to ensure that both properties are set correctly to handle and display date and time information in your app. 
-
-
-* **Select**:
-The Select column type allows users to select an option from a predefined list of choices. To set up a Select column, you need to specify the list of options in the Options property. The Options property should be an array of objects, with each object containing a `label` and a `value` property, `[{ "label": "ABC", "value": "abc"}]`. 
-
-  If you want to specify the options available for new rows in a Select column, you can use the following properties:
-
-   * **Same options in new row:** When this property is turned on, it ensures that the same options are available for new rows as well. For instance, if your Select column has options like `Small`, `Medium`, and `Large`, then these options would also be available when you add new rows.
-
-   * **New row options:** If you want to provide different options for new rows, you can turn off the `Same options in new row` property. This would make the `New row options` property visible, where you can add options specifically for the new row. Please note that the New row options property does not have access to the current row object.
-
-  :::note
-  Please note that the Table's **Allow adding a row** property must be turned on to add a new row.
-  :::
 
 ## Properties
 
@@ -175,6 +113,27 @@ These common properties allow you to set the behavior of specific columns within
 | **Source Data**                	|           	|                                                                                                                                                         	|
 | **Configure Menu Items**       	|           	|                                                                                                                                                         	|
 | **Item Configuration**         	|           	|                                                                                                                                                         	
+
+
+## Column type
+
+This property allows you to select the type of cell to use in the column. Currently, the following column types are available:
+
+
+| Column type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Button**      | The button column type is a cell that can be clicked by the user, which triggers an  `onClick`  event and the  `triggeredRow`  reference property retrieves the data of the corresponding column.                                                                                                                                                                                                                                                                                |
+| **Checkbox**    | The checkbox column type denotes a binary value, with the checked and unchecked states represented by True and False, respectively. This column type also supports inline editing and can be made editable by enabling the Editable property in the column settings.                                                                                                                                                                                                             |
+| **Icon Button** | An Icon button column type comprises a button that employs an icon instead of text. This type of column contains a clickable cell that triggers an  `onClick`  event and the  `triggeredRow`  reference property retrieves the data of the corresponding column.                                                                                                                                                                                                                 |
+| **Image**       | The image column type interprets the cell value as an image source URL or base64 data and showcases the corresponding image within the table. In case of invalid data, the column displays an  `Invalid Image` . The image size can be modified through the Image Size setting in the column's Style settings tab.                                                                                                                                                               |
+| **Menu Button** | The menu button column type consists of a collection of buttons arranged in a group. Moreover, menu items can also be added dynamically by using the Menu Items Source as Dynamic.   You can use the  `{{currentRow}}`  binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use  `{{currentItem}}`  and  `{{currentIndex}}`  bindings that reference the selected item, and its index respectively on the menu button. |
+| **Number**      | The number column type consists of numeric data that is often stored in database columns using number data types. The number column type supports [ inline editing ]( /reference/widgets/table/inline-editing ) and can be made [ **Editable** ]( #editable ) by turning on the Editable property in the column settings.                                                                                                                                                        |
+| **Plain Text**  | Plain text refers to data that contains readable characters without any graphical representation or other non-textual elements like images or floating-point numbers. The plain text column type enables inline editing and can be made editable by enabling the Editable property in the column settings.                                                                                                                                                                       |
+| **Switch**      | The Switch column type enables users to make binary decisions by toggling the state of a single item on or off. Similar to checkboxes, it uses the boolean values True and False to represent the on and off states respectively. This column type supports inline editing and can be made editable by enabling the Editable property in the column settings.                                                                                                                    |
+| **URL**         | In the URL column type, the table interprets the cell contents as a hyperlink, allowing users to click on the cell and be directed to the corresponding URL in a new browser tab. The only pieces of the URL that must be included are the domain and suffix, such as:  `example.com` .                                                                                                                                                                                          |
+| **Video**       | The video column type allows for the display of videos within a table. To include a video in a cell, the cell value should be a source file path or URL from platforms like YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, or DailyMotion.                                                                                                                                                                                                          |
+| **Date**        | The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties.                                                                                                                                                                                                                                                                                      |
+| **Select**      | The Select column type allows users to select an option from a predefined list of choices. To set up a Select column, you need to specify the list of options in the Options property. The Options property should be an array of objects, with each object containing a  `label`  and a  `value`  property,  `[{ "label": "ABC", "value": "abc"}]` .                                                                                                                            |
 
 
 ## Styles
