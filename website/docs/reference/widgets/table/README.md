@@ -58,7 +58,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ```js
 {{fetchData.data}}
 ```
-The Table widget displays all the data from the query. 
+The Table widget displays all the data from the query. Appsmith [formats](/reference/widgets/table/column-settings#computed-value) a column based on its detected data type, ensuring that the data is presented in a visually appealing manner. 
 
 ---
 **Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Table widget.
@@ -87,7 +87,7 @@ This code is using the `map()` function to extract specific data, such as the `n
 
 ## Server-side pagination
 
-Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. Pagination can be implemented using Offset-based pagination or Cursor-based pagination:
+Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination:
 
 <Tabs queryString="current-edition">
 <TabItem label="Offset-based pagination" value="Offset_edition">
@@ -96,6 +96,7 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
 1. Enable the **Server-side pagination** property in the table. 
+
 2. Create a query and use `pageSize` and `pageOffset`  reference properties to implement pagination.
 
    ```sql
@@ -108,7 +109,8 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
    ```
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, `{{fetch_users_count.data.length}}` 
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, you can use `{{fetch_users_count.data.length}}` to display the count. 
+Additionally, you can use the total record count to enable or disable the next/previous controls. 
 
 
   </TabItem>
@@ -119,6 +121,7 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
 Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
 1. Enable the **Server-side pagination** property in the table. 
+
 2. Create a query and use `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
 
@@ -129,7 +132,7 @@ This SQL query selects all columns from the `users` table and applies cursor-bas
 
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, `{{fetch_users_count.data[0].count}}`
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, you can use `{{fetch_users_count.data.length}}` to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
 
 
   </TabItem>
@@ -139,9 +142,9 @@ This SQL query selects all columns from the `users` table and applies cursor-bas
 
 ## Server-side searching
 
-Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. When **Allow Searching** property is on, the table header includes a search bar to find matching records. 
+Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
 
-You can use the `searchText` reference property to filter out records being displayed on the table. Whenever the text in the search bar is modified, the `onSearchTextChange` event of the table is triggered, allowing you to configure the table to query its datasource for the appropriate results.
+The `searchText` reference property can be used to filter records displayed in a table based on the user's search terms. When the user types into the search bar, the `onSearchTextChange` event of the table is triggered, which can be configured to query the table's datasource for the matching results. 
 
 To use the server-side search with the Table widget, follow these steps:
 
@@ -156,7 +159,7 @@ To use the server-side search with the Table widget, follow these steps:
    https://mock-api.appsmith.com/users?name={{<widget_name>.searchText}}
    ```
 
-2. Run the query when the `onSearchTextChange` event is triggered in the table's properties pane.
+2. Set the table widget's **onSearchTextChange** event to run the query. 
 
 Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
 
@@ -186,11 +189,10 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
 
 ## Refresh table data
 
-When changes are made to the datasource that supplies your table with data, the table won't automatically reflect these changes.  Therefore, it is necessary to use events and/or write code that re-executes the query responsible for populating data into the table whenever new data is submitted to the datasource.
+When changes are made to the datasource that supplies your table with data, the table won't automatically reflect these changes. Therefore, it is necessary to use events and/or write code that re-executes the query responsible for populating data into the table whenever new data is submitted to the datasource.
 
 **Example:**
-
-When you submit new data to your datasource, re-run your original query as a success callback if the submission succeeds. Imagine you have a table whose data comes from your GET query `getData`, and a button that submits a form with new user input via a query called `sendNewData`:
+For instance, suppose you have a table that receives its data from a query called `getData`, and you have a button that submits a form with new user input through a query called `sendNewData`.
 
 1. When the form is submitted via the button's `onClick`, it executes
     ```javascript
@@ -304,7 +306,7 @@ Style properties allow you to change the look and feel of the widget. All of the
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Default Row Height**  |  String   | Sets the height of the row in the table - short, default, or tall.  |
 | **Text Size**           |  String   | Sets the size of the text.                               |
-| **Emphasis**            |  String   | Sets a font style for text, such as **bold** or _italic_.|
+| **Emphasis**            |  String   | Sets a font style for text, such as bold or italic.|
 | **Text Align**          |  String   | Sets how text is aligned horizontally within the cells.  |
 | **Vertical Alignment**   |  String  | Sets where the cell contents are vertically positioned within the cells. |
 | **Cell Background Color** |  String | Sets the background color of the table cells.            |
