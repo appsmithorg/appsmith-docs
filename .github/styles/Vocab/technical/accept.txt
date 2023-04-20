@@ -261,6 +261,8 @@ isDirty
 drag and drop
 uncomment
 Boolean
+GraphQL
+keyset
 scrollable
 sourceData
 formData
