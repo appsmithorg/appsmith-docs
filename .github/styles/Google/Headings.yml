@@ -73,6 +73,7 @@ exceptions:
   - HTTPS
   - Let's 
   - Encrypt
+  - Git
   - TLS
   - Stats Box
   - IFrame

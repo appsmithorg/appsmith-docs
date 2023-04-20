@@ -1,37 +1,48 @@
----
-sidebar_position: 6
----
-# Merging Branches
+# Merge and Pull Changes
 
-When you want to merge your branch with the base branch -
+When you are working on your feature branch for a while, the master branch may get updated with new changes. As your branch is behind the master now, to avoid conflicts, you have to merge the master branch into your feature branch to keep it up-to-date with the latest changes.
+  
+Follow the steps below when you want to merge your feature branch with the master branch -
 
-1. Click on the Merge button at the bottom left corner of the screen. It will open the merge tab
-2. Select your base branch and check the merge status
+1. Click the **Merge** icon at the bottom left corner of the screen. It opens the merge tab.
+2. Select your base branch and check the merge status.
    1. The `base` and `head` branches shouldn't have any uncommitted changes.
    2. The remote counterpart of the `base` branch shouldn't have any commits that are missing locally (the local and remote versions should be in sync.)
    3. The `base` and the `head` branch shouldn't have any conflicting changes.
-3. Click on `Merge Changes` if the merge status check is successful.
+3. Click **Merge Changes** if the merge status check is successful.
 
-### Merge conflicts
+Once the merge is successful, you can raise a PR on the remote repository to merge the changes of the feature branch to the master branch.
 
-Consider a scenario where **user 1** wants to develop a new feature and has a single branch main. As a general practice, the user creates feature-f1 from the main branch. At the same time, **user 2** updates the main branch with the same resources like page, query, or JSObject that **user 1** modifies on the feature-f1 branch. If **user 1** tries to merge feature-f1 to the main branch, it creates a merge conflict.
+## Pull changes
 
-You can resolve it in the following way:
+When a feature branch is merged with the master branch in the remote repository, the local counterpart has to be updated with those changes. To sync the local branch with the remote updates, pull the latest changes by clicking on the **pull** icon at the bottom left corner. 
 
-* Create a pull request with `main` as the base branch;
-* Resolve the conflicts on remote branches (Between `origin/feature-f1` and `origin/main`);
-* Once the conflicts are resolved, merge this new branch(`origin/feature-f1`) into the old branch(`origin/main`);
-* Pull the `main` branch again in your app. Now you should have all the changes from the `feature-f1` branch;
-* Delete branch `origin/feature-f1` on the remote repository;
-* Sync branches in the Git branches modal on Appsmith to remove `origin/featuref1` from the local repository.
+![](/img/pull_changes.gif)
 
-#### Best practices to avoid merge conflicts
+Once the pull is successful, the app is automatically deployed. You can view the deployed version by clicking the **﹀** icon from the top right corner.
+
+The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
+
+### Best practices to avoid merge conflicts
 Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
 
 **For changes that affect more than just one page of the app, like the app theme, datasources, etc: **
 
 * Avoid making these changes when feature branches are in the middle of building new updates.
-* Ensure that these changes are completed and pushed to the `main` branch.
-* Pull changes from `main` to the feature branches that are in development.
-* Finish updates on the feature branch, then commit and merge with main.
+* Ensure that these changes are completed and pushed to the `master` branch.
+* Pull changes from the `master` to the feature branches that are in development.
+* Finish updates on the feature branch, then commit and merge with the master branch.
 
+## Delete a branch
+
+Similar to the Git flow, you can delete a branch in Appsmith that's no longer needed. If you want to delete a branch from Appsmith, follow the steps given below:
+
+1. Click the current branch at the bottom left corner.
+2. Go to the branch you want to delete, click options, and **Delete**.
+
+![](/img/delete_branch.gif)
+
+## Further reading
+
+- [Revert Changes](/advanced-concepts/version-control-with-git/revert-changes)
+- [Import from a Git Repository](/advanced-concepts/version-control-with-git/import-from-repository)
