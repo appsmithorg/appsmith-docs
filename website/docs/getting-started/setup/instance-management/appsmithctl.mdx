@@ -80,7 +80,7 @@ Please save the encryption environment variables `APPSMITH_ENCRYPTION_PASSWORD` 
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   
-  <TabItem label="Community Edition" value="communityEdition"> 
+<TabItem label="Community Edition" value="communityEdition"> 
 
   ```bash
   kubectl exec appsmith-0 appsmithctl export_db
@@ -106,9 +106,9 @@ Please save the encryption environment variables `APPSMITH_ENCRYPTION_PASSWORD` 
   Please save the encryption environment variables `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT`values, from docker.env because the backup archive does not include them for security reasons.
   :::
 
-  </TabItem>
+</TabItem>
 
-  <TabItem label="Business Edition" value="businessEdition"> 
+<TabItem label="Business Edition" value="businessEdition"> 
 
   Keep these details handy as these are needed in case you want to restore Appsmith.
 
@@ -134,7 +134,7 @@ Please save the encryption environment variables `APPSMITH_ENCRYPTION_PASSWORD` 
   kubectl cp appsmith:/appsmith-stacks/configuration/docker.env .
   ```
 
-  </TabItem>
+</TabItem>
 
 </Tabs>
 
@@ -190,7 +190,7 @@ docker-compose exec appsmith supervisorctl restart backend
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   
-  <TabItem label="Community Edition" value="communityEdition"> 
+<TabItem label="Community Edition" value="communityEdition"> 
 
   * First, copy the archive file into the container using the following command:
 
@@ -218,9 +218,9 @@ docker-compose exec appsmith supervisorctl restart backend
   kubectl cp ./docker.env appsmith-0:/appsmith-stacks/configuration/
   ```
 
-  </TabItem>
+</TabItem>
 
-  <TabItem label="Business Edition" value="businessEdition"> 
+<TabItem label="Business Edition" value="businessEdition"> 
 
   * First, copy the archive file into the container using the following command:
 
@@ -254,7 +254,7 @@ docker-compose exec appsmith supervisorctl restart backend
   kubectl cp ./docker.env <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/configuration/
   ```
 
-  </TabItem>
+</TabItem>
 
 </Tabs>
 
