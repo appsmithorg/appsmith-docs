@@ -87,9 +87,7 @@ This code is using the `map()` function to extract specific data, such as the `n
 
 ## Server-side pagination
 
-If you need to present a sizable amount of data, Appsmith can handle responses of up to 5 MB. To optimize this limit, it's recommended to implement server-side pagination when querying and displaying large datasets.
-
-Pagination can be implemented using Offset-based pagination or Cursor-based pagination:
+Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. Pagination can be implemented using Offset-based pagination or Cursor-based pagination:
 
 <Tabs queryString="current-edition">
 <TabItem label="Offset-based pagination" value="Offset_edition">
@@ -97,10 +95,8 @@ Pagination can be implemented using Offset-based pagination or Cursor-based pagi
 
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
-To implement offset-based pagination you can use the `pageOffset`, `pageNo`, and `pageSize` reference property values in the query. 
-
 1. Enable the **Server-side pagination** property in the table. 
-2. Create a query, use pageSize and pageOffset to .... #1 
+2. Create a query and use `pageSize` and `pageOffset`  reference properties to implement pagination.
 
    ```sql
     SELECT * FROM users LIMIT {{ <widget_name>.pageSize }} OFFSET {{ <widget_name>.pageOffset }}; 
@@ -112,9 +108,8 @@ To implement offset-based pagination you can use the `pageOffset`, `pageNo`, and
    ```
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, `{{fetch_users_count.data[0].count}}` ... #2
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, `{{fetch_users_count.data.length}}` 
 
-LENGTH.. #3
 
   </TabItem>
   
@@ -123,10 +118,9 @@ LENGTH.. #3
 
 Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-To implement cursor-based pagination in a `user's` database, use the widget's `previousPageVisited` and `nextPageVisited` reference properties to track visited pages. 
-
 1. Enable the **Server-side pagination** property in the table. 
-2. Create a query, and configure pagination in the query using the pagination method.
+2. Create a query and use `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
+
 
    ```sql
    SELECT * FROM users {{<widget_name>.nextPageVisited ?  "WHERE id > "+ " "+ <widget_name>.tableData[<widget_name>.tableData.length-1]["id"] : <widget_name>.previousPageVisited ? "WHERE id <"+ " "+ <widget_name>.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{<widget_name>.pageSize}} ;
@@ -145,9 +139,7 @@ This SQL query selects all columns from the `users` table and applies cursor-bas
 
 ## Server-side searching
 
-When **Allow Searching** property is on, the table header includes a search bar to find matching records. Server-side search lets you request specific records from the server using search terms. 
-
-NOT ON CLIENT SIDE.... #4 ON THE SERVER SIDE
+Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. When **Allow Searching** property is on, the table header includes a search bar to find matching records. 
 
 You can use the `searchText` reference property to filter out records being displayed on the table. Whenever the text in the search bar is modified, the `onSearchTextChange` event of the table is triggered, allowing you to configure the table to query its datasource for the appropriate results.
 
@@ -170,8 +162,7 @@ Watch this video to learn how to set up [server-side search](https://www.youtube
 
 ## Server-side filtering
 
-
-Server-side filtering is similar to server-side searching, where a term or value is sent to the database or API to filter out unwanted data from the requested dataset. Instead of searching for a term, server-side filtering involves selecting a value that records must match to return in the query response. 
+Server-side filtering involves using a value to narrow down the results of a query in a similar way to server-side searching. However, instead of searching for a specific term, the selected value is used to filter out unwanted data from the requested dataset. 
 
 To enable server-side filtering, you can use widgets such as the [Select widget](/reference/widgets/select/) to provide users with a list of supported filters to choose from.
 
@@ -193,14 +184,26 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
 
 
 
-## Refresh table data 
+## Refresh table data
 
-To keep your table updated with the latest data from your datasource, you need to ensure that you refresh the table whenever new data is submitted. By default, the table won't automatically reflect any changes made to the datasource, so you would need to use events or code to re-run the query that populates your table with data.
+When changes are made to the datasource that supplies your table with data, the table won't automatically reflect these changes.  Therefore, it is necessary to use events and/or write code that re-executes the query responsible for populating data into the table whenever new data is submitted to the datasource.
 
-
-## in real time
----
 **Example:**
+
+When you submit new data to your datasource, re-run your original query as a success callback if the submission succeeds. Imagine you have a table whose data comes from your GET query `getData`, and a button that submits a form with new user input via a query called `sendNewData`:
+
+1. When the form is submitted via the button's `onClick`, it executes
+    ```javascript
+    {{ sendNewData.run() }}
+    ```
+2. On success, it executes `getData.run()` as a callback to get the latest version of the dataset that includes the new changes:
+    ```javascript
+    {{ sendNewData.run(() => getData.run(), () => {}) }}
+    ```
+
+Now when `sendNewData` succeeds, your table automatically refreshes itself.
+
+### Update table data in real time
 
 To update your table data in real-time, you can use the `setInterval` function. To do this, you can use the [Switch widget](/reference/widgets/switch/) `Switch1` to control this function and a table widget that uses the `getData` query.
 
