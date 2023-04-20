@@ -6,115 +6,57 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Instance Management
-One of the key features of Appsmith is its instance management capabilities. Appsmith provides a variety of tools for managing instances so that you can:
+One of the key features of Appsmith is its instance management capabilities. This page is a gateway to various management tasks you can perform on your Appsmith instance. 
 
-* [Configure a Maintenance Window for auto-updates to cut the downtime for your users](/getting-started/setup/instance-management/maintenance-window)
-* [Configure auto-updates to keep your Appsmith installation up-to-date](#auto-updates)
-* [Backup and Restore your Appsmith instance using command line utility](/getting-started/setup/instance-management/appsmithctl)
+You can manage your instance by performing:
+* Backups for Appsmith instance and database
+* Updating Appsmith to a new version
+* Scheduling a maintenance window for auto updates
+* Restoring backups. 
 
-## Auto updates 
-Auto update feature ensures that your Appsmith instance is always up-to-date with the latest features and bug fixes. 
+This page provides information to set up and maintain your Appsmith installation.
 
-Follow the below steps for your Appsmith installation:
+<div class="containerGridSampleApp">
 
-<Tabs queryString="current-installation">
-  <TabItem label="Docker" value="Docker"> 
+   <div class=" containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+         <img class="containerImage" src="/img/backup-and-restore.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Backup and Restore"/>
+      </div> 
+      <b><a href="/core-concepts/connecting-to-data-sources/connecting-to-databases">Backup and Restore</a></b>
+      <div class="containerDescription">
+      </div>
+   </div>
 
-1. Go to the root directory of the Appsmith installation and run:
+   <div class="containerColumnSampleApp columnGrid column-two">
+   <div class="containerCol">
+         <img class="containerImage" src="/img/maintenance-window.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="support"/>
+      </div>
+      <b><a href="/core-concepts/connecting-to-data-sources/authentication">Create a Maintenance Window</a></b>
+      <div class="containerDescription"> 
+      </div>
+   </div>
+</div> 
 
-   ```bash
-   docker-compose down
-   ```
+<div class="containerGridSampleApp">
 
-2. Open the `docker-compose.yml` file and comment out the below code block:
-   
-   ```yaml
-   #auto_update:
-   #  image: containrrr/watchtower
-   #  volumes:
-   #    - /var/run/docker.sock:/var/run/docker.sock
-   #  # Update check interval in seconds.
-   #  command: --schedule "0 0 * ? * *" --label-enable --cleanup
-   #  restart: unless-stopped
-   #  depends_on:
-   #    - appsmith
-   #  environment:
-   #    - WATCHTOWER_LIFECYCLE_HOOKS=true
-   ```
+   <div class=" containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+         <img class="containerImage" src="/img/control-panel.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Backup and Restore"/>
+      </div> 
+      <b><a href="/core-concepts/connecting-to-data-sources/connecting-to-databases">Server Control Panel</a></b>
+      <div class="containerDescription">
+      </div>
+   </div>
 
-3. Save the file and run:
+   <div class="containerColumnSampleApp columnGrid column-two">
+   <div class="containerCol">
+         <img class="containerImage" src="/img/update-Appsmith.png" style= {{width:"60px", height:"60px", margin:"0"}} alt="support"/>
+      </div>
+      <b><a href="/core-concepts/data-access-and-binding/querying-a-database">Update Appsmith</a></b>
+      <div class="containerDescription"> 
+</div>
 
-```bash
-docker-compose up -d
-```
+      
+   </div>
 
-4. Verify that auto update is turned off with:
-
-```bash
-docker-compose ps
-```
-
-  </TabItem>
-
-  <TabItem label="Kubernetes" value="Kubernetes">
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-<TabItem label="Community Edition" value="communityEdition"> 
-
-  You can switch off auto update by either using a command or setting it in the `values.yaml` file.
-
-  * Running the command below.
-
-  ```bash
-    #highlight-next-line
-    helm upgrade --set autoupdate.enabled=false \
-     appsmith appsmith/appsmith
-  ```
-
-  * **Or** edit `values.yaml`, update the below parameters:
-  ```yaml
-    autoupdate.enabled: false
-    autoupdate.scheduler: 0
-  ```
-  and run the below command:
-  ```bash
-    helm upgrade --values values.yaml appsmith appsmith/appsmith
-  ```
-
-</TabItem>
-<TabItem label="Business Edition" value="businessEdition"> 
-
-You can switch off auto update by either using a command or setting it in the `values.yaml` file.
-
-  * Running the command below.
-
-  ```bash
-    #highlight-next-line
-    helm upgrade --set autoupdate.enabled=false \
-    appsmith appsmith-ee/appsmith 
-  ```
-
-  * **Or** edit `values.yaml`, update the below parameters:
-  ```yaml
-    autoupdate.enabled: false
-    autoupdate.scheduler: 0
-  ```
-  and run the below command:
-  ```bash
-  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
-  ```
-
-
-</TabItem>
-
-</Tabs>
-
-  
-
-</TabItem>
-
-</Tabs>
-
-
-## Further reading
-* [Update Appsmith](/getting-started/setup/instance-management/update-appsmith)
+</div> 
