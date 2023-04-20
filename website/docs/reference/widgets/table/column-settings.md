@@ -15,7 +15,7 @@ This page explains how to customize each table column separately by accessing a 
 
 ### Computed value
 
-In the Table widget, computed values refer to a column property that allows you to access and manipulate the displayed value using JavaScript expressions. This property can only be accessed within the column settings. You can use the `currentRow` property to access each row's column values
+In the Table widget, computed values refer to a column property that allows you to access and manipulate the displayed value using JavaScript expressions. This property can only be accessed within the column settings. You can use the `currentRow` property to access each row's column values.
 
 For instance, suppose you have a table with a column named `dob` that displays the date of birth for each row. By using the `{{currentRow['dob']}}` reference, you can access and display the data for the `dob` column in each row. With this reference, you can also create custom expressions that compute new values based on the data in the current row.
 
