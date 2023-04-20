@@ -6,18 +6,115 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Instance Management
+One of the key features of Appsmith is its instance management capabilities. Appsmith provides a variety of tools for managing instances so that you can:
 
-## Switching off auto updates
+* [Configure a Maintenance Window for auto-updates to cut the downtime for your users](/getting-started/setup/instance-management/maintenance-window)
+* [Configure auto-updates to keep your Appsmith installation up-to-date](#auto-updates)
+* [Backup and Restore your Appsmith instance using command line utility](/getting-started/setup/instance-management/appsmithctl)
 
-In your `docker-compose.yml` file, the `auto_update` container is responsible for periodically checking for updates to Appsmith and applying those updates. If you wish to disable this auto updating, please run the below command:
+## Auto updates 
+Auto update feature ensures that your Appsmith instance is always up-to-date with the latest features and bug fixes. 
 
+Follow the below steps for your Appsmith installation:
+
+<Tabs queryString="current-installation">
+  <TabItem label="Docker" value="Docker"> 
+
+1. Go to the root directory of the Appsmith installation and run:
+
+   ```bash
+   docker-compose down
+   ```
+
+2. Open the `docker-compose.yml` file and comment out the below code block:
+   
+   ```yaml
+   #auto_update:
+   #  image: containrrr/watchtower
+   #  volumes:
+   #    - /var/run/docker.sock:/var/run/docker.sock
+   #  # Update check interval in seconds.
+   #  command: --schedule "0 0 * ? * *" --label-enable --cleanup
+   #  restart: unless-stopped
+   #  depends_on:
+   #    - appsmith
+   #  environment:
+   #    - WATCHTOWER_LIFECYCLE_HOOKS=true
+   ```
+
+3. Save the file and run:
+
+```bash
+docker-compose up -d
 ```
-docker-compose rm -s -v -f auto_update
+
+4. Verify that auto update is turned off with:
+
+```bash
+docker-compose ps
 ```
 
-This brings down the `auto_update` container, and update checks are no-longer performed. Note that however, if you run `docker-compose up -d` later, for any reason, then this `auto_update` will be brought up again. You can use that to turn auto updates on again in the future.
+  </TabItem>
 
-To check if auto updates are turned on in your instance, please run `docker-compose ps` and see if there a server called `auto_update` listed in the output, and if it's status is `Up`. If not, then auto updates are turned off for your instance.
+  <TabItem label="Kubernetes" value="Kubernetes">
+
+<Tabs groupId="appsmithEditions" queryString="current-edition">
+<TabItem label="Community Edition" value="communityEdition"> 
+
+  You can switch off auto update by either using a command or setting it in the `values.yaml` file.
+
+  * Running the command below.
+
+  ```bash
+    #highlight-next-line
+    helm upgrade --set autoupdate.enabled=false \
+     appsmith appsmith/appsmith
+  ```
+
+  * **Or** edit `values.yaml`, update the below parameters:
+  ```yaml
+    autoupdate.enabled: false
+    autoupdate.scheduler: 0
+  ```
+  and run the below command:
+  ```bash
+    helm upgrade --values values.yaml appsmith appsmith/appsmith
+  ```
+
+</TabItem>
+<TabItem label="Business Edition" value="businessEdition"> 
+
+You can switch off auto update by either using a command or setting it in the `values.yaml` file.
+
+  * Running the command below.
+
+  ```bash
+    #highlight-next-line
+    helm upgrade --set autoupdate.enabled=false \
+    appsmith appsmith-ee/appsmith 
+  ```
+
+  * **Or** edit `values.yaml`, update the below parameters:
+  ```yaml
+    autoupdate.enabled: false
+    autoupdate.scheduler: 0
+  ```
+  and run the below command:
+  ```bash
+  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+  ```
+
+
+</TabItem>
+
+</Tabs>
+
+  
+
+</TabItem>
+
+</Tabs>
+
 
 ## Further reading
 * [Update Appsmith](/getting-started/setup/instance-management/update-appsmith)
