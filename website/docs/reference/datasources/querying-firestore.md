@@ -111,7 +111,7 @@ When you click the page buttons in the table's header, the pages should now cycl
 
 Your table should populate with data once your query is run.
 
-## Create a Document
+## Create a document
 
 Use the **Create Document** command to create a new document in a specified collection and path. Alternatively, use the **Add Document to Collection** command to create a new document in a given collection, allowing Firestore to auto-generate the document's path.
 
@@ -168,7 +168,7 @@ After filling in the desired collection/path, enter your document data in the **
 
 When the Submit button is clicked, your query is executed and the new record is inserted into your Firestore collection.
 
-## Update a record
+## Update a document
 
 Use the **Update Document** command to modify an existing document.
 
@@ -232,7 +232,7 @@ When the Submit button is clicked, your query is executed and the new values are
 
 
 
-## Deleting Document
+## Deleting a document
 
 Use the **Delete Document** command to delete an existing document by its collection/path.
 
