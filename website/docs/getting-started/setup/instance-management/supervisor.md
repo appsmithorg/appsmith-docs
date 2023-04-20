@@ -3,11 +3,15 @@ sidebar_position: 1
 ---
 # Supervisor
 
-Appsmith integrates with the `supervisorctl` command line utility. It handles the management of the Appsmith server, Nginx, MongoDB, and more. The page gives you steps to manage your Appsmith instance using the supervisor interface.
+The container runs multiple processes, including the Appsmith server, Nginx, MongoDB, etc., inside a single Docker container. These processes are started and managed by Supervisor.
 
-[Supervisor](http://supervisord.org/) also provides a web interface accessible on `http://localhost/supervisor`.
+[Supervisor](http://supervisord.org/) provides:
+* [Web Interface](#web-interface)
+* [Command line Interface](#command-line-interface) 
 
 ## Web interface
+The Supervisor web interface can be accessed at `http://localhost/supervisor`.
+
 <figure>
   <img src="https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith\_supervisord\_ui.png" style= {{width:"700px", height:"auto"}} alt="The web interface listing all the managed processes"/>
   <figcaption align = "center"><i>The web interface listing all the managed processes</i></figcaption>
