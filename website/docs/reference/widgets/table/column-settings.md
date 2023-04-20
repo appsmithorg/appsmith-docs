@@ -90,7 +90,7 @@ The image column type interprets the cell value as an image source URL or base64
 * **Menu Button**:
 The menu button column type consists of a collection of buttons arranged in a group. Moreover, menu items can also be added dynamically by using the Menu Items Source as Dynamic.
 
- You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use [`{{currentItem}}` and `{{currentIndex}}`](/menu-button.md#how-to-use-currentitem-and-currentindex) bindings that reference the selected item, and its index respectively on the menu button.
+ You can use the `{{currentRow}}` binding inside the Source Data property for Menu Items. However, for configuring the menu items, you can only use `{{currentItem}}` and `{{currentIndex}}` bindings that reference the selected item, and its index respectively on the menu button.
 
 
 * **Number**:
