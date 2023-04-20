@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # Supervisor
 
-The container runs multiple processes, including the Appsmith server, Nginx, MongoDB, etc., inside a single Docker container. These processes are started and managed by Supervisor.
+The container runs multiple processes, including the Appsmith server, Nginx, MongoDB, etc., inside a single Docker container. These processes are started, managed and monitored by Supervisor.
 
 [Supervisor](http://supervisord.org/) provides:
 * [Web Interface](#web-interface)
@@ -13,8 +13,8 @@ The container runs multiple processes, including the Appsmith server, Nginx, Mon
 The Supervisor web interface can be accessed at `http://localhost/supervisor`.
 
 <figure>
-  <img src="https://raw.githubusercontent.com/appsmithorg/appsmith/release/deploy/docker/images/appsmith\_supervisord\_ui.png" style= {{width:"700px", height:"auto"}} alt="The web interface listing all the managed processes"/>
-  <figcaption align = "center"><i>The web interface listing all the managed processes</i></figcaption>
+  <img src="/img/appsmith_supervisord_ui.png" style= {{width:"700px", height:"auto"}} alt="The web interface listing of all the managed processes"/>
+  <figcaption align = "center"><i>The web interface listing of all the managed processes</i></figcaption>
 </figure>
 
 To set up the credentials for accessing the web interface, update the environment variables:
