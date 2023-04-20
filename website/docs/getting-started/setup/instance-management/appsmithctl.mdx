@@ -35,7 +35,7 @@ With **Business Edition,** you can also sync the backups to an AWS S3 bucket.
 
 ## Export database
 
-Use the following command to backup Appsmith's database.
+Use the following command to back up Appsmith's database.
 
 :::info
 You can restore the backups onto another instance using the [import](#im-import_db) command to restore data.
@@ -191,58 +191,55 @@ Please save the **encryption env values**, `APPSMITH_ENCRYPTION_PASSWORD` and `A
 </TabItem>
 
 <TabItem label="Kubernetes" value="kubernetescommands"> 
+Follow the steps below to create a backup of your Appsmith instance:
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   
-  <TabItem label="Community Edition" value="communityEdition"> 
+<TabItem label="Community Edition" value="communityEdition"> 
 
-  ```bash
-  kubectl exec appsmith-0 appsmithctl backup
-  ```
+* Create a backup with:
 
-  The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
+```bash
+kubectl exec appsmith-0 appsmithctl backup
+```
+The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
-  Copy the archive file
-  ```bash
-  kubectl cp appsmith-0:/appsmith-stacks/data/backup/appsmith-backup-<Time_stamp>.tar.gz appsmith-backup-<Time_stamp>.tar.gz
-  ```
+* Copy the archive file
+```bash
+kubectl cp appsmith-0:/appsmith-stacks/data/backup/appsmith-backup-<TIME-STAMP>.tar.gz appsmith-backup-<TIME-STAMP>.tar.gz
+```
 
-  :::danger
-  Please save the **encryption env values**, `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT,` from `docker.env` because the backup archive **does not include** them for security reasons
-  :::
+:::danger
+Save the **encryption env values**, `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT,` from `values.yaml` because the backup archive **does not include** them for security reasons.
+:::
 
-  </TabItem>
+</TabItem>
 
-  <TabItem label="Business Edition" value="businessEdition"> 
+<TabItem label="Business Edition" value="businessEdition"> 
 
-  :::note
-  If auto-scaling is not enabled
-  :::
-  ```bash
-  kubectl exec appsmith-0 appsmithctl backup
-  ```
+* Create a backup with:
+ 
+```bash
+# if autoscaling is turned off, use appsmith-0 in place of <ANY-APPSMITH-POD-NAME>
+#highlight-next-line
+kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl backup
+```
 
-  The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
+The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
-  Copy the archive file
-  ```bash
-  kubectl cp appsmith-0:/appsmith-stacks/data/backup/appsmith-backup-<Time_stamp>.tar.gz appsmith-backup-<Time_stamp>.tar.gz
-  ```
+* Copy the archive file
+```bash
+# if autoscaling is turned off, use appsmith-0 in place of <ANY-APPSMITH-POD-NAME>
+#highlight-next-line
+kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-backup-<TIME-STAMP>.tar.gz appsmith-backup-<TIME-STAMP>.tar.gz
+```
 
-  :::note
-  If auto-scaling is enabled
-  :::
-  ```bash
-  kubectl exec <any-appsmith-pod> appsmithctl backup
-  ```
+:::danger
+Save the **encryption env values**, `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT,` from `values.yaml` because the backup archive **does not include** them for security reasons.
+:::
 
-  The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
-  Copy the archive file from any of the appsmith pods
-  ```bash
-  kubectl cp <any-appsmith-pod>:/appsmith-stacks/data/backup/appsmith-backup-<Time_stamp>.tar.gz appsmith-backup-<Time_stamp>.tar.gz
-  ```
-  </TabItem>
+</TabItem>
 
 </Tabs>
 
@@ -260,7 +257,6 @@ The following command can be used to restore an Appsmith instance from a backup 
 
 <Tabs queryString="current-command-type">
 <TabItem label="Docker" value="dockercommands"> 
-
 
 ```bash
 docker-compose exec appsmith appsmithctl restore
@@ -283,52 +279,37 @@ In the restored instance, you may use the existing encryption environment variab
 </TabItem>
 
 <TabItem label="Kubernetes" value="kubernetescommands"> 
-
+Follow the steps below to restore a backup of your Appsmith instance:
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   
-  <TabItem label="Community Edition" value="communityEdition">
+<TabItem label="Community Edition" value="communityEdition">
 
-  Copy the archive file to the pod
-  ```bash
-  kubectl cp appsmith-backup-<Time_stamp>.tar.gz appsmith-0:/appsmith-stacks/data/backup/
-  ```
-  Restore
+* Copy the archive file to the pod with:
 
-  ```bash
-  kubectl exec appsmith-0 appsmithctl restore
-  ```
-  </TabItem>
+```bash
+kubectl cp appsmith-backup-<TIME-STAMP>.tar.gz appsmith-0:/appsmith-stacks/data/backup/
+```
+* Restore the backup with:
 
-  <TabItem label="Business Edition" value="businessEdition"> 
+```bash
+kubectl exec appsmith-0 appsmithctl restore
+```
+</TabItem>
 
-  :::note
-  If auto-scaling is not enabled
-  :::
+<TabItem label="Business Edition" value="businessEdition"> 
 
-  Copy the archive file to the pod
-  ```bash
-  kubectl cp appsmith-backup-<Time_stamp>.tar.gz appsmith-0:/appsmith-stacks/data/backup/
-  ```
-  Restore
+* Copy the archive file to the pod with:
 
-  ```bash
-  kubectl exec appsmith-0 appsmithctl restore
-  ```
-  :::note
-  If auto-scaling is enabled
-  :::
+```bash
+kubectl cp appsmith-backup-<TIME-STAMP>.tar.gz appsmith-0:/appsmith-stacks/data/backup/
+```
+* Restore the backup with:
 
-  Copy the archive file to the pod
-  ```bash
-  kubectl cp appsmith-backup-<Time_stamp>.tar.gz <any-appsmith-pod>:/appsmith-stacks/data/backup/
-  ```
-  Restore
-
-  ```bash
-  kubectl exec <any-appsmith-pod> appsmithctl restore
-  ```
-
-  </TabItem>
+```bash
+kubectl exec appsmith-0 appsmithctl restore
+```
+  
+</TabItem>
 
 </Tabs>
 
