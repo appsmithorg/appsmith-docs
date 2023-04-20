@@ -5,15 +5,15 @@ sidebar_position: 2.1
 
 # Sendgrid
 
-To configure Sendgrid as your SMTP server, [create an account](https://signup.sendgrid.com/) & login to Sendgrid.
+To configure Sendgrid as your SMTP server, [create an account](https://signup.sendgrid.com/) & log in to Sendgrid.
 
 **1. Navigate to the** [**Integration Section**](https://app.sendgrid.com/guide/integrate)
 
-![click to expand](/img/sendgrid-welcome.png)
+![Click to expand](/img/sendgrid-welcome.png)
 
 **2. Select the SMTP Relay integration option**
 
-![click to expand](/img/sendgrid-smtp.png)
+![Click to expand](/img/sendgrid-smtp.png)
 
 **3. Create a new API key and copy all the fields**
 
@@ -23,15 +23,15 @@ To configure Sendgrid as your SMTP server, [create an account](https://signup.se
 
 ![Click to expand](</img/sendgrid_senders.png>)
 
-**5. Create a new sender identity from which emails will be sent**
+**5. Create a new sender identity from which emails are sent**
 
 ![Click to expand](</img/sendgrid_create_sender.png>)
 
 :::note
-You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
+You can also configure the email service provider using [Admin settings](/getting-started/setup/instance-configuration#admin-settings).
 :::
 
-**6. Update the values in your** [**instance configuration**](../)
+**6. Update the values in your** [**instance configuration**](/getting-started/setup/instance-configuration)
 
 ```bash
 # Example docker configuration
@@ -49,7 +49,7 @@ APPSMITH_MAIL_SMTP_AUTH=true
 # ******************************
 ```
 
-**5.** [**Restart the appsmith instance**](../)
+**5.** [**Restart the Appsmith instance**](../)
 
 :::tip
 Once you've verified your sender identity, your email service should be configured correctly
