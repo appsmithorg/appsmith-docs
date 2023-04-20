@@ -97,24 +97,24 @@ Pagination can be implemented using Offset-based pagination or Cursor-based pagi
 
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
-To implement offset-based pagination in a `user's` database, reference the `pageOffset`, `pageNo`, and `pageSize` property values using curly braces in the query. 
+To implement offset-based pagination you can use the `pageOffset`, `pageNo`, and `pageSize` reference property values in the query. 
 
 1. Enable the **Server-side pagination** property in the table. 
-2. Create a query, and configure pagination in the query using the pagination method.
+2. Create a query, use pageSize and pageOffset to .... #1 
 
    ```sql
     SELECT * FROM users LIMIT {{ <widget_name>.pageSize }} OFFSET {{ <widget_name>.pageOffset }}; 
    ```
- Similarly, in an API query, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
+ In an API query, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
 
    ```
    https://mock-api.appsmith.com/users?page={{<widget_name>.pageNo}}
    ```
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, `{{fetch_users_count.data[0].count}}`
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, `{{fetch_users_count.data[0].count}}` ... #2
 
-
+LENGTH.. #3
 
   </TabItem>
   
@@ -147,13 +147,14 @@ This SQL query selects all columns from the `users` table and applies cursor-bas
 
 When **Allow Searching** property is on, the table header includes a search bar to find matching records. Server-side search lets you request specific records from the server using search terms. 
 
+NOT ON CLIENT SIDE.... #4 ON THE SERVER SIDE
+
 You can use the `searchText` reference property to filter out records being displayed on the table. Whenever the text in the search bar is modified, the `onSearchTextChange` event of the table is triggered, allowing you to configure the table to query its datasource for the appropriate results.
 
 To use the server-side search with the Table widget, follow these steps:
 
-1. Create a query using the `searchText` reference property:
+1. Create a SQL query using the `searchText` reference property:
 
-   SQL statement:
    ```sql
    SELECT * FROM users WHERE name LIKE {{"%" + <widget_name>.searchText + "%"}} ORDER BY id LIMIT 10;
    ```
@@ -163,7 +164,7 @@ To use the server-side search with the Table widget, follow these steps:
    https://mock-api.appsmith.com/users?name={{<widget_name>.searchText}}
    ```
 
-2. Configure the query to run when the `onSearchTextChange` event is triggered in the table's properties pane.
+2. Run the query when the `onSearchTextChange` event is triggered in the table's properties pane.
 
 Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
 
@@ -192,10 +193,12 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
 
 
 
-## Refresh table data in real time
+## Refresh table data 
 
 To keep your table updated with the latest data from your datasource, you need to ensure that you refresh the table whenever new data is submitted. By default, the table won't automatically reflect any changes made to the datasource, so you would need to use events or code to re-run the query that populates your table with data.
 
+
+## in real time
 ---
 **Example:**
 
@@ -275,16 +278,17 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **pageNo**       |  Number       | Contains the current page number that the user is on. APIs can use it for pagination. | `{{<table_name>.pageNo}}`  |
 | **pageOffset**    |  Number     | Contains a calculated value to represent how many records to skip when using **Server side pagination**. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
 | **pageSize**     |  Number       | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table. | `{{<table_name>.pageSize}}`   |
-| **searchText**    |  String      | Contains the search text entered by the user in the Table. | `{{<table_name>.searchText}}`  |
-| **isAddRowInProgress**    |  Boolean      | It indicates whether a new row is currently being added to the table. | `{{<table_name>.searchText}}`  |
-| **newRow**    |  Object      | Contains data related to newly added row. | `{{<table_name>.searchText}}`  |
-| **nextPageVisited**    |  Boolean      | Indicates whether the next page of data has been visited by the user. | `{{<table_name>.searchText}}`  |
-| **previousPageVisited**    |  Boolean      | Indicates whether the previous page of data has been visited by the user. | `{{<table_name>.searchText}}`  |
-| **tableHeaders**    |  Array      | Indicates whether the table headers are visible.| `{{<table_name>.searchText}}`  |
-| **totalRecordsCount**    |  Number      |  Indicates the number of pages in server-side pagination. | `{{<table_name>.searchText}}`  |
-| **updatedRow**    |  Object      | Contains data related to recently updated added row. | `{{<table_name>.searchText}}`  |
-| **updatedRows**    |  Array      | Contains data related to updated added rows.| `{{<table_name>.searchText}}`  |
-| **triggeredRowIndex**    |  Number      | An index property that indicates the row index of the table that has been triggered. | `{{<table_name>.searchText}}`  |
+| **searchText**    |  String      | Contains the search text entered by the user in the Table. | 
+| **isAddRowInProgress**    |  Boolean      | It indicates whether a new row is currently being added to the table. | 
+| **newRow**    |  Object      | Contains data related to newly added row. | 
+| **nextPageVisited**    |  Boolean      | Indicates whether the next page of data has been visited by the user. | 
+| **previousPageVisited**    |  Boolean      | Indicates whether the previous page of data has been visited by the user. | 
+| **tableHeaders**    |  Array      | Indicates whether the table headers are visible.| 
+| **totalRecordsCount**    |  Number      |  Indicates the number of pages in server-side pagination. | 
+| **updatedRow**    |  Object      | Contains data related to recently updated added row. | 
+| **updatedRows**    |  Array      | Contains data related to updated added rows.| 
+| **triggeredRowIndex**    |  Number      | An index property that indicates the row index of the table that has been triggered. | 
+| **updatedRowIndices**    |  Array      | Refers to an array of indices corresponding to the rows that have been updated 
 
 
 
