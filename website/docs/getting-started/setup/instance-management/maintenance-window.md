@@ -1,11 +1,12 @@
 ---
 sidebar_position: 3
+description: Instructions to schedule automatic updates for your Appsmith instance.
 ---
-# Create Maintenance Window
+# Schedule Automatic Updates
 
-The page gives you steps to create a maintenance window for your Appsmith instance.
+The page gives you steps to schedule automatic updates for your Appsmith instance.
 
-## Schedule a maintenance window for auto-updates
+## Configure automatic updates for Docker installation
 You can define a time slot for automatic updates using a `cron` expression in the `--schedule` argument.
 
 Follow these steps to update the `auto_update` container:
