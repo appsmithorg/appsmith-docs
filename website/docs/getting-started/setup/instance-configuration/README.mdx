@@ -64,36 +64,7 @@ The Admin settings enable the configuration of various settings such as user aut
 | **Audit Logs** | Others | The audit log feature in Appsmith is only available to [Appsmith Business Edition](https://www.appsmith.com/pricing) users and provides a record of all significant activities on the platform. For more information, see [Audit Logs](/advanced-concepts/audit-logs). |
 
 ## Environment variables
-You may also choose to configure your self-hosted Appsmith instance using environment variables. Refer to the table below for a list of available variables:
-
-| Name                                                     | Description |
-| -------------------------------------------------------- |-------------|
-| [APPSMITH_OAUTH2_GOOGLE_CLIENT_ID](/getting-started/setup/instance-configuration/authentication/google-login)    | Google OAuth 2.0 client ID for authentication |
-| [APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET](/getting-started/setup/instance-configuration/authentication/google-login) | Google OAuth 2.0 client secret for authentication |
-| [APPSMITH_OAUTH2_GITHUB_CLIENT_ID](/getting-started/setup/instance-configuration/authentication/github-login)     | GitHub OAuth 2.0 client ID for authentication  |
-| [APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET](/getting-started/setup/instance-configuration/authentication/github-login) |GitHub OAuth 2.0 client secret for authentication   |
-| APPSMITH_CLIENT_LOG_LEVEL            | The logging level for the client-side logs  |
-| [APPSMITH_GOOGLE_MAPS_API_KEY](/getting-started/setup/instance-configuration/google-maps)         | Google Maps API key for using Google Maps in the application  |
-| [APPSMITH_MAIL_ENABLED](/getting-started/setup/instance-configuration/email/)                | Enable or disable email capability for your instance  |
-| [APPSMITH_MAIL_HOST](/getting-started/setup/instance-configuration/email/)                   | The email server hostname  |
-| [APPSMITH_MAIL_PORT](/getting-started/setup/instance-configuration/email/)                   | The email server port number  |
-| [APPSMITH_MAIL_USERNAME](/getting-started/setup/instance-configuration/email/)               | The email server username   |
-| [APPSMITH_MAIL_PASSWORD](/getting-started/setup/instance-configuration/email/)               | The email server password  |
-| [APPSMITH_MAIL_FROM](/getting-started/setup/instance-configuration/email/)                   | The email address from which emails are sent  |
-| [APPSMITH_REPLY_TO](/getting-started/setup/instance-configuration/email/)                    | The email address to which replies are sent   |
-| [APPSMITH_MAIL_SMTP_AUTH](/getting-started/setup/instance-configuration/email/)              | Enable or disable SMTP authentication for email  |
-| [APPSMITH_MAIL_SMTP_TLS_ENABLED](/getting-started/setup/instance-configuration/email/)         | Enable or disable TLS for email  |
-| [APPSMITH_DISABLE_TELEMETRY](/product/telemetry#disable-telemetry)           | Disable or enable telemetry  |
-| APPSMITH_RECAPTCHA_ENABLED           | Enable or disable reCAPTCHA |
-| APPSMITH_RECAPTCHA_SITE_KEY          | reCAPTCHA site key for enabling reCAPTCHA  |
-| APPSMITH_RECAPTCHA_SECRET_KEY        | reCAPTCHA secret key for enabling reCAPTCHA  |
-| [APPSMITH_MONGODB_URI](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-mongodb)                | MongoDB URI for connecting to an external MongoDB database  |
-| [APPSMITH_REDIS_URL](/getting-started/setup/instance-configuration/custom-mongodb-redis#custom-redis)                   |Redis URL for connecting to an external Redis   |
-| APPSMITH_ENCRYPTION_PASSWORD         | Password used for encryption  |
-| APPSMITH_ENCRYPTION_SALT             | Salt used for encryption  |
-| [APPSMITH_CUSTOM_DOMAIN](/getting-started/setup/instance-configuration/custom-domain/#dockerk8s)               | Custom domain for your Appsmith instance  |
-
-Follow the instructions below for manually updating the configuration file for your installation type.
+You may also choose to configure your self-hosted Appsmith instance using environment variables. Follow the instructions below for manually updating the configuration file for your installation type.
 
 ### Configure Docker installations
 
@@ -116,94 +87,7 @@ After making changes, be sure to **restart the docker containers** for the chang
 
 ### Configure Helm installations
 
-You can modify your Appsmith installation on Kubernetes using Helm parameters or Appsmith parameters.
-
-The [Appsmith parameters](#environment-variables) include a range of configuration options that can be customized for your specific deployment needs. Refer to the [Environment Variables](#environment-variables) section for a list of available options.
-
-The below table provides a list of Helm parameters that can also be used for configuring your Kubernetes installation.
-
-| Name                      | Type | Description                                               | Value |
-| -------------------------- | --------------------------------------------------------- | ----- |----|
-| `global.namespaceOverride` | Global | Overrides the namespace for resource deployed by the chart | 
-| `global.storageClass`      | Global | Sets `StorageClass` for Persistent Volume              | 
-| `fullnameOverride`  | Common| String to fully override `appsmith.name` template | `""`         |
-| `containerName`     | Common| Specifies container's name running in the pods      | `"appsmith"` |
-| `commonLabels`      | Common| Labels to add to all deployed objects             | `{}`         |
-| `commonAnnotations` | Common| Annotations to add to all deployed objects        | `{}`         |
-| `image.registry`   |  image | Set it to Appsmith image registry    | `index.docker.io`          | |
-| `image.repository` |  image | Set it to Appsmith image repository  | `appsmith/appsmith-editor` | |
-| `image.tag`        |  image | Set it to Appsmith image tag         | `latest`                   | |
-| `image.pullPolicy` |  image | Set it to Appsmith image pull policy | `IfNotPresent`             | |
-| `strategyType`       | Deployment | Appsmith deployment strategy type                  | `RollingUpdate` |
-| `schedulerName`      | Deployment | Alternate scheduler                                | `""`            |
-| `podAnnotations`     | Deployment | Annotations for Appsmith pods                      | `{}`            |
-| `podSecurityContext` | Deployment | Appsmith pods security context                     | `{}`            |
-| `securityContext`    | Deployment | Set security context                               | `{}`            |
-| `resources.limits`   | Deployment | The resources limits for the Appsmith container    | `{}`            |
-| `resources.requests` | Deployment | The requested resources for the Appsmith container | `{}`            |
-| `nodeSelector`       | Deployment | Node labels for pod assignment                     | `{}`            |
-| `tolerations`        | Deployment | Tolerations for pod assignment                     | `[]`            |
-| `affinity`           | Deployment | Affinity fod pod assignment                        | `{}`            |
-| `namespace.create` | Namespace | Enable creation of `Namespace` | `true` |
-| `serviceAccount.create`      | Service Account | Enable creation of `ServiceAccount` for Appsmith pods                                                       | `true` |
-| `serviceAccount.name`        | Service Account | Name of the created `ServiceAccount` . If not set, a name is generated using the `appsmith.fullname` template | `""`   |
-| `serviceAccount.annotations` | Service Account | Additional service account annotations                                                                      | `{}`   |
-| `service.type`                     | Traffic Exposure| Appsmith service type                                                       | `ClusterIP` |
-| `service.port`                     | Traffic Exposure| Appsmith service port                                                       | `80`        |
-| `service.portName`                 | Traffic Exposure| Appsmith service port name                                                  | `appsmith`  |
-| `service.nodePort`                 | Traffic Exposure| Appsmith service node port to expose                             | `8000`      |
-| `service.clusterIP`                | Traffic Exposure| Appsmith service Cluster                                                    | `""`        |
-| `service.loadBalancerIP`           | Traffic Exposure| Appsmith service Load Balancer IP                                           | `""`        |
-| `service.loadBalancerSourceRanges` | Traffic Exposure| Appsmith service Load Balancer sources                                      | `[]`        |
-| `service.annotations`              | Traffic Exposure| Additional custom annotations for Appsmith service                          | `{}`        |
-| `ingress.enabled`                  | Traffic Exposure| Enable ingress record generation for Appsmith                               | `false`     |
-| `ingress.hosts`                    | Traffic Exposure| An array of hosts to be covered with the ingress record                     | `[]`        |
-| `ingress.tls`                      | Traffic Exposure| Enable TLS configuration for the hosts defined at the `ingress.hosts` parameter | `false`     |
-| `ingress.secrets`                  | Traffic Exposure| Custom TLS certificates as secrets                                          | `[]`        |
-| `ingress.certManager`              | Traffic Exposure| Enable ingress to use TLS certificates provided by Cert Manager             | `false`     |
-| `ingress.certManagerTls`           | Traffic Exposure| Specify TLS secret resources created by Cert Manager                        | `[]`        |
-| `ingress.className`                | Traffic Exposure| Configure Ingress class that being used in ingress resource                 | `""`        |
-| `persistence.enabled`               | Persistence | Enable persistence using Persistent Volume Claims                    | `true`             |
-| `persistence.storageClass`          | Persistence | Persistent Volume storage class                                      | `""`               |
-| `persistence.annotations`           | Persistence |  Additional custom annotations for the PVC                            | `{}`               |
-| `persistence.localStorage`          | Persistence |  Enable persistent volume using local storage                         | `false`            |
-| `persistence.storagePath`           | Persistence |  Local storage Path                                                   | `/tmp/hostpath_pv` |
-| `persistence.localCluster`          | Persistence |  Local running cluster to provide storage space                       | `[minikube]`       |
-| `persistence.accessModes`           | Persistence |  Persistent Volume access modes                                       | `[ReadWriteOnce]`  |
-| `persistence.size`                  | Persistence | Persistent Volume size                                               | `10Gi`             |
-| `persistence.efs.enabled`           | Persistence | If EFS is enabled                                                    | ``                 |
-| `persistence.efs.driver`            | Persistence | EFS driver                                                           | ``                 |
-| `persistence.efs.volumeHandle`      | Persistence | EFS volume id                                                        | ``                 |
-| `storageClass.enabled`              | Persistence |  Enable Storage Class configuration                                  | `false`           |
-| `storageClass.defaultClass`         |Persistence |  Create default Storage Class                                         | `false`            |
-| `storageClass.bindingMode`          | Persistence | Binding mode for Persistent Volume Claims using Storage Class        | `Immediate`        |
-| `storageClass.allowVolumeExpansion` | Persistence | Allow expansion of Persistent Volume Claims using Storage Class      | `true`             |
-| `storageClass.reclaimPolicy`        | Persistence | Configure the retention of the dynamically created Persistent Volume | `Delete`           |
-| `storageClass.provisioner`          | Persistence | Storage Class provisioner                                            | `""`               |
-| `storageClass.annotations`          | Persistence | Additional storage class annotations                                 | `{}`               |
-| `storageClass.mountOptions`         | Persistence | Mount options used by Persistent Volumes                             | `{}`               |
-| `storageClass.parameters`           | Persistence | Storage Class parameters                                             | `{}`               |
-| `autoupdate.enabled`    | Auto update Image | Enable auto update Helm chart's image         | `true`        |
-| `autoupdate.scheduler`  | Auto update Image | Schedule time to run cron job to update image | `"0 * * * *"` |
-| `autoscaling.enabled`    | Auto scaling | Enable auto scaling    | `false` |
-| `autoscaling.minReplicas`| Auto scaling | Number of minimum pods | `2`     |
-| `autoscaling.maxReplicas`| Auto scaling | Number of maximum pods | `3`     |
-| `redis.enabled`             | Redis | Enable redis       | `true` |
-| `redis.replica.replicaCount`| Redis | Number of replicas | `1`    |
-| `mongodb.enabled`           | Mongo | Enable MongoDB     | `true` |
-| `mongodb.auth.rootUser`     | Mongo | MongoDB root user     | `root`     |
-| `mongodb.auth.rootPassword` | Mongo | MongoDB root Password | `password` |
-| `mongodb.replicaCount`      | Mongo | Replica of mongo      | `2` |
-| `mongodb.replicaSetName`    | Mongo | Mongo Replica set name| `rs0` |
-| `postgresql.enabled`        | Postgres | Enable Postgres        | `true`     |
-| `postgresql.auth.username`  | Postgres | Postgres auth username | `root`     |
-| `postgresql.auth.password`  | Postgres | Postgres auth password | `password` |
-| `postgresql.auth.postgresPassword`| Postgres | Postgres auth postgresPassword | `password` |
-| `postgresql.auth.database`  | Postgres | Number of maximum pods | `keycloak` |
-
-#### Configure instance
-
-You can use the `helm install` command to configure your Appsmith installation using one of the below ways:
+You can modify your Appsmith installation on Kubernetes using Helm parameters or Appsmith environment variables. Use the `helm install` command to configure your Appsmith installation using one of the below ways:
 
 * Using Helm parameters: For example, deploy Appsmith and configure it to use the storage class `appsmith-pv` with:
 
@@ -214,7 +98,7 @@ helm install \
   appsmith appsmith/appsmith 
 ```
 
-* **Or** using Appsmith parameters: For example, change the encryption salt configuration with:
+* **Or** using Appsmith environmental variables: For example, change the encryption salt configuration with:
 
 ```bash 
 helm install \
