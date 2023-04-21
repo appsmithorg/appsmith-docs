@@ -9,7 +9,7 @@ Okta, an Identity-as-a-Service (IDaaS) provider, supports authentication using S
 Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
-## Create App Integration
+## Create app integration
 
 Log in to your [Okta Developer Account](https://developer.okta.com/) and navigate to **Applications** >> **Applications** >> Click **Create App Integration**.
 
@@ -42,7 +42,7 @@ You’ll see that the app integration is created on Okta. Navigate to Appsmith t
 
 To complete the SAML setup, you’ll have to register Okta as a provider on the Appsmith platform. Follow the instructions listed below to complete this step:
 
-### Register Identity Provider
+### Register identity provider
 
 There are several ways to register the identity provider on Appsmith and complete the SAML Configuration. Follow the one that best suits you:
 
@@ -54,11 +54,11 @@ SAML metadata is an XML document that provides information required for interact
 **Metadata URL** is the quickest and most **recommended** way to set up **SAML**.
 :::
 
-* Navigate to **Applications** >> **Applications** >> **Application Name (SAMLAppsmithIntegration) >>** Click on tab **Sign On >>** Scroll down to **SAML configuration instructions >>** Click **Identity Provider Metadata** link to open the metadata in a browser tab >> Copy the **URL** from address bar.
+* Navigate to **Applications** >> **Applications** >> **Application Name (SAMLAppsmithIntegration) >>** Click the tab **Sign On >>** Scroll down to **SAML configuration instructions >>** Click **Identity Provider Metadata** link to open the metadata in a browser tab >> Copy the **URL** from the address bar.
 
 ![Metadata URL](/img/Okta-SAML-Configure-Metadata-URL.png)
 
-* Navigate to Appsmith, add the Metadata URL and click `SAVE & RESTART` button to save the configuration.
+* Navigate to Appsmith, add the Metadata URL, and click `SAVE & RESTART` button to save the configuration.
 
 ![Metadata URL setup at Appsmith](/img/Appsmith-Admin-Settings-Authentication-SAML-Metadata-URL.png)
 
@@ -66,15 +66,15 @@ SAML metadata is an XML document that provides information required for interact
 
 If you don’t have a Metadata URL but have a raw SAML metadata XML document, you can choose XML to configure SAML.
 
-* Navigate to Appsmith, click XML, add the raw XML in the `Metadata XML` field and click the `SAVE & RESTART` button to save the configuration.
+* Navigate to Appsmith, click XML, add the raw XML in the `Metadata XML` field, and click the `SAVE & RESTART` button to save the configuration.
 
 ![Metadata XML setup at Appsmith](/img/Appsmith-Admin-Settings-Authentication-SAML-XML.png)
 
-#### IdP Data
+#### IdP data
 
-You can also configure SAML by providing the identity provider(IdP) data. If you have Identity provider’s data like X509 Public Certificate, Email, and more, you can choose this option to configure SAML.
+You can also configure SAML by providing the identity provider(IdP) data. If you have Identity provider data like X509 Public Certificate, Email, and more, you can choose this option to configure SAML.
 
-* Navigate to **Applications** >> **Applications** >> **Application Name (SAMLAppsmithIntegration)** >> Click on tab **Sign On** >> Scroll down to **SAML 2.0** >> Click **View Setup Instructions**
+* Navigate to **Applications** >> **Applications** >> **Application Name (SAMLAppsmithIntegration)** >> Click the tab **Sign On** >> Scroll down to **SAML 2.0** >> Click **View Setup Instructions**
 
 ![View IdP Data](/img/Okta-SAML-Register-Provider-IdpData.png)
 
@@ -91,12 +91,12 @@ You can also configure SAML by providing the identity provider(IdP) data. If you
 
 Once you have supplied the details, click the `SAVE & RESTART` button to save the configuration.
 
-### Complete the SAML Configuration
+### Complete the SAML configuration
 
-Once the server restarts with new configurations, you will see a screen showing the message ‘Authentication Successful!’.
+Once the server restarts with new configurations, you see a screen showing the message ‘Authentication Successful!’.
 
 ![SAML Configuration success message - Authentication Successful](/img/Appsmith-SAML-Authentication-Successful.png)
 
 You’ll see a login screen with a button `SIGN IN WITH SAML SSO`.
 
-![SIGN IN WITH SAML SSO - Available on Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)
+![SIGN IN WITH SAML SSO - Available on the Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)
