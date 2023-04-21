@@ -47,22 +47,21 @@ The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name 
 </figure>
 
 
-## Freeze column
+## Cell styling
 
-The Freeze Columns feature allows you to freeze the columns of the table while keeping the rest of the table scrollable. This can be useful when you have a large table with many columns and want to keep some of the important columns always visible.
+ You can style each column type from style property pane. However, if you need more advanced customization, you can use the `currentRow` and `currentIndex` references to create custom style expressions. These expressions allow you to dynamically change the style of individual cells based on their content, rather than simply applying a static style to an entire column.
 
-The **Allow Column Freeze** property, in the property pane of the Table widget, is a global setting that allows you to enable column freezing for end-users of your application. On the other hand,
-the **Column Freeze**  property in the column settings is used to freeze or unfreeze columns in edit mode. 
+For example, lets say you have a column named `status` that reflects `approved` and `pending` values. You can set the color for these values using the following expression in the **Cell Background** property:
 
-The frozen columns are available in the table's properties pane: left-frozen columns are pinned to the top of the list, and right-frozen ones are pinned to the bottom. These columns can't be re-ordered while they're frozen.
+```js
+{{currentRow.status === "approved" ? "#22c55e" : "#facc15"}}
+```
+If you want to keep the same background color for an entire row, you can use the same custom style expression in each column **Cell Background** property.
 
 <figure>
-  <img src="/img/as-freeze-column.png" style= {{width:"750px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Freeze column</i></figcaption>
+  <img src="/img/cell-color.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Color Formatting</i></figcaption>
 </figure>
-
-
-
 
 
 ## Properties
