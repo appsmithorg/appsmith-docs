@@ -169,7 +169,7 @@ Server-side filtering involves using a value to narrow down the results of a que
 
 To enable server-side filtering, you can use widgets such as the [Select widget](/reference/widgets/select/) to provide users with a list of supported filters to choose from.
 
-1. Drag a select widget to the canvas and add options that you might use to filter your data.
+1. Drag a Select widget to the canvas and add options that you might use to filter your data.
 
 2. Create a query, and add the Select widget's `selectedOptionValue`:
 
@@ -278,10 +278,10 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **sortOrder**    |  Object       | Reflects the current column sort criteria. For example, if table rows are being sorted by the value of column `id` in ascending order, this property contains `{"column": "id", "order": "asc"}`.   | `{{<table_name>.sortOrder}}`   |
 | **tableData**     |  Array      | Contains all the table data in JSON format.      | `{{<table_name>.tableData}}`  |
 | **selectedRowIndex** |  Boolean   | Contains the index of the row selected by the user. Not applicable when multiple rows are selected.    | `{{<table_name>.selectedRowIndex}}`   |
-| **selectedRowIndices** |  Array | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices`\}} |
+| **selectedRowIndices** |  Array | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices}}` |
 | **filteredTableData** |  Boolean  | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
 | **pageNo**       |  Number       | Contains the current page number that the user is on. APIs can use it for pagination. | `{{<table_name>.pageNo}}`  |
-| **pageOffset**    |  Number     | Contains a calculated value to represent how many records to skip when using **Server side pagination**. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
+| **pageOffset**    |  Number     | Contains a calculated value to represent how many records to skip when using Server side pagination. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
 | **pageSize**     |  Number       | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table. | `{{<table_name>.pageSize}}`   |
 | **searchText**    |  String      | Contains the search text entered by the user in the Table. | 
 | **isAddRowInProgress**    |  Boolean      | It indicates whether a new row is currently being added to the table. | 
@@ -291,7 +291,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **tableHeaders**    |  Array      | Indicates whether the table headers are visible.| 
 | **totalRecordsCount**    |  Number      |  Indicates the number of pages in server-side pagination. | 
 | **updatedRow**    |  Object      | Contains data related to recently updated added row. | 
-| **updatedRows**    |  Array      | Contains data related to updated added rows.| 
+| **updatedRows**    |  Array      | Contains data related to updated rows.| 
 | **triggeredRowIndex**    |  Number      | An index property that indicates the row index of the table that has been triggered. | 
 | **updatedRowIndices**    |  Array      | Refers to an array of indices corresponding to the rows that have been updated 
 
@@ -320,7 +320,7 @@ Style properties allow you to change the look and feel of the widget. All of the
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
+When the event is triggered, these event handlers can run queries, JS code, or other supported [actions.](/reference/appsmith-framework/widget-actions)
 
 | Action                 | Description               |
 | ---------------------- | ------------------------- |
