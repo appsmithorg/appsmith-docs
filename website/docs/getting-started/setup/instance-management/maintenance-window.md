@@ -1,33 +1,33 @@
 ---
 sidebar_position: 3
 ---
-# Create a Maintenance Window
+# Create Maintenance Window
 
 The page gives you steps to create a maintenance window for your Appsmith instance.
 
 ## Schedule a maintenance window for auto-updates
-You can choose a time slot for auto updates to happen. You've to set the time slot using a `cron` expression in the `--schedule` argument.
+You can define a time slot for automatic updates using a `cron` expression in the `--schedule` argument.
 
 Follow these steps to update the `auto_update` container:
-1. Go to the `docker-compose.yml` file
+1. Go to the location where `docker-compose.yml` file is located
 2. Open and update the `auto_update` attribute as shown below:
-
-:::caution Attention
-You must add a 6-value cron expression, not the traditional 5-value one. Refer to learn more about [How the cron expression works](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON\_Expression\_Format).
-:::
 
 ```yaml
   auto_update:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    # Checks for update every 5 mins because of --interval
+    # Check for updates every hour because of the cron schedule
     #highlight-next-line
     command: --schedule "0 0 * ? * *" --label-enable --cleanup
     networks:
       - appsmith
     restart: always
 ```
+:::caution Attention
+You must add a 6-value cron expression, not the traditional 5-value one. Refer to learn more about [How the cron expression works](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON\_Expression\_Format).
+:::
+
 3. Restart the `auto_update` container with:
 ```bash
 sudo docker-compose pull && sudo docker-compose up --force-recreate auto_update
