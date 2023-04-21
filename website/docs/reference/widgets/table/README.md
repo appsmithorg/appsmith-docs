@@ -16,7 +16,7 @@ This page explains how to use a Table widget to display data in tabular format, 
 
 To display data in a Table widget, you can use the **Table Data** property.
 
- The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example, the table has three columns: `step`, `task`, and `status`. 
+ The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
 
 ```js
 [
@@ -38,11 +38,7 @@ To display data in a Table widget, you can use the **Table Data** property.
 ]
 ```
 
-
-
-### Display data dynamically
-
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Table Data** property.
+You can dynamically generate table by fetching data from queries or JS functions by binding the response to the **Table Data** property.
 
 ---
 **Example 1:** suppose you have data stored in a database and you want to display it in the Table widget.
@@ -58,7 +54,6 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ```js
 {{fetchData.data}}
 ```
-The Table widget displays all the data from the query. Appsmith [formats](/reference/widgets/table/column-settings#computed-value) a column based on its detected data type, ensuring that the data is presented in a visually appealing manner. 
 
 ---
 **Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Table widget.
@@ -95,23 +90,28 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
 
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
-1. Enable the **Server-side pagination** property in the table. 
-
-2. Create a query and use `pageSize` and `pageOffset`  reference properties to implement pagination.
+1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `pageSize` and `pageOffset`  reference properties to implement pagination.
 
    ```sql
-    SELECT * FROM users LIMIT {{ <widget_name>.pageSize }} OFFSET {{ <widget_name>.pageOffset }}; 
+    SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}; 
    ```
  In an API query, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
 
    ```
-   https://mock-api.appsmith.com/users?page={{<widget_name>.pageNo}}
+   https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
    ```
+
+2. Enable the **Server-side pagination** property in the table. 
+
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, you can use `{{fetch_users_count.data.length}}` to display the count. 
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. 
 Additionally, you can use the total record count to enable or disable the next/previous controls. 
 
+<figure>
+  <img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Offset-based pagination</i></figcaption>
+</figure>
 
   </TabItem>
   
@@ -120,19 +120,24 @@ Additionally, you can use the total record count to enable or disable the next/p
 
 Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-1. Enable the **Server-side pagination** property in the table. 
-
-2. Create a query and use `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
-
+1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
    ```sql
-   SELECT * FROM users {{<widget_name>.nextPageVisited ?  "WHERE id > "+ " "+ <widget_name>.tableData[<widget_name>.tableData.length-1]["id"] : <widget_name>.previousPageVisited ? "WHERE id <"+ " "+ <widget_name>.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{<widget_name>.pageSize}} ;
+   SELECT * FROM users {{Table1.nextPageVisited ?  "WHERE id > "+ " "+ Table1.tableData[Table1.tableData.length-1]["id"] : Table1.previousPageVisited ? "WHERE id <"+ " "+ Table1.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{Table1.pageSize}} ;
    ```
 This SQL query selects all columns from the `users` table and applies cursor-based pagination to limit the number of results returned. The `WHERE` clause is dynamically generated based on whether the user has already visited the `next` or `previous` page, and orders the results by `ID`.
 
+2. Enable the **Server-side pagination** property in the table. 
+
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, you can use `{{fetch_users_count.data.length}}` to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
+
+<figure>
+  <img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
+</figure>
+
 
 
   </TabItem>
@@ -151,12 +156,12 @@ To use the server-side search with the Table widget, follow these steps:
 1. Create a SQL query using the `searchText` reference property:
 
    ```sql
-   SELECT * FROM users WHERE name LIKE {{"%" + <widget_name>.searchText + "%"}} ORDER BY id LIMIT 10;
+   SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
    ```
 
    You can also pass the `searchText` property as a URL parameter in an API request:
    ```
-   https://mock-api.appsmith.com/users?name={{<widget_name>.searchText}}
+   https://mock-api.appsmith.com/users?name={{Table1.searchText}}
    ```
 
 2. Set the table widget's **onSearchTextChange** event to run the query. 
@@ -185,6 +190,11 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
 
 3. Set the table widget's **onOptionChange** event to run the query. 
 
+## Edit table data
+
+To edit and update table data directly from the UI, you can use Inline editing. To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can double-click on a cell to edit its contents.
+
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
 
 
 ## Refresh table data
@@ -204,30 +214,6 @@ For instance, suppose you have a table that receives its data from a query calle
     ```
 
 Now when `sendNewData` succeeds, your table automatically refreshes itself.
-
-### Update table data in real time
-
-To update your table data in real-time, you can use the `setInterval` function. To do this, you can use the [Switch widget](/reference/widgets/switch/) `Switch1` to control this function and a table widget that uses the `getData` query.
-
-* Drag a Switch widget onto the canvas.
-* In the **onChange** property, paste the following code with any necessary changes:
-
-```javascript
-{{
-(() => {
-    if (Switch1.isSwitchedOn) {
-        setInterval(() => getData.run(), 2000, "autoupdate");
-    } else {
-        clearInterval("autoupdate");
-    }
-})()
-}}
-```
-
-Here, the `setInterval` function calls the `getData` query every 2 seconds once the switch widget is turned on, or it stops the cycle if it's switched off.
-
-![Automatically update table data](</img/Refresh_data_in_tables__table_widget.gif>)
-
 
 
 
@@ -256,7 +242,7 @@ These properties allow you to edit the widget. All of these properties are prese
 | **Default Search Text**     |  String	     | Sets the default search query for the search bar in the table header.     |
 | **Allow Filtering**  |  Boolean | Toggles visibility for the "Filters" button and its features in the table header. |
 | **Default Selected Row**    |  Number/Array	     | Sets which rows are selected in the table by default. When **Enable multi-row selection** is turned on, this setting expects an array of numbers corresponding to the indices of the selected rows. Otherwise, it expects a single number.    |
-| **Enable multi-row selection**  |  Boolean | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ <widget_name>.selectedRows }}` property.         |
+| **Enable multi-row selection**  |  Boolean | Allows multiple rows of a table to be selected at the same time. The rows are accessible by the `{{ Table1.selectedRows }}` property.         |
 | **Column Sorting** |  Boolean  | Toggles whether table columns are sort-able. When turned on, users may click column headers to sort the table rows by that column's value. This setting only applies while the app is in View mode. |
 | **Visible**    |  Boolean | Controls the widget's visibility on the page. When turned off, the widget won't be visible when the app is published.        |
 | **Animate Loading**  |  Boolean | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
@@ -267,7 +253,7 @@ These properties allow you to edit the widget. All of these properties are prese
 
 ### Reference properties
 
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `<widget_name>.isVisible` to get the visibility status.
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `Table1.isVisible` to get the visibility status.
 
 | Reference Property | Data type | Description                                                                                                                                                    |
 | ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
