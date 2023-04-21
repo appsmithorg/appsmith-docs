@@ -110,9 +110,9 @@ The default Appsmith helm installation disables auto update (_recommended_). You
   ```
 
 * Or edit `values.yaml` and specify the following parameters
-   ```bash
-     helm upgrade --values values.yaml appsmith appsmith/appsmith
-    ```
+```bash
+helm upgrade -i appsmith appsmith/appsmith -f values.yaml
+```
 
 ### Manual update
 
@@ -143,7 +143,7 @@ The default Appsmith helm installation disables auto update (_recommended_). You
     ```
     Followed by running the command below.
     ```bash
-    helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+    helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
     ```
 
 ### Manual update
