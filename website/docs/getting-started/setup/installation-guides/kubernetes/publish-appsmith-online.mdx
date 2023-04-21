@@ -149,7 +149,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
      2. Run the below command once the parameter values are updated:un the below command:
 
     ```bash 
-    helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+    helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
     ```
 
 </TabItem>
