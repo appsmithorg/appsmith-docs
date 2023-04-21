@@ -211,21 +211,16 @@ kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl restore
 
 4. Restart the Appsmith pods using the following command:
 
-:::info
-if autoscaling is turned off
-:::
+    a. When autoscaling is turned off with:
 
-```bash
-kubectl rollout restart statefulset appsmith
-```
+    ```bash
+    kubectl rollout restart statefulset appsmith
+    ```
+    b. When autoscaling is turned on with:
 
-:::info
-if autoscaling is turned on
-:::
-
-```bash
-kubectl rollout restart deployment appsmith
-```
+    ```bash
+    kubectl rollout restart deployment appsmith
+    ```
   
 </TabItem>
 
@@ -413,7 +408,7 @@ APPSMITH_ENCRYPTION_SALT=<YOUR-APPSMITH-ENCRYPTION-SALT>
 ```bash
 kubectl exec appsmith-0 appsmithctl import_db
 ```
-4. Restart the Appsmith pods using the following command:
+4. Restart the Appsmith pods with:
 
 ```bash
 kubectl rollout restart statefulset appsmith
@@ -449,21 +444,16 @@ kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl import_db
 
 4. Restart the Appsmith pods using the following command:
 
-:::info
-if autoscaling is turned off
-:::
+    a. When autoscaling is turned off with:
 
-```bash
-kubectl rollout restart statefulset appsmith
-```
+    ```bash
+    kubectl rollout restart statefulset appsmith
+    ```
+    b. When autoscaling is turned on with:
 
-:::info
-if autoscaling is turned on
-:::
-
-```bash
-kubectl rollout restart deployment appsmith
-```
+    ```bash
+    kubectl rollout restart deployment appsmith
+    ```
 
 </TabItem>
 
