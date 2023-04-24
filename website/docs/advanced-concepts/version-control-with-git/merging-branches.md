@@ -29,7 +29,7 @@ When a feature branch is merged with the master branch in the remote repository,
 
 ![](/img/pull_changes.gif)
 
-Once the pull is successful, the app is automatically deployed. You can view the deployed version by clicking the **﹀** icon from the top right corner.
+Once the pull is successful, the app is automatically deployed. To check the deployed version, click the **Deploy** button from the top right corner and in the deploy modal, click **Latest Deploy Preview**
 
 The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
 
