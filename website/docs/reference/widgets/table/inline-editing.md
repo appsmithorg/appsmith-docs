@@ -99,7 +99,7 @@ In addition to using the **onSubmit** event of the table, you can use a Button w
 ```
 Collection: movies
 Query:
-
+//Working on this
 Update:
 ```
 
@@ -150,7 +150,7 @@ These common properties allow you to edit the column, and customize the user act
 
 | Property                                           | Data type        | Description                                                                                                                                                                                                                                                               |                  
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Editable**                | Formatting  | Controls whether cells of the column are editable                                                             | NA                             |
+| **Editable**                | Boolean  | Controls whether cells of the column are editable                                                             | NA                             |
 | **Min**                     | Number  | Sets the minimum allowed value. Only available for columns that are type _Number_.                                                                               | NA                             |
 | **Max**                     | Number  | Sets the maximum allowed value. Only available for columns that are type _Number_.                                                                              | NA                             |
 | **Regex**                  | regExp  | Enter a regular expression that user input must match to be considered valid. Displays an error message on failure.                                   | NA                             |
