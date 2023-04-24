@@ -643,10 +643,7 @@ const sidebars = {
             id: 'help-and-support/troubleshooting-guide/action-errors/README',
           },
           items: [
-    
-            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
+
             'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
           ],

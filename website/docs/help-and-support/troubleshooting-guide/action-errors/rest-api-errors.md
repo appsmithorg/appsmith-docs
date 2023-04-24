@@ -7,11 +7,11 @@ sidebar_position: 2
 
 |  <div style= {{width:"120px"}}> Error Code </div> | <div style= {{width:"230px"}}> Error Title </div>|  Error Message                              |
 | -------------    | ----------                     | ------------------------------------- |
-| [PE-ARG-5000](#error)   | Invalid query configuration | The URI '$URI' specified in the REST request is invalid.      |
-| [PE-ARG-5000](#error-1) | Invalid query configuration | The Content-Type specified in the REST request is invalid.  |
+| [PE-ARG-5000](#error)   | Invalid query configuration | The URI `$URI` specified in the REST request is invalid.      |
+| [PE-ARG-5000](#error-1) | Invalid query configuration | The Content-Type `$CONTENT_TYPE` specified in the REST request is invalid.  |
 | [PE-ARG-5000](#error-2) | Invalid query configuration | The REST request is missing an HTTP method.|
-| [PE-RST-5000](#error-3) | API execution error             | The Appsmith server received an error response from `<ENDPOINT_NAME>`.|
-| [PE-JSN-4000](#error-4) | Invalid JSON             | The REST request body has an invalid JSON `<FORMATTED_JSON_BODY>`. |
+| [PE-RST-5000](#error-3) | API execution error             | The Appsmith server received an error response from endpoint `<$ENDPOINT_NAME>`.|
+| [PE-JSN-4000](#error-4) | Invalid JSON format          | The REST request body has an invalid JSON format `<$FORMATTED_JSON_BODY>`. |
 | [PE-PLG-5000](#error-5) | Query execution error             | Appsmith failed to execute the REST request because of an internal error. |
 
 
@@ -21,7 +21,7 @@ This error usually means there is an issue with how you specify the request para
 #### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-ARG-5000] The URI '$URI' specified in the REST request is invalid. "></Message>
+messageContent="[PE-ARG-5000] The URI `$URI` specified in the REST request is invalid. "></Message>
 
 #### Cause
 This error occurs when the URI specified in the request is invalid, improperly formatted or cannot be found.
@@ -37,7 +37,7 @@ This error occurs when the URI specified in the request is invalid, improperly f
 #### Error
 <Message
 messageContainerClassName="error"
-messageContent="[PE-ARG-5000] The Content-Type '$CONTENT_TYPE' specified in the REST request is invalid."></Message>
+messageContent="[PE-ARG-5000] The Content-Type `$CONTENT_TYPE` specified in the REST request is invalid."></Message>
 
 #### Cause
 This error occurs when the MIME type specified in the request header does not match the expected value or format. The Content-Type header indicates the format of the request body data sent to the server. It's important to correctly set the Content-Type header to ensure the server can interpret the request and respond accordingly.
