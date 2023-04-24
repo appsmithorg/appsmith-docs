@@ -82,7 +82,7 @@ Follow these steps to configure auto scaling for your instance:
 
 2. Follow the steps below to create a shared file system:
 
-<Tabs groupId="configurations">
+<Tabs groupId="configurations" queryString="current-configuration">
   <TabItem label="AWS EKS" value="AWSEKS">
 
 The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) driver is a plugin for Kubernetes that allows you to mount [Amazon Elastic File System (EFS)](https://aws.amazon.com/efs/) on your Kubernetes pods. This enables you to create a shared file system on Kubernetes by mounting an EFS file system on the pods in your cluster. You can follow the instructions provided in the official [EFS CSI driver documentation](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on your Kubernetes pods.
@@ -92,7 +92,7 @@ The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/e
 
 3. Follow the steps below to configure persistence:
 
-<Tabs groupId="configurations">
+<Tabs groupId="configurations" queryString="current-configuration">
   <TabItem label="AWS EKS" value="AWSEKS">
 
 You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) or existing PVC.
