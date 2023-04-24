@@ -191,6 +191,12 @@ untrusted
 Filepicker
 Cloudinary
 Port
+navigateTo
+triggerable
+params
+resetChildren
+subnet
+auto-configure
 the cloud
 CLI
 ACI
