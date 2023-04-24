@@ -191,6 +191,12 @@ untrusted
 Filepicker
 Cloudinary
 Port
+navigateTo
+triggerable
+params
+resetChildren
+subnet
+auto-configure
 the cloud
 CLI
 ACI
@@ -323,6 +329,7 @@ Unpublish
 unpublish
 Id
 Upcloud
+Namespace
 Modal
 config
 Treeselect
@@ -342,4 +349,6 @@ Okta
 emailAddress
 Url
 I
+Subcommands
+Subcommand
 Upsert

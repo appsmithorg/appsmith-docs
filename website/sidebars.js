@@ -59,6 +59,8 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/kubernetes/README',
                   },
                   items: [
+                    'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                    'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
@@ -150,6 +152,7 @@ const sidebars = {
                     id: 'getting-started/setup/instance-configuration/custom-domain/README',
                   },
                   items: [
+                    'getting-started/setup/instance-configuration/custom-domain/configure-tls',
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
@@ -164,9 +167,9 @@ const sidebars = {
                 id: 'getting-started/setup/instance-management/README',
               },
               items: [
-                'getting-started/setup/instance-management/supervisor',
-                'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-management/update-appsmith',
+                'getting-started/setup/instance-management/appsmithctl', 
+                'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/maintenance-window',
               ],
             },
