@@ -73,6 +73,7 @@ exceptions:
   - HTTPS
   - Let's 
   - Encrypt
+  - Git
   - TLS
   - Client ID
   - Client Secret
@@ -115,3 +116,27 @@ exceptions:
   - Signed
   - File
   - Files
+  - WhatsApp
+  - Redshift
+  - Elasticsearch
+  - Snowflake
+  - ArangoDB
+  - Camera
+  - Image
+  - Container 
+  - Instance 
+  - Git
+  - OS
+  - APIs/Query
+  - Group
+  - Cloud
+  - Ansible
+  - IdP
+  - Ping
+  - Identity
+  - Active
+  - Auth0
+  - PingID
+  - Active
+  - Directory
+

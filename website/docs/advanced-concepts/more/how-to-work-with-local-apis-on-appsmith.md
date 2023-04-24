@@ -7,7 +7,7 @@ description: >-
   with Appsmith using host.docker.internal or ngrok.
 ---
 
-# Connect via localhost
+# Connect via Localhost
 
 ## Connect to a localhost database/ API
 
@@ -39,7 +39,7 @@ Run the below command to test and ensure the IP address from the hosts’ file i
 ```bash
  run —-rm -—add-host=host.docker.internal:host-gateway
  ```
-For Docker compose on Linux, you need to manually add it to the ```docker-compose.yaml``` file. Use ```extra hosts``` to add the entry as shown below: 
+For Docker Compose on Linux, you need to manually add it to the ```docker-compose.yaml``` file. Use ```extra hosts``` to add the entry as shown below: 
 
 ```yaml
  extra_hosts:
@@ -165,5 +165,5 @@ You can [create an API](/core-concepts/connecting-to-data-sources/authentication
 
 ![connect to an API hosted on localhost using ngrok](/img/create-api-for-local-api-on-appsmith.png)
 
-## Next Steps
+## Further reading
 You could read the API/ query response and [display the data](/core-concepts/data-access-and-binding/displaying-data-read/) by binding it with different [widgets](/reference/widgets/) available on Appsmith.

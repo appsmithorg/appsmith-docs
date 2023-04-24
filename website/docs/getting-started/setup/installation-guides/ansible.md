@@ -4,7 +4,7 @@ description: Deploy Appsmith to a remote host using Ansible
 
 # Ansible
 
-## Deployment Steps:
+## Deployment steps:
 
 * [Install Ansible](ansible.md#step-1-install-ansible)
 * [Ansible inventory setup](ansible.md#step-2-ansible-inventory-setup)
@@ -13,11 +13,11 @@ description: Deploy Appsmith to a remote host using Ansible
 
 ## Step 1: Install Ansible
 
-> You can skip this step if you already have ansible intalled.
+> You can skip this step if you already have Ansible installed.
 
 There are two options for installing Ansible:
 
-* Option 1: Using OS specific Package Managers.
+* Option 1: Using OS-specific Package Managers.
   *   To install on Ubuntu, you can run the following commands:
 
       ```
@@ -37,7 +37,7 @@ There are two options for installing Ansible:
 
 ## Step 2: Ansible inventory setup
 
-1.  Clone the Appsmith repository to your machine & move to the ansible playbook folder.
+1.  Clone the Appsmith repository to your machine & move it to the Ansible playbook folder.
 
     ```
     $ git clone https://github.com/appsmithorg/appsmith.git
@@ -48,7 +48,7 @@ There are two options for installing Ansible:
     ```
         $ touch inventory
     ```
-3.  To configure the `inventory` file, open it with your editor and add the hostname or FQDN of the server(s) you want to deploy Appsmith, along with the ansible port and ansible\_user.
+3.  To configure the `inventory` file, open it with your editor and add the hostname or FQDN of the server on which you want to deploy Appsmith, along with the Ansible port and Ansible user.
 
     The inventory file should follow the given format:
 
@@ -56,7 +56,7 @@ There are two options for installing Ansible:
     appsmith ansible_host={{ SERVER_HOST }} ansible_port={{ SERVER_PORT }} ansible_user={{ SERVER_USER }}
     ```
 
-    If you are using SSH keypairs for authenticating your SSH connections to your server. You can specify your ssh private key file in the `inventory` file using `ansible_ssh_private_key_file`
+    If you are using SSH key pairs for authenticating your SSH connections to your server. You can specify your ssh private key file in the `inventory` file using `ansible_ssh_private_key_file`
 
     ```
     appsmith ansible_host={{ SERVER_HOST }} ansible_port={{ SERVER_PORT }} ansible_user={{ SERVER_USER }} ansible_ssh_private_key_file={{ SSH_PRIVATE_KEY_FILE }}
@@ -65,23 +65,23 @@ There are two options for installing Ansible:
 ## Step 3: Ansible configuration vars setup for Appsmith
 
 1. Open `appsmith-vars.yml` file with your editor.<br/>
-   There are some variables that will need input from you to get the application start correctly
+Some variables need input from you to start the application correctly.
    * `install_dir`: The absolute path of your app's installation folder on the server (required). Default value: `~/appsmith`
 
 ## Step 4: Run the Ansible playbook
 
-You can run the ansible playbook with the following command:
+You can run the Ansible playbook with the following command:
 
 ```
 $ ansible-playbook -i inventory appsmith-playbook.yml --extra-vars "@appsmith-vars.yml"
 ```
 
-The command above will use the host information from the `inventory` file & feed your configuration vars from `appsmith-vars.yml` before running the playbook
+The command above uses the host information from the `inventory` file & feeds your configuration vars from `appsmith-vars.yml` before running the playbook
 
-When it's all done, provided all went well and no parameters were changed, you should be able to visit your app on browser using your `custom_domain` or by your `SERVER_HOST` (if you didn't provide value for `custom_domain` variable )
+When it's all done, provided all went well and no parameters were changed, you should be able to visit your app on the browser using your `custom_domain` or by your `SERVER_HOST` (if you didn't provide value for `custom_domain` variable)
 
 > **Note**: You can put your `inventory` file in other folder and then specify its path with the `-i` flag, for more detail, please check [Ansible Inventory documentation](https://docs.ansible.com/ansible/latest/user\_guide/intro\_inventory.html)
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out our guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com) or join our [Discord Server](https://discord.com/invite/rBTTVJp) to directly speak to the Appsmith team!
+If you encounter any errors during this process, check out the guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com)
