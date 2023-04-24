@@ -13,6 +13,17 @@ Similar to using Git flow in SDLC, you can make separate branches in Appsmith fo
 It is recommended that each developer should have an individual feature branch.
 :::
 
+## Branch URLs
+
+Every branch that you create has its unique URL in the following format:
+
+```javascript
+<APPSMITH-APP-URL>?branch=<BRANCH-NAME>
+```
+For example, if you want to open your app in the release branch, replace the `<BRANCH-NAME>` with "**release**" in the URL.  These URLs can be shared to view the deployed version of the app for that branch. 
+
+In case the branch name is not mentioned in the URL, the URL directs to the default branch, which is the master branch. 
+
 ## Create a branch
 
 To create these branches in your Appsmith app, follow the steps below:

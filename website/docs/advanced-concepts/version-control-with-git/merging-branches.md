@@ -1,17 +1,27 @@
 # Merge and Pull Changes
 
-When you are working on your feature branch for a while, the master branch may get updated with new changes. As your branch is behind the master now, to avoid conflicts, you have to merge the master branch into your feature branch to keep it up-to-date with the latest changes.
-  
-Follow the steps below when you want to merge your feature branch with the master branch -
+In Git, you typically merge branches when you want to combine changes from one branch into another. Before merging the branches, please ensure that the following conditions have been met:
 
-1. Click the **Merge** icon at the bottom left corner of the screen. It opens the merge tab.
-2. Select your base branch and check the merge status.
-   1. The `base` and `head` branches shouldn't have any uncommitted changes.
-   2. The remote counterpart of the `base` branch shouldn't have any commits that are missing locally (the local and remote versions should be in sync.)
-   3. The `base` and the `head` branch shouldn't have any conflicting changes.
-3. Click **Merge Changes** if the merge status check is successful.
+- Both the base and head branches have no uncommitted changes.
+- The remote version of the base branch is synchronized with the local version, with no missing commits.
+- The base and head branches have no conflicting changes that could cause issues during the merge.
 
-Once the merge is successful, you can raise a PR on the remote repository to merge the changes of the feature branch to the master branch.
+There are 2 scenarios when you may want to merge branches in Appsmith:
+
+**Update master branch:** after developing an app on your feature branch, you must update the master branch with the new feature. If the update does not require a review, you can merge your feature branch directly into the master branch. Follow these steps to merge the feature branch into the master branch:
+1. Open your app in the feature branch and locate the **Merge** icon at the bottom left corner of the screen to open the merge modal.
+2. Select **master** as the base branch and verify the merge status.
+3. If there are no conflicts, click **Merge Changes** to complete the merge.
+
+If you are working collaboratively with your team, it is recommended that you create a Pull Request (PR) in the remote repository to get your changes reviewed before merging them into the master branch. This allows other team members to review and provide feedback on your changes before they are merged into the master branch.
+
+**Avoid conflicts:** If you have been working on your feature branch for a while, the master branch may have been updated with new changes. In this case, to prevent conflicts, you should merge the master branch into your feature branch to ensure that it is up-to-date with the latest changes. Follow these steps to merge your master branch with your feature branch:
+
+1. Click the **Merge** icon at the bottom left corner of the screen. It opens the merge modal.
+2. Select the **feature** as the base branch and verify the merge status.
+3. Click **Merge Changes** if there are no conflicts.
+
+Once the merge is successful, you can either merge your feature branch directly into the master branch in Appsmith or create a PR in the remote repository.
 
 ## Pull changes
 
@@ -23,15 +33,6 @@ Once the pull is successful, the app is automatically deployed. You can view the
 
 The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
 
-### Best practices to avoid merge conflicts
-Merge conflicts can occur when different branches attempt to merge changes to the same page of an app. Multiple developers can collaborate on the same app, but each one should focus on a different page.
-
-**For changes that affect more than just one page of the app, like the app theme, datasources, etc: **
-
-* Avoid making these changes when feature branches are in the middle of building new updates.
-* Ensure that these changes are completed and pushed to the `master` branch.
-* Pull changes from the `master` to the feature branches that are in development.
-* Finish updates on the feature branch, then commit and merge with the master branch.
 
 ## Delete a branch
 
