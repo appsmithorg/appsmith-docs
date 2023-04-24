@@ -43,9 +43,9 @@ messageContent="[PE-ARG-5000] The Content-Type `$CONTENT_TYPE` specified in the 
 This error occurs when the MIME type specified in the request header does not match the expected value or format. The Content-Type header indicates the format of the request body data sent to the server. It's important to correctly set the Content-Type header to ensure the server can interpret the request and respond accordingly.
 
 Some common Content-Type MIME types for REST requests include:
-* application/json: indicates that the request body contains data formatted as JSON.
-* application/xml: indicates that the request body contains data formatted as XML.
-* text/plain: indicates that the request body contains plain text.
+* `application/json`: indicates that the request body contains data formatted as JSON.
+* `application/xml`: indicates that the request body contains data formatted as XML.
+* `text/plain`: indicates that the request body contains plain text.
 
 #### Solution
 To resolve the error, review the API documentation and set the Content-Type header to the expected MIME type for the request payload.
