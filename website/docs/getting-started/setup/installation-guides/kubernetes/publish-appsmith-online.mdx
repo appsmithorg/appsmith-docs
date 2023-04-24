@@ -1,0 +1,171 @@
+---
+description: Publish Appsmith Kubernetes cluster to the internet
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Publish Appsmith Kubernetes Installation
+The page provides steps to publish Appsmith Kubernetes installation to the internet.
+
+## Prerequisites
+1. A Kubernetes cluster running Appsmith with at least one node.
+2. Follow the steps below to install NGINX Ingress Controller on your Kubernetes cluster. 
+
+<Tabs groupId="configurations">
+ <TabItem label="AWS EKS" value="AWSEKS">
+
+  The NGINX Ingress Controller is enabled by default. If not, [install NGINX Controller for AWS EKS](https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb).
+    Ensure that you enable the correct version for your cluster.
+
+</TabItem>
+<TabItem label="Minikube" value="Minikube">
+
+  The NGINX Ingress Controller is enabled by default. If not, [set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/).
+  Ensure that you enable the correct version for your cluster.
+
+</TabItem>
+<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
+
+  The NGINX Ingress Controller is enabled by default. If not, [install ingress controller on Google Kubernetes Engine](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)[GKE]. Ensure that you enable the correct version for your cluster.
+
+</TabItem>
+<TabItem label="Microk8s" value="Microk8s">
+
+   The NGINX Ingress Controller is enabled by default. If not, [add on: Ingress](https://microk8s.io/docs/addon-ingress). Ensure that you enable the correct version for your cluster.
+    
+</TabItem>
+</Tabs>
+
+3. Configuring data compression for the Nginx ingress controller can help reduce the amount of data transferred between the server and client, which improves the performance of your application. If you want to use `gzip` compression, follow these steps to enable it.
+
+    1. Edit the `configMap` for `ingress-nginx-controller` with:
+
+    ```bash
+    kubectl edit configmap -n ingress-nginx ingress-nginx-controller
+    ```
+
+   2. Add the following to the data section.
+
+    ```yaml
+    # Add the data section if not already present
+    data: 
+      use-gzip: "true" # ENABLE GZIP COMPRESSION
+      gzip-types: "*" # SPECIFY MIME TYPES TO COMPRESS ("*" FOR ALL) 
+    ```
+
+  The Nginx controller automatically updates once you save (`:wq!`) the changes.
+
+## Configure instance
+
+<Tabs groupId="appsmithEditions">
+
+<TabItem label="Community Edition" value="communityEdition"> 
+
+You can use the `helm upgrade` command to enable the ingress controller using one of the below ways:
+  
+  * Using Helm parameters with:
+
+  ```bash
+  helm upgrade -i appsmith appsmith/appsmith \
+      --set ingress.enabled=true \
+      --set "ingress.hosts[0].host="<hostname>", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
+      --set ingress.className="nginx"
+  ```
+
+  * **Or** using the `values.yaml` file:
+  
+    1. Open the `values.yaml` file and update the parameter values as below:
+
+    ```yaml 
+      ingress:
+        ## @param ingress.enabled Enable ingress record generation for Ghost
+        ##
+        enabled: true
+        annotations:
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/limit-rps: "15"
+        ## @param ingress.annotations Additional custom annotations for the ingress record
+        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+        ##
+        className: nginx
+        hosts: []
+          # - host: appsmith-domain.me
+          #   paths:
+          #   - path: "/"
+          #     pathType: Prefix
+      service:
+        ## @param service.type Kubernetes Service type
+        ##
+        type: ClusterIP
+    ```
+
+    2. Run the below command once the parameter values are updated:
+
+      ```bash 
+      helm upgrade -i appsmith appsmith/appsmith --f values.yaml
+      ```
+
+</TabItem>
+ <TabItem label="Business Edition" value="businessEdition">
+
+ You can use the `helm upgrade` command to enable the ingress controller using one of the below ways:
+  
+ * Using Helm parameters with:
+
+  ```bash
+  helm upgrade -i appsmith appsmith-ee/appsmith \
+      --set ingress.enabled=true \
+      --set "ingress.hosts[0].host="<hostname>", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
+      --set ingress.className="nginx"
+  ```
+
+* **Or** using the `values.yaml` file:
+  
+    1. Open the `values.yaml` file and update the parameter values as below:
+
+    ```yaml 
+      ingress:
+        ## @param ingress.enabled Enable ingress record generation for Ghost
+        ##
+        enabled: true
+        annotations:
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/limit-rps: "15"
+        ## @param ingress.annotations Additional custom annotations for the ingress record
+        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+        ##
+        className: nginx
+        hosts: []
+          # - host: appsmith-domain.me
+          #   paths:
+          #   - path: "/"
+          #     pathType: Prefix
+      service:
+        ## @param service.type Kubernetes Service type
+        ##
+        type: ClusterIP
+    ```
+    
+     2. Run the below command once the parameter values are updated:un the below command:
+
+    ```bash 
+    helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
+    ```
+
+</TabItem>
+</Tabs>
+  
+
+* It takes a few minutes for the ingress to get a public IP assigned. Once it has been assigned, you should see an IPv4 address or a domain name in the `ADDRESS` column. Run the below command to get this address:
+
+  ```bash
+  kubectl get ingress
+  ```
+
+## Troubleshooting
+If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+
+## Further reading
+* [Configure TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls)
+* [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-helm-installations)
+* [Manage Appsmith instance](/getting-started/setup/instance-management/)

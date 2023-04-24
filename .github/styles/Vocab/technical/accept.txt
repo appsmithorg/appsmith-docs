@@ -323,6 +323,7 @@ Unpublish
 unpublish
 Id
 Upcloud
+Namespace
 Modal
 config
 Treeselect
@@ -342,4 +343,6 @@ Okta
 emailAddress
 Url
 I
+Subcommands
+Subcommand
 Upsert
