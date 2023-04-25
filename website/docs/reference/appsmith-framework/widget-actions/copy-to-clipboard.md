@@ -5,6 +5,14 @@ sidebar_position: 7
 
 This function is used to copy text to the clipboard.
 
+
+
+
+<figure>
+  <img src="/img/copy-action.png" style= {{width:"700px", height:"auto"}} alt="Copy to clipboard"/>
+  <figcaption align = "center"><i>Copy to clipboard</i></figcaption>
+</figure>
+
 ## Signature
 
 ```javascript

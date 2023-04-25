@@ -15,7 +15,7 @@ To use App Passwords, please enable 2-factor authentication for your Gmail accou
 
 ![Find the "App Passwords" section under the Security tab.](/img/Security\_Full.png)
 
-* Click on the **App passwords** section.
+* Click the **App passwords** section.
 * On the next screen, find two dropdown boxes labeled **Select app** and **Select device**.
 
 ![](/img/dropdowns.png)
