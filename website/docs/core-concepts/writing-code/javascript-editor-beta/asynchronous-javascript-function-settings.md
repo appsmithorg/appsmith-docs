@@ -40,7 +40,7 @@ Let’s quickly dive into these configurations to understand how they help you m
 
 Navigate to **JS Object** —> You’ll see **Settings** next to **Code**
 
-![How to navigate to JS Object Settings for the asynchronous function?](/img/JSObject-Settings-Tab.png)
+![How to navigate to JS Object Settings for an asynchronous function?](/img/JSObject-Settings-Tab.png)
 
 Click **Settings** to reveal configurations.
 
