@@ -63,7 +63,7 @@ To update your older apps to use theming, you need to use the **Reset widget sty
 All the widgets which previously did not support theming are now ready for new styles.
 
 :::note
-Widgets which are deprecated and don't support theming**.**
+Widgets which are deprecated don't support theming**.**
 :::
 
 ## Impact of themes on a widget
