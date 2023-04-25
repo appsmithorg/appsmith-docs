@@ -25,7 +25,7 @@ Follow the below steps to create a database query in the query editor:
 
 ![Appsmith Query Editor](/img/query_editor.png)
 
-* The query is created with a default name. We recommend you rename it for readability and access. The query name helps access the query results. A query must have a **unique** and meaningful name that acts as an identifier. You can access the various properties of the query and its data using the query name.
+* The query is created with a default name. It's recommended you rename it for readability and access. The query name helps access the query results. A query must have a **unique** and meaningful name that acts as an identifier. You can access the various properties of the query and its data using the query name.
 
 :::info
 [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) aren't valid as query names.
@@ -37,7 +37,7 @@ Queries are automatically saved, so you never lose your work. These changes are 
 
 ## Run a query
 
-Click on the `Run` button or hit `cmd + enter` to execute a query. You'll see the results in the Response tab if the query succeeds.
+Click the `Run` button or hit `cmd + enter` to execute a query. You'll see the results in the Response tab if the query succeeds.
 
  <VideoEmbed host="youtube" videoId="0xA7ChO7Rlk" title="Running a Query" caption="Running a Query"/>  
 

@@ -12,7 +12,7 @@ To share basic authentication details across multiple APIs, you can use the `Bas
 
  <VideoEmbed host="youtube" videoId="SM0K4XkkJgM" title="basic authentication" caption="Basic Authentication"/> 
 
-* Click on the `+` icon next to the datasources section 
+* Click the `+` icon next to the datasources section 
 * Add an Authenticated API
 * Enter the Base URL of the API (example: `https://mock-api.appsmith.com`) and select the authentication type as **Basic**.
 
