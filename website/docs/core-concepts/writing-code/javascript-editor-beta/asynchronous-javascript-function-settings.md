@@ -44,7 +44,7 @@ Navigate to **JS Object** —> You’ll see **Settings** next to **Code**
 
 Click **Settings** to reveal configurations.
 
-![Configurations available for the asynchronous functions](/img/Settings-Configurations.png)
+![Configurations available for asynchronous functions](/img/Settings-Configurations.png)
 
 You get two settings to configure for asynchronous functions:
 
