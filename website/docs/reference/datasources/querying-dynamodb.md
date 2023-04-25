@@ -120,30 +120,7 @@ Depending on your use-case, there are several operations that can return records
 
 > Fetch records with matching `team_id` values from a table `users`, 10 records at a time, and put them into a Table widget `UsersTable`. The table has columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
-**Setup:** create a query called `FetchUsers` based on your DynamoDB datasource. This query should use the **Query** operation. Create a [Table widget](/reference/widgets/table) called `UsersTable`. Then create a JS Object called `utils` that contains the following code to handle logic and formatting for paginating your query:
-
-```javascript
-export default {
-	handlePagination: () => {
-		if (Query.data.LastEvaluatedKey && Object.keys(Query.data.LastEvaluatedKey).length > 0) {
-			const startKey = {
-				"ExclusiveStartKey": {
-					"team_id": {
-						"S": Query.data.LastEvaluatedKey.team_id
-					},
-					"employee_id": {
-						"S": Query.data.LastEvaluatedKey.employee_id
-					}
-				}
-			}
-			return JSON.stringify(startKey).slice(1, -1) + ","
-			
-		} else {
-			return ""
-		}
-	}
-}
-```
+**Setup:** create a query called `FetchUsers` based on your DynamoDB datasource. This query should use the **Query** operation. Create a [Table widget](/reference/widgets/table) called `UsersTable`.
 
 * Create a [**Select widget**](/reference/widgets/select) called `TeamSelect` with the following value in its **Options** property:
 
@@ -163,8 +140,24 @@ export default {
     ```javascript
     {
         "TableName": "users",
-        "LIMIT": {{ UsersTable.pageSize }},
-        {{ utils.handlePagination() }}
+        "LIMIT": {{UsersTable.pageSize}},
+        {{
+            (() => {
+                if (Query.data.LastEvaluatedKey && Object.keys(Query.data.LastEvaluatedKey).length > 0) {
+                    return `"ExclusiveStartKey": {
+                        "team_id": {
+                            "S": "${Query.data.LastEvaluatedKey.team_id}"
+                        },
+                        "employee_id": {
+                            "S": "${Query.data.LastEvaluatedKey.employee_id}"
+                        }
+                    },`
+                } else {
+                    return ""
+                }
+            }
+            )()
+        }}
         "KeyConditionExpression": "team_id = :val",
         "ExpressionAttributeValues": {
             ":val": {
