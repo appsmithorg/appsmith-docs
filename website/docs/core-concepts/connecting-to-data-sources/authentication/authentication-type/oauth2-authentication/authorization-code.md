@@ -179,7 +179,7 @@ The Zoho APIs are location-specific. For example, if your organization is locate
 You can follow the step-by-step guide provided by Zoho to [Register the Client](https://www.zoho.com/people/api/oauth-steps.html).
 :::
 
-Once you make changes to the above fields, click `Save & Authorize` button to create the Authenticated API. You’ll be asked to authorize the datasource by sign in to your Zoho Account. You’ll be navigated to the Appsmith Datasource screen with a response status as success available in the address bar on successful authentication.
+Once you change the above fields, click the `Save & Authorize` button to create the Authenticated API. You’ll be asked to authorize the datasource by signing in to your Zoho Account. You’ll be navigated to the Appsmith Datasource screen with a response status as success available in the address bar on successful authentication.
 
 Once the datasource is added, you can create queries and perform different actions with the Zoho Campaign interface.
 
