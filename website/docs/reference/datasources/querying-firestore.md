@@ -72,7 +72,7 @@ To set up server-side pagination for your **List Documents** query called `ListU
     ```javascript
     {{ ListUsers.data[ ListUsers.data.length - 1 ] }}
     ```
-2. Set **End After** to:
+2. Set **End Before** to:
     ```javascript
     {{ ListUsers.data[0] }}
     ```
@@ -121,7 +121,7 @@ After filling in the desired collection/path, enter your document data in the **
 
 | **Parameter**        | **Description**                                                                                               |
 | -------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Timestamp Path**   | When filled, adds a timestamp value in the created document under the key name you provide. Expects an array with a single string value (`["timestamp"]`).               |
+| **Timestamp Path** _(optional)_   | When filled, adds a timestamp value in the created document under the key name you provide. Expects an array with a single string value (`["timestamp"]`).               |
 
 ---
 
@@ -129,7 +129,7 @@ After filling in the desired collection/path, enter your document data in the **
 
 > Create a new document in the `users` collection with values for `name`, `email`, and `date_of_birth`.
 
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
+**Setup**:
 
 * Create a query `CreateUser` based on your Firestore datasource, and set it to use the **Add Document to Collection** command.
 * Set the **Collection/Document Path** field to `users`.
@@ -149,7 +149,6 @@ After filling in the desired collection/path, enter your document data in the **
     // Submit button's onClick event
     {{ CreateUser.run() }}
     ```
-    * Add an **onSuccess** action to run the `ListUsers` query to refresh your table data.
 
 * Once these form fields are filled out, you can add their values to your query in the **Body** field like below:
 
@@ -197,7 +196,12 @@ When using **Update Document**, you only need to provide the fields that have be
 **Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
 
 * Create a query `UpdateUser` based on your Firestore datasource, and set it to use the **Update Document** command.
-* Set the **Collection/Document Path** field to `users`.
+* Set the **Collection/Document Path** field to the `_ref.path` property of the record you're updating:
+
+    ```javascript
+    {{ UsersTable.selectedRow._ref.path }}
+    ```
+
 * To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `UpdateUserForm`. Add **Source Data** to the JSON Form to create input fields. Reference the existing row in the Table widget to have the form fields pre-filled:
 
     ```json
@@ -214,9 +218,9 @@ When using **Update Document**, you only need to provide the fields that have be
 
     ```javascript
     // Submit button's onClick event
-    {{ UpdateUser.run() }}
+    {{ UpdateUser.run(() => ListUsers.run(), () => {}) }}
     ```
-    * Add an **onSuccess** action to run the `ListUsers` query to refresh your table data.
+    * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
 * Once these form fields are filled out, you can add their values to your query in the **Body** field like below:
 
@@ -248,7 +252,7 @@ Use the **Delete Document** command to delete an existing document by its collec
 **Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
 
 * Create a query `DeleteUser` based on your Firestore datasource, and set it to use the **Delete Document** command.
-* Provide the **Collection/Document Path** of the document to delete by referencing the `UsersTable`'s selected row:
+* Set the **Collection/Document Path** field to the `_ref.path` property of the record you're deleting:
 
     ```javascript
     {{ UsersTable.selectedRow._ref.path }}
@@ -258,9 +262,9 @@ Use the **Delete Document** command to delete an existing document by its collec
 
     ```javascript
     // Delete button's onClick event
-    {{ DeleteUser.run() }}
+    {{ DeleteUser.run(() => ListUsers.run(), () => {}) }}
     ```
-    * Add an **onSuccess** action to run the `ListUsers` query to refresh your table data.
+    * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
 
 When the Submit button is clicked, your query is executed and the document is deleted.
