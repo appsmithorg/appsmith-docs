@@ -214,7 +214,7 @@ Use PutItem to insert a new record or replace an existing record. Any existing r
 
 > Add a new record to a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
-**Setup:** create a query called `CreateUser` based on your DynamoDB datasource. This query should use the **PutItem** operation. You might want to create a [Table widget](/reference/widgets/table) set up with data like the example from the previous [fetch records](#fetch-records) section.
+**Setup:** create a query called `CreateUser` based on your DynamoDB datasource. This query should use the **PutItem** operation.
 
 To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
 
@@ -235,7 +235,6 @@ To gather data for the new record, create a [JSON Form](/reference/widgets/json-
     // Submit button's onClick event
     {{ CreateUser.run() }}
     ```
-    * Add an **onSuccess** callback to this action, such as executing the query that fills your table with fresh data.
 
 * Once these form fields are filled out, you can add their values to your query's body as below:
 
@@ -288,7 +287,7 @@ Use UpdateItem to change specific attributes of an existing record. You only nee
 
 > Modify an existing record in a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
 
-* Create your query called `UpdateUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another query that fetches your records.
+* Create your query called `UpdateUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another query `ListUsers` that fetches your records.
 
 * Create a [JSON Form widget](/reference/widgets/json-form) `UpdateUserForm` to use for submitting your updated values. Add **Source Data** to the JSON Form to create input fields. Reference the `selectedRow` of `UsersTable` to pre-fill the form fields:
 
@@ -308,9 +307,9 @@ Use UpdateItem to change specific attributes of an existing record. You only nee
 
     ```javascript
     // Submit button's onClick event
-    {{ UpdateUser.run() }}
-    ```
-    * Add an **onSuccess** callback to this action, such as executing the query that fills your table with fresh data.
+    {{ UpdateUser.run(() => ListUsers.run(), () => {}) }}
+  ```
+  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
 * To add your modified row data to your query, reference them in your UpdateItem query:
 
@@ -366,15 +365,15 @@ Use DeleteItem to delete a specific record.
 
 > Delete a record from a table `users`.
 
-* Create your query called `DeleteUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your table data from a previous fetch query.
+* Create your query called `DeleteUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your table data from a previous fetch query `ListUsers`.
 
 * Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
 
     ```javascript
     // in the Delete button's onClick event
-    {{ DeleteUser.run() }}
-    ```
-    * Add an **onSuccess** callback to this action, such as executing the query that fills your table with fresh data.
+    {{ DeleteUser.run(() => ListUsers.run(), () => {}) }}
+  ```
+  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
 * To delete a specific record, reference it with its partition key (the primary and/or sort keys). In your `DeleteUser` query, use the `team_id` and `employee_id` values of the `UserTable`'s selected row:
     ```javascript
