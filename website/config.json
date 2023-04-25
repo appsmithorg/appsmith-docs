@@ -44,7 +44,10 @@
 		"attributesToRetrieve": [
 			"hierarchy.lvl1",
 			"content",
-			"url"
+			"anchor",
+			"url",
+			"url_without_anchor",
+			"type"
 		]
 	},
 	"conversation_id": [

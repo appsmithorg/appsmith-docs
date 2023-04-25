@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Sample Apps
 
-<Tabs>
+<Tabs queryString="current-sample-app-type">
 
 <TabItem value="widgets" label="Widgets" default>
 

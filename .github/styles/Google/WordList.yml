@@ -57,7 +57,6 @@ swap:
   HTTPs: HTTPS
   in order to: to
   ingest: import|load
-  k8s: Kubernetes
   long press: touch & hold
   network IP address: internal IP address
   omnibox: address bar
@@ -76,3 +75,5 @@ swap:
   url:  URL
   vs\.: versus
   World Wide Web: web
+exceptions:
+  - k8s 
