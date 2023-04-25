@@ -145,7 +145,7 @@ The logs tab gives you the flexibility to filter logs either by writing keywords
 
 ### Snippets
 
-You’ll see a Snippets button available on the right top side of the editor. Click on it to open the Appsmith Snippet Library.
+You’ll see a Snippets button available on the right top side of the editor. Click it to open the Appsmith Snippet Library.
 
 ![Snippets Button](</img/JavaScript_Editor__Snippets.png>)
 

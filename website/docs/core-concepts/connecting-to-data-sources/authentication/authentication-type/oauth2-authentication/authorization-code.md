@@ -11,12 +11,12 @@ In Appsmith, you can achieve this by setting up an `Authenticated API` and confi
 
 Let’s take an example to understand the authorization code integration with Dropbox. You have a portal app built on Appsmith, and your app users use it to upload their profiles. You already have a backend application integrated with Dropbox and want to use Dropbox to store the profiles. To achieve this, you have to create an Authenticated API and configure it to connect with Dropbox.
 
-### User Endpoint
+### User endpoint
 
 You’ll have to connect to a user endpoint on the Dropbox platform to perform API calls. Navigate to the [exhaustive list of user endpoints](https://www.dropbox.com/developers/documentation/http/documentation) used by Dropbox for different API calls.
 
 :::info
-Dropbox provides [details on headers or the content type](https://www.dropbox.com/developers/documentation/http/documentation) that you will have to add to your requests.
+Dropbox provides [details on headers or the content type](https://www.dropbox.com/developers/documentation/http/documentation) that you must add to your requests.
 :::
 
 ### Configure Authenticated API
@@ -26,7 +26,7 @@ For uploading files configure `Authenticated API` as per below table:
 | **Appsmith**            | **Dropbox**                                                                                                                                                                                    | **Value**                                                                                                                                                          |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **URL**                 | User Endpoint                                                                                                                                                                                  | `https://content.dropboxapi.com/`                                                                                                                                  |
-| **Headers**             | `Dropbox-API-Arg`                                                                                                                                                                              | {"path": "/\{{**`<`**`pick the file path from widget like`` `**`FilePicker`**`>`\}}","mode" : "add","autorename" : true, "mute" : false,"strict\_conflict" :false} |
+| **Headers**             | `Dropbox-API-Arg`                                                                                                                                                                              | {"path": "/\{{**`<`**`pick the file path from widget like`` `**`FilePicker`**`>`\}}","mode" - add, `autorename` : true, "mute" : false,"strict\_conflict" :false} |
 | **Headers**             | `Content-Type`                                                                                                                                                                                 | `application/octet-stream`                                                                                                                                         |
 | **Authentication Type** | NA                                                                                                                                                                                             | OAuth 2.0                                                                                                                                                          |
 | **Grant Type**          | NA                                                                                                                                                                                             | Authorization Code                                                                                                                                                 |
@@ -35,7 +35,7 @@ For uploading files configure `Authenticated API` as per below table:
 | **Client Secret**       | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App secret**                            | Copy the App secret and add in the Client secret field.                                                                                                            |
 | **Scopes**              | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Permissions** tab >> select **Scope** `files.content.write` | Copy the scope `files.content.write` and add it to the field.                                                                                                      |
 | **Authorization URL**   | Authorization Endpoint                                                                                                                                                                         | `https://www.dropbox.com/oauth2/authorize`                                                                                                                         |
-| **Redirect URL**        | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **OAuth2** >> **Redirect URIs**           | Add the Redirect URL from Appsmith to the field and click add button.                                                                                              |
+| **Redirect URL**        | Navigate to [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **`OAuth2`** >> **Redirect URIs**           | Add the Redirect URL from Appsmith to the field and click add button.                                                                                              |
 
 :::info
 To create an application you can also follow the[ OAuth guide ](https://developers.dropbox.com/oauth-guide)available at Dropbox.
@@ -47,14 +47,14 @@ Keep the rest of the settings and click the `Save and Authorize` button. You’l
 You can verify if your datasource verification has been successful by checking the `response_status` in the address bar of your browser.
 :::
 
-### Upload Files
+### Upload files
 
-A user will select the files by using a `Filepicker` widget. Whenever a user chooses a file and clicks upload, the button will trigger the API call for uploading the file. Here’s a blueprint of interaction between Portal App and Dropbox:
+A user selects the files by using a `Filepicker` widget. Whenever a user chooses a file and clicks upload, the button executes the API for uploading the file. Here’s a blueprint of interaction between Portal App and Dropbox:
 
 ![Upload files workflow and interaction](</img/OAuth2.0API_Integration__Authorization_Code__Workflow__Upload.png>)
 
 1. User selects a file and clicks on the upload button.
-2. The `Upload API` residing on Appsmith will be called.
+2. The `Upload API` residing on Appsmith is called.
 3. The `Authenticated API` talks to Dropbox APIs for authorization and generating a token. The token generated is added to the Upload API call.
 4. The upload request is executed on Dropbox to upload a file.
 5. Dropbox directory structure shows that the file is uploaded successfully.
@@ -65,7 +65,7 @@ Let’s configure Authentication API to integrate with Dropbox and create the wo
 
  <VideoEmbed host="youtube" videoId="RHhp5WaQV1g" /> 
 
-### Create Query
+### Create query
 
 Navigate to **Explorer** → Click **(+)** next to Query/API → Select `New <AuthenticatedAPIName> Query` under **Create Query.**
 
@@ -77,7 +77,7 @@ There are two ways to add the headers to the APIs:
 
 #### **Add Headers to Authenticated API**
 
-You can add headers directly to the Authenticated API when you configure it. Here you can add the headers that are common across the APIs. For example, content type.
+You can add headers directly to the Authenticated API when you configure it. Here you can add the headers that are common across the APIs. For example, content-type.
 
 #### **Add Headers to API**
 
@@ -85,9 +85,9 @@ You can add headers to individual APIs when you add them to the platform. Here y
 
 ### Add Widget
 
-Let’s add a filepicker widget to canvas and configure it to trigger the `Upload API` call.
+Let’s add a Filepicker widget to canvas and configure it to trigger the `Upload API` call.
 
-* Navigate to [**Widgets**](../../../../../reference/widgets/) → search **FilePicker** in the search bar → Drag the [widget](../../../../../reference/widgets/) onto the canvas.
+* Navigate to [**Widgets**](/reference/widgets/) → search **FilePicker** in the search bar → Drag the [widget](/reference/widgets/) onto the canvas.
 * Select the [`FilePicker`](../../../../../reference/widgets/filepicker.md) Widget and navigate to the `onFilesSelected` event available on the properties pane.
 * Enable JS available next to the event
 * Add the following code in the input box.
@@ -96,7 +96,7 @@ Let’s add a filepicker widget to canvas and configure it to trigger the `Uploa
 {{UploadFileToDropbox.run() }} 
 ```
 
-The above code snippet will trigger the API execution whenever from a [FilePicker](../../../../../reference/widgets/filepicker.md) widget user selects a file and clicks on the Upload button available on the widget.
+The above code snippet executes the API whenever from a [FilePicker](/reference/widgets/filepicker) widget user selects a file and clicks on the Upload button available on the widget.
 
 :::info
 At any given point in time, you can add data to your headers by using the mustache **`{{}}`** sign. For example, `FilePicker1.files[0].name` for filename.
@@ -106,15 +106,15 @@ Once the API call is successful, you can navigate to the Dropbox interface and v
 
 ## Integrate with Google Docs
 
-Let’s look into some other integrations that you can do with [Authenticated APIs](../../#create-authenticated-api). In this section, you’ll be able to configure your Google Docs integrations to your Appsmith apps.
+Follow the sections below to configuring your [Authenticated API](/core-concepts/connecting-to-data-sources/authentication/#creating-an-authenticated-api-datasource) using Google Docs integration.
 
 ### User Endpoint
 
-You’ll have to connect to a user endpoint on the Google Docs platform to perform API calls. Google Docs provide an [exhaustive guide for integrating with Docs API](https://developers.google.com/docs/api/how-tos/overview).
+You need to connect to a user endpoint on the Google Docs platform to perform API calls. Google Docs provide an [exhaustive guide for integrating with Docs API](https://developers.google.com/docs/api/how-tos/overview).
 
-### Configure Authenticate API
+### Configure Authenticated API
 
-Follow these steps to configure Google docs integration for an Authenticated API.
+Follow these steps to configure Google Docs integration for an Authenticated API.
 
  <VideoEmbed host="youtube" videoId="ZO9rV9j2S9w" /> 
 
@@ -126,27 +126,27 @@ Follow these steps to configure Google docs integration for an Authenticated API
 | **Authentication Type** | NA                                                                                                                                                                                                                                                                                                            | `OAuth 2.0`                                                                                                            |
 | **Grant Type**          | NA                                                                                                                                                                                                                                                                                                            | `Authorization Code`                                                                                                   |
 | **Access Token URL**    | Token Endpoint                                                                                                                                                                                                                                                                                                | `https://oauth2.googleapis.com/token`                                                                                  |
-| **Client ID**           | Navigate to [Google API Console](https://console.developers.google.com) >> Select Your Project that has Google Docs API Enabled >> Select Google API Docs on API/Service Details >> Click on Client Credentials >> Select the OAuth 2.0 Client >> Copy Client ID                                              | Copy the Client ID and add in the Client ID field.                                                                     |
-| **Client Secret**       | <p>Navigate to <a href="https://console.developers.google.com">Google API Console</a> >> Select Your Project that has Google Docs API Enabled >> Select Google API Docs on API/Service Details >> Click on Client Credentials >> Select the OAuth 2.0 Client >></p><p>Copy Client Secret</p>                  | Copy the Client secret and add in the Client secret field.                                                             |
-| **Scopes**              | Navigate to [Google API doc ](https://developers.google.com/docs/api/reference/rest/v1/documents)>>Click the API you are integrating with for example (create) >> on the right Panel >> Try this method >> scroll to the **show scopes** link >> click on the link to reveal the scopes required for the API. | <p><code>https://www.googleapis.com/auth/documents</code></p><p><code>https://www.googleapis.com/auth/drive</code></p> |
+| **Client ID**           | Navigate to [Google API Console](https://console.developers.google.com) >> Select Your Project that has Google Docs API Enabled >> Select Google API Docs on API/Service Details >> Click Client Credentials >> Select the OAuth 2.0 Client >> Copy Client ID                                              | Copy the Client ID and add in the Client ID field.                                                                     |
+| **Client Secret**       | <p>Navigate to <a href="https://console.developers.google.com">Google API Console</a> >> Select Your Project that has Google Docs API Enabled >> Select Google API Docs on API/Service Details >> Click Client Credentials >> Select the OAuth 2.0 Client >></p><p>Copy Client Secret</p>                  | Copy the Client secret and add in the Client secret field.                                                             |
+| **Scopes**              | Navigate to [Google API doc ](https://developers.google.com/docs/api/reference/rest/v1/documents)>>Click the API you are integrating with for example (create) >> on the right Panel >> Try this method >> scroll to the **show scopes** link >> click the link to reveal the scopes required for the API. | <p><code>https://www.googleapis.com/auth/documents</code></p><p><code>https://www.googleapis.com/auth/drive</code></p> |
 | **Authorization URL**   | Authorization Endpoint                                                                                                                                                                                                                                                                                        | `https://accounts.google.com/o/oauth2/auth`                                                                            |
-| **Redirect URL**        | Navigate to [Google API Console](https://console.developers.google.com) >> Select Your Project that has Google Docs API Enabled >> Select Google API Docs on API/Service Details >> Click on Client Credentials >> Select the OAuth 2.0 Client >>Authorized redirect URIs                                     | Add the Redirect URL from Appsmith to the field and click the save button.                                             |
+| **Redirect URL**        | Navigate to [Google API Console](https://console.developers.google.com) >> Select Your Project that has Google Docs API Enabled >> Select Google API Docs on API/Service Details >> Click Client Credentials >> Select the OAuth 2.0 Client >>Authorized redirect URIs                                     | Add the Redirect URL from Appsmith to the field and click the save button.                                             |
 
 :::tip
-You can follow the step-by-step guide provided by Google to set up an[ OAuth 2.0 Client](https://support.google.com/cloud/answer/6158849?hl=en#zippy=%2Cuser-consent).
+You can follow the step-by-step guide provided by Google to set up an [OAuth 2.0 Client](https://support.google.com/cloud/answer/6158849?hl=en#zippy=%2Cuser-consent).
 :::
 
 Keep the other settings as is and click `Save & Authorize` button to create the Authenticated API. You’ll be asked to sign in to your Google account and authorize the datasource. Once successfully authenticated, you’ll navigate to the Appsmith Datasource screen with response status available in the address bar. A response status as success marks the successful configuration of the datasource.
 
-Once the datasource is added, you can create queries and perform different actions with the google docs interface.
+Once the datasource is added, you can create queries and perform different actions with the Google Docs interface.
 
 :::info
-You can also check out the How-To Guide- [How to add OAuth2 Authorization for Integrating Google Sheets](../../../../../learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets.md) into Appsmith.
+You can also check out the How-To Guide- [How to add OAuth2 Authorization for Integrating Google Sheets](/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets) into Appsmith.
 :::
 
-## Integrate with Zoho Campaigns
+## Integrate with Zoho campaigns
 
-Let’s look into another integration that you can do with [Authenticated APIs](../../#create-authenticated-api). In this section, you’ll be able to configure your Appsmith app to integrate with Zoho Campaigns.
+Let’s look into another integration that you can do with [Authenticated APIs](/core-concepts/connecting-to-data-sources/authentication/#creating-an-authenticated-api-datasource). In this section, you’ll be able to configure your Appsmith app to integrate with Zoho Campaigns.
 
 ### User Endpoint
 
@@ -160,7 +160,7 @@ Follow these steps to configure Zoho Campaigns' integration for an Authenticated
 
 
 :::info
-The Zoho APIs are location-specific, i.e., if your organization is located in the United States of America (US), then the API endpoints you use should be specific to the`.com` domain. For example, `https://campaigns.zoho.com/` will be used if your organization is located in the US. Whenever you configure the URL in the `Authenticated API`, verify the **location** of your **organization**.
+The Zoho APIs are location-specific. For example, if your organization is located in the United States of America (USA), then the API endpoints you use should be specific to the`.com` domain. For example, `https://campaigns.zoho.com/` is used if your organization is located in the USA. Whenever you configure the URL in the `Authenticated API`, verify the **location** of your **organization**.
 :::
 
 | **Appsmith**            | **Zoho Campaigns**                                                                                                                                                                        | **Value**                                                                        |
@@ -171,7 +171,7 @@ The Zoho APIs are location-specific, i.e., if your organization is located in th
 | **Access Token URL**    | Token Endpoint                                                                                                                                                                            | `https://accounts.zoho.in/oauth/v2/token`                                        |
 | **Client ID**           | Navigate to [Zoho API Console](https://api-console.zoho.com)>> Select Your Application >> Select Client Secret Tab>> Copy Client ID                                                       | Add it to the Client ID field on Appsmith.                                       |
 | **Client Secret**       | Navigate to [Zoho API Console](https://api-console.zoho.com)>> Select Your Application >> Select Client Secret Tab>> Copy Client Secret                                                   | Add it to the Client secret field on Appsmith.                                   |
-| **Scopes**              | Navigate to the [Zoho Campaign guide](https://www.zoho.com/campaigns/help/developers/campaign-details.html) and click on the API you want to integrate with and check the scope required. | `Zohocampaigns.campaign.ALL`                                                     |
+| **Scopes**              | Navigate to the [Zoho Campaign guide](https://www.zoho.com/campaigns/help/developers/campaign-details.html) and click the API you want to integrate with and check the scope required. | `Zohocampaigns.campaign.ALL`                                                     |
 | **Authorization URL**   | Authorization Endpoint                                                                                                                                                                    | `https://accounts.zoho.in/oauth/v2/auth`                                         |
 | **Redirect URL**        | Navigate to [Zoho API Console](https://api-console.zoho.com)>> Select Your Application >> Select Client Details>> Authorized Redirect URIs                                                | Add the Redirect URL from Appsmith to the field and click the **Update** button. |
 
@@ -179,7 +179,7 @@ The Zoho APIs are location-specific, i.e., if your organization is located in th
 You can follow the step-by-step guide provided by Zoho to [Register the Client](https://www.zoho.com/people/api/oauth-steps.html).
 :::
 
-Once you make changes to the above fields, click `Save & Authorize` button to create the Authenticated API. You’ll be asked to authorize the datasource by signing into your Zoho Account. You’ll be navigated to the Appsmith Datasource screen with a response status as success available in the address bar on successful authentication.
+Once you make changes to the above fields, click `Save & Authorize` button to create the Authenticated API. You’ll be asked to authorize the datasource by sign in to your Zoho Account. You’ll be navigated to the Appsmith Datasource screen with a response status as success available in the address bar on successful authentication.
 
 Once the datasource is added, you can create queries and perform different actions with the Zoho Campaign interface.
 
@@ -187,13 +187,13 @@ Once the datasource is added, you can create queries and perform different actio
 
 Apart from the required settings, there are some optional settings which have default values set, and you can change the configuration if the need be:
 
-### Custom Authentication Parameters
+### Custom authentication parameters
 
 If your authorization server needs you to send some custom query parameters as part of access token request, you can add those here. You can add one or more parameters based on your needs. For example, your API needs a parameter `showPrompt` that is sent to authorization server and based on it your API logic either presents user with a prompt to take the consent or the prompt is not shown as the consent is already recorded. In such cases, you configure the `showPrompt` parameter as a custom parameter.
 
 ![Add one or more custom authentication parameters](</img/OAuth_2.0__API_Integration__Custom_Authentication_Parameters_(1).png>)
 
-### Client Authentication
+### Client authentication
 
 If your APIs need client credentials to be sent along then you can use client authentication field. You can either choose to send the client credentials as part of:
 
@@ -204,18 +204,21 @@ If your APIs need client credentials to be sent along then you can use client au
 
 ## Advanced Settings
 
-There are some advance settings that you can configure as part of your [Authenticated API](../../#create-authenticated-api).
+There are some advance settings that you can configure as part of your [Authenticated API](/core-concepts/connecting-to-data-sources/authentication/#creating-an-authenticated-api-datasource).
 
-### Send Scope with Refresh Token
+### Send scope with refresh token
 
 With this configuration you can choose to send the scope configured for the API along with a refresh token. By default, the setting is turned off. You can turn on the settings by selecting **Yes**.
 
 ![Select 'Yes' to turn on the setting](</img/OAuth_2.0__API_Integration__Advanced_Settings__Send_Scope_with_refresh_token.png>)
 
-### Send Client Credentials with (on Refresh Token)
+### Send client credentials with (on refresh token)
 
 You can choose to send the client credentials along with refresh tokens by configuring this field. You can either choose to send the client credentials as part of header by selecting **header**, or as part of body by selecting **body.**
 
 ![You can choose what best suits your business needs](</img/OAuth_2.0__API_Integration__Send_client_credentials_with.png>)
 
 With [OAuth 2.0](./) integration, you can connect your APIs to Appsmith and build complex apps.
+
+## Troubleshooting
+If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
