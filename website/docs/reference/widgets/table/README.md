@@ -105,9 +105,13 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
 
 3. Set the table widget's **onPageChange** event to run the query.
 
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. Create a new Query, and add:
 
-For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
+```sql
+SELECT COUNT(*) FROM users;
+```
+
+You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
 
 <figure>
   <img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
@@ -191,7 +195,7 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
     https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
     ```
 
-3. Set the table widget's **onOptionChange** event to run the query. 
+3. Set the Select widget's **onOptionChange** event to run the query. 
 
 ## Edit table data
 
