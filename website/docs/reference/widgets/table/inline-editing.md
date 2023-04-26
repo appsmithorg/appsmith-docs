@@ -12,32 +12,33 @@ The Table widget allows users to edit and update data directly from the UI throu
 
 To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can click on ✏️ icon or double-click on a cell to edit its contents.
 
+:::info
 Inline editing is supported for several column types, including **Text**, **Number**, **Date**, **Switch**, **Select**, and **Checkbox**. However, custom columns currently do not have this feature.
-
+:::
 
 <figure>
-  <img src="/img/Screen_Recording_2022-09-30_at_12_21_13_PM_AdobeExpress.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <img src="/img/inline-single.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Edit cells</i></figcaption>
 </figure>
 
-Inline editing does not save changes automatically to the original datasource. To save changes, the table's **Update mode** must be set and Save button's must be configured to execute queries that update the datasource.
 
 Additionally, if you want to restrict the **Editable** property of certain cells based on a specific condition, you can use the JS within the column settings. For instance, you can allow editing for a row only if the status column contains the value `pending`.
 
 ```js
 {{ currentRow.status === "pending" }}
 ```
+Inline editing does not save changes automatically to the original datasource. To save changes, the table's **Update mode** must be set and Save button's must be configured to execute queries that update the datasource.
+
 
 ### Update single row
 
-To update a single row, select **Single row**  from the **Update mode** property. When one or more columns of a table are **Editable** in Single row mode, a new table column is injected called **Save/Discard**. This new column contains a Save button and a Discard button, which execute the table's **onSave** and **onDiscard** events when clicked. 
+To update a single row, select **Single row**  from the **Update mode** property. When one or more columns of a table are **Editable** in Single row mode, a new table column is inserted called **Save/Discard**. This new column contains a Save button and a Discard button, which execute the table's **onSave** and **onDiscard** events when clicked. 
 
-As an alternative to using the Save/Discard buttons and events, you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. To access the updated data, you can use:
+As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
 
-* **`updatedRow`**: This reference property retrieves all the data associated with the row that has been updated recently.
 
 ---
-**Example**: suppose you want to modify the `name` field in a users database.
+**Example**: suppose you want to modify the `name`  and `phone` field in a users database.
 
 1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
 
@@ -54,7 +55,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 
 3. Select the columns that you want to make editable, for instance `name` and `phone`.
 
-4. Create a new UPDATE query with `updatedRow` reference property:
+4. Create an UPDATE query using the `updatedRow` reference property to fetch all the information related to the row that was recently modified.
 
 ```sql
 UPDATE users SET 
@@ -65,56 +66,75 @@ UPDATE users SET
 
 5. Set the table widget's **onSave** event to run the update query, and **onSuccess** callback to run `fetchData` query.
 
-<figure>
-  <img src="/img/inline-single.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Update single row</i></figcaption>
-</figure>
 
 
 
 ### Update multiple rows
 
-To update multiple rows, select **Multiple rows** from the **Update mode** property. To update the datasource, you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. This event would be triggered whenever the user clicks away from the edited cell, or presses the Enter key within it. 
+To update multiple rows, select **Multiple rows** from the **Update mode** property. To update the datasource, you can use a Button widget to trigger the query that saves the updated data. 
 
-In addition to using the **onSubmit** event of the table, you can use a Button widget to trigger the query that saves the updated data. If you want to add a new row that matches all the columns in the table, you can select all the "Editable" checkboxes in the column settings. To access the updated data, you can use:
-
-* **`updatedRows`**: This reference property retrieves all the data associated with the rows that has been updated recently. The data is in JSON format. 
-
+As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
 
 ---
-**Example**: lets to demonstrate how to edit a single row.
+**Example**: suppose you want to modify the `name` and `phone` fields in a users database.
 
-1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `movies` using a query `fetchmoviesData` to retrieve the data.
+1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
+
+```sql
+SELECT * FROM users ORDER BY id LIMIT 10;
+```
 
 2. In the Table's **Table Data** property, display the data using:
 
 ```js
-{{fetchmoviesData.data}}
+{{fetchData.data}}
 ```
 
-3. Select **Multi Row** property, and make the columns **Editable**, for instance `revenue` and `title`.
+3. Select the columns that you want to make editable, for instance `name` and `phone`, and **set Primary key column** to `id`.
 
-5. Create a new query with `updatedRows` reference property:
+4. Select **Multi Row** property, and make the columns **Editable**, for instance `revenue` and `title`.
 
+5. Create a new query using the `updatedRows` reference property to retrieve all the data associated with the updated rows.
+
+```sql
+UPDATE users
+SET name = CASE
+  {{Table6.updatedRows.map((user) => `WHEN id = ${user.id} THEN '${user.updatedFields.name}'`).join('\n')}}
+END,
+phone = CASE
+ {{Table6.updatedRows.map((user) => `WHEN id = ${user.allFields.id} THEN '${user.updatedFields.phone}'`).join('\n')}}
+END
+WHERE id IN ({{Table6.updatedRows.map((user) => user.allFields.id).join(',')}});
 ```
-Collection: movies
-Query:
-//Working on this
-Update:
-```
+
+6. Drag a [Button](/reference/widgets/button) widget, and set its **onClick** event to run the update query, and **onSuccess** callback to run `fetchData` query. 
+
+
 
 ## Add new rows
 
 To allow users to add a new row to a table, you can turn on the **Allow adding a row** property in the table's property pane. This would enable a button labeled `Add new row` at the top of the table widget. When a user adds a new row to the table, they would see **Save row** and **Discard** buttons to save or discard the new row and its data.
 
 ---
-**Example**: suppose you want to add new data into [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users`.
+**Example**: suppose you want to add new data into users database.
 
-1. Enable the **Allow adding a row** property.
+1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
 
-2. Make all columns **Editable** by selecting them.
+```sql
+SELECT * FROM users ORDER BY id LIMIT 10;
+```
 
-3. Create a new INSERT query, using `newRow` reference property:
+2. In the Table's **Table Data** property, display the data using:
+
+
+```js
+{{fetchData.data}}
+```
+3. Enable the **Allow adding a row** property.
+
+4. Make all columns **Editable** by selecting them.
+
+5. Create a new INSERT query, using `newRow` reference property:
 
 ```sql
 INSERT INTO users 
@@ -146,7 +166,11 @@ Check out the [sample app for inline editing](https://app.appsmith.com/app/edita
 
 ## Properties
 
-These common properties allow you to edit the column, and customize the user actions.
+These common properties allow you to edit the widget, and customize the user actions.
+
+### Widget properties
+
+These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
 
 | Property                                           | Data type        | Description                                                                                                                                                                                                                                                               |                  
 | -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -160,18 +184,24 @@ These common properties allow you to edit the column, and customize the user act
 | **Min Date**                | Date  | Sets the minimum allowed date. Only available for columns that are type _Date_.                                                            | NA                             |
 | **Max Date**                | Date  | Sets the maximum allowed date. Only available for columns that are type _Date_.                                                            | NA                             |
 | **Update Mode**             | Button  | Controls the save experience of an edited cell.<br/> **Single row** - Cells can be saved using the Save/Discard column buttons. <br/> **Multi row** - cells can be saved by using an **onSubmit** event of the column or through an external button widget. | NA                             |
-| **updatedRows**            | Array     | Contains all the data of the edited table rows. Useful in **Multi row** update mode.                                                    | `{{Table1.updatedRows}}`       |
-| **updatedRowIndices**       | Array     | Contains an array of indices of the table rows that have been edited. Useful in **Multi row** update mode.                                                        | `{{Table1.updatedRowIndices}}` |
-| **updatedRow**              | Object     | Contains the all the data of the row that was recently updated. Useful in **Single row** update mode. | `{{Table1.updatedRow}}`|
 | **Allow adding a row** |  Boolean| Toggles a button in the table which allows users to submit new rows of data. Only columns marked as **Editable** can accept user input. Use code or a query in the **onSave** event to update the source of the table's data and reflect the user's changes. |
 | **Default Values** | String | The values to automatically populate the new row with when a user begins creating a new row. Expects an object with the same keys as the columns in the existing table data. |
-| **isAddRowInProgress** | Boolean | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
-| **newRow**| Array | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
  **First Day of Week** | Date Settings | Sets the first day of week that should be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
 | **Show Shortcuts** | Date Settings | Sets whether shortcuts should be shown in the Date Picker while editing Date cells. Only available for columns that are type _Date_.  | `isNewRow` |
 | **Same options in new row**| Boolean | When this property is turned on, it ensures that the same options are available for new rows as well.  | `Table1.newRow` |
 | **New row options** | Array |  If you want to provide different options for new rows, you can turn off the Same options in new row property. This would make the New row options property visible, where you can add options specifically for the new row.  | `isNewRow` |
 
+### Reference properties
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `Table1.isVisible` to get the visibility status.
+
+
+| Property                                           | Data type        | Description                                                                                                                                                                                                                                                               |                  
+| -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **updatedRows**            | Array     | Contains all the data of the edited table rows. Useful in **Multi row** update mode.                                                    | `{{Table1.updatedRows}}`       |
+| **updatedRowIndices**       | Array     | Contains an array of indices of the table rows that have been edited. Useful in **Multi row** update mode.                                                        | `{{Table1.updatedRowIndices}}` |
+| **updatedRow**              | Object     | Contains the all the data of the row that was recently updated. Useful in **Single row** update mode. | `{{Table1.updatedRow}}`|
+| **isAddRowInProgress** | Boolean | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
+| **newRow**| Array | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
 
 ## Events
 
@@ -184,3 +214,6 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 | **onDiscard** | Triggered when the user clicks the discard button for a new or existing row.                                             |
 | **onDateSelected** | Triggered when the user selects a date from Date Picker while editing a date type column.    
 | **onOptionChange** | The "onOptionChange" property allows you to specify the action that should occur when the user selects an option in the dropdown list. |
+| **onCheckChange** | Triggered when the user checks/unchecks a checkbox.  |
+| **onChange** | Triggered when the user toggles the switch.|
+
