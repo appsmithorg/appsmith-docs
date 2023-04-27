@@ -16,31 +16,6 @@ Data from a [Query](/core-concepts/data-access-and-binding/querying-a-database) 
 
 For more information about using Table widget to show data from queries, see [display data in tables](/reference/widgets/table#display-data-in-tables).
 
-## Display data from JS function
-
-Widgets have fields/properties where you can bind data or trigger actions.
-
-**Sync fields** are properties that expect input or data. For example, for an Input widget, properties such as `Default Value`, `Max Characters`, `Regex`, and `Error Message` expect input and are sync fields.
-
-**Async fields** are properties that can trigger an action or perform an operation. For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are async fields. You can use these properties to execute an [action](/reference/appsmith-framework/widget-actions), [Query](/core-concepts/data-access-and-binding/querying-a-database#running-a-query) or a function within a [JS object](/core-concepts/writing-code/javascript-editor-beta).
-
-### Sync JS function
-
-To display the response from a synchronous JS function in a widget field, call the function inside the JS Object as shown below:
-
-``` javascript
-{{JSObjectName.functionName()}}
-```
-
-### Async JS function
-
-To display the response from an asynchronous JS function in a synchronous field, you need to retrieve it using the  `.data` property as shown below
-
-```javascript
-{{JSObjectName.functionName.data}}
-```
-
-<VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Display response from async function in widget field" caption="Display response from async function in widget field"/> 
 
 ## Transform data
 

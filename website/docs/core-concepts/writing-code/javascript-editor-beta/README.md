@@ -1,250 +1,179 @@
 # JS Objects
 
-Writing extensive code without a full-fledge editor could be challenging. The JavaScript Editor(beta) in Appsmith allows you to create a reusable set of JavaScript functions that you can call within JavaScript bindings across a Page’s component to write complex code with ease. In Appsmith, it’s referred to as `JS Objects`.
-
-<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to build with JS Editor" caption="How to build with JS Editor" />
-
-**How to Create a JS Object?**
-
-A JS Object is an entity comprised of multiple functions and variables. It's a reusable component you can refer to in other JS Objects, allowing you to create an organized set of hierarchies.
-
-You can create new JS Objects from the Entity Explorer.
-
-Navigate to **Entity Explorer** >> Click (+) next to **Queries/JS** >> Select **New JS Object**.
-
-<VideoEmbed host="youtube" videoId="8kzyYaHnwPw" title="How to add a JS Object?" caption="How to add a JS Object?" />
-
-
-The screen below shows a JS Object added to the page. The default code template that supports [export default](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export).
-
-![When you add a new JS Object](</img/JavaScript_Editor__New_JS_Object.png>)
-
-1. Give a meaningful name to the JSObject
-2. Code editor where you can write JavaScript Code
-3. Settings are available for [Async functions](./#asynchronous) only.
-4. Define variables
-5. Define functions
-6. Use the editor to do several jobs, to name a few:
-   1. Write your code
-   2. Call in-built or user-defined functions
-   3. API calls
-   4. Database query execution
-7. Add multiple functions to the JS Object
-8. Access JS Objects from Explorer available under JS Objects Group
+The JavaScript Editor in Appsmith enables you to create *JS Objects*, which is a set of variables and functions that have a page-level scope.
 
 :::info
-The support for the named [exports](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) isn't available for exporting functions. However, you can expose functions that are part of the JS Object using **default** export.
+JS Objects are accessible only within the page where they're defined and aren't accessible across pages.
 :::
 
-## Calling a JS Object function
+<VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to use the JS Editor" caption="How to use the JS Editor" />
 
-You can call the functions defined in a JS Object by using the notation `{{ JS_OBJECT_NAME.Function_Name }}` embedded in a mustache sign as shown in the figure below:
+## Create JS Object
 
-![How to call a function defined in a JS Object?](</img/call_JS_object.png>)
+You can create JS Objects from the Entity Explorer on the left sidebar.
+
+Click the **Explorer** tab. Click **+** next to **Queries/JS**. Select **New JS Object** from the list of options.
+
+![Create JS Object](</img/create-js-object.png>)<figure><figcaption align="center"><i>Create JS Object</i></figcaption></figure>
 
 :::info
-The JS Objects defined are available across APIs, Queries, or other JS Objects defined for **a particular page,** and have a **page-level access** and are **not** accessible **across pages**.
+The [export default](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) declaration is used to expose functions that are part of the JS Object and can't be used to export functions.
 :::
 
-### JS Object variable as local state
+## Run JS functions
 
-You can use JS Object variable to store your data in a non-peristent state and further perform mutations from a trigger field to change the value. As the storage state is non-persistent, the data is saved till the page reloads or a user closes the window. JSObject variable can be of any value type such as number, string, object, array, Date object, etc. 
+You can click **Run** available on the top right corner to execute the JS function. If your JS object has only one function defined, the editor defaults the function name. But if your JS Object has more than one function defined, you can select the function you want to execute and then click **Run**. If your code has errors, the **Run** button is greyed out and blocks the execution until the errors are resolved.
 
-**Example 1:** suppose you want to create a counter that increments/decrements the value on a button using a JS Object. Create a JS Object `JSObject1` and add the following code:
+:::info
+You can also execute the function using a shortcut key (**CMD+ENTER** or **CTRL + ENTER**)
+:::
+
+## Widgets and JS functions
+
+Widgets have fields/properties where you can bind data or trigger actions.
+
+**Sync fields** are properties that expect input or data. For example, for an Input widget, properties such as `Default Value`, `Max Characters`, `Regex`, and `Error Message` expect input and are sync fields.
+
+**Async fields** are properties that can trigger an action or perform an operation. For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are async fields. You can use these properties to execute an [action](/reference/appsmith-framework/widget-actions), [Query](/core-concepts/data-access-and-binding/querying-a-database#running-a-query) or a function within a [JS object](/core-concepts/writing-code/javascript-editor-beta).
+
+You can display the responses from JS functions in sync fields and call or execute the JS functions using async fields(event listeners). 
+
+## Display data from JS functions
+
+Functions in a JS Object can be *Synchronous* or *Asynchronous*.
+
+### Synchronous functions
+
+As the name suggests, synchronous means to run in a particular sequence, it means that every statement of the code gets executed one by one. So, a statement must wait for the earlier statement to complete its execution. 
+To display the response from a synchronous JS function in a sync widget field, call the function inside the JS Object as shown below:
+
+``` javascript
+{{JS_OBJECT_NAME.FUNCTION_NAME()}}
+```
+
+### Asynchronous functions
+
+The word asynchronous means not occurring at the same time. You may sometimes need to fetch data from the server or execute a function with a delay, something you don't want occurring at the current time. Asynchronous function can be specified using the keyword `async`. See [Asynchronous JavaScript Function Settings ](asynchronous-javascript-function-settings.md) for more information.
+
+To display the response from an asynchronous JS function in a sync widget field, you need to retrieve it using the `.data` property as shown below
+
+```javascript
+{{JS_OBJECT_NAME.FUNCTION_NAME.data}}
+```
+
+<VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Display response from async function in widget field" caption="Display response from async function in widget field"/> 
+
+
+## Variables for state management
+
+JS Object variables are mutable and can be used to contain the reference to a value. You can use it to store your data in a non-peristent state. As the storage state is non-persistent, the data is saved until the page reloads or until the user closes the window. JSObject variables can be of any data type such as Number, String, Object, Array, Date object, etc. 
+
+**Example 1:** a counter that increments or decrements the value in a JS Object variable. 
+
+1. Create a JS Object `JSObject1` and add the following code:
+
+    ```javascript
+    export default {
+            counter: 1,
+            increment: () ⇒ {
+                this.counter = this.counter + 1
+            },
+            decrement: () ⇒ {
+                this.counter = this.counter - 1
+            }
+    }
+    ```
+2. Drop a Text widget on the canvas and display the value of the counter variable in the **Text** property as shown below:
+
+    ```javascript
+    {{JSObject1.counter}}
+    ```
+3. Drop two Button widgets labelled *Increment* and *Decrement* and add the following code in **onClick** event to trigger these functions:
+
+    ```javascript
+    //for increment
+    {{JSObject1.increment()}}
+
+    //for decrement
+    {{JSObject1.decrement()}}
+
+    ```
+4. Test the buttons and notice the value change in the Text widget.
+
+---
+
+**Example 2:** mutating values in an array object
 
 ```javascript
 export default {
-		counter: 1,
-		increment: () ⇒ {
-			this.counter = this.counter + 1
-		},
-		decrement: () ⇒ {
-			this.counter = this.counter - 1
-		}
+	users: [{name: "a"}, {name: "b"}, {name: "c"}, {name: "d"}],
+	modifyFirstUserName: () ⇒ {
+		this.users[0].name = "Hello"	
+	}
 }
 ```
-Add a text widget to the canvas and bind it to the counter variable showing the initial state as follows:
-
-```javascript
-{{JSObject1.counter}}
-```
-To use the increment and decrement function, add two buttons and add the following code in onClick event to trigger these functions:
-
-```javascript
-//for increment
-{{JSObject1.increment()}}
-
-//for decrement
-{{JSObject1.decrement()}}
-
-```
-
-## Types of JS functions
-
-You can write different types of functions in a JS Object that can be Synchronous or Asynchronous.
-
-### Synchronous
-
-As the name suggests, synchronous means to be in a sequence, it means that every statement of the code gets executed one by one. So, a statement must wait for the earlier statement to complete its execution.
-
-For example, the below code snippet shows a data filter: 
-
-```
-Api.data.filter(() => {}); // filtering data 
-```
-
-Here data filtering is the process of selecting a subset of data you want to choose for viewing or analysis. To filter the data, you must traverse the whole dataset one after the other and segregate it if it matches the filter criteria. Thus, you need synchronous execution.
-
-### Asynchronous
-
-The word asynchronous means not occurring at the same time. You may sometimes need to fetch data from the server or execute a function with a delay, something you don't anticipate occurring at the current time.
-
-For example, `Promises`, `Api.run()`, `Query.Run()`, Appsmith platform functions(eg. `showModal`). It basically lets you delay the execution of code embedded in an async function and is executed when needed.
-
-You can [configure additional settings for the asynchronous function](asynchronous-javascript-function-settings.md) and enhance the user experience.
-
-## Working with JavaScript editor
-
-JavaScript Editor is an extensive editor that provides additional functionalities while writing code. You can do a lot with it, like:
-
- <VideoEmbed host="youtube" videoId="agyvQNFGGIY" title="A quick walkthrough of JavaScript Editor" caption="A quick walkthrough of JavaScript Editor"/>
 
 
-| **What do you get?**    | **Description**                                                                          |
+
+:::info
+Variable mutations can be triggered only using event listeners(async fields). For example, you can't update the variable value using the **Text** property on the Text widget, but you can using the **onClick** event on the Button widget.
+:::
+
+## JavaScript editor
+
+
+| **Features**    | **Description**                                                                          |
 | ----------------------- | ---------------------------------------------------------------------------------------- |
-| **Response Tab**        | Execute each function at the time of development and view the output in the Response tab |
-| **Linting Errors**      | Get the linting errors caught right in the editor                                        |
-| **Errors Tab**          | Check for the syntax errors in the Errors tab                                            |
-| **Logs Tab**            | Check the function execution log in the Logs tab                                         |
-| **Snippets**            | Insert ready-to-use snippets                                                             |
-| **Debugging** | Use debugger statements to pause the execution  or `console.log()` to print debug messages.                                          |
+| **Response** tab        | Displays the **output** generated by the functions defined in a JS Object. |
+| **Errors** tab          | Displays errors during or after code execution. They can be syntax errors, parsing errors, etc.                                            |
+| **Logs** tab            | Shows the execution of functions with a timestamp. You can also open the Logs Tab by clicking a debug icon at the bottom right of the console. The Logs tab gives enables you to search for logs  by writing keywords in the **Filter** input box or by selecting the type of log in the **Show All Logs** list                            |
+| **</\> Snippets**            | Insert ready-to-use code from the Snippets Library.   |
+| Linter      | The JS editor automatically checks your source code for programmatic errors. If the code isn't syntactically correct, it highlights the error using a red wavy lines. You can inspect the error in detail on the **Errors** tab.                     |
+| Debugger | Use debugger statements to pause the execution  or `console.log()` to print debug messages.                                          |
 
-To understand how JavaScript Editor works, let’s create a **Hello World JS Object**.
 
-* Navigate to **Explorer** >> Click **(+)** for **Queries/JS** >> Select **New JS Object.**
-* You’ll see the default code template. Add the below code snippet:
+## Debug JS errors
 
-```
-export default {
-   hello: () => {
-      return “Hello World”;
-   }
-}
-```
+You can use the `debugger` statement or `console.log()` to debug your code and inspect it in the browser console or the **Console** tab. This allows you to inspect the state of your code at that point and step through it line by line to help identify and fix any errors. 
 
-### Response tab
 
-The response tab displays the **output** generated by the functions defined in a JS Object.
+### With debugger statement
 
-#### Execute function
-
-You can click **Run** available on the top right corner to execute the JS function. If your JS object has only one function defined, the editor defaults the function name. But if your JS Object has more than one function defined, you can select the function you want to execute and then click **Run**.
-
-![Response Tab](</img/JavaScript_Editor__Response_Tab.png>)
-
-:::info
-If your code has syntax errors, the **Run** button is turned off and blocks the execution. You can resolve the errors and then execute the function using **Run**.
-:::
-
-You can verify the response generated by the `hello()` in the Response tab, as shown in the screenshot.
-
-:::info
-You can execute the function by clicking the **RUN** button or by using a shortcut key (**CMD+ENTER** or **CTRL + ENTER**)
-:::
-
-### Linting errors
-
-The JavaScript Editor automatically checks your source code for programmatic errors. If the code isn't programmatically correct, it highlights the error using a red-colored lint below the erroneous code. For example, the syntax error where the `return` is misspelled as `retu` is also captured by linting.
-
-![Linting also captures the Syntax error and highlights it with a red line below it.](</img/JavaScript_Editor__Linting_Errors.png>)
-
-:::info
-You can inspect the `error` in detail from the **Errors** tab.
-:::
-
-### Errors tab <a href="#errors-tab" id="errors-tab"></a>
-
-The errors tab displays all types of errors generated by the code execution. The errors could be comprised of **Syntax Errors**, **Run time errors** like **Parsing Errors**, and more.
-
-![Errors Tab](</img/JavaScript_Editor__Error_Tab.png>)
-
-### Logs tab
-
-The Logs tab shows the execution of functions with a timestamp. You can also open the Logs Tab by clicking a debug icon at the right bottom of the console (as shown in the screenshot below).
-
-![Logs Tab](</img/JavaScript_Editor__Logs_Tab.png>)
-
-The logs tab gives you the flexibility to filter logs either by writing keywords in the **Filter box** or selecting the **type of log** from the **dropdown**.
-
-### Snippets
-
-You’ll see a Snippets button available on the right top side of the editor. Click on it to open the Appsmith Snippet Library.
-
-![Snippets Button](</img/JavaScript_Editor__Snippets.png>)
-
-#### Appsmith snippet library
-
-You can search and copy the Snippets from the Appsmith Snippet Library and use them in the JavaScript Editor. You can then build on the code snippet to add your code or use it as is.
-
-![Appsmith snippet library](</img/JavaScript_Editor__Snippets__Appsmith_Snippet_Library.png>)
-
-:::info
-Appsmith is actively working on expanding the **Snippets Library**. Please reach out on[ Discord](https://discord.com/invite/rBTTVJp) or[ Community Forms](https://community.appsmith.com/) if you wish to contribute to the library.
-:::
-
-### Debugging
-
-You can use the debugger statements or `console.log()` to debug your code and inspect it in a browser console respectively. This allows you to inspect the state of your code at that point and step through it line by line to help identify and fix any errors. 
-
-:::note
-You must have the browser console open to see the debugger in action.
-:::
-
-#### Debugging errors with debugger statement
-
-To invoke the debugger, simply insert a `debugger` keyword in your code where you want it to pause, and then run your app. When the debugger statement is reached, the execution of your code is paused, it works like a `breakpoint`. You can then use the debugger tools to step through your code, inspect variables, and see how your code is executing.
+To invoke the debugger,  insert a `debugger` keyword in your code where you want it to pause, and then run your app. The code execution pauses on the debugger statement. It works like a `breakpoint`. You can then use the debugger tools to step through your code, inspect variables, and see how your code is executing.
 
 **Syntax**
 ```
 debugger;
 ```
-To learn how to use debugger statements watch the video `How to use Debugger`.
 
- <VideoEmbed host="youtube" videoId="ZjleR7iM-xo" title="How to use Debugger" caption="How to use Debugger"/>
-
-For example, you are returning user information fetched from the userDetailsAPI in the JS function, and you want to see the value returned by the API during execution. To get this working, you can use a debugger statement as below:
+**Example**:
 
 ```
 export default {
     getUserDetails: async () => {
         const userInfo = await userDetailsAPI.run();
-        debugger; // the execution will be paused at this point 
-        // and you can check the value of the userInfo variable
-        console.log(“user information: “+userInfo); // the logs will be 
-        // printed in the browser 
-        // console.
+        debugger; // the execution is paused at this point
+        console.log(“user information: “+userInfo); // The value of the userInfo 
+        variable is printed in the Logs tab .
         return userInfo;
     }
 }
 ```
 
-#### Debugging errors with console.log()
+### With console.log()
 
-In addition to using the debugger statement, you can also use `console.log()` to print information about your code to the browser's console. This can be helpful for inspecting the values of variables or the state of your app at different points in the execution of your code. 
+In addition to using the debugger statement, you can also use `console.log()` to print information about your code to the browser's console. This can be helpful for inspecting the values of variables or the state of your app at different points during the execution of your code. 
 
 **Syntax**
 ```
 console.log(<VARIABLE_NAME>);
 ```
-When you run your code, the value of `<VARIABLE_NAME>` is printed to the browser's console, allowing you to inspect it and see if it's what you expected. 
-
-To learn how to use `console.log()` watch the video `How to Debug using console.log()`.
 
 <VideoEmbed host="youtube" videoId="EYNPm9cJWGw" title="How To Debug JavaScript With Console.log" caption="How To Debug JavaScript With Console.log"/>
 
-## Writing complex code
+## Write complex code
 
-When you build applications, it’s often more than just a CRUD operation from a single datasource. You might integrate with multiple API or want to have the dataset created by querying multiple tables, which leads to traversing data, filtering, or manipulating the response by calling different API. You can write complex logic with ease using JavaScript Editor.
+When you build applications, it’s often more than just a CRUD operation from a single datasource. You might integrate with multiple APIs or want to have the dataset created by querying multiple tables, to traversing data, filtering, or manipulating the response by calling different API. You can write complex logic with ease using JavaScript Editor.
 
 To understand it further, let’s look at a use case and build different workflows.
 
@@ -465,19 +394,11 @@ export default {
 
 Only the users with email added to the `adminList` will be able to access the dashboard and do the updates.
 
-With the [Async function settings](asynchronous-javascript-function-settings.md), you can bind the `isAdmin` function to `RUN ON PAGE LOAD`. The execution of `IsAdmin` on Page load ensures the validation of the user’s email against the `adminList` for the logged-in user should happen on the page load. If the logged-in user's email is present in the `adminsList`, the user can access the Dashboard. If not, the user navigates to the access denied page that shows a message:
+With the [Async function settings](asynchronous-javascript-function-settings.md), you can bind the `isAdmin` function to `RUN ON PAGE LOAD`. The execution of `IsAdmin` on Page load ensures the validation of the user’s email against the `adminList` for the logged-in user should happen on the page load. If the logged-in user's email is present in the `adminsList`, the user can access the Dashboard. If not, the user navigates to the access denied page that shows a message 'You don't have permission to access the Dashboard'.
 
-:::info
-You don't have permission to access the Dashboard.
-:::
 
 ## Current limitations
 
-As the JavaScript Editor is in its BETA, there are a few limitations:
-
-* At the moment, you can't use `JS Objects` across pages. You can subscribe to[ the issue](https://github.com/appsmithorg/appsmith/issues/1911) and follow the progress.
-* You can't define variables and functions outside of export default { }. In future iterations, you can write and export only selected variables/functions from a `JS Object`.
-
-![Async Function](/img/JS\_editor\_async\_function.png)
-
-If a function is async, it means that if it returns a promise, it can't be called on the fields incompatible with the return type, such as the default text property of the [text](/reference/widgets/text.md) widget. For example, in the screenshot `executeQuery` returns `Api1.run()` promise and hence is an [async function](./#asynchronous). You can call `executeQuery` or similar functions only from `trigger` or `event` properties such as `OnClick`.
+* You can't use `JS Objects` defined within a page across other pages.
+* You can't define variables and functions outside of `export default { }` declaration. 
+* If a function is async, it means that it returns a promise, so it can't be called on the fields incompatible with the return type, such as the **Text** property of the Text widget. 
