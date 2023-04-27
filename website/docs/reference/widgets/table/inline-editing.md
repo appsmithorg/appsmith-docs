@@ -1,6 +1,6 @@
 # Inline Editing
 
-The Table widget allows users to edit and update data directly from the UI through inline editing.
+The Table widget allows users to edit and add data directly from the UI through inline editing.
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
@@ -13,7 +13,7 @@ The Table widget allows users to edit and update data directly from the UI throu
 To enable inline editing for a table, you can make individual columns editable by checking the **Editable** checkbox in the Columns section of the Table widget properties panel. Once inline editing is enabled, you can click on ✏️ icon or double-click on a cell to edit its contents.
 
 :::info
-Inline editing is supported for several column types, including **Text**, **Number**, **Date**, **Switch**, **Select**, and **Checkbox**. However, custom columns currently do not have this feature.
+Inline editing is supported for **Text**, **Number**, **Date**, **Switch**, **Select**, and **Checkbox** column types. However, custom columns currently do not have this feature.
 :::
 
 <figure>
@@ -27,14 +27,13 @@ Additionally, if you want to restrict the **Editable** property of certain cells
 ```js
 {{ currentRow.status === "pending" }}
 ```
-Inline editing does not save changes automatically to the original datasource. To save changes, the table's **Update mode** must be set and Save button's must be configured to execute queries that update the datasource.
+Inline editing does not save changes automatically to the original datasource. To save changes, the table's **Update mode** must be set and **onSave** event must be configured to execute queries that update the datasource.
 
 
 ### Update single row
 
 To update a single row, select **Single row**  from the **Update mode** property. When one or more columns of a table are **Editable** in Single row mode, a new table column is inserted called **Save/Discard**. This new column contains a Save button and a Discard button, which execute the table's **onSave** and **onDiscard** events when clicked. 
 
-As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
 
 
 ---
@@ -53,9 +52,9 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 {{fetchData.data}}
 ```
 
-3. Select the columns that you want to make editable, for instance `name` and `phone`.
+3. Select the editable checkbox for the `name` and `phone` column properties.
 
-4. Create an UPDATE query using the `updatedRow` reference property to fetch all the information related to the row that was recently modified.
+4. Create an UPDATE query using the `updatedRow` reference property to retrieve all information pertaining to the modified cells.
 
 ```sql
 UPDATE users SET 
@@ -64,16 +63,15 @@ UPDATE users SET
   WHERE id = {{ Table1.updatedRow.id }};
 ```
 
-5. Set the table widget's **onSave** event to run the update query, and **onSuccess** callback to run `fetchData` query.
+5. Set the Table widget's **onSave** event to run the update query, and **onSuccess** callback to run `fetchData` query.
 
+As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
 
 
 
 ### Update multiple rows
 
 To update multiple rows, select **Multiple rows** from the **Update mode** property. To update the datasource, you can use a Button widget to trigger the query that saves the updated data. 
-
-As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
 
 ---
 **Example**: suppose you want to modify the `name` and `phone` fields in a users database.
@@ -90,7 +88,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 {{fetchData.data}}
 ```
 
-3. Select **Multi Row** property, and make the columns **Editable**, for instance `name` and `phone`, and **set Primary key column** to `id`.
+3. Enable the **Multi Row** property, and configure the `name` and `phone` columns to be editable. Additionally, set **Primary key column** to `id`.
 
 4. Create a new query using the `updatedRows` reference property to retrieve all the data associated with the updated rows.
 
@@ -105,16 +103,16 @@ END
 WHERE id IN ({{Table6.updatedRows.map((user) => user.allFields.id).join(',')}});
 ```
 
-5. Drag a [Button](/reference/widgets/button) widget, and set its **onClick** event to run the update query, and **onSuccess** callback to run `fetchData` query. 
+5. Drop a Button widget, and set its **onClick** event to run the update query, and **onSuccess** callback to run `fetchData` query. 
 
 
 
 ## Add new rows
 
-To allow users to add a new row to a table, you can turn on the **Allow adding a row** property in the table's property pane. This would enable a button labeled `Add new row` at the top of the table widget. When a user adds a new row to the table, they would see **Save row** and **Discard** buttons to save or discard the new row and its data.
+To enable users to add a new row to a table, you can turn on the **Allow adding a row** property in the table's property pane. This would enable a button labeled `Add new row` at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.
 
 ---
-**Example**: suppose you want to add new data into users database.
+**Example**: suppose you want to add new data into `users` database.
 
 1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
 
@@ -155,13 +153,6 @@ VALUES
 4. Set the table widget's **onSave** event to run the query and **onSuccess** callback to run `fetchData` query.
 
 
-<figure>
-  <img src="/img/addnewrow.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Add new row</i></figcaption>
-</figure>
-
-Check out the [sample app for inline editing](https://app.appsmith.com/app/editable-table/row-save-62d8f8d0e1c2ed505a0557cc).
-
 ## Properties
 
 These common properties allow you to edit the widget, and customize the user actions.
@@ -201,7 +192,7 @@ These properties can be referenced in other widgets, queries, or JS functions us
 | **isAddRowInProgress** | Boolean | Indicates whether a new row is currently being added by the user. | `Table1.isAddRowInProgress` |
 | **newRow**| Array | This variable contains a reference to the new row object added by the user. | `Table1.newRow` |
 
-## Events
+### Events
 
 These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
 
