@@ -3,7 +3,7 @@
 This page explains how to use the Tabs widget to organize related content and allow users to navigate between groups of information that appear within the same container.
 
 
-<VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="How to use Tabs Widget" caption="How to use Tabs Widget"/>
+<VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="Using the Tabs Widget" caption="Using the Tabs Widget"/>
 
 
 ## Set default tabs
@@ -48,12 +48,12 @@ These properties allow you to edit the widget. All of these properties are prese
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Tabs**          | String  | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names              |
-| **Default Tab**     | String  | This property selects the tab which matches the corresponding name                                                       |
-| **Show Tabs**        | Boolean | This property hides / shows the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI |
-| **Scroll Contents**  | Boolean | This property enables scrolling within the contents of each tab                                                          |
-| **Visible**          | Boolean | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published      |
-| **Animate Loading**  | Boolean | Allows you to control a widget’s animation on the page load.                                                             |
+| **Tabs**          | String  | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names.              |
+| **Default Tab**     | String  | This property selects the tab which matches the corresponding name, making it the default tab that is displayed when the widget is loaded.                                                       |
+| **Show Tabs**        | Boolean | This property allows you to hide or show the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI. |
+| **Scroll Contents**  | Boolean | This property enables scrolling within the contents of each tab. If the content of a tab is larger than the available space, users can scroll to view it.                                                          |
+| **Visible**          | Boolean | This property controls the widget's visibility on the page. When turned off, the widget isn't visible when the app is published.     |
+| **Animate Loading**  | Boolean | This property allows you to control a widget’s animation on the page load.                                                             |
 | **Height**   | String     | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 ### Reference properties
