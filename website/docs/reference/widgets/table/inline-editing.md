@@ -90,11 +90,9 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 {{fetchData.data}}
 ```
 
-3. Select the columns that you want to make editable, for instance `name` and `phone`, and **set Primary key column** to `id`.
+3. Select **Multi Row** property, and make the columns **Editable**, for instance `name` and `phone`, and **set Primary key column** to `id`.
 
-4. Select **Multi Row** property, and make the columns **Editable**, for instance `revenue` and `title`.
-
-5. Create a new query using the `updatedRows` reference property to retrieve all the data associated with the updated rows.
+4. Create a new query using the `updatedRows` reference property to retrieve all the data associated with the updated rows.
 
 ```sql
 UPDATE users
@@ -107,7 +105,7 @@ END
 WHERE id IN ({{Table6.updatedRows.map((user) => user.allFields.id).join(',')}});
 ```
 
-6. Drag a [Button](/reference/widgets/button) widget, and set its **onClick** event to run the update query, and **onSuccess** callback to run `fetchData` query. 
+5. Drag a [Button](/reference/widgets/button) widget, and set its **onClick** event to run the update query, and **onSuccess** callback to run `fetchData` query. 
 
 
 
