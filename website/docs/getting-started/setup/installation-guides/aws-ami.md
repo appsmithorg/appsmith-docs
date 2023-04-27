@@ -95,7 +95,7 @@ The default application credentials are stored in a standalone file. To obtain t
 You can either choose to update the Appsmith installation manually or choose to enable auto-updates.
 
 :::caution
-   It's recommended to back up the Appsmith instance before performing an update. For more information, see [How to Create a Backup](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance).
+   It's recommended to back up the Appsmith instance before performing an update. For more information, see [How to Create a Backup](/getting-started/setup/instance-management/appsmithctl#backup-instance).
 :::
 
 
@@ -129,7 +129,7 @@ docker-compose down
 ```
 docker-compose up -d
 ```
-If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
+If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive. 
 
 
 ## Troubleshooting

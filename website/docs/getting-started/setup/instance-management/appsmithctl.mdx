@@ -9,11 +9,12 @@ import TabItem from '@theme/TabItem';
 
 Appsmith comes with the `appsmithctl` command line utility. You can use the command line to interact with and manage your Appsmith instance. For example, back up and restore your Appsmith instance and database. This page provides steps to run the backup and restore commands.
 
+<VideoEmbed host="youtube" videoId="tlbK8Cke3sw" title="How To Use Appsmithctl For Instance Management" caption="How to use Appsmithctl for Docker"/>
+
 ## Usage
 ```bash
 appsmithctl <subcommand> <options>
 ```
-<VideoEmbed host="youtube" videoId="tlbK8Cke3sw" title="How To Use Appsmithctl For Instance Management" caption="How to use Appsmithctl for Docker"/>
 
 ### Subcommands
 
@@ -22,11 +23,11 @@ Subcommands allow you to trigger different operations like exporting or importin
 | Subcommand                                      | Description                                              |
 | ------------------------------------------------| -------------------------------------------------------- |
 | --help                                          | Shows available subcommands and how to use `appsmithctl` |
-| [backup](#backup-appsmith-instance)             | Creates a backup of the Appsmith instance                |
-| [ex, export_db](#backup-appsmith-database)      | Creates a backup of Appsmith internal database           |
-| [restore](#restore-appsmith-instance)           | Restores the Appsmith instance from a backup             |
-| [im, import_db](#restore-appsmith-database)     | Restores the Appsmith internal database                  |
+| [backup](#backup-instance)             | Creates a backup of the Appsmith instance                |
+| [ex, export_db](#backup-database)      | Creates a backup of Appsmith internal database           |
 | [--upload-to-s3](#sync-backup-to-s3-bucket)    | Upload the back up files to S3 bucket (Business Edition only) |
+| [restore](#restore-instance)           | Restores the Appsmith instance from a backup             |
+| [im, import_db](#restore-database)     | Restores the Appsmith internal database                  |
 
 ## Prerequisites
 
@@ -37,7 +38,7 @@ Subcommands allow you to trigger different operations like exporting or importin
 Appsmith may be offline for up to 5 minutes while performing a backup or restore.
 :::
 
-## Backup Appsmith instance
+## Backup instance
 
 You can create a backup archive of the Appsmith instance. The backup includes the database, `docker.env`, and Git data. Follow these steps to create a backup archive:
 
@@ -58,7 +59,7 @@ Keep these details handy, as you need them for restoring the Appsmith instance.
 ```bash
 docker-compose exec appsmith appsmithctl backup
 ```
-The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder. You can access it on the host machine at ./stacks/data/backup/.
+The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder. You can access it on the host machine at `./stacks/data/backup/.`
 
 4. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
 
@@ -133,7 +134,7 @@ kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-backup-
 
 </Tabs>
 
-## Backup Appsmith database
+## Backup database
 
 Follow these steps to back up your Appsmith database:
 
@@ -243,7 +244,63 @@ kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-data.ar
 </Tabs>
 
 
-## Restore Appsmith instance
+## Sync backup to S3 bucket
+
+:::info
+Syncing backups with an AWS S3 bucket is a feature available only in the [Business Edition](https://www.appsmith.com/pricing) for self-hosted instances.
+:::
+
+Follow these steps to sync backups with an S3 bucket for your installation type:
+
+<Tabs queryString="current-command-type">
+<TabItem label="Docker" value="sync-docker-commands"> 
+
+1. Go to the directory where the `docker.env` file is located.
+2. Open the `docker.env` file and add the below entries:
+
+```bash
+APPSMITH_BACKUP_S3_ACCESS_KEY=<aws access key> 
+APPSMITH_BACKUP_S3_SECRET_KEY=<aws secret key>
+APPSMITH_BACKUP_S3_BUCKET_NAME=<bucket name> 
+APPSMITH_BACKUP_S3_REGION=<aws bucket region>
+```
+3. Sync your backups to the S3 bucket with:
+
+```bash
+docker-compose exec appsmithctl backup --upload-to-s3
+```
+After configuration, the restore command lists local and S3 bucket backups.
+
+</TabItem>
+<TabItem label="Kubernetes" value="sync-kubernetes-commands"> 
+
+1. Go to the directory where the `docker.env` file is located.
+2. Open the `docker.env` file and add the below entries:
+
+```bash
+APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY> 
+APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY>
+APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME> 
+APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION>
+```
+3. Get the name of any Appsmith pod with:
+
+```bash
+kubectl get pods
+```
+
+2. Sync your backups to the S3 bucket with:
+
+```bash
+# Replace `<ANY-APPSMITH-POD-NAME>` with the actual pod name
+kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl backup --upload-to-s3
+```
+After configuration, the restore command lists local and S3 bucket backups.
+
+</TabItem>
+</Tabs>
+
+## Restore instance
 
 Follow these steps to restore your Appsmith instance from a backup archive:
 
@@ -359,7 +416,7 @@ kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl restore
 
 </Tabs>
 
-## Restore Appsmith database
+## Restore database
 
 Follow these steps to restore the Appsmith database:
 
@@ -476,63 +533,6 @@ kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl import_db
 
 </TabItem>
 
-</Tabs>
-
-
-## Sync backup to S3 bucket
-
-:::info
-Syncing backups with an AWS S3 bucket is a feature available only in the [Business Edition](https://www.appsmith.com/pricing) for self-hosted instances.
-:::
-
-Follow these steps to sync backups with an S3 bucket for your installation type:
-
-<Tabs queryString="current-command-type">
-<TabItem label="Docker" value="sync-docker-commands"> 
-
-1. Go to the directory where the `docker.env` file is located.
-2. Open the `docker.env` file and add the below entries:
-
-```bash
-APPSMITH_BACKUP_S3_ACCESS_KEY=<aws access key> 
-APPSMITH_BACKUP_S3_SECRET_KEY=<aws secret key>
-APPSMITH_BACKUP_S3_BUCKET_NAME=<bucket name> 
-APPSMITH_BACKUP_S3_REGION=<aws bucket region>
-```
-3. Sync your backups to the S3 bucket with:
-
-```bash
-docker-compose exec appsmithctl backup --upload-to-s3
-```
-After configuration, the restore command lists local and S3 bucket backups.
-
-</TabItem>
-<TabItem label="Kubernetes" value="sync-kubernetes-commands"> 
-
-1. Go to the directory where the `docker.env` file is located.
-2. Open the `docker.env` file and add the below entries:
-
-```bash
-APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY> 
-APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY>
-APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME> 
-APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION>
-```
-3. Get the name of any Appsmith pod with:
-
-```bash
-kubectl get pods
-```
-
-2. Sync your backups to the S3 bucket with:
-
-```bash
-# Replace `<ANY-APPSMITH-POD-NAME>` with the actual pod name
-kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl backup --upload-to-s3
-```
-After configuration, the restore command lists local and S3 bucket backups.
-
-</TabItem>
 </Tabs>
 
 ## Troubleshooting
