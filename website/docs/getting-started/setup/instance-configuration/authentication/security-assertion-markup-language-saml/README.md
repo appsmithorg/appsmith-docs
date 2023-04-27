@@ -14,11 +14,11 @@ Upon successful authentication by the identity provider, the service provider au
 Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
-## **Capture Redirect & Entity URL**
+## **Capture redirect & entity URL**
 
 Follow the below steps to configure your SAML Provider’s settings. These steps are irrespective of the SAML provider that you choose.
 
-* On Appsmith, navigate to **Profile** –->**Admin Settings.**
+* On Appsmith, navigate to **Profile** --> **Admin Settings.**
 
 ![Admin Settings](</img/Appsmith-Admin-Settings_(1).png>)
 
@@ -52,7 +52,7 @@ Save the **Redirect URL** as you’ll need it to configure these in the
 Save the **Entity URL** as you’ll need it to configure these in the SAML provider’s settings.
 :::
 
-## SAML Providers
+## SAML providers
 
 Appsmith integrates with popular SAML providers that you can choose from. Click the below available providers and follow the instructions to configure them for SAML integration:
 
@@ -61,11 +61,11 @@ Appsmith integrates with popular SAML providers that you can choose from. Click 
 * [Okta](okta.md)
 * [Active Directory](active-directory.md)
 
-### **Generic SAML Configuration**
+### **Generic SAML configuration**
 
 You can also use configurations available on Appsmith to configure your SAML providers, which are not listed here. You can follow the steps listed below to configure the details:
 
-#### Configurations at the Identity Provider
+#### Configurations at the identity provider
 
 You’ll need a **Redirect URL** and an **Entity URL** to configure **SAML** integration for an identity provider. Follow the below steps to capture the redirect and the entity URL available on Appsmith.
 
@@ -107,7 +107,7 @@ You can register your identity provider with Appsmith in one of the following av
 
 **Metadata URL**
 
-The metadata XML document is usually hosted and available remotely to integrate with. You can use the URL to configure SAML on Appsmith. Copy the URL where the metadata XML is available and paste it into the Metadata URL field as shown in the screenshot below .
+The metadata XML document is usually hosted and available remotely to integrate with. You can use the URL to configure SAML on Appsmith. Copy the URL where the metadata XML is available and paste it into the Metadata URL field as shown in the screenshot below.
 
 ![Add the IdP Metadata URL](/img/Appsmith-Admin-Settings-Authentication-SAML-Metadata-URL.png)
 
@@ -128,9 +128,9 @@ You can also configure SAML by manually adding the IdP details. If you choose to
 
 ![Add IdP Data manually](/img/Appsmith-Admin-Settings-Authentication-SAML-IdP-Data.png)
 
-#### Complete the Configuration
+#### Complete the configuration
 
-Once you have added the required details click on Save & Restart. On server restart, you’ll see an **Authentication Successful!** message as shown in the screenshot below.
+Once you have added the required details click on Save & Restart. On server restart, you see an **Authentication Successful!** message as shown in the screenshot below.
 
 ![SAML Configuration Success Message - Authentication Successful](/img/Appsmith-SAML-Authentication-Successful.png)
 

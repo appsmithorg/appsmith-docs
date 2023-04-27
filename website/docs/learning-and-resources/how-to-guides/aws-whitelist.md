@@ -1,13 +1,13 @@
 ---
 description: >-
-  Whitelist the IP of the appsmith instance in your AWS database to access it
+  Whitelist the IP of the Appsmith instance in your AWS database to access it
   from within your applications
 sidebar_position: 9
 ---
 
 # Whitelist Appsmith on AWS
 
-Whitelist the appsmith IP address with the following steps:
+Whitelist the Appsmith IP address with the following steps:
 
 **1. Log in to the AWS** [**console**](https://aws.amazon.com/console/)
 
@@ -21,11 +21,11 @@ Whitelist the appsmith IP address with the following steps:
 
 ![Click to expand](/img/chose\_sg.png)
 
-**5. Click on “Inbound” at the bottom and then click “Edit”**
+**5. Click “Inbound” at the bottom and then click “Edit”**
 
 ![Click to expand](/img/chose\_inbound.png)
 
-**6. Select the port to whitelist. If you are using the default MySQL port then selecting the “MYSQL/Aurora” option works**
+**6. Select the port to whitelist. If you are using the default MySQL port then selecting the “MySQL/Aurora” option works**
 
 ![Click to expand](/img/edit\_inbound.png)
 

@@ -37,7 +37,7 @@ A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the 
 
 
 
-<Tabs>
+<Tabs queryString="current-connection-type">
   <TabItem value="scsf" label="Standard Connection String Format" default>
 
 A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:
@@ -344,7 +344,7 @@ The Raw command allows you to write custom queries using the MongoDB database co
 ## Troubleshooting
 If you are experiencing difficulties connecting to a MongoDB in Appsmith, you can refer to the [MongoDB troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/mongodb-errors) for assistance. If you continue to have problems reach out on [Discord](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
-## Next steps
+## Further reading
 
 * [Queries](/core-concepts/data-access-and-binding/querying-a-database)
 * [Data access and binding](/core-concepts/data-access-and-binding)

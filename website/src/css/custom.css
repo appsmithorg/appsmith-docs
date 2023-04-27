@@ -259,27 +259,27 @@ div.containerColumnSampleApp.columnGrid > div.containerCol > img,
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
 }
 
 h3 {
-  font-size: 2rem;
-}
-
-h4 {
   font-size: 1.5rem;
 }
 
-h5 {
+h4 {
   font-size: 1.25rem;
 }
 
+h5 {
+  font-size: 1rem;
+}
+
 h6 {
-  font-size: 1.05rem;
+  font-size: 0.75rem;
 }
 
 .tabs {
@@ -349,6 +349,7 @@ h6 {
   border-radius: 8px;
   display: block;
   margin: 1rem auto;
+  padding: 15px;
 }
 
 .error {
@@ -418,4 +419,22 @@ ul.circle > li:before {
   padding-top: 0.42em;
   letter-spacing: -4em;
   margin-top: 1.5em;
+}
+
+.pagination-nav {
+  display: none !important;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .DocSearch-Modal {
+    max-width: 80% !important;
+  }
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 1200px) {
+  .DocSearch-Modal {
+    max-width: 65% !important;
+  }
 }

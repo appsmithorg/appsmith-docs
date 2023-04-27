@@ -44,11 +44,15 @@ There are two ways to configure the self-hosted Appsmith instance -
 - Admin Settings
 - Environment Variables
 
-**Admin Settings:** you can add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to **Admin Settings> Authentication> Google**, fill the required fields and click the **Save & Restart** button at the bottom of the page.
+### Admin settings
+
+You can add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to **Admin Settings> Authentication> Google**, fill the required fields and click the **Save & Restart** button at the bottom of the page.
 
 ![](/img/as_google_auth_config.png)
 
-**Environment Variables:** update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
+### Environment variables
+
+Update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
 
 * Configure the `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID` and `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET` fields with the client ID and client secret generated in the preceding step.
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (Eg: `abc.com`), to only allow users with an email address from that domain name to log in (Eg: `john@abc.com`). You can provide several domain names using a comma-separated list.

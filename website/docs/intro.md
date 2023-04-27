@@ -5,135 +5,82 @@ slug: /
 ---
 # What is Appsmith
 
-Appsmith is an open source, low code developer tool that helps the rapid creation of internal applications.
+Organizations build internal applications (also known as admin tools or internal tools) such as dashboards, database GUIs, admin panels, approval apps, customer support tools, and more to help their teams perform specific tasks. Appsmith is an open source developer tool that helps the rapid creation of such internal tools.
 
-You can drag, and drop pre-built widgets to build UI on a grid-style canvas. Appsmith simplifies frontend and back-end integration between the UI and the datasource to optimize building applications. Appsmith supports JavaScript inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
+You can drag and drop pre-built widgets to build UI on a grid-style canvas. Appsmith simplifies front-end and back-end integration between the UI and the datasource to optimize building applications. It also supports JavaScript inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
 
-:::info
-Build **CRUD** apps, **Dashboards**, **Admin Panels**, **Dynamic Forms**, and much more **10x faster**.
-:::
+<figure>
+    <VideoEmbed host="youtube" videoId="Dxe_NzdGzL4"/> 
+</figure>
 
 ## Why Appsmith
+
+Appsmith makes it easy to build a UI that talks to any datasource. You can create anything from simple CRUD apps to complicated multi-step workflows with the simple steps below: 
 
 * **Connect Datasource**: Integrate with a datasource such as a database or an API. Appsmith has plug-and-play support for many databases and the RESTful API interface to connect with most tools seamlessly.
 * **Build UI**: Use customizable built-in widgets to build an app layout.
 * **Access Data**: Connect UI to the datasource by writing queries and binding the data to widgets. Control everything with JavaScript.
-* **Collaborate, Deploy, Share**: Appsmith also supports version control with Git to track changes, create rollbacks and collaborate using git branches. Deploy the app and share it with other users.
+* **Collaborate, Deploy, Share**: Appsmith supports version control using Git to build apps in collaboration using branches to track and roll back changes. Deploy the app and share it with other users.
 
-You can build anything from simple CRUD apps to complicated multi-step workflows with these simple steps. Appsmith makes it easy to build a UI that talks to any datasource.
-
-**Got 2 minutes?** Here's a video overview of Appsmith:
-<figure>
-<VideoEmbed host="youtube" videoId="Dxe_NzdGzL4" /> 
-</figure>
-
-## **Get started**
+## Get started
 
 There are two ways of using Appsmith:
 
-* [Appsmith Cloud](https://app.appsmith.com/): Try Appsmith in cloud environment. (For more information, see [data security](./product/security)).
-* [Self-Host Appsmith](getting-started/setup/): Deploy and manage Appsmith on your local machine or private server instance.
+* [Appsmith Cloud](https://app.appsmith.com/): Sign up for a free account and try Appsmith.
+* [Self-Host Appsmith](/getting-started/setup): Deploy and manage Appsmith on your local machine or private server instance.
 
 ## First steps
-
-#### **New users**
 
 If you are new to Appsmith, this is the place to start:
 
 <div class="containerGridSampleApp">
    <div class=" containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
-         <img class="containerImage" src="/img/quickstart.png" alt="quickstart"/>
+         <img class="containerImage" src="/img/quickstart.png" alt="Build your first app"/>
       </div> 
-      <b><a href="/getting-started/start-building">Quickstart Tutorial</a></b>
-      <div class="containerDescription">Build your first app using Appsmith 
+      <b><a href="/getting-started/start-building">Build your first app</a></b>
+      <div class="containerDescription">A quickstart guide to help you build an app using Appsmith
       </div>
    </div>
-
    <div class=" containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
-         <img class="containerImage" src="/img/concepts.png" alt="concepts"/>
+         <img class="containerImage" src="/img/resources-icon.png" alt="core concepts"/>
       </div>
-      <b><a href="core-concepts/connecting-to-data-sources">Core Concepts</a></b>
-      <div class="containerDescription">Everything you need to know about Appsmith fundamentals 
+      <b><a href="/core-concepts/connecting-to-data-sources">Learn core concepts</a></b>
+      <div class="containerDescription">Everything you need to know about Appsmith basics and its core features
       </div>
-   </div>
-   
-
-   <div class="containerColumnSampleApp columnGrid column-three">
-   <div class="containerCol">
-         <img class="containerImage" src="/img/support.png" alt="support"/>
-      </div>
-      <b><a href="https://community.appsmith.com/">Support</a></b>
-      <div class="containerDescription">Reach out for any questions 
-      </div>
-   </div>
-  
+   </div>  
 </div>
 
-
-#### Advanced users
-
-For those with intermediate to advanced skill levels, it's recommended to review the following topics:
+## Resources 
+Additional helpful documentation:
 
 <div class="containerGridSampleApp">
    <div class=" containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
-         <img class="containerImage" src="/img/hosting1-icon.png" alt="deploy"/>
-      </div> 
-   <p><strong>Deployment</strong></p><p><a href="getting-started/setup/">Install Appsmith<br/></a><a href="getting-started/setup/instance-configuration/">Configure</a><br/><a href="getting-started/setup/instance-management/">Manage</a></p>
-   </div>
-
-   <div class="containerColumnSampleApp columnGrid column-two">
       <div class="containerCol">
-         <img class="containerImage" src="/img/widget-icon.png" alt="widgets"/>
+      <img class="containerImage" src="/img/widget-icon.png" alt="widgets"/>
       </div> 
-   <p><strong>Widgets</strong></p><p><a href="core-concepts/building-ui/">Build UI</a><br/><a href="core-concepts/data-access-and-binding/displaying-data-read/">Bind Data</a><br/><a href="reference/widgets/">Reference</a></p>
+      <p><strong>Reference docs</strong></p><p><a href="/reference/widgets">Widgets<br/></a><a href="/reference/datasources">Datasources</a><br/><a href="/reference/appsmith-framework">Framework</a></p>  
    </div>
    
+   <div class="containerColumnSampleApp columnGrid column-two">
+      <div class="containerCol">
+      <img class="containerImage" src="/img/framework-icon.png" alt="framework"/>
+      </div> 
+      <p><strong>Useful features</strong></p><p><a href="/advanced-concepts/version-control-with-git">Version control using Git</a><br/><a href="/getting-started/setup/instance-configuration/authentication">Single sign-on (SSO)</a><br/><a href="/advanced-concepts/access-control/granular-access-control">Granular access control</a></p>
+   </div>
 
    <div class=" containerColumnSampleApp columnGrid column-three">
-   <div class="containerCol">
-         <img class="containerImage" src="/img/database-icon.png" alt="datasources"/>
+  <div class="containerCol">
+         <img class="containerImage" src="/img/support.png" alt="get help"/>
       </div> 
-   <p><strong>Datasources</strong></p><p><a href="core-concepts/connecting-to-data-sources/">Connect Datasource</a><br/><a href="core-concepts/data-access-and-binding/querying-a-database/">Access Data</a><br/><a href="reference/datasources/">Reference</a></p>
+    <p><strong>Get help</strong></p><p><a href="/learning-and-resources/sample-apps">Sample apps</a><br/><a href="/learning-and-resources/integrations">Third-party integration</a><br/><a href="/help-and-support/troubleshooting-guide">Troubleshooting</a></p>
    </div>
   
 </div>
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
-         <img class="containerImage" src="/img/code-icon.png" alt="javascript"/>
-      </div> 
-   <p><strong>JavaScript</strong></p><p><a href="core-concepts/writing-code/workflows">Create Workflows</a><br/><a href="core-concepts/writing-code/javascript-promises">JS Promises</a><br/><a href="core-concepts/writing-code/ext-libraries">External Libraries</a><br/></p> 
-   </div>
-
-   <div class="containerColumnSampleApp columnGrid column-two">
-      <div class="containerCol">
-         <img class="containerImage" src="/img/framework-icon.png" alt="framework"/>
-      </div> 
-   <p><strong>Framework</strong></p><p><a href="reference/appsmith-framework/context-object">Context Object</a><br/><a href="reference/appsmith-framework/query-object">Query Object</a><br/><a href="reference/appsmith-framework/widget-actions/">Actions</a><br/></p>
-   </div>
-   
-
-   <div class="containerColumnSampleApp columnGrid column-three">
-   <div class="containerCol">
-         <img class="containerImage" src="/img/resources-icon.png" alt="resources"/>
-      </div> 
-   <p><strong>Resources</strong></p><p><a href="learning-and-resources/tutorials/"><strong></strong><strong></strong>Tutorials</a><br/><a href="learning-and-resources/sample-apps">Sample Apps</a><br/><a href="https://www.appsmith.com/templates">Templates</a><br/></p>
-   </div>
-  
-</div>
-
 
 :::info
-If you think that more information needs to be included in this documentation, please fill out this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt)! Alternatively, you can also shoot an email to [docs@appsmith.com](mailto:docs@appsmith.com).
+
+* If you need any help, contact the support team at [support@appsmith.com](mailto:support@appsmith.com)
+* If you have suggestions to help improve the documentation, please complete this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt).
 :::
-
-## Other resources
-
-* Have a look at the [FAQ](getting-started/faq) and [Troubleshooting](help-and-support/troubleshooting-guide/) sections, and you might find your questions answered there.
-* View [Guides](learning-and-resources/how-to-guides/) and watch tutorials on[ YouTube](https://www.youtube.com/appsmith).
-* Report Bugs with Appsmith through[ Github issues](https://github.com/appsmithorg/appsmith/issues).
-
-Are you still having trouble? Reach out on[ Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on [community forum](https://community.appsmith.com).

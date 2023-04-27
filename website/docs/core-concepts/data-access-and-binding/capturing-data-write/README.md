@@ -35,14 +35,14 @@ INSERT INTO users ("name", "createdAt", "gender")
 }
 ```
 
-In the examples above, **`text`** is the internal property of the **`nameInput`** widget while **`selectedOptionValue`** is the internal property of the **`genderDropdown`** widget. The **`createdDate`** key is populated with the value of the current date using the `moment.js` library
+In the examples above, the **`text`** is the internal property of the **`nameInput`** widget while **`selectedOptionValue`** is the internal property of the **`genderDropdown`** widget. The **`createdDate`** key is populated with the value of the current date using the `moment.js` library
 
-## Triggering Updates
+## Triggering updates
 
-Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, we can make use of a [Button](/reference/widgets/button/) widget and configure the [Query](/core-concepts/data-access-and-binding/querying-a-database) to run in the onClick of the [button](/reference/widgets/button).
+Since write operations are more expensive, the Query should be triggered once all the user data is captured. To do this, you can make use of a [Button](/reference/widgets/button/) widget and configure the [Query](/core-concepts/data-access-and-binding/querying-a-database) to run in the `onClick` of the [button](/reference/widgets/button).
 
-The property pane has an action section where all the interactions that a user can perform with a widget are listed. We can configure the action to be taken when the interaction takes place in this section.
+The property pane has an action section where all the interactions that a user can perform with a widget are listed. You can configure the action to be taken when the interaction takes place in this section.
 
-To [configure the Query](/core-concepts/data-access-and-binding/querying-a-database) we want to call when a button is clicked, we can select the action in the onClick dropdown.
+To [configure the Query](/core-concepts/data-access-and-binding/querying-a-database) when a button is clicked, select the action in the `onClick` dropdown. 
 
 ![](</img/button-onclick_(2)_(4)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(1)_(3)_(5)_(1)_(1)_(1)_(2)_(1)_(1)_(1)_(1)_(1)_(3)_(2)_(2)_(1).gif>)

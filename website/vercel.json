@@ -2693,6 +2693,18 @@
     {
       "source": "/getting-started/setup/instance-configuration/admin-settings",
       "destination": "/getting-started/setup/instance-configuration#admin-settings"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/use-git-to-create-different-environments",
+      "destination": "/advanced-concepts/version-control-with-git/environments-with-git"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/pull-and-sync",
+      "destination": "/advanced-concepts/version-control-with-git/merging-branches"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
+      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
     }
   ]
 }

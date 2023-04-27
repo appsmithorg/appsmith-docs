@@ -18,12 +18,12 @@ Security Assertion Markup Language (SAML) is available only in the [**business e
 From the available options, select **Regular Web Applications**.
 
 :::info
-The default name of the application is **My App**. You can change it to give a suitable name to the application.
+The default name of the application is **`My App`**. You can change it to give a suitable name to the application.
 :::
 
 ![How to create a regular web application?](/img/Auth0-NewApplication-SAML-RegularWebApp.png)
 
-* Your application will be created, and you’ll be navigated to the Application details page. Go to the **Settings** tab.
+* Your application is created, and you’re navigated to the Application details page. Go to the **Settings** tab.
 
 ![Navigate to the Settings tab for configuration](/img/Auth0-SAML-Settings-Tab.png)
 
@@ -33,11 +33,11 @@ The default name of the application is **My App**. You can change it to give a s
 
 Click **Save Changes**
 
-## Configure Auth0 SAML Fields in Appsmith
+## Configure Auth0 SAML fields in Appsmith
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith.
 
-### Register Identity Provider
+### Register identity provider
 
 Appsmith provides the below options using which you can register the identity provider on Appsmith and complete the SAML Configuration. Follow the one that best suits you:
 
@@ -49,15 +49,15 @@ SAML metadata is an XML document that provides information required for interact
 Metadata URL is the **quickest** and **most recommended way** to set up **SAML**.
 :::
 
-* To obtain the **Metadata URL**, navigate to the **Settings** tab, scroll down and expand the **Advanced Settings.**
+* To obtain the **Metadata URL**, navigate to the **Settings** tab, scroll down, and expand the **Advanced Settings.**
 
 ![Navigate to Advanced Settings](</img/Auth0-SAML-Advanced_Settings.png>)
 
-* Click on the **Endpoints**, scroll down to the **SAML** config fields, and copy the SAML Metadata URL.
+* Click the **Endpoints**, scroll down to the **SAML** config fields, and copy the SAML Metadata URL.
 
 ![Copy the Metadata URL](/img/Auth0-SAML-Metadata-URL.png)
 
-* Navigate to Appsmith, add the Metadata URL and click `SAVE & RESTART` button to save the configuration.
+* Navigate to Appsmith, add the Metadata URL, and click `SAVE & RESTART` button to save the configuration.
 
 ![SAVE & RESTART to configure SAML for Auth0](/img/Appsmith-Admin-Settings-Authentication-SAML-Metadata-URL.png)
 
@@ -65,15 +65,15 @@ Metadata URL is the **quickest** and **most recommended way** to set up **SAML**
 
 If you don’t have a Metadata URL but have a raw SAML metadata XML document, you can choose XML to configure SAML.
 
-* Navigate to Appsmith, click XML, add the raw XML in the `Metadata XML` field and click the `SAVE & RESTART` button to save the configuration.
+* Navigate to Appsmith, click XML, add the raw XML in the `Metadata XML` field, and click the `SAVE & RESTART` button to save the configuration.
 
 ![How to configure Metadata XML?](/img/Appsmith-Admin-Settings-Authentication-SAML-XML.png)
 
-#### IdP Data
+#### IdP data
 
 You can also configure SAML by providing the identity provider(IdP) data.
 
-If you have Identity provider’s data like `X509 Public Certificate`, `Email`, and more, you can choose this option to configure SAML.
+If you have Identity provider data like `X509 Public Certificate`, `Email`, and more, you can choose this option to configure SAML.
 
 * Navigate to Appsmith, and click **IdP Data**. You can get the information from `Metadata XML` and add the content of the tags as per the below mapping table:
 
@@ -88,12 +88,12 @@ If you have Identity provider’s data like `X509 Public Certificate`, `Email`, 
 
 Once you have supplied the details, click the `SAVE & RESTART` button to save the configuration.
 
-## Complete the SAML Configuration
+## Complete the SAML configuration
 
-Once the server restarts with new configurations, you will see a screen showing the message ‘**Authentication Successful!’**.
+Once the server restarts with new configurations, you see a screen showing the message ‘**Authentication Successful!’**.
 
 ![SAML Configuration Success Message](/img/Appsmith-SAML-Authentication-Successful.png)
 
 You’ll see a login screen with the button `SIGN IN WITH SAML SSO`.
 
-![SIGN IN WITH SAML SSO - Available on Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)
+![SIGN IN WITH SAML SSO - Available on the Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)
