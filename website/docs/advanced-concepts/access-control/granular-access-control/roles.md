@@ -18,80 +18,64 @@ The **Default Role For All Users** role sets the base level of access given to a
 
 ## Custom role
 
-With custom roles, you can provide fine-grained access control by configuring multiple permissions for the role you are creating. To create a custom role, go to **Admin Settings** > **Access Control** > **Roles** and click the **Add Role** button. 
+With custom roles, you can provide fine-grained access control by configuring multiple permissions for the role you are creating. To create a custom role, go to **Admin Settings** > **Access Control** > **Roles** and click the **Add Role** button.
+
+<figure>
+  <img src="/img/add_custom_role.png" style= {{width:"700px", height:"auto"}} alt="Add a new Role"/>
+  <figcaption align = "center"><i>Add a custom role</i></figcaption>
+</figure>
+
+## Configure roles
+
+To create or edit a role, you need to set up the permissions based on your requirements. The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily. The four categories are:
+
+- Application Resources
+- Datasource and Queries
+- Groups and Roles
+- Others
 
 
-## Permissions
+### Application resources
 
-Permission refers to the ability to perform a particular operation on a resource. You can club multiple permissions under a role, and permission can be present in various roles. The table below lists all the permissions available in Appsmith -
+In this section, you'll find permissions related to the application and its resources such as pages, widgets, and queries. The table below illustrates the permissions that can be assigned to either a user or a group. Additionally, it explains how each permission behaves at various hierarchical levels.
 
-
-|  Permissions       |    Description                                                     |   Resource   |
-| ---------------    |------------------------------------------------------------------- | ------------ |
-| **Create**         | Enables permission to create, edit, view, and delete resources. You can also grant users access to create groups and roles. | [Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
-| **Edit**           |Enables permission to edit and view resources. You can also grant users access to create groups and roles | [Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
-| **View**           |Enables permission to only view resources. With the View permission, a user can only view the existing groups and roles | [Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |
-| **Delete**         |Enables permission to delete resources. You can also grant users access to delete groups and roles |[Application Resources](#application-resources-permissions), [Datasource and queries](#datasource-and-queries-permissions), [Groups and roles](#groups-and-roles-permissions), [others](#others-permissions). |  
-| **Export**         |Grants users permission to export applications in a workspace. | [Application Resources](#application-resources-permissions) | 
-| **Invite**         |Grants users permission to invite users to a user group | [Groups and roles](#groups-and-roles-permissions)     |
-| **Make public**    |Grants users permission to make the applications public in a workspace |[Application Resources](#application-resources-permissions)|
-| **Execute**        |Grants users permission to execute queries on a datasource | [Datasource and queries](#datasource-and-queries-permissions) |
-| **Remove users**   |Grants users permission to remove a user from a group| [Groups and roles](#groups-and-roles-permissions) |
-
-## Resources
-
-In Appsmith, a resource refers to a specific component or aspect of an application that users can access or modify. These resources include individual pages or views within the application, datasources or queries, or specific actions or functions that can be performed within the application. These are classified into the following categories:
-
-* **Application Resources:** These are resources that relate to applications built in Appsmith, such as individual pages or views within the application.
-* **Datasource and Queries:** These are resources that relate to databases or queries created in Appsmith, such as a MongoDB setup used as a datasource.
-* **Groups and Roles:** These are resources related to the roles available for the workspaces and custom groups & roles available in an Appsmith instance. For example, if you have two workspaces - H.R. and Finance - then roles related to H.R. and finance would be available.
-* **Others:** These are resources related to workspaces and audit logs in Appsmith.
-
-By organizing resources into categories, Appsmith makes it easier for users to manage and access the resources they need.
-
-The permissions that can be configured for each resource while creating a custom role is explained below.
-
-### Application resources permissions
-
-In Application Resources, the table below shows the permissions that can be assigned to a user or a group and how each permission behaves at different heirarchial levels:
-
-|  <div style= {{width:"120px"}}>Heirarchy</div> | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> | <div style= {{width:"150px"}}> Public </div> | <div style= {{width:"150px"}}> Export </div> | 
+|   | <div style= {{width:"180px"}}> Create </div>| <div style= {{width:"180px"}}> Edit </div> | <div style= {{width:"180px"}}> Delete </div> | <div style= {{width:"180px"}}> View </div> | <div style= {{width:"180px"}}> Public </div> | <div style= {{width:"180px"}}> Export </div> | 
 | --- | --- | --- | --- | --- | --- | --- |
-| Workspace | Users can create applications, pages & queries inside the workspace | Users can edit any application, page & query inside the workspace | Users can delete any application, page & query inside the workspace | Users can view any application, page & query inside the workspace. | Users can make any application inside the workspace public | Users can export any application inside the workspace |
-| App | Users can create pages & queries inside the app | Users can edit pages & queries inside the app | Users can delete the app & its pages & queries | Users can view the app & its pages & queries. | Users can make the application public | Users can export the application |
-| Page | Users can create queries on the page | Users can edit the page & its queries | Users can delete the page & its queries | Users can view the page & its queries | NA | NA |
-| Query | NA | Users can edit the query | Users can delete the query | Users can view the query | NA | NA |
+| Workspace |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | Make any application inside the workspace public | Export any application in the workspace |
+| App | Create pages and queries inside the app | Edit pages and queries inside the app | Delete the app and its pages and queries | View the app and its pages and queries. | Make the application public | Export that particular application |
+| Page | Create queries on the page | Edit the page and its queries | Delete the page and its queries | View the page and its queries | - | - |
+| Query | - | Edit the query | Delete the query | View the query | - | - |
 
 
-### Datasource and queries permissions
+### Datasource and queries
 
-For datasource and queries, here are the permissions that can be assigned to a user or a group and their behaviour at different heirarchial levels:
+This section contains permissions related to the actions a user can perform on datasources and queries. The table below lists the different permissions available and outlines how each permission operates at varying hierarchical levels:
 
-|  <div style= {{width:"120px"}}>Heirarchy</div> | <div style= {{width:"150px"}}> Execute </div> | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> |
+| | <div style= {{width:"180px"}}> Execute </div> | <div style= {{width:"180px"}}> Create </div>| <div style= {{width:"180px"}}> Edit </div> | <div style= {{width:"180px"}}> Delete </div> | <div style= {{width:"180px"}}> View </div> |
 | --- | --- | --- | --- | --- | --- |
-| Workspace | Users can execute queries on any datasource in the workspace | Users can create queries on any datasource in the workspace | Users can edit any datasource in the workspace | Users can delete any datasource in the workspace | Users can view any datasource in the workspace |
-| Datasource | Users can execute queries on the datasource | Users can create queries on the datasource | Users can edit the datasource | Users can delete the datasource | Users can view the datasource |
-| Query | users can execute the query | NA | NA | NA | NA |
+| Workspace | Execute queries on any datasource in the workspace | Create queries on any datasource in the workspace | Edit any datasource in the workspace | Delete any datasource in the workspace | View any datasource in the workspace |
+| Datasource | Execute queries on the datasource | Create queries on the datasource | Edit the datasource | Delete the datasource | View the datasource |
+| Query | Execute the query | - | - | - | - |
 
 
-### Groups and roles permissions
+### Groups and roles
 
-For Groups and roles for an Appsmith instance, here are the permissions that can be assigned to a user or a group:
+This section includes permissions for managing the groups and roles of an Appsmith instance. The table below presents the available permissions that can be assigned to either a user or a group:
 
-|  <div style= {{width:"120px"}}>Heirarchy</div> | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> | <div style= {{width:"150px"}}> Invite User </div> | <div style= {{width:"150px"}}> Remove User </div> | <div style= {{width:"150px"}}> Associate Role </div>|
+| | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> | <div style= {{width:"150px"}}> Invite User </div> | <div style= {{width:"150px"}}> Remove User </div> | <div style= {{width:"150px"}}> Associate Role </div>|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Groups | Users can create a User Group | Users can edit any User Group | Users can delete any User Group | Users can view any User Group | Users can invite an email to any User Group | Users can remove another user from any User Group | NA |
-| Group | NA | Users can edit the User Group | Users can delete the User Group | Users can view the User Group | Users can invite an email to the User Group | Users can remove another user from the User Group | NA |
-| Roles | Users can create a Role | Users can edit any Role | Users can delete any Role | Users can view any Role | NA | NA | Users can assign any role to any User or User Group |
-| Role | NA | Users can edit the Role | Users can delete the Role | Users can view the Role | NA | NA | Users can assign the role to any User or User Group |
+| Groups | Create a User Group | Edit any User Group | Delete any User Group | View any User Group | Invite an email to any User Group | Remove another user from any User Group | - |
+| Group | - | Edit the User Group | Delete the User Group | View the User Group | Invite an email to the User Group | Remove another user from the User Group | - |
+| Roles | Create a Role | Edit any Role | Delete any Role | View any Role | - | - | Assign any role to any User or User Group |
+| Role | - | Edit the Role | Delete the Role | View the Role | - | - | Assign the role to any User or User Group |
 
 
-### Others permissions
+### Others
 
 In this section, users can assign permissions for workspaces and Audit logs.
 
-|  <div style= {{width:"120px"}}>Heirarchy</div> | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> |
+|  | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> |
 | --- | --- | --- | --- | --- |
-| Workspaces | Users can create a workspace | Users can edit any workspace | Users can delete any workspace | Users can view any workspace |
-| Workspace | NA | Users can edit the workspace | Users can delete the workspace | Users can view the workspace |
-| Audit Logs | NA | NA | NA | Users can view the audit logs |
+| Workspaces | Create a workspace | Edit any workspace | Delete any workspace | View any workspace |
+| Workspace | - | Edit the workspace | Delete the workspace | View the workspace |
+| Audit Logs | - | - | - | View the audit logs |
