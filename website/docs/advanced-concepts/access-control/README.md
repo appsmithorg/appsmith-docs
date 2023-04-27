@@ -54,11 +54,11 @@ In Appsmith, default roles refer to the roles that are automatically generated b
 
 The table below shows the permissions valid for the respective role:
 
-|Role|	Create/Edit App |	View App | Make App Public | Invite Users | Manage Users |
-|----|------------------|----------|-----------------|--------------|--------------|
-| Administrator |	:white_check_mark: |	:white_check_mark: |	:white_check_mark: |	:white_check_mark: |	:white_check_mark: |
-|Developer |	:white_check_mark:|	:white_check_mark:|	:x:|	:white_check_mark:|	:x:|
-|App Viewer|	:x:|	:white_check_mark:|	:x:|	:white_check_mark: (only as App Viewer role)|	:x:|
+|Role           |	Create App        | Edit App         |	View App         | Make App Public   | Invite Users      | Manage Users        |
+|---------------|-------------------|------------------|-------------------|-----------------  |-------------------|---------------------|
+| Administrator |	:white_check_mark:|:white_check_mark:|:white_check_mark: |:white_check_mark: |:white_check_mark: |	:white_check_mark: |
+|Developer      | :white_check_mark:|:white_check_mark:|:white_check_mark: |	:x:              |:white_check_mark: |	:x:                |
+|App Viewer     |	:x:               |:x:               |:white_check_mark: |           :x:     |:white_check_mark: * (only as App Viewer role)|	:x:|
 
 |Role|	Create/Edit App |	View App | Make App Public | Invite Users | Manage Users |
 |----|------------------|----------|-----------------|--------------|--------------|
