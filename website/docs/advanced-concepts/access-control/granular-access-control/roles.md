@@ -65,7 +65,7 @@ In Application Resources, the table below shows the permissions that can be assi
 
 ### Datasource and queries permissions
 
-For datasource and queries, here are the permissions that can be assigned to a user or a group -
+For datasource and queries, here are the permissions that can be assigned to a user or a group and their behaviour at different heirarchial levels:
 
 |  <div style= {{width:"120px"}}>Heirarchy</div> | <div style= {{width:"150px"}}> Execute </div> | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> |
 | --- | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ For datasource and queries, here are the permissions that can be assigned to a u
 
 ### Groups and roles permissions
 
-For Groups and roles for an Appsmith instance, here are the permissions that can be assigned to a user or a group -
+For Groups and roles for an Appsmith instance, here are the permissions that can be assigned to a user or a group:
 
 |  <div style= {{width:"120px"}}>Heirarchy</div> | <div style= {{width:"150px"}}> Create </div>| <div style= {{width:"150px"}}> Edit </div> | <div style= {{width:"150px"}}> Delete </div> | <div style= {{width:"150px"}}> View </div> | <div style= {{width:"150px"}}> Invite User </div> | <div style= {{width:"150px"}}> Remove User </div> | <div style= {{width:"150px"}}> Associate Role </div>|
 | --- | --- | --- | --- | --- | --- | --- | --- |
