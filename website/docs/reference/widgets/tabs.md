@@ -1,40 +1,42 @@
 # Tabs
 
-This page explains how to use the Tabs widget to organize related content and allow users to navigate between groups of information that appear within the same container.
+This page explains how the Tabs widget can be used to group related content and enable users to switch between different sets of information within a single container.
 
 
 <VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="Using the Tabs Widget" caption="Using the Tabs Widget"/>
 
 
-## Set default tabs
+## Tab navigation
 
-To set a default tab in the Tabs widget, you can manually set the tab's value, or you can use the [storeValue](/reference/appsmith-framework/widget-actions/store-value) action to save the selected tab and retrieve it when the user interacts with the widget. 
-
-In addition to setting a default tab, you can also use the `selectedTab` reference property to get the currently selected tab. This allows you to programmatically switch between tabs and control the widget's behavior based on user input or other events.
+Custom navigation schemes can be created by modifying the properties of a Tab widget. For instance, you can use the **Default tabs** and **storeValue** to create a multi-step form.
 
 ---
 **Example**: suppose you want to create a multi-step form using Tabs Widget.
 
-1. Rename and create additional tabs based on your requirements. For instance, `Basic Information`, `Personal Information`, and `Confirmation`.
+1. Drop a Tab Widget and rename the tabs to `Basic Info`, and `Personal Info`.
 
-2. Populate the tabs with relevant information, such as input widgets.
-
-3. Add a Button widget and sets its **onClick** event to:
+2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, and set its **onClick** event to:
 
 ```js
 {{storeValue('defaulttab', 'Personal Info');}}
 ```
 
-You can use the `storeValue` action for both previous and next buttons, and set the key for the stored value to be the same as the name of the Tabs. 
+3. Similarly, on the `Personal Info` tab, add a new button widget that allows users to go back to the previous tab, and set its **onClick** event to:
+
+```js
+{{storeValue('defaulttab', 'Basic Info');}}
+```
+
+You can use the [storeValue](/reference/appsmith-framework/widget-actions/store-value) action for both previous and next buttons, and set the key for the stored value to be the same as the name of the Tabs. 
 
 4. In the **Default Tab** property of the Tabs widget, add the following code:
 
-```
+```js
 {{appsmith.store.defaulttab}}
 ```
 
 <figure>
-  <img src="/img/tabs.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <img src="/img/tabs-nav.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
 </figure>
 
@@ -48,12 +50,12 @@ These properties allow you to edit the widget. All of these properties are prese
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Tabs**          | String  | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names.              |
+| **Tabs**          | String  | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names. You can also change the visibility settings for each tab from here              |
 | **Default Tab**     | String  | This property selects the tab which matches the corresponding name, making it the default tab that is displayed when the widget is loaded.                                                       |
 | **Show Tabs**        | Boolean | This property allows you to hide or show the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI. |
-| **Scroll Contents**  | Boolean | This property enables scrolling within the contents of each tab. If the content of a tab is larger than the available space, users can scroll to view it.                                                          |
 | **Visible**          | Boolean | This property controls the widget's visibility on the page. When turned off, the widget isn't visible when the app is published.     |
 | **Animate Loading**  | Boolean | This property allows you to control a widget’s animation on the page load.                                                             |
+| **Scroll Contents**  | Boolean | This property enables scrolling within the contents of each tab. If the content of a tab is larger than the available space, users can scroll to view it.                                                          |
 | **Height**   | String     | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 ### Reference properties
@@ -71,9 +73,12 @@ Style properties allow you to change the look and feel of the widget. All of the
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Accent Color**       | String| Sets the widget's accent color, which appears as the fill color for the checkbox when checked. Accepts CSS color values.             |
+| **Background Color** | String| Controls background color of container.                 |
+| **Border Color** | String| Allows you to change the border color of the text widget.                    |
+| **Border Width** | Number| Defines the thickness of the border.                    |
 | **Border Radius**    | String| Allows you to define curved corners.                     |
 | **Box Shadow**       | String | Allows you to choose from the available shadow styles.   |
-
 
 ### Events
 
