@@ -35,7 +35,7 @@ You can use the `storeValue` action for both previous and next buttons, and set 
 
 <figure>
   <img src="/img/tabs.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Multi-form using Tabs</i></figcaption>
+  <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
 </figure>
 
 ## Properties
