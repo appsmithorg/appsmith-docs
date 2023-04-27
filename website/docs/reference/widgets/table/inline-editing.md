@@ -202,7 +202,7 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 | **onSave**    | Triggered when the user clicks the save button for a new or existing row.                                                |
 | **onDiscard** | Triggered when the user clicks the discard button for a new or existing row.                                             |
 | **onDateSelected** | Triggered when the user selects a date from Date Picker while editing a date type column.    
-| **onOptionChange** | The "onOptionChange" property allows you to specify the action that should occur when the user selects an option in the dropdown list. |
+| **onOptionChange** | This property allows you to specify the action that should occur when the user selects an option in the dropdown list. |
 | **onCheckChange** | Triggered when the user checks/unchecks a checkbox.  |
 | **onChange** | Triggered when the user toggles the switch.|
 
