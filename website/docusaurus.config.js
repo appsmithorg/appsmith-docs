@@ -24,11 +24,17 @@ const config = {
     [
       '@twilio-labs/docusaurus-plugin-segment',
       {
-        writeKey: '5mV2pPUXuzTRHzZET0fv8PJrBrwQ2EeH',
+        writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
         allowedInDev: false,
       },
     ],
-  ],
+    [    require.resolve('./plugins/scarfplugin'),   
+          {      
+            trackingCode: 'ae471d67-d95c-4a3a-b35b-799e8ee8fa17',      
+            domain: 'https://docs.appsmith.com',    
+          },  
+    ],
+  ],  
 
   presets: [
     [
@@ -186,10 +192,15 @@ const config = {
     },
     {
       src:
-        '/scripts/hotjarSettings.js',
+        '/scripts/smartlook.js',
       async: false,
+    },    
+    {
+      src:
+        '/scripts/analyticsEvents.js',
+      defer: true,
     }
-  ]
+  ],
 };
 
 module.exports = config;

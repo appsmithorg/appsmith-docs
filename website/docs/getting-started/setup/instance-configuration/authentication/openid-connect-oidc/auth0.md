@@ -9,18 +9,18 @@ sidebar_position: 4.1
 OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
 :::
 
-### Create Application
+### Create application
 
 * Log in to your [Auth0](https://auth0.com/) account and go to **Applications**. (Please create an account if you don’t have one on [Auth0](https://auth0.com/)).
 
 ![Navigate to Applications >> Applications >> click Create Application](/img/Auth0-NewApplication-SAML-Authentication-singlewebpage.png)
 
-* Click on **+Create Application** and pick **Regular Web Applications** from the given options. The default name of the application is **My App**. You can change it as per your requirements.
+* Click **+Create Application** and pick **Regular Web Applications** from the given options. The default name of the application is **`My App`**. You can change it as per your requirements.
 
 ![](/img/Auth0-NewApplication-OIDC-RegularWebApp.png)
 
 * Open the newly created Auth0 App, go to the settings tab and -
-  * Add the Redirect URL (Copied from [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)) in the following fields -
+  * Add the Redirect URL (Copied from the [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)) in the following fields -
 
 ![Redirect URL available at Appsmith >> Profile >> Admin Settings >> Authentication >> OIDC](/img/Appsmith-Admin-Settings-Authentication-OIDC-RedirectURL.png)
 
@@ -33,7 +33,7 @@ OpenID Connect is available **only in the** [**business edition**](https://www.a
 
 To continue with the OIDC setup on Appsmith, navigate to Auth0 configurations and perform the following actions:
 
-* Copy the **Client ID**, and **Client Secret** paste them into the OIDC configurations in Appsmith.
+* Copy the **Client ID**, and **Client Secret** and paste them into the OIDC configurations in Appsmith.
 
 ![Add Client ID and Client Secret to the OIDC config on Appsmith](</img/Auth0-ClientId-Client_Secret.png>)
 
@@ -48,7 +48,7 @@ To continue with the OIDC setup on Appsmith, navigate to Auth0 configurations an
 
 > `RS256` is the default Token Signing Algorithm used by Appsmith and most identity providers. If you have a custom setup, you can choose from one of the supported algorithms under the Advanced section of the Appsmith OIDC setup page. Please note, verifying tokens signed with the `HS256` algorithm isn't supported.
 
-### Configuring Scopes for Auth0
+### Configuring scopes for Auth0
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details (after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
@@ -56,7 +56,7 @@ The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize t
 
 #### What does Appsmith need as part of Scopes?
 
-Appsmith needs **openid** and **email** as mandatory scopes. It's also highly recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
+Appsmith needs **openid** and **email** as mandatory scopes. It's recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
 
 :::info
 Enabling the `offline_access` scope enables your app to receive refresh tokens that extend the duration that your users have access to their resources. To read more, see the [Auth0 documentation](https://auth0.com/docs/secure/tokens/refresh-tokens).
@@ -64,26 +64,26 @@ Enabling the `offline_access` scope enables your app to receive refresh tokens t
 
 You can add more scopes if you wish, provided that they're available via Auth0.
 
-#### Auth0 Scope
+#### Auth0 scope
 
-Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access [additional user attributes, you’ll have to configure them on the Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes) and add them to Appsmith as part of the Scope field.
+Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access [additional user attributes, you’ll have to configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes) and add them to Appsmith as part of the Scope field.
 
-### Configuring Username Attributes for Auth0
+### Configuring username attributes for Auth0
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
 ![Configure Username Attribute at Appsmith](/img/Appsmith-UsernameAttribute-Field.png)
 
-#### What does Appsmith need as a Username Attribute?
+#### What does Appsmith need as a username attribute?
 
-Appsmith considers **email address** as **username**. Please ensure that you have added it as an attribute in the Username Attribute field. Please provide **email** as the attribute name for configuring the username attribute for Auth0.
+Appsmith considers **email address** as **username**. Please ensure that you have added it as an attribute in the Username Attribute field. Please provide the **email** as the attribute name for configuring the username attribute for Auth0.
 
-### Complete OIDC Setup
+### Complete OIDC setup
 
-* Save the changes and restart your application by clicking `SAVE & RESTART` button.
+* Save the changes and restart your application by clicking **SAVE & RESTART** button.
 
 ![Complete the setup by clicking the "SAVE & RESTART" button](/img/Appsmith-OIDC-Setup-Complete.png)
 
 * You’ll see the **SIGN IN WITH OIDC SSO** on the Appsmith’s login screen.
 
-![SIGN IN WITH OIDC SSO - Available on Login Screen](/img/Appsmith-SSO-OIDC-Available.png)
+![SIGN IN WITH OIDC SSO - Available on the Login Screen](/img/Appsmith-SSO-OIDC-Available.png)

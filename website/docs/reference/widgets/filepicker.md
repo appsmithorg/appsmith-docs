@@ -1,6 +1,6 @@
 # Filepicker
 
-This document guides you on how to use the Filepicker widget for selecting and uploading various file types, including images, videos, audio, text files, and more.
+This document explains how to use a datapicker widget to capture date and time input from users.
 
 <VideoEmbed host="youtube" videoId="Sl0zN2CSJaY" title="Filepicker widget and its properties" caption="Filepicker widget and its properties"/>
 
@@ -16,7 +16,7 @@ To upload a file or multiple files, you can drag and drop them onto the Filepick
 
 :::info
 * Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
-* If the user uses the data in an API or query, it would be uploaded as base64 or binary data, despite appearing in the blob URL format when you log the data.
+* When using the data in a query, it is uploaded in the selected format, despite appearing in the blob URL format when you log the data.
 :::
 
 To access the uploaded file's data, you can use the following code in a query or JS code. 
@@ -32,32 +32,12 @@ To access the uploaded file's data, you can use the following code in a query or
 
 
 
-
-### Upload file to S3
-
-
-To upload a file to [Amazon S3](/reference/datasources/querying-amazon-s3), follow these steps:
-
-
-
-* Click the **+** icon next to Queries/JS and choose your S3 datasource.
-* From the Commands drop-down menu, select the "**Create a new file**" method.
-* Provide the necessary parameters for reading the file, such as the bucket name, file path, and file data type. For instance, to get name of the file, you can use `{{ FilePicker1.files[0].name }}`.
-* In the content body, add the following:
-
-```js
-{{ FilePicker1.files[0].data }}
-```
-
-If you are using the S3 multiple file upload command, you only need to provide `{{FilePicker1.files}}`.
-
-
 ## Send file data with API requests
 
-To upload a file via [API](/core-concepts/connecting-to-data-sources/authentication), follow these steps:
+To upload a file via API, follow these steps:
 
 * Click the "+" icon next to Queries/JS and create a new blank API.
-* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` represents your Cloudinary username. You can retrieve your `cloud_name` and `upload_preset` from the Cloudinary dashboard.
+* As an example, lets consider using the [Cloudinary API](https://cloudinary.com/documentation/image_upload_api_reference): `https://api.cloudinary.com/v1_1/{cloud_name}/image/upload` where `{cloud_name}` represents your Cloudinary username. You can retrieve your `cloud_name` and `upload_preset` from the Cloudinary dashboard.
 * Add the Cloudinary API URL and set the header in the API Datasource configuration.
 * Configure the request body in a multipart structure, including the image file data and any additional metadata.
 
@@ -110,32 +90,31 @@ Properties allow you to customize the widget, connect it to other widgets and tr
 These properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 
-|        Property         |                                               Description                                                                                   |  
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Label**                                | Sets the text displayed within the widget.                                                                                                                                                                                                                                                     |
-| **Maximum No. of files**              | Sets the maximum number of files allowed to be uploaded by a user.                                                                                                                                                                                                                                                                 |
-| **Maximum File Size**              | Sets the maximum allowed size of each file that a user can upload.                                                                                                                                                                                                                                |
-| **Allowed File Types**                | Controls which types of files a user is allowed to upload. Accepts an array of wildcards image/, exact mime types image/jpeg, or file extensions e.g.: '.jpg', '.jpeg', '.png', '.gif']. The following file types are supported: Images, Videos, Audio, Text, MS Word, JPEG, and PNG.                          |
-| **Data Format**                   | Determines the data format of the files uploaded. You can choose from Base64, Binary, , Text, and Array(CSV).                                                                                                                                                                                                                      |
-| **Infer data-types from CSV**       | Enables or disables the automatic inference of data types from CSV files.                                                                                      |
-| **Required**                           | Makes input to the widget mandatory.                                                                                                            |
-| **Visible**             | Controls widget's visibility on the page.                                                                           | `{{FilePicker.isVisible}}`  |
-| **Disabled**                 | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                                                                                                                           | `{{FilePicker.isDisabled}}` |
-| **Animate Loading**               | Allows you to control a widget’s animation on the page load.                                                                                                   |                             |
-
+| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
+|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **Label**                     	| String          	| Sets the text displayed within the widget.                                                                                                                                                                                                                                            	|
+| **Maximum No. of files**      	| Number          	| Sets the maximum number of files allowed to be uploaded by a user.                                                                                                                                                                                                                    	|
+| **Maximum File Size**         	| Number          	| Sets the maximum allowed size of each file that a user can upload.                                                                                                                                                                                                                    	|
+| **Allowed File Types**        	| Array   	| Controls which types of files a user is allowed to upload. Accepts an array of wildcards image/, exact mime types image/jpeg, or file extensions e.g.: '.jpg', '.jpeg', '.png', '.gif']. The following file types are supported: Images, Videos, Audio, Text, MS Word, JPEG, and PNG. 	|
+| **Data Format**               	| String 	| Determines the data format of the files uploaded. You can choose from Base64, Binary, , Text, and Array(CSV).                                                                                                                                                                         	|
+| **Infer data-types from CSV** 	| Boolean         	| Enables or disables the automatic inference of data types from CSV files.                                                                                                                                                                                                             	|
+| **Required**                  	| Boolean         	| Makes input to the widget mandatory.                                                                                                                                                                                                                                                  	|
+| **Visible**                   	| Boolean        	| Controls widget's visibility on the page.                                                                                                                                                                                                                                             	|
+| **Disabled**                  	| Boolean         	| Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                                                                                                              	|
+| **Animate Loading**           	| Boolean         	| Allows you to control a widget’s animation on the page load.     
 
 
 
 ### Reference properties
 These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For example, to check the visibility setting of the widget, you can use `FilePicker1.isVisible`.
 
-|        Property         |                                               Description                                                                                   |  
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **files**                |  An array of file objects that have been selected by the user. Each file object contains the file data, which can be accessed through its `data` property.                                                                                                                                                                           
-| **isVisible**                | Indicates the state of the widget's Visible setting.  
-| **isDisabled**                | Indicates the state of the widget's Disabled setting.
-| **isDirty**                | Indicates whether the file picker has been used by the end user during their session.
-| **isValid**                | Indicates whether the file type selected by the user is considered valid for the widget.
+| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
+|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **files**             	| Array    |  An array of file objects that have been selected by the user. Each file object contains the file data, which can be accessed through its `data` property.                                                                                                                                                                           
+| **isVisible**         	| Boolean        | Indicates the state of the widget's Visible setting.  
+| **isDisabled**        	| Boolean         | Indicates the state of the widget's Disabled setting.
+| **isDirty**          	| Boolean       | Indicates whether the file picker has been used by the end user during their session.
+| **isValid**          	| Boolean       | Indicates whether the file type selected by the user is considered valid for the widget.
 
 
 ### Styles
@@ -144,14 +123,14 @@ These properties can be referenced in other widgets, queries, or JS functions us
 Style properties allow you to change the look and feel of the widget.
 
 
-| Style Property    | Description                                                                                                                                                                      |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Button Color**  | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
-| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
+|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **Button Color**  	| String | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
+| **Border Radius** 	| String | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**    	| String | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
 
-### Events
+## Events
 
 
 These are functions that are called when event listeners are triggered in the widget. Use [actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
@@ -166,7 +145,7 @@ These are functions that are called when event listeners are triggered in the wi
 
 
 
-### Further reading
+## Further reading
 
 
 * [Document Viewer](/reference/widgets/document-viewer)

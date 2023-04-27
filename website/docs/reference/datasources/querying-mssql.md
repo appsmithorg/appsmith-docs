@@ -2,11 +2,11 @@
 sidebar_position: 11
 ---
 
-# Microsoft SQL Server
+# Microsoft SQL Server (MS SQL)
 
-This page describes how to connect your application to your Microsoft SQL Server databases and use queries to manage their content
+This page describes how to connect your application to your Microsoft SQL Server databases and use queries to manage their content.
 
-:::note
+:::info
 Appsmith's backend server supports **TLS1.1** and **TLS1.2** for connecting to endpoints.
 :::
 
@@ -28,7 +28,7 @@ If you are a self-hosted user, you may need to whitelist the IP address of the A
 </figure>
 
 :::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
@@ -51,20 +51,20 @@ To connect to your database, Appsmith needs the following parameters. All requir
 
 ## Create queries
 
+<figure>
+  <img src="/img/mssql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL query." />
+  <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
+</figure>
+
 You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to the MS SQL database by selecting the **+ New Query**  button on the MS SQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MS SQL database. You'll be brought to a new query screen where you can write SQL queries.
 
 You can query MsSQL databases using [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15). All MS SQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
 :::info
-[Prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) are turned on by default to improve the security of the queries in your app. 
+Prepared statements are turned on by default to improve the security of the queries in your app. Read more about prepared statements [here](/learning-and-resources/how-to-guides/how-to-use-prepared-statements).
 :::
 
 ## Select
-
-<figure>
-  <img src="/img/mssql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL query." />
-  <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
-</figure>
 
 Use a `SELECT` statement to retrieve data from a table:
 
@@ -76,27 +76,29 @@ It's highly recommended to keywords like `TOP 10` or `FETCH NEXT 10 ROWS` to pre
 
 ---
 
-**Example**: fetch all records from a table `users`, 10 records at a time, and put them into a Table widget `UsersTable`.
+#### Example
 
-**Setup**: create a query called `FetchUsers` based on your MS SQL datasource, and a [Table widget](/reference/widgets/table) on the canvas called `UsersTable`.
+> Fetch all records from a table `users`, 10 records at a time, and put them into a Table widget `UsersTable`.
 
-This query is a `SELECT` operation, and uses properties from the Table widget along with to calculate which subset of the table to return for each page.
+* Create a query called `FetchUsers` based on your MS SQL datasource, and a [Table widget](/reference/widgets/table) on the canvas called `UsersTable`.
 
-```sql
-SELECT * FROM users
-ORDER BY employee_id
-OFFSET {{ UsersTable.pageOffset }} ROWS
-FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
-```
+* This query is a `SELECT` operation, and uses properties from the Table widget along with to calculate which subset of the table to return for each page.
 
-In your Table widget, turn on **Server side pagination**. In the **onPageChange** event, select the **Execute a query > FetchUsers** action. Now when the page buttons in the table header are clicked, the query fetches the correct page of data.
+  ```sql
+  SELECT * FROM users
+  ORDER BY employee_id
+  OFFSET {{ UsersTable.pageOffset }} ROWS
+  FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
+  ```
 
-In the **Table Data** property of your Table widget, bind the result of your query:
+* In your Table widget, turn on **Server side pagination**. In the **onPageChange** event, select the **Execute a query > FetchUsers** action. Now when the page buttons in the table header are clicked, the query fetches the correct page of data.
 
-```javascript
-// in the Table Data property of UsersTable
-{{ FetchUsers.data }}
-```
+* In the **Table Data** property of your Table widget, bind the result of your query:
+
+  ```javascript
+  // in the Table Data property of UsersTable
+  {{ FetchUsers.data }}
+  ```
 
 Your table should fill with data when the query is run.
 
@@ -113,32 +115,44 @@ VALUES
 
 ---
 
-**Example**: create a new record in a table `users`, with columns for `name`, `date_of_birth`, and `employee_id`.
+#### Example
 
-**Setup**: create your query called `InsertNewUser` based on your MS SQL datasource.
+> Create a new record in a table `users`, with columns for `name`, `date_of_birth`, and `employee_id`.
 
-To gather data, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. You should already have fields for `name`, `date_of_birth`, and `employee_id`.
+* Create your query called `InsertNewUser` based on your MS SQL datasource.
 
-In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+* To gather data, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
 
-```javascript
-// Submit button's onClick event
-{{ InsertNewUser.run() }}
-```
+  ```json
+  {{
+    {
+      name: "",
+      date_of_birth: "",
+      employee_id: ""
+    }
+  }}
+  ```
 
-Once these form fields are filled out, you can add their values to your query's SQL statement as below:
+* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
 
-```sql
-INSERT INTO users
-  (name, date_of_birth, employee_id)
-VALUES
-  (
-    {{ NewUserForm.formData.name }},
-    {{ NewUserForm.formData.date_of_birth }},
-    {{ NewUserForm.formData.employee_id }}
-  );
+  ```javascript
+  // Submit button's onClick event
+  {{ InsertNewUser.run() }}
+  ```
 
-```
+* Once these form fields are filled out, you can add their values to your query's SQL statement as below:
+
+  ```sql
+  INSERT INTO users
+    (name, date_of_birth, employee_id)
+  VALUES
+    (
+      {{ NewUserForm.formData.name }},
+      {{ NewUserForm.formData.date_of_birth }},
+      {{ NewUserForm.formData.employee_id }}
+    );
+
+  ```
 
 When the Submit button is clicked, your query is executed and the new record is inserted into your table.
 
@@ -154,42 +168,41 @@ WHERE employee_id = 1009;
 
 ---
 
-**Example**: modify a record in a table `users`, with columns for `name`, `date_of_birth`, and `employee_id`.
+#### Example
 
-**Setup**: create your query called `UpdateUser` based on your MS SQL datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another `SELECT` query.
+> Modify a record in a table `users`, with columns for `name`, `date_of_birth`, and `employee_id`.
 
-Create a [JSON Form widget](/reference/widgets/json-form) to use for submitting your updated values. It should come with fields for `name`, `date_of_birth`, and `employee_id`.
+* Create your query called `UpdateUser` based on your MS SQL datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another `SELECT` query.
 
-When a row is selected in the table, it would be helpful if the JSON Form's fields pre-filled with the row's existing data. To implement this, match the keys in the JSON Form's **Source Data** property with the values from the table row's cells:
+* Create a [JSON Form widget](/reference/widgets/json-form) to use for submitting your updated values. Add **Source Data** to the JSON Form to create input fields. Reference the `selectedRow` of `UsersTable` to pre-fill the form fields:
 
-```javascript
-// JSON Form's Source Data property
-{{
-  {
-    "name": UsersTable.selectedRow.name,
-    "date_of_birth": UsersTable.selectedRow.date_of_birth
-  }
-}}
-```
+  ```json
+  {{
+    {
+      name: UsersTable.selectedRow.name,
+      date_of_birth: UsersTable.selectedRow.date_of_birth
+    }
+  }}
+  ```
 
-You may want to remove any field that's used as a unique identifier for your record; in this case, `employee_id` isn't in the form because it's unique to each user and is used to identify them in the dataset.
+  You may want to remove any field that's used as a unique identifier for your record; in this case, `employee_id` isn't in the form because it's unique to each user and is used to identify them in the dataset.
 
-In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
 
-```javascript
-// Submit button's onClick event
-{{ UpdateUser.run() }}
-```
+  ```javascript
+  // Submit button's onClick event
+  {{ UpdateUser.run() }}
+  ```
 
-To add your modified row data to your query, reference them in your SQL statement:
+* To add your modified row data to your query, reference them in your SQL statement:
 
-```sql
-UPDATE users
-SET
-  name = {{ UpdateUserForm.formData.name }},
-  date_of_birth = {{ UpdateUserForm.formData.date_of_birth }}
-WHERE employee_id = 1009;
-```
+  ```sql
+  UPDATE users
+  SET
+    name = {{ UpdateUserForm.formData.name }},
+    date_of_birth = {{ UpdateUserForm.formData.date_of_birth }}
+  WHERE employee_id = {{ UsersTable.selectedRow.employee_id }};
+  ```
 
 When the Submit button is clicked, your query is executed and the record is updated in your table.
 
@@ -204,23 +217,25 @@ WHERE employee_id = 1009;
 
 ---
 
-**Example**: delete a record from a table `users`.
+#### Example
 
-**Setup**: create your query called `DeleteUser` based on your MS SQL datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your table data from a `SELECT` query.
+> Delete a record from a table `users`.
 
-Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
+* Create your query called `DeleteUser` based on your MS SQL datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your table data from a `SELECT` query.
 
-```javascript
-// in the Delete button's onClick event
-{{ DeleteUser.run() }}
-```
+* Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
 
-To delete a specific record, you should reference it with a uniquely identifying value, such as its `employee_id` in this case. In your `DeleteUser` query, bind the `employee_id` value of the Table's selected row:
+  ```javascript
+  // in the Delete button's onClick event
+  {{ DeleteUser.run() }}
+  ```
 
-```sql
-DELETE FROM users
-WHERE employee_id = {{ UsersTable.selectedRow.employee_id }};
-```
+* To delete a specific record, you should reference it with a uniquely identifying value, such as its `employee_id` in this case. In your `DeleteUser` query, bind the `employee_id` value of the Table's selected row:
+
+  ```sql
+  DELETE FROM users
+  WHERE employee_id = {{ UsersTable.selectedRow.employee_id }};
+  ```
 
 Now when the button is clicked, the query is run and the corresponding row is deleted from your table.
 
