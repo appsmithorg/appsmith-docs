@@ -515,24 +515,15 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
+        'advanced-concepts/share-application',
         {
           type: 'category',
-          label: 'Access Control',
-          link: {type: 'doc', id:  'advanced-concepts/access-control/README'},
+          label: 'Granular Access Control',
+          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
           items: [
-          {
-            type: 'category',
-            label: 'Granular Access Control',
-            link: {
-              type: 'doc',
-              id: 'advanced-concepts/access-control/granular-access-control/README',
-            },
-            items: [
-              'advanced-concepts/access-control/granular-access-control/roles', 
+              'advanced-concepts/granular-access-control/roles', 
           ]
         },
-      ],
-       },
         {
           type: 'category',
           label: 'More',

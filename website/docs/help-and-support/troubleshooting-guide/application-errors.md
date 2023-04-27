@@ -101,7 +101,7 @@ You can fix the error by providing an email that has been used to register with 
 This message indicates one of the following:
 
 * The page URL is invalid. 
-* The User doesn't have [permission](/advanced-concepts/access-control) to access the page. 
+* The User doesn't have [permission](/advanced-concepts/share-application) to access the page. 
 
 #### Solution
 You can fix the error by requesting access permission for the page from the `admin/developer`.

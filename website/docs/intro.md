@@ -67,7 +67,7 @@ Additional helpful documentation:
       <div class="containerCol">
       <img class="containerImage" src="/img/framework-icon.png" alt="framework"/>
       </div> 
-      <p><strong>Useful features</strong></p><p><a href="/advanced-concepts/version-control-with-git">Version control using Git</a><br/><a href="/getting-started/setup/instance-configuration/authentication">Single sign-on (SSO)</a><br/><a href="/advanced-concepts/access-control/granular-access-control">Granular access control</a></p>
+      <p><strong>Useful features</strong></p><p><a href="/advanced-concepts/version-control-with-git">Version control using Git</a><br/><a href="/getting-started/setup/instance-configuration/authentication">Single sign-on (SSO)</a><br/><a href="/advanced-concepts/granular-access-control">Granular access control</a></p>
    </div>
 
    <div class=" containerColumnSampleApp columnGrid column-three">

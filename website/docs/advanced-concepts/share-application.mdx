@@ -1,9 +1,6 @@
----
-sidebar_position: 4
-description: >-
-  Allow external users to access applications built using Appsmith by inviting
-  them to the workspace.
----
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Share Applications
 
@@ -55,19 +52,14 @@ In Appsmith, there are predefined roles that you can assign to a user for access
 
 The table below shows the permissions available for each role:
 
-|Role           |	Create App        | Edit App         |	View App         | Make App Public   | Invite Users      | Manage Users        |
+|Role           |	<div style= {{width:"90px"}}> Create App </div> | <div style= {{width:"90px"}}> Edit App </div>   |<div style= {{width:"90px"}}> View App </div> | <div style= {{width:"140px"}}> Make App Public </div> | <div style= {{width:"100px"}}> Invite Users </div>   | <div style= {{width:"120px"}}> Manage Users </div>  |
 |---------------|-------------------|------------------|-------------------|-----------------  |-------------------|---------------------|
-| Administrator |	:white_check_mark:|:white_check_mark:|:white_check_mark: |:white_check_mark: |:white_check_mark: |	:white_check_mark: |
-|Developer      | :white_check_mark:|:white_check_mark:|:white_check_mark: |	:x:              |:white_check_mark: |	:x:                |
-|App Viewer     |	:x:               |:x:               |:white_check_mark: |           :x:     |:white_check_mark: * (only as App Viewer role)|	:x:|
+| Administrator |	:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark: |:heavy_check_mark: |:heavy_check_mark: |	:heavy_check_mark: |
+|Developer      | :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark: |	:heavy_multiplication_x:              |:heavy_check_mark: |	:heavy_multiplication_x:                |
+|App Viewer     |	:heavy_multiplication_x:               |:heavy_multiplication_x:               |:heavy_check_mark:|           :heavy_multiplication_x:     |:heavy_check_mark: * (only as App Viewer role)|	:heavy_multiplication_x:|
 
-|Role|	Create/Edit App |	View App | Make App Public | Invite Users | Manage Users |
-|----|------------------|----------|-----------------|--------------|--------------|
-| Administrator |	:heavy_check_mark: |	:heavy_check_mark: |	:heavy_check_mark: |	:heavy_check_mark: |	:heavy_check_mark: |
-|Developer |	:heavy_check_mark:|	:heavy_check_mark:|	:heavy_multiplication_x:|	:heavy_check_mark:|	:heavy_multiplication_x:|
-|App Viewer|	:heavy_multiplication_x:|	:heavy_check_mark:|	:heavy_multiplication_x:|	:heavy_check_mark: (only as App Viewer role)|	:heavy_multiplication_x:|
-
+\* *Only as App Viewer role*
 
 ## Further reading
 
-- [Granular Access Control](/advanced-concepts/access-control/granular-access-control)
+- [Granular Access Control](/advanced-concepts/granular-access-control)
