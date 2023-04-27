@@ -134,6 +134,63 @@ kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-backup-
 
 </Tabs>
 
+
+### Sync backup to S3 bucket
+
+:::info
+Syncing backups with an AWS S3 bucket is a feature available only in the [Business Edition](https://www.appsmith.com/pricing) for self-hosted instances.
+:::
+
+Follow these steps to sync backups with an S3 bucket for your installation type:
+
+<Tabs queryString="current-command-type">
+<TabItem label="Docker" value="sync-docker-commands"> 
+
+1. Go to the directory where the `docker.env` file is located.
+2. Open the `docker.env` file and add the below entries:
+
+```bash
+APPSMITH_BACKUP_S3_ACCESS_KEY=<aws access key> 
+APPSMITH_BACKUP_S3_SECRET_KEY=<aws secret key>
+APPSMITH_BACKUP_S3_BUCKET_NAME=<bucket name> 
+APPSMITH_BACKUP_S3_REGION=<aws bucket region>
+```
+3. Sync your backups to the S3 bucket with:
+
+```bash
+docker-compose exec appsmithctl backup --upload-to-s3
+```
+After configuration, the restore command lists local and S3 bucket backups.
+
+</TabItem>
+<TabItem label="Kubernetes" value="sync-kubernetes-commands"> 
+
+1. Go to the directory where the `docker.env` file is located.
+2. Open the `docker.env` file and add the below entries:
+
+```bash
+APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY> 
+APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY>
+APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME> 
+APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION>
+```
+3. Get the name of any Appsmith pod with:
+
+```bash
+kubectl get pods
+```
+
+2. Sync your backups to the S3 bucket with:
+
+```bash
+# Replace `<ANY-APPSMITH-POD-NAME>` with the actual pod name
+kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl backup --upload-to-s3
+```
+After configuration, the restore command lists local and S3 bucket backups.
+
+</TabItem>
+</Tabs>
+
 ## Backup database
 
 Follow these steps to back up your Appsmith database:
@@ -241,63 +298,6 @@ kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-data.ar
 
 </TabItem>
 
-</Tabs>
-
-
-## Sync backup to S3 bucket
-
-:::info
-Syncing backups with an AWS S3 bucket is a feature available only in the [Business Edition](https://www.appsmith.com/pricing) for self-hosted instances.
-:::
-
-Follow these steps to sync backups with an S3 bucket for your installation type:
-
-<Tabs queryString="current-command-type">
-<TabItem label="Docker" value="sync-docker-commands"> 
-
-1. Go to the directory where the `docker.env` file is located.
-2. Open the `docker.env` file and add the below entries:
-
-```bash
-APPSMITH_BACKUP_S3_ACCESS_KEY=<aws access key> 
-APPSMITH_BACKUP_S3_SECRET_KEY=<aws secret key>
-APPSMITH_BACKUP_S3_BUCKET_NAME=<bucket name> 
-APPSMITH_BACKUP_S3_REGION=<aws bucket region>
-```
-3. Sync your backups to the S3 bucket with:
-
-```bash
-docker-compose exec appsmithctl backup --upload-to-s3
-```
-After configuration, the restore command lists local and S3 bucket backups.
-
-</TabItem>
-<TabItem label="Kubernetes" value="sync-kubernetes-commands"> 
-
-1. Go to the directory where the `docker.env` file is located.
-2. Open the `docker.env` file and add the below entries:
-
-```bash
-APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY> 
-APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY>
-APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME> 
-APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION>
-```
-3. Get the name of any Appsmith pod with:
-
-```bash
-kubectl get pods
-```
-
-2. Sync your backups to the S3 bucket with:
-
-```bash
-# Replace `<ANY-APPSMITH-POD-NAME>` with the actual pod name
-kubectl exec <ANY-APPSMITH-POD-NAME> appsmithctl backup --upload-to-s3
-```
-After configuration, the restore command lists local and S3 bucket backups.
-
-</TabItem>
 </Tabs>
 
 ## Restore instance
