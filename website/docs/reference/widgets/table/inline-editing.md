@@ -22,7 +22,7 @@ Inline editing is supported for **Text**, **Number**, **Date**, **Switch**, **Se
 </figure>
 
 
-Additionally, if you want to restrict the **Editable** property of certain cells based on a specific condition, you can use the JS within the column settings. For instance, you can allow editing for a row only if the status column contains the value `pending`.
+Additionally, if you want to restrict the **Editable** property of certain cells based on a specific condition, you can use the JS within the column settings. For instance, you can allow editing for a row only if the `status` column contains the value `pending`.
 
 ```js
 {{ currentRow.status === "pending" }}
@@ -37,7 +37,7 @@ To update a single row, select **Single row**  from the **Update mode** property
 
 
 ---
-**Example**: suppose you want to modify the `name`  and `phone` field in a users database.
+**Example**: suppose you want to modify the `name`  and `phone` field in a `users` database.
 
 1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
 
@@ -52,7 +52,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 {{fetchData.data}}
 ```
 
-3. Select the editable checkbox for the `name` and `phone` column properties.
+3. Select the **Editable** checkbox for the `name` and `phone` column properties.
 
 4. Create an UPDATE query using the `updatedRow` reference property to retrieve all information pertaining to the modified cells.
 
