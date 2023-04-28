@@ -1,32 +1,56 @@
-import React from 'react';
-import HappySVG from '@site/static/img/happy.svg';
-import SadSVG from '@site/static/img/sad.svg';
-import NeutralSVG from '@site/static/img/neutral.svg';
+import React, { useState } from 'react';
 
-function FeedbackWidget() {
-  const [feedback, setFeedback] = React.useState(null);
+const FeedbackWidget = () => {
+  const [feedback, setFeedback] = useState('');
+  const [emoji, setEmoji] = useState('');
 
-  const handleFeedbackClick = (newFeedback) => {
-    setFeedback(newFeedback);
+  const handleFeedbackChange = (event) => {
+    setFeedback(event.target.value);
+  };
+
+  const handleEmojiClick = (event) => {
+    setEmoji(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(`Feedback: ${feedback} Emoji: ${emoji}`);
+    // Send feedback to server or perform some other action
+    setFeedback('');
+    setEmoji('');
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+    <form onSubmit={handleSubmit}>
       <div style={{ color: 'rgba(136,153,168,1.00)', marginRight: '16px',  width: '100%'}}>
       <hr style={{ border: '1px solid #ddd' }} />
-        <h4>WAS THIS PAGE HELPFUL?</h4>
-        <button onClick={() => handleFeedbackClick('happy')} style={{ padding: '8px', margin: '5px', borderRadius: '50%' }}>
-          <HappySVG fill={feedback === 'happy' ? '#6DBA67' : 'rgba(136,153,168,1.00)'} onMouseEnter={() => { setFeedback('happy'); }} onMouseLeave={() => { setFeedback(null); }} />
+      <h4>WAS THIS PAGE HELPFUL?</h4>
+      <div>
+        <button type="button" value="😠" onClick={handleEmojiClick} style={{ fontSize: '2rem', margin: '3px' }}>
+          😠
         </button>
-        <button onClick={() => handleFeedbackClick('sad')} style={{ padding: '8px', margin: '5px', borderRadius: '50%' }}>
-            <SadSVG fill={feedback === 'sad' ? 'rgb(255, 0, 0)' : 'rgba(136,153,168,1.00)'} />
+
+        <button type="button" value="😕" onClick={handleEmojiClick} style={{ fontSize: '2rem' , margin: '3px' }}>
+          😕
         </button>
-        <button onClick={() => handleFeedbackClick('neutral')} style={{ padding: '8px', margin: '5px', borderRadius: '50%' }}>
-          <NeutralSVG fill={feedback === 'neutral' ? '#FCC22D' : 'rgba(136,153,168,1.00)'} onMouseEnter={() => { setFeedback('neutral'); }} onMouseLeave={() => { setFeedback(null); }} />
+        <button type="button" value="😐" onClick={handleEmojiClick} style={{ fontSize: '2rem', margin: '3px' }}>
+          😐
         </button>
+        <button type="button" value="🙂" onClick={handleEmojiClick} style={{ fontSize: '2rem' , margin: '3px'}}>
+          🙂
+        </button>
+        <button type="button" value="😃" onClick={handleEmojiClick} style={{ fontSize: '2rem' , margin: '3px'}}>
+          😃
+        </button>
+        </div>
+        <div>
+        <textarea id="feedback" value={feedback} onChange={handleFeedbackChange} style={{ minWidth: '33%', minHeight: '100px' }} />
+
+        </div>
       </div>
-    </div>
+      <button type="submit">Submit Feedback</button>
+    </form>
   );
-}
+};
 
 export default FeedbackWidget;
