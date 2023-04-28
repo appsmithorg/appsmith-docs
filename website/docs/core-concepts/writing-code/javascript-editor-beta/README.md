@@ -1,6 +1,6 @@
 # JS Objects
 
-The JavaScript Editor in Appsmith enables you to create *JS Objects*, which is a set of variables and functions that have a page-level scope.
+The JavaScript Editor in Appsmith enables you to create *JS Objects* with a page-level scope. A JS Object is an encapsulation of variables and functions associated with it. It is a template similar to a Java class that contains the variables and the methods used to perform actions.
 
 :::info
 JS Objects are accessible only within the page where they're defined and aren't accessible across pages.
@@ -8,40 +8,75 @@ JS Objects are accessible only within the page where they're defined and aren't 
 
 <VideoEmbed host="youtube" videoId="tpbY5Jti9d4" title="How to use the JS Editor" caption="How to use the JS Editor" />
 
-## Create JS Object
+## Create JS Objects
 
-You can create JS Objects from the Entity Explorer on the left sidebar.
+You can create JS Objects from the entity explorer on the left sidebar.
 
 Click the **Explorer** tab. Click **+** next to **Queries/JS**. Select **New JS Object** from the list of options.
 
 ![Create JS Object](</img/create-js-object.png>)<figure><figcaption align="center"><i>Create JS Object</i></figcaption></figure>
 
-:::info
-The [export default](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) declaration is used to expose functions that are part of the JS Object and can't be used to export functions.
+A JS Object has the following structure:
+
+```
+export default { 
+
+    myVar1: [], //  define array
+    myVar2: {}, // define object
+
+    // define functions
+    myFun1: () => {
+        //write code to manipulate the data or perform actions like executing a query
+    },
+
+    myFun2: async () => {
+        //use async-await or promises
+        // this helps when you want to trigger queries at run time.
+        // For example, API_NAME.run() - run method executes the call and returns the response.
+    }
+
+}
+```
+
+:::caution
+The JS Object notation should start with `export default`. The [**export default**](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) declaration exposes functions that are part of the JS Object to the page where it is defined.
 :::
+
+You can access the properties of the JS Objects defined using the dot or bracket notation. 
+
+**Example**:
+
+```
+ export default { 
+
+    useJSObjectProps: () => {
+        const userObject = new Object(); //object with method scope and is local to this method.
+        userObject.id = 1; // setting property using dot notation
+        userObject[“name”] = “John”; //setting property using bracket notation
+        showAlert(userObject.id);
+        showAlert(userObject[“name”]); 
+    }
+
+}
+```
 
 ## Execute functions
 
-You can click **Run** available on the top right corner to execute the JS function. If your JS object has only one function defined, the editor defaults the function name. But if your JS Object has more than one function defined, you can select the function you want to execute and then click **Run**. If your code has errors, the **Run** button is greyed out and blocks the execution until the errors are resolved. You can also execute the function using a shortcut key **CMD+ENTER** or **CTRL + ENTER**
-
-
-## Widgets and functions
-
-Widgets have fields/properties where you can bind data or trigger actions.
-
-**Sync fields** are properties that expect input or data. For example, for an Input widget, properties such as `Default Value`, `Max Characters`, `Regex`, and `Error Message` expect input and are sync fields.
-
-**Async fields** are properties that can trigger an action or perform an operation. For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are async fields. You can use these properties to execute an [action](/reference/appsmith-framework/widget-actions), [Query](/core-concepts/data-access-and-binding/querying-a-database#running-a-query) or a function within a [JS object](/core-concepts/writing-code/javascript-editor-beta).
-
-You can display the responses from JS functions in sync fields and call or execute the JS functions using async fields(event listeners). 
+Click the **Run** button on the top right corner to execute the JS function. If your JS object has only one function defined, the editor defaults the function name. But if your JS Object has more than one function defined, you can select the function you want to execute and then click **Run**. If your code has errors, the **Run** button is greyed out and blocks the execution until the errors are resolved. You can also execute the function using a shortcut key **CMD+ENTER** or **CTRL + ENTER**
 
 ## Display data from functions
 
 Functions in a JS Object can be *Synchronous* or *Asynchronous*.
 
+Widgets have fields/properties where you can bind data or trigger actions.
+
+*Async fields* are properties that can trigger an [action](/reference/appsmith-framework/widget-actions) or perform an operation. For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are async fields. **You can call or execute the JS functions in async fields(event listeners)**. 
+
+*Sync fields* are properties that expect data. For example, for an Input widget, properties such as **Default Value**, **Required**, **Text** expect data and are sync fields. **You can display the response from JS functions in sync fields**.
+
 ### Synchronous functions
 
-As the name suggests, synchronous means to run in a particular sequence, it means that every statement of the code gets executed one by one. So, a statement must wait for the earlier statement to complete its execution. 
+As the name suggests, synchronous means to run in a particular sequence. It means that every statement of the code gets executed one by one. So, a statement must wait for the earlier statement to complete its execution. 
 To display the response from a synchronous JS function in a sync widget field, call the function inside the JS Object as shown below:
 
 ``` javascript
@@ -50,9 +85,9 @@ To display the response from a synchronous JS function in a sync widget field, c
 
 ### Asynchronous functions
 
-The word asynchronous means not occurring at the same time. You may sometimes need to fetch data from the server or execute a function with a delay, something you don't want occurring at the current time. Asynchronous function can be specified using the keyword `async`. See [Asynchronous JavaScript Function Settings ](asynchronous-javascript-function-settings.md) for more information.
+The word asynchronous means not occurring at the same time. You may need to fetch data from the server or execute a function with a delay, something you don't want happening at the current time. Asynchronous functions can be specified using the keyword `async`. See [Asynchronous JavaScript Function Settings ](asynchronous-javascript-function-settings.md) for more information.
 
-To display the response from an asynchronous JS function in a sync widget field, you need to retrieve it using the `.data` property as shown below
+To display the response from an asynchronous JS function in a sync widget field, you need to retrieve it using the `.data` property, as shown below:
 
 ```javascript
 {{JS_OBJECT_NAME.FUNCTION_NAME.data}}
@@ -63,7 +98,7 @@ To display the response from an asynchronous JS function in a sync widget field,
 
 ## Use variables for state management
 
-JS Object variables are mutable and can be used to contain the reference to a value. You can use it to store your data in a non-peristent state. As the storage state is non-persistent, the data is saved until the page reloads or until the user closes the window. JSObject variables can be of any data type such as Number, String, Object, Array, Date object, etc. 
+JS Object variables are mutable and can be used to contain the reference to a value. You can use it to store your data in a non-persistent state. As the storage state is non-persistent, the data is saved until the page reloads or until the user closes the window. JSObject variables can be of any data type, such as Number, String, Object, Array, Date object, etc. 
 
 **Example 1:** a counter that increments or decrements the value in a JS Object variable. 
 
@@ -103,35 +138,21 @@ JS Object variables are mutable and can be used to contain the reference to a va
 
 ```javascript
 export default {
-	users: [{name: "a"}, {name: "b"}, {name: "c"}, {name: "d"}],
-	modifyFirstUserName: () ⇒ {
-		this.users[0].name = "Hello"	
-	}
+    users: [{name: "a"}, {name: "b"}, {name: "c"}, {name: "d"}],
+    modifyFirstUserName: () ⇒ {
+        this.users[0].name = "Hello"    
+    }
 }
 ```
 
-
-
 :::info
-Variable mutations can be triggered only using event listeners(async fields). For example, you can't update the variable value using the **Text** property on the Text widget, but you can using the **onClick** event on the Button widget.
+Variable mutations can be triggered only using event listeners(async fields). For example, you can't update the variable value using the **Text** property on the Text widget, but you can use the **onClick** event on the Button widget.
 :::
-
-## JavaScript editor
-
-
-| <div style= {{width:"120px"}}> **Features** </div>   | **Description**                                                                          |
-| ----------------------- | ---------------------------------------------------------------------------------------- |
-| Response tab        | Displays the output generated by the functions defined in a JS Object. |
-| Errors tab          | Displays errors during or after code execution. They can be syntax errors, parsing errors, etc.                                            |
-| Logs tab            | Shows the execution of functions with a timestamp. You can also open the Logs Tab by clicking a debug icon at the bottom right of the console. The Logs tab gives enables you to search for logs  by writing keywords in the **Filter** input box or by selecting the type of log in the **Show All Logs** list                            |
-| Snippets           | Insert ready-to-use code from the Snippets Library.   |
-| Linter      | The JS editor automatically checks your source code for programmatic errors. If the code isn't syntactically correct, it highlights the error using a red wavy lines. You can inspect the error in detail on the **Errors** tab.                     |
-| Debugger | Use debugger statements to pause the execution  or `console.log()` to print debug messages.                                          |
 
 
 ## Debug JS errors
 
-You can use the `debugger` statement or `console.log()` to debug your code and inspect it in the browser console or the **Console** tab. This allows you to inspect the state of your code at that point and step through it line by line to help identify and fix any errors. 
+You can use the `debugger` statement or `console.log()` to debug and inspect your code in the browser console or the **Console** tab. This allows you to check the state of your code and step through it line by line to help identify and fix any errors. 
 
 
 ### With debugger statement
@@ -151,7 +172,7 @@ export default {
         const userInfo = await userDetailsAPI.run();
         debugger; // the execution is paused at this point
         console.log(“user information: “+userInfo); // The value of the userInfo 
-        variable is printed in the Logs tab .
+        variable is printed in the Logs tab.
         return userInfo;
     }
 }
@@ -159,7 +180,7 @@ export default {
 
 ### With console.log()
 
-In addition to using the debugger statement, you can also use `console.log()` to print information about your code to the browser's console. This can be helpful for inspecting the values of variables or the state of your app at different points during the execution of your code. 
+In addition to using the debugger statement, you can use `console.log()` to print information about your code to the browser's console. This can help inspect the values of variables or the state of your app at different points during the execution of your code. 
 
 **Syntax**
 ```
@@ -168,19 +189,30 @@ console.log(<VARIABLE_NAME>);
 
 <VideoEmbed host="youtube" videoId="EYNPm9cJWGw" title="How To Debug JavaScript With Console.log" caption="How To Debug JavaScript With Console.log"/>
 
+## JavaScript editor
+
+
+| <div style= {{width:"120px"}}> **Features** </div>   | **Description**                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
+| Response tab        | Displays the output generated by the functions defined in a JS Object. |
+| Errors tab          | Displays errors during or after code execution. They can be syntax errors, parsing errors, etc.                                            |
+| Logs tab            | Shows the execution of functions with a timestamp. You can also open the Logs Tab by clicking a debug icon at the bottom right of the console. The Logs tab gives enables you to search for logs by writing keywords in the **Filter** input box or by selecting the type of log in the **Show All Logs** list                            |
+| Snippets           | Insert ready-to-use code from the Snippets Library.   |
+| Linter      | The JS editor automatically checks your source code for programmatic errors. If the code isn't syntactically correct, it highlights the error using red wavy lines. You can inspect the error in detail on the **Errors** tab.                     |
+| Debugger | Use debugger statements to pause the execution  or `console.log()` to print debug messages.                                          |
+
+
 ## Write complex code
 
-When you build applications, it’s often more than just a CRUD operation from a single datasource. You might integrate with multiple APIs or want to have the dataset created by querying multiple tables, to traversing data, filtering, or manipulating the response by calling different API. You can write complex logic with ease using JavaScript Editor.
-
-To understand it further, let’s look at a use case and build different workflows.
+When you build applications, it’s often more than just a CRUD operation from a single datasource. You might integrate with multiple APIs or want the dataset created by querying multiple tables to traverse data, filter, or manipulate the response by calling different APIs. You can write complex logic with ease using JavaScript Editor.
 
 ### Use case
 
-You want to create a developer task tracker dashboard, update developer information, and add some permissions like making sure only admins can access the dashboard.
+You want to create a developer task tracker dashboard, update developer information, and add some permissions, like ensuring only admins can access the dashboard.
 
 #### Code workflow
 
-Let’s create a task tracker dashboard that gives you an overview of progress on tasks. You have a query called “_developers_,” which fetches the developers’ information like name, email, etc. You have an API `getAllDeveloperTaskStatus` that gives you a task list with the status for each developer.
+Let’s create a task tracker dashboard that gives you an overview of task progress. You have a query called “_developers_,” which fetches the developers’ information like name, email, etc. You have an API, `getAllDeveloperTaskStatus`, that gives you a task list with the status for each developer.
 
 **Task Tracker**
 
@@ -221,28 +253,28 @@ The `getAllDeveloperTaskStatus` function does the following:
     * Based on task status (TO-DO, In-Progress, and Completed)
   * Generate a response that gives a cumulative task breakup for each task status for each developer
 
-To display the response generated by`getAllDeveloperTaskStatus` we'll bind it to a widget.
+To display the response generated by`getAllDeveloperTaskStatus` bind it to a widget.
 
 * Navigate to `Page` >> Select [`Table`](../../../reference/widgets/table/) widget in Widgets Tab >> Drag it onto the canvas.
 * Select the `Table` Widget on the canvas
-* In the `Property Pane` on right side add the code `{{Utils.getAllDeveloperTaskStatus()}}` in `Table Data` property.
+* In the `Property Pane` on the right side add the code `{{Utils.getAllDeveloperTaskStatus()}}` in the `Table Data` property.
 
  <VideoEmbed host="youtube" videoId="HJGOf5ez4eY" /> 
 
 
-The [table widget](../../../reference/widgets/table/) shows the data as shown in the below screenshot.
+The [table widget](../../../reference/widgets/table/) shows the data in the screenshot below.
 
 ![Display data in a table widget](</img/JavaScript_Editor__Write_Complex_Code__Bind_JS_Function_Response_to_Table_Widget.png>)
 
 **Update Developer Information**
 
-Let’s add another function where you’ll be able to select a developer record and update the information.
+Let’s add another function where you can select a developer record and update the information.
 
 To achieve this, add a new column to the [table widget](../../../reference/widgets/table/) and select the `Column Type` as an `icon button` type that opens a modal window.
 
  <VideoEmbed host="youtube" videoId="H85pm7Ae_U8" /> 
 
-Now that the `Edit` column is added to the table let’s add a modal to fetch the `developer` information like `Name` and `Email`.
+Now that the `Edit` column appears on the table, let’s add a modal to fetch the `developer` information like `Name` and `Email`.
 
  <VideoEmbed host="youtube" videoId="lqC0MzK4s5g" /> 
 
@@ -261,7 +293,7 @@ export default {
             name: devName.text,
             email: devEmail.text,
         }
-        // Run updateDeveloperDetails query		
+        // Run updateDeveloperDetails query     
         updateDeveloperDetails.run(
             // on successful execution of updateDeveloperDetails run developers to fetch updated data 
             async () => {
@@ -269,7 +301,7 @@ export default {
                     closeModal("editModal");
                     showAlert("Developer Details are updated successfully!");
                 },
-                // On Error, close the modal and show an error toast			
+                // On Error, close the modal and show an error toast            
                 (e) => {
                     closeModal("editModal")
                     showAlert("An error occurred while updating the developer details!");
@@ -277,7 +309,7 @@ export default {
                         navigateTo("Page1");
                     }
                 },
-                // Params Object	
+                // Params Object    
                 newUserData)
     }
 }
@@ -285,7 +317,7 @@ export default {
 
 The `updateUserData` function does the following:
 
-* Create the dynamic data that's updated by the user in `editModal` in `newUserData` JSON
+* Create the dynamic data that are updated by the user in `editModal` in `newUserData` JSON
 * Executes query `updateDeveloperDetails`
   * On successful execution of the query:
     * Calls `developers` query to fetch the updated developer details
@@ -299,11 +331,11 @@ Rename the `Confirm` button to `Update` and bind the function `updateUserData` t
 
 ![How to bind function call to an `onClick` event?](</img/JavaScript_Editor__Edit_Modal__Bind_UpdateUser_Function_Call_on_Update_Button.png>)
 
-When you'll hit the `Update` button, the `updateUserData` function gets executed that updates the developer information and refreshes the developer table to fetch the updated information.
+When you hit the `Update` button, the `updateUserData` function gets executed which updates the developer information and refreshes the developer table to fetch the updated information.
 
 **Add Permissions**
 
-As you want only the admins to access the Dashboard, let’s create another function for access control. The function contains a list of users’ emails who have access to update data in the table. Let’s call this function `isAdmin`.
+As you want only the admins to access the dashboard, let’s create another function for access control. The function contains a list of users’ emails who can update data in the table. Let’s call this function `isAdmin`.
 
 Add the code snippet for `isAdmin()` and `adminsList` to the `Utils` JS Object.
 
@@ -325,7 +357,7 @@ export default {
 }
 ```
 
-The final function looks like below:
+The final function looks like the below:
 
 ```
 export default {
@@ -356,7 +388,7 @@ export default {
             name: devName.text,
             email: devEmail.text,
         }
-        // Run updateDeveloperDetails query		
+        // Run updateDeveloperDetails query     
         updateDeveloperDetails.run(
             // on successful execution of updateDeveloperDetails run developers to fetch updated data  
             async () => {
@@ -364,7 +396,7 @@ export default {
                     closeModal("editModal");
                     showAlert("Developer Details are updated successfully!");
                 },
-                // On Error, close the modal and show an error toast		
+                // On Error, close the modal and show an error toast        
                 (e) => {
                     closeModal("editModal")
                     showAlert("An error occurred while updating the developer details!");
@@ -372,7 +404,7 @@ export default {
                         navigateTo("Page1");
                     }
                 },
-                // Params Object	
+                // Params Object    
                 newUserData)
 
     },
@@ -389,13 +421,13 @@ export default {
  <VideoEmbed host="youtube" videoId="cuoUVqzhCMo" /> 
 
 
-Only the users with email added to the `adminList` will be able to access the dashboard and do the updates.
+Only the users with email added to the `adminList` can access the dashboard and do the updates.
 
-With the [Async function settings](asynchronous-javascript-function-settings.md), you can bind the `isAdmin` function to `RUN ON PAGE LOAD`. The execution of `IsAdmin` on Page load ensures the validation of the user’s email against the `adminList` for the logged-in user should happen on the page load. If the logged-in user's email is present in the `adminsList`, the user can access the Dashboard. If not, the user navigates to the access denied page that shows a message 'You don't have permission to access the Dashboard'.
+With the [Async function settings](asynchronous-javascript-function-settings.md), you can bind the `isAdmin` function to `RUN ON PAGE LOAD`. The execution of `IsAdmin` on page load ensures the validation of the user’s email against the `adminList` for the logged-in user should happen on the page load. If the logged-in user's email is in the `adminsList`, the user can access the dashboard. If not, the user navigates to the denied access page with the message 'You don't have permission to access the Dashboard'.
 
 
 ## Current limitations
 
 * You can't use `JS Objects` defined within a page across other pages.
-* You can't define variables and functions outside of `export default { }` declaration. 
+* You can't define variables and functions outside of the `export default { }` declaration. 
 * If a function is async, it means that it returns a promise, so it can't be called on the fields incompatible with the return type, such as the **Text** property of the Text widget. 
