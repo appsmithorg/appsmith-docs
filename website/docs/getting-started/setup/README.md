@@ -30,15 +30,15 @@ See all [installation guides](/getting-started/setup/installation-guides).
 
 ## Self-hosting benefits
 
-Deploying Appsmith on your infrastructure gives complete control over security, updates and scaling your infrastructure as per requirements.
+Deploying Appsmith on your infrastructure gives complete control over security, updates, and scaling your infrastructure as per requirements.
 
 :::info
-The self-hosted version isn't air-gapped and needs internet access to reach Appsmith cloud services (cs.appsmith.com) for a few features to work, such as fetching release notes, more than three private repositories for Git version control, templates, business license validity checks, etc. If you want a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
+Appsmith needs internet access to cs.appsmith.com for Google sheets, release notes, templates, and more to work. For increased security, Appsmith provides an air-gapped version as part of its [Enterprise Edition](https://www.appsmith.com/pricing).
 :::
 
 Installing Appsmith as a self-hosted instance has the following advantages:
 
-- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You can host it on internal networks behind a firewall and also configure [SSL and custom domain](/getting-started/setup/instance-configuration/custom-domain).
+- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You can host it on internal networks behind a firewall and also configure an [SSL and a custom domain](/getting-started/setup/instance-configuration/custom-domain).
 
 - **Local database**: A self-hosted instance allows you to connect to a database running on the same machine/intranet and use it to build apps.
 
