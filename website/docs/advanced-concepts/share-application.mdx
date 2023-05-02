@@ -6,6 +6,14 @@ import TabItem from '@theme/TabItem';
 
 Appsmith allows you to share your application with the end user or with a team member for collaboration. There are multiple ways to share your application in Appsmith. You can either share your workspace or share a specific application.
 
+## Default roles
+
+In Appsmith, there are predefined roles that you can assign to a user for accessing the applications. These roles are predefined and cannot be deleted by the user. There are three default roles:
+
+- Administrator
+- Developer 
+- App Viewer 
+
 ## Share workspace
 
 When you share a workspace with a user, they can access all the applications in that workspace. Follow the steps below to share a workspace:
@@ -14,18 +22,26 @@ When you share a workspace with a user, they can access all the applications in 
 3. In the invite modal, enter the email of the user and select an appropriate role for them.
 3. Click **Invite**.
 
+
 <figure>
   <img src="/img/Share_workspace.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Sharing a workspace</i></figcaption>
 </figure>
 
-## Share application
+### Default roles for workspace
 
-If you are using Appsmith's community edition, inviting a user to an application grants access to the entire workspace.
+The table below shows the permissions available for each role when you share a workspace:
 
-:::info
-Granting access to specific applications in a workspace is only available for the [business edition](https://www.appsmith.com/pricing).
-:::
+|Role           |	<div style= {{width:"150px"}}> Create App </div> | <div style= {{width:"150px"}}> Edit App </div>  |<div style= {{width:"150px"}}> View App </div> |<div style= {{width:"150px"}}> Delete App </div>| <div style= {{width:"150px"}}> Make App Public </div> | <div style= {{width:"150px"}}> Invite Users </div>   | <div style= {{width:"150px"}}> Manage Users </div>  |
+|---------------|-----------------------------------------------|--------------------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
+| Administrator |Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace|Delete any application, page and query inside the workspace |Make any application inside the workspace public  |Invite other users to the workspace |	Manage users in a workspace |
+|Developer      | Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace |Delete any application, page and query inside the workspace|	-             |Invite other users to the workspace |	-             |
+|App Viewer     |	-             |-             |view any application, page & query inside the workspace.|-|           -     |Invite other users to the workspace only as App Viewer |	-|
+
+
+
+## Share application ([business edition](https://www.appsmith.com/pricing))
+
 If you want the user to just have access to a specific application in a workspace, follow the steps below:
 
 1. Open the app you want to share and click **Share** at the top right corner.
@@ -38,33 +54,25 @@ If you want the user to just have access to a specific application in a workspac
 </figure>
 
 
+### Default roles for application
+
+The table below shows the permissions available for each role when you share an application:
+
+|Role           |	<div style= {{width:"150px"}}> Create </div> | <div style= {{width:"150px"}}> Edit </div>  |<div style= {{width:"150px"}}> View </div> |<div style= {{width:"150px"}}> Delete </div>| <div style= {{width:"150px"}}> Make App Public </div> | <div style= {{width:"150px"}}> Invite Users </div>   | <div style= {{width:"150px"}}> Manage Users </div>  |
+|---------------|-----------------------------------------------|--------------------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
+|Developer      | Create pages, datasources and queries inside the app|Edit pages, datasources and queries inside the app|View the app, its pages, datasources and queries. |Delete the app, its pages, datasources and queries|-|Invite other users with an equivalent or a lower role |	-       |
+|App Viewer     |	-              |     -          |View the app and execute actions (Cannot see queries,datasources)|-|           -     |Invite users only as App Viewer |	-|
+
+
 ### Make application public
 
 You can make your applications public and share them with users who are not part of your workspace. These external users do not need to log in to Appsmith to access the shared applications.
 
-To make an application public, you can click on the **Share** button within the application and turn on the **Make application public** switch. Once enabled, a link to the application is displayed in the modal. To share the application, copy the link and share it with your users.
+To make an application public, you can click on the **Share** button within the application and turn on the **Make application public** switch. Once enabled, click **Copy Application URL** to copy the application link and share the application with your users.
 
 :::info
 Only users with Administrator roles can make applications public.
 :::
-
-## Default roles
-
-In Appsmith, there are predefined roles that you can assign to a user for accessing the applications. These roles are predefined and cannot be deleted by the user. There are three default roles:
-
-- Administrator
-- Developer 
-- App Viewer 
-
-The table below shows the permissions available for each role:
-
-|Role           |	<div style= {{width:"90px"}}> Create App </div> | <div style= {{width:"90px"}}> Edit App </div>   |<div style= {{width:"90px"}}> View App </div> | <div style= {{width:"140px"}}> Make App Public </div> | <div style= {{width:"100px"}}> Invite Users </div>   | <div style= {{width:"120px"}}> Manage Users </div>  |
-|---------------|-------------------|------------------|-------------------|-----------------  |-------------------|---------------------|
-| Administrator |	:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark: |:heavy_check_mark: |:heavy_check_mark: |	:heavy_check_mark: |
-|Developer      | :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark: |	:heavy_multiplication_x:              |:heavy_check_mark: |	:heavy_multiplication_x:                |
-|App Viewer     |	:heavy_multiplication_x:               |:heavy_multiplication_x:               |:heavy_check_mark:|           :heavy_multiplication_x:     |:heavy_check_mark: * (only as App Viewer role)|	:heavy_multiplication_x:|
-
-\* *Only as App Viewer role*
 
 ## Further reading
 
