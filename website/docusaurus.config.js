@@ -21,7 +21,7 @@ const config = {
     locales: ['en'],
   },
   plugins: [
-    [
+    process.env.VERCEL_ENV === "production" && [
       '@twilio-labs/docusaurus-plugin-segment',
       {
         writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
