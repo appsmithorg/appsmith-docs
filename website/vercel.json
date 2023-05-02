@@ -287,8 +287,8 @@
       "destination": "advanced-concepts/custom-authentication"
     },
     {
-      "source": "/how-to-guides/how-to-work-with-local-apis-on-appsmith",
-      "destination": "/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"
+      "source": "/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith",
+      "destination": "/how-to-guides/how-to-work-with-local-apis-on-appsmith"
     },
     {
       "source": "/how-to-guides/how-to-use-filters-on-appsmith-table-widget",

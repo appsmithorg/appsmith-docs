@@ -140,7 +140,7 @@ When configuring MongoDB, the default option is to use Connection Mode, and you 
    * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
 
 :::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [Connect via localhost](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [Connect via localhost](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 ## Create queries

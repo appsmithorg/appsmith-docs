@@ -96,7 +96,7 @@ If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.
 
 * [Write queries](/core-concepts/data-access-and-binding/querying-a-database/)
 * [Data Access and Binding](/core-concepts/data-access-and-binding)
-* [Connect to a localhost database/ API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith#using-hostdockerinternal)
+* [Connect to a localhost database/ API](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith)
 
 
 

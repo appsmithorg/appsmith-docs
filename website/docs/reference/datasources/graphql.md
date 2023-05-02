@@ -17,7 +17,7 @@ To add a GraphQL datasource, click the (**+**) sign in the **Explorer** tab next
 </figure>
 
 :::tip
-If you want to connect to a local api, you can use a service like ngrok to expose it. For more information, see [How to connect to local api on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local api, you can use a service like ngrok to expose it. For more information, see [How to connect to local api on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to a GraphQL API endpoint, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
