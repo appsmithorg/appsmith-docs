@@ -21,10 +21,10 @@ With custom roles, you can provide fine-grained access control by configuring mu
 
 To create or edit a role, you need to set up the permissions based on your requirements. The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily. The four categories are:
 
-- Application Resources
-- Datasource and Queries
-- Groups and Roles
-- Others
+- [Application Resources](#application-resources)
+- [Datasource and Queries](#datasource-and-queries)
+- [Groups and Roles](#groups-and-roles)
+- [Others](#others)
 
 
 ### Application resources

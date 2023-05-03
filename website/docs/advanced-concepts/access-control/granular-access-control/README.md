@@ -19,12 +19,11 @@ The image below gives an overview of how GAC works in Appsmith.
 
 ## Users
 
-
 A user is an individual who can access the Appsmith instance, workspaces, or apps and perform authorized actions based on the roles assigned to them. Here are some key points to keep in mind:
 
 - Users can be assigned multiple roles. The permissions a user receives are a combination of the permissions in all the roles assigned to them. For example, if a user has been assigned two roles - "Sales" and "Product," the permissions they receive are a combination of the permissions in both roles.
 - Users can be added to groups, and roles can be assigned to that group. In addition, a user can be assigned a role directly, and the roles assigned to the groups they belong to also apply to them.
-- To manage user roles and permissions, go to **Admin Settings** > **Access Control** > **Users**. It displays a list of all users with their roles and groups assigned to them. You can add a new user to your instance by clicking on **Add Users** at the top right corner of the screen.
+- To manage user roles and permissions, go to **Admin Settings** > **Access Control** > **Users**. It displays a list of all users with their individual roles and groups assigned to them. You can add a new user to your instance by clicking on **Add Users** at the top right corner of the screen.
 
 <figure>
   <img src="/img/GAC_users.png" style= {{width:"auto", height:"auto"}} alt="Add a new Role"/>
@@ -35,19 +34,15 @@ A user is an individual who can access the Appsmith instance, workspaces, or app
 
 ## Groups
 
-A group is a collection of users. Groups let you specify roles for multiple users, making it easier to manage the permissions for those users. You can view the existing groups and the roles mapped to them or create a new group under Admin Settings.
+A group is a collection of users that allows you to assign roles to multiple users at once, simplifying permission management. Here are some important things to know about groups:
 
-To create a new group, open *Admin Settings* > *Access Control* > Groups and click the "**Add group**" button at the top right corner of the screen.
+- You can assign multiple roles to a group, and users can belong to multiple groups.
+- To create a new group, navigate to **Admin Settings** > **Access Control** > **Groups**, and click the **Add group** button in the upper-right corner of the screen.
+- To manage groups and the roles assigned to them, go to **Admin Settings** > **Access Control** > **Groups**. This page shows all the groups, and clicking on one displays the users who are members of the group, along with the roles assigned to them.
 
-![](/img/Groups.png)
+When you share an application or workspace, you can invite a group and assign the desired role to it. This makes it easy to grant permissions to multiple users at once, and you can modify the group's roles to update the permissions for all its members simultaneously.
 
-To view the existing groups and further look at the users and roles assigned to them - 
-1. Click **Groups** under Access Control from the sidebar. You'll see a list of all the groups in your Appsmith instance 
-2. Open the group you want to check. 
-In the roles tab, within the selected group, you can also assign a new role to the group from the "**All Roles**" list.
-
-![](/img/Existing_groups_info.gif)
 
 ## Roles 
 
-Permissions are rules that enable you to control access to a particular resource. However, assigning each permission to a specific user or group can be difficult. Instead, you can use roles to create a set of permissions and assign them to users or groups. This makes it easier to manage multiple permissions at once. Roles allow users to perform certain actions within the system based on the permissions associated with the role. For more information, see [How to configure Roles and Permissions?](/advanced-concepts/access-control/granular-access-control/roles)
+Permissions are rules that enable you to control access to a particular resource. However, assigning each permission to a specific user or group can be difficult. Instead, you can use roles to create a set of permissions and assign them to users or groups. Roles allow users to perform certain actions based on the permissions associated with the role. For more information, see [How to configure Roles and Permissions?](/advanced-concepts/access-control/granular-access-control/roles)
