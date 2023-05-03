@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+toc_max_heading_level: 2
 ---
 
 # Amazon S3
@@ -51,18 +52,6 @@ The return data should look something like this:
 ]
 ```
 
-| **Parameter**                     | **Description**                                                              |
-| --------------------------------- | ---------------------------------------------------------------------------- |
-| **Bucket Name**                   | The name of the S3 bucket to query.    |
-| **Prefix**                        | The directory path whose files you'd like to query. In `sample/path/example.png`, the **Prefix** is `sample/path`. Using the prefix `sample/path` with no filtering returns all files in the `sample/path` directory.     |
-| **Where**                         | Filter conditions to narrow query results based on comparison operators. |
-| **Generate Signed URL**           | Requests an authenticated, user-accessible URL for each file in the response. Users may follow the link in their browser to see the content of the file. The URL expires after the amount of time specified in **Expiry Duration of Signed URL**. |
-| **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
-| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, however it can't be used to access the resource directly, only via API. |
-| **Sort By**                       | Orders the query results in ascending or descending order based on a given key's value. |
-| **Pagination Limit**              | Restricts the number of results returned in the response. |
-| **Pagination Offset**             | Skips a given number of files before returning the further results. |
-
 ---
 
 #### Example
@@ -96,6 +85,22 @@ Create a [Table widget](/reference/widgets/table) called `UserContractsTable` to
 
 Now your Table is ready to page through your S3 `contracts` files, and you can click any button to view the file in a new window.
 
+---
+
+### Parameters
+
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **Prefix**                        | The directory path whose files you'd like to query. In `sample/path/example.png`, the **Prefix** is `sample/path`. Using the prefix `sample/path` with no filtering returns all files in the `sample/path` directory.     |
+| **Where**                         | Filter conditions to narrow query results based on comparison operators. |
+| **Generate Signed URL**           | Requests an authenticated, user-accessible URL for each file in the response. Users may follow the link in their browser to see the content of the file. The URL expires after the amount of time specified in **Expiry Duration of Signed URL**. |
+| **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
+| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, however it can't be used to access the resource directly, only via API. |
+| **Sort By**                       | Orders the query results in ascending or descending order based on a given key's value. |
+| **Pagination Limit**              | Restricts the number of results returned in the response. |
+| **Pagination Offset**             | Skips a given number of files before returning the further results. |
+
 ## Create a new file
 
 This command uploads a new file into the specified bucket, named according to the `File Path` field. Remember to include any necessary directories in the filename as the **Prefix**, e.g. `sample/path/file.png`.
@@ -113,13 +118,6 @@ If you need to send plain text content to S3, send JSON in the **Content** field
 }
 ```
 :::
-
-| **Parameter**                     | **Description**                                                              |
-| --------------------------------- | ---------------------------------------------------------------------------- |
-| **Bucket Name**                   | The name of the S3 bucket to query.    |
-| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
-| **File Data Type**                | Sets the data format to use when sending the file content. |
-| **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
 
 ---
 
@@ -144,6 +142,17 @@ Create your Amazon S3 datasource and a query called `CreateContract` based on it
 
 Now when your run your query, the file you selected is uploaded to your S3 bucket.
 
+---
+
+### Parameters
+
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
+| **File Data Type**                | Sets the data format to use when sending the file content. |
+| **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
+
 ## Read file
 
 This command fetches the content of a file from the bucket. By default, the raw content of the file is returned on the `fileData` property of the response.
@@ -151,12 +160,6 @@ This command fetches the content of a file from the bucket. By default, the raw 
 :::tip
 If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
 :::
-
-| **Parameter**                     | **Description**                                                              |
-| --------------------------------- | ---------------------------------------------------------------------------- |
-| **Bucket Name**                   | The name of the S3 bucket to query.    |
-| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
-| **Base64 Encode File**            | Sets whether Appsmith encodes the incoming file's content into Base64. |
 
 ---
 
@@ -188,16 +191,21 @@ Create your Amazon S3 datasource and a query called `ReadContract` based on it. 
 
 Now when a user clicks the download button in a table row, the associated .pdf is downloaded to their machine.
 
-## Delete file
+---
 
-This command deletes a file from an S3 bucket.
-
-This action returns a message on the `status` property describing the outcome of your query.
+### Parameters
 
 | **Parameter**                     | **Description**                                                              |
 | --------------------------------- | ---------------------------------------------------------------------------- |
 | **Bucket Name**                   | The name of the S3 bucket to query.    |
 | **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
+| **Base64 Encode File**            | Sets whether Appsmith encodes the incoming file's content into Base64. |
+
+## Delete file
+
+This command deletes a file from an S3 bucket.
+
+This action returns a message on the `status` property describing the outcome of your query.
 
 ---
 
@@ -228,6 +236,15 @@ Create your Amazon S3 datasource and a query called `DeleteContract` based on it
   ```
 
 Now when you click the delete button in the table, the corresponding file is deleted from the S3 bucket.
+
+---
+
+### Parameters
+
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
 
 ## Commands
 
