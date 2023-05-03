@@ -6,9 +6,10 @@ Granular Access Control (GAC) is available only in the [business edition](https:
 :::
 
 Granular Access Control can be implemented in Appsmith using the following components:
-- Users
-- Groups 
-- Roles
+- [Users](#users)
+- [Groups](#groups) 
+- [Roles](advanced-concepts/access-control/granular-access-control/roles)
+
 The image below gives an overview of how GAC works in Appsmith.
 
 <figure>
