@@ -13,28 +13,28 @@ This datasource can also be used to connect to any S3-compatible object storage 
 
 ## Connect to Amazon S3
 
+To add an Amazon S3 datasource:
+
+1. Click the (**+**) sign in the **Explorer** tab next to **Datasources**.
+1. On the next screen, select the **S3** button. This creates the datasource and takes you to the datasource's configuration page.
+1. Enter your **Access Key** into the matching field. For **Amazon S3**, you can find this in the AWS Console in the **Security Credentials** section.
+1. Enter your **Secret Key** into the appropriate field. The AWS Console only shows the secret key once, when it is first created. If you don't have your secret key, you may need to [generate a new access key and secret key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+1. Once you've entered your credentials, click the **Test** button to check that they are working.
+1. Click **Save** when you are finished, and your datasource is ready for queries.
+
 <figure>
   <img src="/img/s3-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Amazon S3 datasource." />
   <figcaption align="center"><i>Configuring an Amazon S3 datasource.</i></figcaption>
 </figure>
 
-To add an Amazon S3 datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **S3** button. Your datasource is created and you are taken to a screen to configure its settings.
-
-The S3 Datasource requires the following information to establish a connection:
-
-1. **Access Key**
-2. **Secret Key**
-
-For Amazon S3, you can find your **Access Key** using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). Your **Secret Key** is only shown once, at the time that the access key is created. If you don't have your secret key, you may need to generate a new access key.
-
 ## Create queries
+
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to your object storage by selecting the **+ New Query**  button on the Amazon S3 datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Amazon S3 datasource. You'll be brought to a new query screen where you can write queries.
 
 <figure>
   <img src="/img/s3-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Files query." />
   <figcaption align="center"><i>Configuring a List Files query.</i></figcaption>
 </figure>
-
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to your object storage by selecting the **+ New Query**  button on the Amazon S3 datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Amazon S3 datasource. You'll be brought to a new query screen where you can write queries.
 
 ## List files in bucket
 
