@@ -38,7 +38,7 @@ Appsmith needs internet access to cs.appsmith.com for Google Sheets, release not
 
 Installing Appsmith as a self-hosted instance has the following advantages:
 
-- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You can host it on internal networks behind a firewall and also configure an [SSL and a custom domain](/getting-started/setup/instance-configuration/custom-domain).
+- **Security**: You get to keep your data on-premise. It also ensures that your API keys or security credentials never leave your server and have the same security rules applied to any other app. The applications you build would be on your infrastructure, inside your virtual private networks/VPC. You can host it on internal networks behind a firewall and also configure [SSL and custom domain](/getting-started/setup/instance-configuration/custom-domain).
 
 - **Local database**: A self-hosted instance allows you to connect to a database running on the same machine/intranet and use it to build apps.
 
