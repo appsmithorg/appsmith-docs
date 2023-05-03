@@ -1,16 +1,15 @@
 module.exports = function scarf(context, options) {
-  const { siteConfig } = context;
-  const { themeConfig } = siteConfig;
-  const { scarf = {} } = themeConfig;
-  const { trackingCode, domain } = options;
-
-  if (!trackingCode || !domain) {
-    throw new Error(
-      `You need to specify 'trackingCode' and 'domain' properties in the options object when calling the Scarf plugin.`
-    );
-  }
-
-  if (process.env.VERCEL_ENV === 'production') {
+    const {siteConfig} = context;
+    const {themeConfig} = siteConfig;
+    const {scarf = {}} = themeConfig;
+    const {trackingCode, domain} = options;
+  
+    if (!trackingCode || !domain) {
+      throw new Error(
+        `You need to specify 'trackingCode' and 'domain' properties in the options object when calling the Scarf plugin.`
+      );
+    }
+  
     return {
       name: 'scarf-plugin',
       injectHtmlTags() {
@@ -28,7 +27,5 @@ module.exports = function scarf(context, options) {
         };
       },
     };
-  }
-
-  return {};
-};
+  };
+  
