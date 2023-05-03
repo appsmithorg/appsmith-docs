@@ -2,9 +2,11 @@
 sidebar_position: 2
 ---
 
-# Amazon S3 / Object Storage
+# Amazon S3
 
-This page describes how to connect your application to your Amazon S3 object storage and use queries to manage its content. This datasource can also be used to connect to any S3-compatible object storage provider.
+This page describes how to connect your application to your Amazon S3 object storage and use queries to manage its content.
+
+This datasource can also be used to connect to any S3-compatible object storage provider such as Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, and MinIO.
 
 <VideoEmbed host="youtube" videoId="pmEmQcd9_KA" title="" caption=""/>
 
@@ -15,14 +17,14 @@ This page describes how to connect your application to your Amazon S3 object sto
   <figcaption align="center"><i>Configuring an Amazon S3 datasource.</i></figcaption>
 </figure>
 
-To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
+To add an Amazon S3 datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **S3** button. Your datasource is created and you are taken to a screen to configure its settings.
 
 The S3 Datasource requires the following information to establish a connection:
 
-1. **Amazon Access Key ID**
-2. **Amazon Secret Key**
+1. **Access Key**
+2. **Secret Key**
 
-For Amazon S3, you can find your **Access Key** and **Secret Key** using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+For Amazon S3, you can find your **Access Key** using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey). Your **Secret Key** is only shown once, at the time that the access key is created. If you don't have your secret key, you may need to generate a new access key.
 
 ## Create queries
 
@@ -238,10 +240,10 @@ Now when you click the delete button in the table, the corresponding file is del
 | **Create multiple new files**  | Upload several files to an s3 bucket.                              |
 | **Read file**                  | Download the content of a particular file.                         |
 | **Delete file**                | Delete the file at a given path.                                   |
+| **Delete multiple**            | Delete multiple files by supplying their paths.                    |
 
 ## Further reading
 
 * [Upload files](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
 * [Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3#downloading-files)
 * [Filepicker widget](/reference/widgets/filepicker)
-* [Table widget](/reference/widgets/table)
