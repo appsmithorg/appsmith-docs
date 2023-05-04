@@ -515,7 +515,7 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        'advanced-concepts/share-application',
+        'advanced-concepts/invite-users',
         {
           type: 'category',
           label: 'Granular Access Control',
