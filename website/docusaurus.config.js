@@ -21,7 +21,7 @@ const config = {
     locales: ['en'],
   },
   plugins: [
-    [
+    process.env.VERCEL_ENV === "production" && [
       '@twilio-labs/docusaurus-plugin-segment',
       {
         writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
@@ -184,23 +184,23 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  scripts: [
-    {
-      src:
-        '/scripts/intercomSettings.js',
-      async: false,
-    },
-    {
-      src:
-        '/scripts/smartlook.js',
-      async: false,
-    },    
-    {
-      src:
-        '/scripts/analyticsEvents.js',
-      defer: true,
-    }
-  ],
+    scripts: [
+      ...(process.env.VERCEL_ENV === "production" ? [{
+        src:
+          '/scripts/intercomSettings.js',
+        async: false,
+      },
+      {
+        src:
+          '/scripts/smartlook.js',
+        async: false,
+      },    
+      {
+        src:
+          '/scripts/analyticsEvents.js',
+        defer: true,
+      }] : [])
+    ],
 };
 
 module.exports = config;

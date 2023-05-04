@@ -53,8 +53,14 @@ command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
 ```bash
 command: --schedule "0 0 * ? * *" --label-enable --cleanup
 ```
-* Check for updates once at 12:00 midnight every day:
+* Check for updates once at 12:00 noon every day:
 
 ```bash
 command: --schedule "0 0 12 * * ?" --label-enable --cleanup 
+```
+
+* Check for updates once at midnight every day:
+
+```bash
+command: --schedule "0 0 0 * * ?" --label-enable --cleanup 
 ```
