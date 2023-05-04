@@ -9,9 +9,9 @@ description: >-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Connect to Localhost Databases
+# Connect to Localhost Databases and APIs
 
-This page describes how to connect a database that is hosted locally on the same machine as your Appsmith instance.
+This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
 
 
 <Tabs>
@@ -20,12 +20,12 @@ This page describes how to connect a database that is hosted locally on the same
 
 ## Connect with Docker
 
-By using `host.docker.internal`, you can direct Appsmith's docker container to find your database on its own host machine:
+By using `host.docker.internal`, you can direct Appsmith's docker container to find your database or API on its own host machine:
 
 <VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connect to databases/APIs running on localhost" caption="Connect to databases/APIs running on localhost"/>
 
 :::caution note
-**Linux**: If your containers are running on a Linux machine, start your Appsmith container with the following command line argument to `docker run`. This method is only supported for Docker 20.10.0 and later.
+**Linux**: If your containers are running on a Linux machine, start your Appsmith container with the following command line argument to `docker run`. This is only supported for Docker 20.10.0 and later.
 
 ```bash
 --add-host=host.docker.internal:host-gateway
@@ -43,17 +43,17 @@ services: ...
 
 :::
 
-To connect to your database from Appsmith:
+To connect to your database or API from Appsmith:
 
-1. Ensure that the containers for your Appsmith instance and your database are both running.
+1. Ensure that all of the relevant Docker containers are running.
 
-2. In your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database.
+2. In your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
 
-3. In the **Host Address** field where you'd normally provide the URL for a remote database, instead enter `host.docker.internal`. Otherwise, configure your datasource details as normal.
+3. In the **Host Address** or URL field where you'd normally provide the URL for your datasource, instead enter `host.docker.internal`. Otherwise, configure your datasource details as normal.
 
 4. Click **Test** to verify that the connection is valid.
 
-Your database should now be connected and query-able from within your Appsmith app.
+Your localhost application should now be connected and query-able from within your Appsmith app.
 
 <figure>
   <img src="/img/local_db_config.png" style={{width: "100%", height: "auto"}} alt="Using host.docker.internal" />
@@ -67,7 +67,7 @@ Your database should now be connected and query-able from within your Appsmith a
 
 ## Connect with ngrok
 
-With ngrok, you can expose and connect to your database from the internet via a secure network tunnel:
+With ngrok, you can expose and connect to your database or API from the internet via a secure network tunnel:
 
 <VideoEmbed host="youtube" videoId="IUX2rXmS17E" title="Connect to localhost using ngrok" caption="Connect to localhost using ngrok"/>
 
@@ -75,30 +75,40 @@ With ngrok, you can expose and connect to your database from the internet via a 
 
 Once you are ready to work with ngrok, follow these steps to connect Appsmith to your database:
 
-1. Expose your database container with the ```ngrok``` command within the container's directory:
-
+1. Expose your database or API with the ```ngrok``` command:
   ```
-  ngrok <PROTOCOL> <PORT>
+  ngrok <protocol> <port>
   ```
-  For example, you might use this for PostgreSQL:
+  For example, you might use this for a PostgreSQL database instance:
   ```
   ngrok tcp 5432
   ```
 
 2. When the command completes, ngrok returns you a set of session details including the **Forwarding** address. It should look something like:
+    * For **tcp**:
+    ```
+    tcp://0.tcp.in.ngrok.io:17392
+    ```
+    In this address, `tcp://0.tcp.in.ngrok.io` is the **Host Address** and `17392` is the **Port**.
 
-  ```
-  tcp://0.tcp.in.ngrok.io:17392
-  ```
-  In this address, `tcp://0.tcp.in.ngrok.io` is the **Host Address** and `17392` is the **Port**.
+    * For **http**:
+    ```
+    https://e4da-2600-1700-ede0-5b20-b092-ac43-60a7-178b.ngrok-free.app
+    ```
+    This is simply the URL to use for your API, no port necessary.
 
-3. Back in your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database.
+3. Back in your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
 
-4. Enter the **Host Address** and **Port** that you just got from ngrok, then configure your remaining datasource details as normal.
+4. Enter the URL or **Host Address** & **Port** that you just got from ngrok, then configure your remaining datasource details as normal.
 
 5. Click **Test** to verify that the connection is valid.
 
-Your database should now be connected and query-able from within your Appsmith app.
+Your localhost application should now be connected and query-able from within your Appsmith app.
+
+<figure>
+  <img src="/img/ngrok-config-example.png" style={{width: "100%", height: "auto"}} alt="Connecting via ngrok" />
+  <figcaption align="center"><i>Connecting via ngrok</i></figcaption>
+</figure>
 
  </TabItem>
 </Tabs>
