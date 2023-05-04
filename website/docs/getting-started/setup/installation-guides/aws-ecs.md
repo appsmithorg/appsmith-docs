@@ -3,7 +3,7 @@ description: Deploy Appsmith on the ECS cluster using EC2 instance.
 sidebar_position: 5
 ---
 
-# Amazon Elastic Container Service (ECS) for EC2
+# AWS ECS for EC2
 This page provides steps to install Appsmith on an ECS Cluster using EC2 instances.
 
 ## Prerequisites
@@ -91,7 +91,7 @@ To deploy Appsmith on Amazon ECS, you need to complete the below essential steps
 
   A launch status screen shows the message Service Created. You can view the status of the service by clicking the **View service** button. Your task is present under the **Tasks** tab and shows the status as Running. Use the DNS or the public IP to access Appsmith.
 
-  ## Troubleshooting
+## Troubleshooting
 
   Some common errors that you may face during installation:
 * [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) 
