@@ -204,7 +204,7 @@ Deploy your app for the final time. Once deployed, you can share your deployed a
 3. Select an appropriate role for the user
 4. Share the application's URL with the user
 
-You can also make the application public. In that case, anyone with the URL to the application can view the application without signing in. You can read more about [access control here](/advanced-concepts/access-control).
+You can also make the application public. In that case, anyone with the URL to the application can view the application without signing in. You can read more about [Make applications public](advanced-concepts/invite-users#make-application-public).
 
 ## **What's next**
 
