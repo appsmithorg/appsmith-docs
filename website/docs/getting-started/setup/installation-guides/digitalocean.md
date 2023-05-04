@@ -51,7 +51,7 @@ To use Appsmith, copy the IPv4 address from the settings and open it in a new ta
 ## Updating to the latest Appsmith release
 
 :::caution
-   It's recommended to back up the Appsmith instance before performing an update. For more information, see [How to Create a backup](/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance).
+   It's recommended to back up the Appsmith instance before performing an update. For more information, see [How to Create a backup](/getting-started/setup/instance-management/appsmithctl#backup-instance).
 :::
 
 SSH into your droplet and run the following command:
@@ -60,7 +60,7 @@ SSH into your droplet and run the following command:
 cd /root/appsmith && docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
+If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive. 
 
 ## Troubleshooting
 
