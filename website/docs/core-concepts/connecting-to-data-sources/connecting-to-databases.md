@@ -21,7 +21,7 @@ To connect to a database:
 
 1. On the **Explorer** tab, click the **+** icon next to **Datasources**. 
 2. Choose a database from the list of [datasources](/reference/datasources/) that Appsmith can connect to.
-3. Click on the edit pencil icon next to the default name to rename the datasource.
+3. Click the edit pencil icon next to the default name to rename the datasource.
 4. Provide the configuration details required to connect to the database. You may need to contact your database administrator to whitelist Appsmith cloud.
 5. Click **Test** to verify that Appsmith can connect to the database using the details you provided.
 6. **Save** the datasource. The configuration details aren't saved/updated until the Save button is clicked. When the datasource has been added successfully, a success message appears at the top of the app window. 

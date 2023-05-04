@@ -1,6 +1,6 @@
 # REST APIs
 
-With Appsmith, you can connect to a wide range of tools and platforms. If you want connect to an API or if there isn't a native integration with a datasource on Appsmith, you can connect through the REST API interface. 
+With Appsmith, you can connect to a wide range of tools and platforms. If you want to connect to an API or if there isn't a native integration with a datasource on Appsmith, you can connect through the REST API interface. 
 
 If the API is protected by an authentication mechanism that requires a standard set of headers or parameters that need to be sent with every request, you can save these in a common datasource that can be reused with every request known as Authenticated API datasources.
 
@@ -44,7 +44,7 @@ To create an authenticated API datasource:
 
 1. On the **Explorer** tab, click the **+** icon next to **Datasources**
 2. Select **Authenticated API**.
-3. Click on the edit pencil icon next to the default name to rename the datasource.
+3. Click the edit pencil icon next to the default name to rename the datasource.
 4. Provide the configuration details required to connect to your API.
 
    * [**Name**](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#name):		Specify a name for the API datasource.
