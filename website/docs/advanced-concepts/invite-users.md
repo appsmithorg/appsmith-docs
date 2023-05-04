@@ -7,9 +7,10 @@ Appsmith allows you to share your application with the end user or with a team m
 
 In Appsmith, there are built-in roles that you can assign to a user for accessing the applications: 
 
-- Administrator
-- Developer 
-- App Viewer 
+- **Administrator**
+- **Developer** 
+- **App Viewer** 
+
 These roles are fixed and cannot be changed by users. Each role comes with specific permissions and access levels.
 
 ## Share workspace
