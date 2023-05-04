@@ -3,6 +3,8 @@
 
 Appsmith allows you to share your application with the end user or with a team member for collaboration. There are multiple ways to share your application in Appsmith. You can either share your workspace or share a specific application.
 
+## Built-in roles
+
 In Appsmith, there are built-in roles that you can assign to a user for accessing the applications: 
 
 - **Administrator**
