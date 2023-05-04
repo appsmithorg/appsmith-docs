@@ -3,10 +3,10 @@ Roles in Appsmith are collections of permissions that enable users or groups to 
 
 ## Default roles
 
-Appmith provieds three built-in roles for the application and workspace - **Administrator**, **Developer**, and **App Viewer**. Additonally, there are two instance-level roles - **Default Role for all Users** and **Instance Administrator**. 
+Appmith provides three built-in roles for the application and workspace - **Administrator**, **Developer**, and **App Viewer**. Additonally, there are two instance-level roles - **Default Role for all Users** and **Instance Administrator**. 
 
 - **Default Role For All Users**: this role is responsible for setting the base level of access provided to all users within an instance. This role is editable, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
-- **Instance Administrator**: This role provides a user with permission to modify settings at the instance level in the Admin settings. This includes changing the general settings of the instance, such as authentication, email, custom branding, and other instance settings. The user with this role can also view audit logs and perform granular access control actions. It's important to note that this role has significant control over the instance, so it should only be assigned to trusted users who need these capabilities.
+- **Instance Administrator**: This role provides a user with permission to modify settings at the instance level from the Admin settings. This includes changing the general settings of the instance, such as authentication, email, custom branding, access to view audit logs and granular access control actions. It's important to note that this role has significant control over the instance, so it should only be assigned to trusted users who need these capabilities.
 
 ## Custom role
 
