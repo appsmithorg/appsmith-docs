@@ -8,7 +8,7 @@ Map Chart widget is useful for data visualizations on a map. The visualizations 
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Map chart widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
@@ -16,11 +16,11 @@ These properties allow you to edit the Map chart widget. All these properties ar
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Map type**    | It lets you select the maps of the world or continents to visualize data.                                                                                                                                                                       |
 | **Title**       | Sets the title to be displayed on top of the map chart.                                                                                                                                                                                         |
-| **Visible**     | Controls widget's visibility on the page. When turned off, the widget will not be visible when the app is published                                                                                                                             |
+| **Visible**     | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                                                                             |
 | **Data**        | Information in a specified format (array \<id, value>) is to be displayed on the selected map type. To know what each `id` represents for a map, please refer to this [documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps). |
 | **Show Labels** | When turned on, it shows the labels for each data point on the map chart.                                                                                                                                                                       |
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your Map chart widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
@@ -51,7 +51,7 @@ Style properties allow you to change the look and feel of the widget.
 
 Map chart’s options can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(id, value\\). For each “Map type”, each unique ID represents a fixed region in the map, which can be determined from the [fusion map chart documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps).
 
-The transformation can be performed using JavaScript. So if the data is an array, we can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+The transformation can be performed using JavaScript. So if the data is an array, you can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
 
 ```
 // Query1.data is assumed to be an array here

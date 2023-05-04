@@ -59,6 +59,8 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/kubernetes/README',
                   },
                   items: [
+                    'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                    'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
                     'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
@@ -116,6 +118,7 @@ const sidebars = {
                       },
                       items: [
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
@@ -143,16 +146,16 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/disable-user-signup',
                 {
                   type: 'category',
-                  label: 'SSL & Custom Domain',
+                  label: 'Custom Domain and SSL',
                   link: {
                     type: 'doc',
                     id: 'getting-started/setup/instance-configuration/custom-domain/README',
                   },
                   items: [
+                    'getting-started/setup/instance-configuration/custom-domain/configure-tls',
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
-                'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },
@@ -164,8 +167,9 @@ const sidebars = {
                 id: 'getting-started/setup/instance-management/README',
               },
               items: [
+                'getting-started/setup/instance-management/update-appsmith',
+                'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
-                'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-management/maintenance-window',
               ],
             },
@@ -481,27 +485,34 @@ const sidebars = {
       collapsed: false,
       label: 'Advanced Concepts',
       items: [
-        'advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
+        'advanced-concepts/custom-authentication',
         'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
         {
           type: 'category',
-          label: 'Version Control With Git',
+          label: 'Version Control with Git',
           link: {
             type: 'doc',
             id: 'advanced-concepts/version-control-with-git/README',
           },
           items: [
-            'advanced-concepts/version-control-with-git/connecting-to-git-repository',
-            'advanced-concepts/version-control-with-git/import-from-repository',
-            'advanced-concepts/version-control-with-git/commit-and-push',
+            {
+              type: 'category',
+              label: 'Connect to a Git Repository',
+              link: {
+                type: 'doc',
+                id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository',
+              },
+              items: ['advanced-concepts/version-control-with-git/updating-local-file-path',],
+            },
             'advanced-concepts/version-control-with-git/working-with-branches',
-            'advanced-concepts/version-control-with-git/pull-and-sync',
+            'advanced-concepts/version-control-with-git/commit-and-push',
             'advanced-concepts/version-control-with-git/merging-branches',
-            'advanced-concepts/version-control-with-git/disconnect-the-git-repository',
-            'advanced-concepts/version-control-with-git/updating-local-file-path',
+            'advanced-concepts/version-control-with-git/revert-changes',
+            'advanced-concepts/version-control-with-git/import-from-repository',
+            'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
         {
@@ -598,9 +609,7 @@ const sidebars = {
             'learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
-            'learning-and-resources/how-to-guides/use-git-to-create-different-environments',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
-
           ],
         },
         'learning-and-resources/sample-apps',

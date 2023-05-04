@@ -1,5 +1,5 @@
 ---
-description: Deploy Appsmith on ECS cluster using EC2 instance.
+description: Deploy Appsmith on the ECS cluster using EC2 instance.
 sidebar_position: 5
 ---
 
@@ -27,7 +27,7 @@ If you already have an existing security group with ports 80, 443, 22, and 9001 
 
 Appsmith is a web application that requires ports 80 and 443 for HTTP access, port 22 to be accessible for SSH access, it also requires port 9001 to be accessible for the [supervisord UI](http://supervisord.org/running.html). Please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) to create a new security group.
 
-While creating the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, 22 and 9001 accessible from anywhere.
+While creating the new security group, please follow the steps [detailed here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to edit the "Inbound Rules" and make ports 80, 443, 22, and 9001 accessible from anywhere.
 
 ***
 
@@ -83,7 +83,7 @@ While creating the new security group, please follow the steps [detailed here](h
 
 Once the cluster is created, you need to create a task that runs on the cluster created in [**Step 1**](#step-1-create-an-ecs-cluster).
 
-1. On the sidebar, choose Task Definitions and select Create new Task Definition.
+1. On the sidebar, choose Task Definitions and select Create a new Task Definition.
 2. Choose EC2 as the launch type, and proceed to the next step.
 3. Configure task and definition
    1. Enter the task definition name.
@@ -97,22 +97,22 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 5. Set the required task size (memory & CPU)
 
 6. Go to the **Volumes** section and add a new volume. To persist data on the Appsmith installation you have two options.
-    1. Bind mount directory on the host ec2 instance. The data is tied to the lifecycle of the host ec2 instance/ecs cluster. Enter the Name as `appsmith_stack`, set Volume type as **Bind Mount,** and set the **Source path** to `/Appsmith/stacks`.
+    1. Bind the mount directory on the host ec2 instance. The data is tied to the lifecycle of the host ec2 instance/ECS cluster. Enter the Name as `appsmith_stack`, set the Volume type as **Bind Mount,** and set the **Source path** to `/Appsmith/stacks`.
       ![Bind Mount Volume Configuration](/img/ecs\_volume.png)
-    2. Amazon EFS volumes- The data is independent of the lifecycle of the host ec2 instance/ecs cluster.
+    2. Amazon EFS volumes- The data is independent of the lifecycle of the host ec2 instance/ECS cluster.
 
         1. Create an EFS filesystem by following the steps below:
             1. Navigate to AWS EFS on the console and hit the Create button.
             2. Set the parameters like VPC (should be the same as the ECS cluster) and storage class as suiting your requirement.
-            3. Click on the EFS created and navigate to the Network tab to ensure mount-target is created in the same availability-zone as that of the ECS cluster.
+            3. Click the EFS created and navigate to the Network tab to ensure the mount target is created in the same availability zone as that of the ECS cluster.
             4. Create a new security group to allow inbound and outbound NFS traffic.
-            5. Attach the security group to the ECS cluster and the EFS mount-target.
+            5. Attach the security group to the ECS cluster and the EFS mount target.
 
-        2. Enter the Name as `appsmith_stack`, set Volume type as **EFS** and set the **File System ID** to the EFS filesystem created in the prequisite step. Leave the remaining fields with the default values.
+        2. Enter the Name as `appsmith_stack`, set the Volume type as **EFS,** and set the **File System ID** to the EFS filesystem created in the [prerequisites](#prerequisites) step. Leave the remaining fields with the default values.
 
           ![EFS Volume Configuration](/img/ecs-efs.png)
 
-7. Configure **Appsmith container**.
+7. Configure the **Appsmith container**.
     1. Click the **Add container** button.
     2. Enter the container name, and set the Image to `appsmith/appsmith-ce`
     3. Add port mappings for the ports **80->80,443->443**
@@ -120,16 +120,12 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
       ![Storage Setting](/img/ecs\_mount_(1).png)
 
-    5. You can configure the Environment Values for the Appsmith in the Environment Section. For sensitive values it's recommended you create secrets and set the `env` value using the ValueFrom option by specifying the `arn` of the secret created. You can either add the Appsmith Business Edition License Key as plain text to the `APPSMITH_LICENSE_KEY` variable or create a new secret for it and add that secret into the field. For more information, see [How to create a new secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) on Amazon official documentation.
-
-      ![Container Environment](/img/ecs-container-env.png)
-
-    7. Enable auto-configure CloudWatch Logs for log configuration.
-    8. Hit **Add.**
+    5. Enable auto-configure CloudWatch Logs for log configuration.
+    6. Hit **Add.**
 
       ![Container Port Configuration](/img/ecs-task-appsmith_(1)_(1)_(1)_(2).png)
 
-    9. Finally, hit the **Create** button.
+    7. Finally, hit the **Create** button.
 
 ### Step 3: Create and run an ECS service
 
@@ -170,7 +166,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 
 ![Service Detail Page](/img/ecs-service-task-status.png)
 
-9. Click on the **task** to get the details of your running service.
+9. Click the **task** to get the details of your running service.
 
 ![Task Dashboard](/img/spaces\_-Lzuzdhj8LjrQPaeyCxr-3757176148\_uploads\_git-blob-0e04e6250702a263e7398969ee75be5b82a4f1f4\_ecs-task-details.png)
 
@@ -189,7 +185,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 ## Update Appsmith
 
 :::caution
-   It's recommended to backup the Appsmith instance before performing an update. For more information, see [How to create a backup](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#backup-appsmith-instance).
+   It's recommended to backup the Appsmith instance before performing an update. For more information, see [How to create a backup](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#backup-instance).
 :::
 
 1. Navigate to the ECS cluster from the ECS dashboard.
@@ -197,7 +193,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
 3. On the Task Page, hit the stop button.
 4. Wait until the new task is deployed automatically.
 
-If you have updated your Appsmith instance and face any issues. You can rollback the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-appsmith-instance) from a backup archive. 
+If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive. 
 
 ## Troubleshooting
 

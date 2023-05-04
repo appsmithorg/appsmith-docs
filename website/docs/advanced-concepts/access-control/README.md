@@ -41,9 +41,9 @@ Appsmith implements **RBAC** by assigning a set of permissions to different user
 * **Invite Users:** This permission allows users to invite others with a role equal to or lower than theirs.
 * **Manage Users.** This permission allows users to delete users from a workspace.
 
-## Public Apps
+## Public apps
 
-Applications can be made public and shared with external users not part of your workspace as well. These applications will not require users to authenticate to use them. An app can be made public by clicking the share button from within the application and turning the public application switch on. To share the application, copy the link shown in the modal and share it with your users!
+Applications can be made public and shared with external users not part of your workspace as well. These applications don't require users to authenticate to use them. An app can be made public by clicking the share button from within the application and turning the public application switch on. To share the application, copy the link shown in the Modal and share it with your users.
 
 :::tip
 Only Administrators can make applications public.

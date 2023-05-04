@@ -6,7 +6,7 @@ sidebar_position: 2
 
 This document presumes you are familiar with the [core concepts](core-concepts/connecting-to-data-sources/README.md) of Appsmith and expands upon using Appsmith in real-world scenarios.
 
-## Guide Reference
+## Guide reference
 
 1. [OAuth2 authorization for Google Sheets](oauth2-authorization-for-google-sheets.md)
 2. [Uploading a file to S3](how-to-upload-to-s3.md)
@@ -20,4 +20,4 @@ This document presumes you are familiar with the [core concepts](core-concepts/c
 10. [How to use Redshift as a Data Source on Appsmith](use-redshift-as-data-source-on-appsmith.md)
 11. [How to use ElasticSearch as a data source on Appsmith](how-to-use-elasticsearch-as-a-data-source-on-appsmith.md)
 12. [How to use JS objects within Appsmith?](how-to-use-js-object-within-appsmith.md)
-13. [Use Git to Create Different Environments](/learning-and-resources/how-to-guides/use-git-to-create-different-environments)
+13. [Custom Authentication](/advanced-concepts/custom-authentication)

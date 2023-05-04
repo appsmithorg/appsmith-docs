@@ -3,18 +3,18 @@ sidebar_position: 6
 description: Audit logs allow you to keep records of everything that happens on your instance.
 ---
 
-# Audit logs
+# Audit Logs
 
 The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events.
 
 
 :::info
-Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
+Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith. They're retained in the database for a period of 1 year.
 :::
 
 ![Access the Audit Logs from the Admin Settings page.](</img/as_auditlogs.png>)
 
-You can find audit logs by navigating to your [Admin Settings](./../../getting-started/setup/instance-configuration/admin-settings) page, and finding the **Audit Logs** tab under the **Others** heading. From here, you can see all the events that have been tracked under your organization's account, along with the user, date, and time that the event was logged. Click the arrow next to any event to expand it and see its complete set of details in JSON form.
+You can find audit logs by navigating to your [Admin Settings](/getting-started/setup/instance-configuration/) page and finding the **Audit Logs** tab under the **Others** heading. From here, you can see all the events that have been tracked under your organization's account, along with the user, date, and time that the event was logged. Click the arrow next to any event to expand it and see its complete set of details in JSON form.
 
 There are several kinds of events that are logged:
 
@@ -85,7 +85,7 @@ Below is an example of a log item:
 Active workspaces generate thousands of log events. To help you quickly find the log you're looking for, Appsmith offers a number of search filters:
 
 <figure>
-    <object data="https://www.youtube.com/embed/KIIHDeTJuaY" width='750px' height='400px'></object> 
+    <object data="https://www.youtube.com/embed/KIIHDeTJuaY" width='100%' height='400px'></object> 
     <figcaption align = "center"><i>Use filters to find specific types of log records 
     </i></figcaption>
 </figure>
@@ -130,3 +130,19 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **user.invited** | Logged when someone invites another user to the app or workspace. |
 | **user.signed_up** | Logged when a new user logs in for the first time. |
 | **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration. |
+| **role.created** | Logged when a new role is created in granular access controls. |
+| **role.updated** | Logged when a role configuration is updated in granular access controls. |
+| **role.deleted** | Logged when a role is deleted from granular access controls. |
+| **role.assigned_users** | Logged when a role is assigned to users. |
+| **role.unassigned_users** | Logged when a role is unassigned from users. |
+| **role.assigned_groups** | Logged when a role is assigned to user groups. |
+| **role.unassigned_groups** | Logged when a role is unassigned from user groups. |
+| **group.created** | Logged when new group is created in granular access controls. |
+| **group.updated** | Logged when a group's information is updated in granular access controls. |
+| **group.deleted** | Logged when a group is deleted from granular access controls. |
+| **group.invite_users** | Logged when users are added to a user group. |
+| **group.remove_users** | Logged when users are removed from a user group. |
+
+
+### Export
+Users can export audit logs by either querying or exporting the `auditLog` collection from MongoDB on the Appsmith instance. The user would need to have root access to the Appsmith deployment to perform this action.

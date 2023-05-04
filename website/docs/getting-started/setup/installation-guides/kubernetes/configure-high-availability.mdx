@@ -1,0 +1,171 @@
+---
+description: Follow these steps to configure high availability for Appsmith on Kubernetes.
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configure High Availability and Scalability
+The High availability and scalability features of Kubernetes ensure continuous access to your applications. This page shows how to set up high availability and scalability for Appsmith.
+
+:::info
+High Availability is only available on Kubernetes self-hosted [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
+:::
+
+## Prerequisites
+  1. Ensure you have at least 2 GB of free storage space for backup and update tasks.
+  2. You can create a backup of the Appsmith instance before a manual update. For more information, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) (_Recommended_)
+
+  3. Install `metrics-server`, which provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods.
+
+   ```bash
+    kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+   ```
+
+  4. Enable PostgreSQL or configure an external PostgreSQL in the `applicationConfig` section in `values.yaml`.
+
+      * Configure the parameters to enable PostgreSQL as shown below:
+
+      ```yaml
+            # enable PostgreSQL
+            postgresql:
+            #highlight-next-line
+                enabled: true
+                auth:
+                  username: root
+      ```
+
+      * **Or** configure the parameters to point to an external PostgreSQL as shown below:
+    
+      ```yaml
+        # configure an external PostgreSQL
+        applicationConfig::
+          APPSMITH_KEYCLOAK_DB_DRIVER: "postgresql"
+          APPSMITH_KEYCLOAK_DB_USERNAME: "<POSTGRES_USER>"
+          APPSMITH_KEYCLOAK_DB_PASSWORD: "<POSTGRES_PASSWORD>"
+          APPSMITH_KEYCLOAK_DB_URL: "<POSTGRES_DB_URL>"
+      ```
+
+  5.  Enable MongoDB or configure an external MongoDB in the `applicationConfig` in `values.yaml`.
+
+      * Configure the parameters to enable MongoDB as shown below:
+
+        ```yaml
+          # enable MongoDB
+          mongodb:
+            #highlight-next-line
+            enabled: true
+            service:
+              nameOverride: appsmith-mongodb
+        ```
+    
+      * **Or** configure the parameters to point to an external MongoDB as shown below:
+
+        ```yaml
+        # configure an external MongoDB
+          applicationConfig::
+            #highlight-next-line
+            APPSMITH_MONGODB_URI: "<MONGODB_URI>"
+        ```
+
+## Configure instance
+Follow these steps to configure auto scaling for your instance:
+
+1. Enable `autoscaling` in the `values.yaml` as shown below:
+
+   ```yaml
+        autoscaling:
+          # highlight-next-line
+          enabled: true
+          minReplicas: 2
+          maxReplicas: 2
+   ```
+
+2. Follow the steps below to create a shared file system:
+
+<Tabs groupId="configurations" queryString="current-configuration">
+  <TabItem label="AWS EKS" value="AWSEKS">
+
+The [Amazon EFS Container Storage Interface (CSI)](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) driver is a plugin for Kubernetes that allows you to mount [Amazon Elastic File System (EFS)](https://aws.amazon.com/efs/) on your Kubernetes pods. This enables you to create a shared file system on Kubernetes by mounting an EFS file system on the pods in your cluster. You can follow the instructions provided in the official [EFS CSI driver documentation](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to mount EFS on your Kubernetes pods.
+
+</TabItem>
+</Tabs>
+
+3. Follow the steps below to configure persistence:
+
+<Tabs groupId="configurations" queryString="current-configuration">
+  <TabItem label="AWS EKS" value="AWSEKS">
+
+You can configure EFS using a new [Persistent Volume Claim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) or existing PVC.
+
+  a. Using new PVC: this is useful when you don't have any existing PVC available or if you want to dedicate a specific PVC solely for EFS. Once the PVC is created, update the `values.yaml` file under the `persistence` attribute as shown below:
+
+  ```yaml
+    existingClaim:
+      enabled: false
+      name: 
+      claimName: 
+    efs:
+      # highlight-next-line
+      enabled: true
+      driver: efs.csi.aws.com
+      # highlight-next-line
+      volumeHandle: <FILE_SYSTEM_ID>
+  ```
+
+  b. Using existing PVC: this is useful if you already have a PVC that you want to reuse for EFS or if you have multiple deployments or pods that need access to the same EFS volume. Update the `values.yaml` file under the `persistence` attribute as shown below:
+
+  ```yaml
+  existingClaim:
+      # highlight-next-line
+      enabled: true
+      name: efsappsmith
+      claimName: efsappsmith
+    efs:
+      enabled: true
+      driver: efs.csi.aws.com
+      # highlight-next-line
+      volumeHandle: <FILE_SYSTEM_ID>
+  ```
+
+</TabItem>
+<TabItem label="Minikube" value="Minikube">
+   
+  To configure persistence in Minikube, update the `values.yaml` file under the `persistence` attribute as shown below.
+
+  ```yaml
+    localCluster:
+      - minikube
+    ## @param persistence.accessModes PV Access Mode
+    ##
+    accessModes:
+      - ReadWriteMany
+    ## @param persistence.size PVC Storage Request
+    ##
+    size: 10Gi
+    ## Fine tuning for volumeClaimTemplates
+    ##
+    existingClaim:
+      # highlight-next-line
+      enabled: false
+      name:
+      claimName:
+    ReclaimPolicy: Retain
+    efs:
+      # highlight-next-line
+      enabled: false
+      driver: 
+      volumeHandle:
+  ```
+
+</TabItem>
+</Tabs>
+
+## Troubleshooting
+If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) section. 
+
+If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+
+## Further reading
+* [Publish Appsmith on the Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
+* [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-helm-installations)
+* [Manage Appsmith instance](/getting-started/setup/instance-management/)

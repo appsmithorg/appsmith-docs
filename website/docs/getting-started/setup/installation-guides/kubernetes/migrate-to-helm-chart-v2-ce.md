@@ -2,7 +2,7 @@
 description: Migrate to the Appsmith Community Edition using Helm chart v2.
 ---
 
-# Migrate to Helm Chart v2 (CE)
+# Migrate to Community Edition Helm Chart v2
 To migrate to the Community Edition running on Helm chart v2 (helm.appsmith.com), follow the instructions in the guide below. Helm chart v2 includes the Horizontal Pod Auto Scaling (HPA) feature, which allows the Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
@@ -14,7 +14,7 @@ Take a backup using the [`appsmithctl backup`](/getting-started/setup/instance-m
    kubectl exec -it appsmith-0 -n <NAMESPACE> appsmithctl backup
    ```
 
-2. Copy the backup to local disk. The actual backup file's name should be available in the output of the previous step.
+2. Copy the backup to the local disk. The actual backup file's name should be available in the output of the previous step.
 
    ```bash
    kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz <APPSMITH_BACKUP_GENERATED_NAME>.tar.gz
@@ -48,7 +48,7 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
    TEST SUITE: None
    ```
 
-2. In the earlier version of Appsmith, MongoDB and Redis instances were all running within the same container. However, with the v2 Helm chart, you now have the option to run these in separate containers. If you wish to do so, you can modify the values for Redis and MongoDB parameters in the `values.yaml` file as shown below:
+2. In the earlier version of Appsmith, MongoDB, and Redis instances were all running within the same container. However, with the v2 Helm chart, you now have the option to run these in separate containers. If you wish to do so, you can modify the values for Redis and MongoDB parameters in the `values.yaml` file as shown below:
 
    1. Run the below command to see the parameter configuration in `values.yaml` file.
 
@@ -85,6 +85,10 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
       ```
 
 3. Run the below command to install Appsmith:
+
+ :::caution Attention
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+ :::
 
    ```bash
    helm install appsmith/appsmith --generate-name --version 2.0.0 

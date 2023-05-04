@@ -105,7 +105,7 @@ You can modify the layout of your embedded code directly from within your Appsmi
 <VideoEmbed host="youtube" videoId="qACSzNMsdKA" title="Modifying layout" caption="Modifying layout"/>
 
 * To change the layout, open the `app settings`.
-* Click on `Share & Embed`.
+* Click `Share & Embed`.
 * Update the Embed size as desired.
 * Copy the updated embed code.
 
@@ -130,8 +130,8 @@ You can remove the Appsmith top bar with page tabs by appending **`?embed=true`*
 
 ![Remove Appsmith top bar](/img/embed_apps.png)
 
-* Click on `App settings` in the Canvas properties.
-* Click on `Share & Embed`.
+* Click `App settings` in the Canvas properties.
+* Click `Share & Embed`.
 * Toggle `Show navigation bar`.
 * Copy the updated embed code.
 
@@ -173,6 +173,7 @@ To configure Appsmith to use SSO, you can append the below parameters (based on 
 * Firefox has additional third-party cookie restrictions that may cause issues with private embeds.
 * Users may see issues when strict third-party cookie sharing restrictions are enabled on the browser. 
 * SSO in private embeds isn't supported for GitHub OAuth 2.0.
+* For Google OAuth 2.0 configuration, the parent and child can be two OAuth 2.0 clients under the same project.
 
 
 ### Further reading

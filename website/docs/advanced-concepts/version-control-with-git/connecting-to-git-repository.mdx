@@ -1,0 +1,73 @@
+---
+sidebar_position: 1
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Connect Git Repository
+
+The first step to using version control in Appsmith is to connect your remote repository with the app. Please follow the steps given below:
+
+### Prerequisites
+
+Create a new repository on your Git hosting service and copy the `SSH URL`. The repository shouldn't contain any files.
+
+:::info
+Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+:::
+
+### Generate a deploy key
+
+1. Open the Appsmith app you want to connect to Git and click the **Connect Git** button on the left of the bottom bar.
+2. In the Git connection Modal, paste your repository’s `SSH URL` and click the **Generate Key** button to generate an SSH key.
+
+    ![Click to generate deploy key](/img/generate_deploy_key.png)
+
+3. Pick the key that's compatible with your Git hosting service. Appsmith supports two types of keys -  **ECDSA 256** and **RSA 4096**. To select a key, Click **︙** icon and select the desired key.
+4. Copy the **SSH key**.
+
+## Add the deploy key in the Repository
+ 
+<Tabs queryString="version-control">
+<TabItem label="GitHub" value="github">
+
+1. In your repository, go to the **Settings** tab.
+2. On the navigation bar, under **Security**, click **Deploy Keys**. 
+3. Click **Add deploy key**. Add a title for the key and paste the generated `SSH key` in the **Key** input box.
+4. Select the **Allow write access** checkbox.
+5. Click **Add key**.
+
+</TabItem>
+<TabItem label="GitLab" value="gitlab">
+
+1. Open your repository and from the sidebar, go to the **Settings** > **Repository** and expand the **Deploy keys** section.
+2. Click **Add key**. Add the title and paste the generated key in the key section.
+3. Enable the **Grant write permissions to this key** checkbox 
+4. Click **Add key**.
+
+</TabItem>
+<TabItem label="Bitbucket" value="bitbucket">
+
+1. Open **Personal Bitbucket settings** from the top right corner and under security go to **SSH keys**.
+2. Click **Add key**, add the label and paste the generated key in the **Key** input box.
+
+</TabItem>
+<TabItem label="Azure" value="azure">
+
+1. Go to **User Settings** from the top right corner and open **SSH public keys**.
+2. Click **+ New key**, add the key name and paste the generated `RSA 4096` key in the **Public Key Data** input box.
+
+</TabItem>
+</Tabs>
+
+## Complete Git setup
+
+Go back to Git connection Modal in Appsmith and click **Connect**, it may take some time and when the connection is successful, the app is added to your repository by system generated commit.
+
+:::info
+For self-hosted instances, to maintain the Git repositories, please [update the local file path](/advanced-concepts/version-control-with-git/updating-local-file-path).
+:::
+
+## Further reading
+
+[Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)

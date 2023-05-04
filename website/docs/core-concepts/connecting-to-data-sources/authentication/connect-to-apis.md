@@ -4,11 +4,11 @@ description: You can hit any REST endpoint available on the public internet
 
 # Configuring APIs
 
-Configuring APIs involves setting up and managing the REST API requests that allow it to function effectively. This can include adding requests details, sending parameters, setting up authentication, and choosing custom settings. 
+Configuring APIs involves setting up and managing the REST API requests that allow it to function effectively. This can include adding request details, sending parameters, setting up authentication, and choosing custom settings. 
 
 ## API pane
 
-The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and provide a way to create API requests and add request details such as headers, parameters and body data.
+The API pane is a user-friendly interface for creating and managing RESTful APIs. It supports all standard [REST HTTP methods](https://www.w3schools.in/restful-web-services/rest-methods) and provides a way to create API requests and add request details such as headers, parameters, and body data.
 
 ![](</img/create_api_(1).gif>)
 
@@ -33,7 +33,11 @@ The URL Path provides a way to access the API and its functions. To use this fie
 
 ### Headers
 
-Headers contain meta-data about the operation and may be required to be sent along with an REST API request.
+Headers in a REST API request contain meta-data about the operation and may be required to be sent along with the request, while response headers contain meta-data about the response from the server. To read the response headers of an API request, you can use the code block as shown below for `API1`.
+
+```javascript
+{{API1.responseMeta.headers}}
+```
 
 ### Params
 
@@ -51,11 +55,11 @@ Pagination refers to the process of receiving portions of a huge dataset until y
 
 
 #### Paginate with table page number
-Allows you to paginate the results of an API query using a table page number. To use this feature, you need to configure table and request parameters.
+Allows you to paginate the results of an API query using a table page number. To use this feature, you need to configure the table and request parameters.
 
 This can be done by setting up request parameters to control the table's pagination. This may involve mapping a key like "**pageNo**" to the table's page number property.
 
-Example - Map key pageNo or similar to value
+Example - Map key `pageNo` or similar to value
 ```{{UsersTable.pageNo}}``` 
 
 However, in certain cases, it may be beneficial to configure limit and offset properties. For example, 
@@ -67,7 +71,7 @@ offset = {{UsersTable.pageOffset}}
 
 #### Paginate with response URL
 
-A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. This can be done by adding **Previous** and **Next URL** in the Pagination section. 
+A response URL is a special type of URL that's returned in the API response and can be used to request the next or previous page of results. This can be done by adding the **Previous** and the **Next URL** in the Pagination section. 
 
 For example, when using the Appsmith mock API, a JSON response is returned that contains the `next` and `previous` keys. These keys can be used to configure pagination properties, such as ```{{Api.data.next}}``` and ```{{Api.data.previous}}```. You can validate your configuration by clicking the "test" button.
 
@@ -75,19 +79,18 @@ For example, when using the Appsmith mock API, a JSON response is returned that 
 Authentication refers to the process of verifying the identity of a client or user making a request to the API. This is typically done by requiring the client or user to provide a set of credentials, such as a username and password, which can be checked against a database of authorized users or a third-party authentication service.
 
 To save the URL of a REST API as a data source and access its authentication settings, you can simply click the 
-`SAVE AS DATASOURCE` button and save the API query as a [authenticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
+`SAVE AS DATASOURCE` button and save the API query as an [authenticated API datasource](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#configure-authenticated-api-datasource). 
 
 
 ### Settings
 
 To access and configure settings for a query, click the Settings tab on the Appsmith Query Editor. Some options available in the Query Settings Pane include Run on Page Load and others. For more information, see [Query Settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
 
-The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options, or to control the behavior of the API as a whole.
+The settings tab allows you to modify the parameters and settings for API queries. These may include various options that can be included in API requests to specify certain filters or options or to control the behavior of the API as a whole.
 
 
 ## Troubleshooting
-Are you having trouble configuring APIs? check out the [REST API Errors](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors) or reach out on [Discord](https://discord.com/invite/rBTTVJp) to get support or ask questions on the [community forum](https://community.appsmith.com/).
-
+If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
 

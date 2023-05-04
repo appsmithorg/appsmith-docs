@@ -103,41 +103,6 @@ The example below shows how to restructure an invalid code block using **IIFE**.
 #### JS Objects
 JS Objects stores a collection of variables and functions, and you can use it to write reusable code in Appsmith. With it, you can manipulate data, handle events, perform advanced operations, write complex logic and invoke them anywhere within the application where it's defined. You can create JS Objects in the JavaScript Editor. For more information, see [JS Objects](/core-concepts/writing-code/javascript-editor-beta).
 
-
-## Update widgets programmatically
-
-When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically.
-
-Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
-
-**Examples**
-
-Suppose you have two Input widgets named `Input1` and `Input 2`. 
-
-This example shows how to update `Input2` with the value entered in `Input1`. Paste the following code in the `Default Value` property of Input2.
-
-```javascript
-{{Input1.text}}
-```
-
-Enter a value in `Input1` and see how the value updates in `Input2`.
-
----
-Suppose you have two input widgets and one button widget named `Input1`, `Input2`, and `Button1`, respectively. This example shows how to update `Input2` with the value in `Input1` on the button click. Here, the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is used.
-
-Paste the following code in the `onClick` event of `Button1`. 
-
-```javascript
-{{storeValue('inputData',Input1.text)}}
-```
-
-Paste the following code in the `Default Value` property of Input2.
-```javascript
-{{appsmith.store.inputData}}
-```
-
-Enter a value in `Input1`. On button click, the value updates in `Input2`.
-
 ## Further reading
 
 * [Creating Workflows](/core-concepts/writing-code/workflows)

@@ -6,40 +6,34 @@ import TabItem from '@theme/TabItem';
 
 # Docker
 
-Follow the steps listed below to upgrade your Community Edition (CE) to a Business Edition (BE) installed on docker.
+Follow the steps listed below to upgrade your Appsmith Community Edition (CE) to a Appsmith Business Edition (BE) installed on docker.
 
-## Step 1: Database backup
+## Generate license key
 
-The Community and Business editions use MongoDB, so you don't have to migrate the database. It's still recommended to [backup the Community Edition MongoDB](/getting-started/setup/instance-management/appsmithctl#export-database).
+Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 
-> Ensure that you backup the database with the docker instance **up** and **running**.
+## Backup data
 
-## Step 2: Update image
+The Community and Business editions use MongoDB, so you don't have to migrate the database. It's still recommended to [backup the Community Edition data](/getting-started/setup/instance-management/appsmithctl#backup). Ensure that you backup the database with the docker instance up and running.
 
-If you are using `docker run`, head to [Step 4: Recreate the instance](#step-4-recreate-the-instance).
+## Update image
+
+If you are using `docker run`, head to [Step 4: Recreate the instance](#recreate-the-instance).
 
 Go to the directory where the `docker-compose.yml` file is located. Open the `docker-compose.yml` file, and look for the `image:` key. Update the image in the `docker-compose.yml` file from Community Edition (_appsmith-ce_) to Business Edition (_appsmith-ee_). 
 
 The updated file should have the image attribute set as below and save the file:
 
- ``` yaml
+``` yaml
   services:
     appsmith:
     #highlight-next-line
       image: index.docker.io/appsmith/appsmith-ee
 ```
 
-## Step 3: Add or replace license key
+## Recreate the instance
 
-Go to the directory `stacks/configuration` and open the `docker.env` file. Add/replace the Business Edition license key and save the file.
-
-```bash
-APPSMITH_LICENSE_KEY=<ENTER_THE_LICENSE_KEY>
-```
-
-## Step 4: Recreate the instance
-
-<Tabs groupId="dockercommands">
+<Tabs groupId="dockercommands" queryString="current-docker-command">
  <TabItem label="Docker Compose" value="using-docker-compose-command">
  You can recreate the instance by running the below command:
 
@@ -59,7 +53,7 @@ docker-compose restart appsmith
 You have successfully upgraded the docker instance to the Business Edition. Once the container is up and running, you can verify that the business image (_appsmith-ee_) is in use. Use the `docker ps` command to verify the image name.
 
  </TabItem>
- <TabItem label="Docker" value="using-docker-run-command">
+ <TabItem label="Docker run" value="using-docker-run-command">
   Go to the root directory of the docker installation and run the following commands: 
 
 ```bash
@@ -76,5 +70,8 @@ Once the download is complete, the server should be up. You should see `Appsmith
   </TabItem>
 </Tabs> 
 
+## Enter license key
 
-If you’re having issues with the deployment, please see the [deployment errors troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to have problems reach out on [discord](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.
+
+If you’re having issues with the deployment, please reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send an email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).

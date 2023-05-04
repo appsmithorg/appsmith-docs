@@ -276,7 +276,15 @@
     },
     {
       "source": "/how-to-guides/how-to-implement-custom-authentication-on-appsmith",
-      "destination": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith"
+      "destination": "advanced-concepts/custom-authentication"
+    },
+    {
+      "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith#building-ui-for-login-form",
+      "destination": "advanced-concepts/custom-authentication"
+    },
+    {
+      "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith",
+      "destination": "advanced-concepts/custom-authentication"
     },
     {
       "source": "/how-to-guides/how-to-work-with-local-apis-on-appsmith",
@@ -2681,6 +2689,22 @@
     {
       "source": "/v/v1.2/getting-started/setting-up/docker/email/sendgrid",
       "destination": "/getting-started/setup/instance-configuration/email/sendgrid"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/admin-settings",
+      "destination": "/getting-started/setup/instance-configuration#admin-settings"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/use-git-to-create-different-environments",
+      "destination": "/advanced-concepts/version-control-with-git/environments-with-git"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/pull-and-sync",
+      "destination": "/advanced-concepts/version-control-with-git/merging-branches"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
+      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
     }
   ]
 }

@@ -10,30 +10,8 @@ toc_max_heading_level: 5
 
 When you build an app on Appsmith, you write code to add, update, delete, and retrieve data, and define actions on event triggers. You can use JavaScript functions, and database or API queries to build different workflows.
 
-## Display data from async JS function
-
-Widgets have fields/properties where you can bind data or trigger actions.
-
-**Sync fields** are properties that expect input or data. For example, for an Input widget, properties such as `Default Value`, `Max Characters`, `Regex`, and `Error Message` expect input and are sync fields.
-
-**Async fields** are properties that can trigger an action or perform an operation. For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are async fields. You can use these properties to execute an [action](/reference/appsmith-framework/widget-actions), [Query](/core-concepts/data-access-and-binding/querying-a-database#running-a-query) or a function within a [JS object](/core-concepts/writing-code/javascript-editor-beta).
-
-To display the response from an asynchronous JS function in a synchronous field, you need to retrieve it using the  `.data` property as shown below
-
-```javascript
-{{JSObjectName.functionName.data}}
-```
-
- <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Display response from async function in widget field" caption="Display response from async function in widget field"/> 
-
-## Display data from sync JS function
-To display the response from a synchronous JS function in a widget field, call the function inside the JS Object as shown below:
-
-``` javascript
-{{JSObjectName.functionName()}}
-```
-
 ## Trigger actions with event listeners
+
 [Actions](/reference/appsmith-framework/widget-actions) in Appsmith are built-in functions that provide a way to perform specific operations in response to user interactions or other events in your application. 
 
 You can trigger actions by binding them to Events(Async fields). For example, if you want to run a query on button click, you can bind the query's [run()](/reference/appsmith-framework/query-object#run) method on the button's `onClick` event.
@@ -132,6 +110,47 @@ This example shows how to chain queries and actions to execute one after the oth
       ).catch(() => showAlert("Update User Failed", "error")) 
 }}
 ```
+
+## Fetch API
+The Fetch API provides an interface for executing network calls programmatically. You can use `fetch()` to programmatically configure and execute a REST API.  
+
+**Examples**
+
+**GET request**
+```javascript
+const questions = await fetch("https://opentdb.com/api.php?amount=10")
+return questions.json()
+```
+
+**POST request**
+```javascript
+fetch("https://63772c9a5c477765121615ba.mockapi.io/users", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: "Alex",
+    email: "alex@appsmith.com",
+  }),
+}).then((response) => {
+    console.log("Success:", response.json());
+}).catch((error) => {
+    console.error("Error:", error);
+});
+```
+
+**File upload**
+```javascript
+const formData = new FormData();
+formData.append("file", FilePicker1.files[0]);
+		
+let response = await fetch('https://httpbin.org/post', {
+	method: 'POST',
+	body: formData
+});
+```
+
 
 ## Further reading
 * [Appsmith Framework](/reference/appsmith-framework/)

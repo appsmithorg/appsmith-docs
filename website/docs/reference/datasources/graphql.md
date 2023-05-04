@@ -3,496 +3,343 @@ sidebar_position: 8
 ---
 # GraphQL
 
-GraphQL is a query language that allows a requesting client to ask for exactly what it's looking for, where it's looking for it, and receive just the response it needs. Making things easier for developers and clients alike. As an alternative to the popular REST services, it offers a single point for retrieving data from multiple sources in the format specified by the consumer.
-
-Appsmith provides an easy way to integrate with GraphQL, and enables you to perform different operations using a custom UI built with minimal configurations.
+This page describes how to connect your application to a GraphQL API and use queries to manage its content.
 
 <VideoEmbed host="youtube" videoId="KPLrbp-4Y6E" title="How To Build Apps With GraphQL APIs feat. Hasura" caption=""/>
 
-## Create GraphQL API
+## Connect to GraphQL
 
-To add a GraphQL API, navigate to **Explorer** >> Click on the **+** icon (next to Datasources) >> Select **Authenticated GraphQL API** under APIs.
+To add a GraphQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Authenticated GraphQL API** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-:::info
-You can choose to create a one-off query by selecting [_**Create New GraphQL API**_](graphql.md#datasource-page)_**.**_
+<figure>
+  <img src="/img/graphql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL datasource" />
+  <figcaption align="center"><i>Configuring a GraphQL datasource.</i></figcaption>
+</figure>
+
+:::tip
+If you want to connect to a local api, you can use a service like ngrok to expose it. For more information, see [How to connect to local api on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
-<VideoEmbed host="youtube" videoId="lIb2SGnQFm4" title="Create GraphQL Datasource" caption="Create GraphQL Datasource"/>
+To connect to a GraphQL API endpoint, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
 
-## Connection Settings
+**URL*:** provide the URL of the GraphQL service to query. If you are on a self-hosted instance and connecting to an API on `localhost`, use `host.docker.internal` on Windows and macOS hosts and `172.17.0.1` on Linux hosts to access services running on the host machine from within the container.
 
-Configure the GraphQL API as illustrated below:
+**Headers:**  provide any header key-value pairs that you'd like to include in your HTTP requests.
 
-![Create GraphQL Datasource](</img/Screenshot_2022-09-07_at_11.43.59_AM.png>)<figure><figcaption align="center"><i>Create GraphQL Datasource</i></figcaption></figure>
+**Query Parameters:** provide any parameters that should be passed as key-value pairs in the URL of your requests.
 
-:::info
-All required fields are suffixed with an asterisk.
-:::
+**Send Appsmith signature header:** choose whether to include a special token in your request headers to help prove authenticity and integrity. For more information, read [signature headers](/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions).
 
-#### URL
+**Authentication Type:** choose the style of authentication to use for your queries. To read more about some of the options, visit [authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type).
 
-Use this field to add the API URL you want to access. For instance, if you want to visit [GitHub GraphQL API](https://docs.github.com/en/graphql), enter [https://api.github.com/graphql ](https://api.github.com/graphql)in the URL field.
+**Use self-signed certificate:** choose whether to upload your own self-signed certificate for encryption. For more information, read [self-signed certificates](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
 
-#### Headers
+## Create queries
 
-HTTP Headers are an important part of the API request and response, representing the meta-data associated with the API request and response. Headers carry the following information:
+<figure>
+  <img src="/img/graphql-query-config.png" style={{width: "100%", height: "auto"}} alt="Creating a GraphQL query." />
+  <figcaption align="center"><i>Creating a GraphQL query.</i></figcaption>
+</figure>
 
-1. Request and Response Body;
-2. Request Authorization;
-3. Response Caching;
-4. Response Cookies.
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data by selecting the **+ New Query**  button on the Authenticated GraphQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your GraphQL datasource. You'll be brought to a new query screen where you can write queries.
 
-#### Query Parameters
+GraphQL queries are written in the **Body** tab of the query screen. Use the **Query** window to construct your query or mutation, and the adjacent **Query Variables** window to add any variables to map into your query.
 
-A parameter is a piece of information you provide to a query during its execution. In the query, parameters can be used independently or as a component of a larger expression to build a criterion. The API you integrate allows you to include one or more[ query parameters](/core-concepts/data-access-and-binding/querying-a-database) as part of the request.
+### Fetch records
 
-#### Send Appsmith signature header\*
+Use a query like the one below to retrieve records from your datasource.
 
-You can enable [Send Appsmith Signature Header](/core-concepts/connecting-to-data-sources/authentication#send-appsmith-signature-header) to ensure that the incoming requests originate from Appsmith.
-
-#### Authentication Type
-
-GraphQL API[ authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type) can be defined using the protocols offered by Appsmith.
-
-#### Use Self-signed certificate
-
-Self-signed certificates are sometimes used in testing or internal environments, as they provide incoming/outgoing data encryption and can be created at no cost.
-
-The GraphQL Datasource allows you to upload your own self-signed certificate within the API's configuration page. You can follow this [document ](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates)to learn more about Self-signed certificates.
-
-:::info
-This information needs to be provided in .PEM (Privacy Enhanced Mail) format, as shown [here](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
-:::
-
-## Create Queries
-
-You can add queries to the newly created GraphQL datasource in one of the below ways:
-
-#### GraphQL Datasource Page
-
-You can add queries to GraphQL datasource by selecting the **New API +** button available on the datasource page.
-
-![GraphQL Datasource Page](</img/Screenshot_2022-08-30_at_12.56.01_PM_(1).png>)<figure><figcaption align="center"><i>GraphQL Datasource Page</i></figcaption></figure>
-
-#### Query/JS page
-
-By navigating to **Explorer** >> Click plus sign (**+**) next to **Queries/JS** >> Select the GraphQL **datasource.**
-
-![Query/JS page](</img/Screenshot_2022-08-30_at_12.59.35_PM.png>)<figure><figcaption align="center"><i>Query/JS page</i></figcaption></figure>
-
-#### Datasource Page
-
-Similar to REST APIs, you can choose to create a one-off query by clicking on the “**+**” icon next to “Datasources” and selecting “_**Create New GraphQL API**_”.
-
-![Datasource Page](</img/Screenshot_2022-09-15_at_9.20.51_AM.png>)<figure><figcaption align="center"><i>Datasource Page</i></figcaption></figure>
-
-You can create and run queries for an existing GraphQL datasource. You can provide the URL and additional information like the Headers, Params, Body, and Pagination. Once you have added code in the body section, you can directly run the query and connect it with widgets.
-
-Let’s take an example to understand how **“Create new GraphQL API”** works.
-
-<VideoEmbed host="youtube" videoId="kEjCQ9o4Ozs" title="" caption=""/>
-
-:::info
-To understand GraphQL query creation, let's use the [Public GraphQL API](https://countries.trevorblades.com/) that gives information about continents and countries.
-:::
-
-* Click on the **+** icon next to the **Datasources** and choose your “Create new GraphQL API”.
-* Add your API request URL.
-* For this example, please use:[ _**https://countries.trevorblades.com**_](https://countries.trevorblades.com)_**.**_
-* In the **Body** of the request, put the GraphQL query to get details of countries.
-
-```
-query CountryFilterInput{
-    countries{
-        code
-        name
-        capital
-        continent{
-            code
-            name
-        }
-    }
-}
-```
-
-* Now **run** the query.
-
-With this, all of a country's information, including its code, name, capital, etc., will be displayed in the response section.
-
-## Query
-
-You can create queries to fetch, update and delete data from a datasource using the Appsmith query editor. Let's discuss the following query methods:
-
-| Query Name                                                  | Description                             |
-| ----------------------------------------------------------- | --------------------------------------- |
-| [​List Records​](./graphql.md#list-records)                   | Fetches all the data from the database. |
-| [​Retrieve A Record​](./graphql.md#retrieve-a-record)         | Retrieve a particular record.           |
-| [Insert Records​](./graphql.md#insert-recordscreate-records) | Insert a new record in the database.    |
-| [​Delete A Record​](./graphql.md#delete-a-record)             | Delete a specific record.               |
-| [​Update Records​](./graphql.md#update-records)               | Update a few fields in a record.        |
-
-:::info
-[GraphQL Queries ](https://graphql.org/learn/queries/)(Read operations like List, Retrieve, etc.) and [GraphQL Mutations](https://graphql.org/learn/queries/#mutations) (Write operations like insert, update, etc.) are collectively termed [Queries ](/core-concepts/data-access-and-binding/querying-a-database)in Appsmith.
-:::
-
-### **List Records**
-
-List command lets you display all the data from the database. With Appsmith, you can present data that has been filtered and sorted based on fields, records, etc.
-
-* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
-* Rename the query.
-* Add your code in the body section.
-
-Once the parameters have been specified, click **Run**. The response section will now display the data.
-
-Let's take an example to understand how the list record command works.
-
-In this example, we will use [Github’s GraphQL API](https://docs.github.com/en/graphql) to **view** and **manage issues**, including **issue assignees, comments, labels,** and **milestones.**
-
-:::info
-Please understand key terms and concepts before using the [GitHub GraphQL API.](https://docs.github.com/en/graphql)
-:::
-
-* Add the following code to the query to get issues from a specified repository:
-
-```
-query GetRepositoryWithIssues {
-  repository(owner: "harshilp12", name: "Test"){
-    id
-    nameWithOwner
-    description
-    url
-    issues(last: 50) {
-      totalCount
-      nodes{
-        title
-        id
-        number
-        url
-        state
-        createdAt
-        author {
-              login
-        }
-       
-      }
-    }
-  }
-}
-```
-
-In the preceding query, we obtained information on issues (totalCount), the most recent issues with their titles and creation dates (createdAt), as well as information on the issue author.
-
-You can use a table widget to display your data. You can follow this [document](/reference/widgets/table) to understand how the table widget works.
-
-![CDisplay Data Using Table Widget](</img/graphlql1.PNG>)<figure><figcaption align="center"><i>Display Data Using Table Widget</i></figcaption></figure>
-
-When you make requests to the API, it returns many results. To make the responses more manageable, paginate the results. The benefit of this approach is that it doesn't require additional backend logic. Appsmith supports both [Limit/Offset Based Pagination ](graphql.md#pagination)and [Cursor-based Pagination.](graphql.md#cursor-based-pagination)
-
-### **​Retrieve A Record​**
-
-Retrieve record lets you fetch data for a particular user detail.
-
-* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
-* Rename the query.
-* Add your code in the body section.
-
-Let's look at an example where we retrieve the number of GitHub issues(**total**, **open** and **closed**):
-
-```
-query { 
-  repository(owner:"harshilp12", name:"Test") { 
-    issues {
-      totalCount
-    }
-    open: issues(states:OPEN) {
-      totalCount
-    }
-    closed: issues(states:CLOSED) {
-      totalCount
-    }
-  }
-}
-```
-
-* Now **run** the query.
-
-You receive a response from the preceding query that includes the total number of issues, number of closed issues, and number of open issues. Something like this:
-
-```
-{
-  "data": {
-    "repository": {
-      "issues": {
-        "totalCount": 7
-      },
-      "open": {
-        "totalCount": 5
-      },
-      "closed": {
-        "totalCount": 2
-      }
-    }
-  }
-}
-```
-
-:::info
-The advantage of using GraphQL over REST API is that you can cherry-pick the response. The API provides the information that you explicitly state in the query.
-:::
-
-In GraphQL, you **insert**, **update** or **delete** data with mutations. A **Mutation** is a GraphQL Operation that allows you to insert new data or modify the existing data on the server side. You can think of GraphQL Mutations as the equivalent of POST, PUT, PATCH, and DELETE requests in REST.
-
-:::info
-**Queries**, and **Mutations** to perform CRUD operations on data are collectively termed **Queries** in Appsmith.
-:::
-
-### **Insert Records​/Create Records**
-
-Insert is a widely used command in the Structured Query Language (SQL). The insert command is used to insert **one** or **more rows** into a **database table** with **specified table values**.
-
-<VideoEmbed host="youtube" videoId="zy1wcfgyNjg" title="Create New Record" caption="Create New Record"/>
-
-* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
-* Rename the query to **`create_user`**.
-* Next, add your code in the body section and run your query.
-
-To create a GitHub issue, you first require the **`id`** of the target repository. Once you assign the repository ID, you can input the title and description of the issue.
-
-```
-mutation CreateIssue {
-  createIssue(input: {repositoryId: "R_kgDOH-t87Q", title: "Sample Title", body: "Sample Body"}) {
-    issue {
-      number
-      body
-      url
-    }
-  }
-}
-```
-
-You can create a new issue using the [button ](./../widgets/button/README.md)and [modal ](./../widgets/modal.md)widget.
-
-### **Update Records​**
-
-Update queries let you update existing objects of a particular type. With an update query, you can filter nodes and set or remove any field belonging to a type.
-
-<VideoEmbed host="youtube" videoId="iOnuUo8F-DQ" title="" caption=""/>
-
-* Click on the **+** icon next to the **queries/js** and choose your GraphQL datasource.
-* Rename the query to **`update_users`**.
-* Add your code in the body section and run your query.
-
-```
-mutation updateIssueTest{
-  updateIssue(input:{id:"<issue.id>",title:"<updated_title", body:"<updated_body"}){
-    issue{
+```javascript
+query GetUserPosts {
+  user (name: "<user-name>") {
+    posts (last: 5) {
       id
+      title
+      slug
     }
   }
 }
 ```
 
-The above query updates the GitHub issue’s with the ID, Title and description. You can again customize what fields you want back as a result, here we are calling `id`.
+Depending on the schema of the API you are querying, it's highly recommended to use arguments like `first`, `last`, `limit`, etc. to prevent querying huge numbers of records at once. The preceding example used `last: 5` to only return the most recent 5 results.
 
-You can use the [Modal ](./../widgets/modal.md)widget or[ JSON form Widget ](./../widgets/json-form.md)to update the GitHub issues.
+---
 
-### **​Delete A Record​**
+#### Example
 
-The Delete Record command deletes a particular record from the database. You can pass the below parameters to Delete Records.
+> Fetch issues from a sample `users` API, 10 records at a time, and put them into a Table widget `UsersTable` with columns for `name`, `id`, and `email`.
 
-* Click on the **+** icon next to the queries/js and choose your GraphQL datasource.
-* Rename the query.
-* Add your code in the body section and run your query.
+**Setup:** to access the sample GraphQL API, create a **GraphQL API** datasource with the following URL:
 
-```
-mutation deleteIssueTest{
-  deleteIssue(input:{issueId:"<your_ID>"}){
-    repository{
+```https://viable-mosquito-19.hasura.app/v1/graphql```
+
+Then, create a query called `FetchUsers` based on your GraphQL datasource as a `POST` type request.
+
+* Create a [Table widget](/reference/widgets/table) on the canvas called `UsersTable`.
+
+* In the **Body** tab of your `FetchUsers` query page, fill in your query in the main **Query** box, and add any variables in JSON format in the adjacent **Query Variables** box.
+
+  ```javascript
+  // In the QUERY window:
+  query GetUsers ($limit: Int!, $offset: Int!){
+    users(limit: $limit, offset: $offset){
+      name
       id
+      email
     }
   }
-}
-```
+  ```
 
-The preceding code deletes the issue using your Issue ID.
+* In the **Pagination** tab of your query:
+  * Select **Paginate via Cursor based**
+  * Set **Limit Variable** to `limit`
+  * Set **Limit Value** to `{{ UsersTable.pageSize }}`
+  * Set **Offset Variable** to `offset`
+  * Set **Offset Value** to `{{ UsersTable.pageOffset }}`
 
-Similarly, if you want to close an issue, you can use the below-mentioned code:
+* In the **Table Data** property of your Table widget, bind the result of your query:
 
-```
-mutation closeIssueTest{
-  closeIssue(input:{issueId:"<your_id>"}){
-    issue{
+  ```javascript
+  // in the Table Data property of IssueTable
+  {{ FetchUsers.data.data.users }}
+  ```
+
+* In the Table's properties, turn on **Server Side Pagination**
+  * In the **onPageChange** event that appears, choose to execute the `FetchUsers` query.
+
+Now your table should fill with data when the query is run, and the page buttons in the table header cycle through the records.
+
+### Insert a record
+
+Use an insert mutation to add new records to your GraphQL datasource.
+
+```javascript
+mutation CreatePost {
+  createPost(data: {author: "Amal", title: ... }) {
+    post {
       id
+      author
+      title
     }
   }
 }
 ```
 
-:::info
-You can run queries on real GitHub data using the [GraphQL Explorer](https://docs.github.com/en/graphql/guides/using-the-explorer)
-:::
+The `createPost` method takes the new record data, and once the request is processed, the API responds with the new `post{...}` data to confirm the operation.
 
-## Common Settings
+---
 
-There are a few settings listed below that are common to many operations that you can perform on GraphQL:
+#### Example
 
-### **Pagination**
+> Create a new user in a sample `users` API.
 
-Pagination refers to the process of receiving portions of a huge dataset until you receive the entire dataset. This helps optimize your app's performance because trying to get all the data results in a slow load time of your app and a slow rendering of the results in the UI.
+**Setup:** to access the sample GraphQL API, create a **GraphQL API** datasource with the following URL:
 
-#### **Limit/Offset Based Pagination**
+```https://viable-mosquito-19.hasura.app/v1/graphql```
 
-Offset-based pagination is a popular technique where the user requests parameters for limit (number of results) and offset (no of records to skip). Let's define a few terms related to Limit-based Pagination.
+Then, create a query called `CreateUser` based on your GraphQL datasource as a `POST` type request.
 
-* **Limit Variable**: It lets you select the limit variable from the query.
-* **Limit Value**: Set the value of the limit variable ( limit the number of rows returned from a query.)
-* **Offset Variable**: It lets you select the offset variable from the query.
-* **Offset Value**: Set the value of the offset variable selected (allows you to omit a specified number of rows before the beginning of the result set)
+* To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
 
-Using both limit and offset skips both rows and limits the rows returned.
-
-Let's take an example to understand how Limit/Offset Based Pagination works.
-
-<VideoEmbed host="youtube" videoId="wxVP--GMBVQ" title="Limit/Offset Based Pagination" caption="Limit/Offset Based Pagination"/>
-
-* Add the following code in the body section:
-
-```
-query GetAllUsers($limitz:Int, $offsetz:Int){
-  users(limit:$limitz, offset:$offsetz){
-    id
-    dob
-    email
-    gender
-    name
-    phone
+  ```javascript
+  {
+    name: "",
+    email: ""
   }
-}
-```
+  ```
 
-* In the pagination section, select **Paginate via Limit and Offset.**
-* Set _**limitz**_ as 2, and _**offsetz** _ as 0.
-* Now **run** the query.
+* In the JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
 
-So, if you set **Limit Value** to 2, it returns two rows. For instance, if you set _**limitz**_ as 4, then the data of 4 users are returned (i.e., number of rows).
+  ```javascript
+  // Submit button's onClick event
+  {{ CreateUser.run() }}
+  ```
 
-_**Offset**_ allows you to omit a specified number of rows before beginning the result set. For instance, if you set _**offsetz**_ to 2, it skips the first two rows, and the results from the third row are displayed.
+* Once these form fields are filled out, you can add their values to your query in the **Body** tab like below:
 
-#### **Cursor-Based Pagination**
+  ```javascript
+  // In the QUERY window
+  mutation CreateUser (
+    $name: String!,
+    $email: String!
+  ) {
+    insert_users_one(
+			object: {
+				name: $name,
+				email: $email				
+			}
+		)
+		{
+			name,
+			email
+		}
+  }
+  ```
 
-Cursor-based pagination (also known as keyset pagination) works by returning a pointer to a specific item in the dataset. It's a popular pagination technique that stays clear of many of the difficulties of "offset-limit" pagination. Perhaps the biggest advantage of cursor pagination is its ability to handle real-time data effectively. This is because cursors don't require the data to remain static.
+  ```javascript
+  // In the QUERY VARIABLES window
+  {
+    "name": {{ NewUserForm.formData.name }},
+    "email": {{ NewUserForm.formData.email }}
+  }
+  ```
 
-:::info
-Cursor-based pagination works efficiently for large datasets.
-:::
+When the Submit button is clicked, your query is executed and the new record is inserted. If it is successful, you should receive the new record's `name` and `email` fields back in response.
 
-It uses "_**before**_" and "_**after**_" cursors to traverse through the data and returns only a chunk of data which makes the processing faster. Let's define a few terms related to cursor-based Pagination.
+### Update a record
 
-**Configure Previous Page**
+Use an update mutation to modify an existing record in your dataset.
 
-* **Limit Variable Name**: Select the variable from the query that holds the last or previous limit value.
-* **Limit Variable Value**: Override the value for the previous number of rows to be fetched.
-* **Start Cursor Variable**: Select the variable which holds the _before cursor_.
-* **Start Cursor Value**: Binding the widget action to the previous page activity.
-
-**Configure Next Page**
-
-* **Limit Variable Name**: Select the variable from the query that holds the first or next limit value.
-* **Limit Variable Value**: Update the value for the number of rows fetched next.
-* **Start Cursor Variable**: Select the variable which holds the _after_ cursor.
-* **Start Cursor Value**: Binding the widget action to the next page activity.
-
-Let’s take an example to understand better how Cursor Based Pagination works. In this example, let's display the _**GitHub repository’s issues**_ in a list widget using [GitHub’s GraphQL API](https://docs.github.com/en/graphql).
-
-In this case, we declare the pagination variables that stand for **before**, **after**, **first**, and **last**. Then we can navigate through the data using the previous and next buttons highlighted in the screenshot below.
-
-![](</img/Screenshot_2022-09-05_at_3.29.42_PM.png>)<figure><figcaption></figcaption></figure>
-
-Let's run the following code before defining values for cursor-based pagination:
-
-```
-query nodesPagination{ 
-  repository(owner:"appsmithorg", name:"appsmith"){
-    issues(orderBy:{field:CREATED_AT, direction:DESC},first:6){
-        id
-        number
-        title
-      }
-      pageInfo{
-        endCursor
-        hasNextPage
-        hasPreviousPage
-        startCursor
-      }
+```javascript
+mutation UpdatePost {
+  updatePost(data: {id: "<id>", title: "New Title" }) {
+    post {
+      id
+      author
+      title
     }
   }
 }
 ```
 
-* Add the **before**, **after**, **first**, and **last variables** in the code as highlighted below:
+The `updatePost` method uses the new values to update the dataset, and once the request is processed, the API responds with the new `post{...}` data to confirm the operation.
 
-```
-query nodesPagination($afterValue:String,$beforeValue:String,$firstValue:Int,$lastValue:Int){ 
-  repository(owner:"appsmithorg", name:"appsmith"){
-    issues(orderBy:{field:CREATED_AT, direction:DESC},first:$firstValue, last:$lastValue, after:$afterValue, before:$beforeValue){
-        id
-        number
-        title
-      }
-      pageInfo{
-        endCursor
-        hasNextPage
-        hasPreviousPage
-        startCursor
-      }
+---
+
+#### Example
+
+> Update an existing user in a sample `users` API.
+
+**Setup:** to access the sample `users` GraphQL API, create a **GraphQL API** datasource with the following URL:
+
+```https://viable-mosquito-19.hasura.app/v1/graphql```
+
+Then, create a query called `UpdateUser` based on your GraphQL datasource as a `POST` type request.
+
+* Start by [fetching existing users](#fetch-records) from your repository into a Table widget `UsersTable` with a query called `FetchUsers`. You'll need this to get your existing user data.
+
+* To gather new values for the record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `UpdateUserForm`. Add **Source Data** to the JSON Form to create input fields, referencing the records in your `UsersTable` to help pre-fill the fields:
+
+  ```javascript
+  {{
+    {
+      id: {{ UsersTable.selectedRow.id }} // this value should not be changed
+      name: {{ UsersTable.selectedRow.name }},
+      email: {{ UsersTable.selectedRow.email }}
+    }
+  }}
+  ```
+
+* In the JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+
+  ```javascript
+  // Submit button's onClick event
+  {{ UpdateUser.run(() => ListUsers.run(), () => {}) }}
+  ```
+  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
+
+* Once these form fields are filled out, you can add their values to your query in the **Body** tab like below.
+  * This code selects a record by its primary key (`id`), and uses `_set` to show which values to update on the record.
+
+  ```javascript
+  // In the QUERY window
+  mutation UpdateUser (
+    $id: Int!,
+    $name: String,
+    $email: String
+  ) {
+    update_users_by_pk(
+			pk_columns: {
+				id: $id
+			},
+			_set: {
+				name: $name,
+				email: $email
+			}
+		)
+		{
+      id,
+			name,
+			email
+		}
+  }
+  ```
+
+  ```javascript
+  // In the QUERY VARIABLES window
+  {
+    "id": {{ UsersTable.selectedRow.id }},
+    "name": {{ UpdateUserForm.formData.name }},
+    "email": {{ UpdateUserForm.formData.email }}
+  }
+  ```
+
+When the Submit button is clicked, your query is executed and the record is updated with new values. If the operation is successful, you'll receive a response with the record's `id`, `name`, and `value` as confirmation.
+
+### ​Delete a record​
+
+Use a delete mutation to delete an existing record from your dataset.
+
+```javascript
+mutation DeletePost {
+  deletePost(data: {id: "<id>"}) {
+    post {
+      id
+      author
+      title
     }
   }
 }
 ```
 
-* In the pagination section, select **“Paginate via Cursor based”**, and map the values as follows:
+The `deletePost` method uses the passed values to locate the record to delete, and once the request is processed, the API responds with the deleted `post{...}` data to confirm the operation.
 
-```
-Configure Previous Page
-Limit Variable Name: lastValue 
-Limit Variable Value: {{Table1.pageSize}} //your table or list's page size
+---
 
-Start Cursor Variable: beforeValue
-Start Cursor Value: {{testapi.data.data.repository.issues.pageInfo.startCursor}}
+#### Example
 
-Configure Next Page
-Limit Variable Name: firstValue
-Limit Variable Value: this is by default the same value as the "previous page" configuration's value. If you want to override this, please select the checkbox "enable separate value for first limit variable"
+> Delete an existing user in a sample `users` API.
 
-End Cursor Variable: afterValue
-End Cursor Value: {{testapi.data.data.repository.issues.pageInfo.endCursor}}
-```
+**Setup:** to access the sample `users` GraphQL API, create a **GraphQL API** datasource with the following URL:
 
-* Set list widget’s Items property to:
+```https://viable-mosquito-19.hasura.app/v1/graphql```
 
-```
-{{yourquery.data.data.repository.issues.nodes}}
-```
+Then, create a query called `DeleteUser` based on your GraphQL datasource as a `POST` type request.
 
-:::info
-You can check this [document](/reference/widgets/table#transforming-table-data) to learn more about server-side pagination.
-:::
+* Start by [fetching existing users](#fetch-records) from your repository into a Table widget `UsersTable` with a query called `FetchUsers`. You'll need this to get your existing user data.
 
-With this, you can run a query on a page change event. The below video demonstrates how you can perform cursor-based pagination:
+* Create a custom **Button-type column** in the Table widget update its **Label** to "Delete." Set the button's **onClick** event to execute your `DeleteUser` query:
 
-<VideoEmbed host="youtube" videoId="R9yUCBb_OFo" title="" caption=""/>
+  ```javascript
+  // in the Delete button's onClick event
+  {{ DeleteUser.run(() => ListUsers.run(), () => {}) }}
+  ```
+  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
-### **Query Settings**
+* To delete a record, pass its `id` in your query:
 
-The Query Settings Pane provides access to properties for the query. You can specify the following [settings ](/core-concepts/data-access-and-binding/querying-a-database/query-settings)in the **Settings** tab on the Appsmith Query Editor:
+  ```javascript
+  // In the QUERY window
+  mutation DeleteUser ($id: Int!) {
+    delete_users_by_pk(id: $id)
+    {
+      id
+      name
+    }
+  }
+  ```
 
-With Appsmith GraphQL integration, it's possible to create apps that seamlessly connect with the database and provide additional flexibility for updating and analyzing data.
+  ```javascript
+  // In the QUERY VARIABLES window
+  {
+    "id": {{ UsersTable.triggeredRow.id }}
+  }
+  ```
 
-## **Using Queries in Applications**
+When the Submit button is clicked, your query is executed and the record is deleted. If the operation is successful, you should receive the record's `id` and `name` as confirmation.
 
-Once you have successfully run a Query, you can use it in your application to:
+## Further reading
 
-* [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
-* [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+* [Table widget](/reference/widgets/table)
+* [Form widget](/reference/widgets/form)

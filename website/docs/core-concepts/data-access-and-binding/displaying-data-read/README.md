@@ -1,34 +1,25 @@
-# Displaying Data (Read)
+# Display Data (Read)
 
-This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a Query that fetches data.
+You can display data from a query or JS function in a widget. Before reading this page, ensure you have [connected to a data source](/core-concepts/connecting-to-data-sources) and have a query that fetches data.
 
-## Displaying Data in a widget
+## Display data from query
 
-Widget properties can be edited via the property pane which is opened using the top-right icon (Edit Widget Properties). Data from a [Query](/core-concepts/data-access-and-binding/querying-a-database) can be set in a widget property by referencing the name (unique identifier) of the Query.
+Data from a [Query](/core-concepts/data-access-and-binding/querying-a-database) can be set in a widget property by referencing the Query's unique name.
 
-:::tip
-Appsmith is **Reactive** so the widgets are automatically updated whenever the data in the Query changes
-:::
-
-For example, you can bind the results of the Query as below
+**Example 1:** suppose you have a query named `fetch_users`. You can bind the results of the query to the Table widget by adding the following code in the **Table Data** property:
 
 ```javascript
-{{ fetch_users.data.users }}
+{{ fetch_users.data }}
 ```
 
 ![](</img/bind-table_(2)_(4).gif>)
 
-For more information about using [Table widgets](/reference/widgets/table) to show data from queries, see [display data in tables](/reference/widgets/table#display-data-in-tables).
+For more information about using Table widget to show data from queries, see [display data in tables](/reference/widgets/table#display-data-in-tables).
 
-:::note
-Each widget property has a specific data type that it validates its value against. If the data type mismatches, it will throw an error. This can be fixed using javascript to transform the value of the property
-:::
 
-## Transforming Data
+## Transform data
 
-You can use Javascript inside to transform Query data when binding it to a property. Let us take an example of a Query that returns an array of objects that need to be populated in a [dropdown](/reference/widgets/select.md). Directly binding the data will lead to an error as shown below
-
-A [select](/reference/widgets/select.md) needs an Array\<label, value> in its option field, so to connect this data to a dropdown, we need to transform the data in the [dropdown options property.](/reference/widgets/select#widget-properties)
+Each widget property has a specific data type that it validates its value against. If the data type mismatches, it throws an error. You can use JavaScript to transform the data when binding it to a property. For example, consider a query that returns an array of objects, as shown below:    
 
 **Example Query Data**
 
@@ -70,9 +61,9 @@ A [select](/reference/widgets/select.md) needs an Array\<label, value> in its op
 ]
 ```
 
-**Transformation Code**
+Suppose you want to display this data in a [Select](/reference/widgets/select.md) widget. A Select widget only accepts data as an Array in the `{ "label": "string", "value": "string" }` format in its **Options** property, so you must transform the data from the query to pass it in the required structure.
 
-The following example iterates over a data set and returns data in an `Array<label, value>` format
+The following example iterates over the query data and returns it in an `Array<label, value>` format:
 
 ```javascript
 {{
@@ -81,3 +72,35 @@ The following example iterates over a data set and returns data in an `Array<lab
   });
 }}
 ```
+
+## Update widgets programmatically
+
+When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
+
+**Example 1:** suppose you have two Input widgets named `Input1` and `Input 2`. To update `Input2` with the value entered in `Input1`, add the following code in the `Default Value` property of Input2.
+
+```javascript
+{{Input1.text}}
+```
+
+Enter a value in `Input1` and see how the value updates in `Input2`.
+
+**Example 2:** suppose you have two input widgets and one button widget named `Input1`, `Input2`, and `Button1`, respectively. This example shows how to update `Input2` with the value in `Input1` on the button click. Here, the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is used.
+
+Paste the following code in the `onClick` event of `Button1`. 
+
+```javascript
+{{storeValue('inputData',Input1.text)}}
+```
+Paste the following code in the `Default Value` property of Input2.
+```javascript
+{{appsmith.store.inputData}}
+```
+Enter a value in `Input1`. On button click, the value updates in `Input2`.
+
+## Further reading
+
+* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write)
+* [Table Widget](/reference/widgets/table)
+* [List Widget](/reference/widgets/list)
+* [Working with Appsmith Framework Functions](/reference/appsmith-framework)
