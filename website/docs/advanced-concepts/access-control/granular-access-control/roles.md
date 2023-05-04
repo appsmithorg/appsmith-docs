@@ -3,11 +3,10 @@ Roles in Appsmith are collections of permissions that enable users or groups to 
 
 ## Default roles
 
-In Appsmith's community edition, every workspace comes with three predefined roles - **Administrator**, **Developer**, and **App Viewer**. These roles are fixed and cannot be changed by users. Each role comes with specific permissions and access levels.
+Appmith provieds three built-in roles for the application and workspace - **Administrator**, **Developer**, and **App Viewer**. Additonally, there are two instance-level roles - **Default Role for all Users** and **Instance Administrator**. 
 
-On the other hand, in the business edition, Appsmith provides four default roles - **Administrator**, **Developer**, **App Viewer** and **Default Role For All Users**. 
-
-The **Default Role For All Users** role is responsible for setting the base level of access provided to all users within an instance. This role is editable, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
+- **Default Role For All Users**: this role is responsible for setting the base level of access provided to all users within an instance. This role is editable, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
+- **Instance Administrator**: This role provides a user with permission to modify settings at the instance level in the Admin settings. This includes changing the general settings of the instance, such as authentication, email, custom branding, and other instance settings. The user with this role can also view audit logs and perform granular access control actions. It's important to note that this role has significant control over the instance, so it should only be assigned to trusted users who need these capabilities.
 
 ## Custom role
 

@@ -5,15 +5,14 @@ Granular Access Control (GAC) enables you to specify which users or groups have 
 Granular Access Control (GAC) is available only in the [business edition](https://www.appsmith.com/pricing) for self-hosted instances.
 :::
 
-Granular Access Control can be implemented in Appsmith using the following components:
+Granular Access Control can be implemented in Appsmith using the following elements:
 - [Users](#users)
 - [Groups](#groups) 
 - [Roles](advanced-concepts/access-control/granular-access-control/roles)
 
-The image below gives an overview of how GAC works in Appsmith.
 
 <figure>
-  <img src="/img/GAC_overview.jpeg" style= {{width:"350px", height:"auto"}} alt="Add a new Role"/>
+  <img src="/img/GAC_overview.jpeg" style= {{width:"700px", height:"auto"}} alt="Add a new Role"/>
   <figcaption align = "center"><i>Granular Access Control Overview</i></figcaption>
 </figure>
 
@@ -44,6 +43,6 @@ A group is a collection of users that allows you to assign roles to multiple use
 When you share an application or workspace, you can invite a group and assign the desired role to it. This makes it easy to grant permissions to multiple users at once, and you can modify the group's roles to update the permissions for all its members simultaneously.
 
 
-## Roles 
+## Further reading
 
-Permissions are rules that enable you to control access to a particular resource. However, assigning each permission to a specific user or group can be difficult. Instead, you can use roles to create a set of permissions and assign them to users or groups. Roles allow users to perform certain actions based on the permissions associated with the role. For more information, see [How to configure Roles and Permissions?](/advanced-concepts/access-control/granular-access-control/roles)
+[Roles](/advanced-concepts/access-control/granular-access-control/roles)
