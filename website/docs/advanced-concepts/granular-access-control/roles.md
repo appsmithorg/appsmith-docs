@@ -3,12 +3,12 @@ Roles in Appsmith are collections of permissions that enable users or groups to 
 
 ## Default roles
 
-Appmith provides three built-in roles for the application and workspace - **Administrator**, **Developer**, and **App Viewer**. Additonally, there are two instance-level roles - **Default Role for all Users** and **Instance Administrator**. 
+Appmith provides three [built-in](/advanced-concepts/invite-users#built-in-roles) roles for the application and workspace - **Administrator**, **Developer**, and **App Viewer**. Additonally, there are two instance-level roles - **Default Role for all Users** and **Instance Administrator**. 
 
-- **Default Role For All Users**: this role is responsible for setting the base level of access provided to all users within an instance. This role is editable, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
+- **Default Role For All Users**: This role is responsible for setting the base level of access provided to all users within an instance. This role is editable, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
 - **Instance Administrator**: This role provides a user with permission to modify settings at the instance level from the Admin settings. This includes changing the general settings of the instance, such as authentication, email, custom branding, access to view audit logs and granular access control actions. It's important to note that this role has significant control over the instance, so it should only be assigned to trusted users who need these capabilities.
 
-## Custom role
+## Custom roles
 
 With custom roles, you can provide fine-grained access control by configuring multiple permissions for the role you are creating. To create a custom role, go to **Admin Settings** > **Access Control** > **Roles** and click the **Add Role** button.
 
