@@ -5,16 +5,17 @@ Appsmith allows you to share your application with the end user or with a team m
 
 ## Default roles
 
-In Appsmith, there are predefined roles that you can assign to a user for accessing the applications. These roles are predefined and cannot be deleted by the user. There are three default roles:
+In Appsmith, there are built-in roles that you can assign to a user for accessing the applications: 
 
 - Administrator
 - Developer 
 - App Viewer 
+These roles are fixed and cannot be changed by users. Each role comes with specific permissions and access levels.
 
 ## Share workspace
 
 When you share a workspace with a user, they can access all the applications in that workspace. Follow the steps below to share a workspace:
-1. Go to the Workspace homepage and navigate to the workspace you want to share.
+1. Go to the homepage and navigate to the workspace you want to share.
 2. Click the **Share** button from the right corner.
 3. In the **Invite users** modal, enter the email of the user and select an appropriate role for them.
 3. Click **Invite**.
@@ -77,7 +78,7 @@ You can make your applications public and share them with users who are not part
 To make an application public, you can click on the **Share** button within the application and turn on the **Make application public** switch. Once enabled, click **Copy Application URL** to copy the application link and share the application with your users.
 
 :::info
-Only users with Administrator roles can make applications public.
+Only users with Administrator roles for a workspace can make applications public.
 :::
 
 ## Further reading
