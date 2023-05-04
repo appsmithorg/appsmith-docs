@@ -33,7 +33,7 @@ See all [installation guides](/getting-started/setup/installation-guides).
 Deploying Appsmith on your infrastructure gives complete control over security, updates, and scaling your infrastructure as per requirements.
 
 :::info
-Appsmith needs internet access to cs.appsmith.com for Google Sheets, release notes, templates, and more to Appsmith needs internet access to reach Appsmith cloud services `cs.appsmith.com` for several important features such as templates, Google Sheets integration, and fetching release notes to work. Appsmith provides an **Airgapped version** as part of [Enterprise Edition](https://www.appsmith.com/pricing).
+Appsmith needs internet access to reach Appsmith cloud services `cs.appsmith.com` for several important features such as templates, Google Sheets integration, and fetching release notes to work. Appsmith provides an **Airgapped version** as part of [Enterprise Edition](https://www.appsmith.com/pricing).
 :::
 
 Installing Appsmith as a self-hosted instance has the following advantages:
