@@ -139,7 +139,7 @@ You have built your first app that can read and display data from the database a
   * Invite specific users using their email ID
     * Select an appropriate role for the user
     * Share the application's URL with the user
-  * You can also make the application **Public**. In this case, anyone with the application URL can view the application without signing in. See [Access control](/advanced-concepts/access-control) for more information.
+  * You can also make the application **Public**. In this case, anyone with the application URL can view the application without signing in. See [Invite Users](/advanced-concepts/invite-users) for more information.
 
 You have completed the quickstart tutorial.
 

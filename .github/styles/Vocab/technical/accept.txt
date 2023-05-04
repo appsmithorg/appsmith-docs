@@ -340,6 +340,7 @@ Arango
 StoreValue
 updateUsers
 getUsers
+tableHeaders
 modal
 auto_update
 AMIs
@@ -350,6 +351,7 @@ emailAddress
 Url
 I
 Upsert
+
 Subcommands
 Subcommand
 Upsert
@@ -367,3 +369,4 @@ Asynchronous
 asynchronous
 showData
 subcommands
+Amazon S3
