@@ -2705,6 +2705,18 @@
     {
       "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
       "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
+    },
+    {
+      "source": "/advanced-concepts/access-control",
+      "destination": "/advanced-concepts/invite-users"
+    },
+    {
+      "source": "/advanced-concepts/access-control/granular-access-control",
+      "destination": "/advanced-concepts/granular-access-control"
+    },
+    {
+      "source": "/advanced-concepts/access-control/granular-access-control/roles",
+      "destination": "/advanced-concepts/granular-access-control/roles"
     }
   ]
 }
