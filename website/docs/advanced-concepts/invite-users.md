@@ -40,7 +40,7 @@ The table below shows the permissions available for each role when you share a w
 |---------------|-----------------------------------------------|--------------------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
 | **Administrator** |Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace|Delete any application, page and query inside the workspace |Make any application inside the workspace public  |Invite other users to the workspace |	Manage users in a workspace |
 |**Developer**      | Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace |Delete any application, page and query inside the workspace|	-             |Invite other users to the workspace |	-             |
-|**App Viewer**     |	-             |-             |View any application, page & query inside the workspace.|-|           -     |Invite other users to the workspace only as App Viewer |	-|
+|**App Viewer**     |	-             |-             |View any application, page & query inside the workspace.|-|           -     |Invite other users to the workspace only as **App Viewer** |	-|
 
 
 
@@ -69,7 +69,7 @@ The table below shows the permissions available for each role when you share an 
 |Role           |	<div style= {{width:"150px"}}> Create </div> | <div style= {{width:"150px"}}> Edit </div>  |<div style= {{width:"150px"}}> View </div> |<div style= {{width:"150px"}}> Delete </div>| <div style= {{width:"150px"}}> Make App Public </div> | <div style= {{width:"150px"}}> Invite Users </div>   | <div style= {{width:"150px"}}> Manage Users </div>  |
 |---------------|-----------------------------------------------|--------------------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
 |**Developer**      | Create pages, datasources and queries inside the app|Edit pages, datasources and queries inside the app|View the app, its pages, datasources and queries. |Delete the app, its pages, datasources and queries|-|Invite other users with an equivalent or a lower role |	-       |
-|**App Viewer**     |	-              |     -          |View the app and execute actions (Cannot see queries,datasources)|-|           -     |Invite users only as App Viewer |	-|
+|**App Viewer**     |	-              |     -          |View the app and execute actions (Cannot see queries,datasources)|-|           -     |Invite users only as **App Viewer** |	-|
 
 
 ### Make application public
