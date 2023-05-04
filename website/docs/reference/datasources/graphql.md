@@ -11,8 +11,6 @@ This page describes how to connect your application to a GraphQL API and use que
 
 To add a GraphQL datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Authenticated GraphQL API** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-If your API doesn't require authentication, you can select the **GraphQL API** datasource instead and skip the configuration screen.
-
 <figure>
   <img src="/img/graphql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL datasource" />
   <figcaption align="center"><i>Configuring a GraphQL datasource.</i></figcaption>
@@ -55,7 +53,7 @@ Use a query like the one below to retrieve records from your datasource.
 query GetUserPosts {
   user (name: "<user-name>") {
     posts (last: 5) {
-			id
+      id
       title
       slug
     }
@@ -119,7 +117,7 @@ Use an insert mutation to add new records to your GraphQL datasource.
 mutation CreatePost {
   createPost(data: {author: "Amal", title: ... }) {
     post {
-			id
+      id
       author
       title
     }
@@ -141,18 +139,13 @@ The `createPost` method takes the new record data, and once the request is proce
 
 Then, create a query called `CreateUser` based on your GraphQL datasource as a `POST` type request.
 
-
-* Start by [fetching existing users](#fetch-records) from the API into a Table widget `UsersTable` with a query called `FetchUsers`.
-
 * To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
 
   ```javascript
-  {{
-    {
-      name: "",
-      email: ""
-    }
-  }}
+  {
+    name: "",
+    email: ""
+  }
   ```
 
 * In the JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
@@ -201,7 +194,7 @@ Use an update mutation to modify an existing record in your dataset.
 mutation UpdatePost {
   updatePost(data: {id: "<id>", title: "New Title" }) {
     post {
-			id
+      id
       author
       title
     }
@@ -241,8 +234,9 @@ Then, create a query called `UpdateUser` based on your GraphQL datasource as a `
 
   ```javascript
   // Submit button's onClick event
-  {{ UpdateUser.run() }}
+  {{ UpdateUser.run(() => ListUsers.run(), () => {}) }}
   ```
+  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
 * Once these form fields are filled out, you can add their values to your query in the **Body** tab like below.
   * This code selects a record by its primary key (`id`), and uses `_set` to show which values to update on the record.
@@ -290,7 +284,7 @@ Use a delete mutation to delete an existing record from your dataset.
 mutation DeletePost {
   deletePost(data: {id: "<id>"}) {
     post {
-			id
+      id
       author
       title
     }
@@ -314,12 +308,13 @@ Then, create a query called `DeleteUser` based on your GraphQL datasource as a `
 
 * Start by [fetching existing users](#fetch-records) from your repository into a Table widget `UsersTable` with a query called `FetchUsers`. You'll need this to get your existing user data.
 
-* Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
+* Create a custom **Button-type column** in the Table widget update its **Label** to "Delete." Set the button's **onClick** event to execute your `DeleteUser` query:
 
   ```javascript
   // in the Delete button's onClick event
-  {{ DeleteUser.run() }}
+  {{ DeleteUser.run(() => ListUsers.run(), () => {}) }}
   ```
+  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
 
 * To delete a record, pass its `id` in your query:
 
@@ -329,7 +324,7 @@ Then, create a query called `DeleteUser` based on your GraphQL datasource as a `
     delete_users_by_pk(id: $id)
     {
       id
-			name
+      name
     }
   }
   ```
@@ -337,7 +332,7 @@ Then, create a query called `DeleteUser` based on your GraphQL datasource as a `
   ```javascript
   // In the QUERY VARIABLES window
   {
-    "id": {{ UsersTable.selectedRow.id}}
+    "id": {{ UsersTable.triggeredRow.id }}
   }
   ```
 

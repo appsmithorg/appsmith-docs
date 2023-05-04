@@ -13,20 +13,31 @@ Similar to using Git flow in SDLC, you can make separate branches in Appsmith fo
 It is recommended that each developer should have an individual feature branch.
 :::
 
+## Branch URLs
+
+Each branch that you create has its own unique URL in the following format:
+
+```javascript
+<APPSMITH-APP-URL>?branch=<BRANCH-NAME>
+```
+For instance, if you want to open your app in the release branch, replace `<BRANCH-NAME>` with "release" in the URL. These URLs can be shared with others to view the deployed version of the app for that branch.
+
+In case the branch name is not mentioned in the URL, the URL directs to the default branch, which is the master branch. 
+
 ## Create a branch
 
 To create these branches in your Appsmith app, follow the steps below:
 
 1. Click the current branch at the bottom left corner to open the branch Modal that shows the list of existing branches.
-2. To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**. Your application switches to the new (release) branch
+2. To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**. Your application switches to the new (release) branch.
 
 ![](/img/create_branch.gif)
 
-Please the note following while creating a new branch:
+Please keep the following points in mind when creating a new branch:
 
-* When you create a new branch, it carries the uncommitted changes of your parent branch. 
-* When you switch to another branch, the uncommitted changes in your current branch aren't carried over to the destination branch.
-* Checking out a remote branch with a local counterpart already available would result in an error.
+- When you create a new branch, it includes any uncommitted changes from its parent branch.
+- When you switch to another branch, any uncommitted changes in your current branch are not transferred to the destination branch.
+- Attempting to check out a remote branch that already has a local version can result in an error.
 
 ## Further reading
 

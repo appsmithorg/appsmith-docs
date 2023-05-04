@@ -36,7 +36,7 @@ Users who are granted super admin privileges are authorized to access and make c
 </figure>
 
 ### Configure instance
-The Admin settings enables the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
+The Admin settings enable the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
 
 <figure>
   <img src="/img/Instance-Configuration-using-Admin-Settings.png" style= {{width:"900px", height:"auto"}} alt="Use Admin Settings to configure your instance"/>
@@ -55,13 +55,13 @@ The Admin settings enables the configuration of various settings such as user au
 | **Email** | Email | Configure Email on your Appsmith instance. For more information, see [Email](/getting-started/setup/instance-configuration/email).|
 | ** Google Maps ** | Google Maps | Configure to use the Maps widget on your instance. For more information, see [Google Maps](/getting-started/setup/instance-configuration/email). |
 | ** Authentication** | Authentication | Configure the authentication type like [**Google OAuth**](/getting-started/setup/instance-configuration/authentication/google-login), [**GitHub OAuth**](/getting-started/setup/instance-configuration/authentication/github-login). If you are on a [Appsmith Business Edition](https://www.appsmith.com/pricing) you can also configure authentication using popular Single Sign-on (SSO) authentication protocols such as [**SAML**](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)  and [**OpenID Connect**](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc).|
-| **MongoDB URI** | Advanced | Configure to use an external MongoDB database for your self-hosted instance. Form more information about how to configure external MongoDB, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
+| **MongoDB URI** | Advanced | Configure to use an external MongoDB database for your self-hosted instance. For more information about how to configure external MongoDB, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
 | **Redis URL** | Advanced |Configure to use an external Redis instance for your self-hosted instance. For more information about how to configure external Redis, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
 | **Custom Domain** | Advanced | Configure to [set up a custom domain](/getting-started/setup/instance-configuration/custom-domain) for your Appsmith instance. |
 | **Version** | Version | Shows the current version of Appsmith. |
 | **Branding** | Branding | Appsmith's custom branding feature is exclusive to self-hosted, [Business Edition](https://www.appsmith.com/pricing) instances. It enables you to personalize workspaces and apps, including the login screen, invite emails, and error pages to match your company's branding. For more information about how to customize and apply branding, see [Branding](/advanced-concepts/branding).|
 | **Access Control** | Access Control | Access control is a feature exclusive to [Appsmith Business Edition](https://www.appsmith.com/pricing) users that implements Role Based Access Control by assigning specific permissions to different user roles. For more information, see [Access Control](/advanced-concepts/access-control).|
-| ** Audit Logs** | Others | The audit log feature in Appsmith is only available to [Appsmith Business Edition](https://www.appsmith.com/pricing) users and provides a record of all significant activities on the platform. For more information, see [Audit Logs](/advanced-concepts/audit-logs). |
+| **Audit Logs** | Others | The audit log feature in Appsmith is only available to [Appsmith Business Edition](https://www.appsmith.com/pricing) users and provides a record of all significant activities on the platform. For more information, see [Audit Logs](/advanced-concepts/audit-logs). |
 
 ## Environment variables
 You may also choose to configure your self-hosted Appsmith instance using environment variables. Follow the instructions below for manually updating the configuration file for your installation type.
@@ -87,65 +87,44 @@ After making changes, be sure to **restart the docker containers** for the chang
 
 ### Configure Helm installations
 
-To configure environment variables using helm, follow these steps:
+You can modify your Appsmith installation on Kubernetes using Helm parameters or Appsmith environment variables. Use the `helm install` command to configure your Appsmith installation using one of the below ways:
 
-<Tabs groupId="appsmithEditions" >
-  <TabItem label="Community Edition" value="communityEdition"> 
-
-  You may choose to configure environment variables: through commands or by using a `values.yaml` file.
-
-  * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
-
-  ```bash
-    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
-  ```
-  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable the signup button on the Appsmith login screen. 
-
-  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
-
-  ```yaml
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
-    APPSMITH_FORM_LOGIN_DISABLED: ""
-    APPSMITH_SIGNUP_DISABLED: "true"
-  ``` 
-Once you have made changes to the values file, run the below command.
+* Using Helm parameters: For example, deploy Appsmith and configure it to use the storage class `appsmith-pv` with:
 
 ```bash
-  helm upgrade --values values.yaml appsmith appsmith/appsmith
+helm install \
+#highlight-next-line
+--set persistence.storageClass=appsmith-pv \
+  appsmith appsmith/appsmith 
 ```
 
+* **Or** using Appsmith environmental variables: For example, change the encryption salt configuration with:
+
+```bash 
+helm install \
+#highlight-next-line
+--set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
+  appsmith appsmith/appsmith 
+```
+
+* **Or** using `values.yaml` file: 
+<Tabs groupId="appsmithEditions" queryString="current-edition">
+  <TabItem label="Community Edition" value="communityEdition"> 
+Change the parameter values in the `values.yaml` file and run the below command:
+
+  ```bash
+  helm install appsmith appsmith/appsmith -f values.yaml 
+  ```
   </TabItem>
   <TabItem label="Business Edition" value="businessEdition"> 
-
-   You may choose to configure environment variables: through commands or by using a `values.yaml` file.
-
-  * When using command, specify each parameter using `--set key=value[,key=value]` argument to helm upgrade.
+Change the parameter values in the `values.yaml` file and run the below command:
 
   ```bash
-    helm upgrade --set applicationConfig.<ENV_KEY>=<ENV_VALUE> [ RELEASE ] [ CHART ]  
+  helm install appsmith appsmith-ee/appsmith -f values.yaml 
   ```
-  For example, the below command sets the `APPSMITH_SIGNUP_DISABLED` variable to `true` and configures it to disable the signup button on the Appsmith login screen. 
-
-  * Alternatively, use a `values.yaml` file. You can specify the parameter values in the `applicationConfig` section. 
-
-  ```yaml
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_ID: ""
-    APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET: ""
-    APPSMITH_FORM_LOGIN_DISABLED: ""
-    APPSMITH_SIGNUP_DISABLED: "true"
-  ```
-Once you have made changes to the values file, run the below command.
-
-```bash
-  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
-```
   </TabItem>
-</Tabs> 
+ </Tabs> 
+
 
 ### Configure ECS installations
 
