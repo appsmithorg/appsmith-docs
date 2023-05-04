@@ -1,7 +1,20 @@
 # Roles
- A Role is a collection of permissions that grant access to certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than giving individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions, and a permission can be mapped to various roles. However, a role can't be nested, that's, it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
+ A Role is a collection of permissions that grant access to certain operations on resources and can be assigned to a user or a group. Roles enable users to manage multiple permissions rather than giving individual permissions to users/groups. In Appsmith, a role can be mapped to multiple permissions, and permission can be mapped to various roles. However, a role can't be nested, that's, it can contain only permissions and not other roles. Roles are useful for efficiently managing permissions to access Appsmith resources.
  
- Appsmith provides three built-in roles - **Administrator**, **Developer**, and **App Viewer**. With Granular Access Control (GAC), you can create a custom role that provides fine-grained access control. 
+## Default roles
+
+A default role is an Appsmith generated role, they're generated during the creation of an Instance or a Workspace. They can't be deleted by the user.
+
+Appsmith provides three built-in roles - **Administrator**, **Developer**, and **App Viewer**. With Granular Access Control (GAC), you can create a custom role that provides fine-grained access control.
+
+### Default role for all users
+
+The **Default Role For All Users** role sets the base level of access given to all users of an instance. The Instance Administrators can modify this role to provide the right level of access to their new users. Some use cases that can be solved with this role are:
+
+* Provide view access to certain important apps in an instance.
+* Remove the ability to create workspaces or apps for new users.
+* Limit the creation of apps to a single team workspace.
+
 
 ## Resources
 
@@ -14,7 +27,7 @@ A resource refers to specific components or aspects of an application that can b
 
 ## Permissions
 
- Permission refers to the ability to perform a particular operation on a resource. You can club multiple permissions under a role, and a permission can be present in various roles. The table below lists all the permissions available in Appsmith -
+ Permission refers to the ability to perform a particular operation on a resource. You can club multiple permissions under a role, and permission can be present in various roles. The table below lists all the permissions available in Appsmith -
 
 
 |  Permissions       |    Description                                                     |   Resource   |
@@ -29,7 +42,7 @@ A resource refers to specific components or aspects of an application that can b
 | **Execute**        |Grants users permission to execute queries on a datasource | [Datasource and queries](#datasource-and-queries-permissions) |
 | **Remove users**   |Grants users permission to remove a user from a group| [Groups and roles](#groups-and-roles-permissions) |
 
-All the permission for each resource are explained in detail below.
+All the permissions for each resource are explained in detail below.
 
 ### Application resources permissions
 
@@ -89,7 +102,7 @@ If you want the user to have delete access only to a specific application in a w
 
 ##### Page
 
-**Delete** access for a particular page allows you to delete the respective page or the resources in the page like APIs, queries, JSObjects. 
+**Delete** access for a particular page allows you to delete the respective page or the resources in the page like APIs, queries, `JSObjects`. 
 
 #### Export
 

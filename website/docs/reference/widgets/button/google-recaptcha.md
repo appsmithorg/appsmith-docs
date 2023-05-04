@@ -43,11 +43,11 @@ Make a `POST` request to `https://www.google.com/recaptcha/api/siteverify` with 
 }
 ```
 
-## Validation Example
+## Validation example
 
-Now that you have registered the site with [Google Recaptcha](https://www.google.com/recaptcha/about/) let's validate that the recaptcha is working by using a [button widget](./) and adding an [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md#api-editor) on Appsmith. Follow these steps to validate the reCAPTCHA:
+Now that you have registered the site with [Google Recaptcha](https://www.google.com/recaptcha/about/), you can validate if it is working by using a [button widget](./) and adding an [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md#api-editor) on Appsmith. Follow these steps to validate the reCAPTCHA:
 
-* &#x20;Drag and drop a [button widget](./) onto the canvas
+* Drag and drop a [button widget](./) onto the canvas
 * Add the **site key** to the [button's `Google reCAPTCHA Key` ](./#widget-properties)property
 
 :::info
@@ -55,7 +55,7 @@ Navigate to [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptcha
 :::
 
 * Navigate to **Explorer** >> Add **New Blank API** >> Add details as below:
-  * &#x20;Add **Header** `content-type` as `multipart/form-data`.
+  * Add **Header** `content-type` as `multipart/form-data`.
   * Select the HTTP Method as `POST`.
   * Add URL `https://www.google.com/recaptcha/api/siteverify`.
 
@@ -72,7 +72,7 @@ Navigate to  [Google reCAPTCHA v3 Admin Console](https://www.google.com/recaptch
 
 ![Add response and secret to Body - Multipart form data.](</img/Widgets__Button__reCAPTCHA__Validate_API__Add_reCaptchToken_and_Secret_to_Body_.png>)
 
-Once the above API is set up, click the **button** to trigger the validation. On successful validation, you'll see the response generated as below in the API response tab:
+Once the API is set up, click the **button** to trigger the validation. On successful validation, you'll see the response generated as below in the API response tab:
 
 ```
 {

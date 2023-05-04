@@ -276,7 +276,15 @@
     },
     {
       "source": "/how-to-guides/how-to-implement-custom-authentication-on-appsmith",
-      "destination": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith"
+      "destination": "advanced-concepts/custom-authentication"
+    },
+    {
+      "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith#building-ui-for-login-form",
+      "destination": "advanced-concepts/custom-authentication"
+    },
+    {
+      "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith",
+      "destination": "advanced-concepts/custom-authentication"
     },
     {
       "source": "/how-to-guides/how-to-work-with-local-apis-on-appsmith",
@@ -411,8 +419,32 @@
       "destination": "/core-concepts/data-access-and-binding/displaying-data-read"
     },
     {
+      "source": "/reference/widgets/table#displaying-column-value-using selectedrow",
+      "destination": "/reference/widgets/table#reference"
+    },
+    {
+      "source": "/reference/widgets/table#widget-properties",
+      "destination": "/reference/widgets/table#general"
+    },
+    {
+      "source": "/reference/widgets/table#binding-properties",
+      "destination": "/reference/widgets/table#reference"
+    },
+    {
+      "source": "/reference/widgets/table#header-options",
+      "destination": "/reference/widgets/table#table-header-options"
+    },
+    {
+      "source": "/reference/widgets/table#automatically-refresh-data-on-tables",
+      "destination": "/reference/widgets/table#update-table-data-in-real-time"
+    },
+    {
+      "source": "/reference/widgets/table#setup-server-side-search",
+      "destination": "/reference/widgets/table#server-side-search"
+    },
+    {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      "destination": "/reference/widgets/table#display-data-in-tables"
     },
     {
       "source": "/core-concepts/capturing-data-write",
@@ -613,6 +645,18 @@
     {
       "source": "/widget-reference/button",
       "destination": "/reference/widgets/button"
+    },
+    {
+      "source": "/widget-reference/button#widget-properties",
+      "destination": "/reference/widgets/button#general"
+    },
+    {
+      "source": "/widget-reference/button#binding-properties",
+      "destination": "/reference/widgets/button#reference"
+    },
+    {
+      "source": "/widget-reference/button#styles",
+      "destination": "/reference/widgets/button#style"
     },
     {
       "source": "/widget-reference/button/google-recaptcha",
@@ -2044,7 +2088,7 @@
     },
     {
       "source": "/v/master/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      "destination": "/reference/widgets/table#transforming-table-data"
     },
     {
       "source": "/v/master/core-concepts/dynamic-ui/widget-visibility",
@@ -2288,7 +2332,7 @@
     },
     {
       "source": "/v/v1.2.1/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read/display-data-tables"
+      "destination": "/reference/widgets/table#transforming-table-data"
     },
     {
       "source": "/v/v1.2.1/core-concepts/dynamic-ui/application-layout",
@@ -2645,6 +2689,22 @@
     {
       "source": "/v/v1.2/getting-started/setting-up/docker/email/sendgrid",
       "destination": "/getting-started/setup/instance-configuration/email/sendgrid"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/admin-settings",
+      "destination": "/getting-started/setup/instance-configuration#admin-settings"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/use-git-to-create-different-environments",
+      "destination": "/advanced-concepts/version-control-with-git/environments-with-git"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/pull-and-sync",
+      "destination": "/advanced-concepts/version-control-with-git/merging-branches"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
+      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
     }
   ]
 }

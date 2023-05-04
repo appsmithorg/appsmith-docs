@@ -1,48 +1,28 @@
 ---
-description: You may have these questions and we would like to answer them.
+description: Frequently asked questions about Appsmith.
 sidebar_position: 4
 ---
 
 # FAQ
 
-## What kind of apps can be built on Appsmith?
+## What kind of apps can I build on Appsmith?
 
-You can use Appsmith to build custom forms, dashboards & workflows. Tools like Customer Support Dashboards, Offer Management Consoles & Product Cataloging Systems are all prime use cases for Appsmith. You can also use it as a clean UI layer over manually triggered scripts, confusing deployment pipelines & basic database CRUD operations. There's very little preventing you from using Appsmith to bring any idea to life, but we've optimized the product to make building internal tools a hassle-free experience.
+You can use Appsmith to build custom forms, admin panels, dashboards and other complex workflows. Apps like database GUIs, customer support tools, back office apps, approval apps, and tracking/monitoring tools and management systems are all prime use cases for Appsmith. You can also use it as a clean UI layer over manually triggered scripts, confusing deployment pipelines and basic database CRUD operations. There's little preventing you from using Appsmith to bring any idea to life, and the product is optimized to make building internal tools a hassle-free experience.
 
-## Can I write code in Appsmith?
+## How is Appsmith different from other no-code or low-code tools?
 
-Yes, absolutely. You can write JavaScript code anywhere inside the product within curly braces `{{ }}`, or using standard syntax within [JS Objects](/core-concepts/writing-code/javascript-editor-beta). We know how complex and intricate business logic can be, and trying to build it without code can get excruciating. Appsmith bridges mundane API and UI configurations with powerful code expressions to let you build the apps the way you see them fit.
+Appsmith is open source, which means developers can easily adopt, extend and use the platform without worrying about vendor lock-in. You can also self-host and configure Appsmith on your local machine or a hosting platform giving you complete control over your data privacy, security, and integrity. Our developer-first approach empowers users to write full-fledged JavaScript code and implement Git workflow integration. Appsmith supports a wide range of datasources to connect data and widgets to create custom UX designs. At the heart of Appsmith is our rich and amazing community of developers who are ready to help and share their knowledge.
 
-For more information, see [writing code](/core-concepts/writing-code).
+## How secure is Appsmith?
 
-## What type of data security does Appsmith provide?
+Appsmith applications are secure by default. See [Security](/product/security) for more information. For Appsmith cloud users, data is stored and processed on servers in the US. If you want to have complete control over how your data is stored and transmitted, or need to ensure HIPAA compliance, you can [self-host Appsmith](/getting-started/setup) to ensure none of your data leaves your VPC.
 
-Appsmith safely encrypts all your database credentials and stores them securely. Appsmith doesn't store any data returned from your data sources and acts only as a proxy layer to orchestrate the API / Query calls. Appsmith is an open source platform and can be fully audited and deployed on-premise to ensure none of your data leaves your VPC.
-
-## Do you have a bounty program for reporting security vulnerabilities?
-
-No, we don't currently have a bounty program for reporting security vulnerabilities. However, we appreciate any information that can help us improve the security of our systems and protect our users' data. We do reward security researchers who report serious and previously undiscovered issues.
-
-## How do I report a security vulnerability?
-
-If you believe you have discovered a security vulnerability, please email our security team at security@appsmith.com with a description of the issue and any relevant details. We will review your report and take appropriate action to address the issue.
-
-## What if there is a missing feature that I need?
-
-We take all community feature requests very seriously, and the best way to request a missing feature is by raising a [Github Issue](https://github.com/appsmithorg/appsmith/issues/new/choose). Alternatively, we welcome external contributions and would be happy to help you unblock yourself with a feature on the platform. This is our [Contribution Guide](https://github.com/appsmithorg/appsmith/blob/release/contributions/CodeContributionsGuidelines.md).
-
-## How do I get help building an app?
-
-We provide support via our active discord community and GitHub issues. We're also happy to get on a call and help you build your apps!
-
-## How is Appsmith different from other app builders?
-
-Appsmith is the first **open-source** visual platform for building internal tools. Appsmith gives you building blocks (widgets, APIs, Queries) that you can configure and connect using JavaScript. This ensures that you never get blocked trying to create a custom workflow, and don't spend time building repetitive components!
-
-## What can't I do on Appsmith?
-
-Appsmith isn't built for complicated UI interactions that are common to e-commerce or other consumer-facing websites. It works great for tools and workflows internal to your team or organization, but you wouldn't get very far trying to build an attractive consumer website. For those use cases, we recommend you try [Wix](https://www.wix.com), [Squarespace](https://www.squarespace.com), or [Webflow](https://www.webflow.com).
+We appreciate any information that can help improve the security of our systems and protect users' data. We do reward security researchers who report serious and previously undiscovered issues. If you believe you have discovered a security vulnerability, please email our security team at [security@appsmith.com](mailto:security@appsmith.com) with a description of the issue and any relevant details. After reviewing the report, appropriate action is taken to address the issue.
 
 ## Does Appsmith support multi-user editing?
 
-Appsmith is currently built for a single-user editor experience. If you try to update the same page/widget/action from two different places, they will overwrite each other and will lead to a loss of work. We recommend that at any given time, only one user should edit a page in a single open tab. Multi-user editing is on our roadmap for the future.
+Appsmith supports multi-user editing with [version control using Git](/advanced-concepts/version-control-with-git) which provides a way for multiple users to edit the app pages on different branches before they can be merged into the master branch. Making changes to the same page on the same branch can lead to loss of work, so it's recommended to make edits to the same page on different branches before merging them. 
+
+## What is the pricing plan for the Business edition?
+
+See [Pricing](https://www.appsmith.com/pricing) for information about the Appsmith Business edition.

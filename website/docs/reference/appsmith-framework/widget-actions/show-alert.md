@@ -3,9 +3,14 @@ sidebar_position: 2
 ---
 # Show Alert
 
-It shows a temporary notification style alert message to the user
+Displays a temporary toast-style alert message to the user, lasting 5 seconds. The duration of the alert message can't be modified.
 
-![](/img/alert.gif)
+<figure>
+    <img src="/img/show-alert-action.png" style={{width:"700px", height:"auto"}} alt="showAlert displays notifications at the top of the screen." />
+    <figcaption align="center" ><i>Show Alert</i></figcaption>
+</figure>
+
+
 
 ## Signature
 
@@ -17,5 +22,5 @@ showAlert(message: string, style: string) -> Promise
 
 | **Argument Name** | **Description**                                                         |
 | ----------------- | ----------------------------------------------------------------------- |
-| **Message**       | The message you want to show to the user                                |
-| **Style**         | The style of alert message. Can be one of info, success, error, warning |
+| **Message**       | The message to show the user.                             |
+| **Style**         | The style of alert message. Can be one of "info," "success," "error," or "warning." |

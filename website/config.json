@@ -11,7 +11,10 @@
 	],
 	"sitemap_alternate_links": true,
 	"stop_urls": [
-		"/tests"
+		"https://docs.appsmith.com/getting-started/setup/upgrade-to-business-edition/upgrade-docker-to-business-edition", 
+		"https://docs.appsmith.com/getting-started/setup/upgrade-to-business-edition/upgrade-k8s-to-business-edition",
+		"https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes/install-k8s-business-edition", 
+		"https://docs.appsmith.com/getting-started/setup/installation-guides/docker/install-business-edition"
 	],
 	"selectors": {
 		"lvl0": {
@@ -20,25 +23,26 @@
 			"global": true,
 			"default_value": "Documentation"
 		},
-		"lvl1": "header h1",
+		"lvl1": "article h1",
 		"lvl2": "article h2",
 		"lvl3": "article h3",
 		"lvl4": "article h4",
 		"lvl5": "article h5, article td:first-child",
 		"lvl6": "article h6",
-		"text": "article p, article li, article td:last-child"
+		"text": "article p, article li, article td:last-child, article .error div:last-child"
 	},
 	"strip_chars": " .,;:#",
 	"custom_settings": {
 		"separatorsToIndex": "_",
 		"attributesForFaceting": [
+			"hierarchy.lvl1",
 			"language",
 			"version",
 			"type",
 			"docusaurus_tag"
 		],
 		"attributesToRetrieve": [
-			"hierarchy",
+			"hierarchy.lvl1",
 			"content",
 			"anchor",
 			"url",

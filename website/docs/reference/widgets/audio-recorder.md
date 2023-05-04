@@ -9,17 +9,17 @@ The Audio recorder widget allows users to record using their microphone, listen 
 
 Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget Properties
+### Widget properties
 
 These properties allow you to edit the Audio Recorder widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
 | Widget Property     | Description                                                                                                                                                                                            |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Disabled**        | Makes the widget un-clickable or unusable. The widget will remain visible to the user but user interaction will not be allowed.                                                                        |
-| **Visible**         | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                         |
-| **Animate Loading** | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by clicking the JS label next to it. |
+| **Disabled**        | Makes the widget inactive or unusable. The widget remains visible to the user but user interaction is not allowed.                                                                        |
+| **Visible**         | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.                                         |
+| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by clicking the JS label next to it. |
 
-### Binding Properties
+### Binding properties
 
 These properties allow you to bind your Audio Recorder widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
@@ -32,7 +32,7 @@ These properties allow you to bind your Audio Recorder widget with any other wid
 
 ### Events
 
-You can define functions that will be called when these events are triggered in the widget.
+You can define functions are called when these events are triggered in the widget.
 
 | Event                   | Description                                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |

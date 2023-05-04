@@ -11,11 +11,11 @@ Allowing your Appsmith apps to be embedded on any website makes them susceptible
 
 
 
-By default, starting **Appsmith v1.7.10**, apps **cannot** be loaded in a frame/iframe on domains other than the app's domain. That is, if your Appsmith is available at `http://mydomain.com`, then only pages on `http://mydomain.com` will be able to embed apps.
+By default, starting **Appsmith v1.7.10**, apps **cannot** be loaded in a frame/iframe on domains other than the app's domain. That is, if your Appsmith is available at `http://mydomain.com`, then only pages on `http://mydomain.com` can embed apps.
 
 
 
-To change/customize this, we've introduced the `APPSMITH_ALLOWED_FRAME_ANCESTORS` environment variable. To allow another domain like `http://trusted-other.com` to also embed apps from your Appsmith, use:
+To change/customize this, use the `APPSMITH_ALLOWED_FRAME_ANCESTORS` environment variable. To allow another domain like `http://trusted-other.com` to also embed apps from your Appsmith, use:
 
 ```
 APPSMITH_ALLOWED_FRAME_ANCESTORS="'self' http://trusted-other.com"

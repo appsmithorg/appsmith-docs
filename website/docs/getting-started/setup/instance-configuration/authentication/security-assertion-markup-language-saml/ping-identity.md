@@ -9,19 +9,19 @@ Ping Identity (PingID) is the identity as a security platform provider. It's a c
 Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
 :::
 
-## Create Environment
+## Create environment
 
 Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. (Please create an account if you don’t have one). On the dashboard, you can see the Home menu, click on home and see the environment listing.
 
-* Click on the **Add Environment** button.
+* Click the **Add Environment** button.
 
 ![Add an Environment](</img/PingID-Add-Environment_(1).png>)
 
-* Click on the **Build your own Solution,** select `PingOne SSO`, and click **Next**.
+* Click the **Build your own Solution,** select `PingOne SSO`, and click **Next**.
 
 ### Create Application
 
-* Click on the **Connections** available on the left sidebar and click **Applications**. Create a new application by clicking on `(+)`.
+* Click the **Connections** available on the left sidebar and click **Applications**. Create a new application by clicking on `(+)`.
 * Fill in the details:
   * Name - Provide a meaningful name
   * Description - Provide a description
@@ -29,7 +29,7 @@ Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) ac
 
 ![Add a new application and choose SAML Application as the application type](/img/PingIdentity-SAML-Add-Application.png)
 
-* Click Save, and you’ll see a configuration overlay and Configure button. Click on Configure button to complete the SAML configuration.
+* Click Save, and you’ll see a configuration overlay and Configure button. Click the Configure button to complete the SAML configuration.
 
 ![Configure SAML](/img/PingIdentity-SAML-Add-New-Application.png)
 
@@ -47,15 +47,15 @@ Ping Identity provides several ways to set up SAML integration. For configuring 
 
 ![Manually Enter - Redirect and Entity URL](/img/PingIdentity-SAML-Configure-SAML-Redirect-Entity-URL.png)
 
-* You’ll see the application is created with SAML configuration as below
+* The application is created with the SAML configuration as shown below:
 
 ![SAML configuration](/img/PingIdentity-SAML-Configure-Success.png)
 
-## Configure Ping Identity Fields in Appsmith
+## Configure Ping Identity fields in Appsmith
 
 To complete the SAML setup, you’ll have to register PingID as a provider on the Appsmith platform. Follow the instructions listed below to complete this step:
 
-### Register Identity Provider
+### Register identity provider
 
 There are many ways to register the identity provider on Appsmith and complete the SAML Configuration.
 
@@ -85,9 +85,9 @@ If you don’t have a **Metadata URL** but have a **raw SAML Metadata XML** docu
 
 ![Add a raw Metadata XML](/img/Appsmith-Admin-Settings-Authentication-SAML-XML.png)
 
-#### IdP Data
+#### IdP data
 
-You can also configure SAML by providing the identity provider(IdP) data. If you have Identity provider’s data like X509 Public Certificate, Email, and more, you can choose this option to configure SAML.
+You can also configure SAML by providing the identity provider(IdP) data. If you have Identity provider data like X509 Public Certificate, Email, and more, you can choose this option to configure SAML.
 
 * Navigate to **Environment** >> Select **Environment\_Name** >> Click **Connections** >> Select **Application\_Name** >> Click **Configuration** Tab >> Click **Download Metadata**.
 * Add the content of the tags as per the below mapping table on the Appsmith platform:
@@ -101,12 +101,12 @@ You can also configure SAML by providing the identity provider(IdP) data. If you
 
 ![IdP Data](/img/Appsmith-Admin-Settings-Authentication-SAML-IdP-Data.png)
 
-## Complete the SAML Configuration
+## Complete the SAML configuration
 
-Once the server restarts with new configurations, you will see a screen showing the message ‘Authentication Successful!’.
+Once the server restarts with new configurations, you see a screen showing the message ‘Authentication Successful!’.
 
 ![SAML Configuration Successfully completed](/img/Appsmith-SAML-Authentication-Successful.png)
 
 You’ll see a login screen with the button `SIGN IN WITH SAML SSO`.
 
-![SIGN IN WITH SAML SSO - Available on Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)
+![SIGN IN WITH SAML SSO - Available on the Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)

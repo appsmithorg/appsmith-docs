@@ -9,7 +9,7 @@ Appsmith encrypts all your datasource credentials and stores them securely. Apps
 To connect to a datasource, 
 
 * Navigate to **Explorer**
-* Click on the **+** icon (next to Datasources) 
+* Click the **+** icon (next to Datasources) 
 * Select the **datasource**. 
 
 

@@ -1,179 +1,270 @@
 ---
 sidebar_position: 2
+toc_max_heading_level: 2
 ---
 
-# Amazon / Generic S3
+# Amazon S3
 
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md). If not, please go over them before reading further.
-:::
+This page describes how to connect your application to your Amazon S3 object storage and use queries to manage its content.
 
-The Appsmith S3 Datasource can connect to Amazon S3, Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, MinIO, and any other S3 provider! Below, you will see examples of connecting to your S3 provider and issuing [List](querying-amazon-s3.md#list-files), [Create](querying-amazon-s3.md#create-file), [Read](querying-amazon-s3.md#read-file), and [Delete](querying-amazon-s3.md#delete-file) actions.
+This datasource can also be used to connect to any S3-compatible object storage provider such as Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, and MinIO.
 
 <VideoEmbed host="youtube" videoId="pmEmQcd9_KA" title="" caption=""/>
 
-For our examples below, we will connect to an **Amazon S3** provider.
+## Connect to Amazon S3
 
+To add an Amazon S3 datasource:
 
-## Connection Settings
+1. Click the (**+**) sign in the **Explorer** tab next to **Datasources**.
+1. On the next screen, select the **S3** button. This creates the datasource and takes you to the datasource's configuration page.
+1. Enter your **Access Key** into the matching field. For **Amazon S3**, you can find this in the AWS Console in the **Security Credentials** section.
+1. Enter your **Secret Key** into the appropriate field. The AWS Console only shows the secret key once, when it is first created. If you don't have your secret key, you may need to [generate a new access key and secret key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+1. Once you've entered your credentials, click the **Test** button to check that they are working.
+1. Click **Save** when you are finished, and your datasource is ready for queries.
 
-The S3 Datasource requires the following information to establish a connection:
+<figure>
+  <img src="/img/s3-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Amazon S3 datasource." />
+  <figcaption align="center"><i>Configuring an Amazon S3 datasource.</i></figcaption>
+</figure>
 
-1. Amazon Access Key ID
-2. Amazon Secret Key
+## Create queries
 
-For Amazon S3, you can find your Access Key and Secret Key using the following guide: [Generate AWS access key & secret](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to your object storage by selecting the **+ New Query**  button on the Amazon S3 datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Amazon S3 datasource. You'll be brought to a new query screen where you can write queries.
 
-![Provide the name of your S3 provider, your Access Key, Secret Key, and then click "Save".](</img/as_s3_1_(1).png>)
+<figure>
+  <img src="/img/s3-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Files query." />
+  <figcaption align="center"><i>Configuring a List Files query.</i></figcaption>
+</figure>
 
-## Signed and Un-signed URLs
-
-A **signed URL** allows the user to follow that link directly and immediately view the related resource. If you only have an **un-signed URL,** then that resource cannot be accessed directly; instead, you will need to use the Amazon API to query the resource along with appropriate authentication.
-
-Signed URLs are only valid for a certain amount of time: For Amazon S3, you can specify a length of time of up to 7 days (10,080 minutes). To configure this in the Appsmith platform, enter the desired length of time (in minutes) into the `Expiry Duration of Signed URL` field.
-
-:::info
-In any of the S3 actions below that return file information, you can choose to generate a signed URL for each returned file by selecting "Yes" in the `Generate Signed URL` dropdown field in your query's configuration.
-:::
-
-If you choose to generate a signed URL, the query response will include two additional fields:
-
-* `signedUrl`: The signed URL for the file.
-* `urlExpiryDate`: The timestamp at which the signed URL will expire.
-
-With the `Generate Un-signed URL` dropdown option, you may choose to request a regular URL that links to the resource. In that case, you would receive one additional field `url` which does not expire; however, as mentioned above, this URL cannot be used to access the resource directly, and instead must be used within a valid API request.
-
-## List Files
+## List files in bucket
 
 This action lists/returns an array of objects which are contained within that bucket, each including at least a `fileName` property.
+
+The return data should look something like this:
 
 ```json
 [
   {
-    fileName: "myFile.pdf",
+    "fileName": "myFile.pdf",
     ...
   },
   ...
 ]
 ```
 
-Fill in the **Bucket Name** input with the name of the S3 bucket you'd like to query.
+---
 
-![Use the Prefix field to only query files whose names begin with the specified prefix.](</img/as_s3_list_(1).png>)
+#### Example
 
-You can use the **Prefix** box to narrow your query to return only files that begin with your specified prefix. This is used to access S3 directories; files are stored in a flat structure instead of nested folders, but are grouped by adding common prefixes to the related items' filenames. This emulates the traditional directory tree structure. Take a look at the [Amazon S3 documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html) for more detail on how files are organized!
+> Fetch all files contained in a bucket with a certain path prefix, and display the result in a table. Include links to the documents so the user can view the files.
 
-```
-// directory tree structure
-root
-|__folderOne
-| |__itemOne.png
-|
-|__folderTwo
-  |__folderThree
-    |__ itemTwo.pdf
-    
-// S3 structure
-bucket
-|__ folderOne/itemOne.png
-|__ folderTwo/folderThree/itemTwo.pdf
-```
+**Setup**:
 
-## Create File
+Create a [Table widget](/reference/widgets/table) to display your data. Create your Amazon S3 datasource and a query called based on it.
 
-This action creates a new file in the specified bucket, named according to the `File Path` field. Remember to include directories in the file name, e.g. `folderTwo/folderThree/itemTwo.png`.
+**Configure the query**:
 
-The action returns the following two fields:
+1. Set the **Commands** field to `List files in a bucket`.
+1. Provide the name of your S3 bucket in **Bucket Name**.
+1. In **Prefix**, provide the path or directory where your file is located.
+1. Set **Generate Signed URL** to `Yes`.
+1. If you want to set up server-side pagination:
+    1. Set **Pagination Limit** to `{{ <table-name>.pageSize }}`.
+    1. Set **Pagination Offset** to `{{ <table-name>.pageOffset }}`.
 
-* `signedUrl`: A signed URL for the file.
-* `urlExpiryDate`: A timestamp at which the signed URL will expire.
+**Configure the table**:
 
-You can set an expiry duration for the generated signed URLs by editing the `Expiry Duration of Signed URL` field.
+1. Set the Table's **Table Data** property to `{{ <query-name>.data }}`.
+1. Run your query once by refreshing the page -- now you can access the properties for the `signedUrl` column of the table.
+1. In the settings for the `signedUrl` column, set the **Column Type** to `Button`, and its **Text** to `View`.
+1. Configure the button's **onClick** action:
+    1. Set the action to `Navigate to`.
+    1. Set its **Type** to `URL`.
+    1. Set **Enter URL** to `{{ currentRow.signedUrl }}`.
+    1. Set its **Target** to `New window`.
+1. To complete the setup for server-side pagination:
+    1. Enable the table's **Server Side Pagination** toggle and configure the **onPageChange** action to execute your query.
 
-![Enter the file path, which is a string representing the complete path relative to the bucket.](/img/as_s3_create.png)
+Now your Table is ready to page through your S3 bucket's files, and you can click any row's View button to see the file in a new window.
 
-:::note
-If a file by the same name/path already exists within the bucket, the old file will be _overwritten_ by the new file!
+---
 
-Enable the **"Request confirmation before running query"** setting to help avoid accidentally overwriting files!
-:::
+### Parameters
 
-![Enable this setting to prevent accidental destructive actions!](/img/2)
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **Prefix**                        | The directory path whose files you'd like to query. In `sample/path/example.png`, the **Prefix** is `sample/path`. Using the prefix `sample/path` with no filtering returns all files in the `sample/path` directory.     |
+| **Where**                         | Filter conditions to narrow query results based on comparison operators. |
+| **Generate Signed URL**           | Requests an authenticated, user-accessible URL for each file in the response. Users may follow the link in their browser to see the content of the file. The URL expires after the amount of time specified in **Expiry Duration of Signed URL**. |
+| **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
+| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, however it can't be used to access the resource directly, only via API. |
+| **Sort By**                       | Orders the query results in ascending or descending order based on a given key's value. |
+| **Pagination Limit**              | Restricts the number of results returned in the response. |
+| **Pagination Offset**             | Skips a given number of files before returning the further results. |
 
-There are two ways to send content to the S3 bucket:
+## Create a new file
 
-1. A file can be selected and uploaded with the [Filepicker Widget](./../widgets/filepicker.md). To reference this file in your query (assuming that your Filepicker is named "FilePicker1"), use `{{Filepicker1.files[0]}}` in the `Content` field of your query.
-   * Be sure that the `File Data Type` field is set appropriately for the data you are uploading. For example, if your Filepicker's `Data Format` is set to `Base64`, your query should be set to `Base64` also.
-2. Alternatively, you can manually add data into the `Content` field by writing an object with a `text` and `data` property like below:
+This command uploads a new file into the specified bucket, named according to the `File Path` field. Remember to include any necessary directories in the filename as the **Prefix**, e.g. `sample/path/file.png`.
 
-```
+If a file by the same name/path already exists within the bucket, the old file is _overwritten_ by the new one.
+
+You can use the [Filepicker widget](/reference/widgets/filepicker) to select files on your machine to upload to S3. Reference the selected file in your query's **Content** field with `{{ Filepicker1.files[0] }}`.
+
+:::tip
+If you need to send plain text content to S3, send JSON in the **Content** field with a `text` and `data` property like below:
+```json
 {
   "type": "text/plain",
   "data": "This is my text content!"
 }
 ```
-
-In this second case, you'll want to ensure that your `File Data Type` is set to `Text`.
-
-### Creating Multiple Files
-
-There are a couple of extra considerations to make when using the **Create multiple new files** operation:
-
-1. When using the Filepicker, be sure to set the widget's **Max No. Files** property to a value greater than the default "1"; otherwise, the user will not be able to upload multiple files for the query.
-2. Now when defining the query's Content, you'll pass in the entire `{{Filepicker1.files}}` array, instead of `{{FilePicker1.files[0]}}` as before.
-3. You can give all the files a common path/prefix in your bucket by setting the **Common File Path** field in your query. This can be used to achieve a result such as:
-
-```
-// a single Create Multiple query with Common Path set to "commonPath/"
-commonPath/fileOne.png
-commonPath/fileTwo.png
-commonPath/fileThree.jpeg
-```
-
-**Remember**: The file paths are actually just file names that follow a pattern which looks like directories; this means that, in order to achieve a result like "commonPath/fileOne.png", you will need to explicitly include the "/" character in the **Common File Path** field (e.g. use `commonPath/`, not just `commonPath`).
-
-## Read File
-
-This action fetches a file from the bucket (specified in the `Bucket Name` field) with a file name/path matching the contents of the `File Path` field. By default, the raw content of the file is returned on the `fileData` property of the response. File content can also be Base64 encoded by selecting `Yes` in the `Base64 Encode File - Yes/No` dropdown field.
-
-If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
-
-:::tip
-When reading multimedia files or formatted text, please encode the file data using the Base64 Encode dropdown field. Once the data has been received, it can be decoded with `atob()` as noted above.
 :::
 
-![Access the contents of your file with queryName.data.fileData](/img/as_s3_read.png)
+---
 
-## Delete File
+#### Example
 
-This action deletes a file with the name/path matching the contents of the `File Path` field. Files deleted from the bucket cannot be restored; please ensure you have backed up your files!
+> Upload a file to an S3 bucket in a certain directory.
+
+**Setup**:
+
+Create your Amazon S3 datasource and a new query based on it. Add a Filepicker widget to the canvas, and use it to select a .pdf file from your machine.
+
+**Configure the query**:
+
+1. Set the **Commands** field to `Create a new file`.
+1. Set the **Bucket Name** field to the name of your S3 bucket. 
+1. Set the **File Path** field to the name you'd like to give the file, including any path prefix.
+1. In the **Content** field, reference the file you uploaded:
+  ```javascript
+  // in the query's Content field
+  {{ <filepicker-name>.files[0] }}
+  ```
+
+Now when your run your query, the file you selected is uploaded to your S3 bucket.
+
+---
+
+### Parameters
+
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
+| **File Data Type**                | Sets the data format to use when sending the file content. |
+| **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
+
+## Read file
+
+This command fetches the content of a file from the bucket. By default, the raw content of the file is returned on the `fileData` property of the response.
+
+:::tip
+If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
+:::
+
+---
+
+#### Example
+
+> Download the content of a .pdf file from an S3 bucket.
+
+**Setup**:
+
+Create your Amazon S3 datasource and a query based on it. Then create a table widget that is set up to list the files in your S3 bucket as described above in [List files in bucket](#list-files-in-bucket).
+
+**Configure the query**:
+
+1. Set the **Commands** field to `Read file`.
+
+1. Set the **Commands** field to `Read file`.
+1. Set the **Bucket Name** field to the name of your S3 bucket. 
+1. Set the **File Path** field to `{{ <table-name>.triggeredRow.fileName }}`.
+
+**Configure the table**:
+
+1. In the Table's properties pane, add a custom column with **Column Type** `Button` and **Text** set to `Download`.
+1. Configure its **onClick**:
+    1. Set the action to `Download`.
+    1. Set **Data to download** to:
+      ```javascript
+      // in the button column's onClick settings
+      {{ atob(<read-query-name>.data.fileData) }}
+      ```
+    1. Set the **File name with extension** to `{{ <table-name>.triggeredRow.fileName }}`.
+
+Now when a user clicks the download button in a table row, the associated .pdf is downloaded to their machine.
+
+---
+
+### Parameters
+
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
+| **Base64 Encode File**            | Sets whether Appsmith encodes the incoming file's content into Base64. |
+
+## Delete file
+
+This command deletes a file from an S3 bucket.
 
 This action returns a message on the `status` property describing the outcome of your query.
 
-:::tip
-Enable the **"Request confirmation before running query"** setting in your Delete Query to help avoid accidentally deleting files!
-:::
+---
 
-![Delete a file by supplying the Bucket name, and the file name to delete.](/img/as_s3_delete.png)
+#### Example:
 
-### Deleting Multiple Files
+> Delete a particular file from an S3 bucket.
 
-The only difference from the single Delete operation is that you'll now be providing an array of file paths to delete in the **List of Files** field. For example:
+**Setup**:
 
-```
-{{
-  [
-    "folderOne/itemOne.png",
-    "folderTwo/folderThree/itemTwo.pdf"
-  ]
-}}
-```
+Create your Amazon S3 datasource and a query based on it. Then create a table widget that is set up to list the files in your S3 bucket as described above in [List files in bucket](#list-files-in-bucket).
 
-## Using Queries in applications
+**Configure the query**:
 
-Once you have successfully run a Query, you can use it in your application to
+1. Set the **Commands** field to `Delete file`.
+1. Set the **Bucket Name** field to the name of your S3 bucket. 
+1. Set the **File Path** field to `{{ <table-name>.triggeredRow.fileName }}`.
 
-* [Display Data](./../../core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](./../../core-concepts/data-access-and-binding/capturing-data-write/)
-* [Upload files](./../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md)
-* [Download files](./../../learning-and-resources/how-to-guides/how-to-upload-to-s3.md#downloading-files)
+**Configure the table**:
+
+1. In the Table's properties pane, add a custom column with **Column Type** `Button` and **Text** set to `Delete`.
+1. Configure its **onClick**; toggle the **JS** tag and enter the code:
+  ```javascript
+  {{
+    <delete-query-name>.run().then(() => {
+      <list-query-name>.run();
+    })
+  }}
+  ```
+
+Now when you click the delete button in the table, the corresponding file is deleted from the S3 bucket and the table is refreshed.
+
+---
+
+### Parameters
+
+| **Parameter**                     | **Description**                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| **Bucket Name**                   | The name of the S3 bucket to query.    |
+| **File Path**                     | The name under which to save the file. Be sure to include directories as prefixes to the filename if necessary.     |
+
+## Commands
+
+**Command** sets the type of action you want to perform with your query.
+
+| **Command**                    | **Description**                                                    |
+| ------------------------------ | ------------------------------------------------------------------ |
+| **List files in bucket**       | Fetch names and URLs for files in an S3 bucket.                    |
+| **Create a new file**          | Upload a new file to an S3 bucket.                                 |
+| **Create multiple new files**  | Upload several files to an s3 bucket.                              |
+| **Read file**                  | Download the content of a particular file.                         |
+| **Delete file**                | Delete the file at a given path.                                   |
+| **Delete multiple**            | Delete multiple files by supplying their paths.                    |
+
+## Further reading
+
+* [Upload files](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
+* [Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3#downloading-files)
+* [Filepicker widget](/reference/widgets/filepicker)

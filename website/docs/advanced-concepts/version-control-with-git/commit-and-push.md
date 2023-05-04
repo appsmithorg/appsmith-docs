@@ -1,23 +1,48 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# Commit and Push
+# Commit and Push Changes
 
-After developing your app further, you’d want to sync it with your repository. To sync the app and the repository, commit the changes using the deploy button at the top right or `+` icon at the bottom left corner.
+After developing your app on a feature branch, to commit and push changes to your remote repository, follow the steps below:
 
-In the deploy window, enter your commit message and click on `Commit and Push` to update your repository with the latest changes.
+1.  Click the **+** icon at the bottom left corner to commit the changes. 
+2. In the deploy tab on the Modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
 
-:::info
-Once you commit and push changes, the changes are also published for the app viewers. Please note that the deployed version of one branch does not affect the other. For example, if you are working on a feature branch `f1` and you deploy the changes from `f1` branch, it will not affect the changes of the master branch
-:::
+![](/img/commit_changes_git.gif)
 
-Let’s discuss some common errors you may face during the commit and push process.
+When you push your feature branch to the remote repository, you can see the deployed version of the branch in Appsmith. To check the deployed app for your branch, click the **Deploy** button from the top right corner and in the deploy modal, click **Latest Deploy Preview**.
 
-#### Remote is Ahead
+## Upstream changes
 
-In case the remote counterpart of your current branch has some commits that are not present on the local branch, the push command would fail, and you would need to pull the changes to proceed. After pulling the changes, once you click on the pull button, all changes would be finally pushed to the repository, including the last commit.
+In case the remote counterpart of your current branch has some commits that aren't present on the local branch, the push command would fail, and you would need to [pull the changes](/advanced-concepts/version-control-with-git/merging-branches#pull-changes) to proceed. After pulling the changes, push the changes again and all changes would be finally pushed to the repository, including the last commit.
 
-#### Merge Conflicts
+Once the remote feature branch is updated in the repository, you can raise a PR to merge the changes with the master branch.
+ 
 
-If there are any merge conflicts, you will have to resolve them manually on the repository. Once you fix the conflicts, you can try pulling the changes again.
+## File changes
+
+**Renaming files:**  if you rename an entity (query, widgets etc), it's the same as deleting the old entity and creating a new one in the Git file system. For example, when you rename a query, you may see `2 queries modified` while trying to commit; the 2 changes are the old query being deleted and the new one being created.
+
+
+**Appsmith updates:** when an Appsmith version is updated, you may see uncommitted changes in your local Git branch even when you've made no changes in your app. This happens due to new feature additions to the platform. You can commit these changes as version update changes. To avoid conflicts due to Appsmith version updates, follow the steps below:
+1. Open your app in the master branch and commit the version update changes.
+2. After successfully committing and pushing your changes, switch to your local feature branch and merge the changes from the master branch into the feature branch.
+
+## Discard changes
+
+While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the Deploy Modal, click the **Discard Changes** button. When this button is clicked, along with the current changes being discarded, the latest changes are pulled from the remote repository so that your application is in sync. 
+
+Discarding changes have the following impact on the entities (pages, queries, JSObjects etc.): 
+- Any entity (pages, queries, JSObjects etc.) added after the last commit is removed. 
+- Any resources that are deleted after the last commit is restored. 
+- Changes made to any resource after the last commit is removed.
+
+## Further reading
+
+[Merge and Pull changes](/advanced-concepts/version-control-with-git/merging-branches)
+
+
+
+
+

@@ -1,200 +1,64 @@
 ---
 description: >-
-  Multiple Queries can be triggered in serial/parallel/conditional when a user
-  interacts with a widget
+  Learn how to build effective workflows with Appsmith using multiple queries and execute them in the serial, parallel or conditional manner and programming widgets for smooth user interaction.
+
+toc_min_heading_level: 2
+toc_max_heading_level: 5
 ---
 
 # Creating Workflows
 
-When you build an app on Appsmith, you manipulate data; add, update, delete and retrieve data, add actions and trigger them. You use Javascript functions, APIs, or Queries to build different workflows.
+When you build an app on Appsmith, you write code to add, update, delete, and retrieve data, and define actions on event triggers. You can use JavaScript functions, and database or API queries to build different workflows.
 
-:::info
-To create workflows, you should be familiar with [triggering actions](../../reference/appsmith-framework/#functions) from [widgets](/reference/widgets) and expand on triggering more complex actions.
-:::
+## Trigger actions with event listeners
 
-## **Fields**
+[Actions](/reference/appsmith-framework/widget-actions) in Appsmith are built-in functions that provide a way to perform specific operations in response to user interactions or other events in your application. 
 
-The widgets have fields you can use to bind data or trigger operations. Appsmith has segregated the fields into Sync and Async fields.
+You can trigger actions by binding them to Events(Async fields). For example, if you want to run a query on button click, you can bind the query's [run()](/reference/appsmith-framework/query-object#run) method on the button's `onClick` event.
 
-### **Sync Fields**
+<figure>
+  <img src="/img/trigger-action-on-events.png" style= {{width:"700px", height:"auto"}} alt="Trigger actions using event listeners"/>
+  <figcaption align = "center"><i>Trigger actions usings event listeners</i></figcaption>
+</figure>
 
-Whenever you drag a widget on the canvas, you can select it and see the properties associated with it in the properties pane. The fields that expect input or data in the properties pane are called Sync Fields.
+## Handle query success or error
 
-![Input widget - Sync Fields](</img/Writing_Code__Creating_Workflows__Sync_Fields__Input_Widget.png>)
+The property pane provides a way to configure an action to be performed when a query returns with a success or an error post execution. The HTTP status code or the query response status can help determine the success or error message returned by the query.
 
-For example, if you have added an Input widget to the canvas, the properties like MaxChars, Regex, Error Message, and so on expect some input and are Sync Fields.
+For example, you can display a success message when the query has executed successfully or an error message when there are issues with the execution using the `showAlert()` action.
 
-### **Async Fields**
-
-The properties that can trigger an action or perform an operation are called Async Fields.
-
-![Input Widget - Async Fields](</img/Writing_Code__Creating_Workflows__Async_Fields__Input_Widget.png>)
-
-For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are considered async fields. You can use these properties to define an action or perform an [operation](../../reference/appsmith-framework/#functions).
-
-### **Use an Async Function Response in a Sync Field**
-
- <VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Using data from Async function in Synchronous Field" caption="Using data from Async function in Synchronous Field"/>  
+<figure>
+  <img src="/img/handle-query-success-error.png" style= {{width:"700px", height:"auto"}} alt="Handle query success and error"/>
+  <figcaption align = "center"><i>Handle query success and error</i></figcaption>
+</figure>
 
 
-Let's look at some examples to understand how you can use async functions in sync fields.
+## Complex workflows
 
-#### **Use case**
+The Appsmith GUI is limited to a single `onSuccess` or `onError` callback, while the underlying framework has no limitation. To write complex workflows, you can enable JavaScript by clicking the `JS` toggle next to the event listener. You can perform operations such as chaining multiple queries and executing them in a specific order or conditionally executing a query based on the result of another query. 
 
-You are fetching all the users and displaying information like First Name, Last Name, Email, and more on a page. You have a table widget to display the data.
-
-**Using an API**
-
-You have an API that fetches Users. You want to trigger the API execution, so you bind the API call to the widget, and the response generated will be shown in the table.
-
-To add a Table widget; Navigate to `Explorer` >> Click on `Widgets` >> Search `table` >> Drag a table widget onto the canvas.
-
- <VideoEmbed host="youtube" videoId="iYZV9DPnugY" title="Using an API" caption="Using an API"/>  
-
-
-To read data by using an API: Create an API - `getAllUsers` on Appsmith by adding the `API` from `Explorer` >> Click `(+)` Query/JS >> Select `New Blank API` >> Rename to `getAllUsers` (or select an existing API) Add API call to the table data property of a table widget as shown in the code snippet below:
-
-```
- {{getAllUsers.data}}
-```
-
-:::info
-The [table data property of a table](../../reference/widgets/table/#table-data) requires a **JSON Array** so verify that your API returns a **JSON Array**.
-:::
-
-A `{{API.run()}}` method, if supplied to the [Table data](../../reference/widgets/table/#table-data), will throw an error, as table data is a Sync field and cannot perform the execution. However, you can read the response generated by the API by accessing the data property `{{API.data}}` of an API. When you bound an API data property to a widget, Appsmith executes the API **on page load**. You can modify the API settings if you wish not to execute the API **on page load**.
-
-**Using a JSObject**
-
-You have a JSObject function that fetches all Users' information, filters data for `firstname` & `email,` and then returns the result so you can bind it to the table widget and display information.
-
- <VideoEmbed host="youtube" videoId="8mVQS6uaR6M" title="Using a JSobject" caption="Using a JSobject"/>  
-
-
-To read the data by calling a JSObject function: Create a JSObject - `getFilteredUsersList` on Appsmith by adding a `JSObject` from `Explorer` >> Click `(+)` Query/JS >> Select `New JS Object` >> Rename to `getFilteredUsersList` (or select an existing JSObject) You can add your API or Query Call to the function call and filter the data for the required details as below:
-
-```
-export default {
-	userFilteredList: async () => {
-	const listUser = await getAllUsers.run();
-		return listUser.map((user) => {
-			return {
-				"firstname" : user.name,
-				"email" : user.email
-			}
-		})		
-	}
-}
-```
-
-A function call to the JSObject `getFilteredUsersList.userFilteredList()` will throw an error as table data is a sync field and cannot perform function execution. However, you can use the JSObject function response by adding `{{<JSOBJECTNAME.FUNCTIONAME.data>}}1 ({{getFilteredUsersList.userList.data}})`by reading the function's response. Appsmith handles the JSObject function execution **on page load**. You can modify the async function settings from the settings tab if you wish not to execute the function **on page load**.
-
-**Using a Query**
-
-You have a query that fetches Users’ information, returns the response, and binds it to the table widget to display data.
-
- <VideoEmbed host="youtube" videoId="hqkI0h7DQ-s" title="Using a Query" caption="Using a Query"/>  
-
-
-To read data by calling a query:
-
-* Click on the **+** icon next to the **queries/js** and create a new query.
-* Select `DatabaseName` for which you want to add Query.
-* Rename the query to `fetchUsersList.`
-
-Assuming that the table name is Users. Add the following code to the query editor.
-
-:::info
-Replace **users** with the **table name** in your database.
-:::
-
-```sql
-SELECT * FROM users ORDER BY id LIMIT 10;
-```
-
-An execution call to the query `fetchUsersList.run()` will throw an error as table data expects data and cannot perform query execution. However, you can read the query response and use it in the Table data to display records by using `{{<QUERY_NAME.data>}}(fetchUsersList.data)`. Appsmith handles the query execution **on page load**. You can modify the query settings from the settings tab if you wish not to execute the query **on page load**.
-
-## **Events**
-
-You can trigger the actions by binding them with Async fields. For example, you want to show a success message on the submission of a button by using `showAlert()`. You'll have to bind the \[`showAlert()`]\(Add a link to Actions - Show Alert method) function on the `onClick()` event.
-
-:::info
-You can only use the **global actions** provided out-of-the-box by Appsmith in the **async** **fields**, which are events or actions.
-:::
-
- <VideoEmbed host="youtube" videoId="tjJIDkoCyQE" title="Global Functions" caption="Global Functions"/>  
-
-### Handling Success / Error
-
-The property pane allows us to configure the action to take once a Query returns with a success or an error. The Success / Error returned by the API/Query can be determined by the HTTP status code or the query response status.
-
-We can decide to display a success or an error message by using the [**showAlert action**](/reference/appsmith-framework/widget-actions/show-alert.md).
-
-![](</img/error_handling.gif>)
-
-## Complex Workflows
-
-The GUI is limited to a single [onSuccess](/reference/appsmith-framework/query-object.md#onsuccess) / [onError](/reference/appsmith-framework/query-object.md#onerror) callback, while the underlying framework has no limitation. To write complex workflows that cannot be accommodated in the GUI, click on the **JS** icon next to the event name & enable JavaScript. Now you can write conditional workflows and chain multiple Queries.
-
-![](</img/conditional_query.gif>)
+**Every query object has a [run()](/reference/appsmith-framework/query-object#run) method used to execute the query.**
 
 :::tip
-Once you have configured [actions](/reference/appsmith-framework/widget-actions) using the GUI, you can click on the JS icon next to the event to show the JavaScript equivalent of your configuration. It can help you learn to use JavaScript to configure workflows!
+Once you have configured actions using the GUI, you can click the `JS` icon next to the event to view the JavaScript equivalent of your configuration and then modify the code per your requirement.
 :::
 
-### Executing Queries in Parallel / Serial
+### Conditional execution
+You can chain queries to execute conditionally based on the value of a widget or the response from another query or a JS function. 
 
-Each query object has a [run](/reference/appsmith-framework/query-object.md#run) method used to execute the query. To execute multiple queries, you have to separate the run statement in the buttons `onClick` handler with a semicolon(`;`). The [run](/reference/appsmith-framework/query-object.md#run) method is asynchronous, and you can execute multiple queries in parallel as below:
+**Example**
 
-```javascript
-{{ API1.run(); Query2.run(); API2.run(); }}
-```
-
-or chained to be called `onSuccess`/`onError` using the callback arguments in the `run` signature.
+This example shows how the queries execute conditionally based on the option chosen in the Select widget.
 
 ```javascript
-{{ 
-    updateUsers.run()
-	    .then(() => fetchUsers.run()
-	                .then(() => { 
-	                    showAlert('User Updated'); 
-	                    closeModal('Modal1'); 
-		                })
-				.catch(() => showAlert("Fetch Users Failed"))
-	    ).catch(() => showAlert("Update User Failed", "error")) 
+{{
+  Query_Selector.selectedOptionValue === 'Movies' ? fetch_movies.run() : fetch_users.run();
 }}
+
 ```
 
-The following example shows how you can run two queries on a single click event:
+This example shows multiple conditional statements that execute queries based on the option chosen in the select widget and also display relevant messages based on the response from the `fetchPendingUsers` query.
 
- <VideoEmbed host="youtube" videoId="flCSSNTwWc4" title="Running Multiple Queries" caption="Running Multiple Queries"/>  
-
-
-You'll see that **Query 1** includes information about location, pin code, email address, and phone number, and **Query 2** includes information about name, gender, and ID.
-
-To run both the queries:
-
-* Drag and drop two table widgets into the canvas.
-* In the [Table Data](../../reference/widgets/table/#table-data) section, call your query.
-
-```javascript
-{{Query1.data}} //For Table 1
-
-{{Query2.data}} // For Table 2
-```
-
-* Add a [button widget](../../reference/widgets/button/) to call both queries simultaneously.
-* In the button's **onClick** event, toggle the **JS** option and paste the below code:
-
-```javascript
-{{Query1.run(); Query2.run()}}
-```
-
-You can execute multiple queries simultaneously with this command.
-
-### Conditional Execution
-
-[Queries](../data-access-and-binding/querying-a-database/) can also be chained to execute conditionally based on the value of a widget or the response of a Query.
 ```javascript
 {{ 
   statusDropdown.selectedOptionValue === "Pending" ?
@@ -207,6 +71,88 @@ You can execute multiple queries simultaneously with this command.
 }}
 ```
 
-:::tip
-Use the [Appsmith Framework](../../reference/appsmith-framework/) and [External Libraries](ext-libraries.md) to build logic into your applications quickly.
-:::
+### Parallel execution
+
+The run() method is asynchronous, and you can execute multiple queries in parallel. To execute multiple queries, you have to separate the run() method in the buttons onClick handler with a semicolon(;). 
+
+**Example**
+
+```javascript
+{{ Query1.run(); Query2.run(); Query3.run(); }}
+```
+
+### Serial execution
+Serial execution means that the queries are executed one after the other in a specific order. This can be useful when the results of one query depend on the results of another.
+
+**Example**
+
+This example shows how to execute `query1`, then `query2` and finally `query3`.
+
+```javascript
+{{
+  query1.run()
+    .then(() => query2.run())
+    .then(() => query3.run());
+}}
+```
+
+This example shows how to chain queries and actions to execute one after the other, and other actions, such as showing messages and closing modals, are executed using callbacks.
+
+```javascript
+{{ 
+    updateUsers.run()
+      .then(() => fetchUsers.run()
+                  .then(() => { 
+                      showAlert('User Updated'); 
+                      closeModal('Modal1'); 
+                    })
+        .catch(() => showAlert("Fetch Users Failed"))
+      ).catch(() => showAlert("Update User Failed", "error")) 
+}}
+```
+
+## Fetch API
+The Fetch API provides an interface for executing network calls programmatically. You can use `fetch()` to programmatically configure and execute a REST API.  
+
+**Examples**
+
+**GET request**
+```javascript
+const questions = await fetch("https://opentdb.com/api.php?amount=10")
+return questions.json()
+```
+
+**POST request**
+```javascript
+fetch("https://63772c9a5c477765121615ba.mockapi.io/users", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: "Alex",
+    email: "alex@appsmith.com",
+  }),
+}).then((response) => {
+    console.log("Success:", response.json());
+}).catch((error) => {
+    console.error("Error:", error);
+});
+```
+
+**File upload**
+```javascript
+const formData = new FormData();
+formData.append("file", FilePicker1.files[0]);
+		
+let response = await fetch('https://httpbin.org/post', {
+	method: 'POST',
+	body: formData
+});
+```
+
+
+## Further reading
+* [Appsmith Framework](/reference/appsmith-framework/)
+* [Import External Libraries](/core-concepts/writing-code/ext-libraries) 
+

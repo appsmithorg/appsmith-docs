@@ -91,6 +91,8 @@ In this scenario, you are building an app that has an Iframe widget called `Ifra
 
 #### From Appsmith to embedded page
 
+![](/img/postmessage_child_incoming.png)
+
 To send data to a page that's embedded in an Appsmith Iframe widget:
 
 1. Drag and drop an [Input](/reference/widgets/input/) widget and a [Button](/reference/widgets/button) widget onto the canvas.
@@ -124,6 +126,8 @@ In this scenario, you are building an app outside of Appsmith, and you have used
 
 #### From Appsmith to parent app
 
+![](/img/postmessage_parent_outgoing.png)
+
 To configure your Appsmith application to send messages to its parent page:
 
 1. Drag and drop a [Button](/reference/widgets/button/) widget and an [Input](/reference/widgets/input/) widget onto the canvas.
@@ -140,6 +144,8 @@ The parent application where Appsmith is embedded should have an event listener 
 This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
 :::
 
+![](/img/postmessage_parent_incoming.png)
+
 When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website. 
    
 On your Appsmith app, you can enable/disable a page to react to these messages using the following functions - 
@@ -153,11 +159,11 @@ For example, a parent website (`https://mywebsite.com`) where an appsmith app is
 const iFrame = document.getElementById(”#appsmith-iframe”);
 iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
 ```   
-In the Appsmith app, if you want to run and API (Api1) in reaction to this message, you can use the `windowMessageListener()` function as follows - 
+In the Appsmith app, if you want to run an API called `Api1` in reaction to this message, you can use the `windowMessageListener()` function as follows - 
 ```javascript
 windowMessageListener(”https://mywebsite.com”, () => Api1.run());
 ```
-To stop the appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
+To stop the Appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
 ```javascript
 unlistenWindowMessage(”https://mywebsite.com”)
 ```

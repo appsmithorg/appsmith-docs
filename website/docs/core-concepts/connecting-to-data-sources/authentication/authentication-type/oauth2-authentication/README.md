@@ -8,7 +8,12 @@ By using OAuth 2.0, you minimize the security risk. It ensures that even if the 
 
 OAuth 2.0 is about authorization, asking for the permissions that govern the access. [OAuth2.0](https://oauth.net/2/) is a simplified redesigned version of OAuth 1.0. `OAuth 2.0` is faster and easier to implement and use.
 
-There are four main participants in an OAuth 2.0 workflow: Resource Owner, Client, Authorization Server, and Resource Server. Using the OAuth 2.0 workflow, a **resource owner** that is a **user** or a **system** would like to authorize a **client** to access protected resources that can be accessed using an access token. A client asks for an access token from an **authorization server.** A client uses the access token and requests access from the resource server. A resource server validates the access token and returns the requested resource.
+There are four main participants in an OAuth 2.0 workflow: 
+* Resource Owner
+* Client, Authorization Server
+* Resource Server
+
+Using the OAuth 2.0 workflow, a **resource owner** that is a **user** or a **system** would like to authorize a **client** to access protected resources that can be accessed using an access token. A client asks for an access token from an **authorization server.** A client uses the access token and requests access from the resource server. A resource server validates the access token and returns the requested resource.
 
 For example, John (**resource owner**) wants Notion (**client**) to post tweets on his behalf on Twitter. Twitter (**authorization and resource server**) generates a key and a secret for Notion to do the job. Notion uses the key and secret to create tokens and post the tweets on John’s behalf.
 
@@ -28,7 +33,7 @@ You can connect to your OAuth 2.0 APIs using Authenticated APIs on Appsmith. You
 
 ![Configuration settings available for OAuth 2.0](</img/OAuth__API_Integration__Authentication_Type__OAuth_2.0__Grant_Types.png>)
 
-### Grant Types
+### Grant types
 
 An authorization grant type is a secured representation of the owner’s authorization presented in exchange for an access token.
 

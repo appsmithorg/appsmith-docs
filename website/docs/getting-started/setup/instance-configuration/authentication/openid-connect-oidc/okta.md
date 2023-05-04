@@ -15,7 +15,7 @@ OpenID Connect is available **only in the** [**business edition**](https://www.a
 
 ![Create a new app on Okta for SSO Configuration](/img/Okta-Create-Application.png)
 
-* Click on **Create App integration**. In Create App integration window, choose **OIDC** as the Sign-in method and **Web application** as the Application type. Click on Next.
+* Click **Create App integration**. In Create App integration window, choose **OIDC** as the Sign-in method and **Web application** as the Application type. Click **Next**.
 
 ![New App Configurations](/img/Okta-Create-App-Integration-Config.png)
 
@@ -36,7 +36,7 @@ You can add multiple redirect URLs.
 
 ![Configure Assignments](/img/Okta-Assignments.png)
 
-* Click on **Save**. This action creates the app integration and opens the settings page to configure additional options.
+* Click **Save**. This action creates the app integration and opens the settings page to configure additional options.
 
 ### Configure Okta fields in Appsmith
 
@@ -70,11 +70,13 @@ To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta 
 
 ![Appsmith - OIDC Setup](/img/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
 
-### Configure Scopes for Okta
+> `RS256` is the default Token Signing Algorithm used by Appsmith and most identity providers. If you have a custom setup, you can choose from one of the supported algorithms under the Advanced section of the Appsmith OIDC setup page. Please note, verifying tokens signed with the `HS256` algorithm isn't supported.
+
+### Configure scopes for Okta
 
 The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
 
-![Configure Scope(s) at Appsmith](/img/as_oidc_offline.png)
+![Configure Scopes at Appsmith](/img/as_oidc_offline.png)
 
 #### What does Appsmith need as part of Scopes?
 
@@ -86,28 +88,28 @@ Enabling the `offline_access` scope enables your app to receive refresh tokens t
 
 You can add more scopes if you wish, provided that they're available via Okta.
 
-#### Okta Scope
+#### Okta scope
 
 Okta provides a number of [configurable scopes](https://developer.okta.com/docs/guides/implement-oauth-for-okta/main/) that can be granted based on your business requirements. Navigate to **Okta API Scopes**, where you’ll be able to grant all or selected scopes.
 
 ![Okta Scope Set up](/img/Okta-Scopes.png)
 
-### Configure Username Attributes for Okta
+### Configure username attributes for Okta
 
 The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
 
 ![Appsmith Username Attribute](/img/Appsmith-UsernameAttribute-Field.png)
 
-#### What does Appsmith need as a Username Attribute?
+#### What does Appsmith need as a username attribute?
 
 Appsmith considers **email address** as **username**. Please ensure that you have added it as an attribute in the Username Attribute field. Please provide **email** as the attribute name for configuring the username attribute for Okta.
 
-### Complete OIDC Setup
+### Complete OIDC setup
 
-* Save the changes and restart your application by clicking `SAVE & RESTART` button.
+* Save the changes and restart your application by clicking **SAVE & RESTART** button.
 
-![Click on the "SAVE & RESTART" button to complete the setup](/img/Appsmith-OIDC-Setup-Complete.png)
+![Click the "SAVE & RESTART" button to complete the setup](/img/Appsmith-OIDC-Setup-Complete.png)
 
 * You’ll see the **SIGN IN WITH OIDC SSO** on the Appsmith’s login screen.
 
-![SIGN IN WITH OIDC SSO - Available on Login Screen](/img/Appsmith-SSO-OIDC-Available.png)
+![SIGN IN WITH OIDC SSO - Available on the Login Screen](/img/Appsmith-SSO-OIDC-Available.png)

@@ -17,7 +17,7 @@ sidebar_position: 2
 [Password resets](/help-and-support/troubleshooting-guide/application-errors#reset-password-error) for user accounts are handled by emails from the Appsmith instance. If you would like users to be able to perform this action, ensure that your instance has been configured to handle email notifications. 
 :::
 
-Appsmith allows you to configure email using environment variables or the [admin settings](../admin-settings.md#using-the-admin-settings-ui).
+Appsmith allows you to configure email using environment variables or the [admin settings](/getting-started/setup/instance-configuration).
 
 <VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="" caption="" /> 
 
@@ -45,7 +45,7 @@ Be sure to double-check your configuration if you find that you're able to send 
 
 ## Configure using admin settings
 
-You can configure the email for your self-hosted instance using the [Admin Settings](../admin-settings.md#using-the-admin-settings-ui) page. Follow the below steps:
+You can configure the email for your self-hosted instance using the [Admin Settings](/getting-started/setup/instance-configuration) page. Follow the below steps:
 
 * Navigate to **profile** >> **Admin Settings** >> Select **Email.**
 

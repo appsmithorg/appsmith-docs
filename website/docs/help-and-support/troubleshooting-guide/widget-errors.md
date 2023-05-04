@@ -76,3 +76,49 @@ Once you have figured out the new structure for the data, head to the [source da
 
 If you still need help debugging an error, please raise a request on [Discord Server](https://discord.com/invite/rBTTVJp) or email support@appsmith.com.
 
+## Default value is missing in options 
+
+You may encounter an error message "Default value is missing in options. Please update the value." while using the Select widget.
+
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="Default value is missing in options. Please update the value."></Message>
+
+#### Cause
+
+This error occurs when the Default Selected Value doesn't match any of the values specified in the options property of the widget.
+
+#### Solution
+
+To fix this error, either change the value in the options property to match the selected value, or change the selected value to match an option listed in the options property. This ensures that the value selected is valid and prevents the error from appearing.
+
+
+## Duplicate values found
+
+You may encounter an error message "Duplicate values found for the following properties" while using the Select widget.
+
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="Duplicate values found for the following properties, in the array entries, that must be unique -- value."></Message>
+
+#### Cause
+
+This error occurs when there are duplicate values in the options property of the Select widget. For example,
+```js
+ {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "BLUE"
+  },
+```
+
+#### Solution
+
+To resolve this error, ensure that each value in the options property of the Select widget is unique. You can do this by checking the values and making sure that there are no duplicates. 

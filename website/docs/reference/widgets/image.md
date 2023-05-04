@@ -1,108 +1,108 @@
 # Image
 
-The Image widget displays the images in your app. Images must be either a URL or a valid base64.
+You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP and GIF.
 
-<VideoEmbed host="youtube" videoId="jdDcydQ8Ho0" title="How to use Image Widget" caption="How to use Image Widget"/>
+
+<VideoEmbed host="youtube" videoId="jdDcydQ8Ho0" title="How to use the Image Widget" caption="How to use the Image Widget"/>
+
+## Display static images 
+
+You can specify the image source using the **Image property** to display an image. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
+
+```js
+https://jpeg.org/images/jpegsystems-home.jpg
+```
+
+You can also set an image in the **Default Image**  property to be displayed if the image source fails to load or is invalid. 
+
+### Inline SVG
+
+To display inline SVG, paste your SVG content in the Image property and escape the special characters with the UTF-8 equivalents.
+
+```js
+data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' /%3E%3C/svg%3E
+```
+
+## Display images dynamically
+This allows you to display images that change based on user input or other components, such as a widget or query. For example, suppose you have a Table displaying a list of users with their respective image URLs stored in a column.
+
+Bind ```{{Table1.selectedRow.image}}``` in the Image property where "Table1" is the name of your table widget and "image" is the name of the column containing the image URL.
+
+<figure>
+  <img src="/img/imagetable.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Display images on table row selection</i></figcaption>
+</figure>
+
+
+## Display images from S3 bucket
+
+To fetch an image from [S3](/reference/datasources/querying-amazon-s3), follow these steps:
+
+* Click the + icon next to Queries/JS and choose your S3 datasource.
+* Select the "List files" method from the Commands drop-down menu.
+* Provide the required parameters for reading the file, including the bucket name, file path and file data type.
+
+Once you have added all the required parameters in the Image property pane, add:
+```js
+{{list_files.data[0].signedUrl}}
+```
+
+## Download images
+You can toggle the **Enable Download** property in the Image widget's property pane. Once enabled, a download icon appears on the image.
+
+<figure>
+  <img src="/img/download-image-ss.png" style= {{width:"700px", height:"auto"}} alt="Download image"/>
+  <figcaption align = "center"><i>Download image</i></figcaption>
+</figure>
+
+Alternatively, you can use the built-in [Download](/reference/appsmith-framework/widget-actions/download) function and set it to run on the `onClick` event of the Image widget:
+
+```js
+{{download(Image1.image,'my-image-name','image/png')}}
+```
 
 ## Properties
+Properties allow you to customize the widget, connect it to other widgets and trigger events on user actions.
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-### Widget Properties
-
-These properties allow you to edit the Image widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+### Widget properties
 
 | Property            | Description                                                                                                                                                                                                                                                   |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Image**           | Sets the source from which to render the image. Accepts an image URL, data URI, or base64 encoded image data.                                                                                                                                                 |
-| **Default Image**   | Sets a default image that will be displayed if no image is rendered via the **Image** property. Accepts an image URL, data URI, or base64 encoded image data.                                                                                                 |
-| **Object Fit**      | Sets how the image should be resized to fit its container. With JS enabled, accepts _string_ values "auto", "cover", or "contain". See CSS [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) docs for reference on these behaviors. |
+| **Default Image**   | Sets a default image that would be displayed if no image is rendered via the **Image** property. Accepts an image URL, data URI, or base64 encoded image data.                                                                                                 |
+| **Object Fit**      | Sets how the image should be resized to fit its container. With JS enabled, accepts string values `auto`, `cover`, or `contain`. See CSS [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) docs for reference on these behaviors. |
 | **Max Zoom Level**  | Sets the maximum allowable zoom level for the image view. With JS enabled, accepts _number_ values.                                                                                                                                                           |
-| **Visible**         | Controls widget's visibility on the page. When turned off: The widget will not be visible when the app is published. It appears translucent when in Edit mode.                                                                                                |
-| **Animate Loading** | When turned off, the widget will load without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the `JS` label next to it.                                                      |
+| **Visible**         | Controls widget's visibility on the page. When turned off, the widget won't be visible when the app is published.  |
+| **Animate Loading** | Controls the widget’s animation on page load.                          |
 | **Enable Rotation** | Toggles a control on the widget that allows the user to rotate the image.                                                                                                                                                                                     |
 | **Enable Download** | Toggles a control on the widget that allows the user to download the image.                                                                                                                                                                                   |
+### Reference properties
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator.
 
-### Binding Properties
-
-These properties allow you to bind your Image widget with any other widget in queries or JS objects. The following table lists all the binding properties.
-
-| Binding Property | Description                                                      |
+ Property | Description                                                      |
 | ---------------- | ---------------------------------------------------------------- |
 | **image**        | Contains the URL of the image source _(string)._                 |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_. |
+| **isVisible**    | Reflects the state of the widget's **Visible** setting |
 
-### Events
-
-You can define functions that will be called when these events are triggered in the widget.
-
-| Event       | Description                                                                                                                                                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets an action to take place when the user clicks this widget. Can be set from the GUI list of common actions ([examples here](../appsmith-framework/widget-actions/)), or you can define a custom JS function to call instead. |
-
-### Styles
-
+### Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Style Property    | Description                                                                                                                                                                      |
+| Property    | Description                                                                                                                                                                      |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
 | **Box Shadow**    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
 
-## Supported File Type
+## Events
 
-Appsmith supports almost every primary image format, including:
+These are functions that are called when event listeners are triggered in the widget. Use [actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
 
-* JPG
-* PNG
-* SVG
-* WebP
-* GIFs.
 
-You can use the same method to display different image formats. Let’s see how you can display:
+| Event       | Description                                                                                                                                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onClick** | Sets an action when the user clicks this widget. |
 
-* Drag & Drop the Image widget into the canvas.
-* Now in the image section, paste your image URL.
-* For example,
+## Further reading
 
-```
-//png:
- https://assets.appsmith.com/widgets/default.png
+* [Amazon S3](/reference/datasources/querying-amazon-s3)
+* [Filepicker widget](/reference/widgets/filepicker)
 
-//jpg:
-https://jpeg.org/images/jpegsystems-home.jpg
-
-//gif:
-https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5eeea355389655.59822ff824b72.gif
-
-//webp:
-https://www.gstatic.com/webp/gallery/4.sm.webp
-
-//svg:
-https://assets.codepen.io/3/kiwi.svg
-```
-
-#### Inline SVG
-
-Inline SVG refers to SVG markup included in the markup of a webpage. To display inline SVG, follow the below steps:
-
-* Drag & Drop the Image widget into the canvas.
-* Now in the image section, paste the below mentioned URL with your SVG code:
-
-```
-data:image/svg+xml;charset=UTF-8,{{encodeURI('<svg..<your-svg>.. ></svg>')}}
-```
-
-You can even use an encoded URL like this:
-
-```
-example 1:
-data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='50' cx='50' cy='50' fill='tomato'/%3E%3Ccircle r='41' cx='47' cy='50' fill='orange'/%3E%3Ccircle r='33' cx='48' cy='53' fill='gold'/%3E%3Ccircle r='25' cx='49' cy='51' fill='yellowgreen'/%3E%3Ccircle r='17' cx='52' cy='50' fill='lightseagreen'/%3E%3Ccircle r='9' cx='55' cy='48' fill='teal'/%3E%3C/svg%3E
-
-example 2:
-data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' /%3E%3C/svg%3E
-```
-
-:::info
-You can use URL-based SVG files just like any other image.
-:::

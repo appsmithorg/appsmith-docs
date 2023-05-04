@@ -20,6 +20,21 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  plugins: [
+    process.env.VERCEL_ENV === "production" && [
+      '@twilio-labs/docusaurus-plugin-segment',
+      {
+        writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
+        allowedInDev: false,
+      },
+    ],
+    [    require.resolve('./plugins/scarfplugin'),   
+          {      
+            trackingCode: 'ae471d67-d95c-4a3a-b35b-799e8ee8fa17',      
+            domain: 'https://docs.appsmith.com',    
+          },  
+    ],
+  ],  
 
   presets: [
     [
@@ -115,7 +130,7 @@ const config = {
             items: [
               {
                 label: 'Advanced Concepts',
-                to: '/advanced-concepts/how-to-implement-custom-authentication-on-appsmith',
+                to: 'advanced-concepts/custom-authentication',
               },
               {
                 label: 'Reference',
@@ -169,13 +184,23 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  scripts: [
-    {
-      src:
-        '/scripts/intercomSettings.js',
-      async: false,
-    }
-  ]
+    scripts: [
+      ...(process.env.VERCEL_ENV === "production" ? [{
+        src:
+          '/scripts/intercomSettings.js',
+        async: false,
+      },
+      {
+        src:
+          '/scripts/smartlook.js',
+        async: false,
+      },    
+      {
+        src:
+          '/scripts/analyticsEvents.js',
+        defer: true,
+      }] : [])
+    ],
 };
 
 module.exports = config;

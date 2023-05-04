@@ -21,7 +21,7 @@ To connect to a database:
 
 1. On the **Explorer** tab, click the **+** icon next to **Datasources**. 
 2. Choose a database from the list of [datasources](/reference/datasources/) that Appsmith can connect to.
-3. Click on the edit pencil icon next to the default name to rename the datasource.
+3. Click the edit pencil icon next to the default name to rename the datasource.
 4. Provide the configuration details required to connect to the database. You may need to contact your database administrator to whitelist Appsmith cloud.
 5. Click **Test** to verify that Appsmith can connect to the database using the details you provided.
 6. **Save** the datasource. The configuration details aren't saved/updated until the Save button is clicked. When the datasource has been added successfully, a success message appears at the top of the app window. 
@@ -86,7 +86,7 @@ For certain database plugins such as PostgreSQL, MySQL, Redis, MS SQL, and Redsh
 The maximum number of connections in a pool is limited to 5. Please note that max 5 connections in a pool doesn't mean that a max of 5 queries can be run concurrently using this pool. The number of concurrent queries that this pool can run is usually much higher. 
 
 ## Troubleshooting
-If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](https://chat.openai.com/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
+If you are experiencing difficulties with connecting datasources in Appsmith, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) for assistance. If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
 
 ## Further reading
 
