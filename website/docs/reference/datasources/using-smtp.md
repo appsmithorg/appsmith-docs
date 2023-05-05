@@ -12,7 +12,7 @@ This page describes how to use the SMTP datasource to create and send emails fro
 To add an SMTP datasource:
 
 1. Click the (**+**) sign in the **Explorer** tab next to **Datasources**.
-1. On the next screen, select the **SMTP** button. This creates the datasource and takes you to the datasource's configuration page.
+1. On the next screen, select the **SMTP** under the **Databases** section. This opens the page where you can configure the fields to configure your datasource.
 1. Enter the URL for your SMTP server into the **Host Address** field.
 1. Enter the port for your SMTP server into the **Port** field.
 1. Enter your account's username in the **Username** field. Depending on your SMTP provider, this might be your email address.
@@ -32,7 +32,7 @@ Some SMTP providers use a multi-factor authentication flow and may require you t
 
 ## Create queries
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
+You can write queries to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
 
 <figure>
   <img src="/img/smtp_query_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP query"/>
@@ -43,10 +43,10 @@ You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-
 
 This action sends an email through your SMTP server.
 
-When the query is successful, you'll recieve the following response:
+When the query is successful, you'll receive the following response:
 ```json
 {
-  "message": "Sent the email successfully"
+  "message": "Email sent successfully"
 }
 ```
 
@@ -64,7 +64,7 @@ Create a [Table widget](/reference/widgets/table) and write a query that fetches
 
 1. In the Table widget, add a custom column with **Column Type** as `Button`.
 1. Set the button's **onClick** event to the `Show Modal` action, and use the **New Modal** button under the **Modal Name** field to create a new modal widget.
-1. Drag a new [Form widget](/reference/widgets/form) into the area of the modal and delete any extra buttons or titles.
+1. Drop a new [Form widget](/reference/widgets/form) into the area of the modal and delete any extra buttons or titles.
 1. In the form's body area, create widgets to accept input for the email's configuration fields such as **To email(s)**, **From email(s)**, **Subject**, etc.
     1. Use [Rich Text Editor widget](/reference/widgets/rich-text-editor) for the **Body** field, and a [Filepicker widget](/reference/widgets/filepicker) for the **Attachment(s)** field.
     1. Be sure to name each widget so that you can reference it later in your query.
@@ -123,4 +123,4 @@ Create a [Table widget](/reference/widgets/table) and write a query that fetches
 
 * [Rich Text Editor widget](/reference/widgets/rich-text-editor)
 * [Filepicker widget](/reference/widgets/filepicker)
-* [Upload/Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
+* [Upload or download files from S3](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
