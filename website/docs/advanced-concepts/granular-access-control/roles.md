@@ -1,7 +1,7 @@
 # Roles
 Roles in Appsmith are collections of permissions that enable users or groups to access certain operations on resources. Rather than giving individual permissions to users or groups, roles allow users to manage multiple permissions.
 
-## Default roles
+## Instance roles
 
 In addition to the [default](/advanced-concepts/invite-users#built-in-roles) roles for applications and workspace, Appmith provides two instance-level roles - **Default Role for all Users** and **Instance Administrator**.
 
