@@ -3,7 +3,7 @@
 
 Appsmith allows you to share your application with the end user or with a team member for collaboration. There are multiple ways to share your application in Appsmith. You can either share your workspace or share a specific application.
 
-## Built-in roles
+## Default roles
 
 In Appsmith, there are built-in roles that you can assign to a user for accessing the applications: 
 
@@ -42,12 +42,10 @@ The table below shows the permissions available for each role when you share a w
 |**Developer**      | Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace |Delete any application, page and query inside the workspace|	-             |Invite other users to the workspace |	-             |
 |**App Viewer**     |	-             |-             |View any application, page & query inside the workspace.|-|           -     |Invite other users to the workspace only as **App Viewer** |	-|
 
-
-
 ## Share application
 
 :::info
-Sharing a specific application is only available in the [business edition](https://www.appsmith.com/pricing) for self-hosted instances.
+Sharing a specific application is only available in the [business edition](https://www.appsmith.com/pricing).
 :::
 
 If you want the user to just have access to a specific application in a workspace, follow the steps below:
@@ -61,7 +59,6 @@ If you want the user to just have access to a specific application in a workspac
   <figcaption align = "center"><i>Inviting a user to an application</i></figcaption>
 </figure>
 
-
 ### Default roles for application
 
 The table below shows the permissions available for each role when you share an application:
@@ -71,8 +68,7 @@ The table below shows the permissions available for each role when you share an 
 |**Developer**      | Create pages, datasources and queries inside the app|Edit pages, datasources and queries inside the app|View the app, its pages, datasources and queries. |Delete the app, its pages, datasources and queries|-|Invite other users with an equivalent or a lower role |	-       |
 |**App Viewer**     |	-              |     -          |View the app and execute actions (Cannot see queries,datasources)|-|           -     |Invite users only as **App Viewer** |	-|
 
-
-### Make application public
+## Make application public
 
 You can make your applications public and share them with users who are not part of your workspace. These external users do not need to log in to Appsmith to access the shared applications.
 
