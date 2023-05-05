@@ -1,11 +1,12 @@
 # Roles
 Roles in Appsmith are collections of permissions that enable users or groups to access certain operations on resources. Rather than giving individual permissions to users or groups, roles allow users to manage multiple permissions.
 
-## Default roles
+## Instance roles
 
-Appmith provides three [built-in](/advanced-concepts/invite-users#built-in-roles) roles for the application and workspace - **Administrator**, **Developer**, and **App Viewer**. Additonally, there are two instance-level roles - **Default Role for all Users** and **Instance Administrator**. 
+In addition to the [default](/advanced-concepts/invite-users#built-in-roles) roles for applications and workspace, Appmith provides two instance-level roles - **Default Role for all Users** and **Instance Administrator**.
 
-- **Default Role For All Users**: This role is responsible for setting the base level of access provided to all users within an instance. This role is editable, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
+- **Default Role For All Users**: This role applies to all users and can be used to assign a default set of permissions in an instance. It is editable and does not come with any predefined permissions, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
+
 - **Instance Administrator**: This role provides a user with permission to modify settings at the instance level from the Admin settings. This includes changing the general settings of the instance, such as authentication, email, custom branding, access to view audit logs and granular access control actions. It's important to note that this role has significant control over the instance, so it should only be assigned to trusted users who need these capabilities.
 
 ## Custom roles
@@ -17,8 +18,7 @@ With custom roles, you can provide fine-grained access control by configuring mu
   <figcaption align = "center"><i>Add a custom role</i></figcaption>
 </figure>
 
-
-To create or edit a role, you need to set up the permissions based on your requirements. The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily. The four categories are:
+The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily:
 
 - [Application Resources](#application-resources)
 - [Datasource and Queries](#datasource-and-queries)
