@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # SAML SSO
 
-Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**. This page will help you in setting up SAML for your Appsmith instance.
+Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**. This page helps you in setting up SAML for your Appsmith instance.
 
-To start SAML authentication in Appsmith, go to **Admin Settings** > **Authentication**, navigate to **SAML 2.0** and click **Enable**
+To start SAML authentication in Appsmith, go to **Admin Settings** > **Authentication**, navigate to **SAML 2.0** and click **Enable**.
 
 ## SAML providers
 
@@ -50,7 +50,7 @@ Appsmith integrates with popular SAML providers that you can choose from. Click 
                 <img class="containerImage" src="/img/AWS_AMI.png" alt="AWS-AMI-logo"/>
                 </a>   
             </div> 
-            <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity">Okta</a></b>
+            <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity">Ping Identity</a></b>
         </div>
 </div>
 </div>
