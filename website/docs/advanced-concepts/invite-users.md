@@ -81,7 +81,3 @@ Only users with Administrator roles for a workspace can make applications public
 ## Further reading
 
 - [Granular Access Control](/advanced-concepts/granular-access-control)
-
-## Further reading
-
-- [Granular Access Control](/advanced-concepts/granular-access-control)
