@@ -12,7 +12,7 @@ This page describes how to use the SMTP datasource to create and send emails fro
 To add an SMTP datasource:
 
 1. Click the (**+**) sign in the **Explorer** tab next to **Datasources**.
-1. On the next screen, select the **SMTP** under the **Databases** section. This opens the page where you can configure the fields to configure your datasource.
+1. On the next screen, select **SMTP** under the **Databases** section. This opens the page where you can configure the fields to configure your datasource.
 1. Enter the URL for your SMTP server into the **Host Address** field.
 1. Enter the port for your SMTP server into the **Port** field.
 1. Enter your account's username in the **Username** field. Depending on your SMTP provider, this might be your email address.
