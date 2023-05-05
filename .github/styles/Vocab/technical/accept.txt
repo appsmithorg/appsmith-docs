@@ -340,6 +340,7 @@ Arango
 StoreValue
 updateUsers
 getUsers
+tableHeaders
 modal
 auto_update
 AMIs
@@ -368,3 +369,6 @@ asynchronous
 showData
 subcommands
 Amazon S3
+http
+tcp
+

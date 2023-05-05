@@ -81,8 +81,10 @@ Create a [Table widget](/reference/widgets/table) called `ContractsTable` to dis
     1. Set its **Type** to `URL`.
     1. Set **Enter URL** to `{{ currentRow.signedUrl }}`.
     1. Set its **Target** to `New window`.
+1. To complete the setup for server-side pagination:
+    1. Enable the table's **Server Side Pagination** toggle and configure the **onPageChange** action to execute your query.
 
-Now your Table is ready to page through your S3 `contracts` files, and you can click any button to view the file in a new window.
+Now your Table is ready to page through your S3 bucket's files, and you can click any row's View button to see the file in a new window.
 
 ---
 
@@ -95,7 +97,7 @@ Now your Table is ready to page through your S3 `contracts` files, and you can c
 | **Where**                         | Filter conditions to narrow query results based on comparison operators. |
 | **Generate Signed URL**           | Requests an authenticated, user-accessible URL for each file in the response. Users may follow the link in their browser to see the content of the file. The URL expires after the amount of time specified in **Expiry Duration of Signed URL**. |
 | **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
-| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, however it can't be used to access the resource directly, only via API. |
+| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, but it can't be used to access the resource directly, only via API. |
 | **Sort By**                       | Orders the query results in ascending or descending order based on a given key's value. |
 | **Pagination Limit**              | Restricts the number of results returned in the response. |
 | **Pagination Offset**             | Skips a given number of files before returning the further results. |
@@ -218,7 +220,7 @@ List your filenames into a [Table widget](/reference/widgets/table) by following
   }}
   ```
 
-Now when you click the delete button in the table, the corresponding file is deleted from the S3 bucket.
+Now when you click the delete button in the table, the corresponding file is deleted from the S3 bucket, and the table is refreshed.
 
 ---
 
