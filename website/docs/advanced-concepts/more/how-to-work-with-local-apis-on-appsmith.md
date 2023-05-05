@@ -11,11 +11,27 @@ description: >-
 
 This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
 
-## Connect with Docker
+## Connect Appsmith in Docker to datasource on localhost
 
-By using `host.docker.internal`, you can direct Appsmith's docker container to find your database or API on its own host machine:
+To connect from Appsmith running in a Docker container to a database or API service on localhost, use `host.docker.internal` as the URL; it resolves to the internal IP address used by the host machine. See the official [Docker documentation](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) for more information.
 
-<VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connect to databases/APIs running on localhost" caption="Connect to databases/APIs running on localhost"/>
+<VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connecting from Appsmith in cloud to local PostgreSQL database using ngrok" caption="Connecting from Appsmith in cloud to local PostgreSQL database using ngrok"/>
+
+To connect to your database or API from Appsmith:
+
+1. Ensure that all of the relevant Docker containers are running. If you are running on Linux, [see the note below](#linux-note) before starting. 
+
+2. In your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
+
+3. In the **Host Address** or URL field where you'd normally provide the URL for your datasource, instead enter `host.docker.internal`. Otherwise, configure your datasource details as normal.
+
+4. Click **Test** to verify that the connection is valid.
+
+<!-- anchor placed here to accommodate docs page header bar -->
+<a name="linux-note"></a>
+
+Your localhost application should now be connected and query-able from within your Appsmith app.
+
 
 :::caution note
 **Linux**: If your containers are running on a Linux machine, start your Appsmith container with the following command line argument to `docker run`. This is only supported for Docker 20.10.0 and later.
@@ -33,27 +49,14 @@ services: ...
     extra_hosts:
       - "host.docker.internal:host-gateway"
 ```
-
 :::
 
-To connect to your database or API from Appsmith:
-
-1. Ensure that all of the relevant Docker containers are running.
-
-2. In your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
-
-3. In the **Host Address** or URL field where you'd normally provide the URL for your datasource, instead enter `host.docker.internal`. Otherwise, configure your datasource details as normal.
-
-4. Click **Test** to verify that the connection is valid.
-
-Your localhost application should now be connected and query-able from within your Appsmith app.
-
 <figure>
-  <img src="/img/local_db_config.png" style={{width: "100%", height: "auto"}} alt="Using host.docker.internal" />
-  <figcaption align="center"><i>Using host.docker.internal</i></figcaption>
+  <img src="/img/local_db_config.png" style={{width: "100%", height: "auto"}} alt="Connecting from Appsmith in Docker container to PostgreSQL database running on localhost" />
+  <figcaption align="center"><i>Connecting from Appsmith in Docker container to PostgreSQL database running on localhost</i></figcaption>
 </figure>
 
-## Connect with ngrok
+## Connect Appsmith cloud to datasource on localhost
 
 With ngrok, you can expose and connect to your database or API from the internet via a secure network tunnel:
 
@@ -94,8 +97,8 @@ Once you are ready to work with ngrok, follow these steps to connect Appsmith to
 Your localhost application should now be connected and query-able from within your Appsmith app.
 
 <figure>
-  <img src="/img/ngrok-config-example.png" style={{width: "100%", height: "auto"}} alt="Connecting via ngrok" />
-  <figcaption align="center"><i>Connecting via ngrok</i></figcaption>
+  <img src="/img/ngrok-config-example.png" style={{width: "100%", height: "auto"}} alt="Connecting from Appsmith to local PostgreSQL database using ngrok" />
+  <figcaption align="center"><i>Connecting from Appsmith to local PostgreSQL database using ngrok</i></figcaption>
 </figure>
 
 
