@@ -6,17 +6,10 @@ description: >-
   This guide helps you to connect your APIs or databases running on localhost
   with Appsmith using host.docker.internal or ngrok.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-# Connect to Localhost Databases and APIs
+# Connect to Local Databases and APIs
 
 This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
-
-
-<Tabs>
- <TabItem label="Docker" value="docker">
-
 
 ## Connect with Docker
 
@@ -59,11 +52,6 @@ Your localhost application should now be connected and query-able from within yo
   <img src="/img/local_db_config.png" style={{width: "100%", height: "auto"}} alt="Using host.docker.internal" />
   <figcaption align="center"><i>Using host.docker.internal</i></figcaption>
 </figure>
-
- </TabItem>
-
- <TabItem label="ngrok" value="ngrok">
-
 
 ## Connect with ngrok
 
@@ -110,8 +98,6 @@ Your localhost application should now be connected and query-able from within yo
   <figcaption align="center"><i>Connecting via ngrok</i></figcaption>
 </figure>
 
- </TabItem>
-</Tabs>
 
 ## Further reading
 
