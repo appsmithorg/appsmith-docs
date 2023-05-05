@@ -54,54 +54,37 @@ When the query is successful, you'll recieve the following response:
 
 #### Example
 
-> Write and send an email to a user whose information is listed within a table widget.
+> Use a Form widget to write and send an email.
 
 **Setup**:
 
-Create a [Table widget](/reference/widgets/table) and write a query that fetches your user data into it. Create an SMTP datasource and a query based on it.
+Create an SMTP datasource and a query `SendMail` based on it.
 
-**Configure the widgets**:
+**Configure the email form**:
 
-1. In the Table widget, add a custom column with **Column Type** as `Button`.
-1. Set the button's **onClick** event to the `Show Modal` action, and use the **New Modal** button under the **Modal Name** field to create a new modal widget.
-1. Drag a new [Form widget](/reference/widgets/form) into the area of the modal and delete any extra buttons or titles.
+1. Create a [Form widget](/reference/widgets/form) `EmailForm`, and update the title to `Send Mail`.
 1. In the form's body area, create widgets to accept input for the email's configuration fields such as **To email(s)**, **From email(s)**, **Subject**, etc.
     1. Use [Rich Text Editor widget](/reference/widgets/rich-text-editor) for the **Body** field, and a [Filepicker widget](/reference/widgets/filepicker) for the **Attachment(s)** field.
     1. Be sure to name each widget so that you can reference it later in your query.
-    1. Where appropriate, you can use the **Default Value** property (such as for [Input widgets](/reference/widgets/input)) to pre-fill values from your table. For example:
-      ```javascript
-      // Default Value for the input widget for the "To email(s)" field
-      {{ <table-name>.triggeredRow.email }}
-      ```
-      ```javascript
-      // Default Value for the input widget for the "CC email(s)" field
-      {{ <table-name>.triggeredRow.manager }}
-      ```
-1. In the properties for the form's submit button, turn on the **JS** tag for the **onClick** event and set it to run your query:
-  ```javascript
-  // in the Submit button's onClick field:
-  {{
-    <smtp-query-name>.run().then(() => {
-      closeModal('<modal-name>');
-    });
-  }}
-  ```
+1. In the properties for the form's submit button, configure the **onClick** action to execute your `SendMail` query.
 
 **Configure the query**:
 
 1. In each configuration field, reference the appropriate widget from the Form that contains its intended value. For example, you can use the Form's `data` property, followed by the input widget's name and the property that holds its content:
   ```javascript
   // in the "From email" field
-  {{ <form-name>.data.<input-widget-name>.text }}
+  {{ EmailForm.data.FromInput.text }}
   ```
   ```javascript
   // in the "Body" field
-  {{ <form-name>.data.<rich-text-editor-name>.text }}
+  {{ EmailForm.data.BodyEditor.text }}
   ```
   ```javascript
   // in the "Attachment(s)" field
-  {{ <form-name>.data.<filepicker-name>.files }}
+  {{ EmailForm.data.AttachmentPicker.files }}
   ```
+
+Once you fill in your form fields, your query is ready to send the email.
 
 ---
 
