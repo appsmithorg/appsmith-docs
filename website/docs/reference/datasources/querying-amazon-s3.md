@@ -45,10 +45,9 @@ The return data should look something like this:
 ```json
 [
   {
-    "fileName": "myFile.pdf",
-    ...
-  },
-  ...
+    "fileName": "contracts/id001Contract.txt",
+    "url": "https://example-users-bucket.s3.us-west-2.amazonaws.com/contracts/id001Contract.txt"
+  }
 ]
 ```
 
@@ -56,11 +55,11 @@ The return data should look something like this:
 
 #### Example
 
-> Fetch all files contained in the bucket `example-user-bucket` with the path prefix `contracts`, and display the result in a table `UserContractsTable`. Include links to the documents so the user can view the files.
+> Fetch all files contained in the bucket `example-user-bucket` with the path prefix `contracts`, and display the result in a table `ContractsTable`. Include links to the documents so the user can view the files.
 
 **Setup**:
 
-Create a [Table widget](/reference/widgets/table) called `UserContractsTable` to display your data. Create your Amazon S3 datasource and a query called `ListContracts` based on it.
+Create a [Table widget](/reference/widgets/table) called `ContractsTable` to display your data. Create your Amazon S3 datasource and a query called `ListContracts` based on it.
 
 **Configure the query**:
 
@@ -68,8 +67,8 @@ Create a [Table widget](/reference/widgets/table) called `UserContractsTable` to
 1. Provide the name of your S3 bucket in **Bucket Name**.
 1. Set **Prefix** to `contracts`.
 1. Set **Generate Signed URL** to `Yes`.
-1. Set **Pagination Limit** to `{{ UserContractsTable.pageSize }}`.
-1. Set **Pagination Offset** to `{{ UserContractsTable.pageOffset }}`.
+1. Set **Pagination Limit** to `{{ ContractsTable.pageSize }}`.
+1. Set **Pagination Offset** to `{{ ContractsTable.pageOffset }}`.
 
 **Configure the table**:
 
@@ -108,16 +107,6 @@ This command uploads a new file into the specified bucket, named according to th
 If a file by the same name/path already exists within the bucket, the old file is _overwritten_ by the new one.
 
 You can use the [Filepicker widget](/reference/widgets/filepicker) to select files on your machine to upload to S3. Reference the selected file in your query's **Content** field with `{{ Filepicker1.files[0] }}`.
-
-:::tip
-If you need to send plain text content to S3, send JSON in the **Content** field with a `text` and `data` property like below:
-```json
-{
-  "type": "text/plain",
-  "data": "This is my text content!"
-}
-```
-:::
 
 ---
 
@@ -165,17 +154,17 @@ If your `fileData` content is in Base64 format and needs to be decoded, use the 
 
 #### Example
 
-> Download the content of a .pdf file `id001Contract.pdf` from an S3 bucket `example-users-bucket`.
+> From a table of filenames, download the content of a .pdf file `id001Contract.pdf` from an S3 bucket `example-users-bucket`.
 
 **Setup**:
 
-Create your Amazon S3 datasource and a query called `ReadContract` based on it. Then create a table widget `ListContracts` set up to query the files in your S3 bucket as described above in [List files in bucket](#list-files-in-bucket).
+List your filenames into a [Table widget](/reference/widgets/table) by following [these steps](#list-files-in-bucket), and then create a query `ReadContract` based on your S3 datasource.
 
 **Configure the query**:
 
 1. Set the **Commands** field to `Read file`.
 1. Set the **Bucket Name** field to `example-users-bucket`. 
-1. Set the **File Path** field to `{{ ListContracts.triggeredRow.fileName }}`.
+1. Set the **File Path** field to `{{ ContractsTable.triggeredRow.fileName }}`.
 
 **Configure the table**:
 
@@ -187,9 +176,9 @@ Create your Amazon S3 datasource and a query called `ReadContract` based on it. 
       // in the button column's onClick settings
       {{ atob(ReadFiles.data.fileData) }}
       ```
-    1. Set the **File name with extension** to `{{ ListContracts.triggeredRow.fileName }}`.
+    1. Set the **File name with extension** to `{{ ContractsTable.triggeredRow.fileName }}`.
 
-Now when a user clicks the download button in a table row, the associated .pdf is downloaded to their machine.
+Now when a user clicks the download button in a table row, the associated file is downloaded to their machine.
 
 ---
 
@@ -203,25 +192,19 @@ Now when a user clicks the download button in a table row, the associated .pdf i
 
 ## Delete file
 
-This command deletes a file from an S3 bucket.
-
-This action returns a message on the `status` property describing the outcome of your query.
-
----
-
 #### Example:
 
 > Delete a file `id001Contract.pdf` from the `contracts` directory of an S3 bucket `example-users-bucket`.
 
 **Setup**:
 
-Create your Amazon S3 datasource and a query called `DeleteContract` based on it. Then create a table widget `ListContracts` set up to query the files in your S3 bucket as described above in [List files in bucket](#list-files-in-bucket).
+List your filenames into a [Table widget](/reference/widgets/table) by following [these steps](#list-files-in-bucket), and then create a query `DeleteContract` based on your S3 datasource.
 
 **Configure the query**:
 
 1. Set the **Commands** field to `Delete file`.
 1. Set the **Bucket Name** field to `example-users-bucket`. 
-1. Set the **File Path** field to `{{ ListContracts.triggeredRow.fileName }}`.
+1. Set the **File Path** field to `{{ ContractsTable.triggeredRow.fileName }}`.
 
 **Configure the table**:
 
