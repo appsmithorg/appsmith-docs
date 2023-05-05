@@ -46,7 +46,7 @@ For more information, see [SSL Support](https://www.postgresql.org/docs/current/
 
 
 :::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
 

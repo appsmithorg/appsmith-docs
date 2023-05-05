@@ -27,7 +27,7 @@ If you are a self-hosted user, you may need to whitelist the IP address of the A
 </figure>
 
 :::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (\*).
