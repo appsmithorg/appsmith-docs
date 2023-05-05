@@ -60,7 +60,7 @@ The return data should look something like this:
 
 **Setup**:
 
-Create a [Table widget](/reference/widgets/table) to display your data. Create your Amazon S3 datasource and a query called based on it.
+Create a [Table widget](/reference/widgets/table) to display your data. Create your Amazon S3 datasource and a query based on it.
 
 **Configure the query**:
 
@@ -98,7 +98,7 @@ Now your Table is ready to page through your S3 bucket's files, and you can clic
 | **Where**                         | Filter conditions to narrow query results based on comparison operators. |
 | **Generate Signed URL**           | Requests an authenticated, user-accessible URL for each file in the response. Users may follow the link in their browser to see the content of the file. The URL expires after the amount of time specified in **Expiry Duration of Signed URL**. |
 | **Expiry Duration of Signed URL** | The length of time in minutes that the returned Signed URL is valid. Accepts number values up to 10080 minutes (7 days). |
-| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, however it can't be used to access the resource directly, only via API. |
+| **Generate Un-signed URL**        | Requests the plain URL for each file in the query response. This URL does not expire, but it can't be used to access the resource directly, only via API. |
 | **Sort By**                       | Orders the query results in ascending or descending order based on a given key's value. |
 | **Pagination Limit**              | Restricts the number of results returned in the response. |
 | **Pagination Offset**             | Skips a given number of files before returning the further results. |
@@ -239,7 +239,7 @@ Create your Amazon S3 datasource and a query based on it. Then create a table wi
   }}
   ```
 
-Now when you click the delete button in the table, the corresponding file is deleted from the S3 bucket and the table is refreshed.
+Now when you click the delete button in the table, the corresponding file is deleted from the S3 bucket, and the table is refreshed.
 
 ---
 
