@@ -369,4 +369,6 @@ Asynchronous
 asynchronous
 showData
 subcommands
+http
+tcp
 Amazon S3

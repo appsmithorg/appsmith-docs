@@ -7,163 +7,102 @@ description: >-
   with Appsmith using host.docker.internal or ngrok.
 ---
 
-# Connect via Localhost
+# Connect to Local Databases and APIs
 
-## Connect to a localhost database/ API
+This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
 
-With your on-premises Appsmith instance running on the same system, you may use [`host.docker.internal` ](how-to-work-with-local-apis-on-appsmith.md#using-docker-internal)or [ngrok](how-to-work-with-local-apis-on-appsmith.md#using-ngrok) to connect to databases, APIs, and services that are running on localhost or as other docker containers.
+## Connect Appsmith in Docker to datasource on localhost
 
-## Using host.docker.internal
+To connect from Appsmith running in a Docker container to a database or API service on localhost, use `host.docker.internal` as the URL; it resolves to the internal IP address used by the host machine. See the official [Docker documentation](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) for more information.
 
-You can use [`host.docker.internal`](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) to connect with the databases/APIs/other docker containers running on `localhost`. The video below shows how to set things up.
+<VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connecting from Appsmith in Docker to local datasource" caption="Connecting from Appsmith in Docker to local datasource"/>
 
-:::info
-You can also visit docker docs to read the use cases and workarounds for the [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds-for-all-platforms) usage.
-:::
+To connect to your database or API from Appsmith:
+
+1. Ensure that all of the relevant Docker containers are running. If you are running on Linux, [see the note below](#linux-note) before starting. 
+
+2. In your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
+
+3. In the **Host Address** or URL field where you'd normally provide the URL for your datasource, instead enter `host.docker.internal`. Otherwise, configure your datasource details as normal.
+
+4. Click **Test** to verify that the connection is valid.
+
+<!-- anchor placed here to accommodate docs page header bar -->
+<a name="linux-note"></a>
+
+Your localhost application should now be connected and query-able from within your Appsmith app.
 
 
+:::caution note
+**Linux**: If your containers are running on a Linux machine, start your Appsmith container with the following command line argument to `docker run`. This is only supported for Docker 20.10.0 and later.
 
- <VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connect to databases/APIs running on localhost" caption="Connect to databases/APIs running on localhost"/>
- 
-For Linux systems, you would need to provide a run flag `add-host`. 
-
-```
+```bash
 --add-host=host.docker.internal:host-gateway
 ```
-:::note
-Only more recent versions of Docker support host-gateway, which is transformed to the Docker default bridge network IP (or virtual IP of the host).
+
+Or, for `docker-compose`, update your docker-compose.yaml file to include the following `extra_hosts` option:
+
+```yml
+services: ...
+  postgres: ...
+    environment: ...
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+```
 :::
 
-Run the below command to test and ensure the IP address from the hosts’ file is displayed.
+<figure>
+  <img src="/img/local_db_config.png" style={{width: "100%", height: "auto"}} alt="Connecting from Appsmith in Docker container to PostgreSQL database running on localhost" />
+  <figcaption align="center"><i>Connecting from Appsmith in Docker container to PostgreSQL database running on localhost</i></figcaption>
+</figure>
 
-```bash
- run —-rm -—add-host=host.docker.internal:host-gateway
- ```
-For Docker Compose on Linux, you need to manually add it to the ```docker-compose.yaml``` file. Use ```extra hosts``` to add the entry as shown below: 
+## Connect Appsmith cloud to datasource on localhost
 
-```yaml
- extra_hosts:
-    - "host.docker.internal:host-gateway"
-```
+With ngrok, you can expose and connect to your database or API from the internet via a secure network tunnel:
 
-## Using ngrok
+<VideoEmbed host="youtube" videoId="IUX2rXmS17E" title="Connect to localhost using ngrok" caption="Connect to localhost using ngrok"/>
 
-Appsmith allows you to work with APIs and databases running on `localhost` using the help of **`ngrok`**. You'll have to set up `ngrok` for the same.
+**Set up ngrok:** to begin, you'll need to [sign up for an account](https://dashboard.ngrok.com/signup) with ngrok if you don't have one already. Then, follow the [setup instructions](https://dashboard.ngrok.com/get-started/setup) to install and configure ngrok for the first time. Run `ngrok help` to make sure it's ready to work.
 
-### Setting ngrok
+Once you are ready to work with ngrok, follow these steps to connect Appsmith to your database:
 
-To set up 'ngrok’- you would have to signup at [ngrok](https://dashboard.ngrok.com/get-started/setup) (it’s free!). Follow the instructions to connect your account.
+1. Expose your database or API with the ```ngrok``` command:
+  ```
+  ngrok <protocol> <port>
+  ```
+  For example, you might use this for a PostgreSQL database instance:
+  ```
+  ngrok tcp 5432
+  ```
 
-* Download the `ngrok` installation file and unzip it
-* Add the [`auth-token` to the configuration](https://ngrok.com/docs/ngrok-agent#install-your-authtoken)
+2. When the command completes, ngrok returns you a set of session details including the **Forwarding** address. It should look something like:
+    * For **tcp**:
+    ```
+    tcp://0.tcp.in.ngrok.io:17392
+    ```
+    In this address, `tcp://0.tcp.in.ngrok.io` is the **Host Address** and `17392` is the **Port**.
 
+    * For **http**:
+    ```
+    https://e4da-2600-1700-ede0-5b20-b092-ac43-60a7-178b.ngrok-free.app
+    ```
+    This is simply the URL to use for your API, no port necessary.
 
-### Connect via ngrok
-With 'ngrok,’ you would be able to connect to the databases and APIs running on your localhost.
+3. Back in your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
 
- <VideoEmbed host="youtube" videoId="IUX2rXmS17E" title="Connect to localhost using ngrok" caption="Connect to localhost using ngrok"/>
+4. Enter the URL or **Host Address** & **Port** that you just got from ngrok, then configure your remaining datasource details as normal.
 
-### Connecting to a localhost database
-You've a MongoDB instance running on your localhost. You wish to connect the app you are building on [Appsmith Cloud](https://app.appsmith.com) to MongoDB.
+5. Click **Test** to verify that the connection is valid.
 
-Follow the below steps to connect to the MongoDB instance:
-* Expose your local MongoDB instance using ```ngrok``` command
-```bash
-ngrok <PROTOCOL> <LOCAL_PORT> 
-```
-MongoDB uses a ```tcp``` protocol for creating connections, and ```27017``` is the default port. If you are not using a default port, provide it in place of ```27017```.
+Your localhost application should now be connected and query-able from within your Appsmith app.
 
-```bash
-ngrok tcp 27017
-```
+<figure>
+  <img src="/img/ngrok-config-example.png" style={{width: "100%", height: "auto"}} alt="Connecting from Appsmith to local PostgreSQL database using ngrok" />
+  <figcaption align="center"><i>Connecting from Appsmith to local PostgreSQL database using ngrok</i></figcaption>
+</figure>
 
-![connect using ngrok MongoDB running on localhost](/img/connect-localhost-mongodb-using-ngrok.png)
-
-Use the host address ```0.tcp.in.ngrok.io``` and the port number ```17392``` to add a MongoDB datasource to your app.
-
-![create a MongoDB datasource using ngrok by connecting to local MongoDB ](/img/Appsmith-connect-localhost-mongodb-using-ngrok.png)
-
-#### Create query
-You can [create queries](/core-concepts/data-access-and-binding/querying-a-database/#setting-up-a-query) to the newly added localhost instance of MongoDB ```LocalMongoDBUsingNgrok``` datasource.
-
-### Building a simple local API
-
-To host an API locally, you could use a [Python FastAPI](https://realpython.com/fastapi-python-web-apis/#what-is-fastapi) server. You could install it using ```pip```.
-
-```bash
-$ python3 -m pip install fastapi uvicorn
-```
-
-You could serve the API request by using the code snippet:
-
-```python
-from fastapi import FastAPI
-
-app = FastAPI()
-
-items = [{     
-       "name": "Counter-Strike",
-       "appid": 10,
-       "average_playtime": 17612,
-       "genres": "Action",
-       "price": 7.2
-     },
-     {
-       "name": "Team Fortress Classic",
-       "appid": 20,
-       "average_playtime": 277,
-       "genres": "Action",
-       "price": 3.99
-     }]
-
-
-@app.get("/")
-async def root():
-   return items
-```
-
-In the code snippet - you have:
-* Imported a FastAPI library and initiated an app using the `FastAPI` class
-* Defined a collection of steam game objects
-* Declared a route “/” at which the items (game objects) could be accessed 
-
-You could run the server with the following command:
-
-```bash
-$ uvicorn main:app --reload
-```
-> The command uvicorn main:app refers to:
->
-> * `main`: the file main.py (the Python "module").
-> * `app`: the object created inside main.py with the line app = FastAPI().
-> * `--reload`: to restart the server after code changes. Only used for a development environment.
-
-You would see a screen below when the app is up and API is ready to use.
-
-![Run the localhost API using FastAPI](/img/start-localhost-api-using-fastapi.png)
-
-Awesome, you could see your [API in action](http://127.0.0.1:8000).
-
-Fire up `ngrok` and expose the local port[8000] to access the local API in your app available on [Appsmith Cloud](https://app.appsmith.com).
-
-```bash
-ngrok <PROTOCOL> <LOCAL_PORT> 
-```
-
-To access the API, you would have to use the `HTTP` protocol and port `8000`.
-
-```bash
-ngrok http 8000
-```
-
-`ngrok` creates an HTTP tunnel, forwards the externally accessible address to the local address, and enables access to the local API over the internet.
-
-![connect local api using ngrok](/img/connect-localhost-api-using-ngrok.png)
-
-#### Connect to local API
-You can [create an API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis#api-editor) and add the localhost API with the address `https://a8cc-2405-201-21-4011-5564-59ac-2209-1c4c.in.ngrok.io`.
-
-![connect to an API hosted on localhost using ngrok](/img/create-api-for-local-api-on-appsmith.png)
 
 ## Further reading
-You could read the API/ query response and [display the data](/core-concepts/data-access-and-binding/displaying-data-read/) by binding it with different [widgets](/reference/widgets/) available on Appsmith.
+
+* [Create environments with Git](/advanced-concepts/version-control-with-git/environments-with-git)
+* [Table widget](/reference/widgets/table)
