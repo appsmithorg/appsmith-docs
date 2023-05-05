@@ -12,7 +12,7 @@ This document presumes you are familiar with the [core concepts](core-concepts/c
 1. [Uploading a file to S3](how-to-upload-to-s3.md)
 1. [Writing JavaScript in Appsmith](writing-javascript-in-appsmith.md)
 1. [How to work with Google Sheets on Appsmith](how-to-work-with-google-sheets-on-appsmith.md)
-1. [Connect to Localhost Databases and APIs](how-to-guides/how-to-work-with-local-apis-on-appsmith)
+1. [Connect to Localhost Databases and APIs](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
 1. [How to use MS SQL as a data source on Appsmith](use-mssql-as-data-source.md)
 1. [How to use filters on Appsmith's table widget](how-to-use-filters-on-appsmith-table-widget.md)
 1. [How to build auto-generated forms using List widget](build-auto-generated-forms-using-list-widget.md)
