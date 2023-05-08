@@ -5,7 +5,6 @@ This page explains how the Tabs widget can be used to group related content and 
 
 <VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="Using the Tabs Widget" caption="Using the Tabs Widget"/>
 
-
 ## Create multi-step form
 
 Custom navigation schemes can be created by modifying the properties of a Tab widget. For instance, you can use the **Default tabs** and **storeValue** to create a multi-step form.
