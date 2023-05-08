@@ -26,11 +26,11 @@ Appsmith integrates with popular SAML providers that you can choose from. Click 
         </div>
         <div class="columnGrid column-two" align="center">
          <div class="containerCol">
-                <a href="3000/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">
+                <a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">
                 <img class="containerImage" src="/img/Azure-Active-Directory.png" alt="AD-logo"/>
                 </a>     
             </div> 
-            <b><a href="3000/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">Active Directory</a></b><br/>
+            <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">Active Directory</a></b><br/>
         </div>
         <div class="columnGrid column-one" align="center">
           <div class="containerCol">
