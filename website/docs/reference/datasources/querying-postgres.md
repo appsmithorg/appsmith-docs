@@ -83,10 +83,7 @@ The following section list all the parameters provided by Appsmith to connect to
 
 ## Query PostgreSQL
 
-You can create queries in two ways: 
-
-- Click the **Explorer** tab on the entity explorer to the screen’s left. Expand the **Datasources** section**.** Select the name of your datasource. Click the **+ New Query** button on the top right of the page**.**
-- Click the **Explorer** tab on the entity explorer to the screen’s left. Click the **+** icon next to next to **Queries/JS.** Select the PostgreSQL database name from the list.
+You can write SQL commands in the query editor. To create queries, click the **Explorer** tab on the entity explorer to the screen’s left. Click the **+** icon next to next to **Queries/JS.** Select the PostgreSQL database name from the list of options.
 
 <figure>
   <img src="/img/query-postgresql.png" style= {{width:"100%", height:"auto"}} alt="Write SQL commands in the query editor"/>
