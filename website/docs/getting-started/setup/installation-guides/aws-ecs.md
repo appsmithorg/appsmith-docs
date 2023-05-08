@@ -90,7 +90,9 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
   | **Volume type** | bind |
   | **Source path** | `/appsmith/stacks` | 
   
-  The mount directory named `/appsmith/stacks` is created on the host EC2 instance, and Appsmith data is tied to the lifecycle of the host EC2 instance in the ECS cluster.
+  :::caution Attention
+  The **Bind** volume creates a mount directory named `/appsmith/stacks` on the host EC2 instance. If you delete the cluster or the node, the Appsmith data is also lost.
+  :::
 
   i. Click **Add** button
 
