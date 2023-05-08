@@ -103,11 +103,38 @@ kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-backup-
 
 </Tabs>
 
+### Schedule automatic backups
+
+:::info
+Scheduling backups is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
+:::
+
+Follow these steps to schedule automatic backups:
+
+1. Go to the directory where the `docker.env` file is located.
+2. Open the `docker.env` file and set the environment variable as shown below:
+
+```bash
+# Add a 5-value cron expression
+#highlight-next-line
+APPSMITH_BACKUP_CRON_EXPRESSION="<ADD_5_VALUE_CRON_EXPRESSION>"
+```
+For example:
+* To schedule a backup at 12:00 on Sunday:
+```bash
+#highlight-next-line
+APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
+```
+* To schedule a backup daily at Midnight:
+```bash
+#highlight-next-line
+APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
+```
 
 ### Sync backup to S3 bucket
 
 :::info
-Syncing backups with an AWS S3 bucket is a feature available only in the [Business Edition](https://www.appsmith.com/pricing) for self-hosted instances.
+Syncing backups with an AWS S3 bucket is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
 :::
 
 Follow these steps to sync backups with an S3 bucket for your installation type:
