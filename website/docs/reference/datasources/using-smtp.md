@@ -50,8 +50,6 @@ When the query is successful, you'll recieve the following response:
 }
 ```
 
----
-
 #### Example
 
 > Use a Form widget to write and send an email.
@@ -106,4 +104,4 @@ Once you fill in your form fields, your query is ready to send the email.
 
 * [Rich Text Editor widget](/reference/widgets/rich-text-editor)
 * [Filepicker widget](/reference/widgets/filepicker)
-* [Upload/Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
+* [Upload or download files from S3](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
