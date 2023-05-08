@@ -25,7 +25,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
   d. Click the **Next step** button
 
-  e. Give a desired name to **Cluster name**
+  e. Give a desired name to the **Cluster name** field
 
   f. Configure the instance as shown below:
 
@@ -47,7 +47,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
   | **Auto assign public IP**    | Select **Enabled** from the dropdown|
   | **Security group**    | Select the security group that you created in the [Prerequisites](#prerequisites) step |
 
-  h. Scroll down to the **CloudWatch Container Insights**, and tick the **Enable container insights** checkbox
+  h. Scroll down to the **CloudWatch Container Insights** section, and tick the **Enable container insights** checkbox
 
   i. Click the **Create** button
 
@@ -109,11 +109,13 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
   m. Scroll down to the **Port mappings** section
 
-  n. Click **Add port mapping** and add port 443 to the Host port, Container port, and set the protocol as `tcp`.
+  n. Add port 80 to the Host port and the Container port fields, and set the protocol as `tcp`
 
-  o. Scroll to the **Storage and Logging** section
+  o. Click **Add port mapping** and add port 443 to the Host port and the Container port fields, and set the protocol as `tcp`
+
+  p. Scroll to the **Storage and Logging** section
   
-  p. Add the Mount points as shown below:
+  q. Add the Mount points as shown below:
 
   | Attribute              | Value                                       |
   |------------------------|---------------------------------------------|
@@ -121,11 +123,11 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
   | **Container path**     | `/appsmith-stacks`                          |
   | **Read only**          | Disabled                                    |
 
-  q. Click **Add**
+  r. Click **Add**
 
-  r. Scroll down to the bottom of the page
+  s. Scroll down to the bottom of the page
 
-  s. Click **Create**
+  t. Click **Create** button
 
 2. Follow these steps to create and run an ECS service
 
