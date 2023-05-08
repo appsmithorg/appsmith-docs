@@ -40,7 +40,7 @@ The following section list all the parameters provided by Appsmith to connect to
 
 <dl>
   <dt><b>Host Address</b></dt>
-  <dd>The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see [**Connect Local Database**](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith) for directions on configuring the connection parameters. </dd>
+  <dd>The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd>
 </dl>
 
 <dl>
@@ -68,14 +68,14 @@ The following section list all the parameters provided by Appsmith to connect to
   <dd>Determines with what priority a secure SSL TCP/IP connection is negotiated with the server.</dd><br />
   <dd><i>Options:</i>
     <ul>
-     <li><b>Default:</b> The Default SSL Mode is **Prefer**.</li>
+     <li><b>Default:</b> The default SSL Mode is <b>Prefer</b>.</li>
      <li><b>Allow:</b> First try a non-SSL connection; if that fails, try an SSL connection. The client can connect with or without SSL.</li>
      <li><b>Prefer:</b> First try an SSL connection; if that fails, try a non-SSL connection. The client tries to connect with SSL, but falls back to an unencrypted connection if SSL is not available.</li>
      <li><b>Require:</b> Only try an SSL connection. Rejects the connection if SSL isn't available.</li>
      <li><b>Disable:</b> Only try a non-SSL connection. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.</li>
     </ul>
   </dd>  
-  <dd>For more information, see [SSL Support](https://www.postgresql.org/docs/current/libpq-ssl.html).</dd>
+  <dd>For more information, see <a href="https://www.postgresql.org/docs/current/libpq-ssl.html"><b>SSL Support</b></a>.</dd>
 </dl>
 
 
@@ -96,7 +96,7 @@ You can create queries in two ways:
 
 ### Examples
 
-See the official [PostgreSQL documentation](https://www.postgresql.org/docs/12/index.html) for the SQL syntax.
+See the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html) for the SQL syntax.
 
 #### Fetch data
 
@@ -105,7 +105,7 @@ SELECT * FROM users LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOff
 
 ```
 
-In the above example, `tableUsers` is the name of the Table widget used to display the data using [server-side pagination](/reference/widgets/table#server-side-pagination).
+In the above example, `tableUsers` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination).
 
 
 #### Insert data
@@ -147,7 +147,7 @@ In the above example, `tableUsers` is the name of the Table widget where the row
 
 ## Use prepared statements
 
-Prepared statements are switched on by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template {{ }}, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [Prepared Statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
+Prepared statements are switched on by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template {{ }}, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
 
 
 ## Troubleshooting
@@ -158,7 +158,7 @@ Prepared statements are switched on by default to help prevent SQL injection at
 
 If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
 
-## Further reading
+## See also
 
 [Data access and binding](/core-concepts/data-access-and-binding)
 
