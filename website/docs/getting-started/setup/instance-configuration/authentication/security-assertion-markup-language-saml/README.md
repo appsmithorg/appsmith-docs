@@ -14,13 +14,7 @@ To start SAML authentication in Appsmith, go to **Admin Settings** > **Authentic
 
 Appsmith integrates with popular SAML providers that you can choose from. Click the below available providers and follow the instructions to configure them for SAML integration:
 
-* [Auth0](auth0.md)
-* [Ping Identity](ping-identity.md)
-* [Okta](okta.md)
-* [Active Directory](active-directory.md)
-
 <div class="containerBorder">
-
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
