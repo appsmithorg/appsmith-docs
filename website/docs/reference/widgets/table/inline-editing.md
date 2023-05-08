@@ -1,6 +1,6 @@
 # Inline Editing
 
-The Table widget allows users to edit and add data directly from the UI through inline editing.
+This page describes how to add and edit Table data directly from the UI through inline editing.
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
@@ -54,7 +54,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 
 3. Select the **Editable** checkbox for the `name` and `phone` column properties.
 
-4. Create an UPDATE query using the `updatedRow` reference property to retrieve all information pertaining to the modified cells.
+4. Create a new query that uses the `updatedRow` reference property.
 
 ```sql
 UPDATE users SET 
@@ -90,7 +90,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 
 3. Enable the **Multi Row** property, and configure the `name` and `phone` columns to be editable. Additionally, set **Primary key column** to `id`.
 
-4. Create a new query using the `updatedRows` reference property to retrieve all the data associated with the updated rows.
+4. Create a new query using the `updatedRows` reference property.
 
 ```sql
 UPDATE users
@@ -138,15 +138,15 @@ INSERT INTO users
 VALUES 
 (
    {{ Table1.newRow.id }}, 
-   '{{ Table1.newRow.phone }}', 
-   '{{ Table1.newRow.name }}', 
-   '{{ Table1.newRow.gender }}', 
-   '{{ Table1.newRow.latitude }}', 
-   '{{ Table1.newRow.longitude }}', 
-   '{{ Table1.newRow.dob }}', 
-   '{{ Table1.newRow.email }}', 
-   '{{ Table1.newRow.image }}', 
-   '{{ Table1.newRow.country }}'
+   {{ Table1.newRow.phone }}, 
+   {{ Table1.newRow.name }}, 
+   {{ Table1.newRow.gender }}, 
+   {{ Table1.newRow.latitude }}, 
+   {{ Table1.newRow.longitude }}, 
+   {{ Table1.newRow.dob }}, 
+   {{ Table1.newRow.email }}, 
+   {{ Table1.newRow.image }}, 
+   {{ Table1.newRow.country }}
 );
 ```
 
