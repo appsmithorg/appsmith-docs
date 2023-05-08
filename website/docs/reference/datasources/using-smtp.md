@@ -9,6 +9,11 @@ This page describes how to use the SMTP datasource to create and send emails fro
 
 ## Connect to SMTP
 
+<figure>
+  <img src="/img/smtp_datasource_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP datasource"/>
+  <figcaption align = "center"><i>Configuring an SMTP datasource</i></figcaption>
+</figure>
+
 To add an SMTP datasource:
 
 1. Click the (**+**) sign in the **Explorer** tab next to **Datasources**.
@@ -25,19 +30,14 @@ Some SMTP providers use a multi-factor authentication flow and may require you t
 7. Once you've entered your credentials, click the **Test** button to check that they are working.
 8. Click **Save** when you are finished, and your datasource is ready for queries.
 
-<figure>
-  <img src="/img/smtp_datasource_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP datasource"/>
-  <figcaption align = "center"><i>Configuring an SMTP datasource</i></figcaption>
-</figure>
-
 ## Create queries
-
-You can write queries to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
 
 <figure>
   <img src="/img/smtp_query_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP query"/>
   <figcaption align = "center"><i>Configuring an SMTP query</i></figcaption>
 </figure>
+
+You can write queries to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
 
 ## Send email
 
