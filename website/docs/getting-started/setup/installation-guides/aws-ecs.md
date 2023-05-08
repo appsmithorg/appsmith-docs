@@ -49,7 +49,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
   h. Scroll down to the **CloudWatch Container Insights** section, and tick the **Enable container insights** checkbox
 
-  i. Click the **Create** button
+  i. Click the **Create** button. You see a launch status screen as shown below:
 
 <figure>
   <img src="/img/aws_ecs_ec2_create_cluster_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the ECS Cluster status" />
@@ -152,7 +152,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
   f. Click the **Next step** button on the **Set Auto Scaling** page
 
-  g. Review the details and click **Create Service**
+  g. Review the details and click **Create Service**.  You see a launch status screen as shown below:
 
 <figure>
   <img src="/img/aws_ecs_ec2_create_ecs_service_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the ECS Service Status." />
