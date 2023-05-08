@@ -27,40 +27,58 @@ If you want to connect to a local PostgreSQL database, see [**Connect Local Dat
 ## Connection parameters
 The following section list all the parameters provided by Appsmith to connect to a PostgreSQL database.
 
-#### Connection Mode
-Specifies the mode in which the Appsmith application can interact with the database.
+<dl>
+  <dt><b>Connection Mode</b></dt>
+  <dd> Specifies the mode in which the Appsmith application can interact with the database. </dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Read Only:</b> This mode permits read-only transactions by default.</li>
+     <li><b>Read/Write:</b> This mode permits both read-write transactions by default.</li>
+    </ul>
+  </dd>  
+</dl>
 
-  **Options**:
+<dl>
+  <dt><b>Host Address</b></dt>
+  <dd>The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see [**Connect Local Database**](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith) for directions on configuring the connection parameters. </dd>
+</dl>
 
-   * **Read Only:** This mode permits read-only transactions by default.
-   * **Read / Write:** This mode permits both read-write transactions by default.
+<dl>
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to at the server host. Appsmith connects to port `5432` by default, if you don't specify one. </dd>
+</dl>
 
-#### Host Address
-The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see [**Connect Local Database**](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith) for directions on configuring the connection parameters.
+<dl>
+  <dt><b>Database Name</b></dt>
+  <dd>The name of the database that you want to connect to. </dd>
+</dl>
 
-#### Port
-The port number to connect to at the server host. Appsmith connects to port `5432` by default, if you don't specify one.
+<dl>
+  <dt><b>Username</b></dt>
+  <dd>The username that you want to use to authenticate with the PostgreSQL server.</dd>
+</dl>
 
-#### Database Name
-The name of the database that you want to connect to.
+<dl>
+  <dt><b>Password</b></dt>
+  <dd>Password to be used if the server demands password authentication.</dd>
+</dl>
 
-#### Username
-The username that you want to use to authenticate with the PostgreSQL server.
+<dl>
+  <dt><b>SSL Mode</b></dt>
+  <dd>Determines with what priority a secure SSL TCP/IP connection is negotiated with the server.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Default:</b> The Default SSL Mode is **Prefer**.</li>
+     <li><b>Allow:</b> First try a non-SSL connection; if that fails, try an SSL connection. The client can connect with or without SSL.</li>
+     <li><b>Prefer:</b> First try an SSL connection; if that fails, try a non-SSL connection. The client tries to connect with SSL, but falls back to an unencrypted connection if SSL is not available.</li>
+     <li><b>Require:</b> Only try an SSL connection. Rejects the connection if SSL isn't available.</li>
+     <li><b>Disable:</b> Only try a non-SSL connection. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.</li>
+    </ul>
+  </dd>  
+  <dd>For more information, see [SSL Support](https://www.postgresql.org/docs/current/libpq-ssl.html).</dd>
+</dl>
 
-#### Password
-Password to be used if the server demands password authentication.
 
-#### SSL Mode
-Determines with what priority a secure SSL TCP/IP connection is negotiated with the server. 
-
-  **Options**:
-   * **Default**: The Default SSL Mode is **Prefer**.
-   * **Allow**: First try a non-SSL connection; if that fails, try an SSL connection. The client can connect with or without SSL.
-   * **Prefer**: First try an SSL connection; if that fails, try a non-SSL connection. The client tries to connect with SSL, but falls back to an unencrypted connection if SSL is not available.
-   * **Require**: Only try an SSL connection. Rejects the connection if SSL isn't available.
-   * **Disable**: Only try a non-SSL connection. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
-  
-For more information, see [SSL Support](https://www.postgresql.org/docs/current/libpq-ssl.html).
 
 
 ## Query PostgreSQL
