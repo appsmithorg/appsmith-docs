@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Auth0
 
-Auth0 is an authentication & authorization provider. It provides Security Assertion Markup Language (SAML) integration that you can use to integrate with Appsmith. Follow these steps to configure SAML integration:
+Auth0 provides Security Assertion Markup Language (SAML) integration that you can use to integrate with Appsmith. Follow these steps to configure SAML integration:
 
 :::info
 Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted** instances, and only the **Superuser** of your **Appsmith Instance** can set up **SAML**.
@@ -24,8 +24,8 @@ Once you have enabled SAML in Appsmith, follow the steps below:
   <figcaption align = "center"><i>Create Regular Web Application </i></figcaption>
 </figure>
 
-* Once your application is created, you’re navigated to the Quickstart tab. Go to the **Settings** tab.
-* Scroll down to the **Application URIs** and Add the **Redirect URL** in the **Allowed Callback URLs** field.
+* Once your application is created, you’re navigated to the Quickstart screen. Go to the **Settings** tab.
+* Scroll down to the **Application URIs** and add the **Redirect URL** in the **Allowed Callback URLs** field.
 
 <figure>
   <img src="/img/auth0_settings_application-uri.png" style= {{width:"700px", height:"auto"}} alt="Auth0 Settings"/>
@@ -51,13 +51,13 @@ To get the **Metadata URL** for your application in Auth0, follow the steps belo
   <figcaption align = "center"><i>Copy the Metadata URL </i></figcaption>
 </figure>
 
-On the Appsmith **SAML 2.0** screen, add the Metadata URL, and click the **SAVE & RESTART** button to save the configuration.
+* On the Appsmith **SAML 2.0** screen, add the Metadata URL, and click the **SAVE & RESTART** button to save the configuration.
 
 </TabItem>
 
 <TabItem label="Metadata XML" value="metdataxml">
 
-To setup SAML using the raw Metadata XML file, follow the steps below:
+To set up SAML using the raw Metadata XML file, follow the steps below:
 * Open the copied Metadata URL in a browser tab and copy the XML content.
 * Navigate to Appsmith, click XML, add the raw XML in the `Metadata XML` field, and click the **SAVE & RESTART** button to save the configuration.
 
@@ -66,34 +66,34 @@ To setup SAML using the raw Metadata XML file, follow the steps below:
 </TabItem>
 <TabItem label="Idp data" value="idpdata">
 
-You can also configure SAML by providing the identity provider(IdP) data.
-
 If you have Identity provider data like `X509 Public Certificate`, `Email`, and more, you can choose this option to configure SAML.
 
-* Navigate to Appsmith, and click **IdP Data**. You can get the information from `Metadata XML` and add the content of the tags as per the below mapping table:
+* Open the Metadata URL in a browser tab and copy the following data from the HTML tags:
+  -  **entityID** - `<EntityDescriptor>`
+  - `<SingleSignOnService>`
+  - `<X509Certificate>`
+  - **emailAddress** - `<NameIDFormat>`
+
+* Navigate to Appsmith, and click **IdP Data**. Add the content of HTML tags as per the table below:
 
 | **Appsmith Field Name** | **Metadata XML Tag**                                                                          |
 | ----------------------- | --------------------------------------------------------------------------------------------- |
-| Entity ID               | ` <EntityDescriptor`` `` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                 |
-| Single Sign-On URL      | `<SingleSignOnService/>`                                                                      |
-| X509 Public Certificate | `<X509Certificate/>`                                                                          |
-| Email                   | `<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |
-
-![How to set up the IdP Data?](/img/Appsmith-Admin-Settings-Authentication-SAML-IdP-Data.png)
-
-Once you have supplied the details, click the `SAVE & RESTART` button to save the configuration.
+| **Entity ID**               | ` <EntityDescriptor`` `` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                 |
+| **Single Sign-On URL**      | `<SingleSignOnService/>`                                                                      |
+| **X509 Public Certificate** | `<X509Certificate/>`                                                                          |
+| **Email**                   | `<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |
 
 
 </TabItem>
 </Tabs>
 
+Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. When the server restarts with new configurations, you would see a screen showing the message **Authentication Successful!**.
 
-## Complete the SAML configuration
+## Log in with SAML
 
-Once the server restarts with new configurations, you see a screen showing the message ‘**Authentication Successful!’**.
+When the setup is complete, log in again to your instance. You would see a login screen with the button **SIGN IN WITH SAML SSO**.
 
-![SAML Configuration Success Message](/img/Appsmith-SAML-Authentication-Successful.png)
-
-You’ll see a login screen with the button `SIGN IN WITH SAML SSO`.
-
-![SIGN IN WITH SAML SSO - Available on the Login Screen](/img/Appsmith-Login-Screen-Shows-SAML.png)
+<figure>
+  <img src="/img/Appsmith-Login-Screen-Shows-SAML.png" style= {{width:"400px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>Copy the Metadata URL </i></figcaption>
+</figure>
