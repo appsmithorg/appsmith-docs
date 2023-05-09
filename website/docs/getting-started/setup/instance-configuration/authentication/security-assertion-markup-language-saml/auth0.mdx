@@ -3,17 +3,17 @@ import TabItem from '@theme/TabItem';
 
 # Auth0
 
-Auth0 provides Security Assertion Markup Language (SAML) integration that you can use to integrate with Appsmith. Follow these steps to configure SAML integration:
+To configure Appsmith to use [Auth0](https://auth0.com/) as an SAML provider, follow these steps:
 
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings** > **Authentication**, navigate to **SAML 2.0** and click **Enable**.
 
-2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configurations to add them later in the Auth0 configuration settings. 
+2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Auth0 settings. 
 
-## Auth0 configurations
+##  Configure Auth0
 
-1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. Select and create a **Regular Web Application**.
+1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. Select **Regular Web Application** and Click **Create**.
 
 <figure>
   <img src="/img/Autho_create-app.png" style= {{width:"700px", height:"auto"}} alt="Create Auth0 Application"/>
@@ -22,15 +22,9 @@ Auth0 provides Security Assertion Markup Language (SAML) integration that you ca
 
 2. Once your application is created, you’re navigated to the Quickstart screen. Go to the **Settings** tab.
 3. Scroll down to the **Application URIs** and add the **Redirect URL** in the **Allowed Callback URLs** field.
-
-<figure>
-  <img src="/img/auth0_settings_application-uri.png" style= {{width:"700px", height:"auto"}} alt="Auth0 Settings"/>
-  <figcaption align = "center"><i>Add Redirect URL to Allowed Callback URLs field </i></figcaption>
-</figure>
-
 4. Click **Save Changes**.
 
-## Configure Auth0 SAML fields in Appsmith
+## Configure Auth0 in Appsmith
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
@@ -38,16 +32,9 @@ To complete the SAML configuration, you’ll have to register the identity provi
 <TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
 
 To get the Metadata URL for your application in Auth0, follow the steps below:
-1. Navigate to the **Settings** tab, scroll down, and expand the **Advanced Settings**.
-
-2. Click the **Endpoints**, scroll down to the **SAML** config fields, and copy the SAML **Metadata URL**.
-
-<figure>
-  <img src="/img/auth0_SAML_metadata-url.png" style= {{width:"700px", height:"auto"}} alt="Metadata URL"/>
-  <figcaption align = "center"><i>Copy the Metadata URL </i></figcaption>
-</figure>
-
-3. In the Appsmith **SAML 2.0** configurations, add the Metadata URL in the **Metadata URL** field under the **Register Identity Provider** section.
+1. Go to **Settings** tab in your Auth0 application, scroll down, and expand the **Advanced Settings** sections.
+2. Click the **Endpoints** tab, scroll down to the **SAML** section, and copy the SAML **Metadata URL**.
+3. In the Appsmith **SAML 2.0** configuration page, add the Metadata URL in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
 
@@ -72,10 +59,10 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 
 | **Appsmith Field ** | **Metadata XML Tag**                                                                       |
 | ------------------- | ------------------------------------------------------------------------------------------ |
-| **Entity ID**               | ` <EntityDescriptor`` `` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                 |
-| **Single Sign-On URL**      | `<SingleSignOnService/>`                                                                      |
-| **X509 Public Certificate** | `<X509Certificate/>`                                                                          |
-| **Email**                   | `<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |
+| **Entity ID**               |  Add the **entityID** attribute from `<EntityDescriptor>` tag. <br/>  Example: ` <EntityDescriptor " " entityID="urn:dev-ux0tussx.us.auth0.com" />`                 |
+| **Single Sign-On URL**      | Add the attributes in `<SingleSignOnService>` tag.<br/>  Example: `<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev-f0u-ur7m.us.auth0.com/samlp/00Jtsq4cJAixq20wK2f5PbZmq7xX4eZu"/>`                                                                    |
+| **X509 Public Certificate** | Add the content in `<X509Certificate>` tag.<br/> Example: `<X509Certificate>MIIDDTCCAfWgAwIBhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvB/SNHv7LpNHXCTcA6nTW+HZ5BDen2ZbrbgnopIUMWdduv2HHXUCCe/m7FOUABo0IwQDAPBgNVHRMBAf8EBTADAQH/dinHdqf9wZURyNXpVtk9FG4SM6TCrRCEdsc8Xgzl7wDHcJKl2X5aSzQ=</X509Certificate>`                                                                         |
+| **Email**                   | Add the content in `<NameIDFormat>` tag.<br/> Example:`<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |
 
 
 </TabItem>
@@ -83,9 +70,7 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
-## Log in with SAML
-
-When the setup is complete, log in again to your instance. You would see a login screen with the button **SIGN IN WITH SAML SSO**.
+After the instance restarts, log in again to your instance. You would see a login screen with the button **SIGN IN WITH SAML SSO**.
 
 <figure>
   <img src="/img/Appsmith-Login-Screen-Shows-SAML.png" style= {{width:"400px", height:"auto"}} alt="Metadata URL"/>
