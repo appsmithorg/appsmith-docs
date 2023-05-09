@@ -79,8 +79,6 @@ The following section list all the parameters provided by Appsmith to connect to
 </dl>
 
 
-
-
 ## Query PostgreSQL
 
 You can write SQL commands in the query editor. To create queries, click the **Explorer** tab on the entity explorer to the screen’s left. Click the **+** icon next to next to **Queries/JS.** Select the PostgreSQL database name from the list of options.
@@ -90,12 +88,11 @@ You can write SQL commands in the query editor. To create queries, click the **E
   <figcaption align = "center"><i>Write SQL commands in the query editor</i></figcaption>
 </figure>
 
-
-### Examples
-
+:::info
 See the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html) for the SQL syntax.
+:::
 
-#### Fetch data
+### Fetch data
 
 ```sql
 SELECT * FROM users LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOffset }};
@@ -105,7 +102,7 @@ SELECT * FROM users LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOff
 In the above example, `tableUsers` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination).
 
 
-#### Insert data
+### Insert data
 
 ```
 INSERT INTO users
@@ -121,7 +118,7 @@ VALUES
 
 In the above example,  `nameInput`,  `genderDropdown`,  and `emailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
 
-#### Update data
+### Update data
 
 ```
 UPDATE users
@@ -133,7 +130,7 @@ UPDATE users
 In the above example, `emailInput` is the name of the Input widget used to capture the email entered by the user. `tableUsers` is the Table widget where the user selects the row to update the user's email.
 
 
-#### Delete data
+### Delete data
 
 ```
 DELETE FROM users WHERE id = {{tableUsers.selectedRow.id}};
