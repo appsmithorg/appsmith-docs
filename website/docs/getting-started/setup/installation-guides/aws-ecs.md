@@ -9,8 +9,10 @@ This page provides steps to install Appsmith on a single node EC2 Linux + Networ
 ## Prerequisites
 * Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 * An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
-* An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group), and ensure that you [add an inbound rule to a security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
+* An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
+*[Add an inbound rule to the security group you created above](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
 * Switch to the [Classic Amazon Web Console](https://console.aws.amazon.com/ecs/).
+* Ensure that you're in the same region where you have added the security group and SSH key pair.
 
 ## Install Appsmith
 To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to complete the below essential steps:
@@ -21,7 +23,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
  b. Click the **Create Cluster** button.
 
- c. Choose **EC2 Linux + Networking** as cluster template.
+ c. Choose **EC2 Linux + Networking** as the cluster template.
 
  d. Click the **Next step** button.
 
@@ -32,7 +34,6 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | Attribute | Value |
  |------------------------|------------------------------------------| 
  | **Provisioning Model** | On-Demand Instance |
- | **Task role** | Select default task role |
  | **EC2 instance type** | A minimum `t3.medium` or `t3a.medium` is needed|
  | **Number of instances** | 1 |
  | **EC2 AMI ID** | Amazon Linux2 AMI |
@@ -56,6 +57,8 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  <figcaption align="center"><i>A launch status screen shows the ECS Cluster status</i></figcaption>
 </figure>
 
+j. Click the **View cluster** button to see your cluster
+
 2. Follow these steps to create task and container definitions:
 
  a. Click **Task Definitions** from the sidebar.
@@ -64,7 +67,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
  c. Select **EC2** as launch type compatibility.
 
- d. Click **Next step** button.
+ d. Click the **Next step** button.
 
  e. Configure task and container definitions as shown below:
 
@@ -87,11 +90,11 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | Attribute | Value |
  |------------------------|------------------------------------------|
  | **Name** | Give a desired name |
- | **Volume type** | bind |
+ | **Volume type** | Bind Mount |
  | **Source path** | `/appsmith/stacks` | 
  
  :::danger Attention
- The **Bind** volume type creates a mount directory named `/appsmith/stacks` on the host EC2 instance. If you delete the cluster or the node, the Appsmith data is also lost.
+ The **Bind Mount** volume type creates a mount directory named `/appsmith/stacks` on the host EC2 instance. If you delete the cluster or the node, the Appsmith data is also lost.
  :::
 
  i. Click **Add** button.
@@ -105,9 +108,8 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | Attribute | Value |
  |------------------------|------------------------------------------|
  | **Container name** | Give a desired name |
- | **Image** | a. Use `appsmith/appsmith-ce` for the **Community Edition** <br/> b. Use `appsmith/appsmith-ee` for the **Business Edition**|
+ | **Image** | a. For **Community Edition** - `appsmith/appsmith-ce` for the  <br/> b. For the **Business Edition** - `appsmith/appsmith-ee`|
  | **Memory Limits (MiB)** | Give a desired value. Minimum 3000 is needed |
- | **Task CPU (MunitiB)** | Give a desired value. A minimum of 1024 is needed |
 
  m. Scroll down to the **Port mappings** section.
 
@@ -123,7 +125,9 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  |------------------------|---------------------------------------------|
  | **Source volume** | The volume name that you added for Appsmith |
  | **Container path** | `/appsmith-stacks` |
- | **Read only** | Disabled |
+ | **Log configuration** | Check the **Auto-configure CloudWatch Logs** checkbox |
+
+ r. Scroll down to the
 
  r. Click **Add** button.
 
@@ -161,7 +165,14 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  <figcaption align="center"><i>A launch status screen shows the ECS Service Status</i></figcaption>
 </figure>
 
- You can view the service status by clicking the **View service** button. Your task is under the **Tasks** tab and shows the status as Running. To find the details of the EC2 instance: click the **ECS Instances** tab and click on the Container instance. Use the DNS or the public IP to access Appsmith.
+ You can view the service status by clicking the **View service** button. Your task is under the **Tasks** tab and shows the status as Running. 
+ 
+ To find the details of the EC2 instance: 
+ <TO - DO - add a gif so that it's easy for users to find the address>
+ * Click the **Task** under the **Task** tab
+ * Click the link next to the **EC2 instance id**
+ * Click the **Instance ID** 
+ * On the **Instance Summary** Page, use the **Public IPv4 address** with the `HTTP` protocol to access Appsmith.
 
 ## Troubleshooting
 
