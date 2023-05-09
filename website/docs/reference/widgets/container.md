@@ -1,6 +1,6 @@
 # Container
 
-This page explains how to use container widgets to group multiple widgets. To group widgets, you have the option to manually drag them inside a Container widget or select the widgets and use the "Group" icon to create a Container widget. 
+This page explains how to use Container widgets to group multiple widgets. To do so, you can either drop the widgets inside a Container widget or select the widgets and use `cmd+g` to create a Container widget.
 
 
 <VideoEmbed host="youtube" videoId="mfPGTUxr6SY" title="Using the Container Widget" caption="Using the Container Widget"/>
@@ -10,11 +10,6 @@ This page explains how to use container widgets to group multiple widgets. To gr
 The **Height** property in a Container widget determines how the widget's height reacts to content changes. Selecting **Auto Height** adjusts the height dynamically based on the size of its contents, which is useful for handling dynamic content.
 
 However, you can also enable **Auto height with limits** to set minimum and maximum height limits for the widget, even when its content changes dynamically. To use this feature, set the two handles that appear on the Container widget to drag and set the height limits.
-
-<figure>
-  <img src="/img/Container-height.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Handling dynamic content</i></figcaption>
-</figure>
 
 ## Properties
 
@@ -27,10 +22,10 @@ These properties allow you to edit the widget. All of these properties are prese
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Visible**           | Boolean  | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.  |
-| **Animate Loading**    | Boolean | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
+| **Visible**           | Boolean  | 	Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published.  |
+| **Animate Loading**    | Boolean | Allows you to control a widget’s animation on the page load. |
 | **Scroll Contents**    | Boolean  | Enables scrolling in this widget when its contents are larger than its dimensions.  |
-| **Height**   | String | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/> **Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| **Height**   | String | This property determines how the widget's height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/> **Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 
 ### Reference properties
