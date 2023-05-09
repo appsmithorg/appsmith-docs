@@ -136,4 +136,5 @@ exceptions:
   - PingID
   - Active
   - Directory
+  - Row Level Security
 

@@ -139,9 +139,12 @@ DELETE FROM users WHERE id = {{tableUsers.selectedRow.id}};
 
 In the above example, `tableUsers` is the name of the Table widget where the row is selected for deletion.
 
-## Use prepared statements
+## Prepared statements
 
 Prepared statements are switched on by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template {{ }}, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
+
+## Row Level Security (RLS)
+Row level security is a PostgreSQL security feature provided by the database to limit what rows of a table are visible for querying. It allows database admins define security policies to control how the rows of a given table can be accessed or operated on. Watch the [video series](https://youtu.be/8qPTZQvJ9fA) for details on how to use RLS on your apps.
 
 
 ## Troubleshooting
