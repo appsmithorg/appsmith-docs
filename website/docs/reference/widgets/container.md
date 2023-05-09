@@ -3,7 +3,7 @@
 This page explains how to use container widgets to group multiple widgets. To group widgets, you have the option to manually drag them inside a Container widget or select the widgets and use the "Group" icon to create a Container widget. 
 
 
-<VideoEmbed host="youtube" videoId="mfPGTUxr6SY" title="How to use Container Widget" caption="How to use Container Widget"/>
+<VideoEmbed host="youtube" videoId="mfPGTUxr6SY" title="Using the Container Widget" caption="Using the Container Widget"/>
 
 ## Configure height
 
