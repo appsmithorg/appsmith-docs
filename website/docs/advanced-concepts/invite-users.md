@@ -47,7 +47,7 @@ The table below shows the permissions available for each role when you share a w
 ## Share application
 
 :::info
-Sharing a specific application is only available in the [business edition](https://www.appsmith.com/pricing) for self-hosted instances.
+Sharing a specific application is only available in the [business edition](https://www.appsmith.com/pricing).
 :::
 
 If you want the user to just have access to a specific application in a workspace, follow the steps below:

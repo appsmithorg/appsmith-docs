@@ -4,15 +4,15 @@ sidebar_position: 3
 
 # SAML SSO
 
-:::info
-Security Assertion Markup Language (SAML) is available only in the [**business edition**](https://www.appsmith.com/pricing), and only the superuser of your Appsmith Instance can set up SAML. 
-:::
+Appsmith provides a way to integrate with Security Assertion Markup Language (SAML), enabling the users to sign in to the Appsmith account using their SAML identity providers.
 
-To start SAML authentication in Appsmith, go to **Admin Settings** > **Authentication**, navigate to **SAML 2.0** and click **Enable**.
+:::info
+Security Assertion Markup Language (SAML) is only available in Appsmith's [**business edition**](https://www.appsmith.com/pricing). 
+:::
 
 ## SAML providers
 
-Appsmith integrates with popular SAML providers that you can choose from. Click the below available providers and follow the instructions to configure them for SAML integration:
+Appsmith offers seamless integration with various popular SAML providers. To get started, select one of the below-listed providers and follow the instructions to configure SAML integration:
 
 <div class="containerBorder">
 <div class="containerGrid">

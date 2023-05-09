@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Auth0
 
-To configure Appsmith to use [Auth0](https://auth0.com/) as an SAML provider, follow these steps:
+To configure Appsmith to use [Auth0](https://auth0.com/) as an SAML provider, follow the steps below:
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an SAML provider, fo
 
 ##  Configure Auth0
 
-1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. Select **Regular Web Application** and Click **Create**.
+1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. Select **Regular Web Application** and click **Create**.
 
 <figure>
   <img src="/img/Autho_create-app.png" style= {{width:"700px", height:"auto"}} alt="Create Auth0 Application"/>
@@ -31,7 +31,7 @@ To complete the SAML configuration, you’ll have to register the identity provi
 <Tabs queryString="auth0-saml">
 <TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
 
-To get the Metadata URL for your application in Auth0, follow the steps below:
+To get the Metadata URL for your Auth0 application, follow the steps below:
 1. Go to **Settings** tab in your Auth0 application, scroll down, and expand the **Advanced Settings** sections.
 2. Click the **Endpoints** tab, scroll down to the **SAML** section, and copy the SAML **Metadata URL**.
 3. In the Appsmith **SAML 2.0** configuration page, add the Metadata URL in the **Metadata URL** field under the **Register Identity Provider** section.
@@ -42,27 +42,27 @@ To get the Metadata URL for your application in Auth0, follow the steps below:
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
 1. Open the copied Metadata URL in a browser tab and copy the XML content.
-2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configurations.
+2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
 </TabItem>
 <TabItem label="Idp data" value="auth0idpdata">
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab and copy the  data from the following HTML tags:
+1. Open the Metadata URL in a browser tab or open the Metadata XML file and copy the data from the following HTML tags:
     1. `<EntityDescriptor>`
     2. `<SingleSignOnService>`
     3. `<X509Certificate>`
     4. `<NameIDFormat>`
 
-2. In the Appsmith **SAML 2.0** configurations, click **IdP Data** under the **Register Identity Provider** section. Add the content of HTML tags as per the table below:
+2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the content from HTML tags as per the table below:
 
-| **Appsmith Field ** | **Metadata XML Tag**                                                                       |
+| <div style= {{width:"200px"}}> **Appsmith Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
 | **Entity ID**               |  Add the **entityID** attribute from `<EntityDescriptor>` tag. <br/>  Example: ` <EntityDescriptor " " entityID="urn:dev-ux0tussx.us.auth0.com" />`                 |
-| **Single Sign-On URL**      | Add the attributes in `<SingleSignOnService>` tag.<br/>  Example: `<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev-f0u-ur7m.us.auth0.com/samlp/00Jtsq4cJAixq20wK2f5PbZmq7xX4eZu"/>`                                                                    |
-| **X509 Public Certificate** | Add the content in `<X509Certificate>` tag.<br/> Example: `<X509Certificate>MIIDDTCCAfWgAwIBhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvB/SNHv7LpNHXCTcA6nTW+HZ5BDen2ZbrbgnopIUMWdduv2HHXUCCe/m7FOUABo0IwQDAPBgNVHRMBAf8EBTADAQH/dinHdqf9wZURyNXpVtk9FG4SM6TCrRCEdsc8Xgzl7wDHcJKl2X5aSzQ=</X509Certificate>`                                                                         |
-| **Email**                   | Add the content in `<NameIDFormat>` tag.<br/> Example:`<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:`**`emailAddress`**`</NameIDFormat>` |
+| **Single Sign-On URL**      | Add the attributes from `<SingleSignOnService>` tag.<br/>  Example: `<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev-f0u-ur7m.us.auth0.com/samlp/00Jtsq4cJAixq20wK2f5PbZmq7xX4eZu"/>`                                                                    |
+| **X509 Public Certificate** | Add the attributes from `<X509Certificate>` tag.<br/> Example: `<X509Certificate>MIIDDTCCAfWgAwIBhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvB/SNHv7LpNHXCTcA6nTW+HZ5BDen2ZbrbgnopIUMWdduv2HHXUCCe/m7FOUABo0IwQDAPBgNVHRMBAf8EBTADAQH/dinHdqf9wZURyNXpVtk9FG4SM6TCrRCEdsc8Xgzl7wDHcJKl2X5aSzQ=</X509Certificate>`                                                                         |
+| **Email**                   | Add the attributes from `<NameIDFormat>` tag.<br/> Example:`<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>` |
 
 
 </TabItem>
