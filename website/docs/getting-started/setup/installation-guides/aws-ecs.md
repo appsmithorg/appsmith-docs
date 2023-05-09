@@ -19,13 +19,13 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
  a. Go to [Classic Amazon Web Console](https://console.aws.amazon.com/ecs/) and click **Clusters** on the sidebar
 
- b. Click the **Create Cluster** button
+ b. Click the **Create Cluster** button.
 
- c. Choose **EC2 Linux + Networking** as cluster template
+ c. Choose **EC2 Linux + Networking** as cluster template.
 
- d. Click the **Next step** button
+ d. Click the **Next step** button.
 
- e. Give a desired name to the **Cluster name** field
+ e. Give a desired name to the **Cluster name** field.
 
  f. Configure the instance as shown below:
 
@@ -47,7 +47,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | **Auto-assign public IP** | Select **Enabled** from the dropdown|
  | **Security group** | Select the security group that you created in the [Prerequisites](#prerequisites) step |
 
- h. Scroll down to the **CloudWatch Container Insights** section, and tick the **Enable container insights** checkbox
+ h. Scroll down to the **CloudWatch Container Insights** section, and tick the **Enable container insights** checkbox.
 
  i. Click the **Create** button. You see a launch status screen as shown below:
 
@@ -58,13 +58,13 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
 2. Follow these steps to create task and container definitions:
 
- a. Click **Task Definitions** from the sidebar
+ a. Click **Task Definitions** from the sidebar.
 
- b. Click **Create new Task Definition**
+ b. Click **Create new Task Definition**.
 
- c. Select **EC2** as launch type compatibility
+ c. Select **EC2** as launch type compatibility.
 
- d. Click **Next step**
+ d. Click **Next step** button.
 
  e. Configure task and container definitions as shown below:
 
@@ -78,9 +78,9 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
  For other attributes, move ahead with the default selection.
 
- f. Scroll down to the **Volumes** section
+ f. Scroll down to the **Volumes** section.
 
- g. Click **Add volume** button
+ g. Click **Add volume** button.
 
  h. Add volume as shown below:
 
@@ -94,11 +94,11 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  The **Bind** volume type creates a mount directory named `/appsmith/stacks` on the host EC2 instance. If you delete the cluster or the node, the Appsmith data is also lost.
  :::
 
- i. Click **Add** button
+ i. Click **Add** button.
 
- j. Scroll up to the **Container definitions** section
+ j. Scroll up to the **Container definitions** section.
 
- k. Click **Add container** button
+ k. Click **Add container** button.
 
  l. Add container definition as shown below:
 
@@ -109,13 +109,13 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | **Memory Limits (MiB)** | Give a desired value. Minimum 3000 is needed |
  | **Task CPU (MunitiB)** | Give a desired value. A minimum of 1024 is needed |
 
- m. Scroll down to the **Port mappings** section
+ m. Scroll down to the **Port mappings** section.
 
- n. Add port 80 to the Host port and the Container port fields, and set the protocol as `tcp`
+ n. Add port 80 to the Host and Container port fields, and set the protocol as `tcp`.
 
- o. Click **Add port mapping** and add port 443 to the Host port and the Container port fields, and set the protocol as `tcp`
+ o. Click **Add port mapping** and add port 443 to the Host port and the Container port fields, and set the protocol as `tcp`.
 
- p. Scroll to the **Storage and Logging** section
+ p. Scroll to the **Storage and Logging** section.
  
  q. Add the Mount points as shown below:
 
@@ -125,17 +125,17 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | **Container path** | `/appsmith-stacks` |
  | **Read only** | Disabled |
 
- r. Click **Add**
+ r. Click **Add** button.
 
- s. Scroll down to the bottom of the page
+ s. Scroll down to the bottom of the page.
 
- t. Click **Create** button
+ t. Click **Create** button.
 
-2. Follow these steps to create and run an ECS service
+2. Follow these steps to create and run an ECS service:
 
- a. Go to the cluster dashboard and click the name of the ECS cluster
+ a. Go to the cluster dashboard and click the name of the ECS cluster.
 
- b. Click **Create** under **Services** tab
+ b. Click **Create** under the **Services** tab.
 
  c. Configure service as shown below:
 
@@ -148,11 +148,11 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  
  For other attributes, move ahead with the default selection.
 
- d. Click **Next step**
+ d. Click the **Next step** button.
 
- e. Keep the default selection for **Configure Network** page and click **Next step**
+ e. Keep the default selection for the **Configure Network** page and click the **Next step** button.
 
- f. Click the **Next step** button on the **Set Auto Scaling** page
+ f. Click the **Next step** button on the **Set Auto Scaling** page.
 
  g. Review the details and click **Create Service**. You see a launch status screen as shown below:
 
