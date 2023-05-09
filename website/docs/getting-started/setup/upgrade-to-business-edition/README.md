@@ -5,11 +5,12 @@ description: Follow these steps to upgrade the Appsmith Community Edition to a B
 
 The Appsmith Business Edition provides a suite of advanced features and capabilities designed to support the needs of your growing organization:
 
+* Single Sign On (SSO) using Okta, Auth0, Azure AD + any SAML, OIDC SSO
 * Enhanced Access control features like Granular Access Control
 * Team collaboration tools like Version Control with Git
 * Priority support from the Appsmith team
 
-Learn more on the [Business Edition & pricing](https://www.appsmith.com/pricing) options.
+For more information about Business Edition features, see the [Business Edition](https://www.appsmith.com/pricing).
 
 Select your installation type to upgrade your Community Edition:
 
