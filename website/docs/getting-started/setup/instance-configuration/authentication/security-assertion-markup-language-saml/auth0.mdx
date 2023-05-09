@@ -60,7 +60,7 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 </TabItem>
 <TabItem label="Idp data" value="auth0idpdata">
 
-If you have Identity provider data like `X509 Public Certificate`, `Email`, you can choose this option to configure SAML.
+If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
 1. Open the Metadata URL in a browser tab and copy the  data from the following HTML tags:
     1. `<EntityDescriptor>`
@@ -70,7 +70,7 @@ If you have Identity provider data like `X509 Public Certificate`, `Email`, you 
 
 2. In the Appsmith **SAML 2.0** configurations, click **IdP Data** under the **Register Identity Provider** section. Add the content of HTML tags as per the table below:
 
-| **Appsmith Field ** | **Metadata XML Tag**                                                                          |
+| **Appsmith Field ** | **Metadata XML Tag**                                                                       |
 | ------------------- | ------------------------------------------------------------------------------------------ |
 | **Entity ID**               | ` <EntityDescriptor`` `` `**`entityID`**`="urn:dev-ux0tussx.us.auth0.com" /`>                 |
 | **Single Sign-On URL**      | `<SingleSignOnService/>`                                                                      |
