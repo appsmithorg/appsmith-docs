@@ -1,13 +1,17 @@
 ---
-description: Follow the steps to upgrade the Appsmith installation to a Business Edition.
+description: Follow these steps to upgrade the Appsmith Community Edition to a Business Edition.
 ---
 # Upgrade to Business Edition
 
-:::info Important
-You need a **License Key** to complete the upgrade. Learn more on [Business Edition & pricing](https://www.appsmith.com/pricing) options.
-:::
+The Appsmith Business Edition provides a suite of advanced features and capabilities designed to support the needs of your growing organization:
 
-Upgrade your Community Edition to a Business Edition by selecting below installation type.
+* Enhanced Access control features like Granular Access Control
+* Team collaboration tools like Version Control with Git
+* Priority support from the Appsmith team
+
+Learn more on the [Business Edition & pricing](https://www.appsmith.com/pricing) options.
+
+Select your installation type to upgrade your Community Edition:
 
 <div class="containerBorder">
     <div class="containerGrid">
@@ -31,8 +35,3 @@ Upgrade your Community Edition to a Business Edition by selecting below installa
         </div>
     </div>
 </div>
-
-
-## Further reading
-* [Single Sign On](/getting-started/setup/instance-configuration/authentication/)
-* [Audit Logs](/advanced-concepts/audit-logs)
