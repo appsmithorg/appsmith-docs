@@ -436,8 +436,8 @@ This command allows you to write queries using the MongoDB database command synt
 
 ## Troubleshooting
 
-[Mongo query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)
-[Name can not be null](/help-and-support/troubleshooting-guide/query-errors#mongodb-name-can-not-be-null)
+[Mongo query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)<br />
+[Missing default database name](/help-and-support/troubleshooting-guide/query-errors#mongodb-name-can-not-be-null)
 
 If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
 
