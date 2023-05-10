@@ -42,28 +42,6 @@ Appsmith offers a wide range of widgets for building applications. Still, someti
 ---
 **Example**: a color picker widget created using HTML as shown below: 
 
-<style>
-  .code-block {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-</style>
-
-<pre class="code-block">
-    ```html
-    <input id="messageinput" type="text" placeholder="Type your message here..."></input>
-    <input id="sendbutton" type="button" onclick="sendMyMessage()" value="SEND" />
-
-    <script>
-        function sendMyMessage() {
-            const msgText = document.getElementById("messageinput").value;
-            window.parent.postMessage(msgText, "*");
-        }
-    </script>
-    <div id="target"></div>
-    ```
-</pre>
-
 
 ```html
 <label for="favcolor">Pick Color: </label> 
