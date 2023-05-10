@@ -3,59 +3,109 @@ sidebar_position: 17
 ---
 # SMTP
 
-:::note
-The following document assumes that you understand the [basics of connecting to a datasource on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
-:::
-
-The SMTP plugin can connect to an SMTP server and send dynamic emails to a list of recipients.
+This page describes how to use the SMTP datasource to create and send emails from your Appsmith app.
 
 <VideoEmbed host="youtube" videoId="hAln7o1aUA4" title="" caption=""/>
 
-## Connection settings
+## Connect to SMTP
 
-The SMTP datasource requires the following information to establish a connection. All fields are mandatory.
+<figure>
+  <img src="/img/smtp_datasource_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP datasource"/>
+  <figcaption align = "center"><i>Configuring an SMTP datasource</i></figcaption>
+</figure>
 
-![Click to expand](/img/smtp_create_datasource.png)
+To add an SMTP datasource:
 
-1. **Host address:** This is the host address of the SMTP server.
-2. **Port:** The port for communication with the SMTP server. Typically this is 25 or 587.
-3. **Username:** The username of the SMTP server.
-4. **Password:** The password of the SMTP server. Please note that if you have a multi-factor authentication setup for your SMTP server, your normal password may not work. You may have to generate a separate password from your provider which won't require multi-factor authentication. For example, Gmail requires that you [generate an app password](https://support.google.com/mail/answer/185833?hl=en) to use as authentication instead of your regular password.
+1. Click the (**+**) sign in the **Explorer** tab next to **Datasources**.
+1. On the next screen, select the **SMTP** button. This creates the datasource and takes you to the datasource's configuration page.
+1. Enter the URL for your SMTP server into the **Host Address** field.
+1. Enter the port for your SMTP server into the **Port** field.
+1. Enter your account's username in the **Username** field. Depending on your SMTP provider, this might be your email address.
+1. Enter your password into the **Password** field.
+
+:::note
+Some SMTP providers use a multi-factor authentication flow and may require you to generate a special password specifically to authenticate your Appsmith app. For example, Gmail SMTP requires you to [generate an app password](https://support.google.com/mail/answer/185833?hl=en) to use instead of your usual password.
+:::
+
+7. Once you've entered your credentials, click the **Test** button to check that they are working.
+8. Click **Save** when you are finished, and your datasource is ready for queries.
+
+## Create queries
+
+<figure>
+  <img src="/img/smtp_query_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP query"/>
+  <figcaption align = "center"><i>Configuring an SMTP query</i></figcaption>
+</figure>
+
+
+You can write queries to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
+
+You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
+
 
 ## Send email
 
-This action sends an email with a dynamic subject and body to a list of recipients. You can also optionally attach files along with this email.
+This action sends an email through your SMTP server.
 
-| Property Name      | Description                                                                                           | Type      |
-| ------------------ | ----------------------------------------------------------------------------------------------------- | --------- |
-| From email         | This is the email address to send from.                                                               | Mandatory |
-| Set Reply To email | Toggle to set whether the reply to email ID needs to be set                                           | Optional  |
-| Reply to email     | This is the email address that should receive the replies.                                            | Optional  |
-| To emails          | This is the email address(es) of the recipients. Multiple email IDs must be comma separated.          | Mandatory |
-| CC emails          | List of email adderess(es) of the recipients to CC. Multiple email IDs must be comma separated.       | Optional  |
-| BCC emails         | List of email adderess(es) of the recipients to BCC. Multiple email IDs must be comma separated.      | Optional  |
-| Subject            | The subject of the email                                                                              | Optional  |
-| Body               | The body of the email                                                                                 | Optional  |
-| Attachments        | List of file paths of the attachments to be attached to the email.                                    | Optional  |
-
-### Response format
-
-On successful sending, the response is a JSON object with the following structure:
-
-```
+When the query is successful, you'll recieve the following response:
+```json
 {
-  "success": true,
-  "message": "Email sent successfully"
+  "message": "Sent the email successfully"
 }
 ```
 
-If Appsmith encounters an error while sending the email, an error is displayed on the screen. An example is shown below: ![Click to expand](/img/smtp_error_response.png)
+#### Example
 
-## Using queries in applications
+> Use a Form widget to write and send an email.
 
-Once you have successfully run a Query, you can use it in your app to
+**Setup**:
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
-* [Upload files](/learning-and-resources/how-to-guides/how-to-upload-to-s3.md#uploading-a-file)
-* [Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3.md#downloading-files)
+Create an SMTP datasource and a query `SendMail` based on it.
+
+**Configure the email form**:
+
+1. Create a [Form widget](/reference/widgets/form) `EmailForm`, and update the title to `Send Mail`.
+1. In the form's body area, create widgets to accept input for the email's configuration fields such as **To email(s)**, **From email(s)**, **Subject**, etc.
+    1. Use [Rich Text Editor widget](/reference/widgets/rich-text-editor) for the **Body** field, and a [Filepicker widget](/reference/widgets/filepicker) for the **Attachment(s)** field.
+    1. Be sure to name each widget so that you can reference it later in your query.
+1. In the properties for the form's submit button, configure the **onClick** action to execute your `SendMail` query.
+
+**Configure the query**:
+
+1. In each configuration field, reference the appropriate widget from the Form that contains its intended value. For example, you can use the Form's `data` property, followed by the input widget's name and the property that holds its content:
+  ```javascript
+  // in the "From email" field
+  {{ EmailForm.data.FromInput.text }}
+  ```
+  ```javascript
+  // in the "Body" field
+  {{ EmailForm.data.BodyEditor.text }}
+  ```
+  ```javascript
+  // in the "Attachment(s)" field
+  {{ EmailForm.data.AttachmentPicker.files }}
+  ```
+
+Once you fill in your form fields, your query is ready to send the email.
+
+---
+
+### Parameters
+
+| Property Name      | Description                                                                               |   Type    |
+| ------------------ | ----------------------------------------------------------------------------------------- | --------- |
+| From email         | Sets the email address that appears as the message sender.                                | Mandatory |
+| Set Reply To Email | Toggles the **Reply to email** field.                                                     | Optional  |
+| Reply to email     | Sets an email address that recieves all replies to your email.                            | Optional  |
+| To email(s)        | Sets the email addresses that recieves your email. For multiple recipients, separate the addresses with commas.   | Mandatory |
+| CC email(s)          | Sets the email address that recieves a CC (carbon copy). For multiple CC recipients, separate the addresses with commas.       | Optional  |
+| BCC email(s)         | Sets the email address that recieves a BCC (blind carbon copy). For multiple BCC recipients, separate the addresses with commas.      | Optional  |
+| Subject            | Sets the email's subject line.                                                            | Optional  |
+| Body               | Sets the main body of the email. Supports rich text and  HTML.                            | Optional  |
+| Attachment(s)      | Attaches one or more files to the email. Expects an array of file objects.                | Optional  |
+
+## Further reading
+
+* [Rich Text Editor widget](/reference/widgets/rich-text-editor)
+* [Filepicker widget](/reference/widgets/filepicker)
+* [Upload or download files from S3](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
