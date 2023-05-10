@@ -18,47 +18,41 @@ This page shows you how to connect Appsmith to a MongoDB database to read and wr
 If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
 :::
 
-1. Click the **Explorer** tab on the entity explorer to the screen's left. Click the **+** icon next to **Datasources**. Select **MongoDB** under the **Databases** section. This opens the page where you can configure the parameters to connect to your MongoDB database.
-2. Rename the datasource to be able to identify it when creating queries.
-3. In the **Use Mongo Connection String URI** list:
-   * If you select **Yes**, enter the connection string in the **Connection String URI** field. 
-   * If you select **No**, select the **Connection Mode**. Enter details in the input boxes for **Host Address**, **Port**, **Database Name**, **Username** and **Password**.
+The following section is a reference guide for a complete description of all the parameters provided to connect to a MongoDB database.
 
-   See the [**reference guide**](#connection-parameters) for a complete description of all the connection parameters.
+### Connection parameters
 
-:::info
-If you want to connect to a local MongoDB database, see [**Connect Local Database**](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith) for directions on configuring the connection parameters.
-:::
+<dl>
+  <dt><b>Use Mongo Connection String URI</b></dt>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Yes:</b> Connect to MongoDB database using the Connection String URI format</li>
+     <li><b>No:</b> Connect to MongoDB database by configuring multiple fields.</li>
+    </ul>
+  </dd>  
+</dl>
 
-4. Click the **Test** button to test the connection and ensure the datasource is valid.
-5. Click **Save** to create and save the database connection.
+---
 
-
-## Connection parameters
-
-The following section list all the parameters provided by Appsmith to connect to a MongoDB database using Connection String URI format.
- <figure>
-   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
-   <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
-   </figure>
+The following section lists the parameters to connect using the *Connection String URI* format.
 
 <dl>
   <dt><b>Connection String URI</b></dt>
-  <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd>
+  <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre><code>
+   mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
+  </code></pre></dd>
 </dl>
 
-*Example:*
-```
-mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
-```
+<figure>
+   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
+   <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
+</figure>
 
 ---
-The following section list all the parameters provided by Appsmith to connect to a MongoDB database by configuring multiple connection fields.
-
- <figure>
-  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple connection fields"/>
-  <figcaption align = "center"><i>Connect MongoDB using multiple connection fields</i></figcaption>
- </figure>
+ 
+The following section lists the parameters to connect by configuring multiple fields.
 
 <dl>
   <dt><b>Connection Mode</b></dt>
@@ -84,7 +78,7 @@ The following section list all the parameters provided by Appsmith to connect to
   </dd><br />
 
   <dt><b>Port</b></dt>
-  <dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default, if you don't specify one. 
+  <dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default if you don't specify one. 
   </dd><br />
 
   <dt><b>Default Database Name</b></dt>
@@ -93,7 +87,7 @@ The following section list all the parameters provided by Appsmith to connect to
 
   <dt><b>Database Name</b></dt>
   <dd>Specify the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
- defaults to the <b>Default Database Name</b> specified in the connection field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
+ defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
  </dd><br />
 
   <dt><b>Authentication Type</b></dt>
@@ -132,6 +126,10 @@ MongoDB 4.0 removes support for the MONGODB-CR authentication mechanism. You can
   </dd>  
 </dl>
 
+<figure>
+  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple connection fields"/>
+  <figcaption align = "center"><i>Connect MongoDB using multiple connection fields</i></figcaption>
+ </figure>
 
 ## Query MongoDB
 
@@ -152,76 +150,49 @@ This command fetches documents from a collection. The following section lists al
 
 <dl>
   <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection from which you want to retrieve documents.
+  <dd>The name of the target collection from which you want to retrieve documents.
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>Specifies the filters for the documents you want to retrieve.</dd>
-</dl>
+  <dd>Specifies the filters for the documents you want to retrieve.</dd><br/>
 
-*Example:*
-   ```sql
-      { 
-         rating: { $gte: 4 },
-         cuisine: {{cuisineList.selectedOptionValue}}
-      }
-   ```
-In the above example, `cusineList` is the name of the Select widget with a list of all the cusines. The query filters documents from a restaurant collection where rating is greater than 4 and cusine is the one selected in the list.
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  rating: { $gte: 4 },
+  cuisine: {{cuisineList.selectedOptionValue}}
+}`}</pre></dd>
+  <dd>In the above example, the query filters documents from a restaurant collection where the rating field is greater than 4 and the cuisine matches the one selected in the Select widget <code>cusineList</code>.</dd><br />
 
-<dl>
   <dt><b>Sort</b></dt>
   <dd>Specifies the order in which the documents should be returned, based on one or more fields. 
-  </dd>
-</dl>
+  </dd><br/>
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ name: 1 }
+`}</pre></dd>
+  <dd>In the above example, the query sorts the results by the <code>name</code> field in ascending order.</dd><br />
 
-*Example:*
-
-   ```sql
-    { name: 1 }
-   ```
-
-In the above example, they query sorts the results by the `name` field in the ascending order.
-
-<dl>
   <dt><b>Projection</b></dt>
-  <dd>Specifies which fields to include in the returned documents.</dd>
-</dl>
+  <dd>Specifies which fields to include in the returned documents.</dd><br/>
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ name: 1, rating: 1, address: 1 }
+`}</pre></dd>
+  <dd>In the above example, the query returns only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd><br />
 
-*Example:*
-
-   ```sql
-      { name: 1, rating: 1, address: 1 }
-   ```
-
-In the above example, the query returns only returns the `name`, `rating`, and `address` fields in the matching documents.
-
-<dl>
   <dt><b>Limit</b></dt>
   <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
-  </dd>
-</dl>
+  </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{{tableItems.pageSize}}
+`}</pre></dd>
+  <dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table's pageSize property.</dd><br />
 
-*Example:*
-
-   ```javascript
-   {{tableItems.pageSize}}
-   ```
-
-In the above example, `tableItems` is the name of the Table widget where you display the results from the query. The query limits the results based on the table's pageSize property. 
-
-<dl>
   <dt><b>Skip</b></dt>
-  <dd>This field specifies the number of documents to skip before returning results. </dd>
+  <dd>This field specifies the number of documents to skip before returning results. </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{{tableItems.pageOffset}}
+`}</pre></dd>
+  <dd>In the above examples of **Limit** and **Skip** fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the table. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
 </dl>
-
-*Example:*
-
-   ```javascript
-   {{tableItems.pageOffset}}
-   ```
-
-In the above examples of **Limit** and **Skip** fields, the queries use [**server-side pagination**](/reference/widgets/table#server-side-pagination) to limit the number of query results returned by the server and to fetch additional results when user moves to the next page in the table. You can fork this [**Sample App**](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd) to see how to implement server-side pagination on the Table widget.
-
 
 ### Insert Documents
 
@@ -230,26 +201,21 @@ This command inserts one or more documents and returns a document containing the
 
 <dl>
   <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection where you want to insert the documents.
+  <dd>The name of the target collection where you want to insert the documents.
   </dd><br />
 
   <dt><b>Documents</b></dt>
-  <dd>Specifies an array of one or more documents you want to insert into the collection.</dd>
+  <dd>Specifies an array of one or more documents you want to insert into the collection.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`[
+  { 
+    "_id": {{NewMovieForm.data.idInput}}, 
+    "name": {{NewMovieForm.data.nameInput}}, 
+    "rating": {{NewMovieForm.data.ratingSelect}}
+  }
+]`}</pre></dd>
+  <dd>In the above example, the query inserts a new movie using the data entered in the Form widget.</dd><br />
 </dl>
-
-*Example:*
-
-```sql
-   [
-      { 
-         "_id": {{NewMovieForm.data.idInput}}, 
-         "name": {{NewMovieForm.data.nameInput}}, 
-         "rating": {{NewMovieForm.data.ratingSelect}}
-      }
-   ] 
-```
-
-In the above example, the query inserts a new movie using the data entered in the Form widget.
 
 ### Update Documents
 
@@ -257,47 +223,34 @@ This command modifies the documents in a collection based on a specified set of 
 
 <dl>
   <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection where you want to update documents.
+  <dd>The name of the target collection where you want to update documents.
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>Specifies the filters for the documents you want to update. In your Table widget, make the `name` column [Editable](/reference/widgets/table/inline-editing#editable). A new **Save/Discard** button column should have appeared in the table. Add the below code to Query field.</dd>
-</dl>
+  <dd>Specifies the filters for the documents you want to update.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "_id": {{tableItems.selectedRow.id}} 
+}`}</pre></dd>
+  <dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the id of the row selected on the Table widget <code>tableItems</code>.</dd><br />
 
-*Example:*
-
-   ```sql
-   { 
-      "_id": {{tableItems.selectedRow.id}} 
-   }
-  ```
-
-In the above example, the query filters the record where the `id` field is equal to the id of the row selected on the Table widget `tableItems`.
-
-<dl>
   <dt><b>Update</b></dt>
   <dd>Specifies the modifications you want to make to the selected documents. 
-  </dd>
-</dl>
+  </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  $set: {
+    "name":  {{tableItems.updatedRow.name}},
+    "rating": {{tableItems.updatedRow.rating}}
+  }
+}`}</pre></dd>
+  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells.</dd><br />
 
-*Example:*
-   ```sql
-   {
-      $set: {
-               "name":  {{tableItems.updatedRow.name}},
-               "rating": {{tableItems.updatedRow.rating}}
-           }
-   }
-  ```
-
-In the above example, the query updates the `name` and `rating` fields with the values updated in the table cells.
-
-<dl>
   <dt><b>Limit</b></dt>
-  <dd>Specifies the whether to delete single or multiple documents</dd>
+  <dd>Specifies whether to delete single or multiple documents</dd><br />
   <dd><i>Options:</i>
     <ul>
-     <li><b>Single Document:</b> Limits the update to one document that meet the query criteria.</li>
+     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
      <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
     </ul>
   </dd>  
@@ -306,34 +259,26 @@ In the above example, the query updates the `name` and `rating` fields with the 
 
 ### Delete Documents
 
-Delete Documents command removes one or more documents from the collection based on a specified filters. The following section lists all the fields available for the **Delete Documents** command.
+This command removes one or more documents from the collection based on specified filters. The following section lists all the fields available for the **Delete Documents** command.
 
 <dl>
   <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection where you want to delete documents.
+  <dd>The name of the target collection where you want to delete documents.
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>Specifies the criteria that matches the documents to delete.
-</dd>
-</dl>
+  <dd>Specifies the criteria that match the documents to delete.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "rating": {{selectRating.selectedOptionValue}} 
+}`}</pre></dd>
+  <dd>In the above example, the query deletes all the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd><br />
 
-*Example:*
-
-   ```sql
-   { 
-      "rating": {{selectRating.selectedOptionValue}} 
-   }
-  ```
-
-In the above example, the query deletes all the documents where the `rating` field contains the same value as the one selected in the Select widget named `selectRating`.
-
-<dl>
   <dt><b>Limit</b></dt>
-  <dd>Specifies the whether to delete single or multiple documents</dd>
+  <dd>Specifies whether to delete single or multiple documents</dd><br />
   <dd><i>Options:</i>
     <ul>
-     <li><b>Single Document:</b> Limits the update to one document that meet the query criteria.</li>
+     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
      <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
     </ul>
   </dd>  
@@ -345,23 +290,17 @@ This command counts the number of documents in a collection that match a specifi
 
 <dl>
   <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection where you want to count the documents.
+  <dd>The name of the target collection where you want to count the documents.
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>This field specifies the criteria for selecting the documents to count.
-</dd>
+  <dd>This field specifies the criteria for selecting the documents to count.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "release_dt": { $gte: {{releaseDate.formattedDate}} 
+}`}</pre></dd>
+  <dd>In the above example, the query counts the documents in a <code>movies</code> collection where the release date is greater than the date picked in the Datepicker widget <code>releaseDate</code>.</dd>
 </dl>
-
-*Example:*
-   ```sql
-   { 
-      "release_dt": { $gte: {{releaseDate.formattedDate}} 
-   }
-  ```
-
-In the above example, the query counts the documents in a `movies` collection where the release date is greater than the date picked in the Datepicker widget `releaseDate`.
-
 
 ### Distinct
 
@@ -373,21 +312,13 @@ This command finds the unique or distinct values for a specified field across a 
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>Specifies the documents from which to retrieve the distinct values.
-</dd>
-</dl>
+  <dd>Specifies the documents from which to retrieve the distinct values.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "rating": {{selectRating.selectedOptionValue}} 
+}`}</pre></dd>
+  <dd>In the above example, the query retrieves distinct values from the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd><br />
 
-*Example:*
-   ```sql
-   { 
-      "rating": {{selectRating.selectedOptionValue}} 
-   }
-  ```
-
-In the above example, the query retrieves distinct values from the documents where the `rating` field contains the same value as the one selected in the Select widget named `selectRating`.
-
-
-<dl>
   <dt><b>Key</b></dt>
   <dd> Specifies the name of the field for which to return distinct values.
   </dd>
@@ -405,25 +336,17 @@ This command allows users to process data from a collection with a sequence of s
   </dd><br />
 
   <dt><b>Array of Pipelines</b></dt>
-  <dd>An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. 
-</dd>
-</dl>
+  <dd>An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  [
+    { $project: { tags: 1 } },
+    { $unwind: "$tags" },
+    { $group: { _id: "$tags", count: { $sum : 1 } } }
+  ] 
+}`}</pre></dd>
+  <dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection.</dd><br />
 
-*Example:*
-
-   ```sql
-   { 
-   [
-       { $project: { tags: 1 } },
-       { $unwind: "$tags" },
-       { $group: { _id: "$tags", count: { $sum : 1 } } }
-   ] 
-   } 
-  ```
-
-The preceding example performs an aggregate operation on the `articles` collection to calculate the count of each distinct element in the `tags` array that appears in the collection.
-
-<dl>
   <dt><b>Limit</b></dt>
   <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
   </dd>
