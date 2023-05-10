@@ -353,7 +353,7 @@ This command allows users to process data records and return computed results. T
 
 ### Raw
 
-This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Command**s](/reference/datasources/querying-mongodb/mongo-syntax) for more information. 
+This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/reference/datasources/querying-mongodb/mongo-syntax) for more information. 
 
 ## Troubleshooting
 
