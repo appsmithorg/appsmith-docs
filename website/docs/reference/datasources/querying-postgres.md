@@ -3,29 +3,21 @@ sidebar_position: 13
 ---
 # PostgreSQL
 
-This page shows you how to connect Appsmith to a PostgreSQL database to read and write data in your applications.
+This page gives information to connect Appsmith to a PostgreSQL database and to read and write data in your applications.
 
 ## Connect PostgreSQL
 
-1. Click the **Explorer** tab on the entity explorer to the screen's left. Click the **+** icon next to **Datasources.** Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the parameters to connect to your PostgreSQL database. 
-2. Rename the datasource to be able to identify it when creating queries.
-3. Select the **Connection Mode**. Enter details in the input boxes for **Host Address**, **Port**, **Database Name**, **Username** and **Password**. See the [**reference guide**](#connection-parameters) for a complete description of all the connection parameters.
-
-:::info
-If you want to connect to a local PostgreSQL database, see [**Connect Local Database**](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith) for directions on configuring the connection parameters. 
+:::caution 
+If you are a self-hosted user, you need to configure the `pg_hba.conf` file to whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to a database. See [**Client Authentication**](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) for more details.
 :::
-
-4. Click the **Test** button to test the connection and ensure the datasource is valid.
-5. Click **Save** to create and save the database connection.
 
 <figure>
   <img src="/img/postgres-img.png" style= {{width:"100%", height:"auto"}} alt="Connect PostgreSQL Database"/>
   <figcaption align = "center"><i>Connect PostgreSQL Database</i></figcaption>
 </figure>
 
-
-## Connection parameters
-The following section list all the parameters provided by Appsmith to connect to a PostgreSQL database.
+### Connection parameters
+The following section is a reference guide that provides a complete description of all the parameters provided to connect to a PostgreSQL database.
 
 <dl>
   <dt><b>Connection Mode</b></dt>
@@ -36,34 +28,22 @@ The following section list all the parameters provided by Appsmith to connect to
      <li><b>Read/Write:</b> This mode permits both read-write transactions by default.</li>
     </ul>
   </dd>  
-</dl>
 
-<dl>
   <dt><b>Host Address</b></dt>
-  <dd>The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd>
-</dl>
+  <dd>The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd><br />
 
-<dl>
   <dt><b>Port</b></dt>
-  <dd>The port number to connect to at the server host. Appsmith connects to port `5432` by default, if you don't specify one. </dd>
-</dl>
+  <dd>The port number to connect to at the server host. Appsmith connects to port `5432` by default, if you don't specify one. </dd><br />
 
-<dl>
   <dt><b>Database Name</b></dt>
-  <dd>The name of the database that you want to connect to. </dd>
-</dl>
+  <dd>The name of the database that you want to connect to. </dd><br />
 
-<dl>
   <dt><b>Username</b></dt>
-  <dd>The username that you want to use to authenticate with the PostgreSQL server.</dd>
-</dl>
+  <dd>The username that you want to use to authenticate with the PostgreSQL server.</dd><br />
 
-<dl>
   <dt><b>Password</b></dt>
-  <dd>Password to be used if the server demands password authentication.</dd>
-</dl>
+  <dd>Password to be used if the server demands password authentication.</dd><br />
 
-<dl>
   <dt><b>SSL Mode</b></dt>
   <dd>Determines with what priority a secure SSL TCP/IP connection is negotiated with the server.</dd><br />
   <dd><i>Options:</i>
@@ -81,7 +61,7 @@ The following section list all the parameters provided by Appsmith to connect to
 
 ## Query PostgreSQL
 
-You can write SQL commands in the query editor. To create queries, click the **Explorer** tab on the entity explorer to the screen’s left. Click the **+** icon next to next to **Queries/JS.** Select the PostgreSQL database name from the list of options.
+The following section is a reference guide that provides a complete description of all the read and write commands with their parameters to create PostgreSQL queries.
 
 <figure>
   <img src="/img/query-postgresql.png" style= {{width:"100%", height:"auto"}} alt="Write SQL commands in the query editor"/>
