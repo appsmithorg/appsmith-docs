@@ -103,13 +103,13 @@ kubectl cp <ANY-APPSMITH-POD-NAME>:/appsmith-stacks/data/backup/appsmith-backup-
 
 </Tabs>
 
-### Schedule automatic backups
+### Schedule automatic backups for Docker
 
 :::info
-Scheduling backups is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
+Scheduling backups for Appsmith Docker Installations is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
 :::
 
-Follow these steps to schedule automatic backups:
+Follow these steps to schedule automatic backups for your docker Appsmith installation:
 
 1. Go to the directory where the `docker.env` file is located.
 2. Open the `docker.env` file and set the environment variable as shown below:
@@ -120,7 +120,7 @@ Follow these steps to schedule automatic backups:
 APPSMITH_BACKUP_CRON_EXPRESSION="<ADD_5_VALUE_CRON_EXPRESSION>"
 ```
 For example:
-* To schedule a backup at 12:00 on Sunday:
+* To schedule a backup at 12:00 noon on Sunday:
 ```bash
 #highlight-next-line
 APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
@@ -130,6 +130,11 @@ APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
 #highlight-next-line
 APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
 ```
+For more information about creating the `Cron` expressions, see [Cron Schedule Expression Editor](https://crontab.guru/).
+
+:::danger Attention
+Schedule automatic backups are not available for the Appsmith Kubernetes installations.
+:::
 
 ### Sync backup to S3 bucket
 
@@ -161,22 +166,52 @@ After configuration, the restore command lists local and S3 bucket backups.
 </TabItem>
 <TabItem label="Kubernetes" value="kubernetes-commands"> 
 
-1. Go to the directory where the `docker.env` file is located.
-2. Open the `docker.env` file and add the below entries:
+1. Set the Amazon S3 bucket:
 
-```bash
-APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY> 
-APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY>
-APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME> 
-APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION>
-```
-3. Get the name of the Appsmith pod with:
+    * Using the command:
+
+    ```bash
+    helm upgrade \
+    --set applicationConfig.APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY>  \
+    --set applicationConfig.APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY> \
+    --set applicationConfig.APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME>  \
+    --set applicationConfig.APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION> \
+      appsmith appsmith/appsmith 
+    ```  
+
+    * **Or** using `values.yaml` file:
+
+      a. Update the parameter values in the `values.yaml` file under the `applicationConfig` section:
+
+      ```yaml
+      applicationConfig:
+        APPSMITH_BACKUP_S3_ACCESS_KEY=<AWS-ACCESS-KEY>
+        APPSMITH_BACKUP_S3_SECRET_KEY=<AWS-SECRET-KEY>
+        APPSMITH_BACKUP_S3_BUCKET_NAME=<BUCKET-NAME>
+        APPSMITH_BACKUP_S3_REGION=<AWS-BUCKET-REGION>
+      ```
+
+      b. Update the values:
+
+      * For the **Community Edition** with:
+
+      ```bash
+      helm upgrade appsmith appsmith/appsmith -f values.yaml 
+      ```
+
+      * For the **Business Edition** with:
+
+      ```bash
+      helm upgrade appsmith appsmith-ee/appsmith -f values.yaml 
+      ```
+
+2. Get the name of the Appsmith pod with:
 
 ```bash
 kubectl get pods
 ```
 
-4. Sync your backups to the S3 bucket with:
+3. Sync your backups to the S3 bucket with:
 
 ```bash
 # Replace `<ANY-APPSMITH-POD-NAME>` with the pod name

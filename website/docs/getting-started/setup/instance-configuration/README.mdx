@@ -91,8 +91,9 @@ You can modify your Appsmith installation on Kubernetes using Helm parameters or
 
 * Using Helm parameters: For example, deploy Appsmith and configure it to use the storage class `appsmith-pv` with:
 
+
 ```bash
-helm install \
+helm upgrade \
 #highlight-next-line
 --set persistence.storageClass=appsmith-pv \
   appsmith appsmith/appsmith 
@@ -101,29 +102,49 @@ helm install \
 * **Or** using Appsmith environmental variables: For example, change the encryption salt configuration with:
 
 ```bash 
-helm install \
+helm upgrade \
 #highlight-next-line
---set applicationConfig.APPSMITH_ENCRYPTION_SALT=123 \
+--set applicationConfig.APPSMITH_MAIL_FROM="test@test.com" \
   appsmith appsmith/appsmith 
 ```
 
 * **Or** using `values.yaml` file: 
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-  <TabItem label="Community Edition" value="communityEdition"> 
-Change the parameter values in the `values.yaml` file and run the below command:
 
-  ```bash
-  helm install appsmith appsmith/appsmith -f values.yaml 
-  ```
+<Tabs groupId="appsmithEditions" queryString="current-edition">
+<TabItem label="Community Edition" value="communityEdition"> 
+
+1. Update the parameter values in the `values.yaml` file under the `applicationConfig` section:
+
+```yaml
+applicationConfig:
+  #highlight-next-line
+  APPSMITH_MAIL_FROM:"test@test.com"
+```
+
+2. Update the values with:
+
+```bash
+helm upgrade appsmith appsmith/appsmith -f values.yaml 
+```
   </TabItem>
   <TabItem label="Business Edition" value="businessEdition"> 
-Change the parameter values in the `values.yaml` file and run the below command:
+  1. Update the parameter values in the `values.yaml` file under the `applicationConfig` section:
+
+  ```yaml
+  applicationConfig:
+    #highlight-next-line
+    APPSMITH_MAIL_FROM:"test@test.com"
+  ```
+
+  2. Update the values with:
 
   ```bash
-  helm install appsmith appsmith-ee/appsmith -f values.yaml 
+  helm upgrade appsmith appsmith-ee/appsmith -f values.yaml 
   ```
-  </TabItem>
- </Tabs> 
+
+
+</TabItem>
+</Tabs> 
 
 
 ### Configure ECS installations
