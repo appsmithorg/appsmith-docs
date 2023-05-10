@@ -10,7 +10,7 @@ This page provides steps to install Appsmith on a single node EC2 Linux + Networ
 * Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 * An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
 * An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
-*[Add an inbound rule to the security group you created above](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
+* [Add an inbound rule to the security group you created above](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
 * Switch to the [Classic Amazon Web Console](https://console.aws.amazon.com/ecs/).
 * Ensure that you're in the same region where you have added the security group and SSH key pair.
 
@@ -74,8 +74,8 @@ j. Click the **View cluster** button to see your cluster
  | Attribute | Value |
  |------------------------|------------------------------------------|
  | **Task definition Name** | Give a desired name |
- | **Task role** | Select default task role |
- | **Task execution role** | Select default task execution role |
+ | **Task role** | - |
+ | **Task execution role** | - |
  | **Task memory (MiB)** | Minimum 3 GB needed |
  | **Task CPU (unit)** | Minimum 1 virtual CPU needed |
 
@@ -168,7 +168,7 @@ j. Click the **View cluster** button to see your cluster
  You can view the service status by clicking the **View service** button. Your task is under the **Tasks** tab and shows the status as Running. 
  
  To find the details of the EC2 instance: 
- <TO - DO - add a gif so that it's easy for users to find the address>
+ --TO - DO - add a gif so that it's easy for users to find the address
  * Click the **Task** under the **Task** tab
  * Click the link next to the **EC2 instance id**
  * Click the **Instance ID** 
