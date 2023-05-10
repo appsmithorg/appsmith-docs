@@ -33,7 +33,7 @@ The following section is a reference guide that provides a complete description 
   <dd>The network location of the PostgreSQL server that you want to connect to. This can be a domain name or an IP address. If you want to connect to a local PostgreSQL database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd><br />
 
   <dt><b>Port</b></dt>
-  <dd>The port number to connect to at the server host. Appsmith connects to port `5432` by default, if you don't specify one. </dd><br />
+  <dd>The port number to connect to at the server host. Appsmith connects to port `5432` by default if you don't specify one. </dd><br />
 
   <dt><b>Database Name</b></dt>
   <dd>The name of the database that you want to connect to. </dd><br />
@@ -50,7 +50,7 @@ The following section is a reference guide that provides a complete description 
     <ul>
      <li><b>Default:</b> The default SSL Mode is <b>Prefer</b>.</li>
      <li><b>Allow:</b> First try a non-SSL connection; if that fails, try an SSL connection. The client can connect with or without SSL.</li>
-     <li><b>Prefer:</b> First try an SSL connection; if that fails, try a non-SSL connection. The client tries to connect with SSL, but falls back to an unencrypted connection if SSL is not available.</li>
+     <li><b>Prefer:</b> First try an SSL connection; if that fails, try a non-SSL connection. The client tries to connect with SSL but falls back to an unencrypted connection if SSL is not available.</li>
      <li><b>Require:</b> Only try an SSL connection. Rejects the connection if SSL isn't available.</li>
      <li><b>Disable:</b> Only try a non-SSL connection. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.</li>
     </ul>
@@ -124,8 +124,7 @@ In the above example, `tableUsers` is the name of the Table widget where the row
 Prepared statements are switched on by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template {{ }}, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
 
 ## Row Level Security (RLS)
-Row level security is a PostgreSQL security feature provided by the database to limit what rows of a table are visible for querying. It allows database admins define security policies to control how the rows of a given table can be accessed or operated on. Watch the [**video series**](https://youtu.be/8qPTZQvJ9fA) for details on how to use RLS on your apps.
-
+Row level security is a PostgreSQL security feature provided by the database to limit what rows of a table are visible for querying. It allows the database admins to define security policies to control how the rows of a given table can be accessed or modified. Watch the [**video series**](https://youtu.be/8qPTZQvJ9fA) for details on how to use RLS on your apps.
 
 ## Troubleshooting
 
