@@ -23,18 +23,18 @@ The following section is a reference guide that provides a complete description 
 ### Connection parameters
 
 <dl>
-  <dt><b>Use Mongo Connection String URI</b></dt>
+  <dt><b>Use Mongo Connection String URI</b></dt><br />
   <dd><i>Options:</i>
     <ul>
      <li><b>Yes:</b> Connect to MongoDB database using the Connection String URI format</li>
-     <li><b>No:</b> Connect to MongoDB database by configuring multiple fields.</li>
+     <li><b>No:</b> Connect to MongoDB database by configuring multiple parameter fields.</li>
     </ul>
   </dd>  
 </dl>
 
 ---
 
-The following section lists the parameters to connect using the *Connection String URI* format.
+The following section lists the parameters to connect MongoDB using the *Connection String URI* format.
 
 <dl>
   <dt><b>Connection String URI</b></dt>
@@ -52,7 +52,7 @@ The following section lists the parameters to connect using the *Connection Stri
 
 ---
  
-The following section lists the parameters to connect by configuring multiple fields.
+The following section lists the parameters to connect MongoDB by configuring multiple parameter fields.
 
 <dl>
   <dt><b>Connection Mode</b></dt>
@@ -65,16 +65,16 @@ The following section lists the parameters to connect by configuring multiple fi
   </dd>  
  
  <dt><b>Connection Type</b></dt>
-  <dd> This refers to the method used to establish a connection between a client and a database. </dd><br />
+  <dd> Specifies whether to connect to a MongoDB instance or replica set deployment.</dd><br />
   <dd><i>Options:</i>
     <ul>
-     <li><b>Direct Connection:</b> enables you to connect directly to a MongoDB instance</li>
-     <li><b>Replicate Set:</b> enables you to connect to a set of MongoDB instances</li>
+     <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
+     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify the hostname and port numbers of each instance.</li>
     </ul>
   </dd> 
   
   <dt><b>Host Address</b></dt>
-  <dd>The IP address or domain name of the server where MongoDB is running. If you want to connect to a local MongoDB database, see [**Connect Local Database**](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith) for directions on configuring the connection parameters. 
+  <dd>Specifies the IP address or domain name of the server where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
   </dd><br />
 
   <dt><b>Port</b></dt>
@@ -86,7 +86,7 @@ The following section lists the parameters to connect by configuring multiple fi
   </dd><br />
 
   <dt><b>Database Name</b></dt>
-  <dd>Specify the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
+  <dd>Specifies the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
  defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
  </dd><br />
 
@@ -102,7 +102,7 @@ The following section lists the parameters to connect by configuring multiple fi
 </dl>
 
 :::info
-MongoDB 4.0 removes support for the MONGODB-CR authentication mechanism. You cannot specify MONGODB-CR as the authentication mechanism when connecting to MongoDB 4.0+ deployments.
+You cannot specify MONGODB-CR as the authentication mechanism when connecting to MongoDB 4.0+ deployments.
 :::
 
 <dl>
@@ -116,7 +116,7 @@ MongoDB 4.0 removes support for the MONGODB-CR authentication mechanism. You can
 
   <dt><b>SSL Mode</b></dt>
   <dd>SSL can be used to secure the connection between the client and the server by encrypting all data that is transmitted between them. 
-  </dd>
+  </dd><br />
   <dd><i>Options:</i>
     <ul>
      <li><b>Default:</b> Depends on <b>Connection Type</b> field. If using the <b>Replica set</b> option, this is <code>Enabled</code>. If using the <b>Direct Connection</b>, this is <code>Disabled</code>.</li>
@@ -127,24 +127,22 @@ MongoDB 4.0 removes support for the MONGODB-CR authentication mechanism. You can
 </dl>
 
 <figure>
-  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple connection fields"/>
-  <figcaption align = "center"><i>Connect MongoDB using multiple connection fields</i></figcaption>
+  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
+  <figcaption align = "center"><i>Connect MongoDB using multiple parameter fields</i></figcaption>
  </figure>
 
 ## Query MongoDB
 
-The following section is a reference guide that provides a complete description of all the read and write commands with their parameters to create MongoDB queries.
-
-:::info
- See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
-:::
+The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create MongoDB queries.
 
 <figure>
   <img src="/img/query-mongo-ss.png" style= {{width:"100%", height:"auto"}} alt="Create MongoDB queries"/>
   <figcaption align = "center"><i>Create MongoDB queries</i></figcaption>
 </figure>
 
-
+:::info
+ See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
+:::
 
 ### Find Documents
 
@@ -156,7 +154,7 @@ This command fetches documents from a collection. The following section lists al
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>Specifies the filters for the documents you want to retrieve.</dd><br/>
+  <dd>Specifies the criteria that match the documents you want to retrieve.</dd><br/>
 
   <dd><i>Example:</i></dd>
   <dd><pre>{`{ 
@@ -166,7 +164,7 @@ This command fetches documents from a collection. The following section lists al
   <dd>In the above example, the query filters documents from a restaurant collection where the rating field is greater than 4 and the cuisine matches the one selected in the Select widget <code>cusineList</code>.</dd><br />
 
   <dt><b>Sort</b></dt>
-  <dd>Specifies the order in which the documents should be returned, based on one or more fields. 
+  <dd>Specifies the order in which the documents should be returned. 
   </dd><br/>
   <dd><i>Example:</i></dd>
   <dd><pre>{`{ name: 1 }
@@ -178,7 +176,7 @@ This command fetches documents from a collection. The following section lists al
   <dd><i>Example:</i></dd>
   <dd><pre>{`{ name: 1, rating: 1, address: 1 }
 `}</pre></dd>
-  <dd>In the above example, the query returns only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd><br />
+  <dd>In the above example, the query only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd><br />
 
   <dt><b>Limit</b></dt>
   <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
@@ -186,20 +184,19 @@ This command fetches documents from a collection. The following section lists al
   <dd><i>Example:</i></dd>
   <dd><pre>{`{{tableItems.pageSize}}
 `}</pre></dd>
-  <dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table's pageSize property.</dd><br />
+  <dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table widget's pageSize property.</dd><br />
 
   <dt><b>Skip</b></dt>
   <dd>This field specifies the number of documents to skip before returning results. </dd><br />
   <dd><i>Example:</i></dd>
   <dd><pre>{`{{tableItems.pageOffset}}
 `}</pre></dd>
-  <dd>In the above examples of **Limit** and **Skip** fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the table. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
+  <dd>In the above examples for the **Limit** and **Skip** fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the Table widget. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
 </dl>
 
 ### Insert Documents
 
 This command inserts one or more documents and returns a document containing the status of all inserts. The following section lists all the fields available for the **Insert Documents** command.
-
 
 <dl>
   <dt><b>Collection</b></dt>
@@ -229,12 +226,12 @@ This command modifies the documents in a collection based on a specified set of 
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>Specifies the filters for the documents you want to update.</dd><br />
+  <dd>Specifies the criteria that match the documents you want to update.</dd><br />
   <dd><i>Example:</i></dd>
   <dd><pre>{`{ 
   "_id": {{tableItems.selectedRow.id}} 
 }`}</pre></dd>
-  <dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the id of the row selected on the Table widget <code>tableItems</code>.</dd><br />
+  <dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the value in the <code>id</code> column of the row selected on the Table widget named <code>tableItems</code>.</dd><br />
 
   <dt><b>Update</b></dt>
   <dd>Specifies the modifications you want to make to the selected documents. 
@@ -246,7 +243,7 @@ This command modifies the documents in a collection based on a specified set of 
     "rating": {{tableItems.updatedRow.rating}}
   }
 }`}</pre></dd>
-  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells.</dd><br />
+  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/reference/widgets/table/inline-editing"><b>inline editing</b></a>.</dd><br />
 
   <dt><b>Limit</b></dt>
   <dd>Specifies whether to delete single or multiple documents</dd><br />
@@ -329,8 +326,7 @@ This command finds the unique or distinct values for a specified field across a 
 
 ### Aggregate
 
-This command allows users to process data from a collection with a sequence of stage-based manipulations. The following section lists all the fields available for the **Aggregate** command.
-
+This command allows users to process data records and return computed results. The aggregation framework provides several operators to perform a variety of operations like filtering, grouping, sorting, projecting, and calculating. See <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/"><b>Aggregation Pipeline Stages</b></a> for information on the aggregation operators. The following section lists all the fields available for the **Aggregate** command.
 
 <dl>
   <dt><b>Collection</b></dt>
@@ -357,7 +353,7 @@ This command allows users to process data from a collection with a sequence of s
 
 ### Raw
 
-This command allows you to write queries using the MongoDB database command syntax. See [Raw Query Commands](/reference/datasources/querying-mongodb/mongo-syntax) for more information. 
+This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Command**s](/reference/datasources/querying-mongodb/mongo-syntax) for more information. 
 
 ## Troubleshooting
 
