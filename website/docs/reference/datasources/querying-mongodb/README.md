@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # MongoDB
 
-This page shows you how to connect Appsmith to a MongoDB database to read and write data in your applications.
+This page gives information about how to connect Appsmith to a MongoDB database and to read and write data in your applications.
 
 <VideoEmbed host="youtube" videoId="F_By1KmJKrk" title="Build a MongoDB Panel" caption="Build a MongoDB Panel"/>
 
@@ -18,7 +18,7 @@ This page shows you how to connect Appsmith to a MongoDB database to read and wr
 If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
 :::
 
-The following section is a reference guide for a complete description of all the parameters provided to connect to a MongoDB database.
+The following section is a reference guide that provides a complete description of all the parameters provided to connect to a MongoDB database.
 
 ### Connection parameters
 
@@ -133,16 +133,18 @@ MongoDB 4.0 removes support for the MONGODB-CR authentication mechanism. You can
 
 ## Query MongoDB
 
-To create queries, click the **Explorer** tab on the entity explorer to the screen’s left. Click the **+** icon next to next to **Queries/JS**. Select the MongoDB database name from the list of options.
+The following section is a reference guide that provides a complete description of all the read and write commands with their parameters to create MongoDB queries.
+
+:::info
+ See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
+:::
 
 <figure>
   <img src="/img/query-mongo-ss.png" style= {{width:"100%", height:"auto"}} alt="Create MongoDB queries"/>
   <figcaption align = "center"><i>Create MongoDB queries</i></figcaption>
 </figure>
 
-:::info
- See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
-:::
+
 
 ### Find Documents
 
