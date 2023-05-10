@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+description: >-
+  Getting started with SAML integration in Appsmith.
 ---
 
 # SAML SSO
