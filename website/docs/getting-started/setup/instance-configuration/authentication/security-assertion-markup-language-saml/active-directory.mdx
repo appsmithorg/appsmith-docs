@@ -3,41 +3,25 @@ sidebar_position: 5.4
 ---
 # Active Directory
 
-
-
 Azure Active Directory (Azure AD) is a cloud-based identity and access management service. This service helps your employees access external resources, such as **Microsoft 365,** the **Azure portal,** and thousands of other **SaaS** applications.
-
-:::info
-SAML is available only in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances,** and only the **Superuser** of your **Appsmith Instance** can set up SAML.
-:::
-
-To configure SAML within Appsmith using Active Directory as a SAML provider, follow these steps:
 
 ### Create application
 
-<VideoEmbed host="youtube" videoId="H94cQBp5sFE" /> 
-
-1. Log in to your [Azure](https://portal.azure.com/#allservices) account and click on **More services**.
-2. Click **Azure Active Directory** and hit “**+Add**”, and select “**Enterprise Application**.”
-3. Under Browse AD Azure Gallery window, click on create your application, and:
-   1. Give your application a meaningful name.
+1. Log in to your [Azure](https://portal.azure.com/#allservices) account and under Azure **Services**, click **Azure Active Directory**.
+2. In your directory's homepage, click **+ Add** > **Enterprise Application** from the navigation bar 
+3. Under the **Browse AD Azure Gallery** page, click **Create your own application** from the navigation bar.
+   1. Add your application's name.
    2. Select “**Integrate any other application you don't find in the gallery (Non-gallery)**” from the “**What are you looking to do with your application?**” options.
-4. Hit the Create button.
+   3. Hit the Create button.
 
-### Configure Appsmith URLs in Active Directory
+4. In your Application's Overview page, Click **Set up single sign on** > **SAML**.
+5. In the Set up Single Sign-On with SAML page, go to the **Basic SAML Configuration** section and click **Edit**. 
+    1. Add the **Entity URL** (copied from the SAML configurations in Appsmith) under **Identifier (Entity ID)**.
+    2. Add the **Redirect URL** (copied from the SAML configurations in Appsmith) under **Replay URL(Assertion Consumer Service URL).**
+    3. Click Save.
+6. Go to the **SAML Certificates**** section and copy the **App Federation Metadata Url** to add it later in the SAML configurations in Appsmith
 
-As mentioned in [Capture Redirect & Entity URL](./#capture-redirect-and-entity-url), you need to add these URLs to your SAML application. Go to your SAML application homepage and follow the steps below:
-
-<VideoEmbed host="youtube" videoId="9EFlC0PaxD0" title="Adding Redirect and Entity URLs" caption="Adding Redirect and Entity URLs"/>
-
-
-
-1. Click Single Sign-on from the sidebar and select **SAML**.
-2. Go to section 1, “**Basic SAML Configuration**,” and click on edit on the Single Sign-on window.
-3. Add the **Entity URL** (copied from the SAML configurations in Appsmith) under **Identifier (Entity ID)**.
-4. Add the **Redirect URL** (copied from the SAML configurations in Appsmith) under **Replay URL(Assertion Consumer Service URL).**
-
-## Configure Active Directory SAML fields in Appsmith
+## Configure Active Directory in Appsmith
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith.
 
