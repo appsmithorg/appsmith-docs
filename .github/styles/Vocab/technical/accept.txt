@@ -372,3 +372,6 @@ i
 Amazon S3
 http
 tcp
+Rowy
+Brex
+Hasura

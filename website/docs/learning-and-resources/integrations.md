@@ -151,7 +151,7 @@ Appsmith provides **native** integrations with many [databases](/reference/datas
         <div class="containerCol">
             <img class="containerImage" src="/img/supabase-logo_JCWmwonfL.png" alt="Supabase-logo"/>
         </div> <hr/>
-        <div class="containerDescription"><strong>Supabase</strong> is an open-source Firebase alternative. <br/><br/> </div>
+        <div class="containerDescription"><strong>Supabase</strong> is an open source Firebase alternative. <br/><br/> </div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong> </a>
          </div>
     </div>
