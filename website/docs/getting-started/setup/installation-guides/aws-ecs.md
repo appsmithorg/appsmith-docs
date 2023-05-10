@@ -10,16 +10,20 @@ This page provides steps to install Appsmith on a single node EC2 Linux + Networ
 * Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 * An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
 * An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
-* [Add an inbound rule to the security group you created above](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
-* Switch to the [Classic Amazon Web Console](https://console.aws.amazon.com/ecs/).
-* Ensure that you're in the same region where you have added the security group and SSH key pair.
+* [Add an inbound rule for the port range 80, 443, and 22 to the security group you created above](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
+* Switch to the Classic Amazon Web Console.
+* Ensure that you're in the same region where you have created the security group and the SSH key pair.
 
 ## Install Appsmith
 To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to complete the below essential steps:
 
 1. If you have an **EC2 Linux + Networking single node** ECS Cluster that has the **Number of Instances** set to `1`, move to create task and container definitions step. If you don't have one, follow these steps to create a single-node ECS Cluster:
 
- a. Go to [Classic Amazon Web Console](https://console.aws.amazon.com/ecs/) and click **Clusters** on the sidebar
+ a. Go to Classic Amazon Web Console and click **Clusters** on the sidebar.
+ <figure>
+ <img src="/img/aws-ecs-ec2-classic-web-console.png" style={{width: "100%", height: "auto"}} alt="Create Cluster using Classic Amazon Web Console" />
+ <figcaption align="center"><i>Create Cluster using Classic Amazon Web Console</i></figcaption>
+</figure>
 
  b. Click the **Create Cluster** button.
 
@@ -44,7 +48,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  | Attribute | Value |
  |------------------------|------------------------------------------|
  | **VPC** | Either create a new VPC or select an existing one from the dropdown |
- | **Subnets** | Select the desired one from the dropdown |
+ | **Subnets** | Select the subnet that has public access |
  | **Auto-assign public IP** | Select **Enabled** from the dropdown|
  | **Security group** | Select the security group that you created in the [Prerequisites](#prerequisites) step |
 
@@ -164,15 +168,22 @@ j. Click the **View cluster** button to see your cluster
  <img src="/img/aws_ecs_ec2_create_ecs_service_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the ECS Service Status." />
  <figcaption align="center"><i>A launch status screen shows the ECS Service Status</i></figcaption>
 </figure>
-
- You can view the service status by clicking the **View service** button. Your task is under the **Tasks** tab and shows the status as Running. 
  
- To find the details of the EC2 instance: 
- --TO - DO - add a gif so that it's easy for users to find the address
- * Click the **Task** under the **Task** tab
- * Click the link next to the **EC2 instance id**
- * Click the **Instance ID** 
- * On the **Instance Summary** Page, use the **Public IPv4 address** with the `HTTP` protocol to access Appsmith.
+ 4. Follow these steps to verify the Appsmith installation:
+
+<figure>
+ <img src="/img/aws-ecs-ec2-find-DNS-to-access-appsmith.gif" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
+ <figcaption align="center"><i>Use DNS or Public IP to access Appsmith</i></figcaption>
+</figure>
+
+ * Click **Clusters** on the sidebar.
+ * Click the **Cluster name**.
+ * Click the **Tasks** tab.
+ * Click the **Task**.
+ * Click the link next to the **EC2 instance id**.
+ * Click the **Instance ID**. 
+ * On the **Instance Summary** Page, copy the **Public IPv4 address**.
+ * Paste it in a browser tab to access Appsmith.
 
 ## Troubleshooting
 
