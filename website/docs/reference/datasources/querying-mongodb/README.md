@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # MongoDB
 
-This page gives information about how to connect Appsmith to a MongoDB database and to read and write data in your applications.
+This page gives information to connect Appsmith to a MongoDB database and to read and write data in your applications.
 
 <VideoEmbed host="youtube" videoId="F_By1KmJKrk" title="Build a MongoDB Panel" caption="Build a MongoDB Panel"/>
 
