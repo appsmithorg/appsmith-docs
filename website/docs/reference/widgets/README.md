@@ -10,135 +10,68 @@ To use widgets, you can simply drag and drop them onto the canvas and resize the
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
-<div class="containerGridSampleApp">
-   <div class=" containerColumnSampleApp columnGrid column-one">
-      <div class="containerCol">
-      <img class="containerImage" src="/img/input-icon.svg" alt="widgets"/>
-      </div> 
-      <p><strong>Inputs</strong></p><p><a href="/reference/widgets">Text Input<br/></a><a href="/reference/datasources">Phone Input</a><br/><a href="/reference/appsmith-framework">Currency Input</a></p>  
-   </div>
-   
-   <div class="containerColumnSampleApp columnGrid column-two">
-      <div class="containerCol">
-      <img class="containerImage" src="/img/button-icon.svg" alt="framework"/>
-      </div> 
-      <p><strong>Buttons</strong></p><p><a href="/advanced-concepts/version-control-with-git">Button</a><br/><a href="/getting-started/setup/instance-configuration/authentication">Button Group</a><br/><a href="/advanced-concepts/granular-access-control">Icon Button</a></p>
-   </div>
-
-   <div class=" containerColumnSampleApp columnGrid column-three">
-  <div class="containerCol">
-         <img class="containerImage" src="/img/select-icon.svg" alt="get help"/>
-      </div> 
-    <p><strong>Selects</strong></p><p><a href="/learning-and-resources/sample-apps">Select</a><br/><a href="/learning-and-resources/integrations">Multi-Select</a><br/><a href="/help-and-support/troubleshooting-guide">Treeselect</a><br/><a href="/help-and-support/troubleshooting-guide">Multi-Treeselect</a></p>
-   </div>
-  
-</div>
-
-### Inputs
-
-
-<div class="containerGrid">
-<div class="columnGrid column-one" align="center">
-    <div class="containerCol">
-        <a href="reference/datasources/querying-postgres">
-            <img class="containerImage" src="/img/input-icon.svg" alt="postgresql"/>
-        </a> 
-    </div> 
-    <b><a href="/reference/datasources/querying-postgres">Text Input</a></b>
-    <p>A simple input field for users to enter text.</p>
-</div>
-
-<div class="columnGrid column-two" align="center">
-    <div class="containerCol">
-        <a href="/reference/datasources/querying-mongodb">
-            <img class="containerImage" src="/img/p-input.svg" alt="Kubernetes-logo"/>
-        </a>     
-    </div> 
-    <b><a href="/reference/datasources/querying-mongodb">Phone Input</a></b>
-    <p>Allows users to input phone numbers with a country code picker.</p>
-</div>
-
-<div class="columnGrid column-three" align="center">
-    <div class="containerCol">
-        <a href="/reference/datasources/querying-mysql">
-            <img class="containerImage" src="/img/c-input.svg" alt="AWS-AMI-logo"/>
-        </a>   
-    </div> 
-    <b><a href="/reference/datasources/querying-mysql">Currency Input</a></b>
-    <p>Currency input widget with customizable symbols and formatting options.</p>
-</div>
-
-<div class="columnGrid column-three" align="center">
-    <div class="containerCol">
-        <a href="/reference/datasources/querying-elasticsearch">
-            <img class="containerImage" src="/img/r-text.svg" alt="AWS-AMI-logo"/>
-        </a>   
-    </div> 
-    <b><a href="/reference/datasources/querying-elasticsearch">Rich Text Editor</a></b>
-    <p>Provides an interface for editing and formatting rich text content</p>
-</div>
-
-   
-</div>
-
-
-
-### Buttons
 
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
         <div class="containerCol">
             <a href="reference/datasources/querying-postgres">
-            <img class="containerImage" src="/img/button-icon.svg" alt="postgresql"/>
+            <img class="containerImage" src="/img/audio-icon.svg" alt="postgresql"/>
             </a> 
         </div> 
-        <b><a href="/reference/datasources/querying-postgres">Button</a></b>
+        <b><a href="/reference/datasources/querying-postgres">Audio</a></b>
     </div>
    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/ar-icon.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Audio Recorder</a></b>
+    </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
             <img class="containerImage" src="/img/btn-gro.svg" alt="Kubernetes-logo"/>
             </a>     
         </div> 
          <b><a href="/reference/datasources/querying-mongodb">Button Group</a></b>
     </div>
+      <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/button-icon.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Button</a></b>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="containerGrid">
+     <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/cam-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Camera</a></b>
+   
+   </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/datasources/querying-mysql">
-            <img class="containerImage" src="/img/icon-button.svg" alt="AWS-AMI-logo"/>
+            <img class="containerImage" src="/img/cat-icon.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/reference/datasources/querying-mysql">Icon Button</a></b>
+            <b><a href="/reference/datasources/querying-mysql">Category Slider</a></b>
+   
    </div>
-  <div class="columnGrid column-three" align="center">
-        <div class="containerCol">
-            <a href="/reference/datasources/querying-elasticsearch">
-            <img class="containerImage" src="/img/menu-btn.svg" alt="AWS-AMI-logo"/>
-            </a>   
-        </div> 
-            <b><a href="/reference/datasources/querying-elasticsearch">Menu Button</a></b>
-   </div>
-</div>
 
-### Data presentation
-
-<div class="containerGrid">
-    <div class="columnGrid column-one" align="center">
-        <div class="containerCol">
-            <a href="reference/datasources/querying-postgres">
-            <img class="containerImage" src="/img/text-icon.svg" alt="postgresql"/>
-            </a> 
-        </div> 
-        <b><a href="/reference/datasources/querying-postgres">Text</a></b>
-    </div>
-   <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-            <a href="/reference/datasources/querying-mongodb">
-            <img class="containerImage" src="/img/table-icon.svg" alt="Kubernetes-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/reference/datasources/querying-mongodb">Table</a></b>
-    </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/datasources/querying-mysql">
@@ -148,47 +81,415 @@ To use widgets, you can simply drag and drop them onto the canvas and resize the
             <b><a href="/reference/datasources/querying-mysql">Chart</a></b>
    
    </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/checkbox-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Checkbox</a></b>
+   
+   </div>
 
 </div>
 
-### Select
 
-### Containers and forms
 
-### Navigation
+<div class="containerGrid">
+     <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/check-grp.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Checkbox Group</a></b>
    
-### Custom Widget
+   </div>
+<div class="columnGrid column-three" align="center">
+    <div class="containerCol">
+        <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/code-scan.svg" alt="AWS-AMI-logo"/>
+        </a>   
+    </div> 
+    <b><a href="/reference/datasources/querying-mysql">Code Scanner</a></b>
+   
+</div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/con-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Container</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/c-input.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Currency Input</a></b>
+   
+   </div>
+
+</div>
 
 
 
-## Group widgets
 
-With Appsmith, you can group widgets in containers and move them together. Grouping widgets are useful to manage layout, applying visibility rules, and preventing movement in unnecessary areas. 
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/date-pick.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Datepicker</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/div-icon.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Divider</a></b>
+    </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/doc-view.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Document Viewer</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/file-pick.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Filepicker</a></b>
+   
+   </div>
+
+</div>
 
 
-To group widgets, select them using your cursor and click the "**▢**" group icon or use the keyboard shortcut(`Ctrl + G/ cmd + g`).
 
-<figure>
-  <img src="/img/group-widgets.gif" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Group widgets</i></figcaption>
-</figure>
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/form-icon.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Form</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+      <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/icon-button.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Icon Button</a></b>
+   </div>
 
-## Common properties
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/iframe-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Iframe</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/image-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Image</a></b>
+   
+   </div>
 
-The following properties are common across many of Appsmith's widgets. You can find them by selecting your widget and checking its properties pane, and you can use them to customize the details and behavior of your app.
+</div>
 
-| Property            | Description                                                                                                                                                                                      |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Height**       | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**[Fixed](#fixed)**: The height of the widget remains as set using drag and resize.<br/>**[Auto Height](#auto-height)**: The height of the widget reacts to content changes.<br/>  **[Auto Height with limits](#auto-height-with-limits)**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-| **Disabled**        | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                         |
-| **Error Message**   | Sets the text of the error message to display if user input is considered invalid.                                                                                                               |
-| **Tooltip**         | Sets a tooltip for the widget. You can add hints or extra information about the required input from the user.                                                                                    |
-| **Regex**           | Used to add custom regular expression validation to perform on user input. When the input doesn't match the regular expression, the input is considered invalid.                                 |
-| **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.                                                                                                 |
-| **Required**        | Sets whether the input field is a mandatory field. When the input widget is within a Form widget, that Form's submit button is automatically turned off until a user adds input to the field.    |
-| **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid and the widget shows its **Error Message**. |
-| **Visible**         | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode.                                      |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off.                                                                                 |
+
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/input-icon.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Input</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+      <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/json-form-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">JSON form</a></b>
+   </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/list-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">List</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/map-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Map</a></b>
+   
+   </div>
+
+</div>
+
+
+
+
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/mapchart.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Map Chart</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+      <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/menu-btn.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Menu Button</a></b>
+   </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/modal-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Modal</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/multi-tree.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Multi-Treeselect</a></b>
+   
+   </div>
+
+</div>
+
+
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/multi-select.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Multi Select</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+      <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/number-s.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Number Slider</a></b>
+   </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/p-input.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Phone Input</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/progress-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Progress</a></b>
+   
+   </div>
+
+</div>
+
+
+
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/radio-icon.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Radio Group</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+      <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/range-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Range Slider</a></b>
+   </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/rate-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Rating</a></b>
+   
+   </div>
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/r-text.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Rich Text Editor</a></b>
+   
+   </div>
+
+</div>
+
+
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="reference/datasources/querying-postgres">
+            <img class="containerImage" src="/img/select-icon-.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/reference/datasources/querying-postgres">Select</a></b>
+    </div>
+   <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/switch-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Switch</a></b>
+   
+   </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/stats-logo.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Stats Box</a></b>
+   
+   </div>
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/s-grp.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Switch Group</a></b>
+   
+   </div>
+
+
+</div>
+
+
+
+<div class="containerGrid">
+   <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/table-icon.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Table</a></b>
+    </div>
+    <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/tabs-icon.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Tabs</a></b>
+    </div>
+    <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/text-icon.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Text</a></b>
+    </div>
+    <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mongodb">
+            <img class="containerImage" src="/img/tree-select.svg" alt="Kubernetes-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/datasources/querying-mongodb">Treeselect</a></b>
+    </div>
+</div>
+
+
+
+
+
+<div class="containerGrid">
+
+   <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-mysql">
+            <img class="containerImage" src="/img/video-icon.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-mysql">Video</a></b>
+   
+   </div>
+
+</div>
+
+
+
+
+
+
 
 
 ## Troubleshooting
