@@ -68,7 +68,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
   ```bash
   helm upgrade -i appsmith appsmith/appsmith \
       --set ingress.enabled=true \
-      --set "ingress.hosts[0].host="<hostname>", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
+      --set "ingress.hosts[0].host="HOSTNAME", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
       --set ingress.className="nginx"
   ```
 
@@ -115,7 +115,7 @@ You can use the `helm upgrade` command to enable the ingress controller using on
   ```bash
   helm upgrade -i appsmith appsmith-ee/appsmith \
       --set ingress.enabled=true \
-      --set "ingress.hosts[0].host="<hostname>", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
+      --set "ingress.hosts[0].host="HOSTNAME", ingress.hosts[0].paths[0].path=/, ingress.hosts[0].paths[0].pathType=Prefix" \
       --set ingress.className="nginx"
   ```
 
