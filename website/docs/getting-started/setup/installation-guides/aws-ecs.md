@@ -12,7 +12,7 @@ This page provides steps to install Appsmith on a single node EC2 Linux + Networ
 * An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
 * [Add an inbound rule for the port range 80, 443, and 22 to the security group you created above](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) to enable port access.
 * Switch to the Classic Amazon Web Console.
-* Ensure that you're in the same region where you have created the security group and the SSH key pair.
+*  Ensure you have created the security group and the SSH key pair in the same region.
 
 ## Install Appsmith
 To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to complete the below essential steps:
