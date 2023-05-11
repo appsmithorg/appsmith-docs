@@ -25,6 +25,8 @@ If you are on a version earlier than v1.9.2, first upgrade:
    * Follow the steps in the [Upgrade to a Checkpoint version](#upgrade-to-a-checkpoint-version) section to update Appsmith.
 :::
 
+Follow one of the guides below to update Appsmith on your installation platform:
+
 ## Docker Compose
 The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
 
@@ -156,6 +158,17 @@ kubectl rollout restart deployment appsmith
 
 </TabItem>
 </Tabs>
+
+## AWS ECS EC2
+Follow the below steps using the Classic Amazon Web Console to manually update Appsmith:
+
+1. Log in to your [AWS account](https://console.aws.amazon.com/ecs/).
+2. Go to the **Amazon ECS console**.
+3. Select the **cluster** that contains the container instance that you want to update.
+4. Click the **Tasks** tab.
+5. Select and click the **task** that you want to update. 
+6. Click the **Stop** button to stop the task. A new task is deployed automatically. Wait for the new task to be deployed.
+7. Verify that the updated version of your application is running as expected.
 
 ## Upgrade to a checkpoint version
 
