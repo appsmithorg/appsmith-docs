@@ -90,7 +90,7 @@ With this setup, users can edit the code in the code editor, and when the submit
 
 
 <figure>
-  <img src="/img/custom-widget-code.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <img src="/img/custom-widget-code.png" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Custom Code Editor</i></figcaption>
 </figure>
 
@@ -131,6 +131,11 @@ With the Iframe widget, you can send messages from Appsmith to an embedded page.
 
 4. Enter some text in the Input widget, and click the button. The Iframe receives the message and displays it.
 
+<figure>
+  <img src="/img/iframe-1-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <figcaption align = "center"><i></i>From Appsmith to embedded page</figcaption>
+</figure>
+
 ### From embedded page to Iframe
 
 The Iframe widget listens for messages sent from the page embedded within it. To send data from the embedded page, you can use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in Javascript. Appsmith receives the message in the Iframe’s `message` reference property when the page sends data. This property remains undefined until a message is received.
@@ -162,6 +167,10 @@ The Iframe widget listens for messages sent from the page embedded within it. To
 
 5. When a message is received, you can also execute a set of actions in the Iframe’s `onMessageReceived` event. For example, in the `onMessageReceived` event, select the **Show message** action and set the message to 'Message received'. When you click the **Send** button in the Iframe, a toast message appears on the top of the screen.
 
+<figure>
+  <img src="/img/iframe-2-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <figcaption align = "center"><i></i>From embedded page to Iframe</figcaption>
+</figure>
 
 ## Properties
 
