@@ -433,8 +433,7 @@ const sidebars = {
                 id: 'reference/datasources/querying-mongodb/README',
               },
               items: [
-                'reference/datasources/querying-mongodb/mongo-syntax',
-                'reference/datasources/querying-mongodb/whitelist-mongodb-cloud',
+                'reference/datasources/querying-mongodb/mongo-syntax'
               ],
             },
             'reference/datasources/querying-mssql',
