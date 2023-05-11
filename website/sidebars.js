@@ -324,6 +324,7 @@ const sidebars = {
             'core-concepts/writing-code/workflows',
             'core-concepts/writing-code/javascript-promises',
             'core-concepts/writing-code/ext-libraries',
+            'core-concepts/writing-code/ask-ai',
             {
               type: 'link',
               label: 'Appsmith Framework',
