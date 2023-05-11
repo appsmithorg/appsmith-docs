@@ -1,8 +1,6 @@
 # Widgets
 
-Appsmith offers a powerful set of widgets to help you build dynamic and functional app layouts. You can simply drag and drop them onto the canvas and resize them to fit your data. You can also visually edit the properties of each widget to customize its data, style, and actions.
-
-
+Appsmith offers a powerful set of widgets to help you build dynamic and functional app layouts. You can simply drag and drop them onto the canvas and edit the properties of each widget to customize its data, style, and actions.
 
 
 <div class="containerGrid">
@@ -31,7 +29,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
          <b><a href="/reference/widgets/button-group">Button Group</a></b>
     </div>
-      <div class="columnGrid column-two" align="center">
+      <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/button">
             <img class="containerImage" src="/img/button-icon.svg" alt="Kubernetes-logo"/>
@@ -39,11 +37,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
          <b><a href="/reference/widgets/button">Button</a></b>
     </div>
-
 </div>
-
-
-
 
 
 <div class="containerGrid">
@@ -54,9 +48,8 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/camera">Camera</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/sliders/category-slider">
             <img class="containerImage" src="/img/cat-icon.svg" alt="AWS-AMI-logo"/>
@@ -65,7 +58,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <b><a href="/reference/widgets/sliders/category-slider">Category Slider</a></b>
    
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/chart">
@@ -75,16 +67,14 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <b><a href="/reference/widgets/chart">Chart</a></b>
    
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/checkbox">
             <img class="containerImage" src="/img/checkbox-icon.svg" alt="checkbox"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/checkbox">Checkbox</a></b>
-   
    </div>
-
 </div>
 
 
@@ -97,18 +87,15 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/checkbox-group">Checkbox Group</a></b>
-   
    </div>
-<div class="columnGrid column-three" align="center">
-    <div class="containerCol">
-        <a href="/reference/widgets/code-scanner">
-            <img class="containerImage" src="/img/code-scan.svg" alt="AWS-AMI-logo"/>
-        </a>   
-    </div> 
+    <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/code-scanner">
+                <img class="containerImage" src="/img/code-scan.svg" alt="AWS-AMI-logo"/>
+            </a>   
+        </div> 
     <b><a href="/reference/widgets/code-scanner">Code Scanner</a></b>
-   
-</div>
-
+    </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/container">
@@ -116,21 +103,16 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/container">Container</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/currency-input">
             <img class="containerImage" src="/img/c-input.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/currency-input">Currency Input</a></b>
-   
    </div>
-
 </div>
-
-
 
 
 <div class="containerGrid">
@@ -150,29 +132,23 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
          <b><a href="/reference/widgets/divider">Divider</a></b>
     </div>
-
-   <div class="columnGrid column-three" align="center">
+    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/document-viewer">
             <img class="containerImage" src="/img/doc-view.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/document-viewer">Document Viewer</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/filepicker">
             <img class="containerImage" src="/img/file-pick.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/filepicker">Filepicker</a></b>
-   
    </div>
-
 </div>
-
-
 
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
@@ -191,7 +167,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
             <b><a href="/reference/widgets/icon-button">Icon Button</a></b>
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/iframe">
@@ -199,21 +174,16 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/iframe">Iframe</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/image">
             <img class="containerImage" src="/img/image-icon.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/image">Image</a></b>
-   
    </div>
-
 </div>
-
-
 
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
@@ -232,7 +202,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
             <b><a href="/reference/widgets/json-form">JSON form</a></b>
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/list">
@@ -240,23 +209,16 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/list">List</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/maps">
             <img class="containerImage" src="/img/map-icon.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/maps">Map</a></b>
-   
    </div>
-
 </div>
-
-
-
-
 
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
@@ -275,7 +237,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
             <b><a href="/reference/widgets/menu-button">Menu Button</a></b>
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/modal">
@@ -283,21 +244,16 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/modal">Modal</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/multi-tree-select">
             <img class="containerImage" src="/img/multi-tree.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
             <b><a href="/reference/widgets/multi-tree-select">Multi-Treeselect</a></b>
-   
    </div>
-
 </div>
-
-
 
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
@@ -316,7 +272,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
             <b><a href="/reference/widgets/sliders/number-slider">Number Slider</a></b>
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/phone-input">
@@ -324,21 +279,16 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/phone-input">Phone Input</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/progress">
             <img class="containerImage" src="/img/progress-icon.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/progress">Progress</a></b>
-   
+            <b><a href="/reference/widgets/progress">Progress</a></b>   
    </div>
-
 </div>
-
-
 
 
 <div class="containerGrid">
@@ -358,7 +308,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
             <b><a href="/reference/widgets/sliders/range-slider">Range Slider</a></b>
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/rating">
@@ -366,20 +315,16 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/rating">Rating</a></b>
-   
    </div>
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/rich-text-editor">
             <img class="containerImage" src="/img/r-text.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/rich-text-editor">Rich Text Editor</a></b>
-   
+            <b><a href="/reference/widgets/rich-text-editor">Rich Text Editor</a></b>  
    </div>
-
 </div>
-
 
 
 <div class="containerGrid">
@@ -398,36 +343,27 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>   
         </div> 
             <b><a href="/reference/widgets/switch">Switch</a></b>
-   
    </div>
-
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/stat-box">
             <img class="containerImage" src="/img/stats-logo.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/stat-box">Stats Box</a></b>
-   
+            <b><a href="/reference/widgets/stat-box">Stats Box</a></b>   
    </div>
-
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/switch-group">
             <img class="containerImage" src="/img/s-grp.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/switch-group">Switch Group</a></b>
-   
+            <b><a href="/reference/widgets/switch-group">Switch Group</a></b>  
    </div>
-
-
 </div>
 
-
-
 <div class="containerGrid">
-   <div class="columnGrid column-two" align="center">
+   <div class="columnGrid column-one" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/Table">
             <img class="containerImage" src="/img/table-icon.svg" alt="Kubernetes-logo"/>
@@ -443,7 +379,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
          <b><a href="/reference/widgets/tabs">Tabs</a></b>
     </div>
-    <div class="columnGrid column-two" align="center">
+    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/Text">
             <img class="containerImage" src="/img/text-icon.svg" alt="Kubernetes-logo"/>
@@ -451,7 +387,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
         </div> 
          <b><a href="/reference/widgets/Text">Text</a></b>
     </div>
-    <div class="columnGrid column-two" align="center">
+    <div class="columnGrid column-four" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/tree-select">
             <img class="containerImage" src="/img/tree-select.svg" alt="Kubernetes-logo"/>
@@ -462,21 +398,21 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
 </div>
 
 
-
-
-
 <div class="containerGrid">
-
-   <div class="columnGrid column-three" align="center">
+   <div class="columnGrid column-one" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/video">
             <img class="containerImage" src="/img/video-icon.svg" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/video">Video</a></b>
-   
+        <b><a href="/reference/widgets/video">Video</a></b>
    </div>
-
+   <div class="columnGrid column-two" align="center">
+    </div>
+    <div class="columnGrid column-three" align="center">
+    </div>
+    <div class="columnGrid column-four" align="center">
+    </div>
 </div>
 
 
