@@ -1,13 +1,13 @@
 ---
 description: >-
-  Setup SAML using Active Directory
+  Setup SAML using Okta
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Active Directory
+# Okta
 
-To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as a SAML provider, follow the steps below:
+To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, follow the steps below:
 
 ## Prerequisites
 
@@ -15,46 +15,49 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
 2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Active Directory settings. 
 
-### Configure Active Directory
+## Configure Okta
 
-1. Log in to your [Azure](https://portal.azure.com/#allservices) account and under **Azure Services**, click **Azure Active Directory**.
-2. Go to **Manage Tenants** from the navigation bar, select your directory and click **Switch**.
-3. In your directory's homepage, click **+ Add** > **Enterprise Application** from the navigation bar. 
-4. Under the **Browse AD Azure Gallery** page, click **Create your own application** from the navigation bar.
-   1. Add your application's name.
-   2. Select “**Integrate any other application you don't find in the gallery (Non-gallery)**” from the “**What are you looking to do with your application?**” options.
-   3. Hit the Create button.
+1. Log in to your [Okta](https://www.okta.com/) account and on the **Get started with Okta** page, click **Add App** for **Use single sign on**.
+2. On the **Browse App Integration Catalog** page, click **Create New App**. 
+3. A pop-up titled **Create a new app integration** appears. Choose **SAML 2.0** as the Sign-in method and click **Next**.
+4. On the **Create SAML Integration** page, add a name for your app in **General settings**. Click **Next**.
+5. In **Configure SAML**:
 
-5. In your Application's Overview page, Click **Set up single sign on** > **SAML**.
-6. In the **SAML-based Sign-on** page, go to the **Basic SAML Configuration** section under **Set up Single Sign-On with SAML** and click **Edit**. 
-    1. Add the **Entity URL** under **Identifier (Entity ID)**.
-    2. Add the **Redirect URL** under **Replay URL(Assertion Consumer Service URL).**
-    3. Click Save.
-7. Go to the **SAML Certificates** section and copy the **App Federation Metadata Url** to add it later in the SAML configurations in Appsmith.
-8. Go back to the Application's Overview page, Click **Assign users and groups** and add the users or groups to this application.
+    a. Add the **Redirect URL** in **Single sign-on URL** field.
 
-## Setup Active directory on Appsmith
+    b. Add the **Entity ID** in the **Audience URI (SP Entity ID)** field.
+
+    c. From the **Name ID format** options, select **emailAddress**.
+
+    d. Pick **Email** from the **Application username** options. 
+
+    e. Click **Next** to proceed.
+
+6. Fill in the required feedback or additional information in the final step and click **Finish**.
+7. On your application's homepage, go to the **Sign-on tab** and copy the **Metadata** URL from the **SAML 2.0** section to add it later in the SAML configurations in Appsmith.
+8. Go to the Assignments tab, and click **Assign** to assign people or groups to this application.
+
+## Setup Okta on Appsmith
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
-<Tabs queryString="active_directory-saml">
-<TabItem label="Metadata URL (recommended)" value="active_directory-metadataurl">
+<Tabs queryString="okta-saml">
+<TabItem label="Metadata URL (recommended)" value="okta-metadataurl">
 
-To register Active Directory as the identity provider on Appsmith, follow the steps below:
+To register Okta as the identity provider on Appsmith, follow the steps below:
 1. Go to **SAML 2.0 configuration** page in Appsmith and navigate to **Register Identity Provider** section.
-2. Add the copied **App Federation Metadata Url** in the **Metadata URL** field under the **Register Identity Provider** section.
+2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
 
-<TabItem label="Metadata XML" value="active_directory-metdataxml">
+<TabItem label="Metadata XML" value="okta-metdataxml">
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
-1. Open the **Set up Single Sign-On with SAML** page of your Active Directory application, go to **SAML Certificates** and click **Download** on **Federation Metadata XML**.
-2. Open the Metadata XML file and copy the XML content.
-3. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+1. Open the copied Metadata URL in a browser tab and copy the XML content.
+2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
 </TabItem>
-<TabItem label="Idp Data" value="active_directory-idpdata">
+<TabItem label="Idp Data" value="okta-idpdata">
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 

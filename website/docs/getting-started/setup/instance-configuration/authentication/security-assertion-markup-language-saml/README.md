@@ -58,7 +58,6 @@ Appsmith integrates with popular SAML providers that you can choose from. Click 
 
 * [Auth0](auth0.md)
 * [Ping Identity](ping-identity.md)
-* [Okta](okta.md)
 
 ### **Generic SAML configuration**
 
