@@ -21,15 +21,22 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 2. Go to **Manage Tenants** from the navigation bar, select your directory and click **Switch**.
 3. In your directory's homepage, click **+ Add** > **Enterprise Application** from the navigation bar. 
 4. Under the **Browse AD Azure Gallery** page, click **Create your own application** from the navigation bar.
-   1. Add your application's name.
-   2. Select “**Integrate any other application you don't find in the gallery (Non-gallery)**” from the “**What are you looking to do with your application?**” options.
-   3. Hit the Create button.
+
+   a. Add your application's name.
+
+   b. Select “**Integrate any other application you don't find in the gallery (Non-gallery)**” from the “**What are you looking to do with your application?**” options.
+
+   c. Click **Create**.
 
 5. In your Application's Overview page, Click **Set up single sign on** > **SAML**.
 6. In the **SAML-based Sign-on** page, go to the **Basic SAML Configuration** section under **Set up Single Sign-On with SAML** and click **Edit**. 
-    1. Add the **Entity URL** under **Identifier (Entity ID)**.
-    2. Add the **Redirect URL** under **Replay URL(Assertion Consumer Service URL).**
-    3. Click Save.
+
+    a. Add the **Entity URL** under **Identifier (Entity ID)**.
+
+    b. Add the **Redirect URL** under **Replay URL(Assertion Consumer Service URL).**
+
+    c. Click **Save** on the navigation bar.
+
 7. Go to the **SAML Certificates** section and copy the **App Federation Metadata Url** to add it later in the SAML configurations in Appsmith.
 8. Go back to the Application's Overview page, Click **Assign users and groups** and add the users or groups to this application.
 
@@ -58,20 +65,20 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following HTML tags:
+1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following XML tags:
     1. `<EntityDescriptor>`
     2. `<SingleSignOnService>`
     3. `<X509Certificate>`
     4. `<NameIDFormat>`
 
-2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the content from HTML tags as per the table below:
+2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the following values from XML tags as per the table below:
 
 | <div style= {{width:"200px"}}> **Appsmith Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
-| **Entity ID**               |  Add the **entityID** attribute from `<EntityDescriptor>` tag. <br/>  Example: ` <EntityDescriptor " " entityID="**urn:dev-ux0tussx.us.auth0.com**" />`                 |
-| **Single Sign-On URL**      | Add the **location** attribute from `<SingleSignOnService>` tag.<br/>  Example: `<SingleSignOnService "" Location="**https://dev-f0u-ur7m.us.auth0.com/samlp/00Jtsq4cJAixq20wK2f5PbZmq7xX4eZu**"/>`                                                                    |
-| **X509 Public Certificate** | Add the attributes from `<X509Certificate>` tag.<br/> Example: `<X509Certificate>MIIDDTCCAfWgAwIBhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvB/SNHv7LpNHXCTcA6nTW+HZ5BDen2ZbrbgnopIUMWdduv2HHXUCCe/m7FOUABo0IwQDAPBgNVHRMBAf8EBTADAQH/dinHdqf9wZURyNXpVtk9FG4SM6TCrRCEdsc8Xgzl7wDHcJKl2X5aSzQ=</X509Certificate>`                                                                         |
-| **Email**                   | Add the attributes from `<NameIDFormat>` tag.<br/> Example:`<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>` |
+| **Entity ID**               | Add the value of **entityID** attribute from `<EntityDescriptor>` tag.                 |
+| **Single Sign-On URL**      | Add the value of **location** attribute from `<SingleSignOnService>` tag. |
+| **X509 Public Certificate** | Add the value in `<X509Certificate>` tag. |
+| **Email**                   | Add the value in `<NameIDFormat>` tag. |
 
 
 </TabItem>
