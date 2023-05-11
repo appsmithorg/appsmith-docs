@@ -13,8 +13,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **SAML 2.0**.
-
-2. Copy the **Redirect URL** and **Entity URL** from the SAML 2.0 configuration page to add them later in the Auth0 settings. 
+2. Copy the **Redirect URL** from the SAML 2.0 configuration page to add it later in the Auth0 settings. 
 
 ##  Create application on Auth0
 
@@ -23,18 +22,19 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
 4. Scroll down to the **Application URIs** and paste the **Redirect URL** copied earlier in the **Allowed Callback URLs** field.
 5. Click **Save Changes**.
+6. On the Settings tab, go to **Advanced Settings** > **Endpoints**. Scroll down to the **SAML** section, and copy the SAML **Metadata URL** to add it later in the SAML configurations in Appsmith.
 
-## Setup Auth0 in Appsmith
+
+## Register Auth0 in Appsmith
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
 <Tabs queryString="auth0-saml">
 <TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
 
-To get the Metadata URL for your Auth0 application, follow the steps below:
-1. Go to **Settings** tab in your Auth0 application, scroll down, and expand the **Advanced Settings** sections.
-2. Click the **Endpoints** tab, scroll down to the **SAML** section, and copy the SAML **Metadata URL**.
-3. In the Appsmith **SAML 2.0** configuration page, add the Metadata URL in the **Metadata URL** field under the **Register Identity Provider** section.
+To register Auth0 as the identity provider on Appsmith, follow the steps below:
+1. Go to the SAML 2.0 configuration page in Appsmith and navigate to **Register Identity Provider** section.
+2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
 
@@ -45,23 +45,14 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
 </TabItem>
-<TabItem label="Idp data" value="auth0idpdata">
+<TabItem label="IdP data" value="auth0idpdata">
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following XML tags:
+1. Open the Metadata URL in a browser tab or open the Metadata XML file.
+2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
-    a. `<EntityDescriptor>`
-
-    b. `<SingleSignOnService>`
-
-    c. `<X509Certificate>`
-    
-    d. `<NameIDFormat>`
-
-2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the following values from XML tags as per the table below:
-
-| <div style= {{width:"200px"}}> **Appsmith Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
+| <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
 | **Entity ID**               | Paste the value of the **entityID** attribute in the `<EntityDescriptor>` tag.                 |
 | **Single Sign-On URL**      | Add the value of **location** attribute from `<SingleSignOnService>` tag. |
