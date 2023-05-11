@@ -5,8 +5,6 @@ This page describes how to add and edit Table data directly from the UI through 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
 
-
-
 ## Edit cells
 
 

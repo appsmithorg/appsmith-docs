@@ -42,6 +42,7 @@ You can write queries to send emails through your SMTP server by selecting the *
 
 You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to send emails through your SMTP server by selecting the **+ New Query**  button on the SMTP datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your SMTP datasource. You'll be brought to a new query screen where you can write a query.
 
+
 ## Send email
 
 This action sends an email through your SMTP server.
