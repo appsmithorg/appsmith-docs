@@ -439,6 +439,7 @@ const sidebars = {
             },
             'reference/datasources/querying-mssql',
             'reference/datasources/querying-mysql',
+            'reference/datasources/querying-oracle',
             'reference/datasources/querying-postgres',
             'reference/datasources/querying-redis',
             'reference/datasources/querying-redshift',
