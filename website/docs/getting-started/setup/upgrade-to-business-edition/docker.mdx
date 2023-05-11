@@ -13,13 +13,13 @@ The page provides steps to upgrade the Appsmith Docker Community Edition to the 
 - Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 - Ensure you have at least 2 GB of free storage space for running the backup process.
 - Create a backup of the Appsmith instance before upgrading. For more information, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#backup-instance)
-- Ensure that you have the latest Appsmith version deployed on your instance. To update Appsmith, see the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith) section.
+- Ensure that you have the latest Appsmith version deployed on your instance. To update the Appsmith version, see [Update Appsmith](/getting-started/setup/instance-management/update-appsmith).
 
-## Upgrade Appsmith instance
+## Upgrade to Business Edition
 
 Follow these steps to upgrade your Appsmith instance:
 
-1. Go to the directory where the `docker-compose.yml` file is located.
+1. Go to the root directory of Appsmith installation.
 2. Open the `docker-compose.yml` file, and search for the `image:` key.
 3. Update the value of the `image:` key as below:
 
@@ -29,7 +29,7 @@ Follow these steps to upgrade your Appsmith instance:
     #highlight-next-line
       image: index.docker.io/appsmith/appsmith-ee
 ```
-4. Save the file
+4. Save the file.
 
 5. Recreate the instance with:
 
