@@ -13,9 +13,9 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, f
 
 1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **SAML 2.0**.
 
-2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Active Directory settings. 
+2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Okta settings. 
 
-## Configure Okta
+## Create application on Okta
 
 1. Log in to your [Okta](https://www.okta.com/) account and on the **Get started with Okta** page, click **Add App** for **Use single sign on**.
 2. On the **Browse App Integration Catalog** page, click **Create New App**. 
@@ -37,15 +37,15 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, f
 7. On your application's homepage, go to the **Sign-on tab** and copy the **Metadata** URL from the **SAML 2.0** section to add it later in the SAML configurations in Appsmith.
 8. Go to the Assignments tab, and click **Assign** to assign people or groups to this application.
 
-## Setup Okta on Appsmith
+## Register Okta in Appsmith
 
-To complete the SAML configuration, you’ll have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
+To complete the SAML configuration, you have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
 <Tabs queryString="okta-saml">
 <TabItem label="Metadata URL (recommended)" value="okta-metadataurl">
 
 To register Okta as the identity provider on Appsmith, follow the steps below:
-1. Go to **SAML 2.0 configuration** page in Appsmith and navigate to **Register Identity Provider** section.
+1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
 2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
@@ -57,32 +57,28 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
 </TabItem>
-<TabItem label="Idp Data" value="okta-idpdata">
+<TabItem label="IdP Data" value="okta-idpdata">
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following XML tags:
+1. Open the Metadata URL in a browser tab or open the Metadata XML file.
+2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
-    a. `<EntityDescriptor>`
-
-    b. `<SingleSignOnService>`
-
-    c. `<X509Certificate>`
-    
-    d. `<NameIDFormat>`
-
-2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the following values from XML tags as per the table below:
-
-| <div style= {{width:"200px"}}> **Appsmith Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
+| <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
-| **Entity ID**               | Add the value of **entityID** attribute from `<EntityDescriptor>` tag.                 |
-| **Single Sign-On URL**      | Add the value of **location** attribute from `<SingleSignOnService>` tag. |
-| **X509 Public Certificate** | Add the value in `<X509Certificate>` tag. |
-| **Email**                   | Add the value in `<NameIDFormat>` tag. |
+| **Entity ID**               | Enter the value of the **entityID** attribute specified in the `<EntityDescriptor>` tag.                 |
+| **Single Sign-On URL**      | Enter the value of **location** attribute specified in the `<SingleSignOnService>` tag. |
+| **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
+| **Email**                   | Enter the value specified in the `<NameIDFormat>` tag. |
 
 </TabItem>
 </Tabs>
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
-After the instance restarts, log in again to your instance. You would see a login screen with the button **SIGN IN WITH SAML SSO**.
+After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML SSO** button.
+
+<figure>
+  <img src="/img/Appsmith-Login-Screen-Shows-SAML.png" style= {{width:"400px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>Login with SAML SSO </i></figcaption>
+</figure>
