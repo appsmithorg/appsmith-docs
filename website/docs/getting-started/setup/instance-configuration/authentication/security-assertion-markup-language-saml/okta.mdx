@@ -62,10 +62,14 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
 1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following XML tags:
-    1. `<EntityDescriptor>`
-    2. `<SingleSignOnService>`
-    3. `<X509Certificate>`
-    4. `<NameIDFormat>`
+
+    a. `<EntityDescriptor>`
+
+    b. `<SingleSignOnService>`
+
+    c. `<X509Certificate>`
+    
+    d. `<NameIDFormat>`
 
 2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the following values from XML tags as per the table below:
 
