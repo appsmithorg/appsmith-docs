@@ -480,56 +480,5 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
 </div>
 
 
----
-
-### Test
-
-<table>
-  <tr>
-    <td align="center" style={{ border: 'none' }}>
-      <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-          <a href="/reference/widgets/">
-            <img class="containerImage" src="/img/table-icon.svg" alt="Kubernetes-logo" />
-          </a>
-        </div>
-        <b><a href="/reference/widgets/">Table</a></b>
-      </div>
-    </td>
-    <td align="center" style={{ border: 'none' }}>
-      <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-          <a href="/reference/widgets/">
-            <img class="containerImage" src="/img/tabs-icon.svg" alt="Kubernetes-logo" />
-          </a>
-        </div>
-        <b><a href="/reference/widgets/">Tabs</a></b>
-      </div>
-    </td>
-    <td align="center" style={{ border: 'none' }}>
-      <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-          <a href="/reference/widgets/">
-            <img class="containerImage" src="/img/text-icon.svg" alt="Kubernetes-logo" />
-          </a>
-        </div>
-        <b><a href="/reference/widgets/">Text</a></b>
-      </div>
-    </td>
-    <td align="center" style={{ border: 'none' }}>
-      <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-          <a href="/reference/widgets/">
-            <img class="containerImage" src="/img/tree-select.svg" alt="Kubernetes-logo" />
-          </a>
-        </div>
-        <b><a href="/reference/widgets/">Treeselect</a></b>
-      </div>
-    </td>
-  </tr>
-
-</table>
-
-
 
 
