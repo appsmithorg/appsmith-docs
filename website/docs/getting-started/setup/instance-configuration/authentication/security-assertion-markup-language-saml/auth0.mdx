@@ -13,7 +13,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **SAML 2.0**.
-2. Copy the **Redirect URL** from the SAML 2.0 configuration page to add it later in the Auth0 settings. 
+2. Copy the **Redirect URL** from the **SAML 2.0** configuration page to add it later in the Auth0 settings. 
 
 ##  Create application on Auth0
 
@@ -22,7 +22,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
 4. Scroll down to the **Application URIs** and paste the **Redirect URL** copied earlier in the **Allowed Callback URLs** field.
 5. Click **Save Changes**.
-6. On the Settings tab, go to **Advanced Settings** > **Endpoints**. Scroll down to the **SAML** section, and copy the SAML **Metadata URL** to add it later in the SAML configurations in Appsmith.
+6. On the **Settings** tab, go to **Advanced Settings** > **Endpoints**. Scroll down to the **SAML** section, and copy the SAML **Metadata URL** to add it later in the SAML configurations in Appsmith.
 
 
 ## Register Auth0 in Appsmith
@@ -33,7 +33,7 @@ To complete the SAML configuration, you’ll have to register the identity provi
 <TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
 
 To register Auth0 as the identity provider on Appsmith, follow the steps below:
-1. Go to the SAML 2.0 configuration page in Appsmith and navigate to **Register Identity Provider** section.
+1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
 2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
@@ -54,10 +54,10 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 
 | <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
-| **Entity ID**               | Paste the value of the **entityID** attribute in the `<EntityDescriptor>` tag.                 |
-| **Single Sign-On URL**      | Add the value of **location** attribute from `<SingleSignOnService>` tag. |
-| **X509 Public Certificate** | Add the value in `<X509Certificate>` tag. |
-| **Email**                   | Add the value in `<NameIDFormat>` tag. |
+| **Entity ID**               | Enter the value of the **entityID** attribute specified in the `<EntityDescriptor>` tag.                 |
+| **Single Sign-On URL**      | Enter the value of **location** attribute specified in the `<SingleSignOnService>` tag. |
+| **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
+| **Email**                   | Enter the value specified in the `<NameIDFormat>` tag. |
 
 
 </TabItem>
