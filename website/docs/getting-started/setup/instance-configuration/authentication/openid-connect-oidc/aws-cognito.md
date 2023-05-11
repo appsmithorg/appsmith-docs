@@ -1,3 +1,8 @@
+---
+description: >-
+  Setup OIDC using AWS Cognito
+---
+
 # Amazon Cognito
 
 To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) as an OIDC provider, follow these steps:

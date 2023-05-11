@@ -1,3 +1,7 @@
+---
+description: >-
+  Configure Roles in Appsmith to use GAC
+---
 # Roles
 Roles in Appsmith are collections of permissions that enable users or groups to access certain operations on resources. Rather than giving individual permissions to users or groups, roles allow users to manage multiple permissions.
 
