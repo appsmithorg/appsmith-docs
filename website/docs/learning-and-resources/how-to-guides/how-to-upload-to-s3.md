@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Upload / Download Files from S3
+# Upload and Download Files from S3
 
 Files can be uploaded to Amazon S3 using the S3 plugin and FilePicker Widget. This document presumes you have successfully [connected to your S3 instance](/reference/datasources/querying-amazon-s3.md)
 

@@ -1,3 +1,8 @@
+---
+description: >-
+  Invite users to a workspace or an application in Appsmith.
+---
+
 
 # Invite Users
 
