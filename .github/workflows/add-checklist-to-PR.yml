@@ -1,0 +1,43 @@
+name: Add Checklist to PR
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  add-checklist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Checklist
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const checklist = `
+            - [ ] Ran through Grammarly
+            - [ ] Linked to sample apps when relevant
+            - [ ] Added meta description for each page in the PR
+            - [ ] Minimized the callouts and added only when necessary
+            - [ ] Added images only when necessary
+            - [ ] Renamed images and added the alt attribute
+            - [ ] Deleted the images that are no longer used for the updated Pages in the PR
+            - [ ] Masked PII in images. For example, login credentials, account details, and more.
+            - [ ] Followed image file naming convention - use lowercase letters, dashes between words, and be as descriptive as possible
+            - [ ] Used `<figure/>` tag instead of markdown representation of images
+            - [ ] Added `<figcaption/>` tag to add caption to image
+            - [ ] Added `alt` attribute in the `<img/>` tag
+            - [ ] Verified and updated the cross-references for the changed or removed content headings
+            `;
+
+            const { data: pr } = await github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+
+            const { data: issue } = await github.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: pr.body + checklist,
+            });
