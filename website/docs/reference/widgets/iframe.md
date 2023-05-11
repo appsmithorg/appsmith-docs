@@ -76,7 +76,7 @@ Appsmith offers a wide range of widgets for building applications. Still, someti
 </body>
 </html>
 ```
-This code creates a code editor widget using the Ace code editor library and sends the entered code to the parent window when the "Submit Code" button is clicked.
+This code creates a code editor widget using the Ace code editor library and sends the entered code to the [parent window](#communication-between-app-and-iframe) when the "Submit Code" button is clicked.
 
 
 2. Next, add Text widget and sets its **Text** property to:
