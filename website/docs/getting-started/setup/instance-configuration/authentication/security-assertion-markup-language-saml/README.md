@@ -36,7 +36,7 @@ Appsmith offers seamless integration with various popular SAML providers. To get
         <div class="columnGrid column-one" align="center">
           <div class="containerCol">
                 <a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta">
-                <img class="containerImage" src="/img/okta.png" alt="okta-logo"/>
+                <img class="containerImage" src="/img/okta.png" alt="Okta-logo"/>
                 </a>   
             </div> 
             <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta">Okta</a></b>
