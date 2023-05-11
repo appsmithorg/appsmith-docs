@@ -18,16 +18,11 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 
 ##  Configure Auth0
 
-1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. Select **Regular Web Application** and click **Create**.
-
-<figure>
-  <img src="/img/Autho_create-app.png" style= {{width:"700px", height:"auto"}} alt="Create Auth0 Application"/>
-  <figcaption align = "center"><i>Create Regular Web Application </i></figcaption>
-</figure>
-
-2. Once your application is created, you’re navigated to the Quickstart screen. Go to the **Settings** tab.
-3. Scroll down to the **Application URIs** and add the **Redirect URL** in the **Allowed Callback URLs** field.
-4. Click **Save Changes**.
+1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. 
+2. In the **Create application** modal, select **Regular Web Application** and click **Create**.
+3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
+4. Scroll down to the **Application URIs** and add the **Redirect URL** in the **Allowed Callback URLs** field.
+5. Click **Save Changes**.
 
 ## Configure Auth0 in Appsmith
 
@@ -54,20 +49,20 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following HTML tags:
+1. Open the Metadata URL in a browser tab or open the Metadata XML file and locate the following XML tags:
     1. `<EntityDescriptor>`
     2. `<SingleSignOnService>`
     3. `<X509Certificate>`
     4. `<NameIDFormat>`
 
-2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the content from HTML tags as per the table below:
+2. In the Appsmith **SAML 2.0** configuration page, click **IdP Data** under the **Register Identity Provider** section. Add the following values from XML tags as per the table below:
 
-| <div style= {{width:"200px"}}> **Appsmith Field ** </div>  | <div style= {{width:"400px"}}> **Metadata XML Tag**  </div>                                                                      |
+| <div style= {{width:"200px"}}> **Appsmith Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
-| **Entity ID**               |  Add the **entityID** attribute from `<EntityDescriptor>` tag. <br/>  Example:  `<EntityDescriptor " " entityID="urn:dev-ux0tussx.us.auth0.com" />` |
-| **Single Sign-On URL**      | Add the **location** attribute from `<SingleSignOnService>` tag.<br/>  Example: `<SingleSignOnService Binding="" Location="`**https: //dev-f0u-ur7m.us.auth0.com/samlp/00Jtsq4cJAixq20wK2f5PbZmq7xX4eZu**`"/>`                                                                    |
-| **X509 Public Certificate** | Add the attributes from `<X509Certificate>` tag.<br/> Example: `<X509Certificate>`<br/>**MIIDDTCCAfWgAwIBhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvB/<br/>SNHv7LpNHXCTcA6nTW+HZ5BDen2ZbrbgnopIUMWdduv2HHXUCCe/<br/>m7FOUABo0IwQDAPBgNVHRMBAf8EBTADAQH/<br/>dinHdqf9wZURyNXpVtk9FG4SM6TCrRCEdsc8Xgzl7wDHcJKl2X5aSzQ=**`</X509Certificate>`                                                                         |
-| **Email**                   | Add the attributes from `<NameIDFormat>` tag.<br/> Example:`<NameIDFormat>`**urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat**`>` |
+| **Entity ID**               | Add the value of **entityID** attribute from `<EntityDescriptor>` tag.                 |
+| **Single Sign-On URL**      | Add the value of **location** attribute from `<SingleSignOnService>` tag. |
+| **X509 Public Certificate** | Add the value in `<X509Certificate>` tag. |
+| **Email**                   | Add the value in `<NameIDFormat>` tag. |
 
 
 </TabItem>
