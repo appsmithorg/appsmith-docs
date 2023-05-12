@@ -42,6 +42,7 @@ Appsmith offers a wide range of widgets for building applications. Still, someti
 ---
 **Example**: a color picker widget created using HTML as shown below: 
 
+
 ```html
 <label for="favcolor">Pick Color: </label> 
 <input type="color" id="favcolor" name="favcolor" value="#ff0000">

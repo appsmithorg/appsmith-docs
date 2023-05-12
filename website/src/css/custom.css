@@ -223,6 +223,10 @@
   order: 3;
 }
 
+.column-four {
+  order: 4;
+}
+
 .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
   display: none;
 }
