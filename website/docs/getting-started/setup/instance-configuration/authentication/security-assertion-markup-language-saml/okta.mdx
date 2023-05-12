@@ -1,51 +1,63 @@
 ---
 description: >-
-  Setup SAML using Auth0
+  Setup SAML using Okta
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Auth0
+# Okta
 
-To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, follow the steps below:
+To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, follow the steps below:
 
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **SAML 2.0**.
-2. Copy the **Redirect URL** from the **SAML 2.0** configuration page to add it later in the Auth0 settings. 
 
-##  Create application on Auth0
+2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Okta settings. 
 
-1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. 
-2. In the **Create application** modal, select **Regular Web Application** and click **Create**.
-3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
-4. Scroll down to the **Application URIs** and paste the **Redirect URL** copied earlier in the **Allowed Callback URLs** field.
-5. Click **Save Changes**.
-6. On the **Settings** tab, go to **Advanced Settings** > **Endpoints**. Scroll down to the **SAML** section, and copy the SAML **Metadata URL** to add it later in the SAML configurations in Appsmith.
+## Create application on Okta
 
+1. Log in to your [Okta](https://www.okta.com/) account and on the **Get started with Okta** page, click **Add App** for **Use single sign on**.
+2. On the **Browse App Integration Catalog** page, click **Create New App**. 
+3. A pop-up titled **Create a new app integration** appears. Choose **SAML 2.0** as the Sign-in method and click **Next**.
+4. On the **Create SAML Integration** page, add a name for your app in **General settings**. Click **Next**.
+5. In **Configure SAML**:
 
-## Register Auth0 in Appsmith
+    a. Add the **Redirect URL** in **Single sign-on URL** field.
+
+    b. Add the **Entity ID** in the **Audience URI (SP Entity ID)** field.
+
+    c. From the **Name ID format** options, select **emailAddress**.
+
+    d. Pick **Email** from the **Application username** options. 
+
+    e. Click **Next** to proceed.
+
+6. Fill in the required feedback or additional information in the final step and click **Finish**.
+7. On your application's homepage, go to the **Sign-on tab** and copy the **Metadata** URL from the **SAML 2.0** section to add it later in the SAML configurations in Appsmith.
+8. Go to the Assignments tab, and click **Assign** to assign people or groups to this application.
+
+## Register Okta in Appsmith
 
 To complete the SAML configuration, you have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
-<Tabs queryString="auth0-saml">
-<TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
+<Tabs queryString="okta-saml">
+<TabItem label="Metadata URL (recommended)" value="okta-metadataurl">
 
-To register Auth0 as the identity provider on Appsmith, follow the steps below:
+To register Okta as the identity provider on Appsmith, follow the steps below:
 1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
 2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
 
-<TabItem label="Metadata XML" value="auth0metdataxml">
+<TabItem label="Metadata XML" value="okta-metdataxml">
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
-1. Open the copied **Metadata URL** in a browser tab and copy the XML content.
+1. Open the copied Metadata URL in a browser tab and copy the XML content.
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
 </TabItem>
-<TabItem label="IdP data" value="auth0idpdata">
+<TabItem label="IdP Data" value="okta-idpdata">
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
@@ -58,7 +70,6 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 | **Single Sign-On URL**      | Enter the value of **location** attribute specified in the `<SingleSignOnService>` tag. |
 | **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
 | **Email**                   | Enter the value specified in the `<NameIDFormat>` tag. |
-
 
 </TabItem>
 </Tabs>
