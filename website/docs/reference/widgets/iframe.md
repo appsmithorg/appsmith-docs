@@ -44,6 +44,7 @@ Appsmith offers a wide range of widgets for building applications. Still, someti
 
 1. In the **srcDoc** property, add the following code:
 
+
 ```html
 <head>
 <style type="text/css" media="screen">
