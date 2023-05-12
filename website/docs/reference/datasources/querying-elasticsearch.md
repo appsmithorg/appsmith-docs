@@ -19,41 +19,78 @@ Once you've entered your connection details, click the **Test** button to check 
 
 ## Search documents
 
-Queries run on top of indexed documents can be configured using the GET method, without a JSON body. The following search query scans through the `movies` index created previously to return documents that match the query string.
+Queries run on top of indexed documents can be configured using the GET method. For example, the following query searches the `users` index for records where the `name` is `Allen`:
 
+```json
+// Path
+/users/_search
 ```
-/movies/_search?q=Hayao%20Miyazaki
+
+```json
+// Body
+{
+  "query": {
+    "match": {
+      "user.name": "Allen"
+    }
+  }
+}
+```
+
+If you need a single document and you know its `id`, you can also fetch it using just a path:
+
+```json
+// Path
+/users/_doc/2
 ```
 
 ---
 
 #### Example
 
-> SCENARIO
+> Search an index `users` for documents matching a search term, and display the results in a table widget.
 
-Steps
+**Setup**: create a [Table widget](/reference/widgets/table) called `UserResults` to display your data. Create a query called `SearchUsers` based on your Elasticsearch datasource.
 
-## Retrieve a document
+**Configure the query**:
 
-A single document can be accessed using its `id` within an index using a GET request that has the following path:
+* Select the **GET** method for your query, and supply the **Path**:
 
+```json
+// Path
+/users/_search
 ```
-/movies/_doc/2
+
+* In the **Body** of the request, write the following snippet:
+
+```javascript
+// Body 
+{
+  "query": {
+    "query_string": {
+      "query": {{ UserResults.searchText }},
+      "default_field": "*",
+      "from": {{ UserResults.pageOffset }}
+      "size": {{ UserResults.pageSize }}
+    }
+  }
+}
 ```
 
----
+**Configure the table**:
 
-#### Example
+* On the canvas in the `UserResults`'s properties, set **Table Data** to `{{ SearchUsers.data.hits.hits }}`.
+* Set the **onSearchTextChanged** event to execute your `SearchUsers` query. When the user types a query into the search bar of the table header, the query will run automatically.
+* Turn on the table's **Server side pagination** property and set its **onPageChange** property to also execute your `SearchUsers` query.
 
-> SCENARIO
-
-Steps
+Now your table is ready to populate with data as the query is run.
 
 ## Create a document
 
-As part of the Document API, you can create a single new document by using the POST URI `/{index}/_doc/{id}` with a JSON body that represents the document. For instance, the following request creates a document in the `movies` index with an `id` of 1.
+As part of the Document API, you can create a single new document by using the POST URI `/{index}/_doc/{id}` with a JSON body that represents the document. For instance, the following request creates a document in the `movies` index with an `id` of 1.`
 
-```javascript
+```json
+// Path
 /movies/_doc/1
 ```
 
@@ -76,11 +113,29 @@ As part of the Document API, you can create a single new document by using the P
 
 Steps
 
+## Update a document
+
+A single document can be accessed using its `id` within an index using a GET request that has the following path:
+
+```json
+// Path
+/users/_doc/2
+```
+
+---
+
+#### Example
+
+> Retrieve data for a particular document based on its `id`.
+
+Steps
+
 ## Delete a document
 
 Deleting documents only requires a reference to the relevant `id` field that is sent across in a DELETE request. The request below returns the deleted resource if it exists.
 
-```
+```json
+// Path
 /movies/_doc/5
 ```
 
