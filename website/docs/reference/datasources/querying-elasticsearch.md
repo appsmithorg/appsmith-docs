@@ -56,52 +56,50 @@ If you need a single document and you know its `id`, you can also fetch it using
 
 * Select the **GET** method for your query, and supply the **Path**:
 
-```json
-// Path
-/users/_search
-```
+    ```json
+    // Path
+    /users/_search
+    ```
 
 * In the **Body** of the request, write the following snippet:
 
-```javascript
-// Body 
-{
-  "query": {
-    "query_string": {
-      "query": {{ UserResults.searchText }},
-      "default_field": "*",
-      "from": {{ UserResults.pageOffset }}
-      "size": {{ UserResults.pageSize }}
+    ```javascript
+    // Body 
+    {
+    "query": {
+        "query_string": {
+        "query": {{ UserResults.searchText }},
+        "default_field": "*",
+        "from": {{ UserResults.pageOffset }}
+        "size": {{ UserResults.pageSize }}
+        }
     }
-  }
-}
-```
+    }
+    ```
 
 **Configure the table**:
 
 * On the canvas in the `UserResults`'s properties, set **Table Data** to `{{ SearchUsers.data.hits.hits }}`.
-* Set the **onSearchTextChanged** event to execute your `SearchUsers` query. When the user types a query into the search bar of the table header, the query will run automatically.
+* Set the **onSearchTextChanged** event to execute your `SearchUsers` query. When the user types a query into the search bar of the table header, the query runs automatically.
 * Turn on the table's **Server side pagination** property and set its **onPageChange** property to also execute your `SearchUsers` query.
 
 Now your table is ready to populate with data as the query is run.
 
 ## Create a document
 
-As part of the Document API, you can create a single new document by using the POST URI `/{index}/_doc/{id}` with a JSON body that represents the document. For instance, the following request creates a document in the `movies` index with an `id` of 1.`
+You can create a single new document by using a **Path** `/{index}/_doc/` using the **POST** method, with a JSON body that represents the document values; an `id` is automatically generated.
 
 ```json
 // Path
-/movies/_doc/1
+/users/_doc/
 ```
 
 ```json
 //Body
 {
-    "title": "Castle in the Sky",
-    "director": "Hayao Miyazaki",
-    "producer": "Isao Takahata",
-    "release_date": "1986",
-    "rt_score": "95"
+    "name": "Arjun Patil",
+    "email": "patila@example.com",
+    "date-of-birth": "1989-4-9"
 }
 ```
 
@@ -109,9 +107,48 @@ As part of the Document API, you can create a single new document by using the P
 
 #### Example
 
-> SCENARIO
+> Add a new document to the `users` index, using values entered in a form.
 
-Steps
+**Setup**:
+
+* Create a query `CreateUser` based on your Elasticsearch datasource, and set it to use the **POST** method.
+
+**Configure the query**:
+
+* Set the **Path** field to `/users/_doc/`.
+* Set the **Body** field to:
+
+    ```javascript
+    // Body
+    {
+        "user": {
+            "name": {{ NewUserForm.formData.name }},
+            "email": {{ NewUserForm.formData.email }},
+            "date-of-birth": {{ NewUserForm.formData["date-of-birth"] }}
+        }
+    }
+    ```
+
+**Configure the widgets**:
+
+* To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
+
+    ```json
+    {
+        name: "",
+        email: "",
+        date_of_birth: ""
+    }
+    ```
+
+* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+
+    ```javascript
+    // Submit button's onClick event
+    {{ CreateUser.run() }}
+    ```
+
+When the Submit button is clicked, your query is executed and the new document is added to your Elasticsearch index.
 
 ## Update a document
 
@@ -128,7 +165,10 @@ A single document can be accessed using its `id` within an index using a GET req
 
 > Retrieve data for a particular document based on its `id`.
 
-Steps
+**Setup**:
+
+* Create a query `UpdateUser` based on your Elasticsearch datasource, and set it to use the **POST** method.
+* Set the **Path** field to `/users/_udpate/{{  }}`.
 
 ## Delete a document
 
