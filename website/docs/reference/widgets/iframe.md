@@ -58,7 +58,6 @@ Appsmith offers a wide range of widgets for building applications. Still, someti
 </style>
 </head>
 <body>
-<div> <button id="submit-btn">Submit Code</button> </div>
 <div id="editor">function foo(items) {
     var x = "All this is syntax highlighted";
     return x;
@@ -68,14 +67,12 @@ Appsmith offers a wide range of widgets for building applications. Still, someti
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
-		document.getElementById("submit-btn").addEventListener("click", function() {
-      // Get the value of the editor and send it to parent window
-      var code = editor.getValue();
-      window.parent.postMessage(code, "*");
+    editor.on("change", function() {
+        // Get the value of the editor and send it to the parent window
+        var code = editor.getValue();
+        window.parent.postMessage(code, "*");
     });
 </script>
-</body>
-</html>
 ```
 This code creates a code editor widget using the Ace code editor library and sends the entered code to the [parent window](#communication-between-app-and-iframe) when the "Submit Code" button is clicked.
 
