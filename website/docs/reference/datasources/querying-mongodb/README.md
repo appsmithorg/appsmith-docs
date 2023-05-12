@@ -1,5 +1,6 @@
 ---
 sidebar_position: 9
+description: Connect Appsmith to a MongoDB database and create queries.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,12 +16,12 @@ This page gives information to connect Appsmith to a MongoDB database and to rea
 ## Connect MongoDB
 
 :::caution 
-If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
+If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
 :::
 
 ### Connection parameters
 
-The following section is a reference guide that provides a complete description of all the parameters provided to connect to a MongoDB database.
+The following section is a reference guide that provides a complete description of all the parameters to connect to a MongoDB database.
 
 <figure>
    <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
@@ -69,12 +70,12 @@ The following section lists the parameters to connect MongoDB by configuring mul
   <dd><i>Options:</i>
     <ul>
      <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
-     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify the hostname and port numbers of each instance.</li>
+     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify each instance's hostname and port numbers.</li>
     </ul>
   </dd> 
   
   <dt><b>Host Address</b></dt>
-  <dd>Specifies the IP address or domain name of the server where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
+  <dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
   </dd><br />
 
   <dt><b>Port</b></dt>
@@ -120,7 +121,7 @@ You cannot specify MONGODB-CR as the authentication mechanism when connecting to
   <dd><i>Options:</i>
     <ul>
      <li><b>Default:</b> Depends on <b>Connection Type</b> field. If using the <b>Replica set</b> option, this is <code>Enabled</code>. If using the <b>Direct Connection</b>, this is <code>Disabled</code>.</li>
-     <li><b>Enabled:</b> Initiates the connection with TLS/SSL. Rejects the connection if SSL isn't available.</li>
+     <li><b>Enabled:</b> Initiates the connection with TLS/SSL. Rejects the connection if SSL is not available.</li>
      <li><b>Disabled:</b> Initiates the connection without TLS/SSL. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection. </li>
     </ul>
   </dd>  
@@ -174,7 +175,7 @@ This command fetches documents from a collection. The following section lists al
   <dd>In the above example, the query only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd><br />
 
   <dt><b>Limit</b></dt>
-  <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
+  <dd>Specifies the maximum number of documents to return. The default value is 10. If this field is not specified, the query returns 10 documents.
   </dd><br />
   <dd><i>Example:</i></dd>
   <dd><pre>{`{{tableItems.pageSize}}
@@ -191,7 +192,7 @@ This command fetches documents from a collection. The following section lists al
 
 ### Insert Documents
 
-This command inserts one or more documents and returns a document containing the status of all inserts. The following section lists all the fields available for the **Insert Documents** command.
+This command inserts one or more documents and returns a document containing the status of all inserts. The following section lists all the fields for the **Insert Documents** command.
 
 <dl>
   <dt><b>Collection</b></dt>
