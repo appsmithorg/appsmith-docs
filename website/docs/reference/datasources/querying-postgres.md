@@ -11,13 +11,14 @@ This page gives information to connect Appsmith to a PostgreSQL database and to 
 If you are a self-hosted user, you need to configure the `pg_hba.conf` file to whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to a database. See [**Client Authentication**](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) for more details.
 :::
 
+### Connection parameters
+
+The following section is a reference guide that provides a complete description of all the parameters provided to connect to a PostgreSQL database.
+
 <figure>
   <img src="/img/postgres-img.png" style= {{width:"100%", height:"auto"}} alt="Connect PostgreSQL Database"/>
   <figcaption align = "center"><i>Connect PostgreSQL Database</i></figcaption>
 </figure>
-
-### Connection parameters
-The following section is a reference guide that provides a complete description of all the parameters provided to connect to a PostgreSQL database.
 
 <dl>
   <dt><b>Connection Mode</b></dt>
@@ -61,12 +62,13 @@ The following section is a reference guide that provides a complete description 
 
 ## Query PostgreSQL
 
-The following section is a reference guide that provides a complete description of all the read and write commands with their parameters to create PostgreSQL queries.
+The following section provides examples to create basic CRUD queries on PostgreSQL.
 
 <figure>
   <img src="/img/query-postgresql.png" style= {{width:"100%", height:"auto"}} alt="Write SQL commands in the query editor"/>
   <figcaption align = "center"><i>Write SQL commands in the query editor</i></figcaption>
 </figure>
+
 
 :::info
 See the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html) for the SQL syntax.
@@ -121,7 +123,7 @@ In the above example, `tableUsers` is the name of the Table widget where the row
 
 ## Prepared statements
 
-Prepared statements are switched on by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template {{ }}, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
+Prepared statements are switched on by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
 
 ## Row Level Security (RLS)
 Row level security is a PostgreSQL security feature provided by the database to limit what rows of a table are visible for querying. It allows the database admins to define security policies to control how the rows of a given table can be accessed or modified. Watch the [**video series**](https://youtu.be/8qPTZQvJ9fA) for details on how to use RLS on your apps.

@@ -18,9 +18,14 @@ This page gives information to connect Appsmith to a MongoDB database and to rea
 If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
 :::
 
+### Connection parameters
+
 The following section is a reference guide that provides a complete description of all the parameters provided to connect to a MongoDB database.
 
-### Connection parameters
+<figure>
+   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
+   <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
+</figure>
 
 <dl>
   <dt><b>Use Mongo Connection String URI</b></dt><br />
@@ -32,10 +37,6 @@ The following section is a reference guide that provides a complete description 
   </dd>  
 </dl>
 
----
-
-The following section lists the parameters to connect MongoDB using the *Connection String URI* format.
-
 <dl>
   <dt><b>Connection String URI</b></dt>
   <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
@@ -45,14 +46,13 @@ The following section lists the parameters to connect MongoDB using the *Connect
   </code></pre></dd>
 </dl>
 
-<figure>
-   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
-   <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
-</figure>
-
 ---
  
-The following section lists the parameters to connect MongoDB by configuring multiple parameter fields.
+The following section lists the parameters to connect MongoDB by configuring multiple parameter fields instead of the *Connection String URI* format.
+<figure>
+  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
+  <figcaption align = "center"><i>Connect MongoDB using multiple parameter fields</i></figcaption>
+ </figure>
 
 <dl>
   <dt><b>Connection Mode</b></dt>
@@ -125,11 +125,6 @@ You cannot specify MONGODB-CR as the authentication mechanism when connecting to
     </ul>
   </dd>  
 </dl>
-
-<figure>
-  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
-  <figcaption align = "center"><i>Connect MongoDB using multiple parameter fields</i></figcaption>
- </figure>
 
 ## Query MongoDB
 
