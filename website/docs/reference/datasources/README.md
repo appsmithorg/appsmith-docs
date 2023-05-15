@@ -134,6 +134,14 @@ Databases are an essential part of many applications and are used to store and m
 </div>
 
 <div class="containerGrid">
+    <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/datasources/querying-oracle">
+            <img class="containerImage" src="/img/oracle-logo.svg" alt="Oracle-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/datasources/querying-oracle">Oracle</a></b>
+   </div>
 
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
