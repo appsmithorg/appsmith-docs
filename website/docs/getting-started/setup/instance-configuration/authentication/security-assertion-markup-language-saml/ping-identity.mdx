@@ -23,14 +23,14 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
 ##  Create application on Ping Identity
 
-1. Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. On the homepage click **Add Environment** from the top right corner.
+1. Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. On the homepage, click **Add Environment** from the top right corner.
 2. On the Create Environment screen, select **Build your own solution**. 
 
     a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. Click **Next**
 
     b. Enter the environment name and description. Click **Next**.
 
-3. Open the newly created Environment and from the sidebar, go to **Connections** > **Applications**.
+3. Open the newly created Environment, and from the sidebar, go to **Connections** > **Applications**.
 4. On the Applications homepage, click the **+** icon to create a new application. On the **Add Application** panel:
 
     a. Enter the application name and description.
@@ -45,19 +45,19 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
     f. Click **Save**. 
 
-5. Open your application, go to the **Configurations** tab and copy the **IDP Metadata URL** to add it later in the SAML configurations in Appsmith.
+5. Open your application, go to the **Configurations** tab, and copy the **IDP Metadata URL** to add it later in the SAML configurations in Appsmith.
 6. On your application panel, switch the toggle button at the top right corner to enable user access to the application. 
 
 
 ## Register Ping Identity in Appsmith
 
-To complete the SAML configuration, you have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
+To complete the SAML configuration, you must register the identity provider on Appsmith. Appsmith provides three options to register the identity provider, as mentioned below:
 
 <Tabs queryString="pingidentity-saml">
 <TabItem label="Metadata URL (recommended)" value="pingidentity-metadataurl">
 
 To register Ping Identity as the identity provider on Appsmith, follow the steps below:
-1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
+1. Go to the **SAML 2.0** configuration page in Appsmith, and navigate to **Register Identity Provider** section.
 2. Add the copied **IDP Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
@@ -65,7 +65,7 @@ To register Ping Identity as the identity provider on Appsmith, follow the steps
 <TabItem label="Metadata XML" value="pingidentity-metdataxml">
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
-1. Open your Ping identity application, go to **Configurations** and click **Download Metadata**.
+1. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**.
 2. Open the downloaded Metadata file in a browser and copy the XML content.
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
@@ -74,7 +74,7 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open your Ping identity application, go to **Configurations** and click **Download Metadata**. 
+1. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**. 
 2. Open the downloaded Metadata file in a browser.
 2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
