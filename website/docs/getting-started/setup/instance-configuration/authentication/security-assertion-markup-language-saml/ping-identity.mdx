@@ -13,7 +13,13 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **SAML 2.0**.
+
 2. Copy the **Redirect URL** and **Entity ID** from the **SAML 2.0** configuration page to add them later in the Ping Identity settings. 
+
+<figure>
+  <img src="/img/SAML-config_appsmith.png" style= {{width:"600px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>SAML configuration in Appsmith</i></figcaption>
+</figure>
 
 ##  Create application on Ping Identity
 
@@ -33,7 +39,7 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
     c. On the SAML Configuration panel, select **Manually Enter**.
 
-    d. Add the **Redirect URL** in the **ACS URLs** field
+    d. Add the **Redirect URL** in the **ACS URLs** field.
 
     e. Add the **Entity ID** in the  **Entity ID** field.
 
@@ -59,7 +65,7 @@ To register Ping Identity as the identity provider on Appsmith, follow the steps
 <TabItem label="Metadata XML" value="pingidentity-metdataxml">
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
-1. Open your Ping identity application, go to **Configurations** and click **Download Metadata.
+1. Open your Ping identity application, go to **Configurations** and click **Download Metadata**.
 2. Open the downloaded Metadata file in a browser and copy the XML content.
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
@@ -68,7 +74,7 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open your Ping identity application, go to **Configurations** and click **Download Metadata. 
+1. Open your Ping identity application, go to **Configurations** and click **Download Metadata**. 
 2. Open the downloaded Metadata file in a browser.
 2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
