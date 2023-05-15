@@ -5,7 +5,7 @@ description: >-
 
 # SAML SSO
 
-Appsmith provides a way to integrate with Security Assertion Markup Language (SAML), enabling the users to sign in to the Appsmith account using their SAML identity providers.
+Appsmith provides a way to integrate with Security Assertion Markup Language (SAML), enabling users to sign in to the Appsmith account using their SAML identity providers.
 
 :::info
 Security Assertion Markup Language (SAML) is only available in Appsmith's [**business edition**](https://www.appsmith.com/pricing). 
