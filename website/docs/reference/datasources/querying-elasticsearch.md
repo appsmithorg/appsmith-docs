@@ -1,194 +1,110 @@
 ---
 sidebar_position: 5
+description: Connect Appsmith to your Elasticsearch data and create queries.
 ---
 
 # Elasticsearch
 
 This page describes how to connect to your Elasticsearch database and query it from your Appsmith app.
 
-## Configuration
+## Connection parameters
 
-The Elasticsearch plugin requiresthe following information to establish a connection:
+The following is a reference guide that provides a description of the parameters for connecting to Elasticsearch.
 
-* **Host URL:** Provide the URL where the database is hosted. 
-* **Port:** Provide the port on which to connect.
-* **Username for Basic Auth / Password for Basic Auth:** Provide the login credentials for your Elasticsearch database.
-* **Authorization Header:** Instead of the username/password fields, you can provide an **Authorization Header** to authenticate your queries. This field is only used when the **Username/Password for Basic Auth** fields are empty.
+<figure>
+  <img src="/img/elasticsearch-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Connect to Elasticsearch"/>
+  <figcaption align = "center"><i>Connect to Elasticsearch</i></figcaption>
+</figure>
 
-Once you've entered your connection details, click the **Test** button to check that they are working, and then click **Save**.
+<dl>
+  <dt><b>Host URL</b></dt>
+  <dd>The network location where your Elasticsearch data is hosted. This can be a domain name or an IP address. To connect to a local database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
-## Search documents
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. </dd><br />
 
-Queries run on top of indexed documents can be configured using the GET method. For example, the following query searches the `users` index for records where the `name` is `Allen`:
+  <dt><b>Username/Password for Basic Auth</b></dt>
+  <dd>The account credentials used to log in to Elasticsearch.</dd><br />
+
+  <dt><b>Authorization Header</b></dt>
+  <dd>Instead of the username/password fields, you can provide an <b>Authorization Header</b> to authenticate your queries. This field is only used when the <b>Username/Password for Basic Auth</b> fields are empty.</dd><br />
+</dl>
+
+## Query Elasticsearch
+
+The following section provides examples of creating basic CRUD queries to Elasticsearch.
+
+:::info
+For more details on building more complex queries, see the [Elasticsearch Document API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html).
+:::
+
+### Search documents
+
+Queries run on top of indexed documents can be configured using the `GET` method. For example, the following query searches the `users` index for a `name` matching your user input from a Table widget called `UsersTable`:
 
 ```json
 // Path
 /users/_search
 ```
 
-```json
+```javascript
 // Body
 {
   "query": {
     "match": {
-      "user.name": "Allen"
+      "user.name": {{ UsersTable.searchText }}
     }
   }
 }
 ```
 
-If you need a single document and you know its `id`, you can also fetch it using just a path:
+### Create a document
 
-```json
-// Path
-/users/_doc/2
-```
-
----
-
-#### Example
-
-> Search an index `users` for documents matching a search term, and display the results in a table widget.
-
-**Setup**: create a [Table widget](/reference/widgets/table) called `UserResults` to display your data. Create a query called `SearchUsers` based on your Elasticsearch datasource.
-
-**Configure the query**:
-
-* Select the **GET** method for your query, and supply the **Path**:
-
-    ```json
-    // Path
-    /users/_search
-    ```
-
-* In the **Body** of the request, write the following snippet:
-
-    ```javascript
-    // Body 
-    {
-    "query": {
-        "query_string": {
-        "query": {{ UserResults.searchText }},
-        "default_field": "*",
-        "from": {{ UserResults.pageOffset }}
-        "size": {{ UserResults.pageSize }}
-        }
-    }
-    }
-    ```
-
-**Configure the table**:
-
-* On the canvas in the `UserResults`'s properties, set **Table Data** to `{{ SearchUsers.data.hits.hits }}`.
-* Set the **onSearchTextChanged** event to execute your `SearchUsers` query. When the user types a query into the search bar of the table header, the query runs automatically.
-* Turn on the table's **Server side pagination** property and set its **onPageChange** property to also execute your `SearchUsers` query.
-
-Now your table is ready to populate with data as the query is run.
-
-## Create a document
-
-You can create a single new document by using a **Path** `/{index}/_doc/` using the **POST** method, with a JSON body that represents the document values; an `id` is automatically generated.
+You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated. Below, user input is collected with a Form widget called `NewUserForm`:
 
 ```json
 // Path
 /users/_doc/
 ```
 
-```json
+```javascript
 //Body
 {
-    "name": "Arjun Patil",
-    "email": "patila@example.com",
-    "date-of-birth": "1989-4-9"
+    "name": {{ NewUserForm.data.Name }},
+    "email": {{ NewUserForm.data.Email }},
+    "gender": {{ NewUserForm.data.Gender }},
 }
 ```
 
----
+### Update a document
 
-#### Example
+A single document can be updated using its `id` within an index using a `POST` request. Below, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget:
 
-> Add a new document to the `users` index, using values entered in a form.
-
-**Setup**:
-
-* Create a query `CreateUser` based on your Elasticsearch datasource, and set it to use the **POST** method.
-
-**Configure the query**:
-
-* Set the **Path** field to `/users/_doc/`.
-* Set the **Body** field to:
-
-    ```javascript
-    // Body
-    {
-        "user": {
-            "name": {{ NewUserForm.formData.name }},
-            "email": {{ NewUserForm.formData.email }},
-            "date-of-birth": {{ NewUserForm.formData["date-of-birth"] }}
-        }
-    }
-    ```
-
-**Configure the widgets**:
-
-* To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
-
-    ```json
-    {
-        name: "",
-        email: "",
-        date_of_birth: ""
-    }
-    ```
-
-* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
-
-    ```javascript
-    // Submit button's onClick event
-    {{ CreateUser.run() }}
-    ```
-
-When the Submit button is clicked, your query is executed and the new document is added to your Elasticsearch index.
-
-## Update a document
-
-A single document can be accessed using its `id` within an index using a GET request that has the following path:
-
-```json
+```javascript
 // Path
-/users/_doc/2
+/users/_update/{{ UsersTable.selectedRow.id }}
 ```
 
----
-
-#### Example
-
-> Retrieve data for a particular document based on its `id`.
-
-**Setup**:
-
-* Create a query `UpdateUser` based on your Elasticsearch datasource, and set it to use the **POST** method.
-* Set the **Path** field to `/users/_udpate/{{  }}`.
-
-## Delete a document
-
-Deleting documents only requires a reference to the relevant `id` field that is sent across in a DELETE request. The request below returns the deleted resource if it exists.
-
-```json
-// Path
-/movies/_doc/5
+```javascript
+// Body
+{
+  "doc": {
+    "name": {{ UpdateUserForm.data.Name }}
+  }
+}
 ```
 
----
+This performs a partial update, where the properties you supply are added to the document; you don't need to add ones that have not changed.
 
-#### Example
+### Delete a document
 
-> SCENARIO
+A single document can be deleted using its `id` within an index using the `DELETE` method. Below, the record with its `id` is selected from a Table widget called `UsersTable`:
 
-Steps
+```javascript
+// Path
+/users/_doc/{{ UsersTable.selectedRow.id }}
+```
 
-## Further reading
+## See also
 
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
-* [Table widget](/reference/widgets/table)
-* [Form widget](/reference/widgets/form)
+[Data access and binding](/core-concepts/data-access-and-binding)
