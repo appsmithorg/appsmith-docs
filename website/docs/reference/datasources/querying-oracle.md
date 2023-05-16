@@ -164,7 +164,7 @@ WHERE employee_id = 1009;
 
   ```javascript
   // Submit button's onClick event
-  {{ UpdateUser.run() }}
+  {{ UpdateUser.run(() => ListUsers.run(), () => {}) }}
   ```
 
 * To add your modified row data to your query, reference them in your SQL statement:
@@ -200,7 +200,7 @@ WHERE employee_id = 1009;
 
   ```javascript
   // in the Delete button's onClick event
-  {{ DeleteUser.run() }}
+  {{ DeleteUser.run(() => ListUsers.run(), () => {}) }}
   ```
 
 * To delete a specific record, you should reference it with a uniquely identifying value, such as its `employee_id` in this case. In your `DeleteUser` query, bind the `employee_id` value of the Table's selected row:
