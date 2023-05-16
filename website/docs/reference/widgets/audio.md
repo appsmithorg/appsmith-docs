@@ -12,9 +12,9 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
 
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
- **URL**        |   Audio URL(String)  | URL of the audio source to play. Supports MP3, WAV, OGG format.                                                                                                                                                                                                                   |
+| Property | Data type | Description                                                                                                                                                    |
+| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **URL**        |   Audio URL(String)  | URL of the audio source to play. Supports MP3, WAV, OGG format.                                                                                                                                                                                                                   |
 | **Auto Play**     |   Boolean   | Plays audio automatically on page load, without any action from the user.                                                                                                                                                                             |
 | **Visible**       |   Boolean   | Controls the widget's visibility on the page.                                                                                     |
 | **Animate Loading**  |   Boolean | Allows you to control a widget’s animation on the page load.|
