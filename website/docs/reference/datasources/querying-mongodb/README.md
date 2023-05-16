@@ -1,5 +1,6 @@
 ---
 sidebar_position: 9
+description: Connect Appsmith to a MongoDB database and create queries.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,344 +9,356 @@ import TabItem from '@theme/TabItem';
 
 # MongoDB
 
-This document covers how to establish a connection between your MongoDB database and Appsmith to read and write data on your applications.
+This page gives information to connect Appsmith to a MongoDB database and to read and write data in your applications.
 
 <VideoEmbed host="youtube" videoId="F_By1KmJKrk" title="Build a MongoDB Panel" caption="Build a MongoDB Panel"/>
 
-## Connect to MongoDB datasource
-To add a MongoDB datasource, navigate to **Explorer** >> click the (**+**) sign next to **Datasources** >> select **MongoDB** under Databases. This opens up the page where you can configure the parameters to connect to your MongoDB database.
+## Connect MongoDB
 
-:::note
-If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database. For more information, see [Whitelist MongoDB Cloud](/reference/datasources/querying-mongodb/whitelist-mongodb-cloud).
+:::caution 
+If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
 :::
 
-### Configure datasource
-You can configure MongoDB by choosing any one of the below option:
+### Connection parameters
 
-* [Connecting String URI](#connection-string-uri)
-* [Connection Mode](#connection-mode)
-
-#### Connection String URI
-You can choose to use a MongoDB Connection String URI by selecting Yes for the **Use Mongo Connection String URI** field. Using an SRV URI as a connection string for connecting to a MongoDB cluster allows you to establish a connection without the need to manually specify details.
+The following section is a reference guide that provides a complete description of all the parameters to connect to a MongoDB database.
 
 <figure>
-  <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"700px", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
-  <figcaption align = "center"><i>Configure MongoDB using Connection String URI</i></figcaption>
+   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
+   <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
 </figure>
 
-A [service record](https://en.wikipedia.org/wiki/SRV\_record) (SRV) defines the location of a service hosting, like a hostname, port number, and more. You can connect to a MongoDB datasource on Appsmith using SRV URI Formats - [Standard URI Format](https://www.mongodb.com/docs/manual/reference/connection-string/#standard-connection-string-format) or a [DNS Seed List Format](https://www.mongodb.com/docs/manual/reference/connection-string/#dns-seed-list-connection-format).
+<dl>
+  <dt><b>Use Mongo Connection String URI</b></dt><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Yes:</b> Connect to MongoDB database using the Connection String URI format</li>
+     <li><b>No:</b> Connect to MongoDB database by configuring multiple parameter fields.</li>
+    </ul>
+  </dd>  
+</dl>
 
+<dl>
+  <dt><b>Connection String URI</b></dt>
+  <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre><code>
+   mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
+  </code></pre></dd>
+</dl>
 
-
-<Tabs queryString="current-connection-type">
-  <TabItem value="scsf" label="Standard Connection String Format" default>
-
-A Standard Connection String Format(Standard Format) connects to a standalone replica set or a shared cluster of MongoDB. The standard format is represented as below:
-
-```bsh
-mongodb://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
-```
-
-Map the URI fields as below:
-
-* **`mongodb://`** - a prefix to indicate a standard connection format.
-* **`@username`** - the username for the MongoDB you want to connect to.
-* **`@password`** - the password for the MongoDB you want to connect to.
-* **`@host`** - the host address for the MongoDB you want to connect to.
-* **`@port`** - the port number on which the MongoDB is running.
-* **`@defaultauthdb`** - the database you want to connect to and use for user authentication.
-* **`@authDB`** - the database that stores the authorization information and authenticates the credentials. If you want to use any other database instead of `defaultauthdb`, you can add the auth database name using the `authSource` keyword.
-
-##### Example URIs
-
-```bash
-mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
-```
-Learn more about [Standard Connection String Format](https://www.mongodb.com/docs/manual/reference/connection-string/)
-
-##### General notes
-* You can add multiple host and port details separated by a comma in the connection string to connect using the same user.
-* If the username or password includes `(: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
-* It's mandatory to provide a value for the `defaultauthdb` field as the queries would be executed against it.
-* In case the `authSource` isn't specified, Appsmith try's to authenticate using the admin database.
-
-
-  </TabItem>
-  <TabItem value="dns" label="Domain name service seed list format">
-    
-The DNS seed list format is another way of connecting to MongoDB, which is supported by the Appsmith. It involves using a standard format for Domain Name Service (DNS) seed lists, which requires the connection string to be prefixed with `mongodb+srv://`. The `+srv` prefix is used to indicate that the hostname is associated with the DNS SRV. Here's an example of how the DNS seed list format is represented:
-
-```bash
-mongodb+srv://[@username:@password@]@host[:@port]/[@defaultauthdb]/[?authSource=@authDB]]
-```
-
-You can map the fields as below:
-
-* **`mongodb+srv://`** - a prefix to identify that it’s a DNS Seed List format.
-
-* Like [Standard format](#connect-using-srv-uri), you can add `username`, `password`, `host`, `port`, `default database,` and `authSource`.
-
-##### Example URIs
-
-```bash
-mongodb+srv://dbuser:s@cur!ty/server.dnsseedlist.com/defaultauthdbSource?authSource=authusersb
-```
-
-Learn more about [Domain name service seed list format](https://www.mongodb.com/docs/manual/reference/connection-string/).
-
-#### General notes
-* Using the `+srv` automatically sets the TLS or SSL option to true. If you wish to turn off the TLS or SSL option, `tls/ssl=false` in the query string.
-* If the username or password includes `(: /? # [ ] @),` convert these characters using [percent encoding](https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
-
-
-
-  </TabItem>
-</Tabs>
-
-#### Connection Mode
-When configuring MongoDB, the default option is to use Connection Mode, and you need to configure the following parameters:
-
+---
+ 
+The following section lists the parameters to connect MongoDB by configuring multiple parameter fields instead of the *Connection String URI* format.
 <figure>
-  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"700px", height:"auto"}} alt="Configure MongoDB using Connection Mode"/>
-  <figcaption align = "center"><i>Configure MongoDB using Connection Mode</i></figcaption>
-</figure>
+  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
+  <figcaption align = "center"><i>Connect MongoDB using multiple parameter fields</i></figcaption>
+ </figure>
 
-* **Connection Mode:** This refers to the permission granted to Appsmith when establishing a connection to the database. The two available modes are:
+<dl>
+  <dt><b>Connection Mode</b></dt>
+  <dd> Specifies the mode in which the Appsmith application can interact with the database. This field and the subsequent fields are visible only if you select <b>No</b> in the <b>Use Mongo Connection String URI</b> list.  </dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Read Only:</b> This mode permits only read-only operations by default.</li>
+     <li><b>Read/Write:</b> This mode permits both read-write operations by default.</li>
+    </ul>
+  </dd>  
+ 
+ <dt><b>Connection Type</b></dt>
+  <dd> Specifies whether to connect to a MongoDB instance or replica set deployment.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
+     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify each instance's hostname and port numbers.</li>
+    </ul>
+  </dd> 
+  
+  <dt><b>Host Address</b></dt>
+  <dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
+  </dd><br />
 
-   * **Read Only:** This mode grants read-only access to the database.
-   * **Read / Write:** This mode grants Appsmith both read and write permissions on the database. 
+  <dt><b>Port</b></dt>
+  <dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default if you don't specify one. 
+  </dd><br />
 
-* **Connection Type:** This refers to the method used to establish a connection between a client and a database. You must choose one of the available connection types:
+  <dt><b>Default Database Name</b></dt>
+  <dd>Specifies the default authentication database to use when authenticating a user. In MongoDB, when a user is authenticated, the authentication process checks the user's credentials against a specific database. By default, this database is <code>admin</code>, but you can specify a different database by using the <b>Default Database Name</b> parameter. 
+  </dd><br />
 
-  * **Direct Connection**: This connection type enables you to connect directly to a MongoDB instance.
-  * **Replicate Set**: This connection type enables you to connect to a set of MongoDB instances.
+  <dt><b>Database Name</b></dt>
+  <dd>Specifies the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
+ defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
+ </dd><br />
 
+  <dt><b>Authentication Type</b></dt>
+  <dd>Specifies the authentication mechanism that MongoDB uses to authenticate the connection. </dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>SCRAM-SHA-1:</b> Provides secure password storage through the use of a salted hash function. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-1">SCRAM-SHA-1</a> for details.</li>
+     <li><b>SCRAM-SHA-256:</b> Uses the SHA-256 hashing algorithm for password storage. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-256">SCRAM-SHA-256</a> for details.</li>
+     <li><b>MONGODB-CR:</b> Uses a challenge-response protocol to authenticate users based on a combination of a password and a random challenge string. See <a href="https://www.mongodb.com/docs/v3.2/core/security-mongodb-cr/">MONGODB-CR</a> for details.</li>
+    </ul>
+  </dd> 
+</dl>
 
-* **Host Address:** Provide the hostname or IP address. You can specify multiple host addresses for a replicate set. 
-
-* **Port:** A port is a numerical identifier that helps establish a network connection. Appsmith tries to connect to port `27017` if you don't specify a port.
-
-* **Default** **Database Name:** This refers to the name of the database on your MongoDB server that you want to connect to.
-
-* **Authentication:** To establish a connection with the database, provide the necessary authentication parameters.
-  * **Database Name:** MongoDB's authentication DB stores user authentication data like usernames and passwords. Enter the name of the authentication DB.
-  * **Authentication Type:** Choose the authentication mechanism that you want to use to connect to your database. You can select from [`SCRAM-SHA-1`](https://www.mongodb.com/docs/manual/core/security-scram/), `SCRAM-SHA-256`, or [`MONGO-CR`](https://mongoing.com/docs/core/security-mongodb-cr.html). 
-  * **Username:** Provide the username required for authenticating connection requests to your database. Leave this field blank if you don't wish to specify a username for authentication.(note that your database must accept such connections).
-  * **Password:** Provide the password required for authenticating connection requests for the given username to the database. If you don't want to log in with a password, leave this field empty (note that your database must accept such connections).
-
-* **SSL:** The connection uses the Default SSL mode. You can set it to one of the following modes:
-
-   * **Default**: Depends on Connection Type. If using the `Replica set`, this is `Enabled`. If using a `Direct connection`, this is `Disabled`.
-   * **Enabled**: This option rejects the connection if SSL isn't available.
-   * **Disabled**: Disabling SSL disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.
-
-:::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [Connect via localhost](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+:::info
+You cannot specify MONGODB-CR as the authentication mechanism when connecting to MongoDB 4.0+ deployments.
 :::
 
-## Create queries
+<dl>
+  <dt><b>Username</b></dt>
+  <dd>Provide the username required for authenticating connection requests to the database.
+  </dd><br />
 
-You can write queries to fetch or write data to the MongoDB database by selecting the **+ New Query** button available on datasource page under **Explorer** >> **Datasources** or by navigating to Explorer >> click (**+**) next to **Queries/JS** >> select your MongoDB database. 
+  <dt><b>Password</b></dt>
+  <dd>Provide the password required for authenticating connection requests for the given username to the database.
+  </dd><br />
+
+  <dt><b>SSL Mode</b></dt>
+  <dd>SSL can be used to secure the connection between the client and the server by encrypting all data that is transmitted between them. 
+  </dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Default:</b> Depends on <b>Connection Type</b> field. If using the <b>Replica set</b> option, this is <code>Enabled</code>. If using the <b>Direct Connection</b>, this is <code>Disabled</code>.</li>
+     <li><b>Enabled:</b> Initiates the connection with TLS/SSL. Rejects the connection if SSL is not available.</li>
+     <li><b>Disabled:</b> Initiates the connection without TLS/SSL. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection. </li>
+    </ul>
+  </dd>  
+</dl>
+
+## Query MongoDB
+
+The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create MongoDB queries.
 
 <figure>
-  <img src="/img/query-mongo-ss.png" style= {{width:"700px", height:"auto"}} alt="Configure PostgreSQL Datasource"/>
-  <figcaption align = "center"><i>Create queries</i></figcaption>
+  <img src="/img/query-mongo-ss.png" style= {{width:"100%", height:"auto"}} alt="Create MongoDB queries"/>
+  <figcaption align = "center"><i>Create MongoDB queries</i></figcaption>
 </figure>
 
 :::info
-The syntax for MongoDB database commands differs slightly from the MongoDB collection methods you may be familiar with. For more information, see [Query and Write Operation Commands](https://docs.mongodb.com/manual/reference/command/nav-crud/) available on the official MongoDB documentation.
+ See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
 :::
 
 ### Find Documents
 
-"Find Documents" is a query that fetches documents from a collection. You can specify conditions and filters to retrieve a specific set of documents. You can pass the below parameters to Find Documents:
+This command fetches documents from a collection. The following section lists all the fields available for the **Find Documents** command.
 
-* **Collection**: This field specifies the name of the MongoDB collection from which you want to retrieve documents. For example, to find documents from a collection named `movies`, you can specify:
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>The name of the target collection from which you want to retrieve documents.
+  </dd><br />
 
-    ```sql
-    movies
-    ```
-* **Query**: This field specifies the search criteria or filters for the documents you want to retrieve. You can use a variety of operators and expressions to create complex queries. For example, to retrieve all movies with a rating greater than or equal to 9, you can bind the Input widget values selected by users as shown below:
+  <dt><b>Query</b></dt>
+  <dd>Specifies the criteria that match the documents you want to retrieve.</dd><br/>
 
-     ```sql
-    {
-      "rating": { $gte: {{select_rating.selectedOptionValue}} }
-    }  
-     ```
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  rating: { $gte: 4 },
+  cuisine: {{cuisineList.selectedOptionValue}}
+}`}</pre></dd>
+  <dd>In the above example, the query filters documents from a restaurant collection where the rating field is greater than 4 and the cuisine matches the one selected in the Select widget <code>cusineList</code>.</dd><br />
 
-* **Sort**: This field specifies the order in which the documents should be returned, based on one or more fields. For example, to sort the results by the `name` field in ascending order, you can specify:
+  <dt><b>Sort</b></dt>
+  <dd>Specifies the order in which the documents should be returned. 
+  </dd><br/>
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ name: 1 }
+`}</pre></dd>
+  <dd>In the above example, the query sorts the results by the <code>name</code> field in ascending order.</dd><br />
 
-     ```sql
-     { name: 1 }
-     ```
-* **Projection**: This field specifies which fields to include or exclude from the query result. You can use this to limit the amount of data returned by the query. For example, to include only the `name`, `rating`, and `address` fields, you can specify:
+  <dt><b>Projection</b></dt>
+  <dd>Specifies which fields to include in the returned documents.</dd><br/>
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ name: 1, rating: 1, address: 1 }
+`}</pre></dd>
+  <dd>In the above example, the query only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd><br />
 
-   ```sql
-   { name: 1, rating: 1, address: 1 }
-   ```
+  <dt><b>Limit</b></dt>
+  <dd>Specifies the maximum number of documents to return. The default value is 10. If this field is not specified, the query returns 10 documents.
+  </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{{tableItems.pageSize}}
+`}</pre></dd>
+  <dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table widget's pageSize property.</dd><br />
 
-* **Limit**: This field specifies the maximum number of documents to return from the query result. If this method isn't specified, it defaults to returning 10 documents. For example, you can dynamically bind your [table widget's](/reference/widgets/table) page size value to limit the number of documents returned:
-   ```sql
-   {{Table2.pageSize}}
-   ```
-
-* **Skip**: This field specifies the number of documents to skip before returning results. 
-
-   ```sql
-   {{(Table2.pageNo - 1) * Table_Mongo.pageSize}}
-   ```
-
-Server-side pagination in MongoDB limits the number of query results returned by the server and enables the client to fetch additional results as required. The `limit()` method sets the maximum number of documents to be returned in a single query result, while the `skip()` method specifies the number of documents to skip before starting to return results.
-
-You can refer to this [sample app](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd) to learn how to implement server-side pagination on the Table widget.
+  <dt><b>Skip</b></dt>
+  <dd>This field specifies the number of documents to skip before returning results. </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{{tableItems.pageOffset}}
+`}</pre></dd>
+  <dd>In the above examples for the <b>Limit</b> and <b>Skip</b> fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the Table widget. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
+</dl>
 
 ### Insert Documents
 
-This command inserts one or more documents and returns a document containing the status of all inserts. You can pass the below parameters to Insert Documents:
+This command inserts one or more documents and returns a document containing the status of all inserts. The following section lists all the fields for the **Insert Documents** command.
 
-* **Collection Name**: This field specifies the name of the MongoDB collection where you want to insert documents. 
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>The name of the target collection where you want to insert the documents.
+  </dd><br />
 
-   ```sql
-    movies
-   ```
-Suppose you want to add a new document to the "movies" collection, and you have columns for `_id`, `name`, and `rating`. To collect the data for the new record, you can create a [form](/reference/widgets/form) named `NewMovieForm` with the following fields:
-
-  * An input field called `idInput` for the `id`.
-  * A Select field called `ratingSelect` for the rating.
-  * An input field called `nameInput` for the name.
-
-Once the user fills out the form, you can extract the values of the form fields and use them to construct your query 
-
-* **Documents**: This field specifies the document or documents you want to insert into the collection. A document is a set of key-value pairs that represents an object in MongoDB. For example, to insert a new movie using input and select widget, you can write:
-
-   ```sql
-    [
-      { 
-         "_id": {{NewMovieForm.data.idInput}}, 
-         "name": {{NewMovieForm.data.nameInput}}, 
-         "rating": {{NewMovieForm.data.ratingSelect}}
-      }
-   ]
-   ```
-You can run this query via the `onClick` event of a [Button widget](/reference/widgets/button) to insert the data into your database.
+  <dt><b>Documents</b></dt>
+  <dd>Specifies an array of one or more documents you want to insert into the collection.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`[
+  { 
+    "_id": {{NewMovieForm.data.idInput}}, 
+    "name": {{NewMovieForm.data.nameInput}}, 
+    "rating": {{NewMovieForm.data.ratingSelect}}
+  }
+]`}</pre></dd>
+  <dd>In the above example, the query inserts a new movie using the data entered in the Form widget.</dd><br />
+</dl>
 
 ### Update Documents
 
-The Update command in MongoDB is used to modify existing documents in a collection based on a specified set of criteria, such as search conditions or filters. For example, if you want to change the `name` value of a document in your `movies` collection using a Table widget `Table2`. Create the `Update Documents` query as shown below:
+This command modifies the documents in a collection based on a specified set of filters. The following section lists all the fields available for the **Update Documents** command. 
 
-* **Collection Name**: This field specifies the name of the MongoDB collection where you want to update documents. For example, `movies`.
-* **Query**: This field specifies the search criteria or filters for the documents you want to update. In your Table widget, make the `name` column [Editable](/reference/widgets/table/inline-editing#editable). A new **Save/Discard** button column should have appeared in the table. Add the below code to Query field.
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>The name of the target collection where you want to update documents.
+  </dd><br />
 
-  ```sql
-  { 
-      "_id": {{Table2.selectedRow._id}} 
+  <dt><b>Query</b></dt>
+  <dd>Specifies the criteria that match the documents you want to update.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "_id": {{tableItems.selectedRow.id}} 
+}`}</pre></dd>
+  <dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the value in the <code>id</code> column of the row selected on the Table widget named <code>tableItems</code>.</dd><br />
+
+  <dt><b>Update</b></dt>
+  <dd>Specifies the modifications you want to make to the selected documents. 
+  </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  $set: {
+    "name":  {{tableItems.updatedRow.name}},
+    "rating": {{tableItems.updatedRow.rating}}
   }
-  ```
+}`}</pre></dd>
+  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/reference/widgets/table/inline-editing"><b>inline editing</b></a>.</dd><br />
 
-* **Update**: This field specifies the modifications you want to make to the selected documents. For example, to update the `title` field you can write: 
+  <dt><b>Limit</b></dt>
+  <dd>Specifies whether to delete single or multiple documents</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
+     <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
+    </ul>
+  </dd>  
+</dl>
 
-  ```sql
-    {
-      $set: {
-               "name":  {{Table2.updatedRow.name}}
-           }
-   }
-  ```
-
-* **Limit**: This field specifies the maximum number of documents to update. 
-
-In the Table's properties pane, open the column settings for the Save/Discard button column and set the button's `onClick` to run your **UPDATE** query. Also, bind the `OnSuccess` of your Save button click to refresh the Table data by executing the [Find Documents](#find-documents) query. This ensures that your Table widget displays updated data.
-
-MongoDB's multi update feature doesn't support replacement style updates. This means that you can't replace the entire document, but rather, you can only update a single field.
-
-To successfully run a multi update command in MongoDB, you can use the following syntax:
-
-```sql
-   { 
-      $set: { <field1>: <value1>, <field2>: <value2>, ... } 
-   }
-```
-
-You can add the `$set` command in the `update` input field.
-
-This updates all documents that match the ```query``` criteria and set the specified fields to the specified values.
-
-It's important to note that the ```$set``` operator is required in the update document when using the multi option. If the `$set` operator isn't used in an update command, no documents in the collection will be modified. For more information, see the [update many commands in MongoDB](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/) available on the official documentation.
 
 ### Delete Documents
 
-Delete Documents command removes one or more documents from a collection based on a specified set of criteria. 
+This command removes one or more documents from the collection based on specified filters. The following section lists all the fields available for the **Delete Documents** command.
 
-* **Collection Name**: This field specifies the name of the MongoDB collection from which you want to delete documents. 
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>The name of the target collection where you want to delete documents.
+  </dd><br />
 
+  <dt><b>Query</b></dt>
+  <dd>Specifies the criteria that match the documents to delete.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "rating": {{selectRating.selectedOptionValue}} 
+}`}</pre></dd>
+  <dd>In the above example, the query deletes all the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd><br />
 
-* **Query**: This field specifies the criteria or filters for selecting documents to delete. For example, to delete all documents with a "rating" field selected by user(4), you can specify:
-
-   ```sql
-   { "rating": {{select_rating.selectedOptionValue}} }
-   ```
-
-* **Limit**: This field lets you choose whether to delete a single document or multiple documents that match the query.
+  <dt><b>Limit</b></dt>
+  <dd>Specifies whether to delete single or multiple documents</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
+     <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
+    </ul>
+  </dd>  
+</dl>
 
 ### Count
 
-This command counts the number of documents in a collection or a view that match a specified set of criteria. 
+This command counts the number of documents in a collection that match a specified set of criteria. The following section lists all the fields available for the **Count** command.
 
-* **Collection Name**: This field specifies the name of the MongoDB collection or view that you want to count documents in. 
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>The name of the target collection where you want to count the documents.
+  </dd><br />
 
-
-* **Query**: This field specifies the criteria or filters for selecting the documents to count. For example, to count the number of documents in the `movies` collection where the release date is greater than `January 1st, 2021`, you can specify:
-
-   ```sql
-   { "release_dt": { $gte: {{DatePicker1.formattedDate}} }
-   ```
+  <dt><b>Query</b></dt>
+  <dd>This field specifies the criteria for selecting the documents to count.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "release_dt": { $gte: {{releaseDate.formattedDate}} 
+}`}</pre></dd>
+  <dd>In the above example, the query counts the documents in a <code>movies</code> collection where the release date is greater than the date picked in the Datepicker widget <code>releaseDate</code>.</dd>
+</dl>
 
 ### Distinct
 
-Distinct command is used to find the unique or distinct values for a specified field in a single collection.
+This command finds the unique or distinct values for a specified field across a single collection. The following section lists all the fields available for the **Distinct** command.
 
-* **Collection Name**: The name of the collection to query for distinct values.
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>Specifies the name of the target collection to query for distinct values.
+  </dd><br />
 
+  <dt><b>Query</b></dt>
+  <dd>Specifies the documents from which to retrieve the distinct values.</dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  "rating": {{selectRating.selectedOptionValue}} 
+}`}</pre></dd>
+  <dd>In the above example, the query retrieves distinct values from the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd><br />
 
-* **Query**: A query specifies documents from which to retrieve the distinct values. For example, to retrieve distinct values for the `multiplex` field where the multiplex is selected by the user(IMAX), you can specify:
+  <dt><b>Key</b></dt>
+  <dd> Specifies the name of the field for which to return distinct values.
+  </dd>
+</dl>
 
-   ```sql
-   { "multiplex": {{select_multiplex.selectedOptionValue}} } 
-   ```
-
-* **Key/Field**: The field for which to return distinct values. For example, to return distinct values for a field named `rating` in a collection named `movies`, you can specify:
-
-    ```bash
-    rating
-    ```
 
 ### Aggregate
 
-This command performs aggregation operations using the aggregation pipeline. The pipeline allows users to process data from a collection or other source with a sequence of stage-based manipulations. 
+This command allows users to process data records and return computed results. The aggregation framework provides several operators to perform a variety of operations like filtering, grouping, sorting, projecting, and calculating. See <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/"><b>Aggregation Pipeline Stages</b></a> for information on the aggregation operators. The following section lists all the fields available for the **Aggregate** command.
 
-* **Collection Name**: The name of the collection or view that serves as the input for the aggregation pipeline. 
+<dl>
+  <dt><b>Collection</b></dt>
+  <dd>Specifies the name of the target collection that serves as the input for the aggregation pipeline.
+  </dd><br />
 
-* **Array of Pipelines**: An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. 
+  <dt><b>Array of Pipelines</b></dt>
+  <dd>An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. </dd><br />
+  <dd><i>Example:</i></dd>
+  <dd><pre>{`{ 
+  [
+    { $project: { tags: 1 } },
+    { $unwind: "$tags" },
+    { $group: { _id: "$tags", count: { $sum : 1 } } }
+  ] 
+}`}</pre></dd>
+  <dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection.</dd><br />
 
-    ```bash
-    [
-       { $project: { tags: 1 } },
-       { $unwind: "$tags" },
-       { $group: { _id: "$tags", count: { $sum : 1 } } }
-   ]
-    ```
+  <dt><b>Limit</b></dt>
+  <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
+  </dd>
+</dl>
 
-The preceding example performs an aggregate operation on the articles' collection to calculate the count of each distinct element in the tags array that appears in the collection.
 
-### Raw command
+### Raw
 
-The Raw command allows you to write custom queries using the MongoDB database command syntax. To learn more about raw query and its usage in Appsmith, see [Raw Query Commands](/reference/datasources/querying-mongodb/mongo-syntax). 
+This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/reference/datasources/querying-mongodb/mongo-syntax) for more information. 
 
 ## Troubleshooting
-If you are experiencing difficulties connecting to a MongoDB in Appsmith, you can refer to the [MongoDB troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/mongodb-errors) for assistance. If you continue to have problems reach out on [Discord](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
 
-## Further reading
+[Mongo query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)<br />
+[Missing default database name](/help-and-support/troubleshooting-guide/query-errors#mongodb-name-can-not-be-null)
 
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database)
-* [Data access and binding](/core-concepts/data-access-and-binding)
+If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+[Data access and binding](/core-concepts/data-access-and-binding)
 
