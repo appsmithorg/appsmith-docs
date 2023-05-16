@@ -23,26 +23,26 @@ Follow these steps to upgrade your Appsmith instance:
 2. Open the `docker-compose.yml` file, and search for the `image:` key.
 3. Update the value of the `image:` key as below:
 
-``` yaml
-  services:
-    appsmith:
-    #highlight-next-line
-      image: index.docker.io/appsmith/appsmith-ee
-```
+  ``` yaml
+    services:
+      appsmith:
+      #highlight-next-line
+        image: index.docker.io/appsmith/appsmith-ee
+  ```
 4. Save the file.
 
 5. Recreate the instance with:
 
-```bash
-docker-compose up -d --force-recreate
-```
+  ```bash
+  docker-compose up -d --force-recreate
+  ```
 
 6. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, verify the upgrade with:
 
-```bash
-# verify the image name as (appsmith-ee) in use 
-docker ps
-```
+  ```bash
+  # verify the image name as (appsmith-ee) in use 
+  docker ps
+  ```
 You have successfully upgraded your Docker instance to the Business Edition. 
 
 7.  Log into your Appsmith account, and enter the license key to activate the instance.
