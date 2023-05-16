@@ -1,5 +1,6 @@
 ---
 description: Deploy Appsmith on a Kubernetes cluster
+toc_max_heading_level: 2
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -8,7 +9,14 @@ import TabItem from '@theme/TabItem';
 
 This page provides steps to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager.
 
-## Prerequisites
+## Install Appsmith
+
+Follow the steps below to install Appsmith on your Kubernetes cluster:
+
+<Tabs groupId="appsmithEditions" queryString="current-edition">
+  <TabItem label="Community Edition" value="communityEdition"> 
+
+### Prerequisites
 1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM
 2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
 3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
@@ -41,12 +49,9 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 </TabItem>
 </Tabs>
 
-## Install Appsmith
+### Deploy Appsmith
 
 Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-  <TabItem label="Community Edition" value="communityEdition"> 
 
   1. Add the Appsmith chart repository with:
 
@@ -76,7 +81,36 @@ Create a folder named `appsmith` on your machine for deployment and data storage
 To upgrade from Community Edition to Business Edition, follow the instructions available at [Upgrade to Business Edition for Kubernetes](/getting-started/setup/upgrade-to-business-edition/kubernetes).
 :::
 
-Follow the steps below to install Appsmith on your Kubernetes cluster:
+### Prerequisites
+1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM
+2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
+3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
+4. Follow the steps below to Configure the Kubernetes cluster:
+
+<Tabs groupId="configurations" queryString="current-configuration">
+ <TabItem label="AWS EKS" value="AWSEKS">
+
+  1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+  2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
+
+</TabItem>
+<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
+
+  1. [Configure cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) on Google Cloud Kubernetes.
+  2. Ensure that you have a default storage class running. If not, [set up a default storage class on Google Kubernetes Engine](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)[GKE].
+
+</TabItem>
+<TabItem label="Microk8s" value="Microk8s">
+
+  1. Set up Kubernetes by [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
+  2. Ensure that you have a default storage class running. If not, [enable storage class](https://microk8s.io/docs/command-reference#heading--microk8s-enable).
+    
+</TabItem>
+</Tabs>
+
+### Deploy Appsmith
+
+Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
 
 1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 
