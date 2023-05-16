@@ -1,89 +1,70 @@
 ---
-sidebar_position: 4.1
+description: >-
+  Setup OIDC using Auth0
 ---
+
 # Auth0
 
-[Auth0](https://auth0.com/) is an authentication and authorization as a service provider. To configure OpenID Connect(OIDC) within Appsmith using Auth0 as an OIDC provider, follow these steps:
+To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, follow the steps below:
+
+## Prerequisites
+
+1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **OIDC**.
+
+2. Copy the **Redirect URL** from the **OIDC** configuration page to add it later in the Auth0 settings. 
+
+<figure>
+  <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>OIDC configurations in Appsmith</i></figcaption>
+</figure>
+
+## Create application in Auth0
+
+1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. 
+2. In the **Create application** modal, select **Regular Web Application** and click **Create**.
+3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
+4. In the basic information section, copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
+5. Scroll down to the **Application URIs** and paste the **Redirect URL** copied earlier in the **Allowed Callback URLs** field.
+6. On the **Settings** tab, go to **Advanced Settings** > **Endpoints**. Copy the following URls from the OAuth section to add them later in the OIDC configurations in Appsmith:
+
+    a. **OAuth Authorization URL**
+
+    b. **OAuth Token URL**
+
+    c. **OAuth User Info URL**
+
+    d. **JSON Web Key Set**
+
+6. Click **Save Changes**.
+
+##  Register Auth0 in Appsmith
+
+To complete the OIDC configuration, you have to register the identity provider on Appsmith. Open the OIDC configurations in Appsmith (**Admin Settings > Authentication > OIDC**), and follow the steps below:
+
+1. Add the **Client ID** and **Client Secret** copied from the Auth0 application into the respective fields.
+
+2. Add the URLs copied from the Auth0 application into OIDC configurations in Appsmith as per the table below:
+
+| **Auth0 URLs**       |  **OIDC Fields** |
+| ----------------------- | --------------------- |
+| OAuth Authorization URL | Authorization URL     |
+| OAuth Token URL         | Token URL             |
+| OAuth User Info URL      | User Info URL         |
+| JSON Web Key Set              | JWK Set URL           |
+
+3. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes.
 
 :::info
-OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
+Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access additional user attributes, [configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes), and add them to the Scopes field in Appsmith's OIDC configurations.
 :::
 
-### Create application
+4. In the **Attributes** section, you have the option to specify which attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
 
-* Log in to your [Auth0](https://auth0.com/) account and go to **Applications**. (Please create an account if you don’t have one on [Auth0](https://auth0.com/)).
+Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
-![Navigate to Applications >> Applications >> click Create Application](/img/Auth0-NewApplication-SAML-Authentication-singlewebpage.png)
+After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML OIDC** button.
 
-* Click **+Create Application** and pick **Regular Web Applications** from the given options. The default name of the application is **`My App`**. You can change it as per your requirements.
-
-![](/img/Auth0-NewApplication-OIDC-RegularWebApp.png)
-
-* Open the newly created Auth0 App, go to the settings tab and -
-  * Add the Redirect URL (Copied from the [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)) in the following fields -
-
-![Redirect URL available at Appsmith >> Profile >> Admin Settings >> Authentication >> OIDC](/img/Appsmith-Admin-Settings-Authentication-OIDC-RedirectURL.png)
-
-* Application Login URL
-* Allowed Callback URLs
-
-![Add Appsmith Redirect URL to fields- Application Login URI & Allowed Callback URLs](/img/Auth0-Appsmith-RedirectURL.png)
-
-### Configure Auth0 fields in Appsmith
-
-To continue with the OIDC setup on Appsmith, navigate to Auth0 configurations and perform the following actions:
-
-* Copy the **Client ID**, and **Client Secret** and paste them into the OIDC configurations in Appsmith.
-
-![Add Client ID and Client Secret to the OIDC config on Appsmith](</img/Auth0-ClientId-Client_Secret.png>)
-
-* Go to **Advance Settings** and open the endpoints tab. Copy the required **OAuth URLs** and add them to your OIDC configurations. Add all the URLs copied from Auth0 to Appsmith.
-  * Configurations at Auth0
-
-![Auth0 OIDC Configurations](/img/Auth0-OIDC-Config-Setup.png)
-
-* Configuration at Appsmith
-
-![Appsmith OIDC Configurations](/img/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
-
-> `RS256` is the default Token Signing Algorithm used by Appsmith and most identity providers. If you have a custom setup, you can choose from one of the supported algorithms under the Advanced section of the Appsmith OIDC setup page. Please note, verifying tokens signed with the `HS256` algorithm isn't supported.
-
-### Configuring scopes for Auth0
-
-The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details (after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
-
-![Configure one or more scopes at Appsmith](/img/as_oidc_offline.png)
-
-#### What does Appsmith need as part of Scopes?
-
-Appsmith needs **openid** and **email** as mandatory scopes. It's recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
-
-:::info
-Enabling the `offline_access` scope enables your app to receive refresh tokens that extend the duration that your users have access to their resources. To read more, see the [Auth0 documentation](https://auth0.com/docs/secure/tokens/refresh-tokens).
-:::
-
-You can add more scopes if you wish, provided that they're available via Auth0.
-
-#### Auth0 scope
-
-Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access [additional user attributes, you’ll have to configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes) and add them to Appsmith as part of the Scope field.
-
-### Configuring username attributes for Auth0
-
-The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
-
-![Configure Username Attribute at Appsmith](/img/Appsmith-UsernameAttribute-Field.png)
-
-#### What does Appsmith need as a username attribute?
-
-Appsmith considers **email address** as **username**. Please ensure that you have added it as an attribute in the Username Attribute field. Please provide the **email** as the attribute name for configuring the username attribute for Auth0.
-
-### Complete OIDC setup
-
-* Save the changes and restart your application by clicking **SAVE & RESTART** button.
-
-![Complete the setup by clicking the "SAVE & RESTART" button](/img/Appsmith-OIDC-Setup-Complete.png)
-
-* You’ll see the **SIGN IN WITH OIDC SSO** on the Appsmith’s login screen.
-
-![SIGN IN WITH OIDC SSO - Available on the Login Screen](/img/Appsmith-SSO-OIDC-Available.png)
+<figure>
+  <img src="/img/Appsmith-Login-Screen-Shows-OIDC.png" style= {{width:"400px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>Login with OIDC SSO </i></figcaption>
+</figure>

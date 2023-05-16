@@ -6,48 +6,54 @@ sidebar_position: 4
 OpenID Connect (OIDC) is an authentication protocol built on OAuth 2.0 paradigm. You can use OIDC to securely sign in users to your application.
 
 :::info
-OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
-:::
-
-## Capture Redirect URL for OIDC configuration
-
-:::info
-You need to add the redirect URL to your preferred OIDC Provider’s settings.
-:::
-
-For OIDC configuration in Appsmith, follow the steps below (the below steps are irrespective of the SSO provider you choose):
-
-* On your Appsmith Application, go to **Profile > Admin Settings.**
-
-![Navigate to Profile and click on Admin settings](/img/Appsmith-Admin-Settings.png)
-
-* Navigate to **Authentication** and open the types of authentication available on Appsmith.
-
-![Click Authentication](</img/Appsmith-Admin_Settings-Authentication_(1).png>)
-
-* Select OIDC, click on **Enable**
-
-![Click enable to set up OIDC.](/img/Appsmith-Admin-Settings-Authentication-OIDC.png)
-
-* Copy the **Redirect URL**
-
-![Copy the Redirect URL](/img/Appsmith-Admin-Settings-Authentication-OIDC-RedirectURL.png)
-
-:::info
-Save the **`Redirect URL`** as you’ll need it to configure in OIDC Provider’s settings.
-:::
-
-:::info
-You can choose to integrate with any one of the following [OIDC providers](./#oidc-providers) by clicking on any of them below.
+OpenID Connect is available is only available in Appsmith's [**business edition**](https://www.appsmith.com/pricing). 
 :::
 
 ## OIDC providers
 
-Appsmith provides some popular OIDC integrations that you can choose from. Click the available providers to follow the exhaustive guide for integrating with them:
+Appsmith offers seamless integration with various popular OIDC providers. To get started, select one of the below-listed providers and follow the instructions to configure OIDC integration:
 
-
-* [Auth0](auth0.md)
-* [Ping Identity](ping-identity.md)
-* [Okta](okta.md)
-* [Active Directory](active-directory.md)
-
+<div class="containerBorder">
+<div class="containerGrid">
+        <div class="columnGrid column-one" align="center">
+            <div class="containerCol">
+                <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0">
+                <img class="containerImage" src="/img/auth0.png" alt="auth0-logo"/>
+                </a> 
+            </div> 
+            <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0">Auth0</a></b><br/>
+        </div>
+        <div class="columnGrid column-two" align="center">
+         <div class="containerCol">
+                <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory">
+                <img class="containerImage" src="/img/Azure-Active-Directory.png" alt="AD-logo"/>
+                </a>     
+            </div> 
+            <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory">Active Directory</a></b><br/>
+        </div>
+        <div class="columnGrid column-one" align="center">
+          <div class="containerCol">
+                <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta">
+                <img class="containerImage" src="/img/okta.png" alt="Okta-logo"/>
+                </a>   
+            </div> 
+            <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta">Okta</a></b>
+        </div>
+        <div class="columnGrid column-one" align="center">
+          <div class="containerCol">
+                <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity">
+                <img class="containerImage" src="/img/ping_identity.png" alt="ping-identity-logo"/>
+                </a>   
+            </div> 
+            <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity">Ping Identity</a></b>
+        </div>
+        <div class="columnGrid column-one" align="center">
+          <div class="containerCol">
+                <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito">
+                <img class="containerImage" src="/img/aws-cognito.png" alt="aws-cognito-logo"/>
+                </a>   
+            </div> 
+            <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito">AWS Cognito</a></b>
+        </div>
+</div>
+</div>
