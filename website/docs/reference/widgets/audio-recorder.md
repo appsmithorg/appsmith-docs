@@ -10,7 +10,7 @@ This page provides information on how to use the Audio Recorder widget to record
 To upload recorded audio to [Amazon S3](/reference/datasources/querying-amazon-s3):
 
 1. Click the **+** icon next to the **queries/js** and choose your S3 datasource.
-2. From the Commands drop-down, Select the method **Create a new file**, and pass the necessary parameters.
+2. Select the method **Create a new file** from the Commands drop-down, and pass the necessary parameters.
 3. In the content body, add the following:
 
 ```
