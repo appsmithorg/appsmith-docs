@@ -1,5 +1,6 @@
 ---
 sidebar_position: 11
+description: Connect Appsmith to an Oracle database and create queries.
 ---
 
 # Oracle
