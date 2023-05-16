@@ -1,6 +1,6 @@
 # Audio
 
-This page explains how to use the Audio widget to play MP3, WAV, OGG audio files. It also supports a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. 
+This page provides information on how to use the Audio widget to play MP3, WAV, OGG audio files. It also supports URLs from YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. 
 
 <VideoEmbed host="youtube" videoId="FhY6-yUixto" title="Using the Audio Widget" caption="Using the Audio Widget"/>
 
@@ -10,7 +10,7 @@ Properties allow you to edit the widget, connect it with other widgets and custo
 
 ### Widget properties
 
-These properties allow you to edit the Modal widget. All of these properties are present in the property pane of the widget.
+These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,7 +23,7 @@ These properties allow you to edit the Modal widget. All of these properties are
 
 These properties allow you to bind your widget with any other widget in queries or JS objects. For instance, you can use `Audio1.isVisible` to get the visibility status.
 
-| Reference Property | Data type | Description                                                                                                                                                    |
+| Property | Data type | Description                                                                                                                                                    |
 | ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **autoPlay**   |   Boolean  | Reflects the state of the widget's **Auto Play** setting.                                                                                 |
 | **playState**  |   String  | Shows whether the Audio widget is currently playing sound. Represented by a _(string)_ with value "NOT\_STARTED", "PLAYING," "PAUSED," or "ENDED." |
