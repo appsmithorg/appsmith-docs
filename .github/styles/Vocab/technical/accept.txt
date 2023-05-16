@@ -372,6 +372,8 @@ i
 Amazon S3
 http
 tcp
+twilio
+postgresql
 MONGODB
 apis
 gte
@@ -381,3 +383,4 @@ Brex
 Hasura
 Grammarly
 callouts
+
