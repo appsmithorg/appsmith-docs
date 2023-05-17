@@ -9,6 +9,11 @@ import TabItem from '@theme/TabItem';
 
 This page provides steps to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager.
 
+### Prerequisites
+1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM.
+2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
+3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
+
 ## Install Appsmith
 
 Follow the steps below to install Appsmith on your Kubernetes cluster:
@@ -16,11 +21,7 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem label="Community Edition" value="communityEdition"> 
 
-### Prerequisites
-1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM.
-2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
-3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
-4. Follow the steps below to Configure the Kubernetes cluster:
+1. Follow the steps below to Configure the Kubernetes cluster:
 
 <Tabs groupId="configurations" queryString="current-configuration">
  <TabItem label="AWS EKS" value="AWSEKS">
@@ -49,27 +50,25 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 </TabItem>
 </Tabs>
 
-### Deploy Appsmith
+  2. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
 
-Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
-
-  1. Add the Appsmith chart repository with:
+  3. Add the Appsmith chart repository with:
 
   ```bash
   helm repo add appsmith https://helm.appsmith.com
   ```
 
-  2. Load the Appsmith chart repository with:
+  4. Load the Appsmith chart repository with:
   ```bash
   helm repo update
   ```
 
-  3. Run the below command to deploy Appsmith:
+  5. Run the below command to deploy Appsmith:
   ```bash
   helm install appsmith appsmith/appsmith
   ```
 
-  4. Verify Appsmith installation with:
+  6. Verify Appsmith installation with:
   ```bash
   kubectl get pods
   ```
@@ -81,11 +80,7 @@ Create a folder named `appsmith` on your machine for deployment and data storage
 To upgrade from Community Edition to Business Edition, follow the instructions available at [Upgrade to Business Edition for Kubernetes](/getting-started/setup/upgrade-to-business-edition/kubernetes).
 :::
 
-### Prerequisites
-1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM
-2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
-3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
-4. Follow the steps below to Configure the Kubernetes cluster:
+1. Follow the steps below to Configure the Kubernetes cluster:
 
 <Tabs groupId="configurations" queryString="current-configuration">
  <TabItem label="AWS EKS" value="AWSEKS">
@@ -108,35 +103,33 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 </TabItem>
 </Tabs>
 
-### Deploy Appsmith
+2. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 
-Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
+3. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
 
-1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
-
-2. Add the Appsmith chart repository with:
+4. Add the Appsmith chart repository with:
 
 ```bash
 helm repo add appsmith-ee https://helm-ee.appsmith.com
 ```
-3. Load the Appsmith chart repository with:
+5. Load the Appsmith chart repository with:
 
 ```bash
 helm repo update
 ```
-4. Run the below command to deploy Appsmith:
+6. Run the below command to deploy Appsmith:
 
 ```bash
 helm install appsmith appsmith-ee/appsmith
 ```
 
-5. Verify Appsmith installation with:
+7. Verify Appsmith installation with:
 
 ```bash
 kubectl get pods
 ```
 
-6. Log into your Appsmith account, and enter your license key to activate the instance.
+8. Log into your Appsmith account, and enter your license key to activate the instance.
 
 
 </TabItem>
