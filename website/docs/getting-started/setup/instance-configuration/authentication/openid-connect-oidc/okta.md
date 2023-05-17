@@ -1,6 +1,6 @@
 ---
 description: >-
-  Setup OIDC using Auth0
+  Setup OIDC using Okta
 ---
 
 # Okta
@@ -9,7 +9,7 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 
 ## Prerequisites
 
-1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **OIDC**.
+1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on **OIDC**.
 
 2. Copy the **Redirect URL** from the **OIDC** configuration page to add it later in the Auth0 settings. 
 
