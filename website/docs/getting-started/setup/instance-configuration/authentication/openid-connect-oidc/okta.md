@@ -1,115 +1,81 @@
 ---
-sidebar_position: 4.3
+description: >-
+  Setup OIDC using Auth0
 ---
+
 # Okta
 
-Okta is an Identity-as-a-Service (IDaaS) provider. To configure OpenID Connect (OIDC) within Appsmith using Okta, follow these steps:
+To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, follow the steps below:
 
-:::info
-OpenID Connect is available **only in the** [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**, and only the **Superuser** of your **Appsmith Instance** can set up **OIDC**.
-:::
+## Prerequisites
 
-### **Create Application**
+1. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **OIDC**.
 
-* Log in to your [Okta Developer Account](https://developer.okta.com) and go to **Applications**. (Please create an account if you don’t have one).
+2. Copy the **Redirect URL** from the **OIDC** configuration page to add it later in the Auth0 settings. 
 
-![Create a new app on Okta for SSO Configuration](/img/Okta-Create-Application.png)
+<figure>
+  <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>OIDC configurations in Appsmith</i></figcaption>
+</figure>
 
-* Click **Create App integration**. In Create App integration window, choose **OIDC** as the Sign-in method and **Web application** as the Application type. Click **Next**.
+## Create application in Okta
 
-![New App Configurations](/img/Okta-Create-App-Integration-Config.png)
+1. Log in to your [Okta](https://www.okta.com/) account and click **Admin** from the top right corner.
+2. On the **Get started with Okta** page, click **Add App** for **Use single sign on**.
+3. On the **Browse App Integration Catalog** page, click **Create New App**. 
+4. A pop-up titled **Create a new app integration** appears. Choose **OIDC - OpenID Connect** as the Sign-in method and select Application type as **Web Application**.
+5. On the **New Web App Integration** page, go to the general settings:
 
-* In the **General settings** of the newly created App Integration:
-  * Give your App integration a meaningful name (Optional.)
+  a. Add a name for your app in the **App integration name** field.
 
-![New App - General Settings](/img/as_okta_edited.png)
+  b. Select **Authorization Code** and **Refresh Token** from the options in the **Grant type** section.
 
-* Add the redirect URL (Copied from the [OIDC window in Appsmith’s Admin Settings](./#capture-redirect-url-for-sso-configuration)) in the **Sign-in redirect URL** field.
+  c. Add the Redirect URL in the **Sign-in redirect URIs** field.
 
-![Redirect URL available at Appsmith >> Profile >> Admin Settings >> Authentication >> OIDC](/img/Appsmith-Admin-Settings-Authentication-OIDC-RedirectURL.png)
+  d. Scroll down to the **Assignments** section and pick an option from **Controlled access** configure the Accessibility of this application as required.
 
-You can add multiple redirect URLs.
+  e. Click **Save**.
 
-![Okta - Sign-in redirect URIs](/img/Okta-Sign-in-redirect-URis.png)
+6. On your new application, go to the **General** tab, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
+7. Open your account dropdown from the navigation bar, and copy your **Okta domain** that is mentioned below your Email. 
+8. Add **/.well-known/openid-configuration** at the end of your **Okta domain**, open this modified URL in your browser and copy the following URLs from that page:
 
-* Under Assignment, configure the Accessibility of this App as required.
+  a. **authorization_endpoint**
 
-![Configure Assignments](/img/Okta-Assignments.png)
+  b. **token_endpoint**
 
-* Click **Save**. This action creates the app integration and opens the settings page to configure additional options.
+  c. **userinfo_endpoint**
 
-### Configure Okta fields in Appsmith
+  d. **jwks_uri**
 
-To continue with the OIDC setup on Appsmith, navigate to the fields on the Okta configurations, and perform the actions as mentioned below:
+##  Register Okta in Appsmith
 
-*   On the Okta Application homepage, go to the **General** tab:
+To complete the OIDC configuration, you have to register the identity provider on Appsmith. Open the OIDC configurations in Appsmith (**Admin Settings > Authentication > OIDC**), and follow the steps below:
 
-    * Copy the **Client ID** and **Client Secret** and paste them into the **OIDC** configurations in Appsmith.
+1. Add the **Client ID** and **Client Secret** copied from the Auth0 application into the respective fields.
 
+2. Add the URLs copied from the `<your-okta-domain>/.well-known/openid-configuration` page into OIDC configurations in Appsmith as per the table below:
 
-
-![Client ID, Client Secret, and Okta Domain](</img/Screenshot_2022-07-18_at_11.45.21_AM.png>)
-
-* **Configuration at Okta**
-  * Copy your Okta domain URL, attach <mark >`/.well-known/openid-configuration`</mark> to it, and open this modified URL in your browser.
-
-```
-<your_okta_domain>/.well-known/openid-configuration
-```
-
-<VideoEmbed host="youtube" videoId="dgDhBUXKA6s" title="Get Okta Configurations" caption="Get Okta Configurations"/>
-
-* **Configuration at Appsmith** - Add all the configurations from the above URL in OIDC Configurations on Appsmith. Refer to the below table that shows field mapping:
-
-| **Fields (Okta)**       | **Fields (Appsmith)** |
+| **Auth0 URLs**       |  **OIDC Fields** |
 | ----------------------- | --------------------- |
-| authorization\_endpoint | Authorization URL     |
-| token\_endpoint         | Token URL             |
-| Userinfo\_endpoint      | User Info URL         |
-| Jwks\_uri               | JWK Set URL           |
+| authorization_endpoint | Authorization URL     |
+| token_endpoint         | Token URL             |
+| userinfo_endpoint      | User Info URL         |
+| jwks_uri              | JWK Set URL           |
 
-![Appsmith - OIDC Setup](/img/Appsmith-Admin-Settings-Authentication-OIDC-Setup.png)
-
-> `RS256` is the default Token Signing Algorithm used by Appsmith and most identity providers. If you have a custom setup, you can choose from one of the supported algorithms under the Advanced section of the Appsmith OIDC setup page. Please note, verifying tokens signed with the `HS256` algorithm isn't supported.
-
-### Configure scopes for Okta
-
-The scope defines the OpenID Connect (OIDC) scopes that allow you to authorize the access of user details ( after a user is successfully authenticated) like name, email, profile picture, and more. Each scope maps to a set of user attributes and returns its value. Just below the **JSON Web Key Set,** you’ll see the **Scope** field:
-
-![Configure Scopes at Appsmith](/img/as_oidc_offline.png)
-
-#### What does Appsmith need as part of Scopes?
-
-Appsmith needs **openid** as a mandatory scope. It's also highly recommended to use the **offline_access** scope to avoid errors related to expired access tokens and excessive re-login requests.
+3. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes.
 
 :::info
-Enabling the `offline_access` scope enables your app to receive refresh tokens that extend the duration that your users have access to their resources. To read more, see the [Okta documentation](https://developer.okta.com/docs/reference/api/oidc/#scopes).
+Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access additional user attributes, [configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes), and add them to the Scopes field in Appsmith's OIDC configurations.
 :::
 
-You can add more scopes if you wish, provided that they're available via Okta.
+4. In the **Attributes** section, you have the option to specify which attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
 
-#### Okta scope
+Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
-Okta provides a number of [configurable scopes](https://developer.okta.com/docs/guides/implement-oauth-for-okta/main/) that can be granted based on your business requirements. Navigate to **Okta API Scopes**, where you’ll be able to grant all or selected scopes.
+After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML OIDC** button.
 
-![Okta Scope Set up](/img/Okta-Scopes.png)
-
-### Configure username attributes for Okta
-
-The username attributes define the attributes used as usernames for authentication. You can add the attribute to this field that you consider for logging.
-
-![Appsmith Username Attribute](/img/Appsmith-UsernameAttribute-Field.png)
-
-#### What does Appsmith need as a username attribute?
-
-Appsmith considers **email address** as **username**. Please ensure that you have added it as an attribute in the Username Attribute field. Please provide **email** as the attribute name for configuring the username attribute for Okta.
-
-### Complete OIDC setup
-
-* Save the changes and restart your application by clicking **SAVE & RESTART** button.
-
-![Click the "SAVE & RESTART" button to complete the setup](/img/Appsmith-OIDC-Setup-Complete.png)
-
-* You’ll see the **SIGN IN WITH OIDC SSO** on the Appsmith’s login screen.
-
-![SIGN IN WITH OIDC SSO - Available on the Login Screen](/img/Appsmith-SSO-OIDC-Available.png)
+<figure>
+  <img src="/img/Appsmith-Login-Screen-Shows-OIDC.png" style= {{width:"400px", height:"auto"}} alt="Metadata URL"/>
+  <figcaption align = "center"><i>Login with OIDC SSO </i></figcaption>
+</figure>
