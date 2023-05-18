@@ -4,216 +4,102 @@ sidebar_position: 11
 
 # Oracle
 
-This page describes how to connect your application to your Oracle databases and use queries to manage its content.
+This page gives information to connect Appsmith to an Oracle database and to and to read and write data in your applications.
 
-## Configuration
+## Connect Oracle
+
+:::caution important
+If you are a self-hosted user, you must whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith deployment on your database instance before connecting to a database. See [Managing Internet Protocol Allowlist and Blocklist Rules](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/mmocs/managing-internet-protocol-whitelist-and-blacklist-rules.html) for more details.
+:::
+
+### Connection parameters
+
+The following section is a reference guide that provides a complete description of all the parameters to connect to an Oracle database.
 
 <figure>
   <img src="/img/oracle-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Oracle datasource." />
   <figcaption align="center"><i>Configuring an Oracle datasource.</i></figcaption>
 </figure>
 
-:::tip
-If you want to connect to a locally hosted database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+<dl>
+  <dt><b>Host Address</b></dt>
+  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. Appsmith connects to port `1521` by default if you do not specify one.</dd><br />
+
+  <dt><b>Service Name</b></dt>
+  <dd>The service name for your database instance. </dd><br />
+
+  <dt><b>Username</b></dt>
+  <dd>The username that you want to use to authenticate with the Oracle server.</dd><br />
+
+  <dt><b>Password</b></dt>
+  <dd>Password to use if the server demands password authentication.</dd><br />
+
+  <dt><b>SSL Mode</b></dt>
+  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+      <li><b>TLS:</b> Connection is encrypted but no client verification is done.</li>
+      <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
+    </ul>
+  </dd>
+</dl>
+
+## Query Oracle
+
+The following section provides examples of creating basic CRUD queries for Oracle.
+
+:::info
+For Oracle SQL syntax, see the official documentation [**Oracle SQL Language Reference**](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Basic-Elements-of-Oracle-SQL.html#GUID-41D065C3-3449-4DAE-B2D8-4DF256FFC88A).
 :::
 
-To connect to your database, Appsmith needs the following parameters:
-
-* **Host Address:** Provide the hostname or IP address of your database server. If you are connecting to a self-hosted database, see [this guide](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
-
-* **Port:**  Provide the port on which to connect to your database.
-
-* **Service Name:** Provide the service name for your database instance.
-
-* **Authentication:** Provide the **Username** and **Password** for the user with which you are connecting to the database.
-
-* **SSL Mode:** choose one of the following modes to set whether your queries use SSL to connect:
-  * **TLS:** Appsmith attempts to connect using TLS.
-  * **Disabled:** Appsmith won't attempt an SSL connection.
-
-:::caution important
-If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database.
-
-18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
-:::
-
-## Select
-
-Use a `SELECT` statement to retrieve data from a table:
+### Fetch data
 
 ```sql
-SELECT * FROM users FETCH FIRST 10 ROWS ONLY;
+SELECT * FROM users OFFSET {{ UsersTable.pageOffset }} ROWS FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY ;
 ```
 
-It's highly recommended to include statements like `FETCH 10 ROWS ONLY` to prevent querying huge amounts of data at once. Use this along with `OFFSET` to paginate your data.
+In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
 
----
-
-#### Example
-
-> Fetch all records from a table `users`, 10 records at a time, and put them into a Table widget `UsersTable`.
-
-* Create a query called `FetchUsers` based on your Oracle datasource, and a [Table widget](/reference/widgets/table) on the canvas called `UsersTable`.
-
-* This query is a `SELECT` operation, and uses properties from the Table widget along with to calculate which subset of the table to return for each page.
-
-  ```sql
-  SELECT * FROM users
-  ORDER BY employee_id
-  OFFSET {{ UsersTable.pageOffset }} ROWS
-  FETCH {{ UsersTable.pageSize }} ROWS ONLY;
-  ```
-
-* In your Table widget, turn on **Server side pagination**. In the **onPageChange** event, select the **Execute a query > FetchUsers** action. Now when the page buttons in the table header are clicked, the query fetches the correct page of data.
-
-* In the **Table Data** property of your Table widget, bind the result of your query:
-
-  ```javascript
-  // in the Table Data property of UsersTable
-  {{ FetchUsers.data }}
-  ```
-
-Your table should fill with data when the query is run.
-
-## Insert
-
-Use `INSERT` statements to add new records to your database tables. For example:
+### Insert data
 
 ```sql
 INSERT INTO users
-  (name, date_of_birth, employee_id)
+  (name, gender, email)
 VALUES
-  ('Alan Lee', '1989/11/2', 1009 );
+(
+  {{ NameInput.text }},
+  {{ GenderDropdown.selectedOptionValue }},
+  {{ EmailInput.text }}
+);
 ```
 
----
+In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
 
-#### Example
-
-> Create a new record in a table `users`, with columns for `name`, `date_of_birth`, and `employee_id`.
-
-* Create your query called `InsertNewUser` based on your Oracle datasource.
-
-* To gather data, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
-
-  ```json
-  {{
-    {
-      name: "",
-      date_of_birth: "",
-      employee_id: ""
-    }
-  }}
-  ```
-
-* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
-
-  ```javascript
-  // Submit button's onClick event
-  {{ InsertNewUser.run() }}
-  ```
-
-* Once these form fields are filled out, you can add their values to your query's SQL statement as below:
-
-  ```sql
-  INSERT INTO users
-    (name, date_of_birth, employee_id)
-  VALUES
-    (
-      {{ NewUserForm.formData.name }},
-      {{ NewUserForm.formData.date_of_birth }},
-      {{ NewUserForm.formData.employee_id }}
-    );
-
-  ```
-
-When the Submit button is clicked, your query is executed and the new record is inserted into your table.
-
-## Update
-
-Use `UPDATE` statements to change the values of existing records in your database:
+### Update data
 
 ```sql
 UPDATE users
-SET name = 'Allen Lee'
-WHERE employee_id = 1009;
+  SET email = '{{EmailInput.text}}'
+  WHERE id = {{ UserTable.selectedRow.id}};
 ```
 
----
+In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `UsersTable` is the Table widget where the user selects the row to update the user's email.
 
-#### Example
-
-> Modify a record in a table `users`, with columns for `name`, `date_of_birth`, and `employee_id`.
-
-* Create your query called `UpdateUser` based on your Oracle datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another `SELECT` query.
-
-* Create a [JSON Form widget](/reference/widgets/json-form) to use for submitting your updated values. Add **Source Data** to the JSON Form to create input fields. Reference the `selectedRow` of `UsersTable` to pre-fill the form fields:
-
-  ```json
-  {{
-    {
-      name: UsersTable.selectedRow.name,
-      date_of_birth: UsersTable.selectedRow.date_of_birth
-    }
-  }}
-  ```
-
-  You may want to remove any field that's used as a unique identifier for your record; in this case, `employee_id` isn't in the form because it's unique to each user and is used to identify them in the dataset.
-
-* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
-
-  ```javascript
-  // Submit button's onClick event
-  {{ UpdateUser.run() }}
-  ```
-
-* To add your modified row data to your query, reference them in your SQL statement:
-
-  ```sql
-  UPDATE users
-  SET
-    name = {{ UpdateUserForm.formData.name }},
-    date_of_birth = {{ UpdateUserForm.formData.date_of_birth }}
-  WHERE employee_id = {{ UsersTable.selectedRow.employee_id }};
-  ```
-
-When the Submit button is clicked, your query is executed and the record is updated in your table.
-
-## Delete
-
-Use `DELETE` statements to delete records from your table:
+### Delete data
 
 ```sql
-DELETE FROM users
-WHERE employee_id = 1009;
+DELETE FROM users WHERE id = {{tableUsers.selectedRow.id}};
 ```
 
----
+In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
 
-#### Example
+## Prepared statements
 
-> Delete a record from a table `users`.
+Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
 
-* Create your query called `DeleteUser` based on your Oracle datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your table data from a `SELECT` query.
+## See also
 
-* Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
-
-  ```javascript
-  // in the Delete button's onClick event
-  {{ DeleteUser.run() }}
-  ```
-
-* To delete a specific record, you should reference it with a uniquely identifying value, such as its `employee_id` in this case. In your `DeleteUser` query, bind the `employee_id` value of the Table's selected row:
-
-  ```sql
-  DELETE FROM users
-  WHERE employee_id = {{ UsersTable.selectedRow.employee_id }};
-  ```
-
-Now when the button is clicked, the query is run and the corresponding row is deleted from your table.
-
-## Further reading
-
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
-* [Table widget](/reference/widgets/table)
-* [Form widget](/reference/widgets/form)
+[Data access and binding](/core-concepts/data-access-and-binding)

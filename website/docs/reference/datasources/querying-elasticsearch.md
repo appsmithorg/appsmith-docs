@@ -1,93 +1,164 @@
 ---
 sidebar_position: 5
+description: Connect Appsmith to your Elasticsearch data and create queries.
 ---
 
 # Elasticsearch
 
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+This page describes how to connect to your Elasticsearch database and query it from your Appsmith app.
+
+## Connect Elasticsearch
+
+:::caution 
+If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. For instructions on IP Filtering in Elasticsearch, see the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ip-filtering.html).
 :::
 
-## Connection settings
+### Connection parameters
 
-The Elasticsearch plugin requires two pieces of information to establish a connection.
+The following is a reference guide that provides a description of the parameters for connecting to Elasticsearch.
 
-![Click to expand](/img/elasticsearch-datasource-form.png)
+<figure>
+  <img src="/img/elasticsearch-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Connect to Elasticsearch"/>
+  <figcaption align = "center"><i>Connect to Elasticsearch</i></figcaption>
+</figure>
 
-* **Host Address / Port\*:** Fill in the elastic search instance's address and port. This field supports multiple endpoints if that be the need.
-* **Username / Password:** The authentication detail for the elastic search instance. The password for your data source is encrypted when it is stored within the Appsmith database.
-* **Authorization Header:** In case you choose to connect to your instance with another mechanism, you can use the `Authorization Header` field. This field is only considered when the `Username` and `Password` fields are empty.
+<dl>
+  <dt><b>Host URL</b></dt>
+  <dd>The network location where your Elasticsearch data is hosted. This can be a domain name or an IP address. To connect to a local database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
-After filling up the fields as described, click the "Test" button to verify the configuration and click **Save**.
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. </dd><br />
 
-## Querying Elasticsearch
+  <dt><b>Username/Password for Basic Auth</b></dt>
+  <dd>The account credentials used to log in to Elasticsearch.</dd><br />
 
-Elasticsearch supports a rich set of [REST APIs](https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html) that can be accessed using the Elasticsearch plugin in Appsmith. The plugin itself supports all requests that would use the `GET`, `POST`, `PUT`, or `DELETE` HTTP methods. These APIs support single as well as bulk queries, some of which are demonstrated below. Do note the leading `/` that needs to be added for each of these requests.
+  <dt><b>Authorization Header</b></dt>
+  <dd>Instead of the username/password fields, you can provide an <b>Authorization Header</b> to authenticate your queries. This field is only used when the <b>Username/Password for Basic Auth</b> fields are empty.</dd><br />
+</dl>
 
-:::tip
-While Elasticsearch has a comprehensive reference list for its APIs, please make sure that you refer to specific documentation by your provider for requests that may or may not be applicable.
+## Query Elasticsearch
+
+The following section provides examples of creating basic CRUD queries to Elasticsearch.
+
+:::info
+For details on building more complex queries, see the [Elasticsearch Document API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html).
 :::
 
-### Creating a single document
+<dl>
+  <dt><b>Method</b></dt>
+  <dd>The HTTP method to use for your query.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+      <li><b>GET:</b> Method used for requesting and fetching data.</li>
+      <li><b>POST:</b> Method used for creating or updating records.</li>
+      <li><b>PUT:</b> Method used for creating or updating records.</li>
+      <li><b>DELETE:</b> Method used for deleting records.</li>
+    </ul>
+  </dd>  
 
-As part of the Document API, you can create a single new document by using the POST URI `/{index}/_doc/{id}` with a JSON body that represents the document. For instance, the following request creates a document in the `movies` index with an `id` of 1.
+  <dt><b>Path</b></dt>
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation. For example: <code>/users/_search</code> is the endpoint used for searching the <code>users</code> index.</dd><br />
 
+  <dt><b>Body</b></dt>
+  <dd>The body content of your query.</dd><br />
+</dl>
+
+### Search documents
+
+Queries run on top of indexed documents can be configured using the `GET` method. 
+
+```json
+// Path
+/users/_search
 ```
-Path: /movies/_doc/1
-Body:
+
+```javascript
+// Body
 {
-    "title": "Castle in the Sky",
-    "director": "Hayao Miyazaki",
-    "producer": "Isao Takahata",
-    "release_date": "1986",
-    "rt_score": "95"
+  "query": {
+    "match": {
+      "user.name": {{ UsersTable.searchText }}
+    }
+  }
 }
 ```
 
-### Creating multiple documents
+The example above searches the `users` index for a `name` matching your user input from a Table widget called `UsersTable`.
 
-Bulk additions can be done using the POST endpoint `/_bulk`, with a request body that specifies the index for each document separately as shown below. The following request adds 4 more documents in addition to the single indexed document that was added in the previous request.
+### Create a document
 
-```
-Path: /_bulk
-Body:
-{"index": {"_index": "movies", "_id": "2"}}
-{"title":"Grave of the Fireflies", "director":"Isao Takahata", "producer":"Toru Hara", "release_date":"1988", "rt_score":"97"}
-{"index": {"_index": "movies", "_id": "3"}}
-{"title": "My Neighbor Totoro", "director": "Hayao Miyazaki", "producer": "Hayao Miyazaki", "release_date": "1988", "rt_score": "93"}
-{"index": {"_index": "movies", "_id": "4"}}
-{"title": "Kiki's Delivery Service", "director": "Hayao Miyazaki", "producer": "Hayao Miyazaki", "release_date": "1989", "rt_score": "96"}
-{"index": {"_index": "movies", "_id": "5"}}
-{"title": "Only Yesterday", "director": "Isao Takahata", "producer": "Toshio Suzuki", "release_date": "1991", "rt_score": "100"}
+You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated.
+
+```json
+// Path
+/users/_doc/
 ```
 
-### Retrieving a single document
-
-A single document can be accessed using its `id` within an index using a GET request that has the following path:
-
-```
-Path: /movies/_doc/2
-```
-
-### Searching through documents
-
-Queries run on top of indexed documents can be configured using the GET method, without a JSON body. The following search query scans through the `movies` index created previously to return documents that match the query string.
-
-```
-Path: /movies/_search?q=Hayao%20Miyazaki
+```javascript
+//Body
+{
+    "name": {{ NewUserForm.data.Name }},
+    "email": {{ NewUserForm.data.Email }},
+    "gender": {{ NewUserForm.data.Gender }},
+}
 ```
 
-### Deleting a document
+Above, user input is collected with a Form widget called `NewUserForm`.
 
-Deleting documents only requires a reference to the relevant `id` field that is sent across in a DELETE request. The request below returns the deleted resource if it exists.
+#### Create multiple documents
 
+To create a batch of documents at once, use the `POST` method with the `/_bulk` endpoint:
+
+```json
+// Path
+/_bulk/
 ```
-Path: /movies/_doc/5
+
+In the body, add a line of metadata followed by a line of record data:
+
+```javascript
+//Body
+{"index": {"_index": "users"}}
+{"name":"Reyna", "email":"sunil@example.com", "gender":"female"}
+{"index": {"_index": "users"}}
+{"name":"Aly", "email":"aly@example.com", "gender":"female"}
+{"index": {"_index": "users"}}
+{"name":"Sunil", "email":"sunil@example.com", "gender":"male"}
 ```
 
-## Using queries in applications
+### Update a document
 
-Once you have successfully run a Query, you can use it in your application to
+A single document can be updated using its `id` within an index using a `POST` request. 
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+```javascript
+// Path
+/users/_update/{{ UsersTable.selectedRow.id }}
+```
+
+```javascript
+// Body
+{
+  "doc": {
+    "name": {{ UpdateUserForm.data.Name }}
+  }
+}
+```
+
+Above, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget.
+
+This performs a partial update, where the properties you supply are added to the document; you don't need to add ones that have not changed.
+
+### Delete a document
+
+A single document can be deleted using its `id` within an index using the `DELETE` method.
+
+```javascript
+// Path
+/users/_doc/{{ UsersTable.selectedRow.id }}
+```
+
+Above, the record with its `id` is selected from a Table widget called `UsersTable`.
+
+## See also
+
+[Data access and binding](/core-concepts/data-access-and-binding)
