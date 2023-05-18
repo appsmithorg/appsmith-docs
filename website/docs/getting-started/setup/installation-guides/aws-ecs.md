@@ -199,7 +199,7 @@ Some common errors that you may face during installation:
 * [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) 
 * [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
 
-If you continue to face issues, contact the support team using the [chat widget](javascript:void(window.intercom('show'))) at the bottom right of this page.
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## Further reading
 

@@ -1,6 +1,6 @@
 # Map
 
-This page guides you on how to use the Map widget(powered by Google Maps API) to display location data and enable users to add markers, search, and select locations on the map.
+This page explains how to use the Map widget(powered by Google Maps API) to display location data and enable users to add markers, search, and select locations on the map.
 
 :::info IMPORTANT
 If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. For more information, see [Configuring Google Maps](/getting-started/setup/instance-configuration/google-maps).
@@ -40,7 +40,7 @@ This would display markers at the specified coordinates with the specified title
 Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Default markers** property.
 
 ---
-**Example**: suppose you want to display the location of a user when you select a row in a table.
+**Example 1**: suppose you want to display the location of a user when you select a row in a table.
 
 1.  Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
 
@@ -63,17 +63,7 @@ Additionally, you can display dynamic data from queries or JS functions by bindi
 ```
 This creates a map marker using the latitude and longitude values from the database. In addition, the marker is given a title and is displayed in blue color.
 
-
-
-#### Display multiple markers 
-
-You can use the JSON format to add multiple markers with varying properties, and also allow users to add their markers with the **Create new marker** property. 
-
-This is useful when you want to visualize and compare the geographic distribution of data, such as customer locations or store locations.
-
----
-**Example**: suppose you want to display all the locations available in the users' database.
-
+**Example 2**:  suppose you want to display multiple markers on a Map using the locations from the users' database.
 
 To do this, you can use the`fetchUserData` query to retrieve the data and then **transform the data** into an array of objects containing latitude, longitude, and title properties using a `map()` function, and then set it in the **Default markers** property to display all the locations together on the map.
 
