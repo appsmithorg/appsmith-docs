@@ -4,13 +4,13 @@ description: >-
 ---
 # Active Directory
 
-To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as a OIDC provider, follow the steps below:
+To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as an OIDC provider, follow the steps below:
 
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on  **OIDC**.
 
-2. Copy the **Redirect URL** from the **OIDC** configuration page to add it later in the Active Directory settings. 
+2. Copy the **Redirect URL** from the **OIDC** configuration page to add it when creating the application in Active Directory. 
 
 <figure>
   <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="OIDC configurations"/>
@@ -90,7 +90,7 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. To add more scopes, [configure them on Active Directory](#configure-scopes-on-active-directory) and then add them to the OIDC configurations in Appsmith. 
 
-5. In the **Attributes** section, add the attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
+5. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 

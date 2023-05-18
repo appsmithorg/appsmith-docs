@@ -11,7 +11,7 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 
 1. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on **OIDC**.
 
-2. Copy the **Redirect URL** from the **OIDC** configuration page to add it later in the Auth0 settings. 
+2. Copy the **Redirect URL** from the **OIDC** configuration page to add it when creating the application in Okta.
 
 <figure>
   <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="OIDC configurations"/>
@@ -63,7 +63,7 @@ To complete the OIDC configuration, you have to register the identity provider o
   | **User Info URL**      | userinfo_endpoint         |
   | **JWK Set URL**             |  jwks_uri          |
 
-3. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. To add more scopes, [configure them on Okta](https://developer.okta.com/docs/guides/configure-user-scoped-account-management/main/#grant-the-required-scopes) and then add them to the OIDC configurations in Appsmith. 
+3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information, see [Okta API scopes](https://developer.okta.com/docs/guides/configure-user-scoped-account-management/main/#grant-the-required-scopes).
 
 4. In the **Attributes** section, add the attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
 
