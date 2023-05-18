@@ -3,10 +3,10 @@ sidebar_position: 4
 ---
 # OpenID Connect SSO
 
-OpenID Connect (OIDC) is an authentication protocol built on OAuth 2.0 paradigm. You can use OIDC to securely sign in users to your application.
+Appsmith provides a way to integrate with OpenID Connect (OIDC), enabling the users to sign in to the Appsmith account using their OIDC identity providers.
 
 :::info
-OpenID Connect is available is only available in Appsmith's [**business edition**](https://www.appsmith.com/pricing). 
+OpenID Connect is available is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing). 
 :::
 
 ## OIDC providers
