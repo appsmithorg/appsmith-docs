@@ -4,13 +4,13 @@ description: >-
 ---
 # Active Directory
 
-To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as a SAML provider, follow the steps below:
+To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as a OIDC provider, follow the steps below:
 
 ## Prerequisites
 
 1. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on  **OIDC**.
 
-2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Active Directory settings. 
+2. Copy the **Redirect URL** from the **OIDC** configuration page to add it later in the Active Directory settings. 
 
 <figure>
   <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="OIDC configurations"/>
@@ -93,7 +93,7 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
-After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML OIDC** button.
+After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH OIDC SSO** button.
 
 <figure>
   <img src="/img/Appsmith-Login-Screen-Shows-OIDC.png" style= {{width:"400px", height:"auto"}} alt="OIDC-login"/>
