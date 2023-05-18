@@ -65,7 +65,7 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information, see [Okta API scopes](https://developer.okta.com/docs/guides/configure-user-scoped-account-management/main/#grant-the-required-scopes).
 
-4. In the **Attributes** section, add the attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
+4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
