@@ -37,7 +37,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
   - **OAuth Token URL**
 
   - **OAuth User Info URL**
-  
+
   - **JSON Web Key Set**
 
 6. Click **Save Changes**.
@@ -57,9 +57,9 @@ To complete the OIDC configuration, you must register the identity provider on A
       | **User Info URL**      |  OAuth User Info URL         |
       | **JWK Set URL**           | JSON Web Key Set             |
 
-3. In the **Scopes** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information on scopes, see [OpenID Connect Scopes](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes).
+3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information on scopes, see [OpenID Connect Scopes](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes).
 
-4. In the **Username Attributes** box, specify the name of the claim which represents the email of the user. The default value is `email`.
+4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
