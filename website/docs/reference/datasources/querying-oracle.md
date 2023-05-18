@@ -12,7 +12,7 @@ This page gives information to connect Appsmith to an Oracle database and to and
 If you are a self-hosted user, you must whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith deployment on your database instance before connecting to a database. See [Managing Internet Protocol Allowlist and Blocklist Rules](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/mmocs/managing-internet-protocol-whitelist-and-blacklist-rules.html) for more details.
 :::
 
-## Connection parameters
+### Connection parameters
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an Oracle database.
 
