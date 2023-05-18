@@ -31,7 +31,7 @@ Appsmith offers seamless integration with various popular OIDC providers. To get
             </div> 
             <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory">Active Directory</a></b><br/>
         </div>
-        <div class="columnGrid column-one" align="center">
+        <div class="columnGrid column-three" align="center">
           <div class="containerCol">
                 <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta">
                 <img class="containerImage" src="/img/okta.png" alt="Okta-logo"/>
@@ -39,21 +39,27 @@ Appsmith offers seamless integration with various popular OIDC providers. To get
             </div> 
             <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta">Okta</a></b>
         </div>
+</div>
+
+<div class="containerGrid">
         <div class="columnGrid column-one" align="center">
-          <div class="containerCol">
+           <div class="containerCol">
                 <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity">
                 <img class="containerImage" src="/img/ping_identity.png" alt="ping-identity-logo"/>
                 </a>   
             </div> 
             <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity">Ping Identity</a></b>
         </div>
-        <div class="columnGrid column-one" align="center">
-          <div class="containerCol">
+        <div class="columnGrid column-two" align="center">
+            <div class="containerCol">
                 <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito">
                 <img class="containerImage" src="/img/aws-cognito.png" alt="aws-cognito-logo"/>
                 </a>   
             </div> 
             <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito">AWS Cognito</a></b>
         </div>
-</div>
+         <div class="columnGrid column-three" align="center">
+        </div>
+    </div>
+
 </div>
