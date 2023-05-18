@@ -5,13 +5,6 @@ import TabItem from '@theme/TabItem';
 
 This document explains how to use the Chart widget effectively to visualize and represent data to create admin panels, dashboards, and other data-driven applications. 
 
-Appsmith offers several built-in charts to represent your data. With the **Chart Type** property, you can select one of the following types to visualize your data:
-* Line Chart, 
-* Bar Chart, 
-* Pie Chart, 
-* Column Chart, 
-* Area Chart, and  
-* [Custom Chart](#custom-charts)
 
 <VideoEmbed host="youtube" videoId="MadSMf9SOaE" title="Using the Chart Widget" caption="Using the Chart Widget"/>
 
@@ -49,13 +42,6 @@ If the query fails and there is no default data specified, the chart doesn't ren
 :::
 
 
-
-
-### Plot multiple data series
-
-If you want to display multiple data series on a chart, you can do so by using the **Add Series** property. This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.
-
-For example, suppose you have data on the number of males and females who voted each year, you can use the **Chart Series** property to display both data sets on the same chart. This would allow you to compare the number of male and female voters over time.
 
 ---
 The following section demonstrates the different types of built-in charts for data visualization: 
@@ -159,29 +145,7 @@ In the **Custom Fusion Chart** property, you need to specify "type" for chart ty
 
 * **Type :** The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. 
 
-   ```json
-    //example 
-    "type": "column2d"
-   ```
-This creates a 2D column chart. The value of the `type` property is case-sensitive.
-
 * **Datasource :** The datasource defines the customization options and data points necessary for creating a chart. It consists of attributes such as chart and data, which may vary depending on the chart type.
-  
-    ```json
-  //example
-    {
-    "chart": {
-        "caption": "Monthly revenue for last year",
-        "xAxisName": "Month",
-        "yAxisName": "Revenues (In USD)",
-        "theme": "fusion"
-    },
-    "data": [
-        {
-            "label": "Jan",
-            "value": "420000"
-        },
-      ```
 
 You can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) documentation to learn more about these charts.
 
@@ -661,3 +625,86 @@ These are functions that are called when event listeners are triggered in the wi
 | **onDataPointClick** | Specifies an action to be performed when a user clicks on a data point in the chart. |
 
 
+---
+
+## Example 2 - all the details inside the table 
+
+**Add use-case/example/format inside the table description and create a section only if needed.**
+
+## Properties
+
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+
+### Widget properties
+
+These properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **Chart Type**               	| String    	| Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts). <br/> With the **Chart Type** property, you can select one of the following types to visualize your data: <br/>* Line Chart, <br/>* Bar Chart, <br/>* Pie Chart, <br/>* Column Chart, <br/>* Area Chart, and  <br/>* [Custom Chart](#custom-charts)                                                                    	|
+| **Series Title**             	| String    	| Sets the title for the current chart series.                                                                                                                                                                               	|
+| **Series Color**             	| String    	| Defines the color for the current chart series, allowing visual customization and differentiation between series.                                                                                                                                                                                 	|
+| **Series Data**              	| Array     	| Specifies the data points for the current chart series, providing the values to be plotted on the chart. The series data must be in a [specific format](#display-data). <br/> To display data in the Chart widget, you can use the **Series Data** property to provide the data in the following structure: <br/>`[  {    "x": "Product1",    "y": 20000  },  ...]`<br/><br/>If the data is not in the desired format, you can use JavaScript to transform the data by adding it to the Series Data property.<br/>`{{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}`<br/><br/>The code uses the `map()` function to transform each item in the `fetchUserData.data` array into an object with an `x` and a `y` key.                                                                                                                                                                          	|
+| **Add Series**              	| Button     	| This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.                                                                                                                                                                                    	|
+| **Title**                    	| String    	| Sets the text that appears at the top of the chart as a title.                                                                                                                                                                	|
+
+
+---
+
+## Example 3 - property table first 
+
+### Basic outline
+
+* Intro
+* Properties table
+* Use cases/examples
+* Troubleshooting
+
+## Properties
+
+Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+
+### Widget properties
+
+These properties are present in the property pane of the widget. The following table lists all the widget properties.
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **Chart Type**               	| String    	| Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).                                                                     	|
+| **Series Title**             	| String    	| Sets the title for the current chart series.                                                                                                                                                                               	|
+| **Series Color**             	| String    	| Defines the color for the current chart series, allowing visual customization and differentiation between series.                                                                                                                                                                                 	|
+| **Series Data**              	| Array     	| Specifies the data points for the current chart series, providing the values to be plotted on the chart. The series data must be in a [specific format](#display-data).                                                                                                                                                                             	|
+| **Add Series**              	| Button     	| This feature allows you to populate the chart with different sets of data and customize various aspects of its appearance, such as colors and labels, to create a visually appealing and informative chart.                                                                                                                                                                                    	|
+
+
+## Display data
+
+To display data in the Chart widget, you can use the **Series Data** property to provide the data in the following structure: 
+
+```js
+[
+  {
+    "x": "Product1",
+    "y": 20000
+  },..
+]
+```
+
+In this format, **`x`** denotes the **label**, and **`y`** denotes the **value**. 
+
+You can display dynamic data from queries or JS functions by binding the response to the **Series Data** property. 
+
+### Transform the data
+
+If the data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Series Data** property.
+
+
+```js
+{{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}
+```
+The code uses the `map()` function to transform each item in the `fetchUserData.data` array into an object with an `x` and a `y` key.
+
+
+:::note
+If the query fails and there is no default data specified, the chart doesn't render and appears empty.
+:::
