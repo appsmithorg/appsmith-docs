@@ -28,7 +28,7 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
    b. Select **Accounts in this organizational directory only (user-education only - Single tenant)** from the options in **Supported account types**.
 
-   c. In **Redirect URI**, select the platform as **Web** and add the Redirect URL in the adjacent input field.
+   c. In **Redirect URI**, select the platform as **Web** and add the **Redirect URL** copied from the OIDC configirations in Appsmith in the adjacent input field.
 
    d. Click **Register**.
 
@@ -46,13 +46,13 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 7. Go back to the application homepage, and click the **Endpoints** tab from the navigation bar. 
 8. In the **Endpoints** panel, copy and open the **OpenID Connect metadata document** URL in a new browser tab, and copy the following URLs from that page:
 
-   a. **authorization_endpoint**
+   - **authorization_endpoint**
 
-   b. **token_endpoint**
+   - **token_endpoint**
 
-   c. **userinfo_endpoint**
+   - **userinfo_endpoint**
 
-   d. **jwks_uri**
+   - **jwks_uri**
 
 ### Configure scopes on Active Directory
 
@@ -60,11 +60,11 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 2. On the **Request API permissions** panel, select **Microsoft Graph > Delegated permissions**.
 3. In the **Select permissions** section, select the following permissions from the **Openid permissions** dropdown:
 
-   a. email
+   - email
 
-   b. openid
+   - openid
 
-   c. Profile
+   - Profile
 
 4. Scroll down to the **Users** dropdown and select **Users.Read**. Click **Add permissions**.
 5. Go back to the **API permissions** page and click **Grant admin consent for this directory**.
@@ -72,7 +72,7 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
 ## Register Active Directory in Appsmith
 
-To complete the OIDC configuration, you have to register the identity provider on Appsmith. Open the OIDC configurations in Appsmith (**Admin Settings > Authentication > OIDC**), and follow the steps below:
+To complete the OIDC configuration, you have to register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 
 1. Add the  **Application (client) ID** copied from the Active Directory application in the  **Client ID** field. 
 
@@ -80,14 +80,15 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 3. Add the URLs copied from the **OpenID Connect metadata document** page into OIDC configurations in Appsmith as per the table below:
 
-| **Azure Active Directory URLs** | **OIDC configuration field** |
-| ---------------------------------------- | ---------------------------------------- |
-| authorization_endpoint                  | Authorization URL                        |
-| token_endpoint                          | Token URL                                |
-| userinfo_endpoint                       | User Info URL                            |
-| jwks_uri                                | JWK Set URL                              |
+   | **OIDC configuration field** | **Azure Active Directory URL** |
+   | ---------------------------------------- | ---------------------------------------- |
+   | **Authorization URL**                 | authorization_endpoint                        |
+   | **Token URL**                          | token_endpoint                                |
+   | **User Info URL**                      | userinfo_endpoint                            |
+   | **JWK Set URL**                        | jwks_uri                              |
 
-4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. You can add more scopes, provided that they're available via Active Directory.
+
+4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. To add more scopes, [configure them on Active Directory](#configure-scopes-on-active-directory) and then add them to the OIDC configurations in Appsmith. 
 
 5. In the **Attributes** section, add the attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
 
