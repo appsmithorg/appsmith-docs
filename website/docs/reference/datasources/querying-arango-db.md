@@ -9,7 +9,7 @@ This page describes how to connect Appsmith to your ArangoDB data and query it f
 
 ### Connection parameters
 
-The following is a reference that provides a description of the parameters for connecting to ArangoDB.
+The following is a reference guide that provides a description of the parameters for connecting to ArangoDB.
 
 <figure>
   <img src="/img/Arango_configuration.jpeg" style= {{width:"100%", height:"auto"}} alt="Configuring an ArangoDB datasource."/>
@@ -39,7 +39,7 @@ If you are a self-hosted user, you must whitelist the IP address ranges `18.223.
     <ul>
         <li><b>Default:</b> The same as Disabled.</li>
         <li><b>Enabled:</b> Only allows an SSL connection.</li>
-        <li><b>Disabled:</b> Does not attempt an SSL connection; It uses a plain unencrypted connection.</li>
+        <li><b>Disabled:</b> Does not attempt an SSL connection; it uses a plain unencrypted connection.</li>
     </ul>
   </dd>
 </dl>
@@ -67,7 +67,7 @@ LIMIT {{ UsersTable.pageOffset }}, {{ UsersTable.pageSize }}
 RETURN user
 ```
 
-In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+In the above example, `UsersTable` is the name of the Table widget that displays the data. It is configured to use [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
 
 ### Create
 
