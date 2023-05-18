@@ -40,6 +40,17 @@ For more details on building more complex queries, see the [Elasticsearch Docume
 
 ### Search documents
 
+<dl>
+  <dt><b>Method</b></dt>
+  <dd>The HTTP method to use for your query. For searches, use the <b>GET</b> method.</dd><br />
+
+  <dt><b>Path</b></dt>
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
+
+  <dt><b>Body</b></dt>
+  <dd>The body content of your query.</dd><br />
+</dl>
+
 Queries run on top of indexed documents can be configured using the `GET` method. For example, the following query searches the `users` index for a `name` matching your user input from a Table widget called `UsersTable`:
 
 ```json
@@ -60,6 +71,17 @@ Queries run on top of indexed documents can be configured using the `GET` method
 
 ### Create a document
 
+<dl>
+  <dt><b>Method</b></dt>
+  <dd>The HTTP method to use for your query. For indexing, use the <b>POST</b> method.</dd><br />
+
+  <dt><b>Path</b></dt>
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
+
+  <dt><b>Body</b></dt>
+  <dd>The body content of your query.</dd><br />
+</dl>
+
 You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated. Below, user input is collected with a Form widget called `NewUserForm`:
 
 ```json
@@ -77,6 +99,17 @@ You can create a single new document using the `POST` method, with a JSON body t
 ```
 
 ### Update a document
+
+<dl>
+  <dt><b>Method</b></dt>
+  <dd>The HTTP method to use for your query. For updating, use the <b>POST</b> method.</dd><br />
+
+  <dt><b>Path</b></dt>
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
+
+  <dt><b>Body</b></dt>
+  <dd>The body content of your query.</dd><br />
+</dl>
 
 A single document can be updated using its `id` within an index using a `POST` request. Below, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget:
 
@@ -97,6 +130,17 @@ A single document can be updated using its `id` within an index using a `POST` r
 This performs a partial update, where the properties you supply are added to the document; you don't need to add ones that have not changed.
 
 ### Delete a document
+
+<dl>
+  <dt><b>Method</b></dt>
+  <dd>The HTTP method to use for your query. For searches, use the <b>DELETE</b> method.</dd><br />
+
+  <dt><b>Path</b></dt>
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
+
+  <dt><b>Body</b></dt>
+  <dd>The body content of your query.</dd><br />
+</dl>
 
 A single document can be deleted using its `id` within an index using the `DELETE` method. Below, the record with its `id` is selected from a Table widget called `UsersTable`:
 
