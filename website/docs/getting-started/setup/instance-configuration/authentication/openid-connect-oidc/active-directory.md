@@ -88,7 +88,7 @@ To complete the OIDC configuration, you have to register the identity provider o
    | **JWK Set URL**                        | jwks_uri                              |
 
 
-4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. To add more scopes, [configure them on Active Directory](#configure-scopes-on-active-directory) and then add them to the OIDC configurations in Appsmith. 
+4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - `openid`, `email`, `profile`. Appsmith needs `openid` and **email** as mandatory scopes. To add more scopes, [configure them on Active Directory](#configure-scopes-on-active-directory) and then add them to the OIDC configurations in Appsmith. 
 
 5. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
