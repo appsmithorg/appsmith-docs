@@ -529,7 +529,6 @@ const sidebars = {
           label: 'More',
           link: { type: 'doc', id: 'advanced-concepts/more/README' },
           items: [
-            'advanced-concepts/more/how-to-work-with-local-apis-on-appsmith',
             'advanced-concepts/more/backup-restore',
             'advanced-concepts/more/keyboard-shortcuts',
           ],
@@ -587,6 +586,7 @@ const sidebars = {
             'learning-and-resources/how-to-guides/how-to-upload-to-s3',
             'learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'learning-and-resources/how-to-guides/aws-whitelist',
+            'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',

@@ -14,12 +14,12 @@ This page describes how to connect your application to your Oracle databases and
 </figure>
 
 :::tip
-If you want to connect to a locally hosted database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a locally hosted database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to your database, Appsmith needs the following parameters:
 
-* **Host Address:** Provide the hostname or IP address of your database server. If you are connecting to a self-hosted database, see [this guide](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+* **Host Address:** Provide the hostname or IP address of your database server. If you are connecting to a self-hosted database, see [this guide](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 
 * **Port:**  Provide the port on which to connect to your database.
 
