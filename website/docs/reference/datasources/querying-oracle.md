@@ -44,7 +44,7 @@ The following section is a reference guide that provides a complete description 
   <dd><i>Options:</i>
     <ul>
       <li><b>TLS:</b> Connection is encrypted but no client verification is done.</li>
-      <li><b>Disabled:</b> Disables SSL completely, and all connections will be established without encryption.</li>
+      <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
     </ul>
   </dd>
 </dl>
