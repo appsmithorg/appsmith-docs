@@ -58,7 +58,7 @@ In this guide, you'll use networked Docker containers to spin up a Postgres inst
             volumes:
                 - './postgres_data:/var/lib/postgresql/data'
             environment:
-                - POSTGRES_PASSWORD=secure_pass_here
+                - POSTGRES_PASSWORD=<your-postgres-password>
             ports:
                 - '5433:5432'
             networks:
