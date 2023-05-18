@@ -45,18 +45,14 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 2. Add the URLs copied from the Auth0 application into OIDC configurations in Appsmith as per the table below:
 
-| **Auth0 URLs**       |  **OIDC Fields** |
-| ----------------------- | --------------------- |
-| OAuth Authorization URL | Authorization URL     |
-| OAuth Token URL         | Token URL             |
-| OAuth User Info URL      | User Info URL         |
-| JSON Web Key Set              | JWK Set URL           |
+  | **OIDC configuration field**      |  **Auth0 URLs** |
+  | ----------------------- | --------------------- |
+  | **Authorization URL** | OAuth Authorization URL     |
+  | **Token URL**         | OAuth Token URL             |
+  | **User Info URL**      |  OAuth User Info URL         |
+  | **JWK Set URL**           | JSON Web Key Set             |
 
-3. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes.
-
-:::info
-Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access additional user attributes, [configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes), and add them to the Scopes field in Appsmith's OIDC configurations.
-:::
+3. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access additional user attributes, [configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes), and add them to the Scopes field in Appsmith's OIDC configurations.
 
 4. In the **Attributes** section, add the attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
 
