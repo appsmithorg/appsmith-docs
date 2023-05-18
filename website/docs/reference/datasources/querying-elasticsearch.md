@@ -10,7 +10,7 @@ This page describes how to connect to your Elasticsearch database and query it f
 ## Connect Elasticsearch
 
 :::caution 
-If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database.
+If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. For instructions on IP Filtering in Elasticsearch, see the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ip-filtering.html).
 :::
 
 ### Connection parameters
@@ -46,10 +46,18 @@ For details on building more complex queries, see the [Elasticsearch Document AP
 
 <dl>
   <dt><b>Method</b></dt>
-  <dd>The HTTP method to use for your query: `GET`, `POST`, `PUT`, or `DELETE`.</dd><br />
+  <dd>The HTTP method to use for your query.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+      <li><b>GET:</b> Method used for requesting and fetching data.</li>
+      <li><b>POST:</b> Method used for creating or updating records.</li>
+      <li><b>PUT:</b> Method used for creating or updating records.</li>
+      <li><b>DELETE:</b> Method used for deleting records.</li>
+    </ul>
+  </dd>  
 
   <dt><b>Path</b></dt>
-  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation. For example: `/users/_search` is the endpoint used for searching the `users` index.</dd><br />
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation. For example: <code>/users/_search</code> is the endpoint used for searching the <code>users</code> index.</dd><br />
 
   <dt><b>Body</b></dt>
   <dd>The body content of your query.</dd><br />
@@ -57,7 +65,7 @@ For details on building more complex queries, see the [Elasticsearch Document AP
 
 ### Search documents
 
-Queries run on top of indexed documents can be configured using the `GET` method. For example, the following query searches the `users` index for a `name` matching your user input from a Table widget called `UsersTable`:
+Queries run on top of indexed documents can be configured using the `GET` method. 
 
 ```json
 // Path
@@ -75,9 +83,11 @@ Queries run on top of indexed documents can be configured using the `GET` method
 }
 ```
 
+The example above searches the `users` index for a `name` matching your user input from a Table widget called `UsersTable`.
+
 ### Create a document
 
-You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated. Below, user input is collected with a Form widget called `NewUserForm`:
+You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated.
 
 ```json
 // Path
@@ -93,9 +103,32 @@ You can create a single new document using the `POST` method, with a JSON body t
 }
 ```
 
+Above, user input is collected with a Form widget called `NewUserForm`.
+
+#### Create multiple documents
+
+To create a batch of documents at once, use the `POST` method with the `/_bulk` endpoint:
+
+```json
+// Path
+/_bulk/
+```
+
+In the body, add a line of metadata followed by a line of record data:
+
+```javascript
+//Body
+{"index": {"_index": "users"}}
+{"name":"Reyna", "email":"sunil@example.com", "gender":"female"}
+{"index": {"_index": "users"}}
+{"name":"Aly", "email":"aly@example.com", "gender":"female"}
+{"index": {"_index": "users"}}
+{"name":"Sunil", "email":"sunil@example.com", "gender":"male"}
+```
+
 ### Update a document
 
-A single document can be updated using its `id` within an index using a `POST` request. Below, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget:
+A single document can be updated using its `id` within an index using a `POST` request. 
 
 ```javascript
 // Path
@@ -111,16 +144,20 @@ A single document can be updated using its `id` within an index using a `POST` r
 }
 ```
 
+Above, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget.
+
 This performs a partial update, where the properties you supply are added to the document; you don't need to add ones that have not changed.
 
 ### Delete a document
 
-A single document can be deleted using its `id` within an index using the `DELETE` method. Below, the record with its `id` is selected from a Table widget called `UsersTable`:
+A single document can be deleted using its `id` within an index using the `DELETE` method.
 
 ```javascript
 // Path
 /users/_doc/{{ UsersTable.selectedRow.id }}
 ```
+
+Above, the record with its `id` is selected from a Table widget called `UsersTable`.
 
 ## See also
 
