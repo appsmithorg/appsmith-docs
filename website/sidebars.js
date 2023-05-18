@@ -586,10 +586,19 @@ const sidebars = {
             'learning-and-resources/how-to-guides/how-to-upload-to-s3',
             'learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'learning-and-resources/how-to-guides/aws-whitelist',
-            'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
+            {
+              type: 'category',
+              label: 'How to connect to local databases and APIs',
+              link: {
+                type: 'doc',
+                id: 'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith/README',
+              },
+              items: [
+                'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith/connect-within-docker-network'              ],
+            },
           ],
         },
         'learning-and-resources/sample-apps',

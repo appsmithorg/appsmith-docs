@@ -13,6 +13,10 @@ This page describes how to connect a database or API that is hosted locally on t
 
 ## Connect Appsmith in Docker to datasource on localhost
 
+:::info
+To learn how to connect Appsmith and your datasource in networked Docker containers, see [this page](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith/connect-within-docker-network).
+:::
+
 To connect from Appsmith running in a Docker container to a database or API service on localhost, use `host.docker.internal` as the URL; it resolves to the internal IP address used by the host machine. See the official [Docker documentation](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host) for more information.
 
 <VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connecting from Appsmith in Docker to local datasource" caption="Connecting from Appsmith in Docker to local datasource"/>
