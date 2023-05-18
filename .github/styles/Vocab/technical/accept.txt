@@ -383,5 +383,6 @@ Brex
 Hasura
 Grammarly
 callouts
+Oracle
 OGG
 HTTP
