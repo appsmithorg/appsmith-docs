@@ -7,7 +7,13 @@ description: Connect Appsmith to your Elasticsearch data and create queries.
 
 This page describes how to connect to your Elasticsearch database and query it from your Appsmith app.
 
-## Connection parameters
+## Connect Elasticsearch
+
+:::caution 
+If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database.
+:::
+
+### Connection parameters
 
 The following is a reference guide that provides a description of the parameters for connecting to Elasticsearch.
 
@@ -35,21 +41,21 @@ The following is a reference guide that provides a description of the parameters
 The following section provides examples of creating basic CRUD queries to Elasticsearch.
 
 :::info
-For more details on building more complex queries, see the [Elasticsearch Document API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html).
+For details on building more complex queries, see the [Elasticsearch Document API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html).
 :::
-
-### Search documents
 
 <dl>
   <dt><b>Method</b></dt>
-  <dd>The HTTP method to use for your query. For searches, use the <b>GET</b> method.</dd><br />
+  <dd>The HTTP method to use for your query: `GET`, `POST`, `PUT`, or `DELETE`.</dd><br />
 
   <dt><b>Path</b></dt>
-  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
+  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation. For example: `/users/_search` is the endpoint used for searching the `users` index.</dd><br />
 
   <dt><b>Body</b></dt>
   <dd>The body content of your query.</dd><br />
 </dl>
+
+### Search documents
 
 Queries run on top of indexed documents can be configured using the `GET` method. For example, the following query searches the `users` index for a `name` matching your user input from a Table widget called `UsersTable`:
 
@@ -71,17 +77,6 @@ Queries run on top of indexed documents can be configured using the `GET` method
 
 ### Create a document
 
-<dl>
-  <dt><b>Method</b></dt>
-  <dd>The HTTP method to use for your query. For indexing, use the <b>POST</b> method.</dd><br />
-
-  <dt><b>Path</b></dt>
-  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
-
-  <dt><b>Body</b></dt>
-  <dd>The body content of your query.</dd><br />
-</dl>
-
 You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated. Below, user input is collected with a Form widget called `NewUserForm`:
 
 ```json
@@ -99,17 +94,6 @@ You can create a single new document using the `POST` method, with a JSON body t
 ```
 
 ### Update a document
-
-<dl>
-  <dt><b>Method</b></dt>
-  <dd>The HTTP method to use for your query. For updating, use the <b>POST</b> method.</dd><br />
-
-  <dt><b>Path</b></dt>
-  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
-
-  <dt><b>Body</b></dt>
-  <dd>The body content of your query.</dd><br />
-</dl>
 
 A single document can be updated using its `id` within an index using a `POST` request. Below, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget:
 
@@ -130,17 +114,6 @@ A single document can be updated using its `id` within an index using a `POST` r
 This performs a partial update, where the properties you supply are added to the document; you don't need to add ones that have not changed.
 
 ### Delete a document
-
-<dl>
-  <dt><b>Method</b></dt>
-  <dd>The HTTP method to use for your query. For searches, use the <b>DELETE</b> method.</dd><br />
-
-  <dt><b>Path</b></dt>
-  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation.</dd><br />
-
-  <dt><b>Body</b></dt>
-  <dd>The body content of your query.</dd><br />
-</dl>
 
 A single document can be deleted using its `id` within an index using the `DELETE` method. Below, the record with its `id` is selected from a Table widget called `UsersTable`:
 
