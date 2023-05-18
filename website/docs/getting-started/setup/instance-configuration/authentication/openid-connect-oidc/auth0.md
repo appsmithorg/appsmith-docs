@@ -24,7 +24,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
 
 2. In the **Create application** modal, select **Regular Web Application** and click **Create**.
 
-3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
+3. Once your application is created, you're taken to the Quick Start screen. Go to the **Settings** tab.
 
 4. In the basic information section, copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
 
@@ -44,20 +44,20 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
 
 ##  Register Auth0 in Appsmith
 
-To complete the OIDC configuration, you have to register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
+To complete the OIDC configuration, you must register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 
 1. Add the **Client ID** and **Client Secret** copied from the Auth0 application into the respective fields.
 
 2. Add the URLs copied from the Auth0 application into OIDC configurations in Appsmith as per the table below:
 
-      | **OIDC configuration field**      |  **Auth0 URLs** |
+      | **OIDC configuration field**      |  **Auth0 URL** |
       | ----------------------- | --------------------- |
       | **Authorization URL** | OAuth Authorization URL     |
       | **Token URL**         | OAuth Token URL             |
       | **User Info URL**      |  OAuth User Info URL         |
       | **JWK Set URL**           | JSON Web Key Set             |
 
-3. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access additional user attributes, [configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes), and add them to the Scopes field in Appsmith's OIDC configurations.
+3. In the **Scopes** section, add the attributes allowing you to authorize access to user details after a user is authenticated. By default, there are three scopes - **openid**, **email**, **profile**. Appsmith needs **openid** and **email** as mandatory scopes. Auth0 provides standard claims: openId, profile, and email as part of the authorization action. If you want to access additional user attributes, [configure them on Auth0](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes), and add them to the Scopes field in Appsmith's OIDC configurations.
 
 4. In the **Attributes** section, add the attributes you want to use as usernames for authentication. By default, the attribute **email** is added, indicating that the user's email address is used as the username for authentication.
 
