@@ -30,10 +30,10 @@ See all [installation guides](/getting-started/setup/installation-guides).
 
 ## Self-hosting benefits
 
-Deploying Appsmith on your infrastructure gives complete control over security, updates and scaling your infrastructure as per requirements.
+Deploying Appsmith on your infrastructure gives complete control over security, updates, and scaling your infrastructure as per requirements.
 
 :::info
-The self-hosted version isn't air-gapped and needs internet access to reach Appsmith cloud services (cs.appsmith.com) for a few features to work, such as fetching release notes, more than three private repositories for Git version control, templates, business license validity checks, etc. If you want a fully air-gapped deployment, please write to [**support@appsmith.com**](mailto:support@appsmith.com).
+Appsmith needs internet access to reach Appsmith cloud services `cs.appsmith.com` for several important features such as templates, Google Sheets integration, and fetching release notes to work. Appsmith provides an **Airgapped version** as part of [Enterprise Edition](https://www.appsmith.com/pricing).
 :::
 
 Installing Appsmith as a self-hosted instance has the following advantages:
