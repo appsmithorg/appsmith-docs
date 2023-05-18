@@ -31,9 +31,13 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
 5. Scroll down to the **Application URIs** and paste the **Redirect URL** copied from the OIDC configuration in Appsmith in the **Allowed Callback URLs** field.
 
 6. On the **Settings** tab, go to **Advanced Settings > Endpoints**. Copy the following URls from the OAuth section to add them later in the OIDC configurations in Appsmith:
+
   - **OAuth Authorization URL**
+
   - **OAuth Token URL**
+
   - **OAuth User Info URL**
+  
   - **JSON Web Key Set**
 
 6. Click **Save Changes**.
