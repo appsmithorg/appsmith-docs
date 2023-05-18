@@ -62,7 +62,7 @@ Auth0 provides standard claims: openId, profile, and email as part of the author
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
-After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML OIDC** button.
+After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH OIDC SSO** button.
 
 <figure>
   <img src="/img/Appsmith-Login-Screen-Shows-OIDC.png" style= {{width:"400px", height:"auto"}} alt="OIDC-login"/>
