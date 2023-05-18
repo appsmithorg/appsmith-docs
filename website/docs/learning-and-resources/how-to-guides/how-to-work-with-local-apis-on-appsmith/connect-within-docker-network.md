@@ -10,7 +10,7 @@ This guide describes how to connect your APIs and databases to your Appsmith ins
 
 ## Set up services
 
-In this guide, you'll use networked Docker containers to spin up a Postgres instance alongside Appsmith, and connect to the database from an Appsmith app.
+In this guide, you'll use networked Docker containers to spin up a Postgres instance alongside Appsmith and connect to the database from an Appsmith app.
 
 1. From the command line, create a Docker network with the following:
 
@@ -18,9 +18,9 @@ In this guide, you'll use networked Docker containers to spin up a Postgres inst
     docker network create appsmithnetwork
     ```
 
-1. Create two folders, named `Appsmith` and `Datasource`.
+1. Create two folders, `Appsmith` and `Datasource`.
 
-1. Within the `Appsmith` folder, create a `docker-compose.yml` file for Appsmith. Assign it to the network from the first step such as in the bottom of this example file:
+1. Within the `Appsmith` folder, create a `docker-compose.yml` file for Appsmith. Assign it to the network from the first step, such as in the bottom of this example file:
 
     ```yaml
     version: "3"
@@ -76,7 +76,7 @@ Now, you are ready to open your app and connect to your Postgres instance.
 
 1. Navigate to your application and create a Postgres datasource.
 
-1. For the **Host Address** field, enter the name of the Docker container that is running your Postgres instance. For example, this might look something like `postgres_postgres_1`.
+1. For the **Host Address** field, enter the name of the Docker container that's running your Postgres instance. For example, this might look something like `postgres_postgres_1`.
 
     :::tip
     If you need to see the names of the containers running on your network, you can use the command:
