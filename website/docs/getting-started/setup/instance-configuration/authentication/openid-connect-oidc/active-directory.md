@@ -28,7 +28,7 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
    b. Select **Accounts in this organizational directory only (user-education only - Single tenant)** from the options in **Supported account types**.
 
-   c. In **Redirect URI**, select the platform as **Web** and add the **Redirect URL** copied from the OIDC configirations in Appsmith in the adjacent input field.
+   c. In **Redirect URI**, select the platform as **Web**, and add the **Redirect URL** copied from Appsmith's OIDC configurations in the adjacent input field.
 
    d. Click **Register**.
 
