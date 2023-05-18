@@ -5,20 +5,19 @@ description: Connect Appsmith to an Oracle database and create queries.
 
 # Oracle
 
-This page describes how to connect your application to your Oracle databases and use queries to manage its content.
+This page gives information to connect Appsmith to an Oracle database and to query its data in your applications.
 
 ## Connection parameters
 
 The following is a reference guide that provides a description of the parameters for connecting to an Oracle database.
-
 
 <figure>
   <img src="/img/oracle-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Oracle datasource." />
   <figcaption align="center"><i>Configuring an Oracle datasource.</i></figcaption>
 </figure>
 
-:::tip
-If you want to connect to a locally hosted database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+:::caution important
+If you are a self-hosted user, you must whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith deployment on your database instance. See [Managing Internet Protocol Allowlist and Blocklist Rules](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/mmocs/managing-internet-protocol-whitelist-and-blacklist-rules.html) for more details.
 :::
 
 <dl>
@@ -43,12 +42,6 @@ If you want to connect to a locally hosted database, you can use a service like 
     </ul>
   </dd>
 </dl>
-
-:::caution important
-If you are a self-hosted user, you may need to whitelist the IP address of the Appsmith deployment on your database instance or VPC before connecting to a database.
-
-18.223.74.85 and 3.131.104.27 are the IP addresses of the Appsmith cloud instances that need to be whitelisted.
-:::
 
 ## Query Oracle
 
