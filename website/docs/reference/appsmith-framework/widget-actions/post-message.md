@@ -55,12 +55,12 @@ windowMessageListener(
 
 | Argument | Description |
 | --- | --- |
-| domain | This is the address of the website that sends the message (`https://mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https://myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. You cannot use ** * ** as an input for the domain because listening to all websites is not allowed.|
+| domain | This is the address of the website that sends the message (`https://mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https://myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. The use of ** * ** is not allowed in the domain field, as Appsmith requires specific website address.|
 | callback | A callback comes to action whenever a message is sent from the defined domain. It accepts a parameter that  returns the response to the incoming message. |
 
 ### unlistenWindowMessage()
 
-`unlistenWindowMessage()` allows you to disable an appsmith app from reacting to messages from the parent website.
+`unlistenWindowMessage()` allows you to disable an Appsmith app from reacting to messages from the parent website.
 
 :::info
 This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
