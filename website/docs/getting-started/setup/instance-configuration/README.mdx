@@ -87,48 +87,20 @@ After making changes, be sure to **restart the docker containers** for the chang
 
 ### Configure Helm installations
 
-You can modify your Appsmith installation on Kubernetes using Helm parameters or Appsmith environment variables. Use the `helm install` command to configure your Appsmith installation using one of the below ways:
-
-* Using Helm parameters: For example, deploy Appsmith and configure it to use the storage class `appsmith-pv` with:
-
-
-```bash
-helm upgrade \
-#highlight-next-line
---set persistence.storageClass=appsmith-pv \
-  appsmith appsmith/appsmith 
-```
-
-* **Or** using Appsmith environmental variables: For example, change the encryption salt configuration with:
-
-```bash 
-helm upgrade \
-#highlight-next-line
---set applicationConfig.APPSMITH_MAIL_FROM="test@test.com" \
-  appsmith appsmith/appsmith 
-```
-
-* **Or** using `values.yaml` file: 
+You can modify your Appsmith installation on Kubernetes using a `values.yaml` file. Follow these steps to update the values:
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
 <TabItem label="Community Edition" value="communityEdition"> 
 
-1. Update the parameter values in the `values.yaml` file under the `applicationConfig` section:
+1. Go to the root directory of your installation.
 
-```yaml
-applicationConfig:
-  #highlight-next-line
-  APPSMITH_MAIL_FROM:"test@test.com"
-```
+2. Generate `values.yaml` file with:
 
-2. Update the values with:
+  ```bash
+  helm show values appsmith/appsmith > values.yaml
+  ```  
 
-```bash
-helm upgrade appsmith appsmith/appsmith -f values.yaml 
-```
-  </TabItem>
-  <TabItem label="Business Edition" value="businessEdition"> 
-  1. Update the parameter values in the `values.yaml` file under the `applicationConfig` section:
+3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
 
   ```yaml
   applicationConfig:
@@ -136,12 +108,36 @@ helm upgrade appsmith appsmith/appsmith -f values.yaml
     APPSMITH_MAIL_FROM:"test@test.com"
   ```
 
-  2. Update the values with:
+4. Update the values with:
+
+  ```bash
+  helm upgrade appsmith appsmith/appsmith -f values.yaml 
+  ```
+
+</TabItem>
+<TabItem label="Business Edition" value="businessEdition"> 
+
+1. Go to the root directory of your installation.
+
+2. Generate `values.yaml` file with:
+
+  ```bash
+  helm show values appsmith-ee/appsmith > values.yaml
+  ```  
+
+3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
+
+  ```yaml
+  applicationConfig:
+    #highlight-next-line
+    APPSMITH_MAIL_FROM:"test@test.com"
+  ```
+
+4. Update the values with:
 
   ```bash
   helm upgrade appsmith appsmith-ee/appsmith -f values.yaml 
   ```
-
 
 </TabItem>
 </Tabs> 
