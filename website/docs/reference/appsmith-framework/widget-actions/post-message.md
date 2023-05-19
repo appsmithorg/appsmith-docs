@@ -55,7 +55,7 @@ windowMessageListener(
 
 | Argument | Description |
 | --- | --- |
-| domain | This is the address of the website that sends the message (`https://mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https://myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. |
+| domain | This is the address of the website that sends the message (`https://mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https://myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. It is not allowed to use `*` as an input for the domain.|
 | callback | A callback comes to action whenever a message is sent from the defined domain. It accepts a parameter that  returns the response to the incoming message. |
 
 ### unlistenWindowMessage()
