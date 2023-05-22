@@ -18,7 +18,7 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
   <figcaption align = "center"><i>OIDC configurations in Appsmith</i></figcaption>
 </figure>
 
-## Create application in Okta
+## Create application on Okta
 
 1. Log in to your [Okta](https://www.okta.com/) account and click **Admin** from the top right corner.
 2. On the **Get started with Okta** page, click **Add App** for **Use single sign on**.
