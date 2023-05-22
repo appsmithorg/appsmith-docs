@@ -1,73 +1,111 @@
 ---
 sidebar_position: 3
+description: Connect Appsmith to an ArangoDB database and create queries.
 ---
 
 # ArangoDB
 
-[ArangoDB](https://www.arangodb.com) is a free and open source native multi model database system developed by ArangoDB GmbH. The database system supports three data models with one database core and a unified query language AQL
+This page describes how to connect Appsmith to your ArangoDB data and query it from your app.
 
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+## Connect ArangoDB
+
+:::caution
+If you are a self-hosted user, you must whitelist the IP address ranges `18.223.74.0/24` and `3.131.104.0/24` of the Appsmith deployment on your ArangoDB instance. For more information about whitelisting in ArangoDB, see [the ArangoDB documentation](https://www.arangodb.com/docs/stable/security-security-options.html#endpoint-access).
 :::
 
-## Connecting ArangoDB with Appsmith
+### Connection parameters
 
-On Appsmith, it’s pretty straightforward to establish a connection with any data source, including ArangoDB; be it on the cloud, a self-hosted instance, or a local environment.
+The following is a reference guide that provides a description of the parameters for connecting to ArangoDB.
 
-What you need to make the connection are the endpoint, database name, and user credentials. With this in mind, let’s get started.
+<figure>
+  <img src="/img/Arango_configuration.jpeg" style= {{width:"100%", height:"auto"}} alt="Configuring an ArangoDB datasource."/>
+  <figcaption align = "center"><i>Configuring an ArangoDB datasource.</i></figcaption>
+</figure>
 
-* On your Appsmith application, click on the `+` icon next to Datasources on the left navigation bar under Page1
-* Now, navigate to the Create New tab and choose ArangoDB data source.
+<dl>
+  <dt><b>Host Address</b></dt>
+  <dd>The network location of your ArangoDB database. This can be a domain name or an IP address. To connect to a local ArangoDB database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
-![](/img/Adding_datasouce_arangodb.jpeg)
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. If none is specified, Appsmith attempts to connect to port 8529.</dd><br />
 
-* When you’re using ArangoDB cloud or a self-hosted instance, all these details can be found under the instance settings.
+  <dt><b>Database Name</b></dt>
+  <dd>The name of your database. </dd><br />
 
-![](</img/Arango_self_hosted_(1).jpeg>)
+  <dt><b>Authentication</b></dt>
+  <dd>The <b>Username</b> and <b>Password</b> for the user with which you are connecting to the database.</dd><br />
 
-### Connection settings
+  <dt><b>SSL Mode</b></dt>
+  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+        <li><b>Default:</b> The same as Disabled.</li>
+        <li><b>Enabled:</b> Only allows an SSL connection.</li>
+        <li><b>Disabled:</b> Does not attempt an SSL connection; it uses a plain unencrypted connection.</li>
+    </ul>
+  </dd>
+</dl>
 
-Appsmith needs the following parameters for connecting to an Arango database:
+## Query ArangoDB
 
-:::tip
-All required fields are suffixed with an asterisk (\*).
+The following section provides examples of basic CRUD queries for ArangoDB.
+
+<figure>
+  <img src="/img/arangodb-query-config.png" style= {{width:"100%", height:"auto"}} alt="Writing an ArangoDB query in the editor."/>
+  <figcaption align = "center"><i>Writing an ArangoDB query in the editor.</i></figcaption>
+</figure>
+
+:::info
+For the ArangoDB Query Language (AQL) syntax, see the official [**AQL documentation**](https://www.arangodb.com/docs/stable/aql/).
 :::
 
-#### **Connection**
+### Select
 
-You need to fill in the following parameters:
+```sql
+FOR user IN users
+FILTER user.role == "admin"
+SORT user.id ASC
+LIMIT {{ UsersTable.pageOffset }}, {{ UsersTable.pageSize }}
+RETURN user
+```
 
-* **Host Address\* / Port:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith connects to port 8529.
-* **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
+In the above example, `UsersTable` is the name of the Table widget that displays the data. It is configured to use [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
 
-#### **Authentication**
+### Create
 
-You need to fill in the following parameters:
+```sql
+INSERT {
+    name: "{{ NameInput.text }}",
+    gender: "{{ GenderDropdown.selectedOptionValue }}",
+    email: "{{ EmailInput.text }}",
+    role: "{{ RoleSelect.selectedOptionValue }}"
+} INTO users
+```
 
-* **Username\*:** Fill in the username required for authenticating connection requests to your database.
-* **Password\*:** Fill password required for authenticating connection requests for the given username to the database.
+In the example above, `NameInput`, `GenderDropdown`, `EmailInput`, and `RoleSelect` are all widgets used to collect user input for the new record.
 
-#### **SSL**
+### Update
 
-The SSL Mode can be set to one of the following values:
+```sql
+UPDATE
+"{{ UsersTable.selectedRow.id }}"
+WITH
+{
+    role: "admin"
+}
+IN users
+```
 
-* **`Default`**: Same as `Disabled`.
-* **`Enabled`**: Rejects the connection if SSL is not available.
-* **`Disabled`**: Connects without SSL using a plain unencrypted connection.
+In the example above, the query uses the `id` of the row selected in the `UsersTable` Table widget to update that record's `role` value.
 
-:::tip
-Ensure that the SSL mode is enabled to establish a secure connection.
-:::
+### Delete
 
-Here’s what the configuration looks like:
+```sql
+REMOVE "{{ UsersTable.selectedRow.id }}" IN users
+```
 
-![](/img/Arango_configuration.jpeg)
+In the example above, the query uses the `id` of the row selected in the `UsersTable` Table widget to delete that record.
 
-Next, click on the `Test` button at the bottom right of the screen. This helps you with understanding whether your configuration is valid or not. If it returns a successful message, hit the ‘Save’ button to establish a secure connection between Appsmith and ArangoDB.
+## See also
 
-## Using queries in applications
-
-Once you have successfully run a Query, you can use it in your application to
-
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+[Data access and binding](/core-concepts/data-access-and-binding)

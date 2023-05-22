@@ -372,6 +372,8 @@ i
 Amazon S3
 http
 tcp
+twilio
+postgresql
 MONGODB
 apis
 gte
@@ -379,3 +381,8 @@ TCP
 Rowy
 Brex
 Hasura
+Grammarly
+callouts
+Oracle
+OGG
+HTTP

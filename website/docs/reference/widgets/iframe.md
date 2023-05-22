@@ -40,26 +40,68 @@ In addition to static HTML, you can display data generated dynamically from quer
 Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
 ---
-**Example**: a color picker widget created using HTML as shown below: 
+**Example**: lets create a custom Code Editor Widget with the [Ace Code Editor Library](https://ace.c9.io/).
+
+1. In the **srcDoc** property, add the following code:
+
 
 ```html
-<label for="favcolor">Pick Color: </label> 
-<input type="color" id="favcolor" name="favcolor" value="#ff0000">
+<head>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+<div id="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</div>
+<script src="https://cdn.jsdelivr.net/npm/ace-builds@1.19.0/src-min-noconflict/ace.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+    editor.on("change", function() {
+        // Get the value of the editor and send it to the parent window
+        var code = editor.getValue();
+        window.parent.postMessage(code, "*");
+    });
+</script>
 ```
+This code creates a code editor widget using the Ace code editor library and sends the entered code to the [parent window](#communication-between-app-and-iframe) when the "Submit Code" button is clicked.
+
+
+2. Next, add Text widget and sets its **Text** property to:
+
+```js
+{{Iframe1.message}}
+```
+This retrieves the entered code from the editor and displays it in a Text widget using the `message` reference property. 
+
+With this setup, users can edit the code in the code editor, and when the submit button is clicked, the entered code would be processed or displayed as desired.
+
 
 <figure>
-  <img src="/img/iframe-color-picker.png" style= {{width:"700px", height:"auto"}} alt="Custom color picker"/>
-  <figcaption align = "center"><i>Custom color picker</i></figcaption>
+  <img src="/img/custom-widget-code.png" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Custom Code Editor</i></figcaption>
 </figure>
+
 
 
 ## Communication between app and Iframe
 
-Appsmith provides a way to enable safe [cross-origin communication](/reference/appsmith-framework/widget-actions/post-message) between the Appsmith app and the Iframe widget.
-
-Suppose you are building an app with an Iframe widget embedding an external page and want to post messages between the external page and the Appsmith app.
+Appsmith offers a secure method for enabling [cross-origin communication](/reference/appsmith-framework/widget-actions/post-message) between the Appsmith app and the Iframe widget. By leveraging the `postMessage` capability, you can establish a seamless exchange of messages between the embedded external page and the Appsmith app. 
 
 ### From Appsmith to embedded page
+
+
+With the Iframe widget, you can send messages from Appsmith to an embedded page. This communication is facilitated by utilizing the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in JavaScript.
 
 ![](/img/postmessage_child_incoming.png)
 
@@ -86,6 +128,11 @@ Suppose you are building an app with an Iframe widget embedding an external page
 3. In the button's **onClick** event, select the **Post message** option. Set the **Message** box to `{{inputMessage.text}}` and **Target iframe** box to `iframeExample`.
 
 4. Enter some text in the Input widget, and click the button. The Iframe receives the message and displays it.
+
+<figure>
+  <img src="/img/iframe-1-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <figcaption align = "center"><i></i>From Appsmith to embedded page</figcaption>
+</figure>
 
 ### From embedded page to Iframe
 
@@ -118,6 +165,10 @@ The Iframe widget listens for messages sent from the page embedded within it. To
 
 5. When a message is received, you can also execute a set of actions in the Iframe’s `onMessageReceived` event. For example, in the `onMessageReceived` event, select the **Show message** action and set the message to 'Message received'. When you click the **Send** button in the Iframe, a toast message appears on the top of the screen.
 
+<figure>
+  <img src="/img/iframe-2-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <figcaption align = "center"><i></i>From embedded page to Iframe</figcaption>
+</figure>
 
 ## Properties
 

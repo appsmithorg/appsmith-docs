@@ -1,5 +1,6 @@
 ---
 description: Deploy Appsmith on a Kubernetes cluster
+toc_max_heading_level: 2
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -8,77 +9,77 @@ import TabItem from '@theme/TabItem';
 
 This page provides steps to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager.
 
-## Prerequisites
-1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM
+### Prerequisites
+1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM.
 2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
 3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
-4. Follow the steps below to Configure the Kubernetes cluster:
-
-<Tabs groupId="configurations" queryString="current-configuration">
- <TabItem label="AWS EKS" value="AWSEKS">
-
-  1. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
-  2. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
-
-</TabItem>
-<TabItem label="Minikube" value="Minikube">
-
-  1. [Setup kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
-  2. Ensure that you have a default storage class running. If not, [enable addon default-storage class](https://kubernetes.io/docs/tutorials/hello-minikube/#enable-addons)
-
-</TabItem>
-<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
-
-  1. [Configure cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) on Google Cloud Kubernetes.
-  2. Ensure that you have a default storage class running. If not, [set up a default storage class on Google Kubernetes Engine](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)[GKE].
-
-</TabItem>
-<TabItem label="Microk8s" value="Microk8s">
-
-  1. Set up Kubernetes by [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
-  2. Ensure that you have a default storage class running. If not, [enable storage class](https://microk8s.io/docs/command-reference#heading--microk8s-enable).
-    
-</TabItem>
-</Tabs>
 
 ## Install Appsmith
 
-Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
+Follow the steps below to install Appsmith on your Kubernetes cluster:
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem label="Community Edition" value="communityEdition"> 
 
-  1. Add the Appsmith chart repository with:
+1. Follow the steps below to configure the Kubernetes cluster:
+
+<Tabs groupId="configurations" queryString="current-configuration">
+ <TabItem label="AWS EKS" value="AWSEKS">
+
+  a. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+
+  b. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html).
+
+</TabItem>
+<TabItem label="Minikube" value="Minikube">
+
+  a. [Setup kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/).
+
+  b. Ensure that you have a default storage class running. If not, [enable addon default-storage class](https://kubernetes.io/docs/tutorials/hello-minikube/#enable-addons).
+
+</TabItem>
+<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
+
+  a. [Configure cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) on Google Cloud Kubernetes.
+
+  b. Ensure that you have a default storage class running. If not, [set up a default storage class on Google Kubernetes Engine](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)[GKE].
+
+</TabItem>
+<TabItem label="Microk8s" value="Microk8s">
+
+  a. Set up Kubernetes by [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
+
+  b. Ensure that you have a default storage class running. If not, [enable storage class](https://microk8s.io/docs/command-reference#heading--microk8s-enable).
+    
+</TabItem>
+</Tabs>
+
+  2. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
+
+  3. Add the Appsmith chart repository with:
 
     ```bash
     helm repo add appsmith https://helm.appsmith.com
     ```
 
-  2. Load the Appsmith chart repository with:
-    ```bash
-    helm repo update
-    ```
+  4. Load the Appsmith chart repository with:
+  ```bash
+  helm repo update
+  ```
 
-  3. Run the below command to deploy Appsmith:
+  5. Run the below command to deploy Appsmith:
+  ```bash
+  helm install appsmith appsmith/appsmith
+  ```
 
-    ```bash
-    helm install appsmith appsmith/appsmith
-    ```
-
-  4. Verify the pod's status with:
-
-    ```bash
-    kubectl get pods
-    ```
-
-  5. To verify the installation locally, use the below command to forward the 8080 port to 80:
+  6. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
     # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
     kubectl --namespace default port-forward <APPSMITH_POD_NAME> 8080:80
     ```
 
-  6. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+  7. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -87,50 +88,69 @@ Create a folder named `appsmith` on your machine for deployment and data storage
 To upgrade from Community Edition to Business Edition, follow the instructions available at [Upgrade to Business Edition for Kubernetes](/getting-started/setup/upgrade-to-business-edition/kubernetes).
 :::
 
-Follow the steps below to install Appsmith on your Kubernetes cluster:
+1. Follow the steps below to Configure the Kubernetes cluster:
 
-1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+<Tabs groupId="configurations" queryString="current-configuration">
+ <TabItem label="AWS EKS" value="AWSEKS">
 
-2. Add the Appsmith chart repository with:
+  a. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
+
+  b. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
+
+</TabItem>
+<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
+
+  a. [Configure cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) on Google Cloud Kubernetes.
+
+  b. Ensure that you have a default storage class running. If not, [set up a default storage class on Google Kubernetes Engine](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)[GKE].
+
+</TabItem>
+<TabItem label="Microk8s" value="Microk8s">
+
+  a. Set up Kubernetes by [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
+
+  b. Ensure that you have a default storage class running. If not, [enable storage class](https://microk8s.io/docs/command-reference#heading--microk8s-enable).
+    
+</TabItem>
+</Tabs>
+
+2. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+
+3. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
+
+4. Add the Appsmith chart repository with:
 
   ```bash
   helm repo add appsmith-ee https://helm-ee.appsmith.com
   ```
-
-3. Load the Appsmith chart repository with:
+5. Load the Appsmith chart repository with:
 
   ```bash
   helm repo update
   ```
-
-4. Run the below command to deploy Appsmith:
+6. Run the below command to deploy Appsmith:
 
   ```bash
   helm install appsmith appsmith-ee/appsmith
   ```
 
-5. Verify the pod's status with:
-
-  ```bash
-  kubectl get pods
-  ```
-
-6. To verify the installation locally, use the below command to forward the 8080 port to 80:
+7. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
   ```bash
   # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
   kubectl --namespace default port-forward <APPSMITH_POD_NAME> 8080:80
   ```
 
-7. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+8. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
 
-8. Log into your Appsmith account, and enter your license key to activate the instance.
+9. Log into your Appsmith account, and enter your license key to activate the instance.
+
 
 </TabItem>
 </Tabs>   
 
 ## Troubleshooting
-If you face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## Further reading
 

@@ -6,7 +6,7 @@ In the Appsmith Query Editor, you can specify the following settings in the **Se
 |----------|---------------|--------------|
 | Run on page load  | API and DB query  | It allows you to configure whether the query should load every time the page loads. By default, it's turned on for queries that display data on a widget. You can explicitly change this setting to suit your logic.   |
 | Request confirmation  | API and DB query  | It enables you to set up a confirmation pop-up before a query is run. It protects against users accidentally running destructive operations.  |
-| Query timeout  | API and DB query  | The time till which Appsmith server waits for the query to execute before closing the connection. By default, it's set to 10000 ms. If your query takes longer than this to return results, Appsmith throws a timeout error.  |
+| Query timeout  | API and DB query  | The time till which Appsmith server waits for the query to execute before closing the connection. By default, it's set to 10000 ms. If your query takes longer than this to return results, Appsmith throws a timeout error. The maximum duration before a query times out is 6000 ms.  |
 | Prepared statements | DB query | Execute a statement with dynamic data bindings repeatedly and efficiently |
 | Encode query params  | API  | Encode query params convert the special characters in params to their UTF equivalents. You can also encode the form body when the Content-Type header is set to `FORM_URLENCODED`. |
 | Smart JSON substitution  | API   | Dynamically perform type conversions on field values in a request body  |
