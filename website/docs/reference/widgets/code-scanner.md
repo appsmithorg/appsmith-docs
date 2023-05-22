@@ -2,7 +2,20 @@
 # Code Scanner
 This page provides information on how to use the Code Scanner widget to scan barcodes and QR codes.
 
-<VideoEmbed host="youtube" videoId="Suhefwa5pz0" title="How To Build A Self-Checkout Payment System With The CodeScanner Widget" caption="Building A Self-Checkout Payment System With The CodeScanner Widget"/>
+<VideoEmbed host="youtube" videoId="Suhefwa5pz0" title="How To Build A Self-Checkout Payment System With The Code Scanner Widget" caption="Building a Self-Checkout Payment System with Code Scanner Widget"/>
+
+## Access detected code value
+
+After scanning a barcode or QR code, you can access the detected code value by using the reference property `value`. This property holds the value of the scanned code, allowing you to retrieve it for further processing or display. For example:
+
+* Drop a Text widget onto the canvas and sets its **Text** property to:
+```
+{{CodeScanner1.value}}
+```
+* When you scan a code, the value of the code is displayed in the Text widget.
+
+
+Additionally, you can use the **onCodeDetected** event to trigger an action when a valid barcode or QR code is detected. 
 
 ### Supported QR/Barcode formats
 
