@@ -30,6 +30,8 @@ To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** ta
   </dd>  
 </dl>
 
+Click **Save and Authorize** to confirm your choice and be taken to Google for authorization and selecting your spreadsheets. 
+
 ## Query Google Sheets
 
 <figure>
