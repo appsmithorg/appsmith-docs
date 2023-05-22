@@ -23,7 +23,7 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 1. Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. On the homepage, click **Add Environment** from the top right corner.
 2. On the Create Environment screen, select **Build your own solution**. 
 
-  a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. Click **Next**
+  a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. Click **Next**.
 
   b. Enter the environment name and description. Click **Next**.
 
