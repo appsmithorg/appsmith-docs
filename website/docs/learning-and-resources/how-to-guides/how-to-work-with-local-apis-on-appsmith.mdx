@@ -14,20 +14,12 @@ import TabItem from '@theme/TabItem';
 
 This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
 
-There are different steps depending on your setup:
-* [Connect self-hosted Appsmith to localhost datasource](#self-host-to-localhost-datasource)
-* [Connect self-hosted Appsmith to Docker datasource](#self-host-to-docker-datasource?docker-method=docker-network)
-* [Connect cloud Appsmith to any local datasource](#cloud-to-local-datasource)
-
 ## Self-hosted Appsmith
 
 <Tabs queryString="docker-method">
 
 
 <TabItem label="localhost" value="localhost">
-
-
-### Datasource on localhost
 
 This guide describes how to connect your self-hosted Appsmith instance to your localhost datasource.
 
@@ -74,10 +66,7 @@ services: ...
 
 </TabItem>
 
-<TabItem label="Docker network" value="docker-network">
-
-
-### Datasource in Docker
+<TabItem label="Datasource in Docker" value="docker-network">
 
 This guide describes how to connect your APIs and databases to your Appsmith instance when they are each in separate Docker containers.
 
@@ -216,8 +205,3 @@ Your localhost application should now be connected and query-able from within yo
   <figcaption align="center"><i>Connecting from Appsmith to local PostgreSQL database using ngrok</i></figcaption>
 </figure>
 
-
-## Further reading
-
-* [Create environments with Git](/advanced-concepts/version-control-with-git/environments-with-git)
-* [Table widget](/reference/widgets/table)
