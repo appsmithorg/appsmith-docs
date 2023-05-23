@@ -111,7 +111,7 @@ You can modify your Appsmith installation on Kubernetes using a `values.yaml` fi
 4. Update the values with:
 
   ```bash
-  helm upgrade appsmith appsmith/appsmith -f values.yaml 
+  helm upgrade appsmith appsmith/appsmith -f values.yaml -n appsmith
   ```
 
 </TabItem>
@@ -136,7 +136,7 @@ You can modify your Appsmith installation on Kubernetes using a `values.yaml` fi
 4. Update the values with:
 
   ```bash
-  helm upgrade appsmith appsmith-ee/appsmith -f values.yaml 
+  helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
   ```
 
 </TabItem>
