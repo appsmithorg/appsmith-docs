@@ -170,51 +170,11 @@ In the **Custom Fusion Chart** property, you need to specify "type" for chart ty
 }
 ```
 
-#### Type
+* **Type :** The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. 
 
-The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. You can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/) documentation to learn more about these charts.
+* **Datasource :** The datasource defines the customization options and data points necessary for creating a chart. It consists of attributes such as chart and data, which may vary depending on the chart type.
 
-```json
-//example
-"type": "column2d"
-```
-This creates a 2D column chart. The value of the `type` property is case-sensitive.
-
-#### Datasource
-
-The datasource defines the customization options and the data points to create a chart. It includes two attributes: **chart** and **data**.
-
-* **Chart**:
-
-The `chart` attribute is an object that can be used to customize the overall appearance of the chart. It includes options such as the chart `title`, `x-axis` and `y-axis labels`, chart `width` and `height`, and more. Here are some most commonly used properties of the `chart` object:
-
-```json
-//example
- "chart": {
-      "caption": "Monthly Revenue for the year 2021",  //Sets the main title of the chart.
-      "xAxisName": "Month",  // Sets the label for the x-axis.
-      "yAxisName": "Revenue",  // Sets the label for the y-axis.
-      "theme": "fusion"  //Sets the color scheme for the chart.
-    },..
-```
-* **Data**: 
-
-The "data" attribute represents the data in an array format with key-value pairs like `[{“label”: “string value”, “value”: “string value”}]`. It's where you specify the actual data that you want to display in the chart.
-
-Here is an example of how to set the "data" array in the "dataSource" property:
-
-```json
- "data": [
-      {
-        "label": "Jan",
-        "value": 42000
-      },
-      {
-        "label": "Feb",
-        "value": 810000
-      },..
-```
-
+Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/). 
 
 #### Examples
 Here are some examples of custom charts that you can use as a reference to create your own customized charts.
