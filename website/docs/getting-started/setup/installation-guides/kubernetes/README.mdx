@@ -69,17 +69,22 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 
   5. Run the below command to deploy Appsmith:
   ```bash
-  helm install appsmith appsmith/appsmith
+  helm install appsmith appsmith/appsmith -n appsmith --create-namespace
   ```
 
-  6. To verify the installation locally, use the below command to forward the 8080 port to 80:
+  6. Get pod name with:
+  ```bash
+  kubectl get pods
+  ```
+
+  7. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
     # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
-    kubectl --namespace default port-forward <APPSMITH_POD_NAME> 8080:80
+    kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
     ```
 
-  7. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+  8. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -131,20 +136,25 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 6. Run the below command to deploy Appsmith:
 
   ```bash
-  helm install appsmith appsmith-ee/appsmith
+  helm install appsmith appsmith-ee/appsmith -n appsmith --create-namespace
   ```
 
-7. To verify the installation locally, use the below command to forward the 8080 port to 80:
+7. Get pod name with:
+
+  ```bash
+  kubectl get pods
+  ```
+
+8. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
   ```bash
   # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
-  kubectl --namespace default port-forward <APPSMITH_POD_NAME> 8080:80
+  kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
   ```
 
-8. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+9. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
 
-9. Log into your Appsmith account, and enter your license key to activate the instance.
-
+10. Log into your Appsmith account, and enter your license key to activate the instance.
 
 </TabItem>
 </Tabs>   
