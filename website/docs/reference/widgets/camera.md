@@ -1,38 +1,82 @@
 # Camera
 
-The camera widget powers users to capture images and videos from their applications and share the data for further use.
+This page provides instructions on how to use the camera widget to capture images and videos.
+
+<figure>
+  <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
+</figure>
+
+## Upload media to S3
+
+To upload the captured image or video to [Amazon S3](/reference/datasources/querying-amazon-s3):
+
+1. Click the **+** icon next to the **queries/js** and choose your S3 datasource.
+2. Select the method **Create a new file** from the Commands drop-down.
+3. Specify the necessary parameters, including the bucket name and file type. When uploading data from the Camera widget, select the `base64` option.
+4. In the content body, add the following:
+
+```js
+//For image
+{"data": {{Camera1.imageDataURL}}}
+
+//For video
+{"data": {{Camera1.videoDataURL}}}
+```
+
+5. Configure the **onImageCapture/onVideoSave** event to run the query. 
+
+Upon capturing an image or video using the camera widget, the resulting file would be automatically uploaded to the S3 bucket.
+
 
 ## Properties
 
-Properties allow you to edit the camera widget, connect it with other widgets and customize the user actions.
+Properties allow you to customize the widget, connect it to other widgets and trigger events on user actions.
+
 
 ### Widget properties
 
-These properties allow you to edit the Camera widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+These properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Property     | Description                                                                                                                                                    |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mode**     | Toggle between Image and Video modes.                                                                                                                          |
-| **Visible**  | Control widget's visibility on the page. When turned off: The widget is not visible when the app is published. It appears translucent when in Edit mode. |
-| **Disabled** | Makes the widget inactive or unusable. The widget remains visible to the user but user interaction is not allowed.                                |
-| **Mirrored** | Mimics the image being captured, toggled on by default. Only available for image capture.                                                                     |
+| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
+|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **Mode**     | Button | Toggle between Image and Video modes.                                                                                                                          |
+| **Visible**  | Boolean| Controls the visibility of the widget on the page. When set to off, the widget is not visible in published apps. It appears translucent in Edit mode. |
+| **Disabled** | Boolean| Disables the widget, making it inactive and preventing user interaction. It remains visible on the page.                                |
+| **Mirrored** | Boolean| Enables mirroring of the captured image. Only applicable to image capture mode.                                                                   |
 
-### Binding properties
+### Reference properties
 
-These properties allow you to bind your camera widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the visibility status, you can use `Camera1.isVisible`.
 
-| Binding Property  | Description                                                                | Snippet                                    |
-| ------------------ | -------------------------------------------------------------------------- | ------------------------------------------ |
-| **imageBlobURL**   | Blob URL of the image to store the image for future use.                   | `{{<camerawidget_name>.imageBlobURL}}`     |
-| **imageDataURL**   | Data URL format of the image to embed it inline in different applications. | `{{<camerawidget_name>.`imageDataURL`}}`   |
-| **imageRawBinary** | Binary file format of the image to store the image for future use.         | `{{<camerawidget_name>.`imageRawBinary`}}` |
-| **videoBlobURL**   | Blob URL of the video to store the image for future use.                   | `{{<camerawidget_name>.`videoBlobURL`}}`   |
-| **videoDataURL**   | Data URL format of the video to embed it inline in different applications. | `{{<camerawidget_name>.`videoDataURL`}}`   |
-| **videoRawBinary** | Binary file format of the image to store the image for future use.         | `{{<camerawidget_name>.`videoRawBinary`}}` |
+
+| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
+|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| **imageBlobURL**    | String| Blob URL of the image, allowing the image to be stored for future use. | 
+| **imageDataURL**    | String| Data URL format of the image, enabling it to be embedded inline in various applications. | 
+| **imageRawBinary**  | String| Binary file format of the image, providing a means to store the image for future use. | 
+| **videoBlobURL**    | String| Blob URL of the video to store the image for future use.                   |
+| **videoDataURL**    | String| Data URL format of the video, allowing it to be embedded inline in different applications.| 
+| **videoRawBinary**  | String| Binary file format of the image to store the image for future use.         | 
+
+
+### Style properties
+
+Style properties allow you to change the look and feel of the widget. All of these properties are present in the property pane of the widget.
+
+
+|         Property         	| Data type 	|                                                                                                          Description                                                                                                          	|
+|:------------------------:	|-----------	|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| **Border Radius** | String | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
+| **Box Shadow**  | String  | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+
 
 ### Events
 
-| Event           | Description                                                                                                                                                                                                                                            |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onImageSave** | Sets an action to take place when the user saves an image. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead. |
-| **onVideoSave** | Sets an action to take place when the user saves a video. Can be set from the GUI list of common actions (See a list of [supported actions](../appsmith-framework/widget-actions/).), or you can define a custom JavaScript function to call instead.  |
+When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
+
+
+| Events              | Description                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onImageSave** | Specifies the action to be performed when the user saves an image.  |
+| **onVideoSave** | Specifies the action to be performed when the user saves a video. |
