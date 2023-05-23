@@ -58,7 +58,7 @@ For Oracle SQL syntax, see the official documentation [**Oracle SQL Language Ref
 ### Fetch data
 
 ```sql
-SELECT * FROM users OFFSET {{ UsersTable.pageOffset }} ROWS FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY ;
+SELECT * FROM users OFFSET {{ UsersTable.pageOffset }} ROWS FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
 ```
 
 In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
@@ -82,8 +82,8 @@ In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are t
 
 ```sql
 UPDATE users
-  SET email = '{{EmailInput.text}}'
-  WHERE id = {{ UserTable.selectedRow.id}};
+  SET email = {{ EmailInput.text }}
+  WHERE id = {{ UsersTable.selectedRow.id }};
 ```
 
 In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `UsersTable` is the Table widget where the user selects the row to update the user's email.
@@ -91,7 +91,7 @@ In the above example, `EmailInput` is the name of the Input widget used to captu
 ### Delete data
 
 ```sql
-DELETE FROM users WHERE id = {{tableUsers.selectedRow.id}};
+DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
 ```
 
 In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
