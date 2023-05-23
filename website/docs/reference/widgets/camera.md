@@ -3,7 +3,7 @@
 This page provides instructions on how to use the camera widget to capture images and videos.
 
 <figure>
-  <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
   <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
 </figure>
 
