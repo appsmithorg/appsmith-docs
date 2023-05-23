@@ -58,9 +58,9 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 
   3. Add the Appsmith chart repository with:
 
-  ```bash
-  helm repo add appsmith https://helm.appsmith.com
-  ```
+    ```bash
+    helm repo add appsmith https://helm.appsmith.com
+    ```
 
   4. Load the Appsmith chart repository with:
   ```bash
@@ -69,13 +69,22 @@ Follow the steps below to install Appsmith on your Kubernetes cluster:
 
   5. Run the below command to deploy Appsmith:
   ```bash
-  helm install appsmith appsmith/appsmith
+  helm install appsmith appsmith/appsmith -n appsmith --create-namespace
   ```
 
-  6. Verify Appsmith installation with:
+  6. Get pod name with:
   ```bash
   kubectl get pods
   ```
+
+  7. To verify the installation locally, use the below command to forward the 8080 port to 80:
+  
+    ```bash
+    # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
+    kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+    ```
+
+  8. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -116,28 +125,36 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 
 4. Add the Appsmith chart repository with:
 
-```bash
-helm repo add appsmith-ee https://helm-ee.appsmith.com
-```
+  ```bash
+  helm repo add appsmith-ee https://helm-ee.appsmith.com
+  ```
 5. Load the Appsmith chart repository with:
 
-```bash
-helm repo update
-```
+  ```bash
+  helm repo update
+  ```
 6. Run the below command to deploy Appsmith:
 
-```bash
-helm install appsmith appsmith-ee/appsmith
-```
+  ```bash
+  helm install appsmith appsmith-ee/appsmith -n appsmith --create-namespace
+  ```
 
-7. Verify Appsmith installation with:
+7. Get pod name with:
 
-```bash
-kubectl get pods
-```
+  ```bash
+  kubectl get pods
+  ```
 
-8. Log into your Appsmith account, and enter your license key to activate the instance.
+8. To verify the installation locally, use the below command to forward the 8080 port to 80:
+  
+  ```bash
+  # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
+  kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+  ```
 
+9. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+
+10. Log into your Appsmith account, and enter your license key to activate the instance.
 
 </TabItem>
 </Tabs>   
