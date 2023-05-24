@@ -19,10 +19,10 @@ This page provides steps to install Appsmith using an Amazon Machine Image (AMI)
 
 Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
-1. Go to the **Amazon** **EC2 dashboard,**
+1. Go to the **Amazon** **EC2 dashboard**.
 2. Select the **AMIs** option in the **Images** menu.
 3. Search **Appsmith** in the search bar at the top.
-4. Select the image from the search results.
+4. Select the **Appsmith image** from the search results.
 5. Click the **Launch** button.
 6. Select the server size you wish to use.
 7. Click the **Review and Launch** button.
@@ -35,7 +35,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
     c. Click the **Review and Launch** button to proceed.
 
-10. Ensure the key pair is the one you created in the [Prerequisites](#prerequisites).
+10. Ensure you have selected the same key pair that you created in the [Prerequisites](#prerequisites).
 11. Click the **Launch Instance** button.
 
 You see a launch status screen as shown below:
