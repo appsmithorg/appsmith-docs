@@ -442,6 +442,7 @@ const sidebars = {
             'reference/datasources/querying-postgres',
             'reference/datasources/querying-redis',
             'reference/datasources/querying-redshift',
+            'reference/datasources/rest-api',
             'reference/datasources/querying-snowflake-db',
             'reference/datasources/using-smtp',
             'reference/datasources/twilio',
