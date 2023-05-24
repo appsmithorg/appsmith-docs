@@ -2,11 +2,11 @@
 description: Connect Appsmith to a REST API and create queries.
 ---
 
-# REST API
+# Authenticated/REST API
 
 This page gives information to connect Appsmith to a REST API and to read and write data in your applications.
 
-## Connect REST API
+## Connect Authenticated REST API
 
 :::caution 
 If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your API instance or VPC before connecting to the API.
@@ -37,13 +37,14 @@ The following section is a reference guide that provides a complete description 
 </dl>
 
 <dl>
-  <dt><b>Authentication Type</b></dt><br />
+  <dt><b>Authentication Type</b></dt>
+  <dd>Sets the method used to authenticate requests. Configure details under the <b>Authentication</b> dropdown after selecting your Authentication Type.</dd><br/>
   <dd><i>Options:</i>
     <ul>
       <li><b>None:</b> Does not send any authentication information.</li>
       <li><b>Basic:</b> Expects a <b>Username</b> and <b>Password</b> to be used for authenticating HTTP requests.</li>
-      <li><b>OAuth 2.0:</b> Enables a number of fields for configuring an OAuth 2.0 integration. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.</li>
-      <li><b>API Key:</b> Sends a key/value pair to be used for authorization. You can specify the key's prefix, as well as choose whether it's sent in request header or the query params.</li>
+      <li><b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.</li>
+      <li><b>API Key:</b> Sends a key/value pair to be used for authorization. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
       <li><b>Bearer Token:</b> Sends a token value in the request headers to be used for authenticating the user, in the format <code>Authorization: Bearer &lt;your-token&gt;</code>.</li>
     </ul>
   </dd>  
@@ -51,12 +52,12 @@ The following section is a reference guide that provides a complete description 
 
 <dl>
   <dt><b>Send appsmith signature header</b></dt>
-  <dd>When enabled, sends an additional key/value pair in the request header in the format: <code>X-Appsmith-Signature: &lt;session-details-signature-key&gt;</code>. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions">Signature Header</a>.</dd>
+  <dd>When enabled, it sends an additional key/value pair in the request header in the format: <code>X-Appsmith-Signature: &lt;session-details-signature-key&gt;</code>. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions">Signature Header</a>.</dd>
 </dl>
 
 <dl>
   <dt><b>Use self-signed certificate</b></dt>
-  <dd>When enabled, allows you to upload your own certificate file. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates">Self-Signed Certificates</a>.</dd>
+  <dd>When enabled, you can upload your own certificate file. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates">Self-Signed Certificates</a>.</dd>
 </dl>
 
 ## Query REST API
@@ -70,12 +71,12 @@ The following section is a reference guide that provides a description of the pa
 
 <dl>  
   <dt><b>Method and URL</b></dt>
-  <dd>Sets the REST method and endpoint to use for the query.</dd>
+  <dd>Sets the REST method and endpoint for the query.</dd>
 </dl>
 
 <dl>  
   <dt><b>Headers</b></dt>
-  <dd>Sets key/value pairs to send in the header of the request.</dd>
+  <dd>Sets key/value pairs to send in the request header.</dd>
 </dl>
 
 <dl>
@@ -84,7 +85,7 @@ The following section is a reference guide that provides a description of the pa
 </dl>
 
 <dl>
-  <dt><b>Body</b></dt><br />
+  <dt><b>Body</b></dt>
   <dd><i>Options:</i>
     <ul>
       <li><b>None:</b> Sends no body.</li>
@@ -97,7 +98,7 @@ The following section is a reference guide that provides a description of the pa
 </dl>
 
 <dl>
-  <dt><b>Pagination</b></dt><br />
+  <dt><b>Pagination</b></dt>
   <dd><i>Options:</i>
     <ul>
       <li><b>None:</b> Doesn't use any pagination.</li>
@@ -109,13 +110,67 @@ The following section is a reference guide that provides a description of the pa
 
 <dl>
   <dt><b>Authentication</b></dt>
-  <dd><em>Use the datasource configuration page to update Authentication settings, instead of the query editor.</em></dd>
+  <dd><em>Use the datasource configuration page to update Authentication settings instead of the query editor.</em></dd>
 </dl>
 
 <dl>
   <dt><b>Settings</b></dt>
   <dd>Contains a number of settings to modify the behavior of your query's execution. For reference on each setting, see <a href="/core-concepts/data-access-and-binding/querying-a-database/query-settings">Query Settings</a>.</dd>
 </dl>
+
+---
+
+Below are examples of passing body data in several formats:
+
+<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
+
+### JSON data
+
+```json
+{
+	"q": {{ UsersTable.searchText }},
+	"limit": {{ UsersTable.pageSize }},
+	"offset": {{ UsersTable.pageOffset }}
+}
+```
+
+In the example above, values are collected from a [Table widget](/reference/widgets/table) and passed into a JSON object.
+
+### URL-encoded form data
+
+|  Key     |  Value                        |
+|----------|-------------------------------|
+| query    | `{{ UsersTable.searchText }}` |
+| limit    | `{{ UsersTable.pageSize }}`   |
+| offset   | `{{ UsersTable.pageOffset }}` |
+
+```
+"query=arjun&limit=10&offset=20"
+```
+
+Selecting **FORM_URLENCODED** (for `application/x-www-form-urlencoded`) automatically encodes your key/value pairs for sending in the request body.
+
+### Multipart/Form-data
+
+|  Key     | Type |  Value                        |
+|----------|------|-------------------------------|
+| user     | Text | `{{ appsmith.user.email }}`   |
+| filename | Text | `{{ FileNameInput.text }}`    |
+| file     | File | `{{ Filepicker.files[0] }}`   |
+
+Above, values of multiple types are pulled from widgets and added to the query, including file data from a [Filepicker widget](/reference/widgets/filepicker).
+
+### Raw data
+
+```javascript
+{{ Filepicker1.files[0]?.data }}
+```
+
+Use **RAW** if your endpoint can't accept multipart-encoded data and requires raw body binary instead. Above, the `data` property of the file is passed to the query instead of the file object itself because the endpoint expects only raw binary data.
+
+:::caution tip
+Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
+:::
 
 ## Troubleshooting
 
