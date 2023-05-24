@@ -122,3 +122,25 @@ This error occurs when there are duplicate values in the options property of the
 #### Solution
 
 To resolve this error, ensure that each value in the options property of the Select widget is unique. You can do this by checking the values and making sure that there are no duplicates. 
+
+## Source data cannot have more than 10 items
+
+You may encounter an error message stating "Source data cannot have more than 10 items" while using the Menu Button. 
+
+
+#### Error message
+
+<Message
+messageContainerClassName="error" 
+messageContent="Source data cannot have more than 10 items"></Message>
+
+#### Cause
+
+This error occurs when the dynamic source array has more than 10 items. The **Source Data** field triggers this error message when the number of items exceeds the limit of 10.
+
+#### Solution
+To resolve this issue, ensure that your Dynamic Menu items are limited to a maximum of **10 items.**
+
+
+
+
