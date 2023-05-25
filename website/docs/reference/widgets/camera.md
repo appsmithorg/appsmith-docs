@@ -9,25 +9,33 @@ This page provides instructions on how to use the camera widget to capture image
 
 ## Upload media to S3
 
-To upload the captured image or video to [Amazon S3](/reference/datasources/querying-amazon-s3):
+Let's see how to capture an image or video and upload it to Amazon S3.
 
-1. Click the **+** icon next to the **queries/js** and choose your S3 datasource.
-2. Select the method **Create a new file** from the Commands drop-down.
-3. Specify the necessary parameters, including the bucket name and file type. When uploading data from the Camera widget, select the `base64` option.
-4. In the content body, add the following:
+1. Connect to [Amazon S3](/reference/datasources/querying-amazon-s3) datasource.
+2. Click the **+** icon next to the **Queries/JS** and choose your S3 datasource.
+3. Select the method **Create a new file** from the Commands drop-down.
+4. Specify the necessary parameters, including the Bucket Name and File Data Type. When uploading data from the Camera widget, select the `base64` option from File Data Type.
+5. In the content box, add the data you want to upload. For instance, if you want to upload an image, use: 
 
-```js
-//For image
-{"data": {{Camera1.imageDataURL}}}
+ ```js
+  //For image
+  {"data": {{Camera1.imageDataURL}}}
+  ```
+To upload the video, use:
+ ```js
+  //For video
+  {"data": {{Camera1.videoDataURL}}}
+  ```
 
-//For video
-{"data": {{Camera1.videoDataURL}}}
-```
+<figure>
+  <img src="/img/cam-to-s3.png" style= {{width:"700px", height:"auto"}} alt="Upload media to S3"/>
+  <figcaption align = "center"><i>Upload media to S3</i></figcaption>
+</figure>
 
-5. Configure the **onImageCapture/onVideoSave** event to run the query. 
 
-Upon capturing an image or video using the camera widget, the resulting file would be automatically uploaded to the S3 bucket.
+5. Set the **onImageCapture** or **onVideoSave** event to run the query. 
 
+When you capture and save an image or video using the camera widget, the file is automatically uploaded to the S3 bucket.
 
 ## Properties
 
