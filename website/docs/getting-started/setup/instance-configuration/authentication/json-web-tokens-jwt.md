@@ -1,58 +1,36 @@
 ---
 sidebar_position: 5
 ---
-# JSON Web Tokens (JWT)
+# Identity and Access Tokens
 
-JSON Web Token(JWT) is an open standard ([RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519)) for securely transmitting information between parties in the form of a JSON object.
+When you log in using the [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) protocol, the identity provider sends back the identity and access token to Appsmith. These tokens can be utilized in your applications for various purposes.
 
 :::info
-**JSON Web Tokens** (JWT) can be accessed as part of [OpenID Connect (OIDC),](openid-connect-oidc/) available **only** in the [**business edition**](https://www.appsmith.com/pricing) for **self-hosted instances**.
+**Identity and Access Tokens** can be accessed as part of [OpenID Connect (OIDC),](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) available **only** in Appsmith's [**business edition**](https://www.appsmith.com/pricing).
 :::
 
 ## Identity token
 
-An ID token is a signed assurance of a user’s identity and contains basic information like the name, picture, email address, etc. When a user logs in successfully, an ID token is shared as per the Open ID Connect (OIDC) specification. Once the SSO provider successfully authenticates a user, the ID token is available on the Appsmith platform.
+An ID token serves as a verified confirmation of a user's identity and includes essential information such as their name, picture, email address etc. According to the OpenID Connect (OIDC) specifications, when a user successfully logs in, Appsmith receives an ID token.
 
-You can read the value of an id token in your APIs/Queries by using the mustache syntax `{{}}`.
+You can read the value of an ID token in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
 
 ```
 {{appsmith.user.idToken}}
 ```
-Appsmith exposes the `idToken` parameter on the client side. It thus can be embedded in any operation that you would like to perform in JavaScript functions, APIs, or queries.
+Appsmith provides the `idToken` parameter on the client side, allowing you to incorporate it into various operations like JavaScript functions, APIs, or queries as needed.
 
 ## Access token
 
-An access token is an object that stores information about an entity in the form of claims. Access tokens are self-contained. You don’t have to call a server to validate a token.
+An access token is a self-contained object that contains information, known as claims, about an entity. Unlike other tokens, you don't need to contact a server to validate an access token.
 
-After successful user authentication through an SSO Provider, you can use the access tokens on Appsmith. The access token is available as an environment variable. The environment variable isn't accessible on the client side as per security norms.
+Once a user has successfully authenticated through a Single Sign-On (SSO) Provider, the access tokens can be used within Appsmith. The access token is stored in the environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN`, and for security reasons, it is not accessible on the client side.
 
-The environment variable `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` stores the access token. You can read the value of the access token by using it between the angular braces`<<>>.`
+You can read the value of the access token using the environment variable between the angular braces`<<>>.`
 
-`<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`
+```
+<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>
+```
 
-## How to use JSON web tokens in Appsmith
-
-Suppose you have integrated your Single Sign On(SSO) provider with Appsmith using [_OpenID Connect_](openid-connect-oidc/), and you are using Appsmith to log in and your SSO provider to authenticate the request.
-
-Refer to the image below to see how this interaction takes place.
-
-![Interaction between Appsmith and SSO Provider](</img/Appsmith-SSO-Provider-JWT_Integration.png>)
-
-In the above image, you can see that:
-
-* A user requests to log in using Appsmith.
-* Behind the scenes, Appsmith is integrated with the SSO provider.
-* SSO Provider authorizes the request.
-* The SSO provider generates a token for authenticated users and shares them with Appsmith.
-* Appsmith has the token accessible on the platform. You can pass it on in your APIs to provide access to the resources or perform desired operations.
-
-### Types of tokens
-
-Appsmith provides two types of JSON Web Tokens that your application can integrate with ID Token and Access Token.
-
-
-
-## Why use JSON web tokens?
-
-The key benefits of using a JWT are that it is more compact. It is secured and can use a shared secret between an issuer and a consumer. It uses JSON format; almost every programming language has a JSON parser, so you don’t have to reinvent the wheel.
+By incorporating this syntax into your Appsmith application, you can retrieve and utilize the value of the access token as needed.
 
