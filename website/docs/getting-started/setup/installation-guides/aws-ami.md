@@ -21,11 +21,11 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 1. Go to **EC2 Dashboard**.
 2. Scroll down to the **Launch instance** section.
 3. Click the **Launch instance** button, and select **Launch instance**.
-3. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
-4. Search for **Appsmith** in the search bar.
-5. In the search results, click **AWS Marketplace AMIs**.
-5. Select the **Appsmith** image.
-6. On the **Launch an instance** screen:
+4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
+5. Search for **Appsmith** in the search bar.
+6. In the search results, click **AWS Marketplace AMIs**.
+7. Select the **Appsmith** image.
+8. On the **Launch an instance** screen:
 
  a. Configure the instance as below:
 
@@ -42,9 +42,9 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
  | **Firewall (security groups)** | Select **Select existing security group**|
  | **Security groups** | Select the security group that you created in the [Prerequisites](#prerequisites) step |
  
-7. Keep the default selection for other fields.
+9. Keep the default selection for other fields.
 
-8. Click the **Launch Instance** button.
+10. Click the **Launch Instance** button.
 
 You see a launch status screen as shown below:
 
@@ -53,7 +53,7 @@ You see a launch status screen as shown below:
  <figcaption align="center"><i>A launch status screen shows the server status</i></figcaption>
 </figure>
 
-10. Follow these steps to verify the Appsmith installation:
+11. Follow these steps to verify the Appsmith installation:
 
  a. On the **Launch status** screen, click the **EC2 instance id** available in the bracket.
 
@@ -75,7 +75,7 @@ You see a launch status screen as shown below:
  <figcaption align="center"><i>Appsmith Login Screen</i></figcaption>
  </figure>
 
-11. Follow these steps to log into the instance using admin credentials:
+12. Follow these steps to log into the instance using admin credentials:
 
  a. Username: `appsmith@example.com`
 
@@ -90,7 +90,7 @@ You see a launch status screen as shown below:
   :::caution Attention
   The application password is **only** available in system logs for the initial 24 hours.
   :::
-  
+
 
  <figure>
  <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
