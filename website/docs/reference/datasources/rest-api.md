@@ -115,6 +115,10 @@ Selecting **FORM_URLENCODED** (for `application/x-www-form-urlencoded`) automati
 
 Above, values of multiple types are pulled from widgets and added to the query, including file data from a [Filepicker widget](/reference/widgets/filepicker).
 
+:::tip
+When uploading file data, check that your Filepicker widget's **Data Format** property is set correctly. When uploading as multipart/form-data, this should usually be set to `Binary`.
+:::
+
 ### Raw data
 
 ```javascript
