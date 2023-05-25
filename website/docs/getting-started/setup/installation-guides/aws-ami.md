@@ -18,7 +18,7 @@ This page provides steps to install Appsmith using an Amazon Machine Image (AMI)
 
 Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
-1. Go to **EC2 Dashboard**.
+1. Go to the **EC2 Dashboard**.
 2. Scroll down to the **Launch instance** section.
 3. Click the **Launch instance** button, and select **Launch instance**.
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
@@ -33,14 +33,14 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
  |------------------------|------------------------------------------| 
  | **Name** | Give a desired name. |
  | **Instance type** | A minimum `t3.medium` or `t3a.medium` is needed. |
- | **Key pair** | Select the Key pair you created in the [Prerequisites](#prerequisites) step. |
+ | **Key pair** | Select the Key pair you created in the [Prerequisites](#prerequisites) section. |
 
  b. Scroll down to the **Networking** section, and configure as below:
 
  | Attribute | Value |
  |------------------------|------------------------------------------| 
- | **Firewall (security groups)** | Select **Select existing security group**|
- | **Security groups** | Select the security group that you created in the [Prerequisites](#prerequisites) step |
+ | **Firewall (security groups)** | Select **Select existing security group**.|
+ | **Security groups** | Select the security group that you created in the [Prerequisites](#prerequisites) section. |
  
 9. Keep the default selection for other fields.
 
@@ -59,16 +59,16 @@ You see a launch status screen as shown below:
 
  b. Click the **Instance ID** to access the **Instance Summary** page.
 
- b. Copy the **Public IPv4 address** available on the **Instance Summary** page.
+ c. Copy the **Public IPv4 address** available on the **Instance Summary** page.
 
  <figure>
  <img src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
  <figcaption align="center"><i>Use DNS or Public IP to access Appsmith</i></figcaption>
  </figure>
  
- h. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
+ d. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
  
- g. Once the server is up and running, you can see the login screen of Appsmith.
+ e. Once the server is up and running, you can see the login screen of Appsmith.
 
  <figure>
  <img src="/img/aws-login-page.png" style={{width: "100%", height: "auto"}} alt="Appsmith Login Screen" />
