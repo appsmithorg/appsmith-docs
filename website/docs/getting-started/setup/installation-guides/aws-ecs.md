@@ -181,7 +181,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
     e. Click the link next to the **EC2 instance id**.
 
-    f. Access the **Instance ID**.
+    f. Click the **Instance ID** to access the **Instance Summary** page.
     
     g. Copy the **Public IPv4 address** from the **Instance Summary** page.
 
