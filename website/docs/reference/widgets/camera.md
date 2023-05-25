@@ -35,7 +35,6 @@ To upload the video, use:
 
 5. Set the **onImageCapture** or **onVideoSave** event to run the query. 
 
-When you capture and save an image or video using the camera widget, the file is automatically uploaded to the S3 bucket.
 
 ## Properties
 
