@@ -23,9 +23,11 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 1. Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. On the homepage, click **Add Environment** from the top right corner.
 2. On the Create Environment screen, select **Build your own solution**. 
 
-  a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. Click **Next**.
+  a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. 
+  
+  b. Click **Next**.
 
-  b. Enter the environment name and description. Click **Next**.
+  c. Enter the environment name and description. Click **Next**.
 
 3. Open the newly created Environment, and from the sidebar, go to **Connections** > **Applications**.
 4. On the Applications homepage, click the **+** icon to create a new application. On the **Add Application** panel:
@@ -39,22 +41,13 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
   a. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
 
    - **Authorization URL**
-
    - **Token Endpoint**
-
    - **UserInfo Endpoint**
-
    - **JWKS Endpoint**
 
   b. Scroll down to the **General** dropdown, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
 
-6. To configure the required scopes, go to the **Resources** tab, click the **Edit** icon and select the following scopes:
-
-    - **openid**
-
-    - **email**
-
-    - **profile**
+6. To configure the required scopes, go to the **Resources** tab, click the **Edit** icon and select **openid**, **email**, **profile** from the list of scopes.
 
 7. On your application panel, switch the toggle button at the top right corner to enable user access to the application. 
 
