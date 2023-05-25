@@ -81,23 +81,21 @@ You see a launch status screen as shown below:
 
  b. Find the password in one of the below ways:
 
- * SSH into your server using your private key and find the application credentials with:
- ```
- sudo cat /home/ubuntu/appsmith/credential
- ``` 
- * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
+    * SSH into your server using your private key and find the application credentials with:
+    ```
+    sudo cat /home/ubuntu/appsmith/credential
+    ``` 
+    * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
 
-  :::caution Attention
-  The application password is **only** available in system logs for the initial 24 hours.
-  :::
+      :::caution Attention
+      The application password is **only** available in system logs for the initial 24 hours. It's recommended that you change the password for security reasons.
+      :::
 
 
- <figure>
- <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
- <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
- </figure>
-
-* It's recommended that you change the password for security reasons.
+  <figure>
+    <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
+    <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
+  </figure>
 
 ## Troubleshooting
 
