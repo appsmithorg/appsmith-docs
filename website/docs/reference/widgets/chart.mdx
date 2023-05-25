@@ -716,38 +716,39 @@ If the query fails and there is no default data specified, the chart doesn't ren
 Explain individual properties and examples.
 
 
-**Chart Type** `String`
+#### Chart Type `String`
 
-  Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).
+  <dd>Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).</dd>
+
+#### Series Data `String`
+
+  <dd>Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).
     
-**Series Data** `String`
+ Specifies the data points for the current chart series, providing the values to be plotted on the chart. </dd><br />
 
-  Sets the type of Chart used to display data. Choose one of the charts from the available options, or create a custom chart (available from FusionCharts).
-    
-Specifies the data points for the current chart series, providing the values to be plotted on the chart. 
+<dd><b>Example:</b></dd><br />
 
-Example:
+<dd>The series data must be in a specific format:</dd>
 
-The series data must be in a specific format.
-```js
-[
-  {
-    "x": "Product1",
-    "y": 20000
-  },..
-]
-```
-In this format, `x` denotes the label, and `y`denotes the value.
+  ```js
+     [
+      {
+        "x": "Product1",
+        "y": 20000
+      },..
+     ]
+   ```
+<dd>In this format, <code>x</code>, denotes the label, and <code>y</code> denotes the value.</dd>
 
-If the data is not in the desired format, you can use JavaScript to transform the data by adding it to the Series Data property.
+<dd>If the data is not in the desired format, you can use JavaScript to transform the data by adding it to the Series Data property.</dd>
 
-```js
-{{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}
-```
-The code uses the `map()` function to transform each item in the fetchUserData.data array into an object with an x and a y key.
+  ```js
+    {{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}
+  ```
+<dd>The code uses the <code>map()</code> function to transform each item in the fetchUserData.data array into an object with an x and a y key.</dd><br />
 
 
-**Series Color** `String`
+#### **Series Color** `String`
 
   Defines the color for the current chart series, allowing visual customization and differentiation between series.
 
