@@ -77,8 +77,6 @@ The following section is a reference guide that provides a description of the pa
 
 Below are examples of passing body data in several formats:
 
-<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
-
 ### JSON data
 
 ```json
