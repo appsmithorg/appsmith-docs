@@ -10,10 +10,6 @@ Use this datasource to create a single query for an API that doesn't need comple
 
 ## Connect REST API
 
-:::caution 
-If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your API instance or VPC before connecting to the API.
-:::
-
 ## Query REST API
 
 The following section is a reference guide that provides a description of the parameters to create REST API queries.
