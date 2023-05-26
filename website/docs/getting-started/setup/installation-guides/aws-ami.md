@@ -68,12 +68,7 @@ You see a launch status screen as shown below:
  
  d. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
  
- e. Once the server is up and running, you can see the login screen of Appsmith.
-
- <figure>
- <img src="/img/aws-login-page.png" style={{width: "100%", height: "auto"}} alt="Appsmith Login Screen" />
- <figcaption align="center"><i>Appsmith Login Screen</i></figcaption>
- </figure>
+ e. Once the server is up and running, you can see the login screen of Appsmith.aw0aws-l
 
 12. Follow these steps to log into the instance using default root admin credentials:
 
