@@ -19,12 +19,16 @@ This guide shows you how to capture and upload an image or video to Amazon S3.
 
  ```js
   //For image
-  {"data": {{Camera1.imageDataURL}}}
+   {
+    "data": {{Camera1.imageDataURL}}
+   }
   ```
 To upload the video, use:
  ```js
   //For video
-  {"data": {{Camera1.videoDataURL}}}
+   {
+    "data": {{Camera1.videoDataURL}}
+   }
   ```
 
 <figure>
