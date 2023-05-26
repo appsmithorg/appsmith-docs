@@ -59,7 +59,7 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 2. Add the URLs copied from the Ping Identity application into OIDC configurations in Appsmith as per the table below:
 
-      | **OIDC configuration field**      |  **Auth0 URL** |
+      | **OIDC configuration field**      |  **Ping ID URL** |
       | ----------------------- | --------------------- |
       | **Authorization URL** | Authorization URL     |
       | **Token URL**         | Token Endpoint             |
