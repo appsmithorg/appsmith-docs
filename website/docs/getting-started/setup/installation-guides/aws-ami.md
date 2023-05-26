@@ -75,7 +75,7 @@ You see a launch status screen as shown below:
  <figcaption align="center"><i>Appsmith Login Screen</i></figcaption>
  </figure>
 
-12. Follow these steps to log into the instance using admin credentials:
+12. Follow these steps to log into the instance using default root admin credentials:
 
  a. Username: `appsmith@example.com`
 
@@ -88,7 +88,7 @@ You see a launch status screen as shown below:
     * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
 
       :::caution Attention
-      The application password is **only** available in system logs for the initial 24 hours. It's recommended that you change the password for security reasons.
+      The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
       :::
 
 
