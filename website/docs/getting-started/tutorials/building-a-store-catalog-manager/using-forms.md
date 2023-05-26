@@ -245,7 +245,7 @@ Clicking on **JS** enables two things:
 Note that you bound one action each with the success and error events. In [part 3](./creating-interactive-views.md), you'll learn to bind more than one action with each of the events.
 
 :::info
-For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](./../../how-to-guides/writing-javascript-in-appsmith.md).
+For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](/learning-and-resources/how-to-guides/writing-javascript-in-appsmith).
 :::
 
 ## Connecting multiple pages
@@ -265,7 +265,7 @@ Your **ProductListPage** now looks like this:
 
 Let's test it out: Click on the "**Add New Product"** button on the **ProductListPage**. You'll see that the **NewProductPage** form opens up, ready for user input.
 
-By selecting the [Navigate To](../../../reference/appsmith-framework/widget-actions/navigate-to.md) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
+By selecting the [Navigate To](/reference/appsmith-framework/widget-actions/navigate-to) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
 
 ## What's next?
 

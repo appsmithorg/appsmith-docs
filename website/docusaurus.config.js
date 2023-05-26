@@ -100,11 +100,6 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://www.appsmith.com/blog?cat=Tutorial',
-            label: 'Tutorials',
-            position: 'right',
-          },
-          {
             href: 'https://community.appsmith.com/',
             label: 'Forum',
             position: 'right',
@@ -135,10 +130,6 @@ const config = {
               {
                 label: 'Reference',
                 to: '/',
-              },
-              {
-                label: 'Resources',
-                to: 'learning-and-resources/tutorials',
               },
             ],
           },
