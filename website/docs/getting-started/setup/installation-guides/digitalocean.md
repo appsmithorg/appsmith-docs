@@ -70,4 +70,4 @@ If you encounter any errors during this process, check out the guide on [debuggi
 
 * [Configuring Self-Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](/getting-started/setup/instance-management)
-* [Tutorials](/learning-and-resources/tutorials)
+* [Tutorials](/getting-started/tutorials)

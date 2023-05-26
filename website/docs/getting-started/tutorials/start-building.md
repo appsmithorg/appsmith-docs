@@ -145,6 +145,6 @@ You have completed the quickstart tutorial.
 
 ## Further reading
 
-[Tutorials](/learning-and-resources/tutorials)<br />
+[Tutorials](/getting-started/tutorials)<br />
 [Core Concepts](/core-concepts/connecting-to-data-sources)
 

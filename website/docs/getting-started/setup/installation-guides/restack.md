@@ -25,4 +25,4 @@ If you encounter any errors during this process, please reach out to [support@ap
 
 * [Configuring Self Hosted Instances](../instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](../instance-management/)
-* [Tutorials](../../../learning-and-resources/tutorials/)
+* [Tutorials](../../../getting-started/tutorials/)
