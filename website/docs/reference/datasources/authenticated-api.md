@@ -1,18 +1,14 @@
 ---
-description: Connect Appsmith to an Authenticated API and create queries.
+description: Connect Appsmith to an Authenticated API.
 ---
 
 # Authenticated API
 
-This page gives information to connect Appsmith to an Authenticated API and to read and write data in your applications.
+This page gives information to connect Appsmith to an Authenticated API.
 
 Use this datasource to create multiple queries for the same API. Every query created from this datasource has shared configuration (root URL, authentication, headers, and so on) to avoid re-entering details. If you're only creating a single query for your API, try using a [REST API](/reference/datasources/rest-api) datasource.
 
 ## Connect Authenticated API
-
-:::caution 
-If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your API instance or VPC before connecting to the API.
-:::
 
 ### Connection parameters
 
@@ -25,7 +21,10 @@ The following section is a reference guide that provides a complete description 
   
 <dl>
   <dt><b>URL</b></dt>
-  <dd>Sets the endpoint to query.</dd>
+  <dd>Sets the domain that this datasource should query. Queries created from this datasource inherit this as a base URL.</dd><br/>
+  <dd>
+    For example, if you set <b>URL</b> to <code>https://api.example.com</code>, then its queries would all start with that URL as their base path and you'd add the endpoint (like <code>/users/search/</code>) as a suffix within each query.
+  </dd>
 </dl>
 
 <dl>
@@ -45,10 +44,28 @@ The following section is a reference guide that provides a complete description 
   <dd><i>Options:</i>
     <ul>
       <li><b>None:</b> Does not send any authentication information.</li>
-      <li><b>Basic:</b> Expects a <b>Username</b> and <b>Password</b> to be used for authenticating HTTP requests.</li>
-      <li><b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.</li>
-      <li><b>API Key:</b> Sends a key/value pair to be used for authorization. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
-      <li><b>Bearer Token:</b> Sends a token value in the request headers to be used for authenticating the user, in the format <code>Authorization: Bearer &lt;your-token&gt;</code>.</li>
+      <li><b>Basic:</b> Expects a <b>Username</b> and <b>Password</b>, which are sent in each request as a base64-encoded string in the request's Authorization header.</li>
+      <li>
+        <b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration.
+        <ul>
+          <li><b>Grant Type:</b> Sets the method that is used to get an access token. Choose from <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code">Authorization Code</a> or <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials">Client Credentials</a>.</li>
+          <li><b>Add Access Token To:</b> Sets whether the access token is sent as a <b>Request Header</b> or as a query parameter (<b>Request URL</b>).</li>
+          <li><b>Header Prefix:</b> When the access token is sent as a header, this sets a string to prefix the access token. A common example is <code>Bearer</code>.</li>
+          <li><b>Access Token URL:</b> The endpoint on the authentication server that is used to exchange the authorization code for an access token.</li>
+          <li><b>Client ID:</b> The identifier issued to the client by the OAuth provider during app registration.</li>
+          <li><b>Client Secret:</b> The secret string issued to the client by the OAuth provider during app registration.</li>
+          <li><b>Scopes:</b> Sets the requested scopes that are requested. This field can have multiple comma-separated values.</li>
+          <li><b>Client Authorization:</b> Sends the client secret either in the request body as <code>client_id</code> and <code>client_secret</code> parameters, or within the headers encoded as basic HTTP authentication.</li>
+          <li><b>Authorization URL:</b> The endpoint on the authentication server that is used to request authentication for the client.</li>
+          <li><b>Redirect URL:</b> The URL that the OAuth server should redirect to.</li>
+          <li><b>Custom Authentication Parameters:</b> User-defined key/value pairs to be encoded and sent as authentication parameters.</li>
+          <li><b>Audience:</b> Expects a URL, specifies the intended audience for the OAuth access token.</li>
+          <li><b>Resource:</b> Expects a URL, specifies an application to act as a resource server.</li>
+        </ul>
+        For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.
+      </li>
+      <li><b>API Key:</b> Sends a key/value pair which is sent as a base64-encoded string in the request's Authorization header. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
+      <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header.</li>
     </ul>
   </dd>  
 </dl>
