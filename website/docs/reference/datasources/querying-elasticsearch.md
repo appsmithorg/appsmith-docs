@@ -24,7 +24,7 @@ The following is a reference guide that provides a description of the parameters
 
 <dl>
   <dt><b>Host URL</b></dt>
-  <dd>The network location where your Elasticsearch data is hosted. This can be a domain name or an IP address. To connect to a local database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+  <dd>The network location where your Elasticsearch data is hosted. This can be a domain name or an IP address. To connect to a local database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to on the server. </dd><br />
@@ -67,13 +67,13 @@ For details on building more complex queries, see the [Elasticsearch Document AP
 
 Queries run on top of indexed documents can be configured using the `GET` method. 
 
+**Path:**
 ```json
-// Path
 /users/_search
 ```
 
+**Body:**
 ```javascript
-// Body
 {
   "query": {
     "match": {
@@ -89,13 +89,13 @@ The example above searches the `users` index for a `name` matching your user inp
 
 You can create a single new document using the `POST` method, with a JSON body that represents the document values; an `id` is automatically generated.
 
+**Path:**
 ```json
-// Path
 /users/_doc/
 ```
 
+**Body:**
 ```javascript
-//Body
 {
     "name": {{ NewUserForm.data.Name }},
     "email": {{ NewUserForm.data.Email }},
@@ -103,48 +103,26 @@ You can create a single new document using the `POST` method, with a JSON body t
 }
 ```
 
-Above, user input is collected with a Form widget called `NewUserForm`.
-
-#### Create multiple documents
-
-To create a batch of documents at once, use the `POST` method with the `/_bulk` endpoint:
-
-```json
-// Path
-/_bulk/
-```
-
-In the body, add a line of metadata followed by a line of record data:
-
-```javascript
-//Body
-{"index": {"_index": "users"}}
-{"name":"Reyna", "email":"sunil@example.com", "gender":"female"}
-{"index": {"_index": "users"}}
-{"name":"Aly", "email":"aly@example.com", "gender":"female"}
-{"index": {"_index": "users"}}
-{"name":"Sunil", "email":"sunil@example.com", "gender":"male"}
-```
+Above, user input is collected with a [Form widget](/reference/widgets/form) called `NewUserForm`.
 
 ### Update a document
 
 A single document can be updated using its `id` within an index using a `POST` request. 
 
+**Path:**
 ```javascript
-// Path
 /users/_update/{{ UsersTable.selectedRow.id }}
 ```
 
+**Body:**
 ```javascript
-// Body
+// using a JSON Form widget to collect input
 {
-  "doc": {
-    "name": {{ UpdateUserForm.data.Name }}
-  }
+  "doc": UpdateUserForm.formData
 }
 ```
 
-Above, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a Form widget.
+Above, the record with its `id` is selected from a Table widget called `UsersTable` and updated with input from a [JSON Form](/reference/widgets/json-form) widget.
 
 This performs a partial update, where the properties you supply are added to the document; you don't need to add ones that have not changed.
 
@@ -152,8 +130,8 @@ This performs a partial update, where the properties you supply are added to the
 
 A single document can be deleted using its `id` within an index using the `DELETE` method.
 
+**Path:**
 ```javascript
-// Path
 /users/_doc/{{ UsersTable.selectedRow.id }}
 ```
 

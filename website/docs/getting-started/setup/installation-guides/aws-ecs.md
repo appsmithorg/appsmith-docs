@@ -171,24 +171,24 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
  
  4. Follow these steps to verify the Appsmith installation:
 
-    <figure>
-    <img src="/img/aws-ecs-ec2-find-DNS-to-access-appsmith.gif" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
-    <figcaption align="center"><i>Use DNS or Public IP to access Appsmith</i></figcaption>
-    </figure>
+    a. Go to the **Clusters** section in the sidebar.
 
-    a. Click **Clusters** on the sidebar.
+    b. Select the desired **Cluster name**.
 
-    b. Click the **Cluster name**.
+    c. Open the **Tasks** tab.
 
-    c. Click the **Tasks** tab.
-
-    d. Click the **Task**.
+    d. Choose the specific **Task**.
 
     e. Click the link next to the **EC2 instance id**.
 
-    f. Click the **Instance ID**. 
+    f. Click the **Instance ID** to access the **Instance Summary** page.
+    
+    g. Copy the **Public IPv4 address** from the **Instance Summary** page.
 
-    g. On the **Instance Summary** Page, copy the **Public IPv4 address**.
+    <figure>
+    <img src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
+    <figcaption align="center"><i>Use DNS or Public IP to access Appsmith</i></figcaption>
+    </figure>
     
     h. Paste it in a browser tab to access Appsmith.
 

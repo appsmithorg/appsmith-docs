@@ -23,7 +23,7 @@ The following section is a reference guide that provides a complete description 
 
 <dl>
   <dt><b>Host Address</b></dt>
-  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to on the server. Appsmith connects to port `1521` by default if you do not specify one.</dd><br />
@@ -58,7 +58,7 @@ For Oracle SQL syntax, see the official documentation [**Oracle SQL Language Ref
 ### Fetch data
 
 ```sql
-SELECT * FROM users OFFSET {{ UsersTable.pageOffset }} ROWS FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY ;
+SELECT * FROM users OFFSET {{ UsersTable.pageOffset }} ROWS FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
 ```
 
 In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
@@ -82,8 +82,8 @@ In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are t
 
 ```sql
 UPDATE users
-  SET email = '{{EmailInput.text}}'
-  WHERE id = {{ UserTable.selectedRow.id}};
+  SET email = {{ EmailInput.text }}
+  WHERE id = {{ UsersTable.selectedRow.id }};
 ```
 
 In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `UsersTable` is the Table widget where the user selects the row to update the user's email.
@@ -91,7 +91,7 @@ In the above example, `EmailInput` is the name of the Input widget used to captu
 ### Delete data
 
 ```sql
-DELETE FROM users WHERE id = {{tableUsers.selectedRow.id}};
+DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
 ```
 
 In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.

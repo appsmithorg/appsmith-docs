@@ -6,52 +6,33 @@ sidebar_position: 7
 
 This page describes how to connect your application to your Google Sheets account and query your spreadsheets.
 
-## Connect to Google Sheets
+## Connect Google Sheets
 
 To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Google Sheets** button. Your datasource is created and you are taken to a screen to configure its settings.
 
-### Scope
-
-<!-- HIDDEN BY FEATURE FLAG
-
-![](/img/google_sheets_scope.png)
-
-The **Scope** setting defines what type of privileges your app has while querying your spreadsheets. Use this option to allow the minimum necessary privileges for your app's function to reduce the risk to your data.
-
-- **Read/Write | Selected Google Sheets**: Your app only has read and write access to the spreadsheets that it creates. Spreadsheets on the Google account created by other means aren't visible or mutable by your queries.
-
-- **Read/Write | All Google Sheets**: Your app has read and write access to all spreadsheets on your Google account, regardless of how or when they were created.
-
-- **Read Files | All Google Sheets**: Your app has read-only access to all spreadsheets on your Google account, regardless of how or when they were created.
-
-### Save and authorize
-
-Click the **Save and Authorize** button after selecting the **Scope**. You'll be directed to the Google OAuth screen to choose the Google account whose spreadsheets you’d like to access.
-
-On the next screen, click **Allow** to grant the Appsmith app permission to view and edit files based on the scope.
-
--->
+### Configuration parameters
 
 <figure>
-  <img src="/img/googlesheets_scopes.png" style={{width: "100%", height: "auto"}} alt="Configuring a new Google Sheets datasource."/>
+  <img src="/img/gsheets_datasource_config.png" style={{width: "100%", height: "auto"}} alt="Configuring a new Google Sheets datasource."/>
   <figcaption align="center"><i>Configuring a new Google Sheets datasource.</i></figcaption>
 </figure>
 
-The **Scope** setting defines what type of privileges your app has while querying your spreadsheets. Use this option to allow the minimum necessary privileges for your app's function to reduce the risk to your data.
+<dl>
+  <dt><b>Permissions | Scope</b></dt>
+  <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Read / Write / Delete | Selected Google Sheets:</b> Your app has read, write, and delete access only for the sheets that you specify while authorizing the datasource.</li>
+     <li><b>Read / Write / Delete | All Google Sheets:</b> Your app has read, write, and delete access for all sheets on your Google account.</li>
+     <li><b>Read / Write | All Google Sheets:</b> Your app has read and write (but not delete) access for all sheets on your Google account.</li>
+     <li><b>Read | All Google Sheets:</b> Your app has read-only access to all sheets on your Google account.</li>
+    </ul>
+  </dd>  
+</dl>
 
-- **Read Files**: Your app only has read access to your spreadsheets. The sheets are not mutable by your queries from Appsmith.
+Click **Save and Authorize** to confirm your choice. You'll be taken to Google where you can authorize your account and select your sheets. 
 
-- **Read, Edit, and Create Files**: Your app has read and write access to all spreadsheets on your Google account, and can be used to create new spreadsheets on your account as well.
-
-- **Read, Edit, Create, and Delete Files**: Your app has access to perform any operation on your sheets, including permanently deleting them.
-
-### Save and authorize
-
-Click the **Save and Authorize** button after selecting the **Scope**. You'll be directed to the Google OAuth screen to choose the Google account whose spreadsheets you’d like to access.
-
-On the next screen, click **Allow** to grant the Appsmith app permission to view and edit files based on the scope.
-
-## Create queries
+## Query Google Sheets
 
 <figure>
   <img src="/img/google-sheets-query-page.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
