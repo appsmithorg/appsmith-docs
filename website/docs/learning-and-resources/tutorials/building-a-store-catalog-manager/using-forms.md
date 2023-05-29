@@ -244,10 +244,6 @@ Clicking on **JS** enables two things:
 
 Note that you bound one action each with the success and error events. In [part 3](./creating-interactive-views.md), you'll learn to bind more than one action with each of the events.
 
-:::info
-For more information about writing JavaScript in Appsmith, please refer to this guide [Writing JavaScript in Appsmith](./../../how-to-guides/writing-javascript-in-appsmith.md).
-:::
-
 ## Connecting multiple pages
 
 You've created a new page **NewProductPage** with a form that allows users to add new products to the Oakry catalog. Now, we'd like to open this page when the user clicks on an **"Add new product"** button from the **ProductListPage**. Let's set this up:

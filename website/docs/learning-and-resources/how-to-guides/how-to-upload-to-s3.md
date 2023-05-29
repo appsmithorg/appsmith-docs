@@ -39,7 +39,7 @@ To download a file
 1. Create a new S3 query named **read\_file** to read file data from S3 bucket.
    * Configure it with the [Read File](/reference/datasources/querying-amazon-s3.md#read-file) action.
    * Set the bucket name from where to fetch the file
-   * Set `path` to the file path selected in the table using the [javascript expression](writing-javascript-in-appsmith.md) `{{s3_files.selectedRow.fileName}}`
+   * Set `path` to the file path selected in the table using the JS expression `{{s3_files.selectedRow.fileName}}`
 
 ![Click to expand](/img/s3-read-file-query.png)
 
