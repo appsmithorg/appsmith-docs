@@ -2713,6 +2713,50 @@
     {
       "source": "/advanced-concepts/access-control/granular-access-control/roles",
       "destination": "/advanced-concepts/granular-access-control/roles"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget",
+      "destination": "/reference/widgets/table"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith",
+      "destination": "/core-concepts/writing-code/javascript-editor-beta"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/writing-javascript-in-appsmith",
+      "destination": "/core-concepts/writing-code"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget",
+      "destination": "/reference/widgets/list"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith",
+      "destination": "/reference/datasources/querying-google-sheets"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets",
+      "destination": "/reference/datasources/querying-google-sheets"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/use-mssql-as-data-source",
+      "destination": "/reference/datasources/querying-mssql"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith",
+      "destination": "https://www.appsmith.com/blog/using-the-notion-api-to-build-a-content-management-system"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith",
+      "destination": "/reference/datasources/querying-redis"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith",
+      "destination": "/reference/datasources/querying-redshift"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
+      "destination": "/reference/datasources/querying-elasticsearch"
     }
   ]
 }
