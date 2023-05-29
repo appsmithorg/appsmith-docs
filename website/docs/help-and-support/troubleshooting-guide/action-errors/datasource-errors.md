@@ -103,4 +103,4 @@ In particular, if you are connecting to a MySQL server (or similar SQL server), 
 
 If you continue to experience problems with building in Appsmith, it's a good idea to check the backend logs from the `stacks/logs/backend/backend.log` file for any error messages or other information that might help troubleshoot the issue.
 
-Learn more about how to [connect to a localhost database / API](https://docs.appsmith.com/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+Learn more about how to [connect to a localhost database / API](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith)

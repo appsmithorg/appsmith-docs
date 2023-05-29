@@ -59,7 +59,7 @@ To create an authenticated API datasource:
 5. **Save** the datasource. The configuration details aren't saved/updated until the Save button is clicked. When the datasource has been added successfully, a success message appears at the top of the app window.
 
 :::tip
-If you want to connect to an API that's not publicly available on the internet, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to work with local APIs on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to an API that's not publicly available on the internet, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to work with local APIs on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 ## Importing cURL commands
@@ -150,7 +150,7 @@ Are you having trouble? check out the [API response troubleshooting guide](/help
 
 * [Write queries](/core-concepts/data-access-and-binding/querying-a-database)
 * [Data access and binding](/core-concepts/data-access-and-binding)
-* [Connect to a local database or API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+* [Connect to a local database or API](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith)
 
 
 
