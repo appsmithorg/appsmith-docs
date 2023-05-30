@@ -36,7 +36,7 @@ Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate 
 5. To retrieve the salt and password from the pod, run the following command and copy the values to `values.yaml`.
 
    ```bash
-   kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
+   kubectl exec <pod_name> -- grep APPSMITH_ENCRYPTION_ /appsmith-stacks/configuration/docker.env
    ```
 
    Set the values in the `applicationConfig` section:
