@@ -1,56 +1,146 @@
 # Checkbox
 
-A Checkbox is a simple UI widget you can use when you want users to make a binary choice.
+This page provides instructions on how to use the Checkbox widget to allow users to make a binary choice by selecting or deselecting the checkbox.
 
-![Click to expand](/img/checkbox.gif)
+<figure>
+  <img src="/img/checkbox-img.png" style= {{width:"700px", height:"auto"}} alt="Display Checkbox"/>
+  <figcaption align = "center"><i>Display Checkbox</i></figcaption>
+</figure>
 
-## Properties
+## Content properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+Content properties are customizable options present in the property pane of the widget, allowing users to modify the widget's content and appearance according to their preferences. These properties are present in the property pane of the widget.
 
-### Widget properties
+#### Text `String`
 
-These properties allow you to edit the Checkbox widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+ <dd>This property allows you to set the label text. For instance, when seeking user consent for terms and conditions, you can set the label text as <code>Terms & Conditions</code>.</dd>
 
-| Property             | Description                                                                                                                                                                                            |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Label**            | Sets the text shown within the widget.  |
-| **Position**         | Sets whether the label of the checkbox is aligned to the left or right side of the widget.  |
-| **Alignment**        | Sets whether the checkbox is aligned to the left or right side of the widget.  |
-| **Default Selected** | Sets whether the checkbox begins checked or unchecked by default.  |
-| **Required**         | Sets whether the checkbox is a mandatory field. When the checkbox is within a Form widget, that Form's submit button is automatically disabled until the Checkbox is checked. |
-| **Visible**          | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.  |
-| **Disabled**         | Makes the widget inactive or unusable. The widget remains visible to the user but user interaction isn't allowed.   |
-| **Animate Loading**  | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+#### Position `String`
+<dd>
+ This property in the Checkbox widget allows you to choose the placement of the label. You can choose:<br />
+
+ * <b>Left</b> - Aligns the text to the left of the Checkbox.
+ * <b>Right</b> - Aligns the text to the right of the Checkbox.
+
+</dd>
+
+#### Alignment `String`
+
+<dd>
+This property determines the positioning of the checkbox itself, either to the left or right side of the widget. By adjusting this property, you can control the visual alignment of the checkbox within the widget's layout
+</dd>
 
 
+#### Required `Boolean`
 
-### Binding properties
+<dd>
+This is a validation feature that allows you to designate the checkbox as a mandatory field. For instance, When the checkbox is placed within a Form widget, enabling the "Required" property ensures that the Form's submit button remains disabled until the checkbox is checked. 
 
-These properties allow you to bind your Checkbox widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+</dd>
 
-| Binding Property | Description                                                       |
-| ---------------- | ----------------------------------------------------------------- |
-| **isChecked**    | Represents whether the checkbox is currently checked _(bool)_.    |
-| **isDisabled**   | Reflects the state of the widget's **Disabled** setting _(bool)_. |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.  |
+#### Default State `Boolean`
 
-### Events
+<dd>
+This property determines whether the checkbox starts in a checked or unchecked state by default.
+</dd>
 
-You can define functions that are called when these events are triggered in the widget.
+#### Visible `Boolean`
+<dd>
 
-| Events            | Description                                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onCheckChange** | Sets the action to be run when the user checks/unchecks a checkbox. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+This property controls the visibility of the widget on the app's page. If you disable this property, the widget would not be visible on the published app. Additionally, you can use JavaScript by clicking on <code>JS</code> next to the "Visible" property to write code that links the visibility of the widget to a specific user action.
+</dd>
 
-### Styles
+#### Disabled `Boolean`
 
+<dd>
+
+This property prevents users from selecting the checkbox widget. Even though the widget remains visible, user input is not permitted. If desired, you can write JavaScript code by clicking on <code>JS</code> next to the "Disabled" property to write code that links to a specific user action.
+
+</dd>
+
+#### Animate Loading `Boolean`
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. You can also control it through JavaScript by activating the <code>JS</code> label next to the property.
+
+</dd>
+
+#### Height `String`
+
+<dd>
+
+This property determines how the widget's height adjusts to changes in its content. It can be configured in three ways:
+
+* **Fixed**: The height of the widget remains as set using drag and resize.
+* **Auto Height**: The height of the widget reacts to content changes.
+* **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.
+
+</dd>
+
+#### onCheckChange
+
+This event property defines the action that would be executed when the user checks or unchecks a checkbox. It allows you to specify a list of [supported actions](http://localhost:3000/reference/appsmith-framework/widget-actions) that can be triggered in response to the checkbox state change.
+
+
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Style Property    | Description                                                                                                                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Text Color**    | Represents the widget's **Text color** setting as a CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)value _(string)_.                                          |
-| **Text Size**     | Sets the font size of the widget's **Label** text. Accepts CSS `font-size` values.                                                                                                   |
-| **Accent Color**  | Sets the widget's accent color, which appears as the fill color for the checkbox when checked. Accepts CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values. |
-| **Border Radius** | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.     |
+#### Font color `String`
+
+<dd>
+
+Represents the text color of the widget, specified as a `CSS` color value. This property can also be controlled through JavaScript by using the appropriate functions.
+
+</dd>
+
+#### Font size `String`
+
+<dd>
+
+Sets the font size of the widget's label text. It accepts `CSS` font-size values.
+</dd>
+
+#### Emphasis `String`
+<dd>
+This property enables you to select a font style for the widget, such as bold or italic. 
+</dd>
+
+#### Accent color `String`
+
+<dd>
+
+Defines the accent color of the widget, which is used as the fill color for the checkbox when it is checked. It accepts `CSS` color values.
+</dd>
+
+#### Border radius `String`
+
+<dd>
+
+Rounds the corners of the widget's outer edge. If JavaScript is enabled, you can provide valid CSS `border-radius` values to control the radius.
+
+</dd>
+
+## Reference properties
+These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the visibility status, you can use `Checkbox.isVisible`.
+
+#### isChecked `Boolean`
+<dd>
+
+The `isChecked` property indicates whether the checkbox is currently checked or not. It is represented by a boolean value, where true signifies that the checkbox is checked, and false signifies that it is unchecked. For instance, you can use `{{Checkbox1.value}}` to bind the value to other widgets or JavaScript functions.
+
+</dd>
+
+#### isDisabled `Boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's "Disabled" setting. It is represented by a boolean value, where true indicates that the widget is disabled, and false indicates that it is enabled for user interaction.
+</dd>
+
+#### isVisible `Boolean`
+<dd>
+
+The `isVisible` property reflects the state of the widget's "Visible" setting. It is represented by a boolean value, where true indicates that the widget is visible, and false indicates that it is hidden or not displayed on the page.
+</dd>
+
