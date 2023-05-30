@@ -88,11 +88,11 @@ Here's a screenshot of the final result.
 
 1. Navigate to **PAGES > User Information**. 
 
-2. In the entity explorer to the left of the screen, click the **Widgets** tab, drag and drop a Table widget to the left of the canvas. 
+2. In the entity explorer to the left of the screen, click the **Widgets** tab.
 
-3. On the property pane to the right of the screen, rename the Table widget from **Table1** to `usersTable`.
+3. Drag and drop a Table widget to the left of the canvas. On the property pane to the right of the screen, rename the Table widget from **Table1** to `usersTable`.
 
-4. In the **Table Data** property box, delete the default JSON data. Type in two curly braces `{{}}`. Enter `getUsers.data` between the braces. This code binds the `getUsers` query to the widget.
+4. In the **Table Data** property box, delete the default JSON data. Type in two curly braces `{{}}`. Enter `getUsers.data` between the braces. This code binds the **getUsers** query to the widget.
 
 :::info
 The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
