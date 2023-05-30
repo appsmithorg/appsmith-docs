@@ -168,7 +168,7 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 
 ## Deploy and share app
 
-1. Click the **Deploy** button on the top right of the Appsmith editor to deploy the app and test it as an end user. 
+1. Click the **Deploy** button on the top right of the Appsmith editor to deploy the app and test it in the *View* mode. 
 2. Click the **Share** button on the top right of the Appsmith editor.
     * Enter the email address of the user.
     * Select an appropriate role for the user from the **Select a role** list.
