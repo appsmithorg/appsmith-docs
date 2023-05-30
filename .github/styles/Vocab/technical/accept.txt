@@ -391,3 +391,5 @@ Animate Loading
 onCheckChange
 isChecked
 isDisabled
+default state
+disable
