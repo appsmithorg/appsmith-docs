@@ -24,7 +24,9 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
-7. Select the **Appsmith** image.
+7. Select the image:
+    * **Appsmith** for **Community Edition**.
+    * **Appsmith Business Edition** for **Business Edition**.
 8. On the **Launch an instance** screen:
 
  a. Configure the instance as below:
@@ -39,7 +41,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
  | Attribute | Value |
  |------------------------|------------------------------------------| 
- | **Firewall (security groups)** | Select **Select existing security group**.|
+ | **Firewall (security groups)** | Select **Select existing security group** checkbox.|
  | **Security groups** | Select the security group that you created in the [Prerequisites](#prerequisites) section. |
  
 9. Keep the default selection for other fields.
@@ -68,7 +70,7 @@ You see a launch status screen as shown below:
  
  d. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
  
- e. Once the server is up and running, you can see the login screen of Appsmith.aw0aws-l
+ e. Once the server is up and running, you can see the login screen of Appsmith.
 
 12. Follow these steps to log into the instance using default root admin credentials:
 
@@ -85,6 +87,10 @@ You see a launch status screen as shown below:
       :::caution Attention
       The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
       :::
+
+ c. For **Business Edition**:
+    * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+    * Enter your license key to activate the instance.
 
 
   <figure>
@@ -104,5 +110,6 @@ If you continue to face issues, contact the support team using the chat widget a
 
 ## Further reading
 
+* [Add super admins to your instance](/getting-started/setup/instance-configuration#add-super-admins).
 * [Configure Appsmith instance](/getting-started/setup/instance-configuration/)
 * [Managing Appsmith instance](/getting-started/setup/instance-management/)
