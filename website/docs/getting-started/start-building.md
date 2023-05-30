@@ -124,15 +124,12 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 6. Drop an Image widget inside the Form. 
     * In the **Image** property box, enter `{{usersTable.selectedRow.image}}`. This displays the photo of the user on the Table's selected row.
 
-The output should look something like this:
-
-<figure>
-  <img src="/img/bind-data-to-widgets.png" style= {{width:"100%", height:"auto"}} alt="Bind data to widgets"/>
-  <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
-</figure>
-
 🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
 
+<figure>
+  <img src="/img/bind-data-to-widgets.gif" style= {{width:"100%", height:"auto"}} alt="Bind data to widgets"/>
+  <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
+</figure>
 
 ## Update data
 
@@ -177,7 +174,9 @@ The output should look something like this:
     * Select an appropriate role for the user from the **Select a role** list.
     * Click the **Invite** button.
 
-🚩 In this tutorial, you learned to create a simple database GUI using Appsmith and PostgreSQL. Happy App Building!
+🚩 In this tutorial, you learned to create a simple database GUI using Appsmith and PostgreSQL. 
+
+Happy App Building.
 
 ## Next steps
 
