@@ -34,16 +34,18 @@ Let's get started.
 
 ## Create application
 
-1. When you create a new account, Appsmith adds a workspace with a single application titled **My first application** by default. On the **Apps** tab of the homepage, click the **+ New** button to the right of the default workspace. You'll land on the Appsmith editor.
+1. When you create a new account, Appsmith adds a workspace with a single application titled **My first application** by default. If you are already inside an application, click on the Appsmith logo on the top left of the screen to go to the homepage.
+
+2. On the homepage, click the **+ New** button to the right of the default workspace. You'll land on a new application in the *Edit* mode.
 
 <figure>
   <img src="/img/create-new-app.png" style= {{width:"100%", height:"auto"}} alt="Create new application"/>
   <figcaption align = "center"><i>Create new application</i></figcaption>
 </figure>
 
-2. Click the caret-down icon **⌵** on the top left next to the default application name. Select the **Edit Name** option. Rename the app to `User Management`.
+3. Click the **⌵** icon on the top left next to the default application name. Select the **Edit Name** option. Rename the app to `User Management`.
 
-3. **Page 1** is the default page on the application. On the entity explorer to the left of the screen, click the three-dots-menu icon **︙** next to the page name and select the **Edit Name** option. Rename the page to `User Information`.
+4. **Page 1** is the default page on the application. On the entity explorer to the left of the screen, click the **︙** icon next to the page name and select the **Edit Name** option. Rename the page to `User Information`.
 
 <figure>
   <img src="/img/edit-page-name.png" style= {{width:"100%", height:"auto"}} alt="Edit page name"/>
@@ -69,7 +71,7 @@ Let's get started.
   <figcaption align = "center"><i>Create a new query on the datasource</i></figcaption>
 </figure>
 
-2. Click the **Select** query template from the list of query commands. It populates the query editor with the fetch query to pull ten records from the `users` database table. 
+2. Click the **Select** query template from the list of query commands. It populates the query editor with a fetch query to pull ten records from the `users` database table. 
 
 3. Rename the query from **Query1** to `getUsers`.
 
@@ -80,15 +82,17 @@ Let's get started.
   <figcaption align = "center"><i>Fetch data from database</i></figcaption>
 </figure>
 
-You've connected to a database and created your first query to fetch the data.
+🚩 You've connected to a database and created your first query to fetch the data.
 
 ## Display data
 
 1. Navigate to **PAGES > User Information**. 
 
-2. In the entity explorer to the left of the screen, click the **Widgets** tab, drag and drop a Table widget on the canvas leaving half the space on the right for the Form widget. On the property pane to the right of the screen, rename the Table widget from **Table1** to `usersTable`.
+2. In the entity explorer to the left of the screen, click the **Widgets** tab, drag and drop a Table widget to the left of the canvas. 
 
-3. In the **Table Data** property box, delete the default JSON data. Type in two curly braces `{{}}`. Enter `getUsers.data` between the braces. This code binds the `getUsers` query to the widget.
+3. On the property pane to the right of the screen, rename the Table widget from **Table1** to `usersTable`.
+
+4. In the **Table Data** property box, delete the default JSON data. Type in two curly braces `{{}}`. Enter `getUsers.data` between the braces. This code binds the `getUsers` query to the widget.
 
 :::info
 The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
@@ -99,9 +103,9 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   <figcaption align = "center"><i>Display data in table</i></figcaption>
 </figure>
 
-You've displayed the results from the fetch data query on the Table widget.
+🚩 You've displayed the results from the fetch data query on the Table widget.
 
-## Edit and submit data
+## Build form to edit user details
 
 1. Drop a Form widget on the canvas to the right of the Table widget. 
 2. Select the default Text widget on the Form. In the **Text** property box, change the title from **Form** to `User Details`.
@@ -127,13 +131,16 @@ The output should look something like this:
   <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
 </figure>
 
-You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
+🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
 
-7. On the **Explorer** tab, navigate to **Datasources > users**. 
 
-8. Click the **New Query +** button to the right of the screen.
+## Update data
 
-9. Rename the query to `updateUsers`. Write the below query to update any modified data on the widgets back to the database.
+1. On the **Explorer** tab, navigate to **Datasources > users**. 
+
+2. Click the **New Query +** button to the right of the screen.
+
+3. Rename the query to `updateUsers`. Paste the below update command in the query editor to save any modified data on the widgets back to the database.
 
   ```sql
   UPDATE users 
@@ -142,7 +149,7 @@ You've completed binding the data to the widgets on the Form. Select the rows on
   dob = {{dobInput.selectedDate}}, 
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
-9. Select the default **Submit** button on the Form.
+4. Select the default **Submit** button on the Form.
     * In the **Label** property box, enter `Update`.
     * Click the **+** icon next to the **onClick** event, select **Execute a query > updateUsers** to run the query on button click. 
     * Click **No actions** right under the Action selector.  
@@ -154,13 +161,13 @@ You've completed binding the data to the widgets on the Form. Select the rows on
   <figcaption align = "center"><i>Run query on the button's onClick event</i></figcaption>
 </figure>
 
-8. Go ahead and modify the user's details on the Form and test the **Update** button to see how things work .
+5. Go ahead and modify the user's details on the Form and test the **Update** button to see how things work .
 
-:::caution
-The sample databases are public and shared by all users, so ensure that you don't write any confidential information during testing. As data may be added or updated by different users, the databases are automatically reset every day, so any updates made to these databases are temporary.
-:::
+  :::caution
+  The sample databases are public and shared by all users, so ensure that you don't input any confidential information during testing. As data may be added or updated by different users, the databases are automatically reset every day, so any updates made to these databases are temporary.
+  :::
 
-Congratulations. You have built your first app that can display data from the database, and save the updated data on the form.
+🚩 Congratulations. You have built your first app that can display data from the database, and save the updated data on the form.
 
 ## Deploy and share app
 
@@ -170,9 +177,7 @@ Congratulations. You have built your first app that can display data from the da
     * Select an appropriate role for the user from the **Select a role** list.
     * Click the **Invite** button.
 
-See [**Invite Users**](/advanced-concepts/invite-users) for more information on sharing applications.
-
-In this tutorial, you learned to create a simple database GUI using Appsmith and PostgreSQL. Happy App Building!
+🚩 In this tutorial, you learned to create a simple database GUI using Appsmith and PostgreSQL. Happy App Building!
 
 ## Next steps
 
