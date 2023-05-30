@@ -26,7 +26,7 @@ Here's a screenshot of the final result.
   <figcaption align = "center"><i>Simple Database GUI</i></figcaption>
 </figure>
 
-Let's get started.
+🚩 Let's get started.
 
 ## Prerequisites
 
@@ -174,7 +174,7 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
     * Select an appropriate role for the user from the **Select a role** list.
     * Click the **Invite** button.
 
-🚩 In this tutorial, you learned to create a simple database GUI using Appsmith and PostgreSQL. 
+🚩 In this tutorial, you explored a few different widgets and created a simple database GUI to view, query, and update data on a sample PostgreSQL database. You can use these skills to build your own app.
 
 Happy App Building.
 
