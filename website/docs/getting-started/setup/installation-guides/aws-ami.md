@@ -25,7 +25,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
 7. Select the image:
-    * **Appsmith** for **Community Edition**.
+    * **Appsmith Community Edition** for **Community Edition**.
     * **Appsmith Business Edition** for **Business Edition**.
 8. On the **Launch an instance** screen:
 
