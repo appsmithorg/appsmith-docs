@@ -137,4 +137,7 @@ exceptions:
   - Active
   - Directory
   - Row Level Security
+  - Property group - Label
+  - Property group - General
+  - Property group - Events
 

@@ -1,6 +1,6 @@
 # Checkbox
 
-This page provides instructions on how to use the Checkbox widget to allow users to check or uncheck an item:
+This page provides instructions on using the Checkbox widget to allow users to check or uncheck an item.
 
 <figure>
   <img src="/img/checkbox-img-.png" style= {{width:"700px", height:"auto"}} alt="Display Checkbox"/>
@@ -31,7 +31,7 @@ These properties are customizable options present in the property pane of the wi
 #### Alignment `String`
 
 <dd>
-Determines the positioning of the label, either to the left or right side of the widget. By adjusting this property, you can control the visual alignment of the checkbox within the widget's layout
+Alignment refers to how a label is positioned relative to a widget. By adjusting this property, you can control the visual alignment of the label within the widget's layout
 </dd>
 
 ### Property group - Validations
@@ -40,7 +40,8 @@ Determines the positioning of the label, either to the left or right side of the
 #### Required `Boolean`
 
 <dd>
-This is a validation feature that allows you to designate the checkbox as a mandatory field. For instance, When the checkbox is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled until the checkbox is checked. 
+
+This validation feature allows you to designate the Checkbox as a mandatory field. For instance, when the Checkbox is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled until the checkbox is checked. 
 
 </dd>
 
@@ -56,7 +57,7 @@ Determines the default state of the checkbox, whether it is checked or unchecked
 #### Visible `Boolean`
 <dd>
 
-This property controls the visibility of the widget. If you disable this property, the widget would not be visible in view mode. Additionally, you can use JavaScript by clicking on `JS` next to the **Visible** property to conditionally control the widget's visibility. 
+This property controls the visibility of the widget. If you turn off this property, the widget would not be visible in view mode. Additionally, you can use JavaScript by clicking on `JS` next to the **Visible** property to conditionally control the widget's visibility. 
 
 </dd>
 
@@ -84,7 +85,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 * **Fixed**: The height of the widget remains as set using drag and resize.
 * **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
-* **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
 
 </dd>
 
@@ -102,7 +103,7 @@ Style properties allow you to change the look and feel of the widget.
 
 <dd>
 
-Represents the text color of the widget, specified as a [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color) color value.  It can also be manipulated programmatically using the JavaScript functions.
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color).  It can also be manipulated programmatically using the JavaScript functions.
 
 </dd>
 
@@ -136,7 +137,7 @@ This property applies rounded corners to the outer edge of the widget. If JavaSc
 </dd>
 
 ## Reference properties
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the visibility status, you can use `Checkbox.isVisible`.
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Checkbox1.isVisible`.
 
 #### isChecked `Boolean`
 <dd>
