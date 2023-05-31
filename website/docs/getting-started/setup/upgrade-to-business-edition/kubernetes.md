@@ -23,54 +23,58 @@ Follow these steps to upgrade your Appsmith installation:
 
 2. Generate the business edition `values.yaml` with:
 
- ```bash
- helm show values appsmith-ee/appsmith > values.yaml
- ``` 
+   ```bash
+   helm show values appsmith-ee/appsmith > values.yaml
+   ``` 
+
 3. Add the Appsmith chart repository with:
 
-```bash
-helm repo add appsmith-ee https://helm-ee.appsmith.com
-```
+   ```bash
+   helm repo add appsmith-ee https://helm-ee.appsmith.com
+   ```
+
 4. Load the Appsmith chart repository with:
 
-```bash
-helm repo update
-```
+   ```bash
+   helm repo update
+   ```
 
 5. Deploy Appsmith with:
 
-```
-helm install appsmith appsmith-ee/appsmith -n appsmith --create-namespace
-```
-4. Restore the backup data using the [Restore Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance).
+   ```
+   helm install appsmith appsmith-ee/appsmith -n appsmith --create-namespace
+   ```
 
-5. Restart the pods with:
+6. Restore the backup data using the [Restore Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance).
 
-```bash
-kubectl rollout restart statefulsets/appsmith -n <NAMESPACE>
-```
-6. Get pod name with:
+7. Restart the pods with:
 
- ```bash
- kubectl get pods
- ```
+   ```bash
+   kubectl rollout restart statefulsets/appsmith -n <NAMESPACE>
+   ```
 
-7. Verify the installation locally by forwarding port 8080 to 80:
+8. Get pod name with:
+
+   ```bash
+   kubectl get pods
+   ```
+
+9. Verify the installation locally by forwarding port 8080 to 80 with:
  
- ```bash
- # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
- kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
- ```
+   ```bash
+   # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
+   kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+   ```
 
-8. Open [https://localhost](https://localhost) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost](https://localhost).
+10. Open [https://localhost](https://localhost) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost](https://localhost).
 
-9. Log into your Appsmith account and enter your license key to activate the instance.
+11. Log into your Appsmith account and enter your license key to activate the instance.
 
-10. Once you've verified the Appsmith Business Edition installation, delete the Community Edition namespace with:
+12. Once you've verified the Appsmith Business Edition installation, delete the Community Edition namespace with:
 
- ```bash
- kubectl delete ns <COMMUNITY_EDITION_NAMESPACE>
- ```
+   ```bash
+   kubectl delete ns <COMMUNITY_EDITION_NAMESPACE>
+   ```
 
 ## Troubleshooting
 
