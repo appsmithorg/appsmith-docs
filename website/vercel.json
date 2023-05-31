@@ -387,20 +387,8 @@
       "destination": "/product/security"
     },
     {
-      "source": "/core-concepts/connecting-to-data-sources/authentication/basic-authentication",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication"
-    },
-    {
-      "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication"
-    },
-    {
-      "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/authorization-code",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code"
-    },
-    {
-      "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/client-credentials",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials"
+      "source": "/core-concepts/connecting-to-data-sources/authentication:path*",
+      "destination": "/reference/datasources/authenticated-api"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database",

@@ -6,7 +6,7 @@ description: >-
 The section illustrates common query errors and how to resolve them on Appsmith.
 
 ## Query/API response errors
-You may see below errors when working with [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis) or [Query](/core-concepts/data-access-and-binding/querying-a-database/) responses.
+You may see below errors when working with [API](/reference/datasources/authenticated-api) or [Query](/core-concepts/data-access-and-binding/querying-a-database/) responses.
 
 ### Execution failed with status 5009
 You could see the query/API execution fails and generates an error response:

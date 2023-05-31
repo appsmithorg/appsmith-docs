@@ -35,7 +35,7 @@ Datasources configured within an application can be accessed by all the develope
    <div class="containerCol">
          <img class="containerImage" src="/img/api-icon.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="support"/>
       </div>
-      <b><a href="/core-concepts/connecting-to-data-sources/authentication">APIs</a></b>
+      <b><a href="/reference/datasources/authenticated-api">APIs</a></b>
       <div class="containerDescription"> 
       </div>
    </div>

@@ -145,11 +145,11 @@ Databases are an essential part of many applications and are used to store and m
 
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
-            <a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">
+            <a href="/reference/datasources/authenticated-api">
             <img class="containerImage" src="/img/smtp-icon_1.png" alt="AWS-AMI-logo"/>
             </a>   
         </div> 
-            <b><a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">SMTP</a></b>
+            <b><a href="/reference/datasources/authenticated-api">SMTP</a></b>
 </div>
 </div>
 
@@ -162,20 +162,20 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
         <div class="containerCol">
-            <a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">
+            <a href="/reference/datasources/authenticated-api">
             <img class="containerImage" src="/img/api-logo_.png" alt="RestAPI"/>
             </a> 
         </div> 
-        <b><a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">API</a></b>
+        <b><a href="/reference/datasources/authenticated-api">API</a></b>
     </div>
   
  <div class="columnGrid column-three" align="center">
         <div class="containerCol">
-            <a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">
+            <a href="/reference/datasources/authenticated-api">
             <img class="containerImage" src="/img/gsheets_.png" alt="GoogleSheets"/>
             </a>   
         </div> 
-            <b><a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">Google Sheets</a></b>
+            <b><a href="/reference/datasources/authenticated-api">Google Sheets</a></b>
    </div>
    
 
@@ -202,15 +202,15 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
     </div>
    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
-            <a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">
+            <a href="/reference/datasources/authenticated-api">
             <img class="containerImage" src="/img/twilio_.png" alt="twilio-logo"/>
             </a>     
         </div> 
-         <b><a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">Twilio</a></b>
+         <b><a href="/reference/datasources/authenticated-api">Twilio</a></b>
     </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
-            <a href="/core-concepts/connecting-to-data-sources/authentication/connect-to-apis">
+            <a href="/reference/datasources/authenticated-api">
             <img class="containerImage" src="/img/hubspot_.png" alt="hubspot-logo"/>
             </a>   
         </div> 

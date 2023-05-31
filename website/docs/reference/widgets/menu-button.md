@@ -41,7 +41,7 @@ These properties allow you to perform formatting changes for menu items that are
 The properties are described as follows:
 
 ## Menu Items Source
-The "Menu Items Source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis), which can be useful when the number of items or properties in each item need to be updated dynamically.
+The "Menu Items Source" property lets you define where the menu items come from. You can either define them manually (Static) or use a dynamic source by selecting the "Dynamic" option. Dynamic option allows you to specify a data source such as a [database query](/core-concepts/data-access-and-binding/querying-a-database) or [API](/reference/datasources/authenticated-api), which can be useful when the number of items or properties in each item need to be updated dynamically.
 
 <VideoEmbed host="youtube" videoId="MrvRADv-H9A" title="How to set Menu Items Source for Menu Button Widget" caption="How to set Menu Items Source for Menu Button Widget"/>
 

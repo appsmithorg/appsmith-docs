@@ -16,7 +16,7 @@ If your API / DB Query times out, it could be due to one of the following reason
 * Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by [whitelisting the appsmith instance](../../../learning-and-resources/how-to-guides/aws-whitelist.md) in your database or VPC.
 * Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using
 
-[server-side pagination](/reference/widgets/table#server-side-pagination) or increasing the timeout of the [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md) / [Query](../../../core-concepts/data-access-and-binding/querying-a-database/) in the [settings](../../../core-concepts/data-access-and-binding/querying-a-database/#setting-up-a-query) section.
+[server-side pagination](/reference/widgets/table#server-side-pagination) or increasing the timeout of the [API](/reference/datasources/authenticated-api) / [Query](../../../core-concepts/data-access-and-binding/querying-a-database/) in the [settings](../../../core-concepts/data-access-and-binding/querying-a-database/#setting-up-a-query) section.
 
 ### Configuration Error
 
@@ -24,7 +24,7 @@ If your API / DB Query times out, it could be due to one of the following reason
 getUsers failed to execute. Please check its configuration
 ```
 
-This message indicates an error in the configuration of the action. You can navigate to the [API](../../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md#api-editor) / [Query](../../../core-concepts/data-access-and-binding/querying-a-database/) in this state and see the error it encountered. If the error occurred intermittently, it is likely due to a value in the configuration not being available at the time that the API / Query was run.
+This message indicates an error in the configuration of the action. You can navigate to the [API](/reference/datasources/authenticated-api) / [Query](../../../core-concepts/data-access-and-binding/querying-a-database/) in this state and see the error it encountered. If the error occurred intermittently, it is likely due to a value in the configuration not being available at the time that the API / Query was run.
 
 ### Mandatory Parameter Empty Error
 
