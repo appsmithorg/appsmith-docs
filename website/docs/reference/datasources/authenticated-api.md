@@ -4,11 +4,9 @@ description: Connect Appsmith to an Authenticated API.
 
 # Authenticated API
 
-This page gives information to connect Appsmith to an Authenticated API.
+This page describes how to connect your application to an API with authentication.
 
 Use this datasource to create multiple queries for the same API. Every query created from this datasource has shared configuration (root URL, authentication, headers, and so on) to avoid re-entering details. If you're only creating a single query for your API, try using a [REST API](/reference/datasources/rest-api) datasource.
-
-## Connect Authenticated API
 
 ### Connection parameters
 
@@ -72,12 +70,16 @@ The following section is a reference guide that provides a complete description 
 
 <dl>
   <dt><b>Send appsmith signature header</b></dt>
-  <dd>When enabled, it sends an additional key/value pair in the request header in the format: <code>X-Appsmith-Signature: &lt;session-details-signature-key&gt;</code>. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions">Signature Header</a>.</dd>
+  <dd>When enabled, you can enter a secret string of at least 32 characters in the <b>Session Details Signature Key</b> field. Every API call made to this datasource then includes an additional header, <code>X-Appsmith-Signature</code>, whose value is a <a href="https://jwt.io">JSON Web Token (JWT)</a> signed with a signature created from your secret string.</dd>
+
+  <dd>You can use the signature header to ensure the authenticity and integrity of your query; you can guarantee that the request originated from Appsmith, and that it has not been tampered with before reaching your API.</dd>
 </dl>
 
 <dl>
   <dt><b>Use self-signed certificate</b></dt>
-  <dd>When enabled, you can upload your own certificate file. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates">Self-Signed Certificates</a>.</dd>
+
+  <dd>When enabled, you can upload your own self-signed certificate for accessing your REST endpoint. These can be useful for accessing your API without relying on external agnecies to issue certificates for authenticating the origin of your requests.</dd>
+  <dd>This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format. The certificate information is stored securely in an encrypted format in the database.</dd>
 </dl>
 
 
@@ -85,4 +87,4 @@ The following section is a reference guide that provides a complete description 
 
 Once you have set up your Authenticated API datasource, you're ready to create queries.
 
-**Visit the [REST API docs](/reference/datasources/rest-api) to learn about the query configuration parameters.**
+Visit the [REST API docs](/reference/datasources/rest-api) to learn about the query configuration parameters.

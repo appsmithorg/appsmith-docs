@@ -4,11 +4,9 @@ description: Query a REST API from Appsmith.
 
 # REST API
 
-This page gives information to connect Appsmith to a REST API and to read and write data in your applications.
+This page describes how to connect your application to a REST API and use queries to read and write data in your applications.
 
 Use this datasource to create a single query for an API that doesn't need complex authentication settings. If you plan to create multiple queries for the same API, you may want to use an [Authenticated API](/reference/datasources/rest-api) datasource. Every query created from an Authenticated API datasource shares configuration (root URL, authentication, headers, and so on) to avoid re-entering details.
-
-## Connect REST API
 
 ## Query REST API
 
@@ -20,8 +18,13 @@ The following section is a reference guide that provides a description of the pa
 </figure>
 
 <dl>  
-  <dt><b>Method and URL</b></dt>
-  <dd>Sets the REST method and endpoint for the query.</dd>
+  <dt><b>Method</b></dt>
+  <dd>Sets the REST method (`GET`, `POST`, etc.) to use for the request.</dd>
+</dl>
+
+<dl>  
+  <dt><b>URL</b></dt>
+  <dd>Sets the endpoint to query.</dd>
 </dl>
 
 <dl>  
@@ -32,7 +35,7 @@ The following section is a reference guide that provides a description of the pa
 
 <dl>
   <dt><b>Params</b></dt>
-  <dd>Sets key/value pairs to send as part of the request.</dd>
+  <dd>Sets key/value pairs to send as query parameters in the request.</dd>
 </dl>
 
 <dl>
@@ -61,12 +64,7 @@ The following section is a reference guide that provides a description of the pa
 
 <dl>
   <dt><b>Authentication</b></dt>
-  <dd><em>Use the datasource configuration page to update Authentication settings instead of the query editor.</em></dd>
-</dl>
-
-<dl>
-  <dt><b>Settings</b></dt>
-  <dd>Contains a number of settings to modify the behavior of your query's execution. For reference on each setting, see <a href="/core-concepts/data-access-and-binding/querying-a-database/query-settings">Query Settings</a>.</dd>
+  <dd><em>Click the button in this tab to turn this query into a new Authenticated API datasource where you can configure Authentication for your requests.</em></dd>
 </dl>
 
 ---
