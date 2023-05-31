@@ -11,7 +11,7 @@ This page provides instructions on using the Checkbox widget to allow users to c
 
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences. 
 
-### Property group - Label
+### Label
 
 #### Text `String`
 
@@ -34,7 +34,7 @@ These properties are customizable options present in the property pane of the wi
 Alignment refers to how a label is positioned relative to a widget. By adjusting this property, you can control the visual alignment of the label within the widget's layout
 </dd>
 
-### Property group - Validations
+### Validations
 
 
 #### Required `Boolean`
@@ -45,7 +45,7 @@ This validation feature allows you to designate the Checkbox as a mandatory fiel
 
 </dd>
 
-### Property group - General
+### General
 
 #### Default State `Boolean`
 
@@ -89,7 +89,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 </dd>
 
-### Property group - Events
+### Events
 
 #### onCheckChange
 
