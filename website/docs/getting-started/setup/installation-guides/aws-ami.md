@@ -88,7 +88,7 @@ You see a launch status screen as shown below:
       The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
       :::
 
- c. Only for **Business Edition**:
+ c. If you are on a Business Edition:
     * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
     * Enter your license key to activate the instance.
 
@@ -106,7 +106,6 @@ Some common errors that you may face during installation:
 - [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
-
 
 ## Further reading
 
