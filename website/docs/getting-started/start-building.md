@@ -12,14 +12,13 @@ description:  Learn the basics of building an app on Appsmith.
 :::
 
 This tutorial guides you through the steps to create a simple database GUI using Appsmith. The application connects to a sample PostgreSQL database, allowing you to read and update user information. You'll learn to:
+* Create a new application
+* Connect to a database and fetch data 
+* Display the data in a Table widget
+* Edit and submit the data using a Form widget
+* Deploy and share the application
 
-1. Create a new application
-2. Connect to a database and fetch data 
-3. Display the data in a Table widget
-4. Edit and submit the data using a Form widget
-5. Deploy and share the application
-
-Here's a screenshot of the final result.
+Here's a screenshot of the final result:
 
 <figure>
   <img src="/img/beginner-tutorial-output.png" style= {{width:"100%", height:"auto"}} alt="Simple Database GUI"/>
