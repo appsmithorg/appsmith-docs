@@ -46,7 +46,7 @@ The following section is a reference guide that provides a complete description 
       <li>
         <b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration.
         <ul>
-          <li><b>Grant Type:</b> Sets the method that is used to get an access token. Choose from <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code">Authorization Code</a> or <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials">Client Credentials</a>.</li>
+          <li><b>Grant Type:</b> Sets the method that is used to get an access token. Choose from <b>Authorization Code</b> or <b>Client Credentials</b>.</li>
           <li><b>Add Access Token To:</b> Sets whether the access token is sent as a <b>Request Header</b> or as a query parameter (<b>Request URL</b>).</li>
           <li><b>Header Prefix:</b> When the access token is sent as a header, this sets a string to prefix the access token. A common example is <code>Bearer</code>.</li>
           <li><b>Access Token URL:</b> The endpoint on the authentication server that is used to exchange the authorization code for an access token.</li>
@@ -60,7 +60,6 @@ The following section is a reference guide that provides a complete description 
           <li><b>Audience:</b> Expects a URL, specifies the intended audience for the OAuth access token.</li>
           <li><b>Resource:</b> Expects a URL, specifies an application to act as a resource server.</li>
         </ul>
-        For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.
       </li>
       <li><b>API Key:</b> Sends a key/value pair which is sent as a base64-encoded string in the request's Authorization header. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
       <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header.</li>
