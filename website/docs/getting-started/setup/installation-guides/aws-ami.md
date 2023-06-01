@@ -47,9 +47,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
  
 9. Keep the default selection for other fields.
 
-10. Click the **Launch Instance** button.
-
-You see a launch status screen as shown below:
+10. Click the **Launch Instance** button. You see a launch status screen as shown below:
 
 <figure>
  <img src="/img/aws_ami_create_server_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the server status." />
@@ -85,13 +83,14 @@ You see a launch status screen as shown below:
     ``` 
     * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
 
-      :::caution Attention
-      The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
-      :::
-  <figure>
-    <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
-    <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
-  </figure>
+  :::caution Attention
+  The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
+  :::
+
+ <figure>
+   <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
+   <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
+ </figure>
 
 13. If you are on a **Business Edition**:
     * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
