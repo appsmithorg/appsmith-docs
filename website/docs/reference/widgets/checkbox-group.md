@@ -220,7 +220,7 @@ Enables you to select a font style for the widget, such as bold or italic. Addit
 
 <dd>
 
-Allows you to specify the alignment between options. This property provides various options such as **None**, **Start**, **End**, **Center**, **Between**, and **Around**, which determine the spacing and arrangement of the options within the designated area. 
+Allows you to specify the alignment between options. This property provides options such as **None**, **Start**, **End**, **Center**, **Between**, and **Around**, which determine the spacing and arrangement of the options within the designated area. 
 
 </dd>
 
