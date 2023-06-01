@@ -70,7 +70,7 @@ Follow these steps to upgrade your Appsmith installation:
 
 11. Log into your Appsmith account and enter your license key to activate the instance.
 
-12. Once you've verified the Appsmith Business Edition installation, delete the Community Edition namespace with:
+12. After successfully verifying the Appsmith Business Edition installation, you may choose to delete the Community Edition namespace:
 
    ```bash
    kubectl delete ns <COMMUNITY_EDITION_NAMESPACE>
@@ -78,4 +78,4 @@ Follow these steps to upgrade your Appsmith installation:
 
 ## Troubleshooting
 
-If you face issues, continue to use the Community Edition installation and contact [support@appsmith.com](mailto:support@appsmith.com).
+If you face issues, continue to use the Community Edition installation and contact the support team using the chat widget at the bottom right of this page.
