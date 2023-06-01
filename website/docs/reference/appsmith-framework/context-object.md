@@ -163,6 +163,46 @@ This object contains the data of the currently authenticated user.
 }
 ```
 
+#### Roles
+
+This object contains a string array of the roles assigned to the currently authenticated user.
+
+```javascript
+
+
+```
+You can use `user.role` object to [programmatically control access](/advanced-concepts/granular-access-control) to your application entities.
+
+**Example:** if you want to control the visibility of a button widget for users assigned to the "backend engineers" role, follow these steps:
+
+1. Go to the button's property pane, locate **Visible** and click JS.
+2. In the visible property definition, use the `roles` object as shown below:
+
+```javascript
+{{appsmith.user.roles.includes("backend engineers")}}
+```
+Only the users who have the backend engineer role assigned can see this button.
+
+#### Groups
+
+This object contains a string array of the groups assigned to the currently authenticated user.
+
+```javascript
+
+
+```
+You can use `user.groups` object to [programmatically control access](/advanced-concepts/granular-access-control) to your application entities.
+
+**Example:** if you want to control the visibility of a button widget for users in the "managers" group, follow these steps:
+
+1. Go to the button's property pane, locate **Visible** and click JS.
+2. In the visible property definition, use the `group` object as shown below:
+
+```javascript
+{{appsmith.user.groups.includes("managers")}}
+```
+Only the users in the "managers" group can see this button.
+
 ### Geolocation
 
 This object contains functions to request the current user location and the coordinates received from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation\_API .
