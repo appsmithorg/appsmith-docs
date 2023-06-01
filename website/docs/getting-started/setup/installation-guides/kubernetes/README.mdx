@@ -71,8 +71,7 @@ Create a folder named `appsmith` on your machine for deployment and data storage
   5. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
-    # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
-    kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+    kubectl --namespace appsmith port-forward appsmith-0 8080:80
     ```
 
   6. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
@@ -112,11 +111,10 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 6. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
   ```bash
-  # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
-  kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+  kubectl --namespace appsmith port-forward appsmith-0 8080:80
   ```
 
-7. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+7. Open [https://localhost:8080](https://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost:8080](https://localhost:8080).
 
 8. Log into your Appsmith account, and enter your license key to activate the instance.
 

@@ -57,17 +57,17 @@ Follow these steps to upgrade your Appsmith installation:
 8. Get pod name with:
 
    ```bash
-   kubectl get pods
+   kubectl get pods -n <NAMESPACE>
    ```
 
 9. Verify the installation locally by forwarding port 8080 to 80 with:
  
    ```bash
-   # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
-   kubectl --namespace <NAMESPACE> port-forward <APPSMITH_POD_NAME> 8080:80
+   # Replace the <NAMESPACE> with the your namespace 
+   kubectl --namespace <NAMESPACE> port-forward appsmith-0 8080:80
    ```
 
-10. Open [https://localhost](https://localhost) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost](https://localhost).
+10. Open [https://localhost:8080](https://localhost:8080) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost:8080](https://localhost:8080).
 
 11. Log into your Appsmith account and enter your license key to activate the instance.
 
