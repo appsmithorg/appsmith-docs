@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Learn to connect to Dropbox via OAuth 2.0 and upload a file from your app.
 ---
 
 # How to Upload a File to Dropbox
