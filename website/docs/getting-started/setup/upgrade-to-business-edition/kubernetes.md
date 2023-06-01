@@ -21,28 +21,29 @@ Follow these steps to upgrade your Appsmith installation:
 
 1. Create a folder named `appsmith-ee` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
 
-2. Generate the business edition `values.yaml` with:
-
-   ```bash
-   helm show values appsmith-ee/appsmith > values.yaml
-   ``` 
-
-3. Add the Appsmith chart repository with:
+2. Add the Appsmith chart repository with:
 
    ```bash
    helm repo add appsmith-ee https://helm-ee.appsmith.com
    ```
 
-4. Load the Appsmith chart repository with:
+3. Load the Appsmith chart repository with:
 
    ```bash
    helm repo update
    ```
 
+4. Generate the business edition `values.yaml` with:
+
+   ```bash
+   helm show values appsmith-ee/appsmith > values.yaml
+   ``` 
+
 5. Deploy Appsmith with:
 
-   ```
-   helm install appsmith appsmith-ee/appsmith -n appsmith --create-namespace
+   ```bash
+   # Give a desired name to your namespace by replacing <NAMESPACE> 
+   helm install appsmith appsmith-ee/appsmith -n <NAMESPACE> --create-namespace
    ```
 
 6. Restore the backup data using the [Restore Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance).
@@ -63,7 +64,7 @@ Follow these steps to upgrade your Appsmith installation:
  
    ```bash
    # Replace the <APPSMITH_POD_NAME> with the Appsmith pod name from the above command 
-   kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+   kubectl --namespace <NAMESPACE> port-forward <APPSMITH_POD_NAME> 8080:80
    ```
 
 10. Open [https://localhost](https://localhost) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost](https://localhost).
