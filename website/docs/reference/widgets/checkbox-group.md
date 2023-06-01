@@ -131,7 +131,11 @@ This property controls the visibility of the widget. If you turn off this proper
 
 #### Disabled `Boolean`
 
+<dd>
+
 This property prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on `JS` next to the **Disabled** property to control the widget's disable state conditionally.
+
+</dd>
 
 #### Inline `Boolean`
 
