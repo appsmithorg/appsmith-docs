@@ -1,10 +1,8 @@
 # Checkbox Group
 
+This page provides instructions on using the Checkbox Group widget to allow users to select multiple items from a predefined set of choices. 
 
-Checkbox group widget allows users to configure multiple checkboxes together.
-
-
-<VideoEmbed host="youtube" videoId="-7cvZ2yCgtE" title="How to use Checkbox Group Widget" caption="How to use Checkbox Group Widget"/>
+<VideoEmbed host="youtube" videoId="-7cvZ2yCgtE" title="Using the Checkbox Group Widget" caption="Using the Checkbox Group Widget"/>
 
 
 
@@ -24,7 +22,7 @@ These properties are customizable options present in the property pane of the wi
 <dd>
 
 
-This property allows you to set the labels and values for the items in a Checkbox Group widget. You can add these labels and values directly from the user interface or use JavaScript by providing options in JSON format, like:
+This property allows you to set the labels and values for the items. You can add these labels and values directly from the user interface or use JavaScript by providing options in JSON format, like:
 
 
 ```js
@@ -39,7 +37,7 @@ This property allows you to set the labels and values for the items in a Checkbo
  }..
 ]
 ```
-It's important to ensure that the values assigned to each option are unique. Additionally, you can dynamically display data by using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
+Ensure that the values assigned to each option are unique. Additionally, you can dynamically display data by using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
 
 
 ```js
@@ -89,8 +87,8 @@ This property allows you to configure the label's placement in three ways:
 
 * **Auto**: Automatically positions the label based on the widget type and layout.
 * **Left**: Aligns the label to the left side of the widget.
-  * *Alignment*: You can also control the text's placement relative to the Checkbox Group. You have the choice to align it either to the **Left** boundary or closer to the Checkbox Group using the **Right** alignment option.
-  * *Width*: This allows you to control the proximity of the text to the Checkbox Group, determining how close or far it can be positioned.
+  * **Alignment**: You can also control the text's placement relative to the Checkbox Group. You have the choice to align it either to the **Left** boundary or closer to the Checkbox Group using the **Right** alignment option.
+  * **Width**: This allows you to control the proximity of the text to the Checkbox Group, determining how close or far it can be positioned.
 * **Top**: Positions the label above the widget.
 
 
@@ -144,7 +142,8 @@ When this property is turned on, the checkbox items are displayed horizontally. 
 #### Select All Options `Boolean`
 
 <dd>
-When the property is turned on, a `Select All` item is displayed, allowing the user to select all available options with a single click.
+
+When the property is turned on, a **Select All** item is displayed, allowing the user to select all available options with a single click.
 
 </dd>
 
@@ -179,6 +178,7 @@ This property determines how the widget's height adjusts to changes in its conte
 #### onSelectionChange
 
 <dd>
+
 This event defines the action that would be  executed when the user selects or deselects multiple or single items in the checkbox group. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the checkbox state change.
 
 </dd>
@@ -205,8 +205,11 @@ Determines the font size of the label. It accepts [CSS font-size](https://develo
 </dd>
 
 #### Emphasis `String`
+
 <dd>
-Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions
+
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+
 </dd>
 
 #### Alignment 
@@ -241,7 +244,8 @@ These properties are not available in the property pane, but can be accessed usi
 #### options `Array`
 
 <dd>
-The options property is an array that contains the values of all the available options
+
+The `options` property is an array that contains the values of all the available options.
 
 </dd>
 
@@ -265,11 +269,13 @@ The valid property indicates the validation status of a widget, providing inform
 
 <dd>
 
-The `isDisabled` property reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is disabled, and false indicates that it is enabled for user interaction.
+The `isDisabled` property indicates the disabled status of a widget. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
 </dd>
 
 #### isVisible `Boolean`
 <dd>
 
-The `isVisible` property reflects the state of the widget's **Visible** setting. It is represented by a boolean value, where true indicates that the widget is visible, and false indicates that it is hidden or not displayed on the page.
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
 </dd>
