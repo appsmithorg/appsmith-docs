@@ -209,6 +209,14 @@ Determines the font size of the label. It accepts [CSS font-size](https://develo
 Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions
 </dd>
 
+#### Alignment 
+
+<dd>
+
+Allows you to specify the alignment between options. This property provides various options such as **None**, **Start**, **End**, **Center**, **Between**, and **Around**, which determine the spacing and arrangement of the options within the designated area. 
+
+</dd>
+
 #### Accent color `String`
 
 <dd>
@@ -226,12 +234,30 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 </dd>
 
 ## Reference properties
-These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Checkbox1.isVisible`.
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `CheckboxGroup1.isVisible`.
 
-#### isChecked `Boolean`
+
+
+#### options `Array`
+
+<dd>
+The options property is an array that contains the values of all the available options
+
+</dd>
+
+#### selectedValues `Array`
+
 <dd>
 
-The `isChecked` property indicates whether the checkbox is currently checked or not. It is represented by a boolean value, where true signifies that the checkbox is checked, and false signifies that it is unchecked. 
+The `selectedValues` property holds an array of values that represents the options selected by the user.
+
+</dd>
+
+#### isValid `Boolean`
+
+<dd>
+
+The valid property indicates the validation status of a widget, providing information on whether the widget's current value is considered valid or not.
 
 </dd>
 
