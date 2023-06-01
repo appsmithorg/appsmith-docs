@@ -419,7 +419,14 @@ const sidebars = {
             'reference/datasources/airtable',
             'reference/datasources/querying-amazon-s3',
             'reference/datasources/querying-arango-db',
-            'reference/datasources/authenticated-api',
+            {
+              type: 'category',
+              label: 'Authenticated API',
+              link: { type: 'doc', id: 'reference/datasources/authenticated-api/README' },
+              items: [
+                'reference/datasources/authenticated-api/how-to-integrate-dropbox'
+              ],
+            },
             'reference/datasources/querying-dynamodb',
             'reference/datasources/querying-elasticsearch',
             'reference/datasources/querying-firestore',
