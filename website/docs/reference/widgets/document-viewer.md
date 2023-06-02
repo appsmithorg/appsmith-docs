@@ -1,3 +1,6 @@
+---
+description: Learn how to display documents using the Document Viewer widget on this page.
+---
 # Document Viewer
 
 This page provides an introduction on how to utilize the Document Viewer widget for displaying documents.
