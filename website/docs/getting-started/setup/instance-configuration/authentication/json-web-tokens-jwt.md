@@ -26,12 +26,6 @@ An access token is a self-contained object that contains information, known as c
 
 Once a user has successfully authenticated through a Single Sign-On (SSO) Provider, the access tokens can be used within Appsmith. The access token is stored on the server, and for security reasons, it is not accessible on the client side.
 
-You can reference the access token using the placeholder `APPSMITH_USER_OAUTH2_ACCESS_TOKEN` between the angular braces`<<>>`.
-
-```
-<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>
-```
-
-Whenever you reference the access token, the placeholder, `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`, is automatically replaced with the access token of the currently logged-in user.
+You can reference the access token using the placeholder `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`. This placeholder is automatically replaced with the access token of the currently logged-in user
 
 For example, if you include the access token as a bearer token in an API request, the server replaces `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`  with the actual access token of the logged-in user before making the API endpoint call.
