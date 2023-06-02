@@ -41,8 +41,8 @@ The Zoho API domains are location-specific, so be sure to use the correct domain
 * **Query Params:**
     * **Key:** `resfmt`
     * **Value** `JSON`
-* **Authentication Type:** OAuth 2.0 
-* **Grant Type:** Authorization Code  
+* **Authentication Type:** `OAuth 2.0` 
+* **Grant Type:** `Authorization Code`
 * **Access Token URL:**
     ```
     https://accounts.zoho.com/oauth/v2/token
@@ -70,13 +70,11 @@ Below, you'll set up three queries, build the UI with widgets, and then connect 
 
 ### Get contact list
 
-:::info
 To create a campaign, you need to have a Zoho "List" of contacts to send mail to. If you don't already have a contact list, you can [follow this guide](https://help.zoho.com/portal/en/kb/campaigns/user-guide/contact-management/list-management/articles/mailing-list-management#Create_list) to make one, or use the auto-generated "My Sample List" that Zoho made for you when you created your account.
-:::
 
 1. Once your Authenticated API datasource is configured, create a query based on it.
 1. Set the request method to `GET`.
-1. The base URL should already be inherited from the datasource. Append `/v1.1/getmailinglists?resfmt=JSON` to the URL.
+1. The base URL should already be inherited from the datasource. Append `/v1.1/getmailinglists` to the URL.
 
 This query returns an array of contact lists available on your account. You'll use the `listkey` property from your desired list in the Create Campaign query below.
 
@@ -92,7 +90,7 @@ This query returns an array of contact lists available on your account. You'll u
     | `campaignname` | `{{JSONForm1.formData.campaign_name}}` |
     | `from_email` | `{{JSONForm1.formData.from_email}}` |
     | `subject` | `{{JSONForm1.formData.subject}}` |
-    | `list_details` | `{{ {JSONForm1.formData.listkey}}:[]} }}` |
+    | `list_details` | `{{ {JSONForm1.formData.listkey:[]} }}` |
 
 <!--
 list_details value doesn't currently work. May need to be something like:
@@ -109,14 +107,24 @@ list_details value doesn't currently work. May need to be something like:
 
 Once this query is run, a successful response returns a `campaignKey` that can be used in another query to send that campaign.
 
+### Get recent campaigns
+
+This query will return a list of the most recently created campaigns on your Zoho account.
+
+1. Create a query based on your Authenticated API datasource for Zoho.
+1. Set the request method to `GET`.
+1. Append `/v1.1/recentcampaigns` to the URL.
+
 ### Send campaign
+
+This query takes a `campaignKey` value and sends out the associated email campaign.
 
 1. Create a query based on your Authenticated API datasource for Zoho.
 1. Set the request method to `POST`.
 1. Append `/v1.1/sendcampaign` to the URL.
 1. In the **Params** tab of the query editor, enter the following key/value pairs:
     * **Key:** `campaignKey`
-    * **Value:** `{{CreateCampaignQuery.data.campaignKey}}`
+    * **Value:** `{{CampaignSelect.selectedOptionValue}}`
 
 When this query runs successfully, your campaign should be on the way to its recipients.
 
@@ -149,28 +157,33 @@ The following steps describe how to set up the UI to interact with your queries:
     ```javascript
     {{
         CreateCampaign.run().then(() => {
-            showAlert('Campaign created', 'success');
+            showAlert('Campaign created', 'success')
+            RecentCampaignsQuery.run()
         }).catch(() => {
-            showAlert('There was an error', 'error');
+            showAlert('There was an error', 'error')
         });
     }}
     ```
 
 ---
 
-1. Next, place a new [Button widget](/reference/widgets/button) onto the canvas below the JSON Form, and update its label to `Send Campaign`.
-1. In the button's properties, toggle the **JS** tag for the **Disabled** property and set the value to:
+1. Next, place a new [Select widget](/reference/widgets/select) called `CampaignSelect` onto the canvas below the JSON Form. In its **Options** property, write:
     ```javascript
-    {{CreateCampaignQuery.data.campaignKey? false: true}}
+    RecentCampaignsQuery.data.recent_campaigns.map(campaign => {
+        return {
+            label: campaign.campaign_name,
+            value: campaign.campaign_key
+        }
+    })
     ```
-    * This button is only usable after a campaign is successfully created.
+1. Place a new [Button widget](/reference/widgets/button) onto the canvas below the Select widget, and update its label to `Send Campaign`.
 1. Toggle the **JS** tag for the button's **onClick** property and set the field to:
     ```javascript
     {{
-        SendCampaign.run().then(() => {
-            showAlert('Campaign Sent', 'success');
+        SendCampaignQuery.run().then(() => {
+            showAlert('Campaign Sent', 'success')
         }).catch(() => {
-            showAlert('There was an error', 'error');
+            showAlert('There was an error', 'error')
         });
     }}
     ```
