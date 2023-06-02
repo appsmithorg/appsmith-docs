@@ -183,7 +183,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-This event defines the action that would be  executed when the user selects or deselects multiple or single items in the checkbox group. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the checkbox state change.
+This event defines the action that would be executed when the user selects or deselects multiple or single items in the checkbox group. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the checkbox state change.
 
 </dd>
 
