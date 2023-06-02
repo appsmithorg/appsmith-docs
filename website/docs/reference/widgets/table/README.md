@@ -58,7 +58,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ---
 **Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Table widget.
 
-1.  Fetch data from the Appsmith mock API (see below) `users` using the following URL:
+1.  Fetch data from the [sample API](/core-concepts/connecting-to-data-sources/authentication#sample-api) `users` using the following URL:
 
 ```
 https://mock-api.appsmith.com/users?page=1

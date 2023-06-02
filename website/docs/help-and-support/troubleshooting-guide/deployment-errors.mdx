@@ -67,7 +67,7 @@ with
 proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
 ```
 
-This ensures that the redirect URLs are correct during OAuth2 logins. This works even if the ELB is configured to run on a custom port.
+This ensures that the redirect URLs are correct during [OAuth2](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/) logins. This works even if the ELB is configured to run on a custom port.
 
 ## Server not booting because of MongoCommandException
 

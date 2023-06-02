@@ -28,11 +28,11 @@ To connect to a GraphQL API endpoint, Appsmith needs the following parameters. A
 
 **Query Parameters:** provide any parameters that should be passed as key-value pairs in the URL of your requests.
 
-**Send Appsmith signature header:** choose whether to include a special token in your request headers to help prove authenticity and integrity. For more information, read [signature headers](/reference/datasources/authenticated-api).
+**Send Appsmith signature header:** choose whether to include a special token in your request headers to help prove authenticity and integrity. For more information, read [signature headers](/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions).
 
-**Authentication Type:** choose the style of authentication to use for your queries. To read more about some of the options, visit [the authenticated API docs](/reference/datasources/authenticated-api).
+**Authentication Type:** choose the style of authentication to use for your queries. To read more about some of the options, visit [authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type).
 
-**Use self-signed certificate:** choose whether to upload your own self-signed certificate for encryption. For more information, read [the authenticated API docs](/reference/datasources/authenticated-api).
+**Use self-signed certificate:** choose whether to upload your own self-signed certificate for encryption. For more information, read [self-signed certificates](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
 
 ## Create queries
 

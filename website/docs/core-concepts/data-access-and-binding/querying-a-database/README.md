@@ -6,12 +6,12 @@ The information you want to present in any application is typically spread over 
 Appsmith uses Queries to collectively refer to APIs or Database queries that perform CRUD operations.
 :::
 
-To write and execute queries, you should understand the basics of [connecting to a Database](/core-concepts/connecting-to-data-sources/connecting-to-databases) or [Connecting to an API](/reference/datasources/authenticated-api).  You can create queries from a datasource using the Appsmith query editor.
+To write and execute queries, you should understand the basics of [connecting to a Database](/core-concepts/connecting-to-data-sources/connecting-to-databases) or [Connecting to an API](/core-concepts/connecting-to-data-sources/authentication).  You can create queries from a datasource using the Appsmith query editor.
 
 
 ## Create a query
 
-This section talks about creating a DB query in Appsmith. To learn about API queries, see [How to Create an API query](/reference/datasources/authenticated-api).
+This section talks about creating a DB query in Appsmith. To learn about API queries, see [How to Create an API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
 
 Follow the below steps to create a database query in the query editor:
 

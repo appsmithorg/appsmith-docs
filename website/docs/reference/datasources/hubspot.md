@@ -38,7 +38,7 @@ Appsmith allows you to select from the available authentication types to integra
 
 #### Bearer Token 
 
-Bearer Tokens are the predominant access token used with [OAuth 2.0](/reference/datasources/authenticated-api).
+Bearer Tokens are the predominant access token used with [OAuth 2.0](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/).
 You can authenticate to the API by providing your access token in the HTTP authorization bearer token header.
 
 Let's see how you can fetch your Bearer Token:

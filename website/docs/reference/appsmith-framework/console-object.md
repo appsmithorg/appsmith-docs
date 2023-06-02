@@ -8,7 +8,7 @@ The [console object](https://developer.mozilla.org/en-US/docs/Web/API/Console\_A
 
 The console is integral to any developer's toolkit - it allows you to monitor what your program is doing by logging messages, errors, and warnings as they occur. These informative logs make it much easier to debug your code and locate the source of errors and unexpected behavior.
 
-Appsmith provides the global console object for logging information about your [API](/reference/datasources/authenticated-api), [Queries](../../core-concepts/data-access-and-binding/querying-a-database/), and [Widgets properties](../widgets/) in your JavaScript code. Invoke a console object using the mustache sign `{{}}` in widget properties or [directly in your code](../../core-concepts/writing-code/javascript-editor-beta/#use-case).
+Appsmith provides the global console object for logging information about your [API](../../core-concepts/connecting-to-data-sources/authentication/), [Queries](../../core-concepts/data-access-and-binding/querying-a-database/), and [Widgets properties](../widgets/) in your JavaScript code. Invoke a console object using the mustache sign `{{}}` in widget properties or [directly in your code](../../core-concepts/writing-code/javascript-editor-beta/#use-case).
 
 :::note
 The console logs **is not** saved and are **only** available for the **current session.**
@@ -53,7 +53,7 @@ export default {
 
 The API generates the correct response when executed standalone, and your app code works as expected. However, the code fails during integration because the API response either is not generated or isn't as expected.
 
-To troubleshoot the error, you would want to log some messages: at the start of the API call, the parameters you are [building and passing to the API](/reference/datasources/rest-api), the response you get from the API, and the result. Here, the console object comes in handy. You can use different methods such as [`log`](console-object.md#log) to log the start of the method, parameters, and result, [`error`](console-object.md#error) to log the error messages returned by the API, and [`warn`](console-object.md#warn) to log the warnings returned by API.
+To troubleshoot the error, you would want to log some messages: at the start of the API call, the parameters you are [building and passing to the API](../../core-concepts/connecting-to-data-sources/authentication/connect-to-apis.md#passing-data-parameters-to-api-calls), the response you get from the API, and the result. Here, the console object comes in handy. You can use different methods such as [`log`](console-object.md#log) to log the start of the method, parameters, and result, [`error`](console-object.md#error) to log the error messages returned by the API, and [`warn`](console-object.md#warn) to log the warnings returned by API.
 
 ### Log
 
