@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 # Identity and Access Tokens
 
-When you log in using the [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc)protocol in Appsmith, you gain access to the identity and access tokens. These tokens can be used within your applications to implement custom logic and authorize API requests on behalf of the authenticated user.
+When you log in using the [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) protocol in Appsmith, you gain access to the identity and access tokens. These tokens can be used within your applications to implement custom logic and authorize API requests on behalf of the authenticated user.
 
 :::info
 **Identity and Access Tokens** can be accessed as part of [OpenID Connect (OIDC),](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) available **only** in Appsmith's [**business edition**](https://www.appsmith.com/pricing).
@@ -13,12 +13,12 @@ When you log in using the [OIDC](/getting-started/setup/instance-configuration/a
 
 An ID token serves as a verified confirmation of a user's identity and includes essential information such as their name, picture, email address etc. According to the OpenID Connect (OIDC) specifications, when a user successfully logs in, Appsmith receives an ID token.
 
-You can read the value of an ID token in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
+Appsmith provides the `idToken` parameter on the client side, allowing you to incorporate it into various operations like JavaScript functions, APIs, or queries as needed. You can read the value of an ID token in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
 
 ```
 {{appsmith.user.idToken}}
 ```
-Appsmith provides the `idToken` parameter on the client side, allowing you to incorporate it into various operations like JavaScript functions, APIs, or queries as needed. If you have defined custom scopes in your identity provider, the information associated with those scopes can be accessed within the Identity token.
+If you have defined custom scopes in your identity provider, the information associated with those scopes can be accessed within the Identity token.
 
 ## Access token
 

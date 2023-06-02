@@ -55,7 +55,7 @@ The following section is a reference guide that provides a complete description 
           <li><b>Client ID:</b> The identifier issued to the client by the OAuth provider during app registration.</li>
           <li><b>Client Secret:</b> The secret string issued to the client by the OAuth provider during app registration.</li>
           <li><b>Scopes:</b> Sets the requested scopes that are requested. This field can have multiple comma-separated values.</li>
-          <li><b>Client Authorization:</b> Sends the client secret either in the request body as <code>client_id</code> and <code>client_secret</code> parameters, or within the headers encoded as basic HTTP authentication.</li>
+          <li><b>Client Authorization:</b> Sends the client secret either in the request body as <code>client_id</code> and <code>client_secret</code> parameters or within the headers encoded as basic HTTP authentication.</li>
           <li><b>Authorization URL:</b> The endpoint on the authentication server that is used to request authentication for the client.</li>
           <li><b>Redirect URL:</b> The URL that the OAuth server should redirect to.</li>
           <li><b>Custom Authentication Parameters:</b> User-defined key/value pairs to be encoded and sent as authentication parameters.</li>
@@ -65,21 +65,20 @@ The following section is a reference guide that provides a complete description 
         For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.
       </li>
       <li><b>API Key:</b> Sends a key/value pair which is sent as a base64-encoded string in the request's Authorization header. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
-      <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header.</li>
+      <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header. If you are using OIDC protocol to log in to your instance, you can use the <a href="/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt#access-token">access token</a> of the logged-in user as a bearer token.</li>
     </ul>
   </dd>  
 </dl>
 
 <dl>
-  <dt><b>Send appsmith signature header</b></dt>
+  <dt><b>Send Appsmith signature header</b></dt>
   <dd>When enabled, it sends an additional key/value pair in the request header in the format: <code>X-Appsmith-Signature: &lt;session-details-signature-key&gt;</code>. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions">Signature Header</a>.</dd>
 </dl>
 
 <dl>
   <dt><b>Use self-signed certificate</b></dt>
-  <dd>When enabled, you can upload your own certificate file. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates">Self-Signed Certificates</a>.</dd>
+  <dd>When enabled, you can upload your certificate file. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates">Self-Signed Certificates</a>.</dd>
 </dl>
-
 
 ## Queries
 
