@@ -9,8 +9,6 @@ This guide describes how to configure an Authenticated API datasource for Zoho w
 
 1. Create a [Zoho account](https://www.zoho.com/signup.html?all_prod_page=true&ireft=nhome&src=home1-header)
 
----
-
 ## Set up the Zoho API Console
 
 If you haven't already created an app in the Zoho API Console, follow these steps:
@@ -87,18 +85,94 @@ This query returns an array of contact lists available on your account. You'll u
 1. Create a query based on your Authenticated API datasource for Zoho.
 1. Set the request method to `POST`.
 1. Append `/v1.1/createCampaign` to the URL.
-1. In the **Body** tab of the query editor, select **FORM_URLENCODED** and enter the following key/value pairs:
+1. In the **Params** tab of the query editor, enter the following key/value pairs:
 
     | Key | Value |
     |-----|-------|
-    | `campaignname` | `{{JSONForm1.formData.campaignname}}` |
+    | `campaignname` | `{{JSONForm1.formData.campaign_name}}` |
     | `from_email` | `{{JSONForm1.formData.from_email}}` |
     | `subject` | `{{JSONForm1.formData.subject}}` |
-    | `list_details` | `{ {{JSONForm1.formData.listkey}} }` |
+    | `list_details` | `{{ {JSONForm1.formData.listkey}}:[]} }}` |
 
+<!--
+list_details value doesn't currently work. May need to be something like:
+
+{{
+    (function(){
+    const listkey = JSONForm1.formData.list_details
+    const param = {}
+    param[JSONForm1.formData.list_details] = []
+    return param
+    })()
+}}
+-->
+
+Once this query is run, a successful response returns a `campaignKey` that can be used in another query to send that campaign.
 
 ### Send campaign
 
+1. Create a query based on your Authenticated API datasource for Zoho.
+1. Set the request method to `POST`.
+1. Append `/v1.1/sendcampaign` to the URL.
+1. In the **Params** tab of the query editor, enter the following key/value pairs:
+    * **Key:** `campaignKey`
+    * **Value:** `{{CreateCampaignQuery.data.campaignKey}}`
 
+When this query runs successfully, your campaign should be on the way to its recipients.
 
 ### Widgets
+
+The following steps describe how to set up the UI to interact with your queries:
+
+1. On the canvas, create a [JSON Form widget](/reference/widgets/json-form) and paste the following snippet into its **Source Data** property:
+    ```json
+    {
+        "list": [],
+        "campaign name": "",
+        "from_email": "",
+        "subject": ""
+    }
+    ```
+1. Open the properties for the **List** field of the form, and check that its **Field Type** is set to `Select`.
+1. Enter the following code into the **Options** field:
+    ```javascript
+    {{
+        GetMailingListsQuery.data.list_of_details.map(list => {
+            return {
+                label: list.listname, value: list.listkey
+            }
+        })
+    }}
+    ```
+    * Now your **List** field should automatically populate with the available mailing lists from your Zoho account.
+1. In the JSON Form's **onSubmit** property, toggle the **JS** tag and write:
+    ```javascript
+    {{
+        CreateCampaign.run().then(() => {
+            showAlert('Campaign created', 'success');
+        }).catch(() => {
+            showAlert('There was an error', 'error');
+        });
+    }}
+    ```
+
+---
+
+1. Next, place a new [Button widget](/reference/widgets/button) onto the canvas below the JSON Form, and update its label to `Send Campaign`.
+1. In the button's properties, toggle the **JS** tag for the **Disabled** property and set the value to:
+    ```javascript
+    {{CreateCampaignQuery.data.campaignKey? false: true}}
+    ```
+    * This button is only usable after a campaign is successfully created.
+1. Toggle the **JS** tag for the button's **onClick** property and set the field to:
+    ```javascript
+    {{
+        SendCampaign.run().then(() => {
+            showAlert('Campaign Sent', 'success');
+        }).catch(() => {
+            showAlert('There was an error', 'error');
+        });
+    }}
+    ```
+
+After these steps, your app should be set up to create and send a new Zoho email campaign.
