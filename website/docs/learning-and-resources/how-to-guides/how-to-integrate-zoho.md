@@ -1,13 +1,13 @@
 ---
 description: Learn to connect to Zoho via OAuth 2.0 and create a campaign from your app.
 ---
-# How to Integrate With Zoho
+# How to Integrate Zoho Into Appsmith With OAuth 2.0
 
 This guide describes how to configure an Authenticated API datasource for Zoho with OAuth 2.0 and create a query that creates a campaign from your Appsmith app.
 
 ## Prerequisites
 
-1. Zoho account
+1. [Zoho account](https://www.zoho.com/signup.html?all_prod_page=true&ireft=nhome&src=home1-header)
 
 ---
 
