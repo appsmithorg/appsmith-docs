@@ -109,7 +109,7 @@ Once this query is run, a successful response returns a `campaignKey` that can b
 
 ### Get recent campaigns
 
-This query will return a list of the most recently created campaigns on your Zoho account.
+This query returns a list of your Zoho account's most recently created campaigns.
 
 1. Create a query based on your Authenticated API datasource for Zoho.
 1. Set the request method to `GET`.
@@ -117,7 +117,7 @@ This query will return a list of the most recently created campaigns on your Zoh
 
 ### Send campaign
 
-This query takes a `campaignKey` value and sends out the associated email campaign.
+This query takes a `campaignKey` value and sends the associated email campaign.
 
 1. Create a query based on your Authenticated API datasource for Zoho.
 1. Set the request method to `POST`.
@@ -126,7 +126,7 @@ This query takes a `campaignKey` value and sends out the associated email campai
     * **Key:** `campaignKey`
     * **Value:** `{{CampaignSelect.selectedOptionValue}}`
 
-When this query runs successfully, your campaign should be on the way to its recipients.
+When this query runs successfully, your campaign should be on its way to its recipients.
 
 ### Widgets
 
