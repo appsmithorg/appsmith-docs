@@ -23,7 +23,7 @@ The following section is a reference guide that provides a complete description 
 
 <dl>
   <dt><b>Host Address</b></dt>
-  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to on the server. Appsmith connects to port `1521` by default if you do not specify one.</dd><br />
