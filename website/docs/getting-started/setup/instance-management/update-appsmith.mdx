@@ -33,7 +33,7 @@ The steps below work with any platform that supports Docker. For example, Docker
 You can update Appsmith in one of the below ways:
 
 * [Manual update](#manual-update)
-* [Automatic update](#automatic-update)
+* [Schedule automatic update](#automatic-update)
 
 :::info
 To find the Appsmith installation directory, run the following command:
@@ -50,9 +50,9 @@ Go to the root directory of your installation and run:
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-### Automatic update
+### Schedule automatic update
 
-Follow the below steps to turn on the auto updates:
+Follow the below steps to schedule the auto updates:
 
 :::info
 Before an automatic update, Appsmith creates a backup. You may use this to roll back to a previous version in case of any issues.
@@ -65,6 +65,10 @@ Before an automatic update, Appsmith creates a backup. You may use this to roll 
    ```
 
 2. Open the `docker-compose.yml` file and uncomment the below code block:
+
+  :::caution Attention
+  The automatic update is scheduled to run at midnight. If you prefer a different update time, change the expression accordingly.
+  :::
    
    ```yaml
    #auto_update:

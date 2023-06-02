@@ -140,9 +140,6 @@ Keep the other settings as is and click `Save & Authorize` button to create the 
 
 Once the datasource is added, you can create queries and perform different actions with the Google Docs interface.
 
-:::info
-You can also check out the How-To Guide- [How to add OAuth2 Authorization for Integrating Google Sheets](/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets) into Appsmith.
-:::
 
 ## Integrate with Zoho campaigns
 

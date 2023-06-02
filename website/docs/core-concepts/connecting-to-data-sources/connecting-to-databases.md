@@ -27,7 +27,7 @@ To connect to a database:
 6. **Save** the datasource. The configuration details aren't saved/updated until the Save button is clicked. When the datasource has been added successfully, a success message appears at the top of the app window. 
 
 :::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 ### Native databases
@@ -92,4 +92,4 @@ If you are experiencing difficulties with connecting datasources in Appsmith, yo
 
 * [Write queries](/core-concepts/data-access-and-binding/querying-a-database)
 * [Data access and binding](/core-concepts/data-access-and-binding)
-* [Connect to a local database or API](/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith)
+* [Connect to a local database or API](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith)

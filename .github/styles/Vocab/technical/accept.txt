@@ -386,3 +386,11 @@ callouts
 Oracle
 OGG
 HTTP
+Default State
+Animate Loading
+onCheckChange
+isChecked
+isDisabled
+default state
+disable
+selectedValues
