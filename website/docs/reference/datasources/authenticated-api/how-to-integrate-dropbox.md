@@ -7,9 +7,23 @@ description: Learn to connect to Dropbox via OAuth 2.0 and upload a file from yo
 
 This guide describes how to configure an Authenticated API datasource for Dropbox with OAuth 2.0 and create a query that uploads a file to Dropbox from your Appsmith app.
 
+## Prerequisites
+
+1. Create a [Dropbox account](https://www.dropbox.com/register)
+
+## Create a Dropbox app
+
+If you haven't already created an app with Dropbox, follow the steps below:
+
+1. Navigate to the [App Console](https://www.dropbox.com/developers/apps) and click the **Create App** button.
+1. On the next page, configure your app's **API**, **Type of access**, and **Name** to meet your needs.
+1. Click **Create app** to finish setup and be taken to your new app's configuration screen.
+
 ## Configure the Authenticated API
 
-1. Create an Authenticated API datasource and update its name.
+The following steps walk you through configuring a datasource that can query Dropbox with OAuth 2.0.
+
+1. In Appsmith, create an Authenticated API datasource and update its name.
 1. In the datasource configuration screen, set up the fields as follows: 
 
 * **URL:**
@@ -43,6 +57,8 @@ When you're finished, click the `Save and Authorize` button. You’ll be redirec
 
 ## Configure the query
 
+These steps show how to set up a query that can upload a file to Dropbox. You'll set up the necessary widgets in the next section.
+
 1. Once your Authenticated API datasource is configured, create a query based on it.
 1. Set the request method to `POST`.
 1. The base URL should already be inherited from the datasource. Append `2/files/upload` to the URL.
@@ -61,6 +77,8 @@ When you're finished, click the `Save and Authorize` button. You’ll be redirec
     ```
 
 ## Configure the widgets
+
+With the query completed, you're ready to connect widgets that will upload a file and run the query:
 
 1. Back on the canvas, create a [Filepicker widget](/reference/widgets/filepicker).
 1. Set the Filepicker's **Data Format** property to `Binary`.
