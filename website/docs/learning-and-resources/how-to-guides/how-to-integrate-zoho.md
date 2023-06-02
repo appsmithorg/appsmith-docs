@@ -7,7 +7,7 @@ This guide describes how to configure an Authenticated API datasource for Zoho w
 
 ## Prerequisites
 
-1. [Zoho account](https://www.zoho.com/signup.html?all_prod_page=true&ireft=nhome&src=home1-header)
+1. Create a [Zoho account](https://www.zoho.com/signup.html?all_prod_page=true&ireft=nhome&src=home1-header)
 
 ---
 
