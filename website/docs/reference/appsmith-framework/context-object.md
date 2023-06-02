@@ -165,14 +165,14 @@ This object contains the data of the currently authenticated user.
 
 #### Roles
 
-This object contains a string array of the roles assigned to the currently authenticated user.
+This object contains an array of strings of the roles assigned to the currently authenticated user.
 
 ```javascript
 
 [
   "Instance Administrator Role",
   "Default Role For All Users",
-  "Administrator - Nilesh's apps",
+  "Administrator",
   "Custom Role-1",
   "Custom Role-2"
 ]
@@ -182,7 +182,7 @@ You can use `user.role` object to [programmatically control the access](/advance
 
 #### Groups
 
-This object contains a string array of the groups assigned to the currently authenticated user.
+This object contains an array of strings of the groups assigned to the currently authenticated user.
 
 ```javascript
 [
