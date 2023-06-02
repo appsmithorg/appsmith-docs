@@ -1,5 +1,5 @@
 ---
-description: Learn how to display documents using the Document Viewer widget on this page.
+description: Learn how to display documents using the Document Viewer widget.
 ---
 # Document Viewer
 
