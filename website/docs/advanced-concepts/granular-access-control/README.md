@@ -50,24 +50,15 @@ When you share an application or workspace, you can invite a group and assign th
 
 ## Programmatic access control
 
-You can utilize roles and groups assigned to a user to programmatically manage access to various entities such as widgets, datasources, APIs, and queries. To enable Access Control using code, follow these steps:
-
-1. Navigate to the **Admin Settings > General** section.
-2. Locate the `<Programmatic access control>` checkbox and select it.
-
-### Programmatic access control using Appsmith user objects
+You can utilize roles and groups assigned to a user to programmatically manage access to various entities such as widgets, datasources, APIs, and queries. To enable Access Control using code, go to **Admin Settings > General** and select `<Programmatic access control>` checkbox.
 
 To manage access control programmatically, you can use the following Appsmith user objects to obtain an array of roles or groups assigned to the user:
 
   - [user.roles](/reference/appsmith-framework/context-object#roles)
   - [user.groups](/reference/appsmith-framework/context-object#groups) 
 
-#### user.roles
 
-If you want to control the visibility of a button widget for users assigned to the "backend engineers" role, follow these steps:
-
-1. Go to the button's property pane, locate **Visible** and click JS.
-2. In the visible property definition, use the `roles` object as shown below:
+To control the visibility of a button widget specifically for users assigned to the "backend engineers" role, you can use the user.roles object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
 
 ```javascript
 {{appsmith.user.roles.includes("backend engineers")}}
