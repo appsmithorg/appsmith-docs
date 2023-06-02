@@ -16,10 +16,14 @@ The following section is a reference guide that provides a complete description 
    <img src="/img/restapi-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an Authenticated API datasource."/>
    <figcaption align = "center"><i>Configuring an Authenticated API datasource.</i></figcaption>
 </figure>
-  
+
+:::note
+The datasource configuration fields do not accept JavaScript code or mustache syntax.
+:::
+
 <dl>
   <dt><b>URL</b></dt>
-  <dd>Sets the domain that this datasource should query. Queries created from this datasource inherit this as a base URL.</dd><br/>
+  <dd>Sets the domain that this datasource should query. Queries created from this datasource inherit this value as a base URL.</dd><br/>
   <dd>
     For example, if you set <b>URL</b> to <code>https://api.example.com</code>, then its queries would all start with that URL as their base path and you'd add the endpoint (like <code>/users/search/</code>) as a suffix within each query.
   </dd>

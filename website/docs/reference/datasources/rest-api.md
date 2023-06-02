@@ -19,7 +19,7 @@ The following section is a reference guide that provides a description of the pa
 
 <dl>  
   <dt><b>Method</b></dt>
-  <dd>Sets the REST method (`GET`, `POST`, etc.) to use for the request.</dd>
+  <dd>Sets the REST method (<code>GET</code>, <code>POST</code>, etc.) to use for the request.</dd>
 </dl>
 
 <dl>  
@@ -44,10 +44,63 @@ The following section is a reference guide that provides a description of the pa
     <ul>
       <li><b>None:</b> Sends no body.</li>
       <li><b>JSON:</b> Expects a JSON object to send as the body.</li>
+    </ul>
+
+<dd><pre>{` 
+{
+  "q": {{ UsersTable.searchText }},
+  "limit": {{ UsersTable.pageSize }},
+  "offset": {{ UsersTable.pageOffset }}
+}
+`}</pre>
+In the example above, values are collected from a [Table widget](/reference/widgets/table) and passed into a JSON object.</dd>
+    <ul>
       <li><b>FORM_URLENCODED:</b> Expects key/value pairs to be encoded into FORM_URLENCODED format as the body.</li>
+    </ul>
+<dd>
+
+|  Key     |  Value                        |
+|----------|-------------------------------|
+| query    | `{{ UsersTable.searchText }}` |
+| limit    | `{{ UsersTable.pageSize }}`   |
+| offset   | `{{ UsersTable.pageOffset }}` |
+
+<pre>{`// result
+"query=arjun&limit=10&offset=20"
+`}</pre>
+<p>Selecting <b>FORM_URLENCODED</b> (for <code>application/x-www-form-urlencoded</code>) automatically encodes your key/value pairs for sending in the request body.</p></dd>
+    <ul>
       <li><b>MULTIPART_FORM_DATA:</b> Expects key/value pairs with a data type to be encoded into MULTIPART_FORM_DATA format as the body.</li>
+    </ul>
+<dd>
+
+|  Key     | Type |  Value                        |
+|----------|------|-------------------------------|
+| user     | Text | `{{ appsmith.user.email }}`   |
+| filename | Text | `{{ FileNameInput.text }}`    |
+| file     | File | `{{ Filepicker.files[0] }}`   |
+
+<pre>{`// result
+"query=arjun&limit=10&offset=20"
+`}</pre>
+<p>Above, values of multiple types are pulled from widgets and added to the query, including file data from a <a href="/reference/widgets/filepicker">Filepicker widget</a>.</p>
+
+:::tip
+When uploading file data, check that your Filepicker widget's **Data Format** property is set correctly. When uploading as multipart/form-data, this should usually be set to `Binary`.
+:::
+</dd>
+    <ul>
       <li><b>RAW:</b> Expects raw binary file data to be sent as the body.</li>
-    </ul> 
+    </ul>
+      <dd><pre>{`{{ Filepicker1.files[0]?.data }}
+`}</pre>
+<p>Use <b>RAW</b> if your endpoint can't accept multipart-encoded data and requires raw body binary instead. Above, the <code>data</code> property of the file is passed to the query instead of the file object itself because the endpoint expects only raw binary data.</p>
+
+:::caution tip
+Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
+:::
+</dd>
+
   </dd>  
 </dl>
 
@@ -66,62 +119,6 @@ The following section is a reference guide that provides a description of the pa
   <dt><b>Authentication</b></dt>
   <dd><em>Click the button in this tab to turn this query into a new Authenticated API datasource where you can configure Authentication for your requests.</em></dd>
 </dl>
-
----
-
-Below are examples of passing body data in several formats:
-
-### JSON data
-
-```json
-{
-	"q": {{ UsersTable.searchText }},
-	"limit": {{ UsersTable.pageSize }},
-	"offset": {{ UsersTable.pageOffset }}
-}
-```
-
-In the example above, values are collected from a [Table widget](/reference/widgets/table) and passed into a JSON object.
-
-### URL-encoded form data
-
-|  Key     |  Value                        |
-|----------|-------------------------------|
-| query    | `{{ UsersTable.searchText }}` |
-| limit    | `{{ UsersTable.pageSize }}`   |
-| offset   | `{{ UsersTable.pageOffset }}` |
-
-```
-"query=arjun&limit=10&offset=20"
-```
-
-Selecting **FORM_URLENCODED** (for `application/x-www-form-urlencoded`) automatically encodes your key/value pairs for sending in the request body.
-
-### Multipart/Form-data
-
-|  Key     | Type |  Value                        |
-|----------|------|-------------------------------|
-| user     | Text | `{{ appsmith.user.email }}`   |
-| filename | Text | `{{ FileNameInput.text }}`    |
-| file     | File | `{{ Filepicker.files[0] }}`   |
-
-Above, values of multiple types are pulled from widgets and added to the query, including file data from a [Filepicker widget](/reference/widgets/filepicker).
-
-:::tip
-When uploading file data, check that your Filepicker widget's **Data Format** property is set correctly. When uploading as multipart/form-data, this should usually be set to `Binary`.
-:::
-
-### Raw data
-
-```javascript
-{{ Filepicker1.files[0]?.data }}
-```
-
-Use **RAW** if your endpoint can't accept multipart-encoded data and requires raw body binary instead. Above, the `data` property of the file is passed to the query instead of the file object itself because the endpoint expects only raw binary data.
-
-:::caution tip
-Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
-:::
 
 ## Troubleshooting
 
