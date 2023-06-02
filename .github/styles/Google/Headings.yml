@@ -140,4 +140,5 @@ exceptions:
   - Property group - Label
   - Property group - General
   - Property group - Events
-
+  - Document Link
+  - docUrl
