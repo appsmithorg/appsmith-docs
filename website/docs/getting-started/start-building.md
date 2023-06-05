@@ -65,7 +65,7 @@ Here's a screenshot of the final result:
   **Port**: `5432`<br/>
   **Database Name**: `users`<br/>
   **Username**: `users`<br/>
-  **Password**: <br/>
+  **Password**: `new-users-db-pass`<br/>
 
 4. Click the **Test** button to test the connection and ensure the database is valid.
 
