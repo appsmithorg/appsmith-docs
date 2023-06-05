@@ -3,9 +3,9 @@ description: Learn how to use the Rich Text Editor widget for capturing and form
 ---
 # Rich Text Editor
 
-This page provides instructions on using the Rich Text Editor, which allows users to capture rich text input from users. 
+This page provides instructions on using the Rich Text Editor, which allows you to capture rich text input from users. 
 
-<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="How to use Rich Text Editor Widget" caption="How to use Rich Text Editor Widget"/>
+<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="Using Rich Text Editor Widget" caption="Using Rich Text Editor Widget"/>
 
 ## Content properties
 
@@ -162,7 +162,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-This event allows you to define aN action that would be triggered whenever there is a change in the text input by the user. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the text change.
+This event allows you to define an action that would be triggered whenever the user changes the text input. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the text change.
 
 
 
@@ -208,7 +208,7 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 
 <dd>
 
-This property adds a drop shadow effect to the frame of the widget. When JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
 
 </dd>
 
