@@ -145,7 +145,7 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
 </figure>
 
-## Edit user details
+## Update user details
 
 1. On the entity explorer's **Explorer** tab, click **Queries/JS**. 
 
