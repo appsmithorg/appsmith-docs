@@ -71,11 +71,6 @@ Here's a screenshot of the final result:
 
 5. Click **Save** to create and save the database connection. You'll see the `usersTutorialDB` database page.
 
-<figure>
-  <img src="/img/Add_Datasource.png" style= {{width:"100%", height:"auto"}} alt="Connect to sample database"/>
-  <figcaption align = "center"><i>Connect to sample database</i></figcaption>
-</figure>
-
 🚩 You've successfully connected to the PostgreSQL database that contains user information.
 
 ## Fetch user data
