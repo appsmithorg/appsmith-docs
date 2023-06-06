@@ -180,12 +180,12 @@ This object contains an array of strings of the roles assigned to the currently 
 ```
 You can use `user.role` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-**Example:** To control the visibility of a button widget specifically for users assigned to the "backend engineers" role, you can use the user.roles object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
+**Example:** Consider a scenario where you are hiding a Button widget adding the following code to the Visible property of the button -
 
 ```javascript
 {{appsmith.user.roles.includes("backend engineers")}}
 ```
-Only the users who have the backend engineer role assigned can see this button.
+In the above example, the visibility of the button is determined by a role. Only users who have been assigned the "backend engineer" role can see this button.
 
 #### Groups
 
@@ -201,12 +201,12 @@ This object contains an array of strings of the groups assigned to the currently
 ```
 You can use `user.groups` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-**Example:** To control the visibility of a button widget specifically for users assigned to the "managers" group, you can use the `user.groups` object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
+**Example:** Consider a scenario where you are hiding a Button widget adding the following code to the Visible property of the button -
 
 ```javascript
 {{appsmith.user.groups.includes("managers")}}
 ```
-Only the users in the "managers" group can see this button.
+In the above example, the visibility of the button is determined by a group. Only users who have been added to the "managers" group can see this button.
 
 ### Geolocation
 
