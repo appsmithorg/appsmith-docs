@@ -50,7 +50,7 @@ When you share an application or workspace, you can invite a group and assign th
 
 ## Programmatic access control
 
-You can utilize roles and groups assigned to a user to programmatically manage access to various entities such as widgets, datasources, APIs, and queries. To enable Access Control using code, go to **Admin Settings > General** and select `<Programmatic access control>` checkbox.
+You can utilize roles and groups assigned to a user to programmatically manage access to various entities such as widgets, datasources, APIs, and queries. To enable Access Control using code, go to **Admin Settings > General** and under **Programmatic access control** select the **Access roles and user groups in code for conditional business logic** checkbox.
 
 To manage access control programmatically, you can use the following Appsmith user objects to obtain an array of roles or groups assigned to the user:
 
