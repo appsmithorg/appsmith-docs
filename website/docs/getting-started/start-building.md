@@ -62,6 +62,11 @@ Let's get started!
 
 3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
 
+<figure>
+  <img src="/img/connect-to-postgreSQL-database.png" style= {{width:"100%", height:"auto"}} alt="Connect to PostgreSQL database"/>
+  <figcaption align = "center"><i>Connect to PostgreSQL database</i></figcaption>
+</figure>
+
 4. Click the pencil icon next to the default database name on the top left and rename the database to `usersTutorialDB`.
 
 5. Enter the following details in the connection parameter fields:<br/>
