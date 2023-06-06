@@ -166,7 +166,7 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 
 3. Rename the query to `updateUsers`. Click the white space below the query name for a blank query editor.  
 
-4. Paste the below SQL update command in the query editor to save any modified data in the Form for the selected row of the **usersTable** Table back to the database.
+4. Paste the below SQL update command in the query editor to update the `users` table in the database with the details modified in the Form.
 
   ```sql
   UPDATE users 
@@ -192,13 +192,13 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   <figcaption align = "center"><i>Run query on the button's onClick event</i></figcaption>
 </figure>
 
-7. Select the first row on the Table. Go ahead and modify the user's name on the Form and test the **Update** button to see how things work .
+7. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode. 
+
+8. Select the first row on the Table. Go ahead and modify the user's name on the Form and test the **Update** button to see how things work .
 
   :::caution
   The databases used in tutorials are public and shared by all Appsmith users, so ensure that you don't input confidential information during testing. The databases are automatically reset every day, so any updates made to these databases are temporary.
   :::
-
-8. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode. 
 
 🚩 Congratulations! You have built your first app that can display data from the database and save the updated data on the Form.
 
