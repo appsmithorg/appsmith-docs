@@ -165,18 +165,22 @@ This object contains the data of the currently authenticated user.
 
 #### Roles
 
-This object contains a string array of the roles assigned to the currently authenticated user.
+This object contains an array of strings of the roles assigned to the currently authenticated user.
 
 ```javascript
 
+[
+  "Instance Administrator Role",
+  "Default Role For All Users",
+  "Administrator",
+  "Custom Role-1",
+  "Custom Role-2"
+]
 
 ```
-You can use `user.role` object to [programmatically control access](/advanced-concepts/granular-access-control) to your application entities.
+You can use `user.role` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-**Example:** if you want to control the visibility of a button widget for users assigned to the "backend engineers" role, follow these steps:
-
-1. Go to the button's property pane, locate **Visible** and click JS.
-2. In the visible property definition, use the `roles` object as shown below:
+**Example:** To control the visibility of a button widget specifically for users assigned to the "backend engineers" role, you can use the user.roles object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
 
 ```javascript
 {{appsmith.user.roles.includes("backend engineers")}}
@@ -185,18 +189,19 @@ Only the users who have the backend engineer role assigned can see this button.
 
 #### Groups
 
-This object contains a string array of the groups assigned to the currently authenticated user.
+This object contains an array of strings of the groups assigned to the currently authenticated user.
 
 ```javascript
-
+[
+  "Administrators",
+  "Managers",
+  "End Users" 
+]
 
 ```
-You can use `user.groups` object to [programmatically control access](/advanced-concepts/granular-access-control) to your application entities.
+You can use `user.groups` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-**Example:** if you want to control the visibility of a button widget for users in the "managers" group, follow these steps:
-
-1. Go to the button's property pane, locate **Visible** and click JS.
-2. In the visible property definition, use the `group` object as shown below:
+**Example:** To control the visibility of a button widget specifically for users assigned to the "managers" group, you can use the `user.groups` object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
 
 ```javascript
 {{appsmith.user.groups.includes("managers")}}
