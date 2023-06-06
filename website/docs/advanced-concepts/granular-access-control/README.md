@@ -58,24 +58,13 @@ To manage access control programmatically, you can use the following Appsmith us
   - [user.groups](/reference/appsmith-framework/context-object#groups) 
 
 
-To control the visibility of a button widget specifically for users assigned to the "backend engineers" role, you can use the user.roles object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
+To control the visibility of a button widget specifically for users assigned to the "backend engineers" role, you can use the `user.roles` object in the Visible property of the button. The code snippet below demonstrates how to achieve this:
 
 ```javascript
 {{appsmith.user.roles.includes("backend engineers")}}
 ```
 Only the users who have the backend engineer role assigned can see this button.
 
-#### user.groups
-
-if you want to control the visibility of a button widget for users in the "managers" group, follow these steps:
-
-1. Go to the button's property pane, locate **Visible** and click JS.
-2. In the visible property definition, use the `group` object as shown below:
-
-```javascript
-{{appsmith.user.groups.includes("managers")}}
-```
-Only the users in the "managers" group can see this button.
 
 ## Further reading
 
