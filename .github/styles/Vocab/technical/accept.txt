@@ -394,3 +394,10 @@ isDisabled
 default state
 disable
 selectedValues
+Allow Currency Change
+Decimals Allowed
+Error Message
+error message
+Show Step Arrows
+Auto Focus
+onTextChanged
