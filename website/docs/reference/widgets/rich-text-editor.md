@@ -19,7 +19,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to specify the type of input for the **Default Value** property in the widget. You can choose:
+Allows you to specify the input type for the **Default Value** property in the widget. You can choose:
 
 *Options*:
 * **Markdown**: This format enables you to use Markdown syntax for styling and formatting the text within the input.
