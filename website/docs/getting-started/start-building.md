@@ -77,8 +77,7 @@ Let's get started!
   **Password**: `new-users-db-pass`<br/>
 
 6. Click the **Test** button to test the connection and ensure the database is valid.
-
-7 . Click **Save** to create and save the database connection. You'll see the `usersTutorialDB` database page.
+7. Click **Save** to create and save the database connection. You'll see the `usersTutorialDB` database page.
 
 🚩 You've successfully connected to the PostgreSQL database that contains user information.
 
@@ -144,6 +143,7 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
     * In the **Default Value** property box, type `{{usersTable.selectedRow.email}}`.
 5. You also need to view the user's date of birth. Drop a Datepicker widget inside the Form. 
     * Rename the widget to `dobInput`.
+    * In the **Text** property box, enter `DOB`.
     * Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
     * Type `{{usersTable.selectedRow.dob}}` in the **Default Date** property box.
 6. And finally to view the user's photo, drop an Image widget inside the Form. 
@@ -166,20 +166,21 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 
 3. Rename the query to `updateUsers`. Click the white space below the query name for a blank query editor.  
 
-4. Paste the below SQL command in the query editor to save any modified data in the Form for the selected row of the **usersTable** Table back to the database.
+4. Paste the below SQL update command in the query editor to update the `users` table in the database with the details modified in the Form.
 
   ```sql
   UPDATE users 
   SET name = {{nameInput.text}}, 
   email = {{emailInput.text}}, 
-  dob = {{dobInput.selectedDate}}, 
+  dob = {{dobInput.selectedDate}}
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
-4. Go back to the canvas by clicking the **‹ Back** button above the query name.
+5. Go back to the canvas by clicking on the **User Information** page on the *Entity Explorer*.
 
-5. To connect the **updateUsers** query to a button, select the default **Submit** button on the Form.
+6. To connect the **updateUsers** query to a button, select the default **Submit** button on the Form.
     * On the property pane to the right of the screen, in the **Label** property box, change the label to `Update`.
-    * Click the **+** icon next to the **onClick** event. In the **Action** list, select **Execute a query > updateUsers** to run the query on button click. 
+    * Click the **+** icon next to the **onClick** event. 
+    * In the **Action** list, select **Execute a query > updateUsers** to run the query on button click. 
     * Click **Callbacks** right under the action selector.  
     * Click the **+** icon next to the **onSuccess** callback. 
     * Select **Execute a query > getUsers**. 
@@ -191,13 +192,13 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
   <figcaption align = "center"><i>Run query on the button's onClick event</i></figcaption>
 </figure>
 
-5. Select the first row on the Table. Go ahead and modify the user's name on the Form and test the **Update** button to see how things work .
+7. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode. 
+
+8. Select the first row on the Table. Go ahead and modify the user's name on the Form and test the **Update** button to see how things work .
 
   :::caution
   The databases used in tutorials are public and shared by all Appsmith users, so ensure that you don't input confidential information during testing. The databases are automatically reset every day, so any updates made to these databases are temporary.
   :::
-
-6. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode. 
 
 🚩 Congratulations! You have built your first app that can display data from the database and save the updated data on the Form.
 
