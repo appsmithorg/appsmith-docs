@@ -89,7 +89,7 @@ This property allows you to configure the label's placement in three ways:
 
 
 <dd>
-This validation feature allows you to designate the Rich Text Editor as a mandatory field. For instance, when the Rich Text Editor is placed within a Form widget, enabling the Required property ensures that the Form's submit button remains disabled until the Rich Text Editor is checked.
+This validation feature allows you to designate the Rich Text Editor as a mandatory field. For instance, when the Rich Text Editor is placed within a Form widget, enabling the Required property ensures that the Form's submit button remains disabled until the Rich Text Editor has some value.
 
 
 
