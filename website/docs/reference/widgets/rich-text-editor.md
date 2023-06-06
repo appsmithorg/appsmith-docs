@@ -154,7 +154,7 @@ Prevents users from selecting the widget. Even though the widget remains visible
 
 <dd>
 
-Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
 
 </dd>
 
@@ -246,7 +246,7 @@ These properties are not available in the property pane, but can be accessed usi
 
 <dd>
 
-The `text` property retrieves the value entered by the user. It allows you to access the input or text content provided within the widget. 
+The `text` property retrieves the value entered by the user. If no text is entered by the user, the default value would be displayed. 
 
 *Example:*
 
