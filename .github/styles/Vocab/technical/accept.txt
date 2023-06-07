@@ -394,3 +394,7 @@ isDisabled
 default state
 disable
 selectedValues
+onTextChanged
+Box Shadow
+text
+Text

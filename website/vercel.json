@@ -327,6 +327,10 @@
       "destination": "/learning-and-resources/how-to-guides/how-to-use-prepared-statements"
     },
     {
+      "source": "/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith",
+      "destination": "/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"
+    },
+    {
       "source": "/sample-apps",
       "destination": "/learning-and-resources/sample-apps"
     },
