@@ -71,15 +71,30 @@ Sets the label on the widget.
 <dd>
 
 
-This property allows you to configure the label's placement in three ways:
+This property allows you to configure the label's placement.
 
-
+*Options:*
 * **Auto**: Automatically positions the label based on the widget type and layout.
 * **Left**: Aligns the label to the left side of the widget.
-  * **Alignment**: You can also control the text's placement relative to the Currency Input. You have the choice to align it either to the **Left** boundary or closer to the Currency Input
-using the **Right** alignment option.
-  * **Width**: This allows you to control the proximity of the text to the Currency Input, determining how close or far it can be positioned.
 * **Top**: Positions the label above the widget.
+
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+To enable the **Alignment** property, select *Left* from the **Position** property. This allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
+
+</dd>
+
+#### Width `number`
+
+<dd>
+
+To enable the **Width** property, select *Left* from the **Position** property. This allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
 
 
 </dd>
@@ -93,7 +108,7 @@ using the **Right** alignment option.
 
 <dd>
 
-This validation feature allows you to designate the Currency Input as a mandatory field. For instance, when the Currency Input is placed within a Form widget, enabling the Required property ensures that the Form's submit button remains disabled until the Currency Input field contains a value.
+When enabled, this property makes the Currency Input a mandatory field. When the Currency Input is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled until the Currency Input has some value.
 
 </dd>
 
@@ -102,14 +117,14 @@ This validation feature allows you to designate the Currency Input as a mandator
 <dd>
 
 
-The **Regex** property, short for Regular Expression, allows you to implement custom validations for user input. By using regular expressions, you can define specific constraints on the expected input from the user.
+The **Regex** property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions.
 
 For instance, if you want to validate that the user enters a price in multiples of 5. You can set the **Regex** as:
 ```js
 .*[05]$
 ```
 
-If the user enters a value that does not adhere to the specified pattern, such as a value that is not a multiple of 5, the widget displays an error message indicating `invalid input`.
+If the user enters a value that does not adhere to the specified pattern, such as a value that is not a multiple of 5, the widget displays an error message indicating `"invalid input"`.
 
 </dd>
 
@@ -117,7 +132,7 @@ If the user enters a value that does not adhere to the specified pattern, such a
 
 <dd>
 
-This property allows you to set an expression to determine the validity of the user's input. When the specified expression evaluates to false, indicating that the input is invalid, the widget displays an error message. This feature enables you to define custom validation rules and provide informative error messages to guide the user when their input does not meet the required criteria.
+Allows you to set an expression to determine the validity of the user's input. When the specified expression evaluates to false, indicating that the input is invalid, the widget displays an error message. This feature enables you to define custom validation rules and provide informative error messages to guide the user when their input does not meet the required criteria.
 
 </dd>
 
@@ -126,7 +141,7 @@ This property allows you to set an expression to determine the validity of the u
 
 <dd>
 
-This property allows you to customize the feedback provided to the user when they enter an incorrect value. By default, the input widget displays a generic "invalid input" message. 
+Allows you to customize the feedback provided to the user when they enter an incorrect value. By default, the input widget displays a generic `"invalid input"` message. 
 
 </dd>
 
@@ -138,7 +153,8 @@ This property allows you to customize the feedback provided to the user when the
 <dd>
 
 
-This feature enables you to add hints or provide additional information to guide the user regarding the required input.
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+
 </dd>
 
 #### Placeholder `string`
@@ -153,7 +169,7 @@ Allows you to set the placeholder text displayed within the input box. This can 
 
 <dd>
 
-This property determines whether the step arrows, used to increment or decrement values in the widget, are visible or hidden. 
+This property determines whether the step arrows, used to increment or decrement values in the widget, should be visible or hidden. 
 
 </dd>
 
@@ -162,7 +178,9 @@ This property determines whether the step arrows, used to increment or decrement
 
 <dd>
 
-This property controls the visibility of the widget. If you turn off this property, the widget would not be visible in view mode. Additionally, you can use JavaScript by clicking on `JS` next to the **Visible** property to conditionally control the widget's visibility. 
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+
 
 </dd>
 
@@ -170,7 +188,8 @@ This property controls the visibility of the widget. If you turn off this proper
 
 <dd>
 
-This property prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on `JS` next to the **Disabled** property to control the widget's disable state conditionally.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
 
 </dd>
 
@@ -180,7 +199,7 @@ This property prevents users from selecting the widget. Even though the widget r
 
 <dd>
 
-This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
 
 </dd>
 
@@ -188,7 +207,7 @@ This property controls whether the widget is displayed with a loading animation.
 
 <dd>
 
-The **Auto Focus** property, when enabled, automatically places the user's cursor in the input box upon page load, directing their attention to the input field for immediate interaction.
+When enabled, automatically places the user's cursor in the input box upon page load, directing their attention to the input field for immediate interaction.
 
 </dd>
 
@@ -196,10 +215,10 @@ The **Auto Focus** property, when enabled, automatically places the user's curso
 
 
 <dd>
-This property determines how the widget's height adjusts to changes in its content. There are three available options:
+This property determines how the widget's height adjusts to changes in its content. 
 
-
-* **Fixed**: The height of the widget remains as set using drag and resize.
+*Options:*
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
 * **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
 * **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
 
@@ -215,7 +234,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-The **onTextChanged** event specifies the action that would be executed when the value of the input is changed. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions)  that would be executed whenever the user modifies the input. 
+
 
 </dd>
 
@@ -225,7 +245,8 @@ The **onTextChanged** event specifies the action that would be executed when the
 
 <dd>
 
-The **onFocus** event specifies the action that would be executed when the input area in the currency widget is focused. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input area in the currency widget is focused.
+
 
 </dd>
 
@@ -233,7 +254,8 @@ The **onFocus** event specifies the action that would be executed when the input
 
 <dd>
 
-The **onFocus** event specifies the action that would be executed when the input area in the currency widget loses focus. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input area in the currency widget loses focus.
+
 
 </dd>
 
@@ -241,7 +263,8 @@ The **onFocus** event specifies the action that would be executed when the input
 
 <dd>
 
-The **onFocus** event specifies the action that would be executed when the input is submitted with the `ENTER` key. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input is submitted with the `ENTER` key.
+
 
 </dd>
 
@@ -249,9 +272,7 @@ The **onFocus** event specifies the action that would be executed when the input
 
 <dd>
 
-Clears the input value after submit
-
-The **Reset on submit** event clears the input value after submit. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+The **Reset on submit** event clears the input value after submission. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
 
 </dd>
 
@@ -262,7 +283,7 @@ Style properties allow you to change the look and feel of the widget.
 
 <dd>
 
-Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color).  It can also be manipulated programmatically using the JavaScript functions.
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
 
 </dd>
 
@@ -299,5 +320,104 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 <dd>
 
 Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+## Reference properties
+
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
+
+
+#### countryCode `string`
+
+<dd>
+
+The `countryCode` property stores the country code associated with the selected currency.
+
+*Example:*
+```js
+{{CurrencyInput1.countryCode}}
+```
+
+</dd>
+
+#### currencyCode `string`
+
+<dd>
+
+The `currencyCode` property holds the [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) code of the selected currency.
+
+*Example:*
+```js
+{{CurrencyInput1.currencyCode}}
+```
+
+</dd>
+
+
+#### text `string`
+
+<dd>
+
+The `text` property stores the input value of the widget. 
+
+*Example:*
+```js
+{{CurrencyInput1.text}}
+```
+
+</dd>
+
+#### value `number`
+
+<dd>
+
+The `value` property stores the input value of the widget as a number.
+
+
+*Example:*
+```js
+{{CurrencyInput1.value}}
+```
+
+</dd>
+
+#### isValid `boolean`
+
+<dd>
+
+The `isValid` property indicates the validation status of a widget, providing information on whether the widget's current value is considered valid or not.
+
+*Example:*
+```js
+{{CurrencyInput1.isValid}}
+```
+
+</dd>
+
+#### isDisabled `boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
+*Example:*
+```js
+{{CurrencyInput1.isDisabled}}
+```
+
+</dd>
+
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+```js
+{{CurrencyInput1.isVisible}}
+```
 
 </dd>

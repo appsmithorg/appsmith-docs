@@ -401,3 +401,7 @@ error message
 Show Step Arrows
 Auto Focus
 onTextChanged
+countryCode
+currencyCode
+text
+value
