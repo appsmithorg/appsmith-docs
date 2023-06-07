@@ -17,7 +17,7 @@ The audit log in Appsmith provides a detailed record of all significant activiti
 - User sign-up and login activity
 
 :::info
-Audit logs are only available on self-hosted, [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith. They're retained in the database for 1 year.
+Audit logs are only available in Appsmith's [**Business edition**](https://www.appsmith.com/pricing). They're retained in the database for 1 year.
 :::
 
 To access the audit logs, go to **Admin Settings > Others > Audit logs**. Within this tab, you can see a list of events that have been tracked under your organization's account.
