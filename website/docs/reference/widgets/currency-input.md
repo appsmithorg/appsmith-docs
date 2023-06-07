@@ -28,7 +28,9 @@ Allows you to assign an initial numeric value to the widget before user interact
 
 <dd>
 
-Allows you to specify the currency type for the widget. You can choose from a list of countries and their respective currencies. When JS is enabled, you can use `ISO 4217` currency codes, which are three-letter codes assigned to each currency for international identification. 
+Allows you to specify the currency type for the widget. You can choose from a list of countries and their respective currencies. Additionally, by clicking on **JS**, you can use `ISO 4217` currency codes. These codes consist of three letters and are assigned to each currency for international identification.
+
+
 
 </dd>
 
@@ -37,16 +39,16 @@ Allows you to specify the currency type for the widget. You can choose from a li
 
 <dd>
 
-This property determines whether to enable or disable a currency dropdown next to the input field. When set to true, it allows the user to change the selected currency by providing a dropdown menu with currency options. Conversely, when set to false, the currency dropdown is disabled, preventing the user from changing the selected currency.
+Controls the availability of a currency dropdown next to the input field. When enabled, users can select a different currency from a dropdown menu. Conversely, disabling this property prevents currency selection through the dropdown.
 
 
 </dd>
 
-#### Decimals Allowed `Number`
+#### Decimals Allowed `number`
 
 <dd>
 
-Specifies the maximum number of digits allowed after the decimal separator. It can be set to either 0, 1, or 2, indicating the desired level of precision for the numeric value.
+Specifies the maximum number of digits allowed after the decimal separator. It can be set to either `0`, `1`, or `2`, indicating the desired level of precision for the numeric value.
 
 </dd>
 
@@ -57,7 +59,7 @@ Specifies the maximum number of digits allowed after the decimal separator. It c
 
 
 <dd>
-Sets the label of the Currency Input.
+Sets the label on the widget.
 </dd>
 
 
