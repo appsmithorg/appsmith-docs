@@ -1,8 +1,8 @@
 # Currency Input
 
-This page provides instructions on using the Currency Input widget to allow users to enter and format currency values.
+This page provides information on using the Currency Input widget to allow users to enter and format currency values.
 
-<VideoEmbed host="youtube" videoId="I-FusTdnJeE" title="How to use Currency Input Widget" caption="How to use Currency Input Widget"/>
+<VideoEmbed host="youtube" videoId="I-FusTdnJeE" title="Using the Currency Input Widget" caption="Using the Currency Input Widget"/>
 
 
 
@@ -15,16 +15,16 @@ These properties are customizable options present in the property pane of the wi
 ### Data
 
 
-#### Default Value `Number`
+#### Default Value `number`
 
 
 <dd>
 
-Allows you to assign an initial value to the widget before the user interacts with it. The value should be of the numeric data type.
+Allows you to assign an initial numeric value to the widget before user interaction.
 
 </dd>
 
-#### Currency `String`
+#### Currency `string`
 
 <dd>
 
@@ -33,7 +33,7 @@ Allows you to specify the currency type for the widget. You can choose from a li
 </dd>
 
 
-#### Allow Currency Change `Boolean`
+#### Allow Currency Change `boolean`
 
 <dd>
 
@@ -53,7 +53,7 @@ Specifies the maximum number of digits allowed after the decimal separator. It c
 ### Label
 
 
-#### Text `String`
+#### Text `string`
 
 
 <dd>
@@ -63,7 +63,7 @@ Sets the label of the Currency Input.
 
 
 
-#### Position `String`
+#### Position `string`
 
 
 <dd>
@@ -86,7 +86,7 @@ using the **Right** alignment option.
 ### Validations
 
 
-#### Required `Boolean`
+#### Required `boolean`
 
 
 <dd>
@@ -119,7 +119,7 @@ This property allows you to set an expression to determine the validity of the u
 
 </dd>
 
-#### Error Message `String`
+#### Error Message `string`
 
 
 <dd>
@@ -132,14 +132,14 @@ This property allows you to customize the feedback provided to the user when the
 ### General
 
 
-#### Tooltip `String`
+#### Tooltip `string`
 <dd>
 
 
 This feature enables you to add hints or provide additional information to guide the user regarding the required input.
 </dd>
 
-#### Placeholder `String`
+#### Placeholder `string`
 
 <dd>
 
@@ -147,7 +147,7 @@ Allows you to set the placeholder text displayed within the input box. This can 
 
 </dd>
 
-#### Show Step Arrows `Boolean`
+#### Show Step Arrows `boolean`
 
 <dd>
 
@@ -156,7 +156,7 @@ This property determines whether the step arrows, used to increment or decrement
 </dd>
 
 
-#### Visible `Boolean`
+#### Visible `boolean`
 
 <dd>
 
@@ -164,7 +164,7 @@ This property controls the visibility of the widget. If you turn off this proper
 
 </dd>
 
-#### Disabled `Boolean`
+#### Disabled `boolean`
 
 <dd>
 
@@ -173,7 +173,7 @@ This property prevents users from selecting the widget. Even though the widget r
 </dd>
 
 
-#### Animate Loading `Boolean`
+#### Animate Loading `boolean`
 
 
 <dd>
@@ -182,7 +182,7 @@ This property controls whether the widget is displayed with a loading animation.
 
 </dd>
 
-#### Auto Focus `Boolean`
+#### Auto Focus `boolean`
 
 <dd>
 
@@ -190,7 +190,7 @@ The **Auto Focus** property, when enabled, automatically places the user's curso
 
 </dd>
 
-#### Height `String`
+#### Height `string`
 
 
 <dd>
@@ -256,7 +256,7 @@ The **Reset on submit** event clears the input value after submit. It allows you
 ## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-#### Font color `String`
+#### Font color `string`
 
 <dd>
 
@@ -264,7 +264,7 @@ Represents the text color of the widget, specified as a [CSS color value](https:
 
 </dd>
 
-#### Font size `String`
+#### Font size `string`
 
 <dd>
 
@@ -272,7 +272,7 @@ Determines the font size of the label. It accepts [CSS font-size](https://develo
 
 </dd>
 
-#### Emphasis `String`
+#### Emphasis `string`
 
 <dd>
 
@@ -280,7 +280,7 @@ Enables you to select a font style for the widget, such as bold or italic. Addit
 
 </dd>
 
-#### Box Shadow `String`
+#### Box Shadow `string`
  
 
 <dd>
@@ -292,7 +292,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 
 
-#### Border radius `String`
+#### Border radius `string`
 
 <dd>
 
