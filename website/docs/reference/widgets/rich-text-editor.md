@@ -66,7 +66,7 @@ After selecting an input type as **Markdown** or **HTML**, you can populate the 
 
 ### Label
 
-#### Text `String`
+#### Text `string`
 
 
 <dd>
@@ -76,7 +76,7 @@ Sets the label on the widget.
 
 
 
-#### Position `String`
+#### Position `string`
 
 
 <dd>
