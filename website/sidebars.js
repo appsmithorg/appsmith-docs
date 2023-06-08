@@ -419,14 +419,7 @@ const sidebars = {
             'reference/datasources/airtable',
             'reference/datasources/querying-amazon-s3',
             'reference/datasources/querying-arango-db',
-            {
-              type: 'category',
-              label: 'Authenticated API',
-              link: { type: 'doc', id: 'reference/datasources/authenticated-api/README' },
-              items: [
-                'reference/datasources/authenticated-api/how-to-integrate-dropbox'
-              ],
-            },
+            'reference/datasources/authenticated-api',
             'reference/datasources/querying-dynamodb',
             'reference/datasources/querying-elasticsearch',
             'reference/datasources/querying-firestore',
@@ -599,6 +592,7 @@ const sidebars = {
             'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
+            'learning-and-resources/how-to-guides/how-to-integrate-dropbox'
           ],
         },
         'learning-and-resources/sample-apps',

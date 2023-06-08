@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Learn to connect to Dropbox via OAuth 2.0 and upload a file from your app.
 ---
 
-# How to Integrate Dropbox Into Appsmith With OAuth 2.0
+# How to Upload Files to Dropbox
 
 This guide describes how to configure an Authenticated API datasource for Dropbox with OAuth 2.0 and create a query that uploads a file to Dropbox from your Appsmith app.
 
@@ -37,11 +37,11 @@ The following steps walk you through configuring a datasource that can query Dro
     https://api.dropboxapi.com/oauth2/token
     ```
 * **Client ID:**
-    * Find in Dropbox: [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App key**.
+    * In the Dropbox [App Console](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps): Select your app > **Settings** > **App key**.
 * **Client Secret:**
-    * Find in Dropbox: [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Settings** tab >> **App secret**.
+    * In the Dropbox App Console: **Settings** > **App secret**.
 * **Scopes:**
-    * Configure in Dropbox: [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Select **App** >> **Permissions** tab.
+    * Configure in the Dropbox App Console: Select your app > **Permissions**.
     * Tick the `files.content.write` checkbox.
     * Enter `files.content.write` into Appsmith's **Scope(s)** field.
 * **Authorization URL:**
@@ -50,18 +50,18 @@ The following steps walk you through configuring a datasource that can query Dro
     ```
 * **Redirect URL:**
     * In Appsmith, click the **Copy** button next to this field. 
-    * Find in Dropbox: [Appconsole](https://www.dropbox.com/developers/apps?\_tk=pilot\_lp&\_ad=topbar4&\_camp=myapps) >> Find **App** >> **Settings** tab >> **`OAuth2`** >> **Redirect URIs**.
+    * In the Dropbox App Console: Select your app > **Settings** > **`OAuth2`** > **Redirect URIs**.
     * Paste the URL copied from Appsmith into the **Redirect URIs** field in Dropbox, and then click **Add**.
 
 When you're finished, click the `Save and Authorize` button. You’ll be redirected to a confirmation page with Dropbox to allow access to Appsmith. If your authentication is set up correctly, an alert lets you know that "Authorization was successful."
 
-## Configure the query
+## Configure the upload query
 
 These steps show how to set up a query that can upload a file to Dropbox. You'll set up the necessary widgets in the next section.
 
 1. Once your Authenticated API datasource is configured, create a query based on it.
 1. Set the request method to `POST`.
-1. The base URL should already be inherited from the datasource. Append `2/files/upload` to the URL.
+1. The base URL (`https://content.dropboxapi.com/`) should already be inherited from the datasource. Append `2/files/upload` to the URL.
 1. Create a **Header** key/value pair:
     * **Key:**`Content-Type`
     * **Value:** `application/octet-stream`
@@ -76,23 +76,16 @@ These steps show how to set up a query that can upload a file to Dropbox. You'll
     {{FilePicker1.files[0].data}}
     ```
 
-## Configure the widgets
+## Configure the Filepicker
 
-With the query completed, you're ready to connect widgets that will upload a file and run the query:
+With the query completed, you're ready to connect a widget that uploads a file and run the query:
 
 1. Back on the canvas, create a [Filepicker widget](/reference/widgets/filepicker).
 1. Set the Filepicker's **Data Format** property to `Binary`.
-1. Create a [Button widget](/reference/widgets/button).
-1. Set the Button's **onClick** property to run your query that uploads your file to Dropbox, and add callbacks to alert the user of the result.
-    * In code:
-        ```javascript
-        {{
-            UploadFileQuery.run().then(() => {
-                showAlert('File uploaded successfully.', 'success');
-            }).catch(() => {
-                showAlert('There was an error.', 'error');
-            });
-        }}
-        ```
+1. Set the Filepicker's **onFilesSelected** property to run your query that uploads your file to Dropbox, and add callbacks to alert the user of the result.
+    1. **onFilesSelected** > **Execute a query** > Select your query
+    1. Click **Callbacks** in the properties pane.
+    1. **On success** > **Show alert** > In the **Message** field, enter `File uploaded.`
+    1. **On failure** > **Show alert** > In the **Message** field, enter `There was an error.`
 
 Your query is ready to test; upload a file to the Filepicker widget, click the button, and verify whether the upload is successful.
