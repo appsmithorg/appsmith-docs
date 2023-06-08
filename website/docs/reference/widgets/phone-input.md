@@ -328,8 +328,6 @@ The `countryCode` property stores the country code associated with the selected 
 *Example:*
 ```js
 {{PhoneInput1.countryCode}}
-
-//US
 ```
 
 </dd>
@@ -343,8 +341,6 @@ The `dialCode` property retrieves the dialing code of the selected country.
 *Example:*
 ```js
 {{PhoneInput1.dialCode}}
-
-//+1
 ```
 
 </dd>
@@ -359,8 +355,6 @@ The `text` property retrieves the formatted input value of the widget.
 *Example:*
 ```js
 {{PhoneInput1.text}}
-
-//1 (234) 567-890
 ```
 
 </dd>
@@ -374,8 +368,6 @@ The `value` property retrieves the unformatted phone number, regardless of wheth
 *Example:*
 ```js
 {{PhoneInput1.value}}
-
-// 1234567890
 ```
 
 </dd>
