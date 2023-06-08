@@ -323,7 +323,7 @@ These properties are not available in the property pane, but can be accessed usi
 
 <dd>
 
-The `countryCode` property stores the country code associated with the selected currency.
+The `countryCode` property stores the country code associated with the selected country.
 
 *Example:*
 ```js
