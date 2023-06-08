@@ -409,3 +409,6 @@ onTextChanged
 Box Shadow
 text
 Text
+Allow Currency Change
+countryCode
+dialCode
