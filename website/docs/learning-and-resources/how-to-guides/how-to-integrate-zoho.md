@@ -1,13 +1,14 @@
 ---
 description: Learn to connect to Zoho via OAuth 2.0 and create a campaign from your app.
 ---
-# How to Integrate Zoho Into Appsmith With OAuth 2.0
+# How to Create a Zoho Campaign
 
 This guide describes how to configure an Authenticated API datasource for Zoho with OAuth 2.0 and create a query that creates a campaign from your Appsmith app.
 
 ## Prerequisites
 
 1. Create a [Zoho account](https://www.zoho.com/signup.html?all_prod_page=true&ireft=nhome&src=home1-header)
+1. Create a List in Zoho that contains a group of email contacts that you'll send your campaign to. To create a List, [follow this guide](https://help.zoho.com/portal/en/kb/campaigns/user-guide/contact-management/list-management/articles/mailing-list-management#Create_list).
 
 ## Set up the Zoho API Console
 
@@ -15,7 +16,7 @@ If you haven't already created an app in the Zoho API Console, follow these step
 
 1. From the [Zoho API Console](https://api-console.zoho.com/), start creating an app by clicking **Server-based Applications**.
 1. In **Client ID**, enter a name for your app.
-1. In **Homepage URL**, enter:
+1. In **Homepage URL**, enter the domain of your appsmith instance. For the Appsmith Cloud, use:
     ```
     https://app.appsmith.com
     ```
@@ -28,7 +29,7 @@ If you haven't already created an app in the Zoho API Console, follow these step
 ## Configure the Authenticated API
 
 :::info
-The Zoho API domains are location-specific, so be sure to use the correct domain for your region. For example, users in the United States should use `https://campaigns.zoho.com/`, whereas users in India should use `https://campaigns/zoho.in/`. For a full list of domains, see the [Zoho docs](https://www.zoho.com/campaigns/help/developers/data-centers.html).
+The Zoho API domains are location-specific. Check which region and domain you should use in the [Zoho docs](https://www.zoho.com/campaigns/help/developers/data-centers.html).
 :::
 
 1. In Appsmith, create an Authenticated API datasource and update its name.
@@ -47,8 +48,8 @@ The Zoho API domains are location-specific, so be sure to use the correct domain
     ```
     https://accounts.zoho.com/oauth/v2/token
     ```
-* **Client ID:** Find in Zoho: [Zoho API Console](https://api-console.zoho.com)>> Select Your Application >> Select Client Secret Tab>> Copy Client ID.
-* **Client Secret:** Find in Zoho: [Zoho API Console](https://api-console.zoho.com)>> Select Your Application >> Select Client Secret Tab>> Copy Client Secret.
+* **Client ID:** In the [Zoho API Console](https://api-console.zoho.com): Select your application > **Client Secret** > **Client ID**.
+* **Client Secret:** In the Zoho API Console: Select your application > **Client Secret** > **Client Secret**.
 * **Scope(s):**
     ```
     ZohoCampaigns.campaign.ALL,ZohoCampaigns.contact.ALL
@@ -64,13 +65,44 @@ The Zoho API domains are location-specific, so be sure to use the correct domain
 
 When you're finished, click the `Save and Authorize` button. You’ll be redirected to a confirmation page with Zoho to allow access to Appsmith; click **Accept**. If your authentication is set up correctly, an alert lets you know that "Authorization was successful."
 
+### Configure a JSON Form
+
+The following steps describe how to set up the UI to interact with your queries:
+
+1. On the canvas, create a [JSON Form widget](/reference/widgets/json-form) and paste the following snippet into its **Source Data** property:
+    ```json
+    {
+        "list": [],
+        "campaign name": "",
+        "from_email": "",
+        "subject": ""
+    }
+    ```
+1. Open the properties for the **List** field of the form, and check that its **Field Type** is set to `Select`.
+1. Enter the following code into the **Options** field. It references queries that you'll create in the next steps.
+    ```javascript
+    {{
+        GetMailingListsQuery.data.list_of_details.map(list => {
+            return {
+                label: list.listname, value: list.listkey
+            }
+        })
+    }}
+    ```
+    * Now your **List** field should automatically populate with the available mailing lists from your Zoho account.
+1. Set the JSON Form's **onSubmit** property to run your query that creates the campaign, and add callbacks to alert the user of the result.
+    1. **onSubmit** > **Execute a query** > Select your query
+    1. Click **Callbacks** in the properties pane.
+    1. **On success** > **Show alert** > In the **Message** field, enter `Campaign created.`
+    1. **On failure** > **Show alert** > In the **Message** field, enter `There was an error.`
+
 ## Configure the queries
 
 Below, you'll set up three queries, build the UI with widgets, and then connect them all together.
 
 ### Get contact list
 
-To create a campaign, you need to have a Zoho "List" of contacts to send mail to. If you don't already have a contact list, you can [follow this guide](https://help.zoho.com/portal/en/kb/campaigns/user-guide/contact-management/list-management/articles/mailing-list-management#Create_list) to make one, or use the auto-generated "My Sample List" that Zoho made for you when you created your account.
+This query retrieves your List that you'll send your campaign to.
 
 1. Once your Authenticated API datasource is configured, create a query based on it.
 1. Set the request method to `GET`.
@@ -105,87 +137,6 @@ list_details value doesn't currently work. May need to be something like:
 }}
 -->
 
-Once this query is run, a successful response returns a `campaignKey` that can be used in another query to send that campaign.
+Once this query is run, a successful response returns a `campaignKey` that can be used in other queries to modify or send that campaign.
 
-### Get recent campaigns
-
-This query returns a list of your Zoho account's most recently created campaigns.
-
-1. Create a query based on your Authenticated API datasource for Zoho.
-1. Set the request method to `GET`.
-1. Append `/v1.1/recentcampaigns` to the URL.
-
-### Send campaign
-
-This query takes a `campaignKey` value and sends the associated email campaign.
-
-1. Create a query based on your Authenticated API datasource for Zoho.
-1. Set the request method to `POST`.
-1. Append `/v1.1/sendcampaign` to the URL.
-1. In the **Params** tab of the query editor, enter the following key/value pairs:
-    * **Key:** `campaignKey`
-    * **Value:** `{{CampaignSelect.selectedOptionValue}}`
-
-When this query runs successfully, your campaign should be on its way to its recipients.
-
-### Widgets
-
-The following steps describe how to set up the UI to interact with your queries:
-
-1. On the canvas, create a [JSON Form widget](/reference/widgets/json-form) and paste the following snippet into its **Source Data** property:
-    ```json
-    {
-        "list": [],
-        "campaign name": "",
-        "from_email": "",
-        "subject": ""
-    }
-    ```
-1. Open the properties for the **List** field of the form, and check that its **Field Type** is set to `Select`.
-1. Enter the following code into the **Options** field:
-    ```javascript
-    {{
-        GetMailingListsQuery.data.list_of_details.map(list => {
-            return {
-                label: list.listname, value: list.listkey
-            }
-        })
-    }}
-    ```
-    * Now your **List** field should automatically populate with the available mailing lists from your Zoho account.
-1. In the JSON Form's **onSubmit** property, toggle the **JS** tag and write:
-    ```javascript
-    {{
-        CreateCampaign.run().then(() => {
-            showAlert('Campaign created', 'success')
-            RecentCampaignsQuery.run()
-        }).catch(() => {
-            showAlert('There was an error', 'error')
-        });
-    }}
-    ```
-
----
-
-1. Next, place a new [Select widget](/reference/widgets/select) called `CampaignSelect` onto the canvas below the JSON Form. In its **Options** property, write:
-    ```javascript
-    RecentCampaignsQuery.data.recent_campaigns.map(campaign => {
-        return {
-            label: campaign.campaign_name,
-            value: campaign.campaign_key
-        }
-    })
-    ```
-1. Place a new [Button widget](/reference/widgets/button) onto the canvas below the Select widget, and update its label to `Send Campaign`.
-1. Toggle the **JS** tag for the button's **onClick** property and set the field to:
-    ```javascript
-    {{
-        SendCampaignQuery.run().then(() => {
-            showAlert('Campaign Sent', 'success')
-        }).catch(() => {
-            showAlert('There was an error', 'error')
-        });
-    }}
-    ```
-
-After these steps, your app should be set up to create and send a new Zoho email campaign.
+After these steps, your app should be set up to create a new Zoho email campaign.
