@@ -6,7 +6,7 @@ sidebar_position: 4
 Appsmith provides a way to integrate with OpenID Connect (OIDC), enabling the users to sign in to the Appsmith account using their OIDC identity providers.
 
 :::info
-OpenID Connect is available is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing). 
+OpenID Connect (OIDC) is only available in Appsmith's [**Business edition**](https://www.appsmith.com/pricing). 
 :::
 
 ## OIDC providers

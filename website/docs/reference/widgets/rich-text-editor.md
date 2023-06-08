@@ -1,136 +1,302 @@
+---
+description: Learn how to use the Rich Text Editor widget for capturing and formatting rich text input.
+---
 # Rich Text Editor
 
-The Rich Text Editor is used to capture Rich Text input from a user. The input is captured in HTML format.
+This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users. 
 
-<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="How to use Rich Text Editor Widget" caption="How to use Rich Text Editor Widget"/>
+<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="Using Rich Text Editor Widget" caption="Using Rich Text Editor Widget"/>
 
-## Properties
-
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-### Widget properties
-
-These properties allow you to edit the Rich text Editor widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property            | Description                                                                                                         |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Input Type**      | Sets the input type of the default text property in the widget.                                                     |
-| **Default Text**    | This property sets the default text of the Rich Text Editor.                                                        |
-| **Required**        | Makes input to the widget mandatory.                                                                                |
-| **Visible**         | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published |
-| **Disable**         | Disables input to the widget. The widget remains visible to the user, but a user input isn't allowed.      |
-| **Animate Loading** | Controls the loading of the widget.                                                                                 |
-| **Hide toolbar**    | Controls the visibility of the toolbar                                                                              |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+## Content properties
 
 
-Let's understand the widget properties in detail:
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-#### Input type
 
-As the name suggests, input type allows you to set the type of text you want in the input box, HTML, or Markdown format. It sets the input type of the default text property in the widget.
+### Data
 
-The input box shows an error if the entered data does not match the input type. For example, If you select the input type as HTML, you won't be able to display Markdown text.
+#### Input Type `string`
 
-#### Default text
+<dd>
 
-This property lets you set a default value for the widget before the user has made any changes.
+Allows you to specify the input type for the **Default Value** property in the widget. You can choose:
 
-Once you have selected an input type, you can add markdown/HTML text in the default text section. For example, if you want to use the markdown input type. You can either use the default text property or use an input widget to display the text. The video below demonstrates how to use the markdown input type.
+*Options*:
+* **Markdown**: This format enables you to use Markdown syntax for styling and formatting the text within the input.
+* **HTML**: This format enables you to use HTML markup to structure and style the text within the input.
 
-<VideoEmbed host="youtube" videoId="Ld8bxUvY0p0" title="Default text" caption="Default text"/>
+</dd>
 
+#### Default Value `string`
+
+<dd>
+
+Allows you to set the initial text content for the widget.
+
+After selecting an input type as **Markdown** or **HTML**, you can populate the default text section with corresponding content. 
+
+
+*Example:*
+
+```markdown
+// Markdown: 
+
+### Markdown
+- Bullet point 1
+- Bullet point 2
+- **Bold text**
+- *Italic text*
 ```
-Markdown: 
 
-### Markdown 
-##### only works in Markdown RTE
+```html
+//HTML: 
 
----
-HTML: 
-
-<h3> HTML
+<h2>Product Features:</h2>
 <ul>
-<li>HTML works in both RTEs</li>
+  <li>High-resolution display</li>
+  <li>Multiple color options</li>
+  <li>Waterproof design</li>
+  <li>Advanced security features</li>
 </ul>
 
-<ul>
-  <li>Item 1
-    <ul>
-      <li>Sub-item 1</li>
-      <li>Sub-item 2</li>
-    </ul>
-  </li>
+<p>For more information, please <a href="https://appsmith.com">visit our website</a>.</p>
+
 ```
-
-
-
-### Binding properties
-
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
-
-| Property       | Description                                                    | Code Snippet                     |
-| -------------- | -------------------------------------------------------------- | -------------------------------- |
-| **isDisabled** | This property indicates whether the widget is disabled or not. | `{{RichTextEditor1.isDisabled}}` |
-| **isVisible**  | This property indicates whether the widget is visible or not.  | `{{RichTextEditor1.isVisible}}`  |
-| **text**       | It fetches the value that the user has entered.                | `{{RichTextEditor1.text}}`       |
-
-### Events
-
-They are a set of actions that you can perform on the widget.
-
-| Events           | Description                                                                                                                   |  
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------- | 
-| **onTextChange** | Sets the action to be run when the user inputs text. See a list of [supported actions](../appsmith-framework/widget-actions/) |  
+</dd>
 
 ### Label
 
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+#### Text `string`
 
-| Label                | Description                                                  |
-| -------------------- | ------------------------------------------------------------ |
-| **Text**             | Sets the label text of the widget.                           |
-| **Position**         | Sets the label position of the widget.                       |
-| **Alignment**        | Sets the label alignment of the widget.                      |
-| **Width**            | Sets the label width of the widget as the number of columns. |
-| **Label Text Color** | Allows you to set text color for the label.                  |
-| **Label Text Size**  | Allows you to set the size of the label.                     |
-| **Label Font Style** | Allows you to choose a font style (bold or italic).     |
 
-#### **Text**
+<dd>
+Sets the label on the widget.
+</dd>
 
-It allows you to set the display name for the Rich Text Editor. For example, if you want the user to write a cover letter, you can enter the text as "Cover Letter."
 
-:::tip
-You can leave the text empty if you don't want any display name for your Rich Text Editor widget.
-:::
 
-#### Position
 
-It allows you to specify the placement of the label. You can select one of the available options:
+#### Position `string`
 
-* Top - It allows you to align the text at the top of the Rich Text Editor.
-* Left - It aligns the text to the left of the Rich Text Editor. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
-  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Rich Text Editor. You can choose:
-    * Left - It aligns the text to the widget's left boundary that is away from the Rich Text Editor.
-    * Right - It aligns the text closer to the Rich Text Editor.
-  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Rich Text Editor.
-* Auto - It automatically adjusts the position of the text based on the Rich Text Editor's height.
 
-:::info
-Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
-:::
+<dd>
 
-How to set the label properties?
 
-<VideoEmbed host="youtube" videoId="WACXsnoBa5Y" title="How to set the label properties?" caption="How to set the label properties?"/>
+This property allows you to configure the label's placement.
 
-### Styles
+*Options*:
 
-Style properties allow you to change the look and feel of the widget. 
+* **Auto**: Automatically positions the label based on the widget type and layout.
+* **Left**: Aligns the label to the left side of the widget.
+* **Top**: Positions the label above the widget.
 
-| Style             | Description                                            |
-| ----------------- | ------------------------------------------------------ |
-| **Border Radius** | Allows you to define curved corners.                   |
-| **Box Shadow**    | Allows you to choose from the available shadow styles. |
 
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
+
+</dd>
+
+#### Width `number`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
+
+</dd>
+
+### Validations
+
+
+#### Required `boolean`
+
+
+<dd>
+
+When enabled, this property makes the Rich Text Editor a mandatory field, When the Rich Text Editor is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled until the Rich Text Editor has some value.
+
+</dd>
+
+### General
+
+
+#### Tooltip `string`
+<dd>
+
+
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+</dd>
+
+
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+#### Hide toolbar `boolean`
+
+<dd>
+
+Controls the visibility of the toolbar on top of the widget.
+
+</dd>
+
+#### Height `string`
+
+
+<dd>
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+
+### Events
+
+
+#### onTextChanged
+
+<dd>
+
+Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user modifies the text input. This
+
+
+</dd>
+
+## Style properties
+Style properties allow you to change the look and feel of the widget.
+
+#### Font color `string`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+
+</dd>
+
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+</dd>
+
+## Reference properties
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `RichTextEditor1.isVisible`.
+
+
+
+#### text `string`
+
+<dd>
+
+The `text` property retrieves the value entered by the user. If no text is entered by the user, the default value would be displayed. 
+
+*Example:*
+
+```js
+{{RichTextEditor1.text}}
+```
+
+
+</dd>
+
+
+#### isDisabled `boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's Disabled setting. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
+*Example:*
+
+```js
+{{RichTextEditor1.isDisabled}}
+```
+
+
+</dd>
+
+#### isVisible `boolean`
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+
+```js
+{{RichTextEditor1.isVisible}}
+```
+
+
+</dd>

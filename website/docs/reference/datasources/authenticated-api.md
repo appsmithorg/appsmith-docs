@@ -57,7 +57,7 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
           <li><b>Client ID:</b> The identifier issued to the client by the OAuth provider during app registration.</li>
           <li><b>Client Secret:</b> The secret string issued to the client by the OAuth provider during app registration.</li>
           <li><b>Scopes:</b> Sets the requested scopes that are requested. This field can have multiple comma-separated values.</li>
-          <li><b>Client Authorization:</b> Sends the client secret either in the request body as <code>client_id</code> and <code>client_secret</code> parameters, or within the headers encoded as basic HTTP authentication.</li>
+          <li><b>Client Authorization:</b> Sends the client secret either in the request body as <code>client_id</code> and <code>client_secret</code> parameters or within the headers encoded as basic HTTP authentication.</li>
           <li><b>Authorization URL:</b> The endpoint on the authentication server that is used to request authentication for the client.</li>
           <li><b>Redirect URL:</b> The URL that the OAuth server should redirect to.</li>
           <li><b>Custom Authentication Parameters:</b> User-defined key/value pairs to be encoded and sent as authentication parameters.</li>
@@ -66,7 +66,7 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
         </ul>
       </li>
       <li><b>API Key:</b> Sends a key/value pair which is sent as a base64-encoded string in the request's Authorization header. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
-      <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header.</li>
+      <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header. If you are using OIDC protocol to log in to your instance, you can use the <a href="/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt#access-token">access token</a> of the logged-in user as a bearer token.</li>
     </ul>
   </dd>  
 </dl>
@@ -76,15 +76,15 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
   <dd>When enabled, you can enter a secret string of at least 32 characters in the <b>Session Details Signature Key</b> field. Every API call made to this datasource then includes an additional header, <code>X-Appsmith-Signature</code>, whose value is a <a href="https://jwt.io">JSON Web Token (JWT)</a> signed with a signature created from your secret string.</dd>
 
   <dd>You can use the signature header to ensure the authenticity and integrity of your query; you can guarantee that the request originated from Appsmith, and that it has not been tampered with before reaching your API.</dd>
+
 </dl>
 
 <dl>
   <dt><b>Use self-signed certificate</b></dt>
-
   <dd>When enabled, you can upload your own self-signed certificate for accessing your REST endpoint. These can be useful for accessing your API without relying on external agnecies to issue certificates for authenticating the origin of your requests.</dd>
   <dd>This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format. The certificate information is stored securely in an encrypted format in the database.</dd>
-</dl>
 
+</dl>
 
 ## Queries
 

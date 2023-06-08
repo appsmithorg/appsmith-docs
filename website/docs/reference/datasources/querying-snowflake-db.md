@@ -3,85 +3,102 @@ sidebar_position: 16
 ---
 # Snowflake
 
-On Appsmith, it’s pretty straightforward to establish a connection with any data source, including SnowflakeDB, be it on the cloud, self-hosted version, or local environment.
+This page describes how to connect your application to your Snowflake database and use queries to manage its content.
 
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
+
+## Connect Snowflake
+
+:::caution important
+To connect to Snowflake, you must whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith deployment, as well as your own machine's IP address. See Snowflake's [Network Policies](https://docs.snowflake.com/en/user-guide/network-policies#creating-network-policies) docs for more details.
 :::
 
-## Connection settings
+### Connection parameters
 
-Appsmith needs the following parameters for connecting to a Snowflake database:
+The following section is a reference guide that provides a complete description of all the parameters to connect to a Snowflake database.
 
-:::info
-All required fields are suffixed with an asterisk (\*).
-:::
+<figure>
+  <img src="/img/snowflake-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Snowflake datasource." />
+  <figcaption align="center"><i>Configuring a Snowflake datasource.</i></figcaption>
+</figure>
 
-### **Connection**
+<dl>
+  <dt><b>Account Name</b></dt>
+  <dd>This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. You can find your organization name and account name on the Snowflake dashboard at the bottom-left of the page; click the string next to the Snowflake logo to open an information box with your details.</dd><br />
 
-You need to fill in the following parameters:
+  <figure>
+    <img src="/img/snowflake-account-name.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
+    <figcaption align="center"><i>Find your account name on the Snowflake dashboard at the bottom-left of the page.</i></figcaption>
+  </figure>
 
-* **Account name:** Your account name is part of the connection string and consists of one or more components mentioned in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html).
-* **Warehouse:** Specifies the virtual warehouse to use once connected. The specified warehouse should be an existing warehouse for which the default role has privileges.
-* **Database:** Specifies the default database to use once connected. The specified database should be an existing database for which the default role has privileges.
-* **Default Schema:** The connection does not limit queries to this schema. This information is only used to view the schema structure inside Appsmith.
+  <dt><b>Warehouse</b></dt>
+  <dd>Specifies the virtual warehouse to use once connected. The specified warehouse should be an existing warehouse for which the default role has privileges.</dd><br />
 
-### **Authentication**
+  <dt><b>Database</b></dt>
+  <dd>Specifies the database to use once connected. The specified database should be an existing database for which the default role has privileges.</dd><br />
 
-Please fill in the following parameters:
+  <dt><b>Default Schema</b></dt>
+  <dd>Sets which database schema structure should appear as a preview in the Appsmith sidebar; when this is configured, you can see the tables and columns available under the specified schema. The field does not limit which schemas you are able to query.</dd><br />
+  
+  <dt><b>Role</b></dt>
+  <dd>The role to use for performing queries. Be sure to use a role that has sufficient priveliges to execute the queries needed by your app.</dd><br />
 
-* **Username:** Fill in the _**username**_ required to authenticate your database connection request.
-* **Password:** Fill _**password**_ required for authenticating connection requests for the given username to the database.
+  <dt><b>Username</b></dt>
+  <dd>Provide your Snowflake account username.
+  </dd><br />
 
-## Connecting Snowflake on Appsmith <a href="#heading-getting-started-connecting-snowflake-on-appsmith" id="heading-getting-started-connecting-snowflake-on-appsmith"></a>
+  <dt><b>Password</b></dt>
+  <dd>Provide the password for your Snowflake account.
+  </dd><br />
+</dl>
 
-What you need to make the connection are the endpoint, database name, and user credentials. With this in mind, let’s get started.
+## Query Snowflake
 
-* On your Appsmith application, click on the `+` icon next to Datasources on the left navigation bar under Page1.
-* Next, navigate to the Create New tab and choose **SnowflakeDB data source**.
-* Rename the Datasource to **SnowflakeDB** CRUD by double-clicking on the existing one.
-* Now, add your **SnowflakeDB account details.** All the details are available under the SnowflakeCloud settings:
+The following section provides examples of creating basic CRUD queries for Snowflake.
 
-![Snowflake Database Dashboard](/img/Snowflake_db_.jpeg)
+### Fetch data
 
-* Here’s what the database configuration would look like:
-
-<VideoEmbed host="youtube" videoId="7ZFvDXiIez0" title="Connecting Snowflake on Appsmith" caption="Connecting Snowflake on Appsmith"/>
-
-* Next, click on the `Test` button at the bottom right of the screen. It helps you understand whether your configuration is valid or not. If it returns a successful message, hit the ‘**Save**’ button to establish a secure connection between Appsmith and SnowflakeDB.
-
-:::info
-After the connection is established,you can see all the sample data (tables) under the connected data source.
-:::
-
-![](/img/Snowflake_db_crud_sa9.jpeg)
-
-Now that you have the sample data, you can query the snowflake database in the next section.
-
-## Querying Snowflake
-
-Snowflake databases can be queried using the SQL syntax provided in their [command reference documentation](https://docs.snowflake.com/en/sql-reference-commands.html). All Snowflake queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Let's look at an example to see how to query the Snowflake database.
-
-* Click the `+` icon next to the `datasources` and choose to Create New + from the **SnowflakeDB** CRUD data source.
-* Rename the query to _**`getCustomers`.**_
-* Copy the following SQL script to query all the Customers from the CUSTOMER table:
-
-```
-SELECT * FROM TPCDS_SF100TCL.CUSTOMER LIMIT 10;
+```sql
+SELECT * FROM customer
+OFFSET {{ CustomerTable.pageOffset }} ROWS
+FETCH NEXT {{ CustomerTable.pageSize }} ROWS ONLY;
 ```
 
-* This simple query returns all the customers present in the sample data item. Hit the `RUN` button to view all the results.
+In the above example, `CustomerTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
 
-The video below demonstrates how to query the Snowflake database.
+### Insert data
 
-<VideoEmbed host="youtube" videoId="JXOS1dJU8ZM" title="Querying Snowflake" caption="Querying Snowflake"/>
+```sql
+INSERT INTO customer
+  (id, name, address, email)
+VALUES
+(
+  DEFAULT,
+  {{ NameInput.text }},
+  {{ AddressInput.text }},
+  {{ EmailInput.text }}
+);
+```
 
-You have your query; you can bind it to various widgets. You can take reference from [this ](https://appsmith.hashnode.dev/a-simple-front-end-for-your-snowflakedb-datasource)example and learn how to build a frontend that can connect to [SnowflakeDB](https://www.snowflake.com/) as a data source.
+In the above example, `NameInput`, `AddressInput`, and `EmailInput` are the names of the widgets used to capture input from the user for name, address, and email fields, respectively.
 
-## Using queries in applications
+### Update data
 
-Once you have successfully run a Query, you can use it in your application to
+```sql
+UPDATE customer
+  SET email = {{ EmailInput.text }}
+  WHERE id = {{ CustomerTable.selectedRow.id }};
+```
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
-* [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)
+In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `CustomerTable` is the Table widget where the user selects the row to update the user's email.
+
+### Delete data
+
+```sql
+DELETE FROM customer WHERE id = {{ CustomerTable.selectedRow.id }};
+```
+
+In the above example, `CustomerTable` is the name of the Table widget where the user selects the row for deletion.
+
+## See also
+
+[Data access and binding](/core-concepts/data-access-and-binding)

@@ -1,38 +1,73 @@
+---
+description: Learn how to display documents using the Document Viewer widget.
+---
 # Document Viewer
 
-Document viewer widget is used to show documents on a page. The widget currently supports the following extensions-
+This page provides an introduction on how to utilize the Document Viewer widget for displaying documents.
 
-1. .txt
-2. .pdf
-3. .ppt (not supported by base64)
-4. .pptx
-5. .docx
-6. .xlsx
+<VideoEmbed host="youtube" videoId="UuecSUqFOpQ" title="Using the Document Viewer Widget" caption="Using the Document Viewer Widget"/>
 
-<VideoEmbed host="youtube" videoId="UuecSUqFOpQ" title="How to use Document Viewer Widget" caption="How to use Document Viewer Widget"/>
+## Content properties
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-Documents can be populated from a data source like API or Query in which the incoming data points to the URL of the file.
 
-## Properties
+### Data
+#### Document Link `URL / Base64`
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+<dd>
 
-### Widget properties
+This property allows you to include a URL or base64-encoded content to view various file formats. The supported file extensions for the widget are:
 
-These properties allow you to edit the Document Viewer widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+* .txt
+* .pdf
+* .ppt *(not supported by base64)*
+* .pptx
+* .docx
+* .xlsx
 
-| Property            | Description                                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Document Link**   | Source URL of the document, which must be one of the supported file types (see top of page). The file extension must be present as part of the URL.                                                    |
-| **Visible**         | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.                                         |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
+Additionally, you can populate the document by retrieving data from a source such as an API or Datasource Query. 
 
-### Generating PDF Documents
+</dd>
 
-Generating reports or documents from a dataset is vital in many applications. The video below shows how to generate a PDF report on Appsmith.
+#### Visible `Boolean`
 
-<VideoEmbed host="youtube" videoId="8j6Z9bZvLqA" title="Generating PDF Documents" caption="Generating PDF Documents"/>
+<dd>
 
-You can also generate a PDF document using Carbone.io:
+This property controls the visibility of the widget. If you turn off this property, the widget would not be visible in view mode. Additionally, you can use JavaScript by clicking on `JS` next to the Visible property to conditionally control the widget's visibility.
 
-<VideoEmbed host="youtube" videoId="xlthDth2S6Q" title="Generating PDF Documents" caption="Generating PDF Documents"/>
+</dd>
+
+#### Animate Loading `Boolean`
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the `JS` next to the property.
+
+</dd>
+
+## Reference properties
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `DocumentViewer1.isVisible`.
+
+
+#### docUrl `String`
+<dd>
+
+The `docUrl` property contains the URL of the uploaded document and is used to display the link to access the document. 
+
+</dd>
+
+
+#### isVisible `Boolean`
+<dd>
+
+The `isVisible` property reflects the state of the widget's **Visible** setting. It is represented by a boolean value, where true indicates that the widget is visible, and false indicates that it is hidden or not displayed on the page.
+</dd>
+
+
+Watch the following videos to learn how to generate PDF reports using [Apitemplate.io](https://www.youtube.com/watch?v=8j6Z9bZvLqA) and [Carbone.io](https://www.youtube.com/watch?v=xlthDth2S6Q).
+
+
+
+
+
+
