@@ -28,7 +28,7 @@ Allows you to assign an initial numeric value to the widget before user interact
 
 <dd>
 
-Allows you to specify the currency type for the widget. You can choose from a list of countries and their respective currencies. Additionally, by clicking on **JS**, you can use `ISO 4217` currency codes. These codes consist of three letters and are assigned to each currency for international identification.
+Allows you to specify the currency type for the widget. You can choose from a list of countries and their respective currencies. Additionally, by clicking on **JS**, you can use ISO 4217 currency codes. These codes consist of three letters and are assigned to each currency for international identification.
 
 
 
@@ -39,7 +39,8 @@ Allows you to specify the currency type for the widget. You can choose from a li
 
 <dd>
 
-Controls the availability of a currency dropdown next to the input field. When enabled, users can select a different currency from a dropdown menu. Conversely, disabling this property prevents currency selection through the dropdown.
+
+Enables users to select a different currency by displaying a dropdown next to the input field.
 
 
 </dd>
@@ -48,7 +49,7 @@ Controls the availability of a currency dropdown next to the input field. When e
 
 <dd>
 
-Specifies the maximum number of digits allowed after the decimal separator. It can be set to either `0`, `1`, or `2`, indicating the desired level of precision for the numeric value.
+Specifies the maximum number of decimal digits allowed. It can be set to either `0`, `1`, or `2`, indicating the desired level of precision for the numeric value.
 
 </dd>
 
@@ -117,14 +118,14 @@ When enabled, this property makes the Currency Input a mandatory field. When the
 <dd>
 
 
-The **Regex** property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions.
+The **Regex** property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
 
-For instance, if you want to validate that the user enters a price in multiples of 5. You can set the **Regex** as:
+For instance, if you want to validate that the user enters a price in multiples of 5. You can set **Regex** as:
 ```js
 .*[05]$
 ```
 
-If the user enters a value that does not adhere to the specified pattern, such as a value that is not a multiple of 5, the widget displays an error message indicating `"invalid input"`.
+
 
 </dd>
 
@@ -141,7 +142,8 @@ Allows you to set an expression to determine the validity of the user's input. W
 
 <dd>
 
-Allows you to customize the feedback provided to the user when they enter an incorrect value. By default, the input widget displays a generic `"invalid input"` message. 
+Allows customization of the error message displayed when the user enters an incorrect value. By default, the input widget shows a generic "invalid input" message.
+
 
 </dd>
 
@@ -228,14 +230,14 @@ This property determines how the widget's height adjusts to changes in its conte
 
 
 ### Events
+When the event is triggered, these event handlers can run queries, JS code, or other supported actions](/reference/appsmith-framework/widget-actions).
 
 
 #### onTextChanged
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions)  that would be executed whenever the user modifies the input. 
-
+Specifies the actions to be executed when the user modifies the input in the currency widget.
 
 </dd>
 
@@ -245,8 +247,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input area in the currency widget is focused.
-
+Specifies the actions to be executed when the input area in the currency widget is focused.
 
 </dd>
 
@@ -254,8 +255,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input area in the currency widget loses focus.
-
+Specifies the actions to be executed when the input area in the currency widget loses focus.
 
 </dd>
 
@@ -263,8 +263,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input is submitted with the `ENTER` key.
-
+Specifies the actions to be executed when the input is submitted with the `ENTER` key.
 
 </dd>
 
@@ -272,7 +271,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-The **Reset on submit** event clears the input value after submission. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+The **Reset on submit** event clears the input value after submission. 
 
 </dd>
 
