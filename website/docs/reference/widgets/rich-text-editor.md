@@ -132,11 +132,17 @@ Enables you to add hints or provide additional information to guide the user reg
 </dd>
 
 
+
 #### Visible `boolean`
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in *View Mode*. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. 
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
 
 </dd>
 
@@ -146,7 +152,13 @@ Controls the visibility of the widget. If you turn off this property, the widget
 
 Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
 
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
 </dd>
+
 
 
 #### Animate Loading `boolean`
