@@ -230,7 +230,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 
 ### Events
-When the event is triggered, these event handlers can run queries, JS code, or other supported actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 
 #### onTextChanged
@@ -271,7 +271,7 @@ Specifies the actions to be executed when the input is submitted with the `ENTER
 
 <dd>
 
-The **Reset on submit** event clears the input value after submission. 
+Clears the input value after submission. 
 
 </dd>
 
