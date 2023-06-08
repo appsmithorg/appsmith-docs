@@ -97,15 +97,17 @@ This property allows you to configure the label's placement.
 
 <dd>
 
-To enable the **Alignment** property, select *Left* from the **Position** property. This allows you to align the text to the left boundary or adjust it closer to the widget using the *Right* alignment option.
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
 
 </dd>
 
-#### Position `number`
+#### Width `number`
 
 <dd>
 
-To enable the **Position** property, select *Left* from the **Position** property. This allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
 
 </dd>
 
