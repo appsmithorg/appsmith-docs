@@ -49,7 +49,11 @@ You can dynamically generate table by fetching data from queries or JS functions
 SELECT * FROM users ORDER BY id LIMIT 10;
 ```
 
-2. In the Table's **Table Data** property, display the data using:
+2. 1. In the Table's **Table Data** property you can simply select the `fetchData` query from the “Connect to query” section
+
+OR
+
+You can choose to click on the JS toggle to add Javascript and bind data in the following way
 
 ```js
 {{fetchData.data}}
@@ -65,7 +69,7 @@ https://mock-api.appsmith.com/users?page=1
 ```
 
 
-2. Use JavaScript to transform the data by adding it to the **Table Data** property.
+2. Click the JS toggle for the **Table Data** property to use JavaScript to transform the data.
 
 ```javascript
 {{fetchApi.data.users.map((user) => {
@@ -78,6 +82,23 @@ https://mock-api.appsmith.com/users?page=1
 ```
 
 This code is using the `map()` function to extract specific data, such as the `name`,and `email`, from the `fetchApi` query. 
+
+## Connect table to datasource
+
+From the table data dropdown, you can also connect to a datasource, fetch records from it and view them on the table widget. Appsmith will generate queries on your behalf and bind them to the table widget.
+
+Once connected, the table is integrated with server side pagination, search along with support for editing and adding new rows.
+
+Note: Currently the feature works with PostgreSQL and MongoDB, we will soon be adding support for more Datasources.
+
+---
+
+Example 1: Suppose you have a PostgreSQL datasource and you want to connect it to table widget.
+
+1. Select the datasource from the “Choose a datasource to connect” option. You can also choose our [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) (users)
+2. After this, you have to select the data table in the datasource you wish to fetch records from. In our users sample database, ``public.users`` is the data table. You can optionally select a column to be searchable. 
+3. Click on the connect data button to generate queries from the datasource and link them with the table.
+4. Use the table widget to view your data, edit certain records and add new records.
 
 
 ## Server-side pagination
@@ -236,7 +257,7 @@ These properties allow you to edit the widget. All of these properties are prese
 
 |  Property   | Data type |  Description                                                                                                                                                                      |
 | -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Table Data**        | Array/Object	       | Use this field to provide the data to be displayed in the table, either by writing an array of objects to display as table rows or by binding data from an API/Database using the mustache syntax, like `{{<query_name>.data}}`. |
+| **Table Data**        | Array/Object	       | Use this field to provide the data to be displayed in the table, by selecting the query to be connected to table or by adding an array of objects which can either be static or dynamic by using mustache syntax like {{<query_name>.data}} |
 | **Columns**        |  Array           | Automatically populated from the Table Data. This lets you edit the column label, show/hide each column (with the eye icon), and also manage the individual column settings.   |
 | **Editable**        |  Boolean           | A property that determines whether a field or cell can be modified by the user. Learn more about [Inline editing](/reference/widgets/table/inline-editing).  |
 | **Add a New Column**        |  Button           | A button that allows users to insert a new column into an existing table.    |
