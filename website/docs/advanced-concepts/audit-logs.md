@@ -22,7 +22,7 @@ There are several kinds of events that are logged:
     - Instance configuration changes
 - User sign-up and login activity
 
-To access the audit logs, go to **Admin Settings > Others > Audit logs**. Within this tab, you can see a list of events that have been tracked under your organization's account. To view the details of a specific event, click on the event description to expand the event and display complete set of details in JSON format.
+To access the audit logs, on the homepage, go to **Admin Settings > Others > Audit logs**. Within this tab, you can see a list of events that have been tracked under your organization's account. To view the details of a specific event, click on the event description to expand the event and display a complete set of details in JSON format.
 
 <figure>
   <img src="/img/audit-logs.png" style= {{width:"700px", height:"auto"}} alt="Audit logs"/>
@@ -128,4 +128,4 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 
 ## Export logs
 
-Users have the option to export audit logs from an Appsmith instance by either querying or exporting the `auditLog` collection directly from the MongoDB database associated with the Appsmith deployment. However, it is important to note that performing this action requires users to have root access to the Appsmith deployment.
+You can export audit logs from the Appsmith instance to your system as a JSON file. To export logs as a JSON file, go to **Admin Settings > Others > Audit logs**, click the **⋮** icon at the top right corner and click **Download**.
