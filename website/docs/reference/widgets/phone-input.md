@@ -35,7 +35,7 @@ Allows you to select a country code from a list of countries. Additionally, by c
 
 <dd>
 
-Controls the visibility of the dial code dropdown next to the input. Enabling this property allows the user to change the country code from the dropdown menu.
+Enabling this property allows the user to change the country code from the dropdown menu.
 
 
 </dd>
@@ -74,7 +74,7 @@ This property allows you to configure the label's placement.
 
 <dd>
 
-To enable the **Alignment** property, select *Left* from the **Position** property. This allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
 
 
 </dd>
@@ -83,7 +83,7 @@ To enable the **Alignment** property, select *Left* from the **Position** proper
 
 <dd>
 
-To enable the **Width** property, select *Left* from the **Position** property. This allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
 
 
 </dd>
@@ -175,7 +175,7 @@ Prevents users from selecting the widget. Even though the widget remains visible
 
 <dd>
 
-This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
 
 </dd>
 
@@ -212,14 +212,15 @@ This property determines how the widget's height adjusts to changes in its conte
 
 
 ### Events
+When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
 
 
 #### onTextChanged
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions)  that would be executed whenever the user modifies the input. 
-
+Specifies the actions to be executed when the input is modified.
 
 </dd>
 
@@ -229,8 +230,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input area in the widget is focused.
-
+Specifies the actions to be executed when the input area is focused.
 
 </dd>
 
@@ -238,7 +238,8 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input area in the widget loses focus.
+Specifies the actions to be executed when the input area loses focus.
+
 
 
 </dd>
@@ -247,8 +248,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be executed when the input is submitted with the `ENTER` key.
-
+Specifies the actions to be executed when the input is submitted with the `ENTER` key.
 
 </dd>
 
@@ -256,7 +256,7 @@ Enables you to specify [supported actions](/reference/appsmith-framework/widget-
 
 <dd>
 
-The **Reset on submit** event clears the input value after submission. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered.
+Clears the input value after submission. 
 
 </dd>
 
