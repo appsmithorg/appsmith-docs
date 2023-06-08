@@ -163,10 +163,10 @@ This object contains the data of the currently authenticated user.
 }
 ```
 
-#### Roles
+#### roles
 
 :::info
-Roles property of the User object is only available in Appsmith's [**Business edition**](https://www.appsmith.com/pricing).
+This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
 :::
 
 This object contains an array of strings of the roles assigned to the currently authenticated user.
@@ -184,17 +184,17 @@ This object contains an array of strings of the roles assigned to the currently 
 ```
 You can use `user.role` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-**Example:** Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
+*Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
 
 ```javascript
 {{appsmith.user.roles.includes("backend engineers")}}
 ```
 In the above example, the visibility of the button is determined by a role. Only users who have been assigned the "backend engineer" role can see this button.
 
-#### Groups
+#### groups
 
 :::info
-Groups property of the User object is only available in Appsmith's [**Business edition**](https://www.appsmith.com/pricing).
+This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
 :::
 
 This object contains an array of strings of the groups assigned to the currently authenticated user.
@@ -209,7 +209,7 @@ This object contains an array of strings of the groups assigned to the currently
 ```
 You can use `user.groups` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-**Example:** Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
+*Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
 
 ```javascript
 {{appsmith.user.groups.includes("managers")}}

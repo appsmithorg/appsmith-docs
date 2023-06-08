@@ -7,7 +7,7 @@ description: >-
 
 Granular Access Control (GAC) enables you to specify which users or groups have access to different system components and what actions they can perform within that access. In Appsmith, you can use roles to define access to different parts of your Appsmith instance, such as workspaces, apps, pages, and datasources, and then assign these roles to individual users or groups of users.
 :::info
-Granular Access Control (GAC) is available only in the [business edition](https://www.appsmith.com/pricing).
+Granular Access Control (GAC) is available only in the [Business Edition](https://www.appsmith.com/pricing).
 :::
 
 Granular Access Control can be implemented in Appsmith using the following elements:
@@ -56,6 +56,12 @@ To enable Programmatic access control, follow the steps below -
 
 1. On the homepage, go to **Admin Settings > General**.
 2. Under the **Programmatic Access Control** section, select the **Access roles and user groups in code for conditional business logic** checkbox. 
+
+<figure>
+  <img src="/img/Enable_programmatic-access-control.png" style= {{width:"700px", height:"auto"}} alt="Programmatic Access Control"/>
+  <figcaption align = "center"><i>Enable Programmatic access control</i></figcaption>
+</figure>
+
 3. To manage access control programmatically, use the relevant properties of the Appsmith user object `appsmith.user.roles` or  `appsmith.user.groups` in JavaScript code to obtain an array of roles or groups assigned to the logged-in user. For more information, refer to the [roles](/reference/appsmith-framework/context-object#roles) and [groups](/reference/appsmith-framework/context-object#groups) properties of the Appsmith user object.
 
 ## Further reading
