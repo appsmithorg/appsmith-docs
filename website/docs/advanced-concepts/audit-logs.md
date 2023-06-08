@@ -5,7 +5,13 @@ description: Audit logs allow you to keep records of everything that happens on 
 
 # Audit Logs
 
-The audit log in Appsmith provides a detailed record of all significant activities that occur within an Appsmith instance. It automatically captures and displays events by recording information such as the specific activity that was performed, who performed it, and the timestamp of when it occurred. There are several kinds of events that are logged:
+The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events. 
+
+:::info
+Audit logs are only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing). They're retained in the database for 1 year.
+:::
+
+There are several kinds of events that are logged:
 
 - App-specific activity
     - Changes to pages
@@ -16,11 +22,7 @@ The audit log in Appsmith provides a detailed record of all significant activiti
     - Instance configuration changes
 - User sign-up and login activity
 
-:::info
-Audit logs are only available in Appsmith's [**Business edition**](https://www.appsmith.com/pricing). They're retained in the database for 1 year.
-:::
-
-To access the audit logs, go to **Admin Settings > Others > Audit logs**. Within this tab, you can see a list of events that have been tracked under your organization's account.
+To access the audit logs, go to **Admin Settings > Others > Audit logs**. Within this tab, you can see a list of events that have been tracked under your organization's account. To view the details of a specific event, click on the event description to expand the event and display complete set of details in JSON format.
 
 <figure>
   <img src="/img/audit-logs.png" style= {{width:"700px", height:"auto"}} alt="Audit logs"/>
