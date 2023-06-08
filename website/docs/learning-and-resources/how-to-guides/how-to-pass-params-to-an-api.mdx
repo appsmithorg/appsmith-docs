@@ -1,0 +1,77 @@
+---
+description: Learn how to pass parameters to your queries with the run() framework function.
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+# How to Pass Parameters to Queries
+
+This page describes how to use the run() function to pass contextual parameters to your queries.
+
+<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
+
+## Pass parameters in a loop
+
+In some cases, like running a query inside a loop, different parameters may need to be passed to the query each time with values contextual to the execution.
+
+For this, you can use the [`run()` function's](/reference/appsmith-framework/query-object)  `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
+
+---
+
+Imagine you need to fetch specific users from a database based on their `id` value. Below, you'll see how to configure a query and a helper function to take an array of ids and run the query for each of them. This guide uses the Appsmith mock `users` database.
+
+1. On the canvas, create a [Table widget](/reference/widgets/table) and a [Button widget](/reference/widgets/button).
+1. Create a query called `GetUserById`. Add the following SQL statement to the query:
+
+    ```sql
+    SELECT * FROM users WHERE id = {{ this.params.id }};
+    ```
+    * This statement expects a parameter to be passed in from the `run()` function to use as the `id` value.
+
+1. Create a JS Object and name it `utils`. This is where you write your helper function that calls the query and handles its responses.
+1. Create a function using one of the following code snippets:
+
+    ```javascript
+    // Using promise syntax
+    getByIds: async (ids) => {
+        const queries = ids.map(id => {
+            return GetUserById.run({"id": id})
+        })
+        
+        Promise.allSettled(queries)
+            .then(queryResponses => queryResponses.map(res => res.value[0]))
+            .then(records => storeValue("records", records))
+    }
+    ```
+
+    ```javascript
+    // Using async/await syntax
+    getByIds: async (ids) => {
+        const queries = ids.map(id => {
+            return GetUserById.run({"id": id})
+        })
+        
+        const responses = await Promise.allSettled(queries)
+        const records = await responses.map(promise => promise.value[0])
+        await storeValue("records", records)
+    }
+    ```
+
+    * The code snippets above run the query once for each `id` in its `ids` array, waits for the database's response, and stores the resulting table records in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value) for you to access later.
+
+1. In the **Table Data** property of your Table widget, bind your response data from the Appsmith store:
+
+    ```javascript
+    // Table Data property of the Table widget
+    {{ appsmith.store.records }}
+    ```
+
+1. To execute the query, set your Button widget's **onClick** property to execute your helper function:
+
+    ```javascript
+    // Button widget's onClick
+    {{ utils.getByIds([1, 4, 8, 34, 16])}}
+    ```
+
+When you click the button, your helper function runs and the queries the database for each of your desired users.
