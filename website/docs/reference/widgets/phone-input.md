@@ -156,7 +156,10 @@ Allows you to set the placeholder text displayed within the input box. This can 
 
 Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
 
-
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
 
 </dd>
 
@@ -166,6 +169,10 @@ Controls the visibility of the widget. If you turn off this property, the widget
 
 Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
 
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
 
 </dd>
 
@@ -321,6 +328,8 @@ The `countryCode` property stores the country code associated with the selected 
 *Example:*
 ```js
 {{PhoneInput1.countryCode}}
+
+//US
 ```
 
 </dd>
@@ -334,6 +343,8 @@ The `dialCode` property retrieves the dialing code of the selected country.
 *Example:*
 ```js
 {{PhoneInput1.dialCode}}
+
+//+1
 ```
 
 </dd>
@@ -343,11 +354,13 @@ The `dialCode` property retrieves the dialing code of the selected country.
 
 <dd>
 
-The `text` property stores the input value of the widget. 
+The `text` property retrieves the formatted input value of the widget. 
 
 *Example:*
 ```js
 {{PhoneInput1.text}}
+
+//1 (234) 567-890
 ```
 
 </dd>
@@ -361,6 +374,8 @@ The `value` property retrieves the unformatted phone number, regardless of wheth
 *Example:*
 ```js
 {{PhoneInput1.value}}
+
+// 1234567890
 ```
 
 </dd>
