@@ -140,4 +140,10 @@ exceptions:
   - Property group - Label
   - Property group - General
   - Property group - Events
-
+  - Document Link
+  - docUrl
+  - Select All Options 
+  - onSelectionChange
+  - options
+  - Default Selected Values
+  - selectedValues

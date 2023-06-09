@@ -79,7 +79,7 @@ kubectl get pods
 ```bash
 # Replace ANY_APPSMITH_POD_NAME with the pod name
 #highlight-next-line
-kubectl exec ANY_APPSMITH_POD_NAME cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
+kubectl exec ANY_APPSMITH_POD_NAME -- cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
 ```
 Keep these details handy, as you need them for restoring the Appsmith instance.
 
@@ -276,7 +276,7 @@ kubectl get pods
 ```bash
 # Replace `ANY_APPSMITH_POD_NAME` with the pod name
 #highlight-next-line
-kubectl exec ANY_APPSMITH_POD_NAME cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
+kubectl exec ANY_APPSMITH_POD_NAME -- cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
 ```
 Keep these details handy, as you need them for restoring the Appsmith database.
 
