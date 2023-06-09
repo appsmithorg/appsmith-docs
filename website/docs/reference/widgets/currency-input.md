@@ -331,7 +331,7 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 
 ## Reference properties
 
-These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically.For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
 
 
 #### countryCode `string`
