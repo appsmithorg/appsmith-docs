@@ -393,6 +393,7 @@ isChecked
 isDisabled
 default state
 disable
+JSON Form
 selectedValues
 Allow Currency Change
 Decimals Allowed
