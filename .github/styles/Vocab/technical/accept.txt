@@ -412,3 +412,4 @@ Text
 Allow Currency Change
 countryCode
 dialCode
+onPageChange

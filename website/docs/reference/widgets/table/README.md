@@ -5,19 +5,39 @@ toc_max_heading_level: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 # Table
 
-This page explains how to use a Table widget to display data in tabular format, trigger actions based on user interaction, and work with paginated data sets of any size.
+This page provides information on using the Table widget to display data in tabular format, trigger actions based on user interaction, and work with paginated data sets of any size.
 
 <VideoEmbed host="youtube" videoId="-rzePEV2QQ8" title="Using the Table Widget" caption="Using the Table Widget"/>
 
-## Display data 
+## Content properties
 
-To display data in a Table widget, you can use the **Table Data** property.
 
- The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
+
+### Data
+
+#### Table data `Array<Object>`
+
+<dd>
+
+The **Table data** property allows you to connect the Table widget to your database. By clicking on "**Connect data**," you can connect to your query or select a datasource. Appsmith then generates queries and binds them to the Table widget. This enables Server-side pagination, search capability, and support for editing and adding new rows.
+
+:::note
+Currently, this feature is compatible with PostgreSQL and MongoDB datasources.
+:::
+
+<figure>
+  <img src="/img/table-new.gif" style= {{width:"750px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Connect data</i></figcaption>
+</figure>
+
+
+Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data. The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
+
+*Example format:*
 ```js
 [
   {
@@ -38,37 +58,17 @@ To display data in a Table widget, you can use the **Table Data** property.
 ]
 ```
 
-You can dynamically generate table by fetching data from queries or JS functions by binding the response to the **Table Data** property.
+You can **dynamically generate** a table by fetching data from queries or JavaScript functions and binding the response to the **Table Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
----
-**Example 1:** suppose you have data stored in a database and you want to display it in the Table widget.
-
-1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
-
-```sql
-SELECT * FROM users ORDER BY id LIMIT 10;
-```
-
-2. In the Table's **Table Data** property, display the data using:
-
+*Example:*
 ```js
 {{fetchData.data}}
 ```
+If the retrieved data is not in the desired format, you can use JavaScript to **transform** it before passing it to the Table widget, like:
 
----
-**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Table widget.
-
-1.  Fetch data from the [sample API](/core-concepts/connecting-to-data-sources/authentication#sample-api) `users` using the following URL:
-
-```
-https://mock-api.appsmith.com/users?page=1
-```
-
-
-2. Use JavaScript to transform the data by adding it to the **Table Data** property.
-
-```javascript
-{{fetchApi.data.users.map((user) => {
+*Example:*
+```js
+{{fetchData.data.users.map((user) => {
   return {
     name: user.name,
     email: user.email
@@ -77,12 +77,70 @@ https://mock-api.appsmith.com/users?page=1
 }}
 ```
 
-This code is using the `map()` function to extract specific data, such as the `name`,and `email`, from the `fetchApi` query. 
+
+</dd>
 
 
-## Server-side pagination
+#### Columns `Array`
+
+<dd>
+
+
+The **Columns** property is automatically populated based on the **Table Data**. To access the column settings, you can click on the gear icon ⚙️ in the properties pane. This would enable you to edit existing column properties, add new custom columns, rearrange the columns, and hide columns.
+
+Learn more about [Column](/reference/widgets/table/column-settings).
+
+
+</dd>
+
+#### Editable `Boolean`
+
+<dd>
+
+The **Editable** property, available within the **Columns** property, is a checkbox property that allows users to modify specific fields or cells in the table. By enabling inline editing and marking columns as editable, users can update the data directly from the UI by double-clicking on the desired cell.
+
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+
+</dd>
+
+#### Update mode `String`
+
+<dd>
+
+Determines how edited cells are saved in the table.
+
+*Options:*
+* **Single row**: Cells can be saved using the **Save/Discard** column buttons.
+* **Multi row**: Cells can be saved by using an **onSubmit** event of the column or through an external button widget.
+ 
+</dd>
+
+#### Primary key column `String`
+
+<dd>
+
+Allows you to assign a unique column that helps maintain `selectedRows` and `triggeredRows` based on its value. This property also affects the performance of caching the dataset for quicker loading and access.
+
+</dd>
+
+### Pagination
+
+#### Show pagination `Boolean`
+
+<dd>
+
+Determines whether the pagination feature is displayed in the table header, allowing users to navigate through different pages of the table.
+</dd>
+
+#### Server side pagination `Boolean`
+
+<dd>
+
+Allows you to implement pagination by limiting the number of results fetched per API/query request. 
 
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination:
+
+*Example:*
 
 <Tabs queryString="current-edition">
 <TabItem label="Offset-based pagination" value="Offset_edition">
@@ -151,8 +209,71 @@ For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to di
  
 </Tabs>
 
+</dd>
 
-## Server-side searching
+#### Total Records `number`
+
+<dd>
+
+It is a number value that is displayed in the table header to inform the user about the total number of records in the table. This property is only visible when Server Side Pagination is enabled.
+
+For instance, you can create a Count query to retrieve the total number of records from your datasource. You can then call this query in the **Total Records** property using the, like:
+
+*Example:*
+```js
+{{Total_record_query.data[0].count}}
+```
+
+</dd>
+
+#### onPageChange
+
+<dd>
+
+Specifies [supported actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user navigates to a different page of the table, either by clicking on the pagination buttons.
+
+</dd>
+
+#### onPageSizeChange
+
+<dd>
+
+Specify an action to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
+
+</dd>
+
+### Search & filters
+
+#### Allow searching `boolean`
+
+<dd>
+
+When enabled, the search bar is displayed, allowing users to search for specific data within the table.
+</dd>
+
+#### Client side search `boolean`
+
+<dd>
+
+Determines the search behavior of the search bar in the table header. When enabled, the search bar will only search within the data that is currently loaded in the table. If disabled, the search bar would search across the entire data set.
+
+</dd>
+
+#### Default search text `string`
+
+<dd>
+
+Allows you to set the default search query for the search bar in the table header.
+
+</dd>
+
+#### onSearchTextChanged
+
+<dd>
+Allows you to specify the action to be executed when the user enters a search text in the table's search bar. 
+
+
+*Example:*
 
 Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
 
@@ -175,6 +296,16 @@ To use the server-side search with the Table widget, follow these steps:
 
 Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
 
+</dd>
+
+#### Allow filtering `boolean`
+
+<dd>
+
+Controls the visibility of the "Filters" button and its associated features in the table header. When enabled, the button and its functionality are displayed, allowing users to apply filters to the table data.
+
+</dd>
+
 ## Server-side filtering
 
 Server-side filtering involves using a value to narrow down the results of a query in a similar way to server-side searching. However, instead of searching for a specific term, the selected value is used to filter out unwanted data from the requested dataset. 
@@ -196,6 +327,7 @@ To enable server-side filtering, you can use widgets such as the [Select widget]
     ```
 
 3. Set the Select widget's **onOptionChange** event to run the query. 
+
 
 ## Edit table data
 
