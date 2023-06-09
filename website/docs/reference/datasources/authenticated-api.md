@@ -4,11 +4,9 @@ description: Connect Appsmith to an Authenticated API.
 
 # Authenticated API
 
-This page gives information to connect Appsmith to an Authenticated API.
+This page describes how to connect your application to an API with authentication.
 
 Use this datasource to create multiple queries for the same API. Every query created from this datasource has shared configuration (root URL, authentication, headers, and so on) to avoid re-entering details. If you're only creating a single query for your API, try using a [REST API](/reference/datasources/rest-api) datasource.
-
-## Connect Authenticated API
 
 ### Connection parameters
 
@@ -18,10 +16,14 @@ The following section is a reference guide that provides a complete description 
    <img src="/img/restapi-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an Authenticated API datasource."/>
    <figcaption align = "center"><i>Configuring an Authenticated API datasource.</i></figcaption>
 </figure>
-  
+
+:::note
+The datasource configuration fields do not accept JavaScript code or mustache syntax.
+:::
+
 <dl>
   <dt><b>URL</b></dt>
-  <dd>Sets the domain that this datasource should query. Queries created from this datasource inherit this as a base URL.</dd><br/>
+  <dd>Sets the domain that this datasource should query. Queries created from this datasource inherit this value as a base URL.</dd><br/>
   <dd>
     For example, if you set <b>URL</b> to <code>https://api.example.com</code>, then its queries would all start with that URL as their base path and you'd add the endpoint (like <code>/users/search/</code>) as a suffix within each query.
   </dd>
@@ -48,7 +50,7 @@ The following section is a reference guide that provides a complete description 
       <li>
         <b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration.
         <ul>
-          <li><b>Grant Type:</b> Sets the method that is used to get an access token. Choose from <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code">Authorization Code</a> or <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials">Client Credentials</a>.</li>
+          <li><b>Grant Type:</b> Sets the method that is used to get an access token. Choose from <b>Authorization Code</b> or <b>Client Credentials</b>.</li>
           <li><b>Add Access Token To:</b> Sets whether the access token is sent as a <b>Request Header</b> or as a query parameter (<b>Request URL</b>).</li>
           <li><b>Header Prefix:</b> When the access token is sent as a header, this sets a string to prefix the access token. A common example is <code>Bearer</code>.</li>
           <li><b>Access Token URL:</b> The endpoint on the authentication server that is used to exchange the authorization code for an access token.</li>
@@ -62,7 +64,6 @@ The following section is a reference guide that provides a complete description 
           <li><b>Audience:</b> Expects a URL, specifies the intended audience for the OAuth access token.</li>
           <li><b>Resource:</b> Expects a URL, specifies an application to act as a resource server.</li>
         </ul>
-        For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication">OAuth 2.0 Authentication</a>.
       </li>
       <li><b>API Key:</b> Sends a key/value pair which is sent as a base64-encoded string in the request's Authorization header. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
       <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header. If you are using OIDC protocol to log in to your instance, you can use the <a href="/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt#access-token">access token</a> of the logged-in user as a bearer token.</li>
@@ -71,17 +72,22 @@ The following section is a reference guide that provides a complete description 
 </dl>
 
 <dl>
-  <dt><b>Send Appsmith signature header</b></dt>
-  <dd>When enabled, it sends an additional key/value pair in the request header in the format: <code>X-Appsmith-Signature: &lt;session-details-signature-key&gt;</code>. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions">Signature Header</a>.</dd>
+  <dt><b>Send appsmith signature header</b></dt>
+  <dd>When enabled, you can enter a secret string of at least 32 characters in the <b>Session Details Signature Key</b> field. Every API call made to this datasource then includes an additional header, <code>X-Appsmith-Signature</code>, whose value is a <a href="https://jwt.io">JSON Web Token (JWT)</a> signed with a signature created from your secret string.</dd>
+
+  <dd>You can use the signature header to ensure the authenticity and integrity of your query; you can guarantee that the request originated from Appsmith, and that it has not been tampered with before reaching your API.</dd>
+
 </dl>
 
 <dl>
   <dt><b>Use self-signed certificate</b></dt>
-  <dd>When enabled, you can upload your certificate file. For more information, see <a href="/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates">Self-Signed Certificates</a>.</dd>
+  <dd>When enabled, you can upload your own self-signed certificate for accessing your REST endpoint. These can be useful for accessing your API without relying on external agnecies to issue certificates for authenticating the origin of your requests.</dd>
+  <dd>This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format. The certificate information is stored securely in an encrypted format in the database.</dd>
+
 </dl>
 
 ## Queries
 
 Once you have set up your Authenticated API datasource, you're ready to create queries.
 
-**Visit the [REST API docs](/reference/datasources/rest-api) to learn about the query configuration parameters.**
+Visit the [REST API docs](/reference/datasources/rest-api) to learn about the query configuration parameters.

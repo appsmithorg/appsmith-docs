@@ -7,7 +7,7 @@ description: >-
 
 Granular Access Control (GAC) enables you to specify which users or groups have access to different system components and what actions they can perform within that access. In Appsmith, you can use roles to define access to different parts of your Appsmith instance, such as workspaces, apps, pages, and datasources, and then assign these roles to individual users or groups of users.
 :::info
-Granular Access Control (GAC) is available only in the [business edition](https://www.appsmith.com/pricing).
+Granular Access Control (GAC) is only available in Appsmith's [Business edition](https://www.appsmith.com/pricing).
 :::
 
 Granular Access Control can be implemented in Appsmith using the following elements:
