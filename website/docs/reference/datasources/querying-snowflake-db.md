@@ -3,7 +3,7 @@ sidebar_position: 16
 ---
 # Snowflake
 
-This page describes how to connect your application to your Snowflake database and use queries to manage its content.
+This page provides information for connecting your application to your Snowflake database and using queries to manage its content.
 
 
 ## Connect Snowflake
@@ -31,23 +31,23 @@ The following section is a reference guide that provides a complete description 
   </figure>
 
   <dt><b>Warehouse</b></dt>
-  <dd>Specifies the virtual warehouse to use once connected. The specified warehouse should be an existing warehouse for which the default role has privileges.</dd><br />
+  <dd>Specifies the virtual warehouse to use once connected.</dd><br />
 
   <dt><b>Database</b></dt>
-  <dd>Specifies the database to use once connected. The specified database should be an existing database for which the default role has privileges.</dd><br />
+  <dd>Specifies the database to use once connected.</dd><br />
 
   <dt><b>Default Schema</b></dt>
   <dd>Sets which database schema structure should appear as a preview in the Appsmith sidebar; when this is configured, you can see the tables and columns available under the specified schema. The field does not limit which schemas you are able to query.</dd><br />
   
   <dt><b>Role</b></dt>
-  <dd>The role to use for performing queries. Be sure to use a role that has sufficient priveliges to execute the queries needed by your app.</dd><br />
+  <dd>The role to use for performing queries.</dd><br />
 
   <dt><b>Username</b></dt>
-  <dd>Provide your Snowflake account username.
+  <dd>The username for your Snowflake account.
   </dd><br />
 
   <dt><b>Password</b></dt>
-  <dd>Provide the password for your Snowflake account.
+  <dd>The password for your Snowflake account.
   </dd><br />
 </dl>
 
