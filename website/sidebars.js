@@ -420,6 +420,7 @@ const sidebars = {
             'reference/datasources/querying-amazon-s3',
             'reference/datasources/querying-arango-db',
             'reference/datasources/authenticated-api',
+            'reference/datasources/rest-api',
             'reference/datasources/querying-dynamodb',
             'reference/datasources/querying-elasticsearch',
             'reference/datasources/querying-firestore',
