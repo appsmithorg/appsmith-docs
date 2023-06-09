@@ -106,9 +106,13 @@ When enabled, this property makes the Phone Input a mandatory field. When the Ph
 <dd>
 
 
-The **Regex** property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions.
+The **Regex** property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
 
-If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
+For instance, if you want to validate that a phone number consists of exactly 10 digits, you can set the **Regex** as:
+
+```js
+^\d{10}$
+```
 
 </dd>
 
@@ -316,7 +320,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ## Reference properties
 
-These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `PhoneInput1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `PhoneInput1.isVisible`.
 
 
 #### countryCode `string`
