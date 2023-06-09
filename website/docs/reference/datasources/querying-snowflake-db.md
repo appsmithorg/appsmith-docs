@@ -2,9 +2,7 @@
 sidebar_position: 16
 ---
 # Snowflake
-
 This page provides information for connecting your application to your Snowflake database and using queries to manage its content.
-
 
 ## Connect Snowflake
 
