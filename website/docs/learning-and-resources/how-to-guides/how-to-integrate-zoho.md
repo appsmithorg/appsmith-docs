@@ -65,9 +65,17 @@ The Zoho API domains are location-specific. Check which region and domain you sh
 
 When you're finished, click the `Save and Authorize` button. You’ll be redirected to a confirmation page with Zoho to allow access to Appsmith; click **Accept**. If your authentication is set up correctly, an alert lets you know that "Authorization was successful."
 
-### Configure a JSON Form
+### Configure queries and a JSON Form
 
-The following steps describe how to set up the UI to interact with your queries:
+With the steps below, create a query to retrieve your Zoho List that you'll send your campaign to. You'll use the results of this query to pre-fill a widget in a form so the user can select a contact List when they create a campaign.
+
+1. Once your Authenticated API datasource is configured, create a query based on it.
+1. Set the request method to `GET`.
+1. The base URL should already be inherited from the datasource. Append `/v1.1/getmailinglists` to the URL.
+
+This query returns an array of contact Lists available on your account. You'll use the `listkey` property from your desired list in the Create Campaign query.
+
+Next, you'll build a JSON Form:
 
 1. On the canvas, create a [JSON Form widget](/reference/widgets/json-form) and paste the following snippet into its **Source Data** property:
     ```json
@@ -90,27 +98,8 @@ The following steps describe how to set up the UI to interact with your queries:
     }}
     ```
     * Now your **List** field should automatically populate with the available mailing lists from your Zoho account.
-1. Set the JSON Form's **onSubmit** property to run your query that creates the campaign, and add callbacks to alert the user of the result.
-    1. **onSubmit** > **Execute a query** > Select your query
-    1. Click **Callbacks** in the properties pane.
-    1. **On success** > **Show alert** > In the **Message** field, enter `Campaign created.`
-    1. **On failure** > **Show alert** > In the **Message** field, enter `There was an error.`
 
-## Configure the queries
-
-Below, you'll set up three queries, build the UI with widgets, and then connect them all together.
-
-### Get contact list
-
-This query retrieves your List that you'll send your campaign to.
-
-1. Once your Authenticated API datasource is configured, create a query based on it.
-1. Set the request method to `GET`.
-1. The base URL should already be inherited from the datasource. Append `/v1.1/getmailinglists` to the URL.
-
-This query returns an array of contact lists available on your account. You'll use the `listkey` property from your desired list in the Create Campaign query below.
-
-### Create campaign
+Next, build the Create Campaign query. You'll connect this to the JSON Form's submit button afterwards.
 
 1. Create a query based on your Authenticated API datasource for Zoho.
 1. Set the request method to `POST`.
@@ -136,6 +125,14 @@ list_details value doesn't currently work. May need to be something like:
     })()
 }}
 -->
+
+With the query created, go back to your JSON Form and set up the submit button:
+
+1. Set the JSON Form's **onSubmit** property to run your query that creates the campaign, and add callbacks to alert the user of the result.
+    1. **onSubmit** > **Execute a query** > Select your query
+    1. Click **Callbacks** in the properties pane.
+    1. **On success** > **Show alert** > In the **Message** field, enter `Campaign created.`
+    1. **On failure** > **Show alert** > In the **Message** field, enter `There was an error.`
 
 Once this query is run, a successful response returns a `campaignKey` that can be used in other queries to modify or send that campaign.
 
