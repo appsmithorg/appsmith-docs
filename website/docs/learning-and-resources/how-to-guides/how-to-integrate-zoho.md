@@ -1,7 +1,7 @@
 ---
 description: Learn to connect to Zoho via OAuth 2.0 and create a campaign from your app.
 ---
-# How to Create a Zoho Campaign
+# Create a Zoho Campaign
 
 This guide describes how to configure an Authenticated API datasource for Zoho with OAuth 2.0 and create a query that creates a campaign from your Appsmith app.
 
@@ -65,7 +65,7 @@ The Zoho API domains are location-specific. Check which region and domain you sh
 
 When you're finished, click the `Save and Authorize` button. You’ll be redirected to a confirmation page with Zoho to allow access to Appsmith; click **Accept**. If your authentication is set up correctly, an alert lets you know that "Authorization was successful."
 
-### Configure queries and a JSON Form
+## Configure queries and a JSON Form
 
 With the steps below, create a query to retrieve your Zoho List that you'll send your campaign to. You'll use the results of this query to pre-fill a widget in a form so the user can select a contact List when they create a campaign.
 
