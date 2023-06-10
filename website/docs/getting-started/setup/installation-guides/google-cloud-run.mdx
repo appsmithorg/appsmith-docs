@@ -3,12 +3,12 @@ description: Deploy Appsmith on Google Cloud Run.
 ---
 
 # Google Cloud Run
-This guide shows you how to install Appsmith on Google Cloud Run.
+This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 ## Prerequisites
 
 - A [Google Cloud](https://console.cloud.google.com/) account.
-- MongoDB instance for Appsmith data storage - [MongoDB Atlas](https://www.mongodb.com/atlas/database) is recommended.
+- An external MongoDB instance for Appsmith data storage - [MongoDB Atlas](https://www.mongodb.com/atlas/database) is recommended.
 
 ## Before you begin
 
@@ -33,7 +33,7 @@ This guide shows you how to install Appsmith on Google Cloud Run.
 
 3. Click **Create**.
 
-4. When the new instance is created, make a note of the **File share name** and **IP address** to use later when mounting the filestore in Cloud Run container.  
+4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the filestore in Cloud Run container.  
 
 <figure>
         <img src="/img/file-share-name-and-ip-address.png" style= {{width:"100%", height:"auto"}} alt="File share name and IP address of the filestore instance"/>
@@ -46,7 +46,7 @@ This guide shows you how to install Appsmith on Google Cloud Run.
 
 2. Click **Create connector**.
 
-3. In the **Name** field, enter a name for your connector. This must be in accordance with the Compute Engine naming convention, with the additional restriction that it be less than 21 characters with hyphens (-) counting as two characters.
+3. In the **Name** field, enter a name for your connector.
 
 4. In the **Network** field, select the **default** option.
 
@@ -100,7 +100,7 @@ This guide shows you how to install Appsmith on Google Cloud Run.
 
 12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
 
-13. Click the **Logs** tab to verify eveyrthing is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
+13. Click the **Logs** tab to verify everything is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
 
 14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance. 
 
@@ -108,6 +108,8 @@ This guide shows you how to install Appsmith on Google Cloud Run.
   <img src="/img/deployed-service-url-cloud-run.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
   <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
 </figure>
+
+15. Enter the details to signup up and create an Appsmith account.
 
 ## Further reading
 

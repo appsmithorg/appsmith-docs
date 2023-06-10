@@ -68,19 +68,19 @@ Depending on your infrastructure, you can choose one of the following guides to 
         </div>
         <div class="columnGrid column-two" align="center">
         <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/digitalocean">
-            <img class="containerImage" src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/getting-started/setup/installation-guides/digitalocean">DigitalOcean</a></b>
-        </div>
-        <div class="columnGrid column-three" align="center">
-          <div class="containerCol">
             <a href="/getting-started/setup/installation-guides/google-cloud-run">
             <img class="containerImage" src="/img/google-cloud-run-logo.png" alt="Google-Cloud-Run-logo"/>
             </a>   
         </div> 
         <b><a href="/getting-started/setup/installation-guides/google-cloud-run">Google Cloud Run</a></b> 
+        </div>
+        <div class="columnGrid column-three" align="center">
+          <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/digitalocean">
+            <img class="containerImage" src="/img/Digital-Ocean-Logo.png" alt="Digital-Ocean-logo"/>
+            </a>     
+          </div> 
+         <b><a href="/getting-started/setup/installation-guides/digitalocean">DigitalOcean</a></b>
         </div>
     </div>
 <br/>
