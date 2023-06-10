@@ -33,7 +33,7 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 3. Click **Create**.
 
-4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the filestore in Cloud Run container.  
+4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the Filestore in Cloud Run container.  
 
 <figure>
         <img src="/img/file-share-name-and-ip-address.png" style= {{width:"100%", height:"auto"}} alt="File share name and IP address of the filestore instance"/>
@@ -84,16 +84,16 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
         - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
         - Set the CPU limit as **2** in the **CPU** dropdown list.
     - Under **Execution environment**, select **Second generation**.
-    - Under **Environment variables**, click **Add Variable**. Specify values in the **Name** and **Value** text boxes as shown below: 
+    - Under **Environment variables**, click **Add Variable**. 
+    - Specify values in the **Name** and **Value** text boxes as shown below: 
 
     | Name | Value |
     |------------------------|------------------------------------------| 
     | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
     | **FILE_SHARE_NAME** | The file share name you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
-    | **APPSMITH_MONGODB_URI** | Specify the connection string of the MongoDB instance you configured in the [Prerequisites](#prerequisites) section. |
-
+    | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance as recommended in the [Prerequisites](#prerequisites) section.<br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
 10. Click the **Networking** tab.
-    - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section] (#serverless-vpc-access-connector).
+    - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#serverless-vpc-access-connector).
     - Keep the default **Route only requests to private IPs through the VPC connector** option.
 
 11. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
@@ -109,7 +109,7 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
   <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
 </figure>
 
-15. Enter the details to signup up and create an Appsmith account.
+15. Enter the details on the signup form to create an Appsmith account.
 
 ## Further reading
 
