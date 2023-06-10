@@ -4,7 +4,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
 
 <div class="containerBorder">
 
-##### Recommended
+#### Recommended
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -27,7 +27,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
 </div>
 <br/>
 
-##### Platform deployments
+#### Platform deployments
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
           <div class="containerCol">
@@ -76,40 +76,55 @@ Depending on your infrastructure, you can choose one of the following guides to 
         </div>
         <div class="columnGrid column-three" align="center">
           <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/heroku">
-            <img class="containerImage" src="/img/heroku-logo.png" alt="Heroku-logo"/>
+            <a href="/getting-started/setup/installation-guides/google-cloud-run">
+            <img class="containerImage" src="/img/google-cloud-run-logo.png" alt="Google-Cloud-Run-logo"/>
             </a>   
         </div> 
-        <b><a href="/getting-started/setup/installation-guides/heroku">Heroku</a></b> 
+        <b><a href="/getting-started/setup/installation-guides/google-cloud-run">Google Cloud Run</a></b> 
         </div>
     </div>
 <br/>
 
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
-             <div class="containerCol">
+            <div class="containerCol">
+             <a href="/getting-started/setup/installation-guides/heroku">
+               <img class="containerImage" src="/img/heroku-logo.png" alt="Heroku-logo"/>
+             </a>   
+            </div> 
+            <b><a href="/getting-started/setup/installation-guides/heroku">Heroku</a></b>
+        </div>
+        <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
             <a href="/getting-started/setup/installation-guides/ansible">
             <img class="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
             </a>     
         </div> 
         <b><a href="/getting-started/setup/installation-guides/ansible">Ansible</a></b>
         </div>
-        <div class="columnGrid column-two" align="center">
+        <div class="columnGrid column-three" align="center">
         <div class="containerCol">
-            <a href="/getting-started/setup/installation-guides/cloudjiffy">
+             <a href="/getting-started/setup/installation-guides/cloudjiffy">
             <img class="containerImage" src="https://ik.imagekit.io/iyat1fg3juj/cloudjiffy-logo_OhHLsg76P.png?ik-sdk-version=javascript-1.4.3&#x26;updatedAt=1657134035775" alt="CloudJiffy-logo"/>
             </a> 
         </div> 
         <b><a href="/getting-started/setup/installation-guides/cloudjiffy">CloudJiffy</a></b>
         </div>
-        <div class="columnGrid column-three" align="center">
-        <div class="containerCol">
-             <a href="/getting-started/setup/installation-guides/restack">
+</div>    
+
+<div class="containerGrid">
+        <div class="columnGrid column-one" align="center">
+            <div class="containerCol">
+            <a href="/getting-started/setup/installation-guides/restack">
              <img class="containerImage" src="/img/Restack_Icon_100px.png" alt="Restack-logo"/>
              </a>     
         </div> 
         <b><a href="/getting-started/setup/installation-guides/restack">Restack</a></b>
         </div>
-    </div>    
+        <div class="columnGrid column-two" align="center">
+        </div>
+        <div class="columnGrid column-three" align="center">
+        </div>
+</div>
 
 </div>
