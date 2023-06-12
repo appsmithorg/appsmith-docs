@@ -334,6 +334,79 @@ const sidebars = {
       ],
     }, //core concepts end
     {
+      //Data start
+      type: 'category',
+      collapsed: false,
+      label: 'Data',
+      items: [
+        {
+          type: 'category',
+          label: 'Datasource Reference',
+          link: { type: 'doc', id: 'data/datasource-reference/README' },
+          items: [
+            'data/datasource-reference/airtable',
+            'data/datasource-reference/querying-amazon-s3',
+            'data/datasource-reference/querying-arango-db',
+            'data/datasource-reference/authenticated-api',
+            'data/datasource-reference/rest-api',
+            'data/datasource-reference/querying-dynamodb',
+            'data/datasource-reference/querying-elasticsearch',
+            'data/datasource-reference/querying-firestore',
+            'data/datasource-reference/querying-google-sheets',
+            'data/datasource-reference/graphql',
+            'data/datasource-reference/hubspot',
+            {
+            type: 'category',
+            label: 'MongoDB',
+            link: {
+                type: 'doc',
+                id: 'data/datasource-reference/querying-mongodb/README',
+            },
+            items: [
+                'data/datasource-reference/querying-mongodb/mongo-syntax'
+            ],
+          },
+          'data/datasource-reference/querying-mssql',
+          'data/datasource-reference/querying-mysql',
+          'data/datasource-reference/querying-oracle',
+          'data/datasource-reference/querying-postgres',
+          'data/datasource-reference/querying-redis',
+          'data/datasource-reference/querying-redshift',
+          'data/datasource-reference/rest-api',
+          'data/datasource-reference/querying-snowflake-db',
+          'data/datasource-reference/using-smtp',
+          'data/datasource-reference/twilio',
+        ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'data/how-to-guides/README' },
+          items: [
+            'data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'data/how-to-guides/how-to-upload-to-s3',
+            'data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'data/how-to-guides/aws-whitelist',
+            'data/how-to-guides/how-to-integrate-dropbox',
+            'data/how-to-guides/how-to-integrate-zoho',
+          ]
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Key Concepts',
+          link: { type: 'doc', id: 'data/key-concepts/README' },
+          items: [
+            'data/key-concepts/datasources',
+            'data/key-concepts/queries',
+            'data/key-concepts/how-to-use-prepared-statements',
+            'data/key-concepts/connection-pooling',
+          ]
+        },
+      ]
+    }, //Data end
+    {
       //Reference start
       type: 'category',
       collapsed: false,
@@ -409,45 +482,6 @@ const sidebars = {
             'reference/widgets/text',
             'reference/widgets/tree-select',
             'reference/widgets/video',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Datasources',
-          link: { type: 'doc', id: 'reference/datasources/README' },
-          items: [
-            'reference/datasources/airtable',
-            'reference/datasources/querying-amazon-s3',
-            'reference/datasources/querying-arango-db',
-            'reference/datasources/authenticated-api',
-            'reference/datasources/rest-api',
-            'reference/datasources/querying-dynamodb',
-            'reference/datasources/querying-elasticsearch',
-            'reference/datasources/querying-firestore',
-            'reference/datasources/querying-google-sheets',
-            'reference/datasources/graphql',
-            'reference/datasources/hubspot',
-            {
-              type: 'category',
-              label: 'MongoDB',
-              link: {
-                type: 'doc',
-                id: 'reference/datasources/querying-mongodb/README',
-              },
-              items: [
-                'reference/datasources/querying-mongodb/mongo-syntax'
-              ],
-            },
-            'reference/datasources/querying-mssql',
-            'reference/datasources/querying-mysql',
-            'reference/datasources/querying-oracle',
-            'reference/datasources/querying-postgres',
-            'reference/datasources/querying-redis',
-            'reference/datasources/querying-redshift',
-            'reference/datasources/rest-api',
-            'reference/datasources/querying-snowflake-db',
-            'reference/datasources/using-smtp',
-            'reference/datasources/twilio',
           ],
         },
         {
@@ -586,15 +620,8 @@ const sidebars = {
             id: 'learning-and-resources/how-to-guides/README',
           },
           items: [
-            'learning-and-resources/how-to-guides/how-to-upload-to-s3',
-            'learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'learning-and-resources/how-to-guides/aws-whitelist',
             'learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure',
-            'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
-            'learning-and-resources/how-to-guides/how-to-integrate-zoho',
-            'learning-and-resources/how-to-guides/how-to-integrate-dropbox'
           ],
         },
         'learning-and-resources/sample-apps',

@@ -2,7 +2,7 @@
 sidebar_position: 16
 ---
 
-# Use Prepared Statements
+# Prepared Statements
 
 A [Prepared Statement](https://en.wikipedia.org/wiki/Prepared\_statement) is a feature provided by Database Management Systems (DBMS) to execute the same statement with dynamic data bindings repeatedly and efficiently. It uses a pre-compiled SQL code without data to speed up the execution.
 
