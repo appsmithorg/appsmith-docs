@@ -19,14 +19,14 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-#### Table data `Array<Object>`
+#### Table data `array<object>`
 
 <dd>
 
-The **Table data** property allows you to connect the Table widget to your database. By clicking on "**Connect data**," you can connect to your query or select a datasource. Appsmith then generates queries and binds them to the Table widget. This enables Server-side pagination, search capability, and support for editing and adding new rows.
+The **Table data** property allows you to connect the Table widget to your datasource. By clicking on "**Connect data**," you can connect to your query or select a datasource. Appsmith then generates queries and binds them to the Table widget. This enables Server-side pagination, search capability, and support for editing and adding new rows.
 
 :::note
-Currently, this feature is compatible with PostgreSQL and MongoDB datasources.
+Currently, this feature is compatible with PostgreSQL and MongoDB datasources. If you have a different datasource, you can use **JS** and bind the data manually using mustache syntax `{{ }}`.
 :::
 
 <figure>
@@ -81,7 +81,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to **
 </dd>
 
 
-#### Columns `Array`
+#### Columns `array`
 
 <dd>
 
@@ -93,7 +93,7 @@ Learn more about [Column](/reference/widgets/table/column-settings).
 
 </dd>
 
-#### Editable `Boolean`
+#### Editable `boolean`
 
 <dd>
 
@@ -103,7 +103,7 @@ Learn more about [Inline editing](/reference/widgets/table/inline-editing).
 
 </dd>
 
-#### Update mode `String`
+#### Update mode `string`
 
 <dd>
 
@@ -115,7 +115,7 @@ Determines how edited cells are saved in the table.
  
 </dd>
 
-#### Primary key column `String`
+#### Primary key column `string`
 
 <dd>
 
@@ -125,14 +125,14 @@ Allows you to assign a unique column that helps maintain `selectedRows` and `tri
 
 ### Pagination
 
-#### Show pagination `Boolean`
+#### Show pagination `boolean`
 
 <dd>
 
 Determines whether the pagination feature is displayed in the table header, allowing users to navigate through different pages of the table.
 </dd>
 
-#### Server side pagination `Boolean`
+#### Server side pagination `boolean`
 
 <dd>
 
@@ -605,32 +605,306 @@ Sets the thickness of the borders of the widget.
 
 ### Reference properties
 
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `Table1.isVisible` to get the visibility status.
-
-| Reference Property | Data type | Description                                                                                                                                                    |
-| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **selectedRow**   |  Object      | Contains the data of the row selected by the user. It's an empty object if no row is selected. | `{{<table_name>.selectedRow}}`   |
-| **selectedRows**  |  Array     | Contains an array of rows selected by the user when multi-select is enabled. It's \[null] if no row is selected.    | `{{<table_name>.selectedRows}}`        |
-| **triggeredRow**  |  Object      | When a user interacts with an actionable item (like button) in a row, `triggeredRow` fetches the data of that column.   | `{{<table_name>.triggeredRow}}`        |
-| **isVisible**    |  Boolean       | Reflects whether the widget is visible or not.  | `{{<table_name>.isVisible}}`   |
-| **sortOrder**    |  Object       | Reflects the current column sort criteria. For example, if table rows are being sorted by the value of column `id` in ascending order, this property contains `{"column": "id", "order": "asc"}`.   | `{{<table_name>.sortOrder}}`   |
-| **tableData**     |  Array      | Contains all the table data in JSON format.      | `{{<table_name>.tableData}}`  |
-| **selectedRowIndex** |  Boolean   | Contains the index of the row selected by the user. Not applicable when multiple rows are selected.    | `{{<table_name>.selectedRowIndex}}`   |
-| **selectedRowIndices** |  Array | Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.    | `{{<table_name>.selectedRowIndices}}` |
-| **filteredTableData** |  Boolean  | Contains the data of the rows left after applying any selected filters, sort rule, or search terms. | `{{<table_name>.filteredTableData}}` |
-| **pageNo**       |  Number       | Contains the current page number that the user is on. APIs can use it for pagination. | `{{<table_name>.pageNo}}`  |
-| **pageOffset**    |  Number     | Contains a calculated value to represent how many records to skip when using Server side pagination. Use this value in your query to fetch the correct set of results. | `{{<table_name>.pageOffset}}` |
-| **pageSize**     |  Number       | Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table. | `{{<table_name>.pageSize}}`   |
-| **searchText**    |  String      | Contains the search text entered by the user in the Table. | 
-| **isAddRowInProgress**    |  Boolean      | It indicates whether a new row is currently being added to the table. | 
-| **newRow**    |  Object      | Contains data related to newly added row. | 
-| **nextPageVisited**    |  Boolean      | Indicates whether the next page of data has been visited by the user. | 
-| **previousPageVisited**    |  Boolean      | Indicates whether the previous page of data has been visited by the user. | 
-| **tableHeaders**    |  Array      | Indicates whether the table headers are visible.| 
-| **totalRecordsCount**    |  Number      |  Indicates the number of pages in server-side pagination. | 
-| **updatedRow**    |  Object      | Contains data related to recently updated added row. | 
-| **updatedRows**    |  Array      | Contains data related to updated rows.| 
-| **triggeredRowIndex**    |  Number      | An index property that indicates the row index of the table that has been triggered. | 
-| **updatedRowIndices**    |  Array      | Refers to an array of indices corresponding to the rows that have been updated 
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Table1.isVisible`.
 
 
+#### selectedRow `object`
+
+<dd>
+Contains the data of the row selected by the user. It's an empty object if no row is selected. 
+
+*Example*:
+```js
+//To access the entire selected row:
+{{Table1.selectedRow}}
+
+//To access a specific cell value, such as the email field:
+{{Table1.selectedRow.email}}
+```
+</dd>
+
+#### selectedRows `array`
+
+<dd>
+
+Contains an array of rows selected by the user when multi-select is enabled. It's `[null]` if no row is selected.
+
+*Example:*
+
+```js
+//To access the array of selected rows:
+{{Table1.selectedRows}}
+
+//To access a specific cell value in the selected rows, such as the email field of the first selected row:
+{{Table1.selectedRows[0].email}}
+```
+
+</dd>
+
+#### triggeredRow `object`
+
+<dd>
+
+When a user interacts with an actionable item *(like a button)* in a row, `triggeredRow` fetches the data of that column.
+
+Example:
+
+```js
+{{Table1.triggeredRow}}
+```
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+Example:
+
+```js
+{{Table1.isVisible}}
+```
+
+</dd>
+
+#### sortOrder `object`
+
+
+<dd>
+
+Reflects the current column sort criteria. For example, if table rows are being sorted by the value of column `id` in ascending order, this property contains `{"column": "id", "order": "asc"}`.
+Example:
+
+```js
+{{Table1.sortOrder}}
+```
+
+</dd>
+
+#### tableData `array`
+
+<dd>
+
+Contains all the table data in JSON format.
+Example:
+
+```js
+{{Table1.tableData}}
+```
+
+</dd>
+
+#### selectedRowIndex `number`
+
+<dd>
+
+Contains the index of the row selected by the user. Not applicable when multiple rows are selected.
+Example:
+
+```js
+{{Table1.selectedRowIndex}}
+```
+
+</dd>
+
+#### selectedRowIndices `array`
+
+<dd>
+
+Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.
+Example:
+
+```js
+{{Table1.selectedRowIndices}}
+```
+
+</dd>
+
+#### filteredTableData `boolean`
+
+<dd>
+
+Contains the data of the rows left after applying any selected filters, sort rule, or search terms.
+Example:
+
+```js
+{{Table1.filteredTableData}}
+```
+
+</dd>
+
+#### pageNo `number`
+
+<dd>
+
+Contains the current page number that the user is on. APIs can use it for pagination.
+Example:
+
+```js
+{{Table1.pageNo}}
+```
+
+</dd>
+
+#### pageOffset `number`
+
+<dd>
+
+Contains a calculated value to represent how many records to skip when using Server-side pagination. Use this value in your query to fetch the correct set of results.
+Example:
+
+```js
+{{Table1.pageOffset}}
+```
+
+</dd>
+
+#### pageSize `number`
+
+<dd>
+
+Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table.
+Example:
+
+```js
+{{Table1.pageSize}}
+```
+
+</dd>
+
+#### searchText `string`
+
+<dd>
+
+Contains the search text entered by the user in the Table.
+Example:
+
+```js
+{{Table1.searchText}}
+```
+
+</dd>
+
+#### isAddRowInProgress `boolean`
+
+<dd>
+
+Indicates whether a new row is currently being added to the table.
+Example:
+
+```js
+{{Table1.isAddRowInProgress}}
+```
+
+</dd>
+
+#### newRow `object`
+
+<dd>
+
+Contains data related to the newly added row.
+Example:
+
+```js
+{{Table1.newRow}}
+```
+</dd>
+
+#### nextPageVisited `boolean`
+
+<dd>
+
+Indicates whether the next page of data has been visited by the user.
+Example:
+
+```js
+{{Table1.nextPageVisited}}
+```
+
+</dd>
+
+#### previousPageVisited `boolean`
+
+<dd>
+
+Indicates whether the previous page of data has been visited by the user.
+Example:
+
+```js
+{{Table1.previousPageVisited}}
+```
+
+</dd>
+
+#### tableHeaders `array`
+
+<dd>
+
+Indicates whether the table headers are visible.
+Example:
+
+```js
+{{Table1.tableHeaders}}
+```
+</dd>
+
+#### totalRecordsCount `number`
+
+<dd>
+
+Indicates the number of pages in server-side pagination.
+Example:
+
+```js
+{{Table1.totalRecordsCount}}
+```
+</dd>
+
+#### updatedRow `object`
+
+<dd>
+
+Contains data related to the recently updated added row.
+Example:
+
+```js
+{{Table1.updatedRow}}
+```
+</dd>
+
+#### updatedRows `array`
+
+<dd>
+
+Contains data related to updated rows.
+Example:
+
+```js
+{{Table1.updatedRows}}
+```
+</dd>
+
+#### triggeredRowIndex `number`
+
+<dd>
+
+An index property that indicates the row index of the table that has been triggered.
+Example:
+
+```js
+{{Table1.triggeredRowIndex}}
+```
+</dd>
+
+#### updatedRowIndices `array`
+
+<dd>
+
+Refers to an array of indices corresponding to the rows that have been updated.
+Example:
+
+```js
+{{Table1.updatedRowIndices}}
+```
+</dd>
