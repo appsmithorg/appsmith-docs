@@ -413,3 +413,8 @@ Allow Currency Change
 countryCode
 dialCode
 onPageChange
+onRowSelected
+Default Row Height
+Text Align
+Text Color
+Cell Borders
