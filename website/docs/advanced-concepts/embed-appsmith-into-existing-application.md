@@ -9,23 +9,13 @@ To embed an Appsmith application into your website, follow the steps below:
 
 ## Prerequisites
 
-- To embed Appsmith in your web page or web application, it is essential that the hosting of the said web page or application is done on a server.
+1. Go to **Admin Settings > General > Embed Settings**, click **Limit embedding to certain URLs** and add the URL of your website in the input box. If you want to allow the Appsmith application to be embedded on any website, select the **Allow embedding everywhere** option.
+2. To embed Appsmith in your web page or web application, ensure that the hosting of the said web page or application is done on a server.
 
-### Creating HTML page
+## Embed an Application
 
-Firstly, lets create an HTML page and call it \``dashboard.html`\`. Now, add the basic HTML structure to make it an HTML page:
-
-```markup
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Customer Dashboard </title>
-</head>
-<body>
-
-</body>
-</html>
-```
+1. Open your Appsmith application and click **App Settings > Share & Embed**.
+2. Copy the 
 
 You'll also have to ensure your app is public to embed into other applications. You can do this by clicking on the Share option on the top toolbar and toggle the viewing option to **Public**. Here's a video example:
 
