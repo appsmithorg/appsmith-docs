@@ -1,5 +1,6 @@
 ---
-sidebar_position: 16
+sidebar_position: 3
+description: Learn about how prepared statements are used in Appsmith.
 ---
 
 # Prepared Statements
