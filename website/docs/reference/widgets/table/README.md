@@ -138,76 +138,9 @@ Determines whether the pagination feature is displayed in the table header, allo
 
 Allows you to implement pagination by limiting the number of results fetched per API/query request. 
 
-Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination:
-
-*Example:*
-
-<Tabs queryString="current-edition">
-<TabItem label="Offset-based pagination" value="Offset_edition">
+Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using [Offset-based-pagination](#Offset_edition) or [Cursor-based pagination](#Cursor-based-pagination).
 
 
- Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
-
-1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `pageSize` and `pageOffset`  reference properties to implement pagination.
-
-   ```sql
-    SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}; 
-   ```
- In an API query, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
-
-   ```
-   https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
-   ```
-
-2. Enable the **Server-side pagination** property in the table. 
-
-3. Set the table widget's **onPageChange** event to run the query.
-
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. Create a new Query, and add:
-
-```sql
-SELECT COUNT(*) FROM users;
-```
-
-You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
-
-<figure>
-  <img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Offset-based pagination</i></figcaption>
-</figure>
-
-  </TabItem>
-  
-
-  <TabItem value="Cursor" label="Cursor-based pagination">
-
-Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
-
-1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
-
-   ```sql
-   SELECT * FROM users {{Table1.nextPageVisited ?  "WHERE id > "+ " "+ Table1.tableData[Table1.tableData.length-1]["id"] : Table1.previousPageVisited ? "WHERE id <"+ " "+ Table1.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{Table1.pageSize}} ;
-   ```
-This SQL query selects all columns from the `users` table and applies cursor-based pagination to limit the number of results returned. The `WHERE` clause is dynamically generated based on whether the user has already visited the `next` or `previous` page, and orders the results by `ID`.
-
-2. Enable the **Server-side pagination** property in the table. 
-
-3. Set the table widget's **onPageChange** event to run the query.
-
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
-
-For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
-
-<figure>
-  <img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
-</figure>
-
-
-
-  </TabItem>
- 
-</Tabs>
 
 </dd>
 
@@ -255,7 +188,7 @@ When enabled, the search bar is displayed, allowing users to search for specific
 
 <dd>
 
-Determines the search behavior of the search bar in the table header. When enabled, the search bar will only search within the data that is currently loaded in the table. If disabled, the search bar would search across the entire data set.
+Determines the search behavior of the search bar in the table header. When enabled, the search bar would only search within the data that is currently loaded in the table. If disabled, the search bar would search across the entire data set.
 
 </dd>
 
@@ -270,31 +203,10 @@ Allows you to set the default search query for the search bar in the table heade
 #### onSearchTextChanged
 
 <dd>
-Allows you to specify the action to be executed when the user enters a search text in the table's search bar. 
+
+Allows you to specify the action to be executed when the user enters a search text in the table's search bar. Learn more about [Server-side searching](#server-side-searching).
 
 
-*Example:*
-
-Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
-
-The `searchText` reference property can be used to filter records displayed in a table based on the user's search terms. When the user types into the search bar, the `onSearchTextChange` event of the table is triggered, which can be configured to query the table's datasource for the matching results. 
-
-To use the server-side search with the Table widget, follow these steps:
-
-1. Create a SQL query using the `searchText` reference property:
-
-   ```sql
-   SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
-   ```
-
-   You can also pass the `searchText` property as a URL parameter in an API request:
-   ```
-   https://mock-api.appsmith.com/users?name={{Table1.searchText}}
-   ```
-
-2. Set the table widget's **onSearchTextChange** event to run the query. 
-
-Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
 
 </dd>
 
@@ -303,29 +215,6 @@ Watch this video to learn how to set up [server-side search](https://www.youtube
 <dd>
 
 Controls the visibility of the **Filters** button, which is located in the table header. The button allows users to apply filters to the table data when enabled.
-
-*Server-side filtering Example*:
-
-Server-side filtering involves using a value to narrow down the results of a query in a similar way to server-side searching. However, instead of searching for a specific term, the selected value is used to filter out unwanted data from the requested dataset. 
-
-To enable server-side filtering, you can use widgets such as the [Select widget](/reference/widgets/select/) to provide users with a list of supported filters to choose from.
-
-1. Drag a Select widget to the canvas and add options that you might use to filter your data.
-
-2. Create a query, and add the Select widget's `selectedOptionValue`:
-
-    As a SQL query:
-    ```sql
-    SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
-    ```
-
-    As an API request with URL parameters:
-    ```
-    https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
-    ```
-
-3. Set the Select widget's **onOptionChange** event to run the query. 
-
 
 </dd>
 
@@ -456,23 +345,6 @@ Allows you to specify the separator character to use for formatting the download
 
 
 
-## Refresh table data
-
-When changes are made to the datasource that supplies your table with data, the table won't automatically reflect these changes. Therefore, it is necessary to use events and/or write code that re-executes the query responsible for populating data into the table whenever new data is submitted to the datasource.
-
-**Example:**
-For instance, suppose you have a table that receives its data from a query called `getData`, and you have a button that submits a form with new user input through a query called `sendNewData`.
-
-1. When the form is submitted via the button's `onClick`, it executes
-    ```javascript
-    {{ sendNewData.run() }}
-    ```
-2. On success, it executes `getData.run()` as a callback to get the latest version of the dataset that includes the new changes:
-    ```javascript
-    {{ sendNewData.run(() => getData.run(), () => {}) }}
-    ```
-
-Now when `sendNewData` succeeds, your table automatically refreshes itself.
 
 
 ## Style properties
@@ -917,3 +789,143 @@ Refers to an array of indices corresponding to the rows that have been updated.
 {{Table1.updatedRowIndices}}
 ```
 </dd>
+
+
+## Server-side pagination
+Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination.
+
+
+<Tabs queryString="current-edition">
+<TabItem label="Offset-based pagination" value="Offset_edition">
+
+
+ Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
+
+1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `pageSize` and `pageOffset`  reference properties to implement pagination.
+
+   ```sql
+    SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}; 
+   ```
+ In an API query, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the example URL:
+
+   ```
+   https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
+   ```
+
+2. Enable the **Server-side pagination** property in the table. 
+
+3. Set the table widget's **onPageChange** event to run the query.
+
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. Create a new Query, and add:
+
+```sql
+SELECT COUNT(*) FROM users;
+```
+
+You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
+
+<figure>
+  <img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Offset-based pagination</i></figcaption>
+</figure>
+
+  </TabItem>
+  
+
+  <TabItem value="Cursor" label="Cursor-based-pagination">
+
+Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
+
+1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
+
+   ```sql
+   SELECT * FROM users {{Table1.nextPageVisited ?  "WHERE id > "+ " "+ Table1.tableData[Table1.tableData.length-1]["id"] : Table1.previousPageVisited ? "WHERE id <"+ " "+ Table1.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{Table1.pageSize}} ;
+   ```
+This SQL query selects all columns from the `users` table and applies cursor-based pagination to limit the number of results returned. The `WHERE` clause is dynamically generated based on whether the user has already visited the `next` or `previous` page, and orders the results by `ID`.
+
+2. Enable the **Server-side pagination** property in the table. 
+
+3. Set the table widget's **onPageChange** event to run the query.
+
+4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
+
+For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls. 
+
+<figure>
+  <img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
+</figure>
+
+
+
+  </TabItem>
+ 
+</Tabs>
+
+
+## Server-side searching
+
+*Example:*
+
+Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
+
+The `searchText` reference property can be used to filter records displayed in a table based on the user's search terms. When the user types into the search bar, the `onSearchTextChange` event of the table is triggered, which can be configured to query the table's datasource for the matching results. 
+
+To use the server-side search with the Table widget, follow these steps:
+
+1. Create a SQL query using the `searchText` reference property:
+
+   ```sql
+   SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
+   ```
+
+   You can also pass the `searchText` property as a URL parameter in an API request:
+   ```
+   https://mock-api.appsmith.com/users?name={{Table1.searchText}}
+   ```
+
+2. Set the table widget's **onSearchTextChange** event to run the query. 
+
+Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
+
+
+## Server-side filtering
+
+Server-side filtering involves using a value to narrow down the results of a query in a similar way to server-side searching. However, instead of searching for a specific term, the selected value is used to filter out unwanted data from the requested dataset. 
+
+To enable server-side filtering, you can use widgets such as the [Select widget](/reference/widgets/select/) to provide users with a list of supported filters to choose from.
+
+1. Drag a Select widget to the canvas and add options that you might use to filter your data.
+
+2. Create a query, and add the Select widget's `selectedOptionValue`:
+
+    As a SQL query:
+    ```sql
+    SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
+    ```
+
+    As an API request with URL parameters:
+    ```
+    https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
+    ```
+
+3. Set the Select widget's **onOptionChange** event to run the query. 
+
+
+## Refresh table data
+
+When changes are made to the datasource that supplies your table with data, the table won't automatically reflect these changes. Therefore, it is necessary to use events and/or write code that re-executes the query responsible for populating data into the table whenever new data is submitted to the datasource.
+
+**Example:**
+For instance, suppose you have a table that receives its data from a query called `getData`, and you have a button that submits a form with new user input through a query called `sendNewData`.
+
+1. When the form is submitted via the button's `onClick`, it executes
+    ```javascript
+    {{ sendNewData.run() }}
+    ```
+2. On success, it executes `getData.run()` as a callback to get the latest version of the dataset that includes the new changes:
+    ```javascript
+    {{ sendNewData.run(() => getData.run(), () => {}) }}
+    ```
+
+Now when `sendNewData` succeeds, your table automatically refreshes itself.
