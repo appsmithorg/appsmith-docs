@@ -182,7 +182,7 @@ This object contains an array of strings of the roles assigned to the currently 
 ]
 
 ```
-You can use `user.role` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
+You can use `appsmith.user.roles` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
 *Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
 
@@ -207,7 +207,7 @@ This object contains an array of strings of the groups assigned to the currently
 ]
 
 ```
-You can use `user.groups` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
+You can use `appsmith.user.groups` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
 *Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
 
