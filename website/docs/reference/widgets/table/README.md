@@ -603,7 +603,7 @@ Sets the thickness of the borders of the widget.
 
 </dd>
 
-### Reference properties
+## Reference properties
 
 Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Table1.isVisible`.
 
@@ -647,7 +647,7 @@ Contains an array of rows selected by the user when multi-select is enabled. It'
 
 When a user interacts with an actionable item *(like a button)* in a row, `triggeredRow` fetches the data of that column.
 
-Example:
+*Example:*
 
 ```js
 {{Table1.triggeredRow}}
@@ -660,8 +660,8 @@ Example:
 <dd>
 
 Reflects whether the widget is visible or not.
-Example:
 
+*Example:*
 ```js
 {{Table1.isVisible}}
 ```
@@ -674,8 +674,9 @@ Example:
 <dd>
 
 Reflects the current column sort criteria. For example, if table rows are being sorted by the value of column `id` in ascending order, this property contains `{"column": "id", "order": "asc"}`.
-Example:
 
+
+*Example:*
 ```js
 {{Table1.sortOrder}}
 ```
@@ -687,8 +688,8 @@ Example:
 <dd>
 
 Contains all the table data in JSON format.
-Example:
 
+*Example:*
 ```js
 {{Table1.tableData}}
 ```
@@ -700,8 +701,8 @@ Example:
 <dd>
 
 Contains the index of the row selected by the user. Not applicable when multiple rows are selected.
-Example:
 
+*Example:*
 ```js
 {{Table1.selectedRowIndex}}
 ```
@@ -713,8 +714,8 @@ Example:
 <dd>
 
 Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.
-Example:
 
+*Example:*
 ```js
 {{Table1.selectedRowIndices}}
 ```
@@ -726,8 +727,8 @@ Example:
 <dd>
 
 Contains the data of the rows left after applying any selected filters, sort rule, or search terms.
-Example:
 
+*Example:*
 ```js
 {{Table1.filteredTableData}}
 ```
@@ -739,8 +740,8 @@ Example:
 <dd>
 
 Contains the current page number that the user is on. APIs can use it for pagination.
-Example:
 
+*Example:*
 ```js
 {{Table1.pageNo}}
 ```
@@ -752,8 +753,8 @@ Example:
 <dd>
 
 Contains a calculated value to represent how many records to skip when using Server-side pagination. Use this value in your query to fetch the correct set of results.
-Example:
 
+*Example:*
 ```js
 {{Table1.pageOffset}}
 ```
@@ -765,8 +766,8 @@ Example:
 <dd>
 
 Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table.
-Example:
 
+*Example:*
 ```js
 {{Table1.pageSize}}
 ```
@@ -778,8 +779,8 @@ Example:
 <dd>
 
 Contains the search text entered by the user in the Table.
-Example:
 
+*Example:*
 ```js
 {{Table1.searchText}}
 ```
@@ -791,8 +792,8 @@ Example:
 <dd>
 
 Indicates whether a new row is currently being added to the table.
-Example:
 
+*Example:*
 ```js
 {{Table1.isAddRowInProgress}}
 ```
@@ -804,8 +805,9 @@ Example:
 <dd>
 
 Contains data related to the newly added row.
-Example:
 
+
+*Example:*
 ```js
 {{Table1.newRow}}
 ```
@@ -816,8 +818,8 @@ Example:
 <dd>
 
 Indicates whether the next page of data has been visited by the user.
-Example:
 
+*Example:*
 ```js
 {{Table1.nextPageVisited}}
 ```
@@ -829,8 +831,9 @@ Example:
 <dd>
 
 Indicates whether the previous page of data has been visited by the user.
-Example:
 
+
+*Example:*
 ```js
 {{Table1.previousPageVisited}}
 ```
@@ -842,8 +845,10 @@ Example:
 <dd>
 
 Indicates whether the table headers are visible.
-Example:
 
+
+
+*Example:*
 ```js
 {{Table1.tableHeaders}}
 ```
@@ -854,7 +859,9 @@ Example:
 <dd>
 
 Indicates the number of pages in server-side pagination.
-Example:
+
+*Example:*
+
 
 ```js
 {{Table1.totalRecordsCount}}
@@ -866,8 +873,8 @@ Example:
 <dd>
 
 Contains data related to the recently updated added row.
-Example:
 
+*Example:*
 ```js
 {{Table1.updatedRow}}
 ```
@@ -878,8 +885,8 @@ Example:
 <dd>
 
 Contains data related to updated rows.
-Example:
 
+*Example:*
 ```js
 {{Table1.updatedRows}}
 ```
@@ -890,8 +897,8 @@ Example:
 <dd>
 
 An index property that indicates the row index of the table that has been triggered.
-Example:
 
+*Example:*
 ```js
 {{Table1.triggeredRowIndex}}
 ```
@@ -902,7 +909,9 @@ Example:
 <dd>
 
 Refers to an array of indices corresponding to the rows that have been updated.
-Example:
+
+*Example:*
+
 
 ```js
 {{Table1.updatedRowIndices}}
