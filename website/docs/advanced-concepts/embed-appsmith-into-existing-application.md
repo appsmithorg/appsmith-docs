@@ -5,11 +5,11 @@ description: Guide on how to embed Appsmith apps into an existing application
 
 # Embed Appsmith
 
-<VideoEmbed host="youtube" videoId="l7508s-5VwU" title="Embed Appsmith in your Website" caption="Embed Appsmith in your Website"/>
+To embed an Appsmith application into your website, follow the steps below:
 
+## Prerequisites
 
-
-Tools and Dashboards are great as an app and on a website, and now, you can have both by embedding apps into your website. In this guide, you'll learn how to embed Appsmith Apps into any website.
+- To embed Appsmith in your web page or web application, it is essential that the hosting of the said web page or application is done on a server.
 
 ### Creating HTML page
 
