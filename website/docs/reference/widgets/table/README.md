@@ -74,6 +74,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to **
 }}
 ```
 
+Check out the sample app to [Show Data from Multiple Queries](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91)
 
 </dd>
 
@@ -213,6 +214,8 @@ Allows you to specify the action to be executed when the user enters a search te
 
 Controls the visibility of the **Filters** button, which is located in the table header. The button allows users to apply filters to the table data when enabled.
 
+Check out the sample app on [External Filters for Table](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91)
+
 </dd>
 
 ### Row selection
@@ -239,7 +242,10 @@ Enables the selection of multiple rows in a table simultaneously. When enabled, 
 
 Sets the [action](/reference/appsmith-framework/widget-actions) to be executed when the user selects one or more rows in the table.
 
+Check out the sample app on [Row Selection Action](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91)
+
 </dd>
+
 
 ### Sorting
 
@@ -304,6 +310,9 @@ For example, if you want to make the widget visible only when the user selects "
 ```js
 {{Select1.selectedOptionValue === "Yes"}}
 ```
+
+Check out the sample app to [Control Column Visibility](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91)
+
 
 </dd>
 
