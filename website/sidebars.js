@@ -376,11 +376,11 @@ const sidebars = {
           'data/datasource-reference/querying-snowflake-db',
           'data/datasource-reference/using-smtp',
           'data/datasource-reference/twilio',
-        ],
+          ],
         },
         {
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'How-To Guides',
           link: { type: 'doc', id: 'data/how-to-guides/README' },
           items: [
@@ -394,7 +394,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Key Concepts',
           link: { type: 'doc', id: 'data/key-concepts/README' },
           items: [

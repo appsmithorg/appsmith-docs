@@ -388,35 +388,35 @@
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/basic-authentication",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication"
+      "destination": "/data/datasource-reference/authenticated-api"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication"
+      "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/authorization-code",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code"
+      "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/client-credentials",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials"
+      "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database",
-      "destination": "/core-concepts/data-access-and-binding/querying-a-database"
+      "destination": "/data/key-concepts/queries"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis",
-      "destination": "/core-concepts/connecting-to-data-sources/authentication/connect-to-apis"
+      "destination": "/data/key-concepts/queries"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/query-settings",
-      "destination": "/core-concepts/data-access-and-binding/querying-a-database/query-settings"
+      "destination": "/data/datasource-reference/airtable"
     },
     {
       "source": "/core-concepts/displaying-data-read",
-      "destination": "/core-concepts/data-access-and-binding/displaying-data-read"
+      "destination": "/data/key-concepts/queries"
     },
     {
       "source": "/reference/widgets/table#displaying-column-value-using selectedrow",
@@ -513,6 +513,50 @@
     {
       "source": "/core-concepts/json-web-tokens-jwt",
       "destination": "/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/",
+      "destination": "/data/key-concepts/datasources"
+    },
+    {
+        "source": "/connecting-to-data-sources/connecting-to-databases",
+        "destination": "/data/datasource-reference"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication",
+        "destination": "/data/datasource-reference/rest-api"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/connect-to-apis",
+        "destination": "/data/datasource-reference/authenticated-api"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type",
+        "destination": "/data/datasource-reference/authenticated-api"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication",
+        "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication",
+        "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code",
+        "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials",
+        "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions",
+        "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
+    },
+    {
+        "source": "/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates",
+        "destination": "/data/datasource-reference/authenticated-api#connection-parameters"
     },
     {
       "source": "/datasource-reference/airtable",
