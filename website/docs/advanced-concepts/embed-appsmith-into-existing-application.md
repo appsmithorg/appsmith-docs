@@ -39,6 +39,7 @@ If you want to get your app to use the whole page in your browser, you can chang
 - You can remove the Appsmith top bar from the embedded application from the App settings:
 
     a. Go to **App settings > Share & Embed** and enable the **Show navigation bar** toggle. 
+    
     b. Copy the updated **Embed URL** and add it to the iframe tag of your web application.
 
 ## Embed private application
