@@ -3,9 +3,6 @@
 This page explains how to use the Treeselect widget to allow users to select a single option from a hierarchical list.
 
 
-<VideoEmbed host="youtube" videoId="vSqpSssJdws" title="Using Treeselect Widget" caption="Using Treeselect Widget"/>
-
-
 
 ## Display static options
 

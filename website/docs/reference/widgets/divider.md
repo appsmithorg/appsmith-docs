@@ -2,7 +2,6 @@
 
 The Divider widget is used to visually separate or compartmentalise different parts of your application.
 
-<VideoEmbed host="youtube" videoId="rTJtDOusWmM" title="How to use Divider Widget" caption="How to use Divider Widget"/>
 
 ## Properties
 

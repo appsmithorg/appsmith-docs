@@ -4,8 +4,6 @@ This page explains how to use a Multiselect widget to allow users to select mult
 
 
 
-<VideoEmbed host="youtube" videoId="oH7Y-vSMIgM" title="Using Multiselect" caption="Using Multiselect"/>
-
 ## Display static options 
 
 To display static options in a Multiselect widget, you can use the **Options** property.

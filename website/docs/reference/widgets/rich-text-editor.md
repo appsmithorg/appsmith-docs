@@ -5,7 +5,6 @@ description: Learn how to use the Rich Text Editor widget for capturing and form
 
 This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users. 
 
-<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="Using Rich Text Editor Widget" caption="Using Rich Text Editor Widget"/>
 
 ## Content properties
 

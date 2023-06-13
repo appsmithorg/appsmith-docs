@@ -5,8 +5,6 @@ description: Learn how to use the Checkbox Group widget for selecting multiple i
 
 This page provides instructions on using the Checkbox Group widget to allow users to select multiple items from a predefined set of choices. 
 
-<VideoEmbed host="youtube" videoId="-7cvZ2yCgtE" title="Using the Checkbox Group Widget" caption="Using the Checkbox Group Widget"/>
-
 
 
 
