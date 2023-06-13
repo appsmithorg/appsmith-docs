@@ -23,17 +23,14 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The **Table data** property allows you to connect the Table widget to your datasource. By clicking on "**Connect data**," you can connect to your query or select a datasource. Appsmith then generates queries and binds them to the Table widget. This enables Server-side pagination, search capability, and support for editing and adding new rows.
+Allows you to connect the Table widget to your datasource. To connect your datasource to the Table widget, click on **Connect data** and select your datasource or query. 
+
+If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the searchable property. Appsmith would automatically generate a query for you, enabling features such as server-side pagination, search capability, and the ability to edit and add new rows in the table.
+
 
 :::note
 Currently, this feature is compatible with PostgreSQL and MongoDB datasources. If you have a different datasource, you can use **JS** and bind the data manually using mustache syntax `{{ }}`.
 :::
-
-<figure>
-  <img src="/img/table-new.gif" style= {{width:"750px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Connect data</i></figcaption>
-</figure>
-
 
 Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data. The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
 
@@ -136,7 +133,7 @@ Determines whether the pagination feature is displayed in the table header, allo
 
 <dd>
 
-Allows you to implement pagination by limiting the number of results fetched per API/query request. 
+Allows you to implement pagination by limiting the number of results fetched per query request. 
 
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using [Offset-based-pagination](#Offset_edition) or [Cursor-based pagination](#Cursor-based-pagination).
 
@@ -171,7 +168,7 @@ Specifies [supported actions](/reference/appsmith-framework/widget-actions) that
 
 <dd>
 
-Specify an action to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
+Specify [supported actions](/reference/appsmith-framework/widget-actions) to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
 
 </dd>
 
@@ -864,8 +861,6 @@ For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to di
 
 
 ## Server-side searching
-
-*Example:*
 
 Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
 
