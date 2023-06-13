@@ -39,7 +39,7 @@ If you want to get your app to use the whole page in your browser, you can chang
 - You can remove the Appsmith top bar from the embedded application from the App settings:
 
     a. Go to **App settings > Share & Embed** and enable the **Show navigation bar** toggle. 
-    
+
     b. Copy the updated **Embed URL** and add it to the iframe tag of your web application.
 
 ## Embed private application
@@ -48,7 +48,7 @@ If you want to get your app to use the whole page in your browser, you can chang
 Appsmith supports embedding private apps only on self-hosted [**Business Edition**](https://www.appsmith.com/pricing) instances.
 :::
 
-You can embed private Appsmith apps on your website or in an external application and authenticate users through SSO. 
+You can embed private Appsmith apps on your website or in an external application and authenticate users through SSO.
 
 ### Prerequisites
 
@@ -57,13 +57,13 @@ You can embed private Appsmith apps on your website or in an external applicatio
 
 ### SSO configurations for embedded application
 
-To configure Appsmith to use SSO, you can append the below parameters (based on your SSO type) to the URL path of the app you're embedding.
+To configure the Appsmith application with the SSO of your parent application, follow the steps below:
 
-* `ssoTrigger=oidc` for OIDC SSO.
-* `ssoTrigger=saml` for SAML 2.0 SSO.
-* `ssoTrigger=google` for Google OAuth 2.0 SSO
+1. Go to **App settings > Share & Embed** and navigate to the **SSO method**.
+2. Select the preferred SSO type from the given list.
+3. Once selected, copy the updated **Embed URL** and add it your web application.
 
-#### General notes
+### General notes
 * The feature may not work on `HTTP` URLs. Use `HTTPS` for both the Appsmith instance and the parent application.
 * Firefox has additional third-party cookie restrictions that may cause issues with private embeds.
 * Users may see issues when strict third-party cookie-sharing restrictions are enabled on the browser. 
