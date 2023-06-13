@@ -199,53 +199,6 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Connecting to Datasource',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/connecting-to-data-sources/README',
-          },
-          items: [
-            'core-concepts/connecting-to-data-sources/connecting-to-databases',
-            {
-              type: 'category',
-              label: 'REST APIs',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/connecting-to-data-sources/authentication/README',
-              },
-              items: [
-                'core-concepts/connecting-to-data-sources/authentication/connect-to-apis',
-                {
-                  type: 'category',
-                  label: 'Authentication Type',
-                  link: {
-                    type: 'doc',
-                    id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/README',
-                  },
-                  items: [
-                    'core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication',
-                    {
-                      type: 'category',
-                      label: 'OAuth 2.0',
-                      link: {
-                        type: 'doc',
-                        id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/README',
-                      },
-                      items: [
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code',
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials',
-                      ],
-                    },
-                  ],
-                },
-                'core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions',
-                'core-concepts/connecting-to-data-sources/authentication/self-signed-certificates',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Building UI',
           link: { type: 'doc', id: 'core-concepts/building-ui/README' },
           items: [
