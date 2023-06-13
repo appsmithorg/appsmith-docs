@@ -393,8 +393,25 @@ isChecked
 isDisabled
 default state
 disable
+JSON Form
 selectedValues
+Allow Currency Change
+Decimals Allowed
+Error Message
+error message
+Show Step Arrows
+Auto Focus
+onTextChanged
+countryCode
+currencyCode
+text
+value
 onTextChanged
 Box Shadow
 text
 Text
+account name
+Account Name
+Allow Currency Change
+countryCode
+dialCode

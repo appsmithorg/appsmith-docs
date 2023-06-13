@@ -74,14 +74,14 @@ On Appsmith, you can bind execution of JS Objects on page load in either of two 
 
 **Bind Response to Widget**
 
-Whenever you bind a [query](../../data-access-and-binding/querying-a-database/) or [API](../../connecting-to-data-sources/authentication/) response to a [widget](../../../reference/widgets/), Appsmith automatically sets the execution of the corresponding API or Query on page load. For example, you have a widget that refers to the data property of the JavaScript async function by adding `{{JSObject.myFun.data}}`, at that time Appsmith marks the execution of that query/API on page load. You can modify the same by navigating to **JSObject** → **Settings** → **RUN ON PAGE LOAD** → Select **No**.
+Whenever you bind a [query](../../data-access-and-binding/querying-a-database/) or [API](/reference/datasources/authenticated-api) response to a [widget](/reference/widgets/), Appsmith automatically sets the execution of the corresponding API or Query on page load. For example, you have a widget that refers to the data property of the JavaScript async function by adding `{{JSObject.myFun.data}}`, at that time Appsmith marks the execution of that query/API on page load. You can modify the same by navigating to **JSObject** → **Settings** → **RUN ON PAGE LOAD** → Select **No**.
 
  <VideoEmbed host="youtube" videoId="urnRIZ2xMJk" /> 
 
 
 Here’s a quick snapshot of how Appsmith triggers a query or API execution on page load:
 
-* Add a [table](../../../reference/widgets/table/) widget (_Table1_), and add a function in `JSObject5` that calls an API _`getUsers`_. The _`getUsers`_ API call is embedded in the _`showData`_ function and generates a user listing.
+* Add a [table](/reference/widgets/table/) widget (_Table1_), and add a function in `JSObject5` that calls an API _`getUsers`_. The _`getUsers`_ API call is embedded in the _`showData`_ function and generates a user listing.
 
 ![Call a getUsers API in the `showData` JS function](</img/Bind-Response-to-widget_(1).png>)
 
