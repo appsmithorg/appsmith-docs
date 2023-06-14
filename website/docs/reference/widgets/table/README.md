@@ -29,12 +29,12 @@ If you don't have a query, you can choose your datasource, select the desired ta
 
 
 :::note
-Currently, this feature is compatible with PostgreSQL and MongoDB datasources. If you have a different datasource, you can use **JS** and bind the data manually using mustache syntax `{{ }}`.
+Currently, this feature is compatible with PostgreSQL and MongoDB datasources. 
 :::
 
 Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data. The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
 
-*Example format:*
+*Expected data structure:*
 ```js
 [
   {
