@@ -2,7 +2,6 @@
 
 A widget for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
 
-<VideoEmbed host="youtube" videoId="KvIWaTOmZPo" title="How to use Video Widget" caption="How to use Video Widget"/>
 
 ## Properties
 
