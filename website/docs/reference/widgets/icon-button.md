@@ -1,8 +1,72 @@
 # Icon Button
 
-Icon button widget is just an icon, along with all other button properties.
+This page provides information on using the Icon button widget, which allows you to add icons to your buttons.
 
-![](/img/icon-button.gif)
+## Content properties
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+### Basic
+
+#### Icon `string`
+
+<dd>
+
+Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. You can refer to the documentation of [blueprintjs](https://blueprintjs.com/docs/#icons) to explore a wide range of available icons. 
+
+</dd>
+
+
+#### onClick
+
+<dd>
+
+Specifies the [action](/reference/appsmith-framework/widget-actions) to be performed when the user clicks on the widget. 
+</dd>
+
+### General
+
+#### Tooltip `string`
+<dd>
+
+
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to click on the Icon Button, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
 
 ## Properties
 
