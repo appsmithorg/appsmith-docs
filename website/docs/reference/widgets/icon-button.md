@@ -68,51 +68,70 @@ This property controls whether the widget is displayed with a loading animation.
 
 </dd>
 
-## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-### Widget properties
-
-These properties allow you to edit the Icon Button widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property            | Description                                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Tooltip**         | Sets a tooltip that appears when the user hovers over the widget with the mouse. Use this to provide hints or extra information to the user.                                                           |
-| **Disabled**        | Makes the widget inactive or unusable. The widget remains visible to the user but user interaction is not allowed.                                                                        |
-| **Visible**         | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.                                         |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
-
-### Binding properties
-
-These properties allow you to bind your Icon Button widget with any other widget in queries or JS objects. The following table lists all the binding properties.
-
-| Binding Property | Description                                                      |
-| ---------------- | ---------------------------------------------------------------- |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_. |
-
-### Events
-
-
-
-You can define functions are called when these events are triggered in the widget.
-
-| Event       | Description                                                                                                                                                                                                                                       |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onClick** | Sets an action to take place when the user clicks on this widget. Can be set from the GUI list of common actions ([supported actions](../appsmith-framework/widget-actions/)), or you can define a custom JavaScript function to call instead. |
-
-### Styles
-
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Style Property     | Description                                                                                                                                                                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Icon**           | Sets an icon to be included on the button.                                                                                                                                                                                     |
-| **Button Color**   | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                                                             |
-| **Button Variant** | Sets the button style type to represent its significance - Primary, Secondary, or Tertiary. You can use JavaScript to set this field by writing code that evaluates to the _string_ "PRIMARY," "SECONDARY," or "TERTIARY." |
-| **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.                                               |
-| **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.                                                  |
+### General
 
-:::info
-Currently Appsmith uses the icons from [Blueprint](https://blueprintjs.com) library. You can see the list of icons [here](https://blueprintjs.com/docs/#icons).
-:::
+#### Button variant `string`
+
+<dd>
+Specifies the style type of the button to indicate its significance.
+
+*Options*:
+* Primary
+* Secondary
+* Tertiary
+
+This property can be dynamically set using JavaScript by providing a string value of `PRIMARY`, `SECONDARY`, or `TERTIARY`.
+
+</dd>
+
+### Color 
+
+#### Button color `string`
+
+<dd>
+
+Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+Adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+## Reference properties
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `IconButton1.isVisible`.
+
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+```js
+{{IconButton1.isVisible}}
+```
+
+</dd>
