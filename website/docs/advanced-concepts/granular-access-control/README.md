@@ -48,6 +48,22 @@ A group is a collection of users that allows you to assign roles to multiple use
 When you share an application or workspace, you can invite a group and assign the desired role to it. This makes it easy to grant permissions to multiple users at once, and you can modify the group's roles to update the permissions for all its members simultaneously.
 
 
+## Programmatic access control
+
+You can utilize roles and groups assigned to a user to programmatically manage access to various entities such as widgets, datasources, APIs, and queries. 
+
+To enable Programmatic access control, follow the steps below - 
+
+1. On the homepage, go to **Admin Settings > General**.
+2. Under the **Programmatic Access Control** section, select the **Access roles and user groups in code for conditional business logic** checkbox. 
+
+<figure>
+  <img src="/img/Enable_programmatic-access-control.png" style= {{width:"700px", height:"auto"}} alt="Programmatic Access Control"/>
+  <figcaption align = "center"><i>Enable Programmatic access control</i></figcaption>
+</figure>
+
+3. To manage access control programmatically, use the relevant properties of the Appsmith user object `appsmith.user.roles` or  `appsmith.user.groups` in JavaScript code to obtain an array of roles or groups assigned to the logged-in user. For more information, refer to the [roles](/reference/appsmith-framework/context-object#roles) and [groups](/reference/appsmith-framework/context-object#groups) properties of the Appsmith user object.
+
 ## Further reading
 
 [Roles](/advanced-concepts/granular-access-control/roles)
