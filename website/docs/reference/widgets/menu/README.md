@@ -50,7 +50,7 @@ Displays a list of available menu items. You can rearrange the items and configu
 
 <dd>
 
-It is used to provide the data source for dynamic menus. It accepts an array of values, which can be obtained from queries. You can directly reference your query in the **Source Data** property, like: 
+It is used to provide the datasource for dynamic menus. It accepts an array of values, which can be obtained from queries. You can directly reference your query in the **Source Data** property, like: 
 
 ```js
 {{fetchData.data}}
