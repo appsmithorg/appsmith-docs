@@ -34,6 +34,18 @@ const sidebars = {
             'getting-started/tutorials/start-building',
             {
               type: 'category',
+              label: 'Customer Support Tool',
+              link: {
+                type: 'doc',
+                id: 'getting-started/tutorials/customer-support-tool/README',
+              },
+              items: [
+                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
+                'getting-started/tutorials/customer-support-tool/view-and-edit-ticket-details'
+              ],
+            },
+            {
+              type: 'category',
               label: 'Review Moderator Dashboard',
               link: {
                 type: 'doc',
