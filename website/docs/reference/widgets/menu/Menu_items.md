@@ -116,6 +116,7 @@ The currentItem property refers to the currently selected item on the menu butto
 </figure>
 
 *Example:*
+
 If you want to dynamically display the label based on the selected item's name, you can use `{{currentItem.Name}}`, where `Name` represents the attribute that stores the name of the menu item. This enables you to show different text for each menu item based on its associated data.
 
 
