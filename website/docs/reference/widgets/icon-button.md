@@ -1,6 +1,11 @@
 # Icon Button
 
-This page provides information on using the Icon button widget, which allows you to add icons to your buttons.
+This page provides information on using the Icon button widget, which is useful when you need a compact button.
+
+<figure>
+  <img src="/img/icon-img.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Display Icon Button</i></figcaption>
+</figure>
 
 ## Content properties
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
@@ -11,7 +16,8 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. You can refer to the documentation of [blueprintjs](https://blueprintjs.com/docs/#icons) to explore a wide range of available icons. 
+Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. Appsmith utilizes the icons from the [Blueprintjs](https://blueprintjs.com/docs/#icons) library.
+
 
 </dd>
 
@@ -80,9 +86,9 @@ Style properties allow you to change the look and feel of the widget.
 Specifies the style type of the button to indicate its significance.
 
 *Options*:
-* Primary
-* Secondary
-* Tertiary
+* **Primary**: Fills the button with color.
+* **Secondary**: Adds a colored border to the button while keeping the button itself white.
+* **Tertiary**: This option does not apply any specific styling changes to the button.
 
 This property can be dynamically set using JavaScript by providing a string value of `PRIMARY`, `SECONDARY`, or `TERTIARY`.
 
