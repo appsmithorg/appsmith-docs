@@ -2,6 +2,7 @@
 
 This page provides information on using the Phone Input, which allows you to capture phone numbers as input from users.
 
+
 <VideoEmbed host="youtube" videoId="DuyMuOZm83g" title="Using the Phone Input Widget" caption="Using the Phone Input Widget"/>
 
 ## Content properties
