@@ -100,18 +100,8 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://community.appsmith.com/',
-            label: 'Forum',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/appsmithorg/appsmith',
-            label: 'GitHub',
-            position: 'right'
-          },
-          {
             href: 'https://app.appsmith.com',
-            label: 'Get Appsmith',
+            label: 'Try Appsmith',
             position: 'right'
           }, 
           
