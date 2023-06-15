@@ -1,7 +1,8 @@
 ---
 sidebar_position: 3
 description: Guide on how to embed Appsmith apps into an existing application
-
+toc_min_heading_level: 2
+toc_max_heading_level: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,18 +12,15 @@ import TabItem from '@theme/TabItem';
 
 To embed an Appsmith application into your website, follow the steps below:
 
-:::info
-In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
-:::
 
 <Tabs queryString="public-app">
 <TabItem label="Public application" value="public-application">
 
-## Prerequisites
+### Prerequisites
 
 To embed Appsmith in your web page or web application, ensure that the hosting of the said web page or application is done on a server.
 
-## Get embed URL
+### Get embed URL
 
 1. Open your Appsmith application and click **App Settings > Share & Embed**.
 2. Copy the **Embed URL**.
@@ -41,6 +39,10 @@ To embed Appsmith in your web page or web application, ensure that the hosting o
 </body>
 </html>
 ```
+:::info
+In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
+:::
+
 </TabItem>
 <TabItem label="Private application" value="private-application">
 
@@ -48,12 +50,12 @@ To embed Appsmith in your web page or web application, ensure that the hosting o
 Embedding private applications is only available in Appsmith's [Business Edition](https://www.appsmith.com/pricing).
 :::
 
-## Prerequisites
+### Prerequisites
 
 * The Appsmith app and the parent app should be under sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
 * You must configure the same SSO identity provider(IDP) on the Appsmith and the parent applications.
 
-## Get embed URL
+### Get embed URL
 
 1. Open your Appsmith application and click **App Settings > Share & Embed**.
 2. To configure the Appsmith application with the SSO of your parent application, select the preferred SSO type from the **SSO method** list.
@@ -73,8 +75,12 @@ Embedding private applications is only available in Appsmith's [Business Edition
 </body>
 </html>
 ```
+:::info
+In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
+:::
 
-## Important notes
+
+### Important notes
 * The feature may not work on `HTTP` URLs. Use `HTTPS` for both the Appsmith instance and the parent application.
 * Firefox has additional third-party cookie restrictions that may cause issues with private embeds.
 * Users may see issues when strict third-party cookie-sharing restrictions are enabled on the browser. 
