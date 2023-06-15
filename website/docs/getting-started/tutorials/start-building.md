@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 id: start-building
-slug: /getting-started/start-building
+slug: /getting-started/tutorials/start-building
 description:  Learn the basics of building an app on Appsmith.
 ---
-# Build Your First App
+# Database GUI
 
 :::info
 ⭐ **Level** - Beginner <br/>
@@ -208,4 +208,4 @@ Happy App Building.
 
 ## Next steps
 
-[**Tutorials**](/learning-and-resources/tutorials/)<br />
+[**Tutorials**](/getting-started/tutorials/)<br />

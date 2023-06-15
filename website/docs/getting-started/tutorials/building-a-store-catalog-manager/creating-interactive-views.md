@@ -195,7 +195,7 @@ To bind multiple actions to a button event, you would have to write some JavaScr
 }}
 ```
 
-This is similar to what you learned in [part 2](/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action `onSuccess` of **onClick** - but here, you're configuring _two_ actions. The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the `onSuccess` case of **onClick**:
+This is similar to what you learned in [part 2](/getting-started/tutorials/building-a-store-catalog-manager/using-forms) about using JavaScript to define widget behavior. In Part 2, you wrote JavaScript to trigger one action `onSuccess` of **onClick** - but here, you're configuring _two_ actions. The first argument to the `run()` method is an anonymous JavaScript function that triggers two actions in the `onSuccess` case of **onClick**:
 
 1. Execute the **ProductQuery.**
 2. Close the modal.
