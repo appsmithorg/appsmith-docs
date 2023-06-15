@@ -33,17 +33,15 @@ Allows you to specify the source of the menu items.
 * **Dynamic**: With Dynamic source, the menu items are populated dynamically by binding the query to **Source data**. To configure the properties of the menu items, click on the **Configure Menu Item** button. The menu items would not be displayed until you configure them using the `currentItem` or `currentIndex` property. 
 
 :::note
-Dynamic menu items supports a maximum of 10 menu items. 
+The dynamic menu option supports a maximum of 10 menu items. 
 :::
-
-See the [Menu Items](/reference/widgets/menu/Menu_items) reference guide for information on configuring menu items.
 
 </dd>
 
 #### Menu items `string`
 
 <dd>
-Displays a list of available menu items. You can rearrange the items and configure them by clicking on the ⚙️ gear icon.
+Displays a list of available menu items. You can rearrange the items and configure them by clicking on the ⚙️ gear icon. See the [Menu Items](/reference/widgets/menu/Menu_items) reference guide for configuring menu items.
 </dd>
 
 #### Source data `array`
@@ -80,7 +78,7 @@ The code filters the data to create a new array with unique items based on the `
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+Controls the visibility of the widget. If you turn off this property, the widget will not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
