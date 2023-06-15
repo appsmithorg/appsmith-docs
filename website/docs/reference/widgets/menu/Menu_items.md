@@ -56,7 +56,7 @@ Style properties allow you to change the look and feel of the widget.
 
 <dd>
 
-Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. You can refer to the documentation of [blueprintjs](https://blueprintjs.com/docs/#icons) to explore a wide range of available icons.
+Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. Appsmith utilizes the icons from the [Blueprintjs](https://blueprintjs.com/docs/#icons) library.
 
 </dd>
 
@@ -107,7 +107,7 @@ Reference properties are specific to the menu configuration pane and are not ava
 
 <dd>
 
-The currentItem property refers to the currently selected item on the menu button. It allows you to access and read the attributes of the selected menu item. 
+The `currentItem` property refers to the currently selected item on the menu button. It allows you to access and read the attributes of the selected menu item. 
 
 
 <figure>
@@ -127,7 +127,8 @@ If you want to dynamically display the label based on the selected item's name, 
 #### currentIndex `number`
 
 <dd>
-The currentIndex property is useful when you want to display a numbered list of menu items or apply alternate background colors to the menu items. You can use the currentIndex value to determine the index position of the currently selected menu item or to perform conditional styling based on the index value.
+
+The `currentIndex` property is useful when you want to display a numbered list of menu items or apply alternate background colors to the menu items. You can use the `currentIndex` value to determine the index position of the currently selected menu item or to perform conditional styling based on the index value.
 
 <figure>
   <img src="/img/MenuButton-dynamic-Menu-Label-NumberedList-CurrentIndex.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
@@ -137,7 +138,7 @@ The currentIndex property is useful when you want to display a numbered list of 
 
 *Example:*
 
-To change the color based on the index, for example, using a different color for even numbers, you can use
+To change the color based on the index, using a different color for even numbers, you can use following code in **Background color** property:
 
 ```js
 {{currentIndex % 2 === 0 ? "#22c55e" : "#facc15"}}
