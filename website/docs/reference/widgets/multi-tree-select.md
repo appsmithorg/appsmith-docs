@@ -2,7 +2,6 @@
 
 The multi-tree-select widget captures the user input from a specified list of permitted options, and these options can have child options within them. It captures multiple choices.
 
-<VideoEmbed host="youtube" videoId="XaaFY0grXjE" title="How to use Multi-tree-select Widget" caption="How to use Multi-tree-select Widget"/>
 
 ### Displaying Data
 

@@ -3,9 +3,6 @@
 
 This page explains how to use the Modal widget to create a dialog in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more. It acts as a container used to group and handle related user inputs , and can be opened using actions such as setting a Button widget's onClick event. 
 
-<VideoEmbed host="youtube" videoId="s8cHVkhj3ec" title="Using the Modal widget" caption="Using the Modal widget"/>
-
-
 
 
 ## Update data with Modal

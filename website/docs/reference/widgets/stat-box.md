@@ -2,7 +2,6 @@
 
 A Stat Box widget shows and highlights essential statistics related to the application. The widget comes pre-built with a default layout which can change as per application requirements
 
-<VideoEmbed host="youtube" videoId="fcWH9Qpa-DQ" title="How to use Stat Box Widget" caption="How to use Stat Box Widget"/>
 
 ### Stats Box widget
 

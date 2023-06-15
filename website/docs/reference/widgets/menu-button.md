@@ -2,7 +2,6 @@
 
 The Menu Button widget is a customizable dropdown menu that allows you to add a list of options for users to select from. It's a powerful tool for creating navigation menus, dropdown lists, and options for users to choose from.
 
-<VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Menu Button Widget" caption="How to use Menu Button Widget"/>
 
 ## Usage
 

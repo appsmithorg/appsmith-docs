@@ -163,6 +163,59 @@ This object contains the data of the currently authenticated user.
 }
 ```
 
+#### roles
+
+:::info
+This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
+:::
+
+This object contains an array of strings of the roles assigned to the currently authenticated user.
+
+```javascript
+
+[
+  "Instance Administrator Role",
+  "Default Role For All Users",
+  "Administrator",
+  "Custom Role-1",
+  "Custom Role-2"
+]
+
+```
+You can use `appsmith.user.roles` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
+
+*Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
+
+```javascript
+{{appsmith.user.roles.includes("backend engineers")}}
+```
+In the above example, the visibility of the button is determined by a role. Only users who have been assigned the "backend engineer" role can see this button.
+
+#### groups
+
+:::info
+This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
+:::
+
+This object contains an array of strings of the groups assigned to the currently authenticated user.
+
+```javascript
+[
+  "Administrators",
+  "Managers",
+  "End Users" 
+]
+
+```
+You can use `appsmith.user.groups` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
+
+*Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
+
+```javascript
+{{appsmith.user.groups.includes("managers")}}
+```
+In the above example, the visibility of the button is determined by a group. Only users who have been added to the "managers" group can see this button.
+
 ### Geolocation
 
 This object contains functions to request the current user location and the coordinates received from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation\_API .

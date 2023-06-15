@@ -2,7 +2,6 @@
 
 Icon button widget is just an icon, along with all other button properties.
 
-![](/img/icon-button.gif)
 
 ## Properties
 
