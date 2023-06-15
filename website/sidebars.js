@@ -378,7 +378,7 @@ const sidebars = {
               label: 'Menu Button',
               link: { type: 'doc', id: 'reference/widgets/menu/README' },
               items: [
-                'reference/widgets/menu/Menu_items'
+                'reference/widgets/menu/menu-items'
               ],
             },
             'reference/widgets/modal',

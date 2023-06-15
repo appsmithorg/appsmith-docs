@@ -41,7 +41,7 @@ The dynamic menu option supports a maximum of 10 menu items.
 #### Menu items `string`
 
 <dd>
-Displays a list of available menu items. You can rearrange the items and configure them by clicking on the ⚙️ gear icon. See the [Menu Items](/reference/widgets/menu/Menu_items) reference guide for configuring menu items.
+Displays a list of available menu items. You can rearrange the items and configure them by clicking on the ⚙️ gear icon. See the <a href="/reference/widgets/menu/menu-items">Menu Items</a> reference guide for configuring menu items.
 </dd>
 
 #### Source data `array`
@@ -78,7 +78,7 @@ The code filters the data to create a new array with unique items based on the `
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget will not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
+Controls the visibility of the widget. If you turn off this property, the widget is not visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
