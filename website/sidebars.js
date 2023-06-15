@@ -373,7 +373,14 @@ const sidebars = {
             'reference/widgets/list',
             'reference/widgets/maps',
             'reference/widgets/map-chart',
-            'reference/widgets/menu-button',
+            {
+              type: 'category',
+              label: 'Menu Button',
+              link: { type: 'doc', id: 'reference/widgets/menu/README' },
+              items: [
+                'reference/widgets/menu/Menu_items'
+              ],
+            },
             'reference/widgets/modal',
             'reference/widgets/multiselect',
             'reference/widgets/multi-tree-select',

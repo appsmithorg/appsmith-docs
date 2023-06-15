@@ -2,6 +2,11 @@
 
 This page provides information on using the Menu Button, which allows you to create customizable dropdown menus with a range of options for user selection.
 
+<figure>
+  <img src="/img/menu-btn.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Display Menu Button</i></figcaption>
+</figure>
+
 
 ## Content properties
 
@@ -24,10 +29,49 @@ Sets the text on the widget.
 Allows you to specify the source of the menu items.
 
 *Options:*
-* **Static**: When the Static option is selected, the **Menu Items** property would be visible, allowing you to add and manage the menu items directly from UI.
-* **Dynamic**:
+* **Static**: When the Static option is selected, the **Menu Items** property would be visible, allowing you to add and manage the menu items directly from UI. You can click on the ⚙️ gear icon to access the configuration options. 
+* **Dynamic**: With Dynamic source, the menu items are populated dynamically by binding the query to **Source data**. To configure the properties of the menu items, click on the **Configure Menu Item** button. The menu items would not be displayed until you configure them using the `currentItem` or `currentIndex` property. 
+
+:::note
+Dynamic menu items supports a maximum of 10 menu items. 
+:::
+
+Learn how to configure [menu items](/reference/widgets/menu/Menu_items).
 
 </dd>
+
+#### Menu items `string`
+
+<dd>
+Displays a list of available menu items. You can rearrange the items and configure them by clicking on the ⚙️ gear icon.
+</dd>
+
+#### Source data `array`
+
+<dd>
+It is used to provide the data source for dynamic menus. It accepts an array of values, which can be obtained from queries. You can directly reference your query in the **Source Data** property, like: 
+
+```js
+{{fetchData.data}}
+```
+
+If the data retrieved from the query is not in the desired format, you can use JavaScript to **transform** it before passing it to the widget. For instance, if you have a list of product names and you want to display only the unique names in a Menu Button, you can use:
+
+
+```js
+{{ fetchData.data.reduce((acc, cur) => {
+const existingItem = acc.find(item => item.value === cur.name);
+if (!existingItem) {
+acc.push({ label: cur.name, value: cur.name });
+}
+return acc;
+}, []) }}
+```
+
+The code filters the data to create a new array with unique items based on the `type` property.
+
+</dd>
+
 
 ### General
 
@@ -86,11 +130,12 @@ Style properties allow you to change the look and feel of the widget.
 Specifies the style type of the button to indicate its significance.
 
 *Options:*
-* Primary
-* Secondary
-* Tertiary
 
-This property can be dynamically set using JavaScript by providing a string value of PRIMARY, SECONDARY, or TERTIARY.
+* **Primary**: Fills the button with color.
+* **Secondary**: Adds a colored border to the button while keeping the button itself white.
+* **Tertiary**: This option does not apply any specific styling changes to the button.
+
+This property can be dynamically set using JavaScript by providing a string value of `PRIMARY`, `SECONDARY`, or `TERTIARY`.
 </dd>
 
 ### Icon
@@ -188,48 +233,3 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 </dd>
 
-## Configure menu items
-
-These properties provide options to customize the formatting of menu items. For **Static** menu items, you can click on the ⚙️ gear icon to access the configuration options. For **Dynamic** menu items, you can click on the **Configure Menu Item** button to configure the properties.
-
-
-### Basic
-
-#### Label `string`
-
-<dd>
-
-The Label property is used to set the text label for a menu item. It can be a static text value or dynamically bound to a data source. For instance, you can set the label to be the name of a page or a user.
-
-*Example:*
-
-</dd>
-
-#### onClick
-
-<dd>
-
-Allows you to configure one or multiple [actions](/reference/appsmith-framework/widget-actions) to be executed when the menu item is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
-
-
-</dd>
-
-#### Visible `boolean`
-
-<dd>
-
-Allows you to show or hide the menu item based on specific conditions. 
-
-*Example:*
-
-</dd>
-
-#### Disabled `boolean`
-
-<dd>
-
-Allows you to disable input for a menu item. This can be beneficial when you want to restrict user interaction with the menu item in specific situations.
-
-*Example:*
-
-</dd>
