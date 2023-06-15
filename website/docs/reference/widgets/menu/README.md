@@ -36,7 +36,7 @@ Allows you to specify the source of the menu items.
 Dynamic menu items supports a maximum of 10 menu items. 
 :::
 
-Learn how to configure [menu items](/reference/widgets/menu/Menu_items).
+See the [Menu Items](/reference/widgets/menu/Menu_items) reference guide for information on configuring menu items.
 
 </dd>
 
