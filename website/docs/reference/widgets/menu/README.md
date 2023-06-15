@@ -49,6 +49,7 @@ Displays a list of available menu items. You can rearrange the items and configu
 #### Source data `array`
 
 <dd>
+
 It is used to provide the data source for dynamic menus. It accepts an array of values, which can be obtained from queries. You can directly reference your query in the **Source Data** property, like: 
 
 ```js
