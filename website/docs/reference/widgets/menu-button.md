@@ -2,7 +2,6 @@
 
 This page provides information on using the Menu Button, which allows you to create customizable dropdown menus with a range of options for user selection.
 
-<VideoEmbed host="youtube" videoId="tDMAOxZTmxY" title="How to use Menu Button Widget" caption="How to use Menu Button Widget"/>
 
 ## Content properties
 

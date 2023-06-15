@@ -2,8 +2,10 @@
 
 This page provides information on using the Icon button widget, which allows you to add icons to your buttons.
 
+
 ## Content properties
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
 
 ### Basic
 
