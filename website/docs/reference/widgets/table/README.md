@@ -160,7 +160,7 @@ For instance, you can create a Count query to retrieve the total number of recor
 
 <dd>
 
-Specifies [supported actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user navigates to a different page of the table, either by clicking on the pagination buttons.
+Sets the [actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user navigates to a different page of the table, either by clicking on the pagination buttons.
 
 </dd>
 
@@ -168,7 +168,7 @@ Specifies [supported actions](/reference/appsmith-framework/widget-actions) that
 
 <dd>
 
-Specify [supported actions](/reference/appsmith-framework/widget-actions) to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
+Sets the [actions](/reference/appsmith-framework/widget-actions) to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
 
 </dd>
 
