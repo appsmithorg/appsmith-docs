@@ -58,13 +58,17 @@ If the data retrieved from the query is not in the desired format, you can use J
 
 
 ```js
-{{ fetchData.data.reduce((acc, cur) => {
-const existingItem = acc.find(item => item.value === cur.name);
-if (!existingItem) {
-acc.push({ label: cur.name, value: cur.name });
+{
+    {
+        fetchData.data.reduce((acc, cur) => {
+            const existingItem = acc.find((item) => item.value === cur.name);
+            if (!existingItem) {
+                acc.push({ label: cur.name, value: cur.name });
+            }
+            return acc;
+        }, []);
+    }
 }
-return acc;
-}, []) }}
 ```
 
 The code filters the data to create a new array with unique items based on the `type` property.
