@@ -145,5 +145,5 @@ You can check the [Query Settings Guide ](/data/datasource-reference/query-setti
 Once you have successfully run a Query, you can use it in your app to:
 
 * [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data)
 * [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)

@@ -153,7 +153,7 @@ You can use an image widget to display images listed in the table widget. You ca
 Now, your image is downloaded when you click on the image widget.
 
 :::info
-You can check this [Guide](how-to-upload-to-s3.md)to learn more about Upload/Download Files from S3.
+You can check this [Guide](/data/how-to-guides/how-to-upload-to-s3)to learn more about Upload/Download Files from S3.
 :::
 
 With Appsmith S3 integration, it is possible to create apps that seamlessly connect with the S3 database and provide additional flexibility for updating and analyzing data.
@@ -163,5 +163,5 @@ With Appsmith S3 integration, it is possible to create apps that seamlessly conn
 Once you have successfully run a Query, you can use it in your application to:
 
 * [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data)
 * [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)
