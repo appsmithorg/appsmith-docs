@@ -127,7 +127,7 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
     | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
     | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
     | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
-    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
+    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/><br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
 10. Click the **Networking** tab.
     - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
@@ -137,7 +137,7 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
 
 12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
 
-13. Click the **Logs** tab to verify everything works fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
+13. Click the **Logs** tab to verify everything works fine. Click the open icon to the right of the screen to open the **Logs Explorer**. Wait a few minutes until you see the message `Appsmith is running` in the logs. 
 
 14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
 
