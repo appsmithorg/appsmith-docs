@@ -267,11 +267,11 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
     </div>
    <div class="columnGrid column-two" align="center">
       <div class="containerCol">
-            <a href="/reference/widgets/menu-button">
+            <a href="/reference/widgets/menu">
             <img class="containerImage" src="/img/menu-btn.svg" alt="Menu"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/menu-button">Menu Button</a></b>
+            <b><a href="/reference/widgets/menu">Menu Button</a></b>
    </div>
 
    <div class="columnGrid column-three" align="center">

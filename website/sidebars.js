@@ -373,7 +373,14 @@ const sidebars = {
             'reference/widgets/list',
             'reference/widgets/maps',
             'reference/widgets/map-chart',
-            'reference/widgets/menu-button',
+            {
+              type: 'category',
+              label: 'Menu Button',
+              link: { type: 'doc', id: 'reference/widgets/menu/README' },
+              items: [
+                'reference/widgets/menu/menu-items'
+              ],
+            },
             'reference/widgets/modal',
             'reference/widgets/multiselect',
             'reference/widgets/multi-tree-select',
@@ -420,6 +427,7 @@ const sidebars = {
             'reference/datasources/querying-amazon-s3',
             'reference/datasources/querying-arango-db',
             'reference/datasources/authenticated-api',
+            'reference/datasources/rest-api',
             'reference/datasources/querying-dynamodb',
             'reference/datasources/querying-elasticsearch',
             'reference/datasources/querying-firestore',
@@ -592,7 +600,9 @@ const sidebars = {
             'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
-            'learning-and-resources/how-to-guides/how-to-pass-params-to-an-api'
+            'learning-and-resources/how-to-guides/how-to-pass-params-to-an-api',
+            'learning-and-resources/how-to-guides/how-to-integrate-zoho',
+            'learning-and-resources/how-to-guides/how-to-integrate-dropbox'
           ],
         },
         'learning-and-resources/sample-apps',

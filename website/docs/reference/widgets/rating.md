@@ -1,10 +1,6 @@
 # Rating
 
-The Rating widget is used to perform a quick rating operation on something.
-
-<VideoEmbed host="youtube" videoId="ssm7TYCQtfo" title="How to use Rating Widget" caption="How to use Rating Widget"/>
-
-Use the Rate component to rate any sort of information from the connected data source. It's customizable and features rich.
+The Rating widget is used to perform a quick rating operation on something. Use the Rate component to rate any sort of information from the connected data source. It's customizable and features rich.
 
 ## Properties
 

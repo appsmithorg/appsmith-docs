@@ -5,7 +5,6 @@ description: Learn how to use the Rich Text Editor widget for capturing and form
 
 This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users. 
 
-<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="Using Rich Text Editor Widget" caption="Using Rich Text Editor Widget"/>
 
 ## Content properties
 
@@ -97,15 +96,17 @@ This property allows you to configure the label's placement.
 
 <dd>
 
-To enable the **Alignment** property, select *Left* from the **Position** property. This allows you to align the text to the left boundary or adjust it closer to the widget using the *Right* alignment option.
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
 
 </dd>
 
-#### Position `number`
+#### Width `number`
 
 <dd>
 
-To enable the **Position** property, select *Left* from the **Position** property. This allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
 
 </dd>
 
@@ -132,11 +133,17 @@ Enables you to add hints or provide additional information to guide the user reg
 </dd>
 
 
+
 #### Visible `boolean`
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in *View Mode*. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. 
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
 
 </dd>
 
@@ -146,7 +153,13 @@ Controls the visibility of the widget. If you turn off this property, the widget
 
 Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
 
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
 </dd>
+
 
 
 #### Animate Loading `boolean`
