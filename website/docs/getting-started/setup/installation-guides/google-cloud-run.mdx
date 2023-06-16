@@ -14,7 +14,7 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 1. In the [Google Cloud console](https://console.cloud.google.com/projectselector2/home/dashboard
 ), select or create a Google Cloud project. For more information about creating projects, see [Create Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
-2. Ensure that billing is enabled for your Google Cloud project.
+2. Ensure that you have enabled billing for your Google Cloud project.
 3. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
 4. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
 5. If you want scalable, secure, and highly available services, enable the [Memorystore for Redis](https://console.cloud.google.com/apis/dashboard) API.
@@ -34,7 +34,7 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 3. Click **Create**.
 
-4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the Filestore instance in Cloud Run container.  
+4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the Filestore instance in the Cloud Run container.  
 
 <figure>
         <img src="/img/file-share-name-and-ip-address.png" style= {{width:"100%", height:"auto"}} alt="File share name and IP address of the filestore instance"/>
@@ -59,7 +59,7 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 ## Create a Redis Instance
 
-This guide is optional and you can skip to [Deploy Appsmith on Cloud Run](#deploy-appsmith-on-cloud-run). Follow the steps below if you want scalable, secure, and highly available services. Ensure that you have enabled the **Memorystore for Redis** API as mentioned in step 5 of the [Before you begin](#before-you-begin) section.
+This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#deploy-appsmith-on-cloud-run). Follow the steps below if you want scalable, secure, and highly available services. Ensure you have enabled the **Memorystore for Redis** API as mentioned in step 5 of the [Before you begin](#before-you-begin) section.
 
 1. Go to the [Memorystore for Redis](https://console.cloud.google.com/memorystore/redis/instances) page in the Google Cloud console.
 
@@ -97,8 +97,8 @@ This guide is optional and you can skip to [Deploy Appsmith on Cloud Run](#deplo
 
 3. In the form, select **Deploy one revision from an existing container image**.
     - In the **Container image URL**, enter:
-       - For Community edition - `docker.io/appsmith/appsmith-ce`.
-       - For Enterprise edition - `docker.io/appsmith/appsmith-ee`.
+       - For *Community Editio* - `docker.io/appsmith/appsmith-ce`.
+       - For *Enterprise Edition* - `docker.io/appsmith/appsmith-ee`.
 
 4. Enter a desired name in the **Service name** field.
 
@@ -125,8 +125,8 @@ This guide is optional and you can skip to [Deploy Appsmith on Cloud Run](#deplo
     | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
     | **FILE_SHARE_NAME** | The file share name you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
     | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
-    | **APPSMITH_ENCRYPTION_SALT** | Specify a encryption salt to encrypt values in database.|
-    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify a encryption password to encrypt values in database.|
+    | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
+    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
     | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
 10. Click the **Networking** tab.
@@ -137,7 +137,7 @@ This guide is optional and you can skip to [Deploy Appsmith on Cloud Run](#deplo
 
 12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
 
-13. Click the **Logs** tab to verify everything is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
+13. Click the **Logs** tab to verify everything works fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
 
 14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
 
@@ -147,8 +147,8 @@ This guide is optional and you can skip to [Deploy Appsmith on Cloud Run](#deplo
 </figure>
 
 15. If you are on the 
-    - **Community Edition**:  Enter the details on the signup form to create an Appsmith account.
-    - **Business Edition**:
+    - *Community Edition*:  Enter the details on the signup form to create an Appsmith account.
+    - *Business Edition*:
         * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
         * Enter your license key to activate the instance.
 
