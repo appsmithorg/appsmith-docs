@@ -17,59 +17,47 @@ For this, you can use the [`run()` function's](/reference/appsmith-framework/que
 
 ---
 
-Imagine you need to fetch specific users from a database based on their `id` value. Below, you'll see how to configure a query and a helper function to take an array of ids and run the query for each of them. This guide uses the Appsmith mock `users` database.
+As an example, the snippets below fetch specific users from the mock **users** database based on their `id` value. Below, you'll see how to configure a query and a helper function to take an array of ids and run the query  in a loop for each of them.
 
-1. On the canvas, create a [Table widget](/reference/widgets/table) and a [Button widget](/reference/widgets/button).
-1. Create a query called `GetUserById`. Add the following SQL statement to the query:
-
-    ```sql
-    SELECT * FROM users WHERE id = {{ this.params.id }};
-    ```
-    * This statement expects a parameter to be passed in from the `run()` function to use as the `id` value.
-
-1. Create a JS Object and name it `utils`. This is where you write your helper function that calls the query and handles its responses.
-1. Create a function using one of the following code snippets:
+1. To begin, you should have a query to which you'd like to pass contextual parameters.
+1. Create a JS Object. This is where you write your helper function that calls the query and handles its responses.
+1. Create a function that calls your query's []`run()` function](/reference/appsmith-framework/query-object) in a loop, using the `run()` function's first argument to pass your parameter. On completion, the results of the queries are `map`ped into an array and stored in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value).
 
     ```javascript
     // Using promise syntax
     getByIds: async (ids) => {
         const queries = ids.map(id => {
+
+            // highlight-start
+            // each iteration of the loop will pass the next `id` from the `ids` array.
             return GetUserById.run({"id": id})
+            // highlight-end
         })
         
         Promise.allSettled(queries)
             .then(queryResponses => queryResponses.map(res => res.value[0]))
+
+            // highlight-start
+            // once the queries have settled, they results are stored in an array in the Appsmith store.
             .then(records => storeValue("records", records))
+            // highlight-end
     }
     ```
 
-    ```javascript
-    // Using async/await syntax
-    getByIds: async (ids) => {
-        const queries = ids.map(id => {
-            return GetUserById.run({"id": id})
-        })
-        
-        const responses = await Promise.allSettled(queries)
-        const records = await responses.map(promise => promise.value[0])
-        await storeValue("records", records)
-    }
+1. In the query where you want to pass parameters, reference the params with `{{this.params.KEY}}` like below:
+
+    ```sql
+    SELECT * FROM users WHERE id = {{ this.params.id }};
     ```
 
-    * The code snippets above run the query once for each `id` in its `ids` array, wait for the database's response, and store the resulting table records in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value) for you to access later.
-
-1. In the **Table Data** property of your Table widget, bind your response data from the Appsmith store:
+1. To execute the query loop, configure a trigger or widget action that calls your helper function in the JS Object:
 
     ```javascript
-    // Table Data property of the Table widget
+    {{ JSObject.getByIds([1, 4, 8, 34, 16]) }}
+    ```
+
+1. Wherever you want to use the results of the queries, you can reference the array containing those results from the Appsmith store like below:
+
+    ```javascript
     {{ appsmith.store.records }}
     ```
-
-1. To execute the query, set your Button widget's **onClick** property to execute your helper function:
-
-    ```javascript
-    // Button widget's onClick
-    {{ utils.getByIds([1, 4, 8, 34, 16])}}
-    ```
-
-When you click the button, your helper function runs and queries the database for each of your desired users.
