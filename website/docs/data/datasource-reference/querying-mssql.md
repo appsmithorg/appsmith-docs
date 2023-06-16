@@ -28,7 +28,7 @@ If you are a self-hosted user, you may need to whitelist the IP address of the A
 </figure>
 
 :::tip
-If you want to connect to a local database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like ngrok to expose it. For more information, see [How to connect to local database on Appsmith](/data/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
@@ -56,12 +56,12 @@ To connect to your database, Appsmith needs the following parameters. All requir
   <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
 </figure>
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to the MS SQL database by selecting the **+ New Query**  button on the MS SQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MS SQL database. You'll be brought to a new query screen where you can write SQL queries.
+You can write [queries](https://docs.appsmith.com/data/datasource-reference/query-settings) to fetch or write data to the MS SQL database by selecting the **+ New Query**  button on the MS SQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MS SQL database. You'll be brought to a new query screen where you can write SQL queries.
 
 You can query MsSQL databases using [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15). All MS SQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
 :::info
-Prepared statements are turned on by default to improve the security of the queries in your app. Read more about prepared statements [here](/learning-and-resources/how-to-guides/how-to-use-prepared-statements).
+Prepared statements are turned on by default to improve the security of the queries in your app. Read more about prepared statements [here](/data/concepts/how-to-use-prepared-statements).
 :::
 
 ## Select

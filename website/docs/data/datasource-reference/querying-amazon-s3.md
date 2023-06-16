@@ -29,7 +29,7 @@ To add an Amazon S3 datasource:
 
 ## Create queries
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to your object storage by selecting the **+ New Query**  button on the Amazon S3 datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Amazon S3 datasource. You'll be brought to a new query screen where you can write queries.
+You can write [queries](https://docs.appsmith.com/data/datasource-reference/query-settings) to fetch or write data to your object storage by selecting the **+ New Query**  button on the Amazon S3 datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Amazon S3 datasource. You'll be brought to a new query screen where you can write queries.
 
 <figure>
   <img src="/img/s3-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Files query." />
@@ -246,6 +246,6 @@ Now when you click the delete button in the table, the corresponding file is del
 
 ## Further reading
 
-* [Upload files](/learning-and-resources/how-to-guides/how-to-upload-to-s3)
-* [Download files](/learning-and-resources/how-to-guides/how-to-upload-to-s3#downloading-files)
+* [Upload files](/data/how-to-guides/how-to-upload-to-s3)
+* [Download files](/data/how-to-guides/how-to-upload-to-s3#downloading-files)
 * [Filepicker widget](/reference/widgets/filepicker)

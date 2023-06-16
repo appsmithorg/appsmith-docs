@@ -7,10 +7,6 @@ sidebar_position: 10
 
 HubSpot is a **cloud-based CRM** designed to help align sales and marketing teams, promote sales, increase ROI, and improve your inbound marketing strategy to produce more qualified leads. In simple words, it's a software platform created to assist your business with marketing and sales.
 
-:::info
-To integrate HubSpot with Appsmith, you should understand the basics of [connecting to datasource](/core-concepts/connecting-to-data-sources/) on Appsmith.
-:::
-
 Appsmith provides an easy way to integrate with HubSpot, and enables you to perform different operations using a custom UI built with minimal configurations.
 
 
@@ -38,7 +34,7 @@ Appsmith allows you to select from the available authentication types to integra
 
 #### Bearer Token 
 
-Bearer Tokens are the predominant access token used with [OAuth 2.0](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/).
+Bearer Tokens are the predominant access token used with [OAuth 2.0](/data/datasource-reference/authenticated-api).
 You can authenticate to the API by providing your access token in the HTTP authorization bearer token header.
 
 Let's see how you can fetch your Bearer Token:
@@ -139,7 +135,7 @@ You can create queries to fetch, update, and delete data from a datasource using
 | Settings - See Details Account's Teams   |  Obtain information about the team's account.                                    |
 
 
-You can check the [Query Settings Guide ](/core-concepts/data-access-and-binding/querying-a-database/query-settings) to learn more about queries.
+You can check the [Query Settings Guide ](/data/datasource-reference/query-settings) to learn more about queries.
 
 
 

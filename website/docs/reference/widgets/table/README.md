@@ -43,7 +43,7 @@ You can dynamically generate table by fetching data from queries or JS functions
 ---
 **Example 1:** suppose you have data stored in a database and you want to display it in the Table widget.
 
-1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
+1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve the data.
 
 ```sql
 SELECT * FROM users ORDER BY id LIMIT 10;
@@ -58,7 +58,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 ---
 **Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Table widget.
 
-1.  Fetch data from the [sample API](/core-concepts/connecting-to-data-sources/authentication#sample-api) `users` using the following URL:
+1.  Fetch data from the sample **users** API using the following URL:
 
 ```
 https://mock-api.appsmith.com/users?page=1
@@ -90,7 +90,7 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
 
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
-1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `pageSize` and `pageOffset`  reference properties to implement pagination.
+1. Fetch data from the sample **users** database using `pageSize` and `pageOffset`  reference properties to implement pagination.
 
    ```sql
     SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}; 
@@ -125,7 +125,7 @@ You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the cou
 
 Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
+1. Fetch data from the sample **users** database using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
    ```sql
    SELECT * FROM users {{Table1.nextPageVisited ?  "WHERE id > "+ " "+ Table1.tableData[Table1.tableData.length-1]["id"] : Table1.previousPageVisited ? "WHERE id <"+ " "+ Table1.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{Table1.pageSize}} ;

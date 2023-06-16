@@ -11,7 +11,7 @@ This page provides instructions on how to use the camera widget to capture image
 
 This guide shows you how to capture and upload an image or video to Amazon S3.
 
-1. Connect to [Amazon S3](/reference/datasources/querying-amazon-s3) datasource.
+1. Connect to [Amazon S3](/data/datasource-reference/querying-amazon-s3) datasource.
 2. Click the **+** icon next to the **Queries/JS** and choose your S3 datasource.
 3. Select **Create a new file** from the **Commands** list.
 4. Specify the necessary parameters, such as the **Bucket Name** and **File Data Type**. Select the `base64` option from **File Data Type** when uploading data from the Camera widget.

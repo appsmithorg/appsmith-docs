@@ -27,7 +27,7 @@ If you are a self-hosted user, you may need to whitelist the IP address of the A
 </figure>
 
 :::tip
-If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local database, you can use a service like [ngrok](https://ngrok.com/) to expose it. For more information, see [How to connect to local database on Appsmith](/data/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to your database, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (\*).
@@ -80,12 +80,12 @@ where **mode1** and **mode2** are the specific SQL modes that you want to enable
 
 ## Create queries
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL queries.
+You can write [queries](https://docs.appsmith.com/data/datasource-reference/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL queries.
 
 MySQL databases are queried using standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html). All MySQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 
 :::tip
-[Prepared statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) are turned on by default to improve the security of the queries in your app. 
+[Prepared statements](/data/concepts/how-to-use-prepared-statements) are turned on by default to improve the security of the queries in your app. 
 :::
 
 ### Select
@@ -161,7 +161,7 @@ DELETE FROM users WHERE id = {{ Table1.selectedRow.id }};
 
 When the user clicks the button, the record is deleted from the database table. Be sure to add an `onSuccess` callback to the delete query that re-runs your fetch query to refresh the data in your Table widget.
 
-To avoid deleting records by accident, consider enabling the "Request confirmation before running query" setting in your [query's settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings).
+To avoid deleting records by accident, consider enabling the "Request confirmation before running query" setting in your [query's settings](/data/datasource-reference/query-settings).
 
 ## Troubleshooting
 

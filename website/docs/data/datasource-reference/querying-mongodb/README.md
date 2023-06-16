@@ -75,7 +75,7 @@ The following section lists the parameters to connect MongoDB by configuring mul
   </dd> 
   
   <dt><b>Host Address</b></dt>
-  <dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
+  <dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
   </dd><br />
 
   <dt><b>Port</b></dt>
@@ -349,7 +349,7 @@ This command allows users to process data records and return computed results. T
 
 ### Raw
 
-This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/reference/datasources/querying-mongodb/mongo-syntax) for more information. 
+This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/data/datasource-reference/querying-mongodb/mongo-syntax) for more information. 
 
 ## Troubleshooting
 

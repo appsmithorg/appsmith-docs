@@ -34,7 +34,7 @@ Once you're finished, click **Save** to save your datasource.
   <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
 </figure>
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Airtable by selecting the **+ New Query**  button on the Airtable datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Airtable datasource. You'll be brought to a new query screen where you can write queries.
+You can write [queries](https://docs.appsmith.com/data/datasource-reference/query-settings) to fetch or write data to Airtable by selecting the **+ New Query**  button on the Airtable datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Airtable datasource. You'll be brought to a new query screen where you can write queries.
 
 <a name="base-id"></a>
 

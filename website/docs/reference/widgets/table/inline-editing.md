@@ -37,7 +37,7 @@ To update a single row, select **Single row**  from the **Update mode** property
 ---
 **Example**: suppose you want to modify the `name`  and `phone` field in a `users` database.
 
-1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
+1. Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve the data.
 
 ```sql
 SELECT * FROM users ORDER BY id LIMIT 10;
@@ -74,7 +74,7 @@ To update multiple rows, select **Multiple rows** from the **Update mode** prope
 ---
 **Example**: suppose you want to modify the `name` and `phone` fields in a users database.
 
-1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
+1. Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve the data.
 
 ```sql
 SELECT * FROM users ORDER BY id LIMIT 10;
@@ -112,7 +112,7 @@ To enable users to add a new row to a table, you can turn on the **Allow adding 
 ---
 **Example**: suppose you want to add new data into `users` database.
 
-1. Fetch data from the [sample database](/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve the data.
+1. Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve the data.
 
 ```sql
 SELECT * FROM users ORDER BY id LIMIT 10;

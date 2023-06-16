@@ -24,7 +24,7 @@ The following is a reference guide that provides a description of the parameters
 
 <dl>
   <dt><b>Host Address</b></dt>
-  <dd>The network location of your ArangoDB database. This can be a domain name or an IP address. To connect to a local ArangoDB database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+  <dd>The network location of your ArangoDB database. This can be a domain name or an IP address. To connect to a local ArangoDB database, see <a href="/data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to on the server. If none is specified, Appsmith attempts to connect to port 8529.</dd><br />

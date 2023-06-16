@@ -30,13 +30,13 @@ messageContent="This value does not evaluate to type Array[Object]"></Message>
 #### Cause
 
 
-While working with [Tables](/reference/widgets/table/) or [Lists](/reference/widgets/list), you may encounter this error, as the data property expects an [Array](https://www.w3schools.com/js/js\_arrays.asp) of objects which might not match the data type of the [API](/core-concepts/connecting-to-data-sources/authentication/) response.
+While working with [Tables](/reference/widgets/table/) or [Lists](/reference/widgets/list), you may encounter this error, as the data property expects an array of objects which might not match the data type of the API response.
 
 
 #### Solution
 
 
-The solution to this is to bind the array inside the response object or transform the response object using JavaScript. Take an example response of the fetch users [API](/core-concepts/connecting-to-data-sources/authentication) as below. Binding it to a [table](/reference/widgets/table/) directly would lead to an error.
+The solution to this is to bind the array inside the response object or transform the response object using JavaScript. Take an example response of the fetch users API as below. Binding it to a [table](/reference/widgets/table/) directly would lead to an error.
 
 
 ```javascript

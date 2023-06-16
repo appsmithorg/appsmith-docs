@@ -6,7 +6,7 @@ description: Connect Appsmith to an Authenticated API.
 
 This page describes how to connect your application to an API with authentication.
 
-Use this datasource to create multiple queries for the same API. Every query created from this datasource has shared configuration (root URL, authentication, headers, and so on) to avoid re-entering details. If you're only creating a single query for your API, try using a [REST API](/reference/datasources/rest-api) datasource.
+Use this datasource to create multiple queries for the same API. Every query created from this datasource has shared configuration (root URL, authentication, headers, and so on) to avoid re-entering details. If you're only creating a single query for your API, try using a [REST API](/data/datasource-reference/rest-api) datasource.
 
 ### Connection parameters
 
@@ -90,4 +90,4 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
 
 Once you have set up your Authenticated API datasource, you're ready to create queries.
 
-Visit the [REST API docs](/reference/datasources/rest-api) to learn about the query configuration parameters.
+Visit the [REST API docs](/data/datasource-reference/rest-api) to learn about the query configuration parameters.

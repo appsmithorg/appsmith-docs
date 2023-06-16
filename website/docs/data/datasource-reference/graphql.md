@@ -17,7 +17,7 @@ To add a GraphQL datasource, click the (**+**) sign in the **Explorer** tab next
 </figure>
 
 :::tip
-If you want to connect to a local api, you can use a service like ngrok to expose it. For more information, see [How to connect to local api on Appsmith](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+If you want to connect to a local api, you can use a service like ngrok to expose it. For more information, see [How to connect to local api on Appsmith](/data/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 :::
 
 To connect to a GraphQL API endpoint, Appsmith needs the following parameters. All required fields are suffixed with an asterisk (*).
@@ -28,11 +28,11 @@ To connect to a GraphQL API endpoint, Appsmith needs the following parameters. A
 
 **Query Parameters:** provide any parameters that should be passed as key-value pairs in the URL of your requests.
 
-**Send Appsmith signature header:** choose whether to include a special token in your request headers to help prove authenticity and integrity. For more information, read [signature headers](/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions).
+**Send Appsmith signature header:** choose whether to include a special token in your request headers to help prove authenticity and integrity. For more information, read the [Authenticated API reference](/data/datasource-reference/authenticated-api).
 
-**Authentication Type:** choose the style of authentication to use for your queries. To read more about some of the options, visit [authentication types](/core-concepts/connecting-to-data-sources/authentication/authentication-type).
+**Authentication Type:** choose the style of authentication to use for your queries. For more information, read the [Authenticated API reference](/data/datasource-reference/authenticated-api).
 
-**Use self-signed certificate:** choose whether to upload your own self-signed certificate for encryption. For more information, read [self-signed certificates](/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates).
+**Use self-signed certificate:** choose whether to upload your own self-signed certificate for encryption. For more information, read the [Authenticated API reference](/data/datasource-reference/authenticated-api).
 
 ## Create queries
 
@@ -41,7 +41,7 @@ To connect to a GraphQL API endpoint, Appsmith needs the following parameters. A
   <figcaption align="center"><i>Creating a GraphQL query.</i></figcaption>
 </figure>
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data by selecting the **+ New Query**  button on the Authenticated GraphQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your GraphQL datasource. You'll be brought to a new query screen where you can write queries.
+You can write queries to fetch or write data by selecting the **+ New Query**  button on the Authenticated GraphQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your GraphQL datasource. You'll be brought to a new query screen where you can write queries.
 
 GraphQL queries are written in the **Body** tab of the query screen. Use the **Query** window to construct your query or mutation, and the adjacent **Query Variables** window to add any variables to map into your query.
 

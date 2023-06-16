@@ -8,7 +8,7 @@ const fs = require("fs");
 const orderPages = (pages) => {
   const orderMap = {
     "learning-and-resources/sample-apps": 0,
-    "core-concepts/connecting-to-data-sources/": 1,
+    "core-concepts/": 1,
     "core-concepts/data-access-and-binding/displaying-data-read/": 2,
     "core-concepts/data-access-and-binding/capturing-data-write/": 3,
     "core-concepts/writing-code/": 4,

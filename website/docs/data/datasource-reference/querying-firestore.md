@@ -27,7 +27,7 @@ Click the **Test** button in Appsmith to check that your configuration is valid,
 
 ## Create queries
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to Firestore by selecting the **+ New Query** button on the Firestore datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Firestore datasource. You'll be brought to a new query screen where you can write queries.
+You can write [queries](https://docs.appsmith.com/data/datasource-reference/query-settings) to fetch or write data to Firestore by selecting the **+ New Query** button on the Firestore datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Firestore datasource. You'll be brought to a new query screen where you can write queries.
 
 <figure>
   <img src="/img/firestore-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore query." />

@@ -6,7 +6,7 @@ description: Query a REST API from Appsmith.
 
 This page describes how to connect your application to a REST API and use queries to read and write data in your applications.
 
-Use this datasource to create a single query for an API that doesn't need complex authentication settings. If you plan to create multiple queries for the same API, you may want to use an [Authenticated API](/reference/datasources/rest-api) datasource. Every query created from an Authenticated API datasource shares configuration (root URL, authentication, headers, and so on) to avoid re-entering details.
+Use this datasource to create a single query for an API that doesn't need complex authentication settings. If you plan to create multiple queries for the same API, you may want to use an [Authenticated API](/data/datasource-reference/rest-api) datasource. Every query created from an Authenticated API datasource shares configuration (root URL, authentication, headers, and so on) to avoid re-entering details.
 
 ## Query REST API
 
@@ -97,7 +97,7 @@ When uploading file data, check that your Filepicker widget's **Data Format** pr
 <p>Use <b>RAW</b> if your endpoint can't accept multipart-encoded data and requires raw body binary instead. Above, the <code>data</code> property of the file is passed to the query instead of the file object itself because the endpoint expects only raw binary data.</p>
 
 :::caution tip
-Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
+Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/data/datasource-reference/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
 :::
 </dd>
 

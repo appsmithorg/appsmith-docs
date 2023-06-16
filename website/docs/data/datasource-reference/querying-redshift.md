@@ -2,10 +2,7 @@
 sidebar_position: 15
 ---
 # Redshift
-
-:::note
-The following document assumes that you understand the [basics of connecting to databases on Appsmith](/core-concepts/connecting-to-data-sources/connecting-to-databases.md#connecting-to-a-database). If not, please go over them before reading further.
-:::
+This page provides information for connecting to Redshift and using queries to manage data in Appsmith.
 
 ## Connection settings
 

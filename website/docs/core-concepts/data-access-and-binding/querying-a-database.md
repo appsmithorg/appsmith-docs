@@ -6,22 +6,22 @@ The information you want to present in any application is typically spread over 
 Appsmith uses Queries to collectively refer to APIs or Database queries that perform CRUD operations.
 :::
 
-To write and execute queries, you should understand the basics of [connecting to a Database](/core-concepts/connecting-to-data-sources/connecting-to-databases) or [Connecting to an API](/core-concepts/connecting-to-data-sources/authentication).  You can create queries from a datasource using the Appsmith query editor.
+To write and execute queries, you should understand the basics of [connecting to a Database](/data/datasource-reference/) or [Connecting to an API](data/datasource-reference/authenticated-api).  You can create queries from a datasource using the Appsmith query editor.
 
 
 ## Create a query
 
-This section talks about creating a DB query in Appsmith. To learn about API queries, see [How to Create an API query](/core-concepts/connecting-to-data-sources/authentication/connect-to-apis).
+This section talks about creating a DB query in Appsmith. To learn about API queries, see [REST API](data/datasource-reference/rest-api).
 
 Follow the below steps to create a database query in the query editor:
 
-* Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query. If you want to add a new datasource, follow the steps detailed in [Datasources](/core-concepts/connecting-to-data-sources/connecting-to-databases#connecting-to-a-database).
+* Go to **Datasources → +** to create a **new query** or select an **existing datasource** to which you wish to add a query.
 
 
 * Choose the connected datasource and click **+ New Query**. You can also choose to add a new query by navigating to **Explorer** >> Scroll down to **Queries/JS** >> Click plus (**+**) sign >> Select the name `<DATASOURCE_NAME> Query` (users query).
 
 
-* The Appsmith query editor opens up when you create a new query or select an existing query. You can write the queries in the query editor and tweak the [query settings](/core-concepts/data-access-and-binding/querying-a-database/query-settings) from the settings tab.
+* The Appsmith query editor opens up when you create a new query or select an existing query. You can write the queries in the query editor and tweak the [query settings](data/datasource-reference/query-settings) from the settings tab.
 
 ![Appsmith Query Editor](/img/query_editor.png)
 
@@ -31,7 +31,7 @@ Follow the below steps to create a database query in the query editor:
 [JavaScript keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) aren't valid as query names.
 :::
 
-* Write your query in the syntax valid for your [database type](/core-concepts/connecting-to-data-sources/connecting-to-databases#native-databases).
+* Write your query in the syntax valid for your [database type](/data/datasource-reference/).
 
 Queries are automatically saved, so you never lose your work. These changes are reflected in your *published* application only after you deploy. You can access a query's result *only* from the page it's a part of. To use a query on another page, click the context menu next to the query name and clone it.
 

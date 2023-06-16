@@ -23,7 +23,7 @@ The following section is a reference guide that provides a complete description 
 
 <dl>
   <dt><b>Host Address</b></dt>
-  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to on the server. Appsmith connects to port `1521` by default if you do not specify one.</dd><br />
@@ -98,7 +98,7 @@ In the above example, `UsersTable` is the name of the Table widget where the use
 
 ## Prepared statements
 
-Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
+Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/data/concepts/how-to-use-prepared-statements) for more details.
 
 ## See also
 

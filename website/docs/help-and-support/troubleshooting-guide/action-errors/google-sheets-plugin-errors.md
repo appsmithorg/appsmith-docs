@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Google Sheet Errors
 
-Working with [Google Sheets](https://www.google.com/sheets/about/) Plugin on Appsmith is the handiest way to use Google Sheets as a [datasource](../../../reference/datasources/) for building apps. But sometimes, we often run into minor errors while specific queries while editing and deleting data on Google Sheets. In this guide, we'll look at some of the frequent errors one faces while using Google Sheets.
+Working with [Google Sheets](https://www.google.com/sheets/about/) Plugin on Appsmith is the handiest way to use Google Sheets as a [datasource](../../../data/datasource-reference/) for building apps. But sometimes, we often run into minor errors while specific queries while editing and deleting data on Google Sheets. In this guide, we'll look at some of the frequent errors one faces while using Google Sheets.
 
 ### Expected a row object
 

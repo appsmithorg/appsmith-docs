@@ -27,7 +27,7 @@ Appsmith needs the following parameters for connecting to a DynamoDB instance. A
   <figcaption align="center"><i>Configuring a DynamoDB scan query.</i></figcaption>
 </figure>
 
-You can write [queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database/query-settings) to fetch or write data to DynamoDB by selecting the **+ New Query**  button on the DynamoDB datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your DynamoDB datasource. You'll be brought to a new screen where you can write your query. You can query **DynamoDB** tables using any of the [officially supported operations](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations.html).
+You can write [queries](https://docs.appsmith.com/data/datasource-reference/query-settings) to fetch or write data to DynamoDB by selecting the **+ New Query**  button on the DynamoDB datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your DynamoDB datasource. You'll be brought to a new screen where you can write your query. You can query **DynamoDB** tables using any of the [officially supported operations](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations.html).
 
 ### Fetch records
 

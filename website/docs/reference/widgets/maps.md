@@ -42,7 +42,7 @@ Additionally, you can display dynamic data from queries or JS functions by bindi
 ---
 **Example 1**: suppose you want to display the location of a user when you select a row in a table.
 
-1.  Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+1.  Fetch data from the sample **users** database using a SELECT query `fetchUserData`. 
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 

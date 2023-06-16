@@ -16,7 +16,7 @@ In this guide, you would learn:
 
 ## Create S3 Datasource
 
-To add an S3 datasource, navigate to **Explorer** >> Click plus sign (**+**) (next to S3)>> **Select S3 under Databases**. Once your S3 datasource has been created, follow these [instructions ](/reference/datasources/querying-amazon-s3#connection-settings)to connect your app to the S3 database.
+To add an S3 datasource, navigate to **Explorer** >> Click plus sign (**+**) (next to S3)>> **Select S3 under Databases**. Once your S3 datasource has been created, follow these [instructions ](/data/datasource-reference/querying-amazon-s3#connection-settings)to connect your app to the S3 database.
 
 :::info
 To upload your data to Amazon S3, you must first create an Amazon S3 bucket in one of the AWS Regions. [Create a new bucket.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
@@ -139,7 +139,7 @@ Bind the query’s response to the Table using JavaScript in the Table Data Prop
 
 Now your table should list all the files present in your S3 bucket.
 
-You can use an image widget to display images listed in the table widget. You can follow this [guide](/learning-and-resources/how-to-guides/how-to-upload-to-s3)to learn more.
+You can use an image widget to display images listed in the table widget. You can follow this [guide](/data/how-to-guides/how-to-upload-to-s3)to learn more.
 
 #### Download Files
 

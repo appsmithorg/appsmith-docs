@@ -32,7 +32,7 @@ The following section is a reference guide that provides a complete description 
   </dd>  
 
   <dt><b>Host Address</b></dt>
-  <dd>The network location of the PostgreSQL server that you want to connect. This can be a domain name or an IP address. To connect to a local PostgreSQL database, see <a href="/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd><br />
+  <dd>The network location of the PostgreSQL server that you want to connect. This can be a domain name or an IP address. To connect to a local PostgreSQL database, see <a href="/data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to at the server host. Appsmith connects to port <code>5432</code> by default if you do not specify one. </dd><br />
@@ -124,7 +124,7 @@ In the above example, `tableUsers` is the name of the Table widget where the use
 
 ## Prepared statements
 
-Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/learning-and-resources/how-to-guides/how-to-use-prepared-statements) for more details.
+Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/data/concepts/how-to-use-prepared-statements) for more details.
 
 ## Row Level Security (RLS)
 Row level security is a PostgreSQL security feature the database provides to limit what table rows are visible for querying. It allows the database admins to define security policies to control how the rows of a given table can be accessed or modified. Watch the [**video series**](https://youtu.be/8qPTZQvJ9fA) for details on using RLS on your apps.

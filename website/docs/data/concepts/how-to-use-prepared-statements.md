@@ -86,9 +86,9 @@ The multiple bindings added to the Appsmith queries are translated into the numb
 You can use prepared statements for the below data sources on Appsmith:
 
 
-* [MS SQL](/reference/datasources/querying-mssql.md)
-* [MySQL](/reference/datasources/querying-mysql.md)
-* [PostgreSQL](/reference/datasources/querying-postgres.md)
+* [MS SQL](/data/datasource-reference/querying-mssql.md)
+* [MySQL](/data/datasource-reference/querying-mysql.md)
+* [PostgreSQL](/data/datasource-reference/querying-postgres.md)
 
 
 ### Enable prepared statement
@@ -188,7 +188,7 @@ SELECT * from users where status in = ANY ({{userStatus.selectedOptionValues}})
 The example query binds the parameters and sanitize the values for your queries.
 
 :::info
-The **`= ANY`** combination is **supported** on [**PostgreSQL**](/reference/datasources/querying-postgres.md), but [**MySQL**](/reference/datasources/querying-mysql.md) **doesn’t** **support** it. For [**MySQL**](/reference/datasources/querying-mysql.md), when you have a dynamic array binding, you'll have to use it by **disabling prepared statements**.
+The **`= ANY`** combination is **supported** on [**PostgreSQL**](/data/datasource-reference/querying-postgres.md), but [**MySQL**](/data/datasource-reference/querying-mysql.md) **doesn’t** **support** it. For [**MySQL**](/data/datasource-reference/querying-mysql.md), when you have a dynamic array binding, you'll have to use it by **disabling prepared statements**.
 :::
 
 #### **Static array length**
@@ -242,7 +242,7 @@ A **prepared statement** **requires** you to supply **a static part of the query
 A few quick tips to remember so that you can quickly steer it through when using prepared statements:
 
 * The commented code blocks in your queries should not have any bindings, as when you enable the prepared statement, it translates all the bindings. As the commented block has bindings, the translation fails, and you are not able to run the queries. To avoid this, remove the mustache **`{{}}`** sign around the binding whenever you are commenting code, and the prepared statement works.
-* If you are using a dynamic array to supply the `in clause` and using [PostgreSQL](/reference/datasources/querying-postgres.md), then you can use `= ANY`. However, turn off the prepared statements to run the query if you are on [MySQL](/reference/datasources/querying-mysql.md).
+* If you are using a dynamic array to supply the `in clause` and using [PostgreSQL](/data/datasource-reference/querying-postgres.md), then you can use `= ANY`. However, turn off the prepared statements to run the query if you are on [MySQL](/data/datasource-reference/querying-mysql.md).
 
 ## Conclusion
 
