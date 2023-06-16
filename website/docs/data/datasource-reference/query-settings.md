@@ -13,7 +13,7 @@ In the Appsmith Query Editor, you can specify the following settings in the **Se
 
 ## Prepared statements
 
-A Prepared Statement is a feature provided by SQL databases to execute the same statement with dynamic data bindings securely. Appsmith supports using prepared statements by converting the user query into a parameterized query by replacing the bindings. That means the query created on the Appsmith has bindings for reading the widget values selected by users. By default, the prepared statement is **enabled** for all queries. To know more about Prepared statements in Appsmith, please check [How to Use Prepared Statements?](/learning-and-resources/how-to-guides/how-to-use-prepared-statements.md)
+A Prepared Statement is a feature provided by SQL databases to execute the same statement with dynamic data bindings securely. Appsmith supports using prepared statements by converting the user query into a parameterized query by replacing the bindings. That means the query created on the Appsmith has bindings for reading the widget values selected by users. By default, the prepared statement is **enabled** for all queries. To know more about Prepared statements in Appsmith, please check [How to Use Prepared Statements?](/data/concepts/how-to-use-prepared-statements)
 
 ## Smart JSON substitution
 

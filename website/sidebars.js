@@ -233,17 +233,7 @@ const sidebars = {
             id: 'core-concepts/data-access-and-binding/README',
           },
           items: [
-            {
-              type: 'category',
-              label: 'Queries',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/querying-a-database/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/querying-a-database/query-settings',
-              ],
-            },
+            'core-concepts/data-access-and-binding/querying-a-database',
             'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
@@ -292,6 +282,22 @@ const sidebars = {
       collapsed: false,
       label: 'Data',
       items: [
+        'data/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'data/how-to-guides/README' },
+          items: [
+            'data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'data/how-to-guides/how-to-upload-to-s3',
+            'data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'data/how-to-guides/aws-whitelist',
+            'data/how-to-guides/how-to-integrate-dropbox',
+            'data/how-to-guides/how-to-integrate-zoho',
+            'data/how-to-guides/integrations'
+          ]
+        },
         {
           type: 'category',
           label: 'Datasource Reference',
@@ -329,32 +335,17 @@ const sidebars = {
           'data/datasource-reference/querying-snowflake-db',
           'data/datasource-reference/using-smtp',
           'data/datasource-reference/twilio',
+          'data/datasource-reference/query-settings',
           ],
         },
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
-          link: { type: 'doc', id: 'data/how-to-guides/README' },
+          label: 'Concepts',
+          link: { type: 'doc', id: 'data/concepts/README' },
           items: [
-            'data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
-            'data/how-to-guides/how-to-upload-to-s3',
-            'data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'data/how-to-guides/aws-whitelist',
-            'data/how-to-guides/how-to-integrate-dropbox',
-            'data/how-to-guides/how-to-integrate-zoho',
-          ]
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'Key Concepts',
-          link: { type: 'doc', id: 'data/key-concepts/README' },
-          items: [
-            'data/key-concepts/datasources',
-            'data/key-concepts/queries',
-            'data/key-concepts/how-to-use-prepared-statements',
-            'data/key-concepts/connection-pooling',
+            'data/concepts/how-to-use-prepared-statements',
+            'data/concepts/connection-pooling',
           ]
         },
       ]
@@ -578,7 +569,6 @@ const sidebars = {
           ],
         },
         'learning-and-resources/sample-apps',
-        'learning-and-resources/integrations',
         {
           type: 'link',
           label: 'Templates', // The link label

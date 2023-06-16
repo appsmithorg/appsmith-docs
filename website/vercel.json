@@ -404,11 +404,11 @@
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database",
-      "destination": "/data/key-concepts/queries"
+      "destination": "/data/overview"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis",
-      "destination": "/data/key-concepts/queries"
+      "destination": "/data/overview"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/query-settings",
@@ -416,7 +416,7 @@
     },
     {
       "source": "/core-concepts/displaying-data-read",
-      "destination": "/data/key-concepts/queries"
+      "destination": "/data/overview"
     },
     {
       "source": "/reference/widgets/table#displaying-column-value-using selectedrow",
@@ -516,7 +516,7 @@
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/",
-      "destination": "/data/key-concepts/datasources"
+      "destination": "/data/overview"
     },
     {
         "source": "/connecting-to-data-sources/connecting-to-databases",
