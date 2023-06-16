@@ -14,8 +14,10 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 1. In the [Google Cloud console](https://console.cloud.google.com/projectselector2/home/dashboard
 ), select or create a Google Cloud project. For more information about creating projects, see [Create Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
-2. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
-3. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
+2. Ensure that billing is enabled for your Google Cloud project.
+3. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
+4. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
+5. If you want scalable, secure, and highly available services, enable the [Memorystore for Redis](https://console.cloud.google.com/apis/dashboard) API.
 
 ## Create a Filestore instance
 
@@ -51,9 +53,41 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 5. Click the **Subnet** menu. Select **Custom IP range** from the menu.
 
-6. In the **IP range** field, enter the first address in an unreserved CIDR /28 internal IP range. This IP range must not overlap with any existing IP address reservations in your VPC network. For example, `10.8.0.0 (/28)` will work in most new projects.
+6. In the **IP range** field, enter the first address in an unreserved CIDR /28 internal IP range.
 
 7. A green check mark will appear next to the connector's name when it is ready to use.
+
+## Create a Redis Instance
+
+This guide is optional and you can skip to [Deploy Appsmith on Cloud Run](#deploy-appsmith-on-cloud-run). Follow the steps below if you want scalable, secure, and highly available services. Ensure that you have enabled the **Memorystore for Redis** API as mentioned in step 5 of the [Before you begin](#before-you-begin) section.
+
+1. Go to the [Memorystore for Redis](https://console.cloud.google.com/memorystore/redis/instances) page in the Google Cloud console.
+
+2. Click **Create Instance**.
+    
+3. On the **Create a Redis instance** page, enter the configurations as shown below:
+
+    - In the **Instance ID** field, set an id. Example: `instanceid`.
+    - In the **Tier Selection** list, select one of the options:
+      - **Basic**: One primary Redis node. No automatic failover for High Availability.
+      - **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
+    For more information about tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
+    - In the **Capacity** box, enter `10`.
+    - In the **Region** box, select a region for your instance.
+    - In the **Zone** box, select a zone for your instance.
+    - If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
+    - Under **Set up connection**, select the **default** option for **Network**.
+    - Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
+
+4. Click the **Create** button.
+
+5. Once the Redis instance is ready, note down the **Primary Endpoint** to use later.
+
+<figure>
+    <img src="/img/redis-primary-endpoint.png" style= {{width:"100%", height:"auto"}} alt="Primary Endpoint"/>
+    <figcaption align = "center"><i>Primary Endpoint</i></figcaption>
+</figure>
+
 
 ## Deploy Appsmith on Cloud Run
 
@@ -62,7 +96,9 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 2. Click **Create service**.
 
 3. In the form, select **Deploy one revision from an existing container image**.
-    - In the **Container image URL**, enter `docker.io/appsmith/appsmith-ce`.
+    - In the **Container image URL**, enter:
+       - For Community edition - `docker.io/appsmith/appsmith-ce`.
+       - For Enterprise edition - `docker.io/appsmith/appsmith-ee`.
 
 4. Enter a desired name in the **Service name** field.
 
@@ -72,62 +108,50 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
     - Set **Minimum number of instances** to `1`.
     - Select **All** to allow direct access to your service from the Internet.
 
-7. You need to create a Redis instance to manage traffic among revisions
-    - Go to [Memorystore](https://console.cloud.google.com/memorystore/redis/instances)
-    - Create a Memorystore instance
-        - In the instanceid enter `instanceid`
-        - Choose **Tier Selection**
-            - Basic (No automatic failover)
-            - Standard (Automatically failover and High availability)
-        - In the **Capacity** box, enter `10`
-        - In the **Region** box, enter `region` of choice
-        - In the **Zone** box, enter `zone` of choice
-        - In the **Read Replicas** box, enter `2 Read Replicas`
-        - In the **Set up connection** box, enter `default`
-        - In the **Configuration** box, enter `6.x`
-    - Once the Memorystore instance is ready make a note of **Primary Endpoint**.
+7. Under **Authentication**, select **Allow unauthenticated invocations**.
 
-8. Under **Authentication**, select **Allow unauthenticated invocations**.
+8. Click **Container, Networking, Security** to expand the service configuration page.
 
-9. Click **Container, Networking, Security** to expand the service configuration page.
-
-10. Click the **Container** tab.
+9. Click the **Container** tab.
     - In the **Container port** box, enter `80` to specify the port you want requests to be sent to.
     - Under **Capacity**:
         - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
         - Set the CPU limit as **2** in the **CPU** dropdown list.
     - Under **Execution environment**, select **Second generation**.
-    - Under **Environment variables**, click **Add Variable**. 
-    - Specify values in the **Name** and **Value** text boxes as shown below: 
+    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: 
 
     | Name | Value |
     |------------------------|------------------------------------------| 
     | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
     | **FILE_SHARE_NAME** | The file share name you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
-    | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
-    | **APPSMITH_ENCRYPTION_SALT** | Specify a encryption salt to encrypt values in database. <br/> <i>Format</i>: <br/>` Encryption Salt`|
-    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify a encryption password to encrypt values in database. <br/> <i>Format</i>:<br/>` Encryption Password`|
-    | **APPSMITH_REDIS_URL** | Specify the connection string of the external Redis instance required to maintain session and managing traffic. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
+    | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
+    | **APPSMITH_ENCRYPTION_SALT** | Specify a encryption salt to encrypt values in database.|
+    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify a encryption password to encrypt values in database.|
+    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
-
-11. Click the **Networking** tab.
+10. Click the **Networking** tab.
     - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
     - Keep the default **Route only requests to private IPs through the VPC connector** option.
 
-12. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
+11. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
 
-13. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
+12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
 
-14. Click the **Logs** tab to verify everything is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
+13. Click the **Logs** tab to verify everything is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
 
-15. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
+14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
 
 <figure>
   <img src="/img/deployed-service-url-cloud-run.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
   <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
 </figure>
 
-16. Enter the details on the signup form to create an Appsmith account.
+15. If you are on the 
+    - **Community Edition**:  Enter the details on the signup form to create an Appsmith account.
+    - **Business Edition**:
+        * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+        * Enter your license key to activate the instance.
+
 
 ## Further reading
 
