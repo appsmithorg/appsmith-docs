@@ -72,11 +72,26 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
     - Set **Minimum number of instances** to `1`.
     - Select **All** to allow direct access to your service from the Internet.
 
-7. Under **Authentication**, select **Allow unauthenticated invocations**.
+7. You need to create a Redis instance to manage traffic among revisions
+    - Go to [Memorystore](https://console.cloud.google.com/memorystore/redis/instances)
+    - Create a Memorystore instance
+        - In the instanceid enter `instanceid`
+        - Choose **Tier Selection**
+            - Basic (No automatic failover)
+            - Standard (Automatically failover and High availability)
+        - In the **Capacity** box, enter `10`
+        - In the **Region** box, enter `region` of choice
+        - In the **Zone** box, enter `zone` of choice
+        - In the **Read Replicas** box, enter `2 Read Replicas`
+        - In the **Set up connection** box, enter `default`
+        - In the **Configuration** box, enter `6.x`
+    - Once the Memorystore instance is ready make a note of **Primary Endpoint**.
 
-8. Click **Container, Networking, Security** to expand the service configuration page. 
+8. Under **Authentication**, select **Allow unauthenticated invocations**.
 
-9. Click the **Container** tab.
+9. Click **Container, Networking, Security** to expand the service configuration page.
+
+10. Click the **Container** tab.
     - In the **Container port** box, enter `80` to specify the port you want requests to be sent to.
     - Under **Capacity**:
         - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
@@ -90,25 +105,29 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
     | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
     | **FILE_SHARE_NAME** | The file share name you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
     | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
+    | **APPSMITH_ENCRYPTION_SALT** | Specify a encryption salt to encrypt values in database. <br/> <i>Format</i>: <br/>` Encryption Salt`|
+    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify a encryption password to encrypt values in database. <br/> <i>Format</i>:<br/>` Encryption Password`|
+    | **APPSMITH_REDIS_URL** | Specify the connection string of the external Redis instance required to maintain session and managing traffic. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
-10. Click the **Networking** tab.
+
+11. Click the **Networking** tab.
     - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
     - Keep the default **Route only requests to private IPs through the VPC connector** option.
 
-11. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
+12. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
 
-12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
+13. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
 
-13. Click the **Logs** tab to verify everything is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
+14. Click the **Logs** tab to verify everything is working fine. Wait a few minutes until you see the message `Appsmith is running` in the logs.
 
-14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance. 
+15. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
 
 <figure>
   <img src="/img/deployed-service-url-cloud-run.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
   <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
 </figure>
 
-15. Enter the details on the signup form to create an Appsmith account.
+16. Enter the details on the signup form to create an Appsmith account.
 
 ## Further reading
 
