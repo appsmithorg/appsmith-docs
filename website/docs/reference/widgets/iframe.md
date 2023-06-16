@@ -3,8 +3,6 @@
 
 This page explains how to use the Iframe widget to embed third-party applications and websites into your Appsmith application.
 
-<VideoEmbed host="youtube" videoId="4jXTyxUhnP0" title="Using the Iframe widget" caption="Using the Iframe widget"/>
-
 :::info
 The Iframe widget is safe from XSS attacks from v1.8.6 onwards. If you have a self-hosted Appsmith and are on an older version, see [Sandboxing Iframe widgets](/product/security#sandboxing-iframe-widgets) to enable this.
 :::

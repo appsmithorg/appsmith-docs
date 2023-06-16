@@ -6,8 +6,6 @@ This page explains how to use the Map widget(powered by Google Maps API) to disp
 If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. For more information, see [Configuring Google Maps](/getting-started/setup/instance-configuration/google-maps).
 :::
 
-<VideoEmbed host="youtube" videoId="xCTiPNlBKLU" title="Using the Map Widget" caption="Using the Map Widget"/>
-
 
 ## Display location
 

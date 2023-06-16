@@ -2,8 +2,6 @@
 
 This page provides information on how to use the Audio Recorder widget to record audio using your microphone. The recorded audio is saved in WAV format.
 
-<VideoEmbed host="youtube" videoId="fMovD6hfHQU" title="Using the Audio Recorder widget" caption="Using the Audio Recorder widget"/>
-
 
 ## Upload audio to S3
 

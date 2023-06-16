@@ -3,8 +3,6 @@
 This page explains how the Tabs widget can be used to group related content and enable users to switch between different sets of information within a single container.
 
 
-<VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="Using the Tabs Widget" caption="Using the Tabs Widget"/>
-
 
 ## Create multi-step form
 

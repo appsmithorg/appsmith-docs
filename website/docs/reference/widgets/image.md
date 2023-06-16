@@ -2,9 +2,6 @@
 
 You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP and GIF.
 
-
-<VideoEmbed host="youtube" videoId="jdDcydQ8Ho0" title="How to use the Image Widget" caption="How to use the Image Widget"/>
-
 ## Display static images 
 
 You can specify the image source using the **Image property** to display an image. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
