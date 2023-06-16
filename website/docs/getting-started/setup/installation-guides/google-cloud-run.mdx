@@ -84,8 +84,8 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
 5. Once the Redis instance is ready, note down the **Primary Endpoint** to use later.
 
 <figure>
-    <img src="/img/redis-primary-endpoint.png" style= {{width:"100%", height:"auto"}} alt="Primary Endpoint"/>
-    <figcaption align = "center"><i>Primary Endpoint</i></figcaption>
+    <img src="/img/redis-primary-endpoint.png" style= {{width:"100%", height:"auto"}} alt="Primary Endpoint of the Redis Instance"/>
+    <figcaption align = "center"><i>Primary Endpoint of the Redis Instance</i></figcaption>
 </figure>
 
 
@@ -96,9 +96,9 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
 2. Click **Create service**.
 
 3. In the form, select **Deploy one revision from an existing container image**.
-    - In the **Container image URL**, enter:
-       - For *Community Editio* - `docker.io/appsmith/appsmith-ce`.
-       - For *Enterprise Edition* - `docker.io/appsmith/appsmith-ee`.
+    - In the **Container image URL** box:
+       - For *Community Edition* - enter `docker.io/appsmith/appsmith-ce`.
+       - For *Enterprise Edition* - enter `docker.io/appsmith/appsmith-ee`.
 
 4. Enter a desired name in the **Service name** field.
 
@@ -118,7 +118,7 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
         - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
         - Set the CPU limit as **2** in the **CPU** dropdown list.
     - Under **Execution environment**, select **Second generation**.
-    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: 
+    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
 
     | Name | Value |
     |------------------------|------------------------------------------| 
@@ -127,7 +127,7 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
     | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
     | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
     | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
-    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
+    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
 10. Click the **Networking** tab.
     - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
