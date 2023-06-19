@@ -214,7 +214,6 @@ Sets the visibility of the widget.
 MultiSelect1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
-
 ```
 
 </dd>
