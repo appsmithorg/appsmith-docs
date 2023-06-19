@@ -96,3 +96,80 @@ You may be interested in these pages that can come in handy with the Button widg
 1. [Built-in functions](/reference/appsmith-framework/widget-actions/)
 2. [Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
 3. [Widgets](/reference/widgets/)
+
+
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Button1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Button1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+
+#### setColor `string`
+
+<dd>
+
+Sets the background color of the button widget.
+
+*Example*:
+
+```js
+Button1.setColor('#FF0000').then(() => {
+  // code to be executed after color is set
+})
+```
+
+</dd>
+
+#### setLabel `string`
+
+<dd>
+
+Sets the label of the button widget dynamically.
+
+*Example*:
+
+```js
+Button1.setLabel('Click me!').then(() => {
+  // code to be executed after label is set
+})
+```
+
+</dd>

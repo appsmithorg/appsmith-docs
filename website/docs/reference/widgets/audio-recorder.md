@@ -106,10 +106,9 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
-AudioRecorder1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
+AudioRecorder1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
 })
-
 ```
 
 </dd>
