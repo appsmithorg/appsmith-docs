@@ -188,6 +188,48 @@ These are functions that are called when event listeners are triggered in the wi
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onSubmit**   | Sets an action to take place when the user clicks the Submit button on this form. |
 
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+JSONForm1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
+
+
+#### setData `object`
+
+<dd>
+
+ Sets the data to be displayed in the widget.
+
+*Example*:
+
+```js
+JSONForm1.setData(<data>).then(() => {
+  // Code to be executed after data is set
+});
+```
+
+</dd>
+
+
 ## Troubleshooting
 
 Here are some common errors that you may see when using the JSON Form widget:
