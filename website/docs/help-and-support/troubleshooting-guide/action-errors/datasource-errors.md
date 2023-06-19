@@ -74,9 +74,9 @@ This error can be fixed by filling the mentioned mandatory fields in the datasou
 Cannot delete datasource since it has 1 action(s) using it.
 ```
 
-This message indicates that the [datasource](/data/datasource-reference/) attempting to be deleted has some query action configured on it.
+This message indicates that the [datasource](/connect-data/reference/) attempting to be deleted has some query action configured on it.
 
-This error can be fixed by deleting any queries dependent on this [datasource](/data/datasource-reference/) before attempting to delete the [datasource](../../../data/datasource-reference/).
+This error can be fixed by deleting any queries dependent on this [datasource](/connect-data/reference/) before attempting to delete the [datasource](../../../connect-data/reference/).
 
 ### Error connecting to local DB or API
 
@@ -103,4 +103,4 @@ In particular, if you are connecting to a MySQL server (or similar SQL server), 
 
 If you continue to experience problems with building in Appsmith, it's a good idea to check the backend logs from the `stacks/logs/backend/backend.log` file for any error messages or other information that might help troubleshoot the issue.
 
-Learn more about how to [connect to a localhost database / API](/data/how-to-guides/how-to-work-with-local-apis-on-appsmith)
+Learn more about how to [connect to a localhost database / API](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith)

@@ -62,7 +62,7 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use case, you can connect to your own [database](/data/datasource-reference/).
+However, when you are building an app for a different use case, you can connect to your own [database](/connect-data/reference/).
 
 ## Writing your first query
 

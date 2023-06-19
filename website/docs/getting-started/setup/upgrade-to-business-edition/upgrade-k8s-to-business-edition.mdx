@@ -19,7 +19,7 @@ cat /appsmith-stacks/configuration/docker.env | grep APPSMITH_ENCRYPTION_
 ```
 </li>
 
-<li> Run the following commands to backup the database which is available at <code>/appsmith-stacks/data/backup</code>
+<li> Run the following commands to backup the database which is available at <code>/appsmith-stacks/connect-data/backup</code>
 
 ```bash
 # Run the backup command
@@ -67,7 +67,7 @@ helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
 
 ```bash
 # Download the backup file 
-kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/data/backup/
+kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/connect-data/backup/
 
 # Restore
 appsmithctl restore

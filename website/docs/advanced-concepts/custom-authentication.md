@@ -34,8 +34,8 @@ password:     appsmith_password
 ```
 :::
 
-1. Create a [datasource](/data/datasource-reference/authenticated-api).
-2. Create an [API query](/data/datasource-reference/rest-api) (named "**login_api**" here) with the your authentication endpoint URI.
+1. Create a [datasource](/connect-data/reference/authenticated-api).
+2. Create an [API query](/connect-data/reference/rest-api) (named "**login_api**" here) with the your authentication endpoint URI.
 3. Place the Input widgets' text into your query body. Accessing the Input widgets should look something like:
 
   ```javascript

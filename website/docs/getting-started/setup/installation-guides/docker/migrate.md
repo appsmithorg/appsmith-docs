@@ -85,13 +85,13 @@ Create a backup folder to store the dump file:
 
 ```
 cd "$old_path"
-docker-compose exec mongo mkdir -pv /data/db/backup
+docker-compose exec mongo mkdir -pv /connect-data/db/backup
 ```
 
 Dumping MongoDB data and compressing to a `gzip` file:
 
 ```
-docker-compose exec mongo sh -c 'mongodump --uri="$APPSMITH_MONGODB_URI" --archive=/data/db/backup/appsmith-data.archive --gzip'
+docker-compose exec mongo sh -c 'mongodump --uri="$APPSMITH_MONGODB_URI" --archive=/connect-data/db/backup/appsmith-data.archive --gzip'
 ```
 
 ## Migrate configuration
@@ -139,7 +139,7 @@ You can also move your certificate to the new container by running the following
 
 ```
 mkdir -pv "$new_path"/stacks/letsencrypt
-sudo cp -rfv "$old_path"/data/certbot/conf/* "$new_path"/stacks/letsencrypt
+sudo cp -rfv "$old_path"/connect-data/certbot/conf/* "$new_path"/stacks/letsencrypt
 ```
 
 ## Setup new Appsmith with Fat container
@@ -167,13 +167,13 @@ After your new deployment comes up (usually takes \~30 seconds), import the data
 Create the folder to copy the archive file:
 
 ```
-mkdir -pv "$new_path"/stacks/data/restore
+mkdir -pv "$new_path"/stacks/connect-data/restore
 ```
 
 Copy the archive file:
 
 ```
-cp "$old_path"/data/mongo/db/backup/appsmith-data.archive "$new_path"/stacks/data/restore/
+cp "$old_path"/connect-data/mongo/db/backup/appsmith-data.archive "$new_path"/stacks/connect-data/restore/
 ```
 
 Import data from this archive:

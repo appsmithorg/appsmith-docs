@@ -106,7 +106,7 @@ LIMIT 10;
 ```
 
 :::info
-When using dynamic binding with queries that contain SQL keywords such as `SELECT`, `WHERE`, `AND`, and other keywords, a [prepared statement](/data/concepts/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
+When using dynamic binding with queries that contain SQL keywords such as `SELECT`, `WHERE`, `AND`, and other keywords, a [prepared statement](/connect-data/concepts/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
 :::
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:

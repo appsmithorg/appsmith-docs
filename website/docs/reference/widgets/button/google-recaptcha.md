@@ -45,7 +45,7 @@ Make a `POST` request to `https://www.google.com/recaptcha/api/siteverify` with 
 
 ## Validation example
 
-Now that you have registered the site with [Google Recaptcha](https://www.google.com/recaptcha/about/), you can validate if it is working by using a [button widget](/reference/widgets/button) and adding an [API](/data/datasource-reference/authenticated-api) on Appsmith. Follow these steps to validate the reCAPTCHA:
+Now that you have registered the site with [Google Recaptcha](https://www.google.com/recaptcha/about/), you can validate if it is working by using a [button widget](/reference/widgets/button) and adding an [API](/connect-data/reference/authenticated-api) on Appsmith. Follow these steps to validate the reCAPTCHA:
 
 * Drag and drop a [button widget](/reference/widgets/button) onto the canvas
 * Add the **site key** to the [button's `Google reCAPTCHA Key` ](./#widget-properties)property

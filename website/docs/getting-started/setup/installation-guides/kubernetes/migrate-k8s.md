@@ -66,13 +66,13 @@ Export data from the existing `MongoDB` pod and download the archive file to you
   1. Create the `backup` directory in the `MongoDB` pod.
 
   ```bash
-      kubectl exec mongo-statefulset-0 -- mkdir -pv /data/db/backup
+      kubectl exec mongo-statefulset-0 -- mkdir -pv /connect-data/db/backup
   ```
 
   2. Execute `mongodump` command to export data from the running MongoDB pod.
 
    ```bash
-      kubectl exec mongo-statefulset-0 o-statefulset-0 -- sh -c 'mongodump --uri="mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@localhost/$MONGO_INITDB_DATABASE" --authenticationDatabase admin --archive=/data/db/backup/appsmith-data.archive --gzip'
+      kubectl exec mongo-statefulset-0 o-statefulset-0 -- sh -c 'mongodump --uri="mongodb://$MONGO_INITDB_ROOT_USERNAME:$MONGO_INITDB_ROOT_PASSWORD@localhost/$MONGO_INITDB_DATABASE" --authenticationDatabase admin --archive=/connect-data/db/backup/appsmith-data.archive --gzip'
    ```
 
   3. Copy the archive file from the MongoDB pod to your local.
@@ -166,13 +166,13 @@ Follow the below steps to import data from the archive file into the new Helm ch
   1. Create a `restore` directory in the new pod
 
       ```bash
-      kubectl exec appsmith-0 -- mkdir -p /appsmith-stacks/data/restore
+      kubectl exec appsmith-0 -- mkdir -p /appsmith-stacks/connect-data/restore
       ```
 
   2. Copy the archive file from local to the new pod:
 
       ```bash
-      kubectl cp appsmith-data.archive appsmith-0:/appsmith-stacks/data/restore
+      kubectl cp appsmith-data.archive appsmith-0:/appsmith-stacks/connect-data/restore
       ```
 
   3. Run `import_db` command:

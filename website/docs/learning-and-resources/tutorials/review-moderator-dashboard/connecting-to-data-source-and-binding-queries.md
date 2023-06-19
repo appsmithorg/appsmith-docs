@@ -18,13 +18,13 @@ Appsmith supports various data sources and lets you write queries on them to per
 :::info
 Appsmith supports various databases like:
 
-* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](/data/datasource-reference/querying-amazon-s3)
-* [ArangoDB](/data/datasource-reference/querying-arango-db)
-* [DynamoDB](/data/datasource-reference/querying-dynamodb)
-* [ElasticSearch](/data/datasource-reference/querying-elasticsearch)
-* [Firestore](/data/datasource-reference/querying-firestore)
-* [MongoDB](/data/datasource-reference/querying-mongodb/)
-* [MySQL](/data/datasource-reference/querying-mysql), and a [lot more](/data/datasource-reference/).
+* [Amazon S3 (also Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects)](/connect-data/reference/querying-amazon-s3)
+* [ArangoDB](/connect-data/reference/querying-arango-db)
+* [DynamoDB](/connect-data/reference/querying-dynamodb)
+* [ElasticSearch](/connect-data/reference/querying-elasticsearch)
+* [Firestore](/connect-data/reference/querying-firestore)
+* [MongoDB](/connect-data/reference/querying-mongodb/)
+* [MySQL](/connect-data/reference/querying-mysql), and a [lot more](/connect-data/reference/).
 :::
 
 Let's utilize this mock data source to fetch all the business items for the Review Moderator app by following the below steps:

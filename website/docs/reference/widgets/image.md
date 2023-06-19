@@ -33,7 +33,7 @@ Bind ```{{Table1.selectedRow.image}}``` in the Image property where "Table1" is 
 
 ## Display images from S3 bucket
 
-To fetch an image from [S3](/data/datasource-reference/querying-amazon-s3), follow these steps:
+To fetch an image from [S3](/connect-data/reference/querying-amazon-s3), follow these steps:
 
 * Click the + icon next to Queries/JS and choose your S3 datasource.
 * Select the "List files" method from the Commands drop-down menu.
@@ -100,6 +100,6 @@ These are functions that are called when event listeners are triggered in the wi
 
 ## Further reading
 
-* [Amazon S3](/data/datasource-reference/querying-amazon-s3)
+* [Amazon S3](/connect-data/reference/querying-amazon-s3)
 * [Filepicker widget](/reference/widgets/filepicker)
 
