@@ -157,7 +157,7 @@ To create this, follow the steps below:
 6. Under the **Body** tab, map your Form elements with respective input fields in the JSON format.
 
 <figure>
-  <img alt="PUT API" src="/img/configure-put-api-to-update-product-details" style= {{width:"100%", height:"auto"}} 
+  <img alt="PUT API" src="/img/configure-put-api-to-update-product-details.png" style= {{width:"100%", height:"auto"}} 
 />
   <figcaption align = "center"><i>Configure PUT API to Update Product Details</i></figcaption>
 </figure>
