@@ -116,7 +116,7 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
-Button1.setVisibility(true).then(() => {
+ButtonGroup1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
 
@@ -134,7 +134,7 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
-Button1.setDisabled(false).then(() => {
+ButtonGroup1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
 ```
@@ -142,34 +142,3 @@ Button1.setDisabled(false).then(() => {
 </dd>
 
 
-#### setColor `string`
-
-<dd>
-
-Sets the background color of the button widget.
-
-*Example*:
-
-```js
-Button1.setColor('#FF0000').then(() => {
-  // code to be executed after color is set
-})
-```
-
-</dd>
-
-#### setLabel `string`
-
-<dd>
-
-Sets the label of the button widget dynamically.
-
-*Example*:
-
-```js
-Button1.setLabel('Click me!').then(() => {
-  // code to be executed after label is set
-})
-```
-
-</dd>
