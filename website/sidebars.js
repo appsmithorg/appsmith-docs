@@ -583,6 +583,15 @@ const sidebars = {
                 'learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views',
               ],
             },
+            {
+              type: 'category',
+              label: 'Building a Product Catalog Manager',
+              link: {
+                type: 'doc',
+                id: 'learning-and-resources/tutorials/building-a-product-catalog-manager/README',
+              },
+              items: [],
+            },
           ],
         },
         {
