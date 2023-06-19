@@ -284,3 +284,4 @@ The `isDisabled` property indicates the disabled status of a widget. It is repre
 The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
 
 </dd>
+
