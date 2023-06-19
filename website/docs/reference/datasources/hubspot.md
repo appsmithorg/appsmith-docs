@@ -1,91 +1,56 @@
 ---
 sidebar_position: 10
+description: Connect Appsmith to Hubspot and create queries.
 ---
 
 # HubSpot
 
+This page provides information for connecting Appsmith to HubSpot and for reading and writing data in your applications.
 
-HubSpot is a **cloud-based CRM** designed to help align sales and marketing teams, promote sales, increase ROI, and improve your inbound marketing strategy to produce more qualified leads. In simple words, it's a software platform created to assist your business with marketing and sales.
-
-:::info
-To integrate HubSpot with Appsmith, you should understand the basics of [connecting to datasource](/core-concepts/connecting-to-data-sources/) on Appsmith.
-:::
-
-Appsmith provides an easy way to integrate with HubSpot, and enables you to perform different operations using a custom UI built with minimal configurations.
-
-
-# Create HubSpot Datasource
-
-To add a HubSpot API, navigate to **Explorer** >> Click the **+** icon (next to Datasources) >> Select **HubSpot** under APIs.
-
-
-
+## Connect HubSpot
 
 <VideoEmbed host="youtube" videoId="h2Jp8PenbTM" title="Create HubSpot Datasource" caption="Create HubSpot Datasource"/>
 
+### Connection parameters
 
+The following section is a reference guide that provides a complete description of all the parameters to connect to a HubSpot database.
 
-## Connection settings
+<figure>
+   <img src="/img/hubspot-connection.png" style= {{width:"100%", height:"auto"}} alt="Configuring a HubSpot datasource."/>
+   <figcaption align = "center"><i>Configuring a HubSpot datasource.</i></figcaption>
+</figure>
 
-Configure the HubSpot API as illustrated below:
+<dl>
+  <dt><b>Authentication Type</b></dt><br />
+  <dd>Appsmith supports using **Bearer Token** authorization for HubSpot.</dd>
+  <dd>
+  
+To find your Bearer Token in HubSpot:
+1. From your HubSpot dashboard, click the **settings** icon.
+1. In the Preferences pane, click **Integrations** > **Private Apps**.
+1. Select or create the app that you want to connect to Appsmith.
+1. Navigate to your app's **Scopes**.
+1. For **CMS**, **CRM**, and **Settings**, enable the scopes that Appsmith will need for the operations you want.
+1. Navigate to the **Auth** page of your app's settings.
+1. There you'll find the app's [**Access Token**](https://developers.hubspot.com/docs/api/oauth/tokens). Use the access token as your **Bearer Token** in Appsmith.
 
-![](/img/hubspot-connection.png)
+  </dd>
+</dl>
 
+## Query HubSpot
 
+The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
 
-### Authentication Type
-Appsmith allows you to select from the available authentication types to integrate with an HubSpot database:
-
-#### Bearer Token 
-
-Bearer Tokens are the predominant access token used with [OAuth 2.0](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/).
-You can authenticate to the API by providing your access token in the HTTP authorization bearer token header.
-
-Let's see how you can fetch your Bearer Token:
-
-
-
-
-
-<VideoEmbed host="youtube" videoId="q1DkGLJ6JFU" title="Fetching Access Token" caption="Fetching Access Token"/>
-
-
-* Open [**HubSpot**](https://www.hubspot.com/products).
-* You can **create a new account** or select an existing one.
-* Click the **settings** icon on top-right corner, and select integrations.
-* Create a private app (or open an existing one).
-* Navigate to **Scopes**.
-* Allow necessary permissions for **CMS, CRM, and Settings**.
-* Navigate to the auth page of your app settings.
-* Here you'll be able to find the app's **client ID** and [**access token**](https://developers.hubspot.com/docs/api/oauth/tokens).
-
-
-Access token looks something like this:
-
-```
-pat-na1-217ee**-****-****-****-***
-```
-
-
-## Create queries
-
-You can add queries to the newly created HubSpot datasource in one of the below ways:
-
-
-### Datasource page
-You can add queries to HubSpot datasource by selecting the **New API +** button available on the datasource page.
-
-![](/img/hubspot-create-query-from-datasource-page.png)
-
-### Query/JS page
-By navigating to **Explorer** >> **Click plus sign** (+) next to Queries/JS >> Select the **HubSpot datasource**.
-
-
-![](/img/create-hubspot-query-from-Query-JS-page.png)
+<figure>
+  <img src="/img/.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
+  <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
+</figure>
 
 ## Query
 
 You can create queries to fetch, update, and delete data from a datasource using the Appsmith query editor. HubSpot integration supports the following query methods:
+
+
 
 |                Query Name                |              Description              |
 |:----------------------------------------:|:-------------------------------------:|
@@ -138,16 +103,3 @@ You can create queries to fetch, update, and delete data from a datasource using
 | Settings - Retrieve Roles Account        |  View users in your HubSpot account.                                     |
 | Settings - See Details Account's Teams   |  Obtain information about the team's account.                                    |
 
-
-You can check the [Query Settings Guide ](/core-concepts/data-access-and-binding/querying-a-database/query-settings) to learn more about queries.
-
-
-
-
-## Using queries in applications
-
-Once you have successfully run a Query, you can use it in your app to:
-
-* [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
-* [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)
