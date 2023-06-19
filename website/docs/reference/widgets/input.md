@@ -120,9 +120,77 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 | **onBlur**      | Sets an action to take place when the input loses focus. |
 | **onSubmit**      | Sets an action to take place when the input is submitted with the Enter key. When the widget's **Data Type** is set to **Multi-line text**, the submit is triggered by CTRL + Enter instead. |
 
-## Further reading
+## Methods
 
-- [Currency Input](/reference/widgets/currency-input)
-- [Phone Input](/reference/widgets/phone-input)
-- [Rich-Text Editor](/reference/widgets/rich-text-editor)
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Input1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Input1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setValue `boolean`
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+Input1.setValue(true).then(() => {
+  // code to be executed after value is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Input1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
 

@@ -42,3 +42,27 @@ Style properties allow you to change the look and feel of the widget.
 | **Divider Color** | Sets the color of the divider line. Accepts valid CSS [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                            |
 | **Cap**           | Sets the type of cap to use on the divider line; none, arrows, or dots. With JS enabled, accepts _strings_ with value "nc," "arrow," or "dot."             |
 | **Cap Position**  | Sets which sides of the divider line have caps. With JS enabled, accepts _number_ values -1 (left/top), 0 (both), or 1 (right/bottom).                     |
+
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Divider1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>

@@ -218,3 +218,44 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | **onURLChanged**      | Sets the action to take place when the widget's URL is changed.                                     |
 | **onSrcDocChanged**   | Sets the action to take place when the `srcDoc`property is changed.  |
 | **onMessageReceived** | Sets the action to take place when a `postMessage` event is received from the embedded page.       |
+
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Iframe1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
+
+
+#### setURL `string`
+
+<dd>
+
+Allows you to dynamically change the content of the iframe by providing a new URL. 
+
+*Example*:
+
+```js
+Iframe1.setURL('<https://example.com>').then(() => {
+  // code to be executed after URL is set
+})
+```
+
+</dd>

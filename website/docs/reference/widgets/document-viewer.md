@@ -94,12 +94,12 @@ DocumentViewer1.setVisibility(true).then(() => {
 
 <dd>
 
-Updates the URL of the document to be displayed in the document viewer widget. 
+Updates the URL of the document to be displayed in the Document Viewer widget. 
 
 *Example*:
 
 ```js
-DocumentViewer1.setURL('<https://example.com/image.txt>').then(() => {
+DocumentViewer1.setURL('<https://example.com/file.txt>').then(() => {
   // code to be executed after URL is set
 })
 ```

@@ -103,3 +103,43 @@ These are functions that are called when event listeners are triggered in the wi
 * [Amazon S3](/reference/datasources/querying-amazon-s3)
 * [Filepicker widget](/reference/widgets/filepicker)
 
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Image1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
+
+
+#### setImage `string`
+
+<dd>
+
+Sets the `base64` encoded image in the Image widget.
+
+*Example*:
+
+```js
+Image1.setImage('data:image/png;base64,iVBORw0KG...').then(() => {
+  // code to be executed after image is set
+})
+```
+
+</dd>
