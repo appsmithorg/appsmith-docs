@@ -116,7 +116,7 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
-ButtonGroup1.setVisibility(true).then(() => {
+Button1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
 
@@ -134,7 +134,7 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
-ButtonGroup1.setDisabled(false).then(() => {
+Button1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
 ```
