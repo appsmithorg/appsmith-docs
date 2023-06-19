@@ -137,5 +137,3 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | **onBlur** | Triggers an action when a Datepicker widget loses focus. |
 
 
-
-

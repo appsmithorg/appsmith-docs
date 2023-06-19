@@ -66,8 +66,43 @@ The `isVisible` property reflects the state of the widget's **Visible** setting.
 
 Watch the following videos to learn how to generate PDF reports using [Apitemplate.io](https://www.youtube.com/watch?v=8j6Z9bZvLqA) and [Carbone.io](https://www.youtube.com/watch?v=xlthDth2S6Q).
 
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
 
 
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+DocumentViewer1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
 
 
+#### setURL `boolean`
+
+<dd>
+
+Updates the URL of the document to be displayed in the document viewer widget. 
+
+*Example*:
+
+```js
+DocumentViewer1.setURL('<https://example.com/image.txt>').then(() => {
+  // code to be executed after URL is set
+})
+```
+
+</dd>
 
