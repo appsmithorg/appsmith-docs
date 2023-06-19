@@ -14,20 +14,45 @@ import TabItem from '@theme/TabItem';
 
 This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
 
-Look through the following options to see which guide suits your situation:
+The recommended way to connect to your local datasource is to expose it via **ngrok**, which you can read about in the **ngrok** tab below. If you're self-hosting your Appsmith instance and you'd like to connect another way, you can follow the steps in the **localhost** tab if your datasource is hosted via localhost, or the **Docker datasource** tab if it's in its own Docker container.
 
-* When you're self-hosting Appsmith and your local datasource is hosted via `localhost`, follow the steps in the **localhost** tab of [Self-hosted Appsmith](#self-hosted-appsmith) below.
-* When you're self-hosting Appsmith and your local datasource is in a Docker container, follow the steps in the **Datasource in Docker** tab of [Self-hosted Appsmith](#self-hosted-appsmith) below to set up a Docker network.
-* If you're connecting from the Appsmith Cloud platform to your locally hosted datasource, follow the steps in [Appsmith Cloud](#appsmith-cloud) to set up ngrok.
+<Tabs queryString="connect-method">
 
-## Self-hosted Appsmith
+<TabItem label="ngrok" value="ngrok">
 
-<Tabs queryString="docker-method">
+With ngrok, you can expose your local datasource to the internet and connect from the cloud:
 
+<VideoEmbed host="youtube" videoId="IUX2rXmS17E" title="Connect to localhost using ngrok" caption="Connect to localhost using ngrok"/>
+
+**Set up ngrok:** first, you'll need to [sign up for an account](https://dashboard.ngrok.com/signup) with ngrok if you don't have one already. Then, follow the [setup instructions](https://dashboard.ngrok.com/get-started/setup) to install and configure ngrok for the first time. Run `ngrok help` to make sure it's ready to work.
+
+Once you are ready to work with ngrok, follow these steps to connect Appsmith to your database:
+
+1. Expose your database or API with the ```ngrok``` command:
+  ```bash
+  ngrok <protocol> <port>
+  ```
+
+2. When the command completes, ngrok returns you a set of session details including the **Forwarding** address.
+
+3. Back in your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
+
+4. Enter the URL or **Host Address** & **Port** that you just got from ngrok, then configure your remaining datasource details as normal. If you used the `http` protocol, no port is necessary.
+
+5. Click **Test** to verify that the connection is valid.
+
+Your localhost application should now be connected and query-able from within your Appsmith app.
+
+<figure>
+  <img src="/img/ngrok-config-example.png" style={{width: "100%", height: "auto"}} alt="Connecting from Appsmith to local PostgreSQL database using ngrok" />
+  <figcaption align="center"><i>Connecting from Appsmith to local PostgreSQL database using ngrok</i></figcaption>
+</figure>
+
+</TabItem>
 
 <TabItem label="localhost" value="localhost">
 
-This guide describes how to connect your self-hosted Appsmith instance to your localhost datasource.
+This guide describes how to connect your self-hosted Appsmith instance to your localhost datasource. These steps won't work if you're connecting from the Appsmith Cloud platform.
 
 <VideoEmbed host="youtube" videoId="4XlgsVekzhI" title="Connecting from Appsmith in Docker to local datasource" caption="Connecting from Appsmith in Docker to local datasource"/>
 
@@ -72,13 +97,13 @@ services: ...
 
 </TabItem>
 
-<TabItem label="Datasource in Docker" value="docker-network">
+<TabItem label="Docker datasource" value="docker">
 
 This guide describes how to connect your APIs and databases to your Appsmith instance when they are each in separate Docker containers.
 
 #### Set up services
 
-In this guide, you'll use networked Docker containers to spin up a Postgres instance alongside Appsmith and connect to the database from an Appsmith app.
+In this guide, you'll use networked Docker containers to spin up a Postgres instance alongside Appsmith and connect to the database from an Appsmith app. These steps won't work if you're connecting from the Appsmith Cloud platform.
 
 1. From the command line, create a Docker network with the following:
 
@@ -116,26 +141,7 @@ In this guide, you'll use networked Docker containers to spin up a Postgres inst
     docker-compose up -d
     ```
 
-1. Inside the `DataSource` folder, create `docker-compose.yml` file and assign it to the same network. For example:
-
-    ```yaml
-    version: '3'
-    services:
-        postgres:
-            image: 'postgres:12'
-            restart: always
-            volumes:
-                - './postgres_data:/var/lib/postgresql/data'
-            environment:
-                - POSTGRES_PASSWORD=<your-postgres-password>
-            ports:
-                - '5433:5432'
-            networks:
-                - appsmithnetwork
-    networks:
-        appsmithnetwork:
-            external: true
-    ```
+1. Inside the `DataSource` folder, create `docker-compose.yml` file and assign it to the same network from before.
 
 1. Start the Datasource container with:
    
@@ -147,7 +153,7 @@ In this guide, you'll use networked Docker containers to spin up a Postgres inst
 
 Now, you are ready to open your app and connect to your Postgres instance.
 
-1. Navigate to your application and create a Postgres datasource.
+1. In Appsmith, create a Postgres datasource.
 
 1. For the **Host Address** field, enter the name of the Docker container that's running your Postgres instance. For example, this might look something like `postgres_postgres_1`.
 
@@ -166,48 +172,4 @@ Now, you are ready to open your app and connect to your Postgres instance.
 
 </Tabs>
 
-## Appsmith Cloud
-
-With ngrok, you can expose your local datasource to the internet and connect from the cloud:
-
-<VideoEmbed host="youtube" videoId="IUX2rXmS17E" title="Connect to localhost using ngrok" caption="Connect to localhost using ngrok"/>
-
-**Set up ngrok:** first, you'll need to [sign up for an account](https://dashboard.ngrok.com/signup) with ngrok if you don't have one already. Then, follow the [setup instructions](https://dashboard.ngrok.com/get-started/setup) to install and configure ngrok for the first time. Run `ngrok help` to make sure it's ready to work.
-
-Once you are ready to work with ngrok, follow these steps to connect Appsmith to your database:
-
-1. Expose your database or API with the ```ngrok``` command:
-  ```bash
-  ngrok <protocol> <port>
-  ```
-  For example, you might use this for a PostgreSQL database instance:
-  ```bash
-  ngrok tcp 5432
-  ```
-
-2. When the command completes, ngrok returns you a set of session details including the **Forwarding** address. It should look something like:
-    * For **tcp**:
-        ```bash
-        tcp://0.tcp.in.ngrok.io:17392
-        ```
-        In this address, `tcp://0.tcp.in.ngrok.io` is the **Host Address** and `17392` is the **Port**.
-
-    * For **http**:
-        ```bash
-        https://e4da-2600-1700-ede0-5b20-b092-ac43-60a7-178b.ngrok-free.app
-        ```
-        This is simply the URL to use for your API, no port necessary.
-
-3. Back in your Appsmith app, create a [datasource](/core-concepts/connecting-to-data-sources) for the appropriate type of database or API.
-
-4. Enter the URL or **Host Address** & **Port** that you just got from ngrok, then configure your remaining datasource details as normal.
-
-5. Click **Test** to verify that the connection is valid.
-
-Your localhost application should now be connected and query-able from within your Appsmith app.
-
-<figure>
-  <img src="/img/ngrok-config-example.png" style={{width: "100%", height: "auto"}} alt="Connecting from Appsmith to local PostgreSQL database using ngrok" />
-  <figcaption align="center"><i>Connecting from Appsmith to local PostgreSQL database using ngrok</i></figcaption>
-</figure>
 
