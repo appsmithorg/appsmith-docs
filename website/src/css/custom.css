@@ -437,3 +437,10 @@ ul.circle > li:before {
     max-width: 65% !important;
   }
 }
+
+/* Search button width */
+.DocSearch-Button {
+  width: 400px;
+  }
+  
+
