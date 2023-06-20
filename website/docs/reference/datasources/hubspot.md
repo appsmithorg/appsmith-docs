@@ -16,22 +16,22 @@ This page provides information for connecting Appsmith to HubSpot and for readin
 The following section is a reference guide that provides a complete description of all the parameters to connect to a HubSpot database.
 
 <figure>
-   <img src="/img/hubspot-connection.png" style= {{width:"100%", height:"auto"}} alt="Configuring a HubSpot datasource."/>
+   <img src="/img/hubspot-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a HubSpot datasource."/>
    <figcaption align = "center"><i>Configuring a HubSpot datasource.</i></figcaption>
 </figure>
 
 <dl>
-  <dt><b>Authentication Type</b></dt><br />
-  <dd>Appsmith supports using **Bearer Token** authorization for HubSpot.</dd>
-  <dd>To find your Bearer Token in HubSpot:
+  <dt><b>Authentication Type</b></dt>
+  <dd>Appsmith supports using **Bearer Token** authorization for HubSpot.</dd><br/>
+  <dd>To find your Bearer Token:
     <ol>
-        <li> From your HubSpot dashboard, click the **settings** icon.</li>
-        <li> In the Preferences pane, click **Integrations** > **Private Apps**.</li>
+        <li> From your HubSpot dashboard, click the <b>settings</b> icon.</li>
+        <li> In the Preferences pane, click <b>Integrations</b> &gt; <b>Private Apps</b>.</li>
         <li> Select or create the app that you want to connect to Appsmith.</li>
-        <li> Navigate to your app's **Scopes**.</li>
-        <li> For **CMS**, **CRM**, and **Settings**, enable the scopes that Appsmith needs for the operations you want.</li>
-        <li> Navigate to the **Auth** page of your app's settings.</li>
-        <li> There you'll find the app's [**Access Token**](https://developers.hubspot.com/docs/api/oauth/tokens). Use the access token as your **Bearer Token** in Appsmith.</li>
+        <li> Navigate to your app's <b>Scopes</b>.</li>
+        <li> For <b>CMS</b>, <b>CRM</b>, and <b>Settings</b>, enable the scopes that Appsmith needs for the operations you want.</li>
+        <li> Navigate to the <b>Auth</b> page of your app's settings.</li>
+        <li> There you'll find the app's <a href="https://developers.hubspot.com/docs/api/oauth/tokens"><b>Access Token</b></a>. Use the access token as your <b>Bearer Token</b> in Appsmith.</li>
     </ol>
 
   </dd>
@@ -42,7 +42,7 @@ The following section is a reference guide that provides a complete description 
 The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
 
 <figure>
-  <img src="/img/.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
+  <img src="/img/hubspot-query-config.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
   <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
 </figure>
 
@@ -51,6 +51,39 @@ The following section is a reference guide that provides a description of the re
 You can create queries to fetch, update, and delete data from a datasource using the Appsmith query editor. HubSpot integration supports the following query methods:
 
 
+### Fetch data
+
+The **Get Table Rows** command fetches rows from a table. The following is a list of all the fields available for **Get Table Rows**:
+
+<dl>
+  <dt><b>Sort</b></dt>
+  <dd>The name of a field by which to sort the fetched records.
+  </dd><br />
+
+  <dt><b>Next Page Token</b></dt>
+  <dd>Next Page Token</dd>
+
+</dl>
+
+
+### Create data 
+
+(Add new table row)
+
+
+### Update data
+
+(Update existing row)
+
+
+### Delete data
+
+(Permanently delete row)
+
+
+## Commands
+
+The following commands are available for your HubSpot queries:
 
 |                Query Name                |              Description              |
 |:----------------------------------------:|:-------------------------------------:|
@@ -71,13 +104,6 @@ You can create queries to fetch, update, and delete data from a datasource using
 | HubDB - Clone Row                        |  Duplicate/clone  a specific row.                                   |
 | HubDB - Get Set Rows                     |   Get set of rows from the table.                                    |
 | HubDB - Permanently Delete Rows          |   Delete a set of rows from a HubDB table.                                    |
-| Domains - Get Current Domains            |  Returns all existing domains that have been created.                                     |
-| Domains - Get Single Domain              |  Returns a single domain with the id specified.                                     |
-| URL Redirects - Get Current Redirects    |  Returns all existing URL redirects.                                     |
-| URL Redirects - Create Redirect          |   Creates and configures a new URL redirect.                                    |
-| URL Redirects - Get Details Redirect     |   Returns the details for a single existing URL redirect by ID.                                    |
-| URL Redirects - Update Redirect          |  Updates the settings for an existing URL redirect.                                      |
-| URL Redirects - Delete Redirect          |  Delete one existing redirect.                                      |
 | CRM - List Objects                       |    Fetches all the object from the database. |
 | CRM - Create Object                      |   Creates a new object in the database.                                    |
 | CRM - Read Object                        | Retrieve a particular object. |
@@ -85,21 +111,3 @@ You can create queries to fetch, update, and delete data from a datasource using
 | CRM - Archive Object                     |  Archive or delete an existing object.                                     |
 | CRM - Search Object                      | Search any object.                                      |
 | CRM - GDPR Delete                        |  Deletes the record and any associations.                                     |
-| Files - Import File                      | Imports CRM records into your HubSpot account.    |
-| Files - Delete File                      |  Deletes the file at the specified path in the specified environment.                                     |
-| Files - Get File                         |   Gets the file at the specified path in the specified environment.                                    |
-| Files - Create Folder                    | Create a folder in the specified environment.                                     |
-| Files - Search File                      |  Search for any file in the specified environment.                                                     |
-| Files - Search Folder                    |   Search for any folder in the specified environment.                                    |
-| Files - Update Folder Properties         |  Perform a partial update of a property.                                    |
-| Files - Check Folder Update Status       |   Check the status of a batch file access update task.                                    |
-| Files - Get Folder                       |  Get the details for a specific folder.                                     |
-| Files - Delete Folder                    |   Delete a specific folder.                                    |
-| Settings - Retrieve List of Users        |  Get a list of authorized users.                                   |
-| Settings - Add User                      |  Add users to your HubSpot account.                                     |
-| Settings - Retrieve User                 |  Retrieve an existing user.                                  |
-| Settings - Modify User                   |  Update user details.                                  |
-| Settings - Remove User                   |  Remove set of user.                                    |
-| Settings - Retrieve Roles Account        |  View users in your HubSpot account.                                     |
-| Settings - See Details Account's Teams   |  Obtain information about the team's account.                                    |
-
