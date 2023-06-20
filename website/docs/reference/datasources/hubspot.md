@@ -6,10 +6,7 @@ description: Connect Appsmith to Hubspot and create queries.
 # HubSpot
 
 This page provides information for connecting Appsmith to HubSpot and for reading and writing data in your applications.
-
-## Connect HubSpot
-
-<VideoEmbed host="youtube" videoId="h2Jp8PenbTM" title="Create HubSpot Datasource" caption="Create HubSpot Datasource"/>
+ 
 
 ### Connection parameters
 
@@ -39,17 +36,12 @@ The following section is a reference guide that provides a complete description 
 
 ## Query HubSpot
 
-The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
+The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries. See []
 
 <figure>
   <img src="/img/hubspot-query-config.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
   <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
 </figure>
-
-## Query
-
-You can create queries to fetch, update, and delete data from a datasource using the Appsmith query editor. HubSpot integration supports the following query methods:
-
 
 ### Fetch data
 
