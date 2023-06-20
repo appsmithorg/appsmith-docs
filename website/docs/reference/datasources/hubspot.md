@@ -23,16 +23,16 @@ The following section is a reference guide that provides a complete description 
 <dl>
   <dt><b>Authentication Type</b></dt><br />
   <dd>Appsmith supports using **Bearer Token** authorization for HubSpot.</dd>
-  <dd>
-  
-To find your Bearer Token in HubSpot:
-1. From your HubSpot dashboard, click the **settings** icon.
-1. In the Preferences pane, click **Integrations** > **Private Apps**.
-1. Select or create the app that you want to connect to Appsmith.
-1. Navigate to your app's **Scopes**.
-1. For **CMS**, **CRM**, and **Settings**, enable the scopes that Appsmith will need for the operations you want.
-1. Navigate to the **Auth** page of your app's settings.
-1. There you'll find the app's [**Access Token**](https://developers.hubspot.com/docs/api/oauth/tokens). Use the access token as your **Bearer Token** in Appsmith.
+  <dd>To find your Bearer Token in HubSpot:
+    <ol>
+        <li> From your HubSpot dashboard, click the **settings** icon.</li>
+        <li> In the Preferences pane, click **Integrations** > **Private Apps**.</li>
+        <li> Select or create the app that you want to connect to Appsmith.</li>
+        <li> Navigate to your app's **Scopes**.</li>
+        <li> For **CMS**, **CRM**, and **Settings**, enable the scopes that Appsmith needs for the operations you want.</li>
+        <li> Navigate to the **Auth** page of your app's settings.</li>
+        <li> There you'll find the app's [**Access Token**](https://developers.hubspot.com/docs/api/oauth/tokens). Use the access token as your **Bearer Token** in Appsmith.</li>
+    </ol>
 
   </dd>
 </dl>
