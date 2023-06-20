@@ -98,14 +98,16 @@ Video1.setURL('<https://example.com/video.mp4>').then(() => {
 #### setPlaying `boolean`
 
 <dd>
+
 Sets the playing state of the Video widget.
 
 *Example*:
-
 ```js
 Video1.setPlaying(true)
+```
+For appsmith reactivity, await the setter method or use the `.then()` block.
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+```js
 Video1.setPlaying(true).then(() => {
   // code to be executed after playing state is set
 })
