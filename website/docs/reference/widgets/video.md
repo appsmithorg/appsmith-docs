@@ -46,3 +46,68 @@ Style properties allow you to change the look and feel of the widget.
 | **Background color** | Sets the widget's background color.                    |
 | **Border Radius**    | Allows you to define curved corners.                   |
 | **Box Shadow**       | Allows you to choose from the available shadow styles. |
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Video1.setVisibility(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Video1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setURL `string`
+
+<dd>
+
+Sets the URL of the video to be displayed in the widget.
+
+*Example*:
+
+```js
+Video1.setURL('<https://example.com/video.mp4>')
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Video1.setURL('<https://example.com/video.mp4>').then(() => {
+  // code to be executed after URL is set
+})
+```
+
+</dd>
+
+
+#### setPlaying `boolean`
+
+<dd>
+Sets the playing state of the Video widget.
+
+*Example*:
+
+```js
+Video1.setPlaying(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Video1.setPlaying(true).then(() => {
+  // code to be executed after playing state is set
+})
+```
+</dd>

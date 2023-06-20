@@ -86,3 +86,28 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onTabSelected** | Sets the action to be run when the user selects a tab.  |
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Tabs1.setVisibility(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Tabs1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>

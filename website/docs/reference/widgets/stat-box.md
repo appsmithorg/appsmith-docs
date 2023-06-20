@@ -44,3 +44,30 @@ Style properties allow you to change the look and feel of the widget.
 | **Border Width**    | Sets the value for border width.                                                           |
 | **Border Radius**   | Allows you to define curved corners.                                                       |
 | **Box Shadow**      | Allows you to choose from the available shadow styles.                                     |
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Statbox1.setVisibility(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Statbox1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>

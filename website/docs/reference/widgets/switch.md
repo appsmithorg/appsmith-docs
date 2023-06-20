@@ -60,3 +60,112 @@ Style properties allow you to change the look and feel of the widget.
 | Style            |                                          |
 | ---------------- | ---------------------------------------- |
 | **Accent color** | Sets the background color of the widget. |
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Switch1.setVisibility(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Switch1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Switch1.setDisabled(false)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Switch1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Switch1.setRequired(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Switch1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
+
+
+#### setValue `boolean`
+
+<dd>
+
+Sets the value to be displayed in the widget.
+
+*Example*:
+
+```js
+Switch1.setValue(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Switch1.setValue(true).then(() => {
+  // code to be executed after options are set
+})
+```
+
+</dd>
+
+
+
+#### setColor `string`
+
+<dd>
+
+Sets the background color of the widget.
+
+*Example*:
+
+```js
+Switch1.setColor('#FF0000')
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Switch1.setColor('#FF0000').then(() => {
+  // code to be executed after color is set
+})
+```
+
+</dd>
+
