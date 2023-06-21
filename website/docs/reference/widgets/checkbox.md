@@ -176,6 +176,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+Checkbox1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Checkbox1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -194,6 +200,12 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
+Checkbox1.setDisabled(false)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Checkbox1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -208,6 +220,12 @@ Checkbox1.setDisabled(false).then(() => {
 Allows you to dynamically set the value of the Checkbox widget.
 
 *Example*:
+
+```js
+Checkbox1.setValue(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Checkbox1.setValue(true).then(() => {
@@ -225,6 +243,12 @@ Checkbox1.setValue(true).then(() => {
 Sets whether the widget is required or not.
 
 *Example*:
+
+```js
+Checkbox1.setRequired(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Checkbox1.setRequired(true).then(() => {

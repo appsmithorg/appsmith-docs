@@ -58,6 +58,12 @@ Updates the playing state of the Audio widget. When the `setPlaying` method is c
 *Example*:
 
 ```js
+Audio1.setPlaying(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Audio1.setPlaying(true).then(() => {
   // Perform additional actions or write code to be executed after the playing state is set
 });
@@ -73,6 +79,12 @@ Audio1.setPlaying(true).then(() => {
 Updates the URL of the audio to be played in the audio widget. Provide the desired URL as a string parameter to the `setURL` method. 
 
 *Example*:
+
+```js
+Audio1.setURL('<https://example.com/image.mp3>')
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Audio1.setURL('<https://example.com/image.mp3>').then(() => {
@@ -91,6 +103,12 @@ Audio1.setURL('<https://example.com/image.mp3>').then(() => {
 Updates the visibility of the Audio widget.
 
 *Example*:
+
+```js
+Audio1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Audio1.setVisibility(true).then(() => {

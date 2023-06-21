@@ -82,6 +82,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+DocumentViewer1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 DocumentViewer1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -97,6 +103,12 @@ DocumentViewer1.setVisibility(true).then(() => {
 Updates the URL of the document to be displayed in the Document Viewer widget. 
 
 *Example*:
+
+```js
+DocumentViewer1.setURL('<https://example.com/file.txt>')
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 DocumentViewer1.setURL('<https://example.com/file.txt>').then(() => {
