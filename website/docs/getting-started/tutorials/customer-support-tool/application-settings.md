@@ -21,6 +21,8 @@ In this section, you'll learn to:
     - Select the **Side** orientation.
     - Select the **Theme** background color.
 
+4. Click the **Preview** button on the top right of the screen to see the navbar. Click the button again to go back to the *Edit* mode.
+
 ## Deploy and share application
 
 1. Click the **Deploy** button on the top right of the Appsmith editor to deploy the app and test it as an end user. 
@@ -31,6 +33,6 @@ In this section, you'll learn to:
 
 See [**Invite Users**](/advanced-concepts/invite-users) for more information on sharing applications.
 
-In this tutorial, you learned to build a customer support tool with a dashboard, to view, create, edit tickets and add comments. 
+In this tutorial, you learned to build a customer support tool with a dashboard, and a page to view, create, edit tickets and add comments. 
 
 Happy App Building!

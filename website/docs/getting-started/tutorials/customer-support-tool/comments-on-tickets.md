@@ -4,6 +4,8 @@ sidebar_position: 5
 
 # Add Comments on Tickets
 
+In this section, you'll learn to:
+* Add comments to a ticket
 
 ## Create add comments query
 

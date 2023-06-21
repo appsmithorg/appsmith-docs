@@ -45,7 +45,7 @@ const sidebars = {
                 'getting-started/tutorials/customer-support-tool/add-new-tickets',
                 'getting-started/tutorials/customer-support-tool/edit-ticket-details',
                 'getting-started/tutorials/customer-support-tool/comments-on-tickets',
-                'getting-started/tutorials/customer-support-tool/add-navbar'
+                'getting-started/tutorials/customer-support-tool/application-settings'
               ],
             },
             // Hiding the tutorials

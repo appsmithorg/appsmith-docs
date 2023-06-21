@@ -5,7 +5,8 @@ sidebar_position: 4
 # Edit Ticket Details
 
 In this section, you'll learn to:
-* Edit and save ticket details.
+* Create a form to edit ticket details
+* Update and save ticket details.
 
 ## Build UI
 

@@ -206,6 +206,6 @@ In this tutorial, you explored a few different widgets and created a simple data
 
 Happy App Building.
 
-## Next steps
+## Next
 
-[**Tutorials**](/getting-started/tutorials/)<br />
+[**Customer Support Tool**](/getting-started/tutorials/customer-support-tool)<br />
