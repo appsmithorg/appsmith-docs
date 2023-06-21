@@ -792,6 +792,71 @@ Refers to an array of indices corresponding to the rows that have been updated.
 ```
 </dd>
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Table1.setVisibility(true)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Table1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
+
+#### setData `array<object`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
+  // code to be executed after data is set
+})
+```
+
+</dd>
+
+
+
+#### setSelectedRowIndex `number`
+
+<dd>
+
+ Sets the selected row index of the table widget.
+
+*Example*:
+
+```js
+Table1.setSelectedRowIndex(2)
+
+//For appsmith reactivity, await the setter method or use the `.then()` block.
+Table1.setSelectedRowIndex(2).then(() => {
+  // code to be executed after selected row index is set
+})
+```
+
+</dd>
 
 ## Server-side pagination
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination.
@@ -864,71 +929,6 @@ For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to di
  
 </Tabs>
 
-## Methods
-
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
-
-These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
-
-
-#### setVisibility `boolean`
-
-<dd>
-
-Sets the visibility of the widget.
-
-*Example*:
-
-```js
-Table1.setVisibility(true)
-
-//For appsmith reactivity, await the setter method or use the `.then()` block.
-Table1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-
-</dd>
-
-#### setData `array<object`
-
-<dd>
-
-Sets the visibility of the widget.
-
-*Example*:
-
-```js
-Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
-
-//For appsmith reactivity, await the setter method or use the `.then()` block.
-Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
-  // code to be executed after data is set
-})
-```
-
-</dd>
-
-
-
-#### setSelectedRowIndex `number`
-
-<dd>
-
- Sets the selected row index of the table widget.
-
-*Example*:
-
-```js
-Table1.setSelectedRowIndex(2)
-
-//For appsmith reactivity, await the setter method or use the `.then()` block.
-Table1.setSelectedRowIndex(2).then(() => {
-  // code to be executed after selected row index is set
-})
-```
-
-</dd>
 
 
 ## Server-side searching
