@@ -794,7 +794,7 @@ Refers to an array of indices corresponding to the rows that have been updated.
 
 ## Methods
 
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+Widget property setters enables you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
 These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
 
@@ -809,8 +809,11 @@ Sets the visibility of the widget.
 
 ```js
 Table1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Table1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -828,8 +831,11 @@ Sets the data to be displayed in the Table widget.
 
 ```js
 Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
   // code to be executed after data is set
 })
@@ -849,8 +855,11 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() =
 
 ```js
 Table1.setSelectedRowIndex(2)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Table1.setSelectedRowIndex(2).then(() => {
   // code to be executed after selected row index is set
 })
