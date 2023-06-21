@@ -36,3 +36,7 @@ See [**Invite Users**](/advanced-concepts/invite-users) for more information on 
 In this tutorial, you learned to build a customer support tool with a dashboard, and a page to view, create, edit tickets and add comments. 
 
 Happy App Building!
+
+
+## See also
+[Tutorials](/getting-started/tutorials)

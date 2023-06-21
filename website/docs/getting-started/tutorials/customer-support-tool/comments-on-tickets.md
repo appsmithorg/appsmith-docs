@@ -53,10 +53,10 @@ You have to create an query to add the comments entered by the agent for the tic
 8. Drop a Button widget. In the **Label** property, change the value to `Add Comment`.
 
 9. You have to execute the **getComments** query and refresh the List widget.
-        - In the **Select an action** list, select **Execute a query > createComment** to run the query on button click. 
-        - Click **Callbacks** right under the action selector.  
-        - Click the **+** icon next to the **On success** callback. 
-        - Select **Execute a query > getComments**. 
+    - In the **Select an action** list, select **Execute a query > createComment** to run the query on button click. 
+    - Click **Callbacks** right under the action selector.  
+    - Click the **+** icon next to the **On success** callback. 
+    - Select **Execute a query > getComments**. 
 
 4. Enter a comment and click the **Add Comment** button to test if the comment is added in the List .
 
