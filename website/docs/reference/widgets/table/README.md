@@ -822,7 +822,7 @@ Table1.setVisibility(true).then(() => {
 
 <dd>
 
-Sets the visibility of the widget.
+Sets the data to be displayed in the Table widget.
 
 *Example*:
 
