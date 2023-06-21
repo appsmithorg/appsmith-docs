@@ -120,6 +120,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+Image1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Image1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -135,6 +141,12 @@ Image1.setVisibility(true).then(() => {
 Sets the `base64` encoded image in the Image widget.
 
 *Example*:
+
+```js
+Image1.setImage('data:image/png;base64,iVBORw0KG...')
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Image1.setImage('data:image/png;base64,iVBORw0KG...').then(() => {

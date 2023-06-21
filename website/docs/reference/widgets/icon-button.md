@@ -160,6 +160,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+IconButton1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 IconButton1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -175,6 +181,12 @@ IconButton1.setVisibility(true).then(() => {
 Sets the disabled state of the widget.
 
 *Example*:
+
+```js
+IconButton1.setDisabled(false)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 IconButton1.setDisabled(false).then(() => {

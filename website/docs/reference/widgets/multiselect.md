@@ -211,6 +211,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+MultiSelect1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 MultiSelect1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -228,6 +234,12 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
+MultiSelect1.setDisabled(false)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 MultiSelect1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -243,6 +255,12 @@ MultiSelect1.setDisabled(false).then(() => {
 Sets whether the widget is required or not.
 
 *Example*:
+
+```js
+MultiSelect1.setRequired(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 MultiSelect1.setRequired(true).then(() => {

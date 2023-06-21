@@ -136,6 +136,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+Input1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Input1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -154,6 +160,12 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
+Input1.setDisabled(false)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Input1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -168,6 +180,12 @@ Input1.setDisabled(false).then(() => {
 Allows you to dynamically set the value of the widget.
 
 *Example*:
+
+```js
+Input1.setValue(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Input1.setValue(true).then(() => {
@@ -185,6 +203,12 @@ Input1.setValue(true).then(() => {
 Sets whether the widget is required or not.
 
 *Example*:
+
+```js
+Input1.setRequired(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Input1.setRequired(true).then(() => {

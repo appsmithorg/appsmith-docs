@@ -205,6 +205,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+JSONForm1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 JSONForm1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -220,6 +226,12 @@ JSONForm1.setVisibility(true).then(() => {
  Sets the data to be displayed in the widget.
 
 *Example*:
+
+```js
+JSONForm1.setData(<data>)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 JSONForm1.setData(<data>).then(() => {
