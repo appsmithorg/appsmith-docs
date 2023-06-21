@@ -159,6 +159,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+FilePicker1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 FilePicker1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -175,6 +181,12 @@ FilePicker1.setVisibility(true).then(() => {
 Sets the disabled state of the widget.
 
 *Example*:
+
+```js
+FilePicker1.setDisabled(false)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 FilePicker1.setDisabled(false).then(() => {
