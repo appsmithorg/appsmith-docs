@@ -216,8 +216,11 @@ Sets the visibility of the widget.
 
 ```js
 Select1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Select1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -237,8 +240,11 @@ Sets the disabled state of the widget.
 
 ```js
 Select1.setDisabled(false)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Select1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -256,8 +262,11 @@ Sets the options to be displayed in the widget.
 
 ```js
 Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }])
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]).then(() => {
   // code to be executed after options are set
 })
@@ -276,8 +285,11 @@ Sets whether the widget is required or not.
 
 ```js
 Select1.setRequired(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Select1.setRequired(true).then(() => {
   // code to be executed after required state is set
 })
@@ -298,8 +310,11 @@ Sets the selected option of the Select widget.
 
 ```js
 Select1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Select1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
   // code to be executed after selected option is set
 })

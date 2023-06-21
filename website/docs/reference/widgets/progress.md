@@ -54,6 +54,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+Progress1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Progress1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -69,6 +75,11 @@ Progress1.setVisibility(true).then(() => {
 Sets the progress value of the Progress widget.
 
 *Example*:
+
+```js
+Progress1.setProgress(50)
+```
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Progress1.setProgress(50).then(() => {

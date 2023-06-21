@@ -143,8 +143,11 @@ Sets the visibility of the widget.
 
 ```js
 SwitchGroup1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 SwitchGroup1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -163,8 +166,11 @@ Sets the disabled state of the widget.
 
 ```js
 SwitchGroup1.setDisabled(false)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 SwitchGroup1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -183,8 +189,11 @@ Sets whether the widget is required or not.
 
 ```js
 SwitchGroup1.setRequired(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 SwitchGroup1.setRequired(true).then(() => {
   // code to be executed after required state is set
 })

@@ -103,8 +103,11 @@ Sets the visibility of the widget.
 
 ```js
 Tabs1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Tabs1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })

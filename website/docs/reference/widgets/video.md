@@ -64,8 +64,11 @@ Sets the visibility of the widget.
 
 ```js
 Video1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Video1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -85,8 +88,11 @@ Sets the URL of the video to be displayed in the widget.
 
 ```js
 Video1.setURL('<https://example.com/video.mp4>')
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Video1.setURL('<https://example.com/video.mp4>').then(() => {
   // code to be executed after URL is set
 })
@@ -105,7 +111,8 @@ Sets the playing state of the Video widget.
 ```js
 Video1.setPlaying(true)
 ```
-For appsmith reactivity, await the setter method or use the `.then()` block.
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Video1.setPlaying(true).then(() => {

@@ -112,8 +112,11 @@ Sets the visibility of the widget.
 
 ```js
 Text1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Text1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -133,8 +136,11 @@ Sets the disabled state of the widget.
 
 ```js
 Text1.setDisabled(false)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Text1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -152,8 +158,11 @@ Sets whether the widget is required or not.
 
 ```js
 Text1.setRequired(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Text1.setRequired(true).then(() => {
   // code to be executed after required state is set
 })
@@ -171,8 +180,11 @@ Sets the text value of the widget.
 
 ```js
 Text1.setText('Hello, world!')
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Text1.setText('Hello, world!').then(() => {
   // code to be executed after text value is set
 })
@@ -196,8 +208,11 @@ Sets the selected option of the Select widget.
 
 ```js
 Text1.setColor('#FF0000')
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Text1.setColor('#FF0000').then(() => {
   // code to be executed after color is set
 })

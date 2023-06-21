@@ -108,6 +108,11 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+RadioGroup1.setVisibility(true)
+```
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 RadioGroup1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -126,6 +131,11 @@ Sets the disabled state of the widget.
 *Example*:
 
 ```js
+RadioGroup1.setDisabled(false)
+```
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 RadioGroup1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -140,6 +150,11 @@ RadioGroup1.setDisabled(false).then(() => {
 Allows you to dynamically set the data of the widget.
 
 *Example*:
+
+```js
+RadioGroup1.setData([{ label: 'Yes', value: 'y' }, { label: 'No', value: 'n' }])
+```
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 RadioGroup1.setData([{ label: 'Yes', value: 'y' }, { label: 'No', value: 'n' }]).then(() => {

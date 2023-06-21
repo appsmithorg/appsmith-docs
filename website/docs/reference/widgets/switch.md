@@ -78,8 +78,11 @@ Sets the visibility of the widget.
 
 ```js
 Switch1.setVisibility(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Switch1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -99,8 +102,11 @@ Sets the disabled state of the widget.
 
 ```js
 Switch1.setDisabled(false)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Switch1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
 })
@@ -119,8 +125,11 @@ Sets whether the widget is required or not.
 
 ```js
 Switch1.setRequired(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Switch1.setRequired(true).then(() => {
   // code to be executed after required state is set
 })
@@ -139,8 +148,11 @@ Sets the value to be displayed in the widget.
 
 ```js
 Switch1.setValue(true)
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Switch1.setValue(true).then(() => {
   // code to be executed after options are set
 })
@@ -160,8 +172,11 @@ Sets the background color of the widget.
 
 ```js
 Switch1.setColor('#FF0000')
+```
 
-//For appsmith reactivity, await the setter method or use the `.then()` block.
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Switch1.setColor('#FF0000').then(() => {
   // code to be executed after color is set
 })
