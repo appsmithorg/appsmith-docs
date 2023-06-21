@@ -236,6 +236,12 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
+Iframe1.setVisibility(true)
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
+
+```js
 Iframe1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
@@ -251,6 +257,12 @@ Iframe1.setVisibility(true).then(() => {
 Allows you to dynamically change the content of the iframe by providing a new URL. 
 
 *Example*:
+
+```js
+Iframe1.setURL('<https://example.com>')
+```
+
+To perform additional actions based on the completed state setting, use the `.then()` block.
 
 ```js
 Iframe1.setURL('<https://example.com>').then(() => {
