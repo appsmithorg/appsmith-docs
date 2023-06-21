@@ -9,33 +9,27 @@ description:  Build a Customer Support Tool on Appsmith.
 ⏱️ **Time** - 1 hour
 :::
 
-This tutorial guides you through the steps to create a Customer Support tool using Appsmith. The application contains a dashboard reporting the status of issues raised by customers. It also allows you to view, create, and edit tickets and to respond to the customer over email. You'll learn to:
+This tutorial guides you through the steps to create a Customer Support tool using Appsmith. The application contains a dashboard reporting the status of issues raised by customers. It also allows you to view, create, edit tickets and add comments. You'll learn to:
 * Create a beautiful dashboard using the Chart and Stats Box widget.
 * Use the List widget to display tickets.
 * Use the Select widget to filter data in the List.
 * Create and edit ticket details in a Modal.
 * Write code using JS Objects.
-* Deploy and share the application.
 
-Here are screenshots of the final result:
+Here's a view of the final result:
 
 <figure>
   <img src="/img/customer-support-tool-dashboard.png" style= {{width:"100%", height:"auto"}} alt="Customer Support Dashboard"/>
   <figcaption align = "center"><i>Customer Support Dashboard</i></figcaption>
 </figure>
 
-<figure>
-  <img src="/img/customer-support-tool-tickets.png" style= {{width:"100%", height:"auto"}} alt="Customer Support Tickets"/>
-  <figcaption align = "center"><i>Customer Support Tickets</i></figcaption>
-</figure>
-
 Let's get started!
 
 ## Prerequisites
 
-* An Appsmith account. If you don’t have one, sign up on [**Appsmith cloud**](https://app.appsmith.com/).
+* An Appsmith account. If you don’t have one, sign up on [**Appsmith Cloud**](https://app.appsmith.com/).
 
-## Setting up the application
+## Set up the application
 
 1. On the homepage, click the **+ New** button to the right of the screen under the default workspace. You'll land on a new application in the *Edit* mode. 
 

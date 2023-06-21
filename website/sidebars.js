@@ -41,36 +41,41 @@ const sidebars = {
               },
               items: [
                 'getting-started/tutorials/customer-support-tool/build-the-dashboard',
-                'getting-started/tutorials/customer-support-tool/view-and-edit-ticket-details'
+                'getting-started/tutorials/customer-support-tool/view-ticket-details',
+                'getting-started/tutorials/customer-support-tool/add-new-tickets',
+                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
+                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
+                'getting-started/tutorials/customer-support-tool/add-navbar'
               ],
             },
-            {
-              type: 'category',
-              label: 'Review Moderator Dashboard',
-              link: {
-                type: 'doc',
-                id: 'getting-started/tutorials/review-moderator-dashboard/README',
-              },
-              items: [
-                'getting-started/tutorials/review-moderator-dashboard/setting-up-the-app',
-                'getting-started/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
-                'getting-started/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
-                'getting-started/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building a Store Catalog Manager',
-              link: {
-                type: 'doc',
-                id: 'getting-started/tutorials/building-a-store-catalog-manager/README',
-              },
-              items: [
-                'getting-started/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
-                'getting-started/tutorials/building-a-store-catalog-manager/using-forms',
-                'getting-started/tutorials/building-a-store-catalog-manager/creating-interactive-views',
-              ],
-            },
+            // Hiding the tutorials
+            // {
+            //   type: 'category',
+            //   label: 'Review Moderator Dashboard',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/review-moderator-dashboard/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/review-moderator-dashboard/setting-up-the-app',
+            //     'getting-started/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
+            //     'getting-started/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
+            //     'getting-started/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
+            //   ],
+            // },
+            // {
+            //   type: 'category',
+            //   label: 'Building a Store Catalog Manager',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/building-a-store-catalog-manager/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/using-forms',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/creating-interactive-views',
+            //   ],
+            // },
           ],
         },
 
