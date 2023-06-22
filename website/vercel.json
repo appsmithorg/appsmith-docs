@@ -2763,11 +2763,11 @@
       "destination": "/reference/datasources/querying-elasticsearch"
     },
     {
-      "source": "/learning-and-resources/tutorials/review-moderator-dashboard:path*",
+      "source": "/learning-and-resources/tutorials/review-moderator-dashboard/*",
       "destination": "getting-started/tutorials"
     },
     {
-      "source": "learning-and-resources/tutorials/building-a-store-catalog-manager:path*",
+      "source": "learning-and-resources/tutorials/building-a-store-catalog-manager/*",
       "destination": "getting-started/tutorials"
     }
   ]
