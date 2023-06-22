@@ -65,7 +65,7 @@ Style properties allow you to change the look and feel of the widget.
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -80,7 +80,7 @@ Sets the visibility of the widget.
 Switch1.setVisibility(true)
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 Switch1.setVisibility(true).then(() => {
@@ -104,7 +104,7 @@ Sets the disabled state of the widget.
 Switch1.setDisabled(false)
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 Switch1.setDisabled(false).then(() => {
@@ -127,7 +127,7 @@ Sets whether the widget is required or not.
 Switch1.setRequired(true)
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 Switch1.setRequired(true).then(() => {
@@ -150,7 +150,7 @@ Sets the value to be displayed in the widget.
 Switch1.setValue(true)
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 Switch1.setValue(true).then(() => {
@@ -174,7 +174,7 @@ Sets the background color of the widget.
 Switch1.setColor('#FF0000')
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 Switch1.setColor('#FF0000').then(() => {

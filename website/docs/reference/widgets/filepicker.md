@@ -147,7 +147,7 @@ These are functions that are called when event listeners are triggered in the wi
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -162,7 +162,7 @@ Sets the visibility of the widget.
 FilePicker1.setVisibility(true)
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 FilePicker1.setVisibility(true).then(() => {
@@ -186,7 +186,7 @@ Sets the disabled state of the widget.
 FilePicker1.setDisabled(false)
 ```
 
-To perform additional actions based on the completed state setting, use the `.then()` block.
+To perform sequential actions, utilize the `.then()` block for execution.
 
 ```js
 FilePicker1.setDisabled(false).then(() => {
