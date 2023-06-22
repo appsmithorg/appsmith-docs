@@ -2761,6 +2761,14 @@
     {
       "source": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
       "destination": "/reference/datasources/querying-elasticsearch"
+    },
+    {
+      "source": "/learning-and-resources/tutorials/review-moderator-dashboard/:path*",
+      "destination": "getting-started/tutorials"
+    },
+    {
+      "source": "learning-and-resources/tutorials/building-a-store-catalog-manager/:path*",
+      "destination": "getting-started/tutorials"
     }
   ]
 }
