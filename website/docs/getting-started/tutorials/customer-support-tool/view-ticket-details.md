@@ -43,7 +43,7 @@ Here's a screenshot of the final result:
 
 3. For the first Select widget, set the properties as shown below:
     - On the top of the property pane, change the name of the widget from **Select1** to `selStatus`.
-    - In the **Options** property, add the below JSON array object, to populate the status options.
+    - In the **Options** property, add the below JSON array object to populate the status options.
 
     ```javascript
     [
@@ -51,7 +51,7 @@ Here's a screenshot of the final result:
         "label": "Open",
         "value": "Open"
       },
-	    {
+      {
         "label": "In Progress",
         "value": "In Progress"
       },
@@ -64,7 +64,7 @@ Here's a screenshot of the final result:
     - In the **Text** property, enter `Status`.
 5. Similarly, for the second Select widget, set the properties as shown below: 
     - On the top of the property pane, change the name of the widget from **Select2** to `selPriority`.
-    - In the **Options** property, add the below JSON array object, to populate the priority options.
+    - In the **Options** property, add the below JSON array object to populate the priority options.
 
     ```javascript
     [
@@ -72,7 +72,7 @@ Here's a screenshot of the final result:
         "label": "High",
         "value": "High"
       },
-	    {
+      {
         "label": "Medium",
         "value": "Medium"
       },
@@ -159,21 +159,21 @@ Now, you have to program the Select widgets created in the [Build UI](#build-ui)
     let filteredTickets = tickets;
 
     if (status) {
-	    filteredTickets = tickets.filter(a => a.status === status);
+      filteredTickets = tickets.filter(a => a.status === status);
     }
-	 
+   
     if (priority) {
-	    filteredTickets = tickets.filter(a => a.priority === priority);
+      filteredTickets = tickets.filter(a => a.priority === priority);
     }
-	 
+   
     if (status && priority) {
-	    filteredTickets = tickets.filter(a => {
-		  return a.status === status && a.priority === priority;
-	    });
+      filteredTickets = tickets.filter(a => {
+      return a.status === status && a.priority === priority;
+      });
     }
 
     return filteredTickets;
-    },	
+    },  
   }
   ```
 5. Click the **Run** button on the top right of the screen to ensure that the function executes successfully. 

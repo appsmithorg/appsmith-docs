@@ -66,7 +66,7 @@ In this section, you'll learn to:
   <figcaption align = "center"><i>Fig 1. Dashboard Title and Greeting Message</i></figcaption>
 </figure>
 
-4. Drop a Stats Box widget on the canvas. Delete the default Icon Button and the Text widget with value **21% more than last month**. Add an Image widget below the Text widget with value **2.6 M**. 
+4. Drop a Stats Box widget on the canvas. Delete the default Icon Button and the Text widget with the value **21% more than last month**. Add an Image widget below the Text widget with the value **2.6 M**. 
     The output should look like this: 
 
 <figure>
@@ -91,7 +91,7 @@ In this section, you'll learn to:
   <figcaption align = "center"><i>Fig 3. Customised Stats Box widget</i></figcaption>
 </figure>
 
-9. Repeat steps 4 and 5 for three more Stats Box widgets as shown in Fig 4 with the following properties:
+9. Repeat steps 4 and 5 for three more Stats Box widgets, as shown in Fig 4, with the following properties:
 
 **Open ticket stats** 
 

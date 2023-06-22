@@ -25,7 +25,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
     - Delete the **Reset** button.
     - Click the **Submit** button. Change the **Label** property to `Save`.
 
-3. You need to display the details of the currently selected item in the List. Refer to Fig 1 for placement of widgets. Drop three Input and four Select widgets inside the Form and set their properties as follows:
+3. You need to display the details of the currently selected item in the List. Refer to Fig 1 for the placement of widgets. Drop three Input and four Select widgets inside the Form and set their properties as follows:
     
     <b><u>Properties - Input widget 1</u></b>
 
@@ -75,7 +75,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
         "label": "Open",
         "value": "open"
       },
-	    {
+      {
         "label": "In Progress",
         "value": "in-progress"
       },
@@ -131,7 +131,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
         "label": "Kadao",
         "value": "kadao@appsmith.com"
       },
-	    {
+      {
         "label": "Rishabh",
         "value": "rishabh@appsmith.com"
       },
@@ -191,7 +191,7 @@ The output should look something like this:
 
 ## Create update ticket query
 
-You have to create an update query to save the modified tickets details to the database.
+You have to create an update query to save the modified ticket details to the database.
 
 1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
 
@@ -204,7 +204,7 @@ You have to create an update query to save the modified tickets details to the d
 5. Write the following SQL query.
   ```sql
   UPDATE tickets SET
-	"updatedAt" = '{{moment().format('YYYY-MM-DD hh:mm:ss')}}',
+  "updatedAt" = '{{moment().format('YYYY-MM-DD hh:mm:ss')}}',
   "description" = '{{tktDescription.text}}',   
   "status" = '{{tktStatus.selectedOptionValue}}',
   "priority" = '{{tktPriority.selectedOptionValue}}',
@@ -221,7 +221,7 @@ You have to create an update query to save the modified tickets details to the d
 
 2. Click the **Save** button. Click the **JS** button next to the **onClick** event in the *property pane*. 
 
-3. You have to write code to call the update query, refresh the List widget, show a message and then close the modal. Write the JS code as shown below in the **onClick** event property:
+3. You have to write code to call the update query, refresh the List widget, show a message and then close the Modal. Write the JS code as shown below in the **onClick** event property:
 
   ```javascript
   {{
@@ -233,7 +233,7 @@ You have to create an update query to save the modified tickets details to the d
   }}
   ```
 
-4. Modify any field click the **Save** button to test that the ticket details are updated in the database and in the List.
+4. Modify any field and click the **Save** button to test that the ticket details are updated in the database and in the List.
 
 ## Next steps
 [Add Comments on Tickets](/getting-started/tutorials/customer-support-tool/edit-ticket-details)

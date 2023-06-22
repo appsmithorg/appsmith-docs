@@ -33,11 +33,11 @@ You have to create a query to fetch all the comments entered for the ticket.
     - **Widget Name**: `commentsBox` <br/>
     - **Data type**: `Multi-line text`
 
-4. Drop a List widget. In the **Items** property, enter `{{getComments.data}}` to connect the results of the query to the List widget.
+4. Drop a List widget. In the **Items** property, enter `{{getComments.data}}` to connect the query results to the List widget.
 
 6. Delete the default Image widget in the first list item. 
 
-7. You now need to display the data from the query in the two Text widgets. In step 4 above, you already connected the List widget to the **getComments** query. Use the `currentItem` reference property of the List widget to display the data in the Text widgets as shown in the table below: 
+7. You now need to display the data from the query in the two Text widgets. In step 4 above, you already connected the List widget to the **getComments** query. Use the `currentItem` reference property of the List widget to display the data in the Text widgets, as shown in the table below: 
 
   | Property                   |Value                                              |
   | -------------------------- | ------------------------------------------------- | 
@@ -75,7 +75,7 @@ You have to create a query to add the comments entered for the ticket.
 
 ## Add comments on button click
 
-You have to execute the **createComment** query on button click and refresh the List widget with the new comment by calling the **getComments** query.
+You have to execute the **createComment** query on the button click and refresh the List widget with the new comment by calling the **getComments** query.
 
 1. Click the first item in the **lstTicketDetails** List to open the Modal.
 
@@ -85,7 +85,7 @@ You have to execute the **createComment** query on button click and refresh the 
     - Click the **+** icon next to the **On success** callback. 
     - Select **Execute a query > getComments**. 
 
-9. Enter a comment and click the **Add Comment** button to test if the comment is added in the List .
+9. Enter a comment and click the **Add Comment** button to test if the comment is added in the List.
 
 ## Next steps
 [Application Settings](/getting-started/tutorials/customer-support-tool/application-settings)

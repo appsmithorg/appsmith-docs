@@ -71,7 +71,7 @@ You need to build a Form to capture details for new tickets.
         "label": "Kadao",
         "value": "kadao@appsmith.com"
          },
-	    {
+      {
         "label": "Rishabh",
         "value": "rishabh@appsmith.com"
       },
@@ -119,7 +119,7 @@ You need to build a Form to capture details for new tickets.
 
 ## Create add ticket query
 
-You have to create an insert query to add the data entered in the form into the database.
+You have to create an insert query to add the data entered in the Form into the database.
 
 1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
 
@@ -141,14 +141,14 @@ You have to create an insert query to add the data entered in the form into the 
 
 1. On the *Entity Explorer*, under **JS Objects** section, click on **utils**.
 
-2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. Below the **getFilteredTickets** function that you wrote earlier, add a comma `,` at the end of the function denoted by `}`. Write a new function as shown below:
+2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. At the end of the **getFilteredTickets** function that you wrote earlier, add a comma `,`. Write a new function as shown below:
 
 ```javascript
 createTicket: async () => {
-	await storeValue('ticket', {id: Math.random().toString(36).substring(7)})
-	.then(() => createTicket.run())
-	.then(()=> this.getFilteredTickets())
-	.then(()=> closeModal('mdlNewTicket'))
+  await storeValue('ticket', {id: Math.random().toString(36).substring(7)})
+  .then(() => createTicket.run())
+  .then(()=> this.getFilteredTickets())
+  .then(()=> closeModal('mdlNewTicket'))
 }
 ```
 <figure>
@@ -169,7 +169,7 @@ createTicket: async () => {
     - Click the **+** icon next to the **onClick** event.
     - In the **Select an action** list, select **Execute a JS function > utils > createTicket**.
 
-6. Enter test data in the form and click the **Submit** button to verify that the new ticket details are added in the database and on the List.
+6. Enter test data in the Form and click the **Submit** button to verify that the new ticket details are added in the database and on the List.
 
 ## Next steps
 [Edit Ticket Details](/getting-started/tutorials/customer-support-tool/edit-ticket-details)
