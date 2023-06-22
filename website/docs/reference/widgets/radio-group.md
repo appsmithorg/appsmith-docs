@@ -16,7 +16,8 @@ These properties are customizable options present in the property pane of the wi
 #### Options `array<object>`
 
 <dd>
-This property allows you to set the labels and values for the items. You can add these labels and values directly from the user interface or use JavaScript by providing options in JSON format, like:
+
+This property allows you to set the labels and values for the items. You can add these labels and values directly from the user interface. Ensure that the values assigned to each option are unique. Additionally, you can turn on **JS** and provide options in JSON format, like:
 
 *Example*:
 ```js
@@ -32,7 +33,7 @@ This property allows you to set the labels and values for the items. You can add
 ]
 ```
 
-Ensure that the values assigned to each option are unique. Additionally, you can dynamically display data by using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
+You can also dynamically display data by using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
 
 *Example*:
 
@@ -177,7 +178,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-This event defines the action that would be executed when the user selects or deselects item in the Radio Group. It allows you to specify a list of [supported actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the widget state change.
+This event defines the action that would be executed when the user selects or deselects item in the Radio Group. It allows you to specify a list of [actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the widget state change.
 
 </dd>
 
@@ -225,7 +226,7 @@ Defines the accent color of the widget, which is used as the fill color for the 
 </dd>
 
 ## Reference properties
-These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `CheckboxGroup1.isVisible`.
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `RadioGroup1.isVisible`.
 
 
 
