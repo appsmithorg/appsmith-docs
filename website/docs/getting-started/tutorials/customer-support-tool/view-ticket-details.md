@@ -18,13 +18,13 @@ Here's a screenshot of the final result:
 
 ## Fetch tickets data
 
-1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
+1. On the *Entity Explorer* to the left of the screen, click on the **Tickets** page you created in the [Setting up the application](/getting-started/tutorials/customer-support-tool#setting-up-the-application) section.
 
-2. Click the **+** icon next to **Queries/JS**. 
+2. On the *Entity Explorer*, click the **+** icon next to **Queries/JS**. 
 
 3. Select the **supportTickets query** from the list of options. 
 
-4. Rename the query to `getTickets`. Click the white space below the query name for a blank query editor.  
+4. Rename the query to `getTickets`. Click the white space near the query templates.
 
 5. Write the following SQL query.
   ```sql
@@ -39,7 +39,7 @@ Here's a screenshot of the final result:
 
 1. Drop a Text widget and two Select widgets on the canvas.
 
-2. Change the default title on the Text widget from `Label` to `Tickets`.
+2. Change the default value on the **Text** property from **Label** to `Tickets`.
 
 3. For the first Select widget, set the properties as shown below:
     - On the top of the property pane, change the name of the widget from **Select1** to `selStatus`.
@@ -100,7 +100,7 @@ Here's a screenshot of the final result:
 3. Now customize the List widget as follows: 
     - Delete the default widgets in the first list item. 
     - Drop five Text widgets for displaying the ticket subject, requested date, customer email, ticket status and priority. 
-    - Notice that all the changes you make in the first list item reflect in the subsequent list items that are greyed out. Refer to *Fig 3* for the placement of the widgets. 
+    - Notice that all the changes you make in the first list item reflect in the subsequent list items that are greyed out. Refer to *Fig 1* for the placement of the widgets in the first list item. 
 
 4. You now need to display the data from the query in these Text widgets. In step 2 above, you already connected the List widget to the **getTickets** query. Select each Text widget and use the `currentItem` reference property to display the data in the list items as shown in the table below: 
 
@@ -130,7 +130,12 @@ Here's a screenshot of the final result:
   ```javascript
   {{currentItem.priority=='high' ? '#dc2626' : currentItem.priority=='medium' ? '#2563eb': currentItem.priority=='low' ? '#facc15' : undefined}}
   ```
-Refer to Fig 1 for the output and placement of the widgets. 
+Refer to Fig 3 for the output and placement of the widgets in the List. 
+
+<figure>
+  <img src="/img/tickets-in-list.png" style= {{width:"800px", height:"auto"}} alt="Tickets in List"/>
+  <figcaption align = "center"><i>Fig 3. Tickets in List</i></figcaption>
+</figure>
 
 ## Filter tickets
 
@@ -193,3 +198,6 @@ Now, you have to program the Select widgets created in the [Build UI](#build-ui)
   <img src="/img/ticket-filters.gif" style= {{width:"800px", height:"auto"}} alt="Testing the filters"/>
   <figcaption align = "center"><i>Fig 4. Testing the filters</i></figcaption>
 </figure>
+
+## Next steps
+[Add New Tickets](/getting-started/tutorials/customer-support-tool/add-new-tickets)

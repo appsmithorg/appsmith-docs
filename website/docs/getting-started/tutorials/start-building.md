@@ -164,7 +164,7 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 
 3. Select **usersTutorialDB query** from the list of options. 
 
-3. Rename the query to `updateUsers`. Click the white space below the query name for a blank query editor.  
+3. Rename the query to `updateUsers`. Click the white space near the query templates.  
 
 4. Paste the below SQL update command in the query editor to update the `users` table in the database with the details modified in the Form.
 

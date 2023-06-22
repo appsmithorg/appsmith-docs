@@ -25,29 +25,29 @@ When you click a list item, you need to open a modal to edit the ticket details 
     - Delete the **Reset** button.
     - Click the **Submit** button. Change the **Label** property to `Save`.
 
-3. You need to display the details of the currently selected item in the List. Refer to Fig 1 for placement of widgets. Drop 3 Input and four Select widgets inside the Form and set their properties as follows:
+3. You need to display the details of the currently selected item in the List. Refer to Fig 1 for placement of widgets. Drop three Input and four Select widgets inside the Form and set their properties as follows:
     
     <b><u>Properties - Input widget 1</u></b>
 
-    **Name**: `tktId` <br/>
-    **Default value**: 
+    - **Widget Name**: `tktId` <br/>
+    - **Default value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.id}}
     ```
-    **Text**: `ID`<br/>
-    **Disabled**: `true`
+    - **Text**: `ID`<br/>
+    - **Disabled**: `true`
 
   <b><u>Properties - Input widget 2</u></b>
 
-    **Name**: `userEmail` <br/>
-    **Default value**: 
+    - **Widget Name**: `userEmail` <br/>
+    - **Default value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.user}}
     ```
-    **Text**: `User Email`<br/>
-    **Disabled**: `true`
+    - **Text**: `User Email`<br/>
+    - **Disabled**: `true`
 
   :::info
   The **Disabled** property is turned on for the ID and User Email fields to prevent users from editing them.
@@ -55,9 +55,9 @@ When you click a list item, you need to open a modal to edit the ticket details 
 
   <b><u>Properties - Input widget 3</u></b>
 
-    **Name**: `tktDescription` <br/>
-    **Data type**: `Multi-line text` <br/>
-    **Default value**: 
+    - **Widget Name**: `tktDescription` <br/>
+    - **Data type**: `Multi-line text` <br/>
+    - **Default value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.description}}
@@ -66,8 +66,8 @@ When you click a list item, you need to open a modal to edit the ticket details 
 
   <b><u>Properties - Select widget 1</u></b>
 
-    **Name**: `tktStatus` <br/>
-    **Options**: 
+    - **Widget Name**: `tktStatus` <br/>
+    - **Options**: 
 
     ```javascript
     [
@@ -85,17 +85,17 @@ When you click a list item, you need to open a modal to edit the ticket details 
       }
     ]
     ```
-    **Default selected value**: 
+    - **Default selected value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.status}}
     ```
-    **Text**: `Status`
+    - **Text**: `Status`
 
   <b><u>Properties - Select widget 2</u></b>
 
-    **Name**: `tktCategory` <br/>
-    **Options**: 
+    - **Widget Name**: `tktCategory` <br/>
+    - **Options**: 
 
     ```javascript
     [
@@ -113,17 +113,17 @@ When you click a list item, you need to open a modal to edit the ticket details 
       }
     ]
     ```
-    **Default selected value**: 
+    - **Default selected value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.category}}
     ```
-    **Text**: `Category`
+    - **Text**: `Category`
 
   <b><u>Properties - Select widget 3</u></b>
 
-    **Name**: `tktAssignee` <br/>
-    **Options**: 
+    - **Widget Name**: `tktAssignee` <br/>
+    - **Options**: 
 
     ```javascript
     [
@@ -141,17 +141,17 @@ When you click a list item, you need to open a modal to edit the ticket details 
       }
     ]
     ```
-    **Default selected value**: 
+    - **Default selected value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.assignedTo}}
     ```
-    **Text**: `Assignee`
+    - **Text**: `Assignee`
 
   <b><u>Properties - Select widget 4</u></b>
 
-    **Name**: `tktPriority` <br/>
-    **Options**: 
+    - **Widget Name**: `tktPriority` <br/>
+    - **Options**: 
 
     ```javascript
     [
@@ -169,19 +169,25 @@ When you click a list item, you need to open a modal to edit the ticket details 
       }
     ]
     ```
-    **Default selected value**: 
+    - **Default selected value**: 
 
     ```javascript
     {{lstTicketDetails.selectedItem.priority}}
     ```
-    **Text**: `Priority`
+    - **Text**: `Priority`
 
-    The output should look something like this: 
+The output should look something like this: 
 
 <figure>
   <img src="/img/edit-ticket-modal.png" style= {{width:"800px", height:"auto"}} alt="Edit Ticket Details"/>
   <figcaption align = "center"><i>Fig 1. Edit Ticket Details</i></figcaption>
 </figure>
+
+4. Close the **mdlEditTicket** Modal. 
+
+5. Select the **lstTicketDetails** List.
+    - Click the **+** icon next to the **onItemClick** event.
+     - In the **Select an action** list, select **Show modal > mdlEditTicket** to open the Modal on list item click. 
 
 ## Create update ticket query
 
@@ -193,7 +199,7 @@ You have to create an update query to save the modified tickets details to the d
 
 3. Select **supportTickets query** from the list of options. 
 
-4. Rename the query to `updateTicket`. Click the white space below the query name for a blank query editor.  
+4. Rename the query to `updateTicket`. Click the white space near the query templates.
 
 5. Write the following SQL query.
   ```sql
@@ -215,7 +221,7 @@ You have to create an update query to save the modified tickets details to the d
 
 2. Click the **Save** button. Click the **JS** button next to the **onClick** event in the *property pane*. 
 
-3. You have write code to call the update query, refresh the List widget, show a message and then close the modal. Write the JS code as shown below in the **onClick** event property:
+3. You have to write code to call the update query, refresh the List widget, show a message and then close the modal. Write the JS code as shown below in the **onClick** event property:
 
   ```javascript
   {{

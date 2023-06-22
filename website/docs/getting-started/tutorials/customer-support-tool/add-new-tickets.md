@@ -23,47 +23,47 @@ You need to build a Form to capture details for new tickets.
 
     <b><u>Properties - Input widget 1</u></b>
 
-    **Name**: `c_user` <br/>
-    **Data type**: `Email`
-    **Text**: `User Email`<br/>
-    **Required**: `true`
+    - **Widget Name**: `c_user` <br/>
+    - **Data type**: `Email`<br/>
+    - **Text**: `User Email`<br/>
+    - **Required**: `true`
 
-    <b><u>Properties - Input widget 2</u></b>
+    <br/><b><u>Properties - Input widget 2</u></b>
 
-    **Name**: `c_description` <br/>
-    **Data type**: `Multi-line text`
-    **Text**: `Description`<br/>
-    **Required**: `true`
+    - **Widget Name**: `c_description` <br/>
+    - **Data type**: `Multi-line text`<br/>
+    - **Text**: `Description`<br/>
+    - **Required**: `true`
 
-    <b><u>Properties - Select widget 1</u></b>
+    <br/><b><u>Properties - Select widget 1</u></b>
 
-    **Name**: `c_category` <br/>
-    **Options**: 
+    - **Widget Name**: `c_category` <br/>
+    - **Options**: 
 
     ```javascript
     [
-    {
+      {
         "label": "Hardware",
         "value": "hardware"
-        },
-        {
+      },
+      {
         "label": "Software",
         "value": "software"
-        },
-        {
-      "label": "Other",
+      },
+      {
+        "label": "Other",
         "value": "other"
-        }
+      }
      ]
     ```
 
-    **Default selected value**: empty<br/>
-    **Label**: `Category`
+    - **Default selected value**: empty<br/>
+    - **Label**: `Category`
 
-    <b><u>Properties - Select widget 2</u></b>
+    <br/><b><u>Properties - Select widget 2</u></b>
 
-    **Name**: `c_assignee` <br/>
-    **Options**: 
+    - **Widget Name**: `c_assignee` <br/>
+    - **Options**: 
 
     ```javascript
     [
@@ -82,13 +82,13 @@ You need to build a Form to capture details for new tickets.
     ]
     ```
 
-    **Default selected value**: empty<br/>
-    **Label**: `Assignee`
+    - **Default selected value**: empty<br/>
+    - **Label**: `Assignee`
 
-    <b><u>Properties - Select widget 3</u></b>
+    <br/><b><u>Properties - Select widget 3</u></b>
 
-    **Name**: `c_priority` <br/>
-    **Options**: 
+    - **Widget Name**: `c_priority` <br/>
+    - **Options**: 
 
     ```javascript
     [
@@ -107,8 +107,8 @@ You need to build a Form to capture details for new tickets.
     ]
     ```
 
-    **Default selected value**: empty<br/>
-    **Label**: `Priority`
+    - **Default selected value**: empty<br/>
+    - **Label**: `Priority`
 
     The output should look something like this: 
 
@@ -127,7 +127,7 @@ You have to create an insert query to add the data entered in the form into the 
 
 3. Select **supportTickets query** from the list of options. 
 
-4. Rename the query to `createTicket`. Click the white space below the query name for a blank query editor.  
+4. Rename the query to `createTicket`. Click the white space near the query templates.  
 
 5. Write the following SQL query.
     ```sql
@@ -158,7 +158,7 @@ createTicket: async () => {
 
 3. Drop a Button widget on the canvas.
     - Change the **Label** property to `Add Ticket`.
-    - Click the **+** icon next to the **on Click** event.
+    - Click the **+** icon next to the **onClick** event.
     - In the **Select an action** list, select **Show Modal**.
     - In the **Modal name** list, select the **mdlNewTicket** modal.
     - Click the **Style** tab, in the **Select icon** list, search `plus` and select the icon.
@@ -166,7 +166,7 @@ createTicket: async () => {
 4. Click the **Add Ticket** button to open the Modal.
 
 5. Select the **Submit** button in the Form.
-    - Click the **+** icon next to the **on Click** event.
+    - Click the **+** icon next to the **onClick** event.
     - In the **Select an action** list, select **Execute a JS function > utils > createTicket**.
 
 6. Enter test data in the form and click the **Submit** button to verify that the new ticket details are added in the database and on the List.
