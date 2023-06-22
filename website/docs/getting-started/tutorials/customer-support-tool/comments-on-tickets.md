@@ -9,7 +9,7 @@ In this section, you'll learn to:
 
 ## Create add comments query
 
-You have to create an query to add the comments entered by the agent for the ticket.
+You have to create a query to add the comments entered by the agent for the ticket.
 
 1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
 
@@ -60,6 +60,10 @@ You have to create an query to add the comments entered by the agent for the tic
 
 4. Enter a comment and click the **Add Comment** button to test if the comment is added in the List .
 
+<figure>
+  <img src="/img/add-comments.png" style= {{width:"800px", height:"auto"}} alt="Add Comments"/>
+  <figcaption align = "center"><i>Fig 1. Add Comments</i></figcaption>
+</figure>
 
 ## Next steps
-[Application Settings](/getting-started/tutorials/customer-support-tool/edit-ticket-details)
+[Application Settings](/getting-started/tutorials/customer-support-tool/application-settings)

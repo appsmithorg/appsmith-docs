@@ -14,7 +14,7 @@ You need to build a Form to capture details for new tickets.
 
 1. Drop a Modal widget on the canvas. 
     - On the top of the property pane, change the name from **Modal1** to `mdlNewTicket`.
-    - Select the **Modal Title** Text widget. Change the title in the **Text** property to`New Ticket`.
+    - Select **Modal Title**. Change the title in the **Text** property to `New Ticket`.
     - Delete the default **Close** and **Confirm** buttons.
 
 2. Drop a Form widget inside the Modal. Delete the default **Form** title.
@@ -23,37 +23,22 @@ You need to build a Form to capture details for new tickets.
 
     <b><u>Properties - Input widget 1</u></b>
 
-    <dt><b>Name</b></dt>
-    <dd>c_user</dd>
+    **Name**: `c_user` <br/>
+    **Data type**: `Email`
+    **Text**: `User Email`<br/>
+    **Required**: `true`
 
-    <dt><b>Data Type</b></dt>
-    <dd>Email</dd>
+    <b><u>Properties - Input widget 2</u></b>
 
-    <dt><b>Text</b></dt>
-    <dd>User Email</dd>
+    **Name**: `c_description` <br/>
+    **Data type**: `Multi-line text`
+    **Text**: `Description`<br/>
+    **Required**: `true`
 
-    <dt><b>Required</b></dt>
-    <dd>true</dd>
+    <b><u>Properties - Select widget 1</u></b>
 
-    <br/><b><u>Properties - Input widget 2</u></b>
-
-    <dt><b>Name</b></dt>
-    <dd>c_description</dd>
-
-    <dt><b>Data Type</b></dt>
-    <dd>Multi-line text</dd>
-
-    <dt><b>Text</b></dt>
-    <dd>Description</dd>
-
-    <dt><b>Required</b></dt>
-    <dd>true</dd>
-
-    <br/><b><u>Properties - Select widget 1</u></b>
-    <dt><b>Name</b></dt>
-    <dd>c_category</dd>
-
-    <dt><b>Options</b></dt>
+    **Name**: `c_category` <br/>
+    **Options**: 
 
     ```javascript
     [
@@ -71,67 +56,59 @@ You need to build a Form to capture details for new tickets.
         }
      ]
     ```
-    <dt><b>Default selected value</b></dt>
-    <dd>-</dd>
 
-    <dt><b>Label</b></dt>
-    <dd>Category</dd>
+    **Default selected value**: empty<br/>
+    **Label**: `Category`
 
-    <br/><b><u>Properties - Select widget 2</u></b>
-    <dt><b>Name</b></dt>
-    <dd>c_assignee</dd>
+    <b><u>Properties - Select widget 2</u></b>
 
-    <dt><b>Options</b></dt>
+    **Name**: `c_assignee` <br/>
+    **Options**: 
 
     ```javascript
     [
-        {
+      {
         "label": "Kadao",
         "value": "kadao@appsmith.com"
          },
 	    {
         "label": "Rishabh",
         "value": "rishabh@appsmith.com"
-        },
-        {
+      },
+      {
         "label": "Confidence",
         "value": "confidence@appsmith.com"
-        }
+      }
     ]
     ```
-    <dt><b>Default selected value</b></dt>
-    <dd>-</dd>
 
-    <dt><b>Label</b></dt>
-    <dd>Assignee</dd>
+    **Default selected value**: empty<br/>
+    **Label**: `Assignee`
 
-    <br/><b><u>Properties - Select widget 3</u></b>
-    <dt><b>Name</b></dt>
-    <dd>c_priority</dd>
+    <b><u>Properties - Select widget 3</u></b>
 
-    <dt><b>Options</b></dt>
+    **Name**: `c_priority` <br/>
+    **Options**: 
 
     ```javascript
     [
-    {
-    "label": "High",
-    "value": "high"
-    },
-    {
-    "label": "Medium",
-    "value": "medium"
-    },
-    {
-    "label": "Low",
-    "value": "low"
-    }
+      {
+        "label": "High",
+        "value": "high"
+      },
+      {
+        "label": "Medium",
+        "value": "medium"
+      },
+      {
+        "label": "Low",
+        "value": "low"
+      }
     ]
     ```
-    <dt><b>Default selected value</b></dt>
-    <dd>-</dd>
 
-    <dt><b>Label</b></dt>
-    <dd>Priority</dd>
+    **Default selected value**: empty<br/>
+    **Label**: `Priority`
 
     The output should look something like this: 
 
@@ -155,7 +132,7 @@ You have to create an insert query to add the data entered in the form into the 
 5. Write the following SQL query.
     ```sql
     INSERT INTO tickets ("id", "createdAt", "user", "description", "status", "priority", "category", "assignedTo")
-    VALUES ('{{appsmith.store.ticket.id}}', '{{moment().format('YYYY-MM-DD hh:mm:ss')}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
+    VALUES ('{{Math.random().toString(36).substring(7)}}', '{{moment().format('YYYY-MM-DD hh:mm:ss')}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
   ```
 
 6. Go back to the canvas by clicking on the **← Back** button above the query editor.
@@ -164,7 +141,7 @@ You have to create an insert query to add the data entered in the form into the 
 
 1. On the *Entity Explorer*, under **JS Objects** section, click on **utils**.
 
-2. You have to write a new function in the **utils** JS Object to generate a unique ID for the new record before calling the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. Below the **getFilteredTickets** function. Add a comma `,` after the end of the function denoted by `}`. Write the function as follows:
+2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. Below the **getFilteredTickets** function that you wrote earlier, add a comma `,` at the end of the function denoted by `}`. Write a new function as shown below:
 
 ```javascript
 createTicket: async () => {

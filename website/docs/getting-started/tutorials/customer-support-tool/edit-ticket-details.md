@@ -53,7 +53,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
   The **Disabled** property is turned on for the ID and User Email fields to prevent users from editing them.
   :::
 
-    <br/><b><u>Properties - Input widget 3</u></b>
+  <b><u>Properties - Input widget 3</u></b>
 
     **Name**: `tktDescription` <br/>
     **Data type**: `Multi-line text` <br/>
@@ -64,7 +64,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ```
     **Text**: `Description`
 
-    <br/><b><u>Properties - Select widget 1</u></b>
+  <b><u>Properties - Select widget 1</u></b>
 
     **Name**: `tktStatus` <br/>
     **Options**: 
@@ -92,7 +92,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ```
     **Text**: `Status`
 
-    <br/><b><u>Properties - Select widget 2</u></b>
+  <b><u>Properties - Select widget 2</u></b>
 
     **Name**: `tktCategory` <br/>
     **Options**: 
@@ -120,7 +120,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ```
     **Text**: `Category`
 
-    <br/><b><u>Properties - Select widget 3</u></b>
+  <b><u>Properties - Select widget 3</u></b>
 
     **Name**: `tktAssignee` <br/>
     **Options**: 
@@ -148,7 +148,7 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ```
     **Text**: `Assignee`
 
-    <br/><b><u>Properties - Select widget 4</u></b>
+  <b><u>Properties - Select widget 4</u></b>
 
     **Name**: `tktPriority` <br/>
     **Options**: 
@@ -199,11 +199,11 @@ You have to create an update query to save the modified tickets details to the d
   ```sql
   UPDATE tickets SET
 	"updatedAt" = '{{moment().format('YYYY-MM-DD hh:mm:ss')}}',
-  "description" = '{{editDescription.text}}',   
-  "status" = '{{editStatus.selectedOptionValue}}',
-  "priority" = '{{editPriority.selectedOptionValue}}',
-  "category" = '{{editCategory.selectedOptionValue}}',
-  "assignedTo" = '{{editAssignee.selectedOptionValue}}'
+  "description" = '{{tktDescription.text}}',   
+  "status" = '{{tktStatus.selectedOptionValue}}',
+  "priority" = '{{tktPriority.selectedOptionValue}}',
+  "category" = '{{tktCategory.selectedOptionValue}}',
+  "assignedTo" = '{{tktAssignee.selectedOptionValue}}'
   WHERE "id" = '{{lstTicketDetails.selectedItem.id}}';
   ```
 
@@ -217,15 +217,15 @@ You have to create an update query to save the modified tickets details to the d
 
 3. You have write code to call the update query, refresh the List widget, show a message and then close the modal. Write the JS code as shown below in the **onClick** event property:
 
-```javascript
-{{
-  updateTicket.run().then(() => {
-  utils.getFilteredTickets();
-  showAlert('Ticket Updated', 'success');
-  closeModal('mdlEditTicket');
-  });
-}}
-```
+  ```javascript
+  {{
+    updateTicket.run().then(() => {
+    utils.getFilteredTickets();
+    showAlert('Ticket Updated', 'success');
+    closeModal('mdlEditTicket');
+    });
+  }}
+  ```
 
 4. Modify any field click the **Save** button to test that the ticket details are updated in the database and in the List.
 

@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Application Settings
+# Configure Application Settings
 
 In this section, you'll learn to:
 * Add a navigation bar

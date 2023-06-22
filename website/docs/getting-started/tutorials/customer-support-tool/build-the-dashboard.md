@@ -13,7 +13,7 @@ In this section, you'll learn to:
 
 ## Connect the database
 
-1. On the *Entity Explorer* to the left of the screen, click on the **Dashboard** page you created in [Setting up the application](/getting-started/tutorials/customer-support-tool#setting-up-the-application).
+1. On the *Entity Explorer* to the left of the screen, click on the **Dashboard** page you created in the [Setting up the application](/getting-started/tutorials/customer-support-tool#setting-up-the-application) section.
 
 2. In the **Explorer** tab, click the **+** icon next to **Datasources** to add a new datasource.
 
@@ -38,9 +38,10 @@ In this section, you'll learn to:
 2. Rename the query to `getTickets`. Click the white space below the query name for a blank query editor.  
 
 3. Write the following SQL query.
-    ```sql
-      SELECT * FROM tickets;
-    ```
+
+  ```sql
+  SELECT * FROM tickets;
+  ```
 
 4. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
 
@@ -52,7 +53,11 @@ In this section, you'll learn to:
 1. Drop two Text widgets on the canvas.
 2. To set the title on the first Text widget, on the *Property Pane* to the right of the screen, enter `Dashboard` in the **Text** property.
 3. Click the **Style** tab on the *Property Pane*. Select **XL** in the **Font size** property list.
-4. For the personalised greeting in the second Text widget, enter `👋 Hey {{appsmith.user.name}}, welcome back!` in the **Text** property. For more information about the `appsmith.user` object, see [Context Object](/reference/appsmith-framework/context-object#user).
+4. For the personalised greeting in the second Text widget, enter the following in the **Text** property:
+   ```javascript
+   👋 Hey {{appsmith.user.name}}, welcome back!
+   ``` 
+  For more information about the `appsmith.user` object, see [Context Object](/reference/appsmith-framework/context-object#user).
 
   The output should look like this: 
 
