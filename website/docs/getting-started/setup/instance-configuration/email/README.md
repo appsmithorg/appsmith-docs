@@ -45,6 +45,10 @@ Be sure to double-check your configuration if you find that you're able to send 
 
 ## Configure using admin settings
 
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
+
 You can configure the email for your self-hosted instance using the [Admin Settings](/getting-started/setup/instance-configuration) page. Follow the below steps:
 
 * Navigate to **profile** >> **Admin Settings** >> Select **Email.**
