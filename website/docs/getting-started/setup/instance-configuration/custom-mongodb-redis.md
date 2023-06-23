@@ -31,6 +31,10 @@ You can use [Admin Settings](/getting-started/setup/instance-configuration#admin
   <figcaption align = "center"><i>Setup an external MongoDB using Admin settings</i></figcaption>
 </figure>
 
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
+
 #### Environment variable
 To connect to an external MongoDB server, update the environment variable `APPSMITH_MONGODB_URI`. For example, if you want to connect to [MongoDB Cloud](https://www.mongodb.com/cloud), set the value as shown below:
 
