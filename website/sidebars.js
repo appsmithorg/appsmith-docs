@@ -600,6 +600,7 @@ const sidebars = {
             'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
             'learning-and-resources/how-to-guides/how-to-get-container-logs',
+            'learning-and-resources/how-to-guides/how-to-pass-params-to-an-api',
             'learning-and-resources/how-to-guides/how-to-integrate-zoho',
             'learning-and-resources/how-to-guides/how-to-integrate-dropbox'
           ],

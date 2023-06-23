@@ -12,5 +12,6 @@ sidebar_position: 2
 * [Use Prepared Statements](/learning-and-resources/how-to-guides/how-to-use-prepared-statements)
 * [Connect to a Local Datasource](/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith)
 * [Get Container Logs For Appsmith Instances](/learning-and-resources/how-to-guides/how-to-get-container-logs)
+* [Pass Parameters to Queries](/learning-and-resources/how-to-guides/how-to-pass-params-to-an-api)
 * [Create a Zoho Campaign](/learning-and-resources/how-to-guides/how-to-integrate-zoho)
 * [Upload Files to Dropbox](/learning-and-resources/how-to-guides/how-to-integrate-dropbox)
