@@ -51,7 +51,7 @@ The **HubDB - get published tables** command fetches information for the HubDB t
 
   <dt><b>Next Page Token</b></dt>
   <dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
-  <dd><pre>{`{{ GetRowsQuery.data.paging?.next.after || "" }}`}</pre></dd>
+  <dd><pre>{`{{ GetRowsQuery.data.paging?.next.after || "" }}`}</pre></dd><br />
 
   <dt><b>Limit</b></dt>
   <dd>The maxiumum number of items that can be returned in a single query response.
@@ -97,31 +97,31 @@ The **HubDB - create table** command creates a new HubDB table. The following is
   </dd><br />
 
   <dt><b>Label</b></dt>
-  <dd>The label of the new table.</dd>
+  <dd>The label of the new table.</dd><br />
 
   <dt><b>Use for pages</b></dt>
-  <dd>A boolean that, when `true`, allows the new table to be used for creating dynamic website pages.</dd>
+  <dd>A boolean that, when `true`, allows the new table to be used for creating dynamic website pages.</dd><br />
 
   <dt><b>Columns</b></dt>
-  <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd>
+  <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd><br />
 
   <dt><b>Allow Public API access</b></dt> 
-  <dd>A boolean that, when `true`, allows the table to be read via public API without authorization.</dd>
+  <dd>A boolean that, when `true`, allows the table to be read via public API without authorization.</dd><br />
 
   <dt><b>Allow child tables</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of related child tables.</dd>
+  <dd>A boolean that, when `true`, allows the creation of related child tables.</dd><br />
 
   <dt><b>Allow child table pages</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of multi-level dynamic pages referencing the child table.</dd>
+  <dd>A boolean that, when `true`, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
 
   <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of another table that is related to the new table as a Foreign Key.</dd>
+  <dd>The ID of another table that is related to the new table as a Foreign Key.</dd><br />
 
   <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of a column from another table that is used as a Foreign Key.</dd>
+  <dd>The ID of a column from another table that is used as a Foreign Key.</dd><br />
 
   <dt><b>Dynamic meta tags</b></dt>
-  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an `id` of `3`, use: <code>{"DESCRIPTION": 3}</code></dd>
+  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an `id` of `3`, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
 
 </dl>
 
@@ -177,31 +177,31 @@ The **HubDB - update existing table** command fetches rows from a HubDB table. T
   </dd><br />
 
   <dt><b>Label</b></dt>
-  <dd>The label of the new table.</dd>
+  <dd>The label of the new table.</dd><br />
 
   <dt><b>Use for pages</b></dt>
-  <dd>A boolean that, when `true`, allows the new table to be used for creating dynamic website pages.</dd>
+  <dd>A boolean that, when `true`, allows the new table to be used for creating dynamic website pages.</dd><br />
 
   <dt><b>Columns</b></dt>
-  <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd>
+  <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd><br />
 
   <dt><b>Allow Public API access</b></dt> 
-  <dd>A boolean that, when `true`, allows the table to be read via public API without authorization.</dd>
+  <dd>A boolean that, when `true`, allows the table to be read via public API without authorization.</dd><br />
 
   <dt><b>Allow child tables</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of related child tables.</dd>
+  <dd>A boolean that, when `true`, allows the creation of related child tables.</dd><br />
 
   <dt><b>Allow child table pages</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of multi-level dynamic pages referencing the child table.</dd>
+  <dd>A boolean that, when `true`, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
 
   <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of another table that is related to the new table as a Foreign Key.</dd>
+  <dd>The ID of another table that is related to the new table as a Foreign Key.</dd><br />
 
   <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of a column from another table that is used as a Foreign Key.</dd>
+  <dd>The ID of a column from another table that is used as a Foreign Key.</dd><br />
 
   <dt><b>Dynamic meta tags</b></dt>
-  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an `id` of `3`, use: <code>{"DESCRIPTION": 3}</code></dd>
+  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an `id` of `3`, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
 
 </dl>
 
@@ -288,7 +288,7 @@ The **HubDB - get table rows** command fetches rows from a HubDB table. The foll
 </dl>
 
 
-### Add new table row
+#### Add new table row
 
 The **HubDB - add new table row** command creates a new row in a HubDB table. The following is a list of all the fields available for **HubDB - add new table row**:
 
@@ -319,7 +319,7 @@ The **HubDB - add new table row** command creates a new row in a HubDB table. Th
 </dl>
 
 
-### Update existing row
+#### Update existing row
 
 The **HubDB - update existing row** command updates an existing row in a HubDB table. The following is a list of all the fields available for **HubDB - update existing row**:
 
@@ -352,7 +352,7 @@ The **HubDB - update existing row** command updates an existing row in a HubDB t
 
 </dl>
 
-### Replace existing row
+#### Replace existing row
 
 The **HubDB - replace existing row** command replaces an existing row in a HubDB table. The following is a list of all the fields available for **HubDB - replace existing row**:
 
@@ -386,7 +386,7 @@ The **HubDB - replace existing row** command replaces an existing row in a HubDB
 </dl>
 
 
-### Permanently delete row
+#### Permanently delete row
 
 The **HubDB - permanently delete row** command deletes an existing row from a HubDB table. The following is a list of all the fields available for **HubDB - permanently delete row**:
 
@@ -396,7 +396,7 @@ The **HubDB - permanently delete row** command deletes an existing row from a Hu
   </dd><br />
 
   <dt><b>Row ID</b></dt>
-  <dd>The <code>ID</code> of the table row that you'd like to delete.</dd><rb/>
+  <dd>The <code>ID</code> of the table row that you'd like to delete.</dd><br/>
 
 </dl>
 
@@ -552,24 +552,24 @@ The **CRM - Archive object** command archives a given CRM object. The following 
   </dd><br />
 
   <dt><b>Value</b></dt>
-  <dd>The value that returned records should have for the property specified in <b>Property name</b>.</dd>
+  <dd>The value that returned records should have for the property specified in <b>Property name</b>.
   </dd><br />
 
   <dt><b>Operator</b></dt>
-  <dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.</dd>
+  <dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.
   </dd><br />
 
   <dt><b>Sorts</b></dt>
-  <dd>A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:<pre>{'{[
+  <dd>A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:<pre>{`{[
       {
         "propertyName": "createdate",
         "direction": "DESCENDING"
       }
-    ]}'}</pre></dd>
+    ]}`}</pre>
   </dd><br />
 
   <dt><b>Query</b></dt>
-  <dd>A word to search for in the default text property of all CRM objects.</dd>
+  <dd>A word to search for in the default text property of all CRM objects.
   </dd><br />
 
   <dt><b>Properties</b></dt>
