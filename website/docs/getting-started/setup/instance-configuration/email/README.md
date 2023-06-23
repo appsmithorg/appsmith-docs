@@ -21,7 +21,7 @@ Appsmith allows you to configure email using environment variables or the [admin
 
 <VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="" caption="" /> 
 
-## Configure using environment variables
+## Environment variables
 
 Appsmith requires the following environment variables to be configured:
 
@@ -43,7 +43,7 @@ Be sure to double-check your configuration if you find that you're able to send 
 
 [Restart the Appsmith instance](../) once the environment variables are configured.
 
-## Configure using admin settings
+## Admin settings
 
 :::info
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
