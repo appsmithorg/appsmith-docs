@@ -272,7 +272,7 @@
     },
     {
       "source": "/how-to-guides/aws-whitelist",
-      "destination": "/connect-data/how-to-guides/aws-whitelist"
+      "destination": "/connect-data/how-to-guides/connect-datasource"
     },
     {
       "source": "/how-to-guides/how-to-implement-custom-authentication-on-appsmith",
@@ -516,11 +516,11 @@
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/",
-      "destination": "/connect-data/overview"
+      "destination": "/connect-data/how-to-guides/connect-datasource"
     },
     {
-        "source": "/connecting-to-data-sources/connecting-to-databases",
-        "destination": "/connect-data/reference"
+        "source": "/core-concepts/connecting-to-data-sources/connecting-to-databases",
+        "destination": "/connect-data/how-to-guides/connect-datasource"
     },
     {
         "source": "/core-concepts/connecting-to-data-sources/authentication",
@@ -528,7 +528,7 @@
     },
     {
         "source": "/core-concepts/connecting-to-data-sources/authentication/connect-to-apis",
-        "destination": "/connect-data/reference/authenticated-api"
+        "destination": "connect-data/reference/rest-api"
     },
     {
         "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type",
@@ -2805,6 +2805,10 @@
     {
       "source": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
       "destination": "/connect-data/reference/querying-elasticsearch"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-get-container-logs",
+      "destination": "/getting-started/setup/instance-management/how-to-get-container-logs"
     }
   ]
 }

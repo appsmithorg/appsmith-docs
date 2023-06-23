@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Upload Media Using the Camera Widget
+# Upload Images to and from S3
 
 [Amazon S3](https://aws.amazon.com/s3/?nc2=type\_a) (Simple Storage Service) provides object storage built for storing and recovering any amount of information or data from anywhere over the internet. It provides this storage through a web services interface.
 

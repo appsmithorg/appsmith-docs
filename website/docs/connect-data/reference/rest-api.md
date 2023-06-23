@@ -40,9 +40,11 @@ The following section is a reference guide that provides a description of the pa
 
 <dl>
   <dt><b>Body</b></dt>
+  <dd>Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor.<br/>
+  </dd>
   <dd><i>Options:</i>
     <ul>
-      <li><b>None:</b> Sends no body.</li>
+      <li><b>None:</b> Omits a body from the request.</li>
       <li><b>JSON:</b> Expects a JSON object to send as the body.</li>
     </ul>
 
@@ -70,7 +72,7 @@ In the example above, values are collected from a [Table widget](/reference/widg
 `}</pre>
 <p>Selecting <b>FORM_URLENCODED</b> (for <code>application/x-www-form-urlencoded</code>) automatically encodes your key/value pairs for sending in the request body.</p></dd>
     <ul>
-      <li><b>MULTIPART_FORM_DATA:</b> Expects key/value pairs with a data type to be encoded into MULTIPART_FORM_DATA format as the body.</li>
+      <li><b>MULTIPART_FORM_DATA:</b> Expects key/value pairs with a data type to be encoded into MULTIPART_FORM_DATA format as the body. Multipart requests can include several different types of data within them, such as a file along with some other related metadata.</li>
     </ul>
 <dd>
 

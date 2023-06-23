@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Learn to connect to Dropbox via OAuth 2.0 and upload a file from your app.
 ---
 
-# How to Upload Files to Dropbox
+# Upload Files to Dropbox
 
 This guide describes how to configure an Authenticated API datasource for Dropbox with OAuth 2.0 and create a query that uploads a file to Dropbox from your Appsmith app.
 

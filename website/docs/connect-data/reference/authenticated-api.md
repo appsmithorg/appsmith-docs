@@ -50,7 +50,11 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
       <li>
         <b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration.
         <ul>
-          <li><b>Grant Type:</b> Sets the method that is used to get an access token. Choose from <b>Authorization Code</b> or <b>Client Credentials</b>.</li>
+          <li><b>Grant Type:</b> An authorization grant type is a secured representation of the owner’s authorization presented in exchange for an access token. <br/>
+          <i>Options:</i>
+          <b>Authorization Code</b> : An authorization code is a temporary code authorized by an authorization server. You can get an access token in exchange for an authorization code. Once you get an access token, you can use it to access the resources or perform actions on behalf of the user.<br/>
+         <b>Client Credentials</b>.
+         </li>
           <li><b>Add Access Token To:</b> Sets whether the access token is sent as a <b>Request Header</b> or as a query parameter (<b>Request URL</b>).</li>
           <li><b>Header Prefix:</b> When the access token is sent as a header, this sets a string to prefix the access token. A common example is <code>Bearer</code>.</li>
           <li><b>Access Token URL:</b> The endpoint on the authentication server that is used to exchange the authorization code for an access token.</li>

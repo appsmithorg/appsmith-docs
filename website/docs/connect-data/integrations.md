@@ -4,7 +4,9 @@ sidebar_position: 4
 
 # Third-Party Integrations
 
-Appsmith provides **native** integrations with many [databases](/connect-data/reference/). Besides, Appsmith can also seamlessly connect with most other tools through the RESTful API plugin.
+Appsmith provides **native** integrations with many [datasources](/connect-data/reference/). Besides, Appsmith can also seamlessly connect with most other tools through the [REST API](/connect-data/reference/rest-api) plugin.
+
+Browse through the tutorials below to see how to connect non-native datasources with Appsmith.
 
 ###             
 

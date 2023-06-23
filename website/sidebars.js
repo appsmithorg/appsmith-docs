@@ -168,6 +168,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/instance-management/update-appsmith',
+                'getting-started/setup/instance-management/how-to-get-container-logs',
                 'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/maintenance-window',
@@ -197,18 +198,21 @@ const sidebars = {
       collapsed: false,
       label: 'Data',
       items: [
+        'connect-data/overview',
         {
           type: 'category',
           collapsed: true,
           label: 'How-To Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
+            'connect-data/how-to-guides/connect-datasource',
+            'connect-data/how-to-guides/query-data',
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'connect-data/how-to-guides/returning-data-from-a-stored-procedure',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
-            'connect-data/how-to-guides/returning-data-from-a-stored-procedure',
           ]
         },
         {
@@ -221,6 +225,7 @@ const sidebars = {
             'connect-data/reference/querying-arango-db',
             'connect-data/reference/authenticated-api',
             'connect-data/reference/rest-api',
+            'connect-data/reference/curl-import',
             'connect-data/reference/querying-dynamodb',
             'connect-data/reference/querying-elasticsearch',
             'connect-data/reference/querying-firestore',
@@ -248,7 +253,6 @@ const sidebars = {
           'connect-data/reference/querying-snowflake-db',
           'connect-data/reference/using-smtp',
           'connect-data/reference/twilio',
-          'connect-data/reference/query-settings',
           ],
         },
         {
@@ -257,8 +261,8 @@ const sidebars = {
           label: 'Concepts',
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
-            'connect-data/concepts/how-to-use-prepared-statements',
             'connect-data/concepts/connection-pooling',
+            'connect-data/concepts/how-to-use-prepared-statements',
           ]
         },
         'connect-data/integrations'
