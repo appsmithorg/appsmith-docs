@@ -542,6 +542,51 @@ The **CRM - Archive object** command archives a given CRM object. The following 
 
 #### Search object
 
+<dl>
+  <dt><b>Object type</b></dt>
+  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  </dd><br />
+
+  <dt><b>Property name</b></dt>
+  <dd>The name of a property by which to filter results
+  </dd><br />
+
+  <dt><b>Value</b></dt>
+  <dd>The value that returned records should have for the property specified in <b>Property name</b>.</dd>
+  </dd><br />
+
+  <dt><b>Operator</b></dt>
+  <dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.</dd>
+  </dd><br />
+
+  <dt><b>Sorts</b></dt>
+  <dd>A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:<pre>{'{[
+      {
+        "propertyName": "createdate",
+        "direction": "DESCENDING"
+      }
+    ]}'}</pre></dd>
+  </dd><br />
+
+  <dt><b>Query</b></dt>
+  <dd>A word to search for in the default text property of all CRM objects.</dd>
+  </dd><br />
+
+  <dt><b>Properties</b></dt>
+  <dd>A comma-separated list of columns that should be fetched for each returned record.
+  </dd><br />
+
+  <dt><b>Limit</b></dt>
+  <dd>The maxiumum number of rows that can be returned in a single query response.
+  </dd><br />  
+
+  <dt><b>After</b></dt>
+  <dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
+  <dd><pre>{`{{ SearchObjectQuery.data.paging?.next.after || "" }}`}</pre></dd>
+
+
+</dl>
+
 ## Commands
 
 The following commands are available for your HubSpot queries:
