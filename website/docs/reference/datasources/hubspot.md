@@ -426,7 +426,7 @@ The **HubDB - get set rows** command gets a batch of specific rows from a HubDB 
   </dd><br />
 
   <dt><b>Inputs</b></dt>
-  <dd>A JavaScript array with the IDs of the rows to get.
+  <dd>A JSON array with the IDs of the rows to get.
   </dd><br />
 
 </dl>
@@ -441,7 +441,7 @@ The **HubDB - permanently delete rows** command deletes a batch of specific rows
   </dd><br />
 
   <dt><b>Inputs</b></dt>
-  <dd>A JavaScript array with the IDs of the rows to get.
+  <dd>A JSON array with the IDs of the rows to get.
   </dd><br />
 
 </dl>
@@ -566,7 +566,7 @@ The **CRM - Archive object** command archives a given CRM object. The following 
         "propertyName": "createdate",
         "direction": "DESCENDING"
       }
-    ]}`}</pre>
+]}`}</pre>
   </dd><br />
 
   <dt><b>Query</b></dt>
