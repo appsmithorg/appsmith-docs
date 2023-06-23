@@ -14,7 +14,13 @@ import TabItem from '@theme/TabItem';
 
 This page describes how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.
 
-The recommended way to connect to your local datasource is to expose it via **ngrok**, which you can read about in the **ngrok** tab below. If you're self-hosting your Appsmith instance and you'd like to connect another way, you can follow the steps in the **localhost** tab if your datasource is hosted via localhost, or the **Docker datasource** tab if it's in its own Docker container.
+This page shows three methods:
+
+* _(Recommended):_ To connect to your local datasource via a self-hosted _or_ Cloud Appsmith instance is to expose the datasource via **ngrok**, which you can read about in the **ngrok** tab below.
+
+* _(Alternative):_ If you're self-hosting Appsmith and you're connecting to a datasource on `localhost`, you can follow the steps in the **Datasource on localhost** tab below.
+
+* _(Alternative):_ If you're self-hosting Appsmith and you're connecting to a datasource in a Docker container, you can follow the steps in the **Datasource in Docker** tab below.
 
 <Tabs queryString="connect-method">
 
@@ -50,7 +56,7 @@ Your localhost application should now be connected and query-able from within yo
 
 </TabItem>
 
-<TabItem label="localhost" value="localhost">
+<TabItem label="Datasource on localhost" value="localhost">
 
 This guide describes how to connect your self-hosted Appsmith instance to your localhost datasource. These steps won't work if you're connecting from the Appsmith Cloud platform.
 
@@ -97,7 +103,7 @@ services: ...
 
 </TabItem>
 
-<TabItem label="Docker datasource" value="docker">
+<TabItem label="Datasource in Docker" value="docker">
 
 This guide describes how to connect your APIs and databases to your Appsmith instance when they are each in separate Docker containers.
 
