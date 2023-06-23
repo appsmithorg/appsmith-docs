@@ -22,7 +22,7 @@ The following section is a reference guide that provides a complete description 
   <dt><b>Authentication Type</b></dt>
   <dd><i>Options:</i>
     <ul>
-    <li><b>Bearer Token:</b> An access token that authenticates your queries to HubSpot. To create a HubSpot "Private App" integration and find its token, follow <a href="https://developers.hubspot.com/docs/api/private-apps">this guide</a>.</li>
+    <li><b>Bearer Token:</b> An access token that authenticates your queries to HubSpot. For more information on finding your access token, follow HubSpot's <a href="https://developers.hubspot.com/docs/api/private-apps">Private App integration guide</a>.</li>
     </ul>
   </dd>
 
@@ -47,7 +47,7 @@ The **HubDB - get published tables** command fetches information for the HubDB t
 
 <dl>
   <dt><b>Sort</b></dt>
-  <dd>The name of a field by which to sort the fetched tables, such as `name` or creation time (`createdAt`). Requires a single field.
+  <dd>The name of a field by which to sort the fetched tables, such as <code>name</code> or creation time (<code>createdAt</code>). Requires a single field.
   </dd><br />
 
   <dt><b>Next Page Token</b></dt>
@@ -59,31 +59,31 @@ The **HubDB - get published tables** command fetches information for the HubDB t
   </dd><br />
 
   <dt><b>Created at</b></dt>
-  <dd>Returns only records that were created at this given date/time. Format: `YYYY-MM-DDThh:mm:ss.sZ`.
+  <dd>Returns only records that were created at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
   </dd><br />
 
   <dt><b>Created after</b></dt>
-  <dd>Returns only records that were created after the given date/time. Format: `YYYY-MM-DDThh:mm:ss.sZ`.
+  <dd>Returns only records that were created after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
   </dd><br />
 
   <dt><b>Created before</b></dt>
-  <dd>Returns only records that were created before this given date/time. Format: `YYYY-MM-DDThh:mm:ss.sZ`.
+  <dd>Returns only records that were created before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
   </dd><br />
 
   <dt><b>Updated at</b></dt>
-  <dd>Returns only records that were updated at this given date/time. Format: `YYYY-MM-DDThh:mm:ss.sZ`.
+  <dd>Returns only records that were updated at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
   </dd><br />
 
   <dt><b>Updated after</b></dt>
-  <dd>Returns only records that were updated after the given date/time. Format: `YYYY-MM-DDThh:mm:ss.sZ`.
+  <dd>Returns only records that were updated after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
   </dd><br />
 
   <dt><b>Updated before</b></dt>
-  <dd>Returns only records that were updated before this given date/time. Format: `YYYY-MM-DDThh:mm:ss.sZ`.
+  <dd>Returns only records that were updated before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
   </dd><br />
 
   <dt><b>Archive</b></dt>
-  <dd>A boolean value; when `true`, the query only returns table data for tables that are archived.
+  <dd>A boolean value; when <code>true</code>, the query only returns table data for tables that are archived.
   </dd><br />
 
 </dl>
@@ -101,19 +101,19 @@ The **HubDB - create table** command creates a new HubDB table. The following is
   <dd>The label of the new table.</dd><br />
 
   <dt><b>Use for pages</b></dt>
-  <dd>A boolean that, when `true`, allows the new table to be used for creating dynamic website pages.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the new table to be used for creating dynamic website pages.</dd><br />
 
   <dt><b>Columns</b></dt>
   <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd><br />
 
   <dt><b>Allow Public API access</b></dt> 
-  <dd>A boolean that, when `true`, allows the table to be read via public API without authorization.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the table to be read via public API without authorization.</dd><br />
 
   <dt><b>Allow child tables</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of related child tables.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the creation of related child tables.</dd><br />
 
   <dt><b>Allow child table pages</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
 
   <dt><b>Foreign table ID</b></dt> 
   <dd>The ID of another table that is related to the new table as a Foreign Key.</dd><br />
@@ -122,7 +122,7 @@ The **HubDB - create table** command creates a new HubDB table. The following is
   <dd>The ID of a column from another table that is used as a Foreign Key.</dd><br />
 
   <dt><b>Dynamic meta tags</b></dt>
-  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an `id` of `3`, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
+  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an <code>id</code> of <code>3</code>, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
 
 </dl>
 
@@ -132,11 +132,11 @@ The **HubDB - get details of a published table** command fetches data about a Hu
 
 <dl>
   <dt><b>Archived</b></dt>
-  <dd>A boolean value; when `true`, the query includes data for tables that are archived.
+  <dd>A boolean value; when <code>true</code>, the query includes data for tables that are archived.
   </dd><br />
 
   <dt><b>Include foreign IDs</b></dt>
-  <dd>A boolean value; when `true`, the details for related child/foreign tables are included in the results.
+  <dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
   </dd><br />
 
   <dt><b>Table ID or name</b></dt>
@@ -162,11 +162,11 @@ The **HubDB - update existing table** command fetches rows from a HubDB table. T
 
 <dl>
   <dt><b>Archived</b></dt>
-  <dd>A boolean value; when `true`, the query returns data only for tables that are archived.
+  <dd>A boolean value; when <code>true</code>, the query returns data only for tables that are archived.
   </dd><br />
 
   <dt><b>Include foreign IDs</b></dt>
-  <dd>A boolean value; when `true`, the details for related child/foreign tables are included in the results.
+  <dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
   </dd><br />
 
   <dt><b>Table ID or name</b></dt>
@@ -181,19 +181,19 @@ The **HubDB - update existing table** command fetches rows from a HubDB table. T
   <dd>The label of the new table.</dd><br />
 
   <dt><b>Use for pages</b></dt>
-  <dd>A boolean that, when `true`, allows the new table to be used for creating dynamic website pages.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the new table to be used for creating dynamic website pages.</dd><br />
 
   <dt><b>Columns</b></dt>
   <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd><br />
 
   <dt><b>Allow Public API access</b></dt> 
-  <dd>A boolean that, when `true`, allows the table to be read via public API without authorization.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the table to be read via public API without authorization.</dd><br />
 
   <dt><b>Allow child tables</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of related child tables.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the creation of related child tables.</dd><br />
 
   <dt><b>Allow child table pages</b></dt> 
-  <dd>A boolean that, when `true`, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
+  <dd>A boolean that, when <code>true</code>, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
 
   <dt><b>Foreign table ID</b></dt> 
   <dd>The ID of another table that is related to the new table as a Foreign Key.</dd><br />
@@ -202,7 +202,7 @@ The **HubDB - update existing table** command fetches rows from a HubDB table. T
   <dd>The ID of a column from another table that is used as a Foreign Key.</dd><br />
 
   <dt><b>Dynamic meta tags</b></dt>
-  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an `id` of `3`, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
+  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the <b>Meta description column</b> to be the column with an <code>id</code> of <code>3</code>, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
 
 </dl>
 
@@ -225,7 +225,7 @@ The **HubDB - clone table** command clones an existing HubDB table. The followin
   </dd><br />
 
   <dt><b>Copy rows</b></dt>
-  <dd>A boolean that, when `true`, copies the rows from the cloned table into the new table.
+  <dd>A boolean that, when <code>true</code>, copies the rows from the cloned table into the new table.
   </dd><br />
 
 </dl>
@@ -236,7 +236,7 @@ The **HubDB - export published version table** command returns the file data for
 
 <dl>
   <dt><b>Include foreign IDs</b></dt>
-  <dd>A boolean value; when `true`, the details for related child/foreign tables are included in the results.
+  <dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
   </dd><br />
 
   <dt><b>Table ID or name</b></dt>
@@ -251,7 +251,7 @@ The **HubDB - unpublish table** command unpublishes a given HubDB table. The fol
 
 <dl>
   <dt><b>Include foreign IDs</b></dt>
-  <dd>The file format of the exported table data. Allows `CSV`, `XLSX`, or `XLS`.
+  <dd>The file format of the exported table data. Allows <code>CSV</code>, <code>XLSX</code>, or <code>XLS</code>.
   </dd><br />
 
   <dt><b>Table ID or name</b></dt>
@@ -456,7 +456,7 @@ The **CRM - list objects** command returns a list of entries for a given type of
 
 <dl>
   <dt><b>Objects</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
   </dd><br />
 
 </dl>
@@ -467,7 +467,7 @@ The **CRM - create objects** command creates a new object of the given type. The
 
 <dl>
   <dt><b>Objects</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
   </dd><br />
 
   <dt><b>Properties</b></dt>
@@ -494,11 +494,11 @@ The **CRM - read object** command returns the details for a specific CRM object.
   </dd><br />
 
   <dt><b>Archive</b></dt>
-  <dd>A boolean value; when `true`, the query only returns entries that are archived.
+  <dd>A boolean value; when <code>true</code>, the query only returns entries that are archived.
   </dd><br />
 
   <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
   </dd><br />
 
   <dt><b>Object ID</b></dt>
@@ -513,7 +513,7 @@ The **CRM - create objects** command updates a given CRM object. The following i
 
 <dl>
   <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
   </dd><br />
 
   <dt><b>Object ID</b></dt>
@@ -532,7 +532,7 @@ The **CRM - Archive object** command archives a given CRM object. The following 
 
 <dl>
   <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
   </dd><br />
 
   <dt><b>Object ID</b></dt>
@@ -545,7 +545,7 @@ The **CRM - Archive object** command archives a given CRM object. The following 
 
 <dl>
   <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as `contacts`.
+  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
   </dd><br />
 
   <dt><b>Property name</b></dt>
@@ -588,9 +588,9 @@ The **CRM - Archive object** command archives a given CRM object. The following 
 
 </dl>
 
-## Commands
+## Additional commands
 
-The following commands are available for your HubSpot queries:
+In addition to HubDB and CRM command types, Appsmith also provides the following commands:
 
 |                Query Name                |              Description              |
 |:----------------------------------------:|:-------------------------------------:|
