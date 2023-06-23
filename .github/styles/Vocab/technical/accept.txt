@@ -422,3 +422,5 @@ Text Align
 Text Color
 Cell Borders
 HubSpot
+HubDB
+CRM
