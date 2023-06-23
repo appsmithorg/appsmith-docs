@@ -46,11 +46,11 @@ If you are new to Appsmith, this is the place to start:
       <div class="containerCol">
          <img class="containerImage" src="/img/resources-icon.png" alt="core concepts"/>
       </div>
-      <b><a href="/learning-and-resources/tutorials">Find tutorials</a></b>
-      <div class="containerDescription">Follow tutorials that will teach your about Appsmith basics and its core features
+      <b><a href="/core-concepts/building-ui">Learn core concepts</a></b>
+      <div class="containerDescription">Everything you need to know about Appsmith basics and its core features
       </div>
    </div>  
-</div>   
+</div>
 
 :::info
 
