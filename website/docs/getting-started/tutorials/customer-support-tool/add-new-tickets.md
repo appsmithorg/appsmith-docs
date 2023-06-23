@@ -141,7 +141,7 @@ You have to create an insert query to add the data entered in the Form into the 
 
 1. On the *Entity Explorer*, under **JS Objects** section, click on **utils**.
 
-2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. At the end of the **getFilteredTickets** function that you wrote earlier, add a comma `,`. Write a new function as shown below:
+2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. At the end of the **getFilteredTickets** function that you wrote earlier, add a comma `,` as shown in Fig 2. Write a new function as shown below:
 
 ```javascript
 createTicket: async () => {

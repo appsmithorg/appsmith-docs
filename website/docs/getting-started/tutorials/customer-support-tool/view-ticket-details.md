@@ -62,7 +62,7 @@ Here's a screenshot of the final result:
     ]
     ```
     - In the **Text** property, enter `Status`.
-5. Similarly, for the second Select widget, set the properties as shown below: 
+4. Similarly, for the second Select widget, set the properties as shown below: 
     - On the top of the property pane, change the name of the widget from **Select2** to `selPriority`.
     - In the **Options** property, add the below JSON array object to populate the priority options.
 

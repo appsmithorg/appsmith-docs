@@ -31,18 +31,16 @@ When you click a list item, you need to open a modal to edit the ticket details 
 
     - **Widget Name**: `tktId` <br/>
     - **Default value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.id}}
     ```
     - **Text**: `ID`<br/>
     - **Disabled**: `true`
 
-  <b><u>Properties - Input widget 2</u></b>
+  <br/><b><u>Properties - Input widget 2</u></b>
 
     - **Widget Name**: `userEmail` <br/>
     - **Default value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.user}}
     ```
@@ -53,22 +51,20 @@ When you click a list item, you need to open a modal to edit the ticket details 
   The **Disabled** property is turned on for the ID and User Email fields to prevent users from editing them.
   :::
 
-  <b><u>Properties - Input widget 3</u></b>
+  <br/><b><u>Properties - Input widget 3</u></b>
 
     - **Widget Name**: `tktDescription` <br/>
     - **Data type**: `Multi-line text` <br/>
     - **Default value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.description}}
     ```
     **Text**: `Description`
 
-  <b><u>Properties - Select widget 1</u></b>
+  <br/><b><u>Properties - Select widget 1</u></b>
 
     - **Widget Name**: `tktStatus` <br/>
     - **Options**: 
-
     ```javascript
     [
       {
@@ -86,17 +82,15 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ]
     ```
     - **Default selected value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.status}}
     ```
     - **Text**: `Status`
 
-  <b><u>Properties - Select widget 2</u></b>
+  <br/><b><u>Properties - Select widget 2</u></b>
 
     - **Widget Name**: `tktCategory` <br/>
     - **Options**: 
-
     ```javascript
     [
       {
@@ -114,17 +108,15 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ]
     ```
     - **Default selected value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.category}}
     ```
     - **Text**: `Category`
 
-  <b><u>Properties - Select widget 3</u></b>
+  <br/><b><u>Properties - Select widget 3</u></b>
 
     - **Widget Name**: `tktAssignee` <br/>
     - **Options**: 
-
     ```javascript
     [
       {
@@ -142,17 +134,15 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ]
     ```
     - **Default selected value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.assignedTo}}
     ```
     - **Text**: `Assignee`
 
-  <b><u>Properties - Select widget 4</u></b>
+  <br/><b><u>Properties - Select widget 4</u></b>
 
     - **Widget Name**: `tktPriority` <br/>
     - **Options**: 
-
     ```javascript
     [
       {
@@ -170,7 +160,6 @@ When you click a list item, you need to open a modal to edit the ticket details 
     ]
     ```
     - **Default selected value**: 
-
     ```javascript
     {{lstTicketDetails.selectedItem.priority}}
     ```
@@ -236,4 +225,4 @@ You have to create an update query to save the modified ticket details to the da
 4. Modify any field and click the **Save** button to test that the ticket details are updated in the database and in the List.
 
 ## Next steps
-[Add Comments on Tickets](/getting-started/tutorials/customer-support-tool/edit-ticket-details)
+[Add Comments on Tickets](/getting-started/tutorials/customer-support-tool/comments-on-tickets)
