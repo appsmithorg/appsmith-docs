@@ -594,27 +594,27 @@ In addition to HubDB and CRM command types, Appsmith also provides the following
 
 |                Query Name                |              Description              |
 |:----------------------------------------:|:-------------------------------------:|
-| HubDB - Get Published Tables             | Fetches all published tables from the database. |
-| HubDB - Create Table                     | Creates a new table in the HubDB database. |
-| HubDB - Get Details of a Published Table | Retrieves details of an existing table.  |
-| HubDB - Archive Table                    | Archives or deletes an existing table.             |
-| HubDB - Update Existing Table            | Updates several fields in a table.                                   |
-| HubDB - Clone Table                      |     Clones an existing HubDB table.                                  |
-| HubDB - Export Published Version Table   |  Exports table data.                                |
-| HubDB - Unpublish Table                  | Unpublishes table or pages                                |
-| HubDB - Get Table Rows                   |  Fetches rows from a specific HubDB table.                                |
-| HubDB - Add New Table Row                |   Adds a new row to a HubDB table.                                |
-| HubDB - Get Table Row                    | Fetches rows from a specific HubDB table.                                       |
-| HubDB - Update Existing Row              | Updates a specific row in a HubDB table.                                    |
-| HubDB - Replace Existing Row             | Replaces a specific row in a HubDB table.                                   |
-| HubDB - Permanently Delete Row           |   Deletes a specific row from a HubDB table.                                    |
-| HubDB - Clone Row                        |  Duplicates/clones a table row.                                   |
-| HubDB - Get Set Rows                     |   Fetches a set of rows from a table.                                    |
-| HubDB - Permanently Delete Rows          |   Deletes a set of rows from a table.                                    |
-| CRM - List Objects                       |    Fetches all CRM objects. |
-| CRM - Create Object                      |   Creates a new CRM object.                                    |
-| CRM - Read Object                        | Retrieves a particular CRM object. |
-| CRM - Update Object                      |  Updates a few fields in a CRM object.                                       |
-| CRM - Archive Object                     |  Archives or delete an existing CRM object.                                     |
-| CRM - Search Object                      | Search any CRM object.                                      |
-| CRM - GDPR Delete                        |  Deletes a record and its associations.                                     |
+| Domains - get current domains            |  Returns all existing domains that have been created.                                     |
+| Domains - get single domain              |  Returns a single domain with the id specified.                                     |
+| URL Redirects - get current redirects    |  Returns all existing URL redirects.                                     |
+| URL Redirects - create redirect          |   Creates and configures a new URL redirect.                                    |
+| URL Redirects - get details redirects     |   Returns the details for a single existing URL redirect by ID.                                    |
+| URL Redirects - update redirects          |  Updates the settings for an existing URL redirect.                                      |
+| URL Redirects - delete redirects          |  Deletes one existing redirect.                                      |
+| Files - import file                      | Imports CRM records into your HubSpot account.    |
+| Files - delete file                      |  Deletes the file at the specified path in the specified environment.                                     |
+| Files - get file                         |   Fetches the file at the specified path in the specified environment.                                    |
+| Files - create folder                    | Creates a folder in the specified environment.                                     |
+| Files - search file                      |  Searches for any file in the specified environment.                                                     |
+| Files - search folder                    |   Searches for any folder in the specified environment.                                    |
+| Files - update folder properties         |  Performs a partial update of a property.                                    |
+| Files - check folder update Status       |   Checks the status of a batch file access update task.                                    |
+| Files - get folder                       |  Fetches the details for a specific folder.                                     |
+| Files - delete folder                    |   Deletes a specific folder.                                    |
+| Settings - retrieve list of users        |  Fetches a list of authorized users.                                   |
+| Settings - add user                      |  Adds users to your HubSpot account.                                     |
+| Settings - retrieve user                 |  Retrieves an existing user.                                  |
+| Settings - modify user                   |  Updates user details.                                  |
+| Settings - remove user                   |  Removes a set of users.                                    |
+| Settings - retrieve roles account        |  Fetches users in your HubSpot account.                                     |
+| Settings - see details account's teams   |  Fetches information about the team's account.                                    |
