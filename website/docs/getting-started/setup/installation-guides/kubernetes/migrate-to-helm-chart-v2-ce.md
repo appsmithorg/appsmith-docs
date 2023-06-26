@@ -17,7 +17,7 @@ Take a backup using the [`appsmithctl backup`](/getting-started/setup/instance-m
 2. Copy the backup to the local disk. The actual backup file's name should be available in the output of the previous step.
 
    ```bash
-   kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/connect-data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz <APPSMITH_BACKUP_GENERATED_NAME>.tar.gz
+   kubectl cp <NAMESPACE>/<POD_NAME>:/appsmith-stacks/data/backup/<APPSMITH_BACKUP_GENERATED_NAME>.tar.gz <APPSMITH_BACKUP_GENERATED_NAME>.tar.gz
    ```
 
 ## Uninstall old Helm chart
@@ -98,10 +98,10 @@ Once Appsmith pods are up and running, proceed with copying and restoring the ba
 
 ## Copy backup
 
-Run the below command to move the Appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/connect-data/backup/`.
+Run the below command to move the Appsmith backup from a local drive or s3 into the pod `/appsmith-stacks/data/backup/`.
 
 ```bash
-kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-<POD_NAME>:/appsmith-stacks/connect-data/backup/ 
+kubectl cp <PATH_TO_BACKUP_TAR> <NAMESPACE>/appsmith-<POD_NAME>:/appsmith-stacks/data/backup/ 
 ```
 
 ## Restore backup

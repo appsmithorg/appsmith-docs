@@ -30,24 +30,24 @@ fi
 mkdir -p $install_dir
 
 # Create the deploy directories as required for mounting on Docker containers
-mkdir -p $install_dir/connect-data/appsmith-server/config \
-$install_dir/connect-data/nginx \
-$install_dir/connect-data/certbot/conf \
-$install_dir/connect-data/certbot/www \
-$install_dir/connect-data/mongo/db \
-$install_dir/connect-data/opa/config
+mkdir -p $install_dir/data/appsmith-server/config \
+$install_dir/data/nginx \
+$install_dir/data/certbot/conf \
+$install_dir/data/certbot/www \
+$install_dir/data/mongo/db \
+$install_dir/data/opa/config
 
 # Download the docker-compose file from protected location
 cp docker-compose.yml $install_dir/docker-compose.yml
 
 # Download init-letsencrypt.sh file
 cp init-letsencrypt.sh $install_dir/init-letsencrypt.sh
-cp application-default.properties $install_dir/connect-data/appsmith-server/config/application-default.properties
-cp nginx-app.conf $install_dir/connect-data/nginx/app.conf
-cp mongo-init.js $install_dir/connect-data/mongo/init.js
+cp application-default.properties $install_dir/data/appsmith-server/config/application-default.properties
+cp nginx-app.conf $install_dir/data/nginx/app.conf
+cp mongo-init.js $install_dir/data/mongo/init.js
 
 # 4. Download config.yml for OPA
-cp opa-config.yml $install_dir/connect-data/opa/config/config.yml
+cp opa-config.yml $install_dir/data/opa/config/config.yml
 
 # Ask for DB credentials
 echo "Going to create database"
@@ -74,13 +74,13 @@ read -p "To configure the SSL certificates via Letsencrypt, please input the dom
 
 # Substitute variables in init-letsencrypt file
 sed -i "s/\$domains/${domains}/g" $install_dir/init-letsencrypt.sh
-sed -i "s/\$domains/${domains}/g" $install_dir/connect-data/nginx/app.conf
+sed -i "s/\$domains/${domains}/g" $install_dir/data/nginx/app.conf
 sed -i "s/\$mongo_root_user/${mongo_root_user}/g" $install_dir/docker-compose.yml
 sed -i "s/\$mongo_root_pass/${mongo_root_pass}/g" $install_dir/docker-compose.yml
-sed -i "s/\$mongo_root_user/${mongo_root_user}/g" $install_dir/connect-data/appsmith-server/config/application-default.properties
-sed -i "s/\$mongo_root_pass/${mongo_root_pass}/g" $install_dir/connect-data/appsmith-server/config/application-default.properties
-sed -i "s/\$mongo_root_user/${mongo_root_user}/g" $install_dir/connect-data/mongo/init.js
-sed -i "s/\$mongo_root_pass/${mongo_root_pass}/g" $install_dir/connect-data/mongo/init.js
+sed -i "s/\$mongo_root_user/${mongo_root_user}/g" $install_dir/data/appsmith-server/config/application-default.properties
+sed -i "s/\$mongo_root_pass/${mongo_root_pass}/g" $install_dir/data/appsmith-server/config/application-default.properties
+sed -i "s/\$mongo_root_user/${mongo_root_user}/g" $install_dir/data/mongo/init.js
+sed -i "s/\$mongo_root_pass/${mongo_root_pass}/g" $install_dir/data/mongo/init.js
 
 # Start all containers via docker-compose 
 sudo docker-compose up -d

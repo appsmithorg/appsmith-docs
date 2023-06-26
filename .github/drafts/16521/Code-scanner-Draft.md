@@ -107,7 +107,8 @@ https://youtu.be/_2p1bMbdk6U
   
 ## Cross Reference Section
  The following resources will come in handy as you need to learn new tricks:
-* [Appsmith Framework](/reference/appsmith-framework)
+* [Core Concepts](https://docs.appsmith.com/core-concepts/connecting-to-data-sources)
+* [Appsmith Framework](https://docs.appsmith.com/reference/appsmith-framework)
 
  
  ## Troubleshooting

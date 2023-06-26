@@ -55,13 +55,13 @@ Keep these details handy, as you need them for restoring the Appsmith instance.
 ```bash
 docker-compose exec appsmith appsmithctl backup
 ```
-The backup archive file is stored in the `/appsmith-stacks/connect-data/backup/` folder. You can access it on the host machine at `./stacks/connect-data/backup/.`
+The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder. You can access it on the host machine at `./stacks/data/backup/.`
 
 4. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
 
 ```bash
 # Replace the appsmith-backup-DATE_AND_TIMESTAMP.tar.gz with the backup file name
-docker cp appsmith:/appsmith-stacks/connect-data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz .
+docker cp appsmith:/appsmith-stacks/data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz .
 ```
 This command copies the backup archive in your current directory.
 
@@ -90,13 +90,13 @@ Keep these details handy, as you need them for restoring the Appsmith instance.
 #highlight-next-line
 kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup
 ```
-The archive file is stored in the container directory `/appsmith-stacks/connect-data/backup/`.
+The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
 4. Copy the archive file
 ```bash
 # Replace ANY_APPSMITH_POD_NAME with the pod name
 #highlight-next-line
-kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/connect-data/backup/appsmith-backup-TIMESTAMP.tar.gz appsmith-backup-TIMESTAMP.tar.gz
+kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/appsmith-backup-TIMESTAMP.tar.gz appsmith-backup-TIMESTAMP.tar.gz
 ```
 
 </TabItem>
@@ -245,12 +245,12 @@ Keep these details handy, as you need them for restoring the Appsmith database.
 docker-compose exec appsmith appsmithctl export_db
 ```
 
-The backup archive file is stored in the `/appsmith-stacks/connect-data/backup/` folder. You can access it on the host machine at ./stacks/connect-data/backup/.
+The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder. You can access it on the host machine at ./stacks/data/backup/.
 
 4. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
 
 ```bash
-docker cp appsmith:/appsmith-stacks/connect-data/backup/appsmith-data.archive .
+docker cp appsmith:/appsmith-stacks/data/backup/appsmith-data.archive .
 ```
 This command copies the backup archive in your current directory.
 
@@ -288,14 +288,14 @@ Keep these details handy, as you need them for restoring the Appsmith database.
 kubectl exec ANY_APPSMITH_POD_NAME appsmithctl export_db
 ```
 
-The archive file is stored in the container directory `/appsmith-stacks/connect-data/backup/`.
+The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
 4. Copy the archive file with:
 
 ```bash
 # Replace `ANY_APPSMITH_POD_NAME` with the pod name
 #highlight-next-line
-kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/connect-data/backup/appsmith-data.archive appsmith-data.archive
+kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/appsmith-data.archive appsmith-data.archive
 ```
 
 </TabItem>
@@ -349,7 +349,7 @@ kubectl get pods
 ```bash
 # Replace `ANY_APPSMITH_POD_NAME` with the pod name
 #highlight-next-line
-kubectl cp appsmith-backup-TIMESTAMP.tar.gz ANY_APPSMITH_POD_NAME:/appsmith-stacks/connect-data/backup/
+kubectl cp appsmith-backup-TIMESTAMP.tar.gz ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
 ```
 
 3. Go to the `/appsmith-stacks/configuration/` folder
@@ -397,7 +397,7 @@ Follow these steps to restore the Appsmith internal database:
 1. Copy the archive file into the container with:
 
 ```bash
-docker cp ./appsmith-data.archive appsmith:/appsmith-stacks/connect-data/restore/
+docker cp ./appsmith-data.archive appsmith:/appsmith-stacks/data/restore/
 ```
 
 2. Import data from the backup archive file with:
@@ -434,7 +434,7 @@ kubectl get pods
 ```bash
 # Replace `ANY_APPSMITH_POD_NAME` with the pod name
 #highlight-next-line
-kubectl cp ./appsmith-data.archive ANY_APPSMITH_POD_NAME:/appsmith-stacks/connect-data/restore/
+kubectl cp ./appsmith-data.archive ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/restore/
 ```
 
 3. Go to the `/appsmith-stacks/configuration/` folder
