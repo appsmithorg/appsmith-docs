@@ -2943,6 +2943,10 @@
     {
       "source": "/learning-and-resources/how-to-guides/how-to-integrate-dropbox",
       "destination": "/connect-data/how-to-guides/how-to-integrate-dropbox"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/querying-a-database/query-settings",
+      "destination": "/connect-data/reference/query-settings"
     }
   ]
 }
