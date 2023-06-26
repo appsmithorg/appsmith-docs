@@ -24,3 +24,5 @@ This page shows you how to create queries on Appsmith. You should [connect the d
 3. Rename the query to be able to identify it when binding data.
 
 4. For SQL databases (PostgreSQL, MySQL, MS SQL, etc.), you can write SQL queries in the query editor. For NoSQL databases(MongoDB, DynamoDB, Redis, etc.) and API datasources (REST API, GraphQL, Airtable, etc.), you need to set the required parameters to query the datasource. For examples of SQL queries and a complete description of the connection parameters, see the [Reference guide](/connect-data/reference).
+
+5. You can click the **Run** button or hit `Cmd+Enter` to test if the query runs successfully. Appsmith doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of queries.

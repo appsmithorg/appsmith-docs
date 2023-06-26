@@ -218,7 +218,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Datasource Reference',
+          label: 'Reference',
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
@@ -254,6 +254,7 @@ const sidebars = {
           'connect-data/reference/querying-snowflake-db',
           'connect-data/reference/using-smtp',
           'connect-data/reference/twilio',
+          'connect-data/reference/query-settings',
           ],
         },
         {
