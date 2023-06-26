@@ -160,7 +160,7 @@ For instance, you can create a Count query to retrieve the total number of recor
 
 <dd>
 
-Specifies [supported actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user navigates to a different page of the table, either by clicking on the pagination buttons.
+Sets the [actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user navigates to a different page of the table, either by clicking on the pagination buttons.
 
 </dd>
 
@@ -168,7 +168,7 @@ Specifies [supported actions](/reference/appsmith-framework/widget-actions) that
 
 <dd>
 
-Specify [supported actions](/reference/appsmith-framework/widget-actions) to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
+Sets the [actions](/reference/appsmith-framework/widget-actions) to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
 
 </dd>
 
@@ -803,7 +803,7 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
 
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
-1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `pageSize` and `pageOffset`  reference properties to implement pagination.
+1. Fetch data from the sample **users** database using `pageSize` and `pageOffset`  reference properties to implement pagination.
 
    ```sql
     SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}; 
@@ -838,7 +838,7 @@ You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the cou
 
 Instead of using page numbers and sizes, cursor-based pagination uses a cursor, which is a unique identifier that points to a specific item in the dataset.
 
-1. Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
+1. Fetch data from the sample **users** database using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
    ```sql
    SELECT * FROM users {{Table1.nextPageVisited ?  "WHERE id > "+ " "+ Table1.tableData[Table1.tableData.length-1]["id"] : Table1.previousPageVisited ? "WHERE id <"+ " "+ Table1.tableData[0]["id"] : "" }} ORDER BY id LIMIT {{Table1.pageSize}} ;

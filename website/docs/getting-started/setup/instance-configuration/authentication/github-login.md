@@ -41,6 +41,10 @@ Click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` 
 
 ![](/img/as_github_auth_config.png)
 
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
+
 ### Environment variables
 
 Update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:

@@ -218,7 +218,7 @@ In the above example, the visibility of the button is determined by a group. Onl
 
 ### Geolocation
 
-This object contains functions to request the current user location and the coordinates received from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation\_API .
+This object contains functions to request the current user location and the coordinates received from this request https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API .
 
 ```javascript
 {

@@ -137,6 +137,7 @@ Once the cluster is created, you need to create a task that runs on the cluster 
         - `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. You can use any random string (Eg. test). The more random, the better.
         - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to monitor the processes in the Appsmith container.
         - `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB v5 instance by adding a new env key.
+        - `APPSMITH_EMBEDDED_DB` to `0` . This disables embedded mock databases which is not supported on EFS volume.
 
         ![Container Environment](/img/container_environment_aws_fargate.png)
 

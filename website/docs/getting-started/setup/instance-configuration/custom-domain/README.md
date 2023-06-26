@@ -41,6 +41,10 @@ You can use [Admin Settings](/getting-started/setup/instance-configuration#admin
 
 When you restart Appsmith, it generates an SSL certificate for your custom domain. You can now use your custom domain mapped to port 443 via HTTPS to access Appsmith in your browser.
 
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
+
 ### Environment variables
 Appsmith is deployed on a Docker container. To generate an SSL certificate, add the custom domain to the environment variable `APPSMITH_CUSTOM_DOMAIN` in a `docker.env` file. Follow the steps below:
 
@@ -80,5 +84,5 @@ The container uses the certificate if the files are present in the `<MOUNTING-DI
 If you’re having issues accessing Appsmith after Appsmith SSL Configuration, please see the [Unable to Access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) troubleshooting guide. 
 
 ## Further reading
-- [Container logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
+- [Container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
 - [Instance Management](/getting-started/setup/instance-management) 

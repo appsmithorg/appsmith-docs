@@ -13,7 +13,7 @@ The Modal widget can be used to view and edit data in a table. By displaying the
 ---
 **Example**: to use the Modal widget to view and update details for each row in the table, you can follow the steps below:
 
-1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+1.  Fetch data from the sample **users** database using a SELECT query `fetchUserData`. 
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
