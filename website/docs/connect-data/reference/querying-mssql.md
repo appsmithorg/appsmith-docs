@@ -56,7 +56,7 @@ To connect to your database, Appsmith needs the following parameters. All requir
   <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
 </figure>
 
-You can write [queries](https://docs.appsmith.com/connect-data/reference/query-settings) to fetch or write data to the MS SQL database by selecting the **+ New Query**  button on the MS SQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MS SQL database. You'll be brought to a new query screen where you can write SQL queries.
+You can write [queries](/connect-data/reference/query-settings) to fetch or write data to the MS SQL database by selecting the **+ New Query**  button on the MS SQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MS SQL database. You'll be brought to a new query screen where you can write SQL queries.
 
 You can query MsSQL databases using [T-SQL syntax](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15). All MS SQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 

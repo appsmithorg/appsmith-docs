@@ -94,5 +94,5 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 You may be interested in these pages that can come in handy with the Button widget:
 
 1. [Built-in functions](/reference/appsmith-framework/widget-actions/)
-2. [Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
+2. [Queries](/core-concepts/data-access-and-binding/querying-a-database)
 3. [Widgets](/reference/widgets/)

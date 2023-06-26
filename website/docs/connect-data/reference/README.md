@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Find resources for managing your data in Appsmith.
 ---
 
-# Reference
+# Datasources
 
 Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Appsmith supports the following databases and APIs.
 

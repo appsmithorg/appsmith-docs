@@ -39,7 +39,7 @@ Click **Save and Authorize** to confirm your choice. You'll be taken to Google w
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
 
-You can write [queries](https://docs.appsmith.com/connect-data/reference/query-settings) to fetch or write data to Google Sheets by selecting the **+ New Query**  button on the Google Sheets datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Google Sheets datasource. You'll be brought to a new query screen where you can configure your request.
+You can write [queries](/connect-data/reference/query-settings) to fetch or write data to Google Sheets by selecting the **+ New Query**  button on the Google Sheets datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Google Sheets datasource. You'll be brought to a new query screen where you can configure your request.
 
 ## Fetch rows
 

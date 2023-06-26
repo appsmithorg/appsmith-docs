@@ -80,7 +80,7 @@ where **mode1** and **mode2** are the specific SQL modes that you want to enable
 
 ## Create queries
 
-You can write [queries](https://docs.appsmith.com/connect-data/reference/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL queries.
+You can write [queries](/connect-data/reference/query-settings) to fetch or write data to the MySQL database by selecting the **+ New Query**  button on the MySQL datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your MySQL database. You'll be brought to a new query screen where you can write SQL queries.
 
 MySQL databases are queried using standard [SQL syntax](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html). All MySQL queries return an array of objects where each object represents a row, and each property in the object is a column.
 

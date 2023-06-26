@@ -37,7 +37,7 @@ Some forms need to be pre-filled data from a table or API. You can bind the data
 
 Read more about submitting Input data to an API below.
 
-[Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data)
+[Sending widget data in the post body](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data)
 
 ## Properties
 
@@ -60,7 +60,7 @@ These properties allow you to edit the Muti-tree select widget. All these proper
 | **Animate Loading**       | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                 |
 | **Clear All Selections**  | When turned on, it allows users to clear the selection which was the default or the selection made by them.                                                                                                                |
 | **Expand all by default** | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                               |
-| [**Height**](./README.md#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+| [**Height**](./README#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
 
 
 ### Binding properties
