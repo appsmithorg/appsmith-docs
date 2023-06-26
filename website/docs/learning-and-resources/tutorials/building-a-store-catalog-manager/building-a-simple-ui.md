@@ -62,14 +62,14 @@ Let's go back to the `Table Data` field. When you place your cursor in the Table
 
 By now, you have successfully displayed static data in your table. In the next section, we'll display product data from the mock database for the **Oakry** app.
 
-However, when you are building an app for a different use case, you can connect to your own [database](/core-concepts/connecting-to-data-sources/).
+However, when you are building an app for a different use case, you can connect to your own [database](/connect-data/reference/).
 
-## Writing your First Query
+## Writing your first query
 
 Now, let's utilize the mock database to display all the catalog items for the **Oakry** app by following the below steps:
 
 1. First, let's create a new **Datasource** by clicking on the **"+"** icon next to the **Datasource** directory.
-2. Select `Create New`, choose Postgres as the Database type, and name it "Mock Database".
+2. Select `Create New`, choose Postgres as the Database type, and name it `Mock Database`.
 3. Fill in the following details, and hit the **Save** button.
 
 ```

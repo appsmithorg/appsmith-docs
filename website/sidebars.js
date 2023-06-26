@@ -168,6 +168,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/instance-management/update-appsmith',
+                'getting-started/setup/instance-management/how-to-get-container-logs',
                 'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/maintenance-window',
@@ -192,58 +193,88 @@ const sidebars = {
       ],
     }, //getting started section end
     {
+      //Data start
+      type: 'category',
+      collapsed: false,
+      label: 'Data',
+      items: [
+        'connect-data/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
+          items: [
+            'connect-data/how-to-guides/connect-datasource',
+            'connect-data/how-to-guides/query-data',
+            'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'connect-data/how-to-guides/how-to-pass-params-to-an-api',
+            'connect-data/how-to-guides/how-to-upload-to-s3',
+            'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'connect-data/how-to-guides/returning-data-from-a-stored-procedure',
+            'connect-data/how-to-guides/how-to-integrate-dropbox',
+            'connect-data/how-to-guides/how-to-integrate-zoho',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/README' },
+          items: [
+            'connect-data/reference/airtable',
+            'connect-data/reference/querying-amazon-s3',
+            'connect-data/reference/querying-arango-db',
+            'connect-data/reference/authenticated-api',
+            'connect-data/reference/curl-import',
+            'connect-data/reference/querying-dynamodb',
+            'connect-data/reference/querying-elasticsearch',
+            'connect-data/reference/querying-firestore',
+            'connect-data/reference/querying-google-sheets',
+            'connect-data/reference/graphql',
+            'connect-data/reference/hubspot',
+            {
+            type: 'category',
+            label: 'MongoDB',
+            link: {
+                type: 'doc',
+                id: 'connect-data/reference/querying-mongodb/README',
+            },
+            items: [
+                'connect-data/reference/querying-mongodb/mongo-syntax'
+            ],
+          },
+          'connect-data/reference/querying-mssql',
+          'connect-data/reference/querying-mysql',
+          'connect-data/reference/querying-oracle',
+          'connect-data/reference/querying-postgres',
+          'connect-data/reference/querying-redis',
+          'connect-data/reference/querying-redshift',
+          'connect-data/reference/rest-api',
+          'connect-data/reference/querying-snowflake-db',
+          'connect-data/reference/using-smtp',
+          'connect-data/reference/twilio',
+          'connect-data/reference/query-settings',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: { type: 'doc', id: 'connect-data/concepts/README' },
+          items: [
+            'connect-data/concepts/connection-pooling',
+            'connect-data/concepts/how-to-use-prepared-statements',
+          ]
+        },
+        'connect-data/integrations'
+      ]
+    }, //Data end
+    {
       //core concepts section start
       type: 'category',
       collapsed: false,
       label: 'Core Concepts',
       items: [
-        {
-          type: 'category',
-          label: 'Connecting to Datasource',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/connecting-to-data-sources/README',
-          },
-          items: [
-            'core-concepts/connecting-to-data-sources/connecting-to-databases',
-            {
-              type: 'category',
-              label: 'REST APIs',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/connecting-to-data-sources/authentication/README',
-              },
-              items: [
-                'core-concepts/connecting-to-data-sources/authentication/connect-to-apis',
-                {
-                  type: 'category',
-                  label: 'Authentication Type',
-                  link: {
-                    type: 'doc',
-                    id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/README',
-                  },
-                  items: [
-                    'core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication',
-                    {
-                      type: 'category',
-                      label: 'OAuth 2.0',
-                      link: {
-                        type: 'doc',
-                        id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/README',
-                      },
-                      items: [
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code',
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials',
-                      ],
-                    },
-                  ],
-                },
-                'core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions',
-                'core-concepts/connecting-to-data-sources/authentication/self-signed-certificates',
-              ],
-            },
-          ],
-        },
         {
           type: 'category',
           label: 'Building UI',
@@ -280,17 +311,7 @@ const sidebars = {
             id: 'core-concepts/data-access-and-binding/README',
           },
           items: [
-            {
-              type: 'category',
-              label: 'Queries',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/querying-a-database/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/querying-a-database/query-settings',
-              ],
-            },
+            'core-concepts/data-access-and-binding/querying-a-database',
             'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
@@ -333,6 +354,7 @@ const sidebars = {
         },
       ],
     }, //core concepts end
+    
     {
       //Reference start
       type: 'category',
@@ -416,45 +438,6 @@ const sidebars = {
             'reference/widgets/text',
             'reference/widgets/tree-select',
             'reference/widgets/video',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Datasources',
-          link: { type: 'doc', id: 'reference/datasources/README' },
-          items: [
-            'reference/datasources/airtable',
-            'reference/datasources/querying-amazon-s3',
-            'reference/datasources/querying-arango-db',
-            'reference/datasources/authenticated-api',
-            'reference/datasources/rest-api',
-            'reference/datasources/querying-dynamodb',
-            'reference/datasources/querying-elasticsearch',
-            'reference/datasources/querying-firestore',
-            'reference/datasources/querying-google-sheets',
-            'reference/datasources/graphql',
-            'reference/datasources/hubspot',
-            {
-              type: 'category',
-              label: 'MongoDB',
-              link: {
-                type: 'doc',
-                id: 'reference/datasources/querying-mongodb/README',
-              },
-              items: [
-                'reference/datasources/querying-mongodb/mongo-syntax'
-              ],
-            },
-            'reference/datasources/querying-mssql',
-            'reference/datasources/querying-mysql',
-            'reference/datasources/querying-oracle',
-            'reference/datasources/querying-postgres',
-            'reference/datasources/querying-redis',
-            'reference/datasources/querying-redshift',
-            'reference/datasources/rest-api',
-            'reference/datasources/querying-snowflake-db',
-            'reference/datasources/using-smtp',
-            'reference/datasources/twilio',
           ],
         },
         {
@@ -585,28 +568,7 @@ const sidebars = {
             },
           ],
         },
-        {
-          type: 'category',
-          label: 'How To Guides',
-          link: {
-            type: 'doc',
-            id: 'learning-and-resources/how-to-guides/README',
-          },
-          items: [
-            'learning-and-resources/how-to-guides/how-to-upload-to-s3',
-            'learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'learning-and-resources/how-to-guides/aws-whitelist',
-            'learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure',
-            'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
-            'learning-and-resources/how-to-guides/how-to-get-container-logs',
-            'learning-and-resources/how-to-guides/how-to-pass-params-to-an-api',
-            'learning-and-resources/how-to-guides/how-to-integrate-zoho',
-            'learning-and-resources/how-to-guides/how-to-integrate-dropbox'
-          ],
-        },
         'learning-and-resources/sample-apps',
-        'learning-and-resources/integrations',
         {
           type: 'link',
           label: 'Templates', // The link label
