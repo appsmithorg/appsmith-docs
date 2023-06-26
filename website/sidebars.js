@@ -225,7 +225,6 @@ const sidebars = {
             'connect-data/reference/querying-amazon-s3',
             'connect-data/reference/querying-arango-db',
             'connect-data/reference/authenticated-api',
-            'connect-data/reference/rest-api',
             'connect-data/reference/curl-import',
             'connect-data/reference/querying-dynamodb',
             'connect-data/reference/querying-elasticsearch',

@@ -236,19 +236,19 @@
     },
     {
       "source": "/how-to-guides",
-      "destination": "/connect-data/how-to-guides"
+      "destination": "/learning-and-resources/how-to-guides"
     },
     {
       "source": "/how-to-guides/returning-data-from-a-stored-procedure",
-      "destination": "/connect-data/how-to-guides/returning-data-from-a-stored-procedure"
+      "destination": "/learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure"
     },
     {
       "source": "/how-to-guides/how-to-work-with-google-sheets-on-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
     },
     {
       "source": "/how-to-guides/oauth2-authorization-for-google-sheets",
-      "destination": "/connect-data/how-to-guides/oauth2-authorization-for-google-sheets"
+      "destination": "/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets"
     },
     {
       "source": "/how-to-guides/sharing-data-across-pages",
@@ -256,7 +256,7 @@
     },
     {
       "source": "/how-to-guides/how-to-upload-to-s3",
-      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+      "destination": "/learning-and-resources/how-to-guides/how-to-upload-to-s3"
     },
     {
       "source": "/how-to-guides/backup-restore",
@@ -264,7 +264,7 @@
     },
     {
       "source": "/how-to-guides/writing-javascript-in-appsmith",
-      "destination": "/connect-data/how-to-guides/writing-javascript-in-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/writing-javascript-in-appsmith"
     },
     {
       "source": "/how-to-guides/embed-appsmith-into-existing-application",
@@ -272,7 +272,7 @@
     },
     {
       "source": "/how-to-guides/aws-whitelist",
-      "destination": "/connect-data/how-to-guides/connect-datasource"
+      "destination": "/learning-and-resources/how-to-guides/aws-whitelist"
     },
     {
       "source": "/how-to-guides/how-to-implement-custom-authentication-on-appsmith",
@@ -288,47 +288,47 @@
     },
     {
       "source": "/how-to-guides/how-to-use-filters-on-appsmith-table-widget",
-      "destination": "/connect-data/how-to-guides/how-to-use-filters-on-appsmith-table-widget"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget"
     },
     {
       "source": "/how-to-guides/use-mssql-as-data-source",
-      "destination": "/connect-data/how-to-guides/use-mssql-as-data-source"
+      "destination": "/learning-and-resources/how-to-guides/use-mssql-as-data-source"
     },
     {
       "source": "/how-to-guides/build-auto-generated-forms-using-list-widget",
-      "destination": "/connect-data/how-to-guides/build-auto-generated-forms-using-list-widget"
+      "destination": "/learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget"
     },
     {
       "source": "/how-to-guides/use-notion-as-database-on-appsmith",
-      "destination": "/connect-data/how-to-guides/use-notion-as-database-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith"
     },
     {
       "source": "/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith",
-      "destination": "/connect-data/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith"
     },
     {
       "source": "/how-to-guides/use-redshift-as-data-source-on-appsmith",
-      "destination": "/connect-data/how-to-guides/use-redshift-as-data-source-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith"
     },
     {
       "source": "/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith"
     },
     {
       "source": "/how-to-guides/how-to-work-with-graphql-on-appsmith",
-      "destination": "/connect-data/reference/graphql"
+      "destination": "/reference/datasources/graphql"
     },
     {
       "source": "/how-to-guides/how-to-use-js-object-within-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-use-js-object-within-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith"
     },
     {
       "source": "/how-to-guides/how-to-use-prepared-statements",
-      "destination": "/connect-data/concepts/prepared-statements"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-prepared-statements"
     },
     {
       "source": "/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith"
     },
     {
       "source": "/sample-apps",
@@ -388,35 +388,35 @@
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/basic-authentication",
-      "destination": "/connect-data/reference/authenticated-api"
+      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication",
-      "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/authorization-code",
-      "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/authentication/oauth2-authentication/client-credentials",
-      "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "destination": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database",
-      "destination": "/connect-data/overview"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/querying-a-database/connect-to-apis",
-      "destination": "/connect-data/overview"
+      "destination": "/core-concepts/connecting-to-data-sources/authentication/connect-to-apis"
     },
     {
       "source": "/core-concepts/connecting-to-data-sources/query-settings",
-      "destination": "/connect-data/reference/airtable"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database/query-settings"
     },
     {
       "source": "/core-concepts/displaying-data-read",
-      "destination": "/connect-data/overview"
+      "destination": "/core-concepts/data-access-and-binding/displaying-data-read"
     },
     {
       "source": "/reference/widgets/table#displaying-column-value-using selectedrow",
@@ -515,116 +515,72 @@
       "destination": "/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt"
     },
     {
-      "source": "/core-concepts/connecting-to-data-sources/",
-      "destination": "/connect-data/how-to-guides/connect-datasource"
+      "source": "/datasource-reference/airtable",
+      "destination": "/reference/datasources/airtable"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/connecting-to-databases",
-        "destination": "/connect-data/how-to-guides/connect-datasource"
+      "source": "/datasource-reference/querying-amazon-s3",
+      "destination": "/reference/datasources/querying-amazon-s3"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication",
-        "destination": "/connect-data/reference/rest-api"
+      "source": "/datasource-reference/querying-arango-db",
+      "destination": "/reference/datasources/querying-arango-db"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/connect-to-apis",
-        "destination": "connect-data/reference/rest-api"
+      "source": "/datasource-reference/querying-dynamodb",
+      "destination": "/reference/datasources/querying-dynamodb"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type",
-        "destination": "/connect-data/reference/authenticated-api"
+      "source": "/datasource-reference/querying-elasticsearch",
+      "destination": "/reference/datasources/querying-dynamodb"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication",
-        "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "source": "/datasource-reference/querying-firestore",
+      "destination": "/reference/datasources/querying-dynamodb"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication",
-        "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "source": "/datasource-reference/querying-google-sheets",
+      "destination": "/reference/datasources/querying-google-sheets"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code",
-        "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "source": "/datasource-reference/querying-mongodb",
+      "destination": "/reference/datasources/querying-mongodb"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials",
-        "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "source": "/datasource-reference/querying-mongodb/mongo-syntax",
+      "destination": "/reference/datasources/querying-mongodb/mongo-syntax"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions",
-        "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "source": "/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
+      "destination": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud"
     },
     {
-        "source": "/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates",
-        "destination": "/connect-data/reference/authenticated-api#connection-parameters"
+      "source": "/datasource-reference/querying-mssql",
+      "destination": "/reference/datasources/querying-mssql"
     },
     {
-      "source": "/reference/airtable",
-      "destination": "/connect-data/reference/airtable"
+      "source": "/datasource-reference/querying-mysql",
+      "destination": "/reference/datasources/querying-mysql"
     },
     {
-      "source": "/reference/querying-amazon-s3",
-      "destination": "/connect-data/reference/querying-amazon-s3"
+      "source": "/datasource-reference/querying-postgres",
+      "destination": "/reference/datasources/querying-postgres"
     },
     {
-      "source": "/reference/querying-arango-db",
-      "destination": "/connect-data/reference/querying-arango-db"
+      "source": "/datasource-reference/querying-redis",
+      "destination": "/reference/datasources/querying-redis"
     },
     {
-      "source": "/reference/querying-dynamodb",
-      "destination": "/connect-data/reference/querying-dynamodb"
+      "source": "/datasource-reference/querying-redshift",
+      "destination": "/reference/datasources/querying-redshift"
     },
     {
-      "source": "/reference/querying-elasticsearch",
-      "destination": "/connect-data/reference/querying-dynamodb"
+      "source": "/datasource-reference/querying-snowflake-db",
+      "destination": "/reference/datasources/querying-snowflake-db"
     },
     {
-      "source": "/reference/querying-firestore",
-      "destination": "/connect-data/reference/querying-dynamodb"
-    },
-    {
-      "source": "/reference/querying-google-sheets",
-      "destination": "/connect-data/reference/querying-google-sheets"
-    },
-    {
-      "source": "/reference/querying-mongodb",
-      "destination": "/connect-data/reference/querying-mongodb"
-    },
-    {
-      "source": "/reference/querying-mongodb/mongo-syntax",
-      "destination": "/connect-data/reference/querying-mongodb/mongo-syntax"
-    },
-    {
-      "source": "/reference/querying-mongodb/whitelist-mongodb-cloud",
-      "destination": "/connect-data/reference/querying-mongodb/whitelist-mongodb-cloud"
-    },
-    {
-      "source": "/reference/querying-mssql",
-      "destination": "/connect-data/reference/querying-mssql"
-    },
-    {
-      "source": "/reference/querying-mysql",
-      "destination": "/connect-data/reference/querying-mysql"
-    },
-    {
-      "source": "/reference/querying-postgres",
-      "destination": "/connect-data/reference/querying-postgres"
-    },
-    {
-      "source": "/reference/querying-redis",
-      "destination": "/connect-data/reference/querying-redis"
-    },
-    {
-      "source": "/reference/querying-redshift",
-      "destination": "/connect-data/reference/querying-redshift"
-    },
-    {
-      "source": "/reference/querying-snowflake-db",
-      "destination": "/connect-data/reference/querying-snowflake-db"
-    },
-    {
-      "source": "/reference/using-smtp",
-      "destination": "/connect-data/reference/using-smtp"
+      "source": "/datasource-reference/using-smtp",
+      "destination": "/reference/datasources/using-smtp"
     },
     {
       "source": "/framework-reference/appsmith",
@@ -864,7 +820,7 @@
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith",
-      "destination": "/connect-data/reference/graphql"
+      "destination": "/reference/datasources/graphql"
     },
     {
       "source": "/tutorials",
@@ -884,7 +840,7 @@
     },
     {
       "source": "/v/master/how-to-guides",
-      "destination": "/connect-data/how-to-guides/"
+      "destination": "/learning-and-resources/how-to-guides/"
     },
     {
       "source": "/v/master/sample-apps",
@@ -960,7 +916,7 @@
     },
     {
       "source": "/v/v1.2.1/how-to-guides",
-      "destination": "/connect-data/how-to-guides/"
+      "destination": "/learning-and-resources/how-to-guides/"
     },
     {
       "source": "/v/v1.2.1/security",
@@ -1035,64 +991,64 @@
       "destination": "/core-concepts/writing-code/"
     },
     {
-      "source": "/v/master/reference/airtable",
-      "destination": "/connect-data/reference/airtable"
+      "source": "/v/master/datasource-reference/airtable",
+      "destination": "/reference/datasources/airtable"
     },
     {
-      "source": "/v/master/reference/querying-amazon-s3",
-      "destination": "/connect-data/reference/querying-amazon-s3"
+      "source": "/v/master/datasource-reference/querying-amazon-s3",
+      "destination": "/reference/datasources/querying-amazon-s3"
     },
     {
-      "source": "/v/master/reference/querying-arango-db",
-      "destination": "/connect-data/reference/querying-arango-db"
+      "source": "/v/master/datasource-reference/querying-arango-db",
+      "destination": "/reference/datasources/querying-arango-db"
     },
     {
-      "source": "/v/master/reference/querying-dynamodb",
-      "destination": "/connect-data/reference/querying-dynamodb"
+      "source": "/v/master/datasource-reference/querying-dynamodb",
+      "destination": "/reference/datasources/querying-dynamodb"
     },
     {
-      "source": "/v/master/reference/querying-elasticsearch",
-      "destination": "/connect-data/reference/querying-elasticsearch"
+      "source": "/v/master/datasource-reference/querying-elasticsearch",
+      "destination": "/reference/datasources/querying-elasticsearch"
     },
     {
-      "source": "/v/master/reference/querying-firestore",
-      "destination": "/connect-data/reference/querying-firestore"
+      "source": "/v/master/datasource-reference/querying-firestore",
+      "destination": "/reference/datasources/querying-firestore"
     },
     {
-      "source": "/v/master/reference/querying-google-sheets",
-      "destination": "/connect-data/reference/querying-google-sheets"
+      "source": "/v/master/datasource-reference/querying-google-sheets",
+      "destination": "/reference/datasources/querying-google-sheets"
     },
     {
-      "source": "/v/master/reference/querying-mongodb",
-      "destination": "/connect-data/reference/querying-mongodb/"
+      "source": "/v/master/datasource-reference/querying-mongodb",
+      "destination": "/reference/datasources/querying-mongodb/"
     },
     {
-      "source": "/v/master/reference/querying-mssql",
-      "destination": "/connect-data/reference/querying-mssql"
+      "source": "/v/master/datasource-reference/querying-mssql",
+      "destination": "/reference/datasources/querying-mssql"
     },
     {
-      "source": "/v/master/reference/querying-mysql",
-      "destination": "/connect-data/reference/querying-mysql"
+      "source": "/v/master/datasource-reference/querying-mysql",
+      "destination": "/reference/datasources/querying-mysql"
     },
     {
-      "source": "/v/master/reference/querying-postgres",
-      "destination": "/connect-data/reference/querying-postgres"
+      "source": "/v/master/datasource-reference/querying-postgres",
+      "destination": "/reference/datasources/querying-postgres"
     },
     {
-      "source": "/v/master/reference/querying-redis",
-      "destination": "/connect-data/reference/querying-redis"
+      "source": "/v/master/datasource-reference/querying-redis",
+      "destination": "/reference/datasources/querying-redis"
     },
     {
-      "source": "/v/master/reference/querying-redshift",
-      "destination": "/connect-data/reference/querying-redshift"
+      "source": "/v/master/datasource-reference/querying-redshift",
+      "destination": "/reference/datasources/querying-redshift"
     },
     {
-      "source": "/v/master/reference/querying-snowflake-db",
-      "destination": "/connect-data/reference/querying-snowflake-db"
+      "source": "/v/master/datasource-reference/querying-snowflake-db",
+      "destination": "/reference/datasources/querying-snowflake-db"
     },
     {
-      "source": "/v/master/reference/using-smtp",
-      "destination": "/connect-data/reference/using-smtp"
+      "source": "/v/master/datasource-reference/using-smtp",
+      "destination": "/reference/datasources/using-smtp"
     },
     {
       "source": "/v/master/framework-reference/appsmith",
@@ -1144,7 +1100,7 @@
     },
     {
       "source": "/v/master/how-to-guides/aws-whitelist",
-      "destination": "/connect-data/how-to-guides/aws-whitelist"
+      "destination": "/learning-and-resources/how-to-guides/aws-whitelist"
     },
     {
       "source": "/v/master/how-to-guides/backup-restore",
@@ -1152,7 +1108,7 @@
     },
     {
       "source": "/v/master/how-to-guides/build-auto-generated-forms-using-list-widget",
-      "destination": "/connect-data/how-to-guides/build-auto-generated-forms-using-list-widget"
+      "destination": "/learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget"
     },
     {
       "source": "/v/master/how-to-guides/embed-appsmith-into-existing-application",
@@ -1164,35 +1120,35 @@
     },
     {
       "source": "/v/master/how-to-guides/how-to-upload-to-s3",
-      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+      "destination": "/learning-and-resources/how-to-guides/how-to-upload-to-s3"
     },
     {
       "source": "/v/master/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith"
     },
     {
       "source": "/v/master/how-to-guides/how-to-use-filters-on-appsmith-table-widget",
-      "destination": "/connect-data/how-to-guides/how-to-use-filters-on-appsmith-table-widget"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget"
     },
     {
       "source": "/v/master/how-to-guides/how-to-use-js-object-within-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-use-js-object-within-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith"
     },
     {
       "source": "/v/master/how-to-guides/how-to-use-prepared-statements",
-      "destination": "/connect-data/concepts/prepared-statements"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-prepared-statements"
     },
     {
       "source": "/v/master/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith",
-      "destination": "/connect-data/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith"
     },
     {
       "source": "/v/master/how-to-guides/how-to-work-with-google-sheets-on-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
     },
     {
       "source": "/v/master/how-to-guides/how-to-work-with-graphql-on-appsmith",
-      "destination": "/connect-data/reference/graphql"
+      "destination": "/reference/datasources/graphql"
     },
     {
       "source": "/v/master/how-to-guides/how-to-work-with-local-apis-on-appsmith",
@@ -1200,11 +1156,11 @@
     },
     {
       "source": "/v/master/how-to-guides/oauth2-authorization-for-google-sheets",
-      "destination": "/connect-data/how-to-guides/oauth2-authorization-for-google-sheets"
+      "destination": "/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets"
     },
     {
       "source": "/v/master/how-to-guides/returning-data-from-a-stored-procedure",
-      "destination": "/connect-data/how-to-guides/returning-data-from-a-stored-procedure"
+      "destination": "/learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure"
     },
     {
       "source": "/v/master/how-to-guides/sharing-data-across-pages",
@@ -1212,19 +1168,19 @@
     },
     {
       "source": "/v/master/how-to-guides/use-mssql-as-data-source",
-      "destination": "/connect-data/how-to-guides/use-mssql-as-data-source"
+      "destination": "/learning-and-resources/how-to-guides/use-mssql-as-data-source"
     },
     {
       "source": "/v/master/how-to-guides/use-notion-as-database-on-appsmith",
-      "destination": "/connect-data/how-to-guides/use-notion-as-database-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith"
     },
     {
       "source": "/v/master/how-to-guides/use-redshift-as-data-source-on-appsmith",
-      "destination": "/connect-data/how-to-guides/use-redshift-as-data-source-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith"
     },
     {
       "source": "/v/master/how-to-guides/writing-javascript-in-appsmith",
-      "destination": "/connect-data/how-to-guides/writing-javascript-in-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/writing-javascript-in-appsmith"
     },
     {
       "source": "/v/master/setup/ansible",
@@ -1647,56 +1603,56 @@
       "destination": "/core-concepts/writing-code/"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-amazon-s3",
-      "destination": "/connect-data/reference/querying-amazon-s3"
+      "source": "/v/v1.2.1/datasource-reference/querying-amazon-s3",
+      "destination": "/reference/datasources/querying-amazon-s3"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-arango-db",
-      "destination": "/connect-data/reference/querying-arango-db"
+      "source": "/v/v1.2.1/datasource-reference/querying-arango-db",
+      "destination": "/reference/datasources/querying-arango-db"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-dynamodb",
-      "destination": "/connect-data/reference/querying-dynamodb"
+      "source": "/v/v1.2.1/datasource-reference/querying-dynamodb",
+      "destination": "/reference/datasources/querying-dynamodb"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-elasticsearch",
-      "destination": "/connect-data/reference/querying-elasticsearch"
+      "source": "/v/v1.2.1/datasource-reference/querying-elasticsearch",
+      "destination": "/reference/datasources/querying-elasticsearch"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-firestore",
-      "destination": "/connect-data/reference/querying-firestore"
+      "source": "/v/v1.2.1/datasource-reference/querying-firestore",
+      "destination": "/reference/datasources/querying-firestore"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-google-sheets",
-      "destination": "/connect-data/reference/querying-google-sheets"
+      "source": "/v/v1.2.1/datasource-reference/querying-google-sheets",
+      "destination": "/reference/datasources/querying-google-sheets"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-mongodb",
-      "destination": "/connect-data/reference/querying-mongodb/"
+      "source": "/v/v1.2.1/datasource-reference/querying-mongodb",
+      "destination": "/reference/datasources/querying-mongodb/"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-mssql",
-      "destination": "/connect-data/reference/querying-mssql"
+      "source": "/v/v1.2.1/datasource-reference/querying-mssql",
+      "destination": "/reference/datasources/querying-mssql"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-mysql",
-      "destination": "/connect-data/reference/querying-mysql"
+      "source": "/v/v1.2.1/datasource-reference/querying-mysql",
+      "destination": "/reference/datasources/querying-mysql"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-postgres",
-      "destination": "/connect-data/reference/querying-postgres"
+      "source": "/v/v1.2.1/datasource-reference/querying-postgres",
+      "destination": "/reference/datasources/querying-postgres"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-redis",
-      "destination": "/connect-data/reference/querying-redis"
+      "source": "/v/v1.2.1/datasource-reference/querying-redis",
+      "destination": "/reference/datasources/querying-redis"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-redshift",
-      "destination": "/connect-data/reference/querying-redshift"
+      "source": "/v/v1.2.1/datasource-reference/querying-redshift",
+      "destination": "/reference/datasources/querying-redshift"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-snowflake-db",
-      "destination": "/connect-data/reference/querying-snowflake-db"
+      "source": "/v/v1.2.1/datasource-reference/querying-snowflake-db",
+      "destination": "/reference/datasources/querying-snowflake-db"
     },
     {
       "source": "/v/v1.2.1/framework-reference/appsmith",
@@ -1744,7 +1700,7 @@
     },
     {
       "source": "/v/v1.2.1/how-to-guides/aws-whitelist",
-      "destination": "/connect-data/how-to-guides/aws-whitelist"
+      "destination": "/learning-and-resources/how-to-guides/aws-whitelist"
     },
     {
       "source": "/v/v1.2.1/how-to-guides/backup-restore",
@@ -1760,11 +1716,11 @@
     },
     {
       "source": "/v/v1.2.1/how-to-guides/how-to-upload-to-s3",
-      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+      "destination": "/learning-and-resources/how-to-guides/how-to-upload-to-s3"
     },
     {
       "source": "/v/v1.2.1/how-to-guides/how-to-work-with-google-sheets-on-appsmith",
-      "destination": "/connect-data/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
+      "destination": "/learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
     },
     {
       "source": "/v/v1.2.1/how-to-guides/how-to-work-with-local-apis-on-appsmith",
@@ -1772,7 +1728,7 @@
     },
     {
       "source": "/v/v1.2.1/how-to-guides/oauth2-authorization-for-google-sheets",
-      "destination": "/connect-data/how-to-guides/oauth2-authorization-for-google-sheets"
+      "destination": "/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets"
     },
     {
       "source": "/v/v1.2.1/how-to-guides/restricting-signup",
@@ -1967,24 +1923,24 @@
       "destination": "/core-concepts/writing-code/workflows"
     },
     {
-      "source": "/v/v1.2/reference/querying-firestore",
-      "destination": "/connect-data/reference/querying-firestore"
+      "source": "/v/v1.2/datasource-reference/querying-firestore",
+      "destination": "/reference/datasources/querying-firestore"
     },
     {
-      "source": "/v/v1.2/reference/querying-mongodb",
-      "destination": "/connect-data/reference/querying-mongodb/"
+      "source": "/v/v1.2/datasource-reference/querying-mongodb",
+      "destination": "/reference/datasources/querying-mongodb/"
     },
     {
-      "source": "/v/v1.2/reference/querying-mysql",
-      "destination": "/connect-data/reference/querying-mysql"
+      "source": "/v/v1.2/datasource-reference/querying-mysql",
+      "destination": "/reference/datasources/querying-mysql"
     },
     {
-      "source": "/v/v1.2/reference/querying-postgres",
-      "destination": "/connect-data/reference/querying-postgres"
+      "source": "/v/v1.2/datasource-reference/querying-postgres",
+      "destination": "/reference/datasources/querying-postgres"
     },
     {
-      "source": "/v/v1.2/reference/querying-redshift",
-      "destination": "/connect-data/reference/querying-redshift"
+      "source": "/v/v1.2/datasource-reference/querying-redshift",
+      "destination": "/reference/datasources/querying-redshift"
     },
     {
       "source": "/v/v1.2/function-reference/close-modal",
@@ -2028,7 +1984,7 @@
     },
     {
       "source": "/v/v1.2/how-to/how-to-upload-to-s3",
-      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+      "destination": "/learning-and-resources/how-to-guides/how-to-upload-to-s3"
     },
     {
       "source": "/v/v1.2/widget-reference/button",
@@ -2116,7 +2072,7 @@
     },
     {
       "source": "/v/master/core-concepts/connecting-to-data-sources/query-settings",
-      "destination": "/connect-data/reference/query-settings"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database/query-settings"
     },
     {
       "source": "/v/master/core-concepts/connecting-to-data-sources/querying-a-database",
@@ -2187,12 +2143,12 @@
       "destination": "/core-concepts/writing-code/workflows"
     },
     {
-      "source": "/v/master/reference/querying-mongodb/mongo-syntax",
-      "destination": "/connect-data/reference/querying-mongodb/mongo-syntax"
+      "source": "/v/master/datasource-reference/querying-mongodb/mongo-syntax",
+      "destination": "/reference/datasources/querying-mongodb/mongo-syntax"
     },
     {
-      "source": "/v/master/reference/querying-mongodb/whitelist-mongodb-cloud",
-      "destination": "/connect-data/reference/querying-mongodb/whitelist-mongodb-cloud"
+      "source": "/v/master/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
+      "destination": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud"
     },
     {
       "source": "/v/master/framework-reference/javascript-editor-beta/asynchronous-javascript-function-settings",
@@ -2320,11 +2276,11 @@
     },
     {
       "source": "/v/v1.0.0/core-concepts/connecting-to-databases/querying-mongodb",
-      "destination": "/connect-data/reference/querying-mongodb/"
+      "destination": "/reference/datasources/querying-mongodb/"
     },
     {
       "source": "/v/v1.0.0/core-concepts/connecting-to-databases/querying-postgres",
-      "destination": "/connect-data/reference/querying-postgres"
+      "destination": "/reference/datasources/querying-postgres"
     },
     {
       "source": "/v/v1.1/core-concepts/apis/running-apis-on-page-load",
@@ -2348,11 +2304,11 @@
     },
     {
       "source": "/v/v1.1/core-concepts/connecting-to-databases/querying-mongodb",
-      "destination": "/connect-data/reference/querying-mongodb/"
+      "destination": "/reference/datasources/querying-mongodb/"
     },
     {
       "source": "/v/v1.1/core-concepts/connecting-to-databases/querying-postgres",
-      "destination": "/connect-data/reference/querying-postgres"
+      "destination": "/reference/datasources/querying-postgres"
     },
     {
       "source": "/v/v1.1/third-party-services/email/amazon-ses",
@@ -2399,12 +2355,12 @@
       "destination": "/core-concepts/writing-code/workflows"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-mongodb/mongo-syntax",
-      "destination": "/connect-data/reference/querying-mongodb/mongo-syntax"
+      "source": "/v/v1.2.1/datasource-reference/querying-mongodb/mongo-syntax",
+      "destination": "/reference/datasources/querying-mongodb/mongo-syntax"
     },
     {
-      "source": "/v/v1.2.1/reference/querying-mongodb/whitelist-mongodb-cloud",
-      "destination": "/connect-data/reference/querying-mongodb/whitelist-mongodb-cloud"
+      "source": "/v/v1.2.1/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
+      "destination": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud"
     },
     {
       "source": "/v/v1.2.1/setup/docker/email",
@@ -2488,11 +2444,11 @@
     },
     {
       "source": "/v/v1.2/core-concepts/connecting-to-databases/aws-whitelist",
-      "destination": "/connect-data/how-to-guides/aws-whitelist"
+      "destination": "/learning-and-resources/how-to-guides/aws-whitelist"
     },
     {
       "source": "/v/v1.2/core-concepts/connecting-to-databases/query-settings",
-      "destination": "/connect-data/reference/query-settings"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database/query-settings"
     },
     {
       "source": "/v/v1.2/core-concepts/connecting-to-databases/querying-a-database",
@@ -2511,8 +2467,8 @@
       "destination": "/core-concepts/writing-code/ext-libraries"
     },
     {
-      "source": "/v/v1.2/reference/querying-mongodb/mongo-syntax",
-      "destination": "/connect-data/reference/querying-mongodb/mongo-syntax"
+      "source": "/v/v1.2/datasource-reference/querying-mongodb/mongo-syntax",
+      "destination": "/reference/datasources/querying-mongodb/mongo-syntax"
     },
     {
       "source": "/v/v1.2/getting-started/setting-up/aws-ami",
@@ -2600,11 +2556,11 @@
     },
     {
       "source": "/v/v1.1/core-concepts/connecting-to-databases/querying-mongodb/mongo-syntax",
-      "destination": "/connect-data/reference/querying-mongodb/mongo-syntax"
+      "destination": "/reference/datasources/querying-mongodb/mongo-syntax"
     },
     {
       "source": "/v/v1.2.1/core-concepts/connecting-to-data-sources/connect-to-apis/api-settings",
-      "destination": "/connect-data/reference/query-settings"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database/query-settings"
     },
     {
       "source": "/v/v1.2.1/core-concepts/connecting-to-data-sources/connect-to-apis/authentication",
@@ -2620,7 +2576,7 @@
     },
     {
       "source": "/v/v1.2.1/core-concepts/connecting-to-data-sources/connecting-to-databases/query-settings",
-      "destination": "/connect-data/reference/query-settings"
+      "destination": "/core-concepts/data-access-and-binding/querying-a-database/query-settings"
     },
     {
       "source": "/v/v1.2.1/core-concepts/connecting-to-data-sources/connecting-to-databases/querying-a-database",
@@ -2780,15 +2736,15 @@
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith",
-      "destination": "/connect-data/reference/querying-google-sheets"
+      "destination": "/reference/datasources/querying-google-sheets"
     },
     {
       "source": "/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets",
-      "destination": "/connect-data/reference/querying-google-sheets"
+      "destination": "/reference/datasources/querying-google-sheets"
     },
     {
       "source": "/learning-and-resources/how-to-guides/use-mssql-as-data-source",
-      "destination": "/connect-data/reference/querying-mssql"
+      "destination": "/reference/datasources/querying-mssql"
     },
     {
       "source": "/learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith",
@@ -2796,19 +2752,197 @@
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith",
-      "destination": "/connect-data/reference/querying-redis"
+      "destination": "/reference/datasources/querying-redis"
     },
     {
       "source": "/learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith",
-      "destination": "/connect-data/reference/querying-redshift"
+      "destination": "/reference/datasources/querying-redshift"
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
+      "destination": "/reference/datasources/querying-elasticsearch"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources",
+      "destination": "/connect-data/how-to-guides/connect-datasource"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/connecting-to-databases",
+      "destination": "/connect-data/how-to-guides/connect-datasource"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication",
+      "destination": "/connect-data/reference/rest-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/connect-to-apis",
+      "destination": "/connect-data/reference/rest-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/authentication/self-signed-certificates",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/reference/datasources",
+      "destination": "/connect-data/reference"
+    },
+    {
+      "source": "/reference/datasources/airtable",
+      "destination": "/connect-data/reference/airtable"
+    },
+    {
+      "source": "/reference/datasources/querying-amazon-s3",
+      "destination": "/connect-data/reference/querying-amazon-s3"
+    },
+    {
+      "source": "/reference/datasources/querying-arango-db",
+      "destination": "/connect-data/reference/querying-arango-db"
+    },
+    {
+      "source": "/reference/datasources/authenticated-api",
+      "destination": "/connect-data/reference/authenticated-api"
+    },
+    {
+      "source": "/reference/datasources/rest-api",
+      "destination": "/connect-data/reference/rest-api"
+    },
+    {
+      "source": "/reference/datasources/querying-dynamodb",
+      "destination": "/connect-data/reference/querying-dynamodb"
+    },
+    {
+      "source": "/reference/datasources/querying-elasticsearch",
       "destination": "/connect-data/reference/querying-elasticsearch"
+    }, 
+    {
+      "source": "/reference/datasources/querying-firestore",
+      "destination": "/connect-data/reference/querying-firestore"
+    },
+    {
+      "source": "/reference/datasources/querying-google-sheets",
+      "destination": "/connect-data/reference/querying-google-sheets"
+    },
+    {
+      "source": "/reference/datasources/graphql",
+      "destination": "/connect-data/reference/graphql"
+    },
+    {
+      "source": "/reference/datasources/hubspot",
+      "destination": "/connect-data/reference/hubspot"
+    },
+    {
+      "source": "/reference/datasources/querying-mongodb",
+      "destination": "/connect-data/reference/querying-mongodb"
+    },
+    {
+      "source": "/reference/datasources/querying-mongodb/mongo-syntax",
+      "destination": "/connect-data/reference/querying-mongodb/mongo-syntax"
+    },
+    {
+      "source": "/reference/datasources/querying-mssql",
+      "destination": "/connect-data/reference/querying-mssql"
+    },
+    {
+      "source": "/reference/datasources/querying-mysql",
+      "destination": "/connect-data/reference/querying-mysql"
+    },
+    {
+      "source": "/reference/datasources/querying-oracle",
+      "destination": "/connect-data/reference/querying-oracle"
+    },
+    {
+      "source": "/reference/datasources/querying-postgres",
+      "destination": "/connect-data/reference/querying-postgres"
+    },
+    {
+      "source": "/reference/datasources/querying-redis",
+      "destination": "/connect-data/reference/querying-redis"
+    },
+
+    {
+      "source": "/reference/datasources/querying-redshift",
+      "destination": "/connect-data/reference/querying-redshift"
+    },
+    {
+      "source": "/reference/datasources/querying-snowflake-db",
+      "destination": "/connect-data/reference/querying-snowflake-db"
+    },
+    {
+      "source": "/reference/datasources/using-smtp",
+      "destination": "/connect-data/reference/using-smtp"
+    },
+    {
+      "source": "/reference/datasources/twilio",
+      "destination": "/connect-data/reference/twilio"
+    },
+    {
+      "source": "/learning-and-resources/integrations",
+      "destination": "/connect-data/integrations"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-upload-to-s3",
+      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+    },
+
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
+      "destination": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/aws-whitelist",
+      "destination": "/connect-data/how-to-guides/connect-datasource"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure",
+      "destination": "/connect-data/how-to-guides/returning-data-from-a-stored-procedure"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith",
+      "destination": "/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-use-prepared-statements",
+      "destination": "/connect-data/concepts/how-to-use-prepared-statements"
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-get-container-logs",
       "destination": "/getting-started/setup/instance-management/how-to-get-container-logs"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-pass-params-to-an-api",
+      "destination": "/connect-data/how-to-guides/how-to-pass-params-to-an-api"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-integrate-zoho",
+      "destination": "/connect-data/how-to-guides/how-to-integrate-zoho"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides/how-to-integrate-dropbox",
+      "destination": "/connect-data/how-to-guides/how-to-integrate-dropbox"
     }
   ]
 }
