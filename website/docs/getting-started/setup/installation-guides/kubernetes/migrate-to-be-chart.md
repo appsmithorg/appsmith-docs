@@ -22,7 +22,7 @@ Follow the below guide to migrate to the Business Edition running on Helm chart 
 3. Once the backup process is complete, the backup archive is available at a location like this:
 
    ```
-   /appsmith-stacks/connect-data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
+   /appsmith-stacks/data/backup/appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz
    ```
 
 4. Run the below command to exit the shell:
@@ -82,7 +82,7 @@ Follow the below guide to migrate to the Business Edition running on Helm chart 
    07:25:11,805 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 57) HV000001: Hibernate Validator 6.0.22.Final
    07:25:12,930 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 57) HHH000397: Using ASTQueryTranslatorFactory
    07:25:13,691 INFO  [org.keycloak.services] (ServerService Thread Pool -- 57) KC-SERVICES0033: Full model export requested
-   07:25:13,691 INFO  [org.keycloak.exportimport.singlefile.SingleFileExportProvider] (ServerService Thread Pool -- 57) Exporting model into file /appsmith-stacks/connect-data/keycloak_bkp/keycloak_backup.json
+   07:25:13,691 INFO  [org.keycloak.exportimport.singlefile.SingleFileExportProvider] (ServerService Thread Pool -- 57) Exporting model into file /appsmith-stacks/data/keycloak_bkp/keycloak_backup.json
    07:25:14,488 INFO  [org.keycloak.services] (ServerService Thread Pool -- 57) KC-SERVICES0035: Export finished successfully
    ```
 
@@ -159,13 +159,13 @@ To restore the backup, follow the below steps:
 1. Run the below command to copy the Appsmith backup into the new Appsmith pod:
 
    ```bash
-   kubectl cp appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz <namespace>/<pod_name>:/appsmith-stacks/connect-data/backup/
+   kubectl cp appsmith-backup-2022-10-24T07-09-56.930Z.tar.gz <namespace>/<pod_name>:/appsmith-stacks/data/backup/
    ```
 
 2. Run the below command to copy the keycloak backup into the new Appsmith pod:
 
    ```bash
-   kubectl cp keycloak_bkp.json <namespace>/<pod_name>:/appsmith-stacks/connect-data/
+   kubectl cp keycloak_bkp.json <namespace>/<pod_name>:/appsmith-stacks/data/
    ```
 
 3. Run the below command to restore Appsmith data:
@@ -179,14 +179,14 @@ To restore the backup, follow the below steps:
 4. Run the below command to restore the keycloak data:
 
    ```bash
-   kubectl exec -it <namespace>/<pod_name> -- /bin/sh /opt/keycloak/bin/standalone.sh -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/appsmith-stacks/connect-data/keycloak_bkp.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
+   kubectl exec -it <namespace>/<pod_name> -- /bin/sh /opt/keycloak/bin/standalone.sh -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/appsmith-stacks/data/keycloak_bkp.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
    ```
 
     Monitor the output as shown below:
 
    ```
    08:20:54,708 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0030: Full model import requested. Strategy: OVERWRITE_EXISTING
-   08:20:54,708 INFO  [org.keycloak.exportimport.singlefile.SingleFileImportProvider] (ServerService Thread Pool -- 54) Full importing from file /appsmith-stacks/connect-data/keycloak_bkp.json
+   08:20:54,708 INFO  [org.keycloak.exportimport.singlefile.SingleFileImportProvider] (ServerService Thread Pool -- 54) Full importing from file /appsmith-stacks/data/keycloak_bkp.json
    08:20:54,715 INFO  [org.keycloak.exportimport.util.ImportUtils] (ServerService Thread Pool -- 54) Realm 'master' already exists. Removing it before import
    08:20:59,160 INFO  [org.keycloak.exportimport.util.ImportUtils] (ServerService Thread Pool -- 54) Realm 'master' imported
    08:21:01,704 INFO  [org.keycloak.exportimport.util.ImportUtils] (ServerService Thread Pool -- 54) Realm 'appsmith' imported
