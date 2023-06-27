@@ -48,20 +48,16 @@ If you accidentally close the Modal, you can open it again by selecting the name
     ```javascript
     [
       {
-        "label": "Software Issues",
-        "value": "software issues"
+        "label": "Billing",
+        "value": "Billing"
       },
       {
-        "label": "Account Issues",
-        "value": "account/user issues"
+        "label": "Account",
+        "value": "Account"
       },
       {
-        "label": "Operational Issues",
-        "value": "operational issues"
-      },
-      {
-        "label": "Bug",
-        "value": "bug"
+        "label": "Technical",
+        "value": "Technical"
       }
     ]
     ```
@@ -140,8 +136,8 @@ You have to create an insert query to add the data entered in the Form into the 
 
 5. Write the following SQL query.
     ```sql
-    INSERT INTO support_ticket ("id", "created_at", "user", "description", "status", "priority", "category", "assigned_to")
-    VALUES ('{{appsmith.store.ticketid}}', '{{moment().format("LLL")}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
+    INSERT INTO support_ticket ("created_at", "user", "description", "status", "priority", "category", "assigned_to")
+    VALUES ('{{moment().format("LLL")}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
   ```
 
 6. Go back to the canvas by clicking on the **← Back** button above the query editor.
@@ -154,14 +150,11 @@ You have to create an insert query to add the data entered in the Form into the 
 
 ```javascript
 createTicket: async () => {
-  await storeValue('ticketid', Math.random().toString(36).substring(7))
-  .then(() => createTicket.run())
+  await createTicket.run()
   .then(()=> this.getFilteredTickets())
   .then(()=> closeModal('mdlNewTicket'))
 }
 ```
-
-Note that in the above JS function you are using Appsmith's local storage object using the `storeValue()` to generate and store a random number for the ticket id, which is used to the **createTicket** query above in step 5. For more information about local storage, see [storeValue()](/reference/appsmith-framework/widget-actions/store-value).
 
 <figure>
   <img src="/img/code-to-create-new-ticket.png" style= {{width:"800px", height:"auto"}} alt="JS function to submit new ticket"/>

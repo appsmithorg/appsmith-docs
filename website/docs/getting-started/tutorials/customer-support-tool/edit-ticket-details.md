@@ -22,15 +22,21 @@ When you click a list item, you need to open a modal to edit the ticket details 
 If you accidentally close the Modal, you can open it again by selecting the name of the modal **mdlEditTicket** under the **Explorer** tab in the **Widgets** section.
 :::
 
-2. Drop a Tabs widget inside the Modal.
+2. Close the **mdlEditTicket** Modal. 
+
+3. Select the **lstTicketDetails** List.
+    - Click the **+** icon next to the **onItemClick** event.
+    - In the **Select an action** list, select **Show modal > mdlEditTicket** to open the Modal on list item click. 
+
+4. Drop a Tabs widget inside the Modal.
     - In the **Tabs** property, rename the default tab names from **Tab1** and **Tab2** to `Details` and `Comments`.
     - Increase the width of the Tabs widget using the resize handle.
 
-3. You need to display the details of the currently selected item in the List. Drop a JSON Form widget inside the **Details** tab.
+5. You need to display the details of the currently selected item in the List. Drop a JSON Form widget inside the **Details** tab.
 
 4. In the **Source data** property enter:
   ```javascript
-  {{lstTicketDetails.selectedItem}}
+  {{lstTicketDetails.triggeredItem}}
   ```
 This code displays all the details of the currently selected item in the List.
 
@@ -52,7 +58,7 @@ This code displays all the details of the currently selected item in the List.
       },
       {
         "label": "In Progress",
-        "value": "in-progress"
+        "value": "in progress"
       },
       {
         "label": "Closed",
@@ -91,20 +97,16 @@ This code displays all the details of the currently selected item in the List.
     ```javascript
     [
       {
-        "label": "Software Issues",
-        "value": "software issues"
+        "label": "Billing",
+        "value": "Billing"
       },
       {
-        "label": "Account Issues",
-        "value": "account/user issues"
+        "label": "Account",
+        "value": "Account"
       },
       {
-        "label": "Operational Issues",
-        "value": "operational issues"
-      },
-      {
-        "label": "Bug",
-        "value": "bug"
+        "label": "Technical",
+        "value": "Technical"
       }
     ]
     ```
@@ -148,11 +150,6 @@ The output should look something like this:
   <figcaption align = "center"><i>Fig 1. Edit Ticket Details</i></figcaption>
 </figure>
 
-7. Close the **mdlEditTicket** Modal. 
-
-8. Select the **lstTicketDetails** List.
-    - Click the **+** icon next to the **onItemClick** event.
-    - In the **Select an action** list, select **Show modal > mdlEditTicket** to open the Modal on list item click. 
 
 ## Write update ticket query
 
@@ -174,8 +171,8 @@ You have to create an update query to save the modified ticket details to the da
   "priority" = '{{JSONForm1.formData.priority}}',
   "category" = '{{JSONForm1.formData.category}}',
   "assigned_to" = '{{JSONForm1.formData.assigned_to}}',
-  "due_date"='{{JSONForm1.formData.due_date}}'
-  WHERE "id" = '{{lstTicketDetails.selected.id}}';
+	"due_date"='{{JSONForm1.formData.due_date}}'
+  WHERE "id" = '{{lstTicketDetails.triggeredItem.id}}';
   ```
 
 6. Return to the canvas by clicking the **← Back** button above the query editor.

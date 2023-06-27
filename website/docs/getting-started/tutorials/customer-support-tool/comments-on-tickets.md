@@ -77,8 +77,8 @@ You have to create a query to add the comments entered for the ticket.
 
 5. Write the following SQL query 
   ```sql
-  INSERT INTO ticket_comment ("ticket_id", "text", "author", "id", "created_at")
-  VALUES ('{{lstTicketDetails.triggeredItem.id}}', '{{commentsBox.text}}', '{{appsmith.user.name}}', '{{Math.random().toString(36).substring(7)}}', '{{moment().format('LLL')}}');
+  INSERT INTO ticket_comment ("ticket_id", "text", "author", "created_at")
+  VALUES ('{{lstTicketDetails.triggeredItem.id}}', '{{commentsBox.text}}', '{{appsmith.user.name}}', '{{moment().format('LLL')}}');
   ```
 8. Go back to the canvas by clicking the **← Back** button above the query editor.
 

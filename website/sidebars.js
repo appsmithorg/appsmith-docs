@@ -23,7 +23,7 @@ const sidebars = {
       //getting started section start
       type: 'category',
       collapsed: false,
-      label: 'Getting Started',
+      label: 'Get Started',
       items: [
         'intro',
         {

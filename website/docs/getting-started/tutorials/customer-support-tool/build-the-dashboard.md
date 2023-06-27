@@ -78,10 +78,12 @@ In this section, you'll learn to:
 7. Set the following values for the components in the Stat Box widget: 
 
     - In the Text widget with the default value **Page Views**, set the value in the **Text** property to `Unassigned`.
-    - In the Text widget with the default value **2.6 M**, set the value in the **Text** property using JS code to filter all the tickets that have no agents assigned to them.
-    ```javascript
-    {{getTickets.data.filter(t => t.assignedTo==null).length}}
-    ``` 
+    - In the Text widget with the default value **2.6 M**:
+      - Set the value in the **Text** property using JS code to filter all the tickets that have no agents assigned to them.
+      ```javascript
+      {{getTickets.data.filter(t => t.assigned_to==null).length}}
+      ``` 
+      - Click the **Style** tab on the *Property Pane*. Select **XL** in the **Font size** property.
     - Select the Image widget.
       - In the **Image** property, enter the below URL:
     ```javascript
@@ -117,16 +119,16 @@ In this section, you'll learn to:
 | Text       |  `Critical` |
 | Text       |  `{{getTickets.data.filter(t => t.priority==='high' && t.status==='open').length}}`|
 | Image      |  `https://cdn-icons-png.flaticon.com/512/2797/2797387.png` |
-| Background color      | `#fefce8` |
+| Background color      | `#fef2f2` |
 
 **Overdue ticket stats** 
 
 | Property | Value                         |
 | ----------------------------------  | ---------------------------------- |
 | Text    |   `Overdue` |
-| Text     |  `{{getTickets.data.filter(t => t.status==='open' && moment(t.createdAt).diff(moment(),'days') <= -30).length}}`|
+| Text     |  `{{getTickets.data.filter(t => t.status==='open' && moment(t.created_at).diff(moment(),'days') <= -30).length}}`|
 | Image    |  `https://cdn-icons-png.flaticon.com/512/10755/10755684.png` |
-| Background color      | `#fef2f2` |
+| Background color      | `#fefce8` |
 
 The output should look something like this: 
 

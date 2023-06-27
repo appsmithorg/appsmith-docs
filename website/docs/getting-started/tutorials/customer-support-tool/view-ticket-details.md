@@ -114,12 +114,12 @@ Here's a screenshot of the final result:
   | Property                     |Value                                              |
   | -------------------------- | ------------------------------------------------- | 
   | Text  | `Subject: {{currentItem.description}}` |
-  | Text  | `Requested: {{moment(currentItem.createdAt).format("LLL")}}`  |
+  | Text  | `Requested: {{moment(currentItem.created_at).format("LLL")}}`  |
   | Text  | `Email: {{currentItem.user}}` |
   | Text  | `{{currentItem.status}}` |
   | Text  | `{{currentItem.priority}}` |
 
-7. Note that for the **createdAt** database column, you are using the built-in library Moment.js to format the date and time. Use the resize handle of the Text widgets to fit the contents.
+7. Note that for the **created_at** database column, you are using the built-in library Moment.js to format the date and time. Use the resize handle of the Text widgets to fit the contents.
 
 8. Let's add two Icon widgets next to the status and priority Text widgets and conditionally set the color. 
 
@@ -131,7 +131,7 @@ Here's a screenshot of the final result:
       * In the **Button Color** property, click the **JS** button and write code to show different colors for open and closed tickets as shown below:
 
 ```javascript
-{{currentItem.status == 'open' ? appsmith.theme.colors.primaryColor : currentItem.status == 'closed'? '#16a34a': currentItem.status == 'in-progress' ? '#eab308': undefined}}
+{{currentItem.status == 'open' ? appsmith.theme.colors.primaryColor : currentItem.status == 'closed'? '#16a34a': currentItem.status == 'in progress' ? '#eab308': undefined}}
 ```
 
 10. Select the Icon widget for *Priority*. 
