@@ -168,7 +168,7 @@ Note that in the above JS function you are using Appsmith's local storage object
   <figcaption align = "center"><i>Fig 2. JS function to submit new ticket</i></figcaption>
 </figure>
 
-3. Go back to the canvas by clicking of the **Tickets** page. Drop a Button widget on the canvas to the top right of the screen above the **lstTicketDetails** List.
+3. Go back to the canvas by clicking on the **Tickets** page. Drop a Button widget on the canvas to the top right of the screen above the **lstTicketDetails** List.
     - Change the **Label** property to `Add Ticket`.
     - Click the **+** icon next to the **onClick** event.
     - In the **Select an action** list, select **Show Modal**.

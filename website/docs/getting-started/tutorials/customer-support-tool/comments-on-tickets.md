@@ -18,18 +18,23 @@ You have to create a query to fetch all the comments entered for the ticket.
 
 4. Rename the new query to `getComments`. Click the white space near the query templates.
 
-5. Write the following SQL query.
+5. Write the following SQL query to pull the comments for the selected ticket in the lstTicketDetails List.
   ```sql
-  SELECT * FROM ticket_comment
-  WHERE ticket='{{lstTicketDetails.selectedItem.id}}';
+  SELECT * FROM ticket_comment 
+  WHERE ticket_id='{{lstTicketDetails.triggeredItem.id}}';
 
 6. Return to the canvas by clicking the **← Back** button above the query editor.
 
 ## Build UI
 
-1. Click the first item in the **lstTicketDetails** List to open the Modal.
+1. Select the **lstTicketDetails** List. In the property pane, under the **onItemClick** event:
+    - Click **Callbacks** right under the action selector.  
+    - Click the **+** icon next to the **On success** callback. 
+    - Select **Execute a query > getComments**. 
 
-2. Select the **Comments** tab you created in the [Edit Ticket Details](/getting-started/tutorials/customer-support-tool/edit-ticket-details#build-ui) page.
+2. Click the first item in the **lstTicketDetails** List to open the **mdlEditTicket** Modal.
+
+3. Select the **Comments** tab you created in the [Edit Ticket Details](/getting-started/tutorials/customer-support-tool/edit-ticket-details#build-ui) page.
 
 3. Refer to Fig 1 for the placement of widgets inside the Tab. Drop an Input widget. Set the properties as follows:
     - **Widget Name**: `commentsBox` <br/>
@@ -73,7 +78,7 @@ You have to create a query to add the comments entered for the ticket.
 5. Write the following SQL query 
   ```sql
   INSERT INTO ticket_comment ("ticket_id", "text", "author", "id", "created_at")
-  VALUES ('{{lstTicketDetails.selectedItem.id}}', '{{commentsBox.text}}', '{{appsmith.user.email}}', '{{Math.random().toString(36).substring(7)}}', '{{moment().format('LLL')}}');
+  VALUES ('{{lstTicketDetails.triggeredItem.id}}', '{{commentsBox.text}}', '{{appsmith.user.name}}', '{{Math.random().toString(36).substring(7)}}', '{{moment().format('LLL')}}');
   ```
 8. Go back to the canvas by clicking the **← Back** button above the query editor.
 

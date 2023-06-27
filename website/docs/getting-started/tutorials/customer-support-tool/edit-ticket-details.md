@@ -152,7 +152,7 @@ The output should look something like this:
 
 8. Select the **lstTicketDetails** List.
     - Click the **+** icon next to the **onItemClick** event.
-     - In the **Select an action** list, select **Show modal > mdlEditTicket** to open the Modal on list item click. 
+    - In the **Select an action** list, select **Show modal > mdlEditTicket** to open the Modal on list item click. 
 
 ## Write update ticket query
 
