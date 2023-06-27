@@ -5,66 +5,45 @@ sidebar_position: 4
 # Edit Ticket Details
 
 In this section, you'll learn to:
-* Create a form to edit ticket details
+* Use a JSON Form to edit the ticket details
 * Update and save ticket details.
 
 ## Build UI
 
 When you click a list item, you need to open a modal to edit the ticket details in a form.
 
-1. Drop a Modal widget on the canvas. 
+1. On the **Tickets** page, drop a Modal widget on the canvas. 
     - On the top of the property pane, change the name from **Modal1** to `mdlEditTicket`.
     - Select the **Modal Title** Text widget. Change the title in the **Text** property to `Ticket Details`.
     - Delete the default **Close** and **Confirm** buttons.
+    - Increase the width of the Modal using the resize handle.
+
+:::tip
+If you accidentally close the Modal, you can open it again by selecting the name of the modal **mdlEditTicket** under the **Explorer** tab in the **Widgets** section.
+:::
 
 2. Drop a Tabs widget inside the Modal.
-    - In the **Tabs** property, rename the default tab names to `Details` and `Comments`.
+    - In the **Tabs** property, rename the default tab names from **Tab1** and **Tab2** to `Details` and `Comments`.
+    - Increase the width of the Tabs widget using the resize handle.
 
-2. Drop a Form widget inside the **Details** tab. 
-    - Delete the default **Form** title. 
-    - Delete the **Reset** button.
-    - Click the **Submit** button. Change the **Label** property to `Save`.
+3. You need to display the details of the currently selected item in the List. Drop a JSON Form widget inside the **Details** tab.
 
-3. You need to display the details of the currently selected item in the List. Refer to Fig 1 for the placement of widgets. Drop three Input and four Select widgets inside the Form and set their properties as follows:
-    
-    <b><u>Properties - Input widget 1</u></b>
+4. In the **Source data** property enter:
+  ```javascript
+  {{lstTicketDetails.selectedItem}}
+  ```
+This code displays all the details of the currently selected item in the List.
 
-    - **Widget Name**: `tktId` <br/>
-    - **Default value**: 
-    ```javascript
-    {{lstTicketDetails.selectedItem.id}}
-    ```
-    - **Text**: `ID`<br/>
-    - **Disabled**: `true`
+5. Under **Field configuration** properties:
+    1. You need to prevent user edits in the **ID**, **User** and **Created At** fields. 
+        - Click the gear icon next to **Id** field. This action opens up the individual properties of the field. 
+        - Scroll down in the property pane. Turn on the **Disabled** toggle.
+        - Click the **←** icon on the top to return to the widget properties.
+        - Repeat this step for the **User** and **Created At** fields.
+    2. Click the gear icon next to the **Status** field. 
+        - In the **Field Type** list, choose **Select** option.
+        - In the **Options** property, enter:
 
-  <br/><b><u>Properties - Input widget 2</u></b>
-
-    - **Widget Name**: `userEmail` <br/>
-    - **Default value**: 
-    ```javascript
-    {{lstTicketDetails.selectedItem.user}}
-    ```
-    - **Text**: `User Email`<br/>
-    - **Disabled**: `true`
-
-  :::info
-  The **Disabled** property is turned on for the ID and User Email fields to prevent users from editing them.
-  :::
-
-  <br/><b><u>Properties - Input widget 3</u></b>
-
-    - **Widget Name**: `tktDescription` <br/>
-    - **Data type**: `Multi-line text` <br/>
-    - **Default value**: 
-    ```javascript
-    {{lstTicketDetails.selectedItem.description}}
-    ```
-    **Text**: `Description`
-
-  <br/><b><u>Properties - Select widget 1</u></b>
-
-    - **Widget Name**: `tktStatus` <br/>
-    - **Options**: 
     ```javascript
     [
       {
@@ -81,68 +60,12 @@ When you click a list item, you need to open a modal to edit the ticket details 
       }
     ]
     ```
-    - **Default selected value**: 
-    ```javascript
-    {{lstTicketDetails.selectedItem.status}}
-    ```
-    - **Text**: `Status`
+    3. Click the **←** icon on the top to return to the widget properties.
 
-  <br/><b><u>Properties - Select widget 2</u></b>
+    4. Click the gear icon next to the **Priority** field. 
+        - In the **Field Type** list, choose **Select** option.
+        - In the **Options** property, enter:
 
-    - **Widget Name**: `tktCategory` <br/>
-    - **Options**: 
-    ```javascript
-    [
-      {
-        "label": "Hardware",         
-        "value": "hardware"
-      },
-      {
-        "label": "Software",
-        "value": "software"
-      },
-      {
-        "label": "Other",
-        "value": "other"
-      }
-    ]
-    ```
-    - **Default selected value**: 
-    ```javascript
-    {{lstTicketDetails.selectedItem.category}}
-    ```
-    - **Text**: `Category`
-
-  <br/><b><u>Properties - Select widget 3</u></b>
-
-    - **Widget Name**: `tktAssignee` <br/>
-    - **Options**: 
-    ```javascript
-    [
-      {
-        "label": "Kadao",
-        "value": "kadao@appsmith.com"
-      },
-      {
-        "label": "Rishabh",
-        "value": "rishabh@appsmith.com"
-      },
-      {
-        "label": "Confidence",
-        "value": "confidence@appsmith.com"
-      }
-    ]
-    ```
-    - **Default selected value**: 
-    ```javascript
-    {{lstTicketDetails.selectedItem.assignedTo}}
-    ```
-    - **Text**: `Assignee`
-
-  <br/><b><u>Properties - Select widget 4</u></b>
-
-    - **Widget Name**: `tktPriority` <br/>
-    - **Options**: 
     ```javascript
     [
       {
@@ -159,11 +82,64 @@ When you click a list item, you need to open a modal to edit the ticket details 
       }
     ]
     ```
-    - **Default selected value**: 
+    5. Click the **←** icon on the top to return to the widget properties.
+
+    6. Click the gear icon next to the **Category** field. 
+        - In the **Field Type** list, choose **Select** option.
+        - In the **Options** property, enter:
+
     ```javascript
-    {{lstTicketDetails.selectedItem.priority}}
+    [
+      {
+        "label": "Software Issues",
+        "value": "software issues"
+      },
+      {
+        "label": "Account Issues",
+        "value": "account/user issues"
+      },
+      {
+        "label": "Operational Issues",
+        "value": "operational issues"
+      },
+      {
+        "label": "Bug",
+        "value": "bug"
+      }
+    ]
     ```
-    - **Text**: `Priority`
+    7. Click the **←** icon on the top to return to the widget properties.
+
+    8. Click the gear icon next to the **Due Date** field. 
+       - In the **Field Type** list, choose **Datepicker** option.
+       - Click the **←** icon on the top to return to the widget properties.
+
+    9. Click the gear icon next to **Assigned to** field. 
+       - In the **Field Type** list, choose **Select** option.
+       - In the **Options** property, enter:
+
+    ```javascript
+    [
+      {
+        "label": "John Doe",
+        "value": "John Doe"
+         },
+      {
+        "label": "Karmila Fox",
+        "value": "Karmila Fox"
+      },
+      {
+        "label": "Sarah Smith",
+        "value": "Sarah Smith"
+      }
+    ]
+    ```
+    10. Click the **←** icon on the top to return to the widget properties.
+
+6. Under **General** properties section:
+    - Delete the default value `Form` from the **Title** property.
+    - Turn off the **Show reset** toggle.
+    - Change the value in the **Submit button label** property to `Save`.
 
 The output should look something like this: 
 
@@ -172,13 +148,13 @@ The output should look something like this:
   <figcaption align = "center"><i>Fig 1. Edit Ticket Details</i></figcaption>
 </figure>
 
-4. Close the **mdlEditTicket** Modal. 
+7. Close the **mdlEditTicket** Modal. 
 
-5. Select the **lstTicketDetails** List.
+8. Select the **lstTicketDetails** List.
     - Click the **+** icon next to the **onItemClick** event.
      - In the **Select an action** list, select **Show modal > mdlEditTicket** to open the Modal on list item click. 
 
-## Create update ticket query
+## Write update ticket query
 
 You have to create an update query to save the modified ticket details to the database.
 
@@ -192,25 +168,25 @@ You have to create an update query to save the modified ticket details to the da
 
 5. Write the following SQL query.
   ```sql
-  UPDATE tickets SET
-  "updatedAt" = '{{moment().format('YYYY-MM-DD hh:mm:ss')}}',
-  "description" = '{{tktDescription.text}}',   
-  "status" = '{{tktStatus.selectedOptionValue}}',
-  "priority" = '{{tktPriority.selectedOptionValue}}',
-  "category" = '{{tktCategory.selectedOptionValue}}',
-  "assignedTo" = '{{tktAssignee.selectedOptionValue}}'
-  WHERE "id" = '{{lstTicketDetails.selectedItem.id}}';
+  UPDATE support_ticket SET
+  "description" = '{{JSONForm1.formData.description}}',   
+  "status" = '{{JSONForm1.formData.status}}',
+  "priority" = '{{JSONForm1.formData.priority}}',
+  "category" = '{{JSONForm1.formData.category}}',
+  "assigned_to" = '{{JSONForm1.formData.assigned_to}}',
+  "due_date"='{{JSONForm1.formData.due_date}}'
+  WHERE "id" = '{{lstTicketDetails.selected.id}}';
   ```
 
-6. Go back to the canvas by clicking on the **← Back** button above the query editor.
+6. Return to the canvas by clicking the **← Back** button above the query editor.
 
 ## Save edited tickets
 
 1. Click the first list item to open the Modal.
 
-2. Click the **Save** button. Click the **JS** button next to the **onClick** event in the *property pane*. 
+2. Select the JSON Form. Scroll down to the bottom in the *Property pane*. Click the **JS** button next to the **onSubmit** event. 
 
-3. You have to write code to call the update query, refresh the List widget, show a message and then close the Modal. Write the JS code as shown below in the **onClick** event property:
+3. You have to write code to call the update query, refresh the List widget, show a message, and close the Modal. Write the JS code as shown below in the **onSubmit** event property:
 
   ```javascript
   {{
@@ -222,7 +198,7 @@ You have to create an update query to save the modified ticket details to the da
   }}
   ```
 
-4. Modify any field and click the **Save** button to test that the ticket details are updated in the database and in the List.
+4. Modify any field and click the **Save** button to ensure the ticket details update is visible in the database and the List.
 
 ## Next steps
 [Add Comments on Tickets](/getting-started/tutorials/customer-support-tool/comments-on-tickets)

@@ -12,30 +12,35 @@ In this section, you'll learn to:
 
 You need to build a Form to capture details for new tickets.
 
-1. Drop a Modal widget on the canvas. 
+1. On the **Tickets** page, drop a Modal widget on the canvas. 
     - On the top of the property pane, change the name from **Modal1** to `mdlNewTicket`.
     - Select **Modal Title**. Change the title in the **Text** property to `New Ticket`.
     - Delete the default **Close** and **Confirm** buttons.
+    - Increase the width of the Modal using the resize handle.
 
-2. Drop a Form widget inside the Modal. Delete the default **Form** title.
+:::tip
+If you accidentally close the Modal, you can open it again by selecting the name of the modal **mdlNewTicket** under the **Explorer** tab in the **Widgets** section.
+:::
+
+2. From under the **Widgets** tab, drop a Form widget inside the Modal. Delete the default **Form** title. Increase the width of the Form using the resize handle.
 
 3. Drop two Input and three Select widgets inside the Form and set their properties as follows:
 
-    <b><u>Properties - Input widget 1</u></b>
+    <b><u>Properties - Input1</u></b>
 
     - **Widget Name**: `c_user` <br/>
     - **Data type**: `Email`<br/>
     - **Text**: `User Email`<br/>
     - **Required**: `true`
 
-    <br/><b><u>Properties - Input widget 2</u></b>
+    <br/><b><u>Properties - Input2</u></b>
 
     - **Widget Name**: `c_description` <br/>
     - **Data type**: `Multi-line text`<br/>
     - **Text**: `Description`<br/>
     - **Required**: `true`
 
-    <br/><b><u>Properties - Select widget 1</u></b>
+    <br/><b><u>Properties - Select1</u></b>
 
     - **Widget Name**: `c_category` <br/>
     - **Options**: 
@@ -43,24 +48,28 @@ You need to build a Form to capture details for new tickets.
     ```javascript
     [
       {
-        "label": "Hardware",
-        "value": "hardware"
+        "label": "Software Issues",
+        "value": "software issues"
       },
       {
-        "label": "Software",
-        "value": "software"
+        "label": "Account Issues",
+        "value": "account/user issues"
       },
       {
-        "label": "Other",
-        "value": "other"
+        "label": "Operational Issues",
+        "value": "operational issues"
+      },
+      {
+        "label": "Bug",
+        "value": "bug"
       }
-     ]
+    ]
     ```
 
     - **Default selected value**: empty<br/>
     - **Label**: `Category`
 
-    <br/><b><u>Properties - Select widget 2</u></b>
+    <br/><b><u>Properties - Select2</u></b>
 
     - **Widget Name**: `c_assignee` <br/>
     - **Options**: 
@@ -68,16 +77,16 @@ You need to build a Form to capture details for new tickets.
     ```javascript
     [
       {
-        "label": "Kadao",
-        "value": "kadao@appsmith.com"
+        "label": "John Doe",
+        "value": "John Doe"
          },
       {
-        "label": "Rishabh",
-        "value": "rishabh@appsmith.com"
+        "label": "Karmila Fox",
+        "value": "Karmila Fox"
       },
       {
-        "label": "Confidence",
-        "value": "confidence@appsmith.com"
+        "label": "Sarah Smith",
+        "value": "Sarah Smith"
       }
     ]
     ```
@@ -85,7 +94,7 @@ You need to build a Form to capture details for new tickets.
     - **Default selected value**: empty<br/>
     - **Label**: `Assignee`
 
-    <br/><b><u>Properties - Select widget 3</u></b>
+    <br/><b><u>Properties - Select3</u></b>
 
     - **Widget Name**: `c_priority` <br/>
     - **Options**: 
@@ -131,8 +140,8 @@ You have to create an insert query to add the data entered in the Form into the 
 
 5. Write the following SQL query.
     ```sql
-    INSERT INTO tickets ("id", "createdAt", "user", "description", "status", "priority", "category", "assignedTo")
-    VALUES ('{{Math.random().toString(36).substring(7)}}', '{{moment().format('YYYY-MM-DD hh:mm:ss')}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
+    INSERT INTO support_ticket ("id", "created_at", "user", "description", "status", "priority", "category", "assigned_to")
+    VALUES ('{{appsmith.store.ticketid}}', '{{moment().format("LLL")}}', '{{c_user.text}}', '{{c_description.text}}', 'open', '{{c_priority.selectedOptionValue}}', '{{c_category.selectedOptionValue}}', '{{c_assignee.selectedOptionValue}}');
   ```
 
 6. Go back to the canvas by clicking on the **← Back** button above the query editor.
@@ -141,22 +150,25 @@ You have to create an insert query to add the data entered in the Form into the 
 
 1. On the *Entity Explorer*, under **JS Objects** section, click on **utils**.
 
-2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. At the end of the **getFilteredTickets** function that you wrote earlier, add a comma `,` as shown in Fig 2. Write a new function as shown below:
+2. You have to write a new function in the **utils** JS Object to call the **createTicket** insert query. Post running the insert query, we want to refresh the List to show the newly added ticket and then close the Modal. At the end of the **getFilteredTickets** function that you wrote earlier, add a comma `,` on line 24 as shown in Fig 2. Write a new function as shown below:
 
 ```javascript
 createTicket: async () => {
-  await storeValue('ticket', {id: Math.random().toString(36).substring(7)})
+  await storeValue('ticketid', Math.random().toString(36).substring(7))
   .then(() => createTicket.run())
   .then(()=> this.getFilteredTickets())
   .then(()=> closeModal('mdlNewTicket'))
 }
 ```
+
+Note that in the above JS function you are using Appsmith's local storage object using the `storeValue()` to generate and store a random number for the ticket id, which is used to the **createTicket** query above in step 5. For more information about local storage, see [storeValue()](/reference/appsmith-framework/widget-actions/store-value).
+
 <figure>
   <img src="/img/code-to-create-new-ticket.png" style= {{width:"800px", height:"auto"}} alt="JS function to submit new ticket"/>
   <figcaption align = "center"><i>Fig 2. JS function to submit new ticket</i></figcaption>
 </figure>
 
-3. Drop a Button widget on the canvas.
+3. Go back to the canvas by clicking of the **Tickets** page. Drop a Button widget on the canvas to the top right of the screen above the **lstTicketDetails** List.
     - Change the **Label** property to `Add Ticket`.
     - Click the **+** icon next to the **onClick** event.
     - In the **Select an action** list, select **Show Modal**.
