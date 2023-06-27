@@ -1,54 +1,105 @@
 ---
 sidebar_position: 15
+description: Connect Appsmith to a Redshift database and create queries.
 ---
+
 # Redshift
-This page provides information for connecting to Redshift and using queries to manage data in Appsmith.
 
-## Connection settings
+This page provides information for connecting Appsmith to a Redshift database and for reading and writing data in your applications.
 
-Appsmith needs the following parameters for connecting to a Redshift database:
+## Connect Redshift
 
-:::tip
-All required fields are suffixed with an asterisk (\*).
+:::caution important
+You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` on your database instance before connecting to it.
 :::
 
-### **Connection**
+## Connection parameters
 
-You need to fill in the following parameters:
+The following section is a reference guide that provides a complete description of all the parameters to connect to a Redshift database.
 
-* **Connection Mode\*:** You must choose one of the following two modes:
-  * **Read Only:** Choosing this mode gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.
-  * **Read / Write:** Choosing this mode gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.
-* **Host Address / Port\*:** Fill in the database host’s address and port. If you don’t specify a port, Appsmith connects to port 5439.
-* **Database Name\*:** Fill in the name of the database that you want to connect to. This is your database’s name.
+<figure>
+  <img src="/img/redshift-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redshift datasource." />
+  <figcaption align="center"><i>Configuring a Redshift datasource.</i></figcaption>
+</figure>
 
-### **Authentication**
+<dl>
+  <dt><b>Connection Mode</b></dt>
+  <dd>Determines which permissions your app has when querying the database.</dd><br />
+  <dd><i>Options:</i>
+    <ul>
+      <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.</li>
+      <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.</li>
+    </ul>
+  </dd><br/>
 
-You need to fill in the following parameters:
+  <dt><b>Host Address</b></dt>
+  <dd>The network location of your Redshift database. This can be a domain name or an IP address.</dd><br />
 
-* **Username\*:** Fill username required for authenticating connection requests to your database.
-* **Password\*:** Fill password required for authenticating connection requests for the given username to the database.
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. Appsmith connects to port <code>5439</code> by default if you do not specify one.</dd><br />
 
-### **SSL**
+  <dt><b>Database name</b></dt>
+  <dd>Name of the database you'd like to connect to.</dd><br />
 
-You need to fill in the following parameters:
+  <dt><b>Username</b></dt>
+  <dd>The username to use to authenticate your queries.</dd><br />
 
-* **SSL Mode:** Choose your SSL model from the dropdown.
-* **Key File:** Upload your SSL key file from here.
-* **Certificate:** Upload your SSL certificate here.
-* **CA Certificate:** Upload your CA certificate here.
-* **PEM Certificate:** Upload your PEM certificate here.
-* **PEM Passphrase:** Fill in your PEM passphrase here.
+  <dt><b>Password</b></dt>
+  <dd>The password to use to authenticate your queries.</dd><br />
+</dl>
 
 ## Querying Redshift
 
-Redshift databases can be queried using the standard [SQL syntax](https://docs.aws.amazon.com/redshift/latest/dg/cm\_chap\_SQLCommandRef.html). All Redshift queries return an array of objects where each object is a row returned by the query and each property in the object is a column. Appsmith provides template queries to help with the syntax
+The following section provides examples of creating basic CRUD queries for Redshift.
 
-![Click to expand](/img/redshift_query_widget_input.gif)
+:::info
+For Redshift SQL syntax, see the official [**Redshift SQL Reference**](https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_SQLCommandRef.html).
+:::
 
-## Using queries in applications
+<figure>
+  <img src="/img/redshift-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redshift query." />
+  <figcaption align="center"><i>Configuring a Redshift query.</i></figcaption>
+</figure>
 
-Once you have successfully run a Query, you can use it in your application to
+### Fetch data
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+```sql
+SELECT * FROM users
+OFFSET {{ UsersTable.pageOffset }} ROWS
+FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
+```
+
+In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+
+### Insert data
+
+```sql
+INSERT INTO users
+  (name, gender, email)
+VALUES
+(
+  {{ NameInput.text }},
+  {{ GenderDropdown.selectedOptionValue }},
+  {{ EmailInput.text }}
+);
+```
+
+In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
+
+### Update data
+
+```sql
+UPDATE users
+SET email = {{ EmailInput.text }}
+WHERE id = {{ UsersTable.selectedRow.id }};
+```
+
+In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `UsersTable` is the Table widget where the user selects the row to update the user's email.
+
+### Delete data
+
+```sql
+DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
+```
+
+In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
