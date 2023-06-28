@@ -52,7 +52,7 @@ To get data that was collected within a particular time frame, you need to use a
 
 **Example**: suppose you have a table in your database that contains user details, including their date of birth (DOB). You want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/2010`.
 
-1. Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+1. Fetch data from the sample **users** database using a SELECT query `fetchUserData`. 
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 

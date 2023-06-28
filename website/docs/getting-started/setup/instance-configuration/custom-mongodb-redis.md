@@ -83,5 +83,5 @@ Some common errors that you may face after external configuration:
 If you continue to face issues, reach out to the support team at [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
-- [Container logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
+- [Container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
 - [Instance Management](/getting-started/setup/instance-management) 

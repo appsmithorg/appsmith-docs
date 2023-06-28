@@ -4,4 +4,4 @@ link: 'https://developers.google.com/style/exclamation-points'
 nonword: true
 level: error
 tokens:
-  - '\w!(?:\s|$)'
+  - '\w!(?:\s|$!)'

@@ -53,7 +53,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 **Example 1:** suppose you want to use a Select widget to allow users to select one country from a database, with the dynamic population of options.
 
 
-1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
+1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
 
 
 ```sql
