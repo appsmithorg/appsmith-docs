@@ -84,16 +84,16 @@ You have to create a query to add the comments entered for the ticket.
 
 ## Add comments on button click
 
-You have to execute the **createComment** query on the button click and refresh the List widget with the new comment by calling the **getComments** query.
+You have to execute the `createComment` query on the button click and refresh the List widget with the new comment by calling the `getComments` query.
 
 1. Click the first item in the **lstTicketDetails** List to open the Modal.
 
 2. In the **Comments** tab, select the **Add Comment** button.
     - Click the **+** icon next to the **onClick** event.
-    - In the **Select an action** list, select **Execute a query > createComment** to run the query on button click. 
+    - In the **Select an action** list, select **Execute a query > `createComment`** to run the query on button click. 
     - Click **Callbacks** right under the action selector.  
     - Click the **+** icon next to the **On success** callback. 
-    - Select **Execute a query > getComments**. 
+    - Select **Execute a query > `getComments`**. 
 
 9. Enter a comment and click the **Add Comment** button to test if the new comment shows in the List.
 

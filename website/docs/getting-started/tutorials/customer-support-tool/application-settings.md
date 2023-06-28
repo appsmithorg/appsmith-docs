@@ -21,7 +21,7 @@ In this section, you'll learn to:
     - Select the **Side** orientation.
     - Select the **Theme** background color.
 
-4. Click the **Preview** button on the top right of the screen to see the navbar. Click the same button again to return to the *Edit* mode.
+4. Click the **Preview** button on the top right of the screen to see the navigation bar. Click the same button again to return to the *Edit* mode.
 
 ## Deploy and share application
 
