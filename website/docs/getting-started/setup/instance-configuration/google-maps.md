@@ -5,42 +5,37 @@ sidebar_position: 5
 
 # Google Maps
 
-![](</img/Screenshot_2020-07-17_at_5.02.29_PM.png>)
+This page provides instructions to integrate Google Maps so that you can use a Map Widget in your Apps on your Appsmith self-hosted instance.
 
-To enable the maps widget, login to your [google cloud console](https://console.cloud.google.com/)
+## Prerequisites
 
-**1. Navigate to the** [**credentials section**](https://console.cloud.google.com/apis/credentials) **under APIs & Services**
+- A [Google Cloud account](https://www.google.com/aclk?sa=l&ai=DChcSEwi0373S7OX_AhW7Vn0KHT5BD30YABABGgJzZg&sig=AOD64_3YNMGHJAu3vGJmjK-vrl8qni2BxA&q&adurl&ved=2ahUKEwjjs7XS7OX_AhWy3TgGHWtHAkYQ0Qx6BAgIEAE). 
+- A running self-hosted Appsmith instance.
 
-![Click to expand](</img/Maps_Credentials.png>)
+## Configure Google Maps
 
-**2. Create a new API Key Credential**
+1. Log into your [Google Cloud console](https://console.cloud.google.com/).
+2. Generate a Google Maps API Key by following the instructions available on the Google Maps Platform to [Create API keys](https://developers.google.com/maps/documentation/javascript/get-api-key).
+3. Restrict the Google Maps API Key by following the instructions available on the Google Maps Platform to [Restrict API keys](https://developers.google.com/maps/documentation/javascript/get-api-key).
+4. Follow these steps to add the API key to your self-hosted instance:
 
-![Click to expand](</img/Maps_API_Key.png>)
+    a. Log into your Appsmith instance as a superuser.
 
-**3. Restrict the API Key**
+    b. Go to **Admin Settings** screen.
 
-![click to expand](</img/Maps_API_Restrict_(1).png>)
+    c. Select **Google Maps** from the left nav bar.
 
-**4. Enable the following APIs**
+    <figure>
+    <img src="/img/admin-settings-configure-google-maps-api-key.png" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
+    <figcaption align="center"><i>Add your Google Maps API Key</i></figcaption>
+    </figure>
 
-* Maps Embed API
-* Maps JavaScript API
-* Places API
-* Geolocation API
+    d. Add your API key to the **Google Maps API Key** field.
 
-![Click to expand](</img/Maps_APIs.png>)
+    e. Click the **SAVE & RESTART** button to restart the instance.
 
-**5. Update the** [**instance configuration**](./) **with the below fields**
+You're all set to use the Map widget in your Appsmith apps.
 
-```bash
-# Example Docker Configuration
-# ******** Google Maps ***********
-APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
-# ********************************
-```
+## Further reading
 
-**6.** [**Restart the Appsmith Instance**](./)
-
-:::tip
-The maps widget should now be enabled on your installation. Read more about [Obtaining a google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
-:::
+* [Map Widget](/reference/widgets/maps)
