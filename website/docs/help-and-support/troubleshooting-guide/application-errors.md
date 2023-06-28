@@ -87,6 +87,31 @@ The error indicates that the email provided to reset the password isn't register
 #### Solution
 You can fix the error by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
 
+### Unable to log in With SSO
+
+Sometimes users cannot log in with Single Sign-On (SSO) after configuring a custom domain and are redirected to `https://user/login?error=true`. 
+
+#### Error Message
+
+If you search for errors in the [container logs](/getting-started/setup/instance-management/how-to-get-container-logs), you would see an error as shown below:
+
+```bash
+[2023-06-14 22:33:42,542] - In the login failure handler. Cause: [invalid_client] AA**********: The reply address 'http://<IP>/login/oauth2/code/oidc' does not match the reply address 'https://<APPSMITH_CUSTOM_DOMAIN>/login/oauth2/code/oidc' provided when requesting Authorization code.
+```
+#### Cause
+
+This error means that you have configured SSO before configuring the custom domain.
+
+#### Solution 
+
+To resolve the issue, follow these steps:
+
+1. Copy the new **Redirect URL** from **Admin Settings > Authentication > OIDC/SAML** in Appsmith.
+2. Add the new Redirect URL to the SSO configurations in your identity provider's settings.
+
+To prevent such issues in the future, it is recommended to configure the custom domain before initiating the SSO configuration.
+
+
 ## Page access error
 
 ![Click to expand](/img/page-not-found-error.png)
