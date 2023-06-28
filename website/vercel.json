@@ -2763,6 +2763,14 @@
       "destination": "/reference/datasources/querying-elasticsearch"
     },
     {
+      "source": "/learning-and-resources/tutorials/review-moderator-dashboard/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
+      "source": "/learning-and-resources/tutorials/building-a-store-catalog-manager/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
       "source": "/core-concepts/connecting-to-data-sources",
       "destination": "/connect-data/how-to-guides/connect-datasource"
     },

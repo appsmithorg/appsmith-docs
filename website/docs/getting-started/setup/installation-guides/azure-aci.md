@@ -125,4 +125,4 @@ If there are any errors during this process, follow the guide on [debugging depl
 
 * [Configuring Self-Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](/getting-started/setup/instance-management/)
-* [Tutorials](/learning-and-resources/tutorials/)
+* [Tutorials](/getting-started/tutorials/)

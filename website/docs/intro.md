@@ -38,7 +38,7 @@ If you are new to Appsmith, this is the place to start:
     <div class="containerCol">
          <img class="containerImage" src="/img/quickstart.png" alt="Build your first app"/>
       </div> 
-      <b><a href="/getting-started/start-building">Build your first app</a></b>
+      <b><a href="/getting-started/tutorials/start-building">Build your first app</a></b>
       <div class="containerDescription">A quickstart guide to help you build an app using Appsmith
       </div>
    </div>

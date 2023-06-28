@@ -23,10 +23,62 @@ const sidebars = {
       //getting started section start
       type: 'category',
       collapsed: false,
-      label: 'Getting Started',
+      label: 'Get Started',
       items: [
         'intro',
-        'getting-started/start-building',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          link: { type: 'doc', id: 'getting-started/tutorials/README' },
+          items: [
+            'getting-started/tutorials/start-building',
+            {
+              type: 'category',
+              label: 'Customer Support Tool',
+              link: {
+                type: 'doc',
+                id: 'getting-started/tutorials/customer-support-tool/README',
+              },
+              items: [
+                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
+                'getting-started/tutorials/customer-support-tool/view-ticket-details',
+                'getting-started/tutorials/customer-support-tool/add-new-tickets',
+                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
+                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
+                'getting-started/tutorials/customer-support-tool/application-settings'
+              ],
+            },
+            // Hiding the tutorials
+            // {
+            //   type: 'category',
+            //   label: 'Review Moderator Dashboard',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/review-moderator-dashboard/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/review-moderator-dashboard/setting-up-the-app',
+            //     'getting-started/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
+            //     'getting-started/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
+            //     'getting-started/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
+            //   ],
+            // },
+            // {
+            //   type: 'category',
+            //   label: 'Building a Store Catalog Manager',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/building-a-store-catalog-manager/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/using-forms',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/creating-interactive-views',
+            //   ],
+            // },
+          ],
+        },
+
         {
           type: 'category',
           label: 'Self Hosting',
@@ -196,7 +248,7 @@ const sidebars = {
       //Data start
       type: 'category',
       collapsed: false,
-      label: 'Data',
+      label: 'Connect Data',
       items: [
         'connect-data/overview',
         {
@@ -534,40 +586,6 @@ const sidebars = {
       collapsed: false,
       label: 'Learning & Resources',
       items: [
-        {
-          type: 'category',
-          label: 'Tutorials',
-          link: { type: 'doc', id: 'learning-and-resources/tutorials/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'Review Moderator Dashboard',
-              link: {
-                type: 'doc',
-                id: 'learning-and-resources/tutorials/review-moderator-dashboard/README',
-              },
-              items: [
-                'learning-and-resources/tutorials/review-moderator-dashboard/setting-up-the-app',
-                'learning-and-resources/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
-                'learning-and-resources/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
-                'learning-and-resources/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building a Store Catalog Manager',
-              link: {
-                type: 'doc',
-                id: 'learning-and-resources/tutorials/building-a-store-catalog-manager/README',
-              },
-              items: [
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms',
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views',
-              ],
-            },
-          ],
-        },
         'learning-and-resources/sample-apps',
         {
           type: 'link',
