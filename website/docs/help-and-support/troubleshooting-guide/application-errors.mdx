@@ -2,6 +2,9 @@
 sidebar_position: 4
 description: Troubleshoot the issues with your Appsmith applications. This page includes a list of common errors, causes, and solutions to help you resolve application issues.
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Application Errors
 
 ## Invalid / empty name error
@@ -104,10 +107,23 @@ This error means that you have configured SSO before configuring the custom doma
 
 #### Solution 
 
-To resolve the issue, follow these steps:
+To resolve the issue, follow the steps below:
 
-1. Copy the new **Redirect URL** from **Admin Settings > Authentication > OIDC/SAML** in Appsmith.
-2. Add the new Redirect URL to the SSO configurations in your identity provider's settings.
+<Tabs queryString="OIDC-login-error">
+    <TabItem label="OIDC" value="oidc-error">
+
+1. Copy the new **Redirect URL** from **Admin Settings > Authentication > OIDC** in Appsmith.
+2. Add the new Redirect URL to the identity provider's SSO configurations.
+    
+</TabItem>
+<TabItem label="SAML" value="saml-error">
+
+1. Copy the new **Redirect URL** and **Entity URL** from **Admin Settings > Authentication > SAML** in Appsmith.
+2. Add the copied URLs to the identity provider's SSO configurations.
+    
+</TabItem>
+</Tabs>
+
 
 To prevent such issues in the future, it is recommended to configure the custom domain before initiating the SSO configuration.
 
