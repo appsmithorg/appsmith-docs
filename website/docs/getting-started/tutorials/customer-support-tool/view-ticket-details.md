@@ -119,7 +119,7 @@ Here's a screenshot of the final result:
   | Text  | `{{currentItem.status}}` |
   | Text  | `{{currentItem.priority}}` |
 
-7. Note that for the **created_at** database column, you are using the built-in library Moment.js to format the date and time. Use the resize handle of the Text widgets to fit the contents.
+7. Note that for the `created_at` database column, you are using the built-in library Moment.js to format the date and time. Use the resize handle of the Text widgets to fit the contents.
 
 8. Let's add two Icon widgets next to the status and priority Text widgets and conditionally set the color. 
 
