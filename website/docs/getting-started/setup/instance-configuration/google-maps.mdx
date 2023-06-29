@@ -7,61 +7,63 @@ import TabItem from '@theme/TabItem';
 
 # Google Maps
 
-This page provides instructions to integrate Google Maps so that you can use a [Map Widget](/reference/widgets/maps) in your Apps on your Appsmith self-hosted instance.
+This page provides instructions to integrate Google Maps to use the [Map Widget](/reference/widgets/maps) in your applications on your self-hosted instance.
 
 ## Prerequisites
 
 - A [Google Cloud account](https://www.google.com/aclk?sa=l&ai=DChcSEwi0373S7OX_AhW7Vn0KHT5BD30YABABGgJzZg&sig=AOD64_3YNMGHJAu3vGJmjK-vrl8qni2BxA&q&adurl&ved=2ahUKEwjjs7XS7OX_AhWy3TgGHWtHAkYQ0Qx6BAgIEAE). 
 
-## Configure Google Maps
+## Setup Google Maps platform
 
 1. Log into the [Google Cloud console](https://console.cloud.google.com/).
-2. Generate a Google Maps API Key. Refer to the [Create API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#create-api-keys) section available on the Google Maps platform for instructions.
-3. Restrict the Google Maps API Key. Refer to the [Restrict API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) section available on the Google Maps platform for instructions.
-4. You may add the API key in one of the below ways:
+2. Generate a Google Maps API key. Follow the [Create API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#create-api-keys) guide on the official Google Maps platform documentation.
+3. Restrict the Google Maps API Key. Follow the [Restrict API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) guide on the official Google Maps platform documentation.
 
-<Tabs groupId="configureAPIKey" queryString="current-api-key-configuration">
-<TabItem label="Admin Settings" value="adminsettings">
+## Configure Google Maps on Appsmith
+
+You can add the API key in one of the below ways: 
+
+* [Admin Settings](#admin-settings)
+* [Environment Variable](#environment-variable)
+
+### Admin Settings
 
 :::caution Attention
-If you have assigned the API key value using an environment variable for your instance, it takes precedence over the value added using the Admin Settings UI.
+If you have assigned the API key value using an environment variable for your instance, it takes precedence over the value provided through the Admin Settings UI.
 :::
 
 Follow these steps to add the API key to your self-hosted instance using Admin Settings:
 
-a. Log into your Appsmith instance as a superuser.
+1. Log into your Appsmith instance as a superuser.
 
-b. Go to **Admin Settings** screen.
+2. Go to **Admin Settings** screen.
 
-c. Select **Google Maps** from the left nav bar.
+3. Select **Google Maps** from the left nav bar.
 
 <figure>
 <img src="/img/admin-settings-configure-google-maps-api-key.png" style={{width: "100%", height: "auto"}} alt="Google Maps API Key." />
 <figcaption align="center"><i>Add your Google Maps API Key</i></figcaption>
 </figure>
 
-d. Add your API key to the **Google Maps API Key** field.
+4. Add your API key to the **Google Maps API Key** field.
 
-e. Click the **SAVE & RESTART** button to restart the instance.
+5. Click the **SAVE & RESTART** button to restart the instance.
 
 
-</TabItem>
-<TabItem label="Environment Variable" value="envVariable">
+### Environment variable
 
 Follow these steps to add the API key to your self-hosted instance using an environment variable:
 
-a. Go to the location where the Appsmith configuration file is located. For example, the `docker-compose.yml` file for Docker and the `values.yaml` file for Kubernetes.
+1. Go to the location where the Appsmith configuration file is located. For example, the `docker-compose.yml` file for Docker and the `values.yaml` file for Kubernetes.
 
-b. Update the value of the `APPSMITH_GOOGLE_MAPS_API_KEY` variable as shown below:
+2. Update the value of the `APPSMITH_GOOGLE_MAPS_API_KEY` variable as shown below:
 
 ```bash
 # Google Maps API Key
 APPSMITH_GOOGLE_MAPS_API_KEY=<YOUR_API_KEY>
 ```
 
-c. Restart the instance.
+3. Restart the instance.
 
-</TabItem>
-</Tabs>
 
-You're all set to use the Map widget in your Appsmith apps.
+You're all set to use the Map widget in your Appsmith applications.
