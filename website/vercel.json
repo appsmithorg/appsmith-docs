@@ -2959,6 +2959,10 @@
     {
       "source": "/getting-started/start-building",
       "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/learning-and-resources/tutorials",
+      "destination": "/getting-started/tutorials"
     }
   ]
 }
