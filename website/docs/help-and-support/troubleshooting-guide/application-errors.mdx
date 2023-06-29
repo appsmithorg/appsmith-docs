@@ -90,16 +90,16 @@ The error indicates that the email provided to reset the password isn't register
 #### Solution
 You can fix the error by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
 
-### Unable to log in With SSO
+### Unable to log in with SSO
 
-Sometimes users cannot log in with Single Sign-On (SSO) after configuring a custom domain and are redirected to `https://user/login?error=true`. 
+If you configure Single Sign-On (SSO) before setting up a custom domain, you may encounter issues when trying to log in. In such cases, you may be redirected to the URL `https://user/login?error=true`.
 
 #### Error Message
 
-If you search for errors in the [container logs](/getting-started/setup/instance-management/how-to-get-container-logs), you would see an error as shown below:
+If you check the [container logs](/getting-started/setup/instance-management/how-to-get-container-logs), you would see an error as shown below:
 
 ```bash
-[2023-06-14 22:33:42,542] - In the login failure handler. Cause: [invalid_client] AA**********: The reply address 'http://<IP>/login/oauth2/code/oidc' does not match the reply address 'https://<APPSMITH_CUSTOM_DOMAIN>/login/oauth2/code/oidc' provided when requesting Authorization code.
+In the login failure handler. Cause: [invalid_client] AA**********: The reply address 'http://<IP>/login/oauth2/code/oidc' does not match the reply address 'https://<APPSMITH_CUSTOM_DOMAIN>/login/oauth2/code/oidc' provided when requesting Authorization code.
 ```
 #### Cause
 
@@ -113,19 +113,16 @@ To resolve the issue, follow the steps below:
     <TabItem label="OIDC" value="oidc-error">
 
 1. Copy the new **Redirect URL** from **Admin Settings > Authentication > OIDC** in Appsmith.
-2. Add the new Redirect URL to the identity provider's SSO configurations.
+2. Add the new Redirect URL to the SSO configurations of your [OIDC provider](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc).
     
 </TabItem>
 <TabItem label="SAML" value="saml-error">
 
 1. Copy the new **Redirect URL** and **Entity URL** from **Admin Settings > Authentication > SAML** in Appsmith.
-2. Add the copied URLs to the identity provider's SSO configurations.
+2. Add the copied URLs to the SSO configurations of your [SAML provider](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml).
     
 </TabItem>
 </Tabs>
-
-
-To prevent such issues in the future, it is recommended to configure the custom domain before initiating the SSO configuration.
 
 
 ## Page access error
