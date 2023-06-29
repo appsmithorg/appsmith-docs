@@ -121,10 +121,6 @@ const config = {
                 label: 'Reference',
                 to: '/',
               },
-              {
-                label: 'Resources',
-                to: 'learning-and-resources/tutorials',
-              },
             ],
           },
           {
