@@ -46,11 +46,12 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
   a. Click the **Unique User Identifier (Name ID)** claim and update the following fields:
 
-    - Set the **Name identifier format** to Email.
-    - Set the **source attribute** to be the field that stores the user’s email address. This is an important configuration to ensure that the user’s email is passed to Appsmith while signing in.
-    - Click **Save**
+    - In the **Name identifier format** field, select **Email address** from the dropdown.
+    - Select **Attribute** from the given options in **Source**.
+    - In the **source attribute** field, select the option from the dropdown that stores the user’s email address. This is an important configuration to ensure that the user’s email is passed to Appsmith while signing in.
+    - Click **Save**.
     
-  b. If needed, you can also add custom claims. Follow the steps below:
+  b. If you are only interested in simple authentication via SAML, you can skip this step. However, if you want to configure custom claims, follow the steps below:
     
     - Click **Add new claim**, fill in the details and click **Save**. 
     - Once saved, ensure that it is visible in the **Additional claims** section. 
