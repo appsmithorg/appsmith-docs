@@ -124,7 +124,7 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -139,7 +139,7 @@ Sets the visibility of the widget.
 Input1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Input1.setVisibility(true).then(() => {
@@ -163,7 +163,7 @@ Sets the disabled state of the widget.
 Input1.setDisabled(false)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Input1.setDisabled(false).then(() => {
@@ -185,7 +185,7 @@ Allows you to dynamically set the value of the widget.
 Input1.setValue(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Input1.setValue(true).then(() => {
@@ -208,7 +208,7 @@ Sets whether the widget is required or not.
 Input1.setRequired(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Input1.setRequired(true).then(() => {

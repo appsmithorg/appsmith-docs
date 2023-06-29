@@ -45,7 +45,7 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setPlaying `boolean`
@@ -61,7 +61,7 @@ Updates the playing state of the Audio widget. When the `setPlaying` method is c
 Audio1.setPlaying(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Audio1.setPlaying(true).then(() => {
@@ -84,7 +84,7 @@ Updates the URL of the audio to be played in the audio widget. Provide the desir
 Audio1.setURL('<https://example.com/image.mp3>')
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Audio1.setURL('<https://example.com/image.mp3>').then(() => {
@@ -108,7 +108,7 @@ Updates the visibility of the Audio widget.
 Audio1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Audio1.setVisibility(true).then(() => {

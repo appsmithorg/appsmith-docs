@@ -224,7 +224,7 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -239,7 +239,7 @@ Sets the visibility of the widget.
 Iframe1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Iframe1.setVisibility(true).then(() => {
@@ -262,7 +262,7 @@ Allows you to dynamically change the content of the iframe by providing a new UR
 Iframe1.setURL('<https://example.com>')
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Iframe1.setURL('<https://example.com>').then(() => {

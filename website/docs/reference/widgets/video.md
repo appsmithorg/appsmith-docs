@@ -51,7 +51,7 @@ Style properties allow you to change the look and feel of the widget.
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -66,7 +66,7 @@ Sets the visibility of the widget.
 Video1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Video1.setVisibility(true).then(() => {
@@ -90,7 +90,7 @@ Sets the URL of the video to be displayed in the widget.
 Video1.setURL('<https://example.com/video.mp4>')
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Video1.setURL('<https://example.com/video.mp4>').then(() => {
@@ -112,7 +112,7 @@ Sets the playing state of the Video widget.
 Video1.setPlaying(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Video1.setPlaying(true).then(() => {

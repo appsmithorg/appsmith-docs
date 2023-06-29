@@ -68,7 +68,7 @@ Sets the visibility of the widget.
 ```js
 Rating1.setVisibility(true)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Rating1.setVisibility(true).then(() => {
@@ -91,7 +91,7 @@ Sets the disabled state of the widget.
 ```js
 Rating1.setDisabled(false)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Rating1.setDisabled(false).then(() => {
@@ -112,7 +112,7 @@ Allows you to dynamically set the value of the widget.
 ```js
 Rating1.setValue(3)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Rating1.setValue(3).then(() => {

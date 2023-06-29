@@ -48,7 +48,7 @@ Style properties allow you to change the look and feel of the widget.
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -63,7 +63,7 @@ Sets the visibility of the widget.
 Divider1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Divider1.setVisibility(true).then(() => {

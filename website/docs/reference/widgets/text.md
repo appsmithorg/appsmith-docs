@@ -99,7 +99,7 @@ Style properties allow you to change the look and feel of the widget.
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -114,7 +114,7 @@ Sets the visibility of the widget.
 Text1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Text1.setVisibility(true).then(() => {
@@ -138,7 +138,7 @@ Sets the disabled state of the widget.
 Text1.setDisabled(false)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Text1.setDisabled(false).then(() => {
@@ -160,7 +160,7 @@ Sets whether the widget is required or not.
 Text1.setRequired(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Text1.setRequired(true).then(() => {
@@ -182,7 +182,7 @@ Sets the text value of the widget.
 Text1.setText('Hello, world!')
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Text1.setText('Hello, world!').then(() => {
@@ -210,7 +210,7 @@ Sets the selected option of the Select widget.
 Text1.setColor('#FF0000')
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Text1.setColor('#FF0000').then(() => {

@@ -318,7 +318,7 @@ Sets the visibility of the widget.
 ```js
 RichTextEditor1.setVisibility(true)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 RichTextEditor1.setVisibility(true).then(() => {
@@ -340,7 +340,7 @@ Sets the disabled state of the widget.
 ```js
 RichTextEditor1.setDisabled(false)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 RichTextEditor1.setDisabled(false).then(() => {
@@ -362,7 +362,7 @@ Sets whether the widget is required or not.
 ```js
 RichTextEditor1.setRequired(true)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 RichTextEditor1.setRequired(true).then(() => {

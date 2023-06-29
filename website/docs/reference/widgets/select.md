@@ -203,7 +203,7 @@ These are functions that are called when event listeners are triggered in the wi
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -218,7 +218,7 @@ Sets the visibility of the widget.
 Select1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Select1.setVisibility(true).then(() => {
@@ -242,7 +242,7 @@ Sets the disabled state of the widget.
 Select1.setDisabled(false)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Select1.setDisabled(false).then(() => {
@@ -264,7 +264,7 @@ Sets the options to be displayed in the widget.
 Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }])
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]).then(() => {
@@ -287,7 +287,7 @@ Sets whether the widget is required or not.
 Select1.setRequired(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Select1.setRequired(true).then(() => {
@@ -312,7 +312,7 @@ Sets the selected option of the Select widget.
 Select1.setSelectedOption({ label: 'Option 2', value: 'option2' })
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Select1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {

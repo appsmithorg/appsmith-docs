@@ -164,7 +164,7 @@ The `isVisible` property reflects the state of the widget's **Visible** setting.
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -179,7 +179,7 @@ Sets the visibility of the widget.
 Checkbox1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Checkbox1.setVisibility(true).then(() => {
@@ -203,7 +203,7 @@ Sets the disabled state of the widget.
 Checkbox1.setDisabled(false)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Checkbox1.setDisabled(false).then(() => {
@@ -225,7 +225,7 @@ Allows you to dynamically set the value of the Checkbox widget.
 Checkbox1.setValue(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Checkbox1.setValue(true).then(() => {
@@ -248,7 +248,7 @@ Sets whether the widget is required or not.
 Checkbox1.setRequired(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Checkbox1.setRequired(true).then(() => {

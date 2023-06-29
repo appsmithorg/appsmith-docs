@@ -57,7 +57,7 @@ Sets the visibility of the widget.
 Progress1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Progress1.setVisibility(true).then(() => {
@@ -79,7 +79,7 @@ Sets the progress value of the Progress widget.
 ```js
 Progress1.setProgress(50)
 ```
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Progress1.setProgress(50).then(() => {

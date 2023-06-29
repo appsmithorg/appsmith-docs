@@ -796,7 +796,7 @@ Refers to an array of indices corresponding to the rows that have been updated.
 
 Widget property setters enables you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can utilize the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
@@ -811,7 +811,7 @@ Sets the visibility of the widget.
 Table1.setVisibility(true)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Table1.setVisibility(true).then(() => {
@@ -833,7 +833,7 @@ Sets the data to be displayed in the Table widget.
 Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
@@ -857,7 +857,7 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() =
 Table1.setSelectedRowIndex(2)
 ```
 
-To perform sequential actions, utilize the `.then()` block for execution.
+To perform sequential actions, use the `.then()` block for execution.
 
 ```js
 Table1.setSelectedRowIndex(2).then(() => {
