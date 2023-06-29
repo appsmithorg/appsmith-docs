@@ -1,6 +1,6 @@
 # Switch
 
-This page provides instructions on using the Switch widget, which allow users to toggle between two states.
+This page provides instructions on using the Switch widget, which allows users to toggle between two states.
 
 <figure>
   <img src="/img/switch-img.png" style= {{width:"700px", height:"auto"}} alt="Display Switch"/>
