@@ -1,31 +1,50 @@
 ---
 sidebar_position: 14
+description: Connect Appsmith to a Redis database and create queries.
 ---
 # Redis
 
-This page provides information for connecting to a Redis database and using queries to manage its content in Appsmith.
+This page provides information for connecting your application to your Redis database and using queries to manage its content.
 
-## Connection settings
+## Connect Redis
 
-Appsmith needs the following information to connect to a Redis instance.
+:::caution important
+To connect to Redis, you must whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith Cloud or the IPs of your self-hosted Appsmith deployment.
+:::
 
-![Click to expand](/img/redis-datasource-form.png)
+### Connection parameters
 
-After filling up the three fields as described preceding, click the "Test" button to verify the configuration and click `Save`.
+The following section is a reference guide that provides a complete description of all the parameters to connect to a Redis database.
 
-## Querying Redis
+<figure>
+  <img src="/img/redis-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis datasource." />
+  <figcaption align="center"><i>Configuring a Redis datasource.</i></figcaption>
+</figure>
 
-The Redis query pane can be used to run any of the commands supported by Redis. The response from this command is displayed in the result window. 
+<dl>
+  <dt><b>Host Address</b></dt>
+  <dd>The network location of your Redis database. This can be a domain name or an IP address.</dd><br />
 
-### Checking connection
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. Appsmith connects to port <code>6379</code> by default if you do not specify one.</dd><br />
 
-The connection to a Redis instance can be verified using a simple `PING` command.
+  <dt><b>Database Number</b></dt>
+  <dd>The number that identifies which database on your Redis instance you're connecting to. This is a number between 0 and 15, and is 0 by default.</dd><br />
 
-```
-PING
-```
+  <dt><b>Username</b></dt>
+  <dd>The username for your Redis user.
+  </dd><br />
 
-### Inserting a key
+  <dt><b>Password</b></dt>
+  <dd>The password for your Redis user.
+  </dd><br />
+</dl>
+
+## Query Redis
+
+The following section provides examples of creating basic CRUD queries for Redis.
+
+### Insert data
 
 A new key value pair can be inserted into the cache using the `SET` command as follows.
 
@@ -33,7 +52,7 @@ A new key value pair can be inserted into the cache using the `SET` command as f
 SET key_name new_value
 ```
 
-### Retrieving a key
+### Fetch data
 
 Stored key value pairs can be retrieved using the `GET` command.
 
@@ -41,9 +60,8 @@ Stored key value pairs can be retrieved using the `GET` command.
 GET key_name
 ```
 
-## Using queries in applications
+### Update data
 
-Once you have successfully run a Query, you can use it in your application to
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+
+### Delete data
