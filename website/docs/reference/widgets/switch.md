@@ -1,62 +1,187 @@
 # Switch
 
-The Switch is a simple UI widget you can use when you want users to make a binary choice.
+This page provides instructions on using the Switch widget, which allow users to toggle between two states.
+
+<figure>
+  <img src="/img/switch-img.png" style= {{width:"700px", height:"auto"}} alt="Display Switch"/>
+  <figcaption align = "center"><i>Display Switch</i></figcaption>
+</figure>
 
 
-## Properties
+## Content properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-### Widget properties
-
-These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property             | Description                                                                                                                      |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **Default Selected** | This value is a boolean that is set to true if the switch is turned on.                                                          |
-| **Visible**          | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published              |
-| **Disabled**         | Disables input/selection to the widget. The widget remains visible to the user but user input/selection is not allowed. |
-| **Animate Loading**  | Allows you to control a widget’s animation on the page load.                                                                     |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-
-### Binding properties
-
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
-
-| Property         | Description                                                                  | Code Snippet                   |
-| ---------------- | ---------------------------------------------------------------------------- | ------------------------------ |
-| **isDisabled**   | This value is a boolean that is set to true if the switch is disabled.       | `{{widget_name.isDisabled}}`   |
-| **isSwitchedOn** | This value is a boolean that is set to true if the switch is turned on.      | `{{widget_name.isSwitchedOn}}` |
-| **isVisible**    | This value is a boolean that is set to true if the switch is set as visible. | `{{widget_name.isVisible}}`    |
-
-### Events
-
-They are a set of actions that you can perform on the widget. The following table lists the actions:
-
-| Events       | Description                                                                                                                          |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **onChange** | Sets the action to be run when the user toggles the switch. See a list of [supported actions](../appsmith-framework/widget-actions/) |
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences. 
 
 ### Label
 
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
+#### Text `String`
 
-| Label         | Description                            |
-| ------------- | -------------------------------------- |
-| **Label**     | Sets the label of the switch.          |
-| **Position**  | Sets the label position of the widget. |
-| **Alignment** | Sets the alignment of the widget.      |
+ <dd>
+ Sets the label on the widget. 
+ 
+ </dd>
 
-| Label Style          | Description                                              |
-| -------------------- | -------------------------------------------------------- |
-| **Text Color**       | Allows you to set text color for the label.              |
-| **Text Size**        | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style (bold or italic). |
+#### Position `String`
+<dd>
+ Allows you to choose the placement of the label. You can choose:<br />
 
-### Styles
+ * <b>Left</b> - Aligns the text to the left of the Switch.
+ * <b>Right</b> - Aligns the text to the right of the Switch.
 
+</dd>
+
+#### Alignment `String`
+
+<dd>
+
+Alignment refers to how a label is positioned relative to a widget. By adjusting this property, you can bring the label closer to the switch within the widget's layout.
+
+</dd>
+
+
+### General
+
+#### Default State `Boolean`
+
+<dd>
+
+Determines the initial state of the Switch. It defines whether the Switch is initially set to `on` or `off`.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+#### Animate Loading `Boolean`
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+
+</dd>
+
+#### Height `string`
+
+
+<dd>
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+### Events
+
+#### onChange
+
+Allows you to define a set of [actions](/reference/appsmith-framework/widget-actions) that would be executed in response to the switch state change.
+
+
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Style            |                                          |
-| ---------------- | ---------------------------------------- |
-| **Accent color** | Sets the background color of the widget. |
+#### Font color `String`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color).  It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Font size `String`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Emphasis `String`
+<dd>
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions
+</dd>
+
+#### Accent color `String`
+
+<dd>
+
+The accent color property specifies the color used to highlight the switch when it is turned on. It accepts [CSS color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color) and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+
+
+## Reference properties
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Switch1.isVisible`.
+
+#### isSwitchedOn `boolean`
+
+<dd>
+
+The `isSwitchedOn` property retrieves a boolean value that indicates whether the switch is turned on. It returns `true` if the switch is `on` and `false` if it is `off`.
+
+*Example:*
+
+```js
+{{Switch1.isSwitchedOn}}
+```
+
+
+</dd>
+
+
+#### isDisabled `boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's Disabled setting. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
+*Example:*
+
+```js
+{{Switch1.isDisabled}}
+```
+
+
+</dd>
+
+#### isVisible `boolean`
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+
+```js
+{{Switch1.isVisible}}
+```
+
+
+</dd>
