@@ -2955,6 +2955,14 @@
     {
       "source": "/core-concepts/data-access-and-binding/querying-a-database/query-settings",
       "destination": "/connect-data/reference/query-settings"
+    },
+    {
+      "source": "/getting-started/start-building",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/learning-and-resources/tutorials",
+      "destination": "/getting-started/tutorials"
     }
   ]
 }
