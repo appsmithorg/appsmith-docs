@@ -142,3 +142,5 @@ Button1.setDisabled(false).then(() => {
 </dd>
 
 
+2. [Queries](/core-concepts/data-access-and-binding/querying-a-database)
+3. [Widgets](/reference/widgets/)

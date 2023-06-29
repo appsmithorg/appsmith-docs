@@ -49,7 +49,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 **Example 1:** suppose you want to use a Multiselect widget to allow users to select one or more countries from a database, with the dynamic population of options.
 
 
-1.  Fetch data from the [sample database](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
+1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
 
 
 ```sql
@@ -106,7 +106,7 @@ LIMIT 10;
 ```
 
 :::info
-When using dynamic binding with queries that contain SQL keywords such as `SELECT`, `WHERE`, `AND`, and other keywords, a [prepared statement](/learning-and-resources/how-to-guides/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
+When using dynamic binding with queries that contain SQL keywords such as `SELECT`, `WHERE`, `AND`, and other keywords, a [prepared statement](/connect-data/concepts/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
 :::
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
