@@ -14,14 +14,14 @@ These properties are customizable options present in the property pane of the wi
 
 ### Label
 
-#### Text `String`
+#### Text `string`
 
  <dd>
  Sets the label on the widget. 
  
  </dd>
 
-#### Position `String`
+#### Position `string`
 <dd>
  Allows you to choose the placement of the label. You can choose:<br />
 
@@ -30,7 +30,7 @@ These properties are customizable options present in the property pane of the wi
 
 </dd>
 
-#### Alignment `String`
+#### Alignment `string`
 
 <dd>
 
@@ -41,11 +41,11 @@ Alignment refers to how a label is positioned relative to a widget. By adjusting
 
 ### General
 
-#### Default State `Boolean`
+#### Default State `boolean`
 
 <dd>
 
-Determines the initial state of the Switch. It defines whether the Switch is initially set to `on` or `off`.
+Determines whether the Switch is initially set to on or off.
 
 </dd>
 
@@ -55,7 +55,7 @@ Determines the initial state of the Switch. It defines whether the Switch is ini
 
 Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
 
-For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+For example, if you want to make the widget visible only when the user selects Yes from a Select widget, you can use the following JavaScript expression: 
 ```js
 {{Select1.selectedOptionValue === "Yes"}}
 ```
@@ -75,7 +75,7 @@ For example, if you want to allow only a specific user to fill the input, you ca
 
 </dd>
 
-#### Animate Loading `Boolean`
+#### Animate Loading `boolean`
 
 <dd>
 
@@ -87,6 +87,7 @@ This property controls whether the widget is displayed with a loading animation.
 
 
 <dd>
+
 This property determines how the widget's height adjusts to changes in its content. There are three available options:
 
 
@@ -107,7 +108,7 @@ Allows you to define a set of [actions](/reference/appsmith-framework/widget-act
 ## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-#### Font color `String`
+#### Font color `string`
 
 <dd>
 
@@ -115,7 +116,7 @@ Represents the text color of the widget, specified as a [CSS color value](https:
 
 </dd>
 
-#### Font size `String`
+#### Font size `string`
 
 <dd>
 
@@ -123,12 +124,12 @@ Determines the font size of the label. It accepts [CSS font-size](https://develo
 
 </dd>
 
-#### Emphasis `String`
+#### Emphasis `string`
 <dd>
 Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions
 </dd>
 
-#### Accent color `String`
+#### Accent color `string`
 
 <dd>
 
