@@ -8,8 +8,8 @@ This page provides information for connecting your application to your Redis dat
 
 ## Connect Redis
 
-:::caution 
-To connect to Redis, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. If you're using Redis Cloud, you can see [**Configure CIDR allow list**](https://docs.redis.com/latest/rc/security/cidr-whitelist/) for more details.
+:::caution important
+To connect to Redis, you must whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith Cloud or the IPs of your self-hosted Appsmith deployment.
 :::
 
 ### Connection parameters
@@ -49,10 +49,6 @@ The following section provides examples of creating basic CRUD queries for Redis
   <figcaption align="center"><i>Configuring a Redis query.</i></figcaption>
 </figure>
 
-:::info
-See the [Redis documentation](https://redis.io/commands/) for a full list of Redis commands and how to use them.
-:::
-
 ### Fetch data
 
 ```sql
@@ -61,11 +57,7 @@ HGETALL {{ SearchInput.text }}
 
 In the above example, `SearchInput` is the name of an [Input widget](/reference/widgets/input) being used to collect a user's search term and send it in the query. The `HGETALL` command returns all keys and values of a Redis hash with a matching name if it exists.
 
-To store a single key not in a hash, use `GET`:
-
-```sql
-GET {{ SearchInput.text }}
-```
+To store a single key not in a hash, use `GET`.
 
 ### Insert data
 
@@ -75,11 +67,7 @@ HSET user:{{ EmailInput.text }} username {{ UsernameInput.text }} gender {{ Gend
 
 In the above example, `EmailInput`, `UsernameInput`, and `GenderDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgets being used to collect user input and send it in the query to create a Redis hash.
 
-To insert a single key/value pair not in a hash, use `SET`:
-
-```sql
-SET username {{ UsernameInput.text }}
-```
+To insert a single key/value pair not in a hash, use `SET`.
 
 ### Update data
 
@@ -91,11 +79,7 @@ See [Insert data](#insert-data) above, as the syntax is identical using the `HSE
 HDEL user:{{ EmailInput.text }} {{ FieldDropdown.selectedOptionValue }}
 ```
 
-In the above example, `EmailInput` and `FieldDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgets being used to collect user input that identifies which field of a given Redis hash to delete, and to send them in the query.
+In the above example, `EmailInput` and `FieldDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgetsbeing used to collect user input that identifies which field of a given Redis hash to delete, and to send them in the query.
 
-To delete the entire Redis hash or a single key/value pair, use `DEL`:
-
-```sql
-DEL user:{{ EmailInput.text }}
-```
+To delete the entire Redis hash or a single key/value pair, use `DEL`.
 
