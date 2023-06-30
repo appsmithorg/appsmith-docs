@@ -44,6 +44,11 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries for Redis.
 
+<figure>
+  <img src="/img/redis-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis query." />
+  <figcaption align="center"><i>Configuring a Redis query.</i></figcaption>
+</figure>
+
 ### Fetch data
 
 ```sql
