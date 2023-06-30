@@ -59,9 +59,9 @@ To see the error message returned by the datasource in response to your query, l
 
 ### Debug mode
 
-By default in view mode, you can't see any error messages raised by Appsmith. This is to ensure that your app viewers don’t get to see ugly errors that they would otherwise have little context about. 
+By default, in the *View* Mode, you can't see any error messages raised by Appsmith. This ensures your app viewers don’t see error messages they would have minimal context about. 
 
-If you want to see errors in the view mode as well as in edit mode, you can append `?debug=true` to your app's URL and reload the page. You can also always see the errors logged in the browser console.
+If you want to see errors in the *View* and in the *Edit* mode, you can append `?debug=true` to your app's URL and reload the page. You can also always see the errors logged in the browser console.
 
 ## Use queries in applications
 
