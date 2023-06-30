@@ -22,7 +22,7 @@ Specifies the type of buttons to be included in the button group.
 
 *Options:*
 * **Simple**: You can add text buttons to the group. Each button can be customized with different labels, colors, and actions.
-* **Menu**: You can add [menu items](/reference/widgets/menu/menu-items) to the group. Each menu item can have a label, an icon, and an action. This allows you to create a dropdown menu with multiple selectable options.
+* **Menu**: You can add menu items to a button in the group. This allows you to create a dropdown menu with multiple items. For information on configuring menu items in the button group, refer to [Menu Items](/reference/widgets/menu/menu-items).
 
 </dd>
 
