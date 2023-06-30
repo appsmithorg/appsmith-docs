@@ -426,7 +426,14 @@ const sidebars = {
               link: { type: 'doc', id: 'reference/widgets/button/README' },
               items: ['reference/widgets/button/google-recaptcha'],
             },
-            'reference/widgets/button-group',
+            {
+              type: 'category',
+              label: 'Button Group',
+              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+              items: [
+                'reference/widgets/button-group/buttons'
+              ],
+            },
             'reference/widgets/camera',
             'reference/widgets/chart',
             'reference/widgets/checkbox',
