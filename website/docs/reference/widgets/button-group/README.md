@@ -19,7 +19,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Displays a list of available items. You can rearrange the items and configure them by clicking on the ⚙️ gear icon. See the [Button](/reference/widgets/button-group/buttons) reference guide for configuring items.
+Specify the buttons available in the group. You can rearrange the buttons and configure them by clicking the gear icon ⚙️. See the [Buttons](/reference/widgets/button-group/buttons) reference guide for configuring individual buttons in the group.
 
 </dd>
 
