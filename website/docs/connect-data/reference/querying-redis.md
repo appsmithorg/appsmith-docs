@@ -44,24 +44,37 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries for Redis.
 
-### Insert data
-
-A new key value pair can be inserted into the cache using the `SET` command as follows.
-
-```
-SET key_name new_value
-```
-
 ### Fetch data
 
-Stored key value pairs can be retrieved using the `GET` command.
+```sql
+HGETALL {{ SearchInput.text }}
+```
 
+In the above example, `SearchInput` is the name of an [Input widget](/reference/widgets/input) being used to collect a user's search term and send it in the query. The `HGETALL` command returns all keys and values of a Redis hash with a matching name if it exists.
+
+To store a single key not in a hash, use `GET`.
+
+### Insert data
+
+```sql 
+HSET user:{{ EmailInput.text }} username {{ UsernameInput.text }} gender {{ GenderDropdown.selectedOptionVaue }}
 ```
-GET key_name
-```
+
+In the above example, `EmailInput`, `UsernameInput`, and `GenderDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgets being used to collect user input and send it in the query to create a Redis hash.
+
+To insert a single key/value pair not in a hash, use `SET`.
 
 ### Update data
 
-
+See [Insert data](#insert-data) above, as the syntax is identical using the `HSET` and `SET` commands.
 
 ### Delete data
+
+```sql
+HDEL user:{{ EmailInput.text }} {{ FieldDropdown.selectedOptionValue }}
+```
+
+In the above example, `EmailInput` and `FieldDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgetsbeing used to collect user input that identifies which field of a given Redis hash to delete, and to send them in the query.
+
+To delete the entire Redis hash or a single key/value pair, use `DEL`.
+
