@@ -535,7 +535,7 @@ const sidebars = {
       //Advanced Concepts Start
       type: 'category',
       collapsed: false,
-      label: 'App and User Management',
+      label: 'Manage Apps and Users',
       items: [
         'advanced-concepts/embed-appsmith-into-existing-application',
         'advanced-concepts/custom-authentication',
