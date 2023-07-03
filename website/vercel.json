@@ -2963,6 +2963,10 @@
     {
       "source": "/learning-and-resources/tutorials",
       "destination": "/getting-started/tutorials"
+    },
+    {
+      "source": "/advanced-concepts/more",
+      "destination": "/advanced-concepts/more/backup-restore"
     }
   ]
 }
