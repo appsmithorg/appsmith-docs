@@ -1,10 +1,10 @@
 ---
-description: Learn how to use the Switch Group widget for selecting multiple items from predefined choices.
+description: Learn how to use the Switch Group widget which allows users to toggle multiple options.
 ---
 
 # Switch Group
 
-Switch group widget captures user inputs from a set of binary choices. This widget captures multiple choices.
+This page provides instructions on using the Switch Group widget, which allows users to toggle multiple options simultaneously.
 
 <VideoEmbed host="youtube" videoId="p--j-QyBlAY" title="How to use Switch Group Widget" caption="How to use Switch Group Widget"/>
 
