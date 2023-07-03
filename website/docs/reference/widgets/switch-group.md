@@ -185,7 +185,7 @@ This property controls whether the widget is displayed with a loading animation.
 This property determines how the widget's height adjusts to changes in its content. There are three available options:
 
 
-* **Fixed**: The height of the widget remains as set using drag and resize.
+* **Fixed**: The widget's height remains as set using drag and resize.
 * **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
 * **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
 
