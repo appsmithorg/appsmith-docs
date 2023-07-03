@@ -300,7 +300,7 @@ Select1.setRequired(true).then(() => {
 
 
 
-#### setSelectedOption `boolean`
+#### setSelectedOption `object`
 
 <dd>
 

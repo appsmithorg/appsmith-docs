@@ -22,6 +22,7 @@ These properties are customizable options present in the property pane of the wi
  </dd>
 
 #### Position `string`
+
 <dd>
  Allows you to choose the placement of the label. You can choose:<br />
 
@@ -186,7 +187,9 @@ Switch1.setRequired(true).then(() => {
   // code to be executed after required state is set
 })
 ```
-  
+
+</dd>
+
 #### Font color `string`
 
 <dd>

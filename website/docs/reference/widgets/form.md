@@ -100,6 +100,35 @@ Style properties allow you to change the look and feel of the Form. These proper
 
 The Form widget doesn't have any event handlers of its own, however there are several events you may want to handle when using Forms. You can find these events on the individual widgets inside the Form, such as the [Button's **onClick**](/reference/widgets/button#events) or the [Input's **onTextChanged**](/reference/widgets/input#events).
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Form1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Form1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
 
 ## Further reading
 
