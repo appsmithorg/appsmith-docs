@@ -426,7 +426,14 @@ const sidebars = {
               link: { type: 'doc', id: 'reference/widgets/button/README' },
               items: ['reference/widgets/button/google-recaptcha'],
             },
-            'reference/widgets/button-group',
+            {
+              type: 'category',
+              label: 'Button Group',
+              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+              items: [
+                'reference/widgets/button-group/buttons'
+              ],
+            },
             'reference/widgets/camera',
             'reference/widgets/chart',
             'reference/widgets/checkbox',
@@ -528,13 +535,19 @@ const sidebars = {
       //Advanced Concepts Start
       type: 'category',
       collapsed: false,
-      label: 'Advanced Concepts',
+      label: 'Manage Apps and Users',
       items: [
-        'advanced-concepts/custom-authentication',
-        'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/audit-logs',
-        'advanced-concepts/branding',
+        'advanced-concepts/custom-authentication',
+        'advanced-concepts/invite-users',
+        {
+          type: 'category',
+          label: 'Granular Access Control',
+          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
+          items: [
+              'advanced-concepts/granular-access-control/roles', 
+          ]
+        },
         {
           type: 'category',
           label: 'Version Control with Git',
@@ -560,31 +573,17 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        'advanced-concepts/invite-users',
-        {
-          type: 'category',
-          label: 'Granular Access Control',
-          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
-          items: [
-              'advanced-concepts/granular-access-control/roles', 
-          ]
-        },
-        {
-          type: 'category',
-          label: 'More',
-          link: { type: 'doc', id: 'advanced-concepts/more/README' },
-          items: [
-            'advanced-concepts/more/backup-restore',
-            'advanced-concepts/more/keyboard-shortcuts',
-          ],
-        },
+        'advanced-concepts/sharing-data-across-pages',
+        'advanced-concepts/more/backup-restore',
+        'advanced-concepts/audit-logs',
+        'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
     {
       //Learning and Resources start
       type: 'category',
       collapsed: false,
-      label: 'Learning & Resources',
+      label: 'Resources',
       items: [
         'learning-and-resources/sample-apps',
         {

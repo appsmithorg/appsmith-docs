@@ -55,9 +55,13 @@ Queries fetch data in an array of objects where each object is a row, and each k
 
 When a query fails, Appsmith commonly shows a notification stating: `<query_name> action returned an error response `.
 
-
 To see the error message returned by the datasource in response to your query, look for the failed query in the [debugger](/help-and-support/troubleshooting-guide/#using-the-linter-and-debugger), or access it in code with `<query_name>.data`.
 
+### Debug mode
+
+By default, in the *View* Mode, you can't see any error messages raised by Appsmith. This ensures your app viewers don’t see error messages they would have minimal context about. 
+
+If you want to see errors in the *View* and in the *Edit* mode, you can append `?debug=true` to your app's URL and reload the page. You can also always see the errors logged in the browser console.
 
 ## Use queries in applications
 

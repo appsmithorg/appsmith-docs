@@ -1,49 +1,101 @@
 ---
 sidebar_position: 14
+description: Connect Appsmith to a Redis database and create queries.
 ---
 # Redis
 
-This page provides information for connecting to a Redis database and using queries to manage its content in Appsmith.
+This page provides information for connecting your application to your Redis database and using queries to manage its content.
 
-## Connection settings
+## Connect Redis
 
-Appsmith needs the following information to connect to a Redis instance.
+:::caution 
+To connect to Redis, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. If you're using Redis Cloud, you can see [**Configure CIDR allow list**](https://docs.redis.com/latest/rc/security/cidr-whitelist/) for more details.
+:::
 
-![Click to expand](/img/redis-datasource-form.png)
+### Connection parameters
 
-After filling up the three fields as described preceding, click the "Test" button to verify the configuration and click `Save`.
+The following section is a reference guide that provides a complete description of all the parameters to connect to a Redis database.
 
-## Querying Redis
+<figure>
+  <img src="/img/redis-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis datasource." />
+  <figcaption align="center"><i>Configuring a Redis datasource.</i></figcaption>
+</figure>
 
-The Redis query pane can be used to run any of the commands supported by Redis. The response from this command is displayed in the result window. 
+<dl>
+  <dt><b>Host Address</b></dt>
+  <dd>The network location of your Redis database. This can be a domain name or an IP address.</dd><br />
 
-### Checking connection
+  <dt><b>Port</b></dt>
+  <dd>The port number to connect to on the server. Appsmith connects to port <code>6379</code> by default if you do not specify one.</dd><br />
 
-The connection to a Redis instance can be verified using a simple `PING` command.
+  <dt><b>Database Number</b></dt>
+  <dd>The number that identifies which database on your Redis instance you're connecting to. This is a number between 0 and 15, and is 0 by default.</dd><br />
 
+  <dt><b>Username</b></dt>
+  <dd>The username for your Redis user.
+  </dd><br />
+
+  <dt><b>Password</b></dt>
+  <dd>The password for your Redis user.
+  </dd><br />
+</dl>
+
+## Query Redis
+
+The following section provides examples of creating basic CRUD queries for Redis.
+
+<figure>
+  <img src="/img/redis-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis query." />
+  <figcaption align="center"><i>Configuring a Redis query.</i></figcaption>
+</figure>
+
+:::info
+See the [Redis documentation](https://redis.io/commands/) for a full list of Redis commands and how to use them.
+:::
+
+### Fetch data
+
+```sql
+HGETALL {{ SearchInput.text }}
 ```
-PING
+
+In the above example, `SearchInput` is the name of an [Input widget](/reference/widgets/input) being used to collect a user's search term and send it in the query. The `HGETALL` command returns all keys and values of a Redis hash with a matching name if it exists.
+
+To store a single key not in a hash, use `GET`:
+
+```sql
+GET {{ SearchInput.text }}
 ```
 
-### Inserting a key
+### Insert data
 
-A new key value pair can be inserted into the cache using the `SET` command as follows.
-
-```
-SET key_name new_value
+```sql 
+HSET user:{{ EmailInput.text }} username {{ UsernameInput.text }} gender {{ GenderDropdown.selectedOptionVaue }}
 ```
 
-### Retrieving a key
+In the above example, `EmailInput`, `UsernameInput`, and `GenderDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgets being used to collect user input and send it in the query to create a Redis hash.
 
-Stored key value pairs can be retrieved using the `GET` command.
+To insert a single key/value pair not in a hash, use `SET`:
 
+```sql
+SET username {{ UsernameInput.text }}
 ```
-GET key_name
+
+### Update data
+
+See [Insert data](#insert-data) above, as the syntax is identical using the `HSET` and `SET` commands.
+
+### Delete data
+
+```sql
+HDEL user:{{ EmailInput.text }} {{ FieldDropdown.selectedOptionValue }}
 ```
 
-## Using queries in applications
+In the above example, `EmailInput` and `FieldDropdown` are the names of [Input](/reference/widgets/input) and [Select](/reference/widgets/select) widgets being used to collect user input that identifies which field of a given Redis hash to delete, and to send them in the query.
 
-Once you have successfully run a Query, you can use it in your application to
+To delete the entire Redis hash or a single key/value pair, use `DEL`:
 
-* [Display Data](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write/)
+```sql
+DEL user:{{ EmailInput.text }}
+```
+

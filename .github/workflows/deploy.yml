@@ -39,9 +39,4 @@ jobs:
       - name: Run Docker Container
         run: |
             docker run -e "APPLICATION_ID=${{ secrets.ALGOLIA_APPLICATION_ID }}" -e "ALGOLIA_API_KEY=${{ secrets.ALOGLIA_API_KEY }}" -e "CONFIG=$(cat config.json | jq -r tostring)" algolia/docsearch-scraper:latest
-
-      - name: Update omnibar algolia index
-        run: |
-            npm ci
-            node omnibar-algolia-index.js "${{ secrets.ALGOLIA_APPLICATION_ID }}" "${{ secrets.ALOGLIA_API_KEY }}"
             

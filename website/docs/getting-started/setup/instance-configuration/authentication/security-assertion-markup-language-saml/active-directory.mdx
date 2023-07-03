@@ -11,9 +11,11 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
 ## Prerequisites
 
-1. In Appsmith, go to **Admin Settings** > Authentication** and click **Enable** on  **SAML 2.0**.
+1. Before setting up Single Sign-On (SSO), ensure that you have already configured a [custom domain](/getting-started/setup/instance-configuration/custom-domain) for your instance.
 
-2. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Active Directory settings. 
+2. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on  **SAML 2.0**.
+
+3. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Active Directory settings. 
 
 <figure>
   <img src="/img/SAML-config_appsmith.png" style= {{width:"600px", height:"auto"}} alt="SAML configurations"/>
@@ -27,50 +29,45 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 3. In your directory's homepage, click **+ Add** > **Enterprise Application** from the navigation bar. 
 4. Under the **Browse AD Azure Gallery** page, click **Create your own application** from the navigation bar.
 
-   a. Add your application's name.
+  a. Add your application's name.
 
-   b. Select **Integrate any other application you don't find in the gallery (Non-gallery)** from the **What are you looking to do with your application?** options.
+  b. Select **Integrate any other application you don't find in the gallery (Non-gallery)** from the **What are you looking to do with your application?** options.
 
-   c. Click **Create**.
+  c. Click **Create**.
 
-5. In your Application's Overview page, Click **Set up single sign on > **SAML**.
+5. In your Application's Overview page, Click **Set up single sign on > SAML**.
 6. In the **SAML-based Sign-on** page, go to the **Basic SAML Configuration** section under **Set up Single Sign-On with SAML** and click **Edit**. 
 
-    a. Add the **Entity URL** under **Identifier (Entity ID)**.
+  a. Add the **Entity URL** under **Identifier (Entity ID)**.
 
-    b. Add the **Redirect URL** under **Replay URL(Assertion Consumer Service URL).**
+  b. Add the **Redirect URL** under **Replay URL(Assertion Consumer Service URL).**
 
-    c. Click **Save** on the navigation bar.
+  c. Click **Save** on the navigation bar.
 
-7. Go to the **SAML Certificates** section and copy the **App Federation Metadata Url** to add it later in the SAML configurations in Appsmith.
-8. Go back to the Application's Overview page, click **Assign users and groups** and add the users or groups to this application.
+7. In the **Attributes & Claims** section, click **Edit**.
+
+  a. Click the **Unique User Identifier (Name ID)** claim and update the following fields:
+
+    - In the **Name identifier format** field, select **Email address** from the dropdown.
+    - Select **Attribute** from the given options in **Source**.
+    - In the **source attribute** field, select the option from the dropdown that stores the user’s email address. This is an important configuration to ensure that the user’s email is passed to Appsmith while signing in.
+    - Click **Save**.
+    
+  b. If you are only interested in simple authentication via SAML, you can skip this step. However, if you want to configure custom claims, follow the steps below:
+    
+    - Click **Add new claim**, fill in the details and click **Save**. 
+    - Once saved, ensure that it is visible in the **Additional claims** section. 
+    - Copy the **claim name** for the newly created claim to add it later in the SAML configurations in Appsmith.
+
+8. Go to the **SAML Certificates** section and copy the **App Federation Metadata Url** to add it later in the SAML configurations in Appsmith.
+9. Go back to the Application's Overview page, click **Assign users and groups** and add the users or groups to this application.
 
 ## Register Active Directory in Appsmith
 
-To complete the SAML configuration, you’ll have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
+To complete the SAML configuration, you’ll have to register the identity provider on Appsmith as mentioned below:
 
-<Tabs queryString="active_directory-saml">
-<TabItem label="Metadata URL (recommended)" value="active_directory-metadataurl">
 
-To register Active Directory as the identity provider on Appsmith, follow the steps below:
-1. Go to **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
-2. Add the copied **App Federation Metadata Url** in the **Metadata URL** field under the **Register Identity Provider** section.
-
-</TabItem>
-
-<TabItem label="Metadata XML" value="active_directory-metdataxml">
-
-To set up SAML using the raw Metadata XML file, follow the steps below:
-1. Open the **Set up Single Sign-On with SAML** page of your Active Directory application, go to **SAML Certificates** and click **Download** on **Federation Metadata XML**.
-2. Open the Metadata XML file and copy the XML content.
-3. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
-
-</TabItem>
-<TabItem label="IdP Data" value="active_directory-idpdata">
-
-If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
-
-1. Open the Metadata URL in a browser tab or open the Metadata XML file.
+1. Open the copied **App Federation Metadata Url** in a browser tab.
 2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 | <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
@@ -78,11 +75,13 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 | **Entity ID**               | Enter the value of the **entityID** attribute specified in the `<EntityDescriptor>` tag.                 |
 | **Single Sign-On URL**      | Enter the value of **location** attribute specified in the `<SingleSignOnService>` tag. |
 | **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
-| **Email**                   | Enter the value specified in the `<NameIDFormat>` tag. |
+| **Email**                   | Enter this value - `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` |
 
+3. To configure custom SAML claims (if added in the Active Direcorty's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
 
-</TabItem>
-</Tabs>
+  a. For each custom claim, enter a name in the **Key** field that references the custom SAML claim within Appsmith.
+
+  b. In the **Value** field, enter the exact **claim name** that you copied from the Active Directory's **Attributes and Claims** section.
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
