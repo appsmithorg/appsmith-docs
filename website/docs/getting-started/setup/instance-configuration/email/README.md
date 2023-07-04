@@ -22,7 +22,7 @@ Follow the below guides to set up some popular email service providers on your s
     <div class="containerCol">
          <img class="containerImage" src="/img/email-configuration-sendgrid.svg" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Sendgrid"/>
       </div> 
-      <b><a href="/getting-started/setup/instance-management/appsmithctl">Sendgrid</a></b>
+      <b><a href="/getting-started/setup/instance-configuration/email/sendgrid">Sendgrid</a></b>
       <div class="containerDescription">
       </div>
    </div>
@@ -31,7 +31,7 @@ Follow the below guides to set up some popular email service providers on your s
    <div class="containerCol">
          <img class="containerImage" src="/img/email-configuration-amazon-ses.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="support"/>
       </div>
-      <b><a href="/getting-started/setup/instance-management/maintenance-window">Amazon SES</a></b>
+      <b><a href="/getting-started/setup/instance-configuration/email/amazon-ses">Amazon SES</a></b>
       <div class="containerDescription"> 
       </div>
    </div>
@@ -40,7 +40,7 @@ Follow the below guides to set up some popular email service providers on your s
     <div class="containerCol">
          <img class="containerImage" src="/img/email-configuration-gmail.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Gmaile"/>
       </div> 
-      <b><a href="/getting-started/setup/instance-management/supervisor">Gmail</a></b>
+      <b><a href="/getting-started/setup/instance-configuration/email/gmail">Gmail</a></b>
       <div class="containerDescription">
       </div>
    </div>
