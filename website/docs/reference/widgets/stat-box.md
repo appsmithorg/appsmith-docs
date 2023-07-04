@@ -1,14 +1,14 @@
 ---
 description: Learn how to use the Stats Box widget to display statistical information.
 ---
-# Stat Box
+# Stats Box
 
-This page provides information on using the Stats Box widget, a container that presents statistics with customizable layout options. By default, the Stats Box widget comes pre-built with a default layout, including three Text widgets and one Icon widget.
+This page provides information on using the Stats Box widget, a container that presents statistics with customizable layout options. The Stats Box widget comes pre-built with a default layout, including three Text widgets and one Icon widget.
 
 
 <figure>
-  <img src="/img/stat-img.png" style= {{width:"700px", height:"auto"}} alt="Stat Box"/>
-  <figcaption align = "center"><i>Stat Box</i></figcaption>
+  <img src="/img/stat-img.png" style= {{width:"700px", height:"auto"}} alt="Stats Box"/>
+  <figcaption align = "center"><i>Stats Box</i></figcaption>
 </figure>
 
 
@@ -106,9 +106,9 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 </dd>
 
 ## Reference properties
-These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Statbox1.isVisible`.
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Statsbox1.isVisible`.
 
-As the Stat Box widget works as a container, you can access the values of other widgets using their respective reference properties. For example, to access the text value of a Text widget, you can use `Text1.text`.
+As the Stats Box widget works as a container, you can access the values of other widgets using their respective reference properties. For example, to access the text value of a Text widget, you can use `Text1.text`.
 
 #### isVisible `boolean`
 <dd>
@@ -118,7 +118,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 *Example:*
 
 ```js
-{{Statbox1.isVisible}}
+{{Statsbox1.isVisible}}
 ```
 
 
