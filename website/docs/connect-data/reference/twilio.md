@@ -31,7 +31,7 @@ The following section is a reference guide that provides a complete description 
 
   <dt><b>Auth token</b></dt>
   <dd>A token string used to authenticate your queries. You can find this on your <a href="https://console.twilio.com">Twilio Console</a> under the <b>Account Info</b> section. 
-  </dd><br />
+  </dd>
 
 </dl>
 
@@ -44,17 +44,11 @@ The following section is a reference guide that provides a description of the av
    <figcaption align = "center"><i>Configuring a Twilio query.</i></figcaption>
 </figure>
 
-:::info important
-All phone numbers used in Twilio queries must be in E.164 format. You can read more about this format in the [Twilio docs](https://www.twilio.com/docs/glossary/what-e164).
-:::
-
-## Create message
+### Create message
 
 You can use this command to create and send a message to a specific phone number. The following section lists all the available parameters:
 
-:::info
-To send a message to a WhatsApp phone number, add the prefix `whatsapp:` in the **To** and **From** fields. Visit the [Twilio docs for WhatsApp](https://www.twilio.com/docs/whatsapp/api#using-twilio-phone-numbers-with-whatsapp) to learn more about the requirements and steps for setting up a WhatsApp integration.
-:::
+
 
 <dl>
   <dt><b>Twilio account SID</b></dt>
@@ -62,20 +56,24 @@ To send a message to a WhatsApp phone number, add the prefix `whatsapp:` in the 
   </dd><br />
 
   <dt><b>To</b></dt>
-  <dd>The phone number to which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>.
+  <dd>The phone number to which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>: <code>+15551234567</code>.
   </dd><br />
 
   <dt><b>From</b></dt>
-  <dd>The Twilio phone number from which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>. Once you've created your Twilio phone number, you can find it in the Twilio console under the <b>Account Info</b> section.
-  </dd><br />
+  <dd>The Twilio phone number from which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>: <code>+15551234567</code>. Once you've created your Twilio phone number, you can find it in the Twilio console under the <b>Account Info</b> section.
+  </dd>
+
+:::info
+To send a message to a WhatsApp phone number, see [Using Twilio Phone Numbers With WhatsApp](https://www.twilio.com/docs/whatsapp/api#using-twilio-phone-numbers-with-whatsapp).
+:::
 
   <dt><b>Body</b></dt>
   <dd>The text content of the message.
-  </dd><br />
+  </dd>
 
 </dl>
 
-## Schedule message
+### Schedule message
 
 You can use this command to create and schedule a message for sending at a future date and time. The following section lists all the available parameters:
 
@@ -89,7 +87,7 @@ You can use this command to create and schedule a message for sending at a futur
   </dd><br />
 
   <dt><b>To</b></dt>
-  <dd>The phone number to which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>.
+  <dd>The phone number to which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>: <code>+15551234567</code>.
   </dd><br />
 
   <dt><b>Body</b></dt>
@@ -97,22 +95,26 @@ You can use this command to create and schedule a message for sending at a futur
   </dd><br />
 
   <dt><b>Send at</b></dt>
-  <dd>A string that defines the date and time to send the message. The given date must be in UTC format (<code>YYYY-MM-DDTHH:MM:SSZ</code>), and must be between 15 minutes and 7 days from the time of the request.
-  </dd><br />
+  <dd>A string that defines the date and time to send the message. The given date must be between 15 minutes and 7 days from the time of the request and must be in UTC format <code>YYYY-MM-DDTHH:MM:SSZ</code>.
+  </dd>
 
 </dl>
 
-## List message
+### List message
 
 You can use this command to fetch a list of past messages sent from a specified Twilio phone number. The following section lists all the available parameters:
 
+:::info
+To fetch scheduled messages that haven't been sent, leave the <b>To</b>, <b>From</b>, and <b>Date Sent</b> fields empty.
+:::
+
 <dl>
   <dt><b>To</b></dt>
-  <dd>The phone number to which the message was sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>.
+  <dd>The phone number to which the message was sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>: <code>+15551234567</code>.
   </dd><br />
 
   <dt><b>From</b></dt>
-  <dd>The Twilio phone number from which the message was sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>. Once you've created your Twilio phone number, you can find it in the Twilio console under the <b>Account Info</b> section.
+  <dd>The Twilio phone number from which the message was sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>: <code>+15551234567</code>. Once you've created your Twilio phone number, you can find it in the Twilio console under the <b>Account Info</b> section.
   </dd><br />
 
   <dt><b>Date Sent</b></dt>
@@ -125,17 +127,15 @@ You can use this command to fetch a list of past messages sent from a specified 
 
   <dt><b>Twilio account SID</b></dt>
   <dd>A unique ID string that identifies your Twilio account. You can find this on your <a href="https://console.twilio.com">Twilio Console</a> under the <b>Account Info</b> section. 
-  </dd><br />
+  </dd>
 
 </dl>
 
-:::tip
-If you want to see messages that are scheduled and haven't been sent yet, don't fill in the <b>To</b>, <b>From</b>, or <b>Date Sent</b> fields.
-:::
 
-## Fetch message
 
-You can use this command to fetch the body and status of a specific message. The following section lists all the available parameters:
+### Fetch message
+
+You can use this command to fetch the body and send status of a specific message. The following section lists all the available parameters:
 
 <dl>
   <dt><b>Twilio account SID</b></dt>
@@ -144,11 +144,11 @@ You can use this command to fetch the body and status of a specific message. The
 
   <dt><b>Message SID</b></dt>
   <dd>A unique ID string that identifies the message. You can get the <b>Message SID</b> from a <a href="#list-message">List message</a> query on the <code>sid</code> property, or when you create a new message with a <a href="#create-message">Create message</a> query.
-  </dd><br />
+  </dd>
 
 </dl>
 
-## Delete message
+### Delete message
 
 You can use this command to delete a specific message. The following section lists all the available parameters:
 
@@ -159,11 +159,11 @@ You can use this command to delete a specific message. The following section lis
 
   <dt><b>Message SID</b></dt>
   <dd>A unique ID string that identifies the message. You can get the <b>Message SID</b> from a <a href="#list-message">List message</a> query on the <code>sid</code> property, or when you create a new message with a <a href="#create-message">Create message</a> query.
-  </dd><br />
+  </dd>
 
 </dl>
 
-## Cancel message
+### Cancel message
 
 You can use this command to cancel sending a specific scheduled message. The following section lists all the available parameters:
 
@@ -174,7 +174,7 @@ You can use this command to cancel sending a specific scheduled message. The fol
 
   <dt><b>Message SID</b></dt>
   <dd>A unique ID string that identifies the message. You can get the <b>Message SID</b> from a <a href="#list-message">List message</a> query on the <code>sid</code> property, or when you create a new message with a <a href="#create-message">Create message</a> query.
-  </dd><br />
+  </dd>
 
 </dl>
 
