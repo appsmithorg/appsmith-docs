@@ -187,9 +187,9 @@ const sidebars = {
                     id: 'getting-started/setup/instance-configuration/email/README',
                   },
                   items: [
+                    'getting-started/setup/instance-configuration/email/gmail',
                     'getting-started/setup/instance-configuration/email/sendgrid',
                     'getting-started/setup/instance-configuration/email/amazon-ses',
-                    'getting-started/setup/instance-configuration/email/gmail',
                   ],
                 },
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
