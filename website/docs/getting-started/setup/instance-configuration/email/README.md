@@ -12,38 +12,83 @@ This page guides you through configuring an email service provider on your self-
 * Invite users to join your Appsmith workspace by sending email invitations.
 * Reset password using password reset emails.
 
-You can configure any email service provider of your choice.
-
 <VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="Configure Email Service Provider." caption="Configure Email Service Provider" /> 
 
-Follow the below guides to set up some popular email service providers on your self-hosted instance.
+## Prerequisites
+Ensure that you have:
 
-<div class="containerGridSampleApp">
+* Access to your Appsmith instance.
+* Access to your account with the email service provider.
 
-   <div class=" containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
-         <img class="containerImage" src="/img/email-configuration-gmail.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Gmaile"/>
-      </div> 
-      <b><a href="/getting-started/setup/instance-configuration/email/gmail">Gmail</a></b>
-      <div class="containerDescription">
-      </div>
-   </div>
+## Configure email
+ On Appsmith, you can configure email by using one of the following ways:
 
-   <div class=" containerColumnSampleApp columnGrid column-two">
-    <div class="containerCol">
-         <img class="containerImage" src="/img/email-configuration-sendgrid.svg" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Sendgrid"/>
-      </div> 
-      <b><a href="/getting-started/setup/instance-configuration/email/sendgrid">Sendgrid</a></b>
-      <div class="containerDescription">
-      </div>
-   </div>
+* [Admin settings](#admin-settings)
+* [Environment Variables](#environment-variables)
 
-   <div class="containerColumnSampleApp columnGrid column-three">
-   <div class="containerCol">
-         <img class="containerImage" src="/img/email-configuration-amazon-ses.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="support"/>
-      </div>
-      <b><a href="/getting-started/setup/instance-configuration/email/amazon-ses">Amazon SES</a></b>
-      <div class="containerDescription"> 
-      </div>
-   </div>
-</div> 
+### Admin settings
+
+:::caution Attention
+If you have configured email using [environment variables](#environment-variables) for your instance, it takes precedence over the configuration provided through the Admin Settings UI.
+:::
+
+Follow these steps to configure your email provider using Admin Settings:
+
+1. Log into your Appsmith instance as a superuser.
+
+2. Go to the **Admin Settings** screen.
+
+3. Select **Email** from the left nav bar.
+
+<figure>
+<img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
+<figcaption align="center"><i>Configure your email service provider</i></figcaption>
+</figure>
+
+4. Add the configuration details for your email provider as below:   
+
+   | Name	| Description |
+   |-----------|--------------|
+   | **SMTP Host** |	Add the SMTP host of your email service provider. |
+   | **SMTP Port**	| Add the SMTP port of your email service provider. |
+   | **From Address**	| Add a verified email address to be shown in the **From** field when users receive an email. |
+   | **Reply To Address**	| Add a verified email address, so that users can reach out to you. |
+   |  **TLS Protected Connection**	|  By default, this option is turned off. Toggle it to enable TLS. |
+   | **SMTP Username** |	Add the username for your email service provider. This is only needed when TLS is turned on. |
+   | **SMTP Password**	| Add the password for your email service provider. This is only needed when TLS is turned on. |
+
+5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
+
+6. Click the **SAVE & RESTART** button to save the configurations and restart the instance with the updated settings.
+
+### Environment variables
+
+Follow these steps to configure your email provider using environment variables:
+
+1. Go to your Appsmith instance configuration file. For example, the `docker-compose.yml` file for Docker and the `values.yaml` file for Kubernetes.
+
+2. Update the values of the environment variables as shown below:
+
+   |Variable	| Description |
+   |-----------|--------------|
+   | `APPSMITH_MAIL_ENABLED` | Set it to true to enable the email service. |
+   | `APPSMITH_MAIL_FROM`	| Set it to the verified email of the sender. |
+   | `APPSMITH_REPLY_TO`	| Set it to the email that should receive replies by default. |
+   | `APPSMITH_MAIL_HOST`	| Set it to the SMTP Host of the email service provider. |
+   | `APPSMITH_MAIL_PORT`	| Set it to the SMTP Port of the email service provider. |
+   | `APPSMITH_MAIL_SMTP_TLS_ENABLED` |	Enable transport layer security by setting it to true. |
+   | `APPSMITH_MAIL_SMTP_AUTH`	| Share the credentials (`APPSMITH_MAIL_USERNAME` and `APPSMITH_MAIL_PASSWORD`) with the SMTP server by setting it to true. |
+   | `APPSMITH_MAIL_USERNAME` |	Set it to the username for accessing the SMTP service provider.
+   | `APPSMITH_MAIL_PASSWORD` |	Set it to the password for the SMTP user. Alternatively, you can use the API key generated by the email service provider for the SMTP user. |
+
+3. Restart the instance.
+
+## Troubleshooting
+
+If you have received a test email but can't send invitations then verify your email configuration again. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+* [Gmail](/getting-started/setup/instance-configuration/email/gmail)
+* [SendGrid](/getting-started/setup/instance-configuration/email/sendgrid)
+* [Amazon SES](/getting-started/setup/instance-configuration/email/amazon-ses)
