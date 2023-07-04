@@ -1,14 +1,14 @@
 ---
 description: Learn how to use the Stats Box widget to display statistical information.
 ---
-# Stats Box
+# Stat Box
 
-This page provides instructions on using the Stats Box widget, a container that presents essential statistics with customizable layout options. By default, the Stats Box widget includes three Text widgets and one Icon widget.
+This page provides information on using the Stats Box widget, a container that presents statistics with customizable layout options. By default, the Stats Box widget comes pre-built with a default layout, including three Text widgets and one Icon widget.
 
 
 <figure>
-  <img src="/img/stat-img.png" style= {{width:"700px", height:"auto"}} alt="Display Stats Box"/>
-  <figcaption align = "center"><i>Display Stats Box</i></figcaption>
+  <img src="/img/stat-img.png" style= {{width:"700px", height:"auto"}} alt="Stat Box"/>
+  <figcaption align = "center"><i>Stat Box</i></figcaption>
 </figure>
 
 
@@ -108,7 +108,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 ## Reference properties
 These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Statbox1.isVisible`.
 
-To access the internal values of a widget, you can use the respective widget's reference property. For example, to access the text value of a Text widget, you can use `Text1.text`.
+As the Stat Box widget works as a container, you can access the values of other widgets using their respective reference properties. For example, to access the text value of a Text widget, you can use `Text1.text`.
 
 #### isVisible `boolean`
 <dd>
