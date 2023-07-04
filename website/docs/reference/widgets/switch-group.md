@@ -4,7 +4,7 @@ description: Learn how to use the Switch Group widget which allows users to togg
 
 # Switch Group
 
-This page provides information on using the Switch Group widget, which allows users to toggle the on/off state of multiple options 
+This page provides information on using the Switch Group widget, which allows users to toggle the on/off state for multiple options.
 
 <VideoEmbed host="youtube" videoId="p--j-QyBlAY" title="How to use Switch Group Widget" caption="How to use Switch Group Widget"/>
 
@@ -40,11 +40,11 @@ You can add these labels and values options in JSON format, like:
  }..
 ]
 ```
-Additionally, you can dynamically display data from query or JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
+Additionally, you can dynamically display data from a query using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
 
 
 ```js
-{{getdata.data.map( p => ({label: p.country, value: p.country}))}}
+{{getCountry.data.map( p => ({label: p.country, value: p.country}))}}
 ```
 
 
