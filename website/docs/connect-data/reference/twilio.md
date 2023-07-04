@@ -61,7 +61,7 @@ You can use this command to create and send a message to a specific phone number
 
   <dt><b>From</b></dt>
   <dd>The Twilio phone number from which the message should be sent. Be sure to follow <a href="https://www.twilio.com/docs/glossary/what-e164">E.164 format</a>: <code>+15551234567</code>. Once you've created your Twilio phone number, you can find it in the Twilio console under the <b>Account Info</b> section.
-  </dd>
+  </dd><br />
 
 :::info
 To send a message to a WhatsApp phone number, see [Using Twilio Phone Numbers With WhatsApp](https://www.twilio.com/docs/whatsapp/api#using-twilio-phone-numbers-with-whatsapp).
