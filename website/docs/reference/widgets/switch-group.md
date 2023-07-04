@@ -4,7 +4,7 @@ description: Learn how to use the Switch Group widget which allows users to togg
 
 # Switch Group
 
-This page provides instructions on using the Switch Group widget, which allows users to toggle multiple options simultaneously.
+This page provides information on using the Switch Group widget, which allows users to toggle the on/off state of multiple options 
 
 <VideoEmbed host="youtube" videoId="p--j-QyBlAY" title="How to use Switch Group Widget" caption="How to use Switch Group Widget"/>
 
@@ -23,7 +23,7 @@ These properties are customizable options present in the property pane of the wi
 <dd>
 
 
-This property allows you to set the labels and values for the items. Ensure that the values assigned to each option are unique. 
+This property allows you to set the labels and values for the options. Ensure that the values assigned to each option are unique. 
 
 You can add these labels and values options in JSON format, like:
 
@@ -40,7 +40,7 @@ You can add these labels and values options in JSON format, like:
  }..
 ]
 ```
-Additionally, you can dynamically display data by using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
+Additionally, you can dynamically display data from query or JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
 
 
 ```js
@@ -55,7 +55,7 @@ Additionally, you can dynamically display data by using JavaScript. For instance
 
 <dd>
 
-Allows you to set default options in a widget. These options are initially selected when the widget is loaded, representing the user's default input unless modified. Multiple default items can be added by providing them as an array of values. 
+Allows you to set default options in a widget. These options are initially selected when the widget is loaded, representing the user's default input unless modified. Multiple default options can be added by providing them as an array of values. 
 
 *Example*:
 
@@ -163,7 +163,7 @@ This property prevents users from selecting the widget. Even though the widget r
 
 <dd>
 
-When the inline property is enabled, the items are displayed horizontally within the widget. When this property is turned off, the items are displayed in a vertical format.
+When the inline property is enabled, the options are displayed horizontally within the widget. When this property is turned off, the options are displayed in a vertical format.
 
 </dd>
 
@@ -200,7 +200,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-This event defines the action that would be executed when the user selects or deselects multiple or single items in the switch group. It allows you to specify a list of [actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the switch state change.
+This event defines the action that would be executed when the user selects or deselects multiple or single options in the switch group. It allows you to specify a list of [actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the switch state change.
 
 </dd>
 
