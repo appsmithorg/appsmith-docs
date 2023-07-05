@@ -38,7 +38,7 @@ Allows you to select the desired format for the progress bar, providing options 
 
 <dd>
 
-Specify the percentage of progress to be displayed to the user, which can be dynamically updated using values retrieved from queries or JavaScript functions.
+Specify the value of the progress indicator (in percentage). You can also use values retrieved from queries or JavaScript functions within the mustache operator `{{}}`.
 
 </dd>
 
