@@ -3,7 +3,8 @@ description: Learn how to use the Progress widget to visually track the progress
 ---
 # Progress
 
-This page provides information on using the Progress, which allows users to visualize the progress of certain user-performed or system-triggered actions.
+This page provides information on using the Progress widget, which is used to visualize the progression of specific operations and user or system-triggered actions.
+
 
 
 <VideoEmbed host="youtube" videoId="Yg1Pfy7uc1s" title="How to use Progress Widget" caption="How to use Progress Widget"/>
