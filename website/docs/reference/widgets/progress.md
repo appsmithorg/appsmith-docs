@@ -71,7 +71,7 @@ For example, if you want to make the widget visible only when the user selects "
 
 <dd>
 
-Allows you to enable or disable the display of the current evaluated percentage as a number along with the progress in the widget.
+Control the display of the evaluated percentage as a number along with the progress in the widget.
 
 
 </dd>
