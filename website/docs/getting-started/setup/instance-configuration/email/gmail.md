@@ -30,6 +30,6 @@ To use App Passwords, please enable 2-factor authentication for your Gmail accou
 * Paste your new Gmail App Password into your SMTP datasource's `Password` field.
 
 :::info
-You can also configure the email service provider using [Admin settings](./#configure-using-admin-settings).
+You can also configure the email service provider using [Admin settings](/getting-started/setup/instance-configuration/email#admin-settings).
 :::
 
