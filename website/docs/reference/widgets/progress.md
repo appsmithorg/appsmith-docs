@@ -21,7 +21,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Enables the widget to enter an infinite loading state, which is beneficial when the progress values cannot be determined. This feature can be activated for queries or API calls that require time to retrieve data.
+Enables the widget to enter an infinite loading state, which is beneficial when the progress values cannot be determined.For instance, this property can be enabled for queries that take a longer time to execute.
 
 </dd>
 
