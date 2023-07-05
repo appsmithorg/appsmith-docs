@@ -199,12 +199,12 @@ Allows you to dynamically set the value of the widget.
 *Example*:
 
 ```js
-DatePicker1.setValue()
+DatePicker1.setValue('11-01-1994')
 ```
 To perform sequential actions, use the `.then()` block for execution.
 
 ```js
-DatePicker1.setValue().then(() => {
+DatePicker1.setValue('11-01-1994').then(() => {
   // code to be executed after value is set
 })
 ```
