@@ -1,39 +1,135 @@
+---
+description: Learn how to use the Progress widget to visually track the progress of tasks or processes in your application.
+---
 # Progress
 
-The Progress widget indicates the progress of certain user-performed or system-triggered actions.
+This page provides information on using the Progress widget, which is used to visualize the progression of specific operations and user or system-triggered actions.
+
+
 
 <VideoEmbed host="youtube" videoId="Yg1Pfy7uc1s" title="How to use Progress Widget" caption="How to use Progress Widget"/>
 
-## Properties
+## Content properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
 
-### Widget properties
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-These properties allow you to edit the Progress bar widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
 
-| Property             | Description                                                                                                                                                                                                                                      |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Infinite loading** | Control’s the widget to be in an infinite loading state, which is useful if the progress values are not determinable. This can be switched on for queries or API calls that take time to return data.                                            |
-| **Type**             | The progress bar can be of linear or circular type.                                                                                                                                                                                              |
-| **Progress**         | Percentage of progress to be indicated to the user.                                                                                                                                                                                              |
-| **Number of steps**  | Progress bar can be broken down into multiple parts called steps, each step contains a fixed percentage of progress. Number of steps can be configured to break down the progress bar for better communication. Only supports positive integers. |
-| **Show Result**      | Controls widget’s ability to show the current evaluated percentage as in number along with the progress.                                                                                                                                         |
-| **Visible**          | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published.                                                                                                                             |
+### Basic
 
-### Binding properties
+#### Infinite loading `boolean`
 
-These properties allow you to bind your Progress bar widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+<dd>
 
-| Property     | Description                                                      | Code Snippet                          |
-| ------------ | ---------------------------------------------------------------- | ------------------------------------- |
-| **progress** | It shows the current progress of the progress bar in percentage. | `{{<progress-widget_name>.progress}}` |
-| **visible**  | Visibility of the progress bar widget.                           | `{{<progress-widget_name>.visible}}`  |
+Enables the widget to enter an infinite loading state, which is beneficial when the progress values cannot be determined.For instance, this property can be enabled for queries that take a longer time to execute.
 
-### Styles
+</dd>
 
+#### Type `string`
+
+<dd>
+
+Allows you to select the desired format for the progress bar.
+
+*Options:*
+* Circular
+* Linear
+
+
+</dd>
+
+#### Progress `number`
+
+<dd>
+
+Specify the value of the progress indicator (in percentage). You can also use values retrieved from queries or JavaScript functions within the mustache operator `{{}}`.
+
+</dd>
+
+
+### General
+
+#### Number of steps `number`
+
+<dd>
+
+Specify the number of steps to break down the progress bar into multiple parts with fixed progress percentages. This property only supports positive integers.
+
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Show result `boolean`
+
+<dd>
+
+Control the display of the evaluated percentage as a number along with the progress in the widget.
+
+
+</dd>
+
+#### Counterclockwise  `boolean`
+
+<dd>
+
+Specifies whether the circular progress bar should animate in a counterclockwise direction. This option is only available when the Circular progress **Type** is selected.
+
+
+</dd>
+
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Styles         | Description                             |
-| -------------- | --------------------------------------- |
-| **Fill Color** | Controls the color of the progress bar. |
+#### Fill color `string`
+
+<dd>
+
+Specify the color of the progress bar. It accepts [CSS color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color) and can also be programmatically modified using JavaScript functions.
+
+
+</dd>
+
+## Reference properties
+
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Progress1.isVisible`.
+
+#### progress `number`
+
+<dd>
+
+Indicates the current progress of the progress bar as a percentage.
+
+*Example:*
+
+```js
+{{Progress1.progress}}
+```
+
+
+</dd>
+
+#### isVisible `boolean`
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+
+```js
+{{Progress1.isVisible}}
+```
+
+
+</dd>
