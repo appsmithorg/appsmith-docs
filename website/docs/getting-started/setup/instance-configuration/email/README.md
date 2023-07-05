@@ -14,12 +14,6 @@ This page guides you through configuring an email service provider on your self-
 
 <VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="Configure Email Service Provider." caption="Configure Email Service Provider" /> 
 
-## Prerequisites
-Ensure that you have:
-
-* Access to your Appsmith instance.
-* Access to your account with the email service provider.
-
 ## Configure email
  On Appsmith, you can configure email by using one of the following ways:
 
