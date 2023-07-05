@@ -49,7 +49,7 @@ Specify the percentage of progress to be displayed to the user, which can be dyn
 
 <dd>
 
-Specify the number of steps to break down the progress bar, dividing it into multiple parts with fixed percentages of progress. This configuration allows for better communication and supports only positive integers.
+Specify the number of steps to break down the progress bar into multiple parts with fixed progress percentages. This property only supports positive integers.
 
 
 </dd>
