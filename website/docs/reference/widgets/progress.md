@@ -29,7 +29,11 @@ Enables the widget to enter an infinite loading state, which is beneficial when 
 
 <dd>
 
-Allows you to select the desired format for the progress bar, providing options for either a linear or circular representation of progress.
+Allows you to select the desired format for the progress bar.
+
+*Options:*
+* Circular
+* Linear
 
 
 </dd>
@@ -72,6 +76,15 @@ For example, if you want to make the widget visible only when the user selects "
 <dd>
 
 Control the display of the evaluated percentage as a number along with the progress in the widget.
+
+
+</dd>
+
+#### Counterclockwise  `boolean`
+
+<dd>
+
+Specifies whether the circular progress bar should animate in a counterclockwise direction. This option is only available when the Circular progress **Type** is selected.
 
 
 </dd>
