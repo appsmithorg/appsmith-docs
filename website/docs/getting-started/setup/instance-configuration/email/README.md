@@ -83,6 +83,8 @@ If you have received a test email but can't send invitations then follow the [Un
 
 ## See also
 
+To configure email with popular email service providers, see the guides below:
+
 * [Gmail](/getting-started/setup/instance-configuration/email/gmail)
 * [SendGrid](/getting-started/setup/instance-configuration/email/sendgrid)
 * [Amazon SES](/getting-started/setup/instance-configuration/email/amazon-ses)
