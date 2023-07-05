@@ -79,7 +79,7 @@ Follow these steps to configure your email provider using environment variables:
 
 ## Troubleshooting
 
-If you have received a test email but can't send invitations then follow the [Unable to send emails](help-and-support/troubleshooting-guide/deployment-errors#unable-to-send-emails) troubleshooting guide. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you have received a test email but can't send invitations then follow the [Unable to send emails](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-send-emails) troubleshooting guide. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## See also
 
