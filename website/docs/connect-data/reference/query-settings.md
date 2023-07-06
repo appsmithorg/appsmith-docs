@@ -14,7 +14,7 @@ You can find the following settings in the **Settings** tab of the query editor 
   </dd><br />
 
   <dt><b>Query timeout</b></dt>
-  <dd>Sets the time duration in milliseconds that the Appsmith server waits for the query to finish before it closes the connection. . If your query takes longer than this duration, Appsmith throws a timeout error. This setting defaults to 10000 ms with a maximum of 60000 ms. Available for all query types.
+  <dd>Sets the time duration in milliseconds that the Appsmith server waits for the query to finish before it closes the connection. If your query takes longer than this duration, Appsmith throws a timeout error. This setting defaults to 10000 ms with a maximum of 60000 ms. Available for all query types.
   </dd><br />
 
   <dt><b>Request confirmation before running query/API</b></dt>
@@ -26,7 +26,7 @@ You can find the following settings in the **Settings** tab of the query editor 
   </dd><br />
 
   <dt><b>Smart JSON substitution</b></dt>
-  <dd>When enabled, the query intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into JSON. Some tasks such as sending raw binary data in an API query may require this setting to be disabled. Available for API queries.
+  <dd>When enabled, the query intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into JSON. Some tasks, such as sending raw binary data in an API query, may require this setting to be disabled. Available for API queries.
   </dd>
   <dd><VideoEmbed host="youtube" videoId="-Z3y-pdNhXc" title="How to use smart JSON substitution" caption="How to use smart JSON substitution"/></dd><br />
 
