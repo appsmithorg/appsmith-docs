@@ -427,3 +427,10 @@ CRM
 Value
 navbar
 Google Maps
+mode
+getCurrentPosition
+geolocation
+idToken
+groups
+roles
+store

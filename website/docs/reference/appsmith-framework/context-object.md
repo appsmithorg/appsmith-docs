@@ -7,30 +7,26 @@ description: >-
 
 # Appsmith Object
 
-The Appsmith object is a global object that provides access to information and functionalities within an application.
-## Properties
+The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.
 
 The Appsmith object contains the following properties:
 
-```javascript
-{
-   store: object,
-   URL: object,
-   user: object,
-   geolocation: object,
-   mode: enum
-}
-```
 
-### store
+## store `object`
 
-This object contains the key-value pairs of the local storage of the app. You can add or update the values to the store using the [storeValue function](widget-actions/store-value.md). Conversely, you can access the values from the store using their corresponding keys as shown below:
+<dd>
+
+This object contains the key-value pairs of the local storage of the app. You can add or update the values to the store using the [storeValue function](widget-actions/store-value.md). Conversely, you can access the values from the store using their corresponding keys, as shown below:
 
 ```javascript
 {{ appsmith.store.<key> }}
 ```
 
-### URL
+</dd>
+
+## URL `object`
+
+<dd>
 
 This object contains all the values associated with the current URL that the user is on. To access these values from the URL, you can use the following code snippet:
 
@@ -39,53 +35,31 @@ This object contains all the values associated with the current URL that the use
 ```
 URL object has the following attributes:
 
-```javascript
-{
-  host: string,
-  hostName: string,
-  fullPath: string,
-  pathName: string,
-  port: string,
-  protocol: string,
-  hash: string,
-  queryParams: object
-}
-```
-
-#### host `string`
-
-  <dd>
-
-  The host property of the URL is a string that consists of the hostname and, the port of the URL (if available). To access the host value, you can use the following code snippet:
-
-  ```js
-  {{appsmith.URL.host}}
-  ```
-  Example: 
-
-  ```js
-  "app.appsmith.com:111"
-  ```
-  </dd>
-
-#### hostName `string`
+### host `string`
 
 <dd>
 
-The hostname property of the URL is a string that represents the **domain of the URL**. In simpler terms, hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number). To access the hostname, you can use the following code snippet:
+The host property of the URL is a string that consists of the hostname and the URL's port (if available). To access the host value, you can use the following code snippet:
+
+```js
+{{appsmith.URL.host}}
+```
+  
+</dd>
+
+### hostname `string`
+
+<dd>
+
+The hostname property of the URL is a string that represents the **URL's domain**. In simpler terms, hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number). To access the hostname, you can use the following code snippet:
 
 ```js
 {{appsmith.URL.host}}
 ```
 
-Example:
-```js
-//{{appsmith.URL.hostname}}
-hostName:"app.appsmith.com"
-```
 </dd>
 
-#### fullPath `string`
+### fullPath `string`
 
 <dd>
 
@@ -104,51 +78,34 @@ You can access the fullPath using the following snippet:
 {{appsmith.URL.fullPath}}
 ```
 
-Example:
-```js
-//{{appsmith.URL.fullPath}}
-fullPath:"https://app.appsmith.com/app/demo-app/page1-6324031aa"
-```
-
-In the preceding example, ```6324031aa``` represents the **id** of the page named `page1`. The current page slug in the URL is created by combining ```$pageName-$pageId```. Each page has a unique page id that is assigned to it.
-
 </dd>
 
-
-#### pathname `string`
+### pathname `string`
 
 <dd>
 
-The pathname is a string that represents the path component of the URL. It consists of a collection of path segments, with each segment prefixed by the `/` character. If the URL does not have any path segments, the value of the pathname property will be an empty string. You can access the pathname using the following snippet:
+The pathname is a string that represents the path component of the URL. It consists of a collection of path segments, with each segment prefixed by the `/` character. If the URL does not have any path segments, the value of the pathname property is an empty string. You can access the pathname using the following snippet:
 
 ```js
 {{appsmith.URL.pathname}}
 ```
 
-Example:
-```js
-pathname:"/app/demo-app/page1-6324031aa"
-```
 </dd>
 
-#### port `string`
+
+### port `string`
 
 <dd>
 
-The port property of the URL is a string that contains the port number of the URL. You can access the port using the following snippet:
+The URL's port property is a string containing the URL's port number. You can access the port using the following snippet:
 
 ```js
 {{appsmith.URL.port}}
 ```
 
-Example:
-```js
-//{{appsmith.URL.port}}
-port:"3000"
-```
 </dd>
 
-#### protocol `string`
+### protocol `string`
 
 <dd>
 
@@ -158,15 +115,9 @@ The protocol property of the URL is a string that represents the protocol scheme
 {{appsmith.URL.protocol}}
 ```
 
-Example:
-```js
-//{{appsmith.URL.protocol}}
-protocol:"https:"
-```
-
 </dd>
 
-#### hash `string`
+### hash `string`
 
 <dd>
 
@@ -176,14 +127,9 @@ The value of the `appsmith.URL.hash` property is a string that represents the fr
 {{appsmith.URL.hash}}
 ```
 
-Example:
-```js
-//{{appsmith.URL.hash}}
-hash:"#n912xhego"
-```
 </dd>
 
-#### queryParams `object`
+### queryParams `object`
 
 <dd>
 
@@ -193,17 +139,14 @@ Query parameters are predefined parameters that define specific content or actio
 {{appsmith.URL.queryParams}}
 ```
 
-Example:
-```js
-//{{appsmith.URL.queryParams}}
-queryParams:"?name=value&variable=value"
-```
-
 The `queryParams` object can be used to read data sent from other pages to this page using the [navigateTo function](widget-actions/navigate-to).
 
 </dd>
+</dd>
 
-### User
+## User `object`
+
+<dd>
 
 This object contains the data of the currently authenticated user.
 
@@ -220,7 +163,7 @@ This object contains the data of the currently authenticated user.
 }
 ```
 
-#### roles `object`
+### roles `object`
 
 <dd>
 
@@ -243,7 +186,7 @@ This object contains an array of strings of the roles assigned to the currently 
 ```
 You can use `appsmith.user.roles` object to [programmatically control the access](/advanced-concepts/granular-access-control) to your application entities.
 
-*Example:* Consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
+*Example:* consider a scenario where you are hiding a Button widget by adding the following code to the **Visible** property of the button -
 
 ```javascript
 {{appsmith.user.roles.includes("backend engineers")}}
@@ -252,7 +195,7 @@ In the above example, the visibility of the button is determined by a role. Only
 
 </dd>
 
-#### groups `object`
+### groups `object`
 
 <dd>
 
@@ -281,7 +224,25 @@ In the above example, the visibility of the button is determined by a group. Onl
 
 </dd>
 
-### Geolocation
+### idToken `object`
+
+<dd>
+
+An ID token serves as a verified confirmation of a user's identity and includes essential information such as their name, picture, email address etc. According to the OpenID Connect (OIDC) specifications, when a user successfully logs in, Appsmith receives an ID token.
+
+Appsmith provides the `idToken` parameter on the client side, allowing you to incorporate it into various operations like JavaScript functions, APIs, or queries as needed. You can read the value of an ID token in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
+
+```js
+{{appsmith.user.idToken}}
+```
+If you have defined custom scopes in your identity provider, the information associated with those scopes can be accessed within the Identity token.
+
+</dd>
+</dd>
+
+## geolocation `object`
+
+<dd>
 
 This object contains functions that allow you to retrieve the current user's location and the coordinates received from the user's device using the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API).
 
@@ -306,7 +267,7 @@ This object contains functions that allow you to retrieve the current user's loc
 }
 ```
 
-#### getCurrentPosition `function`
+### getCurrentPosition `function`
 
 <dd>
 
@@ -324,7 +285,7 @@ Similar to the original browser API, the `getCurrentPosition` function retrieves
 
 </dd>
 
-#### watchPosition `function`
+### watchPosition `function`
 
 <dd>
 
@@ -342,7 +303,7 @@ Similar to the original browser API, the `getCurrentPosition` retrieves periodic
 
 </dd>
 
-#### clearWatch `function`
+### clearWatch `function`
 
 <dd>
 
@@ -351,7 +312,12 @@ Signature: `() -> Promise`
 It is similar to the original browser API, with the difference being that you don't have to explicitly pass the `watchId`. Instead, if a watch is currently active, you must clear it before starting a new one.
 
 </dd>
+</dd>
 
-### Mode
+## mode `enum`
 
-This field is an enum that contains whether the app is currently running in view mode or edit mode. It takes the values VIEW|EDIT
+<dd>
+
+This field is an enum that contains whether the app runs in view or edit mode. It takes the values `VIEW` or `EDIT`.
+
+</dd>
