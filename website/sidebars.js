@@ -509,7 +509,7 @@ const sidebars = {
             'reference/appsmith-framework/query-object',
             {
               type: 'category',
-              label: 'Actions',
+              label: 'Framework Functions',
               link: {
                 type: 'doc',
                 id: 'reference/appsmith-framework/widget-actions/README',
