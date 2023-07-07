@@ -7,8 +7,7 @@ description: >-
 
 # Appsmith Object
 
-The Appsmith object is a global object that provides access to information and functionalities within an application. Using this object, you can perform tasks such as retrieving and updating data from databases or APIs, executing actions based on user interactions, and managing the application's overall behavior and flow.
-
+The Appsmith object is a global object that provides access to information and functionalities within an application.
 ## Properties
 
 The Appsmith object contains the following properties:
@@ -23,7 +22,7 @@ The Appsmith object contains the following properties:
 }
 ```
 
-### Store
+### store
 
 This object contains the key-value pairs of the local storage of the app. You can add or update the values to the store using the [storeValue function](widget-actions/store-value.md). Conversely, you can access the values from the store using their corresponding keys as shown below:
 
