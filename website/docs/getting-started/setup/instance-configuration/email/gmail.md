@@ -22,9 +22,8 @@ Follow these steps to set up a Google app password:
 3. Under the **How you sign in to Google** section, select **2-Step Verification**.
 4. Scroll down and select **App passwords**. 
 5. On the App passwords screen, choose the options as shown below:
-
- * Choose **Mail** for **Select app**. 
- * Choose **Other** for **Select device**, and enter a name for your Appsmith instance.
+    * Choose **Mail** for **Select app**. 
+    * Choose **Other** for **Select device**, and enter a name for your Appsmith instance.
 
 6. Click the **Generate** button to create the app password.
 7. Copy the generated app password on the next screen, and keep it safe. You need it to configure Gmail on Appsmith in the next section.
@@ -59,17 +58,34 @@ Follow these steps to configure your email provider using Admin Settings:
 <figcaption align="center"><i>Configure Gmail as an email service provider</i></figcaption>
 </figure>
 
-4. Add Gmail configuration details as below: 
-
- | Name | Description |
- |-----------|--------------|
- | **SMTP Host** | Add the SMTP host. <br/> a. If you want to connect without using Transport Layer Security (TLS): <br/> - SMTP Server - `aspmx.l.google.com`. <br/> b. If you want to connect using TLS protocol: <br/> - SMTP Server - `smtp.gmail.com`.|
- | **SMTP Port** | Add the SMTP port. <br/> a. If you want to connect without using TLS: <br/> - SMTP Port - `25`. <br/> b. If you want to connect using TLS: <br/> - SMTP Port - `587`.|
- | **From Address** | Add a verified email address to be shown in the **From** field when users receive an email. |
- | **Reply To Address** | Add a verified email address, so users can contact you. |
- | **TLS Protected Connection** | This option is turned off by default. Toggle it to enable the transport layer security protocol. |
- | **SMTP Username** | Your Gmail address. This is only needed when the transport layer security protocol is turned on.|
- | **SMTP Password** | The app password you generated in the [Create app password](#create-app-password) section. This is only needed when the transport layer security protocol is turned on. |
+4. Configure the parameters as shown below: 
+<dl>
+<dt><b>SMTP Host</b></dt>
+<dd><i>Options:</i>
+    <ul>
+        <li> <code>aspmx.l.google.com</code> to connect without Transport Layer Security (TLS) protocol. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
+        <li> <code>smtp.gmail.com</code> to connect with TLS protocol.</li>
+    </ul>
+</dd> <br/>
+<dt><b>SMTP Port</b></dt>
+<dd><i>Options:</i>
+   <ul>
+      <li><code> 25 </code> to connect without TLS protocol. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
+      <li> <code> 587 </code> to connect with TLS protocol.</li>
+   </ul>
+</dd><br/>
+<dt><b>From Address</b></dt>
+<dd>Add a verified email address to be shown in the <b>From</b> field when users receive an email.
+</dd> <br/>
+<dt><b>Reply To Address</b></dt>
+<dd>Add a verified email address, so users can contact you.</dd> <br/>
+<dt><b>TLS Protected Connection</b></dt>
+<dd>This option is turned off by default. Toggle it to enable the transport layer security protocol.</dd> <br/>
+<dt><b>SMTP Username</b></dt>
+<dd>Your Gmail address. This is only needed when the transport layer security protocol is turned on.</dd> <br/>
+<dt><b>SMTP Password</b></dt>
+<dd>Your Gmail password. Alternatively, if you have 2-Step Verification enabled, set it to the app password you generated in the <a href="#create-app-password">Create app password</a> section. This is only needed when the transport layer security protocol is turned on.</dd> 
+</dl>
 
 5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
 
@@ -83,17 +99,37 @@ Follow these steps to configure Gmail using environment variables:
 
 2. Update the values of the environment variables as shown below:
 
- |Variable | Description |
- |-----------|--------------|
- | `APPSMITH_MAIL_ENABLED` | Set it to true to enable the email service. |
- | `APPSMITH_MAIL_FROM` | Set it to the verified email of the sender. |
- | `APPSMITH_REPLY_TO` | Set it to the email that should receive replies by default. |
- | `APPSMITH_MAIL_HOST` | Set it to the SMTP host. <br/> a. If you want to connect without using Transport Layer Security (TLS) protocol: <br/> - SMTP Server - `aspmx.l.google.com`. <br/> b. If you want to connect using TLS: <br/> - SMTP Server - `smtp.gmail.com`.|
- | `APPSMITH_MAIL_PORT` | Set it to the SMTP port. <br/> a. If you want to connect without using TLS: <br/> - SMTP Port - `25`. <br/> b. If you want to connect using TLS: <br/> - SMTP Port - `587`.|
- | `APPSMITH_MAIL_SMTP_TLS_ENABLED` | Set it to `true` to enable transport layer security. |
- | `APPSMITH_MAIL_SMTP_AUTH` | Set it to share the credentials `APPSMITH_MAIL_USERNAME` and `APPSMITH_MAIL_PASSWORD` with the SMTP server. |
- | `APPSMITH_MAIL_USERNAME` | Set it to your Gmail address. This is only needed when the transport layer security protocol is turned on.
- | `APPSMITH_MAIL_PASSWORD` | Set it to your password. Alternatively, if you have 2-Step Verification enabled, set it to the app password you generated in the [Create app password Gmail](#create-app-password) section. This is only needed when the transport layer security protocol is turned on. |
+    <dl>
+    <dt><b>APPSMITH_MAIL_ENABLED</b></dt>
+    <dd>Set it to <code> true </code> to enable the email service.</dd> <br/>
+    <dt><b>APPSMITH_MAIL_FROM</b></dt>
+    <dd>Set it to the verified email of the sender.
+    </dd><br/>
+    <dt><b>APPSMITH_REPLY_TO</b></dt>
+    <dd>Set it to the email that should receive replies by default.</dd><br/>
+    <dt><b>APPSMITH_MAIL_HOST</b></dt>
+    <dd><i>Options:</i>
+        <ul> 
+        <li><code>aspmx.l.google.com</code> to connect without Transport Layer Security (TLS) protocol. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
+        <li><code>smtp.gmail.com</code> to connect using TLS protocol.</li>
+    </ul>
+    </dd><br/>
+    <dt><b>APPSMITH_MAIL_PORT</b></dt>
+    <dd><i>Options:</i>
+        <ul><li> <code>25</code> to connect without using TLS. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
+        <li><code>587</code> to connect using TLS protocol.</li></ul>
+    </dd><br/>
+    <dt><b>APPSMITH_MAIL_SMTP_TLS_ENABLED</b></dt>
+    <dd>
+        Set it to <code>true</code> to enable transport layer security.
+    </dd><br/>
+    <dt><b>APPSMITH_MAIL_SMTP_AUTH</b></dt>
+    <dd>Set it to <code>true</code> to share the <code>APPSMITH_MAIL_USERNAME</code> and <code>APPSMITH_MAIL_PASSWORD</code> with Gmail SMTP server.</dd><br/>
+    <dt><b>APPSMITH_MAIL_USERNAME</b></dt>
+    <dd>Set it to your Gmail address. This is only needed when the transport layer security protocol is turned on.</dd><br/>
+    <dt><b>APPSMITH_MAIL_PASSWORD</b></dt>
+    <dd>Set it to your password. Alternatively, if you have 2-Step Verification enabled, set it to the app password you generated in the <a href="#create-app-password">Create app password Gmail</a> section. This is only needed when the transport layer security protocol is turned on.</dd>
+    </dl>
 
 3. Restart the instance.
 
