@@ -5,24 +5,25 @@ Multiple environments in Appsmith enable developers to isolate development and t
 It allows you to switch between different environments while developing your app in edit mode. By switching environments, you are applying the datasource configurations defined in that environment.
 
 :::info
-The multiple environments feature is only available on Business Edition.
+The multiple environments feature is only available on [Business Edition.](https://www.appsmith.com/pricing)
 :::
+
+Check this guide on how to [Setup Multiple Environments](/connect-data/how-to-guides/setup-multiple-environments).
 
 ## Environments on Appsmith
 
 Appsmith offers two predefined environments: staging and production. These environments serve distinct purposes in the application development process:
 
-* **Staging Environment**: The staging environment is designed for development, QA, and user acceptance testing. It should be configured to connect to datasources that are used for these purposes.
+* **Staging**: Environment for development, QA, and user acceptance testing.
 
-* **Production Environment**: The production environment is intended for the live version of the application. It should be configured to connect to datasources containing the actual production data visible to end users.
+* **Production**: Live version with actual production data for end users.
 
 In Appsmith, environments work at the workspace level. This means that all the apps within a workspace share the same configuration values for both staging and production environments.
 
-Check this guide on how to [Setup Multiple Environments](/connect-data/how-to-guides/setup-multiple-environments).
 
 ## Why multiple environments?
 
-Multiple environments are essential for isolating development and testing from production, providing flexibility in datasource switching, and minimizing risks of unintended modifications, thereby ensuring efficient and reliable software development and deployment processes.
+Here are the reasons necessitating multiple environments:
 
 * **Isolation and Risk Management:** Multiple environments allow developers to separate development, testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage.
 
@@ -33,7 +34,13 @@ Multiple environments are essential for isolating development and testing from p
 
 ## Limitations
 
+While multiple environments in Appsmith provide significant benefits, there are some limitations to be aware of:
 
+* **Custom Environments:** Appsmith currently offers support for staging and production environments as predefined options. However, at present, custom environments are not supported in Appsmith. 
+
+* **Deployment Previews:** Although Appsmith allows for seamless switching between staging and production environments, there is currently no direct provision for deployment previews. Users may desire the ability to share their app changes with others using staging data, ensuring that ongoing development work can be reviewed without impacting the production version of the app.
+
+* **Exporting and Importing Environments:** When importing/exporting an app with bound environment variables for datasources, ensure that fields with different staging and production values are included in the export for correct configuration. 
 
 
 
