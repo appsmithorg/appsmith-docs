@@ -7,7 +7,7 @@ description: >-
 
 # Appsmith Object
 
-The Appsmith object is a global object that provides access to information and functionalities within an application. It contains data and methods that you can use to interact with the application and its components. You can perform tasks such as retrieving and updating data from databases or APIs, executing actions based on user interactions, and managing the application's overall behavior and flow.
+The Appsmith object is a global object that provides access to information and functionalities within an application. Using this object, you can perform tasks such as retrieving and updating data from databases or APIs, executing actions based on user interactions, and managing the application's overall behavior and flow.
 
 ## Properties
 
