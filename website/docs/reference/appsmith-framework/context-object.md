@@ -188,7 +188,7 @@ hash:"#n912xhego"
 
 <dd>
 
-Query parameters are predefined parameters that define specific content or actions based on the data being delivered. In a URL, query parameters are appended at the end of the URL with a `?` as a separator. YOu can access the value of `queryParams` using the following snippet:
+Query parameters are predefined parameters that define specific content or actions based on the data being delivered. In a URL, query parameters are appended at the end of the URL with a `?` as a separator. You can access the value of `queryParams` using the following snippet:
 
 ```js
 {{appsmith.URL.queryParams}}
