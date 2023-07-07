@@ -10,7 +10,7 @@ You can find the following settings in the **Settings** tab of the query editor 
   </dd><br />
 
   <dt><b>Use Prepared Statements</b></dt>
-  <dd>Toggles whether Appsmith uses pre-compiled and parameterized SQL statements to construct and execute database queries. This method improves the security of your SQL queries. This setting is turned on by default, and available only for SQL database queries. For more details, see <a href="/connect-data/concepts/how-to-use-prepared-statements">Prepared Statements</a>.
+  <dd>Toggles whether Appsmith uses pre-compiled and parameterized SQL statements to construct and execute database queries. This method improves the security of your SQL queries. This setting is turned on by default, and available for SQL database queries. For more details, see <a href="/connect-data/concepts/how-to-use-prepared-statements">Prepared Statements</a>.
   </dd><br />
 
   <dt><b>Query timeout</b></dt>
@@ -35,10 +35,10 @@ You can find the following settings in the **Settings** tab of the query editor 
 
   <dt><b>Smart JSON substitution</b></dt>
   <dd>JavaScript objects and JSON objects are formatted similarly, however they have different rules for where quotation marks are required. When this setting is turned on, Appsmith intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into JSON. This setting is turned on by default, however it may need to be turned off for some tasks such as sending raw binary data to an API. This setting is available for API queries. For a video guide on using this feature, see <a href="https://www.youtube.com/watch?v=-Z3y-pdNhXc">How to Use Smart JSON Substitution</a>.
-  </dd>
+  </dd><br />
 
   <dt><b>Smart BSON substitution</b></dt>
-  <dd>JavaScript objects and Binary JSON (BSON) objects are formatted similarly, however they have different rules for where quotation marks are required. When turned on, the query intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into BSON. This setting is turned on by default, and available only for <a href="/connect-data/reference/querying-mongodb">MongoDB</a> queries.
+  <dd>JavaScript objects and Binary JSON (BSON) objects are formatted similarly, however they have different rules for where quotation marks are required. When turned on, the query intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into BSON. This setting is turned on by default, and available for <a href="/connect-data/reference/querying-mongodb">MongoDB</a> queries.
   </dd>
 
 </dl>
