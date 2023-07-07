@@ -34,7 +34,7 @@ If your datasource is locally hosted, follow the instructions in [Connect Dataso
 
 8. Click **Save** to create and save the datasource connection.
 
-9. If you have set up multiple environments (*as mentioned in step 6*), you can switch between the production and staging environments by using the dropdown menu located at the bottom left. 
+9. If you have set up [multiple environments](/connect-data/how-to-guides/setup-multiple-environments) (*as mentioned in step 6*), you can switch between the production and staging environments by using the dropdown menu located at the bottom left. 
 
 ## See also
 [Query Data](/connect-data/how-to-guides/query-data)
