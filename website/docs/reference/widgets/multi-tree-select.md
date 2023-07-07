@@ -136,3 +136,79 @@ Style properties allow you to change the look and feel of the widget.
 | **Label Text Color** | Allows you to set text color for the label.              |
 | **Label Text Size**  | Allows you to set the size of the label.                 |
 | **Label Font Style** | Allows you to choose a font style, that's,  bold or italic. |
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+MultiTreeSelect1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+MultiTreeSelect1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+MultiTreeSelect1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+MultiTreeSelect1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+MultiTreeSelect1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+MultiTreeSelect1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>

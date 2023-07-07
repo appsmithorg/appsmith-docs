@@ -120,6 +120,105 @@ These event handlers can be used to run queries, JS code, or other [supported ac
 | **onBlur**      | Sets an action to take place when the input loses focus. |
 | **onSubmit**      | Sets an action to take place when the input is submitted with the Enter key. When the widget's **Data Type** is set to **Multi-line text**, the submit is triggered by CTRL + Enter instead. |
 
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Input1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Input1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Input1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Input1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setValue `boolean`
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+Input1.setValue(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Input1.setValue(true).then(() => {
+  // code to be executed after value is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Input1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Input1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
+
 ## Further reading
 
 - [Currency Input](/reference/widgets/currency-input)
