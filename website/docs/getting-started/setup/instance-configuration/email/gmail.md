@@ -61,17 +61,17 @@ Follow these steps to configure your email provider using Admin Settings:
 4. Configure the parameters as shown below: 
 <dl>
 <dt><b>SMTP Host</b></dt>
-<dd><i>Options:</i>
+<dd>
     <ul>
-        <li> <code>aspmx.l.google.com</code> to connect without Transport Layer Security (TLS) protocol. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
-        <li> <code>smtp.gmail.com</code> to connect with TLS protocol.</li>
+        <li>To connect without using TLS protocol enter <code>aspmx.l.google.com</code>. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
+        <li> To connect with TLS protocol enter <code>smtp.gmail.com</code>.</li>
     </ul>
 </dd> <br/>
 <dt><b>SMTP Port</b></dt>
-<dd><i>Options:</i>
+<dd>
    <ul>
-      <li><code> 25 </code> to connect without TLS protocol. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
-      <li> <code> 587 </code> to connect with TLS protocol.</li>
+      <li>To connect without using TLS protocol enter <code> 25 </code>. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
+      <li>To connect with TLS protocol enter <code> 587 </code>.</li>
    </ul>
 </dd><br/>
 <dt><b>From Address</b></dt>
@@ -108,16 +108,16 @@ Follow these steps to configure Gmail using environment variables:
     <dt><b>APPSMITH_REPLY_TO</b></dt>
     <dd>Set it to the email that should receive replies by default.</dd><br/>
     <dt><b>APPSMITH_MAIL_HOST</b></dt>
-    <dd><i>Options:</i>
+    <dd>
         <ul> 
-        <li><code>aspmx.l.google.com</code> to connect without Transport Layer Security (TLS) protocol. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
-        <li><code>smtp.gmail.com</code> to connect using TLS protocol.</li>
+        <li>To connect without Transport Layer Security (TLS) protocol enter <code>aspmx.l.google.com</code>. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
+        <li>To connect using TLS protocol enter <code>smtp.gmail.com</code>.</li>
     </ul>
     </dd><br/>
     <dt><b>APPSMITH_MAIL_PORT</b></dt>
-    <dd><i>Options:</i>
-        <ul><li> <code>25</code> to connect without using TLS. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
-        <li><code>587</code> to connect using TLS protocol.</li></ul>
+    <dd>
+        <ul><li>To connect without using TLS protocol enter <code>25</code>. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
+        <li>To connect using TLS protocol enter <code>587</code>.</li></ul>
     </dd><br/>
     <dt><b>APPSMITH_MAIL_SMTP_TLS_ENABLED</b></dt>
     <dd>
