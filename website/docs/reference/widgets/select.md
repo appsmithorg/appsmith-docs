@@ -198,6 +198,130 @@ These are functions that are called when event listeners are triggered in the wi
 | **onDropdownClose** | The "onDropdownClose" property allows you to specify the action that should occur when the user closes the dropdown list. For example, you could use the "onDropdownClose" event to store the selected option in a database, hide additional information, or reset the widget to its original state.  |
 
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Select1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Select1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Select1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Select1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setOptions `array<object>`
+
+<dd>
+
+Sets the options to be displayed in the widget.
+
+*Example*:
+
+```js
+Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }])
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]).then(() => {
+  // code to be executed after options are set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Select1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Select1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
+
+
+
+
+#### setSelectedOption `object`
+
+<dd>
+
+Sets the selected option of the Select widget.
+
+*Example*:
+
+```js
+Select1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Select1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
+  // code to be executed after selected option is set
+})
+```
+
+</dd>
+
+
 
 ## Troubleshooting
 

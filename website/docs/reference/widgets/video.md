@@ -46,3 +46,78 @@ Style properties allow you to change the look and feel of the widget.
 | **Background color** | Sets the widget's background color.                    |
 | **Border Radius**    | Allows you to define curved corners.                   |
 | **Box Shadow**       | Allows you to choose from the available shadow styles. |
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Video1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Video1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setURL `string`
+
+<dd>
+
+Sets the URL of the video to be displayed in the widget.
+
+*Example*:
+
+```js
+Video1.setURL('<https://example.com/video.mp4>')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Video1.setURL('<https://example.com/video.mp4>').then(() => {
+  // code to be executed after URL is set
+})
+```
+
+</dd>
+
+
+#### setPlaying `boolean`
+
+<dd>
+
+Sets the playing state of the Video widget.
+
+*Example*:
+```js
+Video1.setPlaying(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Video1.setPlaying(true).then(() => {
+  // code to be executed after playing state is set
+})
+```
+</dd>
