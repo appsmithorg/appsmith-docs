@@ -111,7 +111,6 @@ check
 OAuth
 MongoDB
 URI
-disabled
 Disabled
 Host
 unencrypted
@@ -119,7 +118,6 @@ javascript
 MySQL
 SSL
 SQL
-disable
 callbackFunction
 setInterval
 clearInterval
@@ -392,7 +390,6 @@ onCheckChange
 isChecked
 isDisabled
 default state
-disable
 JSON Form
 selectedValues
 Allow Currency Change
@@ -427,6 +424,8 @@ CRM
 Value
 navbar
 Google Maps
+Gmail
+Optional
 mode
 getCurrentPosition
 geolocation
