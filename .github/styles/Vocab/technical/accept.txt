@@ -426,3 +426,10 @@ navbar
 Google Maps
 Gmail
 Optional
+mode
+getCurrentPosition
+geolocation
+idToken
+groups
+roles
+store
