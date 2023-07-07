@@ -22,7 +22,9 @@ This page shows you how to connect to a datasource on Appsmith.
 
 5. If you are a self-hosted user, you need to whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your datasource instance before connecting to it. 
 
-6. Set the required connection parameters to connect to your datasource. Appsmith encrypts all your datasource credentials and stores them securely. For a complete description of the connection parameters, see the [Reference guide](/connect-data/reference) for your datasource. 
+6. If you are a [Business Edition](https://www.appsmith.com/pricing) user, you can configure both production and staging data by using multiple environments.
+
+7. Set the required connection parameters to connect to your datasource. Appsmith encrypts all your datasource credentials and stores them securely. For a complete description of the connection parameters, see the [Reference guide](/connect-data/reference) for your datasource. 
 
 :::info
 If your datasource is locally hosted, follow the instructions in [Connect Datasouce on Local Machine](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith) to get the hostname.
@@ -32,6 +34,7 @@ If your datasource is locally hosted, follow the instructions in [Connect Dataso
 
 8. Click **Save** to create and save the datasource connection.
 
+9. Once the datasource connection is saved, you can switch between production and staging environments using the dropdown menu at the bottom left. (*Only for [Business Edition](https://www.appsmith.com/pricing) user*)
 
 ## See also
 [Query Data](/connect-data/how-to-guides/query-data)
