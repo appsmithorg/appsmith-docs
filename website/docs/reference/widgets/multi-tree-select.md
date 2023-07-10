@@ -1,4 +1,4 @@
-# Multi-tree-select
+# MultiTree Select
 
 This page provides information on using the  Multi-tree-select, which allow users to select multiple option from a hierarchical list.
 
@@ -16,7 +16,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The `options` property allows you define the options available in the multi-tree-select widget. It is represented as an array of objects, where each object contains properties such as `label`, `value`, and optionally `children`.
+The **Options** property allows you define the options available in the MultiTreeSelect widget. It is represented as an array of objects, where each object contains properties such as `label`, `value`, and optionally `children`.
 
 *Expected data structure:*
 ```js
@@ -364,7 +364,7 @@ The `isValid` property indicates the validation status of a widget, providing in
 *Example:*
 
 ```js
-{{MultiTreeSelect1.isVisible}}
+{{MultiTreeSelect1.isValid}}
 ```
 
 
