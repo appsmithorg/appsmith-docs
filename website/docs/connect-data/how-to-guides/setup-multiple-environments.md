@@ -44,6 +44,5 @@ Select the environment on the bottom left corner of the screen to configure the 
 
 Developers can switch between staging and production environments in the *Edit mode*. In addition, users with the necessary permissions can also switch to the staging environment configuration when accessing the app in *View mode*. For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
-:::note
 Switching between environments in the *Edit mode* does not affect the deployed version of the app, as the production environment is always used for the deployed version.
-:::
+
