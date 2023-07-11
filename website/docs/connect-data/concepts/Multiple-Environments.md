@@ -1,33 +1,32 @@
 # Multiple Environments
 
-Multiple environments in Appsmith enable developers to isolate development and testing from production, avoiding unintended modifications and facilitating seamless switching between datasources.
-
-It allows you to switch between different environments while developing your app in edit mode. By switching environments, you are applying the datasource configurations defined in that environment.
-
 :::info
 The multiple environments feature is only available on [Business Edition.](https://www.appsmith.com/pricing)
 :::
 
-Check this guide on how to [Setup Multiple Environments](/connect-data/how-to-guides/setup-multiple-environments).
+Multiple environments in Appsmith enable developers to isolate development and testing from production, avoiding unintended modifications and facilitating seamless switching between datasources.
+
+It allows you to switch between different environments while developing your app in edit mode. By switching environments, you are applying the datasource configurations defined in that environment.
+
+See how to [Setup Multiple Environments](/connect-data/how-to-guides/setup-multiple-environments).
 
 ## Environments on Appsmith
 
-Appsmith offers two predefined environments: staging and production. These environments serve distinct purposes in the application development process:
+Appsmith provides two environments: 
 
 * **Staging**: Environment for development, QA, and user acceptance testing.
 
 * **Production**: Live version with actual production data for end users.
 
-In Appsmith, environments work at the workspace level. This means that all the apps within a workspace share the same configuration values for both staging and production environments.
-
+In Appsmith, environments work at the *Workspace* level. This means that all the applications within a workspace share the same configuration values for both staging and production environments.
 
 ## Why multiple environments?
 
 Here are the reasons necessitating multiple environments:
 
-* **Isolation and Risk Management:** Multiple environments allow developers to separate development, testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage.
+* **Isolation and Risk Management:** Multiple environments allow developers to separate testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage.
 
-* **Efficient Development:** With multiple environments, developers can easily switch between different data sources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
+* **Efficient Development:** With multiple environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
 
 * **Flexible Testing:** Having separate staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to production.
 

@@ -316,7 +316,7 @@ const sidebars = {
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
             'connect-data/concepts/connection-pooling',
-            'connect-data/concepts/Multiple-Environments',
+            'connect-data/concepts/multiple-environments',
             'connect-data/concepts/how-to-use-prepared-statements',
           ]
         },
