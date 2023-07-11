@@ -1,6 +1,6 @@
-# MultiTree Select
+# Multi TreeSelect
 
-This page provides information on using the  Multi-tree-select, which allow users to select multiple option from a hierarchical list.
+This page provides information on using the Multi TreeSelect, which allows users to select single or multiple options from a tree-style hierarchical dropdown list.
 
 
 
@@ -16,7 +16,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The **Options** property allows you define the options available in the MultiTreeSelect widget. It is represented as an array of objects, where each object contains properties such as `label`, `value`, and optionally `children`.
+The **Options** property allows you define the options available in the Multi TreeSelect widget. It is represented as an array of objects, where each object contains properties such as `label`, `value`, and optionally `children`.
 
 *Expected data structure:*
 ```js
@@ -42,17 +42,37 @@ The **Options** property allows you define the options available in the MultiTre
 ]
 ```
 
-You can **dynamically generate** options by fetching data from queries or JavaScript functions and binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can **dynamically generate** options by fetching data from queries or JavaScript functions and binding the response to the **Options** property. For example, you have a database that includes a column for product categories (type), as well as other product details such as its name and description.
+
+You can construct a query that retrieves the relevant data and formats it to be used as options, something like:
 
 *Example:*
+```sql
+SELECT 
+  type AS label,
+  type AS value,
+  JSON_AGG(
+    JSON_BUILD_OBJECT(
+      'label', (name),
+      'value', (name)
+    )
+  ) AS children
+FROM product
+GROUP BY type
+ORDER BY label;
+```
+
+In the **Options** property, display the data using:
+
 ```js
 {{fetchData.data}}
 ```
+
 If the retrieved data is not in the desired format, you can use JavaScript to **transform** it before passing it to the widget. For example, you have a database that includes a column for product categories (type), as well as other product details such as its name and description. To transform this data, use:
 
 *Example:*
 ```js
-{{ getData.data.reduce((acc, cur) => {
+{{ fetchData.data.reduce((acc, cur) => {
   const group = acc.find(item => item.value === cur.type);
   group ? group.children.push({ label: cur.name, value: cur.name }) : acc.push({ label: cur.type, value: cur.type, children: [{ label: cur.name, value: cur.name }] });
   return acc;
@@ -325,6 +345,49 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `MultiTreeSelect1.isVisible`.
 
 
+#### options `array`
+<dd>
+
+The `options` property contains the values available for selection in a Multi TreeSelect widget.
+
+
+*Example:*
+
+```js
+{{MultiTreeSelect1.options}}
+```
+
+
+</dd>
+
+#### selectedOptionLabels `array`
+<dd>
+
+The `selectedOptionLabels` property represents an array of labels for the selected options. The labels updates dynamically if the default values of the dropdown change or if the user modifies their option selection.
+
+*Example:*
+
+```js
+{{MultiTreeSelect1.selectedOptionLabels}}
+```
+
+
+</dd>
+
+#### selectedOptionValues `array`
+<dd>
+
+The `selectedOptionValues` property represents an array of values for the selected options. The values updates dynamically if the default values of the dropdown change or if the user modifies their option selection.
+
+
+*Example:*
+
+```js
+{{MultiTreeSelect1.selectedOptionValues}}
+```
+
+
+</dd>
 
 #### isDisabled `boolean`
 
@@ -370,46 +433,3 @@ The `isValid` property indicates the validation status of a widget, providing in
 
 </dd>
 
-#### options `array`
-<dd>
-
-The `options` property displays the values of all the options.
-
-
-*Example:*
-
-```js
-{{MultiTreeSelect1.options}}
-```
-
-
-</dd>
-
-#### selectedOptionLabels `array`
-<dd>
-
-The `selectedOptionLabels` property represents an array of labels for the selected options. The labels updates dynamically if the default values of the dropdown change or if the user modifies their option selection.
-
-*Example:*
-
-```js
-{{MultiTreeSelect1.selectedOptionLabels}}
-```
-
-
-</dd>
-
-#### selectedOptionValues `array`
-<dd>
-
-The `selectedOptionValues` property represents an array of values for the selected options. The values updates dynamically if the default values of the dropdown change or if the user modifies their option selection.
-
-
-*Example:*
-
-```js
-{{MultiTreeSelect1.selectedOptionValues}}
-```
-
-
-</dd>
