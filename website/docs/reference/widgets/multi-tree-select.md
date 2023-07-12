@@ -337,81 +337,8 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 
 This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
 
-
 </dd>
 
-## Methods
-
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
-
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
-
-
-#### setVisibility `boolean`
-
-<dd>
-
-Sets the visibility of the widget.
-
-*Example*:
-
-```js
-MultiTreeSelect1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MultiTreeSelect1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
-
-#### setDisabled `boolean`
-
-<dd>
-
-Sets the disabled state of the widget.
-
-*Example*:
-
-```js
-MultiTreeSelect1.setDisabled(false)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MultiTreeSelect1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
-</dd>
-
-
-#### setRequired `boolean`
-
-<dd>
-
-Sets whether the widget is required or not.
-
-*Example*:
-
-```js
-MultiTreeSelect1.setRequired(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MultiTreeSelect1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
-
-</dd>
 
 ## Reference properties
 
@@ -505,5 +432,4 @@ The `isValid` property indicates the validation status of a widget, providing in
 
 
 </dd>
-
 
