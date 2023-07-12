@@ -17,7 +17,7 @@ The Appsmith object contains the following properties:
 
 <dd>
 
-This object contains the key-value pairs of the local storage of the app. You can add or update the values to the store using the [storeValue ()](widget-actions/store-value.md). Conversely, you can access the values from the store using their corresponding keys, as shown below:
+This object lets you access any app-level data or temporary state that is stored on the user's browser. You can add or update data using the storeValue() method. You can access saved data by referencing their keys:
 
 ```javascript
 {{ appsmith.store.KEY_NAME }}
