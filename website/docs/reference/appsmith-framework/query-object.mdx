@@ -7,24 +7,20 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Query Object
 
-This page describes how to use the Query object to run queries and access the data from the response.
-
-## run()
-
-Calling a query's `run()` function executes that query. `run()` is asynchronous and returns a promise, so you can use it with async syntax like `.then()` chains and `async/await`. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
-
-### Signature
-
-```
-run(params: Object): Promise
-```
-
-| Argument      | Description                                                                                         |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| **params**    | An object containing key-value pairs to pass into the query. Accessed with `{{ this.params.key }}`. |
+The query object contains all the parameters required to run queries and access the data from the response. This page describes how to use the Query object.
 
 
-This function returns a JavaScript **promise**, which can be used to handle async actions in sequence. Use `.then()` and `.catch()` to write code to be executed when the query returns successfully or in error, respectively. Or, use `async/await` syntax.
+## Properties
+
+Query object has the following properties that you can use to reference and control data related to your query.
+
+### run `function`
+
+<dd>
+
+When you call the `run()` function of a query, it executes the query. `run()` is an asynchronous function and it returns a promise. This asynchronous nature allows you to handle sequential asynchronous actions using `.then()` and `.catch()` methods or the `async/await` syntax.
+
+
 
 ```javascript
 // Using promise syntax to chain actions in sequence
@@ -34,14 +30,33 @@ This function returns a JavaScript **promise**, which can be used to handle asyn
         .catch(() => {...}) // run if the query encounters any errors
 }}
 ```
+It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
 
-To learn more about chaining actions to create complex workflows, see [complex workflows](/core-concepts/writing-code/workflows#complex-workflows).
+#### Signature
 
-### Pass parameters to run() {#pass-parameters-to-run}
+<dd>
 
-In some cases, like [running a query inside a loop](/connect-data/how-to-guides/how-to-pass-params-to-an-api), parameters may need to be passed to the query with values contextual to the execution.
+```
+run(params: Object): Promise
+```
 
-For this, use the `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
+#### Argument
+
+#### params `object`
+
+<dd>
+
+It is an object containing key-value pairs to pass into the query. You can access params using the key name as shown below:
+
+```
+{{ this.params.KEY_NAME }}
+```
+</dd>
+</dd>
+
+#### Pass parameters to run() {#pass-parameters-to-run}
+
+In certain scenarios, such as when [running a query inside a loop](/connect-data/how-to-guides/how-to-pass-params-to-an-api), it may be necessary to pass parameters to the query with values that are contextual to the execution. In such cases, you can utilize the `params` argument to pass an object consisting of key-value pairs into your query.
 
 **Examples:**
 
@@ -81,17 +96,45 @@ getByIds: async (ids) => {
 </TabItem>
 </Tabs>
 
+</dd>
 
-## Properties
+### data `object`
 
-These properties are used to reference and control data related to your query.
+<dd>
 
-| Property         | Description                                                                                  |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| **data**         | Contains the response body from the last successful execution of this query. If this property is referenced in a widget's property field, the query is automatically run on page load. |
-| **responseMeta** | Contains metadata from the last response to this query's execution.                          |
-| **clear()**      | Empties all data from the query's **`data`** property.                                       |
-| [**run()**](#signature) | Executes the query when called. Can't be called in sync fields; see [sync vs. async fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function). |
+`data` is a read-only property that contains the response body from the last successful execution of this query. 
+
+```
+{{QUERY_NAME.data}}
+```
+If this property is referenced in a widget's property field, the query is automatically run on page load.
+
+</dd>
+
+### responseMeta `object`
+
+<dd>
+
+The `responseMeta` object contains details about the response, such as the status code, headers, and other relevant information related to the query's execution and the server's response.
+
+```
+{{QUERY_NAME.responseMeta}}
+```
+
+</dd>
+
+### clear `object`
+
+<dd>
+
+This object clears all data from the query's `data` property.
+
+``` 
+{{QUERY_NAME.clear}}
+```
+
+</dd>
+
 
 ## Further reading
 
