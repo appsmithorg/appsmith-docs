@@ -442,7 +442,7 @@ fontFamily
 boxShadow
 appBorderRadius
 borderRadius
-color
+colors
 primaryColor
 theme
 user

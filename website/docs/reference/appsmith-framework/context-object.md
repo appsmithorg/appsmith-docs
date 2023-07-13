@@ -264,24 +264,25 @@ This object contains the details of the theme properties applied to the applicat
 
 The theme object has the following attributes:
 
-#### color
-
-#### primaryColor `string`
+#### colors `object`
 
 <dd>
+
+This object contains the color properties of the application. It has the following properties:
+
+#### primaryColor `string`
 
 It refers to the app's primary color set in the theme section of the app settings. To access this value, you can use the following code snippet:
 
 ```js
 {{appsmith.theme.colors.primaryColor}}
 ```
-</dd>
 
 #### backgroundColor `string`
 
-<dd>
 
-The `backgroundColor` property refers to the background color set in the theme section of the app settings. To access the value of background color, you can use the following code snippet:
+
+The `backgroundColor` property refers to the background color set in the theme section of the app settings. To access the value of the background color, you can use the following code snippet:
 
 
 ```js
@@ -290,11 +291,14 @@ The `backgroundColor` property refers to the background color set in the theme s
 
 </dd>
 
-#### borderRadius
+#### borderRadius `object`
+
+<dd>
+
+This object contains the border properties that enable you to control the curvature or roundness of the corners of the widgets in the application.
 
 #### appBorderRadius `string`
 
-<dd>
 
 It refers to the border radius set in the theme section of the app settings. To access its value, you can use the following code snippet:
 
@@ -303,11 +307,15 @@ It refers to the border radius set in the theme section of the app settings. To 
 ```
 </dd>
 
-#### boxShadow
+#### boxShadow `object`
+
+<dd>
+
+This object allows you to add a shadow effect to the widgets in your application.
 
 #### appBoxShadow `string`
 
-<dd>
+
 
 It refers to the box shadow set in the theme section of the app settings. You can access the value of `appBoxShadow` using the following snippet: 
 
@@ -317,17 +325,21 @@ It refers to the box shadow set in the theme section of the app settings. You ca
 
 </dd>
 
-#### fontFamily
+#### fontFamily `object`
+
+<dd>
+
+This object contains the font properties of your application.
 
 #### appFont `string`
 
-<dd>
 
 It refers to the font family set for the app in the theme section for app settings. You can access the value of `appFont` using the following snippet: 
 
 ```js
 {{appsmith.theme.fontFamily.appFont}}
 ```
+
 </dd>
 </dd>
 
