@@ -1,14 +1,20 @@
 # Multiple Environments
 
+This page describes Multiple environments, which allows developers to isolate development and testing from production, avoiding unintended modifications and facilitating seamless switching between datasources.
+
+
 :::info
 The multiple environments feature is only available on [Business Edition.](https://www.appsmith.com/pricing)
 :::
 
-Multiple environments in Appsmith enable developers to isolate development and testing from production, avoiding unintended modifications and facilitating seamless switching between datasources.
-
-It allows you to switch between different environments while developing your app in edit mode. By switching environments, you are applying the datasource configurations defined in that environment.
-
 See how to [Setup Multiple Environments](/connect-data/how-to-guides/setup-multiple-environments).
+
+
+## What are Multiple Environments
+
+Multiple environments refer to the practice of creating and using different settings or contexts for various activities or processes. Each environment mimics the necessary conditions required for a particular phase, ensuring a controlled and isolated environment for specific tasks. 
+
+This approach allows developers to test and validate changes without affecting the live production environment. By isolating the production environment, developers can work confidently, reducing the likelihood of accidental mishaps and making it easier to manage and reverse any unforeseen issues.
 
 ## Environments on Appsmith
 
@@ -19,6 +25,8 @@ Appsmith provides two environments:
 * **Production**: Live version with actual production data for end users.
 
 In Appsmith, environments work at the *Workspace* level. This means that all the applications within a workspace share the same configuration values for both staging and production environments.
+
+For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
 ## Benefits of Multiple Environments
 
