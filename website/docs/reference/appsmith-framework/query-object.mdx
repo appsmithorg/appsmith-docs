@@ -12,7 +12,37 @@ The query object contains the parameters required to run queries and access the 
 
 ## Properties
 
-Query object has the following properties that you can use to reference and control data related to your query.
+The query object has the following properties that you can use to reference the query's response or check the status of the query.
+
+### data `Array`
+
+<dd>
+
+`data` is a read-only property that contains the response body from the last successful execution of this query. 
+
+```
+{{QUERY_NAME.data}}
+```
+If this property is referenced in a widget's property field, the query is automatically run on page load. You can manually enable a query to run on page load from the [query settings](/connect-data/reference/query-settings).
+
+</dd>
+
+### responseMeta `object`
+
+<dd>
+
+The `responseMeta` object contains details about the response, such as the status code, headers, and other relevant information related to the query's execution and the server's response.
+
+```
+{{QUERY_NAME.responseMeta}}
+```
+
+</dd>
+
+
+## Methods
+
+Query object has the following methods that enable you to run a query or clear a query response.
 
 ### run() `function`
 
@@ -88,37 +118,11 @@ getByIds: async (ids) => {
 </Tabs>
 
 
-
-### data `object`
-
-<dd>
-
-`data` is a read-only property that contains the response body from the last successful execution of this query. 
-
-```
-{{QUERY_NAME.data}}
-```
-If this property is referenced in a widget's property field, the query is automatically run on page load. You can manually enable a query to run on page load from the [query settings](/connect-data/reference/query-settings).
-
-</dd>
-
-### responseMeta `object`
+### clear `function`
 
 <dd>
 
-The `responseMeta` object contains details about the response, such as the status code, headers, and other relevant information related to the query's execution and the server's response.
-
-```
-{{QUERY_NAME.responseMeta}}
-```
-
-</dd>
-
-### clear `object`
-
-<dd>
-
-This object clears all data from the query's `data` property.
+This function clears all data from the query's `data` property.
 
 ``` 
 {{QUERY_NAME.clear}}
