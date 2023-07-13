@@ -9,33 +9,34 @@ description: >-
 
 The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.
 
+## Properties
+
 The Appsmith object contains the following properties:
 
-
-## store `object`
+### store `object`
 
 <dd>
 
-This object contains the key-value pairs of the local storage of the app. You can add or update the values to the store using the [storeValue function](widget-actions/store-value.md). Conversely, you can access the values from the store using their corresponding keys, as shown below:
+This object lets you access any app-level data or temporary state that is stored on the user's browser. You can add or update data using the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) method. You can access saved data by referencing their keys:
 
 ```javascript
-{{ appsmith.store.<key> }}
+{{ appsmith.store.KEY_NAME }}
 ```
 
 </dd>
 
-## URL `object`
+### URL `object`
 
 <dd>
 
-This object contains all the values associated with the current URL that the user is on. To access these values from the URL, you can use the following code snippet:
+This object contains all the attributes of the current URL that the user is on. To access these values from the URL, you can use the following code snippet:
 
 ```javascript
 {{ appsmith.URL }}
 ```
 URL object has the following attributes:
 
-### host `string`
+#### host `string`
 
 <dd>
 
@@ -47,11 +48,11 @@ The host property of the URL is a string that consists of the hostname and the U
   
 </dd>
 
-### hostname `string`
+#### hostname `string`
 
 <dd>
 
-The hostname property of the URL is a string that represents the **URL's domain**. In simpler terms, hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number). To access the hostname, you can use the following code snippet:
+The hostname property of the URL is a string that represents the URL's domain. In simpler terms, hostname is the [host](/reference/appsmith-framework/context-object#host) name (without the port number). To access the hostname, you can use the following code snippet:
 
 ```js
 {{appsmith.URL.host}}
@@ -59,7 +60,7 @@ The hostname property of the URL is a string that represents the **URL's domain*
 
 </dd>
 
-### fullPath `string`
+#### fullPath `string`
 
 <dd>
 
@@ -80,7 +81,7 @@ You can access the fullPath using the following snippet:
 
 </dd>
 
-### pathname `string`
+#### pathname `string`
 
 <dd>
 
@@ -93,7 +94,7 @@ The pathname is a string that represents the path component of the URL. It consi
 </dd>
 
 
-### port `string`
+#### port `string`
 
 <dd>
 
@@ -105,7 +106,7 @@ The URL's port property is a string containing the URL's port number. You can ac
 
 </dd>
 
-### protocol `string`
+#### protocol `string`
 
 <dd>
 
@@ -117,7 +118,7 @@ The protocol property of the URL is a string that represents the protocol scheme
 
 </dd>
 
-### hash `string`
+#### hash `string`
 
 <dd>
 
@@ -129,22 +130,22 @@ The value of the `appsmith.URL.hash` property is a string that represents the fr
 
 </dd>
 
-### queryParams `object`
+#### queryParams `object`
 
 <dd>
 
-Query parameters are predefined parameters that define specific content or actions based on the data being delivered. In a URL, query parameters are appended at the end of the URL with a `?` as a separator. You can access the value of `queryParams` using the following snippet:
+The query parameters are a component of a URL that allows for passing data to a web server or application. In a URL, query parameters are appended at the end of the URL with a `?` as a separator. You can access the value of `queryParams` using the following snippet:
 
 ```js
 {{appsmith.URL.queryParams}}
 ```
 
-The `queryParams` object can be used to read data sent from other pages to this page using the [navigateTo function](widget-actions/navigate-to).
+The `queryParams` object can be used to [share data across pages](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
 
 </dd>
 </dd>
 
-## User `object`
+### user `object`
 
 <dd>
 
@@ -163,15 +164,20 @@ This object contains the data of the currently authenticated user.
 }
 ```
 
-### roles `object`
-
-<dd>
+#### roles `object`
 
 :::info
 This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
 :::
 
-This object contains an array of strings of the roles assigned to the currently authenticated user.
+<dd>
+
+This object contains an array of strings of the roles assigned to the currently authenticated user. You can access the value of roles using the snippet given below:
+
+```js
+appsmith.user.roles
+```
+It returns an array of all the roles in your instance. For example:
 
 ```javascript
 
@@ -195,15 +201,21 @@ In the above example, the visibility of the button is determined by a role. Only
 
 </dd>
 
-### groups `object`
+#### groups `object`
 
-<dd>
 
 :::info
 This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
 :::
 
-This object contains an array of strings of the groups assigned to the currently authenticated user.
+<dd>
+
+This object contains an array of strings of the groups assigned to the currently authenticated user. You can access the value of groups using the snippet given below:
+
+```js
+appsmith.user.groups
+```
+It returns an array of all the groups in your instance. For example:
 
 ```javascript
 [
@@ -224,7 +236,7 @@ In the above example, the visibility of the button is determined by a group. Onl
 
 </dd>
 
-### idToken `object`
+#### idToken `object`
 
 <dd>
 
@@ -240,7 +252,98 @@ If you have defined custom scopes in your identity provider, the information ass
 </dd>
 </dd>
 
-## geolocation `object`
+### theme `object`
+
+<dd>
+
+This object contains the details of the theme properties applied to the application. You can use this object to set certain properties in widgets to be aligned with the app theme or to write custom logic.
+
+```js
+{{appsmith.theme}}
+```
+
+The theme object has the following attributes:
+
+#### colors `object`
+
+<dd>
+
+This object contains the color properties of the application. It has the following properties:
+
+#### primaryColor `string`
+
+It refers to the app's primary color set in the theme section of the app settings. To access this value, you can use the following code snippet:
+
+```js
+{{appsmith.theme.colors.primaryColor}}
+```
+
+#### backgroundColor `string`
+
+
+
+The `backgroundColor` property refers to the background color set in the theme section of the app settings. To access the value of the background color, you can use the following code snippet:
+
+
+```js
+{{appsmith.theme.colors.backgroundColor}}
+```
+
+</dd>
+
+#### borderRadius `object`
+
+<dd>
+
+This object contains the border properties that enable you to control the curvature or roundness of the corners of the widgets in the application.
+
+#### appBorderRadius `string`
+
+
+It refers to the border radius set in the theme section of the app settings. To access its value, you can use the following code snippet:
+
+```js
+{{appsmith.theme.borderRadius.appBorderRadius}}
+```
+</dd>
+
+#### boxShadow `object`
+
+<dd>
+
+This object allows you to add a shadow effect to the widgets in your application.
+
+#### appBoxShadow `string`
+
+
+
+It refers to the box shadow set in the theme section of the app settings. You can access the value of `appBoxShadow` using the following snippet: 
+
+```js
+{{appsmith.theme.boxShadow.appBoxShadow}}
+```
+
+</dd>
+
+#### fontFamily `object`
+
+<dd>
+
+This object contains the font properties of your application.
+
+#### appFont `string`
+
+
+It refers to the font family set for the app in the theme section for app settings. You can access the value of `appFont` using the following snippet: 
+
+```js
+{{appsmith.theme.fontFamily.appFont}}
+```
+
+</dd>
+</dd>
+
+### geolocation `object`
 
 <dd>
 
@@ -267,7 +370,7 @@ This object contains functions that allow you to retrieve the current user's loc
 }
 ```
 
-### getCurrentPosition `function`
+#### getCurrentPosition `function`
 
 <dd>
 
@@ -285,7 +388,7 @@ Similar to the original browser API, the `getCurrentPosition` function retrieves
 
 </dd>
 
-### watchPosition `function`
+#### watchPosition `function`
 
 <dd>
 
@@ -303,7 +406,7 @@ Similar to the original browser API, the `getCurrentPosition` retrieves periodic
 
 </dd>
 
-### clearWatch `function`
+#### clearWatch `function`
 
 <dd>
 
@@ -314,7 +417,7 @@ It is similar to the original browser API, with the difference being that you do
 </dd>
 </dd>
 
-## mode `enum`
+### mode `enum`
 
 <dd>
 
