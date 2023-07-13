@@ -433,3 +433,13 @@ idToken
 groups
 roles
 store
+appBoxShadow
+appFont
+fontFamily
+boxShadow
+appBorderRadius
+borderRadius
+color
+primaryColor
+theme
+user

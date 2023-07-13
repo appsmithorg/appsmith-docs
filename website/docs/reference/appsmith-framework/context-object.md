@@ -145,7 +145,7 @@ The `queryParams` object can be used to [share data across pages](/advanced-conc
 </dd>
 </dd>
 
-### User `object`
+### user `object`
 
 <dd>
 
@@ -249,6 +249,85 @@ Appsmith provides the `idToken` parameter on the client side, allowing you to in
 ```
 If you have defined custom scopes in your identity provider, the information associated with those scopes can be accessed within the Identity token.
 
+</dd>
+</dd>
+
+### theme `object`
+
+<dd>
+
+This object contains the details of the theme properties applied to the application. You can use this object to set certain properties in widgets to be aligned with the app theme or to write custom logic.
+
+```js
+{{appsmith.theme}}
+```
+
+The theme object has the following attributes:
+
+#### color
+
+#### primaryColor `string`
+
+<dd>
+
+It refers to the app's primary color set in the theme section of the app settings. To access this value, you can use the following code snippet:
+
+```js
+{{appsmith.theme.colors.primaryColor}}
+```
+</dd>
+
+#### backgroundColor `string`
+
+<dd>
+
+The `backgroundColor` property refers to the background color set in the theme section of the app settings. To access the value of background color, you can use the following code snippet:
+
+
+```js
+{{appsmith.theme.colors.backgroundColor}}
+```
+
+</dd>
+
+#### borderRadius
+
+#### appBorderRadius `string`
+
+<dd>
+
+It refers to the border radius set in the theme section of the app settings. To access its value, you can use the following code snippet:
+
+```js
+{{appsmith.theme.borderRadius.appBorderRadius}}
+```
+</dd>
+
+#### boxShadow
+
+#### appBoxShadow `string`
+
+<dd>
+
+It refers to the box shadow set in the theme section of the app settings. You can access the value of `appBoxShadow` using the following snippet: 
+
+```js
+{{appsmith.theme.boxShadow.appBoxShadow}}
+```
+
+</dd>
+
+#### fontFamily
+
+#### appFont `string`
+
+<dd>
+
+It refers to the font family set for the app in the theme section for app settings. You can access the value of `appFont` using the following snippet: 
+
+```js
+{{appsmith.theme.fontFamily.appFont}}
+```
 </dd>
 </dd>
 
