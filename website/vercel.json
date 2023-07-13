@@ -15,12 +15,8 @@
       "destination": "/getting-started/setup/instance-configuration/authentication/github-login"
     },
     {
-      "source": "/tutorials/building-a-store-catalog-manager/part-2-using-forms",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms"
-    },
-    {
-      "source": "/tutorials/building-a-store-catalog-manager/part-3-creating-interactive-views",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views"
+      "source": "/tutorials/:path*",
+      "destination": "/getting-started/tutorials"
     },
     {
       "source": "/advanced-concepts/log-contents",
@@ -199,84 +195,8 @@
       "destination": "/getting-started/setup/upgrade-to-business-edition/docker"
     },
     {
-      "source": "/tutorials/review-moderator-dashboard",
-      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard"
-    },
-    {
-      "source": "/tutorials/review-moderator-dashboard/setting-up-the-app",
-      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard/setting-up-the-app"
-    },
-    {
-      "source": "/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries",
-      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries"
-    },
-    {
-      "source": "/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties",
-      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties"
-    },
-    {
-      "source": "/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts",
-      "destination": "/learning-and-resources/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts"
-    },
-    {
-      "source": "/tutorials/building-a-store-catalog-manager",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager"
-    },
-    {
-      "source": "/tutorials/building-a-store-catalog-manager/building-a-simple-ui",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui"
-    },
-    {
-      "source": "/tutorials/building-a-store-catalog-manager/using-forms",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms"
-    },
-    {
-      "source": "/tutorials/building-a-store-catalog-manager/creating-interactive-views",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views"
-    },
-    {
-      "source": "/how-to-guides",
-      "destination": "/learning-and-resources/how-to-guides"
-    },
-    {
-      "source": "/how-to-guides/returning-data-from-a-stored-procedure",
-      "destination": "/learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure"
-    },
-    {
-      "source": "/how-to-guides/how-to-work-with-google-sheets-on-appsmith",
-      "destination": "/learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith"
-    },
-    {
-      "source": "/how-to-guides/oauth2-authorization-for-google-sheets",
-      "destination": "/learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets"
-    },
-    {
-      "source": "/how-to-guides/sharing-data-across-pages",
-      "destination": "/advanced-concepts/sharing-data-across-pages"
-    },
-    {
-      "source": "/how-to-guides/how-to-upload-to-s3",
-      "destination": "/learning-and-resources/how-to-guides/how-to-upload-to-s3"
-    },
-    {
-      "source": "/how-to-guides/backup-restore",
-      "destination": "/advanced-concepts/more/backup-restore"
-    },
-    {
-      "source": "/how-to-guides/writing-javascript-in-appsmith",
-      "destination": "/learning-and-resources/how-to-guides/writing-javascript-in-appsmith"
-    },
-    {
-      "source": "/how-to-guides/embed-appsmith-into-existing-application",
-      "destination": "/advanced-concepts/embed-appsmith-into-existing-application"
-    },
-    {
-      "source": "/how-to-guides/aws-whitelist",
-      "destination": "/learning-and-resources/how-to-guides/aws-whitelist"
-    },
-    {
-      "source": "/how-to-guides/how-to-implement-custom-authentication-on-appsmith",
-      "destination": "advanced-concepts/custom-authentication"
+      "source": "/how-to-guides/:path*",
+      "destination": "/connect-data/how-to-guides"
     },
     {
       "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith#building-ui-for-login-form",
@@ -285,46 +205,6 @@
     {
       "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith",
       "destination": "advanced-concepts/custom-authentication"
-    },
-    {
-      "source": "/how-to-guides/how-to-use-filters-on-appsmith-table-widget",
-      "destination": "/learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget"
-    },
-    {
-      "source": "/how-to-guides/use-mssql-as-data-source",
-      "destination": "/learning-and-resources/how-to-guides/use-mssql-as-data-source"
-    },
-    {
-      "source": "/how-to-guides/build-auto-generated-forms-using-list-widget",
-      "destination": "/learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget"
-    },
-    {
-      "source": "/how-to-guides/use-notion-as-database-on-appsmith",
-      "destination": "/learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith"
-    },
-    {
-      "source": "/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith",
-      "destination": "/learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith"
-    },
-    {
-      "source": "/how-to-guides/use-redshift-as-data-source-on-appsmith",
-      "destination": "/learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith"
-    },
-    {
-      "source": "/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith",
-      "destination": "/learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith"
-    },
-    {
-      "source": "/how-to-guides/how-to-work-with-graphql-on-appsmith",
-      "destination": "/reference/datasources/graphql"
-    },
-    {
-      "source": "/how-to-guides/how-to-use-js-object-within-appsmith",
-      "destination": "/learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith"
-    },
-    {
-      "source": "/how-to-guides/how-to-use-prepared-statements",
-      "destination": "/learning-and-resources/how-to-guides/how-to-use-prepared-statements"
     },
     {
       "source": "/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith",
@@ -821,14 +701,6 @@
     {
       "source": "/learning-and-resources/how-to-guides/how-to-work-with-graphql-on-appsmith",
       "destination": "/reference/datasources/graphql"
-    },
-    {
-      "source": "/tutorials",
-      "destination": "/learning-and-resources/tutorials/"
-    },
-    {
-      "source": "/tutorials/building-a-store-catalog-manager/part-1-creating-a-simple-view",
-      "destination": "/learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui"
     },
     {
       "source": "/getting-started/setup/instance-configuration/admin-settings",
