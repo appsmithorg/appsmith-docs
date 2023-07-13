@@ -200,11 +200,11 @@
     },
     {
       "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith#building-ui-for-login-form",
-      "destination": "advanced-concepts/custom-authentication"
+      "destination": "/advanced-concepts/custom-authentication"
     },
     {
       "source": "/advanced-concepts/how-to-implement-custom-authentication-on-appsmith",
-      "destination": "advanced-concepts/custom-authentication"
+      "destination": "/advanced-concepts/custom-authentication"
     },
     {
       "source": "/advanced-concepts/more/how-to-work-with-local-apis-on-appsmith",
@@ -297,30 +297,6 @@
     {
       "source": "/core-concepts/displaying-data-read",
       "destination": "/core-concepts/data-access-and-binding/displaying-data-read"
-    },
-    {
-      "source": "/reference/widgets/table#displaying-column-value-using selectedrow",
-      "destination": "/reference/widgets/table#reference"
-    },
-    {
-      "source": "/reference/widgets/table#widget-properties",
-      "destination": "/reference/widgets/table#general"
-    },
-    {
-      "source": "/reference/widgets/table#binding-properties",
-      "destination": "/reference/widgets/table#reference"
-    },
-    {
-      "source": "/reference/widgets/table#header-options",
-      "destination": "/reference/widgets/table#table-header-options"
-    },
-    {
-      "source": "/reference/widgets/table#automatically-refresh-data-on-tables",
-      "destination": "/reference/widgets/table#update-table-data-in-real-time"
-    },
-    {
-      "source": "/reference/widgets/table#setup-server-side-search",
-      "destination": "/reference/widgets/table#server-side-search"
     },
     {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
@@ -525,18 +501,6 @@
     {
       "source": "/widget-reference/button",
       "destination": "/reference/widgets/button"
-    },
-    {
-      "source": "/widget-reference/button#widget-properties",
-      "destination": "/reference/widgets/button#general"
-    },
-    {
-      "source": "/widget-reference/button#binding-properties",
-      "destination": "/reference/widgets/button#reference"
-    },
-    {
-      "source": "/widget-reference/button#styles",
-      "destination": "/reference/widgets/button#style"
     },
     {
       "source": "/widget-reference/button/google-recaptcha",
