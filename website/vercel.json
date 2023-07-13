@@ -2967,6 +2967,14 @@
     {
       "source": "/advanced-concepts/more",
       "destination": "/advanced-concepts/more/backup-restore"
+    },
+    {
+      "source": "/reference/widgets/menu-button",
+      "destination": "/reference/widgets/menu"
+    },
+    {
+      "source": "/learning-and-resources/how-to-guides",
+      "destination": "/connect-data/how-to-guides"
     }
   ]
 }
