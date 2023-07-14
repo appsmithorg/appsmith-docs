@@ -88,7 +88,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to **
 
 
 
-### Default selected values `array`
+#### Default selected values `array`
 
 
 <dd>
@@ -179,6 +179,16 @@ Enables you to add hints or provide additional information to guide the user reg
 #### Mode `string`
 
 <dd>
+
+Displays the item on the widget, there are three options:
+
+*Options:*
+
+* **Display only parent item**: This option displays only the parent items, excluding any child items.
+
+* **Display only child items**: This option displays the child items. In case there are no child items, the parent item would be displayed instead.
+
+* **Display all items:** This option displays both the parent and the child items on the widget.
 
 </dd>
 
