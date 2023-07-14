@@ -10,7 +10,9 @@ This page explains prepared statements, why they're used in your SQL database qu
 
 ## Overview
 
-A prepared statement is a feature provided by a Database Management System (DBMS) to execute a SQL statement with parameterized data bindings. When a SQL statement is written, the dynamic parts of the statement (the input data that may differ upon each execution of the query) are abstracted into parameters. When you execute your query, the data you provide is substituted into the pre-compiled statement along with any necessary quotation marks.
+A prepared statement is a feature provided by a Database Management System (DBMS) to execute a SQL statement with parameterized data bindings. This process improves the security of your app by making your queries significantly more resistant to SQL-injection attacks.
+
+When a SQL statement is written, the dynamic parts of the statement (the input data that may differ upon each execution of the query) are abstracted into parameters. When you execute your query, the data you provide is substituted into the pre-compiled statement along with any necessary quotation marks.
 
 In the example below, the first statement represents something that you may write in your query: it selects the `name` column from a certain table by using a `WHERE` clause to filter based on some criteria, which in this case is user input from the search box of a table widget `Table1`.
 
@@ -44,7 +46,7 @@ Here is a simplified look at the flow of a prepared statement in Appsmith:
 
 The template is retained, and the statement can be executed repeatedly and efficiently each time you run the query.
 
-## Benefits
+## Security
 
 By separating the SQL commands and the parameter data, the database server can perform its operations exactly as intended without the risk of malicious users adding their own SQL code into the query (a common attack known as [SQL injection](https://en.wikipedia.org/wiki/SQL\_injection)). When the statement is executed, the user's input is evaluated as a piece of data rather than an extension of your SQL code.
 
@@ -122,15 +124,17 @@ This limitation also applies to the following query where the column is not stat
 SELECT * FROM users WHERE {{ ColumnInput.text }} = '{{ ValueInput.text }}';
 ```
 
-Notice that `{{ ValueInput.text }}` is surrounded by quotes. Since the column is not static and prepared statements must be turned off, you'll need to manually include the quotations around your values. 
+Notice that `{{ ValueInput.text }}` is surrounded by quotes. Since the column is not static and prepared statements must be turned off, you'll need to manually include the quotations around your values.
 
-## Edge cases
+#### Dynamic array with IN clause
 
-Below, you can find edge cases that may apply if you are experiencing issues:
+Prepared statements are not usable when you're binding dynamic arrays into SQL `IN` clauses. However, if you're querying a PostgreSQL datasource, you can replace the `IN` clause with an equivalent clause using the `= ANY` syntax.
 
-* Commented code in your queries shouldn't contain any data bindings; all bindings, even commented ones, are parameterized by the DBMS and are used in the statement. To avoid this issue, remove the mustache `{{ }}` brackets around data bindings whenever you comment them out.
+MySQL datasources don't support this syntax though, so prepared statements should be turned off for the query to succeed.
 
-* If you're using a dynamic array to supply a SQL `IN` clause and using PostgreSQL, then you can use `= ANY`. However, MySQL doesn't support this syntax and requires that you turn off prepared statements.
+### Commented bindings
+
+Commented code in your queries shouldn't contain any data bindings; all bindings, even commented ones, are parameterized by the DBMS and are used in the statement. To avoid this issue, remove the mustache `{{ }}` brackets around data bindings whenever you comment them out.
 
 ## Summary
 
