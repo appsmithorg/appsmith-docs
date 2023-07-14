@@ -91,3 +91,56 @@ Each variant of the Slider widget has events that are called when the user adjus
 | **onEndValueChange**   | Sets an action to take place when the user changes the range's end value. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead.   | Filtering a dataset according to user input. |
 
 Range sliders are a great choice when you have a large dataset, but only wish to see a portion of it at a time. They provide an easy way to choose exactly what part you'd like to use, and offer a visual representation of the size of your selection relative to the whole.
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+RangeSlider1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+RangeSlider1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+RangeSlider1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+RangeSlider1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>

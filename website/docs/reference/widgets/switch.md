@@ -186,3 +186,125 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 
 </dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Switch1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Switch1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Switch1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Switch1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Switch1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Switch1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
+
+#### setValue `boolean`
+
+<dd>
+
+Sets the value to be displayed in the widget.
+
+*Example*:
+
+```js
+Switch1.setValue(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Switch1.setValue(true).then(() => {
+  // code to be executed after options are set
+})
+```
+
+</dd>
+
+
+
+#### setColor `string`
+
+<dd>
+
+Sets the background color of the widget.
+
+*Example*:
+
+```js
+Switch1.setColor('#FF0000')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Switch1.setColor('#FF0000').then(() => {
+  // code to be executed after color is set
+})
+```
+
+</dd>

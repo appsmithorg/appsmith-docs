@@ -215,3 +215,55 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | **onOptionChange** | Triggers an action when a user selects an option.  |
 | **onDropdownOpen** | Sets the action to be run when the user opens the dropdown.  |
 | **onDropdownClose** | Sets the action to be run when the user opens the dropdown.  |
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+TreeSelect1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+TreeSelect1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+TreeSelect1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+TreeSelect1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
