@@ -99,7 +99,7 @@ The DBMS also can't pre-compile queries with clauses that are included based on 
 SELECT * FROM users WHERE name = {{ NameInput.text }}
 {{
     IncludeAddressCheckbox.isChecked?
-        "INNER JOIN teams ON users.teamID=team.teamID" :
+        "INNER JOIN teams ON users.teamID = teams.teamID" :
         ""
 }};
 ```
