@@ -7,7 +7,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Query Object
 
-The query object contains the parameters required to run queries and access the data from the response.
+The query object contains the parameters required to run queries and access the query data.
 
 
 ## Properties
@@ -21,7 +21,7 @@ The query object has the following properties that you can use to reference the 
 `data` is a read-only property that contains the response body from the last successful execution of this query. 
 
 ```
-{{QUERY_NAME.data}}
+{{Query1.data}}
 ```
 If this property is referenced in a widget's property field, the query is automatically run on page load. You can manually enable a query to run on page load from the [query settings](/connect-data/reference/query-settings).
 
@@ -34,7 +34,7 @@ If this property is referenced in a widget's property field, the query is automa
 The `responseMeta` object contains details about the response, such as the status code, headers, and other relevant information related to the query's execution and the server's response.
 
 ```
-{{QUERY_NAME.responseMeta}}
+{{Query1.responseMeta}}
 ```
 
 </dd>
@@ -61,7 +61,7 @@ run(params: Object): Promise
 | **params**    | An object containing key-value pairs to pass into the query. You can access it using the key - `{{ this.params.KEY_NAME }}`. |
 
 
-`run()` is an asynchronous function and it returns a promise. This asynchronous nature allows you to handle sequential asynchronous actions using `.then()` and `.catch()` methods or the `async/await` syntax.
+`run()` is an asynchronous function and it returns a promise. This asynchronous nature allows you to handle sequential asynchronous actions using `.then()` and `.catch()` methods or the `async/await` syntax. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
 
 ```javascript
 // Using promise syntax to chain actions in sequence
@@ -71,51 +71,10 @@ run(params: Object): Promise
         .catch(() => {...}) // run if the query encounters any errors
 }}
 ```
-It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
+
+In certain scenarios, such as when running a query inside a loop, it may be necessary to pass parameters to the query with values that are contextual to the execution. For more information, see [Pass Parameters to Queries](/connect-data/how-to-guides/how-to-pass-params-to-an-api).
 
 </dd>
-
-#### Pass parameters to run()
-
-In certain scenarios, such as when [running a query inside a loop](/connect-data/how-to-guides/how-to-pass-params-to-an-api), it may be necessary to pass parameters to the query with values that are contextual to the execution. In such cases, you can utilize the `params` argument to pass an object consisting of key-value pairs into your query.
-
-**Examples:**
-
-<!-- You cannot indent these MDX tags or their content. It breaks the page. -->
-<Tabs queryString="current-run-style">
-<TabItem label="Promise chains" value="promise-chains">
-
-```javascript
-// function in the utils JS Object
-getByIds: async (ids) => {
-    const queries = ids.map(id => {
-        return GetUserById.run({"id": id})
-    })
-    
-    Promise.allSettled(queries)
-        .then(queryResponses => queryResponses.map(res => res.value[0]))
-        .then(records => storeValue("records", records))
-}
-```
-
-</TabItem>
-<TabItem label="async/await" value="async-await">
-
-```javascript
-// function in the utils JS Object
-getByIds: async (ids) => {
-    const queries = ids.map(id => {
-        return GetUserById.run({"id": id})
-    })
-    
-    const responses = await Promise.allSettled(queries)
-    const records = await responses.map(promise => promise.value[0])
-    await storeValue("records", records)
-}
-```
-
-</TabItem>
-</Tabs>
 
 
 ### clear() `function`
@@ -125,7 +84,7 @@ getByIds: async (ids) => {
 This function clears all data from the query's `data` property.
 
 ``` 
-{{QUERY_NAME.clear}}
+{{Query1.clear()}}
 ```
 
 </dd>
