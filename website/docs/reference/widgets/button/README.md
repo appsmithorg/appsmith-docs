@@ -21,7 +21,7 @@ Sets the text on the widget.
 
 <dd>
 
-Allows you to configure one or multiple actions to be executed when the button is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
+Allows you to configure one or multiple [actions](/reference/appsmith-framework/widget-actions) to be executed when the button is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
 
 </dd>
 

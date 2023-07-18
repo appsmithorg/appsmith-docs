@@ -446,3 +446,7 @@ colors
 primaryColor
 theme
 user
+setDisabled
+setColor
+setLabel
+setVisibility
