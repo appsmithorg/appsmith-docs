@@ -70,14 +70,14 @@ In this format, **`x`** denotes the **label**, and **`y`** denotes the **value**
 ```js
 {{fetchData.data}}
 ```
-If the retrieved data is not in the desired format, you can use JavaScript to **transform** it before passing it to the widget, like:
+
+If the query data is not in the expected format, you can use the `map()` function to transform it before passing it to the widget, like:
 
 *Example:*
 ```js
 {{fetchUserData.data.map( p => ({x: p.gender, y: p.count}))}}
 ```
 
-The code uses the `map()` function to transform each item in the `fetchUserData.data` array into an object with an `x` and a `y` key.
 
 :::note
 If the query fails and there is no default data specified, the chart doesn't render and appears empty.
