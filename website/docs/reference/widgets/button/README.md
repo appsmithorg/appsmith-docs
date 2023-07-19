@@ -1,7 +1,6 @@
 # Button
 
-This page describes how to use a Button widget to trigger actions and code in your application.
-
+This page provides information on the button widget, enabling you to trigger actions or perform specific tasks with a simple click. 
 
 ## Content properties
 
