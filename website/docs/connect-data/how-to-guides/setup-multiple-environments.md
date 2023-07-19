@@ -1,10 +1,10 @@
- # Setup Multiple Environments
+ # Setup Datasource Environments
 
 This page describes how to set up and manage multiple datasource environments for your application.
 
 
 :::info
-A [Business Edition](https://www.appsmith.com/pricing) account is required to work with multiple environments.
+A [Business Edition](https://www.appsmith.com/pricing) account is required to work with datasource environments.
 :::
 
 
@@ -13,8 +13,8 @@ A [Business Edition](https://www.appsmith.com/pricing) account is required to wo
 This section shows how to configure staging and production environments in Appsmith. 
 
 <figure>
-  <img src="/img/multi-env-3.gif" style= {{width:"850px", height:"auto"}} alt="Postgres Example"/>
-  <figcaption align = "center"><i>Multiple Environments | Postgres Example</i></figcaption>
+  <img src="/img/multi-env-3.gif" style= {{width:"850px", height:"auto"}} alt="Datasource Environments"/>
+  <figcaption align = "center"><i>Datasource Environments | Postgres Example</i></figcaption>
 </figure>
 
 1. Click the **Explorer** tab on the _Entity Explorer_ to the screen's left.
@@ -22,7 +22,7 @@ This section shows how to configure staging and production environments in Appsm
 2. Click the **+** icon next to **Datasources** and select your datasource.
 
 :::caution
-SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not support multiple environments.
+SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not support datasource environments.
 :::
 
 3. Configure production and staging datasource connection parameters in the respective tabs. For a complete description of the connection parameters, see the [Reference guide](/connect-data/reference) for your datasource.

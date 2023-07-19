@@ -49,6 +49,7 @@ This section contains permissions related to the actions a user can perform on d
 | | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> |
 | --- | --- | --- | --- | --- | --- |
 | **Workspace** | Execute queries on any datasource in the workspace | Create queries on any datasource in the workspace | Edit any datasource in the workspace | Delete any datasource in the workspace | View any datasource in the workspace |
+| **Environments** | Execute queries for specific environment (*staging and production*).  | - | - | - | - |
 | **Datasource** | Execute queries on the datasource | Create queries on the datasource | Edit the datasource | Delete the datasource | View the datasource |
 | **Query** | Execute the query | - | - | - | - |
 
