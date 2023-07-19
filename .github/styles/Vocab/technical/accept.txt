@@ -433,7 +433,6 @@ idToken
 groups
 roles
 store
-data
 clear
 responseMeta
 appBoxShadow
