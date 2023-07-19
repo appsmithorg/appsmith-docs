@@ -6,10 +6,21 @@ The JSON form widget saves time and effort by automatically generating forms fro
 
 <VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
 
+## Content properties
 
-## Generate JSON Form
-To populate the JSON Form widget with data, you can utilize the **Source Data** property, which requires the data to be structured in a JSON format:
 
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+
+### Data
+
+#### Source Data `json`	
+
+<dd>
+
+Allows you to add form data for the widget. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
+
+*Expected data structure:*
 ```json
 {
   "name": "John",
@@ -18,6 +29,164 @@ To populate the JSON Form widget with data, you can utilize the **Source Data** 
   "employee_id": 1001
 }
 ```
+
+Based on the JSON data provided, the JSON Form automatically identifies the appropriate field type for each value. For example, if the data contains the field `age`, the form sets the field type to a `Number Input`. Additionally, you have the flexibility to add or customize field types using the **Field Configuration property**.
+
+You can display dynamic data by binding the response from a query or a JavaScript function to the **Source Data** property. For instance, to display a master-detail form when a user selects a row in a Table widget, you can add the below code in the **Source Data** property:
+
+*Example*:
+```js
+{{tbluserData.selectedRow}}
+```
+
+You can click on an individual row in the Table and update data in the form fields.
+
+</dd>
+
+#### Auto generate form `boolean`
+
+<dd>
+
+When enabled, the form layout updates automatically when the field types inside the **Source Data** are changed. With this, the **Field Configuration** property also gets automatically updated to reflect any changes in the **Source Data** property.
+
+</dd>
+
+#### Generate Form `string`
+
+<dd>
+
+When **Auto Generate Form** property is disabled, this button manually regenerates the form layout according to the field types in the **Source Data**. With this, the **Field Configuration** property also gets updated to reflect any changes in the **Source Data** property.
+
+
+</dd>
+
+#### Field Configuration `list`
+
+<dd>
+
+Contains all the generated form fields. You can rearrange the items and configure them by clicking on the ⚙️ gear icon. Alternatively, the eye icon allows you to hide specific fields.
+
+See the Form Items reference guide for configuring items.
+
+</dd>
+
+#### Add New Field `string`
+
+
+<dd>
+
+Adds a new field in the form. Fields added this way are known as custom fields and you have the flexibility to delete these fields at a later time. It's important to note that custom fields do not update the **Source data** property.
+
+</dd>
+
+### General
+
+#### Title `string`
+
+<dd>
+
+Sets the text that appears at the top of the form as a title.
+
+</dd>
+
+#### Hidden Fields in Data `boolean`
+
+
+<dd>
+
+When you enable this option, the output data is updated to include data from hidden fields. These hidden field values are taken from the source data.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+
+</dd>
+
+#### Disable Invalid Forms `boolean`
+
+<dd>
+
+When turned on, the JSON Form widget checks the validation properties, and the Submit button is automatically disabled if there are failing checks. 
+
+</dd>
+
+
+#### Show Reset `boolean`
+
+<dd>
+
+When enabled, shows a reset button in the form allowing users to reset the form at any time.
+
+</dd>
+
+#### Submit Button Label `string`
+
+<dd>
+
+Sets the text for the Submit button.
+
+</dd>
+
+#### Reset Button Label	 `string`
+
+<dd>
+
+Sets the text for the Reset button.
+
+</dd>
+
+#### Height `string`
+
+
+<dd>
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+### Events
+
+#### 
+
+
+<dd>
+
+Sets an [action](reference/appsmith-framework/widget-actions) to be executed when the user clicks the Submit button on the form.
+
+</dd>
+
+---
+
+## Generate JSON Form
+To populate the JSON Form widget with data, you can utilize the **Source Data** property, which requires the data to be structured in a JSON format:
+
+
 JSON Form automatically detects the appropriate field type for each value. For instance, if the JSON data contains an `age` field, it sets the field type to a *Number Input*. Additionally, you can add/customize field types using the **Field Configuration** property.
 
 
