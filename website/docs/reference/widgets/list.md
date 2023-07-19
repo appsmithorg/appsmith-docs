@@ -244,7 +244,7 @@ Contains a number representing the number of list items that can fit on one page
 
 </dd>
 
-#### selectedItem
+#### selectedItem `object`
 
 <dd>
 
@@ -296,6 +296,49 @@ Contains an object representing the state of the widgets inside a list item that
 
 ```js
 {{List1.triggeredItemView}}
+```
+
+</dd>
+
+## Internal properties
+
+These properties are available only to the widgets placed inside the List widget and enable you to configure the widget's properties based on the position/order of the item.
+
+#### currentItem `object`
+
+<dd>
+
+Represents the data for a particular item.
+
+
+</dd>
+
+#### currentIndex `number`
+
+<dd>
+
+Returns the index of the current item.
+
+</dd>
+
+#### currentView `object`
+
+<dd>
+
+Returns the data and state of the widgets present in the current list item. This property can be used to access all sibling widgets present inside a List item card.
+
+</dd>
+
+#### level_ `object`
+
+<dd>
+
+This property is only available for nested lists where \* represents the level number (from 1 through 3, where 1 refers to the outermost list). It can be used to access the **currentItem**, **currentView** and **currentIndex** properties of the parent lists.
+
+*Example:*
+
+```js
+{{level_1.currentItem.name}}
 ```
 
 </dd>
@@ -508,16 +551,3 @@ You can use the **currentView** and **currentIndex** properties similarly.
 Suppose there is another List widget `childList2` inside `childList1`. The innermost list, `childList2` can access two levels - **level_1** and **level_2**. Here, **level_1** represents the data and state of the topmost list widget, `parentList` and **level_2** represents `childList1`.
 
 The parent list widgets don't have access to it's child list widgets. In the preceding example, the widgets in `childList1` can't use `level_2` or `level_3` to access the data in it child lists. Similarly, `childList1` can only access `level_1` and not `level_2`, but `childList2` can access both `level_1` and `level_2`.
-
-
-
-## Internal properties
-
-These properties are available only to the widgets placed inside the List widget and enable you to configure the widget's properties based on the position/order of the item.
-
-| Property    | Description                                                                                                                                                                                                                               |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **currentItem** | Represents the data for a particular item.                                                                                                                                                   |
-| **currentIndex**         | Represents the index of the particular item.                                                                                                                                                                               |
-| **currentView**       | Represents the data and state of the widgets present in the current list item. This property can be used to access all sibling widgets present inside a List item card.                                                                                                                      |
-| **level_***           | This property is only available for nested lists where \* represents the level number (from 1 through 3, where 1 refers to   the outermost list). This property can be used to access the **currentItem**, **currentView** and **currentIndex** properties of the parent lists. Eg: {{level_1.currentItem.name}}  |
