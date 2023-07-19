@@ -7,7 +7,7 @@ This page describes Datasource environments, which allows developers to isolate 
 The Datasource environments feature is only available on [Business Edition.](https://www.appsmith.com/pricing)
 :::
 
-See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-multiple-environments).
+See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
 
 ## Overview
 
