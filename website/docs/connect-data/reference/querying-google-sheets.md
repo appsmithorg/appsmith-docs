@@ -1,16 +1,13 @@
 ---
 sidebar_position: 7
+description: Connect Appsmith to Google Sheets and create queries.
 ---
 
 # Google Sheets
 
-This page describes how to connect your application to your Google Sheets account and query your spreadsheets.
+This page provides information for connecting Appsmith to Google Sheets and for reading and writing data in your applications.
 
-## Connect Google Sheets
-
-To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Google Sheets** button. Your datasource is created and you are taken to a screen to configure its settings.
-
-### Configuration parameters
+## Connection parameters
 
 <figure>
   <img src="/img/gsheets_datasource_config.png" style={{width: "100%", height: "auto"}} alt="Configuring a new Google Sheets datasource."/>
@@ -18,7 +15,7 @@ To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** ta
 </figure>
 
 <dl>
-  <dt><b>Permissions | Scope</b></dt>
+  <dt><b>Permissions | Scope:</b></dt>
   <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd>
   <dd><i>Options:</i>
     <ul>
@@ -30,16 +27,16 @@ To add a Google Sheets datasource, click the (**+**) sign in the **Explorer** ta
   </dd>  
 </dl>
 
-Click **Save and Authorize** to confirm your choice. You'll be taken to Google where you can authorize your account and select your sheets. 
+Clicking **Save and Authorize** takes you to a Google login where you can authorize your account and select your sheets.
 
 ## Query Google Sheets
+
+The following section is a reference guide that provides a complete description of all the parameters to connect to Google Sheets.
 
 <figure>
   <img src="/img/google-sheets-query-page.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
-
-You can write [queries](/connect-data/reference/query-settings) to fetch or write data to Google Sheets by selecting the **+ New Query**  button on the Google Sheets datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Google Sheets datasource. You'll be brought to a new query screen where you can configure your request.
 
 ## Fetch rows
 
