@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # Monitor Processes
 
-The container runs multiple processes, including the Appsmith server, Nginx, MongoDB, etc., inside a single Docker container. These processes are started, managed, and monitored by [Supervisor](http://supervisord.org/).
+The container runs multiple processes, including the Appsmith server, Nginx, MongoDB, etc., inside a single Docker container. These processes are started, managed, and monitored by [Supervisor](http://supervisord.org/) for your self-hosted instance.
 
 Supervisor provides:
 * [Web Interface](#web-interface)

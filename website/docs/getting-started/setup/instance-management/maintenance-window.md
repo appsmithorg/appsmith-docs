@@ -4,7 +4,7 @@ description: Instructions to schedule automatic updates for your Appsmith instan
 ---
 # Schedule Automatic Updates
 
-The page gives you steps to schedule automatic updates for your Appsmith instance.
+The page gives you steps to schedule automatic updates for your self-hosted instance.
 
 ## Schedule automatic updates for Docker installation
 You can define a time slot for automatic updates using a `cron` expression in the `--schedule` argument.
