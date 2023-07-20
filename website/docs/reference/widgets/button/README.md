@@ -75,7 +75,7 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 
 <dd>
 
-Add a Google reCAPTCHA [site key](https://cloud.google.com/recaptcha-enterprise/docs/create-key) here to enable [Google reCAPTCHA](https://www.google.com/recaptcha/about/) check to the button. The token is accessible from the API pane with the`recaptchaToken` key (see the [Google reCAPTCHA](https://www.google.com/recaptcha/about/) docs). Read more about using [Google reCAPTCHA Keys in Appsmith](/reference/widgets/button/google-recaptcha/).
+Add a Google reCAPTCHA [site key](https://cloud.google.com/recaptcha-enterprise/docs/create-key) here to enable Google reCAPTCHA check to the button. The token is accessible from the API pane with the `recaptchaToken` key (see the [Google reCAPTCHA](https://www.google.com/recaptcha/about/) docs). Read more about using [Google reCAPTCHA Keys in Appsmith](/reference/widgets/button/google-recaptcha/).
 
 </dd>
 
@@ -252,7 +252,7 @@ These methods are asynchronous, and you can use the `.then()` block to ensure th
 
 
 
-#### setVisibility() `boolean`
+#### setVisibility(`:boolean`)
 
 <dd>
 
@@ -270,7 +270,7 @@ Button1.setVisibility(true).then(() => {
 </dd>
 
 
-#### setDisabled() `boolean`
+#### setDisabled(`:boolean`)
 
 <dd>
 
@@ -286,7 +286,7 @@ Button1.setDisabled(false).then(() => {
 
 </dd>
 
-#### setColor() `boolean`
+#### setColor(`:boolean`)
 
 <dd>
 
@@ -302,7 +302,7 @@ Button1.setColor('#FF0000').then(() => {
 
 </dd>
 
-#### setLabel() `boolean`
+#### setLabel(`:boolean`)
 
 <dd>
 
