@@ -130,7 +130,7 @@ Triggers and [action](/reference/appsmith-framework/widget-actions) when you upd
 
 <dd>
 
-Enabling this property for a select widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains disabled until a value is selected in the select widget.
+Enabling this property for a select widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the select widget.
 
 </dd>
 
@@ -140,7 +140,7 @@ Enabling this property for a select widget makes it a mandatory field, meaning t
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget is not visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
+Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
 For example,  if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the select widget:
 
@@ -154,7 +154,7 @@ For example,  if you want to make the widget visible only when the user checks a
 
 <dd>
 
-Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's inactive state conditionally.
 
 For example, if you want to allow only a specific user to interact with the select widget, you can use the following JavaScript expression: 
 ```js
@@ -264,11 +264,11 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `Select1.isVisible`.
 
-#### filterText 
+#### filterText `string`
 
 <dd>
 
-The filter text for Server side filtering.
+Returns the text entered in the search filter for Server side filtering.
 
 *Example:*
 
@@ -282,7 +282,7 @@ The filter text for Server side filtering.
 
 <dd>
 
-It reflects the state of the widget's Disabled setting. It is represented by a boolean value, where true indicates that the widget is disabled, and false indicates that it is enabled for user interaction.
+It reflects the state of the widget's Disabled setting. It is represented by a boolean value, where `true` indicates that the widget is inactive, and `false` indicates that it is enabled for user interaction.
 
 *Example:*
 
@@ -308,6 +308,14 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 ####  isDirty `boolean`
 
 <dd>
+
+This property is a boolean value that indicates whether the user has interacted with the widget. If the user selects an option from the dropdown list, the `isDirty` property returns `true`. However, if the user does not make any selection and the initial value remains unchanged, the `isDirty` property returns `false`.
+
+*Example:*
+
+```js
+{{Select1.isDirty}}
+```
 
 </dd>
 
@@ -389,7 +397,7 @@ Select1.setVisibility(true).then(() => {
 
 <dd>
 
-Sets the disabled state of the widget.
+Sets the `disabled` state of the widget.
 
 *Example*:
 
