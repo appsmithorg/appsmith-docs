@@ -33,6 +33,11 @@ Follow these steps to configure Amazon SES using Admin Settings:
 1. Log into your Appsmith instance as a superuser.
 2. Go to the Admin Settings screen.
 3. Select **Email** from the left navigation bar.
+<figure>
+<img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
+<figcaption align="center"><i>Configure Amazon SES as an email service provider</i></figcaption>
+</figure>
+
 4. Configure the parameters as shown below:
 <dl>
     <dt><strong>SMTP Host and SMTP Port</strong></dt>
