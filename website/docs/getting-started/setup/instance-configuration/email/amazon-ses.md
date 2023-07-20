@@ -72,7 +72,7 @@ Follow these steps to configure Amazon SES using Admin Settings:
 5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
 6. Click the **SAVE & RESTART** button to save the configurations and restart the instance with the updated settings.
 
-## Environment variables
+### Environment variables
 Follow these steps to configure Amazon SES using environment variables:
 
 1. Go to your Appsmith instance configuration file, such as the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
