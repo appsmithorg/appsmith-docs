@@ -39,12 +39,12 @@ You can dynamically generate options by fetching data from queries or JS functio
 {{fetchData.data}}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform it before passing it to the Select widget.
+If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the select widget. 
 
-Example: 
+*Example:* 
 
 ```js
-{fetchData.data.map( user => ({label: user.name, value: user.email}))}
+{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
 ```
 
 </dd>
