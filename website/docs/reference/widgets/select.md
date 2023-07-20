@@ -2,7 +2,6 @@
 
 This page provides information on the Select widget (*formerly known as dropdown*), that enable users to select a single option from a given list.
 
-<VideoEmbed host="youtube" videoId="zNw1yMwg-aY" title="Using the Select Widget" caption="Using the Select Widget"/>
 
 ## Content properties
 
@@ -14,7 +13,39 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set labels and values for options in the list of the select widget. Options must be specified as an array of objects with a label and value property.
+Use to set labels and values for options in the list of the select widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+
+
+```js
+[
+  {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  },
+  {
+    "label": "Red",
+    "value": "RED"
+  }
+]
+```
+
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+
+```js
+{{fetchData.data}}
+```
+
+If the retrieved data is not in the desired format, you can use JavaScript to transform it before passing it to the Select widget.
+
+Example: 
+
+```js
+{fetchData.data.map( user => ({label: user.name, value: user.email}))}
+```
 
 </dd>
 
@@ -22,7 +53,8 @@ Use to set labels and values for options in the list of the select widget. Optio
 
 <dd>
 
-Sets the initial option that is automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects a different option from the list.                                                                                           	       
+Sets the initial option that is automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects a different option from the list. For example, if you want the default option to be ```Blue```, set the **Default Selected Value** property to `BLUE`.
+
 
 </dd>
 
@@ -46,7 +78,7 @@ Sets the placement of the **Label** in the widget.
 *Options*:
 - **Left**: The label is placed on the left of the widget.
 - **Top**: The label gets placed at the top of the widget.
-- **Auto**: The label position is determined based on the height of the widget itself.. 
+- **Auto**: The label position is determined based on the height of the widget itself. 
 
 </dd>
 
@@ -88,7 +120,7 @@ Enables server-side filtering via a query request. Use this property when the Se
 
 <dd>
 
-Triggers and action when you update the filter text. 
+Triggers and [action](/reference/appsmith-framework/widget-actions) when you update the filter text. 
 
 </dd>
 
@@ -133,8 +165,6 @@ For example, if you want to allow only a specific user to interact with the sele
 
 
 #### Animate Loading `boolean`
-
-
 
 <dd>
 
@@ -331,7 +361,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (`:boolean`)
 
 <dd>
 
@@ -355,7 +385,7 @@ Select1.setVisibility(true).then(() => {
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled (`:boolean`)
 
 <dd>
 
@@ -377,7 +407,7 @@ Select1.setDisabled(false).then(() => {
 
 </dd>
 
-#### setOptions `array<object>`
+#### setOptions (`:array<object>`)
 
 <dd>
 
@@ -400,7 +430,7 @@ Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2'
 </dd>
 
 
-#### setRequired `boolean`
+#### setRequired (`:boolean`)
 
 <dd>
 
@@ -425,7 +455,7 @@ Select1.setRequired(true).then(() => {
 
 
 
-#### setSelectedOption `object`
+#### setSelectedOption (`:object`)
 
 <dd>
 
