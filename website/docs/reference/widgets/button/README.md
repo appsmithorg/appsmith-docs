@@ -51,7 +51,7 @@ For example, if you want to make the button visible only when the user selects "
 
 <dd>
 
-Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's `disabled` state conditionally.
 
 For example, if you want to allow only a specific user to click the button, you can use the following JavaScript expression: 
 ```js
@@ -95,7 +95,7 @@ Buttons can have some special behaviors when they're located within the boundari
 
 <dd>
 
-When this button property is turned on, the button is disabled while the form has any required fields that are incomplete, or while any of the fields have input that's considered invalid.
+When this button property is turned on, the button remains inactive if the associated form contains any required fields that are incomplete or if any of the form fields contain input that is considered invalid.
 
 For example, if you have a form with an [Input widget](/reference/widgets/input/) whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
 
@@ -185,7 +185,7 @@ Represents the color of the button, specified as a [CSS color value](https://dev
 
 <dd>
 
-Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
 
 </dd>
 
@@ -234,7 +234,7 @@ Indicates the visibility state of a widget, with true indicating it is visible a
 
 <dd>
 
-It reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is disabled, and false indicates that it is enabled for user interaction.
+It reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is inactive, and false indicates that it is enabled for user interaction.
 
 *Example:*
 ```js
@@ -274,7 +274,7 @@ Button1.setVisibility(true).then(() => {
 
 <dd>
 
-Sets the disabled state of the widget.
+Sets the `disabled` state of the widget.
 
 *Example*:
 
