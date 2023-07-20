@@ -29,8 +29,6 @@ Allows you to add form data for the widget. To populate the JSON Form with data,
 }
 ```
 
-Based on the JSON data provided, the JSON Form automatically identifies the appropriate field type for each value. For example, if the data contains the field `age`, the form sets the field type to a `Number Input`. Additionally, you have the flexibility to add or customize field types using the **Field Configuration property**.
-
 You can display dynamic data by binding the response from a query or a JavaScript function to the **Source Data** property. For instance, to display a master-detail form when a user selects a row in a Table widget, you can add the below code in the **Source Data** property:
 
 *Example*:
@@ -39,6 +37,10 @@ You can display dynamic data by binding the response from a query or a JavaScrip
 ```
 
 You can click on an individual row in the Table and update data in the form fields.
+
+
+Based on the JSON data provided, the JSON Form automatically identifies the appropriate field type for each value. For example, if the data contains the field `age`, the form sets the field type to a `Number Input`. Additionally, you have the flexibility to add or customize field types using the **Field Configuration property**.
+
 
 </dd>
 
@@ -405,7 +407,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility(`boolean`)
+#### setVisibility(`:boolean`)
 
 <dd>
 
@@ -428,7 +430,7 @@ JSONForm1.setVisibility(true).then(() => {
 </dd>
 
 
-#### setSourceData(`object`)
+#### setSourceData(`:object`)
 
 <dd>
 
