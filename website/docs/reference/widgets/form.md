@@ -164,7 +164,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility(`boolean`)
+#### setVisibility(`:boolean`)
 
 <dd>
 
