@@ -33,34 +33,41 @@ Follow these steps to configure Amazon SES using Admin Settings:
 1. Log into your Appsmith instance as a superuser.
 2. Go to the Admin Settings screen.
 3. Select **Email** from the left navigation bar.
+
 <figure>
 <img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
 <figcaption align="center"><i>Configure Amazon SES as an email service provider</i></figcaption>
 </figure>
 
 4. Configure the parameters as shown below:
-<dl>
-    <dt><strong>SMTP Host and SMTP Port</strong></dt>
-    <dd>To find the SMTP Host and Port:
-    <ul>
-        <li>Log into your Amazon management console.</li>
-        <li>Go to Amazon Simple Email Service (SES).</li>
-        <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
-        <li>Add the <em>SMTP endpoint</em> from Amazon SES to the <strong>SMTP Host</strong> field in Appsmith.</li>
-        <li>Add the <em>SMTP Port</em> from Amazon SES to the <strong>SMTP Port</strong> field in Appsmith.</li>
-        </ul>
-    </dd><br/>
-    <dt><strong>From Address</strong></dt>
-    <dd>Add a verified email address to be shown in the <em>From</em> field when users receive an email.</dd><br/>
-    <dt><strong>Reply To Address</strong></dt>
-    <dd>Add a verified email address where users can contact you.</dd><br/>
-    <dt><strong>TLS Protected Connection</strong></dt>
-    <dd>Amazon SES configuration uses TLS for securely sending emails. Toggle it to use Transport Layer Security (TLS) protocol for securely sending emails through Amazon SES.</dd><br/>
-    <dt><strong>SMTP Username</strong></dt>
-    <dd>Add the <em>SMTP username</em> from the SMTP credentials available on Amazon SES.</dd><br/>
-    <dt><strong>SMTP Password</strong></dt>
-    <dd>Add the <em>SMTP password</em> from the SMTP credentials available on Amazon SES.</dd>
-</dl>
+    <dl>
+        <dt><strong>SMTP Host and SMTP Port</strong></dt>
+        <dd>Add the Simple Mail Transfer Protocol (SMTP) host and port to configure Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP Host and SMTP Port, follow these steps:
+            <ul>
+                <li>Log into your Amazon management console.</li>
+                <li>Go to Amazon Simple Email Service (SES).</li>
+                <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
+                <li>Add the <em>SMTP endpoint</em> from Amazon SES to the SMTP Host field in Appsmith.</li>
+                <li>Add the <em>SMTP Port</em> from Amazon SES to the SMTP Port field in Appsmith.</li>
+            </ul>
+        </dd><br/>
+        
+        <dt><strong>From Address</strong></dt>
+        <dd>Add a verified email address to be shown in the <em>From</em> field when users receive an email. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
+        
+        <dt><strong>Reply To Address</strong></dt>
+        <dd>Add a verified email address where users can contact you. When recipients reply to emails sent from your application, their replies are directed to this address.</dd><br/>
+        
+        <dt><strong>TLS Protected Connection</strong></dt>
+        <dd>Amazon SES configuration uses TLS for securely sending emails. Toggle it to use Transport Layer Security (TLS) protocol for securely sending emails through Amazon SES. Enabling TLS ensures that email communications between Appsmith and Amazon SES are encrypted for enhanced security.</dd><br/>
+        
+        <dt><strong>SMTP Username</strong></dt>
+        <dd>Add the <strong>SMTP username</strong> from the SMTP credentials available on Amazon SES. The SMTP username is used for authentication when sending emails through the SMTP server.</dd><br/>
+        
+        <dt><strong>SMTP Password</strong></dt>
+        <dd>Add the <strong>SMTP password</strong> from the SMTP credentials available on Amazon SES. The SMTP password is used for authentication when sending emails through the SMTP server.</dd>
+    </dl>
+
 
 5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
 6. Click the **SAVE & RESTART** button to save the configurations and restart the instance with the updated settings.
@@ -68,36 +75,34 @@ Follow these steps to configure Amazon SES using Admin Settings:
 ## Environment variables
 Follow these steps to configure Amazon SES using environment variables:
 
-1. Go to your Appsmith instance configuration file. For example, the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
-2. Update the values of the environment variables as shown below:
-<dl>
-    <dt><b>APPSMITH_MAIL_ENABLED</b></dt>
-    <dd>Set it to <code> true </code> to enable the email service.</dd> <br/>
-    <dt><b>APPSMITH_MAIL_FROM</b></dt>
-    <dd>Set it to the verified email of the sender.
-    </dd><br/>
-    <dt><b>APPSMITH_REPLY_TO</b></dt>
-    <dd>Set it to the email that should receive replies by default.</dd><br/>
-    <dt><b>APPSMITH_MAIL_HOST and APPSMITH_MAIL_PORT</b></dt>
-    <dd>Follow these steps to find the SMTP Host and SMTP Port:
-    <ul>
-        <li>Log into your Amazon management console.</li>
-        <li>Go to Amazon Simple Email Service (SES).</li>
-        <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
-        <li>Add the <em>SMTP endpoint</em> from Amazon SES to the <code>APPSMITH_MAIL_HOST</code> variable in Appsmith.</li>
-        <li>Add the <em>SMTP Port</em> from Amazon SES to the <code>APPSMITH_MAIL_PORT</code> variable in Appsmith.</li>
+1. Go to your Appsmith instance configuration file, such as the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
+2. Update the values of the following environment variables:
+
+    <dl>
+        <dt><strong>APPSMITH_MAIL_ENABLED</strong></dt>
+        <dd>Set it to <code>true</code> to enable the email service. When set to <code>true</code>, Amazon SES integration is activated, allowing Appsmith to send emails on your behalf.</dd><br/>
+        <dt><strong>APPSMITH_MAIL_FROM</strong></dt>
+        <dd>Set it to the verified email of the sender. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
+        <dt><strong>APPSMITH_REPLY_TO</strong></dt>
+        <dd>Set it to the email that should receive replies by default. When users respond to emails sent from your application, the replies are directed to this email address.</dd><br/>
+        <dt><strong>APPSMITH_MAIL_HOST and APPSMITH_MAIL_PORT</strong></dt>
+        <dd>Set these variables to configure the Simple Mail Transfer Protocol (SMTP) host and port for Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP Host and SMTP Port, follow these steps:
+        <ul>
+            <li>Log into your Amazon management console.</li>
+            <li>Go to Amazon Simple Email Service (SES).</li>
+            <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
+            <li>Add the <em>SMTP endpoint</em> from Amazon SES to the <code>APPSMITH_MAIL_HOST</code> variable in Appsmith.</li>
+            <li>Add the <em>SMTP Port</em> from Amazon SES to the <code>APPSMITH_MAIL_PORT</code> variable in Appsmith.</li>
         </ul>
-    </dd><br/>
-    <dt><b>APPSMITH_MAIL_SMTP_TLS_ENABLED</b></dt>
-    <dd>
-        Set it to <code>true</code> to enable transport layer security.
-    </dd><br/>
-    <dt><b>APPSMITH_MAIL_SMTP_AUTH</b></dt>
-    <dd>Set it to <code>true</code> to share the <code>APPSMITH_MAIL_USERNAME</code> and <code>APPSMITH_MAIL_PASSWORD</code> with Amazon SES SMTP server.</dd><br/>
-    <dt><b>APPSMITH_MAIL_USERNAME</b></dt>
-    <dd>Set it to the SMTP username from the SMTP credentials available on Amazon SES.</dd><br/>
-    <dt><b>APPSMITH_MAIL_PASSWORD</b></dt>
-    <dd>Set it to the SMTP password from the SMTP credentials available on Amazon SES </dd>
+        </dd><br/>
+        <dt><strong>APPSMITH_MAIL_SMTP_TLS_ENABLED</strong></dt>
+        <dd>Set it to <code>true</code> to enable Transport Layer Security (TLS) for securely sending emails through Amazon SES. Enabling TLS ensures that email communications between Appsmith and Amazon SES are encrypted, providing an additional layer of security.</dd><br/>
+        <dt><strong>APPSMITH_MAIL_SMTP_AUTH</strong></dt>
+        <dd>Set it to <code>true</code> to share the <code>APPSMITH_MAIL_USERNAME</code> and <code>APPSMITH_MAIL_PASSWORD</code> with Amazon SES SMTP server. Enabling SMTP authentication allows Appsmith to authenticate with Amazon SES using the provided username and password to send emails.</dd><br/>
+        <dt><strong>APPSMITH_MAIL_USERNAME</strong></dt>
+        <dd>Set it to the SMTP username from the SMTP credentials available on Amazon SES. This username is used for authentication when sending emails through the SMTP server.</dd><br/>
+        <dt><strong>APPSMITH_MAIL_PASSWORD</strong></dt>
+        <dd>Set it to the SMTP password from the SMTP credentials available on Amazon SES. This password is used for authentication when sending emails through the SMTP server.</dd>
     </dl>
 
 3. Save the changes and restart the Appsmith instance.
