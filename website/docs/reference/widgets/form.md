@@ -1,7 +1,8 @@
 # Form
 
-This page provides information on how to use the Form widget to collect, validate, and submit user input. It acts as a container for grouping related inputs and comes with a default Text widget for the title, as well as Submit and Reset buttons for form interaction.
+This page provides information on how to use the Form widget to collect, validate, and submit user input. It acts as a container for grouping related inputs and comes with a default Text widget for the title, as well as Submit and Reset buttons for form interaction. 
 
+The Reset button allows for one-click clearing of form fields to default values. Similarly, the Success button allows you to set actions to be performed when the submit button is clicked. 
 
 <VideoEmbed host="youtube" videoId="UgpQ0ZOnzdg" title="How to use Form Widget" caption="How to use Form Widget"/>
 
@@ -111,7 +112,21 @@ The `data` property contains the data of the widgets embedded in the form.
 {{Form1.data}}
 
 //Access data from a Specific Widget
-{{Form1.data.Input1}}
+{{Form1.data.<widget_name>}}
+```
+
+For instance, if you have a Select widget `OrderStatus` inside Form, its value can be accessed as shown:
+
+```js
+// Form1.data
+{
+"Text": "Form1",
+"OrderStatus": "SHIPPED"
+}
+```
+```js
+//Access the widget values
+{{Form1.data.OrderStatus}}
 ```
 
 
