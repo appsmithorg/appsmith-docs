@@ -56,7 +56,7 @@ Follow these steps to configure Amazon SES using Admin Settings:
         <dd>Add a verified email address to be shown in the <em>From</em> field when users receive an email. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
         
         <dt><strong>Reply To Address</strong></dt>
-        <dd>Add a verified email address where users can contact you. When recipients reply to emails sent from your application, their replies are directed to this address.</dd><br/>
+        <dd>Add a verified email address where users can contact you. When recipients reply to emails, their replies are directed to this address.</dd><br/>
         
         <dt><strong>TLS Protected Connection</strong></dt>
         <dd>Amazon SES configuration uses TLS for securely sending emails. Toggle it to use Transport Layer Security (TLS) protocol for securely sending emails through Amazon SES. Enabling TLS ensures that email communications between Appsmith and Amazon SES are encrypted for enhanced security.</dd><br/>
