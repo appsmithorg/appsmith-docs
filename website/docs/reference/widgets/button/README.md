@@ -1,3 +1,8 @@
+---
+description: >-
+  Button widget reference
+---
+
 # Button
 
 This page provides information on the button widget, enabling you to trigger actions or perform specific tasks with a simple click. 
