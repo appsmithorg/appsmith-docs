@@ -1,3 +1,8 @@
+---
+description: >-
+  Select widget reference
+---
+
 # Select
 
 This page provides information on the Select widget (*formerly known as dropdown*), that enable users to select a single option from a given list.
