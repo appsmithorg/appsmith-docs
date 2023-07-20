@@ -12,7 +12,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Sets the text on the widget.
+Sets the text that appears on the button.
 
 </dd>
 
