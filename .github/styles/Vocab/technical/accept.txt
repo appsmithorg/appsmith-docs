@@ -450,3 +450,5 @@ setDisabled
 setColor
 setLabel
 setVisibility
+disable
+disabled
