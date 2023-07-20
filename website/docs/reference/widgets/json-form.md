@@ -44,7 +44,7 @@ Based on the JSON data provided, the JSON Form automatically identifies the appr
 
 </dd>
 
-#### Auto generate form `boolean`
+#### Auto Generate Form `boolean`
 
 <dd>
 
@@ -126,7 +126,7 @@ When you enable this option, the output data is updated to include data from hid
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in *View Mode*. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
