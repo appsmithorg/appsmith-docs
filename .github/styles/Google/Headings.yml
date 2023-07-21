@@ -155,3 +155,10 @@ exceptions:
   - setOptions
   - setRequired
   - setSelectedOption
+  - Data
+  - onitemClick
+  - currentItemsView
+  - itemSpacing
+  - selectedItemView
+  - triggeredItemView
+  - onPageSizeChange
