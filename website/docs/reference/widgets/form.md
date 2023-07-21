@@ -19,7 +19,7 @@ These properties are customizable options present in the property pane of the wi
 
 Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
 
-For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+For example, if you want to make the widget visible only when the user selects `Yes` from a Select widget, you can use the following JavaScript expression: 
 ```js
 {{Select1.selectedOptionValue === "Yes"}}
 ```
@@ -163,7 +163,6 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-
 #### setVisibility(`:boolean`)
 
 <dd>
@@ -174,15 +173,6 @@ Sets the visibility of the widget.
 
 ```js
 Form1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Form1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
 ```
 
 </dd>
