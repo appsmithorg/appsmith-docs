@@ -38,223 +38,281 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
 
-## Fetch rows
+The following settings are common amongst many of the Google Sheets operations:
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> A subset of horizontal records from a page of a spreadsheet document.</li>
+     <li><b>Spreadsheet:</b> A document containing multiple pages (Sheets) of cell matrices.</li>
+     <li><b>Sheet:</b> A single page of a spreadsheet document.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Table Heading Row Index</b></dt>
+  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+  </dd>
+
+</dl>
+
+## Fetch Details
+
+This command fetches metadata for a given **Spreadsheet** entity. The following section lists all the fields available for the **Fetch Details** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Spreadsheet:</b> Returns metadata for a spreadsheet document.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd>
+
+</dl>
 
-Use the **Fetch Many** operation with the **Sheet rows** entity to pull your spreadsheet records into your app. You can configure this query with the fields below to fetch records that meet specific conditions.
-
-### Filter format
-
-Under **Filter Format**, you can choose one of two styles of selecting a subset of your data:
-
-- **Where Clause**: fetch records based on conditions. Also enables sorting and pagination.
-- **Cell Range**: fetch a block of spreadsheet cells, defined by spreadsheet-style notation (like "A2:B7").
-
-#### Where clause
-
-These fields enable you to return records conditionally, sort on multiple levels, and set up pagination.
-
-##### Filter and sort
-
-In the **Filter by** fields, you can build expressions that return records when a column value meets some criteria. You can evaluate them using `in`, `not in`, `contains`, and logic operators.
-
-The **Add Condition** button adds another simple single-line expression. **Add Group Condition** adds a nested expression with multiple levels of And/Or statements.
-
-In the **Sort By** field, you can choose a column to use for sorting your results. The **Add Parameter** button adds multiple levels of sorting.
-
-##### Pagination
-
-To limit the amount of records you receive at once, use **Pagination Limit**.
-
-**Pagination Offset** allows skipping a given number of records before returning results; these two fields together enable you to implement pagination for large datasets.
-
-To learn more about using paginating your data in tables, read [offset-based pagination](/reference/widgets/table#offset-based-pagination).
-
-#### Cell range
-
-If you need to select contiguous block of cells based on their location in the spreadsheet instead of their values, use the **Cell Range** filter format. This mode doesn't allow conditions, sorting, or pagination.
-
-This mode uses Google Sheets' row number and column letter syntax (for example, `A1-B14`) to select cells. Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells.
-
----
-
-**Example**: fetch all records from a table `users` on `Sheet1` of `UsersSpreadsheet`, 10 records at a time, and put them into a Table widget `UsersTable`.
-
-<figure>
-  <img src="/img/google-sheets-fetch-many.png" style={{width: "100%", height: "auto"}} alt="Configuring a Fetch Many query."/>
-  <figcaption align="center"><i>Configuring a Fetch Many query.</i></figcaption>
-</figure>
-
-**Setup**: create a query called `FetchUsers` based on your Google Sheets datasource. This query should use the **Fetch Many** operation for the **Sheet Rows** entity, and be configured with the spreadsheet and sheet name in their appropriate fields. Set the **Filter Format** to **Where Clause** to access the pagination settings.
-
-This query doesn't require filtering or sorting the data, so **Filter By** and **Sort By** can be left blank.
-
-Set the **Pagination Limit** to 10 to limit the number of records you receive at once.
-
-To continue setting up pagination for your data, you can use your Table widget's `pageOffset` property in the **Pagination Offset** field. To learn more about pagination, read [server-side pagination](#reference/widgets/table#server-side-pagination).
-
-In the **Table Data** property of your Table widget, bind the result of your query:
-
-```javascript
-// in the Table Data property of UsersTable
-{{ FetchUsers.data }}
-```
-
-Your table should fill with data when the query is run.
-
-## Insert a row
-
-Use **Insert** operations to create a new spreadsheet, or to add a new record to an existing spreadsheet.
-
-<!-- HIDDEN BY FEATURE FLAG
-If your Google Sheets datasource's **Scope** is set to **Read/Write | Selected Google Sheets**, you have to use an insert query to create any spreadsheets that you'd like your app to access.
--->
-
-To insert a record, supply an object in the query's **Row Object** field with keys matching the spreadsheet's column headings.
-
----
-
-**Example**: create a new record in a table `users` on `Sheet1` of `UsersSpreadsheet`, with columns for `name`, `date_of_birth`, and `employee_id`.
-
-**Setup**: create your query called `InsertNewUser` based on your Google Sheets datasource. This query should use the **Insert One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**.
-
-To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. You should already have fields for `name`, `date_of_birth`, and `employee_id`.
-
-In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
-
-```javascript
-// Submit button's onClick event
-{{ InsertNewUser.run() }}
-```
-
-Once these form fields are filled out, you can add their values to your query in the **Row Object** field like below:
-
-```javascript
-// in the Row Object field of your query
-{{
-  {
-    "name": NewUserForm.formData.name,
-    "date_of_birth": NewUserForm.formData.date_of_birth,
-    "employee_id": NewUserForm.formData.employee_id
-  }
-}}
-
-```
-
-When the Submit button is clicked, your query is executed and the new record is inserted as the new highest index in your dataset (at the bottom of the spreadsheet).
-
-## Update a row
-
-Use **Update** operations to modify existing records in your spreadsheet.
-
-To update a record, supply an object with updated values in the query's **Row Object** field. Include a `rowIndex` key that matches your original record.
-
-:::caution important
-When you update a row, your row object must include a `rowIndex` key with a number to specify which record in the spreadsheet to update. `rowIndex` refers to the index of the record in the array of table records, *not* the record's row number in the spreadsheet.
-:::
-
----
-
-**Example**: modify a record in a table `users` on `Sheet1` of `UsersSpreadsheet`, with columns for `name`, `date_of_birth`, and `employee_id`.
-
-**Setup**: create your query called `UpdateUser` based on your Google Sheets datasource. This query should use the **Update One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**. Finally, You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your spreadsheet data from a **Fetch** query.
-
-Create a [JSON Form widget](/reference/widgets/json-form) to use for submitting your updated data. It should come with fields for `name`, `date_of_birth`, and `employee_id`.
-
-When a row is selected in the table, it would be helpful if the JSON Form's fields pre-filled with the row's existing data. To implement this, match the keys in the JSON Form's **Source Data** property with the values from the table row's cells:
-
-```javascript
-// JSON Form's Source Data property
-{{
-  {
-    "name": UsersTable.selectedRow.name,
-    "date_of_birth": UsersTable.selectedRow.date_of_birth,
-    "employee_id": UsersTable.selectedRow.employee_id
-  }
-}}
-```
-
-In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
-
-```javascript
-// Submit button's onClick event
-{{ UpdateUser.run() }}
-```
-
-To add your modified row data to your query, reference them in its **Row Object** field. You must include the `rowIndex` key in your submission to indicate which record to update. If your data came from a Google Sheets **Fetch** operation, this key was returned in the original response:
-
-```javascript
-// in the Row Object field of your query
-{{
-  {
-    "rowIndex": UsersTable.selectedRow.rowIndex, // include the rowIndex key
-    "name": NewUserForm.formData.name,
-    "date_of_birth": NewUserForm.formData.date_of_birth,
-    "employee_id": NewUserForm.formData.employee_id
-  }
-}}
-```
-
-When the Submit button is clicked, your query is executed and the record is updated in your spreadsheet.
-
-## Delete a row
-
-Use **Delete** operations to remove a record from your spreadsheet.
-
-To delete a record, supply the `rowIndex` value of the record to delete. `rowIndex` refers to the index of the record in the array of table records, *not* the record's row number in the spreadsheet.
-
----
-
-**Example**: delete a record from a spreadsheet `users`.
-
-**Setup**: create your query called `DeleteUser` based on your Google Sheets datasource. This query should use the **Update One** operation for the **Sheet Rows** entity. Enter the appropriate values for **Spreadsheet**, **Sheet Name**, and **Table Heading Row Index**. Finally, You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your spreadsheet data from a **Fetch** query.
-
-Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteUser` query:
-
-```javascript
-// in the Delete button's onClick event
-{{ DeleteUser.run() }}
-```
-
-To delete a record, you need only provide the `rowIndex` of the record to delete. In your `DeleteUser` query's **Row Index** field, bind the value of the selected row of the `UsersTable`:
-
-```javascript
-// DeleteUser query's Row Index field
-{{ UsersTable.selectedRow.rowIndex }}
-```
-
-Now when the button is clicked, the query is run and the corresponding row is deleted from your spreadsheet.
-
-## Operations
-
-**Operation** sets the type of action you want to perform with your query. A "Spreadsheet" is the document, a "Sheet" is a page of a spreadsheet, and "Sheet Rows" are horizontal records in a sheet.
-
-| **Operation**                        | **Description**                           | **Available entities:**       |
-| ------------------------------------ | ----------------------------------------- | ----------------------------- |
-| **Fetch Details**  | Fetches metadata about a spreadsheet. | Spreadsheet  |
-| **Insert One**            | Inserts a single new row into a spreadsheet, or creates a new spreadsheet.|  Sheet Rows<br/>Spreadsheet  |
-| **Update One**            | Updates a record in a spreadsheet.        | Sheet Rows |
-| **Delete One**            | Deletes a single record, sheet, or spreadsheet. | Sheet Rows<br/>Spreadsheet<br/>Sheet |
-| **Fetch Many**        | Fetches records from a spreadsheet, or fetches all existing spreadsheets in your account. | Sheet Rows<br/>Spreadsheet        |
-| **Insert Many**      | Inserts several new rows into a spreadsheet. | Sheet Rows |
-| **Update Many**      | Updates multiple existing records in a spreadsheet.  | Sheet Rows  |
-
-All the operation types have some of these common fields that identify where in your spreadsheets your query should access:
-
-| **Configuration Field**     | **Description**                                                               |
-| --------------------------- | ----------------------------------------------------------------------------- |
-| **Entity**                  | Select which entity type you want to query: <br/>**Sheet Rows**: Horizontal records in the spreadsheet.<br/>**Spreadsheet**: Document containing cell matrix.<br/>**Sheet**: A page of a spreadsheet. |
-| **Spreadsheet**             | Select which spreadsheet you want to query from.                              |
-| **Sheet Name**              | Select which sheet you want to query from the spreadsheet.                    |
-| **Table Heading Row Index** | Provide the index of the row in the spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is row 1.                                                     |
+## Insert One
+
+This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. The following section lists all the fields available for the **Insert One** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> Inserts a single record as a row in the spreadsheet.</li>
+     <li><b>Spreadsheet:</b> Creates a new spreadsheet document. Optionally, you can use the <b>Row Objects</b> field to provide rows that should be created along with the document.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Table Heading Row Index</b></dt>
+  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+  </dd><br />
+
+  <dt><b>Row Object</b></dt>
+  <dd>Available when the <b>Entity</b> is <b>Sheet Row(s)</b>. This expects a JSON-formatted object whose key/value pairs represent the columns and values from your table record.</dd><br/>
+
+  <dt><b>Row Objects</b></dt>
+  <dd>Available when the <b>Entity</b> is <b>Spreadsheet</b>. This expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to your new spreadsheet when it is created.</dd>
+
+</dl>
+
+## Update One
+
+This command updates a **Sheet Row(s)** entity. The following section lists all the fields available for the **Update One** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> Updates a single existing row in the spreadsheet.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Table Heading Row Index</b></dt>
+  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+  </dd><br />
+
+  <dt><b>Update Row Object</b></dt>
+  <dd>A JSON-formatted object whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key to specify which record to update. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+
+</dl>
+
+## Delete One
+
+This command deletes a given entity: **Sheet Row(s)**, **Spreadsheet**, or **Sheet**. The following section lists all the fields available for the **Delete One** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> Deletes a single row of a spreadsheet.</li>
+     <li><b>Spreadsheet:</b> Deletes a new spreadsheet document.</li>
+     <li><b>Sheet:</b> Deletes a page from a spreadsheet document.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Row Index</b></dt>
+  <dd>The index of the record to delete from the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+
+</dl>
+
+## Fetch Many
+
+This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. The following section lists all the fields available for the **Fetch Many** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> Fetches a subset of horizontal records from a page of a spreadsheet document.</li>
+     <li><b>Spreadsheet:</b> Fetches a list of existing spreadsheet documents.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Table Heading Row Index</b></dt>
+  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+  </dd><br />
+
+  <dt><b>Filter Format</b></dt>
+  <dd>Sets the method of selecting records from your spreadsheet.
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Where Clause:</b> Fetches records based on logic and conditions. This also allows you to sort and paginate your results.</li>
+     <li><b>Cell Range:</b> Fetches a block of spreadsheet cells defined by spreadsheet-style notation, such as `A2:B7`.</li>
+    </ul>
+  </dd><br />
+
+  <p>The following settings are available when <b>Filter Format</b> is set to <b>Where Clause</b>:</p><br />
+
+  <dt><b>Filter By</b></dt>
+  <dd>This is used to build expressions that return records when a column value meets some criteria. You can evaluate records using `in`, `not in`, `contains`, and logic operators.</dd>
+  <dd><i>Buttons:</i>
+    <ul>
+     <li><b>Add Condition:</b> Adds another simple single-line expression.</li>
+     <li><b>Cell Range:</b> Adds a nested expression with multiple levels of And/Or statements.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Sort By</b></dt>
+  <dd>Sorts the resulting records according to the specified column.</dd>
+  <dd><i>Buttons:</i>
+    <ul>
+     <li><b>Add Parameter:</b> Adds another column for sorting on multiple levels.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Pagination Limit</b></dt>
+  <dd>Limits the number of records you can receive in a single response. Use with <b>Pagination Offset</b> to implement pagination for large datasets.</dd><br/>
+
+  <dt><b>Pagination Offset</b></dt>
+  <dd>Allows skipping a given number of records before returning results. Use with <b>Pagination Limit</b> to implement pagination for large datasets.</dd><br/>
+
+  <p>The following setting is available when <b>Filter Format</b> is set to <b>Cell Range</b>:</p><br />
+
+  <dt><b>Cell Range</b></dt>
+  <dd>This mode uses Google Sheets' row number and column letter syntax (such as `A1-B14`) to select cells. Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells. This mode doesn't allow conditions, sorting, or pagination.</dd>
+
+</dl>
+
+## Insert Many
+
+This command inserts multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Insert Many** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> Inserts several records as a rows in the spreadsheet.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Table Heading Row Index</b></dt>
+  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+  </dd><br />
+
+  <dt><b>Row Objects</b></dt>
+  <dd>Expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to the spreadsheet.</dd>
+
+</dl>
+
+## Update Many
+
+This command updates multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Update Many** command.
+
+<dl>
+  <dt><b>Entity</b></dt>
+  <dd>Sets which entity type to query:
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Sheet Row(s):</b> Updates multiple existing rows in the spreadsheet.</li>
+    </ul>
+  </dd><br />
+
+  <dt><b>Spreadsheet</b></dt>
+  <dd> The name of the spreadsheet document you'd like to query.
+  </dd><br />
+
+  <dt><b>Sheet Name</b></dt>
+  <dd> The name of the page you'd like to query from your spreadsheet.
+  </dd><br />
+
+  <dt><b>Table Heading Row Index</b></dt>
+  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+  </dd><br />
+
+  <dt><b>Update Row Object(s)</b></dt>
+  <dd>An array of JSON-formatted objects whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key in each row object to specify which record to update in the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+</dl>
 
 ## Troubleshooting
 
 If you are experiencing difficulties, you can refer to the [troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/) page for assistance.
 
 If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
-
-## Further reading
-
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
-* [Table widget](/reference/widgets/table)
-* [Form widget](/reference/widgets/form)

@@ -446,3 +446,11 @@ colors
 primaryColor
 theme
 user
+Fetch Many
+Sheet Row(s)
+Fetch Details
+Insert One
+Update One
+Delete One
+Insert Many
+Update Many
