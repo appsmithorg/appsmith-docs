@@ -15,6 +15,7 @@ Before you begin, make sure that you have the following:
 - Amazon SES is configured to send emails. If you haven't set up SES yet, make sure you have:
     - Created an identity using an email address or a domain, and the identity status is verified. See [Creating and verifying identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html).
     - Created SMTP credentials for your account. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html).
+    - Requested for production access to send emails. See [Moving out of the Amazon SES sandbox](https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html) to request production access.
 
 ## Configure Amazon SES on Appsmith
 
