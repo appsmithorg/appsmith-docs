@@ -902,7 +902,7 @@
     },
     {
       "source": "/learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure",
-      "destination": "/connect-data/how-to-guides/returning-data-from-a-stored-procedure"
+      "destination": "/connect-data/concepts/returning-data-from-a-stored-procedure"
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith",
@@ -947,6 +947,10 @@
     {
       "source": "/reference/widgets/menu-button",
       "destination": "/reference/widgets/menu"
+    },
+    {
+      "source": "connect-data/how-to-guides/returning-data-from-a-stored-procedure",
+      "destination": "connect-data/concepts/returning-data-from-a-stored-procedure"
     },
     {
       "source": "/learning-and-resources/how-to-guides",
