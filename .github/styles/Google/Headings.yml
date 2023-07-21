@@ -155,3 +155,4 @@ exceptions:
   - setOptions
   - setRequired
   - setSelectedOption
+  - Data
