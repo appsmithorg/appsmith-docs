@@ -138,6 +138,4 @@ For more information, see the docs for MySQL's [SQL Modes](https://dev.mysql.com
 
 ## Troubleshooting
 
-If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or the [MySQL Errors](/help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors) page for assistance.
-
-If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or the [MySQL Errors](/help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors) page, or contact the support team using the chat widget at the bottom right of this page.
