@@ -40,9 +40,9 @@ SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not su
 </figure>
 
 
-Select the environment on the bottom left corner of the screen to configure the application to execute queries in the staging or production environments.
+Select the environment on the bottom left corner of the screen to configure the application to execute queries in the staging or production environments. Switching between environments in the *Edit mode* does not affect the deployed version of the app, as the production environment is always used for the deployed version.
 
 Developers can switch between staging and production environments in the *Edit mode*. In addition, users with the necessary permissions can also switch to the staging environment configuration when accessing the app in *View mode*. For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
-Switching between environments in the *Edit mode* does not affect the deployed version of the app, as the production environment is always used for the deployed version.
+With this, you can create queries and switch between environments. As you toggle between environments, the queries would automatically adapt to the chosen environment settings, ensuring widget data changes are reflected.
 
