@@ -124,11 +124,11 @@ Allows you to add data for Custom charts. You need to specify `type` for chart t
 }
 ```
 
-* **Type :** The type is used to define the chart type recognized by the FusionCharts. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. 
+* **Type :** The type is used to define the chart type recognized by the FusionCharts, written in JavaScript. FusionCharts provides an extensive range of chart variants, with almost 100+ options to choose from. For example: `"type": "column2d"`
 
-* **Datasource :** The datasource defines the customization options and data points necessary for creating a chart. It consists of attributes such as chart and data, which may vary depending on the chart type.
+* **Datasource :** The datasource defines the customization options and data points necessary for creating a chart, written in JSON format. It consists of attributes such as chart and data, which may vary depending on the chart type.
 
-Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-guide/list-of-charts/). Copy the relevant code examples provided in the documentation and paste them into your project for easy implementation.
+Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-attributes/column2d). Copy the relevant code examples provided in the documentation and paste them into your project for easy implementation.
 
 
 *Examples:*
@@ -640,7 +640,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ## Reference properties
 
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Table1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Chart1.isVisible`.
 
 #### xAxisName `string`
 
@@ -669,7 +669,7 @@ Contains the text of the y-axis Label setting of the chart.
 ```
 </dd>
 
-#### chartData `object`
+#### chartData `array<object>`
 
 <dd>
 
@@ -682,7 +682,7 @@ Displays all the data related to the chart.
 ```
 </dd>
 
-#### selectedDataPoint `object`
+#### selectedDataPoint `object: x, y, seriesTitle`
 
 <dd>
 
@@ -694,7 +694,7 @@ Contains an object which represents the data point that the user has most recent
 //To access all the details of the selected data point:
 {{Chart1.selectedDataPoint}}
 
-//To access the name of the selected data point:
+//To access the label of the selected data point:
 {{Chart1.selectedDataPoint.x}}
 
 //To access the value of the selected data point:
