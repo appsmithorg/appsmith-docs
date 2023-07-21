@@ -25,7 +25,7 @@ Sets the text that appears on the button.
 
 <dd>
 
-Allows you to configure one or multiple [actions](/reference/appsmith-framework/widget-actions) to be executed when the button is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the button is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
 
 </dd>
 
@@ -100,9 +100,9 @@ Buttons can have some special behaviors when they're located within the boundari
 
 <dd>
 
-When this button property is turned on, the button remains inactive if the associated form contains any required fields that are incomplete or if any of the form fields contain input that is considered invalid.
+When this button property is turned on, the button remains disabled if the associated form contains any required fields that are incomplete or if any of the form fields contain input that is considered invalid.
 
-For example, if you have a form with an [Input widget](/reference/widgets/input/) whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
+For example, if you have a form with an Input widget whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
 
 </dd>
 
@@ -110,7 +110,7 @@ For example, if you have a form with an [Input widget](/reference/widgets/input/
 
 <dd>
 
-When this button property is turned on, the button can be used to reset all fields present in the form's area to their default state. This is useful for clearing inputs after the form is submitted; when both **Disabled invalid forms** and **Reset form on success** are turned on, submitting the form automatically resets the input fields so they can be used again.
+When this button property is turned on, the button can be used to reset all fields present in the form's area to their default state. This is useful for clearing inputs after the form is submitted.
 
 </dd>
 
@@ -190,7 +190,7 @@ Represents the color of the button, specified as a [CSS color value](https://dev
 
 <dd>
 
-Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
 
 </dd>
 
@@ -239,7 +239,7 @@ Indicates the visibility state of a widget, with true indicating it is visible a
 
 <dd>
 
-It reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is inactive, and false indicates that it is enabled for user interaction.
+It reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is disabled, and false indicates that it is enabled for user interaction.
 
 *Example:*
 ```js
