@@ -121,11 +121,11 @@ Enables server-side filtering via a query request. Use this property when the Se
 
 </dd>
 
-#### onFilterUpdate `string`
+#### onFilterUpdate
 
 <dd>
 
-Triggers and [action](/reference/appsmith-framework/widget-actions) when you update the filter text. 
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when you update the filter text. 
 
 </dd>
 
@@ -159,7 +159,7 @@ For example,  if you want to make the widget visible only when the user checks a
 
 <dd>
 
-Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's inactive state conditionally.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's disabled state conditionally.
 
 For example, if you want to allow only a specific user to interact with the select widget, you can use the following JavaScript expression: 
 ```js
@@ -191,11 +191,11 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
-#### onOptionChange `string`
+#### onOptionChange 
 
 <dd>
 
-Allows you to specify the [action](/reference/appsmith-framework/widget-actions) to be executed when the user selects an option in the dropdown list. It enables you to capture the user's input and perform specific actions in response.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user selects an option in the dropdown list. It enables you to capture the user's input and perform specific actions in response.
 
 </dd>
 
@@ -203,7 +203,7 @@ Allows you to specify the [action](/reference/appsmith-framework/widget-actions)
 
 <dd>
 
-Allows you to specify the [action](/reference/appsmith-framework/widget-actions) to be executed when the user opens the dropdown list. For example, you could use the **onDropdownOpen** event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user opens the dropdown list. For example, you could use the **onDropdownOpen** event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user.
 
 </dd>
 
@@ -212,7 +212,7 @@ Allows you to specify the [action](/reference/appsmith-framework/widget-actions)
 
 <dd>
 
-Allows you to specify the [action](/reference/appsmith-framework/widget-actions) to be executed when the user closes the dropdown list. For example, you could use the "onDropdownClose" event to store the selected option in a database, hide additional information, or reset the widget to its original state.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user closes the dropdown list. For example, you could use the **onDropdownClose** event to store the selected option in a database, hide additional information, or reset the widget to its original state.
 
 </dd>
 
@@ -287,7 +287,7 @@ Returns the text entered in the search filter for Server side filtering.
 
 <dd>
 
-It reflects the state of the widget's Disabled setting. It is represented by a boolean value, where `true` indicates that the widget is inactive, and `false` indicates that it is enabled for user interaction.
+It reflects the state of the widget's Disabled setting. It is represented by a boolean value, where `true` indicates that the widget is disabled, and `false` indicates that it is enabled for user interaction.
 
 *Example:*
 
@@ -490,43 +490,6 @@ Select1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
 
 </dd>
 
-
-## Display static options
-
-To display static options in a Select widget, you can use the **Options** property.
-
-The options must be specified as an array of objects, where each object has two properties: `label` and `value`. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
-
-```javascript
-[
-  {
-    "label": "Blue",
-    "value": "BLUE"
-  },
-  {
-    "label": "Green",
-    "value": "GREEN"
-  }
-]
-```
-
-### Set default value
-
-The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that a specific option is selected by default. To use this property, set its value to the value of the desired option from the Options property. 
-
-```javascript
-[
-  {
-    "label": "Blue",
-    "value": "BLUE"
-  },
-  {
-    "label": "Green",
-    "value": "GREEN"
-  }
-]
-```
-For example, if you want the default option to be ```Blue```, set the **Default Selected Value** property to ```BLUE```.
 
 
 ## Display options dynamically 
