@@ -15,7 +15,44 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Enables you to bind static or dynamic data as an array of objects to the widget.        
+Enables you to bind static or dynamic data as an array of objects to the widget. You can bind the object property to the widgets on the list item.
+
+*Expected Data Structure*:
+
+```js
+[
+  {
+    "id": "001",
+    "name": "Blue"  
+  },
+  {
+    "id": "002",
+    "name": "Green"  
+  },
+  {
+    "id": "003",
+    "name": "Red"   
+  }
+]
+```
+
+You can add dynamic data to your list by fetching data from queries or JS functions and binding the response to the **Items** property. For example, if you have a query named `fetchData`, you can bind its response to the list by adding the following snippet in the Items property:
+
+```js
+{{fetchData.data}}
+```
+If the retrieved data is not in the desired format, you can use JavaScript to **transform** it before passing it to the List widget.
+
+*Example:*
+```js
+{{fetchData.data.users.map((user) => {
+  return {
+    name: user.name,
+    email: user.email
+    };
+  });
+}}
+```
 
 </dd>
 
@@ -33,7 +70,7 @@ Like `keys` in React, you need to select a data identifier from your dataset, wh
 
 <dd>
 
-Enables you to implement [server side pagination](#server-side-pagination) on the List widget 
+Enables you to implement [server side pagination](#server-side-pagination) on the List widget.
 
 </dd>
 
@@ -327,7 +364,7 @@ Returns the data and state of the widgets present in the current list item. This
 
 </dd>
 
-#### level_ `object`
+#### level_* `object`
 
 <dd>
 
@@ -348,7 +385,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (:`boolean`)
 
 <dd>
 
