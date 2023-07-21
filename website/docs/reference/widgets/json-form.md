@@ -87,7 +87,7 @@ Clicking the gear icon ⚙︎ enables you to customize each form field extensive
 * Switch
 * Text Input
 
-Each field type offers unique sets of customizable events and configurations. For instance, the `Number Input` field can have a `min` and `max` value, whereas the Select field includes the options property.
+Each field type offers unique sets of customizable events and configurations. For instance, the `Number Input` field can have a `min` and `max` value, whereas the `Select` field includes the `options` property.
 
 Most of the field properties are similar to those found in widget properties. To explore more about these properties, you can refer to the widget reference guide for more information.
 
@@ -118,7 +118,9 @@ Sets the text that appears at the top of the form as a title.
 
 <dd>
 
-When you enable this option, the output data is updated to include data from hidden fields. These hidden field values are taken from the source data.
+Enabling the this option updates the output data to include information from hidden fields in the source data. 
+
+For instance, suppose you have a registration form where the `Date of Birth` field is hidden from users in the UI. When you enable the **Hidden Fields in Data** option, you can access the `Date of Birth` field through the `formData` reference property.
 
 </dd>
 
@@ -128,7 +130,7 @@ When you enable this option, the output data is updated to include data from hid
 
 Controls the visibility of the widget. If you turn off this property, the widget would not be visible in *View Mode*. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
 
-For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+For example, if you want to make the widget visible only when the user selects `Yes` from a Select widget, you can use the following JavaScript expression: 
 ```js
 {{Select1.selectedOptionValue === "Yes"}}
 ```
@@ -361,7 +363,7 @@ A JSON object describing the state of each field in the form. State data include
 Example:
 
 ```js
-// To access the whole object:
+// To access the object:
 {{JSONForm1.fieldState}}
 
 // To get state for a particular field (e.g., "name"):
@@ -419,14 +421,6 @@ Sets the visibility of the widget.
 JSONForm1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-JSONForm1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-
 </dd>
 
 
@@ -440,14 +434,6 @@ JSONForm1.setVisibility(true).then(() => {
 
 ```js
 JSONForm1.setSourceData(<data>)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-JSONForm1.setSourceData(<data>).then(() => {
-  // Code to be executed after data is set
-});
 ```
 
 </dd>
