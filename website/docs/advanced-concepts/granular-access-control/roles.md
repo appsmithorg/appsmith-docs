@@ -50,7 +50,7 @@ This section contains permissions related to the actions a user can perform on d
 | --- | --- | --- | --- | --- | --- |
 | **Workspace** | Execute queries on any datasource in the workspace | Create queries on any datasource in the workspace | Edit any datasource in the workspace | Delete any datasource in the workspace | View any datasource in the workspace |
 | **Environments** | Execute queries for specific environment (*staging and production*).  | - | - | - | - |
-| **Datasource** | Execute queries on the datasource | Create queries on the datasource | Edit the datasource | Delete the datasource | View the datasource |
+| **Datasource** | Execute queries on that datasource (provided the user also has access to execute on at least one environment) | Create queries on the datasource | Edit values of datasource configurations in all environments | Add/Remove datasource configuration keys in all environments | View datasource configuration values in all environments |
 | **Query** | Execute the query | - | - | - | - |
 
 
