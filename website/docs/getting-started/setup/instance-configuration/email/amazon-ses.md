@@ -52,7 +52,7 @@ Follow these steps to configure Amazon SES using Admin Settings:
                 <li>Go to Amazon Simple Email Service (SES).</li>
                 <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
                 <li>Add the <em>SMTP endpoint</em> from Amazon SES to the SMTP Host field in Appsmith.</li>
-                <li>Add the <em>SMTP Port</em> from Amazon SES to the SMTP Port field in Appsmith.</li>
+                <li>Add the <em>SMTP Port</em> from Amazon SES to the SMTP Port field in Appsmith. Do not use port <em>465</em> listed on the SES page because it uses implicit TLS, which is not supported by Appsmith.</li>
             </ul>
         </dd><br/>
         
@@ -100,7 +100,7 @@ Follow these steps to configure Amazon SES using environment variables:
             <li>Go to Amazon Simple Email Service (SES).</li>
             <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
             <li>Add the <em>SMTP endpoint</em> from Amazon SES to the <code>APPSMITH_MAIL_HOST</code> variable in Appsmith.</li>
-            <li>Add the <em>SMTP Port</em> from Amazon SES to the <code>APPSMITH_MAIL_PORT</code> variable in Appsmith.</li>
+            <li>Add the <em>SMTP Port</em> from Amazon SES to the <code>APPSMITH_MAIL_PORT</code> variable in Appsmith. Do not use port <em>465</em> listed on the SES page because it uses implicit TLS, which is not supported by Appsmith.</li>
         </ul>
         </dd><br/>
         <dt><strong>APPSMITH_MAIL_SMTP_TLS_ENABLED</strong></dt>
