@@ -156,3 +156,8 @@ exceptions:
   - setRequired
   - setSelectedOption
   - Data
+  - onitemClick
+  - currentItemsView
+  - itemSpacing
+  - selectedItemView
+  - triggeredItemView

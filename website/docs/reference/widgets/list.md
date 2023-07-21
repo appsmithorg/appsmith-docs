@@ -2,10 +2,8 @@
 
 The List widget provides a way to iterate over a structured dataset (array of objects) and display the data in sections that repeat vertically without writing any code. Each list item can contain other widgets to display data or capture user input.
 
+When you drag a List widget on the canvas, it has **Image** and **Text** widgets embedded by default. You can add more widgets per your requirement on the first list item container. When you connect the dataset to the List and bind the data to each widget within the first list item, the widgets in the subsequent list items are updated with values from the dataset automatically. 
 
-##  List components
-
-Typically, a List widget is a collection of other widgets you can embed to display data or capture user input. When you drag a List widget on the canvas, it has **Image** and **Text** widgets embedded by default. You can add more widgets per your requirement on the first list item container. When you connect the dataset to the List and bind the data to each widget within the first list item, the widgets in the subsequent list items are updated with values from the dataset automatically. 
 
 ## Content properties
 
@@ -47,11 +45,11 @@ This field displays the number of records in the source data for a list. This va
 
 </dd>
 
-#### onPageChange `string`
+#### onPageChange
 
 <dd>
 
-Sets an action to run when the List's page changes. You can chain multiple actions together, and all the nested actions would run simultaneously.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the List's page changes. You can chain multiple actions together, and all the nested actions would run simultaneously.
 
 
 </dd>
@@ -62,15 +60,15 @@ Sets an action to run when the List's page changes. You can chain multiple actio
 
 <dd>
 
-allows you to specify which item should be selected by default when a user first opens the List widget. To set the **Default Selected Item**, enter a valid data identifier for the item you want to select.
+Allows you to specify which item should be selected by default when a user first opens the List widget. To set the **Default Selected Item**, enter a valid data identifier for the item you want to select.
 
 </dd>
 
-#### onitemClick `string`
+#### onitemClick 
 
 <dd>
 
-Allows you to configure one or multiple actions to be executed when a list item is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when a list item is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
 
 </dd>
 
@@ -114,7 +112,7 @@ Adds padding to the list cells. It accepts Pixels(px) as a unit for the gap widt
 
 ### Color
 
-#### Background color `string`
+#### Background Color `string`
 
 <dd>
 
@@ -300,7 +298,7 @@ Contains an object representing the state of the widgets inside a list item that
 
 </dd>
 
-## Internal properties
+## Internal reference properties
 
 These properties are available only to the widgets placed inside the List widget and enable you to configure the widget's properties based on the position/order of the item.
 
