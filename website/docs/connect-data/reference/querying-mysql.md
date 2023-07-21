@@ -6,14 +6,12 @@ description: Connect Appsmith to a MySQL database and create queries.
 
 This page provides information for connecting your application to your MySQL database and using queries to manage its content.
 
+Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
+
 ## Connect MySQL
 
 :::caution
 To connect to MySQL, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to the database.
-:::
-
-:::info
-Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 :::
 
 ### Connection parameters
@@ -36,7 +34,7 @@ The following section is a reference guide that provides a complete description 
   </dd><br />
 
   <dt><b>Host address</b></dt>
-  <dd>The network location of your MySQL database. This could be a domain or IP address. To connect to a local Oracle database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions.</dd><br />
+  <dd>The network location of your MySQL database. This could be a domain or IP address. For a guide about connecting to a local MySQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a>.</dd><br />
 
   <dt><b>Port</b></dt>
   <dd>The port number to connect to on the server. Appsmith connects to port <code>3306</code> by default if you do not specify one.</dd><br />
@@ -77,7 +75,7 @@ The following section provides examples of creating basic CRUD queries for MySQL
 </figure>
 
 :::info
-MySQL databases are queried using standard SQL syntax. For more information, see MySQL's [Language Structure](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html) documentation.
+MySQL databases are queried using standard SQL syntax. For a language reference, see MySQL's [Language Structure](https://dev.mysql.com/doc/refman/8.0/en/language-structure.html).
 :::
 
 ### Fetch data
@@ -102,7 +100,7 @@ VALUES
 );
 ```
 
-In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
+In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender, and email fields, respectively.
 
 ### Update data
 
@@ -124,7 +122,7 @@ In the above example, `UsersTable` is the name of the Table widget where the use
 
 ## Prepared statements
 
-Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements) for more details.
+Prepared statements are turned on by default in your queries to help prevent SQL injection attacks. For more details, see [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements).
 
 ## SQL modes
 
@@ -136,7 +134,7 @@ Appsmith switches on prepared statements in queries by default to help prevent S
 
 In particular, [strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data.
 
-For more information about SQL modes, see the MySQL [SQL Modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html) documentation.
+For more information, see the docs for MySQL's [SQL Modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
 
 ## Troubleshooting
 
