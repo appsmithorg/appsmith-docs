@@ -19,7 +19,7 @@ These properties are customizable options present in the property pane of the wi
 
 Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
 
-For example, if you want to make the widget visible only when the user selects `Yes` from a Select widget, you can use the following JavaScript expression: 
+For example, if you want to make the widget visible only when the user selects _Yes_ from a Select widget, you can use the following JavaScript expression: 
 ```js
 {{Select1.selectedOptionValue === "Yes"}}
 ```
