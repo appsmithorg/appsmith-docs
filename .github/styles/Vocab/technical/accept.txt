@@ -433,7 +433,6 @@ idToken
 groups
 roles
 store
-data
 clear
 responseMeta
 appBoxShadow
@@ -447,6 +446,16 @@ colors
 primaryColor
 theme
 user
+Fetch Many
+Sheet Row(s)
+Fetch Details
+Insert One
+Update One
+Delete One
+Insert Many
+Update Many
+onFilterUpdate
+Data
 setDisabled
 setColor
 setLabel
@@ -470,3 +479,4 @@ Disable Invalid Forms
 onFilterUpdate
 Data
 data
+
