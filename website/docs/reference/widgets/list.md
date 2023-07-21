@@ -5,10 +5,7 @@ description: >-
 
 # List
 
-The List widget provides a way to iterate over a structured dataset (array of objects) and display the data in sections that repeat vertically without writing any code. Each list item can contain other widgets to display data or capture user input.
-
-When you drag a List widget on the canvas, it has **Image** and **Text** widgets embedded by default. You can add more widgets on the first list item container. When you connect the dataset to the List and bind the data to each widget within the first list item, the widgets in the subsequent list items are updated with values from the dataset automatically. 
-
+The List widget provides a way to iterate over a structured dataset, such as an array of objects, and display the data in vertical sections without the need for writing the code. Each list item can contain other widgets to display data or capture user input. Once you bind the data to the first item in the List widget, the subsequent items automatically update with the corresponding values from the dataset.
 
 ## Content properties
 
