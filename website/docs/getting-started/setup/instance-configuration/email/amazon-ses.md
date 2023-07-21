@@ -8,7 +8,7 @@ This page guides you through configuring Amazon SES as an email service provider
 
 ## Prerequisites
 
-Before you begin, ensure that you have the following:
+Before you begin, make sure that you have the following:
 
 - A self-hosted Appsmith instance. If you don't have one, see the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 - An Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
@@ -17,6 +17,10 @@ Before you begin, ensure that you have the following:
     - Created SMTP credentials for your account. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html).
 
 ## Configure Amazon SES on Appsmith
+
+:::info
+Amazon SES limits sending messages. For more information, see [Managing your Amazon SES sending limits](https://docs.aws.amazon.com/ses/latest/dg/manage-sending-quotas.html).
+:::
 
 You can configure the email service provider on your Appsmith instance by choosing one of the following ways:
 
@@ -70,6 +74,10 @@ Follow these steps to configure Amazon SES using Admin Settings:
 
 
 5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
+    :::caution Important
+    Sometimes the emails end up in the spam folder. To prevent the emails from being flagged as spam, follow the guide to [configure SPF for SMTP/emails](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-spf.html).
+    :::
+
 6. Click the **SAVE & RESTART** button to save the configurations and restart the instance with the updated settings.
 
 ### Environment variables
