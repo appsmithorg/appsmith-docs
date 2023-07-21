@@ -264,7 +264,6 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'connect-data/how-to-guides/returning-data-from-a-stored-procedure',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
           ]
@@ -317,6 +316,7 @@ const sidebars = {
           items: [
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/how-to-use-prepared-statements',
+            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
         'connect-data/integrations'
